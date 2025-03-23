@@ -1,5 +1,5 @@
 export const siteConfig = {
-  companyName: 'Titan Core',
+  companyName: 'New York English Teacher',
   siteUrl: 'https://titan-core.com',
   Socials: {
     xSocial: 'https://x.com/astrodotbuild',
@@ -14,7 +14,7 @@ export const siteConfig = {
 
 export const SEO = {
   Separator: '|',
-  SiteName: 'Titan Core',
+  SiteName: 'New York English Teacher – Your Career Performance Accelerator',
   defaultDescription: 'A modern, high-performance Astro JS theme',
 };
 
