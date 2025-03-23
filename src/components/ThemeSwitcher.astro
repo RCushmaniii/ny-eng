@@ -1,16 +1,21 @@
 ---
+import { themeSetting } from "../data/config"; // Import theme setting
+
 const themes = [
-    { id: 'zeus', label: 'Zeus', desc: 'Sky & Thunder' },      // Royal blue & gold
-    { id: 'poseidon', label: 'Poseidon', desc: 'Ocean & Seas' },  // Deep blues & teals
-    { id: 'hades', label: 'Hades', desc: 'Underworld' },       // Dark purples & grays
-    { id: 'apollo', label: 'Apollo', desc: 'Sun & Light' },    // Warm yellows & oranges
-    { id: 'artemis', label: 'Artemis', desc: 'Moon & Hunt' },  // Silver & forest greens
-    { id: 'ares', label: 'Ares', desc: 'War & Fire' },        // Reds & blacks
-    { id: 'athena', label: 'Athena', desc: 'Wisdom' },        // Olive & golds
-    { id: 'hermes', label: 'Hermes', desc: 'Speed' },         // Swift blues & silvers
-    { id: 'dionysus', label: 'Dionysus', desc: 'Festivity' }, // Purple & wine reds
-    { id: 'demeter', label: 'Demeter', desc: 'Nature' }       // Earth tones & greens
+    { id: 'zeus', label: 'Zeus', desc: 'Sky & Thunder' },
+    { id: 'poseidon', label: 'Poseidon', desc: 'Ocean & Seas' },
+    { id: 'hades', label: 'Hades', desc: 'Underworld' },
+    { id: 'apollo', label: 'Apollo', desc: 'Sun & Light' },
+    { id: 'artemis', label: 'Artemis', desc: 'Moon & Hunt' },
+    { id: 'ares', label: 'Ares', desc: 'War & Fire' },
+    { id: 'athena', label: 'Athena', desc: 'Wisdom' },
+    { id: 'hermes', label: 'Hermes', desc: 'Speed' },
+    { id: 'dionysus', label: 'Dionysus', desc: 'Festivity' },
+    { id: 'demeter', label: 'Demeter', desc: 'Nature' }
 ];
+
+const defaultTheme = themeSetting.theme || "zeus"; // Get default theme from config.ts
+const isDevMode = import.meta.env.DEV; // Check if we are in dev mode
 ---
 
 <div class="fixed bottom-4 right-4 bg-white rounded-lg shadow-lg p-2 z-50" id="theme-switcher">
@@ -54,74 +59,49 @@ const themes = [
     </div>
 </div>
 
-<script>
-    const themeButton = document.getElementById('theme-button');
-    const themeDropdown = document.getElementById('theme-dropdown');
-    const themeOptions = document.querySelectorAll('.theme-option');
-    
-    if (!themeButton || !themeDropdown) throw new Error('Theme switcher elements not found');
-    
-    // Get theme from localStorage or default to 'thor'
-    const currentTheme = localStorage.getItem('theme') || 'thor';
-    document.body.setAttribute('data-theme', currentTheme);
+<!-- Client-side Script with Safety Checks -->
+<script define:vars={{ isDevMode, defaultTheme }}>
+    document.addEventListener("DOMContentLoaded", () => {
+        const themes = ["zeus", "poseidon", "hades", "apollo", "artemis", "ares", "athena", "hermes", "dionysus", "demeter"];
+        
+        // Get elements safely
+        const themeButton = document.getElementById("theme-button");
+        const themeDropdown = document.getElementById("theme-dropdown");
 
-    // Toggle dropdown
-    themeButton.addEventListener('click', () => {
-        const isExpanded = themeDropdown.classList.toggle('hidden') === false;
-        themeButton.setAttribute('aria-expanded', isExpanded.toString());
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!document.getElementById('theme-switcher')?.contains(e.target as Node )) {
-            themeDropdown.classList.add('hidden');
-            themeButton.setAttribute('aria-expanded', 'false');
+        if (!themeButton || !themeDropdown) {
+            console.warn("ThemeSwitcher: Theme button or dropdown not found. Skipping event listeners.");
+            return;
         }
-    });
 
-    // Handle theme selection
-    themeOptions.forEach(option => {
-        option.addEventListener('click', () => {
-            const newTheme = (option as HTMLElement).dataset.theme;
-            if (newTheme) {
-                document.body.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                themeDropdown.classList.add('hidden');
-                themeButton.setAttribute('aria-expanded', 'false');
-                
-                // Announce theme change to screen readers
-                const themeName = (option as HTMLElement).querySelector('.text-sm')?.textContent;
-                if (themeName) {
-                    const announcement = document.createElement('div');
-                    announcement.setAttribute('aria-live', 'polite');
-                    announcement.classList.add('sr-only');
-                    announcement.textContent = `Theme changed to ${themeName}`;
-                    document.body.appendChild(announcement);
+        // Set Theme: Respect Astro Dev Mode & LocalStorage
+        let currentTheme = isDevMode ? defaultTheme : localStorage.getItem("theme") || defaultTheme;
+
+        if (!themes.includes(currentTheme)) {
+            currentTheme = defaultTheme;
+            localStorage.setItem("theme", currentTheme);
+        }
+
+        // Apply the theme
+        document.body.setAttribute("data-theme", currentTheme);
+
+        // Toggle dropdown visibility
+        themeButton.addEventListener("click", () => {
+            const isExpanded = themeDropdown.classList.toggle("hidden") === false;
+            themeButton.setAttribute("aria-expanded", isExpanded.toString());
+        });
+
+        // Handle theme selection
+        document.querySelectorAll(".theme-option").forEach(option => {
+            option.addEventListener("click", () => {
+                const newTheme = option.dataset.theme;
+                if (themes.includes(newTheme)) {
+                    document.body.setAttribute("data-theme", newTheme);
+                    localStorage.setItem("theme", newTheme);
                     
-                    // Remove announcement after it's been read
-                    setTimeout(() => {
-                        document.body.removeChild(announcement);
-                    }, 3000);
+                    themeDropdown.classList.add("hidden");
+                    themeButton.setAttribute("aria-expanded", "false");
                 }
-            }
+            });
         });
     });
 </script>
-
-<style>
-    .theme-option {
-        transition: background-color 0.2s ease;
-    }
-    
-    .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-    }
-</style> 

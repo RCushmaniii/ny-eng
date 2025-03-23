@@ -1,30 +1,40 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '../assets/astro.svg';
+import { Image } from "astro:assets";
+import oldlogo from "../assets/astro.svg";
+import logo from "../assets/images/logos/ny-english-logo-150.webp"; // ✅ my logo
+import logoDark from "../assets/images/logos/ny-english-logo-150 Dark.webp";
 interface Props {
-    variant?: 'header' | 'footer' | 'dark';
+    variant?: "header" | "footer" | "dark";
 }
 
-const { variant = 'header' } = Astro.props;
+const { variant = "header" } = Astro.props;
 
 // Determine the appropriate CSS class based on the variant
 const getLogoClass = () => {
-    switch(variant) {
-        case 'header':
-            return 'text-header-logo hover:text-primary';
-        case 'footer':
-            return 'text-footer-logo hover:text-primary';
-        case 'dark':
-            return 'text-body-base hover:text-primary';
+    switch (variant) {
+        case "header":
+            return "text-header-logo hover:text-primary";
+        case "footer":
+            return "text-footer-logo hover:text-primary";
+        case "dark":
+            return "text-body-base hover:text-primary";
         default:
-            return 'text-body-base hover:text-primary';
+            return "text-body-base hover:text-primary";
     }
 };
+
+// Choose the logo image based on variant
+const logoToUse = variant === "footer" || variant === "dark" ? logoDark : logo;
 ---
-<a href="/" class:list={[
-    'logo uppercase font-logo transition-colors duration-200 font-light',
-    getLogoClass()
-]}>
-    <Image src={logo} alt="Logo" class="hidden"/>
-    <span class="font-bold">Titan</span> Core
+
+<a
+    href="/"
+    class:list={[
+        "logo uppercase font-logo transition-colors duration-200 font-light",
+        getLogoClass(),
+    ]}
+>
+    <Image src={logoToUse} alt="NY English Logo" class="h-10 w-auto" />
+    <span class="sr-only">NY English</span>
+    {/* <span class="font-bold">Titan</span> Core */}
 </a>

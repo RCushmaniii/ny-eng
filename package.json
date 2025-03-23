@@ -9,9 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/sitemap": "^3.3.0",
     "aos": "^2.3.4",
-    "astro": "^5.2.5",
+    "astro": "^5.5.3",
     "lucide-astro": "^0.473.0"
   },
   "devDependencies": {

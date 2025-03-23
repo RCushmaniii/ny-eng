@@ -13,24 +13,24 @@ export const faqLists: Record<string, FaqList> = {
         id: 'main',
         faqs: [
             {
-                question: "Is Titan Core completely free to use?",
-                answer: "Yes, Titan Core is 100% free and open-source. You can use it for personal and commercial projects without any licensing fees."
+                question: "Who do you work with, and what do you help with?",
+                answer: "I work with C-level executives, business owners, and corporate teams who want to improve their English for career growth, confidence, and performance. Lessons often focus on real-world needs like board presentations, job interviews, client interactions, pitch decks, and more."
             },
             {
-                question: "How do I customize the color schemes?",
-                answer: "Titan Core comes with 10 pre-built color schemes that can be easily switched through the theme configuration file. For custom colors, you can modify the CSS variables in the `src/styles/global.css` file to match your brand identity."
+                question: "How do the classes work?",
+                answer: "All sessions are held 1-on-1 on Google Meet. Each class is designed for your specific goals — whether you're improving fluency, business writing, or communication for meetings and presentations."
             },
             {
-                question: "Do I need to know Astro JS to use this theme?",
-                answer: "Basic familiarity with Astro JS is helpful, but not required. The component-based architecture makes it easy to understand and modify even if you're new to Astro."
+                question: "Do you offer corporate training for teams?",
+                answer: "Yes, I absolutely offer coaching for teams and professionals inside companies. I also provide SAT-compliant invoicing for businesses and HR departments."
             },
             {
-                question: "Can I use Titan Core as a starting point for client projects?",
-                answer: "Absolutely! Titan Core is designed to be a foundation theme that you can build upon for client projects. Its clean architecture and minimal approach make it perfect as a starting point for customized websites."
+                question: "How fast will I improve?",
+                answer: "Many clients feel more confident after just a few lessons. Your progress depends on your goals and how often you practice, but I’ll help guide you step by step."
             },
             {
-                question: "How often is Titan Core updated?",
-                answer: "We aim to update Titan Core regularly to keep it compatible with the latest Astro JS releases and web standards. Major updates are released quarterly, with smaller fixes and improvements added more frequently. You can star our GitHub repository to stay informed about updates."
+                question: "What about scheduling and availability?",
+                answer: "I'm flexible — sessions are available Monday to Friday from 9:00 a.m. to 8:00 p.m., and on Saturdays from 9:00 a.m. to 2:00 p.m. Just contact me to find a time that works best for you."
             }
         ]
     }
