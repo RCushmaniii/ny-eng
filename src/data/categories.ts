@@ -5,6 +5,7 @@ interface Category {
 }
 
 export const categories: Category[] = [
+  // Existing categories
   {
     name: 'Tech',
     slug: 'tech',
@@ -40,7 +41,68 @@ export const categories: Category[] = [
     slug: 'seo',
     description: 'Search engine optimization strategies and best practices'
   },
-  
+
+  {
+    name: 'Business English',
+    slug: 'business-english',
+    description: 'Master practical English for professional environments'
+  },
+  {
+    "name": "Executive Coaching",
+    "slug": "executive-coaching",
+    "description": "Enhance leadership, communication, and strategic thinking in high-level professional settings"
+  },
+
+  {
+    name: 'Interview Prep',
+    slug: 'interview-prep',
+    description: 'Ace your next job interview with strategic English skills'
+  },
+  {
+    name: 'Executive Coaching',
+    slug: 'executive-coaching',
+    description: 'Communication coaching for executives and leaders'
+  },
+  {
+    name: 'Career Growth',
+    slug: 'career-growth',
+    description: 'Level up your career with targeted English communication strategies'
+  },
+  {
+    name: 'Fluency Tips',
+    slug: 'fluency-tips',
+    description: 'Boost your fluency with focused language practice'
+  },
+  {
+    name: 'Corporate Training',
+    slug: 'corporate-training',
+    description: 'English coaching and workshops for teams and companies'
+  },
+  {
+    name: 'Public Speaking',
+    slug: 'public-speaking',
+    description: 'Improve delivery and confidence for presentations and speeches'
+  },
+  {
+    name: 'English for IT',
+    slug: 'english-for-it',
+    description: 'Tech-specific English for developers, engineers, and IT pros'
+  },
+  {
+    name: 'English for Doctors',
+    slug: 'english-for-doctors',
+    description: 'Specialized English communication for medical professionals'
+  },
+  {
+    name: 'English for Lawyers',
+    slug: 'english-for-lawyers',
+    description: 'English skills tailored for legal professionals'
+  },
+  {
+    name: 'Productivity',
+    slug: 'productivity',
+    description: 'Tools, mindset, and language strategies to work smarter'
+  }
 ];
 
 // Helper function to get category by slug

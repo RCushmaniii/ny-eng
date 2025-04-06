@@ -170,14 +170,13 @@ const faqsSection = {
 };
 
 const recentPostsSection = {
-  eyebrow: "LATEST INSIGHTS",
-  title: " Learn From Our Experience",
+  eyebrow: "RECENT BLOG POSTS", // <-- Updated smoke title
+  title: "Insights for Business Professionals", // <-- Updated main title
   description:
-    "Explore our latest articles on Astro JS development, theme customization tips, and web performance best practices.",
+    "Practical tips on Business English, career growth, and effective communication.", // <-- Updated description
   button: {
-    text: "View All Posts",
-    link: "/blog",
-    variant: "primary" as const,
+    text: "See All Articles", // <-- Updated button text
+    link: "/blog", // Keep the link destination
   },
 };
 ---
@@ -192,8 +191,8 @@ const recentPostsSection = {
     background="base"
     padding="base"
     postsToShow={3}
-    category="Theme Usage"
   />
+
   <SplitPanel
     content={styleGuideSection}
     imagePosition="right"

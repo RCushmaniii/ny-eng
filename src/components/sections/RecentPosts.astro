@@ -1,10 +1,14 @@
 ---
-import { getCollection } from 'astro:content';
-import BlogPost from '@components/blog/BlogPost.astro';
-import Button from '@components/ui/Button.astro';
-import Eyebrow from '@components/ui/Eyebrow.astro';
-import { getPaddingClass, getBackgroundColor, getTextColor } from '@utils/styleUtils';
-import type { PaddingSize, ThemeColor } from '@utils/styleUtils';
+import { getCollection } from "astro:content";
+import BlogPost from "@components/blog/BlogPost.astro";
+import Button from "@components/ui/Button.astro";
+import Eyebrow from "@components/ui/Eyebrow.astro";
+import {
+    getPaddingClass,
+    getBackgroundColor,
+    getTextColor,
+} from "@utils/styleUtils";
+import type { PaddingSize, ThemeColor } from "@utils/styleUtils";
 
 export interface Props {
     content?: {
@@ -14,7 +18,7 @@ export interface Props {
         button?: {
             text: string;
             link: string;
-            variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark';
+            variant?: "primary" | "secondary" | "ghostLight" | "ghostDark";
         };
     };
     background?: ThemeColor;
@@ -27,70 +31,82 @@ export interface Props {
 
 const {
     content,
-    background = 'base',
+    background = "base",
+    padding,
+    paddingTop,
+    paddingBottom,
     postsToShow = 3,
     category,
 } = Astro.props;
 
-// Get background and text colors
 const bgColor = getBackgroundColor(background);
 const textColor = getTextColor(background);
-const paddingClass = getPaddingClass({ 
-    padding: Astro.props.padding,
-    paddingTop: Astro.props.paddingTop,
-    paddingBottom: Astro.props.paddingBottom 
-});
+const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
 
-
-// Fetch posts
-const allPosts = await getCollection('blog', ({ data }) => {
+const allPosts = await getCollection("blog", ({ data }) => {
     return import.meta.env.DEV || data.publish !== false;
 });
 
-// Filter and sort posts
-let filteredPosts = allPosts
-    .filter(post => !category || post.data.categories.includes(category))
+const filteredPosts = allPosts
+    .filter((post) => !category || post.data.categories?.includes(category))
     .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
     .slice(0, postsToShow);
 ---
 
 <section class:list={["relative", bgColor, paddingClass]}>
     <div class="site-container px-4">
-        {(content?.title || content?.description) && (
-            <div class="max-w-2xl mb-12">
-                {content?.eyebrow && (
-                    <Eyebrow 
-                        text={content.eyebrow} 
-                        background={background} 
-                    />
-                )}
-                {content?.title && (
-                    <h2 class:list={[textColor]} data-aos="fade-up">
-                        {content.title}
-                    </h2>
-                )}
-                {content?.description && (
-                    <p class:list={["mt-4", textColor, "opacity-90"]} data-aos="fade-up" data-aos-delay="100">
-                        {content.description}
-                    </p>
-                )}
-                {content?.button && (
-                    <div class="mt-8" data-aos="fade-up" data-aos-delay="200">
-                        <Button
-                            href={content.button.link}
-                            variant={content.button.variant || 'primary'}
-                        >
-                            {content.button.text}
-                        </Button>
-                    </div>
-                )}
-            </div>
-        )}
+        {
+            (content?.title || content?.description) && (
+                <div class="max-w-2xl mb-12">
+                    {content?.eyebrow && (
+                        <Eyebrow
+                            text={content.eyebrow}
+                            background={background}
+                        />
+                    )}
 
-        <div class="posts-grid">
-            {filteredPosts.map((post, index) => (
-                <div>
-                    <BlogPost 
+                    {content?.title && (
+                        <h2
+                            class:list={[textColor]}
+                            class="text-3xl font-bold"
+                            data-aos="fade-up"
+                        >
+                            {content.title}
+                        </h2>
+                    )}
+
+                    {content?.description && (
+                        <p
+                            class:list={["mt-4", textColor, "opacity-90"]}
+                            data-aos="fade-up"
+                            data-aos-delay="100"
+                        >
+                            {content.description}
+                        </p>
+                    )}
+
+                    {content?.button && (
+                        <div
+                            class="mt-8"
+                            data-aos="fade-up"
+                            data-aos-delay="200"
+                        >
+                            <Button
+                                href={content.button.link}
+                                variant={content.button.variant ?? "primary"}
+                            >
+                                {content.button.text}
+                            </Button>
+                        </div>
+                    )}
+                </div>
+            )
+        }
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {
+                filteredPosts.map((post, index) => (
+                    <BlogPost
                         title={post.data.title}
                         excerpt={post.data.excerpt}
                         featuredImage={post.data.featuredImage}
@@ -100,29 +116,14 @@ let filteredPosts = allPosts
                         slug={post.slug}
                         index={index}
                     />
-                </div>
-            ))}
+                ))
+            }
         </div>
 
-        {filteredPosts.length === 0 && (
-            <p class="text-center text-gray-500 py-8">
-                No posts found.
-            </p>
-        )}
+        {
+            filteredPosts.length === 0 && (
+                <p class="text-center text-gray-500 py-8">No posts found.</p>
+            )
+        }
     </div>
 </section>
-
-<style>
-    .posts-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .posts-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>
