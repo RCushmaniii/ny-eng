@@ -1,0 +1,110 @@
+---
+import type { ThemeColor, PaddingSize } from "@utils/styleUtils";
+import {
+    getBackgroundColor,
+    getTextColor,
+    getPaddingClass,
+} from "@utils/styleUtils";
+
+interface Stat {
+    title: string;
+    amount: string;
+}
+
+interface Props {
+    title?: string;
+    stats: Stat[];
+    background?: ThemeColor;
+    padding?: PaddingSize;
+    paddingTop?: PaddingSize;
+    paddingBottom?: PaddingSize;
+}
+
+const {
+    title = "Statistics",
+    stats = [],
+    background = "base",
+    padding,
+    paddingTop,
+    paddingBottom,
+} = Astro.props;
+
+const bgColor = getBackgroundColor(background);
+const textColor = getTextColor(background);
+const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
+---
+
+<section class:list={[paddingClass, bgColor]}>
+    <div class="site-container px-4">
+        {
+            title && (
+                <h2
+                    class:list={[
+                        "text-3xl font-bold text-center mb-8",
+                        textColor,
+                    ]}
+                >
+                    {title}
+                </h2>
+            )
+        }
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {
+                stats.map((stat) => (
+                    <div class="text-center">
+                        <div
+                            class:list={["text-4xl font-bold mb-2", textColor]}
+                        >
+                            {stat.amount}
+                        </div>
+                        <div class:list={["text-lg", textColor]}>
+                            {stat.title}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<script>
+    function animateStats() {
+        const stats = document.querySelectorAll(".stat-number");
+
+        stats.forEach((stat) => {
+            const target = parseInt(stat.getAttribute("data-target") || "0");
+            const prefix = stat.textContent?.match(/^[^0-9]*/)?.[0] || "";
+            const suffix = stat.textContent?.match(/[^0-9]*$/)?.[0] || "";
+            let current = 0;
+            const increment = target / 50; // Adjust for animation speed
+
+            const updateCounter = () => {
+                if (current < target) {
+                    current += increment;
+                    if (current > target) current = target;
+                    stat.textContent = `${prefix}${Math.floor(current)}${suffix}`;
+                    requestAnimationFrame(updateCounter);
+                }
+            };
+
+            updateCounter();
+        });
+    }
+
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                animateStats();
+                observer.disconnect(); // Only animate once
+            }
+        });
+    });
+
+    // Observe the stats section
+    const statsSection = document.querySelector(".stat-number");
+    if (statsSection) {
+        observer.observe(statsSection);
+    }
+</script>
+

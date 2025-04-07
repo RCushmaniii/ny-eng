@@ -10,9 +10,13 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.3.0",
+    "@iconify-json/tabler": "^1.2.17",
     "aos": "^2.3.4",
     "astro": "^5.5.3",
-    "lucide-astro": "^0.473.0"
+    "astro-icon": "^1.1.5",
+    "lucide-astro": "^0.473.0",
+    "tailwind-merge": "^3.1.0",
+    "unpic": "^4.1.2"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.5",

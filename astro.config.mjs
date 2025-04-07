@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
+import icon from "astro-icon";
+import path from 'path';
 
 import sitemap from '@astrojs/sitemap';
 
@@ -19,6 +21,11 @@ export default defineConfig({
     },
     optimizeDeps: {
       include: ['aos']
+    },
+    resolve: {
+      alias: {
+        '~': path.resolve('./src')
+      }
     }
   },
   markdown: {
@@ -39,6 +46,7 @@ export default defineConfig({
       filter: (page) => !page.includes('/404'), // Only exclude 404 page
       entryLimit: 10000, // Increase entry limit if you have many pages
     }),
+    icon(),
   ],
   image: {
     // Allow all remote patterns (https and http)
