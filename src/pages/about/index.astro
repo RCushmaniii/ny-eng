@@ -17,9 +17,22 @@ const metadata = {
     description:
         "With 20+ years of corporate leadership and 7 years of business English coaching, I help professionals and executives communicate with clarity and confidence.",
 };
+
+const FooterCta = {
+    eyebrow: "",
+    title: "Ready to Elevate Your Communication?",
+    description:
+        "Speak with the clarity and confidence your role demands—book a no-pressure introduction call today.",
+    hideCta: false,
+    button: {
+        text: "Book Your Introduction Call",
+        link: "/contact",
+        target: "_self",
+    },
+};
 ---
 
-<Layout {...metadata}>
+<Layout {...metadata} footerCta={FooterCta}>
     <section class="relative py-20 md:py-32 overflow-hidden">
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="grid md:grid-cols-12 grid-cols-1 items-start gap-12">
@@ -91,9 +104,23 @@ const metadata = {
                             </div>
 
                             <p class="text-xl text-primary font-semibold">
-                                Ready to make your English an asset—not a
-                                barrier? Let's get started.
+                                Ready to Elevate Your Communication?
                             </p>
+
+                            <p class="text-lg mt-4">
+                                Speak with the clarity and confidence your role
+                                demands—book a no-pressure introduction call
+                                today.
+                            </p>
+
+                            <div class="mt-6">
+                                <a
+                                    href="#contact"
+                                    class="inline-block bg-primary hover:bg-primary-dark text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-200"
+                                >
+                                    Book Your Introduction Call
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -531,20 +558,6 @@ const metadata = {
                                     long-term success in your professional role.
                                 </p>
                             </div>
-                        </div>
-
-                        {/* Call to Action */}
-                        <div class="mt-16 text-center md:text-left">
-                            <p class="text-xl font-medium mb-8">
-                                Let's start this journey together—your next
-                                level of communication awaits.
-                            </p>
-                            <a
-                                href="#contact"
-                                class="inline-block bg-primary hover:bg-primary-dark text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-200"
-                            >
-                                Book Your Introduction Call
-                            </a>
                         </div>
                     </div>
                 </div>
