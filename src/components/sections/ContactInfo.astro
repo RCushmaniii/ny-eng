@@ -42,30 +42,23 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
             <div>
                 <h2 class:list={[textColor]}>Contact Information</h2>
                 <p class:list={[textColor]}>
-                    Get help you with your questions and concerns.
-                </p>
-                <p class:list={[textColor]}>
-                    You can contact me via this form or by WhatsApp.
+                    Get in touch to discuss your communication goals. Reach me
+                    via this form or WhatsApp.
                 </p>
                 <div class:list={["flex flex-col gap-2 mt-4", textColor]}>
                     <div class:list={["flex items-center gap-2"]}>
-                        <Mail aria-hidden="true" />
-                        <a href={`mailto:${siteConfig.Socials.Email}`}
-                            >{siteConfig.Socials.Email}</a
-                        >
-                    </div>
-                    <div class:list={["flex items-center gap-2"]}>
                         <Phone aria-hidden="true" />
-                        <a href={`tel:${siteConfig.Socials.Phone}`}
-                            >{siteConfig.Socials.Phone}</a
+                        <a
+                            href="https://wa.me/523315590572"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
+                            WhatsApp: +52 33 1559 0572
+                        </a>
                     </div>
                     <div class:list={["flex items-center gap-2"]}>
                         <MapPin aria-hidden="true" />
-                        <a
-                            href={`https://maps.google.com/?q=${siteConfig.Socials.Location}`}
-                            >{siteConfig.Socials.Location}</a
-                        >
+                        <span>Guadalajara, Mexico</span>
                     </div>
                 </div>
             </div>
