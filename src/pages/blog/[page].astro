@@ -9,9 +9,7 @@ export async function getStaticPaths() {
     const allPosts = await getCollection('blog');
     
     // Filter posts
-    const filteredPosts = allPosts.filter(post => {
-        return import.meta.env.DEV || post.data.publish !== false;
-    });
+    const filteredPosts = allPosts.filter(post => post.data.publish === true);
 
     // Sort posts by date
     const sortedPosts = filteredPosts.sort((a, b) => 
