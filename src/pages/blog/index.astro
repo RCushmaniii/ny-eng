@@ -12,9 +12,11 @@ const currentPage = parseInt(Astro.url.searchParams.get('page') || '1');
 const allPosts = await getCollection('blog');
 
 // Then apply filters if needed
-const filteredPosts = allPosts.filter(post => {
-  return import.meta.env.DEV || post.data.publish !== false;
-});
+//const filteredPosts = allPosts.filter(post => {
+//  return import.meta.env.DEV || post.data.publish !== false;
+//});
+
+const filteredPosts = allPosts.filter(post => post.data.publish !== false);
 
 // Sort posts by date
 const sortedPosts = filteredPosts.sort((a, b) => 

@@ -3,7 +3,7 @@ title: "Building pages with Titan Core components"
 excerpt: "Learn how to build pages with Titan Core components"
 featuredImage: "./images/building-pages.jpg"
 publishDate: "2025-02-22"
-publish: true
+publish: false
 categories: ["Theme Usage"]
 
 seo:
