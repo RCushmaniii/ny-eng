@@ -3,7 +3,7 @@ title: "How to edit blog posts in Astro"
 excerpt: "Learn how to edit posts in Astro"
 featuredImage: "./images/edit-posts.jpg"
 publishDate: "2025-02-22"
-publish: true
+publish: false
 categories: ["Theme Usage"]
 
 seo:

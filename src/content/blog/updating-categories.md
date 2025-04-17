@@ -3,7 +3,7 @@ title: "How to add/remove categories"
 excerpt: "Learn how to add/remove categories"
 featuredImage: "./images/update-categories.jpg"
 publishDate: "2025-02-22"
-publish: true
+publish: false
 categories: ["Theme Usage"]
 
 seo:

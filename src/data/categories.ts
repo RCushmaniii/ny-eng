@@ -47,12 +47,7 @@ export const categories: Category[] = [
     slug: 'business-english',
     description: 'Master practical English for professional environments'
   },
-  {
-    "name": "Executive Coaching",
-    "slug": "executive-coaching",
-    "description": "Enhance leadership, communication, and strategic thinking in high-level professional settings"
-  },
-
+  
   {
     name: 'Interview Prep',
     slug: 'interview-prep',
@@ -61,7 +56,7 @@ export const categories: Category[] = [
   {
     name: 'Executive Coaching',
     slug: 'executive-coaching',
-    description: 'Communication coaching for executives and leaders'
+    description: 'Enhance leadership, communication, and strategic thinking'
   },
   {
     name: 'Career Growth',

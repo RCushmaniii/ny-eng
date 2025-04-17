@@ -3,7 +3,7 @@ title: "Why Page Speed is Critical for SEO Success"
 excerpt: "Discover how website performance directly impacts your search engine rankings and user experience"
 featuredImage: "./images/page-speed-seo.jpg"
 publishDate: "2025-03-05"
-publish: true
+publish: false
 categories: ["SEO", "Web Development"]
 
 seo:
