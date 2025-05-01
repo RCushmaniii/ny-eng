@@ -92,7 +92,7 @@ const textColor = getTextColor(background);
                         {/* You can make this intro text dynamic via another prop if needed */}
                         <strong>Here’s what you can expect:</strong>
                         <ul class="list-disc list-inside space-y-1"> {/* Add list styling classes */}
-                            {descriptionPoints.map((point) => (
+                            {descriptionPoints.map((point: string) => (
                                 <li>{point}</li> // Render each point as plain text within <li>
                             ))}
                         </ul>
