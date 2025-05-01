@@ -9,34 +9,62 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
     {
         content:
-            "The tools and structure this team built for us gave us full visibility into performance, timelines, and people. It’s elevated how our teams collaborate — not just internally, but with our suppliers too.",
+            "Before working with Robert, I felt hesitant leading conversations in English with international clients. His coaching helped me gain the fluency and precision I needed to confidently handle U.S.-based negotiations and cross-border legal matters. It’s been a key asset in growing my international practice.",
+        author: "Emmanuel Ibarra Castillo",
+        position: "Partner",
+        company: "Ramos, Ripoll & Schuster",
+        avatar: "src/assets/images/testimonials/emmanuel-testimonial.jpeg",
+    },
+    
+    {
+        content:
+        "With Robert’s support, I became more fluent and confident when speaking English. This has helped me care for international patients more effectively and communicate clearly during medical discussions and travel. I’ve noticed my English speaking patients feel more at ease and trust me more.",
+        author: "Dra. Erika Itzel",
+        position: "Medical Doctor",
+        company: "",
+        avatar: "src/assets/images/testimonials/erika-testimonial.jpg",
+    },
+    {
+        content:
+            "Robert’s coaching didn’t just improve my English—it boosted my confidence presenting to clients and investors. Our conversations on business, tech, and global topics expanded my real-world vocabulary and sharpened how I communicate. A true game changer!",
+        author: "Julio Aldana",
+        position: "COO",
+        company: "Smarttie",
+        avatar: "src/assets/images/testimonials/julio-testimonial.jpg",
+    },
+    
+    {
+        content:
+            "Being a founder means constantly pitching, persuading, and leading. Robert’s coaching gave me the language tools—and the confidence—to do it all in English. It’s made a real difference in pitching deals and connecting with my team",
+        author: "Hugo Blum",
+        position: "CEO",
+        company: "100 Ladrillos",
+        avatar: "src/assets/images/testimonials/hugo-testimonial.jpeg",
+    },
+    {
+        content:
+            "Coaching with Robert helped me become much more confident and natural when speaking English—especially with U.S. clients. I now feel more at ease in conversations and better prepared for networking opportunities and cross-border meetings.",
+        author: "Andres Guzman Rubio",
+        position: "COO – Mexico",
+        company: "Driscoll's",
+        avatar: "src/assets/images/testimonials/andres-testimonial.jpeg",
+    },
+    {
+        content:
+            "Robert’s coaching helped me elevate how I communicate with senior executives across North America. I’m more strategic and persuasive in interviews, presentations, and cross-border meetings—especially in high-stakes situations. His approach is practical, focused, and incredibly effective.",
+        author: "Andrea Oliveira",
+        position: "Director of Business Development",
+        company: "CEVA Logistics",
+        avatar: "src/assets/images/testimonials/andrea-testimonial.jpeg",
+    },
+    {
+        content:
+            "Working with Robert gave me a much stronger command of business English. I lead meetings more confidently, communicate more clearly with international partners, and get better results across the board. Internally, our communication is smoother—and our suppliers notice the difference.",
         author: "Alberto Escobar",
         position: "COO",
         company: "Terramar Brands",
-        avatar: "https://randomuser.me/api/portraits/men/44.jpg",
+        avatar: "src/assets/images/testimonials/alberto-testimonial.jpg",
     },
-    {
-        content:
-            "I’ve tested many productivity platforms, but this one actually delivered. Our consultants love the simplicity, and it’s made our entire onboarding process smoother and more scalable.",
-        author: "Coolio Gomez",
-        position: "CEO",
-        company: "Smarty",
-        avatar: "https://randomuser.me/api/portraits/men/62.jpg",
-    },
-    {
-        content:
-            "We were looking for an edge in speed, quality, and communication — and that’s exactly what we got. It has saved us countless hours while improving our response time with investors and partners.",
-        author: "Hugo Bloom",
-        position: "Founder",
-        company: "Bricks / 100 Ladrillos",
-        avatar: "https://randomuser.me/api/portraits/men/83.jpg",
-    },
-    {
-        content:
-            "The system's clarity and reliability have been a game-changer in our logistics and executive communication. Our Mexico operations have seen measurable improvements in accountability and outcomes.",
-        author: "Andres Guzman",
-        position: "COO - Mexico",
-        company: "Driscoll's",
-        avatar: "https://randomuser.me/api/portraits/men/55.jpg",
-    },
+ 
 ];
+

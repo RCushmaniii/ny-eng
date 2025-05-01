@@ -16,9 +16,23 @@ const heroContent = {
   description: "Important policies and terms governing the use of our services",
   overlayOpacity: 0.8
 };
+
+const footerCta = {
+  eyebrow: "",
+  title: "Transform Your Professional English Today",
+  description: "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
+  hideCta: false,
+  button: {
+    text: "Reserve My Free Consultation",
+    link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+    target: "_blank",
+    variant: "primary"
+  }
+};
+
 ---
 
-<Layout title="Legal Information">
+<Layout title="Legal Information" footerCta={footerCta} >
   <InnerHero content={heroContent} />
   
   <section class="py-small">

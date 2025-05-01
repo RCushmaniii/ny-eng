@@ -9,9 +9,21 @@ const metadata = {
     description:
         "Thank you for reaching out. I'll be in touch soon to schedule your introduction call and discuss your communication goals.",
 };
+const footerCta = {
+  eyebrow: "",
+  title: "Transform Your Professional English Today",
+  description: "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
+  hideCta: false,
+  button: {
+    text: "Reserve My Free Consultation",
+    link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+    target: "_blank",
+    variant: "primary"
+  }
+};
 ---
 
-<Layout title={metadata.title} description={metadata.description}>
+<Layout title={metadata.title} description={metadata.description} footerCta={footerCta}>
     <div class="relative">
         <div class="absolute inset-0 bg-black/40 z-10"></div>
         <Image

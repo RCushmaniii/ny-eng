@@ -4,9 +4,21 @@ import Button from '@components/ui/Button.astro';
 
 const seoTitle = "Page Not Found";
 const seoDescription = "The page you're looking for doesn't exist or has been moved.";
+const footerCta = {
+  eyebrow: "",
+  title: "Transform Your Professional English Today",
+  description: "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
+  hideCta: false,
+  button: {
+    text: "Reserve My Free Consultation",
+    link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+    target: "_blank",
+    variant: "primary"
+  }
+};
 ---
 
-<Layout title={seoTitle} description={seoDescription}>
+<Layout title={seoTitle} description={seoDescription} footerCta={footerCta}>
     <div class="w-full min-h-[80vh] flex items-center">
         <div class="site-container mx-auto px-4 py-base text-center">
             <div class="max-w-2xl mx-auto">

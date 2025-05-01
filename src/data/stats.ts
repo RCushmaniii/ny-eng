@@ -46,23 +46,23 @@ export const statsLists: Record<string, StatsList> = {
         id: 'withContent',
         stats: [
             {
-                value: 7,
-                label: 'Years Teaching Experience',
+                value: 8,
+                label: 'Years of Teaching Experience',
                 suffix: '+'
             },
             {
                 value: 15,
-                label: 'Years Corporate Consulting',
+                label: 'Years of Corporate Consulting',
                 suffix: '+'
             },
             {
                 value: 100,
-                label: 'Business Professionals Taught',
+                label: 'Professionals Coached',
                 suffix: '+'
             },
             {
                 value: 100,
-                label: 'Student Satisfaction Rate',
+                label: 'Student Satisfaction',
                 suffix: '%'
             }
         ]

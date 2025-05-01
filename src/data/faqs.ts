@@ -13,25 +13,38 @@ export const faqLists: Record<string, FaqList> = {
         id: 'main',
         faqs: [
             {
-                question: "Who do you work with, and what do you help with?",
-                answer: "I work with C-level executives, business owners, and corporate teams who want to improve their English for career growth, confidence, and performance. Lessons often focus on real-world needs like board presentations, job interviews, client interactions, pitch decks, and more."
+              question: "What levels and backgrounds do you teach?",
+              answer: "I work with intermediate and advanced learners—busy professionals in business, law, medicine, logistics, engineering, etc. I don’t teach absolute beginners."
             },
             {
-                question: "How do the classes work?",
-                answer: "All sessions are held 1-on-1 on Google Meet. Each class is designed for your specific goals — whether you're improving fluency, business writing, or communication for meetings and presentations."
+              question: "What do your lessons cover?",
+              answer: "Speaking English with confidence; work scenarios: meetings, presentations, client calls; pronunciation, phrasing, and professional tone; interview prep and general business communication."
             },
             {
-                question: "Do you offer corporate training for teams?",
-                answer: "Yes, I absolutely offer coaching for teams and professionals inside companies. I also provide SAT-compliant invoicing for businesses and HR departments."
+              question: "How do classes work?",
+              answer: "Private 60-minute sessions online via Google Meet; warm-up, targeted practice, on-the-spot feedback, and small talk; customized PDF notes delivered after each class."
             },
             {
-                question: "How fast will I improve?",
-                answer: "Many clients feel more confident after just a few lessons. Your progress depends on your goals and how often you practice, but I’ll help guide you step by step."
+              question: "How do I schedule or reschedule a lesson?",
+              answer: "Simply send me a message on WhatsApp, email me, or call directly. Please give at least 24 hours’ notice to avoid any fees."
             },
             {
-                question: "What about scheduling and availability?",
-                answer: "I'm flexible — sessions are available Monday to Friday from 9:00 a.m. to 8:00 p.m., and on Saturdays from 9:00 a.m. to 2:00 p.m. Just contact me to find a time that works best for you."
+              question: "How much does coaching cost?",
+              answer: "Students in Mexico: 500 MXN per hour; Students in the USA: 25 USD per hour."
+            },
+            {
+              question: "Do you offer training for senior leadership?",
+              answer: "Yes—I design custom workshops and private coaching sessions for senior leaders. Contact me for a proposal and pricing."
+            },
+            {
+              question: "How fast will I improve?",
+              answer: "Most students see clear progress within 3–5 sessions. Improvement depends on practice outside class, lesson frequency, self-discipline, and your personal goals."
+            },
+            {
+              question: "What is your cancellation and payment policy?",
+              answer: "I wait up to 15 minutes after the start time; after that the lesson is a no-show and the fee applies. Cancellations require 24 hours’ notice. Payment (individuals) is due before each session via Zelle or bank transfer. Monthly invoicing is available for companies."
             }
-        ]
+          ]
+          
     }
 };

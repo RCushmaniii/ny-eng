@@ -43,7 +43,8 @@ Here’s what clients across industries say about their experience working with 
 
 > ★★★★★  
 > “Our consultants love the simplicity, and it’s made our entire onboarding process smoother and more scalable.”  
-**Coolio Gomez**  
+**Status is reachable
+**Julio Aldana**  
 *CEO, Smarty*
 
 > ★★★★★  
@@ -62,8 +63,8 @@ Whether you're in logistics, tech, finance, or operations, English fluency can u
 
 ---
 
-## Ready to Elevate Your English?
+## Take Your English to the Executive Level
 
-Join a growing network of professionals who’ve upgraded their skills and career prospects through personalized coaching. With my proven methods and real-time feedback, you’ll improve faster and with purpose.
+Partner one-on-one with a seasoned Business English coach to refine your communication, command any boardroom, and drive results. With my proven methods and real-time feedback, you’ll improve faster and with purpose.
 
 Explore more: [Coaching Services](/services) | [Client Success Stories](/testimonials)

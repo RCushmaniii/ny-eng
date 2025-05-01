@@ -42,7 +42,7 @@ const textColor = getTextColor(background);
 const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
 ---
 
-<section id="testimonials" class:list={[bgColor, paddingClass]}>
+<section id="testimonials" class:list={[bgColor, paddingClass]} style="padding-bottom:0 !important;">
   <div class="site-container text-center px-4 sm:px-6 md:px-8">
     {eyebrow && <Eyebrow text={eyebrow} background={background} />}
 

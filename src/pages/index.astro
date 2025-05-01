@@ -20,18 +20,17 @@ import { testimonials } from "@data/testimonials";
 
 const testimonialsBlock = {
   eyebrow: "Real Results",
-  title: "What Our Clients Say About Coaching with Robert",
+  title: "Why Top-Level Professionals Choose Coaching with Robert",
   description:
-    "Professionals across industries—from logistics to tech—have gained confidence, fluency, and new opportunities by working with New York English.",
-  testimonials, // ✅ <-- This is the missing key
+    "Executives, entrepreneurs, and experts across industries trust New York English to elevate fluency, confidence, and global impact.",
+  testimonials, 
   cta: {
-    heading: "Ready to Elevate Your English?",
-    description:
-      "Join a growing community of business professionals who’ve improved their fluency and performance through personalized English coaching.",
-    text: "Book a Free Strategy Call",
-    link: "#contact",
-    variant: "primary",
-  },
+  heading: "Ready to Elevate Your English?",
+  description: "Master presentations, negotiations, and high-stakes discussions—so you lead every discussion with clarity and authority.",
+  text: "Book a Free Strategy Call",
+  link: "#contact",
+  variant: "primary" as const,
+}
 };
 
 const seoTitle = "Professional English Coaching for Business Success";
@@ -41,20 +40,19 @@ const seoDescription =
 const heroContent = {
   title: "Master Business English & Advance Your Career",
   description:
-    "Personalized English coaching designed to boost your confidence, fluency, and success in professional settings.",
+    "Tailored English coaching to build confidence, fluency, and professional impact.",
   buttons: [
     {
-      text: "Book a Free Consultation",
+      text: "Book Your Free Consultation",
       link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
-      target: "_blank",              
-      rel: "noopener noreferrer",    
-      variant: "primary",
+      target: "_blank",
+      variant: "primary" as const,
     },
     {
       text: "WhatsApp Me",
       link: "https://wa.me/523315590572",
       target: "_blank",
-      variant: "whatsapp",
+      variant: "whatsapp" as const,
     },
   ],
   backgroundImage: newHeroImage, // This assumes you've imported or defined `newHeroImage` elsewhere
@@ -62,49 +60,49 @@ const heroContent = {
 };
 
 const featuresSection = {
-  eyebrow: "WHAT WE OFFER",
+  eyebrow: "NY ENGLISH OFFERS",
   title: "Personalized English Coaching for Professionals",
   description:
-    "Whether you need to improve your fluency, ace an interview, or communicate more effectively in business meetings, we’ve got you covered.",
+    "Whether you need to improve your fluency, ace an interview, or communicate more effectively in business meetings, I’ll help you get there.",
   features: [
     {
       title: "1-on-1 Coaching",
-      description: "Tailored lessons to match your career goals.",
+      description: "Personalized lessons aligned with your role and the real-world challenges you face—so every session adds immediate value.",
       icon: GraduationCap,
     },
     {
       title: "Corporate Training",
-      description: "Workshops for teams and executives.",
+      description: "Individual coaching that equips your teams and executives with clear, persuasive English.",
       icon: Users,
     },
     {
       title: "Interview Preparation",
-      description: "Master your next job interview in English.",
+      description: "Mock interviews plus targeted feedback so you walk in fully prepared.",
       icon: Briefcase,
     },
     {
       title: "Business Presentations",
-      description: "Communicate your ideas with confidence.",
+      description: "Hands-on practice and structure templates to deliver with confidence.",
       icon: Presentation,
     },
   ],
-  button: {
-    text: "Explore Services",
-    link: "/services",
-    variant: "primary" as const,
-  },
+  // button: {
+  //   text: "Explore Services",
+  //   link: "/services",
+  //   variant: "primary" as const,
+  // },
 };
 
 const FooterCta = {
-  eyebrow: "Let’s Improve Your English",
-  title: "Start Your Learning Journey Today",
-  description:
-    "Book a free consultation and take the first step toward fluent, confident English communication.",
+  eyebrow: "",
+  title: "Transform Your Professional English Today",
+  description: "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
   hideCta: false,
   button: {
-    text: "Schedule a Free Consultation",
-    link: "/contact",
-    target: "_self",
+    text: "Reserve My Free Consultation",
+    link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+    target: "_blank",
+    variant: "primary"
   },
 };
 
@@ -113,7 +111,12 @@ const styleGuideSection = {
   headline: "Personalized & Goal-Oriented English Coaching",
   description:
     "I use a structured yet flexible approach tailored to your professional needs. Whether you're preparing for an interview, leading a meeting, or improving fluency, my coaching is designed for real-world success.",
-  image: {
+    descriptionPoints: [
+    "Have lessons built around your own job and goals",
+    "Get clear, on-the-spot feedback on pronunciation, phrasing and tone",
+    "Practice real tasks—presentations, client calls, reports—just like you do at work",
+  ],
+    image: {
     src: styleGuideImage,
     alt: "Professional English coaching session",
   },
@@ -128,15 +131,15 @@ const styleGuideSection = {
 
 const sideBySideStats = {
   eyebrow: "STATS",
-  title: "Build Real Confidence in Your Communication",
+  title: "Speak and Write English with Clarity, Confidence & Ease",
   description:
-    "I help professionals speak and write English with clarity, purpose, and ease. Whether you're preparing for interviews, presentations, or daily business conversations — you're covered.",
+    "I help professionals speak and write English with clarity, purpose, and confidence.Whether you’re preparing for interviews, presentations, or everyday business conversations, I’ll provide the support you need.",
   variant: "side-by-side" as const,
   stats: statsLists.withContent.stats,
   content: {
-    title: "Build Real Confidence in Your Communication",
+    title: "Speak and Write English with Clarity, Confidence & Ease",
     description:
-      "I help professionals speak and write English with clarity, purpose, and ease. Whether you're preparing for interviews, presentations, or daily business conversations — you're covered.",
+      "I help professionals speak and write English with clarity, purpose, and confidence.Whether you’re preparing for interviews, presentations, or everyday business conversations, I’ll provide the support you need.",
     button: {
       text: "Let's Work Together",
       link: "/contact",
@@ -154,7 +157,7 @@ const mainCta = {
     text: "View All Components",
     link: "/components",
     variant: "primary" as const,
-    target: "_self" as const,
+    target: "_self" as const
   },
 };
 
@@ -184,15 +187,18 @@ const recentPostsSection = {
 
 <Layout footerCta={FooterCta} title={seoTitle} description={seoDescription}>
   <Hero content={heroContent} />
-  <Features content={featuresSection} padding="base" background="light" />
-  <Testimonials content={testimonialsBlock} background="light" padding="base" />
+  <Features content={featuresSection} padding="small" background="light" />
+  <div class="mb-15 pb-0">
+  <Testimonials content={testimonialsBlock} background="base" padding="small" />
+</div>
 
+<div class="pt-10 border-t border-gray-200 dark:border-gray-700" style="padding-bottom: var(--spacing-small);">
   <RecentPosts
     content={recentPostsSection}
     background="base"
-    padding="base"
     postsToShow={3}
   />
+</div>
 
   <SplitPanel
     content={styleGuideSection}

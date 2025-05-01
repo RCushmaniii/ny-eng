@@ -90,13 +90,15 @@ Keep a simple log of these small victories in a notebook or a digital note. Shar
 
 Building lasting Business English confidence takes consistent effort, but you don’t have to do it alone. With targeted strategies and personalized guidance, you can make significant progress faster than you might think. Imagine feeling composed during presentations, leading meetings with authority, and networking with ease.
 
-Join a growing community of ambitious professionals like Alberto Escobar (COO, Terramar Brands) and Coolio Gomez (CEO, Smarty) who have transformed their communication skills and unlocked new career opportunities through tailored English coaching.
+Join a growing community of ambitious professionals like Alberto Escobar (COO, Terramar Brands) and Julio Aldana (CEO, Smarttie) who have transformed their communication skills and unlocked new career opportunities through tailored English coaching.
 
-**[Book a Free 30-Minute Consultation Today](your-booking-link-here)** to discuss your specific goals and discover how personalized coaching can create a clear roadmap for your success. Let's elevate your English—and your career—together.
+**[Book a Free 30-Minute Consultation Today](https://ny-english-teacher.odoo.com/book/7ceefa20)** to discuss your specific goals and discover how personalized coaching can create a clear roadmap for your success. Let's elevate your English—and your career—together.
 
 ---
 
-*(Optional: You can add links to other related posts here if desired)*
+Looking to build more confidence in professional communication? Check out our post: **[Master Business English](/blog/master-business-english)**.
+
+---
 
 ---
 
