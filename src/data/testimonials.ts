@@ -1,36 +1,29 @@
+import type { ImageMetadata } from 'astro';
+
 export interface Testimonial {
     content: string;
     author: string;
     position: string;
     company: string;
-    avatar: string;
+    avatar: ImageMetadata;
 }
 
+import emmanuelTestimonial from '../assets/images/testimonials/emmanuel-testimonial.jpeg';
+import erikaTestimonial from '../assets/images/testimonials/erika-testimonial.jpg';
+import julioTestimonial from '../assets/images/testimonials/julio-testimonial.jpg';
+import hugoTestimonial from '../assets/images/testimonials/hugo-testimonial.jpeg';
+import andresTestimonial from '../assets/images/testimonials/andres-testimonial.jpeg';
+import andreaTestimonial from '../assets/images/testimonials/andrea-testimonial.jpeg';
+import albertoTestimonial from '../assets/images/testimonials/alberto-testimonial.jpg';
+
 export const testimonials: Testimonial[] = [
-    {
-        content:
-            "Before working with Robert, I felt hesitant leading conversations in English with international clients. His coaching helped me gain the fluency and precision I needed to confidently handle U.S.-based negotiations and cross-border legal matters. It’s been a key asset in growing my international practice.",
-        author: "Emmanuel Ibarra Castillo",
-        position: "Partner",
-        company: "Ramos, Ripoll & Schuster",
-        avatar: "src/assets/images/testimonials/emmanuel-testimonial.jpeg",
-    },
-    
-    {
-        content:
-        "With Robert’s support, I became more fluent and confident when speaking English. This has helped me care for international patients more effectively and communicate clearly during medical discussions and travel. I’ve noticed my English speaking patients feel more at ease and trust me more.",
-        author: "Dra. Erika Itzel",
-        position: "Medical Doctor",
-        company: "",
-        avatar: "src/assets/images/testimonials/erika-testimonial.jpg",
-    },
     {
         content:
             "Robert’s coaching didn’t just improve my English—it boosted my confidence presenting to clients and investors. Our conversations on business, tech, and global topics expanded my real-world vocabulary and sharpened how I communicate. A true game changer!",
         author: "Julio Aldana",
         position: "COO",
         company: "Smarttie",
-        avatar: "src/assets/images/testimonials/julio-testimonial.jpg",
+        avatar: julioTestimonial,
     },
     
     {
@@ -39,7 +32,7 @@ export const testimonials: Testimonial[] = [
         author: "Hugo Blum",
         position: "CEO",
         company: "100 Ladrillos",
-        avatar: "src/assets/images/testimonials/hugo-testimonial.jpeg",
+        avatar: hugoTestimonial,
     },
     {
         content:
@@ -47,7 +40,7 @@ export const testimonials: Testimonial[] = [
         author: "Andres Guzman Rubio",
         position: "COO – Mexico",
         company: "Driscoll's",
-        avatar: "src/assets/images/testimonials/andres-testimonial.jpeg",
+        avatar: andresTestimonial,
     },
     {
         content:
@@ -55,16 +48,8 @@ export const testimonials: Testimonial[] = [
         author: "Andrea Oliveira",
         position: "Director of Business Development",
         company: "CEVA Logistics",
-        avatar: "src/assets/images/testimonials/andrea-testimonial.jpeg",
+        avatar: andreaTestimonial,
     },
-    {
-        content:
-            "Working with Robert gave me a much stronger command of business English. I lead meetings more confidently, communicate more clearly with international partners, and get better results across the board. Internally, our communication is smoother—and our suppliers notice the difference.",
-        author: "Alberto Escobar",
-        position: "COO",
-        company: "Terramar Brands",
-        avatar: "src/assets/images/testimonials/alberto-testimonial.jpg",
-    },
- 
+     
 ];
 

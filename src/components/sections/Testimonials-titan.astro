@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import type { Testimonial } from "@data/testimonials";
 import Button from "../ui/Button.astro";
 import Eyebrow from "../ui/Eyebrow.astro";
@@ -83,10 +84,12 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
             </blockquote>
 
             <div class="flex items-center">
-              <img
+              <Image
                 src={testimonial.avatar}
                 alt={testimonial.author}
                 class="w-12 h-12 rounded-full mr-4 object-cover"
+                width={48}
+                height={48}
                 loading="lazy"
               />
               <div>

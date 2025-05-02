@@ -1,63 +1,57 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
 import Button from "@components/ui/Button.astro";
-import { Image } from "astro:assets";
 import nycImage from "@assets/images/nyc-thank-you.jpg";
 
 const metadata = {
-    title: "Thank You | Robert Cushman - Business English Communication Coach",
-    description:
-        "Thank you for reaching out. I'll be in touch soon to schedule your introduction call and discuss your communication goals.",
+  title: "Thank You | Robert Cushman - Business English Communication Coach",
+  description:
+    "Thank you for your message. I’ll be in touch soon to schedule your introduction call and discuss your communication goals.",
 };
+
+const heroContent = {
+  title: "Thank You — I’ve Received Your Message!",
+  description: "I'll be in touch shortly to schedule your introduction call.",
+  backgroundImage: nycImage,
+  overlayOpacity: 0.4,
+};
+
 const footerCta = {
   eyebrow: "",
   title: "Transform Your Professional English Today",
-  description: "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
+  description:
+    "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
   hideCta: false,
   button: {
     text: "Reserve My Free Consultation",
     link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
     target: "_blank",
-    variant: "primary"
-  }
+    variant: "primary",
+  },
 };
 ---
 
 <Layout title={metadata.title} description={metadata.description} footerCta={footerCta}>
-    <div class="relative">
-        <div class="absolute inset-0 bg-black/40 z-10"></div>
-        <Image
-            src={nycImage}
-            alt="New York City skyline"
-            class="w-full h-[300px] md:h-[400px] object-cover"
-            width={1920}
-            height={400}
-            quality={80}
-            format="webp"
-        />
-        <div class="absolute inset-0 flex items-center justify-center z-20">
-            <h1 class="text-h2 font-bold text-white text-center px-4">
-                Thank You for Reaching Out!
-            </h1>
-        </div>
-    </div>
+  <InnerHero content={heroContent} />
 
-    <section class="py-16 md:py-24">
-        <div class="site-container px-4 text-center">
-            <p class="text-body-lg text-body-base/80 max-w-xl mx-auto mb-8">
-                I'll be in touch soon to schedule your introduction call and
-                discuss your communication goals.
-            </p>
-            <h2 class="text-h4 font-medium text-body-base mb-4">
-                What's Next?
-            </h2>
-            <p class="text-body-lg text-body-base/80 max-w-xl mx-auto mb-8">
-                While you wait, learn more about how I help professionals like
-                you achieve clarity and confidence in high-stakes settings.
-            </p>
-            <Button href="/#about" variant="primary">
-                Explore My Approach
-            </Button>
-        </div>
-    </section>
+  <section class="py-16 md:py-24">
+    <div class="site-container px-4 text-center max-w-2xl mx-auto">
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
+        We’ll discuss your goals and how I can help you communicate with clarity and confidence.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+        What’s Next?
+      </h2>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
+        In the meantime, explore how I help professionals like you lead with confidence in English — in meetings, pitches, interviews, and more.
+      </p>
+
+      <Button href="/#about" variant="primary">
+        Explore My Approach
+      </Button>
+    </div>
+  </section>
 </Layout>
