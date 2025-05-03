@@ -2,63 +2,82 @@
 import Button from '@components/ui/Button.astro';
 import { Image } from 'astro:assets';
 
-interface HeroContent {
-    title: string;
-    description: string;
-        buttons?: {
-        text: string;
-        link: string;
-        variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark' | 'whatsapp';
-        target?: string;
-    }[];
-    backgroundImage?: string | any; // Using any for now to handle both string paths and imported images
-    overlayOpacity?: number; // Value between 0 and 1
-}
+type HeroButton = {
+  text: string;
+  link: string;
+  variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark' | 'whatsapp';
+  target?: string;
+};
 
-interface Props {
-    content: HeroContent;
+
+interface HeroContent {
+  title: string;
+  description: string;
+  buttons?: {
+    text: string;
+    link: string;
+    variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark' | 'whatsapp';
+    target?: string;
+  }[];
+  /*  NEW  */
+  backgroundImage: any;         // desktop (imported via astro:assets)
+  backgroundImageMobile?: any;  // mobile portrait crop (optional)
+  overlayOpacity?: number;
 }
 
 const { content } = Astro.props;
-const opacity = content.overlayOpacity ?? 1; // Default opacity if not specified
+const opacity = content.overlayOpacity ?? 1;
 ---
 
 <section class="header-offset relative">
-    {content.backgroundImage && (
-        <div class="absolute inset-0 left-0 top-0 w-full h-full overflow-hidden">
-            <Image 
-                src={content.backgroundImage}
-                alt="Background image"
-                width={1920}
-                height={1080}
-                class="w-full h-full object-cover"
-                quality={70}
-                format="webp"
-                loading="eager"
-                decoding="async"
-            />
-            <div 
-                class="hero-background absolute inset-0 left-0 top-0 w-full h-full overflow-hidden" 
-                style={`opacity: ${opacity};`}
-            ></div>
-        </div>
-    )}
+  {content.backgroundImage && (
+    <picture class="absolute inset-0 w-full h-full overflow-hidden">
+      {content.backgroundImageMobile && (
+        /*  <source> fires on screens ≤768 px */
+        <source
+          srcset={content.backgroundImageMobile.src}
+          media="(max-width: 768px)"
+          type="image/webp"
+        />
+      )}
 
-    <div class="site-container mx-auto px-4 py-large relative z-10 flex flex-col md:items-center md:justify-center md:text-center">
-        <h1 class="text-white text-balance" data-aos="fade-up">{content.title}</h1>
-        <p class="text-white mt-2 text-balance" data-aos="fade-up" data-aos-delay="100">{content.description}</p>
-        {content.buttons && content.buttons.length > 0 && (
-            <div class="flex flex-wrap gap-4 mt-8" data-aos="fade-up">
-                {content.buttons.map((button) => (
-                    <Button
-                        href={button.link}
-                        target={button.target || '_self'}
-                        variant={button.variant || 'primary'}
-                    >
-                        {button.text}
-                    </Button>
-                ))}
-            </div>
-        )}
-    </div>
+      <!-- Desktop / fallback -->
+      <Image
+        src={content.backgroundImage}
+        alt="Background image"
+        width={1920}
+        height={1080}
+        sizes="(max-width: 768px) 100vw, 100vw"
+        quality={60}
+        format="webp"
+        loading="lazy"
+        decoding="async"
+        class="w-full h-full object-cover"
+      />
+    </picture>
+  )}
+
+  <!-- translucent colour wash -->
+  <div
+    class="hero-background absolute inset-0 w-full h-full"
+    style={`opacity:${opacity};`}
+  />
+
+  <!-- copy & CTA -->
+  <div class="site-container relative z-10 mx-auto px-4 py-large flex flex-col md:items-center md:justify-center md:text-center">
+    <h1 class="text-white text-balance" data-aos="fade-up">{content.title}</h1>
+    <p class="text-white mt-2 text-balance" data-aos="fade-up" data-aos-delay="100">
+      {content.description}
+    </p>
+
+    {content.buttons?.length && (
+      <div class="flex flex-wrap gap-4 mt-8" data-aos="fade-up">
+        {content.buttons.map((b: HeroButton) => (
+          <Button href={b.link} target={b.target ?? '_self'} variant={b.variant ?? 'primary'}>
+            {b.text}
+          </Button>
+        ))}
+      </div>
+    )}
+  </div>
 </section>
