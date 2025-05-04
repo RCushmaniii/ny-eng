@@ -1,6 +1,6 @@
 ---
+// Unchanged front-matter
 import Button from '@components/ui/Button.astro';
-import { Image } from 'astro:assets';
 
 type HeroButton = {
   text: string;
@@ -8,7 +8,6 @@ type HeroButton = {
   variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark' | 'whatsapp';
   target?: string;
 };
-
 
 interface HeroContent {
   title: string;
@@ -19,9 +18,8 @@ interface HeroContent {
     variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark' | 'whatsapp';
     target?: string;
   }[];
-  /*  NEW  */
-  backgroundImage: any;         // desktop (imported via astro:assets)
-  backgroundImageMobile?: any;  // mobile portrait crop (optional)
+  backgroundImage: any;
+  backgroundImageMobile?: any;
   overlayOpacity?: number;
 }
 
@@ -32,38 +30,38 @@ const opacity = content.overlayOpacity ?? 1;
 <section class="header-offset relative">
   {content.backgroundImage && (
     <picture class="absolute inset-0 w-full h-full overflow-hidden">
-      {content.backgroundImageMobile && (
-        /*  <source> fires on screens ≤768 px */
-        <source
-          srcset={content.backgroundImageMobile.src}
-          media="(max-width: 768px)"
-          type="image/webp"
-        />
-      )}
+  {content.backgroundImageMobile && (
+    <source
+      srcset={content.backgroundImageMobile.src}
+      media="(max-width: 768px)"
+      type="image/webp"
+    />
+  )}
+  <source
+    srcset={content.backgroundImage.src}
+    media="(min-width: 769px)"
+    type="image/webp"
+  />
+  <img
+    src={content.backgroundImageMobile?.src ?? content.backgroundImage.src} 
+    alt="Background image"
+    sizes="(max-width: 768px) 100vw, 100vw"
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+    class="w-full h-full object-cover"
+  />
+</picture>
 
-      <!-- Desktop / fallback -->
-      <Image
-        src={content.backgroundImage}
-        alt="Background image"
-        width={1920}
-        height={1080}
-        sizes="(max-width: 768px) 100vw, 100vw"
-        quality={60}
-        format="webp"
-        loading="lazy"
-        decoding="async"
-        class="w-full h-full object-cover"
-      />
-    </picture>
+
+
   )}
 
-  <!-- translucent colour wash -->
   <div
     class="hero-background absolute inset-0 w-full h-full"
     style={`opacity:${opacity};`}
   />
 
-  <!-- copy & CTA -->
   <div class="site-container relative z-10 mx-auto px-4 py-large flex flex-col md:items-center md:justify-center md:text-center">
     <h1 class="text-white text-balance" data-aos="fade-up">{content.title}</h1>
     <p class="text-white mt-2 text-balance" data-aos="fade-up" data-aos-delay="100">
