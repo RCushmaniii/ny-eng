@@ -25,9 +25,10 @@ interface Props {
 		};
 	};
 	canonicalUrl?: string;
+	backgroundImageMobile?: string;
 }
 
-const { title, description, image, footerCta, canonicalUrl } = Astro.props;
+const { title, description, image, footerCta, canonicalUrl, backgroundImageMobile } = Astro.props;
 
 const pageTitle = title ? `${title} ${Separator} ${SiteName}` : SiteName;
 const pageDescription = description || defaultDescription || "";
@@ -61,12 +62,16 @@ const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
 		/>
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link rel="canonical" href={fullCanonicalUrl} />
+{Astro.props.backgroundImageMobile && (
+  <link rel="preload" href={Astro.props.backgroundImageMobile} as="image" media="(max-width: 768px)" />
+)}
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 		<meta name="description" content={pageDescription} />
 		<meta name="robots" content="index, follow" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://ny-english-teacher.odoo.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Noto+Sans+KR:wght@100..900&display=swap"
 			rel="stylesheet"
