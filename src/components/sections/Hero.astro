@@ -30,31 +30,48 @@ const opacity = content.overlayOpacity ?? 1;
 <section class="header-offset relative">
   {content.backgroundImage && (
     <picture class="absolute inset-0 w-full h-full overflow-hidden">
-  {content.backgroundImageMobile && (
-    <source
-      srcset={content.backgroundImageMobile.src}
-      media="(max-width: 768px)"
-      type="image/webp"
-    />
-  )}
-  <source
-    srcset={content.backgroundImage.src}
-    media="(min-width: 769px)"
-    type="image/webp"
-  />
-  <img
-    src={content.backgroundImageMobile?.src ?? content.backgroundImage.src} 
-    alt="Background image"
-    sizes="(max-width: 768px) 100vw, 100vw"
-    loading="eager"
-    decoding="async"
-    fetchpriority="high"
-    class="w-full h-full object-cover"
-  />
-</picture>
+      {content.backgroundImageMobile && (
+        /*  <source> fires on screens ≤768 px */
+        <>
+          <source
+            srcset={content.backgroundImageMobile.src}
+            media="(max-width: 768px)"
+            type="image/webp"
+          />
+          {/* Mobile fallback for browsers that don't support <picture>/<source> */}
+          <Image
+            src={content.backgroundImageMobile}
+            alt="Background image"
+            width={800}
+            height={1000}
+            sizes="100vw"
+            quality={60}
+            format="webp"
+            decoding="async"
+            loading="eager"
+            fetchpriority="high"
+            class="w-full h-full object-cover md:hidden"
+            style="display: none;"
+            style:media="(max-width: 768px)"
+          />
+        </>
+      )}
 
-
-
+      {/* Desktop / fallback */}
+      <Image
+        src={content.backgroundImage}
+        alt="Background image"
+        width={1920}
+        height={1080}
+        sizes="100vw"
+        quality={60}
+        format="webp"
+        decoding="async"
+        loading="eager"
+        fetchpriority="high"
+        class="w-full h-full object-cover hidden md:block"
+      />
+    </picture>
   )}
 
   <div
