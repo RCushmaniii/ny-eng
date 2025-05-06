@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+/* Self-hosted Bruno Ace SC */
+@font-face {
+  font-family: 'Bruno Ace SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/bruno-ace-sc-v5-latin-regular.woff2') format('woff2');
+}
+
+/* Self-hosted Noto Sans KR */
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/noto-sans-kr-v36-latin-regular.woff2') format('woff2');
+}
+
+
 @theme {
 
     --color-primary: #3557c1;
