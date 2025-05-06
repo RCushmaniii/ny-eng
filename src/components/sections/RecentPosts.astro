@@ -67,9 +67,7 @@ const filteredPosts = allPosts
 
                     {content?.title && (
                         <h2
-                            class:list={[textColor]}
-                            class="text-3xl font-bold"
-                            data-aos="fade-up"
+                            class={`fade-in-up ${textColor} text-3xl font-bold`}
                         >
                             {content.title}
                         </h2>
@@ -77,9 +75,7 @@ const filteredPosts = allPosts
 
                     {content?.description && (
                         <p
-                            class:list={["mt-4", textColor, "opacity-90"]}
-                            data-aos="fade-up"
-                            data-aos-delay="100"
+                            class={`fade-in-up delay-1 mt-4 ${textColor} opacity-90`}
                         >
                             {content.description}
                         </p>
@@ -87,9 +83,7 @@ const filteredPosts = allPosts
 
                     {content?.button && (
                         <div
-                            class="mt-8"
-                            data-aos="fade-up"
-                            data-aos-delay="200"
+                            class="fade-in-up delay-2 mt-8"
                         >
                             <Button
                                 href={content.button.link}

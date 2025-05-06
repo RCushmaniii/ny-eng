@@ -49,7 +49,7 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
 
     {
       title && (
-        <h2 class:list={[textColor, "text-h2 mb-4"]} data-aos="fade-up">
+        <h2 class={`fade-in-up ${textColor} text-h2 mb-4`}>
           {title}
         </h2>
       )
@@ -58,12 +58,7 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
     {
       description && (
         <p
-          class:list={[
-            textColor,
-            "text-base opacity-90 mb-12 max-w-2xl mx-auto",
-          ]}
-          data-aos="fade-up"
-          data-aos-delay="100"
+          class={`fade-in-up delay-1 ${textColor} text-base opacity-90 mb-12 max-w-2xl mx-auto`}
         >
           {description}
         </p>
@@ -74,8 +69,7 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
       {
         testimonials.map((testimonial, index) => (
           <div
-            class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-secondary-200 dark:bg-secondary-900 dark:border-secondary-800 text-left"
-            style={`animation-delay: ${index * 150}ms`}
+            class={`fade-in-up${index > 0 ? ` delay-${(index % 3) + 1}` : ''} bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-secondary-200 dark:bg-secondary-900 dark:border-secondary-800 text-left`}
           >
             <div class="mb-4 text-yellow-500 text-xl">★★★★★</div>
 

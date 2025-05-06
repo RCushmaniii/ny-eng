@@ -54,17 +54,17 @@ const paddingClass = getPaddingClass({
                     />
                 )}
                 {title && (
-                    <h2 class:list={[textColor]} data-aos="fade-up">
+                    <h2 class={`fade-in-up ${textColor}`}>
                         {title}
                     </h2>
                 )}
                 {description && (
-                    <p class:list={["mt-4", textColor, "opacity-90"]} data-aos="fade-up" data-aos-delay="100">
+                    <p class={`fade-in-up delay-1 mt-4 ${textColor} opacity-90`}>
                         {description}
                     </p>
                 )}
                 {button && (
-                    <div class="mt-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="fade-in-up delay-2 mt-8">
                         <Button
                             href={button.link}
                             variant={button.variant || 'primary'}
@@ -79,13 +79,7 @@ const paddingClass = getPaddingClass({
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-auto-fit gap-8 auto-rows-fr">
             {features.map((feature, index) => (
                 <div 
-                    class:list={[
-                        "p-6 rounded-lg border border-black",
-                        background === 'dark' ? 'bg-background-base/10' : 'bg-background/90',
-                        "flex flex-col"
-                    ]}
-                    data-aos="fade-up"
-                    data-aos-delay={index * 100}
+                    class={`fade-in-up${index > 0 ? ` delay-${(index % 3) + 1}` : ''} p-6 rounded-lg border border-black ${background === 'dark' ? 'bg-background-base/10' : 'bg-background/90'} flex flex-col`}
                 >
                     <div class:list={[
                         "w-12 h-12 flex items-center justify-center rounded-lg mb-4",

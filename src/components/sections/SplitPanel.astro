@@ -80,15 +80,15 @@ const textColor = getTextColor(background);
                         background={background}
                     />
                 )}
-                <h2 class={textColor} data-aos="fade-up">{headline}</h2>
-                {subheadline && <h3 class:list={["mt-4 text-h5", textColor]} data-aos="fade-up">{subheadline}</h3>}
+                <h2 class={`fade-in-up ${textColor}`}>{headline}</h2>
+                {subheadline && <h3 class={`fade-in-up delay-1 mt-4 text-h5 ${textColor}`}>{subheadline}</h3>}
 
                 {/* --- CHANGE 3: Keep original description rendering --- */}
-                {description && <p class:list={["mt-6 text-base opacity-90", textColor]} data-aos="fade-up">{description}</p>}
+                {description && <p class={`fade-in-up delay-2 mt-6 text-base opacity-90 ${textColor}`}>{description}</p>}
 
                 {/* --- CHANGE 4: Add block to render descriptionPoints --- */}
                 {descriptionPoints && descriptionPoints.length > 0 && (
-                    <div class:list={["mt-4 space-y-2", textColor]} data-aos="fade-up"> {/* Apply text color and animation */}
+                    <div class={`fade-in-up delay-3 mt-4 space-y-2 ${textColor}`}> {/* Apply text color and animation */}
                         {/* You can make this intro text dynamic via another prop if needed */}
                         <strong>Here’s what you can expect:</strong>
                         <ul class="list-disc list-inside space-y-1"> {/* Add list styling classes */}

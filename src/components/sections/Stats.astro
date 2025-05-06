@@ -57,15 +57,13 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
                         <Eyebrow text={eyebrow} background={background} />
                     )}
                     {title && (
-                        <h2 class:list={[textColor]} data-aos="fade-up">
+                        <h2 class={`fade-in-up ${textColor}`}>
                             {title}
                         </h2>
                     )}
                     {description && (
                         <p
-                            class:list={["mt-4", textColor, "opacity-90"]}
-                            data-aos="fade-up"
-                            data-aos-delay="100"
+                            class={`fade-in-up delay-1 mt-4 ${textColor} opacity-90`}
                         >
                             {description}
                         </p>
