@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import { Image } from "astro:assets";
+import Button from "../../components/ui/Button.astro";
 import meImage from "@assets/images/about/me-blue-shirt.jpg";
 import ceoImage from "@assets/images/about/ceo-taking-class.jpg";
 import {
@@ -11,6 +12,7 @@ import {
     CheckCircle,
     LineChart,
 } from "lucide-astro";
+import { testimonials } from "@data/testimonials-about";
 
 const metadata = {
     title: "About Me | Robert Cushman - Business English Communication Coach",
@@ -107,12 +109,15 @@ const FooterCta = {
                             </p>
 
                             <div class="mt-6">
-                                <a
-                                    href="#contact"
-                                    class="inline-block bg-primary hover:bg-primary-dark text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-200"
-                                >
-                                    Book Your Introduction Call
-                                </a>
+                                <Button
+    href="https://ny-english-teacher.odoo.com/book/7ceefa20"
+    target="_blank"
+    variant="primary"
+    size="lg"
+    class="inline-block"
+>
+    Book Your Free Session
+</Button>
                             </div>
                         </div>
                     </div>
@@ -241,146 +246,63 @@ const FooterCta = {
     </section>
 
     {/* Testimonials Section */}
-    <section class="relative py-16 md:py-24 bg-gray-50 dark:bg-gray-800/50">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <p class="text-primary font-semibold mb-4">
-                    Real Impact: Success Stories from My Clients
-                </p>
-                <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">
-                    Results That Speak for Themselves
-                </h2>
-                <p class="text-lg text-gray-600 dark:text-gray-300">
-                    I've coached COOs, CEOs, and founders to communicate with
-                    clarity and confidence, driving career-defining wins—from
-                    streamlining global operations to securing investor funding.
-                    Here's what they say:
-                </p>
-            </div>
+    <section class="relative pt-16 pb-8 md:pt-24 md:pb-12 bg-gray-50 dark:bg-gray-800/50">
 
-            <div class="grid md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
-                {/* Testimonial 1 */}
-                <div
-                    class="bg-white dark:bg-gray-700/50 rounded-xl p-8 shadow-lg"
-                >
-                    <div class="flex text-yellow-400 mb-6">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                            ></path>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                            ></path>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                            ></path>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                            ></path>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                            ></path>
-                        </svg>
-                    </div>
-                    <blockquote class="mb-8">
-                        <p
-                            class="text-lg text-gray-600 dark:text-gray-300 italic mb-6"
-                        >
-                            "After my promotion to COO, Robert's coaching gave
-                            me the confidence and clarity to lead global
-                            operations meetings effectively in my new role."
-                        </p>
-                        <footer class="flex items-center">
-                            <div>
-                                <cite
-                                    class="font-heading text-lg font-semibold not-italic block"
-                                >
-                                    Andres Guzman
-                                </cite>
-                                <span
-                                    class="text-sm text-gray-500 dark:text-gray-400"
-                                >
-                                    COO, Driscoll's Mexico
-                                </span>
-                            </div>
-                        </footer>
-                    </blockquote>
-                </div>
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <p class="text-primary font-semibold mb-4">
+        Real Impact: Success Stories from My Clients
+      </p>
+      <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">
+        Results That Speak for Themselves
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+        I've coached COOs, CEOs, and founders to communicate with clarity and confidence, driving career-defining wins—from streamlining global operations to securing investor funding.
+      </p>
+      <p class="fade-in-up delay-1 text-body opacity-90 mb-12 max-w-2xl mx-auto">
+        Here’s what they say:
+      </p>
+    </div>
 
-                {/* Testimonial 2 */}
-                <div
-                    class="bg-white dark:bg-gray-700/50 rounded-xl p-8 shadow-lg"
-                >
-                    <div class="flex text-yellow-400 mb-6">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                            ></path>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                            ></path>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                            ></path>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                            ></path>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                            ></path>
-                        </svg>
-                    </div>
-                    <blockquote class="mb-8">
-                        <p
-                            class="text-lg text-gray-600 dark:text-gray-300 italic mb-6"
-                        >
-                            "Before Robert, I struggled to pitch to
-                            English-speaking VCs. His coaching made me a
-                            powerhouse in my second language—I secured funding
-                            for my startup in just months."
-                        </p>
-                        <footer class="flex items-center">
-                            <div>
-                                <cite
-                                    class="font-heading text-lg font-semibold not-italic block"
-                                >
-                                    Julio Aldana
-                                </cite>
-                                <span
-                                    class="text-sm text-gray-500 dark:text-gray-400"
-                                >
-                                    Founder, LUMI
-                                </span>
-                            </div>
-                        </footer>
-                    </blockquote>
-                </div>
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+      {/** Dynamically render testimonial cards from testimonials-about.ts */}
+      {testimonials.map((t, idx) => (
+        <div class="bg-white dark:bg-gray-700/50 rounded-xl p-8 shadow-lg fade-in-up delay-{idx+1}">
+          <div class="flex items-center mb-6">
+            <img src={t.avatar.src} alt={t.author} class="w-14 h-14 rounded-full object-cover mr-4 border-2 border-primary" loading="lazy" />
+            <div>
+              <div class="font-heading text-lg font-semibold">{t.author}</div>
+              <div class="text-sm text-gray-500 dark:text-gray-400">{t.position}, {t.company}</div>
             </div>
+          </div>
+          <blockquote class="mb-2">
+            <p class="text-lg text-gray-600 dark:text-gray-300 italic">“{t.content}”</p>
+          </blockquote>
         </div>
-    </section>
+      ))}
+    </div>
+
+    {/* CTA banner below the grid, with margin and centering */}
+    <div class="mt-16 bg-gradient-to-r from-primary to-gray-100 dark:from-primary dark:to-gray-800 rounded-2xl p-8 md:p-12 text-center">
+      <h3 class="text-2xl font-bold text-white mb-4">Ready to Elevate Your English?</h3>
+      <p class="text-white mb-6">Book your free strategy session to gain the clarity, confidence, and impact your role demands.</p>
+      <Button
+        href="https://ny-english-teacher.odoo.com/book/7ceefa20"
+        variant="primary"
+        size="lg"
+      >
+        Book Your Free Session
+      </Button>
+    </div>
+  </div>
+</section>
 
     {/* How I Work Section */}
-    <section class="relative py-16 md:py-24 bg-white dark:bg-gray-900">
+    <section class="relative py-16 md:py-8 bg-white dark:bg-gray-900">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-12 gap-8 md:gap-12">
                 {/* Left Column - Static */}
-                <div class="md:col-span-5 md:sticky md:top-24 md:self-start">
+                <div class="md:col-span-5 md:sticky md:top-16 md:self-start">
                     <div
                         class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 md:p-12"
                     >

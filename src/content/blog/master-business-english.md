@@ -58,8 +58,8 @@ Here’s what clients across industries say about their experience working with 
 
 Whether you're in logistics, tech, finance, or operations, English fluency can unlock promotions, client trust, and leadership credibility. I’m here to help you get there.
 
-👉 **Book a Free Strategy Call** to talk about your goals and how coaching can help you reach them.  
-👉 Or **[WhatsApp Me](https://wa.me/your-number)** directly to get started today.
+👉 <a href="https://ny-english-teacher.odoo.com/book/7ceefa20" target="_blank" rel="noopener noreferrer"><strong>Book Your Free Consultation</strong></a> to talk about your goals and how coaching can help you reach them.  
+👉 Or <a href="https://wa.link/pk4f97" target="_blank" rel="noopener noreferrer"><strong>WhatsApp Me</strong></a> directly to get started today.
 
 ---
 
