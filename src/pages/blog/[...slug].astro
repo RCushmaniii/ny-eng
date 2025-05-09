@@ -4,6 +4,7 @@ import Layout from '@layouts/Layout.astro';
 import CategoryPill from '@components/ui/CategoryPill.astro';
 import Date from '@components/ui/Date.astro';
 import { Image } from 'astro:assets';
+import BlogPost from '@components/blog/BlogPost.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -17,6 +18,18 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+
+// Previous/Next navigation logic
+const allPosts = (await getCollection('blog'))
+  .filter(p => p.data.publish !== false)
+  .sort((a, b) => globalThis.Date.parse(b.data.publishDate) - globalThis.Date.parse(a.data.publishDate));
+const currentSlug = Astro.params.slug;
+const index = allPosts.findIndex(p => p.slug === currentSlug);
+const previousPost = allPosts[index + 1] ?? null; // Older (chronologically next)
+const nextPost = allPosts[index - 1] ?? null;     // Newer (chronologically previous)
+
+// Only show if both posts exist, and always render exactly two (no placeholders)
+const navPosts = previousPost && nextPost ? [previousPost, nextPost] : [];
 
 // Use SEO data from frontmatter if available, fallback to regular post data
 const seoTitle = post.data.seo?.title || post.data.title;
@@ -91,5 +104,65 @@ else if (!seoImage && post.data.featuredImage) {
     <div class="mt-8">
       <Content />
     </div>
+    <!-- Previous / Next Navigation -->
+    {(previousPost || nextPost) && (
+      <section class="mt-16 flex flex-col items-center md:flex-row md:justify-between gap-6 mx-auto max-w-3xl">
+        {previousPost && (
+          <a
+            href={`/blog/${previousPost.slug}`}
+            rel="prev"
+            class="group relative flex-1 max-w-xs border border-black rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full"
+          >
+            {/* Arrow + Label Header */}
+            <div class="flex items-center justify-between h-12 px-4 border-b">
+              <span class="text-2xl text-gray-400 transition-colors duration-200 group-hover:text-primary">&#8592;</span>
+              <span class="font-medium text-xs text-gray-700">Prev</span>
+            </div>
+            {/* Image with aspect ratio */}
+            {previousPost.data.featuredImage && (
+              <div class="aspect-video w-full bg-gray-100">
+                <img src={previousPost.data.featuredImage.src || previousPost.data.featuredImage} alt={previousPost.data.title} class="object-cover w-full h-full" />
+              </div>
+            )}
+            {/* Card Body */}
+            <div class="flex-grow px-4 py-6 flex flex-col">
+              <div class="font-semibold text-base mb-1 line-clamp-2">{previousPost.data.title}</div>
+              <div class="text-xs text-gray-500 mb-2">
+                <Date date={previousPost.data.publishDate} />
+              </div>
+              <div class="text-sm text-gray-700 line-clamp-3">{previousPost.data.excerpt}</div>
+            </div>
+          </a>
+        )}
+        {nextPost && (
+          <a
+            href={`/blog/${nextPost.slug}`}
+            rel="next"
+            class="group relative flex-1 max-w-xs border border-black rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full"
+          >
+            {/* Arrow + Label Header */}
+            <div class="flex items-center justify-between h-12 px-4 border-b">
+              <span class="font-medium text-xs text-gray-700">Next</span>
+              <span class="text-2xl text-gray-400 transition-colors duration-200 group-hover:text-primary">&#8594;</span>
+            </div>
+            {/* Image with aspect ratio */}
+            {nextPost.data.featuredImage && (
+              <div class="aspect-video w-full bg-gray-100">
+                <img src={nextPost.data.featuredImage.src || nextPost.data.featuredImage} alt={nextPost.data.title} class="object-cover w-full h-full" />
+              </div>
+            )}
+            {/* Card Body */}
+            <div class="flex-grow px-4 py-6 flex flex-col text-right">
+              <div class="font-semibold text-base mb-1 line-clamp-2">{nextPost.data.title}</div>
+              <div class="text-xs text-gray-500 mb-2">
+                <Date date={nextPost.data.publishDate} />
+              </div>
+              <div class="text-sm text-gray-700 line-clamp-3">{nextPost.data.excerpt}</div>
+            </div>
+          </a>
+        )}
+      </section>
+    )}
+
   </article>
 </Layout>
