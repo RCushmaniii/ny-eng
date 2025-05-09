@@ -6,8 +6,8 @@ categories: [
   'Business English',   
   'Career Growth',     
 ]
-featuredImage: "./images/business-english-confidence.jpg" # Placeholder path - update with actual image filename
-publish: true
+featuredImage: "./images/business-english-confidence.jpg"
+publish: false
 
 seo:
   title: "Boost Business English Confidence: 5 Practical Tips for Professionals" # SEO-friendly title
@@ -98,7 +98,6 @@ Join a growing community of ambitious professionals like Alberto Escobar (COO, T
 
 Looking to build more confidence in professional communication? Check out our post: **[Master Business English](/blog/master-business-english)**.
 
----
 
 ---
 
