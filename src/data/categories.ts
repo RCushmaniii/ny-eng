@@ -64,6 +64,21 @@ export const categories: Category[] = [
     description: 'Level up your career with targeted English communication strategies'
   },
   {
+    name: 'Communication Skills',
+    slug: 'communication-skills',
+    description: 'Sharpen your speaking, listening, and overall communication for professional success'
+  },
+  {
+    name: 'Presentation & Public Speaking',
+    slug: 'presentation-public-speaking',
+    description: 'Master public speaking and presentations with confidence and clarity'
+  },
+  {
+    name: 'Grammar & Vocabulary',
+    slug: 'grammar-vocabulary',
+    description: 'Improve your grammar and expand your vocabulary for effective communication'
+  },
+  {
     name: 'Fluency Tips',
     slug: 'fluency-tips',
     description: 'Boost your fluency with focused language practice'
