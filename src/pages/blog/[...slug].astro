@@ -22,7 +22,7 @@ const { Content } = await post.render();
 // Previous/Next navigation logic
 const allPosts = (await getCollection('blog'))
   .filter(p => p.data.publish !== false)
-  .sort((a, b) => globalThis.Date.parse(b.data.publishDate) - globalThis.Date.parse(a.data.publishDate));
+  .sort((a, b) => globalThis.Date.parse(String(b.data.publishDate)) - globalThis.Date.parse(String(a.data.publishDate)));
 const currentSlug = Astro.params.slug;
 const index = allPosts.findIndex(p => p.slug === currentSlug);
 const previousPost = allPosts[index + 1] ?? null; // Older (chronologically next)
@@ -50,6 +50,14 @@ else if (!seoImage && post.data.featuredImage) {
   const siteUrl = import.meta.env.SITE || 'https://titan-core.vercel.app';
   seoImage = new URL(post.data.featuredImage.src, siteUrl).toString();
 }
+
+// Share Bar logic
+const origin = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
+const base = origin.endsWith('/') ? origin.slice(0, -1) : origin;
+const postSlug = Astro.params.slug;
+const postUrl = `${base}/blog/${postSlug}`;
+const postTitle = post.data.title;
+
 ---
 
 <Layout 
@@ -104,6 +112,36 @@ else if (!seoImage && post.data.featuredImage) {
     <div class="mt-8">
       <Content />
     </div>
+    {postUrl && postTitle && (
+      <>
+        <section class="share-bar mt-12 mb-8 flex flex-wrap items-center gap-4 text-sm justify-center mx-auto max-w-3xl">
+          <span class="font-medium">Share this post:</span>
+          <a href={"https://api.whatsapp.com/send?text=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">WhatsApp</a>
+          <a href={"https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Facebook</a>
+          <a href={"https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">LinkedIn</a>
+          <a href={"https://twitter.com/intent/tweet?url=" + encodeURIComponent(postUrl) + "&text=" + encodeURIComponent(postTitle)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Twitter</a>
+          <button id="copy-link-btn" type="button" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Copy Link</button>
+          <span id="copy-link-msg" class="ml-2 text-green-600 font-semibold" style="display:none;">Copied!</span>
+        </section>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            // Copy Link
+            const btn = document.getElementById('copy-link-btn');
+            const msg = document.getElementById('copy-link-msg');
+            if (btn) {
+              btn.addEventListener('click', function() {
+                navigator.clipboard.writeText(window.location.href).then(function() {
+                  if (msg) {
+                    msg.style.display = 'inline';
+                    setTimeout(() => { msg.style.display = 'none'; }, 1500);
+                  }
+                });
+              });
+            }
+          });
+        </script>
+      </>
+    )}
     <!-- Previous / Next Navigation -->
     {(previousPost || nextPost) && (
       <section class="mt-16 flex flex-col items-center md:flex-row md:justify-between gap-6 mx-auto max-w-3xl">
@@ -121,7 +159,7 @@ else if (!seoImage && post.data.featuredImage) {
             {/* Image with aspect ratio */}
             {previousPost.data.featuredImage && (
               <div class="aspect-video w-full bg-gray-100">
-                <img src={previousPost.data.featuredImage.src || previousPost.data.featuredImage} alt={previousPost.data.title} class="object-cover w-full h-full" />
+                <img src={previousPost.data.featuredImage.src} alt={previousPost.data.title} class="object-cover w-full h-full" />
               </div>
             )}
             {/* Card Body */}
@@ -148,7 +186,7 @@ else if (!seoImage && post.data.featuredImage) {
             {/* Image with aspect ratio */}
             {nextPost.data.featuredImage && (
               <div class="aspect-video w-full bg-gray-100">
-                <img src={nextPost.data.featuredImage.src || nextPost.data.featuredImage} alt={nextPost.data.title} class="object-cover w-full h-full" />
+                <img src={nextPost.data.featuredImage.src} alt={nextPost.data.title} class="object-cover w-full h-full" />
               </div>
             )}
             {/* Card Body */}
@@ -165,4 +203,9 @@ else if (!seoImage && post.data.featuredImage) {
     )}
 
   </article>
+
+
+</section>
+)}
+
 </Layout>
