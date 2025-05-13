@@ -1,0 +1,102 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import SplitPanel from '../../components/sections/SplitPanel.astro';
+import Features from '../../components/sections/Features.astro';
+import Stats from '../../components/sections/Stats.astro';
+import { featureLists } from '../../data/features';
+import { statsLists } from '../../data/stats';
+import Logos from '../../components/sections/Logos.astro';
+import { logoLists } from '../../data/logos';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import Faqs from '../../components/sections/Faqs.astro';
+import { faqLists } from '../../data/faqs';
+import RecentPosts from '../../components/sections/RecentPosts.astro';
+import newHeroImage from "@assets/images/home/new-york-city-skyline.webp";
+import newHeroImageMobile from "@assets/images/home/new-york-city-skyline-mob.webp";
+import styleGuideImage from "@assets/images/home/developer.jpg";
+
+const seoTitle = "Tema Astro Moderno y de Alto Rendimiento";
+const seoDescription = "Un tema Astro moderno y de alto rendimiento para portafolios de desarrolladores y sitios de documentación.";
+
+const heroContent = {
+  title: "Domina el Inglés de Negocios y Avanza en tu Carrera",
+  description:
+    "Coaching de inglés personalizado para desarrollar confianza, fluidez e impacto profesional.",
+  buttons: [
+    {
+      text: "Reserva tu Consulta Gratis",
+      link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+      target: "_blank"
+    },
+    {
+      text: "Contáctame por WhatsApp",
+      link: "https://wa.link/pk4f97",
+      target: "_blank"
+    },
+  ],
+  backgroundImage: newHeroImage,
+  backgroundImageMobile: newHeroImageMobile,
+  overlayOpacity: 0.3,
+};
+
+const featuresSection = {
+    eyebrow: "CARACTERÍSTICAS PRINCIPALES",
+    title: "Todo lo que necesitas, nada que no",
+    description: "Titan Core te da una base sólida con funciones esenciales, manteniéndose ligero y personalizable. Comienza con una base limpia y construye exactamente lo que necesitas, sin excesos.",
+    features: featureLists.main.features, // TODO: translate feature names in data if needed
+    button: {
+        text: "Ver Información del Tema",
+        link: "/theme-info"
+    }
+};
+
+const FooterCta = {
+    eyebrow: "Únete a la Comunidad",
+    title: 'Comienza a Construir con Titan Core Hoy',
+    description: 'Titan Core es open-source y está en constante mejora. Únete a nuestra comunidad de desarrolladores para contribuir, obtener soporte o mostrar lo que has construido.',
+    hideCta: false,
+    button: {
+        text: 'Descargar Titan Core',
+        link: 'https://github.com/rspisarski/titan-core'
+    }
+};
+
+const recentPostsSection = {
+    eyebrow: "ÚLTIMOS ARTÍCULOS",
+    title: "Aprende de Nuestra Experiencia",
+    description: "Explora nuestros artículos más recientes sobre desarrollo con Astro JS, consejos de personalización de temas y mejores prácticas de rendimiento web.",
+    button: {
+        text: "Ver Todos los Artículos",
+        link: "/blog/",
+        variant: "secondary"
+    }
+};
+
+---
+<Layout title={seoTitle} description={seoDescription}>
+  <Hero content={heroContent} />
+  <SplitPanel content={{
+  eyebrow: 'PARA DESARROLLADORES',
+  headline: 'Construye Más Rápido, Lanza Antes',
+  subheadline: 'Experiencia de Desarrollador en el Centro',
+  description: 'Titan Core está diseñado para iteración rápida y facilidad de uso. Con una base de código limpia, modular y documentación extensa, pasarás menos tiempo configurando y más tiempo construyendo.',
+  image: {
+    src: styleGuideImage,
+    alt: 'Desarrollador trabajando en un proyecto Astro JS',
+  },
+  buttons: [
+    {
+      text: 'Ver Documentación',
+      link: '/docs',
+    }
+  ]
+}} />
+  <Features content={featuresSection} />
+  <Stats content={{ stats: statsLists.main.stats }} />
+  <Logos content={{ logos: logoLists.main.logos }} />
+  <CtaBanner content={{ title: '¿Listo para empezar a construir?' }} />
+  <Faqs content={{ faqs: faqLists.main.faqs }} />
+  <RecentPosts content={recentPostsSection} />
+  <CtaBanner content={FooterCta} />
+</Layout>

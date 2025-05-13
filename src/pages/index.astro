@@ -1,5 +1,8 @@
 ---
+
 import Layout from "@layouts/Layout.astro";
+
+
 import Hero from "@components/sections/Hero.astro";
 import SplitPanel from "@components/sections/SplitPanel.astro";
 import Features from "@components/sections/Features.astro";
@@ -188,6 +191,41 @@ const recentPostsSection = {
   },
 };
 ---
+
+<script is:inline>
+(function() {
+  try {
+    var path = window.location.pathname;
+    var stored = localStorage.getItem('siteLang');
+    var setByUser = localStorage.getItem('siteLangSetByUser');
+    console.log('[LANG-REDIRECT] Path:', path, 'Stored lang:', stored, 'SetByUser:', setByUser);
+    if (setByUser === 'true') {
+      console.log('[LANG-REDIRECT] User manually set language, skipping redirect.');
+      return;
+    }
+    if (path.startsWith('/en') || path.startsWith('/es')) {
+      console.log('[LANG-REDIRECT] Already on a language path, skipping redirect.');
+      return;
+    }
+    if (stored === 'es') {
+      console.log('[LANG-REDIRECT] Redirecting to /es/');
+      window.location.replace('/es/');
+      return;
+    } else if (stored === 'en') {
+      console.log('[LANG-REDIRECT] Redirecting to /en/');
+      window.location.replace('/en/');
+      return;
+    }
+    var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    console.log('[LANG-REDIRECT] Browser language:', lang);
+    if (lang && lang.startsWith('es')) {
+      window.location.replace('/es/');
+    } else {
+      window.location.replace('/en/');
+    }
+  } catch(e) { console.error('[LANG-REDIRECT] Error:', e); }
+})();
+</script>
 
 <Layout
   footerCta={FooterCta}
