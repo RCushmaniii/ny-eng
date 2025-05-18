@@ -1,8 +1,4 @@
-import { defineConfig } from 'astro-icon';
+import defineConfig from 'astro-icon';
 
 
-export default defineConfig({
-    collections: {
-        tabler: () => import('@iconify-json/tabler/icons.json'),
-    },
-}); 
+export default defineConfig({});

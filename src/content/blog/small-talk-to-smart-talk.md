@@ -4,6 +4,7 @@ excerpt: "Break the ice and build rapport anywhere with these field‑tested con
 publishDate: "2025-05-08"
 categories: ["Communication Skills"]
 featuredImage: "./images/small-talk-professionals.jpg"
+imageAlt: "Professionals having small talk in a business setting"
 publish: true
 
 seo:

@@ -1,7 +1,8 @@
 ---
 title: "How to add/remove categories"
 excerpt: "Learn how to add/remove categories"
-featuredImage: "./images/update-categories.jpg"
+image: "./images/update-categories.jpg"
+imageAlt: "Updating blog categories in Astro"
 publishDate: "2025-02-22"
 publish: false
 categories: ["Theme Usage"]

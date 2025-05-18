@@ -7,7 +7,8 @@ categories: [
   'Career Growth',     
 ]
 featuredImage: "./images/business-english-confidence.jpg"
-publish: false
+imageAlt: "Business English coaching session"
+publish: true
 
 seo:
   title: "Boost Business English Confidence: 5 Practical Tips for Professionals" # SEO-friendly title

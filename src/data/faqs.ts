@@ -9,6 +9,43 @@ export interface FaqList {
 }
 
 export const faqLists: Record<string, FaqList> = {
+  main_es: {
+    id: 'main_es',
+    faqs: [
+      {
+        question: "¿Qué niveles y perfiles atiendes?",
+        answer: "Trabajo con estudiantes de nivel intermedio y avanzado: profesionales ocupados en negocios, derecho, medicina, logística, ingeniería, etc. No enseño a principiantes absolutos."
+      },
+      {
+        question: "¿Qué cubren tus clases?",
+        answer: "Hablar inglés con confianza; escenarios laborales: reuniones, presentaciones, llamadas con clientes; pronunciación, frases y tono profesional; preparación para entrevistas y comunicación empresarial general."
+      },
+      {
+        question: "¿Cómo funcionan las clases?",
+        answer: "Sesiones privadas de 60 minutos en línea por Google Meet; calentamiento, práctica dirigida, retroalimentación inmediata y small talk; notas PDF personalizadas después de cada clase."
+      },
+      {
+        question: "¿Cómo agendo o reprogramo una clase?",
+        answer: "Solo mándame un mensaje por WhatsApp, escríbeme un correo o llama directamente. Por favor avisa con al menos 24 horas de anticipación para evitar cargos."
+      },
+      {
+        question: "¿Cuánto cuesta el coaching?",
+        answer: "Alumnos en México: 500 MXN por hora; Alumnos en USA: 25 USD por hora."
+      },
+      {
+        question: "¿Ofreces capacitación para líderes senior?",
+        answer: "Sí, diseño talleres personalizados y sesiones privadas para altos directivos. Contáctame para una propuesta y precios."
+      },
+      {
+        question: "¿Qué tan rápido veré resultados?",
+        answer: "La mayoría ve progreso claro en 3–5 sesiones. La mejora depende de la práctica fuera de clase, frecuencia de las lecciones, disciplina y tus objetivos personales."
+      },
+      {
+        question: "¿Cuál es tu política de cancelación y pago?",
+        answer: "Espero hasta 15 minutos después de la hora de inicio; después de eso, se considera inasistencia y aplica el cobro. Las cancelaciones requieren 24 horas de aviso. El pago (individual) es antes de cada sesión vía transferencia o Zelle. Para empresas, se puede facturar mensualmente."
+      }
+    ]
+  },
     main: {
         id: 'main',
         faqs: [

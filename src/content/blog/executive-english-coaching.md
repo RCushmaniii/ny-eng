@@ -6,7 +6,8 @@ categories: [
   'Business English', 
   'Executive Coaching'
 ]
-featuredImage: "./images/executive-english-coaching.jpg" # Placeholder path - update later
+featuredImage: "./images/executive-english-coaching.jpg"
+imageAlt: "Executive English coaching session"
 publish: true
 
 seo:

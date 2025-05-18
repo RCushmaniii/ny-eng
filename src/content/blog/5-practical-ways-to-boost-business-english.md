@@ -7,6 +7,7 @@ categories: [
   'Career Growth',     
 ]
 featuredImage: "./images/business-english-confidence.jpg"
+imageAlt: "Business English coaching session"
 publish: true
 
 seo:

@@ -8,6 +8,7 @@ categories: [
   'Executive Coaching'
 ]
 featuredImage: "./images/business-english-coaching.jpg"
+imageAlt: "Business English coaching session"
 publish: true
 
 seo:

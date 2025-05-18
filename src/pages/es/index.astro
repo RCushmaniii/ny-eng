@@ -1,23 +1,66 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Hero from '../../components/sections/Hero.astro';
-import SplitPanel from '../../components/sections/SplitPanel.astro';
-import Features from '../../components/sections/Features.astro';
-import Stats from '../../components/sections/Stats.astro';
-import { featureLists } from '../../data/features';
-import { statsLists } from '../../data/stats';
-import Logos from '../../components/sections/Logos.astro';
-import { logoLists } from '../../data/logos';
-import CtaBanner from '../../components/sections/CtaBanner.astro';
-import Faqs from '../../components/sections/Faqs.astro';
-import { faqLists } from '../../data/faqs';
-import RecentPosts from '../../components/sections/RecentPosts.astro';
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/sections/Hero.astro";
+import SplitPanel from "@components/sections/SplitPanel.astro";
+import Features from "@components/sections/Features.astro";
+import Stats from "@components/sections/Stats.astro";
+import { featureLists } from "@data/features";
+import { statsLists } from "@data/stats";
+import Logos from "@components/sections/Logos.astro";
+import { logoLists } from "@data/logos";
+import CtaBanner from "@components/sections/CtaBanner.astro";
+import Faqs from "@components/sections/Faqs.astro";
+import { faqLists } from "@data/faqs";
+import RecentPosts from "@components/sections/RecentPosts.astro";
 import newHeroImage from "@assets/images/home/new-york-city-skyline.webp";
 import newHeroImageMobile from "@assets/images/home/new-york-city-skyline-mob.webp";
 import styleGuideImage from "@assets/images/home/developer.jpg";
+import { GraduationCap, Briefcase, Presentation, Users } from "lucide-astro";
+import { testimonials } from "@data/testimonials";
 
-const seoTitle = "Tema Astro Moderno y de Alto Rendimiento";
-const seoDescription = "Un tema Astro moderno y de alto rendimiento para portafolios de desarrolladores y sitios de documentación.";
+const testimonialsBlock = {
+  eyebrow: "Resultados reales",
+  title: "Por qué los profesionales de alto nivel eligen el coaching con Robert",
+  description: "Ejecutivos, emprendedores y expertos de diversas industrias confían en New York English para elevar su fluidez, confianza e impacto global.",
+  testimonials, // Asegúrate de que los testimonios estén en español en @data/testimonials
+  cta: {
+    heading: "¿Listo para llevar tu inglés al siguiente nivel?",
+    description: "Domina presentaciones, negociaciones y discusiones importantes para liderar cada conversación con claridad y autoridad.",
+    text: "Reserva una sesión gratuita",
+    link: "https://ny-english-teacher.odoo.com/book/7ceefa20"
+  }
+} as const;
+
+const styleGuideSection = {
+  eyebrow: "Mi enfoque de enseñanza",
+  headline: "Coaching de inglés personalizado y orientado a objetivos",
+  description: "Utilizo un enfoque estructurado pero flexible, adaptado a tus necesidades profesionales. Ya sea que estés preparando una entrevista, liderando una reunión o mejorando tu fluidez, mi coaching está diseñado para el éxito en el mundo real.",
+  descriptionPoints: [
+    "Lecciones basadas en tu trabajo y objetivos",
+    "Retroalimentación clara y directa sobre pronunciación, frases y tono",
+    "Práctica de tareas reales: presentaciones, llamadas con clientes, informes, como en tu trabajo"
+  ],
+  image: {
+    src: styleGuideImage,
+    alt: "Sesión de coaching de inglés profesional"
+  },
+  buttons: [
+    {
+      text: "Saber más",
+      link: "/metodologia",
+      variant: "primary"
+    }
+  ]
+} as const;
+
+const sideBySideStats = {
+  eyebrow: "ESTADÍSTICAS",
+  title: "Habla y escribe inglés con claridad, confianza y facilidad",
+  description: "Ayudo a profesionales a hablar y escribir inglés con claridad, propósito y confianza. Ya sea que te prepares para entrevistas, presentaciones o conversaciones de negocios diarias, te brindaré el apoyo que necesitas.",
+} as const;
+
+const seoTitle = "Coaching de Inglés Profesional para el Éxito Empresarial";
+const seoDescription = "Mejora tu fluidez y confianza en inglés con coaching personalizado para profesionales y empresas.";
 
 const heroContent = {
   title: "Domina el Inglés de Negocios y Avanza en tu Carrera",
@@ -27,76 +70,123 @@ const heroContent = {
     {
       text: "Reserva tu Consulta Gratis",
       link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
-      target: "_blank"
+      target: "_blank",
+      variant: "primary"
     },
     {
       text: "Contáctame por WhatsApp",
       link: "https://wa.link/pk4f97",
-      target: "_blank"
+      target: "_blank",
+      variant: "whatsapp"
     },
   ],
   backgroundImage: newHeroImage,
   backgroundImageMobile: newHeroImageMobile,
   overlayOpacity: 0.3,
-};
+} as const;
 
 const featuresSection = {
-    eyebrow: "CARACTERÍSTICAS PRINCIPALES",
-    title: "Todo lo que necesitas, nada que no",
-    description: "Titan Core te da una base sólida con funciones esenciales, manteniéndose ligero y personalizable. Comienza con una base limpia y construye exactamente lo que necesitas, sin excesos.",
-    features: featureLists.main.features, // TODO: translate feature names in data if needed
-    button: {
-        text: "Ver Información del Tema",
-        link: "/theme-info"
-    }
-};
+  eyebrow: "CARACTERÍSTICAS PRINCIPALES",
+  title: "Todo lo que necesitas, nada que no",
+  description: "Titan Core te da una base sólida con funciones esenciales, manteniéndose ligero y personalizable. Comienza con una base limpia y construye exactamente lo que necesitas, sin excesos.",
+  features: [
+  {
+    title: "Coaching personalizado 1-a-1",
+    description: "Lecciones personalizadas alineadas con tu rol y los desafíos reales que enfrentas—cada sesión aporta valor inmediato.",
+    icon: GraduationCap,
+  },
+  {
+    title: "Capacitación corporativa",
+    description: "Coaching individual que equipa a tus equipos y ejecutivos con un inglés claro y persuasivo.",
+    icon: Users,
+  },
+  {
+    title: "Preparación para entrevistas",
+    description: "Simulacros de entrevistas y retroalimentación específica para que llegues completamente preparado/a.",
+    icon: Briefcase,
+  },
+  {
+    title: "Presentaciones de negocios",
+    description: "Práctica guiada y plantillas de estructura para presentar con confianza.",
+    icon: Presentation,
+  },
+],
+  button: {
+    text: "Ver Información del Tema",
+    link: "/theme-info",
+    variant: "primary"
+  }
+} as const;
 
 const FooterCta = {
-    eyebrow: "Únete a la Comunidad",
-    title: 'Comienza a Construir con Titan Core Hoy',
-    description: 'Titan Core es open-source y está en constante mejora. Únete a nuestra comunidad de desarrolladores para contribuir, obtener soporte o mostrar lo que has construido.',
-    hideCta: false,
-    button: {
-        text: 'Descargar Titan Core',
-        link: 'https://github.com/rspisarski/titan-core'
-    }
-};
+  eyebrow: "",
+  title: "Transforma tu inglés profesional hoy",
+  description: "Reserva tu consulta gratuita para obtener la claridad, confianza e impacto que tu rol exige.",
+  hideCta: false,
+  button: {
+    text: "Reservar mi consulta gratuita",
+    link: "https://ny-english-teacher.odoo.com/book/7ceefa20"
+  }
+} as const;
 
 const recentPostsSection = {
-    eyebrow: "ÚLTIMOS ARTÍCULOS",
-    title: "Aprende de Nuestra Experiencia",
-    description: "Explora nuestros artículos más recientes sobre desarrollo con Astro JS, consejos de personalización de temas y mejores prácticas de rendimiento web.",
-    button: {
-        text: "Ver Todos los Artículos",
-        link: "/blog/",
-        variant: "secondary"
-    }
-};
+  eyebrow: "ÚLTIMOS ARTÍCULOS",
+  title: "Aprende de Nuestra Experiencia",
+  description: "Explora nuestros artículos más recientes sobre desarrollo con Astro JS, consejos de personalización de temas y mejores prácticas de rendimiento web.",
+  button: {
+    text: "Ver Todos los Artículos",
+    link: "/es/blog/",
+    variant: "secondary"
+  }
+} as const;
 
 ---
 <Layout title={seoTitle} description={seoDescription}>
   <Hero content={heroContent} />
-  <SplitPanel content={{
-  eyebrow: 'PARA DESARROLLADORES',
-  headline: 'Construye Más Rápido, Lanza Antes',
-  subheadline: 'Experiencia de Desarrollador en el Centro',
-  description: 'Titan Core está diseñado para iteración rápida y facilidad de uso. Con una base de código limpia, modular y documentación extensa, pasarás menos tiempo configurando y más tiempo construyendo.',
-  image: {
-    src: styleGuideImage,
-    alt: 'Desarrollador trabajando en un proyecto Astro JS',
-  },
-  buttons: [
-    {
-      text: 'Ver Documentación',
-      link: '/docs',
-    }
-  ]
-}} />
+  <SplitPanel
+    content={{
+      eyebrow: "PARA DESARROLLADORES",
+      headline: "Construye Más Rápido, Lanza Antes",
+      subheadline: "Experiencia de Desarrollador en el Centro",
+      description:
+        "Titan Core está diseñado para iteración rápida y facilidad de uso. Con una base de código limpia, modular y documentación extensa, pasarás menos tiempo configurando y más tiempo construyendo.",
+      image: {
+        src: styleGuideImage,
+        alt: "Desarrollador trabajando en un proyecto Astro JS",
+      },
+      buttons: [
+        {
+          text: "Ver Documentación",
+          link: "/docs",
+          variant: "primary"
+        }
+      ]
+    } as const}
+  />
   <Features content={featuresSection} />
-  <Stats content={{ stats: statsLists.main.stats }} />
-  <Logos content={{ logos: logoLists.main.logos }} />
-  <CtaBanner content={{ title: '¿Listo para empezar a construir?' }} />
-  <Faqs content={{ faqs: faqLists.main.faqs }} />
-  <RecentPosts content={recentPostsSection} />
+  <Stats content={{
+  ...sideBySideStats,
+  stats: statsLists.withContent.stats,
+  content: {
+    title: sideBySideStats.title,
+    description: sideBySideStats.description,
+    button: {
+      text: "Trabajemos juntos",
+      link: "/contacto",
+      variant: "primary"
+    }
+  }
+} as const} />
+  <CtaBanner content={{ title: "¿Listo para empezar a construir?" } as const} variant="contained" background="light" paddingBottom="base" />
+  <Faqs content={{ faqs: faqLists.main_es.faqs } as const} background="base" padding="base" />
+  <RecentPosts
+    content={{
+      ...recentPostsSection,
+      button: {
+        ...recentPostsSection.button,
+        variant: "primary"
+      }
+    } as const}
+  />
   <CtaBanner content={FooterCta} />
 </Layout>

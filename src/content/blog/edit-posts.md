@@ -1,7 +1,7 @@
 ---
 title: "How to edit blog posts in Astro"
 excerpt: "Learn how to edit posts in Astro"
-featuredImage: "./images/edit-posts.jpg"
+image: "./images/edit-posts.jpg"
 publishDate: "2025-02-22"
 publish: false
 categories: ["Theme Usage"]
@@ -29,7 +29,7 @@ The frontmatter is the metadata section at the top of your markdown file, contai
 ```javascript
 title: "How to edit blog posts in Astro"
 excerpt: "Learn how to edit posts in Astro"
-featuredImage: "./images/edit-posts.jpg"
+image: "./images/edit-posts.jpg"
 publishDate: "2024-03-10"
 publish: true
 categories: ["Theme Usage"]

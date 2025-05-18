@@ -8,7 +8,8 @@ import { Image } from 'astro:assets';
 interface Props {
   title: string;
   excerpt: string;
-  featuredImage: any; // Changed to accept ImageMetadata from content collections
+  featuredImage?: any; // Astro image object
+  imageAlt: string;
   publishDate: Date;
   categories: string[];
   content: string;
@@ -16,12 +17,13 @@ interface Props {
   index: number;
 }
 
-const { title, excerpt, featuredImage, publishDate, categories: postCategories, slug, index } = Astro.props;
+const { title, excerpt, featuredImage, imageAlt, publishDate, categories: postCategories, slug, index } = Astro.props;
 
 // Validate categories against the valid categories
 const validCategories = postCategories.filter((categoryName: string) => 
   categories.some(category => category.name === categoryName)
 );
+
 ---
 
 <a 
@@ -31,10 +33,10 @@ const validCategories = postCategories.filter((categoryName: string) =>
   data-aos-delay={index * 100}
 >
   <div class="relative aspect-[16/9] overflow-hidden border-black border-b group-hover:border-primary transition-colors duration-300">
-    {featuredImage && (
+    {featuredImage && typeof featuredImage === 'object' && (
       <Image 
         src={featuredImage}
-        alt={title}
+        alt={imageAlt || title}
         width={600}
         height={338}
         class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"

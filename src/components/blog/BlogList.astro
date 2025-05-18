@@ -11,12 +11,9 @@ interface Props {
 
 const { posts, currentCategory } = Astro.props;
 
-// Get all posts to determine active categories
-const allPosts = await getCollection('blog', ({ data }) => data.publish === true);
-
-// Filter to only show categories that have posts
+// Filter to only show categories that have posts in the current filtered list
 const activeCategories = categories.filter(category => 
-  allPosts.some(post => post.data.categories?.includes(category.name))
+  posts.some(post => post.data.categories?.includes(category.name))
 );
 ---
 <section class="site-container mx-auto px-4 py-small">
@@ -51,7 +48,7 @@ const activeCategories = categories.filter(category =>
       </div>
     </div>
     <p class="text-small text-body-base text-left sm:text-right whitespace-nowrap">
-      Showing <span class="font-bold text-primary">{posts.length}</span> of <span class="font-bold text-primary">{allPosts.length}</span> posts
+      Showing <span class="font-bold text-primary">{posts.length}</span> posts
     </p>
   </div>
   
@@ -61,7 +58,8 @@ const activeCategories = categories.filter(category =>
         <BlogPost 
           title={post.data.title}
           excerpt={post.data.excerpt}
-          featuredImage={post.data.featuredImage || ''}
+          featuredImage={post.data.featuredImage}
+          imageAlt={post.data.imageAlt || post.data.title}
           publishDate={post.data.publishDate}
           categories={post.data.categories || []}
           content={post.body}

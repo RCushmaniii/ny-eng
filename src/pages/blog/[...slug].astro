@@ -48,7 +48,9 @@ if (seoImage && !seoImage.startsWith('http')) {
 else if (!seoImage && post.data.featuredImage) {
   // For Astro image objects, we need to create an absolute URL
   const siteUrl = import.meta.env.SITE || 'https://titan-core.vercel.app';
-  seoImage = new URL(post.data.featuredImage.src, siteUrl).toString();
+  seoImage = typeof post.data.featuredImage === 'string' 
+    ? new URL(post.data.featuredImage, siteUrl).toString() 
+    : new URL(post.data.featuredImage.src, siteUrl).toString();
 }
 
 // Share Bar logic
@@ -71,7 +73,7 @@ const postTitle = post.data.title;
       <>
         <Image 
           src={post.data.featuredImage} 
-          alt={post.data.title} 
+          alt={post.data.imageAlt || post.data.title} 
           width={1920}
           height={1080}
           class="w-full h-full object-cover grayscale opacity-20" 
@@ -85,6 +87,7 @@ const postTitle = post.data.title;
   <article class="site-container--small mx-auto px-4 prose relative z-10 pb-base">
     <div class="mt-42 mb-12 text-center">
       <h1>{post.data.title}</h1>
+
       <div class="flex items-center justify-center gap-4 text-gray-600">
         <Date date={post.data.publishDate} />
         {post.data.categories && (
@@ -98,16 +101,16 @@ const postTitle = post.data.title;
     </div>
 
     {post.data.featuredImage && (
-      <Image 
-        src={post.data.featuredImage} 
-        alt={post.data.title} 
-        width={1200}
-        height={675}
-        class="w-full h-auto rounded-lg border mb-12 border-black" 
-        quality={80}
-        format="webp"
-      />
-    )}
+  <Image 
+    src={post.data.featuredImage} 
+    alt={post.data.imageAlt || post.data.title} 
+    width={1200}
+    height={675}
+    class="w-full h-auto rounded-lg border mb-12 border-black" 
+    quality={80}
+    format="webp"
+  />
+)}
 
     <div class="mt-8">
       <Content />
@@ -157,9 +160,9 @@ const postTitle = post.data.title;
               <span class="font-medium text-xs text-gray-700">Prev</span>
             </div>
             {/* Image with aspect ratio */}
-            {previousPost.data.featuredImage && (
+            {previousPost.data.image && (
               <div class="aspect-video w-full bg-gray-100">
-                <img src={previousPost.data.featuredImage.src} alt={previousPost.data.title} class="object-cover w-full h-full" />
+                <img src={previousPost.data.image.src} alt={previousPost.data.title} class="object-cover w-full h-full" />
               </div>
             )}
             {/* Card Body */}
@@ -184,9 +187,9 @@ const postTitle = post.data.title;
               <span class="text-2xl text-gray-400 transition-colors duration-200 group-hover:text-primary">&#8594;</span>
             </div>
             {/* Image with aspect ratio */}
-            {nextPost.data.featuredImage && (
+            {nextPost.data.image && (
               <div class="aspect-video w-full bg-gray-100">
-                <img src={nextPost.data.featuredImage.src} alt={nextPost.data.title} class="object-cover w-full h-full" />
+                <img src={nextPost.data.featuredImage?.src || nextPost.data.featuredImage || ''} alt={nextPost.data.title} class="object-cover w-full h-full" />
               </div>
             )}
             {/* Card Body */}
@@ -205,7 +208,5 @@ const postTitle = post.data.title;
   </article>
 
 
-</section>
-)}
-
+</article>
 </Layout>
