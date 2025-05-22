@@ -10,7 +10,7 @@ const currentPage = parseInt(Astro.url.searchParams.get('page') || '1');
 
 // Get all Spanish posts only
 const allPosts = await getCollection('blog');
-const filteredPosts = allPosts.filter(post => post.id.endsWith('.es.md') && post.data.publish === true);
+const filteredPosts = allPosts.filter(post => post.id.startsWith('es/') && post.data.publish === true);
 
 // Sort posts by date
 const sortedPosts = filteredPosts.sort((a, b) => 

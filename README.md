@@ -128,6 +128,34 @@ This project supports both English and Spanish, with fully localized homepages a
 - TypeScript is set to `strict: true` in `tsconfig.json` and includes `"astro"` in `compilerOptions.types`.
 - Component props are typed with interfaces in Astro frontmatter.
 
+## 🛠️ Technical Implementation Details
+
+### Bilingual Blog Post Layouts
+- Both English (`/en/blog/[slug]`) and Spanish (`/es/blog/[slug]`) blog post pages use parallel Astro templates for layout and hero image presentation.
+- Hero sections use an absolutely positioned, blurred background image with a consistent height (`h-[34rem]`), ensuring the hero starts at the very top of the page for both locales.
+- Title and meta information are vertically spaced using `pt-28` and `mb-12` for visual harmony beneath the hero.
+- In-body featured images are rendered below the title using Astro's `<Image />` with `object-cover`, `w-full`, and a fixed height (`h-[675px]`) to ensure edge-to-edge coverage without white gaps.
+
+### Featured Image Handling
+- Blog post frontmatter uses Astro Content Collections with `featuredImage: image().optional()` for type safety and automatic image optimization.
+- The full `ImageMetadata` object is always passed to `<Image />`—never `.src` or a string path—to avoid hydration/runtime errors.
+- If you change the schema or add images, always restart the dev server to ensure Astro properly hydrates image fields.
+
+### Layout & Spacing
+- Hero backgrounds use grayscale and blurred overlays for a professional look.
+- Title spacing is tuned to avoid being cut off by the navbar and to provide comfortable visual balance.
+- All blog post layouts are mobile-responsive and maintain consistent spacing across languages.
+
+### Lessons Learned / Gotchas
+- Always use the full `ImageMetadata` object with `<Image />` for local images managed by Astro's content collections.
+- Do not use `.src` or string paths, as this will break image rendering and optimization.
+- Restart the dev server after any schema or image changes to avoid stale hydration issues.
+- Keep bilingual templates in sync for a seamless user experience.
+
+### Titan Theme Customizations
+- The Titan theme is used as a base, with custom hero, blog, and bilingual layout adjustments.
+- All layout and component imports use absolute aliases (e.g., `@layouts`, `@components`) for maintainability.
+
 ## 📊 Data & Content Organization
 
 - Data files in `@data` provide reusable, localized content for features, stats, logos, FAQs, and more.

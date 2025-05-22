@@ -9,6 +9,8 @@ categories: [
 ]
 featuredImage: "./images/business-english-coaching.jpg"
 imageAlt: "Business English coaching session"
+translations:
+  es: "/es/blog/dominar-negocios"
 publish: true
 
 seo:

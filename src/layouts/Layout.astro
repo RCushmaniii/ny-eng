@@ -23,6 +23,8 @@ interface Props {
   canonicalUrl?: string;
   heroImage?: any;             // ✅ NEW
   heroImageMobile?: any;       // ✅ NEW
+  translationSlugEs?: string;
+  translationSlugEn?: string;
 }
 
 const {
@@ -32,7 +34,9 @@ const {
   footerCta,
   canonicalUrl,
   heroImage,
-  heroImageMobile
+  heroImageMobile,
+  translationSlugEs,
+  translationSlugEn
 } = Astro.props;
 
 const pageTitle        = title ? `${title} ${Separator} ${SiteName}` : SiteName;
@@ -109,7 +113,7 @@ const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
   </head>
 
   <body data-theme={theme}>
-    <Header />
+    <Header translationSlugEs={translationSlugEs} translationSlugEn={translationSlugEn} />
     <slot />
     <Footer footerCta={footerCta} />
     <ThemeSwitcher />

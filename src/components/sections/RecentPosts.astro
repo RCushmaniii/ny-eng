@@ -51,9 +51,10 @@ const allPosts = await getCollection("blog", ({ data }) => {
 const isSpanish = Astro.url.pathname.startsWith('/es');
 const filteredPosts = allPosts
     .filter((post) => {
-        // Only show .es.md files on /es pages, only show English posts elsewhere
-        const isEs = post.id.endsWith('.es.md');
-        return isSpanish ? isEs : !isEs;
+        // Filter by directory: show only posts in 'es/' for Spanish, 'en/' for English
+        const isEs = post.id.startsWith('es/');
+        const isEn = post.id.startsWith('en/');
+        return isSpanish ? isEs : isEn;
     })
     .filter((post) => !category || post.data.categories?.includes(category))
     .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())

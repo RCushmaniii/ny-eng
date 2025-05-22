@@ -1,5 +1,4 @@
 ---
-slug: "5-formas-practicas-para-mejorar-tu-ingles-de-negocios"
 title: "5 formas prácticas de aumentar la confianza en tu inglés de negocios hoy"
 excerpt: "¿Te cuesta sonar seguro en inglés? Estos 5 consejos te ayudarán a hablar con claridad y liderar con impacto en reuniones y entrevistas."
 publishDate: "2025-05-01"
@@ -7,8 +6,10 @@ categories: [
   'Business English',
   'Career Growth',
 ]
-featuredImage: "../images/business-english-confidence.jpg"
+featuredImage: "./images/business-english-confidence.jpg"
 imageAlt: "Sesión de coaching de inglés de negocios"
+translations:
+  en: "/en/blog/5-practical-ways-to-boost-business-english"
 publish: true
 seo:
   title: "Aumenta tu confianza en inglés de negocios: 5 consejos prácticos"

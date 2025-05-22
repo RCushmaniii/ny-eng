@@ -1,5 +1,4 @@
 ---
-slug: "del-small-talk-a-conversacion-inteligente"
 title: "Del small talk a la conversación inteligente: cómo destacar en inglés en el trabajo"
 excerpt: "Aprende a convertir charlas triviales en oportunidades para construir relaciones y avanzar profesionalmente en inglés."
 publishDate: "2025-04-15"
@@ -7,8 +6,10 @@ categories: [
   'Business English',
   'Communication Skills'
 ]
-featuredImage: "../images/small-talk-professionals.jpg"
+featuredImage: "./images/small-talk-professionals.jpg"
 imageAlt: "Sesión de coaching de inglés de negocios"
+translations:
+  en: "/en/blog/small-talk-smart-talk"
 publish: true
 seo:
   title: "De small talk a conversaciones inteligentes | Inglés profesional"

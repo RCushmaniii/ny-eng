@@ -8,6 +8,8 @@ categories: [
 ]
 featuredImage: "./images/executive-english-coaching.jpg"
 imageAlt: "Executive English coaching session"
+translations:
+  es: "/es/blog/coaching-ejecutivo"
 publish: true
 
 seo:

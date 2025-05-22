@@ -4,6 +4,17 @@ import Logo from "@components/Logo.astro";
 import { Menu, X, ChevronDown } from "lucide-astro";
 import Button from "@components/ui/Button.astro";
 
+interface Props {
+  translationSlugEs?: string; // e.g., "/es/blog/mi-articulo"
+  translationSlugEn?: string; // e.g., "/en/blog/my-article"
+}
+
+const { translationSlugEs, translationSlugEn } = Astro.props;
+
+// Debug: log translation props during dev/build
+// You can remove this after debugging
+console.log("[Header] Translation URLs:", translationSlugEs, translationSlugEn);
+
 const ctaButton = {
   name: "Contact",
   link: "/contact",
@@ -25,21 +36,28 @@ const isCurrentPage = (link: string) => {
       <Logo />
       <!-- Language Switcher -->
       <div class="flex items-center gap-2 ml-4" id="lang-switcher">
-        <button
-          class="lang-flag p-1 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white"
-          aria-label="Cambiar a Español"
-          data-lang="es"
-        >
-          <img src="/src/assets/images/mex-flag.svg" alt="Bandera de México" class="w-6 h-6 mx-auto" />
-        </button>
-        <button
-          class="lang-flag p-1 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white"
-          aria-label="Switch to English"
-          data-lang="en"
-        >
-          <img src="/src/assets/images/usa-flag.svg" alt="USA Flag" class="w-6 h-6 mx-auto" />
-        </button>
-      </div>
+  {/* Use the full path directly from the prop. No concatenation! */}
+  {translationSlugEs ? (
+    <a
+      href={translationSlugEs}
+      class="lang-flag p-1 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+      aria-label="Cambiar a Español"
+      data-lang="es"
+    >
+      <img src="/src/assets/images/mex-flag.svg" alt="Bandera de México" class="w-6 h-6 mx-auto" />
+    </a>
+  ) : null}
+  {translationSlugEn ? (
+    <a
+      href={translationSlugEn}
+      class="lang-flag p-1 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+      aria-label="Switch to English"
+      data-lang="en"
+    >
+      <img src="/src/assets/images/usa-flag.svg" alt="USA Flag" class="w-6 h-6 mx-auto" />
+    </a>
+  ) : null}
+</div>
       <nav class="relative flex items-center gap-2 lg:gap-8" aria-label="Site Navigation">
         <!-- Desktop Menu -->
         <ul class="hidden lg:flex lg:gap-8 items-center">

@@ -8,6 +8,8 @@ categories: [
 ]
 featuredImage: "./images/business-english-confidence.jpg"
 imageAlt: "Business English coaching session"
+translations:
+  es: "/es/blog/aumentar-confianza"
 publish: true
 
 seo:

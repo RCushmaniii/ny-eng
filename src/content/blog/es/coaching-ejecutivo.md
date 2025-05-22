@@ -1,5 +1,4 @@
 ---
-slug: "coaching-ejecutivo-ingles-lideres"
 title: " Más allá de la gramática: El valor de un coach nativo de inglés para líderes senior"
 excerpt: "Las clases estándar no bastan para ejecutivos. Descubre cómo un coach nativo con visión de negocios acelera el liderazgo y el crecimiento profesional."
 publishDate: "2025-04-18"
@@ -7,8 +6,10 @@ categories: [
   'Business English',
   'Executive Coaching'
 ]
-featuredImage: "../images/executive-english-coaching.jpg"
+featuredImage: "./images/executive-english-coaching.jpg"
 imageAlt: "Sesión de coaching ejecutivo en inglés"
+translations:
+  en: "/en/blog/executive-english-coaching"
 publish: true
 seo:
   title: "Coaching ejecutivo en inglés: Ventaja del coach nativo para líderes"

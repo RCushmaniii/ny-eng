@@ -5,6 +5,8 @@ publishDate: "2025-05-08"
 categories: ["Communication Skills"]
 featuredImage: "./images/small-talk-professionals.jpg"
 imageAlt: "Professionals having small talk in a business setting"
+translations:
+  es: "/es/blog/charla-pequena-habla-inteligente"
 publish: true
 
 seo:
