@@ -1,6 +1,6 @@
-// lang-switcher.js
-// Attach language switcher listeners on DOMContentLoaded
-
+// lang-switcher.js (DISABLED)
+// The following code is commented out to disable custom language switching logic.
+/*
 document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', function(e) {
     const btn = e.target.closest('.lang-flag');
@@ -21,3 +21,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, true);
 });
+*/

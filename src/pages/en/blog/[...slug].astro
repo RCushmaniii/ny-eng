@@ -67,6 +67,7 @@ const postTitle = post.data.title;
 ---
 
 {console.log("DEBUG: post.data.translations", post.data.translations)}
+{console.log("DEBUG: translationSlugEs", post.data.translations?.es)}
 <Layout title={seoTitle} description={seoDescription} translationSlugEs={post.data.translations?.es}>
   <p>Raw Translations from post.data (for debugging): {JSON.stringify(post.data.translations)}</p>
   <section class="relative w-full">

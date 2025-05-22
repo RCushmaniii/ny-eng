@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { translationSlugEs, translationSlugEn } = Astro.props;
+console.log("DEBUG: Header translationSlugEs", translationSlugEs);
 
 // Debug: log translation props during dev/build
 // You can remove this after debugging
@@ -39,21 +40,23 @@ const isCurrentPage = (link: string) => {
   {/* Use the full path directly from the prop. No concatenation! */}
   {translationSlugEs ? (
     <a
-      href={translationSlugEs}
-      class="lang-flag p-1 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white"
-      aria-label="Cambiar a Español"
-      data-lang="es"
-    >
+        href={translationSlugEs}
+        class="lang-flag p-1 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+        aria-label="Cambiar a Español"
+        data-lang="es"
+        data-astro-reload
+      >
       <img src="/src/assets/images/mex-flag.svg" alt="Bandera de México" class="w-6 h-6 mx-auto" />
     </a>
   ) : null}
   {translationSlugEn ? (
     <a
-      href={translationSlugEn}
-      class="lang-flag p-1 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white"
-      aria-label="Switch to English"
-      data-lang="en"
-    >
+        href={translationSlugEn}
+        class="lang-flag p-1 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+        aria-label="Switch to English"
+        data-lang="en"
+        data-astro-reload
+      >
       <img src="/src/assets/images/usa-flag.svg" alt="USA Flag" class="w-6 h-6 mx-auto" />
     </a>
   ) : null}

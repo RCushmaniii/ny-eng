@@ -52,7 +52,8 @@ const postUrl = `${base}/en/blog/${postSlug}`;
 const postTitle = post.data.title;
 ---
 
-<Layout title={seoTitle} description={seoDescription} translationSlugEs={post.data.translations && post.data.translations.es ? post.data.translations.es : undefined}>
+{console.log("DEBUG: translationSlugEs", post.data.translations?.es)}
+<Layout title={seoTitle} description={seoDescription} translationSlugEs={post.data.translations?.es}>
   <section class="relative w-full">
 
     <div class="w-full h-[34rem] absolute top-0 left-0 z-0 overflow-hidden border-b border-black">
