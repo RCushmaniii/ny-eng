@@ -16,6 +16,7 @@ export const SEO = {
   Separator: '|',
   SiteName: 'New York English Teacher – Your Career Performance Accelerator',
   defaultDescription: 'A modern, high-performance Astro JS theme',
+  defaultLang: 'en',
 };
 
 export const blogSetting = {

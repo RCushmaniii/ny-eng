@@ -54,9 +54,9 @@ let seoImage = post.data.seo?.image;
 if (seoImage && !seoImage.startsWith('http')) {
   const siteUrl = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
   seoImage = new URL(seoImage.startsWith('/') ? seoImage : `/${seoImage}`, siteUrl).toString();
-} else if (!seoImage && post.data.image) {
+} else if (!seoImage && post.data.featuredImage) {
   const siteUrl = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
-  seoImage = new URL(post.data.image.src, siteUrl).toString();
+  seoImage = new URL(post.data.featuredImage.src, siteUrl).toString();
 }
 
 const origin = import.meta.env.SITE || 'https://www.nyenglishteacher.com';

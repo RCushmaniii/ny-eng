@@ -15,7 +15,7 @@ export interface Props {
             link: string;
             variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark';
         };
-        features: Feature[];
+        features: ReadonlyArray<Feature>;
     };
     background?: ThemeColor;
     padding?: PaddingSize;

@@ -4,9 +4,9 @@ import { Zap, Shield, Heart, Coffee, Smile, Type, TabletSmartphone, CodeXml } fr
 type LucideIcon = typeof Zap;
 
 export interface Feature {
-    icon: LucideIcon;
-    title: string;
-    description: string;
+    readonly icon: LucideIcon;
+    readonly title: string;
+    readonly description: string;
 }
 
 export interface FeatureList {

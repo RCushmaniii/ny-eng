@@ -1,14 +1,16 @@
 ---
-// ‑‑‑ Front‑matter (unchanged, just trimmed for clarity) ‑‑‑
-import "../styles/global.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import ThemeSwitcher from "../components/ThemeSwitcher.astro";
-import { SEO, siteConfig, themeSetting } from "../data/config";
-// import "aos/dist/aos.css";
+// Ensure this path is correct relative to Layout.astro's location
+import "../styles/global.css"; 
+import Header from "../components/Header.astro"; // Ensure path is correct
+// Ensure these @data paths are correctly resolved by your tsconfig/jsconfig
+import { headerContent as headerContentEn } from "@data/header/en"; 
+import { headerContent as headerContentEs } from "@data/header/es";
+import Footer from "../components/Footer.astro"; // Ensure path is correct
+import ThemeSwitcher from "../components/ThemeSwitcher.astro"; // Ensure path is correct
+import { SEO, siteConfig, themeSetting } from "../data/config"; // Ensure path is correct
 
 const { theme } = themeSetting;
-const { SiteName, Separator, defaultDescription } = SEO;
+const { SiteName, Separator, defaultDescription, defaultLang } = SEO; // Ensure defaultLang (e.g., 'en') is in your SEO config
 
 interface Props {
   title?: string;
@@ -21,8 +23,8 @@ interface Props {
     button: { text: string; link: string; target?: string };
   };
   canonicalUrl?: string;
-  heroImage?: any;             // ✅ NEW
-  heroImageMobile?: any;       // ✅ NEW
+  heroImage?: any;
+  heroImageMobile?: any;
   translationSlugEs?: string;
   translationSlugEn?: string;
 }
@@ -39,15 +41,32 @@ const {
   translationSlugEn
 } = Astro.props;
 
-const pageTitle        = title ? `${title} ${Separator} ${SiteName}` : SiteName;
-const pageDescription  = description || defaultDescription || "";
-const pageImage        = image || "";
-const canonicalPath    = canonicalUrl || Astro.url.pathname;
+const pageTitle = title ? `${title} ${Separator} ${SiteName}` : SiteName;
+const pageDescription = description || defaultDescription || "";
+const pageImage = image || "";
+const canonicalPath = canonicalUrl || Astro.url.pathname;
 const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
+
+// Determine current language for <html> tag and for selecting header content
+const currentAstroPath = Astro.url.pathname;
+const determinedLang = currentAstroPath.startsWith('/es/') ? 'es' : (currentAstroPath.startsWith('/en/') ? 'en' : (defaultLang || 'en'));
+
+const headerDataForCurrentLang = determinedLang === 'es' ? headerContentEs : headerContentEn;
+
+// --- CRITICAL FOR FIXED HEADER ---
+// Calculate or set a fixed header height. 
+// This value needs to match the actual height of your rendered <header> element 
+// including its top margin (which is mt-4, typically 1rem or 16px).
+// Example: If header inner content (py-4) is ~56px, plus rounded-lg, border,
+// and the mt-4 (16px) on its container.
+// A common height for such headers is between 4rem (64px) and 6.5rem (104px).
+// Inspect your header's height in dev tools to get an accurate value.
+const fixedHeaderHeight = "0rem"; // ADJUST THIS VALUE CAREFULLY!
+// --- END CRITICAL ---
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={determinedLang}> {/* DYNAMIC LANG ATTRIBUTE */}
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -63,7 +82,6 @@ const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
     <meta name="description" content={pageDescription} />
     <meta name="robots" content="index, follow" />
 
-    <!-- ✅ Preload hero image -->
     {heroImage && (
       <link
         rel="preload"
@@ -79,7 +97,6 @@ const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
       />
     )}
 
-    <!-- Google Fonts (swap to avoid FOIT) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -87,7 +104,6 @@ const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
       rel="stylesheet"
     />
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={fullCanonicalUrl} />
     <meta property="og:title" content={pageTitle} />
@@ -99,7 +115,6 @@ const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
       />
     )}
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={fullCanonicalUrl} />
     <meta property="twitter:title" content={pageTitle} />
@@ -112,11 +127,15 @@ const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
     )}
   </head>
 
-  <body data-theme={theme}>
-    <Header translationSlugEs={translationSlugEs} translationSlugEn={translationSlugEn} />
-    <slot />
+  <body data-theme={theme} style={`padding-top: ${fixedHeaderHeight};`}> {/* ADDED PADDING-TOP HERE */}
+    <Header
+      content={headerDataForCurrentLang}
+      translationSlugEs={translationSlugEs}
+      translationSlugEn={translationSlugEn}
+    />
+    <slot /> {/* This is where your page content (e.g., homepage) goes */}
     <Footer footerCta={footerCta} />
     <ThemeSwitcher />
-    <script src="/js/scroll.js" defer></script>
-</body>
+    <script src="/js/scroll.js" defer></script> {/* Ensure path is correct */}
+  </body>
 </html>

@@ -39,7 +39,7 @@ let seoImage = post.data.seo?.image;
 if (seoImage && !seoImage.startsWith('http')) {
   const siteUrl = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
   seoImage = new URL(seoImage.startsWith('/') ? seoImage : `/${seoImage}`, siteUrl).toString();
-} else if (!seoImage && post.data.featuredImage) {
+} else if (!seoImage && post.data.featuredImage && typeof post.data.featuredImage.src === 'string') {
   // Use the featured image for SEO if not overridden
   const siteUrl = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
   seoImage = new URL(post.data.featuredImage.src, siteUrl).toString();
@@ -95,10 +95,10 @@ const postTitle = post.data.title;
     {(previousPost || nextPost) && (
       <section class="mt-16 flex flex-col items-center md:flex-row md:justify-between gap-6 mx-auto max-w-3xl">
         {previousPost && (
-          <a href={`/en/blog/${previousPost.data.slug}`} class="btn btn-secondary">← {previousPost.data.title}</a>
+          <a href={`/en/blog/${previousPost.slug}`} class="btn btn-secondary">← {previousPost.data.title}</a>
         )}
         {nextPost && (
-          <a href={`/en/blog/${nextPost.data.slug}`} class="btn btn-secondary">{nextPost.data.title} →</a>
+          <a href={`/en/blog/${nextPost.slug}`} class="btn btn-secondary">{nextPost.data.title} →</a>
         )}
       </section>
     )}
