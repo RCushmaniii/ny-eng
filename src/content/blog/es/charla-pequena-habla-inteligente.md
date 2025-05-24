@@ -9,7 +9,7 @@ categories: [
 featuredImage: "./images/small-talk-professionals.jpg"
 imageAlt: "Sesión de coaching de inglés de negocios"
 translations:
-  en: "/en/blog/small-talk-smart-talk"
+  en: "/en/blog/small-talk-to-smart-talk"
 publish: true
 seo:
   title: "De small talk a conversaciones inteligentes | Inglés profesional"

@@ -1,4 +1,3 @@
-
 ---
 title: "Master Business English & Grow Your Career"
 excerpt: "Personalized English coaching to help you speak with confidence."
