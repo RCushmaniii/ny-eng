@@ -1,19 +1,27 @@
 ---
 import { Image } from "astro:assets";
-import logo from "../assets/images/logos/ny-english-logo-150.webp";
-import logoDark from "../assets/images/logos/ny-english-logo-150 Dark.webp"; // Assuming you might use this
+
+// Import the light logo (webp)
+import logoLight from "../assets/images/logos/ny-english-logo-150.webp"; 
+// Import the dark logo (jpg) - path and extension updated as per your confirmation
+import logoDarkJpg from "../assets/images/logos/ny-english-logo-150-dark.jpg"; 
 
 interface Props {
-  variant?: "header" | "footer" | "dark"; // Keep variants if they affect styling of the image/span only
+  variant?: "header" | "footer"; 
 }
 
 const { variant = "header" } = Astro.props;
 
-// Choose the logo image based on context (e.g. if header is dark/light theme aware)
-// For now, defaulting to the standard logo for the header.
-// You might have more complex logic here if the header variant implies a different logo image.
-const logoToUse = logo; // Simplified for now, adjust if logoDark is needed for header based on theme
+// Choose the logo image based on variant
+const logoToUse = variant === "footer" ? logoDarkJpg : logoLight;
+const altText = "NY English Logo"; 
+// Consider making altText a prop if "NY English Logo" needs translation for screen readers,
+// or pass a specific alt from where <Logo/> is called (e.g., from Footer.astro or Header.astro).
+// For now, keeping it simple.
 ---
 
-<Image src={logoToUse} alt="NY English Logo" class="h-10 w-auto" /> {/* Adjust height/width as needed */}
-<span class="sr-only">NY English</span>
+{/* The <Image> component from astro:assets is smart enough to handle different import types (webp, jpg).
+  It will optimize them at build time.
+*/}
+<Image src={logoToUse} alt={altText} class="h-10 w-auto" /> {/* Adjust height/width as needed for consistency */}
+<span class="sr-only">NY English</span> {/* This text is for screen readers. If "NY English" is the brand name, it typically doesn't require translation. */}

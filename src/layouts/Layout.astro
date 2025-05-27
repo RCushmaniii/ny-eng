@@ -6,8 +6,11 @@ import Header from "../components/Header.astro"; // Ensure path is correct
 import { headerContent as headerContentEn } from "@data/header/en"; 
 import { headerContent as headerContentEs } from "@data/header/es";
 import Footer from "../components/Footer.astro"; // Ensure path is correct
+import type { FooterContent } from "../components/Footer.astro"; // Import the FooterContent type
 import ThemeSwitcher from "../components/ThemeSwitcher.astro"; // Ensure path is correct
 import { SEO, siteConfig, themeSetting } from "../data/config"; // Ensure path is correct
+import { footerContentEn } from '@data/footer/en';
+import { footerContentEs } from '@data/footer/es';
 
 const { theme } = themeSetting;
 const { SiteName, Separator, defaultDescription, defaultLang } = SEO; // Ensure defaultLang (e.g., 'en') is in your SEO config
@@ -49,9 +52,44 @@ const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
 
 // Determine current language for <html> tag and for selecting header content
 const currentAstroPath = Astro.url.pathname;
-const determinedLang = currentAstroPath.startsWith('/es/') ? 'es' : (currentAstroPath.startsWith('/en/') ? 'en' : (defaultLang || 'en'));
+let determinedLang = defaultLang || 'en'; // Default to English (or configured default)
+if (currentAstroPath === '/es' || currentAstroPath.startsWith('/es/')) {
+  determinedLang = 'es';
+} else if (currentAstroPath === '/en' || currentAstroPath.startsWith('/en/')) {
+  determinedLang = 'en';
+}
+// If currentAstroPath is just '/', it will use defaultLang.
+
+console.log("[Layout] Astro.url.pathname:", currentAstroPath);
+console.log("[Layout] Determined language:", determinedLang);
 
 const headerDataForCurrentLang = determinedLang === 'es' ? headerContentEs : headerContentEn;
+
+// Prepare data for the Footer component
+const siteConfigForFooter = { companyName: siteConfig.companyName };
+const baseFooterContentFromData = determinedLang === 'es' 
+  ? footerContentEs(siteConfigForFooter) 
+  : footerContentEn(siteConfigForFooter);
+
+console.log("[Layout] Header data selected (logoLink):", headerDataForCurrentLang.logoLink);
+console.log("[Layout] Footer data selected (logoLink):", baseFooterContentFromData.logoLink);
+
+// Separate the default CTA and the rest of the base content
+const { defaultFooterCta: baseDefaultCtaFromData, ...baseContentWithoutDefaultCta } = baseFooterContentFromData;
+
+// Determine the final cta, merging if page provides one
+let finalFooterCta;
+if (Astro.props.footerCta) {
+  finalFooterCta = { ...baseDefaultCtaFromData, ...Astro.props.footerCta };
+} else {
+  finalFooterCta = baseDefaultCtaFromData;
+}
+
+// Assemble the final content object for the Footer component, ensuring it matches FooterContent type
+const actualFooterContentForComponent: FooterContent = {
+  ...baseContentWithoutDefaultCta, // This has logoLink, tagline, sections, legalMenu, copyrightText
+  footerCta: finalFooterCta        // This is the merged/final CTA
+};
 
 // --- CRITICAL FOR FIXED HEADER ---
 // Calculate or set a fixed header height. 
@@ -134,7 +172,7 @@ const fixedHeaderHeight = "0rem"; // ADJUST THIS VALUE CAREFULLY!
       translationSlugEn={translationSlugEn}
     />
     <slot /> {/* This is where your page content (e.g., homepage) goes */}
-    <Footer footerCta={footerCta} />
+    <Footer content={actualFooterContentForComponent} />
     <ThemeSwitcher />
     <script src="/js/scroll.js" defer></script> {/* Ensure path is correct */}
   </body>

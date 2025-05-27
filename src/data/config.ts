@@ -1,4 +1,18 @@
-export const siteConfig = {
+export interface SiteConfig {
+  companyName: string;
+  siteUrl: string;
+  Socials: {
+    xSocial: string;
+    Github: string;
+    Instagram: string;
+    LinkedIn: string;
+    Email: string;
+    Phone: string;
+    Location: string;
+  };
+}
+
+export const siteConfig: SiteConfig = {
   companyName: 'New York English Teacher',
   siteUrl: 'https://titan-core.com',
   Socials: {

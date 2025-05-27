@@ -12,6 +12,11 @@
       "astro/client"
     ],
     "strict": true,
+    "jsx": "preserve",
+    "jsxImportSource": "astro",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "lib": ["esnext", "dom", "dom.iterable"],
     "paths": {
       "@components/*": [
         "./src/components/*"

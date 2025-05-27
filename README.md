@@ -12,7 +12,8 @@ This is the new version of NYEnglishTeacher.com, redesigned to provide a better 
 ## 🛠️ Tech Stack
 
 - [Astro](https://astro.build)
-- [TypeScript](https://www.typescriptlang.org/)
+- [TypeScript](https://www.typescriptlang.org/) (with `strict: true` enabled for robust type checking)
+- [@astrolib/seo](https://www.npmjs.com/package/@astrolib/seo) (for SEO management)
 - HTML/CSS
 - Markdown (for content)
 - Optional: Integrations/plugins via Astro ecosystem
@@ -98,7 +99,6 @@ tsconfig.json        # TypeScript configuration
 
 ---
 package.json         # Project metadata and scripts
-```
 
 ## 📌 Notes
 
@@ -114,6 +114,28 @@ This project supports both English and Spanish, with fully localized homepages a
 - Reusable content/data: `@data` (e.g., `featureLists`, `statsLists`, `logoLists`, `faqLists`)
 - All Titan Core components and layouts are shared, with content objects translated and typed for each locale.
 
+## 📚 SEO Setup with @astrolib/seo
+
+This project uses `@astrolib/seo` for managing SEO metadata. Key setup steps include:
+
+1.  **Installation**:
+    ```bash
+    npm install @astrolib/seo
+    ```
+2.  **Central SEO Configuration**:
+    - A configuration file (e.g., `src/config/seo.ts`) defines SEO content (title, description, canonical URL, lang) for each supported language (e.g., `en`, `es`).
+3.  **Layout Integration**:
+    - The `<AstroSeo />` component from `@astrolib/seo` is used in the main layout file (e.g., `src/layouts/BaseLayout.astro` or `src/layouts/Layout.astro`).
+    - The layout accepts a `lang` prop to fetch the correct SEO content from the central configuration.
+4.  **Page-Level Language Specification**:
+    - Each page (e.g., `src/pages/en/index.astro`, `src/pages/es/index.astro`) passes its language code (e.g., `lang="en"`) to the layout.
+5.  **HTML `lang` Attribute**:
+    - The root `<html>` tag in the layout has its `lang` attribute dynamically set based on the page's language.
+6.  **Hreflang Tags**:
+    - `hreflang` tags are implemented (either via `AstroSeo` or manually) to indicate alternate language versions of pages for search engines.
+
+This setup ensures consistent and localized SEO metadata across the bilingual site.
+
 ## 🎨 Titan Core Theme & Component Usage
 
 - Built on the Titan Core theme for Astro.
@@ -125,7 +147,8 @@ This project supports both English and Spanish, with fully localized homepages a
 ## 🧑‍💻 Type Safety & Linting
 
 - All static config objects (e.g., `heroContent`, `featuresSection`) use `as const` for literal type safety.
-- TypeScript is set to `strict: true` in `tsconfig.json` and includes `"astro"` in `compilerOptions.types`.
+- TypeScript is set to `strict: true` in `tsconfig.json`.
+- `compilerOptions.types` in `tsconfig.json` includes `"astro/client"` for proper Astro type resolution.
 - Component props are typed with interfaces in Astro frontmatter.
 
 ## 🛠️ Technical Implementation Details
@@ -147,41 +170,36 @@ This project supports both English and Spanish, with fully localized homepages a
 - All blog post layouts are mobile-responsive and maintain consistent spacing across languages.
 
 ### Lessons Learned / Gotchas
-- Always use the full `ImageMetadata` object with `<Image />` for local images managed by Astro's content collections.
-- Do not use `.src` or string paths, as this will break image rendering and optimization.
-- Restart the dev server after any schema or image changes to avoid stale hydration issues.
+
+- Always use the full `ImageMetadata` object with `<Image />` for local images managed by Astro's content collections. Do not use `.src` or string paths.
+- Ensure `"strict": true` is set in `tsconfig.json`'s `compilerOptions` for correct type inference of Astro's `ImageMetadata` and other complex types. This was key to resolving persistent image type errors.
+- Restart the Astro dev server and the IDE's TypeScript server after any changes to `tsconfig.json` or content collection schemas to ensure changes are applied and types are correctly re-evaluated.
 - Keep bilingual templates in sync for a seamless user experience.
 
 ### Titan Theme Customizations
 - The Titan theme is used as a base, with custom hero, blog, and bilingual layout adjustments.
 - All layout and component imports use absolute aliases (e.g., `@layouts`, `@components`) for maintainability.
 
-## 📊 Data & Content Organization
+## ✨ Recent Progress (May 2025)
 
-- Data files in `@data` provide reusable, localized content for features, stats, logos, FAQs, and more.
-- Content is translated and exported as typed objects for each locale.
-- For new languages, copy and translate the relevant data files.
+Significant progress has been made in resolving TypeScript errors and ensuring a robust, type-safe codebase:
 
-## 🏆 SEO & Accessibility
+- **Header Component (`Header.astro`):** Updated `Props` interface to correctly handle `readonly` content properties derived from `as const` data objects. Resolved an invalid comment issue causing prop type errors.
+- **Layout & SEO (`Layout.astro`, `src/data/config.ts`):** Added `defaultLang: 'en'` to the SEO configuration in `config.ts` to fix errors in `Layout.astro`.
+- **Blog Post Image & Slug Handling:**
+    - Corrected logic in blog pages (`en/blog/[...slug].astro`, `es/blog/[...slug].astro`) to use `post.data.featuredImage` instead of `post.data.image` for SEO images, aligning with the content schema.
+    - Fixed previous/next post navigation in `en/blog/[slug].astro` to use the correct `post.slug` property.
+- **Features Component (`Features.astro`, `src/data/features.ts`):** Aligned `Feature` interface and component `Props` to correctly handle `readonly` data structures resulting from `as const` assertions on feature configuration objects.
+- **`tsconfig.json` Configuration:** Enforced `"strict": true` in `compilerOptions`. This was a critical step in resolving persistent `ImageMetadata` type errors for Astro's `<Image />` component by ensuring stricter type checking and inference.
+- **General Type Refinements:** Applied `ReadonlyArray` and `readonly` properties where appropriate to match `as const` data sources, improving overall type safety.
 
-- Each page provides unique, descriptive, and localized `seoTitle` and `seoDescription` props.
-- All images use meaningful `alt` text for accessibility and SEO.
-- Images are optimized via Astro’s `<Image />` component or `astro:assets`, with mobile-specific versions where needed.
-
-## 🛠️ Development & Contribution
-
-- Restart the dev environment (`npm run dev`) and the TypeScript server (Ctrl+Shift+P → TypeScript: Restart TS Server) after major changes.
-- Test responsiveness on mobile and desktop.
-- Run `astro build` to verify static site generation before deployment.
-- Avoid inline styles; use component props and theme classes for customization.
-- Remove duplicated components to optimize performance.
-- Document any new components or complex props in this README or in the component files.
+These changes have significantly improved the stability and maintainability of the TypeScript implementation within the Astro project.
 
 ## 🏄 Windsurf Cascade Rules
 
 This repo follows robust rules for code quality and consistency. See `.windsurfrules` for details on:
 - Import aliases
-- Type safety
+- Type safety (including `as const` and `strict: true`)
 - Data organization
 - Button variant restrictions
 - SEO and accessibility

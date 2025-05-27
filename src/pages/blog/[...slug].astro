@@ -160,9 +160,9 @@ const postTitle = post.data.title;
               <span class="font-medium text-xs text-gray-700">Prev</span>
             </div>
             {/* Image with aspect ratio */}
-            {previousPost.data.image && (
+            {previousPost.data.featuredImage && (
               <div class="aspect-video w-full bg-gray-100">
-                <img src={previousPost.data.image.src} alt={previousPost.data.title} class="object-cover w-full h-full" />
+                <img src={previousPost.data.featuredImage.src} alt={previousPost.data.imageAlt || previousPost.data.title} class="object-cover w-full h-full" />
               </div>
             )}
             {/* Card Body */}
@@ -187,9 +187,9 @@ const postTitle = post.data.title;
               <span class="text-2xl text-gray-400 transition-colors duration-200 group-hover:text-primary">&#8594;</span>
             </div>
             {/* Image with aspect ratio */}
-            {nextPost.data.image && (
+            {nextPost.data.featuredImage && (
               <div class="aspect-video w-full bg-gray-100">
-                <img src={nextPost.data.featuredImage?.src || nextPost.data.featuredImage || ''} alt={nextPost.data.title} class="object-cover w-full h-full" />
+                <img src={nextPost.data.featuredImage.src} alt={nextPost.data.imageAlt || nextPost.data.title} class="object-cover w-full h-full" />
               </div>
             )}
             {/* Card Body */}

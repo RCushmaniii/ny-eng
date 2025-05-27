@@ -23,7 +23,7 @@ const allEsPosts = (await getCollection('blog'))
   .filter(p => p.id.startsWith('es/') && p.data.publish !== false)
   .sort((a, b) => globalThis.Date.parse(String(b.data.publishDate)) - globalThis.Date.parse(String(a.data.publishDate)));
 const currentSlug = Astro.params.slug;
-const index = allEsPosts.findIndex(p => p.data.slug === currentSlug);
+const index = allEsPosts.findIndex(p => p.slug === currentSlug);
 const previousPost = allEsPosts[index + 1] ?? null;
 const nextPost = allEsPosts[index - 1] ?? null;
 const navPosts = previousPost && nextPost ? [previousPost, nextPost] : [];
@@ -34,9 +34,9 @@ let seoImage = post.data.seo?.image;
 if (seoImage && !seoImage.startsWith('http')) {
   const siteUrl = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
   seoImage = new URL(seoImage.startsWith('/') ? seoImage : `/${seoImage}`, siteUrl).toString();
-} else if (!seoImage && post.data.image) {
+} else if (!seoImage && post.data.featuredImage) {
   const siteUrl = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
-  seoImage = new URL(post.data.image.src, siteUrl).toString();
+  seoImage = new URL(post.data.featuredImage.src, siteUrl).toString();
 }
 
 const origin = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
@@ -87,10 +87,52 @@ const postTitle = post.data.title;
     {(previousPost || nextPost) && (
       <section class="mt-16 flex flex-col items-center md:flex-row md:justify-between gap-6 mx-auto max-w-3xl">
         {previousPost && (
-          <a href={`/es/blog/${previousPost.data.slug}`} class="btn btn-secondary">← {previousPost.data.title}</a>
+          <a
+            href={`/es/blog/${previousPost.slug}`}
+            rel="prev"
+            class="group relative flex-1 max-w-xs border border-black rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full"
+          >
+            <div class="flex items-center justify-between h-12 px-4 border-b">
+              <span class="text-2xl text-gray-400 transition-colors duration-200 group-hover:text-primary">&#8592;</span>
+              <span class="font-medium text-xs text-gray-700">Anterior</span>
+            </div>
+            {previousPost.data.featuredImage && (
+              <div class="aspect-video w-full bg-gray-100">
+                <img src={previousPost.data.featuredImage.src} alt={previousPost.data.imageAlt || previousPost.data.title} class="object-cover w-full h-full" />
+              </div>
+            )}
+            <div class="flex-grow px-4 py-6 flex flex-col">
+              <div class="font-semibold text-base mb-1 line-clamp-2">{previousPost.data.title}</div>
+              <div class="text-xs text-gray-500 mb-2">
+                <Date date={previousPost.data.publishDate} />
+              </div>
+              <div class="text-sm text-gray-700 line-clamp-3">{previousPost.data.excerpt}</div>
+            </div>
+          </a>
         )}
         {nextPost && (
-          <a href={`/es/blog/${nextPost.data.slug}`} class="btn btn-secondary">{nextPost.data.title} →</a>
+          <a
+            href={`/es/blog/${nextPost.slug}`}
+            rel="next"
+            class="group relative flex-1 max-w-xs border border-black rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full"
+          >
+            <div class="flex items-center justify-between h-12 px-4 border-b">
+              <span class="font-medium text-xs text-gray-700">Siguiente</span>
+              <span class="text-2xl text-gray-400 transition-colors duration-200 group-hover:text-primary">&#8594;</span>
+            </div>
+            {nextPost.data.featuredImage && (
+              <div class="aspect-video w-full bg-gray-100">
+                <img src={nextPost.data.featuredImage.src} alt={nextPost.data.imageAlt || nextPost.data.title} class="object-cover w-full h-full" />
+              </div>
+            )}
+            <div class="flex-grow px-4 py-6 flex flex-col text-right">
+              <div class="font-semibold text-base mb-1 line-clamp-2">{nextPost.data.title}</div>
+              <div class="text-xs text-gray-500 mb-2">
+                <Date date={nextPost.data.publishDate} />
+              </div>
+              <div class="text-sm text-gray-700 line-clamp-3">{nextPost.data.excerpt}</div>
+            </div>
+          </a>
         )}
       </section>
     )}

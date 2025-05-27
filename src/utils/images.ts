@@ -1,6 +1,13 @@
-import { isUnpicCompatible, unpicOptimizer, astroAssetsOptimizer } from './images-optimization';
+import { isUnpicCompatible, unpicOptimizer, astroAssetsOptimizer } from './images-optimization.js';
 import type { ImageMetadata } from 'astro';
 import type { OpenGraph } from '@astrolib/seo';
+
+interface OGImage {
+  url: string;
+  width?: number;
+  height?: number;
+  alt?: string;
+}
 
 const load = async function () {
   let images: Record<string, () => Promise<unknown>> | undefined = undefined;
@@ -62,7 +69,7 @@ export const adaptOpenGraphImages = async (
   const defaultHeight = 626;
 
   const adaptedImages = await Promise.all(
-    images.map(async (image) => {
+    images.map(async (image: OGImage) => {
       if (image?.url) {
         const resolvedImage = (await findImage(image.url)) as ImageMetadata | string | undefined;
         if (!resolvedImage) {
