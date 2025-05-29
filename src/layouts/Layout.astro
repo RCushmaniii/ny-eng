@@ -7,18 +7,19 @@ import { headerContent as headerContentEn } from "@data/header/en";
 import { headerContent as headerContentEs } from "@data/header/es";
 import Footer from "../components/Footer.astro"; // Ensure path is correct
 import type { FooterContent } from "../components/Footer.astro"; // Import the FooterContent type
-import ThemeSwitcher from "../components/ThemeSwitcher.astro"; // Ensure path is correct
-import { SEO, siteConfig, themeSetting } from "../data/config"; // Ensure path is correct
+// import ThemeSwitcher from "../components/ThemeSwitcher.astro"; // Removed as per user request
+import { SEO, siteConfig, /* themeSetting */ } from "../data/config"; // themeSetting likely no longer needed here
 import { footerContentEn } from '@data/footer/en';
 import { footerContentEs } from '@data/footer/es';
+import { AstroSeo } from '@astrolib/seo';
 
-const { theme } = themeSetting;
-const { SiteName, Separator, defaultDescription, defaultLang } = SEO; // Ensure defaultLang (e.g., 'en') is in your SEO config
+// const { theme } = themeSetting; // Removed as theme switcher is removed
+const { SiteName, Separator, defaultDescription, defaultLang } = SEO;
 
 interface Props {
   title?: string;
   description?: string;
-  image?: string;
+  image?: string | { src: string; [key: string]: any }; 
   footerCta?: {
     title: string;
     description: string;
@@ -26,10 +27,11 @@ interface Props {
     button: { text: string; link: string; target?: string };
   };
   canonicalUrl?: string;
-  heroImage?: any;
-  heroImageMobile?: any;
-  translationSlugEs?: string;
-  translationSlugEn?: string;
+  heroImage?: any; // Assuming ImageMetadata or string path
+  heroImageMobile?: any; // Assuming ImageMetadata or string path
+  translationSlugEs?: string; 
+  translationSlugEn?: string; 
+  ogType?: 'website' | 'article';
 }
 
 const {
@@ -41,31 +43,28 @@ const {
   heroImage,
   heroImageMobile,
   translationSlugEs,
-  translationSlugEn
+  translationSlugEn,
+  ogType = 'website'
 } = Astro.props;
 
 const pageTitle = title ? `${title} ${Separator} ${SiteName}` : SiteName;
 const pageDescription = description || defaultDescription || "";
-const pageImage = image || "";
+const pageImageForSeo = image;
 const canonicalPath = canonicalUrl || Astro.url.pathname;
 const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
 
-// Determine current language for <html> tag and for selecting header content
 const currentAstroPath = Astro.url.pathname;
-let determinedLang = defaultLang || 'en'; // Default to English (or configured default)
+let determinedLang = defaultLang || 'en';
 if (currentAstroPath === '/es' || currentAstroPath.startsWith('/es/')) {
   determinedLang = 'es';
 } else if (currentAstroPath === '/en' || currentAstroPath.startsWith('/en/')) {
   determinedLang = 'en';
 }
-// If currentAstroPath is just '/', it will use defaultLang.
 
 console.log("[Layout] Astro.url.pathname:", currentAstroPath);
 console.log("[Layout] Determined language:", determinedLang);
 
 const headerDataForCurrentLang = determinedLang === 'es' ? headerContentEs : headerContentEn;
-
-// Prepare data for the Footer component
 const siteConfigForFooter = { companyName: siteConfig.companyName };
 const baseFooterContentFromData = determinedLang === 'es' 
   ? footerContentEs(siteConfigForFooter) 
@@ -74,37 +73,59 @@ const baseFooterContentFromData = determinedLang === 'es'
 console.log("[Layout] Header data selected (logoLink):", headerDataForCurrentLang.logoLink);
 console.log("[Layout] Footer data selected (logoLink):", baseFooterContentFromData.logoLink);
 
-// Separate the default CTA and the rest of the base content
 const { defaultFooterCta: baseDefaultCtaFromData, ...baseContentWithoutDefaultCta } = baseFooterContentFromData;
-
-// Determine the final cta, merging if page provides one
 let finalFooterCta;
 if (Astro.props.footerCta) {
   finalFooterCta = { ...baseDefaultCtaFromData, ...Astro.props.footerCta };
 } else {
   finalFooterCta = baseDefaultCtaFromData;
 }
-
-// Assemble the final content object for the Footer component, ensuring it matches FooterContent type
 const actualFooterContentForComponent: FooterContent = {
-  ...baseContentWithoutDefaultCta, // This has logoLink, tagline, sections, legalMenu, copyrightText
-  footerCta: finalFooterCta        // This is the merged/final CTA
+  ...baseContentWithoutDefaultCta, 
+  footerCta: finalFooterCta
 };
 
-// --- CRITICAL FOR FIXED HEADER ---
-// Calculate or set a fixed header height. 
-// This value needs to match the actual height of your rendered <header> element 
-// including its top margin (which is mt-4, typically 1rem or 16px).
-// Example: If header inner content (py-4) is ~56px, plus rounded-lg, border,
-// and the mt-4 (16px) on its container.
-// A common height for such headers is between 4rem (64px) and 6.5rem (104px).
-// Inspect your header's height in dev tools to get an accurate value.
-const fixedHeaderHeight = "0rem"; // ADJUST THIS VALUE CAREFULLY!
-// --- END CRITICAL ---
+let openGraphImagesFormatted;
+if (pageImageForSeo) {
+  const imagePath = typeof pageImageForSeo === 'string' ? pageImageForSeo : pageImageForSeo.src;
+  if (imagePath) {
+    openGraphImagesFormatted = [{
+      url: new URL(imagePath.startsWith('/') ? imagePath.substring(1) : imagePath, siteConfig.siteUrl).toString(),
+    }];
+  }
+}
+
+const twitterUsername = siteConfig.Socials.xSocial.includes('x.com/')
+  ? `@${siteConfig.Socials.xSocial.split('x.com/')[1]}`
+  : (siteConfig.Socials.xSocial.includes('twitter.com/') ? `@${siteConfig.Socials.xSocial.split('twitter.com/')[1]}` : undefined);
+
+const languageAlternatesList = [];
+if (determinedLang === 'es' && translationSlugEn) {
+  languageAlternatesList.push({ hreflang: 'es', href: fullCanonicalUrl });
+  languageAlternatesList.push({ hreflang: 'en', href: new URL(translationSlugEn, siteConfig.siteUrl).toString() });
+  languageAlternatesList.push({ hreflang: 'x-default', href: new URL(translationSlugEn, siteConfig.siteUrl).toString() });
+} else if (determinedLang === 'en' && translationSlugEs) {
+  languageAlternatesList.push({ hreflang: 'en', href: fullCanonicalUrl });
+  languageAlternatesList.push({ hreflang: 'es', href: new URL(translationSlugEs, siteConfig.siteUrl).toString() });
+  languageAlternatesList.push({ hreflang: 'x-default', href: fullCanonicalUrl }); 
+} else {
+  languageAlternatesList.push({ hreflang: determinedLang, href: fullCanonicalUrl });
+  if (determinedLang === defaultLang) {
+    languageAlternatesList.push({ hreflang: 'x-default', href: fullCanonicalUrl });
+  }
+  if (!languageAlternatesList.find(a => a.hreflang === 'x-default')) {
+    languageAlternatesList.push({ hreflang: 'x-default', href: fullCanonicalUrl });
+  }
+}
+const finalLanguageAlternates = languageAlternatesList.filter((obj, index, self) =>
+  index === self.findIndex((o) => o.hreflang === obj.hreflang)
+);
+
+const fixedHeaderHeight = "0rem";
 ---
 
 <!doctype html>
-<html lang={determinedLang}> {/* DYNAMIC LANG ATTRIBUTE */}
+<html lang={determinedLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -113,20 +134,23 @@ const fixedHeaderHeight = "0rem"; // ADJUST THIS VALUE CAREFULLY!
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="canonical" href={fullCanonicalUrl} />
-    <meta name="generator" content={Astro.generator} />
 
-    <title>{pageTitle}</title>
-    <meta name="description" content={pageDescription} />
-    <meta name="robots" content="index, follow" />
+    {/* Google Fonts - Restored */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
+    {/* Hero Image Preload - Restored */}
     {heroImage && (
       <link
         rel="preload"
         as="image"
-        href={heroImage.src}
+        href={typeof heroImage === 'string' ? heroImage : heroImage.src} 
         imagesrcset={
-          heroImageMobile
+          heroImageMobile && typeof heroImage !== 'string' && typeof heroImageMobile !== 'string' && heroImage.src && heroImageMobile.src
             ? `${heroImageMobile.src} 800w, ${heroImage.src} 1920w`
             : undefined
         }
@@ -135,45 +159,51 @@ const fixedHeaderHeight = "0rem"; // ADJUST THIS VALUE CAREFULLY!
       />
     )}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Noto+Sans+KR:wght@100..900&display=swap"
-      rel="stylesheet"
+    <AstroSeo
+      title={pageTitle}
+      description={pageDescription}
+      canonical={fullCanonicalUrl}
+      openGraph={{
+        url: fullCanonicalUrl,
+        title: pageTitle,
+        description: pageDescription,
+        images: openGraphImagesFormatted,
+        site_name: SiteName,
+        type: ogType,
+      }}
+      twitter={{
+        handle: twitterUsername,
+        site: twitterUsername, 
+        cardType: openGraphImagesFormatted ? 'summary_large_image' : 'summary',
+      }}
+      languageAlternates={finalLanguageAlternates.length > 0 ? finalLanguageAlternates : undefined}
     />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={fullCanonicalUrl} />
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={pageDescription} />
-    {pageImage && (
-      <meta
-        property="og:image"
-        content={new URL(pageImage, siteConfig.siteUrl).toString()}
-      />
-    )}
+    {/* <Fragment set:html={theme === "zeus" ? "<link rel='stylesheet' href='/themes/zeus.css'>" : ""} /> Removed */}
+    {/* <ThemeSwitcher /> Removed */}
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={fullCanonicalUrl} />
-    <meta property="twitter:title" content={pageTitle} />
-    <meta property="twitter:description" content={pageDescription} />
-    {pageImage && (
-      <meta
-        property="twitter:image"
-        content={new URL(pageImage, siteConfig.siteUrl).toString()}
-      />
-    )}
+    <slot name="head" />
   </head>
-
-  <body data-theme={theme} style={`padding-top: ${fixedHeaderHeight};`}> {/* ADDED PADDING-TOP HERE */}
-    <Header
-      content={headerDataForCurrentLang}
-      translationSlugEs={translationSlugEs}
-      translationSlugEn={translationSlugEn}
-    />
-    <slot /> {/* This is where your page content (e.g., homepage) goes */}
-    <Footer content={actualFooterContentForComponent} />
-    <ThemeSwitcher />
-    <script src="/js/scroll.js" defer></script> {/* Ensure path is correct */}
+  <body class={`antialiased font-sans bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 overflow-x-hidden ${heroImage ? 'has-hero-image' : ''}`}>
+    <div id="page-wrapper" class="flex flex-col min-h-screen">
+      <Header content={headerDataForCurrentLang} translationSlugEs={translationSlugEs} translationSlugEn={translationSlugEn} />
+      <main id="main-content" class="flex-grow" style={`padding-top: ${fixedHeaderHeight};`}>
+        <slot />
+      </main>
+      <Footer content={actualFooterContentForComponent} />
+    </div>
+    {/* Adjusted aos.js to not use is:inline, assuming it's in public/js/ */}
+    <script is:inline src="/js/aos.js"></script>
+    <script is:inline>
+      // This AOS init script should remain is:inline as it's small and page-specific config
+      AOS.init({
+        duration: 800, 
+        easing: 'ease-in-out', 
+        once: true, 
+      });
+    </script>
+    {/* scroll.js - Restored */}
+    <script src="/js/scroll.js" defer></script>
+    <slot name="body-end" />
   </body>
 </html>
