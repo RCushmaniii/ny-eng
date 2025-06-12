@@ -10,6 +10,9 @@ interface Props {
 }
 
 const { posts, currentCategory } = Astro.props;
+const lang = Astro.url.pathname.startsWith('/es/') ? 'es' : 'en';
+const baseBlogUrl = lang === 'es' ? '/es/blog' : '/en/blog';
+const baseCategoryUrl = lang === 'es' ? '/es/category' : '/en/category';
 
 // Filter to only show categories that have posts in the current filtered list
 const activeCategories = categories.filter(category => 
@@ -20,21 +23,21 @@ const activeCategories = categories.filter(category =>
   <div class="mb-16 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6" data-aos="fade-in" data-aos-delay="100">
     
     <div class="w-full">
-      <h2 class="text-lg font-semibold mb-4">Filter by Categories:</h2>
+      <h2 class="text-lg font-semibold mb-4">{lang === 'es' ? 'Filtrar por Categorías:' : 'Filter by Categories:'}</h2>
       <div class="flex flex-wrap gap-2">
         <a 
-          href="/blog" 
+          href={baseBlogUrl} 
           class={`px-4 sm:px-6 py-2 sm:py-3 leading-none rounded-md text-small flex items-center justify-center transition-colors border border-primary duration-200 ${
             !currentCategory 
               ? 'bg-primary text-body-dark shadow-md' 
               : 'bg-background text-body-base hover:bg-background-light hover:text-body-light'
           }`}
         >
-          Show All
+          {lang === 'es' ? 'Mostrar Todo' : 'Show All'}
         </a>
         {activeCategories.map((category) => (
           <a 
-            href={`/category/${category.slug}`}
+            href={`${baseCategoryUrl}/${category.slug}`}
             class={`px-4 sm:px-6 py-2 sm:py-3 leading-none rounded-md text-small flex items-center justify-center transition-colors border border-primary duration-200 ${
               currentCategory === category.name 
                 ? 'bg-primary text-body-dark shadow-md' 
@@ -42,13 +45,13 @@ const activeCategories = categories.filter(category =>
             }`}
             title={category.description}
           >
-            {category.name}
+            {lang === 'es' && category.name_es ? category.name_es : category.name}
           </a>
         ))}
       </div>
     </div>
     <p class="text-small text-body-base text-left sm:text-right whitespace-nowrap">
-      Showing <span class="font-bold text-primary">{posts.length}</span> posts
+      {lang === 'es' ? 'Mostrando' : 'Showing'} <span class="font-bold text-primary">{posts.length}</span> {lang === 'es' ? 'publicaciones' : 'posts'}
     </p>
   </div>
   
@@ -63,8 +66,9 @@ const activeCategories = categories.filter(category =>
           publishDate={post.data.publishDate}
           categories={post.data.categories || []}
           content={post.body}
-          slug={post.slug}
+          slug={post.slug.substring(3)}
           index={index}
+          lang={lang}
         />
       </div>
     ))}
@@ -72,7 +76,7 @@ const activeCategories = categories.filter(category =>
 
   {posts.length === 0 && (
     <p class="text-center text-gray-500 py-8">
-      No posts found in this category.
+      {lang === 'es' ? 'No se encontraron publicaciones en esta categoría.' : 'No posts found in this category.'}
     </p>
   )}
 </section>

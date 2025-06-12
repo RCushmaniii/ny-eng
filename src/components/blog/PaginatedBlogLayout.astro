@@ -19,6 +19,8 @@ interface Props {
     currentCategory?: string;
     heroImage?: any; // processed Astro image object
     heroImageAlt?: string;
+    translationSlugEn?: string;
+    translationSlugEs?: string;
 }
 
 const { 
@@ -30,7 +32,9 @@ const {
     subtitle,
     currentCategory,
     heroImage,
-    heroImageAlt
+    heroImageAlt,
+    translationSlugEn,
+    translationSlugEs
 } = Astro.props;
 
     // Generate pagination URLs
@@ -49,7 +53,7 @@ const heroContent = {
     alt: heroImageAlt
 }
 ---
-<Layout title={seoTitle} description={seoDescription}>
+<Layout title={seoTitle} description={seoDescription} translationSlugEn={translationSlugEn} translationSlugEs={translationSlugEs}>
     <main>
     <InnerHero content={heroContent}/>
     <BlogList posts={paginatedPosts} currentCategory={currentCategory} />

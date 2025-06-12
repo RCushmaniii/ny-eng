@@ -1,20 +1,21 @@
 ---
 // Ensure this path is correct relative to Layout.astro's location
+import { Font } from 'astro:assets';
 import "../styles/global.css"; 
 import Header from "../components/Header.astro"; // Ensure path is correct
-// Ensure these @data paths are correctly resolved by your tsconfig/jsconfig
-import { headerContent as headerContentEn } from "@data/header/en"; 
-import { headerContent as headerContentEs } from "@data/header/es";
 import Footer from "../components/Footer.astro"; // Ensure path is correct
 import type { FooterContent } from "../components/Footer.astro"; // Import the FooterContent type
-// import ThemeSwitcher from "../components/ThemeSwitcher.astro"; // Removed as per user request
-import { SEO, siteConfig, /* themeSetting */ } from "../data/config"; // themeSetting likely no longer needed here
+import { headerContent as headerContentEn } from "@data/header/en"; 
+import { headerContent as headerContentEs } from "@data/header/es";
+import SEO from "../components/SEO.astro";
+import { siteConfig } from "../data/config";
 import { footerContentEn } from '@data/footer/en';
 import { footerContentEs } from '@data/footer/es';
-import { AstroSeo } from '@astrolib/seo';
-
-// const { theme } = themeSetting; // Removed as theme switcher is removed
-const { SiteName, Separator, defaultDescription, defaultLang } = SEO;
+const { siteUrl } = siteConfig;
+const SiteName = 'New York English Teacher – Your Career Performance Accelerator';
+const Separator = '|';
+const defaultDescription = 'Professional Business English Coaching and Corporate Training';
+const defaultLang = 'en';
 
 interface Props {
   title?: string;
@@ -32,6 +33,8 @@ interface Props {
   translationSlugEs?: string; 
   translationSlugEn?: string; 
   ogType?: 'website' | 'article';
+  lang?: string; // Added lang prop
+  noIndex?: boolean; // Added for noindex, nofollow meta tag
 }
 
 const {
@@ -44,7 +47,9 @@ const {
   heroImageMobile,
   translationSlugEs,
   translationSlugEn,
-  ogType = 'website'
+  ogType = 'website',
+  lang = 'en',
+  noIndex = false
 } = Astro.props;
 
 const pageTitle = title ? `${title} ${Separator} ${SiteName}` : SiteName;
@@ -125,23 +130,26 @@ const fixedHeaderHeight = "0rem";
 ---
 
 <!doctype html>
-<html lang={determinedLang}>
+<html lang={lang || determinedLang} data-theme="zeus">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- [Titan/Zeus] Google Fonts for theme headings and body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
+    <!-- End Titan/Zeus Google Fonts -->
+    <!-- [Titan/Zeus] Removed Astro Fonts API preload, using Google Fonts <link> only -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
-    {/* Google Fonts - Restored */}
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Noto+Sans+KR:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+    {/* Robots meta tag for noindex, nofollow */}
+    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+
+    {/* Google Fonts links removed to rely on self-hosted versions */}
 
     {/* Hero Image Preload - Restored */}
     {heroImage && (
@@ -159,24 +167,13 @@ const fixedHeaderHeight = "0rem";
       />
     )}
 
-    <AstroSeo
+    <SEO
       title={pageTitle}
       description={pageDescription}
-      canonical={fullCanonicalUrl}
-      openGraph={{
-        url: fullCanonicalUrl,
-        title: pageTitle,
-        description: pageDescription,
-        images: openGraphImagesFormatted,
-        site_name: SiteName,
-        type: ogType,
-      }}
-      twitter={{
-        handle: twitterUsername,
-        site: twitterUsername, 
-        cardType: openGraphImagesFormatted ? 'summary_large_image' : 'summary',
-      }}
-      languageAlternates={finalLanguageAlternates.length > 0 ? finalLanguageAlternates : undefined}
+      image={openGraphImagesFormatted?.[0]?.url || "/images/logos/new-york-english-og.jpg"}
+      type={ogType}
+      url={fullCanonicalUrl}
+      locale={determinedLang}
     />
 
     {/* <Fragment set:html={theme === "zeus" ? "<link rel='stylesheet' href='/themes/zeus.css'>" : ""} /> Removed */}
@@ -184,8 +181,9 @@ const fixedHeaderHeight = "0rem";
 
     <slot name="head" />
   </head>
-  <body class={`antialiased font-sans bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 overflow-x-hidden ${heroImage ? 'has-hero-image' : ''}`}>
+  <body class={`antialiased font-sans bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 overflow-x-hidden ${heroImage ? 'has-hero-image' : ''}`} style="font-family: 'Noto Sans KR', sans-serif;">
     <div id="page-wrapper" class="flex flex-col min-h-screen">
+      {console.log('[Layout->Header HTML] Passing translationSlugEs:', translationSlugEs, 'Passing translationSlugEn:', translationSlugEn)}
       <Header content={headerDataForCurrentLang} translationSlugEs={translationSlugEs} translationSlugEn={translationSlugEn} />
       <main id="main-content" class="flex-grow" style={`padding-top: ${fixedHeaderHeight};`}>
         <slot />

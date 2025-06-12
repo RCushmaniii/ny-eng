@@ -64,16 +64,19 @@ const base = origin.endsWith('/') ? origin.slice(0, -1) : origin;
 const postSlug = currentSlug;
 const postUrl = `${base}/es/blog/${postSlug}`;
 const postTitle = post.data.title;
+
+const englishTranslationSlug = post.data.translations?.en;
+const translationSlugEn = englishTranslationSlug ? `/en/blog/${englishTranslationSlug}` : '/en/blog';
 ---
 
 {console.log("DEBUG: post.data.translations", post.data.translations)}
-<Layout title={seoTitle} description={seoDescription} translationSlugEn={post.data.translations?.en}>
+<Layout title={seoTitle} description={seoDescription} translationSlugEn={translationSlugEn}>
   <p>Raw Translations from post.data (for debugging): {JSON.stringify(post.data.translations)}</p>
   <section class="relative w-full">
     <div class="w-full h-120 absolute top-0 left-0 z-0 overflow-hidden border-b border-black">
       {post.data.featuredImage && (
         <Image 
-          src={typeof post.data.featuredImage === 'string' ? post.data.featuredImage : post.data.featuredImage.src}
+          src={post.data.featuredImage}
           alt={post.data.imageAlt || post.data.title}
           width={1920}
           height={1080}
@@ -95,13 +98,43 @@ const postTitle = post.data.title;
       </div>
       <Content />
     </article>
+    {postUrl && postTitle && (
+      <>
+        <section class="share-bar mt-12 mb-8 flex flex-wrap items-center gap-4 text-sm justify-center mx-auto max-w-3xl">
+          <span class="font-medium">Compartir esta publicación:</span>
+          <a href={"https://api.whatsapp.com/send?text=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">WhatsApp</a>
+          <a href={"https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Facebook</a>
+          <a href={"https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">LinkedIn</a>
+          <a href={"https://twitter.com/intent/tweet?url=" + encodeURIComponent(postUrl) + "&text=" + encodeURIComponent(postTitle)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Twitter</a>
+          <button id="copy-link-btn" type="button" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Copiar Enlace</button>
+          <span id="copy-link-msg" class="ml-2 text-green-600 font-semibold" style="display:none;">¡Copiado!</span>
+        </section>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            // Copy Link
+            const btn = document.getElementById('copy-link-btn');
+            const msg = document.getElementById('copy-link-msg');
+            if (btn) {
+              btn.addEventListener('click', function() {
+                navigator.clipboard.writeText(window.location.href).then(function() {
+                  if (msg) {
+                    msg.style.display = 'inline';
+                    setTimeout(() => { msg.style.display = 'none'; }, 1500);
+                  }
+                });
+              });
+            }
+          });
+        </script>
+      </>
+    )}
     {(previousPost || nextPost) && (
       <section class="mt-16 flex flex-col items-center md:flex-row md:justify-between gap-6 mx-auto max-w-3xl">
         {previousPost && (
-          <a href={`/es/blog/${previousPost.slug}`} class="btn btn-secondary">← {previousPost.data.title}</a>
+          <a href={`/es/blog/${previousPost.slug}`} class="btn btn-secondary">← Anterior: {previousPost.data.title}</a>
         )}
         {nextPost && (
-          <a href={`/es/blog/${nextPost.slug}`} class="btn btn-secondary">{nextPost.data.title} →</a>
+          <a href={`/es/blog/${nextPost.slug}`} class="btn btn-secondary">Siguiente: {nextPost.data.title} →</a>
         )}
       </section>
     )}

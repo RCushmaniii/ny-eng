@@ -64,17 +64,20 @@ const base = origin.endsWith('/') ? origin.slice(0, -1) : origin;
 const postSlug = currentSlug;
 const postUrl = `${base}/en/blog/${postSlug}`;
 const postTitle = post.data.title;
+
+const spanishTranslationSlug = post.data.translations?.es;
+const translationSlugEs = spanishTranslationSlug ? `/es/blog/${spanishTranslationSlug}` : '/es/blog';
 ---
 
 {console.log("DEBUG: post.data.translations", post.data.translations)}
 {console.log("DEBUG: translationSlugEs", post.data.translations?.es)}
-<Layout title={seoTitle} description={seoDescription} translationSlugEs={post.data.translations?.es}>
+<Layout title={seoTitle} description={seoDescription} translationSlugEs={translationSlugEs}>
   <p>Raw Translations from post.data (for debugging): {JSON.stringify(post.data.translations)}</p>
   <section class="relative w-full">
     <div class="w-full h-120 absolute top-0 left-0 z-0 overflow-hidden border-b border-black">
       {post.data.featuredImage && (
         <Image 
-          src={typeof post.data.featuredImage === 'string' ? post.data.featuredImage : post.data.featuredImage.src}
+          src={post.data.featuredImage}
           alt={post.data.imageAlt || post.data.title}
           width={1920}
           height={1080}
@@ -85,7 +88,7 @@ const postTitle = post.data.title;
       )}
     </div>
     <article class="site-container--small mx-auto px-4 prose relative z-10 pb-base">
-      <div class="mt-42 mb-12 text-center">
+      <div class="mt-42 mb-12 pt-32 text-center relative z-10">
         <h1>{post.data.title}</h1>
         <div class="flex items-center justify-center gap-4 text-gray-600">
           <Date date={post.data.publishDate} />

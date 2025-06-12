@@ -15,9 +15,10 @@ interface Props {
   content: string;
   slug?: string;
   index: number;
+  lang: 'en' | 'es';
 }
 
-const { title, excerpt, featuredImage, imageAlt, publishDate, categories: postCategories, slug, index } = Astro.props;
+const { title, excerpt, featuredImage, imageAlt, publishDate, categories: postCategories, slug, index, lang } = Astro.props;
 
 // Validate categories against the valid categories
 const validCategories = postCategories.filter((categoryName: string) => 
@@ -27,7 +28,7 @@ const validCategories = postCategories.filter((categoryName: string) =>
 ---
 
 <a 
-  href={`/blog/${slug}`} 
+  href={`/${lang}/blog/${slug}`} 
   class="group flex flex-col h-full overflow-hidden bg-white rounded-lg border border-black transition-all duration-300 hover:border-primary"
   data-aos="fade-up"
   data-aos-delay={index * 100}

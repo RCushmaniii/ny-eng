@@ -1,0 +1,62 @@
+---
+import Layout from "@layouts/Layout.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import Button from "@components/ui/Button.astro";
+import nycImage from "@assets/images/nyc-thank-you.jpg";
+
+const metadata = {
+  title: "Gracias | Robert Cushman - Coach de Comunicación Empresarial en Inglés",
+  description:
+    "Gracias por tu mensaje. Me pondré en contacto pronto para programar tu llamada de introducción y discutir tus objetivos de comunicación.",
+};
+
+const heroContent = {
+  title: "¡Gracias — He Recibido Tu Mensaje!",
+  description: "Me pondré en contacto en breve para programar tu llamada de introducción.",
+  backgroundImage: nycImage,
+  overlayOpacity: 0.4,
+};
+
+const footerCta = {
+  eyebrow: "",
+  title: "Transforma Tu Inglés Profesional Hoy Mismo",
+  description:
+    "Reserva tu consulta gratuita para obtener la claridad, confianza e impacto que tu rol exige.",
+  hideCta: false,
+  button: {
+    text: "Reservar Mi Consulta Gratuita",
+    link: "https://ny-english-teacher.odoo.com/book/7ceefa20", // External link, remains the same
+    target: "_blank",
+    variant: "primary" as const,
+  },
+};
+---
+
+<Layout 
+  title={metadata.title} 
+  description={metadata.description} 
+  footerCta={footerCta} 
+  lang="es" 
+  noIndex={true}  // Assuming Layout handles noindex
+  translationSlugEn="/en/thank-you" // Link to English version
+>
+  <InnerHero content={heroContent} />
+
+  <section class="py-16 md:py-24">
+    <div class="site-container px-4 text-center max-w-2xl mx-auto">
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
+        Discutiremos tus objetivos y cómo puedo ayudarte a comunicarte con claridad y confianza.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+        ¿Qué Sigue?
+      </h2>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
+        Mientras tanto, explora cómo ayudo a profesionales como tú a liderar con confianza en inglés — en reuniones, presentaciones, entrevistas y más.
+      </p>
+      <!-- Optional: Add a button to navigate back to the Spanish homepage -->
+      <Button href="/es/">Volver a la Página Principal</Button>
+    </div>
+  </section>
+</Layout>

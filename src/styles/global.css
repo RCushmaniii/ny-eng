@@ -1,4 +1,49 @@
-@import "tailwindcss";
+/* Tailwind directives */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Global font application */
+html, body, p, div, span, li, a, h1, h2, h3, h4, h5, h6, .heading, button, input, textarea, select {
+  font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+/* Ensure white text is properly visible */
+.text-white {
+  color: #ffffff !important;
+}
+
+/* Fix for any sans-serif text */
+.sans-serif {
+  font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+/* Fix for paragraph text */
+p {
+  font-family: 'Noto Sans KR', sans-serif !important;
+  color: inherit;
+}
+
+/* Fix for text in SplitPanel component */
+.site-container h2, .site-container h3, .site-container p, .site-container li {
+  color: inherit;
+}
+
+/* Fix for light background sections */
+section[class*="bg-background-light"] h2,
+section[class*="bg-background-light"] h3,
+section[class*="bg-background-light"] p,
+section[class*="bg-background-light"] li {
+  color: var(--color-text) !important;
+}
+
+/* Fix for dark background sections */
+section[class*="bg-background-dark"] h2,
+section[class*="bg-background-dark"] h3,
+section[class*="bg-background-dark"] p,
+section[class*="bg-background-dark"] li {
+  color: #ffffff !important;
+}
 
 /* Self-hosted Bruno Ace SC */
 @font-face {
@@ -6,7 +51,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/bruno-ace-sc-v5-latin-regular.woff2') format('woff2');
+  src: url('../assets/fonts/bruno-ace-sc-v5-latin-regular.woff2') format('woff2');
 }
 
 /* Self-hosted Noto Sans KR */
@@ -15,10 +60,10 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/noto-sans-kr-v36-latin-regular.woff2') format('woff2');
+  src: url('../assets/fonts/noto-sans-kr-v36-latin-regular.woff2') format('woff2');
 }
 
-@theme {
+:root {
     --font-base: 'Noto Sans KR', sans-serif;
     --font-display: 'Bruno Ace SC', display;
     --font-bruno-ace: 'Bruno Ace SC', sans-serif;
@@ -723,15 +768,21 @@ body {
 }
 
 .site-container {
-    @apply mx-auto max-w-[var(--container-base)] w-full;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--container-base);
+    width: 100%;
 }
 
 .site-container--small {
-    @apply mx-auto max-w-[var(--container-small)] w-full;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--container-small);
+    width: 100%;
 }
 
 .header-offset {
-    @apply pt-24;
+    padding-top: 6rem; /* equivalent to pt-24 */
 }
 
 .hero-background {
@@ -745,10 +796,10 @@ body {
         var(--c2) 46% 55%, var(--c1) 56% 65%, var(--c2) 66% 75%, var(--c1) 76% 85%, var(--c2) 86% 95%,
         #0000 96%;
     background:
-        radial-gradient(50% 50% at 100% 0, var(--_g)),
-        radial-gradient(50% 50% at 0 100%, var(--_g)),
-        radial-gradient(50% 50%, var(--_g)),
-        radial-gradient(50% 50%, var(--_g)) calc(var(--s)/2) calc(var(--s)/2) var(--c1);
+        radial-gradient(circle closest-side at 100% 0, var(--_g)),
+        radial-gradient(circle closest-side at 0 100%, var(--_g)),
+        radial-gradient(circle closest-side at 50% 50%, var(--_g)),
+        radial-gradient(circle closest-side at 50% 50%, var(--_g)) calc(var(--s)/2) calc(var(--s)/2) var(--c1);
     background-size: var(--s) var(--s);
 }
 

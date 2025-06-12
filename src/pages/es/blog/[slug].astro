@@ -22,7 +22,8 @@ const { Content } = await post.render();
 const allEsPosts = (await getCollection('blog'))
   .filter(p => p.id.startsWith('es/') && p.data.publish !== false)
   .sort((a, b) => globalThis.Date.parse(String(b.data.publishDate)) - globalThis.Date.parse(String(a.data.publishDate)));
-const currentSlug = Astro.params.slug;
+// Add back the 'es/' prefix to match the slug in the collection
+const currentSlug = `es/${Astro.params.slug}`;
 const index = allEsPosts.findIndex(p => p.slug === currentSlug);
 const previousPost = allEsPosts[index + 1] ?? null;
 const nextPost = allEsPosts[index - 1] ?? null;
@@ -48,7 +49,7 @@ const postTitle = post.data.title;
 
 <Layout title={seoTitle} description={seoDescription} translationSlugEn={post.data.translations?.en}>
   <section class="relative w-full">
-    <div class="w-full h-[34rem] absolute top-0 left-0 z-0 overflow-hidden border-b border-black">
+    <div class="w-full h-120 absolute top-0 left-0 z-0 overflow-hidden border-b border-black">
       {post.data.featuredImage && (
         <Image
           src={post.data.featuredImage}
@@ -62,12 +63,12 @@ const postTitle = post.data.title;
       <div class="absolute inset-0 bg-primary/10 backdrop-blur-md"></div>
     </div>
     <article class="site-container--small mx-auto px-4 prose relative z-10 pb-base">
-      <div class="pt-28 mb-12 text-center relative z-10">
+      <div class="mt-42 mb-12 pt-32 text-center relative z-10">
         <h1>{post.data.title}</h1>
         <div class="flex items-center justify-center gap-4 text-gray-600">
           <Date date={post.data.publishDate} />
           {post.data.categories && post.data.categories.map(cat => (
-            <CategoryPill category={cat} />
+            <CategoryPill category={cat} lang="es" />
           ))}
         </div>
       </div>
@@ -83,12 +84,44 @@ const postTitle = post.data.title;
         />
       )}
       <Content />
-    </article>
-    {(previousPost || nextPost) && (
-      <section class="mt-16 flex flex-col items-center md:flex-row md:justify-between gap-6 mx-auto max-w-3xl">
+      
+      {postUrl && postTitle && (
+        <>
+          <section class="share-bar mt-12 mb-8 flex flex-wrap items-center gap-4 text-sm justify-center mx-auto max-w-3xl">
+            <span class="font-medium">Compartir este post:</span>
+            <a href={"https://api.whatsapp.com/send?text=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">WhatsApp</a>
+            <a href={"https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Facebook</a>
+            <a href={"https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">LinkedIn</a>
+            <a href={"https://twitter.com/intent/tweet?url=" + encodeURIComponent(postUrl) + "&text=" + encodeURIComponent(postTitle)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Twitter</a>
+            <button id="copy-link-btn" type="button" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Copiar Enlace</button>
+            <span id="copy-link-msg" class="ml-2 text-green-600 font-semibold" style="display:none;">¡Copiado!</span>
+          </section>
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              // Copy Link
+              const btn = document.getElementById('copy-link-btn');
+              const msg = document.getElementById('copy-link-msg');
+              if (btn) {
+                btn.addEventListener('click', function() {
+                  navigator.clipboard.writeText(window.location.href).then(function() {
+                    if (msg) {
+                      msg.style.display = 'inline';
+                      setTimeout(() => { msg.style.display = 'none'; }, 1500);
+                    }
+                  });
+                });
+              }
+            });
+          </script>
+        </>
+      )}
+      
+      {/* Blog Navigation */}
+      {(previousPost || nextPost) && (
+        <section class="mt-16 flex flex-col items-center md:flex-row md:justify-between gap-6 mx-auto max-w-3xl">
         {previousPost && (
           <a
-            href={`/es/blog/${previousPost.slug}`}
+            href={`/es/blog/${previousPost.slug.replace(/^es\//, '')}`}
             rel="prev"
             class="group relative flex-1 max-w-xs border border-black rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full"
           >
@@ -112,7 +145,7 @@ const postTitle = post.data.title;
         )}
         {nextPost && (
           <a
-            href={`/es/blog/${nextPost.slug}`}
+            href={`/es/blog/${nextPost.slug.replace(/^es\//, '')}`}
             rel="next"
             class="group relative flex-1 max-w-xs border border-black rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full"
           >
@@ -135,6 +168,7 @@ const postTitle = post.data.title;
           </a>
         )}
       </section>
-    )}
+      )}
+    </article>
   </section>
 </Layout>

@@ -34,7 +34,7 @@ const FooterCta = {
 };
 ---
 
-<Layout {...metadata} footerCta={FooterCta}>
+<Layout {...metadata} footerCta={FooterCta} lang="en" translationSlugEs="/es/about">
     <section id="about-me" class="relative pt-28 pb-8 md:pt-32 md:pb-12 overflow-hidden">
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="grid md:grid-cols-12 grid-cols-1 items-start gap-12">
@@ -81,19 +81,21 @@ const FooterCta = {
                                 <ul class="space-y-4">
                                     <li class="flex items-start">
                                         <span
-                                            class="text-primary font-semibold mr-3"
-                                            >1.</span
+                                            class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold mr-3"
+                                            style="font-family: 'Noto Sans KR', sans-serif;"
+                                            >1</span
                                         >
-                                        They want their English to reflect their
-                                        professional expertise and authority.
+                                        <span style="font-family: 'Noto Sans KR', sans-serif;">They want their English to reflect their
+                                        professional expertise and authority.</span>
                                     </li>
                                     <li class="flex items-start">
                                         <span
-                                            class="text-primary font-semibold mr-3"
-                                            >2.</span
+                                            class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold mr-3"
+                                            style="font-family: 'Noto Sans KR', sans-serif;"
+                                            >2</span
                                         >
-                                        They expect a professional, efficient learning
-                                        experience that respects their time.
+                                        <span style="font-family: 'Noto Sans KR', sans-serif;">They expect a professional, efficient learning
+                                        experience that respects their time.</span>
                                     </li>
                                 </ul>
                             </div>
@@ -148,7 +150,8 @@ const FooterCta = {
                 <div class="relative">
                     <div class="mb-6">
                         <span
-                            class="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary font-bold text-xl"
+                            class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 text-primary font-bold text-xl"
+                            style="font-family: 'Noto Sans KR', sans-serif;"
                         >
                             1
                         </span>
@@ -167,7 +170,8 @@ const FooterCta = {
                 <div class="relative">
                     <div class="mb-6">
                         <span
-                            class="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary font-bold text-xl"
+                            class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 text-primary font-bold text-xl"
+                            style="font-family: 'Noto Sans KR', sans-serif;"
                         >
                             2
                         </span>
@@ -186,7 +190,8 @@ const FooterCta = {
                 <div class="relative">
                     <div class="mb-6">
                         <span
-                            class="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary font-bold text-xl"
+                            class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 text-primary font-bold text-xl"
+                            style="font-family: 'Noto Sans KR', sans-serif;"
                         >
                             3
                         </span>
@@ -248,56 +253,140 @@ const FooterCta = {
 
     {/* Testimonials Section */}
     <section class="relative pt-16 pb-16 md:pt-24 md:pb-12 bg-gray-50 dark:bg-gray-800/50">
-
-  <div class="container mx-auto px-4 max-w-6xl">
-    <div class="max-w-3xl mx-auto text-center mb-16">
-      <p class="text-primary font-semibold mb-4">
-        Real Impact: Success Stories from My Clients
-      </p>
-      <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">
-        Results That Speak for Themselves
-      </h2>
-      <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-        I've coached COOs, CEOs, and founders to communicate with clarity and confidence, driving career-defining wins—from streamlining global operations to securing investor funding.
-      </p>
-      <p class="fade-in-up delay-1 text-body opacity-90 mb-12 max-w-2xl mx-auto">
-        Here’s what they say:
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
-      {/** Dynamically render testimonial cards from testimonials-about.ts */}
-      {testimonials.map((t, idx) => (
-        <div class="bg-white dark:bg-gray-700/50 rounded-xl p-8 shadow-lg fade-in-up delay-{idx+1}">
-          <div class="flex items-center mb-6">
-            <img src={t.avatar.src} alt={t.author} class="w-14 h-14 rounded-full object-cover mr-4 border-2 border-primary" loading="lazy" />
-            <div>
-              <div class="font-heading text-lg font-semibold">{t.author}</div>
-              <div class="text-sm text-gray-500 dark:text-gray-400">{t.position}, {t.company}</div>
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <p class="text-primary font-semibold mb-4">
+                    Real Impact: Success Stories from My Clients
+                </p>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">
+                    Results That Speak for Themselves
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                    I've coached COOs, CEOs, and founders to communicate with clarity and confidence, driving career-defining wins—from streamlining global operations to securing investor funding.
+                </p>
+                <p class="fade-in-up delay-1 text-body opacity-90 mb-12 max-w-2xl mx-auto">
+                    Here’s what they say:
+                </p>
             </div>
-          </div>
-          <blockquote class="mb-2">
-            <p class="text-lg text-gray-600 dark:text-gray-300 italic">“{t.content}”</p>
-          </blockquote>
-        </div>
-      ))}
-    </div>
 
-    {/* CTA banner below the grid, with margin and centering */}
-    <div class="mt-16 bg-gradient-to-r from-primary to-gray-100 dark:from-primary dark:to-gray-800 rounded-2xl p-8 md:p-12 text-center">
-      <h3 class="text-2xl font-bold text-white mb-4">Ready to Elevate Your English?</h3>
-      <p class="text-white mb-6">Book your free English coaching session to gain the clarity, confidence, and impact your role demands.</p>
-      <Button
-        href="https://ny-english-teacher.odoo.com/book/7ceefa20"
-        target="_blank"
-        variant="primary"
-        size="lg"
-      >
-        Book Your Free Session
-      </Button>
-    </div>
-  </div>
-</section>
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+                {testimonials.map((testimonial, idx) => (
+                    <div class:list={[
+                        "bg-white dark:bg-gray-700/50 rounded-xl p-8 shadow-lg fade-in-up",
+                        `delay-${idx + 1}`
+                    ]}>
+                        <div class="flex items-center mb-6">
+                            <Image 
+                                src={testimonial.avatar} 
+                                alt={testimonial.author} 
+                                class="w-14 h-14 rounded-full object-cover mr-4 border-2 border-primary" 
+                                loading="lazy" 
+                                width={56} height={56} 
+                            />
+                            <div>
+                                <div class="font-heading text-lg font-semibold">{testimonial.author}</div>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">{testimonial.position}, {testimonial.company}</div>
+                            </div>
+                        </div>
+                        <blockquote class="mb-2">
+                            <p class="text-lg text-gray-600 dark:text-gray-300 italic">“{testimonial.content}”</p>
+                        </blockquote>
+                    </div>
+                ))}
+            </div>
+
+            <div class="mt-16 bg-gradient-to-r from-primary to-gray-100 dark:from-primary dark:to-gray-800 rounded-2xl p-8 md:p-12 text-center">
+                <h3 class="text-2xl font-bold text-white mb-4">Ready to Elevate Your English?</h3>
+                <p class="text-white mb-6">Book your free English coaching session to gain the clarity, confidence, and impact your role demands.</p>
+                <Button 
+                    href="https://ny-english-teacher.odoo.com/book/7ceefa20" 
+                    target="_blank" 
+                    variant="primary" 
+                    size="lg" 
+                    rel="noopener noreferrer"
+                    class="text-white ring-2 ring-white focus-visible:ring-white hover:ring-2 hover:ring-black hover:ring-offset-2"
+                >
+                    Book Your Free Session
+                </Button>
+            </div>
+        </div>
+    </section>
+
+    {/* My Methodology Section */}
+    <section id="about-methodology" class="relative py-16 md:py-24 bg-gray-50 dark:bg-gray-800/50">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">
+                    My Methodology
+                </h2>
+                <p class="text-xl text-primary font-semibold">
+                    A proven framework for lasting improvement
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                {/* Step 1 */}
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+                    <div class="mb-6">
+                        <span class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white">
+                            <Target size={32} />
+                        </span>
+                    </div>
+                    <h3 class="font-heading text-2xl font-semibold mb-4">
+                        1. Discovery and Goal Setting
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        We begin with a deep analysis of your current English level, communication challenges, and professional goals. This ensures a personalized roadmap tailored to your success.
+                    </p>
+                </div>
+
+                {/* Step 2 */}
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+                    <div class="mb-6">
+                        <span class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white">
+                            <LineChart size={32} />
+                        </span>
+                    </div>
+                    <h3 class="font-heading text-2xl font-semibold mb-4">
+                        2. Targeted Skill Development
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Based on your goals, we focus on specific areas—such as pronunciation, fluency, vocabulary, or presentation skills—through practical exercises and real-world scenarios.
+                    </p>
+                </div>
+
+                {/* Step 3 */}
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+                    <div class="mb-6">
+                        <span class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white">
+                            <CheckCircle size={32} />
+                        </span>
+                    </div>
+                    <h3 class="font-heading text-2xl font-semibold mb-4">
+                        3. Practical Application and Feedback
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        You'll apply your new skills in simulated professional situations, receiving constructive feedback to build confidence and refine your performance.
+                    </p>
+                </div>
+
+                {/* Step 4 */}
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+                    <div class="mb-6">
+                        <span class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white">
+                            <Calendar size={32} />
+                        </span>
+                    </div>
+                    <h3 class="font-heading text-2xl font-semibold mb-4">
+                        4. Continuous Improvement and Support
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Language learning is a journey. I provide ongoing support and resources to help you maintain momentum and continue advancing your English communication skills long after our sessions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     {/* How I Work Section */}
     <section class="relative py-6 md:py-12 bg-white dark:bg-gray-900">
@@ -342,6 +431,7 @@ const FooterCta = {
                         <div class="relative mb-16 flex items-start">
                             <div
                                 class="absolute left-0 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white"
+                                style="font-family: 'Noto Sans KR', sans-serif;"
                             >
                                 <Waves size={24} />
                             </div>
@@ -364,6 +454,7 @@ const FooterCta = {
                         <div class="relative mb-16 flex items-start">
                             <div
                                 class="absolute left-0 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white"
+                                style="font-family: 'Noto Sans KR', sans-serif;"
                             >
                                 <Calendar size={24} />
                             </div>
@@ -386,6 +477,7 @@ const FooterCta = {
                         <div class="relative mb-16 flex items-start">
                             <div
                                 class="absolute left-0 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white"
+                                style="font-family: 'Noto Sans KR', sans-serif;"
                             >
                                 <Target size={24} />
                             </div>
@@ -409,6 +501,7 @@ const FooterCta = {
                         <div class="relative mb-16 flex items-start">
                             <div
                                 class="absolute left-0 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white"
+                                style="font-family: 'Noto Sans KR', sans-serif;"
                             >
                                 <FileText size={24} />
                             </div>
@@ -432,6 +525,7 @@ const FooterCta = {
                         <div class="relative mb-16 flex items-start">
                             <div
                                 class="absolute left-0 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white"
+                                style="font-family: 'Noto Sans KR', sans-serif;"
                             >
                                 <CheckCircle size={24} />
                             </div>
@@ -454,6 +548,7 @@ const FooterCta = {
                         <div class="relative mb-16 flex items-start">
                             <div
                                 class="absolute left-0 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white"
+                                style="font-family: 'Noto Sans KR', sans-serif;"
                             >
                                 <LineChart size={24} />
                             </div>

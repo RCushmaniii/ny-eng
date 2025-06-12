@@ -114,6 +114,24 @@ This project supports both English and Spanish, with fully localized homepages a
 - Reusable content/data: `@data` (e.g., `featureLists`, `statsLists`, `logoLists`, `faqLists`)
 - All Titan Core components and layouts are shared, with content objects translated and typed for each locale.
 
+### Legal Pages (Privacy Policy & Terms of Service)
+
+The Privacy Policy and Terms of Service pages are managed as Markdown files within the Astro Content Collections system for type safety and consistency.
+
+-   **English Content:**
+    -   Source: `src/content/legal/privacy-policy.md`
+    -   Source: `src/content/legal/terms-of-service.md`
+-   **Spanish Content:**
+    -   Source: `src/content/legal/es/privacy-policy.md`
+    -   Source: `src/content/legal/es/terms-of-service.md`
+-   **Content Collection Definition:**
+    -   The `legal` collection is defined in `src/content/config.ts`, specifying the frontmatter schema (including `title`, `lastUpdated`, and an `seo` object for meta title/description).
+-   **Dynamic Rendering:**
+    -   English pages are rendered by: `src/pages/en/legal/[...slug].astro`
+    -   Spanish pages are rendered by: `src/pages/es/legal/[...slug].astro`
+-   **SEO & Layout:**
+    -   These dynamic route files ensure that the correct `lang`, `noIndex={true}` (to prevent search engine indexing), `footerCta={{ hideCta: true }}`, and cross-language `translationSlug` props are passed to the main `Layout.astro`.
+
 ## 📚 SEO Setup with @astrolib/seo
 
 This project uses `@astrolib/seo` for managing SEO metadata. Key setup steps include:
@@ -180,7 +198,55 @@ This setup ensures consistent and localized SEO metadata across the bilingual si
 - The Titan theme is used as a base, with custom hero, blog, and bilingual layout adjustments.
 - All layout and component imports use absolute aliases (e.g., `@layouts`, `@components`) for maintainability.
 
-## ✨ Recent Progress (May 2025)
+## 🌐 Bilingual Data Structure
+
+### Localized Data Files
+- **Language-Specific Data Files**: For content that differs between languages, we maintain separate files:
+  - English: `@data/stats.ts`, `@data/footer/en.ts`, `@data/header/en.ts`
+  - Spanish: `@data/stats-es.ts`, `@data/footer/es.ts`, `@data/header/es.ts`
+- **Importing Strategy**: Each language page imports its corresponding data file:
+  ```js
+  // English pages
+  import { statsLists } from "@data/stats";
+  
+  // Spanish pages
+  import { statsLists } from "@data/stats-es";
+  ```
+
+### Component Localization
+- **Props-Based Localization**: Components accept a `lang` prop to determine which strings to display:
+  ```js
+  // Component usage
+  <ContactForm lang="es" />
+  
+  // Inside component
+  const { lang = 'en' } = Astro.props;
+  const content = localizedContent[lang] || localizedContent.en;
+  ```
+- **Consistent Styling**: All components maintain consistent styling across languages while displaying localized content.
+
+## ✨ Recent Progress (June 2025)
+
+### Bilingual Page Consistency Improvements
+
+- **About Pages**: 
+  - Eliminated duplicate testimonial and CTA sections
+  - Standardized numbered items with light gray backgrounds (`bg-gray-100`)
+  - Applied consistent "Noto Sans KR" font styling across both language versions
+  - Fixed "My Values" and "Mis Valores" sections to maintain visual parity
+
+- **Contact Pages**:
+  - Enhanced hero sections with proper responsive padding and typography
+  - Improved contact form styling with consistent shadows and spacing
+  - Applied "Noto Sans KR" font consistently across all text elements
+  - Fixed form submission handling and validation messages in both languages
+  - Ensured all stats and metrics display in the correct language
+
+- **Spanish Homepage**:
+  - Created dedicated Spanish data files for stats and metrics
+  - Ensured all statistics display properly translated labels
+
+### TypeScript Improvements
 
 Significant progress has been made in resolving TypeScript errors and ensuring a robust, type-safe codebase:
 
@@ -194,6 +260,35 @@ Significant progress has been made in resolving TypeScript errors and ensuring a
 - **General Type Refinements:** Applied `ReadonlyArray` and `readonly` properties where appropriate to match `as const` data sources, improving overall type safety.
 
 These changes have significantly improved the stability and maintainability of the TypeScript implementation within the Astro project.
+
+## 💡 Key Learnings from Bilingual Site Implementation (May 2025)
+
+The process of extending the site to be fully bilingual (English and Spanish) has provided several key technical insights and best practices:
+
+### 1. Bilingual Structure & Navigation
+-   **Page Organization**: English pages reside in `src/pages/en/` and Spanish pages in `src/pages/es/`. This clear separation simplifies content management and routing.
+-   **Inter-language Linking**: The `Header.astro` component facilitates easy switching between language versions of a page using `translationSlugEn` and `translationSlugEs` props defined in each page's frontmatter.
+-   **Layout Language Specification**: The main `Layout.astro` component correctly sets the `lang` attribute on the `<html>` tag based on a prop passed from individual pages, crucial for SEO and accessibility.
+
+### 2. Content Translation Strategies
+-   **Page-Specific Content**: For pages like "About Us" (`about.astro`), direct translation of text content, headings, and component props occurs within the respective language-specific Astro files (e.g., `src/pages/es/about.astro`).
+-   **Reusable/Data-Driven Content**: For content like testimonials, which might be used across multiple pages or sourced from a dataset, separate TypeScript data files are maintained for each language (e.g., `src/data/testimonials-about.ts` and `src/data/testimonials-about-es.ts`). The appropriate language version is then imported into the corresponding Astro page.
+-   **Structural Parity**: A core principle has been to maintain structural and functional parity between English and Spanish pages, ensuring a consistent user experience.
+
+### 3. Astro & TypeScript Best Practices
+-   **`as const` for Type Safety**: Using `as const` for static configuration objects (e.g., for feature lists, hero content) has been vital for ensuring literal types. This works in tandem with `strict: true` in `tsconfig.json` to prevent type errors when passing these objects as props to components.
+-   **Scoped Styles & Global CSS**: Astro components use scoped styles by default, which helps prevent CSS conflicts. For global styles, ensure they are correctly imported into a primary layout component or managed via Astro's configuration if using specific integrations. *(Note: While we didn't encounter major global CSS issues, this remains a general best practice.)*
+-   **Development Server & Cache**: Restarting the Astro development server (`npm run dev`) and the IDE's TypeScript server (e.g., VS Code's "TypeScript: Restart TS Server") is often necessary after:
+    -   Adding new data files or changing their structure.
+    -   Modifying `tsconfig.json` or content collection schemas.
+    -   Introducing new import aliases.
+    This helps clear caches and ensures type information is correctly updated.
+-   **Import Aliases**: Consistent use of import aliases (`@data`, `@components`, `@assets`, `@layouts`) improves code readability and maintainability, especially in a growing project.
+
+### 4. Iterative Process
+-   The translation and implementation process is iterative: translate content, implement in the Astro component/page, review in the browser, and make corrections as needed. This cycle ensures accuracy and addresses any layout or display issues promptly.
+
+These practices have helped build a robust and maintainable bilingual website.
 
 ## 🏄 Windsurf Cascade Rules
 

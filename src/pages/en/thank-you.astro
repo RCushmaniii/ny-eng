@@ -32,8 +32,13 @@ const footerCta = {
 };
 ---
 
-<Layout title={metadata.title} description={metadata.description} footerCta={footerCta}>
-  <InnerHero content={heroContent} />
+<Layout title={metadata.title} description={metadata.description} footerCta={footerCta} lang="en" noIndex={true} translationSlugEs="/es/thank-you">
+    <InnerHero content={heroContent} />
+
+      <!-- Optional: Add a button to navigate back to the English homepage -->
+      <div class="text-center mt-8">
+        <Button href="/en/">Back to Homepage</Button>
+      </div>
 
   <section class="py-16 md:py-24">
     <div class="site-container px-4 text-center max-w-2xl mx-auto">

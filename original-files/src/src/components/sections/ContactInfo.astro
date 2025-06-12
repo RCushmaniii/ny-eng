@@ -1,0 +1,79 @@
+---
+import Contact from "@components/forms/Contact.astro";
+import {
+    getBackgroundColor,
+    getTextColor,
+    getPaddingClass,
+} from "@utils/styleUtils";
+import type { ThemeColor, PaddingSize } from "@utils/styleUtils";
+import { siteConfig } from "@data/config";
+import { Mail, Phone, MapPin } from "lucide-astro";
+export interface Props {
+    content?: {
+        title?: string;
+        description?: string;
+        contactInfo?: {
+            email?: string;
+            phone?: string;
+            address?: string;
+        };
+    };
+    background?: ThemeColor;
+    padding?: PaddingSize;
+    paddingTop?: PaddingSize;
+    paddingBottom?: PaddingSize;
+}
+const {
+    content,
+    background = "base",
+    padding,
+    paddingTop,
+    paddingBottom,
+} = Astro.props;
+
+const bgColor = getBackgroundColor(background);
+const textColor = getTextColor(background);
+const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
+---
+
+<section class:list={[bgColor, paddingClass]}>
+    <div class="site-container px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h2 class:list={[textColor]}>Contact Information</h2>
+                <p class:list={[textColor]}>
+                    Reach me via this form or WhatsApp.
+                </p>
+                <div class:list={["flex flex-col gap-2 mt-4", textColor]}>
+                    <div class:list={["flex items-center gap-2"]}>
+                        <Phone aria-hidden="true" />
+                        <a
+                            href="https://wa.me/523315590572"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            WhatsApp: +52 33 1559 0572
+                        </a>
+                    </div>
+                    <div class:list={["flex items-center gap-2"]}>
+                        <MapPin aria-hidden="true" />
+                        <span>Time Zone: Guadalajara, Mexico (UTC–6)</span>
+                    </div>
+                    <div class:list={["flex items-center gap-2"]}>
+                        <Mail aria-hidden="true" />
+                        <a
+                            href="https://ny-english-teacher.odoo.com/book/7ceefa20"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Reserve Free Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <Contact />
+            </div>
+        </div>
+    </div>
+</section>

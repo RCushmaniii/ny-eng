@@ -131,7 +131,7 @@ const sideBySideStats = {
   title: "Speak and Write English with Clarity, Confidence & Ease",
   description:
     "I help professionals speak and write English with clarity, purpose, and confidence.Whether you’re preparing for interviews, presentations, or everyday business conversations, I’ll provide the support you need.",
-
+  variant: "side-by-side",
   stats: statsLists.withContent.stats, // Assuming statsLists is language-agnostic or handled separately
   content: {
     title: "Speak and Write English with Clarity, Confidence & Ease", // This text is English
@@ -182,6 +182,8 @@ const recentPostsSection = {
 ---
 
 <Layout
+  translationSlugEs="/es/"
+  translationSlugEn="/en/"
   footerCta={FooterCta}
   title={seoTitle}
   description={seoDescription}
@@ -189,6 +191,7 @@ const recentPostsSection = {
   heroImageMobile={heroContent.backgroundImageMobile}
   translationSlugEs={spanishHomepageUrl} {/* ✅ Pass the Spanish homepage URL */}
 >
+  <div class="relative bg-background-light">
   <Hero content={heroContent} />
   <Features content={featuresSection} padding="small" background="light" />
   <div class="mb-15 pb-0"> {/* Consider Tailwind v3+ standard spacing like mb-16 or theme variable */}
@@ -217,4 +220,5 @@ const recentPostsSection = {
   <Faqs content={faqsSection} background="base" padding="base" />
 
  
+  </div>
 </Layout>

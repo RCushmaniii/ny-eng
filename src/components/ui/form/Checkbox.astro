@@ -36,7 +36,7 @@ const inputTextClass = getInputTextColor(background);
     {options ? (
         // Multiple checkboxes
         <>
-            <label class={`block text-sm font-medium mb-2 ${labelClass}`}>
+            <label class={`block text-sm font-medium mb-2 ${labelClass}`} style="font-family: 'Noto Sans KR', sans-serif;">
                 {label}
                 {required && <span class="text-red-500">*</span>}
             </label>
@@ -61,6 +61,7 @@ const inputTextClass = getInputTextColor(background);
                         <label 
                             for={`${id}-${index}`}
                             class={`text-sm font-medium ${inputTextClass}`}
+                            style="font-family: 'Noto Sans KR', sans-serif;"
                         >
                             {option.label}
                         </label>
@@ -88,6 +89,7 @@ const inputTextClass = getInputTextColor(background);
             <label 
                 for={id}
                 class={`text-sm font-medium ${inputTextClass}`}
+                style="font-family: 'Noto Sans KR', sans-serif;"
             >
                 {label}
                 {required && <span class="text-red-500">*</span>}

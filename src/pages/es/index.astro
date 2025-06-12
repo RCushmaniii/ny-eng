@@ -4,7 +4,7 @@ import Hero from "@components/sections/Hero.astro";
 import SplitPanel from "@components/sections/SplitPanel.astro";
 import Features from "@components/sections/Features.astro";
 import Stats from "@components/sections/Stats.astro";
-import { statsLists } from "@data/stats"; // Assuming these are language-agnostic or handled separately
+import { statsLists } from "@data/stats-es"; // Assuming these are language-agnostic or handled separately
 import Logos from "@components/sections/Logos.astro";
 import { logoLists } from "@data/logos"; // Assuming these are language-agnostic or handled separately
 import CtaBanner from "@components/sections/CtaBanner.astro";
@@ -134,18 +134,19 @@ const styleGuideSection = {
 };
 
 const sideBySideStats = {
-  eyebrow: "ESTADÍSTICAS", // From your ES input
-  title: "Habla y Escribe Inglés con Claridad, Confianza y Facilidad", // From your ES input
+  eyebrow: "ESTADÍSTICAS",
+  title: "Habla y Escribe Inglés con Claridad, Confianza y Facilidad",
   description:
-    "Ayudo a profesionales a hablar y escribir inglés con claridad, propósito y confianza. Ya sea que te prepares para entrevistas, presentaciones o conversaciones de negocios diarias, te brindaré el apoyo que necesitas.", // From your ES input
-  stats: statsLists.withContent.stats, // Assuming statsLists is language-agnostic
-  content: { // This content block was part of the EN version, translating its text
-    title: "Comunícate con Impacto Global", // Example Spanish Title
+    "Ayudo a profesionales a hablar y escribir inglés con claridad, propósito y confianza. Ya sea que te prepares para entrevistas, presentaciones o conversaciones de negocios diarias, te brindaré el apoyo que necesitas.",
+  variant: "side-by-side",
+  stats: statsLists.withContent.stats,
+  content: {
+    title: "Habla y Escribe Inglés con Claridad, Confianza y Facilidad",
     description:
-      "Desarrolla las habilidades lingüísticas necesarias para influir e inspirar en cualquier contexto internacional.", // Example Spanish Description
+      "Ayudo a profesionales a hablar y escribir inglés con claridad, propósito y confianza. Ya sea que te prepares para entrevistas, presentaciones o conversaciones de negocios diarias, te brindaré el apoyo que necesitas.",
     button: {
       text: "Trabajemos Juntos",
-      link: "/es/contact" // Prefixed with /es/ (or /es/contacto if slug changes)
+      link: "/es/contact"
     },
   },
 };
@@ -191,6 +192,8 @@ const recentPostsSection = {
 ---
 
 <Layout
+  translationSlugEs="/es/"
+  translationSlugEn="/en/"
   footerCta={FooterCta}
   title={seoTitle}
   description={seoDescription}
@@ -198,26 +201,29 @@ const recentPostsSection = {
   heroImageMobile={heroContent.backgroundImageMobile}
   translationSlugEn={englishHomepageUrl} {/* ✅ Pass the English homepage URL */}
 >
-  <Hero content={heroContent} />
-  <Features content={featuresSection} padding="small" background="light" />
-  <div class="mb-16 pb-0"> {/* Changed mb-15 to mb-16 (Tailwind standard) */}
-    <Testimonials content={testimonialsBlock} background="base" padding="small" />
-  </div>
+  <div class="relative bg-background-light">
+    <Hero content={heroContent} />
+    <Features content={featuresSection} padding="small" background="light" />
+    <div class="mb-16 pb-0"> {/* Changed mb-15 to mb-16 (Tailwind standard) */}
+      <Testimonials content={testimonialsBlock} background="base" padding="small" />
+    </div>
 
-  <div class="pt-10 border-t border-gray-200 dark:border-gray-700" style="padding-bottom: var(--spacing-small);"> {/* Consider Tailwind for padding */}
-    <RecentPosts
-      content={recentPostsSection}
-      background="base"
-      postsToShow={3}
+    <div class="pt-10 border-t border-gray-200 dark:border-gray-700" style="padding-bottom: var(--spacing-small);"> {/* Consider Tailwind for padding */}
+      <RecentPosts
+        content={recentPostsSection}
+        background="base"
+        postsToShow={3}
+      />
+    </div>
+
+    <SplitPanel
+      content={styleGuideSection}
+      imagePosition="right"
+      background="light"
+      padding="base"
     />
-  </div>
 
-  <SplitPanel
-    content={styleGuideSection}
-    imagePosition="right"
-    background="light"
-    padding="base"
-  />
+  <!-- SplitPanel already included above -->
 
   {/* <CtaBanner content={mainCta} variant="contained" background="light" paddingBottom="base" /> */} {/* mainCta commented out as discussed */}
   {/* <Logos content={logosSection} background="base" padding="small" /> */} {/* Logos section can be added if needed */}
@@ -226,4 +232,5 @@ const recentPostsSection = {
   <Faqs content={faqsSection} background="base" padding="base" />
   
   {/* Removed duplicated sections from the end to match a cleaner structure */}
+  </div>
 </Layout>

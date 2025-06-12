@@ -1,0 +1,45 @@
+---
+import { defaultSEO } from '../data/seo';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  url?: string;
+  locale?: string;
+}
+
+const {
+  title = defaultSEO.title,
+  description = defaultSEO.description,
+  image = defaultSEO.image,
+  type = defaultSEO.type,
+  url = defaultSEO.siteUrl,
+  locale = defaultSEO.locale
+} = Astro.props;
+
+const fullImage = new URL(image.startsWith('/') ? image : `/${image}`, defaultSEO.siteUrl).toString();
+const fullUrl = new URL(url, defaultSEO.siteUrl).toString();
+---
+
+<meta name="description" content={description} />
+<meta name="image" content={fullImage} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={fullUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullImage} />
+<meta property="og:image:secure_url" content={fullImage} />
+<meta property="og:image:alt" content={title} />
+<meta property="og:locale" content={locale} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content={defaultSEO.twitterHandle} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullImage} />
+<meta name="twitter:image:alt" content={title} />

@@ -1,0 +1,109 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
+import CategoryPill from '@components/ui/CategoryPill.astro';
+import Date from '@components/ui/Date.astro';
+import { Image } from 'astro:assets';
+import BlogPost from '@components/blog/BlogPost.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  // Only Spanish posts in es/ subfolder
+  const esPosts = posts.filter(post => post.id.startsWith('es/') && post.data.publish !== false);
+  return esPosts.map(post => ({
+    params: { slug: post.slug }, // use string for single-segment slugs
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+// --- ULTRA-VERBOSE DEBUG LOGGING ---
+if (post) {
+  console.log(`----------------------------------------------------`);
+  console.log(`DEBUG: Post Slug: ${post.slug}`);
+  console.log(`DEBUG: Full post object:`, JSON.stringify(post, null, 2));
+  console.log(`DEBUG: post.id:`, JSON.stringify(post.id, null, 2));
+  console.log(`DEBUG: post.collection:`, JSON.stringify(post.collection, null, 2));
+  console.log(`DEBUG: post.data (FRONTMATTER):`, JSON.stringify(post.data, null, 2));
+  if (post.data && post.data.translations) {
+    console.log(`DEBUG: post.data.translations object:`, JSON.stringify(post.data.translations, null, 2));
+  } else {
+    console.log(`DEBUG: post.data.translations is UNDEFINED or NOT PRESENT on post.data`);
+  }
+  console.log(`----------------------------------------------------`);
+} else {
+  console.log(`----------------------------------------------------`);
+  console.log(`DEBUG: Post object is UNDEFINED for slug: ${Astro.params.slug}`);
+  console.log(`----------------------------------------------------`);
+}
+// --- END DEBUG LOGGING ---
+
+const allEsPosts = (await getCollection('blog'))
+  .filter(p => p.id.startsWith('es/') && p.data.publish !== false)
+  .sort((a, b) => globalThis.Date.parse(String(b.data.publishDate)) - globalThis.Date.parse(String(a.data.publishDate)));
+const currentSlug = Array.isArray(Astro.params.slug) ? Astro.params.slug.join('/') : Astro.params.slug;
+const index = allEsPosts.findIndex(p => p.slug === currentSlug);
+const previousPost = allEsPosts[index + 1] ?? null;
+const nextPost = allEsPosts[index - 1] ?? null;
+
+const seoTitle = post.data.seo?.title || post.data.title;
+const seoDescription = post.data.seo?.description || post.data.excerpt;
+let seoImage = post.data.seo?.image;
+if (seoImage && !seoImage.startsWith('http')) {
+  const siteUrl = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
+  seoImage = new URL(seoImage.startsWith('/') ? seoImage : `/${seoImage}`, siteUrl).toString();
+} else if (!seoImage && post.data.featuredImage) {
+  const siteUrl = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
+  seoImage = new URL(post.data.featuredImage.src, siteUrl).toString();
+}
+
+const origin = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
+const base = origin.endsWith('/') ? origin.slice(0, -1) : origin;
+const postSlug = currentSlug;
+const postUrl = `${base}/es/blog/${postSlug}`;
+const postTitle = post.data.title;
+---
+
+{console.log("DEBUG: post.data.translations", post.data.translations)}
+<Layout title={seoTitle} description={seoDescription} translationSlugEn={post.data.translations?.en}>
+  <p>Raw Translations from post.data (for debugging): {JSON.stringify(post.data.translations)}</p>
+  <section class="relative w-full">
+    <div class="w-full h-120 absolute top-0 left-0 z-0 overflow-hidden border-b border-black">
+      {post.data.featuredImage && (
+        <Image 
+          src={typeof post.data.featuredImage === 'string' ? post.data.featuredImage : post.data.featuredImage.src}
+          alt={post.data.imageAlt || post.data.title}
+          width={1920}
+          height={1080}
+          class="w-full h-full object-cover grayscale opacity-20"
+          quality={60}
+        />
+        <div class="absolute inset-0 bg-primary/10 backdrop-blur-md"></div>
+      )}
+    </div>
+    <article class="site-container--small mx-auto px-4 prose relative z-10 pb-base">
+      <div class="mt-42 mb-12 text-center">
+        <h1>{post.data.title}</h1>
+        <div class="flex items-center justify-center gap-4 text-gray-600">
+          <Date date={post.data.publishDate} />
+          {post.data.categories && post.data.categories.map(cat => (
+            <CategoryPill category={cat} />
+          ))}
+        </div>
+      </div>
+      <Content />
+    </article>
+    {(previousPost || nextPost) && (
+      <section class="mt-16 flex flex-col items-center md:flex-row md:justify-between gap-6 mx-auto max-w-3xl">
+        {previousPost && (
+          <a href={`/es/blog/${previousPost.slug}`} class="btn btn-secondary">← {previousPost.data.title}</a>
+        )}
+        {nextPost && (
+          <a href={`/es/blog/${nextPost.slug}`} class="btn btn-secondary">{nextPost.data.title} →</a>
+        )}
+      </section>
+    )}
+  </section>
+</Layout>

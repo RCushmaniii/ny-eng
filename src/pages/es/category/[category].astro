@@ -1,0 +1,53 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import PaginatedBlogLayout from '@components/blog/PaginatedBlogLayout.astro';
+import { categories, type Category } from '@data/categories';
+import { siteConfig, blogSetting } from '@data/config';
+
+export async function getStaticPaths() {
+  return categories.map(category => ({
+    params: { category: category.slug }, // Ensure this matches the filename [category].astro
+    props: { categoryData: category },
+  }));
+}
+
+interface Props {
+  categoryData: Category;
+}
+
+const { categoryData } = Astro.props;
+
+// Fetch all Spanish blog posts
+const allSpanishPosts = await getCollection('blog', ({ id }) => id.startsWith('es/'));
+
+// Filter posts for the current category and ensure they are published
+// Note: categoryData.name is the English name, used for filtering as posts store English category names.
+// We display categoryData.name_es for the title.
+const filteredPosts = allSpanishPosts.filter(post => 
+  post.data.categories?.includes(categoryData.name) && post.data.publish !== false
+).sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());
+
+const categoryDisplayName = categoryData.name_es || categoryData.name;
+const pageTitle = `${categoryDisplayName} | Blog`;
+const seoTitle = `Publicaciones en ${categoryDisplayName} | ${siteConfig.companyName}`;
+const seoDescription = categoryData.description_es || categoryData.description || `Explorar publicaciones en la categoría ${categoryDisplayName}.`;
+
+// Determine the corresponding English category slug
+// Assuming categoryData.name (English name) is the key for linking
+const englishCategory = categories.find(cat => cat.name === categoryData.name);
+const translationSlugEn = englishCategory ? `/en/category/${englishCategory.slug}` : '/en/blog'; // Fallback to main EN blog
+
+--- 
+
+<PaginatedBlogLayout
+  posts={filteredPosts}
+  currentPage={1} // Category pages are not paginated in this setup, show all
+  totalPages={1}  // 
+  baseUrl={`/es/category/${categoryData.slug}`}
+  title={`Categoría: ${categoryDisplayName}`}
+  subtitle={seoDescription}
+  currentCategory={categoryData.name} // Pass the English category name for potential highlighting logic
+  translationSlugEn={translationSlugEn}
+  heroImage={blogSetting.categoryHeroImage} // Optional: Define a default hero image for categories
+  heroImageAlt={blogSetting.categoryHeroImageAlt || `Categoría: ${categoryDisplayName}`}
+/>

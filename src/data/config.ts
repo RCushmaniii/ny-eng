@@ -33,8 +33,12 @@ export const SEO = {
   defaultLang: 'en',
 };
 
+import defaultCategoryHero from '@assets/images/blog/default-category-hero.jpg';
+
 export const blogSetting = {
-  postsPerPage: 6
+  postsPerPage: 6,
+  categoryHeroImage: defaultCategoryHero, // Example path, update as needed
+  categoryHeroImageAlt: 'Blog Category Hero Image' // Example alt text
 }
 
 export const themeSetting = {

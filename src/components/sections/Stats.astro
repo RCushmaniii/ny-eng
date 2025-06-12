@@ -57,13 +57,14 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
                         <Eyebrow text={eyebrow} background={background} />
                     )}
                     {title && (
-                        <h2 class={`fade-in-up ${textColor}`}>
+                        <h2 class={`fade-in-up ${textColor}`} style="font-family: 'Noto Sans KR', sans-serif;">
                             {title}
                         </h2>
                     )}
                     {description && (
                         <p
                             class={`fade-in-up delay-1 mt-4 ${textColor} opacity-90`}
+                            style="font-family: 'Noto Sans KR', sans-serif;"
                         >
                             {description}
                         </p>
@@ -85,8 +86,8 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
                         {eyebrow && (
                             <Eyebrow text={eyebrow} background={background} />
                         )}
-                        <h2 class:list={[textColor]}>{contentContent.title}</h2>
-                        <p class:list={["mt-4", textColor, "opacity-90"]}>
+                        <h2 class:list={[textColor]} style="font-family: 'Noto Sans KR', sans-serif;">{contentContent.title}</h2>
+                        <p class:list={["mt-4", textColor, "opacity-90"]} style="font-family: 'Noto Sans KR', sans-serif;">
                             {contentContent.description}
                         </p>
                         {contentContent.button && (
@@ -129,6 +130,7 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
                                     "text-4xl font-bold mb-2",
                                     textColor,
                                 ]}
+                                style="font-family: 'Noto Sans KR', sans-serif;"
                             >
                                 <span
                                     class="stat-number"
@@ -145,6 +147,7 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
                                     textColor,
                                     "opacity-90",
                                 ]}
+                                style="font-family: 'Noto Sans KR', sans-serif;"
                             >
                                 {stat.label}
                             </p>

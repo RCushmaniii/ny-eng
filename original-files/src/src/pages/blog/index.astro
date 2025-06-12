@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import { blogSetting } from '../../data/config';
+import PaginatedBlogLayout from '../../components/blog/PaginatedBlogLayout.astro';
+import blogHero from '@assets/images/blog-hero.jpg';
+export const prerender = true;
+
+// Get current page from URL, default to 1
+const currentPage = parseInt(Astro.url.searchParams.get('page') || '1');
+
+// Get all posts without any filtering
+const allPosts = await getCollection('blog');
+
+// Then apply filters if needed
+//const filteredPosts = allPosts.filter(post => {
+//  return import.meta.env.DEV || post.data.publish !== false;
+//});
+
+const filteredPosts = allPosts.filter(post => !post.id.endsWith('.es.md') && post.data.publish === true);
+
+// Sort posts by date
+const sortedPosts = filteredPosts.sort((a, b) => 
+  b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+
+// Calculate pagination
+const totalPosts = sortedPosts.length;
+const totalPages = Math.ceil(totalPosts / blogSetting.postsPerPage);
+const start = (currentPage - 1) * blogSetting.postsPerPage;
+const end = start + blogSetting.postsPerPage;
+const paginatedPosts = sortedPosts.slice(start, end);
+---
+
+<PaginatedBlogLayout 
+    posts={paginatedPosts}
+    currentPage={currentPage}
+    totalPages={totalPages}
+    baseUrl="/blog"
+    title="Blog"
+    subtitle="Practical tips and real-world insights to master Business English."
+    heroImage={blogHero}
+    heroImageAlt="Blog hero background"
+/>

@@ -33,8 +33,8 @@ export const footerContentEs = (siteConfig: Pick<SiteConfig, 'companyName'>) => 
       },
     },
     legalMenu: [
-      { name: "Política de Privacidad", href: "/es/privacy-policy" }, // Adjust link, e.g., /es/politica-privacidad
-      { name: "Términos de Servicio", href: "/es/terms-of-service" }, // Adjust link, e.g., /es/terminos-servicio
+      { name: "Política de Privacidad", href: "/es/legal/privacy-policy" }, // Adjust link, e.g., /es/politica-privacidad
+      { name: "Términos de Servicio", href: "/es/legal/terms-of-service" }, // Adjust link, e.g., /es/terminos-servicio
     ],
     copyrightText: `© ${currentYear} ${siteConfig.companyName}. Todos los derechos reservados.`,
     defaultFooterCta: {

@@ -1,6 +1,6 @@
 ---
-title: "5 formas prácticas de aumentar tu confianza en inglés de negocios"
-excerpt: "¿Te sientes inseguro en reuniones o entrevistas? Descubre cinco estrategias prácticas para hablar inglés de negocios con más claridad y seguridad."
+title: "5 estrategias simples para ganar confianza"
+excerpt: "Desbloquea tu confianza en el inglés de negocios. Descubre 5 estrategias prácticas para hablar con claridad en reuniones y entrevistas, impresionar a los clientes y avanzar en tu carrera."
 publishDate: "2025-04-10"
 categories: [
   'Business English',

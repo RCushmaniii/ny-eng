@@ -1,0 +1,138 @@
+---
+import type { FaqItem } from '@data/faqs';
+import { getPaddingClass, getBackgroundColor, getHeadlineColor, getTextColor } from '@utils/styleUtils';
+import type { PaddingSize, ThemeColor } from '@utils/styleUtils';
+import { Plus, Minus } from 'lucide-astro';
+import Eyebrow from '@components/ui/Eyebrow.astro';
+
+export interface Props {
+    content: {
+        eyebrow?: string;
+        title?: string;
+        description?: string;
+        faqs: FaqItem[];
+    };
+    background?: ThemeColor;
+    padding?: PaddingSize;
+    paddingTop?: PaddingSize;
+    paddingBottom?: PaddingSize;
+}
+
+const {
+    content: { eyebrow, title, description, faqs },
+    background = 'base'
+} = Astro.props;
+
+const bgColor = getBackgroundColor(background);
+const paddingClass = getPaddingClass({ 
+    padding: Astro.props.padding,
+    paddingTop: Astro.props.paddingTop,
+    paddingBottom: Astro.props.paddingBottom 
+});
+
+const headlineColor = getHeadlineColor(background);
+const textColor = getTextColor(background);
+---
+
+<section id="faqs" class:list={["relative", bgColor, paddingClass]}>
+    <div class="site-container px-4">
+        {(title || description) && (
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                {eyebrow && (
+                    <Eyebrow 
+                        text={eyebrow} 
+                        background={background} 
+                    />
+                )}
+                {title && <h2 class={`fade-in-up ${headlineColor} text-3xl font-bold mb-4`}>{title}</h2>}
+                {description && <p class={`fade-in-up delay-1 text-lg ${textColor}`}>{description}</p>}
+            </div>
+        )}
+        
+        <div class="max-w-3xl mx-auto">
+            <div class="divide-y divide-gray-200">
+                {faqs.map((faq, index) => (
+                    <div 
+                        class={`fade-in-up${index > 0 ? ` delay-${(index % 3) + 1}` : ''} faq-item py-6`}
+                    >
+                        <button 
+                            class="group w-full flex items-center justify-between text-left cursor-pointer"
+                            aria-expanded="false"
+                            aria-controls={`faq-${index}`}
+                        >
+                            <h3 class:list={["text-xl font-semibold pr-8", headlineColor]}>
+                                {faq.question}
+                            </h3>
+                            <div class="icon-wrapper">
+                                <Plus 
+                                    class="w-6 h-6 flex-shrink-0 transition-transform duration-200 ease-out group-hover:scale-110 plus-icon"
+                                    aria-hidden="true"
+                                />
+                                <Minus 
+                                    class="w-6 h-6 flex-shrink-0 transition-transform duration-200 ease-out group-hover:scale-110 minus-icon hidden"
+                                    aria-hidden="true"
+                                />
+                            </div>
+                        </button>
+                        <div 
+                            id={`faq-${index}`}
+                            class="answer-wrapper grid grid-rows-[0fr] transition-all duration-200 ease-out"
+                            aria-hidden="true"
+                        >
+                            <div class="overflow-hidden">
+                                <div class:list={["pt-4 pr-8 text-small", textColor]}>
+                                    {faq.answer}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function setupFaqs() {
+        document.querySelectorAll('.faq-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                const wrapper = button.nextElementSibling as HTMLElement;
+                const plusIcon = button.querySelector('.plus-icon');
+                const minusIcon = button.querySelector('.minus-icon');
+                
+                // Toggle current FAQ
+                button.setAttribute('aria-expanded', (!isExpanded).toString());
+                
+                // Toggle icons
+                plusIcon?.classList.toggle('hidden');
+                minusIcon?.classList.toggle('hidden');
+                
+                // Toggle content
+                if (!isExpanded) {
+                    wrapper.style.gridTemplateRows = '1fr';
+                    wrapper.setAttribute('aria-hidden', 'false');
+                } else {
+                    wrapper.style.gridTemplateRows = '0fr';
+                    wrapper.setAttribute('aria-hidden', 'true');
+                }
+            });
+        });
+    }
+
+    // Setup on initial load
+    setupFaqs();
+
+    // Setup on view transitions
+    document.addEventListener('astro:page-load', setupFaqs);
+</script>
+
+<style>
+    .faq-item button:hover svg {
+        color: var(--color-primary-600);
+    }
+    
+    .answer-wrapper {
+        will-change: grid-template-rows;
+    }
+</style>

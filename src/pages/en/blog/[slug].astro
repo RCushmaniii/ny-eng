@@ -56,7 +56,7 @@ const postTitle = post.data.title;
 <Layout title={seoTitle} description={seoDescription} translationSlugEs={post.data.translations?.es}>
   <section class="relative w-full">
 
-    <div class="w-full h-[34rem] absolute top-0 left-0 z-0 overflow-hidden border-b border-black">
+    <div class="w-full h-120 absolute top-0 left-0 z-0 overflow-hidden border-b border-black">
       {post.data.featuredImage && (
         <Image
           src={post.data.featuredImage}
@@ -70,12 +70,12 @@ const postTitle = post.data.title;
       <div class="absolute inset-0 bg-primary/10 backdrop-blur-md"></div>
     </div>
     <article class="site-container--small mx-auto px-4 prose relative z-10 pb-base">
-      <div class="pt-28 mb-12 text-center relative z-10">
+      <div class="mt-42 mb-12 pt-32 text-center relative z-10">
         <h1>{post.data.title}</h1>
         <div class="flex items-center justify-center gap-4 text-gray-600">
           <Date date={post.data.publishDate} />
           {post.data.categories && post.data.categories.map(cat => (
-            <CategoryPill category={cat} />
+            <CategoryPill category={cat} lang="en" />
           ))}
         </div>
       </div>
@@ -91,16 +91,91 @@ const postTitle = post.data.title;
         />
       )}
       <Content />
-    </article>
-    {(previousPost || nextPost) && (
-      <section class="mt-16 flex flex-col items-center md:flex-row md:justify-between gap-6 mx-auto max-w-3xl">
+      
+      {postUrl && postTitle && (
+        <>
+          <section class="share-bar mt-12 mb-8 flex flex-wrap items-center gap-4 text-sm justify-center mx-auto max-w-3xl">
+            <span class="font-medium">Share this post:</span>
+            <a href={"https://api.whatsapp.com/send?text=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">WhatsApp</a>
+            <a href={"https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Facebook</a>
+            <a href={"https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">LinkedIn</a>
+            <a href={"https://twitter.com/intent/tweet?url=" + encodeURIComponent(postUrl) + "&text=" + encodeURIComponent(postTitle)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Twitter</a>
+            <button id="copy-link-btn" type="button" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Copy Link</button>
+            <span id="copy-link-msg" class="ml-2 text-green-600 font-semibold" style="display:none;">Copied!</span>
+          </section>
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              // Copy Link
+              const btn = document.getElementById('copy-link-btn');
+              const msg = document.getElementById('copy-link-msg');
+              if (btn) {
+                btn.addEventListener('click', function() {
+                  navigator.clipboard.writeText(window.location.href).then(function() {
+                    if (msg) {
+                      msg.style.display = 'inline';
+                      setTimeout(() => { msg.style.display = 'none'; }, 1500);
+                    }
+                  });
+                });
+              }
+            });
+          </script>
+        </>
+      )}
+      
+      {/* Blog Navigation */}
+      {(previousPost || nextPost) && (
+        <section class="mt-16 flex flex-col items-center md:flex-row md:justify-between gap-6 mx-auto max-w-3xl">
         {previousPost && (
-          <a href={`/en/blog/${previousPost.slug}`} class="btn btn-secondary">← {previousPost.data.title}</a>
+          <a
+            href={`/en/blog/${previousPost.slug.replace(/^en\//, '')}`}
+            rel="prev"
+            class="group relative flex-1 max-w-xs border border-black rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full"
+          >
+            <div class="flex items-center justify-between h-12 px-4 border-b">
+              <span class="text-2xl text-gray-400 transition-colors duration-200 group-hover:text-primary">&#8592;</span>
+              <span class="font-medium text-xs text-gray-700">Previous</span>
+            </div>
+            {previousPost.data.featuredImage && (
+              <div class="aspect-video w-full bg-gray-100">
+                <img src={previousPost.data.featuredImage.src} alt={previousPost.data.imageAlt || previousPost.data.title} class="object-cover w-full h-full" />
+              </div>
+            )}
+            <div class="flex-grow px-4 py-6 flex flex-col">
+              <div class="font-semibold text-base mb-1 line-clamp-2">{previousPost.data.title}</div>
+              <div class="text-xs text-gray-500 mb-2">
+                <Date date={previousPost.data.publishDate} />
+              </div>
+              <div class="text-sm text-gray-700 line-clamp-3">{previousPost.data.excerpt}</div>
+            </div>
+          </a>
         )}
         {nextPost && (
-          <a href={`/en/blog/${nextPost.slug}`} class="btn btn-secondary">{nextPost.data.title} →</a>
+          <a
+            href={`/en/blog/${nextPost.slug.replace(/^en\//, '')}`}
+            rel="next"
+            class="group relative flex-1 max-w-xs border border-black rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full"
+          >
+            <div class="flex items-center justify-between h-12 px-4 border-b">
+              <span class="font-medium text-xs text-gray-700">Next</span>
+              <span class="text-2xl text-gray-400 transition-colors duration-200 group-hover:text-primary">&#8594;</span>
+            </div>
+            {nextPost.data.featuredImage && (
+              <div class="aspect-video w-full bg-gray-100">
+                <img src={nextPost.data.featuredImage.src} alt={nextPost.data.imageAlt || nextPost.data.title} class="object-cover w-full h-full" />
+              </div>
+            )}
+            <div class="flex-grow px-4 py-6 flex flex-col text-right">
+              <div class="font-semibold text-base mb-1 line-clamp-2">{nextPost.data.title}</div>
+              <div class="text-xs text-gray-500 mb-2">
+                <Date date={nextPost.data.publishDate} />
+              </div>
+              <div class="text-sm text-gray-700 line-clamp-3">{nextPost.data.excerpt}</div>
+            </div>
+          </a>
         )}
       </section>
-    )}
+      )}
+    </article>
   </section>
 </Layout>

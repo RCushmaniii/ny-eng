@@ -1,0 +1,47 @@
+---
+import Layout from "@layouts/Layout.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import ContactInfo from "@components/sections/ContactInfo.astro";
+import nycStatueOfLiberty from "@assets/images/contact/nyc-statue-of-liberty.jpg";
+
+const heroContent = {
+    title: "Contact Me",
+    description: "If your English could talk... would it get promoted?",
+};
+
+const footerCta = {
+  eyebrow: "", 
+  title: "Transform Your Professional English Today",
+  description: "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
+  hideCta: false,
+  button: {
+    text: "Reserve My Free Consultation",
+    link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+    target: "_blank",
+    variant: "primary"
+  }
+};
+
+// Page-specific metadata
+const metadata = {
+    title: "Contact Us", 
+    description: "Reach me via this form or WhatsApp." 
+};
+---
+
+<Layout 
+    lang="en" 
+    translationSlugEs="/es/contact" 
+    title={metadata.title} 
+    description={metadata.description} 
+    footerCta={footerCta}
+>
+    <InnerHero 
+        content={{
+            ...heroContent,
+            backgroundImage: nycStatueOfLiberty,
+            overlayOpacity: 0.3
+        }} 
+    />
+    <ContactInfo background="base" padding="base" lang="en" />
+</Layout>

@@ -1,0 +1,212 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
+import CategoryPill from '@components/ui/CategoryPill.astro';
+import Date from '@components/ui/Date.astro';
+import { Image } from 'astro:assets';
+import BlogPost from '@components/blog/BlogPost.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts
+    .filter(post => post.data.publish !== false) // Filter here!
+    .map(post => ({
+      params: { slug: post.slug },
+      props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+// Previous/Next navigation logic
+const allPosts = (await getCollection('blog'))
+  .filter(p => p.data.publish !== false)
+  .sort((a, b) => globalThis.Date.parse(String(b.data.publishDate)) - globalThis.Date.parse(String(a.data.publishDate)));
+const currentSlug = Astro.params.slug;
+const index = allPosts.findIndex(p => p.slug === currentSlug);
+const previousPost = allPosts[index + 1] ?? null; // Older (chronologically next)
+const nextPost = allPosts[index - 1] ?? null;     // Newer (chronologically previous)
+
+// Only show if both posts exist, and always render exactly two (no placeholders)
+const navPosts = previousPost && nextPost ? [previousPost, nextPost] : [];
+
+// Use SEO data from frontmatter if available, fallback to regular post data
+const seoTitle = post.data.seo?.title || post.data.title;
+const seoDescription = post.data.seo?.description || post.data.excerpt;
+
+// For SEO image, use the seo.image if provided, otherwise use the featured image
+// The Layout component expects a string for the image, so we need to handle that
+let seoImage: string | undefined = post.data.seo?.image;
+
+// If seoImage is provided but not an absolute URL, make it absolute
+if (seoImage && !seoImage.startsWith('http')) {
+  const siteUrl = import.meta.env.SITE || 'https://titan-core.vercel.app';
+  seoImage = new URL(seoImage.startsWith('/') ? seoImage : `/${seoImage}`, siteUrl).toString();
+}
+// If no SEO image is specified but we have a featured image, use its URL
+else if (!seoImage && post.data.featuredImage) {
+  // For Astro image objects, we need to create an absolute URL
+  const siteUrl = import.meta.env.SITE || 'https://titan-core.vercel.app';
+  seoImage = typeof post.data.featuredImage === 'string' 
+    ? new URL(post.data.featuredImage, siteUrl).toString() 
+    : new URL(post.data.featuredImage.src, siteUrl).toString();
+}
+
+// Share Bar logic
+const origin = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
+const base = origin.endsWith('/') ? origin.slice(0, -1) : origin;
+const postSlug = Astro.params.slug;
+const postUrl = `${base}/blog/${postSlug}`;
+const postTitle = post.data.title;
+
+---
+
+<Layout 
+  title={seoTitle}
+  description={seoDescription}
+  image={seoImage}
+>
+
+  <div class="w-full h-120 absolute top-0 left-0 z-0 overflow-hidden border-b border-black">
+    {post.data.featuredImage && (
+      <>
+        <Image 
+          src={post.data.featuredImage} 
+          alt={post.data.imageAlt || post.data.title} 
+          width={1920}
+          height={1080}
+          class="w-full h-full object-cover grayscale opacity-20" 
+          quality={60}
+        />
+        <div class="absolute inset-0 bg-primary/10 backdrop-blur-md"></div>
+      </>
+    )}
+  </div>
+  
+  <article class="site-container--small mx-auto px-4 prose relative z-10 pb-base">
+    <div class="mt-42 mb-12 text-center">
+      <h1>{post.data.title}</h1>
+
+      <div class="flex items-center justify-center gap-4 text-gray-600">
+        <Date date={post.data.publishDate} />
+        {post.data.categories && (
+          <div class="flex flex-wrap gap-2">
+            {post.data.categories.map((category) => (
+              <CategoryPill category={category} />
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+
+    {post.data.featuredImage && (
+  <Image 
+    src={post.data.featuredImage} 
+    alt={post.data.imageAlt || post.data.title} 
+    width={1200}
+    height={675}
+    class="w-full h-auto rounded-lg border mb-12 border-black" 
+    quality={80}
+    format="webp"
+  />
+)}
+
+    <div class="mt-8">
+      <Content />
+    </div>
+    {postUrl && postTitle && (
+      <>
+        <section class="share-bar mt-12 mb-8 flex flex-wrap items-center gap-4 text-sm justify-center mx-auto max-w-3xl">
+          <span class="font-medium">Share this post:</span>
+          <a href={"https://api.whatsapp.com/send?text=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">WhatsApp</a>
+          <a href={"https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Facebook</a>
+          <a href={"https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">LinkedIn</a>
+          <a href={"https://twitter.com/intent/tweet?url=" + encodeURIComponent(postUrl) + "&text=" + encodeURIComponent(postTitle)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Twitter</a>
+          <button id="copy-link-btn" type="button" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Copy Link</button>
+          <span id="copy-link-msg" class="ml-2 text-green-600 font-semibold" style="display:none;">Copied!</span>
+        </section>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            // Copy Link
+            const btn = document.getElementById('copy-link-btn');
+            const msg = document.getElementById('copy-link-msg');
+            if (btn) {
+              btn.addEventListener('click', function() {
+                navigator.clipboard.writeText(window.location.href).then(function() {
+                  if (msg) {
+                    msg.style.display = 'inline';
+                    setTimeout(() => { msg.style.display = 'none'; }, 1500);
+                  }
+                });
+              });
+            }
+          });
+        </script>
+      </>
+    )}
+    <!-- Previous / Next Navigation -->
+    {(previousPost || nextPost) && (
+      <section class="mt-16 flex flex-col items-center md:flex-row md:justify-between gap-6 mx-auto max-w-3xl">
+        {previousPost && (
+          <a
+            href={`/blog/${previousPost.slug}`}
+            rel="prev"
+            class="group relative flex-1 max-w-xs border border-black rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full"
+          >
+            {/* Arrow + Label Header */}
+            <div class="flex items-center justify-between h-12 px-4 border-b">
+              <span class="text-2xl text-gray-400 transition-colors duration-200 group-hover:text-primary">&#8592;</span>
+              <span class="font-medium text-xs text-gray-700">Prev</span>
+            </div>
+            {/* Image with aspect ratio */}
+            {previousPost.data.featuredImage && (
+              <div class="aspect-video w-full bg-gray-100">
+                <img src={previousPost.data.featuredImage.src} alt={previousPost.data.imageAlt || previousPost.data.title} class="object-cover w-full h-full" />
+              </div>
+            )}
+            {/* Card Body */}
+            <div class="flex-grow px-4 py-6 flex flex-col">
+              <div class="font-semibold text-base mb-1 line-clamp-2">{previousPost.data.title}</div>
+              <div class="text-xs text-gray-500 mb-2">
+                <Date date={previousPost.data.publishDate} />
+              </div>
+              <div class="text-sm text-gray-700 line-clamp-3">{previousPost.data.excerpt}</div>
+            </div>
+          </a>
+        )}
+        {nextPost && (
+          <a
+            href={`/blog/${nextPost.slug}`}
+            rel="next"
+            class="group relative flex-1 max-w-xs border border-black rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full"
+          >
+            {/* Arrow + Label Header */}
+            <div class="flex items-center justify-between h-12 px-4 border-b">
+              <span class="font-medium text-xs text-gray-700">Next</span>
+              <span class="text-2xl text-gray-400 transition-colors duration-200 group-hover:text-primary">&#8594;</span>
+            </div>
+            {/* Image with aspect ratio */}
+            {nextPost.data.featuredImage && (
+              <div class="aspect-video w-full bg-gray-100">
+                <img src={nextPost.data.featuredImage.src} alt={nextPost.data.imageAlt || nextPost.data.title} class="object-cover w-full h-full" />
+              </div>
+            )}
+            {/* Card Body */}
+            <div class="flex-grow px-4 py-6 flex flex-col text-right">
+              <div class="font-semibold text-base mb-1 line-clamp-2">{nextPost.data.title}</div>
+              <div class="text-xs text-gray-500 mb-2">
+                <Date date={nextPost.data.publishDate} />
+              </div>
+              <div class="text-sm text-gray-700 line-clamp-3">{nextPost.data.excerpt}</div>
+            </div>
+          </a>
+        )}
+      </section>
+    )}
+
+  </article>
+
+
+</article>
+</Layout>

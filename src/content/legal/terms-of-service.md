@@ -1,6 +1,9 @@
 ---
 title: "Terms and Conditions of Use"
 lastUpdated: "2025-04-10"
+seo:
+  title: "Terms of Service - New York English Teacher"
+  description: "Review the terms and conditions for using the New York English Teacher website and services."
 ---
 
 # Terms and Conditions of Use

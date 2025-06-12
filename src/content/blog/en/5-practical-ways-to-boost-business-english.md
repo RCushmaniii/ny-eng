@@ -6,7 +6,7 @@ categories: [
   'Business English',   
   'Career Growth',     
 ]
-featuredImage: "./images/business-english-confidence.jpg"
+featuredImage: "./images/confidently-speaking.jpg"
 imageAlt: "Business English coaching session"
 translations:
   es: "/es/blog/5-formas-practicas-mejorar-ingles-negocios"

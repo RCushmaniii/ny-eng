@@ -1,7 +1,7 @@
 ---
 title: "Del small talk a la conversación inteligente: cómo destacar en inglés en el trabajo"
 excerpt: "Aprende a convertir charlas triviales en oportunidades para construir relaciones y avanzar profesionalmente en inglés."
-publishDate: "2025-04-15"
+publishDate: "2025-05-08"
 categories: [
   'Business English',
   'Communication Skills'

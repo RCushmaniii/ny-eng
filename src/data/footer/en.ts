@@ -33,8 +33,8 @@ export const footerContentEn = (siteConfig: Pick<SiteConfig, 'companyName'>) => 
       },
     },
     legalMenu: [
-      { name: "Privacy Policy", href: "/en/privacy-policy" },
-      { name: "Terms of Service", href: "/en/terms-of-service" },
+      { name: "Privacy Policy", href: "/en/legal/privacy-policy" },
+      { name: "Terms of Service", href: "/en/legal/terms-of-service" },
     ],
     copyrightText: `© ${currentYear} ${siteConfig.companyName}. All rights reserved.`,
     // Default Footer CTA in English (can be overridden by page props passed to Layout)

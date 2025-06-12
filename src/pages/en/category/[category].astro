@@ -1,0 +1,49 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import PaginatedBlogLayout from '@components/blog/PaginatedBlogLayout.astro';
+import { categories, type Category } from '@data/categories';
+import { siteConfig, blogSetting } from '@data/config';
+
+export async function getStaticPaths() {
+  return categories.map(category => ({
+    params: { category: category.slug }, // Ensure this matches the filename [category].astro
+    props: { categoryData: category },
+  }));
+}
+
+interface Props {
+  categoryData: Category;
+}
+
+const { categoryData } = Astro.props;
+
+// Fetch all English blog posts
+const allEnglishPosts = await getCollection('blog', ({ id }) => id.startsWith('en/'));
+
+// Filter posts for the current category and ensure they are published
+const filteredPosts = allEnglishPosts.filter(post => 
+  post.data.categories?.includes(categoryData.name) && post.data.publish !== false
+).sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());
+
+const pageTitle = `${categoryData.name} | Blog`;
+const seoTitle = `Posts in ${categoryData.name} | ${siteConfig.companyName}`;
+const seoDescription = categoryData.description || `Browse blog posts categorized under ${categoryData.name}.`;
+
+// Determine the corresponding Spanish category slug
+const spanishCategory = categories.find(cat => cat.name === categoryData.name); // Assuming names are unique identifiers for linking
+const translationSlugEs = spanishCategory ? `/es/category/${spanishCategory.slug}` : '/es/blog'; // Fallback to main ES blog
+
+--- 
+
+<PaginatedBlogLayout
+  posts={filteredPosts}
+  currentPage={1} // Category pages are not paginated in this setup, show all
+  totalPages={1}  // 
+  baseUrl={`/en/category/${categoryData.slug}`}
+  title={pageTitle}
+  subtitle={categoryData.description || `All posts related to ${categoryData.name}`}
+  currentCategory={categoryData.name} // Pass the category name for highlighting in BlogList if needed
+  translationSlugEs={translationSlugEs}
+  heroImage={blogSetting.categoryHeroImage} // Optional: Define a default hero image for categories
+  heroImageAlt={blogSetting.categoryHeroImageAlt || `Category: ${categoryData.name}`}
+/>

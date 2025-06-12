@@ -6,10 +6,10 @@ import {
     getPaddingClass,
 } from "@utils/styleUtils";
 import type { ThemeColor, PaddingSize } from "@utils/styleUtils";
-import { siteConfig } from "@data/config";
 import { Mail, Phone, MapPin } from "lucide-astro";
+
 export interface Props {
-    content?: {
+    content?: { // This prop is not used for the direct text elements translated here
         title?: string;
         description?: string;
         contactInfo?: {
@@ -22,29 +22,53 @@ export interface Props {
     padding?: PaddingSize;
     paddingTop?: PaddingSize;
     paddingBottom?: PaddingSize;
+    lang?: 'en' | 'es'; // Added lang prop
 }
+
 const {
-    content,
+    // content, // This prop is not used for the direct text elements translated here
     background = "base",
     padding,
     paddingTop,
     paddingBottom,
+    lang = 'en', // Default to 'en' if not provided
 } = Astro.props;
 
 const bgColor = getBackgroundColor(background);
 const textColor = getTextColor(background);
 const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
+
+// Translatable content
+const localizedContent = {
+    en: {
+        heading: "Contact Information",
+        paragraph: "Reach me via this form or WhatsApp.",
+        whatsappLinkText: "WhatsApp: +52 33 1559 0572",
+        timeZoneText: "Time Zone: Guadalajara, Mexico (UTC–6)",
+        consultationLinkText: "Reserve Free Consultation",
+    },
+    es: {
+        heading: "Información de contacto",
+        paragraph: "Contáctame mediante este formulario o por WhatsApp.",
+        whatsappLinkText: "WhatsApp: +52 33 1559 0572",
+        timeZoneText: "Zona horaria: Guadalajara, México (UTC–6)",
+        consultationLinkText: "Reservar consulta gratuita",
+    }
+};
+
+const C = localizedContent[lang] || localizedContent.en; // Fallback to English if lang is invalid
+
 ---
 
 <section class:list={[bgColor, paddingClass]}>
     <div class="site-container px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-                <h2 class:list={[textColor]}>Contact Information</h2>
-                <p class:list={[textColor]}>
-                    Reach me via this form or WhatsApp.
+                <h2 class:list={[textColor, "text-3xl md:text-4xl font-bold mb-4"]} style="font-family: 'Noto Sans KR', sans-serif;">{C.heading}</h2>
+                <p class:list={[textColor, "text-lg mb-6"]} style="font-family: 'Noto Sans KR', sans-serif;">
+                    {C.paragraph}
                 </p>
-                <div class:list={["flex flex-col gap-2 mt-4", textColor]}>
+                <div class:list={["flex flex-col gap-4 mt-6", textColor]} style="font-family: 'Noto Sans KR', sans-serif;">
                     <div class:list={["flex items-center gap-2"]}>
                         <Phone aria-hidden="true" />
                         <a
@@ -52,12 +76,12 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            WhatsApp: +52 33 1559 0572
+                            {C.whatsappLinkText}
                         </a>
                     </div>
                     <div class:list={["flex items-center gap-2"]}>
                         <MapPin aria-hidden="true" />
-                        <span>Time Zone: Guadalajara, Mexico (UTC–6)</span>
+                        <span>{C.timeZoneText}</span>
                     </div>
                     <div class:list={["flex items-center gap-2"]}>
                         <Mail aria-hidden="true" />
@@ -66,13 +90,13 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Reserve Free Consultation
+                            {C.consultationLinkText}
                         </a>
                     </div>
                 </div>
             </div>
             <div>
-                <Contact />
+                <Contact lang={lang} /> {/* Pass lang to Contact form */}
             </div>
         </div>
     </div>

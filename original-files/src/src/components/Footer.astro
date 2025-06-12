@@ -1,0 +1,167 @@
+---
+import Logo from "@components/Logo.astro";
+import Button from "@components/ui/Button.astro";
+// siteConfig is no longer directly needed here if copyright text is pre-formatted
+
+// Define TypeScript interfaces for the structure of the content prop
+interface LinkItem {
+  name: string;
+  href: string;
+  target?: string;
+  rel?: string;
+}
+
+export interface ConnectItem {
+  type: "text" | "link";
+  content?: string;
+  name?: string;
+  href?: string;
+  target?: string;
+  rel?: string;
+}
+
+interface FooterSectionData {
+  title: string;
+  links?: LinkItem[];
+  items?: ConnectItem[];
+}
+
+interface FooterCtaData {
+  title: string;
+  description: string;
+  hideCta: boolean;
+  button: { 
+    text: string; 
+    link: string; 
+    target?: string; 
+    // variant?: string; // Button variant can be hardcoded in Footer or passed
+  };
+}
+
+export interface FooterContent {
+  logoLink: string;
+  tagline: string;
+  sections: { // Using a Record for more flexible section keys if needed
+    about: FooterSectionData;
+    resources: FooterSectionData;
+    connect: FooterSectionData;
+    // You can add more sections here and they will be mapped
+  };
+  legalMenu: LinkItem[];
+  copyrightText: string;
+  footerCta: FooterCtaData; // This will be the language-specific CTA
+}
+
+interface Props {
+  content: FooterContent;
+}
+
+const { content } = Astro.props;
+const { footerCta: cta } = content; // Use the cta from the localized content
+---
+
+<footer class={`bg-black text-white pb-small ${cta.hideCta ? "pt-large" : ""}`}>
+  <div class="site-container mx-auto px-4">
+    {!cta.hideCta && (
+      <div class="text-center border-b border-neutral-700 dark:border-neutral-800 mb-12 py-small">
+        <h2 class="text-3xl font-bold mb-4 text-white" data-aos="fade-up">
+          {cta.title}
+        </h2>
+        <p
+          class="text-neutral-300 dark:text-neutral-400 mb-6 max-w-2xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          {cta.description}
+        </p>
+        {/* Ensures white text on dark, good for footer */}
+        <Button
+          href={cta.button.link}
+          variant="ghostLight"
+          size="lg"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          target={cta.button.target}
+          rel={cta.button.target === '_blank' ? 'noopener noreferrer' : undefined}
+        >
+          {cta.button.text}
+        </Button>
+      </div>
+    )}
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-neutral-700 dark:border-neutral-800">
+      <div class="col-span-1 md:col-span-2 lg:col-span-1">
+        <a href={content.logoLink} aria-label="Homepage">
+          <Logo variant="footer" /> {/* This will use the dark logo */}
+        </a>
+        <p class="mt-4 text-neutral-300 dark:text-neutral-400">
+          {content.tagline}
+        </p>
+      </div>
+
+      {Object.values(content.sections).map((section) => (
+        <div class="col-span-1">
+          <h3 class="text-lg font-semibold mb-4 text-white">{section.title}</h3>
+          {section.links && section.links.length > 0 && (
+            <nav>
+              <ul class="space-y-2">
+                {section.links.map((item) => (
+                  <li>
+                    <a 
+                      href={item.href} 
+                      class="text-neutral-400 hover:text-white transition-colors"
+                      target={item.target}
+                      rel={item.rel ?? (item.target === '_blank' ? 'noopener noreferrer' : undefined)}
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
+          {section.items && section.items.length > 0 && (
+             <ul class="space-y-2"> {/* Assuming items in "Connect" also appear as a list */}
+                {section.items.map((item) => (
+                  <li>
+                    {item.type === 'link' ? (
+                      <a 
+                        href={item.href} 
+                        class="text-neutral-400 hover:text-white transition-colors"
+                        target={item.target}
+                        rel={item.rel ?? (item.target === '_blank' ? 'noopener noreferrer' : undefined)}
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <span class="text-neutral-400">{item.content}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+      <div class="text-neutral-400">
+        {content.copyrightText}
+      </div>
+      <nav class="mt-4 md:mt-0">
+        <ul class="flex flex-wrap gap-x-4 gap-y-2 md:gap-x-6"> {/* Adjusted gaps */}
+          {content.legalMenu.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="text-neutral-400 hover:text-white transition-colors"
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>

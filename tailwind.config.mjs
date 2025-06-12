@@ -3,13 +3,17 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content: [
+    './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+    './node_modules/astro/**/*.{js,jsx,ts,tsx}'
+  ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
         sans: ['Noto Sans KR', ...defaultTheme.fontFamily.sans],
-        // You can also define your 'Bruno Ace SC' here if you use it for specific headings via Tailwind classes
-        // heading: ['Bruno Ace SC', ...defaultTheme.fontFamily.sans],
+        heading: ['Noto Sans KR', 'sans-serif'],
+        display: ['Noto Sans KR', 'sans-serif'],
       },
       colors: {
         primary: 'var(--color-primary)',
@@ -36,8 +40,44 @@ export default {
         'input-dark': 'var(--color-input-dark)',
         'input-text': 'var(--color-input-text)',
         'input-text-light': 'var(--color-input-text-light)',
-        'input-text-dark': 'var(--color-input-text-dark)',
-      }
+        'input-text-dark': 'var(--color-input-text-dark)'
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: 'var(--color-body-base)',
+            a: {
+              color: 'var(--color-primary)',
+              '&:hover': {
+                color: 'var(--color-primary-light)',
+              },
+            },
+            h1: { color: 'var(--color-headline)' },
+            h2: { color: 'var(--color-headline)' },
+            h3: { color: 'var(--color-headline)' },
+            h4: { color: 'var(--color-headline)' },
+            strong: { color: 'var(--color-headline)' },
+          },
+        },
+      },
+      // Container configuration
+      container: {
+        center: true,
+        padding: '1rem',
+        screens: {
+          '2xl': '1400px',
+        },
+      },
+      // Animation configuration
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
     },
   },
   plugins: [],
