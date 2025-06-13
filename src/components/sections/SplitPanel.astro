@@ -28,6 +28,7 @@ export interface Props {
     imagePosition?: 'left' | 'right';
     background?: ThemeColor;
     paddingTop?: PaddingSize;
+    lang?: 'en' | 'es';
     paddingBottom?: PaddingSize;
     padding?: PaddingSize;
 }
@@ -39,6 +40,7 @@ const {
     paddingTop,
     paddingBottom,
     padding,
+    lang = 'en',
 } = Astro.props;
 
 const { eyebrow, headline, subheadline, description, descriptionPoints, image, buttons = [] } = content;
@@ -48,6 +50,19 @@ const bgColor = getBackgroundColor(background);
 
 // Define text colors explicitly based on background
 const textColorClass = background === 'dark' ? 'text-white' : 'text-neutral-900';
+
+// Localized strings
+const localizedText = {
+    en: {
+        expectText: "Here's what you can expect:"
+    },
+    es: {
+        expectText: "Esto es lo que puedes esperar:"
+    }
+};
+
+// Get the correct localized text based on language
+const L = localizedText[lang] || localizedText.en; // Fallback to English if language not supported
 ---
 <section class:list={["relative", bgColor, paddingClass]}>
     <div class="site-container px-4">
@@ -80,7 +95,7 @@ const textColorClass = background === 'dark' ? 'text-white' : 'text-neutral-900'
 
                 {descriptionPoints && descriptionPoints.length > 0 && (
                     <div class="fade-in-up delay-3 mt-4 space-y-2" style="font-family: 'Noto Sans KR', sans-serif;">
-                        <strong class={textColorClass} style="font-family: 'Noto Sans KR', sans-serif;">Here's what you can expect:</strong>
+                        <strong class={textColorClass} style="font-family: 'Noto Sans KR', sans-serif;">{L.expectText}</strong>
                         <ul class="list-disc list-inside space-y-1">
                             {descriptionPoints.map((point: string) => (
                                 <li class={textColorClass} style="font-family: 'Noto Sans KR', sans-serif;">{point}</li>
