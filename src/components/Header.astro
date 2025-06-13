@@ -18,11 +18,7 @@ interface Props {
 
 const { content, translationSlugEs, translationSlugEn } = Astro.props;
 
-console.log("[Header] Received content.logoLink:", content.logoLink);
-console.log("[Header] Received menu items:", content.menu.length);
-console.log("[Header] Received translationSlugEs:", translationSlugEs);
-console.log("[Header] Received translationSlugEn:", translationSlugEn);
-
+// Determine current page for navigation highlighting
 const currentPath = Astro.url.pathname;
 
 const isCurrentPage = (link: string) => {

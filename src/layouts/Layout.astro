@@ -66,8 +66,7 @@ if (currentAstroPath === '/es' || currentAstroPath.startsWith('/es/')) {
   determinedLang = 'en';
 }
 
-console.log("[Layout] Astro.url.pathname:", currentAstroPath);
-console.log("[Layout] Determined language:", determinedLang);
+// Determine language based on URL path
 
 const headerDataForCurrentLang = determinedLang === 'es' ? headerContentEs : headerContentEn;
 const siteConfigForFooter = { companyName: siteConfig.companyName };
@@ -75,8 +74,7 @@ const baseFooterContentFromData = determinedLang === 'es'
   ? footerContentEs(siteConfigForFooter) 
   : footerContentEn(siteConfigForFooter);
 
-console.log("[Layout] Header data selected (logoLink):", headerDataForCurrentLang.logoLink);
-console.log("[Layout] Footer data selected (logoLink):", baseFooterContentFromData.logoLink);
+// Select appropriate header and footer content based on language
 
 const { defaultFooterCta: baseDefaultCtaFromData, ...baseContentWithoutDefaultCta } = baseFooterContentFromData;
 let finalFooterCta;
@@ -183,7 +181,7 @@ const fixedHeaderHeight = "0rem";
   </head>
   <body class={`antialiased font-sans bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 overflow-x-hidden ${heroImage ? 'has-hero-image' : ''}`} style="font-family: 'Noto Sans KR', sans-serif;">
     <div id="page-wrapper" class="flex flex-col min-h-screen">
-      {console.log('[Layout->Header HTML] Passing translationSlugEs:', translationSlugEs, 'Passing translationSlugEn:', translationSlugEn)}
+      <!-- Pass translation slugs to Header component for language switching -->
       <Header content={headerDataForCurrentLang} translationSlugEs={translationSlugEs} translationSlugEn={translationSlugEn} />
       <main id="main-content" class="flex-grow" style={`padding-top: ${fixedHeaderHeight};`}>
         <slot />

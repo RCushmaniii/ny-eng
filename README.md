@@ -230,6 +230,15 @@ This setup ensures consistent and localized SEO metadata across the bilingual si
 
 ## ✨ Recent Progress (June 2025)
 
+### Date Formatting Improvements
+
+- **Bilingual Date Support**: 
+  - Enhanced the `Date.astro` component to properly format dates based on language context
+  - Spanish dates now use 'es-MX' locale with Spanish month names and Mexican date format
+  - English dates continue to use 'en-US' locale with ordinal suffixes (e.g., "1st", "2nd", "3rd")
+  - This ensures consistent date presentation across both language versions of the blog
+  - Removed debug logging statements from components to clean up the codebase
+
 ### Bilingual Page Consistency Improvements
 
 - **About Pages**: 

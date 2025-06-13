@@ -22,8 +22,7 @@ const { Content } = await post.render();
 const allPosts = (await getCollection('blog'))
   .filter(p => p.id.startsWith('en/') && p.data.publish !== false)
   .sort((a, b) => globalThis.Date.parse(String(b.data.publishDate)) - globalThis.Date.parse(String(a.data.publishDate)));
-// DEBUG: Log all slugs and featuredImages
-console.log("DEBUG: allPosts slugs and featuredImages:", allPosts.map(p => ({ slug: p.slug, featuredImage: p.data.featuredImage })));
+// Get the current post index to determine previous and next posts for navigation
 // Add back the 'en/' prefix to match the slug in the collection
 const currentSlug = `en/${Astro.params.slug}`;
 const index = allPosts.findIndex(p => p.slug === currentSlug);
@@ -52,7 +51,7 @@ const postUrl = `${base}/en/blog/${postSlug}`;
 const postTitle = post.data.title;
 ---
 
-{console.log("DEBUG: translationSlugEs", post.data.translations?.es)}
+<!-- Pass translation slug for language switching -->
 <Layout title={seoTitle} description={seoDescription} translationSlugEs={post.data.translations?.es}>
   <!-- JSON-LD Structured Data for Article -->  
   <script type="application/ld+json" set:html={JSON.stringify({
