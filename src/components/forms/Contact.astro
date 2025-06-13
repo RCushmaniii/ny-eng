@@ -128,6 +128,13 @@ const initialSubmitText = C.submitButton;
         value={thankYouRedirect} 
     />
 
+    <!-- Email subject line based on language -->
+    <input 
+        type="hidden" 
+        name="_subject" 
+        value={lang === 'es' ? "New Contact Message from NY English Website (Spanish)" : "New Contact Message from NY English Website (English)"} 
+    />
+
     <Checkbox
         label={C.labels.terms}
         id="terms"
@@ -144,22 +151,28 @@ const initialSubmitText = C.submitButton;
 </form>
 
 <script define:vars={{ jsStrings, thankYouRedirect, initialSubmitText }}>
-    const form = document.getElementById("contact-form") as HTMLFormElement | null;
+    const form = document.getElementById("contact-form");
     const statusDiv = document.getElementById("form-status");
 
-    if (form && statusDiv) {
+    if (form instanceof HTMLFormElement && statusDiv) {
         form.addEventListener("submit", async (e) => {
             e.preventDefault(); 
 
-            const name = form.querySelector("#name") as HTMLInputElement;
-            const email = form.querySelector("#email") as HTMLInputElement;
-            const message = form.querySelector("#message") as HTMLTextAreaElement;
-            const terms = form.querySelector("#terms") as HTMLInputElement;
-            const submitButton = form.querySelector("button[type='submit']") as HTMLButtonElement | null;
+            const name = form.querySelector("#name");
+            const email = form.querySelector("#email");
+            const message = form.querySelector("#message");
+            const terms = form.querySelector("#terms");
+            const submitButton = form.querySelector("button[type='submit']");
 
             statusDiv.textContent = "";
             statusDiv.className = "mt-4 text-center";
 
+            // Type guard for form elements
+            if (!(name instanceof HTMLInputElement)) return;
+            if (!(email instanceof HTMLInputElement)) return;
+            if (!(message instanceof HTMLTextAreaElement)) return;
+            if (!(terms instanceof HTMLInputElement)) return;
+            
             if (!name.value || name.value.length < 2) {
                 statusDiv.textContent = jsStrings.validationName;
                 statusDiv.classList.add("text-red-600");
@@ -191,7 +204,8 @@ const initialSubmitText = C.submitButton;
             const formData = new FormData(form);
             const formAction = form.action;
 
-            if (submitButton) {
+            // Type guard for submit button
+            if (submitButton instanceof HTMLButtonElement) {
                 submitButton.disabled = true;
                 submitButton.textContent = jsStrings.submittingButton;
             }
@@ -213,7 +227,7 @@ const initialSubmitText = C.submitButton;
                     const errorData = await response.json().catch(() => ({}));
                     statusDiv.textContent = `Submission failed: ${errorData.error || jsStrings.serverErrorFallback}`;
                     statusDiv.className = "mt-4 text-center text-red-600";
-                    if (submitButton) {
+                    if (submitButton instanceof HTMLButtonElement) {
                         submitButton.disabled = false;
                         submitButton.textContent = initialSubmitText;
                     }
@@ -221,7 +235,7 @@ const initialSubmitText = C.submitButton;
             } catch (error) {
                 statusDiv.textContent = jsStrings.networkError;
                 statusDiv.className = "mt-4 text-center text-red-600";
-                if (submitButton) {
+                if (submitButton instanceof HTMLButtonElement) {
                     submitButton.disabled = false;
                     submitButton.textContent = initialSubmitText;
                 }

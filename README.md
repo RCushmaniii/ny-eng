@@ -228,6 +228,30 @@ This setup ensures consistent and localized SEO metadata across the bilingual si
   ```
 - **Consistent Styling**: All components maintain consistent styling across languages while displaying localized content.
 
+## 🧰 Code Organization and Maintenance
+
+### Component Structure
+
+- **Shared Components**: Components in `src/components/` are used by both language versions and should accept a `lang` prop when they contain text content
+- **Language-Specific Pages**: Pages are organized in `src/pages/en/` and `src/pages/es/` directories
+- **Data Files**: Reusable content is stored in `src/data/` with separate exports for English and Spanish
+- **Assets**: Images and other static assets are in `src/assets/` and should be imported using the `@assets` alias
+
+### Code Quality Standards
+
+- **TypeScript**: Use strict TypeScript with proper type definitions for all components and data
+- **Comments**: Add descriptive comments for complex logic, especially in shared components
+- **Debug Logging**: Do not leave `console.log` statements in production code
+- **Form Validation**: Ensure all forms have proper client-side validation with translated error messages
+- **Accessibility**: Maintain proper ARIA attributes and semantic HTML structure
+
+### Testing and Deployment
+
+- **Local Testing**: Test all changes in both languages before deployment
+- **Build Verification**: Run `npm run build` to ensure the site builds successfully
+- **Performance**: Monitor page load times and optimize large assets
+- **SEO**: Maintain proper meta tags, structured data, and semantic HTML
+
 ## ✨ Recent Progress (June 2025)
 
 ### Date Formatting Improvements
@@ -332,7 +356,15 @@ The site implements comprehensive SEO best practices to ensure maximum visibilit
     This helps clear caches and ensures type information is correctly updated.
 -   **Import Aliases**: Consistent use of import aliases (`@data`, `@components`, `@assets`, `@layouts`) improves code readability and maintainability, especially in a growing project.
 
-### 4. Iterative Process
+### 4. Bilingual Consistency Requirements
+
+-   **Parallel Implementation**: Any feature, functionality, or UI element added to one language version MUST be implemented in the other language version as well. This is a strict requirement.
+-   **Component Approach**: Whenever possible, use shared components with language-specific content passed as props to maintain consistent behavior across languages.
+-   **Form Handling**: Forms must maintain identical functionality between language versions, with only text content differing (labels, placeholders, validation messages).
+-   **Testing Both Languages**: Always test features in both English and Spanish to ensure consistent behavior and appearance.
+-   **Language-Specific Customizations**: When language-specific customizations are needed (e.g., date formatting), implement them in shared components using the `lang` prop rather than duplicating code.
+
+### 5. Iterative Process
 -   The translation and implementation process is iterative: translate content, implement in the Astro component/page, review in the browser, and make corrections as needed. This cycle ensures accuracy and addresses any layout or display issues promptly.
 
 These practices have helped build a robust and maintainable bilingual website.
