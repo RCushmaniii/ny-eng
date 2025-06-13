@@ -2,6 +2,9 @@
 import Logo from "@components/Logo.astro";
 import { Menu, X } from "lucide-astro";
 import Button from "@components/ui/Button.astro";
+import { Image } from 'astro:assets';
+import mexFlag from '@assets/images/mex-flag.svg';
+import usaFlag from '@assets/images/usa-flag.svg';
 
 interface Props {
   content: {
@@ -69,7 +72,7 @@ const isCurrentPage = (link: string) => {
               data-lang="es"
               data-astro-reload
             >
-              <img src="/src/assets/images/mex-flag.svg" alt="Bandera de México" class="w-6 h-6" />
+              <Image src={mexFlag} alt="Bandera de México" width={24} height={24} class="w-6 h-6" />
             </a>
           )}
           {translationSlugEn && !currentPath.startsWith('/en') && (
@@ -80,7 +83,7 @@ const isCurrentPage = (link: string) => {
               data-lang="en"
               data-astro-reload
             >
-              <img src="/src/assets/images/usa-flag.svg" alt="USA Flag" class="w-6 h-6" />
+              <Image src={usaFlag} alt="USA Flag" width={24} height={24} class="w-6 h-6" />
             </a>
           )}
         </div>
@@ -139,9 +142,47 @@ const isCurrentPage = (link: string) => {
           </li>
         ))}
       </ul>
-      <div class="mt-8 pb-4">
+      <!-- Language Switcher for Mobile Menu -->
+      <div class="mt-6 mb-4 flex justify-center gap-4">
+        {translationSlugEs && !currentPath.startsWith('/es') && (
+          <a
+            href={translationSlugEs}
+            class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
+            aria-label="Cambiar a Español"
+            data-lang="es"
+            data-astro-reload
+          >
+            <Image src={mexFlag} alt="Bandera de México" width={24} height={24} class="w-6 h-6" />
+            <span class="text-sm font-medium">Español</span>
+          </a>
+        )}
+        {translationSlugEn && !currentPath.startsWith('/en') && (
+          <a
+            href={translationSlugEn}
+            class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
+            aria-label="Switch to English"
+            data-lang="en"
+            data-astro-reload
+          >
+            <Image src={usaFlag} alt="USA Flag" width={24} height={24} class="w-6 h-6" />
+            <span class="text-sm font-medium">English</span>
+          </a>
+        )}
+      </div>
+      
+      <div class="mt-4 pb-4 flex flex-col gap-3">
         <Button href={content.cta.link} variant="ghostLight" size="md" class="w-full text-center">
           {content.cta.text}
+        </Button>
+        
+        <!-- Contact Button -->
+        <Button 
+          href={currentPath.startsWith('/es') ? '/es/contact' : '/en/contact'} 
+          variant="primary" 
+          size="md" 
+          class="w-full text-center"
+        >
+          {currentPath.startsWith('/es') ? 'Contacto' : 'Contact'}
         </Button>
       </div>
     </div>
