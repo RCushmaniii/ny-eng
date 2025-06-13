@@ -18,21 +18,102 @@ if (browserLanguages.some(lang => lang.language === 'es')) {
   redirectLanguage = 'es';
 }
 
-// Return a 301 redirect to the appropriate language version
-return Astro.redirect(`/${redirectLanguage}/`, 301);
+// Try server-side redirect first
+try {
+  return Astro.redirect(`/${redirectLanguage}/`, 301);
+} catch (error) {
+  // If server-side redirect fails, we'll fall back to client-side methods
+  // The HTML below will handle it
+}
 ---
 
-<!-- This page automatically redirects to the appropriate language version based on the browser's language settings -->
-<!-- Default redirect is to /en/ unless the browser prefers Spanish -->
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="refresh" content="0;url=/en/" />
-    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Redirecting to NY English Teacher...</title>
+    
+    <!-- Dynamic meta refresh as backup -->
+    <meta http-equiv="refresh" content="0;url=/{redirectLanguage}/" />
+    
+    <!-- Immediate JavaScript redirect (fastest method) -->
+    <script>
+      (function() {
+        // Try to detect preferred language
+        function getPreferredLanguage() {
+          try {
+            const languages = navigator.languages || [navigator.language || ''];
+            
+            // Check if Spanish is in the preferred languages
+            for (let lang of languages) {
+              if (lang.startsWith('es')) {
+                return 'es';
+              }
+            }
+          } catch (e) {
+            // If any error occurs during detection, fall back to default
+            console.error('Error detecting language:', e);
+          }
+          
+          // Default to English
+          return 'en';
+        }
+        
+        // Get language and redirect
+        const lang = getPreferredLanguage();
+        window.location.replace(`/${lang}/`);
+      })();
+    </script>
+    
+    <style>
+      body {
+        font-family: 'Noto Sans KR', sans-serif, system-ui;
+        background-color: #f8f9fa;
+        color: #343a40;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+      }
+      .container {
+        padding: 2rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        max-width: 90%;
+      }
+      h1 {
+        color: #1a56db;
+        margin-bottom: 1rem;
+      }
+      p {
+        margin-bottom: 1.5rem;
+      }
+      .loader {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #1a56db;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
   </head>
   <body>
-    <p>Redirecting to your preferred language...</p>
+    <div class="container">
+      <h1>NY English Teacher</h1>
+      <p>Redirecting to your preferred language...</p>
+      <div class="loader"></div>
+    </div>
   </body>
 </html>
 

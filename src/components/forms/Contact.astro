@@ -134,6 +134,10 @@ const initialSubmitText = C.submitButton;
         name="_subject" 
         value={lang === 'es' ? "New Contact Message from NY English Website (Spanish)" : "New Contact Message from NY English Website (English)"} 
     />
+    
+    <!-- Force redirect to our thank you page and disable Formspree's default thank you page -->
+    <input type="hidden" name="_redirect" value={thankYouRedirect} />
+    <input type="hidden" name="_template" value="table" />
 
     <Checkbox
         label={C.labels.terms}
