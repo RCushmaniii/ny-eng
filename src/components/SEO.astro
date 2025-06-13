@@ -23,6 +23,7 @@ const fullImage = new URL(image.startsWith('/') ? image : `/${image}`, defaultSE
 const fullUrl = new URL(url, defaultSEO.siteUrl).toString();
 ---
 
+<title>{title}</title>
 <meta name="description" content={description} />
 <meta name="image" content={fullImage} />
 

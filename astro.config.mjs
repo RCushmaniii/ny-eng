@@ -5,7 +5,7 @@ import path from 'path';
 import tailwindcss from 'tailwindcss';
 
 // Get the site URL from environment variable or use a default for local development
-const site = process.env.PUBLIC_SITE_URL || 'http://localhost:4321';
+const site = process.env.PUBLIC_SITE_URL || 'https://www.nyenglishteacher.com';
 
 export default defineConfig({
   integrations: [

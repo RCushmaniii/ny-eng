@@ -5,6 +5,8 @@
 
 Welcome to the codebase for the **NYEnglishTeacher.com** website redesign project. This site is built using the [Astro](https://astro.build) framework with the [Titan theme](https://themes.astro.build/titan). It's designed to be fast, modern, and content-focused.
 
+> **IMPORTANT**: The production domain is **https://www.nyenglishteacher.com/** - Always use this URL for all production references, sitemaps, and structured data.
+
 ## 🚀 Project Overview
 
 This is the new version of NYEnglishTeacher.com, redesigned to provide a better user experience, responsive layout, and a clean, professional look. Built with Astro, this project emphasizes performance and simplicity.
@@ -13,10 +15,11 @@ This is the new version of NYEnglishTeacher.com, redesigned to provide a better 
 
 - [Astro](https://astro.build)
 - [TypeScript](https://www.typescriptlang.org/) (with `strict: true` enabled for robust type checking)
-- [@astrolib/seo](https://www.npmjs.com/package/@astrolib/seo) (for SEO management)
+- [Tailwind CSS](https://tailwindcss.com/) (for responsive styling)
+- [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/) (for automatic sitemap generation)
 - HTML/CSS
 - Markdown (for content)
-- Optional: Integrations/plugins via Astro ecosystem
+- JSON-LD Structured Data (for enhanced search engine visibility)
 
 ## 📦 Getting Started (Windows / PowerShell)
 
@@ -275,6 +278,41 @@ The process of extending the site to be fully bilingual (English and Spanish) ha
 -   **Reusable/Data-Driven Content**: For content like testimonials, which might be used across multiple pages or sourced from a dataset, separate TypeScript data files are maintained for each language (e.g., `src/data/testimonials-about.ts` and `src/data/testimonials-about-es.ts`). The appropriate language version is then imported into the corresponding Astro page.
 -   **Structural Parity**: A core principle has been to maintain structural and functional parity between English and Spanish pages, ensuring a consistent user experience.
 
+## 🔍 SEO Optimizations
+
+The site implements comprehensive SEO best practices to ensure maximum visibility and performance:
+
+### 1. Technical SEO
+- **Domain Consistency**: All references use the production domain `https://www.nyenglishteacher.com` across:
+  - `astro.config.mjs` site URL configuration
+  - `robots.txt` sitemap reference
+  - JSON-LD structured data in blog posts
+  - Site configuration in `src/data/config.ts`
+- **Dynamic Meta Tags**: All pages use properly structured `<title>` and meta description tags via the SEO component
+- **Semantic HTML Structure**: Single `<h1>` per page with proper heading hierarchy throughout
+- **Structured Data**: JSON-LD implementation for blog posts with article schema
+- **Sitemap Generation**: Automatic sitemap generation via `@astrojs/sitemap` with proper configuration
+- **Robots.txt**: Custom robots.txt file with correct sitemap URL reference
+- **Performance Focus**: Minimal JavaScript, optimized images, and clean layout for better Core Web Vitals
+- **Type Safety**: Using `as const` for configuration objects to ensure type safety
+
+### 2. Bilingual SEO
+- **Language Attributes**: Dynamic `lang` attribute on the `<html>` tag based on page language
+- **Hreflang Tags**: Proper implementation of hreflang tags for language alternatives
+- **Translated Content**: Complete content translation with language-specific URLs
+- **Canonical URLs**: Proper canonical URL implementation for both language versions
+- **Automatic Language Detection**: Root path (`/`) automatically redirects to `/en/` or `/es/` based on browser language
+
+### 3. Content Optimization
+- **Optimized Images**: All images use Astro's image optimization with proper alt text
+- **Mobile Optimization**: Responsive design with special attention to mobile layout and spacing
+  - Blog post titles use consistent text size (text-3xl/text-4xl) and proper spacing (mt-[5rem]/pt-8) on mobile to prevent overlap with navigation bar
+  - Improved title contrast with text-gray-900 and font-bold classes
+  - Added mb-4 spacing below titles for better readability on all devices
+  - Ensured consistent implementation across both English and Spanish blog templates
+- **Gradient Backgrounds**: Smooth gradient transitions for better readability and visual appeal
+- **Navigation Cards**: Enhanced navigation with proper contrast and visual hierarchy
+
 ### 3. Astro & TypeScript Best Practices
 -   **`as const` for Type Safety**: Using `as const` for static configuration objects (e.g., for feature lists, hero content) has been vital for ensuring literal types. This works in tandem with `strict: true` in `tsconfig.json` to prevent type errors when passing these objects as props to components.
 -   **Scoped Styles & Global CSS**: Astro components use scoped styles by default, which helps prevent CSS conflicts. For global styles, ensure they are correctly imported into a primary layout component or managed via Astro's configuration if using specific integrations. *(Note: While we didn't encounter major global CSS issues, this remains a general best practice.)*
@@ -314,6 +352,38 @@ This repo follows robust rules for code quality and consistency. See `.windsurfr
 
 ## 📫 Contact
 
-For questions or collaboration, visit [nyenglishteacher.com](https://nyenglishteacher.com).
+For questions or collaboration, visit [nyenglishteacher.com](https://www.nyenglishteacher.com).
+
+## 🚀 Future Roadmap
+
+The following features and improvements are planned for future development:
+
+### 1. Content Expansion
+- **Testimonials Page**: Create a dedicated testimonials page showcasing client success stories and feedback
+  - Implement a consistent design with the rest of the site
+  - Include filtering options by industry/service type
+  - Add structured data markup for testimonials
+- **Resource Library**: Develop a searchable library of business English resources
+- **Interactive Learning Tools**: Add interactive exercises and self-assessment tools
+
+### 2. Technical Enhancements
+- **Performance Optimization**: Further optimize Core Web Vitals and page load speeds
+- **Advanced Analytics**: Implement more detailed analytics for content performance tracking
+- **Newsletter Integration**: Add newsletter signup functionality with proper GDPR compliance
+- **Course Platform Integration**: Connect with a learning management system for online courses
+
+### 3. Design Improvements
+- **Dark Mode Support**: Implement a toggle for dark/light mode preferences
+- **Enhanced Animations**: Add subtle animations for improved user experience
+- **Expanded Component Library**: Develop additional reusable components for faster page creation
+- **Accessibility Audit**: Conduct a comprehensive accessibility review and implement improvements
+
+### 4. SEO & Marketing
+- **Structured Data Expansion**: Add more schema types beyond Article (Course, FAQ, etc.)
+- **Content Calendar**: Develop a strategic content calendar for blog posts
+- **Social Sharing Optimization**: Enhance social media integration and sharing capabilities
+- **Local SEO**: Improve local SEO for New York area targeting
+
+This roadmap will be updated as priorities evolve and new features are implemented.
 
 ---

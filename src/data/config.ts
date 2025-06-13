@@ -14,33 +14,34 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   companyName: 'New York English Teacher',
-  siteUrl: 'https://titan-core.com',
+  siteUrl: 'https://www.nyenglishteacher.com',
   Socials: {
-    xSocial: 'https://x.com/astrodotbuild',
-    Github: 'https://github.com/withastro',
-    Instagram: 'https://www.instagram.com/astrodotbuild',
-    LinkedIn: 'https://www.linkedin.com/company/astrodotbuild',
-    Email: 'support@titan-core.com',
-    Phone: '+123 456 7890',
-    Location: '123 Main St, Anytown, USA',
-  }
+    xSocial: 'https://x.com/nyenglishteach',
+    Github: '',
+    Instagram: 'https://www.instagram.com/nyenglishteacher',
+    LinkedIn: 'https://www.linkedin.com/company/new-york-english-teacher',
+    Email: 'info@nyenglishteacher.com',
+    Phone: '',
+    Location: 'New York, NY',
+  } as const
 };
 
 export const SEO = {
   Separator: '|',
   SiteName: 'New York English Teacher – Your Career Performance Accelerator',
-  defaultDescription: 'A modern, high-performance Astro JS theme',
+  defaultDescription: 'Professional Business English coaching for career advancement and effective communication',
   defaultLang: 'en',
-};
+} as const;
 
 import defaultCategoryHero from '@assets/images/blog/default-category-hero.jpg';
 
 export const blogSetting = {
   postsPerPage: 6,
-  categoryHeroImage: defaultCategoryHero, // Example path, update as needed
-  categoryHeroImageAlt: 'Blog Category Hero Image' // Example alt text
-}
+  categoryHeroImage: defaultCategoryHero,
+  categoryHeroImageAlt: 'New York English Teacher Blog - Business English Resources',
+  siteUrl: 'https://www.nyenglishteacher.com'
+} as const
 
 export const themeSetting = {
   theme: 'zeus'
-}
+} as const

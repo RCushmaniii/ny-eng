@@ -48,24 +48,46 @@ const postTitle = post.data.title;
 ---
 
 <Layout title={seoTitle} description={seoDescription} translationSlugEn={post.data.translations?.en}>
+  <!-- JSON-LD Structured Data for Article -->  
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.data.title,
+    "description": post.data.excerpt,
+    "image": post.data.featuredImage?.src ? new URL(post.data.featuredImage.src, Astro.site).toString() : undefined,
+    "datePublished": post.data.publishDate,
+    "dateModified": post.data.publishDate,
+    "author": {
+      "@type": "Person",
+      "name": "New York English",
+      "url": "https://www.nyenglishteacher.com/es/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "New York English",
+      "logo": {
+        "@type": "ImageObject",
+        "url": new URL("/images/logos/new-york-english-og.jpg", Astro.site).toString()
+      }
+    },
+    "inLanguage": "es-ES",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": new URL(Astro.url.pathname, Astro.site).toString()
+    },
+    "keywords": post.data.categories?.join(", ")
+  })}>  
+  </script>
   <section class="relative w-full">
-    <div class="w-full h-120 absolute top-0 left-0 z-0 overflow-hidden border-b border-black">
-      {post.data.featuredImage && (
-        <Image
-          src={post.data.featuredImage}
-          alt={post.data.imageAlt || post.data.title}
-          width={1920}
-          height={1080}
-          class="w-full h-full object-cover grayscale opacity-20"
-          quality={60}
-        />
-      )}
-      <div class="absolute inset-0 bg-primary/10 backdrop-blur-md"></div>
+    <!-- Gradient Background (all devices) -->
+    <div class="w-full h-screen fixed top-0 left-0 -z-10 overflow-hidden">
+      <div class="absolute top-0 left-0 right-0 h-[25vh] bg-gradient-to-b from-[#eef1ff] via-[#f8f9ff] to-white"></div>
+      <div class="absolute top-[25vh] left-0 right-0 bottom-0 bg-white"></div>
     </div>
     <article class="site-container--small mx-auto px-4 prose relative z-10 pb-base">
-      <div class="mt-42 mb-12 pt-32 text-center relative z-10">
-        <h1>{post.data.title}</h1>
-        <div class="flex items-center justify-center gap-4 text-gray-600">
+      <div class="mt-[5rem] md:mt-16 mb-6 md:mb-12 pt-8 md:pt-12 text-center relative z-10">
+        <h1 class="text-gray-900 text-3xl md:text-4xl font-bold mb-4">{post.data.title}</h1>
+        <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-gray-600">
           <Date date={post.data.publishDate} />
           {post.data.categories && post.data.categories.map(cat => (
             <CategoryPill category={cat} lang="es" />
@@ -73,28 +95,51 @@ const postTitle = post.data.title;
         </div>
       </div>
       {post.data.featuredImage && (
-        <Image
-          src={post.data.featuredImage}
-          alt={post.data.imageAlt || post.data.title}
-          width={1200}
-          height={675}
-          class="w-full h-[675px] object-cover rounded-lg border mb-12 border-black"
-          quality={80}
-          format="webp"
-        />
+        <div class="relative mb-12 rounded-lg overflow-hidden border border-black">
+          <Image
+            src={post.data.featuredImage}
+            alt={post.data.imageAlt || post.data.title}
+            width={1200}
+            height={675}
+            class="w-full object-cover h-[300px] md:h-[450px] lg:h-[675px]"
+            quality={80}
+            format="webp"
+          />
+          <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/50 to-transparent"></div>
+        </div>
       )}
       <Content />
       
       {postUrl && postTitle && (
         <>
-          <section class="share-bar mt-12 mb-8 flex flex-wrap items-center gap-4 text-sm justify-center mx-auto max-w-3xl">
-            <span class="font-medium">Compartir este post:</span>
-            <a href={"https://api.whatsapp.com/send?text=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">WhatsApp</a>
-            <a href={"https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Facebook</a>
-            <a href={"https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">LinkedIn</a>
-            <a href={"https://twitter.com/intent/tweet?url=" + encodeURIComponent(postUrl) + "&text=" + encodeURIComponent(postTitle)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Twitter</a>
-            <button id="copy-link-btn" type="button" class="share-btn px-3 py-1 rounded transition hover:bg-primary hover:text-white border border-gray-200">Copiar Enlace</button>
-            <span id="copy-link-msg" class="ml-2 text-green-600 font-semibold" style="display:none;">¡Copiado!</span>
+          <section class="share-bar mt-12 mb-8 mx-auto max-w-3xl">
+            <div class="flex items-center justify-center mb-3">
+              <span class="font-medium text-center">Compartir este post:</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3 justify-center">
+              <a href={"https://api.whatsapp.com/send?text=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1.5 rounded transition hover:bg-primary hover:text-white border border-gray-100 text-sm flex items-center bg-white shadow-sm">
+                <span class="hidden sm:inline">WhatsApp</span>
+                <span class="sm:hidden">WhatsApp</span>
+              </a>
+              <a href={"https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1.5 rounded transition hover:bg-primary hover:text-white border border-gray-100 text-sm flex items-center bg-white shadow-sm">
+                <span class="hidden sm:inline">Facebook</span>
+                <span class="sm:hidden">FB</span>
+              </a>
+              <a href={"https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1.5 rounded transition hover:bg-primary hover:text-white border border-gray-100 text-sm flex items-center bg-white shadow-sm">
+                <span class="hidden sm:inline">LinkedIn</span>
+                <span class="sm:hidden">LI</span>
+              </a>
+              <a href={"https://twitter.com/intent/tweet?url=" + encodeURIComponent(postUrl) + "&text=" + encodeURIComponent(postTitle)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1.5 rounded transition hover:bg-primary hover:text-white border border-gray-100 text-sm flex items-center bg-white shadow-sm">
+                <span class="hidden sm:inline">Twitter</span>
+                <span class="sm:hidden">X</span>
+              </a>
+              <button id="copy-link-btn" type="button" class="share-btn px-3 py-1.5 rounded transition hover:bg-primary hover:text-white border border-gray-100 text-sm flex items-center bg-white shadow-sm">
+                <span>Copiar Enlace</span>
+              </button>
+            </div>
+            <div class="flex justify-center mt-2">
+              <span id="copy-link-msg" class="text-green-600 font-semibold text-sm" style="display:none;">¡Copiado!</span>
+            </div>
           </section>
           <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -123,7 +168,7 @@ const postTitle = post.data.title;
           <a
             href={`/es/blog/${previousPost.slug.replace(/^es\//, '')}`}
             rel="prev"
-            class="group relative flex-1 max-w-xs border border-black rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full"
+            class="group relative flex-1 max-w-xs border border-gray-200 rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full shadow-sm"
           >
             <div class="flex items-center justify-between h-12 px-4 border-b">
               <span class="text-2xl text-gray-400 transition-colors duration-200 group-hover:text-primary">&#8592;</span>
@@ -147,7 +192,7 @@ const postTitle = post.data.title;
           <a
             href={`/es/blog/${nextPost.slug.replace(/^es\//, '')}`}
             rel="next"
-            class="group relative flex-1 max-w-xs border border-black rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full"
+            class="group relative flex-1 max-w-xs border border-gray-200 rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full shadow-sm"
           >
             <div class="flex items-center justify-between h-12 px-4 border-b">
               <span class="font-medium text-xs text-gray-700">Siguiente</span>
