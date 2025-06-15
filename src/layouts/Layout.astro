@@ -54,7 +54,15 @@ const {
 
 const pageTitle = title ? `${title} ${Separator} ${SiteName}` : SiteName;
 const pageDescription = description || defaultDescription || "";
-const pageImageForSeo = image;
+
+// Determine the best image to use for SEO/social sharing
+const pageImageForSeo = image || (heroImage && typeof heroImage === 'object' && 'src' in heroImage ? heroImage.src : heroImage) || "/images/logos/new-york-english-og.jpg";
+
+// Create square version path for WhatsApp if using a hero image
+const isUsingDefaultImage = !image && (!heroImage || heroImage === "/images/logos/new-york-english-og.jpg");
+const whatsAppImagePath = isUsingDefaultImage ? "/images/logos/new-york-english-sq-og.jpg" : pageImageForSeo;
+const linkedInImagePath = pageImageForSeo;
+
 const canonicalPath = canonicalUrl || Astro.url.pathname;
 const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
 
@@ -168,10 +176,13 @@ const fixedHeaderHeight = "0rem";
     <SEO
       title={pageTitle}
       description={pageDescription}
-      image={openGraphImagesFormatted?.[0]?.url || "/images/logos/new-york-english-og.jpg"}
+      image={pageImageForSeo}
+      whatsappImage={whatsAppImagePath}
+      linkedinImage={linkedInImagePath}
       type={ogType}
       url={fullCanonicalUrl}
       locale={determinedLang}
+      alternateUrls={finalLanguageAlternates}
     />
 
     {/* <Fragment set:html={theme === "zeus" ? "<link rel='stylesheet' href='/themes/zeus.css'>" : ""} /> Removed */}

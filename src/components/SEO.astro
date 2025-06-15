@@ -5,21 +5,32 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  whatsappImage?: string; // Specific image for WhatsApp sharing
+  linkedinImage?: string; // Specific image for LinkedIn sharing
   type?: string;
   url?: string;
   locale?: string;
+  alternateUrls?: {
+    hreflang: string;
+    href: string;
+  }[];
 }
 
 const {
   title = defaultSEO.title,
   description = defaultSEO.description,
   image = defaultSEO.image,
+  whatsappImage = defaultSEO.whatsappImage || defaultSEO.image,
+  linkedinImage = defaultSEO.linkedinImage || defaultSEO.image,
   type = defaultSEO.type,
   url = defaultSEO.siteUrl,
-  locale = defaultSEO.locale
+  locale = defaultSEO.locale,
+  alternateUrls = []
 } = Astro.props;
 
 const fullImage = new URL(image.startsWith('/') ? image : `/${image}`, defaultSEO.siteUrl).toString();
+const fullWhatsappImage = new URL(whatsappImage.startsWith('/') ? whatsappImage : `/${whatsappImage}`, defaultSEO.siteUrl).toString();
+const fullLinkedinImage = new URL(linkedinImage.startsWith('/') ? linkedinImage : `/${linkedinImage}`, defaultSEO.siteUrl).toString();
 const fullUrl = new URL(url, defaultSEO.siteUrl).toString();
 ---
 
@@ -27,7 +38,7 @@ const fullUrl = new URL(url, defaultSEO.siteUrl).toString();
 <meta name="description" content={description} />
 <meta name="image" content={fullImage} />
 
-<!-- Open Graph / Facebook -->
+<!-- Primary Open Graph tags -->
 <meta property="og:type" content={type} />
 <meta property="og:url" content={fullUrl} />
 <meta property="og:title" content={title} />
@@ -35,6 +46,19 @@ const fullUrl = new URL(url, defaultSEO.siteUrl).toString();
 <meta property="og:image" content={fullImage} />
 <meta property="og:image:secure_url" content={fullImage} />
 <meta property="og:image:alt" content={title} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- WhatsApp specific (square format) -->
+<meta property="og:image:width" content="400" />
+<meta property="og:image:height" content="400" />
+<meta property="og:image" content={fullWhatsappImage} />
+
+<!-- LinkedIn specific -->
+<meta name="image" content={fullLinkedinImage} />
+<meta property="og:image:type" content="image/jpeg" />
+
+<!-- Additional tags for better platform-specific sharing -->
 <meta property="og:locale" content={locale} />
 
 <!-- Twitter -->
@@ -44,3 +68,15 @@ const fullUrl = new URL(url, defaultSEO.siteUrl).toString();
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={fullImage} />
 <meta name="twitter:image:alt" content={title} />
+
+<!-- WhatsApp-optimized Twitter card (used when shared on mobile) -->
+<meta name="twitter:image" content={fullWhatsappImage} media="(max-width: 600px)" />
+
+<!-- Hreflang tags for multilingual SEO -->
+{alternateUrls.map((alt) => (
+  <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+))}
+{/* Add x-default hreflang if not already included */}
+{!alternateUrls.some(alt => alt.hreflang === 'x-default') && 
+  <link rel="alternate" hreflang="x-default" href={fullUrl} />
+}
