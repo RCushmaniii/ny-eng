@@ -55,12 +55,21 @@ const {
 const pageTitle = title ? `${title} ${Separator} ${SiteName}` : SiteName;
 const pageDescription = description || defaultDescription || "";
 
-// Determine the best image to use for SEO/social sharing
-const pageImageForSeo = image || (heroImage && typeof heroImage === 'object' && 'src' in heroImage ? heroImage.src : heroImage) || "/images/logos/new-york-english-og.jpg";
+// Determine if this is a blog/article page or a homepage/main section page
+const isBlogOrArticlePage = Astro.url.pathname.includes('/blog/') || Astro.url.pathname.includes('/article/');
 
-// Create square version path for WhatsApp if using a hero image
-const isUsingDefaultImage = !image && (!heroImage || heroImage === "/images/logos/new-york-english-og.jpg");
-const whatsAppImagePath = isUsingDefaultImage ? "/images/logos/new-york-english-sq-og.jpg" : pageImageForSeo;
+// For blog/article pages: use the hero image if available
+// For homepages and main section pages: always use the default logo image
+const pageImageForSeo = isBlogOrArticlePage 
+  ? (image || (heroImage && typeof heroImage === 'object' && 'src' in heroImage ? heroImage.src : heroImage) || "/images/logos/new-york-english-og.jpg")
+  : "/images/logos/new-york-english-og.jpg";
+
+// Use square version for WhatsApp
+const whatsAppImagePath = isBlogOrArticlePage && pageImageForSeo !== "/images/logos/new-york-english-og.jpg"
+  ? pageImageForSeo 
+  : "/images/logos/new-york-english-sq-og.jpg";
+
+// Use appropriate image for LinkedIn
 const linkedInImagePath = pageImageForSeo;
 
 const canonicalPath = canonicalUrl || Astro.url.pathname;

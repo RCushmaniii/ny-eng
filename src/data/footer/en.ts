@@ -26,7 +26,7 @@ export const footerContentEn = (siteConfig: Pick<SiteConfig, 'companyName'>) => 
       connect: {
         title: "Connect",
         items: [
-          { type: "text", content: "WhatsApp: +52 33 1559 0572" }, // Universal number
+          { type: "link", name: "WhatsApp Me", href: "https://wa.link/pk4f97", target: "_blank", rel: "noopener noreferrer" },
           { type: "link", name: "Schedule a Consultation", href: "https://ny-english-teacher.odoo.com/book/7ceefa20", target: "_blank", rel: "noopener noreferrer" },
           { type: "link", name: "Contact Me", href: "/en/contact" },
         ] as ConnectItem[],

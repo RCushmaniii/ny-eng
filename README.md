@@ -199,6 +199,17 @@ This setup ensures consistent and localized SEO metadata across the bilingual si
 
 ### Titan Theme Customizations
 - The Titan theme is used as a base, with custom hero, blog, and bilingual layout adjustments.
+
+### External Link Handling
+- **Consistent New Tab Behavior**: All external consultation links (footer CTA, testimonials CTA, hero buttons) open in new tabs (`target="_blank"`) with proper security attributes (`rel="noopener noreferrer"`)
+- **Component Implementation**: 
+  - The `Button.astro` component explicitly handles `target` and `rel` attributes with conditional rendering
+  - The `Testimonials-titan.astro` component passes `target` and `rel` attributes from content objects to the Button component
+  - All homepage variants (root, `/en/`, `/es/`) maintain consistent button behavior
+- **TypeScript Type Safety**:
+  - Updated the `Props` interface in `Testimonials-titan.astro` to include optional `target` and `rel` properties in the CTA object
+  - Ensures type safety when passing attributes from content objects to UI components
+  - Follows the Titan Core Theme's strict TypeScript requirements with proper type definitions
 - All layout and component imports use absolute aliases (e.g., `@layouts`, `@components`) for maintainability.
 
 ## 🌐 Bilingual Data Structure

@@ -26,9 +26,9 @@ export const footerContentEs = (siteConfig: Pick<SiteConfig, 'companyName'>) => 
       connect: {
         title: "Contacto",
         items: [
-          { type: "text", content: "WhatsApp: +52 33 1559 0572" },
+          { type: "link", name: "Contáctame por WhatsApp", href: "https://wa.link/pk4f97", target: "_blank", rel: "noopener noreferrer" },
           { type: "link", name: "Agendar una Consulta", href: "https://ny-english-teacher.odoo.com/book/7ceefa20", target: "_blank", rel: "noopener noreferrer" },
-          { type: "link", name: "Contáctame", href: "/es/contact" }, // Adjust link if slug is /es/contacto
+          { type: "link", name: "Contáctame", href: "/es/contact" },
         ] as ConnectItem[],
       },
     },

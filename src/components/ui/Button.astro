@@ -46,12 +46,31 @@ const classes = [
   className
 ].join(' ');
 
-const linkAttributes = href ? { target, rel } : {};
-
-const Element = href ? 'a' : 'button';
+// Calculate the rel attribute value, respecting explicitly passed values
+const computedRel = rel ?? (target === '_blank' ? 'noopener noreferrer' : undefined);
 ---
 
-<Element class={classes} href={href} type={href ? undefined : type} disabled={disabled} aria-disabled={disabled} {...linkAttributes} {...rest}>
+<!-- Use conditional rendering for anchor vs button elements to ensure attributes are properly applied -->
+{href ? (
+  <a 
+    class={classes} 
+    href={href}
+    target={target} 
+    rel={computedRel}
+    {...rest}
+  >
+    <span class="absolute left-0 -mt-12 h-32 w-1/2 translate-x-[250%] rotate-12 bg-white opacity-20 transition-all duration-250 ease-out group-hover:translate-x-[2%]"></span>
+    <slot />
+  </a>
+) : (
+  <button 
+    class={classes} 
+    type={type} 
+    disabled={disabled} 
+    aria-disabled={disabled}
+    {...rest}
+  >
   <span class="absolute left-0 -mt-12 h-32 w-1/2 translate-x-[250%] rotate-12 bg-white opacity-20 transition-all duration-250 ease-out group-hover:translate-x-[2%]"></span>
   <slot />
-</Element>
+</button>
+)}
