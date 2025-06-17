@@ -18,6 +18,7 @@ export const headerMenu: MenuItem[] = [
     ],
     showArrow: true
   },
+  { name: 'Testimonials', link: '/en/testimonials' },
   { name: 'Blog', link: '/blog' },
 ];
 
