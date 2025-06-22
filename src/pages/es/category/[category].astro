@@ -30,24 +30,30 @@ const filteredPosts = allSpanishPosts.filter(post =>
 const categoryDisplayName = categoryData.name_es || categoryData.name;
 const pageTitle = `${categoryDisplayName} | Blog`;
 const seoTitle = `Publicaciones en ${categoryDisplayName} | ${siteConfig.companyName}`;
-const seoDescription = categoryData.description_es || categoryData.description || `Explorar publicaciones en la categoría ${categoryDisplayName}.`;
+// Use description directly as description_es doesn't exist in the Category type
+const seoDescription = categoryData.description || `Explorar publicaciones en la categoría ${categoryDisplayName}.`;
 
 // Determine the corresponding English category slug
 // Assuming categoryData.name (English name) is the key for linking
 const englishCategory = categories.find(cat => cat.name === categoryData.name);
-const translationSlugEn = englishCategory ? `/en/category/${englishCategory.slug}` : '/en/blog'; // Fallback to main EN blog
+const translationSlugEn = englishCategory && englishCategory.slug ? `/en/category/${englishCategory.slug}` : '/en/blog'; // Fallback to main EN blog
 
 --- 
 
-<PaginatedBlogLayout
-  posts={filteredPosts}
-  currentPage={1} // Category pages are not paginated in this setup, show all
-  totalPages={1}  // 
-  baseUrl={`/es/category/${categoryData.slug}`}
-  title={`Categoría: ${categoryDisplayName}`}
-  subtitle={seoDescription}
-  currentCategory={categoryData.name} // Pass the English category name for potential highlighting logic
-  translationSlugEn={translationSlugEn}
-  heroImage={blogSetting.categoryHeroImage} // Optional: Define a default hero image for categories
-  heroImageAlt={blogSetting.categoryHeroImageAlt || `Categoría: ${categoryDisplayName}`}
-/>
+{(() => {
+  // Create a properly typed props object
+  const layoutProps = {
+    posts: filteredPosts,
+    currentPage: 1,
+    totalPages: 1,
+    baseUrl: `/es/category/${categoryData.slug}`,
+    title: `Categoría: ${categoryDisplayName}`,
+    subtitle: seoDescription,
+    currentCategory: categoryData.name,
+    translationSlugEn: translationSlugEn.replace(/^\/en\//, ''),
+    heroImage: blogSetting.categoryHeroImage,
+    heroImageAlt: blogSetting.categoryHeroImageAlt || `Categoría: ${categoryDisplayName}`
+  };
+  
+  return <PaginatedBlogLayout {...layoutProps} />;
+})()}

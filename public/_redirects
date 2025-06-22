@@ -1,0 +1,17 @@
+# Redirect from non-www to www domain (301 permanent redirect)
+http://nyenglishteacher.com/* https://www.nyenglishteacher.com/:splat 301!
+https://nyenglishteacher.com/* https://www.nyenglishteacher.com/:splat 301!
+
+# Return 404 for development/test pages
+/components/* /404.html 404
+/test/* /404.html 404
+/dev/* /404.html 404
+/draft/* /404.html 404
+/preview/* /404.html 404
+
+# Handle language-specific 404s
+/en/* /en/404.html 404
+/es/* /es/404.html 404
+
+# Redirect trailing slashes
+/*/ /:splat 301

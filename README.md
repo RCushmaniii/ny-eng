@@ -327,25 +327,31 @@ The process of extending the site to be fully bilingual (English and Spanish) ha
 The site implements comprehensive SEO best practices to ensure maximum visibility and performance:
 
 ### 1. Technical SEO
-- **Domain Consistency**: All references use the production domain `https://www.nyenglishteacher.com` across:
-  - `astro.config.mjs` site URL configuration
-  - `robots.txt` sitemap reference
-  - JSON-LD structured data in blog posts
-  - Site configuration in `src/data/config.ts`
+- **Domain Consistency**: All references use the canonical production domain `https://www.nyenglishteacher.com` across:
+  - `astro.config.mjs` site URL configuration (hardcoded to prevent environment variable inconsistencies)
+  - `robots.txt` sitemap reference with proper disallow rules for development pages
+  - JSON-LD structured data in blog posts with consistent domain usage
+  - Site configuration in `src/data/config.ts` for centralized URL management
 - **Dynamic Meta Tags**: All pages use properly structured `<title>` and meta description tags via the SEO component
 - **Semantic HTML Structure**: Single `<h1>` per page with proper heading hierarchy throughout
 - **Structured Data**: JSON-LD implementation for blog posts with article schema
-- **Sitemap Generation**: Automatic sitemap generation via `@astrojs/sitemap` with proper configuration
-- **Robots.txt**: Custom robots.txt file with correct sitemap URL reference
+- **Sitemap Generation**: Automatic sitemap generation via `@astrojs/sitemap` with proper configuration and exclusion of development pages
+- **Robots.txt**: Enhanced robots.txt file with correct sitemap URL reference and disallow rules for development/test pages
 - **Performance Focus**: Minimal JavaScript, optimized images, and clean layout for better Core Web Vitals
 - **Type Safety**: Using `as const` for configuration objects to ensure type safety
+- **URL Validation**: Robust URL validation and cleaning to prevent malformed or undefined URLs
+- **Canonical Domain Enforcement**: Server-side redirects from non-www to www domain via .htaccess
 
 ### 2. Bilingual SEO
 - **Language Attributes**: Dynamic `lang` attribute on the `<html>` tag based on page language
-- **Hreflang Tags**: Proper implementation of hreflang tags for language alternatives
+- **Hreflang Tags**: Enhanced implementation of hreflang tags for language alternatives with:
+  - Self-referencing hreflang tags for each page
+  - Proper x-default tag implementation
+  - URL validation and cleaning to prevent duplicate or malformed hreflang URLs
 - **Translated Content**: Complete content translation with language-specific URLs
 - **Canonical URLs**: Proper canonical URL implementation for both language versions
 - **Automatic Language Detection**: Root path (`/`) automatically redirects to `/en/` or `/es/` based on browser language
+- **Translation Slug Validation**: Type checking and validation for translation slugs to prevent undefined values in language switcher links
 
 ### 3. Content Optimization
 - **Optimized Images**: All images use Astro's image optimization with proper alt text
@@ -357,7 +363,29 @@ The site implements comprehensive SEO best practices to ensure maximum visibilit
 - **Gradient Backgrounds**: Smooth gradient transitions for better readability and visual appeal
 - **Navigation Cards**: Enhanced navigation with proper contrast and visual hierarchy
 
-### 3. Astro & TypeScript Best Practices
+### 4. URL Handling & Language Switching Best Practices
+- **Prevent Duplicate Path Segments**: When constructing URLs for language alternatives or navigation:
+  - Always sanitize paths with regex patterns like `replace(/^\/(en|es)\//, '')` to remove language prefixes
+  - Use `replace(/\/\/+/g, '/')` to prevent double slashes in URLs
+  - For blog posts and category pages, explicitly check for and prevent duplicate path segments like `/en/blog//en/blog/`
+  - Validate translation slugs before using them in URL construction
+- **Translation Slug Management**: 
+  - When passing translation slugs between components, ensure they don't contain the full path (e.g., use `post-slug` not `/en/blog/post-slug`)
+  - Add path prefixes only at the point of URL construction, not when storing translation references
+  - Use explicit path cleaning in language switcher components to prevent path duplication
+- **URL Construction Pattern**: Follow this pattern for constructing cross-language links:
+  ```javascript
+  // Good practice
+  const cleanSlug = translationSlug.replace(/^\/(en|es)\/blog\//, '').replace(/\/\/+/g, '/');
+  const url = `/${targetLang}/blog/${cleanSlug}`;
+  ```
+- **Testing Language Navigation**: Regularly test language switching on all page types, especially:
+  - Blog post detail pages
+  - Category pages
+  - Paginated content
+  - Ensure proper URL structure in both directions (en→es and es→en)
+
+### 5. Astro & TypeScript Best Practices
 -   **`as const` for Type Safety**: Using `as const` for static configuration objects (e.g., for feature lists, hero content) has been vital for ensuring literal types. This works in tandem with `strict: true` in `tsconfig.json` to prevent type errors when passing these objects as props to components.
 -   **Scoped Styles & Global CSS**: Astro components use scoped styles by default, which helps prevent CSS conflicts. For global styles, ensure they are correctly imported into a primary layout component or managed via Astro's configuration if using specific integrations. *(Note: While we didn't encounter major global CSS issues, this remains a general best practice.)*
 -   **Development Server & Cache**: Restarting the Astro development server (`npm run dev`) and the IDE's TypeScript server (e.g., VS Code's "TypeScript: Restart TS Server") is often necessary after:
@@ -390,6 +418,46 @@ This repo follows robust rules for code quality and consistency. See `.windsurfr
 - SEO and accessibility
 - Bilingual/multilingual structure
 
+## 🌐 Hosting & Server Configuration
+
+### Hostinger Setup
+
+This site is hosted on Hostinger with the following configuration:
+
+#### .htaccess Configuration
+
+The `.htaccess` file in the `public` directory handles several critical SEO and security functions:
+
+- **Canonical Domain Enforcement**: Redirects from non-www to www domain (301 permanent redirects)
+- **HTTPS Enforcement**: Redirects all HTTP traffic to HTTPS
+- **Trailing Slash Removal**: Ensures consistent URL format by removing trailing slashes
+- **Development Page Protection**: Returns 404 for development/test pages like `/components/`, `/test/`, etc.
+- **Security Headers**: Sets appropriate security headers to protect against common vulnerabilities:
+  - X-XSS-Protection
+  - X-Content-Type-Options
+  - X-Frame-Options
+  - Strict-Transport-Security (HSTS)
+  - Referrer-Policy
+- **Cache Control**: Optimizes caching for static assets (images, CSS, JS, fonts)
+- **Directory Listing Prevention**: Disables directory browsing
+- **Sensitive File Protection**: Blocks access to sensitive files like `.htaccess`, `.env`, etc.
+
+#### Deployment Process
+
+1. Build the site locally with `npm run build`
+2. Upload the contents of the `dist` directory to Hostinger via FTP
+3. Ensure the `.htaccess` file is properly uploaded to the root directory
+4. Verify the site is working correctly with proper redirects and SEO implementation
+
+#### Google Search Console Setup
+
+To complete the SEO setup:
+
+1. Verify site ownership in Google Search Console using the HTML tag method
+2. Set the preferred domain to `https://www.nyenglishteacher.com`
+3. Submit the sitemap URL: `https://www.nyenglishteacher.com/sitemap-index.xml`
+4. Monitor for crawl errors and fix any issues that arise
+
 ## 👥 Contributors
 
 - [Your Name](https://your-website.com) - Initial project setup and development
@@ -401,6 +469,25 @@ This repo follows robust rules for code quality and consistency. See `.windsurfr
 - Document complex components and props.
 - Test for accessibility and responsiveness.
 - Follow the Windsurf Cascade rules for code quality and consistency.
+
+## 🔧 Common Issues & Solutions
+
+### 1. Duplicate Path Segments in URLs
+
+**Issue**: URLs with duplicate path segments (e.g., `/en/blog//en/blog/post-slug`) causing 404 errors, especially in language switcher links.
+
+**Root Cause**: Translation slugs containing full paths (including language prefixes) being passed between components, then having additional path segments added during URL construction.
+
+**Solution**:
+- Always sanitize translation slugs before using them in URL construction
+- Use regex patterns to remove language prefixes: `slug.replace(/^\/(en|es)\/blog\//, '')`
+- Add path cleaning to prevent double slashes: `url.replace(/\/\/+/g, '/')`
+- Test language switching thoroughly on all page types
+
+**Affected Components**:
+- Blog post pages (`[slug].astro` in both language directories)
+- Header component (language switcher links)
+- PaginatedBlogLayout component (translation slug handling)
 
 ## 📫 Contact
 

@@ -18,7 +18,10 @@ interface Props {
   lang: 'en' | 'es';
 }
 
-const { title, excerpt, featuredImage, imageAlt, publishDate, categories: postCategories, slug, index, lang } = Astro.props;
+const { title, excerpt, featuredImage, imageAlt, publishDate, categories: postCategories, slug = '', index, lang } = Astro.props;
+
+// Remove language prefix from slug if it exists (e.g., "en/small-talk" becomes "small-talk")
+const cleanSlug = slug.replace(/^(en|es)\//, '');
 
 // Validate categories against the valid categories
 const validCategories = postCategories.filter((categoryName: string) => 
@@ -28,7 +31,7 @@ const validCategories = postCategories.filter((categoryName: string) =>
 ---
 
 <a 
-  href={`/${lang}/blog/${slug}`} 
+  href={`/${lang}/blog/${cleanSlug}`} 
   class="group flex flex-col h-full overflow-hidden bg-white rounded-lg border border-black transition-all duration-300 hover:border-primary"
   data-aos="fade-up"
   data-aos-delay={index * 100}

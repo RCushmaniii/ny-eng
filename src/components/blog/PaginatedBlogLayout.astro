@@ -38,11 +38,12 @@ const {
 } = Astro.props;
 
     // Generate pagination URLs
-const nextPage = currentPage < totalPages ? `${baseUrl}/${currentPage + 1}` : null;
+const cleanBaseUrl = baseUrl ? baseUrl.replace(/\/\/+/g, '/').replace(/\/$/, '') : '';
+const nextPage = currentPage < totalPages ? `${cleanBaseUrl}/${currentPage + 1}` : null;
 const prevPage = currentPage > 1 
 ? currentPage - 1 === 1 
-? baseUrl
-: `${baseUrl}/${currentPage - 1}`
+? cleanBaseUrl
+: `${cleanBaseUrl}/${currentPage - 1}`
 : null;
 
 const heroContent = {
@@ -53,7 +54,9 @@ const heroContent = {
     alt: heroImageAlt
 }
 ---
-<Layout title={seoTitle} description={seoDescription} translationSlugEn={translationSlugEn} translationSlugEs={translationSlugEs}>
+<Layout title={seoTitle} description={seoDescription} 
+    translationSlugEn={translationSlugEn ? translationSlugEn.replace(/^\/en\//, '').replace(/\/\/+/g, '/') : undefined} 
+    translationSlugEs={translationSlugEs ? translationSlugEs.replace(/^\/es\//, '').replace(/\/\/+/g, '/') : undefined}>
     <main>
     <InnerHero content={heroContent}/>
     <BlogList posts={paginatedPosts} currentCategory={currentCategory} />
@@ -72,7 +75,7 @@ const heroContent = {
                     <div class="flex items-center gap-2">
                         {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
                             <a
-                                href={pageNum === 1 ? baseUrl : `${baseUrl}/${pageNum}`}
+                                href={pageNum === 1 ? cleanBaseUrl : `${cleanBaseUrl}/${pageNum}`}
                                 class={`w-10 h-10 flex items-center justify-center rounded-full transition-colors ${
                                     currentPage === pageNum
                                         ? 'bg-primary text-white'

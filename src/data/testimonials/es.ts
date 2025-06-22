@@ -23,6 +23,7 @@ export interface Testimonial {
   headline?: string;
   avatarSize?: 'sm' | 'md' | 'lg';
   link?: string;
+  status?: 'published' | 'draft';
 }
 
 export const testimonials: Testimonial[] = [
@@ -38,7 +39,8 @@ export const testimonials: Testimonial[] = [
     slug: "julio-aldana-smarttie",
     headline: "De bueno a excelente: Cómo el coaching transformó mi comunicación de liderazgo",
     avatarSize: "md",
-    link: "/es/casos-de-exito/founders"
+    link: "/es/casos-de-exito/founders",
+    status: "published"
   },
   {
     content:
@@ -52,7 +54,8 @@ export const testimonials: Testimonial[] = [
     slug: "hugo-blum-100-ladrillos",
     headline: "Presentando con confianza: El viaje de un CEO hacia el dominio del inglés",
     avatarSize: "md",
-    link: "/es/casos-de-exito/c-level-executives"
+    link: "/es/casos-de-exito/c-level-executives",
+    status: "published"
   },
   {
     content:
@@ -66,7 +69,8 @@ export const testimonials: Testimonial[] = [
     slug: "andres-guzman-driscolls",
     headline: "Construyendo confianza transfronteriza: Mi viaje ejecutivo en inglés",
     avatarSize: "md",
-    link: "/es/casos-de-exito/c-level-executives"
+    link: "/es/casos-de-exito/c-level-executives",
+    status: "published"
   },
   {
     content:
@@ -80,7 +84,8 @@ export const testimonials: Testimonial[] = [
     slug: "andrea-oliveira-ceva-logistics",
     headline: "Dominando la comunicación empresarial de alto nivel en logística",
     avatarSize: "md",
-    link: "/es/casos-de-exito/logistica"
+    link: "/es/casos-de-exito/logistica",
+    status: "published"
   },
   {
     content:
@@ -99,15 +104,20 @@ export const testimonials: Testimonial[] = [
   }
 ] as const;
 
+// Filter published testimonials
+const publishedTestimonials = testimonials.filter(t => t.status !== "draft");
+
 // Group testimonials by industry for easier filtering
 export const testimonialsByIndustry = {
-  "all": testimonials,
-  "founders": testimonials.filter(t => t.industry === "founders"),
-  "c-level-executives": testimonials.filter(t => t.industry === "c-level-executives"),
-  "logistics": testimonials.filter(t => t.industry === "logistics"),
-  "attorneys": testimonials.filter(t => t.industry === "attorneys"),
-  "doctors": testimonials.filter(t => t.industry === "doctors"),
-  "it-projects": testimonials.filter(t => t.industry === "it-projects"),
+  "all": publishedTestimonials,
+  "founders": publishedTestimonials.filter(t => t.industry === "founders"),
+  "c-level-executives": publishedTestimonials.filter(t => t.industry === "c-level-executives"),
+  "logistics": publishedTestimonials.filter(t => t.industry === "logistics"),
+  "attorneys": publishedTestimonials.filter(t => t.industry === "attorneys"),
+  "doctors": publishedTestimonials.filter(t => t.industry === "doctors"),
+  "it-projects": publishedTestimonials.filter(t => t.industry === "it-projects"),
+  "automotive": publishedTestimonials.filter(t => t.industry === "automotive"),
+  "business": publishedTestimonials.filter(t => t.industry === "business")
 } as const;
 
 // Industry labels for the filter dropdown
@@ -118,5 +128,7 @@ export const industryLabels = {
   "logistics": "Profesionales de logística",
   "attorneys": "Abogados y profesionales legales",
   "doctors": "Médicos y profesionales de la salud",
-  "it-projects": "Gerentes de TI y proyectos"
+  "it-projects": "Gerentes de TI y proyectos",
+  "automotive": "Profesionales automotrices",
+  "business": "Líderes empresariales"
 } as const;

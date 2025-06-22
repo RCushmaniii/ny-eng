@@ -4,11 +4,13 @@ import type { ImageMetadata } from 'astro';
 import emmanuelTestimonial from '../../assets/images/testimonials/emmanuel-testimonial.jpeg';
 import erikaTestimonial from '../../assets/images/testimonials/erika-testimonial.jpg';
 import julioTestimonial from '../../assets/images/testimonials/julio-testimonial.jpg';
-import hugoTestimonial from '../../assets/images/testimonials/hugo-l-testimonial.jpg';
+import hugoTestimonial from '../../assets/images/testimonials/hugo-testimonial.jpeg';
+import hugolTestimonial from '../../assets/images/testimonials/hugo-l-testimonial.jpg';
 import andresTestimonial from '../../assets/images/testimonials/andres-testimonial.jpeg';
 import karlaTestimonial from '../../assets/images/testimonials/karla-testimonial.jpg';
 import andreaTestimonial from '../../assets/images/testimonials/andrea-testimonial.jpeg';
 import albertoTestimonial from '../../assets/images/testimonials/alberto-testimonial.jpg';
+import humbertoTestimonial from '../../assets/images/testimonials/humberto-testimonial.jpg';
 
 export interface Testimonial {
   content: string;
@@ -23,6 +25,7 @@ export interface Testimonial {
   headline?: string;
   avatarSize?: 'sm' | 'md' | 'lg';
   link?: string;
+  status?: 'published' | 'draft';
 }
 
 export const testimonials: Testimonial[] = [
@@ -38,7 +41,8 @@ export const testimonials: Testimonial[] = [
     slug: "julio-smarttie",
     headline: "From Good to Great: How Coaching Transformed My Leadership Communication",
     avatarSize: "md",
-    link: "/en/case-studies/founders"
+    link: "/en/case-studies/founders",
+    status: "published"
   },
   {
     content:
@@ -52,7 +56,8 @@ export const testimonials: Testimonial[] = [
     slug: "hugo-blum-100-ladrillos",
     headline: "Pitching with Confidence: A CEO's Journey to English Mastery",
     avatarSize: "md",
-    link: "/en/case-studies/c-level-executives"
+    link: "/en/case-studies/c-level-executives",
+    status: "published"
   },
   {
     content:
@@ -66,7 +71,8 @@ export const testimonials: Testimonial[] = [
     slug: "andres-driscolls",
     headline: "Building Cross-Border Confidence: My Executive English Journey",
     avatarSize: "md",
-    link: "/en/case-studies/c-level-executives"
+    link: "/en/case-studies/c-level-executives",
+    status: "published"
   },
   {
     content:
@@ -80,7 +86,8 @@ export const testimonials: Testimonial[] = [
     slug: "andrea-ceva-logistics",
     headline: "Mastering High-Stakes Business Communication in Logistics",
     avatarSize: "md",
-    link: "/en/case-studies/logistics"
+    link: "/en/case-studies/logistics",
+    status: "published"
   },
   {
     content: `Taking classes with Robert has undoubtedly been a very enriching experience. I needed to attend meetings with high-level client executives to present proposals, solutions, or explain information related to logistics. My limited vocabulary and areas such as pronunciation, listening comprehension, intonation, and presentation skills required significant improvement for my professional growth.
@@ -96,7 +103,8 @@ export const testimonials: Testimonial[] = [
     slug: "karla-sanmina-corporation",
     headline: "Elevating Executive Communication Skills in Global Logistics",
     avatarSize: "md",
-    link: "/en/case-studies/logistics"
+    link: "/en/case-studies/logistics",
+    status: "published"
   },
  {
   content:
@@ -106,11 +114,12 @@ export const testimonials: Testimonial[] = [
   company: "", // Optional – you can fill this in or leave it null
   avatar: erikaTestimonial,
   stars: 5,
-  industry: "healthcare",
+  industry: "doctors",
   slug: "dra-erika-itzel-medical-doctor",
   headline: "Building Confidence and Clarity for International Patient Care",
   avatarSize: "md",
-  link: "/en/case-studies/healthcare"
+  link: "/en/case-studies/healthcare",
+  status: "published"
 },
 
 {
@@ -121,31 +130,13 @@ export const testimonials: Testimonial[] = [
   company: "Ramos, Ripoll & Schuster",
   avatar: emmanuelTestimonial,
   stars: 5,
-  industry: "legal",
+  industry: "attorneys",
   slug: "emmanuel-ibarra-castillo-ramos-ripoll-schuster",
   headline: "Confident Legal Communication with International Clients",
   avatarSize: "md",
-  link: "/en/case-studies/legal"
+  link: "/en/case-studies/legal",
+  status: "draft"
 },
-{
-  content: `
-    Taking classes with Robert has undoubtedly been a very enriching experience. I needed to attend meetings with high-level client executives to present proposals, solutions, or explain information related to logistics. My limited vocabulary and areas such as pronunciation, listening comprehension, intonation, and presentation skills required significant improvement for my professional growth.
-
-    Robert's coaching has not only enabled me to overcome these challenges but has also given me the confidence to present more professionally. He provided guidance on presenting and publishing my work in a corporate environment and introduced me to many cutting-edge topics that have positively impacted both my professional and personal life.
-  `,
-  shortContent: "Robert’s coaching completely transformed the way I communicate professionally—more clarity, confidence, and impact than ever before. Leading global engineering teams and managing high-stakes projects with international clients, I often struggled to communicate complex technical updates and strategic plans with the fluency and confidence required in English. ...",
-  author: "Hugo Lopez",
-  position: "Senior Program Manager",
-  company: "Continental",
-  avatar: hugoTestimonial,
-  stars: 5,
-  industry: "automotive",
-  slug: "hugo-lopez-continental",
-  headline: "Elevating Leadership Through Strategic Communication",
-  avatarSize: "md",
-  link: "/en/case-studies/automotive"
-},
-
 {
   content:
     "Working with Robert gave me a much stronger command of business English. I lead meetings more confidently, communicate more clearly with international partners, and get better results across the board. Internally, our communication is smoother—and our suppliers notice the difference.",
@@ -154,11 +145,12 @@ export const testimonials: Testimonial[] = [
   company: "Terramar Brands",
   avatar: albertoTestimonial, // Make sure to import this image where used
   stars: 5,
-  industry: "business",
+  industry: "c-level-executives",
   slug: "alberto-escobar-terramar-brands",
   headline: "Mastering Business English for Stronger Global Leadership",
   avatarSize: "md",
-  link: "/en/case-studies/business"
+  link: "/en/case-studies/business",
+  status: "published"
 },
 
 {
@@ -168,32 +160,54 @@ Robert’s coaching helped me significantly improve my pronunciation, fluency, a
 
 Beyond language skills, Robert also introduced me to key business communication frameworks that I’ve integrated into my team leadership and reporting practices. The improvements in how I speak and present have had a noticeable effect on the way I lead and are recognized by colleagues and clients alike.`,
   
-  shortContent: "Working with Robert has been a transformative experience for my professional communication. In my role, I regularly lead cross-functional engineering teams and manage high-stakes projects involving international clients and suppliers....",
+  shortContent: "Working with Robert has been a transformative experience for my professional communication. In my role, I regularly lead cross-functional engineering teams and manage high-stakes projects involving international clients and suppliers. Before coaching, I struggled with fluency and clarity during executive meetings....",
 
   author: "Hugo Lopez",
   position: "Senior Program Manager",
   company: "Continental",
-  avatar: hugoTestimonial, // Replace with actual import
+  avatar: hugolTestimonial, // Replace with actual import
   stars: 5,
-  industry: "automotive",
+  industry: "business",
   slug: "hugo-lopez-continental",
   headline: "Mastering Executive Communication in Global Engineering",
   avatarSize: "md",
-  link: "/en/case-studies/automotive"
-}
+  link: "/en/case-studies/automotive",
+  status: "published"
+},
+{
+  content:
+    "The lessons with Robert have helped me develop confidence when speaking in meetings with English-speaking clients and prospects. They've also aided me in expanding my vocabulary and correcting grammatical errors.",
+  author: "Humberto Grimaldo",
+  position: "Founder and President",
+  company: "TC Logistics",
+  avatar: humbertoTestimonial, // Import this image where the testimonial is used
+  stars: 5,
+  industry: "logistics",
+  slug: "humberto-grimaldo-tc-logistics",
+  headline: "Confident Communication for International Logistics Success",
+  avatarSize: "md",
+  link: "/en/case-studies/logistics",
+  status: "published"
+},
+
 
   
 ] as const;
 
+// Filter published testimonials
+const publishedTestimonials = testimonials.filter(t => t.status !== "draft");
+
 // Group testimonials by industry for easier filtering
 export const testimonialsByIndustry = {
-  "all": testimonials,
-  "founders": testimonials.filter(t => t.industry === "founders"),
-  "c-level-executives": testimonials.filter(t => t.industry === "c-level-executives"),
-  "logistics": testimonials.filter(t => t.industry === "logistics"),
-  "attorneys": testimonials.filter(t => t.industry === "attorneys"),
-  "doctors": testimonials.filter(t => t.industry === "doctors"),
-  "it-projects": testimonials.filter(t => t.industry === "it-projects"),
+  "all": publishedTestimonials,
+  "founders": publishedTestimonials.filter(t => t.industry === "founders"),
+  "c-level-executives": publishedTestimonials.filter(t => t.industry === "c-level-executives"),
+  "logistics": publishedTestimonials.filter(t => t.industry === "logistics"),
+ // "attorneys": publishedTestimonials.filter(t => t.industry === "attorneys"),
+  "doctors": publishedTestimonials.filter(t => t.industry === "doctors"),
+  "it-projects": publishedTestimonials.filter(t => t.industry === "it-projects"),
+  //"automotive": publishedTestimonials.filter(t => t.industry === "automotive"),
+  "business": publishedTestimonials.filter(t => t.industry === "business")
 } as const;
 
 // Industry labels for the filter dropdown
@@ -202,7 +216,9 @@ export const industryLabels = {
   "founders": "Founders & Entrepreneurs",
   "c-level-executives": "C-Level Executives",
   "logistics": "Logistics Professionals",
-  "attorneys": "Attorneys & Legal Professionals",
+  //"attorneys": "Attorneys & Legal Professionals",
   "doctors": "Doctors & Healthcare Professionals",
-  "it-projects": "IT & Project Managers"
+  "it-projects": "IT & Project Managers",
+  "automotive": "Automotive Professionals",
+  "business": "Business Leaders"
 } as const;

@@ -2,16 +2,17 @@
 import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import CategoryPill from '@components/ui/CategoryPill.astro';
-import Date from '@components/ui/Date.astro';
+// FIX: Rename the imported component to avoid conflict with the native Date object
+import DateComponent from '@components/ui/Date.astro';
 import { Image } from 'astro:assets';
-import BlogPost from '@components/blog/BlogPost.astro';
+import { siteConfig } from '@data/config';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  // Only Spanish posts in es/ subfolder
+  // Filter for published Spanish posts
   const esPosts = posts.filter(post => post.slug.startsWith('es/') && post.data.publish !== false);
   return esPosts.map(post => ({
-    params: { slug: post.slug.replace(/^es\//, '') }, // removes 'es/' prefix
+    params: { slug: post.slug.replace(/^es\//, '') }, // remove 'es/' prefix for the URL param
     props: { post },
   }));
 }
@@ -19,65 +20,71 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await post.render();
 
-const allEsPosts = (await getCollection('blog'))
-  .filter(p => p.id.startsWith('es/') && p.data.publish !== false)
-  .sort((a, b) => globalThis.Date.parse(String(b.data.publishDate)) - globalThis.Date.parse(String(a.data.publishDate)));
-// Add back the 'es/' prefix to match the slug in the collection
-const currentSlug = `es/${Astro.params.slug}`;
-const index = allEsPosts.findIndex(p => p.slug === currentSlug);
-const previousPost = allEsPosts[index + 1] ?? null;
-const nextPost = allEsPosts[index - 1] ?? null;
-const navPosts = previousPost && nextPost ? [previousPost, nextPost] : [];
+// --- Configuration & Core Variables ---
+const canonicalDomain = siteConfig.siteUrl || 'https://www.nyenglishteacher.com';
+const base = canonicalDomain.endsWith('/') ? canonicalDomain.slice(0, -1) : canonicalDomain;
+const postSlug = Astro.params.slug;
 
+// Define postUrl and postTitle so they are available for sharing links
+const cleanSlug = postSlug ? postSlug.replace(/^\/+/, '').replace(/\/\/+/g, '/') : '';
+const postUrl = `${base}/es/blog/${cleanSlug}`;
+const postTitle = post.data.title;
+
+
+// --- SEO Meta Tags ---
 const seoTitle = post.data.seo?.title || post.data.title;
 const seoDescription = post.data.seo?.description || post.data.excerpt;
-let seoImage = post.data.seo?.image;
-if (seoImage && !seoImage.startsWith('http')) {
-  const siteUrl = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
-  seoImage = new URL(seoImage.startsWith('/') ? seoImage : `/${seoImage}`, siteUrl).toString();
-} else if (!seoImage && post.data.featuredImage) {
-  const siteUrl = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
-  seoImage = new URL(post.data.featuredImage.src, siteUrl).toString();
-}
 
-const origin = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
-const base = origin.endsWith('/') ? origin.slice(0, -1) : origin;
-const postSlug = Astro.params.slug;
-const postUrl = `${base}/es/blog/${postSlug}`;
-const postTitle = post.data.title;
+
+// --- Previous/Next Post Navigation ---
+const allPosts = (await getCollection('blog'))
+  .filter(p => p.id.startsWith('es/') && p.data.publish !== false)
+  // This line now works because `Date` refers to the native JavaScript object
+  .sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());
+
+const currentSlug = `es/${Astro.params.slug}`;
+const currentIndex = allPosts.findIndex(p => p.slug === currentSlug);
+const previousPost = allPosts[currentIndex + 1] ?? null; // Older post
+const nextPost = allPosts[currentIndex - 1] ?? null;     // Newer post
+
+// --- JSON-LD Structured Data ---
+// This also now works correctly
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "description": post.data.excerpt,
+  "image": post.data.featuredImage?.src ? new URL(post.data.featuredImage.src, canonicalDomain).toString() : undefined,
+  "datePublished": new Date(post.data.publishDate).toISOString(),
+  "dateModified": new Date(post.data.publishDate).toISOString(),
+  "author": {
+    "@type": "Person",
+    "name": "New York English",
+    "url": new URL('/es/about', canonicalDomain).toString(),
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "New York English",
+    "logo": {
+      "@type": "ImageObject",
+      "url": new URL('/images/logos/new-york-english-og.jpg', canonicalDomain).toString(),
+    }
+  },
+  "inLanguage": "es-ES",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": new URL(Astro.url.pathname, canonicalDomain).toString(),
+  },
+  "keywords": post.data.categories?.join(", ") || '',
+};
 ---
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  translationSlugEn={post.data.translations?.en?.replace(/^en\/blog\//, '')}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 
-<Layout title={seoTitle} description={seoDescription} translationSlugEn={post.data.translations?.en}>
-  <!-- JSON-LD Structured Data for Article -->  
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": post.data.title,
-    "description": post.data.excerpt,
-    "image": post.data.featuredImage?.src ? new URL(post.data.featuredImage.src, Astro.site).toString() : undefined,
-    "datePublished": post.data.publishDate,
-    "dateModified": post.data.publishDate,
-    "author": {
-      "@type": "Person",
-      "name": "New York English",
-      "url": "https://www.nyenglishteacher.com/es/about"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "New York English",
-      "logo": {
-        "@type": "ImageObject",
-        "url": new URL("/images/logos/new-york-english-og.jpg", Astro.site).toString()
-      }
-    },
-    "inLanguage": "es-ES",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": new URL(Astro.url.pathname, Astro.site).toString()
-    },
-    "keywords": post.data.categories?.join(", ")
-  })}>  
-  </script>
   <section class="relative w-full">
     <!-- Gradient Background (all devices) -->
     <div class="w-full h-screen fixed top-0 left-0 -z-10 overflow-hidden">
@@ -88,7 +95,7 @@ const postTitle = post.data.title;
       <div class="mt-[5rem] md:mt-16 mb-6 md:mb-12 pt-8 md:pt-12 text-center relative z-10">
         <h1 class="text-gray-900 text-3xl md:text-4xl font-bold mb-4">{post.data.title}</h1>
         <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-gray-600">
-          <Date date={post.data.publishDate} lang="es" />
+          <DateComponent date={post.data.publishDate} lang="es" />
           {post.data.categories && post.data.categories.map(cat => (
             <CategoryPill category={cat} lang="es" />
           ))}
@@ -118,8 +125,7 @@ const postTitle = post.data.title;
             </div>
             <div class="flex flex-wrap items-center gap-2 sm:gap-3 justify-center">
               <a href={"https://api.whatsapp.com/send?text=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1.5 rounded transition hover:bg-primary hover:text-white border border-gray-100 text-sm flex items-center bg-white shadow-sm">
-                <span class="hidden sm:inline">WhatsApp</span>
-                <span class="sm:hidden">WhatsApp</span>
+                <span>WhatsApp</span>
               </a>
               <a href={"https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(postUrl)} target="_blank" rel="noopener noreferrer" class="share-btn px-3 py-1.5 rounded transition hover:bg-primary hover:text-white border border-gray-100 text-sm flex items-center bg-white shadow-sm">
                 <span class="hidden sm:inline">Facebook</span>
@@ -143,7 +149,6 @@ const postTitle = post.data.title;
           </section>
           <script>
             document.addEventListener('DOMContentLoaded', function() {
-              // Copy Link
               const btn = document.getElementById('copy-link-btn');
               const msg = document.getElementById('copy-link-msg');
               if (btn) {
@@ -161,7 +166,6 @@ const postTitle = post.data.title;
         </>
       )}
       
-      {/* Blog Navigation */}
       {(previousPost || nextPost) && (
         <section class="mt-16 flex flex-col items-center md:flex-row md:justify-between gap-6 mx-auto max-w-3xl">
         {previousPost && (
@@ -182,7 +186,8 @@ const postTitle = post.data.title;
             <div class="flex-grow px-4 py-6 flex flex-col">
               <div class="font-semibold text-base mb-1 line-clamp-2">{previousPost.data.title}</div>
               <div class="text-xs text-gray-500 mb-2">
-                <Date date={previousPost.data.publishDate} />
+                {/* FIX: Use the renamed component */}
+                <DateComponent date={previousPost.data.publishDate} />
               </div>
               <div class="text-sm text-gray-700 line-clamp-3">{previousPost.data.excerpt}</div>
             </div>
@@ -206,7 +211,8 @@ const postTitle = post.data.title;
             <div class="flex-grow px-4 py-6 flex flex-col text-right">
               <div class="font-semibold text-base mb-1 line-clamp-2">{nextPost.data.title}</div>
               <div class="text-xs text-gray-500 mb-2">
-                <Date date={nextPost.data.publishDate} />
+                {/* FIX: Use the renamed component */}
+                <DateComponent date={nextPost.data.publishDate} />
               </div>
               <div class="text-sm text-gray-700 line-clamp-3">{nextPost.data.excerpt}</div>
             </div>

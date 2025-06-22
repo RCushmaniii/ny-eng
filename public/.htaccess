@@ -1,0 +1,57 @@
+# Enable rewriting
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect from non-www to www domain (canonical domain enforcement)
+RewriteCond %{HTTP_HOST} ^nyenglishteacher\.com$ [NC]
+RewriteRule ^(.*)$ https://www.nyenglishteacher.com/$1 [L,R=301]
+
+# Remove trailing slashes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [L,R=301]
+
+# Return 404 for development/test pages
+RedirectMatch 404 /components/.*
+RedirectMatch 404 /test/.*
+RedirectMatch 404 /dev/.*
+RedirectMatch 404 /draft/.*
+RedirectMatch 404 /preview/.*
+
+# Security headers
+<IfModule mod_headers.c>
+  # Protect against XSS attacks
+  Header set X-XSS-Protection "1; mode=block"
+  
+  # Prevent MIME-type sniffing
+  Header set X-Content-Type-Options "nosniff"
+  
+  # Prevent clickjacking
+  Header set X-Frame-Options "DENY"
+  
+  # HSTS (HTTP Strict Transport Security)
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  
+  # Referrer policy
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Cache control for static assets
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|css|js|woff|woff2)$">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+
+# Error documents
+ErrorDocument 404 /404.html
+
+# Prevent directory listing
+Options -Indexes
+
+# Prevent access to specific files
+<FilesMatch "^(\.htaccess|\.htpasswd|\.git|\.env|\.gitignore)">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>

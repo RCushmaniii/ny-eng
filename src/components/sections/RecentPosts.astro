@@ -49,6 +49,7 @@ const allPosts = await getCollection("blog", ({ data }) => {
 
 // Language filtering logic
 const isSpanish = Astro.url.pathname.startsWith('/es');
+const lang = isSpanish ? 'es' : 'en';
 const filteredPosts = allPosts
     .filter((post) => {
         // Filter by directory: show only posts in 'es/' for Spanish, 'en/' for English
@@ -118,6 +119,7 @@ const filteredPosts = allPosts
                         content={post.body}
                         slug={post.slug}
                         index={index}
+                        lang={lang}
                     />
                 ))
             }

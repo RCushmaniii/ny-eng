@@ -60,9 +60,11 @@ const isCurrentPage = (link: string) => {
           </ul>
         </nav>
         <div class="flex items-center" id="lang-switcher-container">
-          {translationSlugEs && !currentPath.startsWith('/es') && (
+          {translationSlugEs && typeof translationSlugEs === 'string' && !currentPath.startsWith('/es') && (
             <a
-              href={translationSlugEs}
+              href={currentPath.includes('/blog/') 
+                ? `/es/blog/${translationSlugEs}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/es\/blog\/es\/blog\//, '/es/blog/') 
+                : `/es/${translationSlugEs}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/es\/es\//, '/es/')}
               class="lang-flag p-1 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white"
               aria-label="Cambiar a Español"
               data-lang="es"
@@ -71,9 +73,11 @@ const isCurrentPage = (link: string) => {
               <Image src={mexFlag} alt="Bandera de México" width={24} height={24} class="w-6 h-6" />
             </a>
           )}
-          {translationSlugEn && !currentPath.startsWith('/en') && (
+          {translationSlugEn && typeof translationSlugEn === 'string' && !currentPath.startsWith('/en') && (
             <a
-              href={translationSlugEn}
+              href={currentPath.includes('/blog/') 
+                ? `/en/blog/${translationSlugEn}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/en\/blog\/en\/blog\//, '/en/blog/') 
+                : `/en/${translationSlugEn}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/en\/en\//, '/en/')}
               class="lang-flag p-1 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white"
               aria-label="Switch to English"
               data-lang="en"
@@ -140,9 +144,9 @@ const isCurrentPage = (link: string) => {
       </ul>
       <!-- Language Switcher for Mobile Menu -->
       <div class="mt-6 mb-4 flex justify-center gap-4">
-        {translationSlugEs && !currentPath.startsWith('/es') && (
+        {translationSlugEs && typeof translationSlugEs === 'string' && !currentPath.startsWith('/es') && (
           <a
-            href={translationSlugEs}
+            href={`/es/blog/${translationSlugEs}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/es\/blog\/es\/blog\//, '/es/blog/')}
             class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
             aria-label="Cambiar a Español"
             data-lang="es"
@@ -152,9 +156,9 @@ const isCurrentPage = (link: string) => {
             <span class="text-sm font-medium">Español</span>
           </a>
         )}
-        {translationSlugEn && !currentPath.startsWith('/en') && (
+        {translationSlugEn && typeof translationSlugEn === 'string' && !currentPath.startsWith('/en') && (
           <a
-            href={translationSlugEn}
+            href={`/en/blog/${translationSlugEn}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/en\/blog\/en\/blog\//, '/en/blog/')}
             class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
             aria-label="Switch to English"
             data-lang="en"

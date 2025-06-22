@@ -6,13 +6,13 @@ import ExpandableTestimonialCard from "@components/ExpandableTestimonialCard.ast
 import Eyebrow from "@components/ui/Eyebrow.astro";
 import Button from "@components/ui/Button.astro";
 
-// Get the industry filter from URL query params
-const industryParam = Astro.url.searchParams.get('industry') || 'all';
-const validIndustries = Object.keys(testimonialsByIndustry);
-const currentIndustry = validIndustries.includes(industryParam) ? industryParam : "all";
+// Get all published testimonials for client-side filtering
+const publishedTestimonials = testimonials.filter(t => t.status !== "draft");
 
-// Filter testimonials based on selected industry
-const filteredTestimonials = testimonialsByIndustry[currentIndustry as keyof typeof testimonialsByIndustry];
+// Get valid industries that have testimonials
+const validIndustries = Object.keys(industryLabels).filter(
+  (industry) => testimonialsByIndustry[industry as keyof typeof testimonialsByIndustry]?.length > 0
+);
 
 // SEO metadata
 const title = "Client Success Stories | NY English Teacher";
@@ -22,7 +22,7 @@ const description = "Read success stories from executives, founders, and profess
 const translationSlugEs = "/es/testimonios";
 ---
 
-<Layout 
+<Layout
   title={title}
   description={description}
   translationSlugEs={translationSlugEs}
@@ -40,64 +40,112 @@ const translationSlugEs = "/es/testimonios";
       <!-- Industry Filter -->
       <div class="mb-10 flex flex-col sm:flex-row justify-center items-center gap-4">
         <label for="industry-filter" class="font-medium text-[--color-headline]">Filter by industry:</label>
-        <select 
-          id="industry-filter" 
+        <select
+          id="industry-filter"
           class="bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
-          onchange="window.location.href = `?industry=${this.value}`"
         >
-          {Object.entries(industryLabels).map(([key, label]) => (
-            <option value={key} selected={currentIndustry === key}>{label}</option>
-          ))}
+          {Object.entries(industryLabels)
+            .filter(([key]) => validIndustries.includes(key))
+            .map(([key, label]) => (
+              <option value={key}>{label}</option>
+            ))}
         </select>
       </div>
 
       <!-- Testimonials Grid -->
-      <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {filteredTestimonials.map((testimonial) => (
-          testimonial.shortContent ? (
-            <ExpandableTestimonialCard 
-              testimonial={testimonial} 
-              showHeadline={true}
-            />
-          ) : (
-            <TestimonialCard 
-              testimonial={testimonial} 
-              showHeadline={true}
-            />
-          )
+      <div id="testimonials-grid" class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {publishedTestimonials.map((testimonial) => (
+          <div class="testimonial-item" data-industry={testimonial.industry}>
+            {testimonial.shortContent ? (
+              <ExpandableTestimonialCard
+                testimonial={testimonial}
+                showHeadline={true}
+              />
+            ) : (
+              <TestimonialCard
+                testimonial={testimonial}
+                showHeadline={true}
+              />
+            )}
+          </div>
         ))}
       </div>
 
-      <!-- Empty State -->
-      {filteredTestimonials.length === 0 && (
-        <div class="text-center py-16">
-          <p class="text-lg text-[--color-body-base] mb-4">No testimonials found for this industry.</p>
-          <Button href="?industry=all" variant="primary">View All Testimonials</Button>
-        </div>
-      )}
-
-      <!-- CTA Section -->
-      <div class="mt-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 md:p-12 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-primary-600/30 to-secondary-600/30 backdrop-blur-sm"></div>
-        <div class="relative z-10 text-center md:text-left md:flex items-center justify-between">
-          <div class="mb-6 md:mb-0 md:mr-8">
-            <h3 class="text-2xl md:text-3xl font-bold text-[--color-headline-dark] mb-4">
-              Ready to Transform Your Professional English?
-            </h3>
-            <p class="text-[--color-body-dark] max-w-2xl">
-              Book your free consultation to gain the clarity, confidence, and impact your role demands.
-            </p>
-          </div>
-          <Button 
-            href="https://ny-english-teacher.odoo.com/book/7ceefa20" 
-            variant="primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Reserve My Free Consultation
-          </Button>
-        </div>
+      <div id="no-results" class="text-center py-16 hidden">
+        <p class="text-lg text-[--color-body-base] mb-4">No testimonials found for this industry.</p>
+        <button 
+          class="bg-primary-500 text-white px-6 py-3 rounded-md font-medium hover:bg-primary-600 transition-colors"
+        >
+          View All Testimonials
+        </button>
       </div>
+
+       <div class="mt-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 md:p-12 relative overflow-hidden">
+         <div class="absolute inset-0 bg-gradient-to-r from-primary-600/30 to-secondary-600/30 backdrop-blur-sm"></div>
+         <div class="relative z-10 text-center md:text-left md:flex items-center justify-between">
+           <div class="mb-6 md:mb-0 md:mr-8">
+             <h3 class="text-2xl md:text-3xl font-bold text-[--color-headline-dark] mb-4">
+               Ready to Transform Your Professional English?
+             </h3>
+             <p class="text-[--color-body-dark] max-w-2xl">
+               Book your free consultation to gain the clarity, confidence, and impact your role demands.
+             </p>
+           </div>
+           <Button
+             href="https://ny-english-teacher.odoo.com/book/7ceefa20"
+             variant="primary"
+             target="_blank"
+             rel="noopener noreferrer"
+           >
+             Reserve My Free Consultation
+           </Button>
+         </div>
+       </div>
     </div>
   </section>
+
+  <script>
+    // Client-side filtering functionality
+    const industryFilter = document.getElementById('industry-filter') as HTMLSelectElement;
+    const testimonialItems = document.querySelectorAll('.testimonial-item');
+    const noResultsDiv = document.getElementById('no-results');
+    const showAllBtn = noResultsDiv?.querySelector('button');
+
+    function filterTestimonials(selectedIndustry: string) {
+      let visibleCount = 0;
+      
+      testimonialItems.forEach((item) => {
+        const itemIndustry = item.getAttribute('data-industry');
+        
+        if (selectedIndustry === 'all' || itemIndustry === selectedIndustry) {
+          (item as HTMLElement).style.display = 'block';
+          visibleCount++;
+        } else {
+          (item as HTMLElement).style.display = 'none';
+        }
+      });
+
+      // Show/hide no results message
+      if (visibleCount === 0) {
+        noResultsDiv?.classList.remove('hidden');
+      } else {
+        noResultsDiv?.classList.add('hidden');
+      }
+    }
+
+    // Add event listener to filter dropdown
+    industryFilter?.addEventListener('change', function() {
+      filterTestimonials(this.value);
+    });
+
+    // Add event listener to "Show All" button
+    showAllBtn?.addEventListener('click', function(e) {
+      e.preventDefault();
+      industryFilter.value = 'all';
+      filterTestimonials('all');
+    });
+
+    // Initialize with all testimonials visible
+    filterTestimonials('all');
+  </script>
 </Layout>

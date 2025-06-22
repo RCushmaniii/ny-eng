@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import type { Testimonial } from "@data/testimonials";
+import type { Testimonial } from "@data/testimonials/en";
 import Button from "../ui/Button.astro";
 import Eyebrow from "../ui/Eyebrow.astro";
 import {
@@ -69,7 +69,9 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
 
     <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2">
       {
-        testimonials.map((testimonial, index) => (
+        testimonials
+          .filter(testimonial => testimonial.status !== "draft")
+          .map((testimonial, index) => (
           <div
             class={`fade-in-up${index > 0 ? ` delay-${(index % 3) + 1}` : ''} bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-secondary-200 dark:bg-secondary-900 dark:border-secondary-800 text-left`}
           >

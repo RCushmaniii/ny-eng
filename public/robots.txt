@@ -1,6 +1,13 @@
-# Allow all web crawlers
+# Allow all web crawlers for most content
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Disallow development and test pages
+Disallow: /components/
+Disallow: /test/
+Disallow: /dev/
+Disallow: /draft/
+Disallow: /preview/
+
+# Canonical sitemap location
 Sitemap: https://www.nyenglishteacher.com/sitemap-index.xml

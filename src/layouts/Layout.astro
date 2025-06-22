@@ -72,8 +72,14 @@ const whatsAppImagePath = isBlogOrArticlePage && pageImageForSeo !== "/images/lo
 // Use appropriate image for LinkedIn
 const linkedInImagePath = pageImageForSeo;
 
+// Ensure we always use the www version as canonical
+const canonicalDomain = siteConfig.siteUrl.replace(/^(https?:\/\/)/, '$1www.');
+
+// Build the canonical URL with the www domain
 const canonicalPath = canonicalUrl || Astro.url.pathname;
-const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
+let fullCanonicalUrl = new URL(canonicalPath, canonicalDomain).toString();
+// Clean up any potential double slashes in the path
+fullCanonicalUrl = fullCanonicalUrl.replace(/([^:]\/)\/+/g, '$1');
 
 const currentAstroPath = Astro.url.pathname;
 let determinedLang = defaultLang || 'en';
@@ -119,24 +125,44 @@ const twitterUsername = siteConfig.Socials.xSocial.includes('x.com/')
   ? `@${siteConfig.Socials.xSocial.split('x.com/')[1]}`
   : (siteConfig.Socials.xSocial.includes('twitter.com/') ? `@${siteConfig.Socials.xSocial.split('twitter.com/')[1]}` : undefined);
 
+// Improved hreflang implementation to fix SEO issues
 const languageAlternatesList = [];
+
+// Always ensure we have a self-referencing hreflang tag
+languageAlternatesList.push({ hreflang: determinedLang, href: fullCanonicalUrl });
+
+// Add alternate language links when available
 if (determinedLang === 'es' && translationSlugEn) {
-  languageAlternatesList.push({ hreflang: 'es', href: fullCanonicalUrl });
-  languageAlternatesList.push({ hreflang: 'en', href: new URL(translationSlugEn, siteConfig.siteUrl).toString() });
-  languageAlternatesList.push({ hreflang: 'x-default', href: new URL(translationSlugEn, siteConfig.siteUrl).toString() });
+  // Ensure translationSlugEn is valid and not undefined
+  if (translationSlugEn && typeof translationSlugEn === 'string' && translationSlugEn !== 'undefined') {
+    // Prevent double paths by removing any language prefix if it already exists
+    let cleanEnPath = translationSlugEn.replace(/^\/?(en|es)\//, '');
+    // Ensure the path starts with a single slash and doesn't have double slashes
+    cleanEnPath = '/en/' + cleanEnPath.replace(/^\/+/, '').replace(/\/\/+/g, '/');
+    const enUrl = new URL(cleanEnPath, canonicalDomain).toString().replace(/([^:]\/)\/+/g, '$1');
+    languageAlternatesList.push({ hreflang: 'en', href: enUrl });
+    languageAlternatesList.push({ hreflang: 'x-default', href: enUrl });
+  }
 } else if (determinedLang === 'en' && translationSlugEs) {
-  languageAlternatesList.push({ hreflang: 'en', href: fullCanonicalUrl });
-  languageAlternatesList.push({ hreflang: 'es', href: new URL(translationSlugEs, siteConfig.siteUrl).toString() });
-  languageAlternatesList.push({ hreflang: 'x-default', href: fullCanonicalUrl }); 
+  // Ensure translationSlugEs is valid and not undefined
+  if (translationSlugEs && typeof translationSlugEs === 'string' && translationSlugEs !== 'undefined') {
+    // Prevent double paths by removing any language prefix if it already exists
+    let cleanEsPath = translationSlugEs.replace(/^\/?(en|es)\//, '');
+    // Ensure the path starts with a single slash and doesn't have double slashes
+    cleanEsPath = '/es/' + cleanEsPath.replace(/^\/+/, '').replace(/\/\/+/g, '/');
+    const esUrl = new URL(cleanEsPath, canonicalDomain).toString().replace(/([^:]\/)\/+/g, '$1');
+    languageAlternatesList.push({ hreflang: 'es', href: esUrl });
+    // For English pages, set x-default to the English version
+    languageAlternatesList.push({ hreflang: 'x-default', href: fullCanonicalUrl });
+  }
 } else {
-  languageAlternatesList.push({ hreflang: determinedLang, href: fullCanonicalUrl });
+  // If no translation available, set x-default to current page
   if (determinedLang === defaultLang) {
     languageAlternatesList.push({ hreflang: 'x-default', href: fullCanonicalUrl });
   }
-  if (!languageAlternatesList.find(a => a.hreflang === 'x-default')) {
-    languageAlternatesList.push({ hreflang: 'x-default', href: fullCanonicalUrl });
-  }
 }
+
+// Remove any duplicate hreflang entries
 const finalLanguageAlternates = languageAlternatesList.filter((obj, index, self) =>
   index === self.findIndex((o) => o.hreflang === obj.hreflang)
 );

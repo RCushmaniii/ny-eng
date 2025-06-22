@@ -28,10 +28,17 @@ const {
   alternateUrls = []
 } = Astro.props;
 
-const fullImage = new URL(image.startsWith('/') ? image : `/${image}`, defaultSEO.siteUrl).toString();
-const fullWhatsappImage = new URL(whatsappImage.startsWith('/') ? whatsappImage : `/${whatsappImage}`, defaultSEO.siteUrl).toString();
-const fullLinkedinImage = new URL(linkedinImage.startsWith('/') ? linkedinImage : `/${linkedinImage}`, defaultSEO.siteUrl).toString();
-const fullUrl = new URL(url, defaultSEO.siteUrl).toString();
+// Ensure we always use the www version as canonical
+const canonicalDomain = defaultSEO.siteUrl.replace(/^(https?:\/\/)/, '$1www.');
+
+const fullImage = new URL(image.startsWith('/') ? image : `/${image}`, canonicalDomain).toString();
+const fullWhatsappImage = new URL(whatsappImage.startsWith('/') ? whatsappImage : `/${whatsappImage}`, canonicalDomain).toString();
+const fullLinkedinImage = new URL(linkedinImage.startsWith('/') ? linkedinImage : `/${linkedinImage}`, canonicalDomain).toString();
+
+// Ensure the URL always uses the canonical domain (with www)
+let fullUrl = new URL(url, canonicalDomain).toString();
+// Clean up any potential double slashes in the path
+fullUrl = fullUrl.replace(/([^:]\/)\/+/g, '$1');
 ---
 
 <title>{title}</title>
@@ -73,10 +80,10 @@ const fullUrl = new URL(url, defaultSEO.siteUrl).toString();
 <meta name="twitter:image" content={fullWhatsappImage} media="(max-width: 600px)" />
 
 <!-- Hreflang tags for multilingual SEO -->
-{alternateUrls.map((alt) => (
-  <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
-))}
-{/* Add x-default hreflang if not already included */}
-{!alternateUrls.some(alt => alt.hreflang === 'x-default') && 
-  <link rel="alternate" hreflang="x-default" href={fullUrl} />
-}
+{alternateUrls.map((alt) => {
+  // Ensure URLs are properly formatted without double slashes in paths
+  const cleanHref = alt.href.replace(/([^:]\/)\/+/g, '$1');
+  return <link rel="alternate" hreflang={alt.hreflang} href={cleanHref} />;
+})}
+<!-- Canonical URL tag to reinforce the correct URL -->
+<link rel="canonical" href={fullUrl.replace(/([^:]\/)\/+/g, '$1')} />

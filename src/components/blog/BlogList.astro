@@ -66,7 +66,7 @@ const activeCategories = categories.filter(category =>
           publishDate={post.data.publishDate}
           categories={post.data.categories || []}
           content={post.body}
-          slug={post.slug.substring(3)}
+          slug={post.slug && post.slug.length > 3 ? post.slug.substring(3) : post.slug}
           index={index}
           lang={lang}
         />
