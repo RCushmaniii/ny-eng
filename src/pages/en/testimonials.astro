@@ -6,6 +6,9 @@ import ExpandableTestimonialCard from "@components/ExpandableTestimonialCard.ast
 import Eyebrow from "@components/ui/Eyebrow.astro";
 import Button from "@components/ui/Button.astro";
 
+// Toggle to show/hide CTA links on testimonial cards
+const showCtaLinks = true; // Set to false to hide all CTA links
+
 // Get all published testimonials for client-side filtering
 const publishedTestimonials = testimonials.filter(t => t.status !== "draft");
 
@@ -60,11 +63,13 @@ const translationSlugEs = "/es/testimonios";
               <ExpandableTestimonialCard
                 testimonial={testimonial}
                 showHeadline={true}
+                showCtaLink={showCtaLinks}
               />
             ) : (
               <TestimonialCard
                 testimonial={testimonial}
                 showHeadline={true}
+                showCtaLink={showCtaLinks}
               />
             )}
           </div>

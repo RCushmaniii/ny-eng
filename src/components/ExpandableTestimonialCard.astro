@@ -7,9 +7,10 @@ export interface Props {
   testimonial: Testimonial;
   showHeadline?: boolean;
   showReadMore?: boolean;
+  showCtaLink?: boolean;
 }
 
-const { testimonial, showHeadline = false, showReadMore = true } = Astro.props;
+const { testimonial, showHeadline = false, showReadMore = true, showCtaLink = true } = Astro.props;
 
 // Set avatar size class based on testimonial.avatarSize
 const avatarSizeClass = {
@@ -80,7 +81,7 @@ const hasShortContent = !!testimonial.shortContent;
     </div>
   </div>
   
-  {showReadMore && testimonial.link && (
+  {showReadMore && showCtaLink && testimonial.link && (
     <div class="mt-4 text-right">
       <a 
         href={testimonial.link} 
@@ -90,7 +91,7 @@ const hasShortContent = !!testimonial.shortContent;
           rel: "noopener noreferrer"
         } : {})}
       >
-        {testimonial.link.includes('/es/') ? 'Leer más' : 'Read more'} <span class="ml-1">→</span>
+        {testimonial.linkText || (testimonial.link.includes('/es/') ? 'Leer más' : 'Read more')} <span class="ml-1">→</span>
       </a>
     </div>
   )}

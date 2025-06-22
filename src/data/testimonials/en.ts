@@ -11,6 +11,8 @@ import karlaTestimonial from '../../assets/images/testimonials/karla-testimonial
 import andreaTestimonial from '../../assets/images/testimonials/andrea-testimonial.jpeg';
 import albertoTestimonial from '../../assets/images/testimonials/alberto-testimonial.jpg';
 import humbertoTestimonial from '../../assets/images/testimonials/humberto-testimonial.jpg';
+import ricardoTestimonial from '../../assets/images/testimonials/ricardo-testimonial.jpg';
+import javierTestimonial from '../../assets/images/testimonials/javier-testimonial.jpg';
 
 export interface Testimonial {
   content: string;
@@ -25,6 +27,7 @@ export interface Testimonial {
   headline?: string;
   avatarSize?: 'sm' | 'md' | 'lg';
   link?: string;
+  linkText?: string;
   status?: 'published' | 'draft';
 }
 
@@ -42,6 +45,7 @@ export const testimonials: Testimonial[] = [
     headline: "From Good to Great: How Coaching Transformed My Leadership Communication",
     avatarSize: "md",
     link: "/en/case-studies/founders",
+    linkText: "👉 English Coaching for Startup Founders",
     status: "published"
   },
   {
@@ -57,6 +61,7 @@ export const testimonials: Testimonial[] = [
     headline: "Pitching with Confidence: A CEO's Journey to English Mastery",
     avatarSize: "md",
     link: "/en/case-studies/c-level-executives",
+    linkText: "👉 English Coaching for C-Level Executives",
     status: "published"
   },
   {
@@ -72,6 +77,7 @@ export const testimonials: Testimonial[] = [
     headline: "Building Cross-Border Confidence: My Executive English Journey",
     avatarSize: "md",
     link: "/en/case-studies/c-level-executives",
+    linkText: "👉 English Coaching for C-Level Executives",
     status: "published"
   },
   {
@@ -87,6 +93,7 @@ export const testimonials: Testimonial[] = [
     headline: "Mastering High-Stakes Business Communication in Logistics",
     avatarSize: "md",
     link: "/en/case-studies/logistics",
+    linkText: "👉 English Coaching for Logistics Professionals",
     status: "published"
   },
   {
@@ -104,6 +111,7 @@ export const testimonials: Testimonial[] = [
     headline: "Elevating Executive Communication Skills in Global Logistics",
     avatarSize: "md",
     link: "/en/case-studies/logistics",
+    linkText: "👉 English Coaching for Logistics Professionals",
     status: "published"
   },
  {
@@ -119,6 +127,7 @@ export const testimonials: Testimonial[] = [
   headline: "Building Confidence and Clarity for International Patient Care",
   avatarSize: "md",
   link: "/en/case-studies/healthcare",
+  linkText: "👉 English Coaching for Doctors and Healthcare Professionals",
   status: "published"
 },
 
@@ -135,6 +144,7 @@ export const testimonials: Testimonial[] = [
   headline: "Confident Legal Communication with International Clients",
   avatarSize: "md",
   link: "/en/case-studies/legal",
+  linkText: "👉 English Coaching for Attorneys and Legal Professionals",
   status: "draft"
 },
 {
@@ -150,6 +160,7 @@ export const testimonials: Testimonial[] = [
   headline: "Mastering Business English for Stronger Global Leadership",
   avatarSize: "md",
   link: "/en/case-studies/business",
+  linkText: "👉 English Coaching for Business Leaders",
   status: "published"
 },
 
@@ -172,8 +183,30 @@ Beyond language skills, Robert also introduced me to key business communication 
   headline: "Mastering Executive Communication in Global Engineering",
   avatarSize: "md",
   link: "/en/case-studies/automotive",
+  linkText: "👉 English Coaching for Business Leaders",
+  status: "draft"
+},
+{
+  content: `Working with Robert has helped me improve how I communicate in technical sales situations. I often explain automation systems, PLC programming, and product specs to international clients, and I wanted to sound more fluent and confident. 
+
+With Robert’s coaching, I’ve become more natural in conversations, better at structuring my explanations, and more persuasive in demos and follow-ups. It’s made a clear difference in how I interact with clients and represent my company in English.`,
+  
+  shortContent: "Working with Robert has helped me improve how I communicate in technical sales situations. I often explain automation systems, PLC programming, and product specs to international clients...",
+  
+  author: "Ricardo Mendoza",
+  position: "Automation and Control Engineer",
+  company: "Mountz Torque",
+  avatar: ricardoTestimonial, // Replace with actual import
+  stars: 5,
+  industry: "engineering",
+  slug: "ricardo-mendoza-mountz-torque",
+  headline: "Fluent Technical Sales for Factory Automation",
+  avatarSize: "md",
+  link: "/en/case-studies/industrial-automation",
+  linkText: "👉 English Coaching for Engineers",
   status: "published"
 },
+
 {
   content:
     "The lessons with Robert have helped me develop confidence when speaking in meetings with English-speaking clients and prospects. They've also aided me in expanding my vocabulary and correcting grammatical errors.",
@@ -187,8 +220,29 @@ Beyond language skills, Robert also introduced me to key business communication 
   headline: "Confident Communication for International Logistics Success",
   avatarSize: "md",
   link: "/en/case-studies/logistics",
+  linkText: "👉 English Coaching for Logistics Professionals",
   status: "published"
 },
+
+{
+  content: `Robert helped me strengthen my English communication for project management interactions. I now feel confident in managing legal conversations, explaining complex issues, and building trust with U.S. colleagues. It’s made a significant difference in my day-to-day international work.`,
+  
+  shortContent: "Robert helped me strengthen my English communication for project management interactions. I now feel confident in managing legal conversations and building trust with U.S. colleagues...",
+  
+  author: "Javier Ramírez",
+  position: "Program Manager",
+  company: "Sophia",
+  avatar: javierTestimonial, // Replace with actual import
+  stars: 5,
+  industry: "business",
+  slug: "javier-ramirez-sophia",
+  headline: "Fluent, Confident English for Global Project Management",
+  avatarSize: "md",
+  link: "/en/case-studies/project-management",
+  linkText: "👉 English Coaching for Project Managers",
+  status: "published"
+},
+
 
 
   
@@ -207,7 +261,8 @@ export const testimonialsByIndustry = {
   "doctors": publishedTestimonials.filter(t => t.industry === "doctors"),
   "it-projects": publishedTestimonials.filter(t => t.industry === "it-projects"),
   //"automotive": publishedTestimonials.filter(t => t.industry === "automotive"),
-  "business": publishedTestimonials.filter(t => t.industry === "business")
+  "business": publishedTestimonials.filter(t => t.industry === "business"),
+  "engineering": publishedTestimonials.filter(t => t.industry === "engineering"),
 } as const;
 
 // Industry labels for the filter dropdown
@@ -217,6 +272,7 @@ export const industryLabels = {
   "c-level-executives": "C-Level Executives",
   "logistics": "Logistics Professionals",
   //"attorneys": "Attorneys & Legal Professionals",
+  "engineering": "Engineers",
   "doctors": "Doctors & Healthcare Professionals",
   "it-projects": "IT & Project Managers",
   "automotive": "Automotive Professionals",

@@ -6,6 +6,17 @@ import ExpandableTestimonialCard from "@components/ExpandableTestimonialCard.ast
 import Eyebrow from "@components/ui/Eyebrow.astro";
 import Button from "@components/ui/Button.astro";
 
+export async function getStaticPaths() {
+  // Get all valid industries that have testimonials
+  const validIndustries = Object.keys(industryLabels).filter(
+    (industry) => testimonialsByIndustry[industry as keyof typeof testimonialsByIndustry]?.length > 0
+  );
+
+  return validIndustries.map((industry) => ({
+    params: { industry }
+  }));
+}
+
 // Get industry from URL parameter
 const { industry } = Astro.params;
 

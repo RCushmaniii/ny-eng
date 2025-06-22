@@ -23,6 +23,7 @@ export interface Testimonial {
   headline?: string;
   avatarSize?: 'sm' | 'md' | 'lg';
   link?: string;
+  linkText?: string;
   status?: 'published' | 'draft';
 }
 
@@ -40,6 +41,7 @@ export const testimonials: Testimonial[] = [
     headline: "De bueno a excelente: Cómo el coaching transformó mi comunicación de liderazgo",
     avatarSize: "md",
     link: "/es/casos-de-exito/founders",
+    linkText: "👉 Coaching de Inglés para Fundadores de Startups",
     status: "published"
   },
   {
@@ -55,6 +57,7 @@ export const testimonials: Testimonial[] = [
     headline: "Presentando con confianza: El viaje de un CEO hacia el dominio del inglés",
     avatarSize: "md",
     link: "/es/casos-de-exito/c-level-executives",
+    linkText: "👉 Coaching de Inglés para Ejecutivos de Nivel C",
     status: "published"
   },
   {
@@ -70,6 +73,7 @@ export const testimonials: Testimonial[] = [
     headline: "Construyendo confianza transfronteriza: Mi viaje ejecutivo en inglés",
     avatarSize: "md",
     link: "/es/casos-de-exito/c-level-executives",
+    linkText: "👉 Coaching de Inglés para Ejecutivos de Nivel C",
     status: "published"
   },
   {
@@ -85,6 +89,7 @@ export const testimonials: Testimonial[] = [
     headline: "Dominando la comunicación empresarial de alto nivel en logística",
     avatarSize: "md",
     link: "/es/casos-de-exito/logistica",
+    linkText: "👉 Coaching de Inglés para Profesionales de Logística",
     status: "published"
   },
   {
@@ -100,7 +105,9 @@ export const testimonials: Testimonial[] = [
     slug: "karla-bernal-sanmina-corporation",
     headline: "Elevando habilidades de comunicación ejecutiva en logística global",
     avatarSize: "md",
-    link: "/es/casos-de-exito/logistica"
+    link: "/es/casos-de-exito/logistica",
+    linkText: "👉 Coaching de Inglés para Profesionales de Logística",
+    status: "published"
   }
 ] as const;
 

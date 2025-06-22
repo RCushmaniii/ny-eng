@@ -100,40 +100,69 @@ tsconfig.json        # TypeScript configuration
 - All changes follow the rule of maintaining structural and functional parity between English and Spanish blog pages.
 - All new logic and filtering is locale-agnostic and can be extended for additional languages if needed.
 
----
-package.json         # Project metadata and scripts
+## 🎯 Recent Improvements & Features
 
-## 📌 Notes
+### Blog Post URL Structure Fix (December 2024)
+- **Issue Resolved**: Fixed duplicate language prefixes in blog post URLs from homepage recent posts
+- **Root Cause**: Astro content collection slugs already included language directory (e.g., `en/small-talk-to-smart-talk`), but BlogPost component was adding language prefix again
+- **Solution**: Added slug cleaning logic in `BlogPost.astro` to strip existing language prefixes before URL construction
+- **Result**: Clean URLs like `/en/blog/small-talk-to-smart-talk` instead of `/en/blog/en/small-talk-to-smart-talk`
 
-- This project uses the **Titan Astro theme** as the foundation.
-- Customize `astro.config.mjs` and `tsconfig.json` as needed.
+### Testimonials System Enhancement (December 2024)
+- **Client-Side Filtering**: Implemented dropdown-based industry filtering on testimonials pages
+  - Real-time filtering without page reloads
+  - Supports all industry categories: Founders, C-Level Executives, Logistics, Engineers, etc.
+  - Fallback "No results" message with "View All" button
+- **Dynamic Routes**: Added `/en/testimonials/[industry]` and `/es/testimonios/[industry]` for SEO-friendly URLs
+- **Bilingual Consistency**: Parallel implementation across English and Spanish versions
 
-## 🌐 Multilingual & Bilingual Structure
+### Customizable CTA Links for Testimonials (December 2024)
+- **Industry-Specific CTAs**: Each testimonial now has targeted call-to-action text based on persona:
+  - Founders: "👉 English Coaching for Startup Founders"
+  - C-Level Executives: "👉 English Coaching for C-Level Executives"
+  - Engineers: "👉 English Coaching for Engineers"
+  - Logistics Professionals: "👉 English Coaching for Logistics Professionals"
+  - And more...
+- **Toggle Control**: Added `showCtaLinks` boolean in testimonials pages to show/hide all CTA links
+- **Data Structure**: Enhanced `Testimonial` interface with optional `linkText` property
+- **Component Updates**: Both `TestimonialCard` and `ExpandableTestimonialCard` support custom link text
 
-This project supports both English and Spanish, with fully localized homepages and reusable content/data files for each language.
+### Technical Implementation Details
+- **Type Safety**: All new features maintain strict TypeScript compliance
+- **Component Reusability**: Shared components with language-specific props
+- **Performance**: Client-side filtering for instant user feedback
+- **SEO Optimization**: Static path generation for testimonial category pages
 
-- English pages: `src/pages/en/`
-- Spanish pages: `src/pages/es/`
-- Reusable content/data: `@data` (e.g., `featureLists`, `statsLists`, `logoLists`, `faqLists`)
-- All Titan Core components and layouts are shared, with content objects translated and typed for each locale.
+### Testimonials Data Structure
+The testimonials system uses a structured approach for managing client success stories:
 
-### Legal Pages (Privacy Policy & Terms of Service)
+```typescript
+interface Testimonial {
+  content: string;           // Full testimonial text
+  shortContent?: string;     // Optional abbreviated version for expandable cards
+  author: string;           // Client name
+  position: string;         // Job title
+  company: string;          // Company name
+  avatar: ImageMetadata;    // Profile image
+  stars?: number;           // Rating (default: 5)
+  industry: string;         // Industry category for filtering
+  slug: string;            // Unique identifier
+  headline?: string;        // Optional headline for the testimonial
+  avatarSize?: 'sm' | 'md' | 'lg';  // Avatar display size
+  link?: string;           // CTA destination URL
+  linkText?: string;       // Custom CTA text (e.g., "👉 English Coaching for Engineers")
+  status?: 'published' | 'draft';  // Publication status
+}
+```
 
-The Privacy Policy and Terms of Service pages are managed as Markdown files within the Astro Content Collections system for type safety and consistency.
+**Usage Examples**:
+- **Toggle CTA Links**: Set `showCtaLinks = false` in testimonials pages to hide all CTA links
+- **Industry Filtering**: Testimonials are automatically grouped by industry in `testimonialsByIndustry` object
+- **Expandable Content**: Use `shortContent` for cards that need expand/collapse functionality
+- **Bilingual Support**: Maintain parallel data structures in `en.ts` and `es.ts` files
 
--   **English Content:**
-    -   Source: `src/content/legal/privacy-policy.md`
-    -   Source: `src/content/legal/terms-of-service.md`
--   **Spanish Content:**
-    -   Source: `src/content/legal/es/privacy-policy.md`
-    -   Source: `src/content/legal/es/terms-of-service.md`
--   **Content Collection Definition:**
-    -   The `legal` collection is defined in `src/content/config.ts`, specifying the frontmatter schema (including `title`, `lastUpdated`, and an `seo` object for meta title/description).
--   **Dynamic Rendering:**
-    -   English pages are rendered by: `src/pages/en/legal/[...slug].astro`
-    -   Spanish pages are rendered by: `src/pages/es/legal/[...slug].astro`
--   **SEO & Layout:**
-    -   These dynamic route files ensure that the correct `lang`, `noIndex={true}` (to prevent search engine indexing), `footerCta={{ hideCta: true }}`, and cross-language `translationSlug` props are passed to the main `Layout.astro`.
+## 🚀 Project Overview
+This is the new version of NYEnglishTeacher.com, redesigned to provide a better user experience, responsive layout, and a clean, professional look. Built with Astro, this project emphasizes performance and simplicity.
 
 ## 📚 SEO Setup with @astrolib/seo
 
@@ -367,7 +396,7 @@ The site implements comprehensive SEO best practices to ensure maximum visibilit
 - **Prevent Duplicate Path Segments**: When constructing URLs for language alternatives or navigation:
   - Always sanitize paths with regex patterns like `replace(/^\/(en|es)\//, '')` to remove language prefixes
   - Use `replace(/\/\/+/g, '/')` to prevent double slashes in URLs
-  - For blog posts and category pages, explicitly check for and prevent duplicate path segments like `/en/blog//en/blog/`
+  - For blog posts and category pages, explicitly check for and prevent duplicate path segments like `/en/blog//en/blog/post-slug`
   - Validate translation slugs before using them in URL construction
 - **Translation Slug Management**: 
   - When passing translation slugs between components, ensure they don't contain the full path (e.g., use `post-slug` not `/en/blog/post-slug`)
