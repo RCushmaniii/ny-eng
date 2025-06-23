@@ -45,7 +45,7 @@ export const testimonials: Testimonial[] = [
     slug: "julio-smarttie",
     headline: "From Good to Great: How Coaching Transformed My Leadership Communication",
     avatarSize: "md",
-    link: "/en/case-studies/founders",
+    link: "/en/services/startup-founders",
     linkText: "👉 English Coaching for Startup Founders",
     status: "published"
   },
@@ -61,8 +61,8 @@ export const testimonials: Testimonial[] = [
     slug: "hugo-blum-100-ladrillos",
     headline: "Pitching with Confidence: A CEO's Journey to English Mastery",
     avatarSize: "md",
-    link: "/en/case-studies/c-level-executives",
-    linkText: "👉 English Coaching for C-Level Executives",
+    link: "/en/services/executive-english",
+    linkText: "👉 English Coaching for Executives",
     status: "published"
   },
   {
@@ -77,8 +77,8 @@ export const testimonials: Testimonial[] = [
     slug: "andres-driscolls",
     headline: "Building Cross-Border Confidence: My Executive English Journey",
     avatarSize: "md",
-    link: "/en/case-studies/c-level-executives",
-    linkText: "👉 English Coaching for C-Level Executives",
+    link: "/en/services/executive-english",
+    linkText: "👉 English Coaching for Executives",
     status: "published"
   },
   {
@@ -93,8 +93,8 @@ export const testimonials: Testimonial[] = [
     slug: "andrea-ceva-logistics",
     headline: "Mastering High-Stakes Business Communication in Logistics",
     avatarSize: "md",
-    link: "/en/case-studies/logistics",
-    linkText: "👉 English Coaching for Logistics Professionals",
+    link: "/en/services/interview-prep",
+    linkText: "👉 English Coaching for Interview Preparation",
     status: "published"
   },
   {
@@ -111,13 +111,13 @@ export const testimonials: Testimonial[] = [
     slug: "karla-sanmina-corporation",
     headline: "Elevating Executive Communication Skills in Global Logistics",
     avatarSize: "md",
-    link: "/en/case-studies/logistics",
+    link: "/en/services/logistics-english",
     linkText: "👉 English Coaching for Logistics Professionals",
     status: "published"
   },
  {
   content:
-    "With Robert’s support, I became more fluent and confident when speaking English. This has helped me care for international patients more effectively and communicate clearly during medical discussions and travel. I’ve noticed my English-speaking patients feel more at ease and trust me more.",
+    "With Robert's support, I became more fluent and confident when speaking English. This has helped me care for international patients more effectively and communicate clearly during medical discussions and travel. I've noticed my English-speaking patients feel more at ease and trust me more.",
   author: "Dra. Erika Itzel",
   position: "Medical Doctor",
   company: "", // Optional – you can fill this in or leave it null
@@ -127,14 +127,14 @@ export const testimonials: Testimonial[] = [
   slug: "dra-erika-itzel-medical-doctor",
   headline: "Building Confidence and Clarity for International Patient Care",
   avatarSize: "md",
-  link: "/en/case-studies/healthcare",
-  linkText: "👉 English Coaching for Doctors and Healthcare Professionals",
+  link: "/en/services/medical-english",
+  linkText: "👉 English Coaching for Medical Professionals",
   status: "published"
 },
 
 {
   content:
-    "Robert helped me strengthen my English communication for high-stakes client interactions. I now feel confident managing legal conversations, explaining complex issues, and building trust with U.S. clients. It’s made a significant difference in my day-to-day work consulting international clients.",
+    "Robert helped me strengthen my English communication for high-stakes client interactions. I now feel confident managing legal conversations, explaining complex issues, and building trust with U.S. clients. It's made a significant difference in my day-to-day work consulting international clients.",
   author: "Emmanuel Ibarra Castillo",
   position: "Partner",
   company: "Ramos, Ripoll & Schuster",
@@ -144,8 +144,8 @@ export const testimonials: Testimonial[] = [
   slug: "emmanuel-ibarra-castillo-ramos-ripoll-schuster",
   headline: "Confident Legal Communication with International Clients",
   avatarSize: "md",
-  link: "/en/case-studies/legal",
-  linkText: "👉 English Coaching for Attorneys and Legal Professionals",
+  link: "/en/services/executive-english",
+  linkText: "👉 English Coaching for Executives",
   status: "draft"
 },
 {
@@ -160,17 +160,17 @@ export const testimonials: Testimonial[] = [
   slug: "alberto-escobar-terramar-brands",
   headline: "Mastering Business English for Stronger Global Leadership",
   avatarSize: "md",
-  link: "/en/case-studies/business",
-  linkText: "👉 English Coaching for Business Leaders",
+  link: "/en/services/executive-english",
+  linkText: "👉 English Coaching for Executives",
   status: "published"
 },
 
 {
   content: `Working with Robert has been a transformative experience for my professional communication. In my role, I regularly lead cross-functional engineering teams and manage high-stakes projects involving international clients and suppliers. Before coaching, I struggled with fluency and clarity during executive meetings, particularly when presenting complex technical updates or strategic plans in English.
 
-Robert’s coaching helped me significantly improve my pronunciation, fluency, and confidence when speaking in high-pressure situations. His personalized approach helped me structure my messages more clearly, adapt my tone to different audiences, and express ideas with more precision and impact. These improvements have made my participation in global meetings more effective and elevated how I communicate with senior leadership and stakeholders across countries.
+Robert's coaching helped me significantly improve my pronunciation, fluency, and confidence when speaking in high-pressure situations. His personalized approach helped me structure my messages more clearly, adapt my tone to different audiences, and express ideas with more precision and impact. These improvements have made my participation in global meetings more effective and elevated how I communicate with senior leadership and stakeholders across countries.
 
-Beyond language skills, Robert also introduced me to key business communication frameworks that I’ve integrated into my team leadership and reporting practices. The improvements in how I speak and present have had a noticeable effect on the way I lead and are recognized by colleagues and clients alike.`,
+Beyond language skills, Robert also introduced me to key business communication frameworks that I've integrated into my team leadership and reporting practices. The improvements in how I speak and present have had a noticeable effect on the way I lead and are recognized by colleagues and clients alike.`,
   
   shortContent: "Working with Robert has been a transformative experience for my professional communication. In my role, I regularly lead cross-functional engineering teams and manage high-stakes projects involving international clients and suppliers. Before coaching, I struggled with fluency and clarity during executive meetings....",
 
@@ -183,14 +183,14 @@ Beyond language skills, Robert also introduced me to key business communication 
   slug: "hugo-lopez-continental",
   headline: "Mastering Executive Communication in Global Engineering",
   avatarSize: "md",
-  link: "/en/case-studies/automotive",
-  linkText: "👉 English Coaching for Business Leaders",
+  link: "/en/services/public-speaking-english",
+  linkText: "👉 English Coaching for Public Speaking",
   status: "draft"
 },
 {
   content: `Working with Robert has helped me improve how I communicate in technical sales situations. I often explain automation systems, PLC programming, and product specs to international clients, and I wanted to sound more fluent and confident. 
 
-With Robert’s coaching, I’ve become more natural in conversations, better at structuring my explanations, and more persuasive in demos and follow-ups. It’s made a clear difference in how I interact with clients and represent my company in English.`,
+With Robert's coaching, I've become more natural in conversations, better at structuring my explanations, and more persuasive in demos and follow-ups. It's made a clear difference in how I interact with clients and represent my company in English.`,
   
   shortContent: "Working with Robert has helped me improve how I communicate in technical sales situations. I often explain automation systems, PLC programming, and product specs to international clients...",
   
@@ -203,8 +203,8 @@ With Robert’s coaching, I’ve become more natural in conversations, better at
   slug: "ricardo-mendoza-mountz-torque",
   headline: "Fluent Technical Sales for Factory Automation",
   avatarSize: "md",
-  link: "/en/case-studies/industrial-automation",
-  linkText: "👉 English Coaching for Engineers",
+  link: "/en/services/technical-sales-english",
+  linkText: "👉 English Coaching for Technical Sales",
   status: "published"
 },
 
@@ -220,13 +220,13 @@ With Robert’s coaching, I’ve become more natural in conversations, better at
   slug: "humberto-grimaldo-tc-logistics",
   headline: "Confident Communication for International Logistics Success",
   avatarSize: "md",
-  link: "/en/case-studies/logistics",
+  link: "/en/services/logistics-english",
   linkText: "👉 English Coaching for Logistics Professionals",
   status: "published"
 },
 
 {
-  content: `Robert helped me strengthen my English communication for project management interactions. I now feel confident in managing legal conversations, explaining complex issues, and building trust with U.S. colleagues. It’s made a significant difference in my day-to-day international work.`,
+  content: `Robert helped me strengthen my English communication for project management interactions. I now feel confident in managing legal conversations, explaining complex issues, and building trust with U.S. colleagues. It's made a significant difference in my day-to-day international work.`,
   
   shortContent: "Robert helped me strengthen my English communication for project management interactions. I now feel confident in managing legal conversations and building trust with U.S. colleagues...",
   
@@ -239,8 +239,8 @@ With Robert’s coaching, I’ve become more natural in conversations, better at
   slug: "javier-ramirez-sophia",
   headline: "Fluent, Confident English for Global Project Management",
   avatarSize: "md",
-  link: "/en/case-studies/project-management",
-  linkText: "👉 English Coaching for Project Managers",
+  link: "/en/services/executive-english",
+  linkText: "👉 English Coaching for Executives",
   status: "published"
 },
 {
@@ -257,13 +257,10 @@ With Robert’s coaching, I’ve become more natural in conversations, better at
   slug: "jonathan-emmaus-infosys",
   headline: "Confident Communication Across Global Tech Teams",
   avatarSize: "md",
-  link: "/en/case-studies/data-strategy",
-  linkText: "👉 English Coaching for Data Scientists",
+  link: "/en/services/tech-english",
+  linkText: "👉 English Coaching for Tech Professionals",
     status: "published"
 },
-
-
-
   
 ] as const;
 
