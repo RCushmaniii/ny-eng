@@ -1,0 +1,94 @@
+---
+// src/components/sections/MethodologySection.astro
+import type { Methodology } from '@data/methodology';
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  content: Methodology;
+  padding?: "sm" | "md" | "lg";
+  background?: string;
+}
+
+const { content, padding = "lg", background = "bg-[#eef1ff]" } = Astro.props;
+
+const paddingClasses = {
+  sm: "py-12 md:py-16",
+  md: "py-16 md:py-20", 
+  lg: "py-20 md:py-24"
+};
+
+const backgroundClasses = background.startsWith('#') 
+  ? `bg-[${background}]` 
+  : background;
+
+---
+
+<section class={`methodology-section ${paddingClasses[padding]} ${backgroundClasses}`}>
+  <div class="container mx-auto px-4 max-w-6xl">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        {content.title}
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        {content.subtitle}
+      </p>
+      <div class="w-16 h-1 bg-blue-600 mx-auto mt-6"></div>
+    </div>
+    
+    <!-- Steps Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative">
+      {content.steps.map((step, index) => (
+        <div class="methodology-step flex flex-col h-full">
+          <!-- Step number and connecting line -->
+          <div class="flex items-center mb-6">
+            <div class="step-number w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+              {String(index + 1).padStart(2, '0')}
+            </div>
+            {index < content.steps.length - 1 && (
+              <div class="hidden lg:block flex-1 h-0.5 bg-blue-200 ml-4"></div>
+            )}
+          </div>
+
+          <!-- Card content with equal height -->
+          <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl hover:scale-105 transition-all duration-300 flex-1 flex flex-col">
+            <!-- Icon -->
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+              <Icon name={step.icon} class="w-8 h-8 text-blue-600" />
+            </div>
+            
+            <!-- Title -->
+            <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">
+              {step.title}
+            </h3>
+            
+            <!-- Description - flex-1 pushes content to fill available space -->
+            <p class="text-gray-600 leading-relaxed text-center flex-1">
+              {step.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .methodology-step {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .methodology-step:nth-child(1) { animation-delay: 0.1s; }
+  .methodology-step:nth-child(2) { animation-delay: 0.2s; }
+  .methodology-step:nth-child(3) { animation-delay: 0.3s; }
+  .methodology-step:nth-child(4) { animation-delay: 0.4s; }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

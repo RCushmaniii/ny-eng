@@ -1,0 +1,72 @@
+---
+// src/components/sections/FeaturedTestimonial.astro
+import { Image } from 'astro:assets';
+import type { Testimonial } from '@data/testimonials/en';
+
+export interface Props {
+  testimonial: Testimonial;
+  padding?: "sm" | "md" | "lg" | "xl";
+}
+
+const { testimonial, padding = "lg" } = Astro.props;
+
+const paddingClasses = {
+  sm: "py-8",
+  md: "py-12", 
+  lg: "py-16 sm:py-20",
+  xl: "py-20 sm:py-24"
+};
+---
+
+<section class={`featured-testimonial-section bg-slate-900 text-white relative overflow-hidden ${paddingClasses[padding]}`}>
+  <!-- Large decorative quotation mark -->
+  <div class="absolute top-8 left-8 text-slate-700 text-8xl font-serif leading-none select-none pointer-events-none opacity-30">
+    "
+  </div>
+  
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="text-center max-w-4xl mx-auto">
+      
+      <!-- Section eyebrow -->
+      <h2 class="text-sm font-bold uppercase tracking-wider text-blue-400 mb-8">
+        Client Success Story
+      </h2>
+
+      <!-- Main testimonial quote -->
+      <figure class="relative">
+        <blockquote class="text-xl sm:text-2xl lg:text-3xl text-white leading-relaxed font-light italic mb-8">
+          <p>"{testimonial.shortContent || testimonial.content}"</p>
+        </blockquote>
+
+        <!-- Author information with avatar -->
+        <figcaption class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+          <Image 
+            src={testimonial.avatar} 
+            alt={`${testimonial.author} - ${testimonial.position}`} 
+            class="w-16 h-16 rounded-full border-2 border-blue-400 shadow-lg" 
+            widths={[64, 128]} 
+            sizes="64px"
+          />
+          
+          <div class="text-center sm:text-left">
+            <div class="font-semibold text-white text-lg">{testimonial.author}</div>
+            <div class="text-slate-300">{testimonial.position}</div>
+            {testimonial.company && (
+              <div class="text-blue-400 font-medium">{testimonial.company}</div>
+            )}
+          </div>
+        </figcaption>
+      </figure>
+
+    </div>
+  </div>
+
+  <!-- Subtle background pattern -->
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 opacity-50"></div>
+</section>
+
+<style>
+  .featured-testimonial-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  }
+</style>

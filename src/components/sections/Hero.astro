@@ -25,6 +25,17 @@ interface HeroContent {
 
 const { content } = Astro.props;
 const opacity = content.overlayOpacity ?? 1;
+
+// Helper function to get image type from src
+const getImageType = (imageSrc: string) => {
+  if (imageSrc.includes('.webp')) return 'image/webp';
+  if (imageSrc.includes('.jpg') || imageSrc.includes('.jpeg')) return 'image/jpeg';
+  if (imageSrc.includes('.png')) return 'image/png';
+  return 'image/jpeg'; // default fallback
+};
+
+const backgroundImageType = content.backgroundImage?.src ? getImageType(content.backgroundImage.src) : 'image/jpeg';
+const backgroundImageMobileType = content.backgroundImageMobile?.src ? getImageType(content.backgroundImageMobile.src) : backgroundImageType;
 ---
 
 <section class="header-offset relative">
@@ -35,14 +46,14 @@ const opacity = content.overlayOpacity ?? 1;
           <source
             srcset={content.backgroundImageMobile.src}
             media="(max-width: 768px)"
-            type="image/webp"
+            type={backgroundImageMobileType}
           />
         </>
       )}
       <source
         srcset={content.backgroundImage.src}
         media="(min-width: 769px)"
-        type="image/webp"
+        type={backgroundImageType}
       />
       <img
         src={content.backgroundImageMobile?.src ?? content.backgroundImage.src}
@@ -65,16 +76,16 @@ const opacity = content.overlayOpacity ?? 1;
 
   <div class="site-container relative z-10 mx-auto px-4 py-large flex flex-col md:items-center md:justify-center md:text-center">
     <h1 class="text-white text-balance fade-in-up">{content.title}</h1>
-<p class="text-white mt-2 text-balance fade-in-up delay-1">{content.description}</p>
+    <p class="text-white mt-2 text-balance fade-in-up delay-1">{content.description}</p>
 
-{content.buttons?.length && (
-  <div class="flex flex-wrap gap-4 mt-8 fade-in-up delay-2">
-    {content.buttons.map((b: HeroButton) => (
-      <Button href={b.link} target={b.target ?? '_self'} variant={b.variant ?? 'primary'}>
-        {b.text}
-      </Button>
-    ))}
-  </div>
-)}
+    {content.buttons?.length && (
+      <div class="flex flex-wrap gap-4 mt-8 fade-in-up delay-2">
+        {content.buttons.map((b: HeroButton) => (
+          <Button href={b.link} target={b.target ?? '_self'} variant={b.variant ?? 'primary'}>
+            {b.text}
+          </Button>
+        ))}
+      </div>
+    )}
   </div>
 </section>

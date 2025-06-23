@@ -1,0 +1,58 @@
+---
+import { getPaddingClass, getBackgroundColor, getTextColor } from '@utils/styleUtils';
+import type { PaddingSize, ThemeColor } from '@utils/styleUtils';
+
+export interface Props {
+    content: {
+        quote: string;
+        name: string;
+        position: string;
+        company?: string;
+    };
+    background?: ThemeColor;
+    padding?: PaddingSize;
+    paddingTop?: PaddingSize;
+    paddingBottom?: PaddingSize;
+}
+
+const {
+    content: {
+        quote,
+        name,
+        position,
+        company
+    },
+    background = 'light'
+} = Astro.props;
+
+const bgColor = getBackgroundColor(background);
+const textColor = getTextColor(background);
+const paddingClass = getPaddingClass({ 
+    padding: Astro.props.padding,
+    paddingTop: Astro.props.paddingTop,
+    paddingBottom: Astro.props.paddingBottom 
+});
+---
+
+<section class:list={["relative", bgColor, paddingClass]}>
+    <div class="site-container px-4">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <blockquote class="relative">
+                <div class="text-6xl text-blue-200 absolute -top-4 -left-4 leading-none">"</div>
+                <p class:list={["text-xl md:text-2xl leading-relaxed italic mb-8 relative z-10", textColor]}>
+                    {quote}
+                </p>
+                <div class="text-6xl text-blue-200 absolute -bottom-8 -right-4 leading-none">"</div>
+            </blockquote>
+            
+            <div class="mt-8">
+                <cite class:list={["not-italic", textColor]}>
+                    <div class="font-semibold text-lg">{name}</div>
+                    <div class="text-gray-600">
+                        {position}{company && `, ${company}`}
+                    </div>
+                </cite>
+            </div>
+        </div>
+    </div>
+</section>

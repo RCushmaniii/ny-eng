@@ -1,0 +1,71 @@
+---
+// src/components/sections/ProfessionalProfiles.astro
+interface ProfileItem {
+  name: string;
+  link: string;
+}
+
+interface ContentProps {
+  title?: string;
+  description?: string;
+}
+
+interface Props {
+  profiles: readonly ProfileItem[];
+  content?: ContentProps;
+  title?: string;
+  description?: string;
+}
+
+const { 
+  profiles,
+  content,
+  title = content?.title ?? "Tailored for Ambitious Professionals",
+  description = content?.description ?? "My coaching is not one-size-fits-all. I partner with innovators, leaders, and specialists who need to communicate with precision and authority. I have proven success with:"
+} = Astro.props;
+---
+
+<section class="professional-profiles py-16 bg-white">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+      {title}
+    </h2>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+      {description}
+    </p>
+    
+    <div class="profile-tags flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+      {profiles.map((profile) => (
+        <a 
+          href={profile.link}
+          class="profile-tag bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-600 hover:text-white hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer transform"
+        >
+          {profile.name}
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .profile-tag {
+    white-space: nowrap;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .profile-tag:hover {
+    text-decoration: none;
+  }
+  
+  @media (max-width: 640px) {
+    .profile-tags {
+      gap: 0.5rem;
+    }
+    
+    .profile-tag {
+      font-size: 0.875rem;
+      padding: 0.5rem 0.75rem;
+    }
+  }
+</style>

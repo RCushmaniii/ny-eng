@@ -1,6 +1,7 @@
 export const headerContent = {
   menu: [
     { name: "Sobre mí", link: "/es/about" }, // Or /es/sobre-mi if slug changes
+    { name: "Servicios", link: "/es/servicios" },
     { name: "Casos de Éxito", link: "/es/testimonios" },
     { name: "Blog", link: "/es/blog" },
   ],

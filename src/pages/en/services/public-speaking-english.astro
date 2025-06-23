@@ -1,0 +1,89 @@
+---
+import Layout from "@layouts/Layout.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import Challenge from "@components/sections/Challenge.astro";
+import MethodologySection from "@components/sections/MethodologySection.astro";
+import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+
+// Import services data
+import { services } from "@data/services";
+
+// Get the public speaking service data
+const publicSpeakingService = services.find(s => s.slug === 'public-speaking-english');
+
+// Import methodology content
+import { coreMethodology } from "@data/methodology";
+
+// Import testimonials and select Hugo's testimonial (mentions presentations)
+import { testimonials } from "@data/testimonials/en";
+const featuredTestimonialSlug = 'hugo-lopez-continental';
+const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
+
+// SEO metadata
+const title = "Public Speaking English Coaching | Presentation Skills | NY English Teacher";
+const seoDescription = "Master confident public speaking in English. Develop powerful presentation skills, overcome speaking anxiety, and command any room with authority.";
+
+// Hero content
+const heroContent = {
+  title: "Command Any Room with Confident English",
+  description: "Master powerful presentation skills and overcome speaking anxiety to deliver impactful messages that inspire action.",
+  backgroundImage: publicSpeakingService?.backgroundImage,
+  overlayOpacity: 0.7
+};
+
+// Challenge section content
+const challengeContent = {
+  headline: "Are You Facing These Challenges?",
+  painPoints: [
+    "You feel nervous and lose confidence when presenting to English-speaking audiences.",
+    "Your accent or pronunciation makes you worry that your message isn't clear or professional.",
+    "You struggle to engage your audience and keep them interested throughout your presentation."
+  ],
+  icon: "🤔",
+  image: publicSpeakingService?.squareImage
+};
+
+// CTA content
+const ctaContent = {
+  eyebrow: "Take the Final Step",
+  title: "Transform Your Public Speaking",
+  description: "A free, no-obligation strategy session is the best way to understand how targeted coaching can boost your confidence and presentation skills.",
+  buttonText: "Book My Free Strategy Session",
+  buttonLink: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+  whatToExpectTitle: "In Your Free Session, We Will:",
+  whatToExpectList: [
+    "Assess your current presentation and speaking confidence",
+    "Identify specific areas for improvement in public speaking",
+    "Create a personalized plan to overcome speaking anxiety"
+  ]
+};
+
+// Translation slug for Spanish version
+const translationSlug = "ingles-para-hablar-en-publico";
+---
+
+<Layout
+  title={title}
+  description={seoDescription}
+  lang="en"
+  translationSlugEs={`/es/servicios/${translationSlug}`}
+  footerCta={{ hideCta: true }}
+>
+  <!-- Hero Section -->
+  <InnerHero content={heroContent} />
+  
+  <!-- Challenge Section -->
+  <Challenge content={challengeContent} />
+  
+  <!-- Methodology Section -->
+  <MethodologySection content={coreMethodology} />
+  
+  <!-- Featured Testimonial -->
+  {featuredTestimonial && (
+    <FeaturedTestimonial testimonial={featuredTestimonial} />
+  )}
+  
+  <!-- Final CTA -->
+  <CtaSection content={ctaContent} />
+</Layout>

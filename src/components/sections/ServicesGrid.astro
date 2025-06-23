@@ -1,0 +1,62 @@
+---
+// src/components/sections/ServicesGrid.astro
+import type { Service } from "@data/services";
+import { Image } from "astro:assets";
+
+interface Props {
+  services: Service[];
+  title?: string;
+  description?: string;
+}
+
+const { services, title = "Master Business English for Career Growth & Global Communication", description = "Unlock your full potential with personalized English coaching for professionals. Whether you're leading teams, selling technical solutions, preparing for interviews, or expanding internationally—our programs are designed for real results." } = Astro.props;
+---
+
+<section class="services-grid py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        {title}
+      </h2>
+      {description && (
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          {description}
+        </p>
+      )}
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+      {services.map((service) => (
+        <a 
+          href={service.link}
+          class="service-card group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 min-h-[280px] flex items-center justify-center"
+        >
+          <!-- Background Image -->
+          <Image 
+            src={service.backgroundImage}
+            alt={`${service.title} background`}
+            class="absolute inset-0 w-full h-full object-cover"
+            quality={70}
+            format="webp"
+          />
+          
+          <!-- Dark overlay -->
+          <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-60 transition-all duration-300"></div>
+          
+          <!-- Content -->
+          <div class="text-center text-white p-8 z-10 relative">
+            <h3 class="text-xl md:text-2xl font-bold mb-3 group-hover:text-blue-200 transition-colors">
+              {service.title}
+            </h3>
+            <p class="text-gray-200 leading-relaxed">
+              {service.description}
+            </p>
+          </div>
+          
+          <!-- Hover overlay -->
+          <div class="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

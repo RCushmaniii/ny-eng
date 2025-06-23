@@ -1,0 +1,87 @@
+---
+import Layout from "@layouts/Layout.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import Challenge from "@components/sections/Challenge.astro";
+import MethodologySection from "@components/sections/MethodologySection.astro";
+import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+
+// Import hero image
+import executiveHeroImage from "@assets/images/services/executive-english-services.jpg";
+import challengeImage from "@assets/images/industries/industry-challenge1.jpg";
+
+// Import methodology content
+import { coreMethodology } from "@data/methodology";
+
+// Import testimonials and select featured one
+import { testimonials } from "@data/testimonials/en";
+const featuredTestimonialSlug = 'andres-driscolls';
+const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
+
+// SEO metadata
+const title = "Executive English Coaching | Speak with Authority | NY English Teacher";
+const seoDescription = "Master executive communication skills. Speak with confidence in boardrooms, investor meetings, and high-stakes presentations. Personalized coaching for C-level executives.";
+
+// Hero content
+const heroContent = {
+  title: "Speak with Executive Authority",
+  description: "Command the boardroom, inspire your teams, and communicate with unwavering confidence.",
+  backgroundImage: executiveHeroImage,
+  overlayOpacity: 0.7
+};
+
+// Challenge section content
+const challengeContent = {
+  headline: "Are You Facing These Challenges?",
+  painPoints: [
+    "You feel your message loses impact during high-stakes investor meetings.",
+    "You hesitate when giving unscripted feedback to senior leadership.",
+    "You worry that your strategic vision isn't being communicated clearly across global teams."
+  ],
+  icon: "😰",
+  image: challengeImage
+};
+
+// Final CTA content
+const ctaContent = {
+  eyebrow: "Ready to Lead with Impact?",
+  title: "Master Executive Communication",
+  description: "A personalized strategy session will show you exactly how to communicate with the authority and clarity that drives real business results.",
+  buttonText: "Book My Executive Strategy Session",
+  buttonLink: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+  whatToExpectTitle: "In Your Free Session, We Will:",
+  whatToExpectList: [
+    "Assess your current communication style and executive presence",
+    "Identify key scenarios where stronger communication will drive results",
+    "Create a roadmap for developing your leadership voice"
+  ]
+};
+
+// Translation slug for Spanish version
+const translationSlug = "ejecutivo-ingles";
+---
+
+<Layout
+  title={title}
+  description={seoDescription}
+  lang="en"
+  translationSlugEs={`/es/servicios/${translationSlug}`}
+  hideCta={true}
+>
+  <!-- Hero Section -->
+  <InnerHero content={heroContent} />
+  
+  <!-- Challenge Section -->
+  <Challenge content={challengeContent} background="white" padding="lg" />
+  
+  <!-- Methodology Section -->
+  <MethodologySection content={coreMethodology} background="light" padding="lg" />
+  
+  <!-- Featured Testimonial -->
+  {featuredTestimonial && (
+    <FeaturedTestimonial testimonial={featuredTestimonial} />
+  )}
+  
+  <!-- Final CTA -->
+  <CtaSection content={ctaContent} />
+</Layout>

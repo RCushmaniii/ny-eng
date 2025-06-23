@@ -1,6 +1,7 @@
 export const headerContent = {
   menu: [
     { name: "About", link: "/en/about" }, // Ensure '/en/' prefix
+    { name: "Services", link: "/en/services" },
     { name: "Testimonials", link: "/en/testimonials" },
     { name: "Blog", link: "/en/blog" },
   ],

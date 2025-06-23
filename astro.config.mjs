@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import icon from 'astro-icon';
 import path from 'path';
 import tailwindcss from 'tailwindcss';
 
@@ -12,6 +13,11 @@ export default defineConfig({
     tailwind({
       // Let Astro handle the Tailwind config automatically
       applyBaseStyles: false
+    }),
+    icon({
+      include: {
+        lucide: ['*'], // Include all lucide icons
+      },
     }),
     sitemap({
       changefreq: 'weekly',

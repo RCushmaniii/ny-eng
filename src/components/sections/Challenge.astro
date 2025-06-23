@@ -1,0 +1,143 @@
+---
+// src/components/sections/Challenge.astro
+import { Image } from "astro:assets";
+
+interface Props {
+  content: {
+    headline: string;
+    painPoints: string[];
+    icon?: string;
+    image?: any; // ImageMetadata for challenge image
+  };
+  padding?: "sm" | "md" | "lg";
+  background?: "white" | "light" | "dark";
+}
+
+const { content, padding = "md", background = "light" } = Astro.props;
+
+const paddingClasses = {
+  sm: "py-12 md:py-16",
+  md: "py-16 md:py-20", 
+  lg: "py-20 md:py-24"
+};
+
+const backgroundClasses = {
+  white: "bg-white",
+  light: "bg-gray-50",
+  dark: "bg-gray-900"
+};
+---
+
+<section class={`challenge-section ${paddingClasses[padding]} ${backgroundClasses[background]}`}>
+  <div class="container mx-auto px-4 max-w-6xl">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        {content.headline}
+      </h2>
+      <div class="w-16 h-1 bg-blue-600 mx-auto"></div>
+    </div>
+    
+    <!-- Challenge Grid -->
+    <div class="challenge-grid grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Challenge List -->
+      <div class="challenge-content">
+        <ul class="challenge-list space-y-6">
+          {content.painPoints.map((point) => (
+            <li class="challenge-item flex items-start group">
+              <div class="challenge-icon flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 group-hover:bg-red-200 transition-colors duration-200">
+                <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <p class="text-lg text-gray-700 leading-relaxed font-medium">
+                {point}
+              </p>
+            </li>
+          ))}
+        </ul>
+        
+        <!-- Call-to-action text -->
+        <div class="mt-8 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-600">
+          <p class="text-blue-800 font-medium">
+            If any of these resonate with you, you're not alone. Let's turn these challenges into your competitive advantages.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Visual Element -->
+      <div class="challenge-visual flex justify-center lg:justify-end">
+        {content.image ? (
+          <!-- Square Image -->
+          <div class="relative">
+            <Image 
+              src={content.image}
+              alt="Challenge illustration"
+              class="w-80 h-80 object-cover rounded-lg shadow-lg"
+              quality={80}
+              format="webp"
+            />
+            <!-- Optional overlay for better text contrast if needed -->
+            <div class="absolute inset-0 bg-black bg-opacity-10 rounded-lg"></div>
+          </div>
+        ) : (
+          <!-- Fallback to emoji circle if no image provided -->
+          <div class="relative">
+            <div class="w-80 h-80 bg-gradient-to-br from-blue-100 to-indigo-200 rounded-full flex items-center justify-center shadow-lg">
+              <div class="text-center">
+                <div class="text-8xl mb-4 animate-pulse">
+                  {content.icon || "🤔"}
+                </div>
+                <div class="text-gray-600 font-medium text-lg">
+                  Sound Familiar?
+                </div>
+              </div>
+            </div>
+            
+            <!-- Floating accent elements -->
+            <div class="absolute -top-4 -right-4 w-12 h-12 bg-yellow-400 rounded-full opacity-80 animate-bounce" style="animation-delay: 0.5s;"></div>
+            <div class="absolute -bottom-6 -left-6 w-8 h-8 bg-red-400 rounded-full opacity-60 animate-bounce" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/2 -left-8 w-6 h-6 bg-green-400 rounded-full opacity-70 animate-bounce" style="animation-delay: 1.5s;"></div>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .challenge-item {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .challenge-item:hover {
+    transform: translateX(8px);
+  }
+  
+  @media (max-width: 1024px) {
+    .challenge-visual {
+      order: -1;
+      margin-bottom: 2rem;
+    }
+    
+    .challenge-visual .w-80 {
+      width: 16rem;
+      height: 16rem;
+    }
+    
+    .challenge-visual .text-8xl {
+      font-size: 4rem;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .challenge-visual .w-80 {
+      width: 12rem;
+      height: 12rem;
+    }
+    
+    .challenge-visual .text-8xl {
+      font-size: 3rem;
+    }
+  }
+</style>

@@ -161,6 +161,37 @@ interface Testimonial {
 - **Expandable Content**: Use `shortContent` for cards that need expand/collapse functionality
 - **Bilingual Support**: Maintain parallel data structures in `en.ts` and `es.ts` files
 
+## ✍️ Content Writing Guidelines
+
+### Voice and Tone
+- **Use First Person**: Always write in first person (I, my, me) rather than third person (we, our, us)
+  - ✅ "My coaching is not one-size-fits-all"
+  - ❌ "Our coaching is not one-size-fits-all"
+  - ✅ "I partner with innovators and leaders"
+  - ❌ "We partner with innovators and leaders"
+
+### Content Consistency Rules
+- **Personal Brand**: The site represents an individual English coach, so all content should reflect personal expertise and experience
+- **Professional Tone**: Maintain a professional yet approachable tone throughout
+- **Bilingual Parity**: Ensure Spanish content maintains the same first-person voice ("Mi coaching", "Me asocio con")
+
+### Content Structure Guidelines
+- **Hero Sections**: Lead with value proposition in first person
+- **Service Descriptions**: Focus on personal expertise and proven results
+- **Testimonials**: Keep authentic client voices unchanged
+- **Call-to-Actions**: Use direct, personal language ("Book your consultation with me")
+
+### Examples of Correct First-Person Usage:
+```
+✅ "I have proven success with startup founders and executives"
+✅ "My approach is tailored to your specific industry needs"
+✅ "I help professionals communicate with precision and authority"
+
+❌ "We have proven success with startup founders and executives"
+❌ "Our approach is tailored to your specific industry needs"
+❌ "We help professionals communicate with precision and authority"
+```
+
 ## 🚀 Project Overview
 This is the new version of NYEnglishTeacher.com, redesigned to provide a better user experience, responsive layout, and a clean, professional look. Built with Astro, this project emphasizes performance and simplicity.
 
@@ -188,7 +219,7 @@ This setup ensures consistent and localized SEO metadata across the bilingual si
 
 ## 🎨 Titan Core Theme & Component Usage
 
-- Built on the Titan Core theme for Astro.
+- Built on the Titan theme for Astro.
 - All pages are wrapped in `@layouts/Layout.astro` for consistent SEO and layout.
 - Components (Hero, Features, Stats, Logos, Faqs, etc.) are imported using absolute aliases (`@components`, `@layouts`, `@data`, `@assets`).
 - Content objects for each section are typed and passed as props (see `en/index.astro` and `es/index.astro`).

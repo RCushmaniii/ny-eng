@@ -1,0 +1,89 @@
+---
+import Layout from "@layouts/Layout.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import Challenge from "@components/sections/Challenge.astro";
+import MethodologySection from "@components/sections/MethodologySection.astro";
+import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+
+// Import services data
+import { services } from "@data/services";
+
+// Get the medical service data
+const medicalService = services.find(s => s.slug === 'medical-english');
+
+// Import methodology content
+import { coreMethodology } from "@data/methodology";
+
+// Import testimonials and select Dr. Erika's testimonial
+import { testimonials } from "@data/testimonials/en";
+const featuredTestimonialSlug = 'dra-erika-itzel-medical-doctor';
+const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
+
+// SEO metadata
+const title = "Medical English Coaching | Healthcare Communication | NY English Teacher";
+const seoDescription = "Master medical English for international patient care. Build confidence in clinical conversations, medical terminology, and professional healthcare communication.";
+
+// Hero content
+const heroContent = {
+  title: "Master Medical English for International Patient Care",
+  description: "Build confidence in clinical conversations and communicate with clarity in every healthcare interaction.",
+  backgroundImage: medicalService?.backgroundImage,
+  overlayOpacity: 0.7
+};
+
+// Challenge section content
+const challengeContent = {
+  headline: "Are You Facing These Challenges?",
+  painPoints: [
+    "You feel less confident explaining diagnoses or treatment plans to English-speaking patients.",
+    "Medical terminology and pronunciation create barriers during patient consultations.",
+    "You worry about miscommunication affecting patient care and trust."
+  ],
+  icon: "🤔",
+  image: medicalService?.squareImage
+};
+
+// CTA content
+const ctaContent = {
+  eyebrow: "Take the Final Step",
+  title: "Transform Your Medical Communication",
+  description: "A free, no-obligation strategy session is the best way to understand how targeted coaching can improve patient care and boost your confidence.",
+  buttonText: "Book My Free Strategy Session",
+  buttonLink: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+  whatToExpectTitle: "In Your Free Session, We Will:",
+  whatToExpectList: [
+    "Assess your current medical English communication skills",
+    "Identify specific areas for improvement in patient interactions",
+    "Create a personalized learning plan for healthcare professionals"
+  ]
+};
+
+// Translation slug for Spanish version
+const translationSlug = "ingles-medico";
+---
+
+<Layout
+  title={title}
+  description={seoDescription}
+  lang="en"
+  translationSlugEs={`/es/servicios/${translationSlug}`}
+  footerCta={{ hideCta: true }}
+>
+  <!-- Hero Section -->
+  <InnerHero content={heroContent} />
+  
+  <!-- Challenge Section -->
+  <Challenge content={challengeContent} />
+  
+  <!-- Methodology Section -->
+  <MethodologySection content={coreMethodology} />
+  
+  <!-- Featured Testimonial -->
+  {featuredTestimonial && (
+    <FeaturedTestimonial testimonial={featuredTestimonial} />
+  )}
+  
+  <!-- Final CTA -->
+  <CtaSection content={ctaContent} />
+</Layout>

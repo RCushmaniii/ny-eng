@@ -16,7 +16,7 @@ const { content } = Astro.props;
 const opacity = content.overlayOpacity ?? 1;
 ---
 
-<section class="w-full border-b pt-24 pb-16 md:pt-32 md:pb-24 relative">
+<section class="w-full border-b pt-32 pb-16 md:pt-32 md:pb-24 relative">
     <div class="absolute inset-0 left-0 top-0 w-full h-full overflow-hidden">
             {content.backgroundImage && typeof content.backgroundImage === 'object' && (
                 <Image 

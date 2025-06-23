@@ -13,6 +13,7 @@ import albertoTestimonial from '../../assets/images/testimonials/alberto-testimo
 import humbertoTestimonial from '../../assets/images/testimonials/humberto-testimonial.jpg';
 import ricardoTestimonial from '../../assets/images/testimonials/ricardo-testimonial.jpg';
 import javierTestimonial from '../../assets/images/testimonials/javier-testimonial.jpg';
+import jonathanTestimonial from '../../assets/images/testimonials/jonathan-testimonial.jpg';
 
 export interface Testimonial {
   content: string;
@@ -241,6 +242,24 @@ With Robert’s coaching, I’ve become more natural in conversations, better at
   link: "/en/case-studies/project-management",
   linkText: "👉 English Coaching for Project Managers",
   status: "published"
+},
+{
+  content: `The main challenge I faced when I started working in global environments was the lack of fluency to express my technical ideas effectively to both leaders and colleagues from different nationalities. Robert has been coaching me, and we've practiced various scenarios together. Now I feel much more fluent and confident. I've been able to mobilize multinational teams and align them around strategies that make sense for everyone.`,
+  
+  shortContent: "The main challenge I faced when I started working in global environments was the lack of fluency to express my technical ideas effectively to both leaders and colleagues from different nationalities...",
+  
+  author: "Jonathan Emmaus Campos Navarro",
+  position: "Data Lead",
+  company: "Infosys",
+  avatar: jonathanTestimonial, // Replace with actual import
+  stars: 5,
+  industry: "technology",
+  slug: "jonathan-emmaus-infosys",
+  headline: "Confident Communication Across Global Tech Teams",
+  avatarSize: "md",
+  link: "/en/case-studies/data-strategy",
+  linkText: "👉 English Coaching for Data Scientists",
+    status: "published"
 },
 
 

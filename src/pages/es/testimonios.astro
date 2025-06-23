@@ -23,12 +23,19 @@ const description = "Lee historias de éxito de ejecutivos, fundadores y profesi
 
 // English counterpart for language switcher
 const translationSlugEn = "/en/testimonials";
+const seoDescription = description;
+
+// Spanish page metadata
+const lang = "es";
+
 ---
 
 <Layout
   title={title}
-  description={description}
+  description={seoDescription}
+  lang={lang}
   translationSlugEn={translationSlugEn}
+  hideCta={true}
 >
   <section class="bg-light py-16 md:py-24">
     <div class="site-container px-4 sm:px-6 md:px-8">
