@@ -1,0 +1,117 @@
+---
+import Layout from "@layouts/Layout.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import Challenge from "@components/sections/Challenge.astro";
+import MethodologySection from "@components/sections/MethodologySection.astro";
+import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+
+// Import services data
+import { services } from "@data/services";
+
+// Get the technical sales service data
+const technicalSalesService = services.find(s => s.slug === 'technical-sales-english');
+
+// Import methodology content
+import type { Methodology } from "@data/methodology";
+
+// Define Spanish methodology content directly
+const metodologiaEs: Methodology = {
+  title: "Tu Método de Coaching Personalizado",
+  subtitle: "Una metodología probada de cuatro pasos diseñada para entender tus desafíos únicos y desarrollar las habilidades específicas que necesitas para tener éxito.",
+  steps: [
+    {
+      icon: "lucide:search-check",
+      title: "Descubrimiento y Evaluación",
+      description: "Comenzamos con un análisis profundo de tu rol actual y hábitos de comunicación para establecer una línea base clara de tus fortalezas e identificar áreas específicas de mejora."
+    },
+    {
+      icon: "lucide:map",
+      title: "Mapeo Estratégico de Objetivos",
+      description: "Juntos, definimos objetivos claros y medibles directamente vinculados con tu éxito profesional, creando un plan estratégico enfocado en tus metas específicas."
+    },
+    {
+      icon: "lucide:settings",
+      title: "Currículum Personalizado y Práctica",
+      description: "Tu programa está construido para ti, enfocándose en el vocabulario específico, frases y matices culturales relevantes para tu industria y tareas diarias."
+    },
+    {
+      icon: "lucide:message-square-text",
+      title: "Simulación del Mundo Real y Retroalimentación",
+      description: "Aquí es donde la teoría se convierte en instinto. Realizamos presentaciones simuladas y juegos de rol de negociaciones difíciles, proporcionando retroalimentación directa y accionable para que estés confiado y preparado."
+    }
+  ]
+};
+
+// Import testimonials and select featured one
+import { testimonials } from "@data/testimonials/es";
+const featuredTestimonialSlug = 'erika-sanchez-microsoft';
+const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
+
+// SEO metadata
+const title = "Coaching de Inglés para Ventas Técnicas | Explica con Claridad | NY English";
+const seoDescription = "Domina el inglés para ventas técnicas. Explica sistemas complejos, especificaciones de productos y soluciones de software con claridad e impacto. Coaching personalizado para profesionales de ventas técnicas.";
+
+// Hero content
+const heroContent = {
+  title: "Explica lo Complejo con Claridad",
+  description: "Comunica el valor de tus soluciones técnicas con confianza y precisión para cerrar más ventas.",
+  backgroundImage: technicalSalesService?.backgroundImage,
+  overlayOpacity: 0.7
+};
+
+// Challenge section content
+const challengeContent = {
+  headline: "¿Enfrentas Estos Desafíos?",
+  painPoints: [
+    "Te cuesta explicar características técnicas complejas de manera que resalten sus beneficios.",
+    "Pierdes oportunidades porque no puedes responder preguntas técnicas con fluidez.",
+    "Te sientes inseguro al negociar o manejar objeciones en inglés durante el proceso de venta."
+  ],
+  icon: "😰",
+  image: technicalSalesService?.squareImage
+};
+
+// Final CTA content
+const ctaContent = {
+  eyebrow: "¿Listo para Vender con Impacto?",
+  title: "Domina las Ventas Técnicas en Inglés",
+  description: "Una sesión de estrategia personalizada te mostrará exactamente cómo comunicar el valor de tus soluciones técnicas para cerrar más ventas.",
+  buttonText: "Reserva Mi Sesión de Estrategia de Ventas",
+  buttonLink: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+  whatToExpectTitle: "En Tu Sesión Gratuita, Haremos:",
+  whatToExpectList: [
+    "Evaluar tu estilo de comunicación actual en situaciones de ventas técnicas",
+    "Identificar áreas clave donde mejorar tu comunicación técnica impulsará tus resultados",
+    "Crear una hoja de ruta para desarrollar tu vocabulario técnico y habilidades de persuasión"
+  ]
+};
+
+// Translation slug for English version
+const translationSlug = "technical-sales-english";
+---
+
+<Layout
+  title={title}
+  description={seoDescription}
+  lang="es"
+  translationSlugEn={`/en/services/${translationSlug}`}
+  hideCta={true}
+>
+  <!-- Hero Section -->
+  <InnerHero content={heroContent} />
+  
+  <!-- Challenge Section -->
+  <Challenge content={challengeContent} background="white" padding="lg" />
+  
+  <!-- Methodology Section -->
+  <MethodologySection content={metodologiaEs} background="light" padding="lg" />
+  
+  <!-- Featured Testimonial -->
+  {featuredTestimonial && (
+    <FeaturedTestimonial testimonial={featuredTestimonial} />
+  )}
+  
+  <!-- Final CTA -->
+  <CtaSection content={ctaContent} />
+</Layout>

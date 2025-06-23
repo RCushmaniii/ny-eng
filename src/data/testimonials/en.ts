@@ -205,7 +205,7 @@ With Robert's coaching, I've become more natural in conversations, better at str
   avatarSize: "md",
   link: "/en/services/technical-sales-english",
   linkText: "👉 English Coaching for Technical Sales",
-  status: "published"
+  status: "draft"
 },
 
 {
@@ -241,7 +241,7 @@ With Robert's coaching, I've become more natural in conversations, better at str
   avatarSize: "md",
   link: "/en/services/executive-english",
   linkText: "👉 English Coaching for Executives",
-  status: "published"
+  status: "draft"
 },
 {
   content: `The main challenge I faced when I started working in global environments was the lack of fluency to express my technical ideas effectively to both leaders and colleagues from different nationalities. Robert has been coaching me, and we've practiced various scenarios together. Now I feel much more fluent and confident. I've been able to mobilize multinational teams and align them around strategies that make sense for everyone.`,

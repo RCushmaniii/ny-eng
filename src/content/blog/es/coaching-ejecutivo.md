@@ -1,5 +1,5 @@
 ---
-title: " Más allá de la gramática: El valor de un coach nativo de inglés para líderes senior"
+title: "Más allá de la gramática: El valor de un coach nativo de inglés para líderes senior"
 excerpt: "Las clases estándar no bastan para ejecutivos. Descubre cómo un coach nativo con visión de negocios acelera el liderazgo y el crecimiento profesional."
 publishDate: "2025-04-18"
 categories: [
@@ -63,4 +63,3 @@ Para líderes senior, el desarrollo del idioma es una herramienta para objetivos
 ## Eleva tu impacto como líder
 
 Invertir en coaching ejecutivo de inglés es invertir en tu influencia, crecimiento y éxito. Si quieres destacar en el escenario global, liderar con autoridad y comunicar tu visión con impacto, un coach nativo con enfoque empresarial es tu mejor aliado.
-

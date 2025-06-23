@@ -1,0 +1,117 @@
+---
+import Layout from "@layouts/Layout.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import Challenge from "@components/sections/Challenge.astro";
+import MethodologySection from "@components/sections/MethodologySection.astro";
+import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+
+// Import services data
+import { services } from "@data/services";
+
+// Get the executive English service data
+const executiveService = services.find(s => s.slug === 'executive-english');
+
+// Import methodology content
+import type { Methodology } from "@data/methodology";
+
+// Define Spanish methodology content directly
+const metodologiaEs: Methodology = {
+  title: "Tu Método de Coaching Personalizado",
+  subtitle: "Una metodología probada de cuatro pasos diseñada para entender tus desafíos únicos y desarrollar las habilidades específicas que necesitas para tener éxito.",
+  steps: [
+    {
+      icon: "lucide:search-check",
+      title: "Descubrimiento y Evaluación",
+      description: "Comenzamos con un análisis profundo de tu rol actual y hábitos de comunicación para establecer una línea base clara de tus fortalezas e identificar áreas específicas de mejora."
+    },
+    {
+      icon: "lucide:map",
+      title: "Mapeo Estratégico de Objetivos",
+      description: "Juntos, definimos objetivos claros y medibles directamente vinculados con tu éxito profesional, creando un plan estratégico enfocado en tus metas específicas."
+    },
+    {
+      icon: "lucide:settings",
+      title: "Currículum Personalizado y Práctica",
+      description: "Tu programa está construido para ti, enfocándose en el vocabulario específico, frases y matices culturales relevantes para tu industria y tareas diarias."
+    },
+    {
+      icon: "lucide:message-square-text",
+      title: "Simulación del Mundo Real y Retroalimentación",
+      description: "Aquí es donde la teoría se convierte en instinto. Realizamos presentaciones simuladas y juegos de rol de negociaciones difíciles, proporcionando retroalimentación directa y accionable para que estés confiado y preparado."
+    }
+  ]
+};
+
+// Import testimonials and select featured one
+import { testimonials } from "@data/testimonials/es";
+const featuredTestimonialSlug = 'hugo-blum-ceo-success';
+const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
+
+// SEO metadata
+const title = "Coaching de Inglés para Ejecutivos | Liderazgo con Autoridad | NY English";
+const seoDescription = "Domina el inglés ejecutivo para liderar con autoridad en entornos globales. Coaching personalizado para C-level y ejecutivos senior que necesitan comunicarse con impacto y precisión.";
+
+// Hero content
+const heroContent = {
+  title: "Lidera con Autoridad en Entornos Globales",
+  description: "Domina el inglés ejecutivo para comunicarte con el impacto y la presencia que tu posición requiere.",
+  backgroundImage: executiveService?.backgroundImage,
+  overlayOpacity: 0.7
+};
+
+// Challenge section content
+const challengeContent = {
+  headline: "¿Enfrentas Estos Desafíos?",
+  painPoints: [
+    "Te cuesta proyectar autoridad y confianza durante reuniones ejecutivas en inglés.",
+    "Tienes dificultades para comunicar estrategias complejas a equipos internacionales.",
+    "Te sientes limitado al negociar acuerdos importantes o presentar a la junta directiva en inglés."
+  ],
+  icon: "😰",
+  image: executiveService?.squareImage
+};
+
+// Final CTA content
+const ctaContent = {
+  eyebrow: "¿Listo para Liderar con Mayor Impacto?",
+  title: "Domina el Inglés Ejecutivo",
+  description: "Una sesión de estrategia personalizada te mostrará exactamente cómo desarrollar la presencia ejecutiva y las habilidades de comunicación necesarias para liderar con autoridad en entornos globales.",
+  buttonText: "Reserva Mi Sesión de Estrategia Ejecutiva",
+  buttonLink: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+  whatToExpectTitle: "En Tu Sesión Gratuita, Haremos:",
+  whatToExpectList: [
+    "Evaluar tu estilo de liderazgo actual y presencia ejecutiva",
+    "Identificar oportunidades para aumentar tu impacto en comunicaciones estratégicas",
+    "Crear una hoja de ruta para desarrollar tu voz de liderazgo global"
+  ]
+};
+
+// Translation slug for English version
+const translationSlug = "executive-english";
+---
+
+<Layout
+  title={title}
+  description={seoDescription}
+  lang="es"
+  translationSlugEn={`/en/services/${translationSlug}`}
+  hideCta={true}
+>
+  <!-- Hero Section -->
+  <InnerHero content={heroContent} />
+  
+  <!-- Challenge Section -->
+  <Challenge content={challengeContent} background="white" padding="lg" />
+  
+  <!-- Methodology Section -->
+  <MethodologySection content={metodologiaEs} background="light" padding="lg" />
+  
+  <!-- Featured Testimonial -->
+  {featuredTestimonial && (
+    <FeaturedTestimonial testimonial={featuredTestimonial} />
+  )}
+  
+  <!-- Final CTA -->
+  <CtaSection content={ctaContent} />
+</Layout>

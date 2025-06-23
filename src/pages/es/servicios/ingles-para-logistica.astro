@@ -1,0 +1,117 @@
+---
+import Layout from "@layouts/Layout.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import Challenge from "@components/sections/Challenge.astro";
+import MethodologySection from "@components/sections/MethodologySection.astro";
+import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+
+// Import services data
+import { services } from "@data/services";
+
+// Get the logistics service data
+const logisticsService = services.find(s => s.slug === 'logistics-english');
+
+// Import methodology content
+import type { Methodology } from "@data/methodology";
+
+// Define Spanish methodology content directly
+const metodologiaEs: Methodology = {
+  title: "Tu Método de Coaching Personalizado",
+  subtitle: "Una metodología probada de cuatro pasos diseñada para entender tus desafíos únicos y desarrollar las habilidades específicas que necesitas para tener éxito.",
+  steps: [
+    {
+      icon: "lucide:search-check",
+      title: "Descubrimiento y Evaluación",
+      description: "Comenzamos con un análisis profundo de tu rol actual y hábitos de comunicación para establecer una línea base clara de tus fortalezas e identificar áreas específicas de mejora."
+    },
+    {
+      icon: "lucide:map",
+      title: "Mapeo Estratégico de Objetivos",
+      description: "Juntos, definimos objetivos claros y medibles directamente vinculados con tu éxito profesional, creando un plan estratégico enfocado en tus metas específicas."
+    },
+    {
+      icon: "lucide:settings",
+      title: "Currículum Personalizado y Práctica",
+      description: "Tu programa está construido para ti, enfocándose en el vocabulario específico, frases y matices culturales relevantes para tu industria y tareas diarias."
+    },
+    {
+      icon: "lucide:message-square-text",
+      title: "Simulación del Mundo Real y Retroalimentación",
+      description: "Aquí es donde la teoría se convierte en instinto. Realizamos presentaciones simuladas y juegos de rol de negociaciones difíciles, proporcionando retroalimentación directa y accionable para que estés confiado y preparado."
+    }
+  ]
+};
+
+// Import testimonials and select featured one
+import { testimonials } from "@data/testimonials/es";
+const featuredTestimonialSlug = 'humberto-grimaldo-tc-logistics';
+const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
+
+// SEO metadata
+const title = "Coaching de Inglés para Logística | Comunicación Global | NY English";
+const seoDescription = "Domina el inglés para profesionales de logística y cadena de suministro. Comunícate con confianza en entornos internacionales, documentación y negociaciones. Coaching personalizado para profesionales de logística.";
+
+// Hero content
+const heroContent = {
+  title: "Optimiza la Comunicación en Logística Global",
+  description: "Domina el lenguaje de la cadena de suministro, transporte y documentación de comercio internacional.",
+  backgroundImage: logisticsService?.backgroundImage,
+  overlayOpacity: 0.7
+};
+
+// Challenge section content
+const challengeContent = {
+  headline: "¿Enfrentas Estos Desafíos?",
+  painPoints: [
+    "Te cuesta comunicarte con proveedores y clientes internacionales sobre envíos y entregas.",
+    "Tienes dificultades para entender y completar documentación internacional en inglés.",
+    "Te sientes inseguro al negociar con transportistas y agentes aduanales en inglés."
+  ],
+  icon: "😰",
+  image: logisticsService?.squareImage
+};
+
+// Final CTA content
+const ctaContent = {
+  eyebrow: "¿Listo para Optimizar tu Comunicación en Logística?",
+  title: "Domina el Inglés para Logística Global",
+  description: "Una sesión de estrategia personalizada te mostrará exactamente cómo mejorar tu comunicación en inglés para optimizar tus operaciones logísticas internacionales.",
+  buttonText: "Reserva Mi Sesión de Estrategia Logística",
+  buttonLink: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+  whatToExpectTitle: "En Tu Sesión Gratuita, Haremos:",
+  whatToExpectList: [
+    "Evaluar tu nivel actual de inglés para logística y cadena de suministro",
+    "Identificar áreas clave donde mejorar tu comunicación impulsará tus operaciones",
+    "Crear una hoja de ruta para desarrollar tu vocabulario especializado en logística"
+  ]
+};
+
+// Translation slug for English version
+const translationSlug = "logistics-english";
+---
+
+<Layout
+  title={title}
+  description={seoDescription}
+  lang="es"
+  translationSlugEn={`/en/services/${translationSlug}`}
+  hideCta={true}
+>
+  <!-- Hero Section -->
+  <InnerHero content={heroContent} />
+  
+  <!-- Challenge Section -->
+  <Challenge content={challengeContent} background="white" padding="lg" />
+  
+  <!-- Methodology Section -->
+  <MethodologySection content={metodologiaEs} background="light" padding="lg" />
+  
+  <!-- Featured Testimonial -->
+  {featuredTestimonial && (
+    <FeaturedTestimonial testimonial={featuredTestimonial} />
+  )}
+  
+  <!-- Final CTA -->
+  <CtaSection content={ctaContent} />
+</Layout>

@@ -1,0 +1,117 @@
+---
+import Layout from "@layouts/Layout.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import Challenge from "@components/sections/Challenge.astro";
+import MethodologySection from "@components/sections/MethodologySection.astro";
+import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+
+// Import services data
+import { services } from "@data/services";
+
+// Get the public speaking service data
+const publicSpeakingService = services.find(s => s.slug === 'public-speaking-english');
+
+// Import methodology content
+import type { Methodology } from "@data/methodology";
+
+// Define Spanish methodology content directly
+const metodologiaEs: Methodology = {
+  title: "Tu Método de Coaching Personalizado",
+  subtitle: "Una metodología probada de cuatro pasos diseñada para entender tus desafíos únicos y desarrollar las habilidades específicas que necesitas para tener éxito.",
+  steps: [
+    {
+      icon: "lucide:search-check",
+      title: "Descubrimiento y Evaluación",
+      description: "Comenzamos con un análisis profundo de tu rol actual y hábitos de comunicación para establecer una línea base clara de tus fortalezas e identificar áreas específicas de mejora."
+    },
+    {
+      icon: "lucide:map",
+      title: "Mapeo Estratégico de Objetivos",
+      description: "Juntos, definimos objetivos claros y medibles directamente vinculados con tu éxito profesional, creando un plan estratégico enfocado en tus metas específicas."
+    },
+    {
+      icon: "lucide:settings",
+      title: "Currículum Personalizado y Práctica",
+      description: "Tu programa está construido para ti, enfocándose en el vocabulario específico, frases y matices culturales relevantes para tu industria y tareas diarias."
+    },
+    {
+      icon: "lucide:message-square-text",
+      title: "Simulación del Mundo Real y Retroalimentación",
+      description: "Aquí es donde la teoría se convierte en instinto. Realizamos presentaciones simuladas y juegos de rol de negociaciones difíciles, proporcionando retroalimentación directa y accionable para que estés confiado y preparado."
+    }
+  ]
+};
+
+// Import testimonials and select featured one
+import { testimonials } from "@data/testimonials/es";
+const featuredTestimonialSlug = 'maria-gonzalez-presentation-success';
+const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
+
+// SEO metadata
+const title = "Coaching para Hablar en Público | Presenta con Confianza | NY English";
+const seoDescription = "Domina el arte de hablar en público en inglés. Desde reuniones de equipo hasta conferencias internacionales, aprende a cautivar a cualquier audiencia con confianza y claridad.";
+
+// Hero content
+const heroContent = {
+  title: "Cautiva a Cualquier Audiencia",
+  description: "Domina el arte de hablar en público en inglés, desde reuniones de equipo hasta conferencias internacionales.",
+  backgroundImage: publicSpeakingService?.backgroundImage,
+  overlayOpacity: 0.7
+};
+
+// Challenge section content
+const challengeContent = {
+  headline: "¿Enfrentas Estos Desafíos?",
+  painPoints: [
+    "Te pones nervioso al presentar en inglés frente a audiencias internacionales.",
+    "Te cuesta estructurar tus ideas de manera clara y convincente durante presentaciones.",
+    "Pierdes la atención de tu audiencia porque no sabes cómo mantener el engagement en inglés."
+  ],
+  icon: "😰",
+  image: publicSpeakingService?.squareImage
+};
+
+// Final CTA content
+const ctaContent = {
+  eyebrow: "¿Listo para Cautivar a tu Audiencia?",
+  title: "Domina el Arte de Hablar en Público",
+  description: "Una sesión de estrategia personalizada te mostrará exactamente cómo desarrollar la confianza y las técnicas necesarias para presentar con impacto en inglés ante cualquier audiencia.",
+  buttonText: "Reserva Mi Sesión de Estrategia de Presentaciones",
+  buttonLink: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+  whatToExpectTitle: "En Tu Sesión Gratuita, Haremos:",
+  whatToExpectList: [
+    "Evaluar tu estilo actual de presentación y nivel de confianza",
+    "Identificar técnicas específicas para mejorar tu presencia y engagement",
+    "Crear una hoja de ruta para desarrollar habilidades de storytelling y manejo de audiencias"
+  ]
+};
+
+// Translation slug for English version
+const translationSlug = "public-speaking-english";
+---
+
+<Layout
+  title={title}
+  description={seoDescription}
+  lang="es"
+  translationSlugEn={`/en/services/${translationSlug}`}
+  hideCta={true}
+>
+  <!-- Hero Section -->
+  <InnerHero content={heroContent} />
+  
+  <!-- Challenge Section -->
+  <Challenge content={challengeContent} background="white" padding="lg" />
+  
+  <!-- Methodology Section -->
+  <MethodologySection content={metodologiaEs} background="light" padding="lg" />
+  
+  <!-- Featured Testimonial -->
+  {featuredTestimonial && (
+    <FeaturedTestimonial testimonial={featuredTestimonial} />
+  )}
+  
+  <!-- Final CTA -->
+  <CtaSection content={ctaContent} />
+</Layout>

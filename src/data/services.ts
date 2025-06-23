@@ -112,73 +112,73 @@ export const serviciosEs: Service[] = [
     title: "Inglés para Ejecutivos",
     icon: "🎯",
     description: "Habla con confianza en salas de juntas, reuniones con inversionistas y presentaciones importantes.",
-    link: "/es/servicios/executive-english",
+    link: "/es/servicios/ingles-para-ejecutivos",
     backgroundImage: executiveEnglishImage,
     squareImage: executiveEnglishSquareImage,
-    slug: "executive-english"
+    slug: "ingles-para-ejecutivos"
   },
   {
     title: "Inglés para Ventas Técnicas",
     icon: "⚙️",
     description: "Explica sistemas complejos, especificaciones de productos y soluciones de software con claridad e impacto.",
-    link: "/es/servicios/technical-sales-english",
+    link: "/es/servicios/ingles-para-ventas-tecnicas",
     backgroundImage: technicalSalesImage,
     squareImage: technicalSalesSquareImage,
-    slug: "technical-sales-english"
+    slug: "ingles-para-ventas-tecnicas"
   },
   {
     title: "Inglés para Logística",
     icon: "🚚",
     description: "Domina el lenguaje de la cadena de suministro, transporte y documentación de comercio internacional.",
-    link: "/es/servicios/logistics-english",
+    link: "/es/servicios/ingles-para-logistica",
     backgroundImage: logisticsImage,
     squareImage: logisticsSquareImage,
-    slug: "logistics-english"
+    slug: "ingles-para-logistica"
   },
   {
     title: "Inglés para Médicos",
     icon: "⚕️",
     description: "Comunícate claramente con pacientes, colegas y en conferencias médicas internacionales.",
-    link: "/es/servicios/medical-english",
+    link: "/es/servicios/ingles-para-medicos",
     backgroundImage: medicalImage,
     squareImage: medicalSquareImage,
-    slug: "medical-english"
+    slug: "ingles-para-medicos"
   },
   {
     title: "Preparación para Entrevistas",
     icon: "💬",
     description: "Asegura tu próximo puesto dominando el storytelling y respondiendo preguntas difíciles con confianza.",
-    link: "/es/servicios/interview-prep",
+    link: "/es/servicios/preparacion-para-entrevistas",
     backgroundImage: interviewPrepImage,
     squareImage: interviewPrepSquareImage,
-    slug: "interview-prep"
+    slug: "preparacion-para-entrevistas"
   },
   {
     title: "Hablar en Público",
     icon: "🎤",
     description: "Cautiva a cualquier audiencia, desde reuniones de equipo hasta conferencias magistrales.",
-    link: "/es/servicios/public-speaking-english",
+    link: "/es/servicios/hablar-en-publico",
     backgroundImage: publicSpeakingImage,
     squareImage: publicSpeakingSquareImage,
-    slug: "public-speaking-english"
+    slug: "hablar-en-publico"
   },
   {
     title: "Inglés para Fundadores de Startups",
     icon: "🚀",
     description: "Perfecciona tu pitch para VCs, articula tu visión y asegura el financiamiento que tu startup merece.",
-    link: "/es/servicios/startup-founders",
+    link: "/es/servicios/ingles-para-fundadores-de-startups",
     backgroundImage: startupFoundersImage,
     squareImage: startupFoundersSquareImage,
-    slug: "startup-founders"
+    slug: "ingles-para-fundadores-de-startups"
   },
   {
     title: "Inglés para Tecnología",
     icon: "💻",
     description: "Mejora tus daily stand-ups, revisiones de código y documentación técnica en entornos ágiles.",
-    link: "/es/servicios/tech-english",
+    link: "/es/servicios/ingles-para-tecnologia",
     backgroundImage: techImage,
     squareImage: techSquareImage,
-    slug: "tech-english"
+    slug: "ingles-para-tecnologia"
   }
 ] as const;
 
@@ -194,12 +194,12 @@ export const professionalProfiles = [
 ] as const;
 
 export const professionalProfilesEs = [
-  { name: "Fundadores de Startups", link: "/es/servicios/startup-founders" },
-  { name: "Ingenieros de Software", link: "/es/servicios/tech-english" },
-  { name: "Directores de Ventas", link: "/es/servicios/technical-sales-english" }, 
-  { name: "Profesionales Médicos", link: "/es/servicios/medical-english" },
-  { name: "Gerentes de Cadena de Suministro", link: "/es/servicios/logistics-english" },
-  { name: "Gerentes de Producto", link: "/es/servicios/tech-english" },
-  { name: "Ejecutivos C-Suite", link: "/es/servicios/executive-english" },
-  { name: "Coordinadores de Logística", link: "/es/servicios/logistics-english" }
+  { name: "Fundadores de Startups", link: "/es/servicios/ingles-para-fundadores-de-startups" },
+  { name: "Ingenieros de Software", link: "/es/servicios/ingles-para-tecnologia" },
+  { name: "Directores de Ventas", link: "/es/servicios/ingles-para-ventas-tecnicas" }, 
+  { name: "Profesionales Médicos", link: "/es/servicios/ingles-para-medicos" },
+  { name: "Gerentes de Cadena de Suministro", link: "/es/servicios/ingles-para-logistica" },
+  { name: "Gerentes de Producto", link: "/es/servicios/ingles-para-tecnologia" },
+  { name: "Ejecutivos C-Suite", link: "/es/servicios/ingles-para-ejecutivos" },
+  { name: "Coordinadores de Logística", link: "/es/servicios/ingles-para-logistica" }
 ] as const;

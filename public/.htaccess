@@ -9,10 +9,20 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^nyenglishteacher\.com$ [NC]
 RewriteRule ^(.*)$ https://www.nyenglishteacher.com/$1 [L,R=301]
 
-# Remove trailing slashes
+# Remove trailing slashes (except for directories)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} (.+)/$
 RewriteRule ^ %1 [L,R=301]
+
+# Bilingual SEO redirects - Default language handling
+# Redirect root to English version
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{HTTP:Accept-Language} ^es [NC]
+RewriteRule ^$ /es/ [L,R=302]
+
+# Default to English for root access
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ /en/ [L,R=302]
 
 # Return 404 for development/test pages
 RedirectMatch 404 /components/.*
@@ -37,12 +47,34 @@ RedirectMatch 404 /preview/.*
   
   # Referrer policy
   Header set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # Content Security Policy (basic)
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;"
 </IfModule>
 
 # Cache control for static assets
-<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|css|js|woff|woff2)$">
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|css|js|woff|woff2|avif)$">
   Header set Cache-Control "public, max-age=31536000, immutable"
 </FilesMatch>
+
+# Cache control for HTML files (shorter cache for dynamic content)
+<FilesMatch "\.(html|htm)$">
+  Header set Cache-Control "public, max-age=3600"
+</FilesMatch>
+
+# Compression for better performance
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/json
+</IfModule>
 
 # Error documents
 ErrorDocument 404 /404.html
@@ -50,8 +82,8 @@ ErrorDocument 404 /404.html
 # Prevent directory listing
 Options -Indexes
 
-# Prevent access to specific files
-<FilesMatch "^(\.htaccess|\.htpasswd|\.git|\.env|\.gitignore)">
+# Prevent access to sensitive files
+<FilesMatch "\.(env|log|htaccess|htpasswd|ini|sh)$">
   Order Allow,Deny
   Deny from all
 </FilesMatch>
