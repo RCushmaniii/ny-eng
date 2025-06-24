@@ -166,16 +166,18 @@ export const testimonials: Testimonial[] = [
 },
 
 {
-  content: `Working with Robert has been a transformative experience for my professional communication. In my role, I regularly lead cross-functional engineering teams and manage high-stakes projects involving international clients and suppliers. Before coaching, I struggled with fluency and clarity during executive meetings, particularly when presenting complex technical updates or strategic plans in English.
+  content: `I am pleased to recommend Robert as an exceptional language teacher and executive-communication coach. Under his guidance, I moved from feeling hesitant in senior-level discussions to speaking with assurance in top-management meetings and presenting complex updates with clarity and persuasion.
 
-Robert's coaching helped me significantly improve my pronunciation, fluency, and confidence when speaking in high-pressure situations. His personalized approach helped me structure my messages more clearly, adapt my tone to different audiences, and express ideas with more precision and impact. These improvements have made my participation in global meetings more effective and elevated how I communicate with senior leadership and stakeholders across countries.
+Robert’s deep corporate experience meant that every session went far beyond grammar and pronunciation: he simulated real board-room scenarios, anticipated tough questions, and equipped me with concise, impactful responses. Thanks to his coaching, my fluency, pronunciation, and overall presence have improved markedly, and I now approach high-stakes conversations with genuine confidence.
 
-Beyond language skills, Robert also introduced me to key business communication frameworks that I've integrated into my team leadership and reporting practices. The improvements in how I speak and present have had a noticeable effect on the way I lead and are recognized by colleagues and clients alike.`,
+Robert will be an outstanding asset to anyone seeking to elevate their professional communication.`,
+
   
-  shortContent: "Working with Robert has been a transformative experience for my professional communication. In my role, I regularly lead cross-functional engineering teams and manage high-stakes projects involving international clients and suppliers. Before coaching, I struggled with fluency and clarity during executive meetings....",
+shortContent: "I am pleased to recommend Robert as an exceptional language teacher and executive-communication coach. Under his guidance, I moved from feeling hesitant in senior-level discussions to speaking with assurance in top-management meetings and presenting complex updates with clarity and persuasion...",
+
 
   author: "Hugo Lopez",
-  position: "Senior Program Manager",
+  position: "Testing & EPM Manager",
   company: "Continental",
   avatar: hugolTestimonial, // Replace with actual import
   stars: 5,
@@ -185,7 +187,7 @@ Beyond language skills, Robert also introduced me to key business communication 
   avatarSize: "md",
   link: "/en/services/public-speaking-english",
   linkText: "👉 English Coaching for Public Speaking",
-  status: "draft"
+  status: "published"
 },
 {
   content: `Working with Robert has helped me improve how I communicate in technical sales situations. I often explain automation systems, PLC programming, and product specs to international clients, and I wanted to sound more fluent and confident. 

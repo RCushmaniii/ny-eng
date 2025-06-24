@@ -163,8 +163,10 @@ export const testimonials: Testimonial[] = [
     status: "published"
   },
   {
-    content: "Trabajar con Robert ha sido una experiencia transformadora para mi comunicación profesional. En mi rol, regularmente lidero equipos de ingeniería multifuncionales y gestiono proyectos de alto impacto que involucran a clientes y proveedores internacionales. Antes del coaching, luchaba con la fluidez y claridad durante las reuniones ejecutivas, particularmente al presentar actualizaciones técnicas complejas o planes estratégicos en inglés.\n\nEl coaching de Robert me ayudó a mejorar significativamente mi pronunciación, fluidez y confianza al hablar en situaciones de alta presión. Su enfoque personalizado me ayudó a estructurar mis mensajes con más claridad, adaptar mi tono a diferentes audiencias y expresar ideas con más precisión e impacto. Estas mejoras han hecho que mi participación en reuniones globales sea más efectiva y han elevado la forma en que me comunico con la alta dirección y las partes interesadas en diferentes países.\n\nMás allá de las habilidades lingüísticas, Robert también me presentó marcos clave de comunicación empresarial que he integrado en mis prácticas de liderazgo de equipo e informes. Las mejoras en mi forma de hablar y presentar han tenido un efecto notable en la forma en que lidero y son reconocidas por colegas y clientes por igual.",
-    shortContent: "Trabajar con Robert ha sido una experiencia transformadora para mi comunicación profesional. En mi rol, regularmente lidero equipos de ingeniería multifuncionales y gestiono proyectos de alto impacto que involucran a clientes y proveedores internacionales...",
+    content: "Me complace recomendar a Robert como un profesor de idiomas y coach en comunicación ejecutiva excepcional. Bajo su guía, pasé de sentirme inseguro en conversaciones de alto nivel a hablar con seguridad en reuniones de alta dirección y presentar actualizaciones complejas con claridad y persuasión.\n\nLa profunda experiencia corporativa de Robert hizo que cada sesión fuera mucho más allá de la gramática y la pronunciación: simuló escenarios reales de sala de juntas, anticipó preguntas difíciles y me entrenó para responder de forma concisa y con impacto. Gracias a su coaching, mi fluidez, pronunciación y presencia general han mejorado notablemente, y ahora enfrento conversaciones críticas con verdadera confianza.\n\nRobert será un recurso excepcional para cualquier persona que busque llevar su comunicación profesional al siguiente nivel.",
+  
+    shortContent: "Me complace recomendar a Robert como un profesor de idiomas y coach en comunicación ejecutiva excepcional. Bajo su guía, pasé de sentirme inseguro en conversaciones de alto nivel a hablar con seguridad en reuniones de alta dirección y presentar actualizaciones complejas con claridad y persuasión...",
+  
     author: "Hugo Lopez",
     position: "Gerente Senior de Programas",
     company: "Continental",
@@ -172,12 +174,13 @@ export const testimonials: Testimonial[] = [
     stars: 5,
     industry: "business",
     slug: "hugo-lopez-continental",
-    headline: "Elevando mi carrera con inglés técnico especializado",
+    headline: "Elevando mi comunicación ejecutiva en ingeniería global",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-ventas-tecnicas",
-    linkText: "👉 Coaching de Inglés para Ventas Técnicas",
-    status: "draft"
+    link: "/es/servicios/ingles-para-hablar-en-publico",
+    linkText: "👉 Coaching de Inglés para Hablar en Público",
+    status: "published"
   },
+  
   {
     content: "Trabajar con Robert me ha ayudado a mejorar cómo me comunico en situaciones de ventas técnicas. A menudo explico sistemas de automatización, programación de PLC y especificaciones de productos a clientes internacionales, y quería sonar más fluido y seguro.\n\nCon el coaching de Robert, me he vuelto más natural en las conversaciones, mejor estructurando mis explicaciones y más persuasivo en demostraciones y seguimientos. Ha marcado una clara diferencia en cómo interactúo con los clientes y represento a mi empresa en inglés.",
     shortContent: "Trabajar con Robert me ha ayudado a mejorar cómo me comunico en situaciones de ventas técnicas. A menudo explico sistemas de automatización, programación de PLC y especificaciones de productos a clientes internacionales...",

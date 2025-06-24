@@ -6,9 +6,9 @@ import MethodologySection from "@components/sections/MethodologySection.astro";
 import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
 import CtaSection from "@components/sections/CtaSection.astro";
 
-// Import hero image
-import executiveHeroImage from "@assets/images/services/executive-english-services.jpg";
-import challengeImage from "@assets/images/industries/industry-challenge1.jpg";
+// Import services data for centralized image management
+import { services } from "@data/services";
+const serviceData = services.find(s => s.slug === 'executive-english');
 
 // Import methodology content
 import { coreMethodology } from "@data/methodology";
@@ -26,20 +26,20 @@ const seoDescription = "Master executive communication skills. Speak with confid
 const heroContent = {
   title: "Speak with Executive Authority",
   description: "Command the boardroom, inspire your teams, and communicate with unwavering confidence.",
-  backgroundImage: executiveHeroImage,
+  backgroundImage: serviceData?.backgroundImage,
   overlayOpacity: 0.7
 };
 
 // Challenge section content
 const challengeContent = {
-  headline: "Are You Facing These Challenges?",
+  headline: "Does This Sound Familiar?",
   painPoints: [
-    "You feel your message loses impact during high-stakes investor meetings.",
-    "You hesitate when giving unscripted feedback to senior leadership.",
+    "You hesitate during high-stakes presentations, worried about making language mistakes.",
+    "Your ideas lose impact when you can't find the right words quickly enough.",
     "You worry that your strategic vision isn't being communicated clearly across global teams."
   ],
   icon: "😰",
-  image: challengeImage
+  image: serviceData?.squareImage
 };
 
 // Final CTA content
@@ -58,7 +58,7 @@ const ctaContent = {
 };
 
 // Translation slug for Spanish version
-const translationSlug = "ejecutivo-ingles";
+const translationSlug = "ingles-para-ejecutivos";
 ---
 
 <Layout

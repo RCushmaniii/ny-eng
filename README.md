@@ -148,24 +148,69 @@ src/
 
 ### Bilingual Implementation
 9. **Parallel Implementation**: Any feature added to one language MUST be implemented in the other
-10. **Shared Components**: Use language props rather than duplicating code
-11. **Translate Data**: Localize content in `@data` files for all languages
-12. **Compare Directly**: Always compare Spanish pages with English counterparts for parity
-13. **Test Both Languages**: Verify functionality in both English and Spanish before completion
+10. **Shared Components**: Use language-specific features in shared components with `lang` prop
+11. **Centralized Translation**: Localize content in `@data` files for consistency
+12. **Test Both Languages**: Verify functionality works in both English and Spanish
 
-### Component Usage & Styling
-14. **Use Titan Layout**: Wrap pages in `@layouts/Layout.astro` with consistent SEO props
-15. **Structured Content**: Pass content objects to Titan components (Hero, Features, CtaBanner)
-16. **Minimize Inline Styles**: Use component props instead of inline CSS
-17. **Avoid Duplication**: Remove redundant component renders
+### Language Switcher Configuration
+**Translation Slugs**: Each page must define proper translation slugs for cross-language navigation:
 
-### Content Writing Guidelines
-18. **First-Person Voice**: Always use "I, my, me" instead of "we, our, us"
-19. **Mexican Spanish**: Use culturally appropriate Mexican Spanish localization
-20. **Industry-Specific**: Tailor content to specific industries and use cases
-21. **Benefit-Driven**: Focus on clear value propositions and outcomes
+```astro
+<!-- English pages -->
+<Layout 
+  lang="en"
+  translationSlugEs="/es/servicios/service-name"
+/>
+
+<!-- Spanish pages -->
+<Layout 
+  lang="es" 
+  translationSlugEn="/en/services/service-name"
+/>
+```
+
+**Important Notes**:
+- Blog pages use full paths: `translationSlugEs="/es/blog"` and `translationSlugEn="/en/blog"`
+- Service pages include full directory structure: `/es/servicios/` and `/en/services/`
+- Translation slugs must match actual file paths exactly
+- Empty translation slugs will hide the language switcher
 
 ## 📚 Recent Updates & Lessons Learned
+
+### Language Switcher Fixes (June 2025)
+**Problem**: Language switcher not appearing on blog pages and incorrect navigation on service pages
+**Root Cause**: Inconsistent translation slug configuration and missing path prefixes
+
+**Solutions Implemented**:
+1. **Blog Pages**: Fixed translation slugs to use full paths instead of empty strings
+   ```astro
+   <!-- Before (broken) -->
+   translationSlugEs=""
+   
+   <!-- After (working) -->
+   translationSlugEs="/es/blog"
+   ```
+
+2. **Service Pages**: Corrected translation slugs to match actual Spanish filenames
+   ```astro
+   <!-- Before (broken) -->
+   translationSlugEs="ingles-tecnologia"
+   
+   <!-- After (working) -->
+   translationSlugEs="/es/servicios/ingles-para-tecnologia"
+   ```
+
+3. **Codebase Cleanup**: Removed unused files and directories
+   - Deleted `src/content/team/` directory and all team-related content
+   - Removed `_pages_unused/` directory with old theme files
+   - Cleaned up duplicate data files and unused components
+   - Fixed TypeScript errors from missing file references
+
+**Key Lessons**:
+- Translation slugs must use full paths including language prefixes
+- Empty translation slugs hide the language switcher entirely
+- Spanish service page filenames must match exactly in English page translation slugs
+- Regular cleanup of unused files prevents build errors and confusion
 
 ### Spanish Service Pages Fix (January 2025)
 **Problem**: Spanish service pages had image import errors and missing methodology content
@@ -282,12 +327,14 @@ src/content/
 **Bilingual Inconsistencies**:
 - Compare Spanish pages directly with English counterparts
 - Ensure all features exist in both languages
-- Verify translation slugs point to correct pages
+- Verify translation slugs point to correct pages and match actual filenames
+- Check that language switcher appears on all pages
 
-**SEO Issues**:
-- Check that all pages have unique titles and descriptions
-- Verify `lang` attribute matches page language
-- Ensure translation slugs are properly configured
+**Language Switcher Issues**:
+- Ensure translation slugs use full paths (e.g., `/es/servicios/service-name`)
+- Blog pages should use `/en/blog` and `/es/blog` (not empty strings)
+- Service pages must match Spanish filename exactly in translation slug
+- Missing translation slugs will hide the language switcher button
 
 ### Development Workflow
 1. **Make Changes**: Edit files using absolute aliases
@@ -325,5 +372,5 @@ The site is configured for static deployment. Run `npm run build` to generate th
 
 ---
 
-**Last Updated**: January 2025
+**Last Updated**: June 2025 - Language switcher fixes and codebase cleanup
 **Contributors**: Development team focused on bilingual business English coaching platform
