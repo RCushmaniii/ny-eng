@@ -68,7 +68,12 @@ const translationSlug = "ingles-para-medicos";
   description={seoDescription}
   lang="en"
   translationSlugEs={`/es/servicios/${translationSlug}`}
-  footerCta={{ hideCta: true }}
+  footerCta={{
+  title: "",
+  description: "",
+  button: { text: "", link: "#" },
+  hideCta: true
+}}
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

@@ -61,11 +61,16 @@ const translationSlug = "ingles-para-fundadores-de-startups";
 ---
 
 <Layout 
-  seoTitle="English Coaching for Startup Founders | Scale Your Communication | NY English"
-  seoDescription="Master confident English communication for startup success. From investor pitches to team leadership, communicate your vision with clarity and authority that drives growth."
+  title="English Coaching for Startup Founders | Scale Your Communication | NY English"
+  description="Master confident English communication for startup success. From investor pitches to team leadership, communicate your vision with clarity and authority that drives growth."
   lang="en"
   translationSlugEs={`/es/servicios/${translationSlug}`}
-  footerCta={{ hideCta: true }}
+  footerCta={{
+  title: "",
+  description: "",
+  button: { text: "", link: "#" },
+  hideCta: true
+}}
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

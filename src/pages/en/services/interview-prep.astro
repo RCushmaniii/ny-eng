@@ -61,11 +61,16 @@ const translationSlug = "preparacion-para-entrevistas";
 ---
 
 <Layout 
-  seoTitle="Interview Preparation English Coaching | NY English"
-  seoDescription="Master confident English communication for job interviews. Get hired with clear technical explanations, compelling stories, and executive presence that impresses hiring managers."
+  title="Interview Preparation English Coaching | NY English"
+  description="Master confident English communication for job interviews. Get hired with clear technical explanations, compelling stories, and executive presence that impresses hiring managers."
   lang="en"
   translationSlugEs={`/es/servicios/${translationSlug}`}
-  footerCta={{ hideCta: true }}
+  footerCta={{
+  title: "",
+  description: "",
+  button: { text: "", link: "#" },
+  hideCta: true
+}}
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />
