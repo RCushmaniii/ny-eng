@@ -1,0 +1,230 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/sections/Hero.astro";
+import SplitPanel from "@components/sections/SplitPanel.astro";
+import Features from "@components/sections/Features.astro";
+import Stats from "@components/sections/Stats.astro";
+// import { featureLists } from "@data/features"; // Assuming these are not language-specific or handled differently
+import { statsLists } from "@data/stats"; // Assuming these are not language-specific or handled differently
+import Logos from "@components/sections/Logos.astro";
+import { logoLists } from "@data/logos"; // Assuming these are not language-specific or handled differently
+import CtaBanner from "@components/sections/CtaBanner.astro";
+import Faqs from "@components/sections/Faqs.astro";
+import { faqLists } from "@data/faqs"; // Assuming these are not language-specific or handled differently
+import RecentPosts from "@components/sections/RecentPosts.astro";
+import newHeroImage from "@assets/images/home/new-york-city-skyline.webp"
+import newHeroImageMobile from "@assets/images/home/new-york-city-skyline-mob.webp"
+import styleGuideImage from "@assets/images/home/developer.jpg";
+import { GraduationCap, Briefcase, Presentation, Users } from "lucide-astro";
+import Testimonials from "@components/sections/Testimonials-titan.astro";
+import { testimonials } from "@data/testimonials"; // Assuming this data is for EN, or you'll have an ES version
+
+// Define the translation slugs for language switching
+// For the root page, we're already on the English version, so only show Spanish option
+const translationSlugEs = "/es/";
+const translationSlugEn = undefined; // Don't show English flag since we're already on English content
+
+const testimonialsBlock = {
+  eyebrow: "Real Results",
+  title: "Why Top-Level Professionals Choose Coaching with Robert",
+  description:
+    "Executives, entrepreneurs, and experts across industries trust New York English to elevate fluency, confidence, and global impact.",
+  testimonials, 
+  cta: {
+  heading: "Ready to Elevate Your English?",
+  description: "Master presentations, negotiations, and high-stakes discussions—so you lead every discussion with clarity and authority.",
+  text: "Book a Free Session",
+  link: "https://ny-english-teacher.odoo.com/book/7ceefa20", // External link, no /en/ prefix needed
+  target: "_blank",
+  rel: "noopener noreferrer"
+}
+};
+
+const seoTitle = "Professional English Coaching for Business Success";
+const seoDescription =
+  "Boost your English fluency and confidence with personalized coaching tailored for professionals and companies.";
+
+const heroContent = {
+  title: "Master Business English & Advance Your Career",
+  description:
+    "Tailored English coaching to build confidence, fluency, and professional impact.",
+  buttons: [
+    {
+      text: "Book Your Free Consultation",
+      link: "https://ny-english-teacher.odoo.com/book/7ceefa20", // External link
+      target: "_blank",
+      variant: "primary",
+    },
+    {
+      text: "WhatsApp Me",
+      link:"https://wa.link/pk4f97", // External link
+      target: "_blank",
+      variant: "whatsapp",
+    },
+  ],
+  backgroundImage: newHeroImage,
+  backgroundImageMobile: newHeroImageMobile,
+  overlayOpacity: 0.3,
+};
+
+const featuresSection = {
+  eyebrow: "NY ENGLISH OFFERS",
+  title: "Personalized English Coaching for Professionals",
+  description:
+    "Whether you need to improve your fluency, ace an interview, or communicate more effectively in business meetings, I’ll help you get there.",
+  features: [
+    {
+      title: "1-on-1 Coaching",
+      description: "Personalized lessons aligned with your role and the real-world challenges you face—so every session adds immediate value.",
+      icon: GraduationCap,
+    },
+    {
+      title: "Corporate Training",
+      description: "Individual coaching that equips your teams and executives with clear, persuasive English.",
+      icon: Users,
+    },
+    {
+      title: "Interview Preparation",
+      description: "Mock interviews plus targeted feedback so you walk in fully prepared.",
+      icon: Briefcase,
+    },
+    {
+      title: "Business Presentations",
+      description: "Hands-on practice and structure templates to deliver with confidence.",
+      icon: Presentation,
+    },
+  ],
+};
+
+const FooterCta = {
+  eyebrow: "",
+  title: "Transform Your Professional English Today",
+  description: "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
+  hideCta: false,
+  button: {
+    text: "Reserve My Free Consultation",
+    link: "https://ny-english-teacher.odoo.com/book/7ceefa20", // External link
+    target: "_blank",
+    rel: "noopener noreferrer"
+  },
+};
+
+const styleGuideSection = {
+  eyebrow: "My Teaching Approach",
+  headline: "Personalized & Goal-Oriented English Coaching",
+  description:
+    "I use a structured yet flexible approach tailored to your professional needs. Whether you're preparing for an interview, leading a meeting, or improving fluency, my coaching is designed for real-world success.",
+  descriptionPoints: [
+    "Have lessons built around your own job and goals",
+    "Get clear, on-the-spot feedback on pronunciation, phrasing and tone",
+    "Practice real tasks—presentations, client calls, reports—just like you do at work",
+  ],
+  image: {
+    src: styleGuideImage,
+    alt: "Professional English coaching session",
+  },
+  buttons: [
+    {
+      text: "Learn More",
+      link: "/en/about", // Link to the about page instead of methodology
+      variant: "primary" as "primary" | "secondary" | "ghostLight" | "ghostDark",
+    },
+  ],
+};
+
+const sideBySideStats = {
+  eyebrow: "STATS",
+  title: "Speak and Write English with Clarity, Confidence & Ease",
+  description:
+    "I help professionals speak and write English with clarity, purpose, and confidence.Whether you're preparing for interviews, presentations, or everyday business conversations, I'll provide the support you need.",
+  variant: "side-by-side" as "side-by-side" | "default",
+  stats: statsLists.withContent.stats, // Assuming statsLists is language-agnostic or handled separately
+  content: {
+    title: "Speak and Write English with Clarity, Confidence & Ease", // This text is English
+    description:
+      "I help professionals speak and write English with clarity, purpose, and confidence.Whether you're preparing for interviews, presentations, or everyday business conversations, I'll provide the support you need.", // This text is English
+    button: {
+      text: "Let's Work Together",
+      link: "/en/contact" // Prefixed with /en/
+    },
+  },
+};
+
+// This mainCta seems like placeholder/example content. Adjust as needed.
+const mainCta = {
+  eyebrow: "Build Blocks",
+  title: "Ready-to-Use Components",
+  description:
+    "Save development time with our pre-built, accessible components. Each one is designed to integrate seamlessly with your projects while maintaining excellent performance.",
+  button: {
+    text: "View All Components",
+    link: "/en/components", // Prefixed with /en/ (if this page exists)
+    variant: "primary",
+  },
+};
+
+const logosSection = {
+  eyebrow: "Our Clients", // This text is English
+  logos: logoLists.main.logos, // Assuming logos are universal
+};
+
+const faqsSection = {
+  eyebrow: "FAQs", // This text is English
+  title: "Frequently Asked Questions", // This text is English
+  description: "Find answers to common questions.", // This text is English
+  faqs: faqLists.main.faqs, // Assuming FAQs have language versions or you'll link to /en/faqs
+};
+
+const recentPostsSection = {
+  eyebrow: "RECENT BLOG POSTS", // This text is English
+  title: "Insights for Business Professionals", // This text is English
+  description:
+    "Practical tips on Business English, career growth, and effective communication.", // This text is English
+  button: {
+    text: "See All Articles",
+    link: "/en/blog", // Prefixed with /en/
+  },
+};
+---
+
+<Layout
+  lang="en"
+  translationSlugEs={translationSlugEs}
+  translationSlugEn={translationSlugEn}
+  footerCta={FooterCta}
+  title={seoTitle}
+  description={seoDescription}
+  heroImage={heroContent.backgroundImage}
+  heroImageMobile={heroContent.backgroundImageMobile}
+>
+  <div class="relative bg-background-light">
+  <Hero content={heroContent} />
+  <Features content={featuresSection} padding="small" background="light" />
+  <div class="mb-15 pb-0"> {/* Consider Tailwind v3+ standard spacing like mb-16 or theme variable */}
+    <Testimonials content={testimonialsBlock} background="base" padding="small" />
+  </div>
+
+  <div class="pt-10 border-t border-gray-200 dark:border-gray-700" style="padding-bottom: var(--spacing-small);"> {/* Consider Tailwind v3+ standard spacing */}
+    <RecentPosts
+      content={recentPostsSection}
+      background="base"
+      postsToShow={3}
+    />
+  </div>
+
+  <SplitPanel
+    content={styleGuideSection}
+    imagePosition="right"
+    background="light"
+    padding="base"
+  />
+
+  {/* <CtaBanner content={mainCta} variant="contained" background="light" paddingBottom="base" /> */}
+  {/* <Logos content={logosSection} background="base" padding="small" /> */}
+
+  <Stats content={sideBySideStats} background="dark" padding="base" />
+  <Faqs content={faqsSection} background="base" padding="base" />
+
+ 
+  </div>
+</Layout>

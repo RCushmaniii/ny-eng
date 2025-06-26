@@ -23,16 +23,31 @@ export default defineConfig({
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
-      filter: (page) => {
-        // Exclude 404 page and development/test pages
-        return !page.includes('/404') && 
-               !page.includes('/components/') && 
-               !page.includes('/test/') && 
-               !page.includes('/dev/') && 
-               !page.includes('/draft/') && 
-               !page.includes('/preview/');
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en-US',
+          es: 'es-MX',
+        },
       },
-      entryLimit: 10000, // Increase entry limit if you have many pages
+      filter: (page) => {
+        // Exclude 404, dev/test, paginated, and category pages
+        if (
+          page.includes('/404') ||
+          page.includes('/components/') ||
+          page.includes('/test/') ||
+          page.includes('/dev/') ||
+          page.includes('/draft/') ||
+          page.includes('/preview/') ||
+          /\/\[\.\.\.\w+\]/.test(page) || // dynamic catch-all routes
+          /\/\d+\/?$/.test(page) || // paginated routes
+          page.includes('/category/')
+        ) {
+          return false;
+        }
+        return true;
+      },
+      entryLimit: 10000,
     })
   ],
   experimental: {
