@@ -82,7 +82,12 @@ const jsonLd = {
 <Layout
   title={seoTitle}
   description={seoDescription}
-  translationSlugEs={post.data.translations?.es?.replace(/^es\/blog\//, '')}
+  lang="en"
+  translationSlugEs={post.data.translations?.es}
+  canonicalUrl={postUrl}
+  image={post.data.featuredImage || "/images/logos/new-york-english-og-wide.jpg"}
+  whatsappImage={typeof post.data.whatsappImage === 'string' ? post.data.whatsappImage : "/images/logos/new-york-english-og.jpg"}
+  linkedinImage={typeof post.data.linkedinImage === 'string' ? post.data.linkedinImage : "/images/logos/new-york-english-og-wide.jpg"}
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 

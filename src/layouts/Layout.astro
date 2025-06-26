@@ -21,6 +21,8 @@ interface Props {
   title?: string;
   description?: string;
   image?: string | { src: string; [key: string]: any }; 
+  whatsappImage?: string | { src: string; [key: string]: any };
+  linkedinImage?: string | { src: string; [key: string]: any };
   footerCta?: {
     title: string;
     description: string;
@@ -42,6 +44,8 @@ const {
   title,
   description,
   image,
+  whatsappImage,
+  linkedinImage,
   footerCta,
   canonicalUrl,
   heroImage,
@@ -62,17 +66,26 @@ const isBlogOrArticlePage = Astro.url.pathname.includes('/blog/') || Astro.url.p
 
 // For blog/article pages: use the hero image if available
 // For homepages and main section pages: always use the default logo image
+// Normalize image for SEO: always a string
+function normalizeImage(img: string | { src: string } | undefined, fallback: string): string {
+  if (typeof img === 'string') return img;
+  if (img && typeof (img as { src?: unknown }).src === 'string') return (img as { src: string }).src;
+  return fallback;
+}
+
+const heroImageSrc = (heroImage && typeof (heroImage as { src?: unknown }).src === 'string') ? (heroImage as { src: string }).src : (typeof heroImage === 'string' ? heroImage : undefined);
+
 const pageImageForSeo = isBlogOrArticlePage 
-  ? (image || (heroImage && typeof heroImage === 'object' && 'src' in heroImage ? heroImage.src : heroImage) || "/images/logos/new-york-english-og.jpg")
+  ? normalizeImage(image, heroImageSrc || "/images/logos/new-york-english-og.jpg")
   : "/images/logos/new-york-english-og.jpg";
 
 // Use square version for WhatsApp
-const whatsAppImagePath = isBlogOrArticlePage && pageImageForSeo !== "/images/logos/new-york-english-og.jpg"
-  ? pageImageForSeo 
-  : "/images/logos/new-york-english-sq-og.jpg";
+// No longer needed: handled by normalizeImage and prop fallback logic
+// const whatsAppImagePath = ...
 
 // Use appropriate image for LinkedIn
-const linkedInImagePath = pageImageForSeo;
+// No longer needed: handled by normalizeImage and prop fallback logic
+// const linkedInImagePath = pageImageForSeo;
 
 // Ensure we always use the www version as canonical
 const canonicalDomain = siteConfig.siteUrl.replace(/^(https?:\/\/)/, '$1www.');
@@ -115,7 +128,7 @@ const actualFooterContentForComponent: FooterContent = {
 
 let openGraphImagesFormatted;
 if (pageImageForSeo) {
-  const imagePath = typeof pageImageForSeo === 'string' ? pageImageForSeo : pageImageForSeo.src;
+  const imagePath = normalizeImage(pageImageForSeo, "/images/logos/new-york-english-og.jpg");
   if (imagePath) {
     openGraphImagesFormatted = [{
       url: new URL(imagePath.startsWith('/') ? imagePath.substring(1) : imagePath, siteConfig.siteUrl).toString(),
@@ -214,11 +227,9 @@ const fixedHeaderHeight = "0rem";
       title={pageTitle}
       description={pageDescription}
       image={pageImageForSeo}
-      whatsappImage={whatsAppImagePath}
-      linkedinImage={linkedInImagePath}
-      type={ogType}
+      imageAlt={pageTitle}
       url={fullCanonicalUrl}
-      locale={determinedLang}
+      locale={determinedLang === 'es' ? 'es_ES' : 'en_US'}
       alternateUrls={finalLanguageAlternates}
     />
 

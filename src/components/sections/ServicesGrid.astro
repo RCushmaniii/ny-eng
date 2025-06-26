@@ -2,6 +2,7 @@
 // src/components/sections/ServicesGrid.astro
 import type { Service } from "@data/services";
 import { Image } from "astro:assets";
+import { normalizePath } from "@utils/url";
 
 interface Props {
   services: Service[];
@@ -28,7 +29,7 @@ const { services, title = "Master Business English for Career Growth & Global Co
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
       {services.map((service) => (
         <a 
-          href={service.link}
+          href={normalizePath(service.link)}
           class="service-card group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 min-h-[280px] flex items-center justify-center"
         >
           <!-- Background Image -->

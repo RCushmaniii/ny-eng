@@ -1,88 +1,91 @@
 ---
-// src/pages/404.astro (ROOT 404 - for redirection)
-const { url } = Astro;
-const pathSegments = url.pathname.split('/').filter(segment => segment.length > 0);
+// src/pages/404.astro
+// This single file handles all 404 errors. It detects the language from the
+// URL and renders the correct, translated content in place, serving a
+// proper 404 status code automatically.
 
-let targetLang = 'en'; // Default to English for 404 page if no specific lang prefix
+import Layout from '@layouts/Layout.astro';
+import Button from '@components/ui/Button.astro';
 
-// Check if the first significant path segment indicates a language
-if (pathSegments.length > 0) {
-  if (pathSegments[0] === 'es') {
-    targetLang = 'es';
-  } else if (pathSegments[0] === 'en') {
-    targetLang = 'en';
-  }
-  // If pathSegments[0] is neither 'en' nor 'es' (e.g., /somepage), targetLang remains 'en'.
-}
+// --- 1. Language and Content Logic ---
 
-const redirectPath = `/${targetLang}/404`;
+const isSpanishPath = Astro.url.pathname.startsWith('/es');
+const lang = isSpanishPath ? 'es' : 'en';
+const translationSlug = isSpanishPath ? '/en/404' : '/es/404';
 
-// Prevent redirect loop if this page is hit AFTER a redirect
-// or if /en/404 or /es/404 themselves don't exist (which they should).
-// This also handles the case where someone directly navigates to /404.
-if (url.pathname !== redirectPath && url.pathname !== `/${targetLang}/404.html`) { // .html for built sites
-  return Astro.redirect(redirectPath, 302); // 302 for temporary redirect to the correct handler
-}
+// Define all text content for both languages
+const content = {
+    en: {
+        title: "404: Page Not Found",
+        description: "The page you were looking for doesn't exist or has been moved. Let's get you back on track.",
+        heading: "404",
+        subheading: "Page Not Found",
+        bodyText: "The page you're looking for doesn't exist or has been moved. Please check the URL or navigate back to our homepage.",
+        buttonText: "Back to Homepage",
+        buttonLink: "/en/",
+        footerTitle: "Transform Your Professional English Today",
+        footerDescription: "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
+        footerButtonText: "Reserve My Free Consultation",
+    },
+    es: {
+        title: "404: Página No Encontrada",
+        description: "La página que buscas no existe o ha sido movida. Te ayudamos a volver al camino correcto.",
+        heading: "404",
+        subheading: "Página No Encontrada",
+        bodyText: "La página que buscas no existe o ha sido movida. Por favor, verifica la URL o navega de regreso a nuestra página principal.",
+        buttonText: "Volver a la Página Principal",
+        buttonLink: "/es/",
+        footerTitle: "Transforma Tu Inglés Profesional Hoy",
+        footerDescription: "Reserva tu consulta gratuita para obtener la claridad, confianza e impacto que tu rol exige.",
+        footerButtonText: "Reservar Mi Consulta Gratuita",
+    }
+};
 
-// Fallback content - This should ideally never be shown if redirection works.
-// This is a safety net if someone lands directly on /404.astro AND the redirect above fails
-// OR if the target /en/404 or /es/404 itself is missing.
-let fallbackTitle = "Page Not Found";
-let fallbackMessage = "The page you are looking for cannot be found. Please check the URL or return to the homepage.";
-let homeLink = "/en/";
-let homeButtonText = "Back to Homepage";
+const pageContent = isSpanishPath ? content.es : content.en;
 
-if (targetLang === 'es') {
-  fallbackTitle = "Página No Encontrada";
-  fallbackMessage = "La página que buscas no se puede encontrar. Por favor, verifica la URL o regresa a la página principal.";
-  homeLink = "/es/";
-  homeButtonText = "Volver a la Página Principal";
-}
+const footerCta = {
+    eyebrow: "",
+    title: pageContent.footerTitle,
+    description: pageContent.footerDescription,
+    hideCta: false,
+    button: {
+        text: pageContent.footerButtonText,
+        link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+        target: "_blank",
+        variant: "primary" as const
+    }
+};
+
+// --- 2. Render the Page ---
+// Astro automatically serves a 404 status code for any file named 404.astro
 ---
-<!doctype html>
-<html lang={targetLang}>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{fallbackTitle}</title>
-  <meta name="robots" content="noindex, nofollow">
-  
-  <!-- Immediate redirect script to minimize visible redirect -->
-  <script>
-    (function() {
-      // Get the path and determine language
-      const path = window.location.pathname;
-      let lang = 'en';
-      
-      // Check if path starts with /es/
-      if (path.match(/^\/es(\/|$)/)) {
-        lang = 'es';
-      }
-      // Check if path starts with /en/
-      else if (path.match(/^\/en(\/|$)/)) {
-        lang = 'en';
-      }
-      
-      // Only redirect if we're not already on the language-specific 404 page
-      if (path !== `/${lang}/404` && path !== `/${lang}/404.html`) {
-        window.location.replace(`/${lang}/404`);
-      }
-    })();
-  </script>
-  <style>
-    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; text-align: center; padding: 40px; background-color: #f8f9fa; color: #343a40; margin:0; display:flex; justify-content:center; align-items:center; min-height: 100vh; }
-    .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    h1 { font-size: 2.5em; color: #007bff; margin-bottom: 0.5em; }
-    p { font-size: 1.1em; line-height: 1.6; margin-bottom: 1.5em;}
-    a.button { color: white; background-color: #007bff; text-decoration: none; padding: 12px 25px; border-radius: 5px; display: inline-block; font-weight: bold; transition: background-color 0.2s ease-in-out; }
-    a.button:hover { background-color: #0056b3; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>{fallbackTitle}</h1>
-    <p>{fallbackMessage}</p>
-    <a href={homeLink} class="button">{homeButtonText}</a>
-  </div>
-</body>
-</html>
+<Layout 
+    title={pageContent.title} 
+    description={pageContent.description} 
+    footerCta={footerCta}
+    lang={lang}
+    noIndex={true}
+    translationSlugEn={lang === 'es' ? translationSlug : undefined}
+    translationSlugEs={lang === 'en' ? translationSlug : undefined}
+>
+    <div class="w-full min-h-[80vh] flex items-center">
+        <div class="site-container mx-auto px-4 py-base text-center">
+            <div class="max-w-2xl mx-auto">
+                <h1 class="mb-4 text-9xl font-bold text-primary" data-aos="fade-up">{pageContent.heading}</h1>
+                <h2 class="mb-8" data-aos="fade-up" data-aos-delay="100">{pageContent.subheading}</h2>
+                <p class="text-body-base mb-12" data-aos="fade-up" data-aos-delay="200">
+                    {pageContent.bodyText}
+                </p>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <Button 
+                        href={pageContent.buttonLink} 
+                        variant="primary"
+                        size="lg"
+                    >
+                        {pageContent.buttonText}
+                    </Button>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

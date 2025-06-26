@@ -13,8 +13,7 @@ export const headerMenu: MenuItem[] = [
     name: 'Acerca de',
     link: '/es/about',
     children: [
-      { name: 'Equipo', link: '/es/about/team' },
-      { name: 'Misión', link: '/es/about/mission' }
+      
     ],
     showArrow: true
   },
@@ -23,7 +22,7 @@ export const headerMenu: MenuItem[] = [
 ];
 
 export const footerMenu: MenuItem[] = [
-  { name: 'Guía de Estilo', link: '/es/style-guide' },
+  
 ];
 
 export const legalMenu: MenuItem[] = [

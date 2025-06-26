@@ -1,4 +1,5 @@
 ---
+import { normalizePath } from "@utils/url";
 import Logo from "@components/Logo.astro";
 import Button from "@components/ui/Button.astro";
 // siteConfig is no longer directly needed here if copyright text is pre-formatted
@@ -91,7 +92,7 @@ const { footerCta: cta } = content; // Use the cta from the localized content
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-neutral-700 dark:border-neutral-800">
       <div class="col-span-1 md:col-span-2 lg:col-span-1">
-        <a href={content.logoLink} aria-label="Homepage">
+        <a href={normalizePath(content.logoLink)} aria-label="Homepage" class="flex items-center">
           <Logo variant="footer" /> {/* This will use the dark logo */}
         </a>
         <p class="mt-4 text-neutral-300 dark:text-neutral-400">
