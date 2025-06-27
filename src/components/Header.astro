@@ -147,7 +147,9 @@ const isCurrentPage = (link: string) => {
       <div class="mt-6 mb-4 flex justify-center gap-4">
         {translationSlugEs && typeof translationSlugEs === 'string' && !currentPath.startsWith('/es') && (
           <a
-            href={`/es/blog/${translationSlugEs}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/es\/blog\/es\/blog\//, '/es/blog/')}
+            href={currentPath.includes('/blog/') 
+              ? `/es/blog/${translationSlugEs}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/es\/blog\/es\/blog\//, '/es/blog/') 
+              : `/es/${translationSlugEs}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/es\/es\//, '/es/')}
             class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
             aria-label="Cambiar a Español"
             data-lang="es"
@@ -159,7 +161,9 @@ const isCurrentPage = (link: string) => {
         )}
         {translationSlugEn && typeof translationSlugEn === 'string' && !currentPath.startsWith('/en') && (
           <a
-            href={`/en/blog/${translationSlugEn}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/en\/blog\/en\/blog\//, '/en/blog/')}
+            href={currentPath.includes('/blog/') 
+              ? `/en/blog/${translationSlugEn}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/en\/blog\/en\/blog\//, '/en/blog/') 
+              : `/en/${translationSlugEn}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/en\/en\//, '/en/')}
             class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
             aria-label="Switch to English"
             data-lang="en"

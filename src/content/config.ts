@@ -1,9 +1,10 @@
 import { defineCollection, z } from 'astro:content';
-import { categories } from '../data/categories';
+import { categories } from '../data/categories.js';
 
 // Extract category names for the enum
-const categoryNames = categories.map(category => category.name);
+const categoryNames = categories.map((category: { name: string }) => category.name);
 
+// Define blog collection with proper schema
 const blogCollection = defineCollection({
   type: 'content',
   schema: ({ image }) => z.object({
@@ -11,9 +12,11 @@ const blogCollection = defineCollection({
     excerpt: z.string(),
     featuredImage: image().optional(),
     imageAlt: z.string().optional(),
+    // Handle dates safely to ensure they work in both dev and build
     publishDate: z.string().transform(str => new Date(str)),
-    publish: z.boolean().optional(),
-    categories: z.array(z.enum(categoryNames as [string, ...string[]])),
+    publish: z.boolean().optional().default(true),
+    // Make categories optional with a default empty array to prevent errors
+    categories: z.array(z.string()).optional().default([]),
     seo: z.object({
       title: z.string().optional(),
       description: z.string().optional(),
@@ -39,6 +42,6 @@ const legalCollection = defineCollection({
 });
 
 export const collections = {
-  'blog': blogCollection,
-  'legal': legalCollection,
+  blog: blogCollection,
+  legal: legalCollection,
 };

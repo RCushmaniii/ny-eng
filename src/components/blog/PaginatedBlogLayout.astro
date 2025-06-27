@@ -56,7 +56,10 @@ const heroContent = {
 ---
 <Layout title={seoTitle} description={seoDescription} 
     translationSlugEn={translationSlugEn ? translationSlugEn.replace(/^\/en\//, '').replace(/\/\/+/g, '/') : undefined} 
-    translationSlugEs={translationSlugEs ? translationSlugEs.replace(/^\/es\//, '').replace(/\/\/+/g, '/') : undefined}>
+    translationSlugEs={translationSlugEs ? translationSlugEs.replace(/^\/es\//, '').replace(/\/\/+/g, '/') : undefined}
+    image="/images/logos/new-york-english-og-wide.jpg"
+    whatsappImage="/images/logos/new-york-english-og.jpg"
+    linkedinImage="/images/logos/new-york-english-og-wide.jpg">
     <main>
     <InnerHero content={heroContent}/>
     <BlogList posts={paginatedPosts} currentCategory={currentCategory} />

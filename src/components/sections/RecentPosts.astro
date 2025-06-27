@@ -58,7 +58,14 @@ const filteredPosts = allPosts
         return isSpanish ? isEs : isEn;
     })
     .filter((post) => !category || post.data.categories?.includes(category))
-    .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
+    .sort((a, b) => {
+        // Handle publishDate as either Date object or string
+        const dateA = a.data.publishDate instanceof Date ? 
+            a.data.publishDate : new Date(a.data.publishDate);
+        const dateB = b.data.publishDate instanceof Date ? 
+            b.data.publishDate : new Date(b.data.publishDate);
+        return dateB.getTime() - dateA.getTime();
+    })
     .slice(0, postsToShow);
 ---
 
