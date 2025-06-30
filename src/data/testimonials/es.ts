@@ -176,7 +176,7 @@ export const testimonials: Testimonial[] = [
     slug: "hugo-lopez-continental",
     headline: "Elevando mi comunicación ejecutiva en ingeniería global",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-hablar-en-publico",
+    link: "/es/servicios/hablar-en-publico",
     linkText: "👉 Coaching de Inglés para Hablar en Público",
     status: "published"
   },

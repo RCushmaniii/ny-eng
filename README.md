@@ -177,6 +177,69 @@ src/
 
 ## 📚 Recent Updates & Lessons Learned
 
+### Open Graph (OG) Image Fixes (June 2025)
+**Problem**: Inconsistent OG image display when sharing pages on social media platforms
+**Root Cause**: Incorrect image path handling and conditional logic for different page types
+
+**Solutions Implemented**:
+1. **Improved Page Type Detection**: Added proper service page detection (`/services/` and `/servicios/` paths)
+   ```typescript
+   // Before (missing service page detection)
+   const isBlogOrArticlePage = Astro.url.pathname.includes('/blog/');
+   
+   // After (detecting both blog and service pages)
+   const isBlogOrArticlePage = Astro.url.pathname.includes('/blog/');
+   const isServicePage = Astro.url.pathname.includes('/services/') || Astro.url.pathname.includes('/servicios/');
+   ```
+
+2. **Enhanced Image Selection Logic**: Prioritized image selection based on page type
+   ```typescript
+   // Image selection priority
+   const pageImageForSeo = image 
+     ? normalizeImage(image, "/images/logos/new-york-english-og.jpg")
+     : (isBlogOrArticlePage || isServicePage)
+       ? (heroImageSrc || "/images/logos/new-york-english-og.jpg")
+       : "/images/logos/new-york-english-og.jpg";
+   ```
+
+3. **Improved Path Normalization**: Better handling of relative and absolute paths
+   ```typescript
+   const ensureAbsoluteUrl = (path: string) => {
+     if (path.startsWith('http')) return path;
+     const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+     return new URL(normalizedPath, canonicalDomain).toString();
+   };
+   ```
+
+### 404 Error Handling Improvements (June 2025)
+**Problem**: Multiple 404 errors appearing in search console, especially for malformed blog URLs
+**Root Cause**: Search engines indexing incorrect paths and remnant URLs from old site structure
+
+**Solutions Implemented**:
+1. **Comprehensive Redirect Rules**: Added specific redirect patterns to `_redirects` file
+   ```
+   # Fix malformed blog URLs (double nested paths)
+   /en/blog/en/blog/* /en/blog/:splat 301
+   /es/blog/es/blog/* /es/blog/:splat 301
+   
+   # Redirect case studies to testimonials
+   /en/case-studies/technology /en/testimonials/all/ 301
+   
+   # Fix incorrect service URLs
+   /es/servicios/ingles-para-hablar-en-publico /es/servicios/hablar-en-publico 301
+   ```
+
+2. **Fixed Testimonial Links**: Corrected service page references in testimonial data
+   ```typescript
+   // Before (incorrect URL)
+   link: "/es/servicios/ingles-para-hablar-en-publico",
+   
+   // After (correct URL)
+   link: "/es/servicios/hablar-en-publico",
+   ```
+
+3. **Removed Unused Pages**: Cleaned up legacy pages including old style guide and case study pages
+
 ### Language Switcher Fixes (June 2025)
 **Problem**: Language switcher not appearing on blog pages and incorrect navigation on service pages
 **Root Cause**: Inconsistent translation slug configuration and missing path prefixes

@@ -9,6 +9,19 @@ https://nyenglishteacher.com/* https://www.nyenglishteacher.com/:splat 301!
 /draft/* /404.html 404
 /preview/* /404.html 404
 
+# Fix malformed blog URLs (double nested paths)
+/en/blog/en/blog/* /en/blog/:splat 301
+/es/blog/es/blog/* /es/blog/:splat 301
+/en/blog/en/* /en/blog/:splat 301
+/es/blog/es/* /es/blog/:splat 301
+
+# Redirect case studies to testimonials
+/en/case-studies/technology /en/testimonials/all/ 301
+/en/case-studies/finance /en/testimonials/all/ 301
+
+# Fix incorrect service URLs
+/es/servicios/ingles-para-hablar-en-publico /es/servicios/hablar-en-publico 301
+
 # Handle language-specific 404s
 /en/* /en/404.html 404
 /es/* /es/404.html 404

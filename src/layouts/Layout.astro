@@ -61,11 +61,10 @@ const {
 const pageTitle = title ? `${title} ${Separator} ${SiteName}` : SiteName;
 const pageDescription = description || defaultDescription || "";
 
-// Determine if this is a blog/article page or a homepage/main section page
+// Determine page type for OG image selection
 const isBlogOrArticlePage = Astro.url.pathname.includes('/blog/') || Astro.url.pathname.includes('/article/');
+const isServicePage = Astro.url.pathname.includes('/services/') || Astro.url.pathname.includes('/servicios/');
 
-// For blog/article pages: use the hero image if available
-// For homepages and main section pages: always use the default logo image
 // Normalize image for SEO: always a string
 function normalizeImage(img: string | { src: string } | undefined, fallback: string): string {
   if (typeof img === 'string') return img;
@@ -73,11 +72,19 @@ function normalizeImage(img: string | { src: string } | undefined, fallback: str
   return fallback;
 }
 
-const heroImageSrc = (heroImage && typeof (heroImage as { src?: unknown }).src === 'string') ? (heroImage as { src: string }).src : (typeof heroImage === 'string' ? heroImage : undefined);
+const heroImageSrc = (heroImage && typeof (heroImage as { src?: unknown }).src === 'string') 
+  ? (heroImage as { src: string }).src 
+  : (typeof heroImage === 'string' ? heroImage : undefined);
 
-const pageImageForSeo = isBlogOrArticlePage 
-  ? normalizeImage(image, heroImageSrc || "/images/logos/new-york-english-og.jpg")
-  : "/images/logos/new-york-english-og.jpg";
+// OG Image logic:
+// 1. For blog/article pages: use the explicitly provided image, hero image, or default logo
+// 2. For service pages: use the explicitly provided image or background image 
+// 3. For main pages: use the explicitly provided image or default logo
+const pageImageForSeo = image 
+  ? normalizeImage(image, "/images/logos/new-york-english-og.jpg")
+  : (isBlogOrArticlePage || isServicePage)
+    ? (heroImageSrc || "/images/logos/new-york-english-og.jpg")
+    : "/images/logos/new-york-english-og.jpg";
 
 // Use square version for WhatsApp
 // No longer needed: handled by normalizeImage and prop fallback logic
