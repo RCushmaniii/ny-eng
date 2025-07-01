@@ -1,38 +1,56 @@
 # Robust Rules for Windsurf Cascade (Astro Titan Core Theme)
 
-## Code Structure & Organization
-1. Use Absolute Aliases for All Imports: Import components, layouts, data, and assets using @layouts, @components, @data, and @assets aliases (e.g., import Layout from "@layouts/Layout.astro") to ensure consistency and avoid path-related errors.
-2. Organize Pages by Locale: Structure pages in src/pages/en and src/pages/es for multilingual support, using consistent Titan Core components across locales.
-3. Use Astro File Extensions: Create components with .astro extensions (e.g., @components/sections/Hero.astro) and avoid .jsx or .tsx unless integrating other frameworks.
-4. Organize and Reuse Data Files: Store reusable content (e.g., featureLists, statsLists, logoLists) in @data and export typed objects, translating content for multilingual pages like es.
+1. Imports & File Structure
+    • Use absolute aliases for imports: @components, @data, @assets.
+    • Organize pages in src/pages/[lang]/… (e.g., src/pages/en/index.astro). Start with en; add es within a week.
+    • Store repeatable content (e.g., features, stats) in src/content using Astro Content Collections.
 
-## TypeScript & Type Safety
-5. Enforce Type Safety with as const: Add as const to all static config objects (e.g., heroContent, featuresSection) to ensure literal types for properties like variant, preventing TypeScript errors.
-6. Enable Strict TypeScript Settings: Configure tsconfig.json with strict: true and include "astro" in compilerOptions.types to catch type errors and support Astro's TypeScript integration.
-7. Define Typed Component Props: Use TypeScript interfaces in Astro component frontmatter (e.g., interface Props { content: { title: string; button: { variant: "primary" | "secondary" | "whatsapp" } } }) to enforce consistent prop types.
-8. Restrict Button Variants: Limit variant props in Titan Core components (e.g., Hero, CtaBanner) to theme-supported values ("primary", "secondary", "whatsapp") and validate them in config objects.
+2. Type Safety
+    • Enable strict and strictNullChecks in tsconfig.json. Disable noUncheckedIndexedAccess to reduce complexity.
+    • Declare export interface Props in each .astro file for component props.
+    • Run pnpm astro check locally during development; CI treats type errors as warnings, not blockers.
 
-## Bilingual Implementation Requirements
-9. Maintain Parallel Implementation: Any feature, functionality, or UI element added to one language version MUST be implemented in the other language version as well.
-10. Use Shared Components with Language Props: Implement language-specific features in shared components using the lang prop rather than duplicating code.
-11. Translate Data for Multilingual Pages: Localize content in @data files (e.g., featureLists.main.features) for es and other locales to ensure consistency across pages.
-12. Always compare each content object, component, and prop in es/index.astro directly with en/index.astro to ensure structural and functional parity.
-13. Test All Features in Both Languages: Verify functionality works correctly in both English and Spanish versions before considering implementation complete.
+3. UI & Styling
+    • Wrap every page in @layouts/Layout.astro, passing title, description, and lang props.
+    • Limit button variant prop to "primary" | "secondary" | "whatsapp".
+    • Use CSS variables for styling (defined in src/styles/tokens.css). Inline styles are allowed for prototyping but must be refactored before merging.
+    • Maintain a minimal token set (e.g., colors, spacing) in src/styles/tokens.css. Example:
+:root {
+  --color-primary: #007bff;
+  --color-secondary: #6c757d;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+}
 
-## Component Usage & Styling
-14. Use Titan Core's Layout Component: Wrap all pages in @layouts/Layout.astro, passing consistent SEO props (title, description) and optional footerCta as shown in en/index.astro.
-15. Follow Titan Core Component Structure: Pass structured content objects (e.g., { eyebrow, title, description, button }) to Titan Core components like Hero, Features, and CtaBanner.
-16. Minimize Inline Styles: Customize Titan Core components via props (e.g., background, padding) instead of inline CSS to maintain theme consistency and avoid overriding styles.
-17. Avoid Duplicated Components: Remove redundant component renders (e.g., duplicate RecentPosts in es/index.astro) to optimize performance and reduce maintenance.
+4. Internationalization (i18n)
+    • Support en and es locales. New features launch in en first, with es added within a week.
+    • Translate alt text and meta descriptions. Use t('key') helpers for dynamic paths (e.g., t('services.public-speaking.slug')).
+    • CI checks homepage and key routes (/en, /es, /en/services/*) for 404s or missing translations.
 
-## SEO, Accessibility & Performance
-18. Maintain SEO Consistency: Ensure seoTitle and seoDescription are unique, descriptive, and localized for each page (e.g., Spanish in es, English in en).
-19. Provide Descriptive Alt Text: Include meaningful alt text for all images (e.g., image.alt in SplitPanel) to improve accessibility and SEO.
-20. Optimize Images with Astro: Place images in @assets and use Astro's <Image /> component or astro:assets for optimized loading, providing mobile-specific images (e.g., backgroundImageMobile).
-21. Test Responsiveness: Verify Titan Core components (e.g., SplitPanel, Hero) render correctly on mobile and desktop, using props like backgroundImageMobile and padding.
+5. Performance
+    • Use Astro’s <Image> component for images, with AVIF/WEBP formats and LQIP placeholders.
+    • Target JS bundle size ≤ 300 kB and CLS-impacting CSS ≤ 150 kB.
+    • Run Lighthouse on /en and /es homepages, targeting LCP < 3s and CLS < 0.15.
 
-## Development Workflow
-22. Document Components and Usage: Add comments in .astro files or a README to explain Titan Core component props and custom configurations, especially for complex sections.
-23. Restart Dev Environment After Changes: Run npm run dev and restart the IDE TypeScript service (e.g., Ctrl+Shift+P → TypeScript: Restart TS Server in VS Code) to clear caches and detect errors.
-24. Verify Static Build: Run astro build to test static site generation and ensure Titan Core components render correctly before deployment.
-25. Remove Debug Code: Do not leave console.log statements or other debugging code in production files.
+6. QA & CI
+    • CI pipeline runs pnpm lint, pnpm build, and basic Playwright E2E tests (e.g., homepage, navigation).
+    • ESLint rules: no-console and no-debugger are warnings, not errors.
+    • Pre-commit hooks (via Husky/lint-staged) run prettier --write only.
+
+7. Development Workflow
+    • Use pnpm astro dev for local preview.
+    • Restart VS Code TypeScript server if IntelliSense stalls.
+    • Run pnpm astro check --watch in a side terminal for type checking during development.
+
+8. Release & Deployment
+    • Use Conventional Commits for clear versioning (e.g., feat: add button variant).
+    • Verify builds with pnpm astro build before deployment.
+    • Deploy via Platform.sh; staging branch auto-deploys a preview environment.
+
+9. Governance & Code-Review Checklist
+    • Locale parity (homepage and key routes) achieved
+    • Inline styles refactored or justified
+    • Lighthouse LCP < 3s, CLS < 0.15 for homepages
+    • Basic E2E tests (homepage, navigation) added
+    • Bundle size ≤ 300 kB JS, ≤ 150 kB CSS
+    Key strings (alt text, meta descriptions) localized
