@@ -36,3 +36,21 @@
 23. Restart Dev Environment After Changes: Run npm run dev and restart the IDE TypeScript service (e.g., Ctrl+Shift+P → TypeScript: Restart TS Server in VS Code) to clear caches and detect errors.
 24. Verify Static Build: Run astro build to test static site generation and ensure Titan Core components render correctly before deployment.
 25. Remove Debug Code: Do not leave console.log statements or other debugging code in production files.
+
+## 🔧 Tooling, Governance & Quality Assurance (Addendum)
+26. Run Linting with ESLint: Run `npx eslint . --ext .ts,.astro` in PowerShell to check for code quality issues. Use `--fix` to automatically correct them: `npx eslint . --ext .ts,.astro --fix`.
+27. Check Formatting with Prettier: Run `npx prettier . --check` to ensure code style consistency. Use `npx prettier . --write` to auto-format all files.
+28. Use Recommended VS Code Extensions: Install ESLint, Prettier, Astro Language Tools, and TypeScript Hero for consistent formatting, linting, and helpful auto-imports.
+29. Run Astro Type Checks: Use `npx astro check` to validate component props, configuration files, and page structures for TypeScript compatibility and Astro integrity.
+30. Perform Lighthouse Audits: Use Chrome DevTools → Lighthouse tab to evaluate `/en`, `/es`, and service pages. Ensure LCP < 3s, CLS < 0.15, and SEO scores above 90.
+31. Solo Code Review Checklist Before Deployment:
+- [ ] Both English and Spanish versions tested
+- [ ] All meta descriptions and alt text localized
+- [ ] Language switcher links correct and visible
+- [ ] No console.log or debug code left in components
+- [ ] Translation slugs are accurate and functional
+- [ ] Previewed final build using npm run preview
+## 🚀 Final Note
+These rules are meant to keep development smooth, content accessible, and the site performant.
+
+
