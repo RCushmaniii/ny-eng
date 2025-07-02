@@ -1,4 +1,5 @@
 import type { ImageMetadata } from 'astro';
+import { serviceCategories } from '@data/service-categories';
 
 // Import testimonial images - using the same images as English version
 import emmanuelTestimonial from '../../assets/images/testimonials/emmanuel-testimonial.jpeg';
@@ -14,6 +15,7 @@ import humbertoTestimonial from '../../assets/images/testimonials/humberto-testi
 import ricardoTestimonial from '../../assets/images/testimonials/ricardo-testimonial.jpg';
 import javierTestimonial from '../../assets/images/testimonials/javier-testimonial.jpg';
 import jonathanTestimonial from '../../assets/images/testimonials/jonathan-testimonial.jpg';
+import taniaTestimonial from '../../assets/images/testimonials/tania-testimonial.jpg';
 
 export interface Testimonial {
   content: string;
@@ -23,7 +25,7 @@ export interface Testimonial {
   company: string;
   avatar: ImageMetadata;
   stars?: number;
-  industry: string;
+  industries: string[]; // Array de categorías estandarizadas
   slug: string;
   headline?: string;
   avatarSize?: 'sm' | 'md' | 'lg';
@@ -41,7 +43,7 @@ export const testimonials: Testimonial[] = [
     company: "Smarttie",
     avatar: julioTestimonial,
     stars: 5,
-    industry: "founders",
+    industries: ["executive-english", "startup-founders"],
     slug: "julio-aldana-smarttie",
     headline: "De bueno a excelente: Cómo el coaching transformó mi comunicación de liderazgo",
     avatarSize: "md",
@@ -57,7 +59,7 @@ export const testimonials: Testimonial[] = [
     company: "100 Ladrillos",
     avatar: hugoTestimonial,
     stars: 5,
-    industry: "c-level-executives",
+    industries: ["executive-english"],
     slug: "hugo-blum-100-ladrillos",
     headline: "Comunicación clara para liderar equipos globales",
     avatarSize: "md",
@@ -73,7 +75,7 @@ export const testimonials: Testimonial[] = [
     company: "Driscoll's",
     avatar: andresTestimonial,
     stars: 5,
-    industry: "c-level-executives",
+    industries: ["executive-english", "tech-english"],
     slug: "andres-guzman-driscolls",
     headline: "Dominando el inglés técnico para presentaciones de alto nivel",
     avatarSize: "md",
@@ -89,7 +91,7 @@ export const testimonials: Testimonial[] = [
     company: "CEVA Logistics",
     avatar: andreaTestimonial,
     stars: 5,
-    industry: "logistics",
+    industries: ["logistics-english", "executive-english", "high-stakes-english"],
     slug: "andrea-oliveira-ceva-logistics",
     headline: "Superando la barrera del idioma en ventas técnicas",
     avatarSize: "md",
@@ -106,7 +108,7 @@ export const testimonials: Testimonial[] = [
     company: "Sanmina Corporation",
     avatar: karlaTestimonial,
     stars: 5,
-    industry: "logistics",
+    industries: ["executive-english", "logistics-english"],
     slug: "karla-bernal-sanmina-corporation",
     headline: "Superando el miedo a hablar en público en inglés",
     avatarSize: "md",
@@ -122,7 +124,7 @@ export const testimonials: Testimonial[] = [
     company: "",
     avatar: erikaTestimonial,
     stars: 5,
-    industry: "doctors",
+    industries: ["professional-english"],
     slug: "dra-erika-itzel-medico",
     headline: "Dominando las presentaciones técnicas en inglés",
     avatarSize: "md",
@@ -138,7 +140,7 @@ export const testimonials: Testimonial[] = [
     company: "Ramos, Ripoll & Schuster",
     avatar: emmanuelTestimonial,
     stars: 5,
-    industry: "attorneys",
+    industries: ["professional-english"],
     slug: "emmanuel-ibarra-castillo-ramos-ripoll-schuster",
     headline: "Mejorando la comunicación con equipos globales",
     avatarSize: "md",
@@ -154,7 +156,7 @@ export const testimonials: Testimonial[] = [
     company: "Terramar Brands",
     avatar: albertoTestimonial,
     stars: 5,
-    industry: "c-level-executives",
+    industries: ["executive-english"],
     slug: "alberto-escobar-terramar-brands",
     headline: "Comunicación efectiva para líderes técnicos",
     avatarSize: "md",
@@ -172,7 +174,7 @@ export const testimonials: Testimonial[] = [
     company: "Continental",
     avatar: hugolTestimonial,
     stars: 5,
-    industry: "business",
+    industries: ["executive-english", "professional-english"],
     slug: "hugo-lopez-continental",
     headline: "Elevando mi comunicación ejecutiva en ingeniería global",
     avatarSize: "md",
@@ -189,7 +191,7 @@ export const testimonials: Testimonial[] = [
     company: "Mountz Torque",
     avatar: ricardoTestimonial,
     stars: 5,
-    industry: "engineering",
+    industries: ["tech-english"],
     slug: "ricardo-mendoza-mountz-torque",
     headline: "Comunicación médica precisa en entornos internacionales",
     avatarSize: "md",
@@ -205,7 +207,7 @@ export const testimonials: Testimonial[] = [
     company: "TC Logistics",
     avatar: humbertoTestimonial,
     stars: 5,
-    industry: "logistics",
+    industries: ["executive-english", "logistics-english"],
     slug: "humberto-grimaldo-tc-logistics",
     headline: "Optimizando la comunicación en logística internacional",
     avatarSize: "md",
@@ -221,7 +223,7 @@ export const testimonials: Testimonial[] = [
     company: "Sophia",
     avatar: javierTestimonial,
     stars: 5,
-    industry: "business",
+    industries: ["executive-english", "professional-english"],
     slug: "javier-ramirez-sophia",
     headline: "De nervioso a confiado en entrevistas técnicas",
     avatarSize: "md",
@@ -237,7 +239,7 @@ export const testimonials: Testimonial[] = [
     company: "Infosys",
     avatar: jonathanTestimonial,
     stars: 5,
-    industry: "technology",
+    industries: ["tech-english"],
     slug: "jonathan-emmaus-infosys",
     headline: "Dominando las entrevistas técnicas en inglés",
     avatarSize: "md",
@@ -245,37 +247,51 @@ export const testimonials: Testimonial[] = [
     linkText: "👉 Coaching para Preparación de Entrevistas",
     status: "published"
   },
+  {
+    content: `Antes de trabajar con Robert, a veces me sentía insegura al presentar en inglés durante llamadas importantes y reuniones en tiempo real, especialmente con clientes internacionales.
+  
+  Su coaching me ha ayudado a generar mayor confianza al hablar, expandir mi vocabulario y dar estructura a mis ideas. Su enfoque es práctico y moderno, utilizando ejemplos de la vida real que hacen que el aprendizaje sea interesante.
+  
+  Ahora, me siento más segura y fluida en mi comunicación y tengo un mejor desempeño en discusiones técnicas y negociaciones.`,
+    shortContent: "Antes de trabajar con Robert, a veces me sentía insegura al presentar en inglés durante llamadas importantes y reuniones en tiempo real con clientes internacionales…",
+    author: "Tania Ruelas",
+    position: "Gerente de Cuentas Clave de Calidad",
+    company: "FORVIA HELLA",
+    avatar: taniaTestimonial,
+    stars: 5,
+    industries: ["tech-english", "executive-english"],
+    slug: "tania-ruelas-forvia-hella",
+    headline: "Inglés fluido para clientes globales",
+    avatarSize: "md",
+    link: "/es/servicios/ingles-para-tecnologia",
+    linkText: "👉 Coaching de Inglés para Ingenieros",
+    status: "published"
+  },
 ] as const;
 
 // Filter published testimonials
 const publishedTestimonials = testimonials.filter(t => t.status !== "draft");
 
-// Group testimonials by industry for easier filtering
+// Group testimonials by industry for easier filtering using the standardized service categories
 export const testimonialsByIndustry = {
   "all": publishedTestimonials,
-  "founders": publishedTestimonials.filter(t => t.industry === "founders"),
-  "c-level-executives": publishedTestimonials.filter(t => t.industry === "c-level-executives"),
-  "logistics": publishedTestimonials.filter(t => t.industry === "logistics"),
-  // "attorneys": publishedTestimonials.filter(t => t.industry === "attorneys"),
-  "doctors": publishedTestimonials.filter(t => t.industry === "doctors"),
-  "it-projects": publishedTestimonials.filter(t => t.industry === "it-projects"),
-  // "automotive": publishedTestimonials.filter(t => t.industry === "automotive"),
-  "business": publishedTestimonials.filter(t => t.industry === "business"),
-  "engineering": publishedTestimonials.filter(t => t.industry === "engineering"),
-  "technology": publishedTestimonials.filter(t => t.industry === "technology"),
+  "executive-english": publishedTestimonials.filter(t => t.industries.includes("executive-english")),
+  "startup-founders": publishedTestimonials.filter(t => t.industries.includes("startup-founders")),
+  "tech-english": publishedTestimonials.filter(t => t.industries.includes("tech-english")),
+  "logistics-english": publishedTestimonials.filter(t => t.industries.includes("logistics-english")),
+  "professional-english": publishedTestimonials.filter(t => t.industries.includes("professional-english")),
+  "high-stakes-english": publishedTestimonials.filter(t => t.industries.includes("high-stakes-english")),
+  "interview-preparation": publishedTestimonials.filter(t => t.industries.includes("interview-preparation")),
 } as const;
 
-// Industry labels for the filter dropdown
+// Updated industry labels using standardized categories from service-categories.ts
 export const industryLabels = {
   "all": "Todas las industrias",
-  "founders": "Fundadores y emprendedores",
-  "c-level-executives": "Ejecutivos de nivel C",
-  "logistics": "Profesionales de logística",
-  // "attorneys": "Abogados y profesionales legales",
-  "doctors": "Médicos y profesionales de la salud",
-  "it-projects": "Gerentes de TI y proyectos",
-  // "automotive": "Profesionales automotrices",
-  "business": "Líderes empresariales",
-  "engineering": "Ingenieros",
-  "technology": "Profesionales de tecnología"
+  "executive-english": serviceCategories[0].esLabel,
+  "startup-founders": serviceCategories[1].esLabel,
+  "tech-english": serviceCategories[2].esLabel,
+  "logistics-english": serviceCategories[3].esLabel,
+  "professional-english": serviceCategories[4].esLabel,
+  "interview-preparation": serviceCategories[5].esLabel,
+  "high-stakes-english": "Inglés para Situaciones Críticas"
 } as const;

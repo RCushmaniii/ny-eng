@@ -53,22 +53,30 @@ const lang = "es";
       <!-- Industry Filter -->
       <div class="mb-10 flex flex-col sm:flex-row justify-center items-center gap-4">
         <label for="industry-filter" class="font-medium text-[--color-headline]">Filtrar por industria:</label>
-        <select
-          id="industry-filter"
-          class="bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
-        >
+        <div class="relative">
+          <select
+            id="industry-filter"
+            class="appearance-none bg-white border border-gray-300 rounded-md px-4 py-2 pr-8 focus:outline-none focus:ring-2 focus:ring-primary-500 z-50 block w-full"
+            style="position: relative; z-index: 50;"
+          >
           {Object.entries(industryLabels)
             .filter(([key]) => validIndustries.includes(key))
             .map(([key, label]) => (
               <option value={key}>{label}</option>
             ))}
-        </select>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+            </svg>
+          </div>
+        </div>
       </div>
 
       <!-- Testimonials Grid -->
       <div id="testimonials-grid" class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {publishedTestimonials.map((testimonial) => (
-          <div class="testimonial-item" data-industry={testimonial.industry}>
+          <div class="testimonial-item" data-industries={testimonial.industries.join(",")}>
             {testimonial.shortContent ? (
               <ExpandableTestimonialCard
                 testimonial={testimonial}
@@ -130,9 +138,12 @@ const lang = "es";
       let visibleCount = 0;
       
       testimonialItems.forEach((item) => {
-        const itemIndustry = item.getAttribute('data-industry');
+        // Get comma-separated list of industries and convert to array
+        const industriesAttr = item.getAttribute('data-industries') || '';
+        const itemIndustries = industriesAttr.split(',').map(industry => industry.trim());
         
-        if (selectedIndustry === 'all' || itemIndustry === selectedIndustry) {
+        // Show if 'all' is selected or if the item belongs to the selected industry
+        if (selectedIndustry === 'all' || itemIndustries.includes(selectedIndustry)) {
           (item as HTMLElement).style.display = 'block';
           visibleCount++;
         } else {

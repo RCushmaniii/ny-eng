@@ -1,5 +1,8 @@
 // src/data/services.ts
 
+// Import from the central service categories using proper Astro alias pattern
+import { serviceCategories } from "@data/service-categories.js";
+
 // Import service images from assets
 import executiveEnglishImage from "@assets/images/services/executive-english-services.jpg";
 import technicalSalesImage from "@assets/images/services/technical-sales-services.jpg";
@@ -31,7 +34,9 @@ export interface Service {
   slug: string;
 }
 
+// Structured based on the 6 standardized categories in priority order
 export const services: Service[] = [
+  // 1. Executives & Directors - highest priority, highest budget audience
   {
     title: "Executive English",
     icon: "🎯",
@@ -41,51 +46,7 @@ export const services: Service[] = [
     squareImage: executiveEnglishSquareImage,
     slug: "executive-english"
   },
-  {
-    title: "Technical Sales Fluency",
-    icon: "⚙️",
-    description: "Explain complex systems, product specs, and software solutions with clarity and impact.",
-    link: "/en/services/technical-sales-english",
-    backgroundImage: technicalSalesImage,
-    squareImage: technicalSalesSquareImage,
-    slug: "technical-sales-english"
-  },
-  {
-    title: "English for Logistics",
-    icon: "🚚",
-    description: "Master the language of supply chain, freight, and international trade documentation.",
-    link: "/en/services/logistics-english",
-    backgroundImage: logisticsImage,
-    squareImage: logisticsSquareImage,
-    slug: "logistics-english"
-  },
-  {
-    title: "English for Medical Professionals",
-    icon: "⚕️",
-    description: "Communicate clearly with patients, colleagues, and at international medical conferences.",
-    link: "/en/services/medical-english",
-    backgroundImage: medicalImage,
-    squareImage: medicalSquareImage,
-    slug: "medical-english"
-  },
-  {
-    title: "Interview Preparation",
-    icon: "💬",
-    description: "Secure your next role by mastering storytelling and answering tough questions with confidence.",
-    link: "/en/services/interview-prep",
-    backgroundImage: interviewPrepImage,
-    squareImage: interviewPrepSquareImage,
-    slug: "interview-prep"
-  },
-  {
-    title: "Public Speaking & Presentations",
-    icon: "🎤",
-    description: "Captivate any audience, from small team meetings to large conference keynotes.",
-    link: "/en/services/public-speaking-english",
-    backgroundImage: publicSpeakingImage,
-    squareImage: publicSpeakingSquareImage,
-    slug: "public-speaking-english"
-  },
+  // 2. Startup Founders - ambitious, referral-prone audience
   {
     title: "English for Startup Founders",
     icon: "🚀",
@@ -95,73 +56,62 @@ export const services: Service[] = [
     squareImage: startupFoundersSquareImage,
     slug: "startup-founders"
   },
+  // 3. Engineers & Tech Leads - tech sector growth area
   {
     title: "English for Tech",
     icon: "💻",
-    description: "Enhance your daily stand-ups, code reviews, and technical documentation in agile environments.",
+    description: "Improve your daily stand-ups, code reviews, and technical documentation in Agile environments.",
     link: "/en/services/tech-english",
     backgroundImage: techImage,
     squareImage: techSquareImage,
     slug: "tech-english"
+  },
+  // 4. Logistics & Operations - differentiated niche with growth
+  {
+    title: "English for Logistics",
+    icon: "🚚",
+    description: "Master the language of supply chain, freight, and international trade documentation.",
+    link: "/en/services/logistics-english",
+    backgroundImage: logisticsImage,
+    squareImage: logisticsSquareImage,
+    slug: "logistics-english"
+  },
+  // 5. Medical & Legal Professionals - trust-driven, word-of-mouth audience
+  {
+    title: "English for Professional Fields",
+    icon: "⚕️",
+    description: "Communicate clearly with patients, clients, colleagues, and at industry conferences.",
+    link: "/en/services/professional-english",
+    backgroundImage: medicalImage,
+    squareImage: medicalSquareImage,
+    slug: "professional-english"
+  },
+  // 6. Public Speaking & Interviews - lead generation category
+  {
+    title: "High-Stakes English",
+    icon: "🎤",
+    description: "Captivate any audience, ace interviews, and deliver powerful presentations with confidence.",
+    link: "/en/services/high-stakes-english",
+    backgroundImage: publicSpeakingImage,
+    squareImage: publicSpeakingSquareImage,
+    slug: "high-stakes-english"
   }
 ] as const;
 
 // Spanish version
+// Spanish services following the same standardized categories and priority order
 export const serviciosEs: Service[] = [
+  // 1. Ejecutivos y Directores
   {
     title: "Inglés para Ejecutivos",
     icon: "🎯",
-    description: "Habla con confianza en salas de juntas, reuniones con inversionistas y presentaciones importantes.",
+    description: "Habla con confianza en salas de juntas, reuniones con inversionistas y presentaciones de alto nivel.",
     link: "/es/servicios/ingles-para-ejecutivos",
     backgroundImage: executiveEnglishImage,
     squareImage: executiveEnglishSquareImage,
     slug: "ingles-para-ejecutivos"
   },
-  {
-    title: "Inglés para Ventas Técnicas",
-    icon: "⚙️",
-    description: "Explica sistemas complejos, especificaciones de productos y soluciones de software con claridad e impacto.",
-    link: "/es/servicios/ingles-para-ventas-tecnicas",
-    backgroundImage: technicalSalesImage,
-    squareImage: technicalSalesSquareImage,
-    slug: "ingles-para-ventas-tecnicas"
-  },
-  {
-    title: "Inglés para Logística",
-    icon: "🚚",
-    description: "Domina el lenguaje de la cadena de suministro, transporte y documentación de comercio internacional.",
-    link: "/es/servicios/ingles-para-logistica",
-    backgroundImage: logisticsImage,
-    squareImage: logisticsSquareImage,
-    slug: "ingles-para-logistica"
-  },
-  {
-    title: "Inglés para Médicos",
-    icon: "⚕️",
-    description: "Comunícate claramente con pacientes, colegas y en conferencias médicas internacionales.",
-    link: "/es/servicios/ingles-para-medicos",
-    backgroundImage: medicalImage,
-    squareImage: medicalSquareImage,
-    slug: "ingles-para-medicos"
-  },
-  {
-    title: "Preparación para Entrevistas",
-    icon: "💬",
-    description: "Asegura tu próximo puesto dominando el storytelling y respondiendo preguntas difíciles con confianza.",
-    link: "/es/servicios/preparacion-para-entrevistas",
-    backgroundImage: interviewPrepImage,
-    squareImage: interviewPrepSquareImage,
-    slug: "preparacion-para-entrevistas"
-  },
-  {
-    title: "Hablar en Público",
-    icon: "🎤",
-    description: "Cautiva a cualquier audiencia, desde reuniones de equipo hasta conferencias magistrales.",
-    link: "/es/servicios/hablar-en-publico",
-    backgroundImage: publicSpeakingImage,
-    squareImage: publicSpeakingSquareImage,
-    slug: "hablar-en-publico"
-  },
+  // 2. Fundadores de Startups
   {
     title: "Inglés para Fundadores de Startups",
     icon: "🚀",
@@ -171,6 +121,7 @@ export const serviciosEs: Service[] = [
     squareImage: startupFoundersSquareImage,
     slug: "ingles-para-fundadores-de-startups"
   },
+  // 3. Ingenieros y Líderes Técnicos
   {
     title: "Inglés para Tecnología",
     icon: "💻",
@@ -179,27 +130,65 @@ export const serviciosEs: Service[] = [
     backgroundImage: techImage,
     squareImage: techSquareImage,
     slug: "ingles-para-tecnologia"
+  },
+  // 4. Logística y Operaciones
+  {
+    title: "Inglés para Logística",
+    icon: "🚚",
+    description: "Domina el lenguaje de la cadena de suministro, transporte y documentación de comercio internacional.",
+    link: "/es/servicios/ingles-para-logistica",
+    backgroundImage: logisticsImage,
+    squareImage: logisticsSquareImage,
+    slug: "ingles-para-logistica"
+  },
+  // 5. Profesionales Médicos y Legales
+  {
+    title: "Inglés para Profesionales",
+    icon: "⚕️",
+    description: "Comunícate claramente con pacientes, clientes, colegas y en conferencias profesionales internacionales.",
+    link: "/es/servicios/ingles-para-profesionales",
+    backgroundImage: medicalImage,
+    squareImage: medicalSquareImage,
+    slug: "ingles-para-profesionales"
+  },
+  // 6. Presentaciones y Entrevistas
+  {
+    title: "Inglés para Situaciones Cruciales",
+    icon: "🎤",
+    description: "Cautiva a cualquier audiencia, domina entrevistas y realiza presentaciones poderosas con confianza.",
+    link: "/es/servicios/ingles-para-presentaciones",
+    backgroundImage: publicSpeakingImage,
+    squareImage: publicSpeakingSquareImage,
+    slug: "ingles-para-presentaciones"
   }
 ] as const;
 
+// Updated professional profiles to match standardized categories
 export const professionalProfiles = [
+  { name: "C-Suite Executives", link: "/en/services/executive-english" },
+  { name: "Directors & VPs", link: "/en/services/executive-english" },
   { name: "Startup Founders", link: "/en/services/startup-founders" },
   { name: "Software Engineers", link: "/en/services/tech-english" }, 
-  { name: "Sales Directors", link: "/en/services/technical-sales-english" },
-  { name: "Medical Professionals", link: "/en/services/medical-english" },
+  { name: "Tech Team Leads", link: "/en/services/tech-english" },
   { name: "Supply Chain Managers", link: "/en/services/logistics-english" },
-  { name: "Product Managers", link: "/en/services/tech-english" },
-  { name: "C-Suite Executives", link: "/en/services/executive-english" },
-  { name: "Logistics Coordinators", link: "/en/services/logistics-english" }
+  { name: "Logistics Coordinators", link: "/en/services/logistics-english" },
+  { name: "Medical Professionals", link: "/en/services/professional-english" },
+  { name: "Legal Professionals", link: "/en/services/professional-english" },
+  { name: "Public Speakers", link: "/en/services/high-stakes-english" },
+  { name: "Job Seekers", link: "/en/services/high-stakes-english" }
 ] as const;
 
+// Updated Spanish professional profiles to match standardized categories
 export const professionalProfilesEs = [
+  { name: "Ejecutivos C-Suite", link: "/es/servicios/ingles-para-ejecutivos" },
+  { name: "Directores y VPs", link: "/es/servicios/ingles-para-ejecutivos" },
   { name: "Fundadores de Startups", link: "/es/servicios/ingles-para-fundadores-de-startups" },
   { name: "Ingenieros de Software", link: "/es/servicios/ingles-para-tecnologia" },
-  { name: "Directores de Ventas", link: "/es/servicios/ingles-para-ventas-tecnicas" }, 
-  { name: "Profesionales Médicos", link: "/es/servicios/ingles-para-medicos" },
+  { name: "Líderes de Equipos Técnicos", link: "/es/servicios/ingles-para-tecnologia" },
   { name: "Gerentes de Cadena de Suministro", link: "/es/servicios/ingles-para-logistica" },
-  { name: "Gerentes de Producto", link: "/es/servicios/ingles-para-tecnologia" },
-  { name: "Ejecutivos C-Suite", link: "/es/servicios/ingles-para-ejecutivos" },
-  { name: "Coordinadores de Logística", link: "/es/servicios/ingles-para-logistica" }
+  { name: "Coordinadores de Logística", link: "/es/servicios/ingles-para-logistica" },
+  { name: "Profesionales Médicos", link: "/es/servicios/ingles-para-profesionales" },
+  { name: "Profesionales Legales", link: "/es/servicios/ingles-para-profesionales" },
+  { name: "Oradores Públicos", link: "/es/servicios/ingles-para-presentaciones" },
+  { name: "Candidatos a Empleos", link: "/es/servicios/ingles-para-presentaciones" }
 ] as const;
