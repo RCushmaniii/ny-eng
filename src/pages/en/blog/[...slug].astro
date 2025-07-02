@@ -53,10 +53,14 @@ const seoDescription = post.data.seo?.description || post.data.excerpt;
 let seoImage = post.data.seo?.image;
 if (seoImage && !seoImage.startsWith('http')) {
   const siteUrl = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
-  seoImage = new URL(seoImage.startsWith('/') ? seoImage : `/${seoImage}`, siteUrl).toString();
+  // Fix potential duplicate www
+  const cleanUrl = siteUrl.replace(/https?:\/\/www\.www\./, 'https://www.');
+  seoImage = new URL(seoImage.startsWith('/') ? seoImage : `/${seoImage}`, cleanUrl).toString();
 } else if (!seoImage && post.data.featuredImage) {
   const siteUrl = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
-  seoImage = new URL(post.data.featuredImage.src, siteUrl).toString();
+  // Fix potential duplicate www
+  const cleanUrl = siteUrl.replace(/https?:\/\/www\.www\./, 'https://www.');
+  seoImage = new URL(post.data.featuredImage.src, cleanUrl).toString();
 }
 
 const origin = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
@@ -89,7 +93,7 @@ const translationSlugEs = spanishTranslationSlug ? `/es/blog/${spanishTranslatio
     </div>
     <article class="site-container--small mx-auto px-4 prose relative z-10 pb-base">
       <div class="mt-42 mb-12 pt-32 text-center relative z-10">
-        <h1>{post.data.title}</h1>
+        <h1 class="text-3xl sm:text-4xl font-bold">{post.data.title}</h1>
         <div class="flex items-center justify-center gap-4 text-gray-600">
           <Date date={post.data.publishDate} />
           {post.data.categories && post.data.categories.map(cat => (

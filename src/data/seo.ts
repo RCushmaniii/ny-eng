@@ -9,6 +9,11 @@ export const defaultSEO = {
 };
 
 export const generateOGImage = (image: string) => {
+  // Use the default siteUrl to ensure consistency
   const siteUrl = import.meta.env.SITE || 'https://www.nyenglishteacher.com';
-  return new URL(image.startsWith('/') ? image : `/${image}`, siteUrl).toString();
+  
+  // Make sure we're using a clean URL without duplicate www
+  const cleanUrl = siteUrl.replace(/https?:\/\/www\.www\./, 'https://www.');
+  
+  return new URL(image.startsWith('/') ? image : `/${image}`, cleanUrl).toString();
 };

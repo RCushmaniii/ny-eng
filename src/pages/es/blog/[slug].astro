@@ -55,8 +55,38 @@ const jsonLd = {
   "headline": post.data.title,
   "description": post.data.excerpt,
   "image": post.data.featuredImage?.src ? new URL(post.data.featuredImage.src, canonicalDomain).toString() : undefined,
-  "datePublished": new Date(post.data.publishDate).toISOString(),
-  "dateModified": new Date(post.data.publishDate).toISOString(),
+  "datePublished": (() => {
+    // Create date consistently with our Date component
+    const dateStr = String(post.data.publishDate);
+    if (dateStr && /^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+      const parts = dateStr.split('-');
+      const year = parseInt(parts[0], 10);
+      const month = parseInt(parts[1], 10);
+      const day = parseInt(parts[2], 10);
+      const jsDate = new globalThis.Date();
+      jsDate.setFullYear(year, month - 1, day);
+      jsDate.setHours(12, 0, 0, 0); // Set to noon to avoid day shifting
+      return jsDate.toISOString();
+    } else {
+      return new globalThis.Date(dateStr).toISOString();
+    }
+  })(),
+  "dateModified": (() => {
+    // Create date consistently with our Date component
+    const dateStr = String(post.data.publishDate);
+    if (dateStr && /^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+      const parts = dateStr.split('-');
+      const year = parseInt(parts[0], 10);
+      const month = parseInt(parts[1], 10);
+      const day = parseInt(parts[2], 10);
+      const jsDate = new globalThis.Date();
+      jsDate.setFullYear(year, month - 1, day);
+      jsDate.setHours(12, 0, 0, 0); // Set to noon to avoid day shifting
+      return jsDate.toISOString();
+    } else {
+      return new globalThis.Date(dateStr).toISOString();
+    }
+  })(),
   "author": {
     "@type": "Person",
     "name": "New York English",

@@ -27,13 +27,20 @@ const {
 // Ensure we always use the www version as canonical
 const canonicalDomain = defaultSEO.siteUrl.replace(/^(https?:\/\/)/, '$1www.');
 
-// Ensure OG image URLs are always absolute URLs
+// Ensure OG image URLs are always absolute URLs without duplicate www
 const ensureAbsoluteUrl = (path: string) => {
-  if (path.startsWith('http')) return path;
+  if (path.startsWith('http')) {
+    // If it already has a URL, fix any duplicate www if present
+    return path.replace(/https?:\/\/www\.www\./i, 'https://www.');
+  }
   
   // Handle both paths with and without leading slash
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-  return new URL(normalizedPath, canonicalDomain).toString();
+  
+  // Ensure the canonicalDomain doesn't have duplicate www
+  const cleanDomain = canonicalDomain.replace(/https?:\/\/www\.www\./i, 'https://www.');
+  
+  return new URL(normalizedPath, cleanDomain).toString();
 };
 
 const fullImage = ensureAbsoluteUrl(image);

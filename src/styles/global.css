@@ -203,6 +203,20 @@ section[class*="bg-background-dark"] li {
         font-size: var(--text-base);
         font-weight: 400;
     }
+    
+    /* Fix for h1 elements inside sectioning elements to prevent browser default size changes */
+    h1 {
+        font-size: var(--text-h1);
+        line-height: 1.25;
+        font-weight: bold;
+    }
+    
+    /* Explicit sizing for h1 in sectioning elements to prevent Lighthouse warnings */
+    section h1, article h1, aside h1, nav h1 {
+        font-size: var(--text-h1);
+        line-height: 1.25;
+        font-weight: bold;
+    }
 
     [data-theme='zeus'] {
         --color-primary: #3557c1;

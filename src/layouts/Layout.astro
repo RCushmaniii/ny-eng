@@ -95,7 +95,10 @@ const pageImageForSeo = image
 // const linkedInImagePath = pageImageForSeo;
 
 // Ensure we always use the www version as canonical
-const canonicalDomain = siteConfig.siteUrl.replace(/^(https?:\/\/)/, '$1www.');
+// Check if URL already has www. before adding it
+const canonicalDomain = siteConfig.siteUrl.includes('://www.') 
+  ? siteConfig.siteUrl 
+  : siteConfig.siteUrl.replace(/^(https?:\/\/)/, '$1www.');
 
 // Build the canonical URL with the www domain
 const canonicalPath = canonicalUrl || Astro.url.pathname;
