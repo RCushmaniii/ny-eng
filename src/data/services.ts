@@ -50,7 +50,7 @@ export const services: Service[] = [
   {
     title: "English for Startup Founders",
     icon: "🚀",
-    description: "Perfect your pitch for VCs, articulate your vision, and secure the funding your startup deserves.",
+    description: "Win over VCs, pitch your vision, and secure the funding your startup deserves—in English.",
     link: "/en/services/startup-founders",
     backgroundImage: startupFoundersImage,
     squareImage: startupFoundersSquareImage,
@@ -168,7 +168,7 @@ export const professionalProfiles = [
   { name: "C-Suite Executives", link: "/en/services/executive-english" },
   { name: "Directors & VPs", link: "/en/services/executive-english" },
   { name: "Startup Founders", link: "/en/services/startup-founders" },
-  { name: "Software Engineers", link: "/en/services/tech-english" }, 
+  { name: "Software Engineers", link: "/en/services/tech-english" },
   { name: "Tech Team Leads", link: "/en/services/tech-english" },
   { name: "Supply Chain Managers", link: "/en/services/logistics-english" },
   { name: "Logistics Coordinators", link: "/en/services/logistics-english" },

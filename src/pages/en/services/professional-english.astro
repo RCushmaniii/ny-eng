@@ -1,0 +1,95 @@
+---
+import Layout from "@layouts/Layout.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import Challenge from "@components/sections/Challenge.astro";
+import MethodologySection from "@components/sections/MethodologySection.astro";
+import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+
+// Import services data
+import { services } from "@data/services";
+
+// Get the professional service data
+const professionalService = services.find(s => s.slug === 'professional-english');
+
+// Import methodology content
+import { coreMethodology } from "@data/methodology";
+
+// Import testimonials and select an appropriate testimonial
+import { testimonials } from "@data/testimonials/en";
+const featuredTestimonialSlug = 'dra-erika-itzel-medical-doctor'; // Use the same medical testimonial since it's related
+const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
+
+// SEO metadata
+const title = "Professional English Coaching | Medical & Legal | NY English Teacher";
+const seoDescription = "Communicate clearly with patients, clients, colleagues, and at industry conferences. Master specialized terminology for medical and legal professionals.";
+
+// Hero content
+const heroContent = {
+  title: "English for Professional Fields",
+  description: "Master specialized terminology and communicate with clarity in every client interaction and professional setting.",
+  backgroundImage: professionalService?.backgroundImage,
+  overlayOpacity: 0.7
+};
+
+// Challenge section content
+const challengeContent = {
+  headline: "Are You Facing These Challenges?",
+  painPoints: [
+    "You feel less confident explaining complex topics to English-speaking clients or patients.",
+    "Specialized terminology and pronunciation create barriers during professional interactions.",
+    "You worry about miscommunication affecting client relationships and trust."
+  ],
+  icon: "🤔",
+  image: professionalService?.squareImage
+};
+
+// CTA content
+const ctaContent = {
+  eyebrow: "Take the Final Step",
+  title: "Transform Your Professional Communication",
+  description: "A free, no-obligation strategy session is the best way to understand how targeted coaching can improve client interactions and boost your confidence.",
+  buttonText: "Book My Free Strategy Session",
+  buttonLink: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+  whatToExpectTitle: "In Your Free Session, We Will:",
+  whatToExpectList: [
+    "Assess your current professional English communication skills",
+    "Identify specific areas for improvement in client interactions",
+    "Create a personalized learning plan for your professional field"
+  ]
+};
+
+// Translation slug for Spanish version
+const translationSlug = "ingles-para-profesionales";
+---
+
+<Layout
+  title={title}
+  description={seoDescription}
+  lang="en"
+  translationSlugEs={`/es/servicios/${translationSlug}`}
+  image={professionalService?.backgroundImage || "/images/logos/new-york-english-og-wide.jpg"}
+  footerCta={{
+  title: "",
+  description: "",
+  button: { text: "", link: "#" },
+  hideCta: true
+}}
+>
+  <!-- Hero Section -->
+  <InnerHero content={heroContent} />
+  
+  <!-- Challenge Section -->
+  <Challenge content={challengeContent} />
+  
+  <!-- Methodology Section -->
+  <MethodologySection content={coreMethodology} />
+  
+  <!-- Featured Testimonial -->
+  {featuredTestimonial && (
+    <FeaturedTestimonial testimonial={featuredTestimonial} />
+  )}
+  
+  <!-- Final CTA -->
+  <CtaSection content={ctaContent} />
+</Layout>

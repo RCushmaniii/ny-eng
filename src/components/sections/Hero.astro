@@ -38,7 +38,8 @@ const backgroundImageType = content.backgroundImage?.src ? getImageType(content.
 const backgroundImageMobileType = content.backgroundImageMobile?.src ? getImageType(content.backgroundImageMobile.src) : backgroundImageType;
 ---
 
-<section class="header-offset relative">
+<!-- Titan Core Theme Hero - using the recommended approach with min-height -->
+<section class="header-offset relative w-full min-h-[60vh] overflow-hidden">
   {content.backgroundImage && (
     <picture class="absolute inset-0 w-full h-full overflow-hidden">
       {content.backgroundImageMobile && (
@@ -64,7 +65,7 @@ const backgroundImageMobileType = content.backgroundImageMobile?.src ? getImageT
         loading="eager"
         decoding="async"
         fetchpriority="high"
-        class="w-full h-full object-cover"
+        class="w-full h-full object-cover object-center" 
       />
     </picture>
   )}
