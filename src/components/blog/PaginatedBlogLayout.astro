@@ -21,6 +21,7 @@ interface Props {
     heroImageAlt?: string;
     translationSlugEn?: string;
     translationSlugEs?: string;
+    hasMultiplePages?: boolean; // Added to explicitly control pagination visibility
 }
 
 const { 
@@ -34,17 +35,23 @@ const {
     heroImage,
     heroImageAlt,
     translationSlugEn,
-    translationSlugEs
+    translationSlugEs,
+    hasMultiplePages = false // Default to false if not provided
 } = Astro.props;
 
     // Generate pagination URLs
-const cleanBaseUrl = baseUrl ? baseUrl.replace(/\/\/+/g, '/').replace(/\/$/, '') : '';
-const nextPage = currentPage < totalPages ? `${cleanBaseUrl}/${currentPage + 1}` : null;
-const prevPage = currentPage > 1 
-? currentPage - 1 === 1 
-? cleanBaseUrl
-: `${cleanBaseUrl}/${currentPage - 1}`
-: null;
+const cleanBaseUrl = baseUrl ? baseUrl.replace(/\/\/+/g, '\/').replace(/\/$/, '') : '';
+
+// Only generate pagination if explicitly told there are multiple pages AND we have posts
+const shouldShowPagination = hasMultiplePages && totalPages > 1 && paginatedPosts.length > 0;
+
+// Conditionally create pagination URLs based on whether we should show pagination
+const nextPage = shouldShowPagination && currentPage < totalPages ? `${cleanBaseUrl}/${currentPage + 1}` : null;
+const prevPage = shouldShowPagination && currentPage > 1 
+  ? currentPage - 1 === 1 
+    ? cleanBaseUrl
+    : `${cleanBaseUrl}/${currentPage - 1}`
+  : null;
 
 const heroContent = {
     title: title,
@@ -55,8 +62,8 @@ const heroContent = {
 }
 ---
 <Layout title={seoTitle} description={seoDescription} 
-    translationSlugEn={translationSlugEn ? translationSlugEn.replace(/^\/en\//, '').replace(/\/\/+/g, '/') : undefined} 
-    translationSlugEs={translationSlugEs ? translationSlugEs.replace(/^\/es\//, '').replace(/\/\/+/g, '/') : undefined}
+    translationSlugEn={translationSlugEn} 
+    translationSlugEs={translationSlugEs}
     image="/images/logos/new-york-english-og-wide.jpg"
     whatsappImage="/images/logos/new-york-english-og.jpg"
     linkedinImage="/images/logos/new-york-english-og-wide.jpg">
@@ -64,7 +71,7 @@ const heroContent = {
     <InnerHero content={heroContent}/>
     <BlogList posts={paginatedPosts} currentCategory={currentCategory} />
 
-    {totalPages > 1 && (
+    {shouldShowPagination && (
         <nav class="pagination-nav" aria-label="Blog pagination" data-aos="fade-in">
             <div class="container mx-auto px-4 py-12">
                 <div class="flex items-center justify-center gap-6">

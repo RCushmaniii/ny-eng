@@ -5,9 +5,9 @@ import PaginatedBlogLayout from '@components/blog/PaginatedBlogLayout.astro';
 import blogHero from '@assets/images/blog-hero.jpg';
 
 export async function getStaticPaths() {
-  // Get all blog posts and filter to English only and published only
+  // Get all blog posts and filter to Spanish only and published only
   const allPosts = await getCollection('blog');
-  const filteredPosts = allPosts.filter(post => post.id.startsWith('en/') && post.data.publish === true);
+  const filteredPosts = allPosts.filter(post => post.id.startsWith('es/') && post.data.publish === true);
 
   // Sort posts by date (newest first)
   const sortedPosts = filteredPosts.sort((a, b) => 
@@ -52,11 +52,11 @@ const { page, totalPages, posts, hasMultiplePages } = Astro.props;
     posts={posts}
     currentPage={page}
     totalPages={totalPages}
-    baseUrl="/en/blog"
+    baseUrl="/es/blog"
     title="Blog"
-    subtitle="Practical tips and real-world insights to master Business English."
+    subtitle="Consejos prácticos y experiencias del mundo real para dominar el inglés de negocios."
     heroImage={blogHero}
-    heroImageAlt="Blog hero background"
-    translationSlugEs="/es/blog"
+    heroImageAlt="Imagen de héroe del blog"
+    translationSlugEn="/en/blog"
     hasMultiplePages={hasMultiplePages}
 />

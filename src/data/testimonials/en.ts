@@ -63,8 +63,8 @@ export const testimonials: Testimonial[] = [
     slug: "hugo-blum-100-ladrillos",
     headline: "Pitching with Confidence: A CEO's Journey to English Mastery",
     avatarSize: "md",
-    link: "/en/services/executive-english",
-    linkText: "👉 English Coaching for Executives",
+    link: "/en/services/startup-founders",
+    linkText: "👉 English for Startup Founders",
     status: "published"
   },
   {

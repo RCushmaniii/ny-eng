@@ -75,12 +75,12 @@ export const testimonials: Testimonial[] = [
     company: "Driscoll's",
     avatar: andresTestimonial,
     stars: 5,
-    industries: ["executive-english", "tech-english"],
+    industries: ["executive-english"],
     slug: "andres-guzman-driscolls",
     headline: "Dominando el inglés técnico para presentaciones de alto nivel",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-tecnologia",
-    linkText: "👉 Coaching de Inglés para Tecnología",
+    link: "/es/servicios/ingles-para-ejecutivos",
+    linkText: "👉 Coaching de Inglés para Ejecutivos",
     status: "published"
   },
   {
@@ -95,8 +95,8 @@ export const testimonials: Testimonial[] = [
     slug: "andrea-oliveira-ceva-logistics",
     headline: "Superando la barrera del idioma en ventas técnicas",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-ventas-tecnicas",
-    linkText: "👉 Coaching de Inglés para Ventas Técnicas",
+    link: "/es/servicios/ingles-para-presentaciones",
+    linkText: "👉 Coaching de Inglés para Presentaciones",
     status: "published"
   },
   {
@@ -112,8 +112,8 @@ export const testimonials: Testimonial[] = [
     slug: "karla-bernal-sanmina-corporation",
     headline: "Superando el miedo a hablar en público en inglés",
     avatarSize: "md",
-    link: "/es/servicios/hablar-en-publico",
-    linkText: "👉 Coaching de Inglés para Hablar en Público",
+    link: "/es/servicios/ingles-para-logistica",
+    linkText: "👉 Coaching de Inglés para Logística",
     status: "published"
   },
   {
@@ -128,8 +128,8 @@ export const testimonials: Testimonial[] = [
     slug: "dra-erika-itzel-medico",
     headline: "Dominando las presentaciones técnicas en inglés",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-tecnologia",
-    linkText: "👉 Coaching de Inglés para Tecnología",
+    link: "/es/servicios/ingles-para-profesionales",
+    linkText: "👉 Coaching de Inglés para Profesionales",
     status: "published"
   },
   {
@@ -144,8 +144,8 @@ export const testimonials: Testimonial[] = [
     slug: "emmanuel-ibarra-castillo-ramos-ripoll-schuster",
     headline: "Mejorando la comunicación con equipos globales",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-logistica",
-    linkText: "👉 Coaching de Inglés para Logística",
+    link: "/es/servicios/ingles-para-profesionales",
+    linkText: "👉 Coaching de Inglés para Profesionales",
     status: "draft"
   },
   {
@@ -160,15 +160,15 @@ export const testimonials: Testimonial[] = [
     slug: "alberto-escobar-terramar-brands",
     headline: "Comunicación efectiva para líderes técnicos",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-tecnologia",
-    linkText: "👉 Coaching de Inglés para Tecnología",
+    link: "/es/servicios/ingles-para-ejecutivos",
+    linkText: "👉 Coaching de Inglés para Ejecutivos",
     status: "published"
   },
   {
     content: "Me complace recomendar a Robert como un profesor de idiomas y coach en comunicación ejecutiva excepcional. Bajo su guía, pasé de sentirme inseguro en conversaciones de alto nivel a hablar con seguridad en reuniones de alta dirección y presentar actualizaciones complejas con claridad y persuasión.\n\nLa profunda experiencia corporativa de Robert hizo que cada sesión fuera mucho más allá de la gramática y la pronunciación: simuló escenarios reales de sala de juntas, anticipó preguntas difíciles y me entrenó para responder de forma concisa y con impacto. Gracias a su coaching, mi fluidez, pronunciación y presencia general han mejorado notablemente, y ahora enfrento conversaciones críticas con verdadera confianza.\n\nRobert será un recurso excepcional para cualquier persona que busque llevar su comunicación profesional al siguiente nivel.",
-  
+
     shortContent: "Me complace recomendar a Robert como un profesor de idiomas y coach en comunicación ejecutiva excepcional. Bajo su guía, pasé de sentirme inseguro en conversaciones de alto nivel a hablar con seguridad en reuniones de alta dirección y presentar actualizaciones complejas con claridad y persuasión...",
-  
+
     author: "Hugo Lopez",
     position: "Gerente Senior de Programas",
     company: "Continental",
@@ -182,7 +182,7 @@ export const testimonials: Testimonial[] = [
     linkText: "👉 Coaching de Inglés para Hablar en Público",
     status: "published"
   },
-  
+
   {
     content: "Trabajar con Robert me ha ayudado a mejorar cómo me comunico en situaciones de ventas técnicas. A menudo explico sistemas de automatización, programación de PLC y especificaciones de productos a clientes internacionales, y quería sonar más fluido y seguro.\n\nCon el coaching de Robert, me he vuelto más natural en las conversaciones, mejor estructurando mis explicaciones y más persuasivo en demostraciones y seguimientos. Ha marcado una clara diferencia en cómo interactúo con los clientes y represento a mi empresa en inglés.",
     shortContent: "Trabajar con Robert me ha ayudado a mejorar cómo me comunico en situaciones de ventas técnicas. A menudo explico sistemas de automatización, programación de PLC y especificaciones de productos a clientes internacionales...",
@@ -195,8 +195,8 @@ export const testimonials: Testimonial[] = [
     slug: "ricardo-mendoza-mountz-torque",
     headline: "Comunicación médica precisa en entornos internacionales",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-medicos",
-    linkText: "👉 Coaching de Inglés para Médicos",
+    link: "/es/servicios/ingles-para-tecnologia",
+    linkText: "👉 Coaching de Inglés para Tecnología",
     status: "draft"
   },
   {
@@ -243,8 +243,8 @@ export const testimonials: Testimonial[] = [
     slug: "jonathan-emmaus-infosys",
     headline: "Dominando las entrevistas técnicas en inglés",
     avatarSize: "md",
-    link: "/es/servicios/preparacion-para-entrevistas",
-    linkText: "👉 Coaching para Preparación de Entrevistas",
+    link: "/es/servicios/ingles-para-tecnologia",
+    linkText: "👉 Coaching de Inglés para Tecnología",
     status: "published"
   },
   {

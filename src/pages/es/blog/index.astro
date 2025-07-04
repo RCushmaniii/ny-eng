@@ -1,37 +1,46 @@
 ---
-import { getCollection } from 'astro:content';
-import { blogSetting } from '../../../data/config';
-import PaginatedBlogLayout from '../../../components/blog/PaginatedBlogLayout.astro';
-import blogHero from '../../../content/blog/images/blog-hero.jpg';
+import { getCollection } from "astro:content";
+import { blogSetting } from "../../../data/config";
+import PaginatedBlogLayout from "../../../components/blog/PaginatedBlogLayout.astro";
+import blogHero from "../../../content/blog/images/blog-hero.jpg";
 export const prerender = true;
 
 // Get current page from URL, default to 1
-const currentPage = parseInt(Astro.url.searchParams.get('page') || '1');
+const currentPage = parseInt(Astro.url.searchParams.get("page") || "1");
 
 // Get all Spanish posts only
-const allPosts = await getCollection('blog');
-const filteredPosts = allPosts.filter(post => post.id.startsWith('es/') && post.data.publish === true);
+const allPosts = await getCollection("blog");
+const filteredPosts = allPosts.filter(
+  (post) => post.id.startsWith("es/") && post.data.publish === true,
+);
 
 // Sort posts by date
-const sortedPosts = filteredPosts.sort((a, b) => 
-  b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+const sortedPosts = filteredPosts.sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
 
 // Calculate pagination
 const totalPosts = sortedPosts.length;
-const totalPages = Math.ceil(totalPosts / blogSetting.postsPerPage);
+// Only show pagination if we have MORE posts than can fit on a single page
+// If we have exactly postsPerPage or fewer, don't show pagination at all
+const hasMultiplePages = totalPosts > blogSetting.postsPerPage;
+const totalPages = hasMultiplePages
+  ? Math.ceil(totalPosts / blogSetting.postsPerPage)
+  : 1;
 const start = (currentPage - 1) * blogSetting.postsPerPage;
 const end = start + blogSetting.postsPerPage;
 const paginatedPosts = sortedPosts.slice(start, end);
 ---
 
-<PaginatedBlogLayout 
-    posts={paginatedPosts}
-    currentPage={currentPage}
-    totalPages={totalPages}
-    baseUrl="/es/blog"
-    title="Blog en Español"
-    subtitle="Consejos prácticos y experiencias reales para dominar el inglés de negocios."
-    heroImage={blogHero}
-    heroImageAlt="Blog hero background"
-    translationSlugEn="/en/blog" />
+<PaginatedBlogLayout
+  posts={paginatedPosts}
+  currentPage={currentPage}
+  totalPages={totalPages}
+  baseUrl="/es/blog"
+  title="Blog"
+  subtitle="Tips prácticos y experiencias reales para dominar el inglés de negocios."
+  heroImage={blogHero}
+  heroImageAlt="Blog hero background"
+  translationSlugEn="/en/blog"
+  hasMultiplePages={hasMultiplePages}
+/>

@@ -16,7 +16,10 @@ const sortedPosts = filteredPosts.sort((a, b) =>
 );
 
 const totalPosts = sortedPosts.length;
-const totalPages = Math.ceil(totalPosts / blogSetting.postsPerPage);
+// Only show pagination if we have MORE posts than can fit on a single page
+// If we have exactly postsPerPage or fewer, don't show pagination at all
+const hasMultiplePages = totalPosts > blogSetting.postsPerPage;
+const totalPages = hasMultiplePages ? Math.ceil(totalPosts / blogSetting.postsPerPage) : 1;
 const start = (currentPage - 1) * blogSetting.postsPerPage;
 const end = start + blogSetting.postsPerPage;
 const paginatedPosts = sortedPosts.slice(start, end);
@@ -32,4 +35,5 @@ const paginatedPosts = sortedPosts.slice(start, end);
     heroImage={blogHero}
     heroImageAlt="Blog hero background"
     translationSlugEs="/es/blog"
+    hasMultiplePages={hasMultiplePages}
 />

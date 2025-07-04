@@ -7,10 +7,10 @@ import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro"
 import CtaSection from "@components/sections/CtaSection.astro";
 
 // Import services data
-import { services } from "@data/services";
+import { services, serviciosEs } from "@data/services";
 
 // Get the public speaking service data
-const publicSpeakingService = services.find(s => s.slug === 'public-speaking-english');
+const publicSpeakingService = serviciosEs.find(s => s.slug === 'ingles-para-presentaciones');
 
 // Import methodology content
 import type { Methodology } from "@data/methodology";
