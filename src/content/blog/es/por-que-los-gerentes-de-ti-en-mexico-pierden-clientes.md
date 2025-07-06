@@ -3,9 +3,7 @@ title: "Por Qué los Gerentes de TI en México Pierden Millones (Pista: No Son S
 excerpt: "México tiene desarrolladores de clase mundial y gerentes de TI visionarios. Entonces, ¿por qué siguen perdiendo contratos con EE.UU.? Descubre cómo un inglés de negocios deficiente está costando millones."
 publishDate: "2025-07-01"
 categories: [
-  "Business English",
-  "Liderazgo Tecnológico",
-  "Habilidades de Comunicación"
+  "Inglés para Negocios"
 ]
 featuredImage: "./images/managers-making-millions.jpg"
 imageAlt: "Equipo internacional confundido por mala comunicación"

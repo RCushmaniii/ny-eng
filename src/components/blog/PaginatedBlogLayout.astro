@@ -17,6 +17,7 @@ interface Props {
     title: string;
     subtitle: string;
     currentCategory?: string;
+    currentCategorySlug?: string; // Category slug for reliable button highlighting
     heroImage?: any; // processed Astro image object
     heroImageAlt?: string;
     translationSlugEn?: string;
@@ -32,6 +33,7 @@ const {
     title,
     subtitle,
     currentCategory,
+    currentCategorySlug, // Extract the slug prop
     heroImage,
     heroImageAlt,
     translationSlugEn,
@@ -69,7 +71,7 @@ const heroContent = {
     linkedinImage="/images/logos/new-york-english-og-wide.jpg">
     <main>
     <InnerHero content={heroContent}/>
-    <BlogList posts={paginatedPosts} currentCategory={currentCategory} />
+    <BlogList posts={paginatedPosts} currentCategory={currentCategory} currentCategorySlug={currentCategorySlug} />
 
     {shouldShowPagination && (
         <nav class="pagination-nav" aria-label="Blog pagination" data-aos="fade-in">

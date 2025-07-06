@@ -23,10 +23,18 @@ const { title, excerpt, featuredImage, imageAlt, publishDate, categories: postCa
 // Remove language prefix from slug if it exists (e.g., "en/small-talk" becomes "small-talk")
 const cleanSlug = slug.replace(/^(en|es)\//, '');
 
-// Validate categories against the valid categories
-const validCategories = postCategories.filter((categoryName: string) => 
-  categories.some(category => category.name === categoryName)
-);
+// Validate categories against the valid categories based on language
+const validCategories = postCategories.filter((categoryName: string) => {
+  if (lang === 'es') {
+    // For Spanish pages, check against Spanish category names
+    return categories.some(category => 
+      (category.name_es && category.name_es === categoryName) || category.name === categoryName
+    );
+  } else {
+    // For English pages, check against English category names
+    return categories.some(category => category.name === categoryName);
+  }
+});
 
 ---
 
@@ -67,7 +75,7 @@ const validCategories = postCategories.filter((categoryName: string) =>
     <div class="absolute bottom-4 left-4 flex flex-wrap">
       {validCategories.map(categoryName => (
         <div onclick="event.stopPropagation()">
-          <HashtagCategory category={categoryName} />
+          <HashtagCategory category={categoryName} lang={lang} />
         </div>
       ))}
     </div>

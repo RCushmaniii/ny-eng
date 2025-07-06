@@ -3,8 +3,7 @@ title: "5 formas prácticas de aumentar la confianza en tu inglés de negocios h
 excerpt: "¿Te cuesta sonar seguro en inglés? Estos 5 consejos te ayudarán a hablar con claridad y liderar con impacto en reuniones y entrevistas."
 publishDate: "2025-05-01"
 categories: [
-  'Business English',
-  'Career Growth',
+  'Inglés para Negocios'
 ]
 featuredImage: "./images/confidently-speaking.jpg"
 imageAlt: "Sesión de coaching de inglés de negocios"

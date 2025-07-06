@@ -1,6 +1,7 @@
 ---
 import { normalizePath } from "@utils/url";
-import { categories } from '../../data/categories';
+import { categories, getCategoryBySlug } from '../../data/categories';
+import { serviceCategories } from '@data/service-categories';
 
 interface Props {
   category: string;
@@ -9,17 +10,57 @@ interface Props {
 
 const { category, lang = 'en' } = Astro.props;
 
-// Find the category slug from the categories data
-const categoryData = categories.find(cat => cat.name === category);
-const slug = categoryData?.slug || category.toLowerCase().replace(/\s+/g, '-');
+// Clean the category name to handle any format inconsistencies
+const cleanCategoryName = category.trim();
+
+// 1. First try to find by exact name match
+let categoryData = categories.find(cat => cat.name === cleanCategoryName);
+
+// 2. If not found, try case-insensitive match
+if (!categoryData) {
+  categoryData = categories.find(cat => 
+    cat.name.toLowerCase() === cleanCategoryName.toLowerCase());
+}
+
+// 3. If still not found, check if it matches a service category
+let slug = '';
+if (categoryData) {
+  slug = categoryData.slug;
+} else {
+  // Try to map to service categories
+  const serviceCategory = serviceCategories.find(cat => 
+    cat.label === cleanCategoryName || 
+    cat.esLabel === cleanCategoryName ||
+    cat.slug === cleanCategoryName ||
+    cat.esSlug === cleanCategoryName
+  );
+  
+  if (serviceCategory) {
+    // Use the appropriate slug based on language
+    slug = lang === 'es' ? serviceCategory.esSlug : serviceCategory.slug;
+  } else {
+    // Last resort: create a slug from the name
+    slug = cleanCategoryName.toLowerCase().replace(/\s+/g, '-');
+  }
+}
 
 // Build the category URL based on language
 const categoryUrl = `/${lang}/category/${slug}`;
 
 // Get the display name based on language
-let displayName = category;
-if (lang === 'es' && categoryData?.name_es) {
-  displayName = categoryData.name_es;
+let displayName = cleanCategoryName;
+if (lang === 'es') {
+  // Try to find Spanish name from category data
+  if (categoryData?.name_es) {
+    displayName = categoryData.name_es;
+  } else {
+    // Try to find in service categories
+    const serviceCategory = serviceCategories.find(cat => 
+      cat.label === cleanCategoryName || cat.slug === slug);
+    if (serviceCategory) {
+      displayName = serviceCategory.esLabel;
+    }
+  }
 }
 ---
 

@@ -3,8 +3,7 @@ title: "4 Secrets Executives Use to Master Impromptu Speaking in English"
 excerpt: "Caught off-guard by spontaneous speaking situations? Learn four proven strategies executives use to communicate clearly and confidently without preparation."
 publishDate: "2025-06-04"
 categories: [
-  'Business English',
-  'Executive Coaching',
+  'High-Impact Communication'
 ]
 featuredImage: "./images/impromptu-speaking.jpg"
 imageAlt: "Executive confidently speaking during a spontaneous discussion"

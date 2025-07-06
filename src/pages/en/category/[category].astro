@@ -1,14 +1,31 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import PaginatedBlogLayout from '@components/blog/PaginatedBlogLayout.astro';
 import { categories, type Category } from '@data/categories';
 import { siteConfig, blogSetting } from '@data/config';
+import { serviceCategories } from '@data/service-categories';
 
 export async function getStaticPaths() {
-  return categories.map(category => ({
-    params: { category: category.slug }, // Ensure this matches the filename [category].astro
+  // Generate paths for regular categories
+  const categoryPaths = categories.map(category => ({
+    params: { category: category.slug },
     props: { categoryData: category },
   }));
+  
+  // Also generate paths for service categories that might be referenced in blog posts
+  // This ensures links from CategoryPill won't lead to 404s
+  const servicePaths = serviceCategories.map(service => ({
+    params: { category: service.slug },
+    props: { 
+      categoryData: {
+        name: service.label,
+        slug: service.slug,
+        description: `Blog posts related to ${service.label}`,
+      } as Category 
+    },
+  }));
+  
+  return [...categoryPaths, ...servicePaths];
 }
 
 interface Props {
@@ -20,12 +37,68 @@ const { categoryData } = Astro.props;
 // Fetch all English blog posts
 const allEnglishPosts = await getCollection('blog', ({ id }) => id.startsWith('en/'));
 
-// Filter posts for the current category and ensure they are published
-const filteredPosts = allEnglishPosts.filter(post => 
-  post.data.categories?.includes(categoryData.name) && post.data.publish !== false
-).sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());
+// FINAL FIX: Ultra-reliable matching for the category pages
+const filteredPosts = allEnglishPosts.filter(post => {
+  // Skip posts that are unpublished or have no categories
+  if (!post.data.categories || post.data.publish === false) {
+    return false;
+  }
 
-const pageTitle = `${categoryData.name} | Blog`;
+  // Get normalized versions of post categories
+  const normalizedPostCategories = post.data.categories.map(cat => {
+    if (typeof cat !== 'string') return '';
+    return cat.trim().toLowerCase();
+  });
+  
+  // Get normalized version of current category name
+  const normalizedCategoryName = categoryData.name.trim().toLowerCase();
+  
+  // First approach: Direct check if post has the normalized category name
+  if (normalizedPostCategories.includes(normalizedCategoryName)) {
+    return true;
+  }
+  
+  // Second approach: Check if any category slug matches
+  // This uses the slug from the URL to find matching posts
+  for (const postCatName of post.data.categories) {
+    // Find the category object that matches this post category name
+    const matchingCategory = categories.find(cat => {
+      if (typeof postCatName !== 'string') return false;
+      
+      const normalizedPostCat = postCatName.trim().toLowerCase();
+      const normalizedCatName = cat.name.trim().toLowerCase();
+      
+      return normalizedPostCat === normalizedCatName;
+    });
+    
+    // If we found a matching category and its slug matches our URL slug,
+    // then this post belongs in this category page
+    if (matchingCategory && matchingCategory.slug === categoryData.slug) {
+      return true;
+    }
+  }
+  
+  // For Executive English specifically, do an additional check
+  if (categoryData.slug === 'executive-english') {
+    return normalizedPostCategories.some(cat => 
+      cat.includes('executive') && cat.includes('english')
+    );
+  }
+  
+  return false;
+}).sort((a, b) => {
+  const dateA = new Date(a.data.publishDate).valueOf();
+  const dateB = new Date(b.data.publishDate).valueOf();
+  return dateB - dateA;
+});
+
+// Fix for category titles, ensuring Executive English shows properly
+let pageTitle;
+if (categoryData.slug === 'executive-english') {
+  pageTitle = `Executive English | Blog`;
+} else {
+  pageTitle = `${categoryData.name} | Blog`;
+}
 const seoTitle = `Posts in ${categoryData.name} | ${siteConfig.companyName}`;
 const seoDescription = categoryData.description || `Browse blog posts categorized under ${categoryData.name}.`;
 
@@ -45,6 +118,7 @@ const translationSlugEs = spanishCategory && spanishCategory.slug ? `/es/categor
     title: pageTitle,
     subtitle: categoryData.description || `All posts related to ${categoryData.name}`,
     currentCategory: categoryData.name,
+    currentCategorySlug: categoryData.slug, // Pass slug for button highlighting
     translationSlugEs: translationSlugEs.replace(/^\/es\//, ''),
     heroImage: blogSetting.categoryHeroImage,
     heroImageAlt: blogSetting.categoryHeroImageAlt || `Category: ${categoryData.name}`

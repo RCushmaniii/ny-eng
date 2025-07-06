@@ -1,11 +1,24 @@
 ---
+import { categories } from '@data/categories';
+
 interface Props {
   category: string;
+  lang?: 'en' | 'es';
 }
 
-const { category } = Astro.props;
+const { category, lang = Astro.url.pathname.startsWith('/es/') ? 'es' : 'en' } = Astro.props;
+
+// Find the corresponding category data
+const categoryData = categories.find(c => 
+  (lang === 'es' && c.name_es === category) || c.name === category
+);
+
+// If we found a matching category, use the slug, otherwise normalize the category name
+const displayCategory = categoryData ? 
+  (lang === 'es' && categoryData.name_es ? categoryData.name_es : categoryData.name) : 
+  category;
 ---
 
 <span class="text-sm text-gray-700 font-medium group-hover:text-primary transition-colors duration-300 mr-2">
-  #{category.toLowerCase().replace(/\s+/g, '')}
-</span> 
+  #{displayCategory.toLowerCase().replace(/\s+/g, '').replace(/&/g, 'y')}
+</span>

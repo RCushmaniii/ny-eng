@@ -7,17 +7,41 @@ import { getCollection } from 'astro:content';
 interface Props {
   posts: CollectionEntry<'blog'>[];
   currentCategory?: string;
+  currentCategorySlug?: string; // Add slug for more reliable category matching
 }
 
-const { posts, currentCategory } = Astro.props;
+const { posts, currentCategory, currentCategorySlug } = Astro.props;
 const lang = Astro.url.pathname.startsWith('/es/') ? 'es' : 'en';
 const baseBlogUrl = lang === 'es' ? '/es/blog' : '/en/blog';
 const baseCategoryUrl = lang === 'es' ? '/es/category' : '/en/category';
 
 // Filter to only show categories that have posts in the current filtered list
-const activeCategories = categories.filter(category => 
-  posts.some(post => post.data.categories?.includes(category.name))
-);
+// Using a Map to ensure we only have one entry per slug to avoid duplicates
+const categoryMap = new Map();
+
+categories.forEach(category => {
+  // Check for category matches in either English or Spanish depending on the language
+  const hasMatchingPosts = posts.some(post => {
+    const categoryNames = post.data.categories || [];
+    if (lang === 'es') {
+      // For Spanish pages, check if posts include the Spanish category name
+      return category.name_es && categoryNames.includes(category.name_es);
+    } else {
+      // For English pages, check if posts include the English category name
+      return categoryNames.includes(category.name);
+    }
+  });
+  
+  if (hasMatchingPosts) {
+    // Only add if we don't already have this slug (prevents duplicates)
+    if (!categoryMap.has(category.slug)) {
+      categoryMap.set(category.slug, category);
+    }
+  }
+});
+
+// Convert the Map values back to an array
+const activeCategories = Array.from(categoryMap.values());
 ---
 <section class="site-container mx-auto px-4 py-small">
   <div class="mb-16 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6" data-aos="fade-in" data-aos-delay="100">
@@ -39,7 +63,9 @@ const activeCategories = categories.filter(category =>
           <a 
             href={`${baseCategoryUrl}/${category.slug}`}
             class={`px-4 sm:px-6 py-2 sm:py-3 leading-none rounded-md text-small flex items-center justify-center transition-colors border border-primary duration-200 ${
-              currentCategory === category.name 
+              // Fix: Match both by exact name or by slug for better reliability
+              (lang === 'es' && category.name_es && (currentCategory === category.name_es || currentCategorySlug === category.slug)) ||
+              (lang !== 'es' && (currentCategory === category.name || currentCategorySlug === category.slug))
                 ? 'bg-primary text-body-dark shadow-md' 
                 : 'bg-background text-body-base hover:bg-background-light hover:text-body-light'
             }`}

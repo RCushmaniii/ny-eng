@@ -61,10 +61,11 @@ export const testimonials: Testimonial[] = [
     stars: 5,
     industries: ["executive-english", "startup-founders"],
     slug: "hugo-blum-100-ladrillos",
-    headline: "Pitching with Confidence: A CEO's Journey to English Mastery",
+    headline: "From Founder to CEO: Leading with Confidence in English",
     avatarSize: "md",
-    link: "/en/services/startup-founders",
-    linkText: "👉 English for Startup Founders",
+    link: "/es/servicios/ingles-para-fundadores-de-startups",
+    linkText: "👉 Coaching de Inglés para Fundadores y CEOs de Startups",
+
     status: "published"
   },
   {
@@ -95,8 +96,8 @@ export const testimonials: Testimonial[] = [
     slug: "andrea-ceva-logistics",
     headline: "Mastering High-Stakes Business Communication in Logistics",
     avatarSize: "md",
-    link: "/en/services/logistics-english",
-    linkText: "👉 English Coaching for Logistics Professionals",
+    link: "/en/services/high-stakes-english",
+    linkText: "👉 English Coaching for High-Stakes Career Success",
     status: "published"
   },
   {
@@ -130,7 +131,7 @@ Robert's coaching has not only enabled me to overcome these challenges but has a
     headline: "Building Confidence and Clarity for International Patient Care",
     avatarSize: "md",
     link: "/en/services/professional-english",
-    linkText: "👉 English Coaching for Medical & Legal Professionals",
+    linkText: "👉 English Coaching for Medical Professionals",
     status: "published"
   },
   {
@@ -181,8 +182,8 @@ Robert will be an outstanding asset to anyone seeking to elevate their professio
     slug: "hugo-lopez-continental",
     headline: "Mastering Executive Communication in Global Engineering",
     avatarSize: "md",
-    link: "/en/services/executive-english",
-    linkText: "👉 English Coaching for Executives",
+    link: "/en/services/high-stakes-english",
+    linkText: "👉 English Coaching for High Pressure Presentations",
     status: "published"
   },
   {

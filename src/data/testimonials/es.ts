@@ -1,5 +1,5 @@
 import type { ImageMetadata } from 'astro';
-import { serviceCategories } from '@data/service-categories';
+import { serviceCategories } from '../service-categories.js';
 
 // Import testimonial images - using the same images as English version
 import emmanuelTestimonial from '../../assets/images/testimonials/emmanuel-testimonial.jpeg';
@@ -59,12 +59,12 @@ export const testimonials: Testimonial[] = [
     company: "100 Ladrillos",
     avatar: hugoTestimonial,
     stars: 5,
-    industries: ["executive-english"],
+    industries: ["executive-english", "startup-founders"],
     slug: "hugo-blum-100-ladrillos",
     headline: "Comunicación clara para liderar equipos globales",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-ejecutivos",
-    linkText: "👉 Coaching de Inglés para Ejecutivos",
+    link: "/es/servicios/ingles-para-fundadores-de-startups",
+    linkText: "👉 Coaching de Inglés para Fundadores y CEOs de Startups",
     status: "published"
   },
   {
@@ -96,7 +96,7 @@ export const testimonials: Testimonial[] = [
     headline: "Superando la barrera del idioma en ventas técnicas",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-presentaciones",
-    linkText: "👉 Coaching de Inglés para Presentaciones",
+    linkText: "👉 Coaching de Inglés para Situaciones Críticas",
     status: "published"
   },
   {
@@ -174,12 +174,12 @@ export const testimonials: Testimonial[] = [
     company: "Continental",
     avatar: hugolTestimonial,
     stars: 5,
-    industries: ["executive-english", "professional-english"],
+    industries: ["executive-english", "high-stakes-english"],
     slug: "hugo-lopez-continental",
     headline: "Elevando mi comunicación ejecutiva en ingeniería global",
     avatarSize: "md",
-    link: "/es/servicios/hablar-en-publico",
-    linkText: "👉 Coaching de Inglés para Hablar en Público",
+    link: "/es/servicios/ingles-para-presentaciones",
+    linkText: "👉 Coaching de Inglés para Situaciones Críticas",
     status: "published"
   },
 
@@ -227,8 +227,8 @@ export const testimonials: Testimonial[] = [
     slug: "javier-ramirez-sophia",
     headline: "De nervioso a confiado en entrevistas técnicas",
     avatarSize: "md",
-    link: "/es/servicios/preparacion-para-entrevistas",
-    linkText: "👉 Coaching para Preparación de Entrevistas",
+    link: "/es/servicios/ingles-para-presentaciones",
+    linkText: "👉 Coaching de Inglés para Entrevistas",
     status: "draft"
   },
   {

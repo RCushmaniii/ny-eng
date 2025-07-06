@@ -3,8 +3,7 @@ title: "4 Secretos que los ejecutivos usan para dominar el hablar improvisado en
 excerpt: "¿Te pone nervioso tener que hablar en situaciones espontáneas? Descubre cuatro estrategias comprobadas que usan los ejecutivos para comunicarse claramente y con seguridad sin preparación previa."
 publishDate: "2025-06-04"
 categories: [
-  'Business English',
-  'Executive Coaching',
+  'Comunicación de Alto Impacto'
 ]
 featuredImage: "./images/impromptu-speaking.jpg"
 imageAlt: "Ejecutivo hablando con confianza durante una discusión espontánea"

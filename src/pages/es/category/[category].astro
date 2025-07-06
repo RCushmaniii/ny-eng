@@ -1,14 +1,32 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import PaginatedBlogLayout from '@components/blog/PaginatedBlogLayout.astro';
 import { categories, type Category } from '@data/categories';
 import { siteConfig, blogSetting } from '@data/config';
+import { serviceCategories } from '@data/service-categories';
 
 export async function getStaticPaths() {
-  return categories.map(category => ({
-    params: { category: category.slug }, // Ensure this matches the filename [category].astro
+  // Generate paths for regular categories
+  const categoryPaths = categories.map(category => ({
+    params: { category: category.slug },
     props: { categoryData: category },
   }));
+  
+  // Also generate paths for service categories that might be referenced in blog posts
+  // This ensures links from CategoryPill won't lead to 404s
+  const servicePaths = serviceCategories.map(service => ({
+    params: { category: service.esSlug },  // Use Spanish slug for Spanish pages
+    props: { 
+      categoryData: {
+        name: service.label,  // Keep English name for filtering posts
+        name_es: service.esLabel, // Add Spanish name for display
+        slug: service.esSlug,  // Use Spanish slug
+        description: `Publicaciones relacionadas con ${service.esLabel}`,
+      } as Category 
+    },
+  }));
+  
+  return [...categoryPaths, ...servicePaths];
 }
 
 interface Props {
@@ -20,14 +38,68 @@ const { categoryData } = Astro.props;
 // Fetch all Spanish blog posts
 const allSpanishPosts = await getCollection('blog', ({ id }) => id.startsWith('es/'));
 
-// Filter posts for the current category and ensure they are published
-// Note: categoryData.name is the English name, used for filtering as posts store English category names.
-// We display categoryData.name_es for the title.
-const filteredPosts = allSpanishPosts.filter(post => 
-  post.data.categories?.includes(categoryData.name) && post.data.publish !== false
-).sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());
+// FINAL FIX: Ultra-reliable matching for the Spanish category pages
+const filteredPosts = allSpanishPosts.filter(post => {
+  // Skip posts that are unpublished or have no categories
+  if (!post.data.categories || post.data.publish === false) {
+    return false;
+  }
 
-const categoryDisplayName = categoryData.name_es || categoryData.name;
+  // Get normalized versions of post categories
+  const normalizedPostCategories = post.data.categories.map(cat => {
+    if (typeof cat !== 'string') return '';
+    return cat.trim().toLowerCase();
+  });
+  
+  // Get normalized Spanish category name
+  const normalizedCategoryName = (categoryData.name_es || categoryData.name).trim().toLowerCase();
+  
+  // First approach: Direct check if post has the normalized category name
+  if (normalizedPostCategories.includes(normalizedCategoryName)) {
+    return true;
+  }
+  
+  // Second approach: Check if any category slug matches
+  // This uses the slug from the URL to find matching posts
+  for (const postCatName of post.data.categories) {
+    // Find the category object that matches this post category name (Spanish version)
+    const matchingCategory = categories.find(cat => {
+      if (typeof postCatName !== 'string' || !cat.name_es) return false;
+      
+      const normalizedPostCat = postCatName.trim().toLowerCase();
+      const normalizedCatNameEs = cat.name_es.trim().toLowerCase();
+      
+      return normalizedPostCat === normalizedCatNameEs;
+    });
+    
+    // If we found a matching category and its slug matches our URL slug,
+    // then this post belongs in this category page
+    if (matchingCategory && matchingCategory.slug === categoryData.slug) {
+      return true;
+    }
+  }
+  
+  // For Inglés Ejecutivo specifically, do an additional check
+  if (categoryData.slug === 'executive-english') {
+    return normalizedPostCategories.some(cat => 
+      cat.includes('inglés') && cat.includes('ejecutivo')
+    );
+  }
+  
+  return false;
+}).sort((a, b) => {
+  const dateA = new Date(a.data.publishDate).valueOf();
+  const dateB = new Date(b.data.publishDate).valueOf();
+  return dateB - dateA;
+});
+
+// Get the display name for this category in Spanish
+let categoryDisplayName;
+if (categoryData.slug === 'executive-english') {
+  categoryDisplayName = 'Inglés Ejecutivo'; // Fixed title for executive-english in Spanish
+} else {
+  categoryDisplayName = categoryData.name_es || categoryData.name;
+}
 const pageTitle = `${categoryDisplayName} | Blog`;
 const seoTitle = `Publicaciones en ${categoryDisplayName} | ${siteConfig.companyName}`;
 // Use description directly as description_es doesn't exist in the Category type
@@ -49,7 +121,8 @@ const translationSlugEn = englishCategory && englishCategory.slug ? `/en/categor
     baseUrl: `/es/category/${categoryData.slug}`,
     title: `Categoría: ${categoryDisplayName}`,
     subtitle: seoDescription,
-    currentCategory: categoryData.name,
+    currentCategory: categoryDisplayName,
+    currentCategorySlug: categoryData.slug, // Pass slug for button highlighting
     translationSlugEn: translationSlugEn.replace(/^\/en\//, ''),
     heroImage: blogSetting.categoryHeroImage,
     heroImageAlt: blogSetting.categoryHeroImageAlt || `Categoría: ${categoryDisplayName}`

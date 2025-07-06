@@ -3,8 +3,7 @@ title: "Del pláticas triviales a la conversación inteligente: cómo destacar e
 excerpt: "Aprende a convertir charlas triviales en oportunidades para construir relaciones y avanzar profesionalmente en inglés."
 publishDate: "2025-05-08"
 categories: [
-  'Business English',
-  'Communication Skills'
+  'Inglés Ejecutivo'
 ]
 featuredImage: "./images/small-talk-professionals.jpg"
 imageAlt: "Sesión de coaching de inglés de negocios"
