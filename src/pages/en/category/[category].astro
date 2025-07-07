@@ -108,21 +108,18 @@ const translationSlugEs = spanishCategory && spanishCategory.slug ? `/es/categor
 
 --- 
 
-{(() => {
-  // Create a properly typed props object
-  const layoutProps = {
-    posts: filteredPosts,
-    currentPage: 1,
-    totalPages: 1,
-    baseUrl: `/en/category/${categoryData.slug}`,
-    title: pageTitle,
-    subtitle: categoryData.description || `All posts related to ${categoryData.name}`,
-    currentCategory: categoryData.name,
-    currentCategorySlug: categoryData.slug, // Pass slug for button highlighting
-    translationSlugEs: translationSlugEs.replace(/^\/es\//, ''),
-    heroImage: blogSetting.categoryHeroImage,
-    heroImageAlt: blogSetting.categoryHeroImageAlt || `Category: ${categoryData.name}`
-  };
-  
-  return <PaginatedBlogLayout {...layoutProps} />;
-})()}
+<PaginatedBlogLayout
+  posts={filteredPosts}
+  currentPage={1}
+  totalPages={1}
+  baseUrl={`/en/category/${categoryData.slug}`}
+  title={pageTitle}
+  subtitle={categoryData.description || `All posts related to ${categoryData.name}`}
+  currentCategory={categoryData.name}
+  currentCategorySlug={categoryData.slug}
+  translationSlugEs={translationSlugEs}
+  heroImage={blogSetting.categoryHeroImage}
+  heroImageAlt={blogSetting.categoryHeroImageAlt || `Category: ${categoryData.name}`}
+  hasMultiplePages={false}
+  lang="en"
+/>

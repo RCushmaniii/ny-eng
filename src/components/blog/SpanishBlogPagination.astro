@@ -1,0 +1,62 @@
+---
+import Button from '../ui/Button.astro';
+import { ChevronLeft, ChevronRight } from 'lucide-astro';
+
+interface Props {
+    currentPage: number;
+    totalPages: number; 
+    baseUrl: string;
+    shouldShowPagination: boolean;
+    prevPage: string | null;
+    nextPage: string | null;
+}
+
+const { 
+    currentPage, 
+    totalPages, 
+    baseUrl, 
+    shouldShowPagination,
+    prevPage, 
+    nextPage
+} = Astro.props;
+
+const cleanBaseUrl = baseUrl ? baseUrl.replace(/\/\/+/g, '\/').replace(/\/$/, '') : '';
+---
+
+{shouldShowPagination && (
+    <nav class="pagination-nav" aria-label="Paginación del blog" data-aos="fade-in">
+        <div class="container mx-auto px-4 py-12">
+            <div class="flex items-center justify-center gap-6">
+                {prevPage && (
+                    <Button href={prevPage} variant="primary" class="flex items-center gap-2">
+                        <ChevronLeft size={20} />
+                        Anterior
+                    </Button>
+                )}
+                
+                <div class="flex items-center gap-2">
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                        <a
+                            href={pageNum === 1 ? cleanBaseUrl : `${cleanBaseUrl}/${pageNum}`}
+                            class={`w-10 h-10 flex items-center justify-center rounded-full transition-colors ${
+                                currentPage === pageNum
+                                    ? 'bg-primary text-white'
+                                    : 'hover:bg-white hover:text-body-base'
+                            }`}
+                            aria-current={currentPage === pageNum ? 'page' : undefined}
+                        >
+                            {pageNum}
+                        </a>
+                    ))}
+                </div>
+
+                {nextPage && (
+                    <Button href={nextPage} variant="primary" class="flex items-center gap-2">
+                        Siguiente
+                        <ChevronRight size={20} />
+                    </Button>
+                )}
+            </div>
+        </div>
+    </nav>
+)}

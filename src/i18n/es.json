@@ -19,5 +19,11 @@
     "home": {
       "description": "Esta es la página principal en español."
     }
+  },
+  "pagination": {
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "page": "Página",
+    "aria": "Paginación del blog"
   }
 }

@@ -19,5 +19,11 @@
     "home": {
       "description": "This is the English homepage."
     }
+  },
+  "pagination": {
+    "next": "Next",
+    "previous": "Previous",
+    "page": "Page",
+    "aria": "Blog pagination"
   }
 }

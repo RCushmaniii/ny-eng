@@ -1,53 +1,61 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
 import BlogList from './BlogList.astro';
 import InnerHero from '../sections/InnerHero.astro';
 import Button from '../ui/Button.astro';
 import { ChevronLeft, ChevronRight } from 'lucide-astro';
+import { getLanguage, useTranslations, getLangFromUrl } from '../../i18n/utils';
 
-
-const seoTitle = "Blog";
-const seoDescription = "Our blog is where we share our thoughts and ideas about the latest trends in the web development industry.";
-
-interface Props {
-    posts: any[];
-    currentPage: number;
-    totalPages: number;
-    baseUrl: string;  // e.g., '/blog' or '/category/some-category'
-    title: string;
-    subtitle: string;
-    currentCategory?: string;
-    currentCategorySlug?: string; // Category slug for reliable button highlighting
-    heroImage?: any; // processed Astro image object
-    heroImageAlt?: string;
-    translationSlugEn?: string;
-    translationSlugEs?: string;
-    hasMultiplePages?: boolean; // Added to explicitly control pagination visibility
+export interface Props {
+  posts: Array<any>;
+  currentPage: number;
+  totalPages: number;
+  baseUrl: string;
+  title: string;
+  subtitle?: string;
+  heroImage: ImageMetadata;
+  heroImageAlt?: string;
+  hasMultiplePages?: boolean;
+  translationSlugEn?: string;
+  translationSlugEs?: string;
+  currentCategory?: string;
+  currentCategorySlug?: string;
+  lang?: string;
 }
 
-const { 
-    posts: paginatedPosts, 
-    currentPage, 
-    totalPages, 
-    baseUrl,
-    title,
-    subtitle,
-    currentCategory,
-    currentCategorySlug, // Extract the slug prop
-    heroImage,
-    heroImageAlt,
-    translationSlugEn,
-    translationSlugEs,
-    hasMultiplePages = false // Default to false if not provided
+const {
+  posts,
+  currentPage,
+  totalPages,
+  baseUrl,
+  title,
+  subtitle,
+  heroImage,
+  heroImageAlt = "Blog image",
+  currentCategory = "",
+  currentCategorySlug = "",
+  hasMultiplePages = false,
+  translationSlugEn,
+  translationSlugEs,
+  lang = "en"
 } = Astro.props;
 
-    // Generate pagination URLs
+// Determine language based on multiple approaches for better resilience
+const urlLang = Astro.url.pathname.startsWith('/es/') ? 'es' : 'en';
+const propLang = lang || 'en';
+// Use URL-based language detection as primary, prop as backup
+const detectedLang = urlLang || propLang;
+
+// Set up language for translations
+const typedLang = getLanguage(detectedLang);
+const t = useTranslations(typedLang);
+
+// Generate pagination URLs
 const cleanBaseUrl = baseUrl ? baseUrl.replace(/\/\/+/g, '\/').replace(/\/$/, '') : '';
+const prevUrl = currentPage > 1 ? (currentPage === 2 ? cleanBaseUrl : `${cleanBaseUrl}/${currentPage - 1}`) : null;
+const nextUrl = currentPage < totalPages ? `${cleanBaseUrl}/${currentPage + 1}` : null;
 
-// Only generate pagination if explicitly told there are multiple pages AND we have posts
-const shouldShowPagination = hasMultiplePages && totalPages > 1 && paginatedPosts.length > 0;
-
-// Conditionally create pagination URLs based on whether we should show pagination
+const shouldShowPagination = hasMultiplePages && totalPages > 1 && posts.length > 0;
 const nextPage = shouldShowPagination && currentPage < totalPages ? `${cleanBaseUrl}/${currentPage + 1}` : null;
 const prevPage = shouldShowPagination && currentPage > 1 
   ? currentPage - 1 === 1 
@@ -55,13 +63,16 @@ const prevPage = shouldShowPagination && currentPage > 1
     : `${cleanBaseUrl}/${currentPage - 1}`
   : null;
 
+const seoTitle = title;
+const seoDescription = subtitle;
+
 const heroContent = {
-    title: title,
-    description: subtitle,
-    backgroundImage: heroImage,
-    overlayOpacity: 0.2,
-    alt: heroImageAlt
-}
+  title: title,
+  description: subtitle,
+  backgroundImage: heroImage,
+  overlayOpacity: 0.2,
+  alt: heroImageAlt
+};
 ---
 <Layout title={seoTitle} description={seoDescription} 
     translationSlugEn={translationSlugEn} 
@@ -70,17 +81,22 @@ const heroContent = {
     whatsappImage="/images/logos/new-york-english-og.jpg"
     linkedinImage="/images/logos/new-york-english-og-wide.jpg">
     <main>
-    <InnerHero content={heroContent}/>
-    <BlogList posts={paginatedPosts} currentCategory={currentCategory} currentCategorySlug={currentCategorySlug} />
+    <InnerHero content={{
+      title: title,
+      description: subtitle || '',
+      backgroundImage: heroImage,
+      overlayOpacity: 0.2
+    }}/>
+    <BlogList posts={posts} currentCategory={currentCategory} currentCategorySlug={currentCategorySlug} />
 
     {shouldShowPagination && (
-        <nav class="pagination-nav" aria-label="Blog pagination" data-aos="fade-in">
+        <nav class="pagination-nav" aria-label={t('pagination.aria')} data-aos="fade-in">
             <div class="container mx-auto px-4 py-12">
                 <div class="flex items-center justify-center gap-6">
                     {prevPage && (
                         <Button href={prevPage} variant="primary" class="flex items-center gap-2">
                             <ChevronLeft size={20} />
-                            Previous
+                            {t('pagination.previous')}
                         </Button>
                     )}
                     
@@ -101,8 +117,8 @@ const heroContent = {
                     </div>
 
                     {nextPage && (
-                        <Button href={nextPage} variant="primary">
-                            Next
+                        <Button href={nextPage} variant="primary" class="flex items-center gap-2">
+                            {t('pagination.next')}
                             <ChevronRight size={20} />
                         </Button>
                     )}

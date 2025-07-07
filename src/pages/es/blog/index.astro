@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import { blogSetting } from "../../../data/config";
-import PaginatedBlogLayout from "../../../components/blog/PaginatedBlogLayout.astro";
+import { blogSetting } from "@data/config";
+import PaginatedBlogLayout from "@components/blog/PaginatedBlogLayout.astro";
 import blogHero from "../../../content/blog/images/blog-hero.jpg";
 export const prerender = true;
 
@@ -30,6 +30,9 @@ const totalPages = hasMultiplePages
 const start = (currentPage - 1) * blogSetting.postsPerPage;
 const end = start + blogSetting.postsPerPage;
 const paginatedPosts = sortedPosts.slice(start, end);
+
+const seoTitle = "Blog";
+const seoDescription = "Tips prácticos y experiencias reales para dominar el inglés de negocios.";
 ---
 
 <PaginatedBlogLayout
@@ -37,10 +40,11 @@ const paginatedPosts = sortedPosts.slice(start, end);
   currentPage={currentPage}
   totalPages={totalPages}
   baseUrl="/es/blog"
-  title="Blog"
-  subtitle="Tips prácticos y experiencias reales para dominar el inglés de negocios."
+  title={seoTitle}
+  subtitle={seoDescription}
   heroImage={blogHero}
-  heroImageAlt="Blog hero background"
-  translationSlugEn="/en/blog"
+  heroImageAlt="Blog de New York English - Tips y recursos para el inglés de negocios"
   hasMultiplePages={hasMultiplePages}
+  translationSlugEn="/en/blog"
+  lang="es"
 />

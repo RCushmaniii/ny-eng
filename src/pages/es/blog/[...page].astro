@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+import { blogSetting } from "@data/config";
+import PaginatedBlogLayout from "@components/blog/PaginatedBlogLayout.astro";
+import blogHero from "../../../content/blog/images/blog-hero.jpg";
+export const prerender = true;
+
+export async function getStaticPaths({ paginate }) {
+  // Get all Spanish posts only
+  const allPosts = await getCollection("blog");
+  const filteredPosts = allPosts.filter(
+    (post) => post.id.startsWith("es/") && post.data.publish === true,
+  );
+
+  // Sort posts by date
+  const sortedPosts = filteredPosts.sort(
+    (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+  );
+
+  // Return paginated collection
+  return paginate(sortedPosts, { pageSize: blogSetting.postsPerPage });
+}
+
+// Get page details from Astro.props
+const { page } = Astro.props;
+const { currentPage, data: posts, lastPage, url } = page;
+
+// Setup pagination metadata
+const baseUrl = "/es/blog";
+const hasMultiplePages = lastPage > 1;
+
+const seoTitle = "Blog";
+const seoDescription = "Tips prácticos y experiencias reales para dominar el inglés de negocios.";
+---
+
+<PaginatedBlogLayout
+  posts={posts}
+  currentPage={currentPage}
+  totalPages={lastPage}
+  baseUrl={baseUrl}
+  title={seoTitle}
+  subtitle={seoDescription}
+  heroImage={blogHero}
+  heroImageAlt="Blog de New York English - Tips y recursos para el inglés de negocios"
+  hasMultiplePages={hasMultiplePages}
+  translationSlugEn="/en/blog"
+  lang="es"
+/>

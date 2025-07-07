@@ -125,7 +125,9 @@ const translationSlugEn = englishCategory && englishCategory.slug ? `/en/categor
     currentCategorySlug: categoryData.slug, // Pass slug for button highlighting
     translationSlugEn: translationSlugEn.replace(/^\/en\//, ''),
     heroImage: blogSetting.categoryHeroImage,
-    heroImageAlt: blogSetting.categoryHeroImageAlt || `Categoría: ${categoryDisplayName}`
+    heroImageAlt: blogSetting.categoryHeroImageAlt || `Categoría: ${categoryDisplayName}`,
+    hasMultiplePages: false,
+    lang: 'es' // Explicitly set language to Spanish for i18n
   };
   
   return <PaginatedBlogLayout {...layoutProps} />;
