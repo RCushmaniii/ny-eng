@@ -2,7 +2,7 @@
 
 Welcome to the codebase for the **NYEnglishTeacher.com** website redesign project. This site is built using the [Astro](https://astro.build) framework with the [Titan theme](https://themes.astro.build/titan). It's designed to be fast, modern, and content-focused.
 
-> **IMPORTANT**: The production domain is **https://www.nyenglishteacher.com/** - Always use this URL for all production references, sitemaps, and structured data.
+> **IMPORTANT**: The production domain is **https://www.nyenglishteacher.com/** - Always use this URL for all production references, sitemaps, and structured data. The site is fully configured for proper SEO, including optimized sitemaps and hreflang implementation.
 
 ## 🚀 Project Overview
 
@@ -13,7 +13,7 @@ This is the new version of NYEnglishTeacher.com, redesigned to provide a better 
 - [Astro](https://astro.build) - Static site generator with component islands
 - [TypeScript](https://www.typescriptlang.org/) - With `strict: true` enabled for robust type checking
 - [Tailwind CSS](https://tailwindcss.com/) - For responsive styling
-- [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/) - Automatic sitemap generation
+- [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/) - Optimized sitemap generation with hreflang support
 - [Titan Theme](https://themes.astro.build/titan) - Professional Astro theme components
 - JSON-LD Structured Data - Enhanced search engine visibility
 
@@ -112,6 +112,82 @@ src/
 │       ├── blog/         # Spanish blog
 │       └── testimonios/  # Spanish testimonials
 ```
+
+## 🔍 SEO & Sitemap Configuration
+
+### Multilingual Sitemap Implementation
+
+The site uses `@astrojs/sitemap` with advanced configuration to ensure proper SEO for both English and Spanish content:
+
+- **Root URL Handling**: The root URL (`https://www.nyenglishteacher.com/`) is configured with `x-default` hreflang tag, with proper language alternatives for `/en/` and `/es/` paths
+- **URL Filtering**: Prevents duplicate content by filtering URLs with repeated language prefixes (like `/en/blog/en/`)
+- **Dynamic Priority**: Different page types get appropriate SEO priority levels:
+  - Homepage paths: `priority: 0.9`, `changefreq: weekly`
+  - Blog posts: `priority: 0.6`, `changefreq: weekly`
+  - Services pages: `priority: 0.5`, `changefreq: monthly`
+  - Legal/Terms pages: `priority: 0.3`, `changefreq: monthly`
+
+### Configuration in astro.config.mjs
+
+```javascript
+sitemap({
+  i18n: {
+    defaultLocale: 'en',
+    locales: {
+      en: 'en-US',
+      es: 'es-MX',
+    },
+  },
+  // Root URL with x-default implementation
+  customPages: [
+    `${site}`, // Adds root URL explicitly
+  ],
+  // URL filtering to prevent duplicates
+  filter: (page) => { /* filters out URLs with duplicate locale prefixes */ },
+  // Custom priority/changefreq based on URL patterns
+  serialize: (item) => { /* sets priority based on content type */ }
+})
+```
+
+### Verification
+
+After building the project (`npm run build`), the generated sitemap files are available in the `dist` directory:
+
+- `sitemap-index.xml` - Main sitemap index
+- `sitemap-0.xml` - Primary sitemap with properly formatted URLs and hreflang attributes
+
+### Testing Sitemap Implementation
+
+To verify the sitemap is working correctly:
+
+1. Build the project:
+   ```powershell
+   Remove-Item -Recurse -Force .\dist\ # Clean previous build
+   npm run build
+   ```
+
+2. Check the sitemap files in the `dist` directory:
+   ```powershell
+   Get-Content .\dist\sitemap-index.xml
+   Get-Content .\dist\sitemap-0.xml
+   ```
+
+3. Verify the sitemap has:
+   - Root URL with `x-default` hreflang
+   - No duplicate URLs with double language prefixes
+   - Correct changefreq and priority values for different page types
+   - Proper alternate language links for each page
+
+## 📝 Recent Updates & Changes
+
+### Sitemap SEO Improvements (July 2025)
+
+- Fixed duplicate language prefixes in URLs that caused 404 errors
+- Implemented proper `x-default` hreflang for root URL
+- Added intelligent SEO priorities for different content types
+- Configured URL filtering to exclude draft and catch-all routes
+- Added custom serialization for sitemap entries
+- Set up explicit site URL configuration
 
 ## 🎯 Key Features
 

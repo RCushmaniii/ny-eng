@@ -3,20 +3,18 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 import path from 'path';
-import tailwindcss from 'tailwindcss';
 
-// Always use the canonical www domain for SEO purposes
 const site = 'https://www.nyenglishteacher.com';
 
 export default defineConfig({
+  site,
   integrations: [
     tailwind({
-      // Let Astro handle the Tailwind config automatically
-      applyBaseStyles: false
+      applyBaseStyles: false,
     }),
     icon({
       include: {
-        lucide: ['*'], // Include all lucide icons
+        lucide: ['*'],
       },
     }),
     sitemap({
@@ -30,8 +28,10 @@ export default defineConfig({
           es: 'es-MX',
         },
       },
+      customPages: [
+        `${site}`, // Adds root URL explicitly
+      ],
       filter: (page) => {
-        // Exclude 404, dev/test, paginated, and category pages
         if (
           page.includes('/404') ||
           page.includes('/components/') ||
@@ -39,16 +39,85 @@ export default defineConfig({
           page.includes('/dev/') ||
           page.includes('/draft/') ||
           page.includes('/preview/') ||
-          /\/\[\.\.\.\w+\]/.test(page) || // dynamic catch-all routes
-          /\/\d+\/?$/.test(page) || // paginated routes
-          page.includes('/category/')
+          /\/\[\.\.\.\w+\]/.test(page) || // catch-all routes
+          /\/\d+\/?$/.test(page) ||       // paginated routes
+          page.includes('/category/') ||
+          page.includes('/en/blog/en/') ||
+          page.includes('/es/blog/es/') ||
+          page.includes('/en/services/en/') ||
+          page.includes('/es/servicios/es/')
         ) {
           return false;
         }
         return true;
       },
       entryLimit: 10000,
-    })
+      serialize(item) {
+        const url = item.url;
+        const defaultEntry = {
+          ...item,
+          changefreq: 'weekly',
+          priority: 0.7,
+        };
+
+        if (url === site || url === `${site}/`) {
+          return {
+            ...defaultEntry,
+            changefreq: 'weekly',
+            priority: 0.9,
+            links: [
+              { url: url, lang: 'x-default' },
+              { url: `${site}/en/`, lang: 'en-US' },
+              { url: `${site}/es/`, lang: 'es-MX' },
+            ]
+          };
+        }
+
+        if (/^https?:\/\/[^\/]+\/(en|es)?\/?$/.test(url)) {
+          return {
+            ...defaultEntry,
+            changefreq: 'weekly',
+            priority: 0.9,
+          };
+        }
+
+        if (
+          url.includes('/legal/') ||
+          url.includes('/privacy/') ||
+          url.includes('/terms/') ||
+          url.includes('/thank-you/')
+        ) {
+          return {
+            ...defaultEntry,
+            changefreq: 'monthly',
+            priority: 0.3,
+          };
+        }
+
+        if (
+          url.includes('/services/') ||
+          url.includes('/servicios/') ||
+          url.includes('/testimonials/') ||
+          url.includes('/testimonios/')
+        ) {
+          return {
+            ...defaultEntry,
+            changefreq: 'monthly',
+            priority: 0.5,
+          };
+        }
+
+        if (url.includes('/blog/')) {
+          return {
+            ...defaultEntry,
+            changefreq: 'weekly',
+            priority: 0.6,
+          };
+        }
+
+        return defaultEntry;
+      },
+    }),
   ],
   experimental: {
     fonts: [
@@ -64,7 +133,6 @@ export default defineConfig({
           },
         ],
         fallbacks: ['sans-serif'],
-        
       },
       {
         provider: 'local',
@@ -78,32 +146,29 @@ export default defineConfig({
           },
         ],
         fallbacks: ['sans-serif'],
-        
       },
     ],
   },
-  site,
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'es']
+    locales: ['en', 'es'],
   },
   vite: {
-    plugins: [tailwindcss()],
     css: {
       preprocessorOptions: {
         css: {
-          additionalData: `@import "aos/dist/aos.css";`
-        }
-      }
+          additionalData: `@import "aos/dist/aos.css";`,
+        },
+      },
     },
     optimizeDeps: {
-      include: ['aos']
+      include: ['aos'],
     },
     resolve: {
       alias: {
-        '~': path.resolve('./src')
-      }
-    }
+        '~': path.resolve('./src'),
+      },
+    },
   },
   markdown: {
     shikiConfig: {
@@ -112,19 +177,13 @@ export default defineConfig({
       langs: [],
       transformers: [],
       showLineNumbers: false,
-      lineNumbersPrefix: ''
-    }
+      lineNumbersPrefix: '',
+    },
   },
-  // Integrations are defined above
   image: {
-    // Allow all remote patterns (https and http)
     remotePatterns: [
-      {
-        protocol: "https"
-      },
-      {
-        protocol: "http"
-      }
-    ]
-  }
+      { protocol: 'https' },
+      { protocol: 'http' },
+    ],
+  },
 });
