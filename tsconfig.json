@@ -16,6 +16,8 @@
     "jsxImportSource": "astro",
     "module": "nodenext",
     "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "lib": ["esnext", "dom", "dom.iterable"],
     "paths": {
       "@components/*": [

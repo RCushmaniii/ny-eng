@@ -2,6 +2,7 @@ export interface Category {
   name: string;
   name_es?: string;
   slug: string;
+  esSlug?: string; // Spanish-specific URL slug
   description: string;
 }
 

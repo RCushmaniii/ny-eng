@@ -98,9 +98,5 @@ Join a growing community of ambitious professionals like Alberto Escobar (COO, T
 
 ---
 
-Looking to build more confidence in professional communication? Check out our post: **[Master Business English](/blog/master-business-english)**.
-
-
----
 
 

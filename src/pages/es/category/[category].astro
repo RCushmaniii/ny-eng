@@ -6,11 +6,20 @@ import { siteConfig, blogSetting } from '@data/config';
 import { serviceCategories } from '@data/service-categories';
 
 export async function getStaticPaths() {
-  // Generate paths for regular categories
-  const categoryPaths = categories.map(category => ({
-    params: { category: category.slug },
-    props: { categoryData: category },
-  }));
+  // Generate paths for regular categories with Spanish slugs
+  const categoryPaths = categories.map(category => {
+    // Generate Spanish-friendly slug for category
+    const esSlug = category.name_es ? 
+      category.name_es.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '') : 
+      category.slug;
+      
+    return {
+      params: { category: esSlug },
+      props: { 
+        categoryData: {...category, esSlug},
+      },
+    };
+  });
   
   // Also generate paths for service categories that might be referenced in blog posts
   // This ensures links from CategoryPill won't lead to 404s
@@ -20,7 +29,8 @@ export async function getStaticPaths() {
       categoryData: {
         name: service.label,  // Keep English name for filtering posts
         name_es: service.esLabel, // Add Spanish name for display
-        slug: service.esSlug,  // Use Spanish slug
+        slug: service.slug,     // Keep original slug for matching posts
+        esSlug: service.esSlug,  // Use Spanish slug for URL
         description: `Publicaciones relacionadas con ${service.esLabel}`,
       } as Category 
     },
@@ -118,11 +128,11 @@ const translationSlugEn = englishCategory && englishCategory.slug ? `/en/categor
     posts: filteredPosts,
     currentPage: 1,
     totalPages: 1,
-    baseUrl: `/es/category/${categoryData.slug}`,
+    baseUrl: `/es/category/${categoryData.esSlug || categoryData.slug}`,
     title: `Categoría: ${categoryDisplayName}`,
     subtitle: seoDescription,
     currentCategory: categoryDisplayName,
-    currentCategorySlug: categoryData.slug, // Pass slug for button highlighting
+    currentCategorySlug: categoryData.esSlug || categoryData.slug, // Pass Spanish slug for button highlighting
     translationSlugEn: translationSlugEn.replace(/^\/en\//, ''),
     heroImage: blogSetting.categoryHeroImage,
     heroImageAlt: blogSetting.categoryHeroImageAlt || `Categoría: ${categoryDisplayName}`,

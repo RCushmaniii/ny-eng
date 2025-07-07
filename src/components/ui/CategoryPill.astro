@@ -16,16 +16,36 @@ const cleanCategoryName = category.trim();
 // 1. First try to find by exact name match
 let categoryData = categories.find(cat => cat.name === cleanCategoryName);
 
-// 2. If not found, try case-insensitive match
-if (!categoryData) {
+// 2. If not found and using Spanish, try to find by Spanish name
+if (!categoryData && lang === 'es') {
   categoryData = categories.find(cat => 
-    cat.name.toLowerCase() === cleanCategoryName.toLowerCase());
+    cat.name_es && cat.name_es === cleanCategoryName);
 }
 
-// 3. If still not found, check if it matches a service category
+// 3. If still not found, try case-insensitive match
+if (!categoryData) {
+  categoryData = categories.find(cat => 
+    cat.name.toLowerCase() === cleanCategoryName.toLowerCase() ||
+    (cat.name_es && cat.name_es.toLowerCase() === cleanCategoryName.toLowerCase()));
+}
+
+// 4. If still not found, check if it matches a service category
 let slug = '';
 if (categoryData) {
-  slug = categoryData.slug;
+  // Use Spanish slug if it exists and language is Spanish
+  if (lang === 'es' && categoryData.esSlug) {
+    slug = categoryData.esSlug;
+  } else if (lang === 'es' && categoryData.name_es) {
+    // Generate Spanish-friendly slug for blog categories
+    slug = categoryData.name_es
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[&]/g, '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+  } else {
+    slug = categoryData.slug;
+  }
 } else {
   // Try to map to service categories
   const serviceCategory = serviceCategories.find(cat => 
@@ -43,6 +63,14 @@ if (categoryData) {
     slug = cleanCategoryName.toLowerCase().replace(/\s+/g, '-');
   }
 }
+
+// Normalize slug to ensure it's URL-friendly
+slug = slug
+  .toLowerCase()
+  .replace(/\s+/g, '-')
+  .replace(/[&]/g, '')
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '');
 
 // Build the category URL based on language
 const categoryUrl = `/${lang}/category/${slug}`;
