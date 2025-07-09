@@ -20,7 +20,9 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+import { getLegalContent } from '@utils/legalContent.js';
+const legalData = await getLegalContent(entry.slug, 'en');
+const { Content } = legalData;
 
 // Use SEO data from frontmatter if available, fallback to regular entry data
 const seoTitle = entry.data.seo?.title || entry.data.title;
@@ -50,7 +52,12 @@ const spanishSlugPath = `/es/legal/${englishSlug}`;
   description={seoDescription}
   lang="en"
   noIndex={true}
-  footerCta={{ hideCta: true }}
+  footerCta={{
+  title: "",
+  description: "",
+  hideCta: true,
+  button: { text: "", link: "" }
+}}
   translationSlugEs={spanishSlugPath}
 >
   <InnerHero content={heroContent} />

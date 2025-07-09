@@ -38,6 +38,15 @@ interface Props {
   lang?: string; // Added lang prop
   noIndex?: boolean; // Added for noindex, nofollow meta tag
   hideCta?: boolean; // Added to hide footer CTA section
+  // Pagination SEO metadata
+  isPaginated?: boolean;
+  paginationData?: {
+    currentPage: number;
+    totalPages: number;
+    canonicalUrl: string;
+    prevPageUrl?: string | null;
+    nextPageUrl?: string | null;
+  }
 }
 
 const {
@@ -55,7 +64,9 @@ const {
   ogType = 'website',
   lang = 'en',
   noIndex = false,
-  hideCta = false
+  hideCta = false,
+  isPaginated = false,
+  paginationData
 } = Astro.props;
 
 const pageTitle = title ? `${title} ${Separator} ${SiteName}` : SiteName;
@@ -242,6 +253,20 @@ const fixedHeaderHeight = "0rem";
       locale={determinedLang === 'es' ? 'es_ES' : 'en_US'}
       alternateUrls={finalLanguageAlternates}
     />
+    
+    {/* Pagination SEO tags */}
+    {isPaginated && paginationData && (
+      <>
+        {/* Always point canonical to the first page for paginated content */}
+        <link rel="canonical" href={paginationData.canonicalUrl} />
+        {paginationData.prevPageUrl && (
+          <link rel="prev" href={paginationData.prevPageUrl} />
+        )}
+        {paginationData.nextPageUrl && (
+          <link rel="next" href={paginationData.nextPageUrl} />
+        )}
+      </>
+    )}
 
     {/* <Fragment set:html={theme === "zeus" ? "<link rel='stylesheet' href='/themes/zeus.css'>" : ""} /> Removed */}
     {/* <ThemeSwitcher /> Removed */}

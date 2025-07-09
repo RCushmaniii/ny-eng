@@ -33,17 +33,24 @@ if (!categoryData) {
 let slug = '';
 if (categoryData) {
   // Use Spanish slug if it exists and language is Spanish
-  if (lang === 'es' && categoryData.esSlug) {
-    slug = categoryData.esSlug;
-  } else if (lang === 'es' && categoryData.name_es) {
-    // Generate Spanish-friendly slug for blog categories
-    slug = categoryData.name_es
-      .toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/[&]/g, '')
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '');
+  if (lang === 'es') {
+    // First try to use the explicit esSlug if available
+    if (categoryData.esSlug) {
+      slug = categoryData.esSlug;
+    } 
+    // Otherwise, fall back to generating a slug from name_es
+    else if (categoryData.name_es) {
+      slug = categoryData.name_es
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[&]/g, '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+    } else {
+      slug = categoryData.slug; // Last resort: use English slug
+    }
   } else {
+    // For English, use the English slug
     slug = categoryData.slug;
   }
 } else {

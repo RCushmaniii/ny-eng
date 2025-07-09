@@ -2,9 +2,8 @@
 title: "5 estrategias simples para ganar confianza"
 excerpt: "Desbloquea tu confianza en el inglés de negocios. Descubre 5 estrategias prácticas para hablar con claridad en reuniones y entrevistas, impresionar a los clientes y avanzar en tu carrera."
 publishDate: "2025-04-10"
-categories: [
-  'Carrera & Liderazgo'
-]
+categories: 
+  - "Carrera & Liderazgo"
 featuredImage: "./images/business-english-confidence.jpg"
 imageAlt: "Sesión de coaching de inglés de negocios"
 translations:

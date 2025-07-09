@@ -6,37 +6,74 @@ import { siteConfig, blogSetting } from '@data/config';
 import { serviceCategories } from '@data/service-categories';
 
 export async function getStaticPaths() {
+  // Create a properly typed array to hold all paths
+  // Define the type to match Astro's expected return type for getStaticPaths
+  type StaticPath = {
+    params: { category: string };
+    props: { categoryData: Category };
+  };
+  
+  const allPaths: StaticPath[] = [];
+  
   // Generate paths for regular categories with Spanish slugs
-  const categoryPaths = categories.map(category => {
-    // Generate Spanish-friendly slug for category
-    const esSlug = category.name_es ? 
-      category.name_es.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '') : 
-      category.slug;
-      
-    return {
+  categories.forEach(category => {
+    // Use the explicit esSlug if available, otherwise generate one
+    const esSlug = category.esSlug || 
+      (category.name_es ? 
+        category.name_es.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '') : 
+        category.slug);
+    
+    // Add the Spanish slug path  
+    allPaths.push({
       params: { category: esSlug },
       props: { 
         categoryData: {...category, esSlug},
       },
-    };
+    });
+    
+    // IMPORTANT: Also add the English slug path to catch links that use English slugs in Spanish path
+    // This prevents 404s when people link to /es/category/executive-english instead of /es/category/ingles-ejecutivo
+    allPaths.push({
+      params: { category: category.slug },
+      props: { 
+        categoryData: {...category, esSlug},
+      },
+    });
   });
   
   // Also generate paths for service categories that might be referenced in blog posts
   // This ensures links from CategoryPill won't lead to 404s
-  const servicePaths = serviceCategories.map(service => ({
-    params: { category: service.esSlug },  // Use Spanish slug for Spanish pages
-    props: { 
-      categoryData: {
-        name: service.label,  // Keep English name for filtering posts
-        name_es: service.esLabel, // Add Spanish name for display
-        slug: service.slug,     // Keep original slug for matching posts
-        esSlug: service.esSlug,  // Use Spanish slug for URL
-        description: `Publicaciones relacionadas con ${service.esLabel}`,
-      } as Category 
-    },
-  }));
+  serviceCategories.forEach(service => {
+    // Add Spanish slug path for service category
+    allPaths.push({
+      params: { category: service.esSlug },  // Use Spanish slug for Spanish pages
+      props: { 
+        categoryData: {
+          name: service.label,  // Keep English name for filtering posts
+          name_es: service.esLabel, // Add Spanish name for display
+          slug: service.slug,     // Keep original slug for matching posts
+          esSlug: service.esSlug,  // Use Spanish slug for URL
+          description: `Publicaciones relacionadas con ${service.esLabel}`,
+        } as Category 
+      },
+    });
+    
+    // Also add the English slug path for service category to catch direct links
+    allPaths.push({
+      params: { category: service.slug },  // Use English slug as fallback
+      props: { 
+        categoryData: {
+          name: service.label,
+          name_es: service.esLabel,
+          slug: service.slug,
+          esSlug: service.esSlug,
+          description: `Publicaciones relacionadas con ${service.esLabel}`,
+        } as Category 
+      },
+    });
+  });
   
-  return [...categoryPaths, ...servicePaths];
+  return allPaths;
 }
 
 interface Props {

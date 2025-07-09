@@ -2,9 +2,8 @@
 title: "Why Mexican IT Managers are Losing Millions (Hint: It's Not Technical Skills)"
 excerpt: "Mexico has world-class developers and visionary IT managers. So why do they keep losing U.S. contracts? Learn how poor Business English skills are costing millions."
 publishDate: "2025-07-01"
-categories: [
-  "Business English"
-]
+categories:
+  - "Business English"
 featuredImage: "./images/managers-making-millions.jpg"
 imageAlt: "International team confused by poor communication"
 translations:

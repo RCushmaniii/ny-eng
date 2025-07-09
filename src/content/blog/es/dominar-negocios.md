@@ -2,9 +2,8 @@
 title: "Domina el inglés de negocios y haz crecer tu carrera"
 excerpt: "Coaching personalizado de inglés para ayudarte a hablar con confianza."
 publishDate: "2025-04-03"
-categories: [
-  'Inglés para Negocios'
-]
+categories: 
+  - "Inglés para Negocios"
 featuredImage: "./images/business-english-coaching.jpg"
 imageAlt: "Sesión de coaching de inglés de negocios"
 translations:

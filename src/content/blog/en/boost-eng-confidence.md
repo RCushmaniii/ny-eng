@@ -2,9 +2,8 @@
 title: "5 Simple Strategies to Gain Confidence"
 excerpt: "Unlock business English confidence. Discover 5 actionable strategies to speak clearly in meetings and interviews, impress clients, and advance your career."
 publishDate: "2025-04-10" 
-categories: [
-  'Career & Leadership'
-]
+categories:
+  - "Career & Leadership"
 featuredImage: "./images/business-english-confidence.jpg"
 imageAlt: "Business English coaching session"
 translations:

@@ -2,7 +2,8 @@
 title: "From Small Talk to Smart Talk: 7 Conversation Starters for Global Professionals"
 excerpt: "Break the ice and build rapport anywhere with these field‑tested conversation openers."
 publishDate: "2025-05-08"
-categories: ['Executive English']
+categories: 
+  - "Executive English"
 featuredImage: "./images/small-talk-professionals.jpg"
 imageAlt: "Professionals having small talk in a business setting"
 translations:

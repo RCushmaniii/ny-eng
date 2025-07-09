@@ -4,7 +4,7 @@ import InnerHero from '@components/sections/InnerHero.astro';
 import { getLegalContent } from '@utils/legalContent.js';
 
 // Use the helper function to bypass TypeScript collection errors
-const legalData = await getLegalContent('privacy-policy', 'en');
+const legalData = await getLegalContent('terms-of-service', 'en');
 const { Content } = legalData;
 const entry = legalData;
 
@@ -18,23 +18,22 @@ const footerCta = {
   eyebrow: "",
   title: "Transform Your Professional English Today",
   description: "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
-  hideCta: false,
+  hideCta: true, // Hide the CTA for legal pages
   button: {
     text: "Reserve My Free Consultation",
     link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
-    target: "_blank",
-    variant: "primary" as const
+    target: "_blank"
   }
 } as const;
 ---
 
 <Layout 
-  title={entry.data.seo?.title || entry.data.title}
-  description={entry.data.seo?.description || ""}
+  title={legalData.data.seo?.title || legalData.data.title}
+  description={legalData.data.seo?.description || ''}
   lang="en"
-  noIndex={true}
+  noIndex={false}
   footerCta={footerCta}
-  translationSlugEs="/es/legal/privacy-policy"
+  translationSlugEs="/es/legal/terms-of-service"
 >
   <InnerHero content={heroContent} />
   <article class="site-container--small mx-auto px-8 prose pb-base">

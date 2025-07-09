@@ -74,12 +74,22 @@ const heroContent = {
   alt: heroImageAlt
 };
 ---
-<Layout title={seoTitle} description={seoDescription} 
+<Layout 
+    title={seoTitle} 
+    description={seoDescription} 
     translationSlugEn={translationSlugEn} 
     translationSlugEs={translationSlugEs}
     image="/images/logos/new-york-english-og-wide.jpg"
     whatsappImage="/images/logos/new-york-english-og.jpg"
-    linkedinImage="/images/logos/new-york-english-og-wide.jpg">
+    linkedinImage="/images/logos/new-york-english-og-wide.jpg"
+    isPaginated={shouldShowPagination}
+    paginationData={{
+      currentPage,
+      totalPages,
+      canonicalUrl: cleanBaseUrl,
+      prevPageUrl: prevPage,
+      nextPageUrl: nextPage
+    }}>
     <main>
     <InnerHero content={{
       title: title,

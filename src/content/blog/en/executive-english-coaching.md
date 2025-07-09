@@ -2,9 +2,8 @@
 title: "Beyond Grammar: Why Senior Leaders Need a Business-Savvy Native English Coach"
 excerpt: "Standard English lessons fall short for executives. Discover how a native coach with business insight accelerates leadership performance and career growth."
 publishDate: "2025-04-18" # Adjust date as needed
-categories: [
-  'English Coaching'
-]
+categories: 
+  - "English Coaching"
 featuredImage: "./images/executive-english-coaching.jpg"
 imageAlt: "Executive English coaching session"
 translations:

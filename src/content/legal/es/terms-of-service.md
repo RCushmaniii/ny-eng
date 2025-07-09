@@ -1,6 +1,8 @@
 ---
 title: "Términos y Condiciones de Uso"
 lastUpdated: "2025-04-10"
+translations:
+  en: "/en/legal/terms-of-service/"
 seo:
   title: "Términos de Servicio - New York English Teacher"
   description: "Revisa los términos y condiciones para usar el sitio web y los servicios de New York English Teacher."
@@ -76,7 +78,4 @@ Estos Términos se regirán por las leyes del Estado de Nueva York, sin tener en
 
 ## Contáctanos
 
-Si tienes alguna pregunta sobre estos Términos o nuestra Política de Privacidad, por favor contáctanos:
-
-**Atención:** Coordinador de Política de Privacidad
-**Correo Electrónico:** info@nyenglishteacher.com
+¿Tienes preguntas o inquietudes sobre esta Política de Privacidad? No dudes en contactarnos a través de nuestro formulario de contacto.

@@ -1,6 +1,8 @@
 ---
 title: "Privacy Policy"
 lastUpdated: "2025-04-10"
+translations:
+  es: "/es/legal/privacy-policy/"
 seo:
   title: "Privacy Policy - How We Protect Your Information"
   description: "Understand how we collect, use, and safeguard your personal information on the New York English Teacher website."
@@ -80,8 +82,4 @@ We may occasionally update this Privacy Policy. When changes occur, we will upda
 
 ## Contact Us
 
-If you have any questions or concerns about this Privacy Policy, please contact us:
-
-**Email**: [info@nyenglishteacher.com](mailto:info@nyenglishteacher.com)
-
-Thank you for trusting Happy Healthy Choices, LLC and the New York English Teacher website.
+If you have any questions or concerns about this Privacy Policy, please contact us using our contact form.

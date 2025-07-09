@@ -2,9 +2,8 @@
 title: "5 Practical Ways to Boost Business English Confidence Today"
 excerpt: "Struggling to sound confident in English? These 5 tips will help you speak clearly and lead with impact in meetings and interviews."
 publishDate: "2025-05-01"
-categories: [
-  'Business English'
-]
+categories:
+  - "Business English"
 featuredImage: "./images/confidently-speaking.jpg"
 imageAlt: "Business English coaching session"
 translations:
