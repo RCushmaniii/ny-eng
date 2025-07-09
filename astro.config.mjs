@@ -42,10 +42,32 @@ export default defineConfig({
         if (/(?:blog|category)\/\d+\/?$/.test(page)) {
           return false;
         }
-        // Exclude invalid nested language paths.
-        if (/\/en\/(blog|services)\/en\/|\/es\/(blog|servicios|category)\/es\//.test(page)) {
+        // Exclude invalid nested language paths (now includes /legal/)
+        if (/\/en\/[^/]+\/en\//.test(page) || /\/es\/[^/]+\/es\//.test(page)) {
           return false;
         }
+        // Exclude 'all' testimonials pages
+        if (/\/(testimonials|testimonios)\/all\/$/.test(page)) {
+          return false;
+        }
+        // 🚫 Exclude *these* non-category "category" URLs in English and Spanish
+        const excludedCategorySlugs = [
+          '/en/category/high-stakes-english/',
+          '/en/category/logistics-english/',
+          '/en/category/professional-english/',
+          '/en/category/startup-founders/',
+          '/en/category/tech-english/',
+          '/es/category/ingles-para-fundadores-de-startups/',
+          '/es/category/ingles-para-logistica/',
+          '/es/category/ingles-para-presentaciones/',
+          '/es/category/ingles-para-profesionales/',
+          '/es/category/ingles-para-tecnologia/',
+        ];
+        if (excludedCategorySlugs.some(slug => page.endsWith(slug))) {
+          return false;
+        }
+
+
 
         // ⚠️ Filter out non-canonical category slugs from the sitemap
         // This removes the duplicate URLs you identified.

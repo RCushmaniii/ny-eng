@@ -15,60 +15,31 @@ export async function getStaticPaths() {
   
   const allPaths: StaticPath[] = [];
   
-  // Generate paths for regular categories with Spanish slugs
+  // Generate paths for regular categories with Spanish slugs ONLY
   categories.forEach(category => {
-    // Use the explicit esSlug if available, otherwise generate one
     const esSlug = category.esSlug || 
       (category.name_es ? 
         category.name_es.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '') : 
         category.slug);
-    
-    // Add the Spanish slug path  
     allPaths.push({
       params: { category: esSlug },
-      props: { 
-        categoryData: {...category, esSlug},
-      },
-    });
-    
-    // IMPORTANT: Also add the English slug path to catch links that use English slugs in Spanish path
-    // This prevents 404s when people link to /es/category/executive-english instead of /es/category/ingles-ejecutivo
-    allPaths.push({
-      params: { category: category.slug },
-      props: { 
-        categoryData: {...category, esSlug},
-      },
+      props: { categoryData: { ...category, esSlug } },
     });
   });
   
   // Also generate paths for service categories that might be referenced in blog posts
   // This ensures links from CategoryPill won't lead to 404s
   serviceCategories.forEach(service => {
-    // Add Spanish slug path for service category
     allPaths.push({
-      params: { category: service.esSlug },  // Use Spanish slug for Spanish pages
-      props: { 
-        categoryData: {
-          name: service.label,  // Keep English name for filtering posts
-          name_es: service.esLabel, // Add Spanish name for display
-          slug: service.slug,     // Keep original slug for matching posts
-          esSlug: service.esSlug,  // Use Spanish slug for URL
-          description: `Publicaciones relacionadas con ${service.esLabel}`,
-        } as Category 
-      },
-    });
-    
-    // Also add the English slug path for service category to catch direct links
-    allPaths.push({
-      params: { category: service.slug },  // Use English slug as fallback
-      props: { 
+      params: { category: service.esSlug },
+      props: {
         categoryData: {
           name: service.label,
           name_es: service.esLabel,
           slug: service.slug,
           esSlug: service.esSlug,
           description: `Publicaciones relacionadas con ${service.esLabel}`,
-        } as Category 
+        } as Category
       },
     });
   });
@@ -171,6 +142,7 @@ const translationSlugEn = englishCategory && englishCategory.slug ? `/en/categor
     currentCategory: categoryDisplayName,
     currentCategorySlug: categoryData.esSlug || categoryData.slug, // Pass Spanish slug for button highlighting
     translationSlugEn: translationSlugEn.replace(/^\/en\//, ''),
+    translationSlugEs: categoryData.esSlug || categoryData.slug, // Always pass the correct Spanish slug for the switcher
     heroImage: blogSetting.categoryHeroImage,
     heroImageAlt: blogSetting.categoryHeroImageAlt || `Categoría: ${categoryDisplayName}`,
     hasMultiplePages: false,

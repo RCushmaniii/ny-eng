@@ -30,318 +30,141 @@ export default defineConfig({
         },
       },
       filter: (page) => {
+        // Exclude utility, test, and draft pages.
+        if (/[/\\](404|components|test|dev|draft|preview)[/\\]/.test(page)) {
+          return false;
+        }
+        // Exclude Astro's catch-all routes.
+        if (/\/\[\.\.\.\w+\]/.test(page)) {
+          return false;
+        }
+        // A more precise regex to exclude only paginated blog/category URLs.
+        if (/(?:blog|category)\/\d+\/?$/.test(page)) {
+          return false;
+        }
+        // Exclude invalid nested language paths (now includes /legal/)
+        if (/\/en\/[^/]+\/en\//.test(page) || /\/es\/[^/]+\/es\//.test(page)) {
+          return false;
+        }
+        // Exclude 'all' testimonials pages
+        if (/\/(testimonials|testimonios)\/all\/$/.test(page)) {
+          return false;
+        }
+
+
+
+        // ⚠️ Filter out non-canonical category slugs from the sitemap
+        // This removes the duplicate URLs you identified.
         if (
-          page.includes('/404') ||
-          page.includes('/components/') ||
-          page.includes('/test/') ||
-          page.includes('/dev/') ||
-          page.includes('/draft/') ||
-          page.includes('/preview/') ||
-          /\/\[\.\.\.\w+\]/.test(page) || // catch-all routes
-          /\/\d+\/?$/.test(page) ||      // paginated routes ending with number
-          /\/blog\/\d+\/?$/.test(page) || // blog pagination URLs like /en/blog/2/
-          /\/blog\/\d+\/index\.html$/.test(page) || // same URLs with index.html
-          page.includes('/en/blog/en/') ||
-          page.includes('/es/blog/es/') ||
-          page.includes('/en/services/en/') ||
-          page.includes('/es/servicios/es/') ||
-          // Also filter out the site root to avoid duplicate entries with the root URL
-          page === site || page === `${site}/`
+          page.includes('/es/category/ingles-para-ejecutivos/') ||
+          page.includes('/es/category/english-coaching/')
         ) {
           return false;
         }
+
         return true;
       },
       entryLimit: 10000,
       serialize(item) {
-        const url = item.url;
-        const defaultEntry = {
-          ...item,
-          changefreq: 'weekly',
-          priority: 0.7,
+        const url = new URL(item.url).pathname;
+        const fullUrl = item.url;
+        const defaultEntry = { ...item, changefreq: 'weekly', priority: 0.7 };
+
+        // --- MANUAL TRANSLATION MAPS (SINGLE SOURCE OF TRUTH) ---
+        // All translation rules are now in one place for easy management.
+
+        // ✅ Services Map: Links English and Spanish service pages
+        const serviceMap = {
+          'executive-english': 'ingles-para-ejecutivos',
+          'interview-prep': 'preparacion-para-entrevistas',
+          'medical-english': 'ingles-para-medicos',
+          // TODO: Add all other service page slug translations here
         };
+        const reverseServiceMap = Object.fromEntries(Object.entries(serviceMap).map(([k, v]) => [v, k]));
 
-        // Handle the root URL, treating it as the canonical x-default
-        if (url === site || url === `${site}/`) {
-          return {
-            ...defaultEntry,
-            changefreq: 'weekly',
-            priority: 0.9,
-            links: [
-              { url: url, lang: 'x-default' }, // Root URL is the x-default
-              { url: `${site}/en/`, lang: 'en-US' }, // Point en-US to /en/
-              { url: `${site}/es/`, lang: 'es-MX' },
-            ]
-          };
+        // ✅ Canonical Category Map: Enforces ONE Spanish slug per English slug
+        const categoryMap = {
+          'business-english': 'ingles-para-negocios',
+          'high-impact-communication': 'comunicacion-de-alto-impacto',
+          'career-leadership': 'carrera-liderazgo',
+          'english-coaching': 'coaching-en-ingles',
+          'executive-english': 'ingles-ejecutivo', // This is the CANONICAL slug
+          'tech': 'tecnologia',
+          'startup-founders': 'ingles-para-fundadores-de-startups',
+          // TODO: Add all other category translations here
+        };
+        const reverseCategoryMap = Object.fromEntries(Object.entries(categoryMap).map(([k, v]) => [v, k]));
+
+        // ✅ Blog Post Map
+        const blogTranslationMap = {
+          '4-secrets-executives-use': '4-secretos-que-usan-los-ejecutivos',
+          'boost-eng-confidence': 'aumentar-confianza',
+          'why-tech-managers-lose-millions': 'por-que-los-gerentes-de-ti-en-mexico-pierden-clientes',
+          // TODO: Add all other blog post translations here
+        };
+        const reverseBlogTranslationMap = Object.fromEntries(Object.entries(blogTranslationMap).map(([k, v]) => [v, k]));
+
+        // --- LOGIC ---
+
+        // 1. Handle Root and Language Index Pages
+        if (url === '/') return { ...defaultEntry, priority: 1.0, links: [{ url: `${site}/`, lang: 'x-default' }, { url: `${site}/en/`, lang: 'en-US' }, { url: `${site}/es/`, lang: 'es-MX' }] };
+        if (url === '/en/') return { ...defaultEntry, priority: 0.9, links: [{ url: `${site}/`, lang: 'x-default' }, { url: `${site}/en/`, lang: 'en-US' }, { url: `${site}/es/`, lang: 'es-MX' }] };
+        if (url === '/es/') return { ...defaultEntry, priority: 0.9, links: [{ url: `${site}/`, lang: 'x-default' }, { url: `${site}/en/`, lang: 'en-US' }, { url: `${site}/es/`, lang: 'es-MX' }] };
+        if (url === '/en/blog/' || url === '/es/blog/') return { ...defaultEntry, priority: 0.8, links: [{ url: `${site}/en/blog/`, lang: 'en-US' }, { url: `${site}/es/blog/`, lang: 'es-MX' }] };
+
+        // 2. Handle Low-Priority Pages
+        if (url.includes('/legal/') || url.includes('/privacy/') || url.includes('/terms/') || url.includes('/thank-you/')) return { ...defaultEntry, changefreq: 'monthly', priority: 0.3 };
+        if (url.includes('/testimonials/') || url.includes('/testimonios/')) return { ...defaultEntry, changefreq: 'monthly', priority: 0.5 };
+
+        // 3. ✨ Handle Service Pages with Alternates (FIX)
+        if (url.startsWith('/en/services/') || url.startsWith('/es/servicios/')) {
+          const entry = { ...defaultEntry, changefreq: 'monthly', priority: 0.8, links: [] };
+          const slug = url.split('/').filter(Boolean).pop();
+
+          if (url.startsWith('/en/services/')) {
+            entry.links.push({ url: fullUrl, lang: 'en-US' });
+            const esSlug = serviceMap[slug];
+            if (esSlug) entry.links.push({ url: `${site}/es/servicios/${esSlug}/`, lang: 'es-MX' });
+          } else if (url.startsWith('/es/servicios/')) {
+            entry.links.push({ url: fullUrl, lang: 'es-MX' });
+            const enSlug = reverseServiceMap[slug];
+            if (enSlug) entry.links.push({ url: `${site}/en/services/${enSlug}/`, lang: 'en-US' });
+          }
+          return entry;
         }
 
-        // Handle language root pages with proper alternates
-        if (/^https?:\/\/[^\/]+\/en\/?$/.test(url)) {
-          return {
-            ...defaultEntry,
-            changefreq: 'weekly',
-            priority: 0.9,
-            links: [
-              { url: `${site}/`, lang: 'x-default' },
-              { url: url, lang: 'en-US' }, // This URL is the en-US version
-              { url: `${site}/es/`, lang: 'es-MX' },
-            ]
-          };
-        }
-
-        if (/^https?:\/\/[^\/]+\/es\/?$/.test(url)) {
-          return {
-            ...defaultEntry,
-            changefreq: 'weekly',
-            priority: 0.9,
-            links: [
-              { url: `${site}/`, lang: 'x-default' },
-              { url: `${site}/en/`, lang: 'en-US' },
-              { url: url, lang: 'es-MX' },
-            ]
-          };
-        }
-
-        if (
-          url.includes('/legal/') ||
-          url.includes('/privacy/') ||
-          url.includes('/terms/') ||
-          url.includes('/thank-you/')
-        ) {
-          return {
-            ...defaultEntry,
-            changefreq: 'monthly',
-            priority: 0.3,
-          };
-        }
-
-        if (
-          url.includes('/services/') ||
-          url.includes('/servicios/') ||
-          url.includes('/testimonials/') ||
-          url.includes('/testimonios/')
-        ) {
-          return {
-            ...defaultEntry,
-            changefreq: 'monthly',
-            priority: 0.5,
-          };
-        }
-
-        // Handle category pages with language alternates
+        // 4. Handle Category Pages with Alternates (FIX)
         if (url.includes('/category/')) {
-          const entry = {
-            ...defaultEntry,
-            changefreq: 'weekly',
-            priority: 0.6,
-          };
+          const entry = { ...defaultEntry, priority: 0.6, links: [] };
+          const slug = url.split('/').filter(Boolean).pop();
 
-          // Determine if this is English or Spanish category page
-          const isEnglish = url.includes('/en/category/');
-          const isSpanish = url.includes('/es/category/');
-
-          if (isEnglish) {
-            // Extract the English slug from URL
-            const pathParts = url.split('/');
-            const enSlug = pathParts[pathParts.length - 2] || pathParts[pathParts.length - 1].replace(/\.html$/, '');
-
-            entry.links = [{ url: url, lang: 'en-US' }];
-
-            // Map English category slugs to Spanish equivalents
-            // Important: using actual slugs from Spanish blog posts to avoid 404s
-            const categoryMap = {
-              'business-english': 'ingles-para-negocios',
-              'high-impact-communication': 'comunicacion-de-alto-impacto',
-              'career-leadership': 'carrera-liderazgo',
-              'english-coaching': 'coaching-en-ingles',
-              'executive-english': 'ingles-ejecutivo', // Used in blog posts as "Inglés Ejecutivo"
-              'tech': 'tecnologia',
-              'theme-usage': 'uso-del-tema'
-            };
-
-            // Extra mappings for service categories that might be linked
-            // This ensures service category links don't lead to 404s
-            if (!categoryMap[enSlug] && enSlug === 'startup-founders') {
-              entry.links.push({ url: `${site}/es/category/ingles-para-fundadores-de-startups/`, lang: 'es-MX' });
-            } else if (!categoryMap[enSlug] && enSlug === 'tech-english') {
-              entry.links.push({ url: `${site}/es/category/ingles-para-tecnologia/`, lang: 'es-MX' });
-            } else if (!categoryMap[enSlug] && enSlug === 'logistics-english') {
-              entry.links.push({ url: `${site}/es/category/ingles-para-logistica/`, lang: 'es-MX' });
-            } else if (!categoryMap[enSlug] && enSlug === 'professional-english') {
-              entry.links.push({ url: `${site}/es/category/ingles-para-profesionales/`, lang: 'es-MX' });
-            } else if (!categoryMap[enSlug] && enSlug === 'high-stakes-english') {
-              entry.links.push({ url: `${site}/es/category/ingles-para-presentaciones/`, lang: 'es-MX' });
-            }
-
-            if (categoryMap[enSlug]) {
-              const esUrl = `${site}/es/category/${categoryMap[enSlug]}/`;
-              entry.links.push({ url: esUrl, lang: 'es-MX' });
-            }
+          if (url.startsWith('/en/')) {
+            entry.links.push({ url: fullUrl, lang: 'en-US' });
+            const esSlug = categoryMap[slug];
+            if (esSlug) entry.links.push({ url: `${site}/es/category/${esSlug}/`, lang: 'es-MX' });
+          } else if (url.startsWith('/es/')) {
+            entry.links.push({ url: fullUrl, lang: 'es-MX' });
+            const enSlug = reverseCategoryMap[slug];
+            if (enSlug) entry.links.push({ url: `${site}/en/category/${enSlug}/`, lang: 'en-US' });
           }
-          else if (isSpanish) {
-            // Extract the Spanish slug from URL
-            const pathParts = url.split('/');
-            const esSlug = pathParts[pathParts.length - 2] || pathParts[pathParts.length - 1].replace(/\.html$/, '');
-
-            entry.links = [{ url: url, lang: 'es-MX' }];
-
-            // Map Spanish category slugs to English equivalents (reverse of above mapping)
-            // Important: using actual slugs from Spanish blog posts to avoid 404s
-            const reverseCategoryMap = {
-              'ingles-para-negocios': 'business-english',
-              'comunicacion-de-alto-impacto': 'high-impact-communication',
-              'carrera-liderazgo': 'career-leadership',
-              'coaching-en-ingles': 'english-coaching',
-              'ingles-ejecutivo': 'executive-english', // Used in blog posts as "Inglés Ejecutivo"
-              'tecnologia': 'tech',
-              'uso-del-tema': 'theme-usage',
-              // Additional mappings from service categories to blog categories
-              'ingles-para-fundadores-de-startups': 'startup-founders',
-              'ingles-para-tecnologia': 'tech-english',
-              'ingles-para-logistica': 'logistics-english',
-              'ingles-para-profesionales': 'professional-english',
-              'ingles-para-presentaciones': 'high-stakes-english',
-              // Important: Add this mapping to prevent confusion
-              'ingles-para-ejecutivos': 'executive-english' // Map service category slug to blog category
-            };
-
-            if (reverseCategoryMap[esSlug]) {
-              const enUrl = `${site}/en/category/${reverseCategoryMap[esSlug]}/`;
-              entry.links.push({ url: enUrl, lang: 'en-US' });
-            }
-          }
-
           return entry;
         }
 
-        // Handle blog posts with language alternates where possible
+        // 5. Handle Blog Posts with Alternates
         if (url.includes('/blog/')) {
-          const entry = {
-            ...defaultEntry,
-            changefreq: 'weekly',
-            priority: 0.6,
-          };
+          const entry = { ...defaultEntry, priority: 0.8, links: [] };
+          const slug = url.split('/').filter(Boolean).pop();
 
-          // Try to determine language pair for blog post
-          const isEnglish = url.includes('/en/blog/');
-          const isSpanish = url.includes('/es/blog/');
-
-          // For blog posts, we need to properly map between languages
-          // This requires accessing the blog collection metadata to match translations
-
-          // First, handle blog index pages to avoid the /blog/blog/ duplicate issue
-          if (url === `${site}/en/blog/` || url === `${site}/en/blog`) {
-            entry.links = [
-              { url: url, lang: 'en-US' },
-              { url: `${site}/es/blog/`, lang: 'es-MX' } // Fix path to avoid /blog/blog/
-            ];
-            return entry;
+          if (url.startsWith('/en/')) {
+            entry.links.push({ url: fullUrl, lang: 'en-US' });
+            const esSlug = blogTranslationMap[slug];
+            if (esSlug) entry.links.push({ url: `${site}/es/blog/${esSlug}/`, lang: 'es-MX' });
+          } else if (url.startsWith('/es/')) {
+            entry.links.push({ url: fullUrl, lang: 'es-MX' });
+            const enSlug = reverseBlogTranslationMap[slug];
+            if (enSlug) entry.links.push({ url: `${site}/en/blog/${enSlug}/`, lang: 'en-US' });
           }
-
-          if (url === `${site}/es/blog/` || url === `${site}/es/blog`) {
-            entry.links = [
-              { url: `${site}/en/blog/`, lang: 'en-US' }, // Fix path to avoid /blog/blog/
-              { url: url, lang: 'es-MX' }
-            ];
-            return entry;
-          }
-          // Extract slugs from URLs to enable translation matching for individual posts
-          if (isEnglish || isSpanish) {
-            entry.links = [];
-
-            // Define content paths - will be used to check file existence
-            const contentBasePath = path.join(process.cwd(), 'src', 'content', 'blog');
-            const enContentPath = path.join(contentBasePath, 'en');
-            const esContentPath = path.join(contentBasePath, 'es');
-
-            // For English blog posts
-            if (isEnglish) {
-              // Get the English slug
-              const pathParts = url.split('/');
-              const enSlug = pathParts[pathParts.length - 2] || pathParts[pathParts.length - 1].replace(/\.html$/, '');
-
-              entry.links.push({ url: url, lang: 'en-US' });
-
-              // Here we use a more robust translation mapping system with file existence check
-              let esSlug = enSlug;
-
-              // Example manual mappings - in a real implementation, this would be a full mapping table
-              const translationMap = {
-                '4-secrets-executives-use': '4-secretos-que-usan-los-ejecutivos',
-                'boost-eng-confidence': 'aumentar-confianza',
-                'mastering-business': 'dominar-negocios',
-                'executive-coaching': 'coaching-ejecutivo',
-                'small-talk-smart-talk': 'charla-pequena-habla-inteligente',
-                'why-tech-managers-lose-millions': 'por-que-los-gerentes-de-ti-en-mexico-pierden-clientes',
-                // Add more mappings as needed
-              };
-
-              if (translationMap[enSlug]) {
-                esSlug = translationMap[enSlug];
-              }
-
-              // Only add the Spanish alternate if the Spanish version actually exists
-              // Check multiple possible file extensions
-              const esFileExists = (
-                fs.existsSync(path.join(esContentPath, `${esSlug}.md`)) ||
-                fs.existsSync(path.join(esContentPath, `${esSlug}.mdx`)) ||
-                fs.existsSync(path.join(esContentPath, `${esSlug}/index.md`)) ||
-                fs.existsSync(path.join(esContentPath, `${esSlug}/index.mdx`)) ||
-                // Also check if the Spanish translation is mentioned in the English file's frontmatter
-                fs.existsSync(path.join(enContentPath, `${enSlug}.md`)) &&
-                fs.readFileSync(path.join(enContentPath, `${enSlug}.md`), 'utf8').includes('translations:')
-              );
-
-              if (esFileExists) {
-                const esUrl = `${site}/es/blog/${esSlug}/`;
-                entry.links.push({ url: esUrl, lang: 'es-MX' });
-              }
-            }
-            // For Spanish blog posts
-            else if (isSpanish) {
-              // Get the Spanish slug
-              const pathParts = url.split('/');
-              const esSlug = pathParts[pathParts.length - 2] || pathParts[pathParts.length - 1].replace(/\.html$/, '');
-
-              entry.links.push({ url: url, lang: 'es-MX' });
-
-              // Reverse lookup in the translation map with more mappings
-              let enSlug = esSlug;
-
-              const reverseTranslationMap = {
-                '4-secretos-que-usan-los-ejecutivos': '4-secrets-executives-use',
-                'aumentar-confianza': 'boost-eng-confidence',
-                'dominar-negocios': 'mastering-business',
-                'coaching-ejecutivo': 'executive-coaching',
-                'charla-pequena-habla-inteligente': 'small-talk-smart-talk',
-                'por-que-los-gerentes-de-ti-en-mexico-pierden-clientes': 'why-tech-managers-lose-millions',
-                // Add more mappings as needed
-              };
-
-              if (reverseTranslationMap[esSlug]) {
-                enSlug = reverseTranslationMap[esSlug];
-              }
-
-              // Only add the English alternate if the English version actually exists
-              const enFileExists = (
-                fs.existsSync(path.join(enContentPath, `${enSlug}.md`)) ||
-                fs.existsSync(path.join(enContentPath, `${enSlug}.mdx`)) ||
-                fs.existsSync(path.join(enContentPath, `${enSlug}/index.md`)) ||
-                fs.existsSync(path.join(enContentPath, `${enSlug}/index.mdx`)) ||
-                // Also check if the English translation is mentioned in the Spanish file's frontmatter
-                fs.existsSync(path.join(esContentPath, `${esSlug}.md`)) &&
-                fs.readFileSync(path.join(esContentPath, `${esSlug}.md`), 'utf8').includes('translations:')
-              );
-
-              if (enFileExists) {
-                const enUrl = `${site}/en/blog/${enSlug}/`;
-                entry.links.push({ url: enUrl, lang: 'en-US' });
-              }
-            }
-          }
-
-
-          return entry;
+          return entry.links.length > 0 ? entry : defaultEntry;
         }
 
         return defaultEntry;

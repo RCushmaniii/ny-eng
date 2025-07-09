@@ -42,22 +42,6 @@ export const categories: Category[] = [
     slug: 'executive-english',
     esSlug: 'ingles-ejecutivo',
     description: 'Speaking confidence, persuasion, rhythm, cultural nuances, credibility, and strategic communication'
-  },
-
-  // Keep some tech categories for website related posts
-  {
-    name: 'Tech',
-    name_es: 'Tecnología',
-    slug: 'tech',
-    esSlug: 'tecnologia',
-    description: 'Latest in technology and software development'
-  },
-  {
-    name: 'Theme Usage',
-    name_es: 'Uso del Tema',
-    slug: 'theme-usage',
-    esSlug: 'uso-del-tema',
-    description: 'Learn how to use the theme'
   }
 ];
 

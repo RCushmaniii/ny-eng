@@ -59,21 +59,27 @@ const activeCategories = Array.from(categoryMap.values());
         >
           {lang === 'es' ? 'Mostrar Todo' : 'Show All'}
         </a>
-        {activeCategories.map((category) => (
-          <a 
-            href={`${baseCategoryUrl}/${category.slug}`}
-            class={`px-4 sm:px-6 py-2 sm:py-3 leading-none rounded-md text-small flex items-center justify-center transition-colors border border-primary duration-200 ${
-              // Fix: Match both by exact name or by slug for better reliability
-              (lang === 'es' && category.name_es && (currentCategory === category.name_es || currentCategorySlug === category.slug)) ||
-              (lang !== 'es' && (currentCategory === category.name || currentCategorySlug === category.slug))
-                ? 'bg-primary text-body-dark shadow-md' 
-                : 'bg-background text-body-base hover:bg-background-light hover:text-body-light'
-            }`}
-            title={category.description}
-          >
-            {lang === 'es' && category.name_es ? category.name_es : category.name}
-          </a>
-        ))}
+        {activeCategories.map((category) => {
+  // Use esSlug for Spanish, fallback to slug for English
+  const categoryUrl = lang === 'es' && category.esSlug
+    ? `${baseCategoryUrl}/${category.esSlug}`
+    : `${baseCategoryUrl}/${category.slug}`;
+  return (
+    <a 
+      href={categoryUrl}
+      class={`px-4 sm:px-6 py-2 sm:py-3 leading-none rounded-md text-small flex items-center justify-center transition-colors border border-primary duration-200 ${
+        (lang === 'es' && category.name_es && (currentCategory === category.name_es || currentCategorySlug === category.esSlug)) ||
+        (lang !== 'es' && (currentCategory === category.name || currentCategorySlug === category.slug))
+          ? 'bg-primary text-body-dark shadow-md' 
+          : 'bg-background text-body-base hover:bg-background-light hover:text-body-light'
+      }`}
+      title={category.description}
+    >
+      {lang === 'es' && category.name_es ? category.name_es : category.name}
+    </a>
+  );
+})}
+
       </div>
     </div>
     <p class="text-small text-body-base text-left sm:text-right whitespace-nowrap">

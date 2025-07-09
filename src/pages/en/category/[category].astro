@@ -102,9 +102,17 @@ if (categoryData.slug === 'executive-english') {
 const seoTitle = `Posts in ${categoryData.name} | ${siteConfig.companyName}`;
 const seoDescription = categoryData.description || `Browse blog posts categorized under ${categoryData.name}.`;
 
-// Determine the corresponding Spanish category slug
-const spanishCategory = categories.find(cat => cat.name === categoryData.name); // Assuming names are unique identifiers for linking
-const translationSlugEs = spanishCategory && spanishCategory.slug ? `/es/category/${spanishCategory.slug}` : '/es/blog'; // Fallback to main ES blog
+// Robustly find the Spanish category by slug or name (case and accent insensitive)
+function normalize(str = "") { return str.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+const normalizedSlug = normalize(categoryData.slug);
+const normalizedName = normalize(categoryData.name);
+const spanishCategory = categories.find(cat =>
+  (cat.esSlug && normalize(cat.esSlug) === normalizedSlug) ||
+  (cat.slug && normalize(cat.slug) === normalizedSlug) ||
+  (cat.name && normalize(cat.name) === normalizedName) ||
+  (cat.name_es && normalize(cat.name_es) === normalizedName)
+);
+const translationSlugEs = spanishCategory && spanishCategory.esSlug ? `/es/category/${spanishCategory.esSlug}` : `/es/blog`;
 
 --- 
 
@@ -117,7 +125,8 @@ const translationSlugEs = spanishCategory && spanishCategory.slug ? `/es/categor
   subtitle={categoryData.description || `All posts related to ${categoryData.name}`}
   currentCategory={categoryData.name}
   currentCategorySlug={categoryData.slug}
-  translationSlugEs={translationSlugEs}
+  translationSlugEs={spanishCategory && spanishCategory.esSlug ? `category/${spanishCategory.esSlug}` : 'blog'}
+  translationSlugEn={categoryData.slug}
   heroImage={blogSetting.categoryHeroImage}
   heroImageAlt={blogSetting.categoryHeroImageAlt || `Category: ${categoryData.name}`}
   hasMultiplePages={false}

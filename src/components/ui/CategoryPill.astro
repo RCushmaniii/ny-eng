@@ -13,21 +13,29 @@ const { category, lang = 'en' } = Astro.props;
 // Clean the category name to handle any format inconsistencies
 const cleanCategoryName = category.trim();
 
-// 1. First try to find by exact name match
-let categoryData = categories.find(cat => cat.name === cleanCategoryName);
+// Normalize a string for matching (case and accent insensitive)
+function normalize(str: string = ""): string {
+  return str.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
 
-// 2. If not found and using Spanish, try to find by Spanish name
+const normalizedCategoryName = normalize(category);
+
+// 1. Find by normalized English name
+let categoryData = categories.find(cat => normalize(cat.name) === normalizedCategoryName);
+
+// 2. If not found and using Spanish, try normalized Spanish name
 if (!categoryData && lang === 'es') {
-  categoryData = categories.find(cat => 
-    cat.name_es && cat.name_es === cleanCategoryName);
+  categoryData = categories.find(cat => cat.name_es && normalize(cat.name_es) === normalizedCategoryName);
 }
 
-// 3. If still not found, try case-insensitive match
+// 3. If still not found, try to match either name or name_es
 if (!categoryData) {
-  categoryData = categories.find(cat => 
-    cat.name.toLowerCase() === cleanCategoryName.toLowerCase() ||
-    (cat.name_es && cat.name_es.toLowerCase() === cleanCategoryName.toLowerCase()));
+  categoryData = categories.find(cat =>
+    normalize(cat.name) === normalizedCategoryName ||
+    (cat.name_es && normalize(cat.name_es) === normalizedCategoryName)
+  );
 }
+
 
 // 4. If still not found, check if it matches a service category
 let slug = '';
