@@ -36,7 +36,7 @@ export interface Service {
 
 // Structured based on the 6 standardized categories in priority order
 export const services: Service[] = [
-  // 1. Executives & Directors - highest priority, highest budget audience
+  // 1. Executives & Directors
   {
     title: "Business & Executive English",
     icon: "🎯",
@@ -46,7 +46,7 @@ export const services: Service[] = [
     squareImage: executiveEnglishSquareImage,
     slug: "executive-english"
   },
-  // 2. Startup Founders - ambitious, referral-prone audience
+  // 2. Startup Founders
   {
     title: "English for Startup Founders",
     icon: "🚀",
@@ -56,7 +56,7 @@ export const services: Service[] = [
     squareImage: startupFoundersSquareImage,
     slug: "startup-founders"
   },
-  // 3. Engineers & Tech Leads - tech sector growth area
+  // 3. Engineers & Tech Leads
   {
     title: "English for Tech",
     icon: "💻",
@@ -66,7 +66,7 @@ export const services: Service[] = [
     squareImage: techSquareImage,
     slug: "tech-english"
   },
-  // 4. Logistics & Operations - differentiated niche with growth
+  // 4. Logistics & Operations
   {
     title: "English for Logistics",
     icon: "🚚",
@@ -76,7 +76,7 @@ export const services: Service[] = [
     squareImage: logisticsSquareImage,
     slug: "logistics-english"
   },
-  // 5. Medical & Legal Professionals - trust-driven, word-of-mouth audience
+  // 5. Medical & Legal Professionals
   {
     title: "English for Doctors, Lawyers & Professionals",
     icon: "⛑️",
@@ -86,7 +86,7 @@ export const services: Service[] = [
     squareImage: medicalSquareImage,
     slug: "professional-english"
   },
-  // 6. Public Speaking & Interviews - lead generation category
+  // 6. Public Speaking & Interviews
   {
     title: "Interview & Presentation Coaching",
     icon: "🎤",
@@ -99,7 +99,6 @@ export const services: Service[] = [
 ] as const;
 
 // Spanish version
-// Spanish services following the same standardized categories and priority order
 export const serviciosEs: Service[] = [
   // 1. Ejecutivos y Directores
   {

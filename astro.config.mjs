@@ -7,6 +7,130 @@ import fs from 'fs';
 
 const site = 'https://www.nyenglishteacher.com';
 
+// Centralized blacklist configuration
+const BLACKLIST_CONFIG = {
+  // Pattern-based exclusions
+  patterns: [
+    // Utility, test, and draft pages
+    /[/\\](404|components|test|dev|draft|preview)[/\\]/,
+    // Astro's catch-all routes
+    /\/\[\.\.\.\w+\]/,
+    // Paginated blog/category URLs
+    /(?:blog|category)\/\d+\/?$/,
+    // Invalid nested language paths
+    /\/en\/[^/]+\/en\//,
+    /\/es\/[^/]+\/es\//,
+    // 'All' testimonials pages
+    /\/(testimonials|testimonios)\/all\/$/,
+    // Legacy non-canonical category slugs
+    /\/es\/category\/ingles-para-ejecutivos\//,
+    /\/es\/category\/english-coaching\//
+  ],
+
+  // Exact path exclusions (handles both with and without trailing slashes)
+  exactPaths: [
+    // Excluded category slugs
+    '/en/category/high-stakes-english',
+    '/en/category/logistics-english',
+    '/en/category/professional-english',
+    '/en/category/startup-founders',
+    '/en/category/tech-english',
+    '/es/category/ingles-para-fundadores-de-startups',
+    '/es/category/ingles-para-logistica',
+    '/es/category/ingles-para-presentaciones',
+    '/es/category/ingles-para-profesionales',
+    '/es/category/ingles-para-tecnologia',
+
+    // Excluded service pages (English)
+    '/en/services/interview-prep',
+    '/en/services/medical-english',
+    '/en/services/public-speaking-english',
+    '/en/services/technical-sales-english',
+
+    // Excluded service pages (Spanish)
+    '/es/servicios/hablar-en-publico',
+    '/es/servicios/ingles-para-medicos',
+    '/es/servicios/ingles-para-ventas-tecnicas',
+    '/es/servicios/preparacion-para-entrevistas'
+  ],
+
+  // Custom exclusion functions
+  customRules: [
+    // Individual testimonials pages (keep only top-level)
+    (pathname) => {
+      const normalized = pathname.endsWith('/') ? pathname : pathname + '/';
+      return (
+        (normalized.startsWith('/en/testimonials/') && normalized !== '/en/testimonials/') ||
+        (normalized.startsWith('/es/testimonios/') && normalized !== '/es/testimonios/')
+      );
+    }
+  ]
+};
+
+// Robust blacklist checker function
+function isBlacklisted(pathname) {
+  const normalizedPage = pathname.endsWith('/') ? pathname : pathname + '/';
+
+  // Check pattern-based exclusions
+  for (const pattern of BLACKLIST_CONFIG.patterns) {
+    if (pattern.test(pathname)) {
+      return true;
+    }
+  }
+
+  // Check exact path exclusions (normalize both for comparison)
+  for (const exactPath of BLACKLIST_CONFIG.exactPaths) {
+    const normalizedExactPath = exactPath.endsWith('/') ? exactPath : exactPath + '/';
+    if (normalizedPage === normalizedExactPath) {
+      return true;
+    }
+  }
+
+  // Check custom rules
+  for (const rule of BLACKLIST_CONFIG.customRules) {
+    if (rule(pathname)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+// Helper function to add paths to blacklist at runtime
+function addToBlacklist(paths, type = 'exactPaths') {
+  if (type === 'exactPaths') {
+    BLACKLIST_CONFIG.exactPaths.push(...(Array.isArray(paths) ? paths : [paths]));
+  } else if (type === 'patterns') {
+    BLACKLIST_CONFIG.patterns.push(...(Array.isArray(paths) ? paths : [paths]));
+  } else if (type === 'customRules') {
+    BLACKLIST_CONFIG.customRules.push(...(Array.isArray(paths) ? paths : [paths]));
+  }
+}
+
+// Optional: Load blacklist from external file
+function loadExternalBlacklist() {
+  const blacklistPath = path.resolve('./blacklist.json');
+  if (fs.existsSync(blacklistPath)) {
+    try {
+      const externalBlacklist = JSON.parse(fs.readFileSync(blacklistPath, 'utf-8'));
+      if (externalBlacklist.exactPaths) {
+        BLACKLIST_CONFIG.exactPaths.push(...externalBlacklist.exactPaths);
+      }
+      if (externalBlacklist.patterns) {
+        // Convert string patterns to RegExp
+        const regexPatterns = externalBlacklist.patterns.map(p => new RegExp(p));
+        BLACKLIST_CONFIG.patterns.push(...regexPatterns);
+      }
+      console.log('External blacklist loaded successfully');
+    } catch (error) {
+      console.warn('Failed to load external blacklist:', error.message);
+    }
+  }
+}
+
+// Load external blacklist if available
+loadExternalBlacklist();
+
 export default defineConfig({
   site,
   integrations: [
@@ -30,55 +154,11 @@ export default defineConfig({
         },
       },
       filter: (page) => {
-        // Exclude utility, test, and draft pages.
-        if (/[/\\](404|components|test|dev|draft|preview)[/\\]/.test(page)) {
-          return false;
-        }
-        // Exclude Astro's catch-all routes.
-        if (/\/\[\.\.\.\w+\]/.test(page)) {
-          return false;
-        }
-        // A more precise regex to exclude only paginated blog/category URLs.
-        if (/(?:blog|category)\/\d+\/?$/.test(page)) {
-          return false;
-        }
-        // Exclude invalid nested language paths (now includes /legal/)
-        if (/\/en\/[^/]+\/en\//.test(page) || /\/es\/[^/]+\/es\//.test(page)) {
-          return false;
-        }
-        // Exclude 'all' testimonials pages
-        if (/\/(testimonials|testimonios)\/all\/$/.test(page)) {
-          return false;
-        }
-        // 🚫 Exclude *these* non-category "category" URLs in English and Spanish
-        const excludedCategorySlugs = [
-          '/en/category/high-stakes-english/',
-          '/en/category/logistics-english/',
-          '/en/category/professional-english/',
-          '/en/category/startup-founders/',
-          '/en/category/tech-english/',
-          '/es/category/ingles-para-fundadores-de-startups/',
-          '/es/category/ingles-para-logistica/',
-          '/es/category/ingles-para-presentaciones/',
-          '/es/category/ingles-para-profesionales/',
-          '/es/category/ingles-para-tecnologia/',
-        ];
-        if (excludedCategorySlugs.some(slug => page.endsWith(slug))) {
-          return false;
-        }
+        // Extract pathname from the full URL for Astro sitemap
+        const pathname = new URL(page).pathname;
 
-
-
-        // ⚠️ Filter out non-canonical category slugs from the sitemap
-        // This removes the duplicate URLs you identified.
-        if (
-          page.includes('/es/category/ingles-para-ejecutivos/') ||
-          page.includes('/es/category/english-coaching/')
-        ) {
-          return false;
-        }
-
-        return true;
+        // Use the robust blacklist checker with the pathname
+        return !isBlacklisted(pathname);
       },
       entryLimit: 10000,
       serialize(item) {
@@ -87,52 +167,106 @@ export default defineConfig({
         const defaultEntry = { ...item, changefreq: 'weekly', priority: 0.7 };
 
         // --- MANUAL TRANSLATION MAPS (SINGLE SOURCE OF TRUTH) ---
-        // All translation rules are now in one place for easy management.
-
-        // ✅ Services Map: Links English and Spanish service pages
         const serviceMap = {
           'executive-english': 'ingles-para-ejecutivos',
           'interview-prep': 'preparacion-para-entrevistas',
           'medical-english': 'ingles-para-medicos',
-          // TODO: Add all other service page slug translations here
+          // Add all other service page slug translations here as needed
         };
-        const reverseServiceMap = Object.fromEntries(Object.entries(serviceMap).map(([k, v]) => [v, k]));
 
-        // ✅ Canonical Category Map: Enforces ONE Spanish slug per English slug
+        const reverseServiceMap = Object.fromEntries(
+          Object.entries(serviceMap).map(([k, v]) => [v, k])
+        );
+
         const categoryMap = {
           'business-english': 'ingles-para-negocios',
           'high-impact-communication': 'comunicacion-de-alto-impacto',
           'career-leadership': 'carrera-liderazgo',
           'english-coaching': 'coaching-en-ingles',
-          'executive-english': 'ingles-ejecutivo', // This is the CANONICAL slug
+          'executive-english': 'ingles-ejecutivo',
           'tech': 'tecnologia',
           'startup-founders': 'ingles-para-fundadores-de-startups',
-          // TODO: Add all other category translations here
         };
-        const reverseCategoryMap = Object.fromEntries(Object.entries(categoryMap).map(([k, v]) => [v, k]));
 
-        // ✅ Blog Post Map
+        const reverseCategoryMap = Object.fromEntries(
+          Object.entries(categoryMap).map(([k, v]) => [v, k])
+        );
+
         const blogTranslationMap = {
           '4-secrets-executives-use': '4-secretos-que-usan-los-ejecutivos',
           'boost-eng-confidence': 'aumentar-confianza',
           'why-tech-managers-lose-millions': 'por-que-los-gerentes-de-ti-en-mexico-pierden-clientes',
-          // TODO: Add all other blog post translations here
+          'managers-lose-millions': 'por-que-los-gerentes-de-ti-en-mexico-pierden-clientes',
+          '5-practical-ways-to-boost-business-english': '5-formas-practicas-mejorar-ingles-negocios',
+          'executive-english-coaching': 'coaching-ejecutivo',
+          'master-business-english': 'dominar-negocios',
+          'small-talk-to-smart-talk': 'charla-pequena-habla-inteligente',
         };
-        const reverseBlogTranslationMap = Object.fromEntries(Object.entries(blogTranslationMap).map(([k, v]) => [v, k]));
+
+        const reverseBlogTranslationMap = Object.fromEntries(
+          Object.entries(blogTranslationMap).map(([k, v]) => [v, k])
+        );
 
         // --- LOGIC ---
-
         // 1. Handle Root and Language Index Pages
-        if (url === '/') return { ...defaultEntry, priority: 1.0, links: [{ url: `${site}/`, lang: 'x-default' }, { url: `${site}/en/`, lang: 'en-US' }, { url: `${site}/es/`, lang: 'es-MX' }] };
-        if (url === '/en/') return { ...defaultEntry, priority: 0.9, links: [{ url: `${site}/`, lang: 'x-default' }, { url: `${site}/en/`, lang: 'en-US' }, { url: `${site}/es/`, lang: 'es-MX' }] };
-        if (url === '/es/') return { ...defaultEntry, priority: 0.9, links: [{ url: `${site}/`, lang: 'x-default' }, { url: `${site}/en/`, lang: 'en-US' }, { url: `${site}/es/`, lang: 'es-MX' }] };
-        if (url === '/en/blog/' || url === '/es/blog/') return { ...defaultEntry, priority: 0.8, links: [{ url: `${site}/en/blog/`, lang: 'en-US' }, { url: `${site}/es/blog/`, lang: 'es-MX' }] };
+        if (url === '/') {
+          return {
+            ...defaultEntry,
+            priority: 1.0,
+            links: [
+              { url: `${site}/`, lang: 'x-default' },
+              { url: `${site}/en/`, lang: 'en-US' },
+              { url: `${site}/es/`, lang: 'es-MX' }
+            ]
+          };
+        }
+
+        if (url === '/en/') {
+          return {
+            ...defaultEntry,
+            priority: 0.9,
+            links: [
+              { url: `${site}/`, lang: 'x-default' },
+              { url: `${site}/en/`, lang: 'en-US' },
+              { url: `${site}/es/`, lang: 'es-MX' }
+            ]
+          };
+        }
+
+        if (url === '/es/') {
+          return {
+            ...defaultEntry,
+            priority: 0.9,
+            links: [
+              { url: `${site}/`, lang: 'x-default' },
+              { url: `${site}/en/`, lang: 'en-US' },
+              { url: `${site}/es/`, lang: 'es-MX' }
+            ]
+          };
+        }
+
+        if (url === '/en/blog/' || url === '/es/blog/') {
+          return {
+            ...defaultEntry,
+            priority: 0.8,
+            links: [
+              { url: `${site}/en/blog/`, lang: 'en-US' },
+              { url: `${site}/es/blog/`, lang: 'es-MX' }
+            ]
+          };
+        }
 
         // 2. Handle Low-Priority Pages
-        if (url.includes('/legal/') || url.includes('/privacy/') || url.includes('/terms/') || url.includes('/thank-you/')) return { ...defaultEntry, changefreq: 'monthly', priority: 0.3 };
-        if (url.includes('/testimonials/') || url.includes('/testimonios/')) return { ...defaultEntry, changefreq: 'monthly', priority: 0.5 };
+        if (url.includes('/legal/') || url.includes('/privacy/') ||
+          url.includes('/terms/') || url.includes('/thank-you/')) {
+          return { ...defaultEntry, changefreq: 'monthly', priority: 0.3 };
+        }
 
-        // 3. ✨ Handle Service Pages with Alternates (FIX)
+        if (url.includes('/testimonials/') || url.includes('/testimonios/')) {
+          return { ...defaultEntry, changefreq: 'monthly', priority: 0.5 };
+        }
+
+        // 3. Handle Service Pages with Alternates
         if (url.startsWith('/en/services/') || url.startsWith('/es/servicios/')) {
           const entry = { ...defaultEntry, changefreq: 'monthly', priority: 0.8, links: [] };
           const slug = url.split('/').filter(Boolean).pop();
@@ -140,16 +274,21 @@ export default defineConfig({
           if (url.startsWith('/en/services/')) {
             entry.links.push({ url: fullUrl, lang: 'en-US' });
             const esSlug = serviceMap[slug];
-            if (esSlug) entry.links.push({ url: `${site}/es/servicios/${esSlug}/`, lang: 'es-MX' });
+            if (esSlug) {
+              entry.links.push({ url: `${site}/es/servicios/${esSlug}/`, lang: 'es-MX' });
+            }
           } else if (url.startsWith('/es/servicios/')) {
             entry.links.push({ url: fullUrl, lang: 'es-MX' });
             const enSlug = reverseServiceMap[slug];
-            if (enSlug) entry.links.push({ url: `${site}/en/services/${enSlug}/`, lang: 'en-US' });
+            if (enSlug) {
+              entry.links.push({ url: `${site}/en/services/${enSlug}/`, lang: 'en-US' });
+            }
           }
+
           return entry;
         }
 
-        // 4. Handle Category Pages with Alternates (FIX)
+        // 4. Handle Category Pages with Alternates
         if (url.includes('/category/')) {
           const entry = { ...defaultEntry, priority: 0.6, links: [] };
           const slug = url.split('/').filter(Boolean).pop();
@@ -157,12 +296,17 @@ export default defineConfig({
           if (url.startsWith('/en/')) {
             entry.links.push({ url: fullUrl, lang: 'en-US' });
             const esSlug = categoryMap[slug];
-            if (esSlug) entry.links.push({ url: `${site}/es/category/${esSlug}/`, lang: 'es-MX' });
+            if (esSlug) {
+              entry.links.push({ url: `${site}/es/category/${esSlug}/`, lang: 'es-MX' });
+            }
           } else if (url.startsWith('/es/')) {
             entry.links.push({ url: fullUrl, lang: 'es-MX' });
             const enSlug = reverseCategoryMap[slug];
-            if (enSlug) entry.links.push({ url: `${site}/en/category/${enSlug}/`, lang: 'en-US' });
+            if (enSlug) {
+              entry.links.push({ url: `${site}/en/category/${enSlug}/`, lang: 'en-US' });
+            }
           }
+
           return entry;
         }
 
@@ -172,15 +316,27 @@ export default defineConfig({
           const slug = url.split('/').filter(Boolean).pop();
 
           if (url.startsWith('/en/')) {
+            // Always add self-referencing alternate
             entry.links.push({ url: fullUrl, lang: 'en-US' });
+
+            // Add Spanish alternate if translation exists
             const esSlug = blogTranslationMap[slug];
-            if (esSlug) entry.links.push({ url: `${site}/es/blog/${esSlug}/`, lang: 'es-MX' });
+            if (esSlug) {
+              entry.links.push({ url: `${site}/es/blog/${esSlug}/`, lang: 'es-MX' });
+            }
           } else if (url.startsWith('/es/')) {
+            // Always add self-referencing alternate
             entry.links.push({ url: fullUrl, lang: 'es-MX' });
+
+            // Add English alternate if translation exists
             const enSlug = reverseBlogTranslationMap[slug];
-            if (enSlug) entry.links.push({ url: `${site}/en/blog/${enSlug}/`, lang: 'en-US' });
+            if (enSlug) {
+              entry.links.push({ url: `${site}/en/blog/${enSlug}/`, lang: 'en-US' });
+            }
           }
-          return entry.links.length > 0 ? entry : defaultEntry;
+
+          // Always return the entry (even if only self-referencing)
+          return entry;
         }
 
         return defaultEntry;
@@ -255,3 +411,6 @@ export default defineConfig({
     ],
   },
 });
+
+// Export the blacklist utilities for external use
+export { BLACKLIST_CONFIG, isBlacklisted, addToBlacklist };
