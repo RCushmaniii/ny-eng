@@ -10,8 +10,8 @@ translations:
   en: "/en/blog/boost-eng-confidence"
 publish: true
 seo:
-  title: "Aumenta tu confianza en inglés de negocios: 5 consejos prácticos para profesionales"
-  description: "Deja de sentirte inseguro en reuniones. Descubre 5 formas simples de mejorar tu confianza, claridad y oportunidades profesionales en inglés de negocios. Consejos prácticos."
+  title: "5 consejos prácticos para hablar inglés de negocios con confianza"
+  description: "Deja de sentirte inseguro en reuniones. Descubre 5 formas simples de mejorar tu confianza, claridad y oportunidades profesionales en inglés."
 ---
 
 ### **Gana más confianza al hablar inglés**

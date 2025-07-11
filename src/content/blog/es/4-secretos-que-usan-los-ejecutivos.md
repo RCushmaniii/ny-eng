@@ -11,8 +11,8 @@ translations:
 publish: true
 
 seo:
-  title: "Domina el habla improvisada en inglés | 4 estrategias ejecutivas"
-  description: "Habla espontáneamente con claridad y confianza. Descubre cuatro consejos de nivel ejecutivo para manejar situaciones improvisadas en inglés como un profesional."
+  title: "Habla improvisada en inglés: 4 estrategias clave"
+  description: "Habla con claridad y confianza. Descubre 4 consejos ejecutivos para manejar situaciones improvisadas en inglés como un verdadero profesional."
 ---
 
 ## Domina el habla improvisada en inglés de negocios

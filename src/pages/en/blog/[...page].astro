@@ -5,7 +5,9 @@ import PaginatedBlogLayout from "@components/blog/PaginatedBlogLayout.astro";
 import blogHero from "../../../content/blog/images/blog-hero.jpg";
 export const prerender = true;
 
-export async function getStaticPaths({ paginate }) {
+import type { PaginateFunction } from 'astro';
+
+export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
   // Get all English posts only
   const allPosts = await getCollection("blog");
   const filteredPosts = allPosts.filter(
@@ -43,6 +45,6 @@ const seoDescription = "Practical tips and real-world experiences to master busi
   heroImage={blogHero}
   heroImageAlt="New York English Blog - Tips and resources for business English"
   hasMultiplePages={hasMultiplePages}
-  translationSlugEs="/es/blog"
+  translationSlugEs={Astro.params.page === '1' ? '' : Astro.params.page}
   lang="en"
 />

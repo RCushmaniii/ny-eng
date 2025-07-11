@@ -11,8 +11,8 @@ translations:
 publish: true
 
 seo:
-  title: "Boost Business English Confidence: 5 Practical Tips for Professionals" # SEO-friendly title
-  description: "Stop feeling unsure in meetings. Learn 5 simple ways to improve your Business English confidence, clarity, and career prospects. Actionable advice." # SEO description
+  title: "5 Practical Tips to Boost Business English Confidence" # SEO-friendly title
+  description: "Stop feeling unsure in meetings. Learn 5 simple ways to boost your Business English confidence, clarity, and career success. Practical, proven tips."
 ---
 
 

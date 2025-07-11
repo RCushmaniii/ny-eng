@@ -4,41 +4,47 @@
 // URL and renders the correct, translated content in place, serving a
 // proper 404 status code automatically.
 
-import Layout from '@layouts/Layout.astro';
-import Button from '@components/ui/Button.astro';
+import Layout from "@layouts/Layout.astro";
+import Button from "@components/ui/Button.astro";
 
 // --- 1. Language and Content Logic ---
 
-const isSpanishPath = Astro.url.pathname.startsWith('/es');
-const lang = isSpanishPath ? 'es' : 'en';
-const translationSlug = isSpanishPath ? '/en/404' : '/es/404';
+const isSpanishPath = Astro.url.pathname.startsWith("/es");
+const lang = isSpanishPath ? "es" : "en";
+const translationSlug = isSpanishPath ? "/en/404" : "/es/404";
 
 // Define all text content for both languages
 const content = {
     en: {
         title: "404: Page Not Found",
-        description: "The page you were looking for doesn't exist or has been moved. Let's get you back on track.",
+        description:
+            "The page you were looking for doesn't exist or has been moved. Please check the URL or use the navigation menu to find what you need, or return to our homepage for more resources.",
         heading: "404",
         subheading: "Page Not Found",
-        bodyText: "The page you're looking for doesn't exist or has been moved. Please check the URL or navigate back to our homepage.",
+        bodyText:
+            "The page you're looking for doesn't exist or has been moved. Please check the URL or navigate back to our homepage.",
         buttonText: "Back to Homepage",
         buttonLink: "/en/",
         footerTitle: "Transform Your Professional English Today",
-        footerDescription: "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
+        footerDescription:
+            "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
         footerButtonText: "Reserve My Free Consultation",
     },
     es: {
         title: "404: Página No Encontrada",
-        description: "La página que buscas no existe o ha sido movida. Te ayudamos a volver al camino correcto.",
+        description:
+            "La página que buscas no existe o ha sido movida. Por favor verifica la URL o usa el menú de navegación para encontrar lo que necesitas, o vuelve a nuestra página principal para más recursos.",
         heading: "404",
         subheading: "Página No Encontrada",
-        bodyText: "La página que buscas no existe o ha sido movida. Por favor, verifica la URL o navega de regreso a nuestra página principal.",
+        bodyText:
+            "La página que buscas no existe o ha sido movida. Por favor, verifica la URL o navega de regreso a nuestra página principal.",
         buttonText: "Volver a la Página Principal",
         buttonLink: "/es/",
         footerTitle: "Transforma Tu Inglés Profesional Hoy",
-        footerDescription: "Reserva tu consulta gratuita para obtener la claridad, confianza e impacto que tu rol exige.",
+        footerDescription:
+            "Reserva tu consulta gratuita para obtener la claridad, confianza e impacto que tu rol exige.",
         footerButtonText: "Reservar Mi Consulta Gratuita",
-    }
+    },
 };
 
 const pageContent = isSpanishPath ? content.es : content.en;
@@ -52,33 +58,45 @@ const footerCta = {
         text: pageContent.footerButtonText,
         link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
         target: "_blank",
-        variant: "primary" as const
-    }
+        variant: "primary" as const,
+    },
 };
 
 // --- 2. Render the Page ---
 // Astro automatically serves a 404 status code for any file named 404.astro
 ---
-<Layout 
-    title={pageContent.title} 
-    description={pageContent.description} 
+
+<Layout
+    title={pageContent.title}
+    description={pageContent.description}
     footerCta={footerCta}
     lang={lang}
     noIndex={true}
-    translationSlugEn={lang === 'es' ? translationSlug : undefined}
-    translationSlugEs={lang === 'en' ? translationSlug : undefined}
+    translationSlugEn={lang === "es" ? translationSlug : undefined}
+    translationSlugEs={lang === "en" ? translationSlug : undefined}
 >
     <div class="w-full min-h-[80vh] flex items-center">
         <div class="site-container mx-auto px-4 py-base text-center">
             <div class="max-w-2xl mx-auto">
-                <h1 class="mb-4 text-9xl font-bold text-primary" data-aos="fade-up">{pageContent.heading}</h1>
-                <h2 class="mb-8" data-aos="fade-up" data-aos-delay="100">{pageContent.subheading}</h2>
-                <p class="text-body-base mb-12" data-aos="fade-up" data-aos-delay="200">
+                <h1
+                    class="mb-4 text-9xl font-bold text-primary"
+                    data-aos="fade-up"
+                >
+                    {pageContent.heading}
+                </h1>
+                <h2 class="mb-8" data-aos="fade-up" data-aos-delay="100">
+                    {pageContent.subheading}
+                </h2>
+                <p
+                    class="text-body-base mb-12"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
                     {pageContent.bodyText}
                 </p>
                 <div data-aos="fade-up" data-aos-delay="300">
-                    <Button 
-                        href={pageContent.buttonLink} 
+                    <Button
+                        href={pageContent.buttonLink}
                         variant="primary"
                         size="lg"
                     >

@@ -100,7 +100,7 @@ if (categoryData.slug === 'executive-english') {
   pageTitle = `${categoryData.name} | Blog`;
 }
 const seoTitle = `Posts in ${categoryData.name} | ${siteConfig.companyName}`;
-const seoDescription = categoryData.description || `Browse blog posts categorized under ${categoryData.name}.`;
+const seoDescription = categoryData.description && categoryData.description.length > 80 ? categoryData.description : `Explore articles, tips, and resources about ${categoryData.name}. Improve your business English with in-depth posts for this category.`;
 
 // Robustly find the Spanish category by slug or name (case and accent insensitive)
 function normalize(str = "") { return str.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }

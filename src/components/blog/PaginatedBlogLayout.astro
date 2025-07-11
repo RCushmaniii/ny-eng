@@ -13,6 +13,7 @@ export interface Props {
   baseUrl: string;
   title: string;
   subtitle?: string;
+  description?: string;
   heroImage: ImageMetadata;
   heroImageAlt?: string;
   hasMultiplePages?: boolean;
@@ -30,6 +31,7 @@ const {
   baseUrl,
   title,
   subtitle,
+  description,
   heroImage,
   heroImageAlt = "Blog image",
   currentCategory = "",
@@ -64,7 +66,7 @@ const prevPage = shouldShowPagination && currentPage > 1
   : null;
 
 const seoTitle = title;
-const seoDescription = subtitle;
+const seoDescription = description || subtitle || "";
 
 const heroContent = {
   title: title,

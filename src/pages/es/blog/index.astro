@@ -31,8 +31,8 @@ const start = (currentPage - 1) * blogSetting.postsPerPage;
 const end = start + blogSetting.postsPerPage;
 const paginatedPosts = sortedPosts.slice(start, end);
 
-const seoTitle = "Blog";
-const seoDescription = "Tips prácticos y experiencias reales para dominar el inglés de negocios.";
+const seoTitle = "Blog de Inglés Empresarial | NY English";
+const seoDescription = "Consejos, estrategias y recursos para dominar el inglés profesional y empresarial. Aprende de expertos y mejora tu comunicación global.";
 ---
 
 <PaginatedBlogLayout
@@ -41,10 +41,11 @@ const seoDescription = "Tips prácticos y experiencias reales para dominar el in
   totalPages={totalPages}
   baseUrl="/es/blog"
   title={seoTitle}
+  description={seoDescription}
   subtitle={seoDescription}
   heroImage={blogHero}
   heroImageAlt="Blog de New York English - Tips y recursos para el inglés de negocios"
   hasMultiplePages={hasMultiplePages}
-  translationSlugEn="/en/blog"
+  translationSlugEn="/blog"
   lang="es"
 />

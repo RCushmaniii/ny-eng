@@ -10,8 +10,8 @@ translations:
   en: "/en/blog/executive-english-coaching"
 publish: true
 seo:
-  title: "Coaching ejecutivo en inglés: Ventaja del coach nativo para líderes"
-  description: "Desbloquea tu máximo rendimiento. Descubre por qué los líderes senior se benefician de coaches nativos de inglés que entienden estrategia, matices y aceleración profesional."
+  title: "Coaching ejecutivo en inglés para líderes senior"
+  description: "Desbloquea tu máximo rendimiento. Descubre cómo un coach nativo de inglés te ayuda a dominar estrategia, matices y crecimiento profesional."
 ---
 
 ## Eleva tu presencia ejecutiva en inglés

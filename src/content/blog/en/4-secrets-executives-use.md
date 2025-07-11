@@ -11,7 +11,7 @@ translations:
 publish: true
 
 seo:
-  title: "Master Impromptu Speaking in English | 4 Executive Strategies"
+  title: "Master Impromptu Speaking: 4 Executive Strategies"
   description: "Speak spontaneously with clarity and confidence. Discover four executive-level tips to handle impromptu English speaking situations like a pro."
 ---
 

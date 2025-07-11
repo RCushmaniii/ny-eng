@@ -10,8 +10,8 @@ translations:
   en: "/en/blog/small-talk-to-smart-talk"
 publish: true
 seo:
-  title: "De small talk a conversaciones inteligentes | Inglés profesional"
-  description: "Convierte el small talk en una herramienta poderosa para tu carrera. Estrategias para destacar en inglés en cualquier entorno profesional."
+  title: "De small talk a conversaciones efectivas en inglés"
+  description: "Convierte el small talk en una herramienta poderosa. Aprende estrategias para destacar en inglés en cualquier entorno profesional."
 ---
 
 ## ¿Por qué el small talk importa en el mundo profesional?

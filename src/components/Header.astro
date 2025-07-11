@@ -184,18 +184,8 @@ const isCurrentPage = (link: string) => {
       </div>
       
       <div class="mt-4 pb-4 flex flex-col gap-3">
-        <Button href={normalizePath(content.cta.link)} variant="ghostLight" size="md" class="w-full text-center">
+        <Button href={normalizePath(content.cta.link)} variant="primary" size="md" class="w-full text-center">
           {content.cta.text}
-        </Button>
-        
-        <!-- Contact Button -->
-        <Button 
-          href={normalizePath(currentPath.startsWith('/es') ? '/es/contact' : '/en/contact')} 
-          variant="primary" 
-          size="md" 
-          class="w-full text-center"
-        >
-          {currentPath.startsWith('/es') ? 'Contacto' : 'Contact'}
         </Button>
       </div>
     </div>

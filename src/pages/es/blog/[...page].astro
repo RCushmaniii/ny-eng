@@ -5,7 +5,9 @@ import PaginatedBlogLayout from "@components/blog/PaginatedBlogLayout.astro";
 import blogHero from "../../../content/blog/images/blog-hero.jpg";
 export const prerender = true;
 
-export async function getStaticPaths({ paginate }) {
+import type { PaginateFunction } from 'astro';
+
+export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
   // Get all Spanish posts only
   const allPosts = await getCollection("blog");
   const filteredPosts = allPosts.filter(
@@ -43,6 +45,6 @@ const seoDescription = "Tips prácticos y experiencias reales para dominar el in
   heroImage={blogHero}
   heroImageAlt="Blog de New York English - Tips y recursos para el inglés de negocios"
   hasMultiplePages={hasMultiplePages}
-  translationSlugEn="/en/blog"
+  translationSlugEn={Astro.params.page === '1' ? '' : Astro.params.page}
   lang="es"
 />

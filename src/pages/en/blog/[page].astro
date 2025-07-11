@@ -57,6 +57,6 @@ const { page, totalPages, posts, hasMultiplePages } = Astro.props;
     subtitle="Practical tips and real-world insights to master Business English."
     heroImage={blogHero}
     heroImageAlt="Blog hero background"
-    translationSlugEs="/es/blog"
+    translationSlugEs={Astro.params.page === '1' ? '' : Astro.params.page}
     hasMultiplePages={hasMultiplePages}
 />

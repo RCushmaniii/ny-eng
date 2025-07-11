@@ -11,7 +11,7 @@ translations:
 publish: true
 
 seo:
-  title: "Boost Business English Confidence: 5 Practical Tips"
+  title: "5 Tips to Boost Business English Confidence"
   description: "Speak clearly and lead with impact. Learn how to improve your Business English with 5 real strategies used by top professionals."
 ---
 

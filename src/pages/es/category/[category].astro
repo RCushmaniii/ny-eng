@@ -121,7 +121,7 @@ if (categoryData.slug === 'executive-english') {
 const pageTitle = `${categoryDisplayName} | Blog`;
 const seoTitle = `Publicaciones en ${categoryDisplayName} | ${siteConfig.companyName}`;
 // Use description directly as description_es doesn't exist in the Category type
-const seoDescription = categoryData.description || `Explorar publicaciones en la categoría ${categoryDisplayName}.`;
+const seoDescription = categoryData.description && categoryData.description.length > 80 ? categoryData.description : `Explora artículos, consejos y recursos sobre ${categoryDisplayName}. Mejora tu inglés profesional con publicaciones relevantes para esta categoría.`;
 
 // Determine the corresponding English category slug
 // Assuming categoryData.name (English name) is the key for linking

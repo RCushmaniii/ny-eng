@@ -10,8 +10,8 @@ translations:
   en: "/en/blog/5-practical-ways-to-boost-business-english"
 publish: true
 seo:
-  title: "Aumenta tu confianza en inglés de negocios: 5 consejos prácticos"
-  description: "Habla con claridad y lidera con impacto. Aprende a mejorar tu inglés de negocios con 5 estrategias reales usadas por profesionales exitosos."
+  title: "5 consejos para mejorar tu inglés de negocios"
+  description: "Habla con claridad y lidera con impacto. Aprende 5 estrategias reales para mejorar tu inglés de negocios como los profesionales exitosos."
 ---
 
 ## Gana confianza en tu inglés de negocios

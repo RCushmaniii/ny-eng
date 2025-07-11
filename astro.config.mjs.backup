@@ -196,6 +196,11 @@ export default defineConfig({
           '4-secrets-executives-use': '4-secretos-que-usan-los-ejecutivos',
           'boost-eng-confidence': 'aumentar-confianza',
           'why-tech-managers-lose-millions': 'por-que-los-gerentes-de-ti-en-mexico-pierden-clientes',
+          'managers-lose-millions': 'por-que-los-gerentes-de-ti-en-mexico-pierden-clientes',
+          '5-practical-ways-to-boost-business-english': '5-formas-practicas-mejorar-ingles-negocios',
+          'executive-english-coaching': 'coaching-ejecutivo',
+          'master-business-english': 'dominar-negocios',
+          'small-talk-to-smart-talk': 'charla-pequena-habla-inteligente',
         };
 
         const reverseBlogTranslationMap = Object.fromEntries(
@@ -311,20 +316,27 @@ export default defineConfig({
           const slug = url.split('/').filter(Boolean).pop();
 
           if (url.startsWith('/en/')) {
+            // Always add self-referencing alternate
             entry.links.push({ url: fullUrl, lang: 'en-US' });
+
+            // Add Spanish alternate if translation exists
             const esSlug = blogTranslationMap[slug];
             if (esSlug) {
               entry.links.push({ url: `${site}/es/blog/${esSlug}/`, lang: 'es-MX' });
             }
           } else if (url.startsWith('/es/')) {
+            // Always add self-referencing alternate
             entry.links.push({ url: fullUrl, lang: 'es-MX' });
+
+            // Add English alternate if translation exists
             const enSlug = reverseBlogTranslationMap[slug];
             if (enSlug) {
               entry.links.push({ url: `${site}/en/blog/${enSlug}/`, lang: 'en-US' });
             }
           }
 
-          return entry.links.length > 0 ? entry : defaultEntry;
+          // Always return the entry (even if only self-referencing)
+          return entry;
         }
 
         return defaultEntry;

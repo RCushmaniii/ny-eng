@@ -1,5 +1,5 @@
 ---
-import { defaultSEO } from '../data/seo';
+import { defaultSEO } from "../data/seo";
 
 interface Props {
   title?: string;
@@ -14,6 +14,14 @@ interface Props {
   }[];
 }
 
+// Helper functions for truncation and dev warnings
+const truncate = (str: string, max: number) =>
+  str && str.length > max ? str.slice(0, max - 1) + "…" : str;
+
+const warnIf = (condition: boolean, msg: string) => {
+  if (import.meta.env.DEV && condition) console.warn(msg);
+};
+
 const {
   title = defaultSEO.title,
   description = defaultSEO.description,
@@ -21,54 +29,67 @@ const {
   imageAlt = defaultSEO.imageAlt ?? title,
   url = defaultSEO.siteUrl,
   locale = defaultSEO.locale,
-  alternateUrls = []
+  alternateUrls = [],
 } = Astro.props;
 
-// Ensure we always use the www version as canonical
-const canonicalDomain = defaultSEO.siteUrl.replace(/^(https?:\/\/)/, '$1www.');
+// Truncate and validate
+const safeTitle = truncate(title, 65);
+const safeDescription = truncate(description, 160);
 
-// Ensure OG image URLs are always absolute URLs without duplicate www
+warnIf(
+  !title || title.length < 10,
+  `SEO Warning: Title is missing or too short: "${title}"`,
+);
+warnIf(
+  !description || description.length < 80,
+  `SEO Warning: Description is missing or too short: "${description}"`,
+);
+
+// Canonical and OG helpers
+const canonicalDomain = defaultSEO.siteUrl.replace(/^(https?:\/\/)/, "$1www.");
 const ensureAbsoluteUrl = (path: string) => {
-  if (path.startsWith('http')) {
-    // If it already has a URL, fix any duplicate www if present
-    return path.replace(/https?:\/\/www\.www\./i, 'https://www.');
-  }
-  
-  // Handle both paths with and without leading slash
-  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-  
-  // Ensure the canonicalDomain doesn't have duplicate www
-  const cleanDomain = canonicalDomain.replace(/https?:\/\/www\.www\./i, 'https://www.');
-  
+  if (path.startsWith("http"))
+    return path.replace(/https?:\/\/www\.www\./i, "https://www.");
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  const cleanDomain = canonicalDomain.replace(
+    /https?:\/\/www\.www\./i,
+    "https://www.",
+  );
   return new URL(normalizedPath, cleanDomain).toString();
 };
-
 const fullImage = ensureAbsoluteUrl(image);
 const fullUrl = new URL(url, canonicalDomain).toString();
-// Ensure x-default hreflang is present
-const alternatesWithDefault = alternateUrls.some(a => a.hreflang === 'x-default')
-  ? alternateUrls
-  : [...alternateUrls, { hreflang: 'x-default', href: fullUrl }];
 
+const alternatesWithDefault = alternateUrls.some(
+  (a) => a.hreflang === "x-default",
+)
+  ? alternateUrls
+  : [...alternateUrls, { hreflang: "x-default", href: fullUrl }];
 ---
 
-<title>{title}</title>
-<meta name="description" content={description} />
+<title>{safeTitle}</title>
+<meta name="description" content={safeDescription} />
 <meta property="og:type" content="website" />
 <meta property="og:url" content={fullUrl} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
+<meta property="og:title" content={safeTitle} />
+<meta property="og:description" content={safeDescription} />
 <meta property="og:image" content={fullImage} />
 <meta property="og:image:alt" content={imageAlt} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content={locale} />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
+<meta name="twitter:title" content={safeTitle} />
+<meta name="twitter:description" content={safeDescription} />
 <meta name="twitter:image" content={fullImage} />
 <meta name="twitter:image:alt" content={imageAlt} />
-{alternatesWithDefault.map((alt) => (
-  <link rel="alternate" hreflang={alt.hreflang} href={alt.href.replace(/([^:]\/)\/+/g, '$1')} />
-))}
-<link rel="canonical" href={fullUrl.replace(/([^:]\/)\/+/g, '$1')} />
+{
+  alternatesWithDefault.map((alt) => (
+    <link
+      rel="alternate"
+      hreflang={alt.hreflang}
+      href={alt.href.replace(/([^:]\/)\/+/g, "$1")}
+    />
+  ))
+}
+<link rel="canonical" href={fullUrl.replace(/([^:]\/)\/+/g, "$1")} />

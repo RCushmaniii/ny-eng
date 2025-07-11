@@ -115,6 +115,21 @@ src/
 
 ## 🔍 SEO & Sitemap Configuration
 
+---
+
+## ⚡ Project Coding Standards ([WindsurfRules.md](./WindsurfRules.md))
+
+- **Structured Data:** All Astro pages must include a `<script type="application/ld+json">` block for organization structured data, using `{JSON.stringify(obj)}`. Do not use `set:head` for static JSON-LD.
+- **SEO Meta:** Set `<title>` and `<meta name="description">` using imported constants, not hardcoded strings.
+- **Component Imports:** Use absolute imports for shared components/data/assets (e.g., `@components/`, `@data/`). Keep local-only imports relative.
+- **Bilingual Content:** Update translation maps in `/data` for both EN→ES and ES→EN. Always keep language alternates, translation slugs, and language switchers in sync.
+- **Image Alt Text:** All images must have descriptive, localized `alt` text.
+- **Debug Code:** Remove `console.log` and debug code before merging.
+
+See [WindsurfRules.md](./WindsurfRules.md) for full details, rationale, and modification process. All contributors must follow these conventions to ensure code quality and SEO consistency.
+
+---
+
 ### Multilingual Sitemap Implementation
 
 The site uses `@astrojs/sitemap` with advanced configuration to ensure proper SEO for both English and Spanish content:

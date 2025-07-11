@@ -15,41 +15,53 @@ import {
 import { testimonialsAboutEs as testimonials } from "@data/testimonials-about-es";
 
 const metadata = {
-    title: "Sobre Mí | Robert Cushman - Coach de Inglés de Negocios",
+    title: "Sobre Mí | Coach de Inglés de Negocios",
     description:
-        "Con más de 20 años de liderazgo corporativo y 7 años como coach de inglés de negocios, ayudo a profesionales y ejecutivos a comunicarse con claridad y confianza.",
+        "Coach de inglés de negocios con 20+ años de experiencia. Ayudo a ejecutivos y profesionales a comunicarse con claridad y confianza en inglés.",
+
 };
 
 const FooterCta = {
-  eyebrow: "",
-  title: "Transforma Tu Inglés Profesional Hoy Mismo",
-  description: "Agenda tu consulta gratuita para ganar la claridad, confianza e impacto que tu puesto exige.",
-  hideCta: false,
-  button: {
-    text: "Reserva Mi Consulta Gratuita",
-    link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
-    target: "_blank",
-    variant: "primary"
-  }
+    eyebrow: "",
+    title: "Transforma Tu Inglés Profesional Hoy Mismo",
+    description:
+        "Agenda tu consulta gratuita para ganar la claridad, confianza e impacto que tu puesto exige.",
+    hideCta: false,
+    button: {
+        text: "Reserva Mi Consulta Gratuita",
+        link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+        target: "_blank",
+        variant: "primary",
+    },
 };
 ---
 
 <Layout
-  {...metadata}
-  footerCta={FooterCta}
-  lang="es"
-  translationSlugEn="/en/about"
-  image="/images/logos/new-york-english-og-wide.jpg"
-  whatsappImage="/images/logos/new-york-english-og.jpg"
-  linkedinImage="/images/logos/new-york-english-og-wide.jpg"
+    {...metadata}
+    footerCta={FooterCta}
+    lang="es"
+    translationSlugEn="/en/about"
+    image="/images/logos/new-york-english-og-wide.jpg"
+    whatsappImage="/images/logos/new-york-english-og.jpg"
+    linkedinImage="/images/logos/new-york-english-og-wide.jpg"
 >
-    <section id="about-me" class="relative pt-28 pb-8 md:pt-32 md:pb-12 overflow-hidden">
+    <section
+        id="about-me"
+        class="relative pt-28 pb-8 md:pt-32 md:pb-12 overflow-hidden"
+    >
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="grid md:grid-cols-12 grid-cols-1 items-start gap-12">
                 {/* Left column - Image */}
                 <div class="md:col-span-4 order-2 md:order-1">
                     <div class="relative">
-                        <Image src={meImage} alt="Robert Cushman – Coach de Comunicación en Inglés de Negocios" class="rounded-lg shadow-lg w-full" width={400} height={533} loading="eager" />
+                        <Image
+                            src={meImage}
+                            alt="Robert Cushman – Coach de Comunicación en Inglés de Negocios"
+                            class="rounded-lg shadow-lg w-full"
+                            width={400}
+                            height={533}
+                            loading="eager"
+                        />
                     </div>
                 </div>
 
@@ -64,11 +76,18 @@ const FooterCta = {
 
                         <div class="space-y-8 text-lg">
                             <p class="text-xl leading-relaxed">
-                                Ayudo a profesionales, ejecutivos y líderes empresariales a hablar inglés con claridad y confianza.
+                                Ayudo a profesionales, ejecutivos y líderes
+                                empresariales a hablar inglés con claridad y
+                                confianza.
                             </p>
 
                             <p class="text-lg">
-                                Con más de 20 años en liderazgo corporativo —incluyendo 15 años en una empresa Fortune 100— y 7 años de coaching en inglés de negocios, soy el recurso ideal para llevar a hablantes intermedios y avanzados al siguiente nivel en comunicaciones de alto impacto.
+                                Con más de 20 años en liderazgo corporativo
+                                —incluyendo 15 años en una empresa Fortune 100—
+                                y 7 años de coaching en inglés de negocios, soy
+                                el recurso ideal para llevar a hablantes
+                                intermedios y avanzados al siguiente nivel en
+                                comunicaciones de alto impacto.
                             </p>
 
                             <div
@@ -86,7 +105,11 @@ const FooterCta = {
                                             style="font-family: 'Noto Sans KR', sans-serif;"
                                             >1</span
                                         >
-                                        <span style="font-family: 'Noto Sans KR', sans-serif;">Quieren que su inglés refleje su experiencia y autoridad profesional.</span>
+                                        <span
+                                            style="font-family: 'Noto Sans KR', sans-serif;"
+                                            >Quieren que su inglés refleje su
+                                            experiencia y autoridad profesional.</span
+                                        >
                                     </li>
                                     <li class="flex items-start">
                                         <span
@@ -94,7 +117,12 @@ const FooterCta = {
                                             style="font-family: 'Noto Sans KR', sans-serif;"
                                             >2</span
                                         >
-                                        <span style="font-family: 'Noto Sans KR', sans-serif;">Esperan una experiencia de aprendizaje profesional y eficiente que respete su tiempo.</span>
+                                        <span
+                                            style="font-family: 'Noto Sans KR', sans-serif;"
+                                            >Esperan una experiencia de
+                                            aprendizaje profesional y eficiente
+                                            que respete su tiempo.</span
+                                        >
                                     </li>
                                 </ul>
                             </div>
@@ -104,20 +132,26 @@ const FooterCta = {
                             </p>
 
                             <p class="text-lg mt-4">
-                                Habla con la claridad y la confianza que tu puesto exige — agenda una llamada introductoria sin compromiso hoy.
+                                Habla con la claridad y la confianza que tu
+                                puesto exige — agenda una llamada introductoria
+                                sin compromiso hoy.
                             </p>
 
                             <div class="mt-6">
                                 <Button
-    href="https://ny-english-teacher.odoo.com/book/7ceefa20"
-    target="_blank"
-    variant="primary"
-    size="lg"
-    class="inline-block w-full sm:w-auto text-center"
->
-    <span class="block sm:hidden text-sm py-1">Reserva tu sesión gratuita</span>
-    <span class="hidden sm:block">Reserva tu sesión gratuita de coaching</span>
-</Button>
+                                    href="https://ny-english-teacher.odoo.com/book/7ceefa20"
+                                    target="_blank"
+                                    variant="primary"
+                                    size="lg"
+                                    class="inline-block w-full sm:w-auto text-center"
+                                >
+                                    <span class="block sm:hidden text-sm py-1"
+                                        >Reserva tu sesión gratuita</span
+                                    >
+                                    <span class="hidden sm:block"
+                                        >Reserva tu sesión gratuita de coaching</span
+                                    >
+                                </Button>
                             </div>
                         </div>
                     </div>
@@ -127,9 +161,9 @@ const FooterCta = {
     </section>
 
     {/* Values Section */}
-    <section id="about-values"
-    class="relative pt-4 pb-8 md:pt-24 md:pb-12 bg-gray-50 dark:bg-gray-800/50"
-
+    <section
+        id="about-values"
+        class="relative pt-4 pb-8 md:pt-24 md:pb-12 bg-gray-50 dark:bg-gray-800/50"
     >
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="max-w-3xl mx-auto text-center mb-16">
@@ -137,7 +171,9 @@ const FooterCta = {
                     Mis Valores
                 </h2>
                 <p class="text-lg text-gray-600 dark:text-gray-300">
-                    El crecimiento profesional comienza con una comunicación clara y segura. Estos valores guían cada lección, sesión y relación con mis clientes:
+                    El crecimiento profesional comienza con una comunicación
+                    clara y segura. Estos valores guían cada lección, sesión y
+                    relación con mis clientes:
                 </p>
             </div>
 
@@ -156,7 +192,9 @@ const FooterCta = {
                         Coaching Centrado en el Cliente
                     </h3>
                     <p class="text-gray-600 dark:text-gray-300">
-                        Tus objetivos marcan el proceso: me adapto a tus necesidades reales, desde reuniones ejecutivas hasta comunicación intercultural.
+                        Tus objetivos marcan el proceso: me adapto a tus
+                        necesidades reales, desde reuniones ejecutivas hasta
+                        comunicación intercultural.
                     </p>
                 </div>
 
@@ -174,7 +212,9 @@ const FooterCta = {
                         Expresión Empoderada
                     </h3>
                     <p class="text-gray-600 dark:text-gray-300">
-                        Te ayudo a hablar tu segundo idioma de manera auténtica, asegurando que proyectes autoridad e impacto para elevar tu marca personal y tu desempeño profesional.
+                        Te ayudo a hablar tu segundo idioma de manera auténtica,
+                        asegurando que proyectes autoridad e impacto para elevar
+                        tu marca personal y tu desempeño profesional.
                     </p>
                 </div>
 
@@ -192,7 +232,9 @@ const FooterCta = {
                         Integridad y Profesionalismo
                     </h3>
                     <p class="text-gray-600 dark:text-gray-300">
-                        Tu tiempo, tus metas y tu privacidad son sagrados. Mi coaching se basa en la confianza y la transparencia para un éxito a largo plazo.
+                        Tu tiempo, tus metas y tu privacidad son sagrados. Mi
+                        coaching se basa en la confianza y la transparencia para
+                        un éxito a largo plazo.
                     </p>
                 </div>
             </div>
@@ -207,8 +249,8 @@ const FooterCta = {
                     ¿Por qué trabajar conmigo?
                 </h2>
                 <p class="text-xl text-primary font-semibold">
-        Coaching a medida basado en experiencia real
-      </p>
+                    Coaching a medida basado en experiencia real
+                </p>
             </div>
 
             <div class="grid md:grid-cols-12 gap-12 items-center">
@@ -221,7 +263,14 @@ const FooterCta = {
                         <p
                             class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
                         >
-                            No soy un coach de inglés cualquiera: soy un estratega corporativo que ha enfrentado los mismos retos que tú. Mis sesiones están completamente enfocadas en tus objetivos profesionales, desde triunfar en esa entrevista de alto impacto hasta ofrecer presentaciones memorables. Sin plantillas genéricas, sin relleno: solo coaching práctico y personalizado que realmente da resultados.
+                            No soy un coach de inglés cualquiera: soy un
+                            estratega corporativo que ha enfrentado los mismos
+                            retos que tú. Mis sesiones están completamente
+                            enfocadas en tus objetivos profesionales, desde
+                            triunfar en esa entrevista de alto impacto hasta
+                            ofrecer presentaciones memorables. Sin plantillas
+                            genéricas, sin relleno: solo coaching práctico y
+                            personalizado que realmente da resultados.
                         </p>
                     </div>
                 </div>
@@ -229,7 +278,14 @@ const FooterCta = {
                 {/* Right Column - Image */}
                 <div class="md:col-span-5 order-1 md:order-2">
                     <div class="relative">
-                        <Image src={ceoImage} alt="Ejecutivo de negocios tomando una clase de coaching de inglés" class="rounded-lg shadow-lg w-full object-cover" width={600} height={400} loading="lazy" />
+                        <Image
+                            src={ceoImage}
+                            alt="Ejecutivo de negocios tomando una clase de coaching de inglés"
+                            class="rounded-lg shadow-lg w-full object-cover"
+                            width={600}
+                            height={400}
+                            loading="lazy"
+                        />
                     </div>
                 </div>
             </div>
@@ -237,60 +293,92 @@ const FooterCta = {
     </section>
 
     {/* Testimonials Section */}
-    <section class="relative pt-16 pb-16 md:pt-24 md:pb-12 bg-gray-50 dark:bg-gray-800/50">
-
-  <div class="container mx-auto px-4 max-w-6xl">
-    <div class="max-w-3xl mx-auto text-center mb-16">
-      <p class="text-primary font-semibold mb-4">
-        Impacto real: Historias de éxito de mis clientes
-      </p>
-      <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">
-        Resultados que hablan por sí mismos
-      </h2>
-      <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-        He asesorado a directores de operaciones, CEOs y fundadores para comunicarse con claridad y confianza, logrando hitos que definen sus carreras —desde optimizar operaciones globales hasta asegurar financiamiento de inversionistas.
-      </p>
-      <p class="fade-in-up delay-1 text-body opacity-90 mb-12 max-w-2xl mx-auto">
-        Esto es lo que dicen:
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
-      {/** Dynamically render testimonial cards from testimonials-about.ts */}
-      {testimonials.map((t, idx) => (
-        <div class="bg-white dark:bg-gray-700/50 rounded-xl p-8 shadow-lg fade-in-up delay-{idx+1}">
-          <div class="flex items-center mb-6">
-            <img src={t.avatar.src} alt={t.author} class="w-14 h-14 rounded-full object-cover mr-4 border-2 border-primary" loading="lazy" />
-            <div>
-              <div class="font-heading text-lg font-semibold">{t.author}</div>
-              <div class="text-sm text-gray-500 dark:text-gray-400">{t.position}, {t.company}</div>
+    <section
+        class="relative pt-16 pb-16 md:pt-24 md:pb-12 bg-gray-50 dark:bg-gray-800/50"
+    >
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <p class="text-primary font-semibold mb-4">
+                    Impacto real: Historias de éxito de mis clientes
+                </p>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">
+                    Resultados que hablan por sí mismos
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                    He asesorado a directores de operaciones, CEOs y fundadores
+                    para comunicarse con claridad y confianza, logrando hitos
+                    que definen sus carreras —desde optimizar operaciones
+                    globales hasta asegurar financiamiento de inversionistas.
+                </p>
+                <p
+                    class="fade-in-up delay-1 text-body opacity-90 mb-12 max-w-2xl mx-auto"
+                >
+                    Esto es lo que dicen:
+                </p>
             </div>
-          </div>
-          <blockquote class="mb-2">
-            <p class="text-lg text-gray-600 dark:text-gray-300 italic">“{t.content}”</p>
-          </blockquote>
-        </div>
-      ))}
-    </div>
 
-    {/* CTA banner below the grid, with margin and centering */}
-    <div class="mt-16 bg-gradient-to-r from-primary to-gray-100 dark:from-primary dark:to-gray-800 rounded-2xl p-8 md:p-12 text-center">
-      <h3 class="text-2xl font-bold text-white mb-4">¿Listo para elevar tu inglés?</h3>
-      <p class="text-white mb-6">Reserva tu sesión gratuita de coaching en inglés para obtener la claridad, la confianza y el impacto que tu puesto exige.</p>
-      <Button
-        href="https://ny-english-teacher.odoo.com/book/7ceefa20"
-        target="_blank"
-        variant="primary"
-        size="lg"
-      >
-        Reserva tu sesión gratuita
-      </Button>
-    </div>
-  </div>
-</section>
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+                {
+                    /** Dynamically render testimonial cards from testimonials-about.ts */
+                }
+                {
+                    testimonials.map((t, idx) => (
+                        <div class="bg-white dark:bg-gray-700/50 rounded-xl p-8 shadow-lg fade-in-up delay-{idx+1}">
+                            <div class="flex items-center mb-6">
+                                <img
+                                    src={t.avatar.src}
+                                    alt={t.author}
+                                    class="w-14 h-14 rounded-full object-cover mr-4 border-2 border-primary"
+                                    loading="lazy"
+                                />
+                                <div>
+                                    <div class="font-heading text-lg font-semibold">
+                                        {t.author}
+                                    </div>
+                                    <div class="text-sm text-gray-500 dark:text-gray-400">
+                                        {t.position}, {t.company}
+                                    </div>
+                                </div>
+                            </div>
+                            <blockquote class="mb-2">
+                                <p class="text-lg text-gray-600 dark:text-gray-300 italic">
+                                    “{t.content}”
+                                </p>
+                            </blockquote>
+                        </div>
+                    ))
+                }
+            </div>
+
+            {/* CTA banner below the grid, with margin and centering */}
+            <div
+                class="mt-16 bg-gradient-to-r from-primary to-gray-100 dark:from-primary dark:to-gray-800 rounded-2xl p-8 md:p-12 text-center"
+            >
+                <h3 class="text-2xl font-bold text-white mb-4">
+                    ¿Listo para elevar tu inglés?
+                </h3>
+                <p class="text-white mb-6">
+                    Reserva tu sesión gratuita de coaching en inglés para
+                    obtener la claridad, la confianza y el impacto que tu puesto
+                    exige.
+                </p>
+                <Button
+                    href="https://ny-english-teacher.odoo.com/book/7ceefa20"
+                    target="_blank"
+                    variant="primary"
+                    size="lg"
+                >
+                    Reserva tu sesión gratuita
+                </Button>
+            </div>
+        </div>
+    </section>
 
     {/* My Methodology Section */}
-    <section id="about-methodology" class="relative py-16 md:py-24 bg-gray-50 dark:bg-gray-800/50">
+    <section
+        id="about-methodology"
+        class="relative py-16 md:py-24 bg-gray-50 dark:bg-gray-800/50"
+    >
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="max-w-3xl mx-auto text-center mb-16">
                 <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">
@@ -305,7 +393,9 @@ const FooterCta = {
                 {/* Step 1 */}
                 <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
                     <div class="mb-6">
-                        <span class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white">
+                        <span
+                            class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white"
+                        >
                             <Target size={32} />
                         </span>
                     </div>
@@ -313,14 +403,19 @@ const FooterCta = {
                         1. Descubrimiento y definición de objetivos
                     </h3>
                     <p class="text-gray-600 dark:text-gray-300">
-                        Comenzamos con un análisis profundo de tu nivel actual de inglés, tus desafíos de comunicación y tus objetivos profesionales. Esto garantiza una hoja de ruta personalizada adaptada a tu éxito.
+                        Comenzamos con un análisis profundo de tu nivel actual
+                        de inglés, tus desafíos de comunicación y tus objetivos
+                        profesionales. Esto garantiza una hoja de ruta
+                        personalizada adaptada a tu éxito.
                     </p>
                 </div>
 
                 {/* Step 2 */}
                 <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
                     <div class="mb-6">
-                        <span class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white">
+                        <span
+                            class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white"
+                        >
                             <LineChart size={32} />
                         </span>
                     </div>
@@ -328,14 +423,19 @@ const FooterCta = {
                         2. Desarrollo de habilidades específicas
                     </h3>
                     <p class="text-gray-600 dark:text-gray-300">
-                        Según tus metas, nos enfocamos en áreas concretas —como pronunciación, fluidez, vocabulario o habilidades de presentación— mediante ejercicios prácticos y escenarios del mundo real.
+                        Según tus metas, nos enfocamos en áreas concretas —como
+                        pronunciación, fluidez, vocabulario o habilidades de
+                        presentación— mediante ejercicios prácticos y escenarios
+                        del mundo real.
                     </p>
                 </div>
 
                 {/* Step 3 */}
                 <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
                     <div class="mb-6">
-                        <span class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white">
+                        <span
+                            class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white"
+                        >
                             <CheckCircle size={32} />
                         </span>
                     </div>
@@ -343,22 +443,30 @@ const FooterCta = {
                         3. Aplicación práctica y retroalimentación
                     </h3>
                     <p class="text-gray-600 dark:text-gray-300">
-                        Aplicarás tus nuevas habilidades en situaciones profesionales simuladas, recibiendo comentarios constructivos para ganar confianza y perfeccionar tu desempeño.
+                        Aplicarás tus nuevas habilidades en situaciones
+                        profesionales simuladas, recibiendo comentarios
+                        constructivos para ganar confianza y perfeccionar tu
+                        desempeño.
                     </p>
                 </div>
 
                 {/* Step 4 */}
                 <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
                     <div class="mb-6">
-                        <span class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white">
-                            <Calendar size={32} /> 
+                        <span
+                            class="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white"
+                        >
+                            <Calendar size={32} />
                         </span>
                     </div>
                     <h3 class="font-heading text-2xl font-semibold mb-4">
                         4. Mejora continua y apoyo
                     </h3>
                     <p class="text-gray-600 dark:text-gray-300">
-                        Aprender un idioma es un viaje. Ofrezco apoyo y recursos permanentes para que mantengas el impulso y sigas avanzando en tus habilidades de comunicación en inglés mucho después de nuestras sesiones.
+                        Aprender un idioma es un viaje. Ofrezco apoyo y recursos
+                        permanentes para que mantengas el impulso y sigas
+                        avanzando en tus habilidades de comunicación en inglés
+                        mucho después de nuestras sesiones.
                     </p>
                 </div>
             </div>
@@ -387,7 +495,10 @@ const FooterCta = {
                         <p
                             class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
                         >
-                            Te guío a través de un proceso personalizado para hablar inglés con claridad y confianza en entornos de alto impacto. Aquí está cómo logramos tus objetivos:
+                            Te guío a través de un proceso personalizado para
+                            hablar inglés con claridad y confianza en entornos
+                            de alto impacto. Aquí está cómo logramos tus
+                            objetivos:
                         </p>
                     </div>
                 </div>
@@ -411,12 +522,17 @@ const FooterCta = {
                             </div>
                             <div class="pl-16">
                                 <h3 class="font-heading text-xl font-bold mb-4">
-                                    Conecta y confirma que somos una buena pareja
+                                    Conecta y confirma que somos una buena
+                                    pareja
                                 </h3>
                                 <p
                                     class="text-gray-600 dark:text-gray-300 text-lg"
                                 >
-                                    Comenzamos con una breve introducción en línea para discutir tus necesidades y asegurarnos de que somos la pareja adecuada. Esta llamada sin presión establece el escenario para una asociación exitosa.
+                                    Comenzamos con una breve introducción en
+                                    línea para discutir tus necesidades y
+                                    asegurarnos de que somos la pareja adecuada.
+                                    Esta llamada sin presión establece el
+                                    escenario para una asociación exitosa.
                                 </p>
                             </div>
                         </div>
@@ -436,9 +552,10 @@ const FooterCta = {
                                 <p
                                     class="text-gray-600 dark:text-gray-300 text-lg"
                                 >
-                                    Una vez que estemos alineados, reservaremos tu primera
-                                    sesión en un horario que te funcione,
-                                    comenzando tu camino hacia una comunicación segura.
+                                    Una vez que estemos alineados, reservaremos
+                                    tu primera sesión en un horario que te
+                                    funcione, comenzando tu camino hacia una
+                                    comunicación segura.
                                 </p>
                             </div>
                         </div>
@@ -458,11 +575,12 @@ const FooterCta = {
                                 <p
                                     class="text-gray-600 dark:text-gray-300 text-lg"
                                 >
-                                    En nuestra primera sesión, identificaremos tus
-                                    objetivos inmediatos—ya sea dirigir una reunión
-                                    directiva o presentar a inversionistas—y
-                                    detectaremos cualquier brecha en tus habilidades
-                                    de inglés para crear un plan enfocado.
+                                    En nuestra primera sesión, identificaremos
+                                    tus objetivos inmediatos—ya sea dirigir una
+                                    reunión directiva o presentar a
+                                    inversionistas—y detectaremos cualquier
+                                    brecha en tus habilidades de inglés para
+                                    crear un plan enfocado.
                                 </p>
                             </div>
                         </div>
@@ -476,7 +594,8 @@ const FooterCta = {
                             </div>
                             <div class="pl-16">
                                 <h3 class="font-heading text-xl font-bold mb-4">
-                                    Planificación de sesiones personalizadas con contenido a medida
+                                    Planificación de sesiones personalizadas con
+                                    contenido a medida
                                 </h3>
                                 <p
                                     class="text-gray-600 dark:text-gray-300 text-lg"
@@ -484,8 +603,8 @@ const FooterCta = {
                                     Diseño las primeras sesiones específicamente
                                     para ti, creando contenido personalizado que
                                     aborda tus desafíos y objetivos únicos,
-                                    desde vocabulario hasta entrega, asegurando que
-                                    cada lección genere impacto.
+                                    desde vocabulario hasta entrega, asegurando
+                                    que cada lección genere impacto.
                                 </p>
                             </div>
                         </div>
@@ -505,9 +624,10 @@ const FooterCta = {
                                     class="text-gray-600 dark:text-gray-300 text-lg"
                                 >
                                     Después de algunas sesiones, evaluaremos tu
-                                    crecimiento, reflexionando sobre cómo ha mejorado
-                                    tu comunicación y ajustando nuestro enfoque para
-                                    mantenerte en el camino correcto.
+                                    crecimiento, reflexionando sobre cómo ha
+                                    mejorado tu comunicación y ajustando nuestro
+                                    enfoque para mantenerte en el camino
+                                    correcto.
                                 </p>
                             </div>
                         </div>
@@ -521,15 +641,17 @@ const FooterCta = {
                             </div>
                             <div class="pl-16">
                                 <h3 class="font-heading text-xl font-bold mb-4">
-                                    Monitoreo y refinamiento para resultados duraderos
+                                    Monitoreo y refinamiento para resultados
+                                    duraderos
                                 </h3>
                                 <p
                                     class="text-gray-600 dark:text-gray-300 text-lg"
                                 >
                                     Monitorearé continuamente tu progreso,
-                                    proporcionando retroalimentación y refinando nuestro plan
-                                    para asegurar que proyectes autoridad y logres
-                                    éxito a largo plazo en tu rol profesional.
+                                    proporcionando retroalimentación y refinando
+                                    nuestro plan para asegurar que proyectes
+                                    autoridad y logres éxito a largo plazo en tu
+                                    rol profesional.
                                 </p>
                             </div>
                         </div>

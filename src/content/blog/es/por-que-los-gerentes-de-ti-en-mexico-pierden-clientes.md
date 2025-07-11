@@ -10,8 +10,8 @@ translations:
   en: "/en/blog/managers-lose-millions"
 publish: true
 seo:
-  title: "Por Qué los Gerentes de TI en México Pierden Millones | Coaching de Inglés de Negocios"
-  description: "Descubre por qué los mejores gerentes y desarrolladores de TI en México pierden contratos y oportunidades de crecimiento. Aprende cómo dominar el inglés de negocios puede desbloquear el éxito global."
+  title: "Por qué los gerentes de TI en México pierden millones"
+  description: "Descubre por qué los líderes de TI en México pierden contratos clave. Domina el inglés de negocios y desbloquea oportunidades globales."
 ---
 
 ## El Costo Oculto del Mal Inglés: Por Qué los Equipos de TI Más Inteligentes de México Siguen Perdiendo Acuerdos Globales

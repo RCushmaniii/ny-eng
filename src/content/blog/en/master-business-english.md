@@ -11,8 +11,8 @@ translations:
 publish: true
 
 seo:
-  title: "Master Business English | Coaching for Professionals"
-  description: "Improve your English with 1-on-1 coaching. Get better at interviews, presentations, and workplace communication. Book a free consultation today."
+  title: "Master Business English with 1-on-1 Coaching"
+  description: "Improve your English for interviews, presentations, and workplace success. Book a free consultation and start building real fluency today."
 ---
 
 ## Personalized Coaching to Help You Succeed

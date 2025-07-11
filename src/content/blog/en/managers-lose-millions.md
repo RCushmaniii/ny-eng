@@ -10,8 +10,8 @@ translations:
   es: "/es/blog/por-que-los-gerentes-de-ti-en-mexico-pierden-clientes"
 publish: true
 seo:
-  title: "Why IT Managers in Mexico Lose Millions | Business English Coaching"
-  description: "Discover why top IT managers and developers in Mexico lose contracts and growth opportunities. Learn how mastering Business English can unlock global success."
+  title: "Why IT Managers in Mexico Lose Millions"
+  description: "Top IT managers in Mexico lose contracts and growth. Learn how mastering Business English unlocks global success and opportunity."
 ---
 
 ## The Hidden Cost of Poor English: Why Mexico’s Smartest IT Teams Keep Losing Global Deals

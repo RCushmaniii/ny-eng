@@ -11,8 +11,8 @@ translations:
 publish: true
 
 seo:
-  title: "Small Talk Made Easy | Conversation Starters for Professionals"
-  description: "Struggling with casual English at work? Master 7 simple conversation openers to connect instantly with global colleagues."
+  title: "Small Talk Made Easy: 7 Conversation Starters"
+  description: "Master 7 simple conversation openers to connect instantly with global colleagues."
 ---
 
 ## Why Small Talk Matters

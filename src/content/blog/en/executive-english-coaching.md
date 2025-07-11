@@ -11,8 +11,8 @@ translations:
 publish: true
 
 seo:
-  title: "Executive English Coaching: Native Coach Advantage for Leaders"
-  description: "Unlock peak performance. Learn why senior leaders benefit from native English coaches who understand business strategy, nuance, and career acceleration."
+  title: "Executive English Coaching for Senior Leaders"
+  description: "Unlock peak performance. Learn how native English coaches help senior leaders master strategy, nuance, and clear communication for career growth."
 ---
 
 ## Elevate Your Executive Presence in English
