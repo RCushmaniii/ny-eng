@@ -13,6 +13,31 @@ html, body, p, div, span, li, a, h1, h2, h3, h4, h5, h6, .heading, button, input
   color: #ffffff !important;
 }
 
+/* Force button styling to work correctly */
+button[class*="bg-[#3557c1]"],
+a[class*="bg-[#3557c1]"] {
+  background-color: #3557c1 !important;
+  color: #ffffff !important;
+}
+
+button[class*="bg-[#3557c1]"]:hover,
+a[class*="bg-[#3557c1]"]:hover {
+  background-color: #4b6ed4 !important;
+  color: #ffffff !important;
+}
+
+button[class*="bg-[#25D366]"],
+a[class*="bg-[#25D366]"] {
+  background-color: #25D366 !important;
+  color: #ffffff !important;
+}
+
+button[class*="bg-[#25D366]"]:hover,
+a[class*="bg-[#25D366]"]:hover {
+  background-color: #1EBE5B !important;
+  color: #ffffff !important;
+}
+
 /* Fix for any sans-serif text */
 .sans-serif {
   font-family: 'Noto Sans KR', sans-serif !important;
@@ -596,37 +621,34 @@ section[class*="bg-background-dark"] li {
     h1 {
         font-size: var(--text-h1);
         font-family: var(--font-headline);
-        font-weight: 500;
+        font-weight: 700;
     }
 
     h2 {
         font-size: var(--text-h2);
         font-family: var(--font-headline);
-        font-weight: 500;
+        font-weight: 600;
     }
 
     h3 {
         font-size: var(--text-h3);
         font-family: var(--font-headline);
-        font-weight: 500;
+        font-weight: 600;
     }
 
     h4 {
         font-size: var(--text-h4);
         font-family: var(--font-headline);
-        font-weight: 500;
     }
 
     h5 {
         font-size: var(--text-h5);
         font-family: var(--font-headline);
-        font-weight: 500;
     }
 
     h6 {
         font-size: var(--text-h6);
         font-family: var(--font-headline);
-        font-weight: 500;
     }
 
     a {
@@ -755,6 +777,7 @@ section[class*="bg-background-dark"] li {
     .cursor-pointer {
         cursor: pointer;
     }
+
 
     .fade-in-up {
         opacity: 0;

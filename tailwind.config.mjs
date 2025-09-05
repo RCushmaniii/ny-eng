@@ -8,6 +8,10 @@ export default {
     './node_modules/astro/**/*.{js,jsx,ts,tsx}'
   ],
   darkMode: 'class',
+  corePlugins: {
+    // Prevent duplicate utility generation
+    preflight: true,
+  },
   theme: {
     extend: {
       fontFamily: {

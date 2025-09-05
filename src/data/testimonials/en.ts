@@ -16,6 +16,9 @@ import ricardoTestimonial from '../../assets/images/testimonials/ricardo-testimo
 import javierTestimonial from '../../assets/images/testimonials/javier-testimonial.jpg';
 import jonathanTestimonial from '../../assets/images/testimonials/jonathan-testimonial.jpg';
 import taniaTestimonial from '../../assets/images/testimonials/tania-testimonial.jpg';
+import luislTestimonial from '../../assets/images/testimonials/luisl-testimonial.jpg';
+import noeTestimonial from '../../assets/images/testimonials/noe-testimonial.jpg';
+
 
 export interface Testimonial {
   content: string;
@@ -82,6 +85,37 @@ export const testimonials: Testimonial[] = [
     avatarSize: "md",
     link: "/en/services/executive-english",
     linkText: "👉 English Coaching for Executives",
+    status: "published"
+  },
+  {
+    content: `Working with Robert has been one of the most impactful steps I’ve taken in advancing my professional communication. As a CTO, I already work in technical and strategic environments, but his coaching gave me the tools to project true executive presence in English. I’ve learned to structure presentations for impact, handle impromptu speaking under pressure, and lead conversations with clarity and confidence. Robert’s approach is practical, challenging, and always aligned with my role as a global executive. I now feel better prepared to represent my company internationally and position myself for future leadership opportunities.`,
+    shortContent: "Working with Robert has been one of the most impactful steps I’ve taken in advancing my professional communication as a CTO—his practical coaching helped me structure presentations for impact, handle impromptu speaking, and lead with confidence…",
+    author: "Luis Manuel Becerra Lucatero",
+    position: "Chief Technology Officer",
+    company: "Skysense",
+    avatar: luislTestimonial,
+    stars: 5,
+    industries: ["executive-english", "tech-english", "high-stakes-english"],
+    slug: "luis-manuel-becerra-lucatero-skysense",
+    headline: "Executive Presence & High-Impact Communication for a Global CTO",
+    avatarSize: "md",
+    link: "/en/services/executive-english",
+    linkText: "👉 English Coaching for Executives",
+    status: "published"
+  },
+  {
+    content: `More than just an English coach, Robert has been a true business coach. Each session blends language with practical tools that drive my professional growth.`,
+    author: "Noé Martínez",
+    position: "Sales Director",
+    company: "Grupo Kopar",
+    avatar: noeTestimonial,
+    stars: 5,
+    industries: ["executive-english", "high-stakes-english"],
+    slug: "noe-martinez-high-stakes-english",
+    headline: "Blending Language and Business Coaching for Real Growth",
+    avatarSize: "md",
+    link: "/en/services/high-stakes-english",
+    linkText: "👉 English Coaching for High-Stakes Career Success",
     status: "published"
   },
   {

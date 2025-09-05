@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import type { Testimonial } from "@data/testimonials/en";
 import Button from "@components/ui/Button.astro";
+import { cn } from "@utils/cn";
 
 export interface Props {
   testimonial: Testimonial;
@@ -57,7 +58,7 @@ const stars = "★".repeat(testimonial.stars || 5);
     <div class="mt-4 text-right">
       <a 
         href={testimonial.link} 
-        class="text-primary-600 hover:text-primary-800 font-medium inline-flex items-center"
+        class={cn("text-primary-600 hover:text-primary-800 font-medium inline-flex items-center")}
         {...(testimonial.link.startsWith('http') ? {
           target: "_blank",
           rel: "noopener noreferrer"
