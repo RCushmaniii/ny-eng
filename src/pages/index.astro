@@ -1,6 +1,17 @@
 ---
-// src/pages/index.astro
-// This page's only job is to redirect from the root domain to the
-// default language homepage (/en/). This is the best practice for SEO.
-return Astro.redirect('/en/', 301);
+import Layout from "@layouts/Layout.astro";
+const target = "/en/";
 ---
+<Layout title="Redirecting…">
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/en/">
+    <p>If you’re not redirected, <a href="/en/">go to English</a>.</p>
+  </noscript>
+  <script is:inline>
+    // Replace so / doesn’t stick in the history
+    window.location.replace("/en/");
+  </script>
+  <link rel="alternate" hreflang="en" href="/en/">
+  <link rel="alternate" hreflang="es" href="/es/">
+  <link rel="alternate" hreflang="x-default" href="/en/">
+</Layout>

@@ -1,5 +1,5 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import { Image } from "astro:assets";
 import Button from "@components/ui/Button.astro"; // Adjusted path
 import meImage from "@assets/images/about/me-blue-shirt.jpg";
@@ -15,7 +15,7 @@ import {
 import { testimonialsAboutEs as testimonials } from "@data/testimonials-about-es";
 
 const metadata = {
-    title: "Sobre Mí | Coach de Inglés de Negocios",
+    title: "Sobre Robert | New York English Teacher",
     description:
         "Coach de inglés de negocios con 20+ años de experiencia. Ayudo a ejecutivos y profesionales a comunicarse con claridad y confianza en inglés.",
 
@@ -36,14 +36,16 @@ const FooterCta = {
 };
 ---
 
-<Layout
+<Base
     {...metadata}
-    footerCta={FooterCta}
     lang="es"
-    translationSlugEn="/en/about"
-    image="/images/logos/new-york-english-og-wide.jpg"
-    whatsappImage="/images/logos/new-york-english-og.jpg"
-    linkedinImage="/images/logos/new-york-english-og-wide.jpg"
+    tkey="about"
+    ogImage={{
+        src: "/images/logos/new-york-english-og.jpg",
+        alt: "New York English Teacher - Coach de Comunicación en Inglés de Negocios",
+        width: 1200,
+        height: 630
+    }}
 >
     <section
         id="about-me"
@@ -143,14 +145,8 @@ const FooterCta = {
                                     target="_blank"
                                     variant="primary"
                                     size="lg"
-                                    class="inline-block w-full sm:w-auto text-center"
                                 >
-                                    <span class="block sm:hidden text-sm py-1"
-                                        >Reserva tu sesión gratuita</span
-                                    >
-                                    <span class="hidden sm:block"
-                                        >Reserva tu sesión gratuita de coaching</span
-                                    >
+                                    Reserva Tu Sesión Gratuita
                                 </Button>
                             </div>
                         </div>
@@ -368,7 +364,7 @@ const FooterCta = {
                     variant="primary"
                     size="lg"
                 >
-                    Reserva tu sesión gratuita
+                    Reserva Tu Sesión Gratuita
                 </Button>
             </div>
         </div>
@@ -660,9 +656,10 @@ const FooterCta = {
             </div>
         </div>
     </section>
-</Layout>
+</Base>
 
 <style>
+    /* Component-scoped styles */
     .leading-relaxed {
         line-height: 1.75;
     }

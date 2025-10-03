@@ -1,153 +1,166 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '@layouts/Layout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Base from "@layouts/Base.astro";
+import BlogPostSchema from "@components/seo/BlogPostSchema.astro";
 import CategoryPill from '@components/ui/CategoryPill.astro';
 // FIX: Rename the imported component to avoid conflict with the native Date object
 import DateComponent from '@components/ui/Date.astro';
 import { Image } from 'astro:assets';
 import { siteConfig } from '@data/config';
+import { normalizeBlogSlug, buildPostUrl, assertNoDoubleLang, stripLangPrefix } from '@utils/i18nRoutes';
+import { cleanBlogUrl } from '@utils/url-cleaner';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   // Filter for published Spanish posts
-  const esPosts = posts.filter(post => post.slug.startsWith('es/') && post.data.publish !== false);
-  return esPosts.map(post => ({
-    params: { slug: post.slug.replace(/^es\//, '') }, // remove 'es/' prefix for the URL param
-    props: { post },
-  }));
+  const esPosts = posts.filter((post: CollectionEntry<'blog'>) => post.slug.startsWith('es/') && post.data.publish !== false);
+  
+  return esPosts.map((post: CollectionEntry<'blog'>) => {
+    // Normalize the slug to prevent duplicate URLs
+    const { segments } = normalizeBlogSlug(post.slug);
+    
+    // For single-segment routes, we only want the first segment
+    const singleSegment = segments[0] || '';
+    const canonicalUrl = buildPostUrl('es', singleSegment);
+    
+    // Development guard to catch double language segments
+    try {
+      assertNoDoubleLang(`/es/blog/${singleSegment}`, 'getStaticPaths(es/[slug])');
+    } catch (e: any) {
+      console.warn(`[Warning] ${e.message}`);
+    }
+    
+    return {
+      params: { slug: singleSegment },
+      props: { post, canonicalUrl }
+    };
+  });
 }
 
-const { post } = Astro.props;
+interface Props {
+  post: CollectionEntry<'blog'>;
+  canonicalUrl: string;
+}
+
+const { post } = Astro.props as Props;
 const { Content } = await post.render();
 
-// --- Configuration & Core Variables ---
-const canonicalDomain = siteConfig.siteUrl || 'https://www.nyenglishteacher.com';
-const base = canonicalDomain.endsWith('/') ? canonicalDomain.slice(0, -1) : canonicalDomain;
-const postSlug = Astro.params.slug;
+// Use the canonicalUrl passed from getStaticPaths
+const { canonicalUrl } = Astro.props as Props;
 
-// Define postUrl and postTitle so they are available for sharing links
-const cleanSlug = postSlug ? postSlug.replace(/^\/+/, '').replace(/\/\/+/g, '/') : '';
-const postUrl = `${base}/es/blog/${cleanSlug}`;
+// For sharing functionality
 const postTitle = post.data.title;
-
+const postUrl = canonicalUrl;
 
 // --- SEO Meta Tags ---
 const seoTitle = post.data.seo?.title || post.data.title;
 const seoDescription = post.data.seo?.description || post.data.excerpt;
-
+const featuredObj = post.data.featuredImage;
+const featuredUrl: string | null = (typeof featuredObj === 'object' && featuredObj?.src)
+  ? featuredObj.src
+  : (post.data.seo?.image ?? null);
 
 // --- Previous/Next Post Navigation ---
 const allPosts = (await getCollection('blog'))
-  .filter(p => p.id.startsWith('es/') && p.data.publish !== false)
-  // This line now works because `Date` refers to the native JavaScript object
-  .sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());
+  .filter((p: CollectionEntry<'blog'>) => p.id.startsWith('es/') && p.data.publish !== false)
+  .sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());
 
-const currentSlug = `es/${Astro.params.slug}`;
-const currentIndex = allPosts.findIndex(p => p.slug === currentSlug);
+// Type-safe params access
+const { slug } = Astro.params as { slug: string };
+
+const currentIndex = allPosts.findIndex((p: CollectionEntry<'blog'>) => {
+  // Remove .md extension and compare with current slug
+  const postSlug = p.id.replace(/^es\/|\.md$/g, '');
+  return postSlug === slug;
+});
+
 const previousPost = allPosts[currentIndex + 1] ?? null; // Older post
 const nextPost = allPosts[currentIndex - 1] ?? null;     // Newer post
 
-// --- JSON-LD Structured Data ---
-// This also now works correctly
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": post.data.title,
-  "description": post.data.excerpt,
-  "image": post.data.featuredImage?.src ? new URL(post.data.featuredImage.src, canonicalDomain).toString() : undefined,
-  "datePublished": (() => {
-    // Create date consistently with our Date component
-    const dateStr = String(post.data.publishDate);
-    if (dateStr && /^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
-      const parts = dateStr.split('-');
-      const year = parseInt(parts[0], 10);
-      const month = parseInt(parts[1], 10);
-      const day = parseInt(parts[2], 10);
-      const jsDate = new globalThis.Date();
-      jsDate.setFullYear(year, month - 1, day);
-      jsDate.setHours(12, 0, 0, 0); // Set to noon to avoid day shifting
-      return jsDate.toISOString();
-    } else {
-      return new globalThis.Date(dateStr).toISOString();
-    }
-  })(),
-  "dateModified": (() => {
-    // Create date consistently with our Date component
-    const dateStr = String(post.data.publishDate);
-    if (dateStr && /^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
-      const parts = dateStr.split('-');
-      const year = parseInt(parts[0], 10);
-      const month = parseInt(parts[1], 10);
-      const day = parseInt(parts[2], 10);
-      const jsDate = new globalThis.Date();
-      jsDate.setFullYear(year, month - 1, day);
-      jsDate.setHours(12, 0, 0, 0); // Set to noon to avoid day shifting
-      return jsDate.toISOString();
-    } else {
-      return new globalThis.Date(dateStr).toISOString();
-    }
-  })(),
-  "author": {
-    "@type": "Person",
-    "name": "New York English",
-    "url": new URL('/es/about', canonicalDomain).toString(),
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "New York English",
-    "logo": {
-      "@type": "ImageObject",
-      "url": new URL('/images/logos/new-york-english-og.jpg', canonicalDomain).toString(),
-    }
-  },
-  "inLanguage": "es-ES",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": new URL(Astro.url.pathname, canonicalDomain).toString(),
-  },
-  "keywords": post.data.categories?.join(", ") || '',
-};
+// Get site URL for structured data
+const siteUrl = siteConfig.siteUrl || 'https://www.nyenglishteacher.com';
+const cleanSiteUrl = siteUrl.replace(/https?:\/\/www\.www\./i, 'https://www.').replace(/\/$/, '');
+
+// Generate proper hreflang for individual blog posts
+const lang = 'es';
+const fullSiteUrl = 'https://www.nyenglishteacher.com';
+const currentUrl = `${fullSiteUrl}${canonicalUrl}`;
+const englishTranslation = post.data.translations?.en;
+
+
+// Create custom hreflang alternates for this specific post
+const customHreflangs = [
+  { lang: 'es-MX', href: currentUrl },
+  ...(englishTranslation ? [{ 
+    lang: 'en-US', 
+    href: cleanBlogUrl(`${fullSiteUrl}/en/blog/${englishTranslation}/`)
+  }] : [])
+];
 ---
-<Layout
+
+<Base
+  lang="es"
+  tkey="blog"
+  customHreflangs={customHreflangs}
+  customCanonical={currentUrl}
   title={seoTitle}
   description={seoDescription}
-  lang="es"
-  translationSlugEn={post.data.translations?.en?.replace(/^en\/blog\//, '')}
-  canonicalUrl={postUrl}
-  image={post.data.featuredImage || "/images/logos/new-york-english-og-wide.jpg"}
+  ogImage={featuredUrl ? { src: featuredUrl, alt: post.data.imageAlt || post.data.title } : undefined}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
-
+  <BlogPostSchema
+    title={post.data.title}
+    description={post.data.excerpt}
+    publishDate={post.data.publishDate}
+    image={featuredUrl || undefined}
+    url={postUrl}
+    authorName="New York English"
+    categories={post.data.categories}
+  />
+  
   <section class="relative w-full">
     <!-- Gradient Background (all devices) -->
     <div class="w-full h-screen fixed top-0 left-0 -z-10 overflow-hidden">
       <div class="absolute top-0 left-0 right-0 h-[25vh] bg-gradient-to-b from-[#eef1ff] via-[#f8f9ff] to-white"></div>
       <div class="absolute top-[25vh] left-0 right-0 bottom-0 bg-white"></div>
     </div>
+    
     <article class="site-container--small mx-auto px-4 prose relative z-10 pb-base">
       <div class="mt-[5rem] md:mt-16 mb-6 md:mb-12 pt-8 md:pt-12 text-center relative z-10">
         <h1 class="text-gray-900 text-3xl md:text-4xl font-bold mb-4">{post.data.title}</h1>
         <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-gray-600">
           <DateComponent date={post.data.publishDate} lang="es" />
-          {post.data.categories && post.data.categories.map(cat => (
+          {post.data.categories && post.data.categories.map((cat: string) => (
             <CategoryPill category={cat} lang="es" />
           ))}
         </div>
       </div>
-      {post.data.featuredImage && (
+      
+      {(featuredObj || featuredUrl) && (
         <div class="relative mb-12 rounded-lg overflow-hidden border border-black">
-          <Image
-            src={post.data.featuredImage}
-            alt={post.data.imageAlt || post.data.title}
-            width={1200}
-            height={675}
-            class="w-full object-cover h-[300px] md:h-[450px] lg:h-[675px]"
-            quality={80}
-            format="webp"
-          />
+          {featuredObj ? (
+            <Image
+              src={featuredObj}
+              alt={post.data.imageAlt || post.data.title}
+              width={1200}
+              height={675}
+              class="w-full object-cover h-[300px] md:h-[450px] lg:h-[675px]"
+              quality={80}
+              format="webp"
+            />
+          ) : (
+            <img
+              src={featuredUrl!}
+              alt={post.data.imageAlt || post.data.title}
+              class="w-full object-cover h-[300px] md:h-[450px] lg:h-[675px]"
+              loading="eager"
+              width="1200"
+              height="675"
+            />
+          )}
           <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/50 to-transparent"></div>
         </div>
       )}
+      
       <Content />
       
       {postUrl && postTitle && (
@@ -203,7 +216,7 @@ const jsonLd = {
         <section class="mt-16 flex flex-col items-center md:flex-row md:justify-between gap-6 mx-auto max-w-3xl">
         {previousPost && (
           <a
-            href={`/es/blog/${previousPost.slug.replace(/^es\//, '')}`}
+            href={cleanBlogUrl(buildPostUrl('es', stripLangPrefix(previousPost.slug)))}
             rel="prev"
             class="group relative flex-1 max-w-xs border border-gray-200 rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full shadow-sm"
           >
@@ -211,16 +224,19 @@ const jsonLd = {
               <span class="text-2xl text-gray-400 transition-colors duration-200 group-hover:text-primary">&#8592;</span>
               <span class="font-medium text-xs text-gray-700">Anterior</span>
             </div>
-            {previousPost.data.featuredImage && (
-              <div class="aspect-video w-full bg-gray-100">
-                <img src={previousPost.data.featuredImage.src} alt={previousPost.data.imageAlt || previousPost.data.title} class="object-cover w-full h-full" />
-              </div>
-            )}
+            {(() => {
+              const prevObj = previousPost?.data?.featuredImage;
+              const prevUrl = (typeof prevObj === 'object' && prevObj?.src) ? prevObj.src : (previousPost?.data?.seo?.image ?? null);
+              return prevUrl ? (
+                <div class="aspect-video w-full bg-gray-100">
+                  <img src={prevUrl} alt={previousPost.data.imageAlt || previousPost.data.title} class="object-cover w-full h-full" />
+                </div>
+              ) : null;
+            })()}
             <div class="flex-grow px-4 py-6 flex flex-col">
               <div class="font-semibold text-base mb-1 line-clamp-2">{previousPost.data.title}</div>
               <div class="text-xs text-gray-500 mb-2">
-                {/* FIX: Use the renamed component */}
-                <DateComponent date={previousPost.data.publishDate} />
+                <DateComponent date={previousPost.data.publishDate} lang="es" />
               </div>
               <div class="text-sm text-gray-700 line-clamp-3">{previousPost.data.excerpt}</div>
             </div>
@@ -228,7 +244,7 @@ const jsonLd = {
         )}
         {nextPost && (
           <a
-            href={`/es/blog/${nextPost.slug.replace(/^es\//, '')}`}
+            href={cleanBlogUrl(buildPostUrl('es', stripLangPrefix(nextPost.slug)))}
             rel="next"
             class="group relative flex-1 max-w-xs border border-gray-200 rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full shadow-sm"
           >
@@ -236,16 +252,19 @@ const jsonLd = {
               <span class="font-medium text-xs text-gray-700">Siguiente</span>
               <span class="text-2xl text-gray-400 transition-colors duration-200 group-hover:text-primary">&#8594;</span>
             </div>
-            {nextPost.data.featuredImage && (
-              <div class="aspect-video w-full bg-gray-100">
-                <img src={nextPost.data.featuredImage.src} alt={nextPost.data.imageAlt || nextPost.data.title} class="object-cover w-full h-full" />
-              </div>
-            )}
+            {(() => {
+              const nextObj = nextPost?.data?.featuredImage;
+              const nextUrl = (typeof nextObj === 'object' && nextObj?.src) ? nextObj.src : (nextPost?.data?.seo?.image ?? null);
+              return nextUrl ? (
+                <div class="aspect-video w-full bg-gray-100">
+                  <img src={nextUrl} alt={nextPost.data.imageAlt || nextPost.data.title} class="object-cover w-full h-full" />
+                </div>
+              ) : null;
+            })()}
             <div class="flex-grow px-4 py-6 flex flex-col text-right">
               <div class="font-semibold text-base mb-1 line-clamp-2">{nextPost.data.title}</div>
               <div class="text-xs text-gray-500 mb-2">
-                {/* FIX: Use the renamed component */}
-                <DateComponent date={nextPost.data.publishDate} />
+                <DateComponent date={nextPost.data.publishDate} lang="es" />
               </div>
               <div class="text-sm text-gray-700 line-clamp-3">{nextPost.data.excerpt}</div>
             </div>
@@ -255,4 +274,4 @@ const jsonLd = {
       )}
     </article>
   </section>
-</Layout>
+</Base>

@@ -1,5 +1,5 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
@@ -43,14 +43,13 @@ const metodologiaEs: Methodology = {
   ]
 };
 
-// Import testimonials and select an appropriate testimonial
+// Import testimonials and select Erika testimonial (medical professional)
 import { testimonials } from "@data/testimonials/es";
-const featuredTestimonialSlug = 'ricardo-fernandez-hospital-angeles'; // Use a medical testimonial since it's related
-const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
+const featuredTestimonial = testimonials[7]; // Dra. Erika Itzel testimonial
 
 // SEO metadata
 const title = "Coaching de Inglés Profesional | Médicos y Abogados | NY English";
-const seoDescription = "Comunícate claramente con pacientes, clientes, colegas y en conferencias de la industria. Domina la terminología especializada para profesionales médicos y legales.";
+const seoDescription = "Mejora tu comunicación profesional en inglés. Coaching especializado para interacciones con clientes, reuniones ejecutivas y networking internacional. Resultados garantizados.";
 
 // Hero content
 const heroContent = {
@@ -87,17 +86,14 @@ const ctaContent = {
   ]
 };
 
-// Translation slug for English version
-const translationSlug = "professional-english";
 ---
 
-<Layout
+<Base
   title={title}
   description={seoDescription}
   lang="es"
-  translationSlugEn={`/en/services/${translationSlug}`}
-  image={professionalService?.backgroundImage || "/images/logos/new-york-english-og-wide.jpg"}
-  hideCta={true}
+  tkey="services/professional-english"
+  ogImage={{ src: typeof professionalService?.backgroundImage === 'string' ? professionalService.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />
@@ -115,4 +111,4 @@ const translationSlug = "professional-english";
   
   <!-- Final CTA -->
   <CtaSection content={ctaContent} />
-</Layout>
+</Base>

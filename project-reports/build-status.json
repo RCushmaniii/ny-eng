@@ -1,0 +1,19 @@
+{
+  "script": "build-status",
+  "runAt": "2025-09-08T19:22:41-06:00",
+  "status": "green",
+  "issues": [
+    {
+      "priority": "Low",
+      "impact": "Build Performance",
+      "message": "95 pages built successfully, but build time increased by 15%",
+      "action": "Profile build performance and optimize heavy components"
+    },
+    {
+      "priority": "Low",
+      "impact": "Code Quality",
+      "message": "TypeScript errors with optional parameters in Base layout",
+      "action": "Add proper type definitions for optional tkey parameter"
+    }
+  ]
+}

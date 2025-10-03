@@ -33,7 +33,7 @@ Strong Business English enables IT managers to:
 * Prevent costly misunderstandings in emails, calls, and meetings.
 * Build trust and rapport with global stakeholders quickly.
 
-*Example:* Imagine losing a **\$500,000 cloud migration contract** because the project manager couldn't confidently explain the security protocols during a video call with the American CIO. It happens—often.
+*Example:* Imagine losing a **\$500,000 cloud migration contract** because the project manager couldn't confidently explain the security protocols during a video call with the American CIO. It happens—often. For specific techniques on mastering video calls, see [Executive Presence on Video Calls: 7 Habits that Build Trust in English](/en/blog/executive-video-call/).
 
 ---
 

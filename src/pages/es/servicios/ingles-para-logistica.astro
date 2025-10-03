@@ -1,5 +1,5 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
@@ -43,14 +43,13 @@ const metodologiaEs: Methodology = {
   ]
 };
 
-// Import testimonials and select featured one
+// Import testimonials and select Humberto testimonial
 import { testimonials } from "@data/testimonials/es";
-const featuredTestimonialSlug = 'humberto-grimaldo-tc-logistics';
-const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
+const featuredTestimonial = testimonials[11]; // Humberto Grimaldo testimonial
 
 // SEO metadata
 const title = "Coaching de Inglés para Logística | Comunicación Global | NY English";
-const seoDescription = "Domina el inglés para profesionales de logística y cadena de suministro. Comunícate con confianza en entornos internacionales, documentación y negociaciones. Coaching personalizado para profesionales de logística.";
+const seoDescription = "Optimiza la comunicación en logística internacional. Domina la terminología de cadena de suministro, documentación aduanal y negociaciones con transportistas en inglés.";
 
 // Hero content
 const heroContent = {
@@ -87,17 +86,14 @@ const ctaContent = {
   ]
 };
 
-// Translation slug for English version
-const translationSlug = "logistics-english";
 ---
 
-<Layout
+<Base
   title={title}
   description={seoDescription}
   lang="es"
-  translationSlugEn={`/en/services/${translationSlug}`}
-  image={logisticsService?.backgroundImage || "/images/logos/new-york-english-og-wide.jpg"}
-  hideCta={true}
+  tkey="services/logistics-english"
+  ogImage={{ src: typeof logisticsService?.backgroundImage === 'string' ? logisticsService.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />
@@ -115,4 +111,4 @@ const translationSlug = "logistics-english";
   
   <!-- Final CTA -->
   <CtaSection content={ctaContent} />
-</Layout>
+</Base>

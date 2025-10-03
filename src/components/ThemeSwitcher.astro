@@ -60,7 +60,7 @@ const isDevMode = import.meta.env.DEV; // Check if we are in dev mode
 </div>
 
 <!-- Client-side Script with Safety Checks -->
-<script define:vars={{ isDevMode, defaultTheme }}>
+<script is:inline define:vars={{ isDevMode, defaultTheme }}>
     document.addEventListener("DOMContentLoaded", () => {
         const themes = ["zeus", "poseidon", "hades", "apollo", "artemis", "ares", "athena", "hermes", "dionysus", "demeter"];
         

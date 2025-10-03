@@ -8,7 +8,7 @@ categories:
 featuredImage: "./images/executive-video-call.jpg"
 imageAlt: "Ejecutivo liderando una videollamada con confianza y claridad"
 translations:
-  en: "/en/blog/executive-presence-on-video-calls"
+  en: "/en/blog/executive-video-call"
 publish: true
 
 seo:
@@ -19,7 +19,7 @@ seo:
 ## Lidera con confianza en Zoom, Meet o Teams
 Las videollamadas son donde avanzan los acuerdos, se alinean equipos y se evalúa a los líderes—muchas veces en minutos. Si gestionas clientes o lideras equipos globales en inglés, tu presencia en cámara importa tanto como tu mensaje.
 
-En New York English, entreno a ejecutivos y gerentes senior en tecnología, finanzas, logística y servicios profesionales para comunicar con claridad y autoridad. Aquí tienes siete hábitos comprobados que puedes aplicar hoy.
+En New York English, entreno a ejecutivos y gerentes senior en tecnología, finanzas, logística y servicios profesionales para comunicar con claridad y autoridad. Si necesitas construir confianza básica primero, revisa mi guía sobre [5 estrategias simples para ganar confianza](/es/blog/aumentar-confianza/). Aquí tienes siete hábitos comprobados que puedes aplicar hoy.
 
 ---
 
@@ -58,7 +58,7 @@ La claridad supera la complejidad—sobre todo entre acentos.
 - “Mitigate” → **reduce / reducir**  
 - “Initiate” → **start / iniciar**
 
-**Señal de confianza:** prefiere **Recomiendo / Vamos a / La decisión es** en lugar de dudar (“quizá, tal vez, como que”).
+**Señal de confianza:** prefiere **Recomiendo / Vamos a / La decisión es** en lugar de dudar ("quizá, tal vez, como que"). Para más sobre construir esta presencia ejecutiva, ve [Más allá de la gramática: El valor de un coach nativo de inglés para líderes senior](/es/blog/coaching-ejecutivo/).
 
 ---
 

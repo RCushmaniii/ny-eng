@@ -1,0 +1,80 @@
+---
+// DEBUG: This is the /es/categoria/[category].astro file
+import { getCollection, type CollectionEntry } from "astro:content";
+import Base from "@layouts/Base.astro";
+import BlogList, { type BlogListProps } from "@components/blog/BlogList.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import blogHeroImage from "../../../content/blog/images/blog-hero.jpg";
+import { categories, type Category } from "@data/categories";
+import { siteConfig, blogSetting } from "@data/config";
+import type { TKey } from "../../../lib/i18n";
+
+export async function getStaticPaths() {
+  // Get all categories with Spanish slugs
+  const categoriesWithSpanish = categories.filter(cat => cat.esSlug);
+  
+  return categoriesWithSpanish.map((category) => ({
+    params: { category: category.esSlug },
+    props: { categoryData: category },
+  }));
+}
+
+interface Props {
+  categoryData: Category;
+}
+
+const { categoryData } = Astro.props;
+
+// Fetch all Spanish blog posts for this category
+const allPosts = await getCollection("blog");
+const categoryPosts = allPosts
+  .filter((post: CollectionEntry<"blog">) => {
+    // Only Spanish posts that are published
+    if (!post.id.startsWith("es/") || post.data.publish === false) return false;
+
+    // Check if post categories include this category name
+    const categoryNames = post.data.categories || [];
+    return categoryNames.includes(categoryData.name);
+  })
+  .sort(
+    (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+      new Date(b.data.publishDate).getTime() -
+      new Date(a.data.publishDate).getTime()
+  );
+
+// Generate proper TKey for i18n system
+const tkey = `category/${categoryData.slug}` as TKey;
+
+// SEO content
+const seoTitle = `${categoryData.name_es || categoryData.name} | ${siteConfig.companyName}`;
+const seoDescription =
+  categoryData.description_es ||
+  categoryData.description ||
+  `Explora artículos, consejos y recursos sobre ${categoryData.name_es || categoryData.name}. Mejora tu inglés profesional con ideas expertas.`;
+
+// Create custom hreflangs for this specific category
+const customHreflangs = [
+  { lang: 'en-US', href: `/en/category/${categoryData.slug}/` },
+  { lang: 'es-MX', href: `/es/categoria/${categoryData.esSlug || categoryData.slug}/` }
+];
+
+// Hero content
+const heroContent = {
+  title: categoryData.name_es || categoryData.name,
+  description: categoryData.description_es || categoryData.description || `Todos los artículos relacionados con ${categoryData.name_es || categoryData.name}`,
+  backgroundImage: blogHeroImage,
+  overlayOpacity: 0.7
+};
+---
+
+<Base lang="es" tkey={tkey} title={seoTitle} description={seoDescription} customHreflangs={customHreflangs}>
+  <main>
+    <InnerHero content={heroContent} />
+    <BlogList
+      posts={categoryPosts}
+      currentCategory={categoryData.name_es || categoryData.name}
+      currentCategorySlug={categoryData.esSlug || categoryData.slug}
+      lang="es"
+    />
+  </main>
+</Base>

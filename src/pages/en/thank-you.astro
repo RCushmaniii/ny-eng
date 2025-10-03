@@ -1,5 +1,5 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import Button from "@components/ui/Button.astro";
 import nycImage from "@assets/images/nyc-thank-you.jpg";
@@ -17,31 +17,15 @@ const heroContent = {
   overlayOpacity: 0.4,
 };
 
-const footerCta = {
-  eyebrow: "",
-  title: "Transform Your Professional English Today",
-  description:
-    "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
-  hideCta: false,
-  button: {
-    text: "Reserve My Free Consultation",
-    link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
-    target: "_blank",
-    variant: "primary",
-  },
-};
 ---
 
-<Layout
+<Base
   title={metadata.title}
   description={metadata.description}
-  footerCta={footerCta}
   lang="en"
-  noIndex={true}
-  translationSlugEs="/es/thank-you"
-  image="/images/logos/new-york-english-og-wide.jpg"
-  whatsappImage="/images/logos/new-york-english-og.jpg"
-  linkedinImage="/images/logos/new-york-english-og-wide.jpg"
+  tkey="thank-you"
+  ogImage={{ src: "/images/logos/new-york-english-og.jpg" }}
+  hideCta={false}
 >
   <InnerHero content={heroContent} />
 
@@ -67,4 +51,4 @@ const footerCta = {
       </p>
     </div>
   </section>
-</Layout>
+</Base>

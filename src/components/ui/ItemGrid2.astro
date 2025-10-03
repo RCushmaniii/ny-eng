@@ -1,0 +1,42 @@
+---
+import type { Item } from '~/types';
+import WidgetWrapper from './WidgetWrapper.astro';
+import Headline from './Headline.astro';
+import ItemGrid from './ItemGrid.astro';
+
+export interface Props {
+  id?: string;
+  isDark?: boolean;
+  classes?: Record<string, string>;
+  bg?: string;
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  items?: Item[];
+  columns?: number;
+  defaultIcon?: string;
+}
+
+const {
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  items = [],
+  columns = 2,
+  defaultIcon,
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline} />
+  <ItemGrid
+    items={items}
+    columns={columns}
+    defaultIcon={defaultIcon}
+    classes={{ container: classes?.items }}
+  />
+</WidgetWrapper>

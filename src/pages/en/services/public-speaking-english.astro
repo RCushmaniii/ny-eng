@@ -1,5 +1,6 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
+import type { ImageMetadata } from 'astro';
 import InnerHero from "@components/sections/InnerHero.astro";
 import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
@@ -10,7 +11,7 @@ import CtaSection from "@components/sections/CtaSection.astro";
 import { services } from "@data/services";
 
 // Get the public speaking service data
-const publicSpeakingService = services.find(s => s.slug === 'high-stakes-english');
+const publicSpeakingService = services.find(s => s.slug === 'public-speaking-english');
 
 // Import methodology content
 import { coreMethodology } from "@data/methodology";
@@ -59,22 +60,19 @@ const ctaContent = {
   ]
 };
 
-// Translation slug for Spanish version
-const translationSlug = "hablar-en-publico";
 ---
 
-<Layout
+<Base
   title={title}
   description={seoDescription}
   lang="en"
-  translationSlugEs={`/es/servicios/${translationSlug}`}
-  image={publicSpeakingService?.backgroundImage || "/images/logos/new-york-english-og-wide.jpg"}
-  footerCta={{
-  title: "",
-  description: "",
-  button: { text: "", link: "#" },
-  hideCta: true
-}}
+  tkey="services/public-speaking-english"
+  ogImage={{
+    src: publicSpeakingService?.backgroundImage?.src || "/images/logos/new-york-english-og.jpg",
+    alt: `${title} - Featured Image`,
+    width: publicSpeakingService?.backgroundImage?.width,
+    height: publicSpeakingService?.backgroundImage?.height
+  }}
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />
@@ -92,4 +90,4 @@ const translationSlug = "hablar-en-publico";
   
   <!-- Final CTA -->
   <CtaSection content={ctaContent} />
-</Layout>
+</Base>

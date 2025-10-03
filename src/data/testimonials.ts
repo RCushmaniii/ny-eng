@@ -8,12 +8,14 @@ export interface Testimonial {
     avatar: ImageMetadata;
 }
 
-import emmanuelTestimonial from '../assets/images/testimonials/emmanuel-testimonial.jpeg';
+import emmanuelTestimonial from '../assets/images/testimonials/emmanuel-testimonial.jpg';
 import erikaTestimonial from '../assets/images/testimonials/erika-testimonial.jpg';
 import julioTestimonial from '../assets/images/testimonials/julio-testimonial.jpg';
-import hugoTestimonial from '../assets/images/testimonials/hugo-testimonial.jpeg';
-import andresTestimonial from '../assets/images/testimonials/andres-testimonial.jpeg';
-import andreaTestimonial from '../assets/images/testimonials/andrea-testimonial.jpeg';
+import hugobTestimonial from '../assets/images/testimonials/hugob-testimonial.jpg';
+import hugolTestimonial from '../assets/images/testimonials/hugo-l-testimonial.jpg';
+import andresTestimonial from '../assets/images/testimonials/andres-testimonial.jpg';
+import karlaTestimonial from '../assets/images/testimonials/karla-testimonial.jpg';
+import andreaTestimonial from '../assets/images/testimonials/andrea-testimonial.jpg';
 import albertoTestimonial from '../assets/images/testimonials/alberto-testimonial.jpg';
 
 export const testimonials: Testimonial[] = [
@@ -25,14 +27,14 @@ export const testimonials: Testimonial[] = [
         company: "Smarttie",
         avatar: julioTestimonial,
     },
-    
+
     {
         content:
             "Being a founder means constantly pitching, persuading, and leading. Robert’s coaching gave me the language tools—and the confidence—to do it all in English. It’s made a real difference in pitching deals and connecting with my team",
         author: "Hugo Blum",
         position: "CEO",
         company: "100 Ladrillos",
-        avatar: hugoTestimonial,
+        avatar: hugobTestimonial,
     },
     {
         content:
@@ -50,6 +52,6 @@ export const testimonials: Testimonial[] = [
         company: "CEVA Logistics",
         avatar: andreaTestimonial,
     },
-     
+
 ];
 

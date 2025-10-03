@@ -2,16 +2,18 @@ import type { ImageMetadata } from 'astro';
 
 // Import avatar images (paths are relative to src/data/)
 import julioTestimonial from '../assets/images/testimonials/julio-testimonial.jpg';
-import hugoTestimonial from '../assets/images/testimonials/hugo-testimonial.jpeg';
-import andresTestimonial from '../assets/images/testimonials/andres-testimonial.jpeg';
-import andreaTestimonial from '../assets/images/testimonials/andrea-testimonial.jpeg';
+import hugobTestimonial from '../assets/images/testimonials/hugob-testimonial.jpg';
+import hugolTestimonial from '../assets/images/testimonials/hugo-l-testimonial.jpg';
+import andresTestimonial from '../assets/images/testimonials/andres-testimonial.jpg';
+import karlaTestimonial from '../assets/images/testimonials/karla-testimonial.jpg';
+import andreaTestimonial from '../assets/images/testimonials/andrea-testimonial.jpg';
 
 export interface Testimonial {
-    content: string;
-    author: string;
-    position: string;
-    company: string;
-    avatar: ImageMetadata;
+  content: string;
+  author: string;
+  position: string;
+  company: string;
+  avatar: ImageMetadata;
 }
 
 export const testimonialsAboutEs: Testimonial[] = [
@@ -27,7 +29,7 @@ export const testimonialsAboutEs: Testimonial[] = [
     author: "Hugo Blum",
     position: "CEO",
     company: "100 Ladrillos",
-    avatar: hugoTestimonial,
+    avatar: hugobTestimonial,
   },
   {
     content: "El coaching con Robert me ayudó a sentirme mucho más seguro y natural al hablar inglés, especialmente con clientes de EE. UU. Ahora me siento más cómodo en las conversaciones y mejor preparado para oportunidades de networking y reuniones internacionales.",

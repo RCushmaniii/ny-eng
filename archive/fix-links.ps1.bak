@@ -1,0 +1,105 @@
+# fix-links.ps1
+param(
+    [switch]$WhatIf
+)
+
+$ErrorActionPreference = 'Stop'
+
+# Find files to edit
+$files = Get-ChildItem -Path src, content, public -Recurse -File |
+Where-Object { $_.Extension -in '.astro', '.ts', '.tsx', '.md', '.mdx', '.html' }
+
+# Replacement rules (regex -> replacement). Order matters.
+$replacements = @(
+    # --- Core sections: ensure trailing slash ---
+    @{ pattern = 'href="/en/blog"(?!/)'               ; replace = 'href="/en/blog/"' }
+    @{ pattern = 'href="/en/about"(?!/)'              ; replace = 'href="/en/about/"' }
+    @{ pattern = 'href="/en/services"(?!/)'           ; replace = 'href="/en/services/"' }
+    @{ pattern = 'href="/en/testimonials"(?!/)'       ; replace = 'href="/en/testimonials/"' }
+    @{ pattern = 'href="/en/contact"(?!/)'            ; replace = 'href="/en/contact/"' }
+    @{ pattern = 'href="/es/blog"(?!/)'               ; replace = 'href="/es/blog/"' }
+    @{ pattern = 'href="/es/about"(?!/)'              ; replace = 'href="/es/about/"' }
+    @{ pattern = 'href="/es/servicios"(?!/)'          ; replace = 'href="/es/servicios/"' }
+    @{ pattern = 'href="/es/testimonios"(?!/)'        ; replace = 'href="/es/testimonios/"' }
+    @{ pattern = 'href="/es/contact"(?!/)'            ; replace = 'href="/es/contact/"' }
+
+    # --- Legal pages (exact) ---
+    @{ pattern = 'href="/en/legal/privacy-policy"(?!/)'   ; replace = 'href="/en/legal/privacy-policy/"' }
+    @{ pattern = 'href="/en/legal/terms-of-service"(?!/)' ; replace = 'href="/en/legal/terms-of-service/"' }
+    @{ pattern = 'href="/es/legal/privacy-policy"(?!/)'   ; replace = 'href="/es/legal/privacy-policy/"' }
+    @{ pattern = 'href="/es/legal/terms-of-service"(?!/)' ; replace = 'href="/es/legal/terms-of-service/"' }
+
+    # --- Categories: ensure /…/slug/ ---
+    @{ pattern = 'href="/en/category/([a-z0-9-]+)(?=")' ; replace = 'href="/en/category/$1/"' }
+    @{ pattern = 'href="/es/category/([a-z0-9-]+)(?=")' ; replace = 'href="/es/category/$1/"' }
+
+    # --- Blog pagination (no-slashed -> slashed) ---
+    @{ pattern = 'href="/(en|es)/blog/([0-9]+)(?=")' ; replace = 'href="/$1/blog/$2/"' }
+
+    # --- Kill /es/blog/blog/N duplicates ---
+    @{ pattern = 'href="/es/blog/blog/([0-9]+)/?(?=")' ; replace = 'href="/es/blog/$1/"' }
+
+    # --- Temporary: service detail ghosts -> index (EN) ---
+    @{ pattern    = 'href="/en/services/(executive-english|startup-founders|tech-english|logistics-english|professional-english|high-stakes-english)/?(?=")'
+        ; replace = 'href="/en/services/"' 
+    }
+
+    # --- Temporary: stray /es/services/... -> /es/servicios/ (ES root is "servicios") ---
+    @{ pattern = 'href="/es/services/[^"]+/?(?=")' ; replace = 'href="/es/servicios/"' }
+
+    # --- Optional: kill 404 page links (send to language roots) ---
+    @{ pattern = 'href="/en/404/?(?!")' ; replace = 'href="/en/"' }
+    @{ pattern = 'href="/es/404/?(?!")' ; replace = 'href="/es/"' }
+
+    # --- Fix bad absolute host and OG image filename ---
+    @{ pattern = 'https://www\.www\.nyenglishteacher\.com' ; replace = 'https://www.nyenglishteacher.com' }
+    @{ pattern = 'new-york-english-og-wide\.jpg'           ; replace = 'new-york-english-og.jpg' }
+)
+
+$updated = 0
+
+foreach ($f in $files) {
+    # Read file (robustly)
+    try {
+        $orig = [System.IO.File]::ReadAllText((Resolve-Path -LiteralPath $f.FullName), [System.Text.Encoding]::UTF8)
+    }
+    catch {
+        try {
+            $orig = Get-Content -LiteralPath $f.FullName -Raw -ErrorAction Stop
+        }
+        catch {
+            Write-Warning "Skipping unreadable file: $($f.FullName) - $($_.Exception.Message)"
+            continue
+        }
+    }
+
+    if ($null -eq $orig) {
+        # Just in case an empty file comes back as $null
+        $orig = ''
+    }
+
+    $t = $orig
+
+    foreach ($r in $replacements) {
+        if ($null -eq $t) { $t = '' } # belt & suspenders
+        $t = [regex]::Replace($t, $r.pattern, $r.replace)
+    }
+
+    if ($t -ne $orig) {
+        if ($WhatIf) {
+            Write-Host "Would update: $($f.FullName)"
+        }
+        else {
+            [System.IO.File]::WriteAllText((Resolve-Path -LiteralPath $f.FullName), $t, [System.Text.Encoding]::UTF8)
+            Write-Host "Updated: $($f.FullName)"
+        }
+        $updated++
+    }
+}
+
+if ($WhatIf) {
+    Write-Host "Done. Files to be updated: $updated"
+}
+else {
+    Write-Host "Done. Files updated: $updated"
+}

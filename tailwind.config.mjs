@@ -16,37 +16,50 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Noto Sans KR', ...defaultTheme.fontFamily.sans],
-        heading: ['Noto Sans KR', 'sans-serif'],
-        display: ['Noto Sans KR', 'sans-serif'],
+        heading: ['Bruno Ace SC', 'sans-serif'],
+        display: ['Bruno Ace SC', 'sans-serif'],
       },
       colors: {
-        primary: 'var(--color-primary)',
-        'primary-light': 'var(--color-primary-light)',
-        'primary-dark': 'var(--color-primary-dark)',
-        secondary: 'var(--color-secondary)',
-        'secondary-light': 'var(--color-secondary-light)',
-        'secondary-dark': 'var(--color-secondary-dark)',
+        // Primary colors
+        primary: {
+          DEFAULT: 'var(--color-primary)',
+          light: 'var(--color-primary-light)',
+          dark: 'var(--color-primary-dark)',
+        },
+        // Secondary colors
+        secondary: {
+          DEFAULT: 'var(--color-secondary)',
+          light: 'var(--color-secondary-light)',
+          dark: 'var(--color-secondary-dark)',
+        },
+        // Accent colors
         accent: 'var(--color-accent)',
-        background: 'var(--color-background)',
-        'background-light': 'var(--color-background-light)',
-        'background-dark': 'var(--color-background-dark)',
-        headline: 'var(--color-headline)',
-        'headline-light': 'var(--color-headline-light)',
-        'headline-dark': 'var(--color-headline-dark)',
-        eyebrow: 'var(--color-eyebrow)',
-        'eyebrow-light': 'var(--color-eyebrow-light)',
-        'eyebrow-dark': 'var(--color-eyebrow-dark)',
-        'body-base': 'var(--color-body-base)',
-        'body-light': 'var(--color-body-light)',
-        'body-dark': 'var(--color-body-dark)',
-        input: 'var(--color-input)',
-        'input-light': 'var(--color-input-light)',
-        'input-dark': 'var(--color-input-dark)',
-        'input-text': 'var(--color-input-text)',
-        'input-text-light': 'var(--color-input-text-light)',
-        'input-text-dark': 'var(--color-input-text-dark)'
+        // Background colors
+        background: {
+          DEFAULT: 'var(--color-background)',
+          light: 'var(--color-background-light)',
+          dark: 'var(--color-background-dark)',
+        },
+        // Text colors
+        headline: {
+          DEFAULT: 'var(--color-headline)',
+          light: 'var(--color-headline-light)',
+          dark: 'var(--color-headline-dark)',
+        },
+        // Body text colors
+        body: {
+          base: 'var(--color-body-base)',
+          light: 'var(--color-body-light)',
+          dark: 'var(--color-body-dark)',
+        },
+        // Eyebrow colors
+        eyebrow: {
+          DEFAULT: 'var(--color-eyebrow)',
+          light: 'var(--color-eyebrow-light)',
+          dark: 'var(--color-eyebrow-dark)',
+        },
       },
-      typography: {
+      typography: (theme) => ({
         DEFAULT: {
           css: {
             color: 'var(--color-body-base)',
@@ -63,7 +76,7 @@ export default {
             strong: { color: 'var(--color-headline)' },
           },
         },
-      },
+      }),
       // Container configuration
       container: {
         center: true,
@@ -84,5 +97,9 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 };

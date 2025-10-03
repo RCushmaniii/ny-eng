@@ -1,5 +1,5 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
@@ -63,13 +63,17 @@ const ctaContent = {
 const translationSlug = "ingles-para-ventas-tecnicas";
 ---
 
-<Layout
+<Base
   title={title}
   description={seoDescription}
   lang="en"
-  translationSlugEs={`/es/servicios/${translationSlug}`}
-  image={technicalSalesService?.backgroundImage || "/images/logos/new-york-english-og-wide.jpg"}
-  hideCta={true}
+  tkey="services/technical-sales-english"
+  ogImage={{
+    src: technicalSalesService?.backgroundImage?.src || "/images/logos/new-york-english-og.jpg",
+    alt: `${title} - Featured Image`,
+    width: technicalSalesService?.backgroundImage?.width,
+    height: technicalSalesService?.backgroundImage?.height
+  }}
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />
@@ -87,4 +91,4 @@ const translationSlug = "ingles-para-ventas-tecnicas";
   
   <!-- Final CTA -->
   <CtaSection content={ctaContent} />
-</Layout>
+</Base>

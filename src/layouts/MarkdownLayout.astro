@@ -1,0 +1,372 @@
+---
+/**
+ * MarkdownLayout.astro - Layout for rendering markdown documentation files
+ * Used for processing .md files in the /docs/ directory with proper Astro markdown support
+ */
+
+export interface Props {
+  frontmatter?: {
+    title?: string;
+    description?: string;
+    category?: string;
+    icon?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+const title = frontmatter?.title || 'Documentation';
+const description = frontmatter?.description || 'NY English Teacher Documentation';
+const category = frontmatter?.category || 'Documentation';
+const icon = frontmatter?.icon || '📄';
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="zeus">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | NY English Teacher Docs</title>
+    <meta name="description" content={description} />
+    
+    <!-- Project Tailwind CSS -->
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    
+    <!-- Enhanced markdown styling using project variables -->
+    <style>
+      /* Use project fonts and colors */
+      body {
+        font-family: var(--font-base);
+        background-color: var(--color-background);
+        color: var(--color-text);
+        line-height: 1.6;
+      }
+      
+      /* Container styling */
+      .markdown-container {
+        max-width: var(--container-base);
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+      
+      /* Navigation header */
+      .docs-nav {
+        background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+        color: #ffffff;
+        padding: 1rem;
+        box-shadow: var(--shadow-lg);
+        margin-bottom: 2rem;
+      }
+      
+      .docs-nav h1 {
+        font-family: var(--font-headline);
+        font-size: var(--text-xl);
+        font-weight: 700;
+        margin: 0;
+        color: #ffffff;
+      }
+      
+      /* Development warning */
+      .dev-warning {
+        background-color: #fef3c7;
+        border-left: 4px solid var(--color-warning);
+        padding: 1rem;
+        margin-bottom: 2rem;
+        border-radius: var(--border-radius-small);
+      }
+      
+      /* Document header */
+      .doc-header {
+        background: linear-gradient(135deg, var(--color-background-light), #ffffff);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-base);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: var(--shadow-md);
+      }
+      
+      .doc-title {
+        font-family: var(--font-headline);
+        font-size: var(--text-h1);
+        font-weight: 700;
+        color: var(--color-headline);
+        margin: 0 0 0.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      
+      .doc-meta {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      
+      .doc-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: var(--text-small);
+        font-weight: 500;
+      }
+      
+      .category-badge {
+        background-color: var(--color-primary);
+        color: #ffffff;
+      }
+      
+      .dev-badge {
+        background-color: var(--color-secondary);
+        color: #ffffff;
+      }
+      
+      /* Markdown content styling */
+      .markdown-content {
+        background: #ffffff;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-base);
+        padding: 3rem;
+        box-shadow: var(--shadow-sm);
+      }
+      
+      /* Typography */
+      .markdown-content h1 {
+        font-family: var(--font-headline);
+        font-size: var(--text-h1);
+        font-weight: 700;
+        color: var(--color-headline);
+        margin: 0 0 2rem 0;
+        border-bottom: 2px solid var(--color-primary);
+        padding-bottom: 1rem;
+      }
+      
+      .markdown-content h2 {
+        font-family: var(--font-headline);
+        font-size: var(--text-h2);
+        font-weight: 600;
+        color: var(--color-headline);
+        margin: 3rem 0 1.5rem 0;
+        border-left: 4px solid var(--color-primary);
+        padding-left: 1rem;
+      }
+      
+      .markdown-content h3 {
+        font-family: var(--font-headline);
+        font-size: var(--text-h3);
+        font-weight: 600;
+        color: var(--color-headline);
+        margin: 2rem 0 1rem 0;
+      }
+      
+      .markdown-content h4,
+      .markdown-content h5,
+      .markdown-content h6 {
+        font-family: var(--font-headline);
+        font-weight: 600;
+        color: var(--color-headline);
+        margin: 1.5rem 0 0.75rem 0;
+      }
+      
+      .markdown-content p {
+        font-family: var(--font-base);
+        color: var(--color-body-base);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        font-size: var(--text-base);
+      }
+      
+      .markdown-content ul,
+      .markdown-content ol {
+        margin: 0 0 1.5rem 2rem;
+        padding: 0;
+      }
+      
+      .markdown-content li {
+        color: var(--color-body-base);
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+      }
+      
+      .markdown-content ul li {
+        list-style-type: disc;
+      }
+      
+      .markdown-content ol li {
+        list-style-type: decimal;
+      }
+      
+      .markdown-content li::marker {
+        color: var(--color-primary);
+      }
+      
+      .markdown-content a {
+        color: var(--color-primary);
+        text-decoration: underline;
+        font-weight: 500;
+      }
+      
+      .markdown-content a:hover {
+        color: var(--color-primary-light);
+      }
+      
+      .markdown-content code {
+        background-color: var(--color-background-light);
+        color: var(--color-primary);
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: var(--text-small);
+        font-family: 'Courier New', monospace;
+        font-weight: 500;
+      }
+      
+      .markdown-content pre {
+        background-color: var(--color-background-dark);
+        color: #ffffff;
+        padding: 1.5rem;
+        border-radius: var(--border-radius-base);
+        overflow-x: auto;
+        margin: 2rem 0;
+        border: 1px solid var(--color-border);
+      }
+      
+      .markdown-content pre code {
+        background-color: transparent;
+        color: #ffffff;
+        padding: 0;
+        font-size: var(--text-small);
+      }
+      
+      .markdown-content blockquote {
+        border-left: 4px solid var(--color-secondary);
+        background-color: var(--color-background-light);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        font-style: italic;
+        border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+      }
+      
+      .markdown-content blockquote p {
+        margin-bottom: 0;
+      }
+      
+      .markdown-content table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid var(--color-border);
+        margin: 2rem 0;
+        border-radius: var(--border-radius-small);
+        overflow: hidden;
+      }
+      
+      .markdown-content th,
+      .markdown-content td {
+        border: 1px solid var(--color-border);
+        padding: 1rem;
+        text-align: left;
+      }
+      
+      .markdown-content th {
+        background-color: var(--color-background-light);
+        font-weight: 600;
+        color: var(--color-headline);
+        font-family: var(--font-headline);
+      }
+      
+      .markdown-content hr {
+        border: none;
+        border-top: 2px solid var(--color-border);
+        margin: 3rem 0;
+      }
+      
+      /* Navigation buttons */
+      .nav-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--color-border);
+      }
+      
+      .nav-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.75rem 1.5rem;
+        background: var(--color-primary);
+        color: #ffffff !important;
+        text-decoration: none;
+        border-radius: var(--border-radius-base);
+        font-weight: 500;
+        transition: all var(--animation-speed-normal);
+      }
+      
+      .nav-button:hover {
+        background: var(--color-primary-light);
+        color: #ffffff !important;
+        text-decoration: none;
+      }
+      
+      /* Footer */
+      .doc-footer {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--color-border);
+        text-align: center;
+        color: var(--color-text-offset);
+        font-size: var(--text-small);
+      }
+    </style>
+  </head>
+  
+  <body>
+    <!-- Navigation Header -->
+    <nav class="docs-nav">
+      <div class="markdown-container">
+        <h1>📚 NY English Teacher Documentation</h1>
+        <p style="margin: 0.5rem 0 0 0; opacity: 0.8; font-size: var(--text-small);">Development Preview</p>
+      </div>
+    </nav>
+    
+    <div class="markdown-container">
+      <!-- Development Warning -->
+      <div class="dev-warning">
+        <div style="display: flex; align-items: center;">
+          <span style="font-size: 1.5rem; margin-right: 1rem;">⚠️</span>
+          <div>
+            <p style="font-weight: 600; color: #92400e; margin: 0;">Development Mode Only</p>
+            <p style="color: #a16207; font-size: var(--text-small); margin: 0.25rem 0 0 0;">This documentation preview is only available during development and will not be included in production builds.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Document Header -->
+      <header class="doc-header">
+        <h1 class="doc-title">
+          <span style="font-size: 2.5rem;">{icon}</span>
+          {title}
+        </h1>
+        <div class="doc-meta">
+          <span class="doc-badge category-badge">{category}</span>
+          <span class="doc-badge dev-badge">🛠️ Development Only</span>
+        </div>
+      </header>
+      
+      <!-- Markdown Content -->
+      <main class="markdown-content">
+        <slot />
+        
+        <!-- Navigation -->
+        <div class="nav-buttons">
+          <a href="/dev/docs/" class="nav-button">
+            <span style="margin-right: 0.5rem;">📚</span>
+            Back to Documentation Index
+          </a>
+        </div>
+      </main>
+      
+      <!-- Footer -->
+      <footer class="doc-footer">
+        <p>NY English Teacher Documentation • Last updated: {new Date().toLocaleDateString()}</p>
+      </footer>
+    </div>
+  </body>
+</html>

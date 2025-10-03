@@ -1,6 +1,6 @@
 ---
 // Import components
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
@@ -60,18 +60,12 @@ const ctaContent = {
 const translationSlug = "ingles-para-fundadores-de-startups";
 ---
 
-<Layout 
+<Base
   title="English Coaching for Startup Founders | Scale Your Communication | NY English"
-  description="Master confident English communication for startup success. From investor pitches to team leadership, communicate your vision with clarity and authority that drives growth."
+  description="English coaching for startup founders. Perfect your investor pitch, lead your team effectively, and communicate your vision with confidence and clarity."
   lang="en"
-  translationSlugEs={`/es/servicios/${translationSlug}`}
-  image={serviceData?.backgroundImage || "/images/logos/new-york-english-og-wide.jpg"}
-  footerCta={{
-  title: "",
-  description: "",
-  button: { text: "", link: "#" },
-  hideCta: true
-}}
+  tkey="services/startup-founders"
+  ogImage={{ src: typeof serviceData?.backgroundImage === 'string' ? serviceData.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />
@@ -89,4 +83,4 @@ const translationSlug = "ingles-para-fundadores-de-startups";
   
   <!-- CTA Section -->
   <CtaSection content={ctaContent} />
-</Layout>
+</Base>

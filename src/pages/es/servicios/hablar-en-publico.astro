@@ -1,5 +1,5 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
@@ -50,7 +50,7 @@ const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonia
 
 // SEO metadata
 const title = "Coaching para Hablar en Público | Presenta con Confianza | NY English";
-const seoDescription = "Domina el arte de hablar en público en inglés. Desde reuniones de equipo hasta conferencias internacionales, aprende a cautivar a cualquier audiencia con confianza y claridad.";
+const seoDescription = "Domina el arte de hablar en público en inglés. Supera la ansiedad, cautiva a tu audiencia y proyecta autoridad en presentaciones y reuniones internacionales.";
 
 // Hero content
 const heroContent = {
@@ -91,13 +91,17 @@ const ctaContent = {
 const translationSlug = "public-speaking-english";
 ---
 
-<Layout
+<Base
   title={title}
   description={seoDescription}
   lang="es"
-  translationSlugEn={`/en/services/${translationSlug}`}
-  image={publicSpeakingService?.backgroundImage || "/images/logos/new-york-english-og-wide.jpg"}
-  hideCta={true}
+  tkey="services/public-speaking-english"
+  ogImage={{
+    src: publicSpeakingService?.backgroundImage?.src || "/images/logos/new-york-english-og.jpg",
+    alt: `${title} - Featured Image`,
+    width: publicSpeakingService?.backgroundImage?.width,
+    height: publicSpeakingService?.backgroundImage?.height
+  }}
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />
@@ -115,4 +119,4 @@ const translationSlug = "public-speaking-english";
   
   <!-- Final CTA -->
   <CtaSection content={ctaContent} />
-</Layout>
+</Base>

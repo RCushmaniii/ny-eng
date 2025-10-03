@@ -1,42 +1,37 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import Base from '@layouts/Base.astro';
 import InnerHero from '@components/sections/InnerHero.astro';
-import { getLegalContent } from '@utils/legalContent.js';
+import { getCollection } from "astro:content";
 
-// Use the helper function to bypass TypeScript collection errors
-const legalData = await getLegalContent('terms-of-service', 'en');
-const { Content } = legalData;
-const entry = legalData;
+// Define language and tkey for i18n
+const lang = 'en';
+const tkey = 'legal/terms-of-service';
+
+// Get the legal content
+const legalData = await getCollection('legal');
+const entry = legalData.find(item => item.slug === 'en/terms-of-service');
+
+if (!entry) {
+  throw new Error('Terms of service content not found');
+}
+
+const { Content } = await entry.render();
 
 const heroContent = {
   title: entry.data.title,
   description: entry.data.seo?.description || "",
   overlayOpacity: 0.8
 } as const;
-
-const footerCta = {
-  eyebrow: "",
-  title: "Transform Your Professional English Today",
-  description: "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
-  hideCta: true, // Hide the CTA for legal pages
-  button: {
-    text: "Reserve My Free Consultation",
-    link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
-    target: "_blank"
-  }
-} as const;
 ---
 
-<Layout 
-  title={legalData.data.seo?.title || legalData.data.title}
-  description={legalData.data.seo?.description || ''}
+<Base 
   lang="en"
-  noIndex={false}
-  footerCta={footerCta}
-  translationSlugEs="/es/legal/terms-of-service"
+  tkey={tkey}
+  title={entry.data.seo?.title || entry.data.title}
+  description={entry.data.seo?.description || ''}
 >
   <InnerHero content={heroContent} />
-  <article class="site-container--small mx-auto px-8 prose pb-base">
+  <article class="site-container--small mx-auto px-8 prose pb-base pt-16">
     <Content />
   </article>
-</Layout>
+</Base>

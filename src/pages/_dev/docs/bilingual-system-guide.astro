@@ -1,0 +1,25 @@
+---
+/**
+ * Bilingual System Guide Documentation - Proper Astro page with markdown import
+ */
+import MarkdownLayout from '@layouts/MarkdownLayout.astro';
+import { marked } from 'marked';
+
+// Import the BILINGUAL-SYSTEM-GUIDE.md content
+const bilingualContent = await import('../../../../docs/BILINGUAL-SYSTEM-GUIDE.md?raw');
+const markdownText = bilingualContent.default;
+
+// Convert markdown to HTML
+const htmlContent = marked(markdownText);
+
+const frontmatter = {
+  title: 'Bilingual System Guide',
+  description: 'Comprehensive guide for implementing and maintaining the bilingual system',
+  category: 'Development',
+  icon: '🌐'
+};
+---
+
+<MarkdownLayout frontmatter={frontmatter}>
+  <Fragment set:html={htmlContent} />
+</MarkdownLayout>

@@ -43,7 +43,7 @@ const bgColor = getBackgroundColor(background);
 const textColor = getTextColor(background);
 const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
 
-const allPosts = await getCollection("blog", ({ data }) => {
+const allPosts = await getCollection("blog", ({ data }: { data: { publish?: boolean } }) => {
     return import.meta.env.DEV || data.publish !== false;
 });
 
@@ -51,14 +51,14 @@ const allPosts = await getCollection("blog", ({ data }) => {
 const isSpanish = Astro.url.pathname.startsWith('/es');
 const lang = isSpanish ? 'es' : 'en';
 const filteredPosts = allPosts
-    .filter((post) => {
+    .filter((post: { id: string; data: { categories?: string[]; publishDate: Date | string } }) => {
         // Filter by directory: show only posts in 'es/' for Spanish, 'en/' for English
         const isEs = post.id.startsWith('es/');
         const isEn = post.id.startsWith('en/');
         return isSpanish ? isEs : isEn;
     })
-    .filter((post) => !category || post.data.categories?.includes(category))
-    .sort((a, b) => {
+    .filter((post: { data: { categories?: string[] } }) => !category || post.data.categories?.includes(category))
+    .sort((a: { data: { publishDate: Date | string } }, b: { data: { publishDate: Date | string } }) => {
         // Handle publishDate as either Date object or string
         const dateA = a.data.publishDate instanceof Date ? 
             a.data.publishDate : new Date(a.data.publishDate);
@@ -115,16 +115,16 @@ const filteredPosts = allPosts
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {
-                filteredPosts.map((post, index) => (
+                filteredPosts.map((post: { data: { title: string; excerpt?: string; featuredImage?: string; imageAlt?: string; publishDate: Date | string; categories?: string[] }; body: string; slug: string }, index: number) => (
                     <BlogPost
                         title={post.data.title}
-                        excerpt={post.data.excerpt}
+                        excerpt={post.data.excerpt ?? undefined}
                         featuredImage={post.data.featuredImage}
                         imageAlt={post.data.imageAlt || post.data.title}
-                        publishDate={post.data.publishDate}
+                        publishDate={post.data.publishDate instanceof Date ? post.data.publishDate : new Date(post.data.publishDate)}
                         categories={post.data.categories || []}
                         content={post.body}
-                        slug={post.slug}
+                        slug={post.slug.replace(/^(en|es)\//, '')}
                         index={index}
                         lang={lang}
                     />

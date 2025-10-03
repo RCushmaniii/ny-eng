@@ -1,0 +1,52 @@
+---
+import type { Item } from '~/types';
+import WidgetWrapper from './WidgetWrapper.astro';
+import Headline from './Headline.astro';
+
+export interface Props {
+  id?: string;
+  isDark?: boolean;
+  classes?: Record<string, string>;
+  bg?: string;
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  items?: Item[];
+}
+
+const {
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  items = [],
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline} />
+  
+  <div class="relative">
+    <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+    
+    {items.map((item, index) => (
+      <div class="relative flex items-start mb-8 last:mb-0">
+        <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center z-10">
+          <span class="text-white text-sm font-bold">{index + 1}</span>
+        </div>
+        
+        <div class="ml-6 flex-1">
+          {item.title && (
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
+          )}
+          {item.description && (
+            <p class="text-gray-600">{item.description}</p>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</WidgetWrapper>

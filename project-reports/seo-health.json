@@ -1,0 +1,37 @@
+{
+  "script": "seo-health",
+  "runAt": "2025-09-08T19:22:41-06:00",
+  "status": "red",
+  "issues": [
+    {
+      "priority": "High",
+      "impact": "SEO Score",
+      "message": "52 new 404 errors detected in latest crawl",
+      "action": "Implement redirects for unprefixed URLs to /en/ or /es/ versions"
+    },
+    {
+      "priority": "High",
+      "impact": "International SEO",
+      "message": "16 hreflang links pointing to redirects or broken pages",
+      "action": "Update Base layout hreflang generation to use correct URLs"
+    },
+    {
+      "priority": "High",
+      "impact": "Core Web Vitals",
+      "message": "Spanish category pages showing 2.6-4.6s TTFB",
+      "action": "Optimize server-side rendering and database queries"
+    },
+    {
+      "priority": "Medium",
+      "impact": "Crawl Efficiency",
+      "message": "97 redirect chains found across site",
+      "action": "Normalize URL structure with consistent trailing slashes"
+    },
+    {
+      "priority": "Medium",
+      "impact": "Content Quality",
+      "message": "Multiple H1 tags on legal pages",
+      "action": "Update markdown headings from H1 to H2 in content"
+    }
+  ]
+}

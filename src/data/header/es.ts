@@ -1,10 +1,12 @@
+import { routes } from '../../utils/paths.ts';
+
 export const headerContent = {
   menu: [
-    { name: "Sobre mí", link: "/es/about" }, // Or /es/sobre-mi if slug changes
-    { name: "Servicios", link: "/es/servicios" },
-    { name: "Casos de Éxito", link: "/es/testimonios" },
-    { name: "Blog", link: "/es/blog" },
+    { name: "Servicios", link: routes.es.servicios },
+    { name: "Sobre mí", link: routes.es.about },
+    { name: "Blog", link: routes.es.blog },
+    { name: "Casos de Éxito", link: routes.es.testimonios },
   ],
-  cta: { text: "Contacto", link: "/es/contact" }, // Or /es/contacto if slug changes
-  logoLink: '/es', // Link to the Spanish homepage
+  cta: { text: "Contacto", link: routes.es.contact },
+  logoLink: routes.es.home,
 } as const;

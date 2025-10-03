@@ -1,5 +1,5 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import { Image } from "astro:assets";
 import Button from "@components/ui/Button.astro"; // Adjusted path
 import meImage from "@assets/images/about/me-blue-shirt.jpg";
@@ -16,7 +16,7 @@ import { testimonials } from "@data/testimonials-about";
 import { SEO } from "@data/config";
 
 const metadata = {
-    title: "About Me | Business English Communication Coach",
+    title: "About Robert | New York English Teacher",
     description:
         "With 20+ years of corporate leadership and 7 years coaching, I help professionals and executives communicate with clarity and confidence.",
 };
@@ -36,14 +36,16 @@ const FooterCta = {
 };
 ---
 
-<Layout
+<Base
     {...metadata}
-    footerCta={FooterCta}
     lang="en"
-    translationSlugEs="/es/about"
-    image="/images/logos/new-york-english-og-wide.jpg"
-    whatsappImage="/images/logos/new-york-english-og.jpg"
-    linkedinImage="/images/logos/new-york-english-og-wide.jpg"
+    tkey="about"
+    ogImage={{
+        src: "/images/logos/new-york-english-og.jpg",
+        alt: "New York English Teacher - Professional English Communication Coach",
+        width: 1200,
+        height: 630
+    }}
 >
     <section
         id="about-me"
@@ -144,9 +146,8 @@ const FooterCta = {
                                     target="_blank"
                                     variant="primary"
                                     size="lg"
-                                    class="inline-block"
                                 >
-                                    Book Your Free English Coaching Session
+                                    Book Your Free Session
                                 </Button>
                             </div>
                         </div>
@@ -361,10 +362,9 @@ const FooterCta = {
                 <Button
                     href="https://ny-english-teacher.odoo.com/book/7ceefa20"
                     target="_blank"
-                    variant="primary"
+                    variant="ghostLight"
                     size="lg"
                     rel="noopener noreferrer"
-                    class="text-white ring-2 ring-white focus-visible:ring-white hover:ring-2 hover:ring-black hover:ring-offset-2"
                 >
                     Book Your Free Session
                 </Button>
@@ -653,9 +653,10 @@ const FooterCta = {
             </div>
         </div>
     </section>
-</Layout>
+</Base>
 
 <style>
+    /* Component-scoped styles */
     .leading-relaxed {
         line-height: 1.75;
     }

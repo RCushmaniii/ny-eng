@@ -1,5 +1,5 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import ContactInfo from "@components/sections/ContactInfo.astro";
 import nycStatueOfLiberty from "@assets/images/contact/nyc-statue-of-liberty.jpg";
@@ -24,20 +24,22 @@ const footerCta = {
 
 // Page-specific metadata
 const metadata = {
-    title: "Contáctame",
+    title: "Contacto | New York English Teacher",
     description: "Contáctame mediante este formulario o por WhatsApp para consultas, asesoría o información sobre clases de inglés profesional y empresarial."
 };
 ---
 
-<Layout 
+<Base 
     lang="es" 
-    translationSlugEn="/en/contact" 
+    tkey="contact"
     title={metadata.title} 
     description={metadata.description} 
-    footerCta={footerCta}
-    image="/images/logos/new-york-english-og-wide.jpg"
-    whatsappImage="/images/logos/new-york-english-og.jpg"
-    linkedinImage="/images/logos/new-york-english-og-wide.jpg"
+    ogImage={{
+        src: "/images/logos/new-york-english-og.jpg",
+        alt: "Contacto New York English Teacher - Coach de Comunicación en Inglés de Negocios",
+        width: 1200,
+        height: 630
+    }}
 >
     <InnerHero 
         content={{
@@ -47,4 +49,4 @@ const metadata = {
         }} 
     />
     <ContactInfo background="base" padding="base" lang="es" />
-</Layout>
+</Base>

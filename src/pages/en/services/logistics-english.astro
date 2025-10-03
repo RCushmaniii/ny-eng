@@ -1,10 +1,18 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
 import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
 import CtaSection from "@components/sections/CtaSection.astro";
+
+// prevent autosave tools from removing imports (used in template)
+void Base;
+void InnerHero;
+void Challenge;
+void MethodologySection;
+void FeaturedTestimonial;
+void CtaSection;
 
 // Import services data
 import { services } from "@data/services";
@@ -63,13 +71,12 @@ const ctaContent = {
 const translationSlug = "ingles-para-logistica";
 ---
 
-<Layout
+<Base
   title={title}
   description={seoDescription}
   lang="en"
-  translationSlugEs={`/es/servicios/${translationSlug}`}
-  image={logisticsService?.backgroundImage || "/images/logos/new-york-english-og-wide.jpg"}
-  hideCta={true}
+  tkey="services/logistics-english"
+  ogImage={{ src: typeof logisticsService?.backgroundImage === 'string' ? logisticsService.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />
@@ -87,4 +94,4 @@ const translationSlug = "ingles-para-logistica";
   
   <!-- Final CTA -->
   <CtaSection content={ctaContent} />
-</Layout>
+</Base>

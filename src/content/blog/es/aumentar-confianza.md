@@ -53,7 +53,7 @@ Es un mito pensar que usar vocabulario complejo o "impresionante" demuestra inte
 *   En vez de "ameliorate", prueba **"mejorar"** o **"hacer mejor"**.
 *   Elige "ayudar" en vez de "facilitar".
 
-Comunicar tus ideas de forma clara y concisa demuestra confianza y asegura que tu mensaje se entienda correctamente a la primera.
+Comunicar tus ideas de forma clara y concisa demuestra confianza y asegura que tu mensaje se entienda correctamente a la primera. Para técnicas avanzadas de comunicación ejecutiva, ve [Presencia ejecutiva en videollamadas: 7 hábitos que generan confianza en inglés](/es/blog/presencia-ejecutiva-en-videollamadas/).
 
 > **Caso real:** Andrés Guzmán, COO de Driscoll’s México, vio un gran aumento en la eficiencia operativa de su equipo de logística y menos errores después de enfocarse en una comunicación en inglés más simple y directa durante el coaching.
 

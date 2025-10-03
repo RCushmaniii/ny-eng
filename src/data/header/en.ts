@@ -1,10 +1,12 @@
+import { routes } from '@utils/paths';
+
 export const headerContent = {
   menu: [
-    { name: "About", link: "/en/about" }, // Ensure '/en/' prefix
-    { name: "Services", link: "/en/services" },
-    { name: "Testimonials", link: "/en/testimonials" },
-    { name: "Blog", link: "/en/blog" },
+    { name: "Services", link: routes.en.services },
+    { name: "About", link: routes.en.about },
+    { name: "Blog", link: routes.en.blog },
+    { name: "Testimonials", link: routes.en.testimonials },
   ],
-  cta: { text: "Contact", link: "/en/contact" }, // Ensure '/en/' prefix
-  logoLink: '/en', // Link to the English homepage
+  cta: { text: "Contact", link: routes.en.contact },
+  logoLink: routes.en.home,
 } as const;

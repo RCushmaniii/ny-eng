@@ -1,6 +1,13 @@
 import { isUnpicCompatible, unpicOptimizer, astroAssetsOptimizer } from './images-optimization.js';
 import type { ImageMetadata } from 'astro';
-import type { OpenGraph } from '@astrolib/seo';
+
+interface OpenGraph {
+  url?: string;
+  type?: string;
+  title?: string;
+  description?: string;
+  images?: OGImage[];
+}
 
 interface OGImage {
   url: string;

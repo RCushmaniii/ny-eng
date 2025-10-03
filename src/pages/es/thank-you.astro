@@ -1,5 +1,5 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import Button from "@components/ui/Button.astro";
 import nycImage from "@assets/images/nyc-thank-you.jpg";
@@ -17,31 +17,15 @@ const heroContent = {
   overlayOpacity: 0.4,
 };
 
-const footerCta = {
-  eyebrow: "",
-  title: "Transforma Tu Inglés Profesional Hoy Mismo",
-  description:
-    "Reserva tu consulta gratuita para obtener la claridad, confianza e impacto que tu rol exige.",
-  hideCta: false,
-  button: {
-    text: "Reservar Mi Consulta Gratuita",
-    link: "https://ny-english-teacher.odoo.com/book/7ceefa20", // External link, remains the same
-    target: "_blank",
-    variant: "primary" as const,
-  },
-};
 ---
 
-<Layout 
-  title={metadata.title} 
-  description={metadata.description} 
-  footerCta={footerCta} 
-  lang="es" 
-  noIndex={true}
-  translationSlugEn="/en/thank-you"
-  image="/images/logos/new-york-english-og-wide.jpg"
-  whatsappImage="/images/logos/new-york-english-og.jpg"
-  linkedinImage="/images/logos/new-york-english-og-wide.jpg"
+<Base
+  title={metadata.title}
+  description={metadata.description}
+  lang="es"
+  tkey="thank-you"
+  ogImage={{ src: "/images/logos/new-york-english-og.jpg" }}
+  hideCta={false}
 >
   <InnerHero content={heroContent} />
 
@@ -62,4 +46,4 @@ const footerCta = {
       <Button href="/es/">Volver a la Página Principal</Button>
     </div>
   </section>
-</Layout>
+</Base>

@@ -1,10 +1,45 @@
 ---
-import type { ItemGrid as Props } from '~/types';
 import { twMerge } from 'tailwind-merge';
 import Button from './Button.astro';
 import { Icon } from 'astro-icon/components';
 
-const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props;
+type CTA = {
+  label: string;
+  href: string;
+  external?: boolean;
+} | null;
+
+interface ItemClasses {
+  panel?: string;
+  icon?: string;
+  title?: string;
+  description?: string;
+  actionClass?: string;
+}
+
+type LocalItem = {
+  title?: string;
+  description?: string;
+  icon?: any;
+  callToAction?: CTA;
+  classes?: ItemClasses;
+};
+
+interface Props {
+  items: unknown[];
+  columns?: number;
+  defaultIcon?: string;
+  classes?: {
+    container?: string;
+    panel?: string;
+    title?: string;
+    description?: string;
+    icon?: string;
+    action?: string;
+  };
+}
+
+const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props as Props;
 
 const {
   container: containerClass = '',
@@ -32,7 +67,9 @@ const {
         containerClass
       )}
     >
-      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
+            {items.map((item) => {
+        const { title, description, icon, callToAction, classes: itemClasses = {} } = item as LocalItem;
+        return (
         <div class="intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
           <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
             <div class="flex justify-center">
@@ -53,13 +90,14 @@ const {
               )}
               {callToAction && (
                 <div class={twMerge(`${title || description ? 'mt-3' : ''}`, actionClass, itemClasses?.actionClass)}>
-                  <Button variant="link" {...callToAction} />
+                  <Button variant="ghostDark" {...callToAction} />
                 </div>
               )}
             </div>
           </div>
         </div>
-      ))}
+      );
+    })}
     </div>
   )
 }

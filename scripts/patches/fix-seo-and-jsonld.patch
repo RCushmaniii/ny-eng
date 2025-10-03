@@ -1,0 +1,108 @@
+diff --git a/src/components/SEO.astro b/src/components/SEO.astro
+index 2b2c1a1..a7a4e7f 100644
+--- a/src/components/SEO.astro
++++ b/src/components/SEO.astro
+@@ -1,32 +1,39 @@
+ ---
+-// Props (typical shape in your repo)
+-const {
+-  pageTitle,
+-  description,
+-  image,
+-  ogType = 'website',
+-  canonicalUrl,
+-  languageAlternates = []
+-} = Astro.props;
+-
+-import { siteConfig } from '@data/config';
+-import { ensureAbsoluteUrl } from '@utils/url';
+-
+-// Old: truncated titles (added ellipsis elsewhere)
+-const defaultTitle = siteConfig.companyName;
+-const title = truncate(pageTitle ?? defaultTitle, 70, { omission: '' });
+-const fullImage = ensureAbsoluteUrl(image);
++// Props (typical shape in your repo)
++const {
++  pageTitle,
++  description,
++  image,
++  ogType = 'website',
++  canonicalUrl,
++  languageAlternates = []
++} = Astro.props;
++
++import { siteConfig } from '@data/config';
++import { ensureAbsoluteUrl } from '@utils/url';
++
++// New: never truncate titles (use full brand string everywhere)
++const defaultTitle = siteConfig.companyName;
++const title = pageTitle ?? defaultTitle;
++const fullImage = image ? ensureAbsoluteUrl(image) : ensureAbsoluteUrl(siteConfig.defaultOgImage);
+ ---
+-<head>
+-  <title>{title}</title>
+-  <meta name="description" content={description} />
+-  <meta property="og:type" content={ogType} />
+-  <meta property="og:url" content={canonicalUrl} />
+-  <meta property="og:title" content={title} />
+-  <meta property="og:description" content={description} />
+-  <meta property="og:image" content={image} />
+-  <meta name="twitter:card" content="summary_large_image" />
+-  <meta name="twitter:title" content={title} />
+-  <meta name="twitter:description" content={description} />
+-  <meta name="twitter:image" content={image} />
+-  {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+-  {languageAlternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
+-</head>
++<head>
++  <title>{title}</title>
++  <meta name="description" content={description} />
++
++  <!-- Open Graph -->
++  <meta property="og:type" content={ogType} />
++  <meta property="og:url" content={canonicalUrl} />
++  <meta property="og:title" content={title} />
++  <meta property="og:description" content={description} />
++  <meta property="og:image" content={fullImage} />
++  <meta property="og:site_name" content="New York English Teacher" />
++
++  <!-- Twitter -->
++  <meta name="twitter:card" content="summary_large_image" />
++  <meta name="twitter:title" content={title} />
++  <meta name="twitter:description" content={description} />
++  <meta name="twitter:image" content={fullImage} />
++
++  {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
++  {languageAlternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
++</head>
+diff --git a/src/data/json-ld.ts b/src/data/json-ld.ts
+index 6db1e90..0f4f9a2 100644
+--- a/src/data/json-ld.ts
++++ b/src/data/json-ld.ts
+@@ -1,8 +1,8 @@
+-// ESM in node16/nodenext requires explicit extension
+-import { siteConfig } from './config';
++// ESM in node16/nodenext requires explicit extension
++import { siteConfig } from './config.js';
+ 
+ export function organizationJsonLd(lang: 'en' | 'es' = 'en') {
+   const baseUrl = siteConfig.siteUrl.replace(/\/$/, '');
+-  const sameAs = [
+-    siteConfig.Socials.linkedinSocial,
+-    siteConfig.Socials.instagramSocial
+-  ].filter(Boolean);
++  const sameAs = [
++    siteConfig.Socials.LinkedIn,
++    siteConfig.Socials.Instagram
++  ].filter(Boolean);
+ 
+   return {
+     '@context': 'https://schema.org',
+@@ -12,7 +12,7 @@ export function organizationJsonLd(lang: 'en' | 'es' = 'en') {
+     'url': baseUrl,
+     'logo': `${baseUrl}/images/logos/new-york-english-og.jpg`,
+     ...(sameAs.length ? { sameAs } : {}),
+-    'areaServed': ['MX', 'US', 'CA']
++    'areaServed': ['MX', 'US', 'CA']
+   };
+ }

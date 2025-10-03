@@ -1,12 +1,21 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import Base from "@layouts/Base.astro";
 import InnerHero from '@components/sections/InnerHero.astro';
-import { getLegalContent } from '@utils/legalContent.js';
+import { getCollection } from "astro:content";
 
-// Use the helper function to bypass TypeScript collection errors
-const legalData = await getLegalContent('terms-of-service', 'es');
-const { Content } = legalData;
-const entry = legalData;
+// Define language and tkey for i18n
+const lang = 'es';
+const tkey = 'legal/terms-of-service';
+
+// Get the legal content
+const legalData = await getCollection('legal');
+const entry = legalData.find(item => item.slug === 'es/terms-of-service');
+
+if (!entry) {
+  throw new Error('Terms of service content not found');
+}
+
+const { Content } = await entry.render();
 
 const heroContent = {
   title: entry.data.title,
@@ -27,16 +36,14 @@ const footerCta = {
 } as const;
 ---
 
-<Layout 
-  title={legalData.data.seo?.title || legalData.data.title}
-  description={legalData.data.seo?.description || ''}
+<Base 
   lang="es"
-  noIndex={false}
-  footerCta={footerCta}
-  translationSlugEn="/en/legal/terms-of-service"
+  tkey={tkey}
+  title={entry.data.seo?.title || entry.data.title}
+  description={entry.data.seo?.description || ''}
 >
   <InnerHero content={heroContent} />
-  <article class="site-container--small mx-auto px-8 prose pb-base">
+  <article class="site-container--small mx-auto px-8 prose pb-base pt-16">
     <Content />
   </article>
-</Layout>
+</Base>

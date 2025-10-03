@@ -54,9 +54,9 @@ It’s a common misconception that using complex, "impressive" vocabulary signal
 *   Replace “utilize” with **“use.”**
 *   Swap “commence” with **“start”** or **“begin.”**
 *   Instead of “ameliorate,” try **“improve”** or **“make better.”**
-*   Choose “help” over “facilitate.”
+*   Choose "help" over "facilitate."
 
-Communicating your ideas clearly and concisely demonstrates confidence and ensures your message is understood accurately the first time.
+Communicating your ideas clearly and concisely demonstrates confidence and ensures your message is understood accurately the first time. For advanced techniques on executive-level communication, see [Executive Presence on Video Calls: 7 Habits that Build Trust in English](/en/blog/executive-video-call/).
 
 > **Client Spotlight:** Andres Guzman, COO of Driscoll’s Mexico, observed a significant boost in his logistics team's operational efficiency and reduced errors after coaching focused on adopting simpler, more direct English communication protocols.
 

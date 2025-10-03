@@ -1,25 +1,25 @@
-import type { SiteConfig } from '@data/config';
-import type { ConnectItem } from '../../components/Footer.astro';
+import type { ConnectItem } from '@components/Footer.astro';
+import { routes } from '@utils/paths';
 
-export const footerContentEs = (siteConfig: Pick<SiteConfig, 'companyName'>) => {
+export const footerContentEs = (siteConfig: { companyName: string }) => {
   const currentYear = new Date().getFullYear();
   return {
-    logoLink: "/es/",
+    logoLink: routes.es.home,
     tagline: "Ayudando a profesionales a hablar inglés con confianza y fluidez.",
     sections: {
       about: {
         title: "Sobre Mí",
         links: [
-          { name: "Quién Soy", href: "/es/about#about-me" }, // Adjust link if slug is /es/sobre-mi
-          { name: "Mis Valores", href: "/es/about#about-values" },
-          { name: "Por Qué Trabajar Conmigo", href: "/es/about#about-why" },
+          { name: "Quién Soy", href: `${routes.es.about}#about-me` },
+          { name: "Mis Valores", href: `${routes.es.about}#about-values` },
+          { name: "Por Qué Trabajar Conmigo", href: `${routes.es.about}#about-why` },
         ],
       },
       resources: {
         title: "Recursos",
         links: [
-          { name: "Preguntas Frecuentes", href: "/es/#faqs" },
-          { name: "Blog", href: "/es/blog" },
+          { name: "Preguntas Frecuentes", href: `${routes.es.home}#faqs` },
+          { name: "Blog", href: routes.es.blog },
           { name: "Consulta Gratuita", href: "https://ny-english-teacher.odoo.com/book/7ceefa20", target: "_blank", rel: "noopener noreferrer" },
         ],
       },
@@ -28,13 +28,13 @@ export const footerContentEs = (siteConfig: Pick<SiteConfig, 'companyName'>) => 
         items: [
           { type: "link", name: "Contáctame por WhatsApp", href: "https://wa.link/pk4f97", target: "_blank", rel: "noopener noreferrer" },
           { type: "link", name: "Agendar una Consulta", href: "https://ny-english-teacher.odoo.com/book/7ceefa20", target: "_blank", rel: "noopener noreferrer" },
-          { type: "link", name: "Contáctame", href: "/es/contact" },
+          { type: "link", name: "Contáctame", href: routes.es.contact },
         ] as ConnectItem[],
       },
     },
     legalMenu: [
-      { name: "Política de Privacidad", href: "/es/legal/privacy-policy" }, // Adjust link, e.g., /es/politica-privacidad
-      { name: "Términos de Servicio", href: "/es/legal/terms-of-service" }, // Adjust link, e.g., /es/terminos-servicio
+      { name: "Política de Privacidad", href: routes.es.legal.privacy },
+      { name: "Términos de Servicio", href: routes.es.legal.terms },
     ],
     copyrightText: `© ${currentYear} ${siteConfig.companyName}. Todos los derechos reservados.`,
     defaultFooterCta: {

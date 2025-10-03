@@ -1,5 +1,6 @@
 ---
 import { normalizePath } from "@utils/url";
+import { cleanDoubleLanguagePrefixes, removeLanguagePrefix, addLanguagePrefix, cleanBlogUrl } from "@utils/url-cleaner";
 import Logo from "@components/Logo.astro";
 import { Menu, X } from "lucide-astro";
 import Button from "@components/ui/Button.astro";
@@ -7,10 +8,15 @@ import { Image } from 'astro:assets';
 import mexFlag from '@assets/images/mex-flag.svg';
 import usaFlag from '@assets/images/usa-flag.svg';
 
+interface MenuItem {
+  readonly name: string;
+  readonly link: string | undefined;
+}
+
 interface Props {
   content: {
     readonly logoLink: string;
-    readonly menu: ReadonlyArray<{ readonly name: string; readonly link: string }>;
+    readonly menu: ReadonlyArray<MenuItem>;
     readonly cta: { readonly text: string; readonly link: string };
   };
   translationSlugEs?: string;
@@ -19,10 +25,106 @@ interface Props {
 
 const { content, translationSlugEs, translationSlugEn } = Astro.props;
 
+// Import i18n helpers
+import { routeFor, type TKey } from '../lib/i18n';
+import { categories } from '@data/categories';
+
+// Helpers to map section slugs between locales
+function mapToEs(path: string | undefined): string {
+  if (!path) return '/es/';
+  
+  // Static mapping for service pages
+  const servicePages: Record<string, string> = {
+    // English to Spanish
+    '/en/services/executive-english/': '/es/servicios/ingles-para-ejecutivos/',
+    '/en/services/high-stakes-english/': '/es/servicios/ingles-para-presentaciones/',
+    '/en/services/interview-prep/': '/es/servicios/preparacion-para-entrevistas/',
+    '/en/services/logistics-english/': '/es/servicios/ingles-para-logistica/',
+    '/en/services/medical-english/': '/es/servicios/ingles-para-medicos/',
+    '/en/services/professional-english/': '/es/servicios/ingles-para-profesionales/',
+    '/en/services/public-speaking-english/': '/es/servicios/hablar-en-publico/',
+    '/en/services/startup-founders/': '/es/servicios/ingles-para-fundadores-de-startups/',
+    '/en/services/tech-english/': '/es/servicios/ingles-para-tecnologia/',
+    '/en/services/technical-sales-english/': '/es/servicios/ingles-para-ventas-tecnicas/',
+  };
+
+  // Handle service pages with direct mapping
+  if (path.startsWith('/en/services/')) {
+    return servicePages[path] || path.replace('/en/services/', '/es/servicios/');
+  }
+
+  // Handle category pages using i18n mappings
+  if (path.startsWith('/en/category/')) {
+    const categoryPath = path.replace('/en/category/', '');
+    const tkey = `category/${categoryPath.replace('/', '')}` as TKey;
+    const esPath = routeFor.es[tkey];
+    if (esPath) {
+      return esPath;
+    }
+  }
+
+  // Handle other sections
+  return path
+    .replace('/services/', '/servicios/')
+    .replace('/testimonials/', '/testimonios/');
+}
+
+function mapToEn(path: string | undefined): string {
+  if (!path) return '/en/';
+
+  // Static mapping for service pages
+  const servicePages: Record<string, string> = {
+    // Spanish to English
+    '/es/servicios/ingles-para-ejecutivos/': '/en/services/executive-english/',
+    '/es/servicios/ingles-para-presentaciones/': '/en/services/high-stakes-english/',
+    '/es/servicios/preparacion-para-entrevistas/': '/en/services/interview-prep/',
+    '/es/servicios/ingles-para-logistica/': '/en/services/logistics-english/',
+    '/es/servicios/ingles-para-medicos/': '/en/services/medical-english/',
+    '/es/servicios/ingles-para-profesionales/': '/en/services/professional-english/',
+    '/es/servicios/hablar-en-publico/': '/en/services/public-speaking-english/',
+    '/es/servicios/ingles-para-fundadores-de-startups/': '/en/services/startup-founders/',
+    '/es/servicios/ingles-para-tecnologia/': '/en/services/tech-english/',
+    '/es/servicios/ingles-para-ventas-tecnicas/': '/en/services/technical-sales-english/',
+  };
+
+  // Handle service pages with direct mapping
+  if (path.startsWith('/es/servicios/')) {
+    return servicePages[path] || path.replace('/es/servicios/', '/en/services/');
+  }
+
+  // Handle category pages using i18n mappings
+  if (path.startsWith('/es/categoria/')) {
+    const categoryPath = path.replace('/es/categoria/', '');
+    // Find the English category slug that maps to this Spanish slug
+    const category = categories.find((c: { esSlug?: string; slug: string }) => 
+      c.esSlug === categoryPath || c.slug === categoryPath
+    );
+    if (category) {
+      const tkey = `category/${category.slug}` as TKey;
+      const enPath = routeFor.en[tkey];
+      if (enPath) {
+        return enPath;
+      }
+    }
+  }
+
+  // Handle other sections
+  return path
+    .replace('/servicios/', '/services/')
+    .replace('/testimonios/', '/testimonials/')
+    .replace('/en/services/ingles-', '/en/services/');
+}
+function withSlash(p: string): string {
+  if (!p) return p;
+  if (p.includes('.')) return p;
+  return p.endsWith('/') ? p : p + '/';
+}
+
 // Determine current page for navigation highlighting
 const currentPath = Astro.url.pathname;
 
-const isCurrentPage = (link: string) => {
+const isCurrentPage = (link: string | undefined) => {
+  if (!link) return false;
   if (link === content.logoLink && (currentPath === content.logoLink || currentPath === content.logoLink + '/')) {
     return true;
   }
@@ -36,7 +138,7 @@ const isCurrentPage = (link: string) => {
 <header id="site-header" class="fixed top-0 z-50 w-full left-0">
   <div class="site-container mx-auto px-4 mt-4">
     <div class="flex justify-between items-center bg-white py-4 rounded-lg px-4 shadow-md border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700">
-      <a href={normalizePath(content.logoLink)} aria-label="Homepage" class="flex items-center">
+      <a href={normalizePath(content.logoLink)} aria-label="New York English Teacher — Home" class="flex items-center">
         <Logo />
       </a>
       <div class="flex items-center gap-x-3 sm:gap-x-4 md:gap-x-6">
@@ -61,13 +163,17 @@ const isCurrentPage = (link: string) => {
           </ul>
         </nav>
         <div class="flex items-center" id="lang-switcher-container">
-          {translationSlugEs && typeof translationSlugEs === 'string' && !currentPath.startsWith('/es') && (
+          {!currentPath.startsWith('/es') && (
             <a
-              href={currentPath === '/en/blog' || currentPath === '/en/blog/' 
-                ? '/es/blog'
-                : currentPath.includes('/blog/') 
-                  ? `/es/blog/${translationSlugEs}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/es\/blog\/es\/blog\//, '/es/blog/') 
-                  : `/es/${translationSlugEs}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/es\/es\//, '/es/')}
+              href={
+                currentPath === '/en/blog' || currentPath === '/en/blog/'
+                  ? '/es/blog/'
+                  : currentPath.includes('/blog/') && translationSlugEs
+                    ? cleanBlogUrl(translationSlugEs)
+                    : currentPath.startsWith('/en/')
+                      ? withSlash(mapToEs(currentPath))
+                      : '/es/'
+              }
               class="lang-flag p-1 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white"
               aria-label="Cambiar a Español"
               data-lang="es"
@@ -76,13 +182,19 @@ const isCurrentPage = (link: string) => {
               <Image src={mexFlag} alt="Bandera de México" width={24} height={24} class="w-6 h-6" />
             </a>
           )}
-          {translationSlugEn && typeof translationSlugEn === 'string' && !currentPath.startsWith('/en') && (
+          {!currentPath.startsWith('/en') && (
             <a
-              href={currentPath === '/es/blog' || currentPath === '/es/blog/' 
-                ? '/en/blog'
-                : currentPath.includes('/blog/') 
-                  ? `/en/blog/${translationSlugEn}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/en\/blog\/en\/blog\//, '/en/blog/') 
-                  : `/en/${translationSlugEn}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/en\/en\//, '/en/')}
+              href={
+                currentPath === '/es/blog' || currentPath === '/es/blog/'
+                  ? '/en/blog/'
+                  : currentPath.includes('/blog/') && translationSlugEn
+                    ? cleanBlogUrl(translationSlugEn)
+                    : currentPath.startsWith('/es/servicios/')
+                      ? withSlash(mapToEn(currentPath))
+                      : currentPath.startsWith('/es/')
+                        ? withSlash(mapToEn(currentPath.replace('/es/', '/en/')))
+                        : '/en/'
+              }
               class="lang-flag p-1 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white"
               aria-label="Switch to English"
               data-lang="en"
@@ -151,11 +263,15 @@ const isCurrentPage = (link: string) => {
       <div class="mt-6 mb-4 flex justify-center gap-4">
         {translationSlugEs && typeof translationSlugEs === 'string' && !currentPath.startsWith('/es') && (
           <a
-            href={currentPath === '/en/blog' || currentPath === '/en/blog/' 
-              ? '/es/blog'
-              : currentPath.includes('/blog/') 
-                ? `/es/blog/${translationSlugEs}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/es\/blog\/es\/blog\//, '/es/blog/') 
-                : `/es/${translationSlugEs}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/es\/es\//, '/es/')}
+            href={
+              currentPath === '/en/blog' || currentPath === '/en/blog/'
+                ? '/es/blog/'
+                : currentPath.includes('/blog/') && translationSlugEs
+                  ? cleanBlogUrl(translationSlugEs)
+                  : currentPath.startsWith('/en/')
+                    ? withSlash(mapToEs(currentPath))
+                    : '/es/'
+            }
             class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
             aria-label="Cambiar a Español"
             data-lang="es"
@@ -167,11 +283,17 @@ const isCurrentPage = (link: string) => {
         )}
         {translationSlugEn && typeof translationSlugEn === 'string' && !currentPath.startsWith('/en') && (
           <a
-            href={currentPath === '/es/blog' || currentPath === '/es/blog/' 
-              ? '/en/blog'
-              : currentPath.includes('/blog/') 
-                ? `/en/blog/${translationSlugEn}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/en\/blog\/en\/blog\//, '/en/blog/') 
-                : `/en/${translationSlugEn}`.replace(/^\/+/, '/').replace(/\/\/+/g, '/').replace(/\/en\/en\//, '/en/')}
+            href={
+              currentPath === '/es/blog' || currentPath === '/es/blog/'
+                ? '/en/blog/'
+                : currentPath.includes('/blog/') && translationSlugEn
+                  ? cleanBlogUrl(translationSlugEn)
+                  : currentPath.startsWith('/es/servicios/')
+                    ? withSlash(mapToEn(currentPath))
+                    : currentPath.startsWith('/es/')
+                      ? withSlash(mapToEn(currentPath.replace('/es/', '/en/')))
+                      : '/en/'
+            }
             class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
             aria-label="Switch to English"
             data-lang="en"

@@ -58,6 +58,8 @@ Para líderes senior, el desarrollo del idioma es una herramienta para objetivos
 - **Desempeño de equipos:** Lidera, motiva y dirige equipos multilingües con claridad.  
 - **Inspira equipos y stakeholders globales:** Motiva y conecta con audiencias diversas con claridad e impacto.
 
+Para técnicas prácticas de construcción de confianza que puedes empezar a usar hoy, revisa [5 estrategias simples para ganar confianza](/es/blog/aumentar-confianza/).
+
 ## Eleva tu impacto como líder
 
 Invertir en coaching ejecutivo de inglés es invertir en tu influencia, crecimiento y éxito. Si quieres destacar en el escenario global, liderar con autoridad y comunicar tu visión con impacto, un coach nativo con enfoque empresarial es tu mejor aliado.

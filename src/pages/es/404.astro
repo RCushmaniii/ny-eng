@@ -1,33 +1,17 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import Base from '@layouts/Base.astro';
 import Button from '@components/ui/Button.astro';
 
 const seoTitle = "Página Desaparecida";
 const seoDescription = "Esta página se tomó un descanso para tomar café y nunca regresó.";
-const footerCta = {
-  eyebrow: "",
-  title: "Transforma Tu Inglés Profesional Hoy",
-  description: "Reserva tu consulta gratuita para obtener la claridad, confianza e impacto que tu rol exige.",
-  hideCta: false,
-  button: {
-    text: "Reservar Mi Consulta Gratuita",
-    link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
-    target: "_blank",
-    variant: "primary" as const
-  }
-};
 ---
 
-<Layout 
-  title={seoTitle} 
-  description={seoDescription} 
-  footerCta={footerCta}
+<Base
+  title={seoTitle}
+  description={seoDescription}
   lang="es"
-  noIndex={true}
-  translationSlugEn="/en/404"
-  image="/images/logos/new-york-english-og-wide.jpg"
-  whatsappImage="/images/logos/new-york-english-og.jpg"
-  linkedinImage="/images/logos/new-york-english-og-wide.jpg"
+  tkey="404"
+  ogImage={{ src: "/images/logos/new-york-english-og.jpg" }}
 >
     <div class="w-full min-h-[80vh] flex items-center">
         <div class="site-container mx-auto px-4 py-base text-center">

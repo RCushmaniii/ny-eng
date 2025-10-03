@@ -1,0 +1,25 @@
+{
+  "script": "project-structure",
+  "runAt": "2025-09-08T19:22:41-06:00",
+  "status": "orange",
+  "issues": [
+    {
+      "priority": "High",
+      "impact": "Build Stability",
+      "message": "Multiple Tailwind configs found (tailwind.config.mjs, tailwind.config.new.mjs.bak)",
+      "action": "Merge into a single tailwind.config.mjs"
+    },
+    {
+      "priority": "Medium",
+      "impact": "SEO",
+      "message": "Duplicate H1 tags detected in multiple pages",
+      "action": "Update markdown headings from H1 to H2 where appropriate"
+    },
+    {
+      "priority": "Low",
+      "impact": "Maintainability",
+      "message": "Backup/old files detected in root (.bak extensions)",
+      "action": "Move to /archive directory"
+    }
+  ]
+}

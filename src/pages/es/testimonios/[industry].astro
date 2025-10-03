@@ -1,15 +1,15 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import { testimonials, testimonialsByIndustry, industryLabels } from "@data/testimonials/es";
-import TestimonialCard from "@components/TestimonialCard.astro";
-import ExpandableTestimonialCard from "@components/ExpandableTestimonialCard.astro";
-import Eyebrow from "@components/ui/Eyebrow.astro";
-import Button from "@components/ui/Button.astro";
+import Base from "@layouts/Base.astro";
+import TestimonialsGrid from "@components/sections/TestimonialsGrid.astro";
+import { testimonialsByIndustry, industryLabels } from "@data/testimonials/es";
+import type { Testimonial } from "@data/testimonials/es";
+
+type ValidIndustry = keyof typeof testimonialsByIndustry;
 
 export async function getStaticPaths() {
   // Get all valid industries that have testimonials
-  const validIndustries = Object.keys(industryLabels).filter(
-    (industry) => testimonialsByIndustry[industry as keyof typeof testimonialsByIndustry]?.length > 0
+  const validIndustries = Object.keys(testimonialsByIndustry).filter(
+    (industry) => testimonialsByIndustry[industry as ValidIndustry]?.length > 0
   );
 
   return validIndustries.map((industry) => ({
@@ -21,15 +21,15 @@ export async function getStaticPaths() {
 const { industry } = Astro.params;
 
 // Validate industry parameter
-const validIndustries = Object.keys(industryLabels).filter(
-  (ind) => testimonialsByIndustry[ind as keyof typeof testimonialsByIndustry]?.length > 0
+const validIndustries = Object.keys(testimonialsByIndustry).filter(
+  (ind) => testimonialsByIndustry[ind as ValidIndustry]?.length > 0
 );
 
 // Default to "all" if industry is invalid
 const currentIndustry = industry && validIndustries.includes(industry) ? industry : "all";
 
 // Filter testimonials based on selected industry
-const filteredTestimonials = testimonialsByIndustry[currentIndustry as keyof typeof testimonialsByIndustry] || [];
+const filteredTestimonials: Testimonial[] = testimonialsByIndustry[currentIndustry as ValidIndustry] || [];
 
 // SEO metadata
 const industryLabel = industryLabels[currentIndustry as keyof typeof industryLabels];
@@ -39,109 +39,23 @@ const title = currentIndustry === "all"
 const description = currentIndustry === "all"
   ? "Lee historias de éxito de ejecutivos, fundadores y profesionales que transformaron su comunicación en inglés con coaching personalizado."
   : `Lee historias de éxito de ${industryLabel.toLowerCase()} que transformaron su comunicación en inglés con coaching personalizado.`;
-
-// English counterpart for language switcher
-const translationSlugEn = currentIndustry === "all" 
-  ? "/en/testimonials" 
-  : `/en/testimonials/${currentIndustry}`;
 ---
 
-<Layout
+<Base
   title={title}
   description={description}
   lang="es"
-  translationSlugEn={translationSlugEn}
+  tkey="testimonials"
   hideCta={true}
 >
-  <section class="bg-light py-16 md:py-24">
-    <div class="site-container px-4 sm:px-6 md:px-8">
-      <div class="text-center mb-12 pt-8">
-        <Eyebrow text="Historias de Éxito" background="light" />
-        <h1 class="text-h1 text-[--color-headline] mb-4">
-          {currentIndustry === "all" ? "Testimonios de Clientes" : `Testimonios de ${industryLabel}`}
-        </h1>
-        <p class="text-lg text-[--color-body-base] max-w-2xl mx-auto">
-          {currentIndustry === "all" 
-            ? "Descubre cómo profesionales de diversas industrias han transformado sus habilidades de comunicación en inglés y alcanzado sus metas profesionales."
-            : `Descubre cómo ${industryLabel.toLowerCase()} han transformado sus habilidades de comunicación en inglés y alcanzado sus metas profesionales.`}
-        </p>
-      </div>
-
-      <!-- Industry Filter -->
-      <div class="mb-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-        <label for="industry-filter" class="font-medium text-[--color-headline]">Filtrar por industria:</label>
-        <div class="relative">
-          <select
-            id="industry-filter"
-            class="bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
-          >
-            {Object.entries(industryLabels)
-              .filter(([key]) => validIndustries.includes(key))
-              .map(([key, label]) => (
-                <option value={key} selected={currentIndustry === key}>{label}</option>
-              ))}
-          </select>
-          <script>
-            const industryFilter = document.getElementById('industry-filter');
-            if (industryFilter instanceof HTMLSelectElement) {
-              industryFilter.addEventListener('change', function() {
-                const selectedIndustry = this.value;
-                if (selectedIndustry === 'all') {
-                  window.location.href = '/es/testimonios';
-                } else {
-                  window.location.href = `/es/testimonios/${selectedIndustry}`;
-                }
-              });
-            }
-          </script>
-        </div>
-      </div>
-
-      <!-- Testimonials Grid -->
-      <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {filteredTestimonials.map((testimonial) => (
-          testimonial.shortContent ? (
-            <ExpandableTestimonialCard
-              testimonial={testimonial}
-              showHeadline={true}
-            />
-          ) : (
-            <TestimonialCard
-              testimonial={testimonial}
-              showHeadline={true}
-            />
-          )
-        ))}
-      </div>
-
-      {filteredTestimonials.length === 0 && (
-        <div class="text-center py-16">
-          <p class="text-lg text-[--color-body-base] mb-4">No se encontraron testimonios para esta industria.</p>
-          <Button href="/es/testimonios" variant="primary">Ver Todos los Testimonios</Button>
-        </div>
-      )}
-
-       <div class="mt-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 md:p-12 relative overflow-hidden">
-         <div class="absolute inset-0 bg-gradient-to-r from-primary-600/30 to-secondary-600/30 backdrop-blur-sm"></div>
-         <div class="relative z-10 text-center md:text-left md:flex items-center justify-between">
-           <div class="mb-6 md:mb-0 md:mr-8">
-             <h3 class="text-2xl md:text-3xl font-bold text-[--color-headline-dark] mb-4">
-               ¿Listo para transformar tu inglés profesional?
-             </h3>
-             <p class="text-[--color-body-dark] max-w-2xl">
-               Reserva tu consulta gratuita para obtener la claridad, confianza e impacto que tu rol exige.
-             </p>
-           </div>
-           <Button
-             href="https://ny-english-teacher.odoo.com/book/7ceefa20"
-             variant="primary"
-             target="_blank"
-             rel="noopener noreferrer"
-           >
-             Reservar Mi Consulta Gratuita
-           </Button>
-         </div>
-       </div>
-    </div>
-  </section>
-</Layout>
+  <TestimonialsGrid
+    testimonials={filteredTestimonials}
+    title={currentIndustry === "all" ? "Testimonios de Clientes" : `Testimonios de ${industryLabel}`}
+    description={currentIndustry === "all" 
+      ? "Descubre cómo profesionales de diversas industrias han transformado sus habilidades de comunicación en inglés y alcanzado sus metas profesionales."
+      : `Descubre cómo ${industryLabel.toLowerCase()} han transformado sus habilidades de comunicación en inglés y alcanzado sus metas profesionales.`}
+    showFilters={true}
+    selectedIndustry={currentIndustry}
+    lang="es"
+  />
+</Base>

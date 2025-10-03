@@ -1,23 +1,22 @@
 ---
 import { defaultSEO } from "../data/seo";
 
+/** Props */
 interface Props {
-  title?: string;
+  title?: string;               // page-specific title, e.g. "About"
   description?: string;
+  canonicalUrl?: string;
   image?: string;
   imageAlt?: string;
   url?: string;
-  locale?: string;
+  locale?: string;              // e.g. "en_US" | "es_MX"
   alternateUrls?: {
     hreflang: string;
     href: string;
   }[];
 }
 
-// Helper functions for truncation and dev warnings
-const truncate = (str: string, max: number) =>
-  str && str.length > max ? str.slice(0, max - 1) + "…" : str;
-
+// Helper functions for dev warnings
 const warnIf = (condition: boolean, msg: string) => {
   if (import.meta.env.DEV && condition) console.warn(msg);
 };
@@ -28,14 +27,23 @@ const {
   image = defaultSEO.image,
   imageAlt = defaultSEO.imageAlt ?? title,
   url = defaultSEO.siteUrl,
-  locale = defaultSEO.locale,
+  canonicalUrl,
+  locale = defaultSEO.locale || 'en_US',
   alternateUrls = [],
 } = Astro.props;
 
-// Truncate and validate
-const safeTitle = truncate(title, 65);
-const safeDescription = truncate(description, 160);
+/** Site constants */
+const SITE_NAME = 'New York English Teacher';
 
+// Clean a trailing ellipsis if present
+const clean = (s: string) => s.replace(/\s*[.…]+$/u, ''); // removes "..." or "…"
+
+/** Compose final title for the <title> tag — do NOT truncate here */
+const baseTitle = clean(title || '');
+const pageTitle = baseTitle ? `${baseTitle} | ${SITE_NAME}` : SITE_NAME;
+const enhancedTitle = `${pageTitle} – Your Career Performance Accelerator`;
+
+// Validate
 warnIf(
   !title || title.length < 10,
   `SEO Warning: Title is missing or too short: "${title}"`,
@@ -44,13 +52,39 @@ warnIf(
   !description || description.length < 80,
   `SEO Warning: Description is missing or too short: "${description}"`,
 );
+warnIf(
+  description && description.length > 160,
+  `SEO Warning: Description is longer than recommended 160 chars (${description.length} chars): "${description}"`,
+);
+warnIf(
+  title && title.length > 60,
+  `SEO Warning: Title is longer than recommended 60 chars (${title.length} chars): "${title}"`,
+);
+// Don't truncate - use full description as provided
+const safeDescription = description;
 
 // Canonical and OG helpers
-const canonicalDomain = defaultSEO.siteUrl.replace(/^(https?:\/\/)/, "$1www.");
+// Build a clean origin (no trailing slash, no double www)
+const canonicalDomain = (() => {
+  const base = (defaultSEO.siteUrl || '').replace(/https?:\/\/www\.www\./i, 'https://www.');
+  try {
+    return new URL(base).origin;
+  } catch {
+    return base.replace(/\/$/, '');
+  }
+})();
 const ensureAbsoluteUrl = (path: string) => {
   if (path.startsWith("http"))
     return path.replace(/https?:\/\/www\.www\./i, "https://www.");
-  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  
+  // Normalize path to ensure trailing slash for directories
+  let normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  
+  // Add trailing slash if missing and not a file path
+  if (!normalizedPath.includes('.') && !normalizedPath.endsWith('/')) {
+    normalizedPath = normalizedPath + '/';
+  }
+  
   const cleanDomain = canonicalDomain.replace(
     /https?:\/\/www\.www\./i,
     "https://www.",
@@ -58,38 +92,61 @@ const ensureAbsoluteUrl = (path: string) => {
   return new URL(normalizedPath, cleanDomain).toString();
 };
 const fullImage = ensureAbsoluteUrl(image);
-const fullUrl = new URL(url, canonicalDomain).toString();
+let fullUrl = new URL(url, canonicalDomain).toString();
+// Guard against accidental double 'www.' in host
+fullUrl = fullUrl.replace(/https?:\/\/www\.www\./i, 'https://www.');
 
-const alternatesWithDefault = alternateUrls.some(
-  (a) => a.hreflang === "x-default",
-)
-  ? alternateUrls
-  : [...alternateUrls, { hreflang: "x-default", href: fullUrl }];
+// Deduplicate alternateUrls to prevent "More than one page is linked for the same language" errors
+// Create a map to store unique hreflang entries, prioritizing URLs with trailing slashes
+const hreflangMap = new Map<string, string>();
+
+// Process all alternates, keeping only one URL per language code
+alternateUrls.forEach(alt => {
+  const currentUrl = hreflangMap.get(alt.hreflang);
+  
+  // If we don't have this language yet, or the new URL has a trailing slash and the current one doesn't
+  if (!currentUrl || (alt.href.endsWith('/') && !currentUrl.endsWith('/'))) {
+    hreflangMap.set(alt.hreflang, alt.href);
+  }
+});
+
+// Convert back to array format
+const deduplicatedAlternates = Array.from(hreflangMap.entries()).map(([hreflang, href]) => ({
+  hreflang,
+  href
+}));
+
+// Don't automatically add x-default - we'll handle it explicitly in the page templates
+const alternatesWithDefault = deduplicatedAlternates;
 ---
 
-<title>{safeTitle}</title>
-<meta name="description" content={safeDescription} />
+<title>{enhancedTitle}</title>
+{description && <meta name="description" content={description} />}
+
+<!-- Canonical URL - prioritize the explicitly passed canonicalUrl -->
+{canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : fullUrl && <link rel="canonical" href={fullUrl} />}
+
+<!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={fullUrl} />
-<meta property="og:title" content={safeTitle} />
-<meta property="og:description" content={safeDescription} />
-<meta property="og:image" content={fullImage} />
-<meta property="og:image:alt" content={imageAlt} />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
 <meta property="og:locale" content={locale} />
+<meta property="og:title" content={enhancedTitle} />
+{description && <meta property="og:description" content={description} />}
+{image && <meta property="og:image" content={fullImage} />}
+<meta property="og:site_name" content={SITE_NAME} />
+{canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={safeTitle} />
-<meta name="twitter:description" content={safeDescription} />
-<meta name="twitter:image" content={fullImage} />
-<meta name="twitter:image:alt" content={imageAlt} />
+<meta name="twitter:title" content={enhancedTitle} />
+{description && <meta name="twitter:description" content={description} />}
+{image && <meta name="twitter:image" content={fullImage} />}
+{imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
 {
   alternatesWithDefault.map((alt) => (
     <link
       rel="alternate"
       hreflang={alt.hreflang}
-      href={alt.href.replace(/([^:]\/)\/+/g, "$1")}
+      href={alt.href}
     />
   ))
 }
-<link rel="canonical" href={fullUrl.replace(/([^:]\/)\/+/g, "$1")} />

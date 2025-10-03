@@ -1,19 +1,22 @@
 ---
 import BlogPost from './BlogPost.astro';
 import type { CollectionEntry } from 'astro:content';
+// Build local slashed bases to avoid alias/type issues
 import { categories } from '../../data/categories';
 import { getCollection } from 'astro:content';
 
-interface Props {
+export interface BlogListProps {
   posts: CollectionEntry<'blog'>[];
   currentCategory?: string;
   currentCategorySlug?: string; // Add slug for more reliable category matching
+  lang?: 'en' | 'es';
 }
 
-const { posts, currentCategory, currentCategorySlug } = Astro.props;
-const lang = Astro.url.pathname.startsWith('/es/') ? 'es' : 'en';
-const baseBlogUrl = lang === 'es' ? '/es/blog' : '/en/blog';
-const baseCategoryUrl = lang === 'es' ? '/es/category' : '/en/category';
+const { posts, currentCategory, currentCategorySlug, lang: propLang } = Astro.props as BlogListProps;
+const lang = propLang ?? (Astro.url.pathname.startsWith('/es/') ? 'es' : 'en');
+const baseBlogUrl = `/${lang}/blog/`;
+const baseCategoryUrl = `/${lang}/category/`;
+const stripLang = (s: string) => s?.replace(/^(en|es)\//, '') ?? '';
 
 // Filter to only show categories that have posts in the current filtered list
 // Using a Map to ensure we only have one entry per slug to avoid duplicates
@@ -61,9 +64,8 @@ const activeCategories = Array.from(categoryMap.values());
         </a>
         {activeCategories.map((category) => {
   // Use esSlug for Spanish, fallback to slug for English
-  const categoryUrl = lang === 'es' && category.esSlug
-    ? `${baseCategoryUrl}/${category.esSlug}`
-    : `${baseCategoryUrl}/${category.slug}`;
+  const slug = lang === 'es' && category.esSlug ? category.esSlug : category.slug;
+  const categoryUrl = `${baseCategoryUrl}${slug}/`;
   return (
     <a 
       href={categoryUrl}
@@ -88,7 +90,7 @@ const activeCategories = Array.from(categoryMap.values());
   </div>
   
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    {posts.map((post, index) => (
+    {posts.map((post: CollectionEntry<'blog'>, index: number) => (
       <div>
         <BlogPost 
           title={post.data.title}
@@ -98,7 +100,7 @@ const activeCategories = Array.from(categoryMap.values());
           publishDate={post.data.publishDate}
           categories={post.data.categories || []}
           content={post.body}
-          slug={post.slug && post.slug.length > 3 ? post.slug.substring(3) : post.slug}
+          slug={stripLang(post.slug)}
           index={index}
           lang={lang}
         />

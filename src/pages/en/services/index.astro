@@ -10,50 +10,54 @@ import servicesHeroImage from "@assets/images/services/services-hero.jpg";
 
 // SEO metadata
 const seoTitle = "Business English Coaching Services | NY English";
-const seoDescription = "Explore personalized English coaching for executives, tech, medical professionals, and more. Improve your fluency and confidence in real-world business settings.";
+const seoDescription =
+  "Explore personalized English coaching for executives, tech, medical professionals, and more. Improve your fluency and confidence in real-world business settings.";
 
 // Reuse hero content from homepage for brand consistency
 const heroContent = {
   title: "Specialized Business English Coaching for Your Success",
-  description: "Targeted programs to sharpen your communication skills and accelerate your career.",
+  description:
+    "Targeted programs to sharpen your communication skills and accelerate your career.",
   buttons: [
     {
       text: "Book Your Free Consultation",
       link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
       variant: "primary" as const,
-      target: "_blank"
-    }
+      target: "_blank",
+    },
   ],
   backgroundImage: servicesHeroImage,
   backgroundImageMobile: servicesHeroImage,
   backgroundImageAlt: "Professional business English coaching services",
-  overlayOpacity: 0.3
+  overlayOpacity: 0.3,
 };
 
 // Professional Profiles section content
 const professionalProfilesContent = {
   title: "Tailored for Ambitious Professionals",
-  description: "My coaching is not one-size-fits-all. I partner with innovators, leaders, and specialists who need to communicate with precision and authority. I have proven success with:"
+  description:
+    "My coaching is not one-size-fits-all. I partner with innovators, leaders, and specialists who need to communicate with precision and authority. I have proven success with:",
 };
 
 // CTA Banner content
 const ctaContent = {
   eyebrow: "Not Sure Which Service Is Right for You?",
   title: "Let's discuss your goals and find the perfect path forward.",
-  description: "Book a free consultation to discover how I can help you achieve your English communication goals.",
+  description:
+    "Book a free consultation to discover how I can help you achieve your English communication goals.",
   button: {
     text: "Book a Free Consultation",
     link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
     variant: "primary" as const,
-    target: "_blank"
-  }
+    target: "_blank",
+  },
 } as const;
 
 // Translation slug for Spanish version
 const translationSlug = "servicios";
 ---
 
-<Layout 
+<Layout
   title={seoTitle}
   description={seoDescription}
   lang="en"
@@ -63,17 +67,20 @@ const translationSlug = "servicios";
 >
   <!-- Hero Section - Reused from homepage for consistency -->
   <Hero content={heroContent} />
-  
+
   <!-- Services Grid -->
-  <ServicesGrid 
-    services={services} 
+  <ServicesGrid
+    services={services}
     title="Master Business English for Career Growth & Global Communication"
     description="Unlock your full potential with personalized English coaching for professionals. Whether you're leading teams, selling technical solutions, preparing for interviews, or expanding internationally—our programs are designed for real results."
   />
-  
+
   <!-- Professional Profiles Section -->
-  <ProfessionalProfiles profiles={professionalProfiles} content={professionalProfilesContent} />
-  
+  <ProfessionalProfiles
+    profiles={professionalProfiles}
+    content={professionalProfilesContent}
+  />
+
   <!-- Final CTA -->
   <CtaBanner content={ctaContent} />
 </Layout>

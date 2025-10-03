@@ -71,7 +71,9 @@ Authentic confidence comes from targeted practice and honest feedback. A skilled
 
 - **Identify & Overcome Blockers:** Address nerves in high-stakes presentations or tough Q&A.  
 - **Refine Your Style:** Enhance articulation, pacing, and vocal variety for maximum impact.  
-- **Receive Constructive Feedback:** Gain actionable insights on how you’re perceived and how to improve.
+- **Receive Constructive Feedback:** Gain actionable insights on how you're perceived and how to improve.
+
+For practical confidence-building techniques you can start using today, check out [5 Simple Strategies to Gain Confidence](/en/blog/boost-eng-confidence/).
 
 This personalized feedback loop accelerates your ability to project authority and command attention.
 

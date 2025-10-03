@@ -1,0 +1,115 @@
+---
+import BlogPost from './BlogPost.astro';
+import type { CollectionEntry } from 'astro:content';
+// Build local slashed bases to avoid alias/type issues
+import { categories } from '../../data/categories';
+import { getCollection } from 'astro:content';
+
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+  currentCategory?: string;
+  currentCategorySlug?: string; // Add slug for more reliable category matching
+}
+
+const { posts, currentCategory, currentCategorySlug, lang: propLang } = Astro.props as { posts: CollectionEntry<'blog'>[]; currentCategory?: string; currentCategorySlug?: string; lang?: 'en' | 'es' };
+const lang = propLang ?? (Astro.url.pathname.startsWith('/es/') ? 'es' : 'en');
+const baseBlogUrl = `/${lang}/blog/`;
+const baseCategoryUrl = `/${lang}/category/`;
+const stripLang = (s: string) => s?.replace(/^(en|es)\//, '') ?? '';
+
+// Filter to only show categories that have posts in the current filtered list
+// Using a Map to ensure we only have one entry per slug to avoid duplicates
+const categoryMap = new Map();
+
+categories.forEach(category => {
+  // Check for category matches in either English or Spanish depending on the language
+  const hasMatchingPosts = posts.some(post => {
+    const categoryNames = post.data.categories || [];
+    if (lang === 'es') {
+      // For Spanish pages, check if posts include the Spanish category name
+      return category.name_es && categoryNames.includes(category.name_es);
+    } else {
+      // For English pages, check if posts include the English category name
+      return categoryNames.includes(category.name);
+    }
+  });
+  
+  if (hasMatchingPosts) {
+    // Only add if we don't already have this slug (prevents duplicates)
+    if (!categoryMap.has(category.slug)) {
+      categoryMap.set(category.slug, category);
+    }
+  }
+});
+
+// Convert the Map values back to an array
+const activeCategories = Array.from(categoryMap.values());
+---
+<section class="site-container mx-auto px-4 py-small">
+  <div class="mb-16 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6" data-aos="fade-in" data-aos-delay="100">
+    
+    <div class="w-full">
+      <h2 class="text-lg font-semibold mb-4">{lang === 'es' ? 'Filtrar por Categorías:' : 'Filter by Categories:'}</h2>
+      <div class="flex flex-wrap gap-2">
+        <a 
+          href={baseBlogUrl} 
+          class={`px-4 sm:px-6 py-2 sm:py-3 leading-none rounded-md text-small flex items-center justify-center transition-colors border border-primary duration-200 ${
+            !currentCategory 
+              ? 'bg-primary text-body-dark shadow-md' 
+              : 'bg-background text-body-base hover:bg-background-light hover:text-body-light'
+          }`}
+        >
+          {lang === 'es' ? 'Mostrar Todo' : 'Show All'}
+        </a>
+        {activeCategories.map((category) => {
+  // Use esSlug for Spanish, fallback to slug for English
+  const slug = lang === 'es' && category.esSlug ? category.esSlug : category.slug;
+  const categoryUrl = `${baseCategoryUrl}${slug}/`;
+  return (
+    <a 
+      href={categoryUrl}
+      class={`px-4 sm:px-6 py-2 sm:py-3 leading-none rounded-md text-small flex items-center justify-center transition-colors border border-primary duration-200 ${
+        (lang === 'es' && category.name_es && (currentCategory === category.name_es || currentCategorySlug === category.esSlug)) ||
+        (lang !== 'es' && (currentCategory === category.name || currentCategorySlug === category.slug))
+          ? 'bg-primary text-body-dark shadow-md' 
+          : 'bg-background text-body-base hover:bg-background-light hover:text-body-light'
+      }`}
+      title={category.description}
+    >
+      {lang === 'es' && category.name_es ? category.name_es : category.name}
+    </a>
+  );
+})}
+
+      </div>
+    </div>
+    <p class="text-small text-body-base text-left sm:text-right whitespace-nowrap">
+      {lang === 'es' ? 'Mostrando' : 'Showing'} <span class="font-bold text-primary">{posts.length}</span> {lang === 'es' ? 'publicaciones' : 'posts'}
+    </p>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {posts.map((post: CollectionEntry<'blog'>, index: number) => (
+      <div>
+        <BlogPost 
+          title={post.data.title}
+          excerpt={post.data.excerpt}
+          featuredImage={post.data.featuredImage}
+          imageAlt={post.data.imageAlt || post.data.title}
+          publishDate={post.data.publishDate}
+          categories={post.data.categories || []}
+          content={post.body}
+          slug={stripLang(post.slug)}
+          index={index}
+          lang={lang}
+        />
+      </div>
+    ))}
+  </div>
+
+  {posts.length === 0 && (
+    <p class="text-center text-gray-500 py-8">
+      {lang === 'es' ? 'No se encontraron publicaciones en esta categoría.' : 'No posts found in this category.'}
+    </p>
+  )}
+</section>

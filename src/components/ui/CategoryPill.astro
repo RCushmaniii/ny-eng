@@ -1,4 +1,5 @@
 ---
+import routes from '@utils/paths';
 import { normalizePath } from "@utils/url";
 import { categories, getCategoryBySlug } from '../../data/categories';
 import { serviceCategories } from '@data/service-categories';
@@ -87,8 +88,8 @@ slug = slug
   .normalize('NFD')
   .replace(/[\u0300-\u036f]/g, '');
 
-// Build the category URL based on language
-const categoryUrl = `/${lang}/category/${slug}`;
+// Build the category URL based on language with trailing slash
+const categoryUrl = lang === 'es' ? routes.es.category(slug) : routes.en.category(slug);
 
 // Get the display name based on language
 let displayName = cleanCategoryName;

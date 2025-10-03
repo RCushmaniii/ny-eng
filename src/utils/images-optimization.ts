@@ -4,6 +4,16 @@ import { transformUrl, parseUrl } from 'unpic';
 import type { ImageMetadata } from 'astro';
 import type { HTMLAttributes } from 'astro/types';
 
+// Check if URL is compatible with unpic
+export const isUnpicCompatible = (url: string): boolean => {
+  try {
+    const urlParsed = parseUrl(url);
+    return !!urlParsed;
+  } catch {
+    return false;
+  }
+};
+
 type Layout = 'fixed' | 'constrained' | 'fullWidth' | 'cover' | 'responsive' | 'contained';
 
 export interface ImageProps extends Omit<HTMLAttributes<'img'>, 'src'> {
@@ -234,10 +244,6 @@ export const astroAssetsOptimizer: ImagesOptimizer = async (
       };
     })
   );
-};
-
-export const isUnpicCompatible = (image: string) => {
-  return typeof parseUrl(image) !== 'undefined';
 };
 
 /* ** */

@@ -2,14 +2,15 @@ import type { ImageMetadata } from 'astro';
 import { serviceCategories } from '../service-categories.js';
 
 // Import testimonial images - using the same images as English version
-import emmanuelTestimonial from '../../assets/images/testimonials/emmanuel-testimonial.jpeg';
+import emmanuelTestimonial from '../../assets/images/testimonials/emmanuel-testimonial.jpg';
 import erikaTestimonial from '../../assets/images/testimonials/erika-testimonial.jpg';
+// Avoid importing a malformed image through Astro's metadata pipeline; use a public image path instead
 import julioTestimonial from '../../assets/images/testimonials/julio-testimonial.jpg';
-import hugoTestimonial from '../../assets/images/testimonials/hugo-testimonial.jpeg';
+import hugobTestimonial from '../../assets/images/testimonials/hugob-testimonial.jpg';
 import hugolTestimonial from '../../assets/images/testimonials/hugo-l-testimonial.jpg';
-import andresTestimonial from '../../assets/images/testimonials/andres-testimonial.jpeg';
+import andresTestimonial from '../../assets/images/testimonials/andres-testimonial.jpg';
 import karlaTestimonial from '../../assets/images/testimonials/karla-testimonial.jpg';
-import andreaTestimonial from '../../assets/images/testimonials/andrea-testimonial.jpeg';
+import andreaTestimonial from '../../assets/images/testimonials/andrea-testimonial.jpg';
 import albertoTestimonial from '../../assets/images/testimonials/alberto-testimonial.jpg';
 import humbertoTestimonial from '../../assets/images/testimonials/humberto-testimonial.jpg';
 import ricardoTestimonial from '../../assets/images/testimonials/ricardo-testimonial.jpg';
@@ -19,13 +20,14 @@ import taniaTestimonial from '../../assets/images/testimonials/tania-testimonial
 import luislTestimonial from '../../assets/images/testimonials/luisl-testimonial.jpg';
 import noeTestimonial from '../../assets/images/testimonials/noe-testimonial.jpg';
 
+
 export interface Testimonial {
   content: string;
   shortContent?: string; // Versión abreviada opcional del contenido
   author: string;
   position: string;
   company: string;
-  avatar: ImageMetadata;
+  avatar: ImageMetadata | string;
   stars?: number;
   industries: string[]; // Array de categorías estandarizadas
   slug: string;
@@ -49,7 +51,7 @@ export const testimonials: Testimonial[] = [
     slug: "julio-aldana-smarttie",
     headline: "De bueno a excelente: Cómo el coaching transformó mi comunicación de liderazgo",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-fundadores-de-startups",
+    link: "/es/servicios/ingles-para-fundadores-de-startups/",
     linkText: "👉 Coaching de Inglés para Fundadores de Startups",
     status: "published"
   },
@@ -59,7 +61,7 @@ export const testimonials: Testimonial[] = [
     author: "Hugo Blum",
     position: "CEO",
     company: "100 Ladrillos",
-    avatar: hugoTestimonial,
+    avatar: hugobTestimonial,
     stars: 5,
     industries: ["executive-english", "startup-founders"],
     slug: "hugo-blum-100-ladrillos",
@@ -81,7 +83,7 @@ export const testimonials: Testimonial[] = [
     slug: "andres-guzman-driscolls",
     headline: "Dominando el inglés técnico para presentaciones de alto nivel",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-ejecutivos",
+    link: "/es/servicios/ingles-para-ejecutivos/",
     linkText: "👉 Coaching de Inglés para Ejecutivos",
     status: "published"
   },
@@ -97,7 +99,7 @@ export const testimonials: Testimonial[] = [
     slug: "luis-manuel-becerra-lucatero-skysense",
     headline: "Presencia Ejecutiva y Comunicación de Alto Impacto para un CTO Global",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-ejecutivos",
+    link: "/es/servicios/ingles-para-ejecutivos/",
     linkText: "👉 Coaching de Inglés para Ejecutivos",
     status: "published"
   },
@@ -112,7 +114,7 @@ export const testimonials: Testimonial[] = [
     slug: "noe-martinez-high-stakes-english",
     headline: "Combinando Idioma y Coaching de Negocios para un Crecimiento Real",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-presentaciones",
+    link: "/es/servicios/ingles-para-presentaciones/",
     linkText: "👉 Coaching de Inglés para Situaciones Críticas",
     status: "published"
   },
@@ -128,7 +130,7 @@ export const testimonials: Testimonial[] = [
     slug: "andrea-oliveira-ceva-logistics",
     headline: "Superando la barrera del idioma en ventas técnicas",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-presentaciones",
+    link: "/es/servicios/ingles-para-presentaciones/",
     linkText: "👉 Coaching de Inglés para Situaciones Críticas",
     status: "published"
   },
@@ -145,7 +147,7 @@ export const testimonials: Testimonial[] = [
     slug: "karla-bernal-sanmina-corporation",
     headline: "Superando el miedo a hablar en público en inglés",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-logistica",
+    link: "/es/servicios/ingles-para-logistica/",
     linkText: "👉 Coaching de Inglés para Logística",
     status: "published"
   },
@@ -161,7 +163,7 @@ export const testimonials: Testimonial[] = [
     slug: "dra-erika-itzel-medico",
     headline: "Dominando las presentaciones técnicas en inglés",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-profesionales",
+    link: "/es/servicios/ingles-para-profesionales/",
     linkText: "👉 Coaching de Inglés para Profesionales",
     status: "published"
   },
@@ -177,7 +179,7 @@ export const testimonials: Testimonial[] = [
     slug: "emmanuel-ibarra-castillo-ramos-ripoll-schuster",
     headline: "Mejorando la comunicación con equipos globales",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-profesionales",
+    link: "/es/servicios/ingles-para-profesionales/",
     linkText: "👉 Coaching de Inglés para Profesionales",
     status: "draft"
   },
@@ -193,7 +195,7 @@ export const testimonials: Testimonial[] = [
     slug: "alberto-escobar-terramar-brands",
     headline: "Comunicación efectiva para líderes técnicos",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-ejecutivos",
+    link: "/es/servicios/ingles-para-ejecutivos/",
     linkText: "👉 Coaching de Inglés para Ejecutivos",
     status: "published"
   },
@@ -211,7 +213,7 @@ export const testimonials: Testimonial[] = [
     slug: "hugo-lopez-continental",
     headline: "Elevando mi comunicación ejecutiva en ingeniería global",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-presentaciones",
+    link: "/es/servicios/ingles-para-presentaciones/",
     linkText: "👉 Coaching de Inglés para Situaciones Críticas",
     status: "published"
   },
@@ -228,7 +230,7 @@ export const testimonials: Testimonial[] = [
     slug: "ricardo-mendoza-mountz-torque",
     headline: "Comunicación médica precisa en entornos internacionales",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-tecnologia",
+    link: "/es/servicios/ingles-para-tecnologia/",
     linkText: "👉 Coaching de Inglés para Tecnología",
     status: "draft"
   },
@@ -244,7 +246,7 @@ export const testimonials: Testimonial[] = [
     slug: "humberto-grimaldo-tc-logistics",
     headline: "Optimizando la comunicación en logística internacional",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-logistica",
+    link: "/es/servicios/ingles-para-logistica/",
     linkText: "👉 Coaching de Inglés para Logística",
     status: "published"
   },
@@ -276,7 +278,7 @@ export const testimonials: Testimonial[] = [
     slug: "jonathan-emmaus-infosys",
     headline: "Dominando las entrevistas técnicas en inglés",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-tecnologia",
+    link: "/es/servicios/ingles-para-tecnologia/",
     linkText: "👉 Coaching de Inglés para Tecnología",
     status: "published"
   },
@@ -296,14 +298,14 @@ export const testimonials: Testimonial[] = [
     slug: "tania-ruelas-forvia-hella",
     headline: "Inglés fluido para clientes globales",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-tecnologia",
+    link: "/es/servicios/ingles-para-tecnologia/",
     linkText: "👉 Coaching de Inglés para Ingenieros",
     status: "published"
   },
 ] as const;
 
 // Filter published testimonials
-const publishedTestimonials = testimonials.filter(t => t.status !== "draft");
+export const publishedTestimonials = testimonials.filter(t => t.status !== "draft");
 
 // Group testimonials by industry for easier filtering using the standardized service categories
 export const testimonialsByIndustry = {

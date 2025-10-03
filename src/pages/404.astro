@@ -4,7 +4,7 @@
 // URL and renders the correct, translated content in place, serving a
 // proper 404 status code automatically.
 
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import Button from "@components/ui/Button.astro";
 
 // --- 1. Language and Content Logic ---
@@ -49,31 +49,16 @@ const content = {
 
 const pageContent = isSpanishPath ? content.es : content.en;
 
-const footerCta = {
-    eyebrow: "",
-    title: pageContent.footerTitle,
-    description: pageContent.footerDescription,
-    hideCta: false,
-    button: {
-        text: pageContent.footerButtonText,
-        link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
-        target: "_blank",
-        variant: "primary" as const,
-    },
-};
-
 // --- 2. Render the Page ---
 // Astro automatically serves a 404 status code for any file named 404.astro
 ---
 
-<Layout
+<Base
     title={pageContent.title}
     description={pageContent.description}
-    footerCta={footerCta}
     lang={lang}
-    noIndex={true}
-    translationSlugEn={lang === "es" ? translationSlug : undefined}
-    translationSlugEs={lang === "en" ? translationSlug : undefined}
+    tkey="404"
+    ogImage={{ src: "/images/logos/new-york-english-og.jpg" }}
 >
     <div class="w-full min-h-[80vh] flex items-center">
         <div class="site-container mx-auto px-4 py-base text-center">

@@ -1,5 +1,16 @@
 ---
-import type { Stats as Props } from "@types/wind";
+import type { Stat } from "~/types";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  stats?: Stat[];
+  id?: string;
+  isDark?: boolean;
+  classes?: Record<string, string>;
+  bg?: string;
+}
 
 import WidgetWrapper from "../ui/WidgetWrapper.astro";
 import Headline from "../ui/Headline.astro";

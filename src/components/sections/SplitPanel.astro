@@ -10,21 +10,21 @@ interface Content {
     headline: string;
     subheadline?: string;
     description?: string;
-    descriptionPoints?: string[];
-    image: {
+    descriptionPoints?: readonly string[];
+    image: Readonly<{
         src: string | any;
         alt: string;
-    };
-    buttons?: {
+    }>;
+    buttons?: readonly Readonly<{
         text: string;
         link: string;
         variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark';
         target?: string;
-    }[];
+    }>[];
 }
 
 export interface Props {
-    content: Content;
+    content: Readonly<Content>;
     imagePosition?: 'left' | 'right';
     background?: ThemeColor;
     paddingTop?: PaddingSize;

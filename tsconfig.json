@@ -1,46 +1,22 @@
 {
-  "include": [
-    ".astro/types.d.ts",
-    "**/*"
-  ],
-  "exclude": [
-    "dist"
-  ],
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "baseUrl": ".",
-    "types": [
-      "astro/client"
-    ],
-    "strict": true,
-    "jsx": "preserve",
-    "jsxImportSource": "astro",
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "lib": ["esnext", "dom", "dom.iterable"],
     "paths": {
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@layouts/*": [
-        "./src/layouts/*"
-      ],
-      "@styles/*": [
-        "./src/styles/*"
-      ],
-      "@images/*": [
-        "./src/images/*"
-      ],
-      "@data/*": [
-        "./src/data/*"
-      ],
-      "@utils/*": [
-        "./src/utils/*"
-      ],
-      "@assets/*": [
-        "./src/assets/*"
-      ]
-    }
-  }
+      "@/*": ["src/*"],
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@data/*": ["src/data/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"],
+      "~/*": ["src/*"],
+      "~/types": ["src/types/index.ts"],
+      "~/utils/*": ["src/utils/*"],
+      "~/components/*": ["src/components/*"]
+    },
+    "types": ["astro/client"]
+  },
+  "include": ["src/**/*", "astro.config.*", "env.d.ts"],
+  "exclude": ["dist", "**/*.disabled", "**/__sandbox/**"]
 }

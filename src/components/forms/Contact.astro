@@ -154,7 +154,7 @@ const initialSubmitText = C.submitButton;
     <div id="form-status" class="mt-4 text-center"></div>
 </form>
 
-<script define:vars={{ jsStrings, thankYouRedirect, initialSubmitText }}>
+<script is:inline define:vars={{ jsStrings, thankYouRedirect, initialSubmitText }}>
     const form = document.getElementById("contact-form");
     const statusDiv = document.getElementById("form-status");
 

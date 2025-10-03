@@ -1,11 +1,19 @@
 ---
 // Import components
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
 import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
 import CtaSection from "@components/sections/CtaSection.astro";
+
+// prevent autosave tools from removing imports (used in template)
+void Base;
+void InnerHero;
+void Challenge;
+void MethodologySection;
+void FeaturedTestimonial;
+void CtaSection;
 
 // Import data
 import { services } from "@data/services";
@@ -60,18 +68,12 @@ const ctaContent = {
 const translationSlug = "preparacion-para-entrevistas";
 ---
 
-<Layout 
+<Base 
   title="Interview Preparation English Coaching | NY English"
   description="Master confident English communication for job interviews. Get hired with clear technical explanations, compelling stories, and executive presence that impresses hiring managers."
   lang="en"
-  translationSlugEs={`/es/servicios/${translationSlug}`}
-  image={serviceData?.backgroundImage || "/images/logos/new-york-english-og-wide.jpg"}
-  footerCta={{
-  title: "",
-  description: "",
-  button: { text: "", link: "#" },
-  hideCta: true
-}}
+  tkey="services/interview-prep"
+  ogImage={{ src: typeof serviceData?.backgroundImage === 'string' ? serviceData.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />
@@ -89,4 +91,4 @@ const translationSlug = "preparacion-para-entrevistas";
   
   <!-- CTA Section -->
   <CtaSection content={ctaContent} />
-</Layout>
+</Base>

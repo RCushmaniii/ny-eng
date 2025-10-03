@@ -8,7 +8,7 @@ seo:
   description: "Entiende cómo recopilamos, usamos y protegemos tu información personal en el sitio web de New York English Teacher."
 ---
 
-# Política de Privacidad
+## Política de Privacidad
 
 **Última Actualización: 10 de abril de 2025**
 

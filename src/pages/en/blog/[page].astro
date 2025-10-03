@@ -1,16 +1,17 @@
 ---
 import { blogSetting } from '@data/config';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import PaginatedBlogLayout from '@components/blog/PaginatedBlogLayout.astro';
 import blogHero from '@assets/images/blog-hero.jpg';
+import type { TKey } from '../../../lib/i18n';
 
 export async function getStaticPaths() {
   // Get all blog posts and filter to English only and published only
   const allPosts = await getCollection('blog');
-  const filteredPosts = allPosts.filter(post => post.id.startsWith('en/') && post.data.publish === true);
+  const filteredPosts = allPosts.filter((post: CollectionEntry<'blog'>) => post.id.startsWith('en/') && post.data.publish === true);
 
   // Sort posts by date (newest first)
-  const sortedPosts = filteredPosts.sort((a, b) => 
+  const sortedPosts = filteredPosts.sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => 
     b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
   );
   
@@ -46,17 +47,23 @@ export async function getStaticPaths() {
 }
 
 const { page, totalPages, posts, hasMultiplePages } = Astro.props;
+
+// Use centralized i18n system for blog pagination
+const lang = 'en';
+const tkey = 'blog' as TKey;
 ---
 
 <PaginatedBlogLayout 
     posts={posts}
     currentPage={page}
     totalPages={totalPages}
-    baseUrl="/en/blog"
+    baseUrl="/en/blog/"
     title="Blog"
-    subtitle="Practical tips and real-world insights to master Business English."
+    subtitle="Expert tips, strategies, and real-world examples to master Business English. Improve your professional communication skills with actionable advice."
     heroImage={blogHero}
     heroImageAlt="Blog hero background"
-    translationSlugEs={Astro.params.page === '1' ? '' : Astro.params.page}
+    translationSlugEs={`/es/blog/${page}/`}
     hasMultiplePages={hasMultiplePages}
+    lang="en"
+    tkey={tkey}
 />

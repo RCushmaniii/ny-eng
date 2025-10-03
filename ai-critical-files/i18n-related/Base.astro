@@ -1,0 +1,231 @@
+---
+/**
+ * Base.astro - A layout component that handles proper hreflang + canonical implementation (defensive)
+ * Props:
+ * - tkey?: TKey
+ * - lang?: 'en' | 'es'
+ * - title: string
+ * - description: string
+ * - image?: string | AstroImage
+ * - heroImage?: string | AstroImage
+ * - heroImageMobile?: string | AstroImage
+ * - customHreflangs?: Array<{ lang: string; href: string }>
+ * - customCanonical?: string
+ */
+
+import "../styles/global.css";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { headerContent as headerContentEn } from "@data/header/en.ts";
+import { headerContent as headerContentEs } from "@data/header/es.ts";
+import { footerContentEn } from "@data/footer/en.ts";
+import { footerContentEs } from "@data/footer/es.ts";
+import { siteConfig } from "@data/config.ts";
+import OrgSchema from "@components/seo/OrgSchema.astro";
+import WebsiteSchema from "@components/seo/WebsiteSchema.astro";
+import * as i18n from '../lib/i18n';
+import { type TKey, type Locale } from "../lib/i18n.ts";
+
+export interface Props {
+  title: string;
+  description: string;
+  lang: 'en' | 'es';
+  tkey: TKey;
+  ogImage?: { src: string; alt?: string; width?: number; height?: number };
+  heroImage?: string | { src: string; width?: number; height?: number };
+  heroImageMobile?: string | { src: string; width?: number; height?: number };
+  hideCta?: boolean;
+  customHreflangs?: Array<{ lang: string; href: string }>;
+  customCanonical?: string;
+}
+
+const { title, description, lang, tkey, ogImage, heroImage, heroImageMobile, hideCta } = Astro.props;
+
+// Fail fast if required props are missing
+if (!lang || !tkey) {
+  throw new Error(`[Base.astro] Missing required prop(s): lang="${lang}", tkey="${tkey}"`);
+}
+
+// site from astro.config.mjs. Remove trailing slash to safely concatenate.
+const SITE = (Astro.site?.href ?? 'https://www.nyenglishteacher.com').replace(/\/+$/, '');
+
+// Normalize to trailing slash (config uses trailingSlash: "always")
+const ensureSlash = (u: string) => (u.endsWith('/') ? u : u + '/');
+
+// Absolute canonical for this page
+const relPath = i18n.routeFor[lang]?.[tkey];
+if (!relPath) {
+  throw new Error(`[Base.astro] routeFor missing for lang=${lang} tkey=${tkey}`);
+}
+const canonicalUrl = SITE + ensureSlash(relPath);
+
+// Build alternate links from route map
+const alternates = Object.keys(i18n.routeFor)
+  .map(l => ({ lang: l as Locale, href: SITE + ensureSlash(i18n.routeFor[l as Locale]?.[tkey] ?? '') }))
+  .filter(a => a.href.endsWith('/')); // drop undefined routes
+
+// x-default: point to your primary language (adjust if Spanish first)
+const xDefault = SITE + ensureSlash(i18n.routeFor[i18n.defaultLocale]?.[tkey] ?? '/en/');
+
+const ogTitle = title;
+const ogDesc = description;
+const ogImg = ogImage?.src ?? '/images/logos/new-york-english-og.jpg';
+const ogAlt = ogImage?.alt ?? (lang === 'es' ? 'New York English Teacher (ES)' : 'New York English Teacher (EN)');
+
+// Additional variables for compatibility
+const conciseTitle = title;
+const fullTitle = `${title} — Your Career Performance Accelerator`;
+const localeCode = i18n.getLocaleCode(lang);
+
+// Header/Footer content
+const headerData = lang === "en" ? headerContentEn : headerContentEs;
+const rawFooterData =
+  lang === "en" ? footerContentEn(siteConfig) : footerContentEs(siteConfig);
+
+// Align prop name with Footer.astro expectation
+const footerData = {
+  ...rawFooterData,
+  footerCta: {
+    ...rawFooterData.defaultFooterCta,
+    hideCta: hideCta ?? false
+  }
+};
+
+// Slugs for language switcher using new i18n system
+const translationSlugEn = i18n.routeFor['en'][tkey];
+const translationSlugEs = i18n.routeFor['es'][tkey];
+---
+
+<!doctype html>
+<html lang={lang === "es" ? "es-MX" : "en-US"} data-theme="zeus">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Hreflang alternates -->
+    {alternates.map(a => (<link rel="alternate" hreflang={i18n.getHreflangCode(a.lang)} href={a.href} />))}
+    <link rel="alternate" hreflang="x-default" href={xDefault} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDesc} />
+    <meta property="og:image" content={ogImg} />
+    <meta property="og:image:alt" content={ogAlt} />
+    <meta property="og:locale" content={localeCode} />
+    {lang === "en" && <meta property="og:locale:alternate" content="es_MX" />}
+    {lang === "es" && <meta property="og:locale:alternate" content="en_US" />}
+    <meta property="og:site_name" content="New York English Teacher" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDesc} />
+    <meta name="twitter:image" content={ogImg} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons & Sitemap -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Preload hero image if provided -->
+    {
+      heroImage && (
+        <link
+          rel="preload"
+          as="image"
+          href={typeof heroImage === "string" ? heroImage : heroImage.src}
+          imagesrcset={
+            heroImageMobile &&
+            typeof heroImage !== "string" &&
+            typeof heroImageMobile !== "string" &&
+            heroImage?.src &&
+            heroImageMobile?.src
+              ? `${heroImageMobile.src} 800w, ${heroImage.src} 1920w`
+              : undefined
+          }
+          imagesizes="(max-width: 768px) 100vw, 100vw"
+          fetchpriority="high"
+        />
+      )
+    }
+
+    <!-- Robots and caching -->
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta
+      http-equiv="Cache-Control"
+      content="public, max-age=3600, s-maxage=86400"
+    />
+
+    <!-- JSON-LD Schemas -->
+    <OrgSchema />
+    <WebsiteSchema />
+
+    <!-- Additional head content -->
+    <slot name="head" />
+  </head>
+  <body
+    class="antialiased font-sans bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 overflow-x-hidden"
+  >
+    <!-- Skip to main content link -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded focus:shadow-lg"
+      >Skip to content</a
+    >
+
+    <div id="page-wrapper" class="flex flex-col min-h-screen">
+      <Header
+        content={headerData}
+        translationSlugEn={translationSlugEn}
+        translationSlugEs={translationSlugEs}
+      />
+
+      <main id="main-content" role="main" class="flex-grow">
+        <slot />
+      </main>
+
+      <Footer content={footerData} />
+    </div>
+
+    <!-- Scripts -->
+    <script is:inline src="/js/aos.js"></script>
+    <script is:inline>
+      const prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      if (!prefersReduced && window.AOS) {
+        window.AOS.init({
+          duration: 800,
+          easing: "ease-in-out",
+          once: true,
+        });
+      }
+    </script>
+    <script src="/js/scroll.js" defer></script>
+
+    <!-- Delegated event listener for tag pills -->
+    <script type="module">
+      document.addEventListener("click", (e) => {
+        if (e.target.closest(".stop-prop")) e.stopPropagation();
+      });
+    </script>
+  </body>
+</html>

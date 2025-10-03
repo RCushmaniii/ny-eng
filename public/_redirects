@@ -2,6 +2,42 @@
 http://nyenglishteacher.com/* https://www.nyenglishteacher.com/:splat 301!
 https://nyenglishteacher.com/* https://www.nyenglishteacher.com/:splat 301!
 
+# Root domain -> English version (permanent)
+/ /en/ 301
+
+# Root-level redirects to English versions
+/blog /en/blog/ 301
+/about /en/about/ 301
+/contact /en/contact/ 301
+/services /en/services/ 301
+/testimonials /en/testimonials/ 301
+
+# Blog pagination redirects
+/2 /en/blog/2/ 301
+/3 /en/blog/3/ 301
+/4 /en/blog/4/ 301
+/5 /en/blog/5/ 301
+
+# English category redirects (without prefix)
+/category/business-english /en/category/business-english/ 301
+/category/executive-english /en/category/executive-english/ 301
+/category/english-coaching /en/category/english-coaching/ 301
+/category/career-leadership /en/category/career-leadership/ 301
+/category/high-impact-communication /en/category/high-impact-communication/ 301
+
+# Spanish category redirects (without prefix)
+/category/ingles-para-negocios /es/category/ingles-para-negocios/ 301
+/category/ingles-ejecutivo /es/category/ingles-ejecutivo/ 301
+/category/coaching-en-ingles /es/category/coaching-en-ingles/ 301
+/category/carrera-liderazgo /es/category/carrera-liderazgo/ 301
+/category/comunicacion-de-alto-impacto /es/category/comunicacion-de-alto-impacto/ 301
+
+# Fix incorrect category slug
+/en/category/english-for-executives /en/category/executive-english/ 301
+
+# Fix blog post URL mismatch
+/en/blog/executive-presence-on-video-calls /en/blog/executive-video-call/ 301
+
 # Return 404 for development/test pages
 /components/* /404.html 404
 /test/* /404.html 404
@@ -26,5 +62,5 @@ https://nyenglishteacher.com/* https://www.nyenglishteacher.com/:splat 301!
 /en/* /en/404.html 404
 /es/* /es/404.html 404
 
-# Redirect trailing slashes
-/*/ /:splat 301
+# Remove the trailing slash redirect that conflicts with trailingSlash: 'always'
+# This was causing 301 redirects for all canonical URLs

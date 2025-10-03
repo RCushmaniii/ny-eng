@@ -32,7 +32,7 @@ Un fuerte inglés de negocios permite a los gerentes de TI:
 * Prevenir malentendidos costosos en correos electrónicos, llamadas y reuniones.
 * Construir confianza y relación con stakeholders globales rápidamente.
 
-*Ejemplo:* Imagina perder un **contrato de migración a la nube de $500,000** porque el gerente de proyecto no pudo explicar con confianza los protocolos de seguridad durante una videollamada con el CIO americano. Sucede—frecuentemente.
+*Ejemplo:* Imagina perder un **contrato de migración a la nube de $500,000** porque el gerente de proyecto no pudo explicar con confianza los protocolos de seguridad durante una videollamada con el CIO americano. Sucede—frecuentemente. Para técnicas específicas sobre dominar videollamadas, ve [Presencia ejecutiva en videollamadas: 7 hábitos que generan confianza en inglés](/es/blog/presencia-ejecutiva-en-videollamadas/).
 
 ---
 

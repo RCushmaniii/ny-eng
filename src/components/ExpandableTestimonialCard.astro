@@ -64,14 +64,25 @@ const hasShortContent = !!testimonial.shortContent;
   )}
 
   <div class="flex items-center">
-    <Image
-      src={testimonial.avatar}
-      alt={testimonial.author}
-      class={`${avatarSizeClass} rounded-full mr-4 object-cover`}
-      width={testimonial.avatarSize === "lg" ? 64 : 48}
-      height={testimonial.avatarSize === "lg" ? 64 : 48}
-      loading="lazy"
-    />
+    {typeof testimonial.avatar === 'string' ? (
+      <img
+        src={testimonial.avatar}
+        alt={testimonial.author}
+        class={`${avatarSizeClass} rounded-full mr-4 object-cover`}
+        width={testimonial.avatarSize === "lg" ? 64 : 48}
+        height={testimonial.avatarSize === "lg" ? 64 : 48}
+        loading="lazy"
+      />
+    ) : (
+      <Image
+        src={testimonial.avatar}
+        alt={testimonial.author}
+        class={`${avatarSizeClass} rounded-full mr-4 object-cover`}
+        width={testimonial.avatarSize === "lg" ? 64 : 48}
+        height={testimonial.avatarSize === "lg" ? 64 : 48}
+        loading="lazy"
+      />
+    )}
     <div>
       <p class="font-semibold text-[--color-headline]">
         {testimonial.author}

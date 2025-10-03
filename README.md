@@ -195,6 +195,31 @@ To verify the sitemap is working correctly:
 
 ## 📝 Recent Updates & Changes
 
+### CSS Optimization & Performance Improvements (September 2025)
+
+- **Optimized CSS Delivery**: Updated Astro configuration to force external stylesheets in production
+  ```javascript
+  // In astro.config.mjs
+  build: {
+    // Force external stylesheets in production instead of inlining
+    inlineStylesheets: 'never',
+  }
+  ```
+
+- **Component-Scoped Styles**: Improved component-scoped styles to reduce global CSS footprint
+- **Button Component Fixes**: Resolved vertical alignment issues in button components
+- **Bilingual UI Consistency**: Ensured consistent button styling and text alignment across English and Spanish pages
+- **Performance Optimization**: Reduced CSS size through better code splitting and component-scoped styles
+
+### SEO & UI Fixes (September 2025)
+
+- **Fixed Duplicate H1 Tags**: Corrected heading hierarchy on legal pages (Terms of Service, Privacy Policy)
+- **Improved Meta Descriptions**: Enhanced category page meta descriptions with compelling, keyword-rich content
+- **Fixed Internal Links**: Resolved broken internal links between blog posts and category pages
+- **Category Filtering Fix**: Enhanced blog category filtering to properly handle case-insensitive matching
+- **Legal Page Spacing**: Improved spacing and layout on legal pages for better readability
+- **TypeScript Error Resolution**: Fixed type errors in Spanish homepage components
+
 ### Sitemap SEO Improvements (July 2025)
 
 - Fixed duplicate language prefixes in URLs that caused 404 errors
@@ -526,5 +551,5 @@ The site is configured for static deployment. Run `npm run build` to generate th
 
 ---
 
-**Last Updated**: June 2025 - Language switcher fixes and codebase cleanup
+**Last Updated**: September 2025 - CSS optimization, SEO fixes, and UI improvements
 **Contributors**: Development team focused on bilingual business English coaching platform

@@ -1,0 +1,18 @@
+<script is:inline>
+  (function() {
+    try {
+      // Fix double language segments in URLs (e.g., /en/blog/en/...)
+      const path = location.pathname;
+      const fixedPath = path.replace(/^\/(en|es)\/blog\/(en|es)\//i, '/$1/blog/');
+      
+      // Only redirect if we actually fixed something
+      if (fixedPath !== path) {
+        console.warn('[SafetyRedirect] Fixing duplicate language segment:', path, '->', fixedPath);
+        location.replace(fixedPath + location.search + location.hash);
+      }
+    } catch (e) {
+      // Silent fail - don't break the page if something goes wrong
+      console.error('[SafetyRedirect] Error:', e);
+    }
+  })();
+</script>

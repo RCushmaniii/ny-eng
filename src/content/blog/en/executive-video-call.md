@@ -5,7 +5,7 @@ excerpt: "Struggling to sound confident and credible on Zoom or Teams? Use these
 publishDate: "2025-09-04"
 categories:
   - "High-Impact Communication"
-  - "English for Executives"
+  - "Executive English"
 featuredImage: "./images/executive-video-call.jpg"
 imageAlt: "Executive leading a video call with confidence and clarity"
 translations:
@@ -20,7 +20,7 @@ seo:
 
 Video calls are where deals move forward, teams align, and leaders are judged—often in minutes. If you’re managing clients or leading global teams in English, your presence on camera matters as much as your message.
 
-At New York English, I coach executives and senior managers in tech, finance, logistics, and professional services to communicate with clarity and authority. Here are seven field-tested habits you can apply today.
+At New York English, I coach executives and senior managers in tech, finance, logistics, and professional services to communicate with clarity and authority. If you're looking to build foundational confidence first, check out my guide on [5 Simple Strategies to Gain Confidence](/en/blog/boost-eng-confidence/). Here are seven field-tested habits you can apply today.
 
 ---
 
@@ -65,7 +65,7 @@ Clarity beats complexity—especially across accents.
 * “Mitigate” → **reduce**
 * “Initiate” → **start**
 
-**Signal confidence:** prefer **I recommend / We will / The decision is** over hedging (“maybe, perhaps, kind of”).
+**Signal confidence:** prefer **I recommend / We will / The decision is** over hedging ("maybe, perhaps, kind of"). For more on building this kind of executive presence, see [Beyond Grammar: Why Senior Leaders Need a Business-Savvy Native English Coach](/en/blog/executive-english-coaching/).
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
@@ -9,14 +9,19 @@ import CtaSection from "@components/sections/CtaSection.astro";
 // Import services data for centralized image management
 import { services } from "@data/services";
 const serviceData = services.find(s => s.slug === 'executive-english');
+if (!serviceData) {
+  throw new Error('Executive English service data not found');
+}
 
 // Import methodology content
 import { coreMethodology } from "@data/methodology";
 
 // Import testimonials and select featured one
 import { testimonials } from "@data/testimonials/en";
-const featuredTestimonialSlug = 'andres-driscolls';
-const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
+const featuredTestimonial = testimonials[1]; // Hugo Blum testimonial
+if (!featuredTestimonial) {
+  throw new Error('Featured testimonial not found');
+}
 
 // SEO metadata
 const title = "Executive English Coaching | NY English";
@@ -26,7 +31,7 @@ const seoDescription = "Master executive communication skills. Speak with confid
 const heroContent = {
   title: "Speak with Executive Authority",
   description: "Command the boardroom, inspire your teams, and communicate with unwavering confidence.",
-  backgroundImage: serviceData?.backgroundImage,
+  backgroundImage: serviceData.backgroundImage,
   overlayOpacity: 0.7
 };
 
@@ -39,7 +44,7 @@ const challengeContent = {
     "You worry that your strategic vision isn't being communicated clearly across global teams."
   ],
   icon: "😰",
-  image: serviceData?.squareImage
+  image: serviceData.squareImage
 };
 
 // Final CTA content
@@ -61,12 +66,12 @@ const ctaContent = {
 const translationSlug = "ingles-para-ejecutivos";
 ---
 
-<Layout
+<Base
   title={title}
   description={seoDescription}
   lang="en"
-  translationSlugEs={`/es/servicios/${translationSlug}`}
-  image={serviceData?.backgroundImage || "/images/logos/new-york-english-og-wide.jpg"}
+  tkey="services/executive-english"
+  ogImage={{ src: typeof serviceData.backgroundImage === 'string' ? serviceData.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
   hideCta={true}
 >
   <!-- Hero Section -->
@@ -85,4 +90,4 @@ const translationSlug = "ingles-para-ejecutivos";
   
   <!-- Final CTA -->
   <CtaSection content={ctaContent} />
-</Layout>
+</Base>

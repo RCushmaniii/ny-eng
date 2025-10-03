@@ -1,0 +1,65 @@
+---
+import { siteConfig } from "@data/config.ts";
+
+interface Props {
+  title: string;
+  description: string;
+  publishDate: Date;
+  modifiedDate?: Date;
+  image?: string;
+  url: string;
+  authorName?: string;
+  categories?: string[];
+}
+
+const { 
+  title, 
+  description, 
+  publishDate, 
+  modifiedDate, 
+  image, 
+  url,
+  authorName = "Robert Cushman",
+  categories = []
+} = Astro.props;
+
+// Get site URL from config for structured data
+const siteUrl = siteConfig.siteUrl || 'https://www.nyenglishteacher.com';
+const cleanSiteUrl = siteUrl.replace(/https?:\/\/www\.www\./i, 'https://www.').replace(/\/$/, '');
+
+// Ensure absolute URL for image
+const imageUrl = image ? (image.startsWith('http') ? image : `${cleanSiteUrl}${image.startsWith('/') ? '' : '/'}${image}`) : undefined;
+
+// Format dates for JSON-LD
+const formatDate = (date: Date) => {
+  return date instanceof Date ? date.toISOString() : new Date(date).toISOString();
+};
+
+const blogPost = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "image": imageUrl,
+  "datePublished": formatDate(publishDate),
+  "dateModified": modifiedDate ? formatDate(modifiedDate) : formatDate(publishDate),
+  "author": {
+    "@type": "Person",
+    "name": authorName
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": siteConfig.companyName,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${cleanSiteUrl}/images/logos/new-york-english-og.jpg`
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": url
+  },
+  ...(categories.length > 0 ? { "keywords": categories.join(", ") } : {})
+};
+---
+<script type="application/ld+json" is:inline set:html={JSON.stringify(blogPost)}></script>

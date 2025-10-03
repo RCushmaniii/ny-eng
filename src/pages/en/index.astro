@@ -1,44 +1,25 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import Hero from "@components/sections/Hero.astro";
 import SplitPanel from "@components/sections/SplitPanel.astro";
 import Features from "@components/sections/Features.astro";
-import Stats from "@components/sections/Stats.astro";
-import Logos from "@components/sections/Logos.astro";
-import CtaBanner from "@components/sections/CtaBanner.astro";
-import Faqs from "@components/sections/Faqs.astro";
 import RecentPosts from "@components/sections/RecentPosts.astro";
 import Testimonials from "@components/sections/Testimonials-titan.astro";
+import Faqs from "@components/sections/Faqs.astro";
+
+// Define language and tkey for i18n
+const lang = 'en';
+const tkey = 'home';
 
 import { statsLists } from "@data/stats";
 import { logoLists } from "@data/logos";
 import { faqLists } from "@data/faqs";
 import { testimonials } from "@data/testimonials";
 
-import newHeroImage from "@assets/images/home/new-york-city-skyline.webp";
-import newHeroImageMobile from "@assets/images/home/new-york-city-skyline-mob.webp";
-import styleGuideImage from "@assets/images/home/developer.jpg";
 import { GraduationCap, Briefcase, Presentation, Users } from "lucide-astro";
 
-// Structured data for Google SEO (Organization, WhatsApp contact)
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "New York English Teacher",
-  "url": "https://www.nyenglishteacher.com/",
-  "logo": "https://www.nyenglishteacher.com/images/logos/new-york-english-og-wide.jpg",
-  "sameAs": [
-    "https://www.linkedin.com/in/robert-cushman/",
-    "https://www.facebook.com/nyenglishteacher"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "url": "https://wa.link/pk4f97",
-    "contactType": "Customer Service",
-    "areaServed": "MX, US, CA",
-    "availableLanguage": ["English", "Spanish"]
-  }
-} as const;
+import heroSkyline from "@assets/images/home/new-york-city-skyline.jpg";
+import styleGuideImage from "@assets/images/home/developer.jpg";
 
 // This is the English homepage, so we define the path to its Spanish counterpart.
 const spanishHomepageUrl = "/es/";
@@ -55,9 +36,9 @@ const testimonialsBlock = {
     link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
     target: "_blank",
   }
-} as const;
+};
 
-const seoTitle = "Professional English Coaching";
+const seoTitle = "Professional English Coaching | New York English Teacher";
 const seoDescription = "Boost your English fluency and confidence with personalized coaching tailored for professionals and companies.";
 
 const heroContent = {
@@ -65,17 +46,17 @@ const heroContent = {
   description: "Tailored English coaching to build confidence, fluency, and professional impact.",
   buttons: [{
     text: "Book Your Free Consultation",
-    link: "https://ny-english-teacher.odoo.com/book/7ceefa20", // External link
+    link: "https://ny-english-teacher.odoo.com/book/7ceefa20", 
     target: "_blank",
     variant: "primary" as const,
   }, {
     text: "WhatsApp Me",
-    link: "https://wa.link/pk4f97", // External link
+    link: "https://wa.link/pk4f97", 
     target: "_blank",
     variant: "whatsapp" as const,
   }],
-  backgroundImage: newHeroImage,
-  backgroundImageMobile: newHeroImageMobile,
+  backgroundImage: heroSkyline,
+  backgroundImageMobile: heroSkyline,
   overlayOpacity: 0.3,
 } as const;
 
@@ -130,7 +111,7 @@ const styleGuideSection = {
   },
   buttons: [{
     text: "Explore My Coaching Approach",
-    link: "/en/about", // Link to about page
+    link: "/en/about/", // Link to about page
     variant: "primary" as const,
   }],
 } as const;
@@ -146,7 +127,7 @@ const sideBySideStats = {
     description: "I help professionals speak and write English with clarity, purpose, and confidence.Whether you're preparing for interviews, presentations, or everyday business conversations, I'll provide the support you need.",
     button: {
       text: "Let's Work Together",
-      link: "/en/contact"
+      link: "/en/contact/"
     },
   },
 } as const;
@@ -180,25 +161,20 @@ const recentPostsSection = {
   description: "Practical tips on Business English, career growth, and effective communication.",
   button: {
     text: "See All Articles",
-    link: "/en/blog",
+    link: "/en/blog/",
   },
 } as const;
 ---
 
-<script type="application/ld+json">
-  {JSON.stringify(organizationJsonLd)}
-</script>
 
-<Layout
-  translationSlugEs={spanishHomepageUrl}
-  translationSlugEn="/en/"
-  footerCta={FooterCta}
- lang="en"
+<Base
+  lang="en"
+  tkey={tkey}
   title={seoTitle}
   description={seoDescription}
   heroImage={heroContent.backgroundImage}
   heroImageMobile={heroContent.backgroundImageMobile}
-  image="/images/logos/new-york-english-og-wide.jpg"
+  image="/images/logos/new-york-english-og.jpg"
 >
   <div class="relative bg-background-light">
     <Hero content={heroContent} />
@@ -222,8 +198,9 @@ const recentPostsSection = {
       padding="base"
     />
 
-    <Stats content={sideBySideStats} background="dark" padding="base" />
+    <!-- Stats temporarily removed; FAQs restored for footer anchor -->
+    <!-- <Stats content={sideBySideStats} background="dark" padding="base" /> -->
     <Faqs content={faqsSection} background="base" padding="base" />
 
   </div>
-</Layout>
+</Base>

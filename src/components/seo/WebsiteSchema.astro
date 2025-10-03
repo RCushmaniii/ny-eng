@@ -1,0 +1,15 @@
+---
+import { siteConfig } from "@data/config.ts";
+
+// Get site URL from config for structured data
+const siteUrl = siteConfig.siteUrl || 'https://www.nyenglishteacher.com';
+const cleanSiteUrl = siteUrl.replace(/https?:\/\/www\.www\./i, 'https://www.').replace(/\/$/, '');
+
+const website = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": siteConfig.companyName,
+  "url": cleanSiteUrl
+};
+---
+<script type="application/ld+json" is:inline set:html={JSON.stringify(website)}></script>

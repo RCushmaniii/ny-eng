@@ -1,0 +1,31 @@
+{
+  "script": "lighthouse-audit",
+  "runAt": "2025-09-08T19:22:41-06:00",
+  "status": "yellow",
+  "issues": [
+    {
+      "priority": "High",
+      "impact": "Performance",
+      "message": "Spanish category pages have poor TTFB (2.6-4.6s)",
+      "action": "Optimize server-side rendering and implement caching strategies"
+    },
+    {
+      "priority": "Medium",
+      "impact": "SEO",
+      "message": "Canonical URLs returning 301 redirects instead of 200",
+      "action": "Update Base layout to use consistent trailing slashes in canonical URLs"
+    },
+    {
+      "priority": "Medium",
+      "impact": "Accessibility",
+      "message": "Multiple H1 tags found on legal and policy pages",
+      "action": "Convert content H1s to H2s, keep only page title as H1"
+    },
+    {
+      "priority": "Low",
+      "impact": "Best Practices",
+      "message": "Inconsistent use of meta description lengths",
+      "action": "Standardize meta descriptions to 150-160 characters"
+    }
+  ]
+}

@@ -9,10 +9,10 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^nyenglishteacher\.com$ [NC]
 RewriteRule ^(.*)$ https://www.nyenglishteacher.com/$1 [L,R=301]
 
-# Remove trailing slashes (except for directories)
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} (.+)/$
-RewriteRule ^ %1 [L,R=301]
+# Add trailing slashes to all URLs except files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*[^/])$ $1/ [L,R=301]
 
 # Bilingual SEO redirects - Default language handling
 # Redirect root to English version
@@ -23,6 +23,23 @@ RewriteRule ^$ /es/ [L,R=302]
 # Default to English for root access
 RewriteCond %{REQUEST_URI} ^/$
 RewriteRule ^$ /en/ [L,R=302]
+
+# Redirect non-prefixed URLs to English versions
+RewriteCond %{REQUEST_URI} !^/(en|es)/
+RewriteCond %{REQUEST_URI} ^/(blog|about|contact|services|testimonials|category)/
+RewriteRule ^(.*)$ /en/$1 [L,R=301]
+
+# Redirect Spanish category slugs to Spanish version
+RewriteCond %{REQUEST_URI} ^/category/(ingles-ejecutivo|ingles-para-tecnologia|ingles-para-logistica|ingles-para-profesionales|ingles-para-presentaciones|ingles-para-negocios|comunicacion-de-alto-impacto|carrera-liderazgo|coaching-en-ingles)/
+RewriteRule ^category/(.*)$ /es/category/$1 [L,R=301]
+
+# Fix incorrect category slugs
+RewriteRule ^en/category/english-for-executives/?$ /en/category/executive-english/ [L,R=301]
+RewriteRule ^en/category/business-english-coaching/?$ /en/category/business-english/ [L,R=301]
+RewriteRule ^en/category/high-impact-communication-english/?$ /en/category/high-impact-communication/ [L,R=301]
+
+# Fix incorrect blog post URLs
+RewriteRule ^en/blog/executive-presence-on-video-calls/?$ /en/blog/executive-video-call/ [L,R=301]
 
 # Return 404 for development/test pages
 RedirectMatch 404 /components/.*

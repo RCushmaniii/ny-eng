@@ -1,6 +1,6 @@
 ---
 // Import components
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
@@ -39,7 +39,7 @@ const challengeContent = {
 };
 
 // Get Julio's testimonial (perfect for tech since he mentions tech topics)
-const julioTestimonial = testimonials.find(t => t.slug === "julio-smarttie");
+const julioTestimonial = testimonials[0]; // Julio Aldana testimonial
 
 // CTA content
 const ctaContent = {
@@ -60,18 +60,12 @@ const ctaContent = {
 const translationSlug = "ingles-para-tecnologia";
 ---
 
-<Layout 
+<Base
   title="Technical English Coaching | Master Tech Communication | NY English"
   description="Master technical English for IT and engineering. Explain complex ideas clearly, lead discussions, and boost your tech career with confidence."
   lang="en"
-  translationSlugEs={`/es/servicios/${translationSlug}`}
-  image={serviceData?.backgroundImage || "/images/logos/new-york-english-og-wide.jpg"}
-  footerCta={{
-  title: "",
-  description: "",
-  button: { text: "", link: "#" },
-  hideCta: true
-}}
+  tkey="services/tech-english"
+  ogImage={{ src: typeof serviceData?.backgroundImage === 'string' ? serviceData.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />
@@ -89,4 +83,4 @@ const translationSlug = "ingles-para-tecnologia";
   
   <!-- CTA Section -->
   <CtaSection content={ctaContent} />
-</Layout>
+</Base>

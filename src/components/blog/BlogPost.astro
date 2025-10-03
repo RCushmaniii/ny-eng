@@ -7,7 +7,7 @@ import { Image } from 'astro:assets';
 
 interface Props {
   title: string;
-  excerpt: string;
+  excerpt?: string;
   featuredImage?: any; // Astro image object
   imageAlt: string;
   publishDate: Date;
@@ -39,7 +39,7 @@ const validCategories = postCategories.filter((categoryName: string) => {
 ---
 
 <a 
-  href={`/${lang}/blog/${cleanSlug}`} 
+  href={`/${lang}/blog/${cleanSlug}/`} 
   class="group flex flex-col h-full overflow-hidden bg-white rounded-lg border border-black transition-all duration-300 hover:border-primary"
   data-aos="fade-up"
   data-aos-delay={index * 100}
@@ -68,16 +68,17 @@ const validCategories = postCategories.filter((categoryName: string) => {
     </h2>
     
     <p class="mt-2 mb-8 text-body-base line-clamp-4 flex-grow text-small group-hover:text-gray-700 transition-colors duration-300">
-      {excerpt}
+      {excerpt ?? 'Read more...'}
     </p>
     
     <!-- Categories as hashtags at the bottom -->
     <div class="absolute bottom-4 left-4 flex flex-wrap">
       {validCategories.map(categoryName => (
-        <div onclick="event.stopPropagation()">
+        <div class="stop-prop">
           <HashtagCategory category={categoryName} lang={lang} />
         </div>
       ))}
     </div>
+    
   </div>
 </a>

@@ -1,0 +1,220 @@
+---
+/**
+ * DocsLayout.astro - Development-only layout for rendering documentation
+ * Used exclusively for previewing markdown documentation during development
+ */
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "NY English Teacher Documentation" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="zeus">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | NY English Teacher Docs</title>
+    <meta name="description" content={description} />
+    
+    <!-- Project Tailwind CSS -->
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    
+    <!-- Custom documentation styles using project variables -->
+    <style>
+      /* Use project fonts and colors */
+      body {
+        font-family: var(--font-base);
+        background-color: var(--color-background);
+        color: var(--color-text);
+      }
+      
+      /* Documentation-specific styling */
+      .docs-content {
+        max-width: var(--container-base);
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+      
+      .docs-content h1 {
+        font-family: var(--font-headline);
+        font-size: var(--text-h1);
+        font-weight: 700;
+        color: var(--color-headline);
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid var(--color-primary);
+        padding-bottom: 1rem;
+      }
+      
+      .docs-content h2 {
+        font-family: var(--font-headline);
+        font-size: var(--text-h2);
+        font-weight: 600;
+        color: var(--color-headline);
+        margin: 2rem 0 1rem 0;
+        border-left: 4px solid var(--color-primary);
+        padding-left: 1rem;
+      }
+      
+      .docs-content h3 {
+        font-family: var(--font-headline);
+        font-size: var(--text-h3);
+        font-weight: 600;
+        color: var(--color-headline);
+        margin: 1.5rem 0 0.75rem 0;
+      }
+      
+      .docs-content p {
+        font-family: var(--font-base);
+        color: var(--color-body-base);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+      
+      .docs-content ul, .docs-content ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .docs-content li {
+        color: var(--color-body-base);
+        margin-bottom: 0.5rem;
+      }
+      
+      .docs-content a {
+        color: var(--color-primary);
+        text-decoration: underline;
+      }
+      
+      .docs-content a:hover {
+        color: var(--color-primary-light);
+      }
+      
+      .docs-content code {
+        background-color: var(--color-background-light);
+        color: var(--color-primary);
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: var(--text-small);
+        font-family: 'Courier New', monospace;
+      }
+      
+      .docs-content pre {
+        background-color: var(--color-background-dark);
+        color: #ffffff;
+        padding: 1rem;
+        border-radius: var(--border-radius-base);
+        overflow-x: auto;
+        margin-bottom: 1rem;
+      }
+      
+      .docs-content pre code {
+        background-color: transparent;
+        color: #ffffff;
+        padding: 0;
+      }
+      
+      .docs-content blockquote {
+        border-left: 4px solid var(--color-secondary);
+        background-color: var(--color-background-light);
+        padding: 1rem;
+        margin: 1rem 0;
+        font-style: italic;
+      }
+      
+      .docs-content table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid var(--color-border);
+        margin-bottom: 1rem;
+      }
+      
+      .docs-content th, .docs-content td {
+        border: 1px solid var(--color-border);
+        padding: 0.75rem;
+        text-align: left;
+      }
+      
+      .docs-content th {
+        background-color: var(--color-background-light);
+        font-weight: 600;
+        color: var(--color-headline);
+      }
+      
+      /* Navigation styling */
+      .docs-nav {
+        background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+        color: #ffffff;
+        padding: 1rem;
+        box-shadow: var(--shadow-lg);
+      }
+      
+      .docs-nav h1 {
+        font-family: var(--font-headline);
+        font-size: var(--text-xl);
+        font-weight: 700;
+        margin-bottom: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+        color: #ffffff;
+      }
+      
+      .dev-warning {
+        background-color: #fef3c7;
+        border-left: 4px solid var(--color-warning);
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: var(--border-radius-small);
+      }
+    </style>
+  </head>
+  
+  <body class="bg-gray-50 min-h-screen">
+    <!-- Navigation Header -->
+    <nav class="docs-nav">
+      <div class="max-w-4xl mx-auto px-6">
+        <h1>📚 NY English Teacher Documentation</h1>
+        <p class="text-blue-100 text-sm mt-1">Development Preview</p>
+      </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="docs-content">
+      <!-- Development Warning -->
+      <div class="dev-warning">
+        <div class="flex items-center">
+          <span class="text-2xl mr-3">⚠️</span>
+          <div>
+            <p class="font-semibold text-yellow-800">Development Mode Only</p>
+            <p class="text-yellow-700 text-sm">This documentation preview is only available during development and will not be included in production builds.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Documentation Content -->
+      <article class="prose prose-lg max-w-none">
+        <slot />
+      </article>
+      
+      <!-- Footer -->
+      <footer class="mt-12 pt-8 border-t border-gray-200">
+        <div class="flex justify-between items-center text-sm text-gray-500">
+          <p>NY English Teacher Documentation</p>
+          <p>Last updated: {new Date().toLocaleDateString()}</p>
+        </div>
+      </footer>
+    </main>
+    
+    <!-- Back to top button -->
+    <button 
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+      class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors"
+      title="Back to top"
+    >
+      ↑
+    </button>
+  </body>
+</html>

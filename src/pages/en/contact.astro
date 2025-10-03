@@ -1,5 +1,5 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import ContactInfo from "@components/sections/ContactInfo.astro";
 import nycStatueOfLiberty from "@assets/images/contact/nyc-statue-of-liberty.jpg";
@@ -24,20 +24,22 @@ const footerCta = {
 
 // Page-specific metadata
 const metadata = {
-    title: "Contact Us", 
+    title: "Contact | New York English Teacher", 
     description: "Reach me via this form or WhatsApp for questions, coaching inquiries, or more information about professional and business English classes." 
 };
 ---
 
-<Layout 
+<Base 
     lang="en" 
-    translationSlugEs="/es/contact" 
+    tkey="contact"
     title={metadata.title} 
     description={metadata.description} 
-    footerCta={footerCta}
-    image="/images/logos/new-york-english-og-wide.jpg"
-    whatsappImage="/images/logos/new-york-english-og.jpg"
-    linkedinImage="/images/logos/new-york-english-og-wide.jpg"
+    ogImage={{
+        src: "/images/logos/new-york-english-og.jpg",
+        alt: "Contact New York English Teacher - Professional English Communication Coach",
+        width: 1200,
+        height: 630
+    }}
 >
     <InnerHero 
         content={{
@@ -47,4 +49,4 @@ const metadata = {
         }} 
     />
     <ContactInfo background="base" padding="base" lang="en" />
-</Layout>
+</Base>

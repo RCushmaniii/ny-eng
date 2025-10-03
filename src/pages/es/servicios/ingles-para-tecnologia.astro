@@ -1,5 +1,5 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
@@ -43,10 +43,9 @@ const metodologiaEs: Methodology = {
   ]
 };
 
-// Import testimonials and select featured one
+// Import testimonials and select Julio testimonial
 import { testimonials } from "@data/testimonials/es";
-const featuredTestimonialSlug = 'hugo-lopez-tech-lead';
-const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
+const featuredTestimonial = testimonials[0]; // Julio Aldana testimonial
 
 // SEO metadata
 const title = "Coaching de Inglés para Tecnología | Comunica Conceptos Técnicos | NY English";
@@ -87,17 +86,14 @@ const ctaContent = {
   ]
 };
 
-// Translation slug for English version
-const translationSlug = "tech-english";
 ---
 
-<Layout
+<Base
   title={title}
   description={seoDescription}
   lang="es"
-  translationSlugEn={`/en/services/${translationSlug}`}
-  image={techService?.backgroundImage || "/images/logos/new-york-english-og-wide.jpg"}
-  hideCta={true}
+  tkey="services/tech-english"
+  ogImage={{ src: typeof techService?.backgroundImage === 'string' ? techService.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />
@@ -115,4 +111,4 @@ const translationSlug = "tech-english";
   
   <!-- Final CTA -->
   <CtaSection content={ctaContent} />
-</Layout>
+</Base>

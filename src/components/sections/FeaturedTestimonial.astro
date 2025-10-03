@@ -40,13 +40,25 @@ const paddingClasses = {
 
         <!-- Author information with avatar -->
         <figcaption class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-          <Image 
-            src={testimonial.avatar} 
-            alt={`${testimonial.author} - ${testimonial.position}`} 
-            class="w-16 h-16 rounded-full border-2 border-blue-400 shadow-lg" 
-            widths={[64, 128]} 
-            sizes="64px"
-          />
+          {typeof testimonial.avatar === 'object' ? (
+            <Image 
+              src={testimonial.avatar as any} 
+              alt={`${testimonial.author} - ${testimonial.position}`} 
+              class="w-16 h-16 rounded-full border-2 border-blue-400 shadow-lg" 
+              widths={[64, 128]} 
+              sizes="64px"
+            />
+          ) : (
+            <img
+              src={testimonial.avatar as any}
+              alt={`${testimonial.author} - ${testimonial.position}`}
+              class="w-16 h-16 rounded-full border-2 border-blue-400 shadow-lg"
+              width="64"
+              height="64"
+              loading="lazy"
+              decoding="async"
+            />
+          )}
           
           <div class="text-center sm:text-left">
             <div class="font-semibold text-white text-lg">{testimonial.author}</div>

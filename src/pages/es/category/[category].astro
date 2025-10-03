@@ -1,153 +1,95 @@
 ---
-import { getCollection } from 'astro:content';
-import PaginatedBlogLayout from '@components/blog/PaginatedBlogLayout.astro';
-import { categories, type Category } from '@data/categories';
-import { siteConfig, blogSetting } from '@data/config';
-import { serviceCategories } from '@data/service-categories';
+import { getCollection, type CollectionEntry } from "astro:content";
+import { categories } from "@data/categories";
+import { routeFor, type TKey } from "../../../lib/i18n";
+import { siteConfig } from "@data/config";
+import Base from "@layouts/Base.astro";
+import BlogList from "@components/blog/BlogList.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import blogHeroImage from "../../../content/blog/images/blog-hero.jpg";
 
 export async function getStaticPaths() {
-  // Create a properly typed array to hold all paths
-  // Define the type to match Astro's expected return type for getStaticPaths
-  type StaticPath = {
-    params: { category: string };
-    props: { categoryData: Category };
-  };
-  
-  const allPaths: StaticPath[] = [];
-  
-  // Generate paths for regular categories with Spanish slugs ONLY
-  categories.forEach(category => {
-    const esSlug = category.esSlug || 
-      (category.name_es ? 
-        category.name_es.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '') : 
-        category.slug);
-    allPaths.push({
-      params: { category: esSlug },
-      props: { categoryData: { ...category, esSlug } },
-    });
-  });
-  
-  // Also generate paths for service categories that might be referenced in blog posts
-  // This ensures links from CategoryPill won't lead to 404s
-  serviceCategories.forEach(service => {
-    allPaths.push({
-      params: { category: service.esSlug },
-      props: {
-        categoryData: {
-          name: service.label,
-          name_es: service.esLabel,
-          slug: service.slug,
-          esSlug: service.esSlug,
-          description: `Publicaciones relacionadas con ${service.esLabel}`,
-        } as Category
+  // Generate paths for Spanish categories using i18n system
+  return categories.map((category) => {
+    const tkey = `category/${category.slug}` as TKey;
+    const esPath = routeFor.es[tkey];
+
+    // Handle both English and Spanish slugs
+    return [
+      // English slug -> Spanish URL
+      {
+        params: { category: category.slug },
+        props: { category, tkey },
       },
-    });
-  });
-  
-  return allPaths;
+      // Spanish slug -> Spanish URL
+      {
+        params: { category: category.esSlug || category.slug },
+        props: { category, tkey },
+      },
+    ];
+  }).flat();
 }
 
 interface Props {
-  categoryData: Category;
+  category: typeof categories[number];
+  tkey: TKey;
 }
 
-const { categoryData } = Astro.props;
+const { category, tkey } = Astro.props;
 
-// Fetch all Spanish blog posts
-const allSpanishPosts = await getCollection('blog', ({ id }) => id.startsWith('es/'));
+// Get canonical paths from i18n system
+const canonicalEnPath = routeFor.en[tkey];
+const canonicalEsPath = routeFor.es[tkey];
 
-// FINAL FIX: Ultra-reliable matching for the Spanish category pages
-const filteredPosts = allSpanishPosts.filter(post => {
-  // Skip posts that are unpublished or have no categories
-  if (!post.data.categories || post.data.publish === false) {
-    return false;
-  }
-
-  // Get normalized versions of post categories
-  const normalizedPostCategories = post.data.categories.map(cat => {
-    if (typeof cat !== 'string') return '';
-    return cat.trim().toLowerCase();
-  });
-  
-  // Get normalized Spanish category name
-  const normalizedCategoryName = (categoryData.name_es || categoryData.name).trim().toLowerCase();
-  
-  // First approach: Direct check if post has the normalized category name
-  if (normalizedPostCategories.includes(normalizedCategoryName)) {
-    return true;
-  }
-  
-  // Second approach: Check if any category slug matches
-  // This uses the slug from the URL to find matching posts
-  for (const postCatName of post.data.categories) {
-    // Find the category object that matches this post category name (Spanish version)
-    const matchingCategory = categories.find(cat => {
-      if (typeof postCatName !== 'string' || !cat.name_es) return false;
-      
-      const normalizedPostCat = postCatName.trim().toLowerCase();
-      const normalizedCatNameEs = cat.name_es.trim().toLowerCase();
-      
-      return normalizedPostCat === normalizedCatNameEs;
-    });
-    
-    // If we found a matching category and its slug matches our URL slug,
-    // then this post belongs in this category page
-    if (matchingCategory && matchingCategory.slug === categoryData.slug) {
-      return true;
-    }
-  }
-  
-  // For Inglés Ejecutivo specifically, do an additional check
-  if (categoryData.slug === 'executive-english') {
-    return normalizedPostCategories.some(cat => 
-      cat.includes('inglés') && cat.includes('ejecutivo')
-    );
-  }
-  
-  return false;
-}).sort((a, b) => {
-  const dateA = new Date(a.data.publishDate).valueOf();
-  const dateB = new Date(b.data.publishDate).valueOf();
-  return dateB - dateA;
-});
-
-// Get the display name for this category in Spanish
-let categoryDisplayName;
-if (categoryData.slug === 'executive-english') {
-  categoryDisplayName = 'Inglés Ejecutivo'; // Fixed title for executive-english in Spanish
-} else {
-  categoryDisplayName = categoryData.name_es || categoryData.name;
+// If current URL doesn't match the canonical Spanish URL, redirect
+if (Astro.url.pathname !== canonicalEsPath) {
+  return Astro.redirect(canonicalEsPath, 301);
 }
-const pageTitle = `${categoryDisplayName} | Blog`;
-const seoTitle = `Publicaciones en ${categoryDisplayName} | ${siteConfig.companyName}`;
-// Use description directly as description_es doesn't exist in the Category type
-const seoDescription = categoryData.description && categoryData.description.length > 80 ? categoryData.description : `Explora artículos, consejos y recursos sobre ${categoryDisplayName}. Mejora tu inglés profesional con publicaciones relevantes para esta categoría.`;
 
-// Determine the corresponding English category slug
-// Assuming categoryData.name (English name) is the key for linking
-const englishCategory = categories.find(cat => cat.name === categoryData.name);
-const translationSlugEn = englishCategory && englishCategory.slug ? `/en/category/${englishCategory.slug}` : '/en/blog'; // Fallback to main EN blog
+// Get Spanish blog posts for this category
+const allPosts = await getCollection("blog");
+const categoryPosts = allPosts
+  .filter((post: CollectionEntry<"blog">) => {
+    // Only Spanish posts that are published
+    if (!post.id.startsWith("es/") || post.data.publish === false) return false;
 
---- 
+    // Check if post categories include this category name
+    const categoryNames = post.data.categories || [];
+    return categoryNames.includes(category.name_es || category.name);
+  })
+  .sort(
+    (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+      new Date(b.data.publishDate).getTime() -
+      new Date(a.data.publishDate).getTime()
+  );
 
-{(() => {
-  // Create a properly typed props object
-  const layoutProps = {
-    posts: filteredPosts,
-    currentPage: 1,
-    totalPages: 1,
-    baseUrl: `/es/category/${categoryData.esSlug || categoryData.slug}`,
-    title: `Categoría: ${categoryDisplayName}`,
-    subtitle: seoDescription,
-    currentCategory: categoryDisplayName,
-    currentCategorySlug: categoryData.esSlug || categoryData.slug, // Pass Spanish slug for button highlighting
-    translationSlugEn: translationSlugEn.replace(/^\/en\//, ''),
-    translationSlugEs: categoryData.esSlug || categoryData.slug, // Always pass the correct Spanish slug for the switcher
-    heroImage: blogSetting.categoryHeroImage,
-    heroImageAlt: blogSetting.categoryHeroImageAlt || `Categoría: ${categoryDisplayName}`,
-    hasMultiplePages: false,
-    lang: 'es' // Explicitly set language to Spanish for i18n
-  };
-  
-  return <PaginatedBlogLayout {...layoutProps} />;
-})()}
+// SEO content
+const seoTitle = `${category.name_es || category.name} | ${siteConfig.companyName}`;
+const seoDescription = category.description_es || category.description;
+
+// Create custom hreflangs for this specific category
+const customHreflangs = [
+  { lang: 'en-US', href: canonicalEnPath },
+  { lang: 'es-MX', href: canonicalEsPath }
+];
+
+// Hero content
+const heroContent = {
+  title: category.name_es || category.name,
+  description: category.description_es || category.description,
+  backgroundImage: blogHeroImage,
+  overlayOpacity: 0.7
+};
+---
+
+<Base lang="es" tkey={tkey} title={seoTitle} description={seoDescription} customHreflangs={customHreflangs}>
+  <main role="main">
+    <InnerHero content={heroContent} />
+    <BlogList
+      posts={categoryPosts}
+      currentCategory={category.name_es || category.name}
+      currentCategorySlug={category.esSlug || category.slug}
+      lang="es"
+    />
+  </main>
+</Base>

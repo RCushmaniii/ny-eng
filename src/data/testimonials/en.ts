@@ -2,14 +2,15 @@ import type { ImageMetadata } from 'astro';
 import { serviceCategories } from '@data/service-categories.js';
 
 // Import testimonial images
-import emmanuelTestimonial from '../../assets/images/testimonials/emmanuel-testimonial.jpeg';
+import emmanuelTestimonial from '../../assets/images/testimonials/emmanuel-testimonial.jpg';
 import erikaTestimonial from '../../assets/images/testimonials/erika-testimonial.jpg';
+// Avoid importing a malformed image through Astro metadata pipeline; use a public image path instead
 import julioTestimonial from '../../assets/images/testimonials/julio-testimonial.jpg';
-import hugoTestimonial from '../../assets/images/testimonials/hugo-testimonial.jpeg';
+import hugobTestimonial from '../../assets/images/testimonials/hugob-testimonial.jpg';
 import hugolTestimonial from '../../assets/images/testimonials/hugo-l-testimonial.jpg';
-import andresTestimonial from '../../assets/images/testimonials/andres-testimonial.jpeg';
+import andresTestimonial from '../../assets/images/testimonials/andres-testimonial.jpg';
 import karlaTestimonial from '../../assets/images/testimonials/karla-testimonial.jpg';
-import andreaTestimonial from '../../assets/images/testimonials/andrea-testimonial.jpeg';
+import andreaTestimonial from '../../assets/images/testimonials/andrea-testimonial.jpg';
 import albertoTestimonial from '../../assets/images/testimonials/alberto-testimonial.jpg';
 import humbertoTestimonial from '../../assets/images/testimonials/humberto-testimonial.jpg';
 import ricardoTestimonial from '../../assets/images/testimonials/ricardo-testimonial.jpg';
@@ -26,7 +27,7 @@ export interface Testimonial {
   author: string;
   position: string;
   company: string;
-  avatar: ImageMetadata;
+  avatar: ImageMetadata | string;
   stars?: number;
   industries: string[]; // The new standardized array of category slugs
   slug: string;
@@ -50,7 +51,7 @@ export const testimonials: Testimonial[] = [
     slug: "julio-smarttie",
     headline: "From Good to Great: How Coaching Transformed My Leadership Communication",
     avatarSize: "md",
-    link: "/en/services/startup-founders",
+    link: "/en/services/startup-founders/",
     linkText: "👉 English Coaching for Startup Founders",
     status: "published"
   },
@@ -60,13 +61,13 @@ export const testimonials: Testimonial[] = [
     author: "Hugo Blum",
     position: "CEO",
     company: "100 Ladrillos",
-    avatar: hugoTestimonial,
+    avatar: hugobTestimonial,
     stars: 5,
     industries: ["executive-english", "startup-founders"],
     slug: "hugo-blum-100-ladrillos",
     headline: "From Founder to CEO: Leading with Confidence in English",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-fundadores-de-startups",
+    link: "/es/servicios/ingles-para-fundadores-de-startups/",
     linkText: "👉 Coaching de Inglés para Fundadores y CEOs de Startups",
 
     status: "published"
@@ -83,7 +84,7 @@ export const testimonials: Testimonial[] = [
     slug: "andres-driscolls",
     headline: "Building Cross-Border Confidence: My Executive English Journey",
     avatarSize: "md",
-    link: "/en/services/executive-english",
+    link: "/en/services/executive-english/",
     linkText: "👉 English Coaching for Executives",
     status: "published"
   },
@@ -99,7 +100,7 @@ export const testimonials: Testimonial[] = [
     slug: "luis-manuel-becerra-lucatero-skysense",
     headline: "Executive Presence & High-Impact Communication for a Global CTO",
     avatarSize: "md",
-    link: "/en/services/executive-english",
+    link: "/en/services/executive-english/",
     linkText: "👉 English Coaching for Executives",
     status: "published"
   },
@@ -114,7 +115,7 @@ export const testimonials: Testimonial[] = [
     slug: "noe-martinez-high-stakes-english",
     headline: "Blending Language and Business Coaching for Real Growth",
     avatarSize: "md",
-    link: "/en/services/high-stakes-english",
+    link: "/en/services/high-stakes-english/",
     linkText: "👉 English Coaching for High-Stakes Career Success",
     status: "published"
   },
@@ -130,7 +131,7 @@ export const testimonials: Testimonial[] = [
     slug: "andrea-ceva-logistics",
     headline: "Mastering High-Stakes Business Communication in Logistics",
     avatarSize: "md",
-    link: "/en/services/high-stakes-english",
+    link: "/en/services/high-stakes-english/",
     linkText: "👉 English Coaching for High-Stakes Career Success",
     status: "published"
   },
@@ -148,7 +149,7 @@ Robert's coaching has not only enabled me to overcome these challenges but has a
     slug: "karla-sanmina-corporation",
     headline: "Elevating Executive Communication Skills in Global Logistics",
     avatarSize: "md",
-    link: "/en/services/logistics-english",
+    link: "/en/services/logistics-english/",
     linkText: "👉 English Coaching for Logistics Professionals",
     status: "published"
   },
@@ -164,7 +165,7 @@ Robert's coaching has not only enabled me to overcome these challenges but has a
     slug: "dra-erika-itzel-medical-doctor",
     headline: "Building Confidence and Clarity for International Patient Care",
     avatarSize: "md",
-    link: "/en/services/professional-english",
+    link: "/en/services/professional-english/",
     linkText: "👉 English Coaching for Medical Professionals",
     status: "published"
   },
@@ -180,7 +181,7 @@ Robert's coaching has not only enabled me to overcome these challenges but has a
     slug: "emmanuel-ibarra-castillo-ramos-ripoll-schuster",
     headline: "Confident Legal Communication with International Clients",
     avatarSize: "md",
-    link: "/en/services/professional-english",
+    link: "/en/services/professional-english/",
     linkText: "👉 English Coaching for Medical & Legal Professionals",
     status: "draft"
   },
@@ -196,7 +197,7 @@ Robert's coaching has not only enabled me to overcome these challenges but has a
     slug: "alberto-escobar-terramar-brands",
     headline: "Mastering Business English for Stronger Global Leadership",
     avatarSize: "md",
-    link: "/en/services/executive-english",
+    link: "/en/services/executive-english/",
     linkText: "👉 English Coaching for Executives",
     status: "published"
   },
@@ -216,7 +217,7 @@ Robert will be an outstanding asset to anyone seeking to elevate their professio
     slug: "hugo-lopez-continental",
     headline: "Mastering Executive Communication in Global Engineering",
     avatarSize: "md",
-    link: "/en/services/high-stakes-english",
+    link: "/en/services/high-stakes-english/",
     linkText: "👉 English Coaching for High Pressure Presentations",
     status: "published"
   },
@@ -234,7 +235,7 @@ With Robert's coaching, I've become more natural in conversations, better at str
     slug: "ricardo-mendoza-mountz-torque",
     headline: "Fluent Technical Sales for Factory Automation",
     avatarSize: "md",
-    link: "/en/services/tech-english",
+    link: "/en/services/tech-english/",
     linkText: "👉 English Coaching for Engineers & Tech Leads",
     status: "draft"
   },
@@ -250,7 +251,7 @@ With Robert's coaching, I've become more natural in conversations, better at str
     slug: "humberto-grimaldo-tc-logistics",
     headline: "Confident Communication for International Logistics Success",
     avatarSize: "md",
-    link: "/en/services/logistics-english",
+    link: "/en/services/logistics-english/",
     linkText: "👉 English Coaching for Logistics Professionals",
     status: "published"
   },
@@ -266,7 +267,7 @@ With Robert's coaching, I've become more natural in conversations, better at str
     slug: "javier-ramirez-sophia",
     headline: "Fluent, Confident English for Global Project Management",
     avatarSize: "md",
-    link: "/en/services/executive-english",
+    link: "/en/services/executive-english/",
     linkText: "👉 English Coaching for Executives",
     status: "draft"
   },
@@ -282,7 +283,7 @@ With Robert's coaching, I've become more natural in conversations, better at str
     slug: "jonathan-emmaus-infosys",
     headline: "Confident Communication Across Global Tech Teams",
     avatarSize: "md",
-    link: "/en/services/tech-english",
+    link: "/en/services/tech-english/",
     linkText: "👉 English Coaching for Engineers & Tech Leads",
     status: "published"
   },
@@ -302,7 +303,7 @@ With Robert's coaching, I've become more natural in conversations, better at str
     slug: "tania-ruelas-forvia-hella",
     headline: "Fluent English for Global Clients",
     avatarSize: "md",
-    link: "/en/services/tech-english",
+    link: "/en/services/tech-english/",
     linkText: "👉 English Coaching for Engineers & Tech Leads",
     status: "published"
   },
@@ -343,3 +344,4 @@ export const industryLabelsEs = {
   "professional-english": serviceCategories[4].esLabel,
   "high-stakes-english": serviceCategories[5].esLabel
 } as const;
+

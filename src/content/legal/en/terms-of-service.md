@@ -5,10 +5,10 @@ translations:
   es: "/es/legal/terms-of-service/"
 seo:
   title: "Terms of Service - New York English Teacher"
-  description: "Review the terms and conditions for using the New York English Teacher website and services."
+  description: "Terms and conditions for New York English Teacher's website and coaching services. Includes user rights, acceptable use policies, and service commitments."
 ---
 
-# Terms and Conditions of Use
+## Terms and Conditions of Use
 
 **Effective Date:** April 2, 2023  
 **Last Updated:** April 10, 2025

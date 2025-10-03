@@ -1,0 +1,22 @@
+---
+import Base from "@layouts/Base.astro";
+import TestimonialsGrid from "@components/sections/TestimonialsGrid.astro";
+import { publishedTestimonials } from "@data/testimonials/es";
+
+const title = "Testimonios | NY English";
+const description = "Historias de éxito de ejecutivos, fundadores y profesionales que transformaron su comunicación en inglés.";
+---
+
+<Base
+  lang="es"
+  tkey="testimonials"
+  title={title}
+  description={description}
+>
+  <TestimonialsGrid
+    testimonials={publishedTestimonials}
+    title="Historias de Éxito"
+    description="Descubre cómo ejecutivos, fundadores y profesionales transformaron su comunicación en inglés para situaciones importantes."
+    lang="es"
+  />
+</Base>

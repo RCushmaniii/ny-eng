@@ -1,16 +1,17 @@
 ---
 import { blogSetting } from '@data/config';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import PaginatedBlogLayout from '@components/blog/PaginatedBlogLayout.astro';
 import blogHero from '@assets/images/blog-hero.jpg';
+import type { TKey } from '../../../lib/i18n';
 
 export async function getStaticPaths() {
   // Get all blog posts and filter to Spanish only and published only
   const allPosts = await getCollection('blog');
-  const filteredPosts = allPosts.filter(post => post.id.startsWith('es/') && post.data.publish === true);
+  const filteredPosts = allPosts.filter((post: CollectionEntry<'blog'>) => post.id.startsWith('es/') && post.data.publish === true);
 
   // Sort posts by date (newest first)
-  const sortedPosts = filteredPosts.sort((a, b) => 
+  const sortedPosts = filteredPosts.sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => 
     b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
   );
   
@@ -46,17 +47,23 @@ export async function getStaticPaths() {
 }
 
 const { page, totalPages, posts, hasMultiplePages } = Astro.props;
+
+// Use centralized i18n system for blog pagination
+const lang = 'es';
+const tkey = 'blog' as TKey;
 ---
 
 <PaginatedBlogLayout 
     posts={posts}
     currentPage={page}
     totalPages={totalPages}
-    baseUrl="/es/blog"
+    baseUrl="/es/blog/"
     title="Blog"
-    subtitle="Consejos prácticos y experiencias del mundo real para dominar el inglés de negocios."
+    subtitle="Consejos expertos, estrategias y ejemplos del mundo real para dominar el inglés empresarial. Mejora tus habilidades de comunicación profesional con consejos prácticos."
     heroImage={blogHero}
     heroImageAlt="Imagen de héroe del blog"
-    translationSlugEn={Astro.params.page === '1' ? '' : Astro.params.page}
+    translationSlugEn={`/en/blog/${page}/`}
     hasMultiplePages={hasMultiplePages}
+    lang="es"
+    tkey={tkey}
 />

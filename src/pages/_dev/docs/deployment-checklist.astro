@@ -1,0 +1,25 @@
+---
+/**
+ * Deployment Checklist Documentation - Proper Astro page with markdown import
+ */
+import MarkdownLayout from '@layouts/MarkdownLayout.astro';
+import { marked } from 'marked';
+
+// Import the DEPLOYMENT-CHECKLIST.md content
+const deploymentContent = await import('../../../../docs/DEPLOYMENT-CHECKLIST.md?raw');
+const markdownText = deploymentContent.default;
+
+// Convert markdown to HTML
+const htmlContent = marked(markdownText);
+
+const frontmatter = {
+  title: 'Deployment Checklist',
+  description: 'Complete pre-deployment verification checklist including SEO, performance, and functionality tests',
+  category: 'Operations',
+  icon: '🚀'
+};
+---
+
+<MarkdownLayout frontmatter={frontmatter}>
+  <Fragment set:html={htmlContent} />
+</MarkdownLayout>
