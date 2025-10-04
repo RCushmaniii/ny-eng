@@ -1,17 +1,22 @@
 ---
-import Layout from "@layouts/Layout.astro";
-const target = "/en/";
+import Base from "@layouts/Base.astro";
+
+// This is a redirect page - minimal SEO needed
+const lang = "en";
+const tkey = "home";
 ---
-<Layout title="Redirecting…">
+<Base 
+  title="New York English Teacher" 
+  description="Professional Business English Coaching"
+  lang={lang}
+  tkey={tkey}
+>
   <noscript>
     <meta http-equiv="refresh" content="0; url=/en/">
-    <p>If you’re not redirected, <a href="/en/">go to English</a>.</p>
+    <p>If you're not redirected, <a href="/en/">go to English</a>.</p>
   </noscript>
   <script is:inline>
-    // Replace so / doesn’t stick in the history
+    // Replace so / doesn't stick in the history
     window.location.replace("/en/");
   </script>
-  <link rel="alternate" hreflang="en" href="/en/">
-  <link rel="alternate" hreflang="es" href="/es/">
-  <link rel="alternate" hreflang="x-default" href="/en/">
-</Layout>
+</Base>

@@ -2,8 +2,8 @@
 import type { Testimonial } from "@data/testimonials/en";
 import TestimonialCard from "@components/ui/TestimonialCard.astro";
 import ExpandableTestimonialCard from "@components/ui/ExpandableTestimonialCard.astro";
-import { industryLabels, industryLabelsEs } from "@data/testimonials/en";
-import { testimonialsByIndustry } from "@data/testimonials/en";
+import { industryLabels as industryLabelsEn, testimonialsByIndustry as testimonialsByIndustryEn } from "@data/testimonials/en";
+import { industryLabels as industryLabelsEs, testimonialsByIndustry as testimonialsByIndustryEs } from "@data/testimonials/es";
 
 interface Props {
   testimonials: Testimonial[];
@@ -23,8 +23,9 @@ const {
   lang = 'en'
 } = Astro.props;
 
-// Get labels based on language
-const labels = lang === 'en' ? industryLabels : industryLabelsEs;
+// Get labels and testimonials by industry based on language
+const labels = lang === 'en' ? industryLabelsEn : industryLabelsEs;
+const testimonialsByIndustry = lang === 'en' ? testimonialsByIndustryEn : testimonialsByIndustryEs;
 
 // Get testimonials for selected industry
 const testimonials = selectedIndustry === 'all' 
@@ -43,9 +44,9 @@ const availableIndustries = Object.entries(testimonialsByIndustry)
 <section class="testimonials-grid py-16 bg-gray-50">
   <div class="container mx-auto px-4">
     <div class="text-center mb-12 pt-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
         {title}
-      </h2>
+      </h1>
       {description && (
         <p class="text-lg text-gray-600 max-w-3xl mx-auto">
           {description}
@@ -61,7 +62,8 @@ const availableIndustries = Object.entries(testimonialsByIndustry)
         <div class="relative">
           <select
             id="industry-filter"
-            class="bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            class="bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 font-sans"
+            style="font-family: NotoSansKR, ui-sans-serif, system-ui, sans-serif;"
           >
             {Object.entries(labels)
               .filter(([key]) => availableIndustries.includes(key))

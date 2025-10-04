@@ -74,6 +74,11 @@ const translationSlug = "preparacion-para-entrevistas";
   lang="en"
   tkey="services/interview-prep"
   ogImage={{ src: typeof serviceData?.backgroundImage === 'string' ? serviceData.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/interview-prep/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/preparacion-para-entrevistas/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/en/services/interview-prep/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

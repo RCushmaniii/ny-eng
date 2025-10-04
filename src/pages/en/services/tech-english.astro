@@ -61,11 +61,16 @@ const translationSlug = "ingles-para-tecnologia";
 ---
 
 <Base
-  title="Technical English Coaching | Master Tech Communication | NY English"
-  description="Master technical English for IT and engineering. Explain complex ideas clearly, lead discussions, and boost your tech career with confidence."
+  title="Tech English Coaching for IT Professionals | NY"
+  description="Master technical English for IT and engineering. Explain complex ideas clearly, lead code reviews and discussions, and boost your tech career with confident English communication."
   lang="en"
   tkey="services/tech-english"
   ogImage={{ src: typeof serviceData?.backgroundImage === 'string' ? serviceData.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/tech-english/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-tecnologia/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/en/services/tech-english/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

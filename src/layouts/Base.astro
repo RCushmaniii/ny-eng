@@ -20,7 +20,7 @@ export interface Props {
   title: string;
   description: string;
   lang: "en" | "es";
-  tkey: TKey;
+  tkey?: TKey;
   ogImage?: { src: string; alt?: string; width?: number; height?: number };
   heroImage?: string | { src: string; width?: number; height?: number };
   heroImageMobile?: string | { src: string; width?: number; height?: number };
@@ -43,9 +43,16 @@ const {
 } = Astro.props;
 
 // Fail fast if required props are missing
-if (!lang || !tkey) {
+if (!lang) {
   throw new Error(
-    `[Base.astro] Missing required prop(s): lang="${lang}", tkey="${tkey}"`
+    `[Base.astro] Missing required prop: lang="${lang}"`
+  );
+}
+
+// If no customHreflangs provided, tkey is required
+if (!customHreflangs && !tkey) {
+  throw new Error(
+    `[Base.astro] Either tkey or customHreflangs must be provided`
   );
 }
 
@@ -67,7 +74,7 @@ if (customCanonical && customHreflangs) {
   // Use custom canonical and hreflang (for blog posts, pagination, etc.)
   canonicalUrl = ensureSlash(customCanonical);
   alternates = customHreflangs.map((alt) => ({
-    lang: alt.lang.replace("-", "_") as Locale, // Convert en-US to en, es-MX to es
+    lang: alt.lang as any, // Keep the original format (en-US, es-MX)
     href: ensureSlash(alt.href),
   }));
   xDefault = ensureSlash(
@@ -76,10 +83,15 @@ if (customCanonical && customHreflangs) {
   );
 } else {
   // Use centralized i18n system (for static pages)
-  const relPath = i18n.routeFor[lang]?.[tkey];
+  if (!tkey) {
+    throw new Error(`[Base.astro] tkey is required when not using customHreflangs`);
+  }
+  
+  const tkeyNonNull = tkey; // TypeScript type narrowing
+  const relPath = i18n.routeFor[lang]?.[tkeyNonNull];
   if (!relPath) {
     throw new Error(
-      `[Base.astro] routeFor missing for lang=${lang} tkey=${tkey}`
+      `[Base.astro] routeFor missing for lang=${lang} tkey=${tkeyNonNull}`
     );
   }
   canonicalUrl = SITE + ensureSlash(relPath);
@@ -88,18 +100,20 @@ if (customCanonical && customHreflangs) {
   alternates = Object.keys(i18n.routeFor)
     .map((l) => ({
       lang: l as Locale,
-      href: SITE + ensureSlash(i18n.routeFor[l as Locale]?.[tkey] ?? ""),
+      href: SITE + ensureSlash(i18n.routeFor[l as Locale]?.[tkeyNonNull] ?? ""),
     }))
     .filter((a) => a.href.endsWith("/")); // drop undefined routes
 
   // x-default: point to your primary language
   xDefault =
-    SITE + ensureSlash(i18n.routeFor[i18n.defaultLocale]?.[tkey] ?? "/en/");
+    SITE + ensureSlash(i18n.routeFor[i18n.defaultLocale]?.[tkeyNonNull] ?? "/en/");
 }
 
 const ogTitle = title;
 const ogDesc = description;
-const ogImg = ogImage?.src ?? "/images/logos/new-york-english-og.jpg";
+// Ensure OG image is absolute URL for proper social sharing
+const ogImgPath = ogImage?.src ?? "/images/logos/new-york-english-og.jpg";
+const ogImg = ogImgPath.startsWith('http') ? ogImgPath : SITE + ogImgPath;
 const ogAlt =
   ogImage?.alt ??
   (lang === "es"
@@ -127,14 +141,14 @@ const footerData = {
 let translationSlugEn = customHreflangs
   ? ensureSlash(customHreflangs
       .find((alt) => alt.lang.startsWith("en"))
-      ?.href?.replace(SITE, "") || i18n.routeFor["en"][tkey])
-  : ensureSlash(i18n.routeFor["en"][tkey]);
+      ?.href?.replace(SITE, "") || (tkey ? i18n.routeFor["en"][tkey] : "/en/"))
+  : ensureSlash(tkey ? i18n.routeFor["en"][tkey] : "/en/");
 
 let translationSlugEs = customHreflangs
   ? ensureSlash(customHreflangs
       .find((alt) => alt.lang.startsWith("es"))
-      ?.href?.replace(SITE, "") || i18n.routeFor["es"][tkey])
-  : ensureSlash(i18n.routeFor["es"][tkey]);
+      ?.href?.replace(SITE, "") || (tkey ? i18n.routeFor["es"][tkey] : "/es/"))
+  : ensureSlash(tkey ? i18n.routeFor["es"][tkey] : "/es/");
 
 // Prevent double language prefixes in URLs
 if (translationSlugEn.includes('/en/blog/en/')) {
@@ -162,7 +176,7 @@ if (translationSlugEs.includes('/es/blog/es/')) {
       alternates.map((a) => (
         <link
           rel="alternate"
-          hreflang={i18n.getHreflangCode(a.lang)}
+          hreflang={customHreflangs ? a.lang : i18n.getHreflangCode(a.lang)}
           href={a.href}
         />
       ))
@@ -187,13 +201,8 @@ if (translationSlugEs.includes('/es/blog/es/')) {
     <meta name="twitter:description" content={ogDesc} />
     <meta name="twitter:image" content={ogImg} />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Noto+Sans+KR:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Self-hosted fonts CSS - loaded FIRST to avoid any processing -->
+    <link rel="stylesheet" href="/fonts.css" />
 
     <!-- Icons & Sitemap -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />

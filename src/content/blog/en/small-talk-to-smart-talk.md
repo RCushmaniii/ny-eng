@@ -12,7 +12,7 @@ publish: true
 
 seo:
   title: "Small Talk Made Easy: 7 Conversation Starters"
-  description: "Master 7 simple conversation openers to connect instantly with global colleagues."
+  description: "Master 7 simple conversation openers to connect instantly with global colleagues. Break the ice and build rapport in any professional setting with confidence."
 ---
 
 ## Why Small Talk Matters

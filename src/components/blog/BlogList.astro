@@ -12,19 +12,28 @@ export interface BlogListProps {
   lang?: 'en' | 'es';
 }
 
-const { posts, currentCategory, currentCategorySlug, lang: propLang } = Astro.props as BlogListProps;
+const { posts: allPosts, currentCategory, currentCategorySlug, lang: propLang } = Astro.props as BlogListProps;
 const lang = propLang ?? (Astro.url.pathname.startsWith('/es/') ? 'es' : 'en');
 const baseBlogUrl = `/${lang}/blog/`;
-const baseCategoryUrl = `/${lang}/category/`;
+const baseCategoryUrl = lang === 'es' ? `/${lang}/categoria/` : `/${lang}/category/`;
 const stripLang = (s: string) => s?.replace(/^(en|es)\//, '') ?? '';
 
-// Filter to only show categories that have posts in the current filtered list
+// Filter posts by current category if one is selected
+const posts = currentCategory
+  ? allPosts.filter(post => {
+      const categoryNames = post.data.categories || [];
+      return categoryNames.includes(currentCategory);
+    })
+  : allPosts;
+
+// Filter to only show categories that have posts in ALL posts (not just filtered)
 // Using a Map to ensure we only have one entry per slug to avoid duplicates
 const categoryMap = new Map();
 
 categories.forEach(category => {
   // Check for category matches in either English or Spanish depending on the language
-  const hasMatchingPosts = posts.some(post => {
+  // Check against ALL posts to show all available category filters
+  const hasMatchingPosts = allPosts.some(post => {
     const categoryNames = post.data.categories || [];
     if (lang === 'es') {
       // For Spanish pages, check if posts include the Spanish category name

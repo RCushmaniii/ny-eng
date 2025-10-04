@@ -94,6 +94,11 @@ const ctaContent = {
   lang="es"
   tkey="services/logistics-english"
   ogImage={{ src: typeof logisticsService?.backgroundImage === 'string' ? logisticsService.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/logistics-english/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-logistica/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/es/servicios/ingles-para-logistica/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

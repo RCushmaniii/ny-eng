@@ -24,21 +24,18 @@ const highStakesService = services.find(
 
 // Import methodology content
 import { coreMethodology } from "@data/methodology";
-
 // Import testimonials and select Hugo Lopez testimonial
 import { testimonials } from "@data/testimonials/en";
 const featuredTestimonial = testimonials[9]; // Hugo Lopez testimonial
 
 // SEO metadata
-const title = "High-Stakes English Coaching | NY English";
-const seoDescription =
-  "Captivate any audience, ace interviews, and deliver powerful presentations with confidence in English. Master high-pressure communication scenarios.";
+const title = "High-Stakes English Coaching for Presentations | NY";
+const seoDescription = "Master English for critical presentations and negotiations. Build confidence when it matters most.";
 
 // Hero content
 const heroContent = {
   title: "High-Stakes English",
-  description:
-    "Captivate any audience, ace interviews, and deliver powerful presentations with confidence.",
+  description: "Master English for critical presentations, negotiations, and high-pressure situations where clarity matters most.",
   backgroundImage: highStakesService?.backgroundImage,
   overlayOpacity: 0.7,
 };
@@ -81,6 +78,11 @@ const translationSlug = "ingles-para-presentaciones";
   lang="en"
   tkey="services/high-stakes-english"
   ogImage={{ src: typeof highStakesService?.backgroundImage === 'string' ? highStakesService.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/high-stakes-english/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-presentaciones/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/en/services/high-stakes-english/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

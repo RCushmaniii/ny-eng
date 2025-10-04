@@ -49,7 +49,7 @@ const featuredTestimonial = testimonials[7]; // Dra. Erika Itzel testimonial
 
 // SEO metadata
 const title = "Coaching de Inglés para Médicos | Comunicación Precisa | NY English";
-const seoDescription = "Domina el inglés médico para comunicarte con precisión con pacientes y colegas internacionales. Coaching personalizado para profesionales de la salud que buscan mejorar su comunicación en inglés.";
+const seoDescription = "Domina el inglés médico para comunicarte con precisión. Coaching para profesionales de la salud.";
 
 // Hero content
 const heroContent = {
@@ -101,6 +101,11 @@ const translationSlug = "medical-english";
     width: medicalService?.backgroundImage?.width,
     height: medicalService?.backgroundImage?.height
   }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/medical-english/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-medicos/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/es/servicios/ingles-para-medicos/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

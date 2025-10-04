@@ -14,16 +14,16 @@ export const categories: Category[] = [
     name_es: 'Inglés para Fundadores de Startups',
     slug: 'startup-founders',
     esSlug: 'ingles-para-fundadores-de-startups',
-    description: 'English coaching for startup founders focusing on pitches, funding, and international growth.',
-    description_es: 'Coaching de inglés para fundadores de startups, enfocado en pitches, financiamiento y crecimiento internacional.'
+    description: 'Master English for startup founders. Perfect your investor pitch, communicate your vision clearly, and lead international teams with confidence.',
+    description_es: 'Domina el inglés para fundadores. Perfecciona tu pitch para inversores, comunica tu visión con claridad y lidera equipos internacionales con confianza.'
   },
   {
     name: 'Tech English',
     name_es: 'Inglés para Tecnología',
     slug: 'tech-english',
     esSlug: 'ingles-para-tecnologia',
-    description: 'Specialized English for tech professionals, covering software, sales, and technical communication.',
-    description_es: 'Inglés especializado para profesionales de la tecnología, cubriendo software, ventas y comunicación técnica.'
+    description: 'Master technical English for IT and engineering. Explain complex concepts clearly, lead code reviews, and advance your tech career with confident communication.',
+    description_es: 'Domina el inglés técnico para IT e ingeniería. Explica conceptos complejos con claridad, lidera code reviews y avanza tu carrera tecnológica con comunicación segura.'
   },
   {
     name: 'Logistics English',
@@ -38,16 +38,16 @@ export const categories: Category[] = [
     name_es: 'Inglés para Profesionales',
     slug: 'professional-english',
     esSlug: 'ingles-para-profesionales',
-    description: 'General professional English for improving workplace communication, emails, and meetings.',
-    description_es: 'Inglés profesional general para mejorar la comunicación en el lugar de trabajo, correos electrónicos y reuniones.'
+    description: 'Improve professional English for workplace success. Master business communication, write effective emails, and lead confident meetings with colleagues and clients.',
+    description_es: 'Mejora tu inglés profesional para el éxito laboral. Domina la comunicación empresarial, escribe correos efectivos y lidera reuniones seguras con colegas y clientes.'
   },
   {
     name: 'High-Stakes English',
     name_es: 'Inglés para Presentaciones',
     slug: 'high-stakes-english',
     esSlug: 'ingles-para-presentaciones',
-    description: 'Advanced communication skills for high-stakes presentations, negotiations, and public speaking.',
-    description_es: 'Habilidades de comunicación avanzadas para presentaciones de alto impacto, negociaciones y hablar en público.'
+    description: 'Master English for critical presentations and negotiations. Build confidence and clarity for high-pressure situations where your communication matters most.',
+    description_es: 'Domina el inglés para presentaciones críticas y negociaciones. Desarrolla confianza y claridad para situaciones de alta presión donde tu comunicación es crucial.'
   },
   // Core Categories based on the new structure
   {
@@ -87,8 +87,8 @@ export const categories: Category[] = [
     name_es: 'Inglés Ejecutivo',
     slug: 'executive-english',
     esSlug: 'ingles-ejecutivo',
-    description: 'Master executive presence, strategic communication, and leadership English for C-level professionals and senior managers. Develop the confidence and language skills needed for boardroom presentations, international negotiations, and high-stakes meetings.',
-    description_es: 'Domina la presencia ejecutiva, la comunicación estratégica y el inglés de liderazgo para profesionales de nivel C y gerentes senior. Desarrolla la confianza y las habilidades lingüísticas necesarias para presentaciones en sala de juntas, negociaciones internacionales y reuniones de alto impacto.'
+    description: 'Master executive presence and strategic communication for C-level leaders. Excel in boardroom presentations and high-stakes meetings.',
+    description_es: 'Domina la presencia ejecutiva y comunicación estratégica para líderes de nivel C. Destaca en presentaciones y reuniones importantes.'
   }
 ];
 

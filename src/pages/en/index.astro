@@ -8,8 +8,8 @@ import Testimonials from "@components/sections/Testimonials-titan.astro";
 import Faqs from "@components/sections/Faqs.astro";
 
 // Define language and tkey for i18n
-const lang = 'en';
-const tkey = 'home';
+const lang = "en";
+const tkey = "home";
 
 import { statsLists } from "@data/stats";
 import { logoLists } from "@data/logos";
@@ -27,34 +27,41 @@ const spanishHomepageUrl = "/es/";
 const testimonialsBlock = {
   eyebrow: "Real Results",
   title: "Why Top-Level Professionals Choose Coaching with Robert",
-  description: "Executives, entrepreneurs, and experts across industries trust New York English to elevate fluency, confidence, and global impact.",
+  description:
+    "Executives, entrepreneurs, and experts across industries trust New York English to elevate fluency, confidence, and global impact.",
   testimonials,
   cta: {
     heading: "For Executives Who Lead in English",
-    description: "Start with a free 30-minute coaching session to boost clarity, confidence, and authority.",
+    description:
+      "Start with a free 30-minute coaching session to boost clarity, confidence, and authority.",
     text: "Book My Free Strategy Call",
     link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
     target: "_blank",
-  }
+  },
 };
 
 const seoTitle = "Professional English Coaching | New York English Teacher";
-const seoDescription = "Boost your English fluency and confidence with personalized coaching tailored for professionals and companies.";
+const seoDescription =
+  "Boost your English fluency and confidence with personalized coaching tailored for professionals and companies.";
 
 const heroContent = {
   title: "Master Business English & Advance Your Career",
-  description: "Tailored English coaching to build confidence, fluency, and professional impact.",
-  buttons: [{
-    text: "Book Your Free Consultation",
-    link: "https://ny-english-teacher.odoo.com/book/7ceefa20", 
-    target: "_blank",
-    variant: "primary" as const,
-  }, {
-    text: "WhatsApp Me",
-    link: "https://wa.link/pk4f97", 
-    target: "_blank",
-    variant: "whatsapp" as const,
-  }],
+  description:
+    "Tailored English coaching to build confidence, fluency, and professional impact.",
+  buttons: [
+    {
+      text: "Book Your Free Consultation",
+      link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
+      target: "_blank",
+      variant: "primary" as const,
+    },
+    {
+      text: "WhatsApp Me",
+      link: "https://wa.link/pk4f97",
+      target: "_blank",
+      variant: "whatsapp" as const,
+    },
+  ],
   backgroundImage: heroSkyline,
   backgroundImageMobile: heroSkyline,
   overlayOpacity: 0.3,
@@ -63,43 +70,55 @@ const heroContent = {
 const featuresSection = {
   eyebrow: "NY ENGLISH OFFERS",
   title: "Personalized English Coaching for Professionals",
-  description: "Whether you need to improve your fluency, ace an interview, or communicate more effectively in business meetings, I'll help you get there.",
-  features: [{
-    title: "1-on-1 Coaching",
-    description: "Personalized lessons aligned with your role and the real-world challenges you face—so every session adds immediate value.",
-    icon: GraduationCap,
-  }, {
-    title: "Corporate Training",
-    description: "Individual coaching that equips your teams and executives with clear, persuasive English.",
-    icon: Users,
-  }, {
-    title: "Interview Preparation",
-    description: "Mock interviews plus targeted feedback so you walk in fully prepared.",
-    icon: Briefcase,
-  }, {
-    title: "Business Presentations",
-    description: "Hands-on practice and structure templates to deliver with confidence.",
-    icon: Presentation,
-  }],
+  description:
+    "Whether you need to improve your fluency, ace an interview, or communicate more effectively in business meetings, I'll help you get there.",
+  features: [
+    {
+      title: "1-on-1 Coaching",
+      description:
+        "Personalized lessons aligned with your role and the real-world challenges you face—so every session adds immediate value.",
+      icon: GraduationCap,
+    },
+    {
+      title: "Corporate Training",
+      description:
+        "Individual coaching that equips your teams and executives with clear, persuasive English.",
+      icon: Users,
+    },
+    {
+      title: "Interview Preparation",
+      description:
+        "Mock interviews plus targeted feedback so you walk in fully prepared.",
+      icon: Briefcase,
+    },
+    {
+      title: "Business Presentations",
+      description:
+        "Hands-on practice and structure templates to deliver with confidence.",
+      icon: Presentation,
+    },
+  ],
 } as const;
 
 const FooterCta = {
   eyebrow: "",
   title: "Transform Your Professional English Today",
-  description: "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
+  description:
+    "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
   hideCta: false,
   button: {
     text: "Reserve My Free Consultation",
     link: "https://ny-english-teacher.odoo.com/book/7ceefa20", // External link
     target: "_blank",
-    rel: "noopener noreferrer"
+    rel: "noopener noreferrer",
   },
 } as const;
 
 const styleGuideSection = {
   eyebrow: "My Teaching Approach",
   headline: "Personalized & Goal-Oriented English Coaching",
-  description: "I use a structured yet flexible approach tailored to your professional needs. Whether you're preparing for an interview, leading a meeting, or improving fluency, my coaching is designed for real-world success.",
+  description:
+    "I use a structured yet flexible approach tailored to your professional needs. Whether you're preparing for an interview, leading a meeting, or improving fluency, my coaching is designed for real-world success.",
   descriptionPoints: [
     "Have lessons built around your own job and goals",
     "Get clear, on-the-spot feedback on pronunciation, phrasing and tone",
@@ -109,25 +128,29 @@ const styleGuideSection = {
     src: styleGuideImage,
     alt: "Professional English coaching session",
   },
-  buttons: [{
-    text: "Explore My Coaching Approach",
-    link: "/en/about/", // Link to about page
-    variant: "primary" as const,
-  }],
+  buttons: [
+    {
+      text: "Explore My Coaching Approach",
+      link: "/en/about/", // Link to about page
+      variant: "primary" as const,
+    },
+  ],
 } as const;
 
 const sideBySideStats = {
   eyebrow: "STATS",
   title: "Speak and Write English with Clarity, Confidence & Ease",
-  description: "I help professionals speak and write English with clarity, purpose, and confidence.Whether you're preparing for interviews, presentations, or everyday business conversations, I'll provide the support you need.",
+  description:
+    "I help professionals speak and write English with clarity, purpose, and confidence.Whether you're preparing for interviews, presentations, or everyday business conversations, I'll provide the support you need.",
   variant: "side-by-side" as const,
   stats: statsLists.withContent.stats,
   content: {
     title: "Speak and Write English with Clarity, Confidence & Ease",
-    description: "I help professionals speak and write English with clarity, purpose, and confidence.Whether you're preparing for interviews, presentations, or everyday business conversations, I'll provide the support you need.",
+    description:
+      "I help professionals speak and write English with clarity, purpose, and confidence.Whether you're preparing for interviews, presentations, or everyday business conversations, I'll provide the support you need.",
     button: {
       text: "Let's Work Together",
-      link: "/en/contact/"
+      link: "/en/contact/",
     },
   },
 } as const;
@@ -135,7 +158,8 @@ const sideBySideStats = {
 const mainCta = {
   eyebrow: "Build Blocks",
   title: "Ready-to-Use Components",
-  description: "Save development time with our pre-built, accessible components. Each one is designed to integrate seamlessly with your projects while maintaining excellent performance.",
+  description:
+    "Save development time with our pre-built, accessible components. Each one is designed to integrate seamlessly with your projects while maintaining excellent performance.",
   button: {
     text: "View All Components",
     link: "/en/components",
@@ -158,14 +182,14 @@ const faqsSection = {
 const recentPostsSection = {
   eyebrow: "RECENT BLOG POSTS",
   title: "Insights for Business Professionals",
-  description: "Practical tips on Business English, career growth, and effective communication.",
+  description:
+    "Practical tips on Business English, career growth, and effective communication.",
   button: {
     text: "See All Articles",
     link: "/en/blog/",
   },
 } as const;
 ---
-
 
 <Base
   lang="en"
@@ -174,16 +198,23 @@ const recentPostsSection = {
   description={seoDescription}
   heroImage={heroContent.backgroundImage}
   heroImageMobile={heroContent.backgroundImageMobile}
-  image="/images/logos/new-york-english-og.jpg"
+  ogImage={{ src: "/images/logos/new-york-english-sq-og.jpg" }}
 >
   <div class="relative bg-background-light">
     <Hero content={heroContent} />
     <Features content={featuresSection} padding="small" background="light" />
     <div class="mb-15 pb-0">
-      <Testimonials content={testimonialsBlock} background="base" padding="small" />
+      <Testimonials
+        content={testimonialsBlock}
+        background="base"
+        padding="small"
+      />
     </div>
 
-    <div class="pt-10 border-t border-gray-200 dark:border-gray-700" style="padding-bottom: var(--spacing-small);">
+    <div
+      class="pt-10 border-t border-gray-200 dark:border-gray-700"
+      style="padding-bottom: var(--spacing-small);"
+    >
       <RecentPosts
         content={recentPostsSection}
         background="base"
@@ -201,6 +232,5 @@ const recentPostsSection = {
     <!-- Stats temporarily removed; FAQs restored for footer anchor -->
     <!-- <Stats content={sideBySideStats} background="dark" padding="base" /> -->
     <Faqs content={faqsSection} background="base" padding="base" />
-
   </div>
 </Base>

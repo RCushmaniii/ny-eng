@@ -94,6 +94,11 @@ const ctaContent = {
   lang="es"
   tkey="services/startup-founders"
   ogImage={{ src: typeof startupFoundersService?.backgroundImage === 'string' ? startupFoundersService.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/startup-founders/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-fundadores-de-startups/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/es/servicios/ingles-para-fundadores-de-startups/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

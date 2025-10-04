@@ -29,8 +29,8 @@ const featuredTestimonialSlug = 'karla-sanmina-corporation';
 const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
 
 // SEO metadata
-const title = "Logistics English Coaching | NY English";
-const seoDescription = "Master the language of the global supply chain. Communicate with precision across carriers, customs, and clients to keep your operations moving smoothly.";
+const title = "Logistics English Coaching for Supply Chain | NY";
+const seoDescription = "Master logistics English for global supply chain. Communicate with precision across carriers, customs, and clients.";
 
 // Hero content
 const heroContent = {
@@ -77,6 +77,11 @@ const translationSlug = "ingles-para-logistica";
   lang="en"
   tkey="services/logistics-english"
   ogImage={{ src: typeof logisticsService?.backgroundImage === 'string' ? logisticsService.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/logistics-english/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-logistica/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/en/services/logistics-english/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

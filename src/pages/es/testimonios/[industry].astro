@@ -39,13 +39,29 @@ const title = currentIndustry === "all"
 const description = currentIndustry === "all"
   ? "Lee historias de éxito de ejecutivos, fundadores y profesionales que transformaron su comunicación en inglés con coaching personalizado."
   : `Lee historias de éxito de ${industryLabel.toLowerCase()} que transformaron su comunicación en inglés con coaching personalizado.`;
+
+// English counterpart for language switcher
+const translationSlugEn = currentIndustry === "all" 
+  ? "/en/testimonials/" 
+  : `/en/testimonials/${currentIndustry}/`;
+
+// Create custom hreflangs for each industry page
+const currentUrl = currentIndustry === "all" 
+  ? "/es/testimonios/" 
+  : `/es/testimonios/${currentIndustry}/`;
+
+const customHreflangs = [
+  { lang: 'en-US', href: translationSlugEn },
+  { lang: 'es-MX', href: currentUrl }
+];
 ---
 
 <Base
   title={title}
   description={description}
   lang="es"
-  tkey="testimonials"
+  customHreflangs={customHreflangs}
+  customCanonical={currentUrl}
   hideCta={true}
 >
   <TestimonialsGrid

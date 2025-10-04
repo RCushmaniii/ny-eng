@@ -22,8 +22,8 @@ const featuredTestimonialSlug = 'hugo-lopez-continental';
 const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
 
 // SEO metadata
-const title = "Public Speaking English Coaching | NY English";
-const seoDescription = "Master confident public speaking in English. Develop powerful presentation skills, overcome speaking anxiety, and command any room with authority.";
+const title = "Public Speaking English Coaching for Leaders | NY";
+const seoDescription = "Master public speaking in English. Develop powerful presentation skills and command any room with confidence.";
 
 // Hero content
 const heroContent = {
@@ -73,6 +73,11 @@ const ctaContent = {
     width: publicSpeakingService?.backgroundImage?.width,
     height: publicSpeakingService?.backgroundImage?.height
   }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/public-speaking-english/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/hablar-en-publico/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/en/services/public-speaking-english/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

@@ -163,40 +163,20 @@ const isCurrentPage = (link: string | undefined) => {
           </ul>
         </nav>
         <div class="flex items-center" id="lang-switcher-container">
-          {!currentPath.startsWith('/es') && (
+          {!currentPath.startsWith('/es') && translationSlugEs && (
             <a
-              href={
-                currentPath === '/en/blog' || currentPath === '/en/blog/'
-                  ? '/es/blog/'
-                  : currentPath.includes('/blog/') && translationSlugEs
-                    ? cleanBlogUrl(translationSlugEs)
-                    : currentPath.startsWith('/en/')
-                      ? withSlash(mapToEs(currentPath))
-                      : '/es/'
-              }
-              class="lang-flag p-1 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white"
-              aria-label="Cambiar a Español"
+              href={translationSlugEs}
+              class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
               data-lang="es"
               data-astro-reload
             >
               <Image src={mexFlag} alt="Bandera de México" width={24} height={24} class="w-6 h-6" />
             </a>
           )}
-          {!currentPath.startsWith('/en') && (
+          {!currentPath.startsWith('/en') && translationSlugEn && (
             <a
-              href={
-                currentPath === '/es/blog' || currentPath === '/es/blog/'
-                  ? '/en/blog/'
-                  : currentPath.includes('/blog/') && translationSlugEn
-                    ? cleanBlogUrl(translationSlugEn)
-                    : currentPath.startsWith('/es/servicios/')
-                      ? withSlash(mapToEn(currentPath))
-                      : currentPath.startsWith('/es/')
-                        ? withSlash(mapToEn(currentPath.replace('/es/', '/en/')))
-                        : '/en/'
-              }
-              class="lang-flag p-1 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white"
-              aria-label="Switch to English"
+              href={translationSlugEn}
+              class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
               data-lang="en"
               data-astro-reload
             >
@@ -263,15 +243,7 @@ const isCurrentPage = (link: string | undefined) => {
       <div class="mt-6 mb-4 flex justify-center gap-4">
         {translationSlugEs && typeof translationSlugEs === 'string' && !currentPath.startsWith('/es') && (
           <a
-            href={
-              currentPath === '/en/blog' || currentPath === '/en/blog/'
-                ? '/es/blog/'
-                : currentPath.includes('/blog/') && translationSlugEs
-                  ? cleanBlogUrl(translationSlugEs)
-                  : currentPath.startsWith('/en/')
-                    ? withSlash(mapToEs(currentPath))
-                    : '/es/'
-            }
+            href={translationSlugEs}
             class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
             aria-label="Cambiar a Español"
             data-lang="es"
@@ -283,17 +255,7 @@ const isCurrentPage = (link: string | undefined) => {
         )}
         {translationSlugEn && typeof translationSlugEn === 'string' && !currentPath.startsWith('/en') && (
           <a
-            href={
-              currentPath === '/es/blog' || currentPath === '/es/blog/'
-                ? '/en/blog/'
-                : currentPath.includes('/blog/') && translationSlugEn
-                  ? cleanBlogUrl(translationSlugEn)
-                  : currentPath.startsWith('/es/servicios/')
-                    ? withSlash(mapToEn(currentPath))
-                    : currentPath.startsWith('/es/')
-                      ? withSlash(mapToEn(currentPath.replace('/es/', '/en/')))
-                      : '/en/'
-            }
+            href={translationSlugEn}
             class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
             aria-label="Switch to English"
             data-lang="en"

@@ -48,7 +48,7 @@ import { testimonials } from "@data/testimonials/es";
 const featuredTestimonial = testimonials[0]; // Julio Aldana testimonial
 
 // SEO metadata
-const title = "Coaching de Inglés para Tecnología | Comunica Conceptos Técnicos | NY English";
+const title = "Coaching de Inglés para Tecnología | NY English";
 const seoDescription = "Domina el inglés técnico para comunicar conceptos complejos con claridad. Desde code reviews hasta discusiones de arquitectura, habla el lenguaje de la tecnología con confianza.";
 
 // Hero content
@@ -94,6 +94,11 @@ const ctaContent = {
   lang="es"
   tkey="services/tech-english"
   ogImage={{ src: typeof techService?.backgroundImage === 'string' ? techService.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/tech-english/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-tecnologia/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/es/servicios/ingles-para-tecnologia/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

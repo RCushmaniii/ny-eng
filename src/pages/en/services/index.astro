@@ -1,12 +1,16 @@
 ---
 // src/pages/en/services/index.astro
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import Hero from "@components/sections/Hero.astro";
 import ServicesGrid from "@components/sections/ServicesGrid.astro";
 import ProfessionalProfiles from "@components/sections/ProfessionalProfiles.astro";
 import CtaBanner from "@components/sections/CtaBanner.astro";
 import { services, professionalProfiles } from "@data/services";
 import servicesHeroImage from "@assets/images/services/services-hero.jpg";
+
+// i18n configuration
+const lang = "en";
+const tkey = "services";
 
 // SEO metadata
 const seoTitle = "Business English Coaching Services | NY English";
@@ -53,16 +57,15 @@ const ctaContent = {
   },
 } as const;
 
-// Translation slug for Spanish version
-const translationSlug = "servicios";
 ---
 
-<Layout
+<Base
   title={seoTitle}
   description={seoDescription}
-  lang="en"
-  translationSlugEs="/es/servicios"
-  image="/images/logos/new-york-english-og-wide.jpg"
+  lang={lang}
+  tkey={tkey}
+  ogImage={{ src: "/images/logos/new-york-english-og-wide.jpg" }}
+  heroImage={servicesHeroImage}
   hideCta={true}
 >
   <!-- Hero Section - Reused from homepage for consistency -->
@@ -83,4 +86,4 @@ const translationSlug = "servicios";
 
   <!-- Final CTA -->
   <CtaBanner content={ctaContent} />
-</Layout>
+</Base>

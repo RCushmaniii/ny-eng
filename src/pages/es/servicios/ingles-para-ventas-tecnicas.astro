@@ -49,8 +49,8 @@ const featuredTestimonialSlug = 'erika-sanchez-microsoft';
 const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
 
 // SEO metadata
-const title = "Coaching de Inglés para Ventas Técnicas | Explica con Claridad | NY English";
-const seoDescription = "Domina el inglés para ventas técnicas. Explica sistemas complejos, especificaciones de productos y soluciones de software con claridad e impacto. Coaching personalizado para profesionales de ventas técnicas.";
+const title = "Coaching de Inglés para Ventas Técnicas | NY English";
+const seoDescription = "Domina el inglés para ventas técnicas. Explica productos complejos con claridad y cierra más ventas.";
 
 // Hero content
 const heroContent = {
@@ -102,6 +102,11 @@ const translationSlug = "technical-sales-english";
     width: technicalSalesService?.backgroundImage?.width,
     height: technicalSalesService?.backgroundImage?.height
   }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/technical-sales-english/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-ventas-tecnicas/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/es/servicios/ingles-para-ventas-tecnicas/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

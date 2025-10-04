@@ -21,8 +21,8 @@ const featuredTestimonialSlug = 'ricardo-mendoza-mountz-torque';
 const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
 
 // SEO metadata
-const title = "Technical Sales English Coaching | NY English";
-const seoDescription = "Bridge the gap between complex product specs and clear, persuasive client solutions. Master technical sales communication for engineers and sales professionals.";
+const title = "Technical Sales English Coaching for Engineers | NY";
+const seoDescription = "Master technical sales English. Explain complex products clearly and close more deals with confident communication.";
 
 // Hero content
 const heroContent = {
@@ -74,6 +74,11 @@ const translationSlug = "ingles-para-ventas-tecnicas";
     width: technicalSalesService?.backgroundImage?.width,
     height: technicalSalesService?.backgroundImage?.height
   }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/technical-sales-english/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-ventas-tecnicas/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/en/services/technical-sales-english/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

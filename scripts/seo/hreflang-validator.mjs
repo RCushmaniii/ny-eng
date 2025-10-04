@@ -13,20 +13,22 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Import the hreflang mappings
-const hreflangUtilPath = join(__dirname, 'src/utils/hreflang.ts');
+// Import the hreflang mappings - fix path to go up to project root
+const projectRoot = join(__dirname, '..', '..');
+const hreflangUtilPath = join(projectRoot, 'src/utils/hreflang.ts');
 const hreflangContent = readFileSync(hreflangUtilPath, 'utf-8');
 
 // Extract hreflang mappings from the TypeScript file with better regex
-const mappingsMatch = hreflangContent.match(/export const hreflangMappings[^=]+=\s*{[\s\S]*?^};/m);
+const mappingsMatch = hreflangContent.match(/export const hreflangMappings[^{]*{[\s\S]*?^};/m);
 if (!mappingsMatch) {
   console.error('❌ Could not extract hreflang mappings');
   process.exit(1);
 }
 
 // Convert TypeScript to JavaScript for evaluation
+// Remove the entire TypeScript type annotation
 let mappingsCode = mappingsMatch[0]
-  .replace('export const hreflangMappings: Record<string, HreflangMapping> = ', 'const hreflangMappings = ')
+  .replace(/export const hreflangMappings[^{]*/, 'const hreflangMappings = ')
   .replace(/as const/g, '')
   .replace(/'/g, '"'); // Convert single quotes to double quotes for JSON compatibility
 
@@ -117,7 +119,7 @@ function validateXDefault() {
 function checkMissingMappings() {
   console.log('📄 Checking for missing page mappings...');
   
-  const pagesDir = join(__dirname, 'src/pages');
+  const pagesDir = join(projectRoot, 'src/pages');
   const allPages = [];
   
   function scanDirectory(dir, basePath = '') {

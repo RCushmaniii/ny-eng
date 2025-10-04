@@ -48,7 +48,7 @@ import { testimonials } from "@data/testimonials/es";
 const featuredTestimonial = testimonials[9]; // Hugo Lopez testimonial
 
 // SEO metadata
-const title = "Coaching de Inglés para Situaciones Importantes | Presentaciones y Entrevistas | NY English";
+const title = "Coaching de Inglés para Presentaciones | NY English";
 const seoDescription = "Domina presentaciones de alto impacto en inglés. Técnicas avanzadas para comunicar ideas complejas, manejar preguntas difíciles y cautivar a cualquier audiencia internacional.";
 
 // Hero content
@@ -94,6 +94,11 @@ const ctaContent = {
   lang="es"
   tkey="services/high-stakes-english"
   ogImage={{ src: typeof highStakesService?.backgroundImage === 'string' ? highStakesService.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/high-stakes-english/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-presentaciones/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/es/servicios/ingles-para-presentaciones/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

@@ -42,15 +42,26 @@ const description = currentIndustry === "all"
 
 // Spanish counterpart for language switcher
 const translationSlugEs = currentIndustry === "all" 
-  ? "/es/testimonios" 
-  : `/es/testimonios/${currentIndustry}`;
+  ? "/es/testimonios/" 
+  : `/es/testimonios/${currentIndustry}/`;
+
+// Create custom hreflangs for each industry page
+const currentUrl = currentIndustry === "all" 
+  ? "/en/testimonials/" 
+  : `/en/testimonials/${currentIndustry}/`;
+
+const customHreflangs = [
+  { lang: 'en-US', href: currentUrl },
+  { lang: 'es-MX', href: translationSlugEs }
+];
 ---
 
 <Base
   title={title}
   description={description}
   lang="en"
-  tkey="testimonials"
+  customHreflangs={customHreflangs}
+  customCanonical={currentUrl}
   hideCta={true}
 >
   <TestimonialsGrid

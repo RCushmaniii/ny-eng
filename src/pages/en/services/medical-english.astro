@@ -29,8 +29,8 @@ const featuredTestimonialSlug = 'dra-erika-itzel-medical-doctor';
 const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
 
 // SEO metadata
-const title = "Medical English Coaching | NY English";
-const seoDescription = "Master medical English for international patient care. Build confidence in clinical conversations, medical terminology, and professional healthcare communication.";
+const title = "Medical English Coaching for Healthcare Pros | NY";
+const seoDescription = "Master medical English for international patient care. Build confidence in clinical conversations and healthcare communication.";
 
 // Hero content
 const heroContent = {
@@ -82,6 +82,11 @@ const translationSlug = "ingles-para-medicos";
     width: medicalService?.backgroundImage?.width,
     height: medicalService?.backgroundImage?.height
   }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/medical-english/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-medicos/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/en/services/medical-english/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

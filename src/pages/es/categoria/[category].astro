@@ -25,22 +25,26 @@ interface Props {
 
 const { categoryData } = Astro.props;
 
-// Fetch all Spanish blog posts for this category
+// Fetch all Spanish blog posts
 const allPosts = await getCollection("blog");
-const categoryPosts = allPosts
+const allSpanishPosts = allPosts
   .filter((post: CollectionEntry<"blog">) => {
     // Only Spanish posts that are published
-    if (!post.id.startsWith("es/") || post.data.publish === false) return false;
-
-    // Check if post categories include this category name
-    const categoryNames = post.data.categories || [];
-    return categoryNames.includes(categoryData.name);
+    return post.id.startsWith("es/") && post.data.publish !== false;
   })
   .sort(
     (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
       new Date(b.data.publishDate).getTime() -
       new Date(a.data.publishDate).getTime()
   );
+
+// Filter posts for this specific category (for display)
+const categoryPosts = allSpanishPosts.filter((post: CollectionEntry<"blog">) => {
+  const categoryNames = post.data.categories || [];
+  // Check both Spanish and English category names for compatibility
+  return categoryNames.includes(categoryData.name_es || categoryData.name) || 
+         categoryNames.includes(categoryData.name);
+});
 
 // Generate proper TKey for i18n system
 const tkey = `category/${categoryData.slug}` as TKey;
@@ -71,7 +75,7 @@ const heroContent = {
   <main>
     <InnerHero content={heroContent} />
     <BlogList
-      posts={categoryPosts}
+      posts={allSpanishPosts}
       currentCategory={categoryData.name_es || categoryData.name}
       currentCategorySlug={categoryData.esSlug || categoryData.slug}
       lang="es"

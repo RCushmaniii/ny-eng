@@ -11,23 +11,13 @@ import { routeFor, type TKey } from "../../../lib/i18n";
 export async function getStaticPaths() {
   return categories.map((category) => {
     const tkey = `category/${category.slug}` as TKey;
-    const enPath = routeFor.en[tkey];
-    const esPath = routeFor.es[tkey];
-
-    // Handle both English and Spanish slugs
-    return [
-      // English slug -> English URL
-      {
-        params: { category: category.slug },
-        props: { categoryData: category, tkey },
-      },
-      // Spanish slug -> English URL (for proper redirection)
-      {
-        params: { category: category.esSlug || category.slug },
-        props: { categoryData: category, tkey },
-      },
-    ];
-  }).flat();
+    
+    // Only generate English slug for /en/category/ pages
+    return {
+      params: { category: category.slug },
+      props: { categoryData: category, tkey },
+    };
+  });
 }
 
 interface Props {
@@ -46,16 +36,12 @@ if (Astro.url.pathname !== canonicalEnPath) {
   return Astro.redirect(canonicalEnPath, 301);
 }
 
-// Fetch all English blog posts for this category
+// Fetch all English blog posts
 const allPosts = await getCollection("blog");
-const categoryPosts = allPosts
+const allEnglishPosts = allPosts
   .filter((post: CollectionEntry<"blog">) => {
     // Only English posts that are published
-    if (!post.id.startsWith("en/") || post.data.publish === false) return false;
-
-    // Check if post categories include this category name
-    const categoryNames = post.data.categories || [];
-    return categoryNames.includes(categoryData.name);
+    return post.id.startsWith("en/") && post.data.publish !== false;
   })
   .sort(
     (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
@@ -88,7 +74,7 @@ const heroContent = {
   <main>
     <InnerHero content={heroContent} />
     <BlogList
-      posts={categoryPosts}
+      posts={allEnglishPosts}
       currentCategory={categoryData.name}
       currentCategorySlug={categoryData.slug}
       lang="en"

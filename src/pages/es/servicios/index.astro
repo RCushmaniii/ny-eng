@@ -1,12 +1,16 @@
 ---
 // src/pages/es/servicios/index.astro
-import Layout from "@layouts/Layout.astro";
+import Base from "@layouts/Base.astro";
 import Hero from "@components/sections/Hero.astro";
 import ServicesGrid from "@components/sections/ServicesGrid.astro";
 import ProfessionalProfiles from "@components/sections/ProfessionalProfiles.astro";
 import CtaBanner from "@components/sections/CtaBanner.astro";
 import { serviciosEs, professionalProfilesEs } from "@data/services";
 import servicesHeroImage from "@assets/images/services/services-hero.jpg";
+
+// i18n configuration
+const lang = "es";
+const tkey = "services";
 
 // SEO metadata
 const seoTitle = "Servicios de Coaching de Inglés de Negocios | NY English";
@@ -55,16 +59,15 @@ const professionalProfilesContent = {
     "Mi coaching no es de talla única. Me asocio con innovadores, líderes y especialistas que necesitan comunicarse con precisión y autoridad. Tengo éxito comprobado con:",
 };
 
-// Translation slug for English version
-const translationSlug = "services";
 ---
 
-<Layout
+<Base
   title={seoTitle}
   description={seoDescription}
-  lang="es"
-  translationSlugEn="/en/services"
-  image="/images/logos/new-york-english-og-wide.jpg"
+  lang={lang}
+  tkey={tkey}
+  ogImage={{ src: "/images/logos/new-york-english-og-wide.jpg" }}
+  heroImage={servicesHeroImage}
   hideCta={true}
 >
   <!-- Hero Section -->
@@ -85,4 +88,4 @@ const translationSlug = "services";
 
   <!-- Final CTA -->
   <CtaBanner content={ctaContent} />
-</Layout>
+</Base>

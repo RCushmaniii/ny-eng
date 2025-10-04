@@ -24,8 +24,8 @@ if (!featuredTestimonial) {
 }
 
 // SEO metadata
-const title = "Executive English Coaching | NY English";
-const seoDescription = "Master executive communication skills. Speak with confidence in boardrooms, investor meetings, and high-stakes presentations. Personalized coaching for C-level executives.";
+const title = "Executive English Coaching for C-Level Leaders | NY";
+const seoDescription = "Master executive communication for C-level leaders. Speak with confidence in boardrooms and high-stakes presentations.";
 
 // Hero content
 const heroContent = {
@@ -73,6 +73,11 @@ const translationSlug = "ingles-para-ejecutivos";
   tkey="services/executive-english"
   ogImage={{ src: typeof serviceData.backgroundImage === 'string' ? serviceData.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
   hideCta={true}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/executive-english/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-ejecutivos/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/en/services/executive-english/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />

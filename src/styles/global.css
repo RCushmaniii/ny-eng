@@ -1,12 +1,50 @@
-/* Tailwind directives */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
-/* Global font application */
-html, body, p, div, span, li, a, h1, h2, h3, h4, h5, h6, .heading, button, input, textarea, select {
-  font-family: 'Noto Sans KR', sans-serif !important;
+/* Self-hosted fonts - MUST be defined BEFORE Tailwind */
+@font-face {
+  font-family: NotoSansKR;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/noto-sans-v42-latin-regular.woff2') format('woff2');
 }
+
+@font-face {
+  font-family: NotoSansKR;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/noto-sans-v42-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: NotoSansKR;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/noto-sans-v42-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: NotoSansKR;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/noto-sans-v42-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: BrunoAceSC;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/bruno-ace-sc-v5-latin-regular.woff2') format('woff2');
+}
+
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font application handled by Tailwind config and :root variables */
 
 /* Ensure white text is properly visible */
 .text-white {
@@ -34,20 +72,10 @@ a[class*="bg-[#25D366]"] {
 
 button[class*="bg-[#25D366]"]:hover,
 a[class*="bg-[#25D366]"]:hover {
-  background-color: #1EBE5B !important;
   color: #ffffff !important;
 }
 
-/* Fix for any sans-serif text */
-.sans-serif {
-  font-family: 'Noto Sans KR', sans-serif !important;
-}
-
-/* Fix for paragraph text */
-p {
-  font-family: 'Noto Sans KR', sans-serif !important;
-  color: inherit;
-}
+/* Removed redundant font rules - handled by Tailwind config */
 
 /* Fix for text in SplitPanel component */
 .site-container h2, .site-container h3, .site-container p, .site-container li {
@@ -70,31 +98,13 @@ section[class*="bg-background-dark"] li {
   color: #ffffff !important;
 }
 
-/* Self-hosted Bruno Ace SC */
-@font-face {
-  font-family: 'Bruno Ace SC';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../assets/fonts/bruno-ace-sc-v5-latin-regular.woff2') format('woff2');
-}
-
-/* Self-hosted Noto Sans KR */
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../assets/fonts/noto-sans-kr-v36-latin-regular.woff2') format('woff2');
-}
-
 :root {
-    --font-base: 'Noto Sans KR', sans-serif;
-    --font-display: 'Bruno Ace SC', display;
-    --font-bruno-ace: 'Bruno Ace SC', sans-serif;
-    --font-noto-sans-kr: "Noto Sans KR", sans-serif;
-    --font-logo: 'Bruno Ace SC', sans-serif;
-    --font-headline: 'Noto Sans KR', sans-serif;
+    --font-base: NotoSansKR, sans-serif;
+    --font-display: BrunoAceSC, display;
+    --font-bruno-ace: BrunoAceSC, sans-serif;
+    --font-noto-sans-kr: NotoSansKR, sans-serif;
+    --font-logo: BrunoAceSC, sans-serif;
+    --font-headline: NotoSansKR, sans-serif;
 
     --color-primary: #3557c1;
     --color-primary-light: #4b6ed4;
@@ -217,9 +227,8 @@ section[class*="bg-background-dark"] li {
 }
 
 @layer base {
-
     html {
-        font-family: var(--font-base);
+        font-family: NotoSansKR, ui-sans-serif, system-ui, sans-serif;
         scroll-behavior: smooth;
     }
 
@@ -227,6 +236,28 @@ section[class*="bg-background-dark"] li {
         background-color: var(--color-background);
         font-size: var(--text-base);
         font-weight: 400;
+        font-family: NotoSansKR, ui-sans-serif, system-ui, sans-serif;
+    }
+
+    /* Ensure form elements use the correct font */
+    select, option, input, textarea, button {
+        font-family: NotoSansKR, ui-sans-serif, system-ui, sans-serif !important;
+    }
+    
+    /* Force font on select dropdown options */
+    select#industry-filter,
+    select#industry-filter option {
+        font-family: NotoSansKR, ui-sans-serif, system-ui, sans-serif !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Mobile-specific font override for select elements */
+    @media (max-width: 768px) {
+        select, select option {
+            font-family: NotoSansKR, ui-sans-serif, system-ui, sans-serif !important;
+            font-size: 16px !important;
+        }
     }
     
     /* Fix for h1 elements inside sectioning elements to prevent browser default size changes */

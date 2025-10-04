@@ -100,7 +100,6 @@ const customHreflangs = [
 
 <Base
   lang="es"
-  tkey="blog"
   customHreflangs={customHreflangs}
   customCanonical={currentUrl}
   title={seoTitle}
@@ -136,28 +135,30 @@ const customHreflangs = [
       </div>
       
       {(featuredObj || featuredUrl) && (
-        <div class="relative mb-12 rounded-lg overflow-hidden border border-black">
+        <div class="relative mb-12 rounded-lg shadow-lg" style="overflow: hidden;">
           {featuredObj ? (
             <Image
               src={featuredObj}
               alt={post.data.imageAlt || post.data.title}
               width={1200}
               height={675}
-              class="w-full object-cover h-[300px] md:h-[450px] lg:h-[675px]"
+              class="w-full object-cover h-[300px] md:h-[450px] lg:h-[675px] rounded-lg"
               quality={80}
               format="webp"
+              style="display: block; margin: 0; padding: 0;"
             />
           ) : (
             <img
               src={featuredUrl!}
               alt={post.data.imageAlt || post.data.title}
-              class="w-full object-cover h-[300px] md:h-[450px] lg:h-[675px]"
+              class="w-full object-cover h-[300px] md:h-[450px] lg:h-[675px] rounded-lg"
               loading="eager"
               width="1200"
               height="675"
+              style="display: block; margin: 0; padding: 0;"
             />
           )}
-          <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/50 to-transparent rounded-b-lg"></div>
         </div>
       )}
       
@@ -213,32 +214,35 @@ const customHreflangs = [
       )}
       
       {(previousPost || nextPost) && (
-        <section class="mt-16 flex flex-col items-center md:flex-row md:justify-between gap-6 mx-auto max-w-3xl">
+        <section class="mt-16 mb-8 mx-auto max-w-3xl">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Continúa Leyendo</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {previousPost && (
           <a
             href={cleanBlogUrl(buildPostUrl('es', stripLangPrefix(previousPost.slug)))}
             rel="prev"
-            class="group relative flex-1 max-w-xs border border-gray-200 rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full shadow-sm"
+            class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 no-underline"
+            style="overflow: hidden; padding: 0; margin: 0;"
           >
-            <div class="flex items-center justify-between h-12 px-4 border-b">
-              <span class="text-2xl text-gray-400 transition-colors duration-200 group-hover:text-primary">&#8592;</span>
-              <span class="font-medium text-xs text-gray-700">Anterior</span>
-            </div>
             {(() => {
               const prevObj = previousPost?.data?.featuredImage;
               const prevUrl = (typeof prevObj === 'object' && prevObj?.src) ? prevObj.src : (previousPost?.data?.seo?.image ?? null);
               return prevUrl ? (
-                <div class="aspect-video w-full bg-gray-100">
-                  <img src={prevUrl} alt={previousPost.data.imageAlt || previousPost.data.title} class="object-cover w-full h-full" />
+                <div class="w-full h-48 bg-gray-100" style="margin: 0; padding: 0; display: block;">
+                  <img src={prevUrl} alt={previousPost.data.imageAlt || previousPost.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style="display: block; margin: 0; padding: 0;" />
                 </div>
               ) : null;
             })()}
-            <div class="flex-grow px-4 py-6 flex flex-col">
-              <div class="font-semibold text-base mb-1 line-clamp-2">{previousPost.data.title}</div>
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-2 text-primary">
+                <span>←</span>
+                <span class="text-xs font-semibold uppercase tracking-wide">Anterior</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2 text-gray-900 group-hover:text-primary transition-colors line-clamp-2">{previousPost.data.title}</h3>
               <div class="text-xs text-gray-500 mb-2">
                 <DateComponent date={previousPost.data.publishDate} lang="es" />
               </div>
-              <div class="text-sm text-gray-700 line-clamp-3">{previousPost.data.excerpt}</div>
+              <p class="text-sm text-gray-600 line-clamp-2">{previousPost.data.excerpt}</p>
             </div>
           </a>
         )}
@@ -246,30 +250,32 @@ const customHreflangs = [
           <a
             href={cleanBlogUrl(buildPostUrl('es', stripLangPrefix(nextPost.slug)))}
             rel="next"
-            class="group relative flex-1 max-w-xs border border-gray-200 rounded-lg overflow-hidden transition-transform duration-200 hover:scale-105 hover:border-primary bg-white flex flex-col h-full shadow-sm"
+            class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 no-underline"
+            style="overflow: hidden; padding: 0; margin: 0;"
           >
-            <div class="flex items-center justify-between h-12 px-4 border-b">
-              <span class="font-medium text-xs text-gray-700">Siguiente</span>
-              <span class="text-2xl text-gray-400 transition-colors duration-200 group-hover:text-primary">&#8594;</span>
-            </div>
             {(() => {
               const nextObj = nextPost?.data?.featuredImage;
               const nextUrl = (typeof nextObj === 'object' && nextObj?.src) ? nextObj.src : (nextPost?.data?.seo?.image ?? null);
               return nextUrl ? (
-                <div class="aspect-video w-full bg-gray-100">
-                  <img src={nextUrl} alt={nextPost.data.imageAlt || nextPost.data.title} class="object-cover w-full h-full" />
+                <div class="w-full h-48 bg-gray-100" style="margin: 0; padding: 0; display: block;">
+                  <img src={nextUrl} alt={nextPost.data.imageAlt || nextPost.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style="display: block; margin: 0; padding: 0;" />
                 </div>
               ) : null;
             })()}
-            <div class="flex-grow px-4 py-6 flex flex-col text-right">
-              <div class="font-semibold text-base mb-1 line-clamp-2">{nextPost.data.title}</div>
-              <div class="text-xs text-gray-500 mb-2">
+            <div class="p-5">
+              <div class="flex items-center justify-end gap-2 mb-2 text-primary">
+                <span class="text-xs font-semibold uppercase tracking-wide">Siguiente</span>
+                <span>→</span>
+              </div>
+              <h3 class="font-bold text-lg mb-2 text-gray-900 group-hover:text-primary transition-colors line-clamp-2 text-right">{nextPost.data.title}</h3>
+              <div class="text-xs text-gray-500 mb-2 text-right">
                 <DateComponent date={nextPost.data.publishDate} lang="es" />
               </div>
-              <div class="text-sm text-gray-700 line-clamp-3">{nextPost.data.excerpt}</div>
+              <p class="text-sm text-gray-600 line-clamp-2 text-right">{nextPost.data.excerpt}</p>
             </div>
           </a>
         )}
+          </div>
       </section>
       )}
     </article>

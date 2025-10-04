@@ -15,9 +15,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Noto Sans KR', ...defaultTheme.fontFamily.sans],
-        heading: ['Bruno Ace SC', 'sans-serif'],
-        display: ['Bruno Ace SC', 'sans-serif'],
+        sans: ['NotoSansKR', ...defaultTheme.fontFamily.sans],
+        heading: ['BrunoAceSC', 'sans-serif'],
+        display: ['BrunoAceSC', 'sans-serif'],
       },
       colors: {
         // Primary colors

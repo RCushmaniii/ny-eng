@@ -59,8 +59,7 @@ if (!featuredTestimonial) {
 }
 
 // SEO metadata
-const title =
-  "Coaching de Inglés para Ejecutivos | Liderazgo con Autoridad | NY English";
+const title = "Coaching de Inglés para Ejecutivos | NY English";
 const seoDescription =
   "Coaching de inglés personalizado para ejecutivos. Mejora tu liderazgo y comunicación estratégica para destacar en entornos globales.";
 
@@ -114,6 +113,11 @@ const ctaContent = {
         : "/images/logos/new-york-english-og.jpg",
   }}
   hideCta={true}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/executive-english/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-ejecutivos/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/es/servicios/ingles-para-ejecutivos/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />
