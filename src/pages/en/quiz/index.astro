@@ -1,6 +1,7 @@
 ---
 import Base from '@layouts/Base.astro';
 import Button from '@components/ui/Button.astro';
+import { Target, BarChart3, Rocket, Clock, Mail, Lock, DollarSign, Mic, Zap, TrendingUp } from 'lucide-astro';
 
 const title = "Speaking Confidence Quiz: Are You Ready for North American Clients?";
 const description = "Discover the hidden speaking gaps costing your IT team contracts, credibility, and career growth. Take the 3-minute assessment.";
@@ -19,32 +20,32 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
 >
 
 <!-- HERO SECTION -->
-<section class="quiz-landing-hero">
+<section class="quiz-landing-hero pt-28 pb-8 md:pt-32 md:pb-12">
   <div class="container-custom">
     <div class="hero-grid">
       <div class="hero-content">
         <span class="eyebrow">Free 3-Minute Assessment</span>
         
-        <h1>Can Your Team Defend a $200K Price Tag on a Live Zoom Call?</h1>
+        <h1>Could Your Team Confidently Defend a $200K Proposal on a Live Call?</h1>
         
         <p class="hero-subhead">
-          Grammarly can fix your emails. AI can write your proposals. 
-          But when you're live with a Fortune 500 client and they ask a tough question...
-          <strong>your spoken English IS your credibility.</strong>
+          AI can polish your emails. Grammarly can fix your grammar. 
+          But when a Fortune 500 client challenges your idea live… 
+          <strong>your spoken English becomes your credibility.</strong>
         </p>
 
         <div class="value-props">
           <div class="value-prop">
-            <span class="icon">🎯</span>
-            <span>Discover which speaking moments are costing you deals</span>
+            <Target class="icon" size={24} />
+            <span>Pinpoint the moments costing you deals</span>
           </div>
           <div class="value-prop">
-            <span class="icon">📊</span>
-            <span>See your Communication Confidence Score (0-100)</span>
+            <BarChart3 class="icon" size={24} />
+            <span>Get your Communication Confidence Score (0–100)</span>
           </div>
           <div class="value-prop">
-            <span class="icon">🚀</span>
-            <span>Get a personalized roadmap to speaking mastery</span>
+            <Rocket class="icon" size={24} />
+            <span>Receive your personalized roadmap to executive fluency</span>
           </div>
         </div>
 
@@ -54,14 +55,27 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
           size="lg"
           class="cta-start-quiz"
         >
-          Start Your Free Assessment →
+          Start Free 3-Minute Assessment →
         </Button>
 
         <div class="trust-signals">
-          <span>⏱️ Takes 3 minutes</span>
-          <span>📧 Results emailed instantly</span>
-          <span>🔒 100% confidential</span>
+          <div class="trust-signal">
+            <Clock size={16} />
+            <span>Takes 3 minutes</span>
+          </div>
+          <div class="trust-signal">
+            <Mail size={16} />
+            <span>Results emailed instantly</span>
+          </div>
+          <div class="trust-signal">
+            <Lock size={16} />
+            <span>100% confidential</span>
+          </div>
         </div>
+
+        <p class="trust-badge">
+          Trusted by IT leaders at Smarttie, Kopar, and Sourceability
+        </p>
       </div>
 
       <div class="hero-visual">
@@ -69,7 +83,7 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
         <div class="visual-placeholder">
           <div class="sample-score-card">
             <div class="score-header">Your Communication Confidence Score</div>
-            <div class="score-number">73</div>
+            <div class="score-number" id="score-counter">0</div>
             <div class="score-label">Room for Growth</div>
             <div class="score-insight">
               <strong>Key Finding:</strong> Your team hesitates during pricing discussions, 
@@ -89,7 +103,10 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
     
     <div class="reason-cards">
       <div class="reason-card">
-        <h3>💰 Written English is Solved</h3>
+        <div class="reason-icon">
+          <DollarSign size={32} />
+        </div>
+        <h3>Written English is Solved</h3>
         <p>
           Grammarly, ChatGPT, and AI writing tools can make your emails and 
           proposals flawless. <strong>But they can't help you on a live call.</strong>
@@ -97,7 +114,10 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
       </div>
 
       <div class="reason-card">
-        <h3>🎤 High-Stakes Moments are Spoken</h3>
+        <div class="reason-icon">
+          <Mic size={32} />
+        </div>
+        <h3>High-Stakes Moments are Spoken</h3>
         <p>
           Sales pitches. Negotiations. Client Q&A. Technical presentations. 
           Project problem-solving. <strong>These happen in real-time, with no "edit" button.</strong>
@@ -105,7 +125,10 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
       </div>
 
       <div class="reason-card">
-        <h3>⚡ Hesitation = Lost Credibility</h3>
+        <div class="reason-icon">
+          <Zap size={32} />
+        </div>
+        <h3>Hesitation = Lost Credibility</h3>
         <p>
           That 3-second pause while you translate in your head? North American 
           clients interpret it as uncertainty or lack of expertise. 
@@ -114,7 +137,10 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
       </div>
 
       <div class="reason-card">
-        <h3>📈 Speaking Confidence = Pricing Power</h3>
+        <div class="reason-icon">
+          <TrendingUp size={32} />
+        </div>
+        <h3>Speaking Confidence = Pricing Power</h3>
         <p>
           When you can articulate value clearly and defend your pricing without 
           fumbling, clients stop negotiating on price. 
@@ -232,6 +258,15 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
         </p>
         <cite>— VP Engineering, fintech startup, Buenos Aires</cite>
       </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          "The quiz revealed gaps I didn't know existed. The personalized roadmap 
+          helped me focus on what actually matters for client calls. Within a month, 
+          I was leading technical presentations with confidence."
+        </p>
+        <cite>— Solutions Architect, software consultancy, Monterrey</cite>
+      </div>
     </div>
   </div>
 </section>
@@ -239,9 +274,10 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="container-narrow">
-    <h2>Ready to See Where You Stand?</h2>
+    <span class="final-eyebrow">Your Next Step</span>
+    <h2 class="final-heading">Ready to See Where You Stand?</h2>
     
-    <p class="cta-subtext">
+    <p class="final-subtext">
       Take the 3-minute Speaking Confidence Quiz and get your personalized 
       report instantly.
     </p>
@@ -251,13 +287,22 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
       variant="primary" 
       size="lg"
     >
-      Start Your Free Assessment →
+      Start Free 3-Minute Assessment →
     </Button>
     
     <div class="trust-signals">
-      <span>⏱️ 3 minutes</span>
-      <span>📧 Instant results</span>
-      <span>🔒 No spam</span>
+      <div class="trust-signal">
+        <Clock size={16} />
+        <span>3 minutes</span>
+      </div>
+      <div class="trust-signal">
+        <Mail size={16} />
+        <span>Instant results</span>
+      </div>
+      <div class="trust-signal">
+        <Lock size={16} />
+        <span>No spam</span>
+      </div>
     </div>
   </div>
 </section>
@@ -280,9 +325,8 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
 
 /* Hero Section */
 .quiz-landing-hero {
-  padding: 4rem 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+  color: #1e293b;
 }
 
 .hero-grid {
@@ -298,13 +342,15 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
 
 .eyebrow {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.2);
+  background: #3b82f6;
+  color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.875rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  backdrop-filter: blur(10px);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .quiz-landing-hero h1 {
@@ -312,13 +358,16 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
   line-height: 1.2;
   margin-bottom: 1.5rem;
   font-weight: 700;
+  color: #0f172a;
+  max-width: 600px;
 }
 
 .hero-subhead {
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 1.125rem;
+  line-height: 1.7;
   margin-bottom: 2rem;
-  opacity: 0.95;
+  color: #475569;
+  max-width: 540px;
 }
 
 .value-props {
@@ -331,13 +380,14 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
 .value-prop {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 1.1rem;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: #334155;
 }
 
 .value-prop .icon {
-  font-size: 1.5rem;
   flex-shrink: 0;
+  color: #3b82f6;
 }
 
 .cta-start-quiz {
@@ -348,8 +398,25 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
   display: flex;
   gap: 2rem;
   margin-top: 1rem;
-  font-size: 0.9rem;
-  opacity: 0.9;
+  font-size: 0.875rem;
+}
+
+.trust-signal {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+}
+
+.trust-signal :global(svg) {
+  color: #94a3b8;
+}
+
+.trust-badge {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #64748b;
+  font-style: italic;
 }
 
 /* Hero Visual */
@@ -367,9 +434,10 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
 .sample-score-card {
   background: white;
   color: #2d3748;
-  padding: 2rem;
+  padding: 2.5rem;
   border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
   text-align: center;
 }
 
@@ -382,9 +450,9 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
 }
 
 .score-number {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 700;
-  color: #667eea;
+  color: #3b82f6;
   line-height: 1;
   margin-bottom: 0.5rem;
 }
@@ -397,12 +465,13 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
 }
 
 .score-insight {
-  background: #f7fafc;
+  background: #f8fafc;
   padding: 1rem;
   border-radius: 8px;
   font-size: 0.875rem;
   line-height: 1.5;
   text-align: left;
+  border-left: 4px solid #3b82f6;
 }
 
 /* Why Spoken English */
@@ -428,19 +497,34 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
   background: white;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .reason-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  border-color: #3b82f6;
+}
+
+.reason-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: white;
 }
 
 .reason-card h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  color: #2d3748;
+  color: #0f172a;
+  font-weight: 600;
 }
 
 .reason-card p {
@@ -526,7 +610,7 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
 .discovery-number {
   width: 60px;
   height: 60px;
-  background: #667eea;
+  background: #3b82f6;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -590,21 +674,40 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
 
 /* Final CTA */
 .final-cta {
-  padding: 4rem 0;
-  background: white;
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
   text-align: center;
 }
 
-.final-cta h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #2d3748;
+.final-eyebrow {
+  display: inline-block;
+  background: #3b82f6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.cta-subtext {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  color: #4a5568;
+.final-heading {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #0f172a;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.final-subtext {
+  font-size: 1.375rem;
+  margin-bottom: 2.5rem;
+  color: #475569;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 .final-cta .trust-signals {
@@ -650,5 +753,67 @@ const description = "Discover the hidden speaking gaps costing your IT team cont
   .cost-question {
     font-size: 1.25rem;
   }
+
+  .final-heading {
+    font-size: 2rem;
+  }
+
+  .final-subtext {
+    font-size: 1.125rem;
+  }
 }
 </style>
+
+<script>
+// Animated counter for score number
+function animateCounter() {
+  const counter = document.getElementById('score-counter');
+  if (!counter) return;
+
+  const target = 73;
+  let current = 0;
+  const duration = 2000; // 2 seconds
+  const startTime = performance.now();
+
+  // Easing function for acceleration
+  function easeOutQuad(t: number): number {
+    return t * (2 - t);
+  }
+
+  function updateCounter(currentTime: number) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    // Apply easing
+    const easedProgress = easeOutQuad(progress);
+    current = Math.floor(easedProgress * target);
+    
+    counter.textContent = current.toString();
+
+    if (progress < 1) {
+      requestAnimationFrame(updateCounter);
+    } else {
+      counter.textContent = target.toString();
+    }
+  }
+
+  // Start animation when element is in viewport
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        requestAnimationFrame(updateCounter);
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(counter);
+}
+
+// Run on page load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', animateCounter);
+} else {
+  animateCounter();
+}
+</script>

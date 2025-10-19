@@ -1,6 +1,7 @@
 ---
 import Base from '@layouts/Base.astro';
 import Button from '@components/ui/Button.astro';
+import { Target, BarChart3, Rocket, Clock, Mail, Lock, DollarSign, Mic, Zap, TrendingUp } from 'lucide-astro';
 
 const title = "Quiz de Confianza al Hablar: ¿Estás Listo para Clientes Norteamericanos?";
 const description = "Descubre las brechas de comunicación que le están costando contratos, credibilidad y crecimiento profesional a tu equipo de TI. Evaluación de 3 minutos.";
@@ -19,32 +20,32 @@ const description = "Descubre las brechas de comunicación que le están costand
 >
 
 <!-- HERO SECTION -->
-<section class="quiz-landing-hero">
+<section class="quiz-landing-hero pt-28 pb-8 md:pt-32 md:pb-12">
   <div class="container-custom">
     <div class="hero-grid">
       <div class="hero-content">
         <span class="eyebrow">Evaluación Gratuita de 3 Minutos</span>
         
-        <h1>¿Puede Tu Equipo Defender un Precio de $200K en una Llamada de Zoom en Vivo?</h1>
+        <h1>¿Podría Tu Equipo Defender Confiadamente una Propuesta de $200K en una Llamada en Vivo?</h1>
         
         <p class="hero-subhead">
-          Grammarly puede corregir tus correos. La IA puede escribir tus propuestas. 
-          Pero cuando estás en vivo con un cliente Fortune 500 y te hacen una pregunta difícil...
-          <strong>tu inglés hablado ES tu credibilidad.</strong>
+          La IA puede pulir tus correos. Grammarly puede corregir tu gramática. 
+          Pero cuando un cliente Fortune 500 desafía tu idea en vivo… 
+          <strong>tu inglés hablado se convierte en tu credibilidad.</strong>
         </p>
 
         <div class="value-props">
           <div class="value-prop">
-            <span class="icon">🎯</span>
-            <span>Descubre qué momentos de comunicación te están costando contratos</span>
+            <Target class="icon" size={24} />
+            <span>Identifica los momentos que te están costando contratos</span>
           </div>
           <div class="value-prop">
-            <span class="icon">📊</span>
-            <span>Ve tu Puntuación de Confianza en Comunicación (0-100)</span>
+            <BarChart3 class="icon" size={24} />
+            <span>Obtén tu Puntuación de Confianza en Comunicación (0–100)</span>
           </div>
           <div class="value-prop">
-            <span class="icon">🚀</span>
-            <span>Obtén una hoja de ruta personalizada hacia el dominio del inglés hablado</span>
+            <Rocket class="icon" size={24} />
+            <span>Recibe tu hoja de ruta personalizada hacia la fluidez ejecutiva</span>
           </div>
         </div>
 
@@ -54,14 +55,27 @@ const description = "Descubre las brechas de comunicación que le están costand
           size="lg"
           class="cta-start-quiz"
         >
-          Comienza Tu Evaluación Gratuita →
+          Comenzar Evaluación Gratuita de 3 Minutos →
         </Button>
 
         <div class="trust-signals">
-          <span>⏱️ Toma 3 minutos</span>
-          <span>📧 Resultados enviados al instante</span>
-          <span>🔒 100% confidencial</span>
+          <div class="trust-signal">
+            <Clock size={16} />
+            <span>Toma 3 minutos</span>
+          </div>
+          <div class="trust-signal">
+            <Mail size={16} />
+            <span>Resultados enviados al instante</span>
+          </div>
+          <div class="trust-signal">
+            <Lock size={16} />
+            <span>100% confidencial</span>
+          </div>
         </div>
+
+        <p class="trust-badge">
+          Confiado por líderes de TI en Smarttie, Kopar y Sourceability
+        </p>
       </div>
 
       <div class="hero-visual">
@@ -69,7 +83,7 @@ const description = "Descubre las brechas de comunicación que le están costand
         <div class="visual-placeholder">
           <div class="sample-score-card">
             <div class="score-header">Tu Puntuación de Confianza en Comunicación</div>
-            <div class="score-number">73</div>
+            <div class="score-number" id="score-counter">0</div>
             <div class="score-label">Espacio para Crecer</div>
             <div class="score-insight">
               <strong>Hallazgo Clave:</strong> Tu equipo duda durante las discusiones de precios, 
@@ -89,7 +103,10 @@ const description = "Descubre las brechas de comunicación que le están costand
     
     <div class="reason-cards">
       <div class="reason-card">
-        <h3>💰 El Inglés Escrito Ya Está Resuelto</h3>
+        <div class="reason-icon">
+          <DollarSign size={32} />
+        </div>
+        <h3>El Inglés Escrito Ya Está Resuelto</h3>
         <p>
           Grammarly, ChatGPT y las herramientas de IA pueden hacer que tus correos y 
           propuestas sean impecables. <strong>Pero no pueden ayudarte en una llamada en vivo.</strong>
@@ -97,7 +114,10 @@ const description = "Descubre las brechas de comunicación que le están costand
       </div>
 
       <div class="reason-card">
-        <h3>🎤 Los Momentos Críticos Son Hablados</h3>
+        <div class="reason-icon">
+          <Mic size={32} />
+        </div>
+        <h3>Los Momentos Críticos Son Hablados</h3>
         <p>
           Presentaciones de ventas. Negociaciones. Preguntas y respuestas con clientes. Presentaciones técnicas. 
           Resolución de problemas de proyectos. <strong>Todo sucede en tiempo real, sin botón de "editar".</strong>
@@ -105,7 +125,10 @@ const description = "Descubre las brechas de comunicación que le están costand
       </div>
 
       <div class="reason-card">
-        <h3>⚡ Dudar = Perder Credibilidad</h3>
+        <div class="reason-icon">
+          <Zap size={32} />
+        </div>
+        <h3>Dudar = Perder Credibilidad</h3>
         <p>
           ¿Esa pausa de 3 segundos mientras traduces en tu cabeza? Los clientes norteamericanos 
           la interpretan como incertidumbre o falta de experiencia. 
@@ -114,7 +137,10 @@ const description = "Descubre las brechas de comunicación que le están costand
       </div>
 
       <div class="reason-card">
-        <h3>📈 Confianza al Hablar = Poder de Fijación de Precios</h3>
+        <div class="reason-icon">
+          <TrendingUp size={32} />
+        </div>
+        <h3>Confianza al Hablar = Poder de Fijación de Precios</h3>
         <p>
           Cuando puedes articular valor claramente y defender tu precio sin 
           titubear, los clientes dejan de negociar el precio. 
@@ -232,6 +258,15 @@ const description = "Descubre las brechas de comunicación que le están costand
         </p>
         <cite>— VP de Ingeniería, startup fintech, Buenos Aires</cite>
       </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          "El quiz reveló brechas que no sabía que existían. La hoja de ruta personalizada 
+          me ayudó a enfocarme en lo que realmente importa para las llamadas con clientes. En un mes, 
+          estaba liderando presentaciones técnicas con confianza."
+        </p>
+        <cite>— Arquitecto de Soluciones, consultoría de software, Monterrey</cite>
+      </div>
     </div>
   </div>
 </section>
@@ -239,9 +274,10 @@ const description = "Descubre las brechas de comunicación que le están costand
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="container-narrow">
-    <h2>¿Listo Para Ver Dónde Te Encuentras?</h2>
+    <span class="final-eyebrow">Tu Próximo Paso</span>
+    <h2 class="final-heading">¿Listo Para Ver Dónde Te Encuentras?</h2>
     
-    <p class="cta-subtext">
+    <p class="final-subtext">
       Toma el Quiz de Confianza al Hablar de 3 minutos y obtén tu reporte 
       personalizado al instante.
     </p>
@@ -251,13 +287,22 @@ const description = "Descubre las brechas de comunicación que le están costand
       variant="primary" 
       size="lg"
     >
-      Comienza Tu Evaluación Gratuita →
+      Comenzar Evaluación Gratuita de 3 Minutos →
     </Button>
     
     <div class="trust-signals">
-      <span>⏱️ 3 minutos</span>
-      <span>📧 Resultados instantáneos</span>
-      <span>🔒 Sin spam</span>
+      <div class="trust-signal">
+        <Clock size={16} />
+        <span>3 minutos</span>
+      </div>
+      <div class="trust-signal">
+        <Mail size={16} />
+        <span>Resultados instantáneos</span>
+      </div>
+      <div class="trust-signal">
+        <Lock size={16} />
+        <span>Sin spam</span>
+      </div>
     </div>
   </div>
 </section>
@@ -280,9 +325,8 @@ const description = "Descubre las brechas de comunicación que le están costand
 
 /* Hero Section */
 .quiz-landing-hero {
-  padding: 4rem 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+  color: #1e293b;
 }
 
 .hero-grid {
@@ -298,13 +342,15 @@ const description = "Descubre las brechas de comunicación que le están costand
 
 .eyebrow {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.2);
+  background: #3b82f6;
+  color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.875rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  backdrop-filter: blur(10px);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .quiz-landing-hero h1 {
@@ -312,13 +358,16 @@ const description = "Descubre las brechas de comunicación que le están costand
   line-height: 1.2;
   margin-bottom: 1.5rem;
   font-weight: 700;
+  color: #0f172a;
+  max-width: 600px;
 }
 
 .hero-subhead {
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 1.125rem;
+  line-height: 1.7;
   margin-bottom: 2rem;
-  opacity: 0.95;
+  color: #475569;
+  max-width: 540px;
 }
 
 .value-props {
@@ -331,13 +380,14 @@ const description = "Descubre las brechas de comunicación que le están costand
 .value-prop {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 1.1rem;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: #334155;
 }
 
 .value-prop .icon {
-  font-size: 1.5rem;
   flex-shrink: 0;
+  color: #3b82f6;
 }
 
 .cta-start-quiz {
@@ -348,8 +398,25 @@ const description = "Descubre las brechas de comunicación que le están costand
   display: flex;
   gap: 2rem;
   margin-top: 1rem;
-  font-size: 0.9rem;
-  opacity: 0.9;
+  font-size: 0.875rem;
+}
+
+.trust-signal {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+}
+
+.trust-signal :global(svg) {
+  color: #94a3b8;
+}
+
+.trust-badge {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #64748b;
+  font-style: italic;
 }
 
 /* Hero Visual */
@@ -367,9 +434,10 @@ const description = "Descubre las brechas de comunicación que le están costand
 .sample-score-card {
   background: white;
   color: #2d3748;
-  padding: 2rem;
+  padding: 2.5rem;
   border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
   text-align: center;
 }
 
@@ -382,9 +450,9 @@ const description = "Descubre las brechas de comunicación que le están costand
 }
 
 .score-number {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 700;
-  color: #667eea;
+  color: #3b82f6;
   line-height: 1;
   margin-bottom: 0.5rem;
 }
@@ -397,12 +465,13 @@ const description = "Descubre las brechas de comunicación que le están costand
 }
 
 .score-insight {
-  background: #f7fafc;
+  background: #f8fafc;
   padding: 1rem;
   border-radius: 8px;
   font-size: 0.875rem;
   line-height: 1.5;
   text-align: left;
+  border-left: 4px solid #3b82f6;
 }
 
 /* Why Spoken English */
@@ -428,19 +497,34 @@ const description = "Descubre las brechas de comunicación que le están costand
   background: white;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .reason-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  border-color: #3b82f6;
+}
+
+.reason-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: white;
 }
 
 .reason-card h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  color: #2d3748;
+  color: #0f172a;
+  font-weight: 600;
 }
 
 .reason-card p {
@@ -526,7 +610,7 @@ const description = "Descubre las brechas de comunicación que le están costand
 .discovery-number {
   width: 60px;
   height: 60px;
-  background: #667eea;
+  background: #3b82f6;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -590,21 +674,40 @@ const description = "Descubre las brechas de comunicación que le están costand
 
 /* Final CTA */
 .final-cta {
-  padding: 4rem 0;
-  background: white;
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
   text-align: center;
 }
 
-.final-cta h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #2d3748;
+.final-eyebrow {
+  display: inline-block;
+  background: #3b82f6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.cta-subtext {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  color: #4a5568;
+.final-heading {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #0f172a;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.final-subtext {
+  font-size: 1.375rem;
+  margin-bottom: 2.5rem;
+  color: #475569;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 .final-cta .trust-signals {
@@ -650,5 +753,67 @@ const description = "Descubre las brechas de comunicación que le están costand
   .cost-question {
     font-size: 1.25rem;
   }
+
+  .final-heading {
+    font-size: 2rem;
+  }
+
+  .final-subtext {
+    font-size: 1.125rem;
+  }
 }
 </style>
+
+<script>
+// Animated counter for score number
+function animateCounter() {
+  const counter = document.getElementById('score-counter');
+  if (!counter) return;
+
+  const target = 73;
+  let current = 0;
+  const duration = 2000; // 2 seconds
+  const startTime = performance.now();
+
+  // Easing function for acceleration
+  function easeOutQuad(t: number): number {
+    return t * (2 - t);
+  }
+
+  function updateCounter(currentTime: number) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    // Apply easing
+    const easedProgress = easeOutQuad(progress);
+    current = Math.floor(easedProgress * target);
+    
+    counter.textContent = current.toString();
+
+    if (progress < 1) {
+      requestAnimationFrame(updateCounter);
+    } else {
+      counter.textContent = target.toString();
+    }
+  }
+
+  // Start animation when element is in viewport
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        requestAnimationFrame(updateCounter);
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(counter);
+}
+
+// Run on page load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', animateCounter);
+} else {
+  animateCounter();
+}
+</script>
