@@ -94,6 +94,6 @@ The ability to speak clearly and confidently without preparation is an essential
 
 ## Start Speaking Confidently Today  
 
-Ready to enhance your impromptu speaking skills with personalized guidance? **[Book your free 30-minute consultation](https://ny-english-teacher.odoo.com/book/7ceefa20)** and experience firsthand how tailored coaching can quickly transform your English communication.
+Ready to enhance your impromptu speaking skills with personalized guidance? **[Book your free 30-minute consultation](/en/book/)** and experience firsthand how tailored coaching can quickly transform your English communication.
 
 Or, simply **[message me directly via WhatsApp](https://wa.link/pk4f97)** to discuss your goals. I’m here to help you communicate clearly, confidently, and effectively—starting today!

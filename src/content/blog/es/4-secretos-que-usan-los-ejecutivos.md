@@ -95,6 +95,6 @@ Hablar claramente y con confianza sin preparación previa es una habilidad esenc
 
 ## Empieza a hablar con confianza hoy mismo
 
-¿Listo para mejorar tus habilidades de habla improvisada con apoyo personalizado? **[Reserva tu consulta gratuita de 30 minutos](https://ny-english-teacher.odoo.com/book/7ceefa20)** y experimenta cómo el coaching personalizado puede transformar rápidamente tu comunicación en inglés.
+¿Listo para mejorar tus habilidades de habla improvisada con apoyo personalizado? **[Reserva tu consulta gratuita de 30 minutos](/es/book/)** y experimenta cómo el coaching personalizado puede transformar rápidamente tu comunicación en inglés.
 
 O simplemente **[envíame un mensaje directo por WhatsApp](https://wa.link/pk4f97)** para discutir tus objetivos. Estoy aquí para ayudarte a comunicarte claramente, con confianza y eficacia—¡desde hoy mismo!

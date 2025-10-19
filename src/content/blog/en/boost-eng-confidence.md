@@ -93,7 +93,7 @@ Building lasting Business English confidence takes consistent effort, but you do
 
 Join a growing community of ambitious professionals like Alberto Escobar (COO, Terramar Brands) and Julio Aldana (CEO, Smarttie) who have transformed their communication skills and unlocked new career opportunities through tailored English coaching.
 
-**[Book a Free 30-Minute Consultation Today](https://ny-english-teacher.odoo.com/book/7ceefa20)** to discuss your specific goals and discover how personalized coaching can create a clear roadmap for your success. Let's elevate your English—and your career—together.
+**[Book a Free 30-Minute Consultation Today](/en/book/)** to discuss your specific goals and discover how personalized coaching can create a clear roadmap for your success. Let's elevate your English—and your career—together.
 
 ---
 

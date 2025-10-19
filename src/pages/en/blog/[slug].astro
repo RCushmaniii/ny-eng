@@ -10,6 +10,8 @@ import { siteConfig } from '@data/config';
 import { normalizeBlogSlug, buildPostUrl, assertNoDoubleLang, stripLangPrefix } from '@utils/i18nRoutes';
 import { cleanBlogUrl } from '@utils/url-cleaner';
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   // Filter for published English posts

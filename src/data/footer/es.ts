@@ -20,14 +20,14 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
         links: [
           { name: "Preguntas Frecuentes", href: `${routes.es.home}#faqs` },
           { name: "Blog", href: routes.es.blog },
-          { name: "Consulta Gratuita", href: "https://ny-english-teacher.odoo.com/book/7ceefa20", target: "_blank", rel: "noopener noreferrer" },
+          { name: "Consulta Gratuita", href: "/es/book/" },
         ],
       },
       connect: {
         title: "Contacto",
         items: [
           { type: "link", name: "Contáctame por WhatsApp", href: "https://wa.link/pk4f97", target: "_blank", rel: "noopener noreferrer" },
-          { type: "link", name: "Agendar una Consulta", href: "https://ny-english-teacher.odoo.com/book/7ceefa20", target: "_blank", rel: "noopener noreferrer" },
+          { type: "link", name: "Agendar una Consulta", href: "/es/book/" },
           { type: "link", name: "Contáctame", href: routes.es.contact },
         ] as ConnectItem[],
       },
@@ -43,8 +43,7 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
       hideCta: false,
       button: {
         text: "Reservar mi Consulta Gratuita",
-        link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
-        target: "_blank",
+        link: "/es/book/",
       },
     },
   };

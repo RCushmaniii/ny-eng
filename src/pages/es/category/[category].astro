@@ -8,6 +8,8 @@ import BlogList from "@components/blog/BlogList.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import blogHeroImage from "../../../content/blog/images/blog-hero.jpg";
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   // Generate paths for Spanish categories using i18n system
   return categories.map((category) => {

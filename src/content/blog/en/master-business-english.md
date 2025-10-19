@@ -68,13 +68,11 @@ Improving your English is an investment in your future. With my coaching, you’
 
 ## Take Your English to the Next Level
 
-Work with an experienced Business English coach to improve your communication and get results. My clear feedback and practical lessons help you learn faster. Whether you want to write better emails, lead meetings, or impress in interviews, I’m here to guide you. Don’t let English hold you back—start mastering it today and unlock new opportunities in your career.
 
 ---
 
 ## Get Started
 
-Curious how tailored English coaching can boost your confidence and supercharge your leadership? **<a href="https://ny-english-teacher.odoo.com/book/7ceefa20" target="_blank" rel="nofollow noopener noreferrer">Get your free 30-minute consultation</a>**—let’s chat about your goals and map out your next steps.
+Curious how tailored English coaching can boost your confidence and supercharge your leadership? **[Get your free 30-minute consultation](/en/book/)**—let's chat about your goals and map out your next steps.
 
-Or just **<a href="https://wa.link/pk4f97" target="_blank" rel="noopener noreferrer">send me a WhatsApp message</a>** anytime, and we’ll get you started!  
-
+Or just **<a href="https://wa.link/pk4f97" target="_blank" rel="noopener noreferrer">send me a WhatsApp message</a>** anytime, and we’ll get you started!

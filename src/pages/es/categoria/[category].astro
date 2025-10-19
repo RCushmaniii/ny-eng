@@ -9,6 +9,8 @@ import { categories, type Category } from "@data/categories";
 import { siteConfig, blogSetting } from "@data/config";
 import type { TKey } from "../../../lib/i18n";
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   // Get all categories with Spanish slugs
   const categoriesWithSpanish = categories.filter(cat => cat.esSlug);

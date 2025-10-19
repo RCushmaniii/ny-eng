@@ -14,7 +14,7 @@ const tkey = 'home';
 import { statsLists } from "@data/stats-es";
 import { logoLists } from "@data/logos";
 import { faqLists } from "@data/faqs";
-import { testimonials } from "@data/testimonials/en";
+import { testimonials } from "@data/testimonials-es";
 
 import heroSkyline from "@assets/images/home/new-york-city-skyline.jpg";
 import styleGuideImage from "@assets/images/home/developer.jpg";
@@ -31,8 +31,7 @@ const testimonialsBlock = {
     description:
       "Comienza con una sesión de coaching gratuita de 30 minutos para mejorar tu claridad, confianza y autoridad.",
     text: "Reservar Mi Llamada Estratégica Gratuita",
-    link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
-    target: "_blank",
+    link: "/es/book/",
     rel: "noopener noreferrer",
   },
 };
@@ -47,9 +46,8 @@ const heroContent = {
     "Coaching de inglés personalizado para desarrollar confianza, fluidez e impacto profesional.",
   buttons: [
     {
-      text: "Clase Gratis",
-      link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
-      target: "_blank",
+      text: "Consulta Gratuita",
+      link: "/es/book/",
       variant: "primary" as const,
     },
     {
@@ -105,8 +103,7 @@ const FooterCta = {
   hideCta: false,
   button: {
     text: "Reservar mi Consulta Gratuita",
-    link: "https://ny-english-teacher.odoo.com/book/7ceefa20",
-    target: "_blank",
+    link: "/es/book/",
     rel: "noopener noreferrer",
   },
 } as const;
@@ -184,7 +181,7 @@ const recentPostsSection = {
   description={seoDescription}
   heroImage={heroContent.backgroundImage}
   heroImageMobile={heroContent.backgroundImageMobile}
-  image="/images/logos/new-york-english-og.jpg"
+  ogImage={{ src: "/images/logos/new-york-english-sq-og.jpg" }}
 >
   <div class="relative bg-background-light">
     <Hero content={heroContent} />

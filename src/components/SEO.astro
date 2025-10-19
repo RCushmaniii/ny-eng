@@ -53,11 +53,11 @@ warnIf(
   `SEO Warning: Description is missing or too short: "${description}"`,
 );
 warnIf(
-  description && description.length > 160,
+  !!(description && description.length > 160),
   `SEO Warning: Description is longer than recommended 160 chars (${description.length} chars): "${description}"`,
 );
 warnIf(
-  title && title.length > 60,
+  !!(title && title.length > 60),
   `SEO Warning: Title is longer than recommended 60 chars (${title.length} chars): "${title}"`,
 );
 // Don't truncate - use full description as provided

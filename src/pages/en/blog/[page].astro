@@ -1,69 +1,11 @@
 ---
-import { blogSetting } from '@data/config';
-import { getCollection, type CollectionEntry } from 'astro:content';
-import PaginatedBlogLayout from '@components/blog/PaginatedBlogLayout.astro';
-import blogHero from '@assets/images/blog-hero.jpg';
-import type { TKey } from '../../../lib/i18n';
+// DISABLED: This route conflicts with [slug].astro
+// Use [...page].astro for pagination instead
+export const prerender = true;
 
 export async function getStaticPaths() {
-  // Get all blog posts and filter to English only and published only
-  const allPosts = await getCollection('blog');
-  const filteredPosts = allPosts.filter((post: CollectionEntry<'blog'>) => post.id.startsWith('en/') && post.data.publish === true);
-
-  // Sort posts by date (newest first)
-  const sortedPosts = filteredPosts.sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => 
-    b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
-  );
-  
-  // Only generate pages if we have MORE posts than fit on the first page
-  const postsPerPage = blogSetting.postsPerPage || 6;
-  const hasMultiplePages = sortedPosts.length > postsPerPage;
-  
-  // If we don't have enough posts for multiple pages, don't generate any pages
-  if (!hasMultiplePages) {
-    return [];
-  }
-  
-  // Calculate how many pages we need
-  const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
-  
-  // Generate pages starting from page 2 (page 1 is handled by index.astro)
-  return Array.from({ length: totalPages - 1 }, (_, i) => {
-    const pageNum = i + 2; // Start from page 2
-    const start = (pageNum - 1) * postsPerPage;
-    const end = start + postsPerPage;
-    const pagePosts = sortedPosts.slice(start, end);
-    
-    return {
-      params: { page: pageNum.toString() },
-      props: { 
-        page: pageNum, 
-        totalPages, 
-        posts: pagePosts,
-        hasMultiplePages
-      },
-    };
-  });
+  return [];
 }
-
-const { page, totalPages, posts, hasMultiplePages } = Astro.props;
-
-// Use centralized i18n system for blog pagination
-const lang = 'en';
-const tkey = 'blog' as TKey;
 ---
 
-<PaginatedBlogLayout 
-    posts={posts}
-    currentPage={page}
-    totalPages={totalPages}
-    baseUrl="/en/blog/"
-    title="Blog"
-    subtitle="Expert tips, strategies, and real-world examples to master Business English. Improve your professional communication skills with actionable advice."
-    heroImage={blogHero}
-    heroImageAlt="Blog hero background"
-    translationSlugEs={`/es/blog/${page}/`}
-    hasMultiplePages={hasMultiplePages}
-    lang="en"
-    tkey={tkey}
-/>
+<!-- This page is disabled - pagination handled by [...page].astro -->

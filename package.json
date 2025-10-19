@@ -22,7 +22,11 @@
     "audit:seo": "npm run build:validate && npm run preview",
     "validate:build": "npm run validate:all && npm run build",
     "fix:links": "node scripts/fix-links.mjs",
-    "fix:links:dry-run": "node scripts/fix-links.mjs --dry-run"
+    "fix:links:dry-run": "node scripts/fix-links.mjs --dry-run",
+    "test:env": "node scripts/test-env.mjs",
+    "test:env:raw": "node scripts/test-env-raw.mjs",
+    "test:calendar": "node scripts/test-calendar-api.mjs",
+    "google:auth": "node scripts/get-google-refresh-token.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -35,9 +39,12 @@
     "astro": "^5.5.3",
     "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
+    "dotenv": "^17.2.3",
+    "googleapis": "^161.0.0",
     "gray-matter": "^4.0.3",
     "lucide-astro": "^0.473.0",
     "marked": "^16.2.1",
+    "readline": "^1.3.0",
     "unpic": "^4.1.2"
   },
   "devDependencies": {

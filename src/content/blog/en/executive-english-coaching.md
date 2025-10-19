@@ -97,7 +97,7 @@ It’s about moving beyond simply being understood to truly commanding presence 
 
 ## Get Started
 
-**Ready to explore how strategic English coaching can accelerate your career and enhance your leadership performance? [Schedule a Free English Coaching Consultation Today](https://ny-english-teacher.odoo.com/book/7ceefa20) to discuss your goals.**
+**Ready to explore how strategic English coaching can accelerate your career and enhance your leadership performance? [Schedule a Free English Coaching Consultation Today](/en/book/) to discuss your goals.**
 
 Or **<a href="https://wa.link/pk4f97" target="_blank" rel="noopener noreferrer">Message Me on WhatsApp</a>** to get started instantly.  
 

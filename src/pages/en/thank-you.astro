@@ -5,49 +5,54 @@ import Button from "@components/ui/Button.astro";
 import nycImage from "@assets/images/nyc-thank-you.jpg";
 
 const metadata = {
-  title: "Thank You | Business English Communication Coach",
-  description: "Thank you for your message. I'll be in touch soon to discuss your communication goals and executive English coaching.",
+  title: "Thank You! | New York English",
+  description: "Thank you for reaching out. I'll be in touch soon to discuss your English communication goals.",
 };
 
 const heroContent = {
-  title: "Thank You — I’ve Received Your Message!",
-  description: "I'll be in touch shortly to schedule your introduction call.",
+  title: "Thank You!",
+  description: "I've received your message and will be in touch soon.",
   backgroundImage: nycImage,
   overlayOpacity: 0.4,
 };
 
 ---
-
 <Base
   lang="en"
   tkey="thank-you"
   title={metadata.title}
   description={metadata.description}
-  ogImage={{ src: "/images/logos/new-york-english-og.jpg" }}
+  ogImage={{ src: "/images/logos/new-york-english-sq-og.jpg" }}
   hideCta={false}
 >
   <InnerHero content={heroContent} />
 
-  <!-- Optional: Add a button to navigate back to the English homepage -->
-  <div class="text-center mt-8">
-    <Button href="/en/">Back to Homepage</Button>
-  </div>
-
   <section class="py-16 md:py-24">
     <div class="site-container px-4 text-center max-w-2xl mx-auto">
-      <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
-        We’ll discuss your goals and how I can help you communicate with clarity
-        and confidence.
-      </p>
-
-      <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-        What’s Next?
+      <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+        What's Next?
       </h2>
 
       <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
-        In the meantime, explore how I help professionals like you lead with
-        confidence in English — in meetings, pitches, interviews, and more.
+        While you wait, feel free to explore:
       </p>
+
+      <div class="flex flex-col md:flex-row gap-6 justify-center mb-8">
+        <a href="/en/services/" class="flex items-center gap-4 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all hover:scale-105">
+          <svg class="w-8 h-8 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+          </svg>
+          <span class="text-lg font-medium text-gray-900 dark:text-white">Scan our different services</span>
+        </a>
+        <a href="/en/testimonials/" class="flex items-center gap-4 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all hover:scale-105">
+          <svg class="w-8 h-8 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+          <span class="text-lg font-medium text-gray-900 dark:text-white">See testimonials from successful students</span>
+        </a>
+      </div>
+
+      <Button href="/en/" variant="primary">Back to Homepage</Button>
     </div>
   </section>
 </Base>

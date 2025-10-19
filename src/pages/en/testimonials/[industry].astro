@@ -6,6 +6,8 @@ import type { Testimonial } from "@data/testimonials/en";
 
 type ValidIndustry = keyof typeof testimonialsByIndustry;
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   // Get all valid industries that have testimonials
   const validIndustries = Object.keys(testimonialsByIndustry).filter(

@@ -35,8 +35,8 @@ export default defineConfig({
     remotePatterns: [{ protocol: 'https' }],
   },
   
-  // Force trailing slashes and directory-style URLs
-  trailingSlash: 'always',
+  // Force trailing slashes for pages, but not API routes
+  trailingSlash: 'ignore',
   
   build: {
     format: 'directory',

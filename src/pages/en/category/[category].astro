@@ -8,6 +8,8 @@ import { categories, type Category } from "@data/categories";
 import { siteConfig, blogSetting } from "@data/config";
 import { routeFor, type TKey } from "../../../lib/i18n";
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   return categories.map((category) => {
     const tkey = `category/${category.slug}` as TKey;

@@ -90,17 +90,14 @@ When you speak confidently in English, you unlock more than words:
 - Win new opportunities across borders  
 - Represent yourself—and your company—more effectively
 
-Business English isn’t just a skill. It’s a tool for career growth, stronger leadership, and global connection.
 
 ---
 
 ## Get Started
 
-Excited to see what personalized English coaching can do for your career? **<a href="https://ny-english-teacher.odoo.com/book/7ceefa20" target="_blank" rel="nofollow noopener noreferrer">Book your complimentary 30-minute session</a>** and let’s outline a plan tailored just for you.
+Excited to see what personalized English coaching can do for your career? **[Book your complimentary 30-minute session](/en/book/)** and let's outline a plan tailored just for you.
 
 > Or feel free to **<a href="https://wa.link/pk4f97" target="_blank" rel="noopener noreferrer">reach out on WhatsApp</a>**—I’m here and ready to help!  
 
 ---
-
-
 

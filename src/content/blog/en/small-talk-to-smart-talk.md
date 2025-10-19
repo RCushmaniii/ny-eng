@@ -26,7 +26,7 @@ I once coached Maria, an engineer from Brazil, who turned a networking freeze in
 - **Follow‑up tricks** to keep chats flowing  
 - **Dos & Don’ts** to stay professional  
 
-Want real‑time feedback on these skills? **<a href="https://ny-english-teacher.odoo.com/book/7ceefa20" target="_blank" rel="nofollow noopener noreferrer">Book a free 30‑minute consultation</a>**.
+Want real‑time feedback on these skills? **[Book a free 30‑minute consultation](/en/book/)**.
 
 ---
 
@@ -75,7 +75,7 @@ Track your wins—confidence builds fast.
 
 ## Ready to Level Up Your Small Talk?
 
-Curious how personalized coaching can transform your networking game? **<a href="https://ny-english-teacher.odoo.com/book/7ceefa20" target="_blank" rel="nofollow noopener noreferrer">Book your free 30‑minute session</a>** and let’s craft a plan to make every conversation count.  
+Curious how personalized coaching can transform your networking game? **[Book your free 30‑minute session](/en/book/)** and let's craft a plan to make every conversation count.  
 
 > Or **<a href="https://wa.link/pk4f97" target="_blank" rel="noopener noreferrer">ping me on WhatsApp</a>** for instant tips to get started today!
 

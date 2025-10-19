@@ -9,7 +9,7 @@ const tkey = 'legal/terms-of-service';
 
 // Get the legal content
 const legalData = await getCollection('legal');
-const entry = legalData.find(item => item.slug === 'en/terms-of-service');
+const entry = legalData.find((item: { slug: string }) => item.slug === 'en/terms-of-service');
 
 if (!entry) {
   throw new Error('Terms of service content not found');

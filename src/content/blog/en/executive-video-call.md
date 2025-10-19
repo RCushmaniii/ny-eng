@@ -135,12 +135,11 @@ Strong video presence helps you:
 * Reduce confusion and meeting fatigue
 * Move decisions forward—today, not next week
 
-Executive presence isn’t talent; it’s a repeatable set of habits you can learn and apply in every call.
 
 ---
 
 ## Get Personalized Coaching
 
-Want targeted feedback on your delivery, language, and presence? **[Book your free 30-minute consultation](https://ny-english-teacher.odoo.com/book/7ceefa20)** and I’ll map a plan for your role and industry.
+Want targeted feedback on your delivery, language, and presence? **[Book your free 30-minute consultation](/en/book/)** and I'll map a plan for your role and industry.
 
 Prefer a quick chat? **[Message me on WhatsApp](https://wa.link/pk4f97)**—I’m happy to help you lead your next call with confidence.

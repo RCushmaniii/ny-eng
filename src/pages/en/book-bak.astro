@@ -1,0 +1,83 @@
+---
+import Base from "@layouts/Base.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import BookingForm from "@components/booking/BookingForm.astro";
+import bookingHero from "@assets/images/contact/nyc-statue-of-liberty.jpg";
+
+const metadata = {
+  title: "Book Your Free Business English Consultation | NY English",
+  description: "Schedule your free 30-minute consultation. Get personalized advice on improving your English for work and discover how coaching can fast-track your confidence.",
+};
+
+const heroContent = {
+  title: "Book Your Free Business English Consultation",
+  description: "Unlock Confident Communication at Work",
+  backgroundImage: bookingHero,
+  overlayOpacity: 0.5,
+};
+---
+
+<Base
+  lang="en"
+  tkey="book"
+  title={metadata.title}
+  description={metadata.description}
+  ogImage={{ src: "/images/logos/new-york-english-og.jpg" }}
+>
+  <main>
+    <InnerHero content={heroContent} />
+    
+    <section class="py-16 md:py-24 bg-background-light">
+      <div class="site-container px-4 max-w-4xl mx-auto">
+        <!-- Subheadline -->
+        <div class="text-center mb-12">
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            In this 30-minute chat, we'll uncover your goals, spot quick wins, and explore if my coaching fits. No sales pitch—just a friendly chat.
+          </p>
+          
+          <!-- Benefits -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="flex items-start gap-3">
+              <!-- Target/Bullseye icon for "Identify challenges" -->
+              <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <div class="text-left">
+                <p class="text-gray-900 dark:text-white">Identify your key communication challenges</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-3">
+              <!-- Lightning bolt icon for "Boost confidence fast" -->
+              <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              <div class="text-left">
+                <p class="text-gray-900 dark:text-white">Learn practical ways to boost your confidence fast</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-3">
+              <!-- Map/Route icon for "Roadmap to next level" -->
+              <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+              </svg>
+              <div class="text-left">
+                <p class="text-gray-900 dark:text-white">Discuss your roadmap to the next level</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Booking Form -->
+        <BookingForm lang="en" />
+        
+        <!-- Reassurance Text -->
+        <div class="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
+          <p>You'll receive a confirmation email right away.</p>
+          <p class="mt-1">No payment required — this call is 100% complimentary.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

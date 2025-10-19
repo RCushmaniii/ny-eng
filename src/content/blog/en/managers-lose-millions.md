@@ -107,4 +107,4 @@ For Mexico's tech industry, mastering Business English is not about language—i
 
 **Take action now to master Business English and put your company at the forefront of global innovation.**
 
-<a href="https://ny-english-teacher.odoo.com/book/7ceefa20" target="_blank">**Ready to Win More Global Contracts? Unlock Your Team's Potential with a Free Consultation.**</a>
+**[Ready to Win More Global Contracts? Unlock Your Team's Potential with a Free Consultation.](/en/book/)**

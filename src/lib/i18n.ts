@@ -21,6 +21,7 @@ export type TKey =
   | "home"
   | "about"
   | "contact"
+  | "book"
   | "blog"
   | "blog/page"
   | "services"
@@ -47,6 +48,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     home: "/en/",
     about: "/en/about/",
     contact: "/en/contact/",
+    book: "/en/book/",
     blog: "/en/blog/",
     "blog/page": "/en/blog/",
     services: "/en/services/",
@@ -80,6 +82,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     home: "/es/",
     about: "/es/about/",
     contact: "/es/contact/",
+    book: "/es/reservar/",
     blog: "/es/blog/",
     "blog/page": "/es/blog/", 
     services: "/es/servicios/",
