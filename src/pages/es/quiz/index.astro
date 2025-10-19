@@ -1,0 +1,654 @@
+---
+import Base from '@layouts/Base.astro';
+import Button from '@components/ui/Button.astro';
+
+const title = "Quiz de Confianza al Hablar: ¿Estás Listo para Clientes Norteamericanos?";
+const description = "Descubre las brechas de comunicación que le están costando contratos, credibilidad y crecimiento profesional a tu equipo de TI. Evaluación de 3 minutos.";
+---
+
+<Base 
+  title={title} 
+  description={description}
+  lang="es"
+  customCanonical="https://www.nyenglishteacher.com/es/quiz/"
+  customHreflangs={[
+    { lang: "en-US", href: "https://www.nyenglishteacher.com/en/quiz/" },
+    { lang: "es-MX", href: "https://www.nyenglishteacher.com/es/quiz/" }
+  ]}
+  hideCta={true}
+>
+
+<!-- HERO SECTION -->
+<section class="quiz-landing-hero">
+  <div class="container-custom">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="eyebrow">Evaluación Gratuita de 3 Minutos</span>
+        
+        <h1>¿Puede Tu Equipo Defender un Precio de $200K en una Llamada de Zoom en Vivo?</h1>
+        
+        <p class="hero-subhead">
+          Grammarly puede corregir tus correos. La IA puede escribir tus propuestas. 
+          Pero cuando estás en vivo con un cliente Fortune 500 y te hacen una pregunta difícil...
+          <strong>tu inglés hablado ES tu credibilidad.</strong>
+        </p>
+
+        <div class="value-props">
+          <div class="value-prop">
+            <span class="icon">🎯</span>
+            <span>Descubre qué momentos de comunicación te están costando contratos</span>
+          </div>
+          <div class="value-prop">
+            <span class="icon">📊</span>
+            <span>Ve tu Puntuación de Confianza en Comunicación (0-100)</span>
+          </div>
+          <div class="value-prop">
+            <span class="icon">🚀</span>
+            <span>Obtén una hoja de ruta personalizada hacia el dominio del inglés hablado</span>
+          </div>
+        </div>
+
+        <Button 
+          href="/es/quiz/start" 
+          variant="primary" 
+          size="lg"
+          class="cta-start-quiz"
+        >
+          Comienza Tu Evaluación Gratuita →
+        </Button>
+
+        <div class="trust-signals">
+          <span>⏱️ Toma 3 minutos</span>
+          <span>📧 Resultados enviados al instante</span>
+          <span>🔒 100% confidencial</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <!-- Placeholder for screenshot of results page or testimonial card -->
+        <div class="visual-placeholder">
+          <div class="sample-score-card">
+            <div class="score-header">Tu Puntuación de Confianza en Comunicación</div>
+            <div class="score-number">73</div>
+            <div class="score-label">Espacio para Crecer</div>
+            <div class="score-insight">
+              <strong>Hallazgo Clave:</strong> Tu equipo duda durante las discusiones de precios, 
+              señalando incertidumbre a los clientes.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SPOKEN ENGLISH MATTERS -->
+<section class="why-spoken-english">
+  <div class="container-narrow">
+    <h2>Por Qué el Inglés Hablado es Tu Verdadera Ventaja Competitiva</h2>
+    
+    <div class="reason-cards">
+      <div class="reason-card">
+        <h3>💰 El Inglés Escrito Ya Está Resuelto</h3>
+        <p>
+          Grammarly, ChatGPT y las herramientas de IA pueden hacer que tus correos y 
+          propuestas sean impecables. <strong>Pero no pueden ayudarte en una llamada en vivo.</strong>
+        </p>
+      </div>
+
+      <div class="reason-card">
+        <h3>🎤 Los Momentos Críticos Son Hablados</h3>
+        <p>
+          Presentaciones de ventas. Negociaciones. Preguntas y respuestas con clientes. Presentaciones técnicas. 
+          Resolución de problemas de proyectos. <strong>Todo sucede en tiempo real, sin botón de "editar".</strong>
+        </p>
+      </div>
+
+      <div class="reason-card">
+        <h3>⚡ Dudar = Perder Credibilidad</h3>
+        <p>
+          ¿Esa pausa de 3 segundos mientras traduces en tu cabeza? Los clientes norteamericanos 
+          la interpretan como incertidumbre o falta de experiencia. 
+          <strong>Incluso cuando conoces la respuesta perfectamente.</strong>
+        </p>
+      </div>
+
+      <div class="reason-card">
+        <h3>📈 Confianza al Hablar = Poder de Fijación de Precios</h3>
+        <p>
+          Cuando puedes articular valor claramente y defender tu precio sin 
+          titubear, los clientes dejan de negociar el precio. 
+          <strong>Empiezan a negociar términos de asociación.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE HIDDEN COST -->
+<section class="hidden-cost">
+  <div class="container-narrow">
+    <h2>La Pregunta del Millón de Dólares</h2>
+    
+    <div class="cost-callout">
+      <p class="cost-question">
+        ¿Cuántas veces tu equipo ha dicho <em>"Déjame dar seguimiento por correo"</em> 
+        en una llamada con un cliente... cuando en realidad <strong>sabían la respuesta</strong>?
+      </p>
+      
+      <p class="cost-impact">
+        Esa evasión te cuesta:
+      </p>
+      
+      <ul class="cost-list">
+        <li>❌ Credibilidad inmediata (los clientes perciben la duda)</li>
+        <li>❌ Impulso del negocio (las respuestas por correo toman días)</li>
+        <li>❌ Poder de fijación de precios (no puedes defender valor por escrito)</li>
+        <li>❌ Tu tiempo (te conviertes en el cuello de botella de cada llamada)</li>
+      </ul>
+      
+      <p class="cost-solution">
+        <strong>La solución no es más vocabulario.</strong><br>
+        Es práctica deliberada en situaciones de comunicación de alta presión.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU'LL DISCOVER -->
+<section class="what-youll-discover">
+  <div class="container-custom">
+    <h2>Lo Que Este Quiz de 3 Minutos Revela</h2>
+    
+    <div class="discovery-grid">
+      <div class="discovery-item">
+        <div class="discovery-number">1</div>
+        <h3>Tu Puntuación de Preparación al Hablar</h3>
+        <p>
+          Una evaluación de 0-100 de qué tan confiadamente tu equipo puede manejar 
+          conversaciones de alto riesgo con clientes norteamericanos.
+        </p>
+      </div>
+
+      <div class="discovery-item">
+        <div class="discovery-number">2</div>
+        <h3>Tu Mayor Brecha al Hablar</h3>
+        <p>
+          ¿Es claridad en tiempo real bajo presión? ¿Confianza en negociaciones? 
+          ¿Liderazgo en reuniones? Identificaremos tu oportunidad #1.
+        </p>
+      </div>
+
+      <div class="discovery-item">
+        <div class="discovery-number">3</div>
+        <h3>Lo Que Te Está Costando</h3>
+        <p>
+          Ve exactamente cómo las brechas al hablar se traducen en contratos perdidos, 
+          ciclos de venta más largos y valores de contrato más bajos.
+        </p>
+      </div>
+
+      <div class="discovery-item">
+        <div class="discovery-number">4</div>
+        <h3>Cómo Solucionarlo (Rápido)</h3>
+        <p>
+          Tu reporte personalizado incluye ejercicios específicos de comunicación y 
+          una hoja de ruta de mejora de 30 días.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof">
+  <div class="container-narrow">
+    <h2>Únete a Más de 200 Líderes Tech Que Han Tomado Esta Evaluación</h2>
+    
+    <div class="testimonial-cards">
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          "Obtuve 58 puntos y pensé, 'No está mal'. Luego leí el reporte 
+          y me di cuenta de que estábamos dejando más de $100K sobre la mesa cada trimestre porque 
+          nuestros PMs no podían comandar las llamadas con clientes."
+        </p>
+        <cite>— Fundador, empresa de desarrollo de 35 personas, Ciudad de México</cite>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          "El quiz me obligó a admitir lo que ya sabía: yo era el cuello de botella. 
+          Cada llamada importante tenía que pasar por mí porque mi equipo no tenía suficiente 
+          confianza. Ahora ellos lideran las llamadas de descubrimiento."
+        </p>
+        <cite>— CTO, consultoría SaaS, Bogotá</cite>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          "Pensábamos que nuestro inglés era 'suficientemente bueno'. Esta evaluación nos mostró 
+          los momentos específicos donde estábamos perdiendo credibilidad. Seis semanas después, 
+          cerramos nuestro primer contrato de $180K."
+        </p>
+        <cite>— VP de Ingeniería, startup fintech, Buenos Aires</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container-narrow">
+    <h2>¿Listo Para Ver Dónde Te Encuentras?</h2>
+    
+    <p class="cta-subtext">
+      Toma el Quiz de Confianza al Hablar de 3 minutos y obtén tu reporte 
+      personalizado al instante.
+    </p>
+    
+    <Button 
+      href="/es/quiz/start" 
+      variant="primary" 
+      size="lg"
+    >
+      Comienza Tu Evaluación Gratuita →
+    </Button>
+    
+    <div class="trust-signals">
+      <span>⏱️ 3 minutos</span>
+      <span>📧 Resultados instantáneos</span>
+      <span>🔒 Sin spam</span>
+    </div>
+  </div>
+</section>
+
+</Base>
+
+<style>
+/* Container Utilities */
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container-narrow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Hero Section */
+.quiz-landing-hero {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.eyebrow {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.quiz-landing-hero h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-subhead {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.value-props {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.value-prop {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+
+.value-prop .icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.cta-start-quiz {
+  margin-bottom: 1rem;
+}
+
+.trust-signals {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Hero Visual */
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-placeholder {
+  width: 100%;
+  max-width: 400px;
+}
+
+.sample-score-card {
+  background: white;
+  color: #2d3748;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.score-header {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #718096;
+  margin-bottom: 1rem;
+}
+
+.score-number {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #667eea;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.score-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+
+.score-insight {
+  background: #f7fafc;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Why Spoken English */
+.why-spoken-english {
+  padding: 4rem 0;
+  background: #f7fafc;
+}
+
+.why-spoken-english h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: #2d3748;
+}
+
+.reason-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.reason-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reason-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.reason-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+.reason-card p {
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+/* Hidden Cost */
+.hidden-cost {
+  padding: 4rem 0;
+  background: white;
+}
+
+.hidden-cost h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2d3748;
+}
+
+.cost-callout {
+  background: #fff5f5;
+  border-left: 4px solid #e53e3e;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.cost-question {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #2d3748;
+}
+
+.cost-impact {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+.cost-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.cost-list li {
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #4a5568;
+}
+
+.cost-solution {
+  font-size: 1.1rem;
+  color: #2d3748;
+  padding-top: 1rem;
+  border-top: 2px solid #feb2b2;
+}
+
+/* What You'll Discover */
+.what-youll-discover {
+  padding: 4rem 0;
+  background: white;
+}
+
+.what-youll-discover h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: #2d3748;
+}
+
+.discovery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.discovery-item {
+  text-align: center;
+}
+
+.discovery-number {
+  width: 60px;
+  height: 60px;
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.discovery-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+.discovery-item p {
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+/* Social Proof */
+.social-proof {
+  padding: 4rem 0;
+  background: #f7fafc;
+}
+
+.social-proof h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: #2d3748;
+}
+
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.testimonial-card cite {
+  font-size: 0.875rem;
+  color: #718096;
+  font-style: normal;
+}
+
+/* Final CTA */
+.final-cta {
+  padding: 4rem 0;
+  background: white;
+  text-align: center;
+}
+
+.final-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+.cta-subtext {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #4a5568;
+}
+
+.final-cta .trust-signals {
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .quiz-landing-hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-subhead {
+    font-size: 1.1rem;
+  }
+  
+  .trust-signals {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .final-cta .trust-signals {
+    align-items: center;
+  }
+
+  .reason-cards,
+  .discovery-grid,
+  .testimonial-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cost-question {
+    font-size: 1.25rem;
+  }
+}
+</style>
