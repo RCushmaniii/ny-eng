@@ -116,6 +116,17 @@ const description = "Obtén tu Puntuación de Confianza en Comunicación persona
         <div class="score-description" id="score-description">
           <!-- Dynamically populated based on score -->
         </div>
+
+        <div class="score-cta">
+          <Button 
+            href="/es/book" 
+            variant="primary" 
+            size="lg"
+          >
+            <Calendar size={20} />
+            Agendar Llamada Estratégica Gratuita
+          </Button>
+        </div>
       </div>
 
       <!-- Key Findings -->
@@ -153,13 +164,13 @@ const description = "Obtén tu Puntuación de Confianza en Comunicación persona
           </Button>
           
           <Button 
-            href="#" 
+            href="/es/quiz/report" 
             variant="secondary" 
             size="lg"
-            id="download-pdf"
+            class="view-report-btn"
           >
             <Download size={20} />
-            Descargar Reporte Completo
+            Ver Reporte Completo
           </Button>
         </div>
       </div>
@@ -329,6 +340,14 @@ const description = "Obtén tu Puntuación de Confianza en Comunicación persona
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;
+}
+
+.score-cta {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: center;
 }
 
 /* Findings & Recommendations Cards */
