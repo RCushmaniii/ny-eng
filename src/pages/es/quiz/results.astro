@@ -68,6 +68,17 @@ const description = "Obtén tu Puntuación de Confianza en Comunicación persona
           />
         </div>
 
+        <div class="form-group">
+          <label for="phone" class="form-label">Número de Teléfono (Opcional)</label>
+          <input 
+            type="tel" 
+            id="phone" 
+            name="phone" 
+            class="form-input"
+            placeholder="+52 (555) 123-4567"
+          />
+        </div>
+
         <Button 
           type="submit"
           variant="primary" 
@@ -79,7 +90,8 @@ const description = "Obtén tu Puntuación de Confianza en Comunicación persona
         </Button>
 
         <p class="privacy-text">
-          🔒 Respetamos tu privacidad. Tu información es segura y nunca será compartida.
+          Al enviar este formulario, aceptas nuestra <a href="/es/legal/privacy-policy" target="_blank" class="privacy-link">Política de Privacidad</a>. 
+          Respetamos tu privacidad y nunca venderemos tu información.
         </p>
       </form>
     </div>
@@ -242,6 +254,17 @@ const description = "Obtén tu Puntuación de Confianza en Comunicación persona
   font-size: 0.875rem;
   color: #64748b;
   margin-top: 1rem;
+  line-height: 1.5;
+}
+
+.privacy-link {
+  color: #3b82f6;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.privacy-link:hover {
+  color: #2563eb;
 }
 
 /* Results Display */
@@ -404,6 +427,7 @@ if (emailForm) {
     const name = formData.get('name');
     const email = formData.get('email');
     const company = formData.get('company');
+    const phone = formData.get('phone');
     
     // Calculate score
     const result = calculateScore();
@@ -416,6 +440,7 @@ if (emailForm) {
       name,
       email,
       company,
+      phone,
       score,
       totalPoints,
       timestamp: new Date().toISOString()
