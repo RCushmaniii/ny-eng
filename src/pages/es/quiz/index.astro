@@ -489,14 +489,10 @@ const description = "Descubre las brechas de comunicación que le están costand
 
 .reason-cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-}
-
-@media (max-width: 1024px) {
-  .reason-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .reason-card {
@@ -787,6 +783,8 @@ function animateCounter() {
   }
 
   function updateCounter(currentTime: number) {
+    if (!counter) return;
+    
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / duration, 1);
     

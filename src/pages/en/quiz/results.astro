@@ -1,0 +1,570 @@
+---
+import Base from '@layouts/Base.astro';
+import Button from '@components/ui/Button.astro';
+import { Mail, Download, Calendar } from 'lucide-astro';
+
+const title = "Your Speaking Confidence Results | NY English";
+const description = "Get your personalized Communication Confidence Score and improvement roadmap.";
+---
+
+<Base 
+  title={title} 
+  description={description}
+  lang="en"
+  customCanonical="https://www.nyenglishteacher.com/en/quiz/results/"
+  customHreflangs={[
+    { lang: "en-US", href: "https://www.nyenglishteacher.com/en/quiz/results/" },
+    { lang: "es-MX", href: "https://www.nyenglishteacher.com/es/quiz/results/" }
+  ]}
+  hideCta={true}
+>
+
+<section class="quiz-results pt-28 pb-16 md:pt-32 md:pb-20">
+  <div class="container-narrow">
+    
+    <!-- Lead Capture Form (shown first) -->
+    <div class="lead-capture-card" id="lead-capture">
+      <div class="capture-header">
+        <h1>You're Almost There!</h1>
+        <p class="capture-subtext">
+          Enter your email to receive your personalized Communication Confidence Score 
+          and detailed improvement roadmap.
+        </p>
+      </div>
+
+      <form class="capture-form" id="email-form">
+        <div class="form-group">
+          <label for="name" class="form-label">Your Name</label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            class="form-input"
+            placeholder="John Smith"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="form-input"
+            placeholder="john@company.com"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="company" class="form-label">Company (Optional)</label>
+          <input 
+            type="text" 
+            id="company" 
+            name="company" 
+            class="form-input"
+            placeholder="Your Company Name"
+          />
+        </div>
+
+        <Button 
+          type="submit"
+          variant="primary" 
+          size="lg"
+          class="submit-button"
+        >
+          <Mail size={20} />
+          Get My Results →
+        </Button>
+
+        <p class="privacy-text">
+          🔒 We respect your privacy. Your information is secure and will never be shared.
+        </p>
+      </form>
+    </div>
+
+    <!-- Results Display (shown after email submission) -->
+    <div class="results-display" id="results-display" style="display: none;">
+      
+      <!-- Score Card -->
+      <div class="score-card">
+        <div class="score-header">
+          <h2>Your Communication Confidence Score</h2>
+          <p class="score-subtitle">Based on your responses</p>
+        </div>
+
+        <div class="score-circle">
+          <div class="score-number" id="final-score">0</div>
+          <div class="score-max">/ 100</div>
+        </div>
+
+        <div class="score-label" id="score-label">Calculating...</div>
+        
+        <div class="score-description" id="score-description">
+          <!-- Dynamically populated based on score -->
+        </div>
+      </div>
+
+      <!-- Key Findings -->
+      <div class="findings-card">
+        <h3>Key Findings</h3>
+        <div id="findings-content">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Recommendations -->
+      <div class="recommendations-card">
+        <h3>Your Personalized Roadmap</h3>
+        <div id="recommendations-content">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="results-cta">
+        <h3>Ready to Transform Your Team's Communication?</h3>
+        <p>
+          Book a free 30-minute strategy call to discuss your results and create 
+          a custom plan for your team.
+        </p>
+        
+        <div class="cta-buttons">
+          <Button 
+            href="/en/book" 
+            variant="primary" 
+            size="lg"
+          >
+            <Calendar size={20} />
+            Book Free Strategy Call
+          </Button>
+          
+          <Button 
+            href="#" 
+            variant="secondary" 
+            size="lg"
+            id="download-pdf"
+          >
+            <Download size={20} />
+            Download Full Report
+          </Button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</Base>
+
+<style>
+.container-narrow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.quiz-results {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+  min-height: calc(100vh - 80px);
+}
+
+/* Lead Capture Card */
+.lead-capture-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.capture-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.capture-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.capture-subtext {
+  font-size: 1.125rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.capture-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.privacy-text {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-top: 1rem;
+}
+
+/* Results Display */
+.results-display {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Score Card */
+.score-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.score-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.score-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+.score-circle {
+  margin: 2rem 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.score-number {
+  font-size: 5rem;
+  font-weight: 700;
+  color: #3b82f6;
+  line-height: 1;
+}
+
+.score-max {
+  font-size: 2rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.score-label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.score-description {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Findings & Recommendations Cards */
+.findings-card,
+.recommendations-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.findings-card h3,
+.recommendations-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+/* Results CTA */
+.results-cta {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  padding: 3rem;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.results-cta h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.results-cta p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .lead-capture-card,
+  .score-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .capture-header h1 {
+    font-size: 2rem;
+  }
+
+  .score-number {
+    font-size: 4rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+}
+</style>
+
+<script>
+// Calculate score and display results
+function calculateScore() {
+  const answersJson = sessionStorage.getItem('quizAnswers');
+  if (!answersJson) {
+    // Redirect back to start if no answers
+    window.location.href = '/en/quiz/start';
+    return;
+  }
+
+  const answers = JSON.parse(answersJson);
+  const totalPoints = Object.values(answers).reduce((sum: number, val) => sum + (val as number), 0);
+  const maxPoints = 100; // 10 questions × 10 points each
+  const score = Math.round((totalPoints / maxPoints) * 100);
+
+  return { score, totalPoints };
+}
+
+// Handle email form submission
+const emailForm = document.getElementById('email-form');
+const leadCapture = document.getElementById('lead-capture');
+const resultsDisplay = document.getElementById('results-display');
+
+if (emailForm) {
+  emailForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(emailForm as HTMLFormElement);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const company = formData.get('company');
+    
+    // Calculate score
+    const result = calculateScore();
+    if (!result) return;
+    
+    const { score, totalPoints } = result;
+    
+    // Store lead data (you'll want to send this to your backend/CRM)
+    const leadData = {
+      name,
+      email,
+      company,
+      score,
+      totalPoints,
+      timestamp: new Date().toISOString()
+    };
+    
+    console.log('Lead captured:', leadData);
+    // TODO: Send to your backend/CRM
+    
+    // Show results
+    if (leadCapture && resultsDisplay) {
+      leadCapture.style.display = 'none';
+      resultsDisplay.style.display = 'flex';
+    }
+    
+    // Animate score counter
+    animateScore(score);
+    
+    // Display personalized content
+    displayResults(score);
+  });
+}
+
+function animateScore(targetScore: number) {
+  const scoreElement = document.getElementById('final-score');
+  if (!scoreElement) return;
+  
+  let current = 0;
+  const duration = 2000;
+  const startTime = performance.now();
+  
+  function update(currentTime: number) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    current = Math.floor(progress * targetScore);
+    scoreElement.textContent = current.toString();
+    
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      scoreElement.textContent = targetScore.toString();
+    }
+  }
+  
+  requestAnimationFrame(update);
+}
+
+function displayResults(score: number) {
+  const labelEl = document.getElementById('score-label');
+  const descEl = document.getElementById('score-description');
+  const findingsEl = document.getElementById('findings-content');
+  const recsEl = document.getElementById('recommendations-content');
+  
+  let label, description, findings, recommendations;
+  
+  if (score >= 80) {
+    label = "Strong Foundation";
+    description = "Your team has solid English communication skills. Focus on refining advanced techniques to close bigger deals and command premium pricing.";
+    findings = `
+      <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+        <li style="padding-left: 1.5rem; position: relative; color: #475569;">
+          <span style="position: absolute; left: 0; color: #10b981;">✓</span>
+          Your team communicates clearly in most situations
+        </li>
+        <li style="padding-left: 1.5rem; position: relative; color: #475569;">
+          <span style="position: absolute; left: 0; color: #f59e0b;">⚠</span>
+          Minor gaps in high-pressure negotiations or complex explanations
+        </li>
+        <li style="padding-left: 1.5rem; position: relative; color: #475569;">
+          <span style="position: absolute; left: 0; color: #10b981;">✓</span>
+          Good foundation for scaling your business
+        </li>
+      </ul>
+    `;
+    recommendations = `
+      <ol style="list-style: decimal; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 1rem; color: #475569;">
+        <li>Master executive-level communication for C-suite conversations</li>
+        <li>Refine negotiation language to defend premium pricing</li>
+        <li>Practice impromptu speaking for unexpected client challenges</li>
+      </ol>
+    `;
+  } else if (score >= 60) {
+    label = "Room for Growth";
+    description = "Your team can communicate, but hesitation and uncertainty are costing you deals. Strategic improvement will unlock significant revenue.";
+    findings = `
+      <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+        <li style="padding-left: 1.5rem; position: relative; color: #475569;">
+          <span style="position: absolute; left: 0; color: #f59e0b;">⚠</span>
+          Team often defers to email instead of answering live
+        </li>
+        <li style="padding-left: 1.5rem; position: relative; color: #475569;">
+          <span style="position: absolute; left: 0; color: #ef4444;">✗</span>
+          Struggles with pricing discussions and objection handling
+        </li>
+        <li style="padding-left: 1.5rem; position: relative; color: #475569;">
+          <span style="position: absolute; left: 0; color: #f59e0b;">⚠</span>
+          Occasional misunderstandings with North American clients
+        </li>
+      </ul>
+    `;
+    recommendations = `
+      <ol style="list-style: decimal; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 1rem; color: #475569;">
+        <li>Build confidence responding to challenges in real-time</li>
+        <li>Practice defending value and pricing without hesitation</li>
+        <li>Develop clear, concise explanations of complex solutions</li>
+        <li>Master small talk and relationship-building conversations</li>
+      </ol>
+    `;
+  } else {
+    label = "Critical Opportunity";
+    description = "Communication gaps are significantly limiting your growth. Immediate improvement will directly impact your bottom line.";
+    findings = `
+      <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+        <li style="padding-left: 1.5rem; position: relative; color: #475569;">
+          <span style="position: absolute; left: 0; color: #ef4444;">✗</span>
+          You're the bottleneck—team can't handle client calls independently
+        </li>
+        <li style="padding-left: 1.5rem; position: relative; color: #475569;">
+          <span style="position: absolute; left: 0; color: #ef4444;">✗</span>
+          Frequent misunderstandings leading to lost deals
+        </li>
+        <li style="padding-left: 1.5rem; position: relative; color: #475569;">
+          <span style="position: absolute; left: 0; color: #ef4444;">✗</span>
+          Team avoids client-facing situations due to language anxiety
+        </li>
+      </ul>
+    `;
+    recommendations = `
+      <ol style="list-style: decimal; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 1rem; color: #475569;">
+        <li><strong>Priority:</strong> Build foundational confidence in client conversations</li>
+        <li>Practice common client scenarios until responses become automatic</li>
+        <li>Develop a framework for explaining your value proposition clearly</li>
+        <li>Start with lower-stakes calls and gradually increase complexity</li>
+      </ol>
+    `;
+  }
+  
+  if (labelEl) labelEl.textContent = label;
+  if (descEl) descEl.innerHTML = description;
+  if (findingsEl) findingsEl.innerHTML = findings;
+  if (recsEl) recsEl.innerHTML = recommendations;
+}
+
+// Check if coming directly to results page
+if (window.location.pathname.includes('/results')) {
+  const answersJson = sessionStorage.getItem('quizAnswers');
+  if (!answersJson) {
+    // Redirect to start if no quiz data
+    window.location.href = '/en/quiz/start';
+  }
+}
+</script>
