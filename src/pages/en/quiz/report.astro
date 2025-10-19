@@ -1,0 +1,1097 @@
+---
+import Base from '@layouts/Base.astro';
+import Button from '@components/ui/Button.astro';
+import { Calendar, TrendingUp, AlertCircle, CheckCircle, Target } from 'lucide-astro';
+import { questionsEn } from '@data/quiz/questions';
+
+const title = "Your Communication Confidence Report | NY English";
+const description = "Detailed analysis of your team's English communication strengths and opportunities.";
+---
+
+<Base 
+  title={title} 
+  description={description}
+  lang="en"
+  customCanonical="https://www.nyenglishteacher.com/en/quiz/report/"
+  customHreflangs={[
+    { lang: "en-US", href: "https://www.nyenglishteacher.com/en/quiz/report/" },
+    { lang: "es-MX", href: "https://www.nyenglishteacher.com/es/quiz/report/" }
+  ]}
+  hideCta={true}
+>
+
+<div class="report-container">
+  
+  <!-- Page 1: Header & Score Overview -->
+  <section class="report-page page-1">
+    <div class="report-header">
+      <div class="header-content">
+        <h1>Communication Confidence Report</h1>
+        <div class="recipient-info" id="recipient-info">
+          <!-- Populated by JS -->
+        </div>
+        <div class="report-meta" id="report-meta">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+      <div class="company-logo">
+        <img src="/logo.svg" alt="NY English Teacher" />
+      </div>
+    </div>
+
+    <div class="score-overview">
+      <div class="main-score-display">
+        <div class="score-badge" id="score-badge">
+          <div class="badge-score" id="badge-score">0</div>
+          <div class="badge-label">Overall Score</div>
+        </div>
+        <div class="score-interpretation" id="score-interpretation">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <div class="score-breakdown" id="score-breakdown">
+        <!-- Populated by JS with category scores -->
+      </div>
+    </div>
+
+    <div class="percentile-comparison">
+      <h2>How You Compare</h2>
+      <div class="comparison-chart" id="comparison-chart">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Page 2: Gap Analysis -->
+  <section class="report-page page-2">
+    <h2>Gap Analysis: What This Means in Real Situations</h2>
+    
+    <div class="gap-scenarios" id="gap-scenarios">
+      <!-- Populated by JS based on weak areas -->
+    </div>
+
+    <div class="business-impact">
+      <h3><AlertCircle size={24} /> Business Impact</h3>
+      <div class="impact-content" id="impact-content">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <div class="elite-comparison">
+      <h3><TrendingUp size={24} /> How Elite Firms Handle This Differently</h3>
+      <div class="elite-content" id="elite-content">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Page 3-4: Question Breakdown -->
+  <section class="report-page page-3">
+    <h2>Question-by-Question Analysis</h2>
+    <p class="section-intro">Here's how your responses reveal specific patterns and opportunities:</p>
+    
+    <div class="questions-analysis" id="questions-analysis-1">
+      <!-- Questions 1-5 populated by JS -->
+    </div>
+  </section>
+
+  <section class="report-page page-4">
+    <div class="questions-analysis" id="questions-analysis-2">
+      <!-- Questions 6-10 populated by JS -->
+    </div>
+  </section>
+
+  <!-- Page 5: 30-Day Action Plan -->
+  <section class="report-page page-5">
+    <h2><Target size={28} /> Your 30-Day Action Plan</h2>
+    <p class="section-intro">A practical roadmap to improve your team's communication confidence:</p>
+    
+    <div class="action-plan" id="action-plan">
+      <!-- Populated by JS based on score tier -->
+    </div>
+  </section>
+
+  <!-- Page 6: Recommendations & Next Steps -->
+  <section class="report-page page-6">
+    <h2>What's Next: Your Path Forward</h2>
+    
+    <div class="recommendation-paths" id="recommendation-paths">
+      <!-- Populated by JS -->
+    </div>
+
+    <div class="final-cta">
+      <h3>Ready to Take Action?</h3>
+      <p>Book a free 30-minute strategy call to discuss your results and create a custom training plan for your team.</p>
+      
+      <Button 
+        href="/en/book" 
+        variant="primary" 
+        size="lg"
+      >
+        <Calendar size={20} />
+        Book Your Free Strategy Call
+      </Button>
+
+      <div class="contact-info">
+        <p><strong>New York English Teacher</strong></p>
+        <p>Email: contact@nyenglishteacher.com</p>
+        <p>Website: www.nyenglishteacher.com</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</Base>
+
+<style>
+/* Print-friendly base styles */
+.report-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 0 2rem 2rem;
+}
+
+.report-page {
+  padding: 2rem;
+  margin-bottom: 0;
+  background: white;
+  page-break-after: auto;
+}
+
+/* Fix for floating header */
+.report-page:first-child {
+  padding-top: 8rem;
+}
+
+.report-page.page-2,
+.report-page.page-3,
+.report-page.page-4,
+.report-page.page-5,
+.report-page.page-6 {
+  padding-top: 2rem;
+}
+
+.report-page h2 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+/* Header */
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 2rem;
+  border-bottom: 3px solid #3b82f6;
+  margin-bottom: 2rem;
+}
+
+.header-content h1 {
+  font-size: 2rem;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.recipient-info {
+  font-size: 1.125rem;
+  color: #475569;
+  margin-bottom: 0.5rem;
+}
+
+.report-meta {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.company-logo img {
+  height: 60px;
+}
+
+/* Score Overview */
+.score-overview {
+  margin-bottom: 3rem;
+}
+
+.main-score-display {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.score-badge {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.badge-score {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.badge-label {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+
+.score-interpretation {
+  flex: 1;
+}
+
+.score-interpretation h3 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.score-interpretation p {
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Score Breakdown */
+.score-breakdown {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  margin-top: 2rem;
+}
+
+.score-breakdown h3 {
+  margin-bottom: 1.5rem;
+}
+
+.category-score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.category-score:last-child {
+  border-bottom: none;
+}
+
+.category-name {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+.category-bar {
+  flex: 1;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.category-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  transition: width 0.3s ease;
+}
+
+.category-value {
+  font-weight: 600;
+  color: #3b82f6;
+  min-width: 50px;
+  text-align: right;
+}
+
+/* Percentile Comparison */
+.percentile-comparison {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 2px solid #e2e8f0;
+}
+
+.percentile-comparison h2 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+.comparison-bar {
+  background: #f1f5f9;
+  height: 60px;
+  border-radius: 8px;
+  position: relative;
+  margin: 1rem 0;
+}
+
+.comparison-marker {
+  position: absolute;
+  top: -10px;
+  transform: translateX(-50%);
+}
+
+.marker-label {
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Gap Analysis */
+.gap-scenarios {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.scenario-card {
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.scenario-card h4 {
+  color: #991b1b;
+  margin-bottom: 0.5rem;
+}
+
+.scenario-card p {
+  color: #475569;
+  line-height: 1.6;
+}
+
+.business-impact,
+.elite-comparison {
+  margin-bottom: 2rem;
+}
+
+.business-impact h3,
+.elite-comparison h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+/* Question Analysis */
+.question-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.question-item:last-child {
+  border-bottom: none;
+}
+
+.question-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.question-number {
+  background: #3b82f6;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  flex-shrink: 0;
+  font-size: 0.875rem;
+}
+
+.question-text {
+  flex: 1;
+  font-weight: 600;
+  color: #0f172a;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.question-score {
+  font-weight: 700;
+  color: #3b82f6;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.your-answer {
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 3px solid #3b82f6;
+}
+
+.insight {
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Action Plan */
+.action-plan {
+  margin-top: 1.5rem;
+}
+
+.week-plan {
+  margin-bottom: 1.5rem;
+}
+
+.week-header {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  padding: 0.875rem 1.25rem;
+  border-radius: 8px 8px 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.week-content {
+  background: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 0 0 8px 8px;
+  border: 1px solid #e2e8f0;
+  border-top: none;
+}
+
+.week-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.week-content li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.week-content li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 700;
+}
+
+/* Recommendations */
+.recommendation-paths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.path-card {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+}
+
+.path-card h4 {
+  font-size: 1.125rem;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.path-card p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.path-card ul {
+  font-size: 0.9rem;
+}
+
+.path-card.recommended {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.recommended-badge {
+  display: inline-block;
+  background: #3b82f6;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+/* Final CTA */
+.final-cta {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+  border-radius: 12px;
+}
+
+.final-cta h3 {
+  font-size: 2rem;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.final-cta p {
+  font-size: 1.125rem;
+  color: #475569;
+  margin-bottom: 2rem;
+}
+
+.contact-info {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #cbd5e1;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.contact-info p {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+}
+
+/* Print Styles */
+@media print {
+  .report-container {
+    padding: 0;
+  }
+
+  .report-page {
+    margin: 0;
+    padding: 1in;
+    page-break-after: always;
+  }
+
+  .report-page:last-child {
+    page-break-after: auto;
+  }
+
+  button {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-score-display {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .recommendation-paths {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<script>
+// Get quiz data from sessionStorage
+const answersJson = sessionStorage.getItem('quizAnswers');
+const leadDataJson = sessionStorage.getItem('leadData');
+
+if (!answersJson) {
+  window.location.href = '/en/quiz/start';
+}
+
+const answers = JSON.parse(answersJson);
+const leadData = leadDataJson ? JSON.parse(leadDataJson) : { name: 'Valued Client' };
+
+// Calculate scores
+function calculateScores() {
+  const totalPoints = Object.values(answers).reduce((sum, val) => sum + val, 0);
+  const maxPoints = 100;
+  const overallScore = Math.round((totalPoints / maxPoints) * 100);
+
+  // Calculate category scores
+  const categories = {
+    clarity: { total: 0, count: 0, max: 40 },
+    confidence: { total: 0, count: 0, max: 30 },
+    negotiation: { total: 0, count: 0, max: 20 },
+    leadership: { total: 0, count: 0, max: 10 }
+  };
+
+  Object.entries(answers).forEach(([qId, points]) => {
+    const question = questionsEn.find(q => q.id === parseInt(qId));
+    if (question) {
+      categories[question.category].total += points;
+      categories[question.category].count++;
+    }
+  });
+
+  const categoryScores = {};
+  Object.entries(categories).forEach(([cat, data]) => {
+    categoryScores[cat] = Math.round((data.total / data.max) * 100);
+  });
+
+  return { overallScore, categoryScores, totalPoints };
+}
+
+const { overallScore, categoryScores } = calculateScores();
+
+// Populate header
+const recipientInfo = document.getElementById('recipient-info');
+const reportMeta = document.getElementById('report-meta');
+
+if (recipientInfo) {
+  recipientInfo.innerHTML = `<strong>Prepared for:</strong> ${leadData.name}${leadData.company ? ` | ${leadData.company}` : ''}`;
+}
+
+if (reportMeta) {
+  const date = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  reportMeta.innerHTML = `<strong>Report Generated:</strong> ${date}`;
+}
+
+// Populate score badge
+const badgeScore = document.getElementById('badge-score');
+if (badgeScore) {
+  badgeScore.textContent = overallScore;
+}
+
+// Populate score interpretation
+const scoreInterpretation = document.getElementById('score-interpretation');
+if (scoreInterpretation) {
+  let tier, description;
+  
+  if (overallScore >= 80) {
+    tier = "Strong Foundation";
+    description = "Your team demonstrates solid English communication skills with minor areas for refinement.";
+  } else if (overallScore >= 60) {
+    tier = "Room for Growth";
+    description = "Your team has foundational skills but significant opportunities to improve confidence and clarity.";
+  } else {
+    tier = "Critical Opportunity";
+    description = "Communication gaps are limiting growth. Immediate improvement will directly impact your bottom line.";
+  }
+
+  scoreInterpretation.innerHTML = `
+    <h3>${tier}</h3>
+    <p>${description}</p>
+  `;
+}
+
+// Populate category breakdown
+const scoreBreakdown = document.getElementById('score-breakdown');
+if (scoreBreakdown) {
+  const categoryNames = {
+    clarity: 'Clarity & Articulation',
+    confidence: 'Speaking Confidence',
+    negotiation: 'Negotiation Skills',
+    leadership: 'Leadership Presence'
+  };
+
+  let html = '<h3 style="margin-bottom: 1rem;">Score by Category</h3>';
+  Object.entries(categoryScores).forEach(([cat, score]) => {
+    html += `
+      <div class="category-score">
+        <span class="category-name">${categoryNames[cat]}</span>
+        <div class="category-bar">
+          <div class="category-fill" style="width: ${score}%"></div>
+        </div>
+        <span class="category-value">${score}/100</span>
+      </div>
+    `;
+  });
+
+  scoreBreakdown.innerHTML = html;
+}
+
+// Populate comparison chart
+const comparisonChart = document.getElementById('comparison-chart');
+if (comparisonChart) {
+  comparisonChart.innerHTML = `
+    <p style="margin-bottom: 1rem; color: #475569;">Your score compared to industry benchmarks:</p>
+    <div class="comparison-bar">
+      <div class="comparison-marker" style="left: 45%;">
+        <div class="marker-label" style="background: #fef2f2; color: #991b1b; border: 2px solid #ef4444;">
+          Struggling Teams: 30-45
+        </div>
+      </div>
+      <div class="comparison-marker" style="left: 70%;">
+        <div class="marker-label" style="background: #fef9c3; color: #854d0e; border: 2px solid #eab308;">
+          Average Teams: 60-70
+        </div>
+      </div>
+      <div class="comparison-marker" style="left: 90%;">
+        <div class="marker-label" style="background: #f0fdf4; color: #166534; border: 2px solid #22c55e;">
+          Elite Teams: 85-95
+        </div>
+      </div>
+      <div class="comparison-marker" style="left: ${overallScore}%;">
+        <div class="marker-label" style="background: #3b82f6; color: white; border: 2px solid #2563eb;">
+          You: ${overallScore}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// Populate gap scenarios
+const gapScenarios = document.getElementById('gap-scenarios');
+if (gapScenarios) {
+  const weakCategories = Object.entries(categoryScores)
+    .filter(([_, score]) => score < 70)
+    .sort((a, b) => a[1] - b[1]);
+
+  let html = '';
+  weakCategories.forEach(([cat, score]) => {
+    const scenarios = {
+      clarity: {
+        title: 'Client Calls Require Constant Clarification',
+        description: 'Your team frequently needs to repeat or rephrase points during client meetings, leading to longer calls, frustrated clients, and lost credibility.'
+      },
+      confidence: {
+        title: 'Hesitation Costs You Deals',
+        description: 'Team members defer to email instead of answering live questions, signaling uncertainty to clients and slowing down the sales process.'
+      },
+      negotiation: {
+        title: 'Leaving Money on the Table',
+        description: 'Your team struggles to defend pricing or push back on unfavorable terms, resulting in lower margins and scope creep.'
+      },
+      leadership: {
+        title: 'You\'re the Bottleneck',
+        description: 'Team members can\'t lead client meetings independently, forcing you to attend every important call and limiting your ability to scale.'
+      }
+    };
+
+    if (scenarios[cat]) {
+      html += `
+        <div class="scenario-card">
+          <h4>${scenarios[cat].title}</h4>
+          <p>${scenarios[cat].description}</p>
+        </div>
+      `;
+    }
+  });
+
+  gapScenarios.innerHTML = html || '<p>Your team shows strong performance across all areas!</p>';
+}
+
+// Populate business impact
+const impactContent = document.getElementById('impact-content');
+if (impactContent) {
+  let impact = '';
+  
+  if (overallScore < 60) {
+    impact = `
+      <ul style="list-style: none; padding: 0;">
+        <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.75rem; color: #475569;">
+          <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+          <strong>Lost Revenue:</strong> Deals fall through due to communication breakdowns
+        </li>
+        <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.75rem; color: #475569;">
+          <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+          <strong>Pricing Pressure:</strong> Unable to defend premium rates, forced to compete on price
+        </li>
+        <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.75rem; color: #475569;">
+          <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+          <strong>Your Time:</strong> You're stuck in every client meeting, can't delegate
+        </li>
+        <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.75rem; color: #475569;">
+          <span style="position: absolute; left: 0; color: #ef4444;">•</span>
+          <strong>Team Morale:</strong> Talented people feel held back by language anxiety
+        </li>
+      </ul>
+    `;
+  } else if (overallScore < 80) {
+    impact = `
+      <ul style="list-style: none; padding: 0;">
+        <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.75rem; color: #475569;">
+          <span style="position: absolute; left: 0; color: #f59e0b;">•</span>
+          <strong>Missed Opportunities:</strong> Occasional communication gaps cost you deals
+        </li>
+        <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.75rem; color: #475569;">
+          <span style="position: absolute; left: 0; color: #f59e0b;">•</span>
+          <strong>Slower Sales Cycles:</strong> Hesitation extends the time to close
+        </li>
+        <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.75rem; color: #475569;">
+          <span style="position: absolute; left: 0; color: #f59e0b;">•</span>
+          <strong>Limited Scalability:</strong> You're still needed for critical conversations
+        </li>
+      </ul>
+    `;
+  } else {
+    impact = `
+      <p style="color: #475569;">Your team communicates effectively. Focus on advanced techniques to close larger deals and command premium pricing.</p>
+    `;
+  }
+
+  impactContent.innerHTML = impact;
+}
+
+// Populate elite comparison
+const eliteContent = document.getElementById('elite-content');
+if (eliteContent) {
+  eliteContent.innerHTML = `
+    <ul style="list-style: none; padding: 0;">
+      <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.75rem; color: #475569;">
+        <span style="position: absolute; left: 0; color: #10b981;">✓</span>
+        They answer client questions confidently in real-time, never deferring to email
+      </li>
+      <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.75rem; color: #475569;">
+        <span style="position: absolute; left: 0; color: #10b981;">✓</span>
+        They defend pricing and push back on unfavorable terms without hesitation
+      </li>
+      <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.75rem; color: #475569;">
+        <span style="position: absolute; left: 0; color: #10b981;">✓</span>
+        Junior team members can lead client meetings independently
+      </li>
+      <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.75rem; color: #475569;">
+        <span style="position: absolute; left: 0; color: #10b981;">✓</span>
+        They build rapport through natural small talk and relationship-building
+      </li>
+      <li style="padding-left: 1.5rem; position: relative; margin-bottom: 0.75rem; color: #475569;">
+        <span style="position: absolute; left: 0; color: #10b981;">✓</span>
+        They explain complex solutions clearly, making clients feel confident in their expertise
+      </li>
+    </ul>
+  `;
+}
+
+// Populate question analysis (pages 3-4)
+const questionsAnalysis1 = document.getElementById('questions-analysis-1');
+const questionsAnalysis2 = document.getElementById('questions-analysis-2');
+
+import { questionsEn } from '@data/quiz/questions';
+
+const insights = {
+  1: { low: "Frequent repetition signals unclear articulation, making clients question your expertise.", high: "Clear communication builds trust and positions you as the expert." },
+  2: { low: "Inability to defend pricing forces you to compete on cost, not value.", high: "Confident pricing discussions establish your premium positioning." },
+  3: { low: "Deferring to email signals uncertainty and slows down the sales process.", high: "Real-time answers demonstrate expertise and accelerate deal closure." },
+  4: { low: "Freezing under pressure makes clients doubt your ability to handle their challenges.", high: "Thinking on your feet shows adaptability and problem-solving skills." },
+  5: { low: "Poor negotiation skills lead to unfavorable terms and scope creep.", high: "Effective negotiation protects your margins and sets clear boundaries." },
+  6: { low: "Dependence on you for meetings limits scalability and team growth.", high: "Independent team members free you to focus on strategy and growth." },
+  7: { low: "Regular misunderstandings damage relationships and cost you deals.", high: "Crystal-clear communication builds long-term client partnerships." },
+  8: { low: "Clients who don't understand your value won't pay premium rates.", high: "Simple explanations of complex ideas demonstrate true expertise." },
+  9: { low: "Avoiding small talk prevents relationship-building and trust.", high: "Natural rapport-building creates loyal, long-term clients." },
+  10: { low: "Conceding immediately when challenged undermines your credibility.", high: "Defending your approach confidently establishes thought leadership." }
+};
+
+function generateQuestionHTML(questionIds) {
+  let html = '';
+  
+  questionIds.forEach(qId => {
+    const question = questionsEn.find(q => q.id === qId);
+    const userAnswer = answers[qId];
+    const selectedOption = question.options.find(opt => opt.value === userAnswer);
+    const isLow = userAnswer < 7;
+    
+    html += `
+      <div class="question-item">
+        <div class="question-header">
+          <div class="question-number">${qId}</div>
+          <div class="question-text">${question.question}</div>
+          <div class="question-score">${userAnswer}/10</div>
+        </div>
+        <div class="your-answer">
+          <strong>Your Answer:</strong> ${selectedOption.text}
+        </div>
+        <div class="insight">
+          <strong>Insight:</strong> ${insights[qId][isLow ? 'low' : 'high']}
+        </div>
+      </div>
+    `;
+  });
+  
+  return html;
+}
+
+if (questionsAnalysis1) {
+  questionsAnalysis1.innerHTML = generateQuestionHTML([1, 2, 3, 4, 5]);
+}
+
+if (questionsAnalysis2) {
+  questionsAnalysis2.innerHTML = generateQuestionHTML([6, 7, 8, 9, 10]);
+}
+
+// Populate 30-day action plan
+const actionPlan = document.getElementById('action-plan');
+if (actionPlan) {
+  let plan = '';
+  
+  if (overallScore < 60) {
+    plan = `
+      <div class="week-plan">
+        <div class="week-header">Week 1: Build Foundation</div>
+        <div class="week-content">
+          <ul>
+            <li>Identify 5 most common client questions and script clear, confident responses</li>
+            <li>Practice answering these questions out loud until they feel natural</li>
+            <li>Record yourself and identify filler words or hesitation patterns</li>
+            <li>Start with lower-stakes internal meetings to build confidence</li>
+          </ul>
+        </div>
+      </div>
+      <div class="week-plan">
+        <div class="week-header">Week 2: Practice Real Scenarios</div>
+        <div class="week-content">
+          <ul>
+            <li>Role-play client objections with a colleague</li>
+            <li>Develop 3 ways to explain your core value proposition</li>
+            <li>Practice defending your pricing in mock scenarios</li>
+            <li>Join one client call as an observer, note effective phrases</li>
+          </ul>
+        </div>
+      </div>
+      <div class="week-plan">
+        <div class="week-header">Week 3: Apply in Low-Risk Situations</div>
+        <div class="week-content">
+          <ul>
+            <li>Lead a client check-in call (not a sales call)</li>
+            <li>Answer one client question live instead of deferring to email</li>
+            <li>Practice small talk at the start of internal meetings</li>
+            <li>Get feedback from a trusted colleague on your delivery</li>
+          </ul>
+        </div>
+      </div>
+      <div class="week-plan">
+        <div class="week-header">Week 4: Increase Complexity</div>
+        <div class="week-content">
+          <ul>
+            <li>Co-lead a client meeting with your manager</li>
+            <li>Handle pricing discussion with support nearby</li>
+            <li>Prepare and deliver a 5-minute technical presentation</li>
+            <li>Reflect on progress and identify next areas to improve</li>
+          </ul>
+        </div>
+      </div>
+    `;
+  } else if (overallScore < 80) {
+    plan = `
+      <div class="week-plan">
+        <div class="week-header">Week 1: Refine Weak Areas</div>
+        <div class="week-content">
+          <ul>
+            <li>Identify your 2-3 lowest-scoring categories from this assessment</li>
+            <li>Study how top performers handle these situations</li>
+            <li>Create response frameworks for common challenging scenarios</li>
+            <li>Practice impromptu speaking on technical topics</li>
+          </ul>
+        </div>
+      </div>
+      <div class="week-plan">
+        <div class="week-header">Week 2: Advanced Techniques</div>
+        <div class="week-content">
+          <ul>
+            <li>Master the art of reframing client objections</li>
+            <li>Practice storytelling to make technical concepts relatable</li>
+            <li>Develop executive-level communication for C-suite conversations</li>
+            <li>Record and review a client presentation</li>
+          </ul>
+        </div>
+      </div>
+      <div class="week-plan">
+        <div class="week-header">Week 3: Lead Independently</div>
+        <div class="week-content">
+          <ul>
+            <li>Lead a full sales call without backup</li>
+            <li>Handle a difficult negotiation independently</li>
+            <li>Present a complex solution to a skeptical audience</li>
+            <li>Mentor a junior team member on client communication</li>
+          </ul>
+        </div>
+      </div>
+      <div class="week-plan">
+        <div class="week-header">Week 4: Scale Your Impact</div>
+        <div class="week-content">
+          <ul>
+            <li>Document your best practices for the team</li>
+            <li>Lead a training session on effective client communication</li>
+            <li>Take on a larger, more strategic client relationship</li>
+            <li>Set goals for continued improvement</li>
+          </ul>
+        </div>
+      </div>
+    `;
+  } else {
+    plan = `
+      <div class="week-plan">
+        <div class="week-header">Week 1-2: Executive Presence</div>
+        <div class="week-content">
+          <ul>
+            <li>Master C-suite communication and boardroom presence</li>
+            <li>Develop thought leadership content (articles, presentations)</li>
+            <li>Practice high-stakes negotiation techniques</li>
+            <li>Refine your personal communication brand</li>
+          </ul>
+        </div>
+      </div>
+      <div class="week-plan">
+        <div class="week-header">Week 3-4: Scale and Mentor</div>
+        <div class="week-content">
+          <ul>
+            <li>Train your team on advanced communication techniques</li>
+            <li>Take on enterprise-level client relationships</li>
+            <li>Speak at industry events or webinars</li>
+            <li>Document your communication playbook for the organization</li>
+          </ul>
+        </div>
+      </div>
+    `;
+  }
+  
+  actionPlan.innerHTML = plan;
+}
+
+// Populate recommendations
+const recommendationPaths = document.getElementById('recommendation-paths');
+if (recommendationPaths) {
+  const recommended = overallScore < 70 ? 'coaching' : 'self';
+  
+  recommendationPaths.innerHTML = `
+    <div class="path-card ${recommended === 'self' ? 'recommended' : ''}">
+      ${recommended === 'self' ? '<div class="recommended-badge">RECOMMENDED FOR YOU</div>' : ''}
+      <h4>Self-Study Path</h4>
+      <p><strong>Best for:</strong> Teams scoring 70+ who need minor refinements</p>
+      <ul style="margin-top: 1rem; padding-left: 1.5rem; color: #475569;">
+        <li>Follow the 30-day action plan above</li>
+        <li>Use online resources and practice with colleagues</li>
+        <li>Track progress through self-assessment</li>
+        <li>Timeline: 2-3 months for noticeable improvement</li>
+      </ul>
+    </div>
+    
+    <div class="path-card ${recommended === 'coaching' ? 'recommended' : ''}">
+      ${recommended === 'coaching' ? '<div class="recommended-badge">RECOMMENDED FOR YOU</div>' : ''}
+      <h4>Professional Coaching</h4>
+      <p><strong>Best for:</strong> Teams needing structured, expert-guided improvement</p>
+      <ul style="margin-top: 1rem; padding-left: 1.5rem; color: #475569;">
+        <li>Customized training for your specific gaps</li>
+        <li>Real-time feedback and correction</li>
+        <li>Accountability and structured practice</li>
+        <li>Timeline: 4-8 weeks for significant transformation</li>
+      </ul>
+    </div>
+  `;
+}
+
+console.log('Report loaded with score:', overallScore);
+</script>
