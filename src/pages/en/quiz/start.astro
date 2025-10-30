@@ -4,22 +4,18 @@ import Button from '@components/ui/Button.astro';
 import { Clock, CheckCircle, Shield } from 'lucide-astro';
 
 const title = "Start Your Speaking Confidence Assessment";
-const description = "Answer 10 quick questions to discover your communication strengths and gaps.";
+const description = "Test your Business English confidence in 2 minutes! Answer 10 quick questions to discover your communication strengths and gaps with North American clients.";
 ---
 
 <Base 
   title={title} 
   description={description}
   lang="en"
-  customCanonical="https://www.nyenglishteacher.com/en/quiz/start/"
-  customHreflangs={[
-    { lang: "en-US", href: "https://www.nyenglishteacher.com/en/quiz/start/" },
-    { lang: "es-MX", href: "https://www.nyenglishteacher.com/es/quiz/start/" }
-  ]}
+  tkey="quiz/start"
   hideCta={true}
 >
 
-<section class="quiz-start pt-28 pb-16 md:pt-32 md:pb-20">
+<section class="quiz-start pt-20 pb-16 md:pt-24 md:pb-20">
   <div class="container-narrow">
     <div class="start-content">
       <h1>Let's Assess Your Speaking Confidence</h1>
@@ -235,3 +231,11 @@ h1 {
   }
 }
 </style>
+
+<script>
+// Clear any previous quiz data when starting fresh
+sessionStorage.removeItem('quizAnswers');
+sessionStorage.removeItem('quizScore');
+sessionStorage.removeItem('submissionId');
+sessionStorage.removeItem('leadData');
+</script>

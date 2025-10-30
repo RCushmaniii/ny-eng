@@ -13,28 +13,60 @@ export function getStaticPaths() {
 const { id } = Astro.params;
 const { question } = Astro.props;
 
-const currentQuestion = parseInt(id);
+// Validate question exists (handles direct URL access edge case)
+const currentQuestion = parseInt(id || '1');
+const validQuestion = question || questionsEs.find(q => q.id === currentQuestion);
+const hasValidQuestion = !!validQuestion;
+
 const totalQuestions = questionsEs.length;
 const progress = (currentQuestion / totalQuestions) * 100;
 
-const title = `Pregunta ${currentQuestion} de ${totalQuestions} | Quiz de Confianza al Hablar`;
-const description = "Responde preguntas sobre la confianza en comunicación en inglés de tu equipo.";
+const title = hasValidQuestion 
+  ? `Pregunta ${currentQuestion} de ${totalQuestions} | Quiz de Confianza al Hablar`
+  : 'Error de Quiz | Quiz de Confianza al Hablar';
+const description = "¡Evalúa tu confianza en inglés de negocios en 2 minutos! Descubre las brechas de comunicación que le cuestan contratos y credibilidad a tu equipo con clientes norteamericanos.";
 ---
 
 <Base 
   title={title} 
   description={description}
   lang="es"
-  customCanonical={`https://www.nyenglishteacher.com/es/quiz/question/${id}/`}
+  customCanonical="https://www.nyenglishteacher.com/es/quiz/"
   customHreflangs={[
     { lang: "en-US", href: `https://www.nyenglishteacher.com/en/quiz/question/${id}/` },
     { lang: "es-MX", href: `https://www.nyenglishteacher.com/es/quiz/question/${id}/` }
   ]}
   hideCta={true}
+  hideLanguageSwitcher={true}
 >
 
 <section class="quiz-question pt-28 pb-16 md:pt-32 md:pb-20">
   <div class="container-narrow">
+    
+    {!hasValidQuestion ? (
+      <!-- No Quiz Data Warning -->
+      <div class="no-quiz-warning">
+        <div class="warning-content">
+          <div class="warning-icon">⚠️</div>
+          <h1>Por Favor Comienza Desde el Inicio</h1>
+          <p class="warning-text">
+            Para obtener resultados precisos, necesitas comenzar el quiz desde el principio y responder todas las preguntas en orden.
+          </p>
+          <p class="warning-subtext">
+            La Evaluación de Confianza en Comunicación toma aproximadamente 3-5 minutos y te dará una puntuación personalizada.
+          </p>
+          <Button 
+            href="/es/quiz/start"
+            variant="primary" 
+            size="lg"
+            class="start-quiz-button"
+          >
+            Comenzar el Quiz →
+          </Button>
+        </div>
+      </div>
+    ) : (
+      <>
     <!-- Progress Bar -->
     <div class="progress-container">
       <div class="progress-bar">
@@ -47,12 +79,12 @@ const description = "Responde preguntas sobre la confianza en comunicación en i
 
     <!-- Question Card -->
     <div class="question-card">
-      <h1 class="question-text">{question.question}</h1>
+      <h1 class="question-text">{validQuestion.question}</h1>
 
       <form class="options-form" id="quiz-form">
-        <input type="hidden" name="questionId" value={question.id} />
+        <input type="hidden" name="questionId" value={validQuestion.id} />
         
-        {question.options.map((option, index) => (
+        {validQuestion.options.map((option, index) => (
           <label class="option-label">
             <input 
               type="radio" 
@@ -80,6 +112,8 @@ const description = "Responde preguntas sobre la confianza en comunicación en i
         </div>
       </form>
     </div>
+    </>
+    )}
   </div>
 </section>
 
@@ -95,6 +129,59 @@ const description = "Responde preguntas sobre la confianza en comunicación en i
 .quiz-question {
   background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
   min-height: calc(100vh - 80px);
+}
+
+/* No Quiz Warning */
+.no-quiz-warning {
+  background: white;
+  padding: 4rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.warning-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.warning-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.no-quiz-warning h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.warning-text {
+  font-size: 1.25rem;
+  color: #475569;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.warning-subtext {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.start-quiz-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 /* Progress Bar */
@@ -237,10 +324,26 @@ const description = "Responde preguntas sobre la confianza en comunicación en i
 </style>
 
 <script>
-// Handle quiz form submission and store answers
+// Set custom validation messages in Spanish
 const form = document.getElementById('quiz-form');
 
 if (form) {
+  // Set Spanish validation message for radio buttons
+  const radioButtons = form.querySelectorAll('input[type="radio"][name="answer"]');
+  radioButtons.forEach((radio) => {
+    const radioInput = radio as HTMLInputElement;
+    radioInput.addEventListener('invalid', () => {
+      radioInput.setCustomValidity('Por favor selecciona una de estas opciones.');
+    });
+    // Clear validation on ANY radio button change in the group
+    radioInput.addEventListener('change', () => {
+      // Clear custom validity on all radio buttons in the group
+      radioButtons.forEach((r) => {
+        (r as HTMLInputElement).setCustomValidity('');
+      });
+    });
+  });
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -254,8 +357,9 @@ if (form) {
     const answersJson = sessionStorage.getItem('quizAnswers');
     const answers = answersJson ? JSON.parse(answersJson) : {};
     
-    // Store this answer
-    answers[questionId as string] = parseInt(answer as string);
+    // Store this answer with 'q' prefix to match expected format
+    const answerKey = `q${questionId}`;
+    answers[answerKey] = parseInt(answer as string);
     sessionStorage.setItem('quizAnswers', JSON.stringify(answers));
     
     // Navigate to next question or results
@@ -263,9 +367,9 @@ if (form) {
     const totalQuestions = 10;
     
     if (currentId < totalQuestions) {
-      window.location.href = `/es/quiz/question/${currentId + 1}`;
+      window.location.href = `/es/quiz/question/${currentId + 1}/`;
     } else {
-      window.location.href = '/es/quiz/results';
+      window.location.href = '/es/quiz/results/';
     }
   });
 }

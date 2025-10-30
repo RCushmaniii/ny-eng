@@ -1,0 +1,199 @@
+<section class="action-plan">
+  <div class="container-narrow">
+    <h2>Tu Plan de Acción de 90 Días</h2>
+    <p class="plan-subhead">
+      Una hoja de ruta práctica para mejorar la confianza comunicacional de tu equipo:
+    </p>
+
+    <div class="plan-grid">
+      <div class="plan-card">
+        <div class="card-header">
+          <div class="day-count">30</div>
+          <h3>Refinar Áreas Débiles</h3>
+        </div>
+        <ul class="tasks">
+          <li>Identificar tus 2-3 categorías con puntuación más baja</li>
+          <li>Estudiar cómo los mejores desempeños manejan estas situaciones</li>
+          <li>Crear marcos de respuesta para escenarios comunes</li>
+          <li>Practicar hablar improvisadamente sobre temas técnicos</li>
+        </ul>
+      </div>
+
+      <div class="plan-card">
+        <div class="card-header">
+          <div class="day-count">60</div>
+          <h3>Dominar Técnicas Avanzadas</h3>
+        </div>
+        <ul class="tasks">
+          <li>Dominar el arte de replantear objeciones de clientes</li>
+          <li>Practicar narración de historias para hacer conceptos técnicos relacionables</li>
+          <li>Desarrollar comunicación de nivel ejecutivo para C-suite</li>
+          <li>Grabar y revisar una presentación a cliente</li>
+        </ul>
+      </div>
+
+      <div class="plan-card">
+        <div class="card-header">
+          <div class="day-count">90</div>
+          <h3>Escalar Tu Impacto</h3>
+        </div>
+        <ul class="tasks">
+          <li>Liderar una llamada de ventas completa sin respaldo</li>
+          <li>Manejar negociaciones difíciles de forma independiente</li>
+          <li>Mentorear a un miembro junior del equipo sobre comunicación con clientes</li>
+          <li>Documentar mejores prácticas para el equipo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .action-plan {
+    width: 100%;
+    padding: 3rem 0;
+    background-color: #f7fafc; /* A light background to set it apart */
+  }
+
+  /* This container is now local to the component test */
+  .container-narrow {
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .action-plan h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 0.75rem;
+  }
+
+  .plan-subhead {
+    text-align: center;
+    font-size: 1.125rem;
+    color: #4a5568;
+    margin-bottom: 3rem;
+  }
+
+  /* --- Mobile-First Timeline Layout --- */
+  .plan-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    position: relative;
+    /* Create space on the left for the timeline */
+    padding-left: 2rem;
+  }
+
+  /* The main vertical timeline bar (mobile only) */
+  .plan-grid::before {
+    content: "";
+    position: absolute;
+    left: 18px; /* Centered with the 40px padding-left */
+    top: 1.25rem; /* Start below the first dot */
+    bottom: 1.25rem; /* End above the last dot */
+    width: 3px;
+    background: #e0e7ff; /* Light blue/indigo */
+    z-index: 0;
+  }
+
+  .plan-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    position: relative; /* Needed for the ::before dot */
+  }
+
+  /* The dot on the timeline (mobile only) */
+  .plan-card::before {
+    content: "";
+    position: absolute;
+    left: -2.3rem; /* (2rem padding + (12px width / 2)) */
+    top: 0.8rem;
+    width: 14px;
+    height: 14px;
+    background: #4338ca; /* Dark indigo */
+    border: 3px solid #f7fafc; /* Same as section bg */
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .day-count {
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #4338ca;
+    background: #e0e7ff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-header h3 {
+    font-size: 1.25rem;
+    color: #1a202c;
+    margin: 0;
+  }
+
+  .tasks {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 0.5rem; /* Indent lists slightly */
+  }
+
+  .tasks li {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Custom checkmark bullet */
+  .tasks li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #4338ca;
+    font-weight: 700;
+  }
+
+  /* --- Desktop 3-Column Layout --- */
+  @media (min-width: 768px) {
+    .plan-grid {
+      /* Switch to 3 columns */
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      /* Remove mobile timeline padding */
+      padding-left: 0;
+    }
+
+    /* Hide the mobile timeline elements on desktop */
+    .plan-grid::before,
+    .plan-card::before {
+      display: none;
+    }
+
+    .plan-card {
+      padding: 2rem; /* A bit more padding on desktop */
+    }
+  }
+</style>

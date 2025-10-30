@@ -4,24 +4,43 @@ import Button from '@components/ui/Button.astro';
 import { Mail, Download, Calendar } from 'lucide-astro';
 
 const title = "Your Speaking Confidence Results | NY English";
-const description = "Get your personalized Communication Confidence Score and improvement roadmap.";
+const description = "Get your personalized Communication Confidence Score (0-100) and improvement roadmap. Discover exactly where your team stands with high-stakes English communication.";
 ---
 
 <Base 
   title={title} 
   description={description}
   lang="en"
-  customCanonical="https://www.nyenglishteacher.com/en/quiz/results/"
-  customHreflangs={[
-    { lang: "en-US", href: "https://www.nyenglishteacher.com/en/quiz/results/" },
-    { lang: "es-MX", href: "https://www.nyenglishteacher.com/es/quiz/results/" }
-  ]}
+  tkey="quiz/results"
   hideCta={true}
+  hideLanguageSwitcher={true}
 >
 
 <section class="quiz-results pt-28 pb-16 md:pt-32 md:pb-20">
   <div class="container-narrow">
     
+    <!-- No Quiz Data Warning (shown if user hasn't taken quiz) -->
+    <div class="no-quiz-warning" id="no-quiz-warning" style="display: none;">
+      <div class="warning-content">
+        <div class="warning-icon">⚠️</div>
+        <h1>Quiz Not Completed</h1>
+        <p class="warning-text">
+          You need to complete the Communication Confidence Assessment before viewing your results.
+        </p>
+        <p class="warning-subtext">
+          The quiz takes about 3-5 minutes and will give you a personalized score showing exactly where your team stands with high-stakes English communication.
+        </p>
+        <Button 
+          href="/en/quiz/start"
+          variant="primary" 
+          size="lg"
+          class="start-quiz-button"
+        >
+          Start the Quiz →
+        </Button>
+      </div>
+    </div>
+
     <!-- Lead Capture Form (shown first) -->
     <div class="lead-capture-card" id="lead-capture">
       <div class="capture-header">
@@ -191,6 +210,59 @@ const description = "Get your personalized Communication Confidence Score and im
 .quiz-results {
   background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
   min-height: calc(100vh - 80px);
+}
+
+/* No Quiz Warning */
+.no-quiz-warning {
+  background: white;
+  padding: 4rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.warning-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.warning-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.no-quiz-warning h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.warning-text {
+  font-size: 1.25rem;
+  color: #475569;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.warning-subtext {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.start-quiz-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 /* Lead Capture Card */
@@ -443,42 +515,117 @@ if (emailForm) {
     e.preventDefault();
     
     const formData = new FormData(emailForm as HTMLFormElement);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const company = formData.get('company');
-    const phone = formData.get('phone');
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const company = formData.get('company') as string;
+    const phone = formData.get('phone') as string;
     
-    // Calculate score
-    const result = calculateScore();
-    if (!result) return;
-    
-    const { score, totalPoints } = result;
-    
-    // Store lead data (you'll want to send this to your backend/CRM)
-    const leadData = {
-      name,
-      email,
-      company,
-      phone,
-      score,
-      totalPoints,
-      timestamp: new Date().toISOString()
-    };
-    
-    console.log('Lead captured:', leadData);
-    // TODO: Send to your backend/CRM
-    
-    // Show results
-    if (leadCapture && resultsDisplay) {
-      leadCapture.style.display = 'none';
-      resultsDisplay.style.display = 'flex';
+    // Validate email format - strict validation
+    // This regex ensures proper email structure and common TLD patterns
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|org|net|edu|gov|mil|co|uk|ca|au|de|jp|fr|br|in|ru|cn|mx|es|it|nl|se|no|dk|fi|be|ch|at|nz|sg|hk|ie|za|pl|gr|cz|pt|hu|ro|bg|hr|sk|si|lt|lv|ee|is|lu|mt|cy|io|ai|app|dev|tech|online|site|store|shop|blog|info|biz|name|pro|mobi|tel|travel|museum|aero|coop|jobs|cat|asia|xxx|post|xxx|int)$/i;
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      return;
     }
     
-    // Animate score counter
-    animateScore(score);
+    // Get quiz answers from sessionStorage (already validated on page load)
+    const answersJson = sessionStorage.getItem('quizAnswers');
+    if (!answersJson) {
+      // This shouldn't happen since we validate on page load, but just in case
+      window.location.reload();
+      return;
+    }
     
-    // Display personalized content
-    displayResults(score);
+    const answers = JSON.parse(answersJson);
+    
+    // Get UTM parameters from URL or sessionStorage
+    const urlParams = new URLSearchParams(window.location.search);
+    const utm_source = urlParams.get('utm_source') || sessionStorage.getItem('utm_source') || undefined;
+    const utm_medium = urlParams.get('utm_medium') || sessionStorage.getItem('utm_medium') || undefined;
+    const utm_campaign = urlParams.get('utm_campaign') || sessionStorage.getItem('utm_campaign') || undefined;
+    const referrer = document.referrer || undefined;
+    
+    // Show loading state
+    const submitButton = emailForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const originalButtonText = submitButton?.innerHTML;
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.innerHTML = 'Submitting...';
+    }
+    
+    try {
+      // Submit to API
+      const response = await fetch('/api/quiz/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          company: company || undefined,
+          phone: phone || undefined,
+          answers,
+          language: 'en',
+          utm_source,
+          utm_medium,
+          utm_campaign,
+          referrer,
+          gdpr_consent: true, // Implied by form submission
+          marketing_opt_in: false, // Can add checkbox if needed
+        }),
+      });
+      
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+      
+      const result = await response.json();
+      console.log('API result:', result);
+      
+      if (!result.success) {
+        console.error('API returned error:', result.error);
+        throw new Error(result.error || 'Failed to submit quiz');
+      }
+      
+      // Store submission ID and score for report page
+      sessionStorage.setItem('quizScore', result.score.toString());
+      sessionStorage.setItem('submissionId', result.submission_id);
+      sessionStorage.setItem('leadData', JSON.stringify({
+        name,
+        email,
+        company,
+        phone,
+        score: result.score,
+        score_tier: result.score_tier,
+      }));
+      
+      // Redirect to full report page
+      window.location.href = '/en/quiz/report/';
+      
+    } catch (error) {
+      console.error('Submission error:', error);
+      
+      // Show user-friendly error message
+      let errorMessage = 'There was an error submitting your quiz. Please try again.';
+      if (error instanceof Error) {
+        if (error.message.includes('Failed to fetch')) {
+          errorMessage = 'Network error. Please check your internet connection and try again.';
+        } else if (error.message.includes('Missing required fields')) {
+          errorMessage = 'Please fill in all required fields (Name and Email).';
+        } else if (error.message !== 'Failed to submit quiz') {
+          // Show the actual error message from the API
+          errorMessage = error.message;
+        }
+      }
+      
+      alert(errorMessage);
+      
+      // Restore button
+      if (submitButton && originalButtonText) {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonText;
+      }
+    }
   });
 }
 
@@ -491,6 +638,8 @@ function animateScore(targetScore: number) {
   const startTime = performance.now();
   
   function update(currentTime: number) {
+    if (!scoreElement) return;
+    
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / duration, 1);
     
@@ -606,9 +755,32 @@ function displayResults(score: number) {
 // Check if coming directly to results page
 if (window.location.pathname.includes('/results')) {
   const answersJson = sessionStorage.getItem('quizAnswers');
+  const leadCapture = document.getElementById('lead-capture');
+  const noQuizWarning = document.getElementById('no-quiz-warning');
+  
   if (!answersJson) {
-    // Redirect to start if no quiz data
-    window.location.href = '/en/quiz/start';
+    // Show warning message instead of form
+    if (leadCapture) leadCapture.style.display = 'none';
+    if (noQuizWarning) noQuizWarning.style.display = 'block';
+  } else {
+    // Validate quiz data is complete
+    try {
+      const answers = JSON.parse(answersJson);
+      const requiredQuestions = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10'];
+      const hasAllQuestions = requiredQuestions.every(q => answers.hasOwnProperty(q));
+      
+      if (!hasAllQuestions) {
+        // Incomplete quiz data - show warning
+        if (leadCapture) leadCapture.style.display = 'none';
+        if (noQuizWarning) noQuizWarning.style.display = 'block';
+        sessionStorage.removeItem('quizAnswers');
+      }
+    } catch (error) {
+      // Invalid JSON - show warning
+      if (leadCapture) leadCapture.style.display = 'none';
+      if (noQuizWarning) noQuizWarning.style.display = 'block';
+      sessionStorage.removeItem('quizAnswers');
+    }
   }
 }
 </script>

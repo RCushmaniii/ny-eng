@@ -1,0 +1,20 @@
+---
+// FILE: src/pages/en/quiz/test-plan.astro
+// PURPOSE: A temporary page to view the component.
+
+import Base from "@layouts/Base.astro";
+import ActionPlan from "@components/action-plan.astro";
+---
+
+<Base
+  title="Action Plan Test"
+  description="Testing the 90-Day Action Plan component"
+  lang="en"
+  customCanonical="/en/quiz/test-plan/"
+  customHreflangs={[
+    { lang: "en", href: "/en/quiz/test-plan/" },
+    { lang: "es", href: "/es/quiz/test-plan/" }
+  ]}
+>
+  <ActionPlan />
+</Base>

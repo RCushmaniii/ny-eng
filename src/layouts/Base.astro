@@ -25,6 +25,7 @@ export interface Props {
   heroImage?: string | { src: string; width?: number; height?: number };
   heroImageMobile?: string | { src: string; width?: number; height?: number };
   hideCta?: boolean;
+  hideLanguageSwitcher?: boolean;
   customHreflangs?: Array<{ lang: string; href: string }>;
   customCanonical?: string;
 }
@@ -38,6 +39,7 @@ const {
   heroImage,
   heroImageMobile,
   hideCta,
+  hideLanguageSwitcher,
   customHreflangs,
   customCanonical,
 } = Astro.props;
@@ -168,6 +170,10 @@ if (translationSlugEs.includes('/es/blog/es/')) {
     <title>{title}</title>
     <meta name="description" content={description} />
 
+    <!-- Preload critical fonts for better LCP -->
+    <link rel="preload" href="/fonts/noto-sans-kr-v36-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/noto-sans-v42-latin-600.woff2" as="font" type="font/woff2" crossorigin />
+
     <!-- Canonical -->
     <link rel="canonical" href={canonicalUrl} />
 
@@ -262,6 +268,7 @@ if (translationSlugEs.includes('/es/blog/es/')) {
         content={headerData}
         translationSlugEn={translationSlugEn}
         translationSlugEs={translationSlugEs}
+        hideLanguageSwitcher={hideLanguageSwitcher}
       />
 
       <main id="main-content" role="main" class="flex-grow">
@@ -295,3 +302,20 @@ if (translationSlugEs.includes('/es/blog/es/')) {
     </script>
   </body>
 </html>
+
+<style is:global>
+  /* ========================================
+     GLOBAL LAYOUT FIX
+     ======================================== */
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  /* Ensure all children use border-box */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+</style>

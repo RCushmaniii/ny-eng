@@ -1,823 +1,1510 @@
 ---
-import Base from '@layouts/Base.astro';
-import Button from '@components/ui/Button.astro';
-import { Target, BarChart3, Rocket, Clock, Mail, Lock, DollarSign, Mic, Zap, TrendingUp } from 'lucide-astro';
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import QuizSchema from "@components/seo/QuizSchema.astro";
+import ReportCarousel from "@components/ReportCarousel.astro";
+import {
+  Target,
+  BarChart3,
+  Rocket,
+  Clock,
+  Mail,
+  Lock,
+  DollarSign,
+  Mic,
+  Zap,
+  TrendingUp,
+} from "lucide-astro";
 
-const title = "Quiz de Confianza al Hablar: ¿Estás Listo para Clientes Norteamericanos?";
-const description = "Descubre las brechas de comunicación que le están costando contratos, credibilidad y crecimiento profesional a tu equipo de TI. Evaluación de 3 minutos.";
+const title =
+  "Quiz de Confianza al Hablar: ¿Estás Listo para Clientes Norteamericanos?";
+const description =
+  "¡Evalúa tu confianza en inglés de negocios en 2 minutos! Descubre las brechas de comunicación que le cuestan contratos, credibilidad y crecimiento profesional a tu equipo de TI con clientes norteamericanos.";
 ---
 
-<Base 
-  title={title} 
+<Base
+  title={title}
   description={description}
   lang="es"
-  customCanonical="https://www.nyenglishteacher.com/es/quiz/"
-  customHreflangs={[
-    { lang: "en-US", href: "https://www.nyenglishteacher.com/en/quiz/" },
-    { lang: "es-MX", href: "https://www.nyenglishteacher.com/es/quiz/" }
-  ]}
+  tkey="quiz"
   hideCta={true}
 >
+  <QuizSchema lang="es" slot="head" />
 
-<!-- HERO SECTION -->
-<section class="quiz-landing-hero pt-28 pb-8 md:pt-32 md:pb-12">
-  <div class="container-custom">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <span class="eyebrow">Evaluación Gratuita de 3 Minutos</span>
-        
-        <h1>¿Podría Tu Equipo Defender Confiadamente una Propuesta de $200K en una Llamada en Vivo?</h1>
-        
-        <p class="hero-subhead">
-          La IA puede pulir tus correos. Grammarly puede corregir tu gramática. 
-          Pero cuando un cliente Fortune 500 desafía tu idea en vivo… 
-          <strong>tu inglés hablado se convierte en tu credibilidad.</strong>
-        </p>
+  <!-- HERO SECTION -->
+  <section class="quiz-landing-hero">
+    <div class="container-custom">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <a href="/es/quiz/start" class="eyebrow eyebrow-link"
+            >Evaluación Gratuita de 3 Minutos</a
+          >
 
-        <div class="value-props">
-          <div class="value-prop">
-            <Target class="icon" size={24} />
-            <span>Identifica los momentos que te están costando contratos</span>
-          </div>
-          <div class="value-prop">
-            <BarChart3 class="icon" size={24} />
-            <span>Obtén tu Puntuación de Confianza en Comunicación (0–100)</span>
-          </div>
-          <div class="value-prop">
-            <Rocket class="icon" size={24} />
-            <span>Recibe tu hoja de ruta personalizada hacia la fluidez ejecutiva</span>
-          </div>
-        </div>
+          <h1>
+            ¿Podría Tu Equipo Defender Confiadamente una Propuesta de $200K en
+            una Llamada en Vivo?
+          </h1>
 
-        <Button 
-          href="/es/quiz/start" 
-          variant="primary" 
-          size="lg"
-          class="cta-start-quiz"
-        >
-          Comenzar Evaluación Gratuita de 3 Minutos →
-        </Button>
+          <p class="hero-subhead">
+            La IA puede pulir tus correos. Grammarly puede corregir tu
+            gramática. Pero cuando un cliente Fortune 500 desafía tu idea en
+            vivo…
+            <strong>tu inglés hablado se convierte en tu credibilidad.</strong>
+          </p>
 
-        <div class="trust-signals">
-          <div class="trust-signal">
-            <Clock size={16} />
-            <span>Toma 3 minutos</span>
-          </div>
-          <div class="trust-signal">
-            <Mail size={16} />
-            <span>Resultados enviados al instante</span>
-          </div>
-          <div class="trust-signal">
-            <Lock size={16} />
-            <span>100% confidencial</span>
-          </div>
-        </div>
-
-        <p class="trust-badge">
-          Confiado por líderes de TI en Smarttie, Kopar y Sourceability
-        </p>
-      </div>
-
-      <div class="hero-visual">
-        <!-- Placeholder for screenshot of results page or testimonial card -->
-        <div class="visual-placeholder">
-          <div class="sample-score-card">
-            <div class="score-header">Tu Puntuación de Confianza en Comunicación</div>
-            <div class="score-number" id="score-counter">0</div>
-            <div class="score-label">Espacio para Crecer</div>
-            <div class="score-insight">
-              <strong>Hallazgo Clave:</strong> Tu equipo duda durante las discusiones de precios, 
-              señalando incertidumbre a los clientes.
+          <div class="value-props">
+            <div class="value-prop">
+              <Target class="icon" size={20} />
+              <span
+                >Identifica los momentos que te están costando contratos</span
+              >
+            </div>
+            <div class="value-prop">
+              <BarChart3 class="icon" size={20} />
+              <span
+                >Obtén tu Puntuación de Confianza en Comunicación (0–100)</span
+              >
+            </div>
+            <div class="value-prop">
+              <Rocket class="icon" size={20} />
+              <span
+                >Recibe tu hoja de ruta personalizada hacia la fluidez ejecutiva</span
+              >
             </div>
           </div>
+
+          <div class="cta-section">
+            <Button
+              href="/es/quiz/start"
+              variant="primary"
+              size="lg"
+              class="cta-start-quiz"
+            >
+              Comenzar Evaluación Gratuita de 3 Minutos →
+            </Button>
+
+            <div class="trust-signals">
+              <div class="trust-signal">
+                <Clock size={16} />
+                <span>3 min</span>
+              </div>
+              <div class="trust-signal">
+                <Mail size={16} />
+                <span>Instantáneo</span>
+              </div>
+              <div class="trust-signal">
+                <Lock size={16} />
+                <span>Confidencial</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="trust-badge">
+            Confiado por líderes de TI en Smarttie, Kopar y Sourceability
+          </p>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-label">Ejemplo de tu reporte:</div>
+          <ReportCarousel />
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- WHY SPOKEN ENGLISH MATTERS -->
-<section class="why-spoken-english">
-  <div class="container-narrow">
-    <h2>Por Qué el Inglés Hablado es Tu Verdadera Ventaja Competitiva</h2>
-    
-    <div class="reason-cards">
-      <div class="reason-card">
-        <div class="reason-icon">
-          <DollarSign size={32} />
+  <!-- WHY SPOKEN ENGLISH MATTERS -->
+  <section class="why-spoken-english">
+    <div class="container-narrow">
+      <h2>Por Qué el Inglés Hablado es Tu Verdadera Ventaja Competitiva</h2>
+
+      <div class="reason-cards">
+        <div class="reason-card">
+          <div class="reason-icon">
+            <DollarSign size={32} />
+          </div>
+          <h3>El Inglés Escrito Ya Está Resuelto</h3>
+          <p>
+            Grammarly, ChatGPT y las herramientas de IA pueden hacer que tus
+            correos y propuestas sean impecables. <strong
+              >Pero no pueden ayudarte en una llamada en vivo.</strong
+            >
+          </p>
         </div>
-        <h3>El Inglés Escrito Ya Está Resuelto</h3>
-        <p>
-          Grammarly, ChatGPT y las herramientas de IA pueden hacer que tus correos y 
-          propuestas sean impecables. <strong>Pero no pueden ayudarte en una llamada en vivo.</strong>
-        </p>
+
+        <div class="reason-card">
+          <div class="reason-icon">
+            <Mic size={32} />
+          </div>
+          <h3>Los Momentos Críticos Son Hablados</h3>
+          <p>
+            Presentaciones de ventas. Negociaciones. Preguntas y respuestas con
+            clientes. Presentaciones técnicas. Resolución de problemas de
+            proyectos. <strong
+              >Todo sucede en tiempo real, sin botón de "editar".</strong
+            >
+          </p>
+        </div>
+
+        <div class="reason-card">
+          <div class="reason-icon">
+            <Zap size={32} />
+          </div>
+          <h3>Dudar = Perder Credibilidad</h3>
+          <p>
+            ¿Esa pausa de 3 segundos mientras traduces en tu cabeza? Los
+            clientes norteamericanos la interpretan como incertidumbre o falta
+            de experiencia.
+            <strong>Incluso cuando conoces la respuesta perfectamente.</strong>
+          </p>
+        </div>
+
+        <div class="reason-card">
+          <div class="reason-icon">
+            <TrendingUp size={32} />
+          </div>
+          <h3>Confianza al Hablar = Poder de Fijación de Precios</h3>
+          <p>
+            Cuando puedes articular valor claramente y defender tu precio sin
+            titubear, los clientes dejan de negociar el precio.
+            <strong>Empiezan a negociar términos de asociación.</strong>
+          </p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="reason-card">
-        <div class="reason-icon">
-          <Mic size={32} />
-        </div>
-        <h3>Los Momentos Críticos Son Hablados</h3>
-        <p>
-          Presentaciones de ventas. Negociaciones. Preguntas y respuestas con clientes. Presentaciones técnicas. 
-          Resolución de problemas de proyectos. <strong>Todo sucede en tiempo real, sin botón de "editar".</strong>
+  <!-- THE HIDDEN COST -->
+  <section class="hidden-cost">
+    <div class="container-narrow">
+      <h2>La Pregunta del Millón de Dólares</h2>
+
+      <div class="cost-callout">
+        <p class="cost-question">
+          ¿Cuántas veces tu equipo ha dicho <em
+            >"Déjame dar seguimiento por correo"</em
+          >
+          en una llamada con un cliente... cuando en realidad <strong
+            >sabían la respuesta</strong
+          >?
         </p>
-      </div>
 
-      <div class="reason-card">
-        <div class="reason-icon">
-          <Zap size={32} />
-        </div>
-        <h3>Dudar = Perder Credibilidad</h3>
-        <p>
-          ¿Esa pausa de 3 segundos mientras traduces en tu cabeza? Los clientes norteamericanos 
-          la interpretan como incertidumbre o falta de experiencia. 
-          <strong>Incluso cuando conoces la respuesta perfectamente.</strong>
-        </p>
-      </div>
+        <p class="cost-impact">Esa evasión te cuesta:</p>
 
-      <div class="reason-card">
-        <div class="reason-icon">
-          <TrendingUp size={32} />
-        </div>
-        <h3>Confianza al Hablar = Poder de Fijación de Precios</h3>
-        <p>
-          Cuando puedes articular valor claramente y defender tu precio sin 
-          titubear, los clientes dejan de negociar el precio. 
-          <strong>Empiezan a negociar términos de asociación.</strong>
+        <ul class="cost-list">
+          <li>❌ Credibilidad inmediata (los clientes perciben la duda)</li>
+          <li>❌ Impulso del negocio (las respuestas por correo toman días)</li>
+          <li>
+            ❌ Poder de fijación de precios (no puedes defender valor por
+            escrito)
+          </li>
+          <li>
+            ❌ Tu tiempo (te conviertes en el cuello de botella de cada llamada)
+          </li>
+        </ul>
+
+        <p class="cost-solution">
+          <strong>La solución no es más vocabulario.</strong><br />
+          Es práctica deliberada en situaciones de comunicación de alta presión.
         </p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- THE HIDDEN COST -->
-<section class="hidden-cost">
-  <div class="container-narrow">
-    <h2>La Pregunta del Millón de Dólares</h2>
-    
-    <div class="cost-callout">
-      <p class="cost-question">
-        ¿Cuántas veces tu equipo ha dicho <em>"Déjame dar seguimiento por correo"</em> 
-        en una llamada con un cliente... cuando en realidad <strong>sabían la respuesta</strong>?
+  <!-- WHAT YOU'LL DISCOVER -->
+  <section class="what-youll-discover">
+    <div class="container-custom">
+      <h2>Lo Que Este Quiz de 3 Minutos Revela</h2>
+
+      <div class="discovery-grid">
+        <div class="discovery-item">
+          <div class="discovery-number">1</div>
+          <h3>Tu Puntuación de Preparación al Hablar</h3>
+          <p>
+            Una evaluación de 0-100 de qué tan confiadamente tu equipo puede
+            manejar conversaciones de alto riesgo con clientes norteamericanos.
+          </p>
+        </div>
+
+        <div class="discovery-item">
+          <div class="discovery-number">2</div>
+          <h3>Tu Mayor Brecha al Hablar</h3>
+          <p>
+            ¿Es claridad en tiempo real bajo presión? ¿Confianza en
+            negociaciones? ¿Liderazgo en reuniones? Identificaremos tu
+            oportunidad #1.
+          </p>
+        </div>
+
+        <div class="discovery-item">
+          <div class="discovery-number">3</div>
+          <h3>Lo Que Te Está Costando</h3>
+          <p>
+            Ve exactamente cómo las brechas al hablar se traducen en contratos
+            perdidos, ciclos de venta más largos y valores de contrato más
+            bajos.
+          </p>
+        </div>
+
+        <div class="discovery-item">
+          <div class="discovery-number">4</div>
+          <h3>Cómo Solucionarlo (Rápido)</h3>
+          <p>
+            Tu reporte personalizado incluye ejercicios específicos de
+            comunicación y una hoja de ruta de mejora de 30 días.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="social-proof">
+    <div class="container-narrow">
+      <h2>Únete a Más de 200 Líderes Tech Que Han Tomado Esta Evaluación</h2>
+
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "Obtuve 58 puntos y pensé, 'No está mal'. Luego leí el reporte y me
+            di cuenta de que estábamos dejando más de $100K sobre la mesa cada
+            trimestre porque nuestros PMs no podían comandar las llamadas con
+            clientes."
+          </p>
+          <cite
+            >— Fundador, empresa de desarrollo de 35 personas, Ciudad de México</cite
+          >
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "El quiz me obligó a admitir lo que ya sabía: yo era el cuello de
+            botella. Cada llamada importante tenía que pasar por mí porque mi
+            equipo no tenía suficiente confianza. Ahora ellos lideran las
+            llamadas de descubrimiento."
+          </p>
+          <cite>— CTO, consultoría SaaS, Bogotá</cite>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "Pensábamos que nuestro inglés era 'suficientemente bueno'. Esta
+            evaluación nos mostró los momentos específicos donde estábamos
+            perdiendo credibilidad. Seis semanas después, cerramos nuestro
+            primer contrato de $180K."
+          </p>
+          <cite>— VP de Ingeniería, startup fintech, Buenos Aires</cite>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "El quiz reveló brechas que no sabía que existían. La hoja de ruta
+            personalizada me ayudó a enfocarme en lo que realmente importa para
+            las llamadas con clientes. En un mes, estaba liderando
+            presentaciones técnicas con confianza."
+          </p>
+          <cite
+            >— Arquitecto de Soluciones, consultoría de software, Monterrey</cite
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container-narrow">
+      <span class="final-eyebrow">Tu Próximo Paso</span>
+      <h2 class="final-heading">¿Listo Para Ver Dónde Te Encuentras?</h2>
+
+      <p class="final-subtext">
+        Toma el Quiz de Confianza al Hablar de 3 minutos y obtén tu reporte
+        personalizado al instante.
       </p>
-      
-      <p class="cost-impact">
-        Esa evasión te cuesta:
-      </p>
-      
-      <ul class="cost-list">
-        <li>❌ Credibilidad inmediata (los clientes perciben la duda)</li>
-        <li>❌ Impulso del negocio (las respuestas por correo toman días)</li>
-        <li>❌ Poder de fijación de precios (no puedes defender valor por escrito)</li>
-        <li>❌ Tu tiempo (te conviertes en el cuello de botella de cada llamada)</li>
-      </ul>
-      
-      <p class="cost-solution">
-        <strong>La solución no es más vocabulario.</strong><br>
-        Es práctica deliberada en situaciones de comunicación de alta presión.
-      </p>
-    </div>
-  </div>
-</section>
 
-<!-- WHAT YOU'LL DISCOVER -->
-<section class="what-youll-discover">
-  <div class="container-custom">
-    <h2>Lo Que Este Quiz de 3 Minutos Revela</h2>
-    
-    <div class="discovery-grid">
-      <div class="discovery-item">
-        <div class="discovery-number">1</div>
-        <h3>Tu Puntuación de Preparación al Hablar</h3>
-        <p>
-          Una evaluación de 0-100 de qué tan confiadamente tu equipo puede manejar 
-          conversaciones de alto riesgo con clientes norteamericanos.
-        </p>
-      </div>
+      <Button href="/es/quiz/start" variant="primary" size="lg">
+        Comenzar Evaluación Gratuita de 3 Minutos →
+      </Button>
 
-      <div class="discovery-item">
-        <div class="discovery-number">2</div>
-        <h3>Tu Mayor Brecha al Hablar</h3>
-        <p>
-          ¿Es claridad en tiempo real bajo presión? ¿Confianza en negociaciones? 
-          ¿Liderazgo en reuniones? Identificaremos tu oportunidad #1.
-        </p>
-      </div>
-
-      <div class="discovery-item">
-        <div class="discovery-number">3</div>
-        <h3>Lo Que Te Está Costando</h3>
-        <p>
-          Ve exactamente cómo las brechas al hablar se traducen en contratos perdidos, 
-          ciclos de venta más largos y valores de contrato más bajos.
-        </p>
-      </div>
-
-      <div class="discovery-item">
-        <div class="discovery-number">4</div>
-        <h3>Cómo Solucionarlo (Rápido)</h3>
-        <p>
-          Tu reporte personalizado incluye ejercicios específicos de comunicación y 
-          una hoja de ruta de mejora de 30 días.
-        </p>
+      <div class="trust-signals">
+        <div class="trust-signal">
+          <Clock size={16} />
+          <span>3 minutos</span>
+        </div>
+        <div class="trust-signal">
+          <Mail size={16} />
+          <span>Resultados instantáneos</span>
+        </div>
+        <div class="trust-signal">
+          <Lock size={16} />
+          <span>Sin spam</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- SOCIAL PROOF -->
-<section class="social-proof">
-  <div class="container-narrow">
-    <h2>Únete a Más de 200 Líderes Tech Que Han Tomado Esta Evaluación</h2>
-    
-    <div class="testimonial-cards">
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "Obtuve 58 puntos y pensé, 'No está mal'. Luego leí el reporte 
-          y me di cuenta de que estábamos dejando más de $100K sobre la mesa cada trimestre porque 
-          nuestros PMs no podían comandar las llamadas con clientes."
-        </p>
-        <cite>— Fundador, empresa de desarrollo de 35 personas, Ciudad de México</cite>
-      </div>
-
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "El quiz me obligó a admitir lo que ya sabía: yo era el cuello de botella. 
-          Cada llamada importante tenía que pasar por mí porque mi equipo no tenía suficiente 
-          confianza. Ahora ellos lideran las llamadas de descubrimiento."
-        </p>
-        <cite>— CTO, consultoría SaaS, Bogotá</cite>
-      </div>
-
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "Pensábamos que nuestro inglés era 'suficientemente bueno'. Esta evaluación nos mostró 
-          los momentos específicos donde estábamos perdiendo credibilidad. Seis semanas después, 
-          cerramos nuestro primer contrato de $180K."
-        </p>
-        <cite>— VP de Ingeniería, startup fintech, Buenos Aires</cite>
-      </div>
-
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "El quiz reveló brechas que no sabía que existían. La hoja de ruta personalizada 
-          me ayudó a enfocarme en lo que realmente importa para las llamadas con clientes. En un mes, 
-          estaba liderando presentaciones técnicas con confianza."
-        </p>
-        <cite>— Arquitecto de Soluciones, consultoría de software, Monterrey</cite>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <div class="container-narrow">
-    <span class="final-eyebrow">Tu Próximo Paso</span>
-    <h2 class="final-heading">¿Listo Para Ver Dónde Te Encuentras?</h2>
-    
-    <p class="final-subtext">
-      Toma el Quiz de Confianza al Hablar de 3 minutos y obtén tu reporte 
-      personalizado al instante.
-    </p>
-    
-    <Button 
-      href="/es/quiz/start" 
-      variant="primary" 
-      size="lg"
-    >
-      Comenzar Evaluación Gratuita de 3 Minutos →
-    </Button>
-    
-    <div class="trust-signals">
-      <div class="trust-signal">
-        <Clock size={16} />
-        <span>3 minutos</span>
-      </div>
-      <div class="trust-signal">
-        <Mail size={16} />
-        <span>Resultados instantáneos</span>
-      </div>
-      <div class="trust-signal">
-        <Lock size={16} />
-        <span>Sin spam</span>
-      </div>
-    </div>
-  </div>
-</section>
-
+  </section>
 </Base>
 
 <style>
-/* Container Utilities */
-.container-custom {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.container-narrow {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-/* Hero Section */
-.quiz-landing-hero {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
-  color: #1e293b;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.hero-content {
-  max-width: 600px;
-}
-
-.eyebrow {
-  display: inline-block;
-  background: #3b82f6;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.quiz-landing-hero h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  color: #0f172a;
-  max-width: 600px;
-}
-
-.hero-subhead {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  margin-bottom: 2rem;
-  color: #475569;
-  max-width: 540px;
-}
-
-.value-props {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.value-prop {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 1rem;
-  color: #334155;
-}
-
-.value-prop .icon {
-  flex-shrink: 0;
-  color: #3b82f6;
-}
-
-.cta-start-quiz {
-  margin-bottom: 1rem;
-}
-
-.trust-signals {
-  display: flex;
-  gap: 2rem;
-  margin-top: 1rem;
-  font-size: 0.875rem;
-}
-
-.trust-signal {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #64748b;
-}
-
-.trust-signal :global(svg) {
-  color: #94a3b8;
-}
-
-.trust-badge {
-  margin-top: 1.5rem;
-  font-size: 0.875rem;
-  color: #64748b;
-  font-style: italic;
-}
-
-/* Hero Visual */
-.hero-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.visual-placeholder {
-  width: 100%;
-  max-width: 400px;
-}
-
-.sample-score-card {
-  background: white;
-  color: #2d3748;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e2e8f0;
-  text-align: center;
-}
-
-.score-header {
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #718096;
-  margin-bottom: 1rem;
-}
-
-.score-number {
-  font-size: 5rem;
-  font-weight: 700;
-  color: #3b82f6;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.score-label {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #4a5568;
-  margin-bottom: 1.5rem;
-}
-
-.score-insight {
-  background: #f8fafc;
-  padding: 1rem;
-  border-radius: 8px;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  text-align: left;
-  border-left: 4px solid #3b82f6;
-}
-
-/* Why Spoken English */
-.why-spoken-english {
-  padding: 4rem 0;
-  background: #f7fafc;
-}
-
-.why-spoken-english h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 3rem;
-  color: #2d3748;
-}
-
-.reason-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.reason-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e2e8f0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.reason-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-  border-color: #3b82f6;
-}
-
-.reason-icon {
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  color: white;
-}
-
-.reason-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  color: #0f172a;
-  font-weight: 600;
-}
-
-.reason-card p {
-  color: #4a5568;
-  line-height: 1.6;
-}
-
-/* Hidden Cost */
-.hidden-cost {
-  padding: 4rem 0;
-  background: white;
-}
-
-.hidden-cost h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #2d3748;
-}
-
-.cost-callout {
-  background: #fff5f5;
-  border-left: 4px solid #e53e3e;
-  padding: 2rem;
-  border-radius: 8px;
-}
-
-.cost-question {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: #2d3748;
-}
-
-.cost-impact {
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #2d3748;
-}
-
-.cost-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
-}
-
-.cost-list li {
-  padding: 0.5rem 0;
-  font-size: 1.1rem;
-  color: #4a5568;
-}
-
-.cost-solution {
-  font-size: 1.1rem;
-  color: #2d3748;
-  padding-top: 1rem;
-  border-top: 2px solid #feb2b2;
-}
-
-/* What You'll Discover */
-.what-youll-discover {
-  padding: 4rem 0;
-  background: white;
-}
-
-.what-youll-discover h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 3rem;
-  color: #2d3748;
-}
-
-.discovery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.discovery-item {
-  text-align: center;
-}
-
-.discovery-number {
-  width: 60px;
-  height: 60px;
-  background: #3b82f6;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0 auto 1rem;
-}
-
-.discovery-item h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  color: #2d3748;
-}
-
-.discovery-item p {
-  color: #4a5568;
-  line-height: 1.6;
-}
-
-/* Social Proof */
-.social-proof {
-  padding: 4rem 0;
-  background: #f7fafc;
-}
-
-.social-proof h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 3rem;
-  color: #2d3748;
-}
-
-.testimonial-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.testimonial-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #2d3748;
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-
-.testimonial-card cite {
-  font-size: 0.875rem;
-  color: #718096;
-  font-style: normal;
-}
-
-/* Final CTA */
-.final-cta {
-  padding: 5rem 0;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
-  text-align: center;
-}
-
-.final-eyebrow {
-  display: inline-block;
-  background: #3b82f6;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.final-heading {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  color: #0f172a;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.final-subtext {
-  font-size: 1.375rem;
-  margin-bottom: 2.5rem;
-  color: #475569;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-}
-
-.final-cta .trust-signals {
-  justify-content: center;
-  margin-top: 1.5rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  /* ============================================
+   GLOBAL RESETS & BOX SIZING
+   ============================================ */
+  :global(html) {
+    box-sizing: border-box;
   }
 
-  .hero-visual {
-    order: -1;
+  :global(*),
+  :global(*::before),
+  :global(*::after) {
+    box-sizing: inherit;
   }
 
-  .quiz-landing-hero h1 {
-    font-size: 2rem;
+  :global(body) {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
   }
 
-  .hero-subhead {
-    font-size: 1.1rem;
-  }
-  
-  .trust-signals {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: flex-start;
-  }
-
-  .final-cta .trust-signals {
-    align-items: center;
-  }
-
-  .reason-cards,
-  .discovery-grid,
-  .testimonial-cards {
-    grid-template-columns: 1fr;
+  /* ============================================
+   CONTAINER UTILITIES
+   ============================================ */
+  .container-custom,
+  .container-narrow {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
-  .cost-question {
-    font-size: 1.25rem;
-  }
-
-  .final-heading {
-    font-size: 2rem;
-  }
-
-  .final-subtext {
-    font-size: 1.125rem;
-  }
-}
-</style>
-
-<script>
-// Animated counter for score number
-function animateCounter() {
-  const counter = document.getElementById('score-counter');
-  if (!counter) return;
-
-  const target = 73;
-  let current = 0;
-  const duration = 2000; // 2 seconds
-  const startTime = performance.now();
-
-  // Easing function for acceleration
-  function easeOutQuad(t: number): number {
-    return t * (2 - t);
-  }
-
-  function updateCounter(currentTime: number) {
-    if (!counter) return;
-    
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    
-    // Apply easing
-    const easedProgress = easeOutQuad(progress);
-    current = Math.floor(easedProgress * target);
-    
-    counter.textContent = current.toString();
-
-    if (progress < 1) {
-      requestAnimationFrame(updateCounter);
-    } else {
-      counter.textContent = target.toString();
+  @media (min-width: 640px) {
+    .container-custom,
+    .container-narrow {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
   }
 
-  // Start animation when element is in viewport
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        requestAnimationFrame(updateCounter);
-        observer.disconnect();
-      }
-    });
-  }, { threshold: 0.5 });
+  @media (min-width: 768px) {
+    .container-custom,
+    .container-narrow {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
 
-  observer.observe(counter);
-}
+  @media (min-width: 1024px) {
+    .container-custom {
+      max-width: 1280px;
+    }
 
-// Run on page load
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', animateCounter);
-} else {
-  animateCounter();
-}
-</script>
+    .container-narrow {
+      max-width: 900px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container-custom {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  /* ============================================
+   HERO SECTION - Responsive padding
+   ============================================ */
+  .quiz-landing-hero {
+    width: 100%;
+    padding: 7.5rem 0 2rem;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 640px) {
+    .quiz-landing-hero {
+      padding: 7rem 0 2.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .quiz-landing-hero {
+      padding: 7.5rem 0 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .quiz-landing-hero {
+      padding: 8rem 0 4rem;
+    }
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-grid {
+      gap: 4rem;
+    }
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* ============================================
+   HERO TYPOGRAPHY
+   ============================================ */
+  .eyebrow {
+    display: inline-block;
+    background: #3b82f6;
+    color: white;
+    padding: 0.4rem 0.875rem;
+    border-radius: 20px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .eyebrow-link:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+
+  .eyebrow-link:active {
+    transform: translateY(0);
+  }
+
+  @media (min-width: 640px) {
+    .eyebrow {
+      font-size: 0.75rem;
+      padding: 0.5rem 1rem;
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .eyebrow {
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .quiz-landing-hero h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  @media (min-width: 640px) {
+    .quiz-landing-hero h1 {
+      font-size: 1.875rem;
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .quiz-landing-hero h1 {
+      font-size: 2.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .quiz-landing-hero h1 {
+      font-size: 2.5rem;
+      line-height: 1.15;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .quiz-landing-hero h1 {
+      font-size: 2.75rem;
+      line-height: 1.1;
+    }
+  }
+
+  .hero-subhead {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .hero-subhead {
+      font-size: 1.0625rem;
+      margin-bottom: 1.75rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero-subhead {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-subhead {
+      font-size: 1.1875rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .hero-subhead strong {
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  /* ============================================
+   VALUE PROPS
+   ============================================ */
+  .value-props {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .value-props {
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .value-props {
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .value-prop {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: #334155;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .value-prop {
+      font-size: 0.9375rem;
+      gap: 0.875rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .value-prop {
+      font-size: 1rem;
+    }
+  }
+
+  .value-prop .icon {
+    color: #3b82f6;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+
+  /* ============================================
+   CTA SECTION
+   ============================================ */
+  .cta-section {
+    margin-bottom: 1.25rem;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .cta-section {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .cta-start-quiz {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+    padding: 0.875rem 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 640px) {
+    .cta-start-quiz {
+      width: auto;
+      font-size: 1rem;
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  /* Responsive CTA text */
+  .cta-text-mobile {
+    display: inline;
+  }
+
+  .cta-text-desktop {
+    display: none;
+  }
+
+  @media (min-width: 640px) {
+    .cta-text-mobile {
+      display: none;
+    }
+
+    .cta-text-desktop {
+      display: inline;
+    }
+  }
+
+  /* ============================================
+   TRUST SIGNALS
+   ============================================ */
+  .trust-signals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .trust-signals {
+      gap: 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .trust-signals {
+      gap: 1.5rem;
+    }
+  }
+
+  .trust-signal {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: #64748b;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 640px) {
+    .trust-signal {
+      font-size: 0.875rem;
+    }
+  }
+
+  .trust-signal svg {
+    color: #3b82f6;
+    flex-shrink: 0;
+  }
+
+  /* ============================================
+   TRUST BADGE
+   ============================================ */
+  .trust-badge {
+    font-size: 0.8125rem;
+    color: #64748b;
+    font-style: italic;
+    margin: 0;
+    padding-top: 0.5rem;
+    max-width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .trust-badge {
+      font-size: 0.875rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .trust-badge {
+      font-size: 0.9375rem;
+    }
+  }
+
+  /* ============================================
+   HERO VISUAL
+   ============================================ */
+  .hero-visual {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-visual {
+      margin-top: 0;
+    }
+  }
+
+  .visual-label {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.875rem;
+  }
+
+  @media (min-width: 640px) {
+    .visual-label {
+      font-size: 0.8125rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .visual-label {
+      font-size: 0.875rem;
+    }
+  }
+
+  /* ============================================
+   WHY SPOKEN ENGLISH SECTION
+   ============================================ */
+  .why-spoken-english {
+    padding: 2.5rem 0;
+    background: white;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .why-spoken-english {
+      padding: 3.5rem 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .why-spoken-english {
+      padding: 4rem 0;
+    }
+  }
+
+  .why-spoken-english h2 {
+    text-align: center;
+    font-size: 1.375rem;
+    margin-bottom: 2rem;
+    color: #2d3748;
+    max-width: 100%;
+    word-wrap: break-word;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .why-spoken-english h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .why-spoken-english h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2.5rem;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .why-spoken-english h2 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .reason-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 640px) {
+    .reason-cards {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .reason-cards {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .reason-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .reason-card {
+      padding: 2rem;
+    }
+  }
+
+  .reason-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    border-color: #3b82f6;
+  }
+
+  .reason-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    color: white;
+  }
+
+  @media (min-width: 768px) {
+    .reason-icon {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .reason-card h3 {
+    font-size: 1.0625rem;
+    margin-bottom: 0.875rem;
+    color: #0f172a;
+    font-weight: 600;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .reason-card h3 {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .reason-card h3 {
+      font-size: 1.25rem;
+    }
+  }
+
+  .reason-card p {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .reason-card p {
+      font-size: 1rem;
+    }
+  }
+
+  /* ============================================
+   HIDDEN COST SECTION
+   ============================================ */
+  .hidden-cost {
+    padding: 2.5rem 0;
+    background: white;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .hidden-cost {
+      padding: 3.5rem 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hidden-cost {
+      padding: 4rem 0;
+    }
+  }
+
+  .hidden-cost h2 {
+    text-align: center;
+    font-size: 1.375rem;
+    margin-bottom: 1.5rem;
+    color: #2d3748;
+    max-width: 100%;
+    word-wrap: break-word;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .hidden-cost h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hidden-cost h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hidden-cost h2 {
+      font-size: 2rem;
+    }
+  }
+
+  .cost-callout {
+    background: #fff5f5;
+    border-left: 4px solid #e53e3e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .cost-callout {
+      padding: 2rem;
+    }
+  }
+
+  .cost-question {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: #2d3748;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  @media (min-width: 640px) {
+    .cost-question {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .cost-question {
+      font-size: 1.375rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cost-question {
+      font-size: 1.5rem;
+    }
+  }
+
+  .cost-impact {
+    font-weight: 600;
+    margin-bottom: 0.875rem;
+    color: #2d3748;
+    font-size: 0.9375rem;
+  }
+
+  @media (min-width: 768px) {
+    .cost-impact {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+  }
+
+  .cost-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .cost-list {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .cost-list li {
+    padding: 0.4rem 0;
+    font-size: 0.9375rem;
+    color: #4a5568;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  @media (min-width: 640px) {
+    .cost-list li {
+      font-size: 1rem;
+      padding: 0.5rem 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .cost-list li {
+      font-size: 1.0625rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cost-list li {
+      font-size: 1.1rem;
+    }
+  }
+
+  .cost-solution {
+    font-size: 0.9375rem;
+    color: #2d3748;
+    padding-top: 0.875rem;
+    border-top: 2px solid #feb2b2;
+    max-width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .cost-solution {
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .cost-solution {
+      font-size: 1.0625rem;
+      padding-top: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cost-solution {
+      font-size: 1.1rem;
+    }
+  }
+
+  /* ============================================
+   WHAT YOU'LL DISCOVER SECTION
+   ============================================ */
+  .what-youll-discover {
+    padding: 2.5rem 0;
+    background: white;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .what-youll-discover {
+      padding: 3.5rem 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .what-youll-discover {
+      padding: 4rem 0;
+    }
+  }
+
+  .what-youll-discover h2 {
+    text-align: center;
+    font-size: 1.375rem;
+    margin-bottom: 2rem;
+    color: #2d3748;
+    max-width: 100%;
+    word-wrap: break-word;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .what-youll-discover h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .what-youll-discover h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2.5rem;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .what-youll-discover h2 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .discovery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .discovery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .discovery-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .discovery-item {
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .discovery-number {
+    width: 52px;
+    height: 52px;
+    background: #3b82f6;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.375rem;
+    font-weight: bold;
+    margin: 0 auto 0.875rem;
+  }
+
+  @media (min-width: 768px) {
+    .discovery-number {
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .discovery-item h3 {
+    font-size: 1.0625rem;
+    margin-bottom: 0.75rem;
+    color: #2d3748;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  @media (min-width: 768px) {
+    .discovery-item h3 {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .discovery-item h3 {
+      font-size: 1.25rem;
+    }
+  }
+
+  .discovery-item p {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .discovery-item p {
+      font-size: 1rem;
+    }
+  }
+
+  /* ============================================
+   SOCIAL PROOF SECTION
+   ============================================ */
+  .social-proof {
+    padding: 2.5rem 0;
+    background: #f7fafc;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .social-proof {
+      padding: 3.5rem 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .social-proof {
+      padding: 4rem 0;
+    }
+  }
+
+  .social-proof h2 {
+    text-align: center;
+    font-size: 1.375rem;
+    margin-bottom: 2rem;
+    color: #2d3748;
+    max-width: 100%;
+    word-wrap: break-word;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .social-proof h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .social-proof h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2.5rem;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .social-proof h2 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .testimonial-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-cards {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .testimonial-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-card {
+      padding: 2rem;
+    }
+  }
+
+  .testimonial-text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #2d3748;
+    margin-bottom: 0.875rem;
+    font-style: italic;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-text {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .testimonial-card cite {
+    font-size: 0.8125rem;
+    color: #718096;
+    font-style: normal;
+    display: block;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-card cite {
+      font-size: 0.875rem;
+    }
+  }
+
+  /* ============================================
+   FINAL CTA SECTION
+   ============================================ */
+  .final-cta {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .final-cta .quiz-landing-hero {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .final-cta {
+      padding: 4rem 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .final-cta {
+      padding: 5rem 0;
+    }
+  }
+
+  .final-eyebrow {
+    display: inline-block;
+    background: #3b82f6;
+    color: white;
+    padding: 0.4rem 0.875rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  @media (min-width: 640px) {
+    .final-eyebrow {
+      font-size: 0.8125rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .final-eyebrow {
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .final-heading {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+    color: #0f172a;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 100%;
+    word-wrap: break-word;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .final-heading {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .final-heading {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .final-heading {
+      font-size: 2.75rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .final-heading {
+      font-size: 3rem;
+    }
+  }
+
+  .final-subtext {
+    font-size: 1.0625rem;
+    margin-bottom: 2rem;
+    color: #475569;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .final-subtext {
+      font-size: 1.125rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .final-subtext {
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .final-subtext {
+      font-size: 1.375rem;
+    }
+  }
+
+  .final-cta .trust-signals {
+    justify-content: center;
+    margin-top: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .final-cta .trust-signals {
+      margin-top: 1.5rem;
+    }
+  }
+</style>

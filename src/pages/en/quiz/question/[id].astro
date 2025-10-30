@@ -13,28 +13,60 @@ export function getStaticPaths() {
 const { id } = Astro.params;
 const { question } = Astro.props;
 
-const currentQuestion = parseInt(id);
+// Validate question exists (handles direct URL access edge case)
+const currentQuestion = parseInt(id || '1');
+const validQuestion = question || questionsEn.find(q => q.id === currentQuestion);
+const hasValidQuestion = !!validQuestion;
+
 const totalQuestions = questionsEn.length;
 const progress = (currentQuestion / totalQuestions) * 100;
 
-const title = `Question ${currentQuestion} of ${totalQuestions} | Speaking Confidence Quiz`;
-const description = "Answer questions about your team's English communication confidence.";
+const title = hasValidQuestion 
+  ? `Question ${currentQuestion} of ${totalQuestions} | Speaking Confidence Quiz`
+  : 'Quiz Error | Speaking Confidence Quiz';
+const description = "Test your Business English confidence in 2 minutes! Discover the hidden speaking gaps costing your team contracts and credibility with North American clients.";
 ---
 
 <Base 
   title={title} 
   description={description}
   lang="en"
-  customCanonical={`https://www.nyenglishteacher.com/en/quiz/question/${id}/`}
+  customCanonical="https://www.nyenglishteacher.com/en/quiz/"
   customHreflangs={[
     { lang: "en-US", href: `https://www.nyenglishteacher.com/en/quiz/question/${id}/` },
     { lang: "es-MX", href: `https://www.nyenglishteacher.com/es/quiz/question/${id}/` }
   ]}
   hideCta={true}
+  hideLanguageSwitcher={true}
 >
 
 <section class="quiz-question pt-28 pb-16 md:pt-32 md:pb-20">
   <div class="container-narrow">
+    
+    {!hasValidQuestion ? (
+      <!-- No Quiz Data Warning -->
+      <div class="no-quiz-warning">
+        <div class="warning-content">
+          <div class="warning-icon">⚠️</div>
+          <h1>Please Start from the Beginning</h1>
+          <p class="warning-text">
+            To get accurate results, you need to start the quiz from the beginning and answer all questions in order.
+          </p>
+          <p class="warning-subtext">
+            The Communication Confidence Assessment takes about 3-5 minutes and will give you a personalized score.
+          </p>
+          <Button 
+            href="/en/quiz/start"
+            variant="primary" 
+            size="lg"
+            class="start-quiz-button"
+          >
+            Start the Quiz →
+          </Button>
+        </div>
+      </div>
+    ) : (
+      <>
     <!-- Progress Bar -->
     <div class="progress-container">
       <div class="progress-bar">
@@ -47,12 +79,12 @@ const description = "Answer questions about your team's English communication co
 
     <!-- Question Card -->
     <div class="question-card">
-      <h1 class="question-text">{question.question}</h1>
+      <h1 class="question-text">{validQuestion.question}</h1>
 
       <form class="options-form" id="quiz-form">
-        <input type="hidden" name="questionId" value={question.id} />
+        <input type="hidden" name="questionId" value={validQuestion.id} />
         
-        {question.options.map((option, index) => (
+        {validQuestion.options.map((option, index) => (
           <label class="option-label">
             <input 
               type="radio" 
@@ -80,6 +112,8 @@ const description = "Answer questions about your team's English communication co
         </div>
       </form>
     </div>
+    </>
+    )}
   </div>
 </section>
 
@@ -95,6 +129,59 @@ const description = "Answer questions about your team's English communication co
 .quiz-question {
   background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
   min-height: calc(100vh - 80px);
+}
+
+/* No Quiz Warning */
+.no-quiz-warning {
+  background: white;
+  padding: 4rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.warning-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.warning-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.no-quiz-warning h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.warning-text {
+  font-size: 1.25rem;
+  color: #475569;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.warning-subtext {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.start-quiz-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 /* Progress Bar */
@@ -254,8 +341,9 @@ if (form) {
     const answersJson = sessionStorage.getItem('quizAnswers');
     const answers = answersJson ? JSON.parse(answersJson) : {};
     
-    // Store this answer
-    answers[questionId as string] = parseInt(answer as string);
+    // Store this answer with 'q' prefix to match expected format
+    const answerKey = `q${questionId}`;
+    answers[answerKey] = parseInt(answer as string);
     sessionStorage.setItem('quizAnswers', JSON.stringify(answers));
     
     // Navigate to next question or results
@@ -263,9 +351,9 @@ if (form) {
     const totalQuestions = 10;
     
     if (currentId < totalQuestions) {
-      window.location.href = `/en/quiz/question/${currentId + 1}`;
+      window.location.href = `/en/quiz/question/${currentId + 1}/`;
     } else {
-      window.location.href = '/en/quiz/results';
+      window.location.href = '/en/quiz/results/';
     }
   });
 }

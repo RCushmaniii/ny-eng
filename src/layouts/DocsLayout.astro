@@ -28,8 +28,8 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
       /* Use project fonts and colors */
       body {
         font-family: var(--font-base);
-        background-color: var(--color-background);
-        color: var(--color-text);
+        background-color: #0f172a; /* slate-900 */
+        color: #e2e8f0; /* slate-200 */
       }
       
       /* Documentation-specific styling */
@@ -37,6 +37,8 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
         max-width: var(--container-base);
         margin: 0 auto;
         padding: 2rem 1.5rem;
+        background-color: #1e293b; /* slate-800 */
+        min-height: calc(100vh - 120px);
       }
       
       .docs-content h1 {
@@ -172,12 +174,17 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
     </style>
   </head>
   
-  <body class="bg-gray-50 min-h-screen">
+  <body class="bg-slate-900 min-h-screen">
     <!-- Navigation Header -->
-    <nav class="docs-nav">
-      <div class="max-w-4xl mx-auto px-6">
-        <h1>📚 NY English Teacher Documentation</h1>
-        <p class="text-blue-100 text-sm mt-1">Development Preview</p>
+    <nav class="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 border-b-2 border-blue-600 shadow-2xl">
+      <div class="max-w-7xl mx-auto px-8 py-6">
+        <div class="flex items-center gap-4">
+          <img src="/images/logos/new-york-english-sq-og.jpg" alt="NY English Teacher Logo" class="w-12 h-12 rounded-lg shadow-lg" />
+          <div>
+            <h1 class="text-2xl font-bold text-white tracking-tight">NY English Teacher Documentation</h1>
+            <p class="text-slate-300 text-sm mt-0.5">Development Preview</p>
+          </div>
+        </div>
       </div>
     </nav>
     

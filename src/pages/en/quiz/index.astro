@@ -1,823 +1,1565 @@
 ---
-import Base from '@layouts/Base.astro';
-import Button from '@components/ui/Button.astro';
-import { Target, BarChart3, Rocket, Clock, Mail, Lock, DollarSign, Mic, Zap, TrendingUp } from 'lucide-astro';
-
-const title = "Speaking Confidence Quiz: Are You Ready for North American Clients?";
-const description = "Discover the hidden speaking gaps costing your IT team contracts, credibility, and career growth. Take the 3-minute assessment.";
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import QuizSchema from "@components/seo/QuizSchema.astro";
+import ReportCarousel from "@components/ReportCarousel.astro";
+import {
+  Target,
+  BarChart3,
+  Rocket,
+  Clock,
+  Mail,
+  Lock,
+  DollarSign,
+  Mic,
+  Zap,
+  TrendingUp,
+} from "lucide-astro";
+const title =
+  "Speaking Confidence Quiz: Are You Ready for North American Clients?";
+const description =
+  "Assess your business English confidence in 2 minutes! Discover the communication gaps costing your IT team contracts, credibility, and professional growth with North American clients.";
 ---
 
-<Base 
-  title={title} 
+<Base
+  title={title}
   description={description}
   lang="en"
-  customCanonical="https://www.nyenglishteacher.com/en/quiz/"
-  customHreflangs={[
-    { lang: "en-US", href: "https://www.nyenglishteacher.com/en/quiz/" },
-    { lang: "es-MX", href: "https://www.nyenglishteacher.com/es/quiz/" }
-  ]}
+  tkey="quiz"
   hideCta={true}
 >
+  <QuizSchema lang="en" slot="head" />
 
-<!-- HERO SECTION -->
-<section class="quiz-landing-hero pt-28 pb-8 md:pt-32 md:pb-12">
-  <div class="container-custom">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <span class="eyebrow">Free 3-Minute Assessment</span>
-        
-        <h1>Could Your Team Confidently Defend a $200K Proposal on a Live Call?</h1>
-        
-        <p class="hero-subhead">
-          AI can polish your emails. Grammarly can fix your grammar. 
-          But when a Fortune 500 client challenges your idea live… 
-          <strong>your spoken English becomes your credibility.</strong>
-        </p>
+  <section class="quiz-landing-hero">
+    <div class="hero-container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <a href="/en/quiz/start" class="eyebrow eyebrow-link">Free 3-Minute Assessment</a>
 
-        <div class="value-props">
-          <div class="value-prop">
-            <Target class="icon" size={24} />
-            <span>Pinpoint the moments costing you deals</span>
-          </div>
-          <div class="value-prop">
-            <BarChart3 class="icon" size={24} />
-            <span>Get your Communication Confidence Score (0–100)</span>
-          </div>
-          <div class="value-prop">
-            <Rocket class="icon" size={24} />
-            <span>Receive your personalized roadmap to executive fluency</span>
-          </div>
-        </div>
+          <h1>
+            Could Your Team Confidently Defend a $200K Proposal on a Live Call?
+          </h1>
 
-        <Button 
-          href="/en/quiz/start" 
-          variant="primary" 
-          size="lg"
-          class="cta-start-quiz"
-        >
-          Start Free 3-Minute Assessment →
-        </Button>
+          <p class="hero-subhead">
+            AI can polish your emails. Grammarly can fix your grammar. But when
+            a Fortune 500 client challenges your idea live…
+            <strong>your spoken English becomes your credibility.</strong>
+          </p>
 
-        <div class="trust-signals">
-          <div class="trust-signal">
-            <Clock size={16} />
-            <span>Takes 3 minutes</span>
-          </div>
-          <div class="trust-signal">
-            <Mail size={16} />
-            <span>Results emailed instantly</span>
-          </div>
-          <div class="trust-signal">
-            <Lock size={16} />
-            <span>100% confidential</span>
-          </div>
-        </div>
-
-        <p class="trust-badge">
-          Trusted by IT leaders at Smarttie, Kopar, and Sourceability
-        </p>
-      </div>
-
-      <div class="hero-visual">
-        <!-- Placeholder for screenshot of results page or testimonial card -->
-        <div class="visual-placeholder">
-          <div class="sample-score-card">
-            <div class="score-header">Your Communication Confidence Score</div>
-            <div class="score-number" id="score-counter">0</div>
-            <div class="score-label">Room for Growth</div>
-            <div class="score-insight">
-              <strong>Key Finding:</strong> Your team hesitates during pricing discussions, 
-              signaling uncertainty to clients.
+          <div class="value-props">
+            <div class="value-prop">
+              <Target size={20} /><span
+                >Pinpoint the moments costing you deals</span>
+            </div>
+            <div class="value-prop">
+              <BarChart3 size={20} /><span
+                >Get your Communication Confidence Score (0–100)</span>
+            </div>
+            <div class="value-prop">
+              <Rocket size={20} /><span
+                >Receive your personalized roadmap to executive fluency</span>
             </div>
           </div>
+
+          <div class="cta-section">
+            <Button
+              href="/en/quiz/start"
+              variant="primary"
+              size="lg"
+              class="cta-start-quiz"
+            >
+              Start Free 3-Minute Assessment →
+            </Button>
+            <div class="trust-signals">
+              <div class="trust-signal">
+                <Clock size={16} /><span>3 min</span>
+              </div>
+              <div class="trust-signal">
+                <Mail size={16} /><span>Instant</span>
+              </div>
+              <div class="trust-signal">
+                <Lock size={16} /><span>Confidential</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="trust-badge">
+            Trusted by IT leaders at Smarttie, Kopar, and Sourceability
+          </p>
+        </div>
+
+        <div class="hero-visual">
+          <ReportCarousel />
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- WHY SPOKEN ENGLISH MATTERS -->
-<section class="why-spoken-english">
-  <div class="container-narrow">
-    <h2>Why Spoken English is Your Real Competitive Advantage</h2>
-    
-    <div class="reason-cards">
-      <div class="reason-card">
-        <div class="reason-icon">
-          <DollarSign size={32} />
+  <style>
+    .quiz-landing-hero {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+      padding-top: 7.5rem;
+      padding-bottom: 2.5rem;
+      overflow-x: hidden;
+    }
+
+    .hero-container {
+      max-width: 100%;
+      width: 100%;
+      margin: 0 auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-container {
+        max-width: 1280px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 3rem;
+      }
+    }
+
+    .hero-content,
+    .hero-visual {
+      width: 100%;
+      max-width: 100%;
+      overflow-wrap: break-word;
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 1023px) {
+      .hero-visual {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        width: calc(100% + 2rem);
+        max-width: calc(100% + 2rem);
+      }
+    }
+
+    .value-props,
+    .cta-section,
+    .trust-signals {
+      max-width: 100%;
+    }
+
+    .cta-start-quiz {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 100%;
+      padding: 0.875rem 1rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 640px) {
+      .cta-start-quiz {
+        width: auto;
+        padding: 1rem 1.5rem;
+      }
+    }
+
+    .trust-signals {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+  </style>
+
+  <section class="why-spoken-english">
+    <div class="container-narrow">
+      <h2>Why Spoken English Is Your Real Competitive Advantage</h2>
+
+      <div class="reason-cards">
+        <div class="reason-card">
+          <div class="reason-icon">
+            <DollarSign size={32} />
+          </div>
+          <h3>Written English Is Already Solved</h3>
+          <p>
+            Grammarly, ChatGPT, and AI tools can make your emails and proposals
+            flawless. <strong>But they can't help you on a live call.</strong>
+          </p>
         </div>
-        <h3>Written English is Solved</h3>
-        <p>
-          Grammarly, ChatGPT, and AI writing tools can make your emails and 
-          proposals flawless. <strong>But they can't help you on a live call.</strong>
-        </p>
+
+        <div class="reason-card">
+          <div class="reason-icon">
+            <Mic size={32} />
+          </div>
+          <h3>The Critical Moments Are Spoken</h3>
+          <p>
+            Sales pitches. Negotiations. Client Q&As. Technical presentations.
+            Project problem-solving. <strong
+              >It all happens in real-time, with no "edit" button.</strong
+            >
+          </p>
+        </div>
+
+        <div class="reason-card">
+          <div class="reason-icon">
+            <Zap size={32} />
+          </div>
+          <h3>Hesitation = Lost Credibility</h3>
+          <p>
+            That 3-second pause while you translate in your head? North American
+            clients interpret it as uncertainty or lack of expertise.
+            <strong>Even when you know the answer perfectly.</strong>
+          </p>
+        </div>
+
+        <div class="reason-card">
+          <div class="reason-icon">
+            <TrendingUp size={32} />
+          </div>
+          <h3>Speaking Confidence = Pricing Power</h3>
+          <p>
+            When you can articulate value clearly and defend your price without
+            hesitation, clients stop negotiating price.
+            <strong>They start negotiating partnership terms.</strong>
+          </p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="reason-card">
-        <div class="reason-icon">
-          <Mic size={32} />
-        </div>
-        <h3>High-Stakes Moments are Spoken</h3>
-        <p>
-          Sales pitches. Negotiations. Client Q&A. Technical presentations. 
-          Project problem-solving. <strong>These happen in real-time, with no "edit" button.</strong>
+  <section class="hidden-cost">
+    <div class="container-narrow">
+      <h2>The Million-Dollar Question</h2>
+
+      <div class="cost-callout">
+        <p class="cost-question">
+          How many times has your team said <em>"Let me follow up via email"</em
+          >
+          on a client call... when they actually <strong>knew the answer</strong
+          >?
         </p>
-      </div>
 
-      <div class="reason-card">
-        <div class="reason-icon">
-          <Zap size={32} />
-        </div>
-        <h3>Hesitation = Lost Credibility</h3>
-        <p>
-          That 3-second pause while you translate in your head? North American 
-          clients interpret it as uncertainty or lack of expertise. 
-          <strong>Even when you know the answer perfectly.</strong>
-        </p>
-      </div>
+        <p class="cost-impact">That dodge costs you:</p>
 
-      <div class="reason-card">
-        <div class="reason-icon">
-          <TrendingUp size={32} />
-        </div>
-        <h3>Speaking Confidence = Pricing Power</h3>
-        <p>
-          When you can articulate value clearly and defend your pricing without 
-          fumbling, clients stop negotiating on price. 
-          <strong>They start negotiating on partnership terms.</strong>
+        <ul class="cost-list">
+          <li>❌ Immediate credibility (clients sense the hesitation)</li>
+          <li>❌ Deal momentum (email responses take days)</li>
+          <li>❌ Pricing power (you can't defend value in writing)</li>
+          <li>❌ Your time (you become the bottleneck on every call)</li>
+        </ul>
+
+        <p class="cost-solution">
+          <strong>The solution isn't more vocabulary.</strong><br />
+          It's deliberate practice in high-pressure communication situations.
         </p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- THE HIDDEN COST -->
-<section class="hidden-cost">
-  <div class="container-narrow">
-    <h2>The Million-Dollar Question</h2>
-    
-    <div class="cost-callout">
-      <p class="cost-question">
-        How many times has your team said <em>"Let me follow up via email"</em> 
-        in a client call... when they actually <strong>knew the answer</strong>?
+  <section class="what-youll-discover">
+    <div class="container-custom">
+      <h2>What This 3-Minute Quiz Reveals</h2>
+
+      <div class="discovery-grid">
+        <div class="discovery-item">
+          <div class="discovery-number">1</div>
+          <h3>Your Speaking Readiness Score</h3>
+          <p>
+            A 0-100 assessment of how confidently your team can handle
+            high-stakes conversations with North American clients.
+          </p>
+        </div>
+
+        <div class="discovery-item">
+          <div class="discovery-number">2</div>
+          <h3>Your Biggest Speaking Gap</h3>
+          <p>
+            Is it real-time clarity under pressure? Confidence in negotiations?
+            Meeting leadership? We'll identify your #1 opportunity.
+          </p>
+        </div>
+
+        <div class="discovery-item">
+          <div class="discovery-number">3</div>
+          <h3>What It's Costing You</h3>
+          <p>
+            See exactly how speaking gaps translate to lost contracts, longer
+            sales cycles, and lower contract values.
+          </p>
+        </div>
+
+        <div class="discovery-item">
+          <div class="discovery-number">4</div>
+          <h3>How to Fix It (Fast)</h3>
+          <p>
+            Your personalized report includes specific communication drills and
+            a 30-day improvement roadmap.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="social-proof">
+    <div class="container-narrow">
+      <h2>Join 200+ Tech Leaders Who've Taken This Assessment</h2>
+
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "I scored 58 and thought, 'Not bad.' Then I read the report and
+            realized we were leaving $100K+ on the table every quarter because
+            our PMs couldn't command client calls."
+          </p>
+          <cite>— Founder, 35-person dev shop, Mexico City</cite>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "The quiz forced me to admit what I already knew: I was the
+            bottleneck. Every important call had to go through me because my
+            team lacked confidence. Now they lead discovery calls."
+          </p>
+          <cite>— CTO, SaaS consultancy, Bogotá</cite>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "We thought our English was 'good enough.' This assessment showed us
+            the specific moments where we were losing credibility. Six weeks
+            later, we closed our first $180K contract."
+          </p>
+          <cite>— VP Engineering, fintech startup, Buenos Aires</cite>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "The quiz revealed gaps I didn't know existed. The personalized
+            roadmap helped me focus on what actually matters for client calls.
+            Within a month, I was leading technical presentations with
+            confidence."
+          </p>
+          <cite>— Solutions Architect, software consultancy, Monterrey</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container-narrow">
+      <span class="final-eyebrow">Your Next Step</span>
+      <h2 class="final-heading">Ready to See Where You Stand?</h2>
+
+      <p class="final-subtext">
+        Take the 3-minute Speaking Confidence Quiz and get your personalized
+        report instantly.
       </p>
-      
-      <p class="cost-impact">
-        That deflection costs you:
-      </p>
-      
-      <ul class="cost-list">
-        <li>❌ Immediate credibility (clients sense hesitation)</li>
-        <li>❌ Deal momentum (email replies take days)</li>
-        <li>❌ Pricing power (you can't defend value in writing)</li>
-        <li>❌ Your time (you become the bottleneck for every call)</li>
-      </ul>
-      
-      <p class="cost-solution">
-        <strong>The fix isn't more vocabulary.</strong><br>
-        It's deliberate practice in high-pressure speaking situations.
-      </p>
-    </div>
-  </div>
-</section>
 
-<!-- WHAT YOU'LL DISCOVER -->
-<section class="what-youll-discover">
-  <div class="container-custom">
-    <h2>What This 3-Minute Quiz Reveals</h2>
-    
-    <div class="discovery-grid">
-      <div class="discovery-item">
-        <div class="discovery-number">1</div>
-        <h3>Your Speaking Readiness Score</h3>
-        <p>
-          A 0-100 assessment of how confidently your team can handle 
-          high-stakes conversations with North American clients.
-        </p>
-      </div>
+      <Button href="/en/quiz/start" variant="primary" size="lg">
+        Start Free 3-Minute Assessment →
+      </Button>
 
-      <div class="discovery-item">
-        <div class="discovery-number">2</div>
-        <h3>Your Biggest Speaking Gap</h3>
-        <p>
-          Is it real-time clarity under pressure? Negotiation confidence? 
-          Meeting leadership? We'll pinpoint your #1 opportunity.
-        </p>
-      </div>
-
-      <div class="discovery-item">
-        <div class="discovery-number">3</div>
-        <h3>What It's Costing You</h3>
-        <p>
-          See exactly how speaking gaps translate to lost deals, longer 
-          sales cycles, and lower contract values.
-        </p>
-      </div>
-
-      <div class="discovery-item">
-        <div class="discovery-number">4</div>
-        <h3>How to Fix It (Fast)</h3>
-        <p>
-          Your personalized report includes specific speaking drills and 
-          a 30-day improvement roadmap.
-        </p>
+      <div class="trust-signals">
+        <div class="trust-signal">
+          <Clock size={16} />
+          <span>3 minutes</span>
+        </div>
+        <div class="trust-signal">
+          <Mail size={16} />
+          <span>Instant results</span>
+        </div>
+        <div class="trust-signal">
+          <Lock size={16} />
+          <span>No spam</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- SOCIAL PROOF -->
-<section class="social-proof">
-  <div class="container-narrow">
-    <h2>Join 200+ Tech Leaders Who've Taken This Assessment</h2>
-    
-    <div class="testimonial-cards">
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "I scored a 58 and thought, 'That's not bad.' Then I read the report 
-          and realized we were leaving $100K+ on the table every quarter because 
-          our PMs couldn't command client calls."
-        </p>
-        <cite>— Founder, 35-person dev shop, Mexico City</cite>
-      </div>
-
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "The quiz forced me to admit what I already knew: I was the bottleneck. 
-          Every important call had to go through me because my team wasn't confident 
-          enough. Now they lead discovery calls themselves."
-        </p>
-        <cite>— CTO, SaaS consultancy, Bogotá</cite>
-      </div>
-
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "We thought our English was 'good enough.' This assessment showed us 
-          the specific moments where we were losing credibility. Six weeks later, 
-          we closed our first $180K contract."
-        </p>
-        <cite>— VP Engineering, fintech startup, Buenos Aires</cite>
-      </div>
-
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "The quiz revealed gaps I didn't know existed. The personalized roadmap 
-          helped me focus on what actually matters for client calls. Within a month, 
-          I was leading technical presentations with confidence."
-        </p>
-        <cite>— Solutions Architect, software consultancy, Monterrey</cite>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <div class="container-narrow">
-    <span class="final-eyebrow">Your Next Step</span>
-    <h2 class="final-heading">Ready to See Where You Stand?</h2>
-    
-    <p class="final-subtext">
-      Take the 3-minute Speaking Confidence Quiz and get your personalized 
-      report instantly.
-    </p>
-    
-    <Button 
-      href="/en/quiz/start" 
-      variant="primary" 
-      size="lg"
-    >
-      Start Free 3-Minute Assessment →
-    </Button>
-    
-    <div class="trust-signals">
-      <div class="trust-signal">
-        <Clock size={16} />
-        <span>3 minutes</span>
-      </div>
-      <div class="trust-signal">
-        <Mail size={16} />
-        <span>Instant results</span>
-      </div>
-      <div class="trust-signal">
-        <Lock size={16} />
-        <span>No spam</span>
-      </div>
-    </div>
-  </div>
-</section>
-
+  </section>
 </Base>
 
 <style>
-/* Container Utilities */
-.container-custom {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.container-narrow {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-/* Hero Section */
-.quiz-landing-hero {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
-  color: #1e293b;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.hero-content {
-  max-width: 600px;
-}
-
-.eyebrow {
-  display: inline-block;
-  background: #3b82f6;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.quiz-landing-hero h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  color: #0f172a;
-  max-width: 600px;
-}
-
-.hero-subhead {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  margin-bottom: 2rem;
-  color: #475569;
-  max-width: 540px;
-}
-
-.value-props {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.value-prop {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 1rem;
-  color: #334155;
-}
-
-.value-prop .icon {
-  flex-shrink: 0;
-  color: #3b82f6;
-}
-
-.cta-start-quiz {
-  margin-bottom: 1rem;
-}
-
-.trust-signals {
-  display: flex;
-  gap: 2rem;
-  margin-top: 1rem;
-  font-size: 0.875rem;
-}
-
-.trust-signal {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #64748b;
-}
-
-.trust-signal :global(svg) {
-  color: #94a3b8;
-}
-
-.trust-badge {
-  margin-top: 1.5rem;
-  font-size: 0.875rem;
-  color: #64748b;
-  font-style: italic;
-}
-
-/* Hero Visual */
-.hero-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.visual-placeholder {
-  width: 100%;
-  max-width: 400px;
-}
-
-.sample-score-card {
-  background: white;
-  color: #2d3748;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e2e8f0;
-  text-align: center;
-}
-
-.score-header {
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #718096;
-  margin-bottom: 1rem;
-}
-
-.score-number {
-  font-size: 5rem;
-  font-weight: 700;
-  color: #3b82f6;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.score-label {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #4a5568;
-  margin-bottom: 1.5rem;
-}
-
-.score-insight {
-  background: #f8fafc;
-  padding: 1rem;
-  border-radius: 8px;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  text-align: left;
-  border-left: 4px solid #3b82f6;
-}
-
-/* Why Spoken English */
-.why-spoken-english {
-  padding: 4rem 0;
-  background: #f7fafc;
-}
-
-.why-spoken-english h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 3rem;
-  color: #2d3748;
-}
-
-.reason-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.reason-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e2e8f0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.reason-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-  border-color: #3b82f6;
-}
-
-.reason-icon {
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  color: white;
-}
-
-.reason-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  color: #0f172a;
-  font-weight: 600;
-}
-
-.reason-card p {
-  color: #4a5568;
-  line-height: 1.6;
-}
-
-/* Hidden Cost */
-.hidden-cost {
-  padding: 4rem 0;
-  background: white;
-}
-
-.hidden-cost h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #2d3748;
-}
-
-.cost-callout {
-  background: #fff5f5;
-  border-left: 4px solid #e53e3e;
-  padding: 2rem;
-  border-radius: 8px;
-}
-
-.cost-question {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: #2d3748;
-}
-
-.cost-impact {
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #2d3748;
-}
-
-.cost-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
-}
-
-.cost-list li {
-  padding: 0.5rem 0;
-  font-size: 1.1rem;
-  color: #4a5568;
-}
-
-.cost-solution {
-  font-size: 1.1rem;
-  color: #2d3748;
-  padding-top: 1rem;
-  border-top: 2px solid #feb2b2;
-}
-
-/* What You'll Discover */
-.what-youll-discover {
-  padding: 4rem 0;
-  background: white;
-}
-
-.what-youll-discover h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 3rem;
-  color: #2d3748;
-}
-
-.discovery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.discovery-item {
-  text-align: center;
-}
-
-.discovery-number {
-  width: 60px;
-  height: 60px;
-  background: #3b82f6;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0 auto 1rem;
-}
-
-.discovery-item h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  color: #2d3748;
-}
-
-.discovery-item p {
-  color: #4a5568;
-  line-height: 1.6;
-}
-
-/* Social Proof */
-.social-proof {
-  padding: 4rem 0;
-  background: #f7fafc;
-}
-
-.social-proof h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 3rem;
-  color: #2d3748;
-}
-
-.testimonial-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.testimonial-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #2d3748;
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-
-.testimonial-card cite {
-  font-size: 0.875rem;
-  color: #718096;
-  font-style: normal;
-}
-
-/* Final CTA */
-.final-cta {
-  padding: 5rem 0;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
-  text-align: center;
-}
-
-.final-eyebrow {
-  display: inline-block;
-  background: #3b82f6;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.final-heading {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  color: #0f172a;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.final-subtext {
-  font-size: 1.375rem;
-  margin-bottom: 2.5rem;
-  color: #475569;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-}
-
-.final-cta .trust-signals {
-  justify-content: center;
-  margin-top: 1.5rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  /* ============================================
+   GLOBAL RESETS & BOX SIZING
+   ============================================ */
+  :global(html) {
+    box-sizing: border-box;
   }
 
-  .hero-visual {
-    order: -1;
+  :global(*),
+  :global(*::before),
+  :global(*::after) {
+    box-sizing: inherit;
   }
 
-  .quiz-landing-hero h1 {
-    font-size: 2rem;
+  :global(body) {
+    margin: 0;
+    padding: 0;
+    /* CHANGED: Removed 'overflow-x: hidden;' and 'width: 100%;' 
+      This was the root cause of the white gutter.
+      Hiding the overflow doesn't fix the underlying problem
+      and causes 100% width elements (like your hero) to not fill the screen.
+    */
   }
 
-  .hero-subhead {
-    font-size: 1.1rem;
-  }
-  
-  .trust-signals {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: flex-start;
-  }
-
-  .final-cta .trust-signals {
-    align-items: center;
-  }
-
-  .reason-cards,
-  .discovery-grid,
-  .testimonial-cards {
-    grid-template-columns: 1fr;
+  /* ============================================
+   CONTAINER UTILITIES
+   ============================================ */
+  .container-custom,
+  .container-narrow {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
-  .cost-question {
-    font-size: 1.25rem;
-  }
-
-  .final-heading {
-    font-size: 2rem;
-  }
-
-  .final-subtext {
-    font-size: 1.125rem;
-  }
-}
-</style>
-
-<script>
-// Animated counter for score number
-function animateCounter() {
-  const counter = document.getElementById('score-counter');
-  if (!counter) return;
-
-  const target = 73;
-  let current = 0;
-  const duration = 2000; // 2 seconds
-  const startTime = performance.now();
-
-  // Easing function for acceleration
-  function easeOutQuad(t: number): number {
-    return t * (2 - t);
-  }
-
-  function updateCounter(currentTime: number) {
-    if (!counter) return;
-    
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    
-    // Apply easing
-    const easedProgress = easeOutQuad(progress);
-    current = Math.floor(easedProgress * target);
-    
-    counter.textContent = current.toString();
-
-    if (progress < 1) {
-      requestAnimationFrame(updateCounter);
-    } else {
-      counter.textContent = target.toString();
+  @media (min-width: 640px) {
+    .container-custom,
+    .container-narrow {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
   }
 
-  // Start animation when element is in viewport
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        requestAnimationFrame(updateCounter);
-        observer.disconnect();
-      }
-    });
-  }, { threshold: 0.5 });
+  @media (min-width: 768px) {
+    .container-custom,
+    .container-narrow {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
 
-  observer.observe(counter);
-}
+  @media (min-width: 1024px) {
+    .container-custom {
+      max-width: 1280px;
+    }
 
-// Run on page load
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', animateCounter);
-} else {
-  animateCounter();
-}
-</script>
+    .container-narrow {
+      max-width: 900px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container-custom {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  /* ============================================
+   HERO SECTION - Responsive padding
+   ============================================ */
+  .quiz-landing-hero {
+    width: 100%;
+    padding: 7.5rem 0 2rem;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 640px) {
+    .quiz-landing-hero {
+      padding: 7rem 0 2.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .quiz-landing-hero {
+      padding: 7.5rem 0 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .quiz-landing-hero {
+      padding: 8rem 0 4rem;
+    }
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-grid {
+      gap: 4rem;
+    }
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* ============================================
+   HERO TYPOGRAPHY
+   ============================================ */
+  .eyebrow {
+    display: inline-block;
+    background: #3b82f6;
+    color: white;
+    padding: 0.4rem 0.875rem;
+    border-radius: 20px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .eyebrow-link:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+
+  .eyebrow-link:active {
+    transform: translateY(0);
+  }
+
+  @media (min-width: 640px) {
+    .eyebrow {
+      font-size: 0.75rem;
+      padding: 0.5rem 1rem;
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .eyebrow {
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .quiz-landing-hero h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word; /* ADDED: This ensures long words like $200K wrap correctly */
+  }
+
+  @media (min-width: 640px) {
+    .quiz-landing-hero h1 {
+      font-size: 1.875rem;
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .quiz-landing-hero h1 {
+      font-size: 2.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .quiz-landing-hero h1 {
+      font-size: 2.5rem;
+      line-height: 1.15;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .quiz-landing-hero h1 {
+      font-size: 2.75rem;
+      line-height: 1.1;
+    }
+  }
+
+  .hero-subhead {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+    overflow-wrap: break-word; /* ADDED: Good practice for all text blocks */
+  }
+
+  @media (min-width: 640px) {
+    .hero-subhead {
+      font-size: 1.0625rem;
+      margin-bottom: 1.75rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero-subhead {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-subhead {
+      font-size: 1.1875rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .hero-subhead strong {
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  /* ============================================
+   VALUE PROPS
+   ============================================ */
+  .value-props {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .value-props {
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .value-props {
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .value-prop {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: #334155;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .value-prop {
+      font-size: 0.9375rem;
+      gap: 0.875rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .value-prop {
+      font-size: 1rem;
+    }
+  }
+
+  .value-prop .icon {
+    color: #3b82f6;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+
+  /* ============================================
+   CTA SECTION
+   ============================================ */
+  .cta-section {
+    margin-bottom: 1.25rem;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .cta-section {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .cta-start-quiz {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+    padding: 0.875rem 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 640px) {
+    .cta-start-quiz {
+      width: auto;
+      font-size: 1rem;
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  /* Responsive CTA text */
+  .cta-text-mobile {
+    display: inline;
+  }
+
+  .cta-text-desktop {
+    display: none;
+  }
+
+  @media (min-width: 640px) {
+    .cta-text-mobile {
+      display: none;
+    }
+
+    .cta-text-desktop {
+      display: inline;
+    }
+  }
+
+  /* ============================================
+   TRUST SIGNALS
+   ============================================ */
+  .trust-signals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .trust-signals {
+      gap: 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .trust-signals {
+      gap: 1.5rem;
+    }
+  }
+
+  .trust-signal {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: #64748b;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 640px) {
+    .trust-signal {
+      font-size: 0.875rem;
+    }
+  }
+
+  .trust-signal svg {
+    color: #3b82f6;
+    flex-shrink: 0;
+  }
+
+  /* ============================================
+   TRUST BADGE
+   ============================================ */
+  .trust-badge {
+    font-size: 0.8125rem;
+    color: #64748b;
+    font-style: italic;
+    margin: 0;
+    padding-top: 0.5rem;
+    max-width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .trust-badge {
+      font-size: 0.875rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .trust-badge {
+      font-size: 0.9375rem;
+    }
+  }
+
+  /* ============================================
+   HERO VISUAL
+   ============================================ */
+  .hero-visual {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    /* CHANGED: Removed 'margin-top: 2rem;' 
+      This was creating the "big gap" you saw.
+      The 'gap: 2rem;' on '.hero-grid' already provides
+      the correct spacing on mobile.
+    */
+  }
+
+  @media (min-width: 1024px) {
+    .hero-visual {
+      /* REMOVED: 'margin-top: 0;' is no longer needed since we removed the base margin */
+    }
+  }
+
+  /* REMOVED: This entire style block is no longer needed */
+  /*
+  .visual-label {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.875rem;
+  }
+
+  @media (min-width: 640px) {
+    .visual-label {
+      font-size: 0.8125rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .visual-label {
+      font-size: 0.875rem;
+    }
+  }
+  */
+
+  /* ============================================
+   WHY SPOKEN ENGLISH SECTION
+   ============================================ */
+  .why-spoken-english {
+    padding: 2.5rem 0;
+    background: white;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .why-spoken-english {
+      padding: 3.5rem 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .why-spoken-english {
+      padding: 4rem 0;
+    }
+  }
+
+  .why-spoken-english h2 {
+    text-align: center;
+    font-size: 1.375rem;
+    margin-bottom: 2rem;
+    color: #2d3748;
+    max-width: 100%;
+    word-wrap: break-word;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .why-spoken-english h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .why-spoken-english h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2.5rem;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .why-spoken-english h2 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .reason-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 640px) {
+    .reason-cards {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .reason-cards {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .reason-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .reason-card {
+      padding: 2rem;
+    }
+  }
+
+  .reason-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    border-color: #3b82f6;
+  }
+
+  .reason-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    color: white;
+  }
+
+  @media (min-width: 768px) {
+    .reason-icon {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .reason-card h3 {
+    font-size: 1.0625rem;
+    margin-bottom: 0.875rem;
+    color: #0f172a;
+    font-weight: 600;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .reason-card h3 {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .reason-card h3 {
+      font-size: 1.25rem;
+    }
+  }
+
+  .reason-card p {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .reason-card p {
+      font-size: 1rem;
+    }
+  }
+
+  /* ============================================
+   HIDDEN COST SECTION
+   ============================================ */
+  .hidden-cost {
+    padding: 2.5rem 0;
+    background: white;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .hidden-cost {
+      padding: 3.5rem 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hidden-cost {
+      padding: 4rem 0;
+    }
+  }
+
+  .hidden-cost h2 {
+    text-align: center;
+    font-size: 1.375rem;
+    margin-bottom: 1.5rem;
+    color: #2d3748;
+    max-width: 100%;
+    word-wrap: break-word;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .hidden-cost h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hidden-cost h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hidden-cost h2 {
+      font-size: 2rem;
+    }
+  }
+
+  .cost-callout {
+    background: #fff5f5;
+    border-left: 4px solid #e53e3e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .cost-callout {
+      padding: 2rem;
+    }
+  }
+
+  .cost-question {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: #2d3748;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  @media (min-width: 640px) {
+    .cost-question {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .cost-question {
+      font-size: 1.375rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cost-question {
+      font-size: 1.5rem;
+    }
+  }
+
+  .cost-impact {
+    font-weight: 600;
+    margin-bottom: 0.875rem;
+    color: #2d3748;
+    font-size: 0.9375rem;
+  }
+
+  @media (min-width: 768px) {
+    .cost-impact {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+  }
+
+  .cost-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .cost-list {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .cost-list li {
+    padding: 0.4rem 0;
+    font-size: 0.9375rem;
+    color: #4a5568;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  @media (min-width: 640px) {
+    .cost-list li {
+      font-size: 1rem;
+      padding: 0.5rem 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .cost-list li {
+      font-size: 1.0625rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cost-list li {
+      font-size: 1.1rem;
+    }
+  }
+
+  .cost-solution {
+    font-size: 0.9375rem;
+    color: #2d3748;
+    padding-top: 0.875rem;
+    border-top: 2px solid #feb2b2;
+    max-width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .cost-solution {
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .cost-solution {
+      font-size: 1.0625rem;
+      padding-top: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cost-solution {
+      font-size: 1.1rem;
+    }
+  }
+
+  /* ============================================
+   WHAT YOU'LL DISCOVER SECTION
+   ============================================ */
+  .what-youll-discover {
+    padding: 2.5rem 0;
+    background: white;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .what-youll-discover {
+      padding: 3.5rem 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .what-youll-discover {
+      padding: 4rem 0;
+    }
+  }
+
+  .what-youll-discover h2 {
+    text-align: center;
+    font-size: 1.375rem;
+    margin-bottom: 2rem;
+    color: #2d3748;
+    max-width: 100%;
+    word-wrap: break-word;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .what-youll-discover h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .what-youll-discover h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2.5rem;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .what-youll-discover h2 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .discovery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .discovery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .discovery-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .discovery-item {
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .discovery-number {
+    width: 52px;
+    height: 52px;
+    background: #3b82f6;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.375rem;
+    font-weight: bold;
+    margin: 0 auto 0.875rem;
+  }
+
+  @media (min-width: 768px) {
+    .discovery-number {
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .discovery-item h3 {
+    font-size: 1.0625rem;
+    margin-bottom: 0.75rem;
+    color: #2d3748;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  @media (min-width: 768px) {
+    .discovery-item h3 {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .discovery-item h3 {
+      font-size: 1.25rem;
+    }
+  }
+
+  .discovery-item p {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .discovery-item p {
+      font-size: 1rem;
+    }
+  }
+
+  /* ============================================
+   SOCIAL PROOF SECTION
+   ============================================ */
+  .social-proof {
+    padding: 2.5rem 0;
+    background: #f7fafc;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .social-proof {
+      padding: 3.5rem 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .social-proof {
+      padding: 4rem 0;
+    }
+  }
+
+  .social-proof h2 {
+    text-align: center;
+    font-size: 1.375rem;
+    margin-bottom: 2rem;
+    color: #2d3748;
+    max-width: 100%;
+    word-wrap: break-word;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .social-proof h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .social-proof h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2.5rem;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .social-proof h2 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .testimonial-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-cards {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .testimonial-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-card {
+      padding: 2rem;
+    }
+  }
+
+  .testimonial-text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #2d3748;
+    margin-bottom: 0.875rem;
+    font-style: italic;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-text {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .testimonial-card cite {
+    font-size: 0.8125rem;
+    color: #718096;
+    font-style: normal;
+    display: block;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-card cite {
+      font-size: 0.875rem;
+    }
+  }
+
+  /* ============================================
+   FINAL CTA SECTION
+   ============================================ */
+  .final-cta {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .final-cta {
+      padding: 4rem 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .final-cta {
+      padding: 5rem 0;
+    }
+  }
+
+  .final-eyebrow {
+    display: inline-block;
+    background: #3b82f6;
+    color: white;
+    padding: 0.4rem 0.875rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  @media (min-width: 640px) {
+    .final-eyebrow {
+      font-size: 0.8125rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .final-eyebrow {
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .final-heading {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+    color: #0f172a;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 100%;
+    word-wrap: break-word;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .final-heading {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .final-heading {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .final-heading {
+      font-size: 2.75rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .final-heading {
+      font-size: 3rem;
+    }
+  }
+
+  .final-subtext {
+    font-size: 1.0625rem;
+    margin-bottom: 2rem;
+    color: #475569;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    padding: 0 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .final-subtext {
+      font-size: 1.125rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .final-subtext {
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .final-subtext {
+      font-size: 1.375rem;
+    }
+  }
+
+  .final-cta .trust-signals {
+    justify-content: center;
+    margin-top: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .final-cta .trust-signals {
+      margin-top: 1.5rem;
+    }
+  }
+</style>

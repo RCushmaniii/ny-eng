@@ -20,6 +20,11 @@ This directory contains comprehensive documentation for the NY English Teacher p
 - **[BLOG-I18N-EDGE-CASES.md](./BLOG-I18N-EDGE-CASES.md)** - Edge cases and solutions for blog internationalization
 - **[REDIRECT-ANALYSIS-SUMMARY.md](./REDIRECT-ANALYSIS-SUMMARY.md)** - Analysis of redirect chains and URL structure optimization
 
+## 🎯 Lead Generation & Conversion
+
+- **[QUIZ-LEAD-MAGNET-SYSTEM.md](./QUIZ-LEAD-MAGNET-SYSTEM.md)** - ✅ Complete documentation for Communication Confidence Quiz lead magnet system
+- **[BOOKING-SYSTEM.md](./BOOKING-SYSTEM.md)** - ✅ Self-scheduling appointment system with Google Calendar integration
+
 ## 🛠️ Development Guidelines
 
 - **[WindsurfRules.md](./WindsurfRules.md)** - Development rules and coding standards for the project
@@ -31,11 +36,18 @@ This directory contains comprehensive documentation for the NY English Teacher p
 2. Start with **BILINGUAL-SYSTEM-GUIDE.md** to understand the i18n architecture
 3. Review **WindsurfRules.md** for coding standards and best practices
 4. Check **DEPLOYMENT-CHECKLIST.md** before any production deployment
+5. Reference **QUIZ-LEAD-MAGNET-SYSTEM.md** for quiz functionality and lead capture flow
 
 ### For SEO/Content Teams
 1. Reference **HREFLANG-FIX-SUMMARY.md** for SEO implementation details
 2. Use **BLOG-I18N-EDGE-CASES.md** for content publishing guidelines
 3. Monitor **REDIRECT-ANALYSIS-SUMMARY.md** for URL structure requirements
+
+### For Marketing/Sales Teams
+1. Review **QUIZ-LEAD-MAGNET-SYSTEM.md** to understand the lead generation funnel
+2. Reference **BOOKING-SYSTEM.md** for appointment scheduling workflow
+3. Track key metrics outlined in the quiz and booking documentation
+4. Use conversion optimization insights for campaign planning
 
 ### For DevOps/Performance
 1. Follow **IMAGE-OPTIMIZATION-PRIORITY.md** for asset optimization
@@ -44,7 +56,7 @@ This directory contains comprehensive documentation for the NY English Teacher p
 
 ## 🔄 Documentation Maintenance
 
-- **Last Updated**: 2025-09-08
+- **Last Updated**: 2025-10-27
 - **Maintainer**: Development Team
 - **Review Cycle**: Monthly or after major releases
 
