@@ -84,7 +84,7 @@
 \src\assets\background.svg
 \src\assets\fonts\bruno-ace-sc-v5-latin-regular.woff2
 \src\assets\fonts\noto-sans-kr-v36-latin-regular.woff2
-\src\assets\images\about\ceo-taking-class.jpg
+\src\assets\images\about\working-with-client-1200.jpg
 \src\assets\images\about\me-blue-shirt.jpg
 \src\assets\images\blog-hero.jpg
 \src\assets\images\blog\default-category-hero.jpg

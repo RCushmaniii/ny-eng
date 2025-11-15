@@ -53,10 +53,10 @@ const description = "¡Evalúa tu confianza en inglés de negocios en 2 minutos!
             Para obtener resultados precisos, necesitas comenzar el quiz desde el principio y responder todas las preguntas en orden.
           </p>
           <p class="warning-subtext">
-            La Evaluación de Confianza en Comunicación toma aproximadamente 3-5 minutos y te dará una puntuación personalizada.
+            La Evaluación de Confianza en la Comunicación toma aproximadamente 90 segundos y te dará un puntaje personalizado.
           </p>
           <Button 
-            href="/es/quiz/start"
+            href="/es/quiz/question/1"
             variant="primary" 
             size="lg"
             class="start-quiz-button"
@@ -364,7 +364,7 @@ if (form) {
     
     // Navigate to next question or results
     const currentId = parseInt(questionId as string);
-    const totalQuestions = 10;
+    const totalQuestions = 6;
     
     if (currentId < totalQuestions) {
       window.location.href = `/es/quiz/question/${currentId + 1}/`;

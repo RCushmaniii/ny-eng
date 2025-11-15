@@ -53,10 +53,10 @@ const description = "Test your Business English confidence in 2 minutes! Discove
             To get accurate results, you need to start the quiz from the beginning and answer all questions in order.
           </p>
           <p class="warning-subtext">
-            The Communication Confidence Assessment takes about 3-5 minutes and will give you a personalized score.
+            The Communication Confidence Assessment takes about 90 seconds and will give you a personalized score.
           </p>
           <Button 
-            href="/en/quiz/start"
+            href="/en/quiz/question/1"
             variant="primary" 
             size="lg"
             class="start-quiz-button"
@@ -348,7 +348,7 @@ if (form) {
     
     // Navigate to next question or results
     const currentId = parseInt(questionId as string);
-    const totalQuestions = 10;
+    const totalQuestions = 6;
     
     if (currentId < totalQuestions) {
       window.location.href = `/en/quiz/question/${currentId + 1}/`;

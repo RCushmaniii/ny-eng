@@ -120,10 +120,19 @@ export const POST: APIRoute = async ({ request }) => {
     );
   } catch (error) {
     console.error('Quiz submission error:', error);
+    
+    // Extract detailed error message
+    let errorMessage = 'Internal server error';
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    } else if (typeof error === 'object' && error !== null && 'message' in error) {
+      errorMessage = String(error.message);
+    }
+    
     return new Response(
       JSON.stringify({
         success: false,
-        error: error instanceof Error ? error.message : 'Internal server error',
+        error: errorMessage,
       }),
       {
         status: 500,

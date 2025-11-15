@@ -5,6 +5,7 @@ import tailwind from '@astrojs/tailwind';
 import icon from 'astro-icon';
 import sitemap from '@astrojs/sitemap';
 import node from '@astrojs/node';
+import react from '@astrojs/react';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -101,6 +102,7 @@ export default defineConfig({
   },
 
   integrations: [
+    react(),
     tailwind({ applyBaseStyles: false }),
     icon({ include: { lucide: ['*'] } }),
 

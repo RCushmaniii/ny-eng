@@ -1,9 +1,9 @@
 # Quiz Lead Magnet System Documentation
 
-**Last Updated:** October 29, 2025  
+**Last Updated:** November 14, 2025  
 **Status:** ✅ Active & Optimized  
 **Purpose:** Communication Confidence Assessment & Lead Generation  
-**Recent Updates:** Complete submission flow documentation, API integration details, Supabase schema, email validation improvements, language switcher hiding on quiz pages
+**Recent Updates:** Streamlined report to be an effective lead magnet (removed categories, question-by-question analysis, and 90-day plan), added score-based dynamic impact statements, reduced from 10 to 6 questions for 60-90 second completion
 
 ---
 
@@ -12,20 +12,23 @@
 The Communication Confidence Quiz is a strategic lead magnet designed to:
 - **Assess** team communication readiness in client-facing situations
 - **Capture** qualified leads with contact information
-- **Deliver** immediate value through a comprehensive personalized report
-- **Convert** leads through strategic CTAs and path recommendations
+- **Deliver** immediate value through a streamlined personalized report
+- **Create urgency** by revealing gaps without giving all answers
+- **Convert** leads through strong CTA to book discovery call
 
 ---
 
 ## User Journey Flow
 
-### **1. Quiz Entry** (`/en/quiz/start/`)
-- Landing page with quiz overview
-- Clear value proposition
-- "Start Assessment" CTA
+### **1. Quiz Landing Page** (`/en/quiz/`)
+- Streamlined landing page (~600 words)
+- Punchy headline and value props
+- Direct CTA to `/en/quiz/question/1` (bypasses start page)
+- Trust signals: "90 seconds • Instant results • 200+ tech leaders assessed"
 
-### **2. Question Flow** (`/en/quiz/question/[1-10]/`)
-- 10 scenario-based questions
+### **2. Question Flow** (`/en/quiz/question/[1-6]/`)
+- 6 refined scenario-based questions (60-90 seconds to complete)
+- Psychological flow: easy opener → technical → confidence gap → business impact → strategic vulnerability
 - Progress indicator
 - Session storage of answers
 - Auto-navigation between questions
@@ -36,12 +39,23 @@ The Communication Confidence Quiz is a strategic lead magnet designed to:
 - Privacy policy acknowledgment
 - **Immediate redirect to full report** (no intermediary page)
 
-### **4. Full Report Delivery** (`/en/quiz/report/`)
-- Comprehensive 6-page professional report
-- Personalized score and analysis
+### **4. Streamlined Lead Magnet Report** (`/en/quiz/report/`)
+- **Score Display:** Clean score out of 100 with tier label
+- **Top 2-3 Insights:** Shows only weakest areas (lowest scoring questions)
+- **Dynamic Business Impact:** Changes based on score tier:
+  - < 40: "Deals are falling through due to communication breakdowns"
+  - 40-69: "You're leaving money on the table in negotiations"
+  - 70+: "You're close—but small gaps are limiting your ceiling"
+- **Elite Comparison:** What top firms do differently
+- **Strong CTA:** "Let's See If This Applies to Your Team" → Calendly booking
+- **Design Philosophy:** Creates curiosity, not satisfaction. Drives action.
+
+### **5. Detailed Pre-Call Report** (`/en/quiz/report-pre-call.astro`)
+- Backup file with comprehensive 6-page analysis
+- Question-by-question breakdown
 - 90-day action plan
-- Path recommendations (Self-Study vs Professional Coaching)
-- Strategic CTA for booking consultation
+- Used as pre-call deliverable after booking
+- Not shown to leads initially
 
 ---
 
@@ -50,11 +64,12 @@ The Communication Confidence Quiz is a strategic lead magnet designed to:
 ### **File Structure**
 ```
 src/pages/en/quiz/
-├── index.astro           # Quiz landing/overview page
-├── start.astro           # Quiz start page with intro
-├── question/[id].astro   # Dynamic question pages (1-10)
-├── results.astro         # Lead capture form (redirects to report)
-└── report.astro          # Full professional report (main deliverable)
+├── index.astro              # Streamlined landing page (~600 words)
+├── start.astro              # [BYPASSED] Old start page (not used)
+├── question/[id].astro      # Dynamic question pages (1-6)
+├── results.astro            # Lead capture form (redirects to report)
+├── report.astro             # Streamlined lead magnet report
+└── report-pre-call.astro    # Detailed report (backup, for post-booking)
 
 src/pages/es/quiz/        # Spanish version (parallel structure)
 ├── index.astro
@@ -64,12 +79,14 @@ src/pages/es/quiz/        # Spanish version (parallel structure)
 └── report.astro
 
 src/components/           # Reusable report components
-├── action-plan.astro     # English 90-day action plan
-├── action-plan-es.astro  # Spanish 90-day action plan
-├── next-steps-en.astro   # English path recommendations + final CTA
-├── next-steps-es.astro   # Spanish path recommendations + final CTA
-├── mid-cta-en.astro      # English mid-report CTA
-└── mid-cta-es.astro      # Spanish mid-report CTA
+├── action-plan.astro     # [NOT USED IN LEAD MAGNET] 90-day plan
+├── action-plan-es.astro  # [NOT USED IN LEAD MAGNET] Spanish version
+├── next-steps-en.astro   # [NOT USED IN LEAD MAGNET] Path recommendations
+├── next-steps-es.astro   # [NOT USED IN LEAD MAGNET] Spanish version
+├── mid-cta-en.astro      # [NOT USED IN LEAD MAGNET] Mid-report CTA
+└── mid-cta-es.astro      # [NOT USED IN LEAD MAGNET] Spanish version
+
+Note: These components are preserved in report-pre-call.astro for post-booking use
 ```
 
 ### **Data Flow**
@@ -82,11 +99,12 @@ src/components/           # Reusable report components
 #### **Score Calculation:**
 ```javascript
 // Each question worth 10 points
-// Total possible: 100 points
+// Total possible: 60 points (6 questions × 10 points)
+// Normalized to 0-100 scale
 // Scoring tiers:
-// - 70-100: High confidence (Self-Study recommended)
-// - 40-69:  Medium confidence (Coaching recommended)
-// - 0-39:   Low confidence (Coaching strongly recommended)
+// - 70-100: Conversation-Ready (Self-Study recommended)
+// - 40-69:  Million-Dollar Gap (Coaching recommended)
+// - 0-39:   Credibility Block (Coaching strongly recommended)
 ```
 
 ### **Lead Capture Process**
@@ -439,58 +457,64 @@ Report Page Displays Results
 
 ---
 
-## Report Page Components
+## Streamlined Lead Magnet Report Structure
 
-### **Page 1: Score Overview**
-- Large score badge with color coding
-- Performance tier label
-- Score interpretation
-- Key strengths summary
+### **Section 1: Header & Score**
+- Personalized header with name and company
+- Large score circle (0-100)
+- Tier label with color coding:
+  - **Conversation-Ready** (70-100): Green `#10b981`
+  - **Million-Dollar Gap** (40-69): Orange `#f59e0b`
+  - **Credibility Block** (0-39): Red `#ef4444`
+- Brief tier description
 
-### **Page 2: Gap Analysis & Business Impact**
-- Real-world scenario implications
-- Specific challenges based on score tier
-- Business impact section with cost analysis
-- **Mid-Report CTA** (NEW - Oct 27, 2025)
-  - Positioned after Business Impact section
-  - Blue gradient styling (softer than final CTA)
-  - Text: "Ready to Transform These Challenges Into Strengths?"
-  - Catches engaged users mid-funnel
-  - Mobile-optimized with responsive typography
-- Elite comparison section
+### **Section 2: Key Insights (Top 2-3 Weakest Areas)**
+- Dynamically shows lowest scoring questions
+- Each insight includes:
+  - Question number
+  - Specific gap identified
+  - Business impact statement
+- Styled with tier color accent
+- Creates awareness without overwhelming detail
 
-### **Page 3-4: Question Breakdown**
-- Individual question analysis
-- Response-specific insights
-- Pattern identification
+### **Section 3: Dynamic Business Impact**
+- **Score-based personalization:**
+  - **< 40 (Credibility Block):**
+    - Headline: "Deals are falling through due to communication breakdowns"
+    - Copy: Focuses on lost contracts and client uncertainty
+  - **40-69 (Million-Dollar Gap):**
+    - Headline: "You're leaving money on the table in negotiations"
+    - Copy: Focuses on pricing concessions and scope creep (15-20% loss per contract)
+  - **70+ (Conversation-Ready):**
+    - Headline: "You're close—but small gaps are limiting your ceiling"
+    - Copy: Focuses on elite positioning and 30-40% premium rates
 
-### **Page 5: 90-Day Action Plan**
-- **Componentized** (`action-plan.astro` / `action-plan-es.astro`)
-- Tiered action plans based on score:
-  - **High (70-100):** Refinement focus
-  - **Medium (40-69):** Skill building
-  - **Low (0-39):** Foundation building
-- Three milestone cards (30/60/90 days)
-- Progressive color scheme (blue gradient)
-- Reusable across both EN/ES versions
+### **Section 4: What Elite Firms Do Differently**
+- 5 bullet points showing best practices:
+  - Answer questions in real-time (never defer to email)
+  - Defend pricing without hesitation
+  - Junior team members lead meetings independently
+  - Build rapport through natural conversation
+  - Explain complex solutions clearly
+- Aspirational positioning
+- Creates desire for transformation
 
-### **Page 6: Path Recommendations**
-- **Componentized** (`next-steps-en.astro` / `next-steps-es.astro`)
-- Side-by-side comparison cards
-- **Self-Study Path** (book icon)
-- **Professional Coaching** (team icon)
-- Dynamic recommendation based on score
-- Visual highlighting of recommended path
-- Fragment wrapper for proper Astro structure
+### **Section 5: Strong CTA**
+- Headline: "Let's See If This Applies to Your Team"
+- Subtext: "This assessment reveals patterns. A 15-minute conversation reveals solutions."
+- Primary button: "Book Your Free Discovery Call" → Calendly
+- Trust statement: "No pitch. No pressure. Just a conversation about what's possible for your team."
+- Prominent styling with calendar icon
 
-### **Final CTA Section**
-- Compelling headline: "Ready to Transform Your Team's Communication?"
-- Benefit-driven copy
-- Prominent gradient button (orange-to-red: `#f97316` → `#dc2626`)
-- Large, bold styling for maximum impact
-- Risk reversal: "No credit card required. Zero obligation."
-- **Mobile-responsive** with `clamp()` typography
-- Hover effects with lift animation
+### **What's NOT Included (Intentionally):**
+- ❌ Category breakdowns (clarity, confidence, negotiation)
+- ❌ Question-by-question analysis
+- ❌ Comparison charts or percentile rankings
+- ❌ 90-day action plan
+- ❌ Path recommendations (self-study vs coaching)
+- ❌ Mid-report CTAs
+
+**Rationale:** Lead magnet should create curiosity and urgency, not satisfy it. Detailed analysis is reserved for post-booking deliverable (`report-pre-call.astro`).
 
 ---
 
@@ -521,8 +545,9 @@ Report Page Displays Results
 
 ### **1. Immediate Value Delivery**
 - No delay between form submission and report
-- Professional, comprehensive report shows expertise
+- Professional report shows expertise without overwhelming
 - Eliminates friction and drop-off points
+- **Balances value with curiosity** - shows gaps without giving all solutions
 
 ### **2. Personalization**
 - Score-based content adaptation
@@ -733,31 +758,36 @@ async function submitLead(leadData) {
 
 ## Key Metrics to Track
 
-1. **Quiz Start Rate** - Landing page → Start quiz
-2. **Completion Rate** - Start → Question 10
-3. **Form Submission Rate** - Question 10 → Form submit
+1. **Quiz Start Rate** - Landing page → Question 1 (direct)
+2. **Completion Rate** - Question 1 → Question 6 (all answered)
+3. **Form Submission Rate** - Question 6 → Lead capture form submit
 4. **Report View Rate** - Form submit → Report page load
-5. **Mid-CTA Click Rate** - Business Impact section → Mid-report CTA click
-6. **Final CTA Click Rate** - Bottom of report → Final CTA click
-7. **Combined CTA Rate** - Either CTA → Book consultation
-8. **Booking Completion Rate** - CTA click → Calendar booking confirmed
-9. **Overall Conversion** - Quiz start → Consultation booked
+5. **CTA Click Rate** - Report view → "Book Discovery Call" click
+6. **Booking Completion Rate** - CTA click → Calendar booking confirmed
+7. **Overall Conversion** - Landing page → Consultation booked
 
-**Target Benchmarks:**
-- Completion Rate: >60%
-- Form Submission: >80%
-- Mid-CTA Click Rate: >8% (catches engaged users early)
-- Final CTA Click Rate: >15% (highly engaged users)
-- Combined CTA Rate: >20% (improved with dual CTAs)
+**Target Benchmarks (Streamlined Funnel):**
+- Quiz Start Rate: >25% (improved with direct CTA to Q1)
+- Completion Rate: >70% (improved with 6 questions vs 10)
+- Form Submission: >85% (improved with shorter quiz)
+- Report View Rate: >95% (automatic redirect)
+- CTA Click Rate: >20% (improved with urgency-focused report)
 - Booking Completion: >70% (from CTA click to confirmed booking)
-- Overall Conversion: >5-8% (improved with mid-funnel CTA)
+- Overall Conversion: >8-12% (improved with streamlined funnel)
+
+**Key Improvements vs Old Funnel:**
+- Removed `/start` page → Reduced friction
+- 6 questions vs 10 → Higher completion rate
+- Streamlined report → Creates urgency vs satisfaction
+- Single strong CTA → Clear next action
+- Score-based impact → Personalized urgency
 
 ---
 
 ## Support & Contact
 
 **Documentation Owner:** Development Team  
-**Last Review:** October 27, 2025  
-**Next Review:** January 27, 2026
+**Last Review:** November 14, 2025  
+**Next Review:** February 14, 2026
 
 For questions or updates, refer to the main documentation index at `/docs/INDEX.md`

@@ -546,12 +546,13 @@ if (emailForm) {
     }
     
     const answers = JSON.parse(answersJson);
+    const totalPoints = Object.values(answers).reduce((sum: number, val) => sum + (val as number), 0);
+    const maxPoints = 60; // 6 questions × 10 points each
+    const score = Math.round((totalPoints / maxPoints) * 100);
     
-    // Get UTM parameters from URL or sessionStorage
-    const urlParams = new URLSearchParams(window.location.search);
-    const utm_source = urlParams.get('utm_source') || sessionStorage.getItem('utm_source') || undefined;
-    const utm_medium = urlParams.get('utm_medium') || sessionStorage.getItem('utm_medium') || undefined;
-    const utm_campaign = urlParams.get('utm_campaign') || sessionStorage.getItem('utm_campaign') || undefined;
+    const utm_source = (new URLSearchParams(window.location.search)).get('utm_source') || sessionStorage.getItem('utm_source') || undefined;
+    const utm_medium = (new URLSearchParams(window.location.search)).get('utm_medium') || sessionStorage.getItem('utm_medium') || undefined;
+    const utm_campaign = (new URLSearchParams(window.location.search)).get('utm_campaign') || sessionStorage.getItem('utm_campaign') || undefined;
     const referrer = document.referrer || undefined;
     
     // Show loading state
@@ -769,7 +770,7 @@ if (window.location.pathname.includes('/results')) {
     // Validate quiz data is complete
     try {
       const answers = JSON.parse(answersJson);
-      const requiredQuestions = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10'];
+      const requiredQuestions = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
       const hasAllQuestions = requiredQuestions.every(q => answers.hasOwnProperty(q));
       
       if (!hasAllQuestions) {

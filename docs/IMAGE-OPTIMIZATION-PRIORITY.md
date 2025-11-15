@@ -5,8 +5,9 @@
 These images are severely impacting page load performance and must be optimized immediately:
 
 ### Hero Images (Highest Priority)
+
 - `src/assets/images/home/meet-the-team.jpg` - **2,157KB** ⚠️ MASSIVE
-- `src/assets/images/home/default-hero.jpg` - **1,657KB** ⚠️ MASSIVE  
+- `src/assets/images/home/default-hero.jpg` - **1,657KB** ⚠️ MASSIVE
 - `src/assets/images/home/about.jpg` - **1,567KB** ⚠️ MASSIVE
 - `src/assets/images/home/developer copy.jpg` - **1,468KB** ⚠️ MASSIVE
 - `src/assets/images/blog-hero-old.jpg` - **1,532KB** ⚠️ MASSIVE
@@ -14,6 +15,7 @@ These images are severely impacting page load performance and must be optimized 
 - `src/assets/images/home/default-hero-2.jpg` - **1,338KB** ⚠️ MASSIVE
 
 ### Category & Service Images
+
 - `src/assets/images/contact/nyc-statue-of-liberty.jpg` - **317KB**
 - `src/assets/images/contact/nyc-statue-of-liberty2.jpg` - **317KB**
 - `src/assets/images/blog-hero.jpg` - **270KB**
@@ -26,7 +28,8 @@ These images are severely impacting page load performance and must be optimized 
 - `src/assets/images/services/tech-services.jpg` - **162KB**
 - `src/assets/images/small-talk-professionals.jpg` - **161KB**
 
-### Blog & Category Images  
+### Blog & Category Images
+
 - `src/assets/images/services/medical-services.jpg` - **134KB**
 - `src/assets/images/home/new-york-city-skyline-mob-old.jpg` - **130KB**
 - `src/assets/images/services/executive-english-services.jpg` - **128KB**
@@ -46,7 +49,6 @@ These images are severely impacting page load performance and must be optimized 
 - `src/assets/images/managers-making-millions.jpg` - **81KB**
 - `src/assets/images/services/public-speaking-services.jpg` - **82KB**
 - `src/assets/images/home/new-york-city-skyline-mob.jp` - **79KB**
-- `src/assets/images/about/ceo-taking-class.jpg` - **64KB**
 - `src/assets/images/testimonials/hugob-testimonial.jpeg` - **63KB**
 - `src/assets/images/industries/logistics.jpg` - **62KB**
 - `src/assets/images/testimonials/julio-testimonial-old.jpg` - **59KB**
@@ -69,12 +71,16 @@ These images show the target file sizes we should achieve:
 ## 🎯 OPTIMIZATION TARGETS
 
 ### Primary Impact (Category Pages)
+
 **CRITICAL**: `default-category-hero.jpg` (123KB) is used on ALL category pages causing the slow TTFB issue.
+
 - **Target**: Compress to <30KB
 - **Impact**: Will fix the 2.6-4.6 second load times on Spanish category pages
 
 ### Secondary Impact (Hero Images)
+
 All hero images >1MB are causing massive performance issues:
+
 - **Target**: Compress to <100KB each
 - **Impact**: Dramatically improve Core Web Vitals
 
@@ -88,8 +94,9 @@ All hero images >1MB are causing massive performance issues:
 ## 📊 EXPECTED PERFORMANCE GAINS
 
 After optimization:
+
 - **TTFB**: 2.6-4.6s → <1s
-- **Total Load Time**: 2.6-4.6s → <2s  
+- **Total Load Time**: 2.6-4.6s → <2s
 - **Page Size Reduction**: ~80% smaller images
 - **Core Web Vitals**: Significant LCP improvement
 

@@ -56,153 +56,97 @@ export interface GapAnalysis {
 
 /**
  * Point values for each question
- * Higher business impact = more points possible
+ * Each question worth 10 points max for simplicity
  */
 export const QUESTION_SCORES = {
   
-  // Q1: Repetition/Clarity (25 points max)
+  // Q1: Misunderstandings/Clarity (10 points max)
   // Category: Clarity
-  // Impact: Medium-High (wastes time, erodes trust)
+  // Impact: Universal pain point, easy opener
   q1: {
     category: 'clarity' as QuizCategory,
-    weight: 25,
+    weight: 10,
     answers: [
-      { index: 0, score: 25, label: 'Rarely—clear first time' },
-      { index: 1, score: 18, label: 'Occasionally—once per meeting' },
-      { index: 2, score: 8, label: 'Frequently—several times' },
-      { index: 3, score: 0, label: 'Constantly—recurring issue' }
+      { index: 0, score: 10, label: 'Almost never—clear first time' },
+      { index: 1, score: 7, label: 'Once or twice a month—minor issues' },
+      { index: 2, score: 4, label: 'Several times a month—noticeable' },
+      { index: 3, score: 0, label: 'Weekly or more—impacting relationships' }
     ]
   },
   
-  // Q2: Defending Pricing (30 points max)
-  // Category: Confidence + Negotiation
-  // Impact: CRITICAL (directly affects revenue)
+  // Q2: Technical Communication (10 points max)
+  // Category: Clarity
+  // Impact: Core competency for IT teams
   q2: {
-    category: 'confidence' as QuizCategory,
-    weight: 30,
+    category: 'clarity' as QuizCategory,
+    weight: 10,
     answers: [
-      { index: 0, score: 30, label: 'Very comfortable—articulate value' },
-      { index: 1, score: 18, label: 'Somewhat comfortable—not persuasive' },
-      { index: 2, score: 8, label: 'Uncomfortable—defer to leadership' },
-      { index: 3, score: 0, label: 'Very uncomfortable—avoid conversations' }
+      { index: 0, score: 10, label: 'Excellent—clients grasp immediately' },
+      { index: 1, score: 7, label: 'Good—occasionally needs clarification' },
+      { index: 2, score: 4, label: 'Fair—regularly ask for simpler explanations' },
+      { index: 3, score: 0, label: 'Poor—often lose them' }
     ]
   },
   
-  // Q3: Email Deflection (25 points max)
-  // Category: Real-Time Response
-  // Impact: High (kills deal momentum)
+  // Q3: Real-Time Response (10 points max)
+  // Category: Confidence
+  // Impact: "Ouch" moment - kills deal momentum
   q3: {
-    category: 'real-time' as QuizCategory,
-    weight: 25,
-    answers: [
-      { index: 0, score: 25, label: 'Never—real-time answers' },
-      { index: 1, score: 20, label: 'Rarely—complex details only' },
-      { index: 2, score: 10, label: 'Sometimes—need time to think' },
-      { index: 3, score: 0, label: 'Often—common deflection' }
-    ]
-  },
-  
-  // Q4: Handling Objections (25 points max)
-  // Category: Confidence
-  // Impact: High (shows expertise under pressure)
-  q4: {
     category: 'confidence' as QuizCategory,
-    weight: 25,
+    weight: 10,
     answers: [
-      { index: 0, score: 25, label: 'Very well—clear and confident' },
-      { index: 1, score: 18, label: 'Fairly well—takes time' },
-      { index: 2, score: 8, label: 'Struggle somewhat—hesitant' },
-      { index: 3, score: 0, label: 'Struggle significantly—freeze' }
+      { index: 0, score: 10, label: 'Never—respond in real-time' },
+      { index: 1, score: 7, label: 'Rarely—only truly complex details' },
+      { index: 2, score: 4, label: 'Sometimes—when under pressure' },
+      { index: 3, score: 0, label: 'Frequently—safety net' }
     ]
   },
   
-  // Q5: Negotiating Terms (25 points max)
+  // Q4: Negotiation Under Pressure (10 points max)
   // Category: Negotiation
-  // Impact: Critical (affects contract terms, scope creep)
-  q5: {
+  // Impact: Higher stakes, affects contract terms
+  q4: {
     category: 'negotiation' as QuizCategory,
-    weight: 25,
+    weight: 10,
     answers: [
-      { index: 0, score: 25, label: 'Very effective—hold the line' },
-      { index: 1, score: 15, label: 'Moderately effective—concede easily' },
-      { index: 2, score: 5, label: 'Ineffective—struggle to push back' },
-      { index: 3, score: 0, label: 'Avoid real-time negotiations' }
+      { index: 0, score: 10, label: 'Very effectively—defend position confidently' },
+      { index: 1, score: 6, label: 'Moderately—concede too quickly' },
+      { index: 2, score: 3, label: 'Poorly—struggle to push back' },
+      { index: 3, score: 0, label: 'Route to senior leadership' }
     ]
   },
   
-  // Q6: Leading Meetings (25 points max)
+  // Q5: Leadership Capacity (10 points max)
+  // Category: Leadership
+  // Impact: Business risk, scalability issue
+  q5: {
+    category: 'confidence' as QuizCategory,
+    weight: 10,
+    answers: [
+      { index: 0, score: 10, label: 'Multiple people—have depth' },
+      { index: 1, score: 6, label: '2-3 people—limited but adequate' },
+      { index: 2, score: 3, label: '1-2 people—dependent on specific individuals' },
+      { index: 3, score: 0, label: 'None—senior leadership must be present' }
+    ]
+  },
+  
+  // Q6: Rapport Building (10 points max)
   // Category: Confidence
-  // Impact: High (scalability, perceived seniority)
+  // Impact: Competitive advantage, relationship building
   q6: {
     category: 'confidence' as QuizCategory,
-    weight: 25,
+    weight: 10,
     answers: [
-      { index: 0, score: 25, label: 'Very confident—multiple leaders' },
-      { index: 1, score: 18, label: 'Somewhat confident—few can lead' },
-      { index: 2, score: 8, label: 'Not very confident—need leadership' },
-      { index: 3, score: 0, label: 'Not confident—specific people only' }
-    ]
-  },
-  
-  // Q7: Misunderstandings (20 points max)
-  // Category: Clarity
-  // Impact: Medium (frustration, rework)
-  q7: {
-    category: 'clarity' as QuizCategory,
-    weight: 20,
-    answers: [
-      { index: 0, score: 20, label: 'Rarely—once every few months' },
-      { index: 1, score: 14, label: 'Occasionally—1-2 times/month' },
-      { index: 2, score: 6, label: 'Frequently—several times/month' },
-      { index: 3, score: 0, label: 'Very frequently—regular issue' }
-    ]
-  },
-  
-  // Q8: Explaining Complex Ideas (25 points max)
-  // Category: Clarity
-  // Impact: Critical (perceived expertise)
-  q8: {
-    category: 'clarity' as QuizCategory,
-    weight: 25,
-    answers: [
-      { index: 0, score: 25, label: 'Very well—immediate understanding' },
-      { index: 1, score: 18, label: 'Fairly well—sometimes need clarification' },
-      { index: 2, score: 8, label: 'Not well—often need clarification' },
-      { index: 3, score: 0, label: 'Poorly—consistently need rework' }
-    ]
-  },
-  
-  // Q9: Small Talk (20 points max)
-  // Category: Cultural Fluency
-  // Impact: Medium (relationship building, trust)
-  q9: {
-    category: 'cultural' as QuizCategory,
-    weight: 20,
-    answers: [
-      { index: 0, score: 20, label: 'Very comfortable—happens naturally' },
-      { index: 1, score: 14, label: 'Somewhat comfortable—feels forced' },
-      { index: 2, score: 6, label: 'Uncomfortable—business only' },
+      { index: 0, score: 10, label: 'Very comfortable—happens naturally' },
+      { index: 1, score: 6, label: 'Somewhat comfortable—feels stilted' },
+      { index: 2, score: 3, label: 'Uncomfortable—stick strictly to business' },
       { index: 3, score: 0, label: 'Very uncomfortable—avoid entirely' }
-    ]
-  },
-  
-  // Q10: Responding to Challenges (25 points max)
-  // Category: Confidence
-  // Impact: High (credibility, authority)
-  q10: {
-    category: 'confidence' as QuizCategory,
-    weight: 25,
-    answers: [
-      { index: 0, score: 25, label: 'Confidently—clear reasoning' },
-      { index: 1, score: 15, label: 'Adequately—may sound defensive' },
-      { index: 2, score: 6, label: 'Hesitantly—struggle to defend' },
-      { index: 3, score: 0, label: 'Poorly—defer or flustered' }
     ]
   }
   
 } as const;
 
-// Total max possible: 250 points
+// Total max possible: 60 points (6 questions × 10 points each)
 
 // =============================================================================
 // SCORING CALCULATION
@@ -210,7 +154,7 @@ export const QUESTION_SCORES = {
 
 export function calculateQuizScore(answers: Record<string, number>): ScoreBreakdown {
   let rawScore = 0;
-  const maxPossible = 250;
+  const maxPossible = 60;
   const categoryPoints: Record<QuizCategory, { earned: number; max: number }> = {
     clarity: { earned: 0, max: 0 },
     confidence: { earned: 0, max: 0 },

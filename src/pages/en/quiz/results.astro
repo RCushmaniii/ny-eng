@@ -41,6 +41,26 @@ const description = "Get your personalized Communication Confidence Score (0-100
       </div>
     </div>
 
+    <!-- Submission Error Message (shown if submission fails) -->
+    <div class="submission-error" id="submission-error" style="display: none;">
+      <div class="error-content">
+        <div class="error-icon">❌</div>
+        <h1>Submission Error</h1>
+        <p class="error-text" id="error-message">
+          There was an error submitting your quiz. Please try again.
+        </p>
+        <p class="error-subtext">
+          If the problem persists, please contact us directly or try again later.
+        </p>
+        <button 
+          onclick="location.reload()"
+          class="retry-button px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 text-lg"
+        >
+          Try Again
+        </button>
+      </div>
+    </div>
+
     <!-- Lead Capture Form (shown first) -->
     <div class="lead-capture-card" id="lead-capture">
       <div class="capture-header">
@@ -263,6 +283,57 @@ const description = "Get your personalized Communication Confidence Score (0-100
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+}
+
+/* Submission Error (same styling as warning) */
+.submission-error {
+  background: white;
+  padding: 4rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.error-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.error-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.submission-error h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+
+.error-text {
+  font-size: 1.25rem;
+  color: #475569;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.error-subtext {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.retry-button {
+  cursor: pointer;
 }
 
 /* Lead Capture Card */
@@ -499,7 +570,7 @@ function calculateScore() {
 
   const answers = JSON.parse(answersJson);
   const totalPoints = Object.values(answers).reduce((sum: number, val) => sum + (val as number), 0);
-  const maxPoints = 100; // 10 questions × 10 points each
+  const maxPoints = 60; // 6 questions × 10 points each
   const score = Math.round((totalPoints / maxPoints) * 100);
 
   return { score, totalPoints };
@@ -605,26 +676,27 @@ if (emailForm) {
     } catch (error) {
       console.error('Submission error:', error);
       
-      // Show user-friendly error message
+      // Determine user-friendly error message
       let errorMessage = 'There was an error submitting your quiz. Please try again.';
       if (error instanceof Error) {
         if (error.message.includes('Failed to fetch')) {
           errorMessage = 'Network error. Please check your internet connection and try again.';
         } else if (error.message.includes('Missing required fields')) {
           errorMessage = 'Please fill in all required fields (Name and Email).';
-        } else if (error.message !== 'Failed to submit quiz') {
+        } else if (error.message !== 'Failed to submit quiz' && error.message !== 'Unknown error') {
           // Show the actual error message from the API
           errorMessage = error.message;
         }
       }
       
-      alert(errorMessage);
+      // Hide form and show error UI
+      const leadCapture = document.getElementById('lead-capture');
+      const submissionError = document.getElementById('submission-error');
+      const errorMessageEl = document.getElementById('error-message');
       
-      // Restore button
-      if (submitButton && originalButtonText) {
-        submitButton.disabled = false;
-        submitButton.innerHTML = originalButtonText;
-      }
+      if (leadCapture) leadCapture.style.display = 'none';
+      if (submissionError) submissionError.style.display = 'block';
+      if (errorMessageEl) errorMessageEl.textContent = errorMessage;
     }
   });
 }
@@ -766,7 +838,7 @@ if (window.location.pathname.includes('/results')) {
     // Validate quiz data is complete
     try {
       const answers = JSON.parse(answersJson);
-      const requiredQuestions = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10'];
+      const requiredQuestions = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
       const hasAllQuestions = requiredQuestions.every(q => answers.hasOwnProperty(q));
       
       if (!hasAllQuestions) {
