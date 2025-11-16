@@ -1,0 +1,251 @@
+---
+/**
+ * Dynamic Quiz Landing Page
+ * 
+ * Route: /en/quiz/[quizType]/
+ * Supports: it-services, professional-services, sales-marketing, executives, interview-coaching
+ */
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import QuizSchema from "@components/seo/QuizSchema.astro";
+import ReportCarousel from "@components/ReportCarousel.astro";
+import { getQuizConfig, isQuizTypeAvailable } from "@/data/quiz/configs";
+import type { QuizType } from "@/data/quiz/types";
+import {
+  Target,
+  BarChart3,
+  Rocket,
+  Clock,
+  Mail,
+} from "lucide-astro";
+
+// Get quiz type from URL params
+const { quizType } = Astro.params;
+
+// Validate quiz type
+if (!quizType || !isQuizTypeAvailable(quizType)) {
+  return Astro.redirect('/en/404');
+}
+
+// Get quiz configuration
+const config = getQuizConfig(quizType as QuizType, 'en');
+
+// SEO metadata
+const title = config.title;
+const description = config.subtitle;
+---
+
+<Base
+  title={title}
+  description={description}
+  lang="en"
+  tkey="quiz"
+  hideCta={true}
+>
+  <QuizSchema lang="en" slot="head" />
+
+  <section class="quiz-landing-hero">
+    <div class="hero-container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <a href={`/en/quiz/${quizType}/question/1`} class="eyebrow eyebrow-link">
+            Free 90-Second Assessment
+          </a>
+
+          <h1>{config.title}</h1>
+
+          <p class="hero-subhead">
+            {config.subtitle}
+          </p>
+
+          <div class="value-props">
+            <div class="value-prop">
+              <BarChart3 size={20} />
+              <span>Get your Communication Confidence Score (0–100)</span>
+            </div>
+            <div class="value-prop">
+              <Target size={20} />
+              <span>Identify the exact moments costing you deals</span>
+            </div>
+            <div class="value-prop">
+              <Rocket size={20} />
+              <span>Receive your personalized 30-day roadmap</span>
+            </div>
+          </div>
+
+          <div class="cta-section">
+            <Button
+              href={`/en/quiz/${quizType}/question/1`}
+              variant="primary"
+              size="lg"
+              class="cta-start-quiz"
+            >
+              Start Free 90-Second Assessment →
+            </Button>
+            <div class="trust-signals">
+              <div class="trust-signal">
+                <Clock size={16} />
+                <span>90 seconds</span>
+              </div>
+              <div class="trust-signal">
+                <Mail size={16} />
+                <span>Instant results</span>
+              </div>
+              <div class="trust-signal">
+                <span>200+ tech leaders assessed</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="trust-badge">
+            Trusted by IT leaders at Smarttie, Kopar, and Sourceability
+          </p>
+        </div>
+
+        <div class="hero-visual">
+          <ReportCarousel />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .quiz-landing-hero {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+      padding-top: 7.5rem;
+      padding-bottom: 2.5rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      width: 100%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .eyebrow-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #2563eb;
+      text-decoration: none;
+      background: white;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      width: fit-content;
+      transition: all 0.2s;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .eyebrow-link:hover {
+      background: #eff6ff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .hero-subhead {
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: #475569;
+      margin: 0;
+    }
+
+    .value-props {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .value-prop {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
+      color: #334155;
+    }
+
+    .value-prop :global(svg) {
+      color: #2563eb;
+      flex-shrink: 0;
+    }
+
+    .cta-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .trust-signals {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+
+    .trust-signal {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trust-signal :global(svg) {
+      color: #2563eb;
+    }
+
+    .trust-badge {
+      font-size: 0.875rem;
+      color: #64748b;
+      font-style: italic;
+      margin: 0;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</Base>
