@@ -11,10 +11,13 @@ This is the new version of NYEnglishTeacher.com, redesigned to provide a better 
 ## 🛠️ Tech Stack
 
 - [Astro](https://astro.build) - Static site generator with component islands
+- [React](https://react.dev/) - For interactive components (Quiz Report)
 - [TypeScript](https://www.typescriptlang.org/) - With `strict: true` enabled for robust type checking
 - [Tailwind CSS](https://tailwindcss.com/) - For responsive styling
+- [Lucide React](https://lucide.dev/) - Modern icon library for React components
 - [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/) - Optimized sitemap generation with hreflang support
 - [Titan Theme](https://themes.astro.build/titan) - Professional Astro theme components
+- [Supabase](https://supabase.com/) - Backend database for quiz submissions
 - JSON-LD Structured Data - Enhanced search engine visibility
 
 ## 📦 Getting Started (Windows / PowerShell)
@@ -66,20 +69,28 @@ npm run preview
 │   ├── assets/           # Optimized images (processed by Astro)
 │   ├── components/       # Reusable UI components
 │   │   ├── sections/     # Page section components
-│   │   └── ui/           # Basic UI elements
+│   │   ├── ui/           # Basic UI elements
+│   │   └── QuizReport.tsx # React component for quiz report
 │   ├── content/          # Content collections
 │   │   ├── blog/         # Blog posts (en/es)
 │   │   └── legal/        # Legal pages (en/es)
 │   ├── data/             # Centralized data files
 │   │   ├── header/       # Navigation data (en/es)
 │   │   ├── testimonials/ # Testimonial data (en/es)
+│   │   ├── quiz/         # Quiz questions, scoring, insights
 │   │   ├── services.ts   # Service definitions
 │   │   └── methodology.ts # Coaching methodology
 │   ├── layouts/          # Page layouts
+│   ├── lib/              # Utility functions
+│   │   └── supabase.ts   # Supabase client and database functions
 │   ├── pages/            # File-based routing
+│   │   ├── api/          # API endpoints
+│   │   │   └── quiz/     # Quiz submission API
 │   │   ├── en/           # English pages
+│   │   │   └── quiz/     # Quiz flow pages
 │   │   └── es/           # Spanish pages
 │   └── styles/           # Global styles
+│       └── report.css    # Quiz report premium design system
 └── astro.config.mjs      # Astro configuration
 ```
 
@@ -195,6 +206,46 @@ To verify the sitemap is working correctly:
 
 ## 📝 Recent Updates & Changes
 
+### Quiz Lead Magnet Implementation (November 2025)
+
+**Major Feature Launch**: Implemented a complete communication confidence assessment system as a lead generation tool.
+
+**Report Page Redesign**:
+- Transitioned from monolithic Astro file to clean React + Astro architecture
+- Fixed file corruption where CSS was mixed into JavaScript section
+- Implemented premium design system with modern grid, cards, and icons
+- Added responsive design with mobile-specific optimizations
+- Integrated React with `@astrojs/react` and `lucide-react` for icons
+
+**Print to PDF Feature**:
+- Implemented native browser print functionality with `window.print()`
+- Added comprehensive print media queries for clean PDF output
+- Button placement integrated into report header (desktop: right-aligned with logo, mobile: centered)
+- Concise "PDF" button text with download icon for universal clarity
+- Print stylesheet hides site navigation/footer while preserving report content
+- Ensures background colors and gradients print correctly
+- Prevents awkward page breaks in content sections
+
+**Mobile Optimizations**:
+- Added top padding to align content with fixed navigation header
+- Hidden NY English logo on mobile for better space utilization
+- Optimized CTA button text for mobile (shorter text variant)
+- Responsive icon sizing for better mobile balance
+- Mobile-first responsive design throughout
+
+**Technical Improvements**:
+- Fixed CSS import paths to use `@styles` alias
+- Added React integration to `astro.config.mjs`
+- Installed required dependencies (`@astrojs/react`, `react`, `react-dom`, `lucide-react`)
+- Resolved JSX syntax errors and TypeScript configuration
+- Updated CTA URLs to use site booking pages instead of direct Calendly links
+
+**Key Lessons**:
+- Separation of concerns: Astro for SSR, React for interactivity, CSS for styling
+- Native browser features (print) are more maintainable than third-party PDF libraries
+- Mobile-first design requires careful attention to button text length and icon sizing
+- Print stylesheets need specific targeting to hide layout elements without hiding content
+
 ### CSS Optimization & Performance Improvements (September 2025)
 
 - **Optimized CSS Delivery**: Updated Astro configuration to force external stylesheets in production
@@ -230,6 +281,45 @@ To verify the sitemap is working correctly:
 - Set up explicit site URL configuration
 
 ## 🎯 Key Features
+
+### Quiz Lead Magnet System
+A comprehensive communication confidence assessment tool designed to generate qualified leads and drive discovery call bookings.
+
+**User Journey**:
+1. **Landing Page** (`/en/quiz/`) - Marketing page with social proof and clear value proposition
+2. **Quiz Start** (`/en/quiz/start`) - Onboarding with lead capture (name, email, company)
+3. **Assessment** (`/en/quiz/question/[1-10]`) - 10 strategic questions with progress tracking
+4. **Results & Lead Capture** (`/en/quiz/results`) - Score preview with email capture form
+5. **Premium Report** (`/en/quiz/report`) - Detailed analysis with booking CTA
+
+**Report Features**:
+- **Modern React Architecture**: Built with React + TypeScript for dynamic client-side rendering
+- **Premium Design System**: Professional grid layout with responsive cards, icons (Lucide React), and fluid typography
+- **Score Analysis**: 3-tier scoring system (Emerging, Developing, Elite) with personalized insights
+- **Business Impact Section**: Quantified cost analysis of communication gaps
+- **Elite Comparison**: Benchmarking against top performers to create aspiration
+- **Print to PDF**: Native browser print functionality with optimized print stylesheet
+  - Clean PDF output with hidden navigation/footer
+  - Preserved colors and gradients
+  - Professional page breaks
+  - Zero dependencies, works in all modern browsers
+- **Conversion Optimization**: Strategic CTA placement driving to booking page
+- **Mobile-First Design**: Responsive layout with mobile-specific optimizations
+
+**Technical Implementation**:
+- **React Component**: `src/components/QuizReport.tsx` - Client-side report rendering
+- **Astro Wrapper**: `src/pages/en/quiz/report.astro` - SSR page with React integration
+- **Premium Styling**: `src/styles/report.css` - Design system with print media queries
+- **Data Management**: `src/data/quiz/` - Questions, scoring logic, and insights
+- **API Integration**: `src/pages/api/quiz/submit.ts` - Supabase submission handling
+
+**Conversion Strategy**:
+- Lead capture at multiple touchpoints (start + results)
+- Personalized insights create perceived value
+- Business impact quantification builds urgency
+- Elite comparison creates aspiration gap
+- Single, clear CTA to discovery call booking
+- Print-to-PDF feature extends engagement and shareability
 
 ### Service Pages System
 - **Modular Components**: Reusable sections (InnerHero, Challenge, MethodologySection, FeaturedTestimonial, CtaSection)
@@ -537,19 +627,22 @@ The site is configured for static deployment. Run `npm run build` to generate th
 ## 🗺️ Future Roadmap
 
 ### Planned Features
+- [ ] Spanish version of Quiz Lead Magnet
 - [ ] Additional service pages (HR English, Finance English)
 - [ ] Enhanced blog functionality with categories
 - [ ] Newsletter signup integration
 - [ ] Advanced testimonial filtering
 - [ ] Performance monitoring dashboard
+- [ ] Quiz analytics dashboard (conversion rates, completion rates)
 
 ### Content Expansion
 - [ ] More industry-specific case studies
 - [ ] Video testimonials integration
-- [ ] Interactive coaching assessment tool
+- [x] Interactive coaching assessment tool (✅ Completed November 2025)
 - [ ] Resource library for students
+- [ ] Email nurture sequence for quiz leads
 
 ---
 
-**Last Updated**: September 2025 - CSS optimization, SEO fixes, and UI improvements
+**Last Updated**: November 2025 - Quiz Lead Magnet implementation with Print to PDF feature
 **Contributors**: Development team focused on bilingual business English coaching platform

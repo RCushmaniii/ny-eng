@@ -1,9 +1,9 @@
 # Quiz Lead Magnet System Documentation
 
-**Last Updated:** November 14, 2025  
+**Last Updated:** November 15, 2025  
 **Status:** ✅ Active & Optimized  
 **Purpose:** Communication Confidence Assessment & Lead Generation  
-**Recent Updates:** Streamlined report to be an effective lead magnet (removed categories, question-by-question analysis, and 90-day plan), added score-based dynamic impact statements, reduced from 10 to 6 questions for 60-90 second completion
+**Recent Updates:** Added Print to PDF feature with native browser functionality and optimized print stylesheet. Report redesigned with React + TypeScript architecture, premium design system, and mobile-first responsive layout. Streamlined report to be an effective lead magnet (removed categories, question-by-question analysis, and 90-day plan), added score-based dynamic impact statements, reduced from 10 to 6 questions for 60-90 second completion
 
 ---
 
@@ -40,6 +40,10 @@ The Communication Confidence Quiz is a strategic lead magnet designed to:
 - **Immediate redirect to full report** (no intermediary page)
 
 ### **4. Streamlined Lead Magnet Report** (`/en/quiz/report/`)
+
+![Quiz Report Screenshot](/images/screenshot_report.jpg)
+*Premium report design with Print to PDF functionality*
+
 - **Score Display:** Clean score out of 100 with tier label
 - **Top 2-3 Insights:** Shows only weakest areas (lowest scoring questions)
 - **Dynamic Business Impact:** Changes based on score tier:
@@ -47,6 +51,7 @@ The Communication Confidence Quiz is a strategic lead magnet designed to:
   - 40-69: "You're leaving money on the table in negotiations"
   - 70+: "You're close—but small gaps are limiting your ceiling"
 - **Elite Comparison:** What top firms do differently
+- **Print to PDF:** Native browser print functionality with optimized stylesheet
 - **Strong CTA:** "Let's See If This Applies to Your Team" → Calendly booking
 - **Design Philosophy:** Creates curiosity, not satisfaction. Drives action.
 
@@ -538,6 +543,141 @@ Report Page Displays Results
 - Modern SVG line icons
 - Adaptive colors (white on blue, blue on white)
 - 48px size for path cards
+
+---
+
+## Print to PDF Feature
+
+**Added:** November 15, 2025
+
+### **Overview**
+Native browser print functionality that allows users to save their personalized report as a PDF for sharing with stakeholders or future reference. This extends engagement beyond the initial view and creates additional touchpoints.
+
+### **Technical Implementation**
+
+**React Component:** `src/components/QuizReport.tsx`
+```tsx
+// Import Download icon from lucide-react
+import { Download } from 'lucide-react';
+
+// Button integrated into header-right container with logo
+<div className="header-right">
+  <div className="header-logo">
+    <img src="/images/logos/new-york-english-sq-og.jpg" alt="NY English" />
+  </div>
+  <button
+    className="download-pdf-button no-print"
+    onClick={() => window.print()}
+    type="button"
+  >
+    <Download size={18} />
+    <span>PDF</span>
+  </button>
+</div>
+```
+
+**Styling:** `src/styles/report.css`
+```css
+/* Button styling - ghost secondary style */
+.download-pdf-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #334155;
+  background: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Print media queries */
+@media print {
+  /* Hide site header and footer from Base layout */
+  #page-wrapper > header,
+  #page-wrapper > footer,
+  astro-island[component-url*="Header"],
+  astro-island[component-url*="Footer"] {
+    display: none !important;
+  }
+
+  /* Hide the print button itself */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Ensure background colors print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Prevent awkward page breaks */
+  .insight-card,
+  .impact-section,
+  .elite-section,
+  .cta-container {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+```
+
+### **Layout Strategy**
+
+**Desktop:**
+- Button positioned in `header-right` container with logo
+- Right-aligned below logo
+- Visually grouped with report metadata
+- Non-competing placement (doesn't interfere with main CTA)
+
+**Mobile:**
+- Logo hidden on mobile (space optimization)
+- Button centered below metadata
+- Clear separation between header and score section
+- Concise "PDF" text works on all screen sizes
+
+### **Print Stylesheet Features**
+
+1. **Clean Output**
+   - Hides site navigation and footer
+   - Removes print button from PDF
+   - Preserves all report content
+
+2. **Color Preservation**
+   - Uses `-webkit-print-color-adjust: exact`
+   - Ensures brand colors and gradients print correctly
+   - Maintains visual hierarchy in PDF
+
+3. **Page Break Control**
+   - Prevents cards from splitting across pages
+   - Keeps sections intact
+   - Professional pagination
+
+4. **Zero Dependencies**
+   - Uses native `window.print()` API
+   - Works in all modern browsers
+   - No third-party PDF libraries required
+   - Minimal maintenance overhead
+
+### **User Experience Benefits**
+
+- **Extended Engagement:** Users can save and review report later
+- **Shareability:** Easy to forward to team members or decision-makers
+- **Professionalism:** High-quality PDF output reinforces brand quality
+- **Accessibility:** Familiar print dialog, works with screen readers
+- **Offline Access:** Users can reference report without internet connection
+
+### **Conversion Impact**
+
+- Creates additional touchpoint when user shares with stakeholders
+- PDF acts as a "business card" with booking CTA included
+- Increases perceived value of the assessment
+- Facilitates internal discussions that may lead to booking
 
 ---
 

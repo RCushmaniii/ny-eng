@@ -55,10 +55,42 @@
   color: #94a3b8;
 }
 
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
 .header-logo img {
   width: 100px;
   height: auto;
   border-radius: 8px;
+}
+
+/* ========================================
+   PDF DOWNLOAD BUTTON
+   ======================================== */
+
+.download-pdf-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #334155;
+  background: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.download-pdf-button:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 /* ========================================
@@ -355,8 +387,17 @@
     gap: 1.5rem;
   }
 
+  .header-right {
+    align-items: center;
+    margin-top: 1rem;
+  }
+
   .header-logo {
     display: none; /* Hide logo on mobile */
+  }
+
+  .download-pdf-button {
+    width: auto;
   }
 
   .hero-section {
@@ -419,5 +460,107 @@
   .score-circle {
     width: 140px;
     height: 140px;
+  }
+}
+
+/* ========================================
+   PRINT STYLES (PDF OUTPUT)
+   ======================================== */
+
+@media print {
+  /* Hide site header and footer from Base layout */
+  #page-wrapper > header,
+  #page-wrapper > footer,
+  astro-island[component-url*="Header"],
+  astro-island[component-url*="Footer"] {
+    display: none !important;
+  }
+
+  /* Hide the print button itself */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset page wrapper */
+  #page-wrapper {
+    min-height: auto !important;
+  }
+
+  /* Reset main content area */
+  #main-content {
+    flex-grow: 0 !important;
+  }
+
+  /* Reset container for paper */
+  .report-container {
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
+    min-height: auto;
+  }
+
+  .report-wrapper {
+    max-width: 100%;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+  }
+
+  /* Ensure background colors print */
+  .hero-section {
+    background: #eff6ff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .impact-section {
+    background: #fef2f2 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cta-section {
+    background: #1e293b !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Prevent awkward page breaks */
+  .report-header,
+  .hero-section,
+  .insights-section,
+  .impact-section,
+  .elite-section,
+  .cta-section {
+    page-break-inside: avoid;
+  }
+
+  .insight-card,
+  .impact-content,
+  .elite-list-item {
+    page-break-inside: avoid;
+  }
+
+  /* Optimize spacing for print */
+  .report-header {
+    padding: 2rem;
+  }
+
+  .hero-section,
+  .report-wrapper section {
+    padding: 2rem;
+  }
+
+  /* Ensure score circle prints correctly */
+  .score-circle {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Make sure CTA button is visible in print */
+  .cta-button {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }

@@ -33,36 +33,110 @@ const icon = frontmatter?.icon || '📄';
     
     <!-- Enhanced markdown styling using project variables -->
     <style>
+      /* Theme Variables */
+      :root {
+        --transition-speed: 0.3s;
+      }
+
+      /* Dark Theme (Default) */
+      body {
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-tertiary: #334155;
+        --bg-nav: linear-gradient(135deg, #1e3a8a, #1e40af, #1e3a8a);
+        --text-primary: #1e293b;
+        --text-secondary: #475569;
+        --text-muted: #64748b;
+        --border-color: #e2e8f0;
+        --code-bg: #f1f5f9;
+        --card-bg: #ffffff;
+        --card-border: #e2e8f0;
+      }
+
+      /* Light Theme */
+      body.light-theme {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8fafc;
+        --bg-tertiary: #e2e8f0;
+        --bg-nav: linear-gradient(135deg, #dbeafe, #bfdbfe, #dbeafe);
+        --text-primary: #1e293b;
+        --text-secondary: #475569;
+        --text-muted: #64748b;
+        --border-color: #cbd5e1;
+        --code-bg: #f1f5f9;
+        --card-bg: #ffffff;
+        --card-border: #e2e8f0;
+      }
+
       /* Use project fonts and colors */
       body {
         font-family: var(--font-base);
-        background-color: var(--color-background);
-        color: var(--color-text);
+        background-color: var(--bg-primary) !important;
+        color: var(--text-primary) !important;
         line-height: 1.6;
+        transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
       }
       
       /* Container styling */
       .markdown-container {
-        max-width: var(--container-base);
+        max-width: 1024px;
         margin: 0 auto;
         padding: 2rem 1.5rem;
       }
       
       /* Navigation header */
       .docs-nav {
-        background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+        background: var(--bg-nav) !important;
         color: #ffffff;
-        padding: 1rem;
+        padding: 1.5rem 1rem;
         box-shadow: var(--shadow-lg);
-        margin-bottom: 2rem;
+        margin-bottom: 0;
+        border-bottom: 2px solid #2563eb;
+        transition: background var(--transition-speed) ease, border-color var(--transition-speed) ease;
       }
-      
+
+      body.light-theme .docs-nav {
+        border-bottom-color: #93c5fd !important;
+      }
+
+      nav {
+        background: var(--bg-nav) !important;
+        transition: background var(--transition-speed) ease;
+      }
+
+      body.light-theme nav {
+        border-bottom-color: #93c5fd !important;
+      }
+
+      /* Tailwind text color overrides for nav */
+      .text-white {
+        color: #ffffff !important;
+      }
+
+      .text-slate-300 {
+        color: #cbd5e1 !important;
+      }
+
+      body.light-theme .text-white {
+        color: #1e293b !important;
+      }
+
+      body.light-theme .text-slate-300 {
+        color: #475569 !important;
+      }
+
       .docs-nav h1 {
         font-family: var(--font-headline);
-        font-size: var(--text-xl);
+        font-size: 1.5rem;
         font-weight: 700;
         margin: 0;
-        color: #ffffff;
+        color: var(--text-primary);
+        transition: color var(--transition-speed) ease;
+      }
+
+      .docs-nav p {
+        color: var(--text-secondary) !important;
+        transition: color var(--transition-speed) ease;
       }
       
       /* Development warning */
@@ -76,12 +150,17 @@ const icon = frontmatter?.icon || '📄';
       
       /* Document header */
       .doc-header {
-        background: linear-gradient(135deg, var(--color-background-light), #ffffff);
-        border: 1px solid var(--color-border);
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
         border-radius: var(--border-radius-base);
         padding: 2rem;
         margin-bottom: 2rem;
         box-shadow: var(--shadow-md);
+        transition: background var(--transition-speed) ease, border-color var(--transition-speed) ease;
+      }
+
+      body.light-theme .doc-header {
+        background: #ffffff;
       }
       
       .doc-title {
@@ -314,18 +393,138 @@ const icon = frontmatter?.icon || '📄';
         color: var(--color-text-offset);
         font-size: var(--text-small);
       }
+
+      /* Theme Toggle Button - Exact copy from DocsLayout */
+      .theme-toggle {
+        position: relative;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background-color: rgba(255, 255, 255, 0.9) !important;
+        border: 2px solid rgba(255, 255, 255, 1) !important;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all var(--transition-speed) ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        flex-shrink: 0;
+      }
+
+      .theme-toggle:hover {
+        background-color: rgba(255, 255, 255, 1) !important;
+        border-color: rgba(59, 130, 246, 0.8) !important;
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      }
+
+      .theme-toggle:active {
+        transform: scale(0.95);
+      }
+
+      .theme-icon {
+        color: #1e293b !important;
+        transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+      }
+
+      .theme-icon.hidden {
+        opacity: 0;
+        transform: rotate(180deg);
+        position: absolute;
+      }
+
+      body.light-theme .theme-toggle {
+        background-color: rgba(30, 41, 59, 0.9) !important;
+        border-color: rgba(30, 41, 59, 1) !important;
+      }
+
+      body.light-theme .theme-toggle:hover {
+        background-color: rgba(30, 41, 59, 1) !important;
+        border-color: rgba(59, 130, 246, 0.8) !important;
+      }
+
+      body.light-theme .theme-icon {
+        color: #ffffff !important;
+      }
+
+      /* Main content area */
+      main {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 2rem 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: background var(--transition-speed) ease;
+      }
+
+      body.light-theme main {
+        background: #ffffff;
+      }
+
+      /* All text elements */
+      main p,
+      main li,
+      main td,
+      main span {
+        color: var(--text-primary) !important;
+        transition: color var(--transition-speed) ease;
+      }
+
+      main h1,
+      main h2,
+      main h3,
+      main h4 {
+        color: var(--text-primary) !important;
+        transition: color var(--transition-speed) ease;
+      }
+
+      main strong {
+        color: var(--text-primary) !important;
+      }
     </style>
   </head>
   
   <body>
-    <!-- Navigation Header -->
-    <nav class="docs-nav">
-      <div class="markdown-container">
-        <h1>📚 NY English Teacher Documentation</h1>
-        <p style="margin: 0.5rem 0 0 0; opacity: 0.8; font-size: var(--text-small);">Development Preview</p>
+    <!-- Navigation Header - Exact copy from DocsLayout -->
+    <nav class="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 border-b-2 border-blue-600 shadow-2xl">
+      <div class="max-w-7xl mx-auto px-8 py-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <img src="/images/logos/new-york-english-sq-og.jpg" alt="NY English Teacher Logo" class="w-12 h-12 rounded-lg shadow-lg" />
+            <div>
+              <h1 class="text-2xl font-bold text-white tracking-tight">NY English Teacher Documentation</h1>
+              <p class="text-slate-300 text-sm mt-0.5">Development Preview</p>
+            </div>
+          </div>
+          
+          <!-- Theme Toggle Button -->
+          <button 
+            id="theme-toggle"
+            class="theme-toggle"
+            title="Toggle theme"
+            aria-label="Toggle theme"
+          >
+            <!-- Sun Icon (Dark Mode) -->
+            <svg id="sun-icon" class="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <!-- Moon Icon (Light Mode) -->
+            <svg id="moon-icon" class="theme-icon hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+        </div>
       </div>
-    </nav>
-    
+    </nav>    
     <div class="markdown-container">
       <!-- Development Warning -->
       <div class="dev-warning">
@@ -368,5 +567,52 @@ const icon = frontmatter?.icon || '📄';
         <p>NY English Teacher Documentation • Last updated: {new Date().toLocaleDateString()}</p>
       </footer>
     </div>
+
+    <!-- Theme Toggle Script -->
+    <script is:inline>
+      // Initialize theme from localStorage or default to dark
+      function initTheme() {
+        const savedTheme = localStorage.getItem('docs-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+        
+        if (theme === 'light') {
+          document.body.classList.add('light-theme');
+          updateIcons(true);
+        }
+      }
+
+      // Update icon visibility
+      function updateIcons(isLight) {
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        
+        if (isLight) {
+          sunIcon.classList.add('hidden');
+          moonIcon.classList.remove('hidden');
+        } else {
+          sunIcon.classList.remove('hidden');
+          moonIcon.classList.add('hidden');
+        }
+      }
+
+      // Toggle theme
+      function toggleTheme() {
+        const body = document.body;
+        const isLight = body.classList.toggle('light-theme');
+        
+        // Save preference
+        localStorage.setItem('docs-theme', isLight ? 'light' : 'dark');
+        
+        // Update icons
+        updateIcons(isLight);
+      }
+
+      // Initialize on page load
+      initTheme();
+
+      // Add click handler
+      document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    </script>
   </body>
 </html>

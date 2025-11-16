@@ -3,6 +3,7 @@ import {
   Calendar,
   TrendingUp,
   AlertCircle,
+  Download,
 } from "lucide-react"; // Use lucide-react inside a .tsx file
 import { questionsEn } from "@data/quiz/questions"; // This import now works
 import "@styles/report.css";
@@ -185,11 +186,22 @@ export default function QuizReport() {
                 <strong>Report Generated:</strong> {generatedDate}
               </div>
             </div>
-            <div className="header-logo">
-              <img
-                src="/images/logos/new-york-english-sq-og.jpg"
-                alt="NY English"
-              />
+            <div className="header-right">
+              <div className="header-logo">
+                <img
+                  src="/images/logos/new-york-english-sq-og.jpg"
+                  alt="NY English"
+                />
+              </div>
+              {/* Print to PDF Button */}
+              <button
+                className="download-pdf-button no-print"
+                onClick={() => window.print()}
+                type="button"
+              >
+                <Download size={18} />
+                <span>PDF</span>
+              </button>
             </div>
           </div>
         </header>
