@@ -1,160 +1,46 @@
 /**
- * Quiz Scoring System for Speaking Confidence Assessment
+ * Universal Quiz Scoring Engine
+ * 
+ * Config-driven scoring system that works for all quiz types.
+ * Calculates scores, determines tiers, and identifies gaps.
  * 
  * Scoring Philosophy:
- * - Total possible: 250 points across 10 questions
+ * - 6 questions × 10 points max = 60 points total
  * - Normalized to 0-100 scale
- * - Questions weighted by business impact
+ * - Category scores calculated independently
+ * - Gap analysis identifies top 2 weakest areas
  */
 
-export interface QuizAnswer {
-  questionId: string;
-  answerIndex: number;
-  score: number;
-  category: QuizCategory;
-}
-
-export type QuizCategory = 
-  | 'clarity'           // Clear communication
-  | 'confidence'        // Authority & self-assurance
-  | 'real-time'        // Spontaneous response ability
-  | 'negotiation'      // Defending position
-  | 'cultural';        // Rapport & business fluency
-
-export interface ScoreBreakdown {
-  totalScore: number;              // 0-100
-  rawScore: number;                // Actual points earned
-  maxPossible: number;             // 250
-  scoreTier: ScoreTier;
-  categoryScores: CategoryScores;
-  primaryGap: GapAnalysis;
-  secondaryGap: GapAnalysis;
-}
-
-export type ScoreTier = 'Conversation-Ready' | 'Million-Dollar Gap' | 'Credibility Block';
-
-export interface CategoryScores {
-  clarity: number;           // 0-100
-  confidence: number;        // 0-100
-  realTime: number;         // 0-100
-  negotiation: number;      // 0-100
-  cultural: number;         // 0-100
-}
-
-export interface GapAnalysis {
-  category: QuizCategory;
-  categoryName: string;
-  score: number;
-  impact: string;
-  recommendation: string;
-  urgency: 'high' | 'medium' | 'low';
-}
+import type {
+  QuizAnswers,
+  QuizCategory,
+  ScoreBreakdown,
+  ScoreTier,
+  CategoryScores,
+  GapAnalysis,
+  GapDefinition,
+  LanguageConfig
+} from './types';
 
 // =============================================================================
-// QUESTION SCORING CONFIGURATION
+// UNIVERSAL SCORING FUNCTION
 // =============================================================================
 
 /**
- * Point values for each question
- * Each question worth 10 points max for simplicity
+ * Calculate quiz score from user answers and quiz configuration
+ * 
+ * @param answers - User's answers (e.g., { q1: 2, q2: 0, q3: 1, ... })
+ * @param config - Language-specific quiz configuration
+ * @returns Complete score breakdown with gaps and tier
  */
-export const QUESTION_SCORES = {
-  
-  // Q1: Misunderstandings/Clarity (10 points max)
-  // Category: Clarity
-  // Impact: Universal pain point, easy opener
-  q1: {
-    category: 'clarity' as QuizCategory,
-    weight: 10,
-    answers: [
-      { index: 0, score: 10, label: 'Almost never—clear first time' },
-      { index: 1, score: 7, label: 'Once or twice a month—minor issues' },
-      { index: 2, score: 4, label: 'Several times a month—noticeable' },
-      { index: 3, score: 0, label: 'Weekly or more—impacting relationships' }
-    ]
-  },
-  
-  // Q2: Technical Communication (10 points max)
-  // Category: Clarity
-  // Impact: Core competency for IT teams
-  q2: {
-    category: 'clarity' as QuizCategory,
-    weight: 10,
-    answers: [
-      { index: 0, score: 10, label: 'Excellent—clients grasp immediately' },
-      { index: 1, score: 7, label: 'Good—occasionally needs clarification' },
-      { index: 2, score: 4, label: 'Fair—regularly ask for simpler explanations' },
-      { index: 3, score: 0, label: 'Poor—often lose them' }
-    ]
-  },
-  
-  // Q3: Real-Time Response (10 points max)
-  // Category: Confidence
-  // Impact: "Ouch" moment - kills deal momentum
-  q3: {
-    category: 'confidence' as QuizCategory,
-    weight: 10,
-    answers: [
-      { index: 0, score: 10, label: 'Never—respond in real-time' },
-      { index: 1, score: 7, label: 'Rarely—only truly complex details' },
-      { index: 2, score: 4, label: 'Sometimes—when under pressure' },
-      { index: 3, score: 0, label: 'Frequently—safety net' }
-    ]
-  },
-  
-  // Q4: Negotiation Under Pressure (10 points max)
-  // Category: Negotiation
-  // Impact: Higher stakes, affects contract terms
-  q4: {
-    category: 'negotiation' as QuizCategory,
-    weight: 10,
-    answers: [
-      { index: 0, score: 10, label: 'Very effectively—defend position confidently' },
-      { index: 1, score: 6, label: 'Moderately—concede too quickly' },
-      { index: 2, score: 3, label: 'Poorly—struggle to push back' },
-      { index: 3, score: 0, label: 'Route to senior leadership' }
-    ]
-  },
-  
-  // Q5: Leadership Capacity (10 points max)
-  // Category: Leadership
-  // Impact: Business risk, scalability issue
-  q5: {
-    category: 'confidence' as QuizCategory,
-    weight: 10,
-    answers: [
-      { index: 0, score: 10, label: 'Multiple people—have depth' },
-      { index: 1, score: 6, label: '2-3 people—limited but adequate' },
-      { index: 2, score: 3, label: '1-2 people—dependent on specific individuals' },
-      { index: 3, score: 0, label: 'None—senior leadership must be present' }
-    ]
-  },
-  
-  // Q6: Rapport Building (10 points max)
-  // Category: Confidence
-  // Impact: Competitive advantage, relationship building
-  q6: {
-    category: 'confidence' as QuizCategory,
-    weight: 10,
-    answers: [
-      { index: 0, score: 10, label: 'Very comfortable—happens naturally' },
-      { index: 1, score: 6, label: 'Somewhat comfortable—feels stilted' },
-      { index: 2, score: 3, label: 'Uncomfortable—stick strictly to business' },
-      { index: 3, score: 0, label: 'Very uncomfortable—avoid entirely' }
-    ]
-  }
-  
-} as const;
-
-// Total max possible: 60 points (6 questions × 10 points each)
-
-// =============================================================================
-// SCORING CALCULATION
-// =============================================================================
-
-export function calculateQuizScore(answers: Record<string, number>): ScoreBreakdown {
+export function calculateQuizScore(
+  answers: QuizAnswers,
+  config: LanguageConfig
+): ScoreBreakdown {
   let rawScore = 0;
-  const maxPossible = 60;
+  const maxPossible = 60; // 6 questions × 10 points each
+  
+  // Track points by category
   const categoryPoints: Record<QuizCategory, { earned: number; max: number }> = {
     clarity: { earned: 0, max: 0 },
     confidence: { earned: 0, max: 0 },
@@ -165,19 +51,27 @@ export function calculateQuizScore(answers: Record<string, number>): ScoreBreakd
 
   // Calculate raw score and category breakdowns
   Object.entries(answers).forEach(([questionId, answerIndex]) => {
-    const questionConfig = QUESTION_SCORES[questionId as keyof typeof QUESTION_SCORES];
-    if (!questionConfig) return;
+    const questionNum = parseInt(questionId.replace('q', ''));
+    const question = config.questions.find(q => q.id === questionNum);
+    
+    if (!question) {
+      console.warn(`Question ${questionNum} not found in config`);
+      return;
+    }
 
-    const answerConfig = questionConfig.answers[answerIndex];
-    if (!answerConfig) return;
+    const answer = question.answers[answerIndex];
+    if (!answer) {
+      console.warn(`Answer index ${answerIndex} not found for question ${questionNum}`);
+      return;
+    }
 
-    const points = answerConfig.score;
+    const points = answer.score;
     rawScore += points;
 
     // Track by category
-    const category = questionConfig.category;
+    const category = question.category;
     categoryPoints[category].earned += points;
-    categoryPoints[category].max += questionConfig.weight;
+    categoryPoints[category].max += 10; // Each question worth 10 points
   });
 
   // Normalize to 0-100
@@ -185,18 +79,28 @@ export function calculateQuizScore(answers: Record<string, number>): ScoreBreakd
 
   // Calculate category scores (0-100 for each)
   const categoryScores: CategoryScores = {
-    clarity: Math.round((categoryPoints.clarity.earned / categoryPoints.clarity.max) * 100) || 0,
-    confidence: Math.round((categoryPoints.confidence.earned / categoryPoints.confidence.max) * 100) || 0,
-    realTime: Math.round((categoryPoints['real-time'].earned / categoryPoints['real-time'].max) * 100) || 0,
-    negotiation: Math.round((categoryPoints.negotiation.earned / categoryPoints.negotiation.max) * 100) || 0,
-    cultural: Math.round((categoryPoints.cultural.earned / categoryPoints.cultural.max) * 100) || 0
+    clarity: categoryPoints.clarity.max > 0 
+      ? Math.round((categoryPoints.clarity.earned / categoryPoints.clarity.max) * 100) 
+      : 0,
+    confidence: categoryPoints.confidence.max > 0
+      ? Math.round((categoryPoints.confidence.earned / categoryPoints.confidence.max) * 100)
+      : 0,
+    realTime: categoryPoints['real-time'].max > 0
+      ? Math.round((categoryPoints['real-time'].earned / categoryPoints['real-time'].max) * 100)
+      : 0,
+    negotiation: categoryPoints.negotiation.max > 0
+      ? Math.round((categoryPoints.negotiation.earned / categoryPoints.negotiation.max) * 100)
+      : 0,
+    cultural: categoryPoints.cultural.max > 0
+      ? Math.round((categoryPoints.cultural.earned / categoryPoints.cultural.max) * 100)
+      : 0
   };
 
   // Determine score tier
   const scoreTier = getScoreTier(totalScore);
 
   // Analyze gaps
-  const gaps = analyzeGaps(categoryScores, answers);
+  const gaps = analyzeGaps(categoryScores, config.gapDefinitions);
 
   return {
     totalScore,
@@ -213,16 +117,26 @@ export function calculateQuizScore(answers: Record<string, number>): ScoreBreakd
 // SCORE TIERS
 // =============================================================================
 
+/**
+ * Determine score tier based on total score
+ * 
+ * @param score - Total score (0-100)
+ * @returns Score tier classification
+ */
 export function getScoreTier(score: number): ScoreTier {
-  if (score >= 75) return 'Conversation-Ready';
+  if (score >= 70) return 'Conversation-Ready';
   if (score >= 40) return 'Million-Dollar Gap';
   return 'Credibility Block';
 }
 
+/**
+ * Tier information for display purposes
+ * Contains colors, icons, and messaging for each tier
+ */
 export const SCORE_TIER_INFO = {
   'Conversation-Ready': {
-    range: '75-100',
-    color: '#48bb78', // Green
+    range: '70-100',
+    color: '#10b981', // Green
     icon: '✅',
     headline: 'Your Team Can Handle High-Stakes Conversations',
     summary: 'Your team demonstrates strong spoken English capability in client-facing situations. Small refinements in specific areas could help you win even more premium contracts.',
@@ -231,8 +145,8 @@ export const SCORE_TIER_INFO = {
     urgency: 'low' as const
   },
   'Million-Dollar Gap': {
-    range: '40-74',
-    color: '#f6ad55', // Orange
+    range: '40-69',
+    color: '#f59e0b', // Orange
     icon: '⚠️',
     headline: 'Speaking Gaps Are Costing You Deals',
     summary: "Your team has solid technical skills, but communication gaps create friction in sales, negotiations, and client relationships. This is the difference between winning and losing 6-figure contracts.",
@@ -242,7 +156,7 @@ export const SCORE_TIER_INFO = {
   },
   'Credibility Block': {
     range: '0-39',
-    color: '#fc8181', // Red
+    color: '#ef4444', // Red
     icon: '🚫',
     headline: 'English Gaps Are Limiting Your Growth',
     summary: "Spoken English challenges are likely holding your business back more than you realize. North American clients interpret hesitant speaking as lack of expertise—even when your technical skills are world-class.",
@@ -256,42 +170,16 @@ export const SCORE_TIER_INFO = {
 // GAP ANALYSIS
 // =============================================================================
 
-const GAP_DEFINITIONS = {
-  clarity: {
-    name: 'Clear Communication Under Pressure',
-    lowScoreImpact: 'Clients need repeated explanations, lose confidence in your expertise, or disengage from meetings. Time wasted re-explaining = fewer deals closed.',
-    recommendation: 'Focus on simplifying complex technical explanations and practicing "explain it to a 10-year-old" drills.',
-    urgency: 'high' as const
-  },
-  confidence: {
-    name: 'Speaking Confidence & Authority',
-    lowScoreImpact: 'You struggle to command rooms, defend decisions, or push back on unreasonable requests. Clients sense hesitation and either demand discounts or go with competitors who "sound" more senior.',
-    recommendation: 'Practice high-pressure scenarios with real-time feedback. Build automatic responses for common objections.',
-    urgency: 'high' as const
-  },
-  'real-time': {
-    name: 'Spontaneous Response Ability',
-    lowScoreImpact: 'Every time you say "let me follow up via email," you lose deal momentum and credibility. Clients want answers NOW.',
-    recommendation: 'Train your team to think IN English, not translate. Use rapid-fire Q&A drills to build spontaneity.',
-    urgency: 'high' as const
-  },
-  negotiation: {
-    name: 'Negotiation & Boundary Setting',
-    lowScoreImpact: "You accept unfavorable terms, agree to scope creep, or discount when you shouldn't. Result: Lower margins, difficult clients, burnout.",
-    recommendation: 'Rehearse negotiation scripts until defending your position feels natural. Role-play tough client scenarios.',
-    urgency: 'medium' as const
-  },
-  cultural: {
-    name: 'Cultural Fluency & Rapport Building',
-    lowScoreImpact: 'Relationships stay transactional. You miss opportunities to build trust, understand client motivations, or become a strategic partner (vs. vendor).',
-    recommendation: 'Study North American business culture and practice casual conversation starters. Learn when small talk is expected.',
-    urgency: 'medium' as const
-  }
-} as const;
-
+/**
+ * Analyze category scores to identify top 2 weakest areas
+ * 
+ * @param categoryScores - Scores for each category (0-100)
+ * @param gapDefinitions - Gap definitions from quiz config
+ * @returns Primary and secondary gap analysis
+ */
 function analyzeGaps(
   categoryScores: CategoryScores,
-  answers: Record<string, number>
+  gapDefinitions: Record<QuizCategory, GapDefinition>
 ): { primary: GapAnalysis; secondary: GapAnalysis } {
   
   // Convert category scores to sortable array
@@ -310,13 +198,25 @@ function analyzeGaps(
   const secondaryCategory = categoryArray[1].category;
 
   return {
-    primary: createGapAnalysis(primaryCategory, categoryArray[0].score),
-    secondary: createGapAnalysis(secondaryCategory, categoryArray[1].score)
+    primary: createGapAnalysis(primaryCategory, categoryArray[0].score, gapDefinitions),
+    secondary: createGapAnalysis(secondaryCategory, categoryArray[1].score, gapDefinitions)
   };
 }
 
-function createGapAnalysis(category: QuizCategory, score: number): GapAnalysis {
-  const definition = GAP_DEFINITIONS[category];
+/**
+ * Create gap analysis for a specific category
+ * 
+ * @param category - Category identifier
+ * @param score - Score in this category (0-100)
+ * @param gapDefinitions - Gap definitions from quiz config
+ * @returns Complete gap analysis
+ */
+function createGapAnalysis(
+  category: QuizCategory,
+  score: number,
+  gapDefinitions: Record<QuizCategory, GapDefinition>
+): GapAnalysis {
+  const definition = gapDefinitions[category];
   
   return {
     category,
@@ -329,17 +229,44 @@ function createGapAnalysis(category: QuizCategory, score: number): GapAnalysis {
 }
 
 // =============================================================================
-// PERCENTILE CALCULATION (OPTIONAL - FOR MARKETING)
+// UTILITY FUNCTIONS
 // =============================================================================
 
 /**
+ * Get color for score visualization
+ * 
+ * @param score - Total score (0-100)
+ * @returns Hex color code
+ */
+export function getScoreColor(score: number): string {
+  if (score >= 70) return '#10b981';  // Green
+  if (score >= 40) return '#f59e0b';  // Orange
+  return '#ef4444';                    // Red
+}
+
+/**
+ * Get emoji for score visualization
+ * 
+ * @param score - Total score (0-100)
+ * @returns Emoji string
+ */
+export function getScoreEmoji(score: number): string {
+  if (score >= 70) return '🎉';
+  if (score >= 40) return '💡';
+  return '⚠️';
+}
+
+/**
  * Calculate percentile compared to all quiz takers
- * This would be calculated from real Supabase data in production
- * For now, using estimated distribution
+ * 
+ * NOTE: This uses estimated distribution for now.
+ * Replace with actual Supabase data in production.
+ * 
+ * @param score - Total score (0-100)
+ * @returns Percentile (0-100)
  */
 export function calculatePercentile(score: number): number {
   // Assumed distribution based on typical quiz results
-  // You'll replace this with actual data from Supabase
   const distribution = [
     { maxScore: 25, percentile: 10 },
     { maxScore: 35, percentile: 20 },
@@ -353,20 +280,4 @@ export function calculatePercentile(score: number): number {
 
   const bracket = distribution.find(d => score <= d.maxScore);
   return bracket?.percentile || 95;
-}
-
-// =============================================================================
-// UTILITY FUNCTIONS
-// =============================================================================
-
-export function getScoreColor(score: number): string {
-  if (score >= 75) return '#48bb78';  // Green
-  if (score >= 40) return '#f6ad55';  // Orange
-  return '#fc8181';                    // Red
-}
-
-export function getScoreEmoji(score: number): string {
-  if (score >= 75) return '🎉';
-  if (score >= 40) return '💡';
-  return '⚠️';
 }
