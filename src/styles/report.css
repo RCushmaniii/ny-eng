@@ -1,0 +1,566 @@
+/* ========================================
+   PREMIUM REPORT DESIGN SYSTEM
+   ======================================== */
+
+/* Base Container */
+.report-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 3rem 1.5rem;
+  padding-top: 8rem; /* Account for fixed header navigation */
+}
+
+.report-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* ========================================
+   HEADER SECTION
+   ======================================== */
+
+.report-header {
+  padding: 3rem 3rem 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: start;
+}
+
+.report-title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.recipient-info {
+  font-size: 1.125rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.report-meta {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.header-logo img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ========================================
+   PDF DOWNLOAD BUTTON
+   ======================================== */
+
+.download-pdf-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #334155;
+  background: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.download-pdf-button:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* ========================================
+   HERO SECTION (SCORE DISPLAY)
+   ======================================== */
+
+.hero-section {
+  padding: 4rem 3rem;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.score-display {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.score-circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+  flex-shrink: 0;
+}
+
+.score-number {
+  font-size: 4rem;
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+  margin: 0;
+}
+
+.score-label {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.5rem;
+}
+
+.score-content {
+  min-width: 0;
+}
+
+.score-tier {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.score-description {
+  font-size: 1.125rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========================================
+   SECTION STYLING
+   ======================================== */
+
+.report-wrapper section {
+  padding: 3rem;
+}
+
+.section-heading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 2rem 0;
+  letter-spacing: -0.01em;
+}
+
+/* ========================================
+   INSIGHTS SECTION (CARDS)
+   ======================================== */
+
+.insights-section {
+  background: white;
+}
+
+.insights-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Styles for the JS-rendered insight cards */
+.insight-card {
+  padding: 1rem;
+  background: #f8fafc;
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-radius: 8px;
+}
+
+.insight-card-q {
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.insight-card-text {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ========================================
+   IMPACT SECTION
+   ======================================== */
+
+.impact-section {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.impact-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.impact-icon {
+  color: #dc2626;
+  flex-shrink: 0;
+}
+
+.impact-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 4px solid #dc2626;
+}
+
+.impact-content-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.impact-content-text {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ========================================
+   ELITE SECTION
+   ======================================== */
+
+.elite-section {
+  background: white;
+}
+
+.elite-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.elite-icon {
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.elite-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.elite-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.elite-list-item {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.elite-list-item span {
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 700;
+}
+
+/* ========================================
+   CTA SECTION
+   ======================================== */
+
+.cta-section {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  padding: 4rem 3rem;
+  text-align: center;
+}
+
+.cta-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.cta-heading {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: white;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.cta-subtext {
+  font-size: 1.125rem;
+  color: #cbd5e1;
+  margin: 0 0 2.5rem 0;
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 12px 32px rgba(249, 115, 22, 0.4);
+  margin-bottom: 1.5rem;
+}
+
+/* Button text variants for mobile/desktop */
+.cta-button-text-mobile {
+  display: none;
+}
+
+.cta-button-text-desktop {
+  display: inline;
+}
+
+.cta-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(249, 115, 22, 0.5);
+}
+
+.cta-button:active {
+  transform: translateY(-2px);
+}
+
+.cta-note {
+  font-size: 0.9375rem;
+  color: #94a3b8;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .report-container {
+    padding: 1.5rem 1rem;
+    padding-top: 6rem; /* Adjust for mobile header */
+  }
+
+  .report-header {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .header-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .header-right {
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .header-logo {
+    display: none; /* Hide logo on mobile */
+  }
+
+  .download-pdf-button {
+    width: auto;
+  }
+
+  .hero-section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .score-display {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .score-circle {
+    margin: 0 auto;
+  }
+
+  .report-wrapper section {
+    padding: 2rem 1.5rem;
+  }
+
+  .impact-header,
+  .elite-header {
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+  }
+
+  .cta-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    padding: 1.125rem 1.5rem;
+    font-size: 1rem;
+    gap: 0.5rem;
+  }
+
+  /* Smaller icon on mobile */
+  .cta-button-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Show shorter text on mobile */
+  .cta-button-text-desktop {
+    display: none;
+  }
+
+  .cta-button-text-mobile {
+    display: inline;
+  }
+}
+
+@media (max-width: 480px) {
+  .score-number {
+    font-size: 3rem;
+  }
+
+  .score-circle {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* ========================================
+   PRINT STYLES (PDF OUTPUT)
+   ======================================== */
+
+@media print {
+  /* Hide site header and footer from Base layout */
+  #page-wrapper > header,
+  #page-wrapper > footer,
+  astro-island[component-url*="Header"],
+  astro-island[component-url*="Footer"] {
+    display: none !important;
+  }
+
+  /* Hide the print button itself */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset page wrapper */
+  #page-wrapper {
+    min-height: auto !important;
+  }
+
+  /* Reset main content area */
+  #main-content {
+    flex-grow: 0 !important;
+  }
+
+  /* Reset container for paper */
+  .report-container {
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
+    min-height: auto;
+  }
+
+  .report-wrapper {
+    max-width: 100%;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+  }
+
+  /* Ensure background colors print */
+  .hero-section {
+    background: #eff6ff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .impact-section {
+    background: #fef2f2 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cta-section {
+    background: #1e293b !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Prevent awkward page breaks */
+  .report-header,
+  .hero-section,
+  .insights-section,
+  .impact-section,
+  .elite-section,
+  .cta-section {
+    page-break-inside: avoid;
+  }
+
+  .insight-card,
+  .impact-content,
+  .elite-list-item {
+    page-break-inside: avoid;
+  }
+
+  /* Optimize spacing for print */
+  .report-header {
+    padding: 2rem;
+  }
+
+  .hero-section,
+  .report-wrapper section {
+    padding: 2rem;
+  }
+
+  /* Ensure score circle prints correctly */
+  .score-circle {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Make sure CTA button is visible in print */
+  .cta-button {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

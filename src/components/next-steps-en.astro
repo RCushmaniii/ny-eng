@@ -1,0 +1,364 @@
+---
+// Page 6: Recommendations & Next Steps (English)
+// This component contains all HTML and CSS for this section.
+import { BookOpen, Users, Calendar } from "lucide-astro";
+---
+
+<>
+<h2>What's Next: Your Path Forward</h2>
+<p class="section-subhead">
+  Choose the approach that best fits your team's needs and timeline
+</p>
+
+  <!-- 
+    This grid container is styled mobile-first (1 column)
+    and switches to 2 columns on screens 768px and wider.
+  -->
+  <div class="recommendation-paths">
+    <!-- Path 1: Self-Study -->
+    <div class="path-card">
+      <div class="card-icon">
+        <BookOpen size={40} />
+      </div>
+      <h3>Self-Study Path</h3>
+
+      <div class="best-for">
+        <strong>BEST FOR:</strong>
+        <span>Teams scoring 70+ who need minor refinements</span>
+      </div>
+
+      <ul class="features">
+        <li>Follow the 90-day action plan above</li>
+        <li>Use online resources and practice with colleagues</li>
+        <li>Track progress through self-assessment</li>
+      </ul>
+
+      <div class="timeline">
+        <strong>TIMELINE</strong>
+        <span>2-3 months for noticeable improvement</span>
+      </div>
+    </div>
+
+    <!-- Path 2: Professional Coaching -->
+    <div class="path-card recommended">
+      <div class="recommend-badge">RECOMMENDED FOR YOU</div>
+      <div class="card-icon">
+        <Users size={40} />
+      </div>
+      <h3>Professional Coaching</h3>
+
+      <div class="best-for">
+        <strong>BEST FOR:</strong>
+        <span>Teams needing structured, expert-guided improvement</span>
+      </div>
+
+      <ul class="features">
+        <li>Customized training for your specific gaps</li>
+        <li>Real-time feedback and correction</li>
+        <li>Accountability and structured practice</li>
+      </ul>
+
+      <div class="timeline">
+        <strong>TIMELINE</strong>
+        <span>4-8 weeks for significant transformation</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final CTA -->
+  <div class="final-cta">
+    <h3>Ready to Transform Your Team's Communication?</h3>
+    <p>
+      Unlock your team's full potential. Book a
+      <strong>FREE 30-minute strategy call</strong> to review your results and build
+      a custom action plan.
+    </p>
+
+    <a href="/en/book" class="cta-button">
+      <Calendar size={20} />
+      Book Your FREE Strategy Call
+    </a>
+
+    <p class="risk-reversal">No credit card required. Zero obligation.</p>
+  </div>
+</>
+
+<!-- 
+  All styles for this section are scoped within the component.
+  The mobile-first stacking fix is in the .recommendation-paths
+  and the @media query.
+-->
+<style>
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .section-subhead {
+    font-size: 1.125rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* --- This is the key fix --- */
+  .recommendation-paths {
+    display: grid;
+    /* 1. Mobile-First: Default to 1 column */
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* Gap for mobile stack */
+    margin-bottom: 3rem;
+  }
+
+  .path-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%; /* Make cards equal height in grid */
+  }
+
+  .card-icon {
+    color: #3b82f6; /* Blue icon */
+    margin-bottom: 1rem;
+  }
+
+  .path-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+  }
+
+  .best-for {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .best-for strong {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #475569;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .best-for span {
+    font-size: 0.9rem;
+    color: #334155;
+  }
+
+  .features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Pushes timeline to bottom */
+  }
+
+  .features li {
+    font-size: 0.95rem;
+    color: #475569;
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #22c55e; /* Green check */
+    font-weight: 700;
+  }
+
+  .timeline {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+
+  .timeline strong {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #475569;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline span {
+    font-size: 0.9rem;
+    color: #334155;
+  }
+
+  /* --- Recommended Card Styles --- */
+  .path-card.recommended {
+    background: #1e3a8a; /* Dark blue */
+    border: none;
+    color: #ffffff;
+  }
+
+  .recommend-badge {
+    position: absolute;
+    top: -14px;
+    right: 20px;
+    background: #f97316; /* Orange */
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+  }
+
+  .path-card.recommended .card-icon {
+    color: #ffffff;
+  }
+
+  .path-card.recommended h3 {
+    color: #ffffff;
+  }
+
+  .path-card.recommended .best-for {
+    background: #2563eb; /* Lighter blue */
+  }
+
+  .path-card.recommended .best-for strong {
+    color: #dbeafe;
+  }
+
+  .path-card.recommended .best-for span {
+    color: #ffffff;
+  }
+
+  .path-card.recommended .features li {
+    color: #dbeafe;
+  }
+
+  .path-card.recommended .features li::before {
+    color: #dbeafe;
+  }
+
+  .path-card.recommended .timeline {
+    border-top-color: #2563eb;
+  }
+
+  .path-card.recommended .timeline strong {
+    color: #dbeafe;
+  }
+
+  .path-card.recommended .timeline span {
+    color: #ffffff;
+  }
+
+  /* --- Final CTA Box --- */
+  .final-cta {
+    text-align: center;
+    padding: 4rem 3rem;
+    background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+    border-radius: 20px;
+    margin-top: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .final-cta h3 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .final-cta p {
+    font-size: 1.25rem;
+    color: #1e293b;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.25rem 3rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4);
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(249, 115, 22, 0.5);
+  }
+
+  .cta-button:active {
+    transform: translateY(0);
+  }
+
+  .risk-reversal {
+    font-size: 1rem;
+    color: #64748b;
+    margin-top: 1rem !important;
+    margin-bottom: 0;
+    font-style: italic;
+  }
+
+  /* --- Mobile Adjustments --- */
+  @media (max-width: 767px) {
+    .final-cta {
+      padding: 2rem 1.5rem;
+    }
+
+    .final-cta p {
+      font-size: 1rem;
+    }
+
+    .cta-button {
+      font-size: 1rem;
+      padding: 1rem 2rem;
+    }
+  }
+
+  /* --- 2. The Desktop Media Query --- */
+  @media (min-width: 768px) {
+    .recommendation-paths {
+      /* Switch to 2 columns on screens 768px wide and up */
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem; /* A bit more gap for desktop */
+    }
+
+    .report-page {
+      padding: 3rem 1.5rem;
+    }
+
+    .final-cta {
+      padding: 4rem 3rem;
+    }
+  }
+</style>

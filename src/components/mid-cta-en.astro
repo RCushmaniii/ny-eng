@@ -1,0 +1,101 @@
+---
+// Mid-Report CTA (English) - Secondary conversion point after Business Impact
+import { Calendar } from "lucide-astro";
+---
+
+<div class="mid-cta">
+  <div class="mid-cta-content">
+    <h3>Ready to Transform These Challenges Into Strengths?</h3>
+    <p>
+      Book a <strong>FREE 30-minute strategy call</strong> to get personalized guidance on closing your team's communication gaps.
+    </p>
+    <a href="/en/book" class="mid-cta-button">
+      <Calendar size={20} />
+      Book Your Free Strategy Call
+    </a>
+    <p class="mid-cta-note">No pressure. No obligation. Just actionable insights.</p>
+  </div>
+</div>
+
+<style>
+  .mid-cta {
+    margin: 3rem 0;
+    padding: 0;
+  }
+
+  .mid-cta-content {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border: 2px solid #3b82f6;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+
+  .mid-cta h3 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .mid-cta p {
+    font-size: 1.125rem;
+    color: #334155;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mid-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+  }
+
+  .mid-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  }
+
+  .mid-cta-button:active {
+    transform: translateY(0);
+  }
+
+  .mid-cta-note {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-top: 1rem !important;
+    margin-bottom: 0 !important;
+    font-style: italic;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 767px) {
+    .mid-cta-content {
+      padding: 2rem 1.5rem;
+    }
+
+    .mid-cta p {
+      font-size: 1rem;
+    }
+
+    .mid-cta-button {
+      font-size: 1rem;
+      padding: 0.875rem 2rem;
+    }
+  }
+</style>

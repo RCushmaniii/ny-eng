@@ -39,7 +39,11 @@ export type TKey =
   | "services/startup-founders"
   | "services/tech-english"
   | "services/technical-sales-english"
-  | `category/${CategorySlug}`;
+  | `category/${CategorySlug}`
+  | "quiz"
+  | "quiz/start"
+  | "quiz/results"
+  | "quiz/report";
 
 export const routeFor: Record<Locale, Record<TKey, string>> = {
   en: {
@@ -75,6 +79,10 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "category/career-leadership": "/en/category/career-leadership/",
     "category/english-coaching": "/en/category/english-coaching/",
     "category/executive-english": "/en/category/executive-english/",
+    quiz: "/en/quiz/",
+    "quiz/start": "/en/quiz/start/",
+    "quiz/results": "/en/quiz/results/",
+    "quiz/report": "/en/quiz/report/",
   },
   es: {
     "404": "/es/404/",
@@ -109,6 +117,10 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "category/career-leadership": "/es/categoria/carrera-liderazgo/",
     "category/english-coaching": "/es/categoria/coaching-en-ingles/",
     "category/executive-english": "/es/categoria/ingles-ejecutivo/",
+    quiz: "/es/quiz/",
+    "quiz/start": "/es/quiz/start/",
+    "quiz/results": "/es/quiz/results/",
+    "quiz/report": "/es/quiz/report/",
   },
 };
 
@@ -143,6 +155,7 @@ export function getAllTKeys(): TKey[] {
     "home",
     "about", 
     "contact",
+    "book",
     "blog",
     "services",
     "testimonials",
@@ -168,5 +181,9 @@ export function getAllTKeys(): TKey[] {
     "category/career-leadership",
     "category/english-coaching",
     "category/executive-english",
+    "quiz",
+    "quiz/start",
+    "quiz/results",
+    "quiz/report",
   ];
 }

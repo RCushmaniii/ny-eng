@@ -23,7 +23,7 @@
  *     WEEKDAY_AFTERNOON_HOURS   (default: 16:00-20:00)
  *     SATURDAY_HOURS            (default: 09:00-13:00)
  *     ALLOWED_ORIGINS           (comma-separated)
- *     TIMEZONE                  (default: America/New_York)
+ *     TIMEZONE                  (default: America/Mexico_City)
  *     CONTACT_WEBHOOK_URL       (optional)
  */
 
@@ -32,7 +32,7 @@ export default {
       const url  = new URL(request.url);
       const path = url.pathname.replace(/\/+$/, "") || "/";
       const lang = getLang(url, request);
-      const tz   = env.TIMEZONE || "America/New_York";
+      const tz   = env.TIMEZONE || "America/Mexico_City";
   
       // CORS preflight
       if (request.method === "OPTIONS") return corsPreflight(request, env);
@@ -57,7 +57,7 @@ export default {
               has_google_refresh_token: !!env.GOOGLE_REFRESH_TOKEN,
               has_calendar_id: !!(env.CALENDAR_ID || env.GOOGLE_CALENDAR_ID),
               calendar_id: (env.CALENDAR_ID || env.GOOGLE_CALENDAR_ID) ? `${(env.CALENDAR_ID || env.GOOGLE_CALENDAR_ID).substring(0, 5)}...` : 'MISSING',
-              timezone: env.TIMEZONE || 'America/New_York (default)',
+              timezone: env.TIMEZONE || 'America/Mexico_City (default)',
               weekday_morning: env.WEEKDAY_MORNING_HOURS || '09:00-14:00 (default)',
               weekday_afternoon: env.WEEKDAY_AFTERNOON_HOURS || '16:00-20:00 (default)',
               saturday_hours: env.SATURDAY_HOURS || '09:00-13:00 (default)',
@@ -176,17 +176,25 @@ export default {
       allSlots.push(...blockSlots);
     }
   
-    // Filter out busy slots
+    // Get current time in the target timezone
+    const nowUTC = new Date();
+    // Add 3.5 hour buffer for preparation time (210 minutes)
+    const minBookingTime = new Date(nowUTC.getTime() + (210 * 60 * 1000));
+    
+    // Filter out busy slots AND past slots (with 3.5 hour buffer)
     // Convert local time slots to UTC for comparison with busy times
     const availableSlots = allSlots.filter((time) => {
-      // Parse time as Mexico City time and convert to UTC
+      // Parse time in Mexico City timezone (UTC-6) and convert to UTC
       const [h, m] = time.split(":").map(Number);
-      // Create date in Mexico City timezone (UTC-6)
-      const localDate = new Date(`${dateStr}T${pad(h)}:${pad(m)}:00`);
-      // Add 6 hours to convert Mexico City time to UTC
-      const slotStart = new Date(localDate.getTime() + (6 * 60 * 60 * 1000));
+      // Create ISO string with explicit timezone offset for Mexico City (UTC-6)
+      // When it's 16:00 in Mexico City, it's 22:00 UTC (16 + 6)
+      const slotStart = new Date(`${dateStr}T${pad(h)}:${pad(m)}:00-06:00`);
       const slotEnd   = new Date(slotStart.getTime() + 30 * 60 * 1000);
       
+      // Filter out slots that are less than 3.5 hours from now
+      if (slotStart < minBookingTime) return false;
+      
+      // Filter out slots that overlap with busy times
       return !busy.some(b => overlaps(slotStart, slotEnd, b.start, b.end));
     });
     
@@ -329,10 +337,20 @@ export default {
   
   function toISO(dateStr, hhmm, timeZone) {
     const [h, m] = hhmm.split(":").map(Number);
-    // Create a date object and convert to ISO string
-    // This creates a UTC timestamp that we'll use with the timeZone field
-    const date = new Date(`${dateStr}T${pad(h)}:${pad(m)}:00Z`);
+    // For Mexico City: Create date in local time, then format as ISO
+    // Mexico City is typically UTC-6 (CST) or UTC-5 (CDT during DST)
+    // Using -06:00 as Mexico doesn't observe DST as of 2022
+    const date = new Date(`${dateStr}T${pad(h)}:${pad(m)}:00-06:00`);
     return date.toISOString();
+  }
+  
+  function getTimezoneOffset(timeZone) {
+    // Mexico City is UTC-6 (no DST since 2022)
+    if (timeZone === 'America/Mexico_City') return '-06:00';
+    // New York is UTC-5 (EST) or UTC-4 (EDT)
+    if (timeZone === 'America/New_York') return '-05:00';
+    // Default to UTC-6 for Mexico City
+    return '-06:00';
   }
   
   function generateSlots(startHHMM, endHHMM, stepMin = 30) {

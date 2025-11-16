@@ -1,0 +1,241 @@
+---
+import Base from '@layouts/Base.astro';
+import Button from '@components/ui/Button.astro';
+import { Clock, CheckCircle, Shield } from 'lucide-astro';
+
+const title = "Start Your Speaking Confidence Assessment";
+const description = "Test your Business English confidence in 2 minutes! Answer 10 quick questions to discover your communication strengths and gaps with North American clients.";
+---
+
+<Base 
+  title={title} 
+  description={description}
+  lang="en"
+  tkey="quiz/start"
+  hideCta={true}
+>
+
+<section class="quiz-start pt-20 pb-16 md:pt-24 md:pb-20">
+  <div class="container-narrow">
+    <div class="start-content">
+      <h1>Let's Assess Your Speaking Confidence</h1>
+      
+      <p class="intro-text">
+        You're about to take a quick assessment that will reveal exactly where your team 
+        stands when it comes to high-stakes English communication.
+      </p>
+
+      <div class="what-to-expect">
+        <h2>What to Expect</h2>
+        
+        <div class="expect-items">
+          <div class="expect-item">
+            <div class="expect-icon">
+              <Clock size={24} />
+            </div>
+            <div class="expect-content">
+              <h3>3 Minutes</h3>
+              <p>10 quick questions about real business scenarios</p>
+            </div>
+          </div>
+
+          <div class="expect-item">
+            <div class="expect-icon">
+              <CheckCircle size={24} />
+            </div>
+            <div class="expect-content">
+              <h3>Instant Results</h3>
+              <p>Your Communication Confidence Score (0-100) delivered immediately</p>
+            </div>
+          </div>
+
+          <div class="expect-item">
+            <div class="expect-icon">
+              <Shield size={24} />
+            </div>
+            <div class="expect-content">
+              <h3>100% Confidential</h3>
+              <p>Your responses are private and used only for your personalized report</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="instructions">
+        <h2>Instructions</h2>
+        <ul>
+          <li>Answer honestly based on your current situation</li>
+          <li>Think about your team's typical performance, not best-case scenarios</li>
+          <li>There are no "wrong" answers—this is about identifying opportunities</li>
+          <li>You can't go back, so read each question carefully</li>
+        </ul>
+      </div>
+
+      <div class="cta-section">
+        <Button 
+          href="/en/quiz/question/1" 
+          variant="primary" 
+          size="lg"
+          class="start-button"
+        >
+          Start Assessment →
+        </Button>
+        
+        <p class="privacy-note">
+          We respect your privacy. Your email will only be used to send your results.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Base>
+
+<style>
+.container-narrow {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.quiz-start {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+}
+
+.start-content {
+  background: white;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.intro-text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #475569;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.what-to-expect,
+.instructions {
+  margin-bottom: 3rem;
+}
+
+.what-to-expect h2,
+.instructions h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+.expect-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.expect-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.expect-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.expect-content h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.expect-content p {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.instructions ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.instructions li {
+  padding-left: 1.5rem;
+  position: relative;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.instructions li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.cta-section {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.start-button {
+  margin-bottom: 1rem;
+}
+
+.privacy-note {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .start-content {
+    padding: 2rem 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+}
+</style>
+
+<script>
+// Clear any previous quiz data when starting fresh
+sessionStorage.removeItem('quizAnswers');
+sessionStorage.removeItem('quizScore');
+sessionStorage.removeItem('submissionId');
+sessionStorage.removeItem('leadData');
+</script>

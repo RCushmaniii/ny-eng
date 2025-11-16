@@ -1,0 +1,72 @@
+---
+/**
+ * QuizSchema.astro - Structured data for quiz pages
+ * Helps Google understand the quiz as an educational learning resource
+ */
+
+export interface Props {
+  lang: "en" | "es";
+}
+
+const { lang } = Astro.props;
+
+const isEnglish = lang === "en";
+
+const quizSchema = {
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "learningResourceType": "Assessment",
+  "name": isEnglish
+    ? "Speaking Confidence Quiz: Are You Ready for North American Clients?"
+    : "Quiz de Confianza al Hablar: ¿Estás Listo para Clientes Norteamericanos?",
+  "description": isEnglish
+    ? "Test your Business English confidence in 2 minutes! Discover the hidden speaking gaps costing your IT team contracts, credibility, and career growth with North American clients."
+    : "¡Evalúa tu confianza en inglés de negocios en 2 minutos! Descubre las brechas de comunicación que le cuestan contratos, credibilidad y crecimiento profesional a tu equipo de TI con clientes norteamericanos.",
+  "about": {
+    "@type": "Thing",
+    "name": isEnglish
+      ? "Business English communication skills for IT professionals"
+      : "Habilidades de comunicación en inglés de negocios para profesionales de TI"
+  },
+  "educationalLevel": "Professional",
+  "educationalUse": "Assessment",
+  "inLanguage": isEnglish ? "en-US" : "es-MX",
+  "timeRequired": "PT3M",
+  "interactivityType": "active",
+  "isAccessibleForFree": true,
+  "publisher": {
+    "@type": "Organization",
+    "name": "New York English Teacher",
+    "url": "https://www.nyenglishteacher.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.nyenglishteacher.com/images/logos/new-york-english-512x512.png",
+      "width": 512,
+      "height": 512
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Robert Cushman",
+    "jobTitle": "Business English Coach",
+    "url": "https://www.nyenglishteacher.com/en/about/"
+  },
+  "hasPart": [
+    {
+      "@type": "Question",
+      "eduQuestionType": "Multiple choice",
+      "text": isEnglish
+        ? "Communication confidence assessment questions"
+        : "Preguntas de evaluación de confianza en comunicación"
+    }
+  ],
+  "assesses": isEnglish
+    ? "Business English speaking confidence and communication skills in high-stakes professional situations"
+    : "Confianza al hablar en inglés de negocios y habilidades de comunicación en situaciones profesionales de alto riesgo",
+  "teaches": isEnglish
+    ? "Identifying communication gaps in professional English speaking"
+    : "Identificación de brechas de comunicación al hablar inglés profesional"
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(quizSchema)} />

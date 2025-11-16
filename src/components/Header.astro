@@ -21,9 +21,10 @@ interface Props {
   };
   translationSlugEs?: string;
   translationSlugEn?: string;
+  hideLanguageSwitcher?: boolean;
 }
 
-const { content, translationSlugEs, translationSlugEn } = Astro.props;
+const { content, translationSlugEs, translationSlugEn, hideLanguageSwitcher } = Astro.props;
 
 // Import i18n helpers
 import { routeFor, type TKey } from '../lib/i18n';
@@ -162,28 +163,30 @@ const isCurrentPage = (link: string | undefined) => {
             ))}
           </ul>
         </nav>
-        <div class="flex items-center" id="lang-switcher-container">
-          {!currentPath.startsWith('/es') && translationSlugEs && (
-            <a
-              href={translationSlugEs}
-              class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
-              data-lang="es"
-              data-astro-reload
-            >
-              <Image src={mexFlag} alt="Bandera de México" width={24} height={24} class="w-6 h-6" />
-            </a>
-          )}
-          {!currentPath.startsWith('/en') && translationSlugEn && (
-            <a
-              href={translationSlugEn}
-              class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
-              data-lang="en"
-              data-astro-reload
-            >
-              <Image src={usaFlag} alt="USA Flag" width={24} height={24} class="w-6 h-6" />
-            </a>
-          )}
-        </div>
+        {!hideLanguageSwitcher && (
+          <div class="flex items-center" id="lang-switcher-container">
+            {!currentPath.startsWith('/es') && translationSlugEs && (
+              <a
+                href={translationSlugEs}
+                class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
+                data-lang="es"
+                data-astro-reload
+              >
+                <Image src={mexFlag} alt="Bandera de México" width={24} height={24} class="w-6 h-6" />
+              </a>
+            )}
+            {!currentPath.startsWith('/en') && translationSlugEn && (
+              <a
+                href={translationSlugEn}
+                class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
+                data-lang="en"
+                data-astro-reload
+              >
+                <Image src={usaFlag} alt="USA Flag" width={24} height={24} class="w-6 h-6" />
+              </a>
+            )}
+          </div>
+        )}
         <div class="hidden lg:block">
           <Button
             href={content.cta.link}
@@ -240,32 +243,34 @@ const isCurrentPage = (link: string | undefined) => {
         ))}
       </ul>
       <!-- Language Switcher for Mobile Menu -->
-      <div class="mt-6 mb-4 flex justify-center gap-4">
-        {translationSlugEs && typeof translationSlugEs === 'string' && !currentPath.startsWith('/es') && (
-          <a
-            href={translationSlugEs}
-            class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
-            aria-label="Cambiar a Español"
-            data-lang="es"
-            data-astro-reload
-          >
-            <Image src={mexFlag} alt="Bandera de México" width={24} height={24} class="w-6 h-6" />
-            <span class="text-sm font-medium">Español</span>
-          </a>
-        )}
-        {translationSlugEn && typeof translationSlugEn === 'string' && !currentPath.startsWith('/en') && (
-          <a
-            href={translationSlugEn}
-            class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
-            aria-label="Switch to English"
-            data-lang="en"
-            data-astro-reload
-          >
-            <Image src={usaFlag} alt="USA Flag" width={24} height={24} class="w-6 h-6" />
-            <span class="text-sm font-medium">English</span>
-          </a>
-        )}
-      </div>
+      {!hideLanguageSwitcher && (
+        <div class="mt-6 mb-4 flex justify-center gap-4">
+          {translationSlugEs && typeof translationSlugEs === 'string' && !currentPath.startsWith('/es') && (
+            <a
+              href={translationSlugEs}
+              class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
+              aria-label="Cambiar a Español"
+              data-lang="es"
+              data-astro-reload
+            >
+              <Image src={mexFlag} alt="Bandera de México" width={24} height={24} class="w-6 h-6" />
+              <span class="text-sm font-medium">Español</span>
+            </a>
+          )}
+          {translationSlugEn && typeof translationSlugEn === 'string' && !currentPath.startsWith('/en') && (
+            <a
+              href={translationSlugEn}
+              class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
+              aria-label="Switch to English"
+              data-lang="en"
+              data-astro-reload
+            >
+              <Image src={usaFlag} alt="USA Flag" width={24} height={24} class="w-6 h-6" />
+              <span class="text-sm font-medium">English</span>
+            </a>
+          )}
+        </div>
+      )}
       
       <div class="mt-4 pb-4 flex flex-col gap-3">
         <Button href={normalizePath(content.cta.link)} variant="primary" size="md" class="w-full text-center">
@@ -339,5 +344,63 @@ const isCurrentPage = (link: string | undefined) => {
         }
       });
     });
+  }
+
+  // Quiz language switcher warning
+  function handleQuizLanguageSwitch(e: Event) {
+    const currentPath = window.location.pathname;
+    const isOnQuizPage = currentPath.includes('/quiz/');
+    
+    if (!isOnQuizPage) return; // Not on quiz page, allow normal navigation
+    
+    // Don't show warning on start page - user hasn't started yet
+    if (currentPath.includes('/quiz/start')) return;
+    
+    const target = e.currentTarget as HTMLAnchorElement;
+    const targetLang = target.getAttribute('data-lang');
+    const targetUrl = target.getAttribute('href');
+    
+    if (!targetUrl) return;
+    
+    // Always show warning on quiz pages (question, results, report)
+    // User is in the middle of quiz flow
+    e.preventDefault();
+    
+    const message = targetLang === 'es' 
+      ? `Switching to Spanish will restart your quiz and you'll lose your current progress.\n\nDo you want to continue?`
+      : `Cambiar a inglés reiniciará tu quiz y perderás tu progreso actual.\n\n¿Deseas continuar?`;
+    
+    if (confirm(message)) {
+      // Clear quiz data
+      sessionStorage.removeItem('quizAnswers');
+      sessionStorage.removeItem('quizScore');
+      sessionStorage.removeItem('submissionId');
+      sessionStorage.removeItem('leadData');
+      
+      // Redirect to start page in new language
+      const startUrl = targetLang === 'es' ? '/es/quiz/start/' : '/en/quiz/start/';
+      window.location.href = startUrl;
+    }
+  }
+  
+  // Initialize language switcher handlers after DOM is ready
+  function initQuizLanguageSwitcher() {
+    const langFlags = document.querySelectorAll('.lang-flag');
+    if (langFlags.length === 0) {
+      // Retry after a short delay if elements not found yet
+      setTimeout(initQuizLanguageSwitcher, 100);
+      return;
+    }
+    
+    langFlags.forEach(link => {
+      link.addEventListener('click', handleQuizLanguageSwitch);
+    });
+  }
+  
+  // Start initialization
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initQuizLanguageSwitcher);
+  } else {
+    initQuizLanguageSwitcher();
   }
 </script>

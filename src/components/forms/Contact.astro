@@ -79,6 +79,7 @@ const initialSubmitText = C.submitButton;
     method="POST"
     class="space-y-6 bg-white p-6 md:p-8 rounded-lg shadow-md"
     style="font-family: 'Noto Sans KR', sans-serif;"
+    novalidate
 >
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Input
@@ -184,7 +185,9 @@ const initialSubmitText = C.submitButton;
                 return;
             }
 
-            if (!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+            // Strict email validation with TLD whitelist
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|org|net|edu|gov|mil|co|uk|ca|au|de|jp|fr|br|in|ru|cn|mx|es|it|nl|se|no|dk|fi|be|ch|at|nz|sg|hk|ie|za|pl|gr|cz|pt|hu|ro|bg|hr|sk|si|lt|lv|ee|is|lu|mt|cy|io|ai|app|dev|tech|online|site|store|shop|blog|info|biz|name|pro|mobi|tel|travel|museum|aero|coop|jobs|cat|asia|xxx|post|xxx|int)$/i;
+            if (!email.value || !emailRegex.test(email.value)) {
                 statusDiv.textContent = jsStrings.validationEmail;
                 statusDiv.classList.add("text-red-600");
                 email.focus();

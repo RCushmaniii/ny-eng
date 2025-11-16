@@ -1,0 +1,360 @@
+---
+import Base from '@layouts/Base.astro';
+import Button from '@components/ui/Button.astro';
+import { questionsEn } from '@data/quiz/questions';
+
+export function getStaticPaths() {
+  return questionsEn.map((q) => ({
+    params: { id: q.id.toString() },
+    props: { question: q }
+  }));
+}
+
+const { id } = Astro.params;
+const { question } = Astro.props;
+
+// Validate question exists (handles direct URL access edge case)
+const currentQuestion = parseInt(id || '1');
+const validQuestion = question || questionsEn.find(q => q.id === currentQuestion);
+const hasValidQuestion = !!validQuestion;
+
+const totalQuestions = questionsEn.length;
+const progress = (currentQuestion / totalQuestions) * 100;
+
+const title = hasValidQuestion 
+  ? `Question ${currentQuestion} of ${totalQuestions} | Speaking Confidence Quiz`
+  : 'Quiz Error | Speaking Confidence Quiz';
+const description = "Test your Business English confidence in 2 minutes! Discover the hidden speaking gaps costing your team contracts and credibility with North American clients.";
+---
+
+<Base 
+  title={title} 
+  description={description}
+  lang="en"
+  customCanonical="https://www.nyenglishteacher.com/en/quiz/"
+  customHreflangs={[
+    { lang: "en-US", href: `https://www.nyenglishteacher.com/en/quiz/question/${id}/` },
+    { lang: "es-MX", href: `https://www.nyenglishteacher.com/es/quiz/question/${id}/` }
+  ]}
+  hideCta={true}
+  hideLanguageSwitcher={true}
+>
+
+<section class="quiz-question pt-28 pb-16 md:pt-32 md:pb-20">
+  <div class="container-narrow">
+    
+    {!hasValidQuestion ? (
+      <!-- No Quiz Data Warning -->
+      <div class="no-quiz-warning">
+        <div class="warning-content">
+          <div class="warning-icon">⚠️</div>
+          <h1>Please Start from the Beginning</h1>
+          <p class="warning-text">
+            To get accurate results, you need to start the quiz from the beginning and answer all questions in order.
+          </p>
+          <p class="warning-subtext">
+            The Communication Confidence Assessment takes about 90 seconds and will give you a personalized score.
+          </p>
+          <Button 
+            href="/en/quiz/question/1"
+            variant="primary" 
+            size="lg"
+            class="start-quiz-button"
+          >
+            Start the Quiz →
+          </Button>
+        </div>
+      </div>
+    ) : (
+      <>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress-fill" style={`width: ${progress}%`}></div>
+      </div>
+      <div class="progress-text">
+        Question {currentQuestion} of {totalQuestions}
+      </div>
+    </div>
+
+    <!-- Question Card -->
+    <div class="question-card">
+      <h1 class="question-text">{validQuestion.question}</h1>
+
+      <form class="options-form" id="quiz-form">
+        <input type="hidden" name="questionId" value={validQuestion.id} />
+        
+        {validQuestion.options.map((option, index) => (
+          <label class="option-label">
+            <input 
+              type="radio" 
+              name="answer" 
+              value={option.value}
+              class="option-radio"
+              required
+            />
+            <div class="option-content">
+              <span class="option-letter">{String.fromCharCode(65 + index)}</span>
+              <span class="option-text">{option.text}</span>
+            </div>
+          </label>
+        ))}
+
+        <div class="button-group">
+          <Button 
+            type="submit"
+            variant="primary" 
+            size="lg"
+            class="next-button"
+          >
+            {currentQuestion === totalQuestions ? 'See My Results →' : 'Next Question →'}
+          </Button>
+        </div>
+      </form>
+    </div>
+    </>
+    )}
+  </div>
+</section>
+
+</Base>
+
+<style>
+.container-narrow {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.quiz-question {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+  min-height: calc(100vh - 80px);
+}
+
+/* No Quiz Warning */
+.no-quiz-warning {
+  background: white;
+  padding: 4rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.warning-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.warning-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.no-quiz-warning h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.warning-text {
+  font-size: 1.25rem;
+  color: #475569;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.warning-subtext {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.start-quiz-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Progress Bar */
+.progress-container {
+  margin-bottom: 2rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Question Card */
+.question-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.question-text {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.4;
+  margin-bottom: 2.5rem;
+}
+
+/* Options */
+.options-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option-label {
+  display: block;
+  cursor: pointer;
+}
+
+.option-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.option-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.option-label:hover .option-content {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.option-radio:checked + .option-content {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.option-letter {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border: 2px solid #cbd5e1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #64748b;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.option-radio:checked + .option-content .option-letter {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: white;
+}
+
+.option-text {
+  font-size: 1rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.option-radio:checked + .option-content .option-text {
+  color: #0f172a;
+  font-weight: 500;
+}
+
+/* Button Group */
+.button-group {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .question-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .question-text {
+    font-size: 1.5rem;
+  }
+
+  .option-content {
+    padding: 1rem;
+  }
+}
+</style>
+
+<script>
+// Handle quiz form submission and store answers
+const form = document.getElementById('quiz-form');
+
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(form as HTMLFormElement);
+    const questionId = formData.get('questionId');
+    const answer = formData.get('answer');
+    
+    if (!answer) return;
+    
+    // Get existing answers from sessionStorage
+    const answersJson = sessionStorage.getItem('quizAnswers');
+    const answers = answersJson ? JSON.parse(answersJson) : {};
+    
+    // Store this answer with 'q' prefix to match expected format
+    const answerKey = `q${questionId}`;
+    answers[answerKey] = parseInt(answer as string);
+    sessionStorage.setItem('quizAnswers', JSON.stringify(answers));
+    
+    // Navigate to next question or results
+    const currentId = parseInt(questionId as string);
+    const totalQuestions = 6;
+    
+    if (currentId < totalQuestions) {
+      window.location.href = `/en/quiz/question/${currentId + 1}/`;
+    } else {
+      window.location.href = '/en/quiz/results/';
+    }
+  });
+}
+</script>

@@ -4,6 +4,8 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import icon from 'astro-icon';
 import sitemap from '@astrojs/sitemap';
+import node from '@astrojs/node';
+import react from '@astrojs/react';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -22,7 +24,10 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   site: SITE,
-  output: 'static',
+  output: 'server',
+  adapter: node({
+    mode: 'standalone'
+  }),
   
   image: {
     service: {
@@ -51,6 +56,12 @@ export default defineConfig({
     '/contact': '/en/contact/',
     '/about': '/en/about/',
     '/testimonials': '/en/testimonials/',
+    '/book': '/en/book/',
+    
+    // Redirect English paths on Spanish side to proper Spanish URLs
+    '/es/testimonials': '/es/testimonios/',
+    '/es/services': '/es/servicios/',
+    '/es/book': '/es/reservar/',
     
     // Redirect /es/category/ to /es/categoria/ (Spanish category URLs)
     '/es/category/business-english': '/es/categoria/ingles-para-negocios/',
@@ -91,6 +102,7 @@ export default defineConfig({
   },
 
   integrations: [
+    react(),
     tailwind({ applyBaseStyles: false }),
     icon({ include: { lucide: ['*'] } }),
 
@@ -128,13 +140,16 @@ export default defineConfig({
         
         return !p.includes('/api/') && 
                !p.includes('/_') && 
+               !p.includes('/dev/') &&  // Exclude dev documentation from production
                !p.includes('[') && 
                !p.includes('#') &&
                !isRedirect &&
                // Prevent duplicate language prefixes
                !p.match(/\/(en|es)\/.*\/(en|es)\//) &&
                // Exclude /es/category/ URLs (use /es/categoria/ instead)
-               !p.match(/^\/es\/category\//);
+               !p.match(/^\/es\/category\//) &&
+               // Exclude backup files
+               !p.includes('-bak');
       },
 
       // Normalize URLs and set priorities
