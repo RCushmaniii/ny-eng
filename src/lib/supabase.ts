@@ -71,9 +71,14 @@ export interface QuizSubmissionPayload {
   company?: string;
   phone?: string;
   
-  // Score (calculated by frontend)
-  total_score: number;
+  // Quiz metadata
+  quiz_type: string;
+  quiz_version: string;
+  language: 'en' | 'es';
+  
+  // Scoring snapshot
   raw_score: number;
+  total_score: number;
   score_tier: 'Credibility Block' | 'Million-Dollar Gap' | 'Conversation-Ready';
   category_scores: {
     clarity: number;
@@ -82,26 +87,45 @@ export interface QuizSubmissionPayload {
     negotiation: number;
     cultural: number;
   };
-  primary_gap: string;
-  secondary_gap: string;
+  primary_gap: {
+    category: string;
+    categoryName: string;
+    score: number;
+    impact: string;
+    recommendation: string;
+    urgency: 'high' | 'medium' | 'low';
+  };
+  secondary_gap: {
+    category: string;
+    categoryName: string;
+    score: number;
+    impact: string;
+    recommendation: string;
+    urgency: 'high' | 'medium' | 'low';
+  };
   
-  // Answers (10 questions)
+  // Answer details (6 questions)
   answers: Array<{
     question_number: number;
     question_text: string;
     answer_text: string;
+    answer_index: number;
     points: number;
     category: string;
   }>;
   
-  // Metadata
-  language: 'en' | 'es';
+  // Behavioral data
+  completion_time_ms?: number;
+  device_type?: string;
+  browser?: string;
+  referrer?: string;
+  
+  // Marketing attribution
   utm_source?: string;
   utm_medium?: string;
   utm_campaign?: string;
-  referrer?: string;
-  gdpr_consent?: boolean;
-  marketing_opt_in?: boolean;
+  utm_content?: string;
+  utm_term?: string;
 }
 
 // =============================================================================
@@ -117,24 +141,37 @@ export async function submitQuiz(payload: QuizSubmissionPayload) {
     const { data: submission, error: submissionError } = await supabase
       .from('quiz_submissions')
       .insert({
+        // Lead info
         name: payload.name,
         email: payload.email,
         company: payload.company || null,
         phone: payload.phone || null,
-        total_score: payload.total_score,
+        
+        // Quiz metadata
+        quiz_type: payload.quiz_type,
+        quiz_version: payload.quiz_version,
+        language: payload.language,
+        
+        // Scoring snapshot
         raw_score: payload.raw_score,
+        total_score: payload.total_score,
         score_tier: payload.score_tier,
         category_scores: payload.category_scores,
         primary_gap: payload.primary_gap,
         secondary_gap: payload.secondary_gap,
-        language: payload.language,
+        
+        // Behavioral data
+        completion_time_ms: payload.completion_time_ms || null,
+        device_type: payload.device_type || null,
+        browser: payload.browser || null,
+        referrer: payload.referrer || null,
+        
+        // Marketing attribution
         utm_source: payload.utm_source || null,
         utm_medium: payload.utm_medium || null,
         utm_campaign: payload.utm_campaign || null,
-        referrer: payload.referrer || null,
-        gdpr_consent: payload.gdpr_consent || false,
-        marketing_opt_in: payload.marketing_opt_in || false,
-        viewed_report: true, // They'll see the report immediately
+        utm_content: payload.utm_content || null,
+        utm_term: payload.utm_term || null,
       })
       .select()
       .single();
@@ -154,6 +191,7 @@ export async function submitQuiz(payload: QuizSubmissionPayload) {
       question_number: a.question_number,
       question_text: a.question_text,
       answer_text: a.answer_text,
+      answer_index: a.answer_index,
       points: a.points,
       category: a.category,
     }));

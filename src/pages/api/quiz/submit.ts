@@ -3,15 +3,17 @@
  * 
  * POST /api/quiz/submit
  * 
- * Accepts quiz form data and stores in Supabase
+ * Accepts quiz form data and stores in Supabase.
+ * Now supports dynamic quiz types via config system.
  */
 
 export const prerender = false;
 
 import type { APIRoute } from 'astro';
 import { submitQuiz, type QuizSubmissionPayload } from '@/lib/supabase';
-import { calculateQuizScore, QUESTION_SCORES } from '@/data/quiz/scoring';
-import { questionsEn, questionsEs } from '@/data/quiz/questions';
+import { calculateQuizScore } from '@/data/quiz/scoring';
+import { getQuizConfig } from '@/data/quiz/configs';
+import type { QuizType, Language } from '@/data/quiz/types';
 
 export const POST: APIRoute = async ({ request }) => {
   try {
@@ -19,11 +21,11 @@ export const POST: APIRoute = async ({ request }) => {
     const body = await request.json();
     
     // Validate required fields
-    if (!body.name || !body.email || !body.answers || !body.language) {
+    if (!body.name || !body.email || !body.answers || !body.language || !body.quizType) {
       return new Response(
         JSON.stringify({
           success: false,
-          error: 'Missing required fields: name, email, answers, language',
+          error: 'Missing required fields: name, email, answers, language, quizType',
         }),
         {
           status: 400,
@@ -32,61 +34,89 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    // Get questions based on language
-    const questions = body.language === 'es' ? questionsEs : questionsEn;
+    // Get quiz configuration for this quiz type and language
+    const config = getQuizConfig(body.quizType as QuizType, body.language as Language);
 
-    // Calculate score using your scoring.ts logic
-    const scoreBreakdown = calculateQuizScore(body.answers);
+    // Calculate score using universal scoring engine
+    const scoreBreakdown = calculateQuizScore(body.answers, config);
 
-    // Build answer records with full context
-    const answerRecords = Object.entries(body.answers).map(([qId, answerValue]) => {
+    // Build answer records with full context from config
+    const answerRecords = Object.entries(body.answers).map(([qId, answerIndex]) => {
       const questionNum = parseInt(qId.replace('q', ''));
-      const question = questions.find(q => q.id === questionNum);
-      const questionConfig = QUESTION_SCORES[qId as keyof typeof QUESTION_SCORES];
+      const question = config.questions.find(q => q.id === questionNum);
       
-      // Find the answer config by matching the score value (not index)
-      const answerConfig = questionConfig.answers.find(a => a.score === answerValue as number);
-      
-      if (!answerConfig) {
-        console.error(`No answer config found for ${qId} with value ${answerValue}`);
+      if (!question) {
+        console.error(`Question ${questionNum} not found in config`);
         return {
           question_number: questionNum,
-          question_text: question?.question || '',
-          answer_text: 'Unknown',
+          question_text: 'Unknown question',
+          answer_text: 'Unknown answer',
+          answer_index: answerIndex as number,
           points: 0,
-          category: questionConfig.category,
+          category: 'clarity' as const,
+        };
+      }
+
+      const answer = question.answers[answerIndex as number];
+      
+      if (!answer) {
+        console.error(`Answer index ${answerIndex} not found for question ${questionNum}`);
+        return {
+          question_number: questionNum,
+          question_text: question.question,
+          answer_text: 'Unknown answer',
+          answer_index: answerIndex as number,
+          points: 0,
+          category: question.category,
         };
       }
 
       return {
         question_number: questionNum,
-        question_text: question?.question || '',
-        answer_text: answerConfig.label,
-        points: answerConfig.score,
-        category: questionConfig.category,
+        question_text: question.question,
+        answer_text: answer.label,
+        answer_index: answer.index,
+        points: answer.score,
+        category: question.category,
       };
     });
 
     // Build submission payload
     const payload: QuizSubmissionPayload = {
+      // Lead info
       name: body.name,
       email: body.email,
       company: body.company || undefined,
       phone: body.phone || undefined,
-      total_score: scoreBreakdown.totalScore,
+      
+      // Quiz metadata
+      quiz_type: body.quizType,
+      quiz_version: 'v1.0',
+      language: body.language,
+      
+      // Scoring snapshot
       raw_score: scoreBreakdown.rawScore,
+      total_score: scoreBreakdown.totalScore,
       score_tier: scoreBreakdown.scoreTier,
       category_scores: scoreBreakdown.categoryScores,
-      primary_gap: scoreBreakdown.primaryGap.category,
-      secondary_gap: scoreBreakdown.secondaryGap.category,
+      primary_gap: scoreBreakdown.primaryGap,
+      secondary_gap: scoreBreakdown.secondaryGap,
+      
+      // Answer details
       answers: answerRecords,
-      language: body.language,
-      utm_source: body.utm_source,
-      utm_medium: body.utm_medium,
-      utm_campaign: body.utm_campaign,
+      
+      // Behavioral data
+      completion_time_ms: body.completionTime,
+      device_type: body.deviceType,
+      browser: body.browser,
       referrer: body.referrer,
-      gdpr_consent: body.gdpr_consent || false,
-      marketing_opt_in: body.marketing_opt_in || false,
+      
+      // Marketing attribution
+      utm_source: body.utmSource,
+      utm_medium: body.utmMedium,
+      utm_campaign: body.utmCampaign,
+      utm_content: body.utmContent,
+      utm_term: body.utmTerm,
     };
 
     // Submit to Supabase
