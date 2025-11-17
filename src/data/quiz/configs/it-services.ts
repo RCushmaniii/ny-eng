@@ -24,8 +24,8 @@ export const itServicesConfig: QuizConfig = {
         question: 'How often do misunderstandings with North American clients require follow-up clarification?',
         answers: [
           { index: 0, score: 10, label: 'Almost never—communication is clear the first time' },
-          { index: 1, score: 7, label: 'Once or twice a month—minor issues' },
-          { index: 2, score: 4, label: 'Several times a month—it\'s noticeable' },
+          { index: 1, score: 6, label: 'Once or twice a month—minor issues' },
+          { index: 2, score: 3, label: 'Several times a month—it\'s noticeable' },
           { index: 3, score: 0, label: 'Weekly or more—it\'s impacting relationships' }
         ]
       },
@@ -35,8 +35,8 @@ export const itServicesConfig: QuizConfig = {
         question: 'When presenting solutions to clients, how well does your team explain technical concepts in business terms?',
         answers: [
           { index: 0, score: 10, label: 'Excellent—clients grasp it immediately' },
-          { index: 1, score: 7, label: 'Good—occasionally needs clarification' },
-          { index: 2, score: 4, label: 'Fair—clients regularly ask for simpler explanations' },
+          { index: 1, score: 6, label: 'Good—occasionally needs clarification' },
+          { index: 2, score: 3, label: 'Fair—clients regularly ask for simpler explanations' },
           { index: 3, score: 0, label: 'Poor—we often lose them' }
         ]
       },
@@ -46,8 +46,8 @@ export const itServicesConfig: QuizConfig = {
         question: 'During live client calls, how often does your team say "Let me get back to you" when they actually know the answer?',
         answers: [
           { index: 0, score: 10, label: 'Never—they respond in real-time' },
-          { index: 1, score: 7, label: 'Rarely—only for truly complex details' },
-          { index: 2, score: 4, label: 'Sometimes—when under pressure' },
+          { index: 1, score: 6, label: 'Rarely—only for truly complex details' },
+          { index: 2, score: 3, label: 'Sometimes—when under pressure' },
           { index: 3, score: 0, label: 'Frequently—it\'s a safety net' }
         ]
       },
@@ -131,8 +131,8 @@ export const itServicesConfig: QuizConfig = {
         question: '¿Con qué frecuencia los malentendidos con clientes norteamericanos requieren aclaración de seguimiento?',
         answers: [
           { index: 0, score: 10, label: 'Casi nunca—la comunicación es clara desde el principio' },
-          { index: 1, score: 7, label: 'Una o dos veces al mes—problemas menores' },
-          { index: 2, score: 4, label: 'Varias veces al mes—es notable' },
+          { index: 1, score: 6, label: 'Una o dos veces al mes—problemas menores' },
+          { index: 2, score: 3, label: 'Varias veces al mes—es notable' },
           { index: 3, score: 0, label: 'Semanalmente o más—está afectando las relaciones' }
         ]
       },
@@ -142,8 +142,8 @@ export const itServicesConfig: QuizConfig = {
         question: 'Al presentar soluciones a clientes, ¿qué tan bien explica tu equipo conceptos técnicos en términos de negocio?',
         answers: [
           { index: 0, score: 10, label: 'Excelente—los clientes lo comprenden inmediatamente' },
-          { index: 1, score: 7, label: 'Bueno—ocasionalmente necesita aclaración' },
-          { index: 2, score: 4, label: 'Regular—los clientes piden regularmente explicaciones más simples' },
+          { index: 1, score: 6, label: 'Bueno—ocasionalmente necesita aclaración' },
+          { index: 2, score: 3, label: 'Regular—los clientes piden regularmente explicaciones más simples' },
           { index: 3, score: 0, label: 'Pobre—a menudo los perdemos' }
         ]
       },
@@ -153,8 +153,8 @@ export const itServicesConfig: QuizConfig = {
         question: 'Durante llamadas en vivo con clientes, ¿con qué frecuencia tu equipo dice "Déjame volver contigo" cuando en realidad saben la respuesta?',
         answers: [
           { index: 0, score: 10, label: 'Nunca—responden en tiempo real' },
-          { index: 1, score: 7, label: 'Rara vez—solo para detalles verdaderamente complejos' },
-          { index: 2, score: 4, label: 'A veces—cuando están bajo presión' },
+          { index: 1, score: 6, label: 'Rara vez—solo para detalles verdaderamente complejos' },
+          { index: 2, score: 3, label: 'A veces—cuando están bajo presión' },
           { index: 3, score: 0, label: 'Frecuentemente—es una red de seguridad' }
         ]
       },
