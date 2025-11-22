@@ -40,6 +40,7 @@ export type TKey =
   | "services/tech-english"
   | "services/technical-sales-english"
   | `category/${CategorySlug}`
+  | "assessments"
   | "quiz"
   | "quiz/start"
   | "quiz/results"
@@ -79,6 +80,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "category/career-leadership": "/en/category/career-leadership/",
     "category/english-coaching": "/en/category/english-coaching/",
     "category/executive-english": "/en/category/executive-english/",
+    assessments: "/en/assessments/",
     quiz: "/en/quiz/",
     "quiz/start": "/en/quiz/start/",
     "quiz/results": "/en/quiz/results/",
@@ -117,6 +119,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "category/career-leadership": "/es/categoria/carrera-liderazgo/",
     "category/english-coaching": "/es/categoria/coaching-en-ingles/",
     "category/executive-english": "/es/categoria/ingles-ejecutivo/",
+    assessments: "/es/assessments/",
     quiz: "/es/quiz/",
     "quiz/start": "/es/quiz/start/",
     "quiz/results": "/es/quiz/results/",
@@ -181,6 +184,7 @@ export function getAllTKeys(): TKey[] {
     "category/career-leadership",
     "category/english-coaching",
     "category/executive-english",
+    "assessments",
     "quiz",
     "quiz/start",
     "quiz/results",

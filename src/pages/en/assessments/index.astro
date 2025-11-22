@@ -1,0 +1,166 @@
+---
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+
+const title = "Communication Assessments | New York English Teacher";
+const description =
+  "Explore free communication assessments for IT teams and executives. Get a personalized communication confidence score and see exactly where to improve.";
+---
+
+<Base
+  title={title}
+  description={description}
+  lang="en"
+  tkey="assessments"
+  hideCta={true}
+>
+  <section class="pt-28 md:pt-32 lg:pt-36 pb-16 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-4">
+      <header class="mb-10 text-center">
+        <p
+          class="text-sm font-semibold uppercase tracking-wide text-sky-600 mb-2"
+        >
+          Communication Assessments
+        </p>
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Find the Right Communication Assessment for You
+        </h1>
+        <p class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+          Choose the assessment that matches your role. In just a few minutes,
+          you'll see where your communication is strong, where it's costing you
+          deals, and what to fix first.
+        </p>
+      </header>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+        <article
+          class="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 flex flex-col justify-between"
+        >
+          <div>
+            <h2 class="text-xl font-semibold text-slate-900 mb-2">
+              IT Communication Confidence Assessment
+            </h2>
+            <p class="text-sm font-medium text-sky-700 mb-3">
+              For technical and IT service teams
+            </p>
+            <p class="text-sm text-slate-600 mb-4">
+              See how confidently your team handles North American clients on
+              live calls, defends proposals, and turns technical detail into
+              clear business language.
+            </p>
+            <ul
+              class="text-sm text-slate-600 space-y-1 list-disc list-inside mb-6"
+            >
+              <li>6-question assessment (about 2 minutes)</li>
+              <li>
+                Score across clarity, confidence, negotiation, and cultural
+                fluency
+              </li>
+              <li>Instant report with your Communication Confidence Score</li>
+            </ul>
+          </div>
+          <div class="mt-2">
+            <Button href="/en/quiz/it-services/" variant="primary" size="lg">
+              IT Assessment
+            </Button>
+          </div>
+        </article>
+
+        <article
+          class="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 flex flex-col justify-between"
+        >
+          <div>
+            <h2 class="text-xl font-semibold text-slate-900 mb-2">
+              Executive Communication Confidence Assessment
+            </h2>
+            <p class="text-sm font-medium text-sky-700 mb-3">
+              For founders, C-level, and senior leaders
+            </p>
+            <p class="text-sm text-slate-600 mb-4">
+              Evaluate how you show up in board meetings, investor calls, and
+              enterprise negotiations—and how your English impacts trust at the
+              highest level.
+            </p>
+            <ul
+              class="text-sm text-slate-600 space-y-1 list-disc list-inside mb-6"
+            >
+              <li>6-question assessment (about 2 minutes)</li>
+              <li>
+                Focused on executive presence, strategic clarity, and
+                negotiation
+              </li>
+              <li>Personalized gap analysis and next steps</li>
+            </ul>
+          </div>
+          <div class="mt-2">
+            <Button href="/en/quiz/executives/" variant="secondary" size="lg">
+              Executive Assessment
+            </Button>
+          </div>
+        </article>
+
+        <article
+          class="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 flex flex-col justify-between"
+        >
+          <div>
+            <h2 class="text-xl font-semibold text-slate-900 mb-2">
+              Professional Communication Confidence Assessment
+            </h2>
+            <p class="text-sm font-medium text-sky-700 mb-3">
+              For doctors, lawyers, and consultants
+            </p>
+            <p class="text-sm text-slate-600 mb-4">
+              See how your English impacts trust, authority, and liability when
+              advising clients on high-stakes matters.
+            </p>
+            <ul
+              class="text-sm text-slate-600 space-y-1 list-disc list-inside mb-6"
+            >
+              <li>6-question assessment (about 2 minutes)</li>
+              <li>Focused on precision, empathy, and handling pressure</li>
+              <li>Instant report with gap analysis and recommendations</li>
+            </ul>
+          </div>
+          <div class="mt-2">
+            <Button
+              href="/en/quiz/professional-services/"
+              variant="primary"
+              size="lg"
+            >
+              Professional Assessment
+            </Button>
+          </div>
+        </article>
+
+        <article
+          class="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 flex flex-col justify-between"
+        >
+          <div>
+            <h2 class="text-xl font-semibold text-slate-900 mb-2">
+              High-Stakes Communication Confidence Assessment
+            </h2>
+            <p class="text-sm font-medium text-sky-700 mb-3">
+              For presenters, interviewees, and public speakers
+            </p>
+            <p class="text-sm text-slate-600 mb-4">
+              Evaluate how the "Language Gap" affects your performance in
+              critical moments—from boardroom pitches to job interviews.
+            </p>
+            <ul
+              class="text-sm text-slate-600 space-y-1 list-disc list-inside mb-6"
+            >
+              <li>6-question psychological assessment</li>
+              <li>Measures Presence, Processing Speed, and Persuasion</li>
+              <li>Discover your "Language Gap" Score instantly</li>
+            </ul>
+          </div>
+          <div class="mt-2">
+            <Button href="/en/quiz/high-stakes/" variant="secondary" size="lg">
+              High-Stakes Assessment
+            </Button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</Base>

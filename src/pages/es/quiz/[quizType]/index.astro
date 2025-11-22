@@ -1,8 +1,8 @@
 ---
 /**
- * Dynamic Quiz Landing Page
+ * Dynamic Quiz Landing Page (Spanish)
  *
- * Route: /en/quiz/[quizType]/
+ * Route: /es/quiz/[quizType]/
  * Supports: it-services, professional-services, high-stakes, executives
  */
 
@@ -32,11 +32,11 @@ const { quizType } = Astro.params;
 
 // Validate quiz type
 if (!quizType || !isQuizTypeAvailable(quizType)) {
-  return Astro.redirect("/en/404");
+  return Astro.redirect("/es/404");
 }
 
 // Get quiz configuration
-const config = getQuizConfig(quizType as QuizType, "en");
+const config = getQuizConfig(quizType as QuizType, "es");
 
 // SEO metadata
 const title = config.title;
@@ -46,8 +46,8 @@ const description = config.subtitle;
 <Base
   title={title}
   description={description}
-  lang="en"
-  customCanonical={`https://www.nyenglishteacher.com/en/quiz/${quizType}/`}
+  lang="es"
+  customCanonical={`https://www.nyenglishteacher.com/es/quiz/${quizType}/`}
   customHreflangs={[
     {
       lang: "en-US",
@@ -60,17 +60,17 @@ const description = config.subtitle;
   ]}
   hideCta={true}
 >
-  <QuizSchema lang="en" slot="head" />
+  <QuizSchema lang="es" slot="head" />
 
   <section class="quiz-landing-hero">
     <div class="hero-container">
       <div class="hero-grid">
         <div class="hero-content">
           <a
-            href={`/en/quiz/${quizType}/question/1`}
+            href={`/es/quiz/${quizType}/question/1`}
             class="eyebrow eyebrow-link"
           >
-            Free 90-Second Assessment
+            Evaluación Gratuita de 90 Segundos
           </a>
 
           <h1>{config.title}</h1>
@@ -82,44 +82,48 @@ const description = config.subtitle;
           <div class="value-props">
             <div class="value-prop">
               <BarChart3 size={20} />
-              <span>Get your Communication Confidence Score (0–100)</span>
+              <span
+                >Obtén tu Puntuación de Confianza en Comunicación (0–100)</span
+              >
             </div>
             <div class="value-prop">
               <Target size={20} />
-              <span>Identify the exact moments costing you deals</span>
+              <span
+                >Identifica los momentos exactos que te cuestan negocios</span
+              >
             </div>
             <div class="value-prop">
               <Rocket size={20} />
-              <span>Receive your personalized 30-day roadmap</span>
+              <span>Recibe tu hoja de ruta personalizada de 30 días</span>
             </div>
           </div>
 
           <div class="cta-section">
             <Button
-              href={`/en/quiz/${quizType}/question/1`}
+              href={`/es/quiz/${quizType}/question/1`}
               variant="primary"
               size="lg"
               class="cta-start-quiz"
             >
-              Start Free 90-Second Assessment →
+              Comenzar Evaluación Gratuita de 90 Segundos →
             </Button>
             <div class="trust-signals">
               <div class="trust-signal">
                 <Clock size={16} />
-                <span>90 seconds</span>
+                <span>90 segundos</span>
               </div>
               <div class="trust-signal">
                 <Mail size={16} />
-                <span>Instant results</span>
+                <span>Resultados instantáneos</span>
               </div>
               <div class="trust-signal">
-                <span>200+ tech leaders assessed</span>
+                <span>Más de 200 líderes tecnológicos evaluados</span>
               </div>
             </div>
           </div>
 
           <p class="trust-badge">
-            Trusted by IT leaders at Smarttie, Kopar, and Sourceability
+            Confiado por líderes de TI en Smarttie, Kopar y Sourceability
           </p>
         </div>
 

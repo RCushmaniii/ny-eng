@@ -33,7 +33,8 @@ export type QuizType =
   | 'professional-services'
   | 'sales-marketing'
   | 'executives'
-  | 'interview-coaching';
+  | 'interview-coaching'
+  | 'high-stakes';
 
 // =============================================================================
 // LANGUAGE SUPPORT
@@ -164,6 +165,32 @@ export interface LanguageConfig {
   
   /** Gap definitions for all 5 categories */
   gapDefinitions: Record<QuizCategory, GapDefinition>;
+
+  /** Customized result messaging per tier */
+  results?: {
+    /** Section header (default: "The Real Cost") */
+    impactTitle?: string;
+    
+    /** Messages for each score tier */
+    tiers: Record<ScoreTier, {
+      title: string;
+      description: string;
+    }>;
+
+    /** Customized "Elite Comparison" section (default: "What Elite Firms Do Differently") */
+    eliteComparison?: {
+      title: string;
+      items: string[];
+    };
+
+    /** Customized "CTA" section */
+    cta?: {
+      title: string;
+      subtext: string;
+      buttonText: string;
+      footerText: string;
+    };
+  };
 }
 
 // =============================================================================

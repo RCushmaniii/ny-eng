@@ -1,8 +1,8 @@
 ---
 /**
- * Dynamic Quiz Results Page
+ * Dynamic Quiz Results Page (Spanish)
  *
- * Route: /en/quiz/[quizType]/results/
+ * Route: /es/quiz/[quizType]/results/
  * Collects lead info and displays score
  */
 
@@ -17,21 +17,21 @@ const { quizType } = Astro.params;
 
 // Validate quiz type
 if (!quizType || !isQuizTypeAvailable(quizType)) {
-  return Astro.redirect("/en/404");
+  return Astro.redirect("/es/404");
 }
 
 // Get quiz configuration
-const config = getQuizConfig(quizType as QuizType, "en");
+const config = getQuizConfig(quizType as QuizType, "es");
 
-const title = `Your Results | ${config.title}`;
+const title = `Tus Resultados | ${config.title}`;
 const description =
-  "Get your personalized Communication Confidence Score (0-100) and improvement roadmap. Discover exactly where your team stands with high-stakes English communication.";
+  "Obtén tu Puntuación de Confianza en Comunicación personalizada (0-100) y tu hoja de ruta de mejora. Descubre exactamente dónde se encuentra tu equipo con la comunicación en inglés de alto impacto.";
 ---
 
 <Base
   title={title}
   description={description}
-  lang="en"
+  lang="es"
   tkey="quiz/results"
   hideCta={true}
   hideLanguageSwitcher={true}
@@ -42,23 +42,23 @@ const description =
       <div class="no-quiz-warning" id="no-quiz-warning" style="display: none;">
         <div class="warning-content">
           <div class="warning-icon">⚠️</div>
-          <h1>Quiz Not Completed</h1>
+          <h1>Prueba No Completada</h1>
           <p class="warning-text">
-            You need to complete the Communication Confidence Assessment before
-            viewing your results.
+            Necesitas completar la Evaluación de Confianza en Comunicación antes
+            de ver tus resultados.
           </p>
           <p class="warning-subtext">
-            The quiz takes about 90 seconds and will give you a personalized
-            score showing exactly where your team stands with high-stakes
-            English communication.
+            La prueba toma alrededor de 90 segundos y te dará una puntuación
+            personalizada que muestra exactamente dónde se encuentra tu equipo
+            con la comunicación en inglés de alto impacto.
           </p>
           <Button
-            href={`/en/quiz/${quizType}/question/1`}
+            href={`/es/quiz/${quizType}/question/1`}
             variant="primary"
             size="lg"
             class="start-quiz-button"
           >
-            Start the Quiz →
+            Comenzar la Prueba →
           </Button>
         </div>
       </div>
@@ -71,19 +71,19 @@ const description =
       >
         <div class="error-content">
           <div class="error-icon">❌</div>
-          <h1>Submission Error</h1>
+          <h1>Error de Envío</h1>
           <p class="error-text" id="error-message">
-            There was an error submitting your quiz. Please try again.
+            Hubo un error al enviar tu prueba. Por favor, inténtalo de nuevo.
           </p>
           <p class="error-subtext">
-            If the problem persists, please contact us directly or try again
-            later.
+            Si el problema persiste, contáctanos directamente o inténtalo más
+            tarde.
           </p>
           <button
             onclick="location.reload()"
             class="retry-button px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 text-lg"
           >
-            Try Again
+            Intentar de Nuevo
           </button>
         </div>
       </div>
@@ -91,10 +91,11 @@ const description =
       <!-- Lead Capture Form (shown first) -->
       <div class="lead-capture-card" id="lead-capture">
         <div class="capture-header">
-          <h1>You're Almost There!</h1>
+          <h1>¡Ya Casi Terminas!</h1>
           <p class="capture-subtext">
-            Enter your email to receive your personalized Communication
-            Confidence Score and detailed improvement roadmap.
+            Ingresa tu correo electrónico para recibir tu Puntuación de
+            Confianza en Comunicación personalizada y tu hoja de ruta detallada
+            de mejora.
           </p>
         </div>
 
@@ -102,49 +103,50 @@ const description =
           <input type="hidden" name="quizType" value={quizType} />
 
           <div class="form-group">
-            <label for="name" class="form-label">Your Name</label>
+            <label for="name" class="form-label">Tu Nombre</label>
             <input
               type="text"
               id="name"
               name="name"
               class="form-input"
-              placeholder="John Smith"
+              placeholder="Juan Pérez"
               required
             />
           </div>
 
           <div class="form-group">
-            <label for="email" class="form-label">Email Address</label>
+            <label for="email" class="form-label">Correo Electrónico</label>
             <input
               type="email"
               id="email"
               name="email"
               class="form-input"
-              placeholder="john@company.com"
+              placeholder="juan@empresa.com"
               required
             />
           </div>
 
           <div class="form-group">
-            <label for="company" class="form-label">Company (Optional)</label>
+            <label for="company" class="form-label">Empresa (Opcional)</label>
             <input
               type="text"
               id="company"
               name="company"
               class="form-input"
-              placeholder="Your Company Name"
+              placeholder="Nombre de tu Empresa"
             />
           </div>
 
           <div class="form-group">
-            <label for="phone" class="form-label">Phone Number (Optional)</label
+            <label for="phone" class="form-label"
+              >Número de Teléfono (Opcional)</label
             >
             <input
               type="tel"
               id="phone"
               name="phone"
               class="form-input"
-              placeholder="+1 (555) 123-4567"
+              placeholder="+52 (555) 123-4567"
             />
           </div>
 
@@ -155,15 +157,15 @@ const description =
             class="submit-button"
           >
             <Mail size={20} />
-            Get My Results →
+            Obtener Mis Resultados →
           </Button>
 
           <p class="privacy-text">
-            By submitting this form, you agree to our <a
-              href="/en/legal/privacy-policy"
+            Al enviar este formulario, aceptas nuestra <a
+              href="/es/legal/privacy-policy"
               target="_blank"
-              class="privacy-link">Privacy Policy</a
-            >. We respect your privacy and will never sell your information.
+              class="privacy-link">Política de Privacidad</a
+            >. Respetamos tu privacidad y nunca venderemos tu información.
           </p>
         </form>
       </div>
@@ -337,15 +339,15 @@ const description =
     const cleanedCompany = stripTags(data.company ?? null);
 
     if (!emailRegex.test(data.email)) {
-      throw new Error("Please enter a valid email address.");
+      throw new Error("Por favor, ingresa un correo electrónico válido.");
     }
 
     if (cleanedName.length === 0) {
-      throw new Error("Name is required.");
+      throw new Error("El nombre es requerido.");
     }
 
     if (cleanedName.length > 250) {
-      throw new Error("Name is too long. Please shorten it.");
+      throw new Error("El nombre es demasiado largo. Por favor, acórtalo.");
     }
 
     return {
@@ -392,7 +394,7 @@ const description =
           const safeEmail = validated.email;
 
           // Get quiz config and calculate score
-          const config = getQuizConfig(quizType, "en");
+          const config = getQuizConfig(quizType, "es");
           const scoreBreakdown = calculateQuizScore(answers, config);
 
           // Get behavioral data
@@ -407,7 +409,7 @@ const description =
             phone,
             quizType,
             answers,
-            language: "en",
+            language: "es",
             completionTime,
             ...behavioralData,
           };
@@ -428,34 +430,34 @@ const description =
               email: safeEmail,
               company,
               phone,
+              quizType,
             });
             QuizStorage.saveScore(quizType, scoreBreakdown.totalScore);
 
-            // Backwards-compat: also write legacy keys for the original React report
-            // so /en/quiz/report/ (QuizReport.tsx) renders correctly.
+            // Backwards-compat: also write legacy keys for the React report
             try {
               sessionStorage.setItem("quizAnswers", JSON.stringify(answers));
               sessionStorage.setItem(
                 "leadData",
-                JSON.stringify({ name: safeName, company })
+                JSON.stringify({ name: safeName, company, quizType })
               );
             } catch {}
 
-            // Redirect to the polished legacy report UI
-            window.location.href = "/en/quiz/report/";
+            // Redirect to the Spanish report page
+            window.location.href = "/es/quiz/report/";
           } else {
             // Show error
             document.getElementById("lead-capture")!.style.display = "none";
             document.getElementById("submission-error")!.style.display =
               "block";
             document.getElementById("error-message")!.textContent =
-              result.error || "Unknown error occurred";
+              result.error || "Ocurrió un error desconocido";
           }
         } catch (error) {
           const message =
             error instanceof Error
               ? error.message
-              : "Network error. Please check your connection and try again.";
+              : "Error de red. Por favor, verifica tu conexión e inténtalo de nuevo.";
           document.getElementById("submission-error")!.style.display = "block";
           document.getElementById("error-message")!.textContent = message;
         }

@@ -20,6 +20,7 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
         links: [
           { name: "Preguntas Frecuentes", href: `${routes.es.home}#faqs` },
           { name: "Blog", href: routes.es.blog },
+          { name: "Evaluaciones de Comunicación", href: "/es/assessments/" },
           { name: "Consulta Gratuita", href: "/es/book/" },
         ],
       },

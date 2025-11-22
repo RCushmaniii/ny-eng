@@ -13,7 +13,9 @@ import { validateQuizConfig } from './validator';
 import { itServicesConfig } from './it-services';
 // import { professionalServicesConfig } from './professional-services';
 // import { salesMarketingConfig } from './sales-marketing';
-// import { executivesConfig } from './executives';
+import { executivesConfig } from './executives';
+import { professionalServicesConfig } from './professional-services';
+import { highStakesConfig } from './high-stakes';
 // import { interviewCoachingConfig } from './interview-coaching';
 
 /**
@@ -22,9 +24,10 @@ import { itServicesConfig } from './it-services';
  */
 const quizConfigs: Partial<Record<QuizType, QuizConfig>> = {
   'it-services': itServicesConfig,
-  // 'professional-services': professionalServicesConfig,
+  'professional-services': professionalServicesConfig,
   // 'sales-marketing': salesMarketingConfig,
-  // 'executives': executivesConfig,
+  'executives': executivesConfig,
+  'high-stakes': highStakesConfig,
   // 'interview-coaching': interviewCoachingConfig
 };
 

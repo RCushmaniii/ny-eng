@@ -8,6 +8,11 @@ interface Props {
     painPoints: string[];
     icon?: string;
     image?: any; // ImageMetadata for challenge image
+    quizCta?: {
+      text: string;
+      link: string;
+      linkLabel: string;
+    };
   };
   padding?: "sm" | "md" | "lg";
   background?: "white" | "light" | "dark";
@@ -62,6 +67,13 @@ const backgroundClasses = {
           <p class="text-blue-800 font-medium">
             If any of these resonate with you, you're not alone. Let's turn these challenges into your competitive advantages.
           </p>
+          {content.quizCta && (
+            <div class="mt-4 pt-4 border-t border-blue-200">
+              <p class="text-blue-900 font-bold">
+                {content.quizCta.text} <a href={content.quizCta.link} class="text-blue-600 underline hover:text-blue-800 ml-1">{content.quizCta.linkLabel}</a>
+              </p>
+            </div>
+          )}
         </div>
       </div>
       

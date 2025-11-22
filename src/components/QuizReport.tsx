@@ -5,7 +5,9 @@ import {
   AlertCircle,
   Download,
 } from "lucide-react"; // Use lucide-react inside a .tsx file
-import { questionsEn } from "@data/quiz/questions"; // This import now works
+import { getQuizConfig } from "@data/quiz/configs";
+import { calculateQuizScore } from "@data/quiz/scoring";
+import type { QuizType } from "@data/quiz/types";
 import "@styles/report.css";
 
 // --- Helper Types & Functions ---
@@ -13,71 +15,23 @@ import "@styles/report.css";
 interface LeadData {
   name: string;
   company?: string;
+  quizType?: QuizType; // Add this
 }
 
 interface Answers {
   [key: string]: number;
 }
 
-interface TierInfo {
-  tier: string;
-  description: string;
-  color: string;
-}
-
-interface WeakestQuestion {
-  id: number;
-  points: number;
-  insight: string;
-}
-
-interface ImpactInfo {
+interface EliteInfo {
   title: string;
-  text: string;
+  items: string[];
 }
 
-function getTierInfo(score: number): TierInfo {
-  if (score >= 70) {
-    return {
-      tier: "Conversation-Ready",
-      description:
-        "Your team has solid communication skills with room for strategic refinement.",
-      color: "#10b981",
-    };
-  } else if (score >= 40) {
-    return {
-      tier: "Million-Dollar Gap",
-      description:
-        "Communication gaps are costing you deals. The good news? These are fixable.",
-      color: "#f59e0b",
-    };
-  } else {
-    return {
-      tier: "Credibility Block",
-      description:
-        "Communication challenges are directly limiting growth. Immediate action needed.",
-      color: "#ef4444",
-    };
-  }
-}
-
-function getImpactStatement(score: number): ImpactInfo {
-  if (score < 40) {
-    return {
-      title: "Deals are falling through due to communication breakdowns.",
-      text: "Your team's hesitation and unclear communication are directly costing you contracts. Clients sense the uncertainty and choose competitors who sound more confident—even if they're less qualified.",
-    };
-  } else if (score < 70) {
-    return {
-      title: "You're leaving money on the table in negotiations.",
-      text: "Your team can close deals, but they're conceding too quickly on price and scope. The inability to defend value in real-time is costing you 15-20% on every contract.",
-    };
-  } else {
-    return {
-      title: "You're close—but small gaps are limiting your ceiling.",
-      text: "Your team communicates well, but elite firms command 30-40% higher rates by mastering the subtle art of executive presence and strategic positioning.",
-    };
-  }
+interface CtaInfo {
+  title: string;
+  subtext: string;
+  buttonText: string;
+  footerText: string;
 }
 
 // --- Main Component ---
@@ -87,12 +41,11 @@ export default function QuizReport() {
   const [isLoading, setIsLoading] = useState(true);
   const [leadData, setLeadData] = useState<LeadData | null>(null);
   const [generatedDate, setGeneratedDate] = useState("");
-  const [overallScore, setOverallScore] = useState(0);
-  const [tierInfo, setTierInfo] = useState<TierInfo | null>(null);
-  const [weakestQuestions, setWeakestQuestions] = useState<WeakestQuestion[]>(
-    []
-  );
-  const [impactInfo, setImpactInfo] = useState<ImpactInfo | null>(null);
+  const [scoreData, setScoreData] = useState<any>(null); // Store full breakdown
+  const [tierInfo, setTierInfo] = useState<any>(null);
+  const [impactInfo, setImpactInfo] = useState<{sectionTitle: string, title: string, text: string} | null>(null);
+  const [eliteInfo, setEliteInfo] = useState<EliteInfo | null>(null);
+  const [ctaInfo, setCtaInfo] = useState<CtaInfo | null>(null);
 
   // --- Effect to load data from sessionStorage on mount ---
   useEffect(() => {
@@ -100,7 +53,8 @@ export default function QuizReport() {
     const leadDataJson = sessionStorage.getItem("leadData");
 
     if (!answersJson) {
-      window.location.href = "/en/quiz/question/1"; // Redirect if no data
+      // Fallback redirect if no data
+      window.location.href = "/en/assessments/";
       return;
     }
 
@@ -109,42 +63,14 @@ export default function QuizReport() {
       ? JSON.parse(leadDataJson)
       : { name: "Valued Client" };
 
-    // --- Calculations ---
-    const totalPoints = Object.values(answers).reduce(
-      (sum: number, val: number) => sum + val,
-      0
-    );
-    const maxPoints = 60; // 6 questions × 10 points each
-    const score = Math.round((totalPoints / maxPoints) * 100);
+    // Determine quiz type (fallback to 'it-services' for legacy)
+    const quizType = lead.quizType || 'it-services'; 
 
-    const tier = getTierInfo(score);
-    const impact = getImpactStatement(score);
+    // Get proper config
+    const config = getQuizConfig(quizType as QuizType, 'en');
 
-    // Find weakest questions
-    const insights: Record<number, string> = {
-      1: "Frequent misunderstandings are costing you credibility and extending sales cycles.",
-      2: "Your team struggles to translate technical expertise into business value for clients.",
-      3: "Deferring to email signals uncertainty and kills deal momentum.",
-      4: "Inability to hold the line on pricing is leaving money on the table.",
-      5: "You're the bottleneck—your team can't lead meetings without you.",
-      6: "Lack of rapport-building prevents deeper client relationships and referrals.",
-    };
-
-    const questionScores = Object.entries(answers)
-      .map(([qId, points]) => ({
-        id: parseInt(qId.replace("q", "")),
-        points: points as number,
-        question: questionsEn.find(
-          (q) => q.id === parseInt(qId.replace("q", ""))
-        ),
-      }))
-      .filter((item) => item.question)
-      .sort((a, b) => a.points - b.points)
-      .slice(0, 3) // Top 3 weakest areas
-      .map((item) => ({
-        ...item,
-        insight: insights[item.id] || "Communication gap identified.",
-      }));
+    // Calculate Score properly using the engine
+    const scoreBreakdown = calculateQuizScore(answers, config);
 
     // Format date
     const date = new Date().toLocaleDateString("en-US", {
@@ -153,20 +79,104 @@ export default function QuizReport() {
       day: "numeric",
     });
 
+    // Determine Tier Info
+    let currentTierInfo = { tier: scoreBreakdown.scoreTier, description: "", color: "" };
+    if (scoreBreakdown.scoreTier === 'Conversation-Ready') {
+      currentTierInfo = { 
+        tier: scoreBreakdown.scoreTier, 
+        color: "#10b981", 
+        description: "Your team has solid communication skills with room for strategic refinement." 
+      };
+    } else if (scoreBreakdown.scoreTier === 'Million-Dollar Gap') {
+      currentTierInfo = { 
+        tier: scoreBreakdown.scoreTier, 
+        color: "#f59e0b", 
+        description: "Communication gaps are costing you deals. The good news? These are fixable." 
+      };
+    } else {
+      currentTierInfo = { 
+        tier: scoreBreakdown.scoreTier, 
+        color: "#ef4444", 
+        description: "Communication challenges are directly limiting growth. Immediate action needed." 
+      };
+    }
+
+    // Determine Impact Info based on config + score
+    let impact = { sectionTitle: "The Real Cost", title: "", text: "" };
+    const { totalScore, scoreTier } = scoreBreakdown;
+
+    if (config.results) {
+      if (config.results.impactTitle) {
+        impact.sectionTitle = config.results.impactTitle;
+      }
+      if (config.results.tiers[scoreTier]) {
+        const tierResult = config.results.tiers[scoreTier];
+        impact.title = tierResult.title;
+        impact.text = tierResult.description;
+      }
+    }
+
+    // Fallback if title is still empty (legacy or not in config)
+    if (!impact.title) {
+      // Fallback to legacy hardcoded defaults
+      if (totalScore < 40) {
+        impact.title = "Deals are falling through due to communication breakdowns.";
+        impact.text = "Your team's hesitation and unclear communication are directly costing you contracts. Clients sense the uncertainty and choose competitors who sound more confident—even if they're less qualified.";
+      } else if (totalScore < 70) {
+        impact.title = "You're leaving money on the table in negotiations.";
+        impact.text = "Your team can close deals, but they're conceding too quickly on price and scope. The inability to defend value in real-time is costing you 15-20% on every contract.";
+      } else {
+        impact.title = "You're close—but small gaps are limiting your ceiling.";
+        impact.text = "Your team communicates well, but elite firms command 30-40% higher rates by mastering the subtle art of executive presence and strategic positioning.";
+      }
+    }
+
+    // Determine Elite Comparison Info
+    let currentEliteInfo: EliteInfo = {
+      title: "What Elite Firms Do Differently",
+      items: [
+        "They answer client questions confidently in real-time, never deferring to email",
+        "They defend pricing and push back on unfavorable terms without hesitation",
+        "Junior team members can lead client meetings independently",
+        "They build rapport through natural small talk and relationship-building",
+        "They explain complex solutions clearly, making clients feel confident in their expertise"
+      ]
+    };
+
+    if (config.results && config.results.eliteComparison) {
+      currentEliteInfo = config.results.eliteComparison;
+    }
+
+    // Determine CTA Info
+    let currentCtaInfo: CtaInfo = {
+      title: "Let's See If This Applies to Your Team",
+      subtext: "This assessment reveals patterns. A 15-minute conversation reveals solutions.",
+      buttonText: "Book Your Free Discovery Call",
+      footerText: "No pitch. No pressure. Just a conversation about what's possible for your team."
+    };
+
+    if (config.results && config.results.cta) {
+      currentCtaInfo = config.results.cta;
+    }
+
     // --- Set State ---
     setLeadData(lead);
     setGeneratedDate(date);
-    setOverallScore(score);
-    setTierInfo(tier);
-    setWeakestQuestions(questionScores);
+    setScoreData(scoreBreakdown);
+    setTierInfo(currentTierInfo);
     setImpactInfo(impact);
+    setEliteInfo(currentEliteInfo);
+    setCtaInfo(currentCtaInfo);
     setIsLoading(false);
   }, []);
 
   // --- Render ---
-  if (isLoading || !tierInfo || !leadData || !impactInfo) {
-    return <div className="report-container">Loading Report...</div>; // Simple loader
+  if (isLoading || !scoreData || !leadData || !tierInfo || !impactInfo || !eliteInfo || !ctaInfo) {
+    return <div className="report-container">Loading Report...</div>;
   }
+
+  // Extract values for display
+  const { totalScore, primaryGap, secondaryGap } = scoreData;
 
   return (
     <div className="report-container">
@@ -210,7 +220,7 @@ export default function QuizReport() {
         <section className="hero-section">
           <div className="score-display">
             <div className="score-circle">
-              <div className="score-number">{overallScore}</div>
+              <div className="score-number">{totalScore}</div>
               <div className="score-label">out of 100</div>
             </div>
             <div className="score-content">
@@ -227,18 +237,26 @@ export default function QuizReport() {
 
         {/* Insights Cards Section */}
         <section className="insights-section">
-          <h2 className="section-heading">What This Reveals About Your Team</h2>
+          <h2 className="section-heading">Your Top Improvement Areas</h2>
           <div className="insights-grid">
-            {weakestQuestions.map((item) => (
-              <div
-                key={item.id}
-                className="insight-card"
-                style={{ borderLeftColor: tierInfo.color }}
-              >
-                <div className="insight-card-q">Question {item.id}</div>
-                <div className="insight-card-text">{item.insight}</div>
-              </div>
-            ))}
+             {/* Primary Gap */}
+             <div className="insight-card" style={{ borderLeftColor: tierInfo.color }}>
+                <div className="insight-card-q">Priority #1: {primaryGap.categoryName}</div>
+                <div className="insight-card-text">
+                  <strong>Impact:</strong> {primaryGap.impact}
+                  <br/><br/>
+                  <strong>Fix:</strong> {primaryGap.recommendation}
+                </div>
+             </div>
+             {/* Secondary Gap */}
+             <div className="insight-card" style={{ borderLeftColor: tierInfo.color }}>
+                <div className="insight-card-q">Priority #2: {secondaryGap.categoryName}</div>
+                <div className="insight-card-text">
+                  <strong>Impact:</strong> {secondaryGap.impact}
+                  <br/><br/>
+                  <strong>Fix:</strong> {secondaryGap.recommendation}
+                </div>
+             </div>
           </div>
         </section>
 
@@ -247,7 +265,7 @@ export default function QuizReport() {
           <div className="impact-header">
             <AlertCircle className="impact-icon" size={40} />
             <h2 className="section-heading" style={{ marginBottom: 0 }}>
-              The Real Cost
+              {impactInfo.sectionTitle}
             </h2>
           </div>
           <div className="impact-content">
@@ -261,35 +279,17 @@ export default function QuizReport() {
           <div className="elite-header">
             <TrendingUp className="elite-icon" size={40} />
             <h2 className="section-heading" style={{ marginBottom: 0 }}>
-              What Elite Firms Do Differently
+              {eliteInfo.title}
             </h2>
           </div>
           <div className="elite-grid">
             <ul className="elite-list">
-              <li className="elite-list-item">
-                <span>✓</span>
-                They answer client questions confidently in real-time, never
-                deferring to email
-              </li>
-              <li className="elite-list-item">
-                <span>✓</span>
-                They defend pricing and push back on unfavorable terms without
-                hesitation
-              </li>
-              <li className="elite-list-item">
-                <span>✓</span>
-                Junior team members can lead client meetings independently
-              </li>
-              <li className="elite-list-item">
-                <span>✓</span>
-                They build rapport through natural small talk and
-                relationship-building
-              </li>
-              <li className="elite-list-item">
-                <span>✓</span>
-                They explain complex solutions clearly, making clients feel
-                confident in their expertise
-              </li>
+              {eliteInfo.items.map((item, index) => (
+                <li key={index} className="elite-list-item">
+                  <span>✓</span>
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
         </section>
@@ -298,23 +298,21 @@ export default function QuizReport() {
         <section className="cta-section">
           <div className="cta-container">
             <h2 className="cta-heading">
-              Let's See If This Applies to Your Team
+              {ctaInfo.title}
             </h2>
             <p className="cta-subtext">
-              This assessment reveals patterns. A 15-minute conversation
-              reveals solutions.
+              {ctaInfo.subtext}
             </p>
             <a
               href="https://www.nyenglishteacher.com/en/book/"
               className="cta-button"
             >
               <Calendar className="cta-button-icon" size={24} />
-              <span className="cta-button-text-desktop">Book Your Free Discovery Call</span>
-              <span className="cta-button-text-mobile">Book Discovery Call</span>
+              <span className="cta-button-text-desktop">{ctaInfo.buttonText}</span>
+              <span className="cta-button-text-mobile">{ctaInfo.buttonText}</span>
             </a>
             <p className="cta-note">
-              No pitch. No pressure. Just a conversation about what's possible
-              for your team.
+              {ctaInfo.footerText}
             </p>
           </div>
         </section>

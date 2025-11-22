@@ -20,6 +20,7 @@ export const footerContentEn = (siteConfig: { companyName: string }) => {
         links: [
           { name: "FAQs", href: `${routes.en.home}#faqs` },
           { name: "Blog", href: routes.en.blog },
+          { name: "Communication Assessments", href: "/en/assessments/" },
           { name: "Free Consultation", href: "/en/book/" },
         ],
       },

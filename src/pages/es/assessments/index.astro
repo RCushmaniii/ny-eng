@@ -1,0 +1,171 @@
+---
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+
+const title = "Evaluaciones de Comunicación | New York English Teacher";
+const description =
+  "Explora evaluaciones gratuitas de comunicación para equipos de TI y ejecutivos. Obtén un puntaje personalizado y descubre qué está frenando tus resultados.";
+---
+
+<Base
+  title={title}
+  description={description}
+  lang="es"
+  tkey="assessments"
+  hideCta={true}
+>
+  <section class="pt-28 md:pt-32 lg:pt-36 pb-16 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-4">
+      <header class="mb-10 text-center">
+        <p
+          class="text-sm font-semibold uppercase tracking-wide text-sky-600 mb-2"
+        >
+          Evaluaciones de Comunicación
+        </p>
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Elige la evaluación que mejor se adapta a tu rol
+        </h1>
+        <p class="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+          En pocos minutos verás en qué áreas tu comunicación es fuerte, dónde
+          estás perdiendo oportunidades y cuál es el mejor siguiente paso.
+        </p>
+      </header>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+        <article
+          class="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 flex flex-col justify-between"
+        >
+          <div>
+            <h2 class="text-xl font-semibold text-slate-900 mb-2">
+              Evaluación de Confianza en Comunicación para TI
+            </h2>
+            <p class="text-sm font-medium text-sky-700 mb-3">
+              Para equipos técnicos y de servicios de TI
+            </p>
+            <p class="text-sm text-slate-600 mb-4">
+              Mide qué tan confiablemente tu equipo maneja clientes
+              norteamericanos en llamadas en vivo, defiende propuestas y traduce
+              lo técnico a lenguaje de negocio.
+            </p>
+            <ul
+              class="text-sm text-slate-600 space-y-1 list-disc list-inside mb-6"
+            >
+              <li>Evaluación de 6 preguntas (unos 2 minutos)</li>
+              <li>
+                Puntaje en claridad, confianza, negociación y fluidez cultural
+              </li>
+              <li>
+                Reporte instantáneo con tu Puntaje de Confianza en Comunicación
+              </li>
+            </ul>
+          </div>
+          <div class="mt-2">
+            <Button href="/es/quiz/it-services/" variant="primary" size="lg">
+              Evaluación de TI
+            </Button>
+          </div>
+        </article>
+
+        <article
+          class="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 flex flex-col justify-between"
+        >
+          <div>
+            <h2 class="text-xl font-semibold text-slate-900 mb-2">
+              Evaluación de Confianza en Comunicación para Ejecutivos
+            </h2>
+            <p class="text-sm font-medium text-sky-700 mb-3">
+              Para fundadores, C-level y líderes senior
+            </p>
+            <p class="text-sm text-slate-600 mb-4">
+              Evalúa cómo te presentas en juntas de directorio, llamadas con
+              inversionistas y negociaciones enterprise, y cómo tu inglés
+              impacta la confianza en esos momentos.
+            </p>
+            <ul
+              class="text-sm text-slate-600 space-y-1 list-disc list-inside mb-6"
+            >
+              <li>Evaluación de 6 preguntas (unos 2 minutos)</li>
+              <li>
+                Enfoque en presencia ejecutiva, claridad estratégica y
+                negociación
+              </li>
+              <li>Análisis de brechas y próximos pasos recomendados</li>
+            </ul>
+          </div>
+          <div class="mt-2">
+            <Button href="/es/quiz/executives/" variant="secondary" size="lg">
+              Evaluación Ejecutiva
+            </Button>
+          </div>
+        </article>
+
+        <article
+          class="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 flex flex-col justify-between"
+        >
+          <div>
+            <h2 class="text-xl font-semibold text-slate-900 mb-2">
+              Evaluación de Confianza en Comunicación para Servicios
+              Profesionales
+            </h2>
+            <p class="text-sm font-medium text-sky-700 mb-3">
+              Para médicos, abogados y consultores
+            </p>
+            <p class="text-sm text-slate-600 mb-4">
+              Verifica cómo tu inglés impacta la confianza, autoridad y
+              responsabilidad cuando asesoras a clientes en asuntos de alta
+              importancia.
+            </p>
+            <ul
+              class="text-sm text-slate-600 space-y-1 list-disc list-inside mb-6"
+            >
+              <li>Evaluación de 6 preguntas (unos 2 minutos)</li>
+              <li>Enfoque en precisión, empatía y manejo de presión</li>
+              <li>
+                Informe instantáneo con análisis de brechas y recomendaciones
+              </li>
+            </ul>
+          </div>
+          <div class="mt-2">
+            <Button
+              href="/es/quiz/professional-services/"
+              variant="primary"
+              size="lg"
+            >
+              Evaluación Profesional
+            </Button>
+          </div>
+        </article>
+
+        <article
+          class="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 flex flex-col justify-between"
+        >
+          <div>
+            <h2 class="text-xl font-semibold text-slate-900 mb-2">
+              Evaluación de Comunicación de Alto Impacto
+            </h2>
+            <p class="text-sm font-medium text-sky-700 mb-3">
+              Para presentadores, entrevistados y oradores públicos
+            </p>
+            <p class="text-sm text-slate-600 mb-4">
+              Evalúa cómo la "Brecha de Idioma" afecta tu desempeño en momentos
+              críticos, desde presentaciones en la sala de juntas hasta
+              entrevistas de trabajo.
+            </p>
+            <ul
+              class="text-sm text-slate-600 space-y-1 list-disc list-inside mb-6"
+            >
+              <li>Evaluación psicológica de 6 preguntas</li>
+              <li>Mide Presencia, Velocidad de Procesamiento y Persuasión</li>
+              <li>Descubre tu Puntuación de "Brecha de Idioma" al instante</li>
+            </ul>
+          </div>
+          <div class="mt-2">
+            <Button href="/es/quiz/high-stakes/" variant="secondary" size="lg">
+              Evaluación de Alto Impacto
+            </Button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</Base>
