@@ -1,0 +1,354 @@
+---
+import Button from "@components/ui/Button.astro";
+import { Target, BarChart3, Clock, CheckCircle } from "lucide-astro";
+
+interface Props {
+  lang?: "en" | "es";
+}
+
+const { lang = "en" } = Astro.props;
+
+const content = {
+  en: {
+    eyebrow: "Free Communication Assessment",
+    title: "Discover Your Communication Confidence Score",
+    description:
+      "Take our free 90-second assessment and get your personalized Communication Confidence Score (0-100). See exactly where your English is costing you deals—and what to fix first.",
+    benefits: [
+      "Get your score in 90 seconds",
+      "Identify your biggest communication gaps",
+      "Receive a personalized 30-day roadmap",
+      "Compare yourself to elite communicators",
+    ],
+    stats: [
+      { number: "200+", label: "Tech leaders assessed" },
+      { number: "4", label: "Industry-specific quizzes" },
+      { number: "90s", label: "Average completion time" },
+    ],
+    button: "Take Free Assessment →",
+    link: "/en/assessments/",
+  },
+  es: {
+    eyebrow: "Evaluación de Comunicación Gratuita",
+    title: "Descubre tu Puntuación de Confianza en Comunicación",
+    description:
+      "Realiza nuestra evaluación gratuita de 90 segundos y obtén tu Puntuación de Confianza en Comunicación personalizada (0-100). Ve exactamente dónde tu inglés te está costando negocios—y qué arreglar primero.",
+    benefits: [
+      "Obtén tu puntuación en 90 segundos",
+      "Identifica tus mayores brechas de comunicación",
+      "Recibe un plan personalizado de 30 días",
+      "Compárate con comunicadores de élite",
+    ],
+    stats: [
+      { number: "200+", label: "Líderes tech evaluados" },
+      { number: "4", label: "Evaluaciones específicas" },
+      { number: "90s", label: "Tiempo promedio" },
+    ],
+    button: "Tomar Evaluación Gratuita →",
+    link: "/es/assessments/",
+  },
+};
+
+const t = content[lang];
+---
+
+<section class="quiz-promotion">
+  <div class="container">
+    <div class="content-wrapper">
+      <div class="text-content">
+        <p class="eyebrow">{t.eyebrow}</p>
+        <h2 class="title">{t.title}</h2>
+        <p class="description">{t.description}</p>
+
+        <ul class="benefits">
+          {
+            t.benefits.map((benefit) => (
+              <li>
+                <CheckCircle size={20} />
+                <span>{benefit}</span>
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="cta-wrapper">
+          <Button href={t.link} variant="primary" size="lg">
+            {t.button}
+          </Button>
+        </div>
+
+        <div class="stats">
+          {
+            t.stats.map((stat) => (
+              <div class="stat">
+                <div class="stat-number">{stat.number}</div>
+                <div class="stat-label">{stat.label}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="visual-content">
+        <div class="score-card">
+          <div class="score-header">
+            <BarChart3 size={32} />
+            <span>Communication Confidence Score</span>
+          </div>
+          <div class="score-display">
+            <div class="score-number">78</div>
+            <div class="score-label">/100</div>
+          </div>
+          <div class="score-tier">Developing Communicator</div>
+          <div class="score-breakdown">
+            <div class="breakdown-item">
+              <span>Clarity</span>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 85%"></div>
+              </div>
+              <span>85%</span>
+            </div>
+            <div class="breakdown-item">
+              <span>Confidence</span>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 72%"></div>
+              </div>
+              <span>72%</span>
+            </div>
+            <div class="breakdown-item">
+              <span>Fluency</span>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 78%"></div>
+              </div>
+              <span>78%</span>
+            </div>
+          </div>
+          <div class="score-cta">
+            <Target size={16} />
+            <span>Your Primary Gap: Confidence</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .quiz-promotion {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+    padding: 4rem 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .quiz-promotion {
+      padding: 6rem 2rem;
+    }
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .content-wrapper {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #2563eb;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1e293b;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .description {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #475569;
+    margin-bottom: 2rem;
+  }
+
+  .benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .benefits li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    color: #334155;
+  }
+
+  .benefits li :global(svg) {
+    color: #10b981;
+    flex-shrink: 0;
+  }
+
+  .cta-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid #cbd5e1;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #2563eb;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: #64748b;
+  }
+
+  .visual-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .score-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .score-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    color: #2563eb;
+    font-weight: 600;
+  }
+
+  .score-header :global(svg) {
+    color: #2563eb;
+  }
+
+  .score-display {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .score-number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #1e293b;
+    line-height: 1;
+  }
+
+  .score-label {
+    font-size: 1.5rem;
+    color: #64748b;
+    margin-left: 0.5rem;
+  }
+
+  .score-tier {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f59e0b;
+    margin-bottom: 2rem;
+  }
+
+  .score-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .breakdown-item {
+    display: grid;
+    grid-template-columns: 80px 1fr 50px;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: #475569;
+  }
+
+  .progress-bar {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+  }
+
+  .score-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: #fef3c7;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #92400e;
+  }
+
+  .score-cta :global(svg) {
+    color: #f59e0b;
+    flex-shrink: 0;
+  }
+</style>

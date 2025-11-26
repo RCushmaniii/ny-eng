@@ -6,10 +6,11 @@ import Features from "@components/sections/Features.astro";
 import RecentPosts from "@components/sections/RecentPosts.astro";
 import Testimonials from "@components/sections/Testimonials-titan.astro";
 import Faqs from "@components/sections/Faqs.astro";
+import QuizPromotion from "@components/sections/QuizPromotion.astro";
 
 // Define language and tkey for i18n
-const lang = 'es';
-const tkey = 'home';
+const lang = "es";
+const tkey = "home";
 
 import { statsLists } from "@data/stats-es";
 import { logoLists } from "@data/logos";
@@ -173,7 +174,6 @@ const recentPostsSection = {
 } as const;
 ---
 
-
 <Base
   lang="es"
   tkey={tkey}
@@ -186,6 +186,7 @@ const recentPostsSection = {
   <div class="relative bg-background-light">
     <Hero content={heroContent} />
     <Features content={featuresSection} padding="small" background="light" />
+    <QuizPromotion lang="es" />
     <div class="mb-16 pb-0">
       <Testimonials
         content={testimonialsBlock}
