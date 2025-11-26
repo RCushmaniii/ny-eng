@@ -1,75 +1,8 @@
----
-import Base from "@layouts/Base.astro";
-import Button from "@components/ui/Button.astro";
-import { Laptop, Briefcase, GraduationCap, Presentation } from "lucide-astro";
-
-const title =
-  "Evaluación Gratuita de Habilidades de Comunicación | 4 Tests Específicos | NY English";
-const description =
-  "Realiza nuestro Quiz de Confianza en Comunicación gratuito de 90 segundos. Obtén tu puntuación personalizada (0-100) y descubre exactamente qué te está costando negocios. 4 evaluaciones específicas para TI, ejecutivos, profesionales y presentadores.";
----
-
-<Base
-  title={title}
-  description={description}
-  lang="es"
-  tkey="assessments"
-  hideCta={true}
->
-  <section class="pt-28 md:pt-32 lg:pt-36 pb-16 bg-slate-50">
-    <div class="max-w-5xl mx-auto px-4">
-      <header class="mb-12 mt-12 text-center">
-        <p
-          class="text-sm font-semibold uppercase tracking-wide text-sky-600 mb-2"
-        >
-          Evaluación Gratuita
-        </p>
-        <h1
-          class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6"
-        >
-          Evaluación Gratuita de Habilidades de Comunicación en 90 Segundos
-        </h1>
-        <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-4">
-          Identifica tu Puntuación de Confianza en Comunicación en menos de 2
-          minutos.<br />
-          Insights instantáneos sobre claridad, confianza y presencia ejecutiva.
-        </p>
-        <ul
-          class="text-left text-base text-slate-700 max-w-xl mx-auto space-y-2 mb-8"
-        >
-          <li class="flex items-start gap-2">
-            <span class="text-green-600 font-bold mt-0.5">✔</span>
-            <span>4 evaluaciones específicas por industria</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-600 font-bold mt-0.5">✔</span>
-            <span>Puntuación personalizada (0–100)</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-600 font-bold mt-0.5">✔</span>
-            <span>Análisis instantáneo de brechas y próximos pasos</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <span class="text-green-600 font-bold mt-0.5">✔</span>
-            <span>Solo 6 preguntas — toma menos de 2 minutos</span>
-          </li>
-        </ul>
-      </header>
-
-      <h2
-        class="text-2xl md:text-3xl font-bold text-slate-900 text-center mb-8"
-      >
-        Elige Tu Evaluación
-      </h2>
-
-      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-2 mb-16">
         <article
           class="bg-white border border-slate-200 rounded-2xl shadow-sm p-8 flex flex-col h-full"
         >
           <div class="flex justify-center mb-4">
-            <div
-              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center"
-            >
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
               <Laptop size={32} class="text-blue-600" />
             </div>
           </div>
@@ -93,13 +26,8 @@ const description =
               <span>Puntuación de Confianza en Comunicación instantánea</span>
             </li>
           </ul>
-          <Button
-            href="/es/quiz/it-services/"
-            variant="primary"
-            size="lg"
-            class="w-full"
-          >
-            Evaluación de TI
+          <Button href="/es/quiz/it-services/" variant="primary" size="lg" class="w-full">
+            Comenzar Evaluación de TI
           </Button>
         </article>
 
@@ -107,14 +35,12 @@ const description =
           class="bg-white border border-slate-200 rounded-2xl shadow-sm p-8 flex flex-col h-full"
         >
           <div class="flex justify-center mb-4">
-            <div
-              class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center"
-            >
+            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
               <Briefcase size={32} class="text-purple-600" />
             </div>
           </div>
           <h3 class="text-xl font-bold text-slate-900 mb-2 text-center">
-            Evaluación Ejecutiva
+            Evaluación de Comunicación Ejecutiva
           </h3>
           <p class="text-sm font-medium text-sky-700 mb-4 text-center">
             Para fundadores, C-level y líderes senior
@@ -126,22 +52,15 @@ const description =
             </li>
             <li class="flex items-start gap-2">
               <span class="text-slate-400">•</span>
-              <span
-                >Presencia ejecutiva, claridad estratégica y negociación</span
-              >
+              <span>Presencia ejecutiva, claridad estratégica y negociación</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-slate-400">•</span>
               <span>Análisis de brechas y próximos pasos personalizados</span>
             </li>
           </ul>
-          <Button
-            href="/es/quiz/executives/"
-            variant="primary"
-            size="lg"
-            class="w-full"
-          >
-            Evaluación Ejecutiva
+          <Button href="/es/quiz/executives/" variant="primary" size="lg" class="w-full">
+            Comenzar Evaluación Ejecutiva
           </Button>
         </article>
 
@@ -149,14 +68,12 @@ const description =
           class="bg-white border border-slate-200 rounded-2xl shadow-sm p-8 flex flex-col h-full"
         >
           <div class="flex justify-center mb-4">
-            <div
-              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center"
-            >
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
               <GraduationCap size={32} class="text-green-600" />
             </div>
           </div>
           <h3 class="text-xl font-bold text-slate-900 mb-2 text-center">
-            Evaluación Profesional
+            Evaluación de Comunicación Profesional
           </h3>
           <p class="text-sm font-medium text-sky-700 mb-4 text-center">
             Para médicos, abogados y consultores
@@ -181,7 +98,7 @@ const description =
             size="lg"
             class="w-full"
           >
-            Evaluación Profesional
+            Comenzar Evaluación Profesional
           </Button>
         </article>
 
@@ -189,14 +106,12 @@ const description =
           class="bg-white border border-slate-200 rounded-2xl shadow-sm p-8 flex flex-col h-full"
         >
           <div class="flex justify-center mb-4">
-            <div
-              class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center"
-            >
+            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center">
               <Presentation size={32} class="text-orange-600" />
             </div>
           </div>
           <h3 class="text-xl font-bold text-slate-900 mb-2 text-center">
-            Evaluación de Alto Impacto
+            Evaluación de Comunicación de Alto Impacto
           </h3>
           <p class="text-sm font-medium text-sky-700 mb-4 text-center">
             Para presentadores, entrevistados y oradores públicos
@@ -212,21 +127,10 @@ const description =
             </li>
             <li class="flex items-start gap-2">
               <span class="text-slate-400">•</span>
-              <span
-                >Descubre tu Puntuación de "Brecha de Idioma" al instante</span
-              >
+              <span>Descubre tu Puntuación de "Brecha de Idioma" al instante</span>
             </li>
           </ul>
-          <Button
-            href="/es/quiz/high-stakes/"
-            variant="primary"
-            size="lg"
-            class="w-full"
-          >
-            Evaluación de Alto Impacto
+          <Button href="/es/quiz/high-stakes/" variant="primary" size="lg" class="w-full">
+            Comenzar Evaluación de Alto Impacto
           </Button>
         </article>
-      </div>
-    </div>
-  </section>
-</Base>
