@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  Calendar,
-  TrendingUp,
-  AlertCircle,
-  Download,
-} from "lucide-react"; // Use lucide-react inside a .tsx file
+import { Calendar, TrendingUp, AlertCircle, Download } from "lucide-react"; // Use lucide-react inside a .tsx file
 import { getQuizConfig } from "@data/quiz/configs";
 import { calculateQuizScore } from "@data/quiz/scoring";
 import type { QuizType } from "@data/quiz/types";
@@ -43,7 +38,11 @@ export default function QuizReport() {
   const [generatedDate, setGeneratedDate] = useState("");
   const [scoreData, setScoreData] = useState<any>(null); // Store full breakdown
   const [tierInfo, setTierInfo] = useState<any>(null);
-  const [impactInfo, setImpactInfo] = useState<{sectionTitle: string, title: string, text: string} | null>(null);
+  const [impactInfo, setImpactInfo] = useState<{
+    sectionTitle: string;
+    title: string;
+    text: string;
+  } | null>(null);
   const [eliteInfo, setEliteInfo] = useState<EliteInfo | null>(null);
   const [ctaInfo, setCtaInfo] = useState<CtaInfo | null>(null);
 
@@ -64,10 +63,10 @@ export default function QuizReport() {
       : { name: "Valued Client" };
 
     // Determine quiz type (fallback to 'it-services' for legacy)
-    const quizType = lead.quizType || 'it-services'; 
+    const quizType = lead.quizType || "it-services";
 
     // Get proper config
-    const config = getQuizConfig(quizType as QuizType, 'en');
+    const config = getQuizConfig(quizType as QuizType, "en");
 
     // Calculate Score properly using the engine
     const scoreBreakdown = calculateQuizScore(answers, config);
@@ -80,24 +79,31 @@ export default function QuizReport() {
     });
 
     // Determine Tier Info
-    let currentTierInfo = { tier: scoreBreakdown.scoreTier, description: "", color: "" };
-    if (scoreBreakdown.scoreTier === 'Conversation-Ready') {
-      currentTierInfo = { 
-        tier: scoreBreakdown.scoreTier, 
-        color: "#10b981", 
-        description: "Your team has solid communication skills with room for strategic refinement." 
+    let currentTierInfo = {
+      tier: scoreBreakdown.scoreTier,
+      description: "",
+      color: "",
+    };
+    if (scoreBreakdown.scoreTier === "Conversation-Ready") {
+      currentTierInfo = {
+        tier: scoreBreakdown.scoreTier,
+        color: "#10b981",
+        description:
+          "Your team has solid communication skills with room for strategic refinement.",
       };
-    } else if (scoreBreakdown.scoreTier === 'Million-Dollar Gap') {
-      currentTierInfo = { 
-        tier: scoreBreakdown.scoreTier, 
-        color: "#f59e0b", 
-        description: "Communication gaps are costing you deals. The good news? These are fixable." 
+    } else if (scoreBreakdown.scoreTier === "Million-Dollar Gap") {
+      currentTierInfo = {
+        tier: scoreBreakdown.scoreTier,
+        color: "#f59e0b",
+        description:
+          "Communication gaps are costing you deals. The good news? These are fixable.",
       };
     } else {
-      currentTierInfo = { 
-        tier: scoreBreakdown.scoreTier, 
-        color: "#ef4444", 
-        description: "Communication challenges are directly limiting growth. Immediate action needed." 
+      currentTierInfo = {
+        tier: scoreBreakdown.scoreTier,
+        color: "#ef4444",
+        description:
+          "Communication challenges are directly limiting growth. Immediate action needed.",
       };
     }
 
@@ -120,14 +126,18 @@ export default function QuizReport() {
     if (!impact.title) {
       // Fallback to legacy hardcoded defaults
       if (totalScore < 40) {
-        impact.title = "Deals are falling through due to communication breakdowns.";
-        impact.text = "Your team's hesitation and unclear communication are directly costing you contracts. Clients sense the uncertainty and choose competitors who sound more confident—even if they're less qualified.";
+        impact.title =
+          "Deals are falling through due to communication breakdowns.";
+        impact.text =
+          "Your team's hesitation and unclear communication are directly costing you contracts. Clients sense the uncertainty and choose competitors who sound more confident—even if they're less qualified.";
       } else if (totalScore < 70) {
         impact.title = "You're leaving money on the table in negotiations.";
-        impact.text = "Your team can close deals, but they're conceding too quickly on price and scope. The inability to defend value in real-time is costing you 15-20% on every contract.";
+        impact.text =
+          "Your team can close deals, but they're conceding too quickly on price and scope. The inability to defend value in real-time is costing you 15-20% on every contract.";
       } else {
         impact.title = "You're close—but small gaps are limiting your ceiling.";
-        impact.text = "Your team communicates well, but elite firms command 30-40% higher rates by mastering the subtle art of executive presence and strategic positioning.";
+        impact.text =
+          "Your team communicates well, but elite firms command 30-40% higher rates by mastering the subtle art of executive presence and strategic positioning.";
       }
     }
 
@@ -139,8 +149,8 @@ export default function QuizReport() {
         "They defend pricing and push back on unfavorable terms without hesitation",
         "Junior team members can lead client meetings independently",
         "They build rapport through natural small talk and relationship-building",
-        "They explain complex solutions clearly, making clients feel confident in their expertise"
-      ]
+        "They explain complex solutions clearly, making clients feel confident in their expertise",
+      ],
     };
 
     if (config.results && config.results.eliteComparison) {
@@ -150,9 +160,11 @@ export default function QuizReport() {
     // Determine CTA Info
     let currentCtaInfo: CtaInfo = {
       title: "Let's See If This Applies to Your Team",
-      subtext: "This assessment reveals patterns. A 15-minute conversation reveals solutions.",
+      subtext:
+        "This assessment reveals patterns. A 15-minute conversation reveals solutions.",
       buttonText: "Book Your Free Discovery Call",
-      footerText: "No pitch. No pressure. Just a conversation about what's possible for your team."
+      footerText:
+        "No pitch. No pressure. Just a conversation about what's possible for your team.",
     };
 
     if (config.results && config.results.cta) {
@@ -171,8 +183,31 @@ export default function QuizReport() {
   }, []);
 
   // --- Render ---
-  if (isLoading || !scoreData || !leadData || !tierInfo || !impactInfo || !eliteInfo || !ctaInfo) {
-    return <div className="report-container">Loading Report...</div>;
+  if (
+    isLoading ||
+    !scoreData ||
+    !leadData ||
+    !tierInfo ||
+    !impactInfo ||
+    !eliteInfo ||
+    !ctaInfo
+  ) {
+    // Detect language from URL
+    const lang =
+      typeof window !== "undefined" && window.location.pathname.includes("/es/")
+        ? "es"
+        : "en";
+    const loadingText =
+      lang === "es" ? "Cargando Informe..." : "Loading Report...";
+
+    return (
+      <div className="report-container">
+        <div className="loading-state">
+          <div className="spinner"></div>
+          <p className="loading-text">{loadingText}</p>
+        </div>
+      </div>
+    );
   }
 
   // Extract values for display
@@ -239,24 +274,36 @@ export default function QuizReport() {
         <section className="insights-section">
           <h2 className="section-heading">Your Top Improvement Areas</h2>
           <div className="insights-grid">
-             {/* Primary Gap */}
-             <div className="insight-card" style={{ borderLeftColor: tierInfo.color }}>
-                <div className="insight-card-q">Priority #1: {primaryGap.categoryName}</div>
-                <div className="insight-card-text">
-                  <strong>Impact:</strong> {primaryGap.impact}
-                  <br/><br/>
-                  <strong>Fix:</strong> {primaryGap.recommendation}
-                </div>
-             </div>
-             {/* Secondary Gap */}
-             <div className="insight-card" style={{ borderLeftColor: tierInfo.color }}>
-                <div className="insight-card-q">Priority #2: {secondaryGap.categoryName}</div>
-                <div className="insight-card-text">
-                  <strong>Impact:</strong> {secondaryGap.impact}
-                  <br/><br/>
-                  <strong>Fix:</strong> {secondaryGap.recommendation}
-                </div>
-             </div>
+            {/* Primary Gap */}
+            <div
+              className="insight-card"
+              style={{ borderLeftColor: tierInfo.color }}
+            >
+              <div className="insight-card-q">
+                Priority #1: {primaryGap.categoryName}
+              </div>
+              <div className="insight-card-text">
+                <strong>Impact:</strong> {primaryGap.impact}
+                <br />
+                <br />
+                <strong>Fix:</strong> {primaryGap.recommendation}
+              </div>
+            </div>
+            {/* Secondary Gap */}
+            <div
+              className="insight-card"
+              style={{ borderLeftColor: tierInfo.color }}
+            >
+              <div className="insight-card-q">
+                Priority #2: {secondaryGap.categoryName}
+              </div>
+              <div className="insight-card-text">
+                <strong>Impact:</strong> {secondaryGap.impact}
+                <br />
+                <br />
+                <strong>Fix:</strong> {secondaryGap.recommendation}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -297,23 +344,21 @@ export default function QuizReport() {
         {/* CTA Section */}
         <section className="cta-section">
           <div className="cta-container">
-            <h2 className="cta-heading">
-              {ctaInfo.title}
-            </h2>
-            <p className="cta-subtext">
-              {ctaInfo.subtext}
-            </p>
+            <h2 className="cta-heading">{ctaInfo.title}</h2>
+            <p className="cta-subtext">{ctaInfo.subtext}</p>
             <a
               href="https://www.nyenglishteacher.com/en/book/"
               className="cta-button"
             >
               <Calendar className="cta-button-icon" size={24} />
-              <span className="cta-button-text-desktop">{ctaInfo.buttonText}</span>
-              <span className="cta-button-text-mobile">{ctaInfo.buttonText}</span>
+              <span className="cta-button-text-desktop">
+                {ctaInfo.buttonText}
+              </span>
+              <span className="cta-button-text-mobile">
+                {ctaInfo.buttonText}
+              </span>
             </a>
-            <p className="cta-note">
-              {ctaInfo.footerText}
-            </p>
+            <p className="cta-note">{ctaInfo.footerText}</p>
           </div>
         </section>
       </div>

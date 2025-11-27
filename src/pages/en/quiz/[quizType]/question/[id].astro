@@ -47,6 +47,7 @@ const description = config.subtitle;
     { lang: "es-MX", href: `https://www.nyenglishteacher.com/es/quiz/${quizType}/question/${id}/` }
   ]}
   hideCta={true}
+  hideNav={true}
   hideLanguageSwitcher={true}
 >
 
@@ -91,37 +92,18 @@ const description = config.subtitle;
     <div class="question-card">
       <h1 class="question-text">{validQuestion.question}</h1>
 
-      <form class="options-form" id="quiz-form">
-        <input type="hidden" name="questionId" value={validQuestion.id} />
-        <input type="hidden" name="quizType" value={quizType} />
-        
+      <div class="options-container" id="quiz-options" data-question-id={validQuestion.id} data-quiz-type={quizType}>
         {validQuestion.answers.map((answer) => (
-          <label class="option-label">
-            <input 
-              type="radio" 
-              name="answer" 
-              value={answer.index}
-              class="option-radio"
-              required
-            />
-            <div class="option-content">
-              <span class="option-letter">{String.fromCharCode(65 + answer.index)}</span>
-              <span class="option-text">{answer.label}</span>
-            </div>
-          </label>
-        ))}
-
-        <div class="button-group">
-          <Button 
-            type="submit"
-            variant="primary" 
-            size="lg"
-            class="next-button"
+          <button 
+            type="button"
+            class="option-button"
+            data-answer-index={answer.index}
           >
-            {currentQuestion === totalQuestions ? 'See My Results →' : 'Next Question →'}
-          </Button>
-        </div>
-      </form>
+            <span class="option-letter">{String.fromCharCode(65 + answer.index)}</span>
+            <span class="option-text">{answer.label}</span>
+          </button>
+        ))}
+      </div>
     </div>
     </>
     )}
@@ -238,25 +220,14 @@ const description = config.subtitle;
   margin-bottom: 2.5rem;
 }
 
-/* Options */
-.options-form {
+/* Options Container */
+.options-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.option-label {
-  display: block;
-  cursor: pointer;
-}
-
-.option-radio {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.option-content {
+.option-button {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -264,18 +235,37 @@ const description = config.subtitle;
   background: #f8fafc;
   border: 2px solid #e2e8f0;
   border-radius: 12px;
+  cursor: pointer;
   transition: all 0.2s ease;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
 }
 
-.option-label:hover .option-content {
+/* Premium Hover State */
+.option-button:hover {
   background: #f1f5f9;
-  border-color: #cbd5e1;
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
 }
 
-.option-radio:checked + .option-content {
-  background: #eff6ff;
+/* Active/Selected State */
+.option-button.selected {
+  background: #3b82f6;
   border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.option-button.selected .option-letter {
+  background: white;
+  border-color: white;
+  color: #3b82f6;
+}
+
+.option-button.selected .option-text {
+  color: white;
+  font-weight: 500;
 }
 
 .option-letter {
@@ -293,30 +283,11 @@ const description = config.subtitle;
   transition: all 0.2s ease;
 }
 
-.option-radio:checked + .option-content .option-letter {
-  background: #3b82f6;
-  border-color: #3b82f6;
-  color: white;
-}
-
 .option-text {
   font-size: 1rem;
   color: #334155;
   line-height: 1.5;
-}
-
-.option-radio:checked + .option-content .option-text {
-  color: #0f172a;
-  font-weight: 500;
-}
-
-/* Button Group */
-.button-group {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid #e2e8f0;
-  display: flex;
-  justify-content: center;
+  transition: all 0.2s ease;
 }
 
 @media (max-width: 768px) {
@@ -338,47 +309,50 @@ const description = config.subtitle;
 import { QuizStorage } from '@/lib/quiz-storage';
 import type { QuizType } from '@/data/quiz/types';
 
-// Handle quiz form submission and store answers
-const form = document.getElementById('quiz-form');
+// Handle auto-advance quiz with click-to-advance
+const optionsContainer = document.getElementById('quiz-options');
 
-if (form) {
-  // Save start time on first question
-  const urlParams = new URLSearchParams(window.location.search);
-  const questionId = (form.querySelector('[name="questionId"]') as HTMLInputElement)?.value;
-  const quizTypeInput = form.querySelector('[name="quizType"]') as HTMLInputElement;
-  const quizType = quizTypeInput?.value as QuizType;
+if (optionsContainer) {
+  const questionId = optionsContainer.getAttribute('data-question-id');
+  const quizType = optionsContainer.getAttribute('data-quiz-type') as QuizType;
   
+  // Save start time on first question
   if (questionId === '1' && quizType) {
     QuizStorage.saveStartTime(quizType);
   }
   
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(form as HTMLFormElement);
-    const questionId = formData.get('questionId');
-    const answer = formData.get('answer');
-    const quizType = formData.get('quizType') as QuizType;
-    
-    if (!answer || !quizType) return;
-    
-    // Get existing answers from namespaced storage
-    const answers = QuizStorage.getAnswers(quizType) || {};
-    
-    // Store this answer with 'q' prefix to match expected format
-    const answerKey = `q${questionId}`;
-    answers[answerKey] = parseInt(answer as string);
-    QuizStorage.saveAnswers(quizType, answers);
-    
-    // Navigate to next question or results
-    const currentId = parseInt(questionId as string);
-    const totalQuestions = 6;
-    
-    if (currentId < totalQuestions) {
-      window.location.href = `/en/quiz/${quizType}/question/${currentId + 1}/`;
-    } else {
-      window.location.href = `/en/quiz/${quizType}/results/`;
-    }
+  // Add click handlers to all option buttons
+  const optionButtons = optionsContainer.querySelectorAll('.option-button');
+  
+  optionButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const answerIndex = button.getAttribute('data-answer-index');
+      
+      if (!answerIndex || !quizType || !questionId) return;
+      
+      // Add selected state for visual feedback
+      button.classList.add('selected');
+      
+      // Get existing answers from namespaced storage
+      const answers = QuizStorage.getAnswers(quizType) || {};
+      
+      // Store this answer with 'q' prefix to match expected format
+      const answerKey = `q${questionId}`;
+      answers[answerKey] = parseInt(answerIndex);
+      QuizStorage.saveAnswers(quizType, answers);
+      
+      // Auto-advance after 300ms (visual feedback delay)
+      setTimeout(() => {
+        const currentId = parseInt(questionId);
+        const totalQuestions = 6;
+        
+        if (currentId < totalQuestions) {
+          window.location.href = `/en/quiz/${quizType}/question/${currentId + 1}/`;
+        } else {
+          window.location.href = `/en/quiz/${quizType}/results/`;
+        }
+      }, 300);
+    });
   });
 }
 </script>

@@ -7,6 +7,7 @@ export interface Feature {
     readonly icon: LucideIcon;
     readonly title: string;
     readonly description: string;
+    readonly link?: string;
 }
 
 export interface FeatureList {

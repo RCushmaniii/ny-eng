@@ -1,0 +1,554 @@
+---
+/**
+ * Evaluación de Inglés Profesional - Página de Destino
+ * URL: /es/quiz/professional-services/
+ * Target Keyword: Inglés para Médicos y Abogados / Inglés Profesional
+ */
+
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import QuizSchema from "@components/seo/QuizSchema.astro";
+import {
+  GraduationCap,
+  CheckCircle,
+  Clock,
+  TrendingUp,
+  ChevronDown,
+} from "lucide-astro";
+
+// SEO metadata
+const title = "Quiz de Inglés Profesional | Comunicación Médica y Legal";
+const description =
+  "¿Tu inglés está creando riesgo? Evaluación para Médicos, Abogados y Consultores. Mide tu precisión, empatía y fluidez profesional en menos de 2 minutos.";
+
+// Datos de FAQ
+const faqs = [
+  {
+    question: "La importancia del matiz en el Inglés Médico y Legal",
+    answer:
+      "En medicina y derecho, las palabras tienen consecuencias. Un diagnóstico mal entendido, una cláusula contractual mal redactada o una instrucción de cliente mal interpretada pueden llevar a demandas por mala praxis, responsabilidad legal o confianza dañada. Esta evaluación mide tu capacidad para comunicarte con precisión, empatía y conciencia cultural—los tres pilares del inglés profesional en campos de alto riesgo.",
+  },
+  {
+    question:
+      "¿En qué se diferencia esto de los cursos de inglés médico o legal?",
+    answer:
+      "La mayoría de los cursos enseñan vocabulario y gramática. Esta evaluación evalúa habilidades de comunicación del mundo real: ¿Puedes explicar un diagnóstico complejo a un paciente preocupado? ¿Manejar una conversación difícil con un cliente? ¿Navegar malentendidos interculturales? Está diseñada para profesionales que ya conocen la terminología pero luchan con claridad, empatía o confianza en inglés.",
+  },
+  {
+    question: "¿Cuánto tiempo toma la Evaluación de Comunicación Profesional?",
+    answer:
+      "La evaluación toma 90 segundos. Responderás 6 preguntas basadas en escenarios que simulan desafíos profesionales reales: consultas con pacientes, negociaciones con clientes y toma de decisiones bajo presión. Tus resultados incluyen una Puntuación de Confianza en Comunicación (0-100) y un análisis personalizado de brechas.",
+  },
+  {
+    question:
+      "¿Esto me ayudará a pasar exámenes de licencia médica o de abogacía?",
+    answer:
+      "Esta evaluación no reemplaza la preparación para exámenes, pero la complementa. Los exámenes de licencia prueban tu conocimiento; esta evaluación prueba tu capacidad para comunicar ese conocimiento claramente y empáticamente. Fuertes habilidades de comunicación mejoran tu desempeño en exámenes orales, simulaciones con pacientes y entrevistas con clientes.",
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  lang="es"
+  tkey="quiz/professional-services"
+  hideCta={true}
+>
+  <QuizSchema lang="es" slot="head" />
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Evaluación Gratuita de 90 Segundos</span>
+
+        <h1>
+          Evaluación de Comunicación Profesional: La Claridad Equivale a
+          Confianza
+        </h1>
+
+        <p class="lead">
+          Tu experiencia es de clase mundial. Pero cuando la explicas a
+          pacientes o clientes, ¿entienden—o solo asienten educadamente? Toma
+          esta evaluación de 2 minutos para descubrir dónde las barreras del
+          idioma están erosionando la confianza y credibilidad.
+        </p>
+
+        <div class="benefits">
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span>Mide tu puntuación de Inglés Profesional (0-100)</span>
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span
+              >Identifica brechas en precisión, empatía y fluidez cultural</span
+            >
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span
+              >Obtén una hoja de ruta de 30 días para construir confianza con
+              clientes</span
+            >
+          </div>
+        </div>
+
+        <Button
+          href="/es/quiz/professional-services/question/1"
+          variant="primary"
+          size="lg"
+          class="cta-button"
+        >
+          Comenzar Evaluación →
+        </Button>
+
+        <div class="trust-signals">
+          <div class="trust-signal">
+            <Clock size={16} />
+            <span>90 segundos</span>
+          </div>
+          <div class="trust-signal">
+            <TrendingUp size={16} />
+            <span>Resultados instantáneos</span>
+          </div>
+          <div class="trust-signal">
+            <GraduationCap size={16} />
+            <span>200+ profesionales evaluados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="discover-section">
+    <div class="container">
+      <h2>
+        Los Riesgos del Inglés "Suficientemente Bueno" en Campos de Alto Riesgo
+      </h2>
+      <p class="section-lead">
+        Esta evaluación mide las tres dimensiones que separan a los
+        profesionales competentes de los asesores de confianza:
+      </p>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon">🎯</div>
+          <h3>Precisión y Exactitud</h3>
+          <p>
+            ¿Puedes explicar un diagnóstico sin jerga médica? ¿Traducir
+            conceptos legales a inglés simple? La precisión no se trata de usar
+            palabras grandes—se trata de ser entendido la primera vez, cada vez.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">💙</div>
+          <h3>Empatía y Rapport</h3>
+          <p>
+            ¿Los pacientes se sienten escuchados? ¿Los clientes confían en tu
+            juicio? Tu tono, elección de palabras y habilidades de escucha
+            señalan si te importa—o solo quieres pasar a la siguiente cita.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">🌍</div>
+          <h3>Fluidez Cultural</h3>
+          <p>
+            Los pacientes y clientes norteamericanos esperan franqueza,
+            transparencia y toma de decisiones compartida. ¿Estás navegando
+            estas expectativas culturales efectivamente—o creando fricción?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="differentiation-section">
+    <div class="container">
+      <h2>Cerrando la Brecha Entre Experiencia y Confianza del Cliente</h2>
+      <p class="section-lead">
+        Los profesionales que construyen prácticas prósperas no solo tienen
+        credenciales—comunican con claridad, empatía y conciencia cultural.
+      </p>
+
+      <div class="comparison-grid">
+        <div class="comparison-card struggling">
+          <h3>❌ Profesionales con Dificultades</h3>
+          <ul>
+            <li>
+              Pierden clientes debido a falta de comunicación o frialdad
+              percibida
+            </li>
+            <li>
+              Dependen excesivamente de la jerga para enmascarar incertidumbre
+              lingüística
+            </li>
+            <li>
+              Luchan con conversaciones difíciles (malas noticias, disputas de
+              facturación)
+            </li>
+            <li>Pierden referencias a pesar de fuertes habilidades técnicas</li>
+          </ul>
+        </div>
+
+        <div class="comparison-card thriving">
+          <h3>✅ Profesionales de Primer Nivel</h3>
+          <ul>
+            <li>Explican temas complejos en menos de 2 minutos</li>
+            <li>
+              Construyen confianza a través de escucha empática y lenguaje claro
+            </li>
+            <li>Navegan diferencias culturales con facilidad</li>
+            <li>
+              Hacen crecer prácticas a través de referencias de boca en boca
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-center">
+        <Button
+          href="/es/quiz/professional-services/question/1"
+          variant="primary"
+          size="lg"
+        >
+          Descubre Tu Puntuación de Comunicación Profesional →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <h2>Preguntas Frecuentes</h2>
+
+      {
+        faqs.map((faq) => (
+          <details class="faq-item">
+            <summary>
+              <h3>{faq.question}</h3>
+              <ChevronDown size={20} class="chevron" />
+            </summary>
+            <div class="faq-answer">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+
+  <style>
+    .hero {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      padding: 8rem 1.5rem 4rem;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #16a34a;
+      background: white;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      width: fit-content;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .lead {
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: #475569;
+      margin: 0;
+    }
+
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
+      color: #334155;
+    }
+
+    .benefit :global(svg) {
+      color: #10b981;
+      flex-shrink: 0;
+    }
+
+    .trust-signals {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-top: 1rem;
+    }
+
+    .trust-signal {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trust-signal :global(svg) {
+      color: #16a34a;
+    }
+
+    .discover-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .discover-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .section-lead {
+      font-size: 1.125rem;
+      color: #475569;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .metric-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .metric-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .metric-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+    }
+
+    .metric-card p {
+      font-size: 0.9375rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .differentiation-section {
+      padding: 4rem 1.5rem;
+      background: #f8fafc;
+    }
+
+    .differentiation-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto;
+    }
+
+    @media (min-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .comparison-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .comparison-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .comparison-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .comparison-card li {
+      font-size: 0.9375rem;
+      color: #475569;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .comparison-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .struggling li::before {
+      color: #ef4444;
+    }
+
+    .thriving li::before {
+      color: #10b981;
+    }
+
+    .cta-center {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .faq-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .faq-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin: 0;
+      flex: 1;
+    }
+
+    .faq-item summary :global(.chevron) {
+      color: #64748b;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .faq-item[open] summary :global(.chevron) {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .faq-answer p {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        padding: 6rem 1rem 3rem;
+      }
+
+      h1 {
+        font-size: 1.875rem;
+      }
+
+      .discover-section,
+      .differentiation-section,
+      .faq-section {
+        padding: 3rem 1rem;
+      }
+    }
+  </style>
+</Base>

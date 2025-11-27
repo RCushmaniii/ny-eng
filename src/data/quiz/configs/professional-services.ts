@@ -73,30 +73,30 @@ export const professionalServicesConfig: QuizConfig = {
         id: 3,
         category: 'confidence',
         question:
-          'When challenged in a live meeting, how effectively do you defend your position?',
+          'When challenged in a live meeting in English, how effectively do you defend your position?',
         answers: [
           {
             index: 0,
             score: 10,
-            label: 'It holds firm—I defend my position calmly and persuasively.',
+            label: 'It holds firm—I defend my position calmly and persuasively in English.',
           },
           {
             index: 1,
             score: 6,
             label:
-              'It wavers—I sound defensive or hesitant while searching for words.',
+              'It wavers—I sound defensive or hesitant while searching for the right English words.',
           },
           {
             index: 2,
             score: 3,
             label:
-              'It drops—I struggle to push back politely, so I stay silent.',
+              'It drops—I struggle to push back politely in a second language, so I stay silent.',
           },
           {
             index: 3,
             score: 0,
             label:
-              'It breaks—I defer to email to avoid saying the wrong thing.',
+              'It breaks—I defer to email to avoid saying the wrong thing in English.',
           },
         ],
       },
@@ -310,30 +310,30 @@ export const professionalServicesConfig: QuizConfig = {
         id: 3,
         category: 'confidence',
         question:
-          'Cuando te desafían en una reunión en vivo, ¿qué tan efectivamente defiendes tu posición?',
+          'Cuando te desafían en una reunión en vivo en inglés, ¿qué tan efectivamente defiendes tu posición?',
         answers: [
           {
             index: 0,
             score: 10,
-            label: 'Se mantiene firme—defiendo mi postura con calma y persuasión.',
+            label: 'Se mantiene firme—defiendo mi postura con calma y persuasión en inglés.',
           },
           {
             index: 1,
             score: 6,
             label:
-              'Vacila—sueno defensivo o dudoso mientras busco las palabras.',
+              'Vacila—sueno defensivo o dudoso mientras busco las palabras correctas en inglés.',
           },
           {
             index: 2,
             score: 3,
             label:
-              'Cae—me cuesta contradecir educadamente, así que guardo silencio.',
+              'Cae—me cuesta contradecir educadamente en un segundo idioma, así que guardo silencio.',
           },
           {
             index: 3,
             score: 0,
             label:
-              'Se rompe—prefiero responder por email para no equivocarme.',
+              'Se rompe—prefiero responder por email para no equivocarme en inglés.',
           },
         ],
       },

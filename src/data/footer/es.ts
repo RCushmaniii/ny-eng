@@ -18,10 +18,9 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
       resources: {
         title: "Recursos",
         links: [
-          { name: "Preguntas Frecuentes", href: `${routes.es.home}#faqs` },
+          { name: "Preguntas Frecuentes", href: "/es/faqs/" },
           { name: "Blog", href: routes.es.blog },
-          { name: "Evaluaciones de Comunicación", href: "/es/assessments/" },
-          { name: "Consulta Gratuita", href: "/es/book/" },
+          { name: "Iniciar Evaluación", href: "/es/assessments/" },
         ],
       },
       connect: {
@@ -29,7 +28,7 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
         items: [
           { type: "link", name: "Contáctame por WhatsApp", href: "https://wa.link/pk4f97", target: "_blank", rel: "noopener noreferrer" },
           { type: "link", name: "Agendar una Consulta", href: "/es/book/" },
-          { type: "link", name: "Contáctame", href: routes.es.contact },
+          { type: "link", name: "Envíame un Email", href: routes.es.contact },
         ] as ConnectItem[],
       },
     },

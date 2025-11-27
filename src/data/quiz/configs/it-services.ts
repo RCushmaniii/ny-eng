@@ -21,45 +21,45 @@ export const itServicesConfig: QuizConfig = {
       {
         id: 1,
         category: 'clarity',
-        question: 'How often do language or cultural gaps lead to rework or "misaligned expectations" with North American clients?',
+        question: 'How often does a misinterpretation of English requirements lead to bugs, rework, or "what I said vs. what you heard" issues?',
         answers: [
-          { index: 0, score: 10, label: 'Rarely—our team captures requirements correctly the first time.' },
-          { index: 1, score: 6, label: 'Occasionally—we sometimes miss nuance and need a second round of clarification.' },
-          { index: 2, score: 3, label: 'Regularly—we often deliver what was asked, not what was needed, creating friction.' },
-          { index: 3, score: 0, label: 'Frequently—we spend significant time fixing work because the initial brief wasn\'t fully understood.' }
+          { index: 0, score: 10, label: 'Rarely—Our team captures the English nuance correctly the first time.' },
+          { index: 1, score: 6, label: 'Occasionally—We sometimes miss the subtle meaning and need a second round of clarification.' },
+          { index: 2, score: 3, label: 'Regularly—We often deliver what was asked, not what was needed, because the brief wasn\'t fully understood.' },
+          { index: 3, score: 0, label: 'Frequently—We spend significant billable hours fixing work because of language-based misunderstandings.' }
         ]
       },
       {
         id: 2,
         category: 'clarity',
-        question: 'When your developers present demos or solutions, how well do they translate technical complexity into business value?',
+        question: 'When your developers present demos or solutions in English, how well do they translate "Technical Complexity" into "Business Value"?',
         answers: [
-          { index: 0, score: 10, label: 'Seamlessly—they explain why it matters to the client\'s business, not just how it works.' },
-          { index: 1, score: 6, label: 'Functionally—they get the point across, but it\'s still heavy on technical jargon.' },
-          { index: 2, score: 3, label: 'Poorly—clients often get glazed eyes or ask for a non-technical summary.' },
-          { index: 3, score: 0, label: 'They don\'t—we don\'t let developers present; a PM or lead must always translate.' }
+          { index: 0, score: 10, label: 'Seamlessly—They have the vocabulary to explain why it matters to the business, not just how it works.' },
+          { index: 1, score: 6, label: 'Functionally—They get the point across, but rely heavily on technical jargon because it\'s "safer."' },
+          { index: 2, score: 3, label: 'Poorly—Clients get glazed eyes or ask for a "non-technical" summary because the explanation is too dense.' },
+          { index: 3, score: 0, label: 'They Don\'t—We don\'t let developers present in English; a PM or Lead must always translate.' }
         ]
       },
       {
         id: 3,
         category: 'confidence',
-        question: 'During live troubleshooting, how often does your team use the "Let me get back to you" safety net—even when they likely know the answer?',
+        question: 'During live troubleshooting, how often does your team use the "Let me get back to you" safety net—specifically to avoid speaking under pressure?',
         answers: [
-          { index: 0, score: 10, label: 'Never—they\'re confident solving problems live on the call.' },
-          { index: 1, score: 6, label: 'Rarely—only when the issue is genuinely complex and requires research.' },
-          { index: 2, score: 3, label: 'Often—they\'re afraid of saying the wrong thing in English, so they default to email.' },
-          { index: 3, score: 0, label: 'Always—they avoid live troubleshooting entirely to avoid being put on the spot.' }
+          { index: 0, score: 10, label: 'Never—They are confident enough to troubleshoot live in English.' },
+          { index: 1, score: 6, label: 'Rarely—Only when the issue is genuinely complex and requires research.' },
+          { index: 2, score: 3, label: 'Often—They are afraid of saying the wrong thing in English, so they default to email.' },
+          { index: 3, score: 0, label: 'Always—They avoid live voice calls entirely to prevent being put on the spot.' }
         ]
       },
       {
         id: 4,
         category: 'negotiation',
-        question: 'When a client pushes for extra features or aggressive timelines (scope creep), how effectively does your team hold the line?',
+        question: 'When a client pushes for scope creep, does your team have the linguistic nuance to push back without sounding rude?',
         answers: [
-          { index: 0, score: 10, label: 'Very effectively—they push back firmly and diplomatically, protecting our margins.' },
-          { index: 1, score: 6, label: 'Inconsistently—they try to push back but often cave to avoid awkwardness.' },
-          { index: 2, score: 3, label: 'Poorly—they say "yes" in the meeting, then complain about the deadline later.' },
-          { index: 3, score: 0, label: 'Escalation only—they can\'t handle pushback; a manager has to step in to protect the scope.' }
+          { index: 0, score: 10, label: 'Yes—They can be firm and diplomatic in English, protecting our margins.' },
+          { index: 1, score: 6, label: 'Inconsistently—They try to push back, but often cave because they can\'t find the polite words in the moment.' },
+          { index: 2, score: 3, label: 'No—They say "yes" in the meeting to avoid the awkwardness of arguing in a second language.' },
+          { index: 3, score: 0, label: 'Escalation Only—They lack the vocabulary to negotiate; a Manager must step in to protect the scope.' }
         ]
       },
       {
@@ -67,21 +67,21 @@ export const itServicesConfig: QuizConfig = {
         category: 'confidence',
         question: 'If your top English-speaking manager is out sick, what happens to your client meetings?',
         answers: [
-          { index: 0, score: 10, label: 'Business as usual—multiple team members can step up and lead effectively.' },
-          { index: 1, score: 6, label: 'Minor disruption—others can attend, but they can\'t drive the strategy.' },
-          { index: 2, score: 3, label: 'High anxiety—the team struggles through the meeting, risking client confidence.' },
-          { index: 3, score: 0, label: 'Cancellation—we have to reschedule because no one else can handle the client comms.' }
+          { index: 0, score: 10, label: 'Business as usual—Multiple team members have the fluency to step up and lead.' },
+          { index: 1, score: 6, label: 'Minor disruption—Others can attend, but they can\'t drive the strategic conversation.' },
+          { index: 2, score: 3, label: 'High anxiety—The team struggles through the meeting, and the client senses the communication gap.' },
+          { index: 3, score: 0, label: 'Cancellation—We have to reschedule because no one else can handle the client comms.' }
         ]
       },
       {
         id: 6,
         category: 'cultural',
-        question: 'How would you describe your team\'s relationship with North American stakeholders?',
+        question: 'How comfortable is your team with "Small Talk" and North American cultural references (sports, holidays, idioms)?',
         answers: [
-          { index: 0, score: 10, label: 'Trusted advisors—clients ask them for advice and casually chat about life/weekends.' },
-          { index: 1, score: 6, label: 'Friendly professionals—the relationship is good but stays strictly work-focused.' },
-          { index: 2, score: 3, label: 'Transactional—clients treat them like an execution arm ("code monkeys"), not partners.' },
-          { index: 3, score: 0, label: 'Invisible—clients barely know them; they only speak when spoken to.' }
+          { index: 0, score: 10, label: 'Very Comfortable—They act as trusted advisors and chat about life/weekends naturally.' },
+          { index: 1, score: 6, label: 'Somewhat Comfortable—They try, but the conversation feels stiff or rehearsed.' },
+          { index: 2, score: 3, label: 'Uncomfortable—They stick strictly to technical tickets to avoid "social English."' },
+          { index: 3, score: 0, label: 'Invisible—Clients treat them like an execution arm ("Code Monkeys") because there is no personal connection.' }
         ]
       }
     ],
@@ -162,67 +162,67 @@ export const itServicesConfig: QuizConfig = {
       {
         id: 1,
         category: 'clarity',
-        question: '¿Con qué frecuencia los malentendidos con clientes norteamericanos requieren aclaración de seguimiento?',
+        question: '¿Con qué frecuencia una mala interpretación de los requisitos en inglés genera bugs, retrabajo o problemas de "lo que dije vs. lo que escuchaste"?',
         answers: [
-          { index: 0, score: 10, label: 'Casi nunca—la comunicación es clara desde el principio' },
-          { index: 1, score: 6, label: 'Una o dos veces al mes—problemas menores' },
-          { index: 2, score: 3, label: 'Varias veces al mes—es notable' },
-          { index: 3, score: 0, label: 'Semanalmente o más—está afectando las relaciones' }
+          { index: 0, score: 10, label: 'Rara vez—Nuestro equipo capta los matices del inglés correctamente la primera vez.' },
+          { index: 1, score: 6, label: 'Ocasionalmente—A veces perdemos el significado sutil y necesitamos una segunda ronda de aclaración.' },
+          { index: 2, score: 3, label: 'Regularmente—A menudo entregamos lo que se pidió, no lo que se necesitaba, porque el brief no se entendió completamente.' },
+          { index: 3, score: 0, label: 'Frecuentemente—Gastamos horas facturables significativas arreglando trabajo debido a malentendidos basados en el idioma.' }
         ]
       },
       {
         id: 2,
         category: 'clarity',
-        question: 'Al presentar soluciones a clientes, ¿qué tan bien explica tu equipo conceptos técnicos en términos de negocio?',
+        question: 'Cuando tus desarrolladores presentan demos o soluciones en inglés, ¿qué tan bien traducen "Complejidad Técnica" en "Valor de Negocio"?',
         answers: [
-          { index: 0, score: 10, label: 'Excelente—los clientes lo comprenden inmediatamente' },
-          { index: 1, score: 6, label: 'Bueno—ocasionalmente necesita aclaración' },
-          { index: 2, score: 3, label: 'Regular—los clientes piden regularmente explicaciones más simples' },
-          { index: 3, score: 0, label: 'Pobre—a menudo los perdemos' }
+          { index: 0, score: 10, label: 'Sin problemas—Tienen el vocabulario para explicar por qué importa al negocio, no solo cómo funciona.' },
+          { index: 1, score: 6, label: 'Funcionalmente—Transmiten el punto, pero dependen mucho de la jerga técnica porque es "más seguro".' },
+          { index: 2, score: 3, label: 'Pobremente—Los clientes se quedan con la mirada perdida o piden un resumen "no técnico" porque la explicación es demasiado densa.' },
+          { index: 3, score: 0, label: 'No lo hacen—No dejamos que los desarrolladores presenten en inglés; un PM o Líder siempre debe traducir.' }
         ]
       },
       {
         id: 3,
         category: 'confidence',
-        question: 'Durante llamadas en vivo con clientes, ¿con qué frecuencia tu equipo dice "Déjame volver contigo" cuando en realidad saben la respuesta?',
+        question: 'Durante la resolución de problemas en vivo, ¿con qué frecuencia tu equipo usa la red de seguridad "Déjame volver contigo"—específicamente para evitar hablar bajo presión?',
         answers: [
-          { index: 0, score: 10, label: 'Nunca—responden en tiempo real' },
-          { index: 1, score: 6, label: 'Rara vez—solo para detalles verdaderamente complejos' },
-          { index: 2, score: 3, label: 'A veces—cuando están bajo presión' },
-          { index: 3, score: 0, label: 'Frecuentemente—es una red de seguridad' }
+          { index: 0, score: 10, label: 'Nunca—Tienen la confianza suficiente para resolver problemas en vivo en inglés.' },
+          { index: 1, score: 6, label: 'Rara vez—Solo cuando el problema es genuinamente complejo y requiere investigación.' },
+          { index: 2, score: 3, label: 'A menudo—Tienen miedo de decir algo incorrecto en inglés, así que recurren al correo electrónico.' },
+          { index: 3, score: 0, label: 'Siempre—Evitan las llamadas de voz en vivo por completo para no ser puestos en aprietos.' }
         ]
       },
       {
         id: 4,
         category: 'negotiation',
-        question: 'Cuando los clientes rechazan alcance, cronograma o precios, ¿qué tan efectivamente tu equipo mantiene la posición?',
+        question: 'Cuando un cliente presiona por expansión de alcance, ¿tu equipo tiene el matiz lingüístico para rechazar sin sonar grosero?',
         answers: [
-          { index: 0, score: 10, label: 'Muy efectivamente—defienden nuestra posición con confianza' },
-          { index: 1, score: 6, label: 'Moderadamente—lo intentan pero a veces ceden demasiado rápido' },
-          { index: 2, score: 3, label: 'Pobremente—luchan para rechazar' },
-          { index: 3, score: 0, label: 'Redirigimos estos casos al liderazgo senior' }
+          { index: 0, score: 10, label: 'Sí—Pueden ser firmes y diplomáticos en inglés, protegiendo nuestros márgenes.' },
+          { index: 1, score: 6, label: 'Inconsistentemente—Intentan rechazar, pero a menudo ceden porque no pueden encontrar las palabras educadas en el momento.' },
+          { index: 2, score: 3, label: 'No—Dicen "sí" en la reunión para evitar la incomodidad de discutir en un segundo idioma.' },
+          { index: 3, score: 0, label: 'Solo Escalación—Les falta el vocabulario para negociar; un Gerente debe intervenir para proteger el alcance.' }
         ]
       },
       {
         id: 5,
         category: 'confidence',
-        question: '¿Cuántos miembros del equipo pueden liderar con confianza una reunión con clientes (no solo asistir)?',
+        question: 'Si tu gerente con mejor inglés está enfermo, ¿qué pasa con tus reuniones con clientes?',
         answers: [
-          { index: 0, score: 10, label: 'Varias personas—tenemos profundidad' },
-          { index: 1, score: 6, label: '2-3 personas—limitado pero adecuado' },
-          { index: 2, score: 3, label: '1-2 personas—dependemos de individuos específicos' },
-          { index: 3, score: 0, label: 'Ninguno—el liderazgo senior siempre debe estar presente' }
+          { index: 0, score: 10, label: 'Todo normal—Múltiples miembros del equipo tienen la fluidez para asumir el liderazgo.' },
+          { index: 1, score: 6, label: 'Interrupción menor—Otros pueden asistir, pero no pueden dirigir la conversación estratégica.' },
+          { index: 2, score: 3, label: 'Alta ansiedad—El equipo lucha durante la reunión, y el cliente percibe la brecha de comunicación.' },
+          { index: 3, score: 0, label: 'Cancelación—Tenemos que reprogramar porque nadie más puede manejar la comunicación con el cliente.' }
         ]
       },
       {
         id: 6,
         category: 'cultural',
-        question: '¿Qué tan cómodo está tu equipo construyendo rapport con clientes norteamericanos más allá de la discusión técnica?',
+        question: '¿Qué tan cómodo está tu equipo con "Small Talk" y referencias culturales norteamericanas (deportes, días festivos, modismos)?',
         answers: [
-          { index: 0, score: 10, label: 'Muy cómodo—sucede naturalmente' },
-          { index: 1, score: 6, label: 'Algo cómodo—lo intentan pero se siente forzado' },
-          { index: 2, score: 3, label: 'Incómodo—se limitan estrictamente a negocios' },
-          { index: 3, score: 0, label: 'Muy incómodo—lo evitan por completo' }
+          { index: 0, score: 10, label: 'Muy cómodo—Actúan como asesores de confianza y charlan sobre vida/fines de semana naturalmente.' },
+          { index: 1, score: 6, label: 'Algo cómodo—Lo intentan, pero la conversación se siente rígida o ensayada.' },
+          { index: 2, score: 3, label: 'Incómodo—Se limitan estrictamente a tickets técnicos para evitar el "inglés social".' },
+          { index: 3, score: 0, label: 'Invisibles—Los clientes los tratan como un brazo de ejecución ("Code Monkeys") porque no hay conexión personal.' }
         ]
       }
     ],

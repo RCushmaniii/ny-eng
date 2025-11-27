@@ -1,0 +1,634 @@
+---
+/**
+ * Professional Communication Assessment Landing Page
+ * URL: /en/quiz/professional-services/
+ * Target Keyword: English for Doctors and Lawyers / Professional English
+ */
+
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import QuizSchema from "@components/seo/QuizSchema.astro";
+import {
+  GraduationCap,
+  CheckCircle,
+  Clock,
+  TrendingUp,
+  ChevronDown,
+} from "lucide-astro";
+
+// SEO metadata - optimized for 50-60 characters title, 150-160 chars description
+const title = "Professional English Quiz | Medical & Legal Communication";
+const description =
+  "Is your English creating risk? Assessment for Doctors, Lawyers & Consultants. Measure your accuracy, empathy, and professional fluency in under 2 minutes.";
+
+// FAQ data for SEO content
+const faqs = [
+  {
+    question: "The importance of nuance in Medical and Legal English",
+    answer:
+      "In medicine and law, words have consequences. A misunderstood diagnosis, a poorly worded contract clause, or a misinterpreted client instruction can lead to malpractice claims, legal liability, or damaged trust. This assessment measures your ability to communicate with precision, empathy, and cultural awareness—the three pillars of professional English in high-stakes fields.",
+  },
+  {
+    question: "How is this different from medical or legal English courses?",
+    answer:
+      "Most courses teach vocabulary and grammar. This assessment evaluates real-world communication skills: Can you explain a complex diagnosis to a worried patient? Handle a difficult client conversation? Navigate cross-cultural misunderstandings? It's designed for professionals who already know the terminology but struggle with clarity, empathy, or confidence in English.",
+  },
+  {
+    question: "How long does the Professional Communication Assessment take?",
+    answer:
+      "The assessment takes 90 seconds. You'll answer 6 scenario-based questions that simulate real professional challenges: patient consultations, client negotiations, and high-pressure decision-making. Your results include a Communication Confidence Score (0-100) and a personalized gap analysis.",
+  },
+  {
+    question: "Will this help me pass medical licensing exams or bar exams?",
+    answer:
+      "This assessment doesn't replace exam prep, but it complements it. Licensing exams test your knowledge; this assessment tests your ability to communicate that knowledge clearly and empathetically. Strong communication skills improve your performance in oral exams, patient simulations, and client interviews.",
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  lang="en"
+  tkey="quiz/professional-services"
+  hideCta={true}
+  hideNav={true}
+>
+  <QuizSchema lang="en" slot="head" />
+
+  <!-- Hero Section with NYC Night Skyline Background -->
+  <section class="hero">
+    <img
+      src="/images/ny-english-night-skyline.jpg"
+      alt="New York City Skyline at Night"
+      class="hero-bg-image"
+      loading="eager"
+    />
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Free 90-Second Assessment</span>
+
+        <h1>Professional Communication Assessment: Clarity Equals Trust</h1>
+
+        <p class="lead">
+          Your expertise is world-class. But when you explain it to patients or
+          clients, do they understand—or just nod politely? Take this 2-minute
+          assessment to discover where language barriers are eroding trust and
+          credibility.
+        </p>
+
+        <div class="benefits">
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span>Measure your Professional English score (0-100)</span>
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span>Identify gaps in accuracy, empathy & cultural fluency</span>
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span>Get a 30-day roadmap to build client confidence</span>
+          </div>
+        </div>
+
+        <Button
+          href="/en/quiz/professional-services/question/1"
+          variant="primary"
+          size="lg"
+          class="cta-button gold-cta"
+        >
+          Start Assessment →
+        </Button>
+
+        <div class="trust-signals">
+          <div class="trust-signal">
+            <Clock size={16} />
+            <span>90 seconds</span>
+          </div>
+          <div class="trust-signal">
+            <TrendingUp size={16} />
+            <span>Instant results</span>
+          </div>
+          <div class="trust-signal">
+            <GraduationCap size={16} />
+            <span>200+ professionals assessed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Discover Section -->
+  <section class="discover-section">
+    <div class="container">
+      <h2>The Risks of "Good Enough" English in High-Stakes Fields</h2>
+      <p class="section-lead">
+        This assessment measures the three dimensions that separate competent
+        professionals from trusted advisors:
+      </p>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon">🎯</div>
+          <h3>Precision & Accuracy</h3>
+          <p>
+            Can you explain a diagnosis without medical jargon? Translate legal
+            concepts into plain English? Precision isn't about using big
+            words—it's about being understood the first time, every time.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">💙</div>
+          <h3>Empathy & Rapport</h3>
+          <p>
+            Do patients feel heard? Do clients trust your judgment? Your tone,
+            word choice, and listening skills signal whether you care—or just
+            want to move to the next appointment.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">🌍</div>
+          <h3>Cultural Fluency</h3>
+          <p>
+            North American patients and clients expect directness, transparency,
+            and shared decision-making. Are you navigating these cultural
+            expectations effectively—or creating friction?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Differentiation Section -->
+  <section class="differentiation-section">
+    <div class="container">
+      <h2>Bridging the Gap Between Expertise and Client Confidence</h2>
+      <p class="section-lead">
+        The professionals who build thriving practices don't just have
+        credentials—they communicate with clarity, empathy, and cultural
+        awareness.
+      </p>
+
+      <div class="comparison-grid">
+        <div class="comparison-card struggling">
+          <h3>❌ Struggling Professionals</h3>
+          <ul>
+            <li>Lose clients due to miscommunication or perceived coldness</li>
+            <li>Over-rely on jargon to mask language uncertainty</li>
+            <li>
+              Struggle with difficult conversations (bad news, billing disputes)
+            </li>
+            <li>Miss referrals despite strong technical skills</li>
+          </ul>
+        </div>
+
+        <div class="comparison-card thriving">
+          <h3>✅ Top-Tier Professionals</h3>
+          <ul>
+            <li>Explain complex topics in under 2 minutes</li>
+            <li>Build trust through empathetic listening & clear language</li>
+            <li>Navigate cultural differences with ease</li>
+            <li>Grow practices through word-of-mouth referrals</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-center">
+        <Button
+          href="/en/quiz/professional-services/question/1"
+          variant="primary"
+          size="lg"
+        >
+          Discover Your Professional Communication Score →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (SEO Content) -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+
+      {
+        faqs.map((faq, index) => (
+          <details class="faq-item">
+            <summary>
+              <h3>{faq.question}</h3>
+              <ChevronDown size={20} class="chevron" />
+            </summary>
+            <div class="faq-answer">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+
+  <style>
+    /* Hero Section with Background Image */
+    .hero {
+      position: relative;
+      padding: 10rem 1.5rem 6rem;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    /* Mobile: shift image right to show Empire State Building */
+    @media (max-width: 767px) {
+      .hero-bg-image {
+        object-position: 75% center;
+      }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.5) 0%,
+        rgba(30, 41, 59, 0.4) 100%
+      );
+      z-index: 1;
+    }
+
+    @media (min-width: 768px) {
+      .hero-overlay {
+        background: linear-gradient(
+          to right,
+          rgba(15, 23, 42, 0.65) 0%,
+          rgba(15, 23, 42, 0.55) 50%,
+          rgba(30, 41, 59, 0.45) 100%
+        );
+      }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      max-width: 650px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-content {
+        max-width: 700px;
+      }
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #0f172a;
+      background: rgba(251, 191, 36, 0.95);
+      padding: 0.625rem 1.25rem;
+      border-radius: 9999px;
+      width: fit-content;
+      box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #ffffff;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: #f1f5f9;
+      margin: 0;
+      font-weight: 400;
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    @media (min-width: 768px) {
+      .lead {
+        font-size: 1.375rem;
+      }
+    }
+
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.0625rem;
+      color: #ffffff;
+      font-weight: 500;
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    .benefit :global(svg) {
+      color: #10b981;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.5));
+    }
+
+    .trust-signals {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+      color: #cbd5e1;
+      margin-top: 1rem;
+    }
+
+    .trust-signal {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trust-signal :global(svg) {
+      color: #fbbf24;
+    }
+
+    /* Gold CTA Button Override */
+    :global(.gold-cta) {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+      color: #0f172a !important;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 16px rgba(251, 191, 36, 0.4) !important;
+      border: none !important;
+    }
+
+    :global(.gold-cta:hover) {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5) !important;
+    }
+
+    /* Discover Section */
+    .discover-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .discover-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .section-lead {
+      font-size: 1.125rem;
+      color: #475569;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .metric-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .metric-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .metric-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+    }
+
+    .metric-card p {
+      font-size: 0.9375rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* Differentiation Section */
+    .differentiation-section {
+      padding: 4rem 1.5rem;
+      background: #f8fafc;
+    }
+
+    .differentiation-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto;
+    }
+
+    @media (min-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .comparison-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .comparison-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .comparison-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .comparison-card li {
+      font-size: 0.9375rem;
+      color: #475569;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .comparison-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .struggling li::before {
+      color: #ef4444;
+    }
+
+    .thriving li::before {
+      color: #10b981;
+    }
+
+    .cta-center {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .faq-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin: 0;
+      flex: 1;
+    }
+
+    .faq-item summary :global(.chevron) {
+      color: #64748b;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .faq-item[open] summary :global(.chevron) {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .faq-answer p {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 767px) {
+      .hero {
+        padding: 6rem 1rem 3rem;
+      }
+
+      h1 {
+        font-size: 1.875rem;
+      }
+
+      .discover-section,
+      .differentiation-section,
+      .faq-section {
+        padding: 3rem 1rem;
+      }
+    }
+  </style>
+</Base>

@@ -1,0 +1,539 @@
+---
+/**
+ * Evaluación de Presencia Ejecutiva - Página de Destino
+ * URL: /es/quiz/executives/
+ * Target Keyword: Habilidades de Comunicación Ejecutiva / Presencia de Liderazgo
+ */
+
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import QuizSchema from "@components/seo/QuizSchema.astro";
+import {
+  Briefcase,
+  CheckCircle,
+  Clock,
+  TrendingUp,
+  ChevronDown,
+} from "lucide-astro";
+
+// SEO metadata
+const title = "Evaluación de Presencia Ejecutiva | Quiz de Liderazgo en Inglés";
+const description =
+  "Cuando hablas ante la Junta, ¿escuchan a un líder? Mide tu Presencia Ejecutiva, habilidades de negociación y claridad estratégica en inglés. Prueba gratuita de 90 segundos.";
+
+// Datos de FAQ
+const faqs = [
+  {
+    question: "¿Cómo mejorar la Presencia Ejecutiva en un segundo idioma?",
+    answer:
+      "La presencia ejecutiva en inglés no se trata de gramática perfecta—se trata de proyectar confianza, claridad y decisión. Enfócate en tres áreas: (1) Autoridad vocal (ritmo, pausas y entonación), (2) Encuadre estratégico (liderar con el 'por qué importa' antes de los detalles), y (3) Fluidez cultural (entender las expectativas norteamericanas de franqueza y brevedad). Esta evaluación identifica cuál de estas tres áreas necesita más atención.",
+  },
+  {
+    question: "¿Cuál es la diferencia entre fluidez y Presencia Ejecutiva?",
+    answer:
+      "La fluidez se trata de hablar sin errores. La Presencia Ejecutiva se trata de hablar con impacto. Puedes ser fluido y aún así fallar en comandar una sala si sobre-explicas, usas lenguaje dubitativo o no lees la sala. Esta evaluación mide habilidades específicas de presencia: cómo manejas interrupciones, entregas malas noticias y negocias bajo presión.",
+  },
+  {
+    question: "¿Cuánto tiempo toma la Evaluación de Comunicación Ejecutiva?",
+    answer:
+      "La evaluación toma 90 segundos. Responderás 6 preguntas basadas en escenarios que simulan desafíos ejecutivos reales: presentaciones ante la junta, comunicación de crisis y negociaciones interculturales. Tus resultados incluyen una Puntuación de Confianza en Comunicación (0-100) y un desglose de tus fortalezas y brechas en presencia ejecutiva.",
+  },
+  {
+    question:
+      "¿Esto me ayudará a prepararme para entrevistas de nivel C-suite?",
+    answer:
+      "Absolutamente. Las entrevistas de nivel C-suite evalúan tu capacidad para pensar estratégicamente, comunicar concisamente e inspirar confianza—todo bajo presión. Esta evaluación identifica brechas en tu 'voz ejecutiva' y proporciona una hoja de ruta de 30 días para fortalecer tu comunicación de liderazgo antes de entrevistas de alto riesgo.",
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  lang="es"
+  tkey="quiz/executives"
+  hideCta={true}
+>
+  <QuizSchema lang="es" slot="head" />
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Evaluación Gratuita de 90 Segundos</span>
+
+        <h1>Evaluación de Comunicación Ejecutiva: Comanda la Sala</h1>
+
+        <p class="lead">
+          Te has ganado tu lugar en la mesa. Pero cuando hablas, ¿la sala se
+          inclina hacia adelante—o se desconecta? Toma esta evaluación de 90
+          segundos para descubrir dónde tu inglés está socavando tu presencia
+          ejecutiva.
+        </p>
+
+        <div class="benefits">
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span>Mide tu puntuación de Presencia Ejecutiva (0-100)</span>
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span>Identifica brechas en claridad estratégica y negociación</span
+            >
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span
+              >Obtén una hoja de ruta personalizada de comunicación de liderazgo</span
+            >
+          </div>
+        </div>
+
+        <Button
+          href="/es/quiz/executives/question/1"
+          variant="primary"
+          size="lg"
+          class="cta-button"
+        >
+          Comenzar Evaluación →
+        </Button>
+
+        <div class="trust-signals">
+          <div class="trust-signal">
+            <Clock size={16} />
+            <span>90 segundos</span>
+          </div>
+          <div class="trust-signal">
+            <TrendingUp size={16} />
+            <span>Resultados instantáneos</span>
+          </div>
+          <div class="trust-signal">
+            <Briefcase size={16} />
+            <span>200+ ejecutivos evaluados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="discover-section">
+    <div class="container">
+      <h2>¿Reconoces Estas Brechas de Liderazgo?</h2>
+      <p class="section-lead">
+        Esta evaluación mide las tres dimensiones que separan a los gerentes de
+        los líderes de nivel C-suite:
+      </p>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon">🎯</div>
+          <h3>Claridad Estratégica</h3>
+          <p>
+            ¿Puedes destilar una estrategia compleja en 60 segundos? La
+            comunicación ejecutiva no se trata de decir más—se trata de decir
+            menos, con precisión. Medimos tu capacidad para liderar con el "por
+            qué importa" antes de los detalles.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">💼</div>
+          <h3>Presencia Ejecutiva</h3>
+          <p>
+            ¿Proyectas confianza o cautela? ¿Autoridad o disculpa? Tu tono,
+            ritmo y elección de palabras señalan si perteneces a la sala.
+            Identificamos dónde tu lenguaje está socavando tu credibilidad.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">🤝</div>
+          <h3>Poder de Negociación</h3>
+          <p>
+            En negociaciones de alto riesgo, ¿mantienes tu posición o cedes
+            demasiado rápido? Evaluamos tu capacidad para estar en desacuerdo
+            diplomáticamente, manejar objeciones y cerrar tratos sin dañar
+            relaciones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="differentiation-section">
+    <div class="container">
+      <h2>Lo Que Hacen Diferente el Top 1% de Líderes Globales</h2>
+      <p class="section-lead">
+        Los ejecutivos que comandan salas de juntas y cierran tratos de 8 cifras
+        no solo hablan inglés—lo manejan estratégicamente.
+      </p>
+
+      <div class="comparison-grid">
+        <div class="comparison-card struggling">
+          <h3>❌ Ejecutivos con Dificultades</h3>
+          <ul>
+            <li>Sobre-explican para compensar la incertidumbre</li>
+            <li>
+              Pierden credibilidad con lenguaje dubitativo ("tal vez", "creo")
+            </li>
+            <li>Luchan para interrumpir o redirigir conversaciones</li>
+            <li>Pierden promociones a pesar de fuerte acumen de negocios</li>
+          </ul>
+        </div>
+
+        <div class="comparison-card thriving">
+          <h3>✅ Líderes del Top 1%</h3>
+          <ul>
+            <li>
+              Entregan actualizaciones de junta de 60 segundos sin relleno
+            </li>
+            <li>Comandan atención con autoridad vocal y pausas</li>
+            <li>Negocian asertivamente sin quemar puentes</li>
+            <li>Construyen influencia a través de culturas y zonas horarias</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-center">
+        <Button
+          href="/es/quiz/executives/question/1"
+          variant="primary"
+          size="lg"
+        >
+          Descubre Tu Puntuación de Presencia Ejecutiva →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <h2>Preguntas Frecuentes</h2>
+
+      {
+        faqs.map((faq) => (
+          <details class="faq-item">
+            <summary>
+              <h3>{faq.question}</h3>
+              <ChevronDown size={20} class="chevron" />
+            </summary>
+            <div class="faq-answer">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+
+  <style>
+    .hero {
+      background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+      padding: 8rem 1.5rem 4rem;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #7c3aed;
+      background: white;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      width: fit-content;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .lead {
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: #475569;
+      margin: 0;
+    }
+
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
+      color: #334155;
+    }
+
+    .benefit :global(svg) {
+      color: #10b981;
+      flex-shrink: 0;
+    }
+
+    .trust-signals {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-top: 1rem;
+    }
+
+    .trust-signal {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trust-signal :global(svg) {
+      color: #7c3aed;
+    }
+
+    .discover-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .discover-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .section-lead {
+      font-size: 1.125rem;
+      color: #475569;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .metric-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .metric-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .metric-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+    }
+
+    .metric-card p {
+      font-size: 0.9375rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .differentiation-section {
+      padding: 4rem 1.5rem;
+      background: #f8fafc;
+    }
+
+    .differentiation-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto;
+    }
+
+    @media (min-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .comparison-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .comparison-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .comparison-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .comparison-card li {
+      font-size: 0.9375rem;
+      color: #475569;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .comparison-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .struggling li::before {
+      color: #ef4444;
+    }
+
+    .thriving li::before {
+      color: #10b981;
+    }
+
+    .cta-center {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .faq-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .faq-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin: 0;
+      flex: 1;
+    }
+
+    .faq-item summary :global(.chevron) {
+      color: #64748b;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .faq-item[open] summary :global(.chevron) {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .faq-answer p {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        padding: 6rem 1rem 3rem;
+      }
+
+      h1 {
+        font-size: 1.875rem;
+      }
+
+      .discover-section,
+      .differentiation-section,
+      .faq-section {
+        padding: 3rem 1rem;
+      }
+    }
+  </style>
+</Base>

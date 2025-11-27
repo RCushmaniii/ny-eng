@@ -1,0 +1,559 @@
+---
+/**
+ * Evaluación de Inglés para TI - Página de Destino
+ * URL: /es/quiz/it-services/
+ * Target Keyword: Inglés para Profesionales de TI / Habilidades de Comunicación Técnica
+ */
+
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import QuizSchema from "@components/seo/QuizSchema.astro";
+import {
+  Laptop,
+  CheckCircle,
+  Clock,
+  TrendingUp,
+  ChevronDown,
+} from "lucide-astro";
+
+// SEO metadata - optimizado para 50-60 caracteres título, 150-160 caracteres descripción
+const title = "Evaluación de Inglés para TI | Quiz de Comunicación Técnica";
+const description =
+  "¿El idioma es el cuello de botella en tus revisiones de código? Evaluación de 2 minutos para Ingenieros de Software y CTOs. Obtén tu puntuación de Inglés Técnico al instante.";
+
+// Datos de FAQ para contenido SEO
+const faqs = [
+  {
+    question: "¿Por qué es crucial el inglés para Desarrolladores Senior?",
+    answer:
+      "Los desarrolladores senior dedican más del 60% de su tiempo a comunicarse: explicando decisiones de arquitectura, realizando revisiones de código y colaborando con equipos globales. La experiencia técnica por sí sola no es suficiente; necesitas articular conceptos complejos claramente a stakeholders que pueden no compartir tu formación técnica. Fuertes habilidades en inglés aceleran tu camino a roles de Staff Engineer, Tech Lead y CTO.",
+  },
+  {
+    question: "¿Cuánto tiempo toma la Evaluación de Comunicación para TI?",
+    answer:
+      "La evaluación toma exactamente 90 segundos para completar. Responderás 6 preguntas específicas que miden tu claridad, confianza y fluidez cultural en contextos técnicos. Inmediatamente después de enviar, recibirás tu Puntuación de Confianza en Comunicación (0-100) y un análisis personalizado de brechas.",
+  },
+  {
+    question: "¿Qué hace esto diferente de las pruebas genéricas de inglés?",
+    answer:
+      "A diferencia de TOEFL o Duolingo, esta evaluación se enfoca específicamente en los desafíos de comunicación que enfrentan los profesionales de TI: explicar deuda técnica, liderar retrospectivas de sprint, presentar a stakeholders no técnicos y navegar dinámicas de equipos interculturales. Está diseñada por un coach de comunicación que trabaja exclusivamente con líderes tecnológicos.",
+  },
+  {
+    question:
+      "¿Esto me ayudará a pasar entrevistas técnicas en empresas FAANG?",
+    answer:
+      "Sí. Las entrevistas FAANG no son solo sobre programación—evalúan tu capacidad para pensar en voz alta, explicar tu enfoque y colaborar efectivamente. Esta evaluación identifica brechas en tu 'velocidad de procesamiento' (pensar en inglés bajo presión) y proporciona una hoja de ruta para mejorar tu desempeño en entrevistas.",
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  lang="es"
+  tkey="quiz/it-services"
+  hideCta={true}
+  hideNav={true}
+>
+  <QuizSchema lang="es" slot="head" />
+
+  <!-- Hero Section with NYC Night Skyline Background -->
+  <section class="hero">
+    <img
+      src="/images/ny-english-night-skyline.jpg"
+      alt="New York City Skyline at Night"
+      class="hero-bg-image"
+      loading="eager"
+    />
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Evaluación Gratuita de 90 Segundos</span>
+
+        <h1>
+          Evaluación de Comunicación para TI: ¿Tu Inglés Está Introduciendo
+          Bugs?
+        </h1>
+
+        <p class="lead">
+          Tu código es impecable. Pero cuando lo explicas en reuniones, ¿los
+          stakeholders entienden? Toma esta evaluación de 2 minutos para
+          descubrir dónde las barreras del idioma están frenando a tu equipo—y
+          tu carrera.
+        </p>
+
+        <div class="benefits">
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span>Obtén tu puntuación de Inglés Técnico (0-100)</span>
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span
+              >Identifica brechas en revisiones de código y discusiones de
+              arquitectura</span
+            >
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span
+              >Recibe una hoja de ruta personalizada de mejora de 30 días</span
+            >
+          </div>
+        </div>
+
+        <Button
+          href="/es/quiz/it-services/question/1"
+          variant="primary"
+          size="lg"
+          class="cta-button gold-cta"
+        >
+          Comenzar Evaluación →
+        </Button>
+
+        <div class="trust-signals">
+          <div class="trust-signal">
+            <Clock size={16} />
+            <span>90 segundos</span>
+          </div>
+          <div class="trust-signal">
+            <TrendingUp size={16} />
+            <span>Resultados instantáneos</span>
+          </div>
+          <div class="trust-signal">
+            <Laptop size={16} />
+            <span>200+ ingenieros evaluados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Discover Section -->
+  <section class="discover-section">
+    <div class="container">
+      <h2>Identifica los "Glitches" en Tu Comunicación Técnica</h2>
+      <p class="section-lead">
+        Esta evaluación mide tres dimensiones críticas que separan a los
+        ingenieros senior de los líderes tecnológicos:
+      </p>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon">💬</div>
+          <h3>Claridad y Precisión</h3>
+          <p>
+            ¿Puedes explicar async/await a un PM? ¿Describir deuda técnica a un
+            CFO? La claridad no se trata de simplificar—se trata de traducir
+            complejidad sin perder precisión.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">⚡</div>
+          <h3>Velocidad de Procesamiento</h3>
+          <p>
+            En revisiones de código y standups, ¿dudas? ¿Te congelas? Tu
+            velocidad de "pensar en inglés" impacta directamente tu autoridad
+            técnica percibida.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">🌍</div>
+          <h3>Fluidez Cultural</h3>
+          <p>
+            La cultura tecnológica norteamericana valora la franqueza, concisión
+            y "disagree and commit". ¿Estás navegando estas reglas no escritas
+            efectivamente?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Differentiation Section -->
+  <section class="differentiation-section">
+    <div class="container">
+      <h2>
+        Lo Que Hacen Diferente los Ingenieros Internacionales de Primer Nivel
+      </h2>
+      <p class="section-lead">
+        Los ingenieros que son promovidos a roles de Staff, Principal y CTO no
+        solo escriben mejor código—comunican con precisión y confianza.
+      </p>
+
+      <div class="comparison-grid">
+        <div class="comparison-card struggling">
+          <h3>❌ Ingenieros con Dificultades</h3>
+          <ul>
+            <li>Evitan hablar en revisiones de arquitectura</li>
+            <li>Sobre-explican para compensar la incertidumbre</li>
+            <li>Pierden promociones a pesar de fuertes habilidades técnicas</li>
+            <li>
+              Se sienten agotados después de reuniones intensivas en inglés
+            </li>
+          </ul>
+        </div>
+
+        <div class="comparison-card thriving">
+          <h3>✅ Ingenieros del Top 1%</h3>
+          <ul>
+            <li>Lideran discusiones técnicas con autoridad</li>
+            <li>Explican sistemas complejos en 2 minutos o menos</li>
+            <li>Son promovidos basándose en comunicación + código</li>
+            <li>Construyen influencia en ingeniería y negocios</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-center">
+        <Button
+          href="/es/quiz/it-services/question/1"
+          variant="primary"
+          size="lg"
+        >
+          Descubre Tu Puntuación de Comunicación →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (SEO Content) -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Preguntas Frecuentes</h2>
+
+      {
+        faqs.map((faq, index) => (
+          <details class="faq-item">
+            <summary>
+              <h3>{faq.question}</h3>
+              <ChevronDown size={20} class="chevron" />
+            </summary>
+            <div class="faq-answer">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+
+  <style>
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+      padding: 8rem 1.5rem 4rem;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #2563eb;
+      background: white;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      width: fit-content;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .lead {
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: #475569;
+      margin: 0;
+    }
+
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
+      color: #334155;
+    }
+
+    .benefit :global(svg) {
+      color: #10b981;
+      flex-shrink: 0;
+    }
+
+    .trust-signals {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-top: 1rem;
+    }
+
+    .trust-signal {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trust-signal :global(svg) {
+      color: #2563eb;
+    }
+
+    /* Discover Section */
+    .discover-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .discover-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .section-lead {
+      font-size: 1.125rem;
+      color: #475569;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .metric-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .metric-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .metric-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+    }
+
+    .metric-card p {
+      font-size: 0.9375rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* Differentiation Section */
+    .differentiation-section {
+      padding: 4rem 1.5rem;
+      background: #f8fafc;
+    }
+
+    .differentiation-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto;
+    }
+
+    @media (min-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .comparison-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .comparison-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .comparison-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .comparison-card li {
+      font-size: 0.9375rem;
+      color: #475569;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .comparison-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .struggling li::before {
+      color: #ef4444;
+    }
+
+    .thriving li::before {
+      color: #10b981;
+    }
+
+    .cta-center {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .faq-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin: 0;
+      flex: 1;
+    }
+
+    .faq-item summary :global(.chevron) {
+      color: #64748b;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .faq-item[open] summary :global(.chevron) {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .faq-answer p {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 767px) {
+      .hero {
+        padding: 6rem 1rem 3rem;
+      }
+
+      h1 {
+        font-size: 1.875rem;
+      }
+
+      .discover-section,
+      .differentiation-section,
+      .faq-section {
+        padding: 3rem 1rem;
+      }
+    }
+  </style>
+</Base>

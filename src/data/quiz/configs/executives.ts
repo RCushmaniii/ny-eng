@@ -75,31 +75,31 @@ export const executivesConfig: QuizConfig = {
         id: 3,
         category: 'confidence',
         question:
-          'When the pressure mounts during a board review or pitch, who is controlling the pace of the conversation?',
+          'When the pressure mounts during a board review or pitch in English, who is controlling the pace of the conversation?',
         answers: [
           {
             index: 0,
             score: 10,
             label:
-              'I own the room—I remain calm, dictate the pace, and pivot easily under pressure.',
+              'I own the room—I remain calm in English, dictate the pace, and pivot easily under pressure.',
           },
           {
             index: 1,
             score: 6,
             label:
-              'I hold my ground—I might get interrupted, but I quickly steer the conversation back to my agenda.',
+              'I hold my ground—I might get interrupted, but I can steer the conversation back to my agenda without language getting in the way.',
           },
           {
             index: 2,
             score: 3,
             label:
-              'I get pushed around—aggressive stakeholders hijack the meeting, and I struggle to get a word in.',
+              'I get pushed around—aggressive stakeholders hijack the meeting, and I struggle to get a word in because I\'m processing in a second language.',
           },
           {
             index: 3,
             score: 0,
             label:
-              'I shut down—I hesitate or over-explain, and my authority evaporates.',
+              'I shut down—the language pressure makes me hesitate or over-explain, and my authority evaporates.',
           },
         ],
       },
@@ -318,31 +318,31 @@ export const executivesConfig: QuizConfig = {
         id: 3,
         category: 'confidence',
         question:
-          'En conversaciones de alto riesgo (revisiones con el directorio, grandes renovaciones de clientes, presentaciones a inversionistas), ¿con qué consistencia proyectas calma y autoridad?',
+          'Cuando la presión aumenta durante una revisión del directorio o presentación en inglés, ¿quién controla el ritmo de la conversación?',
         answers: [
           {
             index: 0,
             score: 10,
             label:
-              'Muy consistentemente—me mantengo compuesto y seguro incluso bajo preguntas agresivas',
+              'Yo domino la sala—me mantengo calmado en inglés, dicto el ritmo y pivoteo fácilmente bajo presión.',
           },
           {
             index: 1,
             score: 6,
             label:
-              'La mayoría de las veces—me recupero rápido aunque me descoloque por un momento',
+              'Mantengo mi posición—puedo ser interrumpido, pero puedo dirigir la conversación de vuelta a mi agenda sin que el idioma se interponga.',
           },
           {
             index: 2,
             score: 3,
             label:
-              'A veces—siento cómo baja mi confianza y las personas lo notan en mi voz o lenguaje corporal',
+              'Me empujan—los stakeholders agresivos secuestran la reunión, y lucho para meter una palabra porque estoy procesando en un segundo idioma.',
           },
           {
             index: 3,
             score: 0,
             label:
-              'Rara vez—a menudo siento que vendí menos mi capacidad o la de la empresa',
+              'Me cierro—la presión del idioma me hace dudar o sobre-explicar, y mi autoridad se evapora.',
           },
         ],
       },

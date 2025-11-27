@@ -55,7 +55,7 @@ const metodologiaEs: Methodology = {
 import { testimonials } from "@data/testimonials/es";
 const featuredTestimonial = testimonials[1]; // Hugo Blum testimonial
 if (!featuredTestimonial) {
-  throw new Error('Featured testimonial not found');
+  throw new Error("Featured testimonial not found");
 }
 
 // SEO metadata
@@ -82,6 +82,11 @@ const challengeContent = {
   ],
   icon: "😰",
   image: executiveService.squareImage,
+  quizCta: {
+    text: "¿Quieres saber exactamente dónde están tus brechas de comunicación ejecutiva?",
+    link: "/es/quiz/executives/question/1",
+    linkLabel: "Toma nuestra evaluación gratuita de 90 segundos →",
+  },
 };
 
 // Final CTA content
@@ -114,8 +119,14 @@ const ctaContent = {
   }}
   hideCta={true}
   customHreflangs={[
-    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/executive-english/' },
-    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-ejecutivos/' }
+    {
+      lang: "en-US",
+      href: "https://www.nyenglishteacher.com/en/services/executive-english/",
+    },
+    {
+      lang: "es-MX",
+      href: "https://www.nyenglishteacher.com/es/servicios/ingles-para-ejecutivos/",
+    },
   ]}
   customCanonical="https://www.nyenglishteacher.com/es/servicios/ingles-para-ejecutivos/"
 >

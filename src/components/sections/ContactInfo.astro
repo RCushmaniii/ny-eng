@@ -1,37 +1,39 @@
 ---
 import Contact from "@components/forms/Contact.astro";
+import Button from "@components/ui/Button.astro";
 import {
-    getBackgroundColor,
-    getTextColor,
-    getPaddingClass,
+  getBackgroundColor,
+  getTextColor,
+  getPaddingClass,
 } from "@utils/styleUtils";
 import type { ThemeColor, PaddingSize } from "@utils/styleUtils";
 import { Mail, Phone, MapPin } from "lucide-astro";
 
 export interface Props {
-    content?: { // This prop is not used for the direct text elements translated here
-        title?: string;
-        description?: string;
-        contactInfo?: {
-            email?: string;
-            phone?: string;
-            address?: string;
-        };
+  content?: {
+    // This prop is not used for the direct text elements translated here
+    title?: string;
+    description?: string;
+    contactInfo?: {
+      email?: string;
+      phone?: string;
+      address?: string;
     };
-    background?: ThemeColor;
-    padding?: PaddingSize;
-    paddingTop?: PaddingSize;
-    paddingBottom?: PaddingSize;
-    lang?: 'en' | 'es'; // Added lang prop
+  };
+  background?: ThemeColor;
+  padding?: PaddingSize;
+  paddingTop?: PaddingSize;
+  paddingBottom?: PaddingSize;
+  lang?: "en" | "es"; // Added lang prop
 }
 
 const {
-    // content, // This prop is not used for the direct text elements translated here
-    background = "base",
-    padding,
-    paddingTop,
-    paddingBottom,
-    lang = 'en', // Default to 'en' if not provided
+  // content, // This prop is not used for the direct text elements translated here
+  background = "base",
+  padding,
+  paddingTop,
+  paddingBottom,
+  lang = "en", // Default to 'en' if not provided
 } = Astro.props;
 
 const bgColor = getBackgroundColor(background);
@@ -40,63 +42,72 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
 
 // Translatable content
 const localizedContent = {
-    en: {
-        heading: "Contact Information",
-        paragraph: "Reach me via this form or WhatsApp.",
-        whatsappLinkText: "WhatsApp: +52 33 1559 0572",
-        timeZoneText: "Time Zone: Guadalajara, Mexico (UTC–6)",
-        consultationLinkText: "Reserve Free Consultation",
-    },
-    es: {
-        heading: "Información de contacto",
-        paragraph: "Contáctame mediante este formulario o por WhatsApp.",
-        whatsappLinkText: "WhatsApp: +52 33 1559 0572",
-        timeZoneText: "Zona horaria: Guadalajara, México (UTC–6)",
-        consultationLinkText: "Reservar consulta gratuita",
-    }
+  en: {
+    heading: "Contact Information",
+    paragraph: "Reach me via this form or WhatsApp.",
+    whatsappButtonText: "WhatsApp Me",
+    timeZoneText: "Time Zone: Guadalajara, Mexico (UTC–6)",
+    consultationLinkText: "Reserve Free Consultation",
+  },
+  es: {
+    heading: "Información de contacto",
+    paragraph: "Contáctame mediante este formulario o por WhatsApp.",
+    whatsappButtonText: "Contáctame por WhatsApp",
+    timeZoneText: "Zona horaria: Guadalajara, México (UTC–6)",
+    consultationLinkText: "Reservar consulta gratuita",
+  },
 };
 
 const C = localizedContent[lang] || localizedContent.en; // Fallback to English if lang is invalid
-
 ---
 
 <section class:list={[bgColor, paddingClass]}>
-    <div class="site-container px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-                <h2 class:list={[textColor, "text-3xl md:text-4xl font-bold mb-4"]} style="font-family: 'Noto Sans KR', sans-serif;">{C.heading}</h2>
-                <p class:list={[textColor, "text-lg mb-6"]} style="font-family: 'Noto Sans KR', sans-serif;">
-                    {C.paragraph}
-                </p>
-                <div class:list={["flex flex-col gap-4 mt-6", textColor]} style="font-family: 'Noto Sans KR', sans-serif;">
-                    <div class:list={["flex items-center gap-2"]}>
-                        <Phone aria-hidden="true" />
-                        <a
-                            href="https://wa.me/523315590572"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {C.whatsappLinkText}
-                        </a>
-                    </div>
-                    <div class:list={["flex items-center gap-2"]}>
-                        <MapPin aria-hidden="true" />
-                        <span>{C.timeZoneText}</span>
-                    </div>
-                    <div class:list={["flex items-center gap-2"]}>
-                        <Mail aria-hidden="true" />
-                        <a
-                            href="/en/book/"
-                            rel="noopener noreferrer"
-                        >
-                            {C.consultationLinkText}
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <Contact lang={lang} /> {/* Pass lang to Contact form */}
-            </div>
+  <div class="site-container px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h2
+          class:list={[textColor, "text-3xl md:text-4xl font-bold mb-4"]}
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          {C.heading}
+        </h2>
+        <p
+          class:list={[textColor, "text-lg mb-6"]}
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          {C.paragraph}
+        </p>
+        <div
+          class:list={["flex flex-col gap-6 mt-6"]}
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          <div>
+            <Button
+              href="https://wa.me/523315590572"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="whatsapp"
+              size="lg"
+            >
+              {C.whatsappButtonText}
+            </Button>
+          </div>
+          <div class:list={["flex items-center gap-2", textColor]}>
+            <MapPin aria-hidden="true" />
+            <span>{C.timeZoneText}</span>
+          </div>
+          <div class:list={["flex items-center gap-2", textColor]}>
+            <Mail aria-hidden="true" />
+            <a href="/en/book/" rel="noopener noreferrer">
+              {C.consultationLinkText}
+            </a>
+          </div>
         </div>
+      </div>
+      <div>
+        <Contact lang={lang} />
+        {/* Pass lang to Contact form */}
+      </div>
     </div>
+  </div>
 </section>

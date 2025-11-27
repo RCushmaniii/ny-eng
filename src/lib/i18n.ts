@@ -26,6 +26,7 @@ export type TKey =
   | "blog/page"
   | "services"
   | "testimonials"
+  | "faqs"
   | "legal/privacy-policy"
   | "legal/terms-of-service"
   | "thank-you"
@@ -44,7 +45,11 @@ export type TKey =
   | "quiz"
   | "quiz/start"
   | "quiz/results"
-  | "quiz/report";
+  | "quiz/report"
+  | "quiz/it-services"
+  | "quiz/executives"
+  | "quiz/professional-services"
+  | "quiz/high-stakes";
 
 export const routeFor: Record<Locale, Record<TKey, string>> = {
   en: {
@@ -58,6 +63,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "blog/page": "/en/blog/",
     services: "/en/services/",
     testimonials: "/en/testimonials/",
+    faqs: "/en/faqs/",
     "legal/privacy-policy": "/en/legal/privacy-policy/",
     "legal/terms-of-service": "/en/legal/terms-of-service/",
     "services/executive-english": "/en/services/executive-english/",
@@ -85,6 +91,10 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "quiz/start": "/en/quiz/start/",
     "quiz/results": "/en/quiz/results/",
     "quiz/report": "/en/quiz/report/",
+    "quiz/it-services": "/en/quiz/it-services/",
+    "quiz/executives": "/en/quiz/executives/",
+    "quiz/professional-services": "/en/quiz/professional-services/",
+    "quiz/high-stakes": "/en/quiz/high-stakes/",
   },
   es: {
     "404": "/es/404/",
@@ -97,6 +107,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "blog/page": "/es/blog/", 
     services: "/es/servicios/",
     testimonials: "/es/testimonios/",
+    faqs: "/es/faqs/",
     "legal/privacy-policy": "/es/legal/privacy-policy/",
     "legal/terms-of-service": "/es/legal/terms-of-service/",
     "services/executive-english": "/es/servicios/ingles-para-ejecutivos/",
@@ -124,6 +135,10 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "quiz/start": "/es/quiz/start/",
     "quiz/results": "/es/quiz/results/",
     "quiz/report": "/es/quiz/report/",
+    "quiz/it-services": "/es/quiz/it-services/",
+    "quiz/executives": "/es/quiz/executives/",
+    "quiz/professional-services": "/es/quiz/professional-services/",
+    "quiz/high-stakes": "/es/quiz/high-stakes/",
   },
 };
 
@@ -189,5 +204,9 @@ export function getAllTKeys(): TKey[] {
     "quiz/start",
     "quiz/results",
     "quiz/report",
+    "quiz/it-services",
+    "quiz/executives",
+    "quiz/professional-services",
+    "quiz/high-stakes",
   ];
 }

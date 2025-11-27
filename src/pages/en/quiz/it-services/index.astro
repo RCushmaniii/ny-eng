@@ -1,0 +1,632 @@
+---
+/**
+ * IT English Assessment Landing Page
+ * URL: /en/quiz/it-services/
+ * Target Keyword: English for IT Professionals / Technical Communication Skills
+ */
+
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import QuizSchema from "@components/seo/QuizSchema.astro";
+import {
+  Laptop,
+  CheckCircle,
+  Clock,
+  TrendingUp,
+  ChevronDown,
+} from "lucide-astro";
+
+// SEO metadata - optimized for 50-60 characters title, 150-160 chars description
+const title = "IT English Assessment | Technical Communication Skills Quiz";
+const description =
+  "Is language the bottleneck in your code reviews? Take this 2-minute assessment for Software Engineers & CTOs. Get your Technical English score instantly.";
+
+// FAQ data for SEO content
+const faqs = [
+  {
+    question: "Why is English crucial for Senior Developers?",
+    answer:
+      "Senior developers spend 60%+ of their time communicating—explaining architecture decisions, conducting code reviews, and collaborating with global teams. Technical expertise alone isn't enough; you need to articulate complex concepts clearly to stakeholders who may not share your technical background. Strong English skills accelerate your path to Staff Engineer, Tech Lead, and CTO roles.",
+  },
+  {
+    question: "How long does the IT Communication Assessment take?",
+    answer:
+      "The assessment takes exactly 90 seconds to complete. You'll answer 6 targeted questions that measure your clarity, confidence, and cultural fluency in technical contexts. Immediately after submission, you'll receive your Communication Confidence Score (0-100) and a personalized gap analysis.",
+  },
+  {
+    question: "What makes this different from generic English tests?",
+    answer:
+      "Unlike TOEFL or Duolingo, this assessment focuses specifically on the communication challenges IT professionals face: explaining technical debt, leading sprint retrospectives, presenting to non-technical stakeholders, and navigating cross-cultural team dynamics. It's designed by a communication coach who works exclusively with tech leaders.",
+  },
+  {
+    question: "Will this help me pass technical interviews at FAANG companies?",
+    answer:
+      "Yes. FAANG interviews aren't just about coding—they evaluate your ability to think out loud, explain your approach, and collaborate effectively. This assessment identifies gaps in your 'processing speed' (thinking in English under pressure) and provides a roadmap to improve your interview performance.",
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  lang="en"
+  tkey="quiz/it-services"
+  hideCta={true}
+  hideNav={true}
+>
+  <QuizSchema lang="en" slot="head" />
+
+  <!-- Hero Section with NYC Night Skyline Background -->
+  <section class="hero">
+    <img
+      src="/images/ny-english-night-skyline.jpg"
+      alt="New York City Skyline at Night"
+      class="hero-bg-image"
+      loading="eager"
+    />
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Free 90-Second Assessment</span>
+
+        <h1>IT Communication Assessment: Is Your English Introducing Bugs?</h1>
+
+        <p class="lead">
+          Your code is flawless. But when you explain it in meetings, do
+          stakeholders understand? Take this 2-minute assessment to discover
+          where language barriers are slowing down your team—and your career.
+        </p>
+
+        <div class="benefits">
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span>Get your Technical English score (0-100)</span>
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span>Identify gaps in code reviews & architecture discussions</span
+            >
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span>Receive a personalized 30-day improvement roadmap</span>
+          </div>
+        </div>
+
+        <Button
+          href="/en/quiz/it-services/question/1"
+          variant="primary"
+          size="lg"
+          class="cta-button gold-cta"
+        >
+          Start Assessment →
+        </Button>
+
+        <div class="trust-signals">
+          <div class="trust-signal">
+            <Clock size={16} />
+            <span>90 seconds</span>
+          </div>
+          <div class="trust-signal">
+            <TrendingUp size={16} />
+            <span>Instant results</span>
+          </div>
+          <div class="trust-signal">
+            <Laptop size={16} />
+            <span>200+ engineers assessed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Discover Section -->
+  <section class="discover-section">
+    <div class="container">
+      <h2>Identify the "Glitches" in Your Technical Communication</h2>
+      <p class="section-lead">
+        This assessment measures three critical dimensions that separate senior
+        engineers from tech leaders:
+      </p>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon">💬</div>
+          <h3>Clarity & Precision</h3>
+          <p>
+            Can you explain async/await to a PM? Describe technical debt to a
+            CFO? Clarity isn't about simplifying—it's about translating
+            complexity without losing accuracy.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">⚡</div>
+          <h3>Processing Speed</h3>
+          <p>
+            In code reviews and standups, do you hesitate? Freeze? Your
+            "thinking-in-English" speed directly impacts your perceived
+            technical authority.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">🌍</div>
+          <h3>Cultural Fluency</h3>
+          <p>
+            North American tech culture values directness, conciseness, and
+            "disagree and commit." Are you navigating these unwritten rules
+            effectively?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Differentiation Section -->
+  <section class="differentiation-section">
+    <div class="container">
+      <h2>What Top-Tier International Engineers Do Differently</h2>
+      <p class="section-lead">
+        The engineers who get promoted to Staff, Principal, and CTO roles don't
+        just write better code—they communicate with precision and confidence.
+      </p>
+
+      <div class="comparison-grid">
+        <div class="comparison-card struggling">
+          <h3>❌ Struggling Engineers</h3>
+          <ul>
+            <li>Avoid speaking in architecture reviews</li>
+            <li>Over-explain to compensate for uncertainty</li>
+            <li>Miss promotions despite strong technical skills</li>
+            <li>Feel drained after English-heavy meetings</li>
+          </ul>
+        </div>
+
+        <div class="comparison-card thriving">
+          <h3>✅ Top 1% Engineers</h3>
+          <ul>
+            <li>Lead technical discussions with authority</li>
+            <li>Explain complex systems in 2 minutes or less</li>
+            <li>Get promoted based on communication + code</li>
+            <li>Build influence across engineering & business</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-center">
+        <Button
+          href="/en/quiz/it-services/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Discover Your Communication Score →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (SEO Content) -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+
+      {
+        faqs.map((faq, index) => (
+          <details class="faq-item">
+            <summary>
+              <h3>{faq.question}</h3>
+              <ChevronDown size={20} class="chevron" />
+            </summary>
+            <div class="faq-answer">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+
+  <style>
+    /* Hero Section with Background Image */
+    .hero {
+      position: relative;
+      padding: 10rem 1.5rem 6rem;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    /* Mobile: shift image right to show Empire State Building */
+    @media (max-width: 767px) {
+      .hero-bg-image {
+        object-position: 75% center;
+      }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.5) 0%,
+        rgba(30, 41, 59, 0.4) 100%
+      );
+      z-index: 1;
+    }
+
+    @media (min-width: 768px) {
+      .hero-overlay {
+        background: linear-gradient(
+          to right,
+          rgba(15, 23, 42, 0.65) 0%,
+          rgba(15, 23, 42, 0.55) 50%,
+          rgba(30, 41, 59, 0.45) 100%
+        );
+      }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      max-width: 650px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-content {
+        max-width: 700px;
+      }
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #0f172a;
+      background: rgba(251, 191, 36, 0.95);
+      padding: 0.625rem 1.25rem;
+      border-radius: 9999px;
+      width: fit-content;
+      box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #ffffff;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: #f1f5f9;
+      margin: 0;
+      font-weight: 400;
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    @media (min-width: 768px) {
+      .lead {
+        font-size: 1.375rem;
+      }
+    }
+
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.0625rem;
+      color: #ffffff;
+      font-weight: 500;
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    .benefit :global(svg) {
+      color: #10b981;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.5));
+    }
+
+    .trust-signals {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+      color: #cbd5e1;
+      margin-top: 1rem;
+    }
+
+    .trust-signal {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trust-signal :global(svg) {
+      color: #fbbf24;
+    }
+
+    /* Gold CTA Button Override */
+    :global(.gold-cta) {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+      color: #0f172a !important;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 16px rgba(251, 191, 36, 0.4) !important;
+      border: none !important;
+    }
+
+    :global(.gold-cta:hover) {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5) !important;
+    }
+
+    /* Discover Section */
+    .discover-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .discover-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .section-lead {
+      font-size: 1.125rem;
+      color: #475569;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .metric-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .metric-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .metric-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+    }
+
+    .metric-card p {
+      font-size: 0.9375rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* Differentiation Section */
+    .differentiation-section {
+      padding: 4rem 1.5rem;
+      background: #f8fafc;
+    }
+
+    .differentiation-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto;
+    }
+
+    @media (min-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .comparison-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .comparison-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .comparison-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .comparison-card li {
+      font-size: 0.9375rem;
+      color: #475569;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .comparison-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .struggling li::before {
+      color: #ef4444;
+    }
+
+    .thriving li::before {
+      color: #10b981;
+    }
+
+    .cta-center {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .faq-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin: 0;
+      flex: 1;
+    }
+
+    .faq-item summary :global(.chevron) {
+      color: #64748b;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .faq-item[open] summary :global(.chevron) {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .faq-answer p {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 767px) {
+      .hero {
+        padding: 6rem 1rem 3rem;
+      }
+
+      h1 {
+        font-size: 1.875rem;
+      }
+
+      .discover-section,
+      .differentiation-section,
+      .faq-section {
+        padding: 3rem 1rem;
+      }
+    }
+  </style>
+</Base>

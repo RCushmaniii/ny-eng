@@ -18,10 +18,9 @@ export const footerContentEn = (siteConfig: { companyName: string }) => {
       resources: {
         title: "Resources",
         links: [
-          { name: "FAQs", href: `${routes.en.home}#faqs` },
+          { name: "FAQs", href: "/en/faqs/" },
           { name: "Blog", href: routes.en.blog },
-          { name: "Communication Assessments", href: "/en/assessments/" },
-          { name: "Free Consultation", href: "/en/book/" },
+          { name: "Start Assessment", href: "/en/assessments/" },
         ],
       },
       connect: {
@@ -29,7 +28,7 @@ export const footerContentEn = (siteConfig: { companyName: string }) => {
         items: [
           { type: "link", name: "WhatsApp Me", href: "https://wa.link/pk4f97", target: "_blank", rel: "noopener noreferrer" },
           { type: "link", name: "Schedule a Consultation", href: "/en/book/" },
-          { type: "link", name: "Contact Me", href: routes.en.contact },
+          { type: "link", name: "Email Me", href: routes.en.contact },
         ] as ConnectItem[],
       },
     },

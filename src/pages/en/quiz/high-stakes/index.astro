@@ -1,0 +1,634 @@
+---
+/**
+ * High-Stakes English Assessment Landing Page
+ * URL: /en/quiz/high-stakes/
+ * Target Keyword: English for Job Interviews / Presentation Skills Coaching
+ */
+
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import QuizSchema from "@components/seo/QuizSchema.astro";
+import {
+  Presentation,
+  CheckCircle,
+  Clock,
+  TrendingUp,
+  ChevronDown,
+} from "lucide-astro";
+
+// SEO metadata - optimized for 50-60 characters title, 150-160 chars description
+const title = "Job Interview & Presentation English Assessment | Free Quiz";
+const description =
+  "Facing a final-round interview or keynote speech? Test your ability to perform under pressure. Get your 'High-Stakes' English score and a roadmap to fluency.";
+
+// FAQ data for SEO content
+const faqs = [
+  {
+    question: "How to prepare for a job interview in English?",
+    answer:
+      "Interview success isn't about memorizing answers—it's about thinking clearly under pressure. Focus on three areas: (1) Processing speed (thinking in English without translating), (2) Storytelling structure (using the STAR method to answer behavioral questions), and (3) Confidence signals (vocal pace, eye contact, and body language). This assessment identifies which of these three areas needs the most work before your interview.",
+  },
+  {
+    question: "What is the 'Language Gap' Score?",
+    answer:
+      "The Language Gap Score measures the difference between your technical knowledge and your ability to communicate it under pressure. You might be brilliant in low-stakes conversations but freeze during presentations or interviews. This assessment quantifies that gap and provides a roadmap to close it.",
+  },
+  {
+    question: "How long does the High-Stakes Communication Assessment take?",
+    answer:
+      "The assessment takes 90 seconds. You'll answer 6 scenario-based questions that simulate high-pressure moments: job interviews, keynote presentations, and crisis communication. Your results include a Communication Confidence Score (0-100) and a breakdown of your strengths in Presence, Processing Speed, and Persuasion.",
+  },
+  {
+    question: "Will this help me with public speaking anxiety?",
+    answer:
+      "Yes. Public speaking anxiety often stems from language uncertainty—the fear of freezing, forgetting words, or being misunderstood. This assessment identifies the root cause of your anxiety (processing speed, vocabulary gaps, or cultural fluency) and provides targeted strategies to build confidence before your next high-stakes moment.",
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  lang="en"
+  tkey="quiz/high-stakes"
+  hideCta={true}
+  hideNav={true}
+>
+  <QuizSchema lang="en" slot="head" />
+
+  <!-- Hero Section with NYC Night Skyline Background -->
+  <section class="hero">
+    <img
+      src="/images/ny-english-night-skyline.jpg"
+      alt="New York City Skyline at Night"
+      class="hero-bg-image"
+      loading="eager"
+    />
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Free 90-Second Assessment</span>
+
+        <h1>High-Stakes English Assessment: Will You Freeze or Flow?</h1>
+
+        <p class="lead">
+          You're brilliant in casual conversations. But when the pressure is
+          on—a final-round interview, a keynote speech, a board presentation—do
+          you freeze? Take this 90-second assessment to discover your "Language
+          Gap" Score.
+        </p>
+
+        <div class="benefits">
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span>Measure your High-Stakes English score (0-100)</span>
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span>Identify gaps in presence, processing speed & persuasion</span
+            >
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span>Get a 30-day roadmap to perform under pressure</span>
+          </div>
+        </div>
+
+        <Button
+          href="/en/quiz/high-stakes/question/1"
+          variant="primary"
+          size="lg"
+          class="cta-button gold-cta"
+        >
+          Start Assessment →
+        </Button>
+
+        <div class="trust-signals">
+          <div class="trust-signal">
+            <Clock size={16} />
+            <span>90 seconds</span>
+          </div>
+          <div class="trust-signal">
+            <TrendingUp size={16} />
+            <span>Instant results</span>
+          </div>
+          <div class="trust-signal">
+            <Presentation size={16} />
+            <span>200+ speakers assessed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Discover Section -->
+  <section class="discover-section">
+    <div class="container">
+      <h2>Why High-Pressure Moments Break "Classroom English"</h2>
+      <p class="section-lead">
+        This assessment measures the three dimensions that separate confident
+        speakers from those who freeze under pressure:
+      </p>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon">🎭</div>
+          <h3>Presence & Authority</h3>
+          <p>
+            Do you command attention—or apologize for taking up space? Your
+            vocal pace, pauses, and body language signal confidence or
+            uncertainty. We measure your ability to project authority under
+            pressure.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">⚡</div>
+          <h3>Processing Speed</h3>
+          <p>
+            Can you think in English without translating? When an interviewer
+            asks a curveball question, do you respond smoothly—or freeze?
+            Processing speed is the #1 predictor of high-stakes performance.
+          </p>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">🎯</div>
+          <h3>Persuasion & Impact</h3>
+          <p>
+            Do you inspire action—or just convey information? Persuasive
+            speakers use storytelling, emotional resonance, and strategic
+            pauses. We assess your ability to move audiences, not just inform
+            them.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Differentiation Section -->
+  <section class="differentiation-section">
+    <div class="container">
+      <h2>Turning Anxiety into Authority During Interviews</h2>
+      <p class="section-lead">
+        The speakers who land dream jobs and keynote opportunities don't just
+        speak English—they perform under pressure.
+      </p>
+
+      <div class="comparison-grid">
+        <div class="comparison-card struggling">
+          <h3>❌ Struggling Speakers</h3>
+          <ul>
+            <li>Freeze or ramble when asked unexpected questions</li>
+            <li>Over-prepare scripts and sound robotic</li>
+            <li>Lose job offers despite strong qualifications</li>
+            <li>Avoid high-visibility opportunities due to fear</li>
+          </ul>
+        </div>
+
+        <div class="comparison-card thriving">
+          <h3>✅ Top 1% Performers</h3>
+          <ul>
+            <li>Think clearly under pressure without translating</li>
+            <li>Tell compelling stories that inspire action</li>
+            <li>Land job offers based on presence + skills</li>
+            <li>Seek out high-stakes moments to build influence</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-center">
+        <Button
+          href="/en/quiz/high-stakes/question/1"
+          variant="primary"
+          size="lg"
+        >
+          Discover Your Language Gap Score →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (SEO Content) -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+
+      {
+        faqs.map((faq, index) => (
+          <details class="faq-item">
+            <summary>
+              <h3>{faq.question}</h3>
+              <ChevronDown size={20} class="chevron" />
+            </summary>
+            <div class="faq-answer">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+
+  <style>
+    /* Hero Section with Background Image */
+    .hero {
+      position: relative;
+      padding: 10rem 1.5rem 6rem;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    /* Mobile: shift image right to show Empire State Building */
+    @media (max-width: 767px) {
+      .hero-bg-image {
+        object-position: 75% center;
+      }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.5) 0%,
+        rgba(30, 41, 59, 0.4) 100%
+      );
+      z-index: 1;
+    }
+
+    @media (min-width: 768px) {
+      .hero-overlay {
+        background: linear-gradient(
+          to right,
+          rgba(15, 23, 42, 0.65) 0%,
+          rgba(15, 23, 42, 0.55) 50%,
+          rgba(30, 41, 59, 0.45) 100%
+        );
+      }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      max-width: 650px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-content {
+        max-width: 700px;
+      }
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #0f172a;
+      background: rgba(251, 191, 36, 0.95);
+      padding: 0.625rem 1.25rem;
+      border-radius: 9999px;
+      width: fit-content;
+      box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #ffffff;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: #f1f5f9;
+      margin: 0;
+      font-weight: 400;
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    @media (min-width: 768px) {
+      .lead {
+        font-size: 1.375rem;
+      }
+    }
+
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.0625rem;
+      color: #ffffff;
+      font-weight: 500;
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    .benefit :global(svg) {
+      color: #10b981;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.5));
+    }
+
+    .trust-signals {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+      color: #cbd5e1;
+      margin-top: 1rem;
+    }
+
+    .trust-signal {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trust-signal :global(svg) {
+      color: #fbbf24;
+    }
+
+    /* Gold CTA Button Override */
+    :global(.gold-cta) {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+      color: #0f172a !important;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 16px rgba(251, 191, 36, 0.4) !important;
+      border: none !important;
+    }
+
+    :global(.gold-cta:hover) {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5) !important;
+    }
+
+    /* Discover Section */
+    .discover-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .discover-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .section-lead {
+      font-size: 1.125rem;
+      color: #475569;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .metric-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .metric-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .metric-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+    }
+
+    .metric-card p {
+      font-size: 0.9375rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* Differentiation Section */
+    .differentiation-section {
+      padding: 4rem 1.5rem;
+      background: #f8fafc;
+    }
+
+    .differentiation-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto;
+    }
+
+    @media (min-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .comparison-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .comparison-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .comparison-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .comparison-card li {
+      font-size: 0.9375rem;
+      color: #475569;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .comparison-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .struggling li::before {
+      color: #ef4444;
+    }
+
+    .thriving li::before {
+      color: #10b981;
+    }
+
+    .cta-center {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .faq-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin: 0;
+      flex: 1;
+    }
+
+    .faq-item summary :global(.chevron) {
+      color: #64748b;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .faq-item[open] summary :global(.chevron) {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .faq-answer p {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 767px) {
+      .hero {
+        padding: 6rem 1rem 3rem;
+      }
+
+      h1 {
+        font-size: 1.875rem;
+      }
+
+      .discover-section,
+      .differentiation-section,
+      .faq-section {
+        padding: 3rem 1rem;
+      }
+    }
+  </style>
+</Base>
