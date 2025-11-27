@@ -1,12 +1,17 @@
 ---
 import { normalizePath } from "@utils/url";
-import { cleanDoubleLanguagePrefixes, removeLanguagePrefix, addLanguagePrefix, cleanBlogUrl } from "@utils/url-cleaner";
+import {
+  cleanDoubleLanguagePrefixes,
+  removeLanguagePrefix,
+  addLanguagePrefix,
+  cleanBlogUrl,
+} from "@utils/url-cleaner";
 import Logo from "@components/Logo.astro";
 import { Menu, X } from "lucide-astro";
 import Button from "@components/ui/Button.astro";
-import { Image } from 'astro:assets';
-import mexFlag from '@assets/images/mex-flag.svg';
-import usaFlag from '@assets/images/usa-flag.svg';
+import { Image } from "astro:assets";
+import mexFlag from "@assets/images/mex-flag.svg";
+import usaFlag from "@assets/images/usa-flag.svg";
 
 interface MenuItem {
   readonly name: string;
@@ -22,42 +27,56 @@ interface Props {
   translationSlugEs?: string;
   translationSlugEn?: string;
   hideLanguageSwitcher?: boolean;
+  transparentOnLoad?: boolean;
 }
 
-const { content, translationSlugEs, translationSlugEn, hideLanguageSwitcher } = Astro.props;
+const {
+  content,
+  translationSlugEs,
+  translationSlugEn,
+  hideLanguageSwitcher,
+  transparentOnLoad = false,
+} = Astro.props;
 
 // Import i18n helpers
-import { routeFor, type TKey } from '../lib/i18n';
-import { categories } from '@data/categories';
+import { routeFor, type TKey } from "../lib/i18n";
+import { categories } from "@data/categories";
 
 // Helpers to map section slugs between locales
 function mapToEs(path: string | undefined): string {
-  if (!path) return '/es/';
-  
+  if (!path) return "/es/";
+
   // Static mapping for service pages
   const servicePages: Record<string, string> = {
     // English to Spanish
-    '/en/services/executive-english/': '/es/servicios/ingles-para-ejecutivos/',
-    '/en/services/high-stakes-english/': '/es/servicios/ingles-para-presentaciones/',
-    '/en/services/interview-prep/': '/es/servicios/preparacion-para-entrevistas/',
-    '/en/services/logistics-english/': '/es/servicios/ingles-para-logistica/',
-    '/en/services/medical-english/': '/es/servicios/ingles-para-medicos/',
-    '/en/services/professional-english/': '/es/servicios/ingles-para-profesionales/',
-    '/en/services/public-speaking-english/': '/es/servicios/hablar-en-publico/',
-    '/en/services/startup-founders/': '/es/servicios/ingles-para-fundadores-de-startups/',
-    '/en/services/tech-english/': '/es/servicios/ingles-para-tecnologia/',
-    '/en/services/technical-sales-english/': '/es/servicios/ingles-para-ventas-tecnicas/',
+    "/en/services/executive-english/": "/es/servicios/ingles-para-ejecutivos/",
+    "/en/services/high-stakes-english/":
+      "/es/servicios/ingles-para-presentaciones/",
+    "/en/services/interview-prep/":
+      "/es/servicios/preparacion-para-entrevistas/",
+    "/en/services/logistics-english/": "/es/servicios/ingles-para-logistica/",
+    "/en/services/medical-english/": "/es/servicios/ingles-para-medicos/",
+    "/en/services/professional-english/":
+      "/es/servicios/ingles-para-profesionales/",
+    "/en/services/public-speaking-english/": "/es/servicios/hablar-en-publico/",
+    "/en/services/startup-founders/":
+      "/es/servicios/ingles-para-fundadores-de-startups/",
+    "/en/services/tech-english/": "/es/servicios/ingles-para-tecnologia/",
+    "/en/services/technical-sales-english/":
+      "/es/servicios/ingles-para-ventas-tecnicas/",
   };
 
   // Handle service pages with direct mapping
-  if (path.startsWith('/en/services/')) {
-    return servicePages[path] || path.replace('/en/services/', '/es/servicios/');
+  if (path.startsWith("/en/services/")) {
+    return (
+      servicePages[path] || path.replace("/en/services/", "/es/servicios/")
+    );
   }
 
   // Handle category pages using i18n mappings
-  if (path.startsWith('/en/category/')) {
-    const categoryPath = path.replace('/en/category/', '');
-    const tkey = `category/${categoryPath.replace('/', '')}` as TKey;
+  if (path.startsWith("/en/category/")) {
+    const categoryPath = path.replace("/en/category/", "");
+    const tkey = `category/${categoryPath.replace("/", "")}` as TKey;
     const esPath = routeFor.es[tkey];
     if (esPath) {
       return esPath;
@@ -66,39 +85,47 @@ function mapToEs(path: string | undefined): string {
 
   // Handle other sections
   return path
-    .replace('/services/', '/servicios/')
-    .replace('/testimonials/', '/testimonios/');
+    .replace("/services/", "/servicios/")
+    .replace("/testimonials/", "/testimonios/");
 }
 
 function mapToEn(path: string | undefined): string {
-  if (!path) return '/en/';
+  if (!path) return "/en/";
 
   // Static mapping for service pages
   const servicePages: Record<string, string> = {
     // Spanish to English
-    '/es/servicios/ingles-para-ejecutivos/': '/en/services/executive-english/',
-    '/es/servicios/ingles-para-presentaciones/': '/en/services/high-stakes-english/',
-    '/es/servicios/preparacion-para-entrevistas/': '/en/services/interview-prep/',
-    '/es/servicios/ingles-para-logistica/': '/en/services/logistics-english/',
-    '/es/servicios/ingles-para-medicos/': '/en/services/medical-english/',
-    '/es/servicios/ingles-para-profesionales/': '/en/services/professional-english/',
-    '/es/servicios/hablar-en-publico/': '/en/services/public-speaking-english/',
-    '/es/servicios/ingles-para-fundadores-de-startups/': '/en/services/startup-founders/',
-    '/es/servicios/ingles-para-tecnologia/': '/en/services/tech-english/',
-    '/es/servicios/ingles-para-ventas-tecnicas/': '/en/services/technical-sales-english/',
+    "/es/servicios/ingles-para-ejecutivos/": "/en/services/executive-english/",
+    "/es/servicios/ingles-para-presentaciones/":
+      "/en/services/high-stakes-english/",
+    "/es/servicios/preparacion-para-entrevistas/":
+      "/en/services/interview-prep/",
+    "/es/servicios/ingles-para-logistica/": "/en/services/logistics-english/",
+    "/es/servicios/ingles-para-medicos/": "/en/services/medical-english/",
+    "/es/servicios/ingles-para-profesionales/":
+      "/en/services/professional-english/",
+    "/es/servicios/hablar-en-publico/": "/en/services/public-speaking-english/",
+    "/es/servicios/ingles-para-fundadores-de-startups/":
+      "/en/services/startup-founders/",
+    "/es/servicios/ingles-para-tecnologia/": "/en/services/tech-english/",
+    "/es/servicios/ingles-para-ventas-tecnicas/":
+      "/en/services/technical-sales-english/",
   };
 
   // Handle service pages with direct mapping
-  if (path.startsWith('/es/servicios/')) {
-    return servicePages[path] || path.replace('/es/servicios/', '/en/services/');
+  if (path.startsWith("/es/servicios/")) {
+    return (
+      servicePages[path] || path.replace("/es/servicios/", "/en/services/")
+    );
   }
 
   // Handle category pages using i18n mappings
-  if (path.startsWith('/es/categoria/')) {
-    const categoryPath = path.replace('/es/categoria/', '');
+  if (path.startsWith("/es/categoria/")) {
+    const categoryPath = path.replace("/es/categoria/", "");
     // Find the English category slug that maps to this Spanish slug
-    const category = categories.find((c: { esSlug?: string; slug: string }) => 
-      c.esSlug === categoryPath || c.slug === categoryPath
+    const category = categories.find(
+      (c: { esSlug?: string; slug: string }) =>
+        c.esSlug === categoryPath || c.slug === categoryPath
     );
     if (category) {
       const tkey = `category/${category.slug}` as TKey;
@@ -111,14 +138,14 @@ function mapToEn(path: string | undefined): string {
 
   // Handle other sections
   return path
-    .replace('/servicios/', '/services/')
-    .replace('/testimonios/', '/testimonials/')
-    .replace('/en/services/ingles-', '/en/services/');
+    .replace("/servicios/", "/services/")
+    .replace("/testimonios/", "/testimonials/")
+    .replace("/en/services/ingles-", "/en/services/");
 }
 function withSlash(p: string): string {
   if (!p) return p;
-  if (p.includes('.')) return p;
-  return p.endsWith('/') ? p : p + '/';
+  if (p.includes(".")) return p;
+  return p.endsWith("/") ? p : p + "/";
 }
 
 // Determine current page for navigation highlighting
@@ -126,7 +153,10 @@ const currentPath = Astro.url.pathname;
 
 const isCurrentPage = (link: string | undefined) => {
   if (!link) return false;
-  if (link === content.logoLink && (currentPath === content.logoLink || currentPath === content.logoLink + '/')) {
+  if (
+    link === content.logoLink &&
+    (currentPath === content.logoLink || currentPath === content.logoLink + "/")
+  ) {
     return true;
   }
   if (link !== "/" && link !== "/en/" && link !== "/es/") {
@@ -136,69 +166,97 @@ const isCurrentPage = (link: string | undefined) => {
 };
 ---
 
-<header id="site-header" class="fixed top-0 z-50 w-full left-0">
+<header
+  id="site-header"
+  class:list={[
+    "fixed top-0 z-50 w-full left-0 transition-all duration-300",
+    transparentOnLoad && "header-transparent",
+  ]}
+>
   <div class="site-container mx-auto px-4 mt-4">
-    <div class="flex justify-between items-center bg-white py-4 rounded-lg px-4 shadow-md border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700">
-      <a href={normalizePath(content.logoLink)} aria-label="New York English Teacher — Home" class="flex items-center">
-        <Logo />
+    <div
+      id="header-inner"
+      class="flex justify-between items-center py-4 rounded-lg px-4 transition-all duration-300 bg-white shadow-md border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700"
+    >
+      <a
+        href={normalizePath(content.logoLink)}
+        aria-label="New York English Teacher — Home"
+        class="flex items-center"
+      >
+        <Logo transparentMode={transparentOnLoad} />
       </a>
       <div class="flex items-center gap-x-3 sm:gap-x-4 md:gap-x-6">
-        <nav class="hidden lg:flex items-center" aria-label="Primary site navigation">
+        <nav
+          class="hidden lg:flex items-center"
+          aria-label="Primary site navigation"
+        >
           <ul class="flex items-center gap-x-4 md:gap-x-6">
-            {content.menu.map((item) => (
-              <li>
-                <a
-                  href={item.link}
-                  class:list={[
-                    "text-small font-medium rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-dark",
-                    isCurrentPage(item.link)
-                      ? "text-primary dark:text-primary-dark font-semibold"
-                      : "text-neutral-700 hover:text-primary dark:text-neutral-300 dark:hover:text-primary-dark",
-                  ]}
-                  aria-current={isCurrentPage(item.link) ? "page" : undefined}
-                >
-                  {item.name}
-                </a>
-              </li>
-            ))}
+            {
+              content.menu.map((item) => (
+                <li>
+                  <a
+                    href={item.link}
+                    class:list={[
+                      "nav-link text-small font-medium rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-dark transition-colors duration-300",
+                      isCurrentPage(item.link)
+                        ? "text-primary dark:text-primary-dark font-semibold"
+                        : "text-neutral-700 hover:text-primary dark:text-neutral-300 dark:hover:text-primary-dark",
+                    ]}
+                    aria-current={isCurrentPage(item.link) ? "page" : undefined}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </nav>
-        {!hideLanguageSwitcher && (
-          <div class="flex items-center" id="lang-switcher-container">
-            {!currentPath.startsWith('/es') && translationSlugEs && (
-              <a
-                href={translationSlugEs}
-                class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
-                data-lang="es"
-                data-astro-reload
-              >
-                <Image src={mexFlag} alt="Bandera de México" width={24} height={24} class="w-6 h-6" />
-              </a>
-            )}
-            {!currentPath.startsWith('/en') && translationSlugEn && (
-              <a
-                href={translationSlugEn}
-                class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
-                data-lang="en"
-                data-astro-reload
-              >
-                <Image src={usaFlag} alt="USA Flag" width={24} height={24} class="w-6 h-6" />
-              </a>
-            )}
-          </div>
-        )}
+        {
+          !hideLanguageSwitcher && (
+            <div class="flex items-center" id="lang-switcher-container">
+              {!currentPath.startsWith("/es") && translationSlugEs && (
+                <a
+                  href={translationSlugEs}
+                  class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
+                  data-lang="es"
+                  data-astro-reload
+                >
+                  <Image
+                    src={mexFlag}
+                    alt="Bandera de México"
+                    width={24}
+                    height={24}
+                    class="w-6 h-6"
+                  />
+                </a>
+              )}
+              {!currentPath.startsWith("/en") && translationSlugEn && (
+                <a
+                  href={translationSlugEn}
+                  class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
+                  data-lang="en"
+                  data-astro-reload
+                >
+                  <Image
+                    src={usaFlag}
+                    alt="USA Flag"
+                    width={24}
+                    height={24}
+                    class="w-6 h-6"
+                  />
+                </a>
+              )}
+            </div>
+          )
+        }
         <div class="hidden lg:block">
-          <Button
-            href={content.cta.link}
-            variant="primary"
-            size="md" 
-          >
+          <Button href={content.cta.link} variant="primary" size="md">
             {content.cta.text}
           </Button>
         </div>
         <button
           id="mobile-menu-button"
-          class="lg:hidden p-2 border-none cursor-pointer bg-transparent text-neutral-700 dark:text-neutral-300"
+          class="lg:hidden p-2 border-none cursor-pointer bg-transparent text-neutral-700 dark:text-neutral-300 mobile-menu-btn"
           aria-label="Toggle Menu"
           aria-expanded="false"
           aria-controls="mobile-menu-panel"
@@ -215,7 +273,7 @@ const isCurrentPage = (link: string | undefined) => {
     class="fixed inset-x-0 top-0 z-40 bg-white dark:bg-neutral-950 shadow-xl lg:hidden hidden opacity-0 scale-95 transform transition-all duration-200 ease-out overflow-y-auto"
     aria-hidden="true"
   >
-    <div class="site-container mx-auto px-4 sm:px-6 relative"> 
+    <div class="site-container mx-auto px-4 sm:px-6 relative">
       <button
         id="mobile-panel-close-button"
         class="absolute top-4 left-4 p-2 text-neutral-700 dark:text-neutral-300 hover:text-primary dark:hover:text-primary-dark"
@@ -224,56 +282,81 @@ const isCurrentPage = (link: string | undefined) => {
         <X size={28} />
       </button>
 
-      <ul class="flex flex-col gap-4 pt-20"> 
-        {content.menu.map((item) => (
-          <li>
-            <a
-              href={item.link}
-              class:list={[
-                "block py-2 text-base font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-primary-dark",
-                isCurrentPage(item.link)
-                  ? "text-primary dark:text-primary-dark font-semibold"
-                  : "text-neutral-700 hover:text-primary dark:text-neutral-300 dark:hover:text-primary-dark",
-              ]}
-              aria-current={isCurrentPage(item.link) ? "page" : undefined}
-            >
-              {item.name}
-            </a>
-          </li>
-        ))}
+      <ul class="flex flex-col gap-4 pt-20">
+        {
+          content.menu.map((item) => (
+            <li>
+              <a
+                href={item.link}
+                class:list={[
+                  "block py-2 text-base font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-primary-dark",
+                  isCurrentPage(item.link)
+                    ? "text-primary dark:text-primary-dark font-semibold"
+                    : "text-neutral-700 hover:text-primary dark:text-neutral-300 dark:hover:text-primary-dark",
+                ]}
+                aria-current={isCurrentPage(item.link) ? "page" : undefined}
+              >
+                {item.name}
+              </a>
+            </li>
+          ))
+        }
       </ul>
       <!-- Language Switcher for Mobile Menu -->
-      {!hideLanguageSwitcher && (
-        <div class="mt-6 mb-4 flex justify-center gap-4">
-          {translationSlugEs && typeof translationSlugEs === 'string' && !currentPath.startsWith('/es') && (
-            <a
-              href={translationSlugEs}
-              class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
-              aria-label="Cambiar a Español"
-              data-lang="es"
-              data-astro-reload
-            >
-              <Image src={mexFlag} alt="Bandera de México" width={24} height={24} class="w-6 h-6" />
-              <span class="text-sm font-medium">Español</span>
-            </a>
-          )}
-          {translationSlugEn && typeof translationSlugEn === 'string' && !currentPath.startsWith('/en') && (
-            <a
-              href={translationSlugEn}
-              class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
-              aria-label="Switch to English"
-              data-lang="en"
-              data-astro-reload
-            >
-              <Image src={usaFlag} alt="USA Flag" width={24} height={24} class="w-6 h-6" />
-              <span class="text-sm font-medium">English</span>
-            </a>
-          )}
-        </div>
-      )}
-      
+      {
+        !hideLanguageSwitcher && (
+          <div class="mt-6 mb-4 flex justify-center gap-4">
+            {translationSlugEs &&
+              typeof translationSlugEs === "string" &&
+              !currentPath.startsWith("/es") && (
+                <a
+                  href={translationSlugEs}
+                  class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
+                  aria-label="Cambiar a Español"
+                  data-lang="es"
+                  data-astro-reload
+                >
+                  <Image
+                    src={mexFlag}
+                    alt="Bandera de México"
+                    width={24}
+                    height={24}
+                    class="w-6 h-6"
+                  />
+                  <span class="text-sm font-medium">Español</span>
+                </a>
+              )}
+            {translationSlugEn &&
+              typeof translationSlugEn === "string" &&
+              !currentPath.startsWith("/en") && (
+                <a
+                  href={translationSlugEn}
+                  class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
+                  aria-label="Switch to English"
+                  data-lang="en"
+                  data-astro-reload
+                >
+                  <Image
+                    src={usaFlag}
+                    alt="USA Flag"
+                    width={24}
+                    height={24}
+                    class="w-6 h-6"
+                  />
+                  <span class="text-sm font-medium">English</span>
+                </a>
+              )}
+          </div>
+        )
+      }
+
       <div class="mt-4 pb-4 flex flex-col gap-3">
-        <Button href={normalizePath(content.cta.link)} variant="primary" size="md" class="w-full text-center">
+        <Button
+          href={normalizePath(content.cta.link)}
+          variant="primary"
+          size="md"
+          class="w-full text-center"
+        >
           {content.cta.text}
         </Button>
       </div>
@@ -282,12 +365,14 @@ const isCurrentPage = (link: string | undefined) => {
 </header>
 
 <script>
-  const header = document.getElementById('site-header');
-  const menuButton = document.getElementById('mobile-menu-button');
-  const mobileMenuPanel = document.getElementById('mobile-menu-panel');
-  const mobilePanelCloseButton = document.getElementById('mobile-panel-close-button'); 
-  const menuIcon = menuButton?.querySelector('.menu-icon');
-  const closeIcon = menuButton?.querySelector('.close-icon');
+  const header = document.getElementById("site-header");
+  const menuButton = document.getElementById("mobile-menu-button");
+  const mobileMenuPanel = document.getElementById("mobile-menu-panel");
+  const mobilePanelCloseButton = document.getElementById(
+    "mobile-panel-close-button"
+  );
+  const menuIcon = menuButton?.querySelector(".menu-icon");
+  const closeIcon = menuButton?.querySelector(".close-icon");
 
   function setMobileMenuPadding() {
     if (header && mobileMenuPanel) {
@@ -296,31 +381,31 @@ const isCurrentPage = (link: string | undefined) => {
 
   function openMenu() {
     if (!menuButton || !mobileMenuPanel || !menuIcon || !closeIcon) return;
-    menuButton.setAttribute('aria-expanded', 'true');
-    mobileMenuPanel.setAttribute('aria-hidden', 'false');
-    mobileMenuPanel.classList.remove('hidden', 'opacity-0', 'scale-95');
-    mobileMenuPanel.classList.add('opacity-100', 'scale-100');
-    menuIcon.classList.add('hidden');
-    closeIcon.classList.remove('hidden');
-    document.body.style.overflow = 'hidden'; 
+    menuButton.setAttribute("aria-expanded", "true");
+    mobileMenuPanel.setAttribute("aria-hidden", "false");
+    mobileMenuPanel.classList.remove("hidden", "opacity-0", "scale-95");
+    mobileMenuPanel.classList.add("opacity-100", "scale-100");
+    menuIcon.classList.add("hidden");
+    closeIcon.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
   }
 
   function closeMenu() {
     if (!menuButton || !mobileMenuPanel || !menuIcon || !closeIcon) return;
-    menuButton.setAttribute('aria-expanded', 'false');
-    mobileMenuPanel.setAttribute('aria-hidden', 'true');
-    mobileMenuPanel.classList.add('opacity-0', 'scale-95');
+    menuButton.setAttribute("aria-expanded", "false");
+    mobileMenuPanel.setAttribute("aria-hidden", "true");
+    mobileMenuPanel.classList.add("opacity-0", "scale-95");
     setTimeout(() => {
-      mobileMenuPanel.classList.add('hidden');
-    }, 200); 
-    menuIcon.classList.remove('hidden');
-    closeIcon.classList.add('hidden');
-    document.body.style.overflow = ''; 
+      mobileMenuPanel.classList.add("hidden");
+    }, 200);
+    menuIcon.classList.remove("hidden");
+    closeIcon.classList.add("hidden");
+    document.body.style.overflow = "";
   }
 
   if (menuButton) {
-    menuButton.addEventListener('click', () => {
-      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.addEventListener("click", () => {
+      const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
       if (!isExpanded) {
         openMenu();
       } else {
@@ -329,18 +414,18 @@ const isCurrentPage = (link: string | undefined) => {
     });
   }
 
-  if (mobilePanelCloseButton) { 
-    mobilePanelCloseButton.addEventListener('click', closeMenu);
+  if (mobilePanelCloseButton) {
+    mobilePanelCloseButton.addEventListener("click", closeMenu);
   }
-  
-  window.addEventListener('resize', setMobileMenuPadding);
+
+  window.addEventListener("resize", setMobileMenuPadding);
   setMobileMenuPadding();
 
   if (mobileMenuPanel) {
-    mobileMenuPanel.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (menuButton && menuButton.getAttribute('aria-expanded') === 'true') {
-          closeMenu(); 
+    mobileMenuPanel.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (menuButton && menuButton.getAttribute("aria-expanded") === "true") {
+          closeMenu();
         }
       });
     });
@@ -349,58 +434,196 @@ const isCurrentPage = (link: string | undefined) => {
   // Quiz language switcher warning
   function handleQuizLanguageSwitch(e: Event) {
     const currentPath = window.location.pathname;
-    const isOnQuizPage = currentPath.includes('/quiz/');
-    
+    const isOnQuizPage = currentPath.includes("/quiz/");
+
     if (!isOnQuizPage) return; // Not on quiz page, allow normal navigation
-    
+
     // Don't show warning on start page - user hasn't started yet
-    if (currentPath.includes('/quiz/start')) return;
-    
+    if (currentPath.includes("/quiz/start")) return;
+
     const target = e.currentTarget as HTMLAnchorElement;
-    const targetLang = target.getAttribute('data-lang');
-    const targetUrl = target.getAttribute('href');
-    
+    const targetLang = target.getAttribute("data-lang");
+    const targetUrl = target.getAttribute("href");
+
     if (!targetUrl) return;
-    
+
     // Always show warning on quiz pages (question, results, report)
     // User is in the middle of quiz flow
     e.preventDefault();
-    
-    const message = targetLang === 'es' 
-      ? `Switching to Spanish will restart your quiz and you'll lose your current progress.\n\nDo you want to continue?`
-      : `Cambiar a inglés reiniciará tu quiz y perderás tu progreso actual.\n\n¿Deseas continuar?`;
-    
+
+    const message =
+      targetLang === "es"
+        ? `Switching to Spanish will restart your quiz and you'll lose your current progress.\n\nDo you want to continue?`
+        : `Cambiar a inglés reiniciará tu quiz y perderás tu progreso actual.\n\n¿Deseas continuar?`;
+
     if (confirm(message)) {
       // Clear quiz data
-      sessionStorage.removeItem('quizAnswers');
-      sessionStorage.removeItem('quizScore');
-      sessionStorage.removeItem('submissionId');
-      sessionStorage.removeItem('leadData');
-      
+      sessionStorage.removeItem("quizAnswers");
+      sessionStorage.removeItem("quizScore");
+      sessionStorage.removeItem("submissionId");
+      sessionStorage.removeItem("leadData");
+
       // Redirect to start page in new language
-      const startUrl = targetLang === 'es' ? '/es/quiz/start/' : '/en/quiz/start/';
+      const startUrl =
+        targetLang === "es" ? "/es/quiz/start/" : "/en/quiz/start/";
       window.location.href = startUrl;
     }
   }
-  
+
   // Initialize language switcher handlers after DOM is ready
   function initQuizLanguageSwitcher() {
-    const langFlags = document.querySelectorAll('.lang-flag');
+    const langFlags = document.querySelectorAll(".lang-flag");
     if (langFlags.length === 0) {
       // Retry after a short delay if elements not found yet
       setTimeout(initQuizLanguageSwitcher, 100);
       return;
     }
-    
-    langFlags.forEach(link => {
-      link.addEventListener('click', handleQuizLanguageSwitch);
+
+    langFlags.forEach((link) => {
+      link.addEventListener("click", handleQuizLanguageSwitch);
     });
   }
-  
+
   // Start initialization
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initQuizLanguageSwitcher);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initQuizLanguageSwitcher);
   } else {
     initQuizLanguageSwitcher();
   }
+
+  // Transparent header scroll detection
+  function initTransparentHeader() {
+    const header = document.getElementById("site-header");
+    if (!header || !header.classList.contains("header-transparent")) {
+      return; // Not a transparent header page
+    }
+
+    const headerInner = document.getElementById("header-inner");
+    if (!headerInner) {
+      return;
+    }
+
+    // Capture headerInner in closure to satisfy TypeScript
+    const innerElement = headerInner;
+
+    function handleScroll() {
+      const navLinks = document.querySelectorAll(".nav-link");
+      const logoForDark = document.querySelector(".logo-light"); // Logo for dark backgrounds
+      const logoForWhite = document.querySelector(".logo-dark"); // Logo for white backgrounds
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+
+      const scrollY = window.scrollY;
+      const scrollThreshold = window.innerWidth < 768 ? 20 : 30; // 20px mobile, 30px desktop
+
+      console.log(
+        "Scroll:",
+        scrollY,
+        "Threshold:",
+        scrollThreshold,
+        "LogoDark:",
+        logoForDark,
+        "LogoWhite:",
+        logoForWhite
+      );
+
+      if (scrollY > scrollThreshold) {
+        console.log("SCROLLED - Showing white bg logo");
+        // Scrolled - solid white background
+        innerElement.style.backgroundColor = "#ffffff";
+        innerElement.style.boxShadow =
+          "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)";
+        innerElement.style.borderColor = "#e5e7eb";
+
+        // Swap to logo for white background
+        if (logoForDark && logoForWhite) {
+          console.log("Hiding dark bg logo, showing white bg logo");
+          logoForDark.classList.add("hidden");
+          logoForWhite.classList.remove("hidden");
+          console.log("LogoDark classes:", logoForDark.className);
+          console.log("LogoWhite classes:", logoForWhite.className);
+        }
+
+        // Dark text for nav links and mobile menu - use !important to override CSS
+        navLinks.forEach((link) => {
+          if (link instanceof HTMLElement) {
+            link.style.setProperty("color", "#374151", "important");
+          }
+        });
+
+        if (mobileMenuBtn instanceof HTMLElement) {
+          mobileMenuBtn.style.setProperty("color", "#374151", "important");
+        }
+      } else {
+        console.log("AT TOP - Showing dark bg logo");
+        // At top - transparent background
+        innerElement.style.backgroundColor = "transparent";
+        innerElement.style.boxShadow = "none";
+        innerElement.style.borderColor = "transparent";
+
+        // Swap to logo for dark background
+        if (logoForDark && logoForWhite) {
+          console.log("Showing dark bg logo, hiding white bg logo");
+          logoForDark.classList.remove("hidden");
+          logoForWhite.classList.add("hidden");
+          console.log("LogoDark classes:", logoForDark.className);
+          console.log("LogoWhite classes:", logoForWhite.className);
+        }
+
+        // White text for nav links and mobile menu - use !important to override CSS
+        navLinks.forEach((link) => {
+          if (link instanceof HTMLElement) {
+            link.style.setProperty("color", "#ffffff", "important");
+          }
+        });
+
+        if (mobileMenuBtn instanceof HTMLElement) {
+          mobileMenuBtn.style.setProperty("color", "#ffffff", "important");
+        }
+      }
+    }
+
+    // Add scroll listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Run once on load
+    handleScroll();
+  }
+
+  // Initialize transparent header after DOM is ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initTransparentHeader);
+  } else {
+    initTransparentHeader();
+  }
 </script>
+
+<style>
+  /* Transparent header styles */
+  .header-transparent #header-inner {
+    background-color: transparent;
+    box-shadow: none;
+    border-color: transparent;
+  }
+
+  .header-transparent .nav-link {
+    color: #ffffff !important;
+  }
+
+  .header-transparent .nav-link:hover {
+    color: #ffc107 !important;
+  }
+
+  /* Mobile menu button on transparent header */
+  .header-transparent .mobile-menu-btn {
+    color: #ffffff !important;
+  }
+
+  /* Smooth transitions */
+  #header-inner,
+  .nav-link,
+  .mobile-menu-btn,
+  .logo-light,
+  .logo-dark {
+    transition: all 0.3s ease;
+  }
+</style>

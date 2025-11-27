@@ -5,7 +5,6 @@ import SplitPanel from "@components/sections/SplitPanel.astro";
 import Features from "@components/sections/Features.astro";
 import RecentPosts from "@components/sections/RecentPosts.astro";
 import Testimonials from "@components/sections/Testimonials-titan.astro";
-import Faqs from "@components/sections/Faqs.astro";
 import QuizPromotion from "@components/sections/QuizPromotion.astro";
 
 // Define language and tkey for i18n
@@ -14,10 +13,9 @@ const tkey = "home";
 
 import { statsLists } from "@data/stats-es";
 import { logoLists } from "@data/logos";
-import { faqLists } from "@data/faqs";
 import { testimonials } from "@data/testimonials-es";
 
-import heroSkyline from "@assets/images/home/new-york-city-skyline.jpg";
+import heroSkyline from "@assets/images/home/new-york-city-skyline.webp";
 import styleGuideImage from "@assets/images/home/developer.jpg";
 import { GraduationCap, Briefcase, Presentation, Users } from "lucide-astro";
 
@@ -42,25 +40,28 @@ const seoDescription =
   "Mejora tu fluidez y confianza en inglés con coaching personalizado para ejecutivos. Clases 1-a-1 adaptadas a tu industria y objetivos específicos.";
 
 const heroContent = {
+  eyebrow: "Tu Ventaja de Comunicación Global",
   title: "Domina el Inglés de Negocios y Avanza en tu Carrera",
   description:
-    "Coaching de inglés personalizado para desarrollar confianza, fluidez e impacto profesional.",
+    "Entreno a líderes internacionales para comunicarse con autoridad tranquila, claridad más aguda y presencia ejecutiva—para que puedas liderar reuniones de alto riesgo y ganar confianza más rápido.",
+  trustLine: "Confiado por líderes en empresas Fortune 500 y startups globales",
+  trustLineLink: "/es/testimonios/",
   buttons: [
     {
-      text: "Consulta Gratuita",
+      text: "Reserva una Consulta Privada",
       link: "/es/book/",
       variant: "primary" as const,
     },
     {
-      text: "Contáctame por WhatsApp",
-      link: "https://wa.link/pk4f97",
-      target: "_blank",
-      variant: "whatsapp" as const,
+      text: "Inicia la Evaluación Ejecutiva",
+      link: "/es/assessments/",
+      variant: "secondary" as const,
     },
   ],
   backgroundImage: heroSkyline,
   backgroundImageMobile: heroSkyline,
   overlayOpacity: 0.3,
+  fullHeight: true,
 } as const;
 
 const featuresSection = {
@@ -70,28 +71,32 @@ const featuresSection = {
     "Ya sea que necesites mejorar tu fluidez, destacar en una entrevista o comunicarte más eficazmente en reuniones de negocios, te ayudaré a lograrlo.",
   features: [
     {
-      title: "Coaching Personalizado 1 a 1",
+      title: "Inglés para Negocios y Ejecutivos",
       description:
-        "Lecciones personalizadas y alineadas con tu rol y los desafíos del mundo real que enfrentas, para que cada sesión agregue valor inmediato.",
-      icon: GraduationCap,
-    },
-    {
-      title: "Capacitación Corporativa",
-      description:
-        "Coaching individual que prepara a tus equipos y ejecutivos con un inglés claro y persuasivo.",
-      icon: Users,
-    },
-    {
-      title: "Preparación para Entrevistas",
-      description:
-        "Ambiente simulado de entrevistas y retroalimentación para que estés 100% preparado.",
+        "Lidera con autoridad en salas de juntas, pitches a inversionistas y negociaciones de alto riesgo—sin traducir en tu cabeza.",
       icon: Briefcase,
+      link: "/es/quiz/executives/",
     },
     {
-      title: "Presentaciones de Negocios",
+      title: "Inglés para Equipos de Tecnología y TI",
       description:
-        "Práctica intensiva con slides estructuradas para exponer con confianza.",
+        "Aumenta tu potencial salarial y crecimiento profesional comunicando ideas técnicas claramente con equipos y clientes globales.",
       icon: Presentation,
+      link: "/es/quiz/it-services/",
+    },
+    {
+      title: "Inglés para Profesionales",
+      description:
+        "Expande tu base de clientes internacional y trabaja con confianza en entornos profesionales globales—médicos, abogados, consultores.",
+      icon: Users,
+      link: "/es/quiz/professional-services/",
+    },
+    {
+      title: "Inglés para Situaciones de Alto Riesgo",
+      description:
+        "Domina entrevistas laborales, presenta con alto impacto y persuade a tomadores de decisiones con claridad y confianza.",
+      icon: GraduationCap,
+      link: "/es/quiz/high-stakes/",
     },
   ],
 } as const;
@@ -155,13 +160,6 @@ const logosSection = {
   logos: logoLists.main.logos,
 } as const;
 
-const faqsSection = {
-  eyebrow: "PREGUNTAS FRECUENTES",
-  title: "Preguntas Frecuentes",
-  description: "Encuentra respuestas a preguntas comunes.",
-  faqs: faqLists.main_es.faqs,
-} as const;
-
 const recentPostsSection = {
   eyebrow: "ÚLTIMAS ENTRADAS DEL BLOG",
   title: "Perspectivas para Profesionales de Negocios",
@@ -214,8 +212,7 @@ const recentPostsSection = {
       lang="es"
     />
 
-    <!-- Stats temporarily removed; FAQs restored for footer anchor -->
+    <!-- Stats temporarily removed -->
     <!-- <Stats content={sideBySideStats} background="dark" padding="base" /> -->
-    <Faqs content={faqsSection} background="base" padding="base" />
   </div>
 </Base>

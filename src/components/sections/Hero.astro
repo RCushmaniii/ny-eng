@@ -1,26 +1,30 @@
 ---
 // Unchanged front-matter
-import Button from '@components/ui/Button.astro';
+import Button from "@components/ui/Button.astro";
 
 type HeroButton = {
   text: string;
   link: string;
-  variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark' | 'whatsapp';
+  variant?: "primary" | "secondary" | "ghostLight" | "ghostDark" | "whatsapp";
   target?: string;
 };
 
 interface HeroContent {
+  eyebrow?: string;
   title: string;
   description: string;
+  trustLine?: string;
+  trustLineLink?: string;
   buttons?: {
     text: string;
     link: string;
-    variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark' | 'whatsapp';
+    variant?: "primary" | "secondary" | "ghostLight" | "ghostDark" | "whatsapp";
     target?: string;
   }[];
   backgroundImage: any;
   backgroundImageMobile?: any;
   overlayOpacity?: number;
+  fullHeight?: boolean;
 }
 
 const { content } = Astro.props;
@@ -28,65 +32,131 @@ const opacity = content.overlayOpacity ?? 1;
 
 // Helper function to get image type from src
 const getImageType = (imageSrc: string) => {
-  if (imageSrc.includes('.webp')) return 'image/webp';
-  if (imageSrc.includes('.jpg') || imageSrc.includes('.jpeg')) return 'image/jpeg';
-  if (imageSrc.includes('.png')) return 'image/png';
-  return 'image/jpeg'; // default fallback
+  if (imageSrc.includes(".webp")) return "image/webp";
+  if (imageSrc.includes(".jpg") || imageSrc.includes(".jpeg"))
+    return "image/jpeg";
+  if (imageSrc.includes(".png")) return "image/png";
+  return "image/jpeg"; // default fallback
 };
 
-const backgroundImageType = content.backgroundImage?.src ? getImageType(content.backgroundImage.src) : 'image/jpeg';
-const backgroundImageMobileType = content.backgroundImageMobile?.src ? getImageType(content.backgroundImageMobile.src) : backgroundImageType;
+const backgroundImageType = content.backgroundImage?.src
+  ? getImageType(content.backgroundImage.src)
+  : "image/jpeg";
+const backgroundImageMobileType = content.backgroundImageMobile?.src
+  ? getImageType(content.backgroundImageMobile.src)
+  : backgroundImageType;
 ---
 
 <!-- Titan Core Theme Hero - using the recommended approach with min-height -->
-<section class="header-offset relative w-full min-h-[60vh] overflow-hidden">
-  {content.backgroundImage && (
-    <picture class="absolute inset-0 w-full h-full overflow-hidden">
-      {content.backgroundImageMobile && (
-        <>
-          <source
-            srcset={content.backgroundImageMobile.src}
-            media="(max-width: 768px)"
-            type={backgroundImageMobileType}
-          />
-        </>
-      )}
-      <source
-        srcset={content.backgroundImage.src}
-        media="(min-width: 769px)"
-        type={backgroundImageType}
-      />
-      <img
-        src={content.backgroundImageMobile?.src ?? content.backgroundImage.src}
-        alt="Background image"
-        width={content.backgroundImageMobile ? 800 : 1920}
-        height={content.backgroundImageMobile ? 1000 : 1080}
-        sizes="(max-width: 768px) 100vw, 100vw"
-        loading="eager"
-        decoding="async"
-        fetchpriority="high"
-        class="w-full h-full object-cover object-center" 
-      />
-    </picture>
-  )}
+<section
+  class:list={[
+    "header-offset relative w-full overflow-hidden",
+    content.fullHeight ? "min-h-screen" : "min-h-[60vh]",
+  ]}
+>
+  {
+    content.backgroundImage && (
+      <picture class="absolute inset-0 w-full h-full overflow-hidden">
+        {content.backgroundImageMobile && (
+          <>
+            <source
+              srcset={content.backgroundImageMobile.src}
+              media="(max-width: 768px)"
+              type={backgroundImageMobileType}
+            />
+          </>
+        )}
+        <source
+          srcset={content.backgroundImage.src}
+          media="(min-width: 769px)"
+          type={backgroundImageType}
+        />
+        <img
+          src={
+            content.backgroundImageMobile?.src ?? content.backgroundImage.src
+          }
+          alt="Background image"
+          width={content.backgroundImageMobile ? 800 : 1920}
+          height={content.backgroundImageMobile ? 1000 : 1080}
+          sizes="(max-width: 768px) 100vw, 100vw"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          class="w-full h-full object-cover object-center"
+        />
+      </picture>
+    )
+  }
 
   <div
     class="hero-background absolute inset-0 w-full h-full"
     style={`opacity:${opacity};`}
-  />
+  >
+  </div>
 
-  <div class="site-container relative z-10 mx-auto px-4 py-large flex flex-col md:items-center md:justify-center md:text-center">
-    <h1 class="text-white text-4xl sm:text-5xl font-bold text-balance fade-in-up mb-4">{content.title}</h1>
-    <p class="text-white text-balance fade-in-up delay-1 mb-6">{content.description}</p>
+  <div
+    class:list={[
+      "site-container relative z-10 mx-auto px-4 flex flex-col items-center justify-center text-center",
+      content.fullHeight ? "min-h-screen" : "py-large",
+    ]}
+  >
+    <div class="max-w-4xl mx-auto">
+      {
+        content.eyebrow && (
+          <p
+            class="text-sm sm:text-base font-bold uppercase tracking-wider mb-8 fade-in-up"
+            style="color: #FFC107 !important; letter-spacing: 0.1em;"
+          >
+            {content.eyebrow}
+          </p>
+        )
+      }
 
-    {content.buttons?.length && (
-      <div class="flex flex-wrap gap-4 mt-8 fade-in-up delay-2">
-        {content.buttons.map((b: HeroButton) => (
-          <Button href={b.link} target={b.target ?? '_self'} variant={b.variant ?? 'primary'}>
-            {b.text}
-          </Button>
-        ))}
-      </div>
-    )}
+      <h1
+        class="text-4xl sm:text-5xl lg:text-6xl font-bold text-balance fade-in-up mb-8"
+        style="color: #ffffff !important; line-height: 1.2;"
+      >
+        {content.title}
+      </h1>
+
+      <p
+        class="text-lg sm:text-xl text-balance fade-in-up delay-1 max-w-3xl mx-auto mb-12"
+        style="color: #ffffff !important; line-height: 1.6;"
+      >
+        {content.description}
+      </p>
+
+      {
+        content.buttons?.length && (
+          <div
+            class="flex flex-wrap justify-center gap-4 mb-12 fade-in-up delay-2"
+            style="margin-top: 50px;"
+          >
+            {content.buttons.map((b: HeroButton) => (
+              <Button
+                href={b.link}
+                target={b.target ?? "_self"}
+                variant={b.variant ?? "primary"}
+                size="lg"
+              >
+                {b.text}
+              </Button>
+            ))}
+          </div>
+        )
+      }
+
+      {
+        content.trustLine && (
+          <a
+            href={content.trustLineLink || "#"}
+            class="text-base sm:text-lg font-semibold fade-in-up delay-3 inline-block transition-all duration-200 hover:opacity-80"
+            style="color: #FFC107 !important; margin-top: 40px; text-decoration: none; border-bottom: 1px solid rgba(255, 193, 7, 0.3);"
+          >
+            {content.trustLine}
+          </a>
+        )
+      }
+    </div>
   </div>
 </section>

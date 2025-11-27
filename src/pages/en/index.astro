@@ -5,7 +5,6 @@ import SplitPanel from "@components/sections/SplitPanel.astro";
 import Features from "@components/sections/Features.astro";
 import RecentPosts from "@components/sections/RecentPosts.astro";
 import Testimonials from "@components/sections/Testimonials-titan.astro";
-import Faqs from "@components/sections/Faqs.astro";
 import QuizPromotion from "@components/sections/QuizPromotion.astro";
 
 // Define language and tkey for i18n
@@ -14,12 +13,11 @@ const tkey = "home";
 
 import { statsLists } from "@data/stats";
 import { logoLists } from "@data/logos";
-import { faqLists } from "@data/faqs";
 import { testimonials } from "@data/testimonials";
 
 import { GraduationCap, Briefcase, Presentation, Users } from "lucide-astro";
 
-import heroSkyline from "@assets/images/home/new-york-city-skyline.jpg";
+import heroSkyline from "@assets/images/home/new-york-city-skyline.webp";
 import styleGuideImage from "@assets/images/home/developer.jpg";
 
 // This is the English homepage, so we define the path to its Spanish counterpart.
@@ -45,25 +43,28 @@ const seoDescription =
   "Boost your English fluency and confidence with personalized coaching tailored for professionals and companies.";
 
 const heroContent = {
+  eyebrow: "Your Global Communication Advantage",
   title: "Master Business English & Advance Your Career",
   description:
-    "Tailored English coaching to build confidence, fluency, and professional impact.",
+    "I coach international leaders to communicate with calm authority, sharper clarity, and executive presence—so you can lead high-stakes meetings and earn trust faster.",
+  trustLine: "Trusted by leaders at Fortune 500 companies and global startups",
+  trustLineLink: "/en/testimonials/",
   buttons: [
     {
-      text: "Book Your Free Consultation",
+      text: "Book a Private Consultation",
       link: "/en/book/",
       variant: "primary" as const,
     },
     {
-      text: "WhatsApp Me",
-      link: "https://wa.link/pk4f97",
-      target: "_blank",
-      variant: "whatsapp" as const,
+      text: "Start the Executive Assessment",
+      link: "/en/assessments/",
+      variant: "secondary" as const,
     },
   ],
   backgroundImage: heroSkyline,
   backgroundImageMobile: heroSkyline,
   overlayOpacity: 0.3,
+  fullHeight: true,
 } as const;
 
 const featuresSection = {
@@ -73,28 +74,32 @@ const featuresSection = {
     "Whether you need to improve your fluency, ace an interview, or communicate more effectively in business meetings, I'll help you get there.",
   features: [
     {
-      title: "1-on-1 Coaching",
+      title: "Business & Executive English",
       description:
-        "Personalized lessons aligned with your role and the real-world challenges you face—so every session adds immediate value.",
-      icon: GraduationCap,
-    },
-    {
-      title: "Corporate Training",
-      description:
-        "Individual coaching that equips your teams and executives with clear, persuasive English.",
-      icon: Users,
-    },
-    {
-      title: "Interview Preparation",
-      description:
-        "Mock interviews plus targeted feedback so you walk in fully prepared.",
+        "Lead with authority in boardrooms, investor pitches, and high-stakes negotiations—without translating in your head.",
       icon: Briefcase,
+      link: "/en/quiz/executives/",
     },
     {
-      title: "Business Presentations",
+      title: "English for Tech & IT Teams",
       description:
-        "Hands-on practice and structure templates to deliver with confidence.",
+        "Boost your salary potential and career growth by communicating technical ideas clearly with global teams and clients.",
       icon: Presentation,
+      link: "/en/quiz/it-services/",
+    },
+    {
+      title: "English for Professionals",
+      description:
+        "Expand your international client base and work confidently in global professional settings—doctors, lawyers, consultants.",
+      icon: Users,
+      link: "/en/quiz/professional-services/",
+    },
+    {
+      title: "High-Stakes English",
+      description:
+        "Ace job interviews, deliver high-impact presentations, and persuade decision-makers with clarity and confidence.",
+      icon: GraduationCap,
+      link: "/en/quiz/high-stakes/",
     },
   ],
 } as const;
@@ -169,13 +174,6 @@ const logosSection = {
   logos: logoLists.main.logos,
 } as const;
 
-const faqsSection = {
-  eyebrow: "FAQs",
-  title: "Frequently Asked Questions",
-  description: "Find answers to common questions.",
-  faqs: faqLists.main.faqs,
-} as const;
-
 const recentPostsSection = {
   eyebrow: "RECENT BLOG POSTS",
   title: "Insights for Business Professionals",
@@ -196,6 +194,7 @@ const recentPostsSection = {
   heroImage={heroContent.backgroundImage}
   heroImageMobile={heroContent.backgroundImageMobile}
   ogImage={{ src: "/images/logos/new-york-english-sq-og.jpg" }}
+  transparentHeader={true}
 >
   <div class="relative bg-background-light">
     <Hero content={heroContent} />
@@ -227,8 +226,7 @@ const recentPostsSection = {
       padding="base"
     />
 
-    <!-- Stats temporarily removed; FAQs restored for footer anchor -->
+    <!-- Stats temporarily removed -->
     <!-- <Stats content={sideBySideStats} background="dark" padding="base" /> -->
-    <Faqs content={faqsSection} background="base" padding="base" />
   </div>
 </Base>

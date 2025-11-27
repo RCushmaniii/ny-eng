@@ -25,9 +25,11 @@ export interface Props {
   heroImage?: string | { src: string; width?: number; height?: number };
   heroImageMobile?: string | { src: string; width?: number; height?: number };
   hideCta?: boolean;
+  hideNav?: boolean;
   hideLanguageSwitcher?: boolean;
   customHreflangs?: Array<{ lang: string; href: string }>;
   customCanonical?: string;
+  transparentHeader?: boolean;
 }
 
 const {
@@ -39,16 +41,16 @@ const {
   heroImage,
   heroImageMobile,
   hideCta,
+  hideNav,
   hideLanguageSwitcher,
   customHreflangs,
   customCanonical,
+  transparentHeader = false,
 } = Astro.props;
 
 // Fail fast if required props are missing
 if (!lang) {
-  throw new Error(
-    `[Base.astro] Missing required prop: lang="${lang}"`
-  );
+  throw new Error(`[Base.astro] Missing required prop: lang="${lang}"`);
 }
 
 // If no customHreflangs provided, tkey is required
@@ -86,9 +88,11 @@ if (customCanonical && customHreflangs) {
 } else {
   // Use centralized i18n system (for static pages)
   if (!tkey) {
-    throw new Error(`[Base.astro] tkey is required when not using customHreflangs`);
+    throw new Error(
+      `[Base.astro] tkey is required when not using customHreflangs`
+    );
   }
-  
+
   const tkeyNonNull = tkey; // TypeScript type narrowing
   const relPath = i18n.routeFor[lang]?.[tkeyNonNull];
   if (!relPath) {
@@ -108,14 +112,15 @@ if (customCanonical && customHreflangs) {
 
   // x-default: point to your primary language
   xDefault =
-    SITE + ensureSlash(i18n.routeFor[i18n.defaultLocale]?.[tkeyNonNull] ?? "/en/");
+    SITE +
+    ensureSlash(i18n.routeFor[i18n.defaultLocale]?.[tkeyNonNull] ?? "/en/");
 }
 
 const ogTitle = title;
 const ogDesc = description;
 // Ensure OG image is absolute URL for proper social sharing
 const ogImgPath = ogImage?.src ?? "/images/logos/new-york-english-og.jpg";
-const ogImg = ogImgPath.startsWith('http') ? ogImgPath : SITE + ogImgPath;
+const ogImg = ogImgPath.startsWith("http") ? ogImgPath : SITE + ogImgPath;
 const ogAlt =
   ogImage?.alt ??
   (lang === "es"
@@ -141,23 +146,27 @@ const footerData = {
 
 // Slugs for language switcher using i18n system (fallback for custom pages)
 let translationSlugEn = customHreflangs
-  ? ensureSlash(customHreflangs
-      .find((alt) => alt.lang.startsWith("en"))
-      ?.href?.replace(SITE, "") || (tkey ? i18n.routeFor["en"][tkey] : "/en/"))
+  ? ensureSlash(
+      customHreflangs
+        .find((alt) => alt.lang.startsWith("en"))
+        ?.href?.replace(SITE, "") || (tkey ? i18n.routeFor["en"][tkey] : "/en/")
+    )
   : ensureSlash(tkey ? i18n.routeFor["en"][tkey] : "/en/");
 
 let translationSlugEs = customHreflangs
-  ? ensureSlash(customHreflangs
-      .find((alt) => alt.lang.startsWith("es"))
-      ?.href?.replace(SITE, "") || (tkey ? i18n.routeFor["es"][tkey] : "/es/"))
+  ? ensureSlash(
+      customHreflangs
+        .find((alt) => alt.lang.startsWith("es"))
+        ?.href?.replace(SITE, "") || (tkey ? i18n.routeFor["es"][tkey] : "/es/")
+    )
   : ensureSlash(tkey ? i18n.routeFor["es"][tkey] : "/es/");
 
 // Prevent double language prefixes in URLs
-if (translationSlugEn.includes('/en/blog/en/')) {
-  translationSlugEn = translationSlugEn.replace('/en/blog/en/', '/en/blog/');
+if (translationSlugEn.includes("/en/blog/en/")) {
+  translationSlugEn = translationSlugEn.replace("/en/blog/en/", "/en/blog/");
 }
-if (translationSlugEs.includes('/es/blog/es/')) {
-  translationSlugEs = translationSlugEs.replace('/es/blog/es/', '/es/blog/');
+if (translationSlugEs.includes("/es/blog/es/")) {
+  translationSlugEs = translationSlugEs.replace("/es/blog/es/", "/es/blog/");
 }
 ---
 
@@ -171,8 +180,20 @@ if (translationSlugEs.includes('/es/blog/es/')) {
     <meta name="description" content={description} />
 
     <!-- Preload critical fonts for better LCP -->
-    <link rel="preload" href="/fonts/noto-sans-kr-v36-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/noto-sans-v42-latin-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      href="/fonts/noto-sans-kr-v36-latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/noto-sans-v42-latin-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
     <!-- Canonical -->
     <link rel="canonical" href={canonicalUrl} />
@@ -264,12 +285,17 @@ if (translationSlugEs.includes('/es/blog/es/')) {
     >
 
     <div id="page-wrapper" class="flex flex-col min-h-screen">
-      <Header
-        content={headerData}
-        translationSlugEn={translationSlugEn}
-        translationSlugEs={translationSlugEs}
-        hideLanguageSwitcher={hideLanguageSwitcher}
-      />
+      {
+        !hideNav && (
+          <Header
+            content={headerData}
+            translationSlugEn={translationSlugEn}
+            translationSlugEs={translationSlugEs}
+            hideLanguageSwitcher={hideLanguageSwitcher}
+            transparentOnLoad={transparentHeader}
+          />
+        )
+      }
 
       <main id="main-content" role="main" class="flex-grow">
         <slot />
@@ -307,15 +333,18 @@ if (translationSlugEs.includes('/es/blog/es/')) {
   /* ========================================
      GLOBAL LAYOUT FIX
      ======================================== */
-  
-  html, body {
+
+  html,
+  body {
     margin: 0;
     padding: 0;
     width: 100%;
   }
 
   /* Ensure all children use border-box */
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
   }
 </style>
