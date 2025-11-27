@@ -16,12 +16,16 @@ import {
   Clock,
   TrendingUp,
   ChevronDown,
+  MessageSquare,
+  Zap,
+  Globe,
 } from "lucide-astro";
+import heroSkyline from "@assets/images/home/new-york-city-skyline.webp";
 
 // SEO metadata - optimized for 50-60 characters title, 150-160 chars description
-const title = "IT English Assessment | Technical Communication Skills Quiz";
+const title = "Technical Communication Audit | IT Leadership Assessment";
 const description =
-  "Is language the bottleneck in your code reviews? Take this 2-minute assessment for Software Engineers & CTOs. Get your Technical English score instantly.";
+  "Stop letting communication barriers introduce career-limiting bugs. Measure your Technical Communication Authority in 90 seconds. Discover the gaps stalling your promotion to Tech Lead.";
 
 // FAQ data for SEO content
 const faqs = [
@@ -58,40 +62,55 @@ const faqs = [
 >
   <QuizSchema lang="en" slot="head" />
 
-  <!-- Hero Section with NYC Night Skyline Background -->
+  <!-- Hero Section with NYC Skyline Background -->
   <section class="hero">
     <img
-      src="/images/ny-english-night-skyline.jpg"
-      alt="New York City Skyline at Night"
+      src={heroSkyline.src}
+      alt="IT English Assessment"
       class="hero-bg-image"
       loading="eager"
     />
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
-        <span class="eyebrow">Free 90-Second Assessment</span>
+        <span class="eyebrow"
+          >STOP Letting Communication Barriers Introduce Career-Limiting Bugs</span
+        >
 
-        <h1>IT Communication Assessment: Is Your English Introducing Bugs?</h1>
+        <h1>
+          The 90-Second Audit that Measures Your Technical Communication
+          Authority
+        </h1>
 
         <p class="lead">
-          Your code is flawless. But when you explain it in meetings, do
-          stakeholders understand? Take this 2-minute assessment to discover
-          where language barriers are slowing down your team—and your career.
+          Your code is flawless. Your ideas are innovative. But if you can't
+          translate complexity, you won't lead. Discover the exact communication
+          gaps that are slowing project velocity and stalling your promotion to
+          Tech Lead. This is a strategic audit designed exclusively for
+          international engineers ready to scale their influence.
         </p>
 
         <div class="benefits">
           <div class="benefit">
             <CheckCircle size={20} />
-            <span>Get your Technical English score (0-100)</span>
-          </div>
-          <div class="benefit">
-            <CheckCircle size={20} />
-            <span>Identify gaps in code reviews & architecture discussions</span
+            <span
+              ><strong>AUDIT:</strong> Your Technical Communication Authority Score
+              (0-100)</span
             >
           </div>
           <div class="benefit">
             <CheckCircle size={20} />
-            <span>Receive a personalized 30-day improvement roadmap</span>
+            <span
+              ><strong>DIAGNOSE:</strong> Hidden friction in code reviews, architecture
+              docs, and stakeholder meetings</span
+            >
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span
+              ><strong>ACCESS:</strong> A Personalized 30-Day Roadmap to Technical
+              Leadership Communication</span
+            >
           </div>
         </div>
 
@@ -101,23 +120,13 @@ const faqs = [
           size="lg"
           class="cta-button gold-cta"
         >
-          Start Assessment →
+          Start Your Free Audit →
         </Button>
 
-        <div class="trust-signals">
-          <div class="trust-signal">
-            <Clock size={16} />
-            <span>90 seconds</span>
-          </div>
-          <div class="trust-signal">
-            <TrendingUp size={16} />
-            <span>Instant results</span>
-          </div>
-          <div class="trust-signal">
-            <Laptop size={16} />
-            <span>200+ engineers assessed</span>
-          </div>
-        </div>
+        <p class="trust-line">
+          90 Seconds. Instant, Confidential Results. Trusted by 200+ Senior
+          Engineers.
+        </p>
       </div>
     </div>
   </section>
@@ -125,7 +134,7 @@ const faqs = [
   <!-- What You'll Discover Section -->
   <section class="discover-section">
     <div class="container">
-      <h2>Identify the "Glitches" in Your Technical Communication</h2>
+      <h2>The 3 Communication Glitches Stalling Your Promotion</h2>
       <p class="section-lead">
         This assessment measures three critical dimensions that separate senior
         engineers from tech leaders:
@@ -133,32 +142,38 @@ const faqs = [
 
       <div class="metrics-grid">
         <div class="metric-card">
-          <div class="metric-icon">💬</div>
-          <h3>Clarity & Precision</h3>
+          <div class="metric-icon">
+            <MessageSquare size={48} class="icon-primary" />
+          </div>
+          <h3>1. Clarity & Precision: Translating Complexity</h3>
           <p>
             Can you explain async/await to a PM? Describe technical debt to a
             CFO? Clarity isn't about simplifying—it's about translating
-            complexity without losing accuracy.
+            complexity without losing accuracy or confidence.
           </p>
         </div>
 
         <div class="metric-card">
-          <div class="metric-icon">⚡</div>
-          <h3>Processing Speed</h3>
+          <div class="metric-icon">
+            <Zap size={48} class="icon-primary" />
+          </div>
+          <h3>2. Processing Speed: The Authority Indicator</h3>
           <p>
-            In code reviews and standups, do you hesitate? Freeze? Your
-            "thinking-in-English" speed directly impacts your perceived
-            technical authority.
+            In code reviews, standups, and incident response, do you hesitate or
+            freeze? Your "thinking-in-English" speed directly impacts your
+            perceived technical authority and decisiveness.
           </p>
         </div>
 
         <div class="metric-card">
-          <div class="metric-icon">🌍</div>
-          <h3>Cultural Fluency</h3>
+          <div class="metric-icon">
+            <Globe size={48} class="icon-primary" />
+          </div>
+          <h3>3. Cultural Fluency: Navigating the Unwritten Rules</h3>
           <p>
             North American tech culture values directness, conciseness, and
             "disagree and commit." Are you navigating these unwritten rules
-            effectively?
+            effectively in documentation and meetings?
           </p>
         </div>
       </div>
@@ -168,43 +183,38 @@ const faqs = [
   <!-- Differentiation Section -->
   <section class="differentiation-section">
     <div class="container">
-      <h2>What Top-Tier International Engineers Do Differently</h2>
+      <h2>Engineers vs. Tech Leaders: How The Top 1% Communicate</h2>
       <p class="section-lead">
         The engineers who get promoted to Staff, Principal, and CTO roles don't
-        just write better code—they communicate with precision and confidence.
+        just write better code—they lead discussions with authority and
+        precision.
       </p>
 
       <div class="comparison-grid">
         <div class="comparison-card struggling">
-          <h3>❌ Struggling Engineers</h3>
+          <h3>❌ The Cost of Low Communication Velocity</h3>
           <ul>
-            <li>Avoid speaking in architecture reviews</li>
-            <li>Over-explain to compensate for uncertainty</li>
-            <li>Miss promotions despite strong technical skills</li>
-            <li>Feel drained after English-heavy meetings</li>
+            <li>Avoid speaking in architecture and design reviews</li>
+            <li>Over-explain to compensate for uncertainty or hesitation</li>
+            <li>Miss promotions because impact is not clearly articulated</li>
+            <li>Feel drained and misunderstood after English-heavy meetings</li>
           </ul>
         </div>
 
         <div class="comparison-card thriving">
-          <h3>✅ Top 1% Engineers</h3>
+          <h3>✅ The Communication Edge of Tech Leaders</h3>
           <ul>
-            <li>Lead technical discussions with authority</li>
-            <li>Explain complex systems in 2 minutes or less</li>
-            <li>Get promoted based on communication + code</li>
-            <li>Build influence across engineering & business</li>
+            <li>Lead technical discussions with unshakeable authority</li>
+            <li>
+              Explain complex systems in 2 minutes or less (the elevator pitch)
+            </li>
+            <li>Get promoted based on influence and communication + code</li>
+            <li>
+              Build influence instantly across engineering & business
+              departments
+            </li>
           </ul>
         </div>
-      </div>
-
-      <div class="cta-center">
-        <Button
-          href="/en/quiz/it-services/question/1"
-          variant="primary"
-          size="lg"
-          class="gold-cta"
-        >
-          Discover Your Communication Score →
-        </Button>
       </div>
     </div>
   </section>
@@ -212,8 +222,6 @@ const faqs = [
   <!-- FAQ Section (SEO Content) -->
   <section class="faq-section">
     <div class="container">
-      <h2>Frequently Asked Questions</h2>
-
       {
         faqs.map((faq, index) => (
           <details class="faq-item">
@@ -230,12 +238,32 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Final CTA: Urgency-Driven -->
+  <section class="final-cta-section">
+    <div class="container">
+      <div class="cta-center">
+        <Button
+          href="/en/quiz/it-services/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Start Your Free Audit Today →
+        </Button>
+      </div>
+      <p class="urgency-text">
+        Don't let communication friction be the bottleneck to your technical
+        leadership potential.
+      </p>
+    </div>
+  </section>
+
   <style>
     /* Hero Section with Background Image */
     .hero {
       position: relative;
       padding: 10rem 1.5rem 6rem;
-      min-height: 90vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -374,23 +402,13 @@ const faqs = [
       filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.5));
     }
 
-    .trust-signals {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      font-size: 0.875rem;
+    .trust-line {
+      font-size: 0.9375rem;
       color: #cbd5e1;
+      text-align: center;
       margin-top: 1rem;
-    }
-
-    .trust-signal {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .trust-signal :global(svg) {
-      color: #fbbf24;
+      font-weight: 500;
+      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
     }
 
     /* Gold CTA Button Override */
@@ -453,8 +471,13 @@ const faqs = [
     }
 
     .metric-icon {
-      font-size: 3rem;
       margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .metric-icon :global(.icon-primary) {
+      color: #3b82f6;
     }
 
     .metric-card h3 {
@@ -612,6 +635,26 @@ const faqs = [
       margin: 0;
     }
 
+    /* Final CTA Section (Dark Background) */
+    .final-cta-section {
+      padding: 4rem 1.5rem;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    }
+
+    .final-cta-section .cta-center {
+      margin-bottom: 1.5rem;
+    }
+
+    .urgency-text {
+      font-size: 1rem;
+      color: #cbd5e1;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
     /* Responsive adjustments */
     @media (max-width: 767px) {
       .hero {
@@ -624,7 +667,8 @@ const faqs = [
 
       .discover-section,
       .differentiation-section,
-      .faq-section {
+      .faq-section,
+      .final-cta-section {
         padding: 3rem 1rem;
       }
     }

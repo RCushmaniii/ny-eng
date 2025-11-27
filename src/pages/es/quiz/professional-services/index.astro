@@ -16,12 +16,17 @@ import {
   Clock,
   TrendingUp,
   ChevronDown,
+  Target,
+  Heart,
+  Globe,
 } from "lucide-astro";
+import heroSkyline from "@assets/images/home/new-york-city-skyline.webp";
 
 // SEO metadata
-const title = "Quiz de Inglés Profesional | Comunicación Médica y Legal";
+const title =
+  "Auditoría de Confianza del Cliente | Evaluación de Comunicación Profesional";
 const description =
-  "¿Tu inglés está creando riesgo? Evaluación para Médicos, Abogados y Consultores. Mide tu precisión, empatía y fluidez profesional en menos de 2 minutos.";
+  "Deja de permitir que las brechas de comunicación erosionen la confianza del cliente y las referencias. Mide tu Puntuación de Confianza del Cliente en 90 segundos. Descubre las brechas que están costando credibilidad y crecimiento de práctica.";
 
 // Datos de FAQ
 const faqs = [
@@ -56,42 +61,59 @@ const faqs = [
   lang="es"
   tkey="quiz/professional-services"
   hideCta={true}
+  hideNav={true}
 >
   <QuizSchema lang="es" slot="head" />
 
   <section class="hero">
+    <img
+      src={heroSkyline.src}
+      alt="Evaluación de Inglés Profesional"
+      class="hero-bg-image"
+      loading="eager"
+    />
+    <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
-        <span class="eyebrow">Evaluación Gratuita de 90 Segundos</span>
+        <span class="eyebrow"
+          >DEJA DE Permitir que las Brechas de Comunicación Erosionen la
+          Confianza del Cliente y las Referencias</span
+        >
 
         <h1>
-          Evaluación de Comunicación Profesional: La Claridad Equivale a
-          Confianza
+          La Auditoría de 90 Segundos que Mide tu Puntuación de Confianza del
+          Cliente
         </h1>
 
         <p class="lead">
-          Tu experiencia es de clase mundial. Pero cuando la explicas a
-          pacientes o clientes, ¿entienden—o solo asienten educadamente? Toma
-          esta evaluación de 2 minutos para descubrir dónde las barreras del
-          idioma están erosionando la confianza y credibilidad.
+          Tu experiencia es de clase mundial. Pero si los pacientes o clientes
+          asienten educadamente en lugar de entender y confiar, estás perdiendo
+          referencias. Descubre las brechas de comunicación precisas que te
+          están costando credibilidad y crecimiento de práctica. Esta es una
+          auditoría estratégica diseñada exclusivamente para profesionales
+          internacionales (Médicos, Legales, Finanzas) listos para ser vistos
+          como asesores de confianza.
         </p>
 
         <div class="benefits">
           <div class="benefit">
             <CheckCircle size={20} />
-            <span>Mide tu puntuación de Inglés Profesional (0-100)</span>
-          </div>
-          <div class="benefit">
-            <CheckCircle size={20} />
             <span
-              >Identifica brechas en precisión, empatía y fluidez cultural</span
+              ><strong>AUDITAR:</strong> Tu Puntuación de Confianza del Cliente (0-100)</span
             >
           </div>
           <div class="benefit">
             <CheckCircle size={20} />
             <span
-              >Obtén una hoja de ruta de 30 días para construir confianza con
-              clientes</span
+              ><strong>DIAGNOSTICAR:</strong> Fricción en Consultas de Alto Riesgo,
+              Explicaciones Complejas y Construcción de Rapport</span
+            >
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span
+              ><strong>RECIBIR:</strong> Una Hoja de Ruta Personalizada de 30 Días
+              hacia Comunicación de Asesor de Confianza</span
             >
           </div>
         </div>
@@ -100,43 +122,34 @@ const faqs = [
           href="/es/quiz/professional-services/question/1"
           variant="primary"
           size="lg"
-          class="cta-button"
+          class="cta-button gold-cta"
         >
-          Comenzar Evaluación →
+          Comenzar Auditoría Gratuita →
         </Button>
 
-        <div class="trust-signals">
-          <div class="trust-signal">
-            <Clock size={16} />
-            <span>90 segundos</span>
-          </div>
-          <div class="trust-signal">
-            <TrendingUp size={16} />
-            <span>Resultados instantáneos</span>
-          </div>
-          <div class="trust-signal">
-            <GraduationCap size={16} />
-            <span>200+ profesionales evaluados</span>
-          </div>
-        </div>
+        <p class="trust-line">
+          90 Segundos. Resultados Instantáneos y Confidenciales. Confiado por
+          200+ Profesionales de Primer Nivel.
+        </p>
       </div>
     </div>
   </section>
 
   <section class="discover-section">
     <div class="container">
-      <h2>
-        Los Riesgos del Inglés "Suficientemente Bueno" en Campos de Alto Riesgo
-      </h2>
+      <h2>Las 3 Brechas de Comunicación que Socavan la Confianza</h2>
       <p class="section-lead">
         Esta evaluación mide las tres dimensiones que separan a los
-        profesionales competentes de los asesores de confianza:
+        profesionales competentes de los asesores de confianza altamente
+        buscados:
       </p>
 
       <div class="metrics-grid">
         <div class="metric-card">
-          <div class="metric-icon">🎯</div>
-          <h3>Precisión y Exactitud</h3>
+          <div class="metric-icon">
+            <Target size={48} class="icon-primary" />
+          </div>
+          <h3>1. Precisión y Exactitud: El Mandato de Claridad</h3>
           <p>
             ¿Puedes explicar un diagnóstico sin jerga médica? ¿Traducir
             conceptos legales a inglés simple? La precisión no se trata de usar
@@ -145,8 +158,10 @@ const faqs = [
         </div>
 
         <div class="metric-card">
-          <div class="metric-icon">💙</div>
-          <h3>Empatía y Rapport</h3>
+          <div class="metric-icon">
+            <Heart size={48} class="icon-primary" />
+          </div>
+          <h3>2. Empatía y Rapport: Construir la Conexión</h3>
           <p>
             ¿Los pacientes se sienten escuchados? ¿Los clientes confían en tu
             juicio? Tu tono, elección de palabras y habilidades de escucha
@@ -155,8 +170,10 @@ const faqs = [
         </div>
 
         <div class="metric-card">
-          <div class="metric-icon">🌍</div>
-          <h3>Fluidez Cultural</h3>
+          <div class="metric-icon">
+            <Globe size={48} class="icon-primary" />
+          </div>
+          <h3>3. Fluidez Cultural: Navegar Expectativas</h3>
           <p>
             Los pacientes y clientes norteamericanos esperan franqueza,
             transparencia y toma de decisiones compartida. ¿Estás navegando
@@ -169,15 +186,16 @@ const faqs = [
 
   <section class="differentiation-section">
     <div class="container">
-      <h2>Cerrando la Brecha Entre Experiencia y Confianza del Cliente</h2>
+      <h2>Experto vs. Asesor: La Brecha de Comunicación</h2>
       <p class="section-lead">
         Los profesionales que construyen prácticas prósperas no solo tienen
-        credenciales—comunican con claridad, empatía y conciencia cultural.
+        credenciales de clase mundial—comunican con claridad, empatía y
+        conciencia cultural.
       </p>
 
       <div class="comparison-grid">
         <div class="comparison-card struggling">
-          <h3>❌ Profesionales con Dificultades</h3>
+          <h3>❌ El Costo de Bajo Rapport con el Cliente</h3>
           <ul>
             <li>
               Pierden clientes debido a falta de comunicación o frialdad
@@ -196,7 +214,7 @@ const faqs = [
         </div>
 
         <div class="comparison-card thriving">
-          <h3>✅ Profesionales de Primer Nivel</h3>
+          <h3>✅ La Ventaja de Comunicación de Asesores de Confianza</h3>
           <ul>
             <li>Explican temas complejos en menos de 2 minutos</li>
             <li>
@@ -209,23 +227,11 @@ const faqs = [
           </ul>
         </div>
       </div>
-
-      <div class="cta-center">
-        <Button
-          href="/es/quiz/professional-services/question/1"
-          variant="primary"
-          size="lg"
-        >
-          Descubre Tu Puntuación de Comunicación Profesional →
-        </Button>
-      </div>
     </div>
   </section>
 
   <section class="faq-section">
     <div class="container">
-      <h2>Preguntas Frecuentes</h2>
-
       {
         faqs.map((faq) => (
           <details class="faq-item">
@@ -242,57 +248,145 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Final CTA: Urgency-Driven -->
+  <section class="final-cta-section">
+    <div class="container">
+      <div class="cta-center">
+        <Button
+          href="/es/quiz/professional-services/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Descubre Tu Puntuación de Confianza del Cliente Hoy →
+        </Button>
+      </div>
+      <p class="urgency-text">
+        No dejes que la vacilación sea la razón por la que pierdas tu próxima
+        referencia.
+      </p>
+    </div>
+  </section>
+
   <style>
+    /* Hero Section with Background Image */
     .hero {
-      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-      padding: 8rem 1.5rem 4rem;
-      min-height: 80vh;
+      position: relative;
+      padding: 10rem 1.5rem 6rem;
+      min-height: 100vh;
       display: flex;
       align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    /* Mobile: shift image right to show Empire State Building */
+    @media (max-width: 767px) {
+      .hero-bg-image {
+        object-position: 75% center;
+      }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.5) 0%,
+        rgba(30, 41, 59, 0.4) 100%
+      );
+      z-index: 1;
+    }
+
+    @media (min-width: 768px) {
+      .hero-overlay {
+        background: linear-gradient(
+          to right,
+          rgba(15, 23, 42, 0.65) 0%,
+          rgba(15, 23, 42, 0.55) 50%,
+          rgba(30, 41, 59, 0.45) 100%
+        );
+      }
     }
 
     .container {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
       width: 100%;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-content {
+      max-width: 650px;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
     }
 
+    @media (min-width: 1024px) {
+      .hero-content {
+        max-width: 700px;
+      }
+    }
+
     .eyebrow {
       display: inline-block;
       font-size: 0.875rem;
-      font-weight: 600;
-      color: #16a34a;
-      background: white;
-      padding: 0.5rem 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      background: rgba(251, 191, 36, 0.95);
+      padding: 0.625rem 1.25rem;
       border-radius: 9999px;
       width: fit-content;
+      box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
     }
 
     h1 {
-      font-size: 2.25rem;
-      font-weight: 800;
-      line-height: 1.2;
-      color: #1e293b;
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #ffffff;
       margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
     @media (min-width: 768px) {
       h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      h1 {
+        font-size: 4rem;
       }
     }
 
     .lead {
-      font-size: 1.125rem;
-      line-height: 1.75;
-      color: #475569;
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: #f1f5f9;
       margin: 0;
+      font-weight: 400;
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    @media (min-width: 768px) {
+      .lead {
+        font-size: 1.375rem;
+      }
     }
 
     .benefits {
@@ -306,32 +400,40 @@ const faqs = [
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      font-size: 1rem;
-      color: #334155;
+      font-size: 1.0625rem;
+      color: #ffffff;
+      font-weight: 500;
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
     }
 
     .benefit :global(svg) {
       color: #10b981;
       flex-shrink: 0;
+      filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.5));
     }
 
-    .trust-signals {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      font-size: 0.875rem;
-      color: #64748b;
+    .trust-line {
+      font-size: 0.9375rem;
+      color: #cbd5e1;
+      text-align: center;
       margin-top: 1rem;
+      font-weight: 500;
+      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
     }
 
-    .trust-signal {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    /* Gold CTA Button Override */
+    :global(.gold-cta) {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+      color: #0f172a !important;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 16px rgba(251, 191, 36, 0.4) !important;
+      border: none !important;
     }
 
-    .trust-signal :global(svg) {
-      color: #16a34a;
+    :global(.gold-cta:hover) {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5) !important;
     }
 
     .discover-section {
@@ -378,8 +480,14 @@ const faqs = [
     }
 
     .metric-icon {
-      font-size: 3rem;
       margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .metric-icon :global(.icon-primary) {
+      color: #3b82f6;
     }
 
     .metric-card h3 {
@@ -535,6 +643,27 @@ const faqs = [
       margin: 0;
     }
 
+    /* Final CTA Section (Dark Background) */
+    .final-cta-section {
+      padding: 4rem 1.5rem;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    }
+
+    .final-cta-section .cta-center {
+      margin-bottom: 1.5rem;
+    }
+
+    .urgency-text {
+      font-size: 1rem;
+      color: #cbd5e1;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    /* Responsive adjustments */
     @media (max-width: 767px) {
       .hero {
         padding: 6rem 1rem 3rem;
@@ -546,7 +675,8 @@ const faqs = [
 
       .discover-section,
       .differentiation-section,
-      .faq-section {
+      .faq-section,
+      .final-cta-section {
         padding: 3rem 1rem;
       }
     }

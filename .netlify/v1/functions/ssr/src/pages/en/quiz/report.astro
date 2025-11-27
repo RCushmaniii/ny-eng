@@ -1,0 +1,19 @@
+---
+import Base from "@layouts/Base.astro";
+// Import the new client-side component
+import QuizReport from "@components/QuizReport.tsx";
+
+const title = "Your Communication Confidence Report | NY English";
+const description =
+  "Detailed analysis of your team's English communication strengths and opportunities. Get your personalized roadmap to executive fluency with North American clients.";
+---
+
+<Base
+  title={title}
+  description={description}
+  lang="en"
+  tkey="quiz/report"
+  hideCta={true}
+>
+  <QuizReport client:load />
+</Base>

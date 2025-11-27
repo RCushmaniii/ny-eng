@@ -1,6 +1,8 @@
 ---
 // This file has been disabled to prevent duplicate routes
 // Static pages are used instead: privacy-policy.astro, terms-of-service.astro
+export const prerender = true;
+
 export async function getStaticPaths() {
   return [];
 }

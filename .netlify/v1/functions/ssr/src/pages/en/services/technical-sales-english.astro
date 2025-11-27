@@ -1,0 +1,99 @@
+---
+import Base from "@layouts/Base.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import Challenge from "@components/sections/Challenge.astro";
+import MethodologySection from "@components/sections/MethodologySection.astro";
+import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+
+// Import services data
+import { services } from "@data/services";
+
+// Get the technical sales service data
+const technicalSalesService = services.find(s => s.slug === 'technical-sales-english');
+
+// Import methodology content
+import { coreMethodology } from "@data/methodology";
+
+// Import testimonials and select Ricardo's testimonial
+import { testimonials } from "@data/testimonials/en";
+const featuredTestimonialSlug = 'ricardo-mendoza-mountz-torque';
+const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
+
+// SEO metadata
+const title = "Technical Sales English Coaching for Engineers | NY";
+const seoDescription = "Master technical sales English. Explain complex products clearly and close more deals with confident communication.";
+
+// Hero content
+const heroContent = {
+  title: "Close More Deals with Technical Fluency",
+  description: "Bridge the gap between complex product specs and clear, persuasive client solutions.",
+  backgroundImage: technicalSalesService?.backgroundImage,
+  overlayOpacity: 0.7
+};
+
+// Challenge section content
+const challengeContent = {
+  headline: "Are You Facing These Challenges?",
+  painPoints: [
+    "Clients seem confused when you explain the technical advantages of your product.",
+    "You rely too heavily on your Sales Engineer, losing your authority in the conversation.",
+    "You struggle to find the right words during Q&A to answer technical objections simply."
+  ],
+  icon: "🤔",
+  image: technicalSalesService?.squareImage
+};
+
+// CTA content
+const ctaContent = {
+  eyebrow: "Ready to Close More Deals?",
+  title: "Master Technical Sales Communication",
+  description: "Discover how to translate complex technical features into compelling value propositions that close deals faster.",
+  buttonText: "Book My Sales Strategy Session",
+  buttonLink: "/en/book/",
+  whatToExpectTitle: "In Your Free Session, We Will:",
+  whatToExpectList: [
+    "Analyze your current technical sales presentations and identify gaps",
+    "Practice simplifying complex concepts for non-technical buyers",
+    "Develop strategies to handle technical objections with confidence"
+  ]
+};
+
+// Translation slug for Spanish version
+const translationSlug = "ingles-para-ventas-tecnicas";
+---
+
+<Base
+  title={title}
+  description={seoDescription}
+  lang="en"
+  tkey="services/technical-sales-english"
+  ogImage={{
+    src: technicalSalesService?.backgroundImage?.src || "/images/logos/new-york-english-og.jpg",
+    alt: `${title} - Featured Image`,
+    width: technicalSalesService?.backgroundImage?.width,
+    height: technicalSalesService?.backgroundImage?.height
+  }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/technical-sales-english/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-ventas-tecnicas/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/en/services/technical-sales-english/"
+>
+  <!-- Hero Section -->
+  <InnerHero content={heroContent} />
+  
+  <!-- Challenge Section -->
+  <Challenge content={challengeContent} background="white" padding="lg" />
+  
+  <!-- Methodology Section -->
+  <MethodologySection content={coreMethodology} background="light" padding="lg" />
+  
+  <!-- Featured Testimonial -->
+  {featuredTestimonial && (
+    <FeaturedTestimonial testimonial={featuredTestimonial} />
+  )}
+  
+  <!-- Final CTA -->
+  <CtaSection content={ctaContent} />
+</Base>

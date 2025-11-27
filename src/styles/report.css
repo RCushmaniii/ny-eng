@@ -76,6 +76,18 @@
   letter-spacing: -0.02em;
 }
 
+.quiz-type-info {
+  font-size: 1rem;
+  color: #3b82f6;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.quiz-type-info strong {
+  color: #1e293b;
+}
+
 .recipient-info {
   font-size: 1.125rem;
   color: #64748b;

@@ -1,0 +1,25 @@
+---
+/**
+ * Blog i18n Edge Cases Documentation - Proper Astro page with markdown import
+ */
+import MarkdownLayout from '@layouts/MarkdownLayout.astro';
+import { marked } from 'marked';
+
+// Import the BLOG-I18N-EDGE-CASES.md content
+const blogContent = await import('../../../../docs/BLOG-I18N-EDGE-CASES.md?raw');
+const markdownText = blogContent.default;
+
+// Convert markdown to HTML
+const htmlContent = marked(markdownText);
+
+const frontmatter = {
+  title: 'Blog i18n Edge Cases',
+  description: 'Edge cases and solutions for blog internationalization',
+  category: 'Blog',
+  icon: '📝'
+};
+---
+
+<MarkdownLayout frontmatter={frontmatter}>
+  <Fragment set:html={htmlContent} />
+</MarkdownLayout>

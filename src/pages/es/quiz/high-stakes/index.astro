@@ -16,13 +16,17 @@ import {
   Clock,
   TrendingUp,
   ChevronDown,
+  Theater,
+  Zap,
+  Target,
 } from "lucide-astro";
+import heroSkyline from "@assets/images/home/new-york-city-skyline.webp";
 
 // SEO metadata
 const title =
-  "Evaluación de Inglés para Entrevistas y Presentaciones | Quiz Gratuito";
+  "Diagnóstico de Rendimiento bajo Presión | Comunicación de Alto Impacto";
 const description =
-  "¿Enfrentas una entrevista final o discurso principal? Prueba tu capacidad para desempeñarte bajo presión. Obtén tu puntuación de Inglés de 'Alto Impacto' y una hoja de ruta hacia la fluidez.";
+  "Deja de perder ofertas de trabajo por congelarte en entrevistas de alto impacto. Mide tu Puntuación de Rendimiento bajo Presión en 90 segundos. Descubre las brechas que te están costando impulso profesional y oportunidades.";
 
 // Datos de FAQ
 const faqs = [
@@ -56,39 +60,60 @@ const faqs = [
   lang="es"
   tkey="quiz/high-stakes"
   hideCta={true}
+  hideNav={true}
 >
   <QuizSchema lang="es" slot="head" />
 
   <section class="hero">
+    <img
+      src={heroSkyline.src}
+      alt="Evaluación de Inglés de Alto Impacto"
+      class="hero-bg-image"
+      loading="eager"
+    />
+    <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
-        <span class="eyebrow">Evaluación Gratuita de 90 Segundos</span>
+        <span class="eyebrow"
+          >DEJA DE Perder Ofertas de Trabajo por Congelarte en Entrevistas de
+          Alto Impacto</span
+        >
 
-        <h1>Evaluación de Inglés de Alto Impacto: ¿Te Congelarás o Fluirás?</h1>
+        <h1>
+          El Diagnóstico de 90 Segundos que Mide tu Puntuación de Rendimiento
+          bajo Presión
+        </h1>
 
         <p class="lead">
-          Eres brillante en conversaciones casuales. Pero cuando la presión
-          aumenta—una entrevista final, un discurso principal, una presentación
-          ante la junta—¿te congelas? Toma esta evaluación de 90 segundos para
-          descubrir tu Puntuación de "Brecha de Idioma".
+          Eres brillante en los momentos relajados. Pero cuando una entrevista
+          de ronda final, discurso principal o presentación ante la junta está
+          en juego, ¿tu inglés se mantiene—o te congelas? Descubre las brechas
+          en tu "Rendimiento bajo Presión" que te están costando impulso
+          profesional y oportunidades importantes. Este es un diagnóstico
+          estratégico diseñado para profesionales que deben rendir cuando más
+          importa.
         </p>
 
         <div class="benefits">
           <div class="benefit">
             <CheckCircle size={20} />
-            <span>Mide tu puntuación de Inglés de Alto Impacto (0-100)</span>
-          </div>
-          <div class="benefit">
-            <CheckCircle size={20} />
             <span
-              >Identifica brechas en presencia, velocidad de procesamiento y
-              persuasión</span
+              ><strong>DIAGNOSTICAR:</strong> Tu Puntuación de Rendimiento bajo Presión
+              (0-100)</span
             >
           </div>
           <div class="benefit">
             <CheckCircle size={20} />
             <span
-              >Obtén una hoja de ruta de 30 días para desempeñarte bajo presión</span
+              ><strong>IDENTIFICAR:</strong> Brechas en Presencia, Velocidad de Procesamiento
+              y Autoridad Persuasiva</span
+            >
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span
+              ><strong>RECIBIR:</strong> Una Hoja de Ruta Personalizada de 30 Días
+              para Dominar la Comunicación de Alto Impacto</span
             >
           </div>
         </div>
@@ -97,25 +122,15 @@ const faqs = [
           href="/es/quiz/high-stakes/question/1"
           variant="primary"
           size="lg"
-          class="cta-button"
+          class="cta-button gold-cta"
         >
-          Comenzar Evaluación →
+          Comenzar Diagnóstico Gratuito Hoy →
         </Button>
 
-        <div class="trust-signals">
-          <div class="trust-signal">
-            <Clock size={16} />
-            <span>90 segundos</span>
-          </div>
-          <div class="trust-signal">
-            <TrendingUp size={16} />
-            <span>Resultados instantáneos</span>
-          </div>
-          <div class="trust-signal">
-            <Presentation size={16} />
-            <span>200+ oradores evaluados</span>
-          </div>
-        </div>
+        <p class="trust-line">
+          90 Segundos. Resultados Instantáneos y Confidenciales. Confiado por
+          200+ Profesionales de Alto Impacto.
+        </p>
       </div>
     </div>
   </section>
@@ -125,13 +140,15 @@ const faqs = [
       <h2>Por Qué los Momentos de Alta Presión Rompen el "Inglés de Clase"</h2>
       <p class="section-lead">
         Esta evaluación mide las tres dimensiones que separan a los oradores
-        confiados de aquellos que se congelan bajo presión:
+        confiados de aquellos que se congelan:
       </p>
 
       <div class="metrics-grid">
         <div class="metric-card">
-          <div class="metric-icon">🎭</div>
-          <h3>Presencia y Autoridad</h3>
+          <div class="metric-icon">
+            <Theater size={48} class="icon-primary" />
+          </div>
+          <h3>1. Presencia y Autoridad: Comandar la Sala</h3>
           <p>
             ¿Comandas atención—o te disculpas por ocupar espacio? Tu ritmo
             vocal, pausas y lenguaje corporal señalan confianza o incertidumbre.
@@ -140,8 +157,10 @@ const faqs = [
         </div>
 
         <div class="metric-card">
-          <div class="metric-icon">⚡</div>
-          <h3>Velocidad de Procesamiento</h3>
+          <div class="metric-icon">
+            <Zap size={48} class="icon-primary" />
+          </div>
+          <h3>2. Velocidad de Procesamiento: El Factor Congelar/Fluir</h3>
           <p>
             ¿Puedes pensar en inglés sin traducir? Cuando un entrevistador hace
             una pregunta inesperada, ¿respondes suavemente—o te congelas? La
@@ -151,8 +170,10 @@ const faqs = [
         </div>
 
         <div class="metric-card">
-          <div class="metric-icon">🎯</div>
-          <h3>Persuasión e Impacto</h3>
+          <div class="metric-icon">
+            <Target size={48} class="icon-primary" />
+          </div>
+          <h3>3. Persuasión e Impacto: Mover la Audiencia</h3>
           <p>
             ¿Inspiras acción—o solo transmites información? Los oradores
             persuasivos usan storytelling, resonancia emocional y pausas
@@ -166,7 +187,7 @@ const faqs = [
 
   <section class="differentiation-section">
     <div class="container">
-      <h2>Convirtiendo la Ansiedad en Autoridad Durante Entrevistas</h2>
+      <h2>Congelarse vs. Fluir: La División del Rendimiento</h2>
       <p class="section-lead">
         Los oradores que consiguen trabajos soñados y oportunidades de discursos
         principales no solo hablan inglés—se desempeñan bajo presión.
@@ -174,7 +195,7 @@ const faqs = [
 
       <div class="comparison-grid">
         <div class="comparison-card struggling">
-          <h3>❌ Oradores con Dificultades</h3>
+          <h3>❌ El Riesgo de Congelarse</h3>
           <ul>
             <li>
               Se congelan o divagan cuando se les hacen preguntas inesperadas
@@ -188,7 +209,7 @@ const faqs = [
         </div>
 
         <div class="comparison-card thriving">
-          <h3>✅ Performers del Top 1%</h3>
+          <h3>✅ El Poder de Fluir</h3>
           <ul>
             <li>Piensan claramente bajo presión sin traducir</li>
             <li>Cuentan historias convincentes que inspiran acción</li>
@@ -199,23 +220,11 @@ const faqs = [
           </ul>
         </div>
       </div>
-
-      <div class="cta-center">
-        <Button
-          href="/es/quiz/high-stakes/question/1"
-          variant="primary"
-          size="lg"
-        >
-          Descubre Tu Puntuación de Brecha de Idioma →
-        </Button>
-      </div>
     </div>
   </section>
 
   <section class="faq-section">
     <div class="container">
-      <h2>Preguntas Frecuentes</h2>
-
       {
         faqs.map((faq) => (
           <details class="faq-item">
@@ -232,57 +241,145 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Final CTA: Urgency-Driven -->
+  <section class="final-cta-section">
+    <div class="container">
+      <div class="cta-center">
+        <Button
+          href="/es/quiz/high-stakes/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Comienza Tu Diagnóstico Gratuito Hoy →
+        </Button>
+      </div>
+      <p class="urgency-text">
+        No dejes que el miedo a congelarte sea la razón por la que pierdas tu
+        próxima promoción o trabajo soñado.
+      </p>
+    </div>
+  </section>
+
   <style>
+    /* Hero Section with Background Image */
     .hero {
-      background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
-      padding: 8rem 1.5rem 4rem;
-      min-height: 80vh;
+      position: relative;
+      padding: 10rem 1.5rem 6rem;
+      min-height: 100vh;
       display: flex;
       align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    /* Mobile: shift image right to show Empire State Building */
+    @media (max-width: 767px) {
+      .hero-bg-image {
+        object-position: 75% center;
+      }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.5) 0%,
+        rgba(30, 41, 59, 0.4) 100%
+      );
+      z-index: 1;
+    }
+
+    @media (min-width: 768px) {
+      .hero-overlay {
+        background: linear-gradient(
+          to right,
+          rgba(15, 23, 42, 0.65) 0%,
+          rgba(15, 23, 42, 0.55) 50%,
+          rgba(30, 41, 59, 0.45) 100%
+        );
+      }
     }
 
     .container {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
       width: 100%;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-content {
+      max-width: 650px;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
     }
 
+    @media (min-width: 1024px) {
+      .hero-content {
+        max-width: 700px;
+      }
+    }
+
     .eyebrow {
       display: inline-block;
       font-size: 0.875rem;
-      font-weight: 600;
-      color: #ea580c;
-      background: white;
-      padding: 0.5rem 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      background: rgba(251, 191, 36, 0.95);
+      padding: 0.625rem 1.25rem;
       border-radius: 9999px;
       width: fit-content;
+      box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
     }
 
     h1 {
-      font-size: 2.25rem;
-      font-weight: 800;
-      line-height: 1.2;
-      color: #1e293b;
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #ffffff;
       margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
     @media (min-width: 768px) {
       h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      h1 {
+        font-size: 4rem;
       }
     }
 
     .lead {
-      font-size: 1.125rem;
-      line-height: 1.75;
-      color: #475569;
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: #f1f5f9;
       margin: 0;
+      font-weight: 400;
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    @media (min-width: 768px) {
+      .lead {
+        font-size: 1.375rem;
+      }
     }
 
     .benefits {
@@ -296,32 +393,40 @@ const faqs = [
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      font-size: 1rem;
-      color: #334155;
+      font-size: 1.0625rem;
+      color: #ffffff;
+      font-weight: 500;
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
     }
 
     .benefit :global(svg) {
       color: #10b981;
       flex-shrink: 0;
+      filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.5));
     }
 
-    .trust-signals {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      font-size: 0.875rem;
-      color: #64748b;
+    .trust-line {
+      font-size: 0.9375rem;
+      color: #cbd5e1;
+      text-align: center;
       margin-top: 1rem;
+      font-weight: 500;
+      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
     }
 
-    .trust-signal {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    /* Gold CTA Button Override */
+    :global(.gold-cta) {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+      color: #0f172a !important;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 16px rgba(251, 191, 36, 0.4) !important;
+      border: none !important;
     }
 
-    .trust-signal :global(svg) {
-      color: #ea580c;
+    :global(.gold-cta:hover) {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5) !important;
     }
 
     .discover-section {
@@ -368,8 +473,14 @@ const faqs = [
     }
 
     .metric-icon {
-      font-size: 3rem;
       margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .metric-icon :global(.icon-primary) {
+      color: #3b82f6;
     }
 
     .metric-card h3 {
@@ -525,6 +636,27 @@ const faqs = [
       margin: 0;
     }
 
+    /* Final CTA Section (Dark Background) */
+    .final-cta-section {
+      padding: 4rem 1.5rem;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    }
+
+    .final-cta-section .cta-center {
+      margin-bottom: 1.5rem;
+    }
+
+    .urgency-text {
+      font-size: 1rem;
+      color: #cbd5e1;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    /* Responsive adjustments */
     @media (max-width: 767px) {
       .hero {
         padding: 6rem 1rem 3rem;
@@ -536,7 +668,8 @@ const faqs = [
 
       .discover-section,
       .differentiation-section,
-      .faq-section {
+      .faq-section,
+      .final-cta-section {
         padding: 3rem 1rem;
       }
     }

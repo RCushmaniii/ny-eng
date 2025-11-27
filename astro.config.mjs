@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import icon from 'astro-icon';
 import sitemap from '@astrojs/sitemap';
-import node from '@astrojs/node';
+import netlify from '@astrojs/netlify';
 import react from '@astrojs/react';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -24,9 +24,9 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   site: SITE,
-  output: 'server',
-  adapter: node({
-    mode: 'standalone'
+  output: 'server', // Server mode for Netlify Functions
+  adapter: netlify({
+    edgeMiddleware: false,
   }),
   
   image: {
@@ -144,6 +144,10 @@ export default defineConfig({
         return !p.includes('/api/') && 
                !p.includes('/_') && 
                !p.includes('/dev/') &&  // Exclude dev documentation from production
+               !p.includes('/admin/') &&  // CRITICAL: Exclude admin pages from sitemap
+               !p.includes('/thank-you') &&  // Exclude thank-you pages (thin content, no SEO value)
+               !p.match(/\/quiz\/question\/\d+/) &&  // Exclude quiz question steps (thin content, no SEO value)
+               !p.match(/\/blog\/\d+/) &&  // Exclude blog pagination (thin content)
                !p.includes('[') && 
                !p.includes('#') &&
                !isRedirect &&
@@ -166,6 +170,7 @@ export default defineConfig({
         if (
           u.pathname.includes('/api/') ||
           u.pathname.includes('/_') ||
+          u.pathname.includes('/admin/') ||  // CRITICAL: Never include admin pages
           u.pathname.includes('[') ||
           u.pathname.includes('#')
         ) {
@@ -205,6 +210,22 @@ export default defineConfig({
           }
         }
         
+        // Handle blog posts - detect EN/ES pairs by slug matching
+        if (links.length === 0) {
+          const blogMatch = u.pathname.match(/^\/(en|es)\/blog\/([^\/]+)\/?$/);
+          if (blogMatch) {
+            const [, lang, slug] = blogMatch;
+            // For blog posts, we assume EN/ES pairs exist with same slug
+            // This is a simplified approach - in production you'd query the content collection
+            const enPath = `/en/blog/${slug}/`;
+            const esPath = `/es/blog/${slug}/`;
+            links = [
+              { rel: 'alternate', hreflang: 'en-US', url: `${SITE}${enPath}` },
+              { rel: 'alternate', hreflang: 'es-MX', url: `${SITE}${esPath}` }
+            ];
+          }
+        }
+        
         // If no links generated from i18n, use existing item.links if present
         if (links.length === 0 && item.links) {
           links = item.links.map((alt) => {
@@ -216,22 +237,40 @@ export default defineConfig({
           });
         }
 
-        // Set priority and changefreq based on content type
+        // Set priority, changefreq, and lastmod based on content type (realistic values)
         let priority = 0.5;
         let changefreq = 'monthly';
+        let lastmod = new Date(); // Default to current date
         
         if (u.pathname === '/' || u.pathname.match(/^\/(en|es)\/?$/)) {
-          priority = 0.9;
-          changefreq = 'weekly';
+          priority = 1.0;
+          changefreq = 'daily';
+          lastmod = new Date(); // Home page always current
         } else if (u.pathname.includes('/blog/')) {
-          priority = 0.6;
-          changefreq = 'weekly';
-        } else if (u.pathname.includes('/services/')) {
           priority = 0.7;
+          changefreq = 'monthly'; // Blog posts don't change weekly
+          // Use stable date for blog posts (simulate last content update)
+          lastmod = new Date('2025-11-20'); // Set to recent content update date
+        } else if (u.pathname.includes('/services/') || u.pathname.includes('/servicios/')) {
+          priority = 0.8;
+          changefreq = 'yearly'; // Services rarely change
+          lastmod = new Date('2025-10-15'); // Stable service page date
+        } else if (u.pathname.includes('/quiz/')) {
+          priority = 0.6;
           changefreq = 'monthly';
+          lastmod = new Date('2025-11-15'); // Quiz system update date
         } else if (u.pathname.includes('/terms') || u.pathname.includes('/privacy')) {
           priority = 0.3;
           changefreq = 'yearly';
+          lastmod = new Date('2025-09-01'); // Legal pages rarely change
+        } else if (u.pathname.includes('/testimonial') || u.pathname.includes('/testimonio')) {
+          priority = 0.6;
+          changefreq = 'monthly';
+          lastmod = new Date('2025-11-10'); // Testimonials update date
+        } else if (u.pathname.includes('/category/') || u.pathname.includes('/categoria/')) {
+          priority = 0.5;
+          changefreq = 'monthly';
+          lastmod = new Date('2025-11-20'); // Category pages update with blog content
         }
 
         return {
@@ -240,6 +279,7 @@ export default defineConfig({
           links,
           priority,
           changefreq,
+          lastmod,
         };
       },
     }),

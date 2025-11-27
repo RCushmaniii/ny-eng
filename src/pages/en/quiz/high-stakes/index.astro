@@ -16,12 +16,16 @@ import {
   Clock,
   TrendingUp,
   ChevronDown,
+  Theater,
+  Zap,
+  Target,
 } from "lucide-astro";
+import heroSkyline from "@assets/images/home/new-york-city-skyline.webp";
 
 // SEO metadata - optimized for 50-60 characters title, 150-160 chars description
-const title = "Job Interview & Presentation English Assessment | Free Quiz";
+const title = "Pressure Performance Diagnostic | High-Stakes Communication";
 const description =
-  "Facing a final-round interview or keynote speech? Test your ability to perform under pressure. Get your 'High-Stakes' English score and a roadmap to fluency.";
+  "Stop losing job offers to high-stakes interview freezes. Measure your Pressure Performance Score in 90 seconds. Discover the gaps costing you career momentum and opportunities.";
 
 // FAQ data for SEO content
 const faqs = [
@@ -58,41 +62,54 @@ const faqs = [
 >
   <QuizSchema lang="en" slot="head" />
 
-  <!-- Hero Section with NYC Night Skyline Background -->
+  <!-- Hero Section with NYC Skyline Background -->
   <section class="hero">
     <img
-      src="/images/ny-english-night-skyline.jpg"
-      alt="New York City Skyline at Night"
+      src={heroSkyline.src}
+      alt="High-Stakes English Assessment"
       class="hero-bg-image"
       loading="eager"
     />
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
-        <span class="eyebrow">Free 90-Second Assessment</span>
+        <span class="eyebrow"
+          >STOP Losing Job Offers to High-Stakes Interview Freezes</span
+        >
 
-        <h1>High-Stakes English Assessment: Will You Freeze or Flow?</h1>
+        <h1>
+          The 90-Second Diagnostic that Measures Your Pressure Performance Score
+        </h1>
 
         <p class="lead">
-          You're brilliant in casual conversations. But when the pressure is
-          on—a final-round interview, a keynote speech, a board presentation—do
-          you freeze? Take this 90-second assessment to discover your "Language
-          Gap" Score.
+          You are brilliant in the relaxed moments. But when a final-round
+          interview, keynote, or board presentation is on the line, does your
+          English hold up—or do you freeze? Discover the gaps in your "Pressure
+          Performance" that are costing you career momentum and major
+          opportunities. This is a strategic diagnostic designed for
+          professionals who must perform when it matters most.
         </p>
 
         <div class="benefits">
           <div class="benefit">
             <CheckCircle size={20} />
-            <span>Measure your High-Stakes English score (0-100)</span>
-          </div>
-          <div class="benefit">
-            <CheckCircle size={20} />
-            <span>Identify gaps in presence, processing speed & persuasion</span
+            <span
+              ><strong>DIAGNOSE:</strong> Your Pressure Performance Score (0-100)</span
             >
           </div>
           <div class="benefit">
             <CheckCircle size={20} />
-            <span>Get a 30-day roadmap to perform under pressure</span>
+            <span
+              ><strong>PINPOINT:</strong> Gaps in Presence, Processing Speed, and
+              Persuasive Authority</span
+            >
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span
+              ><strong>RECEIVE:</strong> A Personalized 30-Day Roadmap to Master
+              High-Stakes Communication</span
+            >
           </div>
         </div>
 
@@ -102,23 +119,13 @@ const faqs = [
           size="lg"
           class="cta-button gold-cta"
         >
-          Start Assessment →
+          Start Your Free Diagnostic →
         </Button>
 
-        <div class="trust-signals">
-          <div class="trust-signal">
-            <Clock size={16} />
-            <span>90 seconds</span>
-          </div>
-          <div class="trust-signal">
-            <TrendingUp size={16} />
-            <span>Instant results</span>
-          </div>
-          <div class="trust-signal">
-            <Presentation size={16} />
-            <span>200+ speakers assessed</span>
-          </div>
-        </div>
+        <p class="trust-line">
+          90 Seconds. Instant, Confidential Results. Trusted by 200+ High-Stakes
+          Professionals.
+        </p>
       </div>
     </div>
   </section>
@@ -129,39 +136,45 @@ const faqs = [
       <h2>Why High-Pressure Moments Break "Classroom English"</h2>
       <p class="section-lead">
         This assessment measures the three dimensions that separate confident
-        speakers from those who freeze under pressure:
+        speakers from those who freeze:
       </p>
 
       <div class="metrics-grid">
         <div class="metric-card">
-          <div class="metric-icon">🎭</div>
-          <h3>Presence & Authority</h3>
+          <div class="metric-icon">
+            <Theater size={48} class="icon-primary" />
+          </div>
+          <h3>1. Presence & Authority: Commanding the Room</h3>
           <p>
-            Do you command attention—or apologize for taking up space? Your
-            vocal pace, pauses, and body language signal confidence or
-            uncertainty. We measure your ability to project authority under
-            pressure.
+            Do you command attention—or apologize for taking up space? We
+            measure your ability to project authority, using intentional pauses
+            and vocal control, to manage anxiety under pressure.
           </p>
         </div>
 
         <div class="metric-card">
-          <div class="metric-icon">⚡</div>
-          <h3>Processing Speed</h3>
+          <div class="metric-icon">
+            <Zap size={48} class="icon-primary" />
+          </div>
+          <h3>2. Processing Speed: The Freeze/Flow Factor</h3>
           <p>
             Can you think in English without translating? When an interviewer
-            asks a curveball question, do you respond smoothly—or freeze?
-            Processing speed is the #1 predictor of high-stakes performance.
+            asks a curveball question or a client asks for a sudden change, do
+            you respond smoothly—or freeze? Speed is the #1 predictor of
+            high-stakes success.
           </p>
         </div>
 
         <div class="metric-card">
-          <div class="metric-icon">🎯</div>
-          <h3>Persuasion & Impact</h3>
+          <div class="metric-icon">
+            <Target size={48} class="icon-primary" />
+          </div>
+          <h3>3. Persuasion & Impact: Moving the Audience</h3>
           <p>
             Do you inspire action—or just convey information? Persuasive
-            speakers use storytelling, emotional resonance, and strategic
-            pauses. We assess your ability to move audiences, not just inform
-            them.
+            speakers use storytelling, strategic framing, and emotional
+            resonance. We assess your ability to move audiences and
+            stakeholders.
           </p>
         </div>
       </div>
@@ -171,7 +184,7 @@ const faqs = [
   <!-- Differentiation Section -->
   <section class="differentiation-section">
     <div class="container">
-      <h2>Turning Anxiety into Authority During Interviews</h2>
+      <h2>Freezing vs. Flowing: The Performance Divide</h2>
       <p class="section-lead">
         The speakers who land dream jobs and keynote opportunities don't just
         speak English—they perform under pressure.
@@ -179,34 +192,33 @@ const faqs = [
 
       <div class="comparison-grid">
         <div class="comparison-card struggling">
-          <h3>❌ Struggling Speakers</h3>
+          <h3>❌ The Risk of Freezing</h3>
           <ul>
             <li>Freeze or ramble when asked unexpected questions</li>
-            <li>Over-prepare scripts and sound robotic</li>
-            <li>Lose job offers despite strong qualifications</li>
-            <li>Avoid high-visibility opportunities due to fear</li>
+            <li>Over-prepare scripts and sound robotic and inauthentic</li>
+            <li>Lose job offers despite strong qualifications and skills</li>
+            <li>Avoid high-visibility opportunities due to fear of failure</li>
           </ul>
         </div>
 
         <div class="comparison-card thriving">
-          <h3>✅ Top 1% Performers</h3>
+          <h3>✅ The Power of Flowing</h3>
           <ul>
-            <li>Think clearly under pressure without translating</li>
-            <li>Tell compelling stories that inspire action</li>
-            <li>Land job offers based on presence + skills</li>
-            <li>Seek out high-stakes moments to build influence</li>
+            <li>
+              Think clearly under pressure without relying on internal
+              translation
+            </li>
+            <li>
+              Tell compelling, concise stories that inspire immediate action
+            </li>
+            <li>
+              Land job offers based on powerful presence + technical skills
+            </li>
+            <li>
+              Seek out high-stakes moments to build massive career influence
+            </li>
           </ul>
         </div>
-      </div>
-
-      <div class="cta-center">
-        <Button
-          href="/en/quiz/high-stakes/question/1"
-          variant="primary"
-          size="lg"
-        >
-          Discover Your Language Gap Score →
-        </Button>
       </div>
     </div>
   </section>
@@ -214,8 +226,6 @@ const faqs = [
   <!-- FAQ Section (SEO Content) -->
   <section class="faq-section">
     <div class="container">
-      <h2>Frequently Asked Questions</h2>
-
       {
         faqs.map((faq, index) => (
           <details class="faq-item">
@@ -232,12 +242,32 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Final CTA: Urgency-Driven -->
+  <section class="final-cta-section">
+    <div class="container">
+      <div class="cta-center">
+        <Button
+          href="/en/quiz/high-stakes/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Start Your Free Diagnostic Today →
+        </Button>
+      </div>
+      <p class="urgency-text">
+        Don't let the fear of freezing be the reason you miss your next
+        promotion or dream job.
+      </p>
+    </div>
+  </section>
+
   <style>
     /* Hero Section with Background Image */
     .hero {
       position: relative;
       padding: 10rem 1.5rem 6rem;
-      min-height: 90vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -376,23 +406,13 @@ const faqs = [
       filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.5));
     }
 
-    .trust-signals {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      font-size: 0.875rem;
+    .trust-line {
+      font-size: 0.9375rem;
       color: #cbd5e1;
+      text-align: center;
       margin-top: 1rem;
-    }
-
-    .trust-signal {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .trust-signal :global(svg) {
-      color: #fbbf24;
+      font-weight: 500;
+      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
     }
 
     /* Gold CTA Button Override */
@@ -455,8 +475,13 @@ const faqs = [
     }
 
     .metric-icon {
-      font-size: 3rem;
       margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .metric-icon :global(.icon-primary) {
+      color: #3b82f6;
     }
 
     .metric-card h3 {
@@ -614,6 +639,26 @@ const faqs = [
       margin: 0;
     }
 
+    /* Final CTA Section (Dark Background) */
+    .final-cta-section {
+      padding: 4rem 1.5rem;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    }
+
+    .final-cta-section .cta-center {
+      margin-bottom: 1.5rem;
+    }
+
+    .urgency-text {
+      font-size: 1rem;
+      color: #cbd5e1;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
     /* Responsive adjustments */
     @media (max-width: 767px) {
       .hero {
@@ -626,7 +671,8 @@ const faqs = [
 
       .discover-section,
       .differentiation-section,
-      .faq-section {
+      .faq-section,
+      .final-cta-section {
         padding: 3rem 1rem;
       }
     }

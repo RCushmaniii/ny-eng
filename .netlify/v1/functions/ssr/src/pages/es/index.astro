@@ -1,0 +1,218 @@
+---
+import Base from "@layouts/Base.astro";
+import Hero from "@components/sections/Hero.astro";
+import SplitPanel from "@components/sections/SplitPanel.astro";
+import Features from "@components/sections/Features.astro";
+import RecentPosts from "@components/sections/RecentPosts.astro";
+import Testimonials from "@components/sections/Testimonials-titan.astro";
+import QuizPromotion from "@components/sections/QuizPromotion.astro";
+
+// Define language and tkey for i18n
+const lang = "es";
+const tkey = "home";
+
+import { statsLists } from "@data/stats-es";
+import { logoLists } from "@data/logos";
+import { testimonials } from "@data/testimonials-es";
+
+import heroSkyline from "@assets/images/home/new-york-city-skyline.webp";
+import styleGuideImage from "@assets/images/home/developer.jpg";
+import { GraduationCap, Briefcase, Presentation, Users } from "lucide-astro";
+
+const testimonialsBlock = {
+  eyebrow: "Resultados Reales",
+  title: "Coaching de Inglés para Profesionales | Robert Cushman",
+  description:
+    "Ejecutivos, emprendedores y expertos de diversas industrias confían en New York English para elevar su fluidez, confianza e impacto global.",
+  testimonials,
+  cta: {
+    heading: "Para Ejecutivos que Lideran en Inglés",
+    description:
+      "Comienza con una sesión de coaching gratuita de 30 minutos para mejorar tu claridad, confianza y autoridad.",
+    text: "Reservar Mi Llamada Estratégica Gratuita",
+    link: "/es/book/",
+    rel: "noopener noreferrer",
+  },
+};
+
+const seoTitle = "Coaching de Inglés Profesional";
+const seoDescription =
+  "Mejora tu fluidez y confianza en inglés con coaching personalizado para ejecutivos. Clases 1-a-1 adaptadas a tu industria y objetivos específicos.";
+
+const heroContent = {
+  eyebrow: "Tu Ventaja de Comunicación Global",
+  title: "Domina el Inglés de Negocios y Avanza en tu Carrera",
+  description:
+    "Entreno a líderes internacionales para comunicarse con autoridad tranquila, claridad más aguda y presencia ejecutiva—para que puedas liderar reuniones de alto riesgo y ganar confianza más rápido.",
+  trustLine: "Confiado por líderes en empresas Fortune 500 y startups globales",
+  trustLineLink: "/es/testimonios/",
+  buttons: [
+    {
+      text: "Reserva una Consulta Privada",
+      link: "/es/book/",
+      variant: "primary" as const,
+    },
+    {
+      text: "Inicia la Evaluación Ejecutiva",
+      link: "/es/assessments/",
+      variant: "secondary" as const,
+    },
+  ],
+  backgroundImage: heroSkyline,
+  backgroundImageMobile: heroSkyline,
+  overlayOpacity: 0.3,
+  fullHeight: true,
+} as const;
+
+const featuresSection = {
+  eyebrow: "NY ENGLISH OFRECE",
+  title: "Coaching de Inglés Personalizado para Profesionales",
+  description:
+    "Ya sea que necesites mejorar tu fluidez, destacar en una entrevista o comunicarte más eficazmente en reuniones de negocios, te ayudaré a lograrlo.",
+  features: [
+    {
+      title: "Inglés para Negocios y Ejecutivos",
+      description:
+        "Lidera con autoridad en salas de juntas, pitches a inversionistas y negociaciones de alto riesgo—sin traducir en tu cabeza.",
+      icon: Briefcase,
+      link: "/es/quiz/executives/",
+    },
+    {
+      title: "Inglés para Equipos de Tecnología y TI",
+      description:
+        "Aumenta tu potencial salarial y crecimiento profesional comunicando ideas técnicas claramente con equipos y clientes globales.",
+      icon: Presentation,
+      link: "/es/quiz/it-services/",
+    },
+    {
+      title: "Inglés para Profesionales",
+      description:
+        "Expande tu base de clientes internacional y trabaja con confianza en entornos profesionales globales—médicos, abogados, consultores.",
+      icon: Users,
+      link: "/es/quiz/professional-services/",
+    },
+    {
+      title: "Inglés para Situaciones de Alto Riesgo",
+      description:
+        "Domina entrevistas laborales, presenta con alto impacto y persuade a tomadores de decisiones con claridad y confianza.",
+      icon: GraduationCap,
+      link: "/es/quiz/high-stakes/",
+    },
+  ],
+} as const;
+
+const FooterCta = {
+  eyebrow: "",
+  title: "Transforma tu Inglés Profesional Hoy",
+  description:
+    "Reserva tu consulta gratuita para obtener la claridad, confianza e impacto que tu rol exige.",
+  hideCta: false,
+  button: {
+    text: "Reservar mi Consulta Gratuita",
+    link: "/es/book/",
+    rel: "noopener noreferrer",
+  },
+} as const;
+
+const styleGuideSection = {
+  eyebrow: "Mi Enfoque de Enseñanza",
+  headline: "Coaching de Inglés Personalizado y Orientado a Objetivos",
+  description:
+    "Utilizo un enfoque estructurado pero flexible, adaptado a tus necesidades profesionales. Ya sea que estés preparando una entrevista, liderando una reunión o mejorando tu fluidez, mi coaching está diseñado para el éxito en el mundo real.",
+  descriptionPoints: [
+    "Lecciones construidas en torno a tu propio trabajo y metas",
+    "Retroalimentación clara e instantánea sobre pronunciación, fraseo y tono",
+    "Práctica de tareas reales (presentaciones, llamadas a clientes, informes) tal como las haces en el trabajo",
+  ],
+  image: {
+    src: styleGuideImage,
+    alt: "Sesión de coaching de inglés profesional",
+  },
+  buttons: [
+    {
+      text: "Explora Mi Enfoque de Coaching",
+      link: "/es/about",
+      variant: "primary" as const,
+    },
+  ],
+};
+
+const sideBySideStats = {
+  eyebrow: "ESTADÍSTICAS",
+  title: "Habla y Escribe Inglés con Claridad, Confianza y Facilidad",
+  description:
+    "Ayudo a profesionales a hablar y escribir inglés con claridad, propósito y confianza. Ya sea que te prepares para entrevistas, presentaciones o conversaciones de negocios diarias, te brindaré el apoyo que necesitas.",
+  variant: "side-by-side" as const,
+  stats: statsLists.withContent.stats,
+  content: {
+    title: "Habla y Escribe Inglés con Claridad, Confianza y Facilidad",
+    description:
+      "Ayudo a profesionales a hablar y escribir inglés con claridad, propósito y confianza. Ya sea que te prepares para entrevistas, presentaciones o conversaciones de negocios diarias, te brindaré el apoyo que necesitas.",
+    button: {
+      text: "Trabajemos Juntos",
+      link: "/es/contact",
+    },
+  },
+} as const;
+
+const logosSection = {
+  eyebrow: "Nuestros Clientes",
+  logos: logoLists.main.logos,
+} as const;
+
+const recentPostsSection = {
+  eyebrow: "ÚLTIMAS ENTRADAS DEL BLOG",
+  title: "Perspectivas para Profesionales de Negocios",
+  description:
+    "Consejos prácticos sobre Inglés de Negocios, crecimiento profesional y comunicación efectiva.",
+  button: {
+    text: "Ver Todos los Artículos",
+    link: "/es/blog",
+  },
+} as const;
+---
+
+<Base
+  lang="es"
+  tkey={tkey}
+  title={seoTitle}
+  description={seoDescription}
+  heroImage={heroContent.backgroundImage}
+  heroImageMobile={heroContent.backgroundImageMobile}
+  ogImage={{ src: "/images/logos/new-york-english-sq-og.jpg" }}
+>
+  <div class="relative bg-background-light">
+    <Hero content={heroContent} />
+    <Features content={featuresSection} padding="small" background="light" />
+    <QuizPromotion lang="es" />
+    <div class="mb-16 pb-0">
+      <Testimonials
+        content={testimonialsBlock}
+        background="base"
+        padding="small"
+      />
+    </div>
+
+    <div
+      class="pt-10 border-t border-gray-200 dark:border-gray-700"
+      style="padding-bottom: var(--spacing-small);"
+    >
+      <RecentPosts
+        content={recentPostsSection}
+        background="base"
+        postsToShow={3}
+      />
+    </div>
+
+    <SplitPanel
+      content={styleGuideSection}
+      imagePosition="right"
+      background="light"
+      padding="base"
+      lang="es"
+    />
+
+    <!-- Stats temporarily removed -->
+    <!-- <Stats content={sideBySideStats} background="dark" padding="base" /> -->
+  </div>
+</Base>

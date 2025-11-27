@@ -16,12 +16,16 @@ import {
   Clock,
   TrendingUp,
   ChevronDown,
+  Target,
+  Heart,
+  Globe,
 } from "lucide-astro";
+import heroSkyline from "@assets/images/home/new-york-city-skyline.webp";
 
 // SEO metadata - optimized for 50-60 characters title, 150-160 chars description
-const title = "Professional English Quiz | Medical & Legal Communication";
+const title = "Client Confidence Audit | Professional Communication Assessment";
 const description =
-  "Is your English creating risk? Assessment for Doctors, Lawyers & Consultants. Measure your accuracy, empathy, and professional fluency in under 2 minutes.";
+  "Stop letting communication gaps erode client trust and referrals. Measure your Client Confidence Score in 90 seconds. Discover the gaps costing you credibility and practice growth.";
 
 // FAQ data for SEO content
 const faqs = [
@@ -58,40 +62,52 @@ const faqs = [
 >
   <QuizSchema lang="en" slot="head" />
 
-  <!-- Hero Section with NYC Night Skyline Background -->
+  <!-- Hero Section with NYC Skyline Background -->
   <section class="hero">
     <img
-      src="/images/ny-english-night-skyline.jpg"
-      alt="New York City Skyline at Night"
+      src={heroSkyline.src}
+      alt="Professional English Assessment"
       class="hero-bg-image"
       loading="eager"
     />
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
-        <span class="eyebrow">Free 90-Second Assessment</span>
+        <span class="eyebrow"
+          >STOP Letting Communication Gaps Erode Client Trust and Referrals</span
+        >
 
-        <h1>Professional Communication Assessment: Clarity Equals Trust</h1>
+        <h1>The 90-Second Audit that Measures Your Client Confidence Score</h1>
 
         <p class="lead">
-          Your expertise is world-class. But when you explain it to patients or
-          clients, do they understand—or just nod politely? Take this 2-minute
-          assessment to discover where language barriers are eroding trust and
-          credibility.
+          Your expertise is world-class. But if patients or clients are nodding
+          politely instead of understanding and trusting, you're missing
+          referrals. Discover the precise communication gaps that are costing
+          you credibility and practice growth. This is a strategic audit
+          designed exclusively for international professionals (Medical, Legal,
+          Finance) ready to be seen as trusted advisors.
         </p>
 
         <div class="benefits">
           <div class="benefit">
             <CheckCircle size={20} />
-            <span>Measure your Professional English score (0-100)</span>
+            <span
+              ><strong>AUDIT:</strong> Your Client Confidence Score (0-100)</span
+            >
           </div>
           <div class="benefit">
             <CheckCircle size={20} />
-            <span>Identify gaps in accuracy, empathy & cultural fluency</span>
+            <span
+              ><strong>DIAGNOSE:</strong> Friction in High-Stakes Consultations,
+              Complex Explanations, and Rapport Building</span
+            >
           </div>
           <div class="benefit">
             <CheckCircle size={20} />
-            <span>Get a 30-day roadmap to build client confidence</span>
+            <span
+              ><strong>RECEIVE:</strong> A Personalized 30-Day Roadmap to Trusted
+              Advisor Communication</span
+            >
           </div>
         </div>
 
@@ -101,23 +117,13 @@ const faqs = [
           size="lg"
           class="cta-button gold-cta"
         >
-          Start Assessment →
+          Start Your Free Confidence Audit →
         </Button>
 
-        <div class="trust-signals">
-          <div class="trust-signal">
-            <Clock size={16} />
-            <span>90 seconds</span>
-          </div>
-          <div class="trust-signal">
-            <TrendingUp size={16} />
-            <span>Instant results</span>
-          </div>
-          <div class="trust-signal">
-            <GraduationCap size={16} />
-            <span>200+ professionals assessed</span>
-          </div>
-        </div>
+        <p class="trust-line">
+          90 Seconds. Instant, Confidential Results. Trusted by 200+ Top
+          Professionals.
+        </p>
       </div>
     </div>
   </section>
@@ -125,40 +131,48 @@ const faqs = [
   <!-- What You'll Discover Section -->
   <section class="discover-section">
     <div class="container">
-      <h2>The Risks of "Good Enough" English in High-Stakes Fields</h2>
+      <h2>The 3 Communication Gaps Undermining Trust</h2>
       <p class="section-lead">
         This assessment measures the three dimensions that separate competent
-        professionals from trusted advisors:
+        professionals from highly sought-after trusted advisors:
       </p>
 
       <div class="metrics-grid">
         <div class="metric-card">
-          <div class="metric-icon">🎯</div>
-          <h3>Precision & Accuracy</h3>
+          <div class="metric-icon">
+            <Target size={48} class="icon-primary" />
+          </div>
+          <h3>1. Precision & Accuracy: The Clarity Mandate</h3>
           <p>
-            Can you explain a diagnosis without medical jargon? Translate legal
-            concepts into plain English? Precision isn't about using big
-            words—it's about being understood the first time, every time.
+            Can you explain a diagnosis without jargon? Translate legal concepts
+            into plain English? Precision isn't about using big words—it's about
+            being understood the first time, every time, reducing liability and
+            increasing compliance.
           </p>
         </div>
 
         <div class="metric-card">
-          <div class="metric-icon">💙</div>
-          <h3>Empathy & Rapport</h3>
+          <div class="metric-icon">
+            <Heart size={48} class="icon-primary" />
+          </div>
+          <h3>2. Empathy & Rapport: Building the Connection</h3>
           <p>
-            Do patients feel heard? Do clients trust your judgment? Your tone,
-            word choice, and listening skills signal whether you care—or just
-            want to move to the next appointment.
+            Do patients feel truly heard? Do clients trust your judgment beyond
+            your credentials? Your tone, word choice, and listening skills
+            signal whether you care—or just want to move to the next
+            appointment.
           </p>
         </div>
 
         <div class="metric-card">
-          <div class="metric-icon">🌍</div>
-          <h3>Cultural Fluency</h3>
+          <div class="metric-icon">
+            <Globe size={48} class="icon-primary" />
+          </div>
+          <h3>3. Cultural Fluency: Navigating Expectations</h3>
           <p>
             North American patients and clients expect directness, transparency,
             and shared decision-making. Are you navigating these cultural
-            expectations effectively—or creating friction?
+            expectations effectively—or creating friction and confusion?
           </p>
         </div>
       </div>
@@ -168,45 +182,44 @@ const faqs = [
   <!-- Differentiation Section -->
   <section class="differentiation-section">
     <div class="container">
-      <h2>Bridging the Gap Between Expertise and Client Confidence</h2>
+      <h2>Expert vs. Advisor: The Communication Gap</h2>
       <p class="section-lead">
         The professionals who build thriving practices don't just have
-        credentials—they communicate with clarity, empathy, and cultural
-        awareness.
+        world-class credentials—they communicate with clarity, empathy, and
+        cultural awareness.
       </p>
 
       <div class="comparison-grid">
         <div class="comparison-card struggling">
-          <h3>❌ Struggling Professionals</h3>
+          <h3>❌ The Cost of Low Client Rapport</h3>
           <ul>
             <li>Lose clients due to miscommunication or perceived coldness</li>
-            <li>Over-rely on jargon to mask language uncertainty</li>
             <li>
-              Struggle with difficult conversations (bad news, billing disputes)
+              Over-rely on jargon to mask language uncertainty or hesitation
             </li>
-            <li>Miss referrals despite strong technical skills</li>
+            <li>
+              Struggle with difficult conversations (bad news, billing, risk)
+            </li>
+            <li>Miss referrals despite strong technical expertise</li>
           </ul>
         </div>
 
         <div class="comparison-card thriving">
-          <h3>✅ Top-Tier Professionals</h3>
+          <h3>✅ The Communication Edge of Trusted Advisors</h3>
           <ul>
-            <li>Explain complex topics in under 2 minutes</li>
-            <li>Build trust through empathetic listening & clear language</li>
-            <li>Navigate cultural differences with ease</li>
-            <li>Grow practices through word-of-mouth referrals</li>
+            <li>
+              Explain complex topics in under 2 minutes (improves patient
+              compliance)
+            </li>
+            <li>
+              Build trust through empathetic listening & professional clarity
+            </li>
+            <li>
+              Navigate cultural differences and client expectations with ease
+            </li>
+            <li>Grow practices organically through word-of-mouth referrals</li>
           </ul>
         </div>
-      </div>
-
-      <div class="cta-center">
-        <Button
-          href="/en/quiz/professional-services/question/1"
-          variant="primary"
-          size="lg"
-        >
-          Discover Your Professional Communication Score →
-        </Button>
       </div>
     </div>
   </section>
@@ -214,8 +227,6 @@ const faqs = [
   <!-- FAQ Section (SEO Content) -->
   <section class="faq-section">
     <div class="container">
-      <h2>Frequently Asked Questions</h2>
-
       {
         faqs.map((faq, index) => (
           <details class="faq-item">
@@ -232,12 +243,31 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Final CTA: Urgency-Driven -->
+  <section class="final-cta-section">
+    <div class="container">
+      <div class="cta-center">
+        <Button
+          href="/en/quiz/professional-services/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Start Your Free Confidence Audit Today →
+        </Button>
+      </div>
+      <p class="urgency-text">
+        Don't let communication gaps cost you another referral.
+      </p>
+    </div>
+  </section>
+
   <style>
     /* Hero Section with Background Image */
     .hero {
       position: relative;
       padding: 10rem 1.5rem 6rem;
-      min-height: 90vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -376,23 +406,13 @@ const faqs = [
       filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.5));
     }
 
-    .trust-signals {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      font-size: 0.875rem;
+    .trust-line {
+      font-size: 0.9375rem;
       color: #cbd5e1;
+      text-align: center;
       margin-top: 1rem;
-    }
-
-    .trust-signal {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .trust-signal :global(svg) {
-      color: #fbbf24;
+      font-weight: 500;
+      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
     }
 
     /* Gold CTA Button Override */
@@ -455,8 +475,13 @@ const faqs = [
     }
 
     .metric-icon {
-      font-size: 3rem;
       margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .metric-icon :global(.icon-primary) {
+      color: #3b82f6;
     }
 
     .metric-card h3 {
@@ -614,6 +639,26 @@ const faqs = [
       margin: 0;
     }
 
+    /* Final CTA Section (Dark Background) */
+    .final-cta-section {
+      padding: 4rem 1.5rem;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    }
+
+    .final-cta-section .cta-center {
+      margin-bottom: 1.5rem;
+    }
+
+    .urgency-text {
+      font-size: 1rem;
+      color: #cbd5e1;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
     /* Responsive adjustments */
     @media (max-width: 767px) {
       .hero {
@@ -626,7 +671,8 @@ const faqs = [
 
       .discover-section,
       .differentiation-section,
-      .faq-section {
+      .faq-section,
+      .final-cta-section {
         padding: 3rem 1rem;
       }
     }

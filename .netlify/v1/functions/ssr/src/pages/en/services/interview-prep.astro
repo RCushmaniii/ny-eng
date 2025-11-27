@@ -1,0 +1,99 @@
+---
+// Import components
+import Base from "@layouts/Base.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import Challenge from "@components/sections/Challenge.astro";
+import MethodologySection from "@components/sections/MethodologySection.astro";
+import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+
+// prevent autosave tools from removing imports (used in template)
+void Base;
+void InnerHero;
+void Challenge;
+void MethodologySection;
+void FeaturedTestimonial;
+void CtaSection;
+
+// Import data
+import { services } from "@data/services";
+import { coreMethodology } from "@data/methodology";
+import { testimonials } from "@data/testimonials/en";
+
+// Get service data for interview prep
+const serviceSlug = "interview-prep";
+const serviceData = services.find(service => service.slug === serviceSlug);
+
+// Hero content using service data (matching logistics pattern)
+const heroContent = {
+  title: "Land Your Dream Job with Confident English",
+  description: "Master the communication skills that get you hired. From technical explanations to executive presence, I'll help you interview with confidence and authority.",
+  backgroundImage: serviceData?.backgroundImage,
+  overlayOpacity: 0.7
+};
+
+// Challenge content with dynamic image
+const challengeContent = {
+  headline: "Does This Sound Familiar?",
+  painPoints: [
+    "You freeze up when explaining your technical expertise in English",
+    "Your answers sound rehearsed instead of natural and confident", 
+    "You struggle to articulate your value proposition clearly",
+    "You worry about grammar mistakes undermining your credibility",
+    "You can't think of strong examples under interview pressure"
+  ],
+  icon: "💼",
+  image: serviceData?.squareImage
+};
+
+// Get Andrea's testimonial (perfect for interview prep since she mentions interviews)
+const andreaTestimonial = testimonials.find(t => t.slug === "andrea-ceva-logistics");
+
+// CTA content
+const ctaContent = {
+  eyebrow: "Take the Final Step",
+  title: "Transform Your Interview Performance",
+  description: "A free, no-obligation strategy session is the best way to understand how targeted coaching can boost your interview confidence and success rate.",
+  buttonText: "Book My Free Strategy Session",
+  buttonLink: "/en/book/",
+  whatToExpectTitle: "In Your Free Session, We Will:",
+  whatToExpectList: [
+    "Assess your current interview communication strengths and gaps",
+    "Practice answering common technical and behavioral questions",
+    "Create a personalized preparation plan for your target roles"
+  ]
+};
+
+// Translation slug for Spanish version
+const translationSlug = "preparacion-para-entrevistas";
+---
+
+<Base 
+  title="Interview Preparation English Coaching | NY English"
+  description="Master confident English for job interviews. Clear technical explanations, compelling stories, and executive presence that gets you hired."
+  lang="en"
+  tkey="services/interview-prep"
+  ogImage={{ src: typeof serviceData?.backgroundImage === 'string' ? serviceData.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/interview-prep/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/preparacion-para-entrevistas/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/en/services/interview-prep/"
+>
+  <!-- Hero Section -->
+  <InnerHero content={heroContent} />
+  
+  <!-- Challenge Section -->
+  <Challenge content={challengeContent} />
+  
+  <!-- Methodology Section -->
+  <MethodologySection content={coreMethodology} />
+  
+  <!-- Featured Testimonial -->
+  {andreaTestimonial && (
+    <FeaturedTestimonial testimonial={andreaTestimonial} />
+  )}
+  
+  <!-- CTA Section -->
+  <CtaSection content={ctaContent} />
+</Base>

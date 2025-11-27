@@ -90,13 +90,26 @@ const fullSiteUrl = 'https://www.nyenglishteacher.com';
 const currentUrl = `${fullSiteUrl}${canonicalUrl}`;
 const spanishTranslation = post.data.translations?.es;
 
+// Extract just the slug from translation path (handles both "/es/blog/slug" and "slug" formats)
+const extractSlug = (path: string | undefined): string | null => {
+  if (!path) return null;
+  // If it's a full path like "/es/blog/slug", extract just the slug
+  if (path.startsWith('/')) {
+    const parts = path.split('/').filter(Boolean);
+    return parts[parts.length - 1] || null;
+  }
+  // Otherwise it's already just the slug
+  return path;
+};
+
+const spanishSlug = extractSlug(spanishTranslation);
 
 // Create custom hreflang alternates for this specific post
 const customHreflangs = [
   { lang: 'en-US', href: currentUrl },
-  ...(spanishTranslation ? [{ 
+  ...(spanishSlug ? [{ 
     lang: 'es-MX', 
-    href: cleanBlogUrl(`${fullSiteUrl}/es/blog/${spanishTranslation}/`)
+    href: cleanBlogUrl(`${fullSiteUrl}/es/blog/${spanishSlug}/`)
   }] : [])
 ];
 ---

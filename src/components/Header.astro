@@ -506,44 +506,41 @@ const isCurrentPage = (link: string | undefined) => {
     // Capture headerInner in closure to satisfy TypeScript
     const innerElement = headerInner;
 
-    function handleScroll() {
+    // Throttle with requestAnimationFrame for better performance
+    let ticking = false;
+
+    function updateElements() {
       const navLinks = document.querySelectorAll(".nav-link");
-      const logoForDark = document.querySelector(".logo-light"); // Logo for dark backgrounds
-      const logoForWhite = document.querySelector(".logo-dark"); // Logo for white backgrounds
+      const logoForDark = document.querySelector(".logo-light");
+      const logoForWhite = document.querySelector(".logo-dark");
       const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
-
-      const scrollY = window.scrollY;
-      const scrollThreshold = window.innerWidth < 768 ? 20 : 30; // 20px mobile, 30px desktop
-
-      console.log(
-        "Scroll:",
-        scrollY,
-        "Threshold:",
-        scrollThreshold,
-        "LogoDark:",
-        logoForDark,
-        "LogoWhite:",
-        logoForWhite
+      const buildingsParallax = document.getElementById(
+        "hero-buildings-parallax"
       );
 
+      const scrollY = window.scrollY;
+      const scrollThreshold = window.innerWidth < 768 ? 20 : 30;
+
+      // Parallax effect for buildings (scale from 1.0 to 1.15 as user scrolls through hero)
+      if (buildingsParallax) {
+        const heroHeight = window.innerHeight;
+        const scrollProgress = Math.min(scrollY / heroHeight, 1); // 0 to 1
+        const scale = 1 + scrollProgress * 0.15; // 1.0 to 1.15 (increased from 0.1)
+        buildingsParallax.style.transform = `scale(${scale})`;
+      }
+
       if (scrollY > scrollThreshold) {
-        console.log("SCROLLED - Showing white bg logo");
         // Scrolled - solid white background
         innerElement.style.backgroundColor = "#ffffff";
         innerElement.style.boxShadow =
           "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)";
         innerElement.style.borderColor = "#e5e7eb";
 
-        // Swap to logo for white background
         if (logoForDark && logoForWhite) {
-          console.log("Hiding dark bg logo, showing white bg logo");
           logoForDark.classList.add("hidden");
           logoForWhite.classList.remove("hidden");
-          console.log("LogoDark classes:", logoForDark.className);
-          console.log("LogoWhite classes:", logoForWhite.className);
         }
 
-        // Dark text for nav links and mobile menu - use !important to override CSS
         navLinks.forEach((link) => {
           if (link instanceof HTMLElement) {
             link.style.setProperty("color", "#374151", "important");
@@ -554,22 +551,16 @@ const isCurrentPage = (link: string | undefined) => {
           mobileMenuBtn.style.setProperty("color", "#374151", "important");
         }
       } else {
-        console.log("AT TOP - Showing dark bg logo");
         // At top - transparent background
         innerElement.style.backgroundColor = "transparent";
         innerElement.style.boxShadow = "none";
         innerElement.style.borderColor = "transparent";
 
-        // Swap to logo for dark background
         if (logoForDark && logoForWhite) {
-          console.log("Showing dark bg logo, hiding white bg logo");
           logoForDark.classList.remove("hidden");
           logoForWhite.classList.add("hidden");
-          console.log("LogoDark classes:", logoForDark.className);
-          console.log("LogoWhite classes:", logoForWhite.className);
         }
 
-        // White text for nav links and mobile menu - use !important to override CSS
         navLinks.forEach((link) => {
           if (link instanceof HTMLElement) {
             link.style.setProperty("color", "#ffffff", "important");
@@ -580,10 +571,19 @@ const isCurrentPage = (link: string | undefined) => {
           mobileMenuBtn.style.setProperty("color", "#ffffff", "important");
         }
       }
+
+      ticking = false;
     }
 
-    // Add scroll listener
-    window.addEventListener("scroll", handleScroll);
+    function handleScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateElements);
+        ticking = true;
+      }
+    }
+
+    // Add passive scroll listener for better performance
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     // Run once on load
     handleScroll();

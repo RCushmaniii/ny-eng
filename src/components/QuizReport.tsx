@@ -36,6 +36,7 @@ export default function QuizReport() {
   const [isLoading, setIsLoading] = useState(true);
   const [leadData, setLeadData] = useState<LeadData | null>(null);
   const [generatedDate, setGeneratedDate] = useState("");
+  const [quizTitle, setQuizTitle] = useState("");
   const [scoreData, setScoreData] = useState<any>(null); // Store full breakdown
   const [tierInfo, setTierInfo] = useState<any>(null);
   const [impactInfo, setImpactInfo] = useState<{
@@ -77,6 +78,9 @@ export default function QuizReport() {
       month: "long",
       day: "numeric",
     });
+
+    // Store quiz type and config title for display
+    lead.quizType = quizType;
 
     // Determine Tier Info
     let currentTierInfo = {
@@ -174,6 +178,7 @@ export default function QuizReport() {
     // --- Set State ---
     setLeadData(lead);
     setGeneratedDate(date);
+    setQuizTitle(config.title);
     setScoreData(scoreBreakdown);
     setTierInfo(currentTierInfo);
     setImpactInfo(impact);
@@ -223,6 +228,11 @@ export default function QuizReport() {
               <h1 className="report-title">
                 Your Communication Confidence Report
               </h1>
+              {quizTitle && (
+                <div className="quiz-type-info">
+                  <strong>Assessment:</strong> {quizTitle}
+                </div>
+              )}
               <div className="recipient-info">
                 <strong>Prepared for:</strong> {leadData.name}
                 {leadData.company ? ` | ${leadData.company}` : ""}

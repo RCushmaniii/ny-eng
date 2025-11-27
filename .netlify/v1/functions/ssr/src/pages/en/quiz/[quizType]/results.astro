@@ -1,0 +1,465 @@
+---
+/**
+ * Dynamic Quiz Results Page
+ *
+ * Route: /en/quiz/[quizType]/results/
+ * Collects lead info and displays score
+ */
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import { getQuizConfig, isQuizTypeAvailable } from "@/data/quiz/configs";
+import type { QuizType } from "@/data/quiz/types";
+import { Mail } from "lucide-astro";
+
+// Get quiz type from URL params
+const { quizType } = Astro.params;
+
+// Validate quiz type
+if (!quizType || !isQuizTypeAvailable(quizType)) {
+  return Astro.redirect("/en/404");
+}
+
+// Get quiz configuration
+const config = getQuizConfig(quizType as QuizType, "en");
+
+const title = `Your Results | ${config.title}`;
+const description =
+  "Get your personalized Communication Confidence Score (0-100) and improvement roadmap. Discover exactly where your team stands with high-stakes English communication.";
+---
+
+<Base
+  title={title}
+  description={description}
+  lang="en"
+  tkey="quiz/results"
+  hideCta={true}
+  hideLanguageSwitcher={true}
+>
+  <section class="quiz-results pt-28 pb-16 md:pt-32 md:pb-20">
+    <div class="container-narrow">
+      <!-- No Quiz Data Warning (shown if user hasn't taken quiz) -->
+      <div class="no-quiz-warning" id="no-quiz-warning" style="display: none;">
+        <div class="warning-content">
+          <div class="warning-icon">⚠️</div>
+          <h1>Quiz Not Completed</h1>
+          <p class="warning-text">
+            You need to complete the Communication Confidence Assessment before
+            viewing your results.
+          </p>
+          <p class="warning-subtext">
+            The quiz takes about 90 seconds and will give you a personalized
+            score showing exactly where your team stands with high-stakes
+            English communication.
+          </p>
+          <Button
+            href={`/en/quiz/${quizType}/question/1`}
+            variant="primary"
+            size="lg"
+            class="start-quiz-button"
+          >
+            Start the Quiz →
+          </Button>
+        </div>
+      </div>
+
+      <!-- Submission Error Message (shown if submission fails) -->
+      <div
+        class="submission-error"
+        id="submission-error"
+        style="display: none;"
+      >
+        <div class="error-content">
+          <div class="error-icon">❌</div>
+          <h1>Submission Error</h1>
+          <p class="error-text" id="error-message">
+            There was an error submitting your quiz. Please try again.
+          </p>
+          <p class="error-subtext">
+            If the problem persists, please contact us directly or try again
+            later.
+          </p>
+          <button
+            onclick="location.reload()"
+            class="retry-button px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 text-lg"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+
+      <!-- Lead Capture Form (shown first) -->
+      <div class="lead-capture-card" id="lead-capture">
+        <div class="capture-header">
+          <h1>You're Almost There!</h1>
+          <p class="capture-subtext">
+            Enter your email to receive your personalized Communication
+            Confidence Score and detailed improvement roadmap.
+          </p>
+        </div>
+
+        <form class="capture-form" id="email-form">
+          <input type="hidden" name="quizType" value={quizType} />
+
+          <div class="form-group">
+            <label for="name" class="form-label">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-input"
+              placeholder="John Smith"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              placeholder="john@company.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="company" class="form-label">Company (Optional)</label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              class="form-input"
+              placeholder="Your Company Name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone Number (Optional)</label
+            >
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="form-input"
+              placeholder="+1 (555) 123-4567"
+            />
+          </div>
+
+          <Button
+            type="submit"
+            variant="primary"
+            size="lg"
+            class="submit-button"
+          >
+            <Mail size={20} />
+            Get My Results →
+          </Button>
+
+          <p class="privacy-text">
+            By submitting this form, you agree to our <a
+              href="/en/legal/privacy-policy"
+              target="_blank"
+              class="privacy-link">Privacy Policy</a
+            >. We respect your privacy and will never sell your information.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .quiz-results {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+    min-height: calc(100vh - 80px);
+  }
+
+  /* Warning/Error States */
+  .no-quiz-warning,
+  .submission-error {
+    background: white;
+    padding: 4rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .warning-content,
+  .error-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .warning-icon,
+  .error-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .no-quiz-warning h1,
+  .submission-error h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+  }
+
+  .warning-text,
+  .error-text {
+    font-size: 1.25rem;
+    color: #475569;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .warning-subtext,
+  .error-subtext {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  /* Lead Capture Form */
+  .lead-capture-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .capture-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .capture-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+  }
+
+  .capture-subtext {
+    font-size: 1.125rem;
+    color: #475569;
+    line-height: 1.6;
+  }
+
+  .capture-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #334155;
+  }
+
+  .form-input {
+    padding: 0.875rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+
+  .privacy-text {
+    font-size: 0.875rem;
+    color: #64748b;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .privacy-link {
+    color: #3b82f6;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .lead-capture-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .capture-header h1 {
+      font-size: 2rem;
+    }
+
+    .score-number {
+      font-size: 4rem;
+    }
+  }
+</style>
+
+<script>
+  import { QuizStorage } from "@/lib/quiz-storage";
+  import { calculateQuizScore } from "@/data/quiz/scoring";
+  import { getQuizConfig } from "@/data/quiz/configs";
+  import { getBehavioralData } from "@/lib/device-detection";
+  import type { QuizType } from "@/data/quiz/types";
+
+  function stripTags(value: string | null): string | null {
+    if (!value) return null;
+    return value.replace(/<[^>]*>/g, "").trim();
+  }
+
+  function validateSubmission(data: {
+    name: string;
+    email: string;
+    company?: string | null;
+  }) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const cleanedName = stripTags(data.name) || "";
+    const cleanedCompany = stripTags(data.company ?? null);
+
+    if (!emailRegex.test(data.email)) {
+      throw new Error("Please enter a valid email address.");
+    }
+
+    if (cleanedName.length === 0) {
+      throw new Error("Name is required.");
+    }
+
+    if (cleanedName.length > 250) {
+      throw new Error("Name is too long. Please shorten it.");
+    }
+
+    return {
+      ...data,
+      name: cleanedName,
+      company: cleanedCompany ?? undefined,
+    };
+  }
+
+  // Get quiz type from URL
+  const urlParts = window.location.pathname.split("/");
+  const quizType = urlParts[3] as QuizType;
+
+  // Check if quiz was completed
+  const answers = QuizStorage.getAnswers(quizType);
+
+  if (!answers || Object.keys(answers).length !== 6) {
+    // Show warning
+    document.getElementById("no-quiz-warning")!.style.display = "block";
+    document.getElementById("lead-capture")!.style.display = "none";
+  } else {
+    // Handle form submission
+    const form = document.getElementById("email-form");
+
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form as HTMLFormElement);
+        const name = (formData.get("name") as string) || "";
+        const email = (formData.get("email") as string) || "";
+        const companyRaw = (formData.get("company") as string) || "";
+        const phone = (formData.get("phone") as string) || "";
+
+        try {
+          const validated = validateSubmission({
+            name,
+            email,
+            company: companyRaw,
+          });
+
+          const company = validated.company ?? "";
+          const safeName = validated.name;
+          const safeEmail = validated.email;
+
+          // Get quiz config and calculate score
+          const config = getQuizConfig(quizType, "en");
+          const scoreBreakdown = calculateQuizScore(answers, config);
+
+          // Get behavioral data
+          const behavioralData = getBehavioralData();
+          const completionTime = QuizStorage.getCompletionTime(quizType);
+
+          // Build submission payload for API
+          const payload = {
+            name: safeName,
+            email: safeEmail,
+            company,
+            phone,
+            quizType,
+            answers,
+            language: "en",
+            completionTime,
+            ...behavioralData,
+          };
+
+          // Submit to API
+          const response = await fetch("/api/quiz/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            // Save lead data and score for the new config-driven report system
+            QuizStorage.saveLeadData(quizType, {
+              name: safeName,
+              email: safeEmail,
+              company,
+              phone,
+            });
+            QuizStorage.saveScore(quizType, scoreBreakdown.totalScore);
+
+            // Backwards-compat: also write legacy keys for the original React report
+            // so /en/quiz/report/ (QuizReport.tsx) renders correctly.
+            try {
+              sessionStorage.setItem("quizAnswers", JSON.stringify(answers));
+              sessionStorage.setItem(
+                "leadData",
+                JSON.stringify({ name: safeName, company })
+              );
+            } catch {}
+
+            // Redirect to the polished legacy report UI
+            window.location.href = "/en/quiz/report/";
+          } else {
+            // Show error
+            document.getElementById("lead-capture")!.style.display = "none";
+            document.getElementById("submission-error")!.style.display =
+              "block";
+            document.getElementById("error-message")!.textContent =
+              result.error || "Unknown error occurred";
+          }
+        } catch (error) {
+          const message =
+            error instanceof Error
+              ? error.message
+              : "Network error. Please check your connection and try again.";
+          document.getElementById("submission-error")!.style.display = "block";
+          document.getElementById("error-message")!.textContent = message;
+        }
+      });
+    }
+  }
+</script>

@@ -1,0 +1,126 @@
+---
+import Base from "@layouts/Base.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import Challenge from "@components/sections/Challenge.astro";
+import MethodologySection from "@components/sections/MethodologySection.astro";
+import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+
+// Import services data
+import { services } from "@data/services";
+
+// Get the medical service data
+const medicalService = services.find(s => s.slug === 'medical-english');
+
+// Import methodology content
+import type { Methodology } from "@data/methodology";
+
+// Define Spanish methodology content directly
+const metodologiaEs: Methodology = {
+  title: "Tu Método de Coaching Personalizado",
+  subtitle: "Una metodología probada de cuatro pasos diseñada para entender tus desafíos únicos y desarrollar las habilidades específicas que necesitas para tener éxito.",
+  steps: [
+    {
+      icon: "lucide:search-check",
+      title: "Descubrimiento y Evaluación",
+      description: "Identificamos tus retos médicos en inglés y tus fortalezas para crear un plan personalizado y enfocado en tu práctica profesional."
+    },
+    {
+      icon: "lucide:map",
+      title: "Mapeo Estratégico de Objetivos",
+      description: "Juntos, definimos objetivos claros y medibles directamente vinculados con tu éxito profesional, creando un plan estratégico enfocado en tus metas específicas."
+    },
+    {
+      icon: "lucide:settings",
+      title: "Currículum Personalizado y Práctica",
+      description: "Tu programa está construido para ti, enfocándose en el vocabulario específico, frases y matices culturales relevantes para tu industria y tareas diarias."
+    },
+    {
+      icon: "lucide:message-square-text",
+      title: "Simulación del Mundo Real y Retroalimentación",
+      description: "Aquí es donde la teoría se convierte en instinto. Realizamos presentaciones simuladas y juegos de rol de negociaciones difíciles, proporcionando retroalimentación directa y accionable para que estés confiado y preparado."
+    }
+  ]
+};
+
+// Import testimonials and select Erika testimonial (medical professional)
+import { testimonials } from "@data/testimonials/es";
+const featuredTestimonial = testimonials[7]; // Dra. Erika Itzel testimonial
+
+// SEO metadata
+const title = "Coaching de Inglés para Médicos | Comunicación Precisa | NY English";
+const seoDescription = "Domina el inglés médico para comunicarte con precisión. Coaching para profesionales de la salud.";
+
+// Hero content
+const heroContent = {
+  title: "Comunícate con Precisión en Entornos Médicos",
+  description: "Domina el inglés médico para interactuar con confianza con pacientes y colegas internacionales.",
+  backgroundImage: medicalService?.backgroundImage,
+  overlayOpacity: 0.7
+};
+
+// Challenge section content
+const challengeContent = {
+  headline: "¿Enfrentas Estos Desafíos?",
+  painPoints: [
+    "Te cuesta explicar diagnósticos y tratamientos a pacientes internacionales con precisión.",
+    "Tienes dificultades para comunicarte con colegas médicos en conferencias o colaboraciones internacionales.",
+    "Te sientes inseguro al leer o escribir documentación médica y artículos de investigación en inglés."
+  ],
+  icon: "😰",
+  image: medicalService?.squareImage
+};
+
+// Final CTA content
+const ctaContent = {
+  eyebrow: "¿Listo para Mejorar tu Comunicación Médica?",
+  title: "Domina el Inglés Médico Especializado",
+  description: "Inglés para médicos: mejora la atención al paciente y la colaboración internacional con inglés especializado en el sector salud.",
+  buttonText: "Reserva Mi Sesión de Estrategia Médica",
+  buttonLink: "/es/book/",
+  whatToExpectTitle: "En Tu Sesión Gratuita, Haremos:",
+  whatToExpectList: [
+    "Evaluar tu nivel actual de inglés médico y áreas de especialización",
+    "Identificar escenarios clave donde mejorar tu comunicación impactará tu práctica",
+    "Crear una hoja de ruta para desarrollar tu vocabulario médico especializado"
+  ]
+};
+
+// Translation slug for English version
+const translationSlug = "medical-english";
+---
+
+<Base
+  title={title}
+  description={seoDescription}
+  lang="es"
+  tkey="services/medical-english"
+  ogImage={{
+    src: medicalService?.backgroundImage?.src || "/images/logos/new-york-english-og.jpg",
+    alt: `${title} - Featured Image`,
+    width: medicalService?.backgroundImage?.width,
+    height: medicalService?.backgroundImage?.height
+  }}
+  customHreflangs={[
+    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/medical-english/' },
+    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-medicos/' }
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/es/servicios/ingles-para-medicos/"
+>
+  <!-- Hero Section -->
+  <InnerHero content={heroContent} />
+  
+  <!-- Challenge Section -->
+  <Challenge content={challengeContent} background="white" padding="lg" />
+  
+  <!-- Methodology Section -->
+  <MethodologySection content={metodologiaEs} background="light" padding="lg" />
+  
+  <!-- Featured Testimonial -->
+  {featuredTestimonial && (
+    <FeaturedTestimonial testimonial={featuredTestimonial} />
+  )}
+  
+  <!-- Final CTA -->
+  <CtaSection content={ctaContent} />
+</Base>

@@ -16,12 +16,17 @@ import {
   Clock,
   TrendingUp,
   ChevronDown,
+  Target,
+  Mic,
+  Scale,
 } from "lucide-astro";
+import heroSkyline from "@assets/images/home/new-york-city-skyline.webp";
 
 // SEO metadata
-const title = "Evaluación de Presencia Ejecutiva | Quiz de Liderazgo en Inglés";
+const title =
+  "Puntuación de Influencia C-Suite | Evaluación de Comunicación Ejecutiva";
 const description =
-  "Cuando hablas ante la Junta, ¿escuchan a un líder? Mide tu Presencia Ejecutiva, habilidades de negociación y claridad estratégica en inglés. Prueba gratuita de 90 segundos.";
+  "Deja de permitir que tu inglés socave tu presencia ejecutiva. Mide tu Puntuación de Influencia C-Suite en 90 segundos. Descubre las brechas precisas que te cuestan influencia, promociones y acuerdos.";
 
 // Datos de FAQ
 const faqs = [
@@ -55,37 +60,57 @@ const faqs = [
   lang="es"
   tkey="quiz/executives"
   hideCta={true}
+  hideNav={true}
 >
   <QuizSchema lang="es" slot="head" />
 
   <section class="hero">
+    <img
+      src={heroSkyline.src}
+      alt="Evaluación de Presencia Ejecutiva"
+      class="hero-bg-image"
+      loading="eager"
+    />
+    <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
-        <span class="eyebrow">Evaluación Gratuita de 90 Segundos</span>
+        <span class="eyebrow"
+          >DEJA DE Permitir que tu Inglés Socave tu Presencia Ejecutiva</span
+        >
 
-        <h1>Evaluación de Comunicación Ejecutiva: Comanda la Sala</h1>
+        <h1>
+          La Evaluación de 90 Segundos que Mide tu Puntuación de Influencia
+          C-Suite
+        </h1>
 
         <p class="lead">
-          Te has ganado tu lugar en la mesa. Pero cuando hablas, ¿la sala se
-          inclina hacia adelante—o se desconecta? Toma esta evaluación de 90
-          segundos para descubrir dónde tu inglés está socavando tu presencia
-          ejecutiva.
+          Te has ganado tu lugar en la mesa. Ahora, demuestra que perteneces
+          ahí. Descubre las brechas de comunicación precisas que te están
+          costando influencia, promociones y acuerdos. Esta no es una prueba de
+          gramática—es una evaluación estratégica diseñada exclusivamente para
+          ejecutivos globales listos para usar el lenguaje como ventaja
+          competitiva.
         </p>
 
         <div class="benefits">
           <div class="benefit">
             <CheckCircle size={20} />
-            <span>Mide tu puntuación de Presencia Ejecutiva (0-100)</span>
-          </div>
-          <div class="benefit">
-            <CheckCircle size={20} />
-            <span>Identifica brechas en claridad estratégica y negociación</span
+            <span
+              ><strong>MEDIR:</strong> Tu Puntuación de Influencia Ejecutiva (0-100)</span
             >
           </div>
           <div class="benefit">
             <CheckCircle size={20} />
             <span
-              >Obtén una hoja de ruta personalizada de comunicación de liderazgo</span
+              ><strong>DIAGNOSTICAR:</strong> Brechas Ocultas en Claridad Estratégica
+              y Negociación de Alto Riesgo</span
+            >
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
+            <span
+              ><strong>RECIBIR:</strong> Una Hoja de Ruta Personalizada hacia la
+              Autoridad de Comunicación C-Suite</span
             >
           </div>
         </div>
@@ -99,36 +124,28 @@ const faqs = [
           Comenzar Evaluación →
         </Button>
 
-        <div class="trust-signals">
-          <div class="trust-signal">
-            <Clock size={16} />
-            <span>90 segundos</span>
-          </div>
-          <div class="trust-signal">
-            <TrendingUp size={16} />
-            <span>Resultados instantáneos</span>
-          </div>
-          <div class="trust-signal">
-            <Briefcase size={16} />
-            <span>200+ ejecutivos evaluados</span>
-          </div>
-        </div>
+        <p class="trust-line">
+          90 Segundos. Resultados Instantáneos y Confidenciales. Confiado por
+          200+ Ejecutivos Globales.
+        </p>
       </div>
     </div>
   </section>
 
   <section class="discover-section">
     <div class="container">
-      <h2>¿Reconoces Estas Brechas de Liderazgo?</h2>
+      <h2>Las 3 Brechas Ejecutivas que Sabotean tu Autoridad</h2>
       <p class="section-lead">
-        Esta evaluación mide las tres dimensiones que separan a los gerentes de
-        los líderes de nivel C-suite:
+        Esta evaluación mide las tres dimensiones de comunicación que separan a
+        los gerentes de alto potencial de los líderes de nivel C-suite.
       </p>
 
       <div class="metrics-grid">
         <div class="metric-card">
-          <div class="metric-icon">🎯</div>
-          <h3>Claridad Estratégica</h3>
+          <div class="metric-icon">
+            <Target size={48} class="icon-primary" />
+          </div>
+          <h3>1. Claridad Estratégica: Liderar con el 'Por Qué Importa'</h3>
           <p>
             ¿Puedes destilar una estrategia compleja en 60 segundos? La
             comunicación ejecutiva no se trata de decir más—se trata de decir
@@ -138,8 +155,10 @@ const faqs = [
         </div>
 
         <div class="metric-card">
-          <div class="metric-icon">💼</div>
-          <h3>Presencia Ejecutiva</h3>
+          <div class="metric-icon">
+            <Mic size={48} class="icon-primary" />
+          </div>
+          <h3>2. Presencia Ejecutiva: Autoridad, No Disculpas</h3>
           <p>
             ¿Proyectas confianza o cautela? ¿Autoridad o disculpa? Tu tono,
             ritmo y elección de palabras señalan si perteneces a la sala.
@@ -148,13 +167,15 @@ const faqs = [
         </div>
 
         <div class="metric-card">
-          <div class="metric-icon">🤝</div>
-          <h3>Poder de Negociación</h3>
+          <div class="metric-icon">
+            <Scale size={48} class="icon-primary" />
+          </div>
+          <h3>3. Poder de Negociación: Cerrar Tratos, No Ceder Terreno</h3>
           <p>
             En negociaciones de alto riesgo, ¿mantienes tu posición o cedes
             demasiado rápido? Evaluamos tu capacidad para estar en desacuerdo
             diplomáticamente, manejar objeciones y cerrar tratos sin dañar
-            relaciones.
+            relaciones críticas.
           </p>
         </div>
       </div>
@@ -163,7 +184,10 @@ const faqs = [
 
   <section class="differentiation-section">
     <div class="container">
-      <h2>Lo Que Hacen Diferente el Top 1% de Líderes Globales</h2>
+      <h2>
+        Gerentes vs. Líderes: Cómo el Top 1% Maneja el Inglés de Manera
+        Diferente
+      </h2>
       <p class="section-lead">
         Los ejecutivos que comandan salas de juntas y cierran tratos de 8 cifras
         no solo hablan inglés—lo manejan estratégicamente.
@@ -171,46 +195,41 @@ const faqs = [
 
       <div class="comparison-grid">
         <div class="comparison-card struggling">
-          <h3>❌ Ejecutivos con Dificultades</h3>
+          <h3>❌ El Alto Costo de Hábitos Inconscientes</h3>
           <ul>
             <li>Sobre-explican para compensar la incertidumbre</li>
             <li>
               Pierden credibilidad con lenguaje dubitativo ("tal vez", "creo")
             </li>
-            <li>Luchan para interrumpir o redirigir conversaciones</li>
+            <li>
+              Luchan para interrumpir o redirigir conversaciones suavemente
+            </li>
             <li>Pierden promociones a pesar de fuerte acumen de negocios</li>
           </ul>
         </div>
 
         <div class="comparison-card thriving">
-          <h3>✅ Líderes del Top 1%</h3>
+          <h3>✅ La Ventaja de Comunicación de Líderes C-Suite</h3>
           <ul>
             <li>
               Entregan actualizaciones de junta de 60 segundos sin relleno
             </li>
-            <li>Comandan atención con autoridad vocal y pausas</li>
-            <li>Negocian asertivamente sin quemar puentes</li>
-            <li>Construyen influencia a través de culturas y zonas horarias</li>
+            <li>
+              Comandan atención con autoridad vocal y pausas intencionales
+            </li>
+            <li>Negocian asertivamente sin dañar relaciones críticas</li>
+            <li>
+              Construyen influencia instantáneamente a través de culturas y
+              zonas horarias
+            </li>
           </ul>
         </div>
-      </div>
-
-      <div class="cta-center">
-        <Button
-          href="/es/quiz/executives/question/1"
-          variant="primary"
-          size="lg"
-        >
-          Descubre Tu Puntuación de Presencia Ejecutiva →
-        </Button>
       </div>
     </div>
   </section>
 
   <section class="faq-section">
     <div class="container">
-      <h2>Preguntas Frecuentes</h2>
-
       {
         faqs.map((faq) => (
           <details class="faq-item">
@@ -227,57 +246,145 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Final CTA: Urgency-Driven -->
+  <section class="final-cta-section">
+    <div class="container">
+      <div class="cta-center">
+        <Button
+          href="/es/quiz/executives/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Descubre Tu Puntuación de Influencia Ejecutiva Hoy →
+        </Button>
+      </div>
+      <p class="urgency-text">
+        No dejes que la vacilación sea la razón por la que pierdas tu próxima
+        promoción.
+      </p>
+    </div>
+  </section>
+
   <style>
+    /* Hero Section with Background Image */
     .hero {
-      background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
-      padding: 8rem 1.5rem 4rem;
-      min-height: 80vh;
+      position: relative;
+      padding: 10rem 1.5rem 6rem;
+      min-height: 100vh;
       display: flex;
       align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    /* Mobile: shift image right to show Empire State Building */
+    @media (max-width: 767px) {
+      .hero-bg-image {
+        object-position: 75% center;
+      }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.5) 0%,
+        rgba(30, 41, 59, 0.4) 100%
+      );
+      z-index: 1;
+    }
+
+    @media (min-width: 768px) {
+      .hero-overlay {
+        background: linear-gradient(
+          to right,
+          rgba(15, 23, 42, 0.65) 0%,
+          rgba(15, 23, 42, 0.55) 50%,
+          rgba(30, 41, 59, 0.45) 100%
+        );
+      }
     }
 
     .container {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
       width: 100%;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-content {
+      max-width: 650px;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
     }
 
+    @media (min-width: 1024px) {
+      .hero-content {
+        max-width: 700px;
+      }
+    }
+
     .eyebrow {
       display: inline-block;
       font-size: 0.875rem;
-      font-weight: 600;
-      color: #7c3aed;
-      background: white;
-      padding: 0.5rem 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      background: rgba(251, 191, 36, 0.95);
+      padding: 0.625rem 1.25rem;
       border-radius: 9999px;
       width: fit-content;
+      box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
     }
 
     h1 {
-      font-size: 2.25rem;
-      font-weight: 800;
-      line-height: 1.2;
-      color: #1e293b;
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #ffffff;
       margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
     @media (min-width: 768px) {
       h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      h1 {
+        font-size: 4rem;
       }
     }
 
     .lead {
-      font-size: 1.125rem;
-      line-height: 1.75;
-      color: #475569;
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: #f1f5f9;
       margin: 0;
+      font-weight: 400;
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    @media (min-width: 768px) {
+      .lead {
+        font-size: 1.375rem;
+      }
     }
 
     .benefits {
@@ -291,32 +398,40 @@ const faqs = [
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      font-size: 1rem;
-      color: #334155;
+      font-size: 1.0625rem;
+      color: #ffffff;
+      font-weight: 500;
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
     }
 
     .benefit :global(svg) {
       color: #10b981;
       flex-shrink: 0;
+      filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.5));
     }
 
-    .trust-signals {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      font-size: 0.875rem;
-      color: #64748b;
+    .trust-line {
+      font-size: 0.9375rem;
+      color: #cbd5e1;
+      text-align: center;
       margin-top: 1rem;
+      font-weight: 500;
+      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
     }
 
-    .trust-signal {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    /* Gold CTA Button Override */
+    :global(.gold-cta) {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+      color: #0f172a !important;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 16px rgba(251, 191, 36, 0.4) !important;
+      border: none !important;
     }
 
-    .trust-signal :global(svg) {
-      color: #7c3aed;
+    :global(.gold-cta:hover) {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5) !important;
     }
 
     .discover-section {
@@ -363,8 +478,14 @@ const faqs = [
     }
 
     .metric-icon {
-      font-size: 3rem;
       margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .metric-icon :global(.icon-primary) {
+      color: #3b82f6;
     }
 
     .metric-card h3 {
@@ -520,6 +641,27 @@ const faqs = [
       margin: 0;
     }
 
+    /* Final CTA Section (Dark Background) */
+    .final-cta-section {
+      padding: 4rem 1.5rem;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    }
+
+    .final-cta-section .cta-center {
+      margin-bottom: 1.5rem;
+    }
+
+    .urgency-text {
+      font-size: 1rem;
+      color: #cbd5e1;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    /* Responsive adjustments */
     @media (max-width: 767px) {
       .hero {
         padding: 6rem 1rem 3rem;
@@ -531,7 +673,8 @@ const faqs = [
 
       .discover-section,
       .differentiation-section,
-      .faq-section {
+      .faq-section,
+      .final-cta-section {
         padding: 3rem 1rem;
       }
     }

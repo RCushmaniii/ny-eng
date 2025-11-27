@@ -1,0 +1,107 @@
+---
+// Import components
+import Base from "@layouts/Base.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import Challenge from "@components/sections/Challenge.astro";
+import MethodologySection from "@components/sections/MethodologySection.astro";
+import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+
+// Import data
+import { services } from "@data/services";
+import { coreMethodology } from "@data/methodology";
+import { testimonials } from "@data/testimonials/en";
+
+// Get service data for tech english
+const serviceSlug = "tech-english";
+const serviceData = services.find((service) => service.slug === serviceSlug);
+
+// Hero content using service data (matching working pattern)
+const heroContent = {
+  title: "Master Technical English for Global Impact",
+  description:
+    "Communicate technical concepts clearly and confidently. Lead code reviews, presentations, and discussions in English with ease.",
+  backgroundImage: serviceData?.backgroundImage,
+  overlayOpacity: 0.7,
+};
+
+// Challenge content with dynamic image
+const challengeContent = {
+  headline: "Does This Sound Familiar?",
+  painPoints: [
+    "You struggle to explain complex technical concepts clearly in English",
+    "Code reviews and technical discussions feel overwhelming in a second language",
+    "You avoid speaking up in architecture meetings due to language barriers",
+    "Documentation and technical writing take much longer than they should",
+    "You miss out on leadership opportunities because of communication hesitation",
+  ],
+  icon: "💻",
+  image: serviceData?.squareImage,
+  quizCta: {
+    text: "Get your Technical Communication Score in 60 seconds.",
+    link: "/en/quiz/it-services/question/1",
+    linkLabel: "Start the Quiz →",
+  },
+};
+
+// Get Julio's testimonial (perfect for tech since he mentions tech topics)
+const julioTestimonial = testimonials[0]; // Julio Aldana testimonial
+
+// CTA content
+const ctaContent = {
+  eyebrow: "Take the Final Step",
+  title: "Transform Your Technical Communication",
+  description:
+    "A free, no-obligation strategy session is the best way to understand how targeted coaching can accelerate your tech career through better English communication.",
+  buttonText: "Book My Free Strategy Session",
+  buttonLink: "/en/book/",
+  whatToExpectTitle: "In Your Free Session, We Will:",
+  whatToExpectList: [
+    "Assess your current technical communication strengths and gaps",
+    "Practice explaining complex technical concepts clearly",
+    "Create a personalized plan to boost your confidence in tech discussions",
+  ],
+};
+
+// Translation slug for Spanish version
+const translationSlug = "ingles-para-tecnologia";
+---
+
+<Base
+  title="Tech English Coaching for IT Professionals | NY"
+  description="Master technical English for IT and engineering. Explain complex ideas clearly, lead code reviews, and boost your tech career with confidence."
+  lang="en"
+  tkey="services/tech-english"
+  ogImage={{
+    src:
+      typeof serviceData?.backgroundImage === "string"
+        ? serviceData.backgroundImage
+        : "/images/logos/new-york-english-og.jpg",
+  }}
+  customHreflangs={[
+    {
+      lang: "en-US",
+      href: "https://www.nyenglishteacher.com/en/services/tech-english/",
+    },
+    {
+      lang: "es-MX",
+      href: "https://www.nyenglishteacher.com/es/servicios/ingles-para-tecnologia/",
+    },
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/en/services/tech-english/"
+>
+  <!-- Hero Section -->
+  <InnerHero content={heroContent} />
+
+  <!-- Challenge Section -->
+  <Challenge content={challengeContent} />
+
+  <!-- Methodology Section -->
+  <MethodologySection content={coreMethodology} />
+
+  <!-- Featured Testimonial -->
+  {julioTestimonial && <FeaturedTestimonial testimonial={julioTestimonial} />}
+
+  <!-- CTA Section -->
+  <CtaSection content={ctaContent} />
+</Base>

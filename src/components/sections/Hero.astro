@@ -1,6 +1,8 @@
 ---
 // Unchanged front-matter
 import Button from "@components/ui/Button.astro";
+import { Image } from "astro:assets";
+import buildingsOverlay from "@assets/images/home/new-york-city-skyline-buildings.webp";
 
 type HeroButton = {
   text: string;
@@ -94,6 +96,25 @@ const backgroundImageMobileType = content.backgroundImageMobile?.src
   >
   </div>
 
+  <!-- Parallax Buildings Overlay -->
+  {
+    content.fullHeight && (
+      <div
+        id="hero-buildings-parallax"
+        class="absolute inset-0 w-full h-full pointer-events-none"
+        style="transform-origin: bottom center; will-change: transform;"
+      >
+        <Image
+          src={buildingsOverlay}
+          alt=""
+          class="w-full h-full object-cover object-bottom"
+          loading="eager"
+          style="opacity: 1;"
+        />
+      </div>
+    )
+  }
+
   <div
     class:list={[
       "site-container relative z-10 mx-auto px-4 flex flex-col items-center justify-center text-center",
@@ -160,3 +181,9 @@ const backgroundImageMobileType = content.backgroundImageMobile?.src
     </div>
   </div>
 </section>
+
+<style>
+  #hero-buildings-parallax {
+    transition: transform 0.1s ease-out;
+  }
+</style>

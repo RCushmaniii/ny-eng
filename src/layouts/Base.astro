@@ -30,6 +30,7 @@ export interface Props {
   customHreflangs?: Array<{ lang: string; href: string }>;
   customCanonical?: string;
   transparentHeader?: boolean;
+  noindex?: boolean;
 }
 
 const {
@@ -46,6 +47,7 @@ const {
   customHreflangs,
   customCanonical,
   transparentHeader = false,
+  noindex = false,
 } = Astro.props;
 
 // Fail fast if required props are missing
@@ -261,7 +263,12 @@ if (translationSlugEs.includes("/es/blog/es/")) {
     }
 
     <!-- Robots and caching -->
-    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta
+      name="robots"
+      content={noindex
+        ? "noindex,follow"
+        : "index,follow,max-image-preview:large"}
+    />
     <meta
       http-equiv="Cache-Control"
       content="public, max-age=3600, s-maxage=86400"

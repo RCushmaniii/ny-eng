@@ -1,0 +1,25 @@
+---
+/**
+ * Documentation Index - Main overview page
+ */
+import MarkdownLayout from '@layouts/MarkdownLayout.astro';
+import { marked } from 'marked';
+
+// Import the INDEX.md content
+const indexContent = await import('../../../../docs/INDEX.md?raw');
+const markdownText = indexContent.default;
+
+// Convert markdown to HTML
+const htmlContent = marked(markdownText);
+
+const frontmatter = {
+  title: 'Documentation Index',
+  description: 'Main documentation overview and navigation',
+  category: 'Main',
+  icon: '🏠'
+};
+---
+
+<MarkdownLayout frontmatter={frontmatter}>
+  <Fragment set:html={htmlContent} />
+</MarkdownLayout>
