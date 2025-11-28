@@ -8,9 +8,19 @@
 
 import Base from "@layouts/Base.astro";
 import Button from "@components/ui/Button.astro";
-import { getQuizConfig, isQuizTypeAvailable } from "@/data/quiz/configs";
+import {
+  getQuizConfig,
+  isQuizTypeAvailable,
+  getAvailableQuizTypes,
+} from "@/data/quiz/configs";
 import type { QuizType } from "@/data/quiz/types";
 import { Mail } from "lucide-astro";
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return getAvailableQuizTypes().map((qt) => ({ params: { quizType: qt } }));
+}
 
 // Get quiz type from URL params
 const { quizType } = Astro.params;
@@ -414,12 +424,15 @@ const description =
             ...behavioralData,
           };
 
-          // Submit to API
-          const response = await fetch("/api/quiz/submit", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
-          });
+          // Submit to API (Netlify Function)
+          const response = await fetch(
+            "https://ny-eng-api.netlify.app/.netlify/functions/quiz-submit",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            }
+          );
 
           const result = await response.json();
 
@@ -443,7 +456,7 @@ const description =
               );
             } catch {}
 
-            // Redirect to the Spanish report page
+            // Redirect to the polished report page (uses QuizReport.tsx)
             window.location.href = "/es/quiz/report/";
           } else {
             // Show error

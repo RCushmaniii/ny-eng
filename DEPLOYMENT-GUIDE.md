@@ -1,12 +1,23 @@
 # 🚀 Deployment Guide: Hostinger + Netlify Hybrid Setup
 
-## **Quick Start (15 Minutes)**
+## **Architecture Overview**
 
-This guide walks you through deploying your hybrid architecture:
+- **Static site** → Hostinger (HTML, CSS, JS, images)
+- **API functions** → Netlify Functions (quiz submissions)
+- **Database** → Supabase (quiz_submissions table)
+- **Domain** → nyenglishteacher.com (no DNS changes needed)
 
-- **Static site** → Hostinger
-- **API functions** → Netlify
-- **Single domain** → No DNS changes needed
+## **Quick Reference: Daily Updates**
+
+```powershell
+# For content/code changes:
+npm run build
+# Then upload dist/ contents to Hostinger via FTP/File Manager
+# .htaccess stays untouched - don't overwrite it!
+
+# For API function changes only:
+netlify deploy --prod
+```
 
 ---
 
@@ -86,62 +97,6 @@ dist/
 3. Navigate to `public_html/`
 4. Upload `dist/` contents
 
-### **Step 4: Add Apache Proxy Rules**
-
-Create or edit `.htaccess` in `public_html/`:
-
-```apache
-# ============================================
-# API Proxy to Netlify Functions
-# ============================================
-RewriteEngine On
-
-# Proxy /api/* requests to Netlify
-RewriteCond %{REQUEST_URI} ^/api/
-RewriteRule ^api/(.*)$ https://ny-eng-api.netlify.app/.netlify/functions/$1 [P,L]
-
-# ============================================
-# Force HTTPS (Security)
-# ============================================
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# ============================================
-# Force WWW (SEO Consistency)
-# ============================================
-RewriteCond %{HTTP_HOST} !^www\. [NC]
-RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# ============================================
-# Redirect root to /en/
-# ============================================
-RewriteRule ^$ /en/ [R=301,L]
-
-# ============================================
-# Security Headers
-# ============================================
-<IfModule mod_headers.c>
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-Frame-Options "SAMEORIGIN"
-    Header set X-XSS-Protection "1; mode=block"
-</IfModule>
-
-# ============================================
-# Caching (Performance)
-# ============================================
-<IfModule mod_expires.c>
-    ExpiresActive On
-    ExpiresByType image/jpg "access plus 1 year"
-    ExpiresByType image/jpeg "access plus 1 year"
-    ExpiresByType image/gif "access plus 1 year"
-    ExpiresByType image/png "access plus 1 year"
-    ExpiresByType image/webp "access plus 1 year"
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
-    ExpiresByType text/html "access plus 1 hour"
-</IfModule>
-```
-
 ### **Step 5: Test Static Site**
 
 Visit these URLs to verify:
@@ -196,6 +151,7 @@ In Netlify dashboard (https://app.netlify.com):
 
 ```
 SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SECRET=your-service-role-key-here  # NOT anon key - use service_role to bypass RLS
 SUPABASE_ANON_KEY=your-anon-key-here
 RESEND_API_KEY=re_your-resend-key-here
 NOTIFICATION_EMAIL=your-email@example.com
@@ -203,8 +159,11 @@ NOTIFICATION_EMAIL=your-email@example.com
 
 **Where to find these:**
 
-- **Supabase:** Project Settings → API → URL & anon key
+- **Supabase:** Project Settings → API → "Legacy anon, service_role API keys" tab
+  - Use the `service_role` key for `SUPABASE_SECRET` (bypasses RLS)
 - **Resend:** Dashboard → API Keys
+
+**IMPORTANT:** The function uses `SUPABASE_SECRET` to bypass Row Level Security. The anon key won't work for inserts.
 
 ### **Step 5: Deploy to Netlify**
 
@@ -245,9 +204,11 @@ curl -X POST https://ny-eng-api.netlify.app/.netlify/functions/quiz-submit `
   "success": true,
   "submission_id": "abc-123",
   "score": 45,
-  "score_tier": "developing"
+  "score_tier": "Million-Dollar Gap"
 }
 ```
+
+**Valid score_tier values:** `Credibility Block`, `Million-Dollar Gap`, `Conversation-Ready`
 
 ---
 
@@ -262,17 +223,16 @@ curl -X POST https://ny-eng-api.netlify.app/.netlify/functions/quiz-submit `
 5. **Check Supabase:** Verify submission appears in `quiz_submissions` table
 6. **Check email:** Verify notification received (if configured)
 
-### **Check Proxy is Working**
+### **Check API is Working**
 
 Open browser DevTools (F12) → Network tab:
 
 1. Submit quiz
-2. Look for request to `/api/quiz/submit`
+2. Look for request to `https://ny-eng-api.netlify.app/.netlify/functions/quiz-submit`
 3. **Status should be 200**
 4. **Response should have `success: true`**
 
-**If you see the Netlify URL in the browser, the proxy is NOT working.**
-**If you only see `/api/quiz/submit`, the proxy IS working!** ✅
+**Note:** The frontend calls Netlify directly (not via proxy) because Hostinger doesn't support `mod_proxy`.
 
 ---
 
@@ -314,37 +274,52 @@ netlify deploy --prod
 
 ## **Troubleshooting**
 
-### **Problem: Quiz submissions fail**
+### **Problem: Quiz submissions fail with RLS error**
 
-**Check:**
+**Error:** `new row violates row-level security policy`
 
-1. ✅ Netlify environment variables are set correctly
-2. ✅ Supabase URL and key are valid
-3. ✅ `.htaccess` proxy rule is in place
-4. ✅ Netlify function deployed successfully
+**Fix:** Make sure Netlify is using `SUPABASE_SECRET` (service_role key), not the anon key.
 
-**Debug:**
+### **Problem: Quiz submissions fail with schema error**
 
-```powershell
-# Check Netlify function logs
-netlify functions:log quiz-submit
+**Error:** `Could not find column 'answers'`
+
+**Fix:** Run this SQL in Supabase:
+
+```sql
+ALTER TABLE quiz_submissions ADD COLUMN IF NOT EXISTS answers JSONB;
 ```
 
-### **Problem: 404 on API routes**
+### **Problem: CSP blocking API calls**
 
-**Check:**
+**Error:** `Refused to connect because it violates Content Security Policy`
 
-1. ✅ `.htaccess` has `RewriteEngine On`
-2. ✅ Apache `mod_rewrite` is enabled (ask Hostinger support)
-3. ✅ Netlify site URL is correct in proxy rule
+**Fix:** Add Netlify domain to `.htaccess` CSP header:
 
-**Test proxy directly:**
-
-```powershell
-curl -I https://www.nyenglishteacher.com/api/quiz/submit
+```apache
+<IfModule mod_headers.c>
+Header set Content-Security-Policy "
+    default-src 'self';
+    connect-src 'self' https://ny-eng-api.netlify.app https://www.google-analytics.com;
+    script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://www.googletagmanager.com;
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https:;
+    font-src 'self' data:;
+"
+</IfModule>
 ```
 
-Should return `200 OK` or `405 Method Not Allowed` (not 404).
+### **Problem: 404 on quiz pages**
+
+**Cause:** Dynamic pages not pre-rendered.
+
+**Fix:** Ensure all `[quizType]` pages have `getStaticPaths()` and `export const prerender = true`.
+
+### **Problem: Score tier constraint error**
+
+**Error:** `violates check constraint "quiz_submissions_score_tier_check"`
+
+**Fix:** The Netlify function must use these exact values: `Credibility Block`, `Million-Dollar Gap`, `Conversation-Ready`
 
 ### **Problem: CORS errors**
 
@@ -517,6 +492,61 @@ After successful deployment:
 5. ✅ **Submit sitemap to Google Search Console**
 6. ✅ **Monitor for 48 hours** (check Netlify logs)
 7. ✅ **Add authentication to admin dashboard**
+
+---
+
+## **Complete .htaccess File**
+
+```apache
+# Enable rewriting
+RewriteEngine On
+
+# =========================================================
+# Force HTTPS
+# =========================================================
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# =========================================================
+# Force www
+# =========================================================
+RewriteCond %{HTTP_HOST} ^nyenglishteacher\.com [NC]
+RewriteRule ^(.*)$ https://www.nyenglishteacher.com/$1 [L,R=301]
+
+# =========================================================
+# Redirect root to /en/
+# =========================================================
+RewriteCond %{REQUEST_URI} ^/?$
+RewriteRule ^$ /en/ [L,R=302]
+
+# =========================================================
+# Add trailing slash (except for files)
+# =========================================================
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [L,R=301]
+
+# =========================================================
+# Default index.html
+# =========================================================
+DirectoryIndex index.html
+
+# =========================================================
+# Content Security Policy
+# =========================================================
+<IfModule mod_headers.c>
+Header set Content-Security-Policy "
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://www.googletagmanager.com;
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: https:;
+    font-src 'self' data:;
+    connect-src 'self' https://www.google-analytics.com https://plain-mode-42c4.rcushmaniii.workers.dev https://ny-eng-api.netlify.app;
+    object-src 'none';
+    base-uri 'self';
+"
+</IfModule>
+```
 
 ---
 

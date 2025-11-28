@@ -24,9 +24,10 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   site: SITE,
-  output: 'server', // Server mode for Netlify Functions
+  output: 'server',
   adapter: netlify({
     edgeMiddleware: false,
+    imageCDN: false, // Disable Netlify image CDN - we're hosting on Hostinger
   }),
   
   image: {

@@ -1,13 +1,13 @@
-import { a as createComponent, c as createAstro, r as renderComponent, m as maybeRenderHead, b as renderTemplate, e as renderSlot, f as renderHead, g as addAttribute } from '../../chunks/astro/server_D3t1T5I4.mjs';
+import { a as createComponent, c as createAstro, r as renderComponent, m as maybeRenderHead, b as renderTemplate, e as renderSlot, f as renderHead, g as addAttribute } from '../../chunks/astro/server_CMgxdnwz.mjs';
 import 'clsx';
 /* empty css                                    */
-import { $ as $$FileText } from '../../chunks/FileText_X9UVvGhE.mjs';
-import { $ as $$Calendar } from '../../chunks/Calendar_1OPHr6-b.mjs';
-import { $ as $$Target } from '../../chunks/Target_CcF7auwD.mjs';
-import { $ as $$ } from '../../chunks/.Layout_CLomzcre.mjs';
-import { $ as $$Globe } from '../../chunks/Globe_CTZFNUz0.mjs';
-import { $ as $$BookOpen } from '../../chunks/BookOpen_DsR1bnfT.mjs';
-import { $ as $$TrendingUp } from '../../chunks/TrendingUp_Bn9YFm_I.mjs';
+import { $ as $$FileText } from '../../chunks/FileText_D5XI4jG3.mjs';
+import { $ as $$Calendar } from '../../chunks/Calendar_B6t4rfus.mjs';
+import { $ as $$Target } from '../../chunks/Target_CcT8oCtO.mjs';
+import { $ as $$ } from '../../chunks/.Layout_CznUoyZc.mjs';
+import { $ as $$Globe } from '../../chunks/Globe_BpP2gO93.mjs';
+import { $ as $$BookOpen } from '../../chunks/BookOpen_XwoXiLII.mjs';
+import { $ as $$TrendingUp } from '../../chunks/TrendingUp_CY95uHYd.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const $$Astro$a = createAstro("https://www.nyenglishteacher.com");

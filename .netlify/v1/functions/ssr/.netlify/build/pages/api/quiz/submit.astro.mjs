@@ -1,6 +1,6 @@
 import { s as submitQuiz } from '../../../chunks/supabase_7d3tTsd_.mjs';
 import { c as calculateQuizScore } from '../../../chunks/scoring_BHlAKgLq.mjs';
-import { g as getQuizConfig } from '../../../chunks/index_C9q68HMh.mjs';
+import { g as getQuizConfig } from '../../../chunks/index_D835lDR1.mjs';
 import { Resend } from 'resend';
 export { renderers } from '../../../renderers.mjs';
 

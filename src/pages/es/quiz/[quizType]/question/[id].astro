@@ -7,8 +7,24 @@
 
 import Base from '@layouts/Base.astro';
 import Button from '@components/ui/Button.astro';
-import { getQuizConfig, isQuizTypeAvailable } from '@/data/quiz/configs';
+import { getQuizConfig, isQuizTypeAvailable, getAvailableQuizTypes } from '@/data/quiz/configs';
 import type { QuizType } from '@/data/quiz/types';
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  const quizTypes = getAvailableQuizTypes();
+  const paths: { params: { quizType: string; id: string } }[] = [];
+  
+  quizTypes.forEach(qt => {
+    const config = getQuizConfig(qt, 'es');
+    config.questions.forEach(q => {
+      paths.push({ params: { quizType: qt, id: q.id.toString() } });
+    });
+  });
+  
+  return paths;
+}
 
 // Get params
 const { quizType, id } = Astro.params;

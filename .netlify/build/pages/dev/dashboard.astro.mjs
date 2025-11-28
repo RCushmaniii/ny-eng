@@ -1,4 +1,4 @@
-import { a as createComponent } from '../../chunks/astro/server_D3t1T5I4.mjs';
+import { a as createComponent } from '../../chunks/astro/server_CMgxdnwz.mjs';
 import 'clsx';
 /* empty css                                        */
 export { renderers } from '../../renderers.mjs';
