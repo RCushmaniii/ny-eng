@@ -23,31 +23,31 @@ export const categories: Category[] = [
     slug: 'tech-english',
     esSlug: 'ingles-para-tecnologia',
     description: 'Master technical English for IT and engineering. Explain complex concepts clearly, lead code reviews, and advance your tech career with confident communication.',
-    description_es: 'Domina el inglés técnico para IT e ingeniería. Explica conceptos complejos con claridad, lidera code reviews y avanza tu carrera tecnológica con comunicación segura.'
+    description_es: 'Domina el inglés técnico para IT. Explica conceptos complejos, lidera code reviews y avanza tu carrera tech con comunicación segura.'
   },
   {
     name: 'Logistics English',
     name_es: 'Inglés para Logística',
     slug: 'logistics-english',
     esSlug: 'ingles-para-logistica',
-    description: 'English for the logistics and supply chain industry, focusing on clear communication for global operations.',
-    description_es: 'Inglés para la industria de logística y cadena de suministro, enfocado en comunicación clara para operaciones globales.'
+    description: 'English for the logistics and supply chain industry. Master clear communication for global operations, vendor management, and international coordination. Improve your skills in logistics management, transportation, and warehousing.',
+    description_es: 'Inglés para la industria de logística y cadena de suministro. Domina la comunicación clara para operaciones globales y coordinación internacional. Mejora tus habilidades en gestión logística, transporte y almacenamiento.'
   },
   {
     name: 'Professional English',
     name_es: 'Inglés para Profesionales',
     slug: 'professional-english',
     esSlug: 'ingles-para-profesionales',
-    description: 'Improve professional English for workplace success. Master business communication, write effective emails, and lead confident meetings with colleagues and clients.',
-    description_es: 'Mejora tu inglés profesional para el éxito laboral. Domina la comunicación empresarial, escribe correos efectivos y lidera reuniones seguras con colegas y clientes.'
+    description: 'Improve professional English for workplace success. Master business communication, write effective emails, and lead confident meetings with colleagues and clients. Enhance your professional image and advance your career.',
+    description_es: 'Mejora tu inglés profesional. Domina comunicación empresarial, escribe correos efectivos y lidera reuniones con colegas y clientes. Mejora tu imagen profesional y avanza en tu carrera.'
   },
   {
     name: 'High-Stakes English',
     name_es: 'Inglés para Presentaciones',
     slug: 'high-stakes-english',
     esSlug: 'ingles-para-presentaciones',
-    description: 'Master English for critical presentations and negotiations. Build confidence and clarity for high-pressure situations where your communication matters most.',
-    description_es: 'Domina el inglés para presentaciones críticas y negociaciones. Desarrolla confianza y claridad para situaciones de alta presión donde tu comunicación es crucial.'
+    description: 'Master English for critical presentations and negotiations. Build confidence and clarity for high-pressure situations where your communication matters most. Develop a strong executive presence and persuasive communication skills.',
+    description_es: 'Domina el inglés para presentaciones críticas y negociaciones. Desarrolla confianza y claridad para situaciones de alta presión donde tu comunicación importa. Desarrolla una fuerte presencia ejecutiva y habilidades de comunicación persuasiva.'
   },
   // Core Categories based on the new structure
   {
@@ -55,7 +55,7 @@ export const categories: Category[] = [
     name_es: 'Inglés para Negocios',
     slug: 'business-english',
     esSlug: 'ingles-para-negocios',
-    description: 'Master business vocabulary, professional communication, and industry-specific English for global success.',
+    description: 'Master business vocabulary, professional communication, and industry-specific English. Build the language skills you need for global business success.',
     description_es: 'Domina el vocabulario empresarial, la comunicación profesional y el inglés específico de tu industria para alcanzar el éxito global.'
   },
   {
@@ -63,7 +63,7 @@ export const categories: Category[] = [
     name_es: 'Comunicación de Alto Impacto',
     slug: 'high-impact-communication',
     esSlug: 'comunicacion-de-alto-impacto',
-    description: 'Excel in interviews, presentations, pitches, and high-stakes meetings with confident English communication.',
+    description: 'Excel in interviews, presentations, pitches, and high-stakes meetings with confident English communication. Master the skills to influence and persuade.',
     description_es: 'Destaca en entrevistas, presentaciones, propuestas y reuniones importantes con una comunicación en inglés segura y efectiva.'
   },
   {
@@ -71,7 +71,7 @@ export const categories: Category[] = [
     name_es: 'Carrera & Liderazgo',
     slug: 'career-leadership',
     esSlug: 'carrera-liderazgo',
-    description: 'Advance your career with leadership English skills for promotions, visibility, and executive presence.',
+    description: 'Advance your career with leadership English skills. Build the communication abilities you need for promotions, visibility, and executive presence.',
     description_es: 'Impulsa tu carrera con habilidades de liderazgo en inglés para conseguir promociones, visibilidad y presencia ejecutiva.'
   },
   {
@@ -79,7 +79,7 @@ export const categories: Category[] = [
     name_es: 'Coaching en Inglés',
     slug: 'english-coaching',
     esSlug: 'coaching-en-ingles',
-    description: 'Discover proven English coaching methods, real client results, and performance-driven learning strategies.',
+    description: 'Discover proven English coaching methods, real client results, and performance-driven learning strategies. See how personalized coaching transforms careers.',
     description_es: 'Descubre métodos comprobados de coaching en inglés, resultados reales de clientes y estrategias de aprendizaje orientadas al rendimiento.'
   },
   {

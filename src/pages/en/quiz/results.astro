@@ -7,7 +7,7 @@ import { Mail, Download, Calendar } from "lucide-astro";
 
 const title = "Your Speaking Confidence Results | NY English";
 const description =
-  "Get your personalized Communication Confidence Score (0-100) and improvement roadmap. Discover exactly where your team stands with high-stakes English communication.";
+  "Get your Communication Confidence Score (0-100) and roadmap. See where your team stands with high-stakes English communication.";
 ---
 
 <Base
@@ -20,11 +20,14 @@ const description =
 >
   <section class="quiz-results pt-28 pb-16 md:pt-32 md:pb-20">
     <div class="container-narrow">
+      <!-- SEO H1 (visually hidden but present for SEO) -->
+      <h1 class="sr-only">Your Speaking Confidence Results</h1>
+
       <!-- No Quiz Data Warning (shown if user hasn't taken quiz) -->
       <div class="no-quiz-warning" id="no-quiz-warning" style="display: none;">
         <div class="warning-content">
           <div class="warning-icon">⚠️</div>
-          <h1>Quiz Not Completed</h1>
+          <h2>Quiz Not Completed</h2>
           <p class="warning-text">
             You need to complete the Communication Confidence Assessment before
             viewing your results.
@@ -53,7 +56,7 @@ const description =
       >
         <div class="error-content">
           <div class="error-icon">❌</div>
-          <h1>Submission Error</h1>
+          <h2>Submission Error</h2>
           <p class="error-text" id="error-message">
             There was an error submitting your quiz. Please try again.
           </p>
@@ -73,7 +76,7 @@ const description =
       <!-- Lead Capture Form (shown first) -->
       <div class="lead-capture-card" id="lead-capture">
         <div class="capture-header">
-          <h1>You're Almost There!</h1>
+          <h2>You're Almost There!</h2>
           <p class="capture-subtext">
             Enter your email to receive your personalized Communication
             Confidence Score and detailed improvement roadmap.

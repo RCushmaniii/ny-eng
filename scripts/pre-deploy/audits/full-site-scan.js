@@ -232,11 +232,25 @@ class FullSiteScan {
     console.log(`  • Multiple H1 tags: ${this.issues.multipleH1.length}`);
     console.log(`\n  Total indexable issues: ${totalIssues}\n`);
     console.log('='.repeat(80));
-    console.log('ℹ️  INFORMATIONAL - These issues won\'t block deployment\n');
-    console.log('='.repeat(80) + '\n');
     
-    // Return 0 (pass) - this is informational only
-    return 0;
+    // Critical issues that should FAIL the build
+    const criticalIssues = 
+      this.issues.descriptionTooShort.length +
+      this.issues.descriptionTooLong.length +
+      this.issues.titleTooLong.length +
+      this.issues.titleTooShort.length +
+      this.issues.h1Missing.length +
+      this.issues.multipleH1.length;
+    
+    if (criticalIssues > 0) {
+      console.log('❌ CRITICAL SEO ISSUES FOUND - Deployment blocked!\n');
+      console.log('='.repeat(80) + '\n');
+      return 1; // FAIL
+    }
+    
+    console.log('✅ NO CRITICAL SEO ISSUES - All checks passed!\n');
+    console.log('='.repeat(80) + '\n');
+    return 0; // PASS
   }
 
   /**

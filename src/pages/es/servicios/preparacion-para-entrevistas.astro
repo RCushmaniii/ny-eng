@@ -12,7 +12,7 @@ import CtaSection from "@components/sections/CtaSection.astro";
 import { services } from "@data/services";
 
 // Get the interview prep service data
-const interviewPrepService = services.find(s => s.slug === 'interview-prep');
+const interviewPrepService = services.find((s) => s.slug === "interview-prep");
 
 // Import methodology content
 import type { Methodology } from "@data/methodology";
@@ -20,46 +20,55 @@ import type { Methodology } from "@data/methodology";
 // Define Spanish methodology content directly
 const metodologiaEs: Methodology = {
   title: "Tu Método de Coaching Personalizado",
-  subtitle: "Una metodología probada de cuatro pasos diseñada para entender tus desafíos únicos y desarrollar las habilidades específicas que necesitas para tener éxito.",
+  subtitle:
+    "Una metodología probada de cuatro pasos diseñada para entender tus desafíos únicos y desarrollar las habilidades específicas que necesitas para tener éxito.",
   steps: [
     {
       icon: "lucide:search-check",
       title: "Descubrimiento y Evaluación",
-      description: "Inglés para entrevistas: prepárate para destacar y conseguir el empleo que deseas en empresas globales."
+      description:
+        "Inglés para entrevistas: prepárate para destacar y conseguir el empleo que deseas en empresas globales.",
     },
     {
       icon: "lucide:map",
       title: "Mapeo Estratégico de Objetivos",
-      description: "Juntos, definimos objetivos claros y medibles directamente vinculados con tu éxito profesional, creando un plan estratégico enfocado en tus metas específicas."
+      description:
+        "Juntos, definimos objetivos claros y medibles directamente vinculados con tu éxito profesional, creando un plan estratégico enfocado en tus metas específicas.",
     },
     {
       icon: "lucide:settings",
       title: "Currículum Personalizado y Práctica",
-      description: "Tu programa está construido para ti, enfocándose en el vocabulario específico, frases y matices culturales relevantes para tu industria y tareas diarias."
+      description:
+        "Tu programa está construido para ti, enfocándose en el vocabulario específico, frases y matices culturales relevantes para tu industria y tareas diarias.",
     },
     {
       icon: "lucide:message-square-text",
       title: "Simulación del Mundo Real y Retroalimentación",
-      description: "Aquí es donde la teoría se convierte en instinto. Realizamos presentaciones simuladas y juegos de rol de negociaciones difíciles, proporcionando retroalimentación directa y accionable para que estés confiado y preparado."
-    }
-  ]
+      description:
+        "Aquí es donde la teoría se convierte en instinto. Realizamos presentaciones simuladas y juegos de rol de negociaciones difíciles, proporcionando retroalimentación directa y accionable para que estés confiado y preparado.",
+    },
+  ],
 };
 
 // Import testimonials and select featured one
 import { testimonials } from "@data/testimonials/es";
-const featuredTestimonialSlug = 'carolina-martinez-interview-success';
-const featuredTestimonial = testimonials.find(t => t.slug === featuredTestimonialSlug);
+const featuredTestimonialSlug = "carolina-martinez-interview-success";
+const featuredTestimonial = testimonials.find(
+  (t) => t.slug === featuredTestimonialSlug
+);
 
 // SEO metadata
 const title = "Preparación para Entrevistas en Inglés | NY English";
-const seoDescription = "Domina las entrevistas en inglés. Aprende a contar tu historia y proyectar confianza en cada entrevista.";
+const seoDescription =
+  "Domina las entrevistas en inglés. Aprende a contar tu historia, responder preguntas difíciles y proyectar confianza en cada entrevista.";
 
 // Hero content
 const heroContent = {
   title: "Asegura tu Próximo Rol con Confianza",
-  description: "Domina el arte de las entrevistas en inglés y destaca entre los candidatos.",
+  description:
+    "Domina el arte de las entrevistas en inglés y destaca entre los candidatos.",
   backgroundImage: interviewPrepService?.backgroundImage,
-  overlayOpacity: 0.7
+  overlayOpacity: 0.7,
 };
 
 // Challenge section content
@@ -68,25 +77,26 @@ const challengeContent = {
   painPoints: [
     "Te pones nervioso y pierdes fluidez cuando te hacen preguntas inesperadas en inglés.",
     "Te cuesta explicar tus logros de manera convincente y estructurada.",
-    "No sabes cómo manejar preguntas sobre debilidades o situaciones difíciles en el trabajo."
+    "No sabes cómo manejar preguntas sobre debilidades o situaciones difíciles en el trabajo.",
   ],
   icon: "😰",
-  image: interviewPrepService?.squareImage
+  image: interviewPrepService?.squareImage,
 };
 
 // Final CTA content
 const ctaContent = {
   eyebrow: "¿Listo para Destacar en tu Próxima Entrevista?",
   title: "Domina las Entrevistas en Inglés",
-  description: "Una sesión de estrategia personalizada te mostrará exactamente cómo prepararte para entrevistas en inglés y proyectar la confianza que necesitas para conseguir el trabajo que deseas.",
+  description:
+    "Una sesión de estrategia personalizada te mostrará exactamente cómo prepararte para entrevistas en inglés y proyectar la confianza que necesitas para conseguir el trabajo que deseas.",
   buttonText: "Reserva Mi Sesión de Estrategia de Entrevistas",
   buttonLink: "/es/reservar/",
   whatToExpectTitle: "En Tu Sesión Gratuita, Haremos:",
   whatToExpectList: [
     "Evaluar tu estilo de comunicación actual en entrevistas",
     "Identificar áreas clave donde mejorar tu presentación personal impulsará tus resultados",
-    "Crear una hoja de ruta para desarrollar respuestas convincentes y técnicas de storytelling"
-  ]
+    "Crear una hoja de ruta para desarrollar respuestas convincentes y técnicas de storytelling",
+  ],
 };
 
 // Translation slug for English version
@@ -98,27 +108,40 @@ const translationSlug = "interview-prep";
   description={seoDescription}
   lang="es"
   tkey="services/interview-prep"
-  ogImage={{ src: typeof interviewPrepService?.backgroundImage === 'string' ? interviewPrepService.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
+  ogImage={{
+    src:
+      typeof interviewPrepService?.backgroundImage === "string"
+        ? interviewPrepService.backgroundImage
+        : "/images/logos/new-york-english-og.jpg",
+  }}
   customHreflangs={[
-    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/interview-prep/' },
-    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/preparacion-para-entrevistas/' }
+    {
+      lang: "en-US",
+      href: "https://www.nyenglishteacher.com/en/services/interview-prep/",
+    },
+    {
+      lang: "es-MX",
+      href: "https://www.nyenglishteacher.com/es/servicios/preparacion-para-entrevistas/",
+    },
   ]}
   customCanonical="https://www.nyenglishteacher.com/es/servicios/preparacion-para-entrevistas/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />
-  
+
   <!-- Challenge Section -->
   <Challenge content={challengeContent} background="white" padding="lg" />
-  
+
   <!-- Methodology Section -->
   <MethodologySection content={metodologiaEs} background="light" padding="lg" />
-  
+
   <!-- Featured Testimonial -->
-  {featuredTestimonial && (
-    <FeaturedTestimonial testimonial={featuredTestimonial} />
-  )}
-  
+  {
+    featuredTestimonial && (
+      <FeaturedTestimonial testimonial={featuredTestimonial} />
+    )
+  }
+
   <!-- Final CTA -->
   <CtaSection content={ctaContent} />
 </Base>

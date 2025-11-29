@@ -3,21 +3,27 @@ import { getCollection } from "astro:content";
 import { blogSetting } from "@data/config";
 import PaginatedBlogLayout from "@components/blog/PaginatedBlogLayout.astro";
 import blogHero from "../../../content/blog/images/blog-hero.jpg";
-import type { TKey } from '../../../lib/i18n';
+import type { TKey } from "../../../lib/i18n";
 export const prerender = true;
 
-import type { PaginateFunction } from 'astro';
+import type { PaginateFunction } from "astro";
 
-export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
+export async function getStaticPaths({
+  paginate,
+}: {
+  paginate: PaginateFunction;
+}) {
   // Get all Spanish posts only
   const allPosts = await getCollection("blog");
   const filteredPosts = allPosts.filter(
-    (post: { id: string; data: { publish: boolean } }) => post.id.startsWith("es/") && post.data.publish === true,
+    (post: { id: string; data: { publish: boolean } }) =>
+      post.id.startsWith("es/") && post.data.publish === true
   );
 
   // Sort posts by date
   const sortedPosts = filteredPosts.sort(
-    (a: { data: { publishDate: Date } }, b: { data: { publishDate: Date } }) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+    (a: { data: { publishDate: Date } }, b: { data: { publishDate: Date } }) =>
+      b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
   );
 
   // Return paginated collection
@@ -32,12 +38,13 @@ const { currentPage, data: posts, lastPage, url } = page;
 const baseUrl = "/es/blog/";
 const hasMultiplePages = lastPage > 1;
 
-const seoTitle = "Blog";
-const seoDescription = "Tips prácticos y experiencias reales para dominar el inglés de negocios.";
+const seoTitle = `Blog de Inglés Empresarial - Página ${currentPage} | NY English`;
+const seoDescription =
+  "Consejos prácticos, experiencias reales y estrategias expertas para dominar la comunicación en inglés empresarial. Mejora tu inglés profesional.";
 
 // Use centralized i18n system
-const lang = 'es';
-const tkey = 'blog' as TKey;
+const lang = "es";
+const tkey = "blog" as TKey;
 ---
 
 <PaginatedBlogLayout

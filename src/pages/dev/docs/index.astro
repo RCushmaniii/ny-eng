@@ -1,276 +1,438 @@
 ---
 /**
- * Documentation Library - Main index page with links to all documentation
+ * Documentation Library - Main index page
+ * Redesigned for better hierarchy and easier navigation
  */
 
-import DocsLayout from '@layouts/DocsLayout.astro';
-import { Home, Rocket, Globe, FileText, Link, Image as ImageIcon, Settings, Repeat, Target, Calendar, Code2, TrendingUp, Wrench, BookOpen, Database } from 'lucide-astro';
+import DocsLayout from "@layouts/DocsLayout.astro";
+import {
+  Rocket,
+  Globe,
+  FileText,
+  Link,
+  Image as ImageIcon,
+  Settings,
+  Repeat,
+  Target,
+  Calendar,
+  Code2,
+  TrendingUp,
+  Wrench,
+  BookOpen,
+  Layers,
+} from "lucide-astro";
 
-// Create a mapping for all available documentation
-function getAvailableDocuments() {
-  return [
-    { 
-      filename: 'INDEX.md', 
-      name: 'Documentation Index', 
-      category: 'Main', 
-      icon: 'Home',
-      route: '/dev/docs/documentation-index/',
-      description: 'Main documentation overview and navigation'
-    },
-    { 
-      filename: 'DEPLOYMENT-CHECKLIST.md', 
-      name: 'Deployment Checklist', 
-      category: 'Operations', 
-      icon: 'Rocket',
-      route: '/dev/docs/deployment-checklist/',
-      description: 'Complete pre-deployment verification checklist'
-    },
-    { 
-      filename: 'BILINGUAL-SYSTEM-GUIDE.md', 
-      name: 'Bilingual System Guide', 
-      category: 'i18n', 
-      icon: 'Globe',
-      route: '/dev/docs/bilingual-system-guide/',
-      description: 'Comprehensive guide to the bilingual architecture'
-    },
-    { 
-      filename: 'BLOG-I18N-EDGE-CASES.md', 
-      name: 'Blog i18n Edge Cases', 
-      category: 'Blog', 
-      icon: 'FileText',
-      route: '/dev/docs/blog-i18n-edge-cases/',
-      description: 'Edge cases and solutions for blog internationalization'
-    },
-    { 
-      filename: 'HREFLANG-FIX-SUMMARY.md', 
-      name: 'Hreflang Fix Summary', 
-      category: 'SEO', 
-      icon: 'Link',
-      route: '/dev/docs/hreflang-fix-summary/',
-      description: 'Summary of hreflang implementation and SEO fixes'
-    },
-    { 
-      filename: 'IMAGE-OPTIMIZATION-PRIORITIES.md', 
-      name: 'Image Optimization', 
-      category: 'Performance', 
-      icon: 'ImageIcon',
-      route: '/dev/docs/image-optimization-priorities/',
-      description: 'Image optimization strategies and priorities'
-    },
-    { 
-      filename: 'WINDSURF-RULES.md', 
-      name: 'Windsurf Rules', 
-      category: 'Development', 
-      icon: 'Settings',
-      route: '/dev/docs/windsurf-rules/',
-      description: 'Development rules and coding standards'
-    },
-    { 
-      filename: 'REDIRECT-ANALYSIS-SUMMARY.md', 
-      name: 'Redirect Analysis', 
-      category: 'SEO', 
-      icon: 'Repeat',
-      route: '/dev/docs/redirect-analysis-summary/',
-      description: 'Analysis of redirect chains and URL optimization'
-    },
-    { 
-      filename: 'QUIZ-LEAD-MAGNET-SYSTEM.md', 
-      name: 'Quiz Lead Magnet System', 
-      category: 'Marketing', 
-      icon: 'Target',
-      route: '/dev/docs/quiz-lead-magnet-system/',
-      description: 'Complete documentation for Communication Confidence Quiz'
-    },
-    { 
-      filename: 'BOOKING-SYSTEM.md', 
-      name: 'Booking System', 
-      category: 'Marketing', 
-      icon: 'Calendar',
-      route: '/dev/docs/booking-system/',
-      description: 'Self-scheduling appointment system with Google Calendar'
-    }
-  ];
-}
+// Icon mapping - convert string names to components
+const iconMap = {
+  Rocket: Rocket,
+  Globe: Globe,
+  FileText: FileText,
+  Link: Link,
+  ImageIcon: ImageIcon,
+  Settings: Settings,
+  Repeat: Repeat,
+  Target: Target,
+  Calendar: Calendar,
+  Code2: Code2,
+  TrendingUp: TrendingUp,
+  Wrench: Wrench,
+  BookOpen: BookOpen,
+  Layers: Layers,
+};
 
-const availableDocs = getAvailableDocuments();
-const totalDocs = availableDocs.length;
-const pageTitle = 'Documentation Library';
+// Organize documentation by category with priority
+const documentsByCategory = {
+  Overview: [
+    {
+      name: "Documentation Index",
+      icon: "BookOpen",
+      route: "/dev/docs/documentation-index/",
+      description: "Master overview of all project documentation",
+      priority: "high",
+      tags: ["overview", "navigation", "index"],
+    },
+  ],
+  Development: [
+    {
+      name: "Bilingual System Guide",
+      icon: "Globe",
+      route: "/dev/docs/bilingual-system-guide/",
+      description: "Complete i18n architecture and routing system",
+      priority: "high",
+      tags: ["i18n", "architecture", "core"],
+    },
+    {
+      name: "Windsurf Rules",
+      icon: "Settings",
+      route: "/dev/docs/windsurf-rules/",
+      description: "Coding standards and development guidelines",
+      priority: "medium",
+      tags: ["standards", "best-practices"],
+    },
+  ],
+  "SEO & Content": [
+    {
+      name: "Hreflang Fix Summary",
+      icon: "Link",
+      route: "/dev/docs/hreflang-fix-summary/",
+      description: "Hreflang implementation and SEO audit results",
+      priority: "high",
+      tags: ["seo", "international", "critical"],
+    },
+    {
+      name: "Blog i18n Edge Cases",
+      icon: "FileText",
+      route: "/dev/docs/blog-i18n-edge-cases/",
+      description: "Blog internationalization patterns and solutions",
+      priority: "medium",
+      tags: ["blog", "i18n", "content"],
+    },
+    {
+      name: "Redirect Analysis",
+      icon: "Repeat",
+      route: "/dev/docs/redirect-analysis-summary/",
+      description: "URL redirect chains and optimization strategy",
+      priority: "medium",
+      tags: ["seo", "urls", "redirects"],
+    },
+  ],
+  "Marketing Systems": [
+    {
+      name: "Quiz Lead Magnet",
+      icon: "Target",
+      route: "/dev/docs/quiz-lead-magnet-system/",
+      description: "Communication Confidence Quiz system documentation",
+      priority: "high",
+      tags: ["lead-gen", "conversion", "quiz"],
+    },
+    {
+      name: "Booking System",
+      icon: "Calendar",
+      route: "/dev/docs/booking-system/",
+      description: "Google Calendar integration and self-scheduling",
+      priority: "high",
+      tags: ["appointments", "automation", "google"],
+    },
+  ],
+  Operations: [
+    {
+      name: "Deployment Checklist",
+      icon: "Rocket",
+      route: "/dev/docs/deployment-checklist/",
+      description: "Pre-deployment validation and testing procedures",
+      priority: "high",
+      tags: ["deployment", "qa", "testing"],
+    },
+    {
+      name: "Image Optimization",
+      icon: "ImageIcon",
+      route: "/dev/docs/image-optimization-priorities/",
+      description: "Performance optimization and image strategy",
+      priority: "medium",
+      tags: ["performance", "images", "optimization"],
+    },
+  ],
+};
+
+// Quick start guides for different roles
+const quickStartGuides = [
+  {
+    role: "Developer",
+    icon: Code2,
+    color: "blue",
+    description: "Building features and fixing bugs",
+    docs: [
+      { name: "Bilingual System", route: "/dev/docs/bilingual-system-guide/" },
+      { name: "Coding Standards", route: "/dev/docs/windsurf-rules/" },
+    ],
+  },
+  {
+    role: "SEO/Content",
+    icon: TrendingUp,
+    color: "green",
+    description: "Optimizing search and content",
+    docs: [
+      { name: "Hreflang Guide", route: "/dev/docs/hreflang-fix-summary/" },
+      { name: "Blog i18n", route: "/dev/docs/blog-i18n-edge-cases/" },
+    ],
+  },
+  {
+    role: "Marketing",
+    icon: Target,
+    color: "purple",
+    description: "Lead generation systems",
+    docs: [
+      { name: "Quiz System", route: "/dev/docs/quiz-lead-magnet-system/" },
+      { name: "Booking Flow", route: "/dev/docs/booking-system/" },
+    ],
+  },
+  {
+    role: "DevOps",
+    icon: Wrench,
+    color: "orange",
+    description: "Deployment and monitoring",
+    docs: [
+      { name: "Deploy Checklist", route: "/dev/docs/deployment-checklist/" },
+      {
+        name: "Performance",
+        route: "/dev/docs/image-optimization-priorities/",
+      },
+    ],
+  },
+];
+
+const allDocs = Object.values(documentsByCategory).flat();
+const totalDocs = allDocs.length;
+const highPriorityDocs = allDocs.filter((d) => d.priority === "high").length;
+const pageTitle = "Documentation Library";
 
 // Icon component map
 const iconComponents: Record<string, any> = {
-  Home, Rocket, Globe, FileText, Link, ImageIcon, Settings, Repeat, Target, Calendar
+  Rocket,
+  Globe,
+  FileText,
+  Link,
+  ImageIcon,
+  Settings,
+  Repeat,
+  Target,
+  Calendar,
+  Code2,
+  TrendingUp,
+  Wrench,
+};
+
+// Color schemes for role cards
+const colorSchemes: Record<
+  string,
+  { bg: string; border: string; icon: string }
+> = {
+  blue: { bg: "bg-blue-600", border: "border-blue-500", icon: "text-blue-300" },
+  green: {
+    bg: "bg-green-600",
+    border: "border-green-500",
+    icon: "text-green-300",
+  },
+  purple: {
+    bg: "bg-purple-600",
+    border: "border-purple-500",
+    icon: "text-purple-300",
+  },
+  orange: {
+    bg: "bg-orange-600",
+    border: "border-orange-500",
+    icon: "text-orange-300",
+  },
 };
 ---
 
-<DocsLayout title={pageTitle} description="NY English Teacher project documentation library">
-  <!-- Document Navigation -->
-  <div class="mb-8 bg-slate-800 rounded-xl shadow-xl border border-slate-700 overflow-hidden">
-    <div class="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4 border-b border-blue-800">
-      <h2 class="text-xl font-bold text-white flex items-center">
-        <FileText size={24} class="mr-3" />
-        Documentation Library
-      </h2>
-      <p class="text-blue-100 text-sm mt-1">{totalDocs} documents available</p>
-    </div>
-    
-    <div class="p-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {availableDocs.map(doc => {
-          const IconComponent = iconComponents[doc.icon];
-          return (
-            <a 
-              href={doc.route}
-              class="group block p-4 rounded-lg border-2 transition-all duration-200 transform hover:scale-105 hover:shadow-xl bg-slate-700 border-slate-600 hover:border-blue-500 hover:bg-slate-600"
+<DocsLayout
+  title={pageTitle}
+  description="NY English Teacher project documentation library"
+>
+  <!-- Hero Section -->
+  <div
+    class="mb-4 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-xl shadow-xl overflow-hidden"
+  >
+    <div class="px-5 py-4">
+      <div class="flex items-center justify-between gap-4 flex-wrap">
+        <div class="flex-1 min-w-[300px]">
+          <h1
+            class="text-2xl font-bold text-white mb-2 flex items-center gap-2"
+          >
+            <BookOpen size={28} />
+            Documentation Library
+          </h1>
+          <p class="text-white/80 text-sm mb-3">
+            Complete technical documentation for NY English Teacher platform
+          </p>
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <span
+              class="flex items-center gap-1.5 bg-white/20 px-3 py-1.5 rounded-md backdrop-blur-sm border border-white/30 text-white"
             >
-              <div class="flex items-start gap-3">
-                <div class="flex-shrink-0 text-blue-400 group-hover:text-blue-300">
-                  <IconComponent size={20} />
+              <FileText size={14} />
+              <span class="font-semibold">{totalDocs}</span> Docs
+            </span>
+            <span
+              class="flex items-center gap-1.5 bg-white/20 px-3 py-1.5 rounded-md backdrop-blur-sm border border-white/30 text-white"
+            >
+              <Layers size={14} />
+              <span class="font-semibold"
+                >{Object.keys(documentsByCategory).length}</span
+              > Categories
+            </span>
+            <span
+              class="flex items-center gap-1.5 bg-white/20 px-3 py-1.5 rounded-md backdrop-blur-sm border border-white/30 text-white"
+            >
+              <Target size={14} />
+              <span class="font-semibold">{highPriorityDocs}</span> Priority
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Start by Role -->
+  <div class="mb-4">
+    <div class="mb-2">
+      <h2
+        class="text-lg font-bold flex items-center gap-2"
+        style="color: var(--text-primary);"
+      >
+        <Rocket size={20} />
+        Quick Start by Role
+      </h2>
+      <p class="mt-0.5 text-xs" style="color: var(--text-muted);">
+        Jump to documentation relevant to your work
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+      {
+        quickStartGuides.map((guide) => {
+          const IconComponent = guide.icon;
+          const colors = colorSchemes[guide.color];
+          return (
+            <div
+              class={`${colors.bg} rounded-lg p-4 border-2 ${colors.border} hover:scale-[1.02] transition-transform shadow-lg`}
+            >
+              <div class="flex items-center gap-2 mb-3">
+                <div class="p-2 bg-white/20 rounded-md backdrop-blur-sm">
+                  <IconComponent size={20} class="text-white" />
                 </div>
-                <div class="flex-1">
-                  <div class="font-semibold text-sm mb-2 text-white group-hover:text-blue-300">
-                    {doc.name}
-                  </div>
-                  <div class="text-xs text-slate-300 mb-2 line-clamp-2">
-                    {doc.description}
-                  </div>
-                  <div class="text-xs inline-flex items-center px-2 py-1 rounded-full bg-slate-600 text-slate-300 group-hover:bg-blue-600 group-hover:text-white">
-                    {doc.category}
-                  </div>
+                <div>
+                  <h3 class="font-bold text-white text-base">{guide.role}</h3>
+                  <p class="text-xs text-white/70">{guide.description}</p>
                 </div>
               </div>
-            </a>
+              <div class="space-y-1.5 mt-3 border-t border-white/20 pt-3">
+                {guide.docs.map((doc) => (
+                  <a
+                    href={doc.route}
+                    class="flex items-center gap-2 text-sm text-white hover:text-white/80 hover:translate-x-1 transition-all py-1"
+                  >
+                    <span class="text-white/60">→</span>
+                    {doc.name}
+                  </a>
+                ))}
+              </div>
+            </div>
           );
-        })}
-      </div>
+        })
+      }
     </div>
   </div>
 
-  <!-- Getting Started Section -->
-  <div class="mt-8 bg-slate-800 rounded-xl shadow-xl border border-slate-700 overflow-hidden">
-    <div class="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-6 border-b border-blue-800">
-      <h2 class="text-2xl font-bold text-white flex items-center">
-        <Rocket size={28} class="mr-3" />
-        Getting Started
+  <!-- All Documentation by Category -->
+  <div class="mb-4">
+    <div class="mb-2">
+      <h2
+        class="text-lg font-bold flex items-center gap-2"
+        style="color: var(--text-primary);"
+      >
+        <Layers size={20} />
+        All Documentation by Category
       </h2>
-      <p class="text-blue-100 mt-2">Quick navigation to key documentation sections</p>
+      <p class="mt-0.5 text-xs" style="color: var(--text-muted);">
+        All documentation organized by topic
+      </p>
     </div>
-    
-    <div class="p-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="text-center">
-          <div class="flex justify-center mb-3">
-            <div class="p-3 bg-blue-600 rounded-full shadow-lg">
-              <Code2 size={32} class="text-white" />
+
+    {
+      Object.entries(documentsByCategory).map(([category, docs]) => (
+        <div class="bg-slate-800 rounded-lg shadow-lg border border-slate-700 overflow-hidden mb-3">
+          <div class="bg-gradient-to-r from-slate-700 to-slate-600 px-4 py-2.5 border-b border-slate-600">
+            <h3 class="text-base font-bold text-white">{category}</h3>
+            <p class="text-slate-300 text-xs">
+              {docs.length} document{docs.length !== 1 ? "s" : ""}
+            </p>
+          </div>
+
+          <div class="p-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {docs.map((doc) => {
+                const IconComponent = iconMap[doc.icon as keyof typeof iconMap];
+                const isPriority = doc.priority === "high";
+                return (
+                  <a
+                    href={doc.route}
+                    class={`group block p-3 rounded-md border transition-all duration-200 hover:scale-[1.01] hover:shadow-lg ${
+                      isPriority
+                        ? "bg-blue-900/30 border-blue-500 hover:bg-blue-900/50"
+                        : "bg-slate-700/50 border-slate-600 hover:border-slate-500 hover:bg-slate-700"
+                    }`}
+                  >
+                    <div class="flex items-start gap-3">
+                      <div
+                        class={`flex-shrink-0 p-1.5 rounded-md ${isPriority ? "bg-blue-600" : "bg-slate-600"}`}
+                      >
+                        <IconComponent size={18} class="text-white" />
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <div class="flex items-start justify-between gap-2 mb-1">
+                          <h4 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors">
+                            {doc.name}
+                          </h4>
+                          {isPriority && (
+                            <span class="flex-shrink-0 px-1.5 py-0.5 text-[10px] font-bold bg-blue-500 text-white rounded-full">
+                              HIGH
+                            </span>
+                          )}
+                        </div>
+                        <p class="text-xs text-slate-300 mb-2 line-clamp-2">
+                          {doc.description}
+                        </p>
+                        <div class="flex flex-wrap gap-1">
+                          {doc.tags.map((tag) => (
+                            <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-600 text-slate-300 group-hover:bg-slate-500 transition-colors">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
           </div>
-          <h3 class="font-semibold text-white mb-2">For Developers</h3>
-          <p class="text-sm text-slate-300 mb-4">Start with system architecture and coding standards</p>
-          <div class="space-y-2">
-            <a href="/dev/docs/documentation-index/" class="flex items-center justify-center gap-2 text-blue-400 hover:text-blue-300 text-sm transition-colors">
-              <BookOpen size={14} /> Documentation Index
-            </a>
-            <a href="/dev/docs/bilingual-system-guide/" class="flex items-center justify-center gap-2 text-blue-400 hover:text-blue-300 text-sm transition-colors">
-              <Globe size={14} /> Bilingual System Guide
-            </a>
-            <a href="/dev/docs/windsurf-rules/" class="flex items-center justify-center gap-2 text-blue-400 hover:text-blue-300 text-sm transition-colors">
-              <Settings size={14} /> Windsurf Rules
-            </a>
-          </div>
         </div>
-        
-        <div class="text-center">
-          <div class="flex justify-center mb-3">
-            <div class="p-3 bg-slate-600 rounded-full shadow-lg">
-              <TrendingUp size={32} class="text-blue-300" />
-            </div>
-          </div>
-          <h3 class="font-semibold text-white mb-2">For SEO/Content</h3>
-          <p class="text-sm text-slate-300 mb-4">SEO implementation and content guidelines</p>
-          <div class="space-y-2">
-            <a href="/dev/docs/hreflang-fix-summary/" class="flex items-center justify-center gap-2 text-blue-400 hover:text-blue-300 text-sm transition-colors">
-              <Link size={14} /> Hreflang Fix Summary
-            </a>
-            <a href="/dev/docs/blog-i18n-edge-cases/" class="flex items-center justify-center gap-2 text-blue-400 hover:text-blue-300 text-sm transition-colors">
-              <FileText size={14} /> Blog i18n Edge Cases
-            </a>
-            <a href="/dev/docs/redirect-analysis-summary/" class="flex items-center justify-center gap-2 text-blue-400 hover:text-blue-300 text-sm transition-colors">
-              <Repeat size={14} /> Redirect Analysis
-            </a>
-          </div>
-        </div>
-        
-        <div class="text-center">
-          <div class="flex justify-center mb-3">
-            <div class="p-3 bg-slate-600 rounded-full shadow-lg">
-              <Target size={32} class="text-blue-300" />
-            </div>
-          </div>
-          <h3 class="font-semibold text-white mb-2">For Marketing</h3>
-          <p class="text-sm text-slate-300 mb-4">Lead generation and conversion systems</p>
-          <div class="space-y-2">
-            <a href="/dev/docs/quiz-lead-magnet-system/" class="flex items-center justify-center gap-2 text-blue-400 hover:text-blue-300 text-sm transition-colors">
-              <Target size={14} /> Quiz Lead Magnet
-            </a>
-            <a href="/dev/docs/booking-system/" class="flex items-center justify-center gap-2 text-blue-400 hover:text-blue-300 text-sm transition-colors">
-              <Calendar size={14} /> Booking System
-            </a>
-          </div>
-        </div>
-        
-        <div class="text-center">
-          <div class="flex justify-center mb-3">
-            <div class="p-3 bg-slate-600 rounded-full shadow-lg">
-              <Wrench size={32} class="text-blue-300" />
-            </div>
-          </div>
-          <h3 class="font-semibold text-white mb-2">For DevOps</h3>
-          <p class="text-sm text-slate-300 mb-4">Deployment and performance optimization</p>
-          <div class="space-y-2">
-            <a href="/dev/docs/deployment-checklist/" class="flex items-center justify-center gap-2 text-blue-400 hover:text-blue-300 text-sm transition-colors">
-              <Rocket size={14} /> Deployment Checklist
-            </a>
-            <a href="/dev/docs/image-optimization-priorities/" class="flex items-center justify-center gap-2 text-blue-400 hover:text-blue-300 text-sm transition-colors">
-              <ImageIcon size={14} /> Image Optimization
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+      ))
+    }
   </div>
 
-  <!-- Development Info -->
-  <div class="mt-8 bg-slate-800 rounded-xl border border-slate-700 overflow-hidden shadow-xl">
-    <div class="bg-gradient-to-r from-slate-700 to-slate-600 px-6 py-3 border-b border-slate-600">
-      <h3 class="font-bold text-white flex items-center">
-        <Database size={20} class="mr-2" />
-        Development Information
-      </h3>
-    </div>
-    <div class="p-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-        <div class="space-y-3">
-          <div class="flex items-center">
-            <span class="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
-            <span class="font-medium text-slate-200">Documentation System:</span>
-            <code class="ml-2 px-2 py-1 bg-slate-700 text-blue-300 rounded text-xs border border-slate-600">Astro + MarkdownLayout</code>
-          </div>
-          <div class="flex items-center">
-            <span class="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
-            <span class="font-medium text-slate-200">Total Documents:</span>
-            <span class="ml-2 px-2 py-1 bg-blue-600 text-white rounded text-xs font-semibold">{totalDocs}</span>
-          </div>
+  <!-- System Info Footer -->
+  <div class="mt-8 bg-slate-800/50 rounded-lg border border-slate-700 p-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-300">
+      <div class="flex items-center gap-3">
+        <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+        <div>
+          <span class="font-medium">Source:</span>
+          <code
+            class="ml-2 px-2 py-1 bg-slate-700 rounded text-blue-300 text-xs"
+            >/docs/</code
+          >
         </div>
-        <div class="space-y-3">
-          <div class="flex items-center">
-            <span class="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
-            <span class="font-medium text-slate-200">Source Directory:</span>
-            <code class="ml-2 px-2 py-1 bg-slate-700 text-blue-300 rounded text-xs border border-slate-600">/docs/</code>
-          </div>
-          <div class="flex items-center">
-            <span class="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
-            <span class="font-medium text-slate-200">Layout Component:</span>
-            <code class="ml-2 px-2 py-1 bg-slate-700 text-blue-300 rounded text-xs border border-slate-600">MarkdownLayout.astro</code>
-          </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+        <div>
+          <span class="font-medium">Layout:</span>
+          <code
+            class="ml-2 px-2 py-1 bg-slate-700 rounded text-blue-300 text-xs"
+            >MarkdownLayout.astro</code
+          >
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+        <div>
+          <span class="font-medium">Route:</span>
+          <code
+            class="ml-2 px-2 py-1 bg-slate-700 rounded text-blue-300 text-xs"
+            >/dev/docs/</code
+          >
         </div>
       </div>
     </div>

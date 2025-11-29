@@ -12,17 +12,17 @@ export interface Props {
 const { title, description = "NY English Teacher Documentation" } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="zeus">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title} | NY English Teacher Docs</title>
     <meta name="description" content={description} />
-    
+
     <!-- Project Tailwind CSS -->
     <link rel="stylesheet" href="/src/styles/global.css" />
-    
+
     <!-- Custom documentation styles using project variables -->
     <style>
       /* Theme Variables */
@@ -71,8 +71,9 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
         font-family: var(--font-base);
         background-color: var(--bg-primary) !important;
         color: var(--text-primary);
-        transition: background-color var(--transition-speed) ease, 
-                    color var(--transition-speed) ease;
+        transition:
+          background-color var(--transition-speed) ease,
+          color var(--transition-speed) ease;
       }
 
       /* Override Tailwind body background */
@@ -83,17 +84,17 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
       body.light-theme.bg-slate-900 {
         background-color: #f8fafc !important;
       }
-      
+
       /* Documentation-specific styling */
       .docs-content {
-        max-width: var(--container-base);
+        max-width: 1400px;
         margin: 0 auto;
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 2rem;
         background-color: var(--bg-secondary);
         min-height: calc(100vh - 120px);
         transition: background-color var(--transition-speed) ease;
       }
-      
+
       .docs-content h1 {
         font-family: var(--font-headline);
         font-size: var(--text-h1);
@@ -103,7 +104,7 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
         border-bottom: 2px solid var(--color-primary);
         padding-bottom: 1rem;
       }
-      
+
       .docs-content h2 {
         font-family: var(--font-headline);
         font-size: var(--text-h2);
@@ -113,7 +114,7 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
         border-left: 4px solid var(--color-primary);
         padding-left: 1rem;
       }
-      
+
       .docs-content h3 {
         font-family: var(--font-headline);
         font-size: var(--text-h3);
@@ -121,43 +122,44 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
         color: var(--color-headline);
         margin: 1.5rem 0 0.75rem 0;
       }
-      
+
       .docs-content p {
         font-family: var(--font-base);
         color: var(--color-body-base);
         line-height: 1.8;
         margin-bottom: 1rem;
       }
-      
-      .docs-content ul, .docs-content ol {
+
+      .docs-content ul,
+      .docs-content ol {
         margin-left: 1.5rem;
         margin-bottom: 1rem;
       }
-      
+
       .docs-content li {
         color: var(--color-body-base);
         margin-bottom: 0.5rem;
       }
-      
+
       .docs-content a {
         color: var(--color-primary);
         text-decoration: underline;
       }
-      
+
       .docs-content a:hover {
         color: var(--color-primary-light);
       }
-      
+
       .docs-content code {
         background-color: var(--code-bg);
         color: var(--color-primary);
         padding: 0.2rem 0.5rem;
         border-radius: 0.25rem;
         font-size: var(--text-small);
-        font-family: 'Courier New', monospace;
+        font-family: "Courier New", monospace;
         transition: background-color var(--transition-speed) ease;
       }
-      
+
       .docs-content pre {
         background-color: var(--bg-tertiary);
         color: var(--text-primary);
@@ -165,15 +167,17 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
         border-radius: var(--border-radius-base);
         overflow-x: auto;
         margin-bottom: 1rem;
-        transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+        transition:
+          background-color var(--transition-speed) ease,
+          color var(--transition-speed) ease;
       }
-      
+
       .docs-content pre code {
         background-color: transparent;
         color: var(--text-primary);
         padding: 0;
       }
-      
+
       .docs-content blockquote {
         border-left: 4px solid var(--color-secondary);
         background-color: var(--color-background-light);
@@ -181,34 +185,39 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
         margin: 1rem 0;
         font-style: italic;
       }
-      
+
       .docs-content table {
         width: 100%;
         border-collapse: collapse;
         border: 1px solid var(--color-border);
         margin-bottom: 1rem;
       }
-      
-      .docs-content th, .docs-content td {
+
+      .docs-content th,
+      .docs-content td {
         border: 1px solid var(--color-border);
         padding: 0.75rem;
         text-align: left;
       }
-      
+
       .docs-content th {
         background-color: var(--color-background-light);
         font-weight: 600;
         color: var(--color-headline);
       }
-      
+
       /* Navigation styling */
       .docs-nav {
-        background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+        background: linear-gradient(
+          135deg,
+          var(--color-primary),
+          var(--color-primary-dark)
+        );
         color: #ffffff;
         padding: 1rem;
         box-shadow: var(--shadow-lg);
       }
-      
+
       .docs-nav h1 {
         font-family: var(--font-headline);
         font-size: var(--text-xl);
@@ -218,7 +227,7 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
         padding-bottom: 0;
         color: #ffffff;
       }
-      
+
       .dev-warning {
         background-color: var(--warning-bg);
         border-left: 4px solid var(--warning-border);
@@ -263,7 +272,9 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
 
       .theme-icon {
         color: #1e293b !important;
-        transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+        transition:
+          opacity var(--transition-speed) ease,
+          transform var(--transition-speed) ease;
       }
 
       .theme-icon.hidden {
@@ -343,66 +354,85 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
       }
     </style>
   </head>
-  
+
   <body class="bg-slate-900 min-h-screen">
     <!-- Navigation Header -->
-    <nav class="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 border-b-2 border-blue-600 shadow-2xl">
+    <nav
+      class="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 border-b-2 border-blue-600 shadow-2xl"
+    >
       <div class="max-w-7xl mx-auto px-8 py-6">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-4">
-            <img src="/images/logos/new-york-english-sq-og.jpg" alt="NY English Teacher Logo" class="w-12 h-12 rounded-lg shadow-lg" />
+            <img
+              src="/images/logos/new-york-english-sq-og.jpg"
+              alt="NY English Teacher Logo"
+              class="w-12 h-12 rounded-lg shadow-lg"
+            />
             <div>
-              <h1 class="text-2xl font-bold text-white tracking-tight">NY English Teacher Documentation</h1>
+              <h1 class="text-2xl font-bold text-white tracking-tight">
+                NY English Teacher Documentation
+              </h1>
               <p class="text-slate-300 text-sm mt-0.5">Development Preview</p>
             </div>
           </div>
-          
+
           <!-- Theme Toggle Button -->
-          <button 
+          <button
             id="theme-toggle"
             class="theme-toggle"
             title="Toggle theme"
             aria-label="Toggle theme"
           >
             <!-- Sun Icon (Dark Mode) -->
-            <svg id="sun-icon" class="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="5"/>
-              <line x1="12" y1="1" x2="12" y2="3"/>
-              <line x1="12" y1="21" x2="12" y2="23"/>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-              <line x1="1" y1="12" x2="3" y2="12"/>
-              <line x1="21" y1="12" x2="23" y2="12"/>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            <svg
+              id="sun-icon"
+              class="theme-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
             <!-- Moon Icon (Light Mode) -->
-            <svg id="moon-icon" class="theme-icon hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            <svg
+              id="moon-icon"
+              class="theme-icon hidden"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </button>
         </div>
       </div>
     </nav>
-    
+
     <!-- Main Content -->
     <main class="docs-content">
-      <!-- Development Warning -->
-      <div class="dev-warning">
-        <div class="flex items-center">
-          <span class="text-2xl mr-3">⚠️</span>
-          <div>
-            <p class="font-semibold text-yellow-800">Development Mode Only</p>
-            <p class="text-yellow-700 text-sm">This documentation preview is only available during development and will not be included in production builds.</p>
-          </div>
-        </div>
-      </div>
-      
       <!-- Documentation Content -->
       <article class="prose prose-lg max-w-none">
         <slot />
       </article>
-      
+
       <!-- Footer -->
       <footer class="mt-12 pt-8 border-t border-gray-200">
         <div class="flex justify-between items-center text-sm text-gray-500">
@@ -411,9 +441,9 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
         </div>
       </footer>
     </main>
-    
+
     <!-- Back to top button -->
-    <button 
+    <button
       onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
       class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors"
       title="Back to top"
@@ -425,38 +455,40 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
     <script is:inline>
       // Initialize theme from localStorage or default to dark
       function initTheme() {
-        const savedTheme = localStorage.getItem('docs-theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-        
-        if (theme === 'light') {
-          document.body.classList.add('light-theme');
+        const savedTheme = localStorage.getItem("docs-theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const theme = savedTheme || (prefersDark ? "dark" : "light");
+
+        if (theme === "light") {
+          document.body.classList.add("light-theme");
           updateIcons(true);
         }
       }
 
       // Update icon visibility
       function updateIcons(isLight) {
-        const sunIcon = document.getElementById('sun-icon');
-        const moonIcon = document.getElementById('moon-icon');
-        
+        const sunIcon = document.getElementById("sun-icon");
+        const moonIcon = document.getElementById("moon-icon");
+
         if (isLight) {
-          sunIcon.classList.add('hidden');
-          moonIcon.classList.remove('hidden');
+          sunIcon.classList.add("hidden");
+          moonIcon.classList.remove("hidden");
         } else {
-          sunIcon.classList.remove('hidden');
-          moonIcon.classList.add('hidden');
+          sunIcon.classList.remove("hidden");
+          moonIcon.classList.add("hidden");
         }
       }
 
       // Toggle theme
       function toggleTheme() {
         const body = document.body;
-        const isLight = body.classList.toggle('light-theme');
-        
+        const isLight = body.classList.toggle("light-theme");
+
         // Save preference
-        localStorage.setItem('docs-theme', isLight ? 'light' : 'dark');
-        
+        localStorage.setItem("docs-theme", isLight ? "light" : "dark");
+
         // Update icons
         updateIcons(isLight);
       }
@@ -465,7 +497,9 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
       initTheme();
 
       // Add click handler
-      document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+      document
+        .getElementById("theme-toggle")
+        .addEventListener("click", toggleTheme);
     </script>
   </body>
 </html>
