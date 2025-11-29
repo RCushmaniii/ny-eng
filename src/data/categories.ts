@@ -11,7 +11,7 @@ export const categories: Category[] = [
   // Service-based categories (ensure these match service pages)
   {
     name: 'Startup Founders',
-    name_es: 'Inglés para Fundadores de Startups',
+    name_es: 'Fundadores de Startups',
     slug: 'startup-founders',
     esSlug: 'ingles-para-fundadores-de-startups',
     description: 'Master English for startup founders. Perfect your investor pitch, communicate your vision clearly, and lead international teams with confidence.',

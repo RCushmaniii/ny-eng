@@ -12,7 +12,7 @@ export const highStakesConfig: QuizConfig = {
   
   en: {
     title: 'High-Stakes Communication Confidence Assessment',
-    subtitle: 'Discover if your English is bridging the gap between your expertise and your impact.',
+    subtitle: 'Discover if your English is bridging the gap between your expertise and your impact in high-pressure presentations, interviews, and critical meetings.',
     
     questions: [
       {
@@ -121,7 +121,7 @@ export const highStakesConfig: QuizConfig = {
   // Placeholder for Spanish (using English content for now until translated)
   es: {
     title: 'Evaluación de Comunicación de Alto Nivel',
-    subtitle: 'Descubre si tu inglés está creando una brecha entre tu experiencia y tu impacto.',
+    subtitle: 'Descubre si tu inglés está creando una brecha entre tu experiencia y tu impacto en presentaciones de alta presión, entrevistas y reuniones críticas.',
     questions: [
       {
         id: 1,

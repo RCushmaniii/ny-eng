@@ -15,7 +15,7 @@ export const itServicesConfig: QuizConfig = {
   
   en: {
     title: 'IT Communication Confidence Assessment',
-    subtitle: 'Discover how English communication gaps affect your technical team\'s credibility and deal momentum',
+    subtitle: 'Discover how English communication gaps affect your technical team\'s credibility, deal momentum, and ability to win North American clients.',
     
     questions: [
       {
@@ -156,7 +156,7 @@ export const itServicesConfig: QuizConfig = {
   
   es: {
     title: 'Evaluación de Confianza en Comunicación para TI',
-    subtitle: 'Descubre cómo las brechas de comunicación en inglés afectan la credibilidad de tu equipo técnico y el impulso de los acuerdos',
+    subtitle: 'Descubre cómo las brechas de comunicación en inglés afectan la credibilidad de tu equipo técnico, el impulso de acuerdos y la capacidad de ganar clientes norteamericanos.',
     
     questions: [
       {

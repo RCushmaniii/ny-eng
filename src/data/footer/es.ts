@@ -27,7 +27,7 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
         title: "Contacto",
         items: [
           { type: "link", name: "Contáctame por WhatsApp", href: "https://wa.link/pk4f97", target: "_blank", rel: "noopener noreferrer" },
-          { type: "link", name: "Agendar una Consulta", href: "/es/book/" },
+          { type: "link", name: "Agendar una Consulta", href: "/es/reservar/" },
           { type: "link", name: "Envíame un Email", href: routes.es.contact },
         ] as ConnectItem[],
       },
@@ -43,7 +43,7 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
       hideCta: false,
       button: {
         text: "Reservar mi Consulta Gratuita",
-        link: "/es/book/",
+        link: "/es/reservar/",
       },
     },
   };

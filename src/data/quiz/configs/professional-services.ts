@@ -6,7 +6,7 @@ export const professionalServicesConfig: QuizConfig = {
   en: {
     title: 'Professional Communication Confidence Assessment',
     subtitle:
-      "For doctors, lawyers, and consultants. See how your English impacts liability, trust, and client authority.",
+      "For doctors, lawyers, and consultants. See how your English impacts liability, trust, client authority, and professional credibility in North America.",
 
     questions: [
       {
@@ -243,7 +243,7 @@ export const professionalServicesConfig: QuizConfig = {
   es: {
     title: 'Evaluación de Comunicación Profesional',
     subtitle:
-      'Para médicos, abogados y consultores. Descubre cómo tu inglés impacta tu autoridad, confianza y riesgo profesional.',
+      'Para médicos, abogados y consultores. Descubre cómo tu inglés impacta tu autoridad, confianza, riesgo profesional y credibilidad con clientes norteamericanos.',
 
     questions: [
       {

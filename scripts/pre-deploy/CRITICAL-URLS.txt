@@ -1,0 +1,126 @@
+# Critical URLs Whitelist - New York English Teacher
+# Last Updated: 2024-11-28
+# 
+# This is the baseline truth for what MUST be in sitemap.xml
+# Organized by: Language > Page Type
+# All URLs include trailing slashes
+#
+# MAINTENANCE NOTES:
+# - Add new blog posts as they're published
+# - Add new service pages when created
+# - Do NOT include pagination URLs (e.g., /blog/2/)
+# - Do NOT include quiz question pages (thin content)
+# - Do NOT include thank-you pages (no SEO value)
+
+================================================================================
+ENGLISH PAGES
+================================================================================
+
+CORE PAGES
+----------
+https://www.nyenglishteacher.com/en/
+https://www.nyenglishteacher.com/en/about/
+https://www.nyenglishteacher.com/en/contact/
+https://www.nyenglishteacher.com/en/book/
+https://www.nyenglishteacher.com/en/faqs/
+https://www.nyenglishteacher.com/en/testimonials/
+
+SERVICES
+--------
+https://www.nyenglishteacher.com/en/services/
+https://www.nyenglishteacher.com/en/services/executive-english/
+https://www.nyenglishteacher.com/en/services/startup-founders/
+https://www.nyenglishteacher.com/en/services/tech-english/
+https://www.nyenglishteacher.com/en/services/logistics-english/
+https://www.nyenglishteacher.com/en/services/professional-english/
+https://www.nyenglishteacher.com/en/services/high-stakes-english/
+
+BLOG
+----
+https://www.nyenglishteacher.com/en/blog/
+https://www.nyenglishteacher.com/en/blog/small-talk-to-smart-talk/
+https://www.nyenglishteacher.com/en/blog/executive-video-call/
+https://www.nyenglishteacher.com/en/blog/executive-english-coaching/
+https://www.nyenglishteacher.com/en/blog/master-business-english/
+https://www.nyenglishteacher.com/en/blog/managers-lose-millions/
+https://www.nyenglishteacher.com/en/blog/boost-eng-confidence/
+https://www.nyenglishteacher.com/en/blog/4-secrets-executives-use/
+https://www.nyenglishteacher.com/en/blog/5-practical-ways-to-boost-business-english/
+
+ASSESSMENTS
+-----------
+https://www.nyenglishteacher.com/en/assessments/
+https://www.nyenglishteacher.com/en/quiz/it-services/
+https://www.nyenglishteacher.com/en/quiz/executives/
+https://www.nyenglishteacher.com/en/quiz/high-stakes/
+https://www.nyenglishteacher.com/en/quiz/professional-services/
+
+LEGAL
+-----
+https://www.nyenglishteacher.com/en/legal/privacy-policy/
+https://www.nyenglishteacher.com/en/legal/terms-of-service/
+
+
+================================================================================
+SPANISH PAGES
+================================================================================
+
+CORE PAGES
+----------
+https://www.nyenglishteacher.com/es/
+https://www.nyenglishteacher.com/es/about/
+https://www.nyenglishteacher.com/es/contact/
+https://www.nyenglishteacher.com/es/reservar/
+https://www.nyenglishteacher.com/es/faqs/
+https://www.nyenglishteacher.com/es/testimonios/
+
+SERVICES
+--------
+https://www.nyenglishteacher.com/es/servicios/
+https://www.nyenglishteacher.com/es/servicios/ingles-para-ejecutivos/
+https://www.nyenglishteacher.com/es/servicios/ingles-para-fundadores-de-startups/
+https://www.nyenglishteacher.com/es/servicios/ingles-para-tecnologia/
+https://www.nyenglishteacher.com/es/servicios/ingles-para-logistica/
+https://www.nyenglishteacher.com/es/servicios/ingles-para-profesionales/
+https://www.nyenglishteacher.com/es/servicios/ingles-para-presentaciones/
+
+BLOG
+----
+https://www.nyenglishteacher.com/es/blog/
+https://www.nyenglishteacher.com/es/blog/charla-pequena-habla-inteligente/
+https://www.nyenglishteacher.com/es/blog/presencia-ejecutiva-en-videollamadas/
+https://www.nyenglishteacher.com/es/blog/coaching-ejecutivo/
+https://www.nyenglishteacher.com/es/blog/dominar-negocios/
+https://www.nyenglishteacher.com/es/blog/por-que-los-gerentes-de-ti-en-mexico-pierden-clientes/
+https://www.nyenglishteacher.com/es/blog/aumentar-confianza/
+https://www.nyenglishteacher.com/es/blog/4-secretos-que-usan-los-ejecutivos/
+https://www.nyenglishteacher.com/es/blog/5-formas-practicas-mejorar-ingles-negocios/
+
+ASSESSMENTS
+-----------
+https://www.nyenglishteacher.com/es/assessments/
+https://www.nyenglishteacher.com/es/quiz/it-services/
+https://www.nyenglishteacher.com/es/quiz/executives/
+https://www.nyenglishteacher.com/es/quiz/high-stakes/
+https://www.nyenglishteacher.com/es/quiz/professional-services/
+
+LEGAL
+-----
+https://www.nyenglishteacher.com/es/legal/privacy-policy/
+https://www.nyenglishteacher.com/es/legal/terms-of-service/
+
+
+================================================================================
+SUMMARY
+================================================================================
+English Pages: 38 (8 blog posts + 30 other pages)
+Spanish Pages: 38 (8 blog posts + 30 other pages)
+Total: 76 critical URLs
+
+EXCLUDED FROM SITEMAP (by design):
+- Quiz question pages (/quiz/question/1/, etc.) - thin content, no SEO value
+- Quiz report pages (/quiz/report/) - dynamically generated, no SEO value
+- Blog pagination (/blog/2/, /blog/3/, etc.) - duplicate content
+- Thank you pages (/thank-you/) - no SEO value
+- Admin pages (/admin/*) - private
+- Dev pages (/dev/*) - development only

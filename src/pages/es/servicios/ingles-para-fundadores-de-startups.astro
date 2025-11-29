@@ -12,7 +12,9 @@ import CtaSection from "@components/sections/CtaSection.astro";
 import { services } from "@data/services";
 
 // Get the startup founders service data
-const startupFoundersService = services.find(s => s.slug === 'startup-founders');
+const startupFoundersService = services.find(
+  (s) => s.slug === "startup-founders"
+);
 
 // Import methodology content
 import type { Methodology } from "@data/methodology";
@@ -20,29 +22,34 @@ import type { Methodology } from "@data/methodology";
 // Define Spanish methodology content directly
 const metodologiaEs: Methodology = {
   title: "Tu Método de Coaching Personalizado",
-  subtitle: "Una metodología probada de cuatro pasos diseñada para entender tus desafíos únicos y desarrollar las habilidades específicas que necesitas para tener éxito.",
+  subtitle:
+    "Una metodología probada de cuatro pasos diseñada para entender tus desafíos únicos y desarrollar las habilidades específicas que necesitas para tener éxito.",
   steps: [
     {
       icon: "lucide:search-check",
       title: "Descubrimiento y Evaluación",
-      description: "Inglés para fundadores: impulsa tu startup y presenta tu visión con confianza ante inversionistas y socios internacionales."
+      description:
+        "Inglés para fundadores: impulsa tu startup y presenta tu visión con confianza ante inversionistas y socios internacionales.",
     },
     {
       icon: "lucide:map",
       title: "Mapeo Estratégico de Objetivos",
-      description: "Juntos, definimos objetivos claros y medibles directamente vinculados con tu éxito profesional, creando un plan estratégico enfocado en tus metas específicas."
+      description:
+        "Juntos, definimos objetivos claros y medibles directamente vinculados con tu éxito profesional, creando un plan estratégico enfocado en tus metas específicas.",
     },
     {
       icon: "lucide:settings",
       title: "Currículum Personalizado y Práctica",
-      description: "Tu programa está construido para ti, enfocándose en el vocabulario específico, frases y matices culturales relevantes para tu industria y tareas diarias."
+      description:
+        "Tu programa está construido para ti, enfocándose en el vocabulario específico, frases y matices culturales relevantes para tu industria y tareas diarias.",
     },
     {
       icon: "lucide:message-square-text",
       title: "Simulación del Mundo Real y Retroalimentación",
-      description: "Aquí es donde la teoría se convierte en instinto. Realizamos presentaciones simuladas y juegos de rol de negociaciones difíciles, proporcionando retroalimentación directa y accionable para que estés confiado y preparado."
-    }
-  ]
+      description:
+        "Aquí es donde la teoría se convierte en instinto. Realizamos presentaciones simuladas y juegos de rol de negociaciones difíciles, proporcionando retroalimentación directa y accionable para que estés confiado y preparado.",
+    },
+  ],
 };
 
 // Import testimonials and select Julio testimonial
@@ -50,15 +57,17 @@ import { testimonials } from "@data/testimonials/es";
 const featuredTestimonial = testimonials[0]; // Julio Aldana testimonial
 
 // SEO metadata
-const title = "Coaching de Inglés para Fundadores | Perfecciona tu Pitch | NY English";
-const seoDescription = "Coaching de inglés para fundadores de startups. Perfecciona tu pitch, comunica tu visión y destaca en reuniones con inversores.";
+const title = "Coaching para Fundadores | Perfecciona tu Pitch | NY";
+const seoDescription =
+  "Coaching de inglés para fundadores de startups. Perfecciona tu pitch, comunica tu visión y destaca en reuniones con inversores.";
 
 // Hero content
 const heroContent = {
   title: "Asegura el Financiamiento que tu Startup Merece",
-  description: "Perfecciona tu pitch para VCs y articula tu visión con la claridad que los inversionistas esperan.",
+  description:
+    "Perfecciona tu pitch para VCs y articula tu visión con la claridad que los inversionistas esperan.",
   backgroundImage: startupFoundersService?.backgroundImage,
-  overlayOpacity: 0.7
+  overlayOpacity: 0.7,
 };
 
 // Challenge section content
@@ -67,27 +76,27 @@ const challengeContent = {
   painPoints: [
     "Te cuesta articular tu visión de negocio de manera convincente en inglés durante pitches.",
     "Pierdes oportunidades de financiamiento porque no puedes comunicar el valor de tu startup claramente.",
-    "Te sientes inseguro al responder preguntas técnicas y financieras de inversionistas en inglés."
+    "Te sientes inseguro al responder preguntas técnicas y financieras de inversionistas en inglés.",
   ],
   icon: "😰",
-  image: startupFoundersService?.squareImage
+  image: startupFoundersService?.squareImage,
 };
 
 // Final CTA content
 const ctaContent = {
   eyebrow: "¿Listo para Asegurar tu Próxima Ronda de Financiamiento?",
   title: "Perfecciona tu Pitch en Inglés",
-  description: "Una sesión de estrategia personalizada te mostrará exactamente cómo comunicar tu visión de startup con la claridad y confianza que los VCs esperan para invertir en tu empresa.",
+  description:
+    "Una sesión de estrategia personalizada te mostrará exactamente cómo comunicar tu visión de startup con la claridad y confianza que los VCs esperan para invertir en tu empresa.",
   buttonText: "Reserva Mi Sesión de Estrategia para Fundadores",
-  buttonLink: "/es/book/",
+  buttonLink: "/es/reservar/",
   whatToExpectTitle: "En Tu Sesión Gratuita, Haremos:",
   whatToExpectList: [
     "Evaluar tu pitch actual y identificar áreas de mejora en tu comunicación",
     "Desarrollar estrategias para articular tu propuesta de valor con mayor impacto",
-    "Crear una hoja de ruta para dominar el lenguaje de los negocios y el fundraising"
-  ]
+    "Crear una hoja de ruta para dominar el lenguaje de los negocios y el fundraising",
+  ],
 };
-
 ---
 
 <Base
@@ -95,27 +104,40 @@ const ctaContent = {
   description={seoDescription}
   lang="es"
   tkey="services/startup-founders"
-  ogImage={{ src: typeof startupFoundersService?.backgroundImage === 'string' ? startupFoundersService.backgroundImage : "/images/logos/new-york-english-og.jpg" }}
+  ogImage={{
+    src:
+      typeof startupFoundersService?.backgroundImage === "string"
+        ? startupFoundersService.backgroundImage
+        : "/images/logos/new-york-english-og.jpg",
+  }}
   customHreflangs={[
-    { lang: 'en-US', href: 'https://www.nyenglishteacher.com/en/services/startup-founders/' },
-    { lang: 'es-MX', href: 'https://www.nyenglishteacher.com/es/servicios/ingles-para-fundadores-de-startups/' }
+    {
+      lang: "en-US",
+      href: "https://www.nyenglishteacher.com/en/services/startup-founders/",
+    },
+    {
+      lang: "es-MX",
+      href: "https://www.nyenglishteacher.com/es/servicios/ingles-para-fundadores-de-startups/",
+    },
   ]}
   customCanonical="https://www.nyenglishteacher.com/es/servicios/ingles-para-fundadores-de-startups/"
 >
   <!-- Hero Section -->
   <InnerHero content={heroContent} />
-  
+
   <!-- Challenge Section -->
   <Challenge content={challengeContent} background="white" padding="lg" />
-  
+
   <!-- Methodology Section -->
   <MethodologySection content={metodologiaEs} background="light" padding="lg" />
-  
+
   <!-- Featured Testimonial -->
-  {featuredTestimonial && (
-    <FeaturedTestimonial testimonial={featuredTestimonial} />
-  )}
-  
+  {
+    featuredTestimonial && (
+      <FeaturedTestimonial testimonial={featuredTestimonial} />
+    )
+  }
+
   <!-- Final CTA -->
   <CtaSection content={ctaContent} />
 </Base>

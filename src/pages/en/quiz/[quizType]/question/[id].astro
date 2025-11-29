@@ -57,7 +57,8 @@ const description = config.subtitle;
   title={title} 
   description={description}
   lang="en"
-  customCanonical={`https://www.nyenglishteacher.com/en/quiz/${quizType}/`}
+  noindex={true}
+  customCanonical={`https://www.nyenglishteacher.com/en/quiz/${quizType}/question/${id}/`}
   customHreflangs={[
     { lang: "en-US", href: `https://www.nyenglishteacher.com/en/quiz/${quizType}/question/${id}/` },
     { lang: "es-MX", href: `https://www.nyenglishteacher.com/es/quiz/${quizType}/question/${id}/` }
@@ -360,7 +361,7 @@ if (optionsContainer) {
       answers[answerKey] = parseInt(answerIndex);
       QuizStorage.saveAnswers(quizType, answers);
       
-      // Auto-advance after 150ms (quick visual feedback)
+      // Auto-advance after 300ms (visual feedback on production)
       setTimeout(() => {
         const currentId = parseInt(questionId);
         const totalQuestions = 6;
@@ -370,7 +371,7 @@ if (optionsContainer) {
         } else {
           window.location.href = `/en/quiz/${quizType}/results/`;
         }
-      }, 150);
+      }, 300);
     });
   });
 }

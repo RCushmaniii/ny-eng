@@ -1,8 +1,8 @@
 ---
-title: "Más allá de la gramática: El valor de un coach nativo de inglés para líderes senior"
+title: "Por qué líderes senior necesitan un coach nativo de inglés"
 excerpt: "Las clases estándar no bastan para ejecutivos. Descubre cómo un coach nativo con visión de negocios acelera el liderazgo y el crecimiento profesional."
 publishDate: "2025-04-18"
-categories: 
+categories:
   - "Coaching en Inglés"
 featuredImage: "./images/executive-english-coaching.jpg"
 imageAlt: "Sesión de coaching ejecutivo en inglés"
@@ -24,25 +24,25 @@ Aquí es donde un coach nativo con visión empresarial se convierte en **ventaja
 
 ### ¿Qué aprenderás?
 
-- **Dominar los matices:** Descifrar señales no verbales, adaptar el tono y usar modismos con naturalidad.  
-- **Hablar de estrategia:** Usar lenguaje sectorial en presentaciones, juntas directivas y negociaciones.  
-- **Alinear idioma y objetivos:** Conectar las sesiones con el crecimiento profesional, desempeño de equipos y resultados de negocio.  
+- **Dominar los matices:** Descifrar señales no verbales, adaptar el tono y usar modismos con naturalidad.
+- **Hablar de estrategia:** Usar lenguaje sectorial en presentaciones, juntas directivas y negociaciones.
+- **Alinear idioma y objetivos:** Conectar las sesiones con el crecimiento profesional, desempeño de equipos y resultados de negocio.
 - **Proyectar confianza:** Superar bloqueos, perfeccionar la entrega y construir autoridad auténtica.
 
 ## 1. Dominar los matices: más allá del inglés de libro
 
 Los cursos genéricos rara vez cubren el subtexto y las corrientes culturales que definen la comunicación ejecutiva real. Un coach nativo te ayuda a:
 
-- **Descifrar señales no verbales:** Leer entre líneas en reuniones o negociaciones.  
-- **Navegar sensibilidades culturales:** Adaptar tu mensaje a audiencias internacionales.  
-- **Usar modismos apropiadamente:** Generar empatía sin sonar forzado.  
+- **Descifrar señales no verbales:** Leer entre líneas en reuniones o negociaciones.
+- **Navegar sensibilidades culturales:** Adaptar tu mensaje a audiencias internacionales.
+- **Usar modismos apropiadamente:** Generar empatía sin sonar forzado.
 - **Modular el tono persuasivo:** Aprender cómo pequeños cambios en la entrega amplifican tu influencia.
 
-*Una vez que dominas estos matices culturales y de tono, es momento de alinear tu inglés con las demandas reales del negocio.*
+_Una vez que dominas estos matices culturales y de tono, es momento de alinear tu inglés con las demandas reales del negocio._
 
 ## 2. Contexto empresarial: habla el idioma del liderazgo
 
-Un coach ejecutivo con experiencia real en negocios no solo enseña inglés—enseña *tu* inglés de negocios:
+Un coach ejecutivo con experiencia real en negocios no solo enseña inglés—enseña _tu_ inglés de negocios:
 
 - **Vocabulario sectorial:** Desde tecnología hasta finanzas y logística.
 - **Comunicación estratégica:** Prepara presentaciones, pitches para inversionistas y anuncios de gestión de cambio.
@@ -54,8 +54,8 @@ Tu coach se convierte en un socio estratégico que entiende el entorno donde nec
 
 Para líderes senior, el desarrollo del idioma es una herramienta para objetivos más amplios. Un coach con visión empresarial asegura que cada sesión tenga impacto medible:
 
-- **Aceleración de carrera:** Prepárate para ascensos, asignaciones internacionales o puestos en juntas directivas con fluidez ejecutiva.  
-- **Desempeño de equipos:** Lidera, motiva y dirige equipos multilingües con claridad.  
+- **Aceleración de carrera:** Prepárate para ascensos, asignaciones internacionales o puestos en juntas directivas con fluidez ejecutiva.
+- **Desempeño de equipos:** Lidera, motiva y dirige equipos multilingües con claridad.
 - **Inspira equipos y stakeholders globales:** Motiva y conecta con audiencias diversas con claridad e impacto.
 
 Para técnicas prácticas de construcción de confianza que puedes empezar a usar hoy, revisa [5 estrategias simples para ganar confianza](/es/blog/aumentar-confianza/).

@@ -1,8 +1,8 @@
 ---
-title: "Por Qué los Gerentes de TI en México Pierden Millones (Pista: No Son Sus Habilidades Técnicas)"
+title: "Por qué gerentes de TI pierden millones (no es técnico)"
 excerpt: "México tiene desarrolladores de clase mundial y gerentes de TI visionarios. Entonces, ¿por qué siguen perdiendo contratos con EE.UU.? Descubre cómo un inglés de negocios deficiente está costando millones."
 publishDate: "2025-07-01"
-categories: 
+categories:
   - "Inglés para Negocios"
 featuredImage: "./images/managers-making-millions.jpg"
 imageAlt: "Equipo internacional confundido por mala comunicación"
@@ -28,11 +28,11 @@ Cuando falla la comunicación, el dinero desaparece. Los gerentes de TI mexicano
 
 Un fuerte inglés de negocios permite a los gerentes de TI:
 
-* Comunicar claramente objetivos de proyectos complejos y requisitos técnicos.
-* Prevenir malentendidos costosos en correos electrónicos, llamadas y reuniones.
-* Construir confianza y relación con stakeholders globales rápidamente.
+- Comunicar claramente objetivos de proyectos complejos y requisitos técnicos.
+- Prevenir malentendidos costosos en correos electrónicos, llamadas y reuniones.
+- Construir confianza y relación con stakeholders globales rápidamente.
 
-*Ejemplo:* Imagina perder un **contrato de migración a la nube de $500,000** porque el gerente de proyecto no pudo explicar con confianza los protocolos de seguridad durante una videollamada con el CIO americano. Sucede—frecuentemente. Para técnicas específicas sobre dominar videollamadas, ve [Presencia ejecutiva en videollamadas: 7 hábitos que generan confianza en inglés](/es/blog/presencia-ejecutiva-en-videollamadas/).
+_Ejemplo:_ Imagina perder un **contrato de migración a la nube de $500,000** porque el gerente de proyecto no pudo explicar con confianza los protocolos de seguridad durante una videollamada con el CIO americano. Sucede—frecuentemente. Para técnicas específicas sobre dominar videollamadas, ve [Presencia ejecutiva en videollamadas: 7 hábitos que generan confianza en inglés](/es/blog/presencia-ejecutiva-en-videollamadas/).
 
 ---
 
@@ -44,11 +44,11 @@ Las empresas tecnológicas mexicanas a menudo tienen tecnología superior pero f
 
 Las habilidades de inglés de negocios permiten a los gerentes de TI:
 
-* Realizar presentaciones persuasivas para clientes estadounidenses e internacionales.
-* Escribir propuestas convincentes que ganen negocios.
-* Negociar con confianza en reuniones críticas.
+- Realizar presentaciones persuasivas para clientes estadounidenses e internacionales.
+- Escribir propuestas convincentes que ganen negocios.
+- Negociar con confianza en reuniones críticas.
 
-*Ejemplo:* La plataforma SaaS de tu competidor está un año atrás de la tuya, pero su presentación impecable a un panel de capitalistas de riesgo en San Francisco les asegura **$2 millones en financiamiento** mientras tú sigues luchando por conseguir reuniones. Eso es doloroso—y prevenible.
+_Ejemplo:_ La plataforma SaaS de tu competidor está un año atrás de la tuya, pero su presentación impecable a un panel de capitalistas de riesgo en San Francisco les asegura **$2 millones en financiamiento** mientras tú sigues luchando por conseguir reuniones. Eso es doloroso—y prevenible.
 
 ---
 
@@ -58,11 +58,11 @@ La innovación avanza rápido, y casi todo el conocimiento de TI de vanguardia s
 
 Un inglés de negocios competente permite a los gerentes de TI:
 
-* Acceder e implementar investigación de vanguardia y documentos técnicos instantáneamente.
-* Participar en discusiones valiosas de alto nivel en plataformas como GitHub y Stack Overflow.
-* Adelantarse a los competidores globales aprovechando los últimos conocimientos antes que otros.
+- Acceder e implementar investigación de vanguardia y documentos técnicos instantáneamente.
+- Participar en discusiones valiosas de alto nivel en plataformas como GitHub y Stack Overflow.
+- Adelantarse a los competidores globales aprovechando los últimos conocimientos antes que otros.
 
-*Ejemplo:* Un proyecto crítico perdió un nuevo marco de ciberseguridad—simplemente porque la documentación más actualizada estaba en inglés y fue malinterpretada—llevando a una vulnerabilidad prevenible.
+_Ejemplo:_ Un proyecto crítico perdió un nuevo marco de ciberseguridad—simplemente porque la documentación más actualizada estaba en inglés y fue malinterpretada—llevando a una vulnerabilidad prevenible.
 
 ---
 
@@ -72,11 +72,11 @@ Los gerentes de TI mexicanos frecuentemente supervisan diversos equipos internac
 
 Un liderazgo efectivo en inglés de negocios permite a los gerentes de TI:
 
-* Inspirar equipos multiculturales con dirección clara.
-* Entregar retroalimentación impactante y revisiones de desempeño.
-* Mantener alta moral y productividad a través de comunicación motivacional clara.
+- Inspirar equipos multiculturales con dirección clara.
+- Entregar retroalimentación impactante y revisiones de desempeño.
+- Mantener alta moral y productividad a través de comunicación motivacional clara.
 
-*Ejemplo:* Los equipos luchan y la productividad se desploma cuando los gerentes no pueden articular claramente los hitos del proyecto y las responsabilidades individuales en inglés, llevando a confusión y trabajo redundante.
+_Ejemplo:_ Los equipos luchan y la productividad se desploma cuando los gerentes no pueden articular claramente los hitos del proyecto y las responsabilidades individuales en inglés, llevando a confusión y trabajo redundante.
 
 ---
 
@@ -86,11 +86,11 @@ Cuando los gerentes de TI mexicanos suben al escenario global—cumbres tecnoló
 
 Excelentes habilidades de inglés de negocios ayudan a los gerentes de TI a:
 
-* Construir redes globales influyentes.
-* Representar a sus empresas con confianza en foros internacionales.
-* Navegar exitosamente diferentes culturas empresariales.
+- Construir redes globales influyentes.
+- Representar a sus empresas con confianza en foros internacionales.
+- Navegar exitosamente diferentes culturas empresariales.
 
-*Ejemplo:* Tu innovación revolucionaria merece reconocimiento internacional, pero una presentación vacilante y poco clara en inglés la hace olvidable para potenciales inversionistas y socios.
+_Ejemplo:_ Tu innovación revolucionaria merece reconocimiento internacional, pero una presentación vacilante y poco clara en inglés la hace olvidable para potenciales inversionistas y socios.
 
 ---
 

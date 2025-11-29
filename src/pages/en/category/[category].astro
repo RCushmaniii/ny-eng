@@ -13,7 +13,7 @@ export const prerender = true;
 export async function getStaticPaths() {
   return categories.map((category) => {
     const tkey = `category/${category.slug}` as TKey;
-    
+
     // Only generate English slug for /en/category/ pages
     return {
       params: { category: category.slug },
@@ -57,22 +57,29 @@ const seoDescription =
   categoryData.description ||
   `Explore articles, tips, and resources about ${categoryData.name}. Improve your business English with expert insights.`;
 
-// Create custom hreflangs for this specific category
+// Create custom hreflangs for this specific category (absolute URLs)
 const customHreflangs = [
-  { lang: 'en-US', href: canonicalEnPath },
-  { lang: 'es-MX', href: canonicalEsPath }
+  { lang: "en-US", href: `https://www.nyenglishteacher.com${canonicalEnPath}` },
+  { lang: "es-MX", href: `https://www.nyenglishteacher.com${canonicalEsPath}` },
 ];
 
 // Hero content
 const heroContent = {
   title: categoryData.name,
-  description: categoryData.description || `All posts related to ${categoryData.name}`,
+  description:
+    categoryData.description || `All posts related to ${categoryData.name}`,
   backgroundImage: blogHeroImage,
-  overlayOpacity: 0.7
+  overlayOpacity: 0.7,
 };
 ---
 
-<Base lang="en" tkey={tkey} title={seoTitle} description={seoDescription} customHreflangs={customHreflangs}>
+<Base
+  lang="en"
+  tkey={tkey}
+  title={seoTitle}
+  description={seoDescription}
+  customHreflangs={customHreflangs}
+>
   <main>
     <InnerHero content={heroContent} />
     <BlogList

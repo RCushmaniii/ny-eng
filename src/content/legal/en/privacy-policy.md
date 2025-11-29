@@ -5,7 +5,7 @@ translations:
   es: "/es/legal/privacy-policy/"
 seo:
   title: "Privacy Policy - How We Protect Your Information"
-  description: "Understand how we collect, use, and safeguard your personal information on the New York English Teacher website."
+  description: "Understand how we collect, use, and safeguard your personal information on the New York English Teacher website for coaching services."
 ---
 
 ## Privacy Policy
@@ -20,8 +20,8 @@ Welcome to our Privacy Policy. We are committed to protecting your personal info
 
 We may collect the following personal information:
 
-- **Contact Information**: Name, email address, phone number.  
-- **Technical Information**: IP address, browser type, device details, and cookie data.  
+- **Contact Information**: Name, email address, phone number.
+- **Technical Information**: IP address, browser type, device details, and cookie data.
 - **Usage Information**: Pages visited, time spent on site, and interactions with content.
 
 > _Note: We do **not** collect or store credit card or payment information directly._
@@ -30,36 +30,36 @@ We may collect the following personal information:
 
 Information is collected through:
 
-- Online forms you complete voluntarily  
-- Cookies and tracking technologies  
+- Online forms you complete voluntarily
+- Cookies and tracking technologies
 - Analytics tools (e.g., Google Analytics)
 
 ## How We Use Your Information
 
 We use your data to:
 
-- Provide and improve our services  
-- Communicate with you about services and inquiries  
-- Personalize your experience on the site  
-- Analyze site usage and performance  
-- Maintain the security of our website  
+- Provide and improve our services
+- Communicate with you about services and inquiries
+- Personalize your experience on the site
+- Analyze site usage and performance
+- Maintain the security of our website
 - Comply with legal obligations
 
 ## Data Sharing and Disclosure
 
 We **do not sell or rent** your personal information. Your data may be shared only when necessary:
 
-- With trusted third-party service providers who assist in operating our website  
+- With trusted third-party service providers who assist in operating our website
 - When required to comply with legal obligations or valid law enforcement requests
 
 ## Your Rights
 
 Depending on your location, you may have the right to:
 
-- Access the personal data we hold about you  
-- Correct or update inaccurate information  
-- Request deletion of your personal data  
-- Object to or restrict how your data is processed  
+- Access the personal data we hold about you
+- Correct or update inaccurate information
+- Request deletion of your personal data
+- Object to or restrict how your data is processed
 - Withdraw previously given consent
 
 To exercise any of these rights, please contact us using the information below.

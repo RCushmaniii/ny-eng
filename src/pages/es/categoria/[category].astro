@@ -13,8 +13,8 @@ export const prerender = true;
 
 export async function getStaticPaths() {
   // Get all categories with Spanish slugs
-  const categoriesWithSpanish = categories.filter(cat => cat.esSlug);
-  
+  const categoriesWithSpanish = categories.filter((cat) => cat.esSlug);
+
   return categoriesWithSpanish.map((category) => ({
     params: { category: category.esSlug },
     props: { categoryData: category },
@@ -41,12 +41,16 @@ const allSpanishPosts = allPosts
   );
 
 // Filter posts for this specific category (for display)
-const categoryPosts = allSpanishPosts.filter((post: CollectionEntry<"blog">) => {
-  const categoryNames = post.data.categories || [];
-  // Check both Spanish and English category names for compatibility
-  return categoryNames.includes(categoryData.name_es || categoryData.name) || 
-         categoryNames.includes(categoryData.name);
-});
+const categoryPosts = allSpanishPosts.filter(
+  (post: CollectionEntry<"blog">) => {
+    const categoryNames = post.data.categories || [];
+    // Check both Spanish and English category names for compatibility
+    return (
+      categoryNames.includes(categoryData.name_es || categoryData.name) ||
+      categoryNames.includes(categoryData.name)
+    );
+  }
+);
 
 // Generate proper TKey for i18n system
 const tkey = `category/${categoryData.slug}` as TKey;
@@ -58,22 +62,37 @@ const seoDescription =
   categoryData.description ||
   `Explora artículos, consejos y recursos sobre ${categoryData.name_es || categoryData.name}. Mejora tu inglés profesional con ideas expertas.`;
 
-// Create custom hreflangs for this specific category
+// Create custom hreflangs for this specific category (absolute URLs)
 const customHreflangs = [
-  { lang: 'en-US', href: `/en/category/${categoryData.slug}/` },
-  { lang: 'es-MX', href: `/es/categoria/${categoryData.esSlug || categoryData.slug}/` }
+  {
+    lang: "en-US",
+    href: `https://www.nyenglishteacher.com/en/category/${categoryData.slug}/`,
+  },
+  {
+    lang: "es-MX",
+    href: `https://www.nyenglishteacher.com/es/categoria/${categoryData.esSlug || categoryData.slug}/`,
+  },
 ];
 
 // Hero content
 const heroContent = {
   title: categoryData.name_es || categoryData.name,
-  description: categoryData.description_es || categoryData.description || `Todos los artículos relacionados con ${categoryData.name_es || categoryData.name}`,
+  description:
+    categoryData.description_es ||
+    categoryData.description ||
+    `Todos los artículos relacionados con ${categoryData.name_es || categoryData.name}`,
   backgroundImage: blogHeroImage,
-  overlayOpacity: 0.7
+  overlayOpacity: 0.7,
 };
 ---
 
-<Base lang="es" tkey={tkey} title={seoTitle} description={seoDescription} customHreflangs={customHreflangs}>
+<Base
+  lang="es"
+  tkey={tkey}
+  title={seoTitle}
+  description={seoDescription}
+  customHreflangs={customHreflangs}
+>
   <main>
     <InnerHero content={heroContent} />
     <BlogList

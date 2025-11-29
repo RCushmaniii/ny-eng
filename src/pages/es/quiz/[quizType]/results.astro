@@ -33,16 +33,26 @@ if (!quizType || !isQuizTypeAvailable(quizType)) {
 // Get quiz configuration
 const config = getQuizConfig(quizType as QuizType, "es");
 
-const title = `Tus Resultados | ${config.title}`;
+const title = `Resultados | ${config.title}`;
 const description =
   "Obtén tu Puntuación de Confianza en Comunicación personalizada (0-100) y tu hoja de ruta de mejora. Descubre exactamente dónde se encuentra tu equipo con la comunicación en inglés de alto impacto.";
+
+const canonicalUrl = `https://www.nyenglishteacher.com/es/quiz/${quizType}/results/`;
+const customHreflangs = [
+  {
+    lang: "en-US",
+    href: `https://www.nyenglishteacher.com/en/quiz/${quizType}/results/`,
+  },
+  { lang: "es-MX", href: canonicalUrl },
+];
 ---
 
 <Base
   title={title}
   description={description}
   lang="es"
-  tkey="quiz/results"
+  customCanonical={canonicalUrl}
+  customHreflangs={customHreflangs}
   hideCta={true}
   hideLanguageSwitcher={true}
 >

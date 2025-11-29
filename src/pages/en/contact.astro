@@ -7,14 +7,15 @@ import ContactInfo from "@components/sections/ContactInfo.astro";
 import nycStatueOfLiberty from "@assets/images/contact/nyc-statue-of-liberty.jpg";
 
 const heroContent = {
-    title: "Contact Me",
-    description: "If your English could talk... would it get promoted?",
+  title: "Contact Me",
+  description: "If your English could talk... would it get promoted?",
 };
 
 const footerCta = {
-  eyebrow: "", 
+  eyebrow: "",
   title: "Transform Your Professional English Today",
-  description: "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
+  description:
+    "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
   hideCta: false,
   button: {
     text: "Reserve My Free Consultation",
@@ -25,29 +26,30 @@ const footerCta = {
 
 // Page-specific metadata
 const metadata = {
-    title: "Contact | Business English Coaching in New York", 
-    description: "Reach me via form or WhatsApp for coaching inquiries about personalized executive English coaching."
+  title: "Contact | Business English Coaching in New York",
+  description:
+    "Reach me via form or WhatsApp for coaching inquiries about personalized executive English coaching for professionals worldwide.",
 };
 ---
 
-<Base 
-    lang="en"
-    tkey="contact"
-    title={metadata.title} 
-    description={metadata.description} 
-    ogImage={{
-        src: "/images/logos/new-york-english-sq-og.jpg",
-        alt: "Contact New York English Teacher - Professional English Communication Coach",
-        width: 1200,
-        height: 630
-    }}
+<Base
+  lang="en"
+  tkey="contact"
+  title={metadata.title}
+  description={metadata.description}
+  ogImage={{
+    src: "/images/logos/new-york-english-sq-og.jpg",
+    alt: "Contact New York English Teacher - Professional English Communication Coach",
+    width: 1200,
+    height: 630,
+  }}
 >
-    <InnerHero 
-        content={{
-            ...heroContent,
-            backgroundImage: nycStatueOfLiberty,
-            overlayOpacity: 0.3
-        }} 
-    />
-    <ContactInfo background="base" padding="base" lang="en" />
+  <InnerHero
+    content={{
+      ...heroContent,
+      backgroundImage: nycStatueOfLiberty,
+      overlayOpacity: 0.3,
+    }}
+  />
+  <ContactInfo background="base" padding="base" lang="en" />
 </Base>

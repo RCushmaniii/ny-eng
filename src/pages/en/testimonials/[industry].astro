@@ -15,7 +15,7 @@ export async function getStaticPaths() {
   );
 
   return validIndustries.map((industry) => ({
-    params: { industry }
+    params: { industry },
   }));
 }
 
@@ -28,33 +28,45 @@ const validIndustries = Object.keys(testimonialsByIndustry).filter(
 );
 
 // Default to "all" if industry is invalid
-const currentIndustry = industry && validIndustries.includes(industry) ? industry : "all";
+const currentIndustry =
+  industry && validIndustries.includes(industry) ? industry : "all";
 
 // Filter testimonials based on selected industry
-const filteredTestimonials: Testimonial[] = testimonialsByIndustry[currentIndustry as ValidIndustry] || [];
+const filteredTestimonials: Testimonial[] =
+  testimonialsByIndustry[currentIndustry as ValidIndustry] || [];
 
 // SEO metadata
-const industryLabel = industryLabels[currentIndustry as keyof typeof industryLabels];
-const title = currentIndustry === "all" 
-  ? "Client Success Stories | NY English Teacher"
-  : `${industryLabel} Success Stories | NY English Teacher`;
-const description = currentIndustry === "all"
-  ? "Read success stories from executives, founders, and professionals who transformed their English communication with personalized coaching."
-  : `Read success stories from ${industryLabel.toLowerCase()} who transformed their English communication with personalized coaching.`;
+const industryLabel =
+  industryLabels[currentIndustry as keyof typeof industryLabels];
+const title =
+  currentIndustry === "all"
+    ? "Success Stories | NY English Teacher"
+    : `${industryLabel} Success | NY English Teacher`;
+const description =
+  currentIndustry === "all"
+    ? "Read success stories from executives, founders, and professionals who transformed their English communication with personalized coaching."
+    : `Read success stories from ${industryLabel.toLowerCase()} who transformed their English communication with personalized coaching.`;
 
 // Spanish counterpart for language switcher
-const translationSlugEs = currentIndustry === "all" 
-  ? "/es/testimonios/" 
-  : `/es/testimonios/${currentIndustry}/`;
+const translationSlugEs =
+  currentIndustry === "all"
+    ? "/es/testimonios/"
+    : `/es/testimonios/${currentIndustry}/`;
 
 // Create custom hreflangs for each industry page
-const currentUrl = currentIndustry === "all" 
-  ? "/en/testimonials/" 
-  : `/en/testimonials/${currentIndustry}/`;
+const currentUrl =
+  currentIndustry === "all"
+    ? "https://www.nyenglishteacher.com/en/testimonials/all/"
+    : `https://www.nyenglishteacher.com/en/testimonials/${currentIndustry}/`;
+
+const translationUrlEs =
+  currentIndustry === "all"
+    ? "https://www.nyenglishteacher.com/es/testimonios/all/"
+    : `https://www.nyenglishteacher.com/es/testimonios/${currentIndustry}/`;
 
 const customHreflangs = [
-  { lang: 'en-US', href: currentUrl },
-  { lang: 'es-MX', href: translationSlugEs }
+  { lang: "en-US", href: currentUrl },
+  { lang: "es-MX", href: translationUrlEs },
 ];
 ---
 
@@ -68,8 +80,10 @@ const customHreflangs = [
 >
   <TestimonialsGrid
     testimonials={filteredTestimonials}
-    title={currentIndustry === "all" ? "Client Testimonials" : `${industryLabel} Testimonials`}
-    description={currentIndustry === "all" 
+    title={currentIndustry === "all"
+      ? "Client Testimonials"
+      : `${industryLabel} Testimonials`}
+    description={currentIndustry === "all"
       ? "Discover how professionals across industries have transformed their English communication skills and achieved their career goals."
       : `Discover how ${industryLabel.toLowerCase()} have transformed their English communication skills and achieved their career goals.`}
     showFilters={true}

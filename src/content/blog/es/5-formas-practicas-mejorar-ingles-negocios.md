@@ -1,8 +1,8 @@
 ---
-title: "5 formas prácticas de aumentar la confianza en tu inglés de negocios hoy"
+title: "5 formas de aumentar confianza en tu inglés de negocios"
 excerpt: "¿Te cuesta sonar seguro en inglés? Estos 5 consejos te ayudarán a hablar con claridad y liderar con impacto en reuniones y entrevistas."
 publishDate: "2025-05-01"
-categories: 
+categories:
   - "Inglés para Negocios"
 featuredImage: "./images/confidently-speaking.jpg"
 imageAlt: "Sesión de coaching de inglés de negocios"
@@ -15,6 +15,7 @@ seo:
 ---
 
 ## Gana confianza en tu inglés de negocios
+
 ¿Te pones nervioso al hablar inglés en el trabajo—en reuniones, entrevistas o llamadas con colegas? No estás solo. Muchos profesionales, incluso líderes senior, dudan de cómo suenan en inglés. ¿La buena noticia? Puedes construir confianza duradera con estrategias claras y reales.
 
 En New York English, trabajo con gerentes, consultores y ejecutivos en sectores como tecnología, finanzas, logística y ventas directas. Juntos, desarrollamos habilidades de comunicación que generan resultados.
@@ -22,13 +23,15 @@ En New York English, trabajo con gerentes, consultores y ejecutivos en sectores 
 ---
 
 ### Lo que aprenderás
-- **Hablar con confianza** usando frases clave en reuniones  
-- **Construir relaciones sólidas** a través del small talk  
-- **Comunicarte con claridad** sin complicar tu lenguaje  
-- **Prepararte para momentos de presión** como entrevistas y presentaciones  
-- **Medir tu progreso** y celebrar avances que te motivan  
+
+- **Hablar con confianza** usando frases clave en reuniones
+- **Construir relaciones sólidas** a través del small talk
+- **Comunicarte con claridad** sin complicar tu lenguaje
+- **Prepararte para momentos de presión** como entrevistas y presentaciones
+- **Medir tu progreso** y celebrar avances que te motivan
 
 ## 1. Usa “frases clave” en reuniones
+
 Si dudas al hablar en reuniones, no eres el único. Preparar algunas frases poderosas te ayuda a expresarte con naturalidad y sonar seguro.
 
 - **Para unirte a la conversación:** "¿Puedo agregar algo?" o "Me gustaría compartir una idea rápida."
@@ -38,6 +41,7 @@ Si dudas al hablar en reuniones, no eres el único. Preparar algunas frases pode
 **Consejo:** Grábate diciendo estas frases en voz alta. Escucha tu tono y fluidez. Repetirlas te ayudará a hacerlas naturales.
 
 ## 2. Mejora tu small talk
+
 El small talk no es solo relleno: construye confianza y abre puertas. También es una habilidad que mejora con la práctica.
 
 1. Pregunta sobre el trabajo: "¿Cómo va el nuevo proyecto?"
@@ -47,6 +51,7 @@ El small talk no es solo relleno: construye confianza y abre puertas. También e
 **Consejo:** Escucha con atención y haz preguntas de seguimiento. Demuestra interés y ayuda a que la conversación fluya.
 
 ## 3. Comunica con claridad, no con complejidad
+
 No necesitas palabras complicadas para sonar profesional. El lenguaje claro y directo demuestra confianza y hace que tus ideas sean fáciles de seguir.
 
 - "Utilize" → "Usa"
@@ -55,4 +60,3 @@ No necesitas palabras complicadas para sonar profesional. El lenguaje claro y di
 - "Ameliorate" → "Mejora"
 
 > **La comunicación clara no es básica—es poderosa.** Cuando tus palabras son directas y con propósito, la gente escucha, actúa y los resultados llegan.
-

@@ -1,8 +1,8 @@
 ---
-title: "Del pláticas triviales a la conversación inteligente: cómo destacar en inglés en el trabajo"
+title: "De pláticas triviales a conversación inteligente en inglés"
 excerpt: "Aprende a convertir charlas triviales en oportunidades para construir relaciones y avanzar profesionalmente en inglés."
 publishDate: "2025-05-08"
-categories: 
+categories:
   - "Inglés Ejecutivo"
 featuredImage: "./images/small-talk-professionals.jpg"
 imageAlt: "Sesión de coaching de inglés de negocios"
@@ -39,4 +39,3 @@ Muchos piensan que el small talk es solo relleno, pero en realidad es una herram
 - **Sé auténtico:** La sinceridad genera confianza y deja una impresión positiva.
 
 > **Recuerda:** El small talk es solo el principio. Con práctica, puedes convertirlo en conversaciones inteligentes que te ayuden a crecer profesionalmente.
-

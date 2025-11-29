@@ -1,0 +1,179 @@
+≡ƒöì Starting Technical SEO Validation...
+
+≡ƒôï Loaded 58 critical URLs
+
+
+================================================================================
+≡ƒôè TECHNICAL SEO VALIDATION REPORT
+================================================================================
+
+Γ£à URLs Checked: 58
+Γ£à Passed: 58
+ΓÜá∩╕Å  Warnings: 53
+Γ¥î Errors: 0
+
+
+ΓÜá∩╕Å  ALL 53 WARNINGS:
+
+  /en/
+    ΓööΓöÇ Description too short (110 chars, min 120)
+
+  /en/
+    ΓööΓöÇ 1 images missing alt text
+
+  /en/about/
+    ΓööΓöÇ Description too short (111 chars, min 120)
+
+  /en/contact/
+    ΓööΓöÇ Description too short (99 chars, min 120)
+
+  /en/faqs/
+    ΓööΓöÇ Description too short (119 chars, min 120)
+
+  /en/services/
+    ΓööΓöÇ Description too long (161 chars, max 160)
+
+  /en/services/executive-english/
+    ΓööΓöÇ Description too short (118 chars, min 120)
+
+  /en/services/logistics-english/
+    ΓööΓöÇ Description too short (115 chars, min 120)
+
+  /en/services/professional-english/
+    ΓööΓöÇ Description too short (111 chars, min 120)
+
+  /en/services/high-stakes-english/
+    ΓööΓöÇ Description too short (98 chars, min 120)
+
+  /en/blog/small-talk-to-smart-talk/
+    ΓööΓöÇ H1 too long (79 chars, max 70)
+
+  /en/blog/executive-video-call/
+    ΓööΓöÇ H1 too long (71 chars, max 70)
+
+  /en/blog/executive-english-coaching/
+    ΓööΓöÇ H1 too long (77 chars, max 70)
+
+  /en/blog/managers-lose-millions/
+    ΓööΓöÇ H1 too long (77 chars, max 70)
+
+  /en/assessments/
+    ΓööΓöÇ Title too long (82 chars, max 60)
+
+  /en/assessments/
+    ΓööΓöÇ Description too long (219 chars, max 160)
+
+  /en/quiz/it-services/
+    ΓööΓöÇ Description too long (185 chars, max 160)
+
+  /en/quiz/it-services/
+    ΓööΓöÇ H1 too long (82 chars, max 70)
+
+  /en/quiz/executives/
+    ΓööΓöÇ Description too long (172 chars, max 160)
+
+  /en/quiz/high-stakes/
+    ΓööΓöÇ Description too long (176 chars, max 160)
+
+  /en/quiz/professional-services/
+    ΓööΓöÇ Title too long (63 chars, max 60)
+
+  /en/quiz/professional-services/
+    ΓööΓöÇ Description too long (180 chars, max 160)
+
+  /en/legal/privacy-policy/
+    ΓööΓöÇ Description too short (112 chars, min 120)
+
+  /es/
+    ΓööΓöÇ 1 images missing alt text
+
+  /es/about/
+    ΓööΓöÇ Description too short (114 chars, min 120)
+
+  /es/contact/
+    ΓööΓöÇ Description too short (101 chars, min 120)
+
+  /es/faqs/
+    ΓööΓöÇ Description too short (119 chars, min 120)
+
+  /es/servicios/
+    ΓööΓöÇ Description too long (165 chars, max 160)
+
+  /es/servicios/ingles-para-fundadores-de-startups/
+    ΓööΓöÇ Title too long (70 chars, max 60)
+
+  /es/servicios/ingles-para-logistica/
+    ΓööΓöÇ Title too long (68 chars, max 60)
+
+  /es/servicios/ingles-para-profesionales/
+    ΓööΓöÇ Title too long (64 chars, max 60)
+
+  /es/blog/charla-pequena-habla-inteligente/
+    ΓööΓöÇ H1 too long (91 chars, max 70)
+
+  /es/blog/presencia-ejecutiva-en-videollamadas/
+    ΓööΓöÇ H1 too long (79 chars, max 70)
+
+  /es/blog/coaching-ejecutivo/
+    ΓööΓöÇ H1 too long (83 chars, max 70)
+
+  /es/blog/por-que-los-gerentes-de-ti-en-mexico-pierden-clientes/
+    ΓööΓöÇ H1 too long (94 chars, max 70)
+
+  /es/blog/aumentar-confianza/
+    ΓööΓöÇ Title too long (65 chars, max 60)
+
+  /es/blog/4-secretos-que-usan-los-ejecutivos/
+    ΓööΓöÇ H1 too long (79 chars, max 70)
+
+  /es/blog/5-formas-practicas-mejorar-ingles-negocios/
+    ΓööΓöÇ H1 too long (72 chars, max 70)
+
+  /es/assessments/
+    ΓööΓöÇ Title too long (85 chars, max 60)
+
+  /es/assessments/
+    ΓööΓöÇ Description too long (249 chars, max 160)
+
+  /es/quiz/it-services/
+    ΓööΓöÇ Title too long (62 chars, max 60)
+
+  /es/quiz/it-services/
+    ΓööΓöÇ Description too long (215 chars, max 160)
+
+  /es/quiz/it-services/
+    ΓööΓöÇ H1 too long (83 chars, max 70)
+
+  /es/quiz/executives/
+    ΓööΓöÇ Title too long (71 chars, max 60)
+
+  /es/quiz/executives/
+    ΓööΓöÇ Description too long (199 chars, max 160)
+
+  /es/quiz/executives/
+    ΓööΓöÇ H1 too long (83 chars, max 70)
+
+  /es/quiz/high-stakes/
+    ΓööΓöÇ Title too long (70 chars, max 60)
+
+  /es/quiz/high-stakes/
+    ΓööΓöÇ Description too long (223 chars, max 160)
+
+  /es/quiz/high-stakes/
+    ΓööΓöÇ H1 too long (90 chars, max 70)
+
+  /es/quiz/professional-services/
+    ΓööΓöÇ Title too long (75 chars, max 60)
+
+  /es/quiz/professional-services/
+    ΓööΓöÇ Description too long (242 chars, max 160)
+
+  /es/quiz/professional-services/
+    ΓööΓöÇ H1 too long (85 chars, max 70)
+
+  /es/legal/privacy-policy/
+    ΓööΓöÇ Description too short (115 chars, min 120)
+
+================================================================================
+Γ£à PASS - Site is ready for deployment
+

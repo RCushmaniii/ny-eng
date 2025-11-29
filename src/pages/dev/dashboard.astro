@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 import fs from "node:fs";
 import path from "node:path";
 
@@ -15,13 +17,13 @@ interface ReportSummary {
 
 interface ReportIssue {
   id: string;
-  priority: 'Critical' | 'High' | 'Medium' | 'Low';
+  priority: "Critical" | "High" | "Medium" | "Low";
   impact: string;
   message: string;
   action: string;
 }
 
-type StatusType = 'green' | 'yellow' | 'orange' | 'red' | 'blue';
+type StatusType = "green" | "yellow" | "orange" | "red" | "blue";
 
 interface StatusConfig {
   emoji: string;
@@ -46,39 +48,45 @@ const statusConfig: Record<StatusType, StatusConfig> = {
     color: "bg-green-50 border-green-200",
     buttonColor: "bg-green-600 hover:bg-green-700",
     textColor: "text-green-700",
-    label: "Passing"
+    label: "Passing",
   },
   yellow: {
     emoji: "⚠️",
     color: "bg-yellow-50 border-yellow-200",
     buttonColor: "bg-yellow-600 hover:bg-yellow-700",
     textColor: "text-yellow-700",
-    label: "Warnings"
+    label: "Warnings",
   },
   orange: {
     emoji: "🚧",
     color: "bg-orange-50 border-orange-200",
     buttonColor: "bg-orange-600 hover:bg-orange-700",
     textColor: "text-orange-700",
-    label: "Issues"
+    label: "Issues",
   },
   red: {
     emoji: "❌",
     color: "bg-red-50 border-red-200",
     buttonColor: "bg-red-600 hover:bg-red-700",
     textColor: "text-red-700",
-    label: "Critical"
+    label: "Critical",
   },
   blue: {
     emoji: "🔄",
     color: "bg-blue-50 border-blue-200",
     buttonColor: "bg-blue-600 hover:bg-blue-700",
     textColor: "text-blue-700",
-    label: "Not Run"
-  }
+    label: "Not Run",
+  },
 } as const;
 
-type ScriptId = 'report-structure' | 'validate-urls' | 'validate-hreflang' | 'validate-seo' | 'fix-links' | 'seo-audit';
+type ScriptId =
+  | "report-structure"
+  | "validate-urls"
+  | "validate-hreflang"
+  | "validate-seo"
+  | "fix-links"
+  | "seo-audit";
 
 interface ScriptConfig {
   id: ScriptId;
@@ -87,41 +95,40 @@ interface ScriptConfig {
 }
 
 const scriptConfig: ScriptConfig[] = [
-  { 
-    id: "report-structure", 
+  {
+    id: "report-structure",
     name: "Project Structure",
-    description: "Analyze project file organization and dependencies" 
+    description: "Analyze project file organization and dependencies",
   },
-  { 
-    id: "validate-urls", 
-    name: "URL Validation", 
-    description: "Check URL structure and patterns for SEO compliance"
+  {
+    id: "validate-urls",
+    name: "URL Validation",
+    description: "Check URL structure and patterns for SEO compliance",
   },
-  { 
-    id: "validate-hreflang", 
+  {
+    id: "validate-hreflang",
     name: "Hreflang Validation",
-    description: "Verify international SEO and language configuration"
+    description: "Verify international SEO and language configuration",
   },
-  { 
-    id: "validate-seo", 
+  {
+    id: "validate-seo",
     name: "SEO Audit",
-    description: "Comprehensive SEO analysis and recommendations" 
+    description: "Comprehensive SEO analysis and recommendations",
   },
-  { 
-    id: "fix-links", 
+  {
+    id: "fix-links",
     name: "Link Fixer",
-    description: "Identify and fix broken internal and external links"
+    description: "Identify and fix broken internal and external links",
   },
-  { 
-    id: "seo-audit", 
+  {
+    id: "seo-audit",
     name: "Advanced SEO",
-    description: "Deep SEO performance analysis with actionable insights"
+    description: "Deep SEO performance analysis with actionable insights",
   },
 ] as const;
 
 const reportsDir = path.join(process.cwd(), "project-reports");
 let files: string[] = [];
-
 
 // Map script IDs to actual report file names
 const reportFileMap: Record<ScriptId, string> = {
@@ -134,27 +141,32 @@ const reportFileMap: Record<ScriptId, string> = {
 };
 
 const reports: Report[] = [];
-const reportsByScript = scriptConfig.reduce((acc, script) => {
-  acc[script.id] = {
-    script: script.id,
-    runAt: new Date().toISOString(),
-    status: 'blue' as StatusType,
-    issues: [{
-      id: `${script.id}-initial`,
-      priority: 'Medium' as ReportIssue['priority'],
-      impact: 'System',
-      message: `Report not yet generated for ${script.name}`,
-      action: `Run ${script.name} to generate a report`
-    }]
-  };
-  return acc;
-}, {} as Record<ScriptId, Report>);
+const reportsByScript = scriptConfig.reduce(
+  (acc, script) => {
+    acc[script.id] = {
+      script: script.id,
+      runAt: new Date().toISOString(),
+      status: "blue" as StatusType,
+      issues: [
+        {
+          id: `${script.id}-initial`,
+          priority: "Medium" as ReportIssue["priority"],
+          impact: "System",
+          message: `Report not yet generated for ${script.name}`,
+          action: `Run ${script.name} to generate a report`,
+        },
+      ],
+    };
+    return acc;
+  },
+  {} as Record<ScriptId, Report>
+);
 
 // Load reports with enhanced error handling and validation
 for (const script of scriptConfig) {
   const reportFile = reportFileMap[script.id];
   const reportPath = path.join(reportsDir, reportFile);
-  
+
   try {
     if (fs.existsSync(reportPath)) {
       const fileContent = fs.readFileSync(reportPath, "utf-8");
@@ -163,17 +175,19 @@ for (const script of scriptConfig) {
       try {
         reportData = JSON.parse(fileContent);
       } catch (parseError) {
-        throw new Error(`Invalid JSON format: ${parseError instanceof Error ? parseError.message : String(parseError)}`);
+        throw new Error(
+          `Invalid JSON format: ${parseError instanceof Error ? parseError.message : String(parseError)}`
+        );
       }
 
       // Validate required fields
-      const validStatuses: StatusType[] = ['green', 'yellow', 'orange', 'red'];
+      const validStatuses: StatusType[] = ["green", "yellow", "orange", "red"];
       if (!reportData.status || !validStatuses.includes(reportData.status)) {
-        throw new Error('Invalid or missing status field');
+        throw new Error("Invalid or missing status field");
       }
 
       if (!Array.isArray(reportData.issues)) {
-        throw new Error('Missing or invalid issues array');
+        throw new Error("Missing or invalid issues array");
       }
 
       // Create validated report object
@@ -181,20 +195,22 @@ for (const script of scriptConfig) {
         script: script.id,
         runAt: reportData.runAt || new Date().toISOString(),
         status: reportData.status as StatusType,
-        summary: reportData.summary ? {
-          totalChecks: Number(reportData.summary.totalChecks) || 0,
-          passed: Number(reportData.summary.passed) || 0,
-          warnings: Number(reportData.summary.warnings) || 0,
-          errors: Number(reportData.summary.errors) || 0
-        } : undefined,
+        summary: reportData.summary
+          ? {
+              totalChecks: Number(reportData.summary.totalChecks) || 0,
+              passed: Number(reportData.summary.passed) || 0,
+              warnings: Number(reportData.summary.warnings) || 0,
+              errors: Number(reportData.summary.errors) || 0,
+            }
+          : undefined,
         issues: reportData.issues.map((issue: any) => ({
           id: issue.id || `${script.id}-${Date.now()}`,
-          priority: issue.priority as ReportIssue['priority'] || 'Medium',
-          impact: issue.impact || 'Unknown',
-          message: issue.message || 'No message provided',
-          action: issue.action || 'Review and fix the reported issue'
+          priority: (issue.priority as ReportIssue["priority"]) || "Medium",
+          impact: issue.impact || "Unknown",
+          message: issue.message || "No message provided",
+          action: issue.action || "Review and fix the reported issue",
         })),
-        metadata: reportData.metadata
+        metadata: reportData.metadata,
       };
 
       reports.push(report);
@@ -204,14 +220,16 @@ for (const script of scriptConfig) {
       const placeholderReport: Report = {
         script: script.id,
         runAt: new Date().toISOString(),
-        status: 'blue' as StatusType,
-        issues: [{
-          id: `${script.id}-missing`,
-          priority: 'Medium' as ReportIssue['priority'],
-          impact: 'System',
-          message: `No report found for ${script.name}`,
-          action: `Run ${script.name} to generate a report`
-        }]
+        status: "blue" as StatusType,
+        issues: [
+          {
+            id: `${script.id}-missing`,
+            priority: "Medium" as ReportIssue["priority"],
+            impact: "System",
+            message: `No report found for ${script.name}`,
+            action: `Run ${script.name} to generate a report`,
+          },
+        ],
       };
       reports.push(placeholderReport);
       reportsByScript[script.id] = placeholderReport;
@@ -221,19 +239,21 @@ for (const script of scriptConfig) {
     const errorReport: Report = {
       script: script.id,
       runAt: new Date().toISOString(),
-      status: 'red' as StatusType,
-      issues: [{
-        id: `${script.id}-error-${Date.now()}`,
-        priority: 'Critical' as ReportIssue['priority'],
-        impact: 'System',
-        message: `Failed to load report: ${error instanceof Error ? error.message : String(error)}`,
-        action: 'Check report file format and try running the script again',
-      }],
+      status: "red" as StatusType,
+      issues: [
+        {
+          id: `${script.id}-error-${Date.now()}`,
+          priority: "Critical" as ReportIssue["priority"],
+          impact: "System",
+          message: `Failed to load report: ${error instanceof Error ? error.message : String(error)}`,
+          action: "Check report file format and try running the script again",
+        },
+      ],
       metadata: {
         error: true,
-        errorType: error instanceof Error ? error.name : 'Unknown',
-        reportFile
-      }
+        errorType: error instanceof Error ? error.name : "Unknown",
+        reportFile,
+      },
     };
     reports.push(errorReport);
     reportsByScript[script.id] = errorReport;
@@ -863,16 +883,17 @@ const counts = {
             {
               scriptConfig.map((script) => {
                 const report = reportsByScript[script.id];
-                const status = report?.status || 'blue';
-                const buttonClass = status === "green"
-                  ? "btn-green"
-                  : status === "yellow"
-                    ? "btn-yellow"
-                    : status === "orange"
-                      ? "btn-orange"
-                      : status === "red"
-                        ? "btn-red"
-                        : "btn-blue";
+                const status = report?.status || "blue";
+                const buttonClass =
+                  status === "green"
+                    ? "btn-green"
+                    : status === "yellow"
+                      ? "btn-yellow"
+                      : status === "orange"
+                        ? "btn-orange"
+                        : status === "red"
+                          ? "btn-red"
+                          : "btn-blue";
 
                 return (
                   <div class="bg-gray-50 rounded-lg p-4">
@@ -881,8 +902,11 @@ const counts = {
                       <p class="text-sm text-gray-600">{script.description}</p>
                       {report && (
                         <div class="mt-2 flex items-center gap-2 text-xs">
-                          <span class={`px-2 py-1 rounded ${statusConfig[status].color} ${statusConfig[status].textColor}`}>
-                            {statusConfig[status].emoji} {statusConfig[status].label}
+                          <span
+                            class={`px-2 py-1 rounded ${statusConfig[status].color} ${statusConfig[status].textColor}`}
+                          >
+                            {statusConfig[status].emoji}{" "}
+                            {statusConfig[status].label}
                           </span>
                           <span class="text-gray-500">
                             {report.issues.length} issues
@@ -1201,20 +1225,28 @@ const counts = {
           : "rotate(0deg)";
       };
 
-      window.filterReports = function(status, button) {
+      window.filterReports = function (status, button) {
         // Update button states
-        document.querySelectorAll(".filter-btn").forEach(btn => {
-          btn.classList.remove("bg-blue-100", "text-blue-700", "border-blue-200");
+        document.querySelectorAll(".filter-btn").forEach((btn) => {
+          btn.classList.remove(
+            "bg-blue-100",
+            "text-blue-700",
+            "border-blue-200"
+          );
           btn.classList.add("bg-gray-100", "text-gray-700", "border-gray-200");
           btn.setAttribute("data-active", "false");
         });
-        
-        button.classList.remove("bg-gray-100", "text-gray-700", "border-gray-200");
+
+        button.classList.remove(
+          "bg-gray-100",
+          "text-gray-700",
+          "border-gray-200"
+        );
         button.classList.add("bg-blue-100", "text-blue-700", "border-blue-200");
         button.setAttribute("data-active", "true");
 
         // Filter cards
-        document.querySelectorAll(".report-card").forEach(card => {
+        document.querySelectorAll(".report-card").forEach((card) => {
           if (status === "all" || card.dataset.status === status) {
             card.style.display = "block";
           } else {

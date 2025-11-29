@@ -1,6 +1,5 @@
 ---
-
-title: "Executive Presence on Video Calls: 7 Habits that Build Trust in English"
+title: "Executive Presence on Video Calls: 7 Trust-Building Habits"
 excerpt: "Struggling to sound confident and credible on Zoom or Teams? Use these seven executive habits to project authority, speak clearly, and run high-impact meetings in English."
 publishDate: "2025-09-04"
 categories:
@@ -26,11 +25,11 @@ At New York English, I coach executives and senior managers in tech, finance, lo
 
 ### What You’ll Learn
 
-* **Open like a leader** with a crisp agenda and time framing
-* **Sound clear and concise** with simple language and punchy structure
-* **Handle interruptions and questions** without losing control
-* **Use your voice and camera** to project executive presence
-* **Close meetings** with commitments that actually stick
+- **Open like a leader** with a crisp agenda and time framing
+- **Sound clear and concise** with simple language and punchy structure
+- **Handle interruptions and questions** without losing control
+- **Use your voice and camera** to project executive presence
+- **Close meetings** with commitments that actually stick
 
 ---
 
@@ -60,10 +59,10 @@ Aim for **three sentences** of **\~30 words total** before you pause. Short bloc
 
 Clarity beats complexity—especially across accents.
 
-* “Leverage” → **use**
-* “Facilitate” → **help**
-* “Mitigate” → **reduce**
-* “Initiate” → **start**
+- “Leverage” → **use**
+- “Facilitate” → **help**
+- “Mitigate” → **reduce**
+- “Initiate” → **start**
 
 **Signal confidence:** prefer **I recommend / We will / The decision is** over hedging ("maybe, perhaps, kind of"). For more on building this kind of executive presence, see [Beyond Grammar: Why Senior Leaders Need a Business-Savvy Native English Coach](/en/blog/executive-english-coaching/).
 
@@ -73,10 +72,10 @@ Clarity beats complexity—especially across accents.
 
 Small adjustments create big presence:
 
-* **Framing:** eyes at top third of screen; shoulders visible
-* **Lighting:** light your face from the front (window or lamp)
-* **Eye contact:** look at the camera when stating decisions
-* **Gestures:** keep hands in frame to increase perceived trust
+- **Framing:** eyes at top third of screen; shoulders visible
+- **Lighting:** light your face from the front (window or lamp)
+- **Eye contact:** look at the camera when stating decisions
+- **Gestures:** keep hands in frame to increase perceived trust
 
 **Pro tip:** When delivering key lines, minimize slide motion and keep your face visible.
 
@@ -88,9 +87,9 @@ Maintain flow without sounding rigid.
 
 **Phrases that work:**
 
-* “Great point—let me finish this thought and I’ll come back to you.”
-* “I’ll park that in chat so we can decide on X first.”
-* “Can we hold questions for two minutes while I show the impact?”
+- “Great point—let me finish this thought and I’ll come back to you.”
+- “I’ll park that in chat so we can decide on X first.”
+- “Can we hold questions for two minutes while I show the impact?”
 
 ---
 
@@ -130,11 +129,10 @@ This prevents drift and boosts accountability.
 
 Strong video presence helps you:
 
-* Earn trust quickly with clients and senior leaders
-* Lead cross-border teams with clarity
-* Reduce confusion and meeting fatigue
-* Move decisions forward—today, not next week
-
+- Earn trust quickly with clients and senior leaders
+- Lead cross-border teams with clarity
+- Reduce confusion and meeting fatigue
+- Move decisions forward—today, not next week
 
 ---
 

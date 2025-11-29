@@ -7,47 +7,49 @@ import ContactInfo from "@components/sections/ContactInfo.astro";
 import nycStatueOfLiberty from "@assets/images/contact/nyc-statue-of-liberty.jpg";
 
 const heroContent = {
-    title: "Contáctame",
-    description: "Si tu inglés pudiera hablar… ¿sería merecedor de un ascenso?",
+  title: "Contáctame",
+  description: "Si tu inglés pudiera hablar… ¿sería merecedor de un ascenso?",
 };
 
 const footerCta = {
   eyebrow: "",
   title: "Transforma tu inglés profesional hoy",
-  description: "Reserva tu consulta gratuita para obtener la claridad, la confianza y el impacto que tu puesto exige.",
+  description:
+    "Reserva tu consulta gratuita para obtener la claridad, la confianza y el impacto que tu puesto exige.",
   hideCta: false,
   button: {
     text: "Reservar mi consulta gratuita",
-    link: "/es/book/",
+    link: "/es/reservar/",
     variant: "primary",
   },
 };
 
 // Page-specific metadata
 const metadata = {
-    title: "Contacto | Coaching de Inglés Empresarial en NY",
-    description: "Contáctame por formulario o WhatsApp para consultas sobre coaching de inglés ejecutivo personalizado."
+  title: "Contacto | Coaching de Inglés Empresarial en NY",
+  description:
+    "Contáctame por formulario o WhatsApp para consultas sobre coaching de inglés ejecutivo personalizado para profesionales internacionales.",
 };
 ---
 
-<Base 
-    lang="es"
-    tkey="contact"
-    title={metadata.title} 
-    description={metadata.description} 
-    ogImage={{
-        src: "/images/logos/new-york-english-sq-og.jpg",
-        alt: "Contacto New York English Teacher - Coach de Comunicación en Inglés de Negocios",
-        width: 1200,
-        height: 630
-    }}
+<Base
+  lang="es"
+  tkey="contact"
+  title={metadata.title}
+  description={metadata.description}
+  ogImage={{
+    src: "/images/logos/new-york-english-sq-og.jpg",
+    alt: "Contacto New York English Teacher - Coach de Comunicación en Inglés de Negocios",
+    width: 1200,
+    height: 630,
+  }}
 >
-    <InnerHero 
-        content={{
-            ...heroContent,
-            backgroundImage: nycStatueOfLiberty,
-            overlayOpacity: 0.3
-        }} 
-    />
-    <ContactInfo background="base" padding="base" lang="es" />
+  <InnerHero
+    content={{
+      ...heroContent,
+      backgroundImage: nycStatueOfLiberty,
+      overlayOpacity: 0.3,
+    }}
+  />
+  <ContactInfo background="base" padding="base" lang="es" />
 </Base>

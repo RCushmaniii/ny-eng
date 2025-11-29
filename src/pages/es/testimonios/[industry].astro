@@ -15,7 +15,7 @@ export async function getStaticPaths() {
   );
 
   return validIndustries.map((industry) => ({
-    params: { industry }
+    params: { industry },
   }));
 }
 
@@ -28,34 +28,48 @@ const validIndustries = Object.keys(testimonialsByIndustry).filter(
 );
 
 // Default to "all" if industry is invalid
-const currentIndustry = industry && validIndustries.includes(industry) ? industry : "all";
+const currentIndustry =
+  industry && validIndustries.includes(industry) ? industry : "all";
 
 // Filter testimonials based on selected industry
-const filteredTestimonials: Testimonial[] = testimonialsByIndustry[currentIndustry as ValidIndustry] || [];
+const filteredTestimonials: Testimonial[] =
+  testimonialsByIndustry[currentIndustry as ValidIndustry] || [];
 
 // SEO metadata
-const industryLabel = industryLabels[currentIndustry as keyof typeof industryLabels];
-const title = currentIndustry === "all" 
-  ? "Historias de Éxito de Clientes | NY English Teacher"
-  : `Historias de Éxito de ${industryLabel} | NY English Teacher`;
-const description = currentIndustry === "all"
-  ? "Lee historias de éxito de ejecutivos, fundadores y profesionales que transformaron su comunicación en inglés con coaching personalizado."
-  : `Lee historias de éxito de ${industryLabel.toLowerCase()} que transformaron su comunicación en inglés con coaching personalizado.`;
+const industryLabel =
+  industryLabels[currentIndustry as keyof typeof industryLabels];
+const title =
+  currentIndustry === "all"
+    ? "Historias de Éxito | NY English Teacher"
+    : `${industryLabel} - Historias de Éxito | NY English`;
+const description =
+  currentIndustry === "all"
+    ? "Lee historias de éxito de ejecutivos, fundadores y profesionales que transformaron su comunicación en inglés con coaching personalizado."
+    : `Lee historias de éxito de ${industryLabel.toLowerCase()} que transformaron su comunicación en inglés con coaching personalizado.`;
 
 // English counterpart for language switcher
-const translationSlugEn = currentIndustry === "all" 
-  ? "/en/testimonials/" 
-  : `/en/testimonials/${currentIndustry}/`;
+const translationSlugEn =
+  currentIndustry === "all"
+    ? "/en/testimonials/"
+    : `/en/testimonials/${currentIndustry}/`;
 
 // Create custom hreflangs for each industry page
-const currentUrl = currentIndustry === "all" 
-  ? "/es/testimonios/" 
-  : `/es/testimonios/${currentIndustry}/`;
+const currentUrl =
+  currentIndustry === "all"
+    ? "https://www.nyenglishteacher.com/es/testimonios/all/"
+    : `https://www.nyenglishteacher.com/es/testimonios/${currentIndustry}/`;
+
+const translationUrlEn =
+  currentIndustry === "all"
+    ? "https://www.nyenglishteacher.com/en/testimonials/all/"
+    : `https://www.nyenglishteacher.com/en/testimonials/${currentIndustry}/`;
 
 const customHreflangs = [
-  { lang: 'en-US', href: translationSlugEn },
-  { lang: 'es-MX', href: currentUrl }
+  { lang: "en-US", href: translationUrlEn },
+  { lang: "es-MX", href: currentUrl },
 ];
+
+// Create custom hreflangs for this specific category (absolute URLs)
 ---
 
 <Base
@@ -68,8 +82,10 @@ const customHreflangs = [
 >
   <TestimonialsGrid
     testimonials={filteredTestimonials}
-    title={currentIndustry === "all" ? "Testimonios de Clientes" : `Testimonios de ${industryLabel}`}
-    description={currentIndustry === "all" 
+    title={currentIndustry === "all"
+      ? "Testimonios de Clientes"
+      : `Testimonios de ${industryLabel}`}
+    description={currentIndustry === "all"
       ? "Descubre cómo profesionales de diversas industrias han transformado sus habilidades de comunicación en inglés y alcanzado sus metas profesionales."
       : `Descubre cómo ${industryLabel.toLowerCase()} han transformado sus habilidades de comunicación en inglés y alcanzado sus metas profesionales.`}
     showFilters={true}

@@ -33,7 +33,8 @@ const description = "Test your Business English confidence in 2 minutes! Discove
   title={title} 
   description={description}
   lang="en"
-  customCanonical="https://www.nyenglishteacher.com/en/quiz/"
+  noindex={true}
+  customCanonical={`https://www.nyenglishteacher.com/en/quiz/question/${id}/`}
   customHreflangs={[
     { lang: "en-US", href: `https://www.nyenglishteacher.com/en/quiz/question/${id}/` },
     { lang: "es-MX", href: `https://www.nyenglishteacher.com/es/quiz/question/${id}/` }

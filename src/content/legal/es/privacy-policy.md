@@ -4,8 +4,8 @@ lastUpdated: "2025-04-10"
 translations:
   en: "/en/legal/privacy-policy/"
 seo:
-  title: "Política de Privacidad - Cómo Protegemos tu Información"
-  description: "Entiende cómo recopilamos, usamos y protegemos tu información personal en el sitio web de New York English Teacher."
+  title: "Política de Privacidad - Cómo Protegemos Tu Información"
+  description: "Comprende cómo recopilamos, usamos y protegemos tu información personal en el sitio web de New York English Teacher para servicios de coaching."
 ---
 
 ## Política de Privacidad
@@ -82,4 +82,4 @@ Podemos actualizar ocasionalmente esta Política de Privacidad. Cuando ocurran c
 
 ## Contáctanos
 
-¿Tienes preguntas o inquietudes sobre esta Política de Privacidad? No dudes en contactarnos a través de nuestro formulario de contacto. 
+¿Tienes preguntas o inquietudes sobre esta Política de Privacidad? No dudes en contactarnos a través de nuestro formulario de contacto.
