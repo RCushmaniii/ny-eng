@@ -38,7 +38,10 @@ const { currentPage, data: posts, lastPage, url } = page;
 const baseUrl = "/es/blog/";
 const hasMultiplePages = lastPage > 1;
 
-const seoTitle = `Blog de Inglés Empresarial - Página ${currentPage} | NY English`;
+const seoTitle =
+  currentPage === 1
+    ? `Blog de Inglés Empresarial | NY English`
+    : `Blog de Inglés Empresarial - Página ${currentPage} | NY English`;
 const seoDescription =
   "Consejos prácticos, experiencias reales y estrategias expertas para dominar la comunicación en inglés empresarial. Mejora tu inglés profesional.";
 

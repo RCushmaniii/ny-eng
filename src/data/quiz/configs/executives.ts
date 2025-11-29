@@ -245,7 +245,7 @@ export const executivesConfig: QuizConfig = {
   },
 
   es: {
-    title: 'Evaluación de Confianza en Comunicación para Ejecutivos',
+    title: 'Evaluación de Confianza para Ejecutivos',
     subtitle:
       'Descubre cómo tu estilo de comunicación impacta la confianza del directorio, la velocidad de los acuerdos y tu capacidad de liderar al más alto nivel.',
 

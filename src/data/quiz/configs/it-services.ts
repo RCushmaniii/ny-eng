@@ -155,7 +155,7 @@ export const itServicesConfig: QuizConfig = {
   },
   
   es: {
-    title: 'Evaluación de Confianza en Comunicación para TI',
+    title: 'Evaluación de Confianza para TI',
     subtitle: 'Descubre cómo las brechas de comunicación en inglés afectan la credibilidad de tu equipo técnico, el impulso de acuerdos y la capacidad de ganar clientes norteamericanos.',
     
     questions: [

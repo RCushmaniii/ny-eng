@@ -34,6 +34,7 @@ class FullSiteScan {
       titleTooShort: [],
       h1Missing: [],
       multipleH1: [],
+      hreflangMissing: [],
     };
   }
 
