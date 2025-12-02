@@ -1,0 +1,8 @@
+{
+  "name": "netlify-functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions for NY English Teacher",
+  "dependencies": {
+    "mysql2": "^3.11.5"
+  }
+}
