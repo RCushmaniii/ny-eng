@@ -11,7 +11,7 @@
 export const prerender = false;
 
 import type { APIRoute } from 'astro';
-import { getAllSubmissions } from '@/lib/supabase';
+import { getAllSubmissions } from '@/lib/db';
 
 export const GET: APIRoute = async ({ url }) => {
   try {

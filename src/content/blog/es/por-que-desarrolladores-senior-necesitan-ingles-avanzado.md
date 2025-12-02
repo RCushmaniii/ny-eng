@@ -4,7 +4,7 @@ excerpt: "El inglés conversacional no te conseguirá el ascenso a desarrollador
 publishDate: "2025-11-30"
 categories:
   - "Inglés para Tecnología"
-  - "Carrera y Liderazgo"
+  - "Carrera & Liderazgo"
 featuredImage: "./images/senior-dev-english.jpg"
 imageAlt: "Desarrollador senior liderando con confianza una discusión técnica con equipo internacional"
 translations:

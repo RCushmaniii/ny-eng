@@ -106,4 +106,4 @@ Para la industria tecnológica de México, dominar el inglés de negocios no se 
 
 **Toma acción ahora para dominar el inglés de negocios y poner a tu empresa a la vanguardia de la innovación global.**
 
-**[¿Listo para Ganar Más Contratos Globales? Desbloquea el Potencial de Tu Equipo con una Consulta Gratuita.](/es/book/)**
+**[¿Listo para Ganar Más Contratos Globales? Desbloquea el Potencial de Tu Equipo con una Consulta Gratuita.](/es/reservar/)**

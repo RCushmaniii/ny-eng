@@ -57,6 +57,7 @@ const { page, totalPages, posts, hasMultiplePages } = Astro.props;
 // Use centralized i18n system for blog pagination
 const lang = "es";
 const tkey = "blog" as TKey;
+const pageTitle = `Blog - Página ${page} | Inglés Empresarial`;
 ---
 
 <PaginatedBlogLayout
@@ -64,8 +65,8 @@ const tkey = "blog" as TKey;
   currentPage={page}
   totalPages={totalPages}
   baseUrl="/es/blog/"
-  title="Blog"
-  subtitle="Consejos expertos, estrategias y ejemplos del mundo real para dominar el inglés empresarial. Mejora tus habilidades de comunicación profesional con consejos prácticos."
+  title={pageTitle}
+  subtitle="Consejos expertos y estrategias para dominar el inglés empresarial. Mejora tu comunicación profesional con guías prácticas."
   heroImage={blogHero}
   heroImageAlt="Imagen de héroe del blog"
   translationSlugEn={`/en/blog/${page}/`}

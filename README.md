@@ -17,7 +17,7 @@ This is the new version of NYEnglishTeacher.com, redesigned to provide a better 
 - [Lucide React](https://lucide.dev/) - Modern icon library for React components
 - [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/) - Optimized sitemap generation with hreflang support
 - [Titan Theme](https://themes.astro.build/titan) - Professional Astro theme components
-- [Supabase](https://supabase.com/) - Backend database for quiz submissions
+- [MySQL](https://www.mysql.com/) - Database for quiz submissions (Hostinger)
 - [Resend](https://resend.com/) - Email notifications for quiz submissions
 - JSON-LD Structured Data - Enhanced search engine visibility
 
@@ -83,7 +83,8 @@ npm run preview
 │   │   └── methodology.ts # Coaching methodology
 │   ├── layouts/          # Page layouts
 │   ├── lib/              # Utility functions
-│   │   └── supabase.ts   # Supabase client and database functions
+│   │   ├── mysql.ts      # MySQL connection pool
+│   │   └── db.ts         # Database functions (quiz submissions)
 │   ├── pages/            # File-based routing
 │   │   ├── api/          # API endpoints
 │   │   │   └── quiz/     # Quiz submission API
@@ -370,7 +371,7 @@ A world-class, config-driven quiz system that transforms website visitors into q
 - **Dynamic Routing**: `src/pages/[lang]/quiz/[quizType]/` - Pre-rendered persona pages
 - **React Components**: `src/components/QuizReport.tsx` - Premium report rendering
 - **Scoring Engine**: `src/data/quiz/scoring.ts` - Tier-based scoring logic
-- **API Integration**: `src/pages/api/quiz/submit.ts` - Supabase lead capture
+- **API Integration**: `src/pages/api/quiz/submit.ts` - MySQL lead capture
 - **Device Detection**: `src/lib/device-detection.ts` - Mobile optimization
 - **State Management**: `src/lib/quiz-storage.ts` - SessionStorage persistence
 

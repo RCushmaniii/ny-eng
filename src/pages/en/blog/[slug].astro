@@ -58,9 +58,26 @@ const postUrl = canonicalUrl;
 const seoTitle = post.data.seo?.title || post.data.title;
 const seoDescription = post.data.seo?.description || post.data.excerpt;
 const featuredObj = post.data.featuredImage;
-const featuredUrl: string | null = (typeof featuredObj === 'object' && featuredObj?.src)
-  ? featuredObj.src
-  : (post.data.seo?.image ?? null);
+
+// Extract the actual image path for OG tags (not the Astro image object)
+let featuredUrl: string | null = null;
+if (typeof featuredObj === 'object' && featuredObj?.src) {
+  // This is an Astro image object - we need to construct a public URL path
+  // The image is in src/content/blog/en/images/..., which gets copied to /en/blog/images/...
+  const imgSrc = featuredObj.src as any;
+  if (imgSrc?.src && typeof imgSrc.src === 'string') {
+    // Extract the path from the Astro image object
+    const match = imgSrc.src.match(/\/images\/(.+)$/);
+    if (match) {
+      featuredUrl = `/en/blog/images/${match[1]}`;
+    }
+  } else if (typeof featuredObj.src === 'string') {
+    // It's already a string path
+    featuredUrl = featuredObj.src.replace('./images/', '/en/blog/images/');
+  }
+} else if (post.data.seo?.image) {
+  featuredUrl = post.data.seo.image;
+}
 
 // --- Previous/Next Post Navigation ---
 const allPosts = (await getCollection('blog'))
@@ -120,7 +137,16 @@ const customHreflangs = [
   customCanonical={currentUrl}
   title={seoTitle}
   description={seoDescription}
-  ogImage={featuredUrl ? { src: featuredUrl, alt: post.data.imageAlt || post.data.title } : undefined}
+  ogType="article"
+  articlePublishedTime={post.data.publishDate.toISOString()}
+  articleModifiedTime={post.data.lastmod?.toISOString() || post.data.publishDate.toISOString()}
+  articleAuthor="Robert Greenshields"
+  ogImage={featuredUrl ? { 
+    src: featuredUrl, 
+    alt: post.data.imageAlt || post.data.title,
+    width: 1200,
+    height: 675
+  } : undefined}
 >
   <BlogPostSchema
     title={post.data.title}

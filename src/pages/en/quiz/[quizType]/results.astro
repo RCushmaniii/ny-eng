@@ -468,7 +468,7 @@ const customHreflangs = [
             } catch {}
 
             // Redirect to the polished report page (uses QuizReport.tsx)
-            window.location.href = "/en/quiz/report/";
+            window.location.href = `/en/quiz/${quizType}/report/`;
           } else {
             // Show error
             document.getElementById("lead-capture")!.style.display = "none";

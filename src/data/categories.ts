@@ -30,24 +30,24 @@ export const categories: Category[] = [
     name_es: 'Inglés para Logística',
     slug: 'logistics-english',
     esSlug: 'ingles-para-logistica',
-    description: 'English for the logistics and supply chain industry. Master clear communication for global operations, vendor management, and international coordination. Improve your skills in logistics management, transportation, and warehousing.',
-    description_es: 'Inglés para la industria de logística y cadena de suministro. Domina la comunicación clara para operaciones globales y coordinación internacional. Mejora tus habilidades en gestión logística, transporte y almacenamiento.'
+    description: 'English for logistics and supply chain professionals. Master clear communication for global operations, vendor management, and international coordination.',
+    description_es: 'Inglés para profesionales de logística y cadena de suministro. Domina comunicación clara para operaciones globales y coordinación.'
   },
   {
     name: 'Professional English',
     name_es: 'Inglés para Profesionales',
     slug: 'professional-english',
     esSlug: 'ingles-para-profesionales',
-    description: 'Improve professional English for workplace success. Master business communication, write effective emails, and lead confident meetings with colleagues and clients. Enhance your professional image and advance your career.',
-    description_es: 'Mejora tu inglés profesional. Domina comunicación empresarial, escribe correos efectivos y lidera reuniones con colegas y clientes. Mejora tu imagen profesional y avanza en tu carrera.'
+    description: 'Professional English for workplace success. Master business communication, write effective emails, and lead meetings to advance your career.',
+    description_es: 'Inglés profesional para el éxito laboral. Domina comunicación empresarial, escribe correos efectivos y lidera reuniones con confianza.'
   },
   {
     name: 'High-Stakes English',
     name_es: 'Inglés para Presentaciones',
     slug: 'high-stakes-english',
     esSlug: 'ingles-para-presentaciones',
-    description: 'Master English for critical presentations and negotiations. Build confidence and clarity for high-pressure situations where your communication matters most. Develop a strong executive presence and persuasive communication skills.',
-    description_es: 'Domina el inglés para presentaciones críticas y negociaciones. Desarrolla confianza y claridad para situaciones de alta presión donde tu comunicación importa. Desarrolla una fuerte presencia ejecutiva y habilidades de comunicación persuasiva.'
+    description: 'Master English for critical presentations and negotiations. Build confidence and clarity for high-pressure situations and executive presence.',
+    description_es: 'Domina inglés para presentaciones críticas y negociaciones. Desarrolla confianza y claridad para situaciones de alta presión.'
   },
   // Core Categories based on the new structure
   {

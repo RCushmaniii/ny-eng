@@ -120,4 +120,4 @@ Estas siete prácticas transforman videollamadas de reuniones rutinarias en sesi
 
 **¿Listo para dominar tu presencia ejecutiva en inglés?** En New York English, ayudo a líderes como tú a comunicar con autoridad y claridad en cualquier contexto profesional.
 
-[Reserva tu consulta gratuita](/es/book/) y descubre cómo elevar tu comunicación ejecutiva.
+[Reserva tu consulta gratuita](/es/reservar/) y descubre cómo elevar tu comunicación ejecutiva.

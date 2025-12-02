@@ -10,7 +10,7 @@
 export const prerender = false;
 
 import type { APIRoute } from "astro";
-import { submitQuiz, type QuizSubmissionPayload } from "@/lib/supabase";
+import { submitQuiz, type QuizSubmissionPayload } from "@/lib/db";
 import { calculateQuizScore } from "@/data/quiz/scoring";
 import { getQuizConfig } from "@/data/quiz/configs";
 import type { QuizType, Language } from "@/data/quiz/types";

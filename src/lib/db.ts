@@ -1,33 +1,15 @@
 /**
- * Supabase Client Configuration
- *
- * Provides type-safe Supabase client for quiz submissions
+ * Database Client - MySQL
+ * 
+ * Replaces Supabase with MySQL on Hostinger
+ * Maintains same interface for backward compatibility
  */
 
-import { createClient } from "@supabase/supabase-js";
-
-// Environment variables
-// Prefer service role key for server-side usage (APIs, admin),
-// fall back to anon key if service key is not provided.
-const supabaseUrl = import.meta.env.SUPABASE_URL;
-const supabaseServiceRoleKey =
-  import.meta.env.SUPABASE_SECRET || import.meta.env.SUPABASE_SERVICE_ROLE_KEY;
-const supabaseAnonKey = import.meta.env.SUPABASE_ANON_KEY;
-
-if (!supabaseUrl || !(supabaseServiceRoleKey || supabaseAnonKey)) {
-  throw new Error("Missing Supabase environment variables. Check .env file.");
-}
-
-// Create Supabase client
-// NOTE: Service role bypasses RLS and is safe here because this code only
-// runs in server-side API routes, never in the browser bundle.
-export const supabase = createClient(
-  supabaseUrl,
-  supabaseServiceRoleKey || supabaseAnonKey
-);
+import pool from './mysql';
+import type { RowDataPacket, ResultSetHeader } from 'mysql2/promise';
 
 // =============================================================================
-// TYPE DEFINITIONS
+// TYPE DEFINITIONS (same as Supabase version)
 // =============================================================================
 
 export interface QuizSubmission {
@@ -145,86 +127,88 @@ export interface QuizSubmissionPayload {
  * Submit a complete quiz with all answers
  */
 export async function submitQuiz(payload: QuizSubmissionPayload) {
+  const connection = await pool.getConnection();
+  
   try {
+    await connection.beginTransaction();
+
     // 1. Insert the submission
-    const { data: submission, error: submissionError } = await supabase
-      .from("quiz_submissions")
-      .insert({
-        // Lead info
-        name: payload.name,
-        email: payload.email,
-        company: payload.company || null,
-        phone: payload.phone || null,
+    const [submissionResult] = await connection.execute<ResultSetHeader>(
+      `INSERT INTO quiz_submissions (
+        name, email, company, phone,
+        quiz_type, quiz_version, language,
+        raw_score, total_score, score_tier,
+        category_scores, primary_gap, secondary_gap,
+        completion_time_ms, device_type, browser, referrer,
+        utm_source, utm_medium, utm_campaign, utm_content, utm_term,
+        answers
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        payload.name,
+        payload.email,
+        payload.company || null,
+        payload.phone || null,
+        payload.quiz_type,
+        payload.quiz_version,
+        payload.language,
+        payload.raw_score,
+        payload.total_score,
+        payload.score_tier,
+        JSON.stringify(payload.category_scores),
+        JSON.stringify(payload.primary_gap),
+        JSON.stringify(payload.secondary_gap),
+        payload.completion_time_ms || null,
+        payload.device_type || null,
+        payload.browser || null,
+        payload.referrer || null,
+        payload.utm_source || null,
+        payload.utm_medium || null,
+        payload.utm_campaign || null,
+        payload.utm_content || null,
+        payload.utm_term || null,
+        JSON.stringify(payload.answers),
+      ]
+    );
 
-        // Quiz metadata
-        quiz_type: payload.quiz_type,
-        quiz_version: payload.quiz_version,
-        language: payload.language,
-
-        // Scoring snapshot
-        raw_score: payload.raw_score,
-        total_score: payload.total_score,
-        score_tier: payload.score_tier,
-        category_scores: payload.category_scores,
-        primary_gap: payload.primary_gap,
-        secondary_gap: payload.secondary_gap,
-
-        // Behavioral data
-        completion_time_ms: payload.completion_time_ms || null,
-        device_type: payload.device_type || null,
-        browser: payload.browser || null,
-        referrer: payload.referrer || null,
-
-        // Marketing attribution
-        utm_source: payload.utm_source || null,
-        utm_medium: payload.utm_medium || null,
-        utm_campaign: payload.utm_campaign || null,
-        utm_content: payload.utm_content || null,
-        utm_term: payload.utm_term || null,
-      })
-      .select()
-      .single();
-
-    if (submissionError) {
-      console.error("Submission error:", submissionError);
-      throw submissionError;
-    }
-
-    if (!submission) {
-      throw new Error("No submission data returned");
-    }
+    const submissionId = submissionResult.insertId.toString();
 
     // 2. Insert all answers
-    const answerRecords = payload.answers.map((a) => ({
-      submission_id: submission.id,
-      question_number: a.question_number,
-      question_text: a.question_text,
-      answer_text: a.answer_text,
-      answer_index: a.answer_index,
-      points: a.points,
-      category: a.category,
-    }));
+    if (payload.answers && payload.answers.length > 0) {
+      const answerValues = payload.answers.map(a => [
+        submissionId,
+        a.question_number,
+        a.question_text,
+        a.answer_text,
+        a.answer_index,
+        a.points,
+        a.category,
+      ]);
 
-    const { error: answersError } = await supabase
-      .from("quiz_answers")
-      .insert(answerRecords);
-
-    if (answersError) {
-      console.error("Answers error:", answersError);
-      throw answersError;
+      await connection.query(
+        `INSERT INTO quiz_answers (
+          submission_id, question_number, question_text,
+          answer_text, answer_index, points, category
+        ) VALUES ?`,
+        [answerValues]
+      );
     }
+
+    await connection.commit();
 
     return {
       success: true,
-      submission_id: submission.id,
+      submission_id: submissionId,
       message: "Quiz submitted successfully",
     };
   } catch (error) {
+    await connection.rollback();
     console.error("Error submitting quiz:", error);
     return {
       success: false,
       error: error instanceof Error ? error.message : "Unknown error",
     };
+  } finally {
+    connection.release();
   }
 }
 
@@ -234,22 +218,36 @@ export async function submitQuiz(payload: QuizSubmissionPayload) {
 export async function getSubmission(submissionId: string) {
   try {
     // Get submission
-    const { data: submission, error: submissionError } = await supabase
-      .from("quiz_submissions")
-      .select("*")
-      .eq("id", submissionId)
-      .single();
+    const [submissions] = await pool.execute<RowDataPacket[]>(
+      'SELECT * FROM quiz_submissions WHERE id = ?',
+      [submissionId]
+    );
 
-    if (submissionError) throw submissionError;
+    if (submissions.length === 0) {
+      throw new Error('Submission not found');
+    }
+
+    const submission = submissions[0];
+
+    // Parse JSON fields
+    if (submission.category_scores) {
+      submission.category_scores = JSON.parse(submission.category_scores);
+    }
+    if (submission.primary_gap) {
+      submission.primary_gap = JSON.parse(submission.primary_gap);
+    }
+    if (submission.secondary_gap) {
+      submission.secondary_gap = JSON.parse(submission.secondary_gap);
+    }
+    if (submission.answers) {
+      submission.answers = JSON.parse(submission.answers);
+    }
 
     // Get answers
-    const { data: answers, error: answersError } = await supabase
-      .from("quiz_answers")
-      .select("*")
-      .eq("submission_id", submissionId)
-      .order("question_number");
-
-    if (answersError) throw answersError;
+    const [answers] = await pool.execute<RowDataPacket[]>(
+      'SELECT * FROM quiz_answers WHERE submission_id = ? ORDER BY question_number',
+      [submissionId]
+    );
 
     return {
       success: true,
@@ -276,39 +274,54 @@ export async function getAllSubmissions(filters?: {
   offset?: number;
 }) {
   try {
-    let query = supabase
-      .from("quiz_submissions")
-      .select("*", { count: "exact" })
-      .order("created_at", { ascending: false });
+    let query = 'SELECT * FROM quiz_submissions WHERE 1=1';
+    const params: any[] = [];
 
     // Apply filters
     if (filters?.score_tier) {
-      query = query.eq("score_tier", filters.score_tier);
+      query += ' AND score_tier = ?';
+      params.push(filters.score_tier);
     }
     if (filters?.language) {
-      query = query.eq("language", filters.language);
+      query += ' AND language = ?';
+      params.push(filters.language);
     }
     if (filters?.booked_consultation !== undefined) {
-      query = query.eq("booked_consultation", filters.booked_consultation);
+      query += ' AND booked_consultation = ?';
+      params.push(filters.booked_consultation);
     }
+
+    query += ' ORDER BY created_at DESC';
+
     if (filters?.limit) {
-      query = query.limit(filters.limit);
+      query += ' LIMIT ?';
+      params.push(filters.limit);
     }
     if (filters?.offset) {
-      query = query.range(
-        filters.offset,
-        filters.offset + (filters.limit || 50) - 1
-      );
+      query += ' OFFSET ?';
+      params.push(filters.offset);
     }
 
-    const { data, error, count } = await query;
+    const [submissions] = await pool.execute<RowDataPacket[]>(query, params);
 
-    if (error) throw error;
+    // Parse JSON fields for each submission
+    submissions.forEach(sub => {
+      if (sub.category_scores) sub.category_scores = JSON.parse(sub.category_scores);
+      if (sub.primary_gap) sub.primary_gap = JSON.parse(sub.primary_gap);
+      if (sub.secondary_gap) sub.secondary_gap = JSON.parse(sub.secondary_gap);
+      if (sub.answers) sub.answers = JSON.parse(sub.answers);
+    });
+
+    // Get total count
+    const [countResult] = await pool.execute<RowDataPacket[]>(
+      'SELECT COUNT(*) as total FROM quiz_submissions'
+    );
+    const total = countResult[0].total;
 
     return {
       success: true,
-      submissions: data,
-      total: count,
+      submissions,
+      total,
     };
   } catch (error) {
     console.error("Error getting submissions:", error);
@@ -327,15 +340,12 @@ export async function updateBookingStatus(
   bookingDate: string
 ) {
   try {
-    const { error } = await supabase
-      .from("quiz_submissions")
-      .update({
-        booked_consultation: true,
-        booking_date: bookingDate,
-      })
-      .eq("id", submissionId);
-
-    if (error) throw error;
+    await pool.execute(
+      `UPDATE quiz_submissions 
+       SET booked_consultation = TRUE, booking_date = ? 
+       WHERE id = ?`,
+      [bookingDate, submissionId]
+    );
 
     return {
       success: true,
@@ -355,12 +365,10 @@ export async function updateBookingStatus(
  */
 export async function trackCtaClick(submissionId: string) {
   try {
-    const { error } = await supabase
-      .from("quiz_submissions")
-      .update({ clicked_cta: true })
-      .eq("id", submissionId);
-
-    if (error) throw error;
+    await pool.execute(
+      'UPDATE quiz_submissions SET clicked_cta = TRUE WHERE id = ?',
+      [submissionId]
+    );
 
     return { success: true };
   } catch (error) {
