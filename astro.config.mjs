@@ -4,7 +4,6 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
-import netlify from "@astrojs/netlify";
 import react from "@astrojs/react";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -24,11 +23,8 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   site: SITE,
-  output: "static", // Changed from 'server' - all pages are prerendered for Hostinger
-  adapter: netlify({
-    edgeMiddleware: false,
-    imageCDN: false, // Disable Netlify image CDN - we're hosting on Hostinger
-  }),
+  output: "static", // Static build for Hostinger (API routes handled by Netlify separately)
+  // No adapter needed for static build
 
   image: {
     service: {
