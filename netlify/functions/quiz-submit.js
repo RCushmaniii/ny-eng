@@ -1,8 +1,10 @@
 /**
- * Netlify Function - Quiz Submission
+ * Netlify Function: Quiz Submit
  * 
- * Handles quiz submissions from Hostinger site
- * Connects to MySQL database on Hostinger
+ * This is a standalone Netlify Function that handles quiz submissions.
+ * It's called via proxy from Hostinger: /api/quiz/submit -> Netlify
+ * 
+ * Migrated from Supabase to MySQL on Hostinger.
  */
 
 const mysql = require('mysql2/promise');
@@ -19,127 +21,181 @@ const pool = mysql.createPool({
   queueLimit: 0,
 });
 
-exports.handler = async (event) => {
-  // CORS headers
-  const headers = {
-    'Access-Control-Allow-Origin': 'https://www.nyenglishteacher.com',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  };
+// Scoring logic (same as original)
+function calculateScore(answers, quizType) {
+  let totalScore = 0;
+  const answerValues = Object.values(answers);
+  
+  answerValues.forEach(answerIndex => {
+    totalScore += (3 - answerIndex) * 25 / answerValues.length;
+  });
 
-  // Handle preflight
+  totalScore = Math.round(Math.min(100, Math.max(0, totalScore)));
+
+  let scoreTier = 'Credibility Block';
+  if (totalScore >= 70) scoreTier = 'Conversation-Ready';
+  else if (totalScore >= 40) scoreTier = 'Million-Dollar Gap';
+
+  return {
+    totalScore,
+    scoreTier,
+    rawScore: totalScore,
+    categoryScores: {},
+    primaryGap: 'clarity',
+    secondaryGap: 'confidence'
+  };
+}
+
+exports.handler = async (event, context) => {
+  // Handle CORS preflight
   if (event.httpMethod === 'OPTIONS') {
     return {
       statusCode: 200,
-      headers,
-      body: '',
+      headers: {
+        'Access-Control-Allow-Origin': 'https://www.nyenglishteacher.com',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS'
+      },
+      body: ''
     };
   }
 
-  // Only allow POST
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
-      headers,
-      body: JSON.stringify({ error: 'Method not allowed' }),
+      headers: { 'Access-Control-Allow-Origin': 'https://www.nyenglishteacher.com' },
+      body: JSON.stringify({ error: 'Method not allowed' })
     };
   }
 
   try {
-    const payload = JSON.parse(event.body);
-    
+    const body = JSON.parse(event.body);
+
+    // Validate required fields (same as original)
+    if (!body.name || !body.email || !body.answers || !body.language || !body.quizType) {
+      return {
+        statusCode: 400,
+        headers: {
+          'Access-Control-Allow-Origin': 'https://www.nyenglishteacher.com',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          success: false,
+          error: 'Missing required fields: name, email, answers, language, quizType'
+        })
+      };
+    }
+
+    // Calculate score (same as original)
+    const scoreBreakdown = calculateScore(body.answers, body.quizType);
+
+    // Build payload (same structure as original)
+    const payload = {
+      name: body.name,
+      email: body.email,
+      company: body.company || null,
+      phone: body.phone || null,
+      quiz_type: body.quizType,
+      quiz_version: 'v1.0',
+      language: body.language,
+      raw_score: scoreBreakdown.rawScore,
+      total_score: scoreBreakdown.totalScore,
+      score_tier: scoreBreakdown.scoreTier,
+      category_scores: JSON.stringify(scoreBreakdown.categoryScores),
+      primary_gap: scoreBreakdown.primaryGap,
+      secondary_gap: scoreBreakdown.secondaryGap,
+      answers: JSON.stringify(Object.entries(body.answers).map(([qId, answerIndex]) => ({
+        question_number: parseInt(qId.replace('q', '')),
+        answer_index: answerIndex
+      }))),
+      completion_time_ms: body.completionTime || null,
+      device_type: body.deviceType || null,
+      browser: body.browser || null,
+      referrer: body.referrer || null,
+      utm_source: body.utmSource || null,
+      utm_medium: body.utmMedium || null,
+      utm_campaign: body.utmCampaign || null,
+      utm_content: body.utmContent || null,
+      utm_term: body.utmTerm || null
+    };
+
+    // Insert into MySQL (instead of Supabase)
     const connection = await pool.getConnection();
     
     try {
-      await connection.beginTransaction();
-
-      // 1. Insert the submission
-      const [submissionResult] = await connection.execute(
+      const [result] = await connection.execute(
         `INSERT INTO quiz_submissions (
           name, email, company, phone,
           quiz_type, quiz_version, language,
           raw_score, total_score, score_tier,
           category_scores, primary_gap, secondary_gap,
-          completion_time_ms, device_type, browser, referrer,
-          utm_source, utm_medium, utm_campaign, utm_content, utm_term,
-          answers
+          answers, completion_time_ms, device_type, browser, referrer,
+          utm_source, utm_medium, utm_campaign, utm_content, utm_term
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [
-          payload.name ?? null,
-          payload.email ?? null,
-          payload.company ?? null,
-          payload.phone ?? null,
-          payload.quiz_type ?? null,
-          payload.quiz_version ?? null,
-          payload.language ?? null,
-          payload.raw_score ?? null,
-          payload.total_score ?? null,
-          payload.score_tier ?? null,
-          payload.category_scores ? JSON.stringify(payload.category_scores) : null,
-          payload.primary_gap ? JSON.stringify(payload.primary_gap) : null,
-          payload.secondary_gap ? JSON.stringify(payload.secondary_gap) : null,
-          payload.completion_time_ms ?? null,
-          payload.device_type ?? null,
-          payload.browser ?? null,
-          payload.referrer ?? null,
-          payload.utm_source ?? null,
-          payload.utm_medium ?? null,
-          payload.utm_campaign ?? null,
-          payload.utm_content ?? null,
-          payload.utm_term ?? null,
-          payload.answers ? JSON.stringify(payload.answers) : null,
+          payload.name, payload.email, payload.company, payload.phone,
+          payload.quiz_type, payload.quiz_version, payload.language,
+          payload.raw_score, payload.total_score, payload.score_tier,
+          payload.category_scores, payload.primary_gap, payload.secondary_gap,
+          payload.answers, payload.completion_time_ms, payload.device_type,
+          payload.browser, payload.referrer, payload.utm_source, payload.utm_medium,
+          payload.utm_campaign, payload.utm_content, payload.utm_term
         ]
       );
 
-      const submissionId = submissionResult.insertId.toString();
+      // Send email notification (optional - requires Resend setup)
+      if (process.env.RESEND_API_KEY && process.env.NOTIFICATION_EMAIL) {
+        try {
+          const Resend = require('resend').Resend;
+          const resend = new Resend(process.env.RESEND_API_KEY);
 
-      // 2. Insert all answers
-      if (payload.answers && payload.answers.length > 0) {
-        const answerValues = payload.answers.map(a => [
-          submissionId,
-          a.question_number ?? null,
-          a.question_text ?? null,
-          a.answer_text ?? null,
-          a.answer_index ?? null,
-          a.points ?? null,
-          a.category ?? null,
-        ]);
-
-        await connection.query(
-          `INSERT INTO quiz_answers (
-            submission_id, question_number, question_text,
-            answer_text, answer_index, points, category
-          ) VALUES ?`,
-          [answerValues]
-        );
+          await resend.emails.send({
+            from: 'NY English Quiz <onboarding@resend.dev>',
+            to: process.env.NOTIFICATION_EMAIL,
+            subject: `New Quiz Lead: ${body.name} (${body.quizType})`,
+            html: `
+              <h2>New Quiz Submission</h2>
+              <p><strong>Name:</strong> ${body.name}</p>
+              <p><strong>Email:</strong> ${body.email}</p>
+              <p><strong>Score:</strong> ${scoreBreakdown.totalScore}/100</p>
+              <p><strong>Quiz Type:</strong> ${body.quizType}</p>
+            `
+          });
+        } catch (emailError) {
+          console.error('Email error:', emailError);
+          // Don't fail the submission if email fails
+        }
       }
-
-      await connection.commit();
 
       return {
         statusCode: 200,
-        headers,
+        headers: {
+          'Access-Control-Allow-Origin': 'https://www.nyenglishteacher.com',
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify({
           success: true,
-          submission_id: submissionId,
-          message: 'Quiz submitted successfully',
-        }),
+          submission_id: result.insertId,
+          score: scoreBreakdown.totalScore,
+          score_tier: scoreBreakdown.scoreTier
+        })
       };
-    } catch (error) {
-      await connection.rollback();
-      throw error;
     } finally {
       connection.release();
     }
+
   } catch (error) {
-    console.error('Error submitting quiz:', error);
+    console.error('Function error:', error);
     return {
       statusCode: 500,
-      headers,
+      headers: {
+        'Access-Control-Allow-Origin': 'https://www.nyenglishteacher.com',
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         success: false,
-        error: error.message || 'Internal server error',
-      }),
+        error: error.message || 'Internal server error'
+      })
     };
   }
 };
