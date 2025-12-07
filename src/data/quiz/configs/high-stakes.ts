@@ -1,10 +1,3 @@
-/**
- * High-Stakes English Quiz Configuration
- * 
- * Theme: "The Language Gap" Edition
- * Target: Professionals who feel they are "smarter" in their native language.
- */
-
 import type { QuizConfig } from '../types';
 
 export const highStakesConfig: QuizConfig = {
@@ -17,7 +10,7 @@ export const highStakesConfig: QuizConfig = {
     questions: [
       {
         id: 1,
-        category: 'cultural', // Mapping "Identity/Presence" to cultural/soft skills bucket
+        category: 'cultural', 
         question: 'Compare how you feel presenting in your native language versus presenting in English. What is the difference?',
         answers: [
           { index: 0, score: 10, label: 'No difference. I feel equally powerful, witty, and authoritative in both languages.' },
@@ -87,38 +80,70 @@ export const highStakesConfig: QuizConfig = {
       cultural: {
         name: 'Professional Identity & Presence',
         lowScoreImpact: 'The "Junior Effect." Your expertise is lost because you can\'t express nuance, humor, or authority. You feel like a different, less capable person in English.',
-        recommendation: 'Stop focusing on "perfect grammar" and start focusing on "emotional impact." Practice storytelling and authoritative phrasing to regain your executive voice.',
+        recommendation: 'My Advice: Stop focusing on "perfect grammar" and start focusing on "emotional impact." Practice storytelling and authoritative phrasing to regain your executive voice.',
         urgency: 'high'
       },
       'real-time': {
         name: 'Mental Processing Speed',
         lowScoreImpact: 'The "Translation Lag." Translating in your head makes you slow to respond, killing the momentum of Q&A sessions and high-stakes negotiations.',
-        recommendation: 'You need to break the translation habit. Practice "thinking out loud" drills to wire your brain to formulate thoughts directly in English.',
+        recommendation: 'My Advice: You need to break the translation habit. Practice "thinking out loud" drills to wire your brain to formulate thoughts directly in English.',
         urgency: 'high'
       },
       clarity: {
         name: 'Strategic Vocabulary',
         lowScoreImpact: 'The "Dumbing Down" Trap. You simplify your brilliant ideas to fit your limited vocabulary, making you sound less intelligent than you actually are.',
-        recommendation: 'Build a "Power Phrase" library. Don\'t just learn words; learn full strategic phrases for pivoting, clarifying, and emphasizing points.',
+        recommendation: 'My Advice: Build a "Power Phrase" library. Don\'t just learn words; learn full strategic phrases for pivoting, clarifying, and emphasizing points.',
         urgency: 'medium'
       },
       confidence: {
         name: 'Psychological Resilience',
         lowScoreImpact: 'Accent Anxiety. You interpret neutral reactions as negative judgment of your English. This insecurity becomes a self-fulfilling prophecy, making you nervous and shaky.',
-        recommendation: 'Shift focus from "How do I sound?" to "What do they need?" When you obsess over value, your accent becomes secondary.',
+        recommendation: 'My Advice: Shift focus from "How do I sound?" to "What do they need?" When you obsess over value, your accent becomes secondary.',
         urgency: 'high'
       },
-      // Fallback/Unused categories (required by type but not primary focus here)
       negotiation: {
         name: 'Persuasion & Defense',
         lowScoreImpact: 'Difficulty handling pushback leads to weak positioning.',
-        recommendation: 'Practice diplomatic pushback scripts.',
+        recommendation: 'My Advice: Practice diplomatic pushback scripts until they are muscle memory.',
         urgency: 'medium'
+      }
+    },
+
+    results: {
+      impactTitle: "The Real Cost of the Language Gap",
+      tiers: {
+        'Credibility Gap': {
+          title: "You're Trapped in a Smaller Version of Yourself",
+          description: "In your native language, you're sharp, persuasive, and commanding. In English, you become someone else—hesitant, simplified, diminished. The person in the room isn't the real you. And every high-stakes moment is being judged on this lesser version. You're not losing because you lack ability. You're losing because your ability can't get through the language barrier."
+        },
+        'Passive Proficiency': {
+          title: "Your Intelligence Is Getting Lost in Translation",
+          description: "You know you're smart. But when you speak English under pressure, your ideas come out slower, simpler, and less impressive than they actually are. You're being evaluated on your delivery, not your thinking. And in high-stakes moments—interviews, presentations, negotiations—that gap between what you know and what you can express is costing you opportunities you've earned."
+        },
+        'Executive Presence': {
+          title: "Your English Matches Your Expertise",
+          description: "You've closed the gap between your intelligence and your expression. You can think and speak in English without the translation delay that undermines most non-native speakers. The opportunity now is mastery—developing the subtle skills that make you not just competent, but commanding."
+        }
+      },
+      eliteComparison: {
+        title: "The 5 Habits I See in the Top 1% of Leaders",
+        items: [
+          "They think in English, not through it. No mental translation, no buffering pause—just immediate, fluid responses that sound native-level confident.",
+          "They don't 'dumb down' their ideas. They have the vocabulary to express complex thoughts with precision, not simplification.",
+          "They interpret confusion as disagreement, not judgment. When someone frowns, they clarify their argument—they don't panic about their accent.",
+          "They own their accent instead of hiding from it. They speak with authority, and their accent becomes a mark of their global perspective, not a liability.",
+          "They perform under pressure. Unexpected questions, aggressive interviewers, hostile audiences—they handle it all without losing their presence."
+        ]
+      },
+      cta: {
+        title: "Ready to Improve Your English Fast?",
+        subtext: "Quick discussion. Personal. No pressure.",
+        buttonText: "👉 Book a Session with Me",
+        footerText: ""
       }
     }
   },
   
-  // Placeholder for Spanish (using English content for now until translated)
   es: {
     title: 'Evaluación de Comunicación de Alto Nivel',
     subtitle: 'Descubre si tu inglés está creando una brecha entre tu experiencia y tu impacto en presentaciones de alta presión, entrevistas y reuniones críticas.',
@@ -195,32 +220,66 @@ export const highStakesConfig: QuizConfig = {
       cultural: {
         name: 'Identidad y Presencia Profesional',
         lowScoreImpact: 'El "Efecto Junior". Tu experiencia se pierde porque no puedes expresar matices, humor o autoridad. Te sientes como una persona diferente y menos capaz en inglés.',
-        recommendation: 'Deja de concentrarte en la "gramática perfecta" y comienza a enfocarte en el "impacto emocional". Practica la narración para recuperar tu voz ejecutiva.',
+        recommendation: 'Mi Consejo: Deja de concentrarte en la "gramática perfecta" y comienza a enfocarte en el "impacto emocional". Practica la narración para recuperar tu voz ejecutiva.',
         urgency: 'high'
       },
       'real-time': {
         name: 'Velocidad de Procesamiento Mental',
         lowScoreImpact: 'El "Retraso de Traducción". Traducir en tu cabeza te hace lento para responder, matando el impulso de las sesiones de preguntas y respuestas.',
-        recommendation: 'Necesitas romper el hábito de traducción. Practica ejercicios de "pensar en voz alta" para conectar tu cerebro directamente al inglés.',
+        recommendation: 'Mi Consejo: Necesitas romper el hábito de traducción. Practica ejercicios de "pensar en voz alta" para conectar tu cerebro directamente al inglés.',
         urgency: 'high'
       },
       clarity: {
         name: 'Vocabulario Estratégico',
         lowScoreImpact: 'La trampa de "Simplificar Demasiado". Simplificas tus ideas brillantes para ajustarlas a tu vocabulario limitado, sonando menos inteligente de lo que eres.',
-        recommendation: 'Construye una biblioteca de "Frases de Poder". No solo aprendas palabras; aprende frases estratégicas completas para pivotar y enfatizar puntos.',
+        recommendation: 'Mi Consejo: Construye una biblioteca de "Frases de Poder". No solo aprendas palabras; aprende frases estratégicas completas para pivotar y enfatizar puntos.',
         urgency: 'medium'
       },
       confidence: {
         name: 'Resiliencia Psicológica',
         lowScoreImpact: 'Ansiedad por el Acento. Interpretas reacciones neutrales como juicios negativos de tu inglés. Esta inseguridad se convierte en una profecía autocumplida.',
-        recommendation: 'Cambia el enfoque de "¿Cómo sueno?" a "¿Qué necesitan?". Cuando te obsesionas con el valor, tu acento se vuelve secundario.',
+        recommendation: 'Mi Consejo: Cambia el enfoque de "¿Cómo sueno?" a "¿Qué necesitan?". Cuando te obsesionas con el valor, tu acento se vuelve secundario.',
         urgency: 'high'
       },
       negotiation: {
         name: 'Persuasión y Defensa',
         lowScoreImpact: 'Dificultad para manejar el rechazo conduce a un posicionamiento débil.',
-        recommendation: 'Practica guiones de rechazo diplomático.',
+        recommendation: 'Mi Consejo: Practica guiones de rechazo diplomático hasta que te salgan naturales.',
         urgency: 'medium'
+      }
+    },
+
+    results: {
+      impactTitle: "El Costo Real de la Brecha Lingüística",
+      tiers: {
+        'Credibility Gap': {
+          title: "Atrapado en una Versión Menor de Ti Mismo",
+          description: "En tu idioma nativo eres agudo, persuasivo y tienes mando. En inglés, te conviertes en otra persona: vacilante, simplificado, disminuido. La persona en la sala no es el verdadero tú. No estás perdiendo oportunidades por falta de capacidad; estás perdiendo porque tu capacidad no logra atravesar la barrera del idioma."
+        },
+        'Passive Proficiency': {
+          title: "Tu Inteligencia se Pierde en la Traducción",
+          description: "Sabes que eres inteligente. Pero cuando hablas inglés bajo presión, tus ideas salen más lentas, más simples y menos impresionantes de lo que realmente son. Te están evaluando por tu entrega, no por tu pensamiento. Y en los momentos decisivos, esa brecha entre lo que sabes y lo que puedes expresar te está costando oportunidades."
+        },
+        'Executive Presence': {
+          title: "Tu Inglés Iguala a tu Experiencia",
+          description: "Has cerrado la brecha entre tu inteligencia y tu expresión. Puedes pensar y hablar en inglés sin el retraso de traducción que socava a la mayoría. La oportunidad ahora es la maestría: desarrollar las habilidades sutiles que te hacen no solo competente, sino inolvidable."
+        }
+      },
+      eliteComparison: {
+        title: "Los 5 Hábitos que veo en el Top 1% de Líderes",
+        items: [
+          "Piensan en inglés, no a través de él. Sin traducción mental, sin pausa de 'buffering': solo respuestas inmediatas y fluidas.",
+          "No 'rebajan el nivel' de sus ideas. Tienen el vocabulario para expresar pensamientos complejos con precisión, no con simplificación.",
+          "Interpretan la confusión como desacuerdo, no como juicio. Cuando alguien frunce el ceño, aclaran su argumento; no entran en pánico por su acento.",
+          "Son dueños de su acento en lugar de esconderse. Hablan con autoridad, y su acento se convierte en una marca de perspectiva global, no en un defecto.",
+          "Rinden bajo presión. Preguntas inesperadas, entrevistadores agresivos, audiencias hostiles: lo manejan todo sin perder su presencia."
+        ]
+      },
+      cta: {
+        title: "¿Listo para mejorar tu inglés rápido?",
+        subtext: "Plática breve. Personal. Sin presión.",
+        buttonText: "👉 Agendar una sesión conmigo",
+        footerText: ""
       }
     }
   }

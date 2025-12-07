@@ -61,27 +61,56 @@ const customHreflangs = [
       <!-- SEO H1 (visually hidden but present for SEO) -->
       <h1 class="sr-only">Resultados | {config.title}</h1>
 
-      <!-- No Quiz Data Warning (shown if user hasn't taken quiz) -->
-      <div class="no-quiz-warning" id="no-quiz-warning" style="display: none;">
-        <div class="warning-content">
-          <div class="warning-icon">⚠️</div>
-          <h2>Prueba No Completada</h2>
-          <p class="warning-text">
-            Necesitas completar la Evaluación de Confianza en Comunicación antes
-            de ver tus resultados.
+      <!-- Empty State: Quiz Missing (shown if user hasn't taken quiz) -->
+      <div class="empty-state-card" id="no-quiz-warning" style="display: none;">
+        <div class="empty-state-content">
+          <!-- Ghost Clipboard Icon -->
+          <div class="empty-icon-wrapper">
+            <svg
+              class="empty-icon"
+              width="80"
+              height="80"
+              viewBox="0 0 80 80"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="15"
+                y="10"
+                width="50"
+                height="60"
+                rx="4"
+                stroke="#94a3b8"
+                stroke-width="2"
+                stroke-dasharray="4 4"
+                fill="none"></rect>
+              <rect x="30" y="5" width="20" height="8" rx="2" fill="#cbd5e1"
+              ></rect>
+              <text
+                x="40"
+                y="50"
+                font-size="28"
+                fill="#64748b"
+                text-anchor="middle"
+                font-weight="600">?</text
+              >
+            </svg>
+          </div>
+
+          <h2 class="empty-state-headline">
+            No podemos calcular tu puntaje... todavía.
+          </h2>
+          <p class="empty-state-text">
+            Parece que nos faltan tus respuestas. Solo toma 90 segundos.
           </p>
-          <p class="warning-subtext">
-            La prueba toma alrededor de 90 segundos y te dará una puntuación
-            personalizada que muestra exactamente dónde se encuentra tu equipo
-            con la comunicación en inglés de alto impacto.
-          </p>
+
           <Button
-            href={`/es/quiz/${quizType}/question/1`}
+            href={`/es/quiz/${quizType}/`}
             variant="primary"
             size="lg"
-            class="start-quiz-button"
+            class="start-assessment-button"
           >
-            Comenzar la Prueba →
+            Comenzar Evaluación →
           </Button>
         </div>
       </div>
@@ -99,7 +128,7 @@ const customHreflangs = [
             Hubo un error al enviar tu prueba. Por favor, inténtalo de nuevo.
           </p>
           <p class="error-subtext">
-            Si el problema persiste, contáctanos directamente o inténtalo más
+            Si el problema persiste, contáctame directamente o inténtalo más
             tarde.
           </p>
           <button
@@ -114,12 +143,23 @@ const customHreflangs = [
       <!-- Lead Capture Form (shown first) -->
       <div class="lead-capture-card" id="lead-capture">
         <div class="capture-header">
-          <h2>¡Ya Casi Terminas!</h2>
+          <h2>¡Ya Casi Estás!</h2>
           <p class="capture-subtext">
-            Ingresa tu correo electrónico para recibir tu Puntuación de
-            Confianza en Comunicación personalizada y tu hoja de ruta detallada
-            de mejora.
+            Desbloquea tu Puntaje de Confianza en Comunicación y descubre
+            exactamente qué áreas necesitas mejorar hoy.
           </p>
+        </div>
+
+        <!-- Blurred Document Visual (Bridge between promise and action) -->
+        <div class="blurred-doc-wrapper">
+          <div class="blurred-doc">
+            <div class="doc-line medium"></div>
+            <div class="doc-line long"></div>
+            <div class="doc-line short"></div>
+            <div class="doc-line long"></div>
+            <div class="doc-line medium"></div>
+            <div class="lock-icon">🔒</div>
+          </div>
         </div>
 
         <form class="capture-form" id="email-form">
@@ -132,7 +172,7 @@ const customHreflangs = [
               id="name"
               name="name"
               class="form-input"
-              placeholder="Juan Pérez"
+              placeholder="Ingresa tu nombre"
               required
             />
           </div>
@@ -144,32 +184,8 @@ const customHreflangs = [
               id="email"
               name="email"
               class="form-input"
-              placeholder="juan@empresa.com"
+              placeholder="nombre@empresa.com"
               required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="company" class="form-label">Empresa (Opcional)</label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              class="form-input"
-              placeholder="Nombre de tu Empresa"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="phone" class="form-label"
-              >Número de Teléfono (Opcional)</label
-            >
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              class="form-input"
-              placeholder="+52 (555) 123-4567"
             />
           </div>
 
@@ -179,16 +195,11 @@ const customHreflangs = [
             size="lg"
             class="submit-button"
           >
-            <Mail size={20} />
-            Obtener Mis Resultados →
+            Ver Mis Resultados →
           </Button>
 
           <p class="privacy-text">
-            Al enviar este formulario, aceptas nuestra <a
-              href="/es/legal/privacy-policy"
-              target="_blank"
-              class="privacy-link">Política de Privacidad</a
-            >. Respetamos tu privacidad y nunca venderemos tu información.
+            También odiamos el spam. Tu correo está seguro con nosotros.
           </p>
         </form>
       </div>
@@ -208,8 +219,50 @@ const customHreflangs = [
     min-height: calc(100vh - 80px);
   }
 
-  /* Warning/Error States */
-  .no-quiz-warning,
+  /* Empty State: Quiz Missing */
+  .empty-state-card {
+    background: white;
+    padding: 4rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .empty-state-content {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .empty-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .empty-icon {
+    opacity: 0.8;
+  }
+
+  .empty-state-headline {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .empty-state-text {
+    font-size: 1.125rem;
+    color: #475569;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+  }
+
+  .start-assessment-button {
+    margin: 30px 0;
+  }
+
+  /* Submission Error State */
   .submission-error {
     background: white;
     padding: 4rem 3rem;
@@ -218,19 +271,16 @@ const customHreflangs = [
     text-align: center;
   }
 
-  .warning-content,
   .error-content {
     max-width: 600px;
     margin: 0 auto;
   }
 
-  .warning-icon,
   .error-icon {
     font-size: 4rem;
     margin-bottom: 1.5rem;
   }
 
-  .no-quiz-warning h2,
   .submission-error h2 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -238,7 +288,6 @@ const customHreflangs = [
     margin-bottom: 1rem;
   }
 
-  .warning-text,
   .error-text {
     font-size: 1.25rem;
     color: #475569;
@@ -246,7 +295,6 @@ const customHreflangs = [
     line-height: 1.6;
   }
 
-  .warning-subtext,
   .error-subtext {
     font-size: 1rem;
     color: #64748b;
@@ -260,6 +308,56 @@ const customHreflangs = [
     padding: 3rem;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Blurred Document Visual - Acts as bridge between text and form */
+  .blurred-doc-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .blurred-doc {
+    width: 60px;
+    height: 80px;
+    background: #f4f6f9;
+    border: 1px solid #e0e6ed;
+    border-radius: 4px;
+    padding: 8px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .doc-line {
+    height: 4px;
+    background: #bdc3c7;
+    margin-bottom: 6px;
+    border-radius: 2px;
+    filter: blur(1.5px);
+    opacity: 0.6;
+  }
+
+  .doc-line.short {
+    width: 60%;
+  }
+  .doc-line.medium {
+    width: 80%;
+  }
+  .doc-line.long {
+    width: 100%;
+  }
+
+  .lock-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 50%;
+    padding: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
   }
 
   .capture-header {
@@ -276,7 +374,7 @@ const customHreflangs = [
 
   .capture-subtext {
     font-size: 1.125rem;
-    color: #475569;
+    color: #64748b;
     line-height: 1.6;
   }
 
@@ -313,24 +411,66 @@ const customHreflangs = [
   }
 
   .privacy-text {
-    font-size: 0.875rem;
-    color: #64748b;
     text-align: center;
+    font-size: 0.75rem;
+    color: #94a3b8;
     line-height: 1.5;
   }
 
-  .privacy-link {
-    color: #3b82f6;
-    text-decoration: underline;
-  }
-
   @media (max-width: 768px) {
-    .lead-capture-card {
+    .lead-capture-card,
+    .empty-state-card {
       padding: 2rem 1.5rem;
     }
 
-    .capture-header h1 {
+    .capture-header h2 {
       font-size: 2rem;
+    }
+
+    /* Empty State Mobile: Full width button, scaled icon */
+    .empty-icon-wrapper {
+      margin-bottom: 2rem;
+    }
+
+    .empty-icon {
+      width: 60px;
+      height: 60px;
+    }
+
+    .empty-state-headline {
+      font-size: 1.75rem;
+    }
+
+    .empty-state-text {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .start-assessment-button {
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    /* Mobile: Scale down icon and tighten spacing to keep form above fold */
+    .blurred-doc-wrapper {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .blurred-doc {
+      width: 45px;
+      height: 60px;
+      padding: 6px;
+    }
+
+    .doc-line {
+      height: 3px;
+      margin-bottom: 4px;
+    }
+
+    .lock-icon {
+      font-size: 11px;
+      padding: 4px;
     }
 
     .score-number {
@@ -402,17 +542,14 @@ const customHreflangs = [
         const formData = new FormData(form as HTMLFormElement);
         const name = (formData.get("name") as string) || "";
         const email = (formData.get("email") as string) || "";
-        const companyRaw = (formData.get("company") as string) || "";
-        const phone = (formData.get("phone") as string) || "";
 
         try {
           const validated = validateSubmission({
             name,
             email,
-            company: companyRaw,
+            company: null,
           });
 
-          const company = validated.company ?? "";
           const safeName = validated.name;
           const safeEmail = validated.email;
 
@@ -428,9 +565,10 @@ const customHreflangs = [
           const payload = {
             name: safeName,
             email: safeEmail,
-            company,
-            phone,
+            company: undefined,
+            phone: undefined,
             quizType,
+            score: scoreBreakdown.totalScore,
             answers,
             language: "es",
             completionTime,
@@ -454,9 +592,8 @@ const customHreflangs = [
             QuizStorage.saveLeadData(quizType, {
               name: safeName,
               email: safeEmail,
-              company,
-              phone,
-              quizType,
+              company: undefined,
+              phone: undefined,
             });
             QuizStorage.saveScore(quizType, scoreBreakdown.totalScore);
 
@@ -465,7 +602,7 @@ const customHreflangs = [
               sessionStorage.setItem("quizAnswers", JSON.stringify(answers));
               sessionStorage.setItem(
                 "leadData",
-                JSON.stringify({ name: safeName, company, quizType })
+                JSON.stringify({ name: safeName, company: undefined, quizType })
               );
             } catch {}
 
@@ -481,9 +618,9 @@ const customHreflangs = [
           }
         } catch (error) {
           const message =
-            error instanceof Error
+            error instanceof Error && error.message !== "Failed to fetch"
               ? error.message
-              : "Error de red. Por favor, verifica tu conexión e inténtalo de nuevo.";
+              : "Error de conexión. Por favor, verifica tu internet e inténtalo de nuevo.";
           document.getElementById("submission-error")!.style.display = "block";
           document.getElementById("error-message")!.textContent = message;
         }

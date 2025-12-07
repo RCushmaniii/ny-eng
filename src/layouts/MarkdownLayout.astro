@@ -14,28 +14,31 @@ export interface Props {
 }
 
 const { frontmatter } = Astro.props;
-const title = frontmatter?.title || 'Documentation';
-const description = frontmatter?.description || 'NY English Teacher Documentation';
-const category = frontmatter?.category || 'Documentation';
-const icon = frontmatter?.icon || '📄';
+const title = frontmatter?.title || "Documentation";
+const description =
+  frontmatter?.description || "NY English Teacher Documentation";
+const category = frontmatter?.category || "Documentation";
+const icon = frontmatter?.icon || "📄";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="zeus">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title} | NY English Teacher Docs</title>
     <meta name="description" content={description} />
-    
+
     <!-- Project Tailwind CSS -->
     <link rel="stylesheet" href="/src/styles/global.css" />
-    
+
     <!-- Enhanced markdown styling using project variables -->
     <style>
       /* Theme Variables */
       :root {
         --transition-speed: 0.3s;
+        --docs-accent: #ff6b35;
+        --docs-accent-hover: #ff5722;
       }
 
       /* Dark Theme (Default) */
@@ -44,13 +47,13 @@ const icon = frontmatter?.icon || '📄';
         --bg-secondary: #1e293b;
         --bg-tertiary: #334155;
         --bg-nav: linear-gradient(135deg, #1e3a8a, #1e40af, #1e3a8a);
-        --text-primary: #1e293b;
-        --text-secondary: #475569;
-        --text-muted: #64748b;
-        --border-color: #e2e8f0;
-        --code-bg: #f1f5f9;
-        --card-bg: #ffffff;
-        --card-border: #e2e8f0;
+        --text-primary: #ffffff;
+        --text-secondary: #f1f5f9;
+        --text-muted: #cbd5e1;
+        --border-color: #475569;
+        --code-bg: #1e293b;
+        --card-bg: #334155;
+        --card-border: #475569;
       }
 
       /* Light Theme */
@@ -59,9 +62,9 @@ const icon = frontmatter?.icon || '📄';
         --bg-secondary: #f8fafc;
         --bg-tertiary: #e2e8f0;
         --bg-nav: linear-gradient(135deg, #dbeafe, #bfdbfe, #dbeafe);
-        --text-primary: #1e293b;
-        --text-secondary: #475569;
-        --text-muted: #64748b;
+        --text-primary: #0f172a;
+        --text-secondary: #1e293b;
+        --text-muted: #475569;
         --border-color: #cbd5e1;
         --code-bg: #f1f5f9;
         --card-bg: #ffffff;
@@ -74,16 +77,18 @@ const icon = frontmatter?.icon || '📄';
         background-color: var(--bg-primary) !important;
         color: var(--text-primary) !important;
         line-height: 1.6;
-        transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+        transition:
+          background-color var(--transition-speed) ease,
+          color var(--transition-speed) ease;
       }
-      
+
       /* Container styling */
       .markdown-container {
         max-width: 1024px;
         margin: 0 auto;
         padding: 2rem 1.5rem;
       }
-      
+
       /* Navigation header */
       .docs-nav {
         background: var(--bg-nav) !important;
@@ -92,7 +97,9 @@ const icon = frontmatter?.icon || '📄';
         box-shadow: var(--shadow-lg);
         margin-bottom: 0;
         border-bottom: 2px solid #2563eb;
-        transition: background var(--transition-speed) ease, border-color var(--transition-speed) ease;
+        transition:
+          background var(--transition-speed) ease,
+          border-color var(--transition-speed) ease;
       }
 
       body.light-theme .docs-nav {
@@ -138,225 +145,216 @@ const icon = frontmatter?.icon || '📄';
         color: var(--text-secondary) !important;
         transition: color var(--transition-speed) ease;
       }
-      
+
       /* Development warning */
       .dev-warning {
         background-color: #fef3c7;
-        border-left: 4px solid var(--color-warning);
+        border-left: 4px solid #f59e0b;
         padding: 1rem;
         margin-bottom: 2rem;
-        border-radius: var(--border-radius-small);
+        border-radius: 8px;
       }
-      
+
       /* Document header */
       .doc-header {
         background: var(--card-bg);
         border: 1px solid var(--card-border);
-        border-radius: var(--border-radius-base);
+        border-radius: 12px;
         padding: 2rem;
         margin-bottom: 2rem;
-        box-shadow: var(--shadow-md);
-        transition: background var(--transition-speed) ease, border-color var(--transition-speed) ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition:
+          background var(--transition-speed) ease,
+          border-color var(--transition-speed) ease;
       }
 
-      body.light-theme .doc-header {
-        background: #ffffff;
-      }
-      
       .doc-title {
         font-family: var(--font-headline);
-        font-size: var(--text-h1);
+        font-size: 2rem;
         font-weight: 700;
-        color: var(--color-headline);
+        color: var(--text-primary) !important;
         margin: 0 0 0.5rem 0;
         display: flex;
         align-items: center;
         gap: 1rem;
       }
-      
+
       .doc-meta {
         display: flex;
         gap: 1rem;
         margin-top: 1rem;
       }
-      
+
       .doc-badge {
         display: inline-flex;
         align-items: center;
         padding: 0.25rem 0.75rem;
         border-radius: 9999px;
-        font-size: var(--text-small);
+        font-size: 0.875rem;
         font-weight: 500;
       }
-      
+
       .category-badge {
-        background-color: var(--color-primary);
+        background-color: var(--docs-accent);
         color: #ffffff;
       }
-      
+
       .dev-badge {
-        background-color: var(--color-secondary);
-        color: #ffffff;
+        background-color: var(--bg-tertiary);
+        color: var(--text-secondary);
       }
-      
-      /* Markdown content styling */
-      .markdown-content {
-        background: #ffffff;
-        border: 1px solid var(--color-border);
-        border-radius: var(--border-radius-base);
-        padding: 3rem;
-        box-shadow: var(--shadow-sm);
-      }
-      
+
       /* Typography */
       .markdown-content h1 {
         font-family: var(--font-headline);
-        font-size: var(--text-h1);
+        font-size: 2rem;
         font-weight: 700;
-        color: var(--color-headline);
+        color: var(--text-primary) !important;
         margin: 0 0 2rem 0;
-        border-bottom: 2px solid var(--color-primary);
+        border-bottom: 2px solid var(--docs-accent);
         padding-bottom: 1rem;
       }
-      
+
       .markdown-content h2 {
         font-family: var(--font-headline);
-        font-size: var(--text-h2);
+        font-size: 1.5rem;
         font-weight: 600;
-        color: var(--color-headline);
+        color: var(--docs-accent) !important;
         margin: 3rem 0 1.5rem 0;
-        border-left: 4px solid var(--color-primary);
+        border-left: 4px solid var(--docs-accent);
         padding-left: 1rem;
       }
-      
+
       .markdown-content h3 {
         font-family: var(--font-headline);
-        font-size: var(--text-h3);
+        font-size: 1.25rem;
         font-weight: 600;
-        color: var(--color-headline);
+        color: var(--text-primary) !important;
         margin: 2rem 0 1rem 0;
       }
-      
+
       .markdown-content h4,
       .markdown-content h5,
       .markdown-content h6 {
         font-family: var(--font-headline);
         font-weight: 600;
-        color: var(--color-headline);
+        color: var(--text-primary) !important;
         margin: 1.5rem 0 0.75rem 0;
       }
-      
+
       .markdown-content p {
         font-family: var(--font-base);
-        color: var(--color-body-base);
+        color: var(--text-secondary) !important;
         line-height: 1.8;
         margin-bottom: 1.5rem;
-        font-size: var(--text-base);
+        font-size: 1rem;
       }
-      
+
       .markdown-content ul,
       .markdown-content ol {
         margin: 0 0 1.5rem 2rem;
         padding: 0;
       }
-      
+
       .markdown-content li {
-        color: var(--color-body-base);
+        color: var(--text-secondary) !important;
         margin-bottom: 0.5rem;
         line-height: 1.6;
       }
-      
+
       .markdown-content ul li {
         list-style-type: disc;
       }
-      
+
       .markdown-content ol li {
         list-style-type: decimal;
       }
-      
+
       .markdown-content li::marker {
-        color: var(--color-primary);
+        color: var(--docs-accent);
       }
-      
+
       .markdown-content a {
-        color: var(--color-primary);
+        color: var(--docs-accent) !important;
         text-decoration: underline;
         font-weight: 500;
       }
-      
+
       .markdown-content a:hover {
-        color: var(--color-primary-light);
+        color: var(--docs-accent-hover) !important;
       }
-      
+
       .markdown-content code {
-        background-color: var(--color-background-light);
-        color: var(--color-primary);
+        background-color: var(--code-bg);
+        color: var(--docs-accent) !important;
         padding: 0.2rem 0.5rem;
         border-radius: 0.25rem;
-        font-size: var(--text-small);
-        font-family: 'Courier New', monospace;
+        font-size: 0.875rem;
+        font-family: "Courier New", monospace;
         font-weight: 500;
       }
-      
+
       .markdown-content pre {
-        background-color: var(--color-background-dark);
-        color: #ffffff;
+        background-color: var(--bg-tertiary);
+        color: var(--text-primary);
         padding: 1.5rem;
-        border-radius: var(--border-radius-base);
+        border-radius: 8px;
         overflow-x: auto;
         margin: 2rem 0;
-        border: 1px solid var(--color-border);
+        border: 1px solid var(--border-color);
       }
-      
+
       .markdown-content pre code {
         background-color: transparent;
-        color: #ffffff;
+        color: var(--text-primary) !important;
         padding: 0;
-        font-size: var(--text-small);
+        font-size: 0.875rem;
       }
-      
+
       .markdown-content blockquote {
-        border-left: 4px solid var(--color-secondary);
-        background-color: var(--color-background-light);
+        border-left: 4px solid var(--docs-accent);
+        background-color: var(--bg-secondary);
         padding: 1.5rem;
         margin: 2rem 0;
         font-style: italic;
-        border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+        border-radius: 0 8px 8px 0;
       }
-      
+
       .markdown-content blockquote p {
         margin-bottom: 0;
+        color: var(--text-secondary) !important;
       }
-      
+
       .markdown-content table {
         width: 100%;
         border-collapse: collapse;
-        border: 1px solid var(--color-border);
+        border: 1px solid var(--border-color);
         margin: 2rem 0;
-        border-radius: var(--border-radius-small);
+        border-radius: 8px;
         overflow: hidden;
       }
-      
+
       .markdown-content th,
       .markdown-content td {
-        border: 1px solid var(--color-border);
+        border: 1px solid var(--border-color);
         padding: 1rem;
         text-align: left;
+        color: var(--text-secondary) !important;
       }
-      
+
       .markdown-content th {
-        background-color: var(--color-background-light);
+        background-color: var(--bg-tertiary);
         font-weight: 600;
-        color: var(--color-headline);
+        color: var(--text-primary) !important;
         font-family: var(--font-headline);
       }
-      
+
       .markdown-content hr {
         border: none;
         border-top: 2px solid var(--color-border);
         margin: 3rem 0;
       }
-      
+
       /* Navigation buttons */
       .nav-buttons {
         display: flex;
@@ -365,7 +363,7 @@ const icon = frontmatter?.icon || '📄';
         padding-top: 2rem;
         border-top: 1px solid var(--color-border);
       }
-      
+
       .nav-button {
         display: inline-flex;
         align-items: center;
@@ -377,13 +375,13 @@ const icon = frontmatter?.icon || '📄';
         font-weight: 500;
         transition: all var(--animation-speed-normal);
       }
-      
+
       .nav-button:hover {
         background: var(--color-primary-light);
         color: #ffffff !important;
         text-decoration: none;
       }
-      
+
       /* Footer */
       .doc-footer {
         margin-top: 3rem;
@@ -425,7 +423,9 @@ const icon = frontmatter?.icon || '📄';
 
       .theme-icon {
         color: #1e293b !important;
-        transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+        transition:
+          opacity var(--transition-speed) ease,
+          transform var(--transition-speed) ease;
       }
 
       .theme-icon.hidden {
@@ -449,94 +449,106 @@ const icon = frontmatter?.icon || '📄';
       }
 
       /* Main content area */
-      main {
+      .markdown-content {
         background: var(--card-bg);
+        border: 1px solid var(--card-border);
         border-radius: 12px;
         padding: 2rem;
-        margin: 2rem 0;
+        margin: 0;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        transition: background var(--transition-speed) ease;
+        transition:
+          background var(--transition-speed) ease,
+          border-color var(--transition-speed) ease;
       }
 
-      body.light-theme main {
-        background: #ffffff;
-      }
-
-      /* All text elements */
-      main p,
-      main li,
-      main td,
-      main span {
+      /* Strong text */
+      .markdown-content strong {
         color: var(--text-primary) !important;
-        transition: color var(--transition-speed) ease;
+        font-weight: 600;
       }
 
-      main h1,
-      main h2,
-      main h3,
-      main h4 {
-        color: var(--text-primary) !important;
-        transition: color var(--transition-speed) ease;
+      /* Light theme nav text fix */
+      body.light-theme nav .text-white {
+        color: #1e293b !important;
       }
 
-      main strong {
-        color: var(--text-primary) !important;
+      body.light-theme nav .text-slate-300 {
+        color: #475569 !important;
       }
     </style>
   </head>
-  
+
   <body>
     <!-- Navigation Header - Exact copy from DocsLayout -->
-    <nav class="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 border-b-2 border-blue-600 shadow-2xl">
+    <nav
+      class="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 border-b-2 border-blue-600 shadow-2xl"
+    >
       <div class="max-w-7xl mx-auto px-8 py-6">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-4">
-            <img src="/images/logos/new-york-english-sq-og.jpg" alt="NY English Teacher Logo" class="w-12 h-12 rounded-lg shadow-lg" />
+            <img
+              src="/images/logos/new-york-english-sq-og.jpg"
+              alt="NY English Teacher Logo"
+              class="w-12 h-12 rounded-lg shadow-lg"
+            />
             <div>
-              <h1 class="text-2xl font-bold text-white tracking-tight">NY English Teacher Documentation</h1>
+              <h1 class="text-2xl font-bold text-white tracking-tight">
+                NY English Teacher Documentation
+              </h1>
               <p class="text-slate-300 text-sm mt-0.5">Development Preview</p>
             </div>
           </div>
-          
+
           <!-- Theme Toggle Button -->
-          <button 
+          <button
             id="theme-toggle"
             class="theme-toggle"
             title="Toggle theme"
             aria-label="Toggle theme"
           >
             <!-- Sun Icon (Dark Mode) -->
-            <svg id="sun-icon" class="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="5"/>
-              <line x1="12" y1="1" x2="12" y2="3"/>
-              <line x1="12" y1="21" x2="12" y2="23"/>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-              <line x1="1" y1="12" x2="3" y2="12"/>
-              <line x1="21" y1="12" x2="23" y2="12"/>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            <svg
+              id="sun-icon"
+              class="theme-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
             <!-- Moon Icon (Light Mode) -->
-            <svg id="moon-icon" class="theme-icon hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            <svg
+              id="moon-icon"
+              class="theme-icon hidden"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </button>
         </div>
       </div>
-    </nav>    
+    </nav>
     <div class="markdown-container">
-      <!-- Development Warning -->
-      <div class="dev-warning">
-        <div style="display: flex; align-items: center;">
-          <span style="font-size: 1.5rem; margin-right: 1rem;">⚠️</span>
-          <div>
-            <p style="font-weight: 600; color: #92400e; margin: 0;">Development Mode Only</p>
-            <p style="color: #a16207; font-size: var(--text-small); margin: 0.25rem 0 0 0;">This documentation preview is only available during development and will not be included in production builds.</p>
-          </div>
-        </div>
-      </div>
-      
       <!-- Document Header -->
       <header class="doc-header">
         <h1 class="doc-title">
@@ -548,11 +560,11 @@ const icon = frontmatter?.icon || '📄';
           <span class="doc-badge dev-badge">🛠️ Development Only</span>
         </div>
       </header>
-      
+
       <!-- Markdown Content -->
       <main class="markdown-content">
         <slot />
-        
+
         <!-- Navigation -->
         <div class="nav-buttons">
           <a href="/dev/docs/" class="nav-button">
@@ -561,10 +573,14 @@ const icon = frontmatter?.icon || '📄';
           </a>
         </div>
       </main>
-      
+
       <!-- Footer -->
       <footer class="doc-footer">
-        <p>NY English Teacher Documentation • Last updated: {new Date().toLocaleDateString()}</p>
+        <p>
+          NY English Teacher Documentation • Last updated: {
+            new Date().toLocaleDateString()
+          }
+        </p>
       </footer>
     </div>
 
@@ -572,38 +588,40 @@ const icon = frontmatter?.icon || '📄';
     <script is:inline>
       // Initialize theme from localStorage or default to dark
       function initTheme() {
-        const savedTheme = localStorage.getItem('docs-theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-        
-        if (theme === 'light') {
-          document.body.classList.add('light-theme');
+        const savedTheme = localStorage.getItem("docs-theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const theme = savedTheme || (prefersDark ? "dark" : "light");
+
+        if (theme === "light") {
+          document.body.classList.add("light-theme");
           updateIcons(true);
         }
       }
 
       // Update icon visibility
       function updateIcons(isLight) {
-        const sunIcon = document.getElementById('sun-icon');
-        const moonIcon = document.getElementById('moon-icon');
-        
+        const sunIcon = document.getElementById("sun-icon");
+        const moonIcon = document.getElementById("moon-icon");
+
         if (isLight) {
-          sunIcon.classList.add('hidden');
-          moonIcon.classList.remove('hidden');
+          sunIcon.classList.add("hidden");
+          moonIcon.classList.remove("hidden");
         } else {
-          sunIcon.classList.remove('hidden');
-          moonIcon.classList.add('hidden');
+          sunIcon.classList.remove("hidden");
+          moonIcon.classList.add("hidden");
         }
       }
 
       // Toggle theme
       function toggleTheme() {
         const body = document.body;
-        const isLight = body.classList.toggle('light-theme');
-        
+        const isLight = body.classList.toggle("light-theme");
+
         // Save preference
-        localStorage.setItem('docs-theme', isLight ? 'light' : 'dark');
-        
+        localStorage.setItem("docs-theme", isLight ? "light" : "dark");
+
         // Update icons
         updateIcons(isLight);
       }
@@ -612,7 +630,9 @@ const icon = frontmatter?.icon || '📄';
       initTheme();
 
       // Add click handler
-      document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+      document
+        .getElementById("theme-toggle")
+        .addEventListener("click", toggleTheme);
     </script>
   </body>
 </html>

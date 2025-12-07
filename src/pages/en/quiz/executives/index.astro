@@ -25,29 +25,64 @@ import heroSkyline from "@assets/images/home/new-york-city-skyline.webp";
 // SEO metadata - optimized for 50-60 characters title, 150-160 chars description
 const title = "C-Suite Influence Score | Executive Communication Assessment";
 const description =
-  "Stop letting your English undermine your executive presence. Measure your C-Suite Influence Score in 90 seconds. Get your personalized report.";
+  "You command respect in your native language. Do you lose it in English? Measure your Bilingual Leadership Gap in 90 seconds. For executives who need to lead in any language.";
 
 // FAQ data for SEO content
 const faqs = [
   {
-    question: "How to improve Executive Presence in a second language?",
+    question: "How long does the executive English assessment take?",
     answer:
-      "Executive presence in English isn't about perfect grammar—it's about projecting confidence, clarity, and decisiveness. Focus on three areas: (1) Vocal authority (pace, pauses, and intonation), (2) Strategic framing (leading with the 'so what' before the details), and (3) Cultural fluency (understanding North American directness and brevity expectations). This assessment identifies which of these three areas needs the most attention.",
+      "90 seconds. You'll receive your Executive Influence Score (0-100) and personalized roadmap immediately after completing the assessment.",
   },
   {
-    question: "What is the difference between fluency and Executive Presence?",
+    question: "Is this just a grammar or accent test?",
     answer:
-      "Fluency is about speaking without errors. Executive Presence is about speaking with impact. You can be fluent and still fail to command a room if you over-explain, hedge your statements, or fail to read the room. This assessment measures presence-specific skills: how you handle interruptions, deliver bad news, and negotiate under pressure.",
+      "No. This assessment measures strategic communication skills—how you lead meetings, negotiate, and command authority. Grammar and accent are irrelevant if your message is unclear or your presence is weak.",
   },
   {
-    question: "How long does the Executive Communication Assessment take?",
+    question: "What will I receive after completing the assessment?",
     answer:
-      "The assessment takes 90 seconds. You'll answer 6 scenario-based questions that simulate real executive challenges: board presentations, crisis communication, and cross-cultural negotiations. Your results include a Communication Confidence Score (0-100) and a breakdown of your strengths and gaps in executive presence.",
+      "Your Executive Influence Score (0-100), analysis of your strengths and gaps across Strategic Clarity, Executive Presence, and Negotiation Power, plus a personalized roadmap with specific next steps to accelerate your executive communication mastery.",
   },
   {
-    question: "Will this help me prepare for C-suite interviews?",
+    question: "Who should take this executive communication assessment?",
     answer:
-      "Absolutely. C-suite interviews evaluate your ability to think strategically, communicate concisely, and inspire confidence—all under pressure. This assessment identifies gaps in your 'executive voice' and provides a 30-day roadmap to strengthen your leadership communication before high-stakes interviews.",
+      "Latin American executives, directors, and business owners who work with North American clients, boards, or investors. If you're fluent in English but know your communication style sometimes undermines your authority, this assessment is for you.",
+  },
+  {
+    question: "Is my information confidential?",
+    answer:
+      "Yes. Your assessment results are completely private and will never be shared without your permission.",
+  },
+  {
+    question: "What happens after I get my results?",
+    answer:
+      "You'll receive an email with your detailed scorecard and the option to book a free 20-minute consultation to discuss your personalized roadmap for executive English mastery.",
+  },
+];
+
+// Testimonials data
+const testimonials = [
+  {
+    quote:
+      "Robert's coaching helped me land my first board seat. The 'so what' framework transformed how I present strategy to investors.",
+    name: "Maria C.",
+    title: "VP Strategy, Tech Startup",
+    location: "Mexico City",
+  },
+  {
+    quote:
+      "I closed a $12M partnership using the negotiation techniques from this program. The ROI was immediate.",
+    name: "Carlos R.",
+    title: "Business Development Director, SaaS",
+    location: "Guadalajara",
+  },
+  {
+    quote:
+      "After 15 years in tech, I finally feel like my English matches my expertise. The executive presence training changed everything.",
+    name: "Ana L.",
+    title: "CTO, Fintech",
+    location: "São Paulo",
   },
 ];
 ---
@@ -74,41 +109,30 @@ const faqs = [
     <div class="container">
       <div class="hero-content">
         <span class="eyebrow"
-          >STOP Letting Your English Undermine Your Executive Presence</span
+          >You command respect in your native language. Do you lose it in
+          English?</span
         >
 
         <h1>
-          The 90-Second Assessment that Measures Your C-Suite Influence Score
+          The 90-Second Assessment to Measure Your Bilingual Leadership Gap
         </h1>
 
-        <p class="lead">
-          You've earned your seat at the table. Now, prove you belong there.
-          Discover the precise communication gaps that are costing you
-          influence, promotions, and deals. This is not a grammar quiz—it's a
-          strategic assessment designed exclusively for global executives ready
-          to wield language as a competitive advantage.
-        </p>
+        <p class="discover-label">Three things you'll discover:</p>
 
         <div class="benefits">
           <div class="benefit">
             <CheckCircle size={20} />
             <span
-              ><strong>MEASURE:</strong> Your Executive Influence Score (0-100)</span
+              >Your True Authority Score (vs. your English Perceived Score)</span
             >
           </div>
           <div class="benefit">
             <CheckCircle size={20} />
-            <span
-              ><strong>DIAGNOSE:</strong> Hidden gaps in Strategic Clarity & High-Stakes
-              Negotiation</span
-            >
+            <span>Why you lose your persuasive edge in complex meetings</span>
           </div>
           <div class="benefit">
             <CheckCircle size={20} />
-            <span
-              ><strong>RECEIVE:</strong> A Personalized Roadmap to C-Suite Communication
-              Authority</span
-            >
+            <span>Your roadmap to commanding the room in any language</span>
           </div>
         </div>
 
@@ -118,108 +142,343 @@ const faqs = [
           size="lg"
           class="cta-button gold-cta"
         >
-          Start Assessment →
+          Start Free Assessment →
         </Button>
 
         <p class="trust-line">
-          90 Seconds. Instant, Confidential Results. Trusted by 200+ Global
-          Executives.
+          Quick. Insightful. Trusted by 200+ professionals seeking fluency and
+          confidence.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- What You'll Discover Section -->
-  <section class="discover-section">
+  <!-- SECTION 1: The Business Case (SEO + Conversion) -->
+  <section class="business-case-section">
     <div class="container">
-      <h2>The 3 Executive Gaps Sabotaging Your Authority</h2>
-      <p class="section-lead">
-        This assessment measures the three communication dimensions that
-        separate high-potential managers from C-suite leaders.
+      <h2>Why Executive English Mastery Is Your Hidden $500K Career Asset</h2>
+      <p class="section-intro">
+        Your technical expertise got you here. Your English fluency determines
+        how far you go.
       </p>
 
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <div class="metric-icon">
-            <Target size={48} class="icon-primary" />
-          </div>
-          <h3>1. Strategic Clarity: Leading with the 'So What.'</h3>
+      <div class="cost-grid">
+        <div class="cost-item">
+          <div class="cost-icon"><TrendingUp size={32} /></div>
+          <h3>Missed Promotions</h3>
           <p>
-            Can you distill a complex strategy into 60 seconds? Executive
-            communication isn't about saying more—it's about saying less, with
-            precision. We measure your ability to lead with the "so what" before
-            the details.
+            67% of executives report English proficiency as a promotion barrier
+            for non-native speakers in North American markets.
           </p>
         </div>
+        <div class="cost-item">
+          <div class="cost-icon"><Scale size={32} /></div>
+          <h3>Lost Deals</h3>
+          <p>
+            High-stakes negotiations fail when you can't disagree diplomatically
+            or close with authority.
+          </p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-icon"><Mic size={32} /></div>
+          <h3>Diminished Influence</h3>
+          <p>
+            Board presentations that run too long or lack strategic clarity cost
+            you credibility—and internal champions.
+          </p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-icon"><Clock size={32} /></div>
+          <h3>Slower Career Velocity</h3>
+          <p>
+            The gap between director and VP? Often 60 seconds of executive
+            presence.
+          </p>
+        </div>
+      </div>
 
-        <div class="metric-card">
-          <div class="metric-icon">
-            <Mic size={48} class="icon-primary" />
-          </div>
-          <h3>2. Executive Presence: Authority, Not Apology.</h3>
-          <p>
-            Do you project confidence or caution? Authority or apology? Your
-            tone, pace, and word choice signal whether you belong in the room.
-            We identify where your language is unconsciously undermining your
-            credibility.
-          </p>
-        </div>
+      <div class="monetary-reality">
+        <p>
+          <strong>The monetary reality:</strong> The difference between VP and C-suite
+          compensation in North American markets? <strong
+            >$200K-$500K annually.</strong
+          > If communication gaps delay your promotion by just 2 years, that's a
+          <strong>$1M opportunity cost.</strong>
+        </p>
+      </div>
 
-        <div class="metric-card">
-          <div class="metric-icon">
-            <Scale size={48} class="icon-primary" />
-          </div>
-          <h3>3. Negotiation Power: Closing Deals, Not Conceding Ground.</h3>
-          <p>
-            In high-stakes negotiations, do you hold your ground or concede too
-            quickly? We assess your ability to disagree diplomatically, handle
-            objections, and close deals without damaging critical relationships.
-          </p>
-        </div>
+      <div class="section-cta">
+        <Button
+          href="/en/quiz/executives/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Discover Your Communication Gaps in 90 Seconds →
+        </Button>
       </div>
     </div>
   </section>
 
-  <!-- Differentiation Section -->
-  <section class="differentiation-section">
+  <!-- SECTION 2: The 3 Executive Gaps (Keyword-Rich) -->
+  <section class="gaps-section">
     <div class="container">
-      <h2>Managers vs. Leaders: How The Top 1% Wield English Differently</h2>
-      <p class="section-lead">
-        The executives who command boardrooms and close 8-figure deals don't
-        just speak English—they wield it strategically.
+      <h2>
+        The 3 Executive Communication Dimensions That Separate Managers from
+        C-Suite Leaders
+      </h2>
+      <p class="section-intro">
+        This executive English assessment measures the precise skills that North
+        American boards, investors, and C-suite peers use to evaluate leadership
+        readiness.
       </p>
 
-      <div class="comparison-grid">
-        <div class="comparison-card struggling">
-          <h3>❌ The High Cost of Unconscious Habits</h3>
-          <ul>
-            <li>Over-explain to compensate for uncertainty</li>
-            <li>Lose credibility with hedging language ("maybe," "I think")</li>
-            <li>Struggle to interrupt or redirect conversations smoothly</li>
-            <li>Miss promotions despite strong business acumen</li>
-          </ul>
+      <div class="gap-cards">
+        <div class="gap-card">
+          <div class="gap-header">
+            <Target size={40} class="gap-icon" />
+            <h3>Gap #1: Strategic Clarity</h3>
+            <span class="gap-subtitle">Can You Lead with the 'So What'?</span>
+          </div>
+          <p class="gap-description">
+            Executive communication isn't about saying more—it's about saying
+            less, with precision.
+          </p>
+          <div class="what-we-measure">
+            <h4>What we measure:</h4>
+            <ul>
+              <li>
+                Ability to distill complex strategies into 60-second board
+                updates
+              </li>
+              <li>Leading with conclusions, not chronology</li>
+              <li>Eliminating filler that signals uncertainty</li>
+            </ul>
+          </div>
+          <p class="why-matters">
+            <strong>Why it matters:</strong> CEOs have 7 minutes of attention for
+            your quarterly review. If you start with background instead of impact,
+            you've already lost the room.
+          </p>
         </div>
 
-        <div class="comparison-card thriving">
-          <h3>✅ The Communication Edge of C-Suite Leaders</h3>
+        <div class="gap-card">
+          <div class="gap-header">
+            <Mic size={40} class="gap-icon" />
+            <h3>Gap #2: Executive Presence</h3>
+            <span class="gap-subtitle">Authority, Not Apology</span>
+          </div>
+          <p class="gap-description">
+            Your tone, pace, and word choice signal whether you belong in the
+            C-suite—or still need "development."
+          </p>
+          <div class="what-we-measure">
+            <h4>What we measure:</h4>
+            <ul>
+              <li>Unconscious hedging language ("I think," "maybe," "just")</li>
+              <li>Vocal authority and intentional pauses</li>
+              <li>Confidence vs. over-explanation patterns</li>
+            </ul>
+          </div>
+          <p class="why-matters">
+            <strong>Why it matters:</strong> Research shows non-native English speakers
+            over-explain by 40% compared to native speakers—a pattern that reads
+            as insecurity, not thoroughness.
+          </p>
+        </div>
+
+        <div class="gap-card">
+          <div class="gap-header">
+            <Scale size={40} class="gap-icon" />
+            <h3>Gap #3: Negotiation Power</h3>
+            <span class="gap-subtitle"
+              >Closing Deals Without Conceding Ground</span
+            >
+          </div>
+          <p class="gap-description">
+            High-stakes negotiations require you to disagree diplomatically,
+            handle objections, and hold your position—without damaging critical
+            relationships.
+          </p>
+          <div class="what-we-measure">
+            <h4>What we measure:</h4>
+            <ul>
+              <li>Ability to interrupt or redirect conversations smoothly</li>
+              <li>Assertive language that maintains warmth</li>
+              <li>Closing techniques that create urgency without pressure</li>
+            </ul>
+          </div>
+          <p class="why-matters">
+            <strong>Why it matters:</strong> In North American business culture,
+            "polite" can be mistaken for "pushover." The executives who close 8-figure
+            deals know how to be firm without being harsh.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-cta">
+        <Button
+          href="/en/quiz/executives/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Take the 90-Second Assessment →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Who This Is For (SEO + Qualification) -->
+  <section class="who-section">
+    <div class="container">
+      <h2>Is This Executive English Assessment Right for You?</h2>
+
+      <div class="who-grid">
+        <div class="who-card designed-for">
+          <h3>This assessment is designed for:</h3>
           <ul>
-            <li>Deliver 60-second board updates with zero fluff</li>
-            <li>Command attention with vocal authority & intentional pauses</li>
             <li>
-              Negotiate assertively without damaging critical relationships
+              <strong>Latin American executives</strong> working with North American
+              clients, boards, or investors
             </li>
-            <li>Build influence instantly across cultures and time zones</li>
+            <li>
+              <strong>VP/Director-level professionals</strong> positioning for C-suite
+              roles
+            </li>
+            <li>
+              <strong>Business owners and entrepreneurs</strong> negotiating high-stakes
+              partnerships or funding
+            </li>
+            <li>
+              <strong>Technical experts</strong> (engineers, scientists, finance
+              professionals) transitioning to leadership
+            </li>
+            <li>
+              <strong>Non-native English speakers</strong> with advanced fluency
+              who want executive-level mastery
+            </li>
+          </ul>
+        </div>
+
+        <div class="who-card ready-if">
+          <h3>You're ready for this assessment if:</h3>
+          <ul class="checkmark-list">
+            <li>
+              You're fluent in English but know your accent or phrasing
+              sometimes undermines your authority
+            </li>
+            <li>
+              You've been told you're "too detailed" or "need to get to the
+              point faster"
+            </li>
+            <li>
+              You can handle casual business English but struggle in
+              high-pressure negotiations or board presentations
+            </li>
+            <li>
+              You're preparing for a promotion that will require more visibility
+              with North American stakeholders
+            </li>
+            <li>
+              You've invested in general business English training but need
+              executive-specific communication coaching
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section (SEO Content) -->
+  <!-- SECTION 4: Comparison Table -->
+  <section class="comparison-section">
+    <div class="container">
+      <h2>The Communication Gap Between Managers and C-Suite Leaders</h2>
+      <p class="section-intro">
+        The executives who command boardrooms don't just speak English—they
+        wield it strategically.
+      </p>
+
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Common Patterns (Manager-Level)</th>
+              <th>Executive-Level Communication</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Over-explain to compensate for accent or uncertainty</td>
+              <td>Deliver 60-second updates with zero fluff</td>
+            </tr>
+            <tr>
+              <td>Use hedging language ("maybe," "I think," "possibly")</td>
+              <td>Command attention with declarative statements</td>
+            </tr>
+            <tr>
+              <td>Struggle to interrupt or redirect senior stakeholders</td>
+              <td>Redirect conversations smoothly with diplomatic authority</td>
+            </tr>
+            <tr>
+              <td>Concede ground quickly to avoid conflict</td>
+              <td>Negotiate assertively while maintaining relationships</td>
+            </tr>
+            <tr>
+              <td>Miss promotions despite strong business acumen</td>
+              <td>Build cross-cultural influence instantly</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="comparison-conclusion">
+        <strong>The difference?</strong> Executive communication training that addresses
+        the specific challenges non-native speakers face in North American business
+        culture.
+      </p>
+
+      <div class="section-cta">
+        <Button
+          href="/en/quiz/executives/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Find Your Gaps. Fix Them. Lead. →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Social Proof / Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2>Trusted by 200+ Global Executives</h2>
+
+      <div class="testimonials-grid">
+        {
+          testimonials.map((testimonial) => (
+            <div class="testimonial-card">
+              <blockquote>"{testimonial.quote}"</blockquote>
+              <div class="testimonial-author">
+                <strong>{testimonial.name}</strong>
+                <span>{testimonial.title}</span>
+                <span class="location">{testimonial.location}</span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: FAQ (SEO Gold Mine) -->
   <section class="faq-section">
     <div class="container">
+      <h2>Frequently Asked Questions About the Executive English Assessment</h2>
       {
-        faqs.map((faq, index) => (
+        faqs.map((faq) => (
           <details class="faq-item">
             <summary>
               <h3>{faq.question}</h3>
@@ -234,9 +493,17 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Final CTA: Urgency-Driven -->
+  <!-- SECTION 7: Final CTA (Strong Close) -->
   <section class="final-cta-section">
     <div class="container">
+      <h2>Don't Let Communication Gaps Cost You Your Next Promotion</h2>
+      <p class="final-cta-text">
+        The executives who lead with clarity, negotiate with authority, and
+        command boardrooms didn't get there by accident. They mastered the
+        strategic communication skills that North American business culture
+        demands.
+      </p>
+      <p class="final-cta-highlight">Your 90-second assessment starts now.</p>
       <div class="cta-center">
         <Button
           href="/en/quiz/executives/question/1"
@@ -244,11 +511,12 @@ const faqs = [
           size="lg"
           class="gold-cta"
         >
-          Discover Your Executive Influence Score Today →
+          Take the Assessment →
         </Button>
       </div>
-      <p class="urgency-text">
-        Don't let hesitation be the reason you miss your next promotion.
+      <p class="trust-final">
+        90 seconds. Instant results. Zero risk. Trusted by 200+ global
+        executives.
       </p>
     </div>
   </section>
@@ -359,19 +627,12 @@ const faqs = [
       }
     }
 
-    .lead {
-      font-size: 1.25rem;
-      line-height: 1.7;
+    .discover-label {
+      font-size: 1.125rem;
       color: #f1f5f9;
-      margin: 0;
-      font-weight: 400;
+      margin: 0 0 0.5rem 0;
+      font-weight: 500;
       text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
-    }
-
-    @media (min-width: 768px) {
-      .lead {
-        font-size: 1.375rem;
-      }
     }
 
     .benefits {
@@ -421,13 +682,33 @@ const faqs = [
       box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5) !important;
     }
 
-    /* Discover Section */
-    .discover-section {
+    /* Shared Section Styles */
+    .section-intro {
+      font-size: 1.125rem;
+      color: #475569;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .section-cta {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .cta-center {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    /* SECTION 1: Business Case */
+    .business-case-section {
       padding: 4rem 1.5rem;
       background: white;
     }
 
-    .discover-section h2 {
+    .business-case-section h2 {
       font-size: 2rem;
       font-weight: 700;
       color: #1e293b;
@@ -435,15 +716,198 @@ const faqs = [
       margin-bottom: 1rem;
     }
 
-    .section-lead {
-      font-size: 1.125rem;
-      color: #475569;
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 3rem;
+    .cost-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto 2.5rem;
     }
 
-    .metrics-grid {
+    @media (min-width: 768px) {
+      .cost-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cost-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .cost-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .cost-icon {
+      margin-bottom: 1rem;
+      color: #ef4444;
+    }
+
+    .cost-item h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .cost-item p {
+      font-size: 0.9375rem;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .monetary-reality {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 2px solid #f59e0b;
+      border-radius: 1rem;
+      padding: 1.5rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .monetary-reality p {
+      font-size: 1.125rem;
+      color: #78350f;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* SECTION 2: Gaps Section */
+    .gaps-section {
+      padding: 4rem 1.5rem;
+      background: #f8fafc;
+    }
+
+    .gaps-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .gap-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .gap-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .gap-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .gap-header :global(.gap-icon) {
+      color: #3b82f6;
+    }
+
+    .gap-header h3 {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    .gap-subtitle {
+      font-size: 1rem;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    .gap-description {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .what-we-measure {
+      background: #f8fafc;
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .what-we-measure h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #1e293b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .what-we-measure ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .what-we-measure li {
+      font-size: 0.9375rem;
+      color: #475569;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .what-we-measure li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+    }
+
+    .why-matters {
+      font-size: 0.9375rem;
+      color: #475569;
+      line-height: 1.6;
+      margin: 0;
+      padding-left: 1rem;
+      border-left: 3px solid #3b82f6;
+    }
+
+    /* SECTION 3: Who Section */
+    .who-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .who-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .who-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
@@ -452,85 +916,26 @@ const faqs = [
     }
 
     @media (min-width: 768px) {
-      .metrics-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .metric-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 1rem;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .metric-icon {
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .metric-icon :global(.icon-primary) {
-      color: #3b82f6;
-    }
-
-    .metric-card h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #1e293b;
-      margin-bottom: 0.75rem;
-    }
-
-    .metric-card p {
-      font-size: 0.9375rem;
-      color: #475569;
-      line-height: 1.6;
-    }
-
-    /* Differentiation Section */
-    .differentiation-section {
-      padding: 4rem 1.5rem;
-      background: #f8fafc;
-    }
-
-    .differentiation-section h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #1e293b;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      max-width: 900px;
-      margin: 3rem auto;
-    }
-
-    @media (min-width: 768px) {
-      .comparison-grid {
+      .who-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    .comparison-card {
-      background: white;
+    .who-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 1rem;
       padding: 2rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
 
-    .comparison-card h3 {
+    .who-card h3 {
       font-size: 1.25rem;
       font-weight: 600;
+      color: #1e293b;
       margin-bottom: 1.5rem;
     }
 
-    .comparison-card ul {
+    .who-card ul {
       list-style: none;
       padding: 0;
       margin: 0;
@@ -539,31 +944,170 @@ const faqs = [
       gap: 0.75rem;
     }
 
-    .comparison-card li {
+    .who-card li {
       font-size: 0.9375rem;
       color: #475569;
       padding-left: 1.5rem;
       position: relative;
+      line-height: 1.5;
     }
 
-    .comparison-card li::before {
-      content: "•";
+    .designed-for li::before {
+      content: "→";
       position: absolute;
       left: 0;
+      color: #3b82f6;
       font-weight: bold;
     }
 
-    .struggling li::before {
-      color: #ef4444;
-    }
-
-    .thriving li::before {
+    .checkmark-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
       color: #10b981;
+      font-weight: bold;
     }
 
-    .cta-center {
+    /* SECTION 4: Comparison Table */
+    .comparison-section {
+      padding: 4rem 1.5rem;
+      background: #f8fafc;
+    }
+
+    .comparison-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
       text-align: center;
-      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .comparison-table-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .comparison-table th {
+      background: #1e293b;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+    }
+
+    .comparison-table th:first-child {
+      background: #ef4444;
+    }
+
+    .comparison-table th:last-child {
+      background: #10b981;
+    }
+
+    .comparison-table td {
+      padding: 1rem 1.5rem;
+      font-size: 0.9375rem;
+      color: #475569;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comparison-table td:first-child {
+      background: #fef2f2;
+    }
+
+    .comparison-table td:last-child {
+      background: #f0fdf4;
+    }
+
+    .comparison-conclusion {
+      font-size: 1.125rem;
+      color: #1e293b;
+      text-align: center;
+      max-width: 700px;
+      margin: 2rem auto 0;
+    }
+
+    /* SECTION 5: Testimonials */
+    .testimonials-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .testimonials-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .testimonial-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testimonial-card blockquote {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+      font-style: italic;
+      margin: 0 0 1.5rem 0;
+      flex: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .testimonial-author strong {
+      font-size: 1rem;
+      color: #1e293b;
+    }
+
+    .testimonial-author span {
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+
+    .testimonial-author .location {
+      font-size: 0.8125rem;
+      color: #94a3b8;
     }
 
     /* FAQ Section */
@@ -633,22 +1177,41 @@ const faqs = [
 
     /* Final CTA Section (Dark Background) */
     .final-cta-section {
-      padding: 4rem 1.5rem;
+      padding: 5rem 1.5rem;
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      text-align: center;
+    }
+
+    .final-cta-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+    }
+
+    .final-cta-text {
+      font-size: 1.125rem;
+      color: #cbd5e1;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
+
+    .final-cta-highlight {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fbbf24;
+      margin-bottom: 2rem;
     }
 
     .final-cta-section .cta-center {
       margin-bottom: 1.5rem;
     }
 
-    .urgency-text {
-      font-size: 1rem;
-      color: #cbd5e1;
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-      font-style: italic;
-      opacity: 0.9;
+    .trust-final {
+      font-size: 0.9375rem;
+      color: #94a3b8;
+      margin-top: 1.5rem;
     }
 
     /* Responsive adjustments */
@@ -661,11 +1224,13 @@ const faqs = [
         font-size: 1.875rem;
       }
 
-      .discover-section,
-      .differentiation-section,
+      .business-case-section,
+      .gaps-section,
+      .who-section,
+      .comparison-section,
+      .testimonials-section,
       .faq-section,
-      .final-cta-section,
-      .closing-section {
+      .final-cta-section {
         padding: 3rem 1rem;
       }
     }

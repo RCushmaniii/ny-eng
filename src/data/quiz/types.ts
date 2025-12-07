@@ -50,15 +50,16 @@ export type Language = 'en' | 'es';
 // =============================================================================
 
 /**
- * Score tier classifications (0-100 scale)
- * - Conversation-Ready: 70-100 (Strong communication skills)
- * - Million-Dollar Gap: 40-69 (Moderate gaps costing deals)
- * - Credibility Block: 0-39 (Critical gaps limiting growth)
+ * Score tier classification
+ * 
+ * - Executive Presence: 70-100 (Strong communication skills, ready for leadership)
+ * - Passive Proficiency: 40-69 (Understands but struggles to be heard)
+ * - Credibility Gap: 0-39 (Critical gaps limiting growth)
  */
 export type ScoreTier = 
-  | 'Conversation-Ready' 
-  | 'Million-Dollar Gap' 
-  | 'Credibility Block';
+  | 'Executive Presence' 
+  | 'Passive Proficiency' 
+  | 'Credibility Gap';
 
 // =============================================================================
 // ANSWER STRUCTURE

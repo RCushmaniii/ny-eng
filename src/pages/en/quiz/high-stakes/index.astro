@@ -4,7 +4,6 @@
  * URL: /en/quiz/high-stakes/
  * Target Keyword: English for Job Interviews / Presentation Skills Coaching
  */
-
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
@@ -19,35 +18,71 @@ import {
   Theater,
   Zap,
   Target,
+  XCircle,
 } from "lucide-astro";
 import heroSkyline from "@assets/images/home/new-york-city-skyline.webp";
 
 // SEO metadata - optimized for 50-60 characters title, 150-160 chars description
-const title = "Pressure Performance Diagnostic | High-Stakes Communication";
+const title = "Pressure Performance Score | High-Stakes Communication";
 const description =
-  "Stop losing job offers to interview anxiety. Measure your Pressure Performance Score in 90 seconds. Get your personalized communication report.";
+  "You're brilliant in your native language. You freeze in English. Measure your Business English Pressure Score in 90 seconds. For non-native speakers facing high-stakes moments.";
 
 // FAQ data for SEO content
 const faqs = [
   {
-    question: "How to prepare for a job interview in English?",
+    question: "How long does the high-stakes communication assessment take?",
     answer:
-      "Interview success isn't about memorizing answers—it's about thinking clearly under pressure. Focus on three areas: (1) Processing speed (thinking in English without translating), (2) Storytelling structure (using the STAR method to answer behavioral questions), and (3) Confidence signals (vocal pace, eye contact, and body language). This assessment identifies which of these three areas needs the most work before your interview.",
+      "90 seconds. You'll answer 6 scenario-based questions and receive your Pressure Performance Score (0-100) plus a personalized gap analysis immediately after.",
   },
   {
-    question: "What is the 'Language Gap' Score?",
+    question: "What is the 'Language Gap' this assessment measures?",
     answer:
-      "The Language Gap Score measures the difference between your technical knowledge and your ability to communicate it under pressure. You might be brilliant in low-stakes conversations but freeze during presentations or interviews. This assessment quantifies that gap and provides a roadmap to close it.",
+      "The Language Gap is the difference between your intelligence in your native language and how you come across in high-pressure English situations. You might be brilliant in casual conversations but freeze during interviews or presentations. This assessment quantifies that gap and provides a roadmap to close it.",
   },
   {
-    question: "How long does the High-Stakes Communication Assessment take?",
+    question: "What will I receive after completing the assessment?",
     answer:
-      "The assessment takes 90 seconds. You'll answer 6 scenario-based questions that simulate high-pressure moments: job interviews, keynote presentations, and crisis communication. Your results include a Communication Confidence Score (0-100) and a breakdown of your strengths in Presence, Processing Speed, and Persuasion.",
+      "Your Pressure Performance Score (0-100), analysis of your strengths and gaps across three dimensions (Stage Presence, Processing Speed, and Persuasive Impact), plus a personalized 30-day roadmap with specific exercises to build high-stakes confidence.",
   },
   {
-    question: "Will this help me with public speaking anxiety?",
+    question: "Who should take this assessment?",
     answer:
-      "Yes. Public speaking anxiety often stems from language uncertainty—the fear of freezing, forgetting words, or being misunderstood. This assessment identifies the root cause of your anxiety (processing speed, vocabulary gaps, or cultural fluency) and provides targeted strategies to build confidence before your next high-stakes moment.",
+      "Professionals preparing for job interviews, keynote presentations, investor pitches, or any career-defining moment where English performance matters. If you're fluent in casual settings but your mind goes blank under pressure, this assessment is for you.",
+  },
+  {
+    question: "Will this help with public speaking anxiety?",
+    answer:
+      "Yes. Most public speaking anxiety for non-native speakers stems from language uncertainty—the fear of freezing, forgetting words, or being misunderstood. This assessment identifies the root cause (processing speed, vocabulary gaps, or cultural fluency) and provides targeted strategies to build confidence.",
+  },
+  {
+    question: "What happens after I get my results?",
+    answer:
+      "You'll receive an email with your detailed scorecard and the option to book a free 20-minute consultation to discuss your personalized roadmap for high-stakes communication mastery.",
+  },
+];
+
+// Testimonials data
+const testimonials = [
+  {
+    quote:
+      "Failed 2 final-round interviews at Amazon before this. The processing speed exercises changed everything—landed the offer on my third attempt.",
+    name: "Ricardo M.",
+    title: "Senior Product Manager, Amazon",
+    location: "Mexico City → Seattle",
+  },
+  {
+    quote:
+      "I used to black out during investor pitches. Now I actually enjoy them. Raised $4M in our Series A—the presence training was worth 100x the investment.",
+    name: "Sofia L.",
+    title: "CEO, Fintech Startup",
+    location: "Bogotá",
+  },
+  {
+    quote:
+      "Keynoted a 2,000-person conference in English. Six months ago, I would have said no. The 'freeze to flow' framework made it possible.",
+    name: "Dr. Marco V.",
+    title: "AI Research Director",
+    location: "São Paulo → Austin",
   },
 ];
 ---
@@ -66,7 +101,7 @@ const faqs = [
   <section class="hero">
     <img
       src={heroSkyline.src}
-      alt="High-Stakes English Assessment"
+      alt="High-Stakes Communication Assessment"
       class="hero-bg-image"
       loading="eager"
     />
@@ -74,42 +109,28 @@ const faqs = [
     <div class="container">
       <div class="hero-content">
         <span class="eyebrow"
-          >STOP Losing Job Offers to High-Stakes Interview Freezes</span
+          >You're brilliant in your native language. You freeze in English.</span
         >
 
         <h1>
-          The 90-Second Diagnostic that Measures Your Pressure Performance Score
+          The 90-Second Assessment That Measures Your Business English Pressure
+          Score
         </h1>
 
-        <p class="lead">
-          You are brilliant in the relaxed moments. But when a final-round
-          interview, keynote, or board presentation is on the line, does your
-          English hold up—or do you freeze? Discover the gaps in your "Pressure
-          Performance" that are costing you career momentum and major
-          opportunities. This is a strategic diagnostic designed for
-          professionals who must perform when it matters most.
-        </p>
+        <p class="discover-label">Three things you'll discover:</p>
 
         <div class="benefits">
           <div class="benefit">
             <CheckCircle size={20} />
-            <span
-              ><strong>DIAGNOSE:</strong> Your Pressure Performance Score (0-100)</span
-            >
+            <span>Your English Pressure Performance Score (0-100)</span>
           </div>
           <div class="benefit">
             <CheckCircle size={20} />
-            <span
-              ><strong>PINPOINT:</strong> Gaps in Presence, Processing Speed, and
-              Persuasive Authority</span
-            >
+            <span>Why you freeze when the language stakes are highest</span>
           </div>
           <div class="benefit">
             <CheckCircle size={20} />
-            <span
-              ><strong>RECEIVE:</strong> A Personalized 30-Day Roadmap to Master
-              High-Stakes Communication</span
-            >
+            <span>Your 30-day roadmap to fluent high-stakes confidence</span>
           </div>
         </div>
 
@@ -119,115 +140,336 @@ const faqs = [
           size="lg"
           class="cta-button gold-cta"
         >
-          Start Your Free Diagnostic →
+          Start Free Assessment →
         </Button>
 
         <p class="trust-line">
-          90 Seconds. Instant, Confidential Results. Trusted by 200+ High-Stakes
-          Professionals.
+          Quick. Insightful. Trusted by 200+ professionals seeking fluency and
+          confidence.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- What You'll Discover Section -->
-  <section class="discover-section">
+  <!-- SECTION 1: The Business Case -->
+  <section class="business-case-section">
     <div class="container">
-      <h2>Why High-Pressure Moments Break "Classroom English"</h2>
-      <p class="section-lead">
-        This assessment measures the three dimensions that separate confident
-        speakers from those who freeze:
+      <h2>Why Your "Interview Self" Is Costing You $100K+ Offers</h2>
+      <p class="section-intro">
+        You're articulate in meetings. Confident with colleagues. But when the
+        stakes are high—final-round interviews, investor pitches, keynote
+        stages—something breaks. That gap has a price tag.
       </p>
 
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <div class="metric-icon">
-            <Theater size={48} class="icon-primary" />
-          </div>
-          <h3>1. Presence & Authority: Commanding the Room</h3>
+      <div class="cost-grid">
+        <div class="cost-item">
+          <div class="cost-icon"><XCircle size={32} /></div>
+          <h3>Lost Offers</h3>
           <p>
-            Do you command attention—or apologize for taking up space? We
-            measure your ability to project authority, using intentional pauses
-            and vocal control, to manage anxiety under pressure.
+            You made it to the final round. Your skills were enough to get
+            there. But the offer went to someone who "interviewed better."
+          </p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-icon"><TrendingUp size={32} /></div>
+          <h3>Lower Compensation</h3>
+          <p>
+            Hesitation in salary negotiations costs 10-20% of your package.
+            That's $15K-$50K per year you're leaving on the table.
+          </p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-icon"><Presentation size={32} /></div>
+          <h3>Avoided Opportunities</h3>
+          <p>
+            The keynote you declined. The board presentation you delegated.
+            Every "no" to visibility is a "no" to career acceleration.
+          </p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-icon"><Clock size={32} /></div>
+          <h3>Extended Job Searches</h3>
+          <p>
+            Interview anxiety extends job searches by 3-6 months. That's
+            $50K-$150K in lost income while you "prepare more."
+          </p>
+        </div>
+      </div>
+
+      <div class="monetary-reality">
+        <p>
+          <strong>The uncomfortable truth:</strong> The difference between you and
+          the candidate who got the offer isn't skill—it's performance under pressure.
+          One bad interview can cost you <strong>$100K+ in compensation</strong>
+          and set your career back years.
+        </p>
+      </div>
+
+      <div class="section-cta">
+        <Button
+          href="/en/quiz/high-stakes/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Discover Your Pressure Gaps in 90 Seconds →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: The 3 Gaps -->
+  <section class="gaps-section">
+    <div class="container">
+      <h2>
+        The 3 Performance Dimensions That Separate "Almost Hired" from "You're
+        Our Top Choice"
+      </h2>
+      <p class="section-intro">
+        This assessment measures the exact skills that determine whether you
+        freeze or flow when career-defining moments arrive.
+      </p>
+
+      <div class="gap-cards">
+        <div class="gap-card">
+          <div class="gap-header">
+            <Theater size={40} class="gap-icon" />
+            <h3>Gap #1: Stage Presence</h3>
+            <span class="gap-subtitle"
+              >Command the Room or Apologize for Existing</span
+            >
+          </div>
+          <p class="gap-description">
+            The first 30 seconds of an interview or presentation determine 80%
+            of the outcome. Presence isn't about charisma—it's about projecting
+            authority even when your heart is racing.
+          </p>
+          <div class="what-we-measure">
+            <h4>What we measure:</h4>
+            <ul>
+              <li>Opening strength (confident entry vs. apologetic hedging)</li>
+              <li>Vocal authority under pressure (pace, pauses, projection)</li>
+              <li>Recovery patterns when you lose your train of thought</li>
+            </ul>
+          </div>
+          <p class="why-matters">
+            <strong>Why it matters:</strong> Interviewers decide "hire" or "pass"
+            in the first minutes. If you start with "Sorry, I'm a little nervous"
+            or speak too fast, you've already lost ground you'll never recover.
           </p>
         </div>
 
-        <div class="metric-card">
-          <div class="metric-icon">
-            <Zap size={48} class="icon-primary" />
+        <div class="gap-card">
+          <div class="gap-header">
+            <Zap size={40} class="gap-icon" />
+            <h3>Gap #2: Processing Speed</h3>
+            <span class="gap-subtitle">The Freeze/Flow Factor</span>
           </div>
-          <h3>2. Processing Speed: The Freeze/Flow Factor</h3>
-          <p>
-            Can you think in English without translating? When an interviewer
-            asks a curveball question or a client asks for a sudden change, do
-            you respond smoothly—or freeze? Speed is the #1 predictor of
-            high-stakes success.
+          <p class="gap-description">
+            When an interviewer throws a curveball question, your brain has 2
+            seconds to respond before the pause becomes awkward. If you're still
+            translating from your native language, you've already lost.
+          </p>
+          <div class="what-we-measure">
+            <h4>What we measure:</h4>
+            <ul>
+              <li>Response latency on unexpected questions</li>
+              <li>Ability to think out loud without freezing</li>
+              <li>Recovery speed after a mental blank</li>
+            </ul>
+          </div>
+          <p class="why-matters">
+            <strong>Why it matters:</strong> Processing speed is the #1 predictor
+            of interview success for non-native speakers. It's not about having perfect
+            answers—it's about having <em>any</em> answer without a 10-second freeze.
           </p>
         </div>
 
-        <div class="metric-card">
-          <div class="metric-icon">
-            <Target size={48} class="icon-primary" />
+        <div class="gap-card">
+          <div class="gap-header">
+            <Target size={40} class="gap-icon" />
+            <h3>Gap #3: Persuasive Impact</h3>
+            <span class="gap-subtitle">Information vs. Inspiration</span>
           </div>
-          <h3>3. Persuasion & Impact: Moving the Audience</h3>
-          <p>
-            Do you inspire action—or just convey information? Persuasive
-            speakers use storytelling, strategic framing, and emotional
-            resonance. We assess your ability to move audiences and
-            stakeholders.
+          <p class="gap-description">
+            Most candidates answer questions. Top candidates move the room.
+            Persuasive impact is the difference between "solid candidate" and
+            "we need to hire this person before someone else does."
           </p>
+          <div class="what-we-measure">
+            <h4>What we measure:</h4>
+            <ul>
+              <li>Storytelling structure (STAR method execution)</li>
+              <li>Emotional resonance and strategic framing</li>
+              <li>Closing strength (landing the plane with impact)</li>
+            </ul>
+          </div>
+          <p class="why-matters">
+            <strong>Why it matters:</strong> In a final round with 3 qualified candidates,
+            the offer goes to whoever makes the interviewers <em>feel</em>
+            something. Information is forgettable. Stories are memorable.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-cta">
+        <Button
+          href="/en/quiz/high-stakes/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Take the 90-Second Assessment →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Who This Is For -->
+  <section class="who-section">
+    <div class="container">
+      <h2>Is This High-Stakes Assessment Right for You?</h2>
+
+      <div class="who-grid">
+        <div class="who-card designed-for">
+          <h3>This assessment is designed for:</h3>
+          <ul>
+            <li>
+              <strong>Job seekers</strong> preparing for final-round interviews at
+              top companies
+            </li>
+            <li>
+              <strong>Executives and founders</strong> pitching to investors, boards,
+              or enterprise clients
+            </li>
+            <li>
+              <strong>Professionals</strong> preparing for keynotes, conferences,
+              or high-visibility presentations
+            </li>
+            <li>
+              <strong>Career transitioners</strong> entering English-dominant markets
+              for the first time
+            </li>
+            <li>
+              <strong>Anyone</strong> whose English is fine in casual settings but
+              breaks under pressure
+            </li>
+          </ul>
+        </div>
+
+        <div class="who-card ready-if">
+          <h3>You're ready for this assessment if:</h3>
+          <ul class="checkmark-list">
+            <li>
+              You've lost job offers despite being qualified because you "didn't
+              interview well"
+            </li>
+            <li>
+              You avoid high-visibility opportunities because you're afraid of
+              freezing
+            </li>
+            <li>
+              You over-prepare scripts and then sound robotic and inauthentic
+            </li>
+            <li>Your mind goes blank when asked unexpected questions</li>
+            <li>
+              You know you're smarter than how you come across in English under
+              pressure
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Differentiation Section -->
-  <section class="differentiation-section">
+  <!-- SECTION 4: Comparison Table -->
+  <section class="comparison-section">
     <div class="container">
-      <h2>Freezing vs. Flowing: The Performance Divide</h2>
-      <p class="section-lead">
-        The speakers who land dream jobs and keynote opportunities don't just
-        speak English—they perform under pressure.
+      <h2>The Performance Gap Between "Almost" and "Hired"</h2>
+      <p class="section-intro">
+        The candidates who land offers don't have better skills—they perform
+        better when it counts.
       </p>
 
-      <div class="comparison-grid">
-        <div class="comparison-card struggling">
-          <h3>❌ The Risk of Freezing</h3>
-          <ul>
-            <li>Freeze or ramble when asked unexpected questions</li>
-            <li>Over-prepare scripts and sound robotic and inauthentic</li>
-            <li>Lose job offers despite strong qualifications and skills</li>
-            <li>Avoid high-visibility opportunities due to fear of failure</li>
-          </ul>
-        </div>
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Freezing Under Pressure</th>
+              <th>Flowing Under Pressure</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Long pauses while translating internally</td>
+              <td>Think out loud in English without hesitation</td>
+            </tr>
+            <tr>
+              <td>Over-prepare scripts, sound robotic</td>
+              <td>Prepare frameworks, sound natural and adaptive</td>
+            </tr>
+            <tr>
+              <td>Ramble when nervous, lose the thread</td>
+              <td>Deliver structured 60-second stories with impact</td>
+            </tr>
+            <tr>
+              <td>Apologize for accent or nervousness</td>
+              <td>Project authority from the first sentence</td>
+            </tr>
+            <tr>
+              <td>Leave interviews hoping they "saw past" the nerves</td>
+              <td>Leave interviews knowing you commanded the room</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-        <div class="comparison-card thriving">
-          <h3>✅ The Power of Flowing</h3>
-          <ul>
-            <li>
-              Think clearly under pressure without relying on internal
-              translation
-            </li>
-            <li>
-              Tell compelling, concise stories that inspire immediate action
-            </li>
-            <li>
-              Land job offers based on powerful presence + technical skills
-            </li>
-            <li>
-              Seek out high-stakes moments to build massive career influence
-            </li>
-          </ul>
-        </div>
+      <p class="comparison-conclusion">
+        <strong>The difference?</strong> High-stakes performers trained their pressure
+        response. It's a skill—and it can be learned.
+      </p>
+
+      <div class="section-cta">
+        <Button
+          href="/en/quiz/high-stakes/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Find Your Gaps. Fix Them. Perform. →
+        </Button>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section (SEO Content) -->
+  <!-- SECTION 5: Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2>Trusted by 200+ Professionals Who Stopped Freezing</h2>
+
+      <div class="testimonials-grid">
+        {
+          testimonials.map((testimonial) => (
+            <div class="testimonial-card">
+              <blockquote>"{testimonial.quote}"</blockquote>
+              <div class="testimonial-author">
+                <strong>{testimonial.name}</strong>
+                <span>{testimonial.title}</span>
+                <span class="location">{testimonial.location}</span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: FAQ -->
   <section class="faq-section">
     <div class="container">
+      <h2>Frequently Asked Questions</h2>
       {
-        faqs.map((faq, index) => (
+        faqs.map((faq) => (
           <details class="faq-item">
             <summary>
               <h3>{faq.question}</h3>
@@ -242,9 +484,17 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Final CTA: Urgency-Driven -->
+  <!-- SECTION 7: Final CTA -->
   <section class="final-cta-section">
     <div class="container">
+      <h2>Your Next Interview Doesn't Have to Feel Like a Hostage Situation</h2>
+      <p class="final-cta-text">
+        The professionals who land dream jobs and command keynote stages aren't
+        more talented than you. They trained their pressure response. They
+        learned to flow instead of freeze. They stopped letting anxiety steal
+        opportunities they'd earned.
+      </p>
+      <p class="final-cta-highlight">Your 90-second assessment starts now.</p>
       <div class="cta-center">
         <Button
           href="/en/quiz/high-stakes/question/1"
@@ -252,12 +502,12 @@ const faqs = [
           size="lg"
           class="gold-cta"
         >
-          Start Your Free Diagnostic Today →
+          Take the Assessment →
         </Button>
       </div>
-      <p class="urgency-text">
-        Don't let the fear of freezing be the reason you miss your next
-        promotion or dream job.
+      <p class="trust-final">
+        90 seconds. Instant results. Zero risk. Join 200+ professionals who
+        stopped freezing.
       </p>
     </div>
   </section>
@@ -368,19 +618,12 @@ const faqs = [
       }
     }
 
-    .lead {
-      font-size: 1.25rem;
-      line-height: 1.7;
+    .discover-label {
+      font-size: 1.125rem;
       color: #f1f5f9;
-      margin: 0;
-      font-weight: 400;
+      margin: 0 0 0.5rem 0;
+      font-weight: 500;
       text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
-    }
-
-    @media (min-width: 768px) {
-      .lead {
-        font-size: 1.375rem;
-      }
     }
 
     .benefits {
@@ -430,13 +673,33 @@ const faqs = [
       box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5) !important;
     }
 
-    /* Discover Section */
-    .discover-section {
+    /* Shared Section Styles */
+    .section-intro {
+      font-size: 1.125rem;
+      color: #475569;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .section-cta {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .cta-center {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    /* SECTION 1: Business Case */
+    .business-case-section {
       padding: 4rem 1.5rem;
       background: white;
     }
 
-    .discover-section h2 {
+    .business-case-section h2 {
       font-size: 2rem;
       font-weight: 700;
       color: #1e293b;
@@ -444,15 +707,198 @@ const faqs = [
       margin-bottom: 1rem;
     }
 
-    .section-lead {
-      font-size: 1.125rem;
-      color: #475569;
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 3rem;
+    .cost-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto 2.5rem;
     }
 
-    .metrics-grid {
+    @media (min-width: 768px) {
+      .cost-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cost-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .cost-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .cost-icon {
+      margin-bottom: 1rem;
+      color: #ef4444;
+    }
+
+    .cost-item h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .cost-item p {
+      font-size: 0.9375rem;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .monetary-reality {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 2px solid #f59e0b;
+      border-radius: 1rem;
+      padding: 1.5rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .monetary-reality p {
+      font-size: 1.125rem;
+      color: #78350f;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* SECTION 2: Gaps Section */
+    .gaps-section {
+      padding: 4rem 1.5rem;
+      background: #f8fafc;
+    }
+
+    .gaps-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .gap-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .gap-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .gap-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .gap-header :global(.gap-icon) {
+      color: #3b82f6;
+    }
+
+    .gap-header h3 {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    .gap-subtitle {
+      font-size: 1rem;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    .gap-description {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .what-we-measure {
+      background: #f8fafc;
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .what-we-measure h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #1e293b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .what-we-measure ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .what-we-measure li {
+      font-size: 0.9375rem;
+      color: #475569;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .what-we-measure li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+    }
+
+    .why-matters {
+      font-size: 0.9375rem;
+      color: #475569;
+      line-height: 1.6;
+      margin: 0;
+      padding-left: 1rem;
+      border-left: 3px solid #3b82f6;
+    }
+
+    /* SECTION 3: Who Section */
+    .who-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .who-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .who-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
@@ -461,84 +907,26 @@ const faqs = [
     }
 
     @media (min-width: 768px) {
-      .metrics-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .metric-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 1rem;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .metric-icon {
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: center;
-    }
-
-    .metric-icon :global(.icon-primary) {
-      color: #3b82f6;
-    }
-
-    .metric-card h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #1e293b;
-      margin-bottom: 0.75rem;
-    }
-
-    .metric-card p {
-      font-size: 0.9375rem;
-      color: #475569;
-      line-height: 1.6;
-    }
-
-    /* Differentiation Section */
-    .differentiation-section {
-      padding: 4rem 1.5rem;
-      background: #f8fafc;
-    }
-
-    .differentiation-section h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #1e293b;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      max-width: 900px;
-      margin: 3rem auto;
-    }
-
-    @media (min-width: 768px) {
-      .comparison-grid {
+      .who-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    .comparison-card {
-      background: white;
+    .who-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 1rem;
       padding: 2rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
 
-    .comparison-card h3 {
+    .who-card h3 {
       font-size: 1.25rem;
       font-weight: 600;
+      color: #1e293b;
       margin-bottom: 1.5rem;
     }
 
-    .comparison-card ul {
+    .who-card ul {
       list-style: none;
       padding: 0;
       margin: 0;
@@ -547,37 +935,176 @@ const faqs = [
       gap: 0.75rem;
     }
 
-    .comparison-card li {
+    .who-card li {
       font-size: 0.9375rem;
       color: #475569;
       padding-left: 1.5rem;
       position: relative;
+      line-height: 1.5;
     }
 
-    .comparison-card li::before {
-      content: "•";
+    .designed-for li::before {
+      content: "→";
       position: absolute;
       left: 0;
+      color: #3b82f6;
       font-weight: bold;
     }
 
-    .struggling li::before {
-      color: #ef4444;
-    }
-
-    .thriving li::before {
+    .checkmark-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
       color: #10b981;
+      font-weight: bold;
     }
 
-    .cta-center {
+    /* SECTION 4: Comparison Table */
+    .comparison-section {
+      padding: 4rem 1.5rem;
+      background: #f8fafc;
+    }
+
+    .comparison-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
       text-align: center;
-      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .comparison-table-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .comparison-table th {
+      background: #1e293b;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+    }
+
+    .comparison-table th:first-child {
+      background: #ef4444;
+    }
+
+    .comparison-table th:last-child {
+      background: #10b981;
+    }
+
+    .comparison-table td {
+      padding: 1rem 1.5rem;
+      font-size: 0.9375rem;
+      color: #475569;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comparison-table td:first-child {
+      background: #fef2f2;
+    }
+
+    .comparison-table td:last-child {
+      background: #f0fdf4;
+    }
+
+    .comparison-conclusion {
+      font-size: 1.125rem;
+      color: #1e293b;
+      text-align: center;
+      max-width: 700px;
+      margin: 2rem auto 0;
+    }
+
+    /* SECTION 5: Testimonials */
+    .testimonials-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .testimonials-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .testimonial-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testimonial-card blockquote {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+      font-style: italic;
+      margin: 0 0 1.5rem 0;
+      flex: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .testimonial-author strong {
+      font-size: 1rem;
+      color: #1e293b;
+    }
+
+    .testimonial-author span {
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+
+    .testimonial-author .location {
+      font-size: 0.8125rem;
+      color: #94a3b8;
     }
 
     /* FAQ Section */
     .faq-section {
       padding: 4rem 1.5rem;
-      background: white;
+      background: #f8fafc;
     }
 
     .faq-section h2 {
@@ -589,11 +1116,14 @@ const faqs = [
     }
 
     .faq-item {
-      background: #f8fafc;
+      background: white;
       border: 1px solid #e2e8f0;
       border-radius: 0.75rem;
       margin-bottom: 1rem;
       overflow: hidden;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .faq-item summary {
@@ -641,22 +1171,41 @@ const faqs = [
 
     /* Final CTA Section (Dark Background) */
     .final-cta-section {
-      padding: 4rem 1.5rem;
+      padding: 5rem 1.5rem;
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      text-align: center;
+    }
+
+    .final-cta-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+    }
+
+    .final-cta-text {
+      font-size: 1.125rem;
+      color: #cbd5e1;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
+
+    .final-cta-highlight {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fbbf24;
+      margin-bottom: 2rem;
     }
 
     .final-cta-section .cta-center {
       margin-bottom: 1.5rem;
     }
 
-    .urgency-text {
-      font-size: 1rem;
-      color: #cbd5e1;
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-      font-style: italic;
-      opacity: 0.9;
+    .trust-final {
+      font-size: 0.9375rem;
+      color: #94a3b8;
+      margin-top: 1.5rem;
     }
 
     /* Responsive adjustments */
@@ -669,12 +1218,22 @@ const faqs = [
         font-size: 1.875rem;
       }
 
-      .discover-section,
-      .differentiation-section,
+      .business-case-section,
+      .gaps-section,
+      .who-section,
+      .comparison-section,
+      .testimonials-section,
       .faq-section,
       .final-cta-section {
         padding: 3rem 1rem;
       }
     }
   </style>
+
+  <script>
+    // Store quiz type when user clicks start button
+    document.addEventListener("DOMContentLoaded", () => {
+      sessionStorage.setItem("quizType", "high-stakes");
+    });
+  </script>
 </Base>

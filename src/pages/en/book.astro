@@ -4,18 +4,20 @@ export const prerender = true;
 import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import BookingFormSteps from "@components/booking/BookingFormSteps.astro";
-import bookingHero from "@assets/images/contact/nyc-statue-of-liberty.jpg";
+import bookingHero from "@assets/images/contact/book-hero.jpg";
 
 const metadata = {
-  title: "Book Your Free Business English Consultation | NY English",
-  description: "Schedule your free 30-minute consultation. Get personalized advice on improving your English for work and discover how coaching can fast-track your confidence.",
+  title: "Executive Strategy Session | NY English",
+  description:
+    "Schedule your 15-minute analysis. No sales scripts—just a direct conversation about your technical and executive presence in English.",
 };
 
 const heroContent = {
-  title: "Book Your Free Business English Consultation",
-  description: "Unlock Confident Communication at Work",
+  title: "Let's Debug Your English Communication",
+  description:
+    "No sales scripts. Just a 15-minute analysis of your current technical & executive presence.",
   backgroundImage: bookingHero,
-  overlayOpacity: 0.5,
+  overlayOpacity: 0.6,
 };
 ---
 
@@ -28,7 +30,7 @@ const heroContent = {
 >
   <main>
     <InnerHero content={heroContent} />
-    
+
     <section class="py-16 md:py-24 bg-background-light">
       <div class="site-container px-4">
         <!-- Booking Form with Steps -->

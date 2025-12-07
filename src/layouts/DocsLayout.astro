@@ -28,6 +28,8 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
       /* Theme Variables */
       :root {
         --transition-speed: 0.3s;
+        --docs-accent: #ff6b35;
+        --docs-accent-hover: #ff5722;
       }
 
       /* Dark Theme (Default) */
@@ -36,9 +38,9 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
         --bg-secondary: #1e293b;
         --bg-tertiary: #334155;
         --bg-nav: linear-gradient(135deg, #1e3a8a, #1e40af, #1e3a8a);
-        --text-primary: #e2e8f0;
-        --text-secondary: #cbd5e1;
-        --text-muted: #94a3b8;
+        --text-primary: #ffffff;
+        --text-secondary: #f1f5f9;
+        --text-muted: #cbd5e1;
         --border-color: #475569;
         --code-bg: #1e293b;
         --warning-bg: #fef3c7;
@@ -54,9 +56,9 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
         --bg-secondary: #f8fafc;
         --bg-tertiary: #e2e8f0;
         --bg-nav: linear-gradient(135deg, #dbeafe, #bfdbfe, #dbeafe);
-        --text-primary: #1e293b;
-        --text-secondary: #475569;
-        --text-muted: #64748b;
+        --text-primary: #0f172a;
+        --text-secondary: #1e293b;
+        --text-muted: #475569;
         --border-color: #cbd5e1;
         --code-bg: #f1f5f9;
         --warning-bg: #fef3c7;
@@ -95,37 +97,49 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
         transition: background-color var(--transition-speed) ease;
       }
 
+      /* Force text colors for docs content - override global styles */
+      .docs-content,
+      .docs-content * {
+        color: var(--text-primary);
+      }
+
+      .docs-content h1,
+      .docs-content h2,
+      .docs-content h3,
+      .docs-content h4,
+      .docs-content h5,
+      .docs-content h6 {
+        color: var(--text-primary) !important;
+      }
+
       .docs-content h1 {
         font-family: var(--font-headline);
-        font-size: var(--text-h1);
+        font-size: 2rem;
         font-weight: 700;
-        color: var(--color-headline);
         margin-bottom: 1.5rem;
-        border-bottom: 2px solid var(--color-primary);
+        border-bottom: 2px solid var(--docs-accent);
         padding-bottom: 1rem;
       }
 
       .docs-content h2 {
         font-family: var(--font-headline);
-        font-size: var(--text-h2);
+        font-size: 1.5rem;
         font-weight: 600;
-        color: var(--color-headline);
         margin: 2rem 0 1rem 0;
-        border-left: 4px solid var(--color-primary);
+        border-left: 4px solid var(--docs-accent);
         padding-left: 1rem;
       }
 
       .docs-content h3 {
         font-family: var(--font-headline);
-        font-size: var(--text-h3);
+        font-size: 1.25rem;
         font-weight: 600;
-        color: var(--color-headline);
         margin: 1.5rem 0 0.75rem 0;
       }
 
       .docs-content p {
         font-family: var(--font-base);
-        color: var(--color-body-base);
+        color: var(--text-secondary) !important;
         line-height: 1.8;
         margin-bottom: 1rem;
       }
@@ -137,17 +151,17 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
       }
 
       .docs-content li {
-        color: var(--color-body-base);
+        color: var(--text-secondary) !important;
         margin-bottom: 0.5rem;
       }
 
       .docs-content a {
-        color: var(--color-primary);
+        color: var(--docs-accent) !important;
         text-decoration: underline;
       }
 
       .docs-content a:hover {
-        color: var(--color-primary-light);
+        color: var(--docs-accent-hover) !important;
       }
 
       .docs-content code {
@@ -201,9 +215,13 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
       }
 
       .docs-content th {
-        background-color: var(--color-background-light);
+        background-color: var(--bg-tertiary);
         font-weight: 600;
-        color: var(--color-headline);
+        color: var(--text-primary) !important;
+      }
+
+      .docs-content td {
+        color: var(--text-secondary) !important;
       }
 
       /* Navigation styling */
@@ -336,6 +354,15 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
       .text-slate-300 {
         color: var(--text-secondary) !important;
         transition: color var(--transition-speed) ease;
+      }
+
+      /* Light theme nav text fix */
+      body.light-theme nav .text-white {
+        color: #1e293b !important;
+      }
+
+      body.light-theme nav .text-slate-300 {
+        color: #475569 !important;
       }
 
       /* Light theme overrides for cards */

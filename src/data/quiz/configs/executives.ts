@@ -107,7 +107,7 @@ export const executivesConfig: QuizConfig = {
         id: 4,
         category: 'negotiation',
         question:
-          'When a strategic partner or enterprise client pushes back on terms, how do you handle the friction in English?',
+          'When a strategic partner or enterprise client pushes back on terms, how do I handle the friction in English?',
         answers: [
           {
             index: 0,
@@ -138,7 +138,7 @@ export const executivesConfig: QuizConfig = {
         id: 5,
         category: 'confidence',
         question:
-          'The presentation is over, and the floor is open for Q&A. How do you handle the "off-script" moments in English?',
+          'The presentation is over, and the floor is open for Q&A. How do I handle the "off-script" moments in English?',
         answers: [
           {
             index: 0,
@@ -242,12 +242,46 @@ export const executivesConfig: QuizConfig = {
         urgency: 'low',
       },
     },
+
+    results: {
+      impactTitle: "The Cost to Your Leadership",
+      tiers: {
+        'Credibility Gap': {
+          title: "The Authority Gap",
+          description: "You command respect in your native language, but in English, you shrink. Investors sense hesitation. Board members talk over you. The gap between your actual capability and how you're perceived is costing you deals, influence, and the respect you've earned."
+        },
+        'Passive Proficiency': {
+          title: "The Influence Ceiling",
+          description: "You can run the meeting, but you're not owning the room. You get your point across, but you're conceding ground you shouldn't—in negotiations and boardroom debates. Your ideas are solid, but they're landing softer than they should because your delivery lacks the executive edge."
+        },
+        'Executive Presence': {
+          title: "Global Command",
+          description: "You have the communication foundation to lead globally. The opportunity now is refinement—mastering the subtle art of executive presence that separates respected leaders from legendary ones. Small adjustments in how you handle pressure can unlock significantly higher influence."
+        }
+      },
+      eliteComparison: {
+        title: "The 5 Habits I See in the Top 1% of Leaders",
+        items: [
+          "They think in English under pressure—no translation delay, no buffering, just immediate, authoritative responses that command respect.",
+          "They control the room's energy. When challenged, they don't defend—they redirect. Their calm confidence makes aggressive stakeholders back down.",
+          "They negotiate without losing warmth. They can be firm on the numbers while keeping the relationship intact, never sacrificing either.",
+          "They turn small talk into strategic advantage. The five minutes before the meeting starts is where trust is built and deals are won.",
+          "They sound like themselves in any language. Their personality, humor, and charisma translate fully—they're not a 'muted version' in English."
+        ]
+      },
+      cta: {
+        title: "Ready to Improve Your English Fast?",
+        subtext: "Quick discussion. Personal. No pressure.",
+        buttonText: "👉 Book a Session with Me",
+        footerText: ""
+      }
+    }
   },
 
   es: {
     title: 'Evaluación de Confianza para Ejecutivos',
     subtitle:
-      'Descubre cómo tu estilo de comunicación impacta la confianza del directorio, la velocidad de los acuerdos y tu capacidad de liderar al más alto nivel.',
+      'Descubre cómo tu estilo de comunicación impacta la confianza del consejo, la velocidad de los acuerdos y tu capacidad de liderar al más alto nivel.',
 
     questions: [
       {
@@ -450,7 +484,7 @@ export const executivesConfig: QuizConfig = {
         lowScoreImpact:
           'Si tu mensaje es difícil de seguir, las personas no solo pierden detalles—pierden confianza en tu criterio. Los stakeholders demoran decisiones, piden más presentaciones y reducen silenciosamente tu influencia.',
         recommendation:
-          'Construye una columna vertebral narrativa simple para cada conversación de alto impacto: contexto → recomendación central → 2–3 razones → siguiente paso claro. Practica decirlo en voz alta en menos de 60 segundos.',
+          'Mi Consejo: Construye una columna vertebral narrativa simple: contexto → recomendación → razones → siguiente paso. Practica decirlo en menos de 60 segundos.',
         urgency: 'high',
       },
       confidence: {
@@ -458,7 +492,7 @@ export const executivesConfig: QuizConfig = {
         lowScoreImpact:
           'La vacilación, las explicaciones demasiado largas o reducirte bajo presión hacen que ideas fuertes parezcan débiles. Las personas compran tu convicción antes de comprar tu estrategia.',
         recommendation:
-          'Ensaya respuestas cortas y seguras para las 5–7 preguntas más difíciles que más temes. Grábate, refina tu postura y tono, y enfócate en sonar decisivo incluso mientras sigues pensando.',
+          'Mi Consejo: Ensaya respuestas cortas y seguras para las preguntas difíciles. Enfócate en sonar decisivo incluso mientras sigues pensando.',
         urgency: 'high',
       },
       'real-time': {
@@ -466,7 +500,7 @@ export const executivesConfig: QuizConfig = {
         lowScoreImpact:
           'Si no puedes pensar y hablar al mismo tiempo en inglés, terminas reaccionando en lugar de liderar. Los momentos críticos pasan mientras buscas palabras en lugar de marcar la dirección.',
         recommendation:
-          'Haz ejercicios breves diarios donde expliques una decisión, riesgo o trade‑off en voz alta sin notas durante 60–90 segundos. El objetivo es la fluidez, no la perfección.',
+          'Mi Consejo: Haz ejercicios diarios donde expliques una decisión difícil en voz alta sin notas durante 90 segundos.',
         urgency: 'medium',
       },
       negotiation: {
@@ -474,7 +508,7 @@ export const executivesConfig: QuizConfig = {
         lowScoreImpact:
           'Un lenguaje débil en negociación convierte “pequeñas concesiones” en precedentes costosos. Con el tiempo, erosiona márgenes, desgasta equipos y entrena a los socios a seguir presionando.',
         recommendation:
-          'Prepara 2–3 frases fuertes de límites en inglés (para alcance, precio y plazos) y practícalas hasta que se sientan naturales, no agresivas.',
+          'Mi Consejo: Prepara frases fuertes de límites en inglés (para alcance y precio) y practícalas hasta que se sientan naturales.',
         urgency: 'medium',
       },
       cultural: {
@@ -482,9 +516,43 @@ export const executivesConfig: QuizConfig = {
         lowScoreImpact:
           'Si las conversaciones nunca van más allá de la agenda, te quedas como “el operador”, no como par estratégico. Eso limita la confianza, las referencias y los acuerdos a largo plazo.',
         recommendation:
-          'Observa cómo líderes senior norteamericanos abren y cierran reuniones, manejan la small talk y usan el humor. Elige 1–2 comportamientos para replicar intencionalmente en tus próximas llamadas.',
+          'Mi Consejo: Observa cómo líderes norteamericanos abren reuniones y usan el humor. Elige 1–2 comportamientos para replicar en tus próximas llamadas.',
         urgency: 'low',
       },
     },
+
+    results: {
+      impactTitle: "El Costo para Tu Liderazgo",
+      tiers: {
+        'Credibility Gap': {
+          title: "La Brecha de Autoridad",
+          description: "Dominas el respeto en tu idioma, pero en inglés te haces pequeño. Los inversionistas notan la duda. El consejo te interrumpe. Esta brecha entre tu capacidad real y cómo eres percibido te está costando acuerdos, influencia y el respeto que mereces."
+        },
+        'Passive Proficiency': {
+          title: "El Techo de Influencia",
+          description: "Puedes llevar la reunión, pero no dominas la sala. Transmites tu punto, pero cedes terreno que no deberías. Tus ideas son sólidas, pero aterrizan más suaves de lo que deberían porque a tu entrega le falta el filo ejecutivo."
+        },
+        'Executive Presence': {
+          title: "Mando Global",
+          description: "Tienes la base para liderar globalmente. La oportunidad ahora es el refinamiento: dominar el arte sutil de la presencia ejecutiva. Pequeños ajustes en cómo manejas la presión pueden desbloquear una influencia significativamente mayor."
+        }
+      },
+      eliteComparison: {
+        title: "Los 5 Hábitos que veo en el Top 1% de Líderes",
+        items: [
+          "Piensan en inglés bajo presión—sin retraso de traducción, respuestas inmediatas y con autoridad.",
+          "Controlan la energía de la sala. Cuando son desafiados, no se defienden: redirigen con calma.",
+          "Negocian sin perder la calidez. Pueden ser firmes con los números manteniendo la relación intacta.",
+          "Convierten el 'Small Talk' en ventaja estratégica. Los cinco minutos antes de la reunión es donde se gana la confianza.",
+          "Suenan como ellos mismos. Su personalidad y humor se traducen completamente; no son una 'versión aburrida' en inglés."
+        ]
+      },
+      cta: {
+        title: "¿Listo para mejorar tu inglés rápido?",
+        subtext: "Plática breve. Personal. Sin presión.",
+        buttonText: "👉 Agendar una sesión conmigo",
+        footerText: ""
+      }
+    }
   },
 };

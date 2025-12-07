@@ -1,17 +1,15 @@
 ---
 /**
- * Evaluación de Inglés para TI - Página de Destino
+ * IT English Assessment Landing Page - Spanish
  * URL: /es/quiz/it-services/
- * Target Keyword: Inglés para Profesionales de TI / Habilidades de Comunicación Técnica
+ * Target Keyword: Inglés para Profesionales de TI / Comunicación Técnica
  */
-
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
 import Button from "@components/ui/Button.astro";
 import QuizSchema from "@components/seo/QuizSchema.astro";
 import {
-  Laptop,
   CheckCircle,
   Clock,
   TrendingUp,
@@ -19,36 +17,73 @@ import {
   MessageSquare,
   Zap,
   Globe,
+  GitPullRequest,
+  Users,
 } from "lucide-astro";
 import heroSkyline from "@assets/images/home/new-york-city-skyline.webp";
 
-// SEO metadata - optimizado para 50-60 caracteres título, 150-160 caracteres descripción
-const title = "Auditoría de Comunicación Técnica | Liderazgo TI";
+// SEO metadata
+const title =
+  "Puntaje de Autoridad Técnica | Evaluación para Senior Developers";
 const description =
-  "Deja de permitir que las barreras limiten tu carrera. Mide tu Autoridad de Comunicación Técnica en 90 segundos. Obtén tu reporte.";
+  "Tu código es nivel Senior. Tu inglés suena Junior. ¿Una barrera de idioma está limitando tu crecimiento a Staff Engineer? Mide tu Puntaje de Persuasión Técnica en 90 segundos.";
 
-// Datos de FAQ para contenido SEO
+// FAQ data
 const faqs = [
   {
-    question: "¿Por qué es crucial el inglés para Desarrolladores Senior?",
+    question: "¿Cuánto tiempo toma la evaluación?",
     answer:
-      "Los desarrolladores senior dedican más del 60% de su tiempo a comunicarse: explicando decisiones de arquitectura, realizando revisiones de código y colaborando con equipos globales. La experiencia técnica por sí sola no es suficiente; necesitas articular conceptos complejos claramente a stakeholders que pueden no compartir tu formación técnica. Fuertes habilidades en inglés aceleran tu camino a roles de Staff Engineer, Tech Lead y CTO.",
+      "90 segundos. Responderás 6 preguntas específicas y recibirás tu Puntaje de Autoridad Técnica (0-100) junto con un análisis personalizado de tus brechas inmediatamente después.",
   },
   {
-    question: "¿Cuánto tiempo toma la Evaluación de Comunicación para TI?",
+    question: "¿Esto es otro examen de gramática o acento?",
     answer:
-      "La evaluación toma exactamente 90 segundos para completar. Responderás 6 preguntas específicas que miden tu claridad, confianza y fluidez cultural en contextos técnicos. Inmediatamente después de enviar, recibirás tu Puntuación de Confianza en Comunicación (0-100) y un análisis personalizado de brechas.",
+      "No. Esta evaluación mide los patrones de comunicación que determinan la velocidad de tu promoción—cómo explicas decisiones de arquitectura, lideras code reviews, e influyes en la dirección técnica. La gramática y el acento son irrelevantes si tus ideas consistentemente quedan en segundo plano.",
   },
   {
-    question: "¿Qué hace esto diferente de las pruebas genéricas de inglés?",
+    question: "¿Qué voy a recibir después de completar la evaluación?",
     answer:
-      "A diferencia de TOEFL o Duolingo, esta evaluación se enfoca específicamente en los desafíos de comunicación que enfrentan los profesionales de TI: explicar deuda técnica, liderar retrospectivas de sprint, presentar a stakeholders no técnicos y navegar dinámicas de equipos interculturales. Está diseñada por un coach de comunicación que trabaja exclusivamente con líderes tecnológicos.",
+      "Tu Puntaje de Autoridad Técnica (0-100), análisis de tus fortalezas y brechas en tres dimensiones (Traducción Técnica, Velocidad de Procesamiento, y Calibración Cultural), más un roadmap personalizado de 30 días con ejercicios específicos para acelerar tu dominio de comunicación.",
   },
   {
-    question:
-      "¿Esto me ayudará a pasar entrevistas técnicas en empresas FAANG?",
+    question: "¿Para quién es esta evaluación?",
     answer:
-      "Sí. Las entrevistas FAANG no son solo sobre programación—evalúan tu capacidad para pensar en voz alta, explicar tu enfoque y colaborar efectivamente. Esta evaluación identifica brechas en tu 'velocidad de procesamiento' (pensar en inglés bajo presión) y proporciona una hoja de ruta para mejorar tu desempeño en entrevistas.",
+      "Senior developers, ingenieros de software y tech leads que trabajan con equipos de Norteamérica—ya sea en FAANG, startups, o empresas remote-first. Si eres técnicamente fuerte pero tus ideas no tienen la tracción que merecen, esta evaluación es para ti.",
+  },
+  {
+    question: "¿Me va a ayudar a pasar entrevistas de FAANG?",
+    answer:
+      "Sí. Las entrevistas de Big Tech no son solo sobre algoritmos—evalúan tu capacidad de pensar en voz alta, explicar trade-offs, y colaborar bajo presión. Esta evaluación identifica tus brechas de 'velocidad de procesamiento' y te da un roadmap para mejorar tu desempeño en entrevistas.",
+  },
+  {
+    question: "¿Qué pasa después de obtener mis resultados?",
+    answer:
+      "Recibirás un email con tu scorecard detallado y la opción de agendar una consulta gratuita de 20 minutos para discutir tu roadmap personalizado hacia la comunicación de liderazgo técnico.",
+  },
+];
+
+// Testimonials data
+const testimonials = [
+  {
+    quote:
+      "Pasé de ser 'el senior callado' a liderar discusiones de arquitectura en 3 meses. Los ejercicios de velocidad de procesamiento cambiaron todo.",
+    name: "Miguel S.",
+    title: "Staff Engineer, Fintech Startup",
+    location: "CDMX → Remoto (EE.UU.)",
+  },
+  {
+    quote:
+      "Fallé 3 entrevistas de FAANG antes de esto. Por fin entendí por qué—mis explicaciones eran técnicamente correctas pero 2x más largas de lo necesario. Entré a Google en el siguiente intento.",
+    name: "Ana R.",
+    title: "Software Engineer, Google",
+    location: "São Paulo → Bay Area",
+  },
+  {
+    quote:
+      "Mis PRs se quedaban enterrados. Ahora soy yo quien los aprueba. El módulo de calibración cultural fue un game-changer para la comunicación async.",
+    name: "Carlos M.",
+    title: "Tech Lead, SaaS Serie B",
+    location: "Guadalajara",
   },
 ];
 ---
@@ -63,11 +98,11 @@ const faqs = [
 >
   <QuizSchema lang="es" slot="head" />
 
-  <!-- Hero Section with NYC Skyline Background -->
+  <!-- Hero Section -->
   <section class="hero">
     <img
       src={heroSkyline.src}
-      alt="Evaluación de Inglés para TI"
+      alt="Evaluación de Comunicación Técnica"
       class="hero-bg-image"
       loading="eager"
     />
@@ -75,41 +110,32 @@ const faqs = [
     <div class="container">
       <div class="hero-content">
         <span class="eyebrow"
-          >DEJA DE Permitir que las Barreras de Comunicación Introduzcan Bugs
-          Limitantes de Carrera</span
+          >Tu código es nivel Senior. Tu inglés suena Junior.</span
         >
 
-        <h1>Auditoría de 90 Segundos: Mide tu Autoridad de Comunicación</h1>
+        <h1>
+          La Evaluación de 90 Segundos: ¿Una Barrera de Idioma Está Limitando tu
+          Crecimiento a Staff Engineer?
+        </h1>
 
-        <p class="lead">
-          Tu código es impecable. Tus ideas son innovadoras. Pero si no puedes
-          traducir la complejidad, no liderarás. Descubre las brechas exactas de
-          comunicación que están ralentizando la velocidad del proyecto y
-          retrasando tu promoción a Tech Lead. Esta es una auditoría estratégica
-          diseñada exclusivamente para ingenieros internacionales listos para
-          escalar su influencia.
-        </p>
+        <p class="discover-label">Tres cosas que vas a descubrir:</p>
 
         <div class="benefits">
           <div class="benefit">
             <CheckCircle size={20} />
+            <span>Tu Puntaje de Persuasión Técnica (0-100)</span>
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
             <span
-              ><strong>AUDITAR:</strong> Tu Puntuación de Autoridad de Comunicación
-              Técnica (0-100)</span
+              >Por qué tus propuestas de arquitectura mueren en la traducción</span
             >
           </div>
           <div class="benefit">
             <CheckCircle size={20} />
             <span
-              ><strong>DIAGNOSTICAR:</strong> Fricción Oculta en Revisiones de Código,
-              Documentos de Arquitectura y Reuniones con Stakeholders</span
-            >
-          </div>
-          <div class="benefit">
-            <CheckCircle size={20} />
-            <span
-              ><strong>ACCEDER:</strong> Una Hoja de Ruta Personalizada de 30 Días
-              hacia Comunicación de Liderazgo Técnico</span
+              >El roadmap para explicar tecnología compleja a ejecutivos no
+              técnicos</span
             >
           </div>
         </div>
@@ -120,109 +146,364 @@ const faqs = [
           size="lg"
           class="cta-button gold-cta"
         >
-          Comenzar Auditoría Gratuita →
+          Comenzar Evaluación Gratis →
         </Button>
 
         <p class="trust-line">
-          90 Segundos. Resultados Instantáneos y Confidenciales. Confiado por
-          200+ Ingenieros Senior.
+          Breve. Práctico. Con la confianza de más de 200 profesionales buscando
+          fluidez y seguridad.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- What You'll Discover Section -->
-  <section class="discover-section">
+  <!-- SECTION 1: The Business Case -->
+  <section class="business-case-section">
     <div class="container">
-      <h2>Los 3 Glitches de Comunicación que Retrasan Tu Promoción</h2>
-      <p class="section-lead">
-        Esta evaluación mide las tres dimensiones críticas que separan a los
-        ingenieros senior de los líderes tecnológicos:
+      <h2>Tu Autoridad Técnica: El Activo de $150K que Nadie Te Enseñó</h2>
+      <p class="section-intro">
+        Tu LeetCode está afilado. Tu system design es sólido. Pero los
+        ingenieros que ascienden no siempre son los mejores programadores—son
+        los que logran que sus ideas se escuchen.
       </p>
 
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <div class="metric-icon">
-            <MessageSquare size={48} class="icon-primary" />
-          </div>
-          <h3>1. Claridad y Precisión: Traducir la Complejidad</h3>
+      <div class="cost-grid">
+        <div class="cost-item">
+          <div class="cost-icon"><TrendingUp size={32} /></div>
+          <h3>Atorado en Senior</h3>
           <p>
-            ¿Puedes explicar async/await a un PM? ¿Describir deuda técnica a un
-            CFO? La claridad no se trata de simplificar—se trata de traducir
-            complejidad sin perder precisión.
+            La promoción IC5 → Staff tiene 70% de tasa de fallo. La habilidad
+            técnica es el mínimo—la comunicación es lo que te diferencia.
           </p>
         </div>
+        <div class="cost-item">
+          <div class="cost-icon"><GitPullRequest size={32} /></div>
+          <h3>PRs Enterrados</h3>
+          <p>
+            Tus pull requests se aprueban, pero tus RFCs y propuestas de
+            arquitectura quedan "depriorizados" o en bikeshedding eterno.
+          </p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-icon"><Users size={32} /></div>
+          <h3>Invisible en Juntas</h3>
+          <p>
+            Para cuando formulas tu punto en inglés, alguien más ya dijo algo
+            similar—y se lleva el crédito.
+          </p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-icon"><Clock size={32} /></div>
+          <h3>Techo en Entrevistas</h3>
+          <p>
+            Pasas las rondas de código pero te rechazan por "comunicación" en
+            system design y entrevistas de comportamiento.
+          </p>
+        </div>
+      </div>
 
-        <div class="metric-card">
-          <div class="metric-icon">
-            <Zap size={48} class="icon-primary" />
-          </div>
-          <h3>2. Velocidad de Procesamiento: El Indicador de Autoridad</h3>
-          <p>
-            En revisiones de código y standups, ¿dudas? ¿Te congelas? Tu
-            velocidad de "pensar en inglés" impacta directamente tu autoridad
-            técnica percibida.
-          </p>
-        </div>
+      <div class="monetary-reality">
+        <p>
+          <strong>Haz las cuentas:</strong> La diferencia entre Senior y Staff en
+          FAANG es de <strong>$150K-$300K al año</strong> en compensación total.
+          Si tus brechas de comunicación retrasan tu promoción 2 años, estamos hablando
+          de <strong>$500K en oportunidad perdida.</strong>
+        </p>
+      </div>
 
-        <div class="metric-card">
-          <div class="metric-icon">
-            <Globe size={48} class="icon-primary" />
-          </div>
-          <h3>3. Fluidez Cultural: Navegar las Reglas No Escritas</h3>
-          <p>
-            La cultura tecnológica norteamericana valora la franqueza, concisión
-            y "disagree and commit". ¿Estás navegando estas reglas no escritas
-            efectivamente en documentación y reuniones?
-          </p>
-        </div>
+      <div class="section-cta">
+        <Button
+          href="/es/quiz/it-services/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Descubre Tus Brechas de Comunicación en 90 Segundos →
+        </Button>
       </div>
     </div>
   </section>
 
-  <!-- Differentiation Section -->
-  <section class="differentiation-section">
+  <!-- SECTION 2: The 3 Gaps -->
+  <section class="gaps-section">
     <div class="container">
       <h2>
-        Ingenieros vs. Líderes Tech: Cómo el Top 1% Comunica de Manera Diferente
+        Las 3 Dimensiones de Comunicación que Separan a los Senior Devs de los
+        Staff Engineers
       </h2>
-      <p class="section-lead">
-        Los ingenieros que son promovidos a roles de Staff, Principal y CTO no
-        solo escriben mejor código—lideran discusiones con autoridad y
-        precisión.
+      <p class="section-intro">
+        Esta evaluación mide las habilidades exactas que distinguen a los
+        ingenieros que ascienden de los que solo reciben "más scope."
       </p>
 
-      <div class="comparison-grid">
-        <div class="comparison-card struggling">
-          <h3>❌ El Costo de Baja Velocidad de Comunicación</h3>
+      <div class="gap-cards">
+        <div class="gap-card">
+          <div class="gap-header">
+            <MessageSquare size={40} class="gap-icon" />
+            <h3>Brecha #1: Traducción Técnica</h3>
+            <span class="gap-subtitle"
+              >Complejidad → Claridad en 60 Segundos</span
+            >
+          </div>
+          <p class="gap-description">
+            Los Staff engineers no solo entienden sistemas—traducen la
+            complejidad para PMs, ejecutivos, y stakeholders de otras áreas sin
+            perder precisión técnica.
+          </p>
+          <div class="what-we-measure">
+            <h4>Lo que medimos:</h4>
+            <ul>
+              <li>
+                Capacidad de explicar deuda técnica a un CFO en términos de
+                negocio
+              </li>
+              <li>
+                Resumir decisiones de arquitectura en actualizaciones de 60
+                segundos
+              </li>
+              <li>
+                Escribir RFCs que se aprueban, no hilos interminables de
+                comentarios
+              </li>
+            </ul>
+          </div>
+          <p class="why-matters">
+            <strong>Por qué importa:</strong> Tu director tiene 5 minutos para tu
+            revisión trimestral. Si empiezas con detalles de implementación en vez
+            de impacto de negocio, ya perdiste la conversación de promoción.
+          </p>
+        </div>
+
+        <div class="gap-card">
+          <div class="gap-header">
+            <Zap size={40} class="gap-icon" />
+            <h3>Brecha #2: Velocidad de Procesamiento</h3>
+            <span class="gap-subtitle">Autoridad Técnica en Tiempo Real</span>
+          </div>
+          <p class="gap-description">
+            En code reviews, respuesta a incidentes, y discusiones de
+            arquitectura, la duda se lee como incertidumbre. Tu velocidad de
+            "pensar en inglés" impacta directamente tu autoridad técnica
+            percibida.
+          </p>
+          <div class="what-we-measure">
+            <h4>Lo que medimos:</h4>
+            <ul>
+              <li>
+                Latencia de respuesta en discusiones técnicas de alta presión
+              </li>
+              <li>
+                Capacidad de pensar en voz alta durante entrevistas de system
+                design
+              </li>
+              <li>Patrones de confianza en sesiones de debugging en vivo</li>
+            </ul>
+          </div>
+          <p class="why-matters">
+            <strong>Por qué importa:</strong> En un incidente de producción, el ingeniero
+            que habla primero moldea la respuesta. Si todavía estás traduciendo mientras
+            otros deciden, no estás liderando.
+          </p>
+        </div>
+
+        <div class="gap-card">
+          <div class="gap-header">
+            <Globe size={40} class="gap-icon" />
+            <h3>Brecha #3: Calibración Cultural</h3>
+            <span class="gap-subtitle">Navegando las Reglas No Escritas</span>
+          </div>
+          <p class="gap-description">
+            La cultura tech de Norteamérica tiene reglas no escritas: ser
+            directo sin ser agresivo, "disagree and commit," comunicación
+            async-first. Estos patrones no se enseñan—se absorben.
+          </p>
+          <div class="what-we-measure">
+            <h4>Lo que medimos:</h4>
+            <ul>
+              <li>
+                Tono en comentarios de PR (constructivo vs. percibido como duro
+                o pasivo)
+              </li>
+              <li>
+                Capacidad de hacer pushback a ingenieros senior diplomáticamente
+              </li>
+              <li>
+                Patrones de comunicación en Slack/async que construyen
+                influencia
+              </li>
+            </ul>
+          </div>
+          <p class="why-matters">
+            <strong>Por qué importa:</strong> Un comentario de code review técnicamente
+            correcto puede dañar tu reputación si el tono se siente fuera de lugar.
+            Los ingenieros que ascienden saben ser directos sin ser ignorados.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-cta">
+        <Button
+          href="/es/quiz/it-services/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Tomar la Evaluación de 90 Segundos →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Who This Is For -->
+  <section class="who-section">
+    <div class="container">
+      <h2>¿Esta Evaluación Es Para Ti?</h2>
+
+      <div class="who-grid">
+        <div class="who-card designed-for">
+          <h3>Esta evaluación está diseñada para:</h3>
           <ul>
-            <li>Evitan hablar en revisiones de arquitectura</li>
-            <li>Sobre-explican para compensar la incertidumbre</li>
-            <li>Pierden promociones a pesar de fuertes habilidades técnicas</li>
             <li>
-              Se sienten agotados después de reuniones intensivas en inglés
+              <strong>Senior developers (IC4-IC5)</strong> en FAANG, Big Tech, o
+              startups de alto crecimiento
+            </li>
+            <li>
+              <strong>Tech leads y engineering managers</strong> que lideran equipos
+              distribuidos o multiculturales
+            </li>
+            <li>
+              <strong>Ingenieros remotos</strong> trabajando async-first con empresas
+              de Norteamérica
+            </li>
+            <li>
+              <strong
+                >Ingenieros preparándose para entrevistas de Big Tech</strong
+              >
+              que quieren dominar la barra de comunicación
+            </li>
+            <li>
+              <strong>Desarrolladores internacionales</strong> con fuertes habilidades
+              técnicas pero inglés como segundo idioma
             </li>
           </ul>
         </div>
 
-        <div class="comparison-card thriving">
-          <h3>✅ La Ventaja de Comunicación de Líderes Tech</h3>
-          <ul>
-            <li>Lideran discusiones técnicas con autoridad</li>
-            <li>Explican sistemas complejos en 2 minutos o menos</li>
-            <li>Son promovidos basándose en comunicación + código</li>
-            <li>Construyen influencia a través de ingeniería y negocios</li>
+        <div class="who-card ready-if">
+          <h3>Estás listo para esta evaluación si:</h3>
+          <ul class="checkmark-list">
+            <li>
+              Eres técnicamente fuerte pero tus ideas no tienen la tracción que
+              merecen
+            </li>
+            <li>
+              Te han dicho que eres "muy callado" en juntas o que necesitas
+              "participar más"
+            </li>
+            <li>
+              Puedes debuggear cualquier cosa pero batallas para explicar tu
+              enfoque en tiempo real
+            </li>
+            <li>
+              Tu inglés escrito es sólido, pero te trabas en discusiones en vivo
+            </li>
+            <li>
+              Te han pasado por alto para Staff o Tech Lead a pesar de tu fuerte
+              output técnico
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section (SEO Content) -->
+  <!-- SECTION 4: Comparison Table -->
+  <section class="comparison-section">
+    <div class="container">
+      <h2>La Brecha de Comunicación Entre Senior Devs y Staff Engineers</h2>
+      <p class="section-intro">
+        Los ingenieros que llegan a Staff+ no solo escriben mejor código—se
+        comunican con un sistema operativo diferente.
+      </p>
+
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Patrones de Senior Developer</th>
+              <th>Comunicación de Staff Engineer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sobre-explicar para demostrar profundidad técnica</td>
+              <td>Liderar con el "y qué" y dejar que otros pidan detalles</td>
+            </tr>
+            <tr>
+              <td>Esperar el "momento correcto" para hablar (nunca llega)</td>
+              <td>Intervenir temprano con puntos estructurados y concisos</td>
+            </tr>
+            <tr>
+              <td>Escribir RFCs técnicamente exhaustivos pero ignorados</td>
+              <td>Escribir RFCs que construyen consenso antes de publicarse</td>
+            </tr>
+            <tr>
+              <td>Ponerse a la defensiva cuando cuestionan tu arquitectura</td>
+              <td>Disagree and commit con framing explícito de trade-offs</td>
+            </tr>
+            <tr>
+              <td>Pasar rondas de código pero fallar en "comunicación"</td>
+              <td>Pensar en voz alta de manera que demuestra liderazgo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="comparison-conclusion">
+        <strong>¿La diferencia?</strong> Los Staff engineers aprendieron a comunicarse
+        como líderes. Es una habilidad que se puede entrenar—si conoces tus brechas.
+      </p>
+
+      <div class="section-cta">
+        <Button
+          href="/es/quiz/it-services/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Encuentra Tus Brechas. Arreglálas. Asciende. →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2>+200 Senior Engineers Ya Dieron el Paso</h2>
+
+      <div class="testimonials-grid">
+        {
+          testimonials.map((testimonial) => (
+            <div class="testimonial-card">
+              <blockquote>"{testimonial.quote}"</blockquote>
+              <div class="testimonial-author">
+                <strong>{testimonial.name}</strong>
+                <span>{testimonial.title}</span>
+                <span class="location">{testimonial.location}</span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: FAQ -->
   <section class="faq-section">
     <div class="container">
+      <h2>Preguntas Frecuentes</h2>
       {
-        faqs.map((faq, index) => (
+        faqs.map((faq) => (
           <details class="faq-item">
             <summary>
               <h3>{faq.question}</h3>
@@ -237,9 +518,19 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Final CTA: Urgency-Driven -->
+  <!-- SECTION 7: Final CTA -->
   <section class="final-cta-section">
     <div class="container">
+      <h2>Tu Código Ya Es Suficientemente Bueno para Staff</h2>
+      <p class="final-cta-text">
+        Los ingenieros que ascienden a Staff, Principal, y más allá no siempre
+        son los mejores programadores. Son los que aprendieron a traducir
+        excelencia técnica en influencia organizacional. Los que logran que sus
+        ideas no solo se implementen—moldeen la dirección.
+      </p>
+      <p class="final-cta-highlight">
+        Tu evaluación de 90 segundos empieza ahora.
+      </p>
       <div class="cta-center">
         <Button
           href="/es/quiz/it-services/question/1"
@@ -247,12 +538,12 @@ const faqs = [
           size="lg"
           class="gold-cta"
         >
-          Descubre Tu Puntuación de Autoridad Técnica Hoy →
+          Tomar la Evaluación →
         </Button>
       </div>
-      <p class="urgency-text">
-        No dejes que la vacilación sea la razón por la que pierdas tu próxima
-        promoción.
+      <p class="trust-final">
+        90 segundos. Resultados instantáneos. Cero riesgo. Ingenieros de Google,
+        Meta, Amazon, y más de 50 startups confían en nosotros.
       </p>
     </div>
   </section>
@@ -363,19 +654,12 @@ const faqs = [
       }
     }
 
-    .lead {
-      font-size: 1.25rem;
-      line-height: 1.7;
+    .discover-label {
+      font-size: 1.125rem;
       color: #f1f5f9;
-      margin: 0;
-      font-weight: 400;
+      margin: 0 0 0.5rem 0;
+      font-weight: 500;
       text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
-    }
-
-    @media (min-width: 768px) {
-      .lead {
-        font-size: 1.375rem;
-      }
     }
 
     .benefits {
@@ -425,13 +709,33 @@ const faqs = [
       box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5) !important;
     }
 
-    /* Discover Section */
-    .discover-section {
+    /* Shared Section Styles */
+    .section-intro {
+      font-size: 1.125rem;
+      color: #475569;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .section-cta {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .cta-center {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    /* SECTION 1: Business Case */
+    .business-case-section {
       padding: 4rem 1.5rem;
       background: white;
     }
 
-    .discover-section h2 {
+    .business-case-section h2 {
       font-size: 2rem;
       font-weight: 700;
       color: #1e293b;
@@ -439,15 +743,198 @@ const faqs = [
       margin-bottom: 1rem;
     }
 
-    .section-lead {
-      font-size: 1.125rem;
-      color: #475569;
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 3rem;
+    .cost-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto 2.5rem;
     }
 
-    .metrics-grid {
+    @media (min-width: 768px) {
+      .cost-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cost-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .cost-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .cost-icon {
+      margin-bottom: 1rem;
+      color: #ef4444;
+    }
+
+    .cost-item h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .cost-item p {
+      font-size: 0.9375rem;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .monetary-reality {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 2px solid #f59e0b;
+      border-radius: 1rem;
+      padding: 1.5rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .monetary-reality p {
+      font-size: 1.125rem;
+      color: #78350f;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* SECTION 2: Gaps Section */
+    .gaps-section {
+      padding: 4rem 1.5rem;
+      background: #f8fafc;
+    }
+
+    .gaps-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .gap-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .gap-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .gap-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .gap-header :global(.gap-icon) {
+      color: #3b82f6;
+    }
+
+    .gap-header h3 {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    .gap-subtitle {
+      font-size: 1rem;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    .gap-description {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .what-we-measure {
+      background: #f8fafc;
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .what-we-measure h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #1e293b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .what-we-measure ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .what-we-measure li {
+      font-size: 0.9375rem;
+      color: #475569;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .what-we-measure li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+    }
+
+    .why-matters {
+      font-size: 0.9375rem;
+      color: #475569;
+      line-height: 1.6;
+      margin: 0;
+      padding-left: 1rem;
+      border-left: 3px solid #3b82f6;
+    }
+
+    /* SECTION 3: Who Section */
+    .who-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .who-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .who-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
@@ -456,85 +943,26 @@ const faqs = [
     }
 
     @media (min-width: 768px) {
-      .metrics-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .metric-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 1rem;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .metric-icon {
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .metric-icon :global(.icon-primary) {
-      color: #3b82f6;
-    }
-
-    .metric-card h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #1e293b;
-      margin-bottom: 0.75rem;
-    }
-
-    .metric-card p {
-      font-size: 0.9375rem;
-      color: #475569;
-      line-height: 1.6;
-    }
-
-    /* Differentiation Section */
-    .differentiation-section {
-      padding: 4rem 1.5rem;
-      background: #f8fafc;
-    }
-
-    .differentiation-section h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #1e293b;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      max-width: 900px;
-      margin: 3rem auto;
-    }
-
-    @media (min-width: 768px) {
-      .comparison-grid {
+      .who-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    .comparison-card {
-      background: white;
+    .who-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 1rem;
       padding: 2rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
 
-    .comparison-card h3 {
+    .who-card h3 {
       font-size: 1.25rem;
       font-weight: 600;
+      color: #1e293b;
       margin-bottom: 1.5rem;
     }
 
-    .comparison-card ul {
+    .who-card ul {
       list-style: none;
       padding: 0;
       margin: 0;
@@ -543,37 +971,176 @@ const faqs = [
       gap: 0.75rem;
     }
 
-    .comparison-card li {
+    .who-card li {
       font-size: 0.9375rem;
       color: #475569;
       padding-left: 1.5rem;
       position: relative;
+      line-height: 1.5;
     }
 
-    .comparison-card li::before {
-      content: "•";
+    .designed-for li::before {
+      content: "→";
       position: absolute;
       left: 0;
+      color: #3b82f6;
       font-weight: bold;
     }
 
-    .struggling li::before {
-      color: #ef4444;
-    }
-
-    .thriving li::before {
+    .checkmark-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
       color: #10b981;
+      font-weight: bold;
     }
 
-    .cta-center {
+    /* SECTION 4: Comparison Table */
+    .comparison-section {
+      padding: 4rem 1.5rem;
+      background: #f8fafc;
+    }
+
+    .comparison-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
       text-align: center;
-      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .comparison-table-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .comparison-table th {
+      background: #1e293b;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+    }
+
+    .comparison-table th:first-child {
+      background: #ef4444;
+    }
+
+    .comparison-table th:last-child {
+      background: #10b981;
+    }
+
+    .comparison-table td {
+      padding: 1rem 1.5rem;
+      font-size: 0.9375rem;
+      color: #475569;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comparison-table td:first-child {
+      background: #fef2f2;
+    }
+
+    .comparison-table td:last-child {
+      background: #f0fdf4;
+    }
+
+    .comparison-conclusion {
+      font-size: 1.125rem;
+      color: #1e293b;
+      text-align: center;
+      max-width: 700px;
+      margin: 2rem auto 0;
+    }
+
+    /* SECTION 5: Testimonials */
+    .testimonials-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .testimonials-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .testimonial-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testimonial-card blockquote {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+      font-style: italic;
+      margin: 0 0 1.5rem 0;
+      flex: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .testimonial-author strong {
+      font-size: 1rem;
+      color: #1e293b;
+    }
+
+    .testimonial-author span {
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+
+    .testimonial-author .location {
+      font-size: 0.8125rem;
+      color: #94a3b8;
     }
 
     /* FAQ Section */
     .faq-section {
       padding: 4rem 1.5rem;
-      background: white;
+      background: #f8fafc;
     }
 
     .faq-section h2 {
@@ -585,11 +1152,14 @@ const faqs = [
     }
 
     .faq-item {
-      background: #f8fafc;
+      background: white;
       border: 1px solid #e2e8f0;
       border-radius: 0.75rem;
       margin-bottom: 1rem;
       overflow: hidden;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .faq-item summary {
@@ -637,22 +1207,41 @@ const faqs = [
 
     /* Final CTA Section (Dark Background) */
     .final-cta-section {
-      padding: 4rem 1.5rem;
+      padding: 5rem 1.5rem;
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      text-align: center;
+    }
+
+    .final-cta-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+    }
+
+    .final-cta-text {
+      font-size: 1.125rem;
+      color: #cbd5e1;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
+
+    .final-cta-highlight {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fbbf24;
+      margin-bottom: 2rem;
     }
 
     .final-cta-section .cta-center {
       margin-bottom: 1.5rem;
     }
 
-    .urgency-text {
-      font-size: 1rem;
-      color: #cbd5e1;
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-      font-style: italic;
-      opacity: 0.9;
+    .trust-final {
+      font-size: 0.9375rem;
+      color: #94a3b8;
+      margin-top: 1.5rem;
     }
 
     /* Responsive adjustments */
@@ -665,12 +1254,22 @@ const faqs = [
         font-size: 1.875rem;
       }
 
-      .discover-section,
-      .differentiation-section,
+      .business-case-section,
+      .gaps-section,
+      .who-section,
+      .comparison-section,
+      .testimonials-section,
       .faq-section,
       .final-cta-section {
         padding: 3rem 1rem;
       }
     }
   </style>
+
+  <script>
+    // Store quiz type when user clicks start button
+    document.addEventListener("DOMContentLoaded", () => {
+      sessionStorage.setItem("quizType", "it-services");
+    });
+  </script>
 </Base>

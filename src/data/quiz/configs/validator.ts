@@ -1,7 +1,6 @@
 /**
  * Quiz Configuration Validator
- * 
- * Validates quiz configurations to catch errors during development.
+ * * Validates quiz configurations to catch errors during development.
  * Ensures all configs follow the required structure and have complete data.
  */
 
@@ -9,16 +8,15 @@ import type { QuizConfig, QuizCategory } from '../types';
 
 /**
  * Validate a quiz configuration
- * 
- * Checks:
+ * * Checks:
  * - Exactly 6 questions in both languages
  * - Sequential question IDs (1-6)
  * - Exactly 4 answers per question
  * - Answer indices are 0-3
  * - All categories are valid
  * - All gap definitions exist
- * 
- * @param config - Quiz configuration to validate
+ * - Results structure is complete (Tiers, CTA, etc.)
+ * * @param config - Quiz configuration to validate
  * @throws Error if validation fails with descriptive message
  */
 export function validateQuizConfig(config: QuizConfig): void {
@@ -29,10 +27,18 @@ export function validateQuizConfig(config: QuizConfig): void {
     'negotiation',
     'cultural'
   ];
+
+  const requiredTiers = [
+    'Credibility Gap',
+    'Passive Proficiency',
+    'Executive Presence'
+  ];
   
   // Validate both languages
   (['en', 'es'] as const).forEach(lang => {
     const langConfig = config[lang];
+    
+    // --- 1. Validate Questions ---
     
     // Check we have exactly 6 questions
     if (langConfig.questions.length !== 6) {
@@ -99,7 +105,8 @@ export function validateQuizConfig(config: QuizConfig): void {
       });
     });
     
-    // Validate all gap definitions exist
+    // --- 2. Validate Gap Definitions ---
+
     requiredCategories.forEach(cat => {
       if (!langConfig.gapDefinitions[cat]) {
         throw new Error(
@@ -135,7 +142,40 @@ export function validateQuizConfig(config: QuizConfig): void {
       }
     });
     
-    // Check title and subtitle are not empty
+    // --- 3. Validate Results Section (New) ---
+
+    if (!langConfig.results) {
+      throw new Error(`[${config.quizId}][${lang}] Missing 'results' object.`);
+    }
+
+    // Validate Tiers
+    if (!langConfig.results.tiers) {
+      throw new Error(`[${config.quizId}][${lang}] Missing 'results.tiers' object.`);
+    }
+
+    requiredTiers.forEach(tierKey => {
+      // @ts-ignore - dynamic access
+      const tier = langConfig.results.tiers[tierKey];
+      if (!tier) {
+        throw new Error(`[${config.quizId}][${lang}] Missing result tier: "${tierKey}"`);
+      }
+      if (!tier.title || !tier.description) {
+        throw new Error(`[${config.quizId}][${lang}] Tier "${tierKey}" is missing title or description`);
+      }
+    });
+
+    // Validate Elite Comparison
+    if (!langConfig.results.eliteComparison || !Array.isArray(langConfig.results.eliteComparison.items)) {
+      throw new Error(`[${config.quizId}][${lang}] Missing or invalid 'results.eliteComparison'`);
+    }
+
+    // Validate CTA
+    if (!langConfig.results.cta || !langConfig.results.cta.title) {
+      throw new Error(`[${config.quizId}][${lang}] Missing 'results.cta' or cta title`);
+    }
+
+    // --- 4. Validate Titles ---
+    
     if (!langConfig.title || langConfig.title.trim() === '') {
       throw new Error(
         `[${config.quizId}][${lang}] Quiz title is empty`

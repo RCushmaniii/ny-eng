@@ -1,17 +1,15 @@
 ---
 /**
- * Evaluación de Inglés Profesional - Página de Destino
+ * Evaluación de Comunicación Profesional - Página de Destino
  * URL: /es/quiz/professional-services/
  * Target Keyword: Inglés para Médicos y Abogados / Inglés Profesional
  */
-
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
 import Button from "@components/ui/Button.astro";
 import QuizSchema from "@components/seo/QuizSchema.astro";
 import {
-  GraduationCap,
   CheckCircle,
   Clock,
   TrendingUp,
@@ -19,37 +17,72 @@ import {
   Target,
   Heart,
   Globe,
+  Users,
+  AlertTriangle,
 } from "lucide-astro";
 import heroSkyline from "@assets/images/home/new-york-city-skyline.webp";
 
 // SEO metadata
-const title = "Auditoría de Confianza del Cliente | Evaluación";
+const title = "Puntaje de Confianza | Evaluación de Comunicación Profesional";
 const description =
-  "Deja de permitir que las brechas erosionen la confianza del cliente. Mide tu Puntuación de Confianza en 90 segundos. Obtén tu evaluación.";
+  "Tu experiencia clínica es impecable. Tu inglés crea distancia. ¿Tus pacientes realmente confían en ti, o solo asienten por cortesía? Mide tu Puntaje de Confianza del Paciente en 90 segundos.";
 
-// Datos de FAQ
+// FAQ data
 const faqs = [
   {
-    question: "La importancia del matiz en el Inglés Médico y Legal",
+    question: "¿Cuánto toma la evaluación de comunicación profesional?",
     answer:
-      "En medicina y derecho, las palabras tienen consecuencias. Un diagnóstico mal entendido, una cláusula contractual mal redactada o una instrucción de cliente mal interpretada pueden llevar a demandas por mala praxis, responsabilidad legal o confianza dañada. Esta evaluación mide tu capacidad para comunicarte con precisión, empatía y conciencia cultural—los tres pilares del inglés profesional en campos de alto riesgo.",
+      "90 segundos. Responderás 6 preguntas basadas en escenarios y recibirás tu Puntaje de Confianza (0-100) más un análisis personalizado de brechas inmediatamente después.",
   },
   {
-    question:
-      "¿En qué se diferencia esto de los cursos de inglés médico o legal?",
+    question: "¿Es un examen de vocabulario médico o legal?",
     answer:
-      "La mayoría de los cursos enseñan vocabulario y gramática. Esta evaluación evalúa habilidades de comunicación del mundo real: ¿Puedes explicar un diagnóstico complejo a un paciente preocupado? ¿Manejar una conversación difícil con un cliente? ¿Navegar malentendidos interculturales? Está diseñada para profesionales que ya conocen la terminología pero luchan con claridad, empatía o confianza en inglés.",
+      "No. Ya conoces la terminología. Esta evaluación mide los patrones de comunicación que determinan el cumplimiento del paciente, la retención de clientes y las tasas de referencia—cómo explicas información compleja, construyes rapport bajo presión y navegas expectativas culturales.",
   },
   {
-    question: "¿Cuánto tiempo toma la Evaluación de Comunicación Profesional?",
+    question: "¿Qué recibiré después de completar la evaluación?",
     answer:
-      "La evaluación toma 90 segundos. Responderás 6 preguntas basadas en escenarios que simulan desafíos profesionales reales: consultas con pacientes, negociaciones con clientes y toma de decisiones bajo presión. Tus resultados incluyen una Puntuación de Confianza en Comunicación (0-100) y un análisis personalizado de brechas.",
+      "Tu Puntaje de Confianza (0-100), análisis de tus fortalezas y brechas en tres dimensiones (Claridad Bajo Presión, Autoridad Empática y Calibración Cultural), más una hoja de ruta personalizada de 30 días con ejercicios específicos.",
   },
   {
-    question:
-      "¿Esto me ayudará a pasar exámenes de licencia médica o de abogacía?",
+    question: "¿Quién debería tomar esta evaluación?",
     answer:
-      "Esta evaluación no reemplaza la preparación para exámenes, pero la complementa. Los exámenes de licencia prueban tu conocimiento; esta evaluación prueba tu capacidad para comunicar ese conocimiento claramente y empáticamente. Fuertes habilidades de comunicación mejoran tu desempeño en exámenes orales, simulaciones con pacientes y entrevistas con clientes.",
+      "Médicos, abogados, dentistas, psicólogos y profesionales de finanzas internacionales que practican en mercados norteamericanos o atienden clientes de habla inglesa. Si tu experiencia es de clase mundial pero los pacientes asienten sin entender o los clientes dudan a pesar de tus credenciales, esta evaluación es para ti.",
+  },
+  {
+    question: "¿Esto me ayudará a pasar exámenes como USMLE o de abogacía?",
+    answer:
+      "Esta evaluación complementa la preparación para exámenes. Los exámenes de licencia prueban tu conocimiento; esta evaluación prueba tu capacidad para comunicar ese conocimiento claramente bajo presión. Fuertes habilidades de comunicación mejoran el desempeño en exámenes orales, simulaciones con pacientes y entrevistas con clientes.",
+  },
+  {
+    question: "¿Qué pasa después de obtener mis resultados?",
+    answer:
+      "Recibirás un email con tu scorecard detallado y la opción de agendar una consulta gratuita de 20 minutos para discutir tu hoja de ruta personalizada hacia comunicación de asesor de confianza.",
+  },
+];
+
+// Testimonials data
+const testimonials = [
+  {
+    quote:
+      "Mis puntajes de satisfacción del paciente subieron 40% en 3 meses. El framework de 'explícalo a un padre preocupado' cambió cómo comunico diagnósticos.",
+    name: "Dra. Patricia M.",
+    title: "Cardióloga Pediátrica",
+    location: "Ciudad de México → Houston",
+  },
+  {
+    quote:
+      "Perdía clientes ante abogados nacidos en EE.UU. a pesar de mejores resultados. Ahora soy a quien refieren los casos complejos de inmigración.",
+    name: "Carlos V.",
+    title: "Abogado de Inmigración",
+    location: "Guadalajara → San Diego",
+  },
+  {
+    quote:
+      "Pasé de 'técnicamente excelente pero frío' en reseñas de pacientes a 'el doctor que realmente escucha.' El módulo de calibración cultural fue revelador.",
+    name: "Dr. Ana S.",
+    title: "Psiquiatra, Práctica Privada",
+    location: "São Paulo → Miami",
   },
 ];
 ---
@@ -64,10 +97,11 @@ const faqs = [
 >
   <QuizSchema lang="es" slot="head" />
 
+  <!-- Hero Section -->
   <section class="hero">
     <img
       src={heroSkyline.src}
-      alt="Evaluación de Inglés Profesional"
+      alt="Evaluación de Comunicación Profesional"
       class="hero-bg-image"
       loading="eager"
     />
@@ -75,41 +109,32 @@ const faqs = [
     <div class="container">
       <div class="hero-content">
         <span class="eyebrow"
-          >DEJA DE Permitir que las Brechas de Comunicación Erosionen la
-          Confianza del Cliente y las Referencias</span
+          >Tu experiencia clínica es impecable. Tu inglés crea distancia.</span
         >
 
-        <h1>Auditoría de 90 Segundos: Mide tu Confianza del Cliente</h1>
+        <h1>
+          La Evaluación de 90 Segundos: ¿Tus Pacientes Realmente Confían en Ti,
+          o Solo Asienten por Cortesía?
+        </h1>
 
-        <p class="lead">
-          Tu experiencia es de clase mundial. Pero si los pacientes o clientes
-          asienten educadamente en lugar de entender y confiar, estás perdiendo
-          referencias. Descubre las brechas de comunicación precisas que te
-          están costando credibilidad y crecimiento de práctica. Esta es una
-          auditoría estratégica diseñada exclusivamente para profesionales
-          internacionales (Médicos, Legales, Finanzas) listos para ser vistos
-          como asesores de confianza.
-        </p>
+        <p class="discover-label">Tres cosas que vas a descubrir:</p>
 
         <div class="benefits">
           <div class="benefit">
             <CheckCircle size={20} />
+            <span>Tu Puntaje de Confianza del Paciente (0-100)</span>
+          </div>
+          <div class="benefit">
+            <CheckCircle size={20} />
             <span
-              ><strong>AUDITAR:</strong> Tu Puntuación de Confianza del Cliente (0-100)</span
+              >Por qué los pacientes dudan en aceptar tus planes de tratamiento</span
             >
           </div>
           <div class="benefit">
             <CheckCircle size={20} />
             <span
-              ><strong>DIAGNOSTICAR:</strong> Fricción en Consultas de Alto Riesgo,
-              Explicaciones Complejas y Construcción de Rapport</span
-            >
-          </div>
-          <div class="benefit">
-            <CheckCircle size={20} />
-            <span
-              ><strong>RECIBIR:</strong> Una Hoja de Ruta Personalizada de 30 Días
-              hacia Comunicación de Asesor de Confianza</span
+              >Tu roadmap hacia un inglés cálido y autoritario que genera
+              cumplimiento</span
             >
           </div>
         </div>
@@ -120,114 +145,372 @@ const faqs = [
           size="lg"
           class="cta-button gold-cta"
         >
-          Comenzar Auditoría Gratuita →
+          Comenzar Evaluación Gratis →
         </Button>
 
         <p class="trust-line">
-          90 Segundos. Resultados Instantáneos y Confidenciales. Confiado por
-          200+ Profesionales de Primer Nivel.
+          Breve. Práctico. Con la confianza de más de 200 profesionales buscando
+          fluidez y seguridad.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="discover-section">
+  <!-- SECTION 1: The Business Case -->
+  <section class="business-case-section">
     <div class="container">
-      <h2>Las 3 Brechas de Comunicación que Socavan la Confianza</h2>
-      <p class="section-lead">
-        Esta evaluación mide las tres dimensiones que separan a los
-        profesionales competentes de los asesores de confianza altamente
-        buscados:
+      <h2>Tu Comunicación: El Activo de $200K que Nadie Te Enseñó</h2>
+      <p class="section-intro">
+        Tu formación tomó una década. Tus credenciales son impecables. Pero los
+        profesionales que construyen prácticas prósperas no siempre son los más
+        hábiles—son los que generan confianza instintiva en pacientes y
+        clientes.
       </p>
 
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <div class="metric-icon">
-            <Target size={48} class="icon-primary" />
-          </div>
-          <h3>1. Precisión y Exactitud: El Mandato de Claridad</h3>
+      <div class="cost-grid">
+        <div class="cost-item">
+          <div class="cost-icon"><TrendingUp size={32} /></div>
+          <h3>Referencias Perdidas</h3>
           <p>
-            ¿Puedes explicar un diagnóstico sin jerga médica? ¿Traducir
-            conceptos legales a inglés simple? La precisión no se trata de usar
-            palabras grandes—se trata de ser entendido la primera vez, cada vez.
+            Pacientes satisfechos refieren 3-5 pacientes nuevos. Pacientes
+            confundidos o dudosos refieren cero—y buscan un proveedor que
+            "explica mejor las cosas."
+          </p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-icon"><AlertTriangle size={32} /></div>
+          <h3>Brechas de Cumplimiento</h3>
+          <p>
+            40% de los pacientes malinterpretan instrucciones de alta. Mala
+            comunicación = malos resultados = exposición legal.
+          </p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-icon"><Users size={32} /></div>
+          <h3>Pérdida de Clientes</h3>
+          <p>
+            Los clientes dejan abogados no por perder casos, sino por sentirse
+            ignorados. "Nunca me explicó qué estaba pasando."
+          </p>
+        </div>
+        <div class="cost-item">
+          <div class="cost-icon"><Clock size={32} /></div>
+          <h3>Consultas Más Largas</h3>
+          <p>
+            Poca claridad significa más preguntas de seguimiento, más llamadas,
+            más tiempo por paciente—y menos ingresos por hora.
+          </p>
+        </div>
+      </div>
+
+      <div class="monetary-reality">
+        <p>
+          <strong>Haz las cuentas:</strong> Un médico que pierde solo 2 referencias
+          por semana pierde <strong>$150K-$300K al año</strong> en valor de vida
+          del paciente. ¿Un abogado cuyos clientes no refieren? <strong
+            >$200K+ en facturación perdida</strong
+          >
+          por año. Las brechas de comunicación se acumulan en silencio.
+        </p>
+      </div>
+
+      <div class="section-cta">
+        <Button
+          href="/es/quiz/professional-services/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Descubre Tus Brechas de Comunicación en 90 Segundos →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: The 3 Gaps -->
+  <section class="gaps-section">
+    <div class="container">
+      <h2>
+        Las 3 Dimensiones de Comunicación que Separan a los Profesionales
+        Competentes de los Asesores de Confianza
+      </h2>
+      <p class="section-intro">
+        Esta evaluación mide las habilidades exactas que distinguen a los
+        profesionales que los pacientes toleran de los que recomiendan a todos
+        sus conocidos.
+      </p>
+
+      <div class="gap-cards">
+        <div class="gap-card">
+          <div class="gap-header">
+            <Target size={40} class="gap-icon" />
+            <h3>Brecha #1: Claridad Bajo Presión</h3>
+            <span class="gap-subtitle">Complejo → Entendido en 60 Segundos</span
+            >
+          </div>
+          <p class="gap-description">
+            Los asesores de confianza no solo saben la respuesta—traducen la
+            complejidad a un lenguaje que un paciente preocupado o cliente
+            estresado puede absorber y actuar.
+          </p>
+          <div class="what-we-measure">
+            <h4>Lo que medimos:</h4>
+            <ul>
+              <li>
+                Capacidad de explicar un diagnóstico sin jerga (la prueba del
+                "padre preocupado")
+              </li>
+              <li>Resumir riesgo legal en 60 segundos</li>
+              <li>Confirmar comprensión sin ser condescendiente</li>
+            </ul>
+          </div>
+          <p class="why-matters">
+            <strong>Por qué importa:</strong> Tu paciente tiene 90 segundos de atención
+            después de que dices "diagnóstico." Si empiezas con fisiopatología en
+            vez de pronóstico y pasos a seguir, se van confundidos—y buscan a alguien
+            que "tenga sentido."
           </p>
         </div>
 
-        <div class="metric-card">
-          <div class="metric-icon">
-            <Heart size={48} class="icon-primary" />
+        <div class="gap-card">
+          <div class="gap-header">
+            <Heart size={40} class="gap-icon" />
+            <h3>Brecha #2: Autoridad Empática</h3>
+            <span class="gap-subtitle">Cálido y Competente, No Uno u Otro</span>
           </div>
-          <h3>2. Empatía y Rapport: Construir la Conexión</h3>
-          <p>
-            ¿Los pacientes se sienten escuchados? ¿Los clientes confían en tu
-            juicio? Tu tono, elección de palabras y habilidades de escucha
-            señalan si te importa—o solo quieres pasar a la siguiente cita.
+          <p class="gap-description">
+            Los pacientes y clientes necesitan sentirse escuchados antes de
+            poder escucharte. Los profesionales que construyen prácticas basadas
+            en referencias dominan el arte de la empatía que no socava la
+            autoridad.
+          </p>
+          <div class="what-we-measure">
+            <h4>Lo que medimos:</h4>
+            <ul>
+              <li>Patrones de tono que señalan cuidado vs. frialdad clínica</li>
+              <li>
+                Reconocer miedo y ansiedad sin perder control de la conversación
+              </li>
+              <li>Dar noticias difíciles con compasión y claridad</li>
+            </ul>
+          </div>
+          <p class="why-matters">
+            <strong>Por qué importa:</strong> En encuestas de satisfacción del paciente,
+            "el doctor me escuchó" predice referencias mejor que los resultados clínicos.
+            La empatía no es blanda—es estratégica.
           </p>
         </div>
 
-        <div class="metric-card">
-          <div class="metric-icon">
-            <Globe size={48} class="icon-primary" />
+        <div class="gap-card">
+          <div class="gap-header">
+            <Globe size={40} class="gap-icon" />
+            <h3>Brecha #3: Calibración Cultural</h3>
+            <span class="gap-subtitle"
+              >Navegando Expectativas Norteamericanas</span
+            >
           </div>
-          <h3>3. Fluidez Cultural: Navegar Expectativas</h3>
-          <p>
-            Los pacientes y clientes norteamericanos esperan franqueza,
-            transparencia y toma de decisiones compartida. ¿Estás navegando
-            estas expectativas culturales efectivamente—o creando fricción?
+          <p class="gap-description">
+            Los pacientes norteamericanos esperan toma de decisiones compartida,
+            transparencia sobre incertidumbre y respuestas directas. Estas
+            normas culturales difieren significativamente de las tradiciones
+            médicas y legales latinoamericanas.
           </p>
+          <div class="what-we-measure">
+            <h4>Lo que medimos:</h4>
+            <ul>
+              <li>
+                Comodidad con "aún no lo sé" (tolerancia a la incertidumbre)
+              </li>
+              <li>
+                Lenguaje de decisión compartida vs. patrones paternalistas
+              </li>
+              <li>Calibración de franqueza (muy directo vs. muy vago)</li>
+            </ul>
+          </div>
+          <p class="why-matters">
+            <strong>Por qué importa:</strong> Una recomendación técnicamente correcta
+            entregada con tono paternalista puede dañar la confianza con pacientes
+            americanos que esperan ser socios en su cuidado, no receptores pasivos.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-cta">
+        <Button
+          href="/es/quiz/professional-services/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Tomar la Evaluación de 90 Segundos →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Who This Is For -->
+  <section class="who-section">
+    <div class="container">
+      <h2>¿Esta Evaluación Es Para Ti?</h2>
+
+      <div class="who-grid">
+        <div class="who-card designed-for">
+          <h3>Esta evaluación está diseñada para:</h3>
+          <ul>
+            <li>
+              <strong>Médicos y cirujanos</strong> que practican en EE.UU. o atienden
+              pacientes de habla inglesa
+            </li>
+            <li>
+              <strong>Abogados</strong> en inmigración, corporativo o derecho familiar
+              con clientes norteamericanos
+            </li>
+            <li>
+              <strong>Dentistas, psicólogos y terapeutas</strong> construyendo prácticas
+              privadas en mercados de habla inglesa
+            </li>
+            <li>
+              <strong>Asesores financieros y contadores</strong> atendiendo clientes
+              de alto patrimonio de habla inglesa
+            </li>
+            <li>
+              <strong>Profesionales internacionales</strong> con credenciales de
+              clase mundial pero inglés como segundo idioma
+            </li>
+          </ul>
+        </div>
+
+        <div class="who-card ready-if">
+          <h3>Estás listo para esta evaluación si:</h3>
+          <ul class="checkmark-list">
+            <li>
+              Tu experiencia es incuestionable pero los pacientes parecen
+              dudosos o no siguen recomendaciones
+            </li>
+            <li>
+              Te han dicho que eres "técnicamente excelente pero frío" o
+              "difícil de entender"
+            </li>
+            <li>
+              Batallas con dar malas noticias, discutir honorarios o manejar
+              conversaciones difíciles
+            </li>
+            <li>
+              Tu práctica no crece por referencias a pesar de buenos resultados
+            </li>
+            <li>
+              Has invertido en cursos de inglés médico o legal pero sientes que
+              algo falta
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="differentiation-section">
+  <!-- SECTION 4: Comparison Table -->
+  <section class="comparison-section">
     <div class="container">
-      <h2>Experto vs. Asesor: La Brecha de Comunicación</h2>
-      <p class="section-lead">
-        Los profesionales que construyen prácticas prósperas no solo tienen
-        credenciales de clase mundial—comunican con claridad, empatía y
-        conciencia cultural.
+      <h2>La Brecha de Comunicación Entre Expertos y Asesores de Confianza</h2>
+      <p class="section-intro">
+        Los profesionales que construyen prácticas prósperas basadas en
+        referencias no solo tienen mejores resultados—se comunican con un
+        sistema operativo diferente.
       </p>
 
-      <div class="comparison-grid">
-        <div class="comparison-card struggling">
-          <h3>❌ El Costo de Bajo Rapport con el Cliente</h3>
-          <ul>
-            <li>
-              Pierden clientes debido a falta de comunicación o frialdad
-              percibida
-            </li>
-            <li>
-              Dependen excesivamente de la jerga para enmascarar incertidumbre
-              lingüística
-            </li>
-            <li>
-              Luchan con conversaciones difíciles (malas noticias, disputas de
-              facturación)
-            </li>
-            <li>Pierden referencias a pesar de fuertes habilidades técnicas</li>
-          </ul>
-        </div>
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Patrones de Experto</th>
+              <th>Comunicación de Asesor de Confianza</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Empezar con diagnóstico, fisiopatología o precedente legal</td
+              >
+              <td
+                >Empezar con pronóstico, pasos a seguir y qué significa para
+                ellos</td
+              >
+            </tr>
+            <tr>
+              <td>Usar jerga para señalar experiencia (intimida pacientes)</td>
+              <td>Traducir complejidad a lenguaje que reduce ansiedad</td>
+            </tr>
+            <tr>
+              <td
+                >Entregar información eficientemente pero perder señales
+                emocionales</td
+              >
+              <td>Reconocer el miedo primero, luego dar claridad</td>
+            </tr>
+            <tr>
+              <td>Hacer recomendaciones paternalistamente ("deberías...")</td>
+              <td
+                >Enmarcar opciones como decisiones compartidas ("esto es lo que
+                recomiendo y por qué...")</td
+              >
+            </tr>
+            <tr>
+              <td
+                >Pacientes cumplen a corto plazo pero no regresan ni refieren</td
+              >
+              <td
+                >Pacientes se vuelven promotores que refieren a todos sus
+                conocidos</td
+              >
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-        <div class="comparison-card thriving">
-          <h3>✅ La Ventaja de Comunicación de Asesores de Confianza</h3>
-          <ul>
-            <li>Explican temas complejos en menos de 2 minutos</li>
-            <li>
-              Construyen confianza a través de escucha empática y lenguaje claro
-            </li>
-            <li>Navegan diferencias culturales con facilidad</li>
-            <li>
-              Hacen crecer prácticas a través de referencias de boca en boca
-            </li>
-          </ul>
-        </div>
+      <p class="comparison-conclusion">
+        <strong>¿La diferencia?</strong> Los asesores de confianza aprendieron a
+        comunicarse como socios. Es una habilidad que se puede entrenar—si conoces
+        tus brechas.
+      </p>
+
+      <div class="section-cta">
+        <Button
+          href="/es/quiz/professional-services/question/1"
+          variant="primary"
+          size="lg"
+          class="gold-cta"
+        >
+          Encuentra Tus Brechas. Arreglálas. Construye Confianza. →
+        </Button>
       </div>
     </div>
   </section>
 
+  <!-- SECTION 5: Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2>+200 Profesionales de Salud y Derecho Ya Dieron el Paso</h2>
+
+      <div class="testimonials-grid">
+        {
+          testimonials.map((testimonial) => (
+            <div class="testimonial-card">
+              <blockquote>"{testimonial.quote}"</blockquote>
+              <div class="testimonial-author">
+                <strong>{testimonial.name}</strong>
+                <span>{testimonial.title}</span>
+                <span class="location">{testimonial.location}</span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: FAQ -->
   <section class="faq-section">
     <div class="container">
+      <h2>Preguntas Frecuentes</h2>
       {
         faqs.map((faq) => (
           <details class="faq-item">
@@ -244,9 +527,19 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Final CTA: Urgency-Driven -->
+  <!-- SECTION 7: Final CTA -->
   <section class="final-cta-section">
     <div class="container">
+      <h2>Tu Experiencia Ya Merece Su Confianza</h2>
+      <p class="final-cta-text">
+        Los profesionales que construyen prácticas prósperas basadas en
+        referencias no siempre son los más hábiles. Son los que aprendieron a
+        traducir experiencia en confianza. Los que sus pacientes no solo
+        cumplen—se convierten en promotores.
+      </p>
+      <p class="final-cta-highlight">
+        Tu evaluación de 90 segundos empieza ahora.
+      </p>
       <div class="cta-center">
         <Button
           href="/es/quiz/professional-services/question/1"
@@ -254,12 +547,13 @@ const faqs = [
           size="lg"
           class="gold-cta"
         >
-          Descubre Tu Puntuación de Confianza del Cliente Hoy →
+          Tomar la Evaluación →
         </Button>
       </div>
-      <p class="urgency-text">
-        No dejes que la vacilación sea la razón por la que pierdas tu próxima
-        referencia.
+      <p class="trust-final">
+        90 segundos. Resultados instantáneos. Cero riesgo. Médicos de los
+        mejores hospitales de EE.UU. y abogados de firmas líderes confían en
+        nosotros.
       </p>
     </div>
   </section>
@@ -285,7 +579,6 @@ const faqs = [
       z-index: 0;
     }
 
-    /* Mobile: shift image right to show Empire State Building */
     @media (max-width: 767px) {
       .hero-bg-image {
         object-position: 75% center;
@@ -346,7 +639,6 @@ const faqs = [
       width: fit-content;
       box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
       letter-spacing: 0.025em;
-      text-transform: uppercase;
     }
 
     h1 {
@@ -370,19 +662,12 @@ const faqs = [
       }
     }
 
-    .lead {
-      font-size: 1.25rem;
-      line-height: 1.7;
+    .discover-label {
+      font-size: 1.125rem;
       color: #f1f5f9;
-      margin: 0;
-      font-weight: 400;
+      margin: 0 0 0.5rem 0;
+      font-weight: 500;
       text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
-    }
-
-    @media (min-width: 768px) {
-      .lead {
-        font-size: 1.375rem;
-      }
     }
 
     .benefits {
@@ -432,12 +717,33 @@ const faqs = [
       box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5) !important;
     }
 
-    .discover-section {
+    /* Shared Section Styles */
+    .section-intro {
+      font-size: 1.125rem;
+      color: #475569;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .section-cta {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .cta-center {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    /* SECTION 1: Business Case */
+    .business-case-section {
       padding: 4rem 1.5rem;
       background: white;
     }
 
-    .discover-section h2 {
+    .business-case-section h2 {
       font-size: 2rem;
       font-weight: 700;
       color: #1e293b;
@@ -445,15 +751,198 @@ const faqs = [
       margin-bottom: 1rem;
     }
 
-    .section-lead {
-      font-size: 1.125rem;
-      color: #475569;
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 3rem;
+    .cost-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto 2.5rem;
     }
 
-    .metrics-grid {
+    @media (min-width: 768px) {
+      .cost-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cost-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .cost-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .cost-icon {
+      margin-bottom: 1rem;
+      color: #ef4444;
+    }
+
+    .cost-item h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .cost-item p {
+      font-size: 0.9375rem;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .monetary-reality {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 2px solid #f59e0b;
+      border-radius: 1rem;
+      padding: 1.5rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .monetary-reality p {
+      font-size: 1.125rem;
+      color: #78350f;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* SECTION 2: Gaps Section */
+    .gaps-section {
+      padding: 4rem 1.5rem;
+      background: #f8fafc;
+    }
+
+    .gaps-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .gap-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .gap-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .gap-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .gap-header :global(.gap-icon) {
+      color: #3b82f6;
+    }
+
+    .gap-header h3 {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    .gap-subtitle {
+      font-size: 1rem;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    .gap-description {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .what-we-measure {
+      background: #f8fafc;
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .what-we-measure h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #1e293b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .what-we-measure ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .what-we-measure li {
+      font-size: 0.9375rem;
+      color: #475569;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .what-we-measure li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+    }
+
+    .why-matters {
+      font-size: 0.9375rem;
+      color: #475569;
+      line-height: 1.6;
+      margin: 0;
+      padding-left: 1rem;
+      border-left: 3px solid #3b82f6;
+    }
+
+    /* SECTION 3: Who Section */
+    .who-section {
+      padding: 4rem 1.5rem;
+      background: white;
+    }
+
+    .who-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .who-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
@@ -462,84 +951,26 @@ const faqs = [
     }
 
     @media (min-width: 768px) {
-      .metrics-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .metric-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 1rem;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .metric-icon {
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .metric-icon :global(.icon-primary) {
-      color: #3b82f6;
-    }
-
-    .metric-card h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #1e293b;
-      margin-bottom: 0.75rem;
-    }
-
-    .metric-card p {
-      font-size: 0.9375rem;
-      color: #475569;
-      line-height: 1.6;
-    }
-
-    .differentiation-section {
-      padding: 4rem 1.5rem;
-      background: #f8fafc;
-    }
-
-    .differentiation-section h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #1e293b;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      max-width: 900px;
-      margin: 3rem auto;
-    }
-
-    @media (min-width: 768px) {
-      .comparison-grid {
+      .who-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    .comparison-card {
-      background: white;
+    .who-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 1rem;
       padding: 2rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
 
-    .comparison-card h3 {
+    .who-card h3 {
       font-size: 1.25rem;
       font-weight: 600;
+      color: #1e293b;
       margin-bottom: 1.5rem;
     }
 
-    .comparison-card ul {
+    .who-card ul {
       list-style: none;
       padding: 0;
       margin: 0;
@@ -548,36 +979,176 @@ const faqs = [
       gap: 0.75rem;
     }
 
-    .comparison-card li {
+    .who-card li {
       font-size: 0.9375rem;
       color: #475569;
       padding-left: 1.5rem;
       position: relative;
+      line-height: 1.5;
     }
 
-    .comparison-card li::before {
-      content: "•";
+    .designed-for li::before {
+      content: "→";
       position: absolute;
       left: 0;
+      color: #3b82f6;
       font-weight: bold;
     }
 
-    .struggling li::before {
-      color: #ef4444;
-    }
-
-    .thriving li::before {
+    .checkmark-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
       color: #10b981;
+      font-weight: bold;
     }
 
-    .cta-center {
+    /* SECTION 4: Comparison Table */
+    .comparison-section {
+      padding: 4rem 1.5rem;
+      background: #f8fafc;
+    }
+
+    .comparison-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
       text-align: center;
-      margin-top: 3rem;
+      margin-bottom: 1rem;
     }
 
-    .faq-section {
+    .comparison-table-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .comparison-table th {
+      background: #1e293b;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+    }
+
+    .comparison-table th:first-child {
+      background: #ef4444;
+    }
+
+    .comparison-table th:last-child {
+      background: #10b981;
+    }
+
+    .comparison-table td {
+      padding: 1rem 1.5rem;
+      font-size: 0.9375rem;
+      color: #475569;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comparison-table td:first-child {
+      background: #fef2f2;
+    }
+
+    .comparison-table td:last-child {
+      background: #f0fdf4;
+    }
+
+    .comparison-conclusion {
+      font-size: 1.125rem;
+      color: #1e293b;
+      text-align: center;
+      max-width: 700px;
+      margin: 2rem auto 0;
+    }
+
+    /* SECTION 5: Testimonials */
+    .testimonials-section {
       padding: 4rem 1.5rem;
       background: white;
+    }
+
+    .testimonials-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .testimonial-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testimonial-card blockquote {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+      font-style: italic;
+      margin: 0 0 1.5rem 0;
+      flex: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .testimonial-author strong {
+      font-size: 1rem;
+      color: #1e293b;
+    }
+
+    .testimonial-author span {
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+
+    .testimonial-author .location {
+      font-size: 0.8125rem;
+      color: #94a3b8;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 4rem 1.5rem;
+      background: #f8fafc;
     }
 
     .faq-section h2 {
@@ -585,15 +1156,18 @@ const faqs = [
       font-weight: 700;
       color: #1e293b;
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
     }
 
     .faq-item {
-      background: #f8fafc;
+      background: white;
       border: 1px solid #e2e8f0;
       border-radius: 0.75rem;
       margin-bottom: 1rem;
       overflow: hidden;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .faq-item summary {
@@ -641,22 +1215,41 @@ const faqs = [
 
     /* Final CTA Section (Dark Background) */
     .final-cta-section {
-      padding: 4rem 1.5rem;
+      padding: 5rem 1.5rem;
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      text-align: center;
     }
 
-    .final-cta-section .cta-center {
+    .final-cta-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
       margin-bottom: 1.5rem;
     }
 
-    .urgency-text {
-      font-size: 1rem;
+    .final-cta-text {
+      font-size: 1.125rem;
       color: #cbd5e1;
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-      font-style: italic;
-      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
+
+    .final-cta-highlight {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fbbf24;
+      margin-bottom: 2rem;
+    }
+
+    .final-cta-section .cta-center {
+      margin-bottom: 0;
+    }
+
+    .trust-final {
+      font-size: 0.9375rem;
+      color: #94a3b8;
+      margin-top: 1.5rem;
     }
 
     /* Responsive adjustments */
@@ -669,12 +1262,22 @@ const faqs = [
         font-size: 1.875rem;
       }
 
-      .discover-section,
-      .differentiation-section,
+      .business-case-section,
+      .gaps-section,
+      .who-section,
+      .comparison-section,
+      .testimonials-section,
       .faq-section,
       .final-cta-section {
         padding: 3rem 1rem;
       }
     }
   </style>
+
+  <script>
+    // Store quiz type when user clicks start button
+    document.addEventListener("DOMContentLoaded", () => {
+      sessionStorage.setItem("quizType", "professional-services");
+    });
+  </script>
 </Base>

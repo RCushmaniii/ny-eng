@@ -202,7 +202,7 @@ export const professionalServicesConfig: QuizConfig = {
         lowScoreImpact:
           'Imprecise language creates liability exposure. Clients may misunderstand critical advice, leading to poor decisions or legal disputes.',
         recommendation:
-          'Practice explaining complex concepts using "signposting" language (e.g., "There are three key risks here...").',
+          'My Advice: Practice explaining complex concepts using "signposting" language (e.g., "There are three key risks here...").',
         urgency: 'high',
       },
       confidence: {
@@ -210,7 +210,7 @@ export const professionalServicesConfig: QuizConfig = {
         lowScoreImpact:
           'When you can\'t defend your recommendations persuasively, clients question your expertise—even when you\'re right.',
         recommendation:
-          'Rehearse "pushback phrases" that allow you to stand your ground politely but firmly.',
+          'My Advice: Rehearse "pushback phrases" that allow you to stand your ground politely but firmly.',
         urgency: 'high',
       },
       'real-time': {
@@ -218,7 +218,7 @@ export const professionalServicesConfig: QuizConfig = {
         lowScoreImpact:
           'Hesitation under pressure signals uncertainty. In adversarial situations, opponents exploit this to undermine your credibility.',
         recommendation:
-          'Use "buying time" phrases ("That\'s a crucial point, let me address it specifically...") to gain seconds to think.',
+          'My Advice: Use "buying time" phrases ("That\'s a crucial point, let me address it specifically...") to gain seconds to think.',
         urgency: 'medium',
       },
       negotiation: {
@@ -226,7 +226,7 @@ export const professionalServicesConfig: QuizConfig = {
         lowScoreImpact:
           'Avoiding difficult conversations erodes trust. Clients sense your discomfort and may question your candor.',
         recommendation:
-          'Role-play delivering bad news or fee increases until the language feels neutral and factual, not emotional.',
+          'My Advice: Role-play delivering bad news or fee increases until the language feels neutral and factual, not emotional.',
         urgency: 'medium',
       },
       cultural: {
@@ -234,10 +234,44 @@ export const professionalServicesConfig: QuizConfig = {
         lowScoreImpact:
           'Without rapport, relationships stay transactional. Clients won\'t refer you or stick with you through difficult outcomes.',
         recommendation:
-          'Focus on "active listening" cues and small talk openers to humanize the interaction before diving into business.',
+          'My Advice: Focus on "active listening" cues and small talk openers to humanize the interaction before diving into business.',
         urgency: 'low',
       },
     },
+
+    results: {
+      impactTitle: "The Cost of the Distance Your English Creates",
+      tiers: {
+        'Credibility Gap': {
+          title: "Your Patients Nod, But They Don't Trust You",
+          description: "Your clinical expertise is flawless. You've spent years mastering your craft. But when you explain a diagnosis or treatment plan in English, something gets lost. Patients nod politely, but you can see the doubt in their eyes. They leave without scheduling the procedure. They don't follow your recommendations. They seek second opinions from less qualified providers who 'just explain things better.' Your English isn't just creating distance—it's costing you patient compliance, referrals, and the trust you've earned through excellence."
+        },
+        'Passive Proficiency': {
+          title: "You Sound Clinical When You Need to Sound Caring",
+          description: "Patients understand your words, but they don't feel your empathy. You're so focused on getting the English right that you sound robotic. Cold. Distant. You can explain the facts, but you struggle to reassure worried parents or anxious patients. You can answer questions, but you can't build the warm authority that makes patients say 'yes' to treatment plans. And in healthcare, that warmth isn't a nice-to-have—it's what drives compliance, prevents lawsuits, and generates referrals."
+        },
+        'Executive Presence': {
+          title: "Your Bedside Manner Translates Perfectly",
+          description: "You've mastered the balance between clinical precision and human warmth in English. Patients trust both your expertise and your care. They accept treatment plans without hesitation. They refer their friends and family. The opportunity now is refinement—developing the subtle communication skills that transform you from 'excellent clinician' to 'the doctor everyone wants.' The kind of presence that commands premium fees and builds a practice through word-of-mouth alone."
+        }
+      },
+      eliteComparison: {
+        title: "The 5 Habits I See in the Top 1% of Leaders",
+        items: [
+          "They translate medical complexity into patient clarity. They make worried parents feel informed, not overwhelmed—building trust through understanding, not jargon.",
+          "They deliver difficult diagnoses with warm authority. Bad news doesn't shake their presence. Patients trust them more, not less, when things go wrong.",
+          "They explain treatment plans without sounding defensive. When patients question their recommendations, they educate rather than lecture—and patients accept the plan.",
+          "They build rapport before the exam. The first two minutes of every appointment establish the trust that makes everything else easier.",
+          "They handle anxious patients with composure. Worried parents, skeptical patients, difficult family members—nothing breaks their professional warmth."
+        ]
+      },
+      cta: {
+        title: "Ready to Improve Your English Fast?",
+        subtext: "Quick discussion. Personal. No pressure.",
+        buttonText: "👉 Book a Session with Me",
+        footerText: ""
+      }
+    }
   },
 
   es: {
@@ -266,7 +300,7 @@ export const professionalServicesConfig: QuizConfig = {
             index: 2,
             score: 3,
             label:
-              'Ansioso—dudo de mis palabras, temiendo que un malentendido cree responsabilidad.',
+              'Ansioso—dudo de mis palabras, temiendo que un malentendido cree responsabilidad legal.',
           },
           {
             index: 3,
@@ -439,7 +473,7 @@ export const professionalServicesConfig: QuizConfig = {
         lowScoreImpact:
           'El lenguaje impreciso crea riesgo legal. Los clientes pueden malinterpretar consejos críticos, llevando a malas decisiones.',
         recommendation:
-          'Practica explicar conceptos complejos usando lenguaje de "señalización" (ej. "Hay tres riesgos clave aquí...").',
+          'Mi Consejo: Practica explicar conceptos complejos usando lenguaje de "señalización" (ej. "Hay tres riesgos clave aquí...").',
         urgency: 'high',
       },
       confidence: {
@@ -447,7 +481,7 @@ export const professionalServicesConfig: QuizConfig = {
         lowScoreImpact:
           'Cuando no puedes defender tus recomendaciones persuasivamente, los clientes cuestionan tu experiencia, aunque tengas razón.',
         recommendation:
-          'Ensaya frases de "rechazo cortés" que te permitan mantener tu postura con firmeza pero educación.',
+          'Mi Consejo: Ensaya frases de "rechazo cortés" que te permitan mantener tu postura con firmeza pero educación.',
         urgency: 'high',
       },
       'real-time': {
@@ -455,7 +489,7 @@ export const professionalServicesConfig: QuizConfig = {
         lowScoreImpact:
           'La vacilación bajo presión señala incertidumbre. En situaciones adversas, los oponentes explotan esto para minar tu credibilidad.',
         recommendation:
-          'Usa frases para "ganar tiempo" ("Ese es un punto crucial, permíteme abordarlo específicamente...") para pensar.',
+          'Mi Consejo: Usa frases para "ganar tiempo" ("Ese es un punto crucial, permíteme abordarlo específicamente...") para pensar.',
         urgency: 'medium',
       },
       negotiation: {
@@ -463,7 +497,7 @@ export const professionalServicesConfig: QuizConfig = {
         lowScoreImpact:
           'Evitar conversaciones difíciles erosiona la confianza. Los clientes notan tu incomodidad y pueden cuestionar tu franqueza.',
         recommendation:
-          'Haz role-play dando malas noticias hasta que el lenguaje se sienta neutral y factual, no emocional.',
+          'Mi Consejo: Haz role-play dando malas noticias hasta que el lenguaje se sienta neutral y factual, no emocional.',
         urgency: 'medium',
       },
       cultural: {
@@ -471,9 +505,43 @@ export const professionalServicesConfig: QuizConfig = {
         lowScoreImpact:
           'Sin rapport, las relaciones son transaccionales. Los clientes no te referirán ni se quedarán contigo en momentos difíciles.',
         recommendation:
-          'Enfócate en señales de "escucha activa" y frases de apertura para humanizar la interacción.',
+          'Mi Consejo: Enfócate en señales de "escucha activa" y frases de apertura para humanizar la interacción.',
         urgency: 'low',
       },
     },
+
+    results: {
+      impactTitle: "El Costo de la Distancia que Crea tu Inglés",
+      tiers: {
+        'Credibility Gap': {
+          title: "Tus pacientes asienten, pero no confían en ti",
+          description: "Tu experiencia clínica es impecable. Llevas años dominando tu oficio. Pero al explicar un diagnóstico o tratamiento en inglés, algo se pierde. Los pacientes asienten por educación, pero ves la duda en sus ojos. No siguen tus recomendaciones o buscan una segunda opinión con alguien menos calificado que 'simplemente explica mejor'. Tu inglés te está costando la adherencia al tratamiento y las referencias que mereces."
+        },
+        'Passive Proficiency': {
+          title: "Suenas clínico cuando necesitas sonar humano",
+          description: "Los pacientes entienden tus palabras, pero no sienten tu empatía. Estás tan concentrado en no equivocarte en inglés que suenas robótico. Frío. Distante. Puedes explicar los hechos, pero te cuesta tranquilizar a padres preocupados o pacientes ansiosos. En salud y leyes, esa calidez no es un lujo: es lo que evita demandas y genera lealtad."
+        },
+        'Executive Presence': {
+          title: "Tu 'Trato Humano' se traduce perfectamente",
+          description: "Has dominado el equilibrio entre precisión técnica y calidez humana en inglés. Los clientes confían tanto en tu experiencia como en tu cuidado. Aceptan tus planes sin dudar. La oportunidad ahora es el refinamiento: desarrollar las habilidades sutiles que te transforman de 'excelente profesional' a 'el experto que todos quieren'."
+        }
+      },
+      eliteComparison: {
+        title: "Los 5 Hábitos que veo en el Top 1% de Líderes",
+        items: [
+          "Traducen la complejidad en claridad. Hacen que los clientes se sientan informados, no abrumados—construyendo confianza a través del entendimiento, no de la jerga.",
+          "Dan noticias difíciles con autoridad cálida. Las malas noticias no sacuden su presencia. Los pacientes confían más en ellos cuando las cosas van mal.",
+          "Explican planes sin sonar defensivos. Cuando cuestionan sus recomendaciones, educan en lugar de sermonear.",
+          "Construyen rapport antes del examen. Los primeros dos minutos establecen la confianza que facilita todo lo demás.",
+          "Manejan pacientes ansiosos con compostura. Nada rompe su calidez profesional."
+        ]
+      },
+      cta: {
+        title: "¿Listo para mejorar tu inglés rápido?",
+        subtext: "Plática breve. Personal. Sin presión.",
+        buttonText: "👉 Agendar una sesión conmigo",
+        footerText: ""
+      }
+    }
   },
 };

@@ -124,9 +124,9 @@ export function calculateQuizScore(
  * @returns Score tier classification
  */
 export function getScoreTier(score: number): ScoreTier {
-  if (score >= 70) return 'Conversation-Ready';
-  if (score >= 40) return 'Million-Dollar Gap';
-  return 'Credibility Block';
+  if (score >= 70) return 'Executive Presence';
+  if (score >= 40) return 'Passive Proficiency';
+  return 'Credibility Gap';
 }
 
 /**
@@ -134,34 +134,34 @@ export function getScoreTier(score: number): ScoreTier {
  * Contains colors, icons, and messaging for each tier
  */
 export const SCORE_TIER_INFO = {
-  'Conversation-Ready': {
+  'Executive Presence': {
     range: '70-100',
     color: '#10b981', // Green
     icon: '✅',
-    headline: 'Your Team Can Handle High-Stakes Conversations',
-    summary: 'Your team demonstrates strong spoken English capability in client-facing situations. Small refinements in specific areas could help you win even more premium contracts.',
-    businessImpact: "You're competitive for enterprise deals. Focus areas: advanced negotiation tactics, executive presence, and industry-specific terminology.",
-    nextStep: 'Book a strategy call to discuss executive-level communication training.',
+    headline: 'You Have Executive Presence',
+    summary: 'You demonstrate strong communication skills in high-stakes situations. Small refinements in specific areas could help you command even higher rates and senior roles.',
+    businessImpact: "You're competitive for leadership positions. Focus areas: advanced negotiation tactics, executive presence, and industry-specific influence.",
+    nextStep: 'Book a strategy call to discuss executive-level communication refinement.',
     urgency: 'low' as const
   },
-  'Million-Dollar Gap': {
+  'Passive Proficiency': {
     range: '40-69',
     color: '#f59e0b', // Orange
     icon: '⚠️',
-    headline: 'Speaking Gaps Are Costing You Deals',
-    summary: "Your team has solid technical skills, but communication gaps create friction in sales, negotiations, and client relationships. This is the difference between winning and losing 6-figure contracts.",
-    businessImpact: 'Companies at this level tell us they avoid certain opportunities, take longer to close deals, or discount to compensate for communication gaps. Average improvement after 8 weeks: 35% higher contract values.',
+    headline: 'The Invisible Ceiling',
+    summary: "You understand almost everything, but you struggle to be heard. You have great ideas, but in meetings, you stay quiet because you can't find the words fast enough. You are reliable, but not 'visible' enough for leadership.",
+    businessImpact: 'At this level, you avoid certain opportunities, take longer to advance, or stay in execution roles because communication gaps hold you back. The good news? This is fixable with focused practice.',
     nextStep: 'Schedule a 15-minute assessment call to identify your fastest path to improvement.',
     urgency: 'high' as const
   },
-  'Credibility Block': {
+  'Credibility Gap': {
     range: '0-39',
     color: '#ef4444', // Red
     icon: '🚫',
     headline: 'English Gaps Are Limiting Your Growth',
-    summary: "Spoken English challenges are likely holding your business back more than you realize. North American clients interpret hesitant speaking as lack of expertise—even when your technical skills are world-class.",
-    businessImpact: "At this level, you're probably stuck in price-competitive markets, or the founder handles all critical communication. The good news? This is fixable faster than you think with focused practice.",
-    nextStep: "Let's talk about a 60-day intensive program to close these gaps.",
+    summary: "Communication challenges are likely holding you back more than you realize. Colleagues interpret hesitation as lack of expertise—even when your technical skills are world-class.",
+    businessImpact: "At this level, you're probably stuck in execution roles, or you avoid speaking up in meetings. The good news? This is fixable faster than you think with focused practice.",
+    nextStep: "Let's talk about a focused program to close these gaps.",
     urgency: 'high' as const
   }
 } as const;

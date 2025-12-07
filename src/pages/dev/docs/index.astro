@@ -1,9 +1,8 @@
 ---
 /**
  * Documentation Library - Main index page
- * Redesigned for better hierarchy and easier navigation
+ * Clean, professional design with blaze orange accents
  */
-
 import DocsLayout from "@layouts/DocsLayout.astro";
 import {
   Rocket,
@@ -20,9 +19,10 @@ import {
   Wrench,
   BookOpen,
   Layers,
+  ChevronRight,
 } from "lucide-astro";
 
-// Icon mapping - convert string names to components
+// Icon mapping
 const iconMap = {
   Rocket: Rocket,
   Globe: Globe,
@@ -40,7 +40,7 @@ const iconMap = {
   Layers: Layers,
 };
 
-// Organize documentation by category with priority
+// Organize documentation by category
 const documentsByCategory = {
   Overview: [
     {
@@ -139,7 +139,6 @@ const quickStartGuides = [
   {
     role: "Developer",
     icon: Code2,
-    color: "blue",
     description: "Building features and fixing bugs",
     docs: [
       { name: "Bilingual System", route: "/dev/docs/bilingual-system-guide/" },
@@ -149,7 +148,6 @@ const quickStartGuides = [
   {
     role: "SEO/Content",
     icon: TrendingUp,
-    color: "green",
     description: "Optimizing search and content",
     docs: [
       { name: "Hreflang Guide", route: "/dev/docs/hreflang-fix-summary/" },
@@ -159,7 +157,6 @@ const quickStartGuides = [
   {
     role: "Marketing",
     icon: Target,
-    color: "purple",
     description: "Lead generation systems",
     docs: [
       { name: "Quiz System", route: "/dev/docs/quiz-lead-magnet-system/" },
@@ -169,7 +166,6 @@ const quickStartGuides = [
   {
     role: "DevOps",
     icon: Wrench,
-    color: "orange",
     description: "Deployment and monitoring",
     docs: [
       { name: "Deploy Checklist", route: "/dev/docs/deployment-checklist/" },
@@ -184,136 +180,71 @@ const quickStartGuides = [
 const allDocs = Object.values(documentsByCategory).flat();
 const totalDocs = allDocs.length;
 const highPriorityDocs = allDocs.filter((d) => d.priority === "high").length;
-const pageTitle = "Documentation Library";
-
-// Icon component map
-const iconComponents: Record<string, any> = {
-  Rocket,
-  Globe,
-  FileText,
-  Link,
-  ImageIcon,
-  Settings,
-  Repeat,
-  Target,
-  Calendar,
-  Code2,
-  TrendingUp,
-  Wrench,
-};
-
-// Color schemes for role cards
-const colorSchemes: Record<
-  string,
-  { bg: string; border: string; icon: string }
-> = {
-  blue: { bg: "bg-blue-600", border: "border-blue-500", icon: "text-blue-300" },
-  green: {
-    bg: "bg-green-600",
-    border: "border-green-500",
-    icon: "text-green-300",
-  },
-  purple: {
-    bg: "bg-purple-600",
-    border: "border-purple-500",
-    icon: "text-purple-300",
-  },
-  orange: {
-    bg: "bg-orange-600",
-    border: "border-orange-500",
-    icon: "text-orange-300",
-  },
-};
 ---
 
 <DocsLayout
-  title={pageTitle}
+  title="Documentation Library"
   description="NY English Teacher project documentation library"
 >
   <!-- Hero Section -->
-  <div
-    class="mb-4 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-xl shadow-xl overflow-hidden"
-  >
-    <div class="px-5 py-4">
-      <div class="flex items-center justify-between gap-4 flex-wrap">
-        <div class="flex-1 min-w-[300px]">
-          <h1
-            class="text-2xl font-bold text-white mb-2 flex items-center gap-2"
-          >
-            <BookOpen size={28} />
-            Documentation Library
-          </h1>
-          <p class="text-white/80 text-sm mb-3">
-            Complete technical documentation for NY English Teacher platform
-          </p>
-          <div class="flex flex-wrap items-center gap-2 text-xs">
-            <span
-              class="flex items-center gap-1.5 bg-white/20 px-3 py-1.5 rounded-md backdrop-blur-sm border border-white/30 text-white"
-            >
-              <FileText size={14} />
-              <span class="font-semibold">{totalDocs}</span> Docs
-            </span>
-            <span
-              class="flex items-center gap-1.5 bg-white/20 px-3 py-1.5 rounded-md backdrop-blur-sm border border-white/30 text-white"
-            >
-              <Layers size={14} />
-              <span class="font-semibold"
-                >{Object.keys(documentsByCategory).length}</span
-              > Categories
-            </span>
-            <span
-              class="flex items-center gap-1.5 bg-white/20 px-3 py-1.5 rounded-md backdrop-blur-sm border border-white/30 text-white"
-            >
-              <Target size={14} />
-              <span class="font-semibold">{highPriorityDocs}</span> Priority
-            </span>
-          </div>
-        </div>
+  <div class="hero-section">
+    <div class="hero-content">
+      <div class="hero-icon">
+        <BookOpen size={32} />
+      </div>
+      <div class="hero-text">
+        <h1>Documentation Library</h1>
+        <p>Complete technical documentation for NY English Teacher platform</p>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <FileText size={18} />
+        <span><strong>{totalDocs}</strong> Documents</span>
+      </div>
+      <div class="stat-item">
+        <Layers size={18} />
+        <span
+          ><strong>{Object.keys(documentsByCategory).length}</strong> Categories</span
+        >
+      </div>
+      <div class="stat-item">
+        <Target size={18} />
+        <span><strong>{highPriorityDocs}</strong> High Priority</span>
       </div>
     </div>
   </div>
 
   <!-- Quick Start by Role -->
-  <div class="mb-4">
-    <div class="mb-2">
-      <h2
-        class="text-lg font-bold flex items-center gap-2"
-        style="color: var(--text-primary);"
-      >
-        <Rocket size={20} />
+  <section class="section">
+    <div class="section-header">
+      <h2>
+        <Rocket size={24} />
         Quick Start by Role
       </h2>
-      <p class="mt-0.5 text-xs" style="color: var(--text-muted);">
-        Jump to documentation relevant to your work
-      </p>
+      <p>Jump to documentation relevant to your work</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+    <div class="role-grid">
       {
         quickStartGuides.map((guide) => {
           const IconComponent = guide.icon;
-          const colors = colorSchemes[guide.color];
           return (
-            <div
-              class={`${colors.bg} rounded-lg p-4 border-2 ${colors.border} hover:scale-[1.02] transition-transform shadow-lg`}
-            >
-              <div class="flex items-center gap-2 mb-3">
-                <div class="p-2 bg-white/20 rounded-md backdrop-blur-sm">
-                  <IconComponent size={20} class="text-white" />
+            <div class="role-card">
+              <div class="role-header">
+                <div class="role-icon">
+                  <IconComponent size={24} />
                 </div>
                 <div>
-                  <h3 class="font-bold text-white text-base">{guide.role}</h3>
-                  <p class="text-xs text-white/70">{guide.description}</p>
+                  <h3>{guide.role}</h3>
+                  <p>{guide.description}</p>
                 </div>
               </div>
-              <div class="space-y-1.5 mt-3 border-t border-white/20 pt-3">
+              <div class="role-links">
                 {guide.docs.map((doc) => (
-                  <a
-                    href={doc.route}
-                    class="flex items-center gap-2 text-sm text-white hover:text-white/80 hover:translate-x-1 transition-all py-1"
-                  >
-                    <span class="text-white/60">→</span>
-                    {doc.name}
+                  <a href={doc.route} class="role-link">
+                    <ChevronRight size={16} />
+                    <span>{doc.name}</span>
                   </a>
                 ))}
               </div>
@@ -322,119 +253,454 @@ const colorSchemes: Record<
         })
       }
     </div>
-  </div>
+  </section>
 
   <!-- All Documentation by Category -->
-  <div class="mb-4">
-    <div class="mb-2">
-      <h2
-        class="text-lg font-bold flex items-center gap-2"
-        style="color: var(--text-primary);"
-      >
-        <Layers size={20} />
-        All Documentation by Category
+  <section class="section">
+    <div class="section-header">
+      <h2>
+        <Layers size={24} />
+        Browse by Category
       </h2>
-      <p class="mt-0.5 text-xs" style="color: var(--text-muted);">
-        All documentation organized by topic
-      </p>
+      <p>All documentation organized by topic</p>
     </div>
 
     {
       Object.entries(documentsByCategory).map(([category, docs]) => (
-        <div class="bg-slate-800 rounded-lg shadow-lg border border-slate-700 overflow-hidden mb-3">
-          <div class="bg-gradient-to-r from-slate-700 to-slate-600 px-4 py-2.5 border-b border-slate-600">
-            <h3 class="text-base font-bold text-white">{category}</h3>
-            <p class="text-slate-300 text-xs">
+        <div class="category-section">
+          <div class="category-header">
+            <h3>{category}</h3>
+            <span class="doc-count">
               {docs.length} document{docs.length !== 1 ? "s" : ""}
-            </p>
+            </span>
           </div>
 
-          <div class="p-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {docs.map((doc) => {
-                const IconComponent = iconMap[doc.icon as keyof typeof iconMap];
-                const isPriority = doc.priority === "high";
-                return (
-                  <a
-                    href={doc.route}
-                    class={`group block p-3 rounded-md border transition-all duration-200 hover:scale-[1.01] hover:shadow-lg ${
-                      isPriority
-                        ? "bg-blue-900/30 border-blue-500 hover:bg-blue-900/50"
-                        : "bg-slate-700/50 border-slate-600 hover:border-slate-500 hover:bg-slate-700"
-                    }`}
-                  >
-                    <div class="flex items-start gap-3">
-                      <div
-                        class={`flex-shrink-0 p-1.5 rounded-md ${isPriority ? "bg-blue-600" : "bg-slate-600"}`}
-                      >
-                        <IconComponent size={18} class="text-white" />
-                      </div>
-                      <div class="flex-1 min-w-0">
-                        <div class="flex items-start justify-between gap-2 mb-1">
-                          <h4 class="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors">
-                            {doc.name}
-                          </h4>
-                          {isPriority && (
-                            <span class="flex-shrink-0 px-1.5 py-0.5 text-[10px] font-bold bg-blue-500 text-white rounded-full">
-                              HIGH
-                            </span>
-                          )}
-                        </div>
-                        <p class="text-xs text-slate-300 mb-2 line-clamp-2">
-                          {doc.description}
-                        </p>
-                        <div class="flex flex-wrap gap-1">
-                          {doc.tags.map((tag) => (
-                            <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-600 text-slate-300 group-hover:bg-slate-500 transition-colors">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+          <div class="docs-grid">
+            {docs.map((doc) => {
+              const IconComponent = iconMap[doc.icon as keyof typeof iconMap];
+              return (
+                <a
+                  href={doc.route}
+                  class={`doc-card ${doc.priority === "high" ? "priority" : ""}`}
+                >
+                  <div class="doc-icon">
+                    <IconComponent size={20} />
+                  </div>
+                  <div class="doc-content">
+                    <div class="doc-title-row">
+                      <h4>{doc.name}</h4>
+                      {doc.priority === "high" && (
+                        <span class="priority-badge">HIGH</span>
+                      )}
                     </div>
-                  </a>
-                );
-              })}
-            </div>
+                    <p>{doc.description}</p>
+                    <div class="doc-tags">
+                      {doc.tags.map((tag) => (
+                        <span class="tag">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
       ))
     }
-  </div>
+  </section>
 
   <!-- System Info Footer -->
-  <div class="mt-8 bg-slate-800/50 rounded-lg border border-slate-700 p-6">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-300">
-      <div class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-        <div>
-          <span class="font-medium">Source:</span>
-          <code
-            class="ml-2 px-2 py-1 bg-slate-700 rounded text-blue-300 text-xs"
-            >/docs/</code
-          >
-        </div>
-      </div>
-      <div class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-        <div>
-          <span class="font-medium">Layout:</span>
-          <code
-            class="ml-2 px-2 py-1 bg-slate-700 rounded text-blue-300 text-xs"
-            >MarkdownLayout.astro</code
-          >
-        </div>
-      </div>
-      <div class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-        <div>
-          <span class="font-medium">Route:</span>
-          <code
-            class="ml-2 px-2 py-1 bg-slate-700 rounded text-blue-300 text-xs"
-            >/dev/docs/</code
-          >
-        </div>
-      </div>
+  <div class="system-info">
+    <div class="info-item">
+      <span class="label">Source:</span>
+      <code>/docs/</code>
+    </div>
+    <div class="info-item">
+      <span class="label">Layout:</span>
+      <code>MarkdownLayout.astro</code>
+    </div>
+    <div class="info-item">
+      <span class="label">Route:</span>
+      <code>/dev/docs/</code>
     </div>
   </div>
 </DocsLayout>
+
+<style>
+  /* 
+   * Documentation Index Page Styles
+   * Uses CSS variables from DocsLayout.astro
+   * Dark theme: default | Light theme: body.light-theme
+   */
+
+  /* Local shadow variables */
+  :root {
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  }
+
+  /* Hero Section */
+  .hero-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow);
+  }
+
+  .hero-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--docs-accent);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary) !important;
+    margin: 0 0 0.5rem 0;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    color: var(--text-secondary) !important;
+    margin: 0;
+  }
+
+  .hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary) !important;
+    font-size: 0.875rem;
+  }
+
+  .stat-item strong {
+    color: var(--docs-accent);
+    font-weight: 600;
+  }
+
+  /* Section Styles */
+  .section {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--docs-accent) !important;
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .section-header p {
+    font-size: 0.875rem;
+    color: var(--text-muted) !important;
+    margin: 0;
+  }
+
+  /* Role Cards */
+  .role-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .role-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .role-card:hover {
+    border-color: var(--docs-accent);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .role-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .role-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--docs-accent);
+    flex-shrink: 0;
+  }
+
+  .role-header h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary) !important;
+    margin: 0 0 0.25rem 0;
+  }
+
+  .role-header p {
+    font-size: 0.875rem;
+    color: var(--text-secondary) !important;
+    margin: 0;
+  }
+
+  .role-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .role-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary) !important;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .role-link:hover {
+    background: var(--bg-secondary);
+    color: var(--docs-accent) !important;
+    transform: translateX(4px);
+  }
+
+  /* Category Sections */
+  .category-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .category-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary) !important;
+    margin: 0;
+  }
+
+  .doc-count {
+    font-size: 0.875rem;
+    color: var(--text-muted) !important;
+  }
+
+  /* Documentation Cards */
+  .docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  .doc-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .doc-card:hover {
+    border-color: var(--docs-accent);
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+  }
+
+  .doc-card.priority {
+    border-left: 3px solid var(--docs-accent);
+  }
+
+  .doc-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--card-bg);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+  }
+
+  .doc-card:hover .doc-icon {
+    color: var(--docs-accent);
+  }
+
+  .doc-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .doc-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .doc-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary) !important;
+    margin: 0;
+  }
+
+  .priority-badge {
+    font-size: 0.625rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    background: var(--docs-accent);
+    color: white;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  .doc-content p {
+    font-size: 0.875rem;
+    color: var(--text-secondary) !important;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.5;
+  }
+
+  .doc-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--card-bg);
+    color: var(--text-muted) !important;
+    border-radius: 4px;
+  }
+
+  /* System Info */
+  .system-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-top: 2.5rem;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .info-item .label {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+  }
+
+  .info-item code {
+    padding: 0.25rem 0.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: var(--docs-accent) !important;
+    font-family: "Courier New", monospace;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    .hero-text h1 {
+      font-size: 1.5rem;
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .role-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .docs-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .system-info {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+</style>

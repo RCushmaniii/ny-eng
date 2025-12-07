@@ -32,9 +32,9 @@ function calculateScore(answers, quizType) {
 
   totalScore = Math.round(Math.min(100, Math.max(0, totalScore)));
 
-  let scoreTier = 'Credibility Block';
-  if (totalScore >= 70) scoreTier = 'Conversation-Ready';
-  else if (totalScore >= 40) scoreTier = 'Million-Dollar Gap';
+  let scoreTier = 'Credibility Gap';
+  if (totalScore >= 70) scoreTier = 'Executive Presence';
+  else if (totalScore >= 40) scoreTier = 'Passive Proficiency';
 
   return {
     totalScore,

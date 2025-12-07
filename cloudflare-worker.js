@@ -244,8 +244,7 @@ export default {
           start: { dateTime: startDateTime, timeZone },
           end:   { dateTime: endDateTime,   timeZone },
           attendees: [
-            { email },
-            { email: 'rcushmaniii@gmail.com', organizer: true, responseStatus: 'accepted' }
+            { email }
           ],
           conferenceData: { 
             createRequest: { 

@@ -359,7 +359,7 @@ if (optionsContainer) {
       answers[answerKey] = parseInt(answerIndex);
       QuizStorage.saveAnswers(quizType, answers);
       
-      // Auto-advance after 300ms (visual feedback on production)
+      // Auto-advance after 800ms for satisfying "I clicked something" feedback
       setTimeout(() => {
         const currentId = parseInt(questionId);
         const totalQuestions = 6;
@@ -369,7 +369,7 @@ if (optionsContainer) {
         } else {
           window.location.href = `/es/quiz/${quizType}/results/`;
         }
-      }, 300);
+      }, 800);
     });
   });
 }

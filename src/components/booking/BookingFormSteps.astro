@@ -2,41 +2,41 @@
 import DatePicker from "./DatePicker.astro";
 
 interface Props {
-  lang: 'en' | 'es';
+  lang: "en" | "es";
 }
 
 const { lang } = Astro.props;
 
 const translations = {
   en: {
-    step1: 'Date & time',
-    step2: 'Details',
-    step3: 'Booked',
-    selectDateTime: 'Select a date & time',
-    selectTime: 'Select a time',
-    addDetails: 'Add more details about you',
-    fullName: 'Full name',
-    email: 'Email',
-    phoneNumber: 'Phone number',
-    phoneOptional: 'We will use it to remind you of this appointment.',
-    confirmAppointment: 'Confirm Appointment',
-    next: 'Next',
-    back: 'Back',
+    step1: "Date & time",
+    step2: "Details",
+    step3: "Booked",
+    selectDateTime: "Select a date & time",
+    selectTime: "Select a time",
+    addDetails: "Add more details about you",
+    fullName: "Full name",
+    email: "Email",
+    phoneNumber: "Phone number",
+    phoneOptional: "We will use it to remind you of this appointment.",
+    confirmAppointment: "Confirm Appointment",
+    next: "Next",
+    back: "Back",
   },
   es: {
-    step1: 'Fecha y hora',
-    step2: 'Detalles',
-    step3: 'Reservado',
-    selectDateTime: 'Selecciona una fecha y hora',
-    selectTime: 'Selecciona una hora',
-    addDetails: 'Agrega más detalles sobre ti',
-    fullName: 'Nombre completo',
-    email: 'Correo electrónico',
-    phoneNumber: 'Número de teléfono',
-    phoneOptional: 'Lo usaremos para recordarte esta cita.',
-    confirmAppointment: 'Confirmar Cita',
-    next: 'Siguiente',
-    back: 'Atrás',
+    step1: "Fecha y hora",
+    step2: "Detalles",
+    step3: "Reservado",
+    selectDateTime: "Selecciona una fecha y hora",
+    selectTime: "Selecciona una hora",
+    addDetails: "Agrega más detalles sobre ti",
+    fullName: "Nombre completo",
+    email: "Correo electrónico",
+    phoneNumber: "Número de teléfono",
+    phoneOptional: "Lo usaremos para recordarte esta cita.",
+    confirmAppointment: "Confirmar Cita",
+    next: "Siguiente",
+    back: "Atrás",
   },
 };
 
@@ -45,33 +45,76 @@ const t = translations[lang];
 
 <div class="booking-steps-container max-w-4xl mx-auto">
   <!-- Appointment Info -->
-  <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mb-8">
+  <div
+    class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mb-8"
+  >
     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
-      {lang === 'en' ? 'NY ENGLISH TEACHER CLASS SCHEDULE' : 'HORARIO DE CLASES NY ENGLISH TEACHER'}
+      {
+        lang === "en"
+          ? "Executive Strategy Session"
+          : "Sesión de Estrategia Ejecutiva"
+      }
     </h3>
     <div class="space-y-3">
       <div class="flex items-start gap-3">
-        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        <svg
+          class="w-6 h-6 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
         <p class="text-gray-700 dark:text-gray-300">
-          {lang === 'en' ? '30 min appointments' : 'Citas de 30 minutos'}
+          {lang === "en" ? "15 min analysis" : "Análisis de 15 minutos"}
         </p>
       </div>
       <div class="flex items-start gap-3">
-        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+        <svg
+          class="w-6 h-6 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+          ></path>
         </svg>
         <p class="text-gray-700 dark:text-gray-300">
-          {lang === 'en' ? 'Google Meet video conference info added after booking' : 'Información de videoconferencia de Google Meet agregada después de la reserva'}
+          {
+            lang === "en"
+              ? "Google Meet video conference info added after booking"
+              : "Información de videoconferencia de Google Meet agregada después de la reserva"
+          }
         </p>
       </div>
       <div class="flex items-start gap-3">
-        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        <svg
+          class="w-6 h-6 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
         </svg>
         <p class="text-gray-700 dark:text-gray-300">
-          {lang === 'en' ? 'Time slots are (GMT-06:00) Central Standard Time - Mexico City' : 'Los horarios son (GMT-06:00) Hora Central - Ciudad de México'}
+          {
+            lang === "en"
+              ? "Time slots are (GMT-06:00) Central Standard Time - Mexico City"
+              : "Los horarios son (GMT-06:00) Hora Central - Ciudad de México"
+          }
         </p>
       </div>
     </div>
@@ -98,16 +141,25 @@ const t = translations[lang];
   <!-- Step 1: Date & Time Selection -->
   <div class="step-content active" data-step="1">
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t.selectDateTime}</h2>
-      
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+        {t.selectDateTime}
+      </h2>
+
       <!-- Selected Date Display - Prominent at top -->
-      <div class="bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-4 mb-6">
-        <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">{lang === 'en' ? 'Selected Date' : 'Fecha Seleccionada'}</p>
-        <p class="text-2xl font-bold text-gray-900 dark:text-white" id="selected-date-display-top">
-          {lang === 'en' ? 'Select a date below' : 'Selecciona una fecha abajo'}
+      <div
+        class="bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-4 mb-6"
+      >
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">
+          {lang === "en" ? "Selected Date" : "Fecha Seleccionada"}
+        </p>
+        <p
+          class="text-2xl font-bold text-gray-900 dark:text-white"
+          id="selected-date-display-top"
+        >
+          {lang === "en" ? "Select a date below" : "Selecciona una fecha abajo"}
         </p>
       </div>
-      
+
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Date Picker -->
         <div>
@@ -116,8 +168,13 @@ const t = translations[lang];
 
         <!-- Time Slots -->
         <div>
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">{t.selectTime}</h3>
-          <div id="time-slots-container" class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+            {t.selectTime}
+          </h3>
+          <div
+            id="time-slots-container"
+            class="grid grid-cols-2 sm:grid-cols-3 gap-2"
+          >
             <!-- Time slots populated by JS -->
           </div>
         </div>
@@ -128,16 +185,24 @@ const t = translations[lang];
   <!-- Step 2: Your Details -->
   <div class="step-content" data-step="2">
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">{t.addDetails}</h2>
-      
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        {t.addDetails}
+      </h2>
+
       <!-- Error Message -->
-      <div id="form-error" class="hidden bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-6">
+      <div
+        id="form-error"
+        class="hidden bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-6"
+      >
         <p class="text-red-600 dark:text-red-400 text-sm"></p>
       </div>
 
       <form id="details-form" class="space-y-6 max-w-md mx-auto">
         <div>
-          <label for="full-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label
+            for="full-name"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
             {t.fullName}<span class="text-red-500">*</span>
           </label>
           <input
@@ -150,7 +215,10 @@ const t = translations[lang];
         </div>
 
         <div>
-          <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label
+            for="email"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
             {t.email}<span class="text-red-500">*</span>
           </label>
           <input
@@ -163,78 +231,189 @@ const t = translations[lang];
         </div>
 
         <div>
-          <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            {t.phoneNumber}
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white"
-          />
-          <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
-            <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            {t.phoneOptional}
-          </p>
-        </div>
+          <div>
+            <label
+              for="phone"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            >
+              {t.phoneNumber}
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white"
+            />
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+              <svg
+                class="w-4 h-4 inline-block mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+              {t.phoneOptional}
+            </p>
+          </div>
 
-        <div class="flex gap-4 pt-4">
-          <button
-            type="button"
-            id="back-to-step1"
-            class="flex-1 px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors font-medium"
-          >
-            {t.back}
-          </button>
-          <button
-            type="button"
-            id="proceed-to-step3"
-            class="flex-1 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg transition-colors font-medium"
-          >
-            {t.next}
-          </button>
+          <div>
+            <label
+              for="notes"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            >
+              {
+                lang === "en"
+                  ? "What would you like to discuss?"
+                  : "¿Qué te gustaría discutir?"
+              }
+            </label>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="3"
+              placeholder={lang === "en"
+                ? "e.g. Preparing for an IT Director interview..."
+                : "ej. Preparación para entrevista de Director de TI..."}
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white resize-none"
+            ></textarea>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+              {
+                lang === "en"
+                  ? "Optional - helps me prepare for our conversation"
+                  : "Opcional - me ayuda a preparar nuestra conversación"
+              }
+            </p>
+          </div>
+
+          <div class="flex gap-4 pt-4">
+            <button
+              type="button"
+              id="back-to-step1"
+              class="flex-1 px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors font-medium"
+            >
+              {t.back}
+            </button>
+            <button
+              type="button"
+              id="confirm-booking"
+              class="flex-1 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg transition-colors font-medium"
+            >
+              {t.confirmAppointment}
+            </button>
+          </div>
         </div>
       </form>
     </div>
   </div>
 
-  <!-- Step 3: Confirmation Summary -->
+  <!-- Step 3: Success / Booked -->
   <div class="step-content" data-step="3">
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-      <div class="text-center mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">{lang === 'en' ? 'Review Your Booking' : 'Revisa Tu Reserva'}</h2>
-        <p class="text-gray-600 dark:text-gray-400 mt-2">{lang === 'en' ? 'Please confirm your appointment details' : 'Por favor confirma los detalles de tu cita'}</p>
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+      <!-- Success Icon -->
+      <div class="text-center mb-6">
+        <div
+          class="inline-flex items-center justify-center w-20 h-20 bg-blue-50 dark:bg-blue-900/30 rounded-full mb-4"
+        >
+          <svg
+            class="w-10 h-10 text-blue-700 dark:text-blue-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">
+          {lang === "en" ? "You're Booked." : "Sesión Confirmada."}
+        </h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+          {
+            lang === "en"
+              ? "I have sent a calendar invitation to your email. Please check it now and click 'Yes' or 'Accept' to lock in your time slot."
+              : "Te he enviado una invitación de calendario a tu correo. Por favor revísala ahora y da clic en 'Sí' o 'Aceptar' para asegurar tu espacio."
+          }
+        </p>
       </div>
-      
+
       <div class="max-w-lg mx-auto space-y-6">
         <!-- Summary Card -->
-        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-800 rounded-xl p-6 space-y-4 border border-blue-100 dark:border-gray-600">
+        <div
+          class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-800 rounded-xl p-6 space-y-4 border border-blue-100 dark:border-gray-600"
+        >
           <!-- Date & Time -->
           <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            <svg
+              class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
             </svg>
             <div class="flex-1">
-              <p class="text-sm font-medium text-gray-600 dark:text-gray-400">{lang === 'en' ? 'Date & Time' : 'Fecha y Hora'}</p>
-              <p class="text-lg font-semibold text-gray-900 dark:text-white" id="summary-datetime"></p>
-              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{lang === 'en' ? 'Central Time (GMT-6)' : 'Hora del Centro (GMT-6)'}</p>
+              <p class="text-sm font-medium text-gray-600 dark:text-gray-400">
+                {lang === "en" ? "Date & Time" : "Fecha y Hora"}
+              </p>
+              <p
+                class="text-lg font-semibold text-gray-900 dark:text-white"
+                id="summary-datetime"
+              >
+              </p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                {
+                  lang === "en"
+                    ? "Central Time (GMT-6)"
+                    : "Hora del Centro (GMT-6)"
+                }
+              </p>
             </div>
           </div>
-          
+
           <div class="border-t border-blue-200 dark:border-gray-600"></div>
-          
+
           <!-- Contact Info -->
           <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            <svg
+              class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              ></path>
             </svg>
             <div class="flex-1">
-              <p class="text-sm font-medium text-gray-600 dark:text-gray-400">{lang === 'en' ? 'Your Details' : 'Tus Detalles'}</p>
-              <p class="font-semibold text-gray-900 dark:text-white" id="summary-name"></p>
-              <p class="text-gray-700 dark:text-gray-300" id="summary-email"></p>
-              <p class="text-gray-700 dark:text-gray-300" id="summary-phone"></p>
+              <p class="text-sm font-medium text-gray-600 dark:text-gray-400">
+                {lang === "en" ? "Your Details" : "Tus Detalles"}
+              </p>
+              <p
+                class="font-semibold text-gray-900 dark:text-white"
+                id="summary-name"
+              >
+              </p>
+              <p class="text-gray-700 dark:text-gray-300" id="summary-email">
+              </p>
+              <p class="text-gray-700 dark:text-gray-300" id="summary-phone">
+              </p>
             </div>
           </div>
 
@@ -242,38 +421,72 @@ const t = translations[lang];
 
           <!-- Meeting Type -->
           <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            <svg
+              class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+              ></path>
             </svg>
             <div class="flex-1">
-              <p class="text-sm font-medium text-gray-600 dark:text-gray-400">{lang === 'en' ? 'Meeting Type' : 'Tipo de Reunión'}</p>
-              <p class="font-semibold text-gray-900 dark:text-white">{lang === 'en' ? 'Google Meet Video Call' : 'Videollamada por Google Meet'}</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{lang === 'en' ? 'Link will be sent to your email' : 'El enlace se enviará a tu correo'}</p>
+              <p class="text-sm font-medium text-gray-600 dark:text-gray-400">
+                {lang === "en" ? "Meeting Type" : "Tipo de Reunión"}
+              </p>
+              <p class="font-semibold text-gray-900 dark:text-white">
+                {
+                  lang === "en"
+                    ? "Google Meet Video Call"
+                    : "Videollamada por Google Meet"
+                }
+              </p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                {
+                  lang === "en"
+                    ? "Link will be sent to your email"
+                    : "El enlace se enviará a tu correo"
+                }
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- Action Buttons -->
-        <div class="flex gap-4">
-          <button
-            type="button"
-            id="back-to-step2"
-            class="flex-1 px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors font-medium"
-          >
-            {t.back}
-          </button>
-          <button
-            type="button"
-            id="confirm-booking"
-            class="flex-1 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg transition-colors font-medium shadow-lg"
-          >
-            {t.confirmAppointment}
-          </button>
+        <!-- How to Prepare Section -->
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6"
+        >
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-3">
+            {lang === "en" ? "How to prepare:" : "Cómo prepararte:"}
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            {
+              lang === "en"
+                ? "No need to prepare slides. Just come ready to discuss your current role and the specific communication ceiling you want to break."
+                : "No necesitas preparar diapositivas. Solo ven listo para platicar sobre tu rol actual y el techo de comunicación específico que quieres romper."
+            }
+          </p>
         </div>
 
-        <!-- Reassurance Text -->
-        <div class="text-center text-sm text-gray-600 dark:text-gray-400 pt-4">
-          <p>{lang === 'en' ? 'You\'ll receive a confirmation email with the meeting link' : 'Recibirás un correo de confirmación con el enlace de la reunión'}</p>
+        <!-- Sign-off -->
+        <div class="text-center">
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            {lang === "en" ? "Talk soon," : "Nos vemos pronto,"}
+            <br />
+            <span class="font-semibold">Robert</span>
+          </p>
+
+          <!-- Return to Homepage Link (Ghost Style) -->
+          <a
+            href={lang === "en" ? "/en/" : "/es/"}
+            class="inline-block text-gray-500 hover:text-blue-700 dark:text-gray-400 dark:hover:text-blue-400 font-medium text-sm underline-offset-4 hover:underline transition-colors"
+          >
+            {lang === "en" ? "Return to Homepage" : "Volver al Inicio"}
+          </a>
         </div>
       </div>
     </div>
@@ -282,18 +495,19 @@ const t = translations[lang];
 
 <script define:vars={{ lang }}>
   // API Configuration
-  const API_BASE = 'https://plain-mode-42c4.rcushmaniii.workers.dev';
-  
-  document.addEventListener('DOMContentLoaded', () => {
+  const API_BASE = "https://plain-mode-42c4.rcushmaniii.workers.dev";
+
+  document.addEventListener("DOMContentLoaded", () => {
     let currentStep = 1;
     let selectedDate = null;
     let selectedTime = null;
     let formData = {};
+    let isBooking = false; // Prevent double-booking
 
     // Initialize with tomorrow if it's late
     const now = new Date();
     const currentHour = now.getHours();
-    
+
     if (currentHour >= 18) {
       selectedDate = new Date(now);
       selectedDate.setDate(now.getDate() + 1);
@@ -306,34 +520,46 @@ const t = translations[lang];
     // Step navigation
     function showStep(step) {
       currentStep = step;
-      
+
       // Update step indicators
-      document.querySelectorAll('.step-indicator').forEach((indicator, index) => {
-        if (index + 1 <= step) {
-          indicator.classList.add('active');
-        } else {
-          indicator.classList.remove('active');
-        }
-      });
+      document
+        .querySelectorAll(".step-indicator")
+        .forEach((indicator, index) => {
+          if (index + 1 <= step) {
+            indicator.classList.add("active");
+          } else {
+            indicator.classList.remove("active");
+          }
+        });
 
       // Update step content
-      document.querySelectorAll('.step-content').forEach(content => {
-        content.classList.remove('active');
+      document.querySelectorAll(".step-content").forEach((content) => {
+        content.classList.remove("active");
       });
-      document.querySelector(`.step-content[data-step="${step}"]`)?.classList.add('active');
+      document
+        .querySelector(`.step-content[data-step="${step}"]`)
+        ?.classList.add("active");
     }
 
     // Update prominent date display
     function updateDateDisplay(date) {
-      const displayTop = document.getElementById('selected-date-display-top');
+      const displayTop = document.getElementById("selected-date-display-top");
       if (displayTop && date) {
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        displayTop.textContent = date.toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', options);
+        const options = {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        };
+        displayTop.textContent = date.toLocaleDateString(
+          lang === "es" ? "es-ES" : "en-US",
+          options
+        );
       }
     }
 
     // Listen for date selection
-    document.addEventListener('dateSelected', async (e) => {
+    document.addEventListener("dateSelected", async (e) => {
       selectedDate = e.detail.date;
       selectedTime = null;
       updateDateDisplay(selectedDate);
@@ -342,46 +568,55 @@ const t = translations[lang];
 
     // Fetch available slots
     async function fetchAvailableSlots(date) {
-      const container = document.getElementById('time-slots-container');
+      const container = document.getElementById("time-slots-container");
       if (!container || !date) return;
-      
-      container.innerHTML = '<p class="col-span-full text-center text-gray-500">Loading...</p>';
-      
+
+      container.innerHTML =
+        '<p class="col-span-full text-center text-gray-500">Loading...</p>';
+
       try {
-        const dateStr = date.toISOString().split('T')[0];
+        const dateStr = date.toISOString().split("T")[0];
         const url = `${API_BASE}/slots/${dateStr}?lang=${lang}`;
-        console.log('🔍 API_BASE:', API_BASE);
-        console.log('🔍 Full URL:', url);
-        console.log('🔍 Fetching slots for:', dateStr);
-        
+        console.log("🔍 API_BASE:", API_BASE);
+        console.log("🔍 Full URL:", url);
+        console.log("🔍 Fetching slots for:", dateStr);
+
         const response = await fetch(url);
-        console.log('✅ Response status:', response.status);
-        console.log('✅ Response OK:', response.ok);
-        
+        console.log("✅ Response status:", response.status);
+        console.log("✅ Response OK:", response.ok);
+
         const data = await response.json();
-        console.log('📦 API Response:', data);
-        
+        console.log("📦 API Response:", data);
+
         if (data.ok && data.slots && data.slots.length > 0) {
           renderTimeSlots(data.slots);
         } else {
-          container.innerHTML = '<p class="col-span-full text-center text-gray-500">' + 
-            (lang === 'es' ? 'No hay horarios disponibles.' : 'No available times.') +
-            '</p>';
+          container.innerHTML =
+            '<p class="col-span-full text-center text-gray-500">' +
+            (lang === "es"
+              ? "No hay horarios disponibles."
+              : "No available times.") +
+            "</p>";
         }
       } catch (error) {
-        console.error('❌ Error fetching slots:', error);
-        container.innerHTML = '<p class="col-span-full text-center text-gray-500">' + 
-          (lang === 'es' ? 'No hay horarios disponibles.' : 'No available times.') +
-          '</p>';
+        console.error("❌ Error fetching slots:", error);
+        container.innerHTML =
+          '<p class="col-span-full text-center text-gray-500">' +
+          (lang === "es"
+            ? "No hay horarios disponibles."
+            : "No available times.") +
+          "</p>";
       }
     }
 
     // Render time slots
     function renderTimeSlots(slots) {
-      const container = document.getElementById('time-slots-container');
+      const container = document.getElementById("time-slots-container");
       if (!container) return;
 
-      container.innerHTML = slots.map(time => `
+      container.innerHTML = slots
+        .map(
+          (time) => `
         <button
           type="button"
           class="time-slot-btn px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg hover:border-primary transition-all font-medium text-gray-700 dark:text-gray-300"
@@ -389,22 +624,34 @@ const t = translations[lang];
         >
           ${time}
         </button>
-      `).join('');
+      `
+        )
+        .join("");
 
       // Add click handlers
-      container.querySelectorAll('.time-slot-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
+      container.querySelectorAll(".time-slot-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
           const target = e.currentTarget;
           selectedTime = target.dataset.time;
-          
+
           // Update UI
-          container.querySelectorAll('.time-slot-btn').forEach(b => {
-            b.classList.remove('border-primary', 'bg-primary', 'text-white');
-            b.classList.add('border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
+          container.querySelectorAll(".time-slot-btn").forEach((b) => {
+            b.classList.remove("border-primary", "bg-primary", "text-white");
+            b.classList.add(
+              "border-gray-300",
+              "dark:border-gray-600",
+              "text-gray-700",
+              "dark:text-gray-300"
+            );
           });
-          target.classList.add('border-primary', 'bg-primary', 'text-white');
-          target.classList.remove('border-gray-300', 'dark:border-gray-600', 'text-gray-700', 'dark:text-gray-300');
-          
+          target.classList.add("border-primary", "bg-primary", "text-white");
+          target.classList.remove(
+            "border-gray-300",
+            "dark:border-gray-600",
+            "text-gray-700",
+            "dark:text-gray-300"
+          );
+
           // Auto-advance to step 2
           setTimeout(() => showStep(2), 300);
         });
@@ -414,81 +661,165 @@ const t = translations[lang];
     // Step 2: Proceed to confirmation
     // Show error message
     function showError(message) {
-      const errorDiv = document.getElementById('form-error');
-      const errorText = errorDiv.querySelector('p');
+      const errorDiv = document.getElementById("form-error");
+      const errorText = errorDiv.querySelector("p");
       errorText.textContent = message;
-      errorDiv.classList.remove('hidden');
-      setTimeout(() => errorDiv.classList.add('hidden'), 5000);
+      errorDiv.classList.remove("hidden");
+      setTimeout(() => errorDiv.classList.add("hidden"), 5000);
     }
 
-    document.getElementById('proceed-to-step3')?.addEventListener('click', () => {
-      const nameInput = document.getElementById('full-name');
-      const emailInput = document.getElementById('email');
-      const phoneInput = document.getElementById('phone');
-
-      if (!nameInput.value || !emailInput.value) {
-        showError(lang === 'es' ? 'Por favor completa los campos requeridos.' : 'Please fill in required fields.');
-        return;
-      }
-
-      formData = {
-        name: nameInput.value,
-        email: emailInput.value,
-        phone: phoneInput.value || '',
-      };
-
-      // Update summary
-      const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      const dateStr = selectedDate.toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', dateOptions);
-      document.getElementById('summary-datetime').textContent = `${dateStr} - ${selectedTime}`;
-      document.getElementById('summary-name').textContent = formData.name;
-      document.getElementById('summary-email').textContent = formData.email;
-      document.getElementById('summary-phone').textContent = formData.phone || (lang === 'es' ? 'No proporcionado' : 'Not provided');
-
-      showStep(3);
-    });
+    // This handler is now replaced by the confirm-booking handler below
+    // (keeping comment for reference)
 
     // Back buttons
-    document.getElementById('back-to-step1')?.addEventListener('click', () => showStep(1));
-    document.getElementById('back-to-step2')?.addEventListener('click', () => showStep(2));
+    document
+      .getElementById("back-to-step1")
+      ?.addEventListener("click", () => showStep(1));
 
-    // Confirm booking
-    document.getElementById('confirm-booking')?.addEventListener('click', async () => {
-      const btn = document.getElementById('confirm-booking');
-      btn.disabled = true;
-      btn.textContent = lang === 'es' ? 'Procesando...' : 'Processing...';
+    // Confirm booking (from Step 2)
+    document
+      .getElementById("confirm-booking")
+      ?.addEventListener("click", async (e) => {
+        // Immediately prevent any default behavior and stop propagation
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        // Validate form
+        const nameInput = document.getElementById("full-name");
+        const emailInput = document.getElementById("email");
+        const phoneInput = document.getElementById("phone");
+        const notesInput = document.getElementById("notes");
 
-      try {
-        const dateStr = selectedDate.toISOString().split('T')[0];
-        
-        const response = await fetch(`${API_BASE}/book`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
+        // Validate date and time are selected
+        if (!selectedDate || !selectedTime) {
+          showError(
+            lang === "es"
+              ? "Por favor selecciona una fecha y hora primero."
+              : "Please select a date and time first."
+          );
+          showStep(1); // Go back to step 1
+          return;
+        }
+
+        if (!nameInput.value || !emailInput.value) {
+          showError(
+            lang === "es"
+              ? "Por favor completa los campos requeridos."
+              : "Please fill in required fields."
+          );
+          return;
+        }
+
+        // Prevent double-booking
+        if (isBooking) {
+          console.log(
+            "⚠️ Booking already in progress, ignoring duplicate click"
+          );
+          return;
+        }
+
+        isBooking = true;
+        const btn = document.getElementById("confirm-booking");
+        // Remove all event listeners by cloning the button
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+        newBtn.disabled = true;
+        newBtn.style.opacity = "0.6";
+        newBtn.style.cursor = "not-allowed";
+        newBtn.textContent = lang === "es" ? "Procesando..." : "Processing...";
+        console.log("📅 Starting booking process...");
+
+        // Capture form data
+        formData = {
+          name: nameInput.value,
+          email: emailInput.value,
+          phone: phoneInput.value || "",
+          notes: notesInput.value || "",
+        };
+
+        try {
+          const dateStr = selectedDate.toISOString().split("T")[0];
+
+          const bookingPayload = {
             name: formData.name,
             email: formData.email,
             date: dateStr,
             time: selectedTime,
-            lang: lang
-          })
-        });
-        
-        const data = await response.json();
-        
-        if (data.ok) {
-          window.location.href = lang === 'es' ? '/es/thank-you/?source=booking' : '/en/thank-you/?source=booking';
-        } else {
-          throw new Error(data.error || 'Booking failed');
+            lang: lang,
+            notes: formData.notes || "",
+          };
+
+          console.log("📤 Sending booking request:", bookingPayload);
+
+          const response = await fetch(`${API_BASE}/book`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(bookingPayload),
+          });
+
+          console.log("📥 Response status:", response.status);
+          const data = await response.json();
+          console.log("📥 Response data:", data);
+
+          if (data.ok) {
+            console.log("✅ Booking successful! Showing success page...");
+            console.log("📍 Current step before:", currentStep);
+
+            // Update summary in Step 3
+            const dateOptions = {
+              weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            };
+            const dateStrFormatted = selectedDate.toLocaleDateString(
+              lang === "es" ? "es-ES" : "en-US",
+              dateOptions
+            );
+            document.getElementById("summary-datetime").textContent =
+              `${dateStrFormatted} - ${selectedTime}`;
+            document.getElementById("summary-name").textContent = formData.name;
+            document.getElementById("summary-email").textContent =
+              formData.email;
+            document.getElementById("summary-phone").textContent =
+              formData.phone ||
+              (lang === "es" ? "No proporcionado" : "Not provided");
+
+            // Show Step 3 (Success)
+            console.log("🎯 About to show step 3...");
+
+            // Small delay to ensure DOM updates
+            setTimeout(() => {
+              showStep(3);
+              console.log("📍 Current step after:", currentStep);
+
+              // Scroll to top of booking container
+              document
+                .querySelector(".booking-steps-container")
+                ?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+            }, 100);
+          } else {
+            throw new Error(data.error || "Booking failed");
+          }
+        } catch (error) {
+          console.error("❌ Booking error:", error);
+          showError(
+            lang === "es"
+              ? "Hubo un error. Por favor intenta de nuevo."
+              : "There was an error. Please try again."
+          );
+          // Reset booking state on error
+          isBooking = false;
+          btn.disabled = false;
+          btn.style.opacity = "1";
+          btn.style.cursor = "pointer";
+          btn.textContent =
+            lang === "es" ? "Confirmar Cita" : "Confirm Appointment";
+          showStep(2); // Go back to step 2 to see the error
         }
-      } catch (error) {
-        showError(lang === 'es' 
-          ? 'Hubo un error. Por favor intenta de nuevo.' 
-          : 'There was an error. Please try again.');
-        btn.disabled = false;
-        btn.textContent = lang === 'es' ? 'Confirmar Cita' : 'Confirm Appointment';
-        showStep(2); // Go back to step 2 to see the error
-      }
-    });
+      });
 
     // Initialize
     updateDateDisplay(selectedDate);
