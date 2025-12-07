@@ -2,6 +2,7 @@
 title: "Master Business English & Grow Your Career"
 excerpt: "Personalized English coaching to help you speak with confidence."
 publishDate: "2025-04-03"
+lastmod: "2025-12-07"
 categories:
   - "Business English"
 featuredImage: "./images/business-english-coaching.jpg"

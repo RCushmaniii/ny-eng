@@ -2,6 +2,7 @@
 title: "Por qué líderes senior necesitan un coach nativo de inglés"
 excerpt: "Las clases estándar no bastan para ejecutivos. Descubre cómo un coach nativo con visión de negocios acelera el liderazgo y el crecimiento profesional."
 publishDate: "2025-04-18"
+lastmod: "2025-12-07"
 categories:
   - "Coaching en Inglés"
 featuredImage: "./images/executive-english-coaching.jpg"

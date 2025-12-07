@@ -2,6 +2,7 @@
 title: "Executive Presence on Video Calls: 7 Trust-Building Habits"
 excerpt: "Struggling to sound confident and credible on Zoom or Teams? Use these seven executive habits to project authority, speak clearly, and run high-impact meetings in English."
 publishDate: "2025-09-04"
+lastmod: "2025-12-07"
 categories:
   - "High-Impact Communication"
   - "Executive English"

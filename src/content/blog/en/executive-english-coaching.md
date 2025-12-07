@@ -1,7 +1,8 @@
 ---
 title: "Why Senior Leaders Need a Business-Savvy English Coach"
 excerpt: "Standard English lessons fall short for executives. Discover how a native coach with business insight accelerates leadership performance and career growth."
-publishDate: "2025-04-18" # Adjust date as needed
+publishDate: "2025-04-18"
+lastmod: "2025-12-07" # Adjust date as needed
 categories:
   - "English Coaching"
 featuredImage: "./images/executive-english-coaching.jpg"

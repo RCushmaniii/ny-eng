@@ -2,6 +2,7 @@
 title: "Por Qué Desarrolladores Senior Necesitan Inglés Avanzado"
 excerpt: "El inglés conversacional no te conseguirá el ascenso a desarrollador senior en una empresa global. La verdad brutal sobre la brecha de comunicación que frena a desarrolladores talentosos."
 publishDate: "2025-11-30"
+lastmod: "2025-12-07"
 categories:
   - "Inglés para Tecnología"
   - "Carrera & Liderazgo"

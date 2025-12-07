@@ -2,6 +2,7 @@
 title: "4 secretos para dominar el hablar improvisado en inglés"
 excerpt: "¿Te pone nervioso tener que hablar en situaciones espontáneas? Descubre cuatro estrategias comprobadas que usan los ejecutivos para comunicarse claramente y con seguridad sin preparación previa."
 publishDate: "2025-06-04"
+lastmod: "2025-12-07"
 categories:
   - "Comunicación de Alto Impacto"
 featuredImage: "./images/impromptu-speaking.jpg"

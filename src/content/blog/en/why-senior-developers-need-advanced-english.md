@@ -2,6 +2,7 @@
 title: "Why Senior Developers Need Advanced English, Not Conversational"
 excerpt: "Conversational English won't get you promoted to senior developer at a global company. Here's the brutal truth about the communication gap holding back talented developers."
 publishDate: "2025-11-30"
+lastmod: "2025-12-07"
 categories:
   - "Tech English"
   - "Career & Leadership"
