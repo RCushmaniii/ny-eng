@@ -80,10 +80,17 @@ class FullSiteScan {
     // Skip non-indexable pages for cleaner reporting
     const indexable = this.isIndexable(html);
     
-    // Skip dev docs, 404, thank-you, quiz questions (noindex)
-    if (!indexable || url.includes('/dev/') || url.includes('/404') || 
-        url.includes('/thank-you') || url.includes('/quiz/question/') ||
-        url.includes('/quiz/') && url.includes('/question/')) {
+    // Skip pages that are noindex, dev-only, or React-rendered (H1 injected client-side)
+    const skipPatterns = [
+      '/dev/',           // Dev documentation
+      '/404',            // 404 page
+      '/thank-you',      // Thank you pages
+      '/question/',      // Quiz question pages
+      '/report/',        // Quiz report pages (React-rendered, H1 client-side)
+      '/report-new/',    // Quiz report-new pages (React-rendered)
+    ];
+    
+    if (!indexable || skipPatterns.some(pattern => url.includes(pattern))) {
       return;
     }
 

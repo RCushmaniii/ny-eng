@@ -1,5 +1,5 @@
 ---
-title: "El Costo Real del Inglés Débil en Empresas Mexicanas: Contratos Perdidos, Proyectos Retrasados, Promociones Bloqueadas"
+title: "El Costo Real del Inglés Débil: Contratos y Promociones Perdidas"
 excerpt: "El inglés deficiente no es solo un inconveniente—crea pérdidas de ingresos medibles, retrabajo y techos profesionales. Así es como sucede y qué hacer al respecto."
 publishDate: "2025-11-30"
 lastmod: "2025-11-30"

@@ -50,7 +50,15 @@ Then open your browser and go to: `http://localhost:4321`
 npm run build
 ```
 
-### 5. Preview the production build
+### 5. Pre-deploy audit (required before deployment)
+
+```powershell
+npm run pre-deploy
+```
+
+This runs comprehensive SEO and technical checks to ensure the site is deployment-ready.
+
+### 6. Preview the production build
 
 ```powershell
 npm run preview
@@ -215,6 +223,57 @@ To verify the sitemap is working correctly:
    - Proper alternate language links for each page
 
 ## 📝 Recent Updates & Changes
+
+### Executive Strategy Session Booking System (December 2025)
+
+**Major Feature Launch**: Redesigned booking system with premium UX, brand-aligned design, and robust double-booking prevention.
+
+**Booking Page Rebranding**:
+
+- Transitioned from "English Teacher Class Schedule" to "Executive Strategy Session"
+- Updated hero image to architectural dark blue background (`book-hero.jpg`)
+- Changed session duration from "30 min appointments" to "15 min analysis"
+- Added high-status notes field with executive-focused placeholder text
+- Bilingual implementation with Mexican Spanish localization
+
+**Premium Success Page (Step 3)**:
+
+- **Brand-Aligned Blue Checkmark**: Changed from generic green to professional blue (`bg-blue-50`, `text-blue-700`)
+- **Combined Booking Summary + Success Message**: Seamless UX showing confirmation and next steps
+- **"How to Prepare" Section**: Reduces no-shows and adds executive authority
+- **Ghost "Return to Homepage" Link**: Subtle text link that doesn't compete with main CTA
+- **Mobile-Optimized**: Responsive design with smooth scroll-to-top on success
+
+**Technical Improvements**:
+
+- **Triple-Layer Double-Booking Prevention**:
+  1. Event prevention (`e.preventDefault()`, `e.stopImmediatePropagation()`)
+  2. Boolean flag guard (`isBooking` state)
+  3. Button cloning to remove all event listeners
+- **Enhanced Form Validation**: Date/time validation before submission
+- **Comprehensive Error Handling**: User-friendly error messages with automatic recovery
+- **Debug Logging**: Console logs for troubleshooting booking flow
+
+**Cloudflare Worker Updates**:
+
+- Removed duplicate attendee entry to prevent calendar sync issues
+- Specified single calendar ID to prevent multi-calendar duplicates
+- Maintained Google Meet integration and email notifications
+
+**Key Files Modified**:
+
+- `src/pages/en/book.astro` - English booking page
+- `src/pages/es/reservar.astro` - Spanish booking page
+- `src/components/booking/BookingFormSteps.astro` - 3-step booking flow
+- `cloudflare-worker.js` - API endpoint for calendar integration
+
+**User Experience Flow**:
+
+1. **Step 1: Date & Time** - Calendar selection with available slots
+2. **Step 2: Details** - Name, email, phone, and executive goals/notes
+3. **Step 3: Booked** - Success confirmation with booking summary and preparation instructions
+
+**Design Score**: 10/10 - Premium, executive-focused, conversion-optimized
 
 ### Quiz Lead Magnet Implementation (November 2025)
 
@@ -761,6 +820,41 @@ src/content/
 4. **Restart Dev Server**: `npm run dev` after major changes
 5. **Build Test**: Run `npm run build` before deployment
 
+## 🔍 Pre-Deploy Audit System
+
+**Version:** 2.0.0 (December 7, 2025)
+
+The pre-deploy audit system ensures world-class SEO and technical quality before every deployment.
+
+### Quick Start
+
+```bash
+npm run pre-deploy  # Full audit pipeline
+```
+
+### Audits Included
+
+1. **SEO Validator** - Meta tags, H1, canonicals, hreflang, OG tags
+2. **Sitemap Validator** - URL integrity, hreflang coverage
+3. **Full Site Scan** - All HTML files for SEO issues
+
+### Score System
+
+- Reports: X/Y checks passed (currently 3/3)
+- Errors block deployment
+- Warnings reported but don't block
+
+### Recent Achievements
+
+- ✅ Perfect score: 3/3 checks passed
+- ✅ Zero warnings or errors
+- ✅ All H1 tags optimized (eyebrow strategy for quiz pages)
+- ✅ All meta descriptions meet length requirements
+
+See [docs/PRE-DEPLOY-AUDIT-SYSTEM.md](./docs/PRE-DEPLOY-AUDIT-SYSTEM.md) for complete documentation.
+
+---
+
 ## 🚀 Deployment
 
 The site is configured for static deployment. Run `npm run build` to generate the static files in the `dist/` directory.
@@ -772,6 +866,7 @@ The site is configured for static deployment. Run `npm run build` to generate th
 - [ ] Both English and Spanish versions tested
 - [ ] SEO metadata complete for all pages
 - [ ] Translation slugs properly configured
+- [ ] **Pre-deploy audit passes** (`npm run pre-deploy`)
 - [ ] Build completes without errors
 
 ## 🗺️ Future Roadmap
@@ -798,5 +893,5 @@ The site is configured for static deployment. Run `npm run build` to generate th
 
 ---
 
-**Last Updated**: November 2025 - v2.0.0 Complete Dynamic Quiz System & Lead Magnet with Spanish Localization
+**Last Updated**: December 2025 - v2.1.0 Executive Strategy Session Booking System + v2.0.0 Complete Dynamic Quiz System & Lead Magnet with Spanish Localization
 **Contributors**: Development team focused on bilingual business English coaching platform

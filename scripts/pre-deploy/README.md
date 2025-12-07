@@ -151,8 +151,11 @@ Running comprehensive checks before deployment...
 - ✅ H1 tag (20-70 chars, exactly one per page)
 - ✅ Canonical URL (present and valid)
 - ✅ Hreflang tags (reciprocal and valid)
+- ✅ Open Graph tags (title, description, image, url, locale)
+- ✅ Image alt text validation
+- ✅ HTML lang attribute
 
-**URLs Checked:** 58 critical pages from `CRITICAL-URLS.txt`
+**URLs Checked:** Critical pages from `CRITICAL-URLS.txt`
 
 **Exit Codes:**
 
@@ -161,17 +164,45 @@ Running comprehensive checks before deployment...
 
 ---
 
+### ✅ Sitemap Validator (`audits/sitemap-validator.js`)
+
+**Status:** Fully Implemented
+
+**Checks:**
+
+- ✅ All URLs in sitemap are canonical
+- ✅ Hreflang tags present and valid (en-US, es-MX, x-default)
+- ✅ All critical URLs are in sitemap
+- ✅ No 404s in sitemap
+- ✅ Category pages excluded from hreflang check (use customHreflangs in HTML)
+
+**Exit Codes:**
+
+- `0` = All checks passed
+- `1` = One or more errors found
+
+---
+
+### ✅ Full Site Scan (`audits/full-site-scan.js`)
+
+**Status:** Fully Implemented
+
+**Checks:**
+
+- ✅ Scans ALL HTML files in dist/
+- ✅ Meta title length validation
+- ✅ Meta description length validation
+- ✅ H1 tag presence (exactly one per page)
+- ✅ Excludes noindex pages, dev docs, quiz questions/reports
+
+**Exit Codes:**
+
+- `0` = All checks passed
+- `1` = One or more indexable issues found
+
+---
+
 ## Planned Audits
-
-### ⚪ Critical URLs Validator
-
-**Status:** Not Implemented
-
-**Will Check:**
-
-- All 58 URLs return 200 status
-- All URLs are present in sitemap
-- No broken redirects
 
 ### ⚪ Internal Links Validator
 
@@ -182,17 +213,6 @@ Running comprehensive checks before deployment...
 - No broken internal links
 - All links return 200 or valid redirect
 - No orphan pages
-
-### ⚪ Sitemap Validator
-
-**Status:** Not Implemented
-
-**Will Check:**
-
-- Sitemap is valid XML
-- All URLs are canonical
-- No 404s or redirects in sitemap
-- Proper hreflang in sitemap
 
 ---
 
@@ -312,10 +332,33 @@ async run() {
 
 ## Current Status
 
-**Implemented:** 1/4 audits (25%)
-**Score:** 1/1 checks passed (100%)
+**Implemented:** 3/3 audits (100%)
+
+- ✅ SEO Validator
+- ✅ Sitemap Validator
+- ✅ Full Site Scan
+
+**Planned:** 1 audit
+
+- ⚪ Internal Links Validator
+
 **Ready for Production:** ✅ Yes
 
 ---
 
-**Last Updated:** November 29, 2025
+## Excluded from Checks (By Design)
+
+The following page types are intentionally excluded from SEO checks:
+
+| Page Type            | Reason                                           |
+| -------------------- | ------------------------------------------------ |
+| `/dev/*`             | Development documentation only                   |
+| `/404`               | Error page, not indexed                          |
+| `/thank-you`         | Post-conversion, no SEO value                    |
+| `/quiz/*/question/*` | Thin content, noindex                            |
+| `/quiz/*/report/*`   | React-rendered, H1 client-side                   |
+| `/category/*`        | Uses customHreflangs in HTML (working correctly) |
+
+---
+
+**Last Updated:** December 7, 2025

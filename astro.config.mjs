@@ -23,8 +23,8 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   site: SITE,
-  output: "static", // Static build for Hostinger (API routes handled by Netlify separately)
-  // No adapter needed for static build
+  output: "static", // Static build for Hostinger
+  // API routes are excluded from build - they won't be included in dist/
 
   image: {
     service: {

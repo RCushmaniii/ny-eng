@@ -7,10 +7,12 @@
  * Run: npm run pre-deploy
  * 
  * Checks performed:
- * 1. Technical SEO validation (meta tags, h1, canonicals, hreflang)
- * 2. Critical URLs verification (all 76 URLs exist and are in sitemap)
- * 3. Internal links validation (no broken links)
- * 4. Sitemap integrity check
+ * 1. Technical SEO validation (meta tags, h1, canonicals, hreflang, OG tags)
+ * 2. Sitemap integrity check (canonical URLs, hreflang, critical URL coverage)
+ * 3. Full site scan (all HTML files for SEO issues)
+ * 
+ * @version 2.0.0
+ * @updated 2025-12-07
  */
 
 import { execSync } from 'child_process';
@@ -34,9 +36,11 @@ class AuditManager {
    * Print header
    */
   printHeader() {
+    const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19);
     console.log('\n' + '='.repeat(80));
     console.log('🚀 PRE-DEPLOYMENT AUDIT');
-    console.log('='.repeat(80) + '\n');
+    console.log('='.repeat(80));
+    console.log(`📅 ${timestamp}`);
     console.log('Running comprehensive checks before deployment...\n');
   }
 

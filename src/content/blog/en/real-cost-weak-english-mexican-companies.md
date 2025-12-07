@@ -1,5 +1,5 @@
 ---
-title: "The Real Cost of Weak English in Mexican Companies: Lost Deals, Delayed Projects, Promotions Blocked"
+title: "The Real Cost of Weak English: Lost Deals, Blocked Promotions"
 excerpt: "Poor English isn't just inconvenient—it creates measurable revenue loss, rework, and career ceilings. Here's how it happens and what to do."
 publishDate: "2025-11-30"
 lastmod: "2025-11-30"

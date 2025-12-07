@@ -1,13 +1,16 @@
 ---
-export const prerender = false;
+/**
+ * Development Dashboard - DEV MODE ONLY
+ *
+ * This page uses Node.js filesystem APIs and is only available during development.
+ * In production builds, it renders a simple redirect page.
+ */
 
-import fs from "node:fs";
-import path from "node:path";
+export const prerender = true;
 
-if (!import.meta.env.DEV) {
-  throw new Error("Dashboard only available in development mode");
-}
+const isDev = import.meta.env.DEV;
 
+// Types
 interface ReportSummary {
   totalChecks: number;
   passed: number;
@@ -134,19 +137,9 @@ const scriptConfig: ScriptConfig[] = [
   },
 ] as const;
 
-const reportsDir = path.join(process.cwd(), "project-reports");
-
-const reportFileMap: Record<ScriptId, string> = {
-  "report-structure": "report-structure.json",
-  "validate-urls": "validate-url-structure.json",
-  "validate-hreflang": "hreflang-validator.json",
-  "validate-seo": "validate-seo.json",
-  "fix-links": "fix-links.json",
-  "seo-audit": "seo-audit.json",
-};
-
-const reports: Report[] = [];
-const reportsByScript = scriptConfig.reduce(
+// Initialize empty data structures
+let reports: Report[] = [];
+let reportsByScript: Record<ScriptId, Report> = scriptConfig.reduce(
   (acc, script) => {
     acc[script.id] = {
       script: script.id,
@@ -159,48 +152,68 @@ const reportsByScript = scriptConfig.reduce(
   {} as Record<ScriptId, Report>
 );
 
-// Load reports
-for (const script of scriptConfig) {
-  const reportFile = reportFileMap[script.id];
-  const reportPath = path.join(reportsDir, reportFile);
+let counts = { red: 0, orange: 0, yellow: 0, green: 0 };
+let healthScore = 0;
 
-  try {
-    if (fs.existsSync(reportPath)) {
-      const fileContent = fs.readFileSync(reportPath, "utf-8");
-      const reportData = JSON.parse(fileContent);
+// Only load reports in dev mode (filesystem access)
+if (isDev) {
+  const fs = await import("node:fs");
+  const path = await import("node:path");
 
-      const report: Report = {
-        script: script.id,
-        runAt: reportData.runAt || new Date().toISOString(),
-        status: reportData.status as StatusType,
-        summary: reportData.summary,
-        issues: reportData.issues || [],
-        metadata: reportData.metadata,
-      };
+  const reportsDir = path.join(process.cwd(), "project-reports");
 
-      reports.push(report);
-      reportsByScript[script.id] = report;
+  const reportFileMap: Record<ScriptId, string> = {
+    "report-structure": "report-structure.json",
+    "validate-urls": "validate-url-structure.json",
+    "validate-hreflang": "hreflang-validator.json",
+    "validate-seo": "validate-seo.json",
+    "fix-links": "fix-links.json",
+    "seo-audit": "seo-audit.json",
+  };
+
+  // Load reports from filesystem
+  for (const script of scriptConfig) {
+    const reportFile = reportFileMap[script.id];
+    const reportPath = path.join(reportsDir, reportFile);
+
+    try {
+      if (fs.existsSync(reportPath)) {
+        const fileContent = fs.readFileSync(reportPath, "utf-8");
+        const reportData = JSON.parse(fileContent);
+
+        const report: Report = {
+          script: script.id,
+          runAt: reportData.runAt || new Date().toISOString(),
+          status: reportData.status as StatusType,
+          summary: reportData.summary,
+          issues: reportData.issues || [],
+          metadata: reportData.metadata,
+        };
+
+        reports.push(report);
+        reportsByScript[script.id] = report;
+      }
+    } catch (error) {
+      // Silent fail - will show as "Not Run"
     }
-  } catch (error) {
-    // Silent fail - will show as "Not Run"
   }
+
+  counts = {
+    red: reports.filter((r) => r.status === "red").length,
+    orange: reports.filter((r) => r.status === "orange").length,
+    yellow: reports.filter((r) => r.status === "yellow").length,
+    green: reports.filter((r) => r.status === "green").length,
+  };
+
+  healthScore =
+    reports.length > 0
+      ? Math.round(
+          ((counts.green * 100 + counts.yellow * 70 + counts.orange * 40) /
+            (reports.length * 100)) *
+            100
+        )
+      : 0;
 }
-
-const counts = {
-  red: reports.filter((r) => r.status === "red").length,
-  orange: reports.filter((r) => r.status === "orange").length,
-  yellow: reports.filter((r) => r.status === "yellow").length,
-  green: reports.filter((r) => r.status === "green").length,
-};
-
-const healthScore =
-  reports.length > 0
-    ? Math.round(
-        ((counts.green * 100 + counts.yellow * 70 + counts.orange * 40) /
-          (reports.length * 100)) *
-          100
-      )
-    : 0;
 ---
 
 <!doctype html>

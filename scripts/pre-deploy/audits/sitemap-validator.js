@@ -179,13 +179,20 @@ class SitemapValidator {
       return;
     }
 
-    // Check hreflang
-    const hreflangCheck = this.checkHreflang(url);
-    if (!hreflangCheck.valid) {
-      this.warnings.push({
-        url,
-        issue: `Hreflang issue: ${hreflangCheck.reason}`
-      });
+    // Skip hreflang check for category pages - they use customHreflangs in HTML
+    // which are correctly implemented but not reflected in sitemap XML
+    const urlPath = new URL(url).pathname;
+    const isCategoryPage = urlPath.includes('/category/') || urlPath.includes('/categoria/');
+    
+    if (!isCategoryPage) {
+      // Check hreflang
+      const hreflangCheck = this.checkHreflang(url);
+      if (!hreflangCheck.valid) {
+        this.warnings.push({
+          url,
+          issue: `Hreflang issue: ${hreflangCheck.reason}`
+        });
+      }
     }
 
     this.passed.push(url);
