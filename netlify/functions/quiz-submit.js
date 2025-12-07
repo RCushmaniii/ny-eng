@@ -47,12 +47,22 @@ function calculateScore(answers, quizType) {
 }
 
 exports.handler = async (event, context) => {
+  // Determine allowed origin based on request origin
+  const origin = event.headers.origin || event.headers.Origin;
+  const allowedOrigins = [
+    'https://www.nyenglishteacher.com',
+    'http://localhost:4321',
+    'http://localhost:4322',
+    'http://localhost:3000'
+  ];
+  const allowedOrigin = allowedOrigins.includes(origin) ? origin : 'https://www.nyenglishteacher.com';
+
   // Handle CORS preflight
   if (event.httpMethod === 'OPTIONS') {
     return {
       statusCode: 200,
       headers: {
-        'Access-Control-Allow-Origin': 'https://www.nyenglishteacher.com',
+        'Access-Control-Allow-Origin': allowedOrigin,
         'Access-Control-Allow-Headers': 'Content-Type',
         'Access-Control-Allow-Methods': 'POST, OPTIONS'
       },
@@ -63,7 +73,7 @@ exports.handler = async (event, context) => {
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
-      headers: { 'Access-Control-Allow-Origin': 'https://www.nyenglishteacher.com' },
+      headers: { 'Access-Control-Allow-Origin': allowedOrigin },
       body: JSON.stringify({ error: 'Method not allowed' })
     };
   }
@@ -76,7 +86,7 @@ exports.handler = async (event, context) => {
       return {
         statusCode: 400,
         headers: {
-          'Access-Control-Allow-Origin': 'https://www.nyenglishteacher.com',
+          'Access-Control-Allow-Origin': allowedOrigin,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -170,7 +180,7 @@ exports.handler = async (event, context) => {
       return {
         statusCode: 200,
         headers: {
-          'Access-Control-Allow-Origin': 'https://www.nyenglishteacher.com',
+          'Access-Control-Allow-Origin': allowedOrigin,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -189,7 +199,7 @@ exports.handler = async (event, context) => {
     return {
       statusCode: 500,
       headers: {
-        'Access-Control-Allow-Origin': 'https://www.nyenglishteacher.com',
+        'Access-Control-Allow-Origin': allowedOrigin,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
