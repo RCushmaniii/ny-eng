@@ -25,6 +25,7 @@ const __dirname = path.dirname(__filename);
 class AuditManager {
   constructor() {
     this.results = {
+      projectHealth: null,
       seo: null,
       sitemap: null,
       fullScan: null,
@@ -42,6 +43,24 @@ class AuditManager {
     console.log('='.repeat(80));
     console.log(`📅 ${timestamp}`);
     console.log('Running comprehensive checks before deployment...\n');
+  }
+
+  /**
+   * Run Project Health Check
+   */
+  async runProjectHealthCheck() {
+    console.log('🏥 Running Project Health Check...');
+    try {
+      execSync('node scripts/pre-deploy/project-health-checker.js', { 
+        stdio: 'inherit',
+        cwd: path.resolve(__dirname, '../..')
+      });
+      this.results.projectHealth = 'PASS';
+      return true;
+    } catch (error) {
+      this.results.projectHealth = 'FAIL';
+      return false;
+    }
   }
 
   /**
@@ -150,6 +169,9 @@ class AuditManager {
    */
   async run() {
     this.printHeader();
+
+    // Run Project Health Check first (foundation)
+    await this.runProjectHealthCheck();
 
     // Run SEO audit
     await this.runSeoAudit();

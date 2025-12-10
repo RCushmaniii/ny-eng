@@ -8,6 +8,7 @@ import Features from "@components/sections/Features.astro";
 import RecentPosts from "@components/sections/RecentPosts.astro";
 import Testimonials from "@components/sections/Testimonials-titan.astro";
 import QuizPromotion from "@components/sections/QuizPromotion.astro";
+import HomepageFAQ from "@components/HomepageFAQ";
 
 // Define language and tkey for i18n
 const lang = "es";
@@ -214,6 +215,9 @@ const recentPostsSection = {
       padding="base"
       lang="es"
     />
+
+    <!-- Homepage FAQ Section -->
+    <HomepageFAQ client:load lang="es" />
 
     <!-- Stats temporarily removed -->
     <!-- <Stats content={sideBySideStats} background="dark" padding="base" /> -->

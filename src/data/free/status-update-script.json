@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "id": "status-update-script",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "script",
+    "format": "pdf-script",
+    "funnelStage": "consideration",
+    "difficultyLevel": "beginner",
+    "timeToComplete": "5 minutes",
+    "estimatedMinutes": 5,
+    "pageCount": 4,
+    "tags": ["status-updates", "meetings", "project-management", "reporting", "communication"]
+  },
+  "targeting": {
+    "primaryPersona": ["manager", "project-manager", "engineer", "consultant"],
+    "industries": ["technology", "professional-services", "all"],
+    "scenarios": ["meetings", "status-updates", "client-meetings"],
+    "painPoints": [
+      "Status updates that ramble without structure",
+      "Clients asking 'so what's the bottom line?'",
+      "Taking too long to explain project progress",
+      "Not knowing what details to include or exclude"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free strategy call to master confident project communication",
+    "relatedAssets": ["client-call-opening-closing-framework", "5-questions-high-stakes-meeting"]
+  },
+  "seo": {
+    "metaDescription": "Get the 60-second status update formula that executives love. Stop rambling in meetings and start communicating like a senior leader.",
+    "keywords": ["status update template", "project status report", "how to give status updates", "executive status report"]
+  },
+  "slugEn": "status-update-script",
+  "slugEs": "script-actualizacion-estado",
+  "en": {
+    "title": "The 60-Second Status Update Script",
+    "subtitle": "The Formula That Executives Actually Want to Hear",
+    "description": "Stop rambling through status updates. This proven formula lets you communicate project progress in 60 seconds—with the structure senior leaders expect.",
+    "headline": "Give Status Updates That Get Respect, Not Glazed-Over Eyes",
+    "valueProposition": "Learn the exact 4-part formula that makes executives lean in instead of tuning out.",
+    "leadCapture": {
+      "formHeadline": "Get the Status Update Script",
+      "formSubheadline": "The 60-second formula executives love",
+      "buttonText": "Send Me the Script",
+      "successMessage": "Check your inbox! Your script is on its way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Why Most Status Updates Fail",
+        "content": "Here's what executives hear when you give a typical status update: 'blah blah blah technical detail blah blah blah we're working on it blah blah blah.'\n\nThey're not listening because you're not speaking their language. They want three things: Where are we? What's the risk? What do you need? Everything else is noise.\n\nThis 4-part formula gives them exactly that—in 60 seconds or less."
+      },
+      {
+        "id": "formula",
+        "title": "The STAR Formula",
+        "items": [
+          {
+            "number": 1,
+            "title": "S = Status (10 seconds)",
+            "content": "Lead with the headline. Are you on track, at risk, or blocked? Don't bury the lead in details—executives want the bottom line first.",
+            "example": {
+              "wrong": "So we've been working on the integration and there have been some challenges with the API documentation and we're trying to work through them...",
+              "right": "Project X is on track for the March 15 delivery.",
+              "why": "The executive now knows the most important thing. Everything else is context."
+            },
+            "actionItem": "Start every status update with ONE sentence that answers: 'Are we on track?'"
+          },
+          {
+            "number": 2,
+            "title": "T = Timeline (15 seconds)",
+            "content": "Give the key milestones—what's done, what's next, and when. Use dates, not vague timeframes.",
+            "example": {
+              "wrong": "We finished the first phase recently and we're working on the next part now. It should be done soon.",
+              "right": "Phase 1 completed last Friday. Phase 2 starts Monday and delivers March 1. Final delivery March 15.",
+              "why": "Specific dates show you have control. Vague timelines signal uncertainty."
+            },
+            "actionItem": "Always have three dates ready: last milestone, next milestone, final delivery."
+          },
+          {
+            "number": 3,
+            "title": "A = At Risk (20 seconds)",
+            "content": "Proactively flag anything that could derail the project. If nothing's at risk, say so clearly. If something is, name it and your mitigation plan.",
+            "example": {
+              "wrong": "Well, there are a few things we're keeping an eye on... the vendor might be late and there's a resource question...",
+              "right": "One risk: the vendor API documentation is incomplete. Mitigation: I've scheduled a call with their team Thursday to resolve.",
+              "why": "Executives respect people who see problems coming. They lose trust in people who get surprised."
+            },
+            "actionItem": "Before every status meeting, ask yourself: 'What could go wrong this week?'"
+          },
+          {
+            "number": 4,
+            "title": "R = Request (15 seconds)",
+            "content": "End with what you need—a decision, resource, or just acknowledgment. If you need nothing, say that too.",
+            "example": {
+              "wrong": "So yeah, that's where we are... any questions? I guess we'll just keep going...",
+              "right": "I need one thing from you: approval to bring in a contractor for two weeks. That keeps us on schedule.",
+              "why": "Clear requests get clear answers. Vague endings get forgotten."
+            },
+            "actionItem": "End every status update with 'I need...' or 'No blockers—we're good to continue.'"
+          }
+        ]
+      },
+      {
+        "id": "complete-script",
+        "title": "The Complete 60-Second Script",
+        "content": "Here's how it sounds when you put it all together:\n\n'Project X is on track for the March 15 delivery. [STATUS]\n\nPhase 1 completed last Friday. Phase 2 starts Monday and delivers March 1. Final delivery March 15. [TIMELINE]\n\nOne risk: the vendor API documentation is incomplete. Mitigation: I've scheduled a call with their team Thursday to resolve. [AT RISK]\n\nI need one thing from you: approval to bring in a contractor for two weeks. That keeps us on schedule. [REQUEST]'\n\nTotal time: 45 seconds. Total confidence: 100%."
+      }
+    ]
+  },
+  "es": {
+    "title": "El Script de Actualización de Estado en 60 Segundos",
+    "subtitle": "La Fórmula Que los Ejecutivos Realmente Quieren Escuchar",
+    "description": "Deja de divagar en actualizaciones de estado. Esta fórmula probada te permite comunicar progreso del proyecto en 60 segundos—con la estructura que los líderes senior esperan.",
+    "headline": "Da Actualizaciones de Estado Que Ganan Respeto, No Ojos Vidriosos",
+    "valueProposition": "Aprende la fórmula exacta de 4 partes que hace que los ejecutivos presten atención en lugar de desconectarse.",
+    "leadCapture": {
+      "formHeadline": "Obtén el Script de Actualización",
+      "formSubheadline": "La fórmula de 60 segundos que los ejecutivos aman",
+      "buttonText": "Envíame el Script",
+      "successMessage": "¡Revisa tu bandeja! Tu script está en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Por Qué la Mayoría de las Actualizaciones de Estado Fallan",
+        "content": "Esto es lo que los ejecutivos escuchan cuando das una actualización de estado típica: 'bla bla bla detalle técnico bla bla bla estamos trabajando en ello bla bla bla.'\n\nNo están escuchando porque no estás hablando su idioma. Quieren tres cosas: ¿Dónde estamos? ¿Cuál es el riesgo? ¿Qué necesitas? Todo lo demás es ruido.\n\nEsta fórmula de 4 partes les da exactamente eso—en 60 segundos o menos."
+      },
+      {
+        "id": "formula",
+        "title": "La Fórmula STAR",
+        "items": [
+          {
+            "number": 1,
+            "title": "S = Status/Estado (10 segundos)",
+            "content": "Empieza con el titular. ¿Estás en camino, en riesgo, o bloqueado? No entierres lo importante en detalles—los ejecutivos quieren la conclusión primero.",
+            "example": {
+              "wrong": "So we've been working on the integration and there have been some challenges with the API documentation and we're trying to work through them...",
+              "right": "Project X is on track for the March 15 delivery.",
+              "why": "El ejecutivo ahora sabe lo más importante. Todo lo demás es contexto."
+            },
+            "actionItem": "Empieza cada actualización con UNA oración que responda: '¿Estamos en camino?'"
+          },
+          {
+            "number": 2,
+            "title": "T = Timeline/Cronograma (15 segundos)",
+            "content": "Da los hitos clave—qué está hecho, qué sigue, y cuándo. Usa fechas, no plazos vagos.",
+            "example": {
+              "wrong": "We finished the first phase recently and we're working on the next part now. It should be done soon.",
+              "right": "Phase 1 completed last Friday. Phase 2 starts Monday and delivers March 1. Final delivery March 15.",
+              "why": "Fechas específicas muestran que tienes control. Cronogramas vagos señalan incertidumbre."
+            },
+            "actionItem": "Siempre ten tres fechas listas: último hito, próximo hito, entrega final."
+          },
+          {
+            "number": 3,
+            "title": "A = At Risk/En Riesgo (20 segundos)",
+            "content": "Señala proactivamente cualquier cosa que pueda descarrilar el proyecto. Si nada está en riesgo, dilo claramente. Si algo lo está, nómbralo y tu plan de mitigación.",
+            "example": {
+              "wrong": "Well, there are a few things we're keeping an eye on... the vendor might be late and there's a resource question...",
+              "right": "One risk: the vendor API documentation is incomplete. Mitigation: I've scheduled a call with their team Thursday to resolve.",
+              "why": "Los ejecutivos respetan a quienes ven problemas venir. Pierden confianza en quienes se sorprenden."
+            },
+            "actionItem": "Antes de cada reunión de estado, pregúntate: '¿Qué podría salir mal esta semana?'"
+          },
+          {
+            "number": 4,
+            "title": "R = Request/Solicitud (15 segundos)",
+            "content": "Termina con lo que necesitas—una decisión, recurso, o solo reconocimiento. Si no necesitas nada, dilo también.",
+            "example": {
+              "wrong": "So yeah, that's where we are... any questions? I guess we'll just keep going...",
+              "right": "I need one thing from you: approval to bring in a contractor for two weeks. That keeps us on schedule.",
+              "why": "Solicitudes claras obtienen respuestas claras. Finales vagos se olvidan."
+            },
+            "actionItem": "Termina cada actualización con 'I need...' o 'No blockers—we're good to continue.'"
+          }
+        ]
+      },
+      {
+        "id": "complete-script",
+        "title": "El Script Completo de 60 Segundos",
+        "content": "Así suena cuando lo juntas todo:\n\n'Project X is on track for the March 15 delivery. [STATUS]\n\nPhase 1 completed last Friday. Phase 2 starts Monday and delivers March 1. Final delivery March 15. [TIMELINE]\n\nOne risk: the vendor API documentation is incomplete. Mitigation: I've scheduled a call with their team Thursday to resolve. [AT RISK]\n\nI need one thing from you: approval to bring in a contractor for two weeks. That keeps us on schedule. [REQUEST]'\n\nTiempo total: 45 segundos. Confianza total: 100%."
+      }
+    ]
+  }
+}

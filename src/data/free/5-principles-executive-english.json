@@ -1,0 +1,202 @@
+{
+  "metadata": {
+    "id": "5-principles-executive-english",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "guide",
+    "format": "pdf-guide",
+    "funnelStage": "awareness",
+    "difficultyLevel": "beginner",
+    "timeToComplete": "5 minutes",
+    "estimatedMinutes": 5,
+    "pageCount": 4,
+    "tags": ["principles", "fundamentals", "executive-presence", "communication-basics"]
+  },
+  "targeting": {
+    "primaryPersona": ["executive", "manager", "all"],
+    "industries": ["technology", "professional-services", "finance"],
+    "scenarios": ["client-meetings", "presentations", "negotiations"],
+    "painPoints": [
+      "Feeling uncertain about English in high-stakes situations",
+      "Not knowing the fundamentals of executive communication",
+      "Sounding less confident than intended"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free strategy call to apply these principles to your specific role",
+    "relatedAssets": ["10-common-mistakes-executive-english", "5-quick-wins-executive-english"]
+  },
+  "seo": {
+    "metaDescription": "Master the 5 essential principles that separate junior-sounding English from executive-level communication in North American business.",
+    "keywords": ["executive english principles", "business communication fundamentals", "professional english basics", "executive presence"]
+  },
+  "slugEn": "5-principles-executive-english",
+  "slugEs": "5-principios-ingles-ejecutivo",
+  "en": {
+    "title": "The 5 Essential Principles of Executive English",
+    "subtitle": "The Foundation Every Latin American Professional Needs",
+    "description": "These 5 principles separate junior-sounding English from executive-level communication. Master these fundamentals and you'll sound more confident in every high-stakes conversation.",
+    "headline": "Stop Second-Guessing Your English in High-Stakes Moments",
+    "valueProposition": "Learn the 5 core principles that North American executives use to command respect and credibility in every conversation.",
+    "leadCapture": {
+      "formHeadline": "Get the 5 Principles Guide",
+      "formSubheadline": "The foundation of executive-level English",
+      "buttonText": "Send Me the Guide",
+      "successMessage": "Check your inbox! Your guide is on its way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Why These 5 Principles Matter",
+        "content": "You're technically competent. You know your industry. But when you're on a call with a Fortune 500 client, something changes. You hesitate. You over-explain. You defer to email instead of answering in real-time.\n\nThese 5 principles give you the foundational framework to transform your executive English—starting today."
+      },
+      {
+        "id": "principles",
+        "title": "The 5 Essential Principles",
+        "items": [
+          {
+            "number": 1,
+            "title": "Clarity Over Complexity",
+            "content": "Executive English isn't about using big words—it's about being understood instantly. The most senior leaders use simple, direct language.",
+            "example": {
+              "wrong": "We need to leverage our synergistic capabilities to optimize the deliverables.",
+              "right": "We need to work together to improve results.",
+              "why": "Simple language signals confidence. Complex language signals insecurity."
+            },
+            "actionItem": "Review your last 5 emails. Replace any word over 3 syllables with a simpler alternative."
+          },
+          {
+            "number": 2,
+            "title": "Brevity Signals Confidence",
+            "content": "Senior executives speak in 2-3 sentences. Junior professionals over-explain. Train yourself to make your point and stop.",
+            "example": {
+              "wrong": "So basically, what I'm trying to say is that, you know, we should probably consider maybe looking at the possibility of exploring other options.",
+              "right": "I recommend we explore other options. Here's why.",
+              "why": "Padding phrases signal uncertainty. Direct statements signal authority."
+            },
+            "actionItem": "In your next meeting, challenge yourself to answer questions in under 30 seconds."
+          },
+          {
+            "number": 3,
+            "title": "Structure Creates Understanding",
+            "content": "Always signal where you're going before you go there. Use frameworks like 'I have three points' or 'Let me give you context, then my recommendation.'",
+            "example": {
+              "wrong": "Well, there's the budget issue, and also timeline, and we should probably talk about resources too, and scope might be a problem...",
+              "right": "We have three concerns: budget, timeline, and scope. Let me walk through each.",
+              "why": "Structure helps your listener follow your thinking. Rambling creates confusion."
+            },
+            "actionItem": "Before your next explanation, pause and ask: 'What's my structure?'"
+          },
+          {
+            "number": 4,
+            "title": "Specificity Builds Credibility",
+            "content": "Vague statements make you forgettable. Specific details make you memorable and trustworthy.",
+            "example": {
+              "wrong": "We've helped a lot of companies improve their results.",
+              "right": "We helped Terramar Brands close 3 enterprise deals worth $540K in 8 weeks.",
+              "why": "Numbers and names create credibility. Generalities create doubt."
+            },
+            "actionItem": "Add one specific number or name to your next client conversation."
+          },
+          {
+            "number": 5,
+            "title": "Silence Is a Power Tool",
+            "content": "The urge to fill silence is strong—resist it. Pausing after a point gives it weight. Pausing after a question gives you time to think.",
+            "example": {
+              "wrong": "So, um, what do you think? I mean, does that make sense? Should I explain more?",
+              "right": "That's my recommendation. [Pause] What questions do you have?",
+              "why": "Silence signals that you've said something worth considering. Rushing signals anxiety."
+            },
+            "actionItem": "Practice pausing for 2 full seconds after making an important point."
+          }
+        ]
+      }
+    ]
+  },
+  "es": {
+    "title": "Los 5 Principios Esenciales del Inglés Ejecutivo",
+    "subtitle": "La Base Que Todo Profesional Latinoamericano Necesita",
+    "description": "Estos 5 principios separan el inglés que suena junior del inglés de nivel ejecutivo. Domina estos fundamentos y sonarás más seguro en cada conversación de alto nivel.",
+    "headline": "Deja de Dudar de Tu Inglés en Momentos Críticos",
+    "valueProposition": "Aprende los 5 principios fundamentales que los ejecutivos norteamericanos usan para ganar respeto y credibilidad en cada conversación.",
+    "leadCapture": {
+      "formHeadline": "Obtén la Guía de los 5 Principios",
+      "formSubheadline": "La base del inglés de nivel ejecutivo",
+      "buttonText": "Envíame la Guía",
+      "successMessage": "¡Revisa tu bandeja! Tu guía está en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Por Qué Estos 5 Principios Importan",
+        "content": "Eres técnicamente competente. Conoces tu industria. Pero cuando estás en una llamada con un cliente Fortune 500, algo cambia. Dudas. Explicas de más. Prefieres responder por email en lugar de en tiempo real.\n\nEstos 5 principios te dan el marco fundamental para transformar tu inglés ejecutivo—empezando hoy."
+      },
+      {
+        "id": "principles",
+        "title": "Los 5 Principios Esenciales",
+        "items": [
+          {
+            "number": 1,
+            "title": "Claridad Sobre Complejidad",
+            "content": "El inglés ejecutivo no se trata de usar palabras grandes—se trata de ser entendido al instante. Los líderes más senior usan lenguaje simple y directo.",
+            "example": {
+              "wrong": "We need to leverage our synergistic capabilities to optimize the deliverables.",
+              "right": "We need to work together to improve results.",
+              "why": "El lenguaje simple señala confianza. El lenguaje complejo señala inseguridad."
+            },
+            "actionItem": "Revisa tus últimos 5 emails. Reemplaza cualquier palabra de más de 3 sílabas con una alternativa más simple."
+          },
+          {
+            "number": 2,
+            "title": "La Brevedad Señala Confianza",
+            "content": "Los ejecutivos senior hablan en 2-3 oraciones. Los profesionales junior explican de más. Entrénate para hacer tu punto y detenerte.",
+            "example": {
+              "wrong": "So basically, what I'm trying to say is that, you know, we should probably consider maybe looking at the possibility of exploring other options.",
+              "right": "I recommend we explore other options. Here's why.",
+              "why": "Las frases de relleno señalan incertidumbre. Las declaraciones directas señalan autoridad."
+            },
+            "actionItem": "En tu próxima reunión, desafíate a responder preguntas en menos de 30 segundos."
+          },
+          {
+            "number": 3,
+            "title": "La Estructura Crea Entendimiento",
+            "content": "Siempre señala a dónde vas antes de ir allí. Usa marcos como 'Tengo tres puntos' o 'Déjame darte contexto, luego mi recomendación.'",
+            "example": {
+              "wrong": "Well, there's the budget issue, and also timeline, and we should probably talk about resources too, and scope might be a problem...",
+              "right": "We have three concerns: budget, timeline, and scope. Let me walk through each.",
+              "why": "La estructura ayuda a tu oyente a seguir tu pensamiento. Divagar crea confusión."
+            },
+            "actionItem": "Antes de tu próxima explicación, pausa y pregunta: '¿Cuál es mi estructura?'"
+          },
+          {
+            "number": 4,
+            "title": "La Especificidad Construye Credibilidad",
+            "content": "Las declaraciones vagas te hacen olvidable. Los detalles específicos te hacen memorable y confiable.",
+            "example": {
+              "wrong": "We've helped a lot of companies improve their results.",
+              "right": "We helped Terramar Brands close 3 enterprise deals worth $540K in 8 weeks.",
+              "why": "Los números y nombres crean credibilidad. Las generalidades crean duda."
+            },
+            "actionItem": "Agrega un número o nombre específico a tu próxima conversación con clientes."
+          },
+          {
+            "number": 5,
+            "title": "El Silencio Es una Herramienta de Poder",
+            "content": "El impulso de llenar el silencio es fuerte—resístelo. Pausar después de un punto le da peso. Pausar después de una pregunta te da tiempo para pensar.",
+            "example": {
+              "wrong": "So, um, what do you think? I mean, does that make sense? Should I explain more?",
+              "right": "That's my recommendation. [Pause] What questions do you have?",
+              "why": "El silencio señala que has dicho algo que vale la pena considerar. Apresurarse señala ansiedad."
+            },
+            "actionItem": "Practica pausar por 2 segundos completos después de hacer un punto importante."
+          }
+        ]
+      }
+    ]
+  }
+}

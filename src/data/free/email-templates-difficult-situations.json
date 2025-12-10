@@ -1,0 +1,225 @@
+{
+  "metadata": {
+    "id": "email-templates-difficult-situations",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "template",
+    "format": "pdf-guide",
+    "funnelStage": "consideration",
+    "difficultyLevel": "intermediate",
+    "timeToComplete": "10 minutes",
+    "estimatedMinutes": 10,
+    "pageCount": 8,
+    "tags": ["email", "difficult-conversations", "templates", "written-communication", "conflict-resolution"]
+  },
+  "targeting": {
+    "primaryPersona": ["manager", "consultant", "project-manager", "all"],
+    "industries": ["technology", "professional-services", "finance", "all"],
+    "scenarios": ["email-writing", "difficult-conversations", "client-meetings"],
+    "painPoints": [
+      "Spending hours drafting difficult emails",
+      "Sounding too harsh or too soft in writing",
+      "Not knowing how to deliver bad news professionally",
+      "Emails getting misinterpreted or causing conflict"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free strategy call to refine your written communication style",
+    "relatedAssets": ["pushback-playbook", "difficult-conversation-checklist"]
+  },
+  "seo": {
+    "metaDescription": "Get 6 copy-paste email templates for difficult business situations. Deliver bad news, follow up, and handle conflict professionally.",
+    "keywords": ["difficult email templates", "professional email examples", "business email templates", "how to write difficult emails"]
+  },
+  "slugEn": "email-templates-difficult-situations",
+  "slugEs": "plantillas-email-situaciones-dificiles",
+  "en": {
+    "title": "6 Email Templates for Difficult Situations",
+    "subtitle": "Copy, Paste, Customize, Send",
+    "description": "Stop agonizing over difficult emails. These 6 templates handle the situations that keep you staring at a blank screen—professionally and confidently.",
+    "headline": "Stop Spending Hours on Emails That Should Take Minutes",
+    "valueProposition": "Get word-for-word templates for the 6 most dreaded business emails—ready to customize and send.",
+    "leadCapture": {
+      "formHeadline": "Get the Email Templates",
+      "formSubheadline": "6 templates for difficult situations",
+      "buttonText": "Send Me the Templates",
+      "successMessage": "Check your inbox! Your templates are on their way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Why Difficult Emails Are So Hard",
+        "content": "You know exactly what you want to say in Spanish. But in English, every word feels loaded. Too direct? You sound rude. Too soft? You sound weak. Too long? They won't read it.\n\nThese 6 templates give you the exact words for the situations that matter most—so you can stop overthinking and start sending."
+      },
+      {
+        "id": "templates",
+        "title": "The 6 Email Templates",
+        "items": [
+          {
+            "number": 1,
+            "title": "Delivering Bad News",
+            "content": "When you need to tell a client or colleague something they don't want to hear—a missed deadline, budget overrun, or project setback.",
+            "example": {
+              "wrong": "Hi, so I have some bad news... I'm really sorry but we're not going to be able to meet the deadline. I know this is terrible and I feel really bad about it. We tried everything but things just didn't work out. I hope you're not too upset...",
+              "right": "Subject: Project X Update - Timeline Adjustment Needed\n\nHi [Name],\n\nI want to give you a direct update on Project X.\n\nWe've encountered [specific issue] that will push our delivery from [original date] to [new date]. Here's what happened and what we're doing about it:\n\n• Issue: [Brief explanation]\n• Impact: [What this means for them]\n• Solution: [What you're doing to fix it]\n\nI take full responsibility for this delay. To make it right, [specific offer - discount, expedited work, etc.].\n\nCan we schedule a 15-minute call to discuss? I'm available [times].\n\n[Your name]",
+              "why": "Lead with the news, provide context, take responsibility, offer a solution. No groveling, no excessive apologies."
+            },
+            "actionItem": "Next time you have bad news, write the subject line first—it forces you to be direct."
+          },
+          {
+            "number": 2,
+            "title": "Following Up (Without Being Annoying)",
+            "content": "When someone hasn't responded and you need an answer, but you don't want to seem pushy.",
+            "example": {
+              "wrong": "Hi! Just checking in again... I know you're super busy but I just wanted to follow up on my last email. No pressure at all! Just whenever you get a chance... Sorry to bother you again...",
+              "right": "Subject: Quick follow-up: [Original topic]\n\nHi [Name],\n\nI wanted to follow up on [specific topic] from my [date] email.\n\nI know things get busy—just want to make sure this didn't slip through. If you need more information from me to move forward, let me know.\n\nWould [specific day] work for a quick 10-minute call to discuss?\n\n[Your name]\n\nP.S. If this is no longer a priority, just let me know and I'll close the loop on my end.",
+              "why": "Acknowledges their time, offers an easy out, and gives them a clear next step. The P.S. often gets responses because it removes pressure."
+            },
+            "actionItem": "Always include a P.S. in follow-up emails—it gets read even when the body doesn't."
+          },
+          {
+            "number": 3,
+            "title": "Disagreeing With Your Boss",
+            "content": "When you need to push back on a decision or direction from someone senior to you.",
+            "example": {
+              "wrong": "I don't think that's a good idea. I mean, we could do it your way but I've seen this fail before and I think we should do something else instead.",
+              "right": "Subject: Thoughts on [Decision/Direction]\n\nHi [Name],\n\nThanks for sharing your thinking on [topic]. I've been reflecting on it and wanted to share a different perspective for your consideration.\n\nMy concern: [Specific concern with evidence]\nAlternative approach: [Your suggestion]\nPotential upside: [What they gain]\n\nI could be missing context that would change my view. Would you be open to a quick discussion before we finalize?\n\nEither way, I'm fully committed to supporting whatever direction you decide.\n\n[Your name]",
+              "why": "Shows respect, provides data, offers alternative, and commits to supporting the final decision. You're not challenging authority—you're adding value."
+            },
+            "actionItem": "Frame disagreements as 'adding perspective' rather than 'pushing back.'"
+          },
+          {
+            "number": 4,
+            "title": "Asking for More Money",
+            "content": "When you need to request a rate increase, additional budget, or payment for extra work.",
+            "example": {
+              "wrong": "So I was wondering if maybe we could possibly talk about adjusting the budget? I know it's a lot to ask but the work has been much more than expected...",
+              "right": "Subject: Budget discussion for [Project]\n\nHi [Name],\n\nI wanted to discuss the budget for [project/engagement].\n\nWhen we scoped this originally, we estimated [X hours/scope]. Based on [specific factors], the actual requirement is [Y]. This represents a [Z%] increase in scope.\n\nTo maintain the quality you expect, I recommend we adjust the budget to [$amount]. This covers [specific items].\n\nI've attached a breakdown showing the additional work and its value to the project.\n\nCan we schedule time to discuss this week?\n\n[Your name]",
+              "why": "Ties the ask to facts and value, not feelings. Shows professionalism by providing documentation."
+            },
+            "actionItem": "Always quantify the value you're providing before asking for more money."
+          },
+          {
+            "number": 5,
+            "title": "Addressing Poor Performance",
+            "content": "When you need to address an issue with a team member or vendor without damaging the relationship.",
+            "example": {
+              "wrong": "Hey, we need to talk about your work lately. It hasn't been up to standards and I'm getting concerned. This really needs to improve.",
+              "right": "Subject: Let's connect on [specific area]\n\nHi [Name],\n\nI wanted to touch base about [specific area of concern].\n\nI've noticed [specific observation—not judgment]. For example, [concrete instance]. This is creating [specific impact].\n\nI want to understand what's happening on your end and how I can support you. Sometimes there are factors I'm not seeing.\n\nCan we meet [specific time] to discuss? My goal is to find a path forward that works for both of us.\n\n[Your name]",
+              "why": "Focuses on specific behaviors and impacts, not character. Opens dialogue instead of delivering a verdict."
+            },
+            "actionItem": "Always cite specific examples—generalizations create defensiveness."
+          },
+          {
+            "number": 6,
+            "title": "Ending a Business Relationship",
+            "content": "When you need to fire a client, end a partnership, or discontinue a vendor relationship.",
+            "example": {
+              "wrong": "This isn't working out. I think we should go our separate ways. Thanks for everything.",
+              "right": "Subject: Transition plan for our engagement\n\nHi [Name],\n\nAfter careful consideration, I've decided to conclude our [engagement/partnership] effective [date].\n\nThis wasn't an easy decision. [Brief, professional reason without blame—'Our business is moving in a different direction' / 'I'm narrowing my focus to [area]'].\n\nTo ensure a smooth transition, I propose:\n• [Transition step 1]\n• [Transition step 2]\n• [Final handoff details]\n\nI'm grateful for [something genuine]. I wish you continued success.\n\n[Your name]",
+              "why": "Professional, clear, and forward-looking. Provides transition support and ends on a positive note."
+            },
+            "actionItem": "Write ending emails in the morning when you're fresh—never when frustrated."
+          }
+        ]
+      }
+    ]
+  },
+  "es": {
+    "title": "6 Plantillas de Email para Situaciones Difíciles",
+    "subtitle": "Copia, Pega, Personaliza, Envía",
+    "description": "Deja de agonizar con emails difíciles. Estas 6 plantillas manejan las situaciones que te hacen mirar una pantalla en blanco—profesional y confiadamente.",
+    "headline": "Deja de Pasar Horas en Emails Que Deberían Tomar Minutos",
+    "valueProposition": "Obtén plantillas palabra por palabra para los 6 emails de negocio más temidos—listas para personalizar y enviar.",
+    "leadCapture": {
+      "formHeadline": "Obtén las Plantillas de Email",
+      "formSubheadline": "6 plantillas para situaciones difíciles",
+      "buttonText": "Envíame las Plantillas",
+      "successMessage": "¡Revisa tu bandeja! Tus plantillas están en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Por Qué los Emails Difíciles Son Tan Difíciles",
+        "content": "Sabes exactamente lo que quieres decir en español. Pero en inglés, cada palabra se siente cargada. ¿Muy directo? Suenas grosero. ¿Muy suave? Suenas débil. ¿Muy largo? No lo leerán.\n\nEstas 6 plantillas te dan las palabras exactas para las situaciones que más importan—para que puedas dejar de pensar de más y empezar a enviar."
+      },
+      {
+        "id": "templates",
+        "title": "Las 6 Plantillas de Email",
+        "items": [
+          {
+            "number": 1,
+            "title": "Dando Malas Noticias",
+            "content": "Cuando necesitas decirle a un cliente o colega algo que no quiere escuchar—una fecha límite perdida, exceso de presupuesto, o contratiempo del proyecto.",
+            "example": {
+              "wrong": "Hi, so I have some bad news... I'm really sorry but we're not going to be able to meet the deadline. I know this is terrible and I feel really bad about it. We tried everything but things just didn't work out. I hope you're not too upset...",
+              "right": "Subject: Project X Update - Timeline Adjustment Needed\n\nHi [Name],\n\nI want to give you a direct update on Project X.\n\nWe've encountered [specific issue] that will push our delivery from [original date] to [new date]. Here's what happened and what we're doing about it:\n\n• Issue: [Brief explanation]\n• Impact: [What this means for them]\n• Solution: [What you're doing to fix it]\n\nI take full responsibility for this delay. To make it right, [specific offer - discount, expedited work, etc.].\n\nCan we schedule a 15-minute call to discuss? I'm available [times].\n\n[Your name]",
+              "why": "Empieza con la noticia, da contexto, toma responsabilidad, ofrece solución. Sin rogar, sin disculpas excesivas."
+            },
+            "actionItem": "La próxima vez que tengas malas noticias, escribe el asunto primero—te obliga a ser directo."
+          },
+          {
+            "number": 2,
+            "title": "Dando Seguimiento (Sin Ser Molesto)",
+            "content": "Cuando alguien no ha respondido y necesitas una respuesta, pero no quieres parecer insistente.",
+            "example": {
+              "wrong": "Hi! Just checking in again... I know you're super busy but I just wanted to follow up on my last email. No pressure at all! Just whenever you get a chance... Sorry to bother you again...",
+              "right": "Subject: Quick follow-up: [Original topic]\n\nHi [Name],\n\nI wanted to follow up on [specific topic] from my [date] email.\n\nI know things get busy—just want to make sure this didn't slip through. If you need more information from me to move forward, let me know.\n\nWould [specific day] work for a quick 10-minute call to discuss?\n\n[Your name]\n\nP.S. If this is no longer a priority, just let me know and I'll close the loop on my end.",
+              "why": "Reconoce su tiempo, ofrece una salida fácil, y da un siguiente paso claro. El P.S. a menudo obtiene respuestas porque quita presión."
+            },
+            "actionItem": "Siempre incluye un P.S. en emails de seguimiento—se lee incluso cuando el cuerpo no."
+          },
+          {
+            "number": 3,
+            "title": "Estando en Desacuerdo Con Tu Jefe",
+            "content": "Cuando necesitas rechazar una decisión o dirección de alguien senior a ti.",
+            "example": {
+              "wrong": "I don't think that's a good idea. I mean, we could do it your way but I've seen this fail before and I think we should do something else instead.",
+              "right": "Subject: Thoughts on [Decision/Direction]\n\nHi [Name],\n\nThanks for sharing your thinking on [topic]. I've been reflecting on it and wanted to share a different perspective for your consideration.\n\nMy concern: [Specific concern with evidence]\nAlternative approach: [Your suggestion]\nPotential upside: [What they gain]\n\nI could be missing context that would change my view. Would you be open to a quick discussion before we finalize?\n\nEither way, I'm fully committed to supporting whatever direction you decide.\n\n[Your name]",
+              "why": "Muestra respeto, provee datos, ofrece alternativa, y se compromete a apoyar la decisión final. No estás desafiando autoridad—estás agregando valor."
+            },
+            "actionItem": "Enmarca los desacuerdos como 'agregar perspectiva' en lugar de 'rechazar.'"
+          },
+          {
+            "number": 4,
+            "title": "Pidiendo Más Dinero",
+            "content": "Cuando necesitas solicitar un aumento de tarifa, presupuesto adicional, o pago por trabajo extra.",
+            "example": {
+              "wrong": "So I was wondering if maybe we could possibly talk about adjusting the budget? I know it's a lot to ask but the work has been much more than expected...",
+              "right": "Subject: Budget discussion for [Project]\n\nHi [Name],\n\nI wanted to discuss the budget for [project/engagement].\n\nWhen we scoped this originally, we estimated [X hours/scope]. Based on [specific factors], the actual requirement is [Y]. This represents a [Z%] increase in scope.\n\nTo maintain the quality you expect, I recommend we adjust the budget to [$amount]. This covers [specific items].\n\nI've attached a breakdown showing the additional work and its value to the project.\n\nCan we schedule time to discuss this week?\n\n[Your name]",
+              "why": "Conecta la solicitud a hechos y valor, no sentimientos. Muestra profesionalismo al proveer documentación."
+            },
+            "actionItem": "Siempre cuantifica el valor que estás proveyendo antes de pedir más dinero."
+          },
+          {
+            "number": 5,
+            "title": "Abordando Mal Desempeño",
+            "content": "Cuando necesitas abordar un problema con un miembro del equipo o proveedor sin dañar la relación.",
+            "example": {
+              "wrong": "Hey, we need to talk about your work lately. It hasn't been up to standards and I'm getting concerned. This really needs to improve.",
+              "right": "Subject: Let's connect on [specific area]\n\nHi [Name],\n\nI wanted to touch base about [specific area of concern].\n\nI've noticed [specific observation—not judgment]. For example, [concrete instance]. This is creating [specific impact].\n\nI want to understand what's happening on your end and how I can support you. Sometimes there are factors I'm not seeing.\n\nCan we meet [specific time] to discuss? My goal is to find a path forward that works for both of us.\n\n[Your name]",
+              "why": "Se enfoca en comportamientos e impactos específicos, no en carácter. Abre diálogo en lugar de entregar un veredicto."
+            },
+            "actionItem": "Siempre cita ejemplos específicos—las generalidades crean defensividad."
+          },
+          {
+            "number": 6,
+            "title": "Terminando una Relación de Negocios",
+            "content": "Cuando necesitas despedir a un cliente, terminar una asociación, o discontinuar una relación con proveedor.",
+            "example": {
+              "wrong": "This isn't working out. I think we should go our separate ways. Thanks for everything.",
+              "right": "Subject: Transition plan for our engagement\n\nHi [Name],\n\nAfter careful consideration, I've decided to conclude our [engagement/partnership] effective [date].\n\nThis wasn't an easy decision. [Brief, professional reason without blame—'Our business is moving in a different direction' / 'I'm narrowing my focus to [area]'].\n\nTo ensure a smooth transition, I propose:\n• [Transition step 1]\n• [Transition step 2]\n• [Final handoff details]\n\nI'm grateful for [something genuine]. I wish you continued success.\n\n[Your name]",
+              "why": "Profesional, claro, y mirando hacia adelante. Provee soporte de transición y termina en nota positiva."
+            },
+            "actionItem": "Escribe emails de cierre en la mañana cuando estés fresco—nunca cuando estés frustrado."
+          }
+        ]
+      }
+    ]
+  }
+}

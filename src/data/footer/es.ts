@@ -18,6 +18,7 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
       resources: {
         title: "Recursos",
         links: [
+          { name: "Descargas Gratuitas", href: routes.es.gratis },
           { name: "Preguntas Frecuentes", href: "/es/faqs/" },
           { name: "Blog", href: routes.es.blog },
           { name: "Iniciar Evaluación", href: "/es/assessments/" },

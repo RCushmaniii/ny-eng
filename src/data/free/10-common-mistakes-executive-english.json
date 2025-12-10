@@ -1,0 +1,252 @@
+{
+  "metadata": {
+    "id": "10-common-mistakes-executive-english",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "guide",
+    "format": "pdf-guide",
+    "funnelStage": "awareness",
+    "difficultyLevel": "beginner",
+    "timeToComplete": "8 minutes",
+    "estimatedMinutes": 8,
+    "pageCount": 6,
+    "tags": ["common-mistakes", "error-correction", "executive-presence", "quick-fixes"]
+  },
+  "targeting": {
+    "primaryPersona": ["executive", "manager", "all"],
+    "industries": ["technology", "professional-services", "finance"],
+    "scenarios": ["client-meetings", "presentations", "negotiations"],
+    "painPoints": [
+      "Making subtle mistakes that signal 'non-native speaker'",
+      "Undermining credibility with small errors",
+      "Not knowing which mistakes matter most"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free strategy call to identify your specific mistake patterns",
+    "relatedAssets": ["5-principles-executive-english", "5-quick-wins-executive-english"]
+  },
+  "seo": {
+    "metaDescription": "Fix the 10 most common English mistakes that immediately signal 'non-native speaker' to North American clients. Includes fixes you can apply today.",
+    "keywords": ["common english mistakes", "business english errors", "executive english mistakes", "professional communication errors"]
+  },
+  "slugEn": "10-common-mistakes-executive-english",
+  "slugEs": "10-errores-comunes-ingles-ejecutivo",
+  "en": {
+    "title": "The 10 Most Common Mistakes in Executive English",
+    "subtitle": "Subtle Errors That Undermine Your Credibility (And How to Fix Them)",
+    "description": "These 10 mistakes are subtle but they immediately signal 'non-native speaker' to North American clients. Fix these and you'll sound more polished instantly.",
+    "headline": "Stop Making These Mistakes That Cost You Credibility",
+    "valueProposition": "Identify and fix the 10 most common errors that Latin American professionals make—errors that native speakers notice but rarely correct.",
+    "leadCapture": {
+      "formHeadline": "Get the 10 Mistakes Guide",
+      "formSubheadline": "Fixes you can apply in your next meeting",
+      "buttonText": "Send Me the Guide",
+      "successMessage": "Check your inbox! Your guide is on its way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Why These Mistakes Matter",
+        "content": "These errors are subtle but they immediately signal 'non-native speaker' to North American clients. The problem? Native speakers rarely correct you. They understand what you mean, so they let it slide. But they notice. And in high-stakes business situations, these small errors accumulate into an impression of lower fluency than you actually have."
+      },
+      {
+        "id": "mistakes",
+        "title": "The 10 Most Common Mistakes",
+        "items": [
+          {
+            "number": 1,
+            "mistake": "Starting with 'Actually...'",
+            "problem": "In English, 'actually' implies correction or surprise. Using it habitually sounds condescending.",
+            "fix": "Delete 'actually' from most sentences. Reserve it for genuine corrections.",
+            "wrongExample": "Actually, I think we should consider...",
+            "rightExample": "I think we should consider..."
+          },
+          {
+            "number": 2,
+            "mistake": "Overusing 'I think'",
+            "problem": "Excessive hedging undermines your authority. Executives state positions; they don't constantly qualify.",
+            "fix": "State your position directly. Save 'I think' for opinions, not facts.",
+            "wrongExample": "I think the deadline is next Friday. I think we need more resources.",
+            "rightExample": "The deadline is next Friday. We need more resources."
+          },
+          {
+            "number": 3,
+            "mistake": "Using 'No?' as a tag question",
+            "problem": "This is a direct translation from Spanish. In English, it sounds informal and uncertain.",
+            "fix": "Use 'right?' or 'don't you think?' for tag questions, or eliminate them entirely.",
+            "wrongExample": "We should move forward, no?",
+            "rightExample": "We should move forward, right?" 
+          },
+          {
+            "number": 4,
+            "mistake": "Saying 'I have a doubt'",
+            "problem": "'Doubt' in English means skepticism or disbelief. You mean 'question.'",
+            "fix": "Replace 'I have a doubt' with 'I have a question' or 'I'm unclear on...'",
+            "wrongExample": "I have a doubt about the timeline.",
+            "rightExample": "I have a question about the timeline."
+          },
+          {
+            "number": 5,
+            "mistake": "Apologizing excessively",
+            "problem": "Starting with 'Sorry, but...' or 'Sorry to bother you' undermines your authority.",
+            "fix": "Replace apologies with direct statements or gratitude.",
+            "wrongExample": "Sorry, but I disagree with that approach.",
+            "rightExample": "I see it differently. Here's why..."
+          },
+          {
+            "number": 6,
+            "mistake": "Using 'assist' instead of 'help'",
+            "problem": "'Assist' sounds formal and stiff. Native speakers say 'help.'",
+            "fix": "Use 'help' in almost all cases. It's more natural and direct.",
+            "wrongExample": "I can assist you with that project.",
+            "rightExample": "I can help you with that project."
+          },
+          {
+            "number": 7,
+            "mistake": "Saying 'in this moment'",
+            "problem": "This is a literal translation. English uses 'right now' or 'currently.'",
+            "fix": "Replace 'in this moment' with 'right now,' 'currently,' or 'at the moment.'",
+            "wrongExample": "In this moment, we're focused on Q4.",
+            "rightExample": "Right now, we're focused on Q4."
+          },
+          {
+            "number": 8,
+            "mistake": "Overusing 'very'",
+            "problem": "Excessive use of 'very' weakens your statements instead of strengthening them.",
+            "fix": "Use stronger verbs and adjectives instead of 'very + weak word.'",
+            "wrongExample": "This is a very important project that's very urgent.",
+            "rightExample": "This is a critical project that's urgent."
+          },
+          {
+            "number": 9,
+            "mistake": "Saying 'I will send you'",
+            "problem": "Missing the object. English requires 'I will send you THE EMAIL/DOCUMENT.'",
+            "fix": "Always include what you're sending: the file, the email, the document.",
+            "wrongExample": "I will send you by end of day.",
+            "rightExample": "I'll send you the proposal by end of day."
+          },
+          {
+            "number": 10,
+            "mistake": "Using 'How do you call...?'",
+            "problem": "This is a direct translation from Spanish. English uses 'What do you call...?'",
+            "fix": "Replace 'How do you call' with 'What do you call' or 'What's the word for...'",
+            "wrongExample": "How do you call this in English?",
+            "rightExample": "What do you call this in English?"
+          }
+        ]
+      }
+    ]
+  },
+  "es": {
+    "title": "Los 10 Errores Más Comunes en Inglés Ejecutivo",
+    "subtitle": "Errores Sutiles Que Socavan Tu Credibilidad (Y Cómo Corregirlos)",
+    "description": "Estos 10 errores son sutiles pero inmediatamente señalan 'hablante no nativo' a clientes norteamericanos. Corrígelos y sonarás más pulido al instante.",
+    "headline": "Deja de Cometer Estos Errores Que Te Cuestan Credibilidad",
+    "valueProposition": "Identifica y corrige los 10 errores más comunes que cometen los profesionales latinoamericanos—errores que los nativos notan pero rara vez corrigen.",
+    "leadCapture": {
+      "formHeadline": "Obtén la Guía de los 10 Errores",
+      "formSubheadline": "Correcciones que puedes aplicar en tu próxima reunión",
+      "buttonText": "Envíame la Guía",
+      "successMessage": "¡Revisa tu bandeja! Tu guía está en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Por Qué Estos Errores Importan",
+        "content": "Estos errores son sutiles pero inmediatamente señalan 'hablante no nativo' a clientes norteamericanos. ¿El problema? Los nativos rara vez te corrigen. Entienden lo que quieres decir, así que lo dejan pasar. Pero lo notan. Y en situaciones de negocios de alto nivel, estos pequeños errores se acumulan en una impresión de menor fluidez de la que realmente tienes."
+      },
+      {
+        "id": "mistakes",
+        "title": "Los 10 Errores Más Comunes",
+        "items": [
+          {
+            "number": 1,
+            "mistake": "Comenzar con 'Actually...'",
+            "problem": "En inglés, 'actually' implica corrección o sorpresa. Usarlo habitualmente suena condescendiente.",
+            "fix": "Elimina 'actually' de la mayoría de las oraciones. Resérvalo para correcciones genuinas.",
+            "wrongExample": "Actually, I think we should consider...",
+            "rightExample": "I think we should consider..."
+          },
+          {
+            "number": 2,
+            "mistake": "Usar 'I think' en exceso",
+            "problem": "El exceso de cobertura socava tu autoridad. Los ejecutivos declaran posiciones; no califican constantemente.",
+            "fix": "Declara tu posición directamente. Guarda 'I think' para opiniones, no hechos.",
+            "wrongExample": "I think the deadline is next Friday. I think we need more resources.",
+            "rightExample": "The deadline is next Friday. We need more resources."
+          },
+          {
+            "number": 3,
+            "mistake": "Usar 'No?' como pregunta de confirmación",
+            "problem": "Esta es una traducción directa del español. En inglés, suena informal e inseguro.",
+            "fix": "Usa 'right?' o 'don't you think?' para preguntas de confirmación, o elimínalas por completo.",
+            "wrongExample": "We should move forward, no?",
+            "rightExample": "We should move forward, right?"
+          },
+          {
+            "number": 4,
+            "mistake": "Decir 'I have a doubt'",
+            "problem": "'Doubt' en inglés significa escepticismo o incredulidad. Quieres decir 'question.'",
+            "fix": "Reemplaza 'I have a doubt' con 'I have a question' o 'I'm unclear on...'",
+            "wrongExample": "I have a doubt about the timeline.",
+            "rightExample": "I have a question about the timeline."
+          },
+          {
+            "number": 5,
+            "mistake": "Disculparse excesivamente",
+            "problem": "Comenzar con 'Sorry, but...' o 'Sorry to bother you' socava tu autoridad.",
+            "fix": "Reemplaza disculpas con declaraciones directas o gratitud.",
+            "wrongExample": "Sorry, but I disagree with that approach.",
+            "rightExample": "I see it differently. Here's why..."
+          },
+          {
+            "number": 6,
+            "mistake": "Usar 'assist' en lugar de 'help'",
+            "problem": "'Assist' suena formal y rígido. Los nativos dicen 'help.'",
+            "fix": "Usa 'help' en casi todos los casos. Es más natural y directo.",
+            "wrongExample": "I can assist you with that project.",
+            "rightExample": "I can help you with that project."
+          },
+          {
+            "number": 7,
+            "mistake": "Decir 'in this moment'",
+            "problem": "Esta es una traducción literal. El inglés usa 'right now' o 'currently.'",
+            "fix": "Reemplaza 'in this moment' con 'right now,' 'currently,' o 'at the moment.'",
+            "wrongExample": "In this moment, we're focused on Q4.",
+            "rightExample": "Right now, we're focused on Q4."
+          },
+          {
+            "number": 8,
+            "mistake": "Usar 'very' en exceso",
+            "problem": "El uso excesivo de 'very' debilita tus declaraciones en lugar de fortalecerlas.",
+            "fix": "Usa verbos y adjetivos más fuertes en lugar de 'very + palabra débil.'",
+            "wrongExample": "This is a very important project that's very urgent.",
+            "rightExample": "This is a critical project that's urgent."
+          },
+          {
+            "number": 9,
+            "mistake": "Decir 'I will send you'",
+            "problem": "Falta el objeto. El inglés requiere 'I will send you THE EMAIL/DOCUMENT.'",
+            "fix": "Siempre incluye qué estás enviando: el archivo, el email, el documento.",
+            "wrongExample": "I will send you by end of day.",
+            "rightExample": "I'll send you the proposal by end of day."
+          },
+          {
+            "number": 10,
+            "mistake": "Usar 'How do you call...?'",
+            "problem": "Esta es una traducción directa del español. El inglés usa 'What do you call...?'",
+            "fix": "Reemplaza 'How do you call' con 'What do you call' o 'What's the word for...'",
+            "wrongExample": "How do you call this in English?",
+            "rightExample": "What do you call this in English?"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -27,6 +27,19 @@ export type TKey =
   | "services"
   | "testimonials"
   | "faqs"
+  | "free"
+  | "free/5-questions"
+  | "free/5-minute-negotiation-script"
+  | "free/7-sentences-leadership-english"
+  | "free/5-principles-executive-english"
+  | "free/10-common-mistakes-executive-english"
+  | "free/5-quick-wins-executive-english"
+  | "free/60-second-self-introduction-template"
+  | "free/client-call-opening-closing-framework"
+  | "free/pushback-playbook"
+  | "free/email-templates-difficult-situations"
+  | "free/status-update-script"
+  | "free/questions-that-close-deals"
   | "legal/privacy-policy"
   | "legal/terms-of-service"
   | "thank-you"
@@ -64,6 +77,19 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     services: "/en/services/",
     testimonials: "/en/testimonials/",
     faqs: "/en/faqs/",
+    free: "/en/free/",
+    "free/5-questions": "/en/free/5-questions/",
+    "free/5-minute-negotiation-script": "/en/free/5-minute-negotiation-script/",
+    "free/7-sentences-leadership-english": "/en/free/7-sentences-leadership-english/",
+    "free/5-principles-executive-english": "/en/free/5-principles-executive-english/",
+    "free/10-common-mistakes-executive-english": "/en/free/10-common-mistakes-executive-english/",
+    "free/5-quick-wins-executive-english": "/en/free/5-quick-wins-executive-english/",
+    "free/60-second-self-introduction-template": "/en/free/60-second-self-introduction-template/",
+    "free/client-call-opening-closing-framework": "/en/free/client-call-opening-closing-framework/",
+    "free/pushback-playbook": "/en/free/pushback-playbook/",
+    "free/email-templates-difficult-situations": "/en/free/email-templates-difficult-situations/",
+    "free/status-update-script": "/en/free/status-update-script/",
+    "free/questions-that-close-deals": "/en/free/questions-that-close-deals/",
     "legal/privacy-policy": "/en/legal/privacy-policy/",
     "legal/terms-of-service": "/en/legal/terms-of-service/",
     "services/executive-english": "/en/services/executive-english/",
@@ -108,6 +134,19 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     services: "/es/servicios/",
     testimonials: "/es/testimonios/",
     faqs: "/es/faqs/",
+    free: "/es/gratis/",
+    "free/5-questions": "/es/gratis/5-preguntas/",
+    "free/5-minute-negotiation-script": "/es/gratis/guion-negociacion-5-minutos/",
+    "free/7-sentences-leadership-english": "/es/gratis/7-frases-liderazgo-ingles/",
+    "free/5-principles-executive-english": "/es/gratis/5-principios-ingles-ejecutivo/",
+    "free/10-common-mistakes-executive-english": "/es/gratis/10-errores-comunes-ingles-ejecutivo/",
+    "free/5-quick-wins-executive-english": "/es/gratis/5-victorias-rapidas-ingles-ejecutivo/",
+    "free/60-second-self-introduction-template": "/es/gratis/plantilla-auto-presentacion-60-segundos/",
+    "free/client-call-opening-closing-framework": "/es/gratis/marco-apertura-cierre-llamadas/",
+    "free/pushback-playbook": "/es/gratis/guia-para-decir-no/",
+    "free/email-templates-difficult-situations": "/es/gratis/plantillas-email-situaciones-dificiles/",
+    "free/status-update-script": "/es/gratis/script-actualizacion-estado/",
+    "free/questions-that-close-deals": "/es/gratis/preguntas-que-cierran-ventas/",
     "legal/privacy-policy": "/es/legal/privacy-policy/",
     "legal/terms-of-service": "/es/legal/terms-of-service/",
     "services/executive-english": "/es/servicios/ingles-para-ejecutivos/",
@@ -177,6 +216,8 @@ export function getAllTKeys(): TKey[] {
     "blog",
     "services",
     "testimonials",
+    "free",
+    "free/5-questions",
     "legal/privacy-policy",
     "legal/terms-of-service",
     "services/executive-english",

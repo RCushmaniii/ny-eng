@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "id": "pushback-playbook",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "guide",
+    "format": "pdf-guide",
+    "funnelStage": "consideration",
+    "difficultyLevel": "intermediate",
+    "timeToComplete": "8 minutes",
+    "estimatedMinutes": 8,
+    "pageCount": 6,
+    "tags": ["pushback", "saying-no", "boundaries", "assertiveness", "negotiation"]
+  },
+  "targeting": {
+    "primaryPersona": ["manager", "consultant", "project-manager", "all"],
+    "industries": ["technology", "professional-services", "finance", "all"],
+    "scenarios": ["negotiations", "difficult-conversations", "client-meetings", "meetings"],
+    "painPoints": [
+      "Difficulty saying no to clients without damaging relationships",
+      "Over-committing to unrealistic deadlines",
+      "Accepting scope creep without pushback",
+      "Feeling unable to defend boundaries in English"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free strategy call to practice these phrases in realistic scenarios",
+    "relatedAssets": ["5-minute-negotiation-script", "difficult-conversation-checklist"]
+  },
+  "seo": {
+    "metaDescription": "Learn 7 professional ways to say no in business English. Protect your boundaries without damaging client relationships or sounding defensive.",
+    "keywords": ["how to say no professionally", "business english pushback", "setting boundaries at work", "professional decline phrases"]
+  },
+  "slugEn": "pushback-playbook",
+  "slugEs": "guia-para-decir-no",
+  "en": {
+    "title": "The Pushback Playbook: How to Say No Professionally",
+    "subtitle": "7 Situations, 7 Scripts, Zero Burned Bridges",
+    "description": "Master the art of professional pushback. These 7 scripts help you decline requests, defend timelines, and set boundaries—without damaging relationships.",
+    "headline": "Stop Over-Committing. Start Setting Boundaries That Stick.",
+    "valueProposition": "Get word-for-word scripts for the 7 most common situations where you need to say no—professionally and confidently.",
+    "leadCapture": {
+      "formHeadline": "Get the Pushback Playbook",
+      "formSubheadline": "7 scripts for saying no professionally",
+      "buttonText": "Send Me the Playbook",
+      "successMessage": "Check your inbox! Your playbook is on its way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Why Saying No Is So Hard in English",
+        "content": "For many Latin American professionals, saying no feels rude. In Spanish, we soften everything. We avoid direct refusals. But in North American business culture, a clear 'no' delivered professionally is respected—even expected.\n\nThe problem? When you struggle with how to phrase it in English, you either agree to things you shouldn't, or you sound harsh without meaning to. These 7 scripts solve both problems."
+      },
+      {
+        "id": "scripts",
+        "title": "The 7 Pushback Scripts",
+        "items": [
+          {
+            "number": 1,
+            "title": "The Unrealistic Deadline",
+            "content": "When a client or boss asks for something that's genuinely impossible to deliver on time.",
+            "example": {
+              "wrong": "Um, that's very soon... I mean, we could try, but... maybe? I'll see what we can do.",
+              "right": "I want to deliver quality work, and that timeline puts that at risk. I can commit to [date] with full confidence, or we can discuss reducing scope to meet your deadline.",
+              "why": "You're not saying no to them—you're protecting the quality they want."
+            },
+            "actionItem": "Next time you face an unrealistic deadline, offer an alternative date or reduced scope—never just say 'I'll try.'"
+          },
+          {
+            "number": 2,
+            "title": "The Scope Creep Request",
+            "content": "When someone asks for 'one more thing' that wasn't in the original agreement.",
+            "example": {
+              "wrong": "Sure, I guess we can add that... it's not too much work... probably.",
+              "right": "Happy to include that. Since it's outside our original scope, I'll send over a change order with the additional time and cost. Does that work?",
+              "why": "You're saying yes to helping—but no to doing it for free."
+            },
+            "actionItem": "Always acknowledge the request positively before redirecting to scope and cost."
+          },
+          {
+            "number": 3,
+            "title": "The Meeting That Should Be an Email",
+            "content": "When someone wants to schedule a meeting for something that doesn't require one.",
+            "example": {
+              "wrong": "Okay, sure, let me find time... [blocks 30 minutes for a 2-minute question]",
+              "right": "I'd love to help. Could you send me the details by email first? That way I can give you a thoughtful answer—and if we still need to meet, I'll have context.",
+              "why": "You're positioning yourself as efficient, not difficult."
+            },
+            "actionItem": "Before accepting any meeting, ask: 'What do you need me to decide or provide?'"
+          },
+          {
+            "number": 4,
+            "title": "The Favor That's Actually Work",
+            "content": "When someone asks you to do something significant under the guise of a 'quick favor.'",
+            "example": {
+              "wrong": "Oh, sure, I can take a look... [spends 3 hours on unpaid work]",
+              "right": "I appreciate you thinking of me. That's actually a significant project. Let me send you my rates and availability, and we can see if it makes sense to work together.",
+              "why": "You're honoring your expertise while leaving the door open."
+            },
+            "actionItem": "When you hear 'quick favor,' translate it to 'unpaid work' in your head. Then respond accordingly."
+          },
+          {
+            "number": 5,
+            "title": "The Bad Idea You Need to Redirect",
+            "content": "When a client or colleague proposes something that won't work, and you need to steer them differently.",
+            "example": {
+              "wrong": "I don't think that's a good idea... I mean, you could do that, but... it's not really best practice...",
+              "right": "I understand the goal. Based on my experience, that approach tends to create [problem]. What's worked better is [alternative]. Would you be open to exploring that?",
+              "why": "You're redirecting to your expertise, not just blocking their idea."
+            },
+            "actionItem": "Always acknowledge their goal before offering an alternative approach."
+          },
+          {
+            "number": 6,
+            "title": "The Interruption During Focus Time",
+            "content": "When someone wants your attention immediately for something that isn't urgent.",
+            "example": {
+              "wrong": "Oh, sure, let me stop everything... [loses 45 minutes of productivity]",
+              "right": "I'm in the middle of something right now. Can I get back to you at [specific time]? Or if it's urgent, give me the 30-second version.",
+              "why": "You're offering an alternative, not a rejection."
+            },
+            "actionItem": "Practice the phrase 'Can I get back to you at [time]?' until it's automatic."
+          },
+          {
+            "number": 7,
+            "title": "The Request Outside Your Role",
+            "content": "When someone asks you to do something that isn't your job.",
+            "example": {
+              "wrong": "I guess I could do that... even though it's not really my area...",
+              "right": "That's actually [Name]'s area—they'll be able to help you much better than I can. Want me to connect you?",
+              "why": "You're being helpful by directing them to the right person."
+            },
+            "actionItem": "Know who handles what on your team so you can redirect confidently."
+          }
+        ]
+      }
+    ]
+  },
+  "es": {
+    "title": "La Guía para Decir No Profesionalmente",
+    "subtitle": "7 Situaciones, 7 Scripts, Cero Puentes Quemados",
+    "description": "Domina el arte del rechazo profesional. Estos 7 scripts te ayudan a declinar solicitudes, defender plazos y establecer límites—sin dañar relaciones.",
+    "headline": "Deja de Comprometerte de Más. Empieza a Poner Límites Que Se Respeten.",
+    "valueProposition": "Obtén scripts palabra por palabra para las 7 situaciones más comunes donde necesitas decir no—profesional y confiadamente.",
+    "leadCapture": {
+      "formHeadline": "Obtén la Guía para Decir No",
+      "formSubheadline": "7 scripts para decir no profesionalmente",
+      "buttonText": "Envíame la Guía",
+      "successMessage": "¡Revisa tu bandeja! Tu guía está en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Por Qué Decir No Es Tan Difícil en Inglés",
+        "content": "Para muchos profesionales latinoamericanos, decir no se siente grosero. En español, suavizamos todo. Evitamos rechazos directos. Pero en la cultura de negocios norteamericana, un 'no' claro entregado profesionalmente es respetado—incluso esperado.\n\n¿El problema? Cuando luchas con cómo expresarlo en inglés, o accedes a cosas que no deberías, o suenas brusco sin querer. Estos 7 scripts resuelven ambos problemas."
+      },
+      {
+        "id": "scripts",
+        "title": "Los 7 Scripts de Rechazo",
+        "items": [
+          {
+            "number": 1,
+            "title": "La Fecha Límite Irreal",
+            "content": "Cuando un cliente o jefe pide algo que es genuinamente imposible de entregar a tiempo.",
+            "example": {
+              "wrong": "Um, that's very soon... I mean, we could try, but... maybe? I'll see what we can do.",
+              "right": "I want to deliver quality work, and that timeline puts that at risk. I can commit to [date] with full confidence, or we can discuss reducing scope to meet your deadline.",
+              "why": "No estás diciéndoles no a ellos—estás protegiendo la calidad que quieren."
+            },
+            "actionItem": "La próxima vez que enfrentes una fecha límite irreal, ofrece una fecha alternativa o alcance reducido—nunca solo digas 'I'll try.'"
+          },
+          {
+            "number": 2,
+            "title": "La Solicitud de Scope Creep",
+            "content": "Cuando alguien pide 'una cosa más' que no estaba en el acuerdo original.",
+            "example": {
+              "wrong": "Sure, I guess we can add that... it's not too much work... probably.",
+              "right": "Happy to include that. Since it's outside our original scope, I'll send over a change order with the additional time and cost. Does that work?",
+              "why": "Estás diciendo sí a ayudar—pero no a hacerlo gratis."
+            },
+            "actionItem": "Siempre reconoce la solicitud positivamente antes de redirigir al alcance y costo."
+          },
+          {
+            "number": 3,
+            "title": "La Reunión Que Debería Ser un Email",
+            "content": "Cuando alguien quiere agendar una reunión para algo que no la requiere.",
+            "example": {
+              "wrong": "Okay, sure, let me find time... [blocks 30 minutes for a 2-minute question]",
+              "right": "I'd love to help. Could you send me the details by email first? That way I can give you a thoughtful answer—and if we still need to meet, I'll have context.",
+              "why": "Te estás posicionando como eficiente, no difícil."
+            },
+            "actionItem": "Antes de aceptar cualquier reunión, pregunta: '¿Qué necesitas que decida o proporcione?'"
+          },
+          {
+            "number": 4,
+            "title": "El Favor Que En Realidad Es Trabajo",
+            "content": "Cuando alguien te pide hacer algo significativo bajo la apariencia de un 'favor rápido.'",
+            "example": {
+              "wrong": "Oh, sure, I can take a look... [spends 3 hours on unpaid work]",
+              "right": "I appreciate you thinking of me. That's actually a significant project. Let me send you my rates and availability, and we can see if it makes sense to work together.",
+              "why": "Estás honrando tu expertise mientras dejas la puerta abierta."
+            },
+            "actionItem": "Cuando escuches 'quick favor,' tradúcelo a 'trabajo no pagado' en tu cabeza. Luego responde acorde."
+          },
+          {
+            "number": 5,
+            "title": "La Mala Idea Que Necesitas Redirigir",
+            "content": "Cuando un cliente o colega propone algo que no funcionará, y necesitas dirigirlos diferente.",
+            "example": {
+              "wrong": "I don't think that's a good idea... I mean, you could do that, but... it's not really best practice...",
+              "right": "I understand the goal. Based on my experience, that approach tends to create [problem]. What's worked better is [alternative]. Would you be open to exploring that?",
+              "why": "Estás redirigiendo a tu expertise, no solo bloqueando su idea."
+            },
+            "actionItem": "Siempre reconoce su objetivo antes de ofrecer un enfoque alternativo."
+          },
+          {
+            "number": 6,
+            "title": "La Interrupción Durante Tiempo de Enfoque",
+            "content": "Cuando alguien quiere tu atención inmediatamente para algo que no es urgente.",
+            "example": {
+              "wrong": "Oh, sure, let me stop everything... [loses 45 minutes of productivity]",
+              "right": "I'm in the middle of something right now. Can I get back to you at [specific time]? Or if it's urgent, give me the 30-second version.",
+              "why": "Estás ofreciendo una alternativa, no un rechazo."
+            },
+            "actionItem": "Practica la frase 'Can I get back to you at [time]?' hasta que sea automática."
+          },
+          {
+            "number": 7,
+            "title": "La Solicitud Fuera de Tu Rol",
+            "content": "Cuando alguien te pide hacer algo que no es tu trabajo.",
+            "example": {
+              "wrong": "I guess I could do that... even though it's not really my area...",
+              "right": "That's actually [Name]'s area—they'll be able to help you much better than I can. Want me to connect you?",
+              "why": "Estás siendo útil dirigiéndolos a la persona correcta."
+            },
+            "actionItem": "Conoce quién maneja qué en tu equipo para que puedas redirigir con confianza."
+          }
+        ]
+      }
+    ]
+  }
+}

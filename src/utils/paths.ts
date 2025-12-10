@@ -11,6 +11,8 @@ export interface LocaleRoutes {
   testimonios?: string;  // ES
   blog: string;
   contact: string;
+  free?: string;         // EN
+  gratis?: string;       // ES
   legal: {
     privacy: string;
     terms: string;
@@ -33,6 +35,7 @@ export const routes: RoutesByLocale = {
     testimonials: '/en/testimonials/',
     blog: '/en/blog/',
     contact: '/en/contact/',
+    free: '/en/free/',
     legal: {
       privacy: '/en/legal/privacy-policy/',
       terms: '/en/legal/terms-of-service/',
@@ -48,6 +51,7 @@ export const routes: RoutesByLocale = {
     testimonios: '/es/testimonios/',
     blog: '/es/blog/',
     contact: '/es/contact/',
+    gratis: '/es/gratis/',
     legal: {
       privacy: '/es/legal/privacy-policy/',
       terms: '/es/legal/terms-of-service/',

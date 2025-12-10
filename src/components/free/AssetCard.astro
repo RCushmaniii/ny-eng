@@ -1,0 +1,64 @@
+---
+import Button from "@components/ui/Button.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonLink: string;
+  icon?: string;
+  comingSoon?: boolean;
+}
+
+const {
+  title,
+  description,
+  buttonText,
+  buttonLink,
+  icon = "📄",
+  comingSoon = false,
+} = Astro.props;
+---
+
+<article
+  class="group relative bg-white dark:bg-neutral-900 rounded-lg border border-gray-200 dark:border-neutral-700 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+  data-aos="fade-up"
+>
+  {
+    comingSoon && (
+      <div class="absolute top-4 right-4 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">
+        Coming Soon
+      </div>
+    )
+  }
+
+  <div class="flex items-start gap-4 mb-4">
+    <div
+      class="flex-shrink-0 w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center text-2xl"
+    >
+      {icon}
+    </div>
+    <div class="flex-1">
+      <h3
+        class="text-xl font-bold text-headline dark:text-headline-dark mb-2 group-hover:text-primary dark:group-hover:text-primary-dark transition-colors"
+      >
+        {title}
+      </h3>
+    </div>
+  </div>
+
+  <p class="text-body-base dark:text-body-light mb-6 leading-relaxed">
+    {description}
+  </p>
+
+  <div class="flex items-center justify-between">
+    <Button
+      href={buttonLink}
+      variant={comingSoon ? "secondary" : "primary"}
+      size="md"
+      class="w-full sm:w-auto"
+    >
+      {buttonText}
+    </Button>
+  </div>
+</article>

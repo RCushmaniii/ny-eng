@@ -1,0 +1,202 @@
+{
+  "metadata": {
+    "id": "5-quick-wins-executive-english",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "guide",
+    "format": "pdf-guide",
+    "funnelStage": "consideration",
+    "difficultyLevel": "beginner",
+    "timeToComplete": "6 minutes",
+    "estimatedMinutes": 6,
+    "pageCount": 5,
+    "tags": ["quick-wins", "immediate-results", "executive-presence", "practical-tips"]
+  },
+  "targeting": {
+    "primaryPersona": ["executive", "manager", "all"],
+    "industries": ["technology", "professional-services", "finance"],
+    "scenarios": ["client-meetings", "presentations", "negotiations"],
+    "painPoints": [
+      "Wanting immediate improvements in English communication",
+      "Not knowing where to start with executive English",
+      "Needing quick wins before important meetings"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free strategy call to get personalized quick wins for your role",
+    "relatedAssets": ["5-principles-executive-english", "10-common-mistakes-executive-english"]
+  },
+  "seo": {
+    "metaDescription": "Get 5 quick wins you can apply today to immediately sound more executive in English. Simple changes with big impact on your credibility.",
+    "keywords": ["executive english tips", "quick english improvements", "business english quick wins", "professional communication tips"]
+  },
+  "slugEn": "5-quick-wins-executive-english",
+  "slugEs": "5-victorias-rapidas-ingles-ejecutivo",
+  "en": {
+    "title": "5 Quick Wins for Executive English",
+    "subtitle": "Simple Changes You Can Make Today for Immediate Impact",
+    "description": "These 5 quick wins will make you sound more executive immediately. No complex grammar—just simple changes that create big impact in your next meeting.",
+    "headline": "Sound More Executive in Your Next Meeting",
+    "valueProposition": "Apply these 5 simple changes today and you'll immediately sound more confident and credible in English.",
+    "leadCapture": {
+      "formHeadline": "Get the 5 Quick Wins Guide",
+      "formSubheadline": "Simple changes with immediate impact",
+      "buttonText": "Send Me the Guide",
+      "successMessage": "Check your inbox! Your guide is on its way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Why Quick Wins Matter",
+        "content": "You don't need perfect grammar to sound executive. You need strategic improvements in the right places. These 5 quick wins are the highest-leverage changes you can make—simple adjustments that create disproportionate impact."
+      },
+      {
+        "id": "quick-wins",
+        "title": "The 5 Quick Wins",
+        "items": [
+          {
+            "number": 1,
+            "title": "Replace 'I think' with 'I recommend'",
+            "content": "'I think' sounds tentative. 'I recommend' sounds decisive. This one-word swap instantly elevates your authority.",
+            "example": {
+              "wrong": "I think we should prioritize the API integration.",
+              "right": "I recommend we prioritize the API integration.",
+              "why": "'Recommend' signals you've analyzed the situation and reached a conclusion. 'Think' signals you're still uncertain."
+            },
+            "actionItem": "In your next meeting, replace every 'I think' with 'I recommend' or 'My recommendation is...'"
+          },
+          {
+            "number": 2,
+            "title": "Start answers with 'Yes' or 'No' before explaining",
+            "content": "Executives give the bottom line first, then explain. Junior professionals explain first, then maybe get to the answer.",
+            "example": {
+              "wrong": "Well, there are several factors to consider, and the timeline depends on resources, so it's complicated, but probably yes.",
+              "right": "Yes. Here's why: [brief explanation].",
+              "why": "Leading with the answer signals confidence and respects the listener's time."
+            },
+            "actionItem": "Practice answering yes/no questions with 'Yes' or 'No' as the first word, then a 2-sentence explanation."
+          },
+          {
+            "number": 3,
+            "title": "Use 'Here's what I need from you' instead of asking",
+            "content": "Executives state needs clearly. Tentative language ('Could you maybe...?') undermines your authority.",
+            "example": {
+              "wrong": "So, um, if it's not too much trouble, could you maybe send me the report when you get a chance?",
+              "right": "I need the report by Friday at 3pm. Can you make that work?",
+              "why": "Clear requests get clear responses. Tentative requests get delayed or ignored."
+            },
+            "actionItem": "Next time you need something, state it directly: 'I need X by Y. Can you do that?'"
+          },
+          {
+            "number": 4,
+            "title": "Replace 'just' with nothing",
+            "content": "'Just' minimizes your contributions. Delete it and your statements become stronger.",
+            "example": {
+              "wrong": "I just wanted to follow up. I'm just checking if you had a chance to review this. Just let me know.",
+              "right": "I wanted to follow up. Did you have a chance to review this? Let me know.",
+              "why": "'Just' signals that what you're saying isn't important. Removing it signals confidence."
+            },
+            "actionItem": "Review your last 5 emails and delete every instance of 'just.' Notice how much stronger they sound."
+          },
+          {
+            "number": 5,
+            "title": "End meetings with 'Here are the next steps' not 'So, yeah...'",
+            "content": "How you close a meeting determines whether action happens. Weak closings create confusion. Strong closings create momentum.",
+            "example": {
+              "wrong": "So, yeah, I guess we should probably touch base next week or something.",
+              "right": "Here are the next steps: I'll send the proposal by Thursday. You'll review with your team by Monday. We'll reconvene Tuesday at 2pm to finalize. Sound good?",
+              "why": "Specific next steps with owners and deadlines create accountability. Vague closings create inaction."
+            },
+            "actionItem": "End your next meeting by saying 'Here are the next steps:' and listing 2-3 specific actions with owners and dates."
+          }
+        ]
+      }
+    ]
+  },
+  "es": {
+    "title": "5 Victorias Rápidas para Inglés Ejecutivo",
+    "subtitle": "Cambios Simples Que Puedes Hacer Hoy para Impacto Inmediato",
+    "description": "Estas 5 victorias rápidas te harán sonar más ejecutivo inmediatamente. Sin gramática compleja—solo cambios simples que crean gran impacto en tu próxima reunión.",
+    "headline": "Suena Más Ejecutivo en Tu Próxima Reunión",
+    "valueProposition": "Aplica estos 5 cambios simples hoy y sonarás inmediatamente más seguro y creíble en inglés.",
+    "leadCapture": {
+      "formHeadline": "Obtén la Guía de 5 Victorias Rápidas",
+      "formSubheadline": "Cambios simples con impacto inmediato",
+      "buttonText": "Envíame la Guía",
+      "successMessage": "¡Revisa tu bandeja! Tu guía está en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Por Qué las Victorias Rápidas Importan",
+        "content": "No necesitas gramática perfecta para sonar ejecutivo. Necesitas mejoras estratégicas en los lugares correctos. Estas 5 victorias rápidas son los cambios de mayor apalancamiento que puedes hacer—ajustes simples que crean impacto desproporcionado."
+      },
+      {
+        "id": "quick-wins",
+        "title": "Las 5 Victorias Rápidas",
+        "items": [
+          {
+            "number": 1,
+            "title": "Reemplaza 'I think' con 'I recommend'",
+            "content": "'I think' suena tentativo. 'I recommend' suena decisivo. Este cambio de una palabra eleva instantáneamente tu autoridad.",
+            "example": {
+              "wrong": "I think we should prioritize the API integration.",
+              "right": "I recommend we prioritize the API integration.",
+              "why": "'Recommend' señala que has analizado la situación y llegado a una conclusión. 'Think' señala que aún estás inseguro."
+            },
+            "actionItem": "En tu próxima reunión, reemplaza cada 'I think' con 'I recommend' o 'My recommendation is...'"
+          },
+          {
+            "number": 2,
+            "title": "Comienza respuestas con 'Yes' o 'No' antes de explicar",
+            "content": "Los ejecutivos dan la conclusión primero, luego explican. Los profesionales junior explican primero, luego tal vez llegan a la respuesta.",
+            "example": {
+              "wrong": "Well, there are several factors to consider, and the timeline depends on resources, so it's complicated, but probably yes.",
+              "right": "Yes. Here's why: [brief explanation].",
+              "why": "Liderar con la respuesta señala confianza y respeta el tiempo del oyente."
+            },
+            "actionItem": "Practica responder preguntas sí/no con 'Yes' o 'No' como primera palabra, luego una explicación de 2 oraciones."
+          },
+          {
+            "number": 3,
+            "title": "Usa 'Here's what I need from you' en lugar de preguntar",
+            "content": "Los ejecutivos declaran necesidades claramente. El lenguaje tentativo ('Could you maybe...?') socava tu autoridad.",
+            "example": {
+              "wrong": "So, um, if it's not too much trouble, could you maybe send me the report when you get a chance?",
+              "right": "I need the report by Friday at 3pm. Can you make that work?",
+              "why": "Las solicitudes claras obtienen respuestas claras. Las solicitudes tentativas se retrasan o ignoran."
+            },
+            "actionItem": "La próxima vez que necesites algo, decláralo directamente: 'I need X by Y. Can you do that?'"
+          },
+          {
+            "number": 4,
+            "title": "Reemplaza 'just' con nada",
+            "content": "'Just' minimiza tus contribuciones. Elimínalo y tus declaraciones se vuelven más fuertes.",
+            "example": {
+              "wrong": "I just wanted to follow up. I'm just checking if you had a chance to review this. Just let me know.",
+              "right": "I wanted to follow up. Did you have a chance to review this? Let me know.",
+              "why": "'Just' señala que lo que dices no es importante. Eliminarlo señala confianza."
+            },
+            "actionItem": "Revisa tus últimos 5 emails y elimina cada instancia de 'just.' Nota cuánto más fuertes suenan."
+          },
+          {
+            "number": 5,
+            "title": "Termina reuniones con 'Here are the next steps' no 'So, yeah...'",
+            "content": "Cómo cierras una reunión determina si ocurre acción. Los cierres débiles crean confusión. Los cierres fuertes crean momentum.",
+            "example": {
+              "wrong": "So, yeah, I guess we should probably touch base next week or something.",
+              "right": "Here are the next steps: I'll send the proposal by Thursday. You'll review with your team by Monday. We'll reconvene Tuesday at 2pm to finalize. Sound good?",
+              "why": "Los próximos pasos específicos con responsables y fechas crean responsabilidad. Los cierres vagos crean inacción."
+            },
+            "actionItem": "Termina tu próxima reunión diciendo 'Here are the next steps:' y listando 2-3 acciones específicas con responsables y fechas."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "metadata": {
+    "id": "questions-that-close-deals",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "questions",
+    "format": "pdf-guide",
+    "funnelStage": "consideration",
+    "difficultyLevel": "intermediate",
+    "timeToComplete": "7 minutes",
+    "estimatedMinutes": 7,
+    "pageCount": 5,
+    "tags": ["sales", "closing", "questions", "discovery", "negotiation"]
+  },
+  "targeting": {
+    "primaryPersona": ["sales", "consultant", "founder", "executive"],
+    "industries": ["technology", "professional-services", "all"],
+    "scenarios": ["sales-calls", "negotiations", "client-meetings"],
+    "painPoints": [
+      "Deals stalling without clear reason",
+      "Prospects going silent after proposals",
+      "Not knowing how to move deals forward",
+      "Feeling pushy when trying to close"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free strategy call to practice these questions in realistic scenarios",
+    "relatedAssets": ["5-minute-negotiation-script", "pushback-playbook"]
+  },
+  "seo": {
+    "metaDescription": "Learn 8 powerful questions that move deals forward without being pushy. Close more sales by asking better questions at the right time.",
+    "keywords": ["sales closing questions", "how to close deals", "discovery questions sales", "closing techniques"]
+  },
+  "slugEn": "questions-that-close-deals",
+  "slugEs": "preguntas-que-cierran-ventas",
+  "en": {
+    "title": "8 Powerful Questions That Close Deals",
+    "subtitle": "Move Stalled Deals Forward Without Being Pushy",
+    "description": "The right question at the right time can unlock a stalled deal. These 8 questions help you understand objections, create urgency, and close—without sounding desperate.",
+    "headline": "Stop Chasing. Start Closing.",
+    "valueProposition": "Get 8 proven questions that move deals from 'let me think about it' to 'let's do this.'",
+    "leadCapture": {
+      "formHeadline": "Get the Closing Questions",
+      "formSubheadline": "8 questions that move deals forward",
+      "buttonText": "Send Me the Questions",
+      "successMessage": "Check your inbox! Your questions are on their way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Why Questions Beat Pitches",
+        "content": "Most salespeople talk too much. They pitch features, explain benefits, and hope something sticks. But the best closers ask questions that make prospects sell themselves.\n\nThese 8 questions are strategic. Each one is designed to surface hidden objections, create urgency, or move the conversation toward a decision. Use them at the right moment and watch deals unstick."
+      },
+      {
+        "id": "questions",
+        "title": "The 8 Closing Questions",
+        "items": [
+          {
+            "number": 1,
+            "title": "The Priority Question",
+            "content": "Use when: You're not sure if this is actually important to them right now.",
+            "example": {
+              "wrong": "So, are you interested in moving forward?",
+              "right": "Where does solving this problem rank among your priorities this quarter?",
+              "why": "If it's not a priority, you know to either create urgency or move on. No more chasing dead deals."
+            },
+            "actionItem": "Ask this early in discovery to qualify whether it's worth your time."
+          },
+          {
+            "number": 2,
+            "title": "The Cost of Inaction Question",
+            "content": "Use when: They're hesitating to commit or want to 'think about it.'",
+            "example": {
+              "wrong": "What's holding you back from deciding?",
+              "right": "What happens if you don't solve this in the next 90 days?",
+              "why": "This makes the cost of waiting tangible. Most people don't think about what inaction costs them."
+            },
+            "actionItem": "Use this when prospects want to delay—it reframes the decision."
+          },
+          {
+            "number": 3,
+            "title": "The Hidden Stakeholder Question",
+            "content": "Use when: You suspect there are decision-makers you haven't met.",
+            "example": {
+              "wrong": "Are you the decision-maker?",
+              "right": "Who else needs to weigh in before you can move forward?",
+              "why": "The first version is confrontational. The second gets you the same information without ego."
+            },
+            "actionItem": "Ask this before sending any proposal—never get blindsided by an unknown stakeholder."
+          },
+          {
+            "number": 4,
+            "title": "The Real Objection Question",
+            "content": "Use when: You sense hesitation but can't identify the specific concern.",
+            "example": {
+              "wrong": "Do you have any concerns?",
+              "right": "What would need to be true for you to feel confident moving forward?",
+              "why": "This surfaces the real barrier without making them defensive."
+            },
+            "actionItem": "Use this exact phrasing—it's been tested thousands of times and works."
+          },
+          {
+            "number": 5,
+            "title": "The Budget Reality Question",
+            "content": "Use when: You need to understand if money is the real issue.",
+            "example": {
+              "wrong": "Is budget a problem?",
+              "right": "If we could solve this problem completely, what would that be worth to you?",
+              "why": "This reframes the conversation from cost to value—where you want it."
+            },
+            "actionItem": "Get them to name the value before you name the price."
+          },
+          {
+            "number": 6,
+            "title": "The Timeline Question",
+            "content": "Use when: You need to create urgency without being pushy.",
+            "example": {
+              "wrong": "When do you want to get started?",
+              "right": "What's driving your timeline on this? Is there a deadline I should know about?",
+              "why": "This surfaces external pressures that can work in your favor."
+            },
+            "actionItem": "Look for quarterly deadlines, board meetings, or competitive pressures."
+          },
+          {
+            "number": 7,
+            "title": "The Comparison Question",
+            "content": "Use when: You know they're evaluating competitors.",
+            "example": {
+              "wrong": "Why should you choose us over the competition?",
+              "right": "What criteria are you using to evaluate your options?",
+              "why": "Now you know exactly what to emphasize in your pitch."
+            },
+            "actionItem": "Once you know their criteria, tailor everything to those specific points."
+          },
+          {
+            "number": 8,
+            "title": "The Close Question",
+            "content": "Use when: You've addressed all objections and it's time to ask for the business.",
+            "example": {
+              "wrong": "So, what do you think? Should we move forward maybe?",
+              "right": "Based on our conversation, it sounds like this is a fit. What would you need to see in a proposal to move forward this week?",
+              "why": "This assumes the sale and focuses on the next concrete step."
+            },
+            "actionItem": "Always end with a specific, time-bound next step."
+          }
+        ]
+      }
+    ]
+  },
+  "es": {
+    "title": "8 Preguntas Que Cierran Ventas",
+    "subtitle": "Mueve Negocios Estancados Sin Ser Insistente",
+    "description": "La pregunta correcta en el momento correcto puede desbloquear un negocio estancado. Estas 8 preguntas te ayudan a entender objeciones, crear urgencia, y cerrar—sin sonar desesperado.",
+    "headline": "Deja de Perseguir. Empieza a Cerrar.",
+    "valueProposition": "Obtén 8 preguntas probadas que mueven negocios de 'déjame pensarlo' a 'hagámoslo.'",
+    "leadCapture": {
+      "formHeadline": "Obtén las Preguntas de Cierre",
+      "formSubheadline": "8 preguntas que mueven negocios",
+      "buttonText": "Envíame las Preguntas",
+      "successMessage": "¡Revisa tu bandeja! Tus preguntas están en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Por Qué las Preguntas Ganan a los Pitches",
+        "content": "La mayoría de los vendedores hablan demasiado. Presentan características, explican beneficios, y esperan que algo funcione. Pero los mejores cerradores hacen preguntas que hacen que los prospectos se vendan a sí mismos.\n\nEstas 8 preguntas son estratégicas. Cada una está diseñada para sacar objeciones ocultas, crear urgencia, o mover la conversación hacia una decisión. Úsalas en el momento correcto y verás negocios desbloquearse."
+      },
+      {
+        "id": "questions",
+        "title": "Las 8 Preguntas de Cierre",
+        "items": [
+          {
+            "number": 1,
+            "title": "La Pregunta de Prioridad",
+            "content": "Usar cuando: No estás seguro si esto es realmente importante para ellos ahora.",
+            "example": {
+              "wrong": "So, are you interested in moving forward?",
+              "right": "Where does solving this problem rank among your priorities this quarter?",
+              "why": "Si no es prioridad, sabes que debes crear urgencia o seguir adelante. No más perseguir negocios muertos."
+            },
+            "actionItem": "Pregunta esto temprano en descubrimiento para calificar si vale tu tiempo."
+          },
+          {
+            "number": 2,
+            "title": "La Pregunta del Costo de Inacción",
+            "content": "Usar cuando: Están dudando en comprometerse o quieren 'pensarlo.'",
+            "example": {
+              "wrong": "What's holding you back from deciding?",
+              "right": "What happens if you don't solve this in the next 90 days?",
+              "why": "Esto hace tangible el costo de esperar. La mayoría no piensa en lo que les cuesta la inacción."
+            },
+            "actionItem": "Usa esto cuando prospectos quieran retrasar—reenmarca la decisión."
+          },
+          {
+            "number": 3,
+            "title": "La Pregunta del Stakeholder Oculto",
+            "content": "Usar cuando: Sospechas que hay tomadores de decisión que no has conocido.",
+            "example": {
+              "wrong": "Are you the decision-maker?",
+              "right": "Who else needs to weigh in before you can move forward?",
+              "why": "La primera versión es confrontacional. La segunda te da la misma información sin ego."
+            },
+            "actionItem": "Pregunta esto antes de enviar cualquier propuesta—nunca te sorprenda un stakeholder desconocido."
+          },
+          {
+            "number": 4,
+            "title": "La Pregunta de la Objeción Real",
+            "content": "Usar cuando: Sientes vacilación pero no puedes identificar la preocupación específica.",
+            "example": {
+              "wrong": "Do you have any concerns?",
+              "right": "What would need to be true for you to feel confident moving forward?",
+              "why": "Esto saca la barrera real sin ponerlos a la defensiva."
+            },
+            "actionItem": "Usa esta frase exacta—ha sido probada miles de veces y funciona."
+          },
+          {
+            "number": 5,
+            "title": "La Pregunta de Realidad Presupuestaria",
+            "content": "Usar cuando: Necesitas entender si el dinero es el problema real.",
+            "example": {
+              "wrong": "Is budget a problem?",
+              "right": "If we could solve this problem completely, what would that be worth to you?",
+              "why": "Esto reenmarca la conversación de costo a valor—donde la quieres."
+            },
+            "actionItem": "Haz que nombren el valor antes de que nombres el precio."
+          },
+          {
+            "number": 6,
+            "title": "La Pregunta de Cronograma",
+            "content": "Usar cuando: Necesitas crear urgencia sin ser insistente.",
+            "example": {
+              "wrong": "When do you want to get started?",
+              "right": "What's driving your timeline on this? Is there a deadline I should know about?",
+              "why": "Esto saca presiones externas que pueden trabajar a tu favor."
+            },
+            "actionItem": "Busca fechas límite trimestrales, reuniones de junta, o presiones competitivas."
+          },
+          {
+            "number": 7,
+            "title": "La Pregunta de Comparación",
+            "content": "Usar cuando: Sabes que están evaluando competidores.",
+            "example": {
+              "wrong": "Why should you choose us over the competition?",
+              "right": "What criteria are you using to evaluate your options?",
+              "why": "Ahora sabes exactamente qué enfatizar en tu pitch."
+            },
+            "actionItem": "Una vez que sepas sus criterios, adapta todo a esos puntos específicos."
+          },
+          {
+            "number": 8,
+            "title": "La Pregunta de Cierre",
+            "content": "Usar cuando: Has abordado todas las objeciones y es hora de pedir el negocio.",
+            "example": {
+              "wrong": "So, what do you think? Should we move forward maybe?",
+              "right": "Based on our conversation, it sounds like this is a fit. What would you need to see in a proposal to move forward this week?",
+              "why": "Esto asume la venta y se enfoca en el siguiente paso concreto."
+            },
+            "actionItem": "Siempre termina con un siguiente paso específico y con tiempo límite."
+          }
+        ]
+      }
+    ]
+  }
+}

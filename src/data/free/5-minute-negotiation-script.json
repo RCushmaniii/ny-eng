@@ -1,0 +1,521 @@
+{
+  "metadata": {
+    "id": "5-minute-negotiation-script",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "script",
+    "format": "pdf-script",
+    "funnelStage": "consideration",
+    "difficultyLevel": "intermediate",
+    "timeToComplete": "10 minutes",
+    "estimatedMinutes": 10,
+    "pageCount": 8,
+    "tags": ["negotiation", "pricing", "objection-handling", "high-stakes", "scripts"]
+  },
+  "targeting": {
+    "primaryPersona": ["sales", "founder", "executive", "consultant"],
+    "industries": ["technology", "professional-services", "all"],
+    "scenarios": ["negotiations", "client-meetings", "sales-calls"],
+    "painPoints": [
+      "Conceding too quickly on price",
+      "Unable to defend value in real-time",
+      "Freezing when clients push back",
+      "Losing deals due to weak negotiation language",
+      "Discounting unnecessarily to close deals"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a strategy call to role-play these scripts with expert feedback",
+    "relatedAssets": ["client-call-framework", "executive-english-starter-kit"]
+  },
+  "seo": {
+    "metaDescription": "Download the 5-Minute Negotiation Script: exact phrases to defend your price, handle objections, and close deals with confidence in English.",
+    "keywords": ["negotiation script english", "business negotiation phrases", "how to negotiate in english", "price negotiation script", "sales negotiation"]
+  },
+  "analytics": {
+    "downloadCount": 0,
+    "viewCount": 0,
+    "lastAccessed": null
+  },
+  "slugEn": "5-minute-negotiation-script",
+  "slugEs": "guion-negociacion-5-minutos",
+  "en": {
+    "title": "The 5-Minute Negotiation Script",
+    "subtitle": "Exact Phrases to Defend Your Price and Close the Deal",
+    "description": "Copy-paste scripts for the 4 most critical negotiation moments—tested with Fortune 500 clients.",
+    "introduction": {
+      "text": "Every time a client pushes back on price and you concede too quickly, you leave money on the table. Not because your service isn't worth it—but because you don't have the English phrases ready to defend your value in real-time.\n\nThis script gives you the exact words to use when the pressure is on.",
+      "scenario": "You've just delivered your proposal. The client says: 'This is more than we expected. Can you do better on price?' What do you say?",
+      "promise": "By the end of this guide, you'll have memorized responses for the 4 most common negotiation moments—and the confidence to deliver them."
+    },
+    "sections": [
+      {
+        "id": "phase-1",
+        "title": "Phase 1: The Opening Anchor",
+        "description": "How to present your price with confidence (before they push back)",
+        "timing": "First 60 seconds of pricing discussion",
+        "principle": "The way you present your price determines how much pushback you get. Weak delivery invites negotiation. Strong delivery commands respect.",
+        "scripts": [
+          {
+            "situation": "Presenting your price for the first time",
+            "script": "Based on the scope we discussed, the investment for this project is $[X]. This includes [key deliverable 1], [key deliverable 2], and [key deliverable 3]. I want to walk you through why this investment makes sense for [their specific goal].",
+            "notes": [
+              "Say 'investment' not 'cost' or 'price'",
+              "Connect immediately to their goals",
+              "Use falling intonation on the number (statement, not question)",
+              "Pause after the number—don't rush to justify"
+            ],
+            "avoid": "So, um, the price would be around $X, more or less. I know it might seem high, but..."
+          },
+          {
+            "situation": "Setting expectations before the number",
+            "script": "Before I share the investment, I want to make sure we're aligned on scope. You mentioned [their priority]. To deliver that properly, we're looking at [X]. Here's what that includes.",
+            "notes": [
+              "Frame scope before price",
+              "Remind them of their own stated priorities",
+              "This makes the price feel justified before you say it"
+            ]
+          },
+          {
+            "situation": "When you know they're comparing vendors",
+            "script": "I know you're evaluating options. Here's what I want you to consider when comparing: [unique value 1], [unique value 2], and [unique value 3]. The investment is $[X], and here's why it's structured this way.",
+            "notes": [
+              "Acknowledge competition without defensiveness",
+              "Pre-emptively differentiate",
+              "Makes them compare value, not just price"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "phase-2",
+        "title": "Phase 2: The Pushback Response",
+        "description": "What to say when they challenge your price",
+        "timing": "The critical 30 seconds after 'Can you do better?'",
+        "principle": "The first person to speak after a price objection usually loses. Pause. Ask a question. Understand before you concede.",
+        "scripts": [
+          {
+            "situation": "They say: 'This is more than we expected.'",
+            "script": "I appreciate you sharing that. Help me understand—when you say more than expected, are you comparing to a specific budget you had in mind, or to other proposals you've received?",
+            "notes": [
+              "Don't apologize or immediately offer a discount",
+              "Ask a diagnostic question",
+              "This gives you information AND time to think"
+            ],
+            "followUp": "Depending on their answer, you can address budget constraints OR differentiate from competitors."
+          },
+          {
+            "situation": "They say: 'Can you do better on price?'",
+            "script": "I want to make sure we find something that works for both of us. Before I answer that—is price the only factor, or are there other concerns I should address first?",
+            "notes": [
+              "Never say 'yes' immediately",
+              "Uncover hidden objections",
+              "Often, price is a proxy for other concerns (trust, scope, timeline)"
+            ]
+          },
+          {
+            "situation": "They say: 'Competitor X is 30% cheaper.'",
+            "script": "That's useful to know. Can you share what's included in their proposal? I want to make sure we're comparing the same scope. In my experience, the difference often comes down to [your key differentiator].",
+            "notes": [
+              "Don't panic or immediately match",
+              "Request details (they often don't have them)",
+              "Redirect to value, not price"
+            ]
+          },
+          {
+            "situation": "They say: 'We don't have the budget for this.'",
+            "script": "I understand budget constraints are real. Let me ask—if budget weren't a factor, would this solution address your needs? [If yes:] Then let's talk about how we might structure this to fit your current situation.",
+            "notes": [
+              "Separate 'can't afford' from 'don't want to pay'",
+              "Opens door to phased approaches or adjusted scope",
+              "Shows flexibility without discounting"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "phase-3",
+        "title": "Phase 3: Defending Your Position",
+        "description": "How to hold the line without losing the deal",
+        "timing": "When they keep pushing after your initial response",
+        "principle": "You can be firm AND collaborative. The goal is to find a solution, not win an argument. But you don't have to give away your margin to do it.",
+        "scripts": [
+          {
+            "situation": "They keep pushing: 'I really need you to come down.'",
+            "script": "I hear you, and I want to find a solution. Here's what I can do: I can adjust the scope to fit a $[lower number] investment, or we can keep the full scope and discuss payment terms. Which would be more helpful for you?",
+            "notes": [
+              "Offer alternatives, not discounts",
+              "Tie price reduction to scope reduction",
+              "Put the choice in their hands"
+            ]
+          },
+          {
+            "situation": "They ask for a specific discount: 'Can you do 20% off?'",
+            "script": "I can't do 20% off the current scope. But I can offer [specific concession] if that would help. What would that mean for your decision?",
+            "notes": [
+              "Say 'I can't' not 'I won't'—it's less confrontational",
+              "Offer something smaller in return",
+              "Ask what it means for their decision (tests if it's the real blocker)"
+            ]
+          },
+          {
+            "situation": "They use silence or pressure tactics",
+            "script": "[Pause. Wait. Let them speak first.] If they stay silent: 'Take your time. What questions can I answer to help you decide?'",
+            "notes": [
+              "Silence is a tactic—don't fill it with concessions",
+              "Whoever speaks first after a negotiation silence usually concedes",
+              "Offer to answer questions, not to lower price"
+            ]
+          },
+          {
+            "situation": "They say: 'I need to think about it.'",
+            "script": "Absolutely, take the time you need. Before you go—what specifically do you want to think through? I'm happy to address any concerns now so you have complete information.",
+            "notes": [
+              "Don't just accept 'I need to think'—it often means unspoken objections",
+              "Surface concerns while you're still on the call",
+              "Keeps the conversation open"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "phase-4",
+        "title": "Phase 4: Closing with Confidence",
+        "description": "How to lock in the deal and confirm next steps",
+        "timing": "When they're ready to move forward (or almost ready)",
+        "principle": "A negotiation isn't finished until you have clear commitment. Don't leave with vague 'we'll be in touch.' Get specific next steps.",
+        "scripts": [
+          {
+            "situation": "They verbally agree: 'OK, let's do it.'",
+            "script": "Excellent. Let me confirm what we've agreed: [scope], [timeline], [investment]. I'll send over the agreement by [specific time] today. Once you sign, we can schedule kickoff for [proposed date]. Does that work?",
+            "notes": [
+              "Restate terms immediately (prevents 'misunderstandings' later)",
+              "Propose specific next steps with times",
+              "Get verbal confirmation"
+            ]
+          },
+          {
+            "situation": "They're close but hesitant",
+            "script": "It sounds like we're aligned on the solution. What would help you feel confident moving forward today?",
+            "notes": [
+              "Direct question to surface last objection",
+              "'Feel confident' acknowledges emotion without being pushy",
+              "Often reveals the real blocker"
+            ]
+          },
+          {
+            "situation": "They need internal approval",
+            "script": "Understood. Who else is involved in the decision? I'd be happy to join a call with them, or I can prepare materials that address their specific concerns. What would be most helpful?",
+            "notes": [
+              "Offer to help them sell internally",
+              "Gets you access to the real decision-maker",
+              "Shows you understand B2B dynamics"
+            ]
+          },
+          {
+            "situation": "Final close when everything is agreed",
+            "script": "I'm excited to work together on this. To confirm: I'll send the contract by [time]. Once signed, [next milestone]. Any final questions before we wrap up?",
+            "notes": [
+              "Express enthusiasm (it's contagious)",
+              "Restate immediate next action",
+              "One final chance for objections"
+            ]
+          }
+        ]
+      }
+    ],
+    "practiceExercise": {
+      "title": "Your 5-Minute Practice Drill",
+      "instruction": "Practice these scenarios out loud. Record yourself. Listen back. The goal is to sound natural and confident, not robotic.",
+      "scenarios": [
+        "Present a $50,000 proposal with confident delivery",
+        "Respond to 'Can you do better on price?' without immediately discounting",
+        "Handle 'Your competitor is cheaper' without panicking",
+        "Close a deal with specific next steps and timeline"
+      ],
+      "tip": "Do this before every important negotiation. 5 minutes of practice can save you 20% in unnecessary discounts."
+    },
+    "quickReference": {
+      "title": "Quick Reference Card",
+      "description": "Print this. Keep it near your phone during client calls.",
+      "phrases": {
+        "opening": [
+          "The investment for this project is $X.",
+          "Here's why this investment makes sense for [their goal].",
+          "What I want you to consider when comparing is..."
+        ],
+        "responding": [
+          "Help me understand—what specifically concerns you about the investment?",
+          "Is price the only factor, or are there other concerns?",
+          "Can you share what's included in their proposal?"
+        ],
+        "defending": [
+          "I can adjust the scope to fit $X, or we can discuss payment terms.",
+          "I can't do that, but I can offer [alternative].",
+          "What questions can I answer to help you decide?"
+        ],
+        "closing": [
+          "Let me confirm what we've agreed...",
+          "What would help you feel confident moving forward today?",
+          "I'll send the contract by [time]. Once signed, [next step]."
+        ]
+      }
+    },
+    "conclusion": {
+      "title": "Your Next Step",
+      "text": "These scripts work. But reading them and using them under pressure are different things.\n\nThe executives who close the biggest deals practice these scenarios with live feedback until the responses become automatic.\n\nIf you want to transform your negotiation confidence in 6 weeks, let's talk.",
+      "cta": {
+        "text": "Book Your Free Strategy Call",
+        "url": "/en/book/"
+      }
+    },
+    "about": {
+      "title": "About NY English Teacher",
+      "text": "NY English Teacher helps Latin American executives and sales teams negotiate confidently with North American clients. Our clients have used these exact scripts to defend pricing, close enterprise deals, and stop leaving money on the table.",
+      "author": "Robert Cushman",
+      "credentials": "Business English Coach | 15+ years experience | Based in New York"
+    }
+  },
+  "es": {
+    "title": "El Guion de Negociación de 5 Minutos",
+    "subtitle": "Frases Exactas para Defender Tu Precio y Cerrar el Acuerdo",
+    "description": "Guiones para copiar y pegar en los 4 momentos más críticos de negociación—probados con clientes Fortune 500.",
+    "introduction": {
+      "text": "Cada vez que un cliente objeta tu precio y cedes demasiado rápido, dejas dinero sobre la mesa. No porque tu servicio no lo valga—sino porque no tienes las frases en inglés listas para defender tu valor en tiempo real.\n\nEste guion te da las palabras exactas para usar cuando la presión está alta.",
+      "scenario": "Acabas de entregar tu propuesta. El cliente dice: 'Esto es más de lo que esperábamos. ¿Pueden darnos un mejor precio?' ¿Qué dices?",
+      "promise": "Al final de esta guía, tendrás respuestas memorizadas para los 4 momentos de negociación más comunes—y la confianza para entregarlas."
+    },
+    "sections": [
+      {
+        "id": "phase-1",
+        "title": "Fase 1: El Ancla de Apertura",
+        "description": "Cómo presentar tu precio con confianza (antes de que objeten)",
+        "timing": "Primeros 60 segundos de la discusión de precios",
+        "principle": "La forma en que presentas tu precio determina cuánto te objetarán. Una entrega débil invita a negociar. Una entrega fuerte impone respeto.",
+        "scripts": [
+          {
+            "situation": "Presentando tu precio por primera vez",
+            "script": "Based on the scope we discussed, the investment for this project is $[X]. This includes [entregable clave 1], [entregable clave 2], and [entregable clave 3]. I want to walk you through why this investment makes sense for [su meta específica].",
+            "notes": [
+              "Di 'investment' no 'cost' o 'price'",
+              "Conecta inmediatamente con sus metas",
+              "Usa entonación descendente en el número (declaración, no pregunta)",
+              "Pausa después del número—no te apresures a justificar"
+            ],
+            "avoid": "So, um, the price would be around $X, more or less. I know it might seem high, but..."
+          },
+          {
+            "situation": "Estableciendo expectativas antes del número",
+            "script": "Before I share the investment, I want to make sure we're aligned on scope. You mentioned [su prioridad]. To deliver that properly, we're looking at [X]. Here's what that includes.",
+            "notes": [
+              "Enmarca el alcance antes del precio",
+              "Recuérdales sus propias prioridades declaradas",
+              "Esto hace que el precio se sienta justificado antes de decirlo"
+            ]
+          },
+          {
+            "situation": "Cuando sabes que están comparando proveedores",
+            "script": "I know you're evaluating options. Here's what I want you to consider when comparing: [valor único 1], [valor único 2], and [valor único 3]. The investment is $[X], and here's why it's structured this way.",
+            "notes": [
+              "Reconoce la competencia sin estar a la defensiva",
+              "Diferénciate preventivamente",
+              "Hace que comparen valor, no solo precio"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "phase-2",
+        "title": "Fase 2: La Respuesta a la Objeción",
+        "description": "Qué decir cuando desafían tu precio",
+        "timing": "Los 30 segundos críticos después de '¿Pueden darnos un mejor precio?'",
+        "principle": "La primera persona que habla después de una objeción de precio usualmente pierde. Pausa. Haz una pregunta. Entiende antes de ceder.",
+        "scripts": [
+          {
+            "situation": "Dicen: 'Esto es más de lo que esperábamos.'",
+            "script": "I appreciate you sharing that. Help me understand—when you say more than expected, are you comparing to a specific budget you had in mind, or to other proposals you've received?",
+            "notes": [
+              "No te disculpes ni ofrezcas descuento inmediatamente",
+              "Haz una pregunta diagnóstica",
+              "Esto te da información Y tiempo para pensar"
+            ],
+            "followUp": "Dependiendo de su respuesta, puedes abordar restricciones presupuestarias O diferenciarte de competidores."
+          },
+          {
+            "situation": "Dicen: '¿Pueden darnos un mejor precio?'",
+            "script": "I want to make sure we find something that works for both of us. Before I answer that—is price the only factor, or are there other concerns I should address first?",
+            "notes": [
+              "Nunca digas 'sí' inmediatamente",
+              "Descubre objeciones ocultas",
+              "A menudo, el precio es un proxy de otras preocupaciones (confianza, alcance, cronograma)"
+            ]
+          },
+          {
+            "situation": "Dicen: 'El competidor X es 30% más barato.'",
+            "script": "That's useful to know. Can you share what's included in their proposal? I want to make sure we're comparing the same scope. In my experience, the difference often comes down to [tu diferenciador clave].",
+            "notes": [
+              "No entres en pánico ni iguales inmediatamente",
+              "Pide detalles (a menudo no los tienen)",
+              "Redirige al valor, no al precio"
+            ]
+          },
+          {
+            "situation": "Dicen: 'No tenemos presupuesto para esto.'",
+            "script": "I understand budget constraints are real. Let me ask—if budget weren't a factor, would this solution address your needs? [Si sí:] Then let's talk about how we might structure this to fit your current situation.",
+            "notes": [
+              "Separa 'no puede pagar' de 'no quiere pagar'",
+              "Abre la puerta a enfoques por fases o alcance ajustado",
+              "Muestra flexibilidad sin dar descuentos"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "phase-3",
+        "title": "Fase 3: Defendiendo Tu Posición",
+        "description": "Cómo mantenerte firme sin perder el acuerdo",
+        "timing": "Cuando siguen presionando después de tu respuesta inicial",
+        "principle": "Puedes ser firme Y colaborativo. El objetivo es encontrar una solución, no ganar un argumento. Pero no tienes que regalar tu margen para hacerlo.",
+        "scripts": [
+          {
+            "situation": "Siguen presionando: 'Realmente necesito que bajen el precio.'",
+            "script": "I hear you, and I want to find a solution. Here's what I can do: I can adjust the scope to fit a $[número menor] investment, or we can keep the full scope and discuss payment terms. Which would be more helpful for you?",
+            "notes": [
+              "Ofrece alternativas, no descuentos",
+              "Vincula reducción de precio a reducción de alcance",
+              "Pon la decisión en sus manos"
+            ]
+          },
+          {
+            "situation": "Piden un descuento específico: '¿Pueden dar 20% de descuento?'",
+            "script": "I can't do 20% off the current scope. But I can offer [concesión específica] if that would help. What would that mean for your decision?",
+            "notes": [
+              "Di 'I can't' no 'I won't'—es menos confrontacional",
+              "Ofrece algo menor a cambio",
+              "Pregunta qué significa para su decisión (prueba si es el bloqueador real)"
+            ]
+          },
+          {
+            "situation": "Usan silencio o tácticas de presión",
+            "script": "[Pausa. Espera. Deja que hablen primero.] Si permanecen en silencio: 'Take your time. What questions can I answer to help you decide?'",
+            "notes": [
+              "El silencio es una táctica—no lo llenes con concesiones",
+              "Quien habla primero después de un silencio de negociación usualmente cede",
+              "Ofrece responder preguntas, no bajar el precio"
+            ]
+          },
+          {
+            "situation": "Dicen: 'Necesito pensarlo.'",
+            "script": "Absolutely, take the time you need. Before you go—what specifically do you want to think through? I'm happy to address any concerns now so you have complete information.",
+            "notes": [
+              "No solo aceptes 'necesito pensar'—a menudo significa objeciones no dichas",
+              "Saca las preocupaciones mientras todavía estás en la llamada",
+              "Mantiene la conversación abierta"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "phase-4",
+        "title": "Fase 4: Cerrando con Confianza",
+        "description": "Cómo asegurar el acuerdo y confirmar próximos pasos",
+        "timing": "Cuando están listos para avanzar (o casi listos)",
+        "principle": "Una negociación no termina hasta que tienes un compromiso claro. No te vayas con un vago 'estaremos en contacto.' Obtén próximos pasos específicos.",
+        "scripts": [
+          {
+            "situation": "Acuerdan verbalmente: 'OK, hagámoslo.'",
+            "script": "Excellent. Let me confirm what we've agreed: [alcance], [cronograma], [inversión]. I'll send over the agreement by [hora específica] today. Once you sign, we can schedule kickoff for [fecha propuesta]. Does that work?",
+            "notes": [
+              "Repite los términos inmediatamente (previene 'malentendidos' después)",
+              "Propón próximos pasos específicos con horarios",
+              "Obtén confirmación verbal"
+            ]
+          },
+          {
+            "situation": "Están cerca pero vacilantes",
+            "script": "It sounds like we're aligned on the solution. What would help you feel confident moving forward today?",
+            "notes": [
+              "Pregunta directa para sacar la última objeción",
+              "'Feel confident' reconoce la emoción sin ser insistente",
+              "A menudo revela el bloqueador real"
+            ]
+          },
+          {
+            "situation": "Necesitan aprobación interna",
+            "script": "Understood. Who else is involved in the decision? I'd be happy to join a call with them, or I can prepare materials that address their specific concerns. What would be most helpful?",
+            "notes": [
+              "Ofrece ayudarles a vender internamente",
+              "Te da acceso al verdadero tomador de decisiones",
+              "Muestra que entiendes la dinámica B2B"
+            ]
+          },
+          {
+            "situation": "Cierre final cuando todo está acordado",
+            "script": "I'm excited to work together on this. To confirm: I'll send the contract by [hora]. Once signed, [siguiente hito]. Any final questions before we wrap up?",
+            "notes": [
+              "Expresa entusiasmo (es contagioso)",
+              "Repite la siguiente acción inmediata",
+              "Una última oportunidad para objeciones"
+            ]
+          }
+        ]
+      }
+    ],
+    "practiceExercise": {
+      "title": "Tu Ejercicio de Práctica de 5 Minutos",
+      "instruction": "Practica estos escenarios en voz alta. Grábate. Escucha la grabación. El objetivo es sonar natural y confiado, no robótico.",
+      "scenarios": [
+        "Presenta una propuesta de $50,000 con entrega confiada",
+        "Responde a '¿Pueden darnos un mejor precio?' sin dar descuento inmediatamente",
+        "Maneja 'Su competidor es más barato' sin entrar en pánico",
+        "Cierra un acuerdo con próximos pasos específicos y cronograma"
+      ],
+      "tip": "Haz esto antes de cada negociación importante. 5 minutos de práctica pueden ahorrarte 20% en descuentos innecesarios."
+    },
+    "quickReference": {
+      "title": "Tarjeta de Referencia Rápida",
+      "description": "Imprímela. Tenla cerca de tu teléfono durante llamadas con clientes.",
+      "phrases": {
+        "opening": [
+          "The investment for this project is $X.",
+          "Here's why this investment makes sense for [su meta].",
+          "What I want you to consider when comparing is..."
+        ],
+        "responding": [
+          "Help me understand—what specifically concerns you about the investment?",
+          "Is price the only factor, or are there other concerns?",
+          "Can you share what's included in their proposal?"
+        ],
+        "defending": [
+          "I can adjust the scope to fit $X, or we can discuss payment terms.",
+          "I can't do that, but I can offer [alternativa].",
+          "What questions can I answer to help you decide?"
+        ],
+        "closing": [
+          "Let me confirm what we've agreed...",
+          "What would help you feel confident moving forward today?",
+          "I'll send the contract by [hora]. Once signed, [siguiente paso]."
+        ]
+      }
+    },
+    "conclusion": {
+      "title": "Tu Próximo Paso",
+      "text": "Estos guiones funcionan. Pero leerlos y usarlos bajo presión son cosas diferentes.\n\nLos ejecutivos que cierran los acuerdos más grandes practican estos escenarios con retroalimentación en vivo hasta que las respuestas se vuelven automáticas.\n\nSi quieres transformar tu confianza en negociación en 6 semanas, hablemos.",
+      "cta": {
+        "text": "Agenda Tu Llamada de Estrategia Gratis",
+        "url": "/es/reservar/"
+      }
+    },
+    "about": {
+      "title": "Acerca de NY English Teacher",
+      "text": "NY English Teacher ayuda a ejecutivos y equipos de ventas latinoamericanos a negociar con confianza con clientes norteamericanos. Nuestros clientes han usado estos guiones exactos para defender precios, cerrar acuerdos empresariales y dejar de perder dinero en la mesa.",
+      "author": "Robert Cushman",
+      "credentials": "Coach de Inglés de Negocios | 15+ años de experiencia | Con base en Nueva York"
+    }
+  }
+}

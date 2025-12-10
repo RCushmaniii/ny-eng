@@ -1,0 +1,425 @@
+{
+  "metadata": {
+    "id": "60-second-self-introduction-template",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "template",
+    "format": "pdf-template",
+    "funnelStage": "consideration",
+    "difficultyLevel": "beginner",
+    "timeToComplete": "8 minutes",
+    "estimatedMinutes": 8,
+    "pageCount": 6,
+    "tags": ["self-introduction", "elevator-pitch", "networking", "interviews", "first-impressions"]
+  },
+  "targeting": {
+    "primaryPersona": ["job-seeker", "entrepreneur", "all"],
+    "industries": ["technology", "professional-services", "finance", "manufacturing", "healthcare"],
+    "scenarios": ["networking", "interviews", "client-meetings", "conferences", "job-fairs"],
+    "painPoints": [
+      "Rambling introductions that lose people's attention",
+      "Not knowing what to include or leave out",
+      "Sounding generic or forgettable",
+      "Freezing up when asked 'tell me about yourself'"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free coaching call to perfect your introduction",
+    "relatedAssets": ["5-minute-negotiation-script", "client-call-framework"]
+  },
+  "seo": {
+    "metaDescription": "Create a memorable 60-second self-introduction with our fill-in-the-blank template. Perfect for networking, interviews, and client meetings.",
+    "keywords": ["self introduction template", "elevator pitch", "networking introduction", "tell me about yourself", "professional introduction"]
+  },
+  "slugEn": "60-second-self-introduction-template",
+  "slugEs": "plantilla-auto-presentacion-60-segundos",
+  "en": {
+    "title": "The 60-Second Self-Introduction Template",
+    "subtitle": "A Fill-in-the-Blank Formula for Introductions That Open Doors",
+    "description": "Never stumble through 'tell me about yourself' again. This fill-in-the-blank template gives you a memorable, professional introduction you can adapt for any situation—networking events, interviews, client meetings, or conferences.",
+    "headline": "Introduce Yourself Like a North American Executive",
+    "valueProposition": "Create a polished, memorable self-introduction in under 10 minutes using our proven 4-part formula. Includes fill-in-the-blank templates for 5 common scenarios.",
+    "leadCapture": {
+      "formHeadline": "Get Your Introduction Template",
+      "formSubheadline": "Fill-in-the-blank formulas for 5 scenarios",
+      "buttonText": "Send Me the Template",
+      "successMessage": "Check your inbox! Your template is on its way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Why Your Introduction Matters More Than You Think",
+        "content": "You have exactly 60 seconds to make a first impression. In that time, the person in front of you decides: Are you credible? Are you interesting? Do I want to continue this conversation? Most professionals—especially non-native English speakers—either ramble too long, give too little information, or sound like they're reading from a resume. This template fixes all three problems with a simple 4-part structure that works in any professional context."
+      },
+      {
+        "id": "formula",
+        "title": "The 4-Part Introduction Formula",
+        "subsections": [
+          {
+            "id": "part1",
+            "title": "Part 1: WHO (10 seconds)",
+            "purpose": "Establish your identity and current role",
+            "formula": "I'm [Name], [Title/Role] at [Company].",
+            "examples": [
+              "I'm Sofia Martinez, Senior Product Manager at Globant.",
+              "I'm Carlos Reyes. I lead the engineering team at a fintech startup called PayLab.",
+              "I'm Ana Fernández—I run my own consulting firm specializing in supply chain optimization."
+            ],
+            "tips": [
+              "Keep it simple—don't list multiple titles",
+              "If your company isn't well-known, add a one-line descriptor",
+              "Speak slowly and clearly—your name is the most important word"
+            ]
+          },
+          {
+            "id": "part2",
+            "title": "Part 2: WHAT (15 seconds)",
+            "purpose": "Explain what you do in terms of impact, not tasks",
+            "formula": "I help [WHO] [ACHIEVE WHAT] by [HOW].",
+            "examples": [
+              "I help e-commerce companies reduce cart abandonment by redesigning their checkout experience.",
+              "I help tech companies expand into Latin America by building and managing local engineering teams.",
+              "We help manufacturing companies cut logistics costs by optimizing their supply chain operations."
+            ],
+            "tips": [
+              "Focus on the result, not the activities",
+              "Be specific about WHO you help",
+              "Use active verbs: help, enable, reduce, increase, build"
+            ]
+          },
+          {
+            "id": "part3",
+            "title": "Part 3: VALUE (20 seconds)",
+            "purpose": "Give a proof point or memorable achievement",
+            "formula": "Recently, I [ACHIEVEMENT] which resulted in [OUTCOME].",
+            "examples": [
+              "Recently, I led a product launch that increased user engagement by 40% in the first quarter.",
+              "Last year, we helped a client save $2 million in shipping costs by restructuring their distribution network.",
+              "My team just shipped an AI feature that reduced customer support tickets by 30%."
+            ],
+            "tips": [
+              "Use numbers whenever possible—they're memorable",
+              "Choose your most impressive or relevant achievement",
+              "If you're job-seeking, use accomplishments from previous roles"
+            ]
+          },
+          {
+            "id": "part4",
+            "title": "Part 4: HOOK (15 seconds)",
+            "purpose": "Create a reason for the conversation to continue",
+            "formula": "I'm here because [GOAL/INTEREST]. I'd love to hear about [THEIR AREA].",
+            "examples": [
+              "I'm here because I'm exploring opportunities in the U.S. market. I'd love to hear how your company approaches international expansion.",
+              "I'm looking to connect with other product leaders. What's keeping you busy these days?",
+              "I'm curious about how companies in your industry are handling [trend/challenge]. What's your experience been?"
+            ],
+            "tips": [
+              "Always end with a question or conversation starter",
+              "Tailor your hook to the context (networking vs. interview vs. client)",
+              "Show genuine curiosity about them—don't just talk about yourself"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "templates",
+        "title": "Fill-in-the-Blank Templates by Scenario",
+        "scenarios": [
+          {
+            "scenario": "Networking Event",
+            "template": "Hi, I'm _____________ [Name]. I'm a _____________ [Title] at _____________ [Company], where we _____________ [what the company does in 5 words]. I help _____________ [who] _____________ [achieve what] by _____________ [how]. One thing I'm proud of recently is _____________ [achievement] which _____________ [result]. I'm here tonight because _____________ [goal]. What brings you to this event?",
+            "example": "Hi, I'm Carlos Reyes. I'm a VP of Engineering at PayLab, where we build payment solutions for Latin America. I help fintech companies scale their tech teams by recruiting and developing senior engineers. One thing I'm proud of recently is growing my team from 5 to 25 engineers while maintaining our 98% code quality score. I'm here tonight because I'm exploring partnerships with U.S. companies. What brings you to this event?"
+          },
+          {
+            "scenario": "Job Interview",
+            "template": "I'm _____________ [Name], and I've spent the last _____________ [X years] in _____________ [industry/function]. Most recently, I was _____________ [Title] at _____________ [Company], where I _____________ [key responsibility]. My biggest accomplishment there was _____________ [achievement] which resulted in _____________ [measurable outcome]. I'm excited about this opportunity because _____________ [why this company/role]. I'm particularly curious about _____________ [question about the role].",
+            "example": "I'm Sofia Martinez, and I've spent the last 8 years in product management at tech companies. Most recently, I was Senior PM at Globant, where I owned the mobile app strategy for a Fortune 500 retail client. My biggest accomplishment there was leading a checkout redesign that increased conversion by 40% and generated an additional $12M in annual revenue. I'm excited about this opportunity because I've admired how your company approaches product-led growth. I'm particularly curious about how the PM team collaborates with engineering here."
+          },
+          {
+            "scenario": "Client Meeting",
+            "template": "Thanks for having me. I'm _____________ [Name], _____________ [Title] at _____________ [Company]. We specialize in helping _____________ [type of client] _____________ [achieve what]. I've been doing this for _____________ [X years], and one project I'm particularly proud of is _____________ [relevant case study]. Today, I'm here to learn more about _____________ [their challenge] and see if there's a fit for how we might help.",
+            "example": "Thanks for having me. I'm Ana Fernández, Principal Consultant at Logística Inteligente. We specialize in helping manufacturing companies reduce shipping costs and delivery times. I've been doing this for 12 years, and one project I'm particularly proud of is helping an auto parts company cut their logistics costs by 30% while improving on-time delivery to 98%. Today, I'm here to learn more about your distribution challenges and see if there's a fit for how we might help."
+          },
+          {
+            "scenario": "Conference/Panel",
+            "template": "Good [morning/afternoon]. I'm _____________ [Name], and I _____________ [one-line role description]. I've spent my career focused on _____________ [area of expertise], working with companies like _____________ [notable clients/employers]. Today I'm excited to discuss _____________ [topic] because _____________ [why it matters]. My perspective comes from _____________ [unique angle/experience].",
+            "example": "Good morning. I'm Roberto Cushman, and I coach executives on high-stakes English communication. I've spent my career focused on helping Latin American leaders sound as credible as they are competent when speaking with North American clients. Today I'm excited to discuss cross-cultural communication because I've seen firsthand how language gaps cost talented professionals major opportunities. My perspective comes from 15 years of working with tech executives in Mexico, Colombia, and Brazil."
+          },
+          {
+            "scenario": "Casual/Social",
+            "template": "I'm _____________ [Name]. I work in _____________ [industry] at _____________ [Company]—basically, I _____________ [simple explanation]. Right now I'm working on _____________ [current project/interest]. How about you—what do you do?",
+            "example": "I'm Carlos. I work in fintech at a startup called PayLab—basically, I build the tech team and keep our systems running smoothly. Right now I'm working on expanding our platform to handle cross-border payments. How about you—what do you do?"
+          }
+        ]
+      },
+      {
+        "id": "common-mistakes",
+        "title": "5 Common Mistakes to Avoid",
+        "mistakes": [
+          {
+            "mistake": "The Resume Dump",
+            "example": "I graduated from ITESM in 2008, then I worked at IBM for 3 years, then I moved to SAP where I was promoted twice, then I got my MBA at...",
+            "fix": "Your introduction is not your resume. Pick one role and one achievement. Save the history for follow-up questions."
+          },
+          {
+            "mistake": "The Vague Description",
+            "example": "I work in technology. I do a lot of different things. I help companies with their digital stuff.",
+            "fix": "Be specific. What technology? What 'different things'? What kind of companies? What results?"
+          },
+          {
+            "mistake": "The Humble Mumble",
+            "example": "I'm just a developer... I'm only been doing this for a few years... It's nothing special...",
+            "fix": "Own your accomplishments. Remove 'just,' 'only,' and qualifiers. You earned your role."
+          },
+          {
+            "mistake": "The Monologue",
+            "example": "[3 minutes of talking without a single pause or question]",
+            "fix": "60 seconds maximum. Always end with a question to turn your monologue into a dialogue."
+          },
+          {
+            "mistake": "The Generic Closer",
+            "example": "So yeah, that's me. Nice to meet you.",
+            "fix": "End with curiosity. Ask about them. Create a reason for the conversation to continue."
+          }
+        ]
+      },
+      {
+        "id": "practice-guide",
+        "title": "Your 3-Day Practice Plan",
+        "days": [
+          {
+            "day": "Day 1: Draft",
+            "tasks": [
+              "Fill in each blank in the template",
+              "Write out your full introduction",
+              "Time yourself—aim for 45-60 seconds",
+              "Identify words that feel awkward"
+            ]
+          },
+          {
+            "day": "Day 2: Refine",
+            "tasks": [
+              "Record yourself on your phone",
+              "Listen back—notice filler words, pacing",
+              "Revise any sections that feel unnatural",
+              "Practice 5 times out loud"
+            ]
+          },
+          {
+            "day": "Day 3: Test",
+            "tasks": [
+              "Deliver to a trusted colleague or friend",
+              "Ask: 'What did you remember? What was unclear?'",
+              "Make final adjustments",
+              "Memorize the structure, not the exact words"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta",
+        "title": "Ready to Perfect Your Introduction?",
+        "content": "This template gives you the structure. But delivering it with confidence—smooth pacing, natural intonation, no filler words—takes practice with feedback. In a free 30-minute coaching call, we'll workshop your introduction together until it feels natural and sounds executive-level.",
+        "buttonText": "Book Your Free Coaching Call",
+        "buttonUrl": "/en/book/"
+      }
+    ]
+  },
+  "es": {
+    "title": "La Plantilla de Auto-Presentación de 60 Segundos",
+    "subtitle": "Una Fórmula para Completar que Crea Presentaciones que Abren Puertas",
+    "description": "Nunca más tropieces con 'cuéntame sobre ti'. Esta plantilla para completar te da una presentación memorable y profesional que puedes adaptar a cualquier situación—eventos de networking, entrevistas, reuniones con clientes o conferencias.",
+    "headline": "Preséntate Como un Ejecutivo Norteamericano",
+    "valueProposition": "Crea una auto-presentación pulida y memorable en menos de 10 minutos usando nuestra fórmula probada de 4 partes. Incluye plantillas para completar para 5 escenarios comunes.",
+    "leadCapture": {
+      "formHeadline": "Obtén Tu Plantilla de Presentación",
+      "formSubheadline": "Fórmulas para completar para 5 escenarios",
+      "buttonText": "Envíame la Plantilla",
+      "successMessage": "¡Revisa tu bandeja de entrada! Tu plantilla está en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Por Qué Tu Presentación Importa Más de lo Que Crees",
+        "content": "Tienes exactamente 60 segundos para dar una primera impresión. En ese tiempo, la persona frente a ti decide: ¿Es creíble? ¿Es interesante? ¿Quiero continuar esta conversación? La mayoría de los profesionales—especialmente los que no son hablantes nativos de inglés—divagan demasiado, dan muy poca información, o suenan como si estuvieran leyendo de un currículum. Esta plantilla soluciona los tres problemas con una estructura simple de 4 partes que funciona en cualquier contexto profesional."
+      },
+      {
+        "id": "formula",
+        "title": "La Fórmula de Presentación de 4 Partes",
+        "subsections": [
+          {
+            "id": "part1",
+            "title": "Parte 1: QUIÉN (10 segundos)",
+            "purpose": "Establece tu identidad y rol actual",
+            "formula": "I'm [Nombre], [Título/Rol] at [Empresa].",
+            "examples": [
+              "I'm Sofia Martinez, Senior Product Manager at Globant.",
+              "I'm Carlos Reyes. I lead the engineering team at a fintech startup called PayLab.",
+              "I'm Ana Fernández—I run my own consulting firm specializing in supply chain optimization."
+            ],
+            "tips": [
+              "Mantenlo simple—no listes múltiples títulos",
+              "Si tu empresa no es conocida, agrega una descripción de una línea",
+              "Habla lento y claro—tu nombre es la palabra más importante"
+            ]
+          },
+          {
+            "id": "part2",
+            "title": "Parte 2: QUÉ (15 segundos)",
+            "purpose": "Explica lo que haces en términos de impacto, no de tareas",
+            "formula": "I help [QUIÉN] [LOGRAR QUÉ] by [CÓMO].",
+            "examples": [
+              "I help e-commerce companies reduce cart abandonment by redesigning their checkout experience.",
+              "I help tech companies expand into Latin America by building and managing local engineering teams.",
+              "We help manufacturing companies cut logistics costs by optimizing their supply chain operations."
+            ],
+            "tips": [
+              "Enfócate en el resultado, no en las actividades",
+              "Sé específico sobre A QUIÉN ayudas",
+              "Usa verbos activos: help, enable, reduce, increase, build"
+            ]
+          },
+          {
+            "id": "part3",
+            "title": "Parte 3: VALOR (20 segundos)",
+            "purpose": "Da un punto de prueba o logro memorable",
+            "formula": "Recently, I [LOGRO] which resulted in [RESULTADO].",
+            "examples": [
+              "Recently, I led a product launch that increased user engagement by 40% in the first quarter.",
+              "Last year, we helped a client save $2 million in shipping costs by restructuring their distribution network.",
+              "My team just shipped an AI feature that reduced customer support tickets by 30%."
+            ],
+            "tips": [
+              "Usa números siempre que sea posible—son memorables",
+              "Elige tu logro más impresionante o relevante",
+              "Si buscas empleo, usa logros de roles anteriores"
+            ]
+          },
+          {
+            "id": "part4",
+            "title": "Parte 4: GANCHO (15 segundos)",
+            "purpose": "Crea una razón para que la conversación continúe",
+            "formula": "I'm here because [META/INTERÉS]. I'd love to hear about [SU ÁREA].",
+            "examples": [
+              "I'm here because I'm exploring opportunities in the U.S. market. I'd love to hear how your company approaches international expansion.",
+              "I'm looking to connect with other product leaders. What's keeping you busy these days?",
+              "I'm curious about how companies in your industry are handling [trend/challenge]. What's your experience been?"
+            ],
+            "tips": [
+              "Siempre termina con una pregunta o iniciador de conversación",
+              "Adapta tu gancho al contexto (networking vs. entrevista vs. cliente)",
+              "Muestra curiosidad genuina sobre ellos—no solo hables de ti"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "templates",
+        "title": "Plantillas para Completar por Escenario",
+        "scenarios": [
+          {
+            "scenario": "Evento de Networking",
+            "template": "Hi, I'm _____________ [Nombre]. I'm a _____________ [Título] at _____________ [Empresa], where we _____________ [qué hace la empresa en 5 palabras]. I help _____________ [quién] _____________ [lograr qué] by _____________ [cómo]. One thing I'm proud of recently is _____________ [logro] which _____________ [resultado]. I'm here tonight because _____________ [meta]. What brings you to this event?",
+            "example": "Hi, I'm Carlos Reyes. I'm a VP of Engineering at PayLab, where we build payment solutions for Latin America. I help fintech companies scale their tech teams by recruiting and developing senior engineers. One thing I'm proud of recently is growing my team from 5 to 25 engineers while maintaining our 98% code quality score. I'm here tonight because I'm exploring partnerships with U.S. companies. What brings you to this event?"
+          },
+          {
+            "scenario": "Entrevista de Trabajo",
+            "template": "I'm _____________ [Nombre], and I've spent the last _____________ [X años] in _____________ [industria/función]. Most recently, I was _____________ [Título] at _____________ [Empresa], where I _____________ [responsabilidad clave]. My biggest accomplishment there was _____________ [logro] which resulted in _____________ [resultado medible]. I'm excited about this opportunity because _____________ [por qué esta empresa/rol]. I'm particularly curious about _____________ [pregunta sobre el rol].",
+            "example": "I'm Sofia Martinez, and I've spent the last 8 years in product management at tech companies. Most recently, I was Senior PM at Globant, where I owned the mobile app strategy for a Fortune 500 retail client. My biggest accomplishment there was leading a checkout redesign that increased conversion by 40% and generated an additional $12M in annual revenue. I'm excited about this opportunity because I've admired how your company approaches product-led growth. I'm particularly curious about how the PM team collaborates with engineering here."
+          },
+          {
+            "scenario": "Reunión con Cliente",
+            "template": "Thanks for having me. I'm _____________ [Nombre], _____________ [Título] at _____________ [Empresa]. We specialize in helping _____________ [tipo de cliente] _____________ [lograr qué]. I've been doing this for _____________ [X años], and one project I'm particularly proud of is _____________ [caso de estudio relevante]. Today, I'm here to learn more about _____________ [su desafío] and see if there's a fit for how we might help.",
+            "example": "Thanks for having me. I'm Ana Fernández, Principal Consultant at Logística Inteligente. We specialize in helping manufacturing companies reduce shipping costs and delivery times. I've been doing this for 12 years, and one project I'm particularly proud of is helping an auto parts company cut their logistics costs by 30% while improving on-time delivery to 98%. Today, I'm here to learn more about your distribution challenges and see if there's a fit for how we might help."
+          },
+          {
+            "scenario": "Conferencia/Panel",
+            "template": "Good [morning/afternoon]. I'm _____________ [Nombre], and I _____________ [descripción del rol en una línea]. I've spent my career focused on _____________ [área de expertise], working with companies like _____________ [clientes/empleadores notables]. Today I'm excited to discuss _____________ [tema] because _____________ [por qué importa]. My perspective comes from _____________ [ángulo/experiencia única].",
+            "example": "Good morning. I'm Roberto Cushman, and I coach executives on high-stakes English communication. I've spent my career focused on helping Latin American leaders sound as credible as they are competent when speaking with North American clients. Today I'm excited to discuss cross-cultural communication because I've seen firsthand how language gaps cost talented professionals major opportunities. My perspective comes from 15 years of working with tech executives in Mexico, Colombia, and Brazil."
+          },
+          {
+            "scenario": "Casual/Social",
+            "template": "I'm _____________ [Nombre]. I work in _____________ [industria] at _____________ [Empresa]—basically, I _____________ [explicación simple]. Right now I'm working on _____________ [proyecto/interés actual]. How about you—what do you do?",
+            "example": "I'm Carlos. I work in fintech at a startup called PayLab—basically, I build the tech team and keep our systems running smoothly. Right now I'm working on expanding our platform to handle cross-border payments. How about you—what do you do?"
+          }
+        ]
+      },
+      {
+        "id": "common-mistakes",
+        "title": "5 Errores Comunes a Evitar",
+        "mistakes": [
+          {
+            "mistake": "El Volcado del Currículum",
+            "example": "Me gradué del ITESM en 2008, luego trabajé en IBM por 3 años, luego me mudé a SAP donde fui promovido dos veces, luego obtuve mi MBA en...",
+            "fix": "Tu presentación no es tu currículum. Elige un rol y un logro. Guarda la historia para preguntas de seguimiento."
+          },
+          {
+            "mistake": "La Descripción Vaga",
+            "example": "Trabajo en tecnología. Hago muchas cosas diferentes. Ayudo a empresas con sus cosas digitales.",
+            "fix": "Sé específico. ¿Qué tecnología? ¿Qué 'cosas diferentes'? ¿Qué tipo de empresas? ¿Qué resultados?"
+          },
+          {
+            "mistake": "El Murmullo Humilde",
+            "example": "Solo soy desarrollador... Solo llevo unos años haciendo esto... No es nada especial...",
+            "fix": "Adueñate de tus logros. Elimina 'solo', 'nada más', y calificadores. Te ganaste tu puesto."
+          },
+          {
+            "mistake": "El Monólogo",
+            "example": "[3 minutos hablando sin una sola pausa o pregunta]",
+            "fix": "60 segundos máximo. Siempre termina con una pregunta para convertir tu monólogo en diálogo."
+          },
+          {
+            "mistake": "El Cierre Genérico",
+            "example": "Entonces sí, ese soy yo. Mucho gusto.",
+            "fix": "Termina con curiosidad. Pregunta sobre ellos. Crea una razón para que la conversación continúe."
+          }
+        ]
+      },
+      {
+        "id": "practice-guide",
+        "title": "Tu Plan de Práctica de 3 Días",
+        "days": [
+          {
+            "day": "Día 1: Borrador",
+            "tasks": [
+              "Completa cada espacio en blanco de la plantilla",
+              "Escribe tu presentación completa",
+              "Cronométrate—apunta a 45-60 segundos",
+              "Identifica palabras que se sienten incómodas"
+            ]
+          },
+          {
+            "day": "Día 2: Refinar",
+            "tasks": [
+              "Grábate en tu teléfono",
+              "Escucha—nota muletillas, ritmo",
+              "Revisa las secciones que se sienten poco naturales",
+              "Practica 5 veces en voz alta"
+            ]
+          },
+          {
+            "day": "Día 3: Probar",
+            "tasks": [
+              "Entrégalo a un colega o amigo de confianza",
+              "Pregunta: '¿Qué recordaste? ¿Qué no fue claro?'",
+              "Haz ajustes finales",
+              "Memoriza la estructura, no las palabras exactas"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cta",
+        "title": "¿Listo para Perfeccionar Tu Presentación?",
+        "content": "Esta plantilla te da la estructura. Pero entregarla con confianza—ritmo fluido, entonación natural, sin muletillas—requiere práctica con retroalimentación. En una llamada de coaching gratuita de 30 minutos, trabajaremos tu presentación juntos hasta que se sienta natural y suene a nivel ejecutivo.",
+        "buttonText": "Agenda Tu Llamada de Coaching Gratuita",
+        "buttonUrl": "/es/reservar/"
+      }
+    ]
+  }
+}

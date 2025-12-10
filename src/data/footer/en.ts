@@ -18,6 +18,7 @@ export const footerContentEn = (siteConfig: { companyName: string }) => {
       resources: {
         title: "Resources",
         links: [
+          { name: "Free Downloads", href: routes.en.free },
           { name: "FAQs", href: "/en/faqs/" },
           { name: "Blog", href: routes.en.blog },
           { name: "Start Assessment", href: "/en/assessments/" },

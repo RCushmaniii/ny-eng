@@ -1,0 +1,264 @@
+{
+  "metadata": {
+    "id": "5-questions-sound-senior",
+    "version": "1.0",
+    "datePublished": "2024-11-15",
+    "dateUpdated": "2024-11-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "questions",
+    "format": "pdf-guide",
+    "funnelStage": "consideration",
+    "difficultyLevel": "intermediate",
+    "timeToComplete": "5 minutes",
+    "estimatedMinutes": 5,
+    "pageCount": 2,
+    "tags": ["leadership", "meetings", "strategic-thinking", "executive-presence"]
+  },
+  "targeting": {
+    "primaryPersona": ["executive", "manager", "founder"],
+    "industries": ["technology", "professional-services", "all"],
+    "scenarios": ["meetings", "leadership", "decision-making", "presentations"],
+    "painPoints": [
+      "Sounds reactive instead of strategic",
+      "Lacks executive presence in meetings",
+      "Doesn't know how to guide conversations",
+      "Struggles to demonstrate leadership thinking"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a 30-minute strategy call to practice these questions live",
+    "relatedAssets": ["7-sentences-leadership", "client-call-opening-closing-framework"]
+  },
+  "seo": {
+    "metaDescription": "Learn 5 strategic questions that signal leadership and executive thinking in meetings—even if you're not yet in a senior role.",
+    "keywords": ["executive presence", "leadership questions", "strategic thinking", "business english", "senior communication"],
+    "ogImage": "/images/og/5-questions-senior.jpg"
+  },
+  "analytics": {
+    "downloadCount": 1234,
+    "viewCount": 3456,
+    "lastAccessed": null
+  },
+  "slugEn": "5-questions",
+  "slugEs": "5-preguntas",
+  "en": {
+    "title": "5 Questions That Make You Sound Senior",
+    "subtitle": "Strategic questions for executive meetings",
+    "intro": {
+      "line1": "Junior professionals answer questions.",
+      "line2": "Senior professionals ask them.",
+      "paragraph": "The right question at the right time demonstrates strategic thinking and leadership—even if you don't have a senior title yet. These five questions come from real executive meetings between Latin American tech teams and North American clients."
+    },
+    "questions": [
+      {
+        "number": 1,
+        "question": "What does success look like for you on this project?",
+        "why": "You're focusing on outcomes, not tasks. You want to understand their definition of success—not just what they need you to do.",
+        "when": "Project kickoffs, scope discussions, when receiving new assignments",
+        "doNotSay": "\"What do you need me to do?\" (This sounds like you're just taking orders.)",
+        "howToSay": "Emphasize \"for you.\" This makes the question personal and shows you see the person, not just the client.",
+        "variations": "\"...for your team\" / \"...from your perspective\" / \"...in your ideal scenario\""
+      },
+      {
+        "number": 2,
+        "question": "How does this connect to your top priorities this quarter?",
+        "why": "You demonstrate that you understand business cycles. Every project competes for time and money.",
+        "when": "When someone asks for something new, budget discussions, resource planning",
+        "doNotSay": "\"When do you need this by?\" (This only asks about dates, not importance.)",
+        "howToSay": "Pause slightly before \"top priorities\"—this shows you're thinking carefully, not reading a script.",
+        "variations": "\"...your board goals\" / \"...your growth targets\" / \"...your roadmap\""
+      },
+      {
+        "number": 3,
+        "question": "Who else needs to be aligned before we move forward?",
+        "why": "You understand how organizations work. Decisions rarely rest with one person.",
+        "when": "Before committing to timelines, after presenting recommendations",
+        "doNotSay": "\"Is this approved?\" (Too passive—you're waiting for permission instead of leading.)",
+        "howToSay": "Use \"aligned\" or \"on board\"—they're more professional than \"okay with this.\"",
+        "variations": null
+      },
+      {
+        "number": 4,
+        "question": "What's the risk if we don't solve this problem?",
+        "why": "You shift the conversation from \"maybe we should do this\" to \"we need to do this.\" You're thinking about consequences.",
+        "when": "Budget discussions, priority conversations, when the client seems uncertain",
+        "doNotSay": "\"Do you want to move forward with this?\" (Too passive.)",
+        "howToSay": "Drop your voice slightly on \"risk\"—this adds weight without sounding dramatic.",
+        "variations": null
+      },
+      {
+        "number": 5,
+        "question": "If we deliver this successfully, what new opportunities does it unlock for you?",
+        "why": "You're connecting your work to their career goals and business success. You become a strategic partner, not just a service provider.",
+        "when": "Relationship-building moments, project kickoffs, when discussing project expansion",
+        "doNotSay": "\"Do you need anything else?\" (Sounds like a waiter, not a consultant.)",
+        "howToSay": "\"Deliver this successfully\" is direct and clear. Avoid casual phrases like \"knock this out of the park\" in high-stakes meetings.",
+        "variations": null
+      }
+    ],
+    "pattern": {
+      "title": "The Pattern",
+      "intro": "All five questions share these characteristics:",
+      "items": [
+        {
+          "bold": "Forward-looking",
+          "text": " — They focus on future outcomes, not past problems."
+        },
+        {
+          "bold": "Client-centered",
+          "text": " — Their success, their priorities, their risks."
+        },
+        {
+          "bold": "Action-oriented",
+          "text": " — They move the conversation toward decisions, not just information."
+        }
+      ]
+    },
+    "quickRef": {
+      "title": "Quick Reference",
+      "rows": [
+        {
+          "situation": "Project kickoff",
+          "question": "What does success look like for you on this project?"
+        },
+        {
+          "situation": "New request",
+          "question": "How does this connect to your top priorities this quarter?"
+        },
+        {
+          "situation": "Before committing",
+          "question": "Who else needs to be aligned before we move forward?"
+        },
+        {
+          "situation": "Budget discussion",
+          "question": "What's the risk if we don't solve this problem?"
+        },
+        {
+          "situation": "Relationship building",
+          "question": "If we deliver this successfully, what new opportunities does it unlock for you?"
+        }
+      ]
+    },
+    "labels": {
+      "why": "Why it works",
+      "when": "When to use",
+      "doNotSay": "Avoid saying",
+      "howToSay": "Say it like this",
+      "variations": "Variations",
+      "situation": "Situation",
+      "seniorQuestion": "Senior Question"
+    }
+  },
+  "es": {
+    "title": "5 Preguntas Que Te Hacen Sonar Como Ejecutivo",
+    "subtitle": "Preguntas estratégicas para reuniones ejecutivas",
+    "intro": {
+      "line1": "Los profesionales junior responden preguntas.",
+      "line2": "Los profesionales senior las hacen.",
+      "paragraph": "La pregunta correcta en el momento correcto demuestra pensamiento estratégico y liderazgo—incluso si todavía no tienes un puesto directivo. Estas cinco preguntas provienen de reuniones ejecutivas reales entre equipos de tecnología latinoamericanos y clientes norteamericanos."
+    },
+    "questions": [
+      {
+        "number": 1,
+        "question": "¿Cómo se ve el éxito para ti en este proyecto?",
+        "why": "Te enfocas en resultados, no en tareas. Quieres entender su definición de éxito—no solo lo que necesitan que hagas.",
+        "when": "Al inicio de proyectos, discusiones de alcance, cuando recibes nuevas asignaciones",
+        "doNotSay": "\"¿Qué necesitas que haga?\" (Esto suena como si solo siguieras órdenes.)",
+        "howToSay": "Enfatiza \"para ti.\" Esto hace la pregunta personal y demuestra que ves a la persona, no solo al cliente.",
+        "variations": null
+      },
+      {
+        "number": 2,
+        "question": "¿Cómo se conecta esto con tus prioridades principales de este trimestre?",
+        "why": "Demuestras que entiendes los ciclos de negocio. Cada proyecto compite por tiempo y dinero.",
+        "when": "Cuando alguien te pide algo nuevo, en discusiones de presupuesto, al planificar recursos",
+        "doNotSay": "\"¿Para cuándo lo necesitas?\" (Esto solo pregunta sobre fechas, no sobre importancia.)",
+        "howToSay": "Haz una pausa breve antes de \"prioridades principales\"—esto demuestra que estás pensando con cuidado, no leyendo un guion.",
+        "variations": "\"...tus objetivos con el consejo\" / \"...tus metas de crecimiento\" / \"...tu roadmap\""
+      },
+      {
+        "number": 3,
+        "question": "¿Quién más necesita estar de acuerdo antes de avanzar?",
+        "why": "Entiendes cómo funcionan las organizaciones. Las decisiones rara vez dependen de una sola persona.",
+        "when": "Antes de comprometerte con fechas, después de presentar recomendaciones",
+        "doNotSay": "\"¿Esto está aprobado?\" (Es demasiado pasivo—esperas permiso en lugar de liderar.)",
+        "howToSay": "Usa \"estar de acuerdo\" o \"estar alineado\"—son más profesionales que \"estar bien con esto.\"",
+        "variations": null
+      },
+      {
+        "number": 4,
+        "question": "¿Cuál es el riesgo si no resolvemos este problema?",
+        "why": "Cambias la conversación de \"quizás deberíamos hacer esto\" a \"necesitamos hacer esto.\" Piensas en consecuencias.",
+        "when": "Discusiones de presupuesto, conversaciones de prioridades, cuando el cliente parece indeciso",
+        "doNotSay": "\"¿Quieres avanzar con esto?\" (Es demasiado pasivo.)",
+        "howToSay": "Baja un poco la voz en \"riesgo\"—esto añade importancia sin sonar dramático.",
+        "variations": null
+      },
+      {
+        "number": 5,
+        "question": "Si completamos esto exitosamente, ¿qué nuevas oportunidades te abre?",
+        "why": "Conectas tu trabajo con sus metas profesionales y su éxito de negocio. Te conviertes en un socio estratégico, no solo en un proveedor de servicios.",
+        "when": "Momentos de construcción de relación, inicio de proyectos, al discutir expansión del proyecto",
+        "doNotSay": "\"¿Necesitas algo más?\" (Suena como mesero, no como consultor.)",
+        "howToSay": "\"Completar esto exitosamente\" es directo y claro. Evita frases informales como \"darle en el clavo\" en reuniones importantes.",
+        "variations": null
+      }
+    ],
+    "pattern": {
+      "title": "El Patrón",
+      "intro": "Las cinco preguntas comparten estas características:",
+      "items": [
+        {
+          "bold": "Miran hacia adelante",
+          "text": " — Se enfocan en resultados futuros, no en problemas pasados."
+        },
+        {
+          "bold": "Se centran en el cliente",
+          "text": " — Su éxito, sus prioridades, sus riesgos."
+        },
+        {
+          "bold": "Llevan a la acción",
+          "text": " — Mueven la conversación hacia decisiones, no solo información."
+        }
+      ]
+    },
+    "quickRef": {
+      "title": "Referencia Rápida",
+      "rows": [
+        {
+          "situation": "Proyecto nuevo",
+          "question": "¿Cómo se ve el éxito para ti en este proyecto?"
+        },
+        {
+          "situation": "Solicitud nueva",
+          "question": "¿Cómo se conecta esto con tus prioridades principales de este trimestre?"
+        },
+        {
+          "situation": "Antes de comprometerte",
+          "question": "¿Quién más necesita estar de acuerdo antes de avanzar?"
+        },
+        {
+          "situation": "Discusión de presupuesto",
+          "question": "¿Cuál es el riesgo si no resolvemos este problema?"
+        },
+        {
+          "situation": "Construcción de relación",
+          "question": "Si completamos esto exitosamente, ¿qué nuevas oportunidades te abre?"
+        }
+      ]
+    },
+    "labels": {
+      "why": "Por qué funciona",
+      "when": "Cuándo usarla",
+      "doNotSay": "No digas",
+      "howToSay": "Cómo decirla",
+      "variations": "Otras formas de decirla",
+      "situation": "Situación",
+      "seniorQuestion": "Pregunta de Ejecutivo"
+    }
+  }
+}
