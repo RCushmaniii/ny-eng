@@ -201,7 +201,7 @@ Training cost: ~$5,000. Cost of the unnecessary discount: $40,000 in year one, p
 Notice what these stories have in common:
 
 1. **Technical competence wasn't the issue.** These people knew their domains.
-2. **The failure happened under pressure.** When stakes were high and time was short, language ability collapsed.
+2. **The failure happened under pressure.** In executive-level situations with time pressure, language ability collapsed.
 3. **The cost was immediate and measurable.** Not "soft" skills issues—actual P&L impact.
 4. **Prevention was straightforward and affordable.** Focused training would have paid for itself many times over.
 
@@ -733,7 +733,7 @@ The content is similar. The perception is completely different.
 
 <div style="background: #fff7ed; border-left: 4px solid #f97316; padding: 1.5rem; margin: 2rem 0;">
 
-> **"Before working with Robert, I sometimes felt unsure presenting in English during high-stakes calls and real-time meetings with international customers. His coaching has helped me build greater confidence in speaking, expand my vocabulary, and give structure to my ideas. Now, I feel more secure and fluent in my communication and I perform better in technical discussions and negotiations."**
+> **"Before working with Robert, I sometimes felt unsure presenting in English during executive-level calls and real-time meetings with international customers. His coaching has helped me build greater confidence in speaking, expand my vocabulary, and give structure to my ideas. Now, I feel more secure and fluent in my communication and I perform better in technical discussions and negotiations."**
 >
 > — _Tania Ruelas, Quality Key Account Manager at FORVIA HELLA_
 
@@ -756,7 +756,7 @@ This is where the system earns its ROI.
 
 **Why pressure matters:**
 
-In comfortable classroom environments, most people can communicate adequately. But when stakes are high—a big deal, an angry client, an executive review—stress collapses language ability.
+In comfortable classroom environments, most people can communicate adequately. But in executive-level situations—a big deal, an angry client, an executive review—stress collapses language ability.
 
 You revert to what's automatic. If you've never practiced high-pressure scenarios, you'll freeze or fumble.
 
@@ -1350,7 +1350,7 @@ Only option 3 produces measurable ROI.
 
 <div style="background: #f0fdf4; border-left: 4px solid #22c55e; padding: 1.5rem; margin: 2rem 0;">
 
-> **"Robert's coaching helped me elevate how I communicate with senior executives across North America. I'm more strategic and persuasive in interviews, presentations, and cross-border meetings—especially in high-stakes situations. His approach is practical, focused, and incredibly effective."**
+> **"Robert's coaching helped me elevate how I communicate with senior executives across North America. I'm more strategic and persuasive in interviews, presentations, and cross-border meetings—especially in executive-level situations. His approach is practical, focused, and incredibly effective."**
 >
 > — _Andrea Oliveira, Director of Business Development at CEVA Logistics_
 

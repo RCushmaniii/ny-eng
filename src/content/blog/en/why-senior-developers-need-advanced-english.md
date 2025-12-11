@@ -81,7 +81,7 @@ You struggle to translate technical complexity into business value. When the CFO
 
 During incidents, you defer to email instead of explaining solutions live. You say "Let me get back to you" when you actually know the answer—you just can't express it clearly under pressure.
 
-**Result:** You're seen as an implementer, not a leader. Senior roles require composure in high-stakes situations.
+**Result:** You're seen as an implementer, not a leader. Senior roles require composure in executive-level situations.
 
 ### 4. Code Review & Mentoring
 

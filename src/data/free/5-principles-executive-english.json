@@ -21,7 +21,7 @@
     "industries": ["technology", "professional-services", "finance"],
     "scenarios": ["client-meetings", "presentations", "negotiations"],
     "painPoints": [
-      "Feeling uncertain about English in high-stakes situations",
+      "Feeling uncertain about English in executive-level situations",
       "Not knowing the fundamentals of executive communication",
       "Sounding less confident than intended"
     ]
@@ -40,8 +40,8 @@
   "en": {
     "title": "The 5 Essential Principles of Executive English",
     "subtitle": "The Foundation Every Latin American Professional Needs",
-    "description": "These 5 principles separate junior-sounding English from executive-level communication. Master these fundamentals and you'll sound more confident in every high-stakes conversation.",
-    "headline": "Stop Second-Guessing Your English in High-Stakes Moments",
+    "description": "These 5 principles separate junior-sounding English from executive-level communication. Master these fundamentals and you'll sound more confident in every executive-level conversation.",
+    "headline": "Stop Second-Guessing Your English in Executive-Level Moments",
     "valueProposition": "Learn the 5 core principles that North American executives use to command respect and credibility in every conversation.",
     "leadCapture": {
       "formHeadline": "Get the 5 Principles Guide",

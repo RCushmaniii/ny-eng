@@ -40,15 +40,15 @@ Over 12 months, I worked with six senior leaders across the organization:
 
 **The US-Based COO** — Native English speaker managing cross-border operations. Needed her Mexican counterparts to engage directly with US teams instead of routing everything through her.
 
-**The General Manager** — Reports directly to the board. High-stakes presentations in English felt like walking a tightrope without a net.
+**The General Manager** — Reports directly to the board. Executive-level presentations in English felt like walking a tightrope without a net.
 
 **The Commercial Director** — Responsible for sales and marketing across both countries. Could discuss strategy in Spanish for hours, but switched to monosyllables in English client meetings.
 
 **The HR Director** — Recruiting senior managers in both regions. Phone screens and interviews in English were consistently shorter and less substantive than their Spanish equivalents.
 
-**The CFO/General Counsel** — An attorney handling tax audits, supplier negotiations, and financial leadership. The stakes in her English conversations weren't just high—they were legally binding.
+**The CFO/General Counsel** — An attorney handling tax audits, supplier negotiations, and financial leadership. Her English conversations weren't just important—they were legally binding.
 
-Each executive faced a different version of the same problem: their English was functional, but it wasn't _commanding_. In high-stakes moments, they felt their authority diminish the moment they switched languages.
+Each executive faced a different version of the same problem: their English was functional, but it wasn't _commanding_. In executive-level moments, they felt their authority diminish the moment they switched languages.
 
 ## The Approach: Beyond Language Training
 
@@ -84,7 +84,7 @@ Each executive received weekly one-on-one sessions tailored to their specific ch
 
 **For the HR Director**, we developed interview frameworks. Not just questions to ask, but how to probe, how to build rapport, and how to assess candidates when both parties were working in their second language.
 
-**For the CFO**, we tackled high-stakes negotiations. Supplier contracts, audit responses, financial presentations. We practiced the specific language of legal and financial authority—phrases that brook no ambiguity.
+**For the CFO**, we tackled executive-level negotiations. Supplier contracts, audit responses, financial presentations. We practiced the specific language of legal and financial authority—phrases that brook no ambiguity.
 
 ### Phase 3: Group Simulations (Monthly)
 
@@ -223,7 +223,7 @@ The good news: these gaps are closable. Not with grammar drills or vocabulary li
 
 ---
 
-_Robert Cushman is a Business English coach specializing in high-stakes communication for Latin American technology companies and professional services firms. His Communication Confidence Assessment helps organizations identify exactly where language gaps are costing them business. [Learn more about Robert's approach →](/en/about/)_
+_Robert Cushman is a Business English coach specializing in executive-level communication for Latin American technology companies and professional services firms. His Communication Confidence Assessment helps organizations identify exactly where language gaps are costing them business. [Learn more about Robert's approach →](/en/about/)_
 
 **[Take the free Executive Communication Confidence Quiz →](/en/quiz/executives/)**
 

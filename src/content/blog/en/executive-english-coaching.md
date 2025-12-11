@@ -66,7 +66,7 @@ Sessions are targeted interventions designed to yield real-world results.
 
 Authentic confidence comes from targeted practice and honest feedback. A skilled coach guides you to:
 
-- **Identify & Overcome Blockers:** Address nerves in high-stakes presentations or tough Q&A.
+- **Identify & Overcome Blockers:** Address nerves in executive-level presentations or tough Q&A.
 - **Refine Your Style:** Enhance articulation, pacing, and vocal variety for maximum impact.
 - **Receive Constructive Feedback:** Gain actionable insights on how you're perceived and how to improve.
 
