@@ -1,0 +1,213 @@
+{
+  "metadata": {
+    "id": "salary-negotiation-script",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "script",
+    "format": "pdf-script",
+    "funnelStage": "consideration",
+    "difficultyLevel": "intermediate",
+    "timeToComplete": "8 minutes",
+    "estimatedMinutes": 8,
+    "pageCount": 6,
+    "tags": ["salary", "negotiation", "career", "compensation", "job-offer"]
+  },
+  "targeting": {
+    "primaryPersona": ["job-seeker", "manager", "executive", "consultant", "all"],
+    "industries": ["technology", "professional-services", "finance", "all"],
+    "scenarios": ["negotiations", "interviews"],
+    "painPoints": [
+      "Accepting the first offer out of discomfort",
+      "Not knowing how to counter without seeming greedy",
+      "Freezing when asked 'What are your salary expectations?'",
+      "Leaving money on the table due to language barriers"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free strategy call to practice your salary negotiation before the real thing",
+    "relatedAssets": ["interview-answer-templates", "5-minute-negotiation-script"]
+  },
+  "seo": {
+    "metaDescription": "Get the exact script for negotiating your salary in English. Handle the 5 critical moments in any compensation conversation with confidence.",
+    "keywords": ["salary negotiation script", "how to negotiate salary", "salary negotiation phrases", "counter offer script"]
+  },
+  "slugEn": "salary-negotiation-script",
+  "slugEs": "script-negociacion-salario",
+  "en": {
+    "title": "The Salary Negotiation Script",
+    "subtitle": "Exact Words for the 5 Critical Moments in Any Compensation Conversation",
+    "description": "Most people leave 10-20% on the table because they don't know how to negotiate in English. This script gives you the exact words for every stage of the salary conversation.",
+    "headline": "Stop Leaving Money on the Table",
+    "valueProposition": "Get word-for-word scripts for the 5 moments that determine your compensation—from first ask to final acceptance.",
+    "leadCapture": {
+      "formHeadline": "Get the Salary Script",
+      "formSubheadline": "The 5 critical negotiation moments",
+      "buttonText": "Send Me the Script",
+      "successMessage": "Check your inbox! Your script is on its way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Why Most Negotiations Fail",
+        "content": "Here's what usually happens: They make an offer. You feel uncomfortable. You accept. Then you spend the next year wondering if you left money on the table.\n\nYou probably did.\n\nStudies show that failing to negotiate your starting salary can cost you over $1 million over your career. And for non-native English speakers, the language barrier makes an already uncomfortable conversation even harder.\n\nThis script gives you the exact words so you can focus on strategy, not translation."
+      },
+      {
+        "id": "moments",
+        "title": "The 5 Critical Moments",
+        "items": [
+          {
+            "number": 1,
+            "title": "When They Ask Your Salary Expectations (Too Early)",
+            "content": "They'll often ask this in the first interview—before you know enough to give a good answer. Your goal: deflect without being difficult.",
+            "example": {
+              "wrong": "I'm looking for around $120,000... but I'm flexible! Whatever you think is fair...",
+              "right": "I'd like to learn more about the role and responsibilities before discussing numbers. Once I understand the full scope, I'm confident we can find a number that works for both of us. What's the budgeted range for this position?",
+              "why": "You deflect, flip the question back to them, and sound confident—not evasive."
+            },
+            "actionItem": "Never name a number first if you can avoid it. Get their range first."
+          },
+          {
+            "number": 2,
+            "title": "When They Make the Initial Offer",
+            "content": "They've made an offer. Now comes the moment most people fumble: the pause before you respond.",
+            "example": {
+              "wrong": "Okay, that sounds good! When do I start?",
+              "right": "Thank you for the offer—I'm excited about the opportunity. I'd like to take a day to review the full package and come back to you with any questions. When do you need a final answer?",
+              "why": "This is professional, buys you time, and signals you're taking it seriously—not desperately accepting."
+            },
+            "actionItem": "NEVER accept on the spot. Always ask for at least 24-48 hours."
+          },
+          {
+            "number": 3,
+            "title": "The Counter-Offer",
+            "content": "This is where the real negotiation happens. You need to counter without seeming ungrateful or greedy.",
+            "example": {
+              "wrong": "I was hoping for more. Can you do $140,000 instead?",
+              "right": "Thank you again for the offer. I've done some research on market rates for this role, and based on my [X years of experience / specific skills / track record], I was hoping we could discuss a base salary closer to $140,000. Is there flexibility there?",
+              "why": "You anchor to market data and your value—not to your 'hopes.' The soft close ('Is there flexibility?') invites dialogue."
+            },
+            "actionItem": "Always justify your counter with market data or specific value you bring."
+          },
+          {
+            "number": 4,
+            "title": "When They Say 'That's Our Best Offer'",
+            "content": "They've pushed back. Now you need to either accept, negotiate other terms, or walk away gracefully.",
+            "example": {
+              "wrong": "Oh... okay, I guess that works then.",
+              "right": "I understand the constraints on base salary. Given that, could we discuss [signing bonus / additional PTO / flexible work arrangement / earlier review date]? That would help bridge the gap and make this work for both of us.",
+              "why": "If base is fixed, negotiate other components. Total compensation is more than salary."
+            },
+            "actionItem": "Prepare 3 non-salary items you'd accept instead: bonus, equity, PTO, title, review timing."
+          },
+          {
+            "number": 5,
+            "title": "The Final Acceptance",
+            "content": "You've negotiated. Now close professionally and lock in the details.",
+            "example": {
+              "wrong": "Great, thanks! Talk to you soon!",
+              "right": "I'm thrilled to accept. To confirm: the offer is [salary], plus [bonus/benefits discussed], with a start date of [date]. Could you send the updated offer letter reflecting these terms? I'll sign and return it within 24 hours.",
+              "why": "Verbal agreements change. Get everything in writing before you celebrate."
+            },
+            "actionItem": "Always confirm terms in writing. Never resign from your current job until you have a signed offer."
+          }
+        ]
+      },
+      {
+        "id": "bonus",
+        "title": "Bonus: Phrases for Awkward Moments",
+        "content": "**If they seem offended by your counter:**\n'I hope my counter didn't come across as ungrateful—I'm genuinely excited about this role. I just want to make sure we start on the right foot.'\n\n**If you need to decline:**\n'After careful consideration, I've decided to pursue a different opportunity. I have a lot of respect for your team and hope our paths cross again.'\n\n**If they pressure you for an immediate answer:**\n'I understand you need to move quickly. I can give you a final answer by [specific time]. Making a considered decision will help me commit fully once I accept.'"
+      }
+    ]
+  },
+  "es": {
+    "title": "El script de negociación de salario",
+    "subtitle": "Palabras exactas para los 5 momentos críticos en cualquier conversación de compensación",
+    "description": "La mayoría de la gente deja 10-20% en la mesa porque no sabe cómo negociar en inglés. Este script te da las palabras exactas para cada etapa de la conversación salarial.",
+    "headline": "Deja de dejar dinero en la mesa",
+    "valueProposition": "Obtén scripts palabra por palabra para los 5 momentos que determinan tu compensación—desde la primera pregunta hasta la aceptación final.",
+    "leadCapture": {
+      "formHeadline": "Obtén el script de salario",
+      "formSubheadline": "Los 5 momentos críticos de negociación",
+      "buttonText": "Envíame el script",
+      "successMessage": "¡Revisa tu bandeja! Tu script está en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Por qué la mayoría de las negociaciones fallan",
+        "content": "Esto es lo que suele pasar: hacen una oferta. Te sientes incómodo. Aceptas. Luego pasas el siguiente año preguntándote si dejaste dinero en la mesa.\n\nProbablemente sí.\n\nLos estudios muestran que no negociar tu salario inicial puede costarte más de $1 millón a lo largo de tu carrera. Y para hablantes no nativos de inglés, la barrera del idioma hace una conversación ya incómoda aún más difícil.\n\nEste script te da las palabras exactas para que puedas enfocarte en la estrategia, no en la traducción."
+      },
+      {
+        "id": "moments",
+        "title": "Los 5 momentos críticos",
+        "items": [
+          {
+            "number": 1,
+            "title": "Cuando preguntan tus expectativas salariales (demasiado temprano)",
+            "content": "Frecuentemente preguntan esto en la primera entrevista—antes de que sepas lo suficiente para dar una buena respuesta. Tu objetivo: desviar la pregunta sin parecer evasivo.",
+            "example": {
+              "wrong": "Estoy buscando alrededor de $120,000... ¡pero soy flexible! Lo que creas que es justo...",
+              "right": "Me gustaría conocer más sobre el rol y las responsabilidades antes de hablar de números. Una vez que entienda el alcance completo, estoy seguro de que podemos encontrar una cifra que funcione para ambos. ¿Cuál es el rango presupuestado para esta posición?",
+              "why": "Desvías, devuelves la pregunta y suenas seguro—no evasivo."
+            },
+            "actionItem": "Nunca menciones un número primero si puedes evitarlo. Obtén su rango primero."
+          },
+          {
+            "number": 2,
+            "title": "Cuando hacen la oferta inicial",
+            "content": "Ya hicieron una oferta. Ahora viene el momento en el que la mayoría falla: la pausa antes de responder.",
+            "example": {
+              "wrong": "Okay, ¡suena bien! ¿Cuándo empiezo?",
+              "right": "Gracias por la oferta—me entusiasma la oportunidad. Me gustaría tomar un día para revisar el paquete completo y volver con cualquier pregunta. ¿Para cuándo necesitas una respuesta final?",
+              "why": "Es profesional, te da tiempo y muestra que tomas la oferta en serio."
+            },
+            "actionItem": "NUNCA aceptes en el momento. Pide siempre 24-48 horas."
+          },
+          {
+            "number": 3,
+            "title": "La contraoferta",
+            "content": "Aquí es donde ocurre la negociación real. Debes contraofertar sin parecer desagradecido o codicioso.",
+            "example": {
+              "wrong": "Esperaba más. ¿Pueden hacer $140,000?",
+              "right": "Gracias de nuevo por la oferta. He investigado los salarios de mercado para este rol y, con base en mis [X años de experiencia / habilidades específicas / historial], esperaba que pudiéramos considerar un salario base más cercano a $140,000. ¿Hay flexibilidad ahí?",
+              "why": "Te basas en datos y valor, no en deseos."
+            },
+            "actionItem": "Siempre justifica tu contraoferta con datos de mercado o valor concreto."
+          },
+          {
+            "number": 4,
+            "title": "Cuando dicen 'esa es nuestra mejor oferta'",
+            "content": "Han puesto un límite. Ahora debes aceptar, negociar otros términos o retirarte con elegancia.",
+            "example": {
+              "wrong": "Oh... okay, supongo que funciona.",
+              "right": "Entiendo las limitaciones en el salario base. Dado que es así, ¿podríamos hablar de [bono de firma / PTO adicional / esquema flexible / fecha de revisión más temprana]? Eso ayudaría a cerrar la brecha y hacer que esto funcione para ambos.",
+              "why": "Si el base está fijo, negocia otros componentes."
+            },
+            "actionItem": "Prepara 3 opciones no salariales: bono, equity (acciones), PTO, título, revisión adelantada."
+          },
+          {
+            "number": 5,
+            "title": "La aceptación final",
+            "content": "Ya negociaste. Ahora cierra profesionalmente y asegura los detalles.",
+            "example": {
+              "wrong": "¡Genial, gracias! Hablamos luego.",
+              "right": "Me entusiasma aceptar. Para confirmar: la oferta es [salario], más [bono/beneficios acordados], con fecha de inicio [fecha]. ¿Podrías enviarme la carta de oferta actualizada con estos términos? La firmo y regreso en 24 horas.",
+              "why": "Los acuerdos verbales cambian. Obtén todo por escrito."
+            },
+            "actionItem": "Confirma siempre por escrito. Nunca renuncies hasta tener la oferta firmada."
+          }
+        ]
+      },
+      {
+        "id": "bonus",
+        "title": "Bonus: frases para momentos incómodos",
+        "content": "**Si parecen ofendidos por tu contraoferta:**\n'Espero que mi contraoferta no haya parecido desagradecida—estoy genuinamente emocionado por este rol. Solo quiero asegurarme de que empecemos con el pie derecho.'\n\n**Si necesitas declinar:**\n'Después de una consideración cuidadosa, he decidido optar por otra oportunidad profesional. Tengo mucho respeto por tu equipo y espero que nuestros caminos se crucen nuevamente.'\n\n**Si te presionan para responder de inmediato:**\n'Entiendo que necesitan avanzar rápido. Puedo darte una respuesta final para [hora]. Tomar una decisión considerada me ayudará a comprometerme al 100% una vez que acepte.'"
+      }
+    ]
+  }
+}

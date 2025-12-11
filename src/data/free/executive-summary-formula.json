@@ -1,0 +1,225 @@
+{
+  "metadata": {
+    "id": "executive-summary-formula",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "framework",
+    "format": "pdf-guide",
+    "funnelStage": "consideration",
+    "difficultyLevel": "intermediate",
+    "timeToComplete": "7 minutes",
+    "estimatedMinutes": 7,
+    "pageCount": 5,
+    "tags": ["writing", "executive-summary", "reports", "proposals", "communication"]
+  },
+  "targeting": {
+    "primaryPersona": ["manager", "consultant", "executive", "project-manager", "founder"],
+    "industries": ["technology", "professional-services", "finance", "all"],
+    "scenarios": ["email-writing", "presentations", "client-meetings", "decision-making"],
+    "painPoints": [
+      "Executives stop reading after the first paragraph",
+      "Reports get ignored because key points are buried",
+      "Proposals don't communicate value clearly",
+      "Struggling to be concise in English"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free strategy call to refine your executive communication skills",
+    "relatedAssets": ["status-update-script", "email-templates-difficult-situations"]
+  },
+  "seo": {
+    "metaDescription": "Learn the BLUF formula for executive summaries that get read and acted on. Write summaries that busy executives actually finish in under 30 seconds.",
+    "keywords": ["executive summary template", "how to write executive summary", "business writing english", "BLUF method"]
+  },
+  "slugEn": "executive-summary-formula",
+  "slugEs": "formula-resumen-ejecutivo",
+  "en": {
+    "title": "The Executive Summary Formula",
+    "subtitle": "How to Write Summaries That Busy Leaders Actually Read",
+    "description": "Executives spend an average of 30 seconds on your document before deciding to read more or move on. This formula ensures your key points land in those 30 seconds.",
+    "headline": "Get Read in 30 Seconds or Less",
+    "valueProposition": "Learn the military-tested BLUF formula that ensures busy executives get your point—even if they never read past the first paragraph.",
+    "leadCapture": {
+      "formHeadline": "Get the Summary Formula",
+      "formSubheadline": "Write summaries executives actually read",
+      "buttonText": "Send Me the Formula",
+      "successMessage": "Check your inbox! Your formula is on its way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Why Your Summaries Get Ignored",
+        "content": "You spend hours on a report or proposal. You send it to the executive. Days pass. No response.\n\nThe problem isn't your analysis. It's your structure.\n\nMost professionals write summaries like essays: background first, then analysis, then conclusion. But executives read the opposite way: they want the answer first, then they'll decide if they need the details.\n\nThis formula flips your structure so you communicate like executives think."
+      },
+      {
+        "id": "formula",
+        "title": "The BLUF Formula",
+        "content": "BLUF stands for 'Bottom Line Up Front.' It's used by the U.S. military and adopted by top consulting firms because it works.\n\n**The structure:**",
+        "framework": {
+          "name": "BLUF",
+          "steps": [
+            {
+              "letter": "B",
+              "name": "Bottom Line",
+              "description": "State your main point, recommendation, or request in the first sentence.",
+              "example": "I recommend we proceed with Vendor A for the CRM implementation.",
+              "tip": "If someone only reads this sentence, they should know what you want."
+            },
+            {
+              "letter": "L",
+              "name": "Logic",
+              "description": "Give 2-3 supporting reasons in order of importance.",
+              "example": "Three factors support this decision: (1) lowest total cost of ownership, (2) fastest implementation timeline, and (3) best integration with our existing systems.",
+              "tip": "Use numbers to make scanning easy. Most important reason first."
+            },
+            {
+              "letter": "U",
+              "name": "Urgency",
+              "description": "Explain why this matters now and what happens if delayed.",
+              "example": "We need a decision by Friday to lock in the Q1 pricing before rates increase 15% in February.",
+              "tip": "Create urgency without panic. Facts, not drama."
+            },
+            {
+              "letter": "F",
+              "name": "Forward Action",
+              "description": "Specify exactly what you need from the reader.",
+              "example": "Please confirm your approval via email by Thursday EOD, or let me know if you'd like to discuss.",
+              "tip": "Make the next step crystal clear. Remove all ambiguity."
+            }
+          ]
+        }
+      },
+      {
+        "id": "example",
+        "title": "Complete Example",
+        "content": "**Situation:** You need executive approval for a budget increase.\n\n**Before (Buried Lead):**\n'As you know, we've been working on the customer portal redesign for the past three months. The team has made excellent progress, but we've encountered some unexpected technical challenges with the legacy integration. After reviewing several options with the engineering team...'\n\n[Executive stops reading here]\n\n**After (BLUF):**\n\n'**Bottom Line:** I'm requesting a $50,000 budget increase for the customer portal project.\n\n**Logic:** This additional investment is necessary because: (1) legacy integration requires custom middleware we didn't anticipate, (2) without it, we'll miss our March launch date, and (3) delaying launch costs us approximately $30,000/month in manual processing.\n\n**Urgency:** We need to engage the middleware vendor by January 20th to stay on schedule for March launch.\n\n**Forward Action:** Please approve the budget increase by Friday, or let's schedule 15 minutes to discuss alternatives.'\n\n[Executive knows exactly what you need and why in 20 seconds]"
+      },
+      {
+        "id": "templates",
+        "title": "Quick Templates",
+        "items": [
+          {
+            "type": "Recommendation",
+            "template": "I recommend [action]. This will [benefit] because [reason 1], [reason 2], and [reason 3]. We need to decide by [date] to [consequence of delay]. Please [specific action] by [deadline]."
+          },
+          {
+            "type": "Status Update",
+            "template": "[Project] is [on track/at risk/behind]. Key update: [most important news]. Next milestone: [what's coming] by [date]. I need [decision/resource/approval] by [date] to stay on schedule."
+          },
+          {
+            "type": "Problem Escalation",
+            "template": "We have a [severity] issue with [topic] that requires your attention. Impact: [what's affected]. Recommended solution: [your proposal]. I need [decision] by [date] to resolve this before [consequence]."
+          }
+        ]
+      },
+      {
+        "id": "tips",
+        "title": "Pro Tips",
+        "items": [
+          "Write the summary LAST, even though it appears first",
+          "Keep it under 150 words—if you can't, you don't understand it well enough",
+          "Use bold for the most critical information",
+          "One recommendation per summary—multiple asks dilute all of them",
+          "Test: Can someone forward your email and the recipient immediately understands?"
+        ]
+      }
+    ]
+  },
+  "es": {
+    "title": "La fórmula del resumen ejecutivo",
+    "subtitle": "Cómo escribir resúmenes que los líderes ocupados sí leen",
+    "description": "Los ejecutivos pasan en promedio 30 segundos en tu documento antes de decidir si leer más o seguir adelante. Esta fórmula asegura que tus puntos clave lleguen en esos 30 segundos.",
+    "headline": "Que te lean en 30 segundos o menos",
+    "valueProposition": "Aprende la fórmula BLUF, probada por las fuerzas armadas, que asegura que los ejecutivos ocupados entiendan tu mensaje — incluso si no leen más allá del primer párrafo.",
+    "leadCapture": {
+      "formHeadline": "Obtén la fórmula de resumen",
+      "formSubheadline": "Escribe resúmenes que los ejecutivos sí leen",
+      "buttonText": "Envíame la fórmula",
+      "successMessage": "¡Revisa tu bandeja de entrada! Tu fórmula está en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Por qué tus resúmenes son ignorados",
+        "content": "Pasas horas en un informe o propuesta. Lo envías al ejecutivo. Pasan días. Sin respuesta.\n\nEl problema no es tu análisis. Es tu estructura.\n\nLa mayoría de los profesionales escribe resúmenes como ensayos: contexto primero, luego análisis, luego conclusión. Pero los ejecutivos leen al revés: quieren la respuesta primero y luego deciden si necesitan los detalles.\n\nEsta fórmula invierte tu estructura para que comuniques como piensan los ejecutivos."
+      },
+      {
+        "id": "formula",
+        "title": "La fórmula BLUF",
+        "content": "BLUF significa “Bottom Line Up Front” (Conclusión principal primero). Es utilizada por las fuerzas armadas de EE. UU. y adoptada por las principales firmas de consultoría porque funciona.\n\n**La estructura:**",
+        "framework": {
+          "name": "BLUF",
+          "steps": [
+            {
+              "letter": "B",
+              "name": "Bottom Line (Conclusión)",
+              "description": "Expón tu punto principal, recomendación o solicitud en la primera oración.",
+              "example": "Recomiendo que procedamos con el Proveedor A para la implementación del CRM.",
+              "tip": "Si alguien solo lee esta oración, debería saber qué quieres."
+            },
+            {
+              "letter": "L",
+              "name": "Logic (Lógica)",
+              "description": "Da 2–3 razones de apoyo en orden de importancia.",
+              "example": "Tres factores respaldan esta decisión: (1) menor costo total de propiedad, (2) un cronograma de implementación más rápido y (3) mejor integración con nuestros sistemas existentes.",
+              "tip": "Usa números para facilitar la lectura. Empieza con la razón más importante."
+            },
+            {
+              "letter": "U",
+              "name": "Urgency (Urgencia)",
+              "description": "Explica por qué esto importa ahora y qué sucede si se retrasa.",
+              "example": "Necesitamos una decisión para el viernes para asegurar el precio del Q1 antes de que las tarifas aumenten un 15% en febrero.",
+              "tip": "Crea urgencia sin causar pánico. Hechos, no drama."
+            },
+            {
+              "letter": "F",
+              "name": "Forward Action (Acción siguiente)",
+              "description": "Especifica exactamente qué necesitas del lector.",
+              "example": "Por favor confirma tu aprobación por correo electrónico para el jueves al final del día, o avísame si deseas conversar.",
+              "tip": "Haz que el siguiente paso sea completamente claro. Elimina toda ambigüedad."
+            }
+          ]
+        }
+      },
+      {
+        "id": "example",
+        "title": "Ejemplo completo",
+        "content": "**Situación:** Necesitas aprobación ejecutiva para un aumento de presupuesto.\n\n**Antes (punto enterrado):**\n“Como sabes, hemos estado trabajando en el rediseño del portal de clientes durante los últimos tres meses. El equipo ha tenido un progreso excelente, pero hemos encontrado algunos desafíos técnicos inesperados con la integración heredada. Después de revisar varias opciones con el equipo de ingeniería…”\n\n[El ejecutivo deja de leer aquí]\n\n**Después (BLUF):**\n\n“**Conclusión:** Estoy solicitando un aumento de presupuesto de $50,000 para el proyecto del portal de clientes.\n\n**Lógica:** Esta inversión adicional es necesaria porque: (1) la integración heredada requiere middleware personalizado que no anticipamos, (2) sin esto, perderemos nuestra fecha de lanzamiento en marzo y (3) retrasar el lanzamiento nos cuesta aproximadamente $30,000 al mes en procesamiento manual.\n\n**Urgencia:** Necesitamos contratar al proveedor de middleware antes del 20 de enero para mantenernos en el cronograma de lanzamiento de marzo.\n\n**Acción siguiente:** Por favor aprueba el aumento de presupuesto antes del viernes, o agendemos 15 minutos para discutir alternativas.”\n\n[El ejecutivo sabe exactamente qué necesitas y por qué en 20 segundos]"
+      },
+      {
+        "id": "templates",
+        "title": "Plantillas rápidas",
+        "items": [
+          {
+            "type": "Recomendación",
+            "template": "Recomiendo [acción]. Esto generará [beneficio] porque [razón 1], [razón 2] y [razón 3]. Necesitamos decidir antes de [fecha] para [consecuencia del retraso]. Por favor [acción específica] antes de [fecha límite]."
+          },
+          {
+            "type": "Actualización de estado",
+            "template": "[Proyecto] está [en camino/en riesgo/atrasado]. Actualización clave: [noticia más importante]. Próximo hito: [lo que sigue] para [fecha]. Necesito [decisión/recurso/aprobación] antes de [fecha] para mantenernos en el cronograma."
+          },
+          {
+            "type": "Escalación de problema",
+            "template": "Tenemos un problema de [severidad] con [tema] que requiere tu atención. Impacto: [lo que se ve afectado]. Solución recomendada: [tu propuesta]. Necesito [decisión] antes de [fecha] para resolver esto antes de [consecuencia]."
+          }
+        ]
+      },
+      {
+        "id": "tips",
+        "title": "Consejos pro",
+        "items": [
+          "Escribe el resumen al final, aunque aparezca primero",
+          "Mantenlo por debajo de 150 palabras — si no puedes, no lo entiendes lo suficientemente bien",
+          "Usa negritas para la información más crítica",
+          "Una recomendación por resumen — varias peticiones las debilitan todas",
+          "Prueba: ¿puede alguien reenviar tu correo electrónico y que el destinatario lo entienda de inmediato?"
+        ]
+      }
+    ]
+  }
+}

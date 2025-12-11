@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "id": "feedback-framework",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "framework",
+    "format": "pdf-guide",
+    "funnelStage": "consideration",
+    "difficultyLevel": "intermediate",
+    "timeToComplete": "8 minutes",
+    "estimatedMinutes": 8,
+    "pageCount": 6,
+    "tags": ["feedback", "management", "leadership", "difficult-conversations", "performance"]
+  },
+  "targeting": {
+    "primaryPersona": ["manager", "executive", "hr-professional", "project-manager"],
+    "industries": ["technology", "professional-services", "all"],
+    "scenarios": ["performance-feedback", "difficult-conversations", "leadership"],
+    "painPoints": [
+      "Feedback conversations going badly",
+      "Team members getting defensive",
+      "Avoiding difficult conversations",
+      "Not knowing how to be direct without being harsh"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free strategy call to practice giving feedback that drives change",
+    "relatedAssets": ["pushback-playbook", "email-templates-difficult-situations"]
+  },
+  "seo": {
+    "metaDescription": "Master the SBI feedback framework used by Fortune 500 managers. Give feedback that changes behavior without damaging relationships.",
+    "keywords": ["feedback framework", "how to give feedback", "SBI feedback model", "constructive feedback examples"]
+  },
+  "slugEn": "feedback-framework",
+  "slugEs": "marco-retroalimentacion",
+  "en": {
+    "title": "The SBI Feedback Framework",
+    "subtitle": "Give Feedback That Changes Behavior, Not Just Makes People Defensive",
+    "description": "Most feedback fails because it's vague, personal, or delivered wrong. The SBI framework gives you a clear structure for feedback that people actually hear and act on.",
+    "headline": "Stop Avoiding Difficult Conversations. Start Having Effective Ones.",
+    "valueProposition": "Learn the exact 3-part formula that Fortune 500 managers use to give feedback that drives real change.",
+    "leadCapture": {
+      "formHeadline": "Get the Feedback Framework",
+      "formSubheadline": "The formula for feedback that works",
+      "buttonText": "Send Me the Framework",
+      "successMessage": "Check your inbox! Your framework is on its way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Why Most Feedback Fails",
+        "content": "Think about the last time someone gave you vague feedback like 'you need to be more proactive' or 'your communication needs work.' Useless, right? You had no idea what to actually change.\n\nOr worse—feedback that felt like a personal attack: 'You're always late' or 'You don't care about quality.'\n\nThe SBI framework solves both problems. It's specific enough to be actionable and structured enough to stay professional."
+      },
+      {
+        "id": "framework",
+        "title": "The SBI Framework",
+        "items": [
+          {
+            "number": 1,
+            "title": "S = Situation",
+            "content": "Start by anchoring the feedback to a specific time and place. This prevents the conversation from becoming about 'always' or 'never.'",
+            "example": {
+              "wrong": "You're always late to meetings.",
+              "right": "In yesterday's client call at 2pm...",
+              "why": "Specific situations can't be argued with. Generalizations invite defensiveness."
+            },
+            "actionItem": "Never give feedback without being able to name a specific date, meeting, or event."
+          },
+          {
+            "number": 2,
+            "title": "B = Behavior",
+            "content": "Describe the observable behavior—what you saw or heard. Not your interpretation. Not your judgment. Just the facts.",
+            "example": {
+              "wrong": "You weren't paying attention and didn't care about the client.",
+              "right": "You joined 10 minutes late and didn't have the slides ready when the client asked.",
+              "why": "Behavior is objective. Judgments are subjective and trigger defensiveness."
+            },
+            "actionItem": "Ask yourself: 'Could a video camera have captured this?' If not, it's interpretation, not behavior."
+          },
+          {
+            "number": 3,
+            "title": "I = Impact",
+            "content": "Explain the consequence of the behavior—on you, the team, the client, or the project. This is why it matters.",
+            "example": {
+              "wrong": "It was really unprofessional.",
+              "right": "The client asked if we were prepared, and I had to cover for us. It made us look disorganized.",
+              "why": "Impact makes the feedback meaningful. Without it, people don't understand why they should change."
+            },
+            "actionItem": "Always connect behavior to business impact—that's what makes people care."
+          }
+        ]
+      },
+      {
+        "id": "complete-examples",
+        "title": "Complete SBI Examples",
+        "content": "**Example 1: Missed Deadline**\n\n'In Monday's sprint review [SITUATION], you mentioned for the third time that the feature wasn't ready and would slip to next week [BEHAVIOR]. This is causing the product team to lose confidence in our estimates, and I'm getting questions from the VP about our reliability [IMPACT].'\n\n**Example 2: Great Work (Positive Feedback)**\n\n'In the client presentation this morning [SITUATION], when the CFO challenged our pricing, you calmly walked through the ROI calculation and addressed each concern [BEHAVIOR]. The CFO nodded and said 'that makes sense'—I think that saved the deal [IMPACT].'\n\n**Example 3: Communication Issue**\n\n'In yesterday's Slack thread about the outage [SITUATION], your message said 'this is a disaster, I can't believe no one caught this' [BEHAVIOR]. Several team members reached out to me saying they felt blamed. It's affecting team morale during an already stressful situation [IMPACT].'"
+      },
+      {
+        "id": "next-step",
+        "title": "After SBI: The Forward Question",
+        "content": "After delivering SBI feedback, don't just stop. Ask a forward-looking question that invites dialogue:\n\n• 'What's your perspective on this?'\n• 'How can we prevent this next time?'\n• 'What support do you need to change this?'\n\nThis turns feedback from a lecture into a conversation—and conversations lead to change."
+      }
+    ]
+  },
+  "es": {
+    "title": "El marco de retroalimentación SBI",
+    "subtitle": "Da retroalimentación que cambia el comportamiento, no que pone a la gente a la defensiva",
+    "description": "La mayoría de la retroalimentación falla porque es vaga, personal o se entrega de manera incorrecta. El marco SBI te da una estructura clara para retroalimentación que la gente realmente escucha y aplica.",
+    "headline": "Deja de evitar conversaciones difíciles. Empieza a tener conversaciones efectivas.",
+    "valueProposition": "Aprende la fórmula exacta de 3 partes que los gerentes de empresas Fortune 500 usan para dar retroalimentación que genera un cambio real.",
+    "leadCapture": {
+      "formHeadline": "Obtén el marco de retroalimentación",
+      "formSubheadline": "La fórmula para retroalimentación que realmente funciona",
+      "buttonText": "Envíame el marco",
+      "successMessage": "¡Revisa tu bandeja de entrada! Tu marco está en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Por qué falla la mayoría de la retroalimentación",
+        "content": "Piensa en la última vez que alguien te dio retroalimentación vaga como “necesitas ser más proactivo” o “tu comunicación necesita mejorar”. Inútil, ¿verdad? No tenías idea de qué cambiar exactamente.\n\nO peor: retroalimentación que se sintió como un ataque personal: “Siempre llegas tarde” o “No te importa la calidad”.\n\nEl marco SBI resuelve ambos problemas. Es lo suficientemente específico para ser accionable y lo suficientemente estructurado para mantenerse profesional."
+      },
+      {
+        "id": "framework",
+        "title": "El marco SBI",
+        "items": [
+          {
+            "number": 1,
+            "title": "S = Situation / Situación",
+            "content": "Empieza anclando la retroalimentación en un momento y lugar específico. Esto evita que la conversación se vuelva sobre “siempre” o “nunca”.",
+            "example": {
+              "wrong": "Siempre llegas tarde a las reuniones.",
+              "right": "En la llamada con el cliente de ayer a las 2 p. m....",
+              "why": "Las situaciones específicas no se pueden discutir. Las generalizaciones generan defensividad."
+            },
+            "actionItem": "Nunca des retroalimentación sin poder nombrar una fecha, reunión o evento concreto."
+          },
+          {
+            "number": 2,
+            "title": "B = Behavior / Comportamiento",
+            "content": "Describe el comportamiento observable: lo que viste u oíste. No tu interpretación. No tu juicio. Solo los hechos.",
+            "example": {
+              "wrong": "No estabas prestando atención y no te importaba el cliente.",
+              "right": "Te uniste 10 minutos tarde y no tenías las diapositivas listas cuando el cliente las pidió.",
+              "why": "El comportamiento es objetivo. Los juicios son subjetivos y disparan defensividad."
+            },
+            "actionItem": "Pregúntate: “¿Una cámara de video podría haber capturado esto?” Si no, es interpretación, no comportamiento."
+          },
+          {
+            "number": 3,
+            "title": "I = Impact / Impacto",
+            "content": "Explica la consecuencia del comportamiento: sobre ti, el equipo, el cliente o el proyecto. Esto es lo que le da peso.",
+            "example": {
+              "wrong": "Fue muy poco profesional.",
+              "right": "El cliente preguntó si estábamos preparados, y tuve que cubrirnos. Nos hizo ver desorganizados.",
+              "why": "El impacto vuelve significativa la retroalimentación. Sin él, la gente no entiende por qué debe cambiar."
+            },
+            "actionItem": "Conecta siempre el comportamiento con un impacto en el negocio; eso es lo que hace que a la gente le importe."
+          }
+        ]
+      },
+      {
+        "id": "complete-examples",
+        "title": "Ejemplos completos de SBI",
+        "content": "**Ejemplo 1: Fecha límite incumplida**\n\n“En la revisión del sprint del lunes [SITUACIÓN], mencionaste por tercera vez que la funcionalidad no estaba lista y se movería a la próxima semana [COMPORTAMIENTO]. Esto está causando que el equipo de producto pierda confianza en nuestras estimaciones, y estoy recibiendo preguntas del VP sobre nuestra confiabilidad [IMPACTO].”\n\n**Ejemplo 2: Buen trabajo (retroalimentación positiva)**\n\n“En la presentación con el cliente esta mañana [SITUACIÓN], cuando el CFO cuestionó nuestro precio, explicaste con calma el cálculo de ROI y respondiste cada inquietud [COMPORTAMIENTO]. El CFO asintió y dijo ‘tiene sentido’; creo que eso cerró el trato [IMPACTO].”\n\n**Ejemplo 3: Problema de comunicación**\n\n“En el hilo de Slack de ayer sobre la interrupción [SITUACIÓN], tu mensaje decía ‘esto es un desastre, no puedo creer que nadie detectó esto’ [COMPORTAMIENTO]. Varios miembros del equipo me escribieron diciendo que se sintieron culpados. Está afectando la moral del equipo en una situación ya estresante [IMPACTO].”"
+      },
+      {
+        "id": "next-step",
+        "title": "Después de SBI: la pregunta hacia adelante",
+        "content": "Después de entregar retroalimentación usando SBI, no te detengas ahí. Haz una pregunta orientada al futuro que abra la conversación:\n\n• “¿Cuál es tu perspectiva sobre esto?”\n• “¿Cómo podemos evitar que esto ocurra la próxima vez?”\n• “¿Qué apoyo necesitas para cambiar esto?”\n\nEsto convierte la retroalimentación de un monólogo en una conversación—y las conversaciones generan cambio."
+      }
+    ]
+  }
+}

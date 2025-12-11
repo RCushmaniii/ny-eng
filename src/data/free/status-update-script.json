@@ -114,77 +114,77 @@
     ]
   },
   "es": {
-    "title": "El Script de Actualización de Estado en 60 Segundos",
-    "subtitle": "La Fórmula Que los Ejecutivos Realmente Quieren Escuchar",
-    "description": "Deja de divagar en actualizaciones de estado. Esta fórmula probada te permite comunicar progreso del proyecto en 60 segundos—con la estructura que los líderes senior esperan.",
-    "headline": "Da Actualizaciones de Estado Que Ganan Respeto, No Ojos Vidriosos",
+    "title": "El script de actualización de estado en 60 segundos",
+    "subtitle": "La fórmula que los ejecutivos realmente quieren escuchar",
+    "description": "Deja de divagar en actualizaciones de estado. Esta fórmula probada te permite comunicar el progreso del proyecto en 60 segundos—con la estructura que los líderes senior esperan.",
+    "headline": "Da actualizaciones de estado que generan respeto, no miradas perdidas",
     "valueProposition": "Aprende la fórmula exacta de 4 partes que hace que los ejecutivos presten atención en lugar de desconectarse.",
     "leadCapture": {
-      "formHeadline": "Obtén el Script de Actualización",
+      "formHeadline": "Obtén el script de actualización",
       "formSubheadline": "La fórmula de 60 segundos que los ejecutivos aman",
-      "buttonText": "Envíame el Script",
+      "buttonText": "Envíame el script",
       "successMessage": "¡Revisa tu bandeja! Tu script está en camino."
     },
     "sections": [
       {
         "id": "intro",
-        "title": "Por Qué la Mayoría de las Actualizaciones de Estado Fallan",
-        "content": "Esto es lo que los ejecutivos escuchan cuando das una actualización de estado típica: 'bla bla bla detalle técnico bla bla bla estamos trabajando en ello bla bla bla.'\n\nNo están escuchando porque no estás hablando su idioma. Quieren tres cosas: ¿Dónde estamos? ¿Cuál es el riesgo? ¿Qué necesitas? Todo lo demás es ruido.\n\nEsta fórmula de 4 partes les da exactamente eso—en 60 segundos o menos."
+        "title": "Por qué la mayoría de las actualizaciones de estado fallan",
+        "content": "Esto es lo que los ejecutivos escuchan cuando das una actualización típica: 'bla bla bla detalle técnico bla bla bla estamos trabajando en eso bla bla bla.'\n\nNo están escuchando porque no hablas su idioma. Quieren tres cosas: ¿Dónde estamos? ¿Cuál es el riesgo? ¿Qué necesitas? Todo lo demás es ruido.\n\nEsta fórmula de 4 partes les da exactamente eso—en 60 segundos o menos."
       },
       {
         "id": "formula",
-        "title": "La Fórmula STAR",
+        "title": "La fórmula STAR",
         "items": [
           {
             "number": 1,
             "title": "S = Status/Estado (10 segundos)",
-            "content": "Empieza con el titular. ¿Estás en camino, en riesgo, o bloqueado? No entierres lo importante en detalles—los ejecutivos quieren la conclusión primero.",
+            "content": "Empieza con el titular. ¿Estamos en camino, en riesgo o bloqueados? No entierres lo importante en detalles—los ejecutivos quieren la conclusión primero.",
             "example": {
               "wrong": "So we've been working on the integration and there have been some challenges with the API documentation and we're trying to work through them...",
               "right": "Project X is on track for the March 15 delivery.",
-              "why": "El ejecutivo ahora sabe lo más importante. Todo lo demás es contexto."
+              "why": "El ejecutivo ya sabe lo más importante. Lo demás es contexto."
             },
             "actionItem": "Empieza cada actualización con UNA oración que responda: '¿Estamos en camino?'"
           },
           {
             "number": 2,
             "title": "T = Timeline/Cronograma (15 segundos)",
-            "content": "Da los hitos clave—qué está hecho, qué sigue, y cuándo. Usa fechas, no plazos vagos.",
+            "content": "Da los hitos clave—qué está hecho, qué sigue y cuándo. Usa fechas, no plazos vagos.",
             "example": {
               "wrong": "We finished the first phase recently and we're working on the next part now. It should be done soon.",
               "right": "Phase 1 completed last Friday. Phase 2 starts Monday and delivers March 1. Final delivery March 15.",
-              "why": "Fechas específicas muestran que tienes control. Cronogramas vagos señalan incertidumbre."
+              "why": "Las fechas específicas muestran control. Los plazos vagos generan desconfianza."
             },
-            "actionItem": "Siempre ten tres fechas listas: último hito, próximo hito, entrega final."
+            "actionItem": "Ten siempre tres fechas listas: último hito, próximo hito y entrega final."
           },
           {
             "number": 3,
-            "title": "A = At Risk/En Riesgo (20 segundos)",
-            "content": "Señala proactivamente cualquier cosa que pueda descarrilar el proyecto. Si nada está en riesgo, dilo claramente. Si algo lo está, nómbralo y tu plan de mitigación.",
+            "title": "A = At Risk/En riesgo (20 segundos)",
+            "content": "Identifica proactivamente cualquier cosa que pueda descarrilar el proyecto. Si nada está en riesgo, dilo claramente. Si algo sí lo está, nómbralo junto a tu plan de mitigación.",
             "example": {
               "wrong": "Well, there are a few things we're keeping an eye on... the vendor might be late and there's a resource question...",
-              "right": "One risk: the vendor API documentation is incomplete. Mitigation: I've scheduled a call with their team Thursday to resolve.",
-              "why": "Los ejecutivos respetan a quienes ven problemas venir. Pierden confianza en quienes se sorprenden."
+              "right": "Un riesgo: la documentación del API del proveedor está incompleta. Mitigación: ya programé una llamada con su equipo el jueves para resolverlo.",
+              "why": "Los ejecutivos confían en quien anticipa problemas, no en quien se sorprende por ellos."
             },
-            "actionItem": "Antes de cada reunión de estado, pregúntate: '¿Qué podría salir mal esta semana?'"
+            "actionItem": "Antes de cada reunión pregúntate: '¿Qué podría salir mal esta semana?'"
           },
           {
             "number": 4,
             "title": "R = Request/Solicitud (15 segundos)",
-            "content": "Termina con lo que necesitas—una decisión, recurso, o solo reconocimiento. Si no necesitas nada, dilo también.",
+            "content": "Termina con lo que necesitas—una decisión, un recurso o simplemente confirmación. Si no necesitas nada, dilo también.",
             "example": {
               "wrong": "So yeah, that's where we are... any questions? I guess we'll just keep going...",
-              "right": "I need one thing from you: approval to bring in a contractor for two weeks. That keeps us on schedule.",
+              "right": "Necesito una cosa de tu parte: aprobación para contratar a un consultor durante dos semanas. Eso nos mantiene en el cronograma.",
               "why": "Solicitudes claras obtienen respuestas claras. Finales vagos se olvidan."
             },
-            "actionItem": "Termina cada actualización con 'I need...' o 'No blockers—we're good to continue.'"
+            "actionItem": "Termina cada actualización con 'Necesito...' o 'Sin bloqueos—podemos continuar.'"
           }
         ]
       },
       {
         "id": "complete-script",
-        "title": "El Script Completo de 60 Segundos",
-        "content": "Así suena cuando lo juntas todo:\n\n'Project X is on track for the March 15 delivery. [STATUS]\n\nPhase 1 completed last Friday. Phase 2 starts Monday and delivers March 1. Final delivery March 15. [TIMELINE]\n\nOne risk: the vendor API documentation is incomplete. Mitigation: I've scheduled a call with their team Thursday to resolve. [AT RISK]\n\nI need one thing from you: approval to bring in a contractor for two weeks. That keeps us on schedule. [REQUEST]'\n\nTiempo total: 45 segundos. Confianza total: 100%."
+        "title": "El script completo de 60 segundos",
+        "content": "Así suena cuando lo unes todo:\n\n'Project X is on track for the March 15 delivery. [STATUS]\n\nPhase 1 completed last Friday. Phase 2 starts Monday and delivers March 1. Final delivery March 15. [TIMELINE]\n\nOne risk: the vendor API documentation is incomplete. Mitigation: I've scheduled a call with their team Thursday to resolve. [AT RISK]\n\nI need one thing from you: approval to bring in a contractor for two weeks. That keeps us on schedule. [REQUEST]'\n\nTiempo total: 45 segundos. Confianza total: 100%."
       }
     ]
   }

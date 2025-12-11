@@ -1,0 +1,225 @@
+{
+  "metadata": {
+    "id": "interview-answer-templates",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "template",
+    "format": "pdf-guide",
+    "funnelStage": "consideration",
+    "difficultyLevel": "intermediate",
+    "timeToComplete": "10 minutes",
+    "estimatedMinutes": 10,
+    "pageCount": 7,
+    "tags": ["interviews", "job-search", "career", "templates", "STAR-method"]
+  },
+  "targeting": {
+    "primaryPersona": ["job-seeker", "manager", "executive", "all"],
+    "industries": ["technology", "professional-services", "finance", "all"],
+    "scenarios": ["interviews"],
+    "painPoints": [
+      "Rambling during interview answers",
+      "Not knowing how to structure stories",
+      "Blanking on examples when asked behavioral questions",
+      "Sounding unprepared even when qualified"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free strategy call to practice your interview answers with real-time feedback",
+    "relatedAssets": ["60-second-self-introduction", "5-principles-executive-english"]
+  },
+  "seo": {
+    "metaDescription": "Get fill-in-the-blank templates for the 6 most common interview questions. Stop rambling and start giving answers that get job offers.",
+    "keywords": ["interview answer templates", "STAR method examples", "behavioral interview answers", "how to answer interview questions"]
+  },
+  "slugEn": "interview-answer-templates",
+  "slugEs": "plantillas-respuestas-entrevista",
+  "en": {
+    "title": "Interview Answer Templates",
+    "subtitle": "Fill-in-the-Blank Answers for the 6 Questions You'll Definitely Get",
+    "description": "Stop rambling through interviews. These templates give you the exact structure for answering the most common questions—so you sound prepared, confident, and memorable.",
+    "headline": "Stop Rambling. Start Getting Offers.",
+    "valueProposition": "Get word-for-word templates for the 6 questions that appear in almost every interview.",
+    "leadCapture": {
+      "formHeadline": "Get the Interview Templates",
+      "formSubheadline": "Templates for the 6 questions you'll always get",
+      "buttonText": "Send Me the Templates",
+      "successMessage": "Check your inbox! Your templates are on their way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Why Templates Work",
+        "content": "You're not trying to memorize scripts—you're building frameworks. When you know the structure, you can adapt to any question. When you don't, you ramble.\n\nThese 6 templates cover 80% of interview questions. Master them and you'll never feel unprepared again."
+      },
+      {
+        "id": "templates",
+        "title": "The 6 Interview Templates",
+        "items": [
+          {
+            "number": 1,
+            "title": "Tell Me About Yourself",
+            "content": "This is your opening pitch. Keep it under 90 seconds and end with why you're excited about THIS role.",
+            "example": {
+              "wrong": "Well, I was born in Mexico City and went to university there, then I worked at a few different companies doing various things, and eventually I ended up in technology because I always liked computers, and now I'm looking for something new...",
+              "right": "I'm a [title] with [X years] of experience in [industry/skill]. Most recently at [Company], I [key accomplishment with numbers]. What I'm known for is [your superpower]. I'm excited about this role because [specific connection to the job].",
+              "why": "Structure: Present → Past highlight → Future fit. No childhood stories, no rambling history."
+            },
+            "actionItem": "Write this out and practice until you can deliver it in exactly 60-90 seconds."
+          },
+          {
+            "number": 2,
+            "title": "Tell Me About a Challenge You Overcame",
+            "content": "Use the STAR format: Situation, Task, Action, Result. Keep it under 2 minutes.",
+            "example": {
+              "wrong": "Well, there was this one time when everything was going wrong and the client was really upset and we had to work really hard to fix it and eventually it worked out...",
+              "right": "At [Company], we faced [specific challenge—SITUATION]. I was responsible for [your role—TASK]. I [specific actions you took—ACTION]. The result was [measurable outcome—RESULT].",
+              "why": "STAR forces specificity. Specificity creates credibility."
+            },
+            "actionItem": "Prepare 3 STAR stories before any interview—they can be adapted to many questions."
+          },
+          {
+            "number": 3,
+            "title": "Why Do You Want This Job?",
+            "content": "Show you've done your research. Connect their needs to your strengths.",
+            "example": {
+              "wrong": "It seems like a good company and I need a job and the salary is good and the benefits look nice...",
+              "right": "Three things excite me about this role. First, [something specific about the company/mission]. Second, [how your skills match their needs]. Third, [growth opportunity that matters to you]. It feels like a strong fit both ways.",
+              "why": "The 'three things' structure sounds organized and shows genuine interest."
+            },
+            "actionItem": "Research the company enough to name something specific they're working on."
+          },
+          {
+            "number": 4,
+            "title": "What's Your Greatest Weakness?",
+            "content": "Name a real weakness, then show what you're doing about it. Never say 'I work too hard.'",
+            "example": {
+              "wrong": "I'm a perfectionist and I work too hard. Sometimes I care too much about my work.",
+              "right": "Honestly, I've struggled with [real weakness]. For example, [brief specific instance]. What I've done to address this is [specific action]. I'm not perfect at it yet, but I've seen improvement in [evidence].",
+              "why": "Self-awareness + action = maturity. Fake weaknesses = instant credibility loss."
+            },
+            "actionItem": "Pick a real weakness that's not core to the job and show genuine growth."
+          },
+          {
+            "number": 5,
+            "title": "Tell Me About a Time You Failed",
+            "content": "Own the failure completely. Focus 70% of your answer on what you learned.",
+            "example": {
+              "wrong": "Well, it wasn't really my fault, but there was this project that didn't go well because of [blame others]...",
+              "right": "At [Company], I [specific failure—own it completely]. What went wrong was [honest analysis]. What I learned was [specific insight]. Since then, I've [how you've applied the lesson], and [evidence it worked].",
+              "why": "Blame = red flag. Ownership + learning = green flag."
+            },
+            "actionItem": "Choose a failure that's significant enough to be believable but not catastrophic."
+          },
+          {
+            "number": 6,
+            "title": "Do You Have Any Questions for Us?",
+            "content": "Always have questions. Ask about the role, team, or challenges—not benefits.",
+            "example": {
+              "wrong": "No, I think you covered everything. Actually, how many vacation days do I get?",
+              "right": "Yes, a few: What does success look like in this role in the first 90 days? What's the biggest challenge the team is facing right now? Why did the person who had this role before leave?",
+              "why": "Good questions show you're evaluating them too—that's confidence."
+            },
+            "actionItem": "Prepare 5 questions. You'll use 2-3, and the rest show you're prepared."
+          }
+        ]
+      }
+    ]
+  },
+  "es": {
+    "title": "Plantillas de respuestas para entrevistas",
+    "subtitle": "Respuestas para completar de las 6 preguntas que con seguridad te harán",
+    "description": "Deja de divagar en las entrevistas. Estas plantillas te dan la estructura exacta para responder las preguntas más comunes, para que suenes preparado, seguro y memorable.",
+    "headline": "Deja de divagar. Empieza a recibir ofertas.",
+    "valueProposition": "Obtén plantillas palabra por palabra para las 6 preguntas que aparecen en casi todas las entrevistas.",
+    "leadCapture": {
+      "formHeadline": "Obtén las plantillas de entrevista",
+      "formSubheadline": "Plantillas para las 6 preguntas que siempre te harán",
+      "buttonText": "Envíame las plantillas",
+      "successMessage": "¡Revisa tu bandeja de entrada! Tus plantillas están en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Por qué las plantillas funcionan",
+        "content": "No estás tratando de memorizar guiones: estás construyendo marcos. Cuando conoces la estructura, puedes adaptarte a cualquier pregunta. Cuando no, divagas.\n\nEstas 6 plantillas cubren el 80% de las preguntas de entrevista. Domínalas y nunca volverás a sentirte sin preparación."
+      },
+      {
+        "id": "templates",
+        "title": "Las 6 plantillas de entrevista",
+        "items": [
+          {
+            "number": 1,
+            "title": "Tell Me About Yourself / Cuéntame sobre ti",
+            "content": "Este es tu pitch inicial. Mantenlo debajo de 90 segundos y termina con por qué te entusiasma ESTE puesto.",
+            "example": {
+              "wrong": "Bueno, nací en la Ciudad de México y estudié allí, luego trabajé en varias empresas haciendo diferentes cosas, y eventualmente terminé en tecnología porque siempre me gustaron las computadoras, y ahora estoy buscando algo nuevo...",
+              "right": "Soy [título] con [X años] de experiencia en [industria/habilidad]. Más recientemente en [Empresa], [logro clave con números]. Lo que me distingue es [tu superpoder]. Me entusiasma este puesto porque [conexión específica con el rol].",
+              "why": "Estructura: Presente → Logro pasado → Encaje futuro. Nada de historias personales ni cronologías largas."
+            },
+            "actionItem": "Escríbelo y practica hasta poder decirlo en exactamente 60-90 segundos."
+          },
+          {
+            "number": 2,
+            "title": "Tell Me About a Challenge You Overcame / Cuéntame de un desafío que superaste",
+            "content": "Usa el formato STAR: Situación, Tarea, Acción, Resultado. Mantenlo en menos de 2 minutos.",
+            "example": {
+              "wrong": "Bueno, hubo una vez en la que todo estaba saliendo mal y el cliente estaba muy molesto y tuvimos que trabajar muy duro para arreglarlo y al final salió bien...",
+              "right": "En [Empresa], enfrentamos [desafío específico—SITUACIÓN]. Yo era responsable de [tu rol—TAREA]. Yo [acciones específicas que tomaste—ACCIÓN]. El resultado fue [resultado medible—RESULTADO].",
+              "why": "STAR obliga a ser específico. La especificidad genera credibilidad."
+            },
+            "actionItem": "Prepara 3 historias STAR antes de cualquier entrevista; pueden adaptarse a muchas preguntas."
+          },
+          {
+            "number": 3,
+            "title": "Why Do You Want This Job? / ¿Por qué quieres este trabajo?",
+            "content": "Demuestra que investigaste. Conecta sus necesidades con tus fortalezas.",
+            "example": {
+              "wrong": "Parece una buena empresa, necesito trabajo, el salario es bueno y los beneficios se ven bien...",
+              "right": "Tres cosas me entusiasman de este puesto. Primero, [algo específico de la empresa/misión]. Segundo, [cómo tus habilidades coinciden con lo que buscan]. Tercero, [oportunidad de crecimiento que te importa]. Siento que es un excelente encaje en ambas direcciones.",
+              "why": "La estructura 'tres razones' suena clara, organizada y muestra interés genuino."
+            },
+            "actionItem": "Investiga lo suficiente para mencionar algo específico que la empresa esté haciendo."
+          },
+          {
+            "number": 4,
+            "title": "What's Your Greatest Weakness? / ¿Cuál es tu mayor debilidad?",
+            "content": "Menciona una debilidad real y muestra lo que estás haciendo para mejorar. Nunca digas “trabajo demasiado”.",
+            "example": {
+              "wrong": "Soy perfeccionista y trabajo demasiado. A veces me importa demasiado mi trabajo.",
+              "right": "Honestamente, he tenido dificultades con [debilidad real]. Por ejemplo, [instancia breve]. Para mejorarlo, he hecho [acción específica]. Aún no soy perfecto, pero he visto mejoras en [evidencia].",
+              "why": "Autoconciencia + acción = madurez. Debilidades falsas = pérdida instantánea de credibilidad."
+            },
+            "actionItem": "Elige una debilidad real que no sea central al rol y demuestra progreso auténtico."
+          },
+          {
+            "number": 5,
+            "title": "Tell Me About a Time You Failed / Cuéntame de una vez que fallaste",
+            "content": "Asume completamente el fracaso. Dedica 70% de tu respuesta a lo aprendido.",
+            "example": {
+              "wrong": "Bueno, no fue realmente mi culpa, pero había un proyecto que no salió bien porque [culpar a otros]...",
+              "right": "En [Empresa], yo [fracaso específico—asúmelo]. Lo que salió mal fue [análisis honesto]. Lo que aprendí fue [aprendizaje específico]. Desde entonces he [cómo aplicaste la lección], y [evidencia de mejora].",
+              "why": "Culpar = bandera roja. Responsabilidad + aprendizaje = confianza."
+            },
+            "actionItem": "Elige un fracaso creíble, pero no uno devastador."
+          },
+          {
+            "number": 6,
+            "title": "Do You Have Any Questions? / ¿Tienes alguna pregunta?",
+            "content": "Siempre ten preguntas. Pregunta sobre el rol, el equipo o los desafíos—no beneficios.",
+            "example": {
+              "wrong": "No, creo que cubrieron todo. Bueno, ¿cuántos días de vacaciones tengo?",
+              "right": "Sí, algunas: ¿Cómo se ve el éxito en este rol en los primeros 90 días? ¿Cuál es el mayor desafío del equipo ahora mismo? ¿Por qué dejó el puesto la persona anterior?",
+              "why": "Buenas preguntas muestran que tú también los estás evaluando—eso proyecta confianza."
+            },
+            "actionItem": "Prepara 5 preguntas. Usarás 2-3; las demás muestran preparación."
+          }
+        ]
+      }
+    ]
+  }
+}

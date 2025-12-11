@@ -46,27 +46,50 @@ const seoDescription =
   "Boost your English fluency and confidence with personalized coaching tailored for professionals, executives, and companies worldwide.";
 
 const heroContent = {
-  eyebrow: "Your Global Communication Advantage",
-  title: "Master Business English & Advance Your Career",
+  // Shortened to define the category instantly
+  eyebrow: "Executive Communication Coaching",
+
+  // Big, clear promise. No fluff.
+  title: "Master Executive Business English",
+
+  // Focused on THEM (the lead), not YOU (the coach).
+  // Removed "I coach..." to focus on the result: Authority & Trust.
   description:
-    "I coach international leaders to communicate with calm authority, sharper clarity, and executive presence—so you can lead executive-level meetings and earn trust faster.",
-  trustLine: "Trusted by leaders at Fortune 500 companies and global startups",
+    "Lead global meetings with calm authority. Specialized coaching for international leaders to earn trust instantly.",
+
+  trustLine: "Trusted by leaders at Fortune 500 companies and global startups.",
   trustLineLink: "/en/testimonials/",
+
   buttons: [
     {
       text: "Book a Private Consultation",
       link: "/en/book/",
+      // DESIGN NOTE:
+      // To get the Gold/Orange button that pops against the blue,
+      // your 'primary' variant CSS should look like this in Tailwind:
+      // className="bg-amber-500 hover:bg-amber-400 text-white font-bold shadow-lg"
       variant: "primary" as const,
     },
-    {
+    // CRITICAL UX CHANGE:
+    // I commented out the second button.
+    // Two buttons = Decision Paralysis.
+    // If you want high conversion, give them ONE path.
+    /* {
       text: "Start the Executive Assessment",
       link: "/en/assessments/",
       variant: "secondary" as const,
-    },
+    }, 
+    */
   ],
   backgroundImage: heroSkyline,
   backgroundImageMobile: heroSkyline,
-  overlayOpacity: 0.3,
+
+  // INCREASED OPACITY:
+  // Changed from 0.3 to 0.7.
+  // This darkens the background image so your white text
+  // is actually readable against the city lights.
+  overlayOpacity: 0.9,
+
   fullHeight: true,
 } as const;
 

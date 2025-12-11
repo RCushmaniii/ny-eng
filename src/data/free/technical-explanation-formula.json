@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "id": "technical-explanation-formula",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "guide",
+    "format": "pdf-guide",
+    "funnelStage": "consideration",
+    "difficultyLevel": "intermediate",
+    "timeToComplete": "7 minutes",
+    "estimatedMinutes": 7,
+    "pageCount": 5,
+    "tags": ["technical-communication", "explanations", "presentations", "client-meetings", "simplification"]
+  },
+  "targeting": {
+    "primaryPersona": ["engineer", "consultant", "manager", "founder"],
+    "industries": ["technology", "professional-services", "healthcare", "finance"],
+    "scenarios": ["technical-explanation", "presentations", "client-meetings"],
+    "painPoints": [
+      "Clients glazing over during technical explanations",
+      "Being told to 'dumb it down'",
+      "Losing deals because clients don't understand the value",
+      "Taking too long to explain simple concepts"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free strategy call to practice explaining your work to non-technical audiences",
+    "relatedAssets": ["5-principles-executive-english", "status-update-script"]
+  },
+  "seo": {
+    "metaDescription": "Learn the 4-part formula for explaining complex technical concepts to non-technical audiences. Stop confusing clients, start closing deals.",
+    "keywords": ["how to explain technical concepts", "simplify technical language", "communicate with non-technical people", "technical presentation skills"]
+  },
+  "slugEn": "technical-explanation-formula",
+  "slugEs": "formula-explicacion-tecnica",
+  "en": {
+    "title": "The Technical Explanation Formula",
+    "subtitle": "How to Explain Anything Technical to Anyone Non-Technical",
+    "description": "Stop watching clients glaze over. This 4-part formula helps you explain complex concepts clearly—so decision-makers understand the value and say yes.",
+    "headline": "If They Don't Understand It, They Won't Buy It.",
+    "valueProposition": "Learn the exact formula that turns technical jargon into business language executives understand.",
+    "leadCapture": {
+      "formHeadline": "Get the Explanation Formula",
+      "formSubheadline": "The 4-part formula for technical clarity",
+      "buttonText": "Send Me the Formula",
+      "successMessage": "Check your inbox! Your formula is on its way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "The Curse of Knowledge",
+        "content": "Here's the problem: you understand your work so deeply that you've forgotten what it's like to not understand it. So when a client asks 'what does your software do?', you start talking about APIs and microservices and scalability...\n\nAnd their eyes glaze over.\n\nNot because they're stupid—because you're speaking a language they don't speak. This formula fixes that."
+      },
+      {
+        "id": "formula",
+        "title": "The AWE Formula",
+        "items": [
+          {
+            "number": 1,
+            "title": "A = Analogy First",
+            "content": "Start with something they already understand. Connect the unknown to the known before introducing new concepts.",
+            "example": {
+              "wrong": "Our API uses RESTful architecture with JSON payloads to enable seamless data exchange between microservices.",
+              "right": "Think of our system like a universal translator. When your different software systems need to talk to each other, ours makes sure they all speak the same language.",
+              "why": "Analogies create a mental hook. Technical descriptions create confusion."
+            },
+            "actionItem": "Before any technical meeting, prepare one analogy for your core offering."
+          },
+          {
+            "number": 2,
+            "title": "W = What It Does (Not How)",
+            "content": "Executives care about outcomes, not mechanisms. Tell them what it does for them—not how it does it.",
+            "example": {
+              "wrong": "The system uses machine learning algorithms to analyze historical transaction patterns and flag anomalies using statistical deviation thresholds.",
+              "right": "It catches fraudulent transactions before they clear—automatically. Your team only sees the ones that need human review.",
+              "why": "They're buying the outcome. The 'how' is your job to worry about."
+            },
+            "actionItem": "For every feature, complete this sentence: 'This means you can ______.'"
+          },
+          {
+            "number": 3,
+            "title": "E = Evidence",
+            "content": "Abstract claims don't convince. Specific numbers and examples do.",
+            "example": {
+              "wrong": "Our solution significantly reduces processing time.",
+              "right": "Our last client went from 3 days to process invoices to 4 hours. That freed up two full-time staff for higher-value work.",
+              "why": "Numbers are memorable. 'Significant improvement' is forgettable."
+            },
+            "actionItem": "Keep a list of 3-5 specific results you can cite in any meeting."
+          },
+          {
+            "number": 4,
+            "title": "Check for Understanding",
+            "content": "Don't wait until the end to see if they're following. Check in regularly—and adjust if they're lost.",
+            "example": {
+              "wrong": "[30-minute monologue] ...and that's how the system works. Any questions?",
+              "right": "Before I go deeper—does that make sense so far? Any questions about how this would work in your environment?",
+              "why": "Small check-ins prevent big misunderstandings. They also make you look confident."
+            },
+            "actionItem": "Stop every 2-3 minutes and ask 'Does that make sense?' or 'What questions do you have so far?'"
+          }
+        ]
+      },
+      {
+        "id": "complete-example",
+        "title": "Complete Example: Explaining Cloud Migration",
+        "content": "**Without the formula:**\n'We'll containerize your applications using Kubernetes, deploy them on AWS infrastructure with auto-scaling capabilities, implement CI/CD pipelines, and establish monitoring through Prometheus and Grafana dashboards.'\n\n**With the AWE formula:**\n'Think of your current system like owning a house—you're responsible for everything: the plumbing, the electricity, the roof. [ANALOGY]\n\nCloud migration is like moving to a building where someone else handles all of that. You just use the space. [WHAT IT DOES]\n\nOur last client reduced their IT infrastructure costs by 40% and their team now focuses on features instead of server maintenance. [EVIDENCE]\n\nDoes that make sense for your situation?' [CHECK]"
+      }
+    ]
+  },
+  "es": {
+    "title": "La fórmula de explicación técnica",
+    "subtitle": "Cómo explicar cualquier tema técnico a cualquier persona no técnica",
+    "description": "Deja de ver cómo los clientes se desconectan. Esta fórmula de 4 partes te ayuda a explicar conceptos complejos con claridad—para que los tomadores de decisión entiendan el valor y digan que sí.",
+    "headline": "Si no lo entienden, no lo comprarán.",
+    "valueProposition": "Aprende la fórmula exacta que convierte la jerga técnica en lenguaje de negocios que los ejecutivos sí entienden.",
+    "leadCapture": {
+      "formHeadline": "Obtén la fórmula de explicación",
+      "formSubheadline": "La fórmula de 4 partes para comunicar con claridad",
+      "buttonText": "Envíame la fórmula",
+      "successMessage": "¡Revisa tu bandeja de entrada! Tu fórmula está en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "La maldición del conocimiento",
+        "content": "Aquí está el problema: entiendes tu trabajo tan profundamente que has olvidado cómo se siente no entenderlo. Entonces, cuando un cliente pregunta “¿qué hace tu software?”, empiezas a hablar de APIs, microservicios y escalabilidad...\n\nY sus ojos se pierden.\n\nNo porque sean tontos, sino porque estás hablando un idioma que ellos no hablan. Esta fórmula soluciona eso."
+      },
+      {
+        "id": "formula",
+        "title": "La fórmula AWE",
+        "items": [
+          {
+            "number": 1,
+            "title": "A = Analogía primero",
+            "content": "Empieza con algo que ya entienden. Conecta lo desconocido con lo conocido antes de introducir conceptos técnicos.",
+            "example": {
+              "wrong": "Nuestra API utiliza arquitectura RESTful con cargas JSON para permitir intercambio de datos entre microservicios.",
+              "right": "Piensa en nuestro sistema como un traductor universal. Cuando tus distintos sistemas necesitan comunicarse, el nuestro se asegura de que todos hablen el mismo idioma.",
+              "why": "Las analogías generan claridad inmediata. Las descripciones técnicas generan confusión."
+            },
+            "actionItem": "Antes de cualquier reunión técnica, prepara una analogía para tu oferta principal."
+          },
+          {
+            "number": 2,
+            "title": "W = Qué hace (no cómo)",
+            "content": "A los ejecutivos les importan los resultados, no los mecanismos. Cuéntales qué hace por ellos—no cómo funciona internamente.",
+            "example": {
+              "wrong": "El sistema utiliza algoritmos de aprendizaje automático para analizar patrones históricos e identificar anomalías usando umbrales estadísticos.",
+              "right": "Detecta transacciones fraudulentas antes de que se procesen—automáticamente. Tu equipo solo revisa las que realmente necesitan atención humana.",
+              "why": "Están comprando el resultado, no la arquitectura técnica."
+            },
+            "actionItem": "Para cada función, completa: “Esto significa que puedes ______.”"
+          },
+          {
+            "number": 3,
+            "title": "E = Evidencia",
+            "content": "Las afirmaciones generales no convencen. Los resultados concretos sí.",
+            "example": {
+              "wrong": "Nuestra solución reduce significativamente el tiempo de procesamiento.",
+              "right": "Nuestro último cliente pasó de tardar 3 días procesando facturas a solo 4 horas. Eso liberó a dos personas de tiempo completo para tareas de mayor valor.",
+              "why": "Los números se recuerdan. Las palabras vagas se olvidan."
+            },
+            "actionItem": "Ten siempre 3–5 resultados específicos listos para mencionar."
+          },
+          {
+            "number": 4,
+            "title": "Verificar entendimiento",
+            "content": "No esperes hasta el final para confirmar si te están siguiendo. Haz pequeñas pausas y revisa el entendimiento.",
+            "example": {
+              "wrong": "[Monólogo de 30 minutos] ...y así funciona el sistema. ¿Preguntas?",
+              "right": "Antes de avanzar—¿esto tiene sentido hasta aquí? ¿Alguna pregunta sobre cómo funcionaría en su entorno?",
+              "why": "Verificaciones pequeñas evitan grandes malentendidos."
+            },
+            "actionItem": "Cada 2–3 minutos pregunta: “¿Esto tiene sentido?” o “¿Qué dudas tienes hasta ahora?”"
+          }
+        ]
+      },
+      {
+        "id": "complete-example",
+        "title": "Ejemplo completo: Explicar migración a la nube",
+        "content": "**Sin la fórmula:**\n'Containerizaremos tus aplicaciones con Kubernetes, las desplegaremos en AWS con autoescalado, implementaremos CI/CD y configuraremos monitoreo con Prometheus y Grafana.'\n\n**Con la fórmula AWE:**\n'Piensa en tu sistema actual como ser dueño de una casa: tú eres responsable de todo—la plomería, la electricidad, el techo. [ANALOGÍA]\n\nMigrar a la nube es como mudarte a un edificio donde alguien más se encarga de todo eso. Tú solo usas el espacio. [QUÉ HACE]\n\nNuestro último cliente redujo sus costos de infraestructura de TI un 40% y su equipo ahora se dedica a desarrollar funciones en lugar de mantener servidores. [EVIDENCIA]\n\n¿Esto tiene sentido para tu situación?' [VERIFICACIÓN]"
+      }
+    ]
+  }
+}

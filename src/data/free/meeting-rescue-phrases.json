@@ -1,0 +1,297 @@
+{
+  "metadata": {
+    "id": "meeting-rescue-phrases",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "sentences",
+    "format": "pdf-guide",
+    "funnelStage": "awareness",
+    "difficultyLevel": "beginner",
+    "timeToComplete": "5 minutes",
+    "estimatedMinutes": 5,
+    "pageCount": 4,
+    "tags": ["meetings", "recovery", "phrases", "confidence", "improvisation"]
+  },
+  "targeting": {
+    "primaryPersona": ["manager", "consultant", "engineer", "project-manager", "all"],
+    "industries": ["technology", "professional-services", "finance", "all"],
+    "scenarios": ["meetings", "client-meetings", "presentations"],
+    "painPoints": [
+      "Freezing when you lose your train of thought",
+      "Not knowing how to ask someone to repeat themselves",
+      "Struggling to interrupt politely",
+      "Panicking when you don't understand something"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free strategy call to practice handling meeting pressure in real-time",
+    "relatedAssets": ["status-update-script", "5-questions-high-stakes-meeting"]
+  },
+  "seo": {
+    "metaDescription": "Get 12 phrases that save you when meetings go wrong. Recover from blanking out, ask for clarification, and interrupt politely—without losing credibility.",
+    "keywords": ["meeting phrases english", "how to recover in meetings", "professional meeting language", "business english meeting phrases"]
+  },
+  "slugEn": "meeting-rescue-phrases",
+  "slugEs": "frases-rescate-reuniones",
+  "en": {
+    "title": "12 Meeting Rescue Phrases",
+    "subtitle": "What to Say When Things Go Wrong Mid-Meeting",
+    "description": "Every professional has moments where they blank out, don't understand, or need to interrupt. These 12 phrases help you recover smoothly without losing credibility.",
+    "headline": "Never Freeze in a Meeting Again",
+    "valueProposition": "Get 12 ready-to-use phrases for the most awkward meeting moments—memorize them and you'll always have an exit.",
+    "leadCapture": {
+      "formHeadline": "Get the Rescue Phrases",
+      "formSubheadline": "12 phrases for awkward meeting moments",
+      "buttonText": "Send Me the Phrases",
+      "successMessage": "Check your inbox! Your phrases are on their way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Why You Need These Phrases",
+        "content": "It happens to everyone: you're in a meeting and suddenly you lose your train of thought. Or someone says something you didn't catch. Or you need to interrupt but don't want to seem rude.\n\nIn your native language, you'd handle these moments easily. In English, the pressure makes everything harder.\n\nThese 12 phrases are your safety net. Memorize them, and you'll never be stuck without words again."
+      },
+      {
+        "id": "category-1",
+        "title": "When You Lose Your Train of Thought",
+        "items": [
+          {
+            "number": 1,
+            "phrase": "Let me take a step back and reframe that.",
+            "situation": "You started explaining something and got lost mid-sentence.",
+            "why": "Sounds intentional—like you're improving your explanation, not recovering from a mistake.",
+            "alternative": "Actually, let me put that differently."
+          },
+          {
+            "number": 2,
+            "phrase": "I want to make sure I'm being clear here. The key point is...",
+            "situation": "You're rambling and need to reset.",
+            "why": "Redirects attention to your main point while buying time to collect your thoughts.",
+            "alternative": "Let me cut to the core of this..."
+          },
+          {
+            "number": 3,
+            "phrase": "Give me a moment to pull up that number/reference.",
+            "situation": "You need time to think but want to seem prepared.",
+            "why": "Creates a natural pause while making you look thorough, not scattered.",
+            "alternative": "Let me double-check that figure to make sure I give you accurate information."
+          }
+        ]
+      },
+      {
+        "id": "category-2",
+        "title": "When You Don't Understand Something",
+        "items": [
+          {
+            "number": 4,
+            "phrase": "Could you say more about that? I want to make sure I fully understand.",
+            "situation": "Someone explained something and you didn't follow.",
+            "why": "Sounds like intellectual curiosity, not confusion.",
+            "alternative": "Can you walk me through that one more time?"
+          },
+          {
+            "number": 5,
+            "phrase": "Just to make sure we're aligned—you're saying that...",
+            "situation": "You think you understood but aren't certain.",
+            "why": "Lets you confirm without admitting you were lost.",
+            "alternative": "Let me paraphrase to make sure I've got this right..."
+          },
+          {
+            "number": 6,
+            "phrase": "I caught the first part, but could you repeat the second half?",
+            "situation": "Someone spoke too fast or you missed part of it.",
+            "why": "Specific requests get better responses than 'can you repeat that?'",
+            "alternative": "Sorry, I missed what you said after [specific point]."
+          }
+        ]
+      },
+      {
+        "id": "category-3",
+        "title": "When You Need to Interrupt",
+        "items": [
+          {
+            "number": 7,
+            "phrase": "Sorry to jump in—I have a quick thought on that.",
+            "situation": "You need to add something but someone else is talking.",
+            "why": "Acknowledges the interruption while signaling it will be brief.",
+            "alternative": "If I could add something quickly..."
+          },
+          {
+            "number": 8,
+            "phrase": "Before we move on, can I address that point?",
+            "situation": "The conversation is moving past something important.",
+            "why": "Creates urgency without being aggressive.",
+            "alternative": "I'd like to go back to something you mentioned..."
+          },
+          {
+            "number": 9,
+            "phrase": "I want to build on what [Name] said...",
+            "situation": "You want to interrupt but frame it as collaboration.",
+            "why": "Positioning as 'building on' rather than 'contradicting' reduces resistance.",
+            "alternative": "That connects to something I've been thinking about..."
+          }
+        ]
+      },
+      {
+        "id": "category-4",
+        "title": "When You Need More Time",
+        "items": [
+          {
+            "number": 10,
+            "phrase": "That's a great question. Let me think about the best way to answer it.",
+            "situation": "You're asked something you weren't prepared for.",
+            "why": "Compliments the asker while creating space to think.",
+            "alternative": "I want to give you a thoughtful answer on that—give me a second."
+          },
+          {
+            "number": 11,
+            "phrase": "I don't want to give you an incomplete answer. Can I follow up after the meeting?",
+            "situation": "You genuinely don't know and need time to research.",
+            "why": "Shows integrity and thoroughness rather than scrambling.",
+            "alternative": "Let me get you accurate information on that by end of day."
+          },
+          {
+            "number": 12,
+            "phrase": "There are a few dimensions to this. Let me start with...",
+            "situation": "You need to buy time while organizing a complex answer.",
+            "why": "Signals you're being thorough, not stalling.",
+            "alternative": "This requires a nuanced answer. The first thing to consider is..."
+          }
+        ]
+      }
+    ]
+  },
+  "es": {
+    "title": "12 frases de rescate para reuniones",
+    "subtitle": "Qué decir cuando las cosas salen mal en medio de una reunión",
+    "description": "A todos los profesionales les pasa: te bloqueas, no entiendes algo o necesitas interrumpir. Estas 12 frases te ayudan a recuperarte sin perder credibilidad.",
+    "headline": "Nunca vuelvas a congelarte en una reunión",
+    "valueProposition": "Obtén 12 frases listas para usar en los momentos más incómodos de una reunión. Memorízalas y siempre tendrás una salida.",
+    "leadCapture": {
+      "formHeadline": "Obtén las frases de rescate",
+      "formSubheadline": "12 frases para momentos incómodos en reuniones",
+      "buttonText": "Envíame las frases",
+      "successMessage": "¡Revisa tu bandeja de entrada! Tus frases están en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Por qué necesitas estas frases",
+        "content": "Le pasa a todos: estás en una reunión y de repente pierdes el hilo. O alguien dice algo que no alcanzaste a escuchar. O necesitas interrumpir pero no quieres parecer grosero.\n\nEn tu idioma nativo manejarías estos momentos sin problema. En inglés, la presión hace que todo sea más difícil.\n\nEstas 12 frases son tu red de seguridad. Memorízalas y nunca volverás a quedarte sin palabras."
+      },
+      {
+        "id": "category-1",
+        "title": "Cuando pierdes el hilo",
+        "items": [
+          {
+            "number": 1,
+            "phrase": "Déjame retroceder y replantear eso.",
+            "situation": "Empezaste a explicar algo y te perdiste a mitad de camino.",
+            "why": "Suena intencional: como si mejoraras tu explicación, no como si te recuperaras de un error.",
+            "alternative": "En realidad, déjame decirlo de otra manera."
+          },
+          {
+            "number": 2,
+            "phrase": "Quiero asegurarme de que estoy siendo claro. El punto clave es...",
+            "situation": "Estás divagando y necesitas reiniciar.",
+            "why": "Redirige la atención al punto principal mientras te da tiempo para organizar tus ideas.",
+            "alternative": "Déjame ir al núcleo de esto..."
+          },
+          {
+            "number": 3,
+            "phrase": "Dame un momento para buscar ese dato.",
+            "situation": "Necesitas tiempo para pensar pero quieres sonar preparado.",
+            "why": "Crea una pausa natural mientras te hace ver cuidadoso, no desordenado.",
+            "alternative": "Permíteme verificar ese dato para darte información precisa."
+          }
+        ]
+      },
+      {
+        "id": "category-2",
+        "title": "Cuando no entiendes algo",
+        "items": [
+          {
+            "number": 4,
+            "phrase": "¿Podrías profundizar un poco más? Quiero asegurarme de entender bien.",
+            "situation": "Alguien explicó algo y no lo seguiste.",
+            "why": "Suena como curiosidad profesional, no confusión.",
+            "alternative": "¿Podrías explicarlo nuevamente paso a paso?"
+          },
+          {
+            "number": 5,
+            "phrase": "Solo para asegurarnos de que estamos alineados — ¿estás diciendo que...?",
+            "situation": "Crees que entendiste, pero no del todo.",
+            "why": "Permite confirmar sin admitir que estabas perdido.",
+            "alternative": "Déjame parafrasear para asegurarme de haberlo entendido bien..."
+          },
+          {
+            "number": 6,
+            "phrase": "Capté la primera parte, ¿pero podrías repetir la segunda?",
+            "situation": "Alguien habló muy rápido o te perdiste una parte.",
+            "why": "Pedir repetir una parte específica obtiene mejores respuestas.",
+            "alternative": "Perdón, ¿qué dijiste después de [punto específico]?"
+          }
+        ]
+      },
+      {
+        "id": "category-3",
+        "title": "Cuando necesitas interrumpir",
+        "items": [
+          {
+            "number": 7,
+            "phrase": "Perdón por intervenir—tengo un comentario rápido sobre eso.",
+            "situation": "Necesitas agregar algo mientras alguien más habla.",
+            "why": "Reconoce la interrupción y promete brevedad.",
+            "alternative": "Si pudiera agregar algo brevemente..."
+          },
+          {
+            "number": 8,
+            "phrase": "Antes de avanzar, ¿puedo abordar ese punto?",
+            "situation": "La conversación está por pasar un tema importante.",
+            "why": "Crea urgencia sin sonar agresivo.",
+            "alternative": "Me gustaría volver a algo que mencionaste..."
+          },
+          {
+            "number": 9,
+            "phrase": "Quisiera retomar lo que dijo [Nombre]...",
+            "situation": "Quieres interrumpir pero enmarcarlo como colaboración.",
+            "why": "Hace que la intervención suene colaborativa, no confrontativa.",
+            "alternative": "Eso se conecta con algo que he estado analizando..."
+          }
+        ]
+      },
+      {
+        "id": "category-4",
+        "title": "Cuando necesitas más tiempo",
+        "items": [
+          {
+            "number": 10,
+            "phrase": "Esa es una muy buena pregunta. Déjame pensar cómo responderla mejor.",
+            "situation": "Te sorprenden con una pregunta difícil.",
+            "why": "Reconoce la pregunta mientras ganas tiempo.",
+            "alternative": "Quiero darte una respuesta bien pensada—dame un segundo."
+          },
+          {
+            "number": 11,
+            "phrase": "No quiero darte una respuesta incompleta. ¿Puedo hacer seguimiento después de la reunión?",
+            "situation": "No tienes la información y necesitas investigar.",
+            "why": "Muestra profesionalismo y precisión.",
+            "alternative": "Déjame conseguirte información exacta antes de que termine el día."
+          },
+          {
+            "number": 12,
+            "phrase": "Este tema tiene varias dimensiones. Empezaría por...",
+            "situation": "Necesitas tiempo para ordenar una respuesta compleja.",
+            "why": "Suena analítico y estructurado, no evasivo.",
+            "alternative": "Esta es una respuesta más matizada. Lo primero que debemos considerar es..."
+          }
+        ]
+      }
+    ]
+  }
+}

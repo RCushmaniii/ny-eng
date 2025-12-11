@@ -1,0 +1,313 @@
+{
+  "metadata": {
+    "id": "difficult-conversation-checklist",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "checklist",
+    "format": "pdf-checklist",
+    "funnelStage": "consideration",
+    "difficultyLevel": "intermediate",
+    "timeToComplete": "6 minutes",
+    "estimatedMinutes": 6,
+    "pageCount": 4,
+    "tags": ["difficult-conversations", "conflict", "preparation", "leadership", "management"]
+  },
+  "targeting": {
+    "primaryPersona": ["manager", "executive", "hr-professional", "consultant", "all"],
+    "industries": ["technology", "professional-services", "all"],
+    "scenarios": ["difficult-conversations", "performance-feedback", "negotiations", "crisis-management"],
+    "painPoints": [
+      "Dreading difficult conversations",
+      "Conversations going sideways unexpectedly",
+      "Not knowing how to prepare",
+      "Emotions derailing the discussion"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free strategy call to practice handling your most challenging conversations",
+    "relatedAssets": ["feedback-framework", "pushback-playbook", "email-templates-difficult-situations"]
+  },
+  "seo": {
+    "metaDescription": "Get the 10-point checklist for preparing difficult conversations. Walk in confident, stay in control, and get the outcome you need.",
+    "keywords": ["difficult conversation checklist", "how to prepare for hard conversations", "conflict resolution at work", "having tough conversations"]
+  },
+  "slugEn": "difficult-conversation-checklist",
+  "slugEs": "checklist-conversaciones-dificiles",
+  "en": {
+    "title": "The Difficult Conversation Checklist",
+    "subtitle": "10 Steps to Walk In Confident and Walk Out Successful",
+    "description": "Difficult conversations fail because of poor preparation, not poor execution. This 10-point checklist ensures you're ready before you walk in the room.",
+    "headline": "Stop Dreading Hard Conversations. Start Preparing for Them.",
+    "valueProposition": "Get the exact checklist managers use to prepare for conversations about performance, conflict, and change.",
+    "leadCapture": {
+      "formHeadline": "Get the Conversation Checklist",
+      "formSubheadline": "10 steps for difficult conversations",
+      "buttonText": "Send Me the Checklist",
+      "successMessage": "Check your inbox! Your checklist is on its way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Why Preparation Beats Improvisation",
+        "content": "You can't script a difficult conversation—but you can prepare for one. The managers who handle tough conversations well aren't naturally gifted. They're prepared.\n\nThis checklist covers everything from clarifying your goal to managing your emotions. Complete it before any high-stakes conversation and you'll walk in with confidence."
+      },
+      {
+        "id": "checklist",
+        "title": "The 10-Point Checklist",
+        "items": [
+          {
+            "number": 1,
+            "title": "Clarify Your Objective",
+            "content": "What's the ONE outcome you need from this conversation? If you can't answer in one sentence, you're not ready.",
+            "example": {
+              "wrong": "I want to talk to them about their performance and maybe discuss some feedback and see if we can figure out what's going on.",
+              "right": "I need them to commit to meeting deadlines for the next 30 days, or we discuss a performance improvement plan.",
+              "why": "A clear objective keeps the conversation focused when emotions run high."
+            },
+            "actionItem": "Write your objective in one sentence before the conversation."
+          },
+          {
+            "number": 2,
+            "title": "Gather Specific Examples",
+            "content": "Vague feedback gets vague results. Have 2-3 specific instances you can reference.",
+            "example": {
+              "wrong": "You've been dropping the ball lately.",
+              "right": "The client deliverable on March 3rd was two days late. The sprint demo on March 10th wasn't prepared.",
+              "why": "Specifics can't be argued with. Generalizations invite defensiveness."
+            },
+            "actionItem": "List at least 3 specific, dated examples before the meeting."
+          },
+          {
+            "number": 3,
+            "title": "Anticipate Their Perspective",
+            "content": "What's their side of the story? What pressures are they facing? What might they say?",
+            "example": {
+              "wrong": "They're going to be defensive no matter what I say.",
+              "right": "They might say they're understaffed, overwhelmed with the new system, or didn't receive clear expectations.",
+              "why": "Anticipating objections helps you respond thoughtfully instead of reactively."
+            },
+            "actionItem": "Write down 3 things they might say in their defense."
+          },
+          {
+            "number": 4,
+            "title": "Plan Your Opening Line",
+            "content": "The first 30 seconds set the tone. Don't improvise them.",
+            "example": {
+              "wrong": "So... we need to talk about some stuff that's been bothering me.",
+              "right": "I want to have a direct conversation about [topic]. My goal is to understand your perspective and find a path forward together.",
+              "why": "A clear opening reduces anxiety for both parties and signals professionalism."
+            },
+            "actionItem": "Write and practice your exact opening line."
+          },
+          {
+            "number": 5,
+            "title": "Prepare Your Questions",
+            "content": "Good questions get the other person talking. Lectures create defensiveness.",
+            "example": {
+              "wrong": "Here's what you did wrong and here's what you need to do.",
+              "right": "Help me understand what happened with the March 3rd deadline. What got in the way?",
+              "why": "Questions create dialogue. Statements create monologue."
+            },
+            "actionItem": "Write 3 open-ended questions to understand their perspective."
+          },
+          {
+            "number": 6,
+            "title": "Know Your Non-Negotiables",
+            "content": "What must happen for this conversation to be successful? What are you willing to flex on?",
+            "example": {
+              "wrong": "I'll just see how it goes.",
+              "right": "Non-negotiable: They acknowledge the issue. Flexible: Timeline for improvement, specific tactics.",
+              "why": "Knowing your boundaries prevents you from caving under pressure or escalating unnecessarily."
+            },
+            "actionItem": "Write down what you must get vs. what you're willing to negotiate."
+          },
+          {
+            "number": 7,
+            "title": "Plan for Emotions",
+            "content": "What if they cry? Get angry? Shut down? Have a response ready.",
+            "example": {
+              "wrong": "[Panic when they start crying]",
+              "right": "If they get emotional: 'I can see this is hard. Do you need a minute? I want to have this conversation when you're ready.'",
+              "why": "Emotional reactions are predictable. Having a planned response keeps you in control."
+            },
+            "actionItem": "Write what you'll say if they react emotionally."
+          },
+          {
+            "number": 8,
+            "title": "Choose the Right Setting",
+            "content": "Private space. No interruptions. Enough time. Not right before another meeting.",
+            "example": {
+              "wrong": "Catching them at their desk between meetings.",
+              "right": "A private room, 30 minutes blocked, no one can see through the windows.",
+              "why": "Environment affects the conversation. Set it up for success."
+            },
+            "actionItem": "Book a private space with buffer time before and after."
+          },
+          {
+            "number": 9,
+            "title": "Define the Next Step",
+            "content": "Every difficult conversation should end with a clear action. Who does what by when?",
+            "example": {
+              "wrong": "Okay, well, let's see how things go.",
+              "right": "So we're agreed: you'll hit the next three deadlines, we'll check in weekly, and if issues come up, you'll flag them 48 hours in advance. Does that sound right?",
+              "why": "Vague endings lead to repeated conversations. Clear agreements lead to change."
+            },
+            "actionItem": "Write the specific commitment you'll ask for at the end."
+          },
+          {
+            "number": 10,
+            "title": "Manage Your State",
+            "content": "How you show up matters. Take 5 minutes before to calm yourself and center your intention.",
+            "example": {
+              "wrong": "Rushing in straight from another stressful meeting.",
+              "right": "5 minutes alone. Deep breaths. Remind yourself: 'My goal is resolution, not victory.'",
+              "why": "Your emotional state is contagious. Walk in calm and they're more likely to stay calm."
+            },
+            "actionItem": "Block 5 minutes before the meeting for mental preparation."
+          }
+        ]
+      }
+    ]
+  },
+  "es": {
+    "title": "El Checklist de Conversaciones Difíciles",
+    "subtitle": "10 Pasos para Entrar con Confianza y Salir con Éxito",
+    "description": "Las conversaciones difíciles fallan por una mala preparación, no por una mala ejecución. Este checklist de 10 puntos asegura que estés listo antes de entrar a la sala.",
+    "headline": "Deja de Temer las Conversaciones Difíciles. Empieza a Prepararlas.",
+    "valueProposition": "Obtén el checklist exacto que los gerentes usan para preparar conversaciones sobre desempeño, conflicto y cambio.",
+    "leadCapture": {
+      "formHeadline": "Obtén el Checklist de Conversaciones",
+      "formSubheadline": "10 pasos para conversaciones difíciles",
+      "buttonText": "Envíame el Checklist",
+      "successMessage": "¡Revisa tu bandeja! Tu checklist está en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "Por Qué la Preparación Supera a la Improvisación",
+        "content": "No puedes escribir un guion para una conversación difícil—pero sí puedes prepararla. Los gerentes que manejan bien este tipo de conversaciones no tienen un don natural. Están preparados.\n\nEste checklist cubre desde clarificar tu objetivo hasta manejar tus emociones. Complétalo antes de cualquier conversación de alto impacto y entrarás con confianza."
+      },
+      {
+        "id": "checklist",
+        "title": "El Checklist de 10 Puntos",
+        "items": [
+          {
+            "number": 1,
+            "title": "Clarifica Tu Objetivo",
+            "content": "¿Cuál es EL resultado que necesitas de esta conversación? Si no puedes responder en una sola oración, no estás listo.",
+            "example": {
+              "wrong": "Quiero hablar con ellos sobre su desempeño y quizá comentar algunos puntos de retroalimentación para ver si podemos entender qué está pasando.",
+              "right": "Necesito que se comprometan a cumplir con los plazos durante los próximos 30 días, o discutiremos un plan de mejora del desempeño.",
+              "why": "Un objetivo claro mantiene la conversación enfocada cuando las emociones suben."
+            },
+            "actionItem": "Escribe tu objetivo en una sola oración antes de la conversación."
+          },
+          {
+            "number": 2,
+            "title": "Reúne Ejemplos Específicos",
+            "content": "La retroalimentación vaga produce resultados vagos. Ten 2–3 ejemplos específicos que puedas referenciar.",
+            "example": {
+              "wrong": "Has estado fallando últimamente.",
+              "right": "La entrega para el cliente del 3 de marzo se entregó dos días tarde. La demo del sprint del 10 de marzo no estuvo preparada.",
+              "why": "Los hechos específicos no se pueden debatir. Las generalizaciones invitan a la defensividad."
+            },
+            "actionItem": "Anota al menos 3 ejemplos específicos y con fecha antes de la reunión."
+          },
+          {
+            "number": 3,
+            "title": "Anticipa Su Perspectiva",
+            "content": "¿Cuál podría ser su versión? ¿Qué presiones enfrentan? ¿Qué podrían decir?",
+            "example": {
+              "wrong": "Van a ponerse a la defensiva sin importar lo que diga.",
+              "right": "Podrían decir que tienen poco personal, que están abrumados con el nuevo sistema o que no recibieron expectativas claras.",
+              "why": "Anticipar objeciones te ayuda a responder con claridad en lugar de reaccionar impulsivamente."
+            },
+            "actionItem": "Escribe 3 cosas que podrían decir en su defensa."
+          },
+          {
+            "number": 4,
+            "title": "Planea Tu Línea de Apertura",
+            "content": "Los primeros 30 segundos establecen el tono. No los improvises.",
+            "example": {
+              "wrong": "Entonces... tenemos que hablar de algunas cosas que me han estado molestando.",
+              "right": "Quiero tener una conversación directa sobre [tema]. Mi objetivo es entender tu perspectiva y encontrar juntos un camino hacia adelante.",
+              "why": "Una apertura clara reduce la ansiedad para ambas partes y demuestra profesionalismo."
+            },
+            "actionItem": "Escribe y practica tu línea de apertura exacta."
+          },
+          {
+            "number": 5,
+            "title": "Prepara Tus Preguntas",
+            "content": "Las buenas preguntas hacen que la otra persona hable. Los monólogos generan defensividad.",
+            "example": {
+              "wrong": "Esto es lo que hiciste mal y esto es lo que tienes que hacer.",
+              "right": "Ayúdame a entender qué pasó con el plazo del 3 de marzo. ¿Qué se interpuso?",
+              "why": "Las preguntas generan diálogo. Las declaraciones crean monólogo."
+            },
+            "actionItem": "Escribe 3 preguntas abiertas para entender su perspectiva."
+          },
+          {
+            "number": 6,
+            "title": "Conoce Tus Puntos No Negociables",
+            "content": "¿Qué debe suceder para que esta conversación sea exitosa? ¿En qué estás dispuesto a ser flexible?",
+            "example": {
+              "wrong": "Solo veré cómo va.",
+              "right": "No negociable: que reconozcan el problema. Flexible: el plazo de mejora y las tácticas específicas.",
+              "why": "Conocer tus límites evita que cedas bajo presión o escales innecesariamente."
+            },
+            "actionItem": "Escribe qué necesitas obtener y en qué estás dispuesto a negociar."
+          },
+          {
+            "number": 7,
+            "title": "Planea Para las Emociones",
+            "content": "¿Qué harás si lloran? ¿Si se enojan? ¿Si se cierran? Ten una respuesta preparada.",
+            "example": {
+              "wrong": "[Entrar en pánico cuando comienzan a llorar]",
+              "right": "Si se emocionan: “Puedo ver que esto es difícil. ¿Necesitas un minuto? Quiero tener esta conversación cuando estés listo(a).”",
+              "why": "Las reacciones emocionales son predecibles. Tener una respuesta preparada te mantiene en control."
+            },
+            "actionItem": "Escribe lo que dirás si reaccionan emocionalmente."
+          },
+          {
+            "number": 8,
+            "title": "Elige el Entorno Correcto",
+            "content": "Un espacio privado. Sin interrupciones. Tiempo suficiente. No justo antes de otra reunión.",
+            "example": {
+              "wrong": "Atraparlos en su escritorio entre reuniones.",
+              "right": "Una sala privada, 30 minutos bloqueados, sin ventanas que permitan ver hacia adentro.",
+              "why": "El entorno influye en la conversación. Prepáralo para el éxito."
+            },
+            "actionItem": "Reserva un espacio privado con tiempo adicional antes y después."
+          },
+          {
+            "number": 9,
+            "title": "Define el Siguiente Paso",
+            "content": "Toda conversación difícil debe terminar con una acción clara. ¿Quién hará qué y para cuándo?",
+            "example": {
+              "wrong": "Bueno, pues, veamos cómo nos va.",
+              "right": "Entonces estamos de acuerdo: cumplirás los próximos tres plazos, tendremos una revisión semanal y, si surge algún problema, lo reportarás con 48 horas de anticipación. ¿Suena bien?",
+              "why": "Los finales vagos llevan a conversaciones repetidas. Los acuerdos claros generan cambio."
+            },
+            "actionItem": "Escribe el compromiso específico que pedirás al final."
+          },
+          {
+            "number": 10,
+            "title": "Maneja Tu Estado",
+            "content": "Cómo te presentas importa. Tómate 5 minutos antes para calmarte y centrar tu intención.",
+            "example": {
+              "wrong": "Entrar de prisa justo después de otra reunión estresante.",
+              "right": "5 minutos a solas. Respiraciones profundas. Recuérdate: “Mi objetivo es la resolución, no la victoria.”",
+              "why": "Tu estado emocional es contagioso. Si entras calmado, es más probable que la otra persona también lo esté."
+            },
+            "actionItem": "Bloquea 5 minutos antes de la reunión para tu preparación mental."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -300,18 +300,18 @@
         "scripts": [
           {
             "situation": "Presentando tu precio por primera vez",
-            "script": "Based on the scope we discussed, the investment for this project is $[X]. This includes [entregable clave 1], [entregable clave 2], and [entregable clave 3]. I want to walk you through why this investment makes sense for [su meta específica].",
+            "script": "Basado en el alcance que discutimos, la inversión para este proyecto es $[X]. Esto incluye [entregable clave 1], [entregable clave 2], y [entregable clave 3]. Quiero explicarte por qué esta inversión tiene sentido para [su meta específica].",
             "notes": [
-              "Di 'investment' no 'cost' o 'price'",
+              "Di 'inversión' no 'costo' o 'precio'",
               "Conecta inmediatamente con sus metas",
               "Usa entonación descendente en el número (declaración, no pregunta)",
               "Pausa después del número—no te apresures a justificar"
             ],
-            "avoid": "So, um, the price would be around $X, more or less. I know it might seem high, but..."
+            "avoid": "Entonces, eh, el precio sería alrededor de $X, más o menos. Sé que podría parecer alto, pero..."
           },
           {
             "situation": "Estableciendo expectativas antes del número",
-            "script": "Before I share the investment, I want to make sure we're aligned on scope. You mentioned [su prioridad]. To deliver that properly, we're looking at [X]. Here's what that includes.",
+            "script": "Antes de compartir la inversión, quiero asegurarme de que estamos alineados en el alcance. Mencionaste [su prioridad]. Para entregar eso correctamente, estamos viendo [X]. Aquí está lo que eso incluye.",
             "notes": [
               "Enmarca el alcance antes del precio",
               "Recuérdales sus propias prioridades declaradas",
@@ -320,7 +320,7 @@
           },
           {
             "situation": "Cuando sabes que están comparando proveedores",
-            "script": "I know you're evaluating options. Here's what I want you to consider when comparing: [valor único 1], [valor único 2], and [valor único 3]. The investment is $[X], and here's why it's structured this way.",
+            "script": "Sé que estás evaluando opciones. Aquí está lo que quiero que consideres al comparar: [valor único 1], [valor único 2], y [valor único 3]. La inversión es $[X], y aquí está por qué está estructurada así.",
             "notes": [
               "Reconoce la competencia sin estar a la defensiva",
               "Diferénciate preventivamente",
@@ -338,7 +338,7 @@
         "scripts": [
           {
             "situation": "Dicen: 'Esto es más de lo que esperábamos.'",
-            "script": "I appreciate you sharing that. Help me understand—when you say more than expected, are you comparing to a specific budget you had in mind, or to other proposals you've received?",
+            "script": "Aprecio que lo compartas. Ayúdame a entender—cuando dices más de lo esperado, ¿estás comparando con un presupuesto específico que tenías en mente, o con otras propuestas que has recibido?",
             "notes": [
               "No te disculpes ni ofrezcas descuento inmediatamente",
               "Haz una pregunta diagnóstica",
@@ -348,7 +348,7 @@
           },
           {
             "situation": "Dicen: '¿Pueden darnos un mejor precio?'",
-            "script": "I want to make sure we find something that works for both of us. Before I answer that—is price the only factor, or are there other concerns I should address first?",
+            "script": "Quiero asegurarme de que encontremos algo que funcione para ambos. Antes de responder eso—¿es el precio el único factor, o hay otras preocupaciones que deba abordar primero?",
             "notes": [
               "Nunca digas 'sí' inmediatamente",
               "Descubre objeciones ocultas",
@@ -357,7 +357,7 @@
           },
           {
             "situation": "Dicen: 'El competidor X es 30% más barato.'",
-            "script": "That's useful to know. Can you share what's included in their proposal? I want to make sure we're comparing the same scope. In my experience, the difference often comes down to [tu diferenciador clave].",
+            "script": "Eso es útil saberlo. ¿Puedes compartir qué está incluido en su propuesta? Quiero asegurarme de que estamos comparando el mismo alcance. En mi experiencia, la diferencia a menudo se reduce a [tu diferenciador clave].",
             "notes": [
               "No entres en pánico ni iguales inmediatamente",
               "Pide detalles (a menudo no los tienen)",
@@ -366,7 +366,7 @@
           },
           {
             "situation": "Dicen: 'No tenemos presupuesto para esto.'",
-            "script": "I understand budget constraints are real. Let me ask—if budget weren't a factor, would this solution address your needs? [Si sí:] Then let's talk about how we might structure this to fit your current situation.",
+            "script": "Entiendo que las restricciones presupuestarias son reales. Déjame preguntar—si el presupuesto no fuera un factor, ¿esta solución abordaría tus necesidades? [Si sí:] Entonces hablemos sobre cómo podríamos estructurar esto para que se ajuste a tu situación actual.",
             "notes": [
               "Separa 'no puede pagar' de 'no quiere pagar'",
               "Abre la puerta a enfoques por fases o alcance ajustado",
@@ -384,7 +384,7 @@
         "scripts": [
           {
             "situation": "Siguen presionando: 'Realmente necesito que bajen el precio.'",
-            "script": "I hear you, and I want to find a solution. Here's what I can do: I can adjust the scope to fit a $[número menor] investment, or we can keep the full scope and discuss payment terms. Which would be more helpful for you?",
+            "script": "Te escucho, y quiero encontrar una solución. Aquí está lo que puedo hacer: puedo ajustar el alcance para que se ajuste a una inversión de $[número menor], o podemos mantener el alcance completo y discutir términos de pago. ¿Cuál sería más útil para ti?",
             "notes": [
               "Ofrece alternativas, no descuentos",
               "Vincula reducción de precio a reducción de alcance",
@@ -393,16 +393,16 @@
           },
           {
             "situation": "Piden un descuento específico: '¿Pueden dar 20% de descuento?'",
-            "script": "I can't do 20% off the current scope. But I can offer [concesión específica] if that would help. What would that mean for your decision?",
+            "script": "No puedo hacer 20% de descuento en el alcance actual. Pero puedo ofrecer [concesión específica] si eso ayudara. ¿Qué significaría eso para tu decisión?",
             "notes": [
-              "Di 'I can't' no 'I won't'—es menos confrontacional",
+              "Di 'No puedo' no 'No voy a'—es menos confrontacional",
               "Ofrece algo menor a cambio",
               "Pregunta qué significa para su decisión (prueba si es el bloqueador real)"
             ]
           },
           {
             "situation": "Usan silencio o tácticas de presión",
-            "script": "[Pausa. Espera. Deja que hablen primero.] Si permanecen en silencio: 'Take your time. What questions can I answer to help you decide?'",
+            "script": "[Pausa. Espera. Deja que hablen primero.] Si permanecen en silencio: 'Tómate tu tiempo. ¿Qué preguntas puedo responder para ayudarte a decidir?'",
             "notes": [
               "El silencio es una táctica—no lo llenes con concesiones",
               "Quien habla primero después de un silencio de negociación usualmente cede",
@@ -411,7 +411,7 @@
           },
           {
             "situation": "Dicen: 'Necesito pensarlo.'",
-            "script": "Absolutely, take the time you need. Before you go—what specifically do you want to think through? I'm happy to address any concerns now so you have complete information.",
+            "script": "Absolutamente, tómate el tiempo que necesites. Antes de irte—¿qué específicamente quieres pensar? Estoy feliz de abordar cualquier preocupación ahora para que tengas información completa.",
             "notes": [
               "No solo aceptes 'necesito pensar'—a menudo significa objeciones no dichas",
               "Saca las preocupaciones mientras todavía estás en la llamada",
@@ -429,7 +429,7 @@
         "scripts": [
           {
             "situation": "Acuerdan verbalmente: 'OK, hagámoslo.'",
-            "script": "Excellent. Let me confirm what we've agreed: [alcance], [cronograma], [inversión]. I'll send over the agreement by [hora específica] today. Once you sign, we can schedule kickoff for [fecha propuesta]. Does that work?",
+            "script": "Excelente. Déjame confirmar lo que hemos acordado: [alcance], [cronograma], [inversión]. Enviaré el acuerdo antes de [hora específica] hoy. Una vez que firmes, podemos agendar el inicio para [fecha propuesta]. ¿Te funciona?",
             "notes": [
               "Repite los términos inmediatamente (previene 'malentendidos' después)",
               "Propón próximos pasos específicos con horarios",
@@ -438,16 +438,16 @@
           },
           {
             "situation": "Están cerca pero vacilantes",
-            "script": "It sounds like we're aligned on the solution. What would help you feel confident moving forward today?",
+            "script": "Parece que estamos alineados en la solución. ¿Qué te ayudaría a sentirte confiado para avanzar hoy?",
             "notes": [
               "Pregunta directa para sacar la última objeción",
-              "'Feel confident' reconoce la emoción sin ser insistente",
+              "'Sentirte confiado' reconoce la emoción sin ser insistente",
               "A menudo revela el bloqueador real"
             ]
           },
           {
             "situation": "Necesitan aprobación interna",
-            "script": "Understood. Who else is involved in the decision? I'd be happy to join a call with them, or I can prepare materials that address their specific concerns. What would be most helpful?",
+            "script": "Entendido. ¿Quién más está involucrado en la decisión? Estaría feliz de unirme a una llamada con ellos, o puedo preparar materiales que aborden sus preocupaciones específicas. ¿Qué sería más útil?",
             "notes": [
               "Ofrece ayudarles a vender internamente",
               "Te da acceso al verdadero tomador de decisiones",
@@ -456,7 +456,7 @@
           },
           {
             "situation": "Cierre final cuando todo está acordado",
-            "script": "I'm excited to work together on this. To confirm: I'll send the contract by [hora]. Once signed, [siguiente hito]. Any final questions before we wrap up?",
+            "script": "Estoy emocionado de trabajar juntos en esto. Para confirmar: enviaré el contrato antes de [hora]. Una vez firmado, [siguiente hito]. ¿Alguna pregunta final antes de terminar?",
             "notes": [
               "Expresa entusiasmo (es contagioso)",
               "Repite la siguiente acción inmediata",
@@ -482,24 +482,24 @@
       "description": "Imprímela. Tenla cerca de tu teléfono durante llamadas con clientes.",
       "phrases": {
         "opening": [
-          "The investment for this project is $X.",
-          "Here's why this investment makes sense for [su meta].",
-          "What I want you to consider when comparing is..."
+          "La inversión para este proyecto es $X.",
+          "Aquí está por qué esta inversión tiene sentido para [su meta].",
+          "Lo que quiero que consideres al comparar es..."
         ],
         "responding": [
-          "Help me understand—what specifically concerns you about the investment?",
-          "Is price the only factor, or are there other concerns?",
-          "Can you share what's included in their proposal?"
+          "Ayúdame a entender—¿qué específicamente te preocupa sobre la inversión?",
+          "¿Es el precio el único factor, o hay otras preocupaciones?",
+          "¿Puedes compartir qué está incluido en su propuesta?"
         ],
         "defending": [
-          "I can adjust the scope to fit $X, or we can discuss payment terms.",
-          "I can't do that, but I can offer [alternativa].",
-          "What questions can I answer to help you decide?"
+          "Puedo ajustar el alcance para que se ajuste a $X, o podemos discutir términos de pago.",
+          "No puedo hacer eso, pero puedo ofrecer [alternativa].",
+          "¿Qué preguntas puedo responder para ayudarte a decidir?"
         ],
         "closing": [
-          "Let me confirm what we've agreed...",
-          "What would help you feel confident moving forward today?",
-          "I'll send the contract by [hora]. Once signed, [siguiente paso]."
+          "Déjame confirmar lo que hemos acordado...",
+          "¿Qué te ayudaría a sentirte confiado para avanzar hoy?",
+          "Enviaré el contrato antes de [hora]. Una vez firmado, [siguiente paso]."
         ]
       }
     },

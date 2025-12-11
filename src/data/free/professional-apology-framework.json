@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "id": "professional-apology-framework",
+    "version": "1.0",
+    "datePublished": "2025-01-15",
+    "author": "Robert Cushman",
+    "language": ["en", "es"]
+  },
+  "classification": {
+    "contentType": "framework",
+    "format": "pdf-guide",
+    "funnelStage": "consideration",
+    "difficultyLevel": "intermediate",
+    "timeToComplete": "6 minutes",
+    "estimatedMinutes": 6,
+    "pageCount": 5,
+    "tags": ["apology", "crisis-management", "client-relations", "damage-control", "trust"]
+  },
+  "targeting": {
+    "primaryPersona": ["manager", "consultant", "founder", "sales", "project-manager", "executive"],
+    "industries": ["technology", "professional-services", "finance", "all"],
+    "scenarios": ["difficult-conversations", "crisis-management", "client-meetings", "email-writing"],
+    "painPoints": [
+      "Over-apologizing and sounding weak",
+      "Under-apologizing and making things worse",
+      "Not knowing what to say after a mistake",
+      "Losing client trust due to poor damage control"
+    ]
+  },
+  "conversion": {
+    "ctaType": "strategy-call",
+    "nextStep": "Book a free strategy call to practice high-stakes apology conversations",
+    "relatedAssets": ["difficult-conversation-checklist", "email-templates-difficult-situations"]
+  },
+  "seo": {
+    "metaDescription": "Learn the 4-part OARS framework for professional apologies that repair trust without over-apologizing. Turn mistakes into stronger client relationships.",
+    "keywords": ["professional apology email", "how to apologize to client", "business apology template", "apology framework"]
+  },
+  "slugEn": "professional-apology-framework",
+  "slugEs": "marco-disculpa-profesional",
+  "en": {
+    "title": "The Professional Apology Framework",
+    "subtitle": "How to Apologize Without Losing Authority",
+    "description": "A good apology can actually strengthen relationships. A bad one makes things worse. This framework shows you how to take responsibility, repair trust, and move forward—without groveling.",
+    "headline": "Turn Mistakes Into Stronger Relationships",
+    "valueProposition": "Learn the OARS framework that helps you apologize effectively—acknowledging the problem, repairing trust, and maintaining your professional authority.",
+    "leadCapture": {
+      "formHeadline": "Get the Apology Framework",
+      "formSubheadline": "Apologize without losing authority",
+      "buttonText": "Send Me the Framework",
+      "successMessage": "Check your inbox! Your framework is on its way."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "The Apology Paradox",
+        "content": "Most professionals make one of two mistakes:\n\n**Over-apologizing:** 'I'm so, so sorry. This is completely my fault. I feel terrible. I don't know how this happened. I'm really, really sorry...'\n→ Makes you look weak and unprofessional\n\n**Under-apologizing:** 'I'm sorry you feel that way. There were circumstances beyond our control. Let me explain what actually happened...'\n→ Makes the client angrier because you're not taking responsibility\n\nThe best apologies hit a middle ground: taking genuine responsibility while maintaining authority and focusing on the path forward."
+      },
+      {
+        "id": "framework",
+        "title": "The OARS Framework",
+        "content": "OARS keeps your apology balanced, professional, and action-oriented.",
+        "framework": {
+          "name": "OARS",
+          "steps": [
+            {
+              "letter": "O",
+              "name": "Own It",
+              "description": "Acknowledge the specific mistake without excuses or deflection. Name what happened.",
+              "example": "The report I sent contained inaccurate data in the revenue projections. That's on me.",
+              "wrong": "There was a miscommunication about the data sources.",
+              "tip": "Use 'I' statements. No passive voice. No blame-shifting."
+            },
+            {
+              "letter": "A",
+              "name": "Acknowledge Impact",
+              "description": "Show you understand how this affected them. Don't minimize.",
+              "example": "I understand this put you in a difficult position with your board and may have affected their confidence in the project.",
+              "wrong": "I'm sorry if this caused any inconvenience.",
+              "tip": "Be specific about the impact. 'Sorry if you were inconvenienced' is not acknowledging impact."
+            },
+            {
+              "letter": "R",
+              "name": "Remedy",
+              "description": "Explain what you're doing to fix the immediate problem AND prevent it from happening again.",
+              "example": "I've already sent corrected figures and will personally verify all data in future reports before they go out. I'm also implementing a review checklist for the team.",
+              "wrong": "I'll try to be more careful next time.",
+              "tip": "Be specific. Vague promises don't rebuild trust."
+            },
+            {
+              "letter": "S",
+              "name": "Secure Commitment",
+              "description": "Reaffirm your commitment to the relationship and ask how to move forward.",
+              "example": "This relationship is important to me, and I'm committed to earning back your confidence. Is there anything else I can do right now to make this right?",
+              "wrong": "So... are we good?",
+              "tip": "Put the ball in their court. Let them tell you what they need."
+            }
+          ]
+        }
+      },
+      {
+        "id": "examples",
+        "title": "Complete Examples",
+        "items": [
+          {
+            "scenario": "Missed Deadline",
+            "wrong": "Sorry about the delay. Things got crazy on our end and we couldn't finish on time. We're working on it.",
+            "right": "**Own:** I missed the deadline we agreed to for the deliverable. That's my responsibility.\n\n**Acknowledge:** I know this affects your timeline with your client and puts you in a difficult spot.\n\n**Remedy:** I'm prioritizing this now and will have it to you by tomorrow at noon. I've also blocked time next week to prevent this from happening on the remaining deliverables.\n\n**Secure:** Is tomorrow noon acceptable, or do we need to discuss an alternative approach?"
+          },
+          {
+            "scenario": "Service Failure",
+            "wrong": "We're sorry for any inconvenience. Our system experienced unexpected issues. We're looking into it.",
+            "right": "**Own:** Our system went down for 4 hours yesterday, and that disrupted your operations. There's no excuse for that.\n\n**Acknowledge:** I know your team couldn't process orders during that window, and that has real financial impact.\n\n**Remedy:** We've identified the root cause—a database failover issue—and have implemented redundancy to prevent recurrence. We're also crediting your account for the affected period.\n\n**Secure:** I want to make sure we've addressed your concerns. What else do you need from us right now?"
+          },
+          {
+            "scenario": "Miscommunication",
+            "wrong": "I think there was a misunderstanding about what we agreed to. Let me clarify what I meant.",
+            "right": "**Own:** I wasn't clear in our last conversation about the scope. That's on me to communicate better.\n\n**Acknowledge:** I can see how my ambiguity led to different expectations, and that's frustrating.\n\n**Remedy:** Here's what I'm proposing to get us aligned: [specific plan]. Going forward, I'll send written summaries after our calls to make sure we're on the same page.\n\n**Secure:** Does this approach work for you? I want to make sure we're fully aligned before moving forward."
+          }
+        ]
+      },
+      {
+        "id": "donts",
+        "title": "What to Avoid",
+        "items": [
+          {
+            "dont": "'I'm sorry you feel that way'",
+            "why": "This isn't an apology—it's shifting blame to their reaction."
+          },
+          {
+            "dont": "'We're sorry for any inconvenience'",
+            "why": "Too vague. Shows you don't understand the actual impact."
+          },
+          {
+            "dont": "'But let me explain...' (before apologizing)",
+            "why": "Sounds like you're making excuses. Apologize first, explain later only if asked."
+          },
+          {
+            "dont": "Apologizing repeatedly",
+            "why": "Say it once, mean it, move to solutions. Repetition weakens impact."
+          },
+          {
+            "dont": "'This won't happen again' (without specifics)",
+            "why": "Empty promise. They need to know WHAT you're doing differently."
+          }
+        ]
+      }
+    ]
+  },
+  "es": {
+    "title": "El Marco de Disculpa Profesional",
+    "subtitle": "Cómo Disculparte Sin Perder Autoridad",
+    "description": "Una buena disculpa puede fortalecer relaciones. Una mala las empeora. Este marco te muestra cómo asumir responsabilidad, reparar la confianza y avanzar—sin perder autoridad.",
+    "headline": "Convierte Errores en Relaciones Más Fuertes",
+    "valueProposition": "Aprende el marco OARS que te ayuda a disculparte de forma efectiva—reconociendo el problema, reparando la confianza y manteniendo tu autoridad profesional.",
+    "leadCapture": {
+      "formHeadline": "Obtén el Marco de Disculpa",
+      "formSubheadline": "Discúlpate sin perder autoridad",
+      "buttonText": "Envíame el Marco",
+      "successMessage": "¡Revisa tu bandeja! Tu marco está en camino."
+    },
+    "sections": [
+      {
+        "id": "intro",
+        "title": "La Paradoja de la Disculpa",
+        "content": "La mayoría de los profesionales cometen uno de dos errores:\n\n**Disculparse de más:** “Lo siento muchísimo, es totalmente mi culpa. Me siento terrible. No sé cómo pasó. En verdad lo siento...”\n→ Te hace ver débil y poco profesional\n\n**Disculparse de menos:** “Lamento que te sientas así. Hubo circunstancias fuera de nuestro control. Déjame explicar lo que realmente pasó...”\n→ Hace que el cliente se enoje más porque no estás asumiendo responsabilidad\n\nLas mejores disculpas logran un punto medio: responsabilidad genuina, autoridad profesional y enfoque en el camino hacia adelante."
+      },
+      {
+        "id": "framework",
+        "title": "El Marco OARS",
+        "content": "OARS mantiene tu disculpa equilibrada, profesional y orientada a soluciones.",
+        "framework": {
+          "name": "OARS",
+          "steps": [
+            {
+              "letter": "O",
+              "name": "Adueñarte",
+              "description": "Reconoce el error específico sin excusas ni evasiones. Di exactamente lo que pasó.",
+              "example": "El reporte que envié contenía datos incorrectos en las proyecciones de ingresos. Eso es responsabilidad mía.",
+              "wrong": "Hubo una mala comunicación sobre las fuentes de datos.",
+              "tip": "Usa frases con “yo”. Nada de voz pasiva ni culpar a otros."
+            },
+            {
+              "letter": "A",
+              "name": "Reconocer el Impacto",
+              "description": "Demuestra que entiendes cómo les afectó. No minimices.",
+              "example": "Entiendo que esto te puso en una posición difícil con tu consejo y pudo afectar la confianza en el proyecto.",
+              "wrong": "Lamento si esto causó alguna molestia.",
+              "tip": "Sé específico sobre el impacto. ‘Lamento cualquier inconveniente’ no reconoce nada."
+            },
+            {
+              "letter": "R",
+              "name": "Remediar",
+              "description": "Explica qué estás haciendo para arreglar el problema inmediato Y evitar que se repita.",
+              "example": "Ya envié las cifras corregidas y verificaré personalmente todos los datos en futuros reportes. También estoy implementando una lista de revisión para el equipo.",
+              "wrong": "Trataré de ser más cuidadoso la próxima vez.",
+              "tip": "Sé detallado. Las promesas vagas no reconstruyen confianza."
+            },
+            {
+              "letter": "S",
+              "name": "Asegurar Compromiso",
+              "description": "Reafirma tu compromiso con la relación y pregunta qué más necesitan.",
+              "example": "Esta relación es importante para mí y estoy comprometido(a) a recuperar tu confianza. ¿Hay algo más que pueda hacer ahora para solucionarlo?",
+              "wrong": "Entonces… ¿ya estamos bien?",
+              "tip": "Pasa el control a ellos. Deja que expresen lo que necesitan."
+            }
+          ]
+        }
+      },
+      {
+        "id": "examples",
+        "title": "Ejemplos Completos",
+        "items": [
+          {
+            "scenario": "Fecha Límite Perdida",
+            "wrong": "Perdón por el retraso. Las cosas se complicaron mucho de nuestro lado y no pudimos terminar a tiempo. Ya estamos trabajando en eso.",
+            "right": "**Adueñarte:** No cumplí con la fecha límite que acordamos para el entregable. Esa es mi responsabilidad.\n\n**Reconocer:** Sé que esto afecta tu calendario con tu cliente y te pone en una posición difícil.\n\n**Remediar:** Estoy priorizando esto ahora y lo tendrás mañana al mediodía. También reservé tiempo la próxima semana para evitar que esto vuelva a ocurrir en los entregables restantes.\n\n**Asegurar:** ¿Mañana al mediodía funciona, o debemos considerar otra opción?"
+          },
+          {
+            "scenario": "Falla de Servicio",
+            "wrong": "Lamentamos cualquier inconveniente. Nuestro sistema tuvo problemas inesperados. Estamos revisándolo.",
+            "right": "**Adueñarte:** Nuestro sistema estuvo caído 4 horas ayer y eso interrumpió tus operaciones. No hay excusa para eso.\n\n**Reconocer:** Sé que tu equipo no pudo procesar pedidos durante ese tiempo y que eso tiene un impacto financiero real.\n\n**Remediar:** Ya identificamos la causa raíz —un problema de conmutación en la base de datos— e implementamos redundancia para evitar que vuelva a suceder. También acreditaremos tu cuenta por el periodo afectado.\n\n**Asegurar:** Quiero asegurarme de que hemos atendido tus preocupaciones. ¿Qué más necesitas de nosotros en este momento?"
+          },
+          {
+            "scenario": "Mala Comunicación",
+            "wrong": "Creo que hubo un malentendido sobre lo que acordamos. Déjame aclarar lo que quise decir.",
+            "right": "**Adueñarte:** No fui claro en nuestra última conversación sobre el alcance. Me corresponde comunicar mejor.\n\n**Reconocer:** Entiendo cómo mi falta de claridad generó diferentes expectativas, y eso es frustrante.\n\n**Remediar:** Esto es lo que propongo para alinearnos: [plan específico]. A partir de ahora, enviaré resúmenes escritos después de nuestras llamadas para asegurarnos de que estamos en la misma página.\n\n**Asegurar:** ¿Este enfoque te funciona? Quiero asegurarme de que estemos totalmente alineados antes de avanzar."
+          }
+        ]
+      },
+      {
+        "id": "donts",
+        "title": "Qué Evitar",
+        "items": [
+          {
+            "dont": "“Lamento que te sientas así”",
+            "why": "No es una disculpa—culpa a la otra persona."
+          },
+          {
+            "dont": "“Lamentamos cualquier inconveniente”",
+            "why": "Demasiado vago. Muestra que no entiendes el impacto real."
+          },
+          {
+            "dont": "“Pero déjame explicar…” (antes de disculparte)",
+            "why": "Suena a excusa. Primero discúlpate, explica solo si te lo piden."
+          },
+          {
+            "dont": "Disculparte repetidamente",
+            "why": "Dilo una vez con claridad y pasa a soluciones. Repetirlo debilita el impacto."
+          },
+          {
+            "dont": "“Esto no volverá a pasar” (sin detalles)",
+            "why": "Promesa vacía. Necesitan saber qué harás diferente."
+          }
+        ]
+      }
+    ]
+  }
+}

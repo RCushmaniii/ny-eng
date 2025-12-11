@@ -157,8 +157,8 @@
             "title": "Dando Malas Noticias",
             "content": "Cuando necesitas decirle a un cliente o colega algo que no quiere escuchar—una fecha límite perdida, exceso de presupuesto, o contratiempo del proyecto.",
             "example": {
-              "wrong": "Hi, so I have some bad news... I'm really sorry but we're not going to be able to meet the deadline. I know this is terrible and I feel really bad about it. We tried everything but things just didn't work out. I hope you're not too upset...",
-              "right": "Subject: Project X Update - Timeline Adjustment Needed\n\nHi [Name],\n\nI want to give you a direct update on Project X.\n\nWe've encountered [specific issue] that will push our delivery from [original date] to [new date]. Here's what happened and what we're doing about it:\n\n• Issue: [Brief explanation]\n• Impact: [What this means for them]\n• Solution: [What you're doing to fix it]\n\nI take full responsibility for this delay. To make it right, [specific offer - discount, expedited work, etc.].\n\nCan we schedule a 15-minute call to discuss? I'm available [times].\n\n[Your name]",
+              "wrong": "Hola, tengo malas noticias... Lo siento mucho pero no vamos a poder cumplir con la fecha límite. Sé que es terrible y me siento muy mal al respecto. Intentamos todo pero las cosas simplemente no salieron bien. Espero que no estés demasiado molesto...",
+              "right": "Asunto: Actualización del Proyecto X - Ajuste de Cronograma Necesario\n\nHola [Nombre],\n\nQuiero darte una actualización directa sobre el Proyecto X.\n\nNos hemos encontrado con [problema específico] que va a retrasar nuestra entrega de [fecha original] a [nueva fecha]. Aquí está lo que pasó y qué estamos haciendo al respecto:\n\n• Problema: [Explicación breve]\n• Impacto: [Qué significa para ellos]\n• Solución: [Lo que estás haciendo para arreglarlo]\n\nAsumo la responsabilidad completa por este retraso. Para enmendar, [oferta específica - descuento, trabajo expedito, etc.].\n\n¿Podemos agendar una llamada de 15 minutos para discutir? Estoy disponible [horarios].\n\n[Tu nombre]",
               "why": "Empieza con la noticia, da contexto, toma responsabilidad, ofrece solución. Sin rogar, sin disculpas excesivas."
             },
             "actionItem": "La próxima vez que tengas malas noticias, escribe el asunto primero—te obliga a ser directo."
@@ -168,9 +168,9 @@
             "title": "Dando Seguimiento (Sin Ser Molesto)",
             "content": "Cuando alguien no ha respondido y necesitas una respuesta, pero no quieres parecer insistente.",
             "example": {
-              "wrong": "Hi! Just checking in again... I know you're super busy but I just wanted to follow up on my last email. No pressure at all! Just whenever you get a chance... Sorry to bother you again...",
-              "right": "Subject: Quick follow-up: [Original topic]\n\nHi [Name],\n\nI wanted to follow up on [specific topic] from my [date] email.\n\nI know things get busy—just want to make sure this didn't slip through. If you need more information from me to move forward, let me know.\n\nWould [specific day] work for a quick 10-minute call to discuss?\n\n[Your name]\n\nP.S. If this is no longer a priority, just let me know and I'll close the loop on my end.",
-              "why": "Reconoce su tiempo, ofrece una salida fácil, y da un siguiente paso claro. El P.S. a menudo obtiene respuestas porque quita presión."
+              "wrong": "¡Hola! Solo estoy revisando de nuevo... Sé que estás muy ocupado pero solo quería dar seguimiento a mi último email. ¡Sin presión en absoluto! Solo cuando tengas tiempo... Disculpa molestarte de nuevo...",
+              "right": "Asunto: Seguimiento rápido: [Tema original]\n\nHola [Nombre],\n\nQuería dar seguimiento a [tema específico] de mi email del [fecha].\n\nSé que las cosas se ponen ocupadas—solo quiero asegurarme de que esto no se pasó por alto. Si necesitas más información de mi parte para avanzar, házmelo saber.\n\n¿Te vendría bien [día específico] para una llamada rápida de 10 minutos para discutir?\n\n[Tu nombre]\n\nP.D. Si esto ya no es una prioridad, solo házmelo saber y cerraré el asunto de mi parte.",
+              "why": "Reconoce su tiempo, ofrece una salida fácil, y da un siguiente paso claro. El P.D. a menudo obtiene respuestas porque quita presión."
             },
             "actionItem": "Siempre incluye un P.S. en emails de seguimiento—se lee incluso cuando el cuerpo no."
           },
@@ -179,8 +179,8 @@
             "title": "Estando en Desacuerdo Con Tu Jefe",
             "content": "Cuando necesitas rechazar una decisión o dirección de alguien senior a ti.",
             "example": {
-              "wrong": "I don't think that's a good idea. I mean, we could do it your way but I've seen this fail before and I think we should do something else instead.",
-              "right": "Subject: Thoughts on [Decision/Direction]\n\nHi [Name],\n\nThanks for sharing your thinking on [topic]. I've been reflecting on it and wanted to share a different perspective for your consideration.\n\nMy concern: [Specific concern with evidence]\nAlternative approach: [Your suggestion]\nPotential upside: [What they gain]\n\nI could be missing context that would change my view. Would you be open to a quick discussion before we finalize?\n\nEither way, I'm fully committed to supporting whatever direction you decide.\n\n[Your name]",
+              "wrong": "No creo que sea una buena idea. Quiero decir, podríamos hacerlo a tu manera pero he visto esto fallar antes y creo que deberíamos hacer algo diferente.",
+              "right": "Asunto: Pensamientos sobre [Decisión/Dirección]\n\nHola [Nombre],\n\nGracias por compartir tu pensamiento sobre [tema]. He estado reflexionando al respecto y quería compartir una perspectiva diferente para tu consideración.\n\nMi preocupación: [Preocupación específica con evidencia]\nEnfoque alternativo: [Tu sugerencia]\nVentaja potencial: [Lo que ganan]\n\nPodría estar perdiendo contexto que cambiaría mi vista. ¿Estarías abierto a una discusión rápida antes de finalizar?\n\nDe cualquier forma, estoy completamente comprometido a apoyar cualquier dirección que decidas.\n\n[Tu nombre]",
               "why": "Muestra respeto, provee datos, ofrece alternativa, y se compromete a apoyar la decisión final. No estás desafiando autoridad—estás agregando valor."
             },
             "actionItem": "Enmarca los desacuerdos como 'agregar perspectiva' en lugar de 'rechazar.'"
@@ -190,8 +190,8 @@
             "title": "Pidiendo Más Dinero",
             "content": "Cuando necesitas solicitar un aumento de tarifa, presupuesto adicional, o pago por trabajo extra.",
             "example": {
-              "wrong": "So I was wondering if maybe we could possibly talk about adjusting the budget? I know it's a lot to ask but the work has been much more than expected...",
-              "right": "Subject: Budget discussion for [Project]\n\nHi [Name],\n\nI wanted to discuss the budget for [project/engagement].\n\nWhen we scoped this originally, we estimated [X hours/scope]. Based on [specific factors], the actual requirement is [Y]. This represents a [Z%] increase in scope.\n\nTo maintain the quality you expect, I recommend we adjust the budget to [$amount]. This covers [specific items].\n\nI've attached a breakdown showing the additional work and its value to the project.\n\nCan we schedule time to discuss this week?\n\n[Your name]",
+              "wrong": "Entonces me preguntaba si tal vez podríamos posiblemente hablar sobre ajustar el presupuesto? Sé que es mucho pedir pero el trabajo ha sido mucho más de lo esperado...",
+              "right": "Asunto: Discusión de presupuesto para [Proyecto]\n\nHola [Nombre],\n\nQuería discutir el presupuesto para [proyecto/compromiso].\n\nCuando originalmente definimos el alcance, estimamos [X horas/alcance]. Basado en [factores específicos], el requisito real es [Y]. Esto representa un aumento de [Z%] en el alcance.\n\nPara mantener la calidad que esperas, recomiendo que ajustemos el presupuesto a [$cantidad]. Esto cubre [elementos específicos].\n\nHe adjuntado un desglose mostrando el trabajo adicional y su valor para el proyecto.\n\n¿Podemos agendar tiempo para discutir esta semana?\n\n[Tu nombre]",
               "why": "Conecta la solicitud a hechos y valor, no sentimientos. Muestra profesionalismo al proveer documentación."
             },
             "actionItem": "Siempre cuantifica el valor que estás proveyendo antes de pedir más dinero."
@@ -201,8 +201,8 @@
             "title": "Abordando Mal Desempeño",
             "content": "Cuando necesitas abordar un problema con un miembro del equipo o proveedor sin dañar la relación.",
             "example": {
-              "wrong": "Hey, we need to talk about your work lately. It hasn't been up to standards and I'm getting concerned. This really needs to improve.",
-              "right": "Subject: Let's connect on [specific area]\n\nHi [Name],\n\nI wanted to touch base about [specific area of concern].\n\nI've noticed [specific observation—not judgment]. For example, [concrete instance]. This is creating [specific impact].\n\nI want to understand what's happening on your end and how I can support you. Sometimes there are factors I'm not seeing.\n\nCan we meet [specific time] to discuss? My goal is to find a path forward that works for both of us.\n\n[Your name]",
+              "wrong": "Oye, necesitamos hablar sobre tu trabajo últimamente. No ha estado a la altura de los estándares y estoy preocupado. Esto realmente necesita mejorar.",
+              "right": "Asunto: Conectemos sobre [área específica]\n\nHola [Nombre],\n\nQuería conectar sobre [área específica de preocupación].\n\nHe notado [observación específica—no juicio]. Por ejemplo, [instancia concreta]. Esto está creando [impacto específico].\n\nQuiero entender qué está pasando de tu lado y cómo puedo apoyarte. A veces hay factores que no estoy viendo.\n\n¿Podemos reunirnos [hora específica] para discutir? Mi objetivo es encontrar un camino adelante que funcione para ambos.\n\n[Tu nombre]",
               "why": "Se enfoca en comportamientos e impactos específicos, no en carácter. Abre diálogo en lugar de entregar un veredicto."
             },
             "actionItem": "Siempre cita ejemplos específicos—las generalidades crean defensividad."
@@ -212,8 +212,8 @@
             "title": "Terminando una Relación de Negocios",
             "content": "Cuando necesitas despedir a un cliente, terminar una asociación, o discontinuar una relación con proveedor.",
             "example": {
-              "wrong": "This isn't working out. I think we should go our separate ways. Thanks for everything.",
-              "right": "Subject: Transition plan for our engagement\n\nHi [Name],\n\nAfter careful consideration, I've decided to conclude our [engagement/partnership] effective [date].\n\nThis wasn't an easy decision. [Brief, professional reason without blame—'Our business is moving in a different direction' / 'I'm narrowing my focus to [area]'].\n\nTo ensure a smooth transition, I propose:\n• [Transition step 1]\n• [Transition step 2]\n• [Final handoff details]\n\nI'm grateful for [something genuine]. I wish you continued success.\n\n[Your name]",
+              "wrong": "Esto no está funcionando. Creo que deberíamos seguir caminos separados. Gracias por todo.",
+              "right": "Asunto: Plan de transición para nuestro compromiso\n\nHola [Nombre],\n\nDespués de consideración cuidadosa, he decidido concluir nuestro [compromiso/asociación] efectivo [fecha].\n\nNo fue una decisión fácil. [Razón breve y profesional sin culpa—'Nuestro negocio se está moviendo en una dirección diferente' / 'Estoy enfocando mi atención en [área]'].\n\nPara asegurar una transición suave, propongo:\n• [Paso de transición 1]\n• [Paso de transición 2]\n• [Detalles de entrega final]\n\nEstoy agradecido por [algo genuino]. Te deseo continuo éxito.\n\n[Tu nombre]",
               "why": "Profesional, claro, y mirando hacia adelante. Provee soporte de transición y termina en nota positiva."
             },
             "actionItem": "Escribe emails de cierre en la mañana cuando estés fresco—nunca cuando estés frustrado."
