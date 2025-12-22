@@ -1,0 +1,21 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import ChatEmbed from "@components/chat/ChatEmbed.astro";
+
+const seoTitle = "Chat de Coach de Inglés con IA | New York English Teacher";
+const seoDescription =
+  "Haz preguntas sobre coaching, precios y la forma más rápida de cerrar tu brecha de comunicación.";
+---
+
+<Base
+  lang="es"
+  tkey="chat"
+  title={seoTitle}
+  description={seoDescription}
+  ogImage={{ src: "/images/logos/new-york-english-sq-og.jpg" }}
+  noindex={true}
+>
+  <ChatEmbed lang="es" />
+</Base>

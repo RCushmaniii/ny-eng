@@ -1,0 +1,21 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import ChatEmbed from "@components/chat/ChatEmbed.astro";
+
+const seoTitle = "AI English Coach Chat | New York English Teacher";
+const seoDescription =
+  "Ask questions about coaching, pricing, and the fastest way to close your Communication Gap.";
+---
+
+<Base
+  lang="en"
+  tkey="chat"
+  title={seoTitle}
+  description={seoDescription}
+  ogImage={{ src: "/images/logos/new-york-english-sq-og.jpg" }}
+  noindex={true}
+>
+  <ChatEmbed lang="en" />
+</Base>
