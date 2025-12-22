@@ -4,7 +4,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/noto-sans-kr-v36-latin-regular.woff2') format('woff2');
+  src: url("/fonts/noto-sans-kr-v36-latin-regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -12,7 +12,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('/fonts/noto-sans-v42-latin-500.woff2') format('woff2');
+  src: url("/fonts/noto-sans-v42-latin-500.woff2") format("woff2");
 }
 
 @font-face {
@@ -20,7 +20,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('/fonts/noto-sans-v42-latin-600.woff2') format('woff2');
+  src: url("/fonts/noto-sans-v42-latin-600.woff2") format("woff2");
 }
 
 @font-face {
@@ -28,7 +28,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/fonts/noto-sans-v42-latin-700.woff2') format('woff2');
+  src: url("/fonts/noto-sans-v42-latin-700.woff2") format("woff2");
 }
 
 @font-face {
@@ -36,5 +36,5 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/bruno-ace-sc-v5-latin-regular.woff2') format('woff2');
+  src: url("/fonts/bruno-ace-sc-v5-latin-regular.woff2") format("woff2");
 }

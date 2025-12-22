@@ -17,7 +17,13 @@
     "tags": ["salary", "negotiation", "career", "compensation", "job-offer"]
   },
   "targeting": {
-    "primaryPersona": ["job-seeker", "manager", "executive", "consultant", "all"],
+    "primaryPersona": [
+      "job-seeker",
+      "manager",
+      "executive",
+      "consultant",
+      "all"
+    ],
     "industries": ["technology", "professional-services", "finance", "all"],
     "scenarios": ["negotiations", "interviews"],
     "painPoints": [
@@ -30,16 +36,24 @@
   "conversion": {
     "ctaType": "strategy-call",
     "nextStep": "Book a free strategy call to practice your salary negotiation before the real thing",
-    "relatedAssets": ["interview-answer-templates", "5-minute-negotiation-script"]
+    "relatedAssets": [
+      "interview-answer-templates",
+      "5-minute-negotiation-script"
+    ]
   },
   "seo": {
     "metaDescription": "Get the exact script for negotiating your salary in English. Handle the 5 critical moments in any compensation conversation with confidence.",
-    "keywords": ["salary negotiation script", "how to negotiate salary", "salary negotiation phrases", "counter offer script"]
+    "keywords": [
+      "salary negotiation script",
+      "how to negotiate salary",
+      "salary negotiation phrases",
+      "counter offer script"
+    ]
   },
   "slugEn": "salary-negotiation-script",
   "slugEs": "script-negociacion-salario",
   "en": {
-    "title": "The Salary Negotiation Script",
+    "title": "The Salary Negotiation Script Guide",
     "subtitle": "Exact Words for the 5 Critical Moments in Any Compensation Conversation",
     "description": "Most people leave 10-20% on the table because they don't know how to negotiate in English. This script gives you the exact words for every stage of the salary conversation.",
     "headline": "Stop Leaving Money on the Table",

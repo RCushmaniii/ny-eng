@@ -8,15 +8,17 @@
  * - /en/blog//en/blog/post -> /en/blog/post
  */
 export function cleanDoubleLanguagePrefixes(url: string): string {
-  return url
-    // Remove double language prefixes in blog URLs
-    .replace(/\/(en|es)\/blog\/\1\//g, '/$1/blog/')
-    .replace(/\/(en|es)\/blog\/\1\/blog\//g, '/$1/blog/')
-    // Remove double language prefixes in paths
-    .replace(/\/(en|es)\/\1\//g, '/$1/')
-    .replace(/\/(en|es)\/blog\/\1\//g, '/$1/blog/')
-    // Remove any remaining double slashes except after protocol
-    .replace(/([^:]\/)\//g, '$1');
+  return (
+    url
+      // Remove double language prefixes in blog URLs
+      .replace(/\/(en|es)\/blog\/\1\//g, "/$1/blog/")
+      .replace(/\/(en|es)\/blog\/\1\/blog\//g, "/$1/blog/")
+      // Remove double language prefixes in paths
+      .replace(/\/(en|es)\/\1\//g, "/$1/")
+      .replace(/\/(en|es)\/blog\/\1\//g, "/$1/blog/")
+      // Remove any remaining double slashes except after protocol
+      .replace(/([^:]\/)\//g, "$1")
+  );
 }
 
 /**
@@ -26,7 +28,7 @@ export function cleanDoubleLanguagePrefixes(url: string): string {
  * - /es/servicios/ -> /servicios/
  */
 export function removeLanguagePrefix(path: string): string {
-  return path.replace(/^\/(en|es)\//, '/');
+  return path.replace(/^\/(en|es)\//, "/");
 }
 
 /**
@@ -35,7 +37,7 @@ export function removeLanguagePrefix(path: string): string {
  * - addLanguagePrefix('/about/', 'en') -> /en/about/
  * - addLanguagePrefix('/en/about/', 'es') -> /es/about/
  */
-export function addLanguagePrefix(path: string, lang: 'en' | 'es'): string {
+export function addLanguagePrefix(path: string, lang: "en" | "es"): string {
   const cleanPath = removeLanguagePrefix(path);
   return `/${lang}${cleanPath}`;
 }
@@ -44,24 +46,28 @@ export function addLanguagePrefix(path: string, lang: 'en' | 'es'): string {
  * Comprehensive URL cleaner that fixes common URL issues
  */
 export function cleanBlogUrl(url: string): string {
-  return url
-    // Remove double language prefixes in blog URLs
-    .replace(/\/(en|es)\/blog\/\1\//g, '/$1/blog/')
-    .replace(/\/(en|es)\/blog\/\1\/blog\//g, '/$1/blog/')
-    .replace(/\/(en|es)\/blog\/\/\1\/blog\//g, '/$1/blog/')
-    // Remove any remaining double slashes except after protocol
-    .replace(/([^:]\/)\//g, '$1')
-    // Ensure trailing slash
-    .replace(/([^/])$/, '$1/');
+  return (
+    url
+      // Remove double language prefixes in blog URLs
+      .replace(/\/(en|es)\/blog\/\1\//g, "/$1/blog/")
+      .replace(/\/(en|es)\/blog\/\1\/blog\//g, "/$1/blog/")
+      .replace(/\/(en|es)\/blog\/\/\1\/blog\//g, "/$1/blog/")
+      // Remove any remaining double slashes except after protocol
+      .replace(/([^:]\/)\//g, "$1")
+      // Ensure trailing slash
+      .replace(/([^/])$/, "$1/")
+  );
 }
 
 export function cleanUrl(url: string): string {
   // First clean blog URLs
   const cleanedUrl = cleanBlogUrl(url);
-  
-  return cleanDoubleLanguagePrefixes(cleanedUrl)
-    // Ensure trailing slash for directories (not files)
-    .replace(/([^/.]+)$/, '$1/')
-    // Remove any remaining double slashes except after protocol
-    .replace(/([^:]\/)\//g, '$1');
+
+  return (
+    cleanDoubleLanguagePrefixes(cleanedUrl)
+      // Ensure trailing slash for directories (not files)
+      .replace(/([^/.]+)$/, "$1/")
+      // Remove any remaining double slashes except after protocol
+      .replace(/([^:]\/)\//g, "$1")
+  );
 }

@@ -14,7 +14,12 @@
     "timeToComplete": "8 minutes",
     "estimatedMinutes": 8,
     "pageCount": 6,
-    "tags": ["common-mistakes", "error-correction", "executive-presence", "quick-fixes"]
+    "tags": [
+      "common-mistakes",
+      "error-correction",
+      "executive-presence",
+      "quick-fixes"
+    ]
   },
   "targeting": {
     "primaryPersona": ["executive", "manager", "all"],
@@ -29,11 +34,19 @@
   "conversion": {
     "ctaType": "strategy-call",
     "nextStep": "Book a free strategy call to identify your specific mistake patterns",
-    "relatedAssets": ["5-principles-executive-english", "5-quick-wins-executive-english"]
+    "relatedAssets": [
+      "5-principles-executive-english",
+      "5-quick-wins-executive-english"
+    ]
   },
   "seo": {
     "metaDescription": "Fix the 10 most common English mistakes that immediately signal 'non-native speaker' to North American clients. Includes fixes you can apply today.",
-    "keywords": ["common english mistakes", "business english errors", "executive english mistakes", "professional communication errors"]
+    "keywords": [
+      "common english mistakes",
+      "business english errors",
+      "executive english mistakes",
+      "professional communication errors"
+    ]
   },
   "slugEn": "10-common-mistakes-executive-english",
   "slugEs": "10-errores-comunes-ingles-ejecutivo",
@@ -61,83 +74,103 @@
         "items": [
           {
             "number": 1,
-            "mistake": "Starting with 'Actually...'",
-            "problem": "In English, 'actually' implies correction or surprise. Using it habitually sounds condescending.",
-            "fix": "Delete 'actually' from most sentences. Reserve it for genuine corrections.",
-            "wrongExample": "Actually, I think we should consider...",
-            "rightExample": "I think we should consider..."
+            "title": "Starting with 'Actually...'",
+            "content": "In English, 'actually' implies correction or surprise. Using it habitually sounds condescending.",
+            "actionItem": "Delete 'actually' from most sentences. Reserve it for genuine corrections.",
+            "example": {
+              "wrong": "Actually, I think we should consider...",
+              "right": "I think we should consider..."
+            }
           },
           {
             "number": 2,
-            "mistake": "Overusing 'I think'",
-            "problem": "Excessive hedging undermines your authority. Executives state positions; they don't constantly qualify.",
-            "fix": "State your position directly. Save 'I think' for opinions, not facts.",
-            "wrongExample": "I think the deadline is next Friday. I think we need more resources.",
-            "rightExample": "The deadline is next Friday. We need more resources."
+            "title": "Overusing 'I think'",
+            "content": "Excessive hedging undermines your authority. Executives state positions; they don't constantly qualify.",
+            "actionItem": "State your position directly. Save 'I think' for opinions, not facts.",
+            "example": {
+              "wrong": "I think the deadline is next Friday. I think we need more resources.",
+              "right": "The deadline is next Friday. We need more resources."
+            }
           },
           {
             "number": 3,
-            "mistake": "Using 'No?' as a tag question",
-            "problem": "This is a direct translation from Spanish. In English, it sounds informal and uncertain.",
-            "fix": "Use 'right?' or 'don't you think?' for tag questions, or eliminate them entirely.",
-            "wrongExample": "We should move forward, no?",
-            "rightExample": "We should move forward, right?" 
+            "title": "Using 'No?' as a tag question",
+            "content": "This is a direct translation from Spanish. In English, it sounds informal and uncertain.",
+            "actionItem": "Use 'right?' or 'don't you think?' for tag questions, or eliminate them entirely.",
+            "example": {
+              "wrong": "We should move forward, no?",
+              "right": "We should move forward, right?"
+            }
           },
           {
             "number": 4,
-            "mistake": "Saying 'I have a doubt'",
-            "problem": "'Doubt' in English means skepticism or disbelief. You mean 'question.'",
-            "fix": "Replace 'I have a doubt' with 'I have a question' or 'I'm unclear on...'",
-            "wrongExample": "I have a doubt about the timeline.",
-            "rightExample": "I have a question about the timeline."
+            "title": "Saying 'I have a doubt'",
+            "content": "'Doubt' in English means skepticism or disbelief. You mean 'question.'",
+            "actionItem": "Replace 'I have a doubt' with 'I have a question' or 'I'm unclear on...'",
+            "example": {
+              "wrong": "I have a doubt about the timeline.",
+              "right": "I have a question about the timeline."
+            }
           },
           {
             "number": 5,
-            "mistake": "Apologizing excessively",
-            "problem": "Starting with 'Sorry, but...' or 'Sorry to bother you' undermines your authority.",
-            "fix": "Replace apologies with direct statements or gratitude.",
-            "wrongExample": "Sorry, but I disagree with that approach.",
-            "rightExample": "I see it differently. Here's why..."
+            "title": "Apologizing excessively",
+            "content": "Starting with 'Sorry, but...' or 'Sorry to bother you' undermines your authority.",
+            "actionItem": "Replace apologies with direct statements or gratitude.",
+            "example": {
+              "wrong": "Sorry, but I disagree with that approach.",
+              "right": "I see it differently. Here's why..."
+            }
           },
           {
             "number": 6,
-            "mistake": "Using 'assist' instead of 'help'",
-            "problem": "'Assist' sounds formal and stiff. Native speakers say 'help.'",
-            "fix": "Use 'help' in almost all cases. It's more natural and direct.",
-            "wrongExample": "I can assist you with that project.",
-            "rightExample": "I can help you with that project."
+            "title": "Using 'assist' instead of 'help'",
+            "content": "'Assist' sounds formal and stiff. Native speakers say 'help.'",
+            "actionItem": "Use 'help' in almost all cases. It's more natural and direct.",
+            "example": {
+              "wrong": "I can assist you with that project.",
+              "right": "I can help you with that project."
+            }
           },
           {
             "number": 7,
-            "mistake": "Saying 'in this moment'",
-            "problem": "This is a literal translation. English uses 'right now' or 'currently.'",
-            "fix": "Replace 'in this moment' with 'right now,' 'currently,' or 'at the moment.'",
-            "wrongExample": "In this moment, we're focused on Q4.",
-            "rightExample": "Right now, we're focused on Q4."
+            "title": "Saying 'in this moment'",
+            "content": "This is a literal translation. English uses 'right now' or 'currently.'",
+            "actionItem": "Replace 'in this moment' with 'right now,' 'currently,' or 'at the moment.'",
+            "example": {
+              "wrong": "In this moment, we're focused on Q4.",
+              "right": "Right now, we're focused on Q4."
+            }
           },
           {
             "number": 8,
-            "mistake": "Overusing 'very'",
-            "problem": "Excessive use of 'very' weakens your statements instead of strengthening them.",
-            "fix": "Use stronger verbs and adjectives instead of 'very + weak word.'",
-            "wrongExample": "This is a very important project that's very urgent.",
-            "rightExample": "This is a critical project that's urgent."
+            "title": "Overusing 'very'",
+            "content": "Excessive use of 'very' weakens your statements instead of strengthening them.",
+            "actionItem": "Use stronger verbs and adjectives instead of 'very + weak word.'",
+            "example": {
+              "wrong": "This is a very important project that's very urgent.",
+              "right": "This is a critical project that's urgent."
+            }
           },
           {
             "number": 9,
-            "mistake": "Saying 'I will send you'",
-            "problem": "Missing the object. English requires 'I will send you THE EMAIL/DOCUMENT.'",
-            "fix": "Always include what you're sending: the file, the email, the document.",
-            "wrongExample": "I will send you by end of day.",
-            "rightExample": "I'll send you the proposal by end of day."
+            "title": "Saying 'I will send you'",
+            "content": "Missing the object. English requires 'I will send you THE EMAIL/DOCUMENT.'",
+            "actionItem": "Always include what you're sending: the file, the email, the document.",
+            "example": {
+              "wrong": "I will send you by end of day.",
+              "right": "I'll send you the proposal by end of day."
+            }
           },
           {
             "number": 10,
-            "mistake": "Using 'How do you call...?'",
-            "problem": "This is a direct translation from Spanish. English uses 'What do you call...?'",
-            "fix": "Replace 'How do you call' with 'What do you call' or 'What's the word for...'",
-            "wrongExample": "How do you call this in English?",
-            "rightExample": "What do you call this in English?"
+            "title": "Using 'How do you call...?'",
+            "content": "This is a direct translation from Spanish. English uses 'What do you call...?'",
+            "actionItem": "Replace 'How do you call' with 'What do you call' or 'What's the word for...'",
+            "example": {
+              "wrong": "How do you call this in English?",
+              "right": "What do you call this in English?"
+            }
           }
         ]
       }
@@ -167,83 +200,103 @@
         "items": [
           {
             "number": 1,
-            "mistake": "Comenzar con 'Actually...'",
-            "problem": "En inglés, 'actually' implica corrección o sorpresa. Usarlo habitualmente suena condescendiente.",
-            "fix": "Elimina 'actually' de la mayoría de las oraciones. Resérvalo para correcciones genuinas.",
-            "wrongExample": "Actually, I think we should consider...",
-            "rightExample": "I think we should consider..."
+            "title": "Comenzar con 'Actually...'",
+            "content": "En inglés, 'actually' implica corrección o sorpresa. Usarlo habitualmente suena condescendiente.",
+            "actionItem": "Elimina 'actually' de la mayoría de las oraciones. Resérvalo para correcciones genuinas.",
+            "example": {
+              "wrong": "Actually, I think we should consider...",
+              "right": "I think we should consider..."
+            }
           },
           {
             "number": 2,
-            "mistake": "Usar 'I think' en exceso",
-            "problem": "El exceso de cobertura socava tu autoridad. Los ejecutivos declaran posiciones; no califican constantemente.",
-            "fix": "Declara tu posición directamente. Guarda 'I think' para opiniones, no hechos.",
-            "wrongExample": "I think the deadline is next Friday. I think we need more resources.",
-            "rightExample": "The deadline is next Friday. We need more resources."
+            "title": "Usar 'I think' en exceso",
+            "content": "El exceso de cobertura socava tu autoridad. Los ejecutivos declaran posiciones; no califican constantemente.",
+            "actionItem": "Declara tu posición directamente. Guarda 'I think' para opiniones, no hechos.",
+            "example": {
+              "wrong": "I think the deadline is next Friday. I think we need more resources.",
+              "right": "The deadline is next Friday. We need more resources."
+            }
           },
           {
             "number": 3,
-            "mistake": "Usar 'No?' como pregunta de confirmación",
-            "problem": "Esta es una traducción directa del español. En inglés, suena informal e inseguro.",
-            "fix": "Usa 'right?' o 'don't you think?' para preguntas de confirmación, o elimínalas por completo.",
-            "wrongExample": "We should move forward, no?",
-            "rightExample": "We should move forward, right?"
+            "title": "Usar 'No?' como pregunta de confirmación",
+            "content": "Esta es una traducción directa del español. En inglés, suena informal e inseguro.",
+            "actionItem": "Usa 'right?' o 'don't you think?' para preguntas de confirmación, o elimínalas por completo.",
+            "example": {
+              "wrong": "We should move forward, no?",
+              "right": "We should move forward, right?"
+            }
           },
           {
             "number": 4,
-            "mistake": "Decir 'I have a doubt'",
-            "problem": "'Doubt' en inglés significa escepticismo o incredulidad. Quieres decir 'question.'",
-            "fix": "Reemplaza 'I have a doubt' con 'I have a question' o 'I'm unclear on...'",
-            "wrongExample": "I have a doubt about the timeline.",
-            "rightExample": "I have a question about the timeline."
+            "title": "Decir 'I have a doubt'",
+            "content": "'Doubt' en inglés significa escepticismo o incredulidad. Quieres decir 'question.'",
+            "actionItem": "Reemplaza 'I have a doubt' con 'I have a question' o 'I'm unclear on...'",
+            "example": {
+              "wrong": "I have a doubt about the timeline.",
+              "right": "I have a question about the timeline."
+            }
           },
           {
             "number": 5,
-            "mistake": "Disculparse excesivamente",
-            "problem": "Comenzar con 'Sorry, but...' o 'Sorry to bother you' socava tu autoridad.",
-            "fix": "Reemplaza disculpas con declaraciones directas o gratitud.",
-            "wrongExample": "Sorry, but I disagree with that approach.",
-            "rightExample": "I see it differently. Here's why..."
+            "title": "Disculparse excesivamente",
+            "content": "Comenzar con 'Sorry, but...' o 'Sorry to bother you' socava tu autoridad.",
+            "actionItem": "Reemplaza disculpas con declaraciones directas o gratitud.",
+            "example": {
+              "wrong": "Sorry, but I disagree with that approach.",
+              "right": "I see it differently. Here's why..."
+            }
           },
           {
             "number": 6,
-            "mistake": "Usar 'assist' en lugar de 'help'",
-            "problem": "'Assist' suena formal y rígido. Los nativos dicen 'help.'",
-            "fix": "Usa 'help' en casi todos los casos. Es más natural y directo.",
-            "wrongExample": "I can assist you with that project.",
-            "rightExample": "I can help you with that project."
+            "title": "Usar 'assist' en lugar de 'help'",
+            "content": "'Assist' suena formal y rígido. Los nativos dicen 'help.'",
+            "actionItem": "Usa 'help' en casi todos los casos. Es más natural y directo.",
+            "example": {
+              "wrong": "I can assist you with that project.",
+              "right": "I can help you with that project."
+            }
           },
           {
             "number": 7,
-            "mistake": "Decir 'in this moment'",
-            "problem": "Esta es una traducción literal. El inglés usa 'right now' o 'currently.'",
-            "fix": "Reemplaza 'in this moment' con 'right now,' 'currently,' o 'at the moment.'",
-            "wrongExample": "In this moment, we're focused on Q4.",
-            "rightExample": "Right now, we're focused on Q4."
+            "title": "Decir 'in this moment'",
+            "content": "Esta es una traducción literal. El inglés usa 'right now' o 'currently.'",
+            "actionItem": "Reemplaza 'in this moment' con 'right now,' 'currently,' o 'at the moment.'",
+            "example": {
+              "wrong": "In this moment, we're focused on Q4.",
+              "right": "Right now, we're focused on Q4."
+            }
           },
           {
             "number": 8,
-            "mistake": "Usar 'very' en exceso",
-            "problem": "El uso excesivo de 'very' debilita tus declaraciones en lugar de fortalecerlas.",
-            "fix": "Usa verbos y adjetivos más fuertes en lugar de 'very + palabra débil.'",
-            "wrongExample": "This is a very important project that's very urgent.",
-            "rightExample": "This is a critical project that's urgent."
+            "title": "Usar 'very' en exceso",
+            "content": "El uso excesivo de 'very' debilita tus declaraciones en lugar de fortalecerlas.",
+            "actionItem": "Usa verbos y adjetivos más fuertes en lugar de 'very + palabra débil.'",
+            "example": {
+              "wrong": "This is a very important project that's very urgent.",
+              "right": "This is a critical project that's urgent."
+            }
           },
           {
             "number": 9,
-            "mistake": "Decir 'I will send you'",
-            "problem": "Falta el objeto. El inglés requiere 'I will send you THE EMAIL/DOCUMENT.'",
-            "fix": "Siempre incluye qué estás enviando: el archivo, el email, el documento.",
-            "wrongExample": "I will send you by end of day.",
-            "rightExample": "I'll send you the proposal by end of day."
+            "title": "Decir 'I will send you'",
+            "content": "Falta el objeto. El inglés requiere 'I will send you THE EMAIL/DOCUMENT.'",
+            "actionItem": "Siempre incluye qué estás enviando: el archivo, el email, el documento.",
+            "example": {
+              "wrong": "I will send you by end of day.",
+              "right": "I'll send you the proposal by end of day."
+            }
           },
           {
             "number": 10,
-            "mistake": "Usar 'How do you call...?'",
-            "problem": "Esta es una traducción directa del español. El inglés usa 'What do you call...?'",
-            "fix": "Reemplaza 'How do you call' con 'What do you call' o 'What's the word for...'",
-            "wrongExample": "How do you call this in English?",
-            "rightExample": "What do you call this in English?"
+            "title": "Usar 'How do you call...?'",
+            "content": "Esta es una traducción directa del español. El inglés usa 'What do you call...?'",
+            "actionItem": "Reemplaza 'How do you call' con 'What do you call' o 'What's the word for...'",
+            "example": {
+              "wrong": "How do you call this in English?",
+              "right": "What do you call this in English?"
+            }
           }
         ]
       }

@@ -14,12 +14,27 @@
     "timeToComplete": "8 minutes",
     "estimatedMinutes": 8,
     "pageCount": 6,
-    "tags": ["feedback", "management", "leadership", "difficult-conversations", "performance"]
+    "tags": [
+      "feedback",
+      "management",
+      "leadership",
+      "difficult-conversations",
+      "performance"
+    ]
   },
   "targeting": {
-    "primaryPersona": ["manager", "executive", "hr-professional", "project-manager"],
+    "primaryPersona": [
+      "manager",
+      "executive",
+      "hr-professional",
+      "project-manager"
+    ],
     "industries": ["technology", "professional-services", "all"],
-    "scenarios": ["performance-feedback", "difficult-conversations", "leadership"],
+    "scenarios": [
+      "performance-feedback",
+      "difficult-conversations",
+      "leadership"
+    ],
     "painPoints": [
       "Feedback conversations going badly",
       "Team members getting defensive",
@@ -30,16 +45,24 @@
   "conversion": {
     "ctaType": "strategy-call",
     "nextStep": "Book a free strategy call to practice giving feedback that drives change",
-    "relatedAssets": ["pushback-playbook", "email-templates-difficult-situations"]
+    "relatedAssets": [
+      "pushback-playbook",
+      "email-templates-difficult-situations"
+    ]
   },
   "seo": {
     "metaDescription": "Master the SBI feedback framework used by Fortune 500 managers. Give feedback that changes behavior without damaging relationships.",
-    "keywords": ["feedback framework", "how to give feedback", "SBI feedback model", "constructive feedback examples"]
+    "keywords": [
+      "feedback framework",
+      "how to give feedback",
+      "SBI feedback model",
+      "constructive feedback examples"
+    ]
   },
   "slugEn": "feedback-framework",
   "slugEs": "marco-retroalimentacion",
   "en": {
-    "title": "The SBI Feedback Framework",
+    "title": "The SBI Feedback Framework for Work",
     "subtitle": "Give Feedback That Changes Behavior, Not Just Makes People Defensive",
     "description": "Most feedback fails because it's vague, personal, or delivered wrong. The SBI framework gives you a clear structure for feedback that people actually hear and act on.",
     "headline": "Stop Avoiding Difficult Conversations. Start Having Effective Ones.",

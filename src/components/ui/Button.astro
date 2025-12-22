@@ -64,7 +64,7 @@ const computedRel =
 <!-- Use conditional rendering for anchor vs button elements to ensure attributes are properly applied -->{
   href ? (
     <a
-      class={classes}
+      class:list={classes}
       href={
         href
           ? /^https?:\/\//i.test(href)
@@ -83,7 +83,7 @@ const computedRel =
     </a>
   ) : (
     <button
-      class={classes}
+      class:list={classes}
       type={type}
       disabled={disabled}
       aria-disabled={disabled}

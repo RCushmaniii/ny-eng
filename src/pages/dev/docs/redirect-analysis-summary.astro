@@ -2,21 +2,23 @@
 /**
  * Redirect Analysis Summary Documentation - Proper Astro page with markdown import
  */
-import MarkdownLayout from '@layouts/MarkdownLayout.astro';
-import { marked } from 'marked';
+import MarkdownLayout from "@layouts/MarkdownLayout.astro";
+import { marked } from "marked";
 
 // Import the REDIRECT-ANALYSIS-SUMMARY.md content
-const redirectContent = await import('../../../../docs/REDIRECT-ANALYSIS-SUMMARY.md?raw');
+const redirectContent = await import(
+  "../../../../docs/seo/REDIRECT-ANALYSIS-SUMMARY.md?raw"
+);
 const markdownText = redirectContent.default;
 
 // Convert markdown to HTML
 const htmlContent = marked(markdownText);
 
 const frontmatter = {
-  title: 'Redirect Analysis Summary',
-  description: 'Analysis of redirect chains and URL structure optimization',
-  category: 'SEO',
-  icon: '🔄'
+  title: "Redirect Analysis Summary",
+  description: "Analysis of redirect chains and URL structure optimization",
+  category: "SEO",
+  icon: "🔄",
 };
 ---
 

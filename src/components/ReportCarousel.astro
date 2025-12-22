@@ -59,7 +59,7 @@ const slides = [
     <!-- Slides -->
     <div class="carousel-slides">
       {slides.map((slide, index) => (
-        <div class={`carousel-slide ${index === 0 ? 'active' : ''}`}>
+        <div class:list={`carousel-slide ${index === 0 ? 'active' : ''}`}>
           <div class="slide-content">
             <img 
               src={slide.src} 
@@ -88,7 +88,7 @@ const slides = [
   <div class="carousel-dots">
     {slides.map((_, index) => (
       <button
-        class={`dot ${index === 0 ? 'active' : ''}`}
+        class:list={`dot ${index === 0 ? 'active' : ''}`}
         data-slide={index}
         aria-label={`Go to slide ${index + 1}`}
       />

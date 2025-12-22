@@ -57,13 +57,13 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
                         <Eyebrow text={eyebrow} background={background} />
                     )}
                     {title && (
-                        <h2 class={`fade-in-up ${textColor}`} style="font-family: 'Noto Sans KR', sans-serif;">
+                        <h2 class:list={`fade-in-up ${textColor}`} style="font-family: 'Noto Sans KR', sans-serif;">
                             {title}
                         </h2>
                     )}
                     {description && (
                         <p
-                            class={`fade-in-up delay-1 mt-4 ${textColor} opacity-90`}
+                            class:list={`fade-in-up delay-1 mt-4 ${textColor} opacity-90`}
                             style="font-family: 'Noto Sans KR', sans-serif;"
                         >
                             {description}

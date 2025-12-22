@@ -2,272 +2,272 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://nyenglishteacher.com/schemas/free-asset.json",
   "title": "Free Asset Schema",
-  "description": "Schema for free educational resources on NY English Teacher",
+  "description": "Strict schema for free educational resources on NY English Teacher",
   "type": "object",
-  "required": ["metadata", "classification", "targeting", "conversion", "seo", "slugEn", "slugEs", "en", "es"],
+  "required": [
+    "metadata",
+    "classification",
+    "targeting",
+    "conversion",
+    "seo",
+    "slugEn",
+    "slugEs",
+    "en",
+    "es"
+  ],
+  "definitions": {
+    "standardItem": {
+      "type": "object",
+      "description": "The universal content block. ALL content types (questions, mistakes, steps) must map to these keys.",
+      "additionalProperties": false,
+      "properties": {
+        "number": {
+          "type": "integer",
+          "description": "Ordering number (e.g., 1, 2, 3)"
+        },
+        "title": {
+          "type": "string",
+          "description": "The main header. Maps to: Question text, Mistake name, Step title, or Script line speaker."
+        },
+        "content": {
+          "type": "string",
+          "description": "The main body text. Maps to: Answer, Problem description, Script dialogue."
+        },
+        "phrase": {
+          "type": "string",
+          "description": "Specific English phrase being taught (if applicable)."
+        },
+        "situation": {
+          "type": "string",
+          "description": "Context for when this occurs."
+        },
+        "when": {
+          "type": "string",
+          "description": "Timing instruction."
+        },
+        "why": {
+          "type": "string",
+          "description": "Educational reasoning."
+        },
+        "actionItem": {
+          "type": "string",
+          "description": "The immediate takeaway. Maps to: The Fix, The Solution, The Task."
+        },
+        "doNotSay": {
+          "type": "string",
+          "description": "Negative example or warning."
+        },
+        "howToSay": {
+          "type": "string",
+          "description": "Positive example or correction."
+        },
+        "variations": {
+          "description": "Alternative ways to say it",
+          "oneOf": [
+            { "type": "string" },
+            { "type": "array", "items": { "type": "string" } }
+          ]
+        },
+        "example": {
+          "description": "Concrete examples of the concept",
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "object",
+              "required": ["wrong", "right"],
+              "properties": {
+                "wrong": { "type": "string" },
+                "right": { "type": "string" },
+                "why": { "type": "string" }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "localizedContent": {
+      "type": "object",
+      "required": ["title", "subtitle", "sections"],
+      "additionalProperties": true,
+      "properties": {
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "description": { "type": "string" },
+        "headline": { "type": "string" },
+        "valueProposition": { "type": "string" },
+        "intro": {
+          "description": "Introduction text structure",
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "object",
+              "properties": {
+                "line1": { "type": "string" },
+                "line2": { "type": "string" },
+                "paragraph": { "type": "string" }
+              }
+            }
+          ]
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "items"],
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string" },
+              "content": {
+                "description": "Section introduction text",
+                "oneOf": [
+                  { "type": "string" },
+                  { "type": "array", "items": { "type": "string" } }
+                ]
+              },
+              "items": {
+                "type": "array",
+                "items": { "$ref": "#/definitions/standardItem" }
+              }
+            }
+          }
+        },
+        "leadCapture": {
+          "type": "object",
+          "properties": {
+            "formHeadline": { "type": "string" },
+            "formSubheadline": { "type": "string" },
+            "buttonText": { "type": "string" },
+            "successMessage": { "type": "string" }
+          }
+        }
+      }
+    }
+  },
   "properties": {
     "metadata": {
       "type": "object",
-      "description": "Publishing and versioning information",
       "required": ["id", "version", "datePublished", "author", "language"],
       "properties": {
-        "id": {
-          "type": "string",
-          "description": "Unique identifier for the asset",
-          "pattern": "^[a-z0-9-]+$"
-        },
-        "version": {
-          "type": "string",
-          "description": "Semantic version (e.g., 1.0, 1.1, 2.0)",
-          "pattern": "^\\d+\\.\\d+$"
-        },
-        "datePublished": {
-          "type": "string",
-          "description": "ISO 8601 date (YYYY-MM-DD)",
-          "format": "date"
-        },
-        "dateUpdated": {
-          "type": "string",
-          "description": "ISO 8601 date of last update",
-          "format": "date"
-        },
-        "author": {
-          "type": "string",
-          "description": "Content author name"
-        },
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "version": { "type": "string", "pattern": "^\\d+\\.\\d+$" },
+        "datePublished": { "type": "string", "format": "date" },
+        "dateUpdated": { "type": "string", "format": "date" },
+        "author": { "type": "string" },
         "language": {
           "type": "array",
-          "description": "Available languages",
-          "items": {
-            "type": "string",
-            "enum": ["en", "es"]
-          },
+          "items": { "type": "string", "enum": ["en", "es"] },
           "minItems": 1
         }
       }
     },
     "classification": {
       "type": "object",
-      "description": "Content type and format classification",
-      "required": ["contentType", "format", "funnelStage", "difficultyLevel", "timeToComplete"],
+      "required": [
+        "contentType",
+        "format",
+        "funnelStage",
+        "difficultyLevel",
+        "timeToComplete"
+      ],
       "properties": {
         "contentType": {
           "type": "string",
-          "description": "Primary content structure type",
-          "enum": ["questions", "sentences", "checklist", "script", "framework", "case-study", "template", "guide", "video", "audio"]
+          "enum": [
+            "questions",
+            "sentences",
+            "checklist",
+            "script",
+            "framework",
+            "case-study",
+            "template",
+            "guide",
+            "video",
+            "audio"
+          ]
         },
         "format": {
           "type": "string",
-          "description": "Delivery format",
-          "enum": ["pdf-guide", "pdf-checklist", "pdf-script", "interactive-web", "video", "audio", "email-series"]
+          "enum": [
+            "pdf-guide",
+            "pdf-checklist",
+            "pdf-script",
+            "interactive-web",
+            "video",
+            "audio",
+            "email-series"
+          ]
         },
         "funnelStage": {
           "type": "string",
-          "description": "Marketing funnel position",
           "enum": ["awareness", "consideration", "decision", "retention"]
         },
         "difficultyLevel": {
           "type": "string",
-          "description": "Content complexity level",
           "enum": ["beginner", "intermediate", "advanced", "all-levels"]
         },
-        "timeToComplete": {
-          "type": "string",
-          "description": "Estimated time to consume (e.g., '5 minutes', '15 minutes')"
-        },
-        "estimatedMinutes": {
-          "type": "integer",
-          "description": "Estimated time in minutes (for sorting/filtering)",
-          "minimum": 1
-        },
-        "pageCount": {
-          "type": "integer",
-          "description": "Number of pages (for PDF assets)",
-          "minimum": 1
-        },
-        "tags": {
-          "type": "array",
-          "description": "Flexible content tags for additional categorization",
-          "items": {
-            "type": "string"
-          }
-        }
+        "timeToComplete": { "type": "string" },
+        "estimatedMinutes": { "type": "integer", "minimum": 1 },
+        "pageCount": { "type": "integer", "minimum": 1 },
+        "tags": { "type": "array", "items": { "type": "string" } }
       }
     },
     "targeting": {
       "type": "object",
-      "description": "Audience and use case targeting",
       "required": ["primaryPersona", "industries", "scenarios"],
       "properties": {
-        "primaryPersona": {
-          "type": "array",
-          "description": "Target user personas",
-          "items": {
-            "type": "string",
-            "enum": [
-              "executive",
-              "manager",
-              "founder",
-              "entrepreneur",
-              "consultant",
-              "project-manager",
-              "engineer",
-              "sales",
-              "hr-professional",
-              "doctor",
-              "lawyer",
-              "accountant",
-              "logistics",
-              "real-estate",
-              "job-seeker",
-              "all"
-            ]
-          },
-          "minItems": 1
-        },
-        "industries": {
-          "type": "array",
-          "description": "Target industries",
-          "items": {
-            "type": "string",
-            "enum": [
-              "technology",
-              "healthcare",
-              "legal",
-              "finance",
-              "logistics",
-              "real-estate",
-              "professional-services",
-              "manufacturing",
-              "retail",
-              "all"
-            ]
-          },
-          "minItems": 1
-        },
-        "scenarios": {
-          "type": "array",
-          "description": "Use case scenarios",
-          "items": {
-            "type": "string",
-            "enum": [
-              "interviews",
-              "negotiations",
-              "presentations",
-              "client-meetings",
-              "leadership",
-              "email-writing",
-              "networking",
-              "difficult-conversations",
-              "decision-making",
-              "meetings",
-              "technical-explanation",
-              "crisis-management",
-              "performance-feedback",
-              "sales-calls",
-              "status-updates",
-              "all"
-            ]
-          },
-          "minItems": 1
-        },
-        "painPoints": {
-          "type": "array",
-          "description": "Specific pain points this asset addresses",
-          "items": {
-            "type": "string"
-          }
-        }
+        "primaryPersona": { "type": "array", "items": { "type": "string" } },
+        "industries": { "type": "array", "items": { "type": "string" } },
+        "scenarios": { "type": "array", "items": { "type": "string" } },
+        "painPoints": { "type": "array", "items": { "type": "string" } }
       }
     },
     "conversion": {
       "type": "object",
-      "description": "Conversion and funnel strategy",
       "required": ["ctaType", "nextStep"],
       "properties": {
         "ctaType": {
           "type": "string",
-          "description": "Primary call-to-action type",
-          "enum": ["strategy-call", "email-signup", "quiz", "contact", "service-page", "related-asset"]
+          "enum": [
+            "strategy-call",
+            "email-signup",
+            "quiz",
+            "contact",
+            "service-page",
+            "related-asset"
+          ]
         },
-        "nextStep": {
-          "type": "string",
-          "description": "Suggested next action for the user"
-        },
-        "relatedAssets": {
-          "type": "array",
-          "description": "Related asset IDs for cross-promotion",
-          "items": {
-            "type": "string"
-          }
-        }
+        "nextStep": { "type": "string" },
+        "relatedAssets": { "type": "array", "items": { "type": "string" } }
       }
     },
     "seo": {
       "type": "object",
-      "description": "SEO and social sharing optimization",
       "required": ["metaDescription", "keywords"],
       "properties": {
         "metaDescription": {
           "type": "string",
-          "description": "Meta description (110-160 characters)",
-          "minLength": 110,
+          "minLength": 10,
           "maxLength": 160
         },
         "keywords": {
           "type": "array",
-          "description": "Target SEO keywords",
-          "items": {
-            "type": "string"
-          },
+          "items": { "type": "string" },
           "minItems": 3
         },
-        "ogImage": {
-          "type": "string",
-          "description": "Custom Open Graph image path (optional)"
-        }
+        "ogImage": { "type": "string" }
       }
     },
     "analytics": {
       "type": "object",
-      "description": "Usage analytics (optional, can be updated dynamically)",
       "properties": {
-        "downloadCount": {
-          "type": "integer",
-          "description": "Number of PDF downloads",
-          "minimum": 0,
-          "default": 0
-        },
-        "viewCount": {
-          "type": "integer",
-          "description": "Number of page views",
-          "minimum": 0,
-          "default": 0
-        },
-        "lastAccessed": {
-          "type": ["string", "null"],
-          "description": "ISO 8601 timestamp of last access",
-          "format": "date-time"
-        }
+        "downloadCount": { "type": "integer" },
+        "viewCount": { "type": "integer" },
+        "lastAccessed": { "type": "string" }
       }
     },
-    "slugEn": {
-      "type": "string",
-      "description": "English URL slug",
-      "pattern": "^[a-z0-9-]+$"
-    },
-    "slugEs": {
-      "type": "string",
-      "description": "Spanish URL slug",
-      "pattern": "^[a-z0-9-]+$"
-    },
-    "en": {
-      "type": "object",
-      "description": "English content (structure varies by contentType)"
-    },
-    "es": {
-      "type": "object",
-      "description": "Spanish content (structure varies by contentType)"
-    }
+    "slugEn": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "slugEs": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "en": { "$ref": "#/definitions/localizedContent" },
+    "es": { "$ref": "#/definitions/localizedContent" }
   }
 }

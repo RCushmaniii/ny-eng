@@ -42,7 +42,7 @@ const inputTextClass = getInputTextColor(background);
 ---
 
 <div class="form-group">
-    <label for={id} class={`block text-sm font-medium mb-1 ${labelClass}`} style="font-family: 'Noto Sans KR', sans-serif;">
+    <label for={id} class:list={`block text-sm font-medium mb-1 ${labelClass}`} style="font-family: 'Noto Sans KR', sans-serif;">
         {label}
         {required && <span class="text-red-500">*</span>}
     </label>
@@ -54,7 +54,7 @@ const inputTextClass = getInputTextColor(background);
         required={required}
         minlength={minlength}
         style="font-family: 'Noto Sans KR', sans-serif;"
-        class={`
+        class:list={`
             w-full px-4 py-2 
             ${inputBgClass}
             ${inputTextClass}

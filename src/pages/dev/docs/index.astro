@@ -281,7 +281,7 @@ const highPriorityDocs = allDocs.filter((d) => d.priority === "high").length;
               return (
                 <a
                   href={doc.route}
-                  class={`doc-card ${doc.priority === "high" ? "priority" : ""}`}
+                  class:list={`doc-card ${doc.priority === "high" ? "priority" : ""}`}
                 >
                   <div class="doc-icon">
                     <IconComponent size={20} />

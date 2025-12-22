@@ -33,34 +33,29 @@ export const homepageFAQs: HomepageFAQData = {
     subtitle: "Everything you need to know before we talk",
     faqs: [
       {
-        question: "What is the cost of your coaching?",
+        question: "What is the investment for coaching?",
         answer:
-          "Current Rate: 500 MXN ($25 USD) per session. 12-Session Package: 6,000 MXN / $300 USD. Why this is different from standard English classes: Most English classes focus on generic grammar and textbook scenarios. I operate as your strategic communication partner. We work directly on your real-world challenges: your upcoming board presentation, your salary negotiation, or your client emails. Every session is fully customized to your industry and your specific KPIs. You aren't just learning English; you are acquiring the executive presence needed to close deals and advance your career. Because of the high level of customization and preparation required for this level of coaching, I do not offer volume discounts.",
+          "The current rate is 500 MXN ($25 USD) per session or 6,000 MXN ($300 USD) for a 12-session executive roadmap. Why no volume discounts? Unlike standard English tutors who follow a generic script, I operate as your strategic communication partner. Every session is custom-built around your specific industry KPIs, upcoming board presentations, and negotiation targets. You aren't just paying for 'classes'; you are investing in the executive presence needed to close deals.",
       },
       {
         question: "How long does it take to see results?",
         answer:
-          "Most students see clear progress within 5–8 sessions: faster response times in meetings, more confident negotiation, and the ability to 'own the room' without translating in their head. The speed depends on your practice outside of sessions, lesson frequency, and specific goals.",
+          "You will feel a shift in confidence and clarity immediately after our first strategy session. For measurable changes in fluency and executive presence, most clients see significant ROI within the 12-session roadmap. We don't aim for 'perfect grammar' in 5 years; we aim for 'effective leadership communication' in 3 months.",
       },
       {
         question: "Do you work with teams or individuals?",
         answer:
-          "Both. I work with individual professionals who want to advance their careers, and I design custom training programs for teams and companies. Whether it's one-on-one executive coaching or a team workshop, the approach is tailored to your specific needs.",
+          "Both. I provide 1-on-1 Executive Coaching for C-Suite leaders and Directors who need confidentiality and precision. I also lead Corporate Training for IT and Engineering teams who need to bridge the gap between technical code and business communication.",
       },
       {
         question: "How is this different from traditional English classes?",
         answer:
-          "Traditional ESL courses focus on grammar rules and vocabulary lists. I focus on real-time performance under pressure—handling Q&A, negotiating in English, and projecting authority in high-stakes meetings. You won't be memorizing verb tenses; you'll be practicing the exact scenarios you face at work.",
+          "Traditional classes focus on textbooks and grammar rules. We focus on your reality. We use your actual emails, your slide decks, and your upcoming meeting agendas as our learning materials. We simulate your high-pressure scenarios so you can perform when it counts.",
       },
       {
-        question: "What if my team is in different time zones?",
+        question: "What's included in the complimentary strategy session?",
         answer:
-          "I work with clients across North America and Latin America. Sessions are conducted online via Google Meet, making it easy to coordinate across time zones. We'll find a schedule that works for your team.",
-      },
-      {
-        question: "What's included in the free consultation?",
-        answer:
-          "A 15-minute conversation where we discuss your specific challenges, goals, and timeline. No pitch, no pressure—just an honest assessment of whether this approach is right for you. You'll walk away with clarity on your next steps, whether you work with me or not.",
+          "This is a diagnostic call, not a sales pitch. We will assess your current communication gaps, identify your 'money-making' language goals, and outline a 30-day roadmap to fix them. You will leave with a clear plan, whether you decide to hire me or not.",
       },
     ],
     ctaText: "Still have questions?",
@@ -71,35 +66,30 @@ export const homepageFAQs: HomepageFAQData = {
     subtitle: "Todo lo que necesitas saber antes de hablar",
     faqs: [
       {
-        question: "¿Cuál es el costo de tu coaching?",
+        question: "¿Cuál es la inversión para el coaching?",
         answer:
-          "Tarifa Actual: 500 MXN ($25 USD) por sesión. Paquete de 12 Sesiones: 6,000 MXN / $300 USD. Por qué esto es diferente de las clases de inglés estándar: La mayoría de las clases de inglés se enfocan en gramática genérica y escenarios de libros de texto. Yo opero como tu socio estratégico de comunicación. Trabajamos directamente en tus desafíos del mundo real: tu próxima presentación ante la junta, tu negociación salarial o tus correos con clientes. Cada sesión está completamente personalizada para tu industria y tus KPIs específicos. No solo estás aprendiendo inglés; estás adquiriendo la presencia ejecutiva necesaria para cerrar tratos y avanzar en tu carrera. Debido al alto nivel de personalización y preparación requerido para este nivel de coaching, no ofrezco descuentos por volumen.",
+          "La tarifa actual es de 500 MXN ($25 USD) por sesión o 6,000 MXN ($300 USD) por un plan ejecutivo de 12 sesiones. ¿Por qué no hay descuentos por volumen? A diferencia de los tutores de inglés estándar que siguen un guion genérico, yo opero como tu socio estratégico de comunicación. Cada sesión está construida a medida en torno a tus KPIs específicos de la industria, tus próximas presentaciones ante la junta y tus objetivos de negociación. No solo estás pagando por 'clases'; estás invirtiendo en la presencia ejecutiva necesaria para cerrar tratos.",
       },
       {
         question: "¿Cuánto tiempo toma ver resultados?",
         answer:
-          "La mayoría de los estudiantes ven progreso claro en 5–8 sesiones: tiempos de respuesta más rápidos en reuniones, negociación más confiada y la capacidad de 'dominar la sala' sin traducir en su cabeza. La velocidad depende de tu práctica fuera de las sesiones, frecuencia de lecciones y objetivos específicos.",
+          "Sentirás un cambio en confianza y claridad inmediatamente después de nuestra primera sesión estratégica. Para cambios medibles en fluidez y presencia ejecutiva, la mayoría de los clientes ven un ROI significativo dentro del plan de 12 sesiones. No apuntamos a 'gramática perfecta' en 5 años; apuntamos a 'comunicación de liderazgo efectiva' en 3 meses.",
       },
       {
         question: "¿Trabajas con equipos o individuos?",
         answer:
-          "Ambos. Trabajo con profesionales individuales que quieren avanzar en sus carreras, y diseño programas de capacitación personalizados para equipos y empresas. Ya sea coaching ejecutivo uno a uno o un taller de equipo, el enfoque se adapta a tus necesidades específicas.",
+          "Ambos. Proporciono Coaching Ejecutivo 1-a-1 para líderes de C-Suite y Directores que necesitan confidencialidad y precisión. También dirijo Capacitación Corporativa para equipos de TI e Ingeniería que necesitan cerrar la brecha entre código técnico y comunicación de negocios.",
       },
       {
         question:
           "¿En qué se diferencia esto de las clases de inglés tradicionales?",
         answer:
-          "Los cursos de ESL tradicionales se enfocan en reglas gramaticales y listas de vocabulario. Yo me enfoco en el desempeño en tiempo real bajo presión—manejar preguntas y respuestas, negociar en inglés y proyectar autoridad en reuniones de alto riesgo. No memorizarás tiempos verbales; practicarás los escenarios exactos que enfrentas en el trabajo.",
+          "Las clases tradicionales se enfocan en libros de texto y reglas gramaticales. Nosotros nos enfocamos en tu realidad. Usamos tus correos reales, tus presentaciones y tus agendas de reuniones próximas como materiales de aprendizaje. Simulamos tus escenarios de alta presión para que puedas rendir cuando cuenta.",
       },
       {
-        question: "¿Qué pasa si mi equipo está en diferentes zonas horarias?",
+        question: "¿Qué incluye la sesión estratégica de cortesía?",
         answer:
-          "Trabajo con clientes en toda Norteamérica y Latinoamérica. Las sesiones se realizan en línea por Google Meet, lo que facilita la coordinación entre zonas horarias. Encontraremos un horario que funcione para tu equipo.",
-      },
-      {
-        question: "¿Qué incluye la consulta gratuita?",
-        answer:
-          "Una conversación de 15 minutos donde discutimos tus desafíos específicos, objetivos y cronograma. Sin ventas, sin presión—solo una evaluación honesta de si este enfoque es adecuado para ti. Saldrás con claridad sobre tus próximos pasos, trabajes conmigo o no.",
+          "Esta es una llamada de diagnóstico, no un discurso de ventas. Evaluaremos tus brechas de comunicación actuales, identificaremos tus objetivos de lenguaje 'generadores de dinero' y delinearemos un plan de 30 días para solucionarlos. Saldrás con un plan claro, decidas contratarme o no.",
       },
     ],
     ctaText: "¿Aún tienes preguntas?",

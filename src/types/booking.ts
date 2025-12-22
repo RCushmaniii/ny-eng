@@ -4,7 +4,7 @@ export interface BookingRequest {
   date: string; // ISO string
   time: string;
   timezone: string;
-  lang: 'en' | 'es';
+  lang: "en" | "es";
 }
 
 export interface GoogleCalendarEvent {
@@ -26,7 +26,7 @@ export interface GoogleCalendarEvent {
     createRequest: {
       requestId: string;
       conferenceSolutionKey: {
-        type: 'hangoutsMeet';
+        type: "hangoutsMeet";
       };
     };
   };

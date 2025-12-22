@@ -14,12 +14,29 @@
     "timeToComplete": "6 minutes",
     "estimatedMinutes": 6,
     "pageCount": 4,
-    "tags": ["difficult-conversations", "conflict", "preparation", "leadership", "management"]
+    "tags": [
+      "difficult-conversations",
+      "conflict",
+      "preparation",
+      "leadership",
+      "management"
+    ]
   },
   "targeting": {
-    "primaryPersona": ["manager", "executive", "hr-professional", "consultant", "all"],
+    "primaryPersona": [
+      "manager",
+      "executive",
+      "hr-professional",
+      "consultant",
+      "all"
+    ],
     "industries": ["technology", "professional-services", "all"],
-    "scenarios": ["difficult-conversations", "performance-feedback", "negotiations", "crisis-management"],
+    "scenarios": [
+      "difficult-conversations",
+      "performance-feedback",
+      "negotiations",
+      "crisis-management"
+    ],
     "painPoints": [
       "Dreading difficult conversations",
       "Conversations going sideways unexpectedly",
@@ -30,11 +47,20 @@
   "conversion": {
     "ctaType": "strategy-call",
     "nextStep": "Book a free strategy call to practice handling your most challenging conversations",
-    "relatedAssets": ["feedback-framework", "pushback-playbook", "email-templates-difficult-situations"]
+    "relatedAssets": [
+      "feedback-framework",
+      "pushback-playbook",
+      "email-templates-difficult-situations"
+    ]
   },
   "seo": {
     "metaDescription": "Get the 10-point checklist for preparing difficult conversations. Walk in confident, stay in control, and get the outcome you need.",
-    "keywords": ["difficult conversation checklist", "how to prepare for hard conversations", "conflict resolution at work", "having tough conversations"]
+    "keywords": [
+      "difficult conversation checklist",
+      "how to prepare for hard conversations",
+      "conflict resolution at work",
+      "having tough conversations"
+    ]
   },
   "slugEn": "difficult-conversation-checklist",
   "slugEs": "checklist-conversaciones-dificiles",

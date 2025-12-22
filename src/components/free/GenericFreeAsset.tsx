@@ -1,5 +1,14 @@
 import { useState } from "react";
-import { Download, Calendar, ArrowRight, Target, Clock, X, Check, Lightbulb } from "lucide-react";
+import {
+  Download,
+  Calendar,
+  ArrowRight,
+  Target,
+  Clock,
+  X,
+  Check,
+  Lightbulb,
+} from "lucide-react";
 
 // =============================================================================
 // TYPES
@@ -46,11 +55,43 @@ function TabButton({ active, onClick, children }: TabButtonProps) {
 // =============================================================================
 
 // Questions Content Type (like 5-questions)
-function QuestionsContent({ content, lang }: { content: any; lang: "en" | "es" }) {
+function QuestionsContent({
+  content,
+  lang,
+}: {
+  content: any;
+  lang: "en" | "es";
+}) {
   const currentContent = content[lang];
-  
-  // Support both 'questions' and 'sentences' arrays
-  const items = currentContent.questions || currentContent.sentences || [];
+
+  // Support both old schema (questions/sentences at root) and new schema (sections with items)
+  let items = currentContent.questions || currentContent.sentences || [];
+
+  // If no items found at root, check sections array
+  if (
+    items.length === 0 &&
+    currentContent.sections &&
+    currentContent.sections.length > 0
+  ) {
+    // Find the first section with items (usually the questions section)
+    const questionsSection = currentContent.sections.find(
+      (s: any) => s.items && s.items.length > 0,
+    );
+    if (questionsSection) {
+      items = questionsSection.items;
+    }
+  }
+
+  // Get labels - provide defaults if not present
+  const labels = currentContent.labels || {
+    why: lang === "en" ? "Why it works" : "Por qué funciona",
+    when: lang === "en" ? "When to use" : "Cuándo usar",
+    doNotSay: lang === "en" ? "Avoid saying" : "Evita decir",
+    howToSay: lang === "en" ? "Say it like this" : "Dilo así",
+    variations: lang === "en" ? "Variations" : "Variaciones",
+    situation: lang === "en" ? "Situation" : "Situación",
+    seniorQuestion: lang === "en" ? "Senior Question" : "Pregunta Senior",
+  };
 
   return (
     <>
@@ -62,7 +103,7 @@ function QuestionsContent({ content, lang }: { content: any; lang: "en" | "es" }
               <QuestionCard
                 key={question.number}
                 question={question}
-                labels={currentContent.labels}
+                labels={labels}
               />
             ))}
           </div>
@@ -90,7 +131,9 @@ function QuestionsContent({ content, lang }: { content: any; lang: "en" | "es" }
                   <div className="font-bold text-slate-900 text-lg mb-2">
                     {item.bold}
                   </div>
-                  <div className="text-slate-600 text-sm leading-relaxed">{item.text}</div>
+                  <div className="text-slate-600 text-sm leading-relaxed">
+                    {item.text}
+                  </div>
                 </div>
               ))}
             </div>
@@ -118,26 +161,29 @@ function QuestionsContent({ content, lang }: { content: any; lang: "en" | "es" }
                       {currentContent.labels.situation}
                     </th>
                     <th className="px-6 py-4 text-left font-semibold rounded-tr-xl">
-                      {currentContent.labels.structure || currentContent.labels.seniorQuestion}
+                      {currentContent.labels.structure ||
+                        currentContent.labels.seniorQuestion}
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {currentContent.quickRef.rows?.map((row: any, index: number) => (
-                    <tr
-                      key={index}
-                      className={`border-b border-slate-200 ${
-                        index % 2 === 0 ? "bg-slate-50" : "bg-white"
-                      } hover:bg-blue-50 transition-colors`}
-                    >
-                      <td className="px-6 py-4 font-medium text-slate-700">
-                        {row.situation}
-                      </td>
-                      <td className="px-6 py-4 text-slate-600">
-                        "{row.structure || row.question}"
-                      </td>
-                    </tr>
-                  ))}
+                  {currentContent.quickRef.rows?.map(
+                    (row: any, index: number) => (
+                      <tr
+                        key={index}
+                        className={`border-b border-slate-200 ${
+                          index % 2 === 0 ? "bg-slate-50" : "bg-white"
+                        } hover:bg-blue-50 transition-colors`}
+                      >
+                        <td className="px-6 py-4 font-medium text-slate-700">
+                          {row.situation}
+                        </td>
+                        <td className="px-6 py-4 text-slate-600">
+                          "{row.structure || row.question}"
+                        </td>
+                      </tr>
+                    ),
+                  )}
                 </tbody>
               </table>
             </div>
@@ -149,7 +195,13 @@ function QuestionsContent({ content, lang }: { content: any; lang: "en" | "es" }
 }
 
 // Sections Content Type (for scripts, templates, frameworks, guides)
-function SectionsContent({ content, lang }: { content: any; lang: "en" | "es" }) {
+function SectionsContent({
+  content,
+  lang,
+}: {
+  content: any;
+  lang: "en" | "es";
+}) {
   const currentContent = content[lang];
   const sections = currentContent.sections || [];
 
@@ -158,14 +210,19 @@ function SectionsContent({ content, lang }: { content: any; lang: "en" | "es" })
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="space-y-12">
           {sections.map((section: any, index: number) => (
-            <div key={section.id || index} className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200">
+            <div
+              key={section.id || index}
+              className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200"
+            >
               {/* Section Header */}
               <div className="mb-6 pb-4 border-b border-slate-100">
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
                   {section.title}
                 </h2>
                 {section.description && (
-                  <p className="text-lg text-slate-600">{section.description}</p>
+                  <p className="text-lg text-slate-600">
+                    {section.description}
+                  </p>
                 )}
                 {section.timing && (
                   <p className="text-sm text-blue-600 mt-2 flex items-center gap-2">
@@ -180,55 +237,123 @@ function SectionsContent({ content, lang }: { content: any; lang: "en" | "es" })
                 <div className="mb-6 p-4 bg-amber-50 rounded-xl border border-amber-100">
                   <div className="flex items-start gap-3">
                     <Lightbulb className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-slate-700 leading-relaxed">{section.principle}</p>
+                    <p className="text-slate-700 leading-relaxed">
+                      {section.principle}
+                    </p>
                   </div>
                 </div>
               )}
 
               {/* Generic content field */}
-              {section.content && !section.subsections && !section.scripts && !section.scenarios && !section.mistakes && !section.days && !section.items && (
-                <p className="text-slate-700 leading-relaxed whitespace-pre-line">{section.content}</p>
-              )}
+              {section.content &&
+                !section.subsections &&
+                !section.scripts &&
+                !section.scenarios &&
+                !section.mistakes &&
+                !section.days &&
+                !section.items && (
+                  <div className="mb-6">
+                    <p className="text-slate-700 leading-relaxed whitespace-pre-line">
+                      {section.content}
+                    </p>
+                    {/* Section-level example (string) */}
+                    {section.example && typeof section.example === "string" && (
+                      <div className="mt-4 bg-blue-50 rounded-lg p-4 border border-blue-200">
+                        <p className="text-sm font-semibold text-blue-900 mb-2">
+                          {lang === "en" ? "Example:" : "Ejemplo:"}
+                        </p>
+                        <p className="text-slate-700 italic leading-relaxed">
+                          {section.example}
+                        </p>
+                      </div>
+                    )}
+                    {/* Section-level actionItem */}
+                    {section.actionItem && (
+                      <div className="mt-4 bg-amber-50 rounded-lg p-4 border border-amber-200">
+                        <p className="text-sm font-semibold text-amber-900 mb-2 flex items-center gap-2">
+                          <Lightbulb className="w-4 h-4" />
+                          {lang === "en" ? "Action Item:" : "Acción:"}
+                        </p>
+                        <p className="text-slate-700">{section.actionItem}</p>
+                      </div>
+                    )}
+                  </div>
+                )}
 
               {/* Items (for principles, mistakes, quick wins with examples) */}
               {section.items && section.items.length > 0 && (
                 <div className="space-y-8">
                   {section.items.map((item: any, itemIndex: number) => (
-                    <div key={itemIndex} className="bg-white rounded-lg p-6 border border-slate-200">
+                    <div
+                      key={itemIndex}
+                      className="bg-white rounded-lg p-6 border border-slate-200"
+                    >
                       <div className="flex items-start gap-4 mb-4">
                         <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
                           {item.number}
                         </span>
                         <div className="flex-1">
-                          <h4 className="text-xl font-bold text-slate-900 mb-2">{item.title || item.mistake}</h4>
-                          {item.content && <p className="text-slate-700 leading-relaxed">{item.content}</p>}
-                          {item.problem && <p className="text-slate-700 leading-relaxed">{item.problem}</p>}
+                          <h4 className="text-xl font-bold text-slate-900 mb-2">
+                            {item.title || item.mistake || item.phrase}
+                          </h4>
+                          {item.content && (
+                            <p className="text-slate-700 leading-relaxed">
+                              {item.content}
+                            </p>
+                          )}
+                          {item.problem && (
+                            <p className="text-slate-700 leading-relaxed">
+                              {item.problem}
+                            </p>
+                          )}
+                          {item.situation && (
+                            <p className="text-slate-600 text-sm mt-2 italic">
+                              <span className="font-semibold">
+                                {lang === "en"
+                                  ? "When to use:"
+                                  : "Cuándo usar:"}
+                              </span>{" "}
+                              {item.situation}
+                            </p>
+                          )}
                         </div>
                       </div>
-                      
+
                       {/* Example with wrong/right comparison */}
-                      {item.example && (
+                      {item.example && typeof item.example === "object" && (
                         <div className="space-y-3 mb-4">
-                          <div className="bg-red-50 rounded-lg p-4 border border-red-200">
-                            <p className="text-sm font-semibold text-red-900 mb-2 flex items-center gap-2">
-                              <X className="w-4 h-4" />
-                              {lang === "en" ? "Wrong:" : "Incorrecto:"}
-                            </p>
-                            <p className="text-slate-700 italic">"{item.example.wrong || item.wrongExample}"</p>
-                          </div>
-                          <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-                            <p className="text-sm font-semibold text-green-900 mb-2 flex items-center gap-2">
-                              <Check className="w-4 h-4" />
-                              {lang === "en" ? "Right:" : "Correcto:"}
-                            </p>
-                            <p className="text-slate-700 italic font-medium">"{item.example.right || item.rightExample}"</p>
-                          </div>
+                          {(item.example.wrong || item.wrongExample) && (
+                            <div className="bg-red-50 rounded-lg p-4 border border-red-200">
+                              <p className="text-sm font-semibold text-red-900 mb-2 flex items-center gap-2">
+                                <X className="w-4 h-4" />
+                                {lang === "en" ? "Wrong:" : "Incorrecto:"}
+                              </p>
+                              <p className="text-slate-700 italic">
+                                "{item.example.wrong || item.wrongExample}"
+                              </p>
+                            </div>
+                          )}
+                          {(item.example.right || item.rightExample) && (
+                            <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+                              <p className="text-sm font-semibold text-green-900 mb-2 flex items-center gap-2">
+                                <Check className="w-4 h-4" />
+                                {lang === "en" ? "Right:" : "Correcto:"}
+                              </p>
+                              <p className="text-slate-700 italic font-medium">
+                                "{item.example.right || item.rightExample}"
+                              </p>
+                            </div>
+                          )}
                           {item.example.why && (
                             <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
                               <p className="text-sm font-semibold text-blue-900 mb-2">
-                                {lang === "en" ? "Why it matters:" : "Por qué importa:"}
+                                {lang === "en"
+                                  ? "Why it matters:"
+                                  : "Por qué importa:"}
                               </p>
-                              <p className="text-slate-700">{item.example.why}</p>
+                              <p className="text-slate-700">
+                                {item.example.why}
+                              </p>
                             </div>
                           )}
                         </div>
@@ -241,6 +366,30 @@ function SectionsContent({ content, lang }: { content: any; lang: "en" | "es" })
                             {lang === "en" ? "The Fix:" : "La Solución:"}
                           </p>
                           <p className="text-slate-700">{item.fix}</p>
+                        </div>
+                      )}
+
+                      {/* Why (for meeting rescue phrases) */}
+                      {item.why && (
+                        <div className="bg-blue-50 rounded-lg p-4 border border-blue-200 mb-4">
+                          <p className="text-sm font-semibold text-blue-900 mb-2">
+                            {lang === "en"
+                              ? "Why it works:"
+                              : "Por qué funciona:"}
+                          </p>
+                          <p className="text-slate-700">{item.why}</p>
+                        </div>
+                      )}
+
+                      {/* Alternative (for meeting rescue phrases) */}
+                      {item.alternative && (
+                        <div className="bg-slate-50 rounded-lg p-4 border border-slate-200 mb-4">
+                          <p className="text-sm font-semibold text-slate-700 mb-2">
+                            {lang === "en" ? "Alternative:" : "Alternativa:"}
+                          </p>
+                          <p className="text-slate-700 italic">
+                            "{item.alternative}"
+                          </p>
                         </div>
                       )}
 
@@ -262,79 +411,135 @@ function SectionsContent({ content, lang }: { content: any; lang: "en" | "es" })
               {/* Subsections (for nested content like 4-part formulas) */}
               {section.subsections && section.subsections.length > 0 && (
                 <div className="space-y-8">
-                  {section.subsections.map((subsection: any, subIndex: number) => (
-                    <div key={subIndex} className="border-l-4 border-blue-500 pl-6">
-                      <h3 className="text-xl font-bold text-slate-900 mb-3">{subsection.title}</h3>
-                      {subsection.content && <p className="text-slate-700 mb-4">{subsection.content}</p>}
-                      {subsection.purpose && (
-                        <p className="text-sm text-slate-600 italic mb-3">Purpose: {subsection.purpose}</p>
-                      )}
-                      {subsection.formula && (
-                        <div className="bg-blue-50 rounded-lg p-4 mb-4">
-                          <p className="font-mono text-blue-900">{subsection.formula}</p>
-                        </div>
-                      )}
-                      {subsection.examples && subsection.examples.length > 0 && (
-                        <div className="space-y-4 mb-4">
-                          {subsection.examples.map((example: any, exIndex: number) => {
-                            // Handle both string examples and object examples with scenario/script
-                            if (typeof example === 'string') {
-                              return (
-                                <p key={exIndex} className="text-slate-700 pl-4 border-l-2 border-slate-200 italic">
-                                  "{example}"
-                                </p>
-                              );
-                            } else if (example.scenario && example.script) {
-                              return (
-                                <div key={exIndex} className="bg-slate-50 rounded-lg p-4">
-                                  <h5 className="font-semibold text-slate-900 mb-2">{example.scenario}</h5>
-                                  <p className="text-slate-700 italic leading-relaxed">"{example.script}"</p>
-                                </div>
-                              );
-                            }
-                            return null;
-                          })}
-                        </div>
-                      )}
-                      {subsection.tips && subsection.tips.length > 0 && (
-                        <ul className="space-y-2">
-                          {subsection.tips.map((tip: string, tipIndex: number) => (
-                            <li key={tipIndex} className="flex items-start gap-2 text-sm text-slate-600">
-                              <Lightbulb className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
-                              {tip}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                      {subsection.steps && subsection.steps.length > 0 && (
-                        <div className="space-y-4">
-                          {subsection.steps.map((step: any, stepIndex: number) => (
-                            <div key={stepIndex} className="bg-slate-50 rounded-lg p-4">
-                              <div className="flex items-start gap-3 mb-2">
-                                <span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                                  {step.step}
-                                </span>
-                                <div className="flex-1">
-                                  <h4 className="font-semibold text-slate-900">{step.name}</h4>
-                                  {step.duration && <p className="text-xs text-slate-500">{step.duration}</p>}
-                                </div>
-                              </div>
-                              {step.purpose && <p className="text-sm text-slate-600 mb-3">{step.purpose}</p>}
-                              {step.scripts && step.scripts.length > 0 && (
-                                <div className="space-y-2">
-                                  {step.scripts.map((script: string, sIndex: number) => (
-                                    <p key={sIndex} className="text-slate-700 pl-4 border-l-2 border-blue-300 italic text-sm">
-                                      "{script}"
-                                    </p>
-                                  ))}
-                                </div>
+                  {section.subsections.map(
+                    (subsection: any, subIndex: number) => (
+                      <div
+                        key={subIndex}
+                        className="border-l-4 border-blue-500 pl-6"
+                      >
+                        <h3 className="text-xl font-bold text-slate-900 mb-3">
+                          {subsection.title}
+                        </h3>
+                        {subsection.content && (
+                          <p className="text-slate-700 mb-4">
+                            {subsection.content}
+                          </p>
+                        )}
+                        {subsection.purpose && (
+                          <p className="text-sm text-slate-600 italic mb-3">
+                            Purpose: {subsection.purpose}
+                          </p>
+                        )}
+                        {subsection.formula && (
+                          <div className="bg-blue-50 rounded-lg p-4 mb-4">
+                            <p className="font-mono text-blue-900">
+                              {subsection.formula}
+                            </p>
+                          </div>
+                        )}
+                        {subsection.examples &&
+                          subsection.examples.length > 0 && (
+                            <div className="space-y-4 mb-4">
+                              {subsection.examples.map(
+                                (example: any, exIndex: number) => {
+                                  // Handle both string examples and object examples with scenario/script
+                                  if (typeof example === "string") {
+                                    return (
+                                      <p
+                                        key={exIndex}
+                                        className="text-slate-700 pl-4 border-l-2 border-slate-200 italic"
+                                      >
+                                        "{example}"
+                                      </p>
+                                    );
+                                  } else if (
+                                    example.scenario &&
+                                    example.script
+                                  ) {
+                                    return (
+                                      <div
+                                        key={exIndex}
+                                        className="bg-slate-50 rounded-lg p-4"
+                                      >
+                                        <h5 className="font-semibold text-slate-900 mb-2">
+                                          {example.scenario}
+                                        </h5>
+                                        <p className="text-slate-700 italic leading-relaxed">
+                                          "{example.script}"
+                                        </p>
+                                      </div>
+                                    );
+                                  }
+                                  return null;
+                                },
                               )}
                             </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ))}
+                          )}
+                        {subsection.tips && subsection.tips.length > 0 && (
+                          <ul className="space-y-2">
+                            {subsection.tips.map(
+                              (tip: string, tipIndex: number) => (
+                                <li
+                                  key={tipIndex}
+                                  className="flex items-start gap-2 text-sm text-slate-600"
+                                >
+                                  <Lightbulb className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
+                                  {tip}
+                                </li>
+                              ),
+                            )}
+                          </ul>
+                        )}
+                        {subsection.steps && subsection.steps.length > 0 && (
+                          <div className="space-y-4">
+                            {subsection.steps.map(
+                              (step: any, stepIndex: number) => (
+                                <div
+                                  key={stepIndex}
+                                  className="bg-slate-50 rounded-lg p-4"
+                                >
+                                  <div className="flex items-start gap-3 mb-2">
+                                    <span className="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                                      {step.step}
+                                    </span>
+                                    <div className="flex-1">
+                                      <h4 className="font-semibold text-slate-900">
+                                        {step.name}
+                                      </h4>
+                                      {step.duration && (
+                                        <p className="text-xs text-slate-500">
+                                          {step.duration}
+                                        </p>
+                                      )}
+                                    </div>
+                                  </div>
+                                  {step.purpose && (
+                                    <p className="text-sm text-slate-600 mb-3">
+                                      {step.purpose}
+                                    </p>
+                                  )}
+                                  {step.scripts && step.scripts.length > 0 && (
+                                    <div className="space-y-2">
+                                      {step.scripts.map(
+                                        (script: string, sIndex: number) => (
+                                          <p
+                                            key={sIndex}
+                                            className="text-slate-700 pl-4 border-l-2 border-blue-300 italic text-sm"
+                                          >
+                                            "{script}"
+                                          </p>
+                                        ),
+                                      )}
+                                    </div>
+                                  )}
+                                </div>
+                              ),
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    ),
+                  )}
                 </div>
               )}
 
@@ -343,21 +548,31 @@ function SectionsContent({ content, lang }: { content: any; lang: "en" | "es" })
                 <div className="space-y-6">
                   {section.scenarios.map((scenario: any, scenIndex: number) => (
                     <div key={scenIndex} className="bg-slate-50 rounded-lg p-6">
-                      <h4 className="font-semibold text-slate-900 mb-3">{scenario.scenario}</h4>
+                      <h4 className="font-semibold text-slate-900 mb-3">
+                        {scenario.scenario}
+                      </h4>
                       {scenario.template && (
                         <div className="bg-white rounded-lg p-4 mb-4 border-2 border-dashed border-slate-300">
-                          <p className="text-slate-700 text-sm leading-relaxed">{scenario.template}</p>
+                          <p className="text-slate-700 text-sm leading-relaxed">
+                            {scenario.template}
+                          </p>
                         </div>
                       )}
                       {scenario.example && (
                         <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                          <p className="text-sm font-semibold text-blue-900 mb-2">Example:</p>
-                          <p className="text-slate-700 italic">{scenario.example}</p>
+                          <p className="text-sm font-semibold text-blue-900 mb-2">
+                            Example:
+                          </p>
+                          <p className="text-slate-700 italic">
+                            {scenario.example}
+                          </p>
                         </div>
                       )}
                       {scenario.script && (
                         <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                          <p className="text-slate-700 italic">"{scenario.script}"</p>
+                          <p className="text-slate-700 italic">
+                            "{scenario.script}"
+                          </p>
                         </div>
                       )}
                     </div>
@@ -368,23 +583,30 @@ function SectionsContent({ content, lang }: { content: any; lang: "en" | "es" })
               {/* Mistakes (for common errors) */}
               {section.mistakes && section.mistakes.length > 0 && (
                 <div className="space-y-4">
-                  {section.mistakes.map((mistake: any, mistakeIndex: number) => (
-                    <div key={mistakeIndex} className="border border-red-200 rounded-lg p-4 bg-red-50">
-                      <h4 className="font-semibold text-red-900 mb-2">{mistake.mistake}</h4>
-                      {mistake.example && (
-                        <p className="text-sm text-red-700 mb-2 pl-4 border-l-2 border-red-300">
-                          <X className="inline w-3 h-3 mr-1" />
-                          {mistake.example}
-                        </p>
-                      )}
-                      {mistake.fix && (
-                        <p className="text-sm text-green-700 pl-4 border-l-2 border-green-400">
-                          <Check className="inline w-3 h-3 mr-1" />
-                          {mistake.fix}
-                        </p>
-                      )}
-                    </div>
-                  ))}
+                  {section.mistakes.map(
+                    (mistake: any, mistakeIndex: number) => (
+                      <div
+                        key={mistakeIndex}
+                        className="border border-red-200 rounded-lg p-4 bg-red-50"
+                      >
+                        <h4 className="font-semibold text-red-900 mb-2">
+                          {mistake.mistake}
+                        </h4>
+                        {mistake.example && (
+                          <p className="text-sm text-red-700 mb-2 pl-4 border-l-2 border-red-300">
+                            <X className="inline w-3 h-3 mr-1" />
+                            {mistake.example}
+                          </p>
+                        )}
+                        {mistake.fix && (
+                          <p className="text-sm text-green-700 pl-4 border-l-2 border-green-400">
+                            <Check className="inline w-3 h-3 mr-1" />
+                            {mistake.fix}
+                          </p>
+                        )}
+                      </div>
+                    ),
+                  )}
                 </div>
               )}
 
@@ -393,11 +615,16 @@ function SectionsContent({ content, lang }: { content: any; lang: "en" | "es" })
                 <div className="space-y-6">
                   {section.days.map((day: any, dayIndex: number) => (
                     <div key={dayIndex} className="bg-slate-50 rounded-lg p-6">
-                      <h4 className="font-semibold text-slate-900 mb-4">{day.day}</h4>
+                      <h4 className="font-semibold text-slate-900 mb-4">
+                        {day.day}
+                      </h4>
                       {day.tasks && day.tasks.length > 0 && (
                         <ul className="space-y-2">
                           {day.tasks.map((task: string, taskIndex: number) => (
-                            <li key={taskIndex} className="flex items-start gap-2 text-slate-700">
+                            <li
+                              key={taskIndex}
+                              className="flex items-start gap-2 text-slate-700"
+                            >
                               <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                               {task}
                             </li>
@@ -414,15 +641,22 @@ function SectionsContent({ content, lang }: { content: any; lang: "en" | "es" })
                 <div className="space-y-6">
                   {section.categories.map((category: any, catIndex: number) => (
                     <div key={catIndex} className="bg-slate-50 rounded-lg p-6">
-                      <h4 className="font-semibold text-slate-900 mb-4">{category.category}</h4>
+                      <h4 className="font-semibold text-slate-900 mb-4">
+                        {category.category}
+                      </h4>
                       {category.phrases && category.phrases.length > 0 && (
                         <ul className="space-y-3">
-                          {category.phrases.map((phrase: string, phraseIndex: number) => (
-                            <li key={phraseIndex} className="flex items-start gap-3 text-slate-700">
-                              <span className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2"></span>
-                              <span className="italic">"{phrase}"</span>
-                            </li>
-                          ))}
+                          {category.phrases.map(
+                            (phrase: string, phraseIndex: number) => (
+                              <li
+                                key={phraseIndex}
+                                className="flex items-start gap-3 text-slate-700"
+                              >
+                                <span className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2"></span>
+                                <span className="italic">"{phrase}"</span>
+                              </li>
+                            ),
+                          )}
                         </ul>
                       )}
                     </div>
@@ -434,26 +668,43 @@ function SectionsContent({ content, lang }: { content: any; lang: "en" | "es" })
               {section.scripts && section.scripts.length > 0 && (
                 <div className="space-y-6">
                   {section.scripts.map((script: any, scriptIndex: number) => (
-                    <div key={scriptIndex} className="border-l-4 border-blue-500 pl-4 py-2">
-                      <h4 className="font-semibold text-slate-800 mb-2">{script.situation}</h4>
+                    <div
+                      key={scriptIndex}
+                      className="border-l-4 border-blue-500 pl-4 py-2"
+                    >
+                      <h4 className="font-semibold text-slate-800 mb-2">
+                        {script.situation}
+                      </h4>
                       <div className="bg-slate-50 rounded-lg p-4 mb-3">
-                        <p className="text-slate-900 font-medium italic">"{script.script}"</p>
+                        <p className="text-slate-900 font-medium italic">
+                          "{script.script}"
+                        </p>
                       </div>
                       {script.notes && script.notes.length > 0 && (
                         <ul className="space-y-1 text-sm text-slate-600">
-                          {script.notes.map((note: string, noteIndex: number) => (
-                            <li key={noteIndex} className="flex items-start gap-2">
-                              <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                              {note}
-                            </li>
-                          ))}
+                          {script.notes.map(
+                            (note: string, noteIndex: number) => (
+                              <li
+                                key={noteIndex}
+                                className="flex items-start gap-2"
+                              >
+                                <Check className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                                {note}
+                              </li>
+                            ),
+                          )}
                         </ul>
                       )}
                       {script.avoid && (
                         <div className="mt-3 p-3 bg-red-50 rounded-lg border border-red-100">
                           <p className="text-sm text-red-700 flex items-start gap-2">
                             <X className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                            <span><strong>{lang === "en" ? "Avoid:" : "Evita:"}</strong> {script.avoid}</span>
+                            <span>
+                              <strong>
+                                {lang === "en" ? "Avoid:" : "Evita:"}
+                              </strong>{" "}
+                              {script.avoid}
+                            </span>
                           </p>
                         </div>
                       )}
@@ -476,24 +727,24 @@ interface QuestionCardProps {
 }
 
 function QuestionCard({ question, labels }: QuestionCardProps) {
-  // Support both 'question' and 'structure' fields
-  const mainText = question.question || question.structure;
+  // Support both old schema (question/structure) and new schema (title)
+  const mainText = question.title || question.question || question.structure;
   const hasExample = question.example;
-  
+
   return (
     <div className="question-card bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 hover:shadow-lg transition-all duration-300">
       {/* Question Number - Large Serif Style */}
       <div className="flex items-start gap-6 mb-6 pb-6 border-b border-slate-100">
         <div className="flex-shrink-0">
           <span className="text-5xl md:text-6xl font-serif text-slate-300 leading-none">
-            {String(question.number).padStart(2, '0')}
+            {String(question.number).padStart(2, "0")}
           </span>
         </div>
         <div className="flex-1 pt-2">
           <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-tight">
             "{mainText}"
           </h3>
-          {hasExample && (
+          {hasExample && typeof question.example === "string" && (
             <p className="text-base text-slate-600 mt-3 italic leading-relaxed">
               {question.example}
             </p>
@@ -514,7 +765,9 @@ function QuestionCard({ question, labels }: QuestionCardProps) {
               <span className="text-xs font-semibold text-emerald-700 uppercase tracking-wide block mb-1">
                 {labels.why}
               </span>
-              <p className="text-slate-700 text-sm leading-relaxed">{question.why}</p>
+              <p className="text-slate-700 text-sm leading-relaxed">
+                {question.why}
+              </p>
             </div>
           </div>
 
@@ -525,7 +778,9 @@ function QuestionCard({ question, labels }: QuestionCardProps) {
               <span className="text-xs font-semibold text-blue-700 uppercase tracking-wide block mb-1">
                 {labels.when}
               </span>
-              <p className="text-slate-700 text-sm leading-relaxed">{question.when}</p>
+              <p className="text-slate-700 text-sm leading-relaxed">
+                {question.when}
+              </p>
             </div>
           </div>
         </div>
@@ -538,22 +793,24 @@ function QuestionCard({ question, labels }: QuestionCardProps) {
         </h4>
         <div className="space-y-3">
           {/* Do Not Say */}
-          <div className="flex items-start gap-3 pl-4 py-1">
-            <X className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
-            <div>
-              <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide block mb-1">
-                {labels.doNotSay}
-              </span>
-              <p className="text-slate-600 text-sm leading-relaxed line-through decoration-red-400">
-                {question.doNotSay.replace(/"/g, '').replace(/\(.*?\)/g, '')}
-              </p>
-              {question.doNotSay.includes('(') && (
-                <p className="text-xs text-slate-500 mt-1 italic">
-                  {question.doNotSay.match(/\((.*?)\)/)?.[1]}
+          {question.doNotSay && (
+            <div className="flex items-start gap-3 pl-4 py-1">
+              <X className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+              <div>
+                <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide block mb-1">
+                  {labels.doNotSay}
+                </span>
+                <p className="text-slate-600 text-sm leading-relaxed line-through decoration-red-400">
+                  {question.doNotSay.replace(/"/g, "").replace(/\(.*?\)/g, "")}
                 </p>
-              )}
+                {question.doNotSay.includes("(") && (
+                  <p className="text-xs text-slate-500 mt-1 italic">
+                    {question.doNotSay.match(/\((.*?)\)/)?.[1]}
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* How to Say */}
           <div className="flex items-start gap-3 border-l-2 border-emerald-600 pl-4 py-1">
@@ -562,7 +819,9 @@ function QuestionCard({ question, labels }: QuestionCardProps) {
               <span className="text-xs font-semibold text-emerald-700 uppercase tracking-wide block mb-1">
                 {labels.howToSay}
               </span>
-              <p className="text-slate-900 text-sm leading-relaxed font-medium">{question.howToSay}</p>
+              <p className="text-slate-900 text-sm leading-relaxed font-medium">
+                {question.howToSay}
+              </p>
             </div>
           </div>
 
@@ -576,12 +835,16 @@ function QuestionCard({ question, labels }: QuestionCardProps) {
                 </span>
                 {Array.isArray(question.variations) ? (
                   <ul className="text-slate-700 text-sm leading-relaxed font-medium space-y-1">
-                    {question.variations.map((variation: string, idx: number) => (
-                      <li key={idx}>• {variation}</li>
-                    ))}
+                    {question.variations.map(
+                      (variation: string, idx: number) => (
+                        <li key={idx}>• {variation}</li>
+                      ),
+                    )}
                   </ul>
                 ) : (
-                  <p className="text-slate-700 text-sm leading-relaxed font-medium">{question.variations}</p>
+                  <p className="text-slate-700 text-sm leading-relaxed font-medium">
+                    {question.variations}
+                  </p>
                 )}
               </div>
             </div>
@@ -601,19 +864,24 @@ export default function GenericFreeAsset({
   lang,
   pdfFile,
   bookingUrl,
-  contentType = "default"
+  contentType = "default",
 }: GenericFreeAssetProps) {
   const [activeTab, setActiveTab] = useState<"en" | "es">(lang);
 
   const currentContent = content[activeTab];
-  
+
   // Safety check - if content is missing, show error message
   if (!currentContent || !currentContent.title) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
         <div className="text-center p-8">
-          <h1 className="text-2xl font-bold text-slate-900 mb-4">Content Not Available</h1>
-          <p className="text-slate-600">This resource is not available in {lang === "en" ? "English" : "Spanish"} yet.</p>
+          <h1 className="text-2xl font-bold text-slate-900 mb-4">
+            Content Not Available
+          </h1>
+          <p className="text-slate-600">
+            This resource is not available in{" "}
+            {lang === "en" ? "English" : "Spanish"} yet.
+          </p>
         </div>
       </div>
     );
@@ -717,10 +985,16 @@ export default function GenericFreeAsset({
 
           {/* Language Tabs */}
           <div className="flex justify-center gap-3 mb-8">
-            <TabButton active={activeTab === "en"} onClick={() => setActiveTab("en")}>
+            <TabButton
+              active={activeTab === "en"}
+              onClick={() => setActiveTab("en")}
+            >
               English
             </TabButton>
-            <TabButton active={activeTab === "es"} onClick={() => setActiveTab("es")}>
+            <TabButton
+              active={activeTab === "es"}
+              onClick={() => setActiveTab("es")}
+            >
               Español
             </TabButton>
           </div>
@@ -728,9 +1002,16 @@ export default function GenericFreeAsset({
       </section>
 
       {/* Content Type Specific Rendering */}
-      {contentType === "questions" && <QuestionsContent content={content} lang={activeTab} />}
-      {contentType === "sentences" && <QuestionsContent content={content} lang={activeTab} />}
-      {(contentType === "script" || contentType === "template" || contentType === "framework" || contentType === "guide") && (
+      {contentType === "questions" && (
+        <QuestionsContent content={content} lang={activeTab} />
+      )}
+      {contentType === "sentences" && (
+        <QuestionsContent content={content} lang={activeTab} />
+      )}
+      {(contentType === "script" ||
+        contentType === "template" ||
+        contentType === "framework" ||
+        contentType === "guide") && (
         <SectionsContent content={content} lang={activeTab} />
       )}
 
@@ -748,7 +1029,9 @@ export default function GenericFreeAsset({
           <p className="text-lg text-slate-700 mb-4 leading-relaxed">
             {currentAbout.text}
           </p>
-          <p className="text-slate-600 leading-relaxed">{currentAbout.subtext}</p>
+          <p className="text-slate-600 leading-relaxed">
+            {currentAbout.subtext}
+          </p>
         </div>
       </section>
 
@@ -772,7 +1055,9 @@ export default function GenericFreeAsset({
                   <h3 className="text-xl font-bold text-slate-900">
                     {currentCta.downloadPdf}
                   </h3>
-                  <p className="text-slate-500 text-sm">{currentCta.downloadSubtext}</p>
+                  <p className="text-slate-500 text-sm">
+                    {currentCta.downloadSubtext}
+                  </p>
                 </div>
               </div>
               <div className="flex items-center text-blue-600 font-medium group-hover:translate-x-2 transition-transform">
@@ -794,7 +1079,9 @@ export default function GenericFreeAsset({
                   <h3 className="text-xl font-bold text-white">
                     {currentCta.bookCall}
                   </h3>
-                  <p className="text-blue-200 text-sm">{currentCta.bookSubtext}</p>
+                  <p className="text-blue-200 text-sm">
+                    {currentCta.bookSubtext}
+                  </p>
                 </div>
               </div>
               <div className="flex items-center text-white font-medium group-hover:translate-x-2 transition-transform">

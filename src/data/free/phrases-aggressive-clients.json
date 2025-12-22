@@ -14,12 +14,30 @@
     "timeToComplete": "5 minutes",
     "estimatedMinutes": 5,
     "pageCount": 4,
-    "tags": ["difficult-clients", "de-escalation", "conflict", "phrases", "composure"]
+    "tags": [
+      "difficult-clients",
+      "de-escalation",
+      "conflict",
+      "phrases",
+      "composure"
+    ]
   },
   "targeting": {
-    "primaryPersona": ["manager", "consultant", "sales", "project-manager", "founder", "all"],
+    "primaryPersona": [
+      "manager",
+      "consultant",
+      "sales",
+      "project-manager",
+      "founder",
+      "all"
+    ],
     "industries": ["technology", "professional-services", "finance", "all"],
-    "scenarios": ["difficult-conversations", "crisis-management", "client-meetings", "negotiations"],
+    "scenarios": [
+      "difficult-conversations",
+      "crisis-management",
+      "client-meetings",
+      "negotiations"
+    ],
     "painPoints": [
       "Freezing when a client raises their voice",
       "Taking aggressive behavior personally",
@@ -30,11 +48,20 @@
   "conversion": {
     "ctaType": "strategy-call",
     "nextStep": "Book a free strategy call to practice handling high-pressure client conversations",
-    "relatedAssets": ["difficult-conversation-checklist", "pushback-playbook", "professional-apology-framework"]
+    "relatedAssets": [
+      "difficult-conversation-checklist",
+      "pushback-playbook",
+      "professional-apology-framework"
+    ]
   },
   "seo": {
     "metaDescription": "Get 5 phrases that de-escalate aggressive clients while maintaining your authority. Stay calm and in control when conversations get heated.",
-    "keywords": ["handling difficult clients", "de-escalation phrases", "aggressive client response", "difficult client communication"]
+    "keywords": [
+      "handling difficult clients",
+      "de-escalation phrases",
+      "aggressive client response",
+      "difficult client communication"
+    ]
   },
   "slugEn": "phrases-aggressive-clients",
   "slugEs": "frases-clientes-agresivos",

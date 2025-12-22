@@ -14,11 +14,22 @@
     "timeToComplete": "7 minutes",
     "estimatedMinutes": 7,
     "pageCount": 5,
-    "tags": ["technical-communication", "explanations", "presentations", "client-meetings", "simplification"]
+    "tags": [
+      "technical-communication",
+      "explanations",
+      "presentations",
+      "client-meetings",
+      "simplification"
+    ]
   },
   "targeting": {
     "primaryPersona": ["engineer", "consultant", "manager", "founder"],
-    "industries": ["technology", "professional-services", "healthcare", "finance"],
+    "industries": [
+      "technology",
+      "professional-services",
+      "healthcare",
+      "finance"
+    ],
     "scenarios": ["technical-explanation", "presentations", "client-meetings"],
     "painPoints": [
       "Clients glazing over during technical explanations",
@@ -34,7 +45,12 @@
   },
   "seo": {
     "metaDescription": "Learn the 4-part formula for explaining complex technical concepts to non-technical audiences. Stop confusing clients, start closing deals.",
-    "keywords": ["how to explain technical concepts", "simplify technical language", "communicate with non-technical people", "technical presentation skills"]
+    "keywords": [
+      "how to explain technical concepts",
+      "simplify technical language",
+      "communicate with non-technical people",
+      "technical presentation skills"
+    ]
   },
   "slugEn": "technical-explanation-formula",
   "slugEs": "formula-explicacion-tecnica",

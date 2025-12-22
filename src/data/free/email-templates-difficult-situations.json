@@ -14,12 +14,22 @@
     "timeToComplete": "10 minutes",
     "estimatedMinutes": 10,
     "pageCount": 8,
-    "tags": ["email", "difficult-conversations", "templates", "written-communication", "conflict-resolution"]
+    "tags": [
+      "email",
+      "difficult-conversations",
+      "templates",
+      "written-communication",
+      "conflict-resolution"
+    ]
   },
   "targeting": {
     "primaryPersona": ["manager", "consultant", "project-manager", "all"],
     "industries": ["technology", "professional-services", "finance", "all"],
-    "scenarios": ["email-writing", "difficult-conversations", "client-meetings"],
+    "scenarios": [
+      "email-writing",
+      "difficult-conversations",
+      "client-meetings"
+    ],
     "painPoints": [
       "Spending hours drafting difficult emails",
       "Sounding too harsh or too soft in writing",
@@ -34,7 +44,12 @@
   },
   "seo": {
     "metaDescription": "Get 6 copy-paste email templates for difficult business situations. Deliver bad news, follow up, and handle conflict professionally.",
-    "keywords": ["difficult email templates", "professional email examples", "business email templates", "how to write difficult emails"]
+    "keywords": [
+      "difficult email templates",
+      "professional email examples",
+      "business email templates",
+      "how to write difficult emails"
+    ]
   },
   "slugEn": "email-templates-difficult-situations",
   "slugEs": "plantillas-email-situaciones-dificiles",

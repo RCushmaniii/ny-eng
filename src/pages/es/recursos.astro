@@ -1,8 +1,8 @@
 ---
 /**
- * /es/gratis/index.astro
+ * /es/recursos/index.astro
  *
- * Free Resources Hub (Spanish) - Dashboard showing all available free resources
+ * Biblioteca de Recursos Ejecutivos - Herramientas probadas para líderes globales
  */
 
 import Base from "@layouts/Base.astro";
@@ -11,9 +11,9 @@ import FreeResourcesHub from "@components/free/FreeResourcesHub";
 import { Sparkles, FileText, Headphones, MessageCircle } from "lucide-astro";
 import type { FreeAsset } from "@/types/free-asset";
 
-const title = "Recursos Gratis | Inglés de Negocios | NY English";
+const title = "Biblioteca de Recursos Ejecutivos | New York English";
 const description =
-  "Guías gratuitas, hojas de referencia y herramientas para ayudar a profesionales de tecnología latinoamericanos a comunicarse con confianza ejecutiva en inglés.";
+  "Scripts de negociación probados, marcos de comunicación y guías ejecutivas diseñadas para profesionales latinoamericanos liderando equipos globales.";
 
 // Auto-discover all free resources from JSON files
 const allAssets = await Astro.glob("../../data/free/*.json");
@@ -44,37 +44,33 @@ const resources: FreeAsset[] = allAssets
   title={title}
   description={description}
   lang="es"
-  tkey="free"
+  tkey="resources"
   ogImage={{
     src: "/images/logos/new-york-english-og.jpg",
-    alt: "Recursos Gratis de Inglés de Negocios - New York English Teacher",
+    alt: "Biblioteca de Recursos Ejecutivos - New York English Teacher",
   }}
   hideCta={true}
 >
   <!-- Hero Section -->
-  <section class="hero-section pt-28 pb-16 md:pt-32 md:pb-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-3xl mx-auto">
-        <div
-          class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6"
-        >
-          <Sparkles class="w-4 h-4" />
-          <span>Recursos 100% Gratis</span>
-        </div>
+  <section class="pt-28 pb-16 md:pt-32 md:pb-20 bg-gray-50">
+    <div class="site-container px-4 text-center">
+      <span
+        class="text-amber-600 font-bold tracking-wider text-sm uppercase mb-4 block"
+      >
+        Biblioteca de Recursos Ejecutivos
+      </span>
 
-        <h1
-          class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight"
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+        Herramientas Probadas para <span class="text-blue-700"
+          >Líderes Globales</span
         >
-          Mejora Tu
-          <span class="text-blue-600"> Inglés Ejecutivo</span>
-        </h1>
+      </h1>
 
-        <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
-          Guías prácticas, hojas de referencia y herramientas diseñadas para
-          profesionales de tecnología latinoamericanos que se comunican con
-          clientes norteamericanos.
-        </p>
-      </div>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Marcos accionables, scripts de negociación y guías de comunicación
+        diseñadas específicamente para profesionales latinoamericanos que
+        lideran equipos globales.
+      </p>
     </div>
   </section>
 
@@ -87,15 +83,15 @@ const resources: FreeAsset[] = allAssets
   >
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-        ¿Quieres Resultados Más Rápidos?
+        ¿Listo para Implementar Estas Estrategias?
       </h2>
       <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
-        Los recursos gratuitos crean conciencia. El coaching profesional crea
-        transformación. Agenda una llamada estratégica gratis para discutir los
-        desafíos específicos de tu equipo.
+        Leer guías genera conciencia. El coaching genera maestría. Agenda tu
+        sesión estratégica para aplicar estos marcos a tus desafíos
+        profesionales específicos.
       </p>
       <Button href="/es/reservar/" variant="primary" size="lg">
-        Agendar Llamada Gratis →
+        Agendar Mi Sesión Estratégica →
       </Button>
     </div>
   </section>

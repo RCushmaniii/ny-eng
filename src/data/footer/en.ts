@@ -1,11 +1,12 @@
-import type { ConnectItem } from '@components/Footer.astro';
-import { routes } from '@utils/paths';
+import type { ConnectItem } from "@components/Footer.astro";
+import { routes } from "@utils/paths";
 
 export const footerContentEn = (siteConfig: { companyName: string }) => {
   const currentYear = new Date().getFullYear();
   return {
     logoLink: routes.en.home,
-    tagline: "Helping professionals speak confidently and fluently in English.",
+    tagline:
+      "Empowering international leaders to communicate with authority and executive presence.",
     sections: {
       about: {
         title: "About",
@@ -18,16 +19,26 @@ export const footerContentEn = (siteConfig: { companyName: string }) => {
       resources: {
         title: "Resources",
         links: [
-          { name: "Free Downloads", href: routes.en.free },
+          {
+            name: "Executive Guides",
+            href: routes.en.resources ?? "/en/resources/",
+          },
           { name: "FAQs", href: "/en/faqs/" },
+          { name: "Try my AI English Coach", href: "/en/chat/" },
           { name: "Blog", href: routes.en.blog },
-          { name: "Start Assessment", href: "/en/assessments/" },
+          { name: "Benchmark Assessment", href: "/en/assessments/" },
         ],
       },
       connect: {
         title: "Connect",
         items: [
-          { type: "link", name: "WhatsApp Me", href: "https://wa.link/pk4f97", target: "_blank", rel: "noopener noreferrer" },
+          {
+            type: "link",
+            name: "WhatsApp Direct",
+            href: "https://wa.link/pk4f97",
+            target: "_blank",
+            rel: "noopener noreferrer",
+          },
           { type: "link", name: "Schedule a Consultation", href: "/en/book/" },
           { type: "link", name: "Email Me", href: routes.en.contact },
         ] as ConnectItem[],
@@ -40,11 +51,12 @@ export const footerContentEn = (siteConfig: { companyName: string }) => {
     copyrightText: `© ${currentYear} ${siteConfig.companyName}. All rights reserved.`,
     // Default Footer CTA in English (can be overridden by page props passed to Layout)
     defaultFooterCta: {
-      title: "Transform Your Professional English Today",
-      description: "Book your free consultation to gain the clarity, confidence, and impact your role demands.",
+      title: "Ready to Command the Room?",
+      description:
+        "Stop letting language barriers limit your career. Book your strategy session to gain the clarity and impact your role demands.",
       hideCta: false,
       button: {
-        text: "Reserve My Free Consultation",
+        text: "Book My Strategy Session",
         link: "/en/book/",
       },
     },

@@ -31,6 +31,7 @@ Whether you are a “Visitor” (browsing the Site) or a “User” (actively us
 By using the Services, you agree to be bound by these Terms and NYET's [Privacy Policy](#), which together constitute the full agreement between you and NYET (the “Agreement”). If you do not agree with these Terms, please do not use the Services.
 
 To use the Services, you must:
+
 - Be at least 16 years old, or at least 13 years old with a parent or guardian’s consent.
 - Be legally capable of entering into a binding contract.
 - Ensure that all registration information you provide is truthful, accurate, and kept up to date.

@@ -138,8 +138,8 @@ const scriptConfig: ScriptConfig[] = [
 ] as const;
 
 // Initialize empty data structures
-let reports: Report[] = [];
-let reportsByScript: Record<ScriptId, Report> = scriptConfig.reduce(
+const reports: Report[] = [];
+const reportsByScript: Record<ScriptId, Report> = scriptConfig.reduce(
   (acc, script) => {
     acc[script.id] = {
       script: script.id,
@@ -1103,7 +1103,7 @@ if (isDev) {
                         <div class="script-card-desc">{script.description}</div>
                         {report && (
                           <div
-                            class={`script-card-status ${statusConfig[status].color} ${statusConfig[status].textColor}`}
+                            class:list={`script-card-status ${statusConfig[status].color} ${statusConfig[status].textColor}`}
                           >
                             {statusConfig[status].emoji}{" "}
                             {statusConfig[status].label}
@@ -1114,7 +1114,7 @@ if (isDev) {
                       </div>
                       <button
                         data-script={script.id}
-                        class={`btn-run ${buttonClass}`}
+                        class:list={`btn-run ${buttonClass}`}
                         onclick={`runScript('${script.id}')`}
                       >
                         <span class="button-text">▶️ Run {script.name}</span>
@@ -1154,7 +1154,7 @@ if (isDev) {
                         <div class="script-card-desc">{script.description}</div>
                         {report && (
                           <div
-                            class={`script-card-status ${statusConfig[status].color} ${statusConfig[status].textColor}`}
+                            class:list={`script-card-status ${statusConfig[status].color} ${statusConfig[status].textColor}`}
                           >
                             {statusConfig[status].emoji}{" "}
                             {statusConfig[status].label}
@@ -1165,7 +1165,7 @@ if (isDev) {
                       </div>
                       <button
                         data-script={script.id}
-                        class={`btn-run ${buttonClass}`}
+                        class:list={`btn-run ${buttonClass}`}
                         onclick={`runScript('${script.id}')`}
                       >
                         <span class="button-text">▶️ Run {script.name}</span>
@@ -1186,7 +1186,7 @@ if (isDev) {
                 const status = statusConfig[report.status];
                 return (
                   <div
-                    class={`report-card status-${report.status}`}
+                    class:list={`report-card status-${report.status}`}
                     data-status={report.status}
                   >
                     <div class="report-card-header" onclick="toggleCard(this)">
@@ -1215,11 +1215,11 @@ if (isDev) {
                         ) : (
                           report.issues.map((issue) => (
                             <div
-                              class={`issue-item priority-${issue.priority.toLowerCase()}`}
+                              class:list={`issue-item priority-${issue.priority.toLowerCase()}`}
                             >
                               <div class="issue-header">
                                 <span
-                                  class={`issue-priority priority-${issue.priority.toLowerCase()}`}
+                                  class:list={`issue-priority priority-${issue.priority.toLowerCase()}`}
                                 >
                                   {issue.priority} Priority
                                 </span>
@@ -1232,7 +1232,7 @@ if (isDev) {
                         )}
                         <button
                           data-script={report.script}
-                          class={`btn-run ${status.buttonColor.includes("green") ? "btn-green" : status.buttonColor.includes("yellow") ? "btn-yellow" : status.buttonColor.includes("orange") ? "btn-orange" : "btn-red"}`}
+                          class:list={`btn-run ${status.buttonColor.includes("green") ? "btn-green" : status.buttonColor.includes("yellow") ? "btn-yellow" : status.buttonColor.includes("orange") ? "btn-orange" : "btn-red"}`}
                           onclick={`runScript('${report.script}')`}
                           style="margin-top: 1rem;"
                         >

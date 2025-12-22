@@ -31,11 +31,19 @@
   "conversion": {
     "ctaType": "strategy-call",
     "nextStep": "Book a 30-minute strategy call to practice these live",
-    "relatedAssets": ["5-questions-sound-senior", "client-call-opening-closing-framework"]
+    "relatedAssets": [
+      "5-questions-sound-senior",
+      "client-call-opening-closing-framework"
+    ]
   },
   "seo": {
     "metaDescription": "7 reusable sentence structures that make you sound like a decision-maker in executive meetings. Bilingual PDF cheat sheet.",
-    "keywords": ["leadership english", "executive communication", "decision-making language", "business english templates"],
+    "keywords": [
+      "leadership english",
+      "executive communication",
+      "decision-making language",
+      "business english templates"
+    ],
     "ogImage": "/images/og/7-sentences-leadership.jpg"
   },
   "analytics": {
@@ -46,345 +54,235 @@
   "slugEn": "7-sentences-leadership-english",
   "slugEs": "7-frases-liderazgo-ingles",
   "en": {
-    "title": "The 7 Sentences That Define Leadership English",
-    "subtitle": "Reusable structures that make you sound like a decision-maker",
+    "title": "7 Sentences That Make You Sound Like a Leader in English",
+    "subtitle": "Boardroom-ready language for Latin American executives",
+    "description": "Seven high-impact English sentences you can copy, customize, and reuse to lead meetings, set direction, and push back with confidence in front of senior stakeholders.",
     "intro": {
       "line1": "Junior professionals explain what they do.",
       "line2": "Senior professionals frame what happens next.",
       "paragraph": "Leadership isn't about having all the answers—it's about how you structure your sentences. These seven patterns come from real executive conversations and can be adapted to any business situation. Master these, and you'll sound like someone who makes decisions, not someone waiting for them."
     },
-    "sentences": [
+    "sections": [
       {
-        "number": 1,
-        "structure": "Based on [X], I recommend we [Y].",
-        "example": "Based on the Q3 results, I recommend we reallocate 20% of the marketing budget to direct sales.",
-        "why": "You demonstrate data-driven thinking and take ownership of the recommendation. The structure shows you've analyzed the situation and reached a conclusion.",
-        "when": "Making recommendations, presenting analysis, proposing changes",
-        "doNotSay": "\"Maybe we should consider possibly looking at...\" (Too many qualifiers weaken your authority.)",
-        "howToSay": "Pause briefly before \"I recommend\"—this signals you've given this serious thought. Keep your voice steady and matter-of-fact, not tentative.",
-        "variations": [
-          "Based on [X], the best path forward is [Y].",
-          "Given [X], we should [Y].",
-          "Based on what we're seeing with [X], here's what I propose: [Y]."
-        ]
-      },
-      {
-        "number": 2,
-        "structure": "Let's align on [X] before we move to [Y].",
-        "example": "Let's align on the core features before we discuss pricing models.",
-        "why": "You're guiding the conversation's structure without being directive. \"Let's\" includes everyone while you control the agenda.",
-        "when": "Meetings getting off track, when people skip important steps, scope discussions",
-        "doNotSay": "\"Wait, we need to talk about X first.\" (Sounds reactive and controlling.)",
-        "howToSay": "Use \"align on\" instead of \"agree on\"—it's more collaborative and less confrontational. Your tone should be facilitating, not commanding.",
-        "variations": [
-          "Before we discuss [Y], let's make sure we're aligned on [X].",
-          "I want to ensure we're aligned on [X] before moving forward with [Y].",
-          "Let's lock down [X], then we can address [Y]."
-        ]
-      },
-      {
-        "number": 3,
-        "structure": "Here's what I'm hearing: [brief summary]. Is that accurate?",
-        "example": "Here's what I'm hearing: You need the system live by Q1, but you're flexible on which features launch first. Is that accurate?",
-        "why": "You demonstrate active listening while maintaining control. Summarizing shows you understand the big picture, and asking for confirmation positions you as the one validating understanding.",
-        "when": "Complex discussions, conflicting requirements, before committing resources",
-        "doNotSay": "\"So you're saying...\" (Too passive—sounds like you're just repeating, not synthesizing.)",
-        "howToSay": "Your summary should be shorter and clearer than what they said. End with a slight upward inflection on \"accurate?\" to invite confirmation without sounding uncertain.",
-        "variations": [
-          "Let me make sure I understand: [summary]. Do I have that right?",
-          "If I'm hearing you correctly: [summary]. Yes?",
-          "So the core issue is: [summary]. Is that fair?"
-        ]
-      },
-      {
-        "number": 4,
-        "structure": "The tradeoff is [X] vs [Y]. I believe [Y] is worth it because [Z].",
-        "example": "The tradeoff is speed vs customization. I believe speed is worth it because we need to test market fit before building custom features.",
-        "why": "You acknowledge complexity while providing clear direction. This shows strategic thinking—you understand there's no perfect solution, but you can prioritize.",
-        "when": "Budget decisions, timeline discussions, resource allocation, when clients want everything",
-        "doNotSay": "\"Well, we could do either one...\" (Indecisive—makes you sound uncertain.)",
-        "howToSay": "State both options neutrally, then use \"I believe\" with conviction. The \"because\" is critical—it shows your reasoning is sound.",
-        "variations": [
-          "We can optimize for [X] or [Y]. Given [context], I'd prioritize [Y].",
-          "The real question is [X] or [Y]. My recommendation is [Y] because [Z].",
-          "This comes down to [X] vs [Y]. [Y] makes more sense given [Z]."
-        ]
-      },
-      {
-        "number": 5,
-        "structure": "I'll own [X], and I need [Y] from you by [Z].",
-        "example": "I'll own the technical architecture, and I need the final feature list from you by Friday.",
-        "why": "You define accountability clearly—what you're responsible for and what you need from others. This prevents confusion and establishes you as someone who manages execution.",
-        "when": "Delegating work, project kickoffs, clarifying responsibilities",
-        "doNotSay": "\"Can you maybe get me the feature list sometime soon?\" (Vague and weak.)",
-        "howToSay": "\"I'll own\" is more powerful than \"I'll handle\" or \"I'll do.\" Be specific about deadlines—\"by Friday\" beats \"soon.\"",
-        "variations": [
-          "I'm taking responsibility for [X]. To make that happen, I'll need [Y] from you by [Z].",
-          "I'll handle [X]. On your end, I need [Y] by [Z].",
-          "My commitment is [X]. What I need from the team is [Y] by [Z]."
-        ]
-      },
-      {
-        "number": 6,
-        "structure": "That's not feasible, but here's what is: [alternative].",
-        "example": "Launching all features by Q1 isn't feasible, but here's what is: core functionality by Q1, advanced features in Q2.",
-        "why": "You say no without just being negative. You acknowledge the request, explain why it won't work, and immediately offer a path forward.",
-        "when": "Unrealistic requests, scope creep, timeline pressure, budget constraints",
-        "doNotSay": "\"No, we can't do that.\" (Sounds like you're not solution-oriented.)",
-        "howToSay": "Keep your tone matter-of-fact, not apologetic. The key is the immediate pivot to \"but here's what is\"—don't let silence sit after saying no.",
-        "variations": [
-          "[X] isn't realistic given [constraint], but we can accomplish [Y].",
-          "I can't commit to [X], but I can deliver [Y].",
-          "That won't work because [reason]. What we can do is [alternative]."
-        ]
-      },
-      {
-        "number": 7,
-        "structure": "Going forward, we'll [X] to prevent [Y].",
-        "example": "Going forward, we'll require sign-off on scope changes to prevent timeline delays.",
-        "why": "You're implementing a solution, not just identifying a problem. \"Going forward\" signals you're taking action without dwelling on past mistakes.",
-        "when": "After mistakes, process improvements, preventing recurring issues",
-        "doNotSay": "\"Maybe we should try to avoid this next time.\" (Too vague and tentative.)",
-        "howToSay": "Use \"we'll\" with confidence—this is a decision, not a suggestion. \"To prevent\" connects the action to a clear benefit.",
-        "variations": [
-          "Moving forward, the process is [X] to avoid [Y].",
-          "To prevent [Y] from happening again, we're implementing [X].",
-          "The new approach is [X], which eliminates [Y]."
+        "id": "sentences",
+        "title": "The 7 Sentences",
+        "items": [
+          {
+            "number": 1,
+            "title": "Based on [X], I recommend we [Y].",
+            "example": "Based on the Q3 results, I recommend we reallocate 20% of the marketing budget to direct sales.",
+            "why": "You demonstrate data-driven thinking and take ownership of the recommendation. The structure shows you've analyzed the situation and reached a conclusion.",
+            "when": "Making recommendations, presenting analysis, proposing changes",
+            "doNotSay": "\"Maybe we should consider possibly looking at...\" (Too many qualifiers weaken your authority.)",
+            "howToSay": "Pause briefly before \"I recommend\"—this signals you've given this serious thought. Keep your voice steady and matter-of-fact, not tentative.",
+            "variations": [
+              "Based on [X], the best path forward is [Y].",
+              "Given [X], we should [Y].",
+              "Based on what we're seeing with [X], here's what I propose: [Y]."
+            ]
+          },
+          {
+            "number": 2,
+            "title": "Let's align on [X] before we move to [Y].",
+            "example": "Let's align on the core features before we discuss pricing models.",
+            "why": "You're guiding the conversation's structure without being directive. \"Let's\" includes everyone while you control the agenda.",
+            "when": "Meetings getting off track, when people skip important steps, scope discussions",
+            "doNotSay": "\"Wait, we need to talk about X first.\" (Sounds reactive and controlling.)",
+            "howToSay": "Use \"align on\" instead of \"agree on\"—it's more collaborative and less confrontational. Your tone should be facilitating, not commanding.",
+            "variations": [
+              "Before we discuss [Y], let's make sure we're aligned on [X].",
+              "I want to ensure we're aligned on [X] before moving forward with [Y].",
+              "Let's lock down [X], then we can address [Y]."
+            ]
+          },
+          {
+            "number": 3,
+            "title": "Here's what I'm hearing: [brief summary]. Is that accurate?",
+            "example": "Here's what I'm hearing: You need the system live by Q1, but you're flexible on which features launch first. Is that accurate?",
+            "why": "You demonstrate active listening while maintaining control. Summarizing shows you understand the big picture, and asking for confirmation positions you as the one validating understanding.",
+            "when": "Complex discussions, conflicting requirements, before committing resources",
+            "doNotSay": "\"So you're saying...\" (Too passive—sounds like you're just repeating, not synthesizing.)",
+            "howToSay": "Your summary should be shorter and clearer than what they said. End with a slight upward inflection on \"accurate?\" to invite confirmation without sounding uncertain.",
+            "variations": [
+              "Let me make sure I understand: [summary]. Do I have that right?",
+              "If I'm hearing you correctly: [summary]. Yes?",
+              "So the core issue is: [summary]. Is that fair?"
+            ]
+          },
+          {
+            "number": 4,
+            "title": "The tradeoff is [X] vs [Y]. I believe [Y] is worth it because [Z].",
+            "example": "The tradeoff is speed vs customization. I believe speed is worth it because we need to test market fit before building custom features.",
+            "why": "You acknowledge complexity while providing clear direction. This shows strategic thinking—you understand there's no perfect solution, but you can prioritize.",
+            "when": "Budget decisions, timeline discussions, resource allocation, when clients want everything",
+            "doNotSay": "\"Well, we could do either one...\" (Indecisive—makes you sound uncertain.)",
+            "howToSay": "State both options neutrally, then use \"I believe\" with conviction. The \"because\" is critical—it shows your reasoning is sound.",
+            "variations": [
+              "We can optimize for [X] or [Y]. Given [context], I'd prioritize [Y].",
+              "The real question is [X] or [Y]. My recommendation is [Y] because [Z].",
+              "This comes down to [X] vs [Y]. [Y] makes more sense given [Z]."
+            ]
+          },
+          {
+            "number": 5,
+            "title": "I'll own [X], and I need [Y] from you by [Z].",
+            "example": "I'll own the technical architecture, and I need the final feature list from you by Friday.",
+            "why": "You define accountability clearly—what you're responsible for and what you need from others. This prevents confusion and establishes you as someone who manages execution.",
+            "when": "Delegating work, project kickoffs, clarifying responsibilities",
+            "doNotSay": "\"Can you maybe get me the feature list sometime soon?\" (Vague and weak.)",
+            "howToSay": "\"I'll own\" is more powerful than \"I'll handle\" or \"I'll do.\" Be specific about deadlines—\"by Friday\" beats \"soon.\"",
+            "variations": [
+              "I'm taking responsibility for [X]. To make that happen, I'll need [Y] from you by [Z].",
+              "I'll handle [X]. On your end, I need [Y] by [Z].",
+              "My commitment is [X]. What I need from the team is [Y] by [Z]."
+            ]
+          },
+          {
+            "number": 6,
+            "title": "That's not feasible, but here's what is: [alternative].",
+            "example": "Launching all features by Q1 isn't feasible, but here's what is: core functionality by Q1, advanced features in Q2.",
+            "why": "You say no without just being negative. You acknowledge the request, explain why it won't work, and immediately offer a path forward.",
+            "when": "Unrealistic requests, scope creep, timeline pressure, budget constraints",
+            "doNotSay": "\"No, we can't do that.\" (Sounds like you're not solution-oriented.)",
+            "howToSay": "Keep your tone matter-of-fact, not apologetic. The key is the immediate pivot to \"but here's what is\"—don't let silence sit after saying no.",
+            "variations": [
+              "[X] isn't realistic given [constraint], but we can accomplish [Y].",
+              "I can't commit to [X], but I can deliver [Y].",
+              "That won't work because [reason]. What we can do is [alternative]."
+            ]
+          },
+          {
+            "number": 7,
+            "title": "Going forward, we'll [X] to prevent [Y].",
+            "example": "Going forward, we'll require sign-off on scope changes to prevent timeline delays.",
+            "why": "You're implementing a solution, not just identifying a problem. \"Going forward\" signals you're taking action without dwelling on past mistakes.",
+            "when": "After mistakes, process improvements, preventing recurring issues",
+            "doNotSay": "\"Maybe we should try to avoid this next time.\" (Too vague and tentative.)",
+            "howToSay": "Use \"we'll\" with confidence—this is a decision, not a suggestion. \"To prevent\" connects the action to a clear benefit.",
+            "variations": [
+              "Moving forward, the process is [X] to avoid [Y].",
+              "To prevent [Y] from happening again, we're implementing [X].",
+              "The new approach is [X], which eliminates [Y]."
+            ]
+          }
         ]
       }
-    ],
-    "pattern": {
-      "title": "The Pattern",
-      "intro": "All seven structures share these elements:",
-      "items": [
-        {
-          "bold": "Clarity over complexity",
-          "text": " — Simple sentence structures, no unnecessary words."
-        },
-        {
-          "bold": "Action-oriented",
-          "text": " — They move things forward, not just describe situations."
-        },
-        {
-          "bold": "Confident without arrogance",
-          "text": " — You're decisive, but you invite collaboration."
-        }
-      ]
-    },
-    "quickRef": {
-      "title": "Quick Reference",
-      "intro": "Copy these structures. Fill in the blanks. Sound senior.",
-      "rows": [
-        {
-          "situation": "Making recommendations",
-          "structure": "Based on [X], I recommend we [Y]."
-        },
-        {
-          "situation": "Guiding discussion",
-          "structure": "Let's align on [X] before we move to [Y]."
-        },
-        {
-          "situation": "Active listening",
-          "structure": "Here's what I'm hearing: [summary]. Is that accurate?"
-        },
-        {
-          "situation": "Prioritizing tradeoffs",
-          "structure": "The tradeoff is [X] vs [Y]. I believe [Y] is worth it because [Z]."
-        },
-        {
-          "situation": "Defining accountability",
-          "structure": "I'll own [X], and I need [Y] from you by [Z]."
-        },
-        {
-          "situation": "Setting boundaries",
-          "structure": "That's not feasible, but here's what is: [alternative]."
-        },
-        {
-          "situation": "Implementing solutions",
-          "structure": "Going forward, we'll [X] to prevent [Y]."
-        }
-      ]
-    },
-    "labels": {
-      "why": "Why it works",
-      "when": "When to use",
-      "doNotSay": "Avoid saying",
-      "howToSay": "Say it like this",
-      "variations": "Variations",
-      "situation": "Situation",
-      "structure": "Leadership Structure",
-      "example": "Example"
-    }
+    ]
   },
   "es": {
-    "title": "Las 7 Frases Que Definen el Inglés de Liderazgo",
-    "subtitle": "Estructuras reutilizables que te hacen sonar como quien toma decisiones",
+    "title": "7 Frases que te Hacen Sonar como Líder en Inglés",
+    "subtitle": "Lenguaje de sala de juntas para ejecutivos latinoamericanos",
+    "description": "Siete frases de alto impacto en inglés que puedes copiar, adaptar y reutilizar para liderar reuniones, marcar dirección y poner límites con confianza frente a ejecutivos senior.",
     "intro": {
       "line1": "Los profesionales junior explican lo que hacen.",
       "line2": "Los profesionales senior enmarcan lo que sucederá después.",
       "paragraph": "El liderazgo no se trata de tener todas las respuestas—se trata de cómo estructuras tus oraciones. Estos siete patrones provienen de conversaciones ejecutivas reales y pueden adaptarse a cualquier situación de negocio. Domina estos, y sonarás como alguien que toma decisiones, no como alguien que espera que las tomen por ti."
     },
-    "sentences": [
+    "sections": [
       {
-        "number": 1,
-        "structure": "Based on [X], I recommend we [Y].",
-        "example": "Based on the Q3 results, I recommend we reallocate 20% of the marketing budget to direct sales.",
-        "why": "Demuestras pensamiento basado en datos y asumes la responsabilidad de la recomendación. La estructura muestra que has analizado la situación y llegado a una conclusión.",
-        "when": "Al hacer recomendaciones, presentar análisis, proponer cambios",
-        "doNotSay": "\"Maybe we should consider possibly looking at...\" (Demasiados calificadores debilitan tu autoridad.)",
-        "howToSay": "Haz una breve pausa antes de \"I recommend\"—esto señala que lo has pensado seriamente. Mantén tu voz firme y objetiva, no vacilante.",
-        "variations": [
-          "Based on [X], the best path forward is [Y].",
-          "Given [X], we should [Y].",
-          "Based on what we're seeing with [X], here's what I propose: [Y]."
-        ]
-      },
-      {
-        "number": 2,
-        "structure": "Let's align on [X] before we move to [Y].",
-        "example": "Let's align on the core features before we discuss pricing models.",
-        "why": "Guías la estructura de la conversación sin ser directivo. \"Let's\" incluye a todos mientras tú controlas la agenda.",
-        "when": "Reuniones que se desvían, cuando la gente se salta pasos importantes, discusiones de alcance",
-        "doNotSay": "\"Wait, we need to talk about X first.\" (Suena reactivo y controlador.)",
-        "howToSay": "Usa \"align on\" en lugar de \"agree on\"—es más colaborativo y menos confrontacional. Tu tono debe ser facilitador, no mandón.",
-        "variations": [
-          "Before we discuss [Y], let's make sure we're aligned on [X].",
-          "I want to ensure we're aligned on [X] before moving forward with [Y].",
-          "Let's lock down [X], then we can address [Y]."
-        ]
-      },
-      {
-        "number": 3,
-        "structure": "Here's what I'm hearing: [brief summary]. Is that accurate?",
-        "example": "Here's what I'm hearing: You need the system live by Q1, but you're flexible on which features launch first. Is that accurate?",
-        "why": "Demuestras escucha activa mientras mantienes el control. Resumir muestra que entiendes el panorama general, y pedir confirmación te posiciona como quien valida la comprensión.",
-        "when": "Discusiones complejas, requisitos contradictorios, antes de comprometer recursos",
-        "doNotSay": "\"So you're saying...\" (Demasiado pasivo—suena como si solo repitieras, no sintetizaras.)",
-        "howToSay": "Tu resumen debe ser más corto y claro que lo que dijeron. Termina con una ligera inflexión ascendente en \"accurate?\" para invitar confirmación sin sonar inseguro.",
-        "variations": [
-          "Let me make sure I understand: [summary]. Do I have that right?",
-          "If I'm hearing you correctly: [summary]. Yes?",
-          "So the core issue is: [summary]. Is that fair?"
-        ]
-      },
-      {
-        "number": 4,
-        "structure": "The tradeoff is [X] vs [Y]. I believe [Y] is worth it because [Z].",
-        "example": "The tradeoff is speed vs customization. I believe speed is worth it because we need to test market fit before building custom features.",
-        "why": "Reconoces la complejidad mientras proporcionas una dirección clara. Esto muestra pensamiento estratégico—entiendes que no hay solución perfecta, pero puedes priorizar.",
-        "when": "Decisiones de presupuesto, discusiones de cronograma, asignación de recursos, cuando los clientes quieren todo",
-        "doNotSay": "\"Well, we could do either one...\" (Indeciso—te hace sonar inseguro.)",
-        "howToSay": "Presenta ambas opciones neutralmente, luego usa \"I believe\" con convicción. El \"because\" es crítico—muestra que tu razonamiento es sólido.",
-        "variations": [
-          "We can optimize for [X] or [Y]. Given [context], I'd prioritize [Y].",
-          "The real question is [X] or [Y]. My recommendation is [Y] because [Z].",
-          "This comes down to [X] vs [Y]. [Y] makes more sense given [Z]."
-        ]
-      },
-      {
-        "number": 5,
-        "structure": "I'll own [X], and I need [Y] from you by [Z].",
-        "example": "I'll own the technical architecture, and I need the final feature list from you by Friday.",
-        "why": "Defines responsabilidad claramente—de qué eres responsable y qué necesitas de otros. Esto previene confusión y te establece como alguien que gestiona la ejecución.",
-        "when": "Al delegar trabajo, inicios de proyectos, al aclarar responsabilidades",
-        "doNotSay": "\"Can you maybe get me the feature list sometime soon?\" (Vago y débil.)",
-        "howToSay": "\"I'll own\" es más poderoso que \"I'll handle\" o \"I'll do.\" Sé específico con fechas—\"by Friday\" supera a \"soon.\"",
-        "variations": [
-          "I'm taking responsibility for [X]. To make that happen, I'll need [Y] from you by [Z].",
-          "I'll handle [X]. On your end, I need [Y] by [Z].",
-          "My commitment is [X]. What I need from the team is [Y] by [Z]."
-        ]
-      },
-      {
-        "number": 6,
-        "structure": "That's not feasible, but here's what is: [alternative].",
-        "example": "Launching all features by Q1 isn't feasible, but here's what is: core functionality by Q1, advanced features in Q2.",
-        "why": "Dices no sin ser solo negativo. Reconoces la solicitud, explicas por qué no funcionará, e inmediatamente ofreces un camino alternativo.",
-        "when": "Solicitudes poco realistas, expansión de alcance, presión de cronograma, restricciones de presupuesto",
-        "doNotSay": "\"No, we can't do that.\" (Suena como si no estuvieras orientado a soluciones.)",
-        "howToSay": "Mantén tu tono objetivo, no disculpatorio. La clave es el giro inmediato a \"but here's what is\"—no dejes que el silencio se asiente después de decir no.",
-        "variations": [
-          "[X] isn't realistic given [constraint], but we can accomplish [Y].",
-          "I can't commit to [X], but I can deliver [Y].",
-          "That won't work because [reason]. What we can do is [alternative]."
-        ]
-      },
-      {
-        "number": 7,
-        "structure": "Going forward, we'll [X] to prevent [Y].",
-        "example": "Going forward, we'll require sign-off on scope changes to prevent timeline delays.",
-        "why": "Estás implementando una solución, no solo identificando un problema. \"Going forward\" señala que estás tomando acción sin detenerte en errores pasados.",
-        "when": "Después de errores, mejoras de proceso, al prevenir problemas recurrentes",
-        "doNotSay": "\"Maybe we should try to avoid this next time.\" (Demasiado vago y vacilante.)",
-        "howToSay": "Usa \"we'll\" con confianza—esto es una decisión, no una sugerencia. \"To prevent\" conecta la acción con un beneficio claro.",
-        "variations": [
-          "Moving forward, the process is [X] to avoid [Y].",
-          "To prevent [Y] from happening again, we're implementing [X].",
-          "The new approach is [X], which eliminates [Y]."
+        "id": "sentences",
+        "title": "Las 7 Frases",
+        "items": [
+          {
+            "number": 1,
+            "title": "Based on [X], I recommend we [Y].",
+            "example": "Based on the Q3 results, I recommend we reallocate 20% of the marketing budget to direct sales.",
+            "why": "Demuestras pensamiento basado en datos y asumes la responsabilidad de la recomendación. La estructura muestra que has analizado la situación y llegado a una conclusión.",
+            "when": "Al hacer recomendaciones, presentar análisis, proponer cambios",
+            "doNotSay": "\"Maybe we should consider possibly looking at...\" (Demasiados calificadores debilitan tu autoridad.)",
+            "howToSay": "Haz una breve pausa antes de \"I recommend\"—esto señala que lo has pensado seriamente. Mantén tu voz firme y objetiva, no vacilante.",
+            "variations": [
+              "Based on [X], the best path forward is [Y].",
+              "Given [X], we should [Y].",
+              "Based on what we're seeing with [X], here's what I propose: [Y]."
+            ]
+          },
+          {
+            "number": 2,
+            "title": "Let's align on [X] before we move to [Y].",
+            "example": "Let's align on the core features before we discuss pricing models.",
+            "why": "Guías la estructura de la conversación sin ser directivo. \"Let's\" incluye a todos mientras tú controlas la agenda.",
+            "when": "Reuniones que se desvían, cuando la gente se salta pasos importantes, discusiones de alcance",
+            "doNotSay": "\"Wait, we need to talk about X first.\" (Suena reactivo y controlador.)",
+            "howToSay": "Usa \"align on\" en lugar de \"agree on\"—es más colaborativo y menos confrontacional. Tu tono debe ser facilitador, no mandón.",
+            "variations": [
+              "Before we discuss [Y], let's make sure we're aligned on [X].",
+              "I want to ensure we're aligned on [X] before moving forward with [Y].",
+              "Let's lock down [X], then we can address [Y]."
+            ]
+          },
+          {
+            "number": 3,
+            "title": "Here's what I'm hearing: [brief summary]. Is that accurate?",
+            "example": "Here's what I'm hearing: You need the system live by Q1, but you're flexible on which features launch first. Is that accurate?",
+            "why": "Demuestras escucha activa mientras mantienes el control. Resumir muestra que entiendes el panorama general, y pedir confirmación te posiciona como quien valida la comprensión.",
+            "when": "Discusiones complejas, requisitos contradictorios, antes de comprometer recursos",
+            "doNotSay": "\"So you're saying...\" (Demasiado pasivo—suena como si solo repitieras, no sintetizaras.)",
+            "howToSay": "Tu resumen debe ser más corto y claro que lo que dijeron. Termina con una ligera inflexión ascendente en \"accurate?\" para invitar confirmación sin sonar inseguro.",
+            "variations": [
+              "Let me make sure I understand: [summary]. Do I have that right?",
+              "If I'm hearing you correctly: [summary]. Yes?",
+              "So the core issue is: [summary]. Is that fair?"
+            ]
+          },
+          {
+            "number": 4,
+            "title": "The tradeoff is [X] vs [Y]. I believe [Y] is worth it because [Z].",
+            "example": "The tradeoff is speed vs customization. I believe speed is worth it because we need to test market fit before building custom features.",
+            "why": "Reconoces la complejidad mientras proporcionas una dirección clara. Esto muestra pensamiento estratégico—entiendes que no hay solución perfecta, pero puedes priorizar.",
+            "when": "Decisiones de presupuesto, discusiones de cronograma, asignación de recursos, cuando los clientes quieren todo",
+            "doNotSay": "\"Well, we could do either one...\" (Indeciso—te hace sonar inseguro.)",
+            "howToSay": "Presenta ambas opciones neutralmente, luego usa \"I believe\" con convicción. El \"because\" es crítico—muestra que tu razonamiento es sólido.",
+            "variations": [
+              "We can optimize for [X] or [Y]. Given [context], I'd prioritize [Y].",
+              "The real question is [X] or [Y]. My recommendation is [Y] because [Z].",
+              "This comes down to [X] vs [Y]. [Y] makes more sense given [Z]."
+            ]
+          },
+          {
+            "number": 5,
+            "title": "Me haré cargo de [X], y necesito [Y] de ti para [Z].",
+            "example": "Me haré cargo de la arquitectura técnica, y necesito la lista final de funcionalidades de ti para el viernes.",
+            "why": "Defines responsabilidad claramente—de qué eres responsable y qué necesitas de otros. Esto previene confusión y te establece como alguien que gestiona la ejecución.",
+            "when": "Al delegar trabajo, inicios de proyectos, al aclarar responsabilidades",
+            "doNotSay": "\"¿Puedes tal vez conseguirme la lista de funcionalidades pronto?\" (Vago y débil.)",
+            "howToSay": "\"Me haré cargo\" es más poderoso que \"voy a manejar\" o \"voy a hacer\". Sé específico con fechas—\"para el viernes\" supera a \"pronto\".",
+            "variations": [
+              "Asumo la responsabilidad de [X]. Para que eso suceda, necesitaré [Y] de ti para [Z].",
+              "Me encargo de [X]. De tu parte, necesito [Y] para [Z].",
+              "Mi compromiso es [X]. Lo que necesito del equipo es [Y] para [Z]."
+            ]
+          },
+          {
+            "number": 6,
+            "title": "That's not feasible, but here's what is: [alternative].",
+            "example": "Launching all features by Q1 isn't feasible, but here's what is: core functionality by Q1, advanced features in Q2.",
+            "why": "Dices no sin ser solo negativo. Reconoces la solicitud, explicas por qué no funcionará, e inmediatamente ofreces un camino alternativo.",
+            "when": "Solicitudes poco realistas, expansión de alcance, presión de cronograma, restricciones de presupuesto",
+            "doNotSay": "\"No, we can't do that.\" (Suena como si no estuvieras orientado a soluciones.)",
+            "howToSay": "Mantén tu tono objetivo, no disculpatorio. La clave es el giro inmediato a \"but here's what is\"—no dejes que el silencio se asiente después de decir no.",
+            "variations": [
+              "[X] isn't realistic given [constraint], but we can accomplish [Y].",
+              "I can't commit to [X], but I can deliver [Y].",
+              "That won't work because [reason]. What we can do is [alternative]."
+            ]
+          },
+          {
+            "number": 7,
+            "title": "Going forward, we'll [X] to prevent [Y].",
+            "example": "Going forward, we'll require sign-off on scope changes to prevent timeline delays.",
+            "why": "Estás implementando una solución, no solo identificando un problema. \"Going forward\" señala que estás tomando acción sin detenerte en errores pasados.",
+            "when": "Después de errores, mejoras de proceso, al prevenir problemas recurrentes",
+            "doNotSay": "\"Maybe we should try to avoid this next time.\" (Demasiado vago y vacilante.)",
+            "howToSay": "Usa \"we'll\" con confianza—esto es una decisión, no una sugerencia. \"To prevent\" conecta la acción con un beneficio claro.",
+            "variations": [
+              "Moving forward, the process is [X] to avoid [Y].",
+              "To prevent [Y] from happening again, we're implementing [X].",
+              "The new approach is [X], which eliminates [Y]."
+            ]
+          }
         ]
       }
-    ],
-    "pattern": {
-      "title": "El Patrón",
-      "intro": "Las siete estructuras comparten estos elementos:",
-      "items": [
-        {
-          "bold": "Claridad sobre complejidad",
-          "text": " — Estructuras de oraciones simples, sin palabras innecesarias."
-        },
-        {
-          "bold": "Orientadas a la acción",
-          "text": " — Hacen avanzar las cosas, no solo describen situaciones."
-        },
-        {
-          "bold": "Seguras sin arrogancia",
-          "text": " — Eres decisivo, pero invitas a la colaboración."
-        }
-      ]
-    },
-    "quickRef": {
-      "title": "Referencia Rápida",
-      "intro": "Copia estas estructuras. Llena los espacios. Suena senior.",
-      "rows": [
-        {
-          "situation": "Hacer recomendaciones",
-          "structure": "Based on [X], I recommend we [Y]."
-        },
-        {
-          "situation": "Guiar la discusión",
-          "structure": "Let's align on [X] before we move to [Y]."
-        },
-        {
-          "situation": "Escucha activa",
-          "structure": "Here's what I'm hearing: [summary]. Is that accurate?"
-        },
-        {
-          "situation": "Priorizar trade-offs",
-          "structure": "The tradeoff is [X] vs [Y]. I believe [Y] is worth it because [Z]."
-        },
-        {
-          "situation": "Definir responsabilidad",
-          "structure": "I'll own [X], and I need [Y] from you by [Z]."
-        },
-        {
-          "situation": "Establecer límites",
-          "structure": "That's not feasible, but here's what is: [alternative]."
-        },
-        {
-          "situation": "Implementar soluciones",
-          "structure": "Going forward, we'll [X] to prevent [Y]."
-        }
-      ]
-    },
-    "labels": {
-      "why": "Por qué funciona",
-      "when": "Cuándo usarla",
-      "doNotSay": "No digas",
-      "howToSay": "Cómo decirla",
-      "variations": "Variaciones",
-      "situation": "Situación",
-      "structure": "Estructura de Liderazgo",
-      "example": "Ejemplo"
-    }
+    ]
   }
 }

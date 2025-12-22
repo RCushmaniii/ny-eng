@@ -88,17 +88,17 @@ const L = localizedText[lang] || localizedText.en; // Fallback to English if lan
                         background={background}
                     />
                 )}
-                <h2 class={`fade-in-up ${textColorClass}`} style="font-family: 'Noto Sans KR', sans-serif;">{headline}</h2>
-                {subheadline && <h3 class={`fade-in-up delay-1 mt-4 text-h5 ${textColorClass}`} style="font-family: 'Noto Sans KR', sans-serif;">{subheadline}</h3>}
+                <h2 class:list={`fade-in-up ${textColorClass}`} style="font-family: 'Noto Sans KR', sans-serif;">{headline}</h2>
+                {subheadline && <h3 class:list={`fade-in-up delay-1 mt-4 text-h5 ${textColorClass}`} style="font-family: 'Noto Sans KR', sans-serif;">{subheadline}</h3>}
 
-                {description && <p class={`fade-in-up delay-2 mt-6 text-base opacity-90 ${textColorClass}`} style="font-family: 'Noto Sans KR', sans-serif;">{description}</p>}
+                {description && <p class:list={`fade-in-up delay-2 mt-6 text-base opacity-90 ${textColorClass}`} style="font-family: 'Noto Sans KR', sans-serif;">{description}</p>}
 
                 {descriptionPoints && descriptionPoints.length > 0 && (
                     <div class="fade-in-up delay-3 mt-4 space-y-2" style="font-family: 'Noto Sans KR', sans-serif;">
-                        <strong class={textColorClass} style="font-family: 'Noto Sans KR', sans-serif;">{L.expectText}</strong>
+                        <strong class:list={textColorClass} style="font-family: 'Noto Sans KR', sans-serif;">{L.expectText}</strong>
                         <ul class="list-disc list-inside space-y-1">
                             {descriptionPoints.map((point: string) => (
-                                <li class={textColorClass} style="font-family: 'Noto Sans KR', sans-serif;">{point}</li>
+                                <li class:list={textColorClass} style="font-family: 'Noto Sans KR', sans-serif;">{point}</li>
                             ))}
                         </ul>
                     </div>

@@ -61,7 +61,7 @@ const { content } = Astro.props;
 const { footerCta: cta } = content; // Use the cta from the localized content
 ---
 
-<footer class={`bg-black text-white pb-small ${cta.hideCta ? "pt-large" : ""}`}>
+<footer class:list={`bg-black text-white pb-small ${cta.hideCta ? "pt-large" : ""}`}>
   <div class="site-container mx-auto px-4">
     {!cta.hideCta && (
       <div class="text-center border-b border-neutral-700 dark:border-neutral-800 mb-12 py-small">

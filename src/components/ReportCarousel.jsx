@@ -1,5 +1,5 @@
 //src/components/ReportCarousel.jsx
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const ReportCarousel = ({ images, autoPlayInterval = 4000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -8,30 +8,30 @@ const ReportCarousel = ({ images, autoPlayInterval = 4000 }) => {
   // Default sample images - replace these with your actual report screenshots
   const defaultImages = [
     {
-      src: '/images/report-sample-1.png',
-      alt: 'Communication Confidence Score Overview',
-      caption: 'Your personalized confidence score and growth areas'
+      src: "/images/report-sample-1.png",
+      alt: "Communication Confidence Score Overview",
+      caption: "Your personalized confidence score and growth areas",
     },
     {
-      src: '/images/report-sample-2.png',
-      alt: 'Detailed Analysis',
-      caption: 'In-depth analysis of your communication patterns'
+      src: "/images/report-sample-2.png",
+      alt: "Detailed Analysis",
+      caption: "In-depth analysis of your communication patterns",
     },
     {
-      src: '/images/report-sample-3.png',
-      alt: 'Strengths Assessment',
-      caption: 'Discover your unique communication strengths'
+      src: "/images/report-sample-3.png",
+      alt: "Strengths Assessment",
+      caption: "Discover your unique communication strengths",
     },
     {
-      src: '/images/report-sample-4.png',
-      alt: 'Growth Opportunities',
-      caption: 'Personalized recommendations for improvement'
+      src: "/images/report-sample-4.png",
+      alt: "Growth Opportunities",
+      caption: "Personalized recommendations for improvement",
     },
     {
-      src: '/images/report-sample-5.png',
-      alt: 'Action Plan',
-      caption: 'Step-by-step guidance to boost your confidence'
-    }
+      src: "/images/report-sample-5.png",
+      alt: "Action Plan",
+      caption: "Step-by-step guidance to boost your confidence",
+    },
   ];
 
   const slides = images || defaultImages;
@@ -52,8 +52,8 @@ const ReportCarousel = ({ images, autoPlayInterval = 4000 }) => {
   };
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? slides.length - 1 : prevIndex - 1,
     );
     setIsAutoPlaying(false);
   };
@@ -71,13 +71,19 @@ const ReportCarousel = ({ images, autoPlayInterval = 4000 }) => {
 
       <div className="carousel-container">
         {/* Navigation Arrows */}
-        <button 
+        <button
           className="carousel-arrow carousel-arrow-left"
           onClick={goToPrevious}
           aria-label="Previous slide"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path
+              d="M15 18L9 12L15 6"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </button>
 
@@ -86,14 +92,10 @@ const ReportCarousel = ({ images, autoPlayInterval = 4000 }) => {
           {slides.map((slide, index) => (
             <div
               key={index}
-              className={`carousel-slide ${index === currentIndex ? 'active' : ''}`}
+              className={`carousel-slide ${index === currentIndex ? "active" : ""}`}
             >
               <div className="slide-content">
-                <img 
-                  src={slide.src} 
-                  alt={slide.alt}
-                  loading="lazy"
-                />
+                <img src={slide.src} alt={slide.alt} loading="lazy" />
                 <div className="slide-caption">
                   <p>{slide.caption}</p>
                 </div>
@@ -102,13 +104,19 @@ const ReportCarousel = ({ images, autoPlayInterval = 4000 }) => {
           ))}
         </div>
 
-        <button 
+        <button
           className="carousel-arrow carousel-arrow-right"
           onClick={goToNext}
           aria-label="Next slide"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path
+              d="M9 18L15 12L9 6"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </button>
       </div>
@@ -118,7 +126,7 @@ const ReportCarousel = ({ images, autoPlayInterval = 4000 }) => {
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`dot ${index === currentIndex ? 'active' : ''}`}
+            className={`dot ${index === currentIndex ? "active" : ""}`}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
           />

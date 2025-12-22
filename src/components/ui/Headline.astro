@@ -28,13 +28,13 @@ const cx =
     : (classes as NonNullable<Exclude<HeadlineProps['classes'], string>>);
 ---
 
-<div class={twMerge('text-center', cx.container)}>
-  {title && <h2 class={twMerge('text-3xl font-bold', cx.title)}>{title}</h2>}
+<div class:list={twMerge('text-center', cx.container)}>
+  {title && <h2 class:list={twMerge('text-3xl font-bold', cx.title)}>{title}</h2>}
   {subtitle && (
-    <p class={twMerge('mt-2 text-lg text-muted', cx.subtitle)}>{subtitle}</p>
+    <p class:list={twMerge('mt-2 text-lg text-muted', cx.subtitle)}>{subtitle}</p>
   )}
   {tagline && (
-    <p class={twMerge('mt-4 text-sm uppercase tracking-wide', cx.tagline)}>
+    <p class:list={twMerge('mt-4 text-sm uppercase tracking-wide', cx.tagline)}>
       {tagline}
     </p>
   )}

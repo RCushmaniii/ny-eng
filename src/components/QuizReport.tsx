@@ -88,14 +88,14 @@ export default function QuizReport() {
       description: "",
       color: "",
     };
-    if (scoreBreakdown.scoreTier === "Conversation-Ready") {
+    if (scoreBreakdown.scoreTier === "Executive Presence") {
       currentTierInfo = {
         tier: scoreBreakdown.scoreTier,
         color: "#10b981",
         description:
           "Your team has solid communication skills with room for strategic refinement.",
       };
-    } else if (scoreBreakdown.scoreTier === "Million-Dollar Gap") {
+    } else if (scoreBreakdown.scoreTier === "Passive Proficiency") {
       currentTierInfo = {
         tier: scoreBreakdown.scoreTier,
         color: "#f59e0b",

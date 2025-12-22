@@ -1,12 +1,12 @@
 /**
  * Database Client - MySQL
- * 
+ *
  * Replaces Supabase with MySQL on Hostinger
  * Maintains same interface for backward compatibility
  */
 
-import pool from './mysql';
-import type { RowDataPacket, ResultSetHeader } from 'mysql2/promise';
+import pool from "./mysql";
+import type { RowDataPacket, ResultSetHeader } from "mysql2/promise";
 
 // =============================================================================
 // TYPE DEFINITIONS (same as Supabase version)
@@ -128,7 +128,7 @@ export interface QuizSubmissionPayload {
  */
 export async function submitQuiz(payload: QuizSubmissionPayload) {
   const connection = await pool.getConnection();
-  
+
   try {
     await connection.beginTransaction();
 
@@ -167,14 +167,14 @@ export async function submitQuiz(payload: QuizSubmissionPayload) {
         payload.utm_content || null,
         payload.utm_term || null,
         JSON.stringify(payload.answers),
-      ]
+      ],
     );
 
     const submissionId = submissionResult.insertId.toString();
 
     // 2. Insert all answers
     if (payload.answers && payload.answers.length > 0) {
-      const answerValues = payload.answers.map(a => [
+      const answerValues = payload.answers.map((a) => [
         submissionId,
         a.question_number,
         a.question_text,
@@ -189,7 +189,7 @@ export async function submitQuiz(payload: QuizSubmissionPayload) {
           submission_id, question_number, question_text,
           answer_text, answer_index, points, category
         ) VALUES ?`,
-        [answerValues]
+        [answerValues],
       );
     }
 
@@ -219,12 +219,12 @@ export async function getSubmission(submissionId: string) {
   try {
     // Get submission
     const [submissions] = await pool.execute<RowDataPacket[]>(
-      'SELECT * FROM quiz_submissions WHERE id = ?',
-      [submissionId]
+      "SELECT * FROM quiz_submissions WHERE id = ?",
+      [submissionId],
     );
 
     if (submissions.length === 0) {
-      throw new Error('Submission not found');
+      throw new Error("Submission not found");
     }
 
     const submission = submissions[0];
@@ -245,8 +245,8 @@ export async function getSubmission(submissionId: string) {
 
     // Get answers
     const [answers] = await pool.execute<RowDataPacket[]>(
-      'SELECT * FROM quiz_answers WHERE submission_id = ? ORDER BY question_number',
-      [submissionId]
+      "SELECT * FROM quiz_answers WHERE submission_id = ? ORDER BY question_number",
+      [submissionId],
     );
 
     return {
@@ -274,39 +274,40 @@ export async function getAllSubmissions(filters?: {
   offset?: number;
 }) {
   try {
-    let query = 'SELECT * FROM quiz_submissions WHERE 1=1';
+    let query = "SELECT * FROM quiz_submissions WHERE 1=1";
     const params: any[] = [];
 
     // Apply filters
     if (filters?.score_tier) {
-      query += ' AND score_tier = ?';
+      query += " AND score_tier = ?";
       params.push(filters.score_tier);
     }
     if (filters?.language) {
-      query += ' AND language = ?';
+      query += " AND language = ?";
       params.push(filters.language);
     }
     if (filters?.booked_consultation !== undefined) {
-      query += ' AND booked_consultation = ?';
+      query += " AND booked_consultation = ?";
       params.push(filters.booked_consultation);
     }
 
-    query += ' ORDER BY created_at DESC';
+    query += " ORDER BY created_at DESC";
 
     if (filters?.limit) {
-      query += ' LIMIT ?';
+      query += " LIMIT ?";
       params.push(filters.limit);
     }
     if (filters?.offset) {
-      query += ' OFFSET ?';
+      query += " OFFSET ?";
       params.push(filters.offset);
     }
 
     const [submissions] = await pool.execute<RowDataPacket[]>(query, params);
 
     // Parse JSON fields for each submission
-    submissions.forEach(sub => {
-      if (sub.category_scores) sub.category_scores = JSON.parse(sub.category_scores);
+    submissions.forEach((sub) => {
+      if (sub.category_scores)
+        sub.category_scores = JSON.parse(sub.category_scores);
       if (sub.primary_gap) sub.primary_gap = JSON.parse(sub.primary_gap);
       if (sub.secondary_gap) sub.secondary_gap = JSON.parse(sub.secondary_gap);
       if (sub.answers) sub.answers = JSON.parse(sub.answers);
@@ -314,7 +315,7 @@ export async function getAllSubmissions(filters?: {
 
     // Get total count
     const [countResult] = await pool.execute<RowDataPacket[]>(
-      'SELECT COUNT(*) as total FROM quiz_submissions'
+      "SELECT COUNT(*) as total FROM quiz_submissions",
     );
     const total = countResult[0].total;
 
@@ -337,14 +338,14 @@ export async function getAllSubmissions(filters?: {
  */
 export async function updateBookingStatus(
   submissionId: string,
-  bookingDate: string
+  bookingDate: string,
 ) {
   try {
     await pool.execute(
       `UPDATE quiz_submissions 
        SET booked_consultation = TRUE, booking_date = ? 
        WHERE id = ?`,
-      [bookingDate, submissionId]
+      [bookingDate, submissionId],
     );
 
     return {
@@ -366,8 +367,8 @@ export async function updateBookingStatus(
 export async function trackCtaClick(submissionId: string) {
   try {
     await pool.execute(
-      'UPDATE quiz_submissions SET clicked_cta = TRUE WHERE id = ?',
-      [submissionId]
+      "UPDATE quiz_submissions SET clicked_cta = TRUE WHERE id = ?",
+      [submissionId],
     );
 
     return { success: true };

@@ -1,9 +1,9 @@
 ---
 // src/components/BlogPost.astro
-import { categories } from '../../data/categories';
-import HashtagCategory from '../ui/HashtagCategory.astro';
-import Date from '../ui/Date.astro';
-import { Image } from 'astro:assets';
+import { categories } from "../../data/categories";
+import HashtagCategory from "../ui/HashtagCategory.astro";
+import Date from "../ui/Date.astro";
+import { Image } from "astro:assets";
 
 interface Props {
   title: string;
@@ -15,70 +15,95 @@ interface Props {
   content: string;
   slug?: string;
   index: number;
-  lang: 'en' | 'es';
+  lang: "en" | "es";
 }
 
-const { title, excerpt, featuredImage, imageAlt, publishDate, categories: postCategories, slug = '', index, lang } = Astro.props;
+const {
+  title,
+  excerpt,
+  featuredImage,
+  imageAlt,
+  publishDate,
+  categories: postCategories,
+  slug = "",
+  index,
+  lang,
+} = Astro.props;
 
 // Remove language prefix from slug if it exists (e.g., "en/small-talk" becomes "small-talk")
-const cleanSlug = slug.replace(/^(en|es)\//, '');
+const cleanSlug = slug.replace(/^(en|es)\//, "");
 
 // Validate categories against the valid categories based on language
 const validCategories = postCategories.filter((categoryName: string) => {
-  if (lang === 'es') {
+  if (lang === "es") {
     // For Spanish pages, check against Spanish category names
-    return categories.some(category => 
-      (category.name_es && category.name_es === categoryName) || category.name === categoryName
+    return categories.some(
+      (category) =>
+        (category.name_es && category.name_es === categoryName) ||
+        category.name === categoryName
     );
   } else {
     // For English pages, check against English category names
-    return categories.some(category => category.name === categoryName);
+    return categories.some((category) => category.name === categoryName);
   }
 });
-
 ---
 
-<a 
-  href={`/${lang}/blog/${cleanSlug}/`} 
+<a
+  href={`/${lang}/blog/${cleanSlug}/`}
   class="group flex flex-col h-full overflow-hidden bg-white rounded-lg border border-black transition-all duration-300 hover:border-primary"
   data-aos="fade-up"
   data-aos-delay={index * 100}
 >
-  <div class="relative aspect-[16/9] overflow-hidden border-black border-b group-hover:border-primary transition-colors duration-300">
-    {featuredImage && typeof featuredImage === 'object' && (
-      <Image 
-        src={featuredImage}
-        alt={imageAlt || title}
-        width={600}
-        height={338}
-        class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-      />
-    )}
-    <div class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+  <div
+    class="relative aspect-[16/9] overflow-hidden border-black border-b group-hover:border-primary transition-colors duration-300"
+  >
+    {
+      featuredImage && typeof featuredImage === "object" && (
+        <Image
+          src={featuredImage}
+          alt={imageAlt || title}
+          width={600}
+          height={338}
+          class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+        />
+      )
+    }
+    <div
+      class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+    >
+    </div>
   </div>
-  
-  <div class="py-4 px-4 flex flex-col flex-grow relative">
+
+  <div class="py-6 px-4 flex flex-col flex-grow relative">
     <!-- Date at the top -->
-    <div class="text-sm text-gray-600 mb-3 group-hover:text-primary/80 transition-colors duration-300">
+    <div
+      class="text-sm text-gray-600 mb-3 group-hover:text-primary/80 transition-colors duration-300"
+    >
       <Date date={publishDate} lang={lang} />
     </div>
 
-    <h2 class="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">
+    <h2
+      class="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300"
+    >
       {title}
     </h2>
-    
-    <p class="mt-2 mb-8 text-body-base line-clamp-4 flex-grow text-small group-hover:text-gray-700 transition-colors duration-300">
-      {excerpt ?? 'Read more...'}
+
+    <p
+      class="mt-2 mb-16 text-body-base line-clamp-4 flex-grow text-small group-hover:text-gray-700 transition-colors duration-300"
+    >
+      {excerpt ?? "Read more..."}
     </p>
-    
+
     <!-- Categories as hashtags at the bottom -->
-    <div class="absolute bottom-4 left-4 flex flex-wrap">
-      {validCategories.map(categoryName => (
-        <div class="stop-prop">
-          <HashtagCategory category={categoryName} lang={lang} />
-        </div>
-      ))}
+    <div class="absolute bottom-6 left-4 flex flex-wrap">
+      {
+        validCategories.map((categoryName) => (
+          <div class="stop-prop">
+            <HashtagCategory category={categoryName} lang={lang} />
+          </div>
+        ))
+      }
     </div>
-    
   </div>
 </a>

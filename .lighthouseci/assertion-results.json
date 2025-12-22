@@ -3,10 +3,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0.5,
-    "values": [
-      0.5,
-      0.5
-    ],
+    "values": [0.5, 0.5],
     "operator": ">=",
     "passed": false,
     "auditId": "bootup-time",
@@ -19,10 +16,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0.67,
-    "values": [
-      0.6,
-      0.67
-    ],
+    "values": [0.6, 0.67],
     "operator": ">=",
     "passed": false,
     "auditId": "first-contentful-paint",
@@ -35,10 +29,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0.5,
-    "values": [
-      0.5,
-      0.5
-    ],
+    "values": [0.5, 0.5],
     "operator": ">=",
     "passed": false,
     "auditId": "image-delivery-insight",
@@ -51,10 +42,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0,
-    "values": [
-      0,
-      0
-    ],
+    "values": [0, 0],
     "operator": ">=",
     "passed": false,
     "auditId": "is-crawlable",
@@ -67,10 +55,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0.82,
-    "values": [
-      0.82,
-      0.21
-    ],
+    "values": [0.82, 0.21],
     "operator": ">=",
     "passed": false,
     "auditId": "largest-contentful-paint",
@@ -83,10 +68,7 @@
     "name": "maxLength",
     "expected": 0,
     "actual": 1,
-    "values": [
-      1,
-      1
-    ],
+    "values": [1, 1],
     "operator": "<=",
     "passed": false,
     "auditId": "legacy-javascript",
@@ -99,10 +81,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0.5,
-    "values": [
-      0.5,
-      0.5
-    ],
+    "values": [0.5, 0.5],
     "operator": ">=",
     "passed": false,
     "auditId": "mainthread-work-breakdown",
@@ -115,10 +94,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0,
-    "values": [
-      0,
-      0
-    ],
+    "values": [0, 0],
     "operator": ">=",
     "passed": false,
     "auditId": "network-dependency-tree-insight",
@@ -131,10 +107,7 @@
     "name": "maxLength",
     "expected": 0,
     "actual": 3,
-    "values": [
-      3,
-      3
-    ],
+    "values": [3, 3],
     "operator": "<=",
     "passed": false,
     "auditId": "render-blocking-insight",
@@ -147,10 +120,7 @@
     "name": "maxLength",
     "expected": 0,
     "actual": 3,
-    "values": [
-      3,
-      3
-    ],
+    "values": [3, 3],
     "operator": "<=",
     "passed": false,
     "auditId": "render-blocking-resources",
@@ -163,10 +133,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0.5,
-    "values": [
-      0.5,
-      0.5
-    ],
+    "values": [0.5, 0.5],
     "operator": ">=",
     "passed": false,
     "auditId": "total-byte-weight",
@@ -179,10 +146,7 @@
     "name": "maxLength",
     "expected": 0,
     "actual": 1,
-    "values": [
-      1,
-      1
-    ],
+    "values": [1, 1],
     "operator": "<=",
     "passed": false,
     "auditId": "unminified-css",
@@ -195,10 +159,7 @@
     "name": "maxLength",
     "expected": 0,
     "actual": 1,
-    "values": [
-      1,
-      1
-    ],
+    "values": [1, 1],
     "operator": "<=",
     "passed": false,
     "auditId": "unused-css-rules",
@@ -211,10 +172,7 @@
     "name": "maxLength",
     "expected": 0,
     "actual": 2,
-    "values": [
-      2,
-      2
-    ],
+    "values": [2, 2],
     "operator": "<=",
     "passed": false,
     "auditId": "uses-responsive-images",

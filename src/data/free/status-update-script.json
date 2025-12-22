@@ -14,7 +14,13 @@
     "timeToComplete": "5 minutes",
     "estimatedMinutes": 5,
     "pageCount": 4,
-    "tags": ["status-updates", "meetings", "project-management", "reporting", "communication"]
+    "tags": [
+      "status-updates",
+      "meetings",
+      "project-management",
+      "reporting",
+      "communication"
+    ]
   },
   "targeting": {
     "primaryPersona": ["manager", "project-manager", "engineer", "consultant"],
@@ -34,7 +40,12 @@
   },
   "seo": {
     "metaDescription": "Get the 60-second status update formula that executives love. Stop rambling in meetings and start communicating like a senior leader.",
-    "keywords": ["status update template", "project status report", "how to give status updates", "executive status report"]
+    "keywords": [
+      "status update template",
+      "project status report",
+      "how to give status updates",
+      "executive status report"
+    ]
   },
   "slugEn": "status-update-script",
   "slugEs": "script-actualizacion-estado",
@@ -140,8 +151,8 @@
             "title": "S = Status/Estado (10 segundos)",
             "content": "Empieza con el titular. ¿Estamos en camino, en riesgo o bloqueados? No entierres lo importante en detalles—los ejecutivos quieren la conclusión primero.",
             "example": {
-              "wrong": "So we've been working on the integration and there have been some challenges with the API documentation and we're trying to work through them...",
-              "right": "Project X is on track for the March 15 delivery.",
+              "wrong": "Hemos estado trabajando en la integración y ha habido algunos desafíos con la documentación de la API y estamos tratando de resolverlos...",
+              "right": "El Proyecto X está en camino para la entrega del 15 de marzo.",
               "why": "El ejecutivo ya sabe lo más importante. Lo demás es contexto."
             },
             "actionItem": "Empieza cada actualización con UNA oración que responda: '¿Estamos en camino?'"
@@ -184,7 +195,7 @@
       {
         "id": "complete-script",
         "title": "El script completo de 60 segundos",
-        "content": "Así suena cuando lo unes todo:\n\n'Project X is on track for the March 15 delivery. [STATUS]\n\nPhase 1 completed last Friday. Phase 2 starts Monday and delivers March 1. Final delivery March 15. [TIMELINE]\n\nOne risk: the vendor API documentation is incomplete. Mitigation: I've scheduled a call with their team Thursday to resolve. [AT RISK]\n\nI need one thing from you: approval to bring in a contractor for two weeks. That keeps us on schedule. [REQUEST]'\n\nTiempo total: 45 segundos. Confianza total: 100%."
+        "content": "Así suena cuando lo unes todo:\n\n'El Proyecto X está en camino para la entrega del 15 de marzo. [ESTADO]\n\nFase 1 completada el viernes pasado. Fase 2 comienza el lunes y se entrega el 1 de marzo. Entrega final el 15 de marzo. [CRONOGRAMA]\n\nUn riesgo: la documentación de la API del proveedor está incompleta. Mitigación: He programado una llamada con su equipo el jueves para resolver. [EN RIESGO]\n\nNecesito una cosa de ti: aprobación para contratar un contratista por dos semanas. Eso nos mantiene en el cronograma. [SOLICITUD]'\n\nTiempo total: 45 segundos. Confianza total: 100%."
       }
     ]
   }

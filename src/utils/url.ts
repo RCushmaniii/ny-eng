@@ -7,11 +7,11 @@
 export function normalizePath(path: string): string {
   if (/^https?:\/\//i.test(path)) {
     // External URL: only collapse slashes after protocol
-    return path.replace(/([^:])\/+([/])/g, '$1/');
+    return path.replace(/([^:])\/+([/])/g, "$1/");
   }
   // Internal: collapse all multiple slashes, ensure single leading slash
-  let normalized = path.replace(/\/+/g, '/');
-  if (!normalized.startsWith('/')) normalized = '/' + normalized;
+  let normalized = path.replace(/\/+/g, "/");
+  if (!normalized.startsWith("/")) normalized = "/" + normalized;
   return normalized;
 }
 
@@ -22,7 +22,7 @@ export function normalizePath(path: string): string {
  */
 export const withSlash = (path: string): string => {
   // Return early if path is empty, already has a slash, or looks like a file path
-  if (!path || path.endsWith('/') || path.includes('.')) {
+  if (!path || path.endsWith("/") || path.includes(".")) {
     return path;
   }
   return `${path}/`;

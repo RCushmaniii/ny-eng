@@ -23,7 +23,7 @@ At **New York English**, I help professionals like you improve your Business Eng
 ### What Makes My Coaching Special
 
 - **1-on-1 Sessions Designed for You**  
-  Every lesson focuses on *your* goals. We work on what you need, like writing professional emails, speaking in meetings, or negotiating deals. No textbooks, just real-world skills.
+  Every lesson focuses on _your_ goals. We work on what you need, like writing professional emails, speaking in meetings, or negotiating deals. No textbooks, just real-world skills.
 
 - **Training for Companies**  
   Want your team to communicate better? I offer workshops to improve English for entire departments, from client calls to internal reports.
@@ -42,18 +42,18 @@ Here’s what leaders from different industries say about working with me:
 
 > ★★★★★  
 > “Robert’s coaching improved my English and gave me confidence to present to clients and investors. We talked about business, tech, and global topics, which helped me learn useful words and communicate better. It changed my career!”  
-**Julio Aldana**  
-*COO, Smarttie*
+> **Julio Aldana**  
+> _COO, Smarttie_
 
 > ★★★★★  
 > “As a founder, I’m always pitching ideas and leading my team. Robert’s coaching gave me the English skills and confidence to do it well. It helped me close deals and connect with my team.”  
-**Hugo Blum**  
-*CEO, 100 Ladrillos*
+> **Hugo Blum**  
+> _CEO, 100 Ladrillos_
 
 > ★★★★★  
 > “Robert’s coaching made me feel natural speaking English, especially with U.S. clients. I’m now comfortable in conversations and ready for networking and international meetings.”  
-**Andres Guzman Rubio**  
-*COO – Mexico, Driscoll's*
+> **Andres Guzman Rubio**  
+> _COO – Mexico, Driscoll's_
 
 ---
 
@@ -68,7 +68,6 @@ Improving your English is an investment in your future. With my coaching, you’
 ---
 
 ## Take Your English to the Next Level
-
 
 ---
 

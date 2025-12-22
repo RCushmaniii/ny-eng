@@ -126,7 +126,7 @@ export interface Disclaimer {
 export interface Button {
   text?: string;
   href?: string;
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'link';
+  variant?: "primary" | "secondary" | "tertiary" | "link";
   target?: string;
   rel?: string;
   icon?: string;
@@ -245,7 +245,7 @@ export interface FooterProps extends Widget {
     href: string;
   }>;
   footNote?: string;
-  theme?: 'light' | 'dark';
+  theme?: "light" | "dark";
 }
 
 export interface HeaderProps extends Widget {
@@ -259,7 +259,7 @@ export interface HeaderProps extends Widget {
   isFullWidth?: boolean;
   showToggleTheme?: boolean;
   showRssFeed?: boolean;
-  position?: 'center' | 'right' | 'left';
+  position?: "center" | "right" | "left";
 }
 
 export interface HeroProps extends Headline, Widget {

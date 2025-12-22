@@ -14,7 +14,13 @@
     "timeToComplete": "10 minutes",
     "estimatedMinutes": 10,
     "pageCount": 8,
-    "tags": ["negotiation", "pricing", "objection-handling", "executive-level", "scripts"]
+    "tags": [
+      "negotiation",
+      "pricing",
+      "objection-handling",
+      "executive-level",
+      "scripts"
+    ]
   },
   "targeting": {
     "primaryPersona": ["sales", "founder", "executive", "consultant"],
@@ -35,7 +41,13 @@
   },
   "seo": {
     "metaDescription": "Download the 5-Minute Negotiation Script: exact phrases to defend your price, handle objections, and close deals with confidence in English.",
-    "keywords": ["negotiation script english", "business negotiation phrases", "how to negotiate in english", "price negotiation script", "sales negotiation"]
+    "keywords": [
+      "negotiation script english",
+      "business negotiation phrases",
+      "how to negotiate in english",
+      "price negotiation script",
+      "sales negotiation"
+    ]
   },
   "analytics": {
     "downloadCount": 0,
@@ -57,176 +69,129 @@
       {
         "id": "phase-1",
         "title": "Phase 1: The Opening Anchor",
-        "description": "How to present your price with confidence (before they push back)",
         "timing": "First 60 seconds of pricing discussion",
         "principle": "The way you present your price determines how much pushback you get. Weak delivery invites negotiation. Strong delivery commands respect.",
-        "scripts": [
+        "items": [
           {
-            "situation": "Presenting your price for the first time",
-            "script": "Based on the scope we discussed, the investment for this project is $[X]. This includes [key deliverable 1], [key deliverable 2], and [key deliverable 3]. I want to walk you through why this investment makes sense for [their specific goal].",
-            "notes": [
-              "Say 'investment' not 'cost' or 'price'",
-              "Connect immediately to their goals",
-              "Use falling intonation on the number (statement, not question)",
-              "Pause after the number—don't rush to justify"
-            ],
-            "avoid": "So, um, the price would be around $X, more or less. I know it might seem high, but..."
+            "content": "Based on the scope we discussed, the investment for this project is $[X]. This includes [key deliverable 1], [key deliverable 2], and [key deliverable 3]. I want to walk you through why this investment makes sense for [their specific goal].",
+            "actionItem": "Say 'investment' not 'cost' or 'price'. Connect immediately to their goals. Use falling intonation on the number (statement, not question). Pause after the number—don't rush to justify.",
+            "doNotSay": "So, um, the price would be around $X, more or less. I know it might seem high, but...",
+            "number": 1,
+            "title": "Presenting your price for the first time"
           },
           {
-            "situation": "Setting expectations before the number",
-            "script": "Before I share the investment, I want to make sure we're aligned on scope. You mentioned [their priority]. To deliver that properly, we're looking at [X]. Here's what that includes.",
-            "notes": [
-              "Frame scope before price",
-              "Remind them of their own stated priorities",
-              "This makes the price feel justified before you say it"
-            ]
+            "content": "Before I share the investment, I want to make sure we're aligned on scope. You mentioned [their priority]. To deliver that properly, we're looking at [X]. Here's what that includes.",
+            "actionItem": "Frame scope before price. Remind them of their own stated priorities. This makes the price feel justified before you say it.",
+            "number": 2,
+            "title": "Setting expectations before the number"
           },
           {
-            "situation": "When you know they're comparing vendors",
-            "script": "I know you're evaluating options. Here's what I want you to consider when comparing: [unique value 1], [unique value 2], and [unique value 3]. The investment is $[X], and here's why it's structured this way.",
-            "notes": [
-              "Acknowledge competition without defensiveness",
-              "Pre-emptively differentiate",
-              "Makes them compare value, not just price"
-            ]
+            "content": "I know you're evaluating options. Here's what I want you to consider when comparing: [unique value 1], [unique value 2], and [unique value 3]. The investment is $[X], and here's why it's structured this way.",
+            "actionItem": "Acknowledge competition without defensiveness. Pre-emptively differentiate. Makes them compare value, not just price.",
+            "number": 3,
+            "title": "When you know they're comparing vendors"
           }
-        ]
+        ],
+        "content": "How to present your price with confidence (before they push back)"
       },
       {
         "id": "phase-2",
         "title": "Phase 2: The Pushback Response",
-        "description": "What to say when they challenge your price",
         "timing": "The critical 30 seconds after 'Can you do better?'",
         "principle": "The first person to speak after a price objection usually loses. Pause. Ask a question. Understand before you concede.",
-        "scripts": [
+        "items": [
           {
-            "situation": "They say: 'This is more than we expected.'",
-            "script": "I appreciate you sharing that. Help me understand—when you say more than expected, are you comparing to a specific budget you had in mind, or to other proposals you've received?",
-            "notes": [
-              "Don't apologize or immediately offer a discount",
-              "Ask a diagnostic question",
-              "This gives you information AND time to think"
-            ],
-            "followUp": "Depending on their answer, you can address budget constraints OR differentiate from competitors."
+            "content": "I appreciate you sharing that. Help me understand—when you say more than expected, are you comparing to a specific budget you had in mind, or to other proposals you've received?",
+            "actionItem": "Don't apologize or immediately offer a discount. Ask a diagnostic question. This gives you information AND time to think. Depending on their answer, you can address budget constraints OR differentiate from competitors.",
+            "number": 1,
+            "title": "They say: 'This is more than we expected.'"
           },
           {
-            "situation": "They say: 'Can you do better on price?'",
-            "script": "I want to make sure we find something that works for both of us. Before I answer that—is price the only factor, or are there other concerns I should address first?",
-            "notes": [
-              "Never say 'yes' immediately",
-              "Uncover hidden objections",
-              "Often, price is a proxy for other concerns (trust, scope, timeline)"
-            ]
+            "content": "I want to make sure we find something that works for both of us. Before I answer that—is price the only factor, or are there other concerns I should address first?",
+            "actionItem": "Never say 'yes' immediately. Uncover hidden objections. Often, price is a proxy for other concerns (trust, scope, timeline).",
+            "number": 2,
+            "title": "They say: 'Can you do better on price?'"
           },
           {
-            "situation": "They say: 'Competitor X is 30% cheaper.'",
-            "script": "That's useful to know. Can you share what's included in their proposal? I want to make sure we're comparing the same scope. In my experience, the difference often comes down to [your key differentiator].",
-            "notes": [
-              "Don't panic or immediately match",
-              "Request details (they often don't have them)",
-              "Redirect to value, not price"
-            ]
+            "content": "That's useful to know. Can you share what's included in their proposal? I want to make sure we're comparing the same scope. In my experience, the difference often comes down to [your key differentiator].",
+            "actionItem": "Don't panic or immediately match. Request details (they often don't have them). Redirect to value, not price.",
+            "number": 3,
+            "title": "They say: 'Competitor X is 30% cheaper.'"
           },
           {
-            "situation": "They say: 'We don't have the budget for this.'",
-            "script": "I understand budget constraints are real. Let me ask—if budget weren't a factor, would this solution address your needs? [If yes:] Then let's talk about how we might structure this to fit your current situation.",
-            "notes": [
-              "Separate 'can't afford' from 'don't want to pay'",
-              "Opens door to phased approaches or adjusted scope",
-              "Shows flexibility without discounting"
-            ]
+            "content": "I understand budget constraints are real. Let me ask—if budget weren't a factor, would this solution address your needs? [If yes:] Then let's talk about how we might structure this to fit your current situation.",
+            "actionItem": "Separate 'can't afford' from 'don't want to pay'. Opens door to phased approaches or adjusted scope. Shows flexibility without discounting.",
+            "number": 4,
+            "title": "They say: 'We don't have the budget for this.'"
           }
-        ]
+        ],
+        "content": "What to say when they challenge your price"
       },
       {
         "id": "phase-3",
         "title": "Phase 3: Defending Your Position",
-        "description": "How to hold the line without losing the deal",
         "timing": "When they keep pushing after your initial response",
         "principle": "You can be firm AND collaborative. The goal is to find a solution, not win an argument. But you don't have to give away your margin to do it.",
-        "scripts": [
+        "items": [
           {
-            "situation": "They keep pushing: 'I really need you to come down.'",
-            "script": "I hear you, and I want to find a solution. Here's what I can do: I can adjust the scope to fit a $[lower number] investment, or we can keep the full scope and discuss payment terms. Which would be more helpful for you?",
-            "notes": [
-              "Offer alternatives, not discounts",
-              "Tie price reduction to scope reduction",
-              "Put the choice in their hands"
-            ]
+            "content": "I hear you, and I want to find a solution. Here's what I can do: I can adjust the scope to fit a $[lower number] investment, or we can keep the full scope and discuss payment terms. Which would be more helpful for you?",
+            "actionItem": "Offer alternatives, not discounts. Tie price reduction to scope reduction. Put the choice in their hands.",
+            "number": 1,
+            "title": "They keep pushing: 'I really need you to come down.'"
           },
           {
-            "situation": "They ask for a specific discount: 'Can you do 20% off?'",
-            "script": "I can't do 20% off the current scope. But I can offer [specific concession] if that would help. What would that mean for your decision?",
-            "notes": [
-              "Say 'I can't' not 'I won't'—it's less confrontational",
-              "Offer something smaller in return",
-              "Ask what it means for their decision (tests if it's the real blocker)"
-            ]
+            "content": "I can't do 20% off the current scope. But I can offer [specific concession] if that would help. What would that mean for your decision?",
+            "actionItem": "Say 'I can't' not 'I won't'—it's less confrontational. Offer something smaller in return. Ask what it means for their decision (tests if it's the real blocker).",
+            "number": 2,
+            "title": "They ask for a specific discount: 'Can you do 20% off?'"
           },
           {
-            "situation": "They use silence or pressure tactics",
-            "script": "[Pause. Wait. Let them speak first.] If they stay silent: 'Take your time. What questions can I answer to help you decide?'",
-            "notes": [
-              "Silence is a tactic—don't fill it with concessions",
-              "Whoever speaks first after a negotiation silence usually concedes",
-              "Offer to answer questions, not to lower price"
-            ]
+            "content": "[Pause. Wait. Let them speak first.] If they stay silent: 'Take your time. What questions can I answer to help you decide?'",
+            "actionItem": "Silence is a tactic—don't fill it with concessions. Whoever speaks first after a negotiation silence usually concedes. Offer to answer questions, not to lower price.",
+            "number": 3,
+            "title": "They use silence or pressure tactics"
           },
           {
-            "situation": "They say: 'I need to think about it.'",
-            "script": "Absolutely, take the time you need. Before you go—what specifically do you want to think through? I'm happy to address any concerns now so you have complete information.",
-            "notes": [
-              "Don't just accept 'I need to think'—it often means unspoken objections",
-              "Surface concerns while you're still on the call",
-              "Keeps the conversation open"
-            ]
+            "content": "Absolutely, take the time you need. Before you go—what specifically do you want to think through? I'm happy to address any concerns now so you have complete information.",
+            "actionItem": "Don't just accept 'I need to think'—it often means unspoken objections. Surface concerns while you're still on the call. Keeps the conversation open.",
+            "number": 4,
+            "title": "They say: 'I need to think about it.'"
           }
-        ]
+        ],
+        "content": "How to hold the line without losing the deal"
       },
       {
         "id": "phase-4",
         "title": "Phase 4: Closing with Confidence",
-        "description": "How to lock in the deal and confirm next steps",
         "timing": "When they're ready to move forward (or almost ready)",
         "principle": "A negotiation isn't finished until you have clear commitment. Don't leave with vague 'we'll be in touch.' Get specific next steps.",
-        "scripts": [
+        "items": [
           {
-            "situation": "They verbally agree: 'OK, let's do it.'",
-            "script": "Excellent. Let me confirm what we've agreed: [scope], [timeline], [investment]. I'll send over the agreement by [specific time] today. Once you sign, we can schedule kickoff for [proposed date]. Does that work?",
-            "notes": [
-              "Restate terms immediately (prevents 'misunderstandings' later)",
-              "Propose specific next steps with times",
-              "Get verbal confirmation"
-            ]
+            "content": "Excellent. Let me confirm what we've agreed: [scope], [timeline], [investment]. I'll send over the agreement by [specific time] today. Once you sign, we can schedule kickoff for [proposed date]. Does that work?",
+            "actionItem": "Restate terms immediately (prevents 'misunderstandings' later). Propose specific next steps with times. Get verbal confirmation.",
+            "number": 1,
+            "title": "They verbally agree: 'OK, let's do it.'"
           },
           {
-            "situation": "They're close but hesitant",
-            "script": "It sounds like we're aligned on the solution. What would help you feel confident moving forward today?",
-            "notes": [
-              "Direct question to surface last objection",
-              "'Feel confident' acknowledges emotion without being pushy",
-              "Often reveals the real blocker"
-            ]
+            "content": "It sounds like we're aligned on the solution. What would help you feel confident moving forward today?",
+            "actionItem": "Direct question to surface last objection. 'Feel confident' acknowledges emotion without being pushy. Often reveals the real blocker.",
+            "number": 2,
+            "title": "They're close but hesitant"
           },
           {
-            "situation": "They need internal approval",
-            "script": "Understood. Who else is involved in the decision? I'd be happy to join a call with them, or I can prepare materials that address their specific concerns. What would be most helpful?",
-            "notes": [
-              "Offer to help them sell internally",
-              "Gets you access to the real decision-maker",
-              "Shows you understand B2B dynamics"
-            ]
+            "content": "Understood. Who else is involved in the decision? I'd be happy to join a call with them, or I can prepare materials that address their specific concerns. What would be most helpful?",
+            "actionItem": "Offer to help them sell internally. Gets you access to the real decision-maker. Shows you understand B2B dynamics.",
+            "number": 3,
+            "title": "They need internal approval"
           },
           {
-            "situation": "Final close when everything is agreed",
-            "script": "I'm excited to work together on this. To confirm: I'll send the contract by [time]. Once signed, [next milestone]. Any final questions before we wrap up?",
-            "notes": [
-              "Express enthusiasm (it's contagious)",
-              "Restate immediate next action",
-              "One final chance for objections"
-            ]
+            "content": "I'm excited to work together on this. To confirm: I'll send the contract by [time]. Once signed, [next milestone]. Any final questions before we wrap up?",
+            "actionItem": "Express enthusiasm (it's contagious). Restate immediate next action. One final chance for objections.",
+            "number": 4,
+            "title": "Final close when everything is agreed"
           }
-        ]
+        ],
+        "content": "How to lock in the deal and confirm next steps"
       }
     ],
     "practiceExercise": {
@@ -294,176 +259,129 @@
       {
         "id": "phase-1",
         "title": "Fase 1: El Ancla de Apertura",
-        "description": "Cómo presentar tu precio con confianza (antes de que objeten)",
         "timing": "Primeros 60 segundos de la discusión de precios",
         "principle": "La forma en que presentas tu precio determina cuánto te objetarán. Una entrega débil invita a negociar. Una entrega fuerte impone respeto.",
-        "scripts": [
+        "items": [
           {
-            "situation": "Presentando tu precio por primera vez",
-            "script": "Basado en el alcance que discutimos, la inversión para este proyecto es $[X]. Esto incluye [entregable clave 1], [entregable clave 2], y [entregable clave 3]. Quiero explicarte por qué esta inversión tiene sentido para [su meta específica].",
-            "notes": [
-              "Di 'inversión' no 'costo' o 'precio'",
-              "Conecta inmediatamente con sus metas",
-              "Usa entonación descendente en el número (declaración, no pregunta)",
-              "Pausa después del número—no te apresures a justificar"
-            ],
-            "avoid": "Entonces, eh, el precio sería alrededor de $X, más o menos. Sé que podría parecer alto, pero..."
+            "content": "Basado en el alcance que discutimos, la inversión para este proyecto es $[X]. Esto incluye [entregable clave 1], [entregable clave 2], y [entregable clave 3]. Quiero explicarte por qué esta inversión tiene sentido para [su meta específica].",
+            "actionItem": "Di 'inversión' no 'costo' o 'precio'. Conecta inmediatamente con sus metas. Usa entonación descendente en el número (declaración, no pregunta). Pausa después del número—no te apresures a justificar.",
+            "doNotSay": "Entonces, eh, el precio sería alrededor de $X, más o menos. Sé que podría parecer alto, pero...",
+            "number": 1,
+            "title": "Presentando tu precio por primera vez"
           },
           {
-            "situation": "Estableciendo expectativas antes del número",
-            "script": "Antes de compartir la inversión, quiero asegurarme de que estamos alineados en el alcance. Mencionaste [su prioridad]. Para entregar eso correctamente, estamos viendo [X]. Aquí está lo que eso incluye.",
-            "notes": [
-              "Enmarca el alcance antes del precio",
-              "Recuérdales sus propias prioridades declaradas",
-              "Esto hace que el precio se sienta justificado antes de decirlo"
-            ]
+            "content": "Antes de compartir la inversión, quiero asegurarme de que estamos alineados en el alcance. Mencionaste [su prioridad]. Para entregar eso correctamente, estamos viendo [X]. Aquí está lo que eso incluye.",
+            "actionItem": "Enmarca el alcance antes del precio. Recuérdales sus propias prioridades declaradas. Esto hace que el precio se sienta justificado antes de decirlo.",
+            "number": 2,
+            "title": "Estableciendo expectativas antes del número"
           },
           {
-            "situation": "Cuando sabes que están comparando proveedores",
-            "script": "Sé que estás evaluando opciones. Aquí está lo que quiero que consideres al comparar: [valor único 1], [valor único 2], y [valor único 3]. La inversión es $[X], y aquí está por qué está estructurada así.",
-            "notes": [
-              "Reconoce la competencia sin estar a la defensiva",
-              "Diferénciate preventivamente",
-              "Hace que comparen valor, no solo precio"
-            ]
+            "content": "Sé que estás evaluando opciones. Aquí está lo que quiero que consideres al comparar: [valor único 1], [valor único 2], y [valor único 3]. La inversión es $[X], y aquí está por qué está estructurada así.",
+            "actionItem": "Reconoce la competencia sin estar a la defensiva. Diferénciate preventivamente. Hace que comparen valor, no solo precio.",
+            "number": 3,
+            "title": "Cuando sabes que están comparando proveedores"
           }
-        ]
+        ],
+        "content": "Cómo presentar tu precio con confianza (antes de que objeten)"
       },
       {
         "id": "phase-2",
         "title": "Fase 2: La Respuesta a la Objeción",
-        "description": "Qué decir cuando desafían tu precio",
         "timing": "Los 30 segundos críticos después de '¿Pueden darnos un mejor precio?'",
         "principle": "La primera persona que habla después de una objeción de precio usualmente pierde. Pausa. Haz una pregunta. Entiende antes de ceder.",
-        "scripts": [
+        "items": [
           {
-            "situation": "Dicen: 'Esto es más de lo que esperábamos.'",
-            "script": "Aprecio que lo compartas. Ayúdame a entender—cuando dices más de lo esperado, ¿estás comparando con un presupuesto específico que tenías en mente, o con otras propuestas que has recibido?",
-            "notes": [
-              "No te disculpes ni ofrezcas descuento inmediatamente",
-              "Haz una pregunta diagnóstica",
-              "Esto te da información Y tiempo para pensar"
-            ],
-            "followUp": "Dependiendo de su respuesta, puedes abordar restricciones presupuestarias O diferenciarte de competidores."
+            "content": "Aprecio que lo compartas. Ayúdame a entender—cuando dices más de lo esperado, ¿estás comparando con un presupuesto específico que tenías en mente, o con otras propuestas que has recibido?",
+            "actionItem": "No te disculpes ni ofrezcas descuento inmediatamente. Haz una pregunta diagnóstica. Esto te da información Y tiempo para pensar. Dependiendo de su respuesta, puedes abordar restricciones presupuestarias O diferenciarte de competidores.",
+            "number": 1,
+            "title": "Dicen: 'Esto es más de lo que esperábamos.'"
           },
           {
-            "situation": "Dicen: '¿Pueden darnos un mejor precio?'",
-            "script": "Quiero asegurarme de que encontremos algo que funcione para ambos. Antes de responder eso—¿es el precio el único factor, o hay otras preocupaciones que deba abordar primero?",
-            "notes": [
-              "Nunca digas 'sí' inmediatamente",
-              "Descubre objeciones ocultas",
-              "A menudo, el precio es un proxy de otras preocupaciones (confianza, alcance, cronograma)"
-            ]
+            "content": "Quiero asegurarme de que encontremos algo que funcione para ambos. Antes de responder eso—¿es el precio el único factor, o hay otras preocupaciones que deba abordar primero?",
+            "actionItem": "Nunca digas 'sí' inmediatamente. Descubre objeciones ocultas. A menudo, el precio es un proxy de otras preocupaciones (confianza, alcance, cronograma).",
+            "number": 2,
+            "title": "Dicen: '¿Pueden darnos un mejor precio?'"
           },
           {
-            "situation": "Dicen: 'El competidor X es 30% más barato.'",
-            "script": "Eso es útil saberlo. ¿Puedes compartir qué está incluido en su propuesta? Quiero asegurarme de que estamos comparando el mismo alcance. En mi experiencia, la diferencia a menudo se reduce a [tu diferenciador clave].",
-            "notes": [
-              "No entres en pánico ni iguales inmediatamente",
-              "Pide detalles (a menudo no los tienen)",
-              "Redirige al valor, no al precio"
-            ]
+            "content": "Eso es útil saberlo. ¿Puedes compartir qué está incluido en su propuesta? Quiero asegurarme de que estamos comparando el mismo alcance. En mi experiencia, la diferencia a menudo se reduce a [tu diferenciador clave].",
+            "actionItem": "No entres en pánico ni iguales inmediatamente. Pide detalles (a menudo no los tienen). Redirige al valor, no al precio.",
+            "number": 3,
+            "title": "Dicen: 'El competidor X es 30% más barato.'"
           },
           {
-            "situation": "Dicen: 'No tenemos presupuesto para esto.'",
-            "script": "Entiendo que las restricciones presupuestarias son reales. Déjame preguntar—si el presupuesto no fuera un factor, ¿esta solución abordaría tus necesidades? [Si sí:] Entonces hablemos sobre cómo podríamos estructurar esto para que se ajuste a tu situación actual.",
-            "notes": [
-              "Separa 'no puede pagar' de 'no quiere pagar'",
-              "Abre la puerta a enfoques por fases o alcance ajustado",
-              "Muestra flexibilidad sin dar descuentos"
-            ]
+            "content": "Entiendo que las restricciones presupuestarias son reales. Déjame preguntar—si el presupuesto no fuera un factor, ¿esta solución abordaría tus necesidades? [Si sí:] Entonces hablemos sobre cómo podríamos estructurar esto para que se ajuste a tu situación actual.",
+            "actionItem": "Separa 'no puede pagar' de 'no quiere pagar'. Abre la puerta a enfoques por fases o alcance ajustado. Muestra flexibilidad sin dar descuentos.",
+            "number": 4,
+            "title": "Dicen: 'No tenemos presupuesto para esto.'"
           }
-        ]
+        ],
+        "content": "Qué decir cuando desafían tu precio"
       },
       {
         "id": "phase-3",
         "title": "Fase 3: Defendiendo Tu Posición",
-        "description": "Cómo mantenerte firme sin perder el acuerdo",
         "timing": "Cuando siguen presionando después de tu respuesta inicial",
         "principle": "Puedes ser firme Y colaborativo. El objetivo es encontrar una solución, no ganar un argumento. Pero no tienes que regalar tu margen para hacerlo.",
-        "scripts": [
+        "items": [
           {
-            "situation": "Siguen presionando: 'Realmente necesito que bajen el precio.'",
-            "script": "Te escucho, y quiero encontrar una solución. Aquí está lo que puedo hacer: puedo ajustar el alcance para que se ajuste a una inversión de $[número menor], o podemos mantener el alcance completo y discutir términos de pago. ¿Cuál sería más útil para ti?",
-            "notes": [
-              "Ofrece alternativas, no descuentos",
-              "Vincula reducción de precio a reducción de alcance",
-              "Pon la decisión en sus manos"
-            ]
+            "content": "Te escucho, y quiero encontrar una solución. Aquí está lo que puedo hacer: puedo ajustar el alcance para que se ajuste a una inversión de $[número menor], o podemos mantener el alcance completo y discutir términos de pago. ¿Cuál sería más útil para ti?",
+            "actionItem": "Ofrece alternativas, no descuentos. Vincula reducción de precio a reducción de alcance. Pon la decisión en sus manos.",
+            "number": 1,
+            "title": "Siguen presionando: 'Realmente necesito que bajen el precio.'"
           },
           {
-            "situation": "Piden un descuento específico: '¿Pueden dar 20% de descuento?'",
-            "script": "No puedo hacer 20% de descuento en el alcance actual. Pero puedo ofrecer [concesión específica] si eso ayudara. ¿Qué significaría eso para tu decisión?",
-            "notes": [
-              "Di 'No puedo' no 'No voy a'—es menos confrontacional",
-              "Ofrece algo menor a cambio",
-              "Pregunta qué significa para su decisión (prueba si es el bloqueador real)"
-            ]
+            "content": "No puedo hacer 20% de descuento en el alcance actual. Pero puedo ofrecer [concesión específica] si eso ayudara. ¿Qué significaría eso para tu decisión?",
+            "actionItem": "Di 'No puedo' no 'No voy a'—es menos confrontacional. Ofrece algo menor a cambio. Pregunta qué significa para su decisión (prueba si es el bloqueador real).",
+            "number": 2,
+            "title": "Piden un descuento específico: '¿Pueden dar 20% de descuento?'"
           },
           {
-            "situation": "Usan silencio o tácticas de presión",
-            "script": "[Pausa. Espera. Deja que hablen primero.] Si permanecen en silencio: 'Tómate tu tiempo. ¿Qué preguntas puedo responder para ayudarte a decidir?'",
-            "notes": [
-              "El silencio es una táctica—no lo llenes con concesiones",
-              "Quien habla primero después de un silencio de negociación usualmente cede",
-              "Ofrece responder preguntas, no bajar el precio"
-            ]
+            "content": "[Pausa. Espera. Deja que hablen primero.] Si permanecen en silencio: 'Tómate tu tiempo. ¿Qué preguntas puedo responder para ayudarte a decidir?'",
+            "actionItem": "El silencio es una táctica—no lo llenes con concesiones. Quien habla primero después de un silencio de negociación usualmente cede. Ofrece responder preguntas, no bajar el precio.",
+            "number": 3,
+            "title": "Usan silencio o tácticas de presión"
           },
           {
-            "situation": "Dicen: 'Necesito pensarlo.'",
-            "script": "Absolutamente, tómate el tiempo que necesites. Antes de irte—¿qué específicamente quieres pensar? Estoy feliz de abordar cualquier preocupación ahora para que tengas información completa.",
-            "notes": [
-              "No solo aceptes 'necesito pensar'—a menudo significa objeciones no dichas",
-              "Saca las preocupaciones mientras todavía estás en la llamada",
-              "Mantiene la conversación abierta"
-            ]
+            "content": "Absolutamente, tómate el tiempo que necesites. Antes de irte—¿qué específicamente quieres pensar? Estoy feliz de abordar cualquier preocupación ahora para que tengas información completa.",
+            "actionItem": "No solo aceptes 'necesito pensar'—a menudo significa objeciones no dichas. Saca las preocupaciones mientras todavía estás en la llamada. Mantiene la conversación abierta.",
+            "number": 4,
+            "title": "Dicen: 'Necesito pensarlo.'"
           }
-        ]
+        ],
+        "content": "Cómo mantenerte firme sin perder el acuerdo"
       },
       {
         "id": "phase-4",
         "title": "Fase 4: Cerrando con Confianza",
-        "description": "Cómo asegurar el acuerdo y confirmar próximos pasos",
         "timing": "Cuando están listos para avanzar (o casi listos)",
         "principle": "Una negociación no termina hasta que tienes un compromiso claro. No te vayas con un vago 'estaremos en contacto.' Obtén próximos pasos específicos.",
-        "scripts": [
+        "items": [
           {
-            "situation": "Acuerdan verbalmente: 'OK, hagámoslo.'",
-            "script": "Excelente. Déjame confirmar lo que hemos acordado: [alcance], [cronograma], [inversión]. Enviaré el acuerdo antes de [hora específica] hoy. Una vez que firmes, podemos agendar el inicio para [fecha propuesta]. ¿Te funciona?",
-            "notes": [
-              "Repite los términos inmediatamente (previene 'malentendidos' después)",
-              "Propón próximos pasos específicos con horarios",
-              "Obtén confirmación verbal"
-            ]
+            "content": "Excelente. Déjame confirmar lo que hemos acordado: [alcance], [cronograma], [inversión]. Enviaré el acuerdo antes de [hora específica] hoy. Una vez que firmes, podemos agendar el inicio para [fecha propuesta]. ¿Te funciona?",
+            "actionItem": "Repite los términos inmediatamente (previene 'malentendidos' después). Propón próximos pasos específicos con horarios. Obtén confirmación verbal.",
+            "number": 1,
+            "title": "Acuerdan verbalmente: 'OK, hagámoslo.'"
           },
           {
-            "situation": "Están cerca pero vacilantes",
-            "script": "Parece que estamos alineados en la solución. ¿Qué te ayudaría a sentirte confiado para avanzar hoy?",
-            "notes": [
-              "Pregunta directa para sacar la última objeción",
-              "'Sentirte confiado' reconoce la emoción sin ser insistente",
-              "A menudo revela el bloqueador real"
-            ]
+            "content": "Parece que estamos alineados en la solución. ¿Qué te ayudaría a sentirte confiado para avanzar hoy?",
+            "actionItem": "Pregunta directa para sacar la última objeción. 'Sentirte confiado' reconoce la emoción sin ser insistente. A menudo revela el bloqueador real.",
+            "number": 2,
+            "title": "Están cerca pero vacilantes"
           },
           {
-            "situation": "Necesitan aprobación interna",
-            "script": "Entendido. ¿Quién más está involucrado en la decisión? Estaría feliz de unirme a una llamada con ellos, o puedo preparar materiales que aborden sus preocupaciones específicas. ¿Qué sería más útil?",
-            "notes": [
-              "Ofrece ayudarles a vender internamente",
-              "Te da acceso al verdadero tomador de decisiones",
-              "Muestra que entiendes la dinámica B2B"
-            ]
+            "content": "Entendido. ¿Quién más está involucrado en la decisión? Estaría feliz de unirme a una llamada con ellos, o puedo preparar materiales que aborden sus preocupaciones específicas. ¿Qué sería más útil?",
+            "actionItem": "Ofrece ayudarles a vender internamente. Te da acceso al verdadero tomador de decisiones. Muestra que entiendes la dinámica B2B.",
+            "number": 3,
+            "title": "Necesitan aprobación interna"
           },
           {
-            "situation": "Cierre final cuando todo está acordado",
-            "script": "Estoy emocionado de trabajar juntos en esto. Para confirmar: enviaré el contrato antes de [hora]. Una vez firmado, [siguiente hito]. ¿Alguna pregunta final antes de terminar?",
-            "notes": [
-              "Expresa entusiasmo (es contagioso)",
-              "Repite la siguiente acción inmediata",
-              "Una última oportunidad para objeciones"
-            ]
+            "content": "Estoy emocionado de trabajar juntos en esto. Para confirmar: enviaré el contrato antes de [hora]. Una vez firmado, [siguiente hito]. ¿Alguna pregunta final antes de terminar?",
+            "actionItem": "Expresa entusiasmo (es contagioso). Repite la siguiente acción inmediata. Una última oportunidad para objeciones.",
+            "number": 4,
+            "title": "Cierre final cuando todo está acordado"
           }
-        ]
+        ],
+        "content": "Cómo asegurar el acuerdo y confirmar próximos pasos"
       }
     ],
     "practiceExercise": {

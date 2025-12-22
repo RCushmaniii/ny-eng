@@ -14,12 +14,28 @@
     "timeToComplete": "10 minutes",
     "estimatedMinutes": 10,
     "pageCount": 8,
-    "tags": ["client-calls", "openings", "closings", "first-impressions", "meetings"]
+    "tags": [
+      "client-calls",
+      "openings",
+      "closings",
+      "first-impressions",
+      "meetings"
+    ]
   },
   "targeting": {
     "primaryPersona": ["sales", "consultant", "engineer", "manager"],
-    "industries": ["technology", "professional-services", "finance", "manufacturing"],
-    "scenarios": ["client-meetings", "sales-calls", "project-kickoffs", "status-updates"],
+    "industries": [
+      "technology",
+      "professional-services",
+      "finance",
+      "manufacturing"
+    ],
+    "scenarios": [
+      "client-meetings",
+      "sales-calls",
+      "project-kickoffs",
+      "status-updates"
+    ],
     "painPoints": [
       "Awkward call openings that waste time",
       "Not knowing how to set the agenda confidently",
@@ -30,11 +46,20 @@
   "conversion": {
     "ctaType": "strategy-call",
     "nextStep": "Book a free strategy call to practice your call openings and closings",
-    "relatedAssets": ["5-minute-negotiation-script", "60-second-self-introduction-template"]
+    "relatedAssets": [
+      "5-minute-negotiation-script",
+      "60-second-self-introduction-template"
+    ]
   },
   "seo": {
     "metaDescription": "Master client call openings and closings with our proven framework. Scripts for the first 90 seconds and last 60 seconds of every call.",
-    "keywords": ["client call script", "meeting opening phrases", "how to close a meeting", "professional call etiquette", "business call framework"]
+    "keywords": [
+      "client call script",
+      "meeting opening phrases",
+      "how to close a meeting",
+      "professional call etiquette",
+      "business call framework"
+    ]
   },
   "slugEn": "client-call-opening-closing-framework",
   "slugEs": "marco-apertura-cierre-llamadas",
@@ -59,177 +84,132 @@
       {
         "id": "opening-framework",
         "title": "Part 1: The 90-Second Opening Framework",
-        "subsections": [
+        "content": "Every strong call opening follows this sequence:"
+      },
+      {
+        "id": "opening-formula",
+        "title": "The 4-Part Opening Formula",
+        "items": [
           {
-            "id": "opening-formula",
-            "title": "The 4-Part Opening Formula",
-            "content": "Every strong call opening follows this sequence:",
-            "steps": [
-              {
-                "step": 1,
-                "name": "Warm Acknowledgment",
-                "duration": "10-15 seconds",
-                "purpose": "Build rapport, show you're human",
-                "scripts": [
-                  "Thanks for making time today, [Name]. I know your calendar is packed.",
-                  "Good to connect again, [Name]. How's the [project/quarter/week] going?",
-                  "Appreciate you joining, everyone. Before we dive in—[Name], I saw your team just [recent win]. Congrats on that."
-                ]
-              },
-              {
-                "step": 2,
-                "name": "Purpose Statement",
-                "duration": "15-20 seconds",
-                "purpose": "Establish why you're here and what you'll accomplish",
-                "scripts": [
-                  "The goal for today is to [specific outcome]. By the end of this call, we'll have [deliverable/decision/alignment].",
-                  "I want to use our time to accomplish three things: [1], [2], and [3].",
-                  "Here's what I'm hoping we can nail down today: [specific outcome]."
-                ]
-              },
-              {
-                "step": 3,
-                "name": "Agenda Confirmation",
-                "duration": "20-30 seconds",
-                "purpose": "Take control while giving them ownership",
-                "scripts": [
-                  "I've structured our time like this: [agenda]. Does that work, or is there something you'd like to prioritize?",
-                  "Here's how I was thinking we'd use our 30 minutes: [agenda]. What would you add or change?",
-                  "My suggested agenda is [items]. Before we start—anything urgent on your end we should address first?"
-                ]
-              },
-              {
-                "step": 4,
-                "name": "Permission to Proceed",
-                "duration": "5-10 seconds",
-                "purpose": "Create buy-in and transition to content",
-                "scripts": [
-                  "Sound good? Great—let's dive in.",
-                  "If that works for everyone, I'll get us started.",
-                  "Alright, let's make this time count."
-                ]
-              }
-            ]
+            "title": "Step 1: Warm Acknowledgment (10-15 seconds)",
+            "content": "Build rapport, show you're human",
+            "example": "Thanks for making time today, [Name]. I know your calendar is packed. | Good to connect again, [Name]. How's the [project/quarter/week] going? | Appreciate you joining, everyone. Before we dive in—[Name], I saw your team just [recent win]. Congrats on that.",
+            "number": 1
           },
           {
-            "id": "opening-examples",
-            "title": "Complete Opening Examples",
-            "examples": [
-              {
-                "scenario": "Sales Discovery Call",
-                "script": "Thanks for carving out time today, Maria. I know Q4 is intense for everyone. [Warm Acknowledgment] The goal for our call is to understand your current challenges with [problem area] and see if there's a fit for how we might help. [Purpose] I was thinking we'd spend the first 15 minutes on your situation, then 10 minutes on potential approaches, and save the last 5 for questions. [Agenda] Does that structure work? [Permission] Great—let's start with what prompted you to take this call."
-              },
-              {
-                "scenario": "Project Status Update",
-                "script": "Good morning, everyone. Appreciate you joining—I know Mondays are busy. [Warm] Today's goal is to align on where we are with Phase 2 and lock in decisions on the two open items. [Purpose] I'll give a 5-minute progress summary, then we'll spend 15 minutes on the blockers, and close with next steps. [Agenda] Anything you'd like to add before we start? [Permission] Perfect—here's where we stand."
-              },
-              {
-                "scenario": "Executive Briefing",
-                "script": "Thank you for making time, [Executive Name]. I'll keep this tight since I know you have hard stops. [Warm] My objective is to get your decision on [specific issue] so the team can move forward this week. [Purpose] I'll give you the 2-minute context, present two options with my recommendation, and then hand it to you. [Agenda] Ready? [Permission]"
-              }
-            ]
+            "title": "Step 2: Purpose Statement (15-20 seconds)",
+            "content": "Establish why you're here and what you'll accomplish",
+            "example": "The goal for today is to [specific outcome]. By the end of this call, we'll have [deliverable/decision/alignment]. | I want to use our time to accomplish three things: [1], [2], and [3]. | Here's what I'm hoping we can nail down today: [specific outcome].",
+            "number": 2
+          },
+          {
+            "title": "Step 3: Agenda Confirmation (20-30 seconds)",
+            "content": "Take control while giving them ownership",
+            "example": "I've structured our time like this: [agenda]. Does that work, or is there something you'd like to prioritize? | Here's how I was thinking we'd use our 30 minutes: [agenda]. What would you add or change? | My suggested agenda is [items]. Before we start—anything urgent on your end we should address first?",
+            "number": 3
+          },
+          {
+            "title": "Step 4: Permission to Proceed (5-10 seconds)",
+            "content": "Create buy-in and transition to content",
+            "example": "Sound good? Great—let's dive in. | If that works for everyone, I'll get us started. | Alright, let's make this time count.",
+            "number": 4
+          }
+        ]
+      },
+      {
+        "id": "opening-examples",
+        "title": "Complete Opening Examples",
+        "items": [
+          {
+            "title": "Sales Discovery Call",
+            "content": "Thanks for carving out time today, Maria. I know Q4 is intense for everyone. [Warm Acknowledgment] The goal for our call is to understand your current challenges with [problem area] and see if there's a fit for how we might help. [Purpose] I was thinking we'd spend the first 15 minutes on your situation, then 10 minutes on potential approaches, and save the last 5 for questions. [Agenda] Does that structure work? [Permission] Great—let's start with what prompted you to take this call.",
+            "number": 1
+          },
+          {
+            "title": "Project Status Update",
+            "content": "Good morning, everyone. Appreciate you joining—I know Mondays are busy. [Warm] Today's goal is to align on where we are with Phase 2 and lock in decisions on the two open items. [Purpose] I'll give a 5-minute progress summary, then we'll spend 15 minutes on the blockers, and close with next steps. [Agenda] Anything you'd like to add before we start? [Permission] Perfect—here's where we stand.",
+            "number": 2
+          },
+          {
+            "title": "Executive Briefing",
+            "content": "Thank you for making time, [Executive Name]. I'll keep this tight since I know you have hard stops. [Warm] My objective is to get your decision on [specific issue] so the team can move forward this week. [Purpose] I'll give you the 2-minute context, present two options with my recommendation, and then hand it to you. [Agenda] Ready? [Permission]",
+            "number": 3
           }
         ]
       },
       {
         "id": "closing-framework",
         "title": "Part 2: The 60-Second Closing Framework",
-        "subsections": [
+        "content": "Never let a call fade out. Always close with intention:"
+      },
+      {
+        "id": "closing-formula",
+        "title": "The 3-Part Closing Formula",
+        "items": [
           {
-            "id": "closing-formula",
-            "title": "The 3-Part Closing Formula",
-            "content": "Never let a call fade out. Always close with intention:",
-            "steps": [
-              {
-                "step": 1,
-                "name": "Summary Recap",
-                "duration": "15-20 seconds",
-                "purpose": "Confirm what was decided/discussed",
-                "scripts": [
-                  "Let me make sure I've captured this correctly: we agreed on [decisions], and the open items are [items].",
-                  "To recap: [key points]. Did I miss anything?",
-                  "Here's my summary: [outcomes]. Does that match your understanding?"
-                ]
-              },
-              {
-                "step": 2,
-                "name": "Action Items + Owners",
-                "duration": "20-30 seconds",
-                "purpose": "Lock in commitments with names and dates",
-                "scripts": [
-                  "For next steps: I'll [your action] by [date]. [Name], you're taking [their action] by [date]. [Name], you'll [their action]. Correct?",
-                  "Action items: [list with owners and deadlines]. Anyone unclear on their piece?",
-                  "Before we drop, let me confirm who's doing what: [assignments]."
-                ]
-              },
-              {
-                "step": 3,
-                "name": "Next Meeting/Follow-up",
-                "duration": "10-15 seconds",
-                "purpose": "Establish momentum and next touchpoint",
-                "scripts": [
-                  "I'll send a follow-up email within the hour. Should we book our next check-in now, or wait until [milestone]?",
-                  "Let's lock in our next call before we drop. Does [date/time] work?",
-                  "I'll have [deliverable] to you by [date]. Plan to reconvene [timeframe]?"
-                ]
-              }
-            ]
+            "title": "Step 1: Summary Recap (15-20 seconds)",
+            "content": "Confirm what was decided/discussed",
+            "example": "Let me make sure I've captured this correctly: we agreed on [decisions], and the open items are [items]. | To recap: [key points]. Did I miss anything? | Here's my summary: [outcomes]. Does that match your understanding?",
+            "number": 1
           },
           {
-            "id": "closing-examples",
-            "title": "Complete Closing Examples",
-            "examples": [
-              {
-                "scenario": "Sales Call Close",
-                "script": "Alright, let me make sure I have this right: your main pain points are [1, 2, 3], your timeline is [timeline], and the decision involves [stakeholders]. [Summary] My next step is to send you a proposal by Thursday. Your action is to share this with [other stakeholder] and get their input. [Actions] Can we schedule a 20-minute call next Tuesday to review? I'll send a calendar invite right after this. [Next meeting] Thanks again, Maria—talk Tuesday."
-              },
-              {
-                "scenario": "Project Status Close",
-                "script": "Quick recap: Phase 2 is on track, we resolved the API issue by [solution], and the two decisions we made are [1] and [2]. [Summary] Action items: Dev team delivers the updated module by Friday—that's on you, Carlos. I'll update the client by EOD today. Sarah, you're confirming the testing schedule by Wednesday. [Actions] Same time next Monday work for everyone? [Next meeting] Great—have a good week."
-              },
-              {
-                "scenario": "Executive Briefing Close",
-                "script": "To confirm: you've approved Option B with the $50K budget. [Summary] I'll have the team start immediately and send you a progress update Friday. [Actions] If anything changes on your end, let me know—otherwise, we're moving. [Next meeting] Thank you for the quick decision."
-              }
-            ]
+            "title": "Step 2: Action Items + Owners (20-30 seconds)",
+            "content": "Lock in commitments with names and dates",
+            "example": "For next steps: I'll [your action] by [date]. [Name], you're taking [their action] by [date]. [Name], you'll [their action]. Correct? | Action items: [list with owners and deadlines]. Anyone unclear on their piece? | Before we drop, let me confirm who's doing what: [assignments].",
+            "number": 2
+          },
+          {
+            "title": "Step 3: Next Meeting/Follow-up (10-15 seconds)",
+            "content": "Establish momentum and next touchpoint",
+            "example": "I'll send a follow-up email within the hour. Should we book our next check-in now, or wait until [milestone]? | Let's lock in our next call before we drop. Does [date/time] work? | I'll have [deliverable] to you by [date]. Plan to reconvene [timeframe]?",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "id": "closing-examples",
+        "title": "Complete Closing Examples",
+        "items": [
+          {
+            "title": "Sales Call Close",
+            "content": "Alright, let me make sure I have this right: your main pain points are [1, 2, 3], your timeline is [timeline], and the decision involves [stakeholders]. [Summary] My next step is to send you a proposal by Thursday. Your action is to share this with [other stakeholder] and get their input. [Actions] Can we schedule a 20-minute call next Tuesday to review? I'll send a calendar invite right after this. [Next meeting] Thanks again, Maria—talk Tuesday.",
+            "number": 1
+          },
+          {
+            "title": "Project Status Close",
+            "content": "Quick recap: Phase 2 is on track, we resolved the API issue by [solution], and the two decisions we made are [1] and [2]. [Summary] Action items: Dev team delivers the updated module by Friday—that's on you, Carlos. I'll update the client by EOD today. Sarah, you're confirming the testing schedule by Wednesday. [Actions] Same time next Monday work for everyone? [Next meeting] Great—have a good week.",
+            "number": 2
+          },
+          {
+            "title": "Executive Briefing Close",
+            "content": "To confirm: you've approved Option B with the $50K budget. [Summary] I'll have the team start immediately and send you a progress update Friday. [Actions] If anything changes on your end, let me know—otherwise, we're moving. [Next meeting] Thank you for the quick decision.",
+            "number": 3
           }
         ]
       },
       {
         "id": "power-phrases",
         "title": "Part 3: Power Phrases for Control",
-        "categories": [
+        "items": [
           {
-            "category": "Taking Back Control",
-            "phrases": [
-              "Let me pause us here—I want to make sure we're addressing your core concern.",
-              "That's a great point. Let me bookmark that and come back to it in a moment.",
-              "I want to be respectful of your time—can we table this and schedule a separate deep-dive?"
-            ]
+            "title": "Taking Back Control",
+            "content": "Let me pause us here—I want to make sure we're addressing your core concern. | That's a great point. Let me bookmark that and come back to it in a moment. | I want to be respectful of your time—can we table this and schedule a separate deep-dive?",
+            "number": 1
           },
           {
-            "category": "Handling Interruptions",
-            "phrases": [
-              "Good question—let me finish this thought and I'll come right to that.",
-              "I want to give that the attention it deserves. Can I complete this point first?",
-              "Hold that thought—it's important and I don't want to lose it."
-            ]
+            "title": "Handling Interruptions",
+            "content": "Good question—let me finish this thought and I'll come right to that. | I want to give that the attention it deserves. Can I complete this point first? | Hold that thought—it's important and I don't want to lose it.",
+            "number": 2
           },
           {
-            "category": "Managing Time",
-            "phrases": [
-              "We have 10 minutes left—let's make sure we cover [priority item].",
-              "I'm watching the clock. Should we extend, or prioritize what's left?",
-              "Let's shift gears—I want to make sure we get to [topic] before we run out of time."
-            ]
+            "title": "Managing Time",
+            "content": "We have 10 minutes left—let's make sure we cover [priority item]. | I'm watching the clock. Should we extend, or prioritize what's left? | Let's shift gears—I want to make sure we get to [topic] before we run out of time.",
+            "number": 3
           },
           {
-            "category": "Confirming Understanding",
-            "phrases": [
-              "Just to make sure I'm tracking—you're saying [paraphrase]. Is that right?",
-              "Let me play that back to you: [summary]. Did I get that?",
-              "I want to make sure we're aligned. My understanding is [summary]. Correct?"
-            ]
+            "title": "Confirming Understanding",
+            "content": "Just to make sure I'm tracking—you're saying [paraphrase]. Is that right? | Let me play that back to you: [summary]. Did I get that? | I want to make sure we're aligned. My understanding is [summary]. Correct?",
+            "number": 4
           }
         ]
       },
@@ -263,177 +243,132 @@
       {
         "id": "opening-framework",
         "title": "Parte 1: El Marco de Apertura de 90 Segundos",
-        "subsections": [
+        "content": "Toda apertura fuerte de llamada sigue esta secuencia:"
+      },
+      {
+        "id": "opening-formula",
+        "title": "La Fórmula de Apertura de 4 Partes",
+        "items": [
           {
-            "id": "opening-formula",
-            "title": "La Fórmula de Apertura de 4 Partes",
-            "content": "Toda apertura fuerte de llamada sigue esta secuencia:",
-            "steps": [
-              {
-                "step": 1,
-                "name": "Reconocimiento Cálido",
-                "duration": "10-15 segundos",
-                "purpose": "Construir rapport, mostrar que eres humano",
-                "scripts": [
-                  "Gracias por hacer tiempo hoy, [Nombre]. Sé que tu calendario está lleno.",
-                  "Qué bueno conectar de nuevo, [Nombre]. ¿Cómo va el [proyecto/trimestre/semana]?",
-                  "Gracias por unirse, todos. Antes de comenzar—[Nombre], vi que tu equipo acaba de [logro reciente]. Felicidades por eso."
-                ]
-              },
-              {
-                "step": 2,
-                "name": "Declaración de Propósito",
-                "duration": "15-20 segundos",
-                "purpose": "Establecer por qué estás aquí y qué lograrás",
-                "scripts": [
-                  "El objetivo de hoy es [resultado específico]. Al final de esta llamada, tendremos [entregable/decisión/alineación].",
-                  "Quiero usar nuestro tiempo para lograr tres cosas: [1], [2], y [3].",
-                  "Esto es lo que espero que podamos definir hoy: [resultado específico]."
-                ]
-              },
-              {
-                "step": 3,
-                "name": "Confirmación de Agenda",
-                "duration": "20-30 segundos",
-                "purpose": "Tomar control mientras les das propiedad",
-                "scripts": [
-                  "He estructurado nuestro tiempo así: [agenda]. ¿Funciona, o hay algo que quieras priorizar?",
-                  "Así es como pensaba usar nuestros 30 minutos: [agenda]. ¿Qué agregarías o cambiarías?",
-                  "Mi agenda sugerida es [items]. Antes de empezar—¿algo urgente de tu lado que debamos abordar primero?"
-                ]
-              },
-              {
-                "step": 4,
-                "name": "Permiso para Proceder",
-                "duration": "5-10 segundos",
-                "purpose": "Crear aceptación y transición al contenido",
-                "scripts": [
-                  "¿Suena bien? Perfecto—comencemos.",
-                  "Si eso funciona para todos, empiezo.",
-                  "Muy bien, hagamos que este tiempo cuente."
-                ]
-              }
-            ]
+            "title": "Paso 1: Reconocimiento Cálido (10-15 segundos)",
+            "content": "Construir rapport, mostrar que eres humano",
+            "example": "Gracias por hacer tiempo hoy, [Nombre]. Sé que tu calendario está lleno. | Qué bueno conectar de nuevo, [Nombre]. ¿Cómo va el [proyecto/trimestre/semana]? | Gracias por unirse, todos. Antes de comenzar—[Nombre], vi que tu equipo acaba de [logro reciente]. Felicidades por eso.",
+            "number": 1
           },
           {
-            "id": "opening-examples",
-            "title": "Ejemplos Completos de Apertura",
-            "examples": [
-              {
-                "scenario": "Llamada de Descubrimiento de Ventas",
-                "script": "Gracias por apartar tiempo hoy, María. Sé que Q4 es intenso para todos. [Reconocimiento Cálido] El objetivo de nuestra llamada es entender tus desafíos actuales con [área problemática] y ver si hay un fit para cómo podríamos ayudar. [Propósito] Pensaba pasar los primeros 15 minutos en tu situación, luego 10 minutos en posibles enfoques, y guardar los últimos 5 para preguntas. [Agenda] ¿Funciona esa estructura? [Permiso] Perfecto—empecemos con qué te motivó a tomar esta llamada."
-              },
-              {
-                "scenario": "Actualización de Estado de Proyecto",
-                "script": "Buenos días a todos. Gracias por unirse—sé que los lunes son ocupados. [Cálido] El objetivo de hoy es alinear dónde estamos con la Fase 2 y cerrar decisiones sobre los dos items pendientes. [Propósito] Daré un resumen de progreso de 5 minutos, luego pasaremos 15 minutos en los bloqueadores, y cerraremos con próximos pasos. [Agenda] ¿Algo que quieran agregar antes de empezar? [Permiso] Perfecto—aquí es donde estamos."
-              },
-              {
-                "scenario": "Briefing Ejecutivo",
-                "script": "Gracias por hacer tiempo, [Nombre del Ejecutivo]. Seré breve ya que sé que tienes compromisos fijos. [Cálido] Mi objetivo es obtener tu decisión sobre [tema específico] para que el equipo pueda avanzar esta semana. [Propósito] Te daré el contexto de 2 minutos, presentaré dos opciones con mi recomendación, y luego te paso la palabra. [Agenda] ¿Listo? [Permiso]"
-              }
-            ]
+            "title": "Paso 2: Declaración de Propósito (15-20 segundos)",
+            "content": "Establecer por qué estás aquí y qué lograrás",
+            "example": "El objetivo de hoy es [resultado específico]. Al final de esta llamada, tendremos [entregable/decisión/alineación]. | Quiero usar nuestro tiempo para lograr tres cosas: [1], [2], y [3]. | Esto es lo que espero que podamos definir hoy: [resultado específico].",
+            "number": 2
+          },
+          {
+            "title": "Paso 3: Confirmación de Agenda (20-30 segundos)",
+            "content": "Tomar control mientras les das propiedad",
+            "example": "He estructurado nuestro tiempo así: [agenda]. ¿Funciona, o hay algo que quieras priorizar? | Así es como pensaba usar nuestros 30 minutos: [agenda]. ¿Qué agregarías o cambiarías? | Mi agenda sugerida es [items]. Antes de empezar—¿algo urgente de tu lado que debamos abordar primero?",
+            "number": 3
+          },
+          {
+            "title": "Paso 4: Permiso para Proceder (5-10 segundos)",
+            "content": "Crear aceptación y transición al contenido",
+            "example": "¿Suena bien? Perfecto—comencemos. | Si eso funciona para todos, empiezo. | Muy bien, hagamos que este tiempo cuente.",
+            "number": 4
+          }
+        ]
+      },
+      {
+        "id": "opening-examples",
+        "title": "Ejemplos Completos de Apertura",
+        "items": [
+          {
+            "title": "Llamada de Descubrimiento de Ventas",
+            "content": "Gracias por apartar tiempo hoy, María. Sé que Q4 es intenso para todos. [Reconocimiento Cálido] El objetivo de nuestra llamada es entender tus desafíos actuales con [área problemática] y ver si hay un fit para cómo podríamos ayudar. [Propósito] Pensaba pasar los primeros 15 minutos en tu situación, luego 10 minutos en posibles enfoques, y guardar los últimos 5 para preguntas. [Agenda] ¿Funciona esa estructura? [Permiso] Perfecto—empecemos con qué te motivó a tomar esta llamada.",
+            "number": 1
+          },
+          {
+            "title": "Actualización de Estado de Proyecto",
+            "content": "Buenos días a todos. Gracias por unirse—sé que los lunes son ocupados. [Cálido] El objetivo de hoy es alinear dónde estamos con la Fase 2 y cerrar decisiones sobre los dos items pendientes. [Propósito] Daré un resumen de progreso de 5 minutos, luego pasaremos 15 minutos en los bloqueadores, y cerraremos con próximos pasos. [Agenda] ¿Algo que quieran agregar antes de empezar? [Permiso] Perfecto—aquí es donde estamos.",
+            "number": 2
+          },
+          {
+            "title": "Briefing Ejecutivo",
+            "content": "Gracias por hacer tiempo, [Nombre del Ejecutivo]. Seré breve ya que sé que tienes compromisos fijos. [Cálido] Mi objetivo es obtener tu decisión sobre [tema específico] para que el equipo pueda avanzar esta semana. [Propósito] Te daré el contexto de 2 minutos, presentaré dos opciones con mi recomendación, y luego te paso la palabra. [Agenda] ¿Listo? [Permiso]",
+            "number": 3
           }
         ]
       },
       {
         "id": "closing-framework",
         "title": "Parte 2: El Marco de Cierre de 60 Segundos",
-        "subsections": [
+        "content": "Nunca dejes que una llamada se desvanezca. Siempre cierra con intención:"
+      },
+      {
+        "id": "closing-formula",
+        "title": "La Fórmula de Cierre de 3 Partes",
+        "items": [
           {
-            "id": "closing-formula",
-            "title": "La Fórmula de Cierre de 3 Partes",
-            "content": "Nunca dejes que una llamada se desvanezca. Siempre cierra con intención:",
-            "steps": [
-              {
-                "step": 1,
-                "name": "Resumen Recap",
-                "duration": "15-20 segundos",
-                "purpose": "Confirmar lo que se decidió/discutió",
-                "scripts": [
-                  "Déjame asegurarme de que capturé esto correctamente: acordamos [decisiones], y los items pendientes son [items].",
-                  "Para recapitular: [puntos clave]. ¿Me faltó algo?",
-                  "Aquí está mi resumen: [resultados]. ¿Coincide con tu entendimiento?"
-                ]
-              },
-              {
-                "step": 2,
-                "name": "Items de Acción + Responsables",
-                "duration": "20-30 seconds",
-                "purpose": "Asegurar compromisos con nombres y fechas",
-                "scripts": [
-                  "Para próximos pasos: yo haré [tu acción] para [fecha]. [Nombre], tú tomas [su acción] para [fecha]. [Nombre], tú harás [su acción]. ¿Correcto?",
-                  "Items de acción: [lista con responsables y fechas límite]. ¿Alguien no tiene clara su parte?",
-                  "Antes de colgar, déjenme confirmar quién hace qué: [asignaciones]."
-                ]
-              },
-              {
-                "step": 3,
-                "name": "Próxima Reunión/Seguimiento",
-                "duration": "10-15 segundos",
-                "purpose": "Establecer momentum y próximo punto de contacto",
-                "scripts": [
-                  "Enviaré un correo de seguimiento en la próxima hora. ¿Agendamos nuestra próxima llamada ahora, o esperamos hasta [hito]?",
-                  "Bloqueemos nuestra próxima llamada antes de colgar. ¿Funciona [fecha/hora]?",
-                  "Tendré [entregable] para ustedes para [fecha]. ¿Nos reunimos de nuevo en [plazo]?"
-                ]
-              }
-            ]
+            "title": "Paso 1: Resumen Recap (15-20 segundos)",
+            "content": "Confirmar lo que se decidió/discutió",
+            "example": "Déjame asegurarme de que capturé esto correctamente: acordamos [decisiones], y los items pendientes son [items]. | Para recapitular: [puntos clave]. ¿Me faltó algo? | Aquí está mi resumen: [resultados]. ¿Coincide con tu entendimiento?",
+            "number": 1
           },
           {
-            "id": "closing-examples",
-            "title": "Ejemplos Completos de Cierre",
-            "examples": [
-              {
-                "scenario": "Cierre de Llamada de Ventas",
-                "script": "Muy bien, déjame asegurarme de que entendí: tus principales puntos de dolor son [1, 2, 3], tu timeline es [timeline], y la decisión involucra a [stakeholders]. [Resumen] Mi próximo paso es enviarte una propuesta para el jueves. Tu acción es compartir esto con [otro stakeholder] y obtener su input. [Acciones] ¿Podemos agendar una llamada de 20 minutos el próximo martes para revisar? Envío invitación de calendario justo después de esto. [Próxima reunión] Gracias de nuevo, María—hablamos el martes."
-              },
-              {
-                "scenario": "Cierre de Estado de Proyecto",
-                "script": "Recap rápido: la Fase 2 va en tiempo, resolvimos el problema del API con [solución], y las dos decisiones que tomamos son [1] y [2]. [Resumen] Items de acción: el equipo de Dev entrega el módulo actualizado para el viernes—eso está contigo, Carlos. Yo actualizo al cliente hoy antes de terminar el día. Sarah, tú confirmas el calendario de testing para el miércoles. [Acciones] ¿Funciona mismo horario el próximo lunes para todos? [Próxima reunión] Perfecto—que tengan buena semana."
-              },
-              {
-                "scenario": "Cierre de Briefing Ejecutivo",
-                "script": "Para confirmar: has aprobado la Opción B con el presupuesto de $50K. [Resumen] Haré que el equipo empiece inmediatamente y te envío actualización de progreso el viernes. [Acciones] Si algo cambia de tu lado, avísame—de lo contrario, avanzamos. [Próxima reunión] Gracias por la decisión rápida."
-              }
-            ]
+            "title": "Paso 2: Items de Acción + Responsables (20-30 segundos)",
+            "content": "Asegurar compromisos con nombres y fechas",
+            "example": "Para próximos pasos: yo haré [tu acción] para [fecha]. [Nombre], tú tomas [su acción] para [fecha]. [Nombre], tú harás [su acción]. ¿Correcto? | Items de acción: [lista con responsables y fechas límite]. ¿Alguien no tiene clara su parte? | Antes de colgar, déjenme confirmar quién hace qué: [asignaciones].",
+            "number": 2
+          },
+          {
+            "title": "Paso 3: Próxima Reunión/Seguimiento (10-15 segundos)",
+            "content": "Establecer momentum y próximo punto de contacto",
+            "example": "Enviaré un correo de seguimiento en la próxima hora. ¿Agendamos nuestra próxima llamada ahora, o esperamos hasta [hito]? | Bloqueemos nuestra próxima llamada antes de colgar. ¿Funciona [fecha/hora]? | Tendré [entregable] para ustedes para [fecha]. ¿Nos reunimos de nuevo en [plazo]?",
+            "number": 3
+          }
+        ]
+      },
+      {
+        "id": "closing-examples",
+        "title": "Ejemplos Completos de Cierre",
+        "items": [
+          {
+            "title": "Cierre de Llamada de Ventas",
+            "content": "Muy bien, déjame asegurarme de que entendí: tus principales puntos de dolor son [1, 2, 3], tu timeline es [timeline], y la decisión involucra a [stakeholders]. [Resumen] Mi próximo paso es enviarte una propuesta para el jueves. Tu acción es compartir esto con [otro stakeholder] y obtener su input. [Acciones] ¿Podemos agendar una llamada de 20 minutos el próximo martes para revisar? Envío invitación de calendario justo después de esto. [Próxima reunión] Gracias de nuevo, María—hablamos el martes.",
+            "number": 1
+          },
+          {
+            "title": "Cierre de Estado de Proyecto",
+            "content": "Recap rápido: la Fase 2 va en tiempo, resolvimos el problema del API con [solución], y las dos decisiones que tomamos son [1] y [2]. [Resumen] Items de acción: el equipo de Dev entrega el módulo actualizado para el viernes—eso está contigo, Carlos. Yo actualizo al cliente hoy antes de terminar el día. Sarah, tú confirmas el calendario de testing para el miércoles. [Acciones] ¿Funciona mismo horario el próximo lunes para todos? [Próxima reunión] Perfecto—que tengan buena semana.",
+            "number": 2
+          },
+          {
+            "title": "Cierre de Briefing Ejecutivo",
+            "content": "Para confirmar: has aprobado la Opción B con el presupuesto de $50K. [Resumen] Haré que el equipo empiece inmediatamente y te envío actualización de progreso el viernes. [Acciones] Si algo cambia de tu lado, avísame—de lo contrario, avanzamos. [Próxima reunión] Gracias por la decisión rápida.",
+            "number": 3
           }
         ]
       },
       {
         "id": "power-phrases",
         "title": "Parte 3: Frases de Poder para Control",
-        "categories": [
+        "items": [
           {
-            "category": "Retomar el Control",
-            "phrases": [
-              "Permíteme pausarnos aquí—quiero asegurarme de que estamos abordando tu preocupación principal.",
-              "Ese es un gran punto. Déjame marcarlo y volver a él en un momento.",
-              "Quiero respetar tu tiempo—¿podemos apartar esto y agendar una sesión separada más profunda?"
-            ]
+            "title": "Retomar el Control",
+            "content": "Permíteme pausarnos aquí—quiero asegurarme de que estamos abordando tu preocupación principal. | Ese es un gran punto. Déjame marcarlo y volver a él en un momento. | Quiero respetar tu tiempo—¿podemos apartar esto y agendar una sesión separada más profunda?",
+            "number": 1
           },
           {
-            "category": "Manejando Interrupciones",
-            "phrases": [
-              "Buena pregunta—déjame terminar este pensamiento y voy directo a eso.",
-              "Quiero darle a eso la atención que merece. ¿Puedo completar este punto primero?",
-              "Guarda ese pensamiento—es importante y no quiero perderlo."
-            ]
+            "title": "Manejando Interrupciones",
+            "content": "Buena pregunta—déjame terminar este pensamiento y voy directo a eso. | Quiero darle a eso la atención que merece. ¿Puedo completar este punto primero? | Guarda ese pensamiento—es importante y no quiero perderlo.",
+            "number": 2
           },
           {
-            "category": "Gestionando el Tiempo",
-            "phrases": [
-              "Nos quedan 10 minutos—asegurémonos de cubrir [item prioritario].",
-              "Estoy pendiente del reloj. ¿Deberíamos extender, o priorizar lo que queda?",
-              "Cambiemos de tema—quiero asegurarme de llegar a [tema] antes de quedarnos sin tiempo."
-            ]
+            "title": "Gestionando el Tiempo",
+            "content": "Nos quedan 10 minutos—asegurémonos de cubrir [item prioritario]. | Estoy pendiente del reloj. ¿Deberíamos extender, o priorizar lo que queda? | Cambiemos de tema—quiero asegurarme de llegar a [tema] antes de quedarnos sin tiempo.",
+            "number": 3
           },
           {
-            "category": "Confirmando Entendimiento",
-            "phrases": [
-              "Solo para asegurarme de que estoy siguiendo—estás diciendo [paráfrasis]. ¿Es correcto?",
-              "Déjame repetirte eso: [resumen]. ¿Lo capté bien?",
-              "Quiero asegurarme de que estamos alineados. Mi entendimiento es [resumen]. ¿Correcto?"
-            ]
+            "title": "Confirmando Entendimiento",
+            "content": "Solo para asegurarme de que estoy siguiendo—estás diciendo [paráfrasis]. ¿Es correcto? | Déjame repetirte eso: [resumen]. ¿Lo capté bien? | Quiero asegurarme de que estamos alineados. Mi entendimiento es [resumen]. ¿Correcto?",
+            "number": 4
           }
         ]
       },

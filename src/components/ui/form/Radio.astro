@@ -33,7 +33,7 @@ const textClass = getTextColor(background);
 const bgClass = getBackgroundColor(background === 'dark' ? 'light' : 'base');
 ---
 <div class="form-group">
-    <label class={`block text-sm font-medium mb-2 ${labelClass}`}>
+    <label class:list={`block text-sm font-medium mb-2 ${labelClass}`}>
         {label}
         {required && <span class="text-red-500">*</span>}
     </label>
@@ -46,7 +46,7 @@ const bgClass = getBackgroundColor(background === 'dark' ? 'light' : 'base');
                     name={name}
                     value={option.value}
                     required={required}
-                    class={`
+                    class:list={`
                         h-4 w-4 
                         border-primary/20
                         text-primary 
@@ -56,7 +56,7 @@ const bgClass = getBackgroundColor(background === 'dark' ? 'light' : 'base');
                 />
                 <label 
                     for={`${id}-${index}`}
-                    class={`text-sm font-medium ${inputTextClass}`}
+                    class:list={`text-sm font-medium ${inputTextClass}`}
                 >
                     {option.label}
                 </label>

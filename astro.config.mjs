@@ -9,7 +9,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 // i18n helpers (your existing helpers)
-import { routeFor, alternates, getAllTKeys } from "./src/lib/i18n.ts";
+import { routeFor, getAllTKeys } from "./src/lib/i18n.ts";
 
 const SITE = "https://www.nyenglishteacher.com";
 
@@ -148,7 +148,7 @@ export default defineConfig({
         ];
 
         const isRedirect = redirectPaths.some(
-          (prefix) => p === prefix || p.startsWith(prefix)
+          (prefix) => p === prefix || p.startsWith(prefix),
         );
 
         return (
@@ -213,7 +213,7 @@ export default defineConfig({
         // Handle testimonial category pages (they use customHreflangs, not tkey)
         if (links.length === 0) {
           const testimonialMatch = u.pathname.match(
-            /^\/(en|es)\/testimoni(als|os)\/([^\/]+)\/?$/
+            /^\/(en|es)\/testimoni(als|os)\/([^\/]+)\/?$/,
           );
           if (testimonialMatch) {
             const [, lang, , industry] = testimonialMatch;

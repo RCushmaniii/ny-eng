@@ -1,25 +1,24 @@
-import type { ImageMetadata } from 'astro';
-import { serviceCategories } from '../service-categories.js';
+import type { ImageMetadata } from "astro";
+import { serviceCategories } from "../service-categories.js";
 
 // Import testimonial images - using the same images as English version
-import emmanuelTestimonial from '../../assets/images/testimonials/emmanuel-testimonial.jpg';
-import erikaTestimonial from '../../assets/images/testimonials/erika-testimonial.jpg';
+import emmanuelTestimonial from "../../assets/images/testimonials/emmanuel-testimonial.jpg";
+import erikaTestimonial from "../../assets/images/testimonials/erika-testimonial.jpg";
 // Avoid importing a malformed image through Astro's metadata pipeline; use a public image path instead
-import julioTestimonial from '../../assets/images/testimonials/julio-testimonial.jpg';
-import hugobTestimonial from '../../assets/images/testimonials/hugob-testimonial.jpg';
-import hugolTestimonial from '../../assets/images/testimonials/hugo-l-testimonial.jpg';
-import andresTestimonial from '../../assets/images/testimonials/andres-testimonial.jpg';
-import karlaTestimonial from '../../assets/images/testimonials/karla-testimonial.jpg';
-import andreaTestimonial from '../../assets/images/testimonials/andrea-testimonial.jpg';
-import albertoTestimonial from '../../assets/images/testimonials/alberto-testimonial.jpg';
-import humbertoTestimonial from '../../assets/images/testimonials/humberto-testimonial.jpg';
-import ricardoTestimonial from '../../assets/images/testimonials/ricardo-testimonial.jpg';
-import javierTestimonial from '../../assets/images/testimonials/javier-testimonial.jpg';
-import jonathanTestimonial from '../../assets/images/testimonials/jonathan-testimonial.jpg';
-import taniaTestimonial from '../../assets/images/testimonials/tania-testimonial.jpg';
-import luislTestimonial from '../../assets/images/testimonials/luisl-testimonial.jpg';
-import noeTestimonial from '../../assets/images/testimonials/noe-testimonial.jpg';
-
+import julioTestimonial from "../../assets/images/testimonials/julio-testimonial.jpg";
+import hugobTestimonial from "../../assets/images/testimonials/hugob-testimonial.jpg";
+import hugolTestimonial from "../../assets/images/testimonials/hugo-l-testimonial.jpg";
+import andresTestimonial from "../../assets/images/testimonials/andres-testimonial.jpg";
+import karlaTestimonial from "../../assets/images/testimonials/karla-testimonial.jpg";
+import andreaTestimonial from "../../assets/images/testimonials/andrea-testimonial.jpg";
+import albertoTestimonial from "../../assets/images/testimonials/alberto-testimonial.jpg";
+import humbertoTestimonial from "../../assets/images/testimonials/humberto-testimonial.jpg";
+import ricardoTestimonial from "../../assets/images/testimonials/ricardo-testimonial.jpg";
+import javierTestimonial from "../../assets/images/testimonials/javier-testimonial.jpg";
+import jonathanTestimonial from "../../assets/images/testimonials/jonathan-testimonial.jpg";
+import taniaTestimonial from "../../assets/images/testimonials/tania-testimonial.jpg";
+import luislTestimonial from "../../assets/images/testimonials/luisl-testimonial.jpg";
+import noeTestimonial from "../../assets/images/testimonials/noe-testimonial.jpg";
 
 export interface Testimonial {
   content: string;
@@ -32,10 +31,10 @@ export interface Testimonial {
   industries: string[]; // Array de categorías estandarizadas
   slug: string;
   headline?: string;
-  avatarSize?: 'sm' | 'md' | 'lg';
+  avatarSize?: "sm" | "md" | "lg";
   link?: string;
   linkText?: string;
-  status?: 'published' | 'draft';
+  status?: "published" | "draft";
 }
 
 export const testimonials: Testimonial[] = [
@@ -49,11 +48,12 @@ export const testimonials: Testimonial[] = [
     stars: 5,
     industries: ["executive-english", "startup-founders"],
     slug: "julio-aldana-smarttie",
-    headline: "De bueno a excelente: Cómo el coaching transformó mi comunicación de liderazgo",
+    headline:
+      "De bueno a excelente: Cómo el coaching transformó mi comunicación de liderazgo",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-fundadores-de-startups/",
     linkText: "👉 Coaching de Inglés para Fundadores de Startups",
-    status: "published"
+    status: "published",
   },
   {
     content:
@@ -69,7 +69,7 @@ export const testimonials: Testimonial[] = [
     avatarSize: "md",
     link: "/es/servicios/ingles-para-fundadores-de-startups",
     linkText: "👉 Coaching de Inglés para Fundadores y CEOs de Startups",
-    status: "published"
+    status: "published",
   },
   {
     content:
@@ -85,11 +85,12 @@ export const testimonials: Testimonial[] = [
     avatarSize: "md",
     link: "/es/servicios/ingles-para-ejecutivos/",
     linkText: "👉 Coaching de Inglés para Ejecutivos",
-    status: "published"
+    status: "published",
   },
   {
     content: `Trabajar con Robert ha sido uno de los pasos más impactantes que he dado para mi comunicación profesional. Como CTO, ya opero en entornos técnicos y estratégicos, pero su coaching me dio las herramientas para proyectar verdadera presencia ejecutiva en inglés. Aprendí a estructurar presentaciones con impacto, manejar situaciones de speaking improvisado bajo presión y liderar conversaciones con claridad y confianza. El enfoque de Robert es práctico, exigente y siempre alineado con mi rol como directivo global. Ahora me siento mejor preparado para representar a mi empresa en foros internacionales y para posicionarme en futuras oportunidades de liderazgo.`,
-    shortContent: "Trabajar con Robert ha sido uno de los pasos más impactantes para mi comunicación profesional como CTO—su coaching práctico me ayudó a estructurar presentaciones con impacto, manejar situaciones improvisadas y liderar con confianza…",
+    shortContent:
+      "Trabajar con Robert ha sido uno de los pasos más impactantes para mi comunicación profesional como CTO—su coaching práctico me ayudó a estructurar presentaciones con impacto, manejar situaciones improvisadas y liderar con confianza…",
     author: "Luis Manuel Becerra Lucatero",
     position: "Director de Tecnología (CTO)",
     company: "Skysense",
@@ -97,11 +98,12 @@ export const testimonials: Testimonial[] = [
     stars: 5,
     industries: ["executive-english", "tech-english", "high-stakes-english"],
     slug: "luis-manuel-becerra-lucatero-skysense",
-    headline: "Presencia Ejecutiva y Comunicación de Alto Impacto para un CTO Global",
+    headline:
+      "Presencia Ejecutiva y Comunicación de Alto Impacto para un CTO Global",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-ejecutivos/",
     linkText: "👉 Coaching de Inglés para Ejecutivos",
-    status: "published"
+    status: "published",
   },
   {
     content: `Más que un coach de inglés, Robert ha sido un verdadero coach de negocios. Cada sesión combina el idioma con herramientas prácticas que impulsan mi crecimiento profesional.`,
@@ -112,11 +114,12 @@ export const testimonials: Testimonial[] = [
     stars: 5,
     industries: ["executive-english", "high-stakes-english"],
     slug: "noe-martinez-high-stakes-english",
-    headline: "Combinando Idioma y Coaching de Negocios para un Crecimiento Real",
+    headline:
+      "Combinando Idioma y Coaching de Negocios para un Crecimiento Real",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-presentaciones/",
     linkText: "👉 Coaching de Inglés para Situaciones Críticas",
-    status: "published"
+    status: "published",
   },
   {
     content:
@@ -126,18 +129,23 @@ export const testimonials: Testimonial[] = [
     company: "CEVA Logistics",
     avatar: andreaTestimonial,
     stars: 5,
-    industries: ["logistics-english", "executive-english", "high-stakes-english"],
+    industries: [
+      "logistics-english",
+      "executive-english",
+      "high-stakes-english",
+    ],
     slug: "andrea-oliveira-ceva-logistics",
     headline: "Superando la barrera del idioma en ventas técnicas",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-presentaciones/",
     linkText: "👉 Coaching de Inglés para Situaciones Críticas",
-    status: "published"
+    status: "published",
   },
   {
     content:
       "Tomar clases con Robert ha sido sin duda una experiencia muy enriquecedora. Necesitaba asistir a reuniones con ejecutivos de alto nivel de clientes para presentar propuestas, soluciones o explicar información relacionada con la logística. Mi vocabulario limitado y áreas como la pronunciación, comprensión auditiva, entonación y habilidades de presentación requerían una mejora significativa para mi crecimiento profesional.\n\nEl coaching de Robert no solo me ha permitido superar estos desafíos, sino que también me ha dado la confianza para presentarme de manera más profesional. Robert me ha brindado orientación sobre cómo presentar y publicar mi trabajo en un entorno corporativo y también me ha introducido y facilitado el aprendizaje de muchos temas de vanguardia que han impactado positivamente tanto mi vida profesional como personal.",
-    shortContent: "Tomar clases con Robert ha sido sin duda una experiencia muy enriquecedora. Necesitaba asistir a reuniones con ejecutivos de alto nivel de clientes para presentar propuestas, soluciones...",
+    shortContent:
+      "Tomar clases con Robert ha sido sin duda una experiencia muy enriquecedora. Necesitaba asistir a reuniones con ejecutivos de alto nivel de clientes para presentar propuestas, soluciones...",
     author: "Karla Bernal",
     position: "Gerente Sr. de Logística",
     company: "Sanmina Corporation",
@@ -149,7 +157,7 @@ export const testimonials: Testimonial[] = [
     avatarSize: "md",
     link: "/es/servicios/ingles-para-logistica/",
     linkText: "👉 Coaching de Inglés para Logística",
-    status: "published"
+    status: "published",
   },
   {
     content:
@@ -165,7 +173,7 @@ export const testimonials: Testimonial[] = [
     avatarSize: "md",
     link: "/es/servicios/ingles-para-profesionales/",
     linkText: "👉 Coaching de Inglés para Profesionales",
-    status: "published"
+    status: "published",
   },
   {
     content:
@@ -181,7 +189,7 @@ export const testimonials: Testimonial[] = [
     avatarSize: "md",
     link: "/es/servicios/ingles-para-profesionales/",
     linkText: "👉 Coaching de Inglés para Profesionales",
-    status: "draft"
+    status: "draft",
   },
   {
     content:
@@ -197,12 +205,14 @@ export const testimonials: Testimonial[] = [
     avatarSize: "md",
     link: "/es/servicios/ingles-para-ejecutivos/",
     linkText: "👉 Coaching de Inglés para Ejecutivos",
-    status: "published"
+    status: "published",
   },
   {
-    content: "Me complace recomendar a Robert como un profesor de idiomas y coach en comunicación ejecutiva excepcional. Bajo su guía, pasé de sentirme inseguro en conversaciones de alto nivel a hablar con seguridad en reuniones de alta dirección y presentar actualizaciones complejas con claridad y persuasión.\n\nLa profunda experiencia corporativa de Robert hizo que cada sesión fuera mucho más allá de la gramática y la pronunciación: simuló escenarios reales de sala de juntas, anticipó preguntas difíciles y me entrenó para responder de forma concisa y con impacto. Gracias a su coaching, mi fluidez, pronunciación y presencia general han mejorado notablemente, y ahora enfrento conversaciones críticas con verdadera confianza.\n\nRobert será un recurso excepcional para cualquier persona que busque llevar su comunicación profesional al siguiente nivel.",
+    content:
+      "Me complace recomendar a Robert como un profesor de idiomas y coach en comunicación ejecutiva excepcional. Bajo su guía, pasé de sentirme inseguro en conversaciones de alto nivel a hablar con seguridad en reuniones de alta dirección y presentar actualizaciones complejas con claridad y persuasión.\n\nLa profunda experiencia corporativa de Robert hizo que cada sesión fuera mucho más allá de la gramática y la pronunciación: simuló escenarios reales de sala de juntas, anticipó preguntas difíciles y me entrenó para responder de forma concisa y con impacto. Gracias a su coaching, mi fluidez, pronunciación y presencia general han mejorado notablemente, y ahora enfrento conversaciones críticas con verdadera confianza.\n\nRobert será un recurso excepcional para cualquier persona que busque llevar su comunicación profesional al siguiente nivel.",
 
-    shortContent: "Me complace recomendar a Robert como un profesor de idiomas y coach en comunicación ejecutiva excepcional. Bajo su guía, pasé de sentirme inseguro en conversaciones de alto nivel a hablar con seguridad en reuniones de alta dirección y presentar actualizaciones complejas con claridad y persuasión...",
+    shortContent:
+      "Me complace recomendar a Robert como un profesor de idiomas y coach en comunicación ejecutiva excepcional. Bajo su guía, pasé de sentirme inseguro en conversaciones de alto nivel a hablar con seguridad en reuniones de alta dirección y presentar actualizaciones complejas con claridad y persuasión...",
 
     author: "Hugo Lopez",
     position: "Gerente Senior de Programas",
@@ -215,12 +225,14 @@ export const testimonials: Testimonial[] = [
     avatarSize: "md",
     link: "/es/servicios/ingles-para-presentaciones/",
     linkText: "👉 Coaching de Inglés para Situaciones Críticas",
-    status: "published"
+    status: "published",
   },
 
   {
-    content: "Trabajar con Robert me ha ayudado a mejorar cómo me comunico en situaciones de ventas técnicas. A menudo explico sistemas de automatización, programación de PLC y especificaciones de productos a clientes internacionales, y quería sonar más fluido y seguro.\n\nCon el coaching de Robert, me he vuelto más natural en las conversaciones, mejor estructurando mis explicaciones y más persuasivo en demostraciones y seguimientos. Ha marcado una clara diferencia en cómo interactúo con los clientes y represento a mi empresa en inglés.",
-    shortContent: "Trabajar con Robert me ha ayudado a mejorar cómo me comunico en situaciones de ventas técnicas. A menudo explico sistemas de automatización, programación de PLC y especificaciones de productos a clientes internacionales...",
+    content:
+      "Trabajar con Robert me ha ayudado a mejorar cómo me comunico en situaciones de ventas técnicas. A menudo explico sistemas de automatización, programación de PLC y especificaciones de productos a clientes internacionales, y quería sonar más fluido y seguro.\n\nCon el coaching de Robert, me he vuelto más natural en las conversaciones, mejor estructurando mis explicaciones y más persuasivo en demostraciones y seguimientos. Ha marcado una clara diferencia en cómo interactúo con los clientes y represento a mi empresa en inglés.",
+    shortContent:
+      "Trabajar con Robert me ha ayudado a mejorar cómo me comunico en situaciones de ventas técnicas. A menudo explico sistemas de automatización, programación de PLC y especificaciones de productos a clientes internacionales...",
     author: "Ricardo Mendoza",
     position: "Ingeniero de Automatización y Control",
     company: "Mountz Torque",
@@ -232,7 +244,7 @@ export const testimonials: Testimonial[] = [
     avatarSize: "md",
     link: "/es/servicios/ingles-para-tecnologia/",
     linkText: "👉 Coaching de Inglés para Tecnología",
-    status: "draft"
+    status: "draft",
   },
   {
     content:
@@ -248,11 +260,13 @@ export const testimonials: Testimonial[] = [
     avatarSize: "md",
     link: "/es/servicios/ingles-para-logistica/",
     linkText: "👉 Coaching de Inglés para Logística",
-    status: "published"
+    status: "published",
   },
   {
-    content: "Robert me ayudó a fortalecer mi comunicación en inglés para interacciones de gestión de proyectos. Ahora me siento seguro manejando conversaciones legales, explicando problemas complejos y construyendo confianza con colegas estadounidenses. Ha marcado una diferencia significativa en mi trabajo internacional diario.",
-    shortContent: "Robert me ayudó a fortalecer mi comunicación en inglés para interacciones de gestión de proyectos. Ahora me siento seguro manejando conversaciones legales y construyendo confianza con colegas estadounidenses...",
+    content:
+      "Robert me ayudó a fortalecer mi comunicación en inglés para interacciones de gestión de proyectos. Ahora me siento seguro manejando conversaciones legales, explicando problemas complejos y construyendo confianza con colegas estadounidenses. Ha marcado una diferencia significativa en mi trabajo internacional diario.",
+    shortContent:
+      "Robert me ayudó a fortalecer mi comunicación en inglés para interacciones de gestión de proyectos. Ahora me siento seguro manejando conversaciones legales y construyendo confianza con colegas estadounidenses...",
     author: "Javier Ramírez",
     position: "Gerente de Programas",
     company: "Sophia",
@@ -264,11 +278,13 @@ export const testimonials: Testimonial[] = [
     avatarSize: "md",
     link: "/es/servicios/ingles-para-presentaciones",
     linkText: "👉 Coaching de Inglés para Entrevistas",
-    status: "draft"
+    status: "draft",
   },
   {
-    content: "El principal desafío que enfrenté cuando comencé a trabajar en entornos globales fue la falta de fluidez para expresar mis ideas técnicas de manera efectiva tanto a líderes como a colegas de diferentes nacionalidades. Robert me ha estado entrenando, y hemos practicado varios escenarios juntos. Ahora me siento mucho más fluido y seguro. He podido movilizar equipos multinacionales y alinearlos en torno a estrategias que tienen sentido para todos.",
-    shortContent: "El principal desafío que enfrenté cuando comencé a trabajar en entornos globales fue la falta de fluidez para expresar mis ideas técnicas de manera efectiva tanto a líderes como a colegas de diferentes nacionalidades...",
+    content:
+      "El principal desafío que enfrenté cuando comencé a trabajar en entornos globales fue la falta de fluidez para expresar mis ideas técnicas de manera efectiva tanto a líderes como a colegas de diferentes nacionalidades. Robert me ha estado entrenando, y hemos practicado varios escenarios juntos. Ahora me siento mucho más fluido y seguro. He podido movilizar equipos multinacionales y alinearlos en torno a estrategias que tienen sentido para todos.",
+    shortContent:
+      "El principal desafío que enfrenté cuando comencé a trabajar en entornos globales fue la falta de fluidez para expresar mis ideas técnicas de manera efectiva tanto a líderes como a colegas de diferentes nacionalidades...",
     author: "Jonathan Emmaus Campos Navarro",
     position: "Líder de Datos",
     company: "Infosys",
@@ -280,7 +296,7 @@ export const testimonials: Testimonial[] = [
     avatarSize: "md",
     link: "/es/servicios/ingles-para-tecnologia/",
     linkText: "👉 Coaching de Inglés para Tecnología",
-    status: "published"
+    status: "published",
   },
   {
     content: `Antes de trabajar con Robert, a veces me sentía insegura al presentar en inglés durante llamadas importantes y reuniones en tiempo real, especialmente con clientes internacionales.
@@ -288,7 +304,8 @@ export const testimonials: Testimonial[] = [
   Su coaching me ha ayudado a generar mayor confianza al hablar, expandir mi vocabulario y dar estructura a mis ideas. Su enfoque es práctico y moderno, utilizando ejemplos de la vida real que hacen que el aprendizaje sea interesante.
   
   Ahora, me siento más segura y fluida en mi comunicación y tengo un mejor desempeño en discusiones técnicas y negociaciones.`,
-    shortContent: "Antes de trabajar con Robert, a veces me sentía insegura al presentar en inglés durante llamadas importantes y reuniones en tiempo real con clientes internacionales…",
+    shortContent:
+      "Antes de trabajar con Robert, a veces me sentía insegura al presentar en inglés durante llamadas importantes y reuniones en tiempo real con clientes internacionales…",
     author: "Tania Ruelas",
     position: "Gerente de Cuentas Clave de Calidad",
     company: "FORVIA HELLA",
@@ -300,33 +317,49 @@ export const testimonials: Testimonial[] = [
     avatarSize: "md",
     link: "/es/servicios/ingles-para-tecnologia/",
     linkText: "👉 Coaching de Inglés para Ingenieros",
-    status: "published"
+    status: "published",
   },
 ] as const;
 
 // Filter published testimonials
-export const publishedTestimonials = testimonials.filter(t => t.status !== "draft");
+export const publishedTestimonials = testimonials.filter(
+  (t) => t.status !== "draft",
+);
 
 // Group testimonials by industry for easier filtering using the standardized service categories
 export const testimonialsByIndustry = {
-  "all": publishedTestimonials,
-  "executive-english": publishedTestimonials.filter(t => t.industries.includes("executive-english")),
-  "startup-founders": publishedTestimonials.filter(t => t.industries.includes("startup-founders")),
-  "tech-english": publishedTestimonials.filter(t => t.industries.includes("tech-english")),
-  "logistics-english": publishedTestimonials.filter(t => t.industries.includes("logistics-english")),
-  "professional-english": publishedTestimonials.filter(t => t.industries.includes("professional-english")),
-  "high-stakes-english": publishedTestimonials.filter(t => t.industries.includes("high-stakes-english")),
-  "interview-preparation": publishedTestimonials.filter(t => t.industries.includes("interview-preparation")),
+  all: publishedTestimonials,
+  "executive-english": publishedTestimonials.filter((t) =>
+    t.industries.includes("executive-english"),
+  ),
+  "startup-founders": publishedTestimonials.filter((t) =>
+    t.industries.includes("startup-founders"),
+  ),
+  "tech-english": publishedTestimonials.filter((t) =>
+    t.industries.includes("tech-english"),
+  ),
+  "logistics-english": publishedTestimonials.filter((t) =>
+    t.industries.includes("logistics-english"),
+  ),
+  "professional-english": publishedTestimonials.filter((t) =>
+    t.industries.includes("professional-english"),
+  ),
+  "high-stakes-english": publishedTestimonials.filter((t) =>
+    t.industries.includes("high-stakes-english"),
+  ),
+  "interview-preparation": publishedTestimonials.filter((t) =>
+    t.industries.includes("interview-preparation"),
+  ),
 } as const;
 
 // Updated industry labels using standardized categories from service-categories.ts
 export const industryLabels = {
-  "all": "Todas las industrias",
+  all: "Todas las industrias",
   "executive-english": serviceCategories[0].esLabel,
   "startup-founders": serviceCategories[1].esLabel,
   "tech-english": serviceCategories[2].esLabel,
   "logistics-english": serviceCategories[3].esLabel,
   "professional-english": serviceCategories[4].esLabel,
   "interview-preparation": serviceCategories[5].esLabel,
-  "high-stakes-english": "Inglés para Situaciones Críticas"
+  "high-stakes-english": "Inglés para Situaciones Críticas",
 } as const;

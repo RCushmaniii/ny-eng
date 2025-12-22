@@ -14,12 +14,23 @@
     "timeToComplete": "8 minutes",
     "estimatedMinutes": 8,
     "pageCount": 6,
-    "tags": ["pushback", "saying-no", "boundaries", "assertiveness", "negotiation"]
+    "tags": [
+      "pushback",
+      "saying-no",
+      "boundaries",
+      "assertiveness",
+      "negotiation"
+    ]
   },
   "targeting": {
     "primaryPersona": ["manager", "consultant", "project-manager", "all"],
     "industries": ["technology", "professional-services", "finance", "all"],
-    "scenarios": ["negotiations", "difficult-conversations", "client-meetings", "meetings"],
+    "scenarios": [
+      "negotiations",
+      "difficult-conversations",
+      "client-meetings",
+      "meetings"
+    ],
     "painPoints": [
       "Difficulty saying no to clients without damaging relationships",
       "Over-committing to unrealistic deadlines",
@@ -30,11 +41,19 @@
   "conversion": {
     "ctaType": "strategy-call",
     "nextStep": "Book a free strategy call to practice these phrases in realistic scenarios",
-    "relatedAssets": ["5-minute-negotiation-script", "difficult-conversation-checklist"]
+    "relatedAssets": [
+      "5-minute-negotiation-script",
+      "difficult-conversation-checklist"
+    ]
   },
   "seo": {
     "metaDescription": "Learn 7 professional ways to say no in business English. Protect your boundaries without damaging client relationships or sounding defensive.",
-    "keywords": ["how to say no professionally", "business english pushback", "setting boundaries at work", "professional decline phrases"]
+    "keywords": [
+      "how to say no professionally",
+      "business english pushback",
+      "setting boundaries at work",
+      "professional decline phrases"
+    ]
   },
   "slugEn": "pushback-playbook",
   "slugEs": "guia-para-decir-no",

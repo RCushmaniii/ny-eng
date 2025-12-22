@@ -63,7 +63,7 @@ const activeCategories = Array.from(categoryMap.values());
       <div class="flex flex-wrap gap-2">
         <a 
           href={baseBlogUrl} 
-          class={`px-4 sm:px-6 py-2 sm:py-3 leading-none rounded-md text-small flex items-center justify-center transition-colors border border-primary duration-200 ${
+          class:list={`px-4 sm:px-6 py-2 sm:py-3 leading-none rounded-md text-small flex items-center justify-center transition-colors border border-primary duration-200 ${
             !currentCategory 
               ? 'bg-primary text-body-dark shadow-md' 
               : 'bg-background text-body-base hover:bg-background-light hover:text-body-light'
@@ -78,7 +78,7 @@ const activeCategories = Array.from(categoryMap.values());
   return (
     <a 
       href={categoryUrl}
-      class={`px-4 sm:px-6 py-2 sm:py-3 leading-none rounded-md text-small flex items-center justify-center transition-colors border border-primary duration-200 ${
+      class:list={`px-4 sm:px-6 py-2 sm:py-3 leading-none rounded-md text-small flex items-center justify-center transition-colors border border-primary duration-200 ${
         (lang === 'es' && category.name_es && (currentCategory === category.name_es || currentCategorySlug === category.esSlug)) ||
         (lang !== 'es' && (currentCategory === category.name || currentCategorySlug === category.slug))
           ? 'bg-primary text-body-dark shadow-md' 

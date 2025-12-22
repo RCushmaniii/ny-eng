@@ -7,7 +7,7 @@
     "language": ["en", "es"]
   },
   "classification": {
-    "contentType": "sentences",
+    "contentType": "guide",
     "format": "pdf-guide",
     "funnelStage": "awareness",
     "difficultyLevel": "beginner",
@@ -17,7 +17,13 @@
     "tags": ["meetings", "recovery", "phrases", "confidence", "improvisation"]
   },
   "targeting": {
-    "primaryPersona": ["manager", "consultant", "engineer", "project-manager", "all"],
+    "primaryPersona": [
+      "manager",
+      "consultant",
+      "engineer",
+      "project-manager",
+      "all"
+    ],
     "industries": ["technology", "professional-services", "finance", "all"],
     "scenarios": ["meetings", "client-meetings", "presentations"],
     "painPoints": [
@@ -34,12 +40,17 @@
   },
   "seo": {
     "metaDescription": "Get 12 phrases that save you when meetings go wrong. Recover from blanking out, ask for clarification, and interrupt politely—without losing credibility.",
-    "keywords": ["meeting phrases english", "how to recover in meetings", "professional meeting language", "business english meeting phrases"]
+    "keywords": [
+      "meeting phrases english",
+      "how to recover in meetings",
+      "professional meeting language",
+      "business english meeting phrases"
+    ]
   },
   "slugEn": "meeting-rescue-phrases",
   "slugEs": "frases-rescate-reuniones",
   "en": {
-    "title": "12 Meeting Rescue Phrases",
+    "title": "12 Meeting Rescue Phrases for Work",
     "subtitle": "What to Say When Things Go Wrong Mid-Meeting",
     "description": "Every professional has moments where they blank out, don't understand, or need to interrupt. These 12 phrases help you recover smoothly without losing credibility.",
     "headline": "Never Freeze in a Meeting Again",

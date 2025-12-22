@@ -1,8 +1,8 @@
 ---
 /**
- * /en/free/index.astro
+ * /en/resources/index.astro
  *
- * Free Resources Hub - Dashboard showing all available free resources
+ * Executive Resource Library - Field-tested tools for global leaders
  */
 
 import Base from "@layouts/Base.astro";
@@ -11,9 +11,9 @@ import FreeResourcesHub from "@components/free/FreeResourcesHub";
 import { Sparkles, FileText, Headphones, MessageCircle } from "lucide-astro";
 import type { FreeAsset } from "@/types/free-asset";
 
-const title = "Free Resources | Business English | NY English";
+const title = "Executive English Resource Library | New York English";
 const description =
-  "Free guides, cheat sheets, and tools to help Latin American tech professionals communicate with executive-level confidence in English.";
+  "Field-tested negotiation scripts, communication frameworks, and executive guides designed for Latin American professionals leading global teams.";
 
 // Auto-discover all free resources from JSON files
 const allAssets = await Astro.glob("../../data/free/*.json");
@@ -44,36 +44,31 @@ const resources: FreeAsset[] = allAssets
   title={title}
   description={description}
   lang="en"
-  tkey="free"
+  tkey="resources"
   ogImage={{
     src: "/images/logos/new-york-english-og.jpg",
-    alt: "Free Business English Resources - New York English Teacher",
+    alt: "Executive English Resource Library - New York English Teacher",
   }}
   hideCta={true}
 >
   <!-- Hero Section -->
-  <section class="hero-section pt-28 pb-16 md:pt-32 md:pb-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-3xl mx-auto">
-        <div
-          class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6"
-        >
-          <Sparkles class="w-4 h-4" />
-          <span>100% Free Resources</span>
-        </div>
+  <section class="pt-28 pb-16 md:pt-32 md:pb-20 bg-gray-50">
+    <div class="site-container px-4 text-center">
+      <span
+        class="text-amber-600 font-bold tracking-wider text-sm uppercase mb-4 block"
+      >
+        Executive Resource Library
+      </span>
 
-        <h1
-          class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight"
-        >
-          Level Up Your
-          <span class="text-blue-600"> Executive English</span>
-        </h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+        Field-Tested Tools for <span class="text-blue-700">Global Leaders</span>
+      </h1>
 
-        <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
-          Practical guides, cheat sheets, and tools designed for Latin American
-          tech professionals who communicate with North American clients.
-        </p>
-      </div>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Actionable frameworks, negotiation scripts, and communication guides
+        designed specifically for Latin American professionals leading global
+        teams.
+      </p>
     </div>
   </section>
 
@@ -86,15 +81,15 @@ const resources: FreeAsset[] = allAssets
   >
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-        Want Faster Results?
+        Ready to Implement These Strategies?
       </h2>
       <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
-        Free resources build awareness. Professional coaching builds
-        transformation. Book a free strategy call to discuss your team's
-        specific challenges.
+        Reading guides builds awareness. Coaching builds mastery. Book your
+        strategy session to apply these frameworks to your specific career
+        challenges.
       </p>
       <Button href="/en/book/" variant="primary" size="lg">
-        Book Free Strategy Call →
+        Book My Strategy Session →
       </Button>
     </div>
   </section>

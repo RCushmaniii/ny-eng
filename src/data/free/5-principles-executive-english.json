@@ -14,7 +14,12 @@
     "timeToComplete": "5 minutes",
     "estimatedMinutes": 5,
     "pageCount": 4,
-    "tags": ["principles", "fundamentals", "executive-presence", "communication-basics"]
+    "tags": [
+      "principles",
+      "fundamentals",
+      "executive-presence",
+      "communication-basics"
+    ]
   },
   "targeting": {
     "primaryPersona": ["executive", "manager", "all"],
@@ -29,11 +34,19 @@
   "conversion": {
     "ctaType": "strategy-call",
     "nextStep": "Book a free strategy call to apply these principles to your specific role",
-    "relatedAssets": ["10-common-mistakes-executive-english", "5-quick-wins-executive-english"]
+    "relatedAssets": [
+      "10-common-mistakes-executive-english",
+      "5-quick-wins-executive-english"
+    ]
   },
   "seo": {
     "metaDescription": "Master the 5 essential principles that separate junior-sounding English from executive-level communication in North American business.",
-    "keywords": ["executive english principles", "business communication fundamentals", "professional english basics", "executive presence"]
+    "keywords": [
+      "executive english principles",
+      "business communication fundamentals",
+      "professional english basics",
+      "executive presence"
+    ]
   },
   "slugEn": "5-principles-executive-english",
   "slugEs": "5-principios-ingles-ejecutivo",

@@ -30,16 +30,24 @@
   "conversion": {
     "ctaType": "strategy-call",
     "nextStep": "Book a free strategy call to practice your interview answers with real-time feedback",
-    "relatedAssets": ["60-second-self-introduction", "5-principles-executive-english"]
+    "relatedAssets": [
+      "60-second-self-introduction",
+      "5-principles-executive-english"
+    ]
   },
   "seo": {
     "metaDescription": "Get fill-in-the-blank templates for the 6 most common interview questions. Stop rambling and start giving answers that get job offers.",
-    "keywords": ["interview answer templates", "STAR method examples", "behavioral interview answers", "how to answer interview questions"]
+    "keywords": [
+      "interview answer templates",
+      "STAR method examples",
+      "behavioral interview answers",
+      "how to answer interview questions"
+    ]
   },
   "slugEn": "interview-answer-templates",
   "slugEs": "plantillas-respuestas-entrevista",
   "en": {
-    "title": "Interview Answer Templates",
+    "title": "Interview Answer Templates & Scripts",
     "subtitle": "Fill-in-the-Blank Answers for the 6 Questions You'll Definitely Get",
     "description": "Stop rambling through interviews. These templates give you the exact structure for answering the most common questions—so you sound prepared, confident, and memorable.",
     "headline": "Stop Rambling. Start Getting Offers.",

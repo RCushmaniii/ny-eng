@@ -3,7 +3,7 @@ title: "Domina el inglés de negocios y haz crecer tu carrera"
 excerpt: "Coaching personalizado de inglés para ayudarte a hablar con confianza."
 publishDate: "2025-04-03"
 lastmod: "2025-12-07"
-categories: 
+categories:
   - "Inglés para Negocios"
 featuredImage: "./images/business-english-coaching.jpg"
 imageAlt: "Sesión de coaching de inglés de negocios"
@@ -22,7 +22,7 @@ En **New York English**, ayudo a profesionales como tú a mejorar su inglés de 
 ### ¿Qué hace especial mi coaching?
 
 - **Sesiones 1-a-1 diseñadas para ti**  
-  Cada clase se enfoca en *tus* metas. Trabajamos en lo que necesitas: escribir correos profesionales, hablar en reuniones o negociar acuerdos. Sin libros de texto, solo habilidades reales.
+  Cada clase se enfoca en _tus_ metas. Trabajamos en lo que necesitas: escribir correos profesionales, hablar en reuniones o negociar acuerdos. Sin libros de texto, solo habilidades reales.
 
 - **Capacitación para empresas**  
   ¿Quieres que tu equipo se comunique mejor? Ofrezco talleres para mejorar el inglés de departamentos completos, desde llamadas con clientes hasta reportes internos.
@@ -41,22 +41,21 @@ Esto dicen líderes de distintas industrias sobre trabajar conmigo:
 
 > ★★★★★  
 > “El coaching con Robert mejoró mi inglés y me dio la confianza para presentar ante clientes e inversionistas. Hablamos de negocios, tecnología y temas globales, lo que me ayudó a aprender vocabulario útil y comunicarme mejor. ¡Cambió mi carrera!”  
-**Julio Aldana**  
-*COO, Smarttie*
+> **Julio Aldana**  
+> _COO, Smarttie_
 
 > ★★★★★  
 > “Como fundador, siempre estoy presentando ideas y liderando mi equipo. El coaching con Robert me dio las habilidades y la confianza en inglés para hacerlo bien. Me ayudó a cerrar acuerdos y conectar con mi equipo.”  
-**Hugo Blum**  
-*CEO, 100 Ladrillos*
+> **Hugo Blum**  
+> _CEO, 100 Ladrillos_
 
 > ★★★★★  
 > “El coaching con Robert me hizo sentir natural hablando inglés, especialmente con clientes en EE.UU. Ahora me siento cómodo en conversaciones y listo para networking y reuniones internacionales.”  
-**Andrés Guzmán Rubio**  
-*COO – México, Driscoll's*
+> **Andrés Guzmán Rubio**  
+> _COO – México, Driscoll's_
 
 ---
 
 ## ¿Por qué es importante el inglés de negocios?
 
 El buen inglés abre puertas en tu carrera. Ya sea que trabajes en tecnología, finanzas, logística u otro sector, comunicarte con claridad te ayuda a lograr ascensos, generar confianza con clientes y mostrar liderazgo. Mi coaching te enseña a manejar reuniones, negociar con seguridad y trabajar con personas de diferentes culturas. Con mejor inglés, destacarás como un líder fuerte y profesional.
-

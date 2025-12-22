@@ -1,0 +1,740 @@
+
+> titan-core@2.0.1 astro
+> astro check
+
+[2m03:54:33[22m [34m[content][39m Syncing content
+[2m03:54:33[22m [34m[content][39m Synced content
+[2m03:54:33[22m [34m[types][39m Generated [2m235ms[22m
+[2m03:54:33[22m [34m[check][39m Getting diagnostics for Astro files in C:\Users\Robert Cushman\.vscode\Projects\ny-eng...
+[96msrc/components/ExpandableTestimonialCard.astro[0m:[93m4[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Button' is declared but its value is never read.
+
+[7m4[0m import Button from "@components/ui/Button.astro";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/Header.astro[0m:[93m145[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'withSlash' is declared but its value is never read.
+
+[7m145[0m function withSlash(p: string): string {
+[7m   [0m [93m         ~~~~~~~~~[0m
+[96msrc/components/Header.astro[0m:[93m92[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'mapToEn' is declared but its value is never read.
+
+[7m92[0m function mapToEn(path: string | undefined): string {
+[7m  [0m [93m         ~~~~~~~[0m
+[96msrc/components/Header.astro[0m:[93m46[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'mapToEs' is declared but its value is never read.
+
+[7m46[0m function mapToEs(path: string | undefined): string {
+[7m  [0m [93m         ~~~~~~~[0m
+[96msrc/components/Header.astro[0m:[93m3[0m:[93m1[0m - [93mwarning[0m[90m ts(6192): [0mAll imports in import declaration are unused.
+
+[7m  3[0m import {
+[7m   [0m [93m~~~~~~~~[0m
+[7m  4[0m   cleanDoubleLanguagePrefixes,
+[7m   [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m...[0m 
+[7m  7[0m   cleanBlogUrl,
+[7m   [0m [93m~~~~~~~~~~~~~~~[0m
+[7m  8[0m } from "@utils/url-cleaner";
+[7m   [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/HomepageFAQ.tsx[0m:[93m3[0m:[93m29[0m - [93mwarning[0m[90m ts(6133): [0m'HomepageFAQ' is declared but its value is never read.
+
+[7m3[0m import { homepageFAQs, type HomepageFAQ } from "@data/homepage-faqs";
+[7m [0m [93m                            ~~~~~~~~~~~[0m
+
+[96msrc/components/QuizReport.tsx[0m:[93m98[0m:[93m16[0m - [91merror[0m[90m ts(2367): [0mThis comparison appears to be unintentional because the types 'ScoreTier' and '"Million-Dollar Gap"' have no overlap.
+
+[7m98[0m     } else if (scoreBreakdown.scoreTier === "Million-Dollar Gap") {
+[7m  [0m [91m               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/QuizReport.tsx[0m:[93m91[0m:[93m9[0m - [91merror[0m[90m ts(2367): [0mThis comparison appears to be unintentional because the types 'ScoreTier' and '"Conversation-Ready"' have no overlap.
+
+[7m91[0m     if (scoreBreakdown.scoreTier === "Conversation-Ready") {
+[7m  [0m [91m        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/SEO.astro[0m:[93m64[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'safeDescription' is declared but its value is never read.
+
+[7m64[0m const safeDescription = description;
+[7m  [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/TestimonialCard.astro[0m:[93m4[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Button' is declared but its value is never read.
+
+[7m4[0m import Button from "@components/ui/Button.astro";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/blog/BlogList.astro[0m:[93m6[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'getCollection' is declared but its value is never read.
+
+[7m6[0m import { getCollection } from 'astro:content';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/blog/PaginatedBlogLayout.astro[0m:[93m48[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlugEs' is declared but its value is never read.
+
+[7m48[0m   translationSlugEs,
+[7m  [0m [93m  ~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/blog/PaginatedBlogLayout.astro[0m:[93m47[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlugEn' is declared but its value is never read.
+
+[7m47[0m   translationSlugEn,
+[7m  [0m [93m  ~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/blog/PaginatedBlogLayout.astro[0m:[93m43[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'heroImageAlt' is declared but its value is never read.
+
+[7m43[0m   heroImageAlt = "Blog image",
+[7m  [0m [93m  ~~~~~~~~~~~~[0m
+
+[96msrc/components/booking/BookingFormSteps.astro[0m:[93m496[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m496[0m <script define:vars={{ lang }}>
+[7m   [0m [93m        ~~~~~~~~~~~[0m
+
+[96msrc/components/booking/DatePicker.astro[0m:[93m52[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m52[0m <script define:vars={{ months: t.months }}>
+[7m  [0m [93m        ~~~~~~~~~~~[0m
+
+[96msrc/components/chat/ChatEmbed.astro[0m:[93m70[0m:[93m11[0m - [91merror[0m[90m ts(2322): [0mType '{ async: true; src: any; welcomeMessage: "≡ƒæï Hi ΓÇö I can answer your questions right here." | "≡ƒæï Hola ΓÇö puedo responder tus preguntas aqu├¡ mismo."; language: "es" | "en"; placeholder: "Type your message..." | "Escribe tu mensaje..."; position: string; open: string; openDelay: string; buttonColor: string; }' is not assignable to type 'ScriptHTMLAttributes & AstroScriptAttributes & AstroDefineVarsAttribute'.
+  Property 'welcomeMessage' does not exist on type 'ScriptHTMLAttributes & AstroScriptAttributes & AstroDefineVarsAttribute'.
+
+[7m70[0m           welcomeMessage={t.welcomeMessage}
+[7m  [0m [91m          ~~~~~~~~~~~~~~[0m
+[96msrc/components/chat/ChatEmbed.astro[0m:[93m58[0m:[93m11[0m - [91merror[0m[90m ts(2322): [0mType '{ async: true; src: any; id: any; welcomeMessage: "≡ƒæï Hi ΓÇö I can answer your questions right here." | "≡ƒæï Hola ΓÇö puedo responder tus preguntas aqu├¡ mismo."; language: "es" | "en"; ... 4 more ...; buttonColor: string; }' is not assignable to type 'ScriptHTMLAttributes & AstroScriptAttributes & AstroDefineVarsAttribute'.
+  Property 'welcomeMessage' does not exist on type 'ScriptHTMLAttributes & AstroScriptAttributes & AstroDefineVarsAttribute'.
+
+[7m58[0m           welcomeMessage={t.welcomeMessage}
+[7m  [0m [91m          ~~~~~~~~~~~~~~[0m
+[96msrc/components/chat/ChatEmbed.astro[0m:[93m68[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m68[0m           async
+[7m  [0m [93m          ~~~~~[0m
+[96msrc/components/chat/ChatEmbed.astro[0m:[93m55[0m:[93m11[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m55[0m           async
+[7m  [0m [93m          ~~~~~[0m
+
+[96msrc/components/chat/ChatLauncher.astro[0m:[93m47[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m47[0m <script type="module">
+[7m  [0m [93m        ~~~~[0m
+
+[96msrc/components/free/FreeResourcesHub.tsx[0m:[93m8[0m:[93m26[0m - [93mwarning[0m[90m ts(6133): [0m'SlidersHorizontal' is declared but its value is never read.
+
+[7m8[0m import { Search, Filter, SlidersHorizontal, X, Info } from "lucide-react";
+[7m [0m [93m                         ~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/free/ResourceCard.tsx[0m:[93m7[0m:[93m20[0m - [93mwarning[0m[90m ts(6133): [0m'Download' is declared but its value is never read.
+
+[7m7[0m import { FileText, Download, ArrowRight, Clock, Users, Sparkles } from "lucide-react";
+[7m [0m [93m                   ~~~~~~~~[0m
+
+[96msrc/components/sections/ContactInfo.astro[0m:[93m10[0m:[93m16[0m - [93mwarning[0m[90m ts(6133): [0m'Phone' is declared but its value is never read.
+
+[7m10[0m import { Mail, Phone, MapPin } from "lucide-astro";
+[7m  [0m [93m               ~~~~~[0m
+
+[96msrc/components/sections/CtaBanner.astro[0m:[93m2[0m:[93m79[0m - [93mwarning[0m[90m ts(6133): [0m'getEyebrowColor' is declared but its value is never read.
+
+[7m2[0m import { getBackgroundColor, getTextColor, getPaddingClass, getHeadlineColor, getEyebrowColor } from '@utils/styleUtils';
+[7m [0m [93m                                                                              ~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/sections/Hero.astro[0m:[93m14[0m:[93m11[0m - [93mwarning[0m[90m ts(6196): [0m'HeroContent' is declared but never used.
+
+[7m14[0m interface HeroContent {
+[7m  [0m [93m          ~~~~~~~~~~~[0m
+
+[96msrc/components/sections/Logos.astro[0m:[93m22[0m:[93m35[0m - [93mwarning[0m[90m ts(6133): [0m'subheadline' is declared but its value is never read.
+
+[7m22[0m     content: { eyebrow, headline, subheadline, logos },
+[7m  [0m [93m                                  ~~~~~~~~~~~[0m
+[96msrc/components/sections/Logos.astro[0m:[93m22[0m:[93m25[0m - [93mwarning[0m[90m ts(6133): [0m'headline' is declared but its value is never read.
+
+[7m22[0m     content: { eyebrow, headline, subheadline, logos },
+[7m  [0m [93m                        ~~~~~~~~[0m
+
+[96msrc/components/sections/QuizPromotion.astro[0m:[93m3[0m:[93m29[0m - [93mwarning[0m[90m ts(6133): [0m'Clock' is declared but its value is never read.
+
+[7m3[0m import { Target, BarChart3, Clock, CheckCircle } from "lucide-astro";
+[7m [0m [93m                            ~~~~~[0m
+
+[96msrc/components/sections/TestimonialsGrid.astro[0m:[93m74[0m:[93m19[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m74[0m           <script define:vars={{ baseUrl }}>
+[7m  [0m [93m                  ~~~~~~~~~~~[0m
+
+[96msrc/components/seo/QuizSchema.astro[0m:[93m72[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m72[0m <script type="application/ld+json" set:html={JSON.stringify(quizSchema)} />
+[7m  [0m [93m        ~~~~[0m
+
+[96msrc/components/ui/CategoryPill.astro[0m:[93m4[0m:[93m22[0m - [93mwarning[0m[90m ts(6133): [0m'getCategoryBySlug' is declared but its value is never read.
+
+[7m4[0m import { categories, getCategoryBySlug } from '../../data/categories';
+[7m [0m [93m                     ~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/ui/form/Checkbox.astro[0m:[93m32[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'bgClass' is declared but its value is never read.
+
+[7m32[0m const bgClass = getBackgroundColor(background === 'dark' ? 'light' : 'base');
+[7m  [0m [93m      ~~~~~~~[0m
+[96msrc/components/ui/form/Checkbox.astro[0m:[93m31[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'textClass' is declared but its value is never read.
+
+[7m31[0m const textClass = getTextColor(background);
+[7m  [0m [93m      ~~~~~~~~~[0m
+
+[96msrc/components/ui/form/Radio.astro[0m:[93m33[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'bgClass' is declared but its value is never read.
+
+[7m33[0m const bgClass = getBackgroundColor(background === 'dark' ? 'light' : 'base');
+[7m  [0m [93m      ~~~~~~~[0m
+[96msrc/components/ui/form/Radio.astro[0m:[93m32[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'textClass' is declared but its value is never read.
+
+[7m32[0m const textClass = getTextColor(background);
+[7m  [0m [93m      ~~~~~~~~~[0m
+
+[96msrc/components/ui/form/Select.astro[0m:[93m34[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'bgClass' is declared but its value is never read.
+
+[7m34[0m const bgClass = getBackgroundColor(background === 'dark' ? 'light' : 'base');
+[7m  [0m [93m      ~~~~~~~[0m
+[96msrc/components/ui/form/Select.astro[0m:[93m33[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'textClass' is declared but its value is never read.
+
+[7m33[0m const textClass = getTextColor(background);
+[7m  [0m [93m      ~~~~~~~~~[0m
+
+[96msrc/components/ui/form/Textarea.astro[0m:[93m39[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'bgClass' is declared but its value is never read.
+
+[7m39[0m const bgClass = getBackgroundColor(background === "dark" ? "light" : "base");
+[7m  [0m [93m      ~~~~~~~[0m
+[96msrc/components/ui/form/Textarea.astro[0m:[93m38[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'textClass' is declared but its value is never read.
+
+[7m38[0m const textClass = getTextColor(background);
+[7m  [0m [93m      ~~~~~~~~~[0m
+
+[96msrc/content/config.ts[0m:[93m5[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'categoryNames' is declared but its value is never read.
+
+[7m5[0m const categoryNames = categories.map(
+[7m [0m [93m      ~~~~~~~~~~~~~[0m
+
+[96msrc/data/json-ld.ts[0m:[93m16[0m:[93m9[0m - [93mwarning[0m[90m ts(6133): [0m'servicesPage' is declared but its value is never read.
+
+[7m16[0m   const servicesPage = lang === 'es' ? '/es/servicios/' : '/en/services/';
+[7m  [0m [93m        ~~~~~~~~~~~~[0m
+[96msrc/data/json-ld.ts[0m:[93m14[0m:[93m9[0m - [93mwarning[0m[90m ts(6133): [0m'aboutPage' is declared but its value is never read.
+
+[7m14[0m   const aboutPage = lang === 'es' ? '/es/about/' : '/en/about/';
+[7m  [0m [93m        ~~~~~~~~~[0m
+
+[96msrc/data/services.ts[0m:[93m26[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'technicalSalesSquareImage' is declared but its value is never read.
+
+[7m26[0m import technicalSalesSquareImage from "@assets/images/industries/technical-sales.jpg";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/data/services.ts[0m:[93m20[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'interviewPrepSquareImage' is declared but its value is never read.
+
+[7m20[0m import interviewPrepSquareImage from "@assets/images/industries/interview-prep.jpg";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/data/services.ts[0m:[93m18[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'executiveEngSquareImage' is declared but its value is never read.
+
+[7m18[0m import executiveEngSquareImage from "@assets/images/industries/executive-eng.jpg";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/data/services.ts[0m:[93m12[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'interviewPrepImage' is declared but its value is never read.
+
+[7m12[0m import interviewPrepImage from "@assets/images/services/interview-prep-services.jpg";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/data/services.ts[0m:[93m9[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'technicalSalesImage' is declared but its value is never read.
+
+[7m9[0m import technicalSalesImage from "@assets/images/services/technical-sales-services.jpg";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/data/services.ts[0m:[93m4[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'serviceCategories' is declared but its value is never read.
+
+[7m4[0m import { serviceCategories } from "@data/service-categories.js";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/data/testimonials-about-es.ts[0m:[93m8[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'karlaTestimonial' is declared but its value is never read.
+
+[7m8[0m import karlaTestimonial from '../assets/images/testimonials/karla-testimonial.jpg';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/data/testimonials-about-es.ts[0m:[93m6[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'hugolTestimonial' is declared but its value is never read.
+
+[7m6[0m import hugolTestimonial from '../assets/images/testimonials/hugo-l-testimonial.jpg';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/data/testimonials-about.ts[0m:[93m19[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'albertoTestimonial' is declared but its value is never read.
+
+[7m19[0m import albertoTestimonial from '../assets/images/testimonials/alberto-testimonial.jpg';
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/data/testimonials-about.ts[0m:[93m17[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'karlaTestimonial' is declared but its value is never read.
+
+[7m17[0m import karlaTestimonial from '../assets/images/testimonials/karla-testimonial.jpg';
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/data/testimonials-about.ts[0m:[93m15[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'hugolTestimonial' is declared but its value is never read.
+
+[7m15[0m import hugolTestimonial from '../assets/images/testimonials/hugo-l-testimonial.jpg';
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/data/testimonials-about.ts[0m:[93m12[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'erikaTestimonial' is declared but its value is never read.
+
+[7m12[0m import erikaTestimonial from '../assets/images/testimonials/erika-testimonial.jpg';
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/data/testimonials-about.ts[0m:[93m11[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'emmanuelTestimonial' is declared but its value is never read.
+
+[7m11[0m import emmanuelTestimonial from '../assets/images/testimonials/emmanuel-testimonial.jpg';
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/data/testimonials.ts[0m:[93m19[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'albertoTestimonial' is declared but its value is never read.
+
+[7m19[0m import albertoTestimonial from '../assets/images/testimonials/alberto-testimonial.jpg';
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/data/testimonials.ts[0m:[93m17[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'karlaTestimonial' is declared but its value is never read.
+
+[7m17[0m import karlaTestimonial from '../assets/images/testimonials/karla-testimonial.jpg';
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/data/testimonials.ts[0m:[93m15[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'hugolTestimonial' is declared but its value is never read.
+
+[7m15[0m import hugolTestimonial from '../assets/images/testimonials/hugo-l-testimonial.jpg';
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/data/testimonials.ts[0m:[93m12[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'erikaTestimonial' is declared but its value is never read.
+
+[7m12[0m import erikaTestimonial from '../assets/images/testimonials/erika-testimonial.jpg';
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/data/testimonials.ts[0m:[93m11[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'emmanuelTestimonial' is declared but its value is never read.
+
+[7m11[0m import emmanuelTestimonial from '../assets/images/testimonials/emmanuel-testimonial.jpg';
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/i18n/utils.ts[0m:[93m15[0m:[93m6[0m - [93mwarning[0m[90m ts(6196): [0m'TranslationsType' is declared but never used.
+
+[7m15[0m type TranslationsType = typeof en;
+[7m  [0m [93m     ~~~~~~~~~~~~~~~~[0m
+
+[96msrc/layouts/Base.astro[0m:[93m385[0m:[93m15[0m - [91merror[0m[90m ts(2322): [0mType '{ footerCta: { hideCta: boolean; title: string; description: string; button: { text: string; link: string; }; }; logoLink: string; tagline: string; sections: { about: { title: string; links: { name: string; href: string; }[]; }; resources: { ...; }; connect: { ...; }; }; legalMenu: { ...; }[]; copyrightText: string;...' is not assignable to type 'FooterContent'.
+  The types of 'sections.resources.links' are incompatible between these types.
+
+[7m385[0m       <Footer content={footerData} />
+[7m   [0m [91m              ~~~~~~~[0m
+[96msrc/layouts/Base.astro[0m:[93m397[0m:[93m16[0m - [93mwarning[0m[90m ts(2568): [0mProperty 'AOS' may not exist on type 'Window & typeof globalThis'. Did you mean 'Aos'?
+
+[7m397[0m         window.AOS.init({
+[7m   [0m [93m               ~~~[0m
+[96msrc/layouts/Base.astro[0m:[93m396[0m:[93m37[0m - [93mwarning[0m[90m ts(2568): [0mProperty 'AOS' may not exist on type 'Window & typeof globalThis'. Did you mean 'Aos'?
+
+[7m396[0m       if (!prefersReduced && window.AOS) {
+[7m   [0m [93m                                    ~~~[0m
+[96msrc/layouts/Base.astro[0m:[93m407[0m:[93m13[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m407[0m     <script type="module">
+[7m   [0m [93m            ~~~~[0m
+[96msrc/layouts/Base.astro[0m:[93m404[0m:[93m13[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m404[0m     <script src="/js/scroll.js" defer></script>
+[7m   [0m [93m            ~~~[0m
+
+[96msrc/pages/404.astro[0m:[93m16[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlug' is declared but its value is never read.
+
+[7m16[0m const translationSlug = isSpanishPath ? "/en/404" : "/es/404";
+[7m  [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/dev/dashboard.astro[0m:[93m1407[0m:[93m15[0m - [93mwarning[0m[90m ts(6133): [0m'isExpanded' is declared but its value is never read.
+
+[7m1407[0m         const isExpanded = body.classList.contains("expanded");
+[7m    [0m [93m              ~~~~~~~~~~[0m
+
+[96msrc/pages/en/about.astro[0m:[93m29[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'FooterCta' is declared but its value is never read.
+
+[7m29[0m const FooterCta = {
+[7m  [0m [93m      ~~~~~~~~~[0m
+[96msrc/pages/en/about.astro[0m:[93m22[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'description' is declared but its value is never read.
+
+[7m22[0m const description =
+[7m  [0m [93m      ~~~~~~~~~~~[0m
+[96msrc/pages/en/about.astro[0m:[93m18[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'SEO' is declared but its value is never read.
+
+[7m18[0m import { SEO } from "@data/config";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/contact.astro[0m:[93m14[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'footerCta' is declared but its value is never read.
+
+[7m14[0m const footerCta = {
+[7m  [0m [93m      ~~~~~~~~~[0m
+
+[96msrc/pages/en/index.astro[0m:[93m198[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'logosSection' is declared but its value is never read.
+
+[7m198[0m const logosSection = {
+[7m   [0m [93m      ~~~~~~~~~~~~[0m
+[96msrc/pages/en/index.astro[0m:[93m186[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'mainCta' is declared but its value is never read.
+
+[7m186[0m const mainCta = {
+[7m   [0m [93m      ~~~~~~~[0m
+[96msrc/pages/en/index.astro[0m:[93m168[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'sideBySideStats' is declared but its value is never read.
+
+[7m168[0m const sideBySideStats = {
+[7m   [0m [93m      ~~~~~~~~~~~~~~~[0m
+[96msrc/pages/en/index.astro[0m:[93m133[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'FooterCta' is declared but its value is never read.
+
+[7m133[0m const FooterCta = {
+[7m   [0m [93m      ~~~~~~~~~[0m
+[96msrc/pages/en/index.astro[0m:[93m27[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'spanishHomepageUrl' is declared but its value is never read.
+
+[7m27[0m const spanishHomepageUrl = "/es/";
+[7m  [0m [93m      ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/en/index.astro[0m:[93m14[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m14[0m const lang = "en";
+[7m  [0m [93m      ~~~~[0m
+
+[96msrc/pages/en/resources.astro[0m:[93m11[0m:[93m1[0m - [93mwarning[0m[90m ts(6192): [0mAll imports in import declaration are unused.
+
+[7m11[0m import { Sparkles, FileText, Headphones, MessageCircle } from "lucide-astro";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/blog/[...page].astro[0m:[93m46[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m46[0m const lang = "en";
+[7m  [0m [93m      ~~~~[0m
+[96msrc/pages/en/blog/[...page].astro[0m:[93m35[0m:[93m45[0m - [93mwarning[0m[90m ts(6133): [0m'url' is declared but its value is never read.
+
+[7m35[0m const { currentPage, data: posts, lastPage, url } = page;
+[7m  [0m [93m                                            ~~~[0m
+
+[96msrc/pages/en/blog/[slug].astro[0m:[93m105[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m105[0m const lang = 'en';
+[7m   [0m [93m      ~~~~[0m
+[96msrc/pages/en/blog/[slug].astro[0m:[93m102[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'cleanSiteUrl' is declared but its value is never read.
+
+[7m102[0m const cleanSiteUrl = siteUrl.replace(/https?:\/\/www\.www\./i, 'https://www.').replace(/\/$/, '');
+[7m   [0m [93m      ~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/blog/index.astro[0m:[93m29[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m29[0m const lang = 'en';
+[7m  [0m [93m      ~~~~[0m
+
+[96msrc/pages/en/category/[category].astro[0m:[93m8[0m:[93m22[0m - [93mwarning[0m[90m ts(6133): [0m'blogSetting' is declared but its value is never read.
+
+[7m8[0m import { siteConfig, blogSetting } from "@data/config";
+[7m [0m [93m                     ~~~~~~~~~~~[0m
+[96msrc/pages/en/category/[category].astro[0m:[93m4[0m:[93m25[0m - [93mwarning[0m[90m ts(6133): [0m'BlogListProps' is declared but its value is never read.
+
+[7m4[0m import BlogList, { type BlogListProps } from "@components/blog/BlogList.astro";
+[7m [0m [93m                        ~~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/legal/privacy-policy.astro[0m:[93m9[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m9[0m const lang = 'en';
+[7m [0m [93m      ~~~~[0m
+
+[96msrc/pages/en/legal/terms-of-service.astro[0m:[93m9[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m9[0m const lang = 'en';
+[7m [0m [93m      ~~~~[0m
+
+[96msrc/pages/en/quiz/index.astro[0m:[93m18[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'TrendingUp' is declared but its value is never read.
+
+[7m18[0m   TrendingUp,
+[7m  [0m [93m  ~~~~~~~~~~[0m
+[96msrc/pages/en/quiz/index.astro[0m:[93m17[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'Zap' is declared but its value is never read.
+
+[7m17[0m   Zap,
+[7m  [0m [93m  ~~~[0m
+[96msrc/pages/en/quiz/index.astro[0m:[93m16[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'Mic' is declared but its value is never read.
+
+[7m16[0m   Mic,
+[7m  [0m [93m  ~~~[0m
+[96msrc/pages/en/quiz/index.astro[0m:[93m15[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'DollarSign' is declared but its value is never read.
+
+[7m15[0m   DollarSign,
+[7m  [0m [93m  ~~~~~~~~~~[0m
+
+[96msrc/pages/en/quiz/[quizType]/results.astro[0m:[93m17[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Mail' is declared but its value is never read.
+
+[7m17[0m import { Mail } from "lucide-astro";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/quiz/[quizType]/question/[id].astro[0m:[93m12[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'QuizStorage' is declared but its value is never read.
+
+[7m12[0m import { QuizStorage } from '@/lib/quiz-storage';
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/quiz/executives/index.astro[0m:[93m14[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'Briefcase' is declared but its value is never read.
+
+[7m14[0m   Briefcase,
+[7m  [0m [93m  ~~~~~~~~~[0m
+
+[96msrc/pages/en/resources/[slug].astro[0m:[93m14[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'getCollection' is declared but its value is never read.
+
+[7m14[0m import { getCollection } from "astro:content";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/en/resources/[slug].astro[0m:[93m75[0m:[93m5[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m75[0m     type="application/ld+json"
+[7m  [0m [93m    ~~~~[0m
+
+[96msrc/pages/en/services/executive-english.astro[0m:[93m76[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlug' is declared but its value is never read.
+
+[7m76[0m const translationSlug = "ingles-para-ejecutivos";
+[7m  [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/services/high-stakes-english.astro[0m:[93m81[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlug' is declared but its value is never read.
+
+[7m81[0m const translationSlug = "ingles-para-presentaciones";
+[7m  [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/services/interview-prep.astro[0m:[93m70[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlug' is declared but its value is never read.
+
+[7m70[0m const translationSlug = "preparacion-para-entrevistas";
+[7m  [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/services/logistics-english.astro[0m:[93m78[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlug' is declared but its value is never read.
+
+[7m78[0m const translationSlug = "ingles-para-logistica";
+[7m  [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/services/medical-english.astro[0m:[93m73[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlug' is declared but its value is never read.
+
+[7m73[0m const translationSlug = "ingles-para-medicos";
+[7m  [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/services/professional-english.astro[0m:[93m77[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlug' is declared but its value is never read.
+
+[7m77[0m const translationSlug = "ingles-para-profesionales";
+[7m  [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/services/public-speaking-english.astro[0m:[93m5[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'ImageMetadata' is declared but its value is never read.
+
+[7m5[0m import type { ImageMetadata } from "astro";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/services/startup-founders.astro[0m:[93m62[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlug' is declared but its value is never read.
+
+[7m62[0m const translationSlug = "ingles-para-fundadores-de-startups";
+[7m  [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/services/tech-english.astro[0m:[93m69[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlug' is declared but its value is never read.
+
+[7m69[0m const translationSlug = "ingles-para-tecnologia";
+[7m  [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/services/technical-sales-english.astro[0m:[93m72[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlug' is declared but its value is never read.
+
+[7m72[0m const translationSlug = "ingles-para-ventas-tecnicas";
+[7m  [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/en/testimonials/[industry].astro[0m:[93m51[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlugEs' is declared but its value is never read.
+
+[7m51[0m const translationSlugEs =
+[7m  [0m [93m      ~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/es/about.astro[0m:[93m301[0m:[93m32[0m - [93mwarning[0m[90m ts(6133): [0m'idx' is declared but its value is never read.
+
+[7m301[0m           testimonials.map((t, idx) => (
+[7m   [0m [93m                               ~~~[0m
+[96msrc/pages/es/about.astro[0m:[93m25[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'FooterCta' is declared but its value is never read.
+
+[7m25[0m const FooterCta = {
+[7m  [0m [93m      ~~~~~~~~~[0m
+
+[96msrc/pages/es/contact.astro[0m:[93m14[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'footerCta' is declared but its value is never read.
+
+[7m14[0m const footerCta = {
+[7m  [0m [93m      ~~~~~~~~~[0m
+
+[96msrc/pages/es/index.astro[0m:[93m161[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'logosSection' is declared but its value is never read.
+
+[7m161[0m const logosSection = {
+[7m   [0m [93m      ~~~~~~~~~~~~[0m
+[96msrc/pages/es/index.astro[0m:[93m143[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'sideBySideStats' is declared but its value is never read.
+
+[7m143[0m const sideBySideStats = {
+[7m   [0m [93m      ~~~~~~~~~~~~~~~[0m
+[96msrc/pages/es/index.astro[0m:[93m107[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'FooterCta' is declared but its value is never read.
+
+[7m107[0m const FooterCta = {
+[7m   [0m [93m      ~~~~~~~~~[0m
+[96msrc/pages/es/index.astro[0m:[93m14[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m14[0m const lang = "es";
+[7m  [0m [93m      ~~~~[0m
+
+[96msrc/pages/es/recursos.astro[0m:[93m11[0m:[93m1[0m - [93mwarning[0m[90m ts(6192): [0mAll imports in import declaration are unused.
+
+[7m11[0m import { Sparkles, FileText, Headphones, MessageCircle } from "lucide-astro";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/es/blog/[...page].astro[0m:[93m49[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m49[0m const lang = "es";
+[7m  [0m [93m      ~~~~[0m
+[96msrc/pages/es/blog/[...page].astro[0m:[93m35[0m:[93m45[0m - [93mwarning[0m[90m ts(6133): [0m'url' is declared but its value is never read.
+
+[7m35[0m const { currentPage, data: posts, lastPage, url } = page;
+[7m  [0m [93m                                            ~~~[0m
+
+[96msrc/pages/es/blog/[page].astro[0m:[93m58[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m58[0m const lang = "es";
+[7m  [0m [93m      ~~~~[0m
+
+[96msrc/pages/es/blog/[slug].astro[0m:[93m104[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m104[0m const lang = 'es';
+[7m   [0m [93m      ~~~~[0m
+[96msrc/pages/es/blog/[slug].astro[0m:[93m101[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'cleanSiteUrl' is declared but its value is never read.
+
+[7m101[0m const cleanSiteUrl = siteUrl.replace(/https?:\/\/www\.www\./i, 'https://www.').replace(/\/$/, '');
+[7m   [0m [93m      ~~~~~~~~~~~~[0m
+
+[96msrc/pages/es/blog/index.astro[0m:[93m39[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m39[0m const lang = 'es';
+[7m  [0m [93m      ~~~~[0m
+
+[96msrc/pages/es/categoria/[category].astro[0m:[93m44[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'categoryPosts' is declared but its value is never read.
+
+[7m44[0m const categoryPosts = allSpanishPosts.filter(
+[7m  [0m [93m      ~~~~~~~~~~~~~[0m
+[96msrc/pages/es/categoria/[category].astro[0m:[93m24[0m:[93m11[0m - [93mwarning[0m[90m ts(6196): [0m'Props' is declared but never used.
+
+[7m24[0m interface Props {
+[7m  [0m [93m          ~~~~~[0m
+[96msrc/pages/es/categoria/[category].astro[0m:[93m9[0m:[93m22[0m - [93mwarning[0m[90m ts(6133): [0m'blogSetting' is declared but its value is never read.
+
+[7m9[0m import { siteConfig, blogSetting } from "@data/config";
+[7m [0m [93m                     ~~~~~~~~~~~[0m
+[96msrc/pages/es/categoria/[category].astro[0m:[93m5[0m:[93m25[0m - [93mwarning[0m[90m ts(6133): [0m'BlogListProps' is declared but its value is never read.
+
+[7m5[0m import BlogList, { type BlogListProps } from "@components/blog/BlogList.astro";
+[7m [0m [93m                        ~~~~~~~~~~~~~[0m
+
+[96msrc/pages/es/category/[category].astro[0m:[93m17[0m:[93m11[0m - [93mwarning[0m[90m ts(6133): [0m'esPath' is declared but its value is never read.
+
+[7m17[0m     const esPath = routeFor.es[tkey];
+[7m  [0m [93m          ~~~~~~[0m
+
+[96msrc/pages/es/legal/privacy-policy.astro[0m:[93m26[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'footerCta' is declared but its value is never read.
+
+[7m26[0m const footerCta = {
+[7m  [0m [93m      ~~~~~~~~~[0m
+[96msrc/pages/es/legal/privacy-policy.astro[0m:[93m15[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translations' is declared but its value is never read.
+
+[7m15[0m const translations = {
+[7m  [0m [93m      ~~~~~~~~~~~~[0m
+[96msrc/pages/es/legal/privacy-policy.astro[0m:[93m14[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m14[0m const lang = 'es';
+[7m  [0m [93m      ~~~~[0m
+
+[96msrc/pages/es/legal/terms-of-service.astro[0m:[93m14[0m:[93m30[0m - [91merror[0m[90m ts(7006): [0mParameter 'item' implicitly has an 'any' type.
+
+[7m14[0m const entry = legalData.find(item => item.slug === 'es/terms-of-service');
+[7m  [0m [91m                             ~~~~[0m
+[96msrc/pages/es/legal/terms-of-service.astro[0m:[93m28[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'footerCta' is declared but its value is never read.
+
+[7m28[0m const footerCta = {
+[7m  [0m [93m      ~~~~~~~~~[0m
+[96msrc/pages/es/legal/terms-of-service.astro[0m:[93m9[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m9[0m const lang = 'es';
+[7m [0m [93m      ~~~~[0m
+
+[96msrc/pages/es/quiz/[quizType]/results.astro[0m:[93m17[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Mail' is declared but its value is never read.
+
+[7m17[0m import { Mail } from "lucide-astro";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/es/quiz/executives/index.astro[0m:[93m14[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'Briefcase' is declared but its value is never read.
+
+[7m14[0m   Briefcase,
+[7m  [0m [93m  ~~~~~~~~~[0m
+
+[96msrc/pages/es/recursos/[slug].astro[0m:[93m77[0m:[93m5[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m77[0m     type="application/ld+json"
+[7m  [0m [93m    ~~~~[0m
+
+[96msrc/pages/es/servicios/hablar-en-publico.astro[0m:[93m110[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlug' is declared but its value is never read.
+
+[7m110[0m const translationSlug = "public-speaking-english";
+[7m   [0m [93m      ~~~~~~~~~~~~~~~[0m
+[96msrc/pages/es/servicios/hablar-en-publico.astro[0m:[93m12[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'services' is declared but its value is never read.
+
+[7m12[0m import { services, serviciosEs } from "@data/services";
+[7m  [0m [93m         ~~~~~~~~[0m
+
+[96msrc/pages/es/servicios/ingles-para-medicos.astro[0m:[93m100[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlug' is declared but its value is never read.
+
+[7m100[0m const translationSlug = "medical-english";
+[7m   [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/es/servicios/ingles-para-ventas-tecnicas.astro[0m:[93m105[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlug' is declared but its value is never read.
+
+[7m105[0m const translationSlug = "technical-sales-english";
+[7m   [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/es/servicios/preparacion-para-entrevistas.astro[0m:[93m103[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlug' is declared but its value is never read.
+
+[7m103[0m const translationSlug = "interview-prep";
+[7m   [0m [93m      ~~~~~~~~~~~~~~~[0m
+
+[96msrc/pages/es/testimonios/[industry].astro[0m:[93m51[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'translationSlugEn' is declared but its value is never read.
+
+[7m51[0m const translationSlugEn =
+[7m  [0m [93m      ~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/utils/legalContent.js[0m:[93m5[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'getEntry' is declared but its value is never read.
+
+[7m5[0m import { getEntry } from 'astro:content';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/utils/sitemap-audit.mjs[0m:[93m452[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'printSummary' is declared but its value is never read.
+
+[7m452[0m function printSummary(staticIssues, contentIssues, dataIssues) {
+[7m   [0m [93m         ~~~~~~~~~~~~[0m
+[96msrc/utils/sitemap-audit.mjs[0m:[93m289[0m:[93m39[0m - [93mwarning[0m[90m ts(6133): [0m'path' is declared but its value is never read.
+
+[7m289[0m                             .filter(([path, info]) => info.type === 'translationKey' && info.key === key);
+[7m   [0m [93m                                      ~~~~[0m
+
+[96mastro.config.mjs[0m:[93m219[0m:[93m22[0m - [93mwarning[0m[90m ts(6133): [0m'lang' is declared but its value is never read.
+
+[7m219[0m             const [, lang, , industry] = testimonialMatch;
+[7m   [0m [93m                     ~~~~[0m
+
+Result (264 files): 
+- 6 errors
+- 0 warnings
+- 141 hints
+

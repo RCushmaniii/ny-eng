@@ -2,21 +2,24 @@
 /**
  * Booking System Documentation - Proper Astro page with markdown import
  */
-import MarkdownLayout from '@layouts/MarkdownLayout.astro';
-import { marked } from 'marked';
+import MarkdownLayout from "@layouts/MarkdownLayout.astro";
+import { marked } from "marked";
 
 // Import the BOOKING-SYSTEM.md content
-const bookingContent = await import('../../../../docs/BOOKING-SYSTEM.md?raw');
+const bookingContent = await import(
+  "../../../../docs/features/BOOKING-SYSTEM.md?raw"
+);
 const markdownText = bookingContent.default;
 
 // Convert markdown to HTML
 const htmlContent = marked(markdownText);
 
 const frontmatter = {
-  title: 'Booking System',
-  description: 'Self-scheduling appointment system with Google Calendar integration',
-  category: 'Marketing',
-  icon: '📅'
+  title: "Booking System",
+  description:
+    "Self-scheduling appointment system with Google Calendar integration",
+  category: "Marketing",
+  icon: "📅",
 };
 ---
 

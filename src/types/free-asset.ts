@@ -3,93 +3,93 @@
  * Based on schema.json
  */
 
-export type ContentType = 
-  | "questions" 
-  | "sentences" 
-  | "checklist" 
-  | "script" 
-  | "framework" 
-  | "case-study" 
-  | "template" 
-  | "guide" 
-  | "video" 
+export type ContentType =
+  | "questions"
+  | "sentences"
+  | "checklist"
+  | "script"
+  | "framework"
+  | "case-study"
+  | "template"
+  | "guide"
+  | "video"
   | "audio";
 
-export type Format = 
-  | "pdf-guide" 
-  | "pdf-checklist" 
-  | "pdf-script" 
-  | "interactive-web" 
-  | "video" 
-  | "audio" 
+export type Format =
+  | "pdf-guide"
+  | "pdf-checklist"
+  | "pdf-script"
+  | "interactive-web"
+  | "video"
+  | "audio"
   | "email-series";
 
-export type FunnelStage = 
-  | "awareness" 
-  | "consideration" 
-  | "decision" 
+export type FunnelStage =
+  | "awareness"
+  | "consideration"
+  | "decision"
   | "retention";
 
-export type DifficultyLevel = 
-  | "beginner" 
-  | "intermediate" 
-  | "advanced" 
+export type DifficultyLevel =
+  | "beginner"
+  | "intermediate"
+  | "advanced"
   | "all-levels";
 
-export type Persona = 
-  | "executive" 
-  | "manager" 
-  | "founder" 
-  | "entrepreneur" 
-  | "consultant" 
-  | "project-manager" 
-  | "engineer" 
-  | "sales" 
-  | "hr-professional" 
-  | "doctor" 
-  | "lawyer" 
-  | "accountant" 
-  | "logistics" 
-  | "real-estate" 
-  | "job-seeker" 
+export type Persona =
+  | "executive"
+  | "manager"
+  | "founder"
+  | "entrepreneur"
+  | "consultant"
+  | "project-manager"
+  | "engineer"
+  | "sales"
+  | "hr-professional"
+  | "doctor"
+  | "lawyer"
+  | "accountant"
+  | "logistics"
+  | "real-estate"
+  | "job-seeker"
   | "all";
 
-export type Industry = 
-  | "technology" 
-  | "healthcare" 
-  | "legal" 
-  | "finance" 
-  | "logistics" 
-  | "real-estate" 
-  | "professional-services" 
-  | "manufacturing" 
-  | "retail" 
+export type Industry =
+  | "technology"
+  | "healthcare"
+  | "legal"
+  | "finance"
+  | "logistics"
+  | "real-estate"
+  | "professional-services"
+  | "manufacturing"
+  | "retail"
   | "all";
 
-export type Scenario = 
-  | "interviews" 
-  | "negotiations" 
-  | "presentations" 
-  | "client-meetings" 
-  | "leadership" 
-  | "email-writing" 
-  | "networking" 
-  | "difficult-conversations" 
-  | "decision-making" 
-  | "meetings" 
-  | "technical-explanation" 
-  | "crisis-management" 
-  | "performance-feedback" 
-  | "sales-calls" 
-  | "status-updates" 
+export type Scenario =
+  | "interviews"
+  | "negotiations"
+  | "presentations"
+  | "client-meetings"
+  | "leadership"
+  | "email-writing"
+  | "networking"
+  | "difficult-conversations"
+  | "decision-making"
+  | "meetings"
+  | "technical-explanation"
+  | "crisis-management"
+  | "performance-feedback"
+  | "sales-calls"
+  | "status-updates"
   | "all";
 
-export type CTAType = 
-  | "strategy-call" 
-  | "email-signup" 
-  | "quiz" 
-  | "contact" 
-  | "service-page" 
+export type CTAType =
+  | "strategy-call"
+  | "email-signup"
+  | "quiz"
+  | "contact"
+  | "service-page"
   | "related-asset";
 
 export interface FreeAssetMetadata {

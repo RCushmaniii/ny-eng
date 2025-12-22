@@ -39,7 +39,7 @@ const stars = "★".repeat(testimonial.stars || 5);
       <img
         src={testimonial.avatar}
         alt={`${testimonial.author} profile picture`}
-        class={cn(avatarSizeClass, "rounded-full mr-4 object-cover")}
+        class:list={cn(avatarSizeClass, "rounded-full mr-4 object-cover")}
         width={testimonial.avatarSize === "lg" ? 64 : 48}
         height={testimonial.avatarSize === "lg" ? 64 : 48}
         loading="lazy"
@@ -48,7 +48,7 @@ const stars = "★".repeat(testimonial.stars || 5);
       <Image
         src={testimonial.avatar}
         alt={`${testimonial.author} profile picture`}
-        class={cn(avatarSizeClass, "rounded-full mr-4 object-cover")}
+        class:list={cn(avatarSizeClass, "rounded-full mr-4 object-cover")}
         width={testimonial.avatarSize === "lg" ? 64 : 48}
         height={testimonial.avatarSize === "lg" ? 64 : 48}
         loading="lazy"

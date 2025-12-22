@@ -21,7 +21,7 @@ const {
 <div class="faqs-segmented">
   {
     sections.map((section, index) => (
-      <section class={`faq-section ${index % 2 === 1 ? "bg-alt" : "bg-base"}`}>
+      <section class:list={`faq-section ${index % 2 === 1 ? "bg-alt" : "bg-base"}`}>
         <div class="container">
           <div class="section-header">
             <h2 class="section-title">{section.title}</h2>

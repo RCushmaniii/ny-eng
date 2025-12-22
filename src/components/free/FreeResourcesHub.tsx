@@ -7,6 +7,8 @@
 import { useState, useMemo } from "react";
 import { Search, Filter, SlidersHorizontal, X, Info } from "lucide-react";
 import ResourceCard from "./ResourceCard";
+import SearchableSelect from "@components/ui/SearchableSelect";
+import { formatLabel } from "@/lib/utils/labelFormatter";
 import type { FreeAsset } from "@/types/free-asset";
 
 interface FreeResourcesHubProps {
@@ -16,7 +18,10 @@ interface FreeResourcesHubProps {
 
 type SortOption = "popular" | "newest" | "title";
 
-export default function FreeResourcesHub({ resources, lang }: FreeResourcesHubProps) {
+export default function FreeResourcesHub({
+  resources,
+  lang,
+}: FreeResourcesHubProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedPersona, setSelectedPersona] = useState<string>("");
   const [selectedScenario, setSelectedScenario] = useState<string>("");
@@ -27,18 +32,21 @@ export default function FreeResourcesHub({ resources, lang }: FreeResourcesHubPr
   const { personas, scenarios } = useMemo(() => {
     const personaSet = new Set<string>();
     const scenarioSet = new Set<string>();
-    
-    resources.forEach(resource => {
-      const personaList = (resource.targeting as any)?.primaryPersona || (resource.targeting as any)?.primaryPersonas || [];
+
+    resources.forEach((resource) => {
+      const personaList =
+        (resource.targeting as any)?.primaryPersona ||
+        (resource.targeting as any)?.primaryPersonas ||
+        [];
       personaList.forEach((p: string) => personaSet.add(p));
-      
+
       const scenarioList = resource.targeting?.scenarios || [];
       scenarioList.forEach((s: string) => scenarioSet.add(s));
     });
-    
+
     return {
       personas: Array.from(personaSet).sort(),
-      scenarios: Array.from(scenarioSet).sort()
+      scenarios: Array.from(scenarioSet).sort(),
     };
   }, [resources]);
 
@@ -49,7 +57,7 @@ export default function FreeResourcesHub({ resources, lang }: FreeResourcesHubPr
     // Apply search filter
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(resource => {
+      filtered = filtered.filter((resource) => {
         const content = resource[lang];
         return (
           content.title?.toLowerCase().includes(query) ||
@@ -61,17 +69,20 @@ export default function FreeResourcesHub({ resources, lang }: FreeResourcesHubPr
 
     // Apply persona filter
     if (selectedPersona) {
-      filtered = filtered.filter(resource => {
-        const personaList = (resource.targeting as any)?.primaryPersona || (resource.targeting as any)?.primaryPersonas || [];
+      filtered = filtered.filter((resource) => {
+        const personaList =
+          (resource.targeting as any)?.primaryPersona ||
+          (resource.targeting as any)?.primaryPersonas ||
+          [];
         return personaList.includes(selectedPersona);
       });
     }
 
     // Apply scenario filter
     if (selectedScenario) {
-      filtered = filtered.filter(resource => {
+      filtered = filtered.filter((resource) => {
         const scenarioList = resource.targeting?.scenarios || [];
-        return scenarioList.includes(selectedScenario);
+        return scenarioList.includes(selectedScenario as any);
       });
     }
 
@@ -82,14 +93,20 @@ export default function FreeResourcesHub({ resources, lang }: FreeResourcesHubPr
           const aDownloads = a.analytics?.downloadCount || 0;
           const bDownloads = b.analytics?.downloadCount || 0;
           if (bDownloads !== aDownloads) return bDownloads - aDownloads;
-          return new Date(b.metadata.datePublished).getTime() - new Date(a.metadata.datePublished).getTime();
-        
+          return (
+            new Date(b.metadata.datePublished).getTime() -
+            new Date(a.metadata.datePublished).getTime()
+          );
+
         case "newest":
-          return new Date(b.metadata.datePublished).getTime() - new Date(a.metadata.datePublished).getTime();
-        
+          return (
+            new Date(b.metadata.datePublished).getTime() -
+            new Date(a.metadata.datePublished).getTime()
+          );
+
         case "title":
           return a[lang].title.localeCompare(b[lang].title);
-        
+
         default:
           return 0;
       }
@@ -105,7 +122,8 @@ export default function FreeResourcesHub({ resources, lang }: FreeResourcesHubPr
       noResources: "No resources match your filters.",
       comingSoon: "Try adjusting your search or filters.",
       search: "Search resources...",
-      searchTooltip: "Search by title, subtitle, or description. Results update as you type.",
+      searchTooltip:
+        "Search by title, subtitle, or description. Results update as you type.",
       filters: "Filters",
       sortBy: "Sort by",
       persona: "Role",
@@ -126,7 +144,8 @@ export default function FreeResourcesHub({ resources, lang }: FreeResourcesHubPr
       noResources: "No hay recursos que coincidan con tus filtros.",
       comingSoon: "Intenta ajustar tu búsqueda o filtros.",
       search: "Buscar recursos...",
-      searchTooltip: "Busca por título, subtítulo o descripción. Los resultados se actualizan mientras escribes.",
+      searchTooltip:
+        "Busca por título, subtítulo o descripción. Los resultados se actualizan mientras escribes.",
       filters: "Filtros",
       sortBy: "Ordenar por",
       persona: "Rol",
@@ -153,32 +172,32 @@ export default function FreeResourcesHub({ resources, lang }: FreeResourcesHubPr
     setSelectedScenario("");
   };
 
-  const getPersonaLabel = (persona: string) => {
-    const labels: Record<string, { en: string; es: string }> = {
-      "executive": { en: "Executive", es: "Ejecutivo" },
-      "manager": { en: "Manager", es: "Gerente" },
-      "engineer": { en: "Engineer", es: "Ingeniero" },
-      "sales": { en: "Sales", es: "Ventas" },
-      "consultant": { en: "Consultant", es: "Consultor" },
-      "founder": { en: "Founder", es: "Fundador" },
-      "all": { en: "All Professionals", es: "Todos los Profesionales" },
-    };
-    return labels[persona]?.[lang] || persona;
-  };
+  // Format persona options for dropdown
+  const personaOptions = useMemo(
+    () => [
+      { value: "", label: t.allPersonas },
+      ...personas.map((persona) => ({
+        value: persona,
+        label: formatLabel(persona),
+      })),
+    ],
+    [personas, t.allPersonas],
+  );
 
-  const getScenarioLabel = (scenario: string) => {
-    const labels: Record<string, { en: string; es: string }> = {
-      "client-meetings": { en: "Client Meetings", es: "Reuniones con Clientes" },
-      "presentations": { en: "Presentations", es: "Presentaciones" },
-      "negotiations": { en: "Negotiations", es: "Negociaciones" },
-      "networking": { en: "Networking", es: "Networking" },
-      "interviews": { en: "Interviews", es: "Entrevistas" },
-    };
-    return labels[scenario]?.[lang] || scenario;
-  };
+  // Format scenario options for dropdown
+  const scenarioOptions = useMemo(
+    () => [
+      { value: "", label: t.allScenarios },
+      ...scenarios.map((scenario) => ({
+        value: scenario,
+        label: formatLabel(scenario),
+      })),
+    ],
+    [scenarios, t.allScenarios],
+  );
 
   return (
-    <section className="resources-section py-12 md:py-16 bg-slate-50">
+    <section className="resources-section pb-12 md:pb-16 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="mb-8">
@@ -186,9 +205,6 @@ export default function FreeResourcesHub({ resources, lang }: FreeResourcesHubPr
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
               {t.availableNow}
             </h2>
-            <div className="hidden md:flex items-center gap-2 text-slate-500 text-sm">
-              <span>{t.usedBy}</span>
-            </div>
           </div>
 
           {/* Search and Controls Bar */}
@@ -235,35 +251,33 @@ export default function FreeResourcesHub({ resources, lang }: FreeResourcesHubPr
           </div>
 
           {/* Filters (Desktop always visible, Mobile toggle) */}
-          <div className={`${showFilters ? 'block' : 'hidden'} sm:block`}>
+          <div className={`${showFilters ? "block" : "hidden"} sm:block`}>
             <div className="flex flex-wrap gap-3 items-center">
-              {/* Persona Filter */}
-              <select
+              {/* Persona Filter - Searchable */}
+              <SearchableSelect
                 value={selectedPersona}
-                onChange={(e) => setSelectedPersona(e.target.value)}
-                className="px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-sm"
-              >
-                <option value="">{t.allPersonas}</option>
-                {personas.map((persona) => (
-                  <option key={persona} value={persona}>
-                    {getPersonaLabel(persona)}
-                  </option>
-                ))}
-              </select>
+                onChange={setSelectedPersona}
+                options={personaOptions}
+                placeholder={t.allPersonas}
+                emptyMessage={
+                  lang === "en" ? "No roles found" : "No se encontraron roles"
+                }
+                className="w-full sm:w-48"
+              />
 
-              {/* Scenario Filter */}
-              <select
+              {/* Scenario Filter - Searchable */}
+              <SearchableSelect
                 value={selectedScenario}
-                onChange={(e) => setSelectedScenario(e.target.value)}
-                className="px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-sm"
-              >
-                <option value="">{t.allScenarios}</option>
-                {scenarios.map((scenario) => (
-                  <option key={scenario} value={scenario}>
-                    {getScenarioLabel(scenario)}
-                  </option>
-                ))}
-              </select>
+                onChange={setSelectedScenario}
+                options={scenarioOptions}
+                placeholder={t.allScenarios}
+                emptyMessage={
+                  lang === "en"
+                    ? "No situations found"
+                    : "No se encontraron situaciones"
+                }
+                className="w-full sm:w-48"
+              />
 
               {/* Clear Filters */}
               {hasActiveFilters && (
@@ -278,7 +292,8 @@ export default function FreeResourcesHub({ resources, lang }: FreeResourcesHubPr
 
               {/* Results Count */}
               <span className="ml-auto text-sm text-slate-500">
-                {t.showing} {filteredAndSortedResources.length} {t.of} {resources.length} {t.resources}
+                {t.showing} {filteredAndSortedResources.length} {t.of}{" "}
+                {resources.length} {t.resources}
               </span>
             </div>
           </div>

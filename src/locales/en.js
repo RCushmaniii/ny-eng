@@ -5,19 +5,19 @@ export default {
     contact: "Contact",
     welcome: "Welcome to our site",
     notFound: "Page not found",
-    goHome: "Go back to the start"
+    goHome: "Go back to the start",
   },
   pages: {
     home: {
-      description: "This is the English homepage."
+      description: "This is the English homepage.",
     },
     about: {
       title: "About Us",
-      greeting: "Hello"
+      greeting: "Hello",
     },
     contact: {
       title: "Contact Us",
-      cta: "Send Message"
-    }
-  }
+      cta: "Send Message",
+    },
+  },
 };

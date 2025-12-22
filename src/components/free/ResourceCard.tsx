@@ -4,7 +4,14 @@
  * Corporate, modern design aligned with NY English brand
  */
 
-import { FileText, Download, ArrowRight, Clock, Users, Sparkles } from "lucide-react";
+import {
+  FileText,
+  Download,
+  ArrowRight,
+  Clock,
+  Users,
+  Sparkles,
+} from "lucide-react";
 import type { FreeAsset } from "@/types/free-asset";
 
 interface ResourceCardProps {
@@ -14,30 +21,33 @@ interface ResourceCardProps {
 
 export default function ResourceCard({ asset, lang }: ResourceCardProps) {
   const content = asset[lang];
-  
+
   // Safety check - if content is missing, don't render
   if (!content || !content.title) {
     console.warn(`Missing ${lang} content for asset:`, asset.metadata?.id);
     return null;
   }
   const slug = lang === "en" ? asset.slugEn : asset.slugEs;
-  const basePath = lang === "en" ? "/en/free" : "/es/gratis";
+  const basePath = lang === "en" ? "/en/resources" : "/es/recursos";
   const resourceUrl = `${basePath}/${slug}/`;
 
   // Determine badge
   const getBadge = () => {
     if (asset.analytics?.downloadCount && asset.analytics.downloadCount > 500) {
-      return { text: lang === "en" ? "Most Popular" : "Más Popular", color: "bg-amber-500" };
+      return {
+        text: lang === "en" ? "Most Popular" : "Más Popular",
+        color: "bg-amber-500",
+      };
     }
-    
+
     const publishDate = new Date(asset.metadata.datePublished);
     const thirtyDaysAgo = new Date();
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-    
+
     if (publishDate > thirtyDaysAgo) {
       return { text: lang === "en" ? "New" : "Nuevo", color: "bg-green-500" };
     }
-    
+
     return null;
   };
 
@@ -100,7 +110,9 @@ export default function ResourceCard({ asset, lang }: ResourceCardProps) {
           {/* Badges & Meta */}
           <div className="flex flex-wrap items-center gap-3 mb-3">
             {badge && (
-              <span className={`${badge.color} text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1`}>
+              <span
+                className={`${badge.color} text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1`}
+              >
                 <Sparkles className="w-3 h-3" />
                 {badge.text}
               </span>
@@ -120,9 +132,7 @@ export default function ResourceCard({ asset, lang }: ResourceCardProps) {
           </h3>
 
           {/* Subtitle */}
-          <p className="text-slate-500 font-medium mb-3">
-            {content.subtitle}
-          </p>
+          <p className="text-slate-500 font-medium mb-3">{content.subtitle}</p>
 
           {/* Intro paragraph - use intro.paragraph if available, otherwise use description */}
           <p className="text-slate-600 leading-relaxed mb-4">
@@ -131,14 +141,20 @@ export default function ResourceCard({ asset, lang }: ResourceCardProps) {
 
           {/* Tags: Personas & Scenarios */}
           <div className="flex flex-wrap gap-2 mb-4">
-            {((asset.targeting as any)?.primaryPersona || (asset.targeting as any)?.primaryPersonas || []).slice(0, 3).map((persona: string) => (
-              <span
-                key={persona}
-                className="bg-blue-50 text-blue-700 text-sm px-3 py-1 rounded-lg font-medium"
-              >
-                {getPersonaLabel(persona)}
-              </span>
-            ))}
+            {(
+              (asset.targeting as any)?.primaryPersona ||
+              (asset.targeting as any)?.primaryPersonas ||
+              []
+            )
+              .slice(0, 3)
+              .map((persona: string) => (
+                <span
+                  key={persona}
+                  className="bg-blue-50 text-blue-700 text-sm px-3 py-1 rounded-lg font-medium"
+                >
+                  {getPersonaLabel(persona)}
+                </span>
+              ))}
             {(asset.targeting?.scenarios || []).slice(0, 2).map((scenario) => (
               <span
                 key={scenario}
@@ -152,15 +168,16 @@ export default function ResourceCard({ asset, lang }: ResourceCardProps) {
           {/* Stats & CTA */}
           <div className="flex items-center justify-between pt-4 border-t border-slate-100">
             {/* Download count */}
-            {asset.analytics?.downloadCount && asset.analytics.downloadCount > 0 && (
-              <div className="flex items-center gap-2 text-slate-500 text-sm">
-                <Users className="w-4 h-4" />
-                <span>
-                  {asset.analytics.downloadCount.toLocaleString()}{" "}
-                  {lang === "en" ? "downloads" : "descargas"}
-                </span>
-              </div>
-            )}
+            {asset.analytics?.downloadCount &&
+              asset.analytics.downloadCount > 0 && (
+                <div className="flex items-center gap-2 text-slate-500 text-sm">
+                  <Users className="w-4 h-4" />
+                  <span>
+                    {asset.analytics.downloadCount.toLocaleString()}{" "}
+                    {lang === "en" ? "downloads" : "descargas"}
+                  </span>
+                </div>
+              )}
 
             {/* CTA */}
             <div className="flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform ml-auto">

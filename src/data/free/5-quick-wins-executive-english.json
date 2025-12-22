@@ -14,7 +14,12 @@
     "timeToComplete": "6 minutes",
     "estimatedMinutes": 6,
     "pageCount": 5,
-    "tags": ["quick-wins", "immediate-results", "executive-presence", "practical-tips"]
+    "tags": [
+      "quick-wins",
+      "immediate-results",
+      "executive-presence",
+      "practical-tips"
+    ]
   },
   "targeting": {
     "primaryPersona": ["executive", "manager", "all"],
@@ -29,11 +34,19 @@
   "conversion": {
     "ctaType": "strategy-call",
     "nextStep": "Book a free strategy call to get personalized quick wins for your role",
-    "relatedAssets": ["5-principles-executive-english", "10-common-mistakes-executive-english"]
+    "relatedAssets": [
+      "5-principles-executive-english",
+      "10-common-mistakes-executive-english"
+    ]
   },
   "seo": {
     "metaDescription": "Get 5 quick wins you can apply today to immediately sound more executive in English. Simple changes with big impact on your credibility.",
-    "keywords": ["executive english tips", "quick english improvements", "business english quick wins", "professional communication tips"]
+    "keywords": [
+      "executive english tips",
+      "quick english improvements",
+      "business english quick wins",
+      "professional communication tips"
+    ]
   },
   "slugEn": "5-quick-wins-executive-english",
   "slugEs": "5-victorias-rapidas-ingles-ejecutivo",

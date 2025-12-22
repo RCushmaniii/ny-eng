@@ -2,21 +2,23 @@
 /**
  * Hreflang Fix Summary Documentation - Proper Astro page with markdown import
  */
-import MarkdownLayout from '@layouts/MarkdownLayout.astro';
-import { marked } from 'marked';
+import MarkdownLayout from "@layouts/MarkdownLayout.astro";
+import { marked } from "marked";
 
 // Import the HREFLANG-FIX-SUMMARY.md content
-const hreflangContent = await import('../../../../docs/HREFLANG-FIX-SUMMARY.md?raw');
+const hreflangContent = await import(
+  "../../../../docs/seo/HREFLANG-FIX-SUMMARY.md?raw"
+);
 const markdownText = hreflangContent.default;
 
 // Convert markdown to HTML
 const htmlContent = marked(markdownText);
 
 const frontmatter = {
-  title: 'Hreflang Fix Summary',
-  description: 'Summary of hreflang implementation and SEO fixes',
-  category: 'SEO',
-  icon: '🔗'
+  title: "Hreflang Fix Summary",
+  description: "Summary of hreflang implementation and SEO fixes",
+  category: "SEO",
+  icon: "🔗",
 };
 ---
 

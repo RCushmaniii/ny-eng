@@ -1,4 +1,4 @@
-import { routes } from '../../utils/paths.ts';
+import { routes } from "../../utils/paths.ts";
 
 export const headerContent = {
   menu: [
@@ -6,7 +6,7 @@ export const headerContent = {
     { name: "Sobre mí", link: routes.es.about },
     { name: "Blog", link: routes.es.blog },
     { name: "Casos de Éxito", link: routes.es.testimonios },
-    { name: "Gratis", link: routes.es.gratis },
+    { name: "Recursos", link: routes.es.recursos },
   ],
   cta: { text: "Contacto", link: routes.es.contact },
   logoLink: routes.es.home,

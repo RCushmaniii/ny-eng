@@ -40,7 +40,7 @@ const stars = "★".repeat(testimonial.stars || 5);
       <img
         src={testimonial.avatar}
         alt={testimonial.author}
-        class={`${avatarSizeClass} rounded-full mr-4 object-cover`}
+        class:list={`${avatarSizeClass} rounded-full mr-4 object-cover`}
         width={testimonial.avatarSize === "lg" ? 64 : 48}
         height={testimonial.avatarSize === "lg" ? 64 : 48}
         loading="lazy"
@@ -49,7 +49,7 @@ const stars = "★".repeat(testimonial.stars || 5);
       <Image
         src={testimonial.avatar}
         alt={testimonial.author}
-        class={`${avatarSizeClass} rounded-full mr-4 object-cover`}
+        class:list={`${avatarSizeClass} rounded-full mr-4 object-cover`}
         width={testimonial.avatarSize === "lg" ? 64 : 48}
         height={testimonial.avatarSize === "lg" ? 64 : 48}
         loading="lazy"
@@ -69,7 +69,7 @@ const stars = "★".repeat(testimonial.stars || 5);
     <div class="mt-4 text-right">
       <a 
         href={testimonial.link} 
-        class={cn("text-primary-600 hover:text-primary-800 font-medium inline-flex items-center")}
+        class:list={cn("text-primary-600 hover:text-primary-800 font-medium inline-flex items-center")}
         {...(testimonial.link.startsWith('http') ? {
           target: "_blank",
           rel: "noopener noreferrer"

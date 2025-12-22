@@ -13,6 +13,7 @@ import { footerContentEs } from "@data/footer/es.ts";
 import { siteConfig } from "@data/config.ts";
 import OrgSchema from "@components/seo/OrgSchema.astro";
 import WebsiteSchema from "@components/seo/WebsiteSchema.astro";
+import ChatLauncher from "@components/chat/ChatLauncher.astro";
 import * as i18n from "../lib/i18n";
 import { type TKey, type Locale } from "../lib/i18n.ts";
 
@@ -383,6 +384,8 @@ if (translationSlugEs.includes("/es/blog/es/")) {
 
       <Footer content={footerData} />
     </div>
+
+    {tkey !== "chat" && <ChatLauncher lang={lang} />}
 
     <!-- Scripts -->
     <script is:inline src="/js/aos.js"></script>

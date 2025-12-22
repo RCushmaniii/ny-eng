@@ -15,7 +15,12 @@
     "timeToComplete": "5 minutes",
     "estimatedMinutes": 5,
     "pageCount": 2,
-    "tags": ["leadership", "meetings", "strategic-thinking", "executive-presence"]
+    "tags": [
+      "leadership",
+      "meetings",
+      "strategic-thinking",
+      "executive-presence"
+    ]
   },
   "targeting": {
     "primaryPersona": ["executive", "manager", "founder"],
@@ -31,11 +36,20 @@
   "conversion": {
     "ctaType": "strategy-call",
     "nextStep": "Book a 30-minute strategy call to practice these questions live",
-    "relatedAssets": ["7-sentences-leadership", "client-call-opening-closing-framework"]
+    "relatedAssets": [
+      "7-sentences-leadership",
+      "client-call-opening-closing-framework"
+    ]
   },
   "seo": {
     "metaDescription": "Learn 5 strategic questions that signal leadership and executive thinking in meetings—even if you're not yet in a senior role.",
-    "keywords": ["executive presence", "leadership questions", "strategic thinking", "business english", "senior communication"],
+    "keywords": [
+      "executive presence",
+      "leadership questions",
+      "strategic thinking",
+      "business english",
+      "senior communication"
+    ],
     "ogImage": "/images/og/5-questions-senior.jpg"
   },
   "analytics": {
@@ -46,8 +60,9 @@
   "slugEn": "5-questions",
   "slugEs": "5-preguntas",
   "en": {
-    "title": "5 Questions That Make You Sound Senior",
-    "subtitle": "Strategic questions for executive meetings",
+    "title": "The 5 Questions That Change Every Conversation",
+    "subtitle": "A simple question framework to sound strategic, not reactive",
+    "description": "A practical framework of five questions you can use in any high‑stakes meeting to slow the conversation down, get context, and respond like a strategic partner instead of reacting under pressure.",
     "intro": {
       "line1": "Junior professionals answer questions.",
       "line2": "Senior professionals ask them.",
@@ -154,8 +169,9 @@
     }
   },
   "es": {
-    "title": "5 Preguntas Que Te Hacen Sonar Como Ejecutivo",
-    "subtitle": "Preguntas estratégicas para reuniones ejecutivas",
+    "title": "Las 5 Preguntas que Cambian Cualquier Conversación",
+    "subtitle": "Un marco simple de preguntas para sonar estratégico, no reactivo",
+    "description": "Un marco práctico de cinco preguntas que puedes usar en cualquier reunión de alto impacto para bajar la velocidad, obtener contexto y responder como socio estratégico en lugar de reaccionar bajo presión.",
     "intro": {
       "line1": "Los profesionales junior responden preguntas.",
       "line2": "Los profesionales senior las hacen.",

@@ -14,12 +14,29 @@
     "timeToComplete": "7 minutes",
     "estimatedMinutes": 7,
     "pageCount": 5,
-    "tags": ["writing", "executive-summary", "reports", "proposals", "communication"]
+    "tags": [
+      "writing",
+      "executive-summary",
+      "reports",
+      "proposals",
+      "communication"
+    ]
   },
   "targeting": {
-    "primaryPersona": ["manager", "consultant", "executive", "project-manager", "founder"],
+    "primaryPersona": [
+      "manager",
+      "consultant",
+      "executive",
+      "project-manager",
+      "founder"
+    ],
     "industries": ["technology", "professional-services", "finance", "all"],
-    "scenarios": ["email-writing", "presentations", "client-meetings", "decision-making"],
+    "scenarios": [
+      "email-writing",
+      "presentations",
+      "client-meetings",
+      "decision-making"
+    ],
     "painPoints": [
       "Executives stop reading after the first paragraph",
       "Reports get ignored because key points are buried",
@@ -30,16 +47,24 @@
   "conversion": {
     "ctaType": "strategy-call",
     "nextStep": "Book a free strategy call to refine your executive communication skills",
-    "relatedAssets": ["status-update-script", "email-templates-difficult-situations"]
+    "relatedAssets": [
+      "status-update-script",
+      "email-templates-difficult-situations"
+    ]
   },
   "seo": {
     "metaDescription": "Learn the BLUF formula for executive summaries that get read and acted on. Write summaries that busy executives actually finish in under 30 seconds.",
-    "keywords": ["executive summary template", "how to write executive summary", "business writing english", "BLUF method"]
+    "keywords": [
+      "executive summary template",
+      "how to write executive summary",
+      "business writing english",
+      "BLUF method"
+    ]
   },
   "slugEn": "executive-summary-formula",
   "slugEs": "formula-resumen-ejecutivo",
   "en": {
-    "title": "The Executive Summary Formula",
+    "title": "The Executive Summary Formula for Work",
     "subtitle": "How to Write Summaries That Busy Leaders Actually Read",
     "description": "Executives spend an average of 30 seconds on your document before deciding to read more or move on. This formula ensures your key points land in those 30 seconds.",
     "headline": "Get Read in 30 Seconds or Less",
@@ -60,39 +85,32 @@
         "id": "formula",
         "title": "The BLUF Formula",
         "content": "BLUF stands for 'Bottom Line Up Front.' It's used by the U.S. military and adopted by top consulting firms because it works.\n\n**The structure:**",
-        "framework": {
-          "name": "BLUF",
-          "steps": [
-            {
-              "letter": "B",
-              "name": "Bottom Line",
-              "description": "State your main point, recommendation, or request in the first sentence.",
-              "example": "I recommend we proceed with Vendor A for the CRM implementation.",
-              "tip": "If someone only reads this sentence, they should know what you want."
-            },
-            {
-              "letter": "L",
-              "name": "Logic",
-              "description": "Give 2-3 supporting reasons in order of importance.",
-              "example": "Three factors support this decision: (1) lowest total cost of ownership, (2) fastest implementation timeline, and (3) best integration with our existing systems.",
-              "tip": "Use numbers to make scanning easy. Most important reason first."
-            },
-            {
-              "letter": "U",
-              "name": "Urgency",
-              "description": "Explain why this matters now and what happens if delayed.",
-              "example": "We need a decision by Friday to lock in the Q1 pricing before rates increase 15% in February.",
-              "tip": "Create urgency without panic. Facts, not drama."
-            },
-            {
-              "letter": "F",
-              "name": "Forward Action",
-              "description": "Specify exactly what you need from the reader.",
-              "example": "Please confirm your approval via email by Thursday EOD, or let me know if you'd like to discuss.",
-              "tip": "Make the next step crystal clear. Remove all ambiguity."
-            }
-          ]
-        }
+        "items": [
+          {
+            "number": 1,
+            "title": "B - Bottom Line",
+            "content": "State your main point, recommendation, or request in the first sentence. Example: 'I recommend we proceed with Vendor A for the CRM implementation.'",
+            "actionItem": "If someone only reads this sentence, they should know what you want."
+          },
+          {
+            "number": 2,
+            "title": "L - Logic",
+            "content": "Give 2-3 supporting reasons in order of importance. Example: 'Three factors support this decision: (1) lowest total cost of ownership, (2) fastest implementation timeline, and (3) best integration with our existing systems.'",
+            "actionItem": "Use numbers to make scanning easy. Most important reason first."
+          },
+          {
+            "number": 3,
+            "title": "U - Urgency",
+            "content": "Explain why this matters now and what happens if delayed. Example: 'We need a decision by Friday to lock in the Q1 pricing before rates increase 15% in February.'",
+            "actionItem": "Create urgency without panic. Facts, not drama."
+          },
+          {
+            "number": 4,
+            "title": "F - Forward Action",
+            "content": "Specify exactly what you need from the reader. Example: 'Please confirm your approval via email by Thursday EOD, or let me know if you'd like to discuss.'",
+            "actionItem": "Make the next step crystal clear. Remove all ambiguity."
+          }
+        ]
       },
       {
         "id": "example",
@@ -104,16 +122,19 @@
         "title": "Quick Templates",
         "items": [
           {
-            "type": "Recommendation",
-            "template": "I recommend [action]. This will [benefit] because [reason 1], [reason 2], and [reason 3]. We need to decide by [date] to [consequence of delay]. Please [specific action] by [deadline]."
+            "number": 1,
+            "title": "Recommendation",
+            "content": "I recommend [action]. This will [benefit] because [reason 1], [reason 2], and [reason 3]. We need to decide by [date] to [consequence of delay]. Please [specific action] by [deadline]."
           },
           {
-            "type": "Status Update",
-            "template": "[Project] is [on track/at risk/behind]. Key update: [most important news]. Next milestone: [what's coming] by [date]. I need [decision/resource/approval] by [date] to stay on schedule."
+            "number": 2,
+            "title": "Status Update",
+            "content": "[Project] is [on track/at risk/behind]. Key update: [most important news]. Next milestone: [what's coming] by [date]. I need [decision/resource/approval] by [date] to stay on schedule."
           },
           {
-            "type": "Problem Escalation",
-            "template": "We have a [severity] issue with [topic] that requires your attention. Impact: [what's affected]. Recommended solution: [your proposal]. I need [decision] by [date] to resolve this before [consequence]."
+            "number": 3,
+            "title": "Problem Escalation",
+            "content": "We have a [severity] issue with [topic] that requires your attention. Impact: [what's affected]. Recommended solution: [your proposal]. I need [decision] by [date] to resolve this before [consequence]."
           }
         ]
       },
@@ -121,11 +142,31 @@
         "id": "tips",
         "title": "Pro Tips",
         "items": [
-          "Write the summary LAST, even though it appears first",
-          "Keep it under 150 words—if you can't, you don't understand it well enough",
-          "Use bold for the most critical information",
-          "One recommendation per summary—multiple asks dilute all of them",
-          "Test: Can someone forward your email and the recipient immediately understands?"
+          {
+            "number": 1,
+            "title": "Write the summary LAST",
+            "content": "Even though it appears first"
+          },
+          {
+            "number": 2,
+            "title": "Keep it under 150 words",
+            "content": "If you can't, you don't understand it well enough"
+          },
+          {
+            "number": 3,
+            "title": "Use bold for critical information",
+            "content": "Highlight the most important points"
+          },
+          {
+            "number": 4,
+            "title": "One recommendation per summary",
+            "content": "Multiple asks dilute all of them"
+          },
+          {
+            "number": 5,
+            "title": "Test for clarity",
+            "content": "Can someone forward your email and the recipient immediately understands?"
+          }
         ]
       }
     ]
@@ -151,40 +192,33 @@
       {
         "id": "formula",
         "title": "La fórmula BLUF",
-        "content": "BLUF significa “Bottom Line Up Front” (Conclusión principal primero). Es utilizada por las fuerzas armadas de EE. UU. y adoptada por las principales firmas de consultoría porque funciona.\n\n**La estructura:**",
-        "framework": {
-          "name": "BLUF",
-          "steps": [
-            {
-              "letter": "B",
-              "name": "Bottom Line (Conclusión)",
-              "description": "Expón tu punto principal, recomendación o solicitud en la primera oración.",
-              "example": "Recomiendo que procedamos con el Proveedor A para la implementación del CRM.",
-              "tip": "Si alguien solo lee esta oración, debería saber qué quieres."
-            },
-            {
-              "letter": "L",
-              "name": "Logic (Lógica)",
-              "description": "Da 2–3 razones de apoyo en orden de importancia.",
-              "example": "Tres factores respaldan esta decisión: (1) menor costo total de propiedad, (2) un cronograma de implementación más rápido y (3) mejor integración con nuestros sistemas existentes.",
-              "tip": "Usa números para facilitar la lectura. Empieza con la razón más importante."
-            },
-            {
-              "letter": "U",
-              "name": "Urgency (Urgencia)",
-              "description": "Explica por qué esto importa ahora y qué sucede si se retrasa.",
-              "example": "Necesitamos una decisión para el viernes para asegurar el precio del Q1 antes de que las tarifas aumenten un 15% en febrero.",
-              "tip": "Crea urgencia sin causar pánico. Hechos, no drama."
-            },
-            {
-              "letter": "F",
-              "name": "Forward Action (Acción siguiente)",
-              "description": "Especifica exactamente qué necesitas del lector.",
-              "example": "Por favor confirma tu aprobación por correo electrónico para el jueves al final del día, o avísame si deseas conversar.",
-              "tip": "Haz que el siguiente paso sea completamente claro. Elimina toda ambigüedad."
-            }
-          ]
-        }
+        "content": "BLUF significa 'Bottom Line Up Front' (Conclusión principal primero). Es utilizada por las fuerzas armadas de EE. UU. y adoptada por las principales firmas de consultoría porque funciona.\n\n**La estructura:**",
+        "items": [
+          {
+            "number": 1,
+            "title": "B - Bottom Line (Conclusión)",
+            "content": "Expón tu punto principal, recomendación o solicitud en la primera oración. Ejemplo: 'Recomiendo que procedamos con el Proveedor A para la implementación del CRM.'",
+            "actionItem": "Si alguien solo lee esta oración, debería saber qué quieres."
+          },
+          {
+            "number": 2,
+            "title": "L - Logic (Lógica)",
+            "content": "Da 2–3 razones de apoyo en orden de importancia. Ejemplo: 'Tres factores respaldan esta decisión: (1) menor costo total de propiedad, (2) un cronograma de implementación más rápido y (3) mejor integración con nuestros sistemas existentes.'",
+            "actionItem": "Usa números para facilitar la lectura. Empieza con la razón más importante."
+          },
+          {
+            "number": 3,
+            "title": "U - Urgency (Urgencia)",
+            "content": "Explica por qué esto importa ahora y qué sucede si se retrasa. Ejemplo: 'Necesitamos una decisión para el viernes para asegurar el precio del Q1 antes de que las tarifas aumenten un 15% en febrero.'",
+            "actionItem": "Crea urgencia sin causar pánico. Hechos, no drama."
+          },
+          {
+            "number": 4,
+            "title": "F - Forward Action (Acción siguiente)",
+            "content": "Especifica exactamente qué necesitas del lector. Ejemplo: 'Por favor confirma tu aprobación por correo electrónico para el jueves al final del día, o avísame si deseas conversar.'",
+            "actionItem": "Haz que el siguiente paso sea completamente claro. Elimina toda ambigüedad."
+          }
+        ]
       },
       {
         "id": "example",
@@ -196,16 +230,19 @@
         "title": "Plantillas rápidas",
         "items": [
           {
-            "type": "Recomendación",
-            "template": "Recomiendo [acción]. Esto generará [beneficio] porque [razón 1], [razón 2] y [razón 3]. Necesitamos decidir antes de [fecha] para [consecuencia del retraso]. Por favor [acción específica] antes de [fecha límite]."
+            "number": 1,
+            "title": "Recomendación",
+            "content": "Recomiendo [acción]. Esto generará [beneficio] porque [razón 1], [razón 2] y [razón 3]. Necesitamos decidir antes de [fecha] para [consecuencia del retraso]. Por favor [acción específica] antes de [fecha límite]."
           },
           {
-            "type": "Actualización de estado",
-            "template": "[Proyecto] está [en camino/en riesgo/atrasado]. Actualización clave: [noticia más importante]. Próximo hito: [lo que sigue] para [fecha]. Necesito [decisión/recurso/aprobación] antes de [fecha] para mantenernos en el cronograma."
+            "number": 2,
+            "title": "Actualización de estado",
+            "content": "[Proyecto] está [en camino/en riesgo/atrasado]. Actualización clave: [noticia más importante]. Próximo hito: [lo que sigue] para [fecha]. Necesito [decisión/recurso/aprobación] antes de [fecha] para mantenernos en el cronograma."
           },
           {
-            "type": "Escalación de problema",
-            "template": "Tenemos un problema de [severidad] con [tema] que requiere tu atención. Impacto: [lo que se ve afectado]. Solución recomendada: [tu propuesta]. Necesito [decisión] antes de [fecha] para resolver esto antes de [consecuencia]."
+            "number": 3,
+            "title": "Escalación de problema",
+            "content": "Tenemos un problema de [severidad] con [tema] que requiere tu atención. Impacto: [lo que se ve afectado]. Solución recomendada: [tu propuesta]. Necesito [decisión] antes de [fecha] para resolver esto antes de [consecuencia]."
           }
         ]
       },
@@ -213,11 +250,31 @@
         "id": "tips",
         "title": "Consejos pro",
         "items": [
-          "Escribe el resumen al final, aunque aparezca primero",
-          "Mantenlo por debajo de 150 palabras — si no puedes, no lo entiendes lo suficientemente bien",
-          "Usa negritas para la información más crítica",
-          "Una recomendación por resumen — varias peticiones las debilitan todas",
-          "Prueba: ¿puede alguien reenviar tu correo electrónico y que el destinatario lo entienda de inmediato?"
+          {
+            "number": 1,
+            "title": "Escribe el resumen al final",
+            "content": "Aunque aparezca primero"
+          },
+          {
+            "number": 2,
+            "title": "Mantenlo por debajo de 150 palabras",
+            "content": "Si no puedes, no lo entiendes lo suficientemente bien"
+          },
+          {
+            "number": 3,
+            "title": "Usa negritas para información crítica",
+            "content": "Resalta los puntos más importantes"
+          },
+          {
+            "number": 4,
+            "title": "Una recomendación por resumen",
+            "content": "Varias peticiones las debilitan todas"
+          },
+          {
+            "number": 5,
+            "title": "Prueba de claridad",
+            "content": "¿Puede alguien reenviar tu correo electrónico y que el destinatario lo entienda de inmediato?"
+          }
         ]
       }
     ]

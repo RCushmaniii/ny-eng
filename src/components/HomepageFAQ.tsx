@@ -49,9 +49,11 @@ export default function HomepageFAQComponent({ lang }: HomepageFAQProps) {
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className={`text-lg font-semibold pr-4 ${
-                  index === 0 ? "text-blue-900" : "text-slate-900"
-                }`}>
+                <span
+                  className={`text-lg font-semibold pr-4 ${
+                    index === 0 ? "text-blue-900" : "text-slate-900"
+                  }`}
+                >
                   {faq.question}
                 </span>
                 <ChevronDown
@@ -68,9 +70,11 @@ export default function HomepageFAQComponent({ lang }: HomepageFAQProps) {
                   openIndex === index ? "max-h-[600px]" : "max-h-0"
                 }`}
               >
-                <div className={`px-6 pb-5 pt-2 ${
-                  index === 0 ? "bg-white/80" : ""
-                }`}>
+                <div
+                  className={`px-6 pb-5 pt-2 ${
+                    index === 0 ? "bg-white/80" : ""
+                  }`}
+                >
                   <p className="text-base text-slate-700 leading-relaxed">
                     {faq.answer}
                   </p>
@@ -99,15 +103,15 @@ export default function HomepageFAQComponent({ lang }: HomepageFAQProps) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "mainEntity": content.faqs.map((faq) => ({
+            mainEntity: content.faqs.map((faq) => ({
               "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
+              name: faq.question,
+              acceptedAnswer: {
                 "@type": "Answer",
-                "text": faq.answer
-              }
-            }))
-          })
+                text: faq.answer,
+              },
+            })),
+          }),
         }}
       />
     </section>

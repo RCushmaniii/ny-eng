@@ -22,29 +22,34 @@ export type TKey =
   | "about"
   | "contact"
   | "book"
+  | "chat"
   | "blog"
   | "blog/page"
   | "services"
   | "testimonials"
   | "faqs"
-  | "free"
-  | "free/5-questions"
-  | "free/5-minute-negotiation-script"
-  | "free/7-sentences-leadership-english"
-  | "free/5-principles-executive-english"
-  | "free/10-common-mistakes-executive-english"
-  | "free/5-quick-wins-executive-english"
-  | "free/60-second-self-introduction-template"
-  | "free/client-call-opening-closing-framework"
-  | "free/pushback-playbook"
-  | "free/email-templates-difficult-situations"
-  | "free/feedback-framework"
-  | "free/interview-answer-templates"
-  | "free/meeting-rescue-phrases"
-  | "free/status-update-script"
-  | "free/questions-that-close-deals"
-  | "free/technical-explanation-formula"
-  | "free/difficult-conversation-checklist"
+  | "resources"
+  | "resources/5-questions"
+  | "resources/5-minute-negotiation-script"
+  | "resources/7-sentences-leadership-english"
+  | "resources/5-principles-executive-english"
+  | "resources/10-common-mistakes-executive-english"
+  | "resources/5-quick-wins-executive-english"
+  | "resources/60-second-self-introduction-template"
+  | "resources/client-call-opening-closing-framework"
+  | "resources/pushback-playbook"
+  | "resources/email-templates-difficult-situations"
+  | "resources/executive-summary-formula"
+  | "resources/feedback-framework"
+  | "resources/interview-answer-templates"
+  | "resources/meeting-rescue-phrases"
+  | "resources/status-update-script"
+  | "resources/questions-that-close-deals"
+  | "resources/technical-explanation-formula"
+  | "resources/difficult-conversation-checklist"
+  | "resources/professional-apology-framework"
+  | "resources/phrases-aggressive-clients"
+  | "resources/salary-negotiation-script"
   | "legal/privacy-policy"
   | "legal/terms-of-service"
   | "thank-you"
@@ -77,36 +82,50 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     about: "/en/about/",
     contact: "/en/contact/",
     book: "/en/book/",
+    chat: "/en/chat/",
     blog: "/en/blog/",
     "blog/page": "/en/blog/",
     services: "/en/services/",
     testimonials: "/en/testimonials/",
     faqs: "/en/faqs/",
-    free: "/en/free/",
-    "free/5-questions": "/en/free/5-questions/",
-    "free/5-minute-negotiation-script": "/en/free/5-minute-negotiation-script/",
-    "free/7-sentences-leadership-english":
-      "/en/free/7-sentences-leadership-english/",
-    "free/5-principles-executive-english":
-      "/en/free/5-principles-executive-english/",
-    "free/10-common-mistakes-executive-english":
-      "/en/free/10-common-mistakes-executive-english/",
-    "free/5-quick-wins-executive-english":
-      "/en/free/5-quick-wins-executive-english/",
-    "free/60-second-self-introduction-template":
-      "/en/free/60-second-self-introduction-template/",
-    "free/client-call-opening-closing-framework":
-      "/en/free/client-call-opening-closing-framework/",
-    "free/pushback-playbook": "/en/free/pushback-playbook/",
-    "free/email-templates-difficult-situations":
-      "/en/free/email-templates-difficult-situations/",
-    "free/feedback-framework": "/en/free/feedback-framework/",
-    "free/interview-answer-templates": "/en/free/interview-answer-templates/",
-    "free/meeting-rescue-phrases": "/en/free/meeting-rescue-phrases/",
-    "free/status-update-script": "/en/free/status-update-script/",
-    "free/questions-that-close-deals": "/en/free/questions-that-close-deals/",
-    "free/technical-explanation-formula": "/en/free/technical-explanation-formula/",
-    "free/difficult-conversation-checklist": "/en/free/difficult-conversation-checklist/",
+    resources: "/en/resources/",
+    "resources/5-questions": "/en/resources/5-questions/",
+    "resources/5-minute-negotiation-script":
+      "/en/resources/5-minute-negotiation-script/",
+    "resources/7-sentences-leadership-english":
+      "/en/resources/7-sentences-leadership-english/",
+    "resources/5-principles-executive-english":
+      "/en/resources/5-principles-executive-english/",
+    "resources/10-common-mistakes-executive-english":
+      "/en/resources/10-common-mistakes-executive-english/",
+    "resources/5-quick-wins-executive-english":
+      "/en/resources/5-quick-wins-executive-english/",
+    "resources/60-second-self-introduction-template":
+      "/en/resources/60-second-self-introduction-template/",
+    "resources/client-call-opening-closing-framework":
+      "/en/resources/client-call-opening-closing-framework/",
+    "resources/pushback-playbook": "/en/resources/pushback-playbook/",
+    "resources/email-templates-difficult-situations":
+      "/en/resources/email-templates-difficult-situations/",
+    "resources/executive-summary-formula":
+      "/en/resources/executive-summary-formula/",
+    "resources/feedback-framework": "/en/resources/feedback-framework/",
+    "resources/interview-answer-templates":
+      "/en/resources/interview-answer-templates/",
+    "resources/meeting-rescue-phrases": "/en/resources/meeting-rescue-phrases/",
+    "resources/status-update-script": "/en/resources/status-update-script/",
+    "resources/questions-that-close-deals":
+      "/en/resources/questions-that-close-deals/",
+    "resources/technical-explanation-formula":
+      "/en/resources/technical-explanation-formula/",
+    "resources/difficult-conversation-checklist":
+      "/en/resources/difficult-conversation-checklist/",
+    "resources/professional-apology-framework":
+      "/en/resources/professional-apology-framework/",
+    "resources/phrases-aggressive-clients":
+      "/en/resources/phrases-aggressive-clients/",
+    "resources/salary-negotiation-script":
+      "/en/resources/salary-negotiation-script/",
     "legal/privacy-policy": "/en/legal/privacy-policy/",
     "legal/terms-of-service": "/en/legal/terms-of-service/",
     "services/executive-english": "/en/services/executive-english/",
@@ -147,38 +166,52 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     about: "/es/about/",
     contact: "/es/contact/",
     book: "/es/reservar/",
+    chat: "/es/chat/",
     blog: "/es/blog/",
     "blog/page": "/es/blog/",
     services: "/es/servicios/",
     testimonials: "/es/testimonios/",
     faqs: "/es/faqs/",
-    free: "/es/gratis/",
-    "free/5-questions": "/es/gratis/5-preguntas/",
-    "free/5-minute-negotiation-script":
-      "/es/gratis/guion-negociacion-5-minutos/",
-    "free/7-sentences-leadership-english":
-      "/es/gratis/7-frases-liderazgo-ingles/",
-    "free/5-principles-executive-english":
-      "/es/gratis/5-principios-ingles-ejecutivo/",
-    "free/10-common-mistakes-executive-english":
-      "/es/gratis/10-errores-comunes-ingles-ejecutivo/",
-    "free/5-quick-wins-executive-english":
-      "/es/gratis/5-victorias-rapidas-ingles-ejecutivo/",
-    "free/60-second-self-introduction-template":
-      "/es/gratis/plantilla-auto-presentacion-60-segundos/",
-    "free/client-call-opening-closing-framework":
-      "/es/gratis/marco-apertura-cierre-llamadas/",
-    "free/pushback-playbook": "/es/gratis/guia-para-decir-no/",
-    "free/email-templates-difficult-situations":
-      "/es/gratis/plantillas-email-situaciones-dificiles/",
-    "free/feedback-framework": "/es/gratis/marco-retroalimentacion/",
-    "free/interview-answer-templates": "/es/gratis/plantillas-respuestas-entrevista/",
-    "free/meeting-rescue-phrases": "/es/gratis/frases-rescate-reuniones/",
-    "free/status-update-script": "/es/gratis/script-actualizacion-estado/",
-    "free/questions-that-close-deals":
-      "/es/gratis/preguntas-que-cierran-ventas/",
-    "free/technical-explanation-formula": "/es/gratis/formula-explicacion-tecnica/",
-    "free/difficult-conversation-checklist": "/es/gratis/checklist-conversaciones-dificiles/",
+    resources: "/es/recursos/",
+    "resources/5-questions": "/es/recursos/5-preguntas/",
+    "resources/5-minute-negotiation-script":
+      "/es/recursos/guion-negociacion-5-minutos/",
+    "resources/7-sentences-leadership-english":
+      "/es/recursos/7-frases-liderazgo-ingles/",
+    "resources/5-principles-executive-english":
+      "/es/recursos/5-principios-ingles-ejecutivo/",
+    "resources/10-common-mistakes-executive-english":
+      "/es/recursos/10-errores-comunes-ingles-ejecutivo/",
+    "resources/5-quick-wins-executive-english":
+      "/es/recursos/5-victorias-rapidas-ingles-ejecutivo/",
+    "resources/60-second-self-introduction-template":
+      "/es/recursos/plantilla-auto-presentacion-60-segundos/",
+    "resources/client-call-opening-closing-framework":
+      "/es/recursos/marco-apertura-cierre-llamadas/",
+    "resources/pushback-playbook": "/es/recursos/guia-para-decir-no/",
+    "resources/email-templates-difficult-situations":
+      "/es/recursos/plantillas-email-situaciones-dificiles/",
+    "resources/executive-summary-formula":
+      "/es/recursos/formula-resumen-ejecutivo/",
+    "resources/feedback-framework": "/es/recursos/marco-retroalimentacion/",
+    "resources/interview-answer-templates":
+      "/es/recursos/plantillas-respuestas-entrevista/",
+    "resources/meeting-rescue-phrases":
+      "/es/recursos/frases-rescate-reuniones/",
+    "resources/status-update-script":
+      "/es/recursos/script-actualizacion-estado/",
+    "resources/questions-that-close-deals":
+      "/es/recursos/preguntas-que-cierran-ventas/",
+    "resources/technical-explanation-formula":
+      "/es/recursos/formula-explicacion-tecnica/",
+    "resources/difficult-conversation-checklist":
+      "/es/recursos/checklist-conversaciones-dificiles/",
+    "resources/professional-apology-framework":
+      "/es/recursos/marco-disculpa-profesional/",
+    "resources/phrases-aggressive-clients":
+      "/es/recursos/frases-clientes-agresivos/",
+    "resources/salary-negotiation-script":
+      "/es/recursos/script-negociacion-salario/",
     "legal/privacy-policy": "/es/legal/privacy-policy/",
     "legal/terms-of-service": "/es/legal/terms-of-service/",
     "services/executive-english": "/es/servicios/ingles-para-ejecutivos/",
@@ -238,7 +271,7 @@ export function getHreflangCode(locale: Locale): string {
 // Helper to convert absolute URLs
 export function toAbsoluteUrl(
   path: string,
-  siteUrl: string = "https://www.nyenglishteacher.com"
+  siteUrl: string = "https://www.nyenglishteacher.com",
 ): string {
   return new URL(path, siteUrl).toString();
 }
@@ -255,8 +288,28 @@ export function getAllTKeys(): TKey[] {
     "blog",
     "services",
     "testimonials",
-    "free",
-    "free/5-questions",
+    "resources",
+    "resources/5-questions",
+    "resources/5-minute-negotiation-script",
+    "resources/7-sentences-leadership-english",
+    "resources/5-principles-executive-english",
+    "resources/10-common-mistakes-executive-english",
+    "resources/5-quick-wins-executive-english",
+    "resources/60-second-self-introduction-template",
+    "resources/client-call-opening-closing-framework",
+    "resources/pushback-playbook",
+    "resources/email-templates-difficult-situations",
+    "resources/executive-summary-formula",
+    "resources/feedback-framework",
+    "resources/interview-answer-templates",
+    "resources/meeting-rescue-phrases",
+    "resources/status-update-script",
+    "resources/questions-that-close-deals",
+    "resources/technical-explanation-formula",
+    "resources/difficult-conversation-checklist",
+    "resources/professional-apology-framework",
+    "resources/phrases-aggressive-clients",
+    "resources/salary-negotiation-script",
     "legal/privacy-policy",
     "legal/terms-of-service",
     "services/executive-english",

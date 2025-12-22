@@ -31,6 +31,7 @@ Ya seas un “Visitante” (navegando por el Sitio) o un “Usuario” (utilizan
 Al utilizar los Servicios, aceptas estar sujeto a estos Términos y a la [Política de Privacidad](#) de NYET, que en conjunto constituyen el acuerdo completo entre tú y NYET (el “Acuerdo”). Si no estás de acuerdo con estos Términos, por favor no utilices los Servicios.
 
 Para utilizar los Servicios, debes:
+
 - Tener al menos 16 años, o al menos 13 años con el consentimiento de un padre o tutor.
 - Ser legalmente capaz de celebrar un contrato vinculante.
 - Asegurarte de que toda la información de registro que proporciones sea veraz, precisa y se mantenga actualizada.

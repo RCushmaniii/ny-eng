@@ -47,9 +47,9 @@ const paddingClass = getPaddingClass({
       (title || description) && (
         <div class="text-center mb-8 max-w-3xl mx-auto">
           {eyebrow && <Eyebrow text={eyebrow} background={background} />}
-          {title && <h2 class={`fade-in-up ${textColor}`}>{title}</h2>}
+          {title && <h2 class:list={`fade-in-up ${textColor}`}>{title}</h2>}
           {description && (
-            <p class={`fade-in-up delay-1 mt-4 ${textColor} `}>{description}</p>
+            <p class:list={`fade-in-up delay-1 mt-4 ${textColor} `}>{description}</p>
           )}
           {button && (
             <div class="fade-in-up delay-2 mt-8">
@@ -63,7 +63,7 @@ const paddingClass = getPaddingClass({
     }
 
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-auto-fit gap-8 auto-rows-fr"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-auto-fit gap-8 lg:gap-10 auto-rows-fr"
     >
       {
         features.map((feature, index) => {
@@ -72,7 +72,7 @@ const paddingClass = getPaddingClass({
             <CardWrapper
               href={feature.link}
               class:list={[
-                "p-6 rounded-lg border border-black flex flex-col",
+                "p-8 rounded-lg border border-black flex flex-col",
                 background === "dark" ? "bg-background-base" : "bg-background",
                 feature.link &&
                   "feature-card-link transition-all duration-200 hover:border-primary hover:shadow-lg",
