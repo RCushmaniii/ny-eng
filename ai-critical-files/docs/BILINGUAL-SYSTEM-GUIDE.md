@@ -1,6 +1,7 @@
 # Bilingual System Guide
 
 ## Overview
+
 The bilingual system uses a centralized i18n helper (`src/lib/i18n.ts`) to manage routes, SEO metadata, and hreflang alternates for English and Spanish pages.
 
 ## Adding New Pages
@@ -8,16 +9,18 @@ The bilingual system uses a centralized i18n helper (`src/lib/i18n.ts`) to manag
 ### Step 1: Add TKey to i18n.ts
 
 1. **Add to TKey union type** (lines 6-25):
+
 ```typescript
 export type TKey =
   | "home"
   | "about"
   // ... existing keys
-  | "your-new-page"           // Add here
-  | "category/your-category"  // For nested pages
+  | "your-new-page" // Add here
+  | "category/your-category"; // For nested pages
 ```
 
 2. **Add route mappings** (lines 27-68):
+
 ```typescript
 export const routeFor: Record<Locale, Record<TKey, string>> = {
   en: {
@@ -26,7 +29,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "category/your-category": "/en/category/your-category/",
   },
   es: {
-    // ... existing routes  
+    // ... existing routes
     "your-new-page": "/es/tu-nueva-pagina/",
     "category/your-category": "/es/categoria/tu-categoria/",
   },
@@ -34,6 +37,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
 ```
 
 3. **Add to getAllTKeys()** (lines 88-109):
+
 ```typescript
 export function getAllTKeys(): TKey[] {
   return [
@@ -47,6 +51,7 @@ export function getAllTKeys(): TKey[] {
 ### Step 2: Create Page Files
 
 **English Page** (`src/pages/en/your-new-page.astro`):
+
 ```astro
 ---
 import Base from "@layouts/Base.astro";
@@ -59,7 +64,7 @@ const title = "Your Page Title";
 const description = "Your page description for SEO";
 ---
 
-<Base 
+<Base
   lang={lang}
   tkey={tkey}
   title={title}
@@ -70,6 +75,7 @@ const description = "Your page description for SEO";
 ```
 
 **Spanish Page** (`src/pages/es/tu-nueva-pagina.astro`):
+
 ```astro
 ---
 import Base from "@layouts/Base.astro";
@@ -82,7 +88,7 @@ const title = "Título de Tu Página";
 const description = "Descripción de tu página para SEO";
 ---
 
-<Base 
+<Base
   lang={lang}
   tkey={tkey}
   title={title}

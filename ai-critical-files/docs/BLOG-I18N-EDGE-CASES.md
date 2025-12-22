@@ -5,6 +5,7 @@
 ### 1. Blog Post Hreflang Problem 🔴 CRITICAL
 
 **Current Issue:**
+
 ```astro
 // In [slug].astro
 const tkey = 'blog' as const; // ❌ All posts use same TKey
@@ -15,6 +16,7 @@ const tkey = 'blog' as const; // ❌ All posts use same TKey
 **Solution Options:**
 
 #### Option A: Dynamic Hreflang (Recommended)
+
 ```astro
 ---
 // Don't use centralized i18n for individual posts
@@ -27,7 +29,7 @@ const hreflangs = [
 ];
 ---
 
-<Base 
+<Base
   lang={lang}
   title={seoTitle}
   description={seoDescription}
@@ -36,6 +38,7 @@ const hreflangs = [
 ```
 
 #### Option B: Individual TKeys (Complex)
+
 ```astro
 // Would require registering every blog post as a TKey
 const tkey = `blog/${Astro.params.slug}` as const;
@@ -45,6 +48,7 @@ const tkey = `blog/${Astro.params.slug}` as const;
 ### 2. Category Pages Not Using i18n System 🔴 CRITICAL
 
 **Current Issue:**
+
 ```astro
 <PaginatedBlogLayout
   lang="en"
@@ -54,12 +58,14 @@ const tkey = `blog/${Astro.params.slug}` as const;
 ```
 
 **Problems:**
+
 - Uses legacy Layout component
 - Manual hreflang management
 - Not integrated with centralized i18n
 - Missing Spanish category pages entirely
 
 **Solution:**
+
 1. Create Spanish category pages
 2. Add category TKeys to i18n.ts
 3. Update PaginatedBlogLayout to use Base layout
@@ -68,29 +74,34 @@ const tkey = `blog/${Astro.params.slug}` as const;
 ### 3. Blog Pagination Inconsistency 🟡 MEDIUM
 
 **Current Issue:**
+
 - Blog index (`/blog/`) uses one system
 - Blog pagination (`/blog/2/`) uses another system
 - Individual posts (`/blog/post-slug/`) use Base layout
 
 **Solution:**
+
 - Standardize all blog-related pages on Base layout
 - Create consistent pagination hreflang handling
 
 ### 4. Missing Spanish Blog Infrastructure 🔴 CRITICAL
 
 **Missing Files:**
+
 - `/es/category/[category].astro`
-- `/es/blog/[page].astro` 
+- `/es/blog/[page].astro`
 - Proper Spanish blog pagination
 
 ## Recommended Implementation Plan
 
 ### Phase 1: Fix Blog Post Hreflang
+
 1. Modify Base.astro to accept custom hreflang prop
 2. Update blog [slug].astro to generate dynamic hreflang
 3. Remove generic 'blog' tkey usage for individual posts
 
 ### Phase 2: Integrate Categories with i18n
+
 1. Add category TKeys to i18n.ts:
    ```typescript
    | "category/executive-english"
@@ -101,11 +112,13 @@ const tkey = `blog/${Astro.params.slug}` as const;
 3. Update PaginatedBlogLayout to use Base layout
 
 ### Phase 3: Fix Blog Pagination
+
 1. Add blog pagination TKeys to i18n.ts
 2. Update pagination components to use Base layout
 3. Ensure consistent SEO across all blog pages
 
 ### Phase 4: Validation & Testing
+
 1. Run hreflang validation
 2. Test category/pagination SEO
 3. Verify Spanish blog functionality
@@ -113,6 +126,7 @@ const tkey = `blog/${Astro.params.slug}` as const;
 ## Code Examples
 
 ### Enhanced Base Layout (Support Custom Hreflang)
+
 ```astro
 ---
 interface Props {
@@ -129,6 +143,7 @@ const alts = customHreflangs || (tkey ? alternates(tkey) : []);
 ```
 
 ### Fixed Blog Post Hreflang
+
 ```astro
 ---
 // In [slug].astro
@@ -137,14 +152,14 @@ const spanishTranslation = post.data.translations?.es;
 
 const customHreflangs = [
   { lang: 'en', href: currentUrl },
-  ...(spanishTranslation ? [{ 
-    lang: 'es', 
-    href: `/es/blog/${spanishTranslation}/` 
+  ...(spanishTranslation ? [{
+    lang: 'es',
+    href: `/es/blog/${spanishTranslation}/`
   }] : [])
 ];
 ---
 
-<Base 
+<Base
   lang="en"
   customHreflangs={customHreflangs}
   title={seoTitle}
@@ -153,6 +168,7 @@ const customHreflangs = [
 ```
 
 ### Category Page with i18n
+
 ```astro
 ---
 // Add to i18n.ts first
@@ -170,15 +186,18 @@ const tkey = `category/${categoryData.slug}` as const;
 ## SEO Impact Assessment
 
 ### High Risk Issues:
+
 - ❌ Incorrect hreflang on all blog posts
 - ❌ Missing Spanish category pages
 - ❌ Inconsistent canonical URLs
 
 ### Medium Risk Issues:
+
 - ⚠️ Mixed layout systems
 - ⚠️ Manual translation management
 
 ### Low Risk Issues:
+
 - 💡 Pagination URL structure
 - 💡 Category slug consistency
 
