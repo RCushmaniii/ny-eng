@@ -8,7 +8,10 @@ export async function writeReport(scriptName, jsonData, textData) {
   await fs.mkdir(archiveDir, { recursive: true });
 
   // Archive existing current.json/.txt
-  const timestamp = new Date().toISOString().replace(/[:T]/g, "-").split(".")[0];
+  const timestamp = new Date()
+    .toISOString()
+    .replace(/[:T]/g, "-")
+    .split(".")[0];
 
   for (const ext of [".json", ".txt"]) {
     const currentFile = path.join(reportsDir, `current${ext}`);
@@ -17,7 +20,7 @@ export async function writeReport(scriptName, jsonData, textData) {
       if (stat.isFile()) {
         const archivedFile = path.join(
           archiveDir,
-          `${scriptName}-${timestamp}${ext}`
+          `${scriptName}-${timestamp}${ext}`,
         );
         await fs.rename(currentFile, archivedFile);
       }
@@ -30,15 +33,11 @@ export async function writeReport(scriptName, jsonData, textData) {
   await fs.writeFile(
     path.join(reportsDir, "current.json"),
     JSON.stringify(jsonData, null, 2),
-    "utf8"
+    "utf8",
   );
 
   // Write new current.txt
   if (textData) {
-    await fs.writeFile(
-      path.join(reportsDir, "current.txt"),
-      textData,
-      "utf8"
-    );
+    await fs.writeFile(path.join(reportsDir, "current.txt"), textData, "utf8");
   }
 }

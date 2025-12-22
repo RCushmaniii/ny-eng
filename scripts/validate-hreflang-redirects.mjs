@@ -2,7 +2,7 @@
 
 /**
  * Hreflang Redirect Chain Validation Script
- * 
+ *
  * This script validates that all hreflang links:
  * 1. Return 200 status codes (no redirects)
  * 2. Have consistent trailing slashes
@@ -10,11 +10,11 @@
  * 4. Have proper reciprocal relationships
  */
 
-import https from 'https';
-import http from 'http';
-import { readFileSync } from 'fs';
+import https from "https";
+import http from "http";
+import { readFileSync } from "fs";
 
-const SITE_URL = 'https://www.nyenglishteacher.com';
+const SITE_URL = "https://www.nyenglishteacher.com";
 const MAX_CONCURRENT_REQUESTS = 5;
 
 /**
@@ -23,41 +23,41 @@ const MAX_CONCURRENT_REQUESTS = 5;
 function checkUrlStatus(url) {
   return new Promise((resolve) => {
     const urlObj = new URL(url);
-    const client = urlObj.protocol === 'https:' ? https : http;
+    const client = urlObj.protocol === "https:" ? https : http;
 
     const options = {
       hostname: urlObj.hostname,
-      port: urlObj.port || (urlObj.protocol === 'https:' ? 443 : 80),
+      port: urlObj.port || (urlObj.protocol === "https:" ? 443 : 80),
       path: urlObj.pathname + urlObj.search,
-      method: 'HEAD',
+      method: "HEAD",
       timeout: 10000,
       headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; HreflangValidator/1.0)'
-      }
+        "User-Agent": "Mozilla/5.0 (compatible; HreflangValidator/1.0)",
+      },
     };
 
     const req = client.request(options, (res) => {
       resolve({
         url,
         status: res.statusCode,
-        location: res.headers.location || null
+        location: res.headers.location || null,
       });
     });
 
-    req.on('error', (err) => {
+    req.on("error", (err) => {
       resolve({
         url,
-        status: 'ERROR',
-        error: err.message
+        status: "ERROR",
+        error: err.message,
       });
     });
 
-    req.on('timeout', () => {
+    req.on("timeout", () => {
       req.destroy();
       resolve({
         url,
-        status: 'TIMEOUT',
-        error: 'Request timeout'
+        status: "TIMEOUT",
+        error: "Request timeout",
       });
     });
 
@@ -78,7 +78,7 @@ async function checkUrlsBatch(urls) {
 
     // Small delay between batches
     if (i + MAX_CONCURRENT_REQUESTS < urls.length) {
-      await new Promise(resolve => setTimeout(resolve, 100));
+      await new Promise((resolve) => setTimeout(resolve, 100));
     }
   }
 
@@ -90,11 +90,13 @@ async function checkUrlsBatch(urls) {
  */
 function extractHreflangMappings() {
   try {
-    const content = readFileSync('./src/utils/hreflang.ts', 'utf-8');
+    const content = readFileSync("./src/utils/hreflang.ts", "utf-8");
 
     // Grab the full mappings block
-    const blockMatch = content.match(/export const hreflangMappings[^{]*{([\s\S]*?)}\s*;/);
-    if (!blockMatch) throw new Error('Could not find hreflangMappings export');
+    const blockMatch = content.match(
+      /export const hreflangMappings[^{]*{([\s\S]*?)}\s*;/,
+    );
+    if (!blockMatch) throw new Error("Could not find hreflangMappings export");
 
     const block = blockMatch[0];
     const entryRegex = /['"]([^'\"]+)['"]\s*:\s*{[^}]+}/g;
@@ -103,14 +105,15 @@ function extractHreflangMappings() {
     while ((m = entryRegex.exec(block)) !== null) {
       const full = m[0];
       const key = m[1];
-      const en = (full.match(/en:\s*['"]([^'\"]+)['"]/ )|| [])[1] || null;
-      const es = (full.match(/es:\s*['"]([^'\"]+)['"]/ )|| [])[1] || null;
-      const xDefault = (full.match(/xDefault:\s*['"]([^'\"]+)['"]/ )|| [])[1] || null;
+      const en = (full.match(/en:\s*['"]([^'\"]+)['"]/) || [])[1] || null;
+      const es = (full.match(/es:\s*['"]([^'\"]+)['"]/) || [])[1] || null;
+      const xDefault =
+        (full.match(/xDefault:\s*['"]([^'\"]+)['"]/) || [])[1] || null;
       mappings[key] = { en, es, xDefault };
     }
     return mappings;
   } catch (error) {
-    console.error('❌ Could not extract hreflang mappings:', error.message);
+    console.error("❌ Could not extract hreflang mappings:", error.message);
     return {};
   }
 }
@@ -119,7 +122,7 @@ function extractHreflangMappings() {
  * Validate hreflang mappings for redirect issues
  */
 async function validateHreflangRedirects() {
-  console.log('🔍 Validating hreflang redirect chains...\n');
+  console.log("🔍 Validating hreflang redirect chains...\n");
 
   let totalErrors = 0;
   let totalWarnings = 0;
@@ -128,7 +131,7 @@ async function validateHreflangRedirects() {
   const hreflangMappings = extractHreflangMappings();
 
   if (Object.keys(hreflangMappings).length === 0) {
-    console.log('❌ No hreflang mappings found. Exiting.');
+    console.log("❌ No hreflang mappings found. Exiting.");
     return false;
   }
 
@@ -143,14 +146,16 @@ async function validateHreflangRedirects() {
     }
   });
 
-  console.log(`📊 Checking ${allUrls.size} unique URLs from hreflang mappings...`);
+  console.log(
+    `📊 Checking ${allUrls.size} unique URLs from hreflang mappings...`,
+  );
 
   // Check all URLs for status codes
   const urlResults = await checkUrlsBatch(Array.from(allUrls));
 
   // Create lookup map for quick access
   const statusMap = new Map();
-  urlResults.forEach(result => {
+  urlResults.forEach((result) => {
     statusMap.set(result.url, result);
   });
 
@@ -168,7 +173,9 @@ async function validateHreflangRedirects() {
 
     // Check for 200 status codes
     if (enResult.status !== 200) {
-      console.log(`  ❌ ERROR: English URL returns ${enResult.status}: ${enUrl}`);
+      console.log(
+        `  ❌ ERROR: English URL returns ${enResult.status}: ${enUrl}`,
+      );
       if (enResult.location) {
         console.log(`     → Redirects to: ${enResult.location}`);
       }
@@ -176,7 +183,9 @@ async function validateHreflangRedirects() {
     }
 
     if (esResult.status !== 200) {
-      console.log(`  ❌ ERROR: Spanish URL returns ${esResult.status}: ${esUrl}`);
+      console.log(
+        `  ❌ ERROR: Spanish URL returns ${esResult.status}: ${esUrl}`,
+      );
       if (esResult.location) {
         console.log(`     → Redirects to: ${esResult.location}`);
       }
@@ -184,7 +193,9 @@ async function validateHreflangRedirects() {
     }
 
     if (defaultResult.status !== 200) {
-      console.log(`  ❌ ERROR: Default URL returns ${defaultResult.status}: ${defaultUrl}`);
+      console.log(
+        `  ❌ ERROR: Default URL returns ${defaultResult.status}: ${defaultUrl}`,
+      );
       if (defaultResult.location) {
         console.log(`     → Redirects to: ${defaultResult.location}`);
       }
@@ -192,13 +203,17 @@ async function validateHreflangRedirects() {
     }
 
     // Check for trailing slash consistency
-    if (!mapping.en.endsWith('/') && !mapping.en.includes('.')) {
-      console.log(`  ⚠️  WARNING: English URL missing trailing slash: ${mapping.en}`);
+    if (!mapping.en.endsWith("/") && !mapping.en.includes(".")) {
+      console.log(
+        `  ⚠️  WARNING: English URL missing trailing slash: ${mapping.en}`,
+      );
       totalWarnings++;
     }
 
-    if (!mapping.es.endsWith('/') && !mapping.es.includes('.')) {
-      console.log(`  ⚠️  WARNING: Spanish URL missing trailing slash: ${mapping.es}`);
+    if (!mapping.es.endsWith("/") && !mapping.es.includes(".")) {
+      console.log(
+        `  ⚠️  WARNING: Spanish URL missing trailing slash: ${mapping.es}`,
+      );
       totalWarnings++;
     }
 
@@ -208,23 +223,23 @@ async function validateHreflangRedirects() {
   }
 
   // Summary
-  console.log('\n' + '='.repeat(60));
-  console.log('📋 HREFLANG REDIRECT VALIDATION SUMMARY');
-  console.log('='.repeat(60));
+  console.log("\n" + "=".repeat(60));
+  console.log("📋 HREFLANG REDIRECT VALIDATION SUMMARY");
+  console.log("=".repeat(60));
 
   if (totalErrors === 0 && totalWarnings === 0) {
-    console.log('✅ All hreflang links are valid with no redirect chains!');
+    console.log("✅ All hreflang links are valid with no redirect chains!");
     return true;
   } else {
     console.log(`❌ Found ${totalErrors} errors and ${totalWarnings} warnings`);
 
     if (totalErrors > 0) {
-      console.log('\n🔧 RECOMMENDED ACTIONS:');
-      console.log('1. Fix URLs returning non-200 status codes');
-      console.log('2. Ensure all URLs have consistent trailing slashes');
-      console.log('3. Remove or redirect 404 URLs');
-      console.log('4. Fix missing reciprocal hreflang relationships');
-      console.log('5. Eliminate duplicate language entries');
+      console.log("\n🔧 RECOMMENDED ACTIONS:");
+      console.log("1. Fix URLs returning non-200 status codes");
+      console.log("2. Ensure all URLs have consistent trailing slashes");
+      console.log("3. Remove or redirect 404 URLs");
+      console.log("4. Fix missing reciprocal hreflang relationships");
+      console.log("5. Eliminate duplicate language entries");
     }
 
     return false;
@@ -239,7 +254,7 @@ async function main() {
     const isValid = await validateHreflangRedirects();
     process.exit(isValid ? 0 : 1);
   } catch (error) {
-    console.error('❌ Validation failed:', error.message);
+    console.error("❌ Validation failed:", error.message);
     process.exit(1);
   }
 }

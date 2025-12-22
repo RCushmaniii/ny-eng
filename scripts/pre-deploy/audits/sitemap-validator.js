@@ -2,7 +2,7 @@
 
 /**
  * Sitemap Validator
- * 
+ *
  * Validates sitemap integrity:
  * 1. All URLs in sitemap are canonical (match their own canonical tags)
  * 2. Hreflang tags are reciprocal and valid
@@ -10,14 +10,14 @@
  * 4. All critical URLs are present in sitemap
  */
 
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { parse } from 'node-html-parser';
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { parse } from "node-html-parser";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const projectRoot = path.resolve(__dirname, '../../..');
+const projectRoot = path.resolve(__dirname, "../../..");
 
 class SitemapValidator {
   constructor() {
@@ -25,9 +25,12 @@ class SitemapValidator {
     this.warnings = [];
     this.passed = [];
     this.urlsChecked = 0;
-    this.distPath = path.join(projectRoot, 'dist');
-    this.sitemapPath = path.join(this.distPath, 'sitemap-0.xml');
-    this.criticalUrlsPath = path.join(projectRoot, 'scripts/pre-deploy/CRITICAL-URLS.txt');
+    this.distPath = path.join(projectRoot, "dist");
+    this.sitemapPath = path.join(this.distPath, "sitemap-0.xml");
+    this.criticalUrlsPath = path.join(
+      projectRoot,
+      "scripts/pre-deploy/CRITICAL-URLS.txt",
+    );
   }
 
   /**
@@ -38,11 +41,11 @@ class SitemapValidator {
       throw new Error(`Sitemap not found at: ${this.sitemapPath}`);
     }
 
-    const xml = fs.readFileSync(this.sitemapPath, 'utf-8');
-    
+    const xml = fs.readFileSync(this.sitemapPath, "utf-8");
+
     // Extract URLs using regex (simple XML parsing)
     const urlMatches = xml.matchAll(/<loc>([^<]+)<\/loc>/g);
-    const urls = Array.from(urlMatches).map(match => match[1]);
+    const urls = Array.from(urlMatches).map((match) => match[1]);
 
     return urls;
   }
@@ -52,14 +55,16 @@ class SitemapValidator {
    */
   loadCriticalUrls() {
     if (!fs.existsSync(this.criticalUrlsPath)) {
-      throw new Error(`Critical URLs file not found at: ${this.criticalUrlsPath}`);
+      throw new Error(
+        `Critical URLs file not found at: ${this.criticalUrlsPath}`,
+      );
     }
 
-    const content = fs.readFileSync(this.criticalUrlsPath, 'utf-8');
+    const content = fs.readFileSync(this.criticalUrlsPath, "utf-8");
     const urls = content
-      .split('\n')
-      .filter(line => line.trim().startsWith('https://'))
-      .map(line => line.trim());
+      .split("\n")
+      .filter((line) => line.trim().startsWith("https://"))
+      .map((line) => line.trim());
 
     return urls;
   }
@@ -72,38 +77,40 @@ class SitemapValidator {
     const urlPath = new URL(url).pathname;
     let filePath;
 
-    if (urlPath === '/' || urlPath === '') {
-      filePath = path.join(this.distPath, 'index.html');
+    if (urlPath === "/" || urlPath === "") {
+      filePath = path.join(this.distPath, "index.html");
     } else {
       // Remove trailing slash and add index.html
-      const cleanPath = urlPath.endsWith('/') ? urlPath.slice(0, -1) : urlPath;
-      filePath = path.join(this.distPath, cleanPath, 'index.html');
+      const cleanPath = urlPath.endsWith("/") ? urlPath.slice(0, -1) : urlPath;
+      filePath = path.join(this.distPath, cleanPath, "index.html");
     }
 
     if (!fs.existsSync(filePath)) {
       return { isCanonical: false, reason: `File not found: ${filePath}` };
     }
 
-    const html = fs.readFileSync(filePath, 'utf-8');
+    const html = fs.readFileSync(filePath, "utf-8");
     const root = parse(html);
-    
+
     // Extract canonical URL
     const canonicalTag = root.querySelector('link[rel="canonical"]');
-    
+
     if (!canonicalTag) {
-      return { isCanonical: false, reason: 'No canonical tag found' };
+      return { isCanonical: false, reason: "No canonical tag found" };
     }
 
-    const canonical = canonicalTag.getAttribute('href');
-    
+    const canonical = canonicalTag.getAttribute("href");
+
     // Normalize URLs for comparison (ensure trailing slashes)
-    const normalizedUrl = url.endsWith('/') ? url : url + '/';
-    const normalizedCanonical = canonical.endsWith('/') ? canonical : canonical + '/';
+    const normalizedUrl = url.endsWith("/") ? url : url + "/";
+    const normalizedCanonical = canonical.endsWith("/")
+      ? canonical
+      : canonical + "/";
 
     if (normalizedUrl !== normalizedCanonical) {
-      return { 
-        isCanonical: false, 
-        reason: `Canonical mismatch: sitemap has ${url}, page has ${canonical}` 
+      return {
+        isCanonical: false,
+        reason: `Canonical mismatch: sitemap has ${url}, page has ${canonical}`,
       };
     }
 
@@ -117,41 +124,49 @@ class SitemapValidator {
     const urlPath = new URL(url).pathname;
     let filePath;
 
-    if (urlPath === '/' || urlPath === '') {
-      filePath = path.join(this.distPath, 'index.html');
+    if (urlPath === "/" || urlPath === "") {
+      filePath = path.join(this.distPath, "index.html");
     } else {
-      const cleanPath = urlPath.endsWith('/') ? urlPath.slice(0, -1) : urlPath;
-      filePath = path.join(this.distPath, cleanPath, 'index.html');
+      const cleanPath = urlPath.endsWith("/") ? urlPath.slice(0, -1) : urlPath;
+      filePath = path.join(this.distPath, cleanPath, "index.html");
     }
 
     if (!fs.existsSync(filePath)) {
-      return { valid: false, reason: 'File not found' };
+      return { valid: false, reason: "File not found" };
     }
 
-    const html = fs.readFileSync(filePath, 'utf-8');
+    const html = fs.readFileSync(filePath, "utf-8");
     const root = parse(html);
-    
+
     // Extract hreflang tags
-    const hreflangTags = root.querySelectorAll('link[rel="alternate"][hreflang]');
-    
+    const hreflangTags = root.querySelectorAll(
+      'link[rel="alternate"][hreflang]',
+    );
+
     if (hreflangTags.length === 0) {
       // No hreflang is okay for some pages
       return { valid: true, count: 0 };
     }
 
     // Check if there's an x-default
-    const hasXDefault = hreflangTags.some(tag => tag.getAttribute('hreflang') === 'x-default');
-    
+    const hasXDefault = hreflangTags.some(
+      (tag) => tag.getAttribute("hreflang") === "x-default",
+    );
+
     // Check if there are both en-US and es-MX (for bilingual site)
-    const hasEnUS = hreflangTags.some(tag => tag.getAttribute('hreflang') === 'en-US');
-    const hasEsMX = hreflangTags.some(tag => tag.getAttribute('hreflang') === 'es-MX');
+    const hasEnUS = hreflangTags.some(
+      (tag) => tag.getAttribute("hreflang") === "en-US",
+    );
+    const hasEsMX = hreflangTags.some(
+      (tag) => tag.getAttribute("hreflang") === "es-MX",
+    );
 
     if (!hasXDefault) {
-      return { valid: false, reason: 'Missing x-default hreflang' };
+      return { valid: false, reason: "Missing x-default hreflang" };
     }
 
     if (!hasEnUS || !hasEsMX) {
-      return { valid: false, reason: 'Missing en-US or es-MX hreflang' };
+      return { valid: false, reason: "Missing en-US or es-MX hreflang" };
     }
 
     return { valid: true, count: hreflangTags.length };
@@ -164,7 +179,10 @@ class SitemapValidator {
     this.urlsChecked++;
 
     // Skip root URL (it redirects to /en/)
-    if (url === 'https://www.nyenglishteacher.com/' || url === 'https://www.nyenglishteacher.com') {
+    if (
+      url === "https://www.nyenglishteacher.com/" ||
+      url === "https://www.nyenglishteacher.com"
+    ) {
       this.passed.push(url);
       return;
     }
@@ -174,7 +192,7 @@ class SitemapValidator {
     if (!canonicalCheck.isCanonical) {
       this.errors.push({
         url,
-        issue: `Non-canonical in sitemap: ${canonicalCheck.reason}`
+        issue: `Non-canonical in sitemap: ${canonicalCheck.reason}`,
       });
       return;
     }
@@ -182,15 +200,16 @@ class SitemapValidator {
     // Skip hreflang check for category pages - they use customHreflangs in HTML
     // which are correctly implemented but not reflected in sitemap XML
     const urlPath = new URL(url).pathname;
-    const isCategoryPage = urlPath.includes('/category/') || urlPath.includes('/categoria/');
-    
+    const isCategoryPage =
+      urlPath.includes("/category/") || urlPath.includes("/categoria/");
+
     if (!isCategoryPage) {
       // Check hreflang
       const hreflangCheck = this.checkHreflang(url);
       if (!hreflangCheck.valid) {
         this.warnings.push({
           url,
-          issue: `Hreflang issue: ${hreflangCheck.reason}`
+          issue: `Hreflang issue: ${hreflangCheck.reason}`,
         });
       }
     }
@@ -204,11 +223,15 @@ class SitemapValidator {
   checkCriticalUrlsCoverage(sitemapUrls, criticalUrls) {
     const missing = [];
 
-    criticalUrls.forEach(criticalUrl => {
+    criticalUrls.forEach((criticalUrl) => {
       // Normalize for comparison
-      const normalized = criticalUrl.endsWith('/') ? criticalUrl : criticalUrl + '/';
-      const found = sitemapUrls.some(sitemapUrl => {
-        const normalizedSitemap = sitemapUrl.endsWith('/') ? sitemapUrl : sitemapUrl + '/';
+      const normalized = criticalUrl.endsWith("/")
+        ? criticalUrl
+        : criticalUrl + "/";
+      const found = sitemapUrls.some((sitemapUrl) => {
+        const normalizedSitemap = sitemapUrl.endsWith("/")
+          ? sitemapUrl
+          : sitemapUrl + "/";
         return normalizedSitemap === normalized;
       });
 
@@ -224,9 +247,9 @@ class SitemapValidator {
    * Generate report
    */
   generateReport() {
-    console.log('\n' + '='.repeat(80));
-    console.log('📊 SITEMAP VALIDATION REPORT');
-    console.log('='.repeat(80) + '\n');
+    console.log("\n" + "=".repeat(80));
+    console.log("📊 SITEMAP VALIDATION REPORT");
+    console.log("=".repeat(80) + "\n");
 
     console.log(`✅ URLs Checked: ${this.urlsChecked}`);
     console.log(`✅ Passed: ${this.passed.length}`);
@@ -234,8 +257,8 @@ class SitemapValidator {
     console.log(`❌ Errors: ${this.errors.length}\n`);
 
     if (this.errors.length > 0) {
-      console.log('❌ CRITICAL ERRORS:\n');
-      this.errors.forEach(error => {
+      console.log("❌ CRITICAL ERRORS:\n");
+      this.errors.forEach((error) => {
         console.log(`  ${error.url}`);
         console.log(`    └─ ${error.issue}\n`);
       });
@@ -243,19 +266,19 @@ class SitemapValidator {
 
     if (this.warnings.length > 0) {
       console.log(`\n⚠️  WARNINGS:\n`);
-      this.warnings.forEach(warning => {
+      this.warnings.forEach((warning) => {
         console.log(`  ${warning.url}`);
         console.log(`    └─ ${warning.issue}\n`);
       });
     }
 
-    console.log('='.repeat(80));
-    
+    console.log("=".repeat(80));
+
     if (this.errors.length === 0) {
-      console.log('✅ PASS - Sitemap is valid\n');
+      console.log("✅ PASS - Sitemap is valid\n");
       return 0;
     } else {
-      console.log('❌ FAIL - Fix errors before deploying\n');
+      console.log("❌ FAIL - Fix errors before deploying\n");
       return 1;
     }
   }
@@ -264,12 +287,12 @@ class SitemapValidator {
    * Run full validation
    */
   async run() {
-    console.log('🗺️  Starting Sitemap Validation...\n');
-    console.log('📝 Checking:');
-    console.log('  • All URLs in sitemap are canonical');
-    console.log('  • Hreflang tags are present and valid');
-    console.log('  • All critical URLs are in sitemap\n');
-    
+    console.log("🗺️  Starting Sitemap Validation...\n");
+    console.log("📝 Checking:");
+    console.log("  • All URLs in sitemap are canonical");
+    console.log("  • Hreflang tags are present and valid");
+    console.log("  • All critical URLs are in sitemap\n");
+
     const sitemapUrls = this.loadSitemap();
     const criticalUrls = this.loadCriticalUrls();
 
@@ -277,15 +300,18 @@ class SitemapValidator {
     console.log(`📋 Found ${criticalUrls.length} critical URLs\n`);
 
     // Check each URL in sitemap
-    sitemapUrls.forEach(url => this.validateUrl(url));
+    sitemapUrls.forEach((url) => this.validateUrl(url));
 
     // Check critical URLs coverage
-    const missingCritical = this.checkCriticalUrlsCoverage(sitemapUrls, criticalUrls);
+    const missingCritical = this.checkCriticalUrlsCoverage(
+      sitemapUrls,
+      criticalUrls,
+    );
     if (missingCritical.length > 0) {
-      missingCritical.forEach(url => {
+      missingCritical.forEach((url) => {
         this.errors.push({
           url,
-          issue: 'Critical URL missing from sitemap'
+          issue: "Critical URL missing from sitemap",
         });
       });
     }
@@ -296,4 +322,4 @@ class SitemapValidator {
 
 // Run validator
 const validator = new SitemapValidator();
-validator.run().then(exitCode => process.exit(exitCode));
+validator.run().then((exitCode) => process.exit(exitCode));

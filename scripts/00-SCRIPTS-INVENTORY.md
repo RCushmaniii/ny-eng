@@ -1,8 +1,15 @@
 # Scripts Inventory & Analysis
 
-**Last Updated:** 2024-11-28
+**Last Updated:** 2024-12-13
 
-This document catalogs all scripts in the `/scripts` folder, their purpose, and recommendations for cleanup.
+This document catalogs all scripts in the `/scripts` folder, their purpose, and cleanup status.
+
+## 🎉 Recent Cleanup (2024-12-13)
+
+- ✅ Deleted `validate-hreflang-old.mjs` (obsolete)
+- ✅ Moved one-time migration scripts to `/archive/migrations/`
+- ✅ Moved root-level test scripts to `/archive/`
+- ✅ Organized `/docs/` into subdirectories (seo, deployment, features, architecture)
 
 ---
 
@@ -15,6 +22,10 @@ scripts/
 ├── utils/                   # ✅ ACTIVE - Shared utilities
 ├── patches/                 # ⚠️  REVIEW - One-time patches
 └── [root scripts]           # ⚠️  REVIEW - Various scripts
+
+archive/
+├── migrations/              # ✅ ARCHIVED - One-time migration scripts
+└── [other archived scripts]
 ```
 
 ---
@@ -49,13 +60,12 @@ scripts/
 
 **Location:** `/` (root)
 
-| File                           | Purpose                              | Status                      |
-| ------------------------------ | ------------------------------------ | --------------------------- |
-| `test-calendar-api.mjs`        | Test Google Calendar API integration | ✅ KEEP - Active feature    |
-| `get-google-refresh-token.mjs` | Generate OAuth refresh tokens        | ✅ KEEP - Setup utility     |
-| `generate-refresh-token.js`    | Generate OAuth refresh tokens        | ⚠️ CHECK - May be duplicate |
+| File                           | Purpose                              | Status                   |
+| ------------------------------ | ------------------------------------ | ------------------------ |
+| `test-calendar-api.mjs`        | Test Google Calendar API integration | ✅ KEEP - Active feature |
+| `get-google-refresh-token.mjs` | Generate OAuth refresh tokens        | ✅ KEEP - Setup utility  |
 
-**Question:** Are `get-google-refresh-token.mjs` and `generate-refresh-token.js` duplicates?
+**Note:** `generate-refresh-token.js` is not present in the repo. Keep `get-google-refresh-token.mjs` as the single source for OAuth token generation.
 
 ---
 
@@ -66,13 +76,13 @@ scripts/
 | File               | Purpose                     | Status                         |
 | ------------------ | --------------------------- | ------------------------------ |
 | `test-env.mjs`     | Test environment variables  | ✅ KEEP - Useful for debugging |
-| `test-env-raw.mjs` | Test raw environment access | ⚠️ REVIEW - May be redundant   |
+| `test-env-raw.mjs` | Test raw environment access | ⚠️ OPTIONAL - Can remove       |
 
-**Question:** Is `test-env-raw.mjs` still needed or can we consolidate into `test-env.mjs`?
+**Note:** `test-env.mjs` now supports `--raw` mode (values redacted), and `npm run test:env:raw` points to `test-env.mjs --raw`. `test-env-raw.mjs` can be deleted after confirmation.
 
 ---
 
-## ⚠️ REVIEW NEEDED - SEO Scripts
+### SEO Scripts
 
 **Location:** `/seo/`
 
@@ -142,36 +152,52 @@ These scripts appear to be older validation tools. Many may be redundant with th
 
 ---
 
-## 🗑️ MARKED FOR DELETION
+## 📦 ARCHIVED SCRIPTS
 
-These scripts are clearly obsolete or redundant:
+These scripts have been moved to `/archive/migrations/` (one-time use):
 
-| File                        | Reason                                  |
-| --------------------------- | --------------------------------------- |
-| `validate-hreflang-old.mjs` | Explicitly marked as "old" - superseded |
+| File                       | Purpose                 | Status      |
+| -------------------------- | ----------------------- | ----------- |
+| `check-section-count.py`   | JSON audit helper       | ✅ ARCHIVED |
+| File                       | Purpose                 | Status      |
+| -------------------------- | ----------------------- | ----------- |
+| `delete-duplicates.ps1`    | Delete duplicate routes | ✅ ARCHIVED |
+| `test-quiz-submission.ps1` | Test quiz API           | ✅ ARCHIVED |
 
 ---
 
 ## 📊 Summary Statistics
 
-- **Total Scripts:** 32 files
-- **Active & Essential:** 7 files (22%)
-- **Needs Review:** 24 files (75%)
-- **Marked for Deletion:** 1 file (3%)
+**Before Cleanup:**
+
+- Total Scripts: 32 files
+- Active & Essential: 7 files (22%)
+- Needs Review: 24 files (75%)
+- Marked for Deletion: 1 file (3%)
+
+**After Cleanup (2024-12-13):**
+
+- **Total Scripts:** 23 files (9 removed/archived)
+- **Active & Essential:** 7 files (30%)
+- **Needs Review:** 16 files (70%)
+- **Archived:** 10 files
 
 ---
 
 ## 🎯 Recommended Actions
 
-### Immediate (No Risk)
+### ✅ Completed (2024-12-13)
 
-1. ✅ Delete `validate-hreflang-old.mjs` (clearly obsolete)
+1. ✅ Deleted `validate-hreflang-old.mjs` (obsolete)
+2. ✅ Archived one-time migration scripts to `/archive/migrations/`
+3. ✅ Moved root-level test scripts to `/archive/`
+4. ✅ Organized `/docs/` into subdirectories
 
-### Short Term (After Review)
+### Next Steps (After Review)
 
-2. ⚠️ Consolidate duplicate environment testers
-3. ⚠️ Consolidate duplicate project structure generators
-4. ⚠️ Determine if one-time scripts (flatten, export) can be archived
+1. ⚠️ Consolidate duplicate environment testers (`test-env.mjs` vs `test-env-raw.mjs`)
+2. ⚠️ Consolidate duplicate project structure generators
+3. ⚠️ Review if Google OAuth scripts are duplicates
 
 ### Long Term (Gradual Migration)
 
@@ -183,7 +209,7 @@ These scripts are clearly obsolete or redundant:
 
 ## ❓ Questions for User
 
-1. **Google OAuth:** Are `get-google-refresh-token.mjs` and `generate-refresh-token.js` duplicates?
+1. **Google OAuth:** Confirm we should keep `get-google-refresh-token.mjs` as the only OAuth token generator script.
 2. **Environment Testing:** Can we consolidate `test-env.mjs` and `test-env-raw.mjs`?
 3. **Project Structure:** Are `generate-project-structure.mjs`, `project-mapper.mjs`, and `report-structure.mjs` all needed?
 4. **One-Time Scripts:** Can we archive `export-quiz-files.ps1` and `flatten-files.mjs`?

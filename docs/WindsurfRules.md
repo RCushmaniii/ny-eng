@@ -16,10 +16,10 @@ We want Windsurf AI to:
 1. **Auto-heal known issues** — based on the last audit’s 13 critical 404s.
 2. **Prevent regressions** — by enforcing checks against new broken internal links.
 3. **Avoid manual patching** — through programmatic fixes like:
-   * Intelligent route generation (`[slug].astro` category archives)
-   * URL rewriting in pagination utilities
-   * Redirect injection
-   * Dynamic sitemap pruning
+   - Intelligent route generation (`[slug].astro` category archives)
+   - URL rewriting in pagination utilities
+   - Redirect injection
+   - Dynamic sitemap pruning
 4. **Enforce clean architecture** — ensure sitemap, internal links, and final build outputs are all in sync.
 
 ---
@@ -59,7 +59,7 @@ By encoding these assumptions and guiding principles in Windsurf AI, the site wi
 > **Goal:**
 > Ensure the website generates a multilingual, SEO-optimized sitemap that accurately links English and Spanish pages (including correct `hreflang` alternates), using Astro’s content and our folder structure.
 >
-> *All scripts must maintain Google/Bing best practices, avoid duplicate URLs, and reflect the true set of published content.*
+> _All scripts must maintain Google/Bing best practices, avoid duplicate URLs, and reflect the true set of published content._
 
 ### ⚙️ How We Accomplish This
 
@@ -103,20 +103,24 @@ By encoding these assumptions and guiding principles in Windsurf AI, the site wi
 # Windsurf Project Coding Rules
 
 ## Component Imports
+
 - Always use **absolute imports** for shared components, data, and assets:
   - `@components/`, `@layouts/`, `@data/`, `@assets/`
 - Keep local imports (unique to a page/component) relative.
 
 ## Translation & Localization
+
 - Reference the translation map in `/data` for slugs; keep language alternates in sync between EN and ES.
 - For every bilingual page, update translation maps in both directions (EN→ES and ES→EN).
 - Language switchers and `hreflang` links must be present and correct for all top-level and blog/category pages.
 
 ## SEO Meta
+
 - Titles and descriptions must follow project length/content requirements (see `/seo` docs or project README).
 - All images must include descriptive `alt` text, localized per language.
 
 ## General
+
 - All code should be DRY and maintainable. Avoid duplicate logic between EN and ES; use shared props and config objects.
 - Remove any debug code or `console.log` statements before merge/release.
 
@@ -125,6 +129,7 @@ By encoding these assumptions and guiding principles in Windsurf AI, the site wi
 ## Example Patterns
 
 **Structured Data:**
+
 ```astro
 <script type="application/ld+json">
   {JSON.stringify(organizationJsonLd)}
@@ -132,12 +137,14 @@ By encoding these assumptions and guiding principles in Windsurf AI, the site wi
 ```
 
 **Component Imports:**
+
 ```js
 import Hero from "@components/sections/Hero.astro";
 import { featureLists } from "@data/features";
 ```
 
 **SEO Meta:**
+
 ```astro
 ---
 import { seoTitle, seoDescription } from "@data/seo";
@@ -146,6 +153,7 @@ import { seoTitle, seoDescription } from "@data/seo";
 ```
 
 **Bilingual Translation Map:**
+
 ```js
 // /data/translationMap.js
 export const translationMap = {
@@ -157,6 +165,7 @@ export const translationMap = {
 ---
 
 ## Modifying These Rules
+
 - Update `WindsurfRules.md` for project-specific conventions.
 - Submit a PR for rule changes—explain rationale and give examples of new/changed rules.
 - After updating rules, notify the team to avoid code drift.
@@ -184,10 +193,10 @@ export const translationMap = {
   fix:
     - action: create_redirect
       status: 301
-      to: "/en/blog/page/2/"        # default lang = EN
+      to: "/en/blog/page/2/" # default lang = EN
     - action: patch_file
       path: "src/utils/pagination.ts"
-      find: "`${page}`"             # root-level pattern
+      find: "`${page}`" # root-level pattern
       replace: "`blog/page/${page}/`"
 
 # --------------------------------------------------------------------
@@ -207,7 +216,7 @@ export const translationMap = {
   detect: { url_pattern: "^/category/[a-z0-9-]+$" }
   fix:
     - generate_dynamic_route:
-        template:  |
+        template: |
           ---astro
           import { getCollection } from 'astro:content';
           const { slug } = Astro.params;
@@ -221,7 +230,7 @@ export const translationMap = {
     - create_redirect:
         status: 301
         from: "/category/{slug}"
-        to:   "/en/category/{slug}/"
+        to: "/en/category/{slug}/"
 
 # --------------------------------------------------------------------
 # 9–12. SPANISH CATEGORY PAGES  –  “/category/<spanish-slug>”
@@ -231,7 +240,7 @@ export const translationMap = {
   fix:
     - generate_dynamic_route:
         path: "src/pages/es/category/[slug].astro"
-        template: "@@copy(id=build-category-pages-en.template)"   # reuse EN template
+        template: "@@copy(id=build-category-pages-en.template)" # reuse EN template
     - create_redirect:
         status: 301
         to: "/es/category/{slug}/"
@@ -240,11 +249,12 @@ export const translationMap = {
 # 13. MISSING ES SERVICE PAGE
 # --------------------------------------------------------------------
 - id: es-service-missing
-  detect: { url_equals: "/es/servicios/ingles-para-comunicacion-de-alto-impacto" }
+  detect:
+    { url_equals: "/es/servicios/ingles-para-comunicacion-de-alto-impacto" }
   fix:
     - if_content_exists:
         path: "src/content/services/es/ingles-para-comunicacion-de-alto-impacto.md"
-        then: skip                         # page is now present → done
+        then: skip # page is now present → done
         else:
           - remove_internal_links:
               pointing_to: "/es/servicios/ingles-para-comunicacion-de-alto-impacto"
@@ -258,8 +268,8 @@ export const translationMap = {
   detect: { build_stage: "post" }
   assert:
     condition: internal_4xx_count == 0
-    on_fail:   abort_build
-    message:   |
+    on_fail: abort_build
+    message: |
       "❌ New broken links detected. Run `npm run crawl:internal` to list them."
 
 # --------------------------------------------------------------------
@@ -268,8 +278,7 @@ export const translationMap = {
 - id: sitemap-prune
   description: Remove any path that wasn’t generated to /dist.
   detect: { build_stage: "pre-sitemap" }
-  fix:     { prune_sitemap_to_dist: true }
-
+  fix: { prune_sitemap_to_dist: true }
 #######################################################################
 #  END  –  Windsurf will interpret each rule top-to-bottom
 #######################################################################
