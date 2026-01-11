@@ -1,0 +1,29 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import ChatEmbedTest from "@components/chat/ChatEmbedTest.astro";
+
+const seoTitle = "Chat Test | AI English Coach | New York English Teacher";
+const seoDescription =
+  "Test page to verify chatbot autofocus behavior without scroll prevention fixes.";
+---
+
+<Base
+  lang="en"
+  title={seoTitle}
+  description={seoDescription}
+  ogImage={{ src: "/images/logos/new-york-english-sq-og.jpg" }}
+  noindex={true}
+  customCanonical="https://www.nyenglishteacher.com/en/chat-test/"
+  customHreflangs={[
+    { lang: "en", href: "https://www.nyenglishteacher.com/en/chat-test/" },
+    { lang: "es", href: "https://www.nyenglishteacher.com/es/chat-test/" },
+    {
+      lang: "x-default",
+      href: "https://www.nyenglishteacher.com/en/chat-test/",
+    },
+  ]}
+>
+  <ChatEmbedTest lang="en" />
+</Base>

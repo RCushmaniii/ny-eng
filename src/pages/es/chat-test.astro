@@ -1,0 +1,29 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import ChatEmbedTest from "@components/chat/ChatEmbedTest.astro";
+
+const seoTitle =
+  "Prueba de Chat | Coach de Inglés con IA | New York English Teacher";
+const seoDescription =
+  "Página de prueba para verificar el comportamiento de enfoque automático del chatbot sin correcciones de prevención de desplazamiento.";
+---
+
+<Base
+  lang="es"
+  title={seoTitle}
+  description={seoDescription}
+  ogImage={{ src: "/images/logos/new-york-english-sq-og.jpg" }}
+  noindex={true}
+  customHreflangs={[
+    { lang: "en", href: "https://www.nyenglishteacher.com/en/chat-test/" },
+    { lang: "es", href: "https://www.nyenglishteacher.com/es/chat-test/" },
+    {
+      lang: "x-default",
+      href: "https://www.nyenglishteacher.com/en/chat-test/",
+    },
+  ]}
+>
+  <ChatEmbedTest lang="es" />
+</Base>

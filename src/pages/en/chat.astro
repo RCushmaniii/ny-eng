@@ -18,4 +18,12 @@ const seoDescription =
   noindex={true}
 >
   <ChatEmbed lang="en" />
+
+  <script>
+    // Prevent automatic scroll on page load
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+  </script>
 </Base>
