@@ -35,3 +35,4 @@ pnpm-debug.log*
 # Temp files
 tmpclaude-*
 nul
+supabase/

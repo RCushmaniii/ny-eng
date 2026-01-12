@@ -6,3 +6,13 @@ declare module "*.astro" {
   export default Component;
   export type { ConnectItem } from "@components/Footer.astro";
 }
+
+// Environment variables for Supabase
+interface ImportMetaEnv {
+  readonly SUPABASE_URL: string;
+  readonly SUPABASE_ANON_KEY: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}
