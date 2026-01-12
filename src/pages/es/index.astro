@@ -55,15 +55,11 @@ const heroContent = {
       link: "/es/reservar/",
       variant: "primary" as const,
     },
-    {
-      text: "Inicia la Evaluación Ejecutiva",
-      link: "/es/assessments/",
-      variant: "secondary" as const,
-    },
+    // Single CTA for higher conversion - matches EN page
   ],
   backgroundImage: heroSkyline,
   backgroundImageMobile: heroSkyline,
-  overlayOpacity: 0.3,
+  overlayOpacity: 0.9,
   fullHeight: true,
 } as const;
 
@@ -189,7 +185,7 @@ const recentPostsSection = {
     <Hero content={heroContent} />
     <Features content={featuresSection} padding="small" background="light" />
     <QuizPromotion lang="es" />
-    <div class="mb-16 pb-0">
+    <div class="mb-15 pb-0">
       <Testimonials
         content={testimonialsBlock}
         background="base"
