@@ -1,0 +1,59 @@
+---
+/**
+ * Dynamic Quiz Report Page (Spanish)
+ *
+ * Route: /es/quiz/[quizType]/report/
+ * Displays detailed quiz results with gap analysis
+ * Uses the polished QuizReport.tsx React component
+ */
+
+import Base from "@layouts/Base.astro";
+import QuizReport from "@components/QuizReport.tsx";
+import {
+  getQuizConfig,
+  isQuizTypeAvailable,
+  getAvailableQuizTypes,
+} from "@/data/quiz/configs";
+import type { QuizType } from "@/data/quiz/types";
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return getAvailableQuizTypes().map((qt) => ({ params: { quizType: qt } }));
+}
+
+// Get quiz type from URL params
+const { quizType } = Astro.params;
+
+// Validate quiz type
+if (!quizType || !isQuizTypeAvailable(quizType)) {
+  return Astro.redirect("/es/404");
+}
+
+// Get quiz configuration
+const config = getQuizConfig(quizType as QuizType, "es");
+
+const title = `Informe | ${config.title}`;
+const description =
+  "Tu informe personalizado de Confianza en la Comunicación con análisis detallado de brechas, evaluación de fortalezas y hoja de ruta de mejora de 30 días.";
+---
+
+<Base
+  title={title}
+  description={description}
+  lang="es"
+  tkey="quiz/report"
+  hideCta={true}
+  hideLanguageSwitcher={true}
+>
+  <div class="quiz-report-wrapper">
+    <QuizReport client:load />
+  </div>
+</Base>
+
+<style>
+  .quiz-report-wrapper {
+    padding-top: 5rem;
+    min-height: 100vh;
+  }
+</style>
