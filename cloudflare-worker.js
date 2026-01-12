@@ -1,5 +1,11 @@
 /**
- * NY English Teacher – Cloudflare Worker v3
+ * NY English Teacher – Cloudflare Worker v3.1
+ *
+ * NEW IN V3.1:
+ * - Rate limiting on booking endpoint
+ * - OAuth token caching (1 hour TTL)
+ * - Slots caching (5 minute TTL)
+ * - Secured debug endpoint
  *
  * NEW IN V3:
  * - Split business hours (morning + afternoon blocks)
@@ -25,7 +31,82 @@
  *     ALLOWED_ORIGINS           (comma-separated)
  *     TIMEZONE                  (default: America/Mexico_City)
  *     CONTACT_WEBHOOK_URL       (optional)
+ *     DEBUG_ENABLED             (set to "true" to enable /debug endpoint)
+ *     DEBUG_KEY                 (optional auth key for /debug)
+ *     RATE_LIMIT_MAX            (default: 5 bookings per window)
+ *     RATE_LIMIT_WINDOW_MS      (default: 3600000 = 1 hour)
  */
+
+/* ------------------------ Rate Limiting ------------------------ */
+
+// In-memory rate limit store (persists within worker isolate)
+const rateLimitStore = new Map();
+
+// Clean up old entries periodically
+function cleanupRateLimitStore(windowMs) {
+  const now = Date.now();
+  for (const [key, data] of rateLimitStore.entries()) {
+    if (now - data.windowStart > windowMs * 2) {
+      rateLimitStore.delete(key);
+    }
+  }
+}
+
+function checkRateLimit(identifier, maxRequests, windowMs) {
+  const now = Date.now();
+  const key = `rate:${identifier}`;
+
+  let data = rateLimitStore.get(key);
+
+  if (!data || now - data.windowStart > windowMs) {
+    // Start new window
+    data = { count: 1, windowStart: now };
+    rateLimitStore.set(key, data);
+    return { allowed: true, remaining: maxRequests - 1 };
+  }
+
+  if (data.count >= maxRequests) {
+    const resetIn = Math.ceil((data.windowStart + windowMs - now) / 1000);
+    return { allowed: false, remaining: 0, resetIn };
+  }
+
+  data.count++;
+  return { allowed: true, remaining: maxRequests - data.count };
+}
+
+/* ------------------------ Token Cache ------------------------ */
+
+// Cached access token (persists within worker isolate)
+let cachedToken = null;
+let tokenExpiresAt = 0;
+
+/* ------------------------ Slots Cache ------------------------ */
+
+// Cached slots (5 minute TTL)
+const slotsCache = new Map();
+const SLOTS_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+function getCachedSlots(dateStr) {
+  const cached = slotsCache.get(dateStr);
+  if (cached && Date.now() < cached.expiresAt) {
+    return cached.data;
+  }
+  // Clean up expired entry
+  if (cached) slotsCache.delete(dateStr);
+  return null;
+}
+
+function setCachedSlots(dateStr, data) {
+  // Limit cache size to prevent memory issues
+  if (slotsCache.size > 30) {
+    // Remove oldest entries
+    const oldest = Array.from(slotsCache.entries())
+      .sort((a, b) => a[1].expiresAt - b[1].expiresAt)
+      .slice(0, 10);
+    oldest.forEach(([key]) => slotsCache.delete(key));
+  }
+  slotsCache.set(dateStr, { data, expiresAt: Date.now() + SLOTS_CACHE_TTL });
+}
 
 export default {
   async fetch(request, env) {
@@ -53,7 +134,31 @@ export default {
         );
 
       // Debug endpoint - verify environment variables
+      // SECURED: Requires DEBUG_ENABLED=true and optional DEBUG_KEY for authentication
       if (request.method === "GET" && path === "/debug") {
+        // Only allow debug endpoint if explicitly enabled
+        if (env.DEBUG_ENABLED !== "true") {
+          return json(
+            { ok: false, error: "Debug endpoint is disabled" },
+            404,
+            request,
+            env,
+          );
+        }
+
+        // If DEBUG_KEY is set, require it in the request header
+        if (env.DEBUG_KEY) {
+          const providedKey = request.headers.get("X-Debug-Key");
+          if (providedKey !== env.DEBUG_KEY) {
+            return json(
+              { ok: false, error: "Unauthorized" },
+              401,
+              request,
+              env,
+            );
+          }
+        }
+
         return json(
           {
             ok: true,
@@ -62,17 +167,14 @@ export default {
               has_google_client_secret: !!env.GOOGLE_CLIENT_SECRET,
               has_google_refresh_token: !!env.GOOGLE_REFRESH_TOKEN,
               has_calendar_id: !!(env.CALENDAR_ID || env.GOOGLE_CALENDAR_ID),
-              calendar_id:
-                env.CALENDAR_ID || env.GOOGLE_CALENDAR_ID
-                  ? `${(env.CALENDAR_ID || env.GOOGLE_CALENDAR_ID).substring(0, 5)}...`
-                  : "MISSING",
+              // Removed: No longer exposing partial calendar ID
               timezone: env.TIMEZONE || "America/Mexico_City (default)",
               weekday_morning:
                 env.WEEKDAY_MORNING_HOURS || "09:00-14:00 (default)",
               weekday_afternoon:
                 env.WEEKDAY_AFTERNOON_HOURS || "16:00-20:00 (default)",
               saturday_hours: env.SATURDAY_HOURS || "09:00-13:00 (default)",
-              allowed_origins: env.ALLOWED_ORIGINS || "* (default)",
+              allowed_origins: env.ALLOWED_ORIGINS ? "(configured)" : "* (default)",
             },
           },
           200,
@@ -81,19 +183,66 @@ export default {
         );
       }
 
-      // Slots: GET /slots/2025-10-15
+      // Slots: GET /slots/2025-10-15 (with caching)
       if (request.method === "GET" && path.startsWith("/slots/")) {
         const dateStr = path.split("/slots/")[1];
+        const skipCache = url.searchParams.get("nocache") === "1";
+
+        // Check cache first (unless explicitly bypassed)
+        if (!skipCache) {
+          const cachedResult = getCachedSlots(dateStr);
+          if (cachedResult) {
+            // If debug=1 in query, return debug info with cache indicator
+            if (url.searchParams.get("debug") === "1") {
+              return json({ ok: true, ...cachedResult, cached: true }, 200, request, env);
+            }
+            return json({ ok: true, slots: cachedResult.slots, cached: true }, 200, request, env);
+          }
+        }
+
+        // Fetch fresh data
         const result = await getAvailableSlots(dateStr, env, tz);
+
+        // Cache the result
+        setCachedSlots(dateStr, result);
+
         // If debug=1 in query, return debug info
         if (url.searchParams.get("debug") === "1") {
-          return json({ ok: true, ...result }, 200, request, env);
+          return json({ ok: true, ...result, cached: false }, 200, request, env);
         }
-        return json({ ok: true, slots: result.slots }, 200, request, env);
+        return json({ ok: true, slots: result.slots, cached: false }, 200, request, env);
       }
 
-      // Book: POST /book
+      // Book: POST /book (with rate limiting)
       if (request.method === "POST" && path === "/book") {
+        // Rate limiting configuration
+        const maxRequests = parseInt(env.RATE_LIMIT_MAX || "5");
+        const windowMs = parseInt(env.RATE_LIMIT_WINDOW_MS || "3600000"); // 1 hour
+
+        // Get client identifier (IP address or forwarded IP)
+        const clientIP =
+          request.headers.get("CF-Connecting-IP") ||
+          request.headers.get("X-Forwarded-For")?.split(",")[0]?.trim() ||
+          "unknown";
+
+        // Clean up old rate limit entries periodically
+        cleanupRateLimitStore(windowMs);
+
+        // Check rate limit
+        const rateCheck = checkRateLimit(clientIP, maxRequests, windowMs);
+        if (!rateCheck.allowed) {
+          return json(
+            {
+              ok: false,
+              error: t(lang, "rate_limited"),
+              retryAfter: rateCheck.resetIn,
+            },
+            429,
+            request,
+            env,
+          );
+        }
+
         const payload = await safeJson(request);
         const result = await createBooking(payload, env, tz, lang);
         return json(
@@ -138,8 +287,8 @@ async function getAvailableSlots(dateStr, env, timeZone) {
   const d = new Date(`${dateStr}T00:00:00`);
   const dow = d.getUTCDay();
 
-  // Sunday (0) is blocked
-  if (dow === 0) return [];
+  // Sunday (0) is blocked - return consistent object structure
+  if (dow === 0) return { slots: [], debug: { reason: "Sunday is blocked" } };
 
   // Get the appropriate hours based on day of week
   let timeBlocks = [];
@@ -166,7 +315,8 @@ async function getAvailableSlots(dateStr, env, timeZone) {
   const timeMax = toISO(dateStr, latestEnd, timeZone);
 
   // Fetch busy times from BOTH calendars (personal + work)
-  const personalCalendar = "rcushmaniii@gmail.com";
+  // PERSONAL_CALENDAR_ID should be set in environment variables
+  const personalCalendar = env.PERSONAL_CALENDAR_ID || env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
   const workCalendar = env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
 
   const freeBusy = await fetchJSON(
@@ -189,11 +339,6 @@ async function getAvailableSlots(dateStr, env, timeZone) {
   const personalBusy = freeBusy?.calendars?.[personalCalendar]?.busy || [];
   const workBusy = freeBusy?.calendars?.[workCalendar]?.busy || [];
   const allBusy = [...personalBusy, ...workBusy];
-
-  console.log("📅 FreeBusy response:", JSON.stringify(freeBusy, null, 2));
-  console.log("🔒 Personal busy:", personalBusy);
-  console.log("🔒 Work busy:", workBusy);
-  console.log("🔒 All busy times:", allBusy);
 
   const busy = allBusy.map((b) => ({
     start: new Date(b.start),
@@ -244,10 +389,43 @@ async function getAvailableSlots(dateStr, env, timeZone) {
   };
 }
 
+/**
+ * Sanitize user input to prevent injection attacks
+ * Removes potentially dangerous characters while preserving readability
+ */
+function sanitizeInput(str) {
+  if (!str || typeof str !== "string") return "";
+  return str
+    .trim()
+    .slice(0, 200) // Limit length
+    .replace(/[<>]/g, "") // Remove HTML brackets
+    .replace(/[\x00-\x1F\x7F]/g, ""); // Remove control characters
+}
+
 async function createBooking(data, env, timeZone, lang) {
-  const { name, email, date, time } = data || {};
-  if (!name || !email || !date || !time)
+  const { name: rawName, email: rawEmail, date, time } = data || {};
+  if (!rawName || !rawEmail || !date || !time)
     throw new Error(t(lang, "missing_fields"));
+
+  // Sanitize user inputs
+  const name = sanitizeInput(rawName);
+  const email = sanitizeInput(rawEmail).toLowerCase();
+
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  if (!emailRegex.test(email)) {
+    throw new Error(lang === "es" ? "Email inválido" : "Invalid email");
+  }
+
+  // Validate date format (YYYY-MM-DD)
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    throw new Error(lang === "es" ? "Fecha inválida" : "Invalid date");
+  }
+
+  // Validate time format (HH:MM)
+  if (!/^\d{2}:\d{2}$/.test(time)) {
+    throw new Error(lang === "es" ? "Hora inválida" : "Invalid time");
+  }
 
   const accessToken = await getAccessToken(env);
 
@@ -317,13 +495,22 @@ async function handleContact(data, env, lang) {
       body: JSON.stringify({ name, email, message, ts: Date.now() }),
     });
   } else {
-    console.log("CONTACT:", { name, email, message });
+    // No webhook configured - contact form submission not forwarded
+    // Set CONTACT_WEBHOOK_URL env var to enable forwarding
+    console.warn("CONTACT_WEBHOOK_URL not configured - contact submission not forwarded");
   }
 }
 
-/* ------------------------ Google OAuth ------------------------ */
+/* ------------------------ Google OAuth (with caching) ------------------------ */
 
 async function getAccessToken(env) {
+  // Check if we have a valid cached token (with 5 minute buffer before expiry)
+  const now = Date.now();
+  if (cachedToken && tokenExpiresAt > now + 300000) {
+    return cachedToken;
+  }
+
+  // Refresh the token
   const body = `client_id=${encodeURIComponent(env.GOOGLE_CLIENT_ID)}&client_secret=${encodeURIComponent(env.GOOGLE_CLIENT_SECRET)}&refresh_token=${encodeURIComponent(env.GOOGLE_REFRESH_TOKEN)}&grant_type=refresh_token`;
 
   const res = await fetch("https://oauth2.googleapis.com/token", {
@@ -333,10 +520,16 @@ async function getAccessToken(env) {
   });
 
   if (!res.ok) throw new Error(`OAuth error: ${await res.text()}`);
-  const json = await res.json();
-  if (!json?.access_token)
+  const tokenData = await res.json();
+  if (!tokenData?.access_token)
     throw new Error("No access_token returned by Google");
-  return json.access_token;
+
+  // Cache the token (Google tokens typically expire in 1 hour = 3600 seconds)
+  cachedToken = tokenData.access_token;
+  const expiresIn = tokenData.expires_in || 3600;
+  tokenExpiresAt = now + expiresIn * 1000;
+
+  return cachedToken;
 }
 
 /* ------------------------ Helpers ------------------------ */
@@ -366,6 +559,10 @@ function t(lang, key) {
       en: "Missing required fields: name, email, message",
       es: "Faltan campos obligatorios: nombre, email, mensaje",
     },
+    rate_limited: {
+      en: "Too many booking requests. Please try again later.",
+      es: "Demasiadas solicitudes de reserva. Por favor, inténtalo más tarde.",
+    },
   };
   return dict[key]?.[lang] || dict[key]?.en || key;
 }
@@ -377,15 +574,6 @@ function toISO(dateStr, hhmm, timeZone) {
   // Using -06:00 as Mexico doesn't observe DST as of 2022
   const date = new Date(`${dateStr}T${pad(h)}:${pad(m)}:00-06:00`);
   return date.toISOString();
-}
-
-function getTimezoneOffset(timeZone) {
-  // Mexico City is UTC-6 (no DST since 2022)
-  if (timeZone === "America/Mexico_City") return "-06:00";
-  // New York is UTC-5 (EST) or UTC-4 (EDT)
-  if (timeZone === "America/New_York") return "-05:00";
-  // Default to UTC-6 for Mexico City
-  return "-06:00";
 }
 
 function generateSlots(startHHMM, endHHMM, stepMin = 30) {
@@ -433,6 +621,15 @@ function pad(n) {
 
 function corsHeaders(request, env) {
   const origin = request.headers.get("origin") || "";
+
+  // SECURITY: Warn if ALLOWED_ORIGINS is not configured
+  // In production, set ALLOWED_ORIGINS to your domain(s), e.g., "https://www.nyenglishteacher.com,https://nyenglishteacher.com"
+  if (!env.ALLOWED_ORIGINS) {
+    console.warn(
+      "CORS WARNING: ALLOWED_ORIGINS not configured. Using wildcard (*). Set ALLOWED_ORIGINS env var for production.",
+    );
+  }
+
   const allowed = (env.ALLOWED_ORIGINS || "*")
     .split(",")
     .map((s) => s.trim())

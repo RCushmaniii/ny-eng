@@ -185,8 +185,12 @@ const initialSubmitText = C.submitButton;
                 return;
             }
 
-            // Strict email validation with TLD whitelist
-            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|org|net|edu|gov|mil|co|uk|ca|au|de|jp|fr|br|in|ru|cn|mx|es|it|nl|se|no|dk|fi|be|ch|at|nz|sg|hk|ie|za|pl|gr|cz|pt|hu|ro|bg|hr|sk|si|lt|lv|ee|is|lu|mt|cy|io|ai|app|dev|tech|online|site|store|shop|blog|info|biz|name|pro|mobi|tel|travel|museum|aero|coop|jobs|cat|asia|xxx|post|xxx|int)$/i;
+            // Email validation - accepts any valid TLD (2+ chars)
+            // Validates: local-part@domain.tld format
+            // - Local part: letters, numbers, dots, hyphens, underscores, plus signs
+            // - Domain: letters, numbers, dots, hyphens (no leading/trailing hyphens)
+            // - TLD: 2+ characters
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
             if (!email.value || !emailRegex.test(email.value)) {
                 statusDiv.textContent = jsStrings.validationEmail;
                 statusDiv.classList.add("text-red-600");

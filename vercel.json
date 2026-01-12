@@ -1,0 +1,70 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "astro",
+  "redirects": [
+    { "source": "/", "destination": "/en/", "permanent": true },
+    { "source": "/blog", "destination": "/en/blog/", "permanent": true },
+    { "source": "/services", "destination": "/en/services/", "permanent": true },
+    { "source": "/contact", "destination": "/en/contact/", "permanent": true },
+    { "source": "/about", "destination": "/en/about/", "permanent": true },
+    { "source": "/testimonials", "destination": "/en/testimonials/", "permanent": true },
+    { "source": "/book", "destination": "/en/book/", "permanent": true },
+    { "source": "/quiz", "destination": "/en/quiz/it-services/", "permanent": true },
+    { "source": "/en/quiz", "destination": "/en/quiz/it-services/", "permanent": true },
+    { "source": "/es/quiz", "destination": "/es/quiz/it-services/", "permanent": true },
+    { "source": "/es/testimonials", "destination": "/es/testimonios/", "permanent": true },
+    { "source": "/es/services", "destination": "/es/servicios/", "permanent": true },
+    { "source": "/es/book", "destination": "/es/reservar/", "permanent": true },
+    { "source": "/es/category/business-english", "destination": "/es/categoria/ingles-para-negocios/", "permanent": true },
+    { "source": "/es/category/career-leadership", "destination": "/es/categoria/carrera-liderazgo/", "permanent": true },
+    { "source": "/es/category/carrera-liderazgo", "destination": "/es/categoria/carrera-liderazgo/", "permanent": true },
+    { "source": "/es/category/coaching-en-ingles", "destination": "/es/categoria/coaching-en-ingles/", "permanent": true },
+    { "source": "/es/category/comunicacion-de-alto-impacto", "destination": "/es/categoria/comunicacion-de-alto-impacto/", "permanent": true },
+    { "source": "/es/category/english-coaching", "destination": "/es/categoria/coaching-en-ingles/", "permanent": true },
+    { "source": "/es/category/executive-english", "destination": "/es/categoria/ingles-ejecutivo/", "permanent": true },
+    { "source": "/es/category/high-impact-communication", "destination": "/es/categoria/comunicacion-de-alto-impacto/", "permanent": true },
+    { "source": "/es/category/high-stakes-english", "destination": "/es/categoria/ingles-ejecutivo/", "permanent": true },
+    { "source": "/es/category/ingles-ejecutivo", "destination": "/es/categoria/ingles-ejecutivo/", "permanent": true },
+    { "source": "/es/category/ingles-para-fundadores-de-startups", "destination": "/es/categoria/ingles-para-fundadores-de-startups/", "permanent": true },
+    { "source": "/es/category/ingles-para-logistica", "destination": "/es/categoria/ingles-para-logistica/", "permanent": true },
+    { "source": "/es/category/ingles-para-negocios", "destination": "/es/categoria/ingles-para-negocios/", "permanent": true },
+    { "source": "/es/category/ingles-para-presentaciones", "destination": "/es/categoria/ingles-para-presentaciones/", "permanent": true },
+    { "source": "/es/category/ingles-para-profesionales", "destination": "/es/categoria/ingles-para-profesionales/", "permanent": true },
+    { "source": "/es/category/ingles-para-tecnologia", "destination": "/es/categoria/ingles-para-tecnologia/", "permanent": true },
+    { "source": "/es/category/logistics-english", "destination": "/es/categoria/ingles-para-logistica/", "permanent": true },
+    { "source": "/es/category/professional-english", "destination": "/es/categoria/ingles-para-profesionales/", "permanent": true },
+    { "source": "/es/category/startup-founders", "destination": "/es/categoria/ingles-para-fundadores-de-startups/", "permanent": true },
+    { "source": "/es/category/tech-english", "destination": "/es/categoria/ingles-para-tecnologia/", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/_astro/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}

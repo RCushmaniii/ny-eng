@@ -9,6 +9,24 @@ import pool from "./mysql";
 import type { RowDataPacket, ResultSetHeader } from "mysql2/promise";
 
 // =============================================================================
+// UTILITY FUNCTIONS
+// =============================================================================
+
+/**
+ * Safely parse JSON string, returning null on error
+ * Prevents crashes from malformed data in database
+ */
+function safeJsonParse<T>(jsonString: string | null | undefined): T | null {
+  if (!jsonString) return null;
+  try {
+    return JSON.parse(jsonString) as T;
+  } catch (e) {
+    console.error("Failed to parse JSON from database:", e);
+    return null;
+  }
+}
+
+// =============================================================================
 // TYPE DEFINITIONS (same as Supabase version)
 // =============================================================================
 
@@ -229,19 +247,11 @@ export async function getSubmission(submissionId: string) {
 
     const submission = submissions[0];
 
-    // Parse JSON fields
-    if (submission.category_scores) {
-      submission.category_scores = JSON.parse(submission.category_scores);
-    }
-    if (submission.primary_gap) {
-      submission.primary_gap = JSON.parse(submission.primary_gap);
-    }
-    if (submission.secondary_gap) {
-      submission.secondary_gap = JSON.parse(submission.secondary_gap);
-    }
-    if (submission.answers) {
-      submission.answers = JSON.parse(submission.answers);
-    }
+    // Parse JSON fields safely
+    submission.category_scores = safeJsonParse(submission.category_scores);
+    submission.primary_gap = safeJsonParse(submission.primary_gap);
+    submission.secondary_gap = safeJsonParse(submission.secondary_gap);
+    submission.answers = safeJsonParse(submission.answers);
 
     // Get answers
     const [answers] = await pool.execute<RowDataPacket[]>(
@@ -275,7 +285,7 @@ export async function getAllSubmissions(filters?: {
 }) {
   try {
     let query = "SELECT * FROM quiz_submissions WHERE 1=1";
-    const params: any[] = [];
+    const params: (string | number | boolean)[] = [];
 
     // Apply filters
     if (filters?.score_tier) {
@@ -304,13 +314,12 @@ export async function getAllSubmissions(filters?: {
 
     const [submissions] = await pool.execute<RowDataPacket[]>(query, params);
 
-    // Parse JSON fields for each submission
+    // Parse JSON fields safely for each submission
     submissions.forEach((sub) => {
-      if (sub.category_scores)
-        sub.category_scores = JSON.parse(sub.category_scores);
-      if (sub.primary_gap) sub.primary_gap = JSON.parse(sub.primary_gap);
-      if (sub.secondary_gap) sub.secondary_gap = JSON.parse(sub.secondary_gap);
-      if (sub.answers) sub.answers = JSON.parse(sub.answers);
+      sub.category_scores = safeJsonParse(sub.category_scores);
+      sub.primary_gap = safeJsonParse(sub.primary_gap);
+      sub.secondary_gap = safeJsonParse(sub.secondary_gap);
+      sub.answers = safeJsonParse(sub.answers);
     });
 
     // Get total count

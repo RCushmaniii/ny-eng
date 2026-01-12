@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Calendar, TrendingUp, AlertCircle, Download } from "lucide-react"; // Use lucide-react inside a .tsx file
 import { getQuizConfig } from "@data/quiz/configs";
 import { calculateQuizScore } from "@data/quiz/scoring";
-import type { QuizType } from "@data/quiz/types";
+import type { QuizType, ScoreBreakdown, ScoreTier } from "@data/quiz/types";
 import "@styles/report.css";
 
 // --- Helper Types & Functions ---
@@ -10,7 +10,7 @@ import "@styles/report.css";
 interface LeadData {
   name: string;
   company?: string;
-  quizType?: QuizType; // Add this
+  quizType?: QuizType;
 }
 
 interface Answers {
@@ -29,6 +29,12 @@ interface CtaInfo {
   footerText: string;
 }
 
+interface TierInfo {
+  tier: ScoreTier;
+  description: string;
+  color: string;
+}
+
 // --- Main Component ---
 
 export default function QuizReport() {
@@ -37,8 +43,8 @@ export default function QuizReport() {
   const [leadData, setLeadData] = useState<LeadData | null>(null);
   const [generatedDate, setGeneratedDate] = useState("");
   const [quizTitle, setQuizTitle] = useState("");
-  const [scoreData, setScoreData] = useState<any>(null); // Store full breakdown
-  const [tierInfo, setTierInfo] = useState<any>(null);
+  const [scoreData, setScoreData] = useState<ScoreBreakdown | null>(null);
+  const [tierInfo, setTierInfo] = useState<TierInfo | null>(null);
   const [impactInfo, setImpactInfo] = useState<{
     sectionTitle: string;
     title: string;
@@ -58,10 +64,29 @@ export default function QuizReport() {
       return;
     }
 
-    const answers: Answers = JSON.parse(answersJson);
-    const lead: LeadData = leadDataJson
-      ? JSON.parse(leadDataJson)
-      : { name: "Valued Client" };
+    // Safely parse JSON with error handling to prevent crashes
+    let answers: Answers;
+    let lead: LeadData;
+
+    try {
+      answers = JSON.parse(answersJson);
+    } catch (e) {
+      console.error("Failed to parse quiz answers:", e);
+      // Clear corrupted data and redirect
+      sessionStorage.removeItem("quizAnswers");
+      window.location.href = "/en/assessments/";
+      return;
+    }
+
+    try {
+      lead = leadDataJson
+        ? JSON.parse(leadDataJson)
+        : { name: "Valued Client" };
+    } catch (e) {
+      console.error("Failed to parse lead data:", e);
+      // Use fallback for lead data, don't block the report
+      lead = { name: "Valued Client" };
+    }
 
     // Determine quiz type (fallback to 'it-services' for legacy)
     const quizType = lead.quizType || "it-services";

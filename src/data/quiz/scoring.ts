@@ -11,6 +11,25 @@
  * - Gap analysis identifies top 2 weakest areas
  */
 
+// =============================================================================
+// SCORING CONSTANTS
+// =============================================================================
+
+/** Maximum points per question */
+export const POINTS_PER_QUESTION = 10;
+
+/** Total number of questions in a quiz */
+export const TOTAL_QUESTIONS = 6;
+
+/** Maximum possible raw score */
+export const MAX_POSSIBLE_SCORE = POINTS_PER_QUESTION * TOTAL_QUESTIONS;
+
+/** Score threshold for "Passive Proficiency" tier */
+export const PASSIVE_PROFICIENCY_THRESHOLD = 70;
+
+/** Score threshold for "Survival Mode" tier */
+export const SURVIVAL_MODE_THRESHOLD = 40;
+
 import type {
   QuizAnswers,
   QuizCategory,
@@ -38,7 +57,6 @@ export function calculateQuizScore(
   config: LanguageConfig,
 ): ScoreBreakdown {
   let rawScore = 0;
-  const maxPossible = 60; // 6 questions × 10 points each
 
   // Track points by category
   const categoryPoints: Record<QuizCategory, { earned: number; max: number }> =
@@ -74,11 +92,11 @@ export function calculateQuizScore(
     // Track by category
     const category = question.category;
     categoryPoints[category].earned += points;
-    categoryPoints[category].max += 10; // Each question worth 10 points
+    categoryPoints[category].max += POINTS_PER_QUESTION;
   });
 
   // Normalize to 0-100
-  const totalScore = Math.round((rawScore / maxPossible) * 100);
+  const totalScore = Math.round((rawScore / MAX_POSSIBLE_SCORE) * 100);
 
   // Calculate category scores (0-100 for each)
   const categoryScores: CategoryScores = {
@@ -129,7 +147,7 @@ export function calculateQuizScore(
   return {
     totalScore,
     rawScore,
-    maxPossible,
+    maxPossible: MAX_POSSIBLE_SCORE,
     scoreTier,
     categoryScores,
     primaryGap: gaps.primary,
@@ -148,8 +166,8 @@ export function calculateQuizScore(
  * @returns Score tier classification
  */
 export function getScoreTier(score: number): ScoreTier {
-  if (score >= 70) return "Executive Presence";
-  if (score >= 40) return "Passive Proficiency";
+  if (score >= PASSIVE_PROFICIENCY_THRESHOLD) return "Executive Presence";
+  if (score >= SURVIVAL_MODE_THRESHOLD) return "Passive Proficiency";
   return "Credibility Gap";
 }
 

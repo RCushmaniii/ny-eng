@@ -24,15 +24,28 @@ export const QuizStorage = {
   },
 
   /**
-   * Get user's quiz answers
+   * Get user's quiz answers with validation
    *
    * @param quizType - Quiz type identifier
-   * @returns User's answers or null if not found
+   * @returns User's answers or null if not found/invalid
    */
   getAnswers(quizType: QuizType): QuizAnswers | null {
     const key = `quiz_${quizType}_answers`;
     const data = sessionStorage.getItem(key);
-    return data ? JSON.parse(data) : null;
+    if (!data) return null;
+
+    try {
+      const parsed = JSON.parse(data);
+      // Basic validation: must be an object with question keys
+      if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
+        console.error("Invalid quiz answers format: expected object");
+        return null;
+      }
+      return parsed as QuizAnswers;
+    } catch (e) {
+      console.error("Failed to parse quiz answers:", e);
+      return null;
+    }
   },
 
   /**
@@ -64,21 +77,33 @@ export const QuizStorage = {
    * @param quizType - Quiz type identifier
    * @param leadData - Lead information
    */
-  saveLeadData(quizType: QuizType, leadData: Record<string, any>): void {
+  saveLeadData(quizType: QuizType, leadData: Record<string, unknown>): void {
     const key = `quiz_${quizType}_lead`;
     sessionStorage.setItem(key, JSON.stringify(leadData));
   },
 
   /**
-   * Get saved lead data
+   * Get saved lead data with validation
    *
    * @param quizType - Quiz type identifier
-   * @returns Lead data or null if not found
+   * @returns Lead data or null if not found/invalid
    */
-  getLeadData(quizType: QuizType): Record<string, any> | null {
+  getLeadData(quizType: QuizType): Record<string, unknown> | null {
     const key = `quiz_${quizType}_lead`;
     const data = sessionStorage.getItem(key);
-    return data ? JSON.parse(data) : null;
+    if (!data) return null;
+
+    try {
+      const parsed = JSON.parse(data);
+      if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
+        console.error("Invalid lead data format: expected object");
+        return null;
+      }
+      return parsed as Record<string, unknown>;
+    } catch (e) {
+      console.error("Failed to parse lead data:", e);
+      return null;
+    }
   },
 
   /**
@@ -123,6 +148,8 @@ export const QuizStorage = {
   /**
    * Clear all quiz data (all quiz types)
    * Useful for testing or reset functionality
+   *
+   * Note: Keep this list in sync with QuizType in types.ts
    */
   clearAll(): void {
     const quizTypes: QuizType[] = [
@@ -131,6 +158,7 @@ export const QuizStorage = {
       "sales-marketing",
       "executives",
       "interview-coaching",
+      "high-stakes", // Added: was missing from original list
     ];
 
     quizTypes.forEach((quizType) => this.clear(quizType));
