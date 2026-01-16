@@ -4,30 +4,10 @@ interface Props {
 }
 
 const { lang } = Astro.props;
-
-// Cache buster - increment to force fresh widget load
-const version = 8;
-
-const embedSrc =
-  import.meta.env.PUBLIC_NY_AI_CHATBOT_EMBED_SRC ??
-  `https://ny-ai-chatbot.vercel.app/api/embed?v=${version}`;
-
-// Ensure version param is included
-const embedUrl = embedSrc.includes("?")
-  ? embedSrc.includes("v=")
-    ? embedSrc.replace(/v=\d+/, `v=${version}`)
-    : `${embedSrc}&v=${version}`
-  : `${embedSrc}?v=${version}`;
 ---
 
-<!--
-  Load the customized Chatwoot widget from ny-ai-chatbot repo.
-  The embed script handles everything: button, iframe, styling, language detection.
--->
+<!-- Chatbot widget from ny-ai-chatbot repo -->
 <script
   is:inline
-  src={embedUrl}
-  data-language={lang}
-  data-position="bottom-right"
-  data-show-welcome-message="false"
-></script>
+  src="https://ny-ai-chatbot.vercel.app/api/embed"
+  data-language={lang}></script>
