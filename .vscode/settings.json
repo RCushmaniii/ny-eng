@@ -2,5 +2,16 @@
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "css.validate": true,
+  "tailwindCSS.files.exclude": [
+    "**/dist/**"
+  ],
+  "tailwindCSS.lint.cssConflict": "ignore",
+  "files.exclude": {
+    "**/dist": true
+  },
+  "search.exclude": {
+    "**/dist": true
+  }
 }

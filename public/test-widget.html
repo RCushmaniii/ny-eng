@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Widget Test - Local</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      h1 {
+        color: #333;
+      }
+      .checklist {
+        background: #f5f5f5;
+        padding: 20px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Local Widget Test Page</h1>
+    <p>
+      This is a minimal test page with ONLY the embed script - no other CSS or
+      JS.
+    </p>
+
+    <div class="checklist">
+      <h2>Checklist</h2>
+      <ul>
+        <li>Floating button should show Statue of Liberty icon</li>
+        <li>Click the button to open chat</li>
+        <li>Chat header should show the same icon</li>
+        <li>No welcome popup should appear</li>
+      </ul>
+    </div>
+
+    <!-- ONLY THE EMBED SCRIPT - NOTHING ELSE -->
+    <script src="https://ny-ai-chatbot.vercel.app/api/embed"></script>
+  </body>
+</html>
