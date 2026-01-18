@@ -139,6 +139,8 @@ Verbal agreements evaporate. Before you leave the conversation, confirm what was
 
 ---
 
+![Two professionals in a business negotiation](./images/negotiation-meeting.jpg)
+
 ## Phrases for Difficult Moments
 
 ### When You Need Time to Think

@@ -149,6 +149,8 @@ Los acuerdos verbales se evaporan. Antes de salir de la conversación, confirma 
 
 ---
 
+![Dos profesionales en una negociación de negocios](./images/negotiation-meeting.jpg)
+
 ## Frases para Momentos Difíciles
 
 ### Cuando Necesitas Tiempo para Pensar

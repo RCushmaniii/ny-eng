@@ -126,6 +126,8 @@ Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué 
 
 ---
 
+![Profesional enfocado en escribir un email importante](./images/email-mistake-examples.jpg)
+
 ## El Patrón Detrás de Estas Correcciones
 
 Nota qué tienen en común todas las frases "junior":

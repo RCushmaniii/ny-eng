@@ -126,6 +126,8 @@ Here are seven phrases to delete from your vocabulary today—and exactly what t
 
 ---
 
+![Professional focused on writing an important email](./images/email-mistake-examples.jpg)
+
 ## The Pattern Behind These Fixes
 
 Notice what all the "junior" phrases have in common:
