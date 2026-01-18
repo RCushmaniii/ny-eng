@@ -77,6 +77,20 @@ const resources: FreeAsset[] = allAssets
   <!-- Available Resources (Auto-discovered) -->
   <FreeResourcesHub resources={resources} lang="es" client:load />
 
+  <!-- SEO: Static links for crawlers (visually hidden but accessible) -->
+  <nav class="sr-only" aria-label="Todos los recursos">
+    <h2>Todos los Recursos Disponibles</h2>
+    <ul>
+      {resources.map((resource) => (
+        <li>
+          <a href={`/es/recursos/${resource.slugEs || resource.metadata.id}/`}>
+            {resource.es.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
   <!-- CTA Section -->
   <section
     class="cta-section py-16 md:py-20 bg-gradient-to-br from-slate-900 to-slate-800"
