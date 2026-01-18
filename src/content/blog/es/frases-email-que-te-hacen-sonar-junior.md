@@ -1,0 +1,173 @@
+---
+title: "7 Frases de Email Que Te Hacen Sonar Junior (Y Qué Escriben los Ejecutivos)"
+excerpt: "Tu inglés puede ser gramaticalmente perfecto—pero estas frases comunes señalan inexperiencia instantáneamente. Aquí está qué escribir en su lugar."
+publishDate: "2026-01-18"
+lastmod: "2026-01-18"
+categories:
+  - "Inglés de Negocios"
+  - "Inglés Ejecutivo"
+featuredImage: "./images/executive-english-coaching.jpg"
+imageAlt: "Profesional revisando email en laptop con expresión de confianza"
+translations:
+  en: "/en/blog/email-phrases-that-make-you-sound-junior"
+publish: true
+seo:
+  title: "7 Frases de Email Que Te Hacen Sonar Junior | Corrígelas Hoy"
+  description: "Deja de minar tu autoridad en emails. Aprende 7 frases que te hacen sonar junior y exactamente qué escriben los ejecutivos en su lugar."
+---
+
+## Tu Gramática Es Perfecta. Tus Emails Aún Suenan Junior.
+
+Has pasado años perfeccionando tu inglés. Dominas la gramática. Conoces el vocabulario. Sin embargo, de alguna manera, tus emails no tienen el impacto que tendrían los de un ejecutivo nativo.
+
+El problema no es tu nivel de inglés—son las frases que aprendiste y que los hablantes nativos abandonaron hace años.
+
+Trabajo como coach de ejecutivos latinoamericanos en empresas Fortune 500, y veo este patrón constantemente: emails técnicamente correctos que accidentalmente señalan inexperiencia, incertidumbre o estatus inferior.
+
+Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué escribir en su lugar.
+
+---
+
+## 1) "I wanted to reach out..." (Quería contactarte...)
+
+**Por qué suena junior:** Esta frase es pasiva, indirecta y no agrega nada. Retrasa tu mensaje real y suena como si te estuvieras disculpando por existir en la bandeja de alguien.
+
+**Qué escriben los ejecutivos:**
+
+> ❌ "I wanted to reach out to discuss the Q3 proposal."
+>
+> ✅ "The Q3 proposal needs your input by Friday."
+
+**El principio:** Comienza con tu punto, no con una narración sobre ti mismo.
+
+---
+
+## 2) "Sorry to bother you, but..." (Perdón por molestarte, pero...)
+
+**Por qué suena junior:** Estás enmarcando tu solicitud como una molestia antes de que alguien la haya leído. Esto reduce tu estatus instantáneamente y hace que el lector se sienta agobiado.
+
+**Qué escriben los ejecutivos:**
+
+> ❌ "Sorry to bother you, but could you review this document?"
+>
+> ✅ "Could you review this document by Thursday? Your input on the pricing section would be especially valuable."
+
+**El principio:** Reemplaza las disculpas con aprecio o franqueza. Si tu solicitud es legítima, adueñate de ella.
+
+---
+
+## 3) "Just following up..." (Solo dando seguimiento...)
+
+**Por qué suena junior:** "Just" minimiza tu mensaje. Señala que incluso tú no crees que este email sea importante. También suena como si estuvieras insistiendo sin agregar nuevo valor.
+
+**Qué escriben los ejecutivos:**
+
+> ❌ "Just following up on my previous email."
+>
+> ✅ "Moving this up—I need your decision by EOD Wednesday to keep the project on track."
+
+**El principio:** Cada seguimiento debe agregar nueva información, contexto o urgencia. No solo recuerdes—avanza.
+
+---
+
+## 4) "I think maybe we should..." (Creo que tal vez deberíamos...)
+
+**Por qué suena junior:** Apilar coberturas ("I think" + "maybe") señala profunda incertidumbre. Los ejecutivos escuchan esto como: "No tengo suficiente confianza para apropiarme de esta recomendación."
+
+**Qué escriben los ejecutivos:**
+
+> ❌ "I think maybe we should consider postponing the launch."
+>
+> ✅ "I recommend postponing the launch. Here's why."
+
+**El principio:** Una cobertura es humana. Dos coberturas es inseguridad. Declara tu recomendación, luego defiéndela.
+
+---
+
+## 5) "Does that make sense?" (¿Tiene sentido?)
+
+**Por qué suena junior:** Esto pone la carga de entender en el lector mientras simultáneamente cuestionas tu propia claridad. Frecuentemente se lee como: "No estoy seguro de haberlo explicado bien."
+
+**Qué escriben los ejecutivos:**
+
+> ❌ "We'll restructure the team into three pods. Does that make sense?"
+>
+> ✅ "We'll restructure the team into three pods. Happy to walk through the details if useful."
+
+**El principio:** Asume que fuiste claro. Ofrece ayuda, no te cuestiones a ti mismo.
+
+---
+
+## 6) "Please advise." (Por favor, aconséjame.)
+
+**Por qué suena junior:** Esta frase es vaga y pasiva. Pone todo el trabajo en el destinatario sin clarificar qué tipo de aporte realmente necesitas.
+
+**Qué escriben los ejecutivos:**
+
+> ❌ "The client requested a discount. Please advise."
+>
+> ✅ "The client requested a 15% discount. I recommend offering 10% with faster payment terms. Do you approve, or should we counter differently?"
+
+**El principio:** No pidas "consejo" genérico. Presenta opciones y pide una decisión específica.
+
+---
+
+## 7) "Hope this helps!" (¡Espero que esto ayude!)
+
+**Por qué suena junior:** Esta despedida suena ansioso-por-complacer de una manera que mina la autoridad profesional. Está bien para soporte al cliente, pero no para comunicación ejecutiva.
+
+**Qué escriben los ejecutivos:**
+
+> ❌ "Attached is the analysis. Hope this helps!"
+>
+> ✅ "Attached is the analysis. Let me know if you need anything else before Thursday's meeting."
+
+**El principio:** Cierra con un próximo paso claro u oferta, no con esperanza alegre.
+
+---
+
+## El Patrón Detrás de Estas Correcciones
+
+Nota qué tienen en común todas las frases "junior":
+
+1. **Disculparse en exceso** por ocupar espacio
+2. **Cobertura excesiva** para evitar apropiarte de tus ideas
+3. **Vaguedad** en lugar de solicitudes específicas
+4. **Narrar** en lugar de comunicar
+
+Los emails ejecutivos son:
+
+- **Directos** (punto primero, contexto después)
+- **Confiados** (máximo una cobertura)
+- **Específicos** (solicitudes claras, fechas límite claras)
+- **Orientados a la acción** (cada email mueve algo hacia adelante)
+
+---
+
+## Referencia Rápida: Antes y Después
+
+| Frase Junior | Alternativa Ejecutiva |
+|-------------|----------------------|
+| "I wanted to reach out..." | [Declara tu punto directamente] |
+| "Sorry to bother you..." | "Could you..." o "I'd appreciate..." |
+| "Just following up..." | "Moving this up—[nuevo contexto o fecha límite]" |
+| "I think maybe..." | "I recommend..." |
+| "Does that make sense?" | "Happy to clarify if useful." |
+| "Please advise." | "[Opciones] Which do you prefer?" |
+| "Hope this helps!" | "Let me know if you need anything else." |
+
+---
+
+## Ponlo en Práctica
+
+Antes de tu próximo email importante, escanea estas siete frases. Reemplázalas usando los patrones anteriores.
+
+¿Quieres más plantillas para situaciones difíciles por email? **[Descarga mis 6 Plantillas de Email para Situaciones Difíciles](/es/recursos/plantillas-email-situaciones-dificiles/)**—incluyendo scripts para rechazar, dar malas noticias y dar seguimiento sin sonar desesperado.
+
+---
+
+## Obtén Retroalimentación Personalizada
+
+Leer sobre errores de email es útil. Que alguien revise tus emails reales y te muestre exactamente qué corregir es transformacional.
+
+**[Agenda una sesión estratégica gratuita de 30 minutos](/es/reservar/)** y auditaré un email real de tu bandeja—luego te mostraré cómo pequeños cambios crean gran impacto.
