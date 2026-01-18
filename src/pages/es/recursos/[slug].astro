@@ -48,10 +48,10 @@ const seoData = content.seo || {};
 // Title: Keep it concise (under 60 chars) using just the asset title
 const title = esContent.title;
 
-// Description: Use the SEO metaDescription from JSON (already optimized for length)
-// Fallback to subtitle if not available
+// Description: For Spanish pages, prioritize Spanish content over shared seo.metaDescription
+// The es.description field contains the Spanish translation
 const description =
-  seoData.metaDescription ||
+  esContent.description ||
   esContent.subtitle ||
   esContent.intro?.paragraph?.substring(0, 160) ||
   `Recurso bilingüe gratuito para profesionales: ${esContent.title}`;
