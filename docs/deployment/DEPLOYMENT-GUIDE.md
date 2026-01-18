@@ -290,24 +290,32 @@ netlify deploy --prod
 ALTER TABLE quiz_submissions ADD COLUMN IF NOT EXISTS answers JSONB;
 ```
 
-### **Problem: CSP blocking API calls**
+### **Problem: CSP blocking API calls (Quiz Submission Fails)**
 
-**Error:** `Refused to connect because it violates Content Security Policy`
+**Symptoms:**
+- Quiz completes but shows "Submission error: Connection error"
+- Browser console shows: `Connecting to 'https://ny-eng-api.netlify.app/...' violates Content Security Policy directive`
+- The `connect-src` directive doesn't include the API domain
 
-**Fix:** Add Netlify domain to `.htaccess` CSP header:
+**Root Cause:** The Content Security Policy in `.htaccess` controls which external domains the browser is allowed to connect to. If a new API endpoint or service is added without updating the CSP, the browser will block the request.
+
+**Fix:** Add the missing domain to the `connect-src` directive in `public/.htaccess`:
 
 ```apache
-<IfModule mod_headers.c>
-Header set Content-Security-Policy "
-    default-src 'self';
-    connect-src 'self' https://ny-eng-api.netlify.app https://www.google-analytics.com;
-    script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://www.googletagmanager.com;
-    style-src 'self' 'unsafe-inline';
-    img-src 'self' data: https:;
-    font-src 'self' data:;
-"
-</IfModule>
+# The connect-src directive must include ALL external APIs:
+connect-src 'self' https://www.google-analytics.com https://plain-mode-42c4.rcushmaniii.workers.dev https://ny-ai-chatbot.vercel.app https://ny-eng-api.netlify.app;
 ```
+
+**Current allowed domains in connect-src:**
+| Domain | Purpose |
+|--------|---------|
+| `'self'` | Same-origin requests |
+| `https://www.google-analytics.com` | Analytics |
+| `https://plain-mode-42c4.rcushmaniii.workers.dev` | Booking API (Cloudflare Worker) |
+| `https://ny-ai-chatbot.vercel.app` | AI Chatbot embed |
+| `https://ny-eng-api.netlify.app` | Quiz submission (Netlify Functions) |
+
+**Important:** When adding new external services, always update the CSP `connect-src` directive or the browser will block those requests.
 
 ### **Problem: 404 on quiz pages**
 
@@ -550,5 +558,5 @@ Header set Content-Security-Policy "
 
 ---
 
-_Last updated: November 27, 2025_
+_Last updated: January 18, 2026_
 _Deployment architecture: Hybrid (Hostinger + Netlify)_
