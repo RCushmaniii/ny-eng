@@ -35,8 +35,10 @@ Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué 
 **Qué escriben los ejecutivos:**
 
 > ❌ "I wanted to reach out to discuss the Q3 proposal."
+> (Quería contactarte para discutir la propuesta del Q3.)
 >
 > ✅ "The Q3 proposal needs your input by Friday."
+> (La propuesta del Q3 necesita tu aporte para el viernes.)
 
 **El principio:** Comienza con tu punto, no con una narración sobre ti mismo.
 
@@ -49,8 +51,10 @@ Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué 
 **Qué escriben los ejecutivos:**
 
 > ❌ "Sorry to bother you, but could you review this document?"
+> (Perdón por molestarte, pero ¿podrías revisar este documento?)
 >
 > ✅ "Could you review this document by Thursday? Your input on the pricing section would be especially valuable."
+> (¿Podrías revisar este documento para el jueves? Tu aporte en la sección de precios sería especialmente valioso.)
 
 **El principio:** Reemplaza las disculpas con aprecio o franqueza. Si tu solicitud es legítima, adueñate de ella.
 
@@ -63,8 +67,10 @@ Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué 
 **Qué escriben los ejecutivos:**
 
 > ❌ "Just following up on my previous email."
+> (Solo dando seguimiento a mi email anterior.)
 >
 > ✅ "Moving this up—I need your decision by EOD Wednesday to keep the project on track."
+> (Elevando la prioridad de esto—necesito tu decisión para el miércoles al final del día para mantener el proyecto en curso.)
 
 **El principio:** Cada seguimiento debe agregar nueva información, contexto o urgencia. No solo recuerdes—avanza.
 
@@ -77,8 +83,10 @@ Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué 
 **Qué escriben los ejecutivos:**
 
 > ❌ "I think maybe we should consider postponing the launch."
+> (Creo que tal vez deberíamos considerar posponer el lanzamiento.)
 >
 > ✅ "I recommend postponing the launch. Here's why."
+> (Recomiendo posponer el lanzamiento. Esta es la razón.)
 
 **El principio:** Una cobertura es humana. Dos coberturas es inseguridad. Declara tu recomendación, luego defiéndela.
 
@@ -91,8 +99,10 @@ Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué 
 **Qué escriben los ejecutivos:**
 
 > ❌ "We'll restructure the team into three pods. Does that make sense?"
+> (Reestructuraremos el equipo en tres grupos. ¿Tiene sentido?)
 >
 > ✅ "We'll restructure the team into three pods. Happy to walk through the details if useful."
+> (Reestructuraremos el equipo en tres grupos. Con gusto repaso los detalles si es útil.)
 
 **El principio:** Asume que fuiste claro. Ofrece ayuda, no te cuestiones a ti mismo.
 
@@ -105,8 +115,10 @@ Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué 
 **Qué escriben los ejecutivos:**
 
 > ❌ "The client requested a discount. Please advise."
+> (El cliente solicitó un descuento. Por favor, aconséjame.)
 >
 > ✅ "The client requested a 15% discount. I recommend offering 10% with faster payment terms. Do you approve, or should we counter differently?"
+> (El cliente solicitó un descuento del 15%. Recomiendo ofrecer 10% con términos de pago más rápidos. ¿Apruebas, o deberíamos contraofertar de otra manera?)
 
 **El principio:** No pidas "consejo" genérico. Presenta opciones y pide una decisión específica.
 
@@ -119,8 +131,10 @@ Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué 
 **Qué escriben los ejecutivos:**
 
 > ❌ "Attached is the analysis. Hope this helps!"
+> (Adjunto está el análisis. ¡Espero que esto ayude!)
 >
 > ✅ "Attached is the analysis. Let me know if you need anything else before Thursday's meeting."
+> (Adjunto está el análisis. Avísame si necesitas algo más antes de la reunión del jueves.)
 
 **El principio:** Cierra con un próximo paso claro u oferta, no con esperanza alegre.
 
@@ -150,13 +164,13 @@ Los emails ejecutivos son:
 
 | Frase Junior | Alternativa Ejecutiva |
 |-------------|----------------------|
-| "I wanted to reach out..." | [Declara tu punto directamente] |
-| "Sorry to bother you..." | "Could you..." o "I'd appreciate..." |
-| "Just following up..." | "Moving this up—[nuevo contexto o fecha límite]" |
-| "I think maybe..." | "I recommend..." |
-| "Does that make sense?" | "Happy to clarify if useful." |
-| "Please advise." | "[Opciones] Which do you prefer?" |
-| "Hope this helps!" | "Let me know if you need anything else." |
+| "I wanted to reach out..." (Quería contactarte...) | [Declara tu punto directamente] |
+| "Sorry to bother you..." (Perdón por molestarte...) | "Could you..." (¿Podrías...) o "I'd appreciate..." (Agradecería...) |
+| "Just following up..." (Solo dando seguimiento...) | "Moving this up—[nuevo contexto o fecha límite]" (Elevando prioridad—) |
+| "I think maybe..." (Creo que tal vez...) | "I recommend..." (Recomiendo...) |
+| "Does that make sense?" (¿Tiene sentido?) | "Happy to clarify if useful." (Con gusto aclaro si es útil.) |
+| "Please advise." (Por favor, aconséjame.) | "[Opciones] Which do you prefer?" (¿Cuál prefieres?) |
+| "Hope this helps!" (¡Espero que ayude!) | "Let me know if you need anything else." (Avísame si necesitas algo más.) |
 
 ---
 
