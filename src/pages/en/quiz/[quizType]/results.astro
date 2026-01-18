@@ -34,8 +34,15 @@ if (!quizType || !isQuizTypeAvailable(quizType)) {
 const config = getQuizConfig(quizType as QuizType, "en");
 
 const title = `Results | ${config.title}`;
-const description =
-  "Get your Communication Confidence Score (0-100) and roadmap. See where your team stands with high-stakes English communication.";
+
+// Quiz-specific descriptions for SEO uniqueness
+const quizDescriptions: Record<string, string> = {
+  "executives": "Get your Executive Communication Score and personalized roadmap. Discover how your leadership English compares to Fortune 500 standards.",
+  "it-services": "Get your Technical Communication Score and action plan. See how effectively you translate complex concepts for global clients.",
+  "professional-services": "Get your Professional Services Communication Score. Measure how well you build trust with international clients and patients.",
+  "high-stakes": "Get your High-Stakes Presentation Score and preparation roadmap. See where you stand for interviews, pitches, and critical moments.",
+};
+const description = quizDescriptions[quizType] || `Get your ${config.title} results and personalized communication roadmap.`;
 
 const canonicalUrl = `https://www.nyenglishteacher.com/en/quiz/${quizType}/results/`;
 const customHreflangs = [

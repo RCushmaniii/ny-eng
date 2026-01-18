@@ -3,15 +3,16 @@ export const prerender = true;
 
 import Base from "@layouts/Base.astro";
 
-// This is a redirect page - minimal SEO needed
+// This is a redirect page - should not be indexed (redirects to /en/)
 const lang = "en";
 const tkey = "home";
 ---
-<Base 
-  title="New York English Teacher" 
-  description="Professional Business English Coaching"
+<Base
+  title="Redirecting... | NY English Teacher"
+  description="Redirecting to the English homepage."
   lang={lang}
   tkey={tkey}
+  noindex={true}
 >
   <noscript>
     <meta http-equiv="refresh" content="0; url=/en/">
