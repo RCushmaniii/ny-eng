@@ -6,7 +6,7 @@ lastmod: "2026-01-18"
 categories:
   - "Inglés de Negocios"
   - "Comunicación de Alto Impacto"
-featuredImage: "./images/business-english-coaching.jpg"
+featuredImage: "./images/negotiation-framework-hero.jpg"
 imageAlt: "Dos profesionales en una reunión de negociación de negocios"
 translations:
   en: "/en/blog/how-to-negotiate-in-english-framework"

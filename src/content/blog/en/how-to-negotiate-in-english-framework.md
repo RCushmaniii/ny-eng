@@ -6,7 +6,7 @@ lastmod: "2026-01-18"
 categories:
   - "Business English"
   - "High-Impact Communication"
-featuredImage: "./images/business-english-coaching.jpg"
+featuredImage: "./images/negotiation-framework-hero.jpg"
 imageAlt: "Two professionals in a business negotiation meeting"
 translations:
   es: "/es/blog/como-negociar-en-ingles-marco"

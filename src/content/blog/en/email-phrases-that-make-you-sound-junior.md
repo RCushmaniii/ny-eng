@@ -6,7 +6,7 @@ lastmod: "2026-01-18"
 categories:
   - "Business English"
   - "Executive English"
-featuredImage: "./images/executive-english-coaching.jpg"
+featuredImage: "./images/email-junior-vs-executive.jpg"
 imageAlt: "Professional reviewing email on laptop with confident expression"
 translations:
   es: "/es/blog/frases-email-que-te-hacen-sonar-junior"
