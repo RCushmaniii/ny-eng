@@ -1,0 +1,336 @@
+---
+/**
+ * /es/indice-del-sitio/index.astro
+ *
+ * Índice Completo del Sitio - Enlaces a todas las páginas y recursos para SEO
+ * Esta página está en el sitemap pero no en la navegación
+ */
+
+import Base from "@layouts/Base.astro";
+import { serviciosEs } from "@data/services";
+import type { FreeAsset } from "@/types/free-asset";
+import { FileText, Download, Briefcase, ClipboardCheck, BookOpen, Scale } from "lucide-astro";
+
+const title = "Índice Completo del Sitio | NY English Teacher";
+const description = "Explora todas las páginas, recursos, guías y servicios de NY English Teacher. Encuentra coaching de inglés ejecutivo, guiones de negociación, plantillas de entrevistas y más.";
+
+// Auto-discover all free resources from JSON files
+const allAssets = await Astro.glob("../../../data/free/*.json");
+
+// Filter and map resources
+const resources: FreeAsset[] = allAssets
+  .filter((file) => {
+    const data = file.default;
+    const esContent = data.es || data.content?.es;
+    return data.metadata && esContent?.title && !data.$schema;
+  })
+  .map((file) => {
+    const data = file.default;
+    if (!data.en && data.content?.en) {
+      data.en = data.content.en;
+      data.es = data.content.es;
+      data.slugEn = data.slugEn || data.content.en.slug;
+      data.slugEs = data.slugEs || data.content.es?.slug;
+    }
+    return data as FreeAsset;
+  });
+
+// PDF documents with descriptions in Spanish
+const pdfDocuments = [
+  { slug: "5-questions", title: "5 Preguntas para Evaluar tu Inglés Ejecutivo", description: "Una autoevaluación rápida para identificar tus mayores brechas de comunicación." },
+  { slug: "5-minute-negotiation-script", title: "Guion de Negociación de 5 Minutos", description: "Frases para copiar y pegar para defender tu precio y cerrar acuerdos con confianza." },
+  { slug: "7-sentences-leadership-english", title: "7 Frases para Inglés de Liderazgo", description: "Frases poderosas que establecen autoridad en reuniones y presentaciones." },
+  { slug: "5-principles-executive-english", title: "5 Principios del Inglés Ejecutivo", description: "Principios fundamentales que separan a los comunicadores ejecutivos del resto." },
+  { slug: "10-common-mistakes-executive-english", title: "10 Errores Comunes en Inglés Ejecutivo", description: "Evita estos errores que socavan tu credibilidad profesional." },
+  { slug: "5-quick-wins-executive-english", title: "5 Victorias Rápidas para Inglés Ejecutivo", description: "Mejoras inmediatas que puedes hacer para sonar más profesional hoy." },
+  { slug: "60-second-self-introduction-template", title: "Plantilla de Auto-Presentación de 60 Segundos", description: "Estructura tu presentación profesional para máximo impacto." },
+  { slug: "client-call-opening-closing-framework", title: "Marco de Apertura y Cierre de Llamadas", description: "Inicia y termina llamadas con clientes con confianza y profesionalismo." },
+  { slug: "difficult-conversation-checklist", title: "Checklist de Conversaciones Difíciles", description: "Navega discusiones complicadas sin dañar relaciones." },
+  { slug: "email-templates-difficult-situations", title: "Plantillas de Email para Situaciones Difíciles", description: "Plantillas listas para usar en comunicaciones profesionales sensibles." },
+  { slug: "executive-summary-formula", title: "Fórmula de Resumen Ejecutivo", description: "Escribe resúmenes que los ejecutivos ocupados realmente lean y actúen." },
+  { slug: "feedback-framework", title: "Marco de Retroalimentación", description: "Da feedback constructivo que impulse mejoras sin conflicto." },
+  { slug: "interview-answer-templates", title: "Plantillas de Respuestas de Entrevista", description: "Respuestas estructuradas para las preguntas de entrevista más comunes." },
+  { slug: "meeting-rescue-phrases", title: "Frases de Rescate para Reuniones", description: "Salva reuniones descarriladas y regresa las conversaciones al camino." },
+  { slug: "phrases-aggressive-clients", title: "Frases para Clientes Agresivos", description: "Desescala situaciones tensas mientras mantienes tu autoridad." },
+  { slug: "professional-apology-framework", title: "Marco de Disculpa Profesional", description: "Discúlpate efectivamente sin socavar tu credibilidad." },
+  { slug: "pushback-playbook", title: "Guía para Decir No", description: "Di no diplomáticamente mientras preservas relaciones profesionales." },
+  { slug: "questions-that-close-deals", title: "Preguntas que Cierran Ventas", description: "Preguntas estratégicas que mueven prospectos hacia el compromiso." },
+  { slug: "salary-negotiation-script", title: "Guion de Negociación de Salario", description: "Lenguaje exacto para los cuatro momentos críticos en conversaciones de compensación." },
+  { slug: "status-update-script", title: "Guion de Actualización de Estado", description: "Entrega actualizaciones de proyecto que informan e impresionan a stakeholders." },
+  { slug: "technical-explanation-formula", title: "Fórmula de Explicación Técnica", description: "Explica conceptos complejos a audiencias no técnicas con claridad." },
+];
+
+// Additional service pages not in main services array
+const additionalServices = [
+  { title: "Preparación para Entrevistas", slug: "preparacion-para-entrevistas", description: "Domina entrevistas laborales con confianza y consigue el trabajo de tus sueños." },
+  { title: "Inglés Médico", slug: "ingles-para-medicos", description: "Comunícate claramente con pacientes y colegas en entornos de salud." },
+  { title: "Hablar en Público", slug: "hablar-en-publico", description: "Entrega presentaciones que cautiven audiencias e impulsen acción." },
+  { title: "Inglés para Ventas Técnicas", slug: "ingles-para-ventas-tecnicas", description: "Cierra ventas explicando productos técnicos con claridad y persuasión." },
+];
+
+// Quiz and assessment pages
+const assessments = [
+  { title: "Evaluación de Comunicación Ejecutiva", slug: "executives", description: "Descubre tus fortalezas y brechas en comunicación ejecutiva." },
+  { title: "Quiz de Comunicación para Servicios IT", slug: "it-services", description: "Evalúa tus habilidades de comunicación técnica." },
+  { title: "Evaluación de Servicios Profesionales", slug: "professional-services", description: "Mide la efectividad de tu comunicación profesional." },
+  { title: "Quiz de Comunicación de Alto Impacto", slug: "high-stakes", description: "Prueba tus habilidades para presentaciones, negociaciones y conversaciones críticas." },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  lang="es"
+  tkey="site-index"
+  ogImage={{
+    src: "/images/logos/new-york-english-og.jpg",
+    alt: "NY English Teacher - Índice Completo del Sitio",
+  }}
+  hideCta={true}
+>
+  <!-- Hero Section -->
+  <section class="pt-28 pb-12 md:pt-32 md:pb-16 bg-gradient-to-b from-slate-50 to-white">
+    <div class="site-container px-4 text-center">
+      <span class="text-amber-600 font-bold tracking-wider text-sm uppercase mb-4 block">
+        Directorio Completo
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+        Índice del Sitio
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Explora todas las páginas, recursos y servicios. Encuentra exactamente lo que necesitas para avanzar tu comunicación profesional en inglés.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-12 md:py-16">
+    <div class="site-container px-4">
+
+      <!-- Services Section -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="p-3 bg-blue-100 rounded-xl">
+            <Briefcase class="w-6 h-6 text-blue-700" />
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Servicios de Coaching</h2>
+        </div>
+        <p class="text-slate-600 mb-8 max-w-3xl">
+          Programas de coaching de inglés personalizados diseñados para tu industria y metas profesionales específicas.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {serviciosEs.map((service) => (
+            <a
+              href={service.link}
+              class="group p-6 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
+            >
+              <span class="text-3xl mb-3 block">{service.icon}</span>
+              <h3 class="font-semibold text-slate-900 group-hover:text-blue-700 mb-2">
+                {service.title}
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                {service.description}
+              </p>
+            </a>
+          ))}
+          {additionalServices.map((service) => (
+            <a
+              href={`/es/servicios/${service.slug}/`}
+              class="group p-6 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
+            >
+              <span class="text-3xl mb-3 block">✨</span>
+              <h3 class="font-semibold text-slate-900 group-hover:text-blue-700 mb-2">
+                {service.title}
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                {service.description}
+              </p>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Free Resources Section -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="p-3 bg-emerald-100 rounded-xl">
+            <FileText class="w-6 h-6 text-emerald-700" />
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Recursos Gratuitos</h2>
+        </div>
+        <p class="text-slate-600 mb-8 max-w-3xl">
+          Guías accionables, frameworks y plantillas para mejorar tu inglés profesional inmediatamente.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {resources.map((resource) => (
+            <a
+              href={`/es/recursos/${resource.slugEs || resource.metadata.id}/`}
+              class="group p-6 bg-white rounded-xl border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition-all duration-300"
+            >
+              <h3 class="font-semibold text-slate-900 group-hover:text-emerald-700 mb-2">
+                {resource.es?.title || resource.en.title}
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                {resource.es?.description || resource.en.description}
+              </p>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- PDF Downloads Section -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="p-3 bg-amber-100 rounded-xl">
+            <Download class="w-6 h-6 text-amber-700" />
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">PDFs Descargables</h2>
+        </div>
+        <p class="text-slate-600 mb-8 max-w-3xl">
+          Guías y checklists listos para imprimir para referencia rápida durante reuniones, llamadas y presentaciones.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {pdfDocuments.map((pdf) => (
+            <a
+              href={`/assets/documents/${pdf.slug}.pdf`}
+              class="group p-6 bg-white rounded-xl border border-slate-200 hover:border-amber-300 hover:shadow-lg transition-all duration-300"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="flex items-start gap-3">
+                <div class="p-2 bg-amber-50 rounded-lg group-hover:bg-amber-100 transition-colors">
+                  <FileText class="w-5 h-5 text-amber-600" />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-slate-900 group-hover:text-amber-700 mb-1">
+                    {pdf.title}
+                  </h3>
+                  <p class="text-sm text-slate-600 leading-relaxed">
+                    {pdf.description}
+                  </p>
+                  <span class="text-xs text-amber-600 font-medium mt-2 inline-block">
+                    Descargar PDF →
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Assessments Section -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="p-3 bg-purple-100 rounded-xl">
+            <ClipboardCheck class="w-6 h-6 text-purple-700" />
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Autoevaluaciones</h2>
+        </div>
+        <p class="text-slate-600 mb-8 max-w-3xl">
+          Quizzes rápidos para evaluar tus habilidades de comunicación actuales e identificar áreas de mejora.
+        </p>
+        <div class="grid md:grid-cols-2 gap-6">
+          {assessments.map((quiz) => (
+            <a
+              href={`/es/quiz/${quiz.slug}/question/1`}
+              class="group p-6 bg-white rounded-xl border border-slate-200 hover:border-purple-300 hover:shadow-lg transition-all duration-300"
+            >
+              <h3 class="font-semibold text-slate-900 group-hover:text-purple-700 mb-2">
+                {quiz.title}
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                {quiz.description}
+              </p>
+              <span class="text-sm text-purple-600 font-medium mt-3 inline-block">
+                Iniciar Quiz →
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Other Pages Section -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="p-3 bg-slate-100 rounded-xl">
+            <BookOpen class="w-6 h-6 text-slate-700" />
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Otras Páginas</h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="/es/" class="group p-5 bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all">
+            <h3 class="font-semibold text-slate-900 group-hover:text-blue-700">Inicio</h3>
+            <p class="text-sm text-slate-600 mt-1">Página principal</p>
+          </a>
+          <a href="/es/about/" class="group p-5 bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all">
+            <h3 class="font-semibold text-slate-900 group-hover:text-blue-700">Sobre Mí</h3>
+            <p class="text-sm text-slate-600 mt-1">Conoce a Robert Cushman</p>
+          </a>
+          <a href="/es/blog/" class="group p-5 bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all">
+            <h3 class="font-semibold text-slate-900 group-hover:text-blue-700">Blog</h3>
+            <p class="text-sm text-slate-600 mt-1">Artículos e insights</p>
+          </a>
+          <a href="/es/contact/" class="group p-5 bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all">
+            <h3 class="font-semibold text-slate-900 group-hover:text-blue-700">Contacto</h3>
+            <p class="text-sm text-slate-600 mt-1">Ponte en contacto</p>
+          </a>
+          <a href="/es/reservar/" class="group p-5 bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all">
+            <h3 class="font-semibold text-slate-900 group-hover:text-blue-700">Reservar Sesión</h3>
+            <p class="text-sm text-slate-600 mt-1">Agenda tu consulta gratuita</p>
+          </a>
+          <a href="/es/testimonios/" class="group p-5 bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all">
+            <h3 class="font-semibold text-slate-900 group-hover:text-blue-700">Testimonios</h3>
+            <p class="text-sm text-slate-600 mt-1">Historias de éxito de clientes</p>
+          </a>
+          <a href="/es/faqs/" class="group p-5 bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all">
+            <h3 class="font-semibold text-slate-900 group-hover:text-blue-700">Preguntas Frecuentes</h3>
+            <p class="text-sm text-slate-600 mt-1">Respuestas a dudas comunes</p>
+          </a>
+          <a href="/es/recursos/" class="group p-5 bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all">
+            <h3 class="font-semibold text-slate-900 group-hover:text-blue-700">Biblioteca de Recursos</h3>
+            <p class="text-sm text-slate-600 mt-1">Todos los recursos gratuitos</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Legal Section -->
+      <div>
+        <div class="flex items-center gap-3 mb-8">
+          <div class="p-3 bg-slate-100 rounded-xl">
+            <Scale class="w-6 h-6 text-slate-700" />
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Legal</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 max-w-xl">
+          <a href="/es/legal/privacy-policy/" class="group p-5 bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all">
+            <h3 class="font-semibold text-slate-900 group-hover:text-blue-700">Política de Privacidad</h3>
+            <p class="text-sm text-slate-600 mt-1">Cómo manejamos tus datos</p>
+          </a>
+          <a href="/es/legal/terms-of-service/" class="group p-5 bg-white rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all">
+            <h3 class="font-semibold text-slate-900 group-hover:text-blue-700">Términos de Servicio</h3>
+            <p class="text-sm text-slate-600 mt-1">Términos y condiciones de uso</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 md:py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+        ¿Listo para Transformar tu Inglés Profesional?
+      </h2>
+      <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+        Agenda tu sesión estratégica gratuita y recibe recomendaciones personalizadas para tus metas profesionales.
+      </p>
+      <a
+        href="/es/reservar/"
+        class="inline-flex items-center justify-center px-8 py-4 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg transition-colors duration-300"
+      >
+        Reservar Mi Sesión Estratégica Gratuita →
+      </a>
+    </div>
+  </section>
+</Base>

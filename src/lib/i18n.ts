@@ -72,7 +72,8 @@ export type TKey =
   | "quiz/it-services"
   | "quiz/executives"
   | "quiz/professional-services"
-  | "quiz/high-stakes";
+  | "quiz/high-stakes"
+  | "site-index";
 
 export const routeFor: Record<Locale, Record<TKey, string>> = {
   en: {
@@ -158,6 +159,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "quiz/executives": "/en/quiz/executives/",
     "quiz/professional-services": "/en/quiz/professional-services/",
     "quiz/high-stakes": "/en/quiz/high-stakes/",
+    "site-index": "/en/site-index/",
   },
   es: {
     "404": "/es/404/",
@@ -247,6 +249,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "quiz/executives": "/es/quiz/executives/",
     "quiz/professional-services": "/es/quiz/professional-services/",
     "quiz/high-stakes": "/es/quiz/high-stakes/",
+    "site-index": "/es/indice-del-sitio/",
   },
 };
 
@@ -341,5 +344,6 @@ export function getAllTKeys(): TKey[] {
     "quiz/executives",
     "quiz/professional-services",
     "quiz/high-stakes",
+    "site-index",
   ];
 }
