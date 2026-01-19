@@ -5,7 +5,7 @@
  */
 
 import { useState, useMemo } from "react";
-import { Search, Filter, SlidersHorizontal, X, Info } from "lucide-react";
+import { Search, Filter, X, Info } from "lucide-react";
 import ResourceCard from "./ResourceCard";
 import SearchableSelect from "@components/ui/SearchableSelect";
 import { formatLabel } from "@/lib/utils/labelFormatter";
