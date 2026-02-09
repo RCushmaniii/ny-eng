@@ -185,11 +185,11 @@ export const testimonials: Testimonial[] = [
     stars: 5,
     industries: ["professional-english"],
     slug: "emmanuel-ibarra-castillo-ramos-ripoll-schuster",
-    headline: "Mejorando la comunicación con equipos globales",
+    headline: "Comunicación Legal Segura con Clientes Internacionales",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-profesionales/",
-    linkText: "👉 Coaching de Inglés para Profesionales",
-    status: "draft",
+    linkText: "👉 Coaching de Inglés para Profesionales Médicos y Legales",
+    status: "published",
   },
   {
     content:
@@ -264,9 +264,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     content:
-      "Robert me ayudó a fortalecer mi comunicación en inglés para interacciones de gestión de proyectos. Ahora me siento seguro manejando conversaciones legales, explicando problemas complejos y construyendo confianza con colegas estadounidenses. Ha marcado una diferencia significativa en mi trabajo internacional diario.",
-    shortContent:
-      "Robert me ayudó a fortalecer mi comunicación en inglés para interacciones de gestión de proyectos. Ahora me siento seguro manejando conversaciones legales y construyendo confianza con colegas estadounidenses...",
+      "Encontré las clases de Robert bien estructuradas y dinámicas. Utiliza un enfoque situacional que resulta en conocimiento práctico que se puede aplicar en el día a día. Además, su capacidad para adaptarse a mi nivel me mantiene desafiado y en constante mejora.",
     author: "Javier Ramírez",
     position: "Gerente de Programas",
     company: "Sophia",
@@ -274,11 +272,11 @@ export const testimonials: Testimonial[] = [
     stars: 5,
     industries: ["executive-english", "professional-english"],
     slug: "javier-ramirez-sophia",
-    headline: "De nervioso a confiado en entrevistas técnicas",
+    headline: "Inglés Fluido y Seguro para la Gestión de Proyectos Globales",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-presentaciones",
-    linkText: "👉 Coaching de Inglés para Entrevistas",
-    status: "draft",
+    link: "/es/servicios/ingles-para-ejecutivos/",
+    linkText: "👉 Coaching de Inglés para Ejecutivos",
+    status: "published",
   },
   {
     content:
