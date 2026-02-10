@@ -54,9 +54,6 @@ CREATE TABLE IF NOT EXISTS quiz_submissions (
   -- AI-generated personalized assessment
   ai_assessment TEXT,
 
-  -- AI-generated personalized assessment
-  ai_assessment TEXT,
-
   -- Admin management
   status TEXT NOT NULL DEFAULT 'new',
   admin_notes TEXT,
