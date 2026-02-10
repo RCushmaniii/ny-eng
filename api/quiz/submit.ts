@@ -1,19 +1,15 @@
 /**
  * Vercel Serverless Function: Quiz Submit
  *
- * Handles quiz submissions and stores data in Supabase.
- * Replaces the Netlify function for Vercel deployment.
+ * Handles quiz submissions and stores data in Neon PostgreSQL.
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { createClient } from "@supabase/supabase-js";
+import { neon } from "@neondatabase/serverless";
 import { Resend } from "resend";
 
-// Initialize Supabase client
-const supabase = createClient(
-  process.env.SUPABASE_URL || "",
-  process.env.SUPABASE_ANON_KEY || "",
-);
+// Initialize Neon SQL client
+const sql = neon(process.env.DATABASE_URL || "");
 
 // Initialize Resend for email notifications
 const resend = process.env.RESEND_API_KEY
@@ -113,51 +109,32 @@ export default async function handler(
     // Calculate score
     const scoreBreakdown = calculateScore(body.answers, body.quizType);
 
-    // Build payload
-    const payload = {
-      name: body.name,
-      email: body.email,
-      company: body.company || null,
-      phone: body.phone || null,
-      quiz_type: body.quizType,
-      quiz_version: "v1.0",
-      language: body.language,
-      raw_score: scoreBreakdown.rawScore,
-      total_score: scoreBreakdown.totalScore,
-      score_tier: scoreBreakdown.scoreTier,
-      category_scores: scoreBreakdown.categoryScores,
-      primary_gap: scoreBreakdown.primaryGap,
-      secondary_gap: scoreBreakdown.secondaryGap,
-      answers: Object.entries(body.answers).map(([qId, answerIndex]) => ({
-        question_number: parseInt(qId.replace("q", "")),
-        answer_index: answerIndex,
-      })),
-      completion_time_ms: body.completionTime || null,
-      device_type: body.deviceType || null,
-      browser: body.browser || null,
-      referrer: body.referrer || null,
-      utm_source: body.utmSource || null,
-      utm_medium: body.utmMedium || null,
-      utm_campaign: body.utmCampaign || null,
-      utm_content: body.utmContent || null,
-      utm_term: body.utmTerm || null,
-    };
+    // Build answers array
+    const answersArray = Object.entries(body.answers).map(([qId, answerIndex]) => ({
+      question_number: parseInt(qId.replace("q", "")),
+      answer_index: answerIndex,
+    }));
 
-    // Insert into Supabase
-    const { data, error } = await supabase
-      .from("quiz_submissions")
-      .insert(payload)
-      .select("id")
-      .single();
+    // Insert into Neon PostgreSQL
+    const rows = await sql`
+      INSERT INTO quiz_submissions (
+        name, email, company, phone,
+        quiz_type, quiz_version, language,
+        raw_score, total_score, score_tier,
+        category_scores, primary_gap, secondary_gap,
+        answers, completion_time_ms, device_type, browser, referrer,
+        utm_source, utm_medium, utm_campaign, utm_content, utm_term
+      ) VALUES (
+        ${body.name}, ${body.email}, ${body.company || null}, ${body.phone || null},
+        ${body.quizType}, ${"v1.0"}, ${body.language},
+        ${scoreBreakdown.rawScore}, ${scoreBreakdown.totalScore}, ${scoreBreakdown.scoreTier},
+        ${JSON.stringify(scoreBreakdown.categoryScores)}, ${scoreBreakdown.primaryGap}, ${scoreBreakdown.secondaryGap},
+        ${JSON.stringify(answersArray)}, ${body.completionTime || null}, ${body.deviceType || null}, ${body.browser || null}, ${body.referrer || null},
+        ${body.utmSource || null}, ${body.utmMedium || null}, ${body.utmCampaign || null}, ${body.utmContent || null}, ${body.utmTerm || null}
+      ) RETURNING id
+    `;
 
-    if (error) {
-      console.error("Supabase error:", error);
-      res.status(500).json({
-        success: false,
-        error: error.message,
-      });
-      return;
-    }
+    const submissionId = rows[0].id;
 
     // Send email notification
     if (resend && process.env.NOTIFICATION_EMAIL) {
@@ -186,7 +163,7 @@ export default async function handler(
 
     res.status(200).json({
       success: true,
-      submission_id: data.id,
+      submission_id: submissionId,
       score: scoreBreakdown.totalScore,
       score_tier: scoreBreakdown.scoreTier,
     });

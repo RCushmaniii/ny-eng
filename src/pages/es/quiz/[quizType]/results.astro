@@ -582,9 +582,9 @@ const customHreflangs = [
             ...behavioralData,
           };
 
-          // Submit to API (Netlify Function)
+          // Submit to API (Vercel Function)
           const response = await fetch(
-            "https://ny-eng-api.netlify.app/.netlify/functions/quiz-submit",
+            "https://ny-eng.vercel.app/api/quiz/submit",
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },

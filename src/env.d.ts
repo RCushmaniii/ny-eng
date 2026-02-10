@@ -7,10 +7,9 @@ declare module "*.astro" {
   export type { ConnectItem } from "@components/Footer.astro";
 }
 
-// Environment variables for Supabase
+// Environment variables for Neon PostgreSQL
 interface ImportMetaEnv {
-  readonly SUPABASE_URL: string;
-  readonly SUPABASE_ANON_KEY: string;
+  readonly DATABASE_URL: string;
 }
 
 interface ImportMeta {

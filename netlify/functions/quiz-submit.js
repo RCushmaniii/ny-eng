@@ -1,27 +1,13 @@
 /**
- * Netlify Function: Quiz Submit
+ * Netlify Function: Quiz Submit (Backup Endpoint)
  *
- * This is a standalone Netlify Function that handles quiz submissions.
- * It's called via proxy from Hostinger: /api/quiz/submit -> Netlify
- *
- * Migrated from Supabase to MySQL on Hostinger.
+ * Primary traffic now goes through Vercel (api/quiz/submit.ts).
+ * This function is kept as a backup endpoint using the same Neon database.
  */
 
-const mysql = require("mysql2/promise");
+const { neon } = require("@neondatabase/serverless");
 
-// Create MySQL connection pool
-const pool = mysql.createPool({
-  host: process.env.MYSQL_HOST,
-  user: process.env.MYSQL_USER,
-  password: process.env.MYSQL_PASSWORD,
-  database: process.env.MYSQL_DATABASE,
-  port: parseInt(process.env.MYSQL_PORT || "3306"),
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-});
-
-// Scoring logic (same as original)
+// Scoring logic (same as Vercel endpoint)
 function calculateScore(answers, quizType) {
   let totalScore = 0;
   const answerValues = Object.values(answers);
@@ -83,7 +69,7 @@ exports.handler = async (event, context) => {
   try {
     const body = JSON.parse(event.body);
 
-    // Validate required fields (same as original)
+    // Validate required fields
     if (
       !body.name ||
       !body.email ||
@@ -105,121 +91,78 @@ exports.handler = async (event, context) => {
       };
     }
 
-    // Calculate score (same as original)
+    // Calculate score
     const scoreBreakdown = calculateScore(body.answers, body.quizType);
 
-    // Build payload (same structure as original)
-    const payload = {
-      name: body.name,
-      email: body.email,
-      company: body.company || null,
-      phone: body.phone || null,
-      quiz_type: body.quizType,
-      quiz_version: "v1.0",
-      language: body.language,
-      raw_score: scoreBreakdown.rawScore,
-      total_score: scoreBreakdown.totalScore,
-      score_tier: scoreBreakdown.scoreTier,
-      category_scores: JSON.stringify(scoreBreakdown.categoryScores),
-      primary_gap: scoreBreakdown.primaryGap,
-      secondary_gap: scoreBreakdown.secondaryGap,
-      answers: JSON.stringify(
-        Object.entries(body.answers).map(([qId, answerIndex]) => ({
-          question_number: parseInt(qId.replace("q", "")),
-          answer_index: answerIndex,
-        })),
-      ),
-      completion_time_ms: body.completionTime || null,
-      device_type: body.deviceType || null,
-      browser: body.browser || null,
-      referrer: body.referrer || null,
-      utm_source: body.utmSource || null,
-      utm_medium: body.utmMedium || null,
-      utm_campaign: body.utmCampaign || null,
-      utm_content: body.utmContent || null,
-      utm_term: body.utmTerm || null,
-    };
+    // Build answers array
+    const answersArray = Object.entries(body.answers).map(
+      ([qId, answerIndex]) => ({
+        question_number: parseInt(qId.replace("q", "")),
+        answer_index: answerIndex,
+      }),
+    );
 
-    // Insert into MySQL (instead of Supabase)
-    const connection = await pool.getConnection();
+    // Initialize Neon SQL client
+    const sql = neon(process.env.DATABASE_URL);
 
-    try {
-      const [result] = await connection.execute(
-        `INSERT INTO quiz_submissions (
-          name, email, company, phone,
-          quiz_type, quiz_version, language,
-          raw_score, total_score, score_tier,
-          category_scores, primary_gap, secondary_gap,
-          answers, completion_time_ms, device_type, browser, referrer,
-          utm_source, utm_medium, utm_campaign, utm_content, utm_term
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-        [
-          payload.name,
-          payload.email,
-          payload.company,
-          payload.phone,
-          payload.quiz_type,
-          payload.quiz_version,
-          payload.language,
-          payload.raw_score,
-          payload.total_score,
-          payload.score_tier,
-          payload.category_scores,
-          payload.primary_gap,
-          payload.secondary_gap,
-          payload.answers,
-          payload.completion_time_ms,
-          payload.device_type,
-          payload.browser,
-          payload.referrer,
-          payload.utm_source,
-          payload.utm_medium,
-          payload.utm_campaign,
-          payload.utm_content,
-          payload.utm_term,
-        ],
-      );
+    // Insert into Neon PostgreSQL
+    const rows = await sql`
+      INSERT INTO quiz_submissions (
+        name, email, company, phone,
+        quiz_type, quiz_version, language,
+        raw_score, total_score, score_tier,
+        category_scores, primary_gap, secondary_gap,
+        answers, completion_time_ms, device_type, browser, referrer,
+        utm_source, utm_medium, utm_campaign, utm_content, utm_term
+      ) VALUES (
+        ${body.name}, ${body.email}, ${body.company || null}, ${body.phone || null},
+        ${body.quizType}, ${"v1.0"}, ${body.language},
+        ${scoreBreakdown.rawScore}, ${scoreBreakdown.totalScore}, ${scoreBreakdown.scoreTier},
+        ${JSON.stringify(scoreBreakdown.categoryScores)}, ${scoreBreakdown.primaryGap}, ${scoreBreakdown.secondaryGap},
+        ${JSON.stringify(answersArray)}, ${body.completionTime || null}, ${body.deviceType || null}, ${body.browser || null}, ${body.referrer || null},
+        ${body.utmSource || null}, ${body.utmMedium || null}, ${body.utmCampaign || null}, ${body.utmContent || null}, ${body.utmTerm || null}
+      ) RETURNING id
+    `;
 
-      // Send email notification (optional - requires Resend setup)
-      if (process.env.RESEND_API_KEY && process.env.NOTIFICATION_EMAIL) {
-        try {
-          const Resend = require("resend").Resend;
-          const resend = new Resend(process.env.RESEND_API_KEY);
+    const submissionId = rows[0].id;
 
-          await resend.emails.send({
-            from: "NY English Quiz <onboarding@resend.dev>",
-            to: process.env.NOTIFICATION_EMAIL,
-            subject: `New Quiz Lead: ${body.name} (${body.quizType})`,
-            html: `
-              <h2>New Quiz Submission</h2>
-              <p><strong>Name:</strong> ${body.name}</p>
-              <p><strong>Email:</strong> ${body.email}</p>
-              <p><strong>Score:</strong> ${scoreBreakdown.totalScore}/100</p>
-              <p><strong>Quiz Type:</strong> ${body.quizType}</p>
-            `,
-          });
-        } catch (emailError) {
-          console.error("Email error:", emailError);
-          // Don't fail the submission if email fails
-        }
+    // Send email notification (optional)
+    if (process.env.RESEND_API_KEY && process.env.NOTIFICATION_EMAIL) {
+      try {
+        const Resend = require("resend").Resend;
+        const resend = new Resend(process.env.RESEND_API_KEY);
+
+        await resend.emails.send({
+          from: "NY English Quiz <onboarding@resend.dev>",
+          to: process.env.NOTIFICATION_EMAIL,
+          subject: `New Quiz Lead: ${body.name} (${body.quizType})`,
+          html: `
+            <h2>New Quiz Submission</h2>
+            <p><strong>Name:</strong> ${body.name}</p>
+            <p><strong>Email:</strong> ${body.email}</p>
+            <p><strong>Score:</strong> ${scoreBreakdown.totalScore}/100</p>
+            <p><strong>Quiz Type:</strong> ${body.quizType}</p>
+          `,
+        });
+      } catch (emailError) {
+        console.error("Email error:", emailError);
+        // Don't fail the submission if email fails
       }
-
-      return {
-        statusCode: 200,
-        headers: {
-          "Access-Control-Allow-Origin": allowedOrigin,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          success: true,
-          submission_id: result.insertId,
-          score: scoreBreakdown.totalScore,
-          score_tier: scoreBreakdown.scoreTier,
-        }),
-      };
-    } finally {
-      connection.release();
     }
+
+    return {
+      statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": allowedOrigin,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        success: true,
+        submission_id: submissionId,
+        score: scoreBreakdown.totalScore,
+        score_tier: scoreBreakdown.scoreTier,
+      }),
+    };
   } catch (error) {
     console.error("Function error:", error);
     return {

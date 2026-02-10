@@ -1,11 +1,11 @@
 /**
- * Database Client - Supabase
+ * Database Client - Neon PostgreSQL
  *
- * Migrated from MySQL to Supabase for Vercel deployment
- * Maintains same interface for backward compatibility
+ * Migrated from Supabase to Neon serverless PostgreSQL.
+ * Maintains same interface for backward compatibility.
  */
 
-import { supabase } from "./supabase";
+import { sql } from "./neon";
 
 // =============================================================================
 // TYPE DEFINITIONS
@@ -128,59 +128,43 @@ export interface QuizSubmissionPayload {
 export async function submitQuiz(payload: QuizSubmissionPayload) {
   try {
     // 1. Insert the submission
-    const { data: submission, error: submissionError } = await supabase
-      .from("quiz_submissions")
-      .insert({
-        name: payload.name,
-        email: payload.email,
-        company: payload.company || null,
-        phone: payload.phone || null,
-        quiz_type: payload.quiz_type,
-        quiz_version: payload.quiz_version,
-        language: payload.language,
-        raw_score: payload.raw_score,
-        total_score: payload.total_score,
-        score_tier: payload.score_tier,
-        category_scores: payload.category_scores,
-        primary_gap: payload.primary_gap,
-        secondary_gap: payload.secondary_gap,
-        completion_time_ms: payload.completion_time_ms || null,
-        device_type: payload.device_type || null,
-        browser: payload.browser || null,
-        referrer: payload.referrer || null,
-        utm_source: payload.utm_source || null,
-        utm_medium: payload.utm_medium || null,
-        utm_campaign: payload.utm_campaign || null,
-        utm_content: payload.utm_content || null,
-        utm_term: payload.utm_term || null,
-        answers: payload.answers,
-      })
-      .select("id")
-      .single();
+    const rows = await sql`
+      INSERT INTO quiz_submissions (
+        name, email, company, phone,
+        quiz_type, quiz_version, language,
+        raw_score, total_score, score_tier,
+        category_scores, primary_gap, secondary_gap,
+        completion_time_ms, device_type, browser, referrer,
+        utm_source, utm_medium, utm_campaign, utm_content, utm_term,
+        answers
+      ) VALUES (
+        ${payload.name}, ${payload.email}, ${payload.company || null}, ${payload.phone || null},
+        ${payload.quiz_type}, ${payload.quiz_version}, ${payload.language},
+        ${payload.raw_score}, ${payload.total_score}, ${payload.score_tier},
+        ${JSON.stringify(payload.category_scores)}, ${JSON.stringify(payload.primary_gap)}, ${JSON.stringify(payload.secondary_gap)},
+        ${payload.completion_time_ms || null}, ${payload.device_type || null}, ${payload.browser || null}, ${payload.referrer || null},
+        ${payload.utm_source || null}, ${payload.utm_medium || null}, ${payload.utm_campaign || null}, ${payload.utm_content || null}, ${payload.utm_term || null},
+        ${JSON.stringify(payload.answers)}
+      ) RETURNING id
+    `;
 
-    if (submissionError) {
-      throw new Error(submissionError.message);
-    }
-
-    const submissionId = submission.id;
+    const submissionId = rows[0].id;
 
     // 2. Insert all answers
     if (payload.answers && payload.answers.length > 0) {
-      const answerRecords = payload.answers.map((a) => ({
-        submission_id: submissionId,
-        question_number: a.question_number,
-        question_text: a.question_text,
-        answer_text: a.answer_text,
-        answer_index: a.answer_index,
-        points: a.points,
-        category: a.category,
-      }));
-
-      const { error: answersError } = await supabase
-        .from("quiz_answers")
-        .insert(answerRecords);
-
-      if (answersError) {
+      try {
+        for (const a of payload.answers) {
+          await sql`
+            INSERT INTO quiz_answers (
+              submission_id, question_number, question_text,
+              answer_text, answer_index, points, category
+            ) VALUES (
+              ${submissionId}, ${a.question_number}, ${a.question_text},
+              ${a.answer_text}, ${a.answer_index}, ${a.points}, ${a.category}
+            )
+          `;
+        }
+      } catch (answersError) {
         console.error("Error inserting answers:", answersError);
         // Don't fail the whole submission for answer errors
       }
@@ -205,32 +189,26 @@ export async function submitQuiz(payload: QuizSubmissionPayload) {
  */
 export async function getSubmission(submissionId: string) {
   try {
-    // Get submission
-    const { data: submission, error: submissionError } = await supabase
-      .from("quiz_submissions")
-      .select("*")
-      .eq("id", submissionId)
-      .single();
+    const submissions = await sql`
+      SELECT * FROM quiz_submissions WHERE id = ${submissionId}
+    `;
 
-    if (submissionError) {
-      throw new Error(submissionError.message);
+    if (submissions.length === 0) {
+      throw new Error("Submission not found");
     }
 
-    // Get answers
-    const { data: answers, error: answersError } = await supabase
-      .from("quiz_answers")
-      .select("*")
-      .eq("submission_id", submissionId)
-      .order("question_number", { ascending: true });
+    const submission = submissions[0];
 
-    if (answersError) {
-      console.error("Error getting answers:", answersError);
-    }
+    const answers = await sql`
+      SELECT * FROM quiz_answers
+      WHERE submission_id = ${submissionId}
+      ORDER BY question_number ASC
+    `;
 
     return {
       success: true,
       submission,
-      answers: answers || [],
+      answers,
     };
   } catch (error) {
     console.error("Error getting submission:", error);
@@ -252,45 +230,69 @@ export async function getAllSubmissions(filters?: {
   offset?: number;
 }) {
   try {
-    let query = supabase
-      .from("quiz_submissions")
-      .select("*", { count: "exact" });
+    const limitVal = filters?.limit || 50;
+    const offsetVal = filters?.offset || 0;
 
-    // Apply filters
-    if (filters?.score_tier) {
-      query = query.eq("score_tier", filters.score_tier);
-    }
-    if (filters?.language) {
-      query = query.eq("language", filters.language);
-    }
-    if (filters?.booked_consultation !== undefined) {
-      query = query.eq("booked_consultation", filters.booked_consultation);
-    }
+    let submissions;
+    let countResult;
 
-    // Ordering
-    query = query.order("created_at", { ascending: false });
+    if (!filters?.score_tier && !filters?.language && filters?.booked_consultation === undefined) {
+      submissions = await sql`
+        SELECT * FROM quiz_submissions
+        ORDER BY created_at DESC
+        LIMIT ${limitVal} OFFSET ${offsetVal}
+      `;
+      countResult = await sql`SELECT COUNT(*) as total FROM quiz_submissions`;
+    } else if (filters?.score_tier && !filters?.language && filters?.booked_consultation === undefined) {
+      submissions = await sql`
+        SELECT * FROM quiz_submissions
+        WHERE score_tier = ${filters.score_tier}
+        ORDER BY created_at DESC
+        LIMIT ${limitVal} OFFSET ${offsetVal}
+      `;
+      countResult = await sql`SELECT COUNT(*) as total FROM quiz_submissions WHERE score_tier = ${filters.score_tier}`;
+    } else if (!filters?.score_tier && filters?.language && filters?.booked_consultation === undefined) {
+      submissions = await sql`
+        SELECT * FROM quiz_submissions
+        WHERE language = ${filters.language}
+        ORDER BY created_at DESC
+        LIMIT ${limitVal} OFFSET ${offsetVal}
+      `;
+      countResult = await sql`SELECT COUNT(*) as total FROM quiz_submissions WHERE language = ${filters.language}`;
+    } else if (!filters?.score_tier && !filters?.language && filters?.booked_consultation !== undefined) {
+      submissions = await sql`
+        SELECT * FROM quiz_submissions
+        WHERE booked_consultation = ${filters.booked_consultation}
+        ORDER BY created_at DESC
+        LIMIT ${limitVal} OFFSET ${offsetVal}
+      `;
+      countResult = await sql`SELECT COUNT(*) as total FROM quiz_submissions WHERE booked_consultation = ${filters.booked_consultation}`;
+    } else {
+      // Multiple filters — build with all three
+      const tier = filters?.score_tier || null;
+      const lang = filters?.language || null;
+      const booked = filters?.booked_consultation ?? null;
 
-    // Pagination
-    if (filters?.limit) {
-      query = query.limit(filters.limit);
-    }
-    if (filters?.offset) {
-      query = query.range(
-        filters.offset,
-        filters.offset + (filters.limit || 10) - 1,
-      );
-    }
-
-    const { data: submissions, error, count } = await query;
-
-    if (error) {
-      throw new Error(error.message);
+      submissions = await sql`
+        SELECT * FROM quiz_submissions
+        WHERE (${tier}::text IS NULL OR score_tier = ${tier})
+          AND (${lang}::text IS NULL OR language = ${lang})
+          AND (${booked}::boolean IS NULL OR booked_consultation = ${booked})
+        ORDER BY created_at DESC
+        LIMIT ${limitVal} OFFSET ${offsetVal}
+      `;
+      countResult = await sql`
+        SELECT COUNT(*) as total FROM quiz_submissions
+        WHERE (${tier}::text IS NULL OR score_tier = ${tier})
+          AND (${lang}::text IS NULL OR language = ${lang})
+          AND (${booked}::boolean IS NULL OR booked_consultation = ${booked})
+      `;
     }
 
     return {
       success: true,
       submissions: submissions || [],
-      total: count || 0,
+      total: parseInt(countResult[0]?.total || "0", 10),
     };
   } catch (error) {
     console.error("Error getting submissions:", error);
@@ -309,17 +311,11 @@ export async function updateBookingStatus(
   bookingDate: string,
 ) {
   try {
-    const { error } = await supabase
-      .from("quiz_submissions")
-      .update({
-        booked_consultation: true,
-        booking_date: bookingDate,
-      })
-      .eq("id", submissionId);
-
-    if (error) {
-      throw new Error(error.message);
-    }
+    await sql`
+      UPDATE quiz_submissions
+      SET booked_consultation = true, booking_date = ${bookingDate}
+      WHERE id = ${submissionId}
+    `;
 
     return {
       success: true,
@@ -339,14 +335,11 @@ export async function updateBookingStatus(
  */
 export async function trackCtaClick(submissionId: string) {
   try {
-    const { error } = await supabase
-      .from("quiz_submissions")
-      .update({ clicked_cta: true })
-      .eq("id", submissionId);
-
-    if (error) {
-      throw new Error(error.message);
-    }
+    await sql`
+      UPDATE quiz_submissions
+      SET clicked_cta = true
+      WHERE id = ${submissionId}
+    `;
 
     return { success: true };
   } catch (error) {

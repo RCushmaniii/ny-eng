@@ -11,7 +11,7 @@ Professional English coaching and training platform for Robert Cushman's "NY Eng
 - **Framework**: Astro 5.5 with React 19 for interactive components
 - **Styling**: Tailwind CSS 3.4
 - **Language**: TypeScript 5.9 (strict)
-- **Database**: MySQL (Hostinger)
+- **Database**: Neon PostgreSQL (via Vercel integration)
 - **APIs**: Google Calendar, Formspree, Resend
 - **Hosting**: Hostinger (static) + Cloudflare Workers (booking API)
 - **Content**: Markdown via Astro Content Collections
@@ -113,10 +113,7 @@ npm run validate:all  # Run SEO validators
 
 Required in `.env`:
 ```
-MYSQL_HOST=
-MYSQL_USER=
-MYSQL_PASSWORD=
-MYSQL_DATABASE=
+DATABASE_URL=
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
 GOOGLE_REFRESH_TOKEN=
