@@ -569,6 +569,7 @@ const customHreflangs = [
           const completionTime = QuizStorage.getCompletionTime(quizType);
 
           // Build submission payload for API
+          // Send full score breakdown so the API stores the correct scores
           const payload = {
             name: safeName,
             email: safeEmail,
@@ -576,6 +577,18 @@ const customHreflangs = [
             phone: undefined,
             quizType,
             score: scoreBreakdown.totalScore,
+            totalScore: scoreBreakdown.totalScore,
+            rawScore: scoreBreakdown.rawScore,
+            scoreTier: scoreBreakdown.scoreTier,
+            categoryScores: scoreBreakdown.categoryScores,
+            primaryGap: scoreBreakdown.primaryGap.category,
+            secondaryGap: scoreBreakdown.secondaryGap.category,
+            primaryGapName: scoreBreakdown.primaryGap.categoryName,
+            secondaryGapName: scoreBreakdown.secondaryGap.categoryName,
+            primaryGapImpact: scoreBreakdown.primaryGap.impact,
+            secondaryGapImpact: scoreBreakdown.secondaryGap.impact,
+            primaryGapRecommendation: scoreBreakdown.primaryGap.recommendation,
+            secondaryGapRecommendation: scoreBreakdown.secondaryGap.recommendation,
             answers,
             language: "es",
             completionTime,
@@ -604,13 +617,16 @@ const customHreflangs = [
             });
             QuizStorage.saveScore(quizType, scoreBreakdown.totalScore);
 
-            // Backwards-compat: also write legacy keys for the React report
+            // Write keys for the React report (QuizReport.tsx)
             try {
               sessionStorage.setItem("quizAnswers", JSON.stringify(answers));
               sessionStorage.setItem(
                 "leadData",
                 JSON.stringify({ name: safeName, company: undefined, quizType })
               );
+              if (result.ai_assessment) {
+                sessionStorage.setItem("aiAssessment", result.ai_assessment);
+              }
             } catch {}
 
             // Redirect to the polished report page (uses QuizReport.tsx)

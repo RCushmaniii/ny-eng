@@ -575,6 +575,8 @@ const customHreflangs = [
           const completionTime = QuizStorage.getCompletionTime(quizType);
 
           // Build submission payload for API
+          // Send full score breakdown so the API stores the correct scores
+          // (the API no longer recalculates — client scoring engine is the source of truth)
           const payload = {
             name: safeName,
             email: safeEmail,
@@ -582,6 +584,18 @@ const customHreflangs = [
             phone: undefined,
             quizType,
             score: scoreBreakdown.totalScore,
+            totalScore: scoreBreakdown.totalScore,
+            rawScore: scoreBreakdown.rawScore,
+            scoreTier: scoreBreakdown.scoreTier,
+            categoryScores: scoreBreakdown.categoryScores,
+            primaryGap: scoreBreakdown.primaryGap.category,
+            secondaryGap: scoreBreakdown.secondaryGap.category,
+            primaryGapName: scoreBreakdown.primaryGap.categoryName,
+            secondaryGapName: scoreBreakdown.secondaryGap.categoryName,
+            primaryGapImpact: scoreBreakdown.primaryGap.impact,
+            secondaryGapImpact: scoreBreakdown.secondaryGap.impact,
+            primaryGapRecommendation: scoreBreakdown.primaryGap.recommendation,
+            secondaryGapRecommendation: scoreBreakdown.secondaryGap.recommendation,
             answers,
             language: "en",
             completionTime,
@@ -610,14 +624,17 @@ const customHreflangs = [
             });
             QuizStorage.saveScore(quizType, scoreBreakdown.totalScore);
 
-            // Backwards-compat: also write legacy keys for the original React report
-            // so /en/quiz/report/ (QuizReport.tsx) renders correctly.
+            // Write keys for the React report (QuizReport.tsx)
             try {
               sessionStorage.setItem("quizAnswers", JSON.stringify(answers));
               sessionStorage.setItem(
                 "leadData",
                 JSON.stringify({ name: safeName, company: undefined, quizType })
               );
+              // Store AI assessment if returned by API
+              if (result.ai_assessment) {
+                sessionStorage.setItem("aiAssessment", result.ai_assessment);
+              }
             } catch {}
 
             // Redirect to the polished report page (uses QuizReport.tsx)

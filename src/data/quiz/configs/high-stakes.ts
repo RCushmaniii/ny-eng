@@ -239,9 +239,9 @@ export const highStakesConfig: QuizConfig = {
       negotiation: {
         name: "Persuasion & Defense",
         lowScoreImpact:
-          "Difficulty handling pushback leads to weak positioning.",
+          "When you can't defend your position under pressure, interviewers and stakeholders fill the vacuum with their own conclusions. You lose control of the narrative, and strong ideas get dismissed because they weren't defended with conviction.",
         recommendation:
-          "My Advice: Practice diplomatic pushback scripts until they are muscle memory.",
+          "My Advice: Build a library of 'bridge phrases' that let you redirect without confrontation: 'That's an important angle — and here's what the data actually shows...' Practice until defending your position feels like a conversation, not a fight.",
         urgency: "medium",
       },
     },
@@ -519,9 +519,9 @@ export const highStakesConfig: QuizConfig = {
       negotiation: {
         name: "Persuasión y Defensa",
         lowScoreImpact:
-          "Dificultad para manejar el rechazo conduce a un posicionamiento débil.",
+          "Cuando no puedes defender tu posición bajo presión, los entrevistadores y stakeholders llenan el vacío con sus propias conclusiones. Pierdes el control de la narrativa, y buenas ideas se descartan porque no fueron defendidas con convicción.",
         recommendation:
-          "Mi Consejo: Practica guiones de rechazo diplomático hasta que te salgan naturales.",
+          "Mi Consejo: Construye una biblioteca de 'frases puente' que te permitan redirigir sin confrontación: 'Ese es un ángulo importante — y esto es lo que muestran los datos...' Practica hasta que defender tu posición se sienta como una conversación, no una pelea.",
         urgency: "medium",
       },
     },

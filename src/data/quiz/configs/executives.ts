@@ -108,7 +108,7 @@ export const executivesConfig: QuizConfig = {
         id: 4,
         category: "negotiation",
         question:
-          "When a strategic partner or enterprise client pushes back on terms, how do I handle the friction in English?",
+          "When a strategic partner or enterprise client pushes back on terms, how do you handle the friction in English?",
         answers: [
           {
             index: 0,
@@ -138,7 +138,7 @@ export const executivesConfig: QuizConfig = {
       },
       {
         id: 5,
-        category: "confidence",
+        category: "real-time",
         question:
           'The presentation is over, and the floor is open for Q&A. How do I handle the "off-script" moments in English?',
         answers: [
@@ -417,9 +417,9 @@ export const executivesConfig: QuizConfig = {
       },
       {
         id: 5,
-        category: "confidence",
+        category: "real-time",
         question:
-          "¿Qué tan confiado te sientes liderando discusiones no guionadas en inglés (Q&A, resolución de problemas en vivo, “una última pregunta” al final de la reunión)?",
+          "¿Qué tan confiado te sientes liderando discusiones no guionadas en inglés (Q&A, resolución de problemas en vivo, \u201Cuna última pregunta\u201D al final de la reunión)?",
         answers: [
           {
             index: 0,

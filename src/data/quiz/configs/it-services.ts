@@ -139,7 +139,7 @@ export const itServicesConfig: QuizConfig = {
       },
       {
         id: 5,
-        category: "confidence",
+        category: "real-time",
         question:
           "If you are forced to lead a high-stakes client meeting alone, how do you feel?",
         answers: [
@@ -420,7 +420,7 @@ export const itServicesConfig: QuizConfig = {
       },
       {
         id: 5,
-        category: "confidence",
+        category: "real-time",
         question:
           "Si te ves obligado a liderar una reunión importante con un cliente tú solo, ¿cómo te sientes?",
         answers: [

@@ -223,6 +223,46 @@
 }
 
 /* ========================================
+   AI PERSONALIZED ASSESSMENT SECTION
+   ======================================== */
+
+.ai-assessment-section {
+  padding: 2.5rem 3rem;
+  background: linear-gradient(135deg, #f0f9ff 0%, #eff6ff 100%);
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ai-assessment-content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  border-left: 4px solid #2563eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.ai-assessment-paragraph {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #334155;
+  margin: 0 0 1rem;
+}
+
+.ai-assessment-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .ai-assessment-section {
+    padding: 1.5rem;
+  }
+
+  .ai-assessment-content {
+    padding: 1.25rem;
+  }
+}
+
+/* ========================================
    INSIGHTS SECTION (CARDS)
    ======================================== */
 
@@ -574,6 +614,7 @@
   /* Prevent awkward page breaks */
   .report-header,
   .hero-section,
+  .ai-assessment-section,
   .insights-section,
   .impact-section,
   .elite-section,

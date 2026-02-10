@@ -52,6 +52,7 @@ export default function QuizReport() {
   } | null>(null);
   const [eliteInfo, setEliteInfo] = useState<EliteInfo | null>(null);
   const [ctaInfo, setCtaInfo] = useState<CtaInfo | null>(null);
+  const [aiAssessment, setAiAssessment] = useState<string | null>(null);
 
   // --- Effect to load data from sessionStorage on mount ---
   useEffect(() => {
@@ -118,21 +119,21 @@ export default function QuizReport() {
         tier: scoreBreakdown.scoreTier,
         color: "#10b981",
         description:
-          "Your team has solid communication skills with room for strategic refinement.",
+          "You demonstrate strong communication skills in high-stakes situations. Small refinements could help you command even greater influence.",
       };
     } else if (scoreBreakdown.scoreTier === "Passive Proficiency") {
       currentTierInfo = {
         tier: scoreBreakdown.scoreTier,
         color: "#f59e0b",
         description:
-          "Communication gaps are costing you deals. The good news? These are fixable.",
+          "You understand almost everything, but you struggle to be heard. Great ideas are landing softer than they should. The good news? This is fixable.",
       };
     } else {
       currentTierInfo = {
         tier: scoreBreakdown.scoreTier,
         color: "#ef4444",
         description:
-          "Communication challenges are directly limiting growth. Immediate action needed.",
+          "Communication challenges are holding you back more than you realize. Colleagues interpret hesitation as lack of expertise—even when your skills are world-class.",
       };
     }
 
@@ -200,6 +201,12 @@ export default function QuizReport() {
       currentCtaInfo = config.results.cta;
     }
 
+    // Load AI assessment from sessionStorage (set by results page after API response)
+    let assessment: string | null = null;
+    try {
+      assessment = sessionStorage.getItem("aiAssessment");
+    } catch {}
+
     // --- Set State ---
     setLeadData(lead);
     setGeneratedDate(date);
@@ -209,6 +216,7 @@ export default function QuizReport() {
     setImpactInfo(impact);
     setEliteInfo(currentEliteInfo);
     setCtaInfo(currentCtaInfo);
+    if (assessment) setAiAssessment(assessment);
     setIsLoading(false);
   }, []);
 
@@ -276,7 +284,14 @@ export default function QuizReport() {
               {/* Print to PDF Button */}
               <button
                 className="download-pdf-button no-print"
-                onClick={() => window.print()}
+                onClick={() => {
+                  const originalTitle = document.title;
+                  const monthYear = new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" });
+                  document.title = `Communication Confidence Report - ${monthYear}`;
+                  window.print();
+                  // Restore title after print dialog closes
+                  setTimeout(() => { document.title = originalTitle; }, 1000);
+                }}
                 type="button"
               >
                 <Download size={18} />
@@ -304,6 +319,18 @@ export default function QuizReport() {
             </div>
           </div>
         </section>
+
+        {/* AI Personalized Assessment Section */}
+        {aiAssessment && (
+          <section className="ai-assessment-section">
+            <h2 className="section-heading">Your Personalized Assessment</h2>
+            <div className="ai-assessment-content">
+              {aiAssessment.split("\n\n").map((paragraph, i) => (
+                <p key={i} className="ai-assessment-paragraph">{paragraph}</p>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Insights Cards Section */}
         <section className="insights-section">

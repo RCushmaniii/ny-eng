@@ -51,6 +51,12 @@ CREATE TABLE IF NOT EXISTS quiz_submissions (
   gdpr_consent BOOLEAN DEFAULT FALSE,
   marketing_opt_in BOOLEAN DEFAULT FALSE,
 
+  -- AI-generated personalized assessment
+  ai_assessment TEXT,
+
+  -- AI-generated personalized assessment
+  ai_assessment TEXT,
+
   -- Admin management
   status TEXT NOT NULL DEFAULT 'new',
   admin_notes TEXT,
@@ -112,6 +118,12 @@ CREATE TRIGGER update_quiz_submissions_updated_at
   BEFORE UPDATE ON quiz_submissions
   FOR EACH ROW
   EXECUTE FUNCTION update_updated_at_column();
+
+-- ============================================================================
+-- Migrations
+-- ============================================================================
+-- Add ai_assessment column (safe to run multiple times)
+ALTER TABLE quiz_submissions ADD COLUMN IF NOT EXISTS ai_assessment TEXT;
 
 -- ============================================================================
 -- Verification queries
