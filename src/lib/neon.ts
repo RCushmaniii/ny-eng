@@ -7,11 +7,11 @@
 
 import { neon } from "@neondatabase/serverless";
 
-const databaseUrl = import.meta.env.DATABASE_URL;
+const databaseUrl = import.meta.env.POSTGRES_URL;
 
 if (!databaseUrl) {
   console.warn(
-    "DATABASE_URL not found. Database operations will fail.",
+    "POSTGRES_URL not found. Database operations will fail.",
   );
 }
 

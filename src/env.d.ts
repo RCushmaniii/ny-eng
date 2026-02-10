@@ -7,9 +7,9 @@ declare module "*.astro" {
   export type { ConnectItem } from "@components/Footer.astro";
 }
 
-// Environment variables for Neon PostgreSQL
+// Environment variables for Neon PostgreSQL (via Vercel integration)
 interface ImportMetaEnv {
-  readonly DATABASE_URL: string;
+  readonly POSTGRES_URL: string;
 }
 
 interface ImportMeta {

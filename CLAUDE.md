@@ -43,7 +43,7 @@ src/
 ├── lib/                # Utilities
 │   ├── i18n.ts         # Bilingual routing system
 │   ├── db.ts           # Quiz submission database
-│   └── mysql.ts        # MySQL connection pool
+│   └── neon.ts         # Neon PostgreSQL client
 ├── types/              # TypeScript definitions
 └── styles/             # Global CSS
 ```
@@ -113,7 +113,7 @@ npm run validate:all  # Run SEO validators
 
 Required in `.env`:
 ```
-DATABASE_URL=
+POSTGRES_URL=
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
 GOOGLE_REFRESH_TOKEN=
@@ -147,7 +147,7 @@ Quiz flow: `/en/quiz/[quizType]/` → questions → report
 
 - Quiz types defined in `src/data/quiz/types.ts`
 - Scoring logic in `src/data/quiz/scoring.ts`
-- Results stored in MySQL via `src/lib/db.ts`
+- Results stored in Neon PostgreSQL via `src/lib/db.ts`
 
 ## Booking System
 

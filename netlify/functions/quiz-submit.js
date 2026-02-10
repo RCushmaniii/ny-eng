@@ -103,7 +103,7 @@ exports.handler = async (event, context) => {
     );
 
     // Initialize Neon SQL client
-    const sql = neon(process.env.DATABASE_URL);
+    const sql = neon(process.env.POSTGRES_URL);
 
     // Insert into Neon PostgreSQL
     const rows = await sql`

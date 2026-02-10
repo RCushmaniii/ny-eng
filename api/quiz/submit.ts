@@ -9,7 +9,7 @@ import { neon } from "@neondatabase/serverless";
 import { Resend } from "resend";
 
 // Initialize Neon SQL client
-const sql = neon(process.env.DATABASE_URL || "");
+const sql = neon(process.env.POSTGRES_URL || "");
 
 // Initialize Resend for email notifications
 const resend = process.env.RESEND_API_KEY
