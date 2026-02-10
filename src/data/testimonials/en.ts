@@ -189,7 +189,7 @@ Robert's coaching has not only enabled me to overcome these challenges but has a
     avatarSize: "md",
     link: "/en/services/professional-english/",
     linkText: "👉 English Coaching for Medical & Legal Professionals",
-    status: "draft",
+    status: "published",
   },
   {
     content:
@@ -264,9 +264,9 @@ With Robert's coaching, I've become more natural in conversations, better at str
     status: "published",
   },
   {
-    content: `Robert helped me strengthen my English communication for project management interactions. I now feel confident in managing legal conversations, explaining complex issues, and building trust with U.S. colleagues. It's made a significant difference in my day-to-day international work.`,
+    content: `I found Robert’s classes well structured and dynamic, He uses a situational approach that results in practical knowledge that can be applied on a day to day basis. Additionally, his capacity to adapt to my level keeps me  challenged and continuously improving.`,
     shortContent:
-      "Robert helped me strengthen my English communication for project management interactions. I now feel confident in managing legal conversations and building trust with U.S. colleagues...",
+      "I found Robert’s classes well structured and dynamic, He uses a situational approach that results in practical knowledge that can be applied on a day to day basis....",
     author: "Javier Ramírez",
     position: "Program Manager",
     company: "Sophia",
@@ -278,7 +278,7 @@ With Robert's coaching, I've become more natural in conversations, better at str
     avatarSize: "md",
     link: "/en/services/executive-english/",
     linkText: "👉 English Coaching for Executives",
-    status: "draft",
+    status: "published",
   },
   {
     content: `The main challenge I faced when I started working in global environments was the lack of fluency to express my technical ideas effectively to both leaders and colleagues from different nationalities. Robert has been coaching me, and we've practiced various scenarios together. Now I feel much more fluent and confident. I've been able to mobilize multinational teams and align them around strategies that make sense for everyone.`,
