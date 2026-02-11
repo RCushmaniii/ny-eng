@@ -13,7 +13,7 @@ export const executivesConfig: QuizConfig = {
         id: 1,
         category: "clarity",
         question:
-          "When you present a strategic recommendation to your board or investors in English, how often do you need to clarify what you meant afterward?",
+          "When you present to senior leadership in English, how often do you need to clarify what you meant afterward?",
         answers: [
           {
             index: 0,
@@ -76,7 +76,7 @@ export const executivesConfig: QuizConfig = {
         id: 3,
         category: "confidence",
         question:
-          "When the pressure mounts during a board review or pitch in English, who is controlling the pace of the conversation?",
+          "When the pressure mounts during a high-stakes meeting or presentation in English, who is controlling the pace of the conversation?",
         answers: [
           {
             index: 0,
@@ -140,7 +140,7 @@ export const executivesConfig: QuizConfig = {
         id: 5,
         category: "real-time",
         question:
-          'The presentation is over, and the floor is open for Q&A. How do I handle the "off-script" moments in English?',
+          'The presentation is over, and the floor is open for Q&A. How do you handle the "off-script" moments in English?',
         answers: [
           {
             index: 0,
@@ -251,7 +251,7 @@ export const executivesConfig: QuizConfig = {
         "Credibility Gap": {
           title: "The Authority Gap",
           description:
-            "You command respect in your native language, but in English, you shrink. Investors sense hesitation. Board members talk over you. The gap between your actual capability and how you're perceived is costing you deals, influence, and the respect you've earned.",
+            "You command respect in your native language, but in English, you shrink. Colleagues sense hesitation. Senior stakeholders talk over you. The gap between your actual capability and how you're perceived is costing you deals, influence, and the respect you've earned.",
         },
         "Passive Proficiency": {
           title: "The Influence Ceiling",
@@ -293,7 +293,7 @@ export const executivesConfig: QuizConfig = {
         id: 1,
         category: "clarity",
         question:
-          "Cuando presentas una recomendación estratégica a tu directorio o inversionistas, ¿con qué frecuencia necesitas aclarar lo que quisiste decir después?",
+          "Cuando presentas ante liderazgo senior en inglés, ¿con qué frecuencia necesitas aclarar lo que quisiste decir después?",
         answers: [
           {
             index: 0,
@@ -355,7 +355,7 @@ export const executivesConfig: QuizConfig = {
         id: 3,
         category: "confidence",
         question:
-          "Cuando la presión aumenta durante una revisión del directorio o presentación en inglés, ¿quién controla el ritmo de la conversación?",
+          "Cuando la presión aumenta durante una reunión de alto nivel o presentación en inglés, ¿quién controla el ritmo de la conversación?",
         answers: [
           {
             index: 0,
@@ -451,7 +451,7 @@ export const executivesConfig: QuizConfig = {
         id: 6,
         category: "cultural",
         question:
-          "¿Qué tan naturalmente construyes rapport con stakeholders senior norteamericanos (miembros del directorio, pares del C‑suite, grandes clientes)?",
+          "¿Qué tan naturalmente construyes rapport con stakeholders senior norteamericanos (liderazgo senior, pares del C‑suite, grandes clientes)?",
         answers: [
           {
             index: 0,
@@ -530,7 +530,7 @@ export const executivesConfig: QuizConfig = {
         "Credibility Gap": {
           title: "La Brecha de Autoridad",
           description:
-            "Dominas el respeto en tu idioma, pero en inglés te haces pequeño. Los inversionistas notan la duda. El consejo te interrumpe. Esta brecha entre tu capacidad real y cómo eres percibido te está costando acuerdos, influencia y el respeto que mereces.",
+            "Dominas el respeto en tu idioma, pero en inglés te haces pequeño. Los colegas notan la duda. Los stakeholders senior te interrumpen. Esta brecha entre tu capacidad real y cómo eres percibido te está costando acuerdos, influencia y el respeto que mereces.",
         },
         "Passive Proficiency": {
           title: "El Techo de Influencia",

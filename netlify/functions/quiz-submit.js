@@ -69,7 +69,11 @@ exports.handler = async (event, context) => {
     }
 
     // Use client-provided scores (the client scoring engine is the source of truth)
-    if (body.totalScore === undefined || !body.scoreTier) {
+    // Backwards-compatible: accept totalScore OR score from older client builds
+    const totalScore = Number(
+      body.totalScore !== undefined ? body.totalScore : body.score,
+    );
+    if (isNaN(totalScore)) {
       return {
         statusCode: 400,
         headers: {
@@ -78,14 +82,19 @@ exports.handler = async (event, context) => {
         },
         body: JSON.stringify({
           success: false,
-          error: "Missing score data: totalScore, scoreTier are required",
+          error: "Missing score data: totalScore is required",
         }),
       };
     }
-
-    const totalScore = Number(body.totalScore);
-    const rawScore = Number(body.rawScore || body.totalScore);
-    const scoreTier = String(body.scoreTier);
+    const rawScore = Number(body.rawScore || totalScore);
+    // Derive scoreTier from score if client didn't send it (backwards compat)
+    const scoreTier = body.scoreTier
+      ? String(body.scoreTier)
+      : totalScore >= 70
+        ? "Executive Presence"
+        : totalScore >= 40
+          ? "Passive Proficiency"
+          : "Credibility Gap";
     const categoryScores = body.categoryScores || {};
     const primaryGap = String(body.primaryGap || "");
     const secondaryGap = String(body.secondaryGap || "");
