@@ -5,6 +5,17 @@
   "outputDirectory": "dist",
   "framework": "astro",
   "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept-language", "value": "^es.*" }],
+      "destination": "/es/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "/en/",
+      "permanent": false
+    },
     { "source": "/en/category/english-for-executives", "destination": "/en/category/executive-english/", "permanent": true },
     { "source": "/en/category/business-english-coaching", "destination": "/en/category/business-english/", "permanent": true },
     { "source": "/en/category/high-impact-communication-english", "destination": "/en/category/high-impact-communication/", "permanent": true },
