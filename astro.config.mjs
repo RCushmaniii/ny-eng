@@ -31,6 +31,8 @@ const blogTranslations = {
   "real-cost-weak-english-mexican-companies": "/es/blog/costo-real-ingles-debil-empresas-mexicanas/",
   "small-talk-to-smart-talk": "/es/blog/charla-pequena-habla-inteligente/",
   "why-senior-developers-need-advanced-english": "/es/blog/por-que-desarrolladores-senior-necesitan-ingles-avanzado/",
+  "email-phrases-that-make-you-sound-junior": "/es/blog/frases-email-que-te-hacen-sonar-junior/",
+  "how-to-negotiate-in-english-framework": "/es/blog/como-negociar-en-ingles-marco/",
 };
 
 // Reverse map (ES slug -> EN path)
