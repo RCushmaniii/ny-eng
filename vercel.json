@@ -5,7 +5,10 @@
   "outputDirectory": "dist",
   "framework": "astro",
   "redirects": [
-    { "source": "/", "destination": "/en/", "permanent": true },
+    { "source": "/en/category/english-for-executives", "destination": "/en/category/executive-english/", "permanent": true },
+    { "source": "/en/category/business-english-coaching", "destination": "/en/category/business-english/", "permanent": true },
+    { "source": "/en/category/high-impact-communication-english", "destination": "/en/category/high-impact-communication/", "permanent": true },
+    { "source": "/en/blog/executive-presence-on-video-calls", "destination": "/en/blog/executive-video-call/", "permanent": true },
     { "source": "/blog", "destination": "/en/blog/", "permanent": true },
     { "source": "/services", "destination": "/en/services/", "permanent": true },
     { "source": "/contact", "destination": "/en/contact/", "permanent": true },
@@ -63,7 +66,10 @@
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains; preload" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://ny-ai-chatbot.vercel.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src 'self' https://ny-ai-chatbot.vercel.app; connect-src 'self' https://www.google-analytics.com https://plain-mode-42c4.rcushmaniii.workers.dev https://ny-ai-chatbot.vercel.app https://ny-eng-api.netlify.app;" }
       ]
     }
   ]

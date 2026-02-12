@@ -47,7 +47,7 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   site: SITE,
-  output: "static", // Static build for Hostinger
+  output: "static",
   // API routes are excluded from build - they won't be included in dist/
 
   image: {
@@ -71,7 +71,7 @@ export default defineConfig({
 
   // Redirects for URLs without language prefixes and duplicate category URLs
   redirects: {
-    "/": "/en/",
+    // Root "/" redirect handled by Vercel Edge Middleware (language detection)
     "/blog": "/en/blog/",
     "/services": "/en/services/",
     "/contact": "/en/contact/",
