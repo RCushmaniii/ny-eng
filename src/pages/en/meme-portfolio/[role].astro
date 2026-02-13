@@ -1,0 +1,83 @@
+---
+import Base from "@layouts/Base.astro";
+import MemeGallery from "@components/sections/MemeGallery.astro";
+import { memesByRole, roleLabels, roleSeoDescriptions } from "@data/memes/en";
+import type { Meme, MemeRole } from "@data/memes/en";
+
+type ValidRole = keyof typeof memesByRole;
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  // Get all valid roles that have memes
+  const validRoles = Object.keys(memesByRole).filter(
+    (role) => memesByRole[role as ValidRole]?.length > 0,
+  );
+
+  return validRoles.map((role) => ({
+    params: { role },
+  }));
+}
+
+// Get role from URL parameter
+const { role } = Astro.params;
+
+// Validate role parameter
+const validRoles = Object.keys(memesByRole).filter(
+  (r) => memesByRole[r as ValidRole]?.length > 0,
+);
+
+// Default to "all" if role is invalid
+const currentRole = role && validRoles.includes(role) ? role : "all";
+
+// Filter memes based on selected role
+const filteredMemes: Meme[] = memesByRole[currentRole as ValidRole] || [];
+
+// SEO metadata
+const roleLabel = roleLabels[currentRole as MemeRole];
+const title =
+  currentRole === "all"
+    ? "Meme Portfolio | NY English Teacher"
+    : `${roleLabel} Memes | NY English Teacher`;
+const description =
+  roleSeoDescriptions[currentRole as MemeRole] ||
+  "Funny, relatable English memes for professionals working in global business.";
+
+// Spanish counterpart for language switcher
+const currentUrl =
+  currentRole === "all"
+    ? "https://www.nyenglishteacher.com/en/meme-portfolio/all/"
+    : `https://www.nyenglishteacher.com/en/meme-portfolio/${currentRole}/`;
+
+const translationUrlEs =
+  currentRole === "all"
+    ? "https://www.nyenglishteacher.com/es/meme-portfolio/all/"
+    : `https://www.nyenglishteacher.com/es/meme-portfolio/${currentRole}/`;
+
+const customHreflangs = [
+  { lang: "en-US", href: currentUrl },
+  { lang: "es-MX", href: translationUrlEs },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  lang="en"
+  customHreflangs={customHreflangs}
+  customCanonical={currentUrl}
+  hideCta={true}
+>
+  <MemeGallery
+    memes={filteredMemes}
+    title={currentRole === "all"
+      ? "Meme Portfolio"
+      : `${roleLabel} Memes`}
+    description={currentRole === "all"
+      ? "Funny, relatable English memes for professionals navigating global business in their second language."
+      : `English memes made for ${roleLabel.toLowerCase()} -- because learning a language is funnier when you can laugh at the struggle.`}
+    showFilters={true}
+    selectedRole={currentRole}
+    lang="en"
+  />
+</Base>

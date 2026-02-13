@@ -1,0 +1,83 @@
+---
+import Base from "@layouts/Base.astro";
+import MemeGallery from "@components/sections/MemeGallery.astro";
+import { memesByRole, roleLabels, roleSeoDescriptions } from "@data/memes/es";
+import type { Meme, MemeRole } from "@data/memes/es";
+
+type ValidRole = keyof typeof memesByRole;
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  // Get all valid roles that have memes
+  const validRoles = Object.keys(memesByRole).filter(
+    (role) => memesByRole[role as ValidRole]?.length > 0,
+  );
+
+  return validRoles.map((role) => ({
+    params: { role },
+  }));
+}
+
+// Get role from URL parameter
+const { role } = Astro.params;
+
+// Validate role parameter
+const validRoles = Object.keys(memesByRole).filter(
+  (r) => memesByRole[r as ValidRole]?.length > 0,
+);
+
+// Default to "all" if role is invalid
+const currentRole = role && validRoles.includes(role) ? role : "all";
+
+// Filter memes based on selected role
+const filteredMemes: Meme[] = memesByRole[currentRole as ValidRole] || [];
+
+// SEO metadata
+const roleLabel = roleLabels[currentRole as MemeRole];
+const title =
+  currentRole === "all"
+    ? "Portafolio de Memes | NY English Teacher"
+    : `Memes para ${roleLabel} | NY English Teacher`;
+const description =
+  roleSeoDescriptions[currentRole as MemeRole] ||
+  "Memes divertidos y relatable sobre el ingles en el trabajo para profesionales en negocios globales.";
+
+// English counterpart for language switcher
+const currentUrl =
+  currentRole === "all"
+    ? "https://www.nyenglishteacher.com/es/meme-portfolio/all/"
+    : `https://www.nyenglishteacher.com/es/meme-portfolio/${currentRole}/`;
+
+const translationUrlEn =
+  currentRole === "all"
+    ? "https://www.nyenglishteacher.com/en/meme-portfolio/all/"
+    : `https://www.nyenglishteacher.com/en/meme-portfolio/${currentRole}/`;
+
+const customHreflangs = [
+  { lang: "en-US", href: translationUrlEn },
+  { lang: "es-MX", href: currentUrl },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  lang="es"
+  customHreflangs={customHreflangs}
+  customCanonical={currentUrl}
+  hideCta={true}
+>
+  <MemeGallery
+    memes={filteredMemes}
+    title={currentRole === "all"
+      ? "Portafolio de Memes"
+      : `Memes para ${roleLabel}`}
+    description={currentRole === "all"
+      ? "Memes divertidos y relatable para profesionales que navegan los negocios globales en su segundo idioma."
+      : `Memes de ingles hechos para ${roleLabel.toLowerCase()} -- porque aprender un idioma es mas divertido cuando puedes reirte de la lucha.`}
+    showFilters={true}
+    selectedRole={currentRole}
+    lang="es"
+  />
+</Base>

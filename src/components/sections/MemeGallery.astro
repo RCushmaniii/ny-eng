@@ -1,0 +1,126 @@
+---
+import type { Meme, MemeRole } from "@data/memes/en";
+import { roleLabels as roleLabelsEn, memesByRole as memesByRoleEn } from "@data/memes/en";
+import { roleLabels as roleLabelsEs, memesByRole as memesByRoleEs } from "@data/memes/es";
+
+interface Props {
+  memes: Meme[];
+  title: string;
+  description: string;
+  showFilters?: boolean;
+  selectedRole?: string;
+  lang: "en" | "es";
+}
+
+const {
+  memes,
+  title,
+  description,
+  showFilters = false,
+  selectedRole = "all",
+  lang = "en",
+} = Astro.props;
+
+// Get labels and memes-by-role based on language
+const labels = lang === "en" ? roleLabelsEn : roleLabelsEs;
+const memesByRole = lang === "en" ? memesByRoleEn : memesByRoleEs;
+
+// Get base URL for role filter links
+const baseUrl = lang === "en" ? "/en/meme-portfolio/" : "/es/meme-portfolio/";
+
+// Get available roles (those that have memes)
+const availableRoles = Object.entries(memesByRole)
+  .filter(([_, roleMemes]) => roleMemes.length > 0)
+  .map(([role]) => role);
+---
+
+<section class="meme-gallery py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12 pt-16">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        {title}
+      </h1>
+      {description && (
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          {description}
+        </p>
+      )}
+    </div>
+
+    {showFilters && (
+      <div class="mb-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+        <label for="role-filter" class="font-medium text-gray-900">
+          {lang === "en" ? "Filter by role:" : "Filtrar por rol:"}
+        </label>
+        <div class="relative">
+          <select
+            id="role-filter"
+            class="bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 font-sans"
+            style="font-family: NotoSansKR, ui-sans-serif, system-ui, sans-serif;"
+          >
+            {Object.entries(labels)
+              .filter(([key]) => availableRoles.includes(key))
+              .map(([key, label]) => (
+                <option value={key} selected={selectedRole === key}>
+                  {label}
+                </option>
+              ))}
+          </select>
+          <script define:vars={{ baseUrl }}>
+            const roleFilter = document.getElementById("role-filter");
+            if (roleFilter instanceof HTMLSelectElement) {
+              roleFilter.addEventListener("change", function () {
+                const selectedRole = this.value;
+                if (selectedRole === "all") {
+                  window.location.href = `${baseUrl}all/`;
+                } else {
+                  window.location.href = `${baseUrl}${selectedRole}/`;
+                }
+              });
+            }
+          </script>
+        </div>
+      </div>
+    )}
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      {memes.map((meme) => (
+        <div class="meme-card bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg">
+          <div class="aspect-square overflow-hidden bg-gray-100">
+            <img
+              src={meme.image}
+              alt={meme.alt}
+              class="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="p-4">
+            <h2 class="text-lg font-semibold text-gray-900 mb-2">
+              {meme.title}
+            </h2>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              {meme.caption}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {memes.length === 0 && (
+      <div class="text-center py-16">
+        <p class="text-lg text-gray-600 mb-4">
+          {lang === "en"
+            ? "No memes found for this category."
+            : "No se encontraron memes para esta categoria."}
+        </p>
+        <a
+          href={`${baseUrl}all/`}
+          class="inline-block px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors"
+        >
+          {lang === "en" ? "View All Memes" : "Ver Todos los Memes"}
+        </a>
+      </div>
+    )}
+  </div>
+</section>
