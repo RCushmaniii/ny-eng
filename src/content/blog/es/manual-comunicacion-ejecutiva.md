@@ -8,7 +8,6 @@ categories:
   - "Inglés de Negocios"
   - "Comunicación de Alto Impacto"
   - "Carrera y Liderazgo"
-featuredImage: "./images/executive-communication-playbook-hero.jpg"
 imageAlt: "Ejecutivo senior liderando con confianza una presentación en una sala de juntas en inglés"
 translations:
   en: "/en/blog/executive-communication-playbook"

@@ -33,6 +33,7 @@ const blogTranslations = {
   "why-senior-developers-need-advanced-english": "/es/blog/por-que-desarrolladores-senior-necesitan-ingles-avanzado/",
   "email-phrases-that-make-you-sound-junior": "/es/blog/frases-email-que-te-hacen-sonar-junior/",
   "how-to-negotiate-in-english-framework": "/es/blog/como-negociar-en-ingles-marco/",
+  "executive-communication-playbook": "/es/blog/manual-comunicacion-ejecutiva/",
 };
 
 // Reverse map (ES slug -> EN path)
