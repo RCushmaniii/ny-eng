@@ -21,17 +21,11 @@ const {
   lang = "en",
 } = Astro.props;
 
-// Get labels and memes-by-role based on language
+// Get labels based on language
 const labels = lang === "en" ? roleLabelsEn : roleLabelsEs;
-const memesByRole = lang === "en" ? memesByRoleEn : memesByRoleEs;
 
 // Get base URL for role filter links
 const baseUrl = lang === "en" ? "/en/meme-portfolio/" : "/es/meme-portfolio/";
-
-// Get available roles (those that have memes)
-const availableRoles = Object.entries(memesByRole)
-  .filter(([_, roleMemes]) => roleMemes.length > 0)
-  .map(([role]) => role);
 ---
 
 <section class="meme-gallery py-16 bg-gray-50">
@@ -58,24 +52,18 @@ const availableRoles = Object.entries(memesByRole)
             class="bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 font-sans"
             style="font-family: NotoSansKR, ui-sans-serif, system-ui, sans-serif;"
           >
-            {Object.entries(labels)
-              .filter(([key]) => availableRoles.includes(key))
-              .map(([key, label]) => (
-                <option value={key} selected={selectedRole === key}>
-                  {label}
-                </option>
-              ))}
+            {Object.entries(labels).map(([key, label]) => (
+              <option value={key} selected={selectedRole === key}>
+                {label}
+              </option>
+            ))}
           </select>
           <script define:vars={{ baseUrl }}>
             const roleFilter = document.getElementById("role-filter");
             if (roleFilter instanceof HTMLSelectElement) {
               roleFilter.addEventListener("change", function () {
                 const selectedRole = this.value;
-                if (selectedRole === "all") {
-                  window.location.href = `${baseUrl}all/`;
-                } else {
-                  window.location.href = `${baseUrl}${selectedRole}/`;
-                }
+                window.location.href = `${baseUrl}${selectedRole}/`;
               });
             }
           </script>
@@ -99,9 +87,29 @@ const availableRoles = Object.entries(memesByRole)
             <h2 class="text-lg font-semibold text-gray-900 mb-2">
               {meme.title}
             </h2>
-            <p class="text-sm text-gray-600 leading-relaxed">
+            <p class="text-sm text-gray-600 leading-relaxed mb-3">
               {meme.caption}
             </p>
+            {(meme.beforePhrase || meme.afterPhrase) && (
+              <div class="border-t border-gray-100 pt-3 space-y-2">
+                {meme.beforePhrase && (
+                  <div class="text-xs">
+                    <span class="inline-block px-1.5 py-0.5 bg-red-50 text-red-600 font-semibold rounded mr-1">
+                      {lang === "en" ? "Before" : "Antes"}
+                    </span>
+                    <span class="text-gray-500 italic">"{meme.beforePhrase}"</span>
+                  </div>
+                )}
+                {meme.afterPhrase && (
+                  <div class="text-xs">
+                    <span class="inline-block px-1.5 py-0.5 bg-green-50 text-green-700 font-semibold rounded mr-1">
+                      {lang === "en" ? "After" : "Despues"}
+                    </span>
+                    <span class="text-gray-700 font-medium">"{meme.afterPhrase}"</span>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       ))}
@@ -109,10 +117,16 @@ const availableRoles = Object.entries(memesByRole)
 
     {memes.length === 0 && (
       <div class="text-center py-16">
-        <p class="text-lg text-gray-600 mb-4">
+        <div class="text-5xl mb-6">🎬</div>
+        <h2 class="text-2xl font-bold text-gray-900 mb-3">
           {lang === "en"
-            ? "No memes found for this category."
-            : "No se encontraron memes para esta categoria."}
+            ? "Coming Soon!"
+            : "Proximamente!"}
+        </h2>
+        <p class="text-lg text-gray-600 mb-6 max-w-lg mx-auto">
+          {lang === "en"
+            ? "We're creating executive communication memes for this category. Check back soon or explore other roles!"
+            : "Estamos creando memes de comunicacion ejecutiva para esta categoria. Vuelve pronto o explora otros roles!"}
         </p>
         <a
           href={`${baseUrl}all/`}

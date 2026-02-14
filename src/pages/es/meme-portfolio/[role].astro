@@ -4,17 +4,11 @@ import MemeGallery from "@components/sections/MemeGallery.astro";
 import { memesByRole, roleLabels, roleSeoDescriptions } from "@data/memes/es";
 import type { Meme, MemeRole } from "@data/memes/es";
 
-type ValidRole = keyof typeof memesByRole;
-
 export const prerender = true;
 
 export async function getStaticPaths() {
-  // Get all valid roles that have memes
-  const validRoles = Object.keys(memesByRole).filter(
-    (role) => memesByRole[role as ValidRole]?.length > 0,
-  );
-
-  return validRoles.map((role) => ({
+  // Generate routes for ALL roles (even those without published memes yet)
+  return Object.keys(roleLabels).map((role) => ({
     params: { role },
   }));
 }
@@ -22,16 +16,12 @@ export async function getStaticPaths() {
 // Get role from URL parameter
 const { role } = Astro.params;
 
-// Validate role parameter
-const validRoles = Object.keys(memesByRole).filter(
-  (r) => memesByRole[r as ValidRole]?.length > 0,
-);
-
 // Default to "all" if role is invalid
-const currentRole = role && validRoles.includes(role) ? role : "all";
+const allRoles = Object.keys(roleLabels);
+const currentRole = role && allRoles.includes(role) ? role : "all";
 
 // Filter memes based on selected role
-const filteredMemes: Meme[] = memesByRole[currentRole as ValidRole] || [];
+const filteredMemes: Meme[] = memesByRole[currentRole as MemeRole] || [];
 
 // SEO metadata
 const roleLabel = roleLabels[currentRole as MemeRole];

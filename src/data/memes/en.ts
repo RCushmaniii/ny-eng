@@ -1,12 +1,27 @@
-// Meme portfolio data - English
+/**
+ * Meme portfolio data - English
+ *
+ * Backward-compatible wrapper around the centralized meme system.
+ * Exports the same shapes consumed by MemeGallery.astro and [role].astro pages.
+ */
+
+import {
+  memeEntries,
+  getMemeImagePath,
+  getPlaceholderImagePath,
+  allRoleCategories,
+  roleCategoryConfigs,
+} from "./index";
+
+// --- Legacy types (preserved for backward compatibility) ---
 
 export type MemeRole =
   | "all"
-  | "tech-leaders"
-  | "startup-founders"
-  | "logistics-managers"
-  | "executives"
-  | "professional-services";
+  | "software-engineer"
+  | "project-manager"
+  | "it-manager"
+  | "sales-account-executive"
+  | "executive-csuite";
 
 export interface Meme {
   id: string;
@@ -16,76 +31,85 @@ export interface Meme {
   alt: string;
   roles: MemeRole[];
   datePublished: string;
+  /** Before phrase (weak/reactive) */
+  beforePhrase?: string;
+  /** After phrase (executive/confident) */
+  afterPhrase?: string;
 }
+
+// --- Conversion ---
+
+function toLegacyMeme(entry: typeof memeEntries[number]): Meme {
+  const isPublished = entry.status === "published";
+  return {
+    id: entry.id,
+    title: entry.titleEn,
+    caption: entry.captionEn,
+    image: isPublished
+      ? getMemeImagePath(entry, "en")
+      : getPlaceholderImagePath(),
+    alt: entry.altTextEn,
+    roles: [entry.roleCategory],
+    datePublished: "2025-06-01", // Placeholder until images are uploaded
+    beforePhrase: entry.beforePhraseEn,
+    afterPhrase: entry.afterPhraseEn,
+  };
+}
+
+// --- Labels ---
 
 export const roleLabels: Record<MemeRole, string> = {
   all: "All Memes",
-  "tech-leaders": "Tech Leaders & Engineers",
-  "startup-founders": "Startup Founders & CEOs",
-  "logistics-managers": "Logistics & Supply Chain Managers",
-  executives: "C-Suite Executives",
-  "professional-services": "Professional Services",
+  "software-engineer": "Software Engineers",
+  "project-manager": "Project Managers",
+  "it-manager": "IT Managers",
+  "sales-account-executive": "Sales & Account Executives",
+  "executive-csuite": "Executives & C-Suite",
 };
 
 export const roleSeoDescriptions: Record<MemeRole, string> = {
-  all: "Funny, relatable English memes for professionals working in global business. See how everyday workplace moments become learning opportunities.",
-  "tech-leaders":
-    "English memes for tech leaders and engineers navigating code reviews, standups, and cross-team communication in a second language.",
-  "startup-founders":
-    "English memes for startup founders and CEOs who pitch, fundraise, and lead teams across borders -- all in their second language.",
-  "logistics-managers":
-    "English memes for logistics and supply chain managers coordinating shipments, customs paperwork, and international partners in English.",
-  executives:
-    "English memes for C-suite executives presenting to boards, leading global teams, and closing deals in their second language.",
-  "professional-services":
-    "English memes for lawyers, consultants, doctors, and other professionals who serve international clients in English.",
-};
+  all: "Funny, relatable English memes for professionals working in global business. See how everyday workplace moments become executive communication learning opportunities.",
+  ...Object.fromEntries(
+    roleCategoryConfigs.map((c) => [c.slug, c.seoDescriptionEn]),
+  ),
+} as Record<MemeRole, string>;
 
-export const memes: Meme[] = [
-  {
-    id: "tech-standup-struggle",
-    title: "When the Standup Goes Off-Script",
-    caption:
-      "You rehearsed your update perfectly... then someone asks a follow-up question.",
-    image: "/images/memes/placeholder-1.jpg",
-    alt: "Meme about struggling with unexpected questions during a tech standup meeting in English",
-    roles: ["tech-leaders"],
-    datePublished: "2025-06-01",
-  },
-  {
-    id: "exec-board-meeting",
-    title: "Board Meeting Poker Face",
-    caption:
-      "When you understood about 70% of the CFO's quarterly report but nod like it was 100%.",
-    image: "/images/memes/placeholder-2.jpg",
-    alt: "Meme about pretending to understand everything during a board meeting in English",
-    roles: ["executives"],
-    datePublished: "2025-06-05",
-  },
-  {
-    id: "startup-pitch-day",
-    title: "Pitch Day Pronunciation",
-    caption:
-      "Your startup idea is worth millions, but the word 'competitive advantage' just won't cooperate.",
-    image: "/images/memes/placeholder-3.jpg",
-    alt: "Meme about mispronouncing key business terms during a startup pitch in English",
-    roles: ["startup-founders"],
-    datePublished: "2025-06-10",
-  },
-];
+// --- Published memes only (what the public pages show) ---
 
-// Computed: group memes by role
+const publishedMemes = memeEntries
+  .filter((e) => e.status === "published")
+  .map(toLegacyMeme);
+
+// Also include all entries for the admin/development view
+// The public pages use memesByRole which filters to published only
+const allLegacyMemes = memeEntries.map(toLegacyMeme);
+
+export const memes: Meme[] = publishedMemes;
+
+// --- Grouped by role (for page rendering) ---
+
 export const memesByRole: Record<MemeRole, Meme[]> = {
-  all: memes,
-  "tech-leaders": memes.filter((m) => m.roles.includes("tech-leaders")),
-  "startup-founders": memes.filter((m) =>
-    m.roles.includes("startup-founders"),
+  all: publishedMemes,
+  ...Object.fromEntries(
+    allRoleCategories.map((role) => [
+      role,
+      publishedMemes.filter((m) => m.roles.includes(role)),
+    ]),
   ),
-  "logistics-managers": memes.filter((m) =>
-    m.roles.includes("logistics-managers"),
+} as Record<MemeRole, Meme[]>;
+
+/**
+ * All memes regardless of status (for admin/dev pages).
+ * Not used by public-facing pages.
+ */
+export const allMemes: Meme[] = allLegacyMemes;
+
+export const allMemesByRole: Record<MemeRole, Meme[]> = {
+  all: allLegacyMemes,
+  ...Object.fromEntries(
+    allRoleCategories.map((role) => [
+      role,
+      allLegacyMemes.filter((m) => m.roles.includes(role)),
+    ]),
   ),
-  executives: memes.filter((m) => m.roles.includes("executives")),
-  "professional-services": memes.filter((m) =>
-    m.roles.includes("professional-services"),
-  ),
-};
+} as Record<MemeRole, Meme[]>;
