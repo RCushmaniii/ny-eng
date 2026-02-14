@@ -1,7 +1,7 @@
 import type { MemeEntry } from "./types";
 
 /**
- * All 40 Tier 1 meme entries — 8 scenarios per role category.
+ * All 80 meme entries — 8 scenarios per role category x 10 categories.
  *
  * Each entry captures a workplace communication moment with:
  * - A humorous title + caption (bilingual)
@@ -1069,6 +1069,1026 @@ export const allMemeEntries: MemeEntry[] = [
     altTextEs:
       "Meme sobre la diferencia entre frases genericas para medios y respuestas ejecutivas especificas basadas en historias",
     tags: ["media-training", "public-relations", "messaging"],
+    status: "planned",
+  },
+
+  // ========================================================================
+  // STARTUP FOUNDER (sf-01 through sf-08)
+  // ========================================================================
+  {
+    id: "sf-01",
+    roleCategory: "startup-founder",
+    sortOrder: 1,
+    titleEn: "Pitch Day Pronunciation",
+    titleEs: "Dia de Pitch: La Pronunciacion",
+    captionEn:
+      "Your startup idea is worth millions, but the word 'competitive advantage' just won't cooperate.",
+    captionEs:
+      "Tu idea de startup vale millones, pero la palabra 'competitive advantage' simplemente no coopera.",
+    beforePhraseEn: "We have a, um, compet... competitive advant-age in the market.",
+    beforePhraseEs: "Tenemos una, um, compet... competitive advant-age en el mercado.",
+    afterPhraseEn:
+      "Our core differentiator is speed-to-market: we deploy in 48 hours while incumbents take 6 months. That's our moat.",
+    afterPhraseEs:
+      "Nuestro diferenciador principal es la velocidad al mercado: desplegamos en 48 horas mientras los incumbentes tardan 6 meses. Ese es nuestro moat.",
+    imagePrompt:
+      "A startup founder at a pitch competition podium, mid-word with their mouth frozen in an awkward position trying to say 'competitive advantage.' The investor panel watches with a mix of sympathy and amusement. Behind the founder, their beautiful pitch deck slide reads 'Competitive Advantage' in huge letters. The irony of stumbling on the one word that matters most. Clean, modern startup event setting.",
+    altTextEn:
+      "Meme about startup founders stumbling over key English business terms during investor pitches",
+    altTextEs:
+      "Meme sobre fundadores de startups tropezando con terminos clave de negocios en ingles durante pitches a inversores",
+    tags: ["pitch", "pronunciation", "investor-relations"],
+    status: "planned",
+  },
+  {
+    id: "sf-02",
+    roleCategory: "startup-founder",
+    sortOrder: 2,
+    titleEn: "Explaining Your Burn Rate With a Straight Face",
+    titleEs: "Explicando Tu Burn Rate Con Cara Seria",
+    captionEn:
+      "Investor: 'What's your runway?' You: *mentally converts months to something that sounds less terrifying*",
+    captionEs:
+      "Inversor: 'Cual es tu runway?' Tu: *mentalmente convierte meses a algo que suene menos aterrador*",
+    beforePhraseEn: "We're spending money fast but we'll figure it out.",
+    beforePhraseEs: "Estamos gastando dinero rapido pero lo resolveremos.",
+    afterPhraseEn:
+      "At our current burn rate, we have 14 months of runway. We're targeting break-even at month 10, which gives us a 4-month buffer before we'd need to raise again.",
+    afterPhraseEs:
+      "A nuestro burn rate actual, tenemos 14 meses de runway. Nuestro objetivo es el punto de equilibrio en el mes 10, lo que nos da un buffer de 4 meses antes de necesitar levantar capital otra vez.",
+    imagePrompt:
+      "Split panel: Left shows a founder looking at their bank account balance on a phone, visibly stressed with a thought bubble showing a countdown timer. Right shows the same founder in an investor meeting, calmly presenting a clean 'Path to Profitability' slide with a confident smile. The internal vs. external reality of startup finances. Modern coworking space setting.",
+    altTextEn:
+      "Meme about the contrast between a founder's internal financial panic and their composed investor presentation",
+    altTextEs:
+      "Meme sobre el contraste entre el panico financiero interno de un fundador y su presentacion compuesta ante inversores",
+    tags: ["fundraising", "burn-rate", "composure"],
+    status: "planned",
+  },
+  {
+    id: "sf-03",
+    roleCategory: "startup-founder",
+    sortOrder: 3,
+    titleEn: "The Co-Founder 'Alignment' Conversation",
+    titleEs: "La Conversacion de 'Alineacion' con el Cofundador",
+    captionEn:
+      "You both said 'I agree' in the meeting. You both meant completely different things.",
+    captionEs:
+      "Ambos dijeron 'estoy de acuerdo' en la reunion. Ambos quisieron decir cosas completamente diferentes.",
+    beforePhraseEn: "I think we disagree on the direction. This isn't working.",
+    beforePhraseEs: "Creo que no estamos de acuerdo en la direccion. Esto no esta funcionando.",
+    afterPhraseEn:
+      "I want to make sure we're aligned on the strategic priority for Q2. Let me share my perspective, then I'd love to hear yours, and we'll find the overlap.",
+    afterPhraseEs:
+      "Quiero asegurarme de que estemos alineados en la prioridad estrategica para Q2. Permiteme compartir mi perspectiva, luego me encantaria escuchar la tuya, y encontraremos el punto en comun.",
+    imagePrompt:
+      "Two co-founders sitting across from each other at a small table. Both are smiling and saying 'I agree!' in speech bubbles. But their thought bubbles show completely different visions: one imagines a B2B enterprise product, the other imagines a consumer app. Same words, different movies playing in their heads. Startup office with whiteboards in the background.",
+    altTextEn:
+      "Meme about co-founders agreeing in words but meaning completely different things about company direction",
+    altTextEs:
+      "Meme sobre cofundadores que estan de acuerdo en palabras pero quieren decir cosas completamente diferentes sobre la direccion de la empresa",
+    tags: ["co-founder", "alignment", "leadership"],
+    status: "planned",
+  },
+  {
+    id: "sf-04",
+    roleCategory: "startup-founder",
+    sortOrder: 4,
+    titleEn: "Hiring When You Can't Compete on Salary",
+    titleEs: "Contratando Cuando No Puedes Competir en Salario",
+    captionEn:
+      "Google offers 2x your budget. You offer 'the opportunity to wear many hats.' Somehow you need to make that sound exciting.",
+    captionEs:
+      "Google ofrece 2x tu presupuesto. Tu ofreces 'la oportunidad de usar muchos sombreros.' De alguna manera necesitas hacer que eso suene emocionante.",
+    beforePhraseEn: "We can't pay as much as big companies but we're a great team.",
+    beforePhraseEs: "No podemos pagar tanto como las grandes empresas pero somos un gran equipo.",
+    afterPhraseEn:
+      "You'll own the entire product roadmap from day one. At this stage, every decision you make shapes the company. Plus, your equity package is structured so early hires capture the most upside.",
+    afterPhraseEs:
+      "Seras dueno del roadmap completo del producto desde el dia uno. En esta etapa, cada decision que tomes moldea la empresa. Ademas, tu paquete de equity esta estructurado para que los primeros empleados capturen el mayor beneficio.",
+    imagePrompt:
+      "A startup founder at a recruitment fair. Their booth is tiny compared to the massive Google, Amazon, and Microsoft booths next to them. But the founder's sign says 'YOU'LL ACTUALLY MATTER HERE' and a line of curious candidates is forming. The David vs. Goliath of startup recruiting. Career fair setting with contrasting booth sizes.",
+    altTextEn:
+      "Meme about startup founders competing for talent against big tech companies with vision instead of salary",
+    altTextEs:
+      "Meme sobre fundadores de startups compitiendo por talento contra grandes empresas tech con vision en lugar de salario",
+    tags: ["hiring", "recruiting", "startup-culture"],
+    status: "planned",
+  },
+  {
+    id: "sf-05",
+    roleCategory: "startup-founder",
+    sortOrder: 5,
+    titleEn: "The Investor Q&A You Didn't Prepare For",
+    titleEs: "Las Preguntas del Inversor Para las Que No Te Preparaste",
+    captionEn:
+      "Your pitch was flawless. Then someone asks about unit economics and your brain switches to your native language.",
+    captionEs:
+      "Tu pitch fue impecable. Luego alguien pregunta sobre unit economics y tu cerebro cambia a tu idioma nativo.",
+    beforePhraseEn: "That's a good question... let me think about that... um...",
+    beforePhraseEs: "Esa es una buena pregunta... dejame pensar... um...",
+    afterPhraseEn:
+      "Great question. Our customer acquisition cost is $45, lifetime value is $380, giving us an 8.4x LTV-to-CAC ratio. We hit payback in 3 months.",
+    afterPhraseEs:
+      "Gran pregunta. Nuestro costo de adquisicion de clientes es $45, el valor de por vida es $380, dandonos un ratio LTV-a-CAC de 8.4x. Alcanzamos el payback en 3 meses.",
+    imagePrompt:
+      "Two-panel meme: Top shows a founder delivering a polished pitch with perfect slides, looking confident and smooth. Bottom shows the same founder during Q&A, eyes wide, sweat on forehead, as an investor casually asks 'What's your LTV-to-CAC ratio?' The scripted vs. unscripted moment. Modern pitch meeting room with investors.",
+    altTextEn:
+      "Meme about the contrast between a founder's rehearsed pitch confidence and their panic during unscripted investor Q&A",
+    altTextEs:
+      "Meme sobre el contraste entre la confianza ensayada del pitch de un fundador y su panico durante las preguntas no guionadas de inversores",
+    tags: ["investor-qa", "improvisation", "metrics"],
+    status: "planned",
+  },
+  {
+    id: "sf-06",
+    roleCategory: "startup-founder",
+    sortOrder: 6,
+    titleEn: "Pivoting Without Saying 'Pivot'",
+    titleEs: "Pivoteando Sin Decir 'Pivotear'",
+    captionEn:
+      "The original idea failed. Now you need to tell your investors it was 'strategic evolution' all along.",
+    captionEs:
+      "La idea original fallo. Ahora necesitas decirle a tus inversores que fue 'evolucion estrategica' todo el tiempo.",
+    beforePhraseEn: "The first idea didn't work so we're trying something different.",
+    beforePhraseEs: "La primera idea no funciono asi que estamos intentando algo diferente.",
+    afterPhraseEn:
+      "Customer discovery revealed a stronger pull toward the adjacent use case. We've repositioned to capture that demand -- same technology, larger market, and our first three paying customers validated the move.",
+    afterPhraseEs:
+      "El descubrimiento de clientes revelo una traccion mas fuerte hacia el caso de uso adyacente. Nos reposicionamos para capturar esa demanda -- misma tecnologia, mercado mas grande, y nuestros tres primeros clientes de pago validaron el movimiento.",
+    imagePrompt:
+      "A founder presenting a roadmap timeline to investors. The timeline clearly shows the original direction crossed out and a sharp turn to a new direction, but the founder has artfully relabeled it 'STRATEGIC EVOLUTION' with a smooth arrow instead of the sharp pivot angle. The investors nod approvingly. The art of reframing failure as strategy. Clean presentation room.",
+    altTextEn:
+      "Meme about founders reframing pivots as strategic evolution when presenting to investors",
+    altTextEs:
+      "Meme sobre fundadores reformulando pivotes como evolucion estrategica al presentar ante inversores",
+    tags: ["pivot", "reframing", "investor-communication"],
+    status: "planned",
+  },
+  {
+    id: "sf-07",
+    roleCategory: "startup-founder",
+    sortOrder: 7,
+    titleEn: "The Customer Discovery Call in Your Second Language",
+    titleEs: "La Llamada de Descubrimiento de Clientes en Tu Segundo Idioma",
+    captionEn:
+      "You're supposed to be listening for pain points. Instead, you're mentally translating the question you want to ask next.",
+    captionEs:
+      "Se supone que debes escuchar pain points. En cambio, estas traduciendo mentalmente la pregunta que quieres hacer despues.",
+    beforePhraseEn: "So... do you like our product? Would you buy it?",
+    beforePhraseEs: "Entonces... te gusta nuestro producto? Lo comprarias?",
+    afterPhraseEn:
+      "Walk me through what happens when you hit this problem today. What's the biggest frustration? And what would solving it be worth to your team?",
+    afterPhraseEs:
+      "Cuentame que pasa cuando te encuentras con este problema hoy. Cual es la mayor frustracion? Y que valdria resolverlo para tu equipo?",
+    imagePrompt:
+      "Split brain illustration: A founder is on a video call with a potential customer. The left side of their brain is focused on the customer's words (labeled 'LISTENING MODE'). The right side is frantically translating and preparing the next question in English (labeled 'TRANSLATION MODE'). The cognitive load of customer discovery in a second language, visualized as a brain working overtime. Home office / video call setting.",
+    altTextEn:
+      "Meme about the cognitive load of conducting customer discovery calls in your second language",
+    altTextEs:
+      "Meme sobre la carga cognitiva de conducir llamadas de descubrimiento de clientes en tu segundo idioma",
+    tags: ["customer-discovery", "active-listening", "bilingual"],
+    status: "planned",
+  },
+  {
+    id: "sf-08",
+    roleCategory: "startup-founder",
+    sortOrder: 8,
+    titleEn: "The Launch Day Press Release Nobody Reads",
+    titleEs: "El Comunicado de Prensa del Dia de Lanzamiento Que Nadie Lee",
+    captionEn:
+      "You spent 3 weeks perfecting the English in your press release. TechCrunch summarized it in one wrong sentence.",
+    captionEs:
+      "Pasaste 3 semanas perfeccionando el ingles de tu comunicado de prensa. TechCrunch lo resumio en una oracion incorrecta.",
+    beforePhraseEn: "We're excited to announce the launch of our revolutionary platform.",
+    beforePhraseEs: "Estamos emocionados de anunciar el lanzamiento de nuestra plataforma revolucionaria.",
+    afterPhraseEn:
+      "Today we're launching the first tool that lets logistics teams cut customs processing time by 70%. Three enterprise clients are already live. Here's a 60-second demo.",
+    afterPhraseEs:
+      "Hoy lanzamos la primera herramienta que permite a equipos de logistica reducir el tiempo de procesamiento aduanal en un 70%. Tres clientes empresariales ya estan en vivo. Aqui hay un demo de 60 segundos.",
+    imagePrompt:
+      "A founder sitting at their laptop, proudly reading their polished press release on screen (labeled 'WHAT I WROTE: 1,500 words of carefully crafted English'). Next to it, a phone shows the actual TechCrunch tweet summarizing it as a completely different product in 15 words. The founder stares in disbelief. The gap between what you write and what gets published. Home office, launch day chaos.",
+    altTextEn:
+      "Meme about the gap between a founder's carefully written press release and how media actually covers it",
+    altTextEs:
+      "Meme sobre la brecha entre el comunicado de prensa cuidadosamente escrito de un fundador y como los medios realmente lo cubren",
+    tags: ["product-launch", "press", "messaging"],
+    status: "planned",
+  },
+
+  // ========================================================================
+  // LOGISTICS & SUPPLY CHAIN (lg-01 through lg-08)
+  // ========================================================================
+  {
+    id: "lg-01",
+    roleCategory: "logistics-supply-chain",
+    sortOrder: 1,
+    titleEn: "Explaining the Delay Without Saying 'Delay'",
+    titleEs: "Explicando el Retraso Sin Decir 'Retraso'",
+    captionEn:
+      "The shipment is 3 weeks late. Your email subject says 'Timeline Adjustment Update.'",
+    captionEs:
+      "El envio tiene 3 semanas de retraso. El asunto de tu email dice 'Actualizacion de Ajuste de Cronograma.'",
+    beforePhraseEn: "The shipment is delayed. We don't know when it will arrive.",
+    beforePhraseEs: "El envio esta retrasado. No sabemos cuando llegara.",
+    afterPhraseEn:
+      "We've identified a port congestion issue affecting the ETA. Current revised arrival is March 15th. I've activated our backup carrier as a contingency and will update you by Friday with confirmed status.",
+    afterPhraseEs:
+      "Identificamos un problema de congestion portuaria que afecta el ETA. La llegada revisada actual es el 15 de marzo. Active nuestro transportista de respaldo como contingencia y los actualizare el viernes con estatus confirmado.",
+    imagePrompt:
+      "A logistics manager composing an email. Their screen shows a draft with the word 'DELAYED' crossed out and replaced with increasingly creative euphemisms: 'timeline adjustment,' 'revised ETA,' 'schedule optimization,' 'strategic rerouting.' A thesaurus sits open on their desk. The art of diplomatic delay communication. Office with shipping maps on the wall.",
+    altTextEn:
+      "Meme about logistics managers finding creative ways to communicate shipping delays professionally",
+    altTextEs:
+      "Meme sobre gerentes de logistica encontrando formas creativas de comunicar retrasos de envio profesionalmente",
+    tags: ["delay-communication", "client-management", "diplomacy"],
+    status: "planned",
+  },
+  {
+    id: "lg-02",
+    roleCategory: "logistics-supply-chain",
+    sortOrder: 2,
+    titleEn: "Customs Paperwork: The English Boss Level",
+    titleEs: "Documentacion Aduanal: El Nivel Final del Ingles",
+    captionEn:
+      "You can coordinate 50 containers across 3 continents, but the customs form asks for 'consignee' and your mind goes blank.",
+    captionEs:
+      "Puedes coordinar 50 contenedores en 3 continentes, pero el formulario aduanal pide 'consignee' y tu mente se queda en blanco.",
+    beforePhraseEn: "There's a problem with the customs documents. I need help fixing them.",
+    beforePhraseEs: "Hay un problema con los documentos aduanales. Necesito ayuda para arreglarlos.",
+    afterPhraseEn:
+      "We have a documentation discrepancy on the bill of lading -- the consignee details don't match the letter of credit. I'm coordinating with the freight forwarder to issue a corrected BL by end of day.",
+    afterPhraseEs:
+      "Tenemos una discrepancia en la documentacion del bill of lading -- los detalles del consignatario no coinciden con la carta de credito. Estoy coordinando con el freight forwarder para emitir un BL corregido para hoy.",
+    imagePrompt:
+      "A logistics professional staring at a customs form written entirely in dense English legal terminology. Each field has a magnifying glass hovering over it: 'consignee,' 'bill of lading,' 'harmonized tariff code,' 'letter of credit.' The professional looks at the camera with a 'this is fine' expression. Customs office setting with stamps and documents everywhere.",
+    altTextEn:
+      "Meme about the challenge of navigating complex English customs terminology in international shipping",
+    altTextEs:
+      "Meme sobre el desafio de navegar la compleja terminologia aduanal en ingles en envios internacionales",
+    tags: ["customs", "documentation", "terminology"],
+    status: "planned",
+  },
+  {
+    id: "lg-03",
+    roleCategory: "logistics-supply-chain",
+    sortOrder: 3,
+    titleEn: "Negotiating With Carriers Who Know You're Desperate",
+    titleEs: "Negociando Con Transportistas Que Saben Que Estas Desesperado",
+    captionEn:
+      "Peak season rates just tripled. The carrier knows you have 200 containers waiting. Your poker face has never been more important.",
+    captionEs:
+      "Las tarifas de temporada alta se triplicaron. El transportista sabe que tienes 200 contenedores esperando. Tu cara de poker nunca ha sido mas importante.",
+    beforePhraseEn: "That rate is too high. Can you lower it?",
+    beforePhraseEs: "Esa tarifa es muy alta. Puede bajarla?",
+    afterPhraseEn:
+      "We value the partnership and want to find a rate structure that works for both sides long-term. Based on our volume commitment of 200+ TEU monthly, here's what competitive benchmarking shows for this lane.",
+    afterPhraseEs:
+      "Valoramos la asociacion y queremos encontrar una estructura de tarifas que funcione para ambas partes a largo plazo. Basandonos en nuestro compromiso de volumen de 200+ TEU mensuales, esto es lo que muestra el benchmarking competitivo para esta ruta.",
+    imagePrompt:
+      "A negotiation standoff: A logistics manager and a carrier sales rep sit across a table. The carrier has a smug smile and a card showing '3X PEAK RATES.' The logistics manager calmly places down a folder labeled 'VOLUME COMMITMENT + 2 OTHER QUOTES.' The carrier's smile starts fading. A poker game but with shipping containers instead of chips. Conference room with a world map on the wall.",
+    altTextEn:
+      "Meme about logistics managers maintaining negotiation leverage with carriers during peak season",
+    altTextEs:
+      "Meme sobre gerentes de logistica manteniendo el poder de negociacion con transportistas durante temporada alta",
+    tags: ["carrier-negotiation", "rates", "leverage"],
+    status: "planned",
+  },
+  {
+    id: "lg-04",
+    roleCategory: "logistics-supply-chain",
+    sortOrder: 4,
+    titleEn: "The Client Wants 'Faster' But Won't Pay for Air Freight",
+    titleEs: "El Cliente Quiere 'Mas Rapido' Pero No Pagara Flete Aereo",
+    captionEn:
+      "Client: 'Can we speed this up?' You: 'Yes. It costs 10x more.' Client: '...Can we speed it up for free?'",
+    captionEs:
+      "Cliente: 'Podemos acelerar esto?' Tu: 'Si. Cuesta 10x mas.' Cliente: '...Podemos acelerarlo gratis?'",
+    beforePhraseEn: "We can't go faster unless you pay for air freight.",
+    beforePhraseEs: "No podemos ir mas rapido a menos que pagues por flete aereo.",
+    afterPhraseEn:
+      "I've mapped out three options: ocean freight at standard timeline, express ocean with a 5-day improvement, and air freight for urgent delivery. Here's the cost-benefit for each so you can decide based on your inventory needs.",
+    afterPhraseEs:
+      "Prepare tres opciones: flete maritimo con cronograma estandar, maritimo express con una mejora de 5 dias, y flete aereo para entrega urgente. Aqui esta el costo-beneficio de cada uno para que pueda decidir basandose en sus necesidades de inventario.",
+    imagePrompt:
+      "A speed slider graphic: On the left it says 'OCEAN (cheap, slow)' and on the right 'AIR (fast, expensive).' A client's hand is trying to drag the slider to 'fast' while simultaneously pointing at the 'cheap' end. A logistics manager watches with a patient but knowing expression. The universal logistics dilemma visualized. Clean infographic-style humor.",
+    altTextEn:
+      "Meme about clients wanting faster shipping without paying premium rates for air freight",
+    altTextEs:
+      "Meme sobre clientes que quieren envios mas rapidos sin pagar tarifas premium de flete aereo",
+    tags: ["client-expectations", "freight-options", "cost-benefit"],
+    status: "planned",
+  },
+  {
+    id: "lg-05",
+    roleCategory: "logistics-supply-chain",
+    sortOrder: 5,
+    titleEn: "The 3 AM Call From the Warehouse",
+    titleEs: "La Llamada de las 3 AM del Almacen",
+    captionEn:
+      "When a container arrives damaged at 3 AM and you need to write a professional claim email in English before your coffee kicks in.",
+    captionEs:
+      "Cuando un contenedor llega danado a las 3 AM y necesitas escribir un email profesional de reclamo en ingles antes de que tu cafe haga efecto.",
+    beforePhraseEn: "The container arrived damaged. We need someone to fix this immediately.",
+    beforePhraseEs: "El contenedor llego danado. Necesitamos que alguien arregle esto inmediatamente.",
+    afterPhraseEn:
+      "Container MSKU-4521890 arrived with water damage to approximately 30% of the cargo. I've documented the damage with timestamped photos, filed the preliminary insurance claim, and coordinated with the warehouse to segregate affected units. Full damage assessment will be ready by noon.",
+    afterPhraseEs:
+      "El contenedor MSKU-4521890 llego con danos por agua en aproximadamente el 30% de la carga. Documente los danos con fotos con marca de tiempo, presente el reclamo preliminar de seguro, y coordine con el almacen para segregar las unidades afectadas. La evaluacion completa de danos estara lista al mediodia.",
+    imagePrompt:
+      "Split panel: Left shows a logistics manager jolted awake at 3 AM by a phone call, hair messy, eyes barely open. Right shows the same person 10 minutes later, still in pajamas but now composed and professional, typing a detailed damage claim email with perfect English on their laptop. Coffee mug says 'LOGISTICS NEVER SLEEPS.' The 24/7 reality of supply chain management.",
+    altTextEn:
+      "Meme about logistics professionals handling cargo damage claims at 3 AM with professional English",
+    altTextEs:
+      "Meme sobre profesionales de logistica manejando reclamos por danos de carga a las 3 AM con ingles profesional",
+    tags: ["damage-claims", "emergency-response", "documentation"],
+    status: "planned",
+  },
+  {
+    id: "lg-06",
+    roleCategory: "logistics-supply-chain",
+    sortOrder: 6,
+    titleEn: "Cross-Border Compliance: When Every Word Matters",
+    titleEs: "Cumplimiento Transfronterizo: Cuando Cada Palabra Importa",
+    captionEn:
+      "One wrong word on the export declaration and your shipment is sitting in customs for 3 weeks.",
+    captionEs:
+      "Una palabra incorrecta en la declaracion de exportacion y tu envio esta en aduanas por 3 semanas.",
+    beforePhraseEn: "There's a compliance issue with the shipment. I'm not sure what happened.",
+    beforePhraseEs: "Hay un problema de cumplimiento con el envio. No estoy seguro de que paso.",
+    afterPhraseEn:
+      "We identified a classification discrepancy on the export declaration -- HS code 8471.30 was applied instead of 8471.41. I've filed the amendment with customs and expect clearance within 48 hours.",
+    afterPhraseEs:
+      "Identificamos una discrepancia de clasificacion en la declaracion de exportacion -- se aplico el codigo HS 8471.30 en lugar de 8471.41. Presente la enmienda ante aduanas y espero el despacho dentro de 48 horas.",
+    imagePrompt:
+      "A magnifying glass hovering over a customs form, zoomed in on one tiny field where a single digit is wrong in an HS code. Around the magnifying glass, dominoes are lined up showing the chain reaction: 'wrong code' → 'customs hold' → 'delayed shipment' → 'angry client' → 'contract penalty.' The butterfly effect of one wrong number in logistics. Document-focused, clean design.",
+    altTextEn:
+      "Meme about how one small error on customs paperwork creates a chain reaction of logistics problems",
+    altTextEs:
+      "Meme sobre como un pequeno error en documentacion aduanal crea una reaccion en cadena de problemas logisticos",
+    tags: ["compliance", "customs", "precision"],
+    status: "planned",
+  },
+  {
+    id: "lg-07",
+    roleCategory: "logistics-supply-chain",
+    sortOrder: 7,
+    titleEn: "The Supplier Meeting Where You Nod But Don't Understand",
+    titleEs: "La Reunion con el Proveedor Donde Asientes Pero No Entiendes",
+    captionEn:
+      "The supplier is talking about Incoterms and you're 80% sure they said 'FOB' but it might have been 'FOP' and now you're afraid to ask.",
+    captionEs:
+      "El proveedor esta hablando de Incoterms y estas 80% seguro de que dijo 'FOB' pero pudo haber sido 'FOP' y ahora tienes miedo de preguntar.",
+    beforePhraseEn: "Yes, yes, that sounds fine. We agree.",
+    beforePhraseEs: "Si, si, eso suena bien. Estamos de acuerdo.",
+    afterPhraseEn:
+      "Just to make sure we're aligned -- you're proposing FOB Shanghai, meaning risk transfers to us once cargo crosses the ship's rail. Can you confirm the loading charges are included on your side?",
+    afterPhraseEs:
+      "Solo para asegurarme de que estamos alineados -- estan proponiendo FOB Shanghai, lo que significa que el riesgo se transfiere a nosotros una vez que la carga cruza la borda del barco. Pueden confirmar que los cargos de carga estan incluidos de su lado?",
+    imagePrompt:
+      "A logistics professional in a meeting nodding confidently while their internal monologue runs as subtitles at the bottom of the screen: 'Did they say FOB or CIF? What does DAP mean again? Just keep nodding. Google it later.' The supplier presents enthusiastically at a whiteboard covered in Incoterms. The gap between looking confident and being confident. Meeting room with international flags.",
+    altTextEn:
+      "Meme about logistics professionals nodding through Incoterms discussions they don't fully understand in English",
+    altTextEs:
+      "Meme sobre profesionales de logistica asintiendo en discusiones de Incoterms que no entienden completamente en ingles",
+    tags: ["incoterms", "supplier-meetings", "clarity"],
+    status: "planned",
+  },
+  {
+    id: "lg-08",
+    roleCategory: "logistics-supply-chain",
+    sortOrder: 8,
+    titleEn: "Turning Supply Chain Chaos Into an Executive Summary",
+    titleEs: "Convirtiendo el Caos de la Cadena de Suministro en un Resumen Ejecutivo",
+    captionEn:
+      "The reality: 6 containers stuck, 2 carriers ghosting you, and a warehouse at 97% capacity. The exec summary: 'Minor operational adjustments in progress.'",
+    captionEs:
+      "La realidad: 6 contenedores atascados, 2 transportistas que no responden, y un almacen al 97% de capacidad. El resumen ejecutivo: 'Ajustes operacionales menores en progreso.'",
+    beforePhraseEn: "Supply chain is having a lot of problems right now.",
+    beforePhraseEs: "La cadena de suministro esta teniendo muchos problemas ahora.",
+    afterPhraseEn:
+      "We're managing three concurrent disruptions: port congestion in Shanghai affecting 6 containers, a carrier capacity constraint on the Asia-LATAM lane, and elevated warehouse utilization at 97%. Here's the mitigation plan with timelines for each.",
+    afterPhraseEs:
+      "Estamos manejando tres disrupciones concurrentes: congestion portuaria en Shanghai afectando 6 contenedores, una restriccion de capacidad de transportistas en la ruta Asia-LATAM, y utilizacion elevada del almacen al 97%. Aqui esta el plan de mitigacion con cronogramas para cada una.",
+    imagePrompt:
+      "Split reality: Bottom half shows the actual supply chain situation -- a chaotic war room with red alerts, phones ringing, whiteboards covered in crisis notes, and empty coffee cups. Top half shows the executive summary email being composed: clean, structured, calm bullet points with 'STATUS: MANAGED' in green. Same situation, two completely different presentations. Logistics office setting.",
+    altTextEn:
+      "Meme about the gap between supply chain operational chaos and the calm executive summary that gets sent upward",
+    altTextEs:
+      "Meme sobre la brecha entre el caos operacional de la cadena de suministro y el resumen ejecutivo calmado que se envia hacia arriba",
+    tags: ["executive-reporting", "crisis-management", "composure"],
+    status: "planned",
+  },
+
+  // ========================================================================
+  // HR & RECRUITER (hr-01 through hr-08)
+  // ========================================================================
+  {
+    id: "hr-01",
+    roleCategory: "hr-recruiter",
+    sortOrder: 1,
+    titleEn: "The Rejection Email That Doesn't Crush Souls",
+    titleEs: "El Email de Rechazo Que No Destruye Almas",
+    captionEn:
+      "Somewhere between 'You're not good enough' and 'We loved everything about you but no' lies the professional rejection email.",
+    captionEs:
+      "En algun lugar entre 'No eres lo suficientemente bueno' y 'Nos encanto todo de ti pero no' esta el email de rechazo profesional.",
+    beforePhraseEn: "Unfortunately, we decided to go with another candidate. Good luck.",
+    beforePhraseEs: "Desafortunadamente, decidimos ir con otro candidato. Buena suerte.",
+    afterPhraseEn:
+      "After careful consideration, we've moved forward with a candidate whose experience more closely matches this specific role. Your background in data engineering impressed us -- I'd love to stay in touch for future opportunities that better align with your strengths.",
+    afterPhraseEs:
+      "Despues de una consideracion cuidadosa, avanzamos con un candidato cuya experiencia se alinea mas estrechamente con este rol especifico. Tu experiencia en ingenieria de datos nos impresiono -- me encantaria mantener contacto para futuras oportunidades que se alineen mejor con tus fortalezas.",
+    imagePrompt:
+      "A recruiter's screen showing two draft rejection emails side by side. Left draft is blunt and cold: 'You didn't get the job. Best wishes.' Right draft is warm but honest: specific feedback, genuine compliment, door left open. The left draft has a red X, the right has a green check. The recruiter is about to click send on the right one. HR office setting, professional and warm.",
+    altTextEn:
+      "Meme about the art of writing rejection emails that are honest yet respectful and leave the door open",
+    altTextEs:
+      "Meme sobre el arte de escribir emails de rechazo que son honestos pero respetuosos y dejan la puerta abierta",
+    tags: ["rejection", "candidate-experience", "empathy"],
+    status: "planned",
+  },
+  {
+    id: "hr-02",
+    roleCategory: "hr-recruiter",
+    sortOrder: 2,
+    titleEn: "Salary Negotiation: The Dance of Numbers",
+    titleEs: "Negociacion Salarial: La Danza de los Numeros",
+    captionEn:
+      "Candidate: 'What's the salary range?' You: *tries to answer without actually answering*",
+    captionEs:
+      "Candidato: 'Cual es el rango salarial?' Tu: *intenta responder sin realmente responder*",
+    beforePhraseEn: "We can't go higher than that. The budget is fixed.",
+    beforePhraseEs: "No podemos ir mas alto. El presupuesto es fijo.",
+    afterPhraseEn:
+      "The base salary range for this role is $85-95K. Given your 7 years of experience and the cloud certifications, I can position you toward the top of that range. Let me also walk you through the total compensation including equity, bonus structure, and professional development budget.",
+    afterPhraseEs:
+      "El rango salarial base para este rol es $85-95K. Dada tu experiencia de 7 anos y las certificaciones cloud, puedo posicionarte hacia el tope de ese rango. Permiteme tambien explicarte la compensacion total incluyendo equity, estructura de bonos y presupuesto de desarrollo profesional.",
+    imagePrompt:
+      "A negotiation tango: HR professional and candidate dancing a formal tango, but instead of roses, they're exchanging salary numbers back and forth. Each spin reveals a new number: base salary, bonus, equity, benefits. The dance is elegant and structured, not confrontational. The art of salary negotiation as a collaborative dance. Stylized, professional humor.",
+    altTextEn:
+      "Meme about salary negotiations being a structured dance between total compensation components rather than a confrontation",
+    altTextEs:
+      "Meme sobre las negociaciones salariales siendo una danza estructurada entre componentes de compensacion total en lugar de una confrontacion",
+    tags: ["salary-negotiation", "total-compensation", "recruiting"],
+    status: "planned",
+  },
+  {
+    id: "hr-03",
+    roleCategory: "hr-recruiter",
+    sortOrder: 3,
+    titleEn: "The Performance Improvement Plan Nobody Likes Writing",
+    titleEs: "El Plan de Mejora de Desempeno Que a Nadie Le Gusta Escribir",
+    captionEn:
+      "HR's least favorite document to write in English, and the employee's least favorite to receive in any language.",
+    captionEs:
+      "El documento menos favorito de RRHH para escribir en ingles, y el menos favorito del empleado para recibir en cualquier idioma.",
+    beforePhraseEn: "You're on a PIP. You have 30 days to fix these issues or we'll let you go.",
+    beforePhraseEs: "Estas en un PIP. Tienes 30 dias para arreglar estos problemas o te dejaremos ir.",
+    afterPhraseEn:
+      "This plan is designed to support your success. Here are three specific, measurable goals for the next 30 days, the resources available to help you, and the check-in cadence. I want to see you succeed in this role.",
+    afterPhraseEs:
+      "Este plan esta disenado para apoyar tu exito. Aqui hay tres objetivos especificos y medibles para los proximos 30 dias, los recursos disponibles para ayudarte, y la cadencia de seguimiento. Quiero verte tener exito en este rol.",
+    imagePrompt:
+      "Two versions of a PIP document. Left version: black and white, harsh language, feels like a termination notice. Right version: same expectations but framed with support resources, milestones, and a genuine 'here to help' tone, with color and warmth. An HR professional is shredding the left version and presenting the right one. The reframe from punishment to partnership.",
+    altTextEn:
+      "Meme about reframing performance improvement plans from punitive documents to supportive growth frameworks",
+    altTextEs:
+      "Meme sobre reformular planes de mejora de desempeno de documentos punitivos a marcos de crecimiento de apoyo",
+    tags: ["pip", "performance-management", "leadership"],
+    status: "planned",
+  },
+  {
+    id: "hr-04",
+    roleCategory: "hr-recruiter",
+    sortOrder: 4,
+    titleEn: "Explaining Company Culture Without Using 'We're Like a Family'",
+    titleEs: "Explicando la Cultura de la Empresa Sin Usar 'Somos Como una Familia'",
+    captionEn:
+      "Every company says 'great culture.' The candidates who've been burned before need specifics, not vibes.",
+    captionEs:
+      "Cada empresa dice 'gran cultura.' Los candidatos que han sido quemados antes necesitan especificos, no vibras.",
+    beforePhraseEn: "We have an amazing culture. We're like a family here.",
+    beforePhraseEs: "Tenemos una cultura increible. Somos como una familia aqui.",
+    afterPhraseEn:
+      "Our engineering team ships weekly with 90% autonomy on technical decisions. We have a no-meeting Wednesday policy, 20% time for personal projects, and our last employee engagement score was 4.2 out of 5. Here's what three current engineers said about their experience.",
+    afterPhraseEs:
+      "Nuestro equipo de ingenieria hace releases semanales con 90% de autonomia en decisiones tecnicas. Tenemos una politica de miercoles sin reuniones, 20% del tiempo para proyectos personales, y nuestro ultimo score de engagement fue 4.2 de 5. Aqui esta lo que tres ingenieros actuales dijeron sobre su experiencia.",
+    imagePrompt:
+      "A bingo card labeled 'EMPLOYER BRANDING BINGO' with cliche squares: 'like a family,' 'fast-paced environment,' 'unlimited PTO,' 'ping pong table,' 'flat hierarchy,' 'we work hard and play hard.' Most squares are checked off. Below the card, a recruiter presents a slide with actual metrics and employee quotes instead. The shift from buzzwords to proof. Career fair / recruiting event setting.",
+    altTextEn:
+      "Meme about replacing generic employer branding cliches with specific, measurable culture proof points",
+    altTextEs:
+      "Meme sobre reemplazar cliches genericos de marca empleadora con puntos de prueba de cultura especificos y medibles",
+    tags: ["employer-branding", "culture", "recruiting"],
+    status: "planned",
+  },
+  {
+    id: "hr-05",
+    roleCategory: "hr-recruiter",
+    sortOrder: 5,
+    titleEn: "The Exit Interview Where They Finally Tell the Truth",
+    titleEs: "La Entrevista de Salida Donde Finalmente Dicen la Verdad",
+    captionEn:
+      "Two weeks' notice: when employees finally feel safe enough to give you the real feedback.",
+    captionEs:
+      "Dos semanas de aviso: cuando los empleados finalmente se sienten lo suficientemente seguros para dar la retroalimentacion real.",
+    beforePhraseEn: "I'm sorry to hear you're leaving. Is there anything we could have done differently?",
+    beforePhraseEs: "Lamento escuchar que te vas. Hay algo que pudimos haber hecho diferente?",
+    afterPhraseEn:
+      "I appreciate your honesty during this conversation. The patterns you're describing around promotion visibility and manager communication are things I want to address. Can I share these themes -- anonymized -- with the leadership team to drive real change?",
+    afterPhraseEs:
+      "Aprecio tu honestidad durante esta conversacion. Los patrones que describes sobre visibilidad de promociones y comunicacion de gerentes son cosas que quiero abordar. Puedo compartir estos temas -- anonimizados -- con el equipo de liderazgo para impulsar un cambio real?",
+    imagePrompt:
+      "An exit interview setting: The departing employee is finally speaking freely, with a long list of honest feedback flowing out in a speech bubble. The HR professional is taking notes furiously, eyes wide, realizing this is the most honest feedback they've received all year. A thought bubble from HR says 'WHY DIDN'T ANYONE SAY THIS BEFORE?' The irony of exit interviews being the most honest conversations. Office meeting room.",
+    altTextEn:
+      "Meme about exit interviews being the only time employees give truly honest feedback about company culture",
+    altTextEs:
+      "Meme sobre las entrevistas de salida siendo el unico momento en que los empleados dan retroalimentacion verdaderamente honesta sobre la cultura de la empresa",
+    tags: ["exit-interview", "feedback", "retention"],
+    status: "planned",
+  },
+  {
+    id: "hr-06",
+    roleCategory: "hr-recruiter",
+    sortOrder: 6,
+    titleEn: "The LinkedIn Outreach That Doesn't Sound Like Spam",
+    titleEs: "El Outreach de LinkedIn Que No Suena a Spam",
+    captionEn:
+      "Recruiter message template #47: 'Exciting opportunity!' Delete rate: 99.7%.",
+    captionEs:
+      "Plantilla de mensaje de reclutador #47: 'Oportunidad emocionante!' Tasa de eliminacion: 99.7%.",
+    beforePhraseEn: "Hi! I have an exciting opportunity that would be perfect for you. Let's chat!",
+    beforePhraseEs: "Hola! Tengo una oportunidad emocionante que seria perfecta para ti. Hablemos!",
+    afterPhraseEn:
+      "I saw your talk at ReactConf on state management -- your approach to reducing re-renders was impressive. We're building a team that tackles exactly that kind of performance challenge at scale. Would you be open to a 10-minute conversation about what we're building?",
+    afterPhraseEs:
+      "Vi tu charla en ReactConf sobre manejo de estado -- tu enfoque para reducir re-renders fue impresionante. Estamos construyendo un equipo que aborda exactamente ese tipo de desafio de performance a escala. Estarias abierto a una conversacion de 10 minutos sobre lo que estamos construyendo?",
+    imagePrompt:
+      "Two LinkedIn message previews on a phone screen. Top message is generic: 'Hi [NAME], I have an exciting opportunity...' -- it's grayed out and ignored with 47 similar messages above it. Bottom message is specific: references something the candidate actually did, mentions a concrete detail. It has a bright notification dot and the candidate is typing a reply. The difference between copy-paste and craft. Phone/LinkedIn UI mockup.",
+    altTextEn:
+      "Meme about the difference between generic recruiter spam and personalized, research-based candidate outreach",
+    altTextEs:
+      "Meme sobre la diferencia entre spam generico de reclutadores y outreach personalizado y basado en investigacion hacia candidatos",
+    tags: ["candidate-outreach", "personalization", "recruiting"],
+    status: "planned",
+  },
+  {
+    id: "hr-07",
+    roleCategory: "hr-recruiter",
+    sortOrder: 7,
+    titleEn: "Mediating a Manager-Employee Conflict in Your Second Language",
+    titleEs: "Mediando un Conflicto Gerente-Empleado en Tu Segundo Idioma",
+    captionEn:
+      "Both sides think they're right. You need to find neutral English words that don't accidentally side with either.",
+    captionEs:
+      "Ambos lados creen que tienen razon. Necesitas encontrar palabras neutrales en ingles que no accidentalmente se pongan del lado de ninguno.",
+    beforePhraseEn: "You both need to work this out. Just communicate better.",
+    beforePhraseEs: "Ambos necesitan resolver esto. Solo comuniquense mejor.",
+    afterPhraseEn:
+      "I've heard both perspectives and I see legitimate concerns on both sides. Let me reflect back what I'm hearing so we can find common ground. The goal is a working agreement that addresses both the team's workflow needs and the flexibility requirements.",
+    afterPhraseEs:
+      "He escuchado ambas perspectivas y veo preocupaciones legitimas de ambos lados. Permitanme reflejar lo que estoy escuchando para que podamos encontrar un punto en comun. El objetivo es un acuerdo de trabajo que aborde tanto las necesidades de flujo de trabajo del equipo como los requisitos de flexibilidad.",
+    imagePrompt:
+      "An HR professional sitting between a manager and an employee who are both talking at the same time with overlapping speech bubbles. The HR person has a calm expression and holds up two hands in a 'pause' gesture. Between them, a whiteboard shows 'COMMON GROUND' with a small overlap area of both their concerns highlighted. The mediator's moment of truth. Office meeting room, tension visible but being managed.",
+    altTextEn:
+      "Meme about HR professionals mediating workplace conflicts by finding neutral language and common ground",
+    altTextEs:
+      "Meme sobre profesionales de RRHH mediando conflictos laborales encontrando lenguaje neutral y puntos en comun",
+    tags: ["conflict-mediation", "neutral-language", "leadership"],
+    status: "planned",
+  },
+  {
+    id: "hr-08",
+    roleCategory: "hr-recruiter",
+    sortOrder: 8,
+    titleEn: "Presenting DEI Data Without Corporate Buzzwords",
+    titleEs: "Presentando Datos de DEI Sin Palabras de Moda Corporativas",
+    captionEn:
+      "The board wants metrics, not mission statements. Time to turn values into dashboards.",
+    captionEs:
+      "La junta quiere metricas, no declaraciones de mision. Es hora de convertir valores en dashboards.",
+    beforePhraseEn: "We're committed to diversity and inclusion. It's very important to us.",
+    beforePhraseEs: "Estamos comprometidos con la diversidad e inclusion. Es muy importante para nosotros.",
+    afterPhraseEn:
+      "Our engineering hiring pipeline improved from 18% to 34% underrepresented candidates this quarter through three specific interventions: blind resume review, structured interviews, and expanded university partnerships. Here's the data by stage.",
+    afterPhraseEs:
+      "Nuestro pipeline de contratacion de ingenieria mejoro del 18% al 34% de candidatos subrepresentados este trimestre a traves de tres intervenciones especificas: revision ciega de curriculos, entrevistas estructuradas, y asociaciones universitarias expandidas. Aqui estan los datos por etapa.",
+    imagePrompt:
+      "Two slides side by side presented to a boardroom. Left slide: a generic DEI mission statement in a nice font with stock photos of diverse people. The board looks politely bored. Right slide: actual pipeline metrics, funnel conversion data by demographic, and specific intervention results. The board is engaged and asking questions. Substance over slogans in DEI communication. Corporate boardroom setting.",
+    altTextEn:
+      "Meme about replacing generic DEI statements with specific metrics and pipeline data that drive real accountability",
+    altTextEs:
+      "Meme sobre reemplazar declaraciones genericas de DEI con metricas especificas y datos de pipeline que impulsan responsabilidad real",
+    tags: ["dei", "metrics", "board-reporting"],
+    status: "planned",
+  },
+
+  // ========================================================================
+  // CONSULTANT (cn-01 through cn-08)
+  // ========================================================================
+  {
+    id: "cn-01",
+    roleCategory: "consultant",
+    sortOrder: 1,
+    titleEn: "The 2x2 Matrix That Explains Everything",
+    titleEs: "La Matriz 2x2 Que Explica Todo",
+    captionEn:
+      "Client: 'This is a complex problem.' Consultant: *draws a 2x2 matrix* Client: 'Genius.'",
+    captionEs:
+      "Cliente: 'Este es un problema complejo.' Consultor: *dibuja una matriz 2x2* Cliente: 'Genio.'",
+    beforePhraseEn: "It's complicated. There are a lot of factors to consider.",
+    beforePhraseEs: "Es complicado. Hay muchos factores a considerar.",
+    afterPhraseEn:
+      "Let me simplify this into a framework. If we map urgency against strategic value, your initiatives fall into four quadrants. The top-right is where we should focus first -- high urgency, high value. Here's my recommended sequencing.",
+    afterPhraseEs:
+      "Permitame simplificar esto en un framework. Si mapeamos urgencia contra valor estrategico, sus iniciativas caen en cuatro cuadrantes. La esquina superior derecha es donde debemos enfocarnos primero -- alta urgencia, alto valor. Aqui esta mi secuencia recomendada.",
+    imagePrompt:
+      "A consultant standing at a whiteboard with a beautifully drawn 2x2 matrix. The client stares at it with a revelation expression, as if the meaning of life has been explained. Behind the consultant, a shelf of business books all have 2x2 matrices on their covers. The unofficial universal language of consulting. Modern consulting office, glass walls.",
+    altTextEn:
+      "Meme about consultants using 2x2 matrices to simplify complex business problems into actionable frameworks",
+    altTextEs:
+      "Meme sobre consultores usando matrices 2x2 para simplificar problemas complejos de negocios en frameworks accionables",
+    tags: ["frameworks", "simplification", "client-communication"],
+    status: "planned",
+  },
+  {
+    id: "cn-02",
+    roleCategory: "consultant",
+    sortOrder: 2,
+    titleEn: "Scope Creep Disguised as 'One More Question'",
+    titleEs: "Scope Creep Disfrazado de 'Una Pregunta Mas'",
+    captionEn:
+      "The client said 'quick question' 47 times. Each one added a week to the project.",
+    captionEs:
+      "El cliente dijo 'pregunta rapida' 47 veces. Cada una agrego una semana al proyecto.",
+    beforePhraseEn: "Sure, I can look into that too. No problem.",
+    beforePhraseEs: "Claro, tambien puedo revisar eso. No hay problema.",
+    afterPhraseEn:
+      "Great question -- that's actually outside the current engagement scope, but it's an important area. I'd recommend we capture it for a Phase 2 workstream. Let me draft a brief scope addendum so we can address it properly without impacting the current deliverables.",
+    afterPhraseEs:
+      "Gran pregunta -- eso en realidad esta fuera del alcance del engagement actual, pero es un area importante. Recomendaria que lo capturemos para un flujo de trabajo de Fase 2. Permitame redactar un breve adendum de alcance para que podamos abordarlo adecuadamente sin impactar los entregables actuales.",
+    imagePrompt:
+      "A consultant's project scope document growing like a snowball rolling downhill. At the top of the hill it's a small clean document. Each 'quick question' from the client makes it bigger until at the bottom it's an enormous boulder about to crush the timeline. The client at the top cheerfully throws another 'quick question' onto the snowball. The avalanche of scope creep. Humorous physical metaphor.",
+    altTextEn:
+      "Meme about how each client 'quick question' snowballs into massive scope creep on consulting engagements",
+    altTextEs:
+      "Meme sobre como cada 'pregunta rapida' del cliente se convierte en una bola de nieve de scope creep masivo en engagements de consultoria",
+    tags: ["scope-creep", "boundaries", "client-management"],
+    status: "planned",
+  },
+  {
+    id: "cn-03",
+    roleCategory: "consultant",
+    sortOrder: 3,
+    titleEn: "Making Recommendations the Client Already Believes",
+    titleEs: "Haciendo Recomendaciones en las Que el Cliente Ya Cree",
+    captionEn:
+      "The best consulting is when the client says 'That's exactly what I was thinking' about the idea they hired you to have.",
+    captionEs:
+      "La mejor consultoria es cuando el cliente dice 'Eso es exactamente lo que estaba pensando' sobre la idea por la que te contrataron.",
+    beforePhraseEn: "Based on our analysis, you should do X.",
+    beforePhraseEs: "Basandome en nuestro analisis, deberian hacer X.",
+    afterPhraseEn:
+      "The data confirms what your team has been sensing: the opportunity in LATAM is real. What our analysis adds is the sizing -- $12M addressable market -- and a tested entry playbook from three comparable companies. Your instinct was right; now you have the evidence to move.",
+    afterPhraseEs:
+      "Los datos confirman lo que su equipo ha estado sintiendo: la oportunidad en LATAM es real. Lo que nuestro analisis agrega es el dimensionamiento -- $12M de mercado direccionable -- y un playbook de entrada probado de tres empresas comparables. Su instinto era correcto; ahora tienen la evidencia para avanzar.",
+    imagePrompt:
+      "A consultant presenting findings to a client executive. The executive's face lights up with recognition: 'That's what I've been saying!' The consultant subtly winks at the camera while gesturing to a slide that says 'Data-Validated Client Insight.' The art of making your recommendation feel like the client's idea. Modern glass-walled conference room with skyline view.",
+    altTextEn:
+      "Meme about the consulting art of validating client intuitions with data so recommendations feel like natural conclusions",
+    altTextEs:
+      "Meme sobre el arte de consultoria de validar las intuiciones del cliente con datos para que las recomendaciones se sientan como conclusiones naturales",
+    tags: ["recommendations", "client-alignment", "influence"],
+    status: "planned",
+  },
+  {
+    id: "cn-04",
+    roleCategory: "consultant",
+    sortOrder: 4,
+    titleEn: "The Deliverable Presentation in Imperfect English",
+    titleEs: "La Presentacion de Entregables en Ingles Imperfecto",
+    captionEn:
+      "The analysis is brilliant. The slide design is perfect. And then you open your mouth and suddenly 'synergistic value proposition' has too many syllables.",
+    captionEs:
+      "El analisis es brillante. El diseno de las diapositivas es perfecto. Y luego abres la boca y de repente 'synergistic value proposition' tiene demasiadas silabas.",
+    beforePhraseEn: "So, um, this slide shows that, well, the company should maybe consider...",
+    beforePhraseEs: "Entonces, um, esta diapositiva muestra que, bueno, la empresa deberia quizas considerar...",
+    afterPhraseEn:
+      "This slide captures our core finding: you're leaving $3M in annual savings on the table through procurement fragmentation. The fix is three-phased. Let me walk you through each phase and the expected ROI.",
+    afterPhraseEs:
+      "Esta diapositiva captura nuestro hallazgo principal: estan dejando $3M en ahorros anuales sobre la mesa debido a fragmentacion en compras. La solucion tiene tres fases. Permitame explicarles cada fase y el ROI esperado.",
+    imagePrompt:
+      "Split panel: Left shows a consultant rehearsing their presentation alone, fluent and confident, slides flowing perfectly. Right shows the same consultant in the actual client meeting, stumbling over 'synergistic value proposition' while the client watches. But then -- a third panel shows them taking a breath, simplifying the language, and delivering the insight clearly. The recovery moment. Modern conference room.",
+    altTextEn:
+      "Meme about consultants overcoming presentation anxiety in English by simplifying language and focusing on insights",
+    altTextEs:
+      "Meme sobre consultores superando la ansiedad de presentacion en ingles simplificando el lenguaje y enfocandose en insights",
+    tags: ["presentation", "confidence", "simplification"],
+    status: "planned",
+  },
+  {
+    id: "cn-05",
+    roleCategory: "consultant",
+    sortOrder: 5,
+    titleEn: "Telling the Client What They Don't Want to Hear",
+    titleEs: "Diciendole al Cliente Lo Que No Quiere Escuchar",
+    captionEn:
+      "They hired you for your honest opinion. They meant 'honest opinion that agrees with ours.'",
+    captionEs:
+      "Te contrataron por tu opinion honesta. Quisieron decir 'opinion honesta que concuerde con la nuestra.'",
+    beforePhraseEn: "I think your current approach isn't working.",
+    beforePhraseEs: "Creo que su enfoque actual no esta funcionando.",
+    afterPhraseEn:
+      "The current go-to-market strategy has generated strong brand awareness, which is valuable. Where the data shows a gap is in conversion -- 0.8% versus the 2.5% industry benchmark. I'd like to present an alternative approach that preserves your brand positioning while addressing the conversion gap.",
+    afterPhraseEs:
+      "La estrategia go-to-market actual ha generado un fuerte reconocimiento de marca, lo cual es valioso. Donde los datos muestran una brecha es en conversion -- 0.8% versus el benchmark de la industria de 2.5%. Me gustaria presentar un enfoque alternativo que preserve su posicionamiento de marca mientras aborda la brecha de conversion.",
+    imagePrompt:
+      "A consultant holding up a mirror to a client executive. In the mirror, the client's strategy is reflected honestly -- showing both the strengths (green highlights) and the gaps (red highlights). The client's expression goes through stages: denial, discomfort, then grudging respect. The consultant has a supportive but firm expression. The courage of honest consulting. Elegant office setting.",
+    altTextEn:
+      "Meme about consultants delivering difficult truths by leading with strengths before addressing gaps",
+    altTextEs:
+      "Meme sobre consultores entregando verdades dificiles empezando con fortalezas antes de abordar las brechas",
+    tags: ["tough-conversations", "honesty", "client-trust"],
+    status: "planned",
+  },
+  {
+    id: "cn-06",
+    roleCategory: "consultant",
+    sortOrder: 6,
+    titleEn: "Workshop Facilitation: Herding Cats in English",
+    titleEs: "Facilitacion de Talleres: Pastoreando Gatos en Ingles",
+    captionEn:
+      "8 stakeholders, 8 opinions, 3 languages in the room, and you need to reach 'alignment' in 90 minutes.",
+    captionEs:
+      "8 stakeholders, 8 opiniones, 3 idiomas en la sala, y necesitas llegar a 'alineacion' en 90 minutos.",
+    beforePhraseEn: "Let's just go around the room and share our thoughts.",
+    beforePhraseEs: "Vamos a dar la vuelta a la sala y compartir nuestros pensamientos.",
+    afterPhraseEn:
+      "We have 90 minutes and three decisions to make. I'll frame each decision with the options and trade-offs, we'll use dot voting to surface preferences, and I'll synthesize the group's direction. Sound good? Let's start with the highest-impact decision.",
+    afterPhraseEs:
+      "Tenemos 90 minutos y tres decisiones que tomar. Enmarcare cada decision con las opciones y trade-offs, usaremos votacion por puntos para identificar preferencias, y sintetizare la direccion del grupo. Suena bien? Comencemos con la decision de mayor impacto.",
+    imagePrompt:
+      "A workshop room with 8 people all talking at once, sticky notes flying everywhere, a timer showing 90 minutes counting down. In the center, a consultant stands calmly with a clear agenda board showing '3 DECISIONS' and a structured process. Half the room is chaos, but the consultant's half is organized. Order emerging from chaos. Modern workshop setting with whiteboards and colorful post-its.",
+    altTextEn:
+      "Meme about consultants bringing structure and process to chaotic stakeholder workshops with diverse opinions",
+    altTextEs:
+      "Meme sobre consultores trayendo estructura y proceso a talleres caoticos de stakeholders con opiniones diversas",
+    tags: ["facilitation", "workshop", "stakeholder-alignment"],
+    status: "planned",
+  },
+  {
+    id: "cn-07",
+    roleCategory: "consultant",
+    sortOrder: 7,
+    titleEn: "The Engagement Wrap-Up That Opens the Next Door",
+    titleEs: "El Cierre de Engagement Que Abre la Siguiente Puerta",
+    captionEn:
+      "The project is over. The question is: do they call you back, or do they Google 'cheaper consultant'?",
+    captionEs:
+      "El proyecto termino. La pregunta es: te vuelven a llamar, o buscan en Google 'consultor mas barato'?",
+    beforePhraseEn: "That wraps up our engagement. Let me know if you need anything else.",
+    beforePhraseEs: "Eso concluye nuestro engagement. Avisame si necesitas algo mas.",
+    afterPhraseEn:
+      "As we close Phase 1, here's the executive summary of value delivered: $2.4M in identified savings, a 3-year roadmap your team can execute independently, and the capability-building workshops we conducted. Based on what we uncovered, I see two natural next areas where we could add value. I'd love to discuss them when you're ready.",
+    afterPhraseEs:
+      "Al cerrar la Fase 1, aqui esta el resumen ejecutivo de valor entregado: $2.4M en ahorros identificados, un roadmap de 3 anos que tu equipo puede ejecutar independientemente, y los talleres de construccion de capacidades que realizamos. Basandome en lo que descubrimos, veo dos areas naturales donde podriamos agregar valor. Me encantaria discutirlas cuando estes listo.",
+    imagePrompt:
+      "A consultant presenting a final deliverable that's beautifully packaged like a gift. Attached to it with a ribbon is a small card that says 'P.S. - Here's what else we noticed.' The client receives the deliverable with one hand and is already intrigued by the small card with the other hand. The seed of the next engagement planted in the final deliverable. Elegant handoff visual.",
+    altTextEn:
+      "Meme about consultants planting the seed for future engagements within the final project deliverable",
+    altTextEs:
+      "Meme sobre consultores plantando la semilla para futuros engagements dentro del entregable final del proyecto",
+    tags: ["engagement-wrap", "business-development", "relationship"],
+    status: "planned",
+  },
+  {
+    id: "cn-08",
+    roleCategory: "consultant",
+    sortOrder: 8,
+    titleEn: "Writing Thought Leadership That People Actually Read",
+    titleEs: "Escribiendo Liderazgo de Pensamiento Que la Gente Realmente Lee",
+    captionEn:
+      "There are two types of consulting whitepapers: ones that change thinking and ones that get downloaded once by the author's mom.",
+    captionEs:
+      "Hay dos tipos de whitepapers de consultoria: los que cambian el pensamiento y los que descarga una vez la mama del autor.",
+    beforePhraseEn: "In today's rapidly changing business landscape, companies must embrace digital transformation.",
+    beforePhraseEs: "En el panorama empresarial que cambia rapidamente hoy en dia, las empresas deben abrazar la transformacion digital.",
+    afterPhraseEn:
+      "73% of LATAM manufacturing firms report that English communication gaps cost them an average of $340K annually in delayed contracts and lost partnerships. Here's the data from 200 companies and three strategies that cut that cost in half.",
+    afterPhraseEs:
+      "El 73% de las empresas manufactureras de LATAM reportan que las brechas de comunicacion en ingles les cuestan un promedio de $340K anuales en contratos retrasados y alianzas perdidas. Aqui estan los datos de 200 empresas y tres estrategias que reducen ese costo a la mitad.",
+    imagePrompt:
+      "Two thought leadership articles side by side on a screen. Left article starts with 'In today's rapidly changing...' and has 0 reads and 0 shares. Right article starts with a bold statistic and specific data point, and has 12K reads and 340 shares. The engagement metrics tell the story. The difference between generic and specific thought leadership. Content marketing dashboard view.",
+    altTextEn:
+      "Meme about the difference between generic consulting thought leadership and data-driven content that actually gets read",
+    altTextEs:
+      "Meme sobre la diferencia entre liderazgo de pensamiento generico de consultoria y contenido basado en datos que realmente se lee",
+    tags: ["thought-leadership", "content-marketing", "writing"],
+    status: "planned",
+  },
+
+  // ========================================================================
+  // PRODUCT MANAGER (pd-01 through pd-08)
+  // ========================================================================
+  {
+    id: "pd-01",
+    roleCategory: "product-manager",
+    sortOrder: 1,
+    titleEn: "The Roadmap That Satisfies Nobody",
+    titleEs: "El Roadmap Que No Satisface a Nadie",
+    captionEn:
+      "Sales wants Feature A. Engineering wants to refactor. The CEO wants AI. Your roadmap somehow needs to include all three and ship yesterday.",
+    captionEs:
+      "Ventas quiere Feature A. Ingenieria quiere refactorizar. El CEO quiere AI. Tu roadmap de alguna manera necesita incluir los tres y lanzar ayer.",
+    beforePhraseEn: "We're working on a lot of things. Everything is a priority.",
+    beforePhraseEs: "Estamos trabajando en muchas cosas. Todo es prioridad.",
+    afterPhraseEn:
+      "Our roadmap is organized into three horizons: H1 is enterprise authentication -- it unblocks $800K in pipeline. H2 is the API refactor -- it reduces engineering toil by 40%. H3 is the AI exploration. Here's the data behind the sequencing.",
+    afterPhraseEs:
+      "Nuestro roadmap esta organizado en tres horizontes: H1 es autenticacion empresarial -- desbloquea $800K en pipeline. H2 es el refactor del API -- reduce el trabajo repetitivo de ingenieria en 40%. H3 es la exploracion de AI. Aqui estan los datos detras de la secuencia.",
+    imagePrompt:
+      "A product manager standing in front of a roadmap whiteboard. Three stakeholders pull the roadmap in different directions like a tug of war: Sales pulls toward 'FEATURES,' Engineering pulls toward 'TECH DEBT,' and the CEO pulls toward 'AI.' The PM stands in the center holding a framework labeled 'PRIORITIZATION MATRIX' that brings order. The eternal PM balancing act. Modern product office with roadmap boards.",
+    altTextEn:
+      "Meme about product managers balancing competing stakeholder priorities with data-driven roadmap sequencing",
+    altTextEs:
+      "Meme sobre product managers balanceando prioridades de stakeholders en competencia con secuenciacion de roadmap basada en datos",
+    tags: ["roadmap", "prioritization", "stakeholder-management"],
+    status: "planned",
+  },
+  {
+    id: "pd-02",
+    roleCategory: "product-manager",
+    sortOrder: 2,
+    titleEn: "Saying 'No' Without Making Enemies",
+    titleEs: "Decir 'No' Sin Crear Enemigos",
+    captionEn:
+      "The feature request is bad. The person requesting it is your VP. Welcome to product management.",
+    captionEs:
+      "La solicitud de funcionalidad es mala. La persona que la solicita es tu VP. Bienvenido a product management.",
+    beforePhraseEn: "We can't build that. It doesn't make sense for the product.",
+    beforePhraseEs: "No podemos construir eso. No tiene sentido para el producto.",
+    afterPhraseEn:
+      "I appreciate the insight behind this request. The user problem it addresses is real -- let me share what we've learned about how our top users solve it today, and propose an alternative that achieves the same outcome with half the engineering investment.",
+    afterPhraseEs:
+      "Aprecio la vision detras de esta solicitud. El problema del usuario que aborda es real -- permiteme compartir lo que hemos aprendido sobre como nuestros principales usuarios lo resuelven hoy, y proponer una alternativa que logre el mismo resultado con la mitad de la inversion de ingenieria.",
+    imagePrompt:
+      "A PM holding a polite 'NO' sign, but the letters are made of soft, friendly material (like pillows or clouds) instead of harsh block letters. Around them, stakeholders look initially surprised but then appreciative because the PM is also holding an alternative solution in the other hand. The soft no with a better yes. Product office with user research on the walls.",
+    altTextEn:
+      "Meme about product managers declining feature requests diplomatically while offering data-driven alternatives",
+    altTextEs:
+      "Meme sobre product managers declinando solicitudes de funcionalidades diplomaticamente mientras ofrecen alternativas basadas en datos",
+    tags: ["saying-no", "diplomacy", "alternative-solutions"],
+    status: "planned",
+  },
+  {
+    id: "pd-03",
+    roleCategory: "product-manager",
+    sortOrder: 3,
+    titleEn: "User Research Readout That Changes Minds",
+    titleEs: "Presentacion de Investigacion de Usuarios Que Cambia Mentes",
+    captionEn:
+      "You interviewed 30 users. The VP still says 'But I think users want...' Based on a sample size of one: themselves.",
+    captionEs:
+      "Entrevistaste 30 usuarios. El VP todavia dice 'Pero creo que los usuarios quieren...' Basandose en una muestra de uno: ellos mismos.",
+    beforePhraseEn: "The users we talked to said they don't like the current feature.",
+    beforePhraseEs: "Los usuarios con los que hablamos dijeron que no les gusta la funcionalidad actual.",
+    afterPhraseEn:
+      "Across 30 user interviews, we found three consistent patterns: 78% abandon the onboarding flow at step 3, the primary reason is form fatigue, and the top-requested improvement is progressive disclosure. Let me play two 30-second clips that illustrate the pattern.",
+    afterPhraseEs:
+      "A traves de 30 entrevistas con usuarios, encontramos tres patrones consistentes: el 78% abandona el flujo de onboarding en el paso 3, la razon principal es fatiga de formularios, y la mejora mas solicitada es revelacion progresiva. Permitanme reproducir dos clips de 30 segundos que ilustran el patron.",
+    imagePrompt:
+      "A VP standing at a whiteboard with 'I THINK USERS WANT...' written on it, drawn from pure imagination. Next to them, a PM presents a research board with 30 user interview quotes, data charts, and video clip thumbnails all pointing to the opposite conclusion. The VP's thought bubble slowly changes from their idea to the data-supported finding. Evidence vs. opinion in product decisions. Modern product team room.",
+    altTextEn:
+      "Meme about product managers using structured research data to counter stakeholder assumptions about user needs",
+    altTextEs:
+      "Meme sobre product managers usando datos de investigacion estructurados para contrarrestar suposiciones de stakeholders sobre necesidades de usuarios",
+    tags: ["user-research", "data-driven", "stakeholder-influence"],
+    status: "planned",
+  },
+  {
+    id: "pd-04",
+    roleCategory: "product-manager",
+    sortOrder: 4,
+    titleEn: "Sprint Review: The Good, the Bad, and the 'We'll Fix It Next Sprint'",
+    titleEs: "Sprint Review: Lo Bueno, lo Malo, y el 'Lo Arreglaremos el Proximo Sprint'",
+    captionEn:
+      "The demo works perfectly... on localhost. In staging, it catches fire. The stakeholders are watching.",
+    captionEs:
+      "La demo funciona perfectamente... en localhost. En staging, se incendia. Los stakeholders estan mirando.",
+    beforePhraseEn: "The feature isn't quite ready yet. We had some issues.",
+    beforePhraseEs: "La funcionalidad no esta del todo lista todavia. Tuvimos algunos problemas.",
+    afterPhraseEn:
+      "This sprint we shipped the core authentication flow -- you can see it working here in the demo. We discovered a performance issue in staging that we've already diagnosed. The fix is scoped for the first two days of next sprint, so the release timeline holds.",
+    afterPhraseEs:
+      "Este sprint lanzamos el flujo principal de autenticacion -- pueden verlo funcionando aqui en la demo. Descubrimos un problema de rendimiento en staging que ya diagnosticamos. La correccion esta programada para los primeros dos dias del proximo sprint, asi que el cronograma de lanzamiento se mantiene.",
+    imagePrompt:
+      "A sprint review scene: The PM's laptop screen shows a beautiful working demo. But in a tiny picture-in-picture window in the corner (only the PM can see), the staging environment shows red error logs and a loading spinner. The PM presents confidently while their hand subtly covers the corner of the screen. The art of demoing what works. Scrum room with a big screen.",
+    altTextEn:
+      "Meme about product managers navigating sprint reviews when the demo works locally but staging has issues",
+    altTextEs:
+      "Meme sobre product managers navegando sprint reviews cuando la demo funciona localmente pero staging tiene problemas",
+    tags: ["sprint-review", "demo", "stakeholder-communication"],
+    status: "planned",
+  },
+  {
+    id: "pd-05",
+    roleCategory: "product-manager",
+    sortOrder: 5,
+    titleEn: "Competitive Analysis Without Badmouthing the Competition",
+    titleEs: "Analisis Competitivo Sin Hablar Mal de la Competencia",
+    captionEn:
+      "The competitor's product is objectively worse. Saying that out loud, however, makes you look petty instead of strategic.",
+    captionEs:
+      "El producto del competidor es objetivamente peor. Decirlo en voz alta, sin embargo, te hace ver mezquino en lugar de estrategico.",
+    beforePhraseEn: "Their product is worse than ours. We're better.",
+    beforePhraseEs: "Su producto es peor que el nuestro. Somos mejores.",
+    afterPhraseEn:
+      "Our differentiation is strongest in three areas: implementation speed, API flexibility, and dedicated support. Here's a feature-by-feature comparison based on the evaluation criteria our enterprise buyers care about most.",
+    afterPhraseEs:
+      "Nuestra diferenciacion es mas fuerte en tres areas: velocidad de implementacion, flexibilidad de API, y soporte dedicado. Aqui hay una comparacion funcionalidad por funcionalidad basada en los criterios de evaluacion que mas importan a nuestros compradores empresariales.",
+    imagePrompt:
+      "Two competitive analysis slides. Left: a crude slide that just says 'COMPETITOR = BAD, US = GOOD' with thumbs up and thumbs down emojis. The audience cringes. Right: a professional feature comparison matrix with specific criteria, scores, and areas where each product excels. The audience nods respectfully. The maturity gap in competitive positioning. Product strategy meeting room.",
+    altTextEn:
+      "Meme about the difference between petty competitor bashing and strategic competitive positioning based on data",
+    altTextEs:
+      "Meme sobre la diferencia entre critica mezquina al competidor y posicionamiento competitivo estrategico basado en datos",
+    tags: ["competitive-analysis", "positioning", "professionalism"],
+    status: "planned",
+  },
+  {
+    id: "pd-06",
+    roleCategory: "product-manager",
+    sortOrder: 6,
+    titleEn: "Launch Communication That Doesn't Overpromise",
+    titleEs: "Comunicacion de Lanzamiento Que No Sobrepromete",
+    captionEn:
+      "Marketing wants 'revolutionary.' Engineering says 'it's a button.' The truth is somewhere in between, and you need to write the launch email.",
+    captionEs:
+      "Marketing quiere 'revolucionario.' Ingenieria dice 'es un boton.' La verdad esta en algun lugar intermedio, y necesitas escribir el email de lanzamiento.",
+    beforePhraseEn: "We're excited to announce our amazing new feature that changes everything!",
+    beforePhraseEs: "Estamos emocionados de anunciar nuestra increible nueva funcionalidad que cambia todo!",
+    afterPhraseEn:
+      "Today we're launching bulk import -- the #1 requested feature from enterprise accounts. It reduces CSV processing time from 45 minutes to under 2 minutes. Here's a 60-second walkthrough and the three workflows it improves.",
+    afterPhraseEs:
+      "Hoy lanzamos importacion masiva -- la funcionalidad #1 mas solicitada por cuentas empresariales. Reduce el tiempo de procesamiento de CSV de 45 minutos a menos de 2 minutos. Aqui hay un recorrido de 60 segundos y los tres flujos de trabajo que mejora.",
+    imagePrompt:
+      "A see-saw/balance: On one side, Marketing has stacked superlatives ('REVOLUTIONARY,' 'GAME-CHANGING,' 'GROUNDBREAKING') that weigh the see-saw down dramatically. On the other side, Engineering has placed a small sticky note that says 'we added a button.' The PM sits in the middle of the see-saw, holding the balanced version: 'Saves 43 minutes per import.' The translation layer between hype and reality. Playful office illustration.",
+    altTextEn:
+      "Meme about product managers finding the honest middle ground between marketing hype and engineering understatement",
+    altTextEs:
+      "Meme sobre product managers encontrando el punto medio honesto entre el hype de marketing y la subestimacion de ingenieria",
+    tags: ["launch-communication", "messaging", "honesty"],
+    status: "planned",
+  },
+  {
+    id: "pd-07",
+    roleCategory: "product-manager",
+    sortOrder: 7,
+    titleEn: "The Executive Update That Gets You More Resources",
+    titleEs: "La Actualizacion Ejecutiva Que Te Consigue Mas Recursos",
+    captionEn:
+      "Your monthly product update can be a boring status report. Or it can be the business case that gets your team two more engineers.",
+    captionEs:
+      "Tu actualizacion mensual de producto puede ser un reporte de estatus aburrido. O puede ser el business case que le consigue a tu equipo dos ingenieros mas.",
+    beforePhraseEn: "The product is doing well. We shipped 3 features this month.",
+    beforePhraseEs: "El producto esta yendo bien. Lanzamos 3 funcionalidades este mes.",
+    afterPhraseEn:
+      "This month's releases drove a 23% increase in enterprise trial conversions. The bottleneck is now onboarding speed -- adding two engineers to the activation team would capture an estimated $400K in ARR that's currently being lost to churn during the first 30 days.",
+    afterPhraseEs:
+      "Los lanzamientos de este mes impulsaron un aumento del 23% en conversiones de pruebas empresariales. El cuello de botella ahora es la velocidad de onboarding -- agregar dos ingenieros al equipo de activacion capturaria un estimado de $400K en ARR que actualmente se pierde por churn durante los primeros 30 dias.",
+    imagePrompt:
+      "Two versions of the same monthly product update. Left version: a bullet list of features shipped, engineering jargon, no business context. Executive response: 'Thanks.' (One word email). Right version: features linked to revenue metrics, bottleneck analysis, and a resource request with ROI math. Executive response: 'Let's discuss getting you those engineers.' Same data, different framing. Email mockup style.",
+    altTextEn:
+      "Meme about framing product updates as business impact stories that justify resource investment instead of feature lists",
+    altTextEs:
+      "Meme sobre enmarcar actualizaciones de producto como historias de impacto de negocio que justifican inversion de recursos en lugar de listas de funcionalidades",
+    tags: ["executive-updates", "business-impact", "resource-justification"],
+    status: "planned",
+  },
+  {
+    id: "pd-08",
+    roleCategory: "product-manager",
+    sortOrder: 8,
+    titleEn: "Aligning Engineering and Design When They Disagree",
+    titleEs: "Alineando Ingenieria y Diseno Cuando No Estan de Acuerdo",
+    captionEn:
+      "Design wants pixel-perfect. Engineering wants ship-fast. You're the translator between two people who both think the other doesn't understand.",
+    captionEs:
+      "Diseno quiere pixel-perfect. Ingenieria quiere lanzar rapido. Tu eres el traductor entre dos personas que ambas creen que la otra no entiende.",
+    beforePhraseEn: "You both need to compromise. Just figure it out.",
+    beforePhraseEs: "Ambos necesitan comprometerse. Solo resuelvanlo.",
+    afterPhraseEn:
+      "I hear both perspectives. Design, the interaction quality matters because it drives adoption. Engineering, the ship date matters because enterprise clients are waiting. Here's a proposal: we ship V1 with the core flow on Thursday, and iterate on the micro-interactions in the fast-follow release next week. Both quality and speed are preserved.",
+    afterPhraseEs:
+      "Escucho ambas perspectivas. Diseno, la calidad de la interaccion importa porque impulsa la adopcion. Ingenieria, la fecha de lanzamiento importa porque los clientes empresariales estan esperando. Aqui hay una propuesta: lanzamos V1 con el flujo principal el jueves, e iteramos en las micro-interacciones en el release de seguimiento la proxima semana. Tanto la calidad como la velocidad se preservan.",
+    imagePrompt:
+      "A PM standing between a designer holding a beautiful but complex mockup and an engineer holding a simple but functional prototype. The PM holds up a third option that combines the best of both: the designer's core experience with the engineer's pragmatic scope. Both the designer and engineer look at it and grudgingly nod in approval. The PM as translator between craft and velocity. Product team workspace with design tools and code editors visible.",
+    altTextEn:
+      "Meme about product managers mediating between design perfectionism and engineering pragmatism with phased delivery",
+    altTextEs:
+      "Meme sobre product managers mediando entre el perfeccionismo de diseno y el pragmatismo de ingenieria con entrega por fases",
+    tags: ["cross-functional", "alignment", "compromise"],
     status: "planned",
   },
 ];

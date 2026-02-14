@@ -1,6 +1,6 @@
 import type { RoleCategory, RoleCategoryConfig } from "./types";
 
-/** Tier 1 role category configurations */
+/** All role category configurations */
 export const roleCategoryConfigs: RoleCategoryConfig[] = [
   {
     slug: "software-engineer",
@@ -66,6 +66,71 @@ export const roleCategoryConfigs: RoleCategoryConfig[] = [
       "Funny, relatable English memes for C-suite executives — from board presentations to crisis communication to media interviews. Master the language of leadership through humor.",
     seoDescriptionEs:
       "Memes divertidos y relatable de inglés para ejecutivos C-suite — desde presentaciones a juntas directivas hasta comunicación de crisis y entrevistas con medios. Domina el lenguaje del liderazgo con humor.",
+  },
+  {
+    slug: "startup-founder",
+    labelEn: "Startup Founders",
+    labelEs: "Fundadores de Startups",
+    descriptionEn:
+      "Executive communication memes for startup founders navigating investor pitches, co-founder dynamics, hiring conversations, and product launches in English.",
+    descriptionEs:
+      "Memes de comunicacion ejecutiva para fundadores de startups navegando pitches a inversores, dinamicas de cofundadores, conversaciones de contratacion y lanzamientos de producto en ingles.",
+    seoDescriptionEn:
+      "Funny, relatable English memes for startup founders — from pitch day pronunciation disasters to explaining your burn rate with a straight face. Executive English for the entrepreneurial journey.",
+    seoDescriptionEs:
+      "Memes divertidos y relatable de ingles para fundadores de startups — desde desastres de pronunciacion en el pitch hasta explicar tu burn rate con cara seria. Ingles ejecutivo para el viaje emprendedor.",
+  },
+  {
+    slug: "logistics-supply-chain",
+    labelEn: "Logistics & Supply Chain",
+    labelEs: "Logistica y Cadena de Suministro",
+    descriptionEn:
+      "Executive communication memes for logistics and supply chain professionals handling customs issues, carrier negotiations, delay notifications, and cross-border coordination in English.",
+    descriptionEs:
+      "Memes de comunicacion ejecutiva para profesionales de logistica y cadena de suministro manejando temas aduanales, negociaciones con transportistas, notificaciones de retrasos y coordinacion transfronteriza en ingles.",
+    seoDescriptionEn:
+      "Funny, relatable English memes for logistics and supply chain managers — from customs paperwork nightmares to explaining 'slight delays' that are actually catastrophic. Executive English for global operations.",
+    seoDescriptionEs:
+      "Memes divertidos y relatable de ingles para gerentes de logistica y cadena de suministro — desde pesadillas de documentacion aduanal hasta explicar 'leves retrasos' que en realidad son catastroficos. Ingles ejecutivo para operaciones globales.",
+  },
+  {
+    slug: "hr-recruiter",
+    labelEn: "HR & Recruiters",
+    labelEs: "Recursos Humanos y Reclutadores",
+    descriptionEn:
+      "Executive communication memes for HR professionals and recruiters managing candidate outreach, offer negotiations, performance conversations, and employer branding in English.",
+    descriptionEs:
+      "Memes de comunicacion ejecutiva para profesionales de RRHH y reclutadores manejando outreach a candidatos, negociaciones de ofertas, conversaciones de desempeno y marca empleadora en ingles.",
+    seoDescriptionEn:
+      "Funny, relatable English memes for HR professionals and recruiters — from writing rejection emails that don't crush souls to navigating salary negotiations in your second language.",
+    seoDescriptionEs:
+      "Memes divertidos y relatable de ingles para profesionales de RRHH y reclutadores — desde escribir emails de rechazo que no destruyan almas hasta navegar negociaciones salariales en tu segundo idioma.",
+  },
+  {
+    slug: "consultant",
+    labelEn: "Consultants",
+    labelEs: "Consultores",
+    descriptionEn:
+      "Executive communication memes for consultants and professional services professionals managing client discovery, deliverable presentations, scope management, and thought leadership in English.",
+    descriptionEs:
+      "Memes de comunicacion ejecutiva para consultores y profesionales de servicios manejando descubrimiento con clientes, presentaciones de entregables, gestion de alcance y liderazgo de pensamiento en ingles.",
+    seoDescriptionEn:
+      "Funny, relatable English memes for consultants — from the 2x2 matrix that explains everything to scope creep disguised as 'one more question.' Executive English for the advisory world.",
+    seoDescriptionEs:
+      "Memes divertidos y relatable de ingles para consultores — desde la matriz 2x2 que explica todo hasta el scope creep disfrazado de 'una pregunta mas.' Ingles ejecutivo para el mundo de la consultoria.",
+  },
+  {
+    slug: "product-manager",
+    labelEn: "Product Managers",
+    labelEs: "Product Managers",
+    descriptionEn:
+      "Executive communication memes for product managers presenting roadmaps, prioritizing features, aligning stakeholders, and communicating trade-offs in English.",
+    descriptionEs:
+      "Memes de comunicacion ejecutiva para product managers presentando roadmaps, priorizando funcionalidades, alineando stakeholders y comunicando trade-offs en ingles.",
+    seoDescriptionEn:
+      "Funny, relatable English memes for product managers — from roadmap presentations that satisfy nobody to saying 'no' to features without making enemies. Executive English for product leadership.",
+    seoDescriptionEs:
+      "Memes divertidos y relatable de ingles para product managers — desde presentaciones de roadmap que no satisfacen a nadie hasta decir 'no' a funcionalidades sin crear enemigos. Ingles ejecutivo para liderazgo de producto.",
   },
 ];
 

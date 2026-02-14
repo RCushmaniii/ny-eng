@@ -21,7 +21,12 @@ export type MemeRole =
   | "project-manager"
   | "it-manager"
   | "sales-account-executive"
-  | "executive-csuite";
+  | "executive-csuite"
+  | "startup-founder"
+  | "logistics-supply-chain"
+  | "hr-recruiter"
+  | "consultant"
+  | "product-manager";
 
 export interface Meme {
   id: string;
@@ -65,6 +70,11 @@ export const roleLabels: Record<MemeRole, string> = {
   "it-manager": "Gerentes de IT",
   "sales-account-executive": "Ejecutivos de Ventas y Cuentas",
   "executive-csuite": "Ejecutivos y C-Suite",
+  "startup-founder": "Fundadores de Startups",
+  "logistics-supply-chain": "Logistica y Cadena de Suministro",
+  "hr-recruiter": "Recursos Humanos y Reclutadores",
+  consultant: "Consultores",
+  "product-manager": "Product Managers",
 };
 
 export const roleSeoDescriptions: Record<MemeRole, string> = {

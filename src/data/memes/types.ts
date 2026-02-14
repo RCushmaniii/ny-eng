@@ -1,12 +1,17 @@
 // Centralized meme portfolio type definitions
 
-/** Tier 1 role categories (5 initial roles, expandable) */
+/** All role categories */
 export type RoleCategory =
   | "software-engineer"
   | "project-manager"
   | "it-manager"
   | "sales-account-executive"
-  | "executive-csuite";
+  | "executive-csuite"
+  | "startup-founder"
+  | "logistics-supply-chain"
+  | "hr-recruiter"
+  | "consultant"
+  | "product-manager";
 
 /** Production workflow status — auto-detected from filesystem at build time */
 export type MemeStatus =
