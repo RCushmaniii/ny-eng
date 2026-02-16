@@ -6,6 +6,7 @@ import CategoryPill from '@components/ui/CategoryPill.astro';
 // FIX: Rename the imported component to avoid conflict with the native Date object
 import DateComponent from '@components/ui/Date.astro';
 import { Image } from 'astro:assets';
+import VideoHero from '@components/blog/VideoHero.tsx';
 import { siteConfig } from '@data/config';
 import { normalizeBlogSlug, buildPostUrl, assertNoDoubleLang, stripLangPrefix } from '@utils/i18nRoutes';
 import { cleanBlogUrl } from '@utils/url-cleaner';
@@ -176,17 +177,13 @@ const customHreflangs = [
       </div>
       
       {post.data.heroVideo ? (
-        <div class="relative mb-12 rounded-lg shadow-lg" style="overflow: hidden;">
-          <video
-            controls
-            playsinline
-            preload="none"
-            poster={post.data.heroVideoPoster || undefined}
-            class="w-full rounded-lg"
-            style="display: block; margin: 0; padding: 0;"
-          >
-            <source src={post.data.heroVideo} type="video/mp4" />
-          </video>
+        <div class="mb-12">
+          <VideoHero
+            client:load
+            src={post.data.heroVideo}
+            poster={post.data.heroVideoPoster}
+            alt={post.data.imageAlt || post.data.title}
+          />
         </div>
       ) : (featuredObj || featuredUrl) && (
         <div class="relative mb-12 rounded-lg shadow-lg" style="overflow: hidden;">
