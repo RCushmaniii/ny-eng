@@ -832,27 +832,27 @@ export const allMemeEntries: MemeEntry[] = [
     id: "sa-08",
     roleCategory: "sales-account-executive",
     sortOrder: 8,
-    titleEn: "The Partnership Pitch That Isn't Just 'Let's Grab Coffee'",
-    titleEs: "La Propuesta de Alianza Que No Es Solo 'Vamos por un Cafe'",
+    titleEn: "Presenting the New CRM Without Sounding Like You're Apologizing",
+    titleEs: "Presentando el Nuevo CRM Sin Sonar Como Si Estuvieras Pidiendo Disculpas",
     captionEn:
-      "Strategic partnerships don't start with 'synergy.' They start with shared math.",
+      "Your team can smell uncertainty. If you don't believe in the tool, neither will they.",
     captionEs:
-      "Las alianzas estrategicas no empiezan con 'sinergia.' Empiezan con matematicas compartidas.",
+      "Tu equipo puede oler la incertidumbre. Si tu no crees en la herramienta, ellos tampoco.",
     beforePhraseEn:
-      "I think our companies should work together. We have a lot of synergies.",
+      "Uh, so, like, we're gonna, um, maybe try this new CRM thing? It's, you know, for the data... I guess? Sorry...",
     beforePhraseEs:
-      "Creo que nuestras empresas deberian trabajar juntas. Tenemos muchas sinergias.",
+      "Eh, entonces, como que, vamos a, um, quizas probar esta nueva cosa de CRM? Es, ya saben, para los datos... creo? Perdon...",
     afterPhraseEn:
-      "I see strategic alignment between our market reach and your product capabilities. Here's a joint value proposition showing how a channel partnership could generate $500K in incremental revenue for both sides in year one.",
+      "Team, this new CRM is a game-changer! It will streamline our sales process, empower us with better insights, and drive our success to new heights. Let's embrace this future together!",
     afterPhraseEs:
-      "Veo una alineacion estrategica entre nuestro alcance de mercado y las capacidades de su producto. Aqui hay una propuesta de valor conjunta que muestra como una alianza de canal podria generar $500K en ingresos incrementales para ambas partes en el primer ano.",
+      "Equipo, este nuevo CRM es un cambio total! Va a optimizar nuestro proceso de ventas, nos dara mejores insights, y llevara nuestro exito a nuevas alturas. Abracemos este futuro juntos!",
     imagePrompt:
-      "Two business people shaking hands surrounded by floating buzzwords: 'synergy,' 'alignment,' 'leverage,' 'circle back.' But between their handshake, a small practical document titled 'JOINT REVENUE MODEL' with actual numbers and math falls out onto the table. The substance hiding behind the buzzwords. Professional meeting setting with a touch of humor.",
+      "Before/after split panel comic. Left: nervous sweating manager at a messy meeting table mumbling about 'maybe trying this CRM thing' while confused employees think 'Is this optional?' and 'What's a CRM again?' with trash on the floor. Right: confident smiling manager presenting with a growth chart while energized employees think 'I'm in!' and 'Finally, a clear vision!' Clean, professional setting with sparkles.",
     altTextEn:
-      "Meme about the difference between vague partnership buzzwords and concrete joint revenue proposals",
+      "Before and after meme showing a sales manager going from awkward uncertain CRM pitch to confident inspiring team presentation",
     altTextEs:
-      "Meme sobre la diferencia entre palabras de moda vagas de alianzas y propuestas concretas de ingresos conjuntos",
-    tags: ["partnerships", "strategy", "business-development"],
+      "Meme de antes y despues mostrando a un gerente de ventas pasando de una presentacion torpe e insegura del CRM a una presentacion inspiradora y segura para el equipo",
+    tags: ["change-management", "team-leadership", "tool-adoption", "confidence"],
     status: "planned",
   },
 

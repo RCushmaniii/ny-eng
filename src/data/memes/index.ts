@@ -9,7 +9,7 @@
 
 import type { MemeEntry, MemeStatus, RoleCategory } from "./types";
 import { allMemeEntries } from "./meme-entries";
-import { enrichWithDetectedStatus } from "./detect-status";
+import { enrichWithDetectedStatus, findImageExtension } from "./detect-status";
 import { roleCategoryConfigs, allRoleCategories } from "./role-categories";
 
 // Re-export types and configs for convenience
@@ -22,12 +22,13 @@ export const memeEntries: MemeEntry[] = enrichWithDetectedStatus(allMemeEntries)
 
 // --- Image path helper ---
 
-/** Get the expected image path for a meme in a given language */
+/** Get the image path for a meme in a given language (resolves actual extension) */
 export function getMemeImagePath(
   entry: MemeEntry,
   lang: "en" | "es",
 ): string {
-  return `/images/memes/${entry.roleCategory}/${entry.id}_${lang}.png`;
+  const ext = findImageExtension(entry.id, lang, entry.roleCategory) ?? "png";
+  return `/images/memes/${entry.roleCategory}/${entry.id}_${lang}.${ext}`;
 }
 
 /** Get the placeholder image path */

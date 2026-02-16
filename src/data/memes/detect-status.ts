@@ -17,17 +17,33 @@ import type { MemeEntry, MemeStatus } from "./types";
 
 const PUBLIC_DIR = join(process.cwd(), "public");
 
+const SUPPORTED_EXTENSIONS = ["png", "jpg", "jpeg", "webp"];
+
 /** Check if an image file exists for a given meme + language */
 function imageExists(
   id: string,
   lang: "en" | "es",
   roleCategory: string,
 ): boolean {
-  const extensions = ["png", "jpg", "jpeg", "webp"];
-  return extensions.some((ext) =>
+  return SUPPORTED_EXTENSIONS.some((ext) =>
     existsSync(
       join(PUBLIC_DIR, "images", "memes", roleCategory, `${id}_${lang}.${ext}`),
     ),
+  );
+}
+
+/** Find the actual file extension for a meme image, or null if not found */
+export function findImageExtension(
+  id: string,
+  lang: "en" | "es",
+  roleCategory: string,
+): string | null {
+  return (
+    SUPPORTED_EXTENSIONS.find((ext) =>
+      existsSync(
+        join(PUBLIC_DIR, "images", "memes", roleCategory, `${id}_${lang}.${ext}`),
+      ),
+    ) ?? null
   );
 }
 

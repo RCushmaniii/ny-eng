@@ -9,6 +9,7 @@ interface Props {
   title: string;
   excerpt?: string;
   featuredImage?: any; // Astro image object
+  heroVideoPoster?: string; // Fallback poster image from public/
   imageAlt: string;
   publishDate: Date;
   categories: string[];
@@ -22,6 +23,7 @@ const {
   title,
   excerpt,
   featuredImage,
+  heroVideoPoster,
   imageAlt,
   publishDate,
   categories: postCategories,
@@ -59,7 +61,7 @@ const validCategories = postCategories.filter((categoryName: string) => {
     class="relative aspect-[16/9] overflow-hidden border-black border-b group-hover:border-primary transition-colors duration-300"
   >
     {
-      featuredImage && typeof featuredImage === "object" && (
+      featuredImage && typeof featuredImage === "object" ? (
         <Image
           src={featuredImage}
           alt={imageAlt || title}
@@ -67,7 +69,16 @@ const validCategories = postCategories.filter((categoryName: string) => {
           height={338}
           class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
         />
-      )
+      ) : heroVideoPoster ? (
+        <img
+          src={heroVideoPoster}
+          alt={imageAlt || title}
+          width="600"
+          height="338"
+          loading="lazy"
+          class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+        />
+      ) : null
     }
     <div
       class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"

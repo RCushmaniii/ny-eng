@@ -101,10 +101,11 @@ const activeCategories = Array.from(categoryMap.values());
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {posts.map((post: CollectionEntry<'blog'>, index: number) => (
       <div>
-        <BlogPost 
+        <BlogPost
           title={post.data.title}
           excerpt={post.data.excerpt}
           featuredImage={post.data.featuredImage}
+          heroVideoPoster={post.data.heroVideoPoster}
           imageAlt={post.data.imageAlt || post.data.title}
           publishDate={post.data.publishDate}
           categories={post.data.categories || []}
