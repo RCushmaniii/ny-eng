@@ -15,6 +15,8 @@ const blogCollection = defineCollection({
       excerpt: z.string(),
       featuredImage: image().optional(),
       imageAlt: z.string().optional(),
+      heroVideo: z.string().optional(),
+      heroVideoPoster: z.string().optional(),
       // Handle dates safely to ensure they work in both dev and build
       publishDate: z.string().transform((str) => new Date(str)),
       lastmod: z

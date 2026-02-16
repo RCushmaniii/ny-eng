@@ -89,7 +89,7 @@ const { slug } = Astro.params as { slug: string };
 
 const currentIndex = allPosts.findIndex((p: CollectionEntry<'blog'>) => {
   // Remove .md extension and compare with current slug
-  const postSlug = p.id.replace(/^es\/|\.md$/g, '');
+  const postSlug = p.id.replace(/^es\/|\.mdx?$/g, '');
   return postSlug === slug;
 });
 
@@ -175,7 +175,20 @@ const customHreflangs = [
         </div>
       </div>
       
-      {(featuredObj || featuredUrl) && (
+      {post.data.heroVideo ? (
+        <div class="relative mb-12 rounded-lg shadow-lg" style="overflow: hidden;">
+          <video
+            controls
+            playsinline
+            preload="none"
+            poster={post.data.heroVideoPoster || undefined}
+            class="w-full rounded-lg"
+            style="display: block; margin: 0; padding: 0;"
+          >
+            <source src={post.data.heroVideo} type="video/mp4" />
+          </video>
+        </div>
+      ) : (featuredObj || featuredUrl) && (
         <div class="relative mb-12 rounded-lg shadow-lg" style="overflow: hidden;">
           {featuredObj ? (
             <Image
