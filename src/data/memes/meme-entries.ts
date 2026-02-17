@@ -514,25 +514,25 @@ export const allMemeEntries: MemeEntry[] = [
     id: "it-04",
     roleCategory: "it-manager",
     sortOrder: 4,
-    titleEn: "99.9% Uptime (Let's Not Talk About That 0.1%)",
-    titleEs: "99.9% Disponibilidad (No Hablemos de Ese 0.1%)",
+    titleEn: "The Code Promotion Update That Actually Means Something",
+    titleEs: "La Actualizacion de Promocion de Codigo Que Realmente Significa Algo",
     captionEn:
-      "That 0.1% was during the CEO's demo. Of course it was.",
+      "'Mostly done' is not a deployment status. Your team deserves specifics, not vibes.",
     captionEs:
-      "Ese 0.1% fue durante la demo del CEO. Por supuesto que si.",
-    beforePhraseEn: "The system went down but we fixed it.",
-    beforePhraseEs: "El sistema se cayo pero lo arreglamos.",
+      "'Casi listo' no es un estado de despliegue. Tu equipo merece especificos, no vibras.",
+    beforePhraseEn: "I think it's mostly done.",
+    beforePhraseEs: "Creo que esta casi listo.",
     afterPhraseEn:
-      "We experienced 23 minutes of degraded performance, primarily affecting the reporting module. Root cause was identified, patched, and we've implemented monitoring to prevent recurrence.",
+      "Core build is complete. QA is testing edge cases.",
     afterPhraseEs:
-      "Experimentamos 23 minutos de rendimiento degradado, principalmente afectando el modulo de reportes. La causa raiz fue identificada, corregida, e implementamos monitoreo para prevenir recurrencia.",
+      "La compilacion principal esta completa. QA esta probando casos borde.",
     imagePrompt:
-      "A beautiful uptime dashboard showing 99.9% in bright green. A tiny red blip on the graph is circled and zoomed in to reveal it happened exactly during a time slot labeled 'CEO LIVE DEMO TO INVESTORS.' Murphy's Law illustrated. Clean dashboard/monitoring humor.",
+      "Split panel photo meme in a modern office meeting room. Left (Before): An IT manager standing with coffee, telling his seated team 'I think it's mostly done' — the team looks skeptical and confused. Right (After): Same IT manager, confident and smiling, saying 'Core build is complete. QA is testing edge cases.' — the team is engaged and giving thumbs up. Realistic photo style with yellow Before/After header banner.",
     altTextEn:
-      "Meme about system downtime always happening during the most important moment",
+      "Before and after meme of an IT manager giving a code promotion status update — from vague to precise and professional",
     altTextEs:
-      "Meme sobre el tiempo de inactividad del sistema siempre ocurriendo durante el momento mas importante",
-    tags: ["uptime", "sla", "incident-reporting"],
+      "Meme de antes y despues de un gerente de IT dando una actualizacion de promocion de codigo — de vago a preciso y profesional",
+    tags: ["code-promotion", "status-updates", "precision"],
     status: "planned",
   },
   {
