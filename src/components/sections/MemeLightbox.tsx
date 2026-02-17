@@ -73,20 +73,18 @@ export default function MemeLightbox({ memes, lang }: MemeLightboxProps) {
           <button
             key={meme.id}
             type="button"
-            className="meme-card bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg text-left cursor-pointer"
+            className="meme-card bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg text-left cursor-pointer h-full flex flex-col"
             onClick={() => setActiveIndex(idx)}
             aria-label={`${lang === "en" ? "View" : "Ver"}: ${meme.title}`}
           >
-            <div className="aspect-square overflow-hidden bg-gray-100">
-              <img
-                src={meme.image}
-                alt={meme.alt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div className="p-4">
+            <img
+              src={meme.image}
+              alt={meme.alt}
+              className="w-full"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="p-4 flex-1 flex flex-col">
               <h2 className="text-lg font-semibold text-gray-900 mb-2">
                 {meme.title}
               </h2>
@@ -94,7 +92,7 @@ export default function MemeLightbox({ memes, lang }: MemeLightboxProps) {
                 {meme.caption}
               </p>
               {(meme.beforePhrase || meme.afterPhrase) && (
-                <div className="border-t border-gray-100 pt-3 space-y-2">
+                <div className="border-t border-gray-100 pt-3 space-y-2 mt-auto">
                   {meme.beforePhrase && (
                     <div className="text-xs">
                       <span className="inline-block px-1.5 py-0.5 bg-red-50 text-red-600 font-semibold rounded mr-1">
