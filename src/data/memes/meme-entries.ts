@@ -573,19 +573,19 @@ export const allMemeEntries: MemeEntry[] = [
     captionEs:
       "La utilizacion esta al 87%. El CFO pregunta 'Pero ya se rompio?' y mueres un poco por dentro.",
     beforePhraseEn:
-      "We need new servers. The old ones can't handle the load.",
+      "This needs to be fixed ASAP.",
     beforePhraseEs:
-      "Necesitamos servidores nuevos. Los viejos no soportan la carga.",
+      "Esto necesita arreglarse ya.",
     afterPhraseEn:
-      "Current infrastructure utilization is at 87%. Proactive investment of $120K now prevents an estimated $400K in emergency spend and downtime losses when we hit capacity -- projected in Q2 based on current growth.",
+      "Addressing this now reduces the risk of a larger outage.",
     afterPhraseEs:
-      "La utilizacion actual de infraestructura esta al 87%. Una inversion proactiva de $120K ahora previene un gasto de emergencia estimado de $400K y perdidas por tiempo de inactividad cuando alcancemos la capacidad -- proyectado para Q2 basado en el crecimiento actual.",
+      "Atender esto ahora reduce el riesgo de una interrupcion mayor.",
     imagePrompt:
-      "IT Manager presenting a normal-looking server utilization chart to a calm CFO. Behind them (visible to the audience but not the CFO), the actual server room is struggling: fans at max speed, red warning lights, a thermometer in the red zone, and a tiny fire extinguisher on the wall. The CFO says 'Looks fine to me.' Visual irony between the chart and reality.",
+      "Split panel meme in a server room setting. Left (Before): A panicked IT manager sweating in front of a laptop showing 'Critical error', clutching his head, saying 'This needs to be fixed ASAP.' Red warning lights and tangled cables. Right (After): The same IT manager, calm and confident in a blazer, holding a tablet and speaking to a colleague, saying 'Addressing this now reduces the risk of a larger outage.' Clean server racks with green status lights.",
     altTextEn:
-      "Meme about the disconnect between infrastructure metrics and executive perception of IT needs",
+      "Before and after meme of an IT manager reacting to a server room critical error — from panic to professional risk communication",
     altTextEs:
-      "Meme sobre la desconexion entre metricas de infraestructura y la percepcion ejecutiva de las necesidades de IT",
+      "Meme de antes y despues de un gerente de IT reaccionando a un error critico en la sala de servidores — del panico a la comunicacion profesional de riesgos",
     tags: ["infrastructure", "budget", "capacity-planning"],
     status: "planned",
   },
