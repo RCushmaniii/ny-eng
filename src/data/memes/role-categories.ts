@@ -94,17 +94,17 @@ export const roleCategoryConfigs: RoleCategoryConfig[] = [
       "Memes divertidos y relatable de ingles para gerentes de logistica y cadena de suministro — desde pesadillas de documentacion aduanal hasta explicar 'leves retrasos' que en realidad son catastroficos. Ingles ejecutivo para operaciones globales.",
   },
   {
-    slug: "hr-recruiter",
-    labelEn: "HR & Recruiters",
-    labelEs: "Recursos Humanos y Reclutadores",
+    slug: "hr-officer",
+    labelEn: "HR Officers",
+    labelEs: "Oficiales de Recursos Humanos",
     descriptionEn:
-      "Executive communication memes for HR professionals and recruiters managing candidate outreach, offer negotiations, performance conversations, and employer branding in English.",
+      "Executive communication memes for HR officers managing training initiatives, performance conversations, employee relations, and organizational development in English.",
     descriptionEs:
-      "Memes de comunicacion ejecutiva para profesionales de RRHH y reclutadores manejando outreach a candidatos, negociaciones de ofertas, conversaciones de desempeno y marca empleadora en ingles.",
+      "Memes de comunicacion ejecutiva para oficiales de RRHH manejando iniciativas de capacitacion, conversaciones de desempeno, relaciones con empleados y desarrollo organizacional en ingles.",
     seoDescriptionEn:
-      "Funny, relatable English memes for HR professionals and recruiters — from writing rejection emails that don't crush souls to navigating salary negotiations in your second language.",
+      "Funny, relatable English memes for HR officers — from pitching training programs to navigating tough performance conversations in your second language.",
     seoDescriptionEs:
-      "Memes divertidos y relatable de ingles para profesionales de RRHH y reclutadores — desde escribir emails de rechazo que no destruyan almas hasta navegar negociaciones salariales en tu segundo idioma.",
+      "Memes divertidos y relatable de ingles para oficiales de RRHH — desde presentar programas de capacitacion hasta navegar conversaciones dificiles de desempeno en tu segundo idioma.",
   },
   {
     slug: "consultant",

@@ -9,7 +9,7 @@ export type RoleCategory =
   | "executive-csuite"
   | "startup-founder"
   | "logistics-supply-chain"
-  | "hr-recruiter"
+  | "hr-officer"
   | "consultant"
   | "product-manager";
 

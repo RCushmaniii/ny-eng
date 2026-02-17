@@ -1485,7 +1485,7 @@ export const allMemeEntries: MemeEntry[] = [
   // ========================================================================
   {
     id: "hr-01",
-    roleCategory: "hr-recruiter",
+    roleCategory: "hr-officer",
     sortOrder: 1,
     titleEn: "The Rejection Email That Doesn't Crush Souls",
     titleEs: "El Email de Rechazo Que No Destruye Almas",
@@ -1510,7 +1510,7 @@ export const allMemeEntries: MemeEntry[] = [
   },
   {
     id: "hr-02",
-    roleCategory: "hr-recruiter",
+    roleCategory: "hr-officer",
     sortOrder: 2,
     titleEn: "Salary Negotiation: The Dance of Numbers",
     titleEs: "Negociacion Salarial: La Danza de los Numeros",
@@ -1535,7 +1535,7 @@ export const allMemeEntries: MemeEntry[] = [
   },
   {
     id: "hr-03",
-    roleCategory: "hr-recruiter",
+    roleCategory: "hr-officer",
     sortOrder: 3,
     titleEn: "The Performance Improvement Plan Nobody Likes Writing",
     titleEs: "El Plan de Mejora de Desempeno Que a Nadie Le Gusta Escribir",
@@ -1560,7 +1560,7 @@ export const allMemeEntries: MemeEntry[] = [
   },
   {
     id: "hr-04",
-    roleCategory: "hr-recruiter",
+    roleCategory: "hr-officer",
     sortOrder: 4,
     titleEn: "Explaining Company Culture Without Using 'We're Like a Family'",
     titleEs: "Explicando la Cultura de la Empresa Sin Usar 'Somos Como una Familia'",
@@ -1585,7 +1585,7 @@ export const allMemeEntries: MemeEntry[] = [
   },
   {
     id: "hr-05",
-    roleCategory: "hr-recruiter",
+    roleCategory: "hr-officer",
     sortOrder: 5,
     titleEn: "The Exit Interview Where They Finally Tell the Truth",
     titleEs: "La Entrevista de Salida Donde Finalmente Dicen la Verdad",
@@ -1610,7 +1610,7 @@ export const allMemeEntries: MemeEntry[] = [
   },
   {
     id: "hr-06",
-    roleCategory: "hr-recruiter",
+    roleCategory: "hr-officer",
     sortOrder: 6,
     titleEn: "The LinkedIn Outreach That Doesn't Sound Like Spam",
     titleEs: "El Outreach de LinkedIn Que No Suena a Spam",
@@ -1635,7 +1635,7 @@ export const allMemeEntries: MemeEntry[] = [
   },
   {
     id: "hr-07",
-    roleCategory: "hr-recruiter",
+    roleCategory: "hr-officer",
     sortOrder: 7,
     titleEn: "Mediating a Manager-Employee Conflict in Your Second Language",
     titleEs: "Mediando un Conflicto Gerente-Empleado en Tu Segundo Idioma",
@@ -1660,27 +1660,27 @@ export const allMemeEntries: MemeEntry[] = [
   },
   {
     id: "hr-08",
-    roleCategory: "hr-recruiter",
+    roleCategory: "hr-officer",
     sortOrder: 8,
-    titleEn: "Presenting DEI Data Without Corporate Buzzwords",
-    titleEs: "Presentando Datos de DEI Sin Palabras de Moda Corporativas",
+    titleEn: "Pitching the Training Program Without Apologizing for It",
+    titleEs: "Presentando el Programa de Capacitacion Sin Disculparte por Ello",
     captionEn:
-      "The board wants metrics, not mission statements. Time to turn values into dashboards.",
+      "You know the program will transform leadership. Now say it like you believe it.",
     captionEs:
-      "La junta quiere metricas, no declaraciones de mision. Es hora de convertir valores en dashboards.",
-    beforePhraseEn: "We're committed to diversity and inclusion. It's very important to us.",
-    beforePhraseEs: "Estamos comprometidos con la diversidad e inclusion. Es muy importante para nosotros.",
+      "Sabes que el programa transformara el liderazgo. Ahora dilo como si lo creyeras.",
+    beforePhraseEn: "Uh, um, maybe, if it's okay, we could, like, try this new executive training thing? It, uh, might be good, I think? Sorry...",
+    beforePhraseEs: "Eh, um, tal vez, si esta bien, podriamos, como, probar este nuevo programa de capacitacion ejecutiva? Eh, podria ser bueno, creo? Perdon...",
     afterPhraseEn:
-      "Our engineering hiring pipeline improved from 18% to 34% underrepresented candidates this quarter through three specific interventions: blind resume review, structured interviews, and expanded university partnerships. Here's the data by stage.",
+      "We are implementing this new executive training program. It will drive leadership results and is crucial for our future growth. We start next week.",
     afterPhraseEs:
-      "Nuestro pipeline de contratacion de ingenieria mejoro del 18% al 34% de candidatos subrepresentados este trimestre a traves de tres intervenciones especificas: revision ciega de curriculos, entrevistas estructuradas, y asociaciones universitarias expandidas. Aqui estan los datos por etapa.",
+      "Estamos implementando este nuevo programa de capacitacion ejecutiva. Impulsara resultados de liderazgo y es crucial para nuestro crecimiento futuro. Comenzamos la proxima semana.",
     imagePrompt:
-      "Two slides side by side presented to a boardroom. Left slide: a generic DEI mission statement in a nice font with stock photos of diverse people. The board looks politely bored. Right slide: actual pipeline metrics, funnel conversion data by demographic, and specific intervention results. The board is engaged and asking questions. Substance over slogans in DEI communication. Corporate boardroom setting.",
+      "Split panel meme in a conference room. Left (Before): A nervous HR officer standing in front of seated colleagues, fidgeting and hedging, colleagues look confused with question marks. Right (After): The same HR officer standing confidently, gesturing decisively, colleagues are engaged and nodding with a growth chart on the wall behind her. Professional cartoon style.",
     altTextEn:
-      "Meme about replacing generic DEI statements with specific metrics and pipeline data that drive real accountability",
+      "Before and after meme of an HR officer pitching an executive training program — from uncertain hedging to confident leadership",
     altTextEs:
-      "Meme sobre reemplazar declaraciones genericas de DEI con metricas especificas y datos de pipeline que impulsan responsabilidad real",
-    tags: ["dei", "metrics", "board-reporting"],
+      "Meme de antes y despues de una oficial de RRHH presentando un programa de capacitacion ejecutiva — de titubear con incertidumbre a liderazgo seguro",
+    tags: ["training", "initiative-pitching", "executive-presence"],
     status: "planned",
   },
 

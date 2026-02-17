@@ -24,7 +24,7 @@ export type MemeRole =
   | "executive-csuite"
   | "startup-founder"
   | "logistics-supply-chain"
-  | "hr-recruiter"
+  | "hr-officer"
   | "consultant"
   | "product-manager";
 
@@ -72,7 +72,7 @@ export const roleLabels: Record<MemeRole, string> = {
   "executive-csuite": "Ejecutivos y C-Suite",
   "startup-founder": "Fundadores de Startups",
   "logistics-supply-chain": "Logistica y Cadena de Suministro",
-  "hr-recruiter": "Recursos Humanos y Reclutadores",
+  "hr-officer": "Oficiales de Recursos Humanos",
   consultant: "Consultores",
   "product-manager": "Product Managers",
 };
