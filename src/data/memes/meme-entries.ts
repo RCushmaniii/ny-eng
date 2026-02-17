@@ -754,26 +754,26 @@ export const allMemeEntries: MemeEntry[] = [
     id: "sa-05",
     roleCategory: "sales-account-executive",
     sortOrder: 5,
-    titleEn: "Cross-Selling Without Sounding Like a Used Car Dealer",
-    titleEs: "Venta Cruzada Sin Sonar Como Vendedor de Autos Usados",
+    titleEn: "Pitching Value Without Hedging Every Word",
+    titleEs: "Presentando Valor Sin Titubear en Cada Palabra",
     captionEn:
-      "There's a thin line between 'trusted advisor' and 'always selling.' That line is data.",
+      "'Could potentially' is not a value proposition. Say what it does and own it.",
     captionEs:
-      "Hay una linea delgada entre 'asesor de confianza' y 'siempre vendiendo.' Esa linea es la data.",
-    beforePhraseEn: "You should also buy our premium tier.",
+      "'Podria potencialmente' no es una propuesta de valor. Di lo que hace y aduenatelo.",
+    beforePhraseEn: "We believe this could potentially drive engagement.",
     beforePhraseEs:
-      "Tambien deberia comprar nuestro nivel premium.",
+      "Creemos que esto podria potencialmente impulsar el engagement.",
     afterPhraseEn:
-      "Based on your usage patterns over the last quarter, you're leaving about 30% ROI on the table. Here's an optimization that would unlock that value with a modest upgrade.",
+      "This will increase qualified demand and brand authority.",
     afterPhraseEs:
-      "Basandome en sus patrones de uso del ultimo trimestre, estan dejando aproximadamente un 30% de ROI sobre la mesa. Aqui hay una optimizacion que desbloquearia ese valor con una actualizacion moderada.",
+      "Esto aumentara la demanda calificada y la autoridad de marca.",
     imagePrompt:
-      "Split scene: Left side is a pushy car salesman aggressively pointing at add-ons and upsells with a 'BUY MORE' sign (labeled 'DON'T BE THIS'). Right side is a calm business professional showing a client their own usage data dashboard with highlighted ROI opportunities (labeled 'BE THIS'). Stark contrast between pushy selling and consultative advising.",
+      "Split panel cartoon in an office. Left (Before): A sales executive pitching to a skeptical client, hedging with 'We believe this could potentially drive engagement' — the client looks unimpressed. Right (After): Same executive, confident posture, saying 'This will increase qualified demand and brand authority' — the client is engaged and nodding. Yellow Before/After header banner, professional cartoon style.",
     altTextEn:
-      "Meme contrasting pushy upselling with data-driven consultative account management",
+      "Before and after meme of a sales executive pitching value — from vague hedging to confident, specific claims",
     altTextEs:
-      "Meme contrastando ventas agresivas con gestion consultiva de cuentas basada en datos",
-    tags: ["upselling", "consultative-selling", "data-driven"],
+      "Meme de antes y despues de un ejecutivo de ventas presentando valor — de titubeos vagos a afirmaciones confiadas y especificas",
+    tags: ["value-proposition", "confidence", "pitching"],
     status: "planned",
   },
   {
