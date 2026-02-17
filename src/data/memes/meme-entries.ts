@@ -2045,25 +2045,25 @@ export const allMemeEntries: MemeEntry[] = [
     id: "pd-07",
     roleCategory: "product-manager",
     sortOrder: 7,
-    titleEn: "The Executive Update That Gets You More Resources",
-    titleEs: "La Actualizacion Ejecutiva Que Te Consigue Mas Recursos",
+    titleEn: "Boardroom Nerves: Risks Without the Hand-Waving",
+    titleEs: "Nervios de Sala de Juntas: Riesgos Sin el Titubeo",
     captionEn:
-      "Your monthly product update can be a boring status report. Or it can be the business case that gets your team two more engineers.",
+      "'Monitoring closely' means nothing. The board wants numbers, plans, and proof you're ahead of it.",
     captionEs:
-      "Tu actualizacion mensual de producto puede ser un reporte de estatus aburrido. O puede ser el business case que le consigue a tu equipo dos ingenieros mas.",
-    beforePhraseEn: "The product is doing well. We shipped 3 features this month.",
-    beforePhraseEs: "El producto esta yendo bien. Lanzamos 3 funcionalidades este mes.",
+      "'Monitoreando de cerca' no significa nada. La junta quiere numeros, planes, y prueba de que estas adelante.",
+    beforePhraseEn: "There are a few risks we're monitoring closely.",
+    beforePhraseEs: "Hay algunos riesgos que estamos monitoreando de cerca.",
     afterPhraseEn:
-      "This month's releases drove a 23% increase in enterprise trial conversions. The bottleneck is now onboarding speed -- adding two engineers to the activation team would capture an estimated $400K in ARR that's currently being lost to churn during the first 30 days.",
+      "Three risks identified. Mitigation plans already activated.",
     afterPhraseEs:
-      "Los lanzamientos de este mes impulsaron un aumento del 23% en conversiones de pruebas empresariales. El cuello de botella ahora es la velocidad de onboarding -- agregar dos ingenieros al equipo de activacion capturaria un estimado de $400K en ARR que actualmente se pierde por churn durante los primeros 30 dias.",
+      "Tres riesgos identificados. Planes de mitigacion ya activados.",
     imagePrompt:
-      "Two versions of the same monthly product update. Left version: a bullet list of features shipped, engineering jargon, no business context. Executive response: 'Thanks.' (One word email). Right version: features linked to revenue metrics, bottleneck analysis, and a resource request with ROI math. Executive response: 'Let's discuss getting you those engineers.' Same data, different framing. Email mockup style.",
+      "Split panel cartoon in a boardroom. Left (Before): A product manager nervously presenting to a skeptical executive, saying 'There are a few risks we're monitoring closely' — the executive looks unimpressed. Right (After): Same PM, confident and composed, saying 'Three risks identified. Mitigation plans already activated.' — the executive nods approvingly. Yellow Before/After header banner, professional cartoon style.",
     altTextEn:
-      "Meme about framing product updates as business impact stories that justify resource investment instead of feature lists",
+      "Before and after meme of a product manager presenting risks in the boardroom — from vague hand-waving to specific and actionable",
     altTextEs:
-      "Meme sobre enmarcar actualizaciones de producto como historias de impacto de negocio que justifican inversion de recursos en lugar de listas de funcionalidades",
-    tags: ["executive-updates", "business-impact", "resource-justification"],
+      "Meme de antes y despues de un product manager presentando riesgos en la sala de juntas — de titubeos vagos a especificos y accionables",
+    tags: ["boardroom", "risk-communication", "executive-presence"],
     status: "planned",
   },
   {
