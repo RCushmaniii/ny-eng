@@ -203,31 +203,31 @@ export default function MemeLightbox({ memes, lang }: MemeLightboxProps) {
             />
 
             {/* Info panel */}
-            <div className="mt-4 w-full text-center text-white px-4">
-              <h3 className="text-xl sm:text-2xl font-bold mb-2">
+            <div className="mt-4 w-full bg-white rounded-lg px-6 py-5 text-center">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
                 {activeMeme.title}
               </h3>
-              <p className="text-sm sm:text-base text-gray-300 mb-3">
+              <p className="text-sm sm:text-base text-gray-600 mb-3">
                 {activeMeme.caption}
               </p>
               {(activeMeme.beforePhrase || activeMeme.afterPhrase) && (
                 <div className="space-y-2">
                   {activeMeme.beforePhrase && (
                     <div className="text-sm">
-                      <span className="inline-block px-2 py-0.5 bg-red-500/30 text-red-300 font-semibold rounded mr-2">
+                      <span className="inline-block px-2 py-0.5 bg-red-50 text-red-600 font-semibold rounded mr-2">
                         {beforeLabel}
                       </span>
-                      <span className="text-gray-400 italic">
+                      <span className="text-gray-500 italic">
                         &ldquo;{activeMeme.beforePhrase}&rdquo;
                       </span>
                     </div>
                   )}
                   {activeMeme.afterPhrase && (
                     <div className="text-sm">
-                      <span className="inline-block px-2 py-0.5 bg-green-500/30 text-green-300 font-semibold rounded mr-2">
+                      <span className="inline-block px-2 py-0.5 bg-green-50 text-green-700 font-semibold rounded mr-2">
                         {afterLabel}
                       </span>
-                      <span className="text-white font-medium">
+                      <span className="text-gray-700 font-medium">
                         &ldquo;{activeMeme.afterPhrase}&rdquo;
                       </span>
                     </div>
@@ -236,7 +236,7 @@ export default function MemeLightbox({ memes, lang }: MemeLightboxProps) {
               )}
               {/* Counter */}
               {memes.length > 1 && (
-                <p className="mt-3 text-xs text-gray-500">
+                <p className="mt-3 text-xs text-gray-400">
                   {activeIndex + 1} / {memes.length}
                 </p>
               )}
