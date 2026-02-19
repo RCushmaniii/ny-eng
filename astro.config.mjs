@@ -211,7 +211,9 @@ export default defineConfig({
           // Prevent duplicate language prefixes
           !p.match(/\/(en|es)\/.*\/(en|es)\//) &&
           // Exclude backup files
-          !p.includes("-bak")
+          !p.includes("-bak") &&
+          // Only include /meme-portfolio/all/ — exclude individual role pages
+          !(p.includes("/meme-portfolio/") && !p.match(/\/meme-portfolio\/all\/?$/))
         );
       },
 
@@ -376,6 +378,10 @@ export default defineConfig({
           priority = 0.6;
           changefreq = "monthly";
           lastmod = new Date("2025-11-01"); // Assessment pages stable
+        } else if (u.pathname.includes("/meme-portfolio/")) {
+          priority = 0.6;
+          changefreq = "weekly";
+          lastmod = new Date("2026-02-18"); // Meme gallery actively growing
         }
 
         return {

@@ -30,6 +30,7 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
           { name: "Prueba mi Coach de Inglés con IA", href: "/es/chat/" },
           { name: "Blog", href: routes.es.blog },
           { name: "Evaluación de Referencia", href: "/es/assessments/" },
+          { name: "Memes Ejecutivos", href: "/es/meme-portfolio/all/" },
         ],
       },
       connect: {
