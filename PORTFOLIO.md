@@ -6,41 +6,30 @@ portfolio_featured: true
 
 # === CARD DISPLAY ===
 title: "NY English Teacher"
-tagline: "Solopreneur lead generation platform that replaces a sales team, marketing department, and executive assistant with zero monthly infrastructure cost"
+tagline: "Lead generation platform replacing 4 roles on $0/month infrastructure"
 slug: "ny-english-teacher"
 category: "Client Work"
 tech_stack:
   - "Astro 5.5"
   - "React 19"
-  - "TypeScript 5.9"
-  - "Tailwind CSS 3.4"
+  - "TypeScript"
   - "Cloudflare Workers"
-  - "Google Calendar API"
   - "Neon PostgreSQL"
-  - "Vercel Serverless"
-  - "Formspree"
-  - "Resend"
 thumbnail: "/images/portfolio/ny-eng-thumb.jpg"
 status: "Production"
 
 # === DETAIL PAGE ===
-problem: "Solo professional service providers — coaches, consultants, trainers — burn 10-15 hours per week on manual qualification, scheduling ping-pong, and follow-ups. Their websites look identical to commodity competitors, making it impossible to justify premium pricing. Meanwhile, the Spanish-speaking professional market across Latin America is underserved by platforms that treat bilingual as an afterthought."
-solution: "A fully automated lead generation and conversion platform that functions as four digital employees: an SDR (diagnostic quizzes that pre-qualify leads with mapped pain points), a marketing department (bilingual content engine with blog, memes, and free resources), an executive assistant (real-time booking with Google Calendar sync and auto-generated Meet links), and a brand manager (premium UX with named executive testimonials and no discount codes). Total monthly infrastructure cost: $0."
+problem: "Solo professional service providers burn 10-15 hours per week on manual qualification, scheduling ping-pong, and follow-ups. Their websites look identical to commodity competitors, making it impossible to justify premium pricing while the Spanish-speaking professional market remains underserved."
+solution: "A fully automated lead generation platform that functions as four digital employees — SDR, marketing department, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase."
 key_features:
-  - "4 role-specific diagnostic quizzes scoring across 5 communication categories — every lead arrives pre-qualified with mapped gaps"
-  - "3-step booking system powered by Cloudflare Workers + Google Calendar OAuth with real-time availability and auto-generated Google Meet links"
+  - "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps — no discovery calls needed"
+  - "3-step booking flow via Cloudflare Workers + Google Calendar OAuth — interest to confirmed Google Meet in under 60 seconds"
   - "Full EN/ES bilingual mirror with localized routing (/es/servicios/, /es/reservar/) and bidirectional hreflang SEO"
-  - "80-meme portfolio across 10 professional roles with before/after executive communication phrases — viral content engine"
-  - "15+ downloadable communication templates (negotiation scripts, email frameworks, salary playbooks) as lead magnets"
-  - "6 industry-specific service landing pages targeting executives, tech, startups, logistics, medical/legal, and interview prep"
-  - "13+ SEO blog articles with bilingual pairs driving organic search traffic"
-  - "JSON-LD structured data (Organization, Service, FAQ, Article) for Google rich snippets"
-  - "Neon PostgreSQL lead database capturing quiz scores, category gaps, UTM params, and device data"
-  - "Premium positioning hard-coded into UX — no discount codes, no starter tiers, named executive testimonials from Driscoll's, CEVA Logistics, Smarttie, 100 Ladrillos"
+  - "Premium positioning hard-coded into UX — named executive testimonials from Driscoll's, CEVA Logistics, no discount codes"
+  - "$0/month infrastructure — Astro static, Cloudflare Workers free tier, Neon free tier, Vercel serverless free tier"
 metrics:
-  - "100 Lighthouse performance score — static HTML, edge computing, zero database queries on load"
-  - "$0/month infrastructure — Astro static hosting, Cloudflare Workers free tier, Neon free tier, Vercel free tier"
-  - "100% gross margin — every dollar earned is profit minus the owner's delivery time"
+  - "100 Lighthouse performance score — zero database queries on page load"
+  - "$0/month infrastructure cost across all services"
   - "< 60 seconds from interest to confirmed booking with Google Meet link"
   - "2x addressable market from a single codebase via bilingual system"
   - "10-15 hours/week of administrative and sales work automated away"
@@ -49,8 +38,8 @@ metrics:
 demo_url: "https://www.nyenglishteacher.com"
 live_url: "https://www.nyenglishteacher.com"
 
-# === VISUAL ASSETS ===
-hero_images:
+# === MEDIA: PORTFOLIO SLIDES ===
+slides:
   - src: "/images/portfolio/ny-eng-01.png"
     alt_en: "The Architecture of Authority — Constructing a multinational agency presence with a team of one"
     alt_es: "La Arquitectura de la Autoridad — Construyendo presencia de agencia multinacional con un equipo de uno"
@@ -78,8 +67,12 @@ hero_images:
   - src: "/images/portfolio/ny-eng-09.png"
     alt_en: "The Zero-Cost Tech Stack — Enterprise-grade performance on a solopreneur budget with $0 monthly infrastructure"
     alt_es: "El Tech Stack de Costo Cero — Rendimiento empresarial con presupuesto de solopreneur y $0 de infraestructura mensual"
+
+# === MEDIA: VIDEO ===
 video_url: "/video/ny-eng-brief.mp4"
 video_poster: "/video/ny-eng-brief-poster.jpg"
+
+# === OPTIONAL ===
 tags:
   - "astro"
   - "react"
