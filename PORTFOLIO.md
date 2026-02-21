@@ -1,134 +1,147 @@
 ---
-# =============================================================================
-# PORTFOLIO.md — NY English Teacher Website
-# =============================================================================
-
+# === CONTROL FLAGS ===
 portfolio_enabled: true
-portfolio_priority: 2
+portfolio_priority: 1
 portfolio_featured: true
-portfolio_last_reviewed: "2025-12-31"
 
-title: "NY English Teacher Platform"
-tagline: "Modern educational website for English language learning and tutoring services"
+# === CARD DISPLAY ===
+title: "NY English Teacher"
+tagline: "Solopreneur lead generation platform that replaces a sales team, marketing department, and executive assistant with zero monthly infrastructure cost"
 slug: "ny-english-teacher"
-
 category: "Client Work"
-target_audience: "English language learners and students seeking professional tutoring"
-tags:
-  - "education"
-  - "tutoring"
-  - "nextjs"
-  - "client-work"
-  - "web-development"
-
-thumbnail: ""
-hero_images: []
-demo_video_url: ""
-
-live_url: ""
-case_study_url: ""
-
-problem_solved: |
-  English tutors struggle to establish professional online presence and manage
-  student bookings efficiently. Students need easy access to resources, scheduling,
-  and progress tracking. Traditional websites are static and don't support the
-  interactive needs of modern education.
-
-key_outcomes:
-  - "Professional website establishing credibility and attracting new students"
-  - "Online booking system reducing scheduling friction by 80%"
-  - "Student resource library with organized learning materials"
-  - "Mobile-responsive design for learning on any device"
-  - "SEO optimization driving organic student acquisition"
-  - "Contact forms and inquiry management streamlining communication"
-
 tech_stack:
-  - "Next.js 14"
-  - "TypeScript"
-  - "Tailwind CSS"
-  - "React"
-  - "Vercel"
+  - "Astro 5.5"
+  - "React 19"
+  - "TypeScript 5.9"
+  - "Tailwind CSS 3.4"
+  - "Cloudflare Workers"
+  - "Google Calendar API"
+  - "Neon PostgreSQL"
+  - "Vercel Serverless"
+  - "Formspree"
+  - "Resend"
+thumbnail: "/images/portfolio/ny-eng-thumb.jpg"
+status: "Production"
 
-complexity: "Production"
+# === DETAIL PAGE ===
+problem: "Solo professional service providers — coaches, consultants, trainers — burn 10-15 hours per week on manual qualification, scheduling ping-pong, and follow-ups. Their websites look identical to commodity competitors, making it impossible to justify premium pricing. Meanwhile, the Spanish-speaking professional market across Latin America is underserved by platforms that treat bilingual as an afterthought."
+solution: "A fully automated lead generation and conversion platform that functions as four digital employees: an SDR (diagnostic quizzes that pre-qualify leads with mapped pain points), a marketing department (bilingual content engine with blog, memes, and free resources), an executive assistant (real-time booking with Google Calendar sync and auto-generated Meet links), and a brand manager (premium UX with named executive testimonials and no discount codes). Total monthly infrastructure cost: $0."
+key_features:
+  - "4 role-specific diagnostic quizzes scoring across 5 communication categories — every lead arrives pre-qualified with mapped gaps"
+  - "3-step booking system powered by Cloudflare Workers + Google Calendar OAuth with real-time availability and auto-generated Google Meet links"
+  - "Full EN/ES bilingual mirror with localized routing (/es/servicios/, /es/reservar/) and bidirectional hreflang SEO"
+  - "80-meme portfolio across 10 professional roles with before/after executive communication phrases — viral content engine"
+  - "15+ downloadable communication templates (negotiation scripts, email frameworks, salary playbooks) as lead magnets"
+  - "6 industry-specific service landing pages targeting executives, tech, startups, logistics, medical/legal, and interview prep"
+  - "13+ SEO blog articles with bilingual pairs driving organic search traffic"
+  - "JSON-LD structured data (Organization, Service, FAQ, Article) for Google rich snippets"
+  - "Neon PostgreSQL lead database capturing quiz scores, category gaps, UTM params, and device data"
+  - "Premium positioning hard-coded into UX — no discount codes, no starter tiers, named executive testimonials from Driscoll's, CEVA Logistics, Smarttie, 100 Ladrillos"
+metrics:
+  - "100 Lighthouse performance score — static HTML, edge computing, zero database queries on load"
+  - "$0/month infrastructure — Astro static hosting, Cloudflare Workers free tier, Neon free tier, Vercel free tier"
+  - "100% gross margin — every dollar earned is profit minus the owner's delivery time"
+  - "< 60 seconds from interest to confirmed booking with Google Meet link"
+  - "2x addressable market from a single codebase via bilingual system"
+  - "10-15 hours/week of administrative and sales work automated away"
 
+# === LINKS ===
+demo_url: "https://www.nyenglishteacher.com"
+live_url: "https://www.nyenglishteacher.com"
+
+# === VISUAL ASSETS ===
+hero_images:
+  - src: "/images/portfolio/ny-eng-01.png"
+    alt_en: "The Architecture of Authority — Constructing a multinational agency presence with a team of one"
+    alt_es: "La Arquitectura de la Autoridad — Construyendo presencia de agencia multinacional con un equipo de uno"
+  - src: "/images/portfolio/ny-eng-02.png"
+    alt_en: "An Automated Performance Engine — Zero manual qualification, 60-second booking flow, 100% gross margin"
+    alt_es: "Un Motor de Rendimiento Automatizado — Cero calificacion manual, reserva en 60 segundos, 100% margen bruto"
+  - src: "/images/portfolio/ny-eng-03.png"
+    alt_en: "Digital Employee 01: The SDR — Diagnostic intelligence replaces discovery calls with pre-qualified leads"
+    alt_es: "Empleado Digital 01: El SDR — Inteligencia diagnostica reemplaza llamadas de descubrimiento con leads precalificados"
+  - src: "/images/portfolio/ny-eng-04.png"
+    alt_en: "Digital Employee 02: Marketing Dept — The bilingual mirror doubles addressable market from a single codebase"
+    alt_es: "Empleado Digital 02: Depto. de Marketing — El espejo bilingue duplica el mercado alcanzable desde una sola base de codigo"
+  - src: "/images/portfolio/ny-eng-05.png"
+    alt_en: "Digital Employee 03: The Executive Assistant — Interest to confirmed Google Meet booking in under 60 seconds"
+    alt_es: "Empleado Digital 03: La Asistente Ejecutiva — De interes a reserva confirmada en Google Meet en menos de 60 segundos"
+  - src: "/images/portfolio/ny-eng-06.png"
+    alt_en: "Digital Employee 04: The Brand Manager — Premium positioning hard-coded into the UX with named executive testimonials"
+    alt_es: "Empleado Digital 04: El Brand Manager — Posicionamiento premium integrado en la UX con testimonios ejecutivos reales"
+  - src: "/images/portfolio/ny-eng-07.png"
+    alt_en: "The Speed of Trust — Lighthouse 100 performance score, instant loads signal competence to premium buyers"
+    alt_es: "La Velocidad de la Confianza — Puntuacion Lighthouse 100, cargas instantaneas que senalan competencia a compradores premium"
+  - src: "/images/portfolio/ny-eng-08.png"
+    alt_en: "The Universal Model — Blueprint for any high-touch expertise business: diagnostic lead magnet + automated booking + premium signals = authority"
+    alt_es: "El Modelo Universal — Plano para cualquier negocio de expertise: lead magnet diagnostico + reserva automatizada + senales premium = autoridad"
+  - src: "/images/portfolio/ny-eng-09.png"
+    alt_en: "The Zero-Cost Tech Stack — Enterprise-grade performance on a solopreneur budget with $0 monthly infrastructure"
+    alt_es: "El Tech Stack de Costo Cero — Rendimiento empresarial con presupuesto de solopreneur y $0 de infraestructura mensual"
+video_url: "/video/ny-eng-brief.mp4"
+video_poster: "/video/ny-eng-brief-poster.jpg"
+tags:
+  - "astro"
+  - "react"
+  - "typescript"
+  - "tailwind"
+  - "cloudflare-workers"
+  - "google-calendar"
+  - "neon-postgresql"
+  - "bilingual"
+  - "lead-generation"
+  - "seo"
+  - "solopreneur"
+  - "coaching"
+date_completed: "2026-02"
 ---
 
-## Overview
+## The Architecture of Authority
 
-The NY English Teacher Platform is a comprehensive educational website built for a professional English tutor in New York. It combines a professional marketing presence with practical tools for managing tutoring services, booking lessons, and providing resources to students.
+NY English Teacher is a production lead generation and client conversion platform built for a solo-operated premium coaching business in Guadalajara, Mexico. The platform replaces four roles that a traditional agency would staff with humans — an SDR, a marketing department, an executive assistant, and a brand manager — using automated systems that run on free-tier infrastructure.
 
-The site showcases teaching credentials, student testimonials, and learning philosophy while making it easy for prospective students to book consultations and current students to access materials.
+The business serves Latin American professionals (executives, engineers, startup founders, logistics managers) who hit a career ceiling not because they lack skill, but because they can't communicate with authority in English. The platform automates the entire journey from discovery through qualification to booking, so a single operator competes with staffed agencies while maintaining 100% gross margin.
 
 ## The Challenge
 
-Independent tutors face several obstacles in growing their practice:
+Independent professional service providers face a structural disadvantage against staffed agencies:
 
-- **Credibility gap:** Need professional presence to compete with established institutions
-- **Scheduling friction:** Back-and-forth emails waste time for tutor and students
-- **Resource distribution:** Emailing PDFs and materials is inefficient
-- **Limited reach:** Relying on word-of-mouth limits growth potential
-- **Payment confusion:** Unclear pricing and booking process loses prospects
-- **Mobile access:** Students need to access materials on phones and tablets
+- **Manual qualification burns hours.** Without a system, every inbound lead requires a discovery call just to determine fit — 10-15 hours/week of unpaid labor.
+- **Scheduling friction kills conversion.** Email ping-pong to find a meeting time loses prospects who were ready to buy right now.
+- **Generic websites can't justify premium pricing.** A brochure site with "Contact Us" looks identical to the $5/hour commodity tutors.
+- **Content doesn't compound.** Blog posts sit unread instead of driving organic traffic month after month.
+- **Bilingual markets are underserved.** Most platforms are English-only, leaving the Spanish-speaking professional market to generic apps.
 
-Without a professional web presence, talented tutors struggle to grow beyond their immediate network.
+In the Guadalajara market specifically, the local English tutoring market is saturated at commodity pricing ($5-10/hour). There is virtually no competition in the premium, industry-specific coaching segment targeting working professionals who value results over low prices.
 
-## The Solution
+## The Four Digital Employees
 
-The NY English Teacher Platform addresses these needs through:
+**Digital Employee 01: The SDR — Diagnostic Quizzes.** Four role-specific assessments (Executive, IT, Professional Services, High-Stakes) score prospects across five communication categories and identify their primary and secondary gaps. Every lead arrives in the Neon PostgreSQL database with mapped pain points, score tiers, and category breakdowns. No discovery call needed to understand what they need or whether they're a fit.
 
-**Marketing & Credibility:**
-- Professional design establishing expertise and trust
-- Detailed bio and teaching philosophy
-- Student testimonials and success stories
-- Clear service offerings and pricing
-- Blog with English learning tips (SEO content)
+**Digital Employee 02: Marketing Dept — Bilingual Content Engine.** A full EN/ES mirror site with localized Spanish routing (`/es/servicios/`, `/es/reservar/`, `/es/testimonios/`), 13+ blog articles targeting high-intent keywords, 80 shareable memes across 10 professional roles, and 15+ downloadable communication templates. Each content type serves a different funnel stage: blog drives organic search, memes drive social sharing, resources capture email leads. The bilingual system doubles the addressable market from a single TypeScript codebase with proper hreflang SEO preventing duplicate content penalties.
 
-**Booking & Scheduling:**
-- Integrated booking calendar showing availability
-- Online consultation request forms
-- Automated confirmation emails
-- Timezone-aware scheduling for international students
-- Payment information and policies
+**Digital Employee 03: The Executive Assistant — Real-Time Booking.** A 3-step booking flow powered by Cloudflare Workers fetches real-time Google Calendar availability, presents 30-minute slots across split business hours, captures contact info, creates a Google Calendar event with auto-generated Google Meet link, and sends automated reminders at 24 hours and 1 hour before the session. Total elapsed time from clicking "Book" to confirmed meeting: under 60 seconds.
 
-**Student Resources:**
-- Organized library of learning materials
-- Grammar guides and exercises
-- Reading recommendations
-- Video lessons and recordings
-- Progress tracking tools
-
-**Technical Excellence:**
-- Fast loading times (perfect Lighthouse scores)
-- Mobile-responsive for learning on any device
-- SEO optimized to attract organic traffic
-- Contact forms with spam protection
-- Analytics to understand visitor behavior
+**Digital Employee 04: The Brand Manager — Premium Positioning.** The entire UX is engineered to justify 3-5x local market pricing. Six industry-specific service pages signal specialist expertise rather than generic tutoring. Named testimonials from executives at Driscoll's, CEVA Logistics, Smarttie, and 100 Ladrillos provide peer-level social proof. There are no discount codes, no volume pricing, no starter tier. Premium positioning isn't a marketing message — it's hard-coded into the interface.
 
 ## Technical Highlights
 
-- **Next.js 14 with App Router:** Server-side rendering for SEO and performance
-- **Component Architecture:** Reusable React components for maintainability
-- **Tailwind CSS:** Modern, responsive design system
-- **TypeScript:** Type safety preventing runtime errors
-- **Vercel Deployment:** Fast, reliable hosting with automatic deployments
-- **Form Handling:** Client-side validation with server-side processing
-- **Image Optimization:** Next.js Image component for fast loading
+- **Static-first architecture:** Astro 5.5 pre-renders every page to static HTML at build time. Zero database queries, zero server-side rendering, zero runtime errors. Lighthouse performance score: 100.
+- **Edge booking API:** Cloudflare Workers handle Google Calendar OAuth with 1-hour token caching, dual-calendar conflict resolution, and IP-based rate limiting (5 bookings/hour). The worker runs at the edge, eliminating cold start latency.
+- **Serverless lead capture:** Quiz submissions hit a Vercel serverless function that writes to Neon PostgreSQL (pooled connection). Schema captures raw scores, category breakdowns, gap analysis, UTM params, referrer, and device metadata.
+- **Type-safe bilingual routing:** A central `TKey` system maps every page to its EN/ES path. Adding a new page requires one TKey entry — hreflang tags, sitemap entries, and navigation links generate automatically.
+- **Build-time meme status detection:** The 80-meme portfolio uses a detection module that scans image directories at build time and auto-classifies each entry as planned, prompt-ready, image-uploaded, or published based on which language images exist on disk.
+- **$0 infrastructure:** Astro on Hostinger (static), Cloudflare Workers (free tier), Neon PostgreSQL (free tier), Vercel serverless (free tier), Formspree (free tier). Every dollar of revenue is profit minus delivery time.
 
 ## Results
 
-**For the Tutor:**
-- Established professional online presence
-- Reduced scheduling coordination time by 80%
-- Increased student inquiries by 150% in first 3 months
-- Streamlined resource distribution to students
-- Professional platform for growing tutoring business
+- Platform serves as the sole sales and marketing operation for a solo coaching business generating revenue from day one
+- Automated qualification eliminates 10-15 hours/week of administrative overhead that would otherwise require a virtual assistant or SDR hire
+- Premium pricing (500 MXN / $25 USD per session) sustained at 3-5x local market rate, validated by executive-level client roster
+- Bilingual system captures both English-language searches (higher purchase intent) and Spanish-language searches (higher volume) across the Guadalajara market
 
-**Technical Demonstration:**
-- Full-stack web development skills
-- Client communication and requirements gathering
-- Modern React and Next.js expertise
-- Responsive design and mobile optimization
-- SEO and performance optimization
-- Deployment and hosting management
+## The Universal Model
 
-This project showcases the ability to take a client from concept to launch, understanding their business needs and translating them into effective technical solutions. Perfect for demonstrating client work capabilities and practical web development skills.
+The architecture is a reusable blueprint for any expertise-based solo business — executive coaches, management consultants, financial advisors, legal consultants, medical specialists, corporate trainers. The specific content changes (different quizzes, different blog topics, different service pages), but the engine is identical:
+
+**Diagnostic lead magnet + automated booking + premium signals = authority at scale.**
