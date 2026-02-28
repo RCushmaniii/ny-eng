@@ -9,6 +9,7 @@ categories:
   - "Comunicación de Alto Impacto"
   - "Carrera y Liderazgo"
 imageAlt: "Ejecutivo senior liderando con confianza una presentación en una sala de juntas en inglés"
+heroVideoPoster: "/images/blog/playbook/en/video-poster.jpg"
 translations:
   en: "/en/blog/executive-communication-playbook"
 publish: true

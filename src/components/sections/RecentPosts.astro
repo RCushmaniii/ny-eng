@@ -133,6 +133,7 @@ const filteredPosts = allPosts
                 title: string;
                 excerpt?: string;
                 featuredImage?: string;
+                heroVideoPoster?: string;
                 imageAlt?: string;
                 publishDate: Date | string;
                 categories?: string[];
@@ -146,6 +147,7 @@ const filteredPosts = allPosts
               title={post.data.title}
               excerpt={post.data.excerpt ?? undefined}
               featuredImage={post.data.featuredImage}
+              heroVideoPoster={post.data.heroVideoPoster}
               imageAlt={post.data.imageAlt || post.data.title}
               publishDate={
                 post.data.publishDate instanceof Date
