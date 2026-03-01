@@ -83,9 +83,7 @@ tags:
   - "neon-postgresql"
   - "bilingual"
   - "lead-generation"
-  - "seo"
   - "solopreneur"
-  - "coaching"
 date_completed: "2026-02"
 ---
 
