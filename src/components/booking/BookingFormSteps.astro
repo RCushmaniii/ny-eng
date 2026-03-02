@@ -270,7 +270,7 @@ const t = translations[lang];
               {
                 lang === "en"
                   ? "What would you like to discuss?"
-                  : "¿Qué te gustaría discutir?"
+                  : "¿De qué te gustaría platicar?"
               }
             </label>
             <textarea
@@ -552,7 +552,7 @@ const t = translations[lang];
           day: "numeric",
         };
         displayTop.textContent = date.toLocaleDateString(
-          lang === "es" ? "es-ES" : "en-US",
+          lang === "es" ? "es-MX" : "en-US",
           options
         );
       }
@@ -772,7 +772,7 @@ const t = translations[lang];
               day: "numeric",
             };
             const dateStrFormatted = selectedDate.toLocaleDateString(
-              lang === "es" ? "es-ES" : "en-US",
+              lang === "es" ? "es-MX" : "en-US",
               dateOptions
             );
             document.getElementById("summary-datetime").textContent =

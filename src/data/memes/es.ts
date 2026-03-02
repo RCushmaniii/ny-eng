@@ -78,7 +78,7 @@ export const roleLabels: Record<MemeRole, string> = {
 };
 
 export const roleSeoDescriptions: Record<MemeRole, string> = {
-  all: "Memes divertidos y relatable sobre el ingles en el trabajo para profesionales en negocios globales. Momentos cotidianos del trabajo que se convierten en oportunidades de aprendizaje de comunicacion ejecutiva.",
+  all: "Memes divertidos e identificables sobre el ingles en el trabajo para profesionales en negocios globales. Momentos cotidianos del trabajo que se convierten en oportunidades de aprendizaje de comunicacion ejecutiva.",
   ...Object.fromEntries(
     roleCategoryConfigs.map((c) => [c.slug, c.seoDescriptionEs]),
   ),
