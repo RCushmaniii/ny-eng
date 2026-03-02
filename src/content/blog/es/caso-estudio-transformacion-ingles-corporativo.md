@@ -82,7 +82,7 @@ Cada ejecutivo recibió sesiones semanales uno a uno adaptadas a sus desafíos e
 
 **Para el Director Comercial**, simulamos escenarios con clientes. Objeciones de precio, negociaciones de alcance, posicionamiento competitivo. Para el quinto mes, podía defender un margen en inglés tan naturalmente como en español.
 
-**Para la Directora de Recursos Humanos**, desarrollamos marcos para entrevistas. No solo preguntas para hacer, sino cómo profundizar, cómo construir rapport y cómo evaluar candidatos cuando ambas partes estaban trabajando en su segundo idioma.
+**Para la Directora de Recursos Humanos**, desarrollamos marcos para entrevistas. No solo preguntas para hacer, sino cómo profundizar, cómo generar conexión y cómo evaluar candidatos cuando ambas partes estaban trabajando en su segundo idioma.
 
 **Para la Directora de Finanzas**, abordamos negociaciones de alto riesgo. Contratos con proveedores, respuestas a auditorías, presentaciones financieras. Practicamos el lenguaje específico de la autoridad legal y financiera—frases que no admiten ambigüedad.
 
@@ -195,17 +195,17 @@ Al enmarcar esto como desarrollo de comunicación ejecutiva en lugar de "clases 
 
 ## Lecciones para Otras Organizaciones
 
-Si su organización está considerando un desarrollo similar para equipos directivos, considere:
+Si tu organización está considerando un desarrollo similar para equipos directivos, considera:
 
-**Evalúe el problema real.** Las pruebas de competencia en inglés miden gramática y vocabulario. No miden si alguien puede dominar una sala, defender un precio o recuperarse de una objeción inesperada. Entienda qué situaciones realmente desafían a su equipo.
+**Evalúa el problema real.** Las pruebas de competencia en inglés miden gramática y vocabulario. No miden si alguien puede dominar una sala, defender un precio o recuperarse de una objeción inesperada. Entiende qué situaciones realmente desafían a tu equipo.
 
-**Piense en sistemas.** El coaching individual es necesario pero insuficiente. Los líderes operan en sistemas—dinámicas de equipo, relaciones de reporte, cultura organizacional. El trabajo grupal crea cambios que el coaching individual solo no puede.
+**Piensa en sistemas.** El coaching individual es necesario pero insuficiente. Los líderes operan en sistemas—dinámicas de equipo, relaciones de reporte, cultura organizacional. El trabajo grupal crea cambios que el coaching individual solo no puede.
 
-**Presupueste para duración.** La transformación real requiere tiempo. Ocho semanas podrían mejorar la confianza temporalmente. Doce meses pueden cambiar carreras.
+**Presupuesta para duración.** La transformación real requiere tiempo. Ocho semanas podrían mejorar la confianza temporalmente. Doce meses pueden cambiar carreras.
 
-**Aborde el kit completo de herramientas ejecutivas.** Las habilidades de idioma importan, pero son insuficientes sin los marcos de comunicación subyacentes. El mejor inglés del mundo no ayudará a un ejecutivo que no sabe cómo manejar una objeción o estructurar un argumento persuasivo.
+**Aborda el kit completo de herramientas ejecutivas.** Las habilidades de idioma importan, pero son insuficientes sin los marcos de comunicación subyacentes. El mejor inglés del mundo no ayudará a un ejecutivo que no sabe cómo manejar una objeción o estructurar un argumento persuasivo.
 
-**Comience desde arriba.** Cuando los líderes senior participan visiblemente, crean permiso para todos los demás. Cuando se esconden en coaching privado mientras envían al personal junior a clases grupales, señalan que luchar con el inglés es vergonzoso. Lo primero acelera el desarrollo; lo segundo lo inhibe.
+**Empieza desde arriba.** Cuando los líderes senior participan visiblemente, crean permiso para todos los demás. Cuando se esconden en coaching privado mientras envían al personal junior a clases grupales, señalan que luchar con el inglés es vergonzoso. Lo primero acelera el desarrollo; lo segundo lo inhibe.
 
 ## Qué Sigue para Este Equipo
 
@@ -213,18 +213,18 @@ El programa ha evolucionado hacia soporte continuo. Las sesiones mensuales manti
 
 Pero quizás el resultado más significativo es más difícil de medir: estos ejecutivos ahora ven la comunicación en inglés como una habilidad a desarrollar continuamente en lugar de una limitación fija que hay que sortear. Ese cambio de mentalidad puede resultar más valioso que cualquier técnica específica que practicamos.
 
-## ¿Está Listo Su Equipo Directivo?
+## ¿Está Listo Tu Equipo Directivo?
 
-Cada organización que se expande a través de fronteras lingüísticas enfrenta una versión de este desafío. La pregunta no es si el inglés de sus ejecutivos es lo suficientemente bueno—es si pueden desplegar toda su experiencia, autoridad y presencia al hablar su segundo idioma.
+Cada organización que se expande a través de fronteras lingüísticas enfrenta una versión de este desafío. La pregunta no es si el inglés de tus ejecutivos es lo suficientemente bueno—es si pueden desplegar toda su experiencia, autoridad y presencia al hablar su segundo idioma.
 
-Si la respuesta no es un "sí" incondicional, la brecha le está costando dinero. En negociaciones donde su equipo no puede defender el valor. En relaciones con clientes que nunca profundizan más allá de lo transaccional. En oportunidades que nunca se persiguen porque las personas correctas no se sienten listas.
+Si la respuesta no es un "sí" incondicional, la brecha te está costando dinero. En negociaciones donde tu equipo no puede defender el valor. En relaciones con clientes que nunca profundizan más allá de lo transaccional. En oportunidades que nunca se persiguen porque las personas correctas no se sienten listas.
 
 La buena noticia: estas brechas se pueden cerrar. No con ejercicios de gramática o listas de vocabulario, sino con desarrollo sostenido y estratégico enfocado en situaciones empresariales reales.
 
 ---
 
-_Robert Cushman es un coach de inglés empresarial especializado en comunicación de alto riesgo para empresas latinoamericanas de tecnología y servicios profesionales. Su Evaluación de Confianza en Comunicación ayuda a las organizaciones a identificar exactamente dónde las brechas de idioma les están costando negocios. [Conozca más sobre el enfoque de Robert →](/es/about/)_
+_Robert Cushman es un coach de inglés empresarial especializado en comunicación de alto riesgo para empresas latinoamericanas de tecnología y servicios profesionales. Su Evaluación de Confianza en Comunicación ayuda a las organizaciones a identificar exactamente dónde las brechas de idioma les están costando negocios. [Conoce más sobre el enfoque de Robert →](/es/about/)_
 
-**[Tome el quiz gratuito de Confianza en Comunicación Ejecutiva →](/es/quiz/executives/)**
+**[Toma el quiz gratuito de Confianza en Comunicación Ejecutiva →](/es/quiz/executives/)**
 
-**[Reserve una llamada de estrategia gratuita para discutir su equipo →](/es/reservar/)**
+**[Reserva una llamada de estrategia gratuita para discutir tu equipo →](/es/reservar/)**
