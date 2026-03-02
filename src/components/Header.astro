@@ -9,9 +9,6 @@ import {
 import Logo from "@components/Logo.astro";
 import { Menu, X } from "lucide-astro";
 import Button from "@components/ui/Button.astro";
-import { Image } from "astro:assets";
-import mexFlag from "@assets/images/mex-flag.svg";
-import usaFlag from "@assets/images/usa-flag.svg";
 
 interface MenuItem {
   readonly name: string;
@@ -217,33 +214,23 @@ const isCurrentPage = (link: string | undefined) => {
               {!currentPath.startsWith("/es") && translationSlugEs && (
                 <a
                   href={translationSlugEs}
-                  class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
+                  class="lang-flag inline-flex items-center justify-center px-3 py-1.5 rounded-full bg-neutral-800 text-white text-xs font-semibold tracking-wide hover:bg-neutral-700 dark:bg-neutral-700 dark:hover:bg-neutral-600 transition-colors"
+                  aria-label="Cambiar a Español"
                   data-lang="es"
                   data-astro-reload
                 >
-                  <Image
-                    src={mexFlag}
-                    alt="Bandera de México"
-                    width={24}
-                    height={24}
-                    class="w-6 h-6"
-                  />
+                  ES
                 </a>
               )}
               {!currentPath.startsWith("/en") && translationSlugEn && (
                 <a
                   href={translationSlugEn}
-                  class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
+                  class="lang-flag inline-flex items-center justify-center px-3 py-1.5 rounded-full bg-neutral-800 text-white text-xs font-semibold tracking-wide hover:bg-neutral-700 dark:bg-neutral-700 dark:hover:bg-neutral-600 transition-colors"
+                  aria-label="Switch to English"
                   data-lang="en"
                   data-astro-reload
                 >
-                  <Image
-                    src={usaFlag}
-                    alt="USA Flag"
-                    width={24}
-                    height={24}
-                    class="w-6 h-6"
-                  />
+                  EN
                 </a>
               )}
             </div>
@@ -311,19 +298,12 @@ const isCurrentPage = (link: string | undefined) => {
               !currentPath.startsWith("/es") && (
                 <a
                   href={translationSlugEs}
-                  class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
+                  class="lang-flag inline-flex items-center justify-center px-5 py-2 rounded-full bg-neutral-800 text-white text-sm font-semibold tracking-wide hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
                   aria-label="Cambiar a Español"
                   data-lang="es"
                   data-astro-reload
                 >
-                  <Image
-                    src={mexFlag}
-                    alt="Bandera de México"
-                    width={24}
-                    height={24}
-                    class="w-6 h-6"
-                  />
-                  <span class="text-sm font-medium">Español</span>
+                  ES — Español
                 </a>
               )}
             {translationSlugEn &&
@@ -331,19 +311,12 @@ const isCurrentPage = (link: string | undefined) => {
               !currentPath.startsWith("/en") && (
                 <a
                   href={translationSlugEn}
-                  class="lang-flag p-2 rounded-full border border-gray-300 hover:ring-2 hover:ring-primary focus:outline-none focus:ring-2 focus:ring-primary bg-white flex items-center gap-2"
+                  class="lang-flag inline-flex items-center justify-center px-5 py-2 rounded-full bg-neutral-800 text-white text-sm font-semibold tracking-wide hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
                   aria-label="Switch to English"
                   data-lang="en"
                   data-astro-reload
                 >
-                  <Image
-                    src={usaFlag}
-                    alt="USA Flag"
-                    width={24}
-                    height={24}
-                    class="w-6 h-6"
-                  />
-                  <span class="text-sm font-medium">English</span>
+                  EN — English
                 </a>
               )}
           </div>
