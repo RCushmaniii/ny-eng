@@ -90,7 +90,7 @@ Mantén el flujo sin sonar rígido.
 **Frases que funcionan:**
 
 - “Excelente punto—déjame cerrar esta idea y vuelvo contigo.”
-- “Lo dejo aparcado en el chat para decidir X primero.”
+- “Lo dejo pendiente en el chat para decidir X primero.”
 - “¿Podemos guardar preguntas dos minutos mientras muestro el impacto?”
 
 ---

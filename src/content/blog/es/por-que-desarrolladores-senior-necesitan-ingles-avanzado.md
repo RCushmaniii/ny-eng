@@ -29,7 +29,7 @@ Si apuntas a roles senior en compañías internacionales, el "inglés conversaci
 
 ## Dónde Falla el "Inglés Conversacional"
 
-Muchos desarrolladores creen que si pueden charlar sobre planes de fin de semana en inglés, están listos para oportunidades globales. **Esto es peligrosamente incorrecto.**
+Muchos desarrolladores creen que si pueden platicar sobre planes de fin de semana en inglés, están listos para oportunidades globales. **Esto es peligrosamente incorrecto.**
 
 Considera estos escenarios reales del trabajo de desarrolladores senior:
 

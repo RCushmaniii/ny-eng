@@ -88,7 +88,7 @@ export const testimonials: Testimonial[] = [
     status: "published",
   },
   {
-    content: `Trabajar con Robert ha sido uno de los pasos más impactantes que he dado para mi comunicación profesional. Como CTO, ya opero en entornos técnicos y estratégicos, pero su coaching me dio las herramientas para proyectar verdadera presencia ejecutiva en inglés. Aprendí a estructurar presentaciones con impacto, manejar situaciones de speaking improvisado bajo presión y liderar conversaciones con claridad y confianza. El enfoque de Robert es práctico, exigente y siempre alineado con mi rol como directivo global. Ahora me siento mejor preparado para representar a mi empresa en foros internacionales y para posicionarme en futuras oportunidades de liderazgo.`,
+    content: `Trabajar con Robert ha sido uno de los pasos más impactantes que he dado para mi comunicación profesional. Como CTO, ya opero en entornos técnicos y estratégicos, pero su coaching me dio las herramientas para proyectar verdadera presencia ejecutiva en inglés. Aprendí a estructurar presentaciones con impacto, manejar situaciones de presentación improvisada bajo presión y liderar conversaciones con claridad y confianza. El enfoque de Robert es práctico, exigente y siempre alineado con mi rol como directivo global. Ahora me siento mejor preparado para representar a mi empresa en foros internacionales y para posicionarme en futuras oportunidades de liderazgo.`,
     shortContent:
       "Trabajar con Robert ha sido uno de los pasos más impactantes para mi comunicación profesional como CTO—su coaching práctico me ayudó a estructurar presentaciones con impacto, manejar situaciones improvisadas y liderar con confianza…",
     author: "Luis Manuel Becerra Lucatero",

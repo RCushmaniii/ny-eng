@@ -14,7 +14,7 @@ translations:
 publish: true
 seo:
   title: "Costo del Inglés Débil: Contratos y Carreras Perdidas"
-  description: "El inglés débil cuesta caro: contratos perdidos, proyectos lentos, promociones bloqueadas. Vea los costos reales y cómo solucionarlo."
+  description: "El inglés débil cuesta caro: contratos perdidos, proyectos lentos, promociones bloqueadas. Descubre los costos reales y cómo solucionarlo."
   keywords: "capacitación inglés negocios México, ROI entrenamiento inglés, inglés para gerentes de TI, comunicación nearshoring, comunicación ejecutiva inglés, estrategia de idiomas, impuesto de coordinación, inglés para profesionales mexicanos"
 ---
 

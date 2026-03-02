@@ -224,11 +224,11 @@ export const professionalProfilesEs = [
     link: "/es/servicios/ingles-para-profesionales/",
   },
   {
-    name: "Oradores Públicos",
+    name: "Conferencistas",
     link: "/es/servicios/ingles-para-presentaciones/",
   },
   {
-    name: "Candidatos a Empleos",
+    name: "Buscadores de Empleo",
     link: "/es/servicios/ingles-para-presentaciones/",
   },
 ] as const;

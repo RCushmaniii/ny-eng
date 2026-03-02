@@ -522,7 +522,7 @@ export const itServicesConfig: QuizConfig = {
         lowScoreImpact:
           "Las relaciones se quedan frías. Pierdes la oportunidad de generar confianza o de convertirte en un socio estratégico.",
         recommendation:
-          "Mi consejo: Estudia las normas de la cultura de negocios de EE.UU. Practica cómo iniciar una charla casual sin miedo.",
+          "Mi consejo: Estudia las normas de la cultura de negocios de EE.UU. Practica cómo iniciar una plática casual sin miedo.",
         urgency: "low",
       },
     },

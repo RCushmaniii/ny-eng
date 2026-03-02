@@ -409,7 +409,7 @@ export const professionalServicesConfig: QuizConfig = {
             index: 3,
             score: 0,
             label:
-              "Evitativo—me escondo detrás del email para evitar la charla en vivo.",
+              "Evitativo—me escondo detrás del email para evitar hablar en vivo.",
           },
         ],
       },
@@ -423,7 +423,7 @@ export const professionalServicesConfig: QuizConfig = {
             index: 0,
             score: 10,
             label:
-              "Sin esfuerzo—pivoteo, reencuadro y respondo sin perder el ritmo.",
+              "Sin esfuerzo—me adapto, reencuadro y respondo sin perder el ritmo.",
           },
           {
             index: 1,

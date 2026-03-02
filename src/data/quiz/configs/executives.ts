@@ -361,7 +361,7 @@ export const executivesConfig: QuizConfig = {
             index: 0,
             score: 10,
             label:
-              "Yo domino la sala—me mantengo calmado en inglés, dicto el ritmo y pivoteo fácilmente bajo presión.",
+              "Yo domino la sala—me mantengo calmado en inglés, dicto el ritmo y me adapto fácilmente bajo presión.",
           },
           {
             index: 1,

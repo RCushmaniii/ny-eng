@@ -1,19 +1,19 @@
 {
   "common": {
     "siteTitle": "Mi Sitio",
-    "about": "Sobre Nosotros",
+    "about": "Sobre Mí",
     "contact": "Contacto",
-    "welcome": "Bienvenidos a nuestro sitio",
+    "welcome": "Bienvenido a mi sitio",
     "notFound": "Página no encontrada",
     "goHome": "Volver al inicio en español"
   },
   "pages": {
     "about": {
-      "title": "Sobre Nosotros",
+      "title": "Sobre Mí",
       "greeting": "Hola"
     },
     "contact": {
-      "title": "Contáctanos",
+      "title": "Contáctame",
       "cta": "Enviar Mensaje"
     },
     "home": {

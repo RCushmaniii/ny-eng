@@ -28,7 +28,7 @@ En **New York English**, ayudo a profesionales como tú a mejorar su inglés de 
   ¿Quieres que tu equipo se comunique mejor? Ofrezco talleres para mejorar el inglés de departamentos completos, desde llamadas con clientes hasta reportes internos.
 
 - **Práctica para entrevistas y presentaciones**  
-  ¿Te pones nervioso antes de una entrevista o una gran charla? Te ayudo a prepararte, practicar y hablar con confianza, incluso bajo presión.
+  ¿Te pones nervioso antes de una entrevista o una gran presentación? Te ayudo a prepararte, practicar y hablar con confianza, incluso bajo presión.
 
 - **Retroalimentación clara y progreso rápido**  
   Te doy comentarios honestos y útiles en cada sesión. Mis métodos son simples pero efectivos, así mejoras rápido.

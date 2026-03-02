@@ -71,14 +71,14 @@ export const roleLabels: Record<MemeRole, string> = {
   "sales-account-executive": "Ejecutivos de Ventas y Cuentas",
   "executive-csuite": "Ejecutivos y C-Suite",
   "startup-founder": "Fundadores de Startups",
-  "logistics-supply-chain": "Logistica y Cadena de Suministro",
-  "hr-officer": "Oficiales de Recursos Humanos",
+  "logistics-supply-chain": "Logística y Cadena de Suministro",
+  "hr-officer": "Responsables de Recursos Humanos",
   consultant: "Consultores",
-  "product-manager": "Product Managers",
+  "product-manager": "Gerentes de Producto",
 };
 
 export const roleSeoDescriptions: Record<MemeRole, string> = {
-  all: "Memes divertidos e identificables sobre el ingles en el trabajo para profesionales en negocios globales. Momentos cotidianos del trabajo que se convierten en oportunidades de aprendizaje de comunicacion ejecutiva.",
+  all: "Memes divertidos e identificables sobre el inglés en el trabajo para profesionales en negocios globales. Momentos cotidianos del trabajo que se convierten en oportunidades de aprendizaje de comunicación ejecutiva.",
   ...Object.fromEntries(
     roleCategoryConfigs.map((c) => [c.slug, c.seoDescriptionEs]),
   ),

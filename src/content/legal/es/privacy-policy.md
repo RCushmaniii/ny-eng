@@ -47,7 +47,7 @@ Usamos tus datos para:
 
 ## Intercambio y Divulgación de Datos
 
-**No vendemos ni alquilamos** tu información personal. Tus datos pueden ser compartidos solo cuando sea necesario:
+**No vendemos ni rentamos** tu información personal. Tus datos pueden ser compartidos solo cuando sea necesario:
 
 - Con proveedores de servicios de confianza que nos asisten en la operación de nuestro sitio web
 - Cuando se requiera para cumplir con obligaciones legales o solicitudes válidas de las fuerzas del orden

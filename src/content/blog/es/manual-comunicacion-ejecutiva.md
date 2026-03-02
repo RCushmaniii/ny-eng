@@ -167,7 +167,7 @@ Estás señalando que tu posición no es firme — y la otra parte va a presiona
 
 ---
 
-## Pilar 4: Storytelling Ejecutivo — De Datos Sueltos a Narrativa
+## Pilar 4: Narrativa Ejecutiva — De Datos Sueltos a Historia
 
 En cada reunión ejecutiva hay dos tipos de presentadores: los que comparten información y los que cuentan una historia. Los que comparten información reciben asentimientos corteses. Los que cuentan historias logran que aprueben sus propuestas.
 
@@ -230,7 +230,7 @@ La forma de sentirte cómodo con el inglés sin guión no es más vocabulario �
 
 - **Ejercicios de opinión**: "What do you think about X?" con 30 segundos para responder usando PREP
 - **Rondas de desafío**: Yo cuestiono tu respuesta y tú la defiendes en vivo
-- **Práctica de pivoteo**: Redirigir una pregunta hostil o fuera de tema hacia tu mensaje clave
+- **Práctica de redirección**: Redirigir una pregunta hostil o fuera de tema hacia tu mensaje clave
 
 El objetivo no es la perfección ensayada. Es la imperfección cómoda — la capacidad de pensar y hablar simultáneamente en inglés sin quedarte paralizado.
 

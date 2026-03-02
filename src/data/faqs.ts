@@ -46,7 +46,7 @@ export const faqLists: Record<string, FaqList> = {
       {
         question: "¿Cómo funcionan las clases?",
         answer:
-          "Sesiones privadas de 60 minutos en línea por Google Meet; calentamiento, práctica dirigida, retroalimentación inmediata y small talk; notas PDF personalizadas después de cada clase.",
+          "Sesiones privadas de 60 minutos en línea por Google Meet; calentamiento, práctica dirigida, retroalimentación inmediata y conversación casual; notas PDF personalizadas después de cada clase.",
       },
       {
         question: "¿Cuál es tu política de cancelación?",
@@ -101,7 +101,7 @@ export const faqLists: Record<string, FaqList> = {
       {
         question: "¿Cómo funcionan las clases?",
         answer:
-          "Sesiones privadas de 60 minutos en línea por Google Meet; calentamiento, práctica dirigida, retroalimentación inmediata y small talk; notas PDF personalizadas después de cada clase.",
+          "Sesiones privadas de 60 minutos en línea por Google Meet; calentamiento, práctica dirigida, retroalimentación inmediata y conversación casual; notas PDF personalizadas después de cada clase.",
       },
       {
         question: "¿Cuál es tu política de cancelación?",
@@ -354,7 +354,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
             question:
               "Conozco la gramática, pero me congelo bajo presión. ¿Cómo arreglas eso?",
             answer:
-              "Este es un problema de desempeño, no de conocimiento. Usamos simulaciones de alta presión—preguntas y respuestas rápidas, manejo de objeciones y pivoteo en tiempo real—para recablear tu cerebro para pensar directamente en inglés bajo estrés. Es como entrenamiento atlético para tu comunicación.",
+              "Este es un problema de desempeño, no de conocimiento. Usamos simulaciones de alta presión—preguntas y respuestas rápidas, manejo de objeciones y adaptación en tiempo real—para reprogramar tu cerebro y que pienses directamente en inglés bajo estrés. Es como entrenamiento atlético para tu comunicación.",
           },
           {
             question:

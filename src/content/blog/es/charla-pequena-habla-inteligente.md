@@ -1,6 +1,6 @@
 ---
 title: "De pláticas triviales a conversación inteligente en inglés"
-excerpt: "Aprende a convertir charlas triviales en oportunidades para construir relaciones y avanzar profesionalmente en inglés."
+excerpt: "Aprende a convertir pláticas triviales en oportunidades para construir relaciones y avanzar profesionalmente en inglés."
 publishDate: "2025-05-08"
 lastmod: "2025-12-07"
 categories:

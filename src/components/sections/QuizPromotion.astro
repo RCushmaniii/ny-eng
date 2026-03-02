@@ -93,30 +93,30 @@ const t = content[lang];
         <div class="score-card">
           <div class="score-header">
             <BarChart3 size={32} />
-            <span>Communication Confidence Score</span>
+            <span>{lang === "es" ? "Puntuación de Confianza en Comunicación" : "Communication Confidence Score"}</span>
           </div>
           <div class="score-display">
             <div class="score-number">78</div>
             <div class="score-label">/100</div>
           </div>
-          <div class="score-tier">Developing Communicator</div>
+          <div class="score-tier">{lang === "es" ? "Comunicador en Desarrollo" : "Developing Communicator"}</div>
           <div class="score-breakdown">
             <div class="breakdown-item">
-              <span>Clarity</span>
+              <span>{lang === "es" ? "Claridad" : "Clarity"}</span>
               <div class="progress-bar">
                 <div class="progress-fill" style="width: 85%"></div>
               </div>
               <span>85%</span>
             </div>
             <div class="breakdown-item">
-              <span>Confidence</span>
+              <span>{lang === "es" ? "Confianza" : "Confidence"}</span>
               <div class="progress-bar">
                 <div class="progress-fill" style="width: 72%"></div>
               </div>
               <span>72%</span>
             </div>
             <div class="breakdown-item">
-              <span>Fluency</span>
+              <span>{lang === "es" ? "Fluidez" : "Fluency"}</span>
               <div class="progress-bar">
                 <div class="progress-fill" style="width: 78%"></div>
               </div>
@@ -125,7 +125,7 @@ const t = content[lang];
           </div>
           <div class="score-cta">
             <Target size={16} />
-            <span>Your Primary Gap: Confidence</span>
+            <span>{lang === "es" ? "Tu Principal Brecha: Confianza" : "Your Primary Gap: Confidence"}</span>
           </div>
         </div>
       </div>
