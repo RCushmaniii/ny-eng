@@ -1,5 +1,5 @@
 ---
-title: "7 Email Phrases That Make You Sound Junior (And What Executives Write Instead)"
+title: "7 Email Phrases That Make You Sound Junior (Fix Them Now)"
 excerpt: "Your English might be grammatically perfect—but these common phrases instantly signal inexperience to senior leaders. Here's what to write instead."
 publishDate: "2026-01-18"
 lastmod: "2026-01-18"

@@ -1,5 +1,5 @@
 ---
-title: "How to Negotiate in English When It's Not Your First Language: A 5-Step Framework"
+title: "How to Negotiate in English: A 5-Step Framework for Non-Native Speakers"
 excerpt: "Negotiating is stressful enough. Doing it in English adds fear. A proven framework that works even when you're not thinking in your native language."
 publishDate: "2026-01-18"
 lastmod: "2026-01-18"

@@ -1,5 +1,5 @@
 ---
-title: "7 Frases de Email Que Te Hacen Sonar Junior (Y Qué Escriben los Ejecutivos)"
+title: "7 Frases de Email Que Te Hacen Sonar Junior (Corrígelas Ya)"
 excerpt: "Tu inglés puede ser gramaticalmente perfecto—pero estas frases comunes señalan inexperiencia instantáneamente. Aquí está qué escribir en su lugar."
 publishDate: "2026-01-18"
 lastmod: "2026-01-18"

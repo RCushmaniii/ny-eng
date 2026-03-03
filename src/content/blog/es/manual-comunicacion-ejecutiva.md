@@ -1,6 +1,6 @@
 ---
-title: "El Manual de Comunicación Ejecutiva: Cómo los Líderes Senior Imponen Influencia en Inglés"
-excerpt: "Eres un líder brillante en tu idioma nativo, pero en inglés te vuelves cauteloso, reactivo y apagado. Este manual revela los 7 pilares que separan a los hablantes fluidos de los líderes que dominan cualquier sala."
+title: "Manual de Comunicación Ejecutiva: Domina la Influencia en Inglés"
+excerpt: "Eres un líder brillante en tu idioma nativo, pero en inglés te vuelves cauteloso y apagado. Descubre los 7 pilares de los líderes que dominan cualquier sala."
 publishDate: "2026-02-12"
 lastmod: "2026-02-12"
 categories:
