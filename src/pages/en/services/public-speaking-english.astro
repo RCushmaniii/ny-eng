@@ -8,6 +8,10 @@ import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
 import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
 import CtaSection from "@components/sections/CtaSection.astro";
+import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
+import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
+import Breadcrumbs from "@components/ui/Breadcrumbs.astro";
+import { serviceFaqs } from "@data/service-faqs";
 
 // Import services data
 import { services } from "@data/services";
@@ -68,6 +72,8 @@ const ctaContent = {
     "Create a personalized plan to overcome speaking anxiety",
   ],
 };
+
+const faqs = serviceFaqs["public-speaking-english"]?.en || [];
 ---
 
 <Base
@@ -113,4 +119,11 @@ const ctaContent = {
 
   <!-- Final CTA -->
   <CtaSection content={ctaContent} />
+
+  <BreadcrumbSchema items={[
+    { name: "Home", url: "https://www.nyenglishteacher.com/en/" },
+    { name: "Services", url: "https://www.nyenglishteacher.com/en/services/" },
+    { name: "Public Speaking", url: "https://www.nyenglishteacher.com/en/services/public-speaking-english/" }
+  ]} />
+  <ServiceFAQ faqs={faqs} lang="en" />
 </Base>

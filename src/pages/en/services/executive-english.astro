@@ -7,6 +7,10 @@ import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
 import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
 import CtaSection from "@components/sections/CtaSection.astro";
+import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
+import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
+import Breadcrumbs from "@components/ui/Breadcrumbs.astro";
+import { serviceFaqs } from "@data/service-faqs";
 
 // Import services data for centralized image management
 import { services } from "@data/services";
@@ -74,6 +78,8 @@ const ctaContent = {
 
 // Translation slug for Spanish version
 const translationSlug = "ingles-para-ejecutivos";
+
+const faqs = serviceFaqs["executive-english"]?.en || [];
 ---
 
 <Base
@@ -122,4 +128,11 @@ const translationSlug = "ingles-para-ejecutivos";
 
   <!-- Final CTA -->
   <CtaSection content={ctaContent} />
+
+  <BreadcrumbSchema items={[
+    { name: "Home", url: "https://www.nyenglishteacher.com/en/" },
+    { name: "Services", url: "https://www.nyenglishteacher.com/en/services/" },
+    { name: "Executive English", url: "https://www.nyenglishteacher.com/en/services/executive-english/" }
+  ]} />
+  <ServiceFAQ faqs={faqs} lang="en" />
 </Base>

@@ -7,6 +7,10 @@ import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
 import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
 import CtaSection from "@components/sections/CtaSection.astro";
+import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
+import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
+import Breadcrumbs from "@components/ui/Breadcrumbs.astro";
+import { serviceFaqs } from "@data/service-faqs";
 
 // prevent autosave tools from removing imports (used in template)
 void Base;
@@ -71,6 +75,8 @@ const ctaContent = {
 
 // Translation slug for Spanish version
 const translationSlug = "ingles-para-medicos";
+
+const faqs = serviceFaqs["medical-english"]?.en || [];
 ---
 
 <Base
@@ -106,4 +112,11 @@ const translationSlug = "ingles-para-medicos";
   
   <!-- Final CTA -->
   <CtaSection content={ctaContent} />
+
+  <BreadcrumbSchema items={[
+    { name: "Home", url: "https://www.nyenglishteacher.com/en/" },
+    { name: "Services", url: "https://www.nyenglishteacher.com/en/services/" },
+    { name: "Medical English", url: "https://www.nyenglishteacher.com/en/services/medical-english/" }
+  ]} />
+  <ServiceFAQ faqs={faqs} lang="en" />
 </Base>

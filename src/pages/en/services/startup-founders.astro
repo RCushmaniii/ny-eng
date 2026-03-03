@@ -8,6 +8,10 @@ import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
 import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
 import CtaSection from "@components/sections/CtaSection.astro";
+import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
+import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
+import Breadcrumbs from "@components/ui/Breadcrumbs.astro";
+import { serviceFaqs } from "@data/service-faqs";
 
 // Import data
 import { services } from "@data/services";
@@ -60,6 +64,8 @@ const ctaContent = {
 
 // Translation slug for Spanish version
 const translationSlug = "ingles-para-fundadores-de-startups";
+
+const faqs = serviceFaqs["startup-founders"]?.en || [];
 ---
 
 <Base
@@ -90,4 +96,11 @@ const translationSlug = "ingles-para-fundadores-de-startups";
   
   <!-- CTA Section -->
   <CtaSection content={ctaContent} />
+
+  <BreadcrumbSchema items={[
+    { name: "Home", url: "https://www.nyenglishteacher.com/en/" },
+    { name: "Services", url: "https://www.nyenglishteacher.com/en/services/" },
+    { name: "Startup Founders", url: "https://www.nyenglishteacher.com/en/services/startup-founders/" }
+  ]} />
+  <ServiceFAQ faqs={faqs} lang="en" />
 </Base>
