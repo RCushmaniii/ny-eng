@@ -2,6 +2,8 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Base from "@layouts/Base.astro";
 import BlogPostSchema from "@components/seo/BlogPostSchema.astro";
+import BreadcrumbSchema from '@components/seo/BreadcrumbSchema.astro';
+import Breadcrumbs from '@components/ui/Breadcrumbs.astro';
 import CategoryPill from '@components/ui/CategoryPill.astro';
 // FIX: Rename the imported component to avoid conflict with the native Date object
 import DateComponent from '@components/ui/Date.astro';
@@ -97,6 +99,20 @@ const currentIndex = allPosts.findIndex((p: CollectionEntry<'blog'>) => {
 const previousPost = allPosts[currentIndex + 1] ?? null; // Older post
 const nextPost = allPosts[currentIndex - 1] ?? null;     // Newer post
 
+// --- Related Posts by Category Overlap ---
+const currentCategories = new Set(post.data.categories || []);
+const relatedPosts = allPosts
+  .filter((p: CollectionEntry<'blog'>) => p.id !== post.id)
+  .map((p: CollectionEntry<'blog'>) => {
+    const pCats = p.data.categories || [];
+    const overlap = pCats.filter((c: string) => currentCategories.has(c)).length;
+    return { post: p, score: overlap };
+  })
+  .filter((item) => item.score > 0)
+  .sort((a, b) => b.score - a.score || new Date(b.post.data.publishDate).valueOf() - new Date(a.post.data.publishDate).valueOf())
+  .slice(0, 3)
+  .map((item) => item.post);
+
 // Get site URL for structured data
 const siteUrl = siteConfig.siteUrl || 'https://www.nyenglishteacher.com';
 const cleanSiteUrl = siteUrl.replace(/https?:\/\/www\.www\./i, 'https://www.').replace(/\/$/, '');
@@ -154,19 +170,31 @@ const customHreflangs = [
     publishDate={post.data.publishDate}
     image={featuredUrl || undefined}
     url={postUrl}
-    authorName="New York English"
+    authorName="Robert Cushman"
     categories={post.data.categories}
+    lang="es"
   />
-  
+  <BreadcrumbSchema items={[
+    { name: "Inicio", url: "https://www.nyenglishteacher.com/es/" },
+    { name: "Blog", url: "https://www.nyenglishteacher.com/es/blog/" },
+    { name: post.data.title, url: `https://www.nyenglishteacher.com${postUrl}` }
+  ]} />
+
   <section class="relative w-full">
-    <!-- Gradient Background (all devices) -->
     <div class="w-full h-screen fixed top-0 left-0 -z-10 overflow-hidden">
       <div class="absolute top-0 left-0 right-0 h-[25vh] bg-gradient-to-b from-[#eef1ff] via-[#f8f9ff] to-white"></div>
       <div class="absolute top-[25vh] left-0 right-0 bottom-0 bg-white"></div>
     </div>
-    
+
     <article class="site-container--small mx-auto prose relative z-10 pb-base">
-      <div class="mt-[5rem] md:mt-16 mb-6 md:mb-12 pt-8 md:pt-12 text-center relative z-10">
+      <div class="mt-[5rem] md:mt-16 pt-8 md:pt-12 relative z-10">
+        <Breadcrumbs items={[
+          { name: "Inicio", url: "/es/" },
+          { name: "Blog", url: "/es/blog/" },
+          { name: post.data.title, url: postUrl }
+        ]} />
+      </div>
+      <div class="mb-6 md:mb-12 text-center relative z-10">
         <h1 class="text-gray-900 text-3xl md:text-4xl font-bold mb-4">{post.data.title}</h1>
         <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-gray-600">
           <DateComponent date={post.data.publishDate} lang="es" />
@@ -328,6 +356,35 @@ const customHreflangs = [
         )}
           </div>
       </section>
+      )}
+
+      {relatedPosts.length > 0 && (
+        <section class="mt-16 mb-8 mx-auto max-w-3xl">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Artículos Relacionados</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {relatedPosts.map((related: CollectionEntry<'blog'>) => (
+                <a
+                  href={cleanBlogUrl(buildPostUrl('es', stripLangPrefix(related.slug)))}
+                  class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 no-underline"
+                  style="overflow: hidden; padding: 0; margin: 0;"
+                >
+                  {(() => {
+                    const relObj = related?.data?.featuredImage;
+                    const relUrl = (typeof relObj === 'object' && relObj?.src) ? relObj.src : (related?.data?.seo?.image ?? null);
+                    return relUrl ? (
+                      <div class="w-full h-36 bg-gray-100" style="margin: 0; padding: 0; display: block;">
+                        <img src={relUrl} alt={related.data.imageAlt || related.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style="display: block; margin: 0; padding: 0;" />
+                      </div>
+                    ) : null;
+                  })()}
+                  <div class="p-4">
+                    <h3 class="font-bold text-sm mb-2 text-gray-900 group-hover:text-primary transition-colors line-clamp-2">{related.data.title}</h3>
+                    <p class="text-xs text-gray-600 line-clamp-2">{related.data.excerpt}</p>
+                  </div>
+                </a>
+            ))}
+          </div>
+        </section>
       )}
     </article>
   </section>

@@ -13,6 +13,7 @@ import { footerContentEs } from "@data/footer/es.ts";
 import { siteConfig } from "@data/config.ts";
 import OrgSchema from "@components/seo/OrgSchema.astro";
 import WebsiteSchema from "@components/seo/WebsiteSchema.astro";
+import ProfessionalServiceSchema from "@components/seo/ProfessionalServiceSchema.astro";
 import ChatLauncher from "@components/chat/ChatLauncher.astro";
 import * as i18n from "../lib/i18n";
 import { type TKey, type Locale } from "../lib/i18n.ts";
@@ -348,9 +349,18 @@ if (translationSlugEs.includes("/es/blog/es/")) {
       content="public, max-age=3600, s-maxage=86400"
     />
 
+    <!-- Preconnect / DNS Prefetch -->
+    <link rel="preconnect" href="https://wa.link" crossorigin />
+    <link rel="dns-prefetch" href="https://wa.link" />
+    <link rel="preconnect" href="https://api.whatsapp.com" crossorigin />
+    <link rel="dns-prefetch" href="https://api.whatsapp.com" />
+    <link rel="preconnect" href="https://formspree.io" crossorigin />
+    <link rel="dns-prefetch" href="https://formspree.io" />
+
     <!-- JSON-LD Schemas -->
     <OrgSchema />
     <WebsiteSchema />
+    <ProfessionalServiceSchema />
 
     <!-- Additional head content -->
     <slot name="head" />

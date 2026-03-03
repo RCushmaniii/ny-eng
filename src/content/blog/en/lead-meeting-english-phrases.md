@@ -6,7 +6,6 @@ lastmod: "2026-03-03"
 categories:
   - "Business English"
   - "High-Impact Communication"
-featuredImage: "./images/placeholder-meeting.jpg"
 imageAlt: "Professional leading a business meeting with confidence"
 translations:
   es: "/es/blog/dirigir-reuniones-ingles-frases/"

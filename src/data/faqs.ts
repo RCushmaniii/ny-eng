@@ -208,6 +208,63 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
     id: "premium",
     sections: [
       {
+        title: "Mexico & Latin America",
+        description:
+          "Questions specific to professionals working from Mexico and Latin America.",
+        faqs: [
+          {
+            question:
+              "Do you understand the specific challenges Mexican professionals face with English?",
+            answer:
+              "Yes — this is my specialty. I work primarily with Mexican and Latin American professionals. I understand the false cognates (actualmente ≠ actually), the cultural communication differences (directness vs. formality), and the specific pronunciation patterns that affect credibility with North American clients.",
+          },
+          {
+            question: "Can you help me prepare for meetings with US headquarters?",
+            answer:
+              "Absolutely. Many of my clients report to US-based leadership or work with North American clients. We practice the specific meeting scenarios you face — status updates, escalation calls, quarterly reviews — using the communication style that US executives expect.",
+          },
+          {
+            question:
+              "I work for a Mexican company expanding into the US market. Can you help our team?",
+            answer:
+              "Yes. We offer corporate packages for teams making the leap into US markets. We focus on the communication skills that determine success — client-facing English, partnership negotiations, and the cultural fluency that builds trust with American business partners.",
+          },
+          {
+            question: "Do you accept payment in Mexican pesos?",
+            answer:
+              "Yes. Pricing is available in both MXN and USD. Single sessions are 500 MXN ($25 USD), and 12-session packages are 6,000 MXN ($300 USD). We can also issue Mexican corporate invoices (facturas) for company billing.",
+          },
+        ],
+      },
+      {
+        title: "Getting Started",
+        description:
+          "Everything you need to know about beginning your coaching journey.",
+        faqs: [
+          {
+            question: "How do I get started with coaching?",
+            answer:
+              "Book a free discovery call through our website. In 15-20 minutes, we'll discuss your goals, assess your current level, and determine if coaching is the right fit. There's no obligation — it's simply a conversation about where you want to go.",
+          },
+          {
+            question: "What happens in the first coaching session?",
+            answer:
+              "The first session is a diagnostic. We identify your specific communication gaps, understand your professional context, and create a prioritized roadmap. You'll leave with 2-3 immediate action items you can start using that same week.",
+          },
+          {
+            question:
+              "Do I need to commit to a long-term package, or can I try a single session?",
+            answer:
+              "You can absolutely start with a single session at 500 MXN / $25 USD. Many clients try one session and then choose to continue because they see immediate value. There's no pressure to commit — results speak for themselves.",
+          },
+          {
+            question: "What technology do I need for online sessions?",
+            answer:
+              "Just a computer or phone with a camera, microphone, and stable internet connection. Sessions are conducted via Google Meet — no special software needed. A quiet space where you can speak freely is ideal.",
+          },
+        ],
+      },
+      {
         title: "Investment & Value",
         description:
           "What it costs and why this is different from standard English classes.",
@@ -294,6 +351,63 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
   premium_es: {
     id: "premium_es",
     sections: [
+      {
+        title: "México y Latinoamérica",
+        description:
+          "Preguntas específicas para profesionales que trabajan desde México y Latinoamérica.",
+        faqs: [
+          {
+            question:
+              "¿Entiendes los desafíos específicos que enfrentan los profesionales mexicanos con el inglés?",
+            answer:
+              "Sí — esta es mi especialidad. Trabajo principalmente con profesionales mexicanos y latinoamericanos. Entiendo los falsos cognados (actualmente ≠ actually), las diferencias de comunicación cultural (franqueza vs. formalidad), y los patrones de pronunciación específicos que afectan la credibilidad con clientes norteamericanos.",
+          },
+          {
+            question: "¿Puedes ayudarme a prepararme para reuniones con oficinas centrales en EE.UU.?",
+            answer:
+              "Por supuesto. Muchos de mis clientes reportan a liderazgo basado en EE.UU. o trabajan con clientes norteamericanos. Practicamos los escenarios específicos de reuniones que enfrentas — actualizaciones de estatus, llamadas de escalación, revisiones trimestrales — usando el estilo de comunicación que los ejecutivos de EE.UU. esperan.",
+          },
+          {
+            question:
+              "Trabajo para una empresa mexicana que se expande al mercado de EE.UU. ¿Pueden ayudar a nuestro equipo?",
+            answer:
+              "Sí. Ofrecemos paquetes corporativos para equipos que dan el salto a mercados de EE.UU. Nos enfocamos en las habilidades de comunicación que determinan el éxito — inglés para interacción con clientes, negociaciones de partnerships, y la fluidez cultural que construye confianza con socios de negocios americanos.",
+          },
+          {
+            question: "¿Aceptan pago en pesos mexicanos?",
+            answer:
+              "Sí. Los precios están disponibles tanto en MXN como en USD. Las sesiones individuales son de 500 MXN ($25 USD), y los paquetes de 12 sesiones son de 6,000 MXN ($300 USD). También podemos emitir facturas corporativas mexicanas para facturación empresarial.",
+          },
+        ],
+      },
+      {
+        title: "Cómo Empezar",
+        description:
+          "Todo lo que necesitas saber para comenzar tu camino de coaching.",
+        faqs: [
+          {
+            question: "¿Cómo empiezo con el coaching?",
+            answer:
+              "Agenda una llamada de descubrimiento gratuita a través de nuestro sitio web. En 15-20 minutos, discutiremos tus objetivos, evaluaremos tu nivel actual y determinaremos si el coaching es lo adecuado para ti. No hay obligación — es simplemente una conversación sobre a dónde quieres llegar.",
+          },
+          {
+            question: "¿Qué pasa en la primera sesión de coaching?",
+            answer:
+              "La primera sesión es un diagnóstico. Identificamos tus brechas específicas de comunicación, entendemos tu contexto profesional y creamos una hoja de ruta priorizada. Te irás con 2-3 acciones inmediatas que puedes empezar a usar esa misma semana.",
+          },
+          {
+            question:
+              "¿Necesito comprometerme con un paquete a largo plazo, o puedo probar una sola sesión?",
+            answer:
+              "Puedes comenzar con una sola sesión a 500 MXN / $25 USD. Muchos clientes prueban una sesión y luego eligen continuar porque ven valor inmediato. No hay presión para comprometerte — los resultados hablan por sí mismos.",
+          },
+          {
+            question: "¿Qué tecnología necesito para las sesiones en línea?",
+            answer:
+              "Solo una computadora o teléfono con cámara, micrófono y conexión a internet estable. Las sesiones se realizan por Google Meet — no se necesita software especial. Un espacio tranquilo donde puedas hablar libremente es ideal.",
+          },
+        ],
+      },
       {
         title: "Inversión y Valor",
         description:

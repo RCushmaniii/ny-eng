@@ -6,7 +6,6 @@ lastmod: "2026-03-03"
 categories:
   - "Inglés para Tecnología"
   - "Carrera & Liderazgo"
-featuredImage: "./images/placeholder-nearshore.jpg"
 imageAlt: "Desarrollador nearshore colaborando con un equipo de ingeniería de EE.UU. por videollamada"
 translations:
   en: "/en/blog/english-nearshore-developers-skills"

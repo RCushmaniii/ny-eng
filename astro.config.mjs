@@ -35,6 +35,9 @@ const blogTranslations = {
   "email-phrases-that-make-you-sound-junior": "/es/blog/frases-email-que-te-hacen-sonar-junior/",
   "how-to-negotiate-in-english-framework": "/es/blog/como-negociar-en-ingles-marco/",
   "executive-communication-playbook": "/es/blog/manual-comunicacion-ejecutiva/",
+  "business-english-mistakes-mexican-professionals": "/es/blog/errores-ingles-negocios-profesionales-mexicanos/",
+  "english-nearshore-developers-skills": "/es/blog/ingles-desarrolladores-nearshore-habilidades/",
+  "lead-meeting-english-phrases": "/es/blog/dirigir-reuniones-ingles-frases/",
 };
 
 // Reverse map (ES slug -> EN path)

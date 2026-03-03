@@ -10,17 +10,19 @@ interface Props {
   url: string;
   authorName?: string;
   categories?: string[];
+  lang?: "en" | "es";
 }
 
-const { 
-  title, 
-  description, 
-  publishDate, 
-  modifiedDate, 
-  image, 
+const {
+  title,
+  description,
+  publishDate,
+  modifiedDate,
+  image,
   url,
   authorName = "Robert Cushman",
-  categories = []
+  categories = [],
+  lang = "en"
 } = Astro.props;
 
 // Get site URL from config for structured data
@@ -35,17 +37,39 @@ const formatDate = (date: Date) => {
   return date instanceof Date ? date.toISOString() : new Date(date).toISOString();
 };
 
-const blogPost = {
+const article = {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "@type": "Article",
   "headline": title,
   "description": description,
   "image": imageUrl,
   "datePublished": formatDate(publishDate),
   "dateModified": modifiedDate ? formatDate(modifiedDate) : formatDate(publishDate),
+  "inLanguage": lang === "es" ? "es-MX" : "en-US",
+  ...(categories.length > 0 ? { "articleSection": categories[0] } : {}),
   "author": {
     "@type": "Person",
-    "name": authorName
+    "@id": `${cleanSiteUrl}/#robert-cushman`,
+    "name": authorName,
+    "url": `${cleanSiteUrl}/en/about/`,
+    "jobTitle": "Business English Coach",
+    "worksFor": {
+      "@type": "Organization",
+      "name": siteConfig.companyName,
+      "url": cleanSiteUrl
+    },
+    "sameAs": [
+      siteConfig.Socials.LinkedIn,
+      siteConfig.Socials.Instagram,
+      siteConfig.Socials.xSocial
+    ].filter(Boolean),
+    "knowsAbout": [
+      "Business English",
+      "Executive Communication",
+      "English Coaching",
+      "Cross-Cultural Communication",
+      "Professional Development"
+    ]
   },
   "publisher": {
     "@type": "Organization",
@@ -62,4 +86,4 @@ const blogPost = {
   ...(categories.length > 0 ? { "keywords": categories.join(", ") } : {})
 };
 ---
-<script type="application/ld+json" is:inline set:html={JSON.stringify(blogPost)}></script>
+<script type="application/ld+json" is:inline set:html={JSON.stringify(article)}></script>

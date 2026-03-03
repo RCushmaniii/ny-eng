@@ -1,0 +1,33 @@
+---
+import FAQSchema from "@components/seo/FAQSchema.astro";
+import type { ServiceFaq } from "@data/service-faqs";
+
+export interface Props {
+  faqs: ServiceFaq[];
+  lang: "en" | "es";
+}
+
+const { faqs, lang } = Astro.props;
+const heading = lang === "es" ? "Preguntas Frecuentes" : "Frequently Asked Questions";
+---
+
+<FAQSchema faqs={faqs} />
+
+<section class="py-16 bg-gray-50">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-gray-900 text-center mb-10">{heading}</h2>
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-left font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+            <span class="pr-4">{faq.question}</span>
+            <span class="flex-shrink-0 text-primary transition-transform group-open:rotate-45 text-xl font-bold">+</span>
+          </summary>
+          <div class="px-6 pb-4 text-gray-600 leading-relaxed">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

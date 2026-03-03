@@ -1,0 +1,114 @@
+---
+import { siteConfig } from "@data/config.ts";
+
+const siteUrl = (siteConfig.siteUrl || 'https://www.nyenglishteacher.com').replace(/\/$/, '');
+
+const professionalService = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": `${siteUrl}/#professional-service`,
+  "name": siteConfig.companyName,
+  "url": siteUrl,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${siteUrl}/images/logos/logo-512.png`,
+    "width": 512,
+    "height": 512
+  },
+  "image": `${siteUrl}/images/logos/new-york-english-og.jpg`,
+  "description": "Professional Business English coaching for executives, tech professionals, and startup founders in Mexico and Latin America. Performance coaching — not ESL — for career-defining communication.",
+  "founder": {
+    "@type": "Person",
+    "@id": `${siteUrl}/#robert-cushman`,
+    "name": "Robert Cushman",
+    "jobTitle": "Business English Coach",
+    "url": `${siteUrl}/en/about/`,
+    "sameAs": [
+      siteConfig.Socials.LinkedIn,
+      siteConfig.Socials.Instagram,
+      siteConfig.Socials.xSocial
+    ].filter(Boolean),
+    "knowsAbout": [
+      "Business English",
+      "Executive Communication",
+      "English Coaching",
+      "Cross-Cultural Communication",
+      "Professional Development"
+    ]
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "Mexico" },
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Country", "name": "Canada" }
+  ],
+  "serviceType": "Business English Coaching",
+  "knowsLanguage": ["en", "es"],
+  "priceRange": "500-6000 MXN",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "English Coaching Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Business & Executive English",
+          "url": `${siteUrl}/en/services/executive-english/`
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "English for Startup Founders",
+          "url": `${siteUrl}/en/services/startup-founders/`
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "English for Tech",
+          "url": `${siteUrl}/en/services/tech-english/`
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "English for Logistics",
+          "url": `${siteUrl}/en/services/logistics-english/`
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "English for Doctors, Lawyers & Professionals",
+          "url": `${siteUrl}/en/services/professional-english/`
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Interview & Presentation Coaching",
+          "url": `${siteUrl}/en/services/high-stakes-english/`
+        }
+      }
+    ]
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "url": "https://wa.link/pk4f97",
+    "contactType": "Customer Service",
+    "availableLanguage": ["English", "Spanish"]
+  },
+  "sameAs": [
+    siteConfig.Socials.LinkedIn,
+    siteConfig.Socials.Instagram,
+    siteConfig.Socials.xSocial
+  ].filter(Boolean)
+};
+---
+<script type="application/ld+json" is:inline set:html={JSON.stringify(professionalService)}></script>
