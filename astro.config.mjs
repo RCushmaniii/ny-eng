@@ -85,6 +85,8 @@ export default defineConfig({
     "/quiz": "/en/quiz/it-services/",
     "/en/quiz": "/en/quiz/it-services/",
     "/es/quiz": "/es/quiz/it-services/",
+    "/en/quiz/start": "/en/quiz/it-services/",
+    "/es/quiz/start": "/es/quiz/it-services/",
 
     // Redirect English paths on Spanish side to proper Spanish URLs
     "/es/testimonials": "/es/testimonios/",

@@ -12,7 +12,7 @@ translations:
   es: "/es/blog/como-negociar-en-ingles-marco"
 publish: true
 seo:
-  title: "How to Negotiate in English as a Non-Native Speaker | 5-Step Framework"
+  title: "How to Negotiate in English | 5-Step Framework"
   description: "A practical negotiation framework for non-native English speakers. Learn exact phrases, structures, and tactics that work under pressure."
 ---
 

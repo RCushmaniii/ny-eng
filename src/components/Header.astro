@@ -411,8 +411,8 @@ const isCurrentPage = (link: string | undefined) => {
 
     if (!isOnQuizPage) return; // Not on quiz page, allow normal navigation
 
-    // Don't show warning on start page - user hasn't started yet
-    if (currentPath.includes("/quiz/start")) return;
+    // Don't show warning on quiz landing pages - user hasn't started yet
+    if (currentPath.match(/\/quiz\/[^/]+\/?$/) && !currentPath.includes("/question/")) return;
 
     const target = e.currentTarget as HTMLAnchorElement;
     const targetLang = target.getAttribute("data-lang");
@@ -436,9 +436,9 @@ const isCurrentPage = (link: string | undefined) => {
       sessionStorage.removeItem("submissionId");
       sessionStorage.removeItem("leadData");
 
-      // Redirect to start page in new language
+      // Redirect to quiz landing in new language
       const startUrl =
-        targetLang === "es" ? "/es/quiz/start/" : "/en/quiz/start/";
+        targetLang === "es" ? "/es/quiz/it-services/" : "/en/quiz/it-services/";
       window.location.href = startUrl;
     }
   }

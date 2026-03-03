@@ -67,8 +67,8 @@ export const testimonials: Testimonial[] = [
     slug: "hugo-blum-100-ladrillos",
     headline: "From Founder to CEO: Leading with Confidence in English",
     avatarSize: "md",
-    link: "/es/servicios/ingles-para-fundadores-de-startups/",
-    linkText: "👉 Coaching de Inglés para Fundadores y CEOs de Startups",
+    link: "/en/services/startup-founders/",
+    linkText: "👉 English Coaching for Startup Founders & CEOs",
 
     status: "published",
   },

@@ -9,13 +9,13 @@ categories:
   - "Comunicación de Alto Impacto"
   - "Carrera y Liderazgo"
 imageAlt: "Ejecutivo senior liderando con confianza una presentación en una sala de juntas en inglés"
-heroVideoPoster: "/images/blog/playbook/en/video-poster.jpg"
+heroVideoPoster: "/images/blog/playbook/en/video-poster.webp"
 translations:
   en: "/en/blog/executive-communication-playbook"
 publish: true
 seo:
-  title: "El Manual de Comunicación Ejecutiva | 7 Pilares del Inglés para Líderes"
-  description: "La guía definitiva de comunicación ejecutiva en inglés. 7 pilares que transforman a hablantes fluidos en líderes que imponen influencia, negocian con poder e inspiran equipos."
+  title: "Manual de Comunicación Ejecutiva | 7 Pilares Clave"
+  description: "Guía definitiva de comunicación ejecutiva en inglés. 7 pilares que transforman a hablantes fluidos en líderes que imponen influencia e inspiran equipos."
 ---
 
 Eres brillante en tu idioma nativo.

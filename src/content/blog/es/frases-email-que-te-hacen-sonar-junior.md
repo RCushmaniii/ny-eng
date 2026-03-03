@@ -12,7 +12,7 @@ translations:
   en: "/en/blog/email-phrases-that-make-you-sound-junior"
 publish: true
 seo:
-  title: "7 Frases de Email Que Te Hacen Sonar Junior | Corrígelas Hoy"
+  title: "7 Frases de Email Que Te Hacen Sonar Junior"
   description: "Deja de minar tu autoridad en emails. Aprende 7 frases que te hacen sonar junior y exactamente qué escriben los ejecutivos en su lugar."
 ---
 

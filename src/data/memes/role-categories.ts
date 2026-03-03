@@ -11,9 +11,9 @@ export const roleCategoryConfigs: RoleCategoryConfig[] = [
     descriptionEs:
       "Memes de comunicación ejecutiva para ingenieros de software que navegan code reviews, standups, discusiones de arquitectura y conversaciones de carrera en inglés.",
     seoDescriptionEn:
-      "Funny, relatable English memes for software engineers — from code review pushback to explaining technical debt to non-technical stakeholders. Learn executive communication through humor.",
+      "Funny English memes for software engineers — from code review pushback to explaining technical debt. Learn executive communication through humor.",
     seoDescriptionEs:
-      "Memes divertidos e identificables de inglés para ingenieros de software — desde pushback en code reviews hasta explicar deuda técnica a stakeholders no técnicos. Aprende comunicación ejecutiva con humor.",
+      "Memes divertidos de inglés para ingenieros de software — desde pushback en code reviews hasta explicar deuda técnica. Aprende comunicación ejecutiva con humor.",
   },
   {
     slug: "project-manager",
@@ -24,9 +24,9 @@ export const roleCategoryConfigs: RoleCategoryConfig[] = [
     descriptionEs:
       "Memes de comunicación ejecutiva para gerentes de proyecto manejando scope creep, actualizaciones a stakeholders, negociaciones de recursos y alineación cross-funcional en inglés.",
     seoDescriptionEn:
-      "Funny, relatable English memes for project managers — from scope creep battles to status updates nobody wants to give. Master executive English through workplace humor.",
+      "Funny English memes for project managers — from scope creep battles to status updates nobody wants to give. Master executive English through humor.",
     seoDescriptionEs:
-      "Memes divertidos e identificables de inglés para gerentes de proyecto — desde batallas de scope creep hasta actualizaciones de estado que nadie quiere dar. Domina el inglés ejecutivo con humor.",
+      "Memes divertidos de inglés para gerentes de proyecto — desde batallas de scope creep hasta actualizaciones que nadie quiere dar. Domina el inglés ejecutivo con humor.",
   },
   {
     slug: "it-manager",
@@ -37,9 +37,9 @@ export const roleCategoryConfigs: RoleCategoryConfig[] = [
     descriptionEs:
       "Memes de comunicación ejecutiva para gerentes de IT manejando incidentes de seguridad, negociaciones con proveedores, gestión del cambio y traduciendo logros de IT al lenguaje de negocios.",
     seoDescriptionEn:
-      "Funny, relatable English memes for IT managers — from explaining breaches without causing panic to making the CFO understand why servers matter. Executive English through tech humor.",
+      "Funny English memes for IT managers — from explaining breaches without causing panic to making the CFO understand why servers matter.",
     seoDescriptionEs:
-      "Memes divertidos e identificables de inglés para gerentes de IT — desde explicar brechas sin causar pánico hasta hacer que el CFO entienda por qué importan los servidores. Inglés ejecutivo con humor tech.",
+      "Memes divertidos de inglés para gerentes de IT — desde explicar brechas sin causar pánico hasta hacer que el CFO entienda por qué importan los servidores.",
   },
   {
     slug: "sales-account-executive",
@@ -50,9 +50,9 @@ export const roleCategoryConfigs: RoleCategoryConfig[] = [
     descriptionEs:
       "Memes de comunicación ejecutiva para ejecutivos de ventas y cuentas dominando outreach en frío, manejo de objeciones, precisión de pronósticos y propuestas de alianzas en inglés.",
     seoDescriptionEn:
-      "Funny, relatable English memes for sales professionals — from cold outreach that actually works to avoiding the discount trap. Sharpen your executive English through sales humor.",
+      "Funny English memes for sales professionals — from cold outreach that works to avoiding the discount trap. Sharpen your executive English through humor.",
     seoDescriptionEs:
-      "Memes divertidos e identificables de inglés para profesionales de ventas — desde outreach en frío que realmente funciona hasta evitar la trampa del descuento. Mejora tu inglés ejecutivo con humor de ventas.",
+      "Memes divertidos de inglés para profesionales de ventas — desde outreach en frío que funciona hasta evitar la trampa del descuento. Mejora tu inglés ejecutivo.",
   },
   {
     slug: "executive-csuite",
@@ -63,9 +63,9 @@ export const roleCategoryConfigs: RoleCategoryConfig[] = [
     descriptionEs:
       "Memes de comunicación ejecutiva para líderes C-suite presentando ante juntas directivas, manejando crisis, comunicando estrategia y conduciendo entrevistas con medios en inglés.",
     seoDescriptionEn:
-      "Funny, relatable English memes for C-suite executives — from board presentations to crisis communication to media interviews. Master the language of leadership through humor.",
+      "Funny English memes for C-suite executives — from board presentations to crisis communication. Master the language of leadership through humor.",
     seoDescriptionEs:
-      "Memes divertidos e identificables de inglés para ejecutivos C-suite — desde presentaciones a juntas directivas hasta comunicación de crisis y entrevistas con medios. Domina el lenguaje del liderazgo con humor.",
+      "Memes divertidos de inglés para ejecutivos C-suite — desde presentaciones a juntas directivas hasta comunicación de crisis. Domina el liderazgo con humor.",
   },
   {
     slug: "startup-founder",
@@ -76,9 +76,9 @@ export const roleCategoryConfigs: RoleCategoryConfig[] = [
     descriptionEs:
       "Memes de comunicación ejecutiva para fundadores de startups navegando pitches a inversores, dinámicas de cofundadores, conversaciones de contratación y lanzamientos de producto en inglés.",
     seoDescriptionEn:
-      "Funny, relatable English memes for startup founders — from pitch day pronunciation disasters to explaining your burn rate with a straight face. Executive English for the entrepreneurial journey.",
+      "Funny English memes for startup founders — from pitch day pronunciation disasters to explaining your burn rate. Executive English for entrepreneurs.",
     seoDescriptionEs:
-      "Memes divertidos e identificables de inglés para fundadores de startups — desde desastres de pronunciación en el pitch hasta explicar tu burn rate con cara seria. Inglés ejecutivo para el viaje emprendedor.",
+      "Memes divertidos de inglés para fundadores de startups — desde desastres de pronunciación en el pitch hasta explicar tu burn rate. Inglés ejecutivo para emprendedores.",
   },
   {
     slug: "logistics-supply-chain",
@@ -89,9 +89,9 @@ export const roleCategoryConfigs: RoleCategoryConfig[] = [
     descriptionEs:
       "Memes de comunicación ejecutiva para profesionales de logística y cadena de suministro manejando temas aduanales, negociaciones con transportistas, notificaciones de retrasos y coordinación transfronteriza en inglés.",
     seoDescriptionEn:
-      "Funny, relatable English memes for logistics and supply chain managers — from customs paperwork nightmares to explaining 'slight delays' that are actually catastrophic. Executive English for global operations.",
+      "Funny English memes for logistics managers — from customs paperwork nightmares to explaining 'slight delays.' Executive English for global operations.",
     seoDescriptionEs:
-      "Memes divertidos e identificables de inglés para gerentes de logística y cadena de suministro — desde pesadillas de documentación aduanal hasta explicar 'leves retrasos' que en realidad son catastróficos. Inglés ejecutivo para operaciones globales.",
+      "Memes divertidos de inglés para gerentes de logística — desde pesadillas de documentación aduanal hasta explicar 'leves retrasos.' Inglés ejecutivo para operaciones.",
   },
   {
     slug: "hr-officer",
@@ -102,9 +102,9 @@ export const roleCategoryConfigs: RoleCategoryConfig[] = [
     descriptionEs:
       "Memes de comunicación ejecutiva para responsables de RRHH manejando iniciativas de capacitación, conversaciones de desempeño, relaciones con empleados y desarrollo organizacional en inglés.",
     seoDescriptionEn:
-      "Funny, relatable English memes for HR officers — from pitching training programs to navigating tough performance conversations in your second language.",
+      "Funny English memes for HR officers — from pitching training programs to navigating tough performance conversations in your second language.",
     seoDescriptionEs:
-      "Memes divertidos e identificables de inglés para responsables de RRHH — desde presentar programas de capacitación hasta navegar conversaciones difíciles de desempeño en tu segundo idioma.",
+      "Memes divertidos de inglés para responsables de RRHH — desde presentar programas de capacitación hasta navegar conversaciones difíciles de desempeño.",
   },
   {
     slug: "consultant",
@@ -115,9 +115,9 @@ export const roleCategoryConfigs: RoleCategoryConfig[] = [
     descriptionEs:
       "Memes de comunicación ejecutiva para consultores y profesionales de servicios manejando descubrimiento con clientes, presentaciones de entregables, gestión de alcance y liderazgo de pensamiento en inglés.",
     seoDescriptionEn:
-      "Funny, relatable English memes for consultants — from the 2x2 matrix that explains everything to scope creep disguised as 'one more question.' Executive English for the advisory world.",
+      "Funny English memes for consultants — from the 2x2 matrix that explains everything to scope creep disguised as 'one more question.' Executive English.",
     seoDescriptionEs:
-      "Memes divertidos e identificables de inglés para consultores — desde la matriz 2x2 que explica todo hasta el scope creep disfrazado de 'una pregunta más.' Inglés ejecutivo para el mundo de la consultoría.",
+      "Memes divertidos de inglés para consultores — desde la matriz 2x2 que explica todo hasta el scope creep disfrazado de 'una pregunta más.' Inglés ejecutivo.",
   },
   {
     slug: "product-manager",
@@ -128,9 +128,9 @@ export const roleCategoryConfigs: RoleCategoryConfig[] = [
     descriptionEs:
       "Memes de comunicación ejecutiva para product managers presentando roadmaps, priorizando funcionalidades, alineando stakeholders y comunicando trade-offs en inglés.",
     seoDescriptionEn:
-      "Funny, relatable English memes for product managers — from roadmap presentations that satisfy nobody to saying 'no' to features without making enemies. Executive English for product leadership.",
+      "Funny English memes for product managers — from roadmap presentations that satisfy nobody to saying 'no' without making enemies. Executive English.",
     seoDescriptionEs:
-      "Memes divertidos e identificables de inglés para product managers — desde presentaciones de roadmap que no satisfacen a nadie hasta decir 'no' a funcionalidades sin crear enemigos. Inglés ejecutivo para liderazgo de producto.",
+      "Memes divertidos de inglés para product managers — desde presentaciones de roadmap que no satisfacen a nadie hasta decir 'no' sin crear enemigos.",
   },
 ];
 

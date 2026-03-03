@@ -12,7 +12,7 @@ translations:
   en: "/en/blog/how-to-negotiate-in-english-framework"
 publish: true
 seo:
-  title: "Cómo Negociar en Inglés Como Hablante No Nativo | Marco de 5 Pasos"
+  title: "Cómo Negociar en Inglés | Marco Práctico de 5 Pasos"
   description: "Un marco práctico de negociación para hablantes no nativos de inglés. Aprende frases exactas, estructuras y tácticas que funcionan bajo presión."
 ---
 
