@@ -7,6 +7,10 @@ import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
 import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
 import CtaSection from "@components/sections/CtaSection.astro";
+import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
+import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
+import Breadcrumbs from "@components/ui/Breadcrumbs.astro";
+import { serviceFaqs } from "@data/service-faqs";
 
 // Import services data
 import { services } from "@data/services";
@@ -101,6 +105,8 @@ const ctaContent = {
 
 // Translation slug for English version
 const translationSlug = "interview-prep";
+
+const faqs = serviceFaqs["interview-prep"]?.es || [];
 ---
 
 <Base
@@ -144,4 +150,11 @@ const translationSlug = "interview-prep";
 
   <!-- Final CTA -->
   <CtaSection content={ctaContent} />
+
+  <BreadcrumbSchema items={[
+    { name: "Inicio", url: "https://www.nyenglishteacher.com/es/" },
+    { name: "Servicios", url: "https://www.nyenglishteacher.com/es/servicios/" },
+    { name: "Preparación para Entrevistas", url: "https://www.nyenglishteacher.com/es/servicios/preparacion-para-entrevistas/" }
+  ]} />
+  <ServiceFAQ faqs={faqs} lang="es" />
 </Base>

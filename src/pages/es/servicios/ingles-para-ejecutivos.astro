@@ -7,6 +7,10 @@ import Challenge from "@components/sections/Challenge.astro";
 import MethodologySection from "@components/sections/MethodologySection.astro";
 import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro";
 import CtaSection from "@components/sections/CtaSection.astro";
+import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
+import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
+import Breadcrumbs from "@components/ui/Breadcrumbs.astro";
+import { serviceFaqs } from "@data/service-faqs";
 
 // Import services data
 import { services } from "@data/services";
@@ -106,6 +110,8 @@ const ctaContent = {
     "Crear una hoja de ruta para desarrollar tu voz de liderazgo global",
   ],
 };
+
+const faqs = serviceFaqs["executive-english"]?.es || [];
 ---
 
 <Base
@@ -150,4 +156,11 @@ const ctaContent = {
 
   <!-- Final CTA -->
   <CtaSection content={ctaContent} />
+
+  <BreadcrumbSchema items={[
+    { name: "Inicio", url: "https://www.nyenglishteacher.com/es/" },
+    { name: "Servicios", url: "https://www.nyenglishteacher.com/es/servicios/" },
+    { name: "Inglés para Ejecutivos", url: "https://www.nyenglishteacher.com/es/servicios/ingles-para-ejecutivos/" }
+  ]} />
+  <ServiceFAQ faqs={faqs} lang="es" />
 </Base>
