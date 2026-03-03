@@ -1,6 +1,6 @@
 ---
 title: "El Costo Real del Inglés Débil: Contratos y Promociones Perdidas"
-excerpt: "El inglés deficiente no es solo un inconveniente—crea pérdidas de ingresos medibles, retrabajo y techos profesionales. Así es como sucede y qué hacer al respecto."
+excerpt: "El inglés deficiente no es solo un inconveniente—crea pérdidas de ingresos, retrabajo y techos profesionales. Así es como sucede y qué hacer."
 publishDate: "2025-11-30"
 lastmod: "2025-11-30"
 categories:

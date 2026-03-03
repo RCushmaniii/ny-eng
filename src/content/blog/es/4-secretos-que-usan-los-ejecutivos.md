@@ -1,6 +1,6 @@
 ---
 title: "4 secretos para dominar el hablar improvisado en inglés"
-excerpt: "¿Te pone nervioso tener que hablar en situaciones espontáneas? Descubre cuatro estrategias comprobadas que usan los ejecutivos para comunicarse claramente y con seguridad sin preparación previa."
+excerpt: "¿Te pone nervioso hablar en situaciones espontáneas? Cuatro estrategias que usan los ejecutivos para comunicarse con seguridad sin preparación previa."
 publishDate: "2025-06-04"
 lastmod: "2025-12-07"
 categories:

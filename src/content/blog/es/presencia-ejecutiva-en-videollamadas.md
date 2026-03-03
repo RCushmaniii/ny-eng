@@ -1,6 +1,6 @@
 ---
 title: "Presencia ejecutiva en videollamadas: 7 hábitos clave"
-excerpt: "¿Te cuesta sonar seguro y creíble en Zoom o Teams? Aplica estos siete hábitos ejecutivos para proyectar autoridad, hablar con claridad y dirigir reuniones de alto impacto en inglés."
+excerpt: "¿Te cuesta sonar seguro y creíble en Zoom o Teams? Siete hábitos ejecutivos para proyectar autoridad y dirigir reuniones de alto impacto en inglés."
 publishDate: "2025-09-04"
 lastmod: "2025-12-07"
 categories:

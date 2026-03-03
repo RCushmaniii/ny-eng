@@ -1,6 +1,6 @@
 ---
 title: "5 estrategias para ganar confianza al hablar inglés"
-excerpt: "Desbloquea tu confianza en el inglés de negocios. Descubre 5 estrategias prácticas para hablar con claridad en reuniones y entrevistas, impresionar a los clientes y avanzar en tu carrera."
+excerpt: "Desbloquea tu confianza en el inglés de negocios. 5 estrategias prácticas para hablar con claridad en reuniones, impresionar clientes y avanzar tu carrera."
 publishDate: "2025-04-10"
 lastmod: "2025-12-07"
 categories:
