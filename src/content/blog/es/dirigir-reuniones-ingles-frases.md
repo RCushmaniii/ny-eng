@@ -6,6 +6,7 @@ lastmod: "2026-03-03"
 categories:
   - "Inglés de Negocios"
   - "Comunicación de Alto Impacto"
+featuredImage: "./images/meeting-phrases.jpg"
 imageAlt: "Profesional dirigiendo una reunión de negocios con confianza"
 translations:
   en: "/en/blog/lead-meeting-english-phrases/"

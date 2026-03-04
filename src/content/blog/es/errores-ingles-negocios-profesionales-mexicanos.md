@@ -6,6 +6,7 @@ lastmod: "2026-03-03"
 categories:
   - "Inglés de Negocios"
   - "Inglés Ejecutivo"
+featuredImage: "./images/10-mistakes.jpg"
 imageAlt: "Profesional mexicano presentando con confianza en una junta de negocios usando inglés correcto"
 translations:
   en: "/en/blog/business-english-mistakes-mexican-professionals/"

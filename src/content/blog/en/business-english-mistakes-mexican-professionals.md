@@ -6,6 +6,7 @@ lastmod: "2026-03-03"
 categories:
   - "Business English"
   - "Executive English"
+featuredImage: "./images/10-mistakes.jpg"
 imageAlt: "Mexican professional confidently presenting in a business meeting using correct English"
 translations:
   es: "/es/blog/errores-ingles-negocios-profesionales-mexicanos/"
