@@ -13,7 +13,7 @@ Professional English coaching and training platform for Robert Cushman's "NY Eng
 - **Language**: TypeScript 5.9 (strict)
 - **Database**: Neon PostgreSQL (via Vercel integration)
 - **APIs**: Google Calendar, Formspree, Resend
-- **Hosting**: Hostinger (static) + Cloudflare Workers (booking API)
+- **Hosting**: Vercel (static + serverless functions) + Cloudflare Workers (booking API)
 - **Content**: Markdown via Astro Content Collections
 
 ## Directory Structure
@@ -164,3 +164,49 @@ Cloudflare Worker handles Google Calendar integration.
 - Use `tkey` for automatic hreflang generation
 - Blog posts need `translations` in frontmatter
 - JSON-LD components in `src/components/seo/`
+
+## SEO & Marketing Automation (MANDATORY)
+
+Claude MUST execute these steps automatically. Never ask Robert to run scripts or do manual SEO work.
+
+### After Publishing Any New Content (Blog Post, Page, etc.)
+
+1. **Build & Deploy**: Build, commit, push — wait for Vercel deploy
+2. **Submit to Google**: Run `node scripts/seo/gsc-submit-urls.mjs --sitemap` to resubmit sitemap
+3. **Submit to Bing/Yandex/DuckDuckGo**: Run `node scripts/seo/indexnow-submit.mjs --url <new-url>` for each new URL
+4. **Update sitemap config**: If new blog post, add EN↔ES translation mapping to `astro.config.mjs` `blogTranslations` object
+5. **Verify structured data**: Confirm JSON-LD schemas are present (Article, BreadcrumbList, FAQ if applicable)
+
+### After Publishing a New Blog Post (Additional Steps)
+
+6. **Generate social media content** for the new post:
+   - **LinkedIn post**: Professional tone, 1-3 paragraphs, include key insight from the article, end with CTA to read the full post
+   - **Twitter/X thread**: 3-5 tweets, hook + key points + CTA, use relevant hashtags
+   - **Facebook post**: Conversational tone, 1-2 paragraphs with link
+   - Output these in a markdown file at `content-marketing/<slug>-social.md` for Robert to review and post (until social media APIs are integrated)
+7. **Update internal links**: Check if the new post should be linked from existing related posts or pages
+
+### CSP Maintenance
+
+When adding ANY new external service or API endpoint that the browser calls via fetch/XHR:
+- Add the domain to `connect-src` in BOTH `vercel.json` AND `public/.htaccess`
+- Current allowed domains: `formspree.io`, `plain-mode-42c4.rcushmaniii.workers.dev`, `ny-ai-chatbot.vercel.app`, `ny-eng-api.netlify.app`, `ny-eng.vercel.app`, `www.google-analytics.com`
+
+### SEO Scripts Reference
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/seo/gsc-client.mjs` | Shared GSC auth client |
+| `scripts/seo/gsc-performance.mjs` | Pull search performance data (clicks, impressions, CTR, position) |
+| `scripts/seo/gsc-submit-urls.mjs` | Submit sitemap or individual URLs to Google |
+| `scripts/seo/gsc-index-status.mjs` | Check URL index status via Inspection API |
+| `scripts/seo/indexnow-submit.mjs` | Submit URLs to Bing/Yandex/DuckDuckGo via IndexNow |
+
+### SEO Credentials
+
+- **Google Cloud Project**: `seo-automation-489217` (project number: 645749861804)
+- **Service Account**: `seo-api-access@seo-automation-489217.iam.gserviceaccount.com`
+- **Credentials file**: `scripts/seo/gsc-credentials.json` (gitignored, NEVER commit)
+- **IndexNow key**: `68c9a0e54a33fa63d4e4384ebe910e71`
+- **GSC Property**: `sc-domain:nyenglishteacher.com`
+- **Hosting**: Vercel (NOT Hostinger — CLAUDE.md tech stack section is outdated on this)
