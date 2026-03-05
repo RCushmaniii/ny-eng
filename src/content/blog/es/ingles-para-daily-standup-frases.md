@@ -40,11 +40,11 @@ Antes de entrar a las frases, hablemos del elefante en la sala. Si estudiaste in
 
 | Inglés de Certificación | Inglés Real de Standup |
 |------------------------|----------------------|
-| "I would like to inform the team that I completed the task assigned to me." | "I finished the auth endpoint and opened a PR." |
-| "I am currently experiencing a difficulty with the database." | "I'm blocked on the DB migration—need Maria to review the schema change." |
-| "I do not have any impediments at this time." | "No blockers, but I want to flag something after standup." |
-| "I plan to continue my work on the same task." | "I'm picking up the rate limiter next. Should have a PR up by EOD." |
-| "I respectfully suggest that we might consider discussing this matter." | "Can we take this offline? I think it affects the sprint goal." |
+| "I would like to inform the team that I completed the task assigned to me." | <span class="speak-en">"I finished the auth endpoint and opened a PR."</span> |
+| "I am currently experiencing a difficulty with the database." | <span class="speak-en">"I'm blocked on the DB migration—need Maria to review the schema change."</span> |
+| "I do not have any impediments at this time." | <span class="speak-en">"No blockers, but I want to flag something after standup."</span> |
+| "I plan to continue my work on the same task." | <span class="speak-en">"I'm picking up the rate limiter next. Should have a PR up by EOD."</span> |
+| "I respectfully suggest that we might consider discussing this matter." | <span class="speak-en">"Can we take this offline? I think it affects the sprint goal."</span> |
 
 Nota el patrón: **el inglés de certificación es más largo, más formal y menos específico.** El inglés real de standup es corto, directo y cargado de información accionable. Cada palabra gana su lugar.
 
@@ -74,18 +74,18 @@ La mayoría de los desarrolladores tratan esto como un checklist para sobrevivir
 
 **Más templates que puedes copiar:**
 
-- "I spent yesterday debugging the timeout issue on the checkout flow. Root cause was a missing index on the orders table. Fix is in PR #287—one-line change, low risk."
-- "I paired with Diego on the auth refactor. We split the work—I took the middleware, he took the token service. My half is done; waiting on his PR to integrate."
-- "I reviewed three PRs yesterday and left feedback on all of them. Two are approved. The third needs a change to the error handling—I left a detailed comment."
-- "I got pulled into the staging incident for about two hours. The rest of the day I continued on the search feature. I'm at about 70%."
+- <span class="speak-en">"I spent yesterday debugging the timeout issue on the checkout flow. Root cause was a missing index on the orders table. Fix is in PR #287—one-line change, low risk."</span>
+- <span class="speak-en">"I paired with Diego on the auth refactor. We split the work—I took the middleware, he took the token service. My half is done; waiting on his PR to integrate."</span>
+- <span class="speak-en">"I reviewed three PRs yesterday and left feedback on all of them. Two are approved. The third needs a change to the error handling—I left a detailed comment."</span>
+- <span class="speak-en">"I got pulled into the staging incident for about two hours. The rest of the day I continued on the search feature. I'm at about 70%."</span>
 
 **Vocabulario clave que señala seniority:**
 
-- "opened a PR" (no "I made a pull request")
-- "ready for review" (proactivo—le estás diciendo al equipo qué sigue)
-- "root cause was..." (demuestra pensamiento analítico)
-- "low risk" o "high risk" (demuestra que piensas en el impacto)
-- "paired with [name]" (demuestra colaboración)
+- <span class="speak-en">"opened a PR"</span> (no "I made a pull request")
+- <span class="speak-en">"ready for review"</span> (proactivo—le estás diciendo al equipo qué sigue)
+- <span class="speak-en">"root cause was"</span> (demuestra pensamiento analítico)
+- <span class="speak-en">"low risk" o "high risk"</span> (demuestra que piensas en el impacto)
+- <span class="speak-en">"paired with someone"</span> (demuestra colaboración)
 
 ---
 
@@ -105,18 +105,18 @@ La mayoría de los desarrolladores tratan esto como un checklist para sobrevivir
 
 **Más templates:**
 
-- "I'm picking up JIRA-456 today—the user notification service. I'll start with the email templates and work toward the API layer."
-- "Today I need to address the review feedback on PR #342. After that, I'll move to the dashboard filters that were in our sprint backlog."
-- "I have two things today: finishing the unit tests for the payment module, and a design review with the frontend team at 2 PM. I'll focus on tests in the morning."
-- "I'm going to spike on the caching approach for the product catalog. Goal is to have a recommendation by end of day so we can discuss it in tomorrow's standup."
+- <span class="speak-en">"I'm picking up JIRA-456 today—the user notification service. I'll start with the email templates and work toward the API layer."</span>
+- <span class="speak-en">"Today I need to address the review feedback on PR #342. After that, I'll move to the dashboard filters that were in our sprint backlog."</span>
+- <span class="speak-en">"I have two things today: finishing the unit tests for the payment module, and a design review with the frontend team at 2 PM. I'll focus on tests in the morning."</span>
+- <span class="speak-en">"I'm going to spike on the caching approach for the product catalog. Goal is to have a recommendation by end of day so we can discuss it in tomorrow's standup."</span>
 
 **Vocabulario clave:**
 
-- "picking up" (forma natural de decir que empiezas un ticket nuevo)
-- "spike on" (investigación corta para explorar un enfoque técnico)
-- "scaffold" (armar la estructura básica)
-- "address the review feedback" (no "fix the things the reviewer said")
-- "by end of day" o "by EOD" (establece una expectativa clara)
+- <span class="speak-en">"picking up"</span> (forma natural de decir que empiezas un ticket nuevo)
+- <span class="speak-en">"spike on"</span> (investigación corta para explorar un enfoque técnico)
+- <span class="speak-en">"scaffold"</span> (armar la estructura básica)
+- <span class="speak-en">"address the review feedback"</span> (no "fix the things the reviewer said")
+- <span class="speak-en">"by end of day" o "by EOD"</span> (establece una expectativa clara)
 
 ---
 
@@ -140,17 +140,17 @@ La mayoría de los desarrolladores tratan esto como un checklist para sobrevivir
 
 **Más templates:**
 
-- "I'm soft-blocked—I can make progress, but I need a decision on whether we're using Redis or Memcached for the session store. Can we resolve that today?"
-- "No blockers on my side, but heads up: the feature I'm building depends on Ana's PR #301. If that doesn't merge today, I'll need to rebase and there might be conflicts."
-- "I have a question about the acceptance criteria on JIRA-789. The ticket says 'support multiple currencies' but doesn't specify which ones. I'm going to assume USD and MXN for now and document it in the PR."
-- "Blocked on environment access. I submitted the VPN request on Monday and haven't heard back. Can someone escalate?"
+- <span class="speak-en">"I'm soft-blocked—I can make progress, but I need a decision on whether we're using Redis or Memcached for the session store. Can we resolve that today?"</span>
+- <span class="speak-en">"No blockers on my side, but heads up: the feature I'm building depends on Ana's PR #301. If that doesn't merge today, I'll need to rebase and there might be conflicts."</span>
+- <span class="speak-en">"I have a question about the acceptance criteria on JIRA-789. The ticket says support multiple currencies but doesn't specify which ones. I'm going to assume USD and MXN for now and document it in the PR."</span>
+- <span class="speak-en">"Blocked on environment access. I submitted the VPN request on Monday and haven't heard back. Can someone escalate?"</span>
 
 **Frases que demuestran pensamiento de nivel senior:**
 
-- "soft-blocked" (puedes seguir avanzando pero algo impide el progreso completo)
-- "flag something" (comunicación proactiva de riesgos)
-- "heads up" (alertar al equipo sin pedir acción)
-- "I'm going to assume X and document it" (muestra iniciativa y trazabilidad)
+- <span class="speak-en">"soft-blocked"</span> (puedes seguir avanzando pero algo impide el progreso completo)
+- <span class="speak-en">"flag something"</span> (comunicación proactiva de riesgos)
+- <span class="speak-en">"heads up"</span> (alertar al equipo sin pedir acción)
+- <span class="speak-en">"I'm going to assume X and document it"</span> (muestra iniciativa y trazabilidad)
 
 ---
 
@@ -166,21 +166,21 @@ Sprint planning es donde muchos desarrolladores nearshore se quedan callados. El
 
 **Fuerte:**
 
-- "Before we estimate this, I have a question about the scope. Does 'user notifications' include push notifications, or just email?"
-- "I want to make sure I understand the acceptance criteria. When the ticket says 'real-time,' are we talking WebSocket, or is polling at a 5-second interval acceptable?"
-- "This ticket depends on the new API from the partner team. Do we have a confirmed delivery date, or should we plan for a fallback?"
+- <span class="speak-en">"Before we estimate this, I have a question about the scope. Does user notifications include push notifications, or just email?"</span>
+- <span class="speak-en">"I want to make sure I understand the acceptance criteria. When the ticket says real-time, are we talking WebSocket, or is polling at a 5-second interval acceptable?"</span>
+- <span class="speak-en">"This ticket depends on the new API from the partner team. Do we have a confirmed delivery date, or should we plan for a fallback?"</span>
 
 ### Estimar y Negociar Alcance
 
-- "I'd estimate this at 5 points, but that assumes the database schema is already migrated. If it's not, add 3 points for the migration and testing."
-- "This looks like an 8-pointer to me. Can we break it into two stories? The API layer is independent of the UI, and shipping the API first unblocks the mobile team."
-- "I think we're underestimating this. Last sprint, a similar ticket took us two extra days because of the edge cases in the validation logic. I'd add a buffer."
+- <span class="speak-en">"I'd estimate this at 5 points, but that assumes the database schema is already migrated. If it's not, add 3 points for the migration and testing."</span>
+- <span class="speak-en">"This looks like an 8-pointer to me. Can we break it into two stories? The API layer is independent of the UI, and shipping the API first unblocks the mobile team."</span>
+- <span class="speak-en">"I think we're underestimating this. Last sprint, a similar ticket took us two extra days because of the edge cases in the validation logic. I'd add a buffer."</span>
 
 ### Tomar Ownership y Ser Voluntario
 
-- "I'd like to pick this one up. I touched this module last sprint and I'm familiar with the codebase."
-- "I can take this, but I'll need a pairing session with someone who knows the legacy payment system. Diego, are you available Wednesday?"
-- "I'll own the backend for this feature. Who's handling the frontend? We should align on the API contract before we start."
+- <span class="speak-en">"I'd like to pick this one up. I touched this module last sprint and I'm familiar with the codebase."</span>
+- <span class="speak-en">"I can take this, but I'll need a pairing session with someone who knows the legacy payment system. Diego, are you available Wednesday?"</span>
+- <span class="speak-en">"I'll own the backend for this feature. Who's handling the frontend? We should align on the API contract before we start."</span>
 
 La habilidad de hablar así en planning es exactamente lo que separa a un desarrollador que le renuevan contrato de uno que reemplazan. Si quieres construir estas habilidades de forma sistemática, el [Coaching de Inglés para Tecnología](/es/servicios/ingles-para-tecnologia/) se enfoca específicamente en los patrones de comunicación que los equipos de EE.UU. esperan en ceremonias de Scrum.
 
@@ -196,9 +196,9 @@ El truco está en el encuadre. No te estás quejando—estás contribuyendo. As�
 
 ### Lo que Funcionó Bien
 
-- "One thing that worked really well this sprint was the way we broke down the stories. Having smaller PRs made reviews faster and reduced merge conflicts."
-- "I want to call out the pairing sessions we did on Thursday. That saved me at least a day on the caching implementation."
-- "The new PR template is great. It's helping me structure my descriptions better, and I've noticed reviews are coming back faster."
+- <span class="speak-en">"One thing that worked really well this sprint was the way we broke down the stories. Having smaller PRs made reviews faster and reduced merge conflicts."</span>
+- <span class="speak-en">"I want to call out the pairing sessions we did on Thursday. That saved me at least a day on the caching implementation."</span>
+- <span class="speak-en">"The new PR template is great. It's helping me structure my descriptions better, and I've noticed reviews are coming back faster."</span>
 
 ### Lo que Se Puede Mejorar
 
@@ -212,15 +212,15 @@ El truco está en el encuadre. No te estás quejando—estás contribuyendo. As�
 
 Más templates:
 
-- "One thing that slowed me down was context-switching between three different tickets. I think I'd be more productive if I could focus on one feature end-to-end. Is that something we can try next sprint?"
-- "I think our estimation was off on the notification feature. We estimated 5 points but it took 13. The gap was in the edge cases we didn't discuss during planning. Could we add a 'risk check' step to our estimation process?"
-- "The handoff between frontend and backend wasn't smooth this sprint. We had different assumptions about the API response format. I'd suggest we write a quick API contract before we start coding."
+- <span class="speak-en">"One thing that slowed me down was context-switching between three different tickets. I think I'd be more productive if I could focus on one feature end-to-end. Is that something we can try next sprint?"</span>
+- <span class="speak-en">"I think our estimation was off on the notification feature. We estimated 5 points but it took 13. The gap was in the edge cases we didn't discuss during planning. Could we add a risk check step to our estimation process?"</span>
+- <span class="speak-en">"The handoff between frontend and backend wasn't smooth this sprint. We had different assumptions about the API response format. I'd suggest we write a quick API contract before we start coding."</span>
 
 ### Hacer Preguntas de Proceso
 
-- "I have a question about how we handle hotfixes. Are we supposed to go through the full PR review process, or is there a fast track for production issues?"
-- "Is there a reason we don't do async standups on Fridays? I've seen other teams use Slack bots for that, and it frees up 15 minutes."
-- "I noticed we don't have a runbook for the deployment process. Would it be helpful if I documented the steps this sprint?"
+- <span class="speak-en">"I have a question about how we handle hotfixes. Are we supposed to go through the full PR review process, or is there a fast track for production issues?"</span>
+- <span class="speak-en">"Is there a reason we don't do async standups on Fridays? I've seen other teams use Slack bots for that, and it frees up 15 minutes."</span>
+- <span class="speak-en">"I noticed we don't have a runbook for the deployment process. Would it be helpful if I documented the steps this sprint?"</span>
 
 Nota el patrón en todos estos: **observación + impacto + sugerencia.** No solo estás señalando problemas—estás proponiendo soluciones. Así es como se comunican los ingenieros senior en retros, y es exactamente lo que los equipos de EE.UU. quieren escuchar de sus compañeros nearshore.
 
@@ -246,11 +246,11 @@ Los code reviews son comunicación escrita, pero suceden en el contexto del trab
 
 **Prefijos de comentarios que los equipos de EE.UU. entienden:**
 
-- **"Nit:"** — Detalle menor de estilo o preferencia. No es blocker. Ejemplo: "Nit: we usually use camelCase for variable names in this module."
-- **"Optional:"** — Sugerencia que el autor puede tomar o dejar. Ejemplo: "Optional: you could extract this into a helper function for readability."
-- **"Blocking:"** — Se debe resolver antes del merge. Ejemplo: "Blocking: this query doesn't have a WHERE clause on tenant_id, which would return data from all tenants."
-- **"Question:"** — Pregunta genuina, no una crítica disfrazada. Ejemplo: "Question: is there a reason we're not using the existing validation middleware here?"
-- **"Suggestion:"** — Alternativa concreta que propones. Ejemplo: "Suggestion: we could use a Map instead of repeated if/else blocks. Here's what that might look like: [code snippet]."
+- **"Nit:"** — Detalle menor de estilo o preferencia. No es blocker. Ejemplo: <span class="speak-en">"Nit: we usually use camelCase for variable names in this module."</span>
+- **"Optional:"** — Sugerencia que el autor puede tomar o dejar. Ejemplo: <span class="speak-en">"Optional: you could extract this into a helper function for readability."</span>
+- **"Blocking:"** — Se debe resolver antes del merge. Ejemplo: <span class="speak-en">"Blocking: this query doesn't have a WHERE clause on tenant_id, which would return data from all tenants."</span>
+- **"Question:"** — Pregunta genuina, no una crítica disfrazada. Ejemplo: <span class="speak-en">"Question: is there a reason we're not using the existing validation middleware here?"</span>
+- **"Suggestion:"** — Alternativa concreta que propones. Ejemplo: <span class="speak-en">"Suggestion: we could use a Map instead of repeated if/else blocks."</span>
 
 ### Responder a Feedback de Review en Tus PRs
 
@@ -261,10 +261,10 @@ Los code reviews son comunicación escrita, pero suceden en el contexto del trab
 
 **Respuestas fuertes:**
 
-- "Good catch—I missed that edge case. Fixed in the latest commit. I also added a test for it."
-- "I see your point about the naming. I went with `processPayment` because it handles both creation and validation, but I agree `validateAndCreatePayment` is clearer. Updated."
-- "I considered that approach, but I went this route because [reason]. Here's the tradeoff I was weighing: [explanation]. Happy to change it if you feel strongly."
-- "Thanks for the detailed feedback. I addressed all five comments. The biggest change was restructuring the error handling—take another look when you get a chance."
+- <span class="speak-en">"Good catch—I missed that edge case. Fixed in the latest commit. I also added a test for it."</span>
+- <span class="speak-en">"I see your point about the naming. I went with processPayment because it handles both creation and validation, but I agree validateAndCreatePayment is clearer. Updated."</span>
+- <span class="speak-en">"I considered that approach, but I went this route because of the tradeoff I was weighing. Happy to change it if you feel strongly."</span>
+- <span class="speak-en">"Thanks for the detailed feedback. I addressed all five comments. The biggest change was restructuring the error handling—take another look when you get a chance."</span>
 
 La habilidad de discutir tradeoffs técnicos en inglés escrito es una habilidad de alto valor. Para más sobre cómo el español interfiere en estos contextos, los [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/) cubren patrones comunes donde los hábitos del español crean fricción no intencional en code reviews escritos.
 
@@ -300,34 +300,34 @@ Aquí hay frases adicionales organizadas por situación. Guarda esta sección en
 
 ### Iniciar Tu Update de Standup
 
-- "Quick update from my side..."
-- "Three things from yesterday..."
-- "Short update—I'll keep it tight..."
+- <span class="speak-en">"Quick update from my side."</span>
+- <span class="speak-en">"Three things from yesterday."</span>
+- <span class="speak-en">"Short update—I'll keep it tight."</span>
 
 ### Señalar Riesgos
 
-- "I want to flag a potential issue..."
-- "Heads up for the team..."
-- "Something to be aware of..."
-- "This isn't a blocker yet, but it could become one if..."
+- <span class="speak-en">"I want to flag a potential issue."</span>
+- <span class="speak-en">"Heads up for the team."</span>
+- <span class="speak-en">"Something to be aware of."</span>
+- <span class="speak-en">"This isn't a blocker yet, but it could become one if we don't resolve it."</span>
 
 ### Pedir Ayuda
 
-- "I could use a second pair of eyes on..."
-- "Does anyone have experience with [X]? I'm running into..."
-- "I'd like to pair on this if someone has 30 minutes today."
+- <span class="speak-en">"I could use a second pair of eyes on this."</span>
+- <span class="speak-en">"Does anyone have experience with this? I'm running into an issue."</span>
+- <span class="speak-en">"I'd like to pair on this if someone has 30 minutes today."</span>
 
 ### Hacer Referencia al Trabajo de Otros
 
-- "This depends on [name]'s PR, which is in review."
-- "Once [name]'s migration is merged, I can proceed with..."
-- "I aligned with [name] offline—we're going with approach B."
+- <span class="speak-en">"This depends on their PR, which is in review."</span>
+- <span class="speak-en">"Once their migration is merged, I can proceed."</span>
+- <span class="speak-en">"I aligned with them offline—we're going with approach B."</span>
 
 ### Cerrar Tu Update
 
-- "That's it from me."
-- "That's my update. Happy to take questions."
-- "I'll post the PR link in the channel after standup."
+- <span class="speak-en">"That's it from me."</span>
+- <span class="speak-en">"That's my update. Happy to take questions."</span>
+- <span class="speak-en">"I'll post the PR link in the channel after standup."</span>
 
 ---
 
