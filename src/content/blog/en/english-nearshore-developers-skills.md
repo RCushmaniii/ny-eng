@@ -287,7 +287,7 @@ Here's what I'd recommend:
 
 3. **Review your last 10 Slack messages to US colleagues.** Are they too formal? Too vague? Do they follow the Direct opener + Context + Action + Timeline pattern?
 
-4. **Take the [Speaking Confidence Quiz](/en/quiz/speaking-confidence/)** to identify your specific communication gaps.
+4. **Take the [Speaking Confidence Quiz](/en/quiz/it-services/)** to identify your specific communication gaps.
 
 5. **Explore [Tech English Coaching](/en/services/tech-english/)** if you want structured practice with real scenarios from sprint teams, code reviews, and client presentations.
 

@@ -310,7 +310,7 @@ If you recognized yourself in the "before" examples above, here's what I'd recom
 
 3. **Record yourself explaining a customs hold scenario.** Play it back. Can a US broker understand the problem in under 30 seconds?
 
-4. **Take the [Speaking Confidence Quiz](/en/quiz/speaking-confidence/)** to identify where your communication gaps are holding you back.
+4. **Take the [Speaking Confidence Quiz](/en/quiz/it-services/)** to identify where your communication gaps are holding you back.
 
 5. **Explore [Logistics English Coaching](/en/services/logistics-english/)** if you want structured training built specifically for cross-border freight and customs professionals. I work with logistics teams across Mexico on exactly these scenarios—phone calls with US brokers, customs documentation communication, and rate negotiations.
 

@@ -289,7 +289,7 @@ Esto es lo que te recomiendo:
 
 3. **Revisa tus últimos 10 mensajes de Slack a colegas de EE.UU.** ¿Son demasiado formales? ¿Demasiado vagos? ¿Siguen el patrón de Apertura directa + Contexto + Acción + Timeline?
 
-4. **Toma el [Quiz de Confianza al Hablar](/es/quiz/speaking-confidence/)** para identificar tus brechas específicas de comunicación.
+4. **Toma el [Quiz de Confianza al Hablar](/es/quiz/it-services/)** para identificar tus brechas específicas de comunicación.
 
 5. **Explora el [Coaching de inglés para tecnología](/es/servicios/ingles-para-tecnologia/)** si quieres práctica estructurada con escenarios reales de sprint teams, code reviews y presentaciones a clientes.
 

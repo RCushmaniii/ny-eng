@@ -185,7 +185,7 @@ _(Lo veo de otra manera. Esta es mi preocupación.)_
 
 **Cuándo usarla:** Cuando necesitas rechazar la propuesta u opinión de alguien—especialmente alguien de mayor rango.
 
-**Por qué funciona:** Es directa sin ser agresiva. "I see it differently" es honesto y respetuoso. Seguirlo con "Here's my concern" cambia el foco hacia el problema, no hacia la persona. Esta es [comunicación a nivel ejecutivo](/es/servicios/ingles-ejecutivo/) en su forma más efectiva.
+**Por qué funciona:** Es directa sin ser agresiva. "I see it differently" es honesto y respetuoso. Seguirlo con "Here's my concern" cambia el foco hacia el problema, no hacia la persona. Esta es [comunicación a nivel ejecutivo](/es/servicios/ingles-para-ejecutivos/) en su forma más efectiva.
 
 **En contexto:**
 > "I appreciate the rationale, and I see it differently. Here's my concern: if we launch in Q2 without the integration, we risk losing the three enterprise clients who specifically requested it."
@@ -198,7 +198,7 @@ _(Quiero objetar eso—no por ser difícil, sino porque creo que estamos pasando
 
 **Cuándo usarla:** Cuando no estás de acuerdo con la dirección que el grupo parece estar tomando y necesitas frenar el impulso.
 
-**Por qué funciona:** La frase "not to be difficult" anticipa cualquier percepción de que estás siendo obstructivo. Enmarca tu objeción como constructiva, lo que hace más probable que la gente escuche. Este es exactamente el tipo de [comunicación de alto impacto](/es/servicios/ingles-alto-impacto/) que separa a los buenos gerentes de los grandes líderes.
+**Por qué funciona:** La frase "not to be difficult" anticipa cualquier percepción de que estás siendo obstructivo. Enmarca tu objeción como constructiva, lo que hace más probable que la gente escuche. Este es exactamente el tipo de [comunicación de alto impacto](/es/servicios/ingles-para-presentaciones/) que separa a los buenos gerentes de los grandes líderes.
 
 **En contexto:**
 > "I want to push back on that—not to be difficult, but because I think we're missing something. The data from last quarter suggests the opposite trend."

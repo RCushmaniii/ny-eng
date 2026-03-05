@@ -288,7 +288,7 @@ Before any US company interview, run through this list:
 
 7. **Draft your follow-up email template** — Have the structure ready so you only need to fill in specifics after the interview.
 
-8. **Take the [Speaking Confidence Quiz](/en/quiz/speaking-confidence/)** — Identify which communication patterns need the most work before your interview.
+8. **Take the [Speaking Confidence Quiz](/en/quiz/it-services/)** — Identify which communication patterns need the most work before your interview.
 
 ---
 

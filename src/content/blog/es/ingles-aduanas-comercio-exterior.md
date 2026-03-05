@@ -310,7 +310,7 @@ Si te reconociste en los ejemplos "antes" de arriba, esto es lo que te recomiend
 
 3. **Grábate explicando un escenario de retención aduanera.** Escúchalo. ¿Puede un broker de EE.UU. entender el problema en menos de 30 segundos?
 
-4. **Toma el [Quiz de Confianza al Hablar](/es/quiz/speaking-confidence/)** para identificar dónde tus brechas de comunicación te están frenando.
+4. **Toma el [Quiz de Confianza al Hablar](/es/quiz/it-services/)** para identificar dónde tus brechas de comunicación te están frenando.
 
 5. **Explora el [Coaching de Inglés para Logística](/es/servicios/ingles-para-logistica/)** si quieres entrenamiento estructurado diseñado específicamente para profesionales de freight y aduanas transfronterizos. Trabajo con equipos de logística en todo México en exactamente estos escenarios—llamadas con brokers de EE.UU., comunicación de documentación aduanera y negociación de tarifas.
 

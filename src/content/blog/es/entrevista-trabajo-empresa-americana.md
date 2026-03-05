@@ -288,7 +288,7 @@ Antes de cualquier entrevista con una empresa de EE.UU., revisa esta lista:
 
 7. **Redacta tu plantilla de correo de seguimiento** — Ten la estructura lista para que solo necesites llenar los detalles después de la entrevista.
 
-8. **Toma el [Quiz de Confianza al Hablar](/es/quiz/speaking-confidence/)** — Identifica qué patrones de comunicación necesitan más trabajo antes de tu entrevista.
+8. **Toma el [Quiz de Confianza al Hablar](/es/quiz/it-services/)** — Identifica qué patrones de comunicación necesitan más trabajo antes de tu entrevista.
 
 ---
 
