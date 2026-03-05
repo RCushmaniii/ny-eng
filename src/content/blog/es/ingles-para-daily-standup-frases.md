@@ -6,7 +6,7 @@ lastmod: "2026-03-04"
 categories:
   - "Inglés para Tecnología"
   - "Carrera & Liderazgo"
-featuredImage: "./images/daily-standup-english.jpg"
+featuredImage: "./images/daily-standup-english.webp"
 imageAlt: "Desarrollador de software dando un update seguro en un daily standup por videollamada con un equipo distribuido"
 translations:
   en: "/en/blog/daily-standup-english/"

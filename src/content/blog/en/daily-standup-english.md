@@ -6,7 +6,7 @@ lastmod: "2026-03-04"
 categories:
   - "Tech English"
   - "Career & Leadership"
-featuredImage: "./images/daily-standup-english.jpg"
+featuredImage: "./images/daily-standup-english.webp"
 imageAlt: "Software developer giving a confident daily standup update on a video call with a distributed engineering team"
 translations:
   es: "/es/blog/ingles-para-daily-standup-frases/"
