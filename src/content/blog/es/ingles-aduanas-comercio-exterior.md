@@ -6,7 +6,7 @@ lastmod: "2026-03-04"
 categories:
   - "Inglés para Logística"
   - "Inglés de Negocios"
-featuredImage: "./images/customs-freight-english.jpg"
+featuredImage: "./images/customs-freight-english.webp"
 imageAlt: "Camiones de carga cruzando la frontera México-EE.UU. en un punto de inspección aduanera"
 translations:
   en: "/en/blog/customs-freight-english/"

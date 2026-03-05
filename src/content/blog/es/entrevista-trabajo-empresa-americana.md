@@ -6,7 +6,7 @@ lastmod: "2026-03-04"
 categories:
   - "Inglés para Presentaciones"
   - "Carrera & Liderazgo"
-featuredImage: "./images/us-interview-prep.jpg"
+featuredImage: "./images/us-interview-prep.webp"
 imageAlt: "Profesional mexicano preparándose para una entrevista por video con una empresa de EE.UU."
 translations:
   en: "/en/blog/us-interview-prep/"

@@ -6,7 +6,7 @@ lastmod: "2026-03-04"
 categories:
   - "High-Stakes English"
   - "Career & Leadership"
-featuredImage: "./images/us-interview-prep.jpg"
+featuredImage: "./images/us-interview-prep.webp"
 imageAlt: "Mexican professional preparing for a video interview with a US company on a laptop"
 translations:
   es: "/es/blog/entrevista-trabajo-empresa-americana/"

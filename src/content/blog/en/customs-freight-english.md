@@ -6,7 +6,7 @@ lastmod: "2026-03-04"
 categories:
   - "Logistics English"
   - "Business English"
-featuredImage: "./images/customs-freight-english.jpg"
+featuredImage: "./images/customs-freight-english.webp"
 imageAlt: "Freight trucks crossing the US-Mexico border at a customs checkpoint"
 translations:
   es: "/es/blog/ingles-aduanas-comercio-exterior/"
