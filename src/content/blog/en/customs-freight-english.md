@@ -52,67 +52,67 @@ This glossary covers the terms you'll encounter daily when working with US freig
 
 | English Term | Spanish Equivalent | Usage Note |
 |---|---|---|
-| Customs clearance | Despacho aduanero | "The shipment is pending customs clearance at Laredo." |
-| Customs broker | Agente aduanal | US-side broker who files entry documents |
-| Entry summary (CBP 7501) | Pedimento (equivalente EE.UU.) | The primary US customs document |
-| HTS code (Harmonized Tariff Schedule) | Fracción arancelaria | Must match between invoice and entry |
-| Duty | Arancel / impuesto de importación | "What's the duty rate on this HTS code?" |
-| Anti-dumping duty (ADD) | Cuota compensatoria | Extra duties on specific products/countries |
-| Countervailing duty (CVD) | Cuota compensatoria | Similar to ADD; targets subsidized imports |
-| Customs hold | Retención aduanera | "Our shipment is on customs hold." |
-| Customs exam | Revisión / inspección aduanera | Physical or X-ray inspection at port of entry |
-| Port of entry (POE) | Puerto de entrada | Laredo, El Paso, Nogales, etc. |
-| In-bond shipment | Tránsito aduanero (en EE.UU.) | Goods moving under bond to another US port |
-| Bonded warehouse | Almacén fiscal (equivalente EE.UU.) | Storage without paying duties immediately |
-| Free Trade Zone (FTZ) | Zona franca | Duty-deferred areas within the US |
-| Country of origin | País de origen | Critical for USMCA qualification |
-| Certificate of Origin | Certificado de origen | Required for USMCA preferential tariff |
+| Customs clearance | Despacho aduanero | <span class="speak-en">"The shipment is pending customs clearance at Laredo."</span> |
+| Customs broker | Agente aduanal | <span class="speak-en">US-side broker who files entry documents</span> |
+| Entry summary (CBP 7501) | Pedimento (equivalente EE.UU.) | <span class="speak-en">The primary US customs document</span> |
+| HTS code (Harmonized Tariff Schedule) | Fracción arancelaria | <span class="speak-en">Must match between invoice and entry</span> |
+| Duty | Arancel / impuesto de importación | <span class="speak-en">"What's the duty rate on this HTS code?"</span> |
+| Anti-dumping duty (ADD) | Cuota compensatoria | <span class="speak-en">Extra duties on specific products or countries</span> |
+| Countervailing duty (CVD) | Cuota compensatoria | <span class="speak-en">Similar to ADD; targets subsidized imports</span> |
+| Customs hold | Retención aduanera | <span class="speak-en">"Our shipment is on customs hold."</span> |
+| Customs exam | Revisión / inspección aduanera | <span class="speak-en">Physical or X-ray inspection at port of entry</span> |
+| Port of entry (POE) | Puerto de entrada | <span class="speak-en">Laredo, El Paso, Nogales</span> |
+| In-bond shipment | Tránsito aduanero (en EE.UU.) | <span class="speak-en">Goods moving under bond to another US port</span> |
+| Bonded warehouse | Almacén fiscal (equivalente EE.UU.) | <span class="speak-en">Storage without paying duties immediately</span> |
+| Free Trade Zone (FTZ) | Zona franca | <span class="speak-en">Duty-deferred areas within the US</span> |
+| Country of origin | País de origen | <span class="speak-en">Critical for USMCA qualification</span> |
+| Certificate of Origin | Certificado de origen | <span class="speak-en">Required for USMCA preferential tariff</span> |
 
 ### Shipping Documents
 
 | English Term | Spanish Equivalent | Usage Note |
 |---|---|---|
-| Bill of Lading (BOL / B/L) | Conocimiento de embarque | "Please send the BOL for tracking." |
-| Commercial invoice | Factura comercial | Must match the packing list exactly |
-| Packing list | Lista de empaque | Itemized contents of each package/pallet |
-| Proof of delivery (POD) | Comprobante de entrega | "We need the signed POD from the consignee." |
-| Shipper's Letter of Instruction (SLI) | Instrucciones del embarcador | Tells the forwarder how to handle shipment |
-| Arrival notice | Aviso de arribo | Notification that cargo has arrived at port |
-| Freight bill | Factura de flete | Invoice for transportation charges |
-| Customs power of attorney | Poder aduanal | Authorizes the broker to act on your behalf |
-| USMCA/T-MEC certification | Certificación T-MEC | Proves goods qualify for preferential treatment |
-| IMMEX certificate | Certificado IMMEX | Mexico's maquiladora/export program documentation |
+| Bill of Lading (BOL / B/L) | Conocimiento de embarque | <span class="speak-en">"Please send the BOL for tracking."</span> |
+| Commercial invoice | Factura comercial | <span class="speak-en">Must match the packing list exactly</span> |
+| Packing list | Lista de empaque | <span class="speak-en">Itemized contents of each package or pallet</span> |
+| Proof of delivery (POD) | Comprobante de entrega | <span class="speak-en">"We need the signed POD from the consignee."</span> |
+| Shipper's Letter of Instruction (SLI) | Instrucciones del embarcador | <span class="speak-en">Tells the forwarder how to handle shipment</span> |
+| Arrival notice | Aviso de arribo | <span class="speak-en">Notification that cargo has arrived at port</span> |
+| Freight bill | Factura de flete | <span class="speak-en">Invoice for transportation charges</span> |
+| Customs power of attorney | Poder aduanal | <span class="speak-en">Authorizes the broker to act on your behalf</span> |
+| USMCA/T-MEC certification | Certificación T-MEC | <span class="speak-en">Proves goods qualify for preferential treatment</span> |
+| IMMEX certificate | Certificado IMMEX | <span class="speak-en">Mexico's maquiladora export program documentation</span> |
 
 ### Freight and Logistics Operations
 
 | English Term | Spanish Equivalent | Usage Note |
 |---|---|---|
-| Full truckload (FTL) | Camión completo | "We need an FTL from Monterrey to Dallas." |
-| Less than truckload (LTL) | Carga consolidada | Shared truck space |
-| Drayage | Acarreo local | Short-haul transport, usually port to warehouse |
-| Cross-dock | Cross-dock / transbordo directo | Transfer without storage |
-| Transload | Transbordo / transferencia de carga | Moving cargo between containers/trailers |
-| Carrier | Transportista | The company physically moving the freight |
-| Freight forwarder | Agente de carga / freight forwarder | Arranges transportation on behalf of shipper |
-| 3PL (third-party logistics) | 3PL / operador logístico | Outsourced logistics provider |
-| Consignee | Consignatario / destinatario | The party receiving the goods |
-| Shipper / consignor | Embarcador / remitente | The party sending the goods |
-| ETA (estimated time of arrival) | Hora estimada de llegada | "What's the ETA at the Laredo crossing?" |
-| Lead time | Tiempo de entrega | Total time from order to delivery |
-| Demurrage | Demoras / sobrestadía | Charges for keeping a container past free time |
-| Detention | Detención | Charges for keeping a trailer past free time |
-| Accessorial charges | Cargos adicionales | Extra fees (liftgate, inside delivery, etc.) |
+| Full truckload (FTL) | Camión completo | <span class="speak-en">"We need an FTL from Monterrey to Dallas."</span> |
+| Less than truckload (LTL) | Carga consolidada | <span class="speak-en">Shared truck space</span> |
+| Drayage | Acarreo local | <span class="speak-en">Short-haul transport, usually port to warehouse</span> |
+| Cross-dock | Cross-dock / transbordo directo | <span class="speak-en">Transfer without storage</span> |
+| Transload | Transbordo / transferencia de carga | <span class="speak-en">Moving cargo between containers or trailers</span> |
+| Carrier | Transportista | <span class="speak-en">The company physically moving the freight</span> |
+| Freight forwarder | Agente de carga / freight forwarder | <span class="speak-en">Arranges transportation on behalf of shipper</span> |
+| 3PL (third-party logistics) | 3PL / operador logístico | <span class="speak-en">Outsourced logistics provider</span> |
+| Consignee | Consignatario / destinatario | <span class="speak-en">The party receiving the goods</span> |
+| Shipper / consignor | Embarcador / remitente | <span class="speak-en">The party sending the goods</span> |
+| ETA (estimated time of arrival) | Hora estimada de llegada | <span class="speak-en">"What's the ETA at the Laredo crossing?"</span> |
+| Lead time | Tiempo de entrega | <span class="speak-en">Total time from order to delivery</span> |
+| Demurrage | Demoras / sobrestadía | <span class="speak-en">Charges for keeping a container past free time</span> |
+| Detention | Detención | <span class="speak-en">Charges for keeping a trailer past free time</span> |
+| Accessorial charges | Cargos adicionales | <span class="speak-en">Extra fees like liftgate or inside delivery</span> |
 
 ### Incoterms in Context
 
 | Incoterm | What It Means in Practice | Common Usage |
 |---|---|---|
-| EXW (Ex Works) | Buyer handles everything from seller's facility | "The price is EXW Guadalajara." |
-| FCA (Free Carrier) | Seller delivers to a named carrier/place | "FCA Monterrey, carrier picks up at our plant." |
-| FOB (Free on Board) | Risk transfers when goods are loaded | Most common for US-Mexico trade |
-| CIF (Cost, Insurance, Freight) | Seller pays freight and insurance to destination | More common in ocean freight |
-| DDP (Delivered Duty Paid) | Seller handles everything including duties | "The quote is DDP Houston warehouse." |
-| DAP (Delivered at Place) | Seller delivers to destination, buyer clears customs | "DAP Laredo—buyer handles US customs." |
+| EXW (Ex Works) | Buyer handles everything from seller's facility | <span class="speak-en">"The price is EXW Guadalajara."</span> |
+| FCA (Free Carrier) | Seller delivers to a named carrier/place | <span class="speak-en">"FCA Monterrey, carrier picks up at our plant."</span> |
+| FOB (Free on Board) | Risk transfers when goods are loaded | <span class="speak-en">Most common for US-Mexico trade</span> |
+| CIF (Cost, Insurance, Freight) | Seller pays freight and insurance to destination | <span class="speak-en">More common in ocean freight</span> |
+| DDP (Delivered Duty Paid) | Seller handles everything including duties | <span class="speak-en">"The quote is DDP Houston warehouse."</span> |
+| DAP (Delivered at Place) | Seller delivers to destination, buyer clears customs | <span class="speak-en">"DAP Laredo, buyer handles US customs."</span> |
 
 ---
 

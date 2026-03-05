@@ -1,0 +1,105 @@
+---
+/**
+ * SpeakEnglish.astro
+ *
+ * Adds text-to-speech buttons to any element with class="speak-en".
+ * Uses the browser's built-in Web Speech API (SpeechSynthesis).
+ * Only activates if .speak-en elements exist on the page.
+ *
+ * Usage in markdown:
+ *   <span class="speak-en">The shipment is pending customs clearance.</span>
+ */
+---
+
+<style is:global>
+  .speak-en {
+    position: relative;
+  }
+  .speak-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 0.35rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #e8ecff;
+    color: #4f46e5;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: background 0.15s, transform 0.15s;
+    flex-shrink: 0;
+  }
+  .speak-btn:hover {
+    background: #4f46e5;
+    color: #fff;
+    transform: scale(1.1);
+  }
+  .speak-btn.speaking {
+    background: #4f46e5;
+    color: #fff;
+    animation: pulse-speak 1s infinite;
+  }
+  @keyframes pulse-speak {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+  .speak-btn svg {
+    width: 0.85rem;
+    height: 0.85rem;
+    fill: currentColor;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const speakables = document.querySelectorAll('.speak-en');
+    if (!speakables.length || !('speechSynthesis' in window)) return;
+
+    const speakerSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>`;
+
+    speakables.forEach(el => {
+      const btn = document.createElement('button');
+      btn.className = 'speak-btn';
+      btn.innerHTML = speakerSVG;
+      btn.title = 'Listen to pronunciation';
+      btn.type = 'button';
+
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // Stop any currently speaking
+        speechSynthesis.cancel();
+
+        // Clean the text: remove quotes, parentheticals
+        let text = (el as HTMLElement).textContent || '';
+        text = text.replace(/[""'']/g, '').trim();
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.85; // Slightly slower for learners
+
+        // Try to find a US English voice
+        const voices = speechSynthesis.getVoices();
+        const usVoice = voices.find(v => v.lang === 'en-US') || voices.find(v => v.lang.startsWith('en'));
+        if (usVoice) utterance.voice = usVoice;
+
+        btn.classList.add('speaking');
+        utterance.onend = () => btn.classList.remove('speaking');
+        utterance.onerror = () => btn.classList.remove('speaking');
+
+        speechSynthesis.speak(utterance);
+      });
+
+      el.appendChild(btn);
+    });
+
+    // Chrome requires voices to be loaded async
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+      speechSynthesis.onvoiceschanged = () => {};
+    }
+  });
+</script>

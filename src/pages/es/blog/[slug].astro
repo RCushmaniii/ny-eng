@@ -9,6 +9,7 @@ import CategoryPill from '@components/ui/CategoryPill.astro';
 import DateComponent from '@components/ui/Date.astro';
 import { Image } from 'astro:assets';
 import VideoHero from '@components/blog/VideoHero.tsx';
+import SpeakEnglish from '@components/blog/SpeakEnglish.astro';
 import { siteConfig } from '@data/config';
 import { normalizeBlogSlug, buildPostUrl, assertNoDoubleLang, stripLangPrefix } from '@utils/i18nRoutes';
 import { cleanBlogUrl } from '@utils/url-cleaner';
@@ -242,7 +243,8 @@ const customHreflangs = [
       )}
       
       <Content />
-      
+      <SpeakEnglish />
+
       {postUrl && postTitle && (
         <>
           <section class="share-bar mt-12 mb-8 mx-auto max-w-3xl">
