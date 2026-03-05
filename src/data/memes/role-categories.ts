@@ -26,7 +26,7 @@ export const roleCategoryConfigs: RoleCategoryConfig[] = [
     seoDescriptionEn:
       "Funny English memes for project managers — from scope creep battles to status updates nobody wants to give. Master executive English through humor.",
     seoDescriptionEs:
-      "Memes divertidos de inglés para gerentes de proyecto — desde batallas de scope creep hasta actualizaciones que nadie quiere dar. Domina el inglés ejecutivo con humor.",
+      "Memes divertidos de inglés para gerentes de proyecto — desde batallas de scope creep hasta actualizaciones que nadie quiere dar. Inglés ejecutivo con humor.",
   },
   {
     slug: "it-manager",
@@ -78,7 +78,7 @@ export const roleCategoryConfigs: RoleCategoryConfig[] = [
     seoDescriptionEn:
       "Funny English memes for startup founders — from pitch day pronunciation disasters to explaining your burn rate. Executive English for entrepreneurs.",
     seoDescriptionEs:
-      "Memes divertidos de inglés para fundadores de startups — desde desastres de pronunciación en el pitch hasta explicar tu burn rate. Inglés ejecutivo para emprendedores.",
+      "Memes divertidos de inglés para fundadores de startups — desde desastres de pronunciación en el pitch hasta explicar tu burn rate. Inglés ejecutivo.",
   },
   {
     slug: "logistics-supply-chain",
@@ -91,7 +91,7 @@ export const roleCategoryConfigs: RoleCategoryConfig[] = [
     seoDescriptionEn:
       "Funny English memes for logistics managers — from customs paperwork nightmares to explaining 'slight delays.' Executive English for global operations.",
     seoDescriptionEs:
-      "Memes divertidos de inglés para gerentes de logística — desde pesadillas de documentación aduanal hasta explicar 'leves retrasos.' Inglés ejecutivo para operaciones.",
+      "Memes divertidos de inglés para gerentes de logística — desde pesadillas de documentación aduanal hasta explicar 'leves retrasos.' Inglés ejecutivo.",
   },
   {
     slug: "hr-officer",
