@@ -72,7 +72,7 @@ Aquí es donde desaparece el dinero:
 
 **Revisiones de compras y seguridad:** Los contratos empresariales requieren respuestas claras y seguras a preguntas de cumplimiento, preocupaciones de seguridad y detalles de integración. Cuando tu equipo posterga a correo electrónico en lugar de responder en vivo, las compras ven riesgo. Riesgo significa que negocian más duro o se retiran.
 
-**Manejo de objeciones:** Un cliente rechaza tu estimación de tiempo. Tu PM sabe que la estimación es correcta pero no puede articular las dependencias y compensaciones claramente bajo presión. Terminas comprometiéndote a un cronograma poco realista para evitar la conversación.
+**Manejo de objeciones:** Un cliente rechaza tu estimación de tiempo. Tu PM sabe que la estimación es correcta pero no puede articular las dependencias y compensaciones claramente bajo presión. Terminas comprometiéndote a un cronograma poco realista para evitar la conversación. (Para las frases exactas que resuelven esto, lee [Cómo negociar en inglés: marco probado de 5 pasos](/es/blog/como-negociar-en-ingles-marco/).)
 
 **Discusiones de alcance:** El cliente agrega "una pequeña función" a mitad del proyecto. Tu gerente de cuenta intuye que es aumento de alcance pero no tiene el lenguaje para rechazarlo diplomáticamente. Te comes el costo.
 
@@ -370,7 +370,7 @@ Tu desarrolladora backend senior es brillante. Diseña sistemas elegantes, aseso
 
 Pero no puede liderar una reunión de planificación multifuncional en inglés. Evita las revisiones técnicas de cara al cliente. Cuando los ejecutivos le hacen preguntas, se las pasa a su gerente.
 
-Resultado: No es promovida a arquitecta o líder de ingeniería. No porque le falte juicio técnico. Porque no puede comunicar ese juicio en inglés.
+Resultado: No es promovida a arquitecta o líder de ingeniería. No porque le falte juicio técnico. Porque no puede comunicar ese juicio en inglés. Este es exactamente el patrón que describe [Por qué desarrolladores senior necesitan inglés avanzado](/es/blog/por-que-desarrolladores-senior-necesitan-ingles-avanzado/).
 
 **¿Esto está pasando en tu equipo ahora mismo?**
 
@@ -1406,6 +1406,14 @@ Si estás listo para tratar el inglés como un sistema de capacidad—no como un
 <p style="margin-top: 1rem; color: #64748b; font-size: 0.875rem;">Sin tarjeta de crédito requerida. Cero obligación. Solo una conversación sobre lo que es posible.</p>
 
 </div>
+
+---
+
+## Sigue Leyendo
+
+- [Por qué gerentes de TI pierden millones](/es/blog/por-que-los-gerentes-de-ti-en-mexico-pierden-clientes/) — Profundiza en los costos de ventas y entrega del inglés débil en servicios de TI.
+- [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/) — Los patrones específicos de interferencia del español que minan la credibilidad de tu equipo.
+- [Caso de estudio: transformación del inglés corporativo en 12 meses](/es/blog/caso-estudio-transformacion-ingles-corporativo/) — Cómo una empresa real resolvió estos problemas con coaching ejecutivo estructurado.
 
 ---
 

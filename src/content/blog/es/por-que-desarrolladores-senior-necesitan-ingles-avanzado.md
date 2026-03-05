@@ -81,7 +81,7 @@ Luchas para traducir complejidad técnica en valor de negocio. Cuando el CFO pre
 
 Durante incidentes, te refugias en el email en lugar de explicar soluciones en vivo. Dices "Te respondo después" cuando en realidad sabes la respuesta—solo no puedes expresarla claramente bajo presión.
 
-**Resultado:** Te ven como implementador, no líder. Los roles senior requieren compostura en situaciones de alto riesgo.
+**Resultado:** Te ven como implementador, no líder. Los roles senior requieren compostura en situaciones de alto riesgo. Si trabajas en un equipo nearshore, este problema se amplifica—lee [Inglés para desarrolladores nearshore: lo que EE.UU. exige](/es/blog/ingles-desarrolladores-nearshore-habilidades/) para ver exactamente cómo se evalúa tu comunicación.
 
 ### 4. Code Review y Mentoría
 
@@ -130,7 +130,7 @@ Trabajar con un **hablante nativo de inglés que entiende comunicación técnica
 
 No aprendiste a programar leyendo libros. Aprendiste construyendo cosas con feedback de desarrolladores experimentados.
 
-**La fluidez en inglés funciona de la misma manera.**
+**La fluidez en inglés funciona de la misma manera.** Si quieres entender el impacto financiero que tiene esta brecha de comunicación, lee [El costo real del inglés débil en empresas mexicanas](/es/blog/costo-real-ingles-debil-empresas-mexicanas/).
 
 ---
 
@@ -160,6 +160,14 @@ Trabajo específicamente con desarrolladores, profesionales de TI y líderes tec
 3. Crearé un plan personalizado de 60 días para alcanzar fluidez nivel senior
 
 O **[escríbeme directamente por WhatsApp](https://wa.link/pk4f97)** para discutir tus objetivos.
+
+---
+
+## Sigue Leyendo
+
+- [Inglés para desarrolladores nearshore: lo que EE.UU. exige](/es/blog/ingles-desarrolladores-nearshore-habilidades/) — Las habilidades específicas de comunicación que evalúan los equipos de ingeniería en EE.UU.
+- [El costo real del inglés débil en empresas mexicanas](/es/blog/costo-real-ingles-debil-empresas-mexicanas/) — Datos concretos sobre cuánto cuesta la brecha de comunicación en ingresos y carreras.
+- [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/) — Patrones de interferencia del español que minan tu credibilidad técnica.
 
 ---
 

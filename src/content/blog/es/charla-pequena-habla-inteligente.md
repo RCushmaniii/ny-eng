@@ -17,7 +17,7 @@ seo:
 
 ## ¿Por qué el small talk importa en el mundo profesional?
 
-Muchos piensan que el small talk es solo relleno, pero en realidad es una herramienta clave para construir relaciones, generar confianza y abrir puertas en el trabajo. Dominar estas conversaciones breves te permite destacar y avanzar profesionalmente.
+Muchos piensan que el small talk es solo relleno, pero en realidad es una herramienta clave para construir relaciones, generar confianza y abrir puertas en el trabajo. Si te cuesta la confianza para iniciar estas conversaciones, empieza con las [5 estrategias para ganar confianza al hablar inglés](/es/blog/aumentar-confianza/). Dominar estas conversaciones breves te permite destacar y avanzar profesionalmente.
 
 ### Consejos para mejorar tu small talk en inglés
 
@@ -39,4 +39,14 @@ Muchos piensan que el small talk es solo relleno, pero en realidad es una herram
 - **Sigue la conversación:** Si alguien menciona un proyecto interesante, pregunta más y ofrece tu ayuda si es posible.
 - **Sé auténtico:** La sinceridad genera confianza y deja una impresión positiva.
 
+Para evitar errores comunes que minan tu credibilidad en estas conversaciones, revisa los [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/).
+
 > **Recuerda:** El small talk es solo el principio. Con práctica, puedes convertirlo en conversaciones inteligentes que te ayuden a crecer profesionalmente.
+
+---
+
+## Sigue Leyendo
+
+- [5 estrategias para ganar confianza al hablar inglés](/es/blog/aumentar-confianza/) — Construye la seguridad que necesitas para iniciar conversaciones con naturalidad.
+- [5 formas prácticas de mejorar tu inglés de negocios](/es/blog/5-formas-practicas-mejorar-ingles-negocios/) — Consejos concretos para mejorar tu comunicación profesional día a día.
+- [Manual de comunicación ejecutiva: 7 pilares clave](/es/blog/manual-comunicacion-ejecutiva/) — La guía completa para dominar la influencia y la persuasión en inglés.

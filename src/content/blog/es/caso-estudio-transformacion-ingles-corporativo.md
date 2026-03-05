@@ -76,11 +76,11 @@ Lo que surgió fue sorprendente. La gramática no era el problema principal. Las
 
 Cada ejecutivo recibió sesiones semanales uno a uno adaptadas a sus desafíos específicos:
 
-**Para la Directora de Operaciones en México**, nos enfocamos en hablar improvisadamente. Necesitaba responder con confianza cuando ejecutivos americanos hacían preguntas inesperadas. Practicamos preguntas y respuestas rápidas hasta que su cerebro dejó de traducir y comenzó a _pensar_ en inglés.
+**Para la Directora de Operaciones en México**, nos enfocamos en [hablar improvisadamente](/es/blog/4-secretos-que-usan-los-ejecutivos/). Necesitaba responder con confianza cuando ejecutivos americanos hacían preguntas inesperadas. Practicamos preguntas y respuestas rápidas hasta que su cerebro dejó de traducir y comenzó a _pensar_ en inglés.
 
 **Para el Director General**, ensayamos presentaciones al consejo repetidamente. No leyendo guiones—_interpretándolos_. Trabajamos en el ritmo, el énfasis y las señales de lenguaje corporal que proyectan autoridad independientemente del acento.
 
-**Para el Director Comercial**, simulamos escenarios con clientes. Objeciones de precio, negociaciones de alcance, posicionamiento competitivo. Para el quinto mes, podía defender un margen en inglés tan naturalmente como en español.
+**Para el Director Comercial**, simulamos escenarios con clientes usando marcos como el [marco de negociación de 5 pasos](/es/blog/como-negociar-en-ingles-marco/). Objeciones de precio, negociaciones de alcance, posicionamiento competitivo. Para el quinto mes, podía defender un margen en inglés tan naturalmente como en español.
 
 **Para la Directora de Recursos Humanos**, desarrollamos marcos para entrevistas. No solo preguntas para hacer, sino cómo profundizar, cómo generar conexión y cómo evaluar candidatos cuando ambas partes estaban trabajando en su segundo idioma.
 
@@ -224,6 +224,14 @@ La buena noticia: estas brechas se pueden cerrar. No con ejercicios de gramátic
 ---
 
 _Robert Cushman es un coach de inglés empresarial especializado en comunicación de alto riesgo para empresas latinoamericanas de tecnología y servicios profesionales. Su Evaluación de Confianza en Comunicación ayuda a las organizaciones a identificar exactamente dónde las brechas de idioma les están costando negocios. [Conoce más sobre el enfoque de Robert →](/es/about/)_
+
+## Sigue Leyendo
+
+- [Manual de comunicación ejecutiva: 7 pilares clave](/es/blog/manual-comunicacion-ejecutiva/) — Los marcos completos que usamos con equipos directivos como el de este caso.
+- [Presencia ejecutiva en videollamadas: 7 hábitos clave](/es/blog/presencia-ejecutiva-en-videollamadas/) — Las técnicas de presencia en cámara que transformaron las reuniones virtuales de este equipo.
+- [Cómo negociar en inglés: marco probado de 5 pasos](/es/blog/como-negociar-en-ingles-marco/) — El marco de negociación que usó el Director Comercial para cerrar el acuerdo más grande de la empresa.
+
+---
 
 **[Toma el quiz gratuito de Confianza en Comunicación Ejecutiva →](/es/quiz/executives/)**
 

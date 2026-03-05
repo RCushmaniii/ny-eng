@@ -33,7 +33,7 @@ En New York English, trabajo con gerentes, consultores y ejecutivos en sectores 
 
 ## 1. Usa “frases clave” en reuniones
 
-Si dudas al hablar en reuniones, no eres el único. Preparar algunas frases poderosas te ayuda a expresarte con naturalidad y sonar seguro.
+Si dudas al hablar en reuniones, no eres el único. Preparar algunas frases poderosas te ayuda a expresarte con naturalidad y sonar seguro. Para un arsenal completo de frases de reunión, revisa las [25 frases para dirigir reuniones en inglés con autoridad](/es/blog/dirigir-reuniones-ingles-frases/).
 
 - **Para unirte a la conversación:** "¿Puedo agregar algo?" o "Me gustaría compartir una idea rápida."
 - **Para aclarar:** "¿Podrías explicar eso de nuevo?" o "Solo para confirmar, ¿quieres decir...?"
@@ -43,7 +43,7 @@ Si dudas al hablar en reuniones, no eres el único. Preparar algunas frases pode
 
 ## 2. Mejora tu small talk
 
-El small talk no es solo relleno: construye confianza y abre puertas. También es una habilidad que mejora con la práctica.
+El small talk no es solo relleno: construye confianza y abre puertas. También es una habilidad que mejora con la práctica. Para convertir estas conversaciones casuales en oportunidades profesionales, lee [De pláticas triviales a conversación inteligente](/es/blog/charla-pequena-habla-inteligente/).
 
 1. Pregunta sobre el trabajo: "¿Cómo va el nuevo proyecto?"
 2. Sé amable: "¿Cómo ha ido tu semana?" o "¿Planes para el fin de semana?"
@@ -61,3 +61,11 @@ No necesitas palabras complicadas para sonar profesional. El lenguaje claro y di
 - "Ameliorate" → "Mejora"
 
 > **La comunicación clara no es básica—es poderosa.** Cuando tus palabras son directas y con propósito, la gente escucha, actúa y los resultados llegan.
+
+---
+
+## Sigue Leyendo
+
+- [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/) — Identifica y corrige los patrones de interferencia del español que minan tu credibilidad.
+- [5 estrategias para ganar confianza al hablar inglés](/es/blog/aumentar-confianza/) — Construye la seguridad que necesitas para comunicarte con impacto.
+- [De pláticas triviales a conversación inteligente](/es/blog/charla-pequena-habla-inteligente/) — Convierte el small talk en una herramienta profesional poderosa.

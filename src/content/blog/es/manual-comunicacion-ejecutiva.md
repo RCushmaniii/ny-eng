@@ -30,7 +30,7 @@ Y lo peor de todo: las personas al otro lado de esa llamada — tus clientes, tu
 
 **Esto no es un problema de inglés. Es un problema de comunicación ejecutiva.**
 
-Nadie te enseñó el *estilo de comunicación ejecutiva* en inglés. Aprendiste gramática. Aprendiste vocabulario. Quizás hasta sacaste buena nota en un examen de competencia. Pero sacar buena nota en un examen y dominar una sala de juntas son habilidades completamente diferentes.
+Nadie te enseñó el *estilo de comunicación ejecutiva* en inglés. Aprendiste gramática. Aprendiste vocabulario. Quizás hasta sacaste buena nota en un examen de competencia. Pero como explica el [caso de estudio de una empresa que transformó su C-suite](/es/blog/caso-estudio-transformacion-ingles-corporativo/), la diferencia entre "hablar inglés" y "liderar en inglés" es enorme. Pero sacar buena nota en un examen y dominar una sala de juntas son habilidades completamente diferentes.
 
 Este manual cubre los 7 pilares que separan a los "hablantes fluidos" de los líderes que imponen influencia en inglés. Estos son exactamente los marcos que uso con ejecutivos de C-suite, vicepresidentes, fundadores de startups y líderes técnicos senior en toda América Latina — y funcionan en cualquier industria y cualquier situación de alto impacto.
 
@@ -327,6 +327,12 @@ Entender estos 7 pilares es el primer paso. Pero leer sobre comunicación ejecut
 ### Evalúa Dónde Estás
 
 ¿No estás seguro de cuáles pilares son tus fortalezas y cuáles necesitan trabajo? [Toma el Quiz de Confianza en Comunicación Ejecutiva](/es/quiz/executives/) — toma 5 minutos y te da un desglose personalizado de tu perfil de comunicación en las 7 áreas.
+
+## Sigue Leyendo
+
+- [Caso de estudio: transformación del inglés corporativo en 12 meses](/es/blog/caso-estudio-transformacion-ingles-corporativo/) — Cómo un equipo directivo aplicó estos pilares para transformar su comunicación.
+- [4 secretos para dominar el hablar improvisado en inglés](/es/blog/4-secretos-que-usan-los-ejecutivos/) — Profundiza en el Pilar 5 con estrategias prácticas para brillar sin guión.
+- [El costo real del inglés débil en empresas mexicanas](/es/blog/costo-real-ingles-debil-empresas-mexicanas/) — Los datos duros detrás de por qué estas habilidades impactan directamente en ingresos.
 
 ### Profundiza en Habilidades Específicas
 

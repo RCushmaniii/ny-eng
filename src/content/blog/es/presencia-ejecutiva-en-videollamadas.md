@@ -85,7 +85,7 @@ Pequeños ajustes crean gran presencia:
 
 ## 5) Controla interrupciones con autoridad amable
 
-Mantén el flujo sin sonar rígido.
+Mantén el flujo sin sonar rígido. Si necesitas más frases para dirigir reuniones completas, revisa las [25 frases para dirigir reuniones en inglés con autoridad](/es/blog/dirigir-reuniones-ingles-frases/).
 
 **Frases que funcionan:**
 
@@ -112,6 +112,14 @@ Sustituye cierres débiles por acciones, responsables y tiempos.
 **Plantilla:**
 
 > "Resumen: Decisión A aprobada. Próximos pasos—**María** redacta la nota al cliente para el **jueves**, **José** revisa presupuesto para el **viernes**. ¿Alguna pregunta sobre responsabilidades?"
+
+---
+
+## Sigue Leyendo
+
+- [Dirigir reuniones en inglés: 25 frases con autoridad](/es/blog/dirigir-reuniones-ingles-frases/) — Las frases exactas para abrir, facilitar y cerrar reuniones con impacto.
+- [4 secretos para dominar el hablar improvisado en inglés](/es/blog/4-secretos-que-usan-los-ejecutivos/) — Domina las preguntas inesperadas que surgen en cualquier videollamada.
+- [Manual de comunicación ejecutiva: 7 pilares clave](/es/blog/manual-comunicacion-ejecutiva/) — La guía completa para liderar con influencia en inglés.
 
 ---
 

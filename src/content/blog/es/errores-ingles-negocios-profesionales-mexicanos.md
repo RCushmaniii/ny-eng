@@ -151,7 +151,7 @@ Los hablantes nativos de inglés en negocios—especialmente en tech y startups�
 > ✅ "Could you send the documents by Friday?"
 > (¿Podrías enviar los documentos para el viernes?)
 
-**El principio:** En el inglés de negocios estadounidense, la claridad y la franqueza señalan competencia. La formalidad excesiva señala distancia o inseguridad. Escribe como le hablarías a un colega respetado, no como si estuvieras redactando un contrato legal.
+**El principio:** En el inglés de negocios estadounidense, la claridad y la franqueza señalan competencia. La formalidad excesiva señala distancia o inseguridad. Escribe como le hablarías a un colega respetado, no como si estuvieras redactando un contrato legal. Para más sobre comunicar con claridad sin complicar tu lenguaje, lee [5 formas prácticas de mejorar tu inglés de negocios](/es/blog/5-formas-practicas-mejorar-ingles-negocios/).
 
 Si estás navegando esto en contextos ejecutivos de alto impacto, el [coaching de inglés ejecutivo](/es/servicios/ingles-para-ejecutivos/) te puede ayudar a encontrar el registro adecuado para tu industria y audiencia específica.
 
@@ -339,6 +339,14 @@ La conciencia es el primer paso. Ahora elige los dos o tres errores de esta list
 ¿Quieres un enfoque estructurado? **[Descarga la guía de 10 Errores Comunes en Inglés Ejecutivo](/es/recursos/10-errores-comunes-ingles-ejecutivo/)**—incluye ejercicios de práctica y marcos de autocorrección.
 
 Si trabajas en tech y tratas con equipos internacionales todos los días, el [coaching de inglés para tecnología](/es/servicios/ingles-para-tecnologia/) se enfoca exactamente en estos patrones de interferencia en el contexto de standups, code reviews y presentaciones técnicas.
+
+---
+
+## Sigue Leyendo
+
+- [7 frases de email que te hacen sonar junior](/es/blog/frases-email-que-te-hacen-sonar-junior/) — Más patrones que minan tu autoridad profesional en la comunicación escrita.
+- [5 formas prácticas de mejorar tu inglés de negocios](/es/blog/5-formas-practicas-mejorar-ingles-negocios/) — Estrategias concretas para comunicar con claridad y confianza.
+- [El costo real del inglés débil en empresas mexicanas](/es/blog/costo-real-ingles-debil-empresas-mexicanas/) — Cuánto le cuestan estos errores a tu empresa en ingresos y oportunidades.
 
 ---
 

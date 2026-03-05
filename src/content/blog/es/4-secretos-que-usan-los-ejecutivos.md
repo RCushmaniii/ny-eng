@@ -58,7 +58,7 @@ Un lenguaje complicado bajo presión puede generar confusión. En lugar de eso, 
 - “Facilitar” → **“Ayudar”**
 
 **Consejo:**  
-Haz una breve pausa para escoger palabras intencionalmente. El lenguaje claro transmite confianza y autoridad.
+Haz una breve pausa para escoger palabras intencionalmente. El lenguaje claro transmite confianza y autoridad. Para más sobre este principio, ve [5 formas prácticas de mejorar tu inglés de negocios](/es/blog/5-formas-practicas-mejorar-ingles-negocios/).
 
 ---
 
@@ -99,7 +99,15 @@ Cuando te comunicas espontáneamente con claridad e impacto, logras:
 - **Manejar situaciones inesperadas** de manera fluida y profesional
 - **Posicionarte como un comunicador estratégico**
 
-Hablar claramente y con confianza sin preparación previa es una habilidad esencial de liderazgo que puede diferenciarte y acelerar tu carrera.
+Hablar claramente y con confianza sin preparación previa es una habilidad esencial de liderazgo que puede diferenciarte y acelerar tu carrera. Para aplicar estas habilidades en reuniones formales, consulta las [25 frases para dirigir reuniones en inglés](/es/blog/dirigir-reuniones-ingles-frases/).
+
+---
+
+## Sigue Leyendo
+
+- [Dirigir reuniones en inglés: 25 frases con autoridad](/es/blog/dirigir-reuniones-ingles-frases/) — Lleva tus habilidades de improvisación a reuniones reales con 25 frases listas para usar.
+- [Presencia ejecutiva en videollamadas: 7 hábitos clave](/es/blog/presencia-ejecutiva-en-videollamadas/) — Proyecta autoridad y claridad en Zoom, Meet o Teams.
+- [Manual de comunicación ejecutiva: 7 pilares clave](/es/blog/manual-comunicacion-ejecutiva/) — La guía completa para dominar la influencia en inglés a nivel senior.
 
 ---
 

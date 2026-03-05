@@ -19,6 +19,8 @@ seo:
 
 En **New York English**, ayudo a profesionales como tú a mejorar su inglés de negocios para destacar en su carrera. Ya sea que necesites prepararte para una entrevista importante, liderar un equipo internacional o dar una presentación impactante, te enseño habilidades prácticas de inglés. Mi coaching te da la confianza para comunicarte con claridad y triunfar en el entorno global.
 
+Si quieres ver resultados concretos de este tipo de coaching, lee el [caso de estudio de transformación del inglés corporativo](/es/blog/caso-estudio-transformacion-ingles-corporativo/) — donde un equipo directivo transformó su comunicación en 12 meses.
+
 ### ¿Qué hace especial mi coaching?
 
 - **Sesiones 1-a-1 diseñadas para ti**  
@@ -58,4 +60,12 @@ Esto dicen líderes de distintas industrias sobre trabajar conmigo:
 
 ## ¿Por qué es importante el inglés de negocios?
 
-El buen inglés abre puertas en tu carrera. Ya sea que trabajes en tecnología, finanzas, logística u otro sector, comunicarte con claridad te ayuda a lograr ascensos, generar confianza con clientes y mostrar liderazgo. Mi coaching te enseña a manejar reuniones, negociar con seguridad y trabajar con personas de diferentes culturas. Con mejor inglés, destacarás como un líder fuerte y profesional.
+El buen inglés abre puertas en tu carrera. Ya sea que trabajes en tecnología, finanzas, logística u otro sector, comunicarte con claridad te ayuda a lograr ascensos, generar confianza con clientes y mostrar liderazgo. Mi coaching te enseña a [manejar reuniones con autoridad](/es/blog/dirigir-reuniones-ingles-frases/), [negociar con seguridad](/es/blog/como-negociar-en-ingles-marco/) y trabajar con personas de diferentes culturas. Con mejor inglés, destacarás como un líder fuerte y profesional.
+
+---
+
+## Sigue Leyendo
+
+- [El costo real del inglés débil en empresas mexicanas](/es/blog/costo-real-ingles-debil-empresas-mexicanas/) — Datos concretos sobre cuánto le cuesta el inglés débil a tu empresa.
+- [Por qué gerentes de TI pierden millones](/es/blog/por-que-los-gerentes-de-ti-en-mexico-pierden-clientes/) — El impacto directo del inglés deficiente en contratos y clientes globales.
+- [5 estrategias para ganar confianza al hablar inglés](/es/blog/aumentar-confianza/) — Empieza a construir confianza con estrategias prácticas desde hoy.

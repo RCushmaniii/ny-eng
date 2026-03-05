@@ -83,7 +83,7 @@ Las retros son donde muchos desarrolladores nearshore se quedan callados. La din
 - "What worked well for me was [X]. I'd like to keep doing that."
 - "I have a question about our process for [X]—is that intentional, or did it just evolve that way?"
 
-La clave es **enmarcar observaciones como preguntas o sugerencias, no como quejas.** Esta es una habilidad cultural del inglés que ninguna certificación enseña.
+La clave es **enmarcar observaciones como preguntas o sugerencias, no como quejas.** Esta es una habilidad cultural del inglés que ninguna certificación enseña. Si quieres perfeccionar tu comunicación en reuniones en general, las [25 frases para dirigir reuniones en inglés](/es/blog/dirigir-reuniones-ingles-frases/) te dan un arsenal completo.
 
 ---
 
@@ -246,6 +246,8 @@ Cada 30 minutos durante un incidente, publica esto en el canal de incidentes:
 - "It should be fine" — di "I'll confirm and update in [time]" en su lugar
 - "Sorry" (repetidamente) — un reconocimiento es suficiente, luego enfócate en la solución
 
+Muchos de estos errores de tono están relacionados con patrones de interferencia del español. Revisa los [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/) para identificar los que afectan tu comunicación técnica.
+
 Para profundizar en cómo estos patrones de comunicación definen tu trayectoria profesional, lee [Por Qué Desarrolladores Senior Necesitan Inglés Avanzado](/es/blog/por-que-desarrolladores-senior-necesitan-ingles-avanzado/).
 
 ---
@@ -289,9 +291,17 @@ Esto es lo que te recomiendo:
 
 4. **Toma el [Quiz de Confianza al Hablar](/es/quiz/speaking-confidence/)** para identificar tus brechas específicas de comunicación.
 
-5. **Explora el [Coaching de Tech English](/es/servicios/tech-english/)** si quieres práctica estructurada con escenarios reales de sprint teams, code reviews y presentaciones a clientes.
+5. **Explora el [Coaching de inglés para tecnología](/es/servicios/ingles-para-tecnologia/)** si quieres práctica estructurada con escenarios reales de sprint teams, code reviews y presentaciones a clientes.
 
 Tu código ya es suficientemente bueno. La pregunta es si tu **comunicación** está al nivel de tu capacidad técnica. Para la mayoría de los desarrolladores nearshore, cerrar esa brecha es la inversión con mayor retorno que pueden hacer en su carrera.
+
+---
+
+## Sigue Leyendo
+
+- [Por qué desarrolladores senior necesitan inglés avanzado](/es/blog/por-que-desarrolladores-senior-necesitan-ingles-avanzado/) — Las 4 brechas de comunicación que bloquean tu ascenso a roles senior.
+- [El costo real del inglés débil en empresas mexicanas](/es/blog/costo-real-ingles-debil-empresas-mexicanas/) — Datos concretos sobre el impacto financiero de la brecha de comunicación.
+- [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/) — Patrones de interferencia del español que minan tu credibilidad en standups y code reviews.
 
 ---
 

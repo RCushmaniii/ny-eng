@@ -25,7 +25,7 @@ En New York English, he trabajado con cientos de profesionales de industrias com
 
 ## 1. Practica "frases clave" para reuniones
 
-¿Te bloqueas cuando es tu turno de participar en una reunión? Tener algunas frases confiables listas puede marcar la diferencia. Dan estructura y señalan tu intención claramente. Prueba memorizar y practicar estas:
+¿Te bloqueas cuando es tu turno de participar en una reunión? Tener algunas [frases clave para dirigir reuniones en inglés](/es/blog/dirigir-reuniones-ingles-frases/) listas puede marcar la diferencia. Dan estructura y señalan tu intención claramente. Prueba memorizar y practicar estas:
 
 - Para intervenir con cortesía: _"¿Puedo agregar algo aquí...?"_ o _"¿Puedo intervenir un momento?"_
 - Para pedir aclaración: _"¿Podrías profundizar en ese punto, por favor?"_ o _"Quiero asegurarme de entender bien. ¿Estás diciendo que...?"_
@@ -57,3 +57,11 @@ Es un mito pensar que usar vocabulario complejo o "impresionante" demuestra inte
 Comunicar tus ideas de forma clara y concisa demuestra confianza y asegura que tu mensaje se entienda correctamente a la primera. Para técnicas avanzadas de comunicación ejecutiva, ve [Presencia ejecutiva en videollamadas: 7 hábitos que generan confianza en inglés](/es/blog/presencia-ejecutiva-en-videollamadas/).
 
 > **Caso real:** Andrés Guzmán, COO de Driscoll’s México, vio un gran aumento en la eficiencia operativa de su equipo de logística y menos errores después de enfocarse en una comunicación en inglés más simple y directa durante el coaching.
+
+---
+
+## Sigue Leyendo
+
+- [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/) — Corrige los patrones de interferencia del español que minan tu credibilidad.
+- [5 formas prácticas de mejorar tu inglés de negocios](/es/blog/5-formas-practicas-mejorar-ingles-negocios/) — Estrategias concretas adicionales para comunicar con impacto.
+- [De pláticas triviales a conversación inteligente](/es/blog/charla-pequena-habla-inteligente/) — Convierte el small talk en una herramienta para construir relaciones profesionales.

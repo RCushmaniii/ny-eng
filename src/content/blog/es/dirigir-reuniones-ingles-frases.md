@@ -24,7 +24,7 @@ Pero dirigir una reunión en inglés—realmente controlar la sala, mantener a t
 
 He trabajado con ejecutivos, directores y gerentes senior de toda Latinoamérica que son brillantes en juntas en español, pero se sienten como pasajeros en cuanto tienen que presidir una reunión en inglés. El problema nunca es su inteligencia ni sus ideas. Es que no tienen las frases correctas cargadas y listas para usar.
 
-Este artículo te da esas frases. Veinticinco en total, organizadas a lo largo de las cinco fases de cada reunión. Memoriza aunque sea la mitad, y tu equipo notará la diferencia de inmediato.
+Este artículo te da esas frases. Veinticinco en total, organizadas a lo largo de las cinco fases de cada reunión. Memoriza aunque sea la mitad, y tu equipo notará la diferencia de inmediato. (Y si quieres dominar también las situaciones improvisadas que surgen entre reuniones, revisa los [4 secretos para hablar improvisado en inglés](/es/blog/4-secretos-que-usan-los-ejecutivos/).)
 
 ---
 
@@ -384,7 +384,7 @@ _(Terminamos cinco minutos antes. De nada.)_
 
 ## Bonus para Reuniones Virtuales: 5 Tips para Zoom, Teams y Meet
 
-Dirigir una reunión es más difícil cuando no puedes leer la sala. Las pantallas esconden el lenguaje corporal, los botones de mute crean silencios, y los problemas de conexión ponen a prueba la paciencia de todos. Aquí van cinco ajustes para reuniones virtuales.
+Dirigir una reunión es más difícil cuando no puedes leer la sala. Las pantallas esconden el lenguaje corporal, los botones de mute crean silencios, y los problemas de conexión ponen a prueba la paciencia de todos. Para una guía más completa sobre presencia en cámara, lee [Presencia ejecutiva en videollamadas: 7 hábitos clave](/es/blog/presencia-ejecutiva-en-videollamadas/). Aquí van cinco ajustes para reuniones virtuales.
 
 ### 1. Nombra a la Persona Antes de Preguntar
 
@@ -422,6 +422,14 @@ Las reuniones virtuales tienden a diluirse al final. Haz tu cierre deliberado—
 ## Tu Hoja de Referencia para Liderar Reuniones
 
 ¿Quieres una referencia imprimible con estas 25 frases más frases adicionales de rescate para cuando las reuniones se salen de control? **[Descarga la guía de Frases de Rescate para Reuniones](/es/recursos/frases-rescate-reuniones/)** — cabe en una página y funciona tanto para reuniones presenciales como virtuales.
+
+---
+
+## Sigue Leyendo
+
+- [Presencia ejecutiva en videollamadas: 7 hábitos clave](/es/blog/presencia-ejecutiva-en-videollamadas/) — Proyecta autoridad y claridad en cada reunión virtual.
+- [4 secretos para dominar el hablar improvisado en inglés](/es/blog/4-secretos-que-usan-los-ejecutivos/) — Responde preguntas inesperadas sin perder la compostura.
+- [Cómo negociar en inglés: marco probado de 5 pasos](/es/blog/como-negociar-en-ingles-marco/) — Cuando la reunión se convierte en negociación, estas frases te mantienen en control.
 
 ---
 

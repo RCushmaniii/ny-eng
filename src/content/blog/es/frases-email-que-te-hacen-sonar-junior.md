@@ -22,7 +22,7 @@ Has pasado años perfeccionando tu inglés. Dominas la gramática. Conoces el vo
 
 El problema no es tu nivel de inglés—son las frases que aprendiste y que los hablantes nativos abandonaron hace años.
 
-Trabajo como coach de ejecutivos latinoamericanos en empresas Fortune 500, y veo este patrón constantemente: emails técnicamente correctos que accidentalmente señalan inexperiencia, incertidumbre o estatus inferior.
+Trabajo como coach de ejecutivos latinoamericanos en empresas Fortune 500 a través del [coaching de inglés ejecutivo](/es/servicios/ingles-para-ejecutivos/), y veo este patrón constantemente: emails técnicamente correctos que accidentalmente señalan inexperiencia, incertidumbre o estatus inferior.
 
 Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué escribir en su lugar.
 
@@ -158,6 +158,8 @@ Los emails ejecutivos son:
 - **Específicos** (solicitudes claras, fechas límite claras)
 - **Orientados a la acción** (cada email mueve algo hacia adelante)
 
+Estos mismos principios aplican a toda comunicación profesional. Para un marco más completo, revisa los [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/) — incluyendo patrones de registro y despedidas que también afectan tus emails.
+
 ---
 
 ## Referencia Rápida: Antes y Después
@@ -179,6 +181,14 @@ Los emails ejecutivos son:
 Antes de tu próximo email importante, escanea estas siete frases. Reemplázalas usando los patrones anteriores.
 
 ¿Quieres más plantillas para situaciones difíciles por email? **[Descarga mis 6 Plantillas de Email para Situaciones Difíciles](/es/recursos/plantillas-email-situaciones-dificiles/)**—incluyendo scripts para rechazar, dar malas noticias y dar seguimiento sin sonar desesperado.
+
+---
+
+## Sigue Leyendo
+
+- [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/) — Más patrones de interferencia del español que afectan tu comunicación profesional.
+- [Cómo negociar en inglés: marco probado de 5 pasos](/es/blog/como-negociar-en-ingles-marco/) — Lleva tu comunicación ejecutiva a negociaciones de alto impacto.
+- [Manual de comunicación ejecutiva: 7 pilares clave](/es/blog/manual-comunicacion-ejecutiva/) — La guía definitiva para liderar con influencia en inglés.
 
 ---
 

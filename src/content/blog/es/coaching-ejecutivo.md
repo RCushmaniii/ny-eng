@@ -49,7 +49,7 @@ Un coach ejecutivo con experiencia real en negocios no solo enseña inglés—en
 - **Comunicación estratégica:** Prepara presentaciones, pitches para inversionistas y anuncios de gestión de cambio.
 - **Dinámica corporativa:** Recibe retroalimentación dentro del marco organizacional y expectativas de liderazgo.
 
-Tu coach se convierte en un socio estratégico que entiende el entorno donde necesitas destacar.
+Tu coach se convierte en un socio estratégico que entiende el entorno donde necesitas destacar. Para ver cómo funciona esto en la práctica, lee el [caso de estudio de transformación del inglés corporativo](/es/blog/caso-estudio-transformacion-ingles-corporativo/) — donde un equipo directivo transformó su comunicación en 12 meses.
 
 ## 3. Integra el idioma con metas profesionales y de desempeño
 
@@ -60,6 +60,14 @@ Para líderes senior, el desarrollo del idioma es una herramienta para objetivos
 - **Inspira equipos y stakeholders globales:** Motiva y conecta con audiencias diversas con claridad e impacto.
 
 Para técnicas prácticas de construcción de confianza que puedes empezar a usar hoy, revisa [5 estrategias simples para ganar confianza](/es/blog/aumentar-confianza/).
+
+## Sigue Leyendo
+
+- [Manual de comunicación ejecutiva: 7 pilares clave](/es/blog/manual-comunicacion-ejecutiva/) — La guía completa de los marcos que usan los líderes para dominar cualquier sala en inglés.
+- [Caso de estudio: transformación del inglés corporativo en 12 meses](/es/blog/caso-estudio-transformacion-ingles-corporativo/) — Resultados reales de un programa de coaching ejecutivo con un equipo directivo.
+- [Presencia ejecutiva en videollamadas: 7 hábitos clave](/es/blog/presencia-ejecutiva-en-videollamadas/) — Técnicas prácticas para proyectar autoridad en Zoom, Meet o Teams.
+
+---
 
 ## Eleva tu impacto como líder
 

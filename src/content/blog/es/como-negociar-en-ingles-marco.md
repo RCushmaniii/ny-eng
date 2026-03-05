@@ -24,7 +24,7 @@ Pero en inglés, algo cambia.
 
 Las palabras vienen más lento. Dudas de tu redacción. Te preocupa sonar grosero—o peor, débil. Aceptas términos que nunca aceptarías en español porque encontrar la frase correcta para rechazar se siente imposible en el momento.
 
-He entrenado a cientos de ejecutivos latinoamericanos en negociaciones de alto riesgo con clientes, inversores y empleadores estadounidenses. El patrón es siempre el mismo: no son sus habilidades de negociación las que fallan—es tener las estructuras correctas en inglés listas cuando llega la presión.
+He entrenado a cientos de ejecutivos latinoamericanos — a través de mi programa de [coaching de inglés ejecutivo](/es/servicios/ingles-para-ejecutivos/) — en negociaciones de alto riesgo con clientes, inversores y empleadores estadounidenses. El patrón es siempre el mismo: no son sus habilidades de negociación las que fallan—es tener las estructuras correctas en inglés listas cuando llega la presión.
 
 Este marco te da esas estructuras.
 
@@ -192,7 +192,7 @@ No llenes el silencio. Déjalo estar. Si debes hablar:
 2. **Cubrirse demasiado** — "Maybe we could possibly consider..." suena incierto.
 3. **Aceptar la primera oferta** — Incluso si es buena, una pequeña contraoferta muestra que te valoras.
 4. **Hablar demasiado después de tu oferta** — Di tu número, luego para. El silencio es tu amigo.
-5. **No preparar frases** — Bajo presión, recurrirás a lo que sea más fácil de decir.
+5. **No preparar frases** — Bajo presión, recurrirás a lo que sea más fácil de decir. (Para más sobre este tema, lee sobre los [errores de email que te hacen sonar junior](/es/blog/frases-email-que-te-hacen-sonar-junior/) — el mismo patrón aplica en negociaciones escritas.)
 
 ---
 
@@ -217,6 +217,14 @@ Esta preparación toma 15 minutos y cambia el resultado.
 **[Descarga el Script de Negociación de 5 Minutos](/es/recursos/guion-negociacion-5-minutos/)** — Frases para copiar y pegar para abrir, contraofertar y cerrar tratos.
 
 ¿Negociando salario específicamente? **[Obtén el Script de Negociación de Salario](/es/recursos/script-negociacion-salario/)** — Lenguaje exacto para los cuatro momentos críticos en cualquier conversación de compensación.
+
+---
+
+## Sigue Leyendo
+
+- [7 frases de email que te hacen sonar junior](/es/blog/frases-email-que-te-hacen-sonar-junior/) — Elimina los patrones escritos que minan tu autoridad en negociaciones por email.
+- [Manual de comunicación ejecutiva: 7 pilares clave](/es/blog/manual-comunicacion-ejecutiva/) — Domina los marcos completos de persuasión, narrativa y presencia ejecutiva.
+- [Caso de estudio: transformación del inglés corporativo en 12 meses](/es/blog/caso-estudio-transformacion-ingles-corporativo/) — Cómo un equipo directivo transformó su comunicación en negociaciones reales.
 
 ---
 
