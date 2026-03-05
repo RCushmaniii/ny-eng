@@ -4,7 +4,7 @@ excerpt: "Negociar ya es estresante. Hacerlo en inglés agrega otra capa de mied
 publishDate: "2026-01-18"
 lastmod: "2026-01-18"
 categories:
-  - "Inglés de Negocios"
+  - "Inglés para Negocios"
   - "Comunicación de Alto Impacto"
 featuredImage: "./images/negotiation-framework-hero.jpg"
 imageAlt: "Dos profesionales en una reunión de negociación de negocios"

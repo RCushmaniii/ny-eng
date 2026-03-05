@@ -58,6 +58,10 @@ https://nyenglishteacher.com/* https://www.nyenglishteacher.com/:splat 301!
 # Fix incorrect service URLs
 /es/servicios/ingles-para-hablar-en-publico /es/servicios/hablar-en-publico 301
 
+# Fix broken Spanish category slugs from mismatched frontmatter
+/es/category/ingles-de-negocios /es/categoria/ingles-para-negocios/ 301
+/es/category/carrera-y-liderazgo /es/categoria/carrera-liderazgo/ 301
+
 # Handle language-specific 404s
 /en/* /en/404.html 404
 /es/* /es/404.html 404

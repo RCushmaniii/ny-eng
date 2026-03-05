@@ -5,9 +5,9 @@ publishDate: "2026-02-12"
 lastmod: "2026-02-12"
 categories:
   - "Inglés Ejecutivo"
-  - "Inglés de Negocios"
+  - "Inglés para Negocios"
   - "Comunicación de Alto Impacto"
-  - "Carrera y Liderazgo"
+  - "Carrera & Liderazgo"
 imageAlt: "Ejecutivo senior liderando con confianza una presentación en una sala de juntas en inglés"
 heroVideoPoster: "/images/blog/playbook/en/video-poster.webp"
 translations:

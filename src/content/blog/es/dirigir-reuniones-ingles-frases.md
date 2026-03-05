@@ -4,7 +4,7 @@ excerpt: "Deja de sobrevivir reuniones y empieza a liderarlas. 25 frases probada
 publishDate: "2026-03-03"
 lastmod: "2026-03-03"
 categories:
-  - "Inglés de Negocios"
+  - "Inglés para Negocios"
   - "Comunicación de Alto Impacto"
 featuredImage: "./images/meeting-phrases.jpg"
 imageAlt: "Profesional dirigiendo una reunión de negocios con confianza"

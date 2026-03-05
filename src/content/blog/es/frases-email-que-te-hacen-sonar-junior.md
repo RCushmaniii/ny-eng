@@ -4,7 +4,7 @@ excerpt: "Tu inglés puede ser gramaticalmente perfecto—pero estas frases comu
 publishDate: "2026-01-18"
 lastmod: "2026-01-18"
 categories:
-  - "Inglés de Negocios"
+  - "Inglés para Negocios"
   - "Inglés Ejecutivo"
 featuredImage: "./images/email-junior-vs-executive.jpg"
 imageAlt: "Profesional revisando email en laptop con expresión de confianza"

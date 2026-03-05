@@ -4,7 +4,7 @@ excerpt: "Estos errores comunes causados por interferencia del español minan tu
 publishDate: "2026-03-03"
 lastmod: "2026-03-03"
 categories:
-  - "Inglés de Negocios"
+  - "Inglés para Negocios"
   - "Inglés Ejecutivo"
 featuredImage: "./images/10-mistakes.jpg"
 imageAlt: "Profesional mexicano presentando con confianza en una junta de negocios usando inglés correcto"
