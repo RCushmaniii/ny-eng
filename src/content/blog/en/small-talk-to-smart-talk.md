@@ -18,7 +18,7 @@ seo:
 
 ## Why Small Talk Matters
 
-Picture this: you’re at a global conference, clutching a coffee, and the person next to you is a potential client. The silence feels heavy. Small talk isn’t just chit‑chat—it’s your ticket to trust, collaboration, and career‑defining opportunities.  
+Picture this: you’re at a global conference, clutching a coffee, and the person next to you is a potential client. The silence feels heavy. Small talk isn’t just chit-chat—it’s your ticket to trust, collaboration, and career-defining opportunities. It’s also the bridge between [building foundational confidence](/en/blog/boost-eng-confidence/) and becoming someone people genuinely want to work with.  
 I once coached Maria, an engineer from Brazil, who turned a networking freeze into a coffee chat with a senior VP using these strategies. Ready to make every moment count?
 
 ### What You’ll Learn
@@ -72,7 +72,15 @@ Small talk varies globally. In Japan, stick to polite observations about the set
 - Kept a chat alive for three minutes? ✅
 - Got a LinkedIn connection? ✅
 
-Track your wins—confidence builds fast.
+Track your wins—confidence builds fast. For more on building momentum through small victories, see [5 Practical Ways to Boost Business English Confidence Today](/en/blog/5-practical-ways-to-boost-business-english/).
+
+---
+
+## Keep Reading
+
+- [5 Simple Strategies to Gain Confidence](/en/blog/boost-eng-confidence/) — Build the underlying confidence that makes small talk feel natural.
+- [5 Practical Ways to Boost Business English Confidence Today](/en/blog/5-practical-ways-to-boost-business-english/) — Power phrases, clarity tips, and more strategies for speaking with impact.
+- [How to Negotiate in English: A Proven 5-Step Framework](/en/blog/how-to-negotiate-in-english-framework/) — When small talk turns into a business conversation, be ready.
 
 ---
 

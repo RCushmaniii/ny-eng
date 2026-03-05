@@ -22,7 +22,7 @@ You present quarterly results to a US board. You negotiate contracts with Canadi
 
 Your English works. But "works" and "commands respect" are two different things.
 
-After years of coaching Mexican executives, tech leads, and startup founders, I keep seeing the same ten mistakes. They aren't grammar failures—they're interference patterns from Spanish that make even advanced speakers sound less polished than they actually are.
+After years of coaching Mexican executives, tech leads, and startup founders, I keep seeing the same ten mistakes. They aren't grammar failures—they're interference patterns from Spanish that make even advanced speakers sound less polished than they actually are. And in high-stakes moments—[negotiating a contract](/en/blog/how-to-negotiate-in-english-framework/) or [presenting to a US board](/en/blog/executive-video-call/)—these small errors carry outsized consequences.
 
 The good news: every one of them has a straightforward fix. Let's walk through them.
 
@@ -195,7 +195,7 @@ Practice this substitution:
 | "To be honest..." | [just be honest without announcing it] |
 | "Like..." | [nothing—just drop it] |
 
-**Exercise:** Record yourself answering a business question for 60 seconds. Count the fillers. Then do it again aiming for zero. The difference is immediate.
+**Exercise:** Record yourself answering a business question for 60 seconds. Count the fillers. Then do it again aiming for zero. The difference is immediate. For a structured approach to replacing fillers with confident delivery, see [4 Secrets Executives Use to Master Impromptu Speaking](/en/blog/4-secrets-executives-use/).
 
 Want to benchmark where you stand? [Take the executive English assessment](/en/quiz/executives/) to see how your communication measures up.
 
@@ -324,6 +324,14 @@ Awareness is the first step. Now pick the two or three mistakes from this list t
 Want a structured approach? **[Download the 10 Common Mistakes in Executive English guide](/en/resources/10-common-mistakes-executive-english/)**—it includes practice exercises and self-correction frameworks.
 
 If you work in tech and deal with international teams daily, [tech English coaching](/en/services/tech-english/) targets exactly these interference patterns in the context of standups, code reviews, and technical presentations.
+
+---
+
+## Keep Reading
+
+- [5 Practical Ways to Boost Business English Confidence Today](/en/blog/5-practical-ways-to-boost-business-english/) — Pair your corrections with strategies for speaking more confidently at work.
+- [7 Email Phrases That Make You Sound Junior](/en/blog/email-phrases-that-make-you-sound-junior/) — Fix the email habits that undermine your authority alongside these spoken mistakes.
+- [The Real Cost of Weak English: Lost Deals, Blocked Promotions](/en/blog/real-cost-weak-english-mexican-companies/) — The business impact when these mistakes go uncorrected.
 
 ---
 

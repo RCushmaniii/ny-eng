@@ -20,7 +20,7 @@ seo:
 
 Do unexpected questions and impromptu speaking moments cause anxiety during your workday? Whether you're leading meetings, answering challenging questions, or engaging in networking conversations, spontaneous communication is essential for professional success.
 
-At New York English, I coach executives, entrepreneurs, and professionals in logistics, finance, tech, and more to thrive in real-world business situations. Let’s uncover four key strategies executives rely on to master impromptu speaking in English.
+At New York English, I coach executives, entrepreneurs, and professionals in logistics, finance, tech, and more to thrive in real-world business situations. Whether you’re [leading a high-stakes meeting](/en/blog/lead-meeting-english-phrases/) or fielding questions from a boardroom, these four strategies will help you respond with clarity and composure.
 
 ---
 
@@ -58,7 +58,7 @@ Complex language under pressure often leads to confusion. Instead, executives us
 - “Facilitate” → **“Help”**
 
 **Tip:**  
-Pause briefly to choose your words intentionally. Clear language signals confidence and authority.
+Pause briefly to choose your words intentionally. Clear language signals confidence and authority. If you want to go deeper on projecting confidence on camera, see [Executive Presence on Video Calls: 7 Trust-Building Habits](/en/blog/executive-video-call/).
 
 ---
 
@@ -99,7 +99,15 @@ When you communicate spontaneously with clarity and impact, you:
 - **Navigate unexpected situations** smoothly and professionally
 - **Position yourself as a strategic communicator**
 
-The ability to speak clearly and confidently without preparation is an essential leadership skill—one that can set you apart and accelerate your career.
+The ability to speak clearly and confidently without preparation is an essential leadership skill—one that can set you apart and accelerate your career. And if confidence is the deeper challenge, start with [5 Simple Strategies to Gain Confidence](/en/blog/boost-eng-confidence/).
+
+---
+
+## Keep Reading
+
+- [Lead Meetings in English: 25 Phrases That Command Respect](/en/blog/lead-meeting-english-phrases/) — Put your impromptu speaking skills to work with 25 meeting-ready phrases.
+- [Executive Presence on Video Calls: 7 Trust-Building Habits](/en/blog/executive-video-call/) — Project authority and clarity on Zoom, Meet, or Teams.
+- [How to Negotiate in English: A Proven 5-Step Framework](/en/blog/how-to-negotiate-in-english-framework/) — When impromptu moments turn into negotiations, this framework keeps you in control.
 
 ---
 

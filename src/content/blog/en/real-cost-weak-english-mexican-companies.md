@@ -28,7 +28,7 @@ seo:
 
 Mexican companies are bleeding value through "good enough" English. Here's what that looks like in business terms:
 
-- **Revenue leakage:** Contracts lost during discovery calls, procurement reviews, and negotiations when teams can't defend value or handle objections confidently
+- **Revenue leakage:** Contracts lost during discovery calls, procurement reviews, and [negotiations](/en/blog/how-to-negotiate-in-english-framework/) when teams can't defend value or handle objections confidently
 - **Delivery risk:** Requirements ambiguity, poor escalation, and coordination tax across time zones that extend timelines and increase rework
 - **Talent retention crisis:** High-performing engineers and managers leave for companies that invest in communication capability, or they stagnate because they can't lead in English
 - **Bus factor vulnerability:** Over-reliance on a few bilingual "heroes" creates single points of failure in client-facing operations
@@ -409,7 +409,7 @@ Your best people notice this pattern. They realize their career progress is capp
 
 Three things happen:
 
-1. **They leave for companies that invest in English training.** Global tech companies and multinational consulting firms budget heavily for communication development. Your top talent goes there.
+1. **They leave for companies that invest in English training.** Global tech companies and multinational consulting firms budget heavily for communication development. Your top talent goes there. This is especially true for [senior developers who need advanced English](/en/blog/why-senior-developers-need-advanced-english/) to reach the next level.
 2. **They leave for fully Spanish-speaking roles.** Instead of growing into leadership at your company, they take slightly lower-paying roles at local firms where language isn't a barrier.
 3. **They disengage.** They stop pursuing stretch projects, stop volunteering for client-facing work, and mentally check out. You lose their discretionary effort.
 
@@ -1409,15 +1409,11 @@ If you're ready to treat English as a capability system—not a class—let's di
 
 ---
 
-## Related Resources
+## Keep Reading
 
-**Learn more about building communication capability:**
-
-- [Why Mexican IT Managers Are Losing Millions to Poor English Communication](https://www.nyenglishteacher.com/en/blog/managers-lose-millions/) — Deep dive into the sales and delivery costs of weak English in IT services
-- [Why Senior Developers Need Advanced English (Not Just 'Conversational')](https://www.nyenglishteacher.com/en/blog/why-senior-developers-need-advanced-english/) — How conversational English becomes a career ceiling for technical professionals
-- [How to Boost Your English Confidence](https://www.nyenglishteacher.com/en/blog/boost-eng-confidence/) — Practical strategies for overcoming language anxiety in professional settings
-- [4 Secrets Executives Use to Sound Confident in English](https://www.nyenglishteacher.com/en/blog/4-secrets-executives-use/) — Communication frameworks that project executive presence
-- [Executive English Coaching Services](https://www.nyenglishteacher.com/en/services/executive-english/) — What leadership-level English actually requires
-- [Success Stories from Technology Leaders](https://www.nyenglishteacher.com/en/testimonials/tech-english/) — Real results from companies like yours
+- [Why IT Managers Lose Millions](/en/blog/managers-lose-millions/) — The sales and delivery costs of weak English in IT services.
+- [Why Senior Developers Need Advanced English, Not Conversational](/en/blog/why-senior-developers-need-advanced-english/) — How conversational English becomes a career ceiling for technical professionals.
+- [How One Company Transformed Their C-Suite's English in 12 Months](/en/blog/corporate-english-transformation-case-study/) — A real case study showing what systematic investment looks like.
+- [Master Business English & Grow Your Career](/en/blog/master-business-english/) — How personalized coaching delivers the ROI described in this article.
 
 ---

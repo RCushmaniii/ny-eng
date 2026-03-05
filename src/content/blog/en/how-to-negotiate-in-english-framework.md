@@ -24,7 +24,7 @@ But in English, something changes.
 
 The words come slower. You second-guess your phrasing. You worry about sounding rude—or worse, weak. You accept terms you'd never accept in Spanish because finding the right pushback phrase feels impossible in the moment.
 
-I've coached hundreds of Latin American executives through high-stakes negotiations with US clients, investors, and employers. The pattern is always the same: it's not their negotiation skills that fail them—it's having the right English structures ready when the pressure hits.
+I've coached hundreds of Latin American executives through high-stakes negotiations with US clients, investors, and employers. The pattern is always the same: it's not their negotiation skills that fail them—it's having the right English structures ready when the pressure hits. If this resonates, you're likely facing the same challenge in [meetings](/en/blog/lead-meeting-english-phrases/) and [impromptu speaking moments](/en/blog/4-secrets-executives-use/) as well.
 
 This framework gives you those structures.
 
@@ -171,7 +171,7 @@ Don't fill the silence. Let it sit. If you must speak:
 
 ## Common Mistakes Non-Native Speakers Make in Negotiations
 
-1. **Apologizing for your ask** — "Sorry, but I was hoping for..." removes your power.
+1. **Apologizing for your ask** — "Sorry, but I was hoping for..." removes your power. This is one of the [email phrases that make you sound junior](/en/blog/email-phrases-that-make-you-sound-junior/), and it's even more damaging when spoken aloud.
 2. **Hedging too much** — "Maybe we could possibly consider..." sounds uncertain.
 3. **Accepting the first offer** — Even if it's good, a small counter shows you value yourself.
 4. **Talking too much after your offer** — State your number, then stop. Silence is your friend.
@@ -200,6 +200,14 @@ Want word-for-word scripts for the most common negotiation scenarios?
 **[Download the 5-Minute Negotiation Script](/en/resources/5-minute-negotiation-script/)** — Copy-paste phrases for opening, countering, and closing deals.
 
 Negotiating salary specifically? **[Get the Salary Negotiation Script](/en/resources/salary-negotiation-script/)** — Exact language for the four critical moments in any compensation conversation.
+
+---
+
+## Keep Reading
+
+- [Lead Meetings in English: 25 Phrases That Command Respect](/en/blog/lead-meeting-english-phrases/) — When negotiations happen inside meetings, these phrases keep you in control.
+- [7 Email Phrases That Make You Sound Junior](/en/blog/email-phrases-that-make-you-sound-junior/) — Your follow-up emails after negotiations matter just as much as the conversation itself.
+- [How One Company Transformed Their C-Suite's English in 12 Months](/en/blog/corporate-english-transformation-case-study/) — See how a Mexican company's executives went from avoiding negotiations to leading them.
 
 ---
 

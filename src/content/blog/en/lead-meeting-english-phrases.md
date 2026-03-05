@@ -20,7 +20,7 @@ seo:
 
 You attend meetings every week. You nod, contribute when asked, and follow the agenda someone else set.
 
-But leading a meeting in English—actually running the room, keeping people focused, handling the person who won't stop talking, driving toward a decision—that requires a completely different set of language tools.
+But leading a meeting in English—actually running the room, keeping people focused, handling the person who won't stop talking, driving toward a decision—that requires a completely different set of language tools. It demands [executive presence](/en/blog/executive-video-call/) and the ability to [think on your feet](/en/blog/4-secrets-executives-use/) when conversations take unexpected turns.
 
 I've coached executives, directors, and senior managers across Latin America who are brilliant in Spanish boardrooms but feel like passengers the moment they have to chair a meeting in English. The problem is never their intelligence or their ideas. It's that they don't have the right phrases loaded and ready.
 
@@ -334,7 +334,7 @@ How you close a meeting determines whether anything actually happens afterward. 
 
 ## Virtual Meeting Bonus: 5 Tips for Zoom, Teams, and Meet
 
-Leading a meeting is harder when you can't read the room. Screens hide body language, mute buttons create silence, and connection issues test everyone's patience. Here are five adjustments for virtual meetings.
+Leading a meeting is harder when you can't read the room. Screens hide body language, mute buttons create silence, and connection issues test everyone's patience. For a deeper dive on projecting authority on camera, see [Executive Presence on Video Calls: 7 Trust-Building Habits](/en/blog/executive-video-call/). Here are five adjustments for virtual meetings.
 
 ### 1. Name People Before Asking
 
@@ -372,6 +372,14 @@ Virtual meetings tend to fizzle out. Make your closing deliberate—sit up, look
 ## Your Meeting Leadership Cheat Sheet
 
 Want a printable reference with these 25 phrases plus additional rescue phrases for when meetings go sideways? **[Download the Meeting Rescue Phrases guide](/en/resources/meeting-rescue-phrases/)** — it fits on one page and works for both in-person and virtual meetings.
+
+---
+
+## Keep Reading
+
+- [Executive Presence on Video Calls: 7 Trust-Building Habits](/en/blog/executive-video-call/) — Project authority and clarity in every virtual meeting.
+- [4 Secrets Executives Use to Master Impromptu Speaking](/en/blog/4-secrets-executives-use/) — Handle unexpected questions without breaking a sweat.
+- [How to Negotiate in English: A Proven 5-Step Framework](/en/blog/how-to-negotiate-in-english-framework/) — When meetings turn into negotiations, these phrases keep you in control.
 
 ---
 

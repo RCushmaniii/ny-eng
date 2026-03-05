@@ -23,7 +23,7 @@ You can write flawless code. You understand system architecture. You've mastered
 
 But when the VP of Engineering asks you to defend your architectural decision on a live call—**can you articulate it clearly in English?**
 
-If you're targeting senior developer roles at international companies, "conversational English" is actively holding you back. It's the difference between being understood and being **respected as a technical leader**.
+If you're targeting senior developer roles at international companies, "conversational English" is actively holding you back. It's the difference between being understood and being **respected as a technical leader**. For nearshore developers specifically, the gap between certification English and [what US sprint teams actually expect](/en/blog/english-nearshore-developers-skills/) is even wider than most people realize.
 
 ---
 
@@ -81,7 +81,7 @@ You struggle to translate technical complexity into business value. When the CFO
 
 During incidents, you defer to email instead of explaining solutions live. You say "Let me get back to you" when you actually know the answer—you just can't express it clearly under pressure.
 
-**Result:** You're seen as an implementer, not a leader. Senior roles require composure in executive-level situations.
+**Result:** You're seen as an implementer, not a leader. Senior roles require composure in executive-level situations. Learning to [handle impromptu questions under pressure](/en/blog/4-secrets-executives-use/) can close this gap faster than you think.
 
 ### 4. Code Review & Mentoring
 
@@ -160,6 +160,14 @@ I work specifically with developers, IT professionals, and tech leaders who need
 3. Create a custom 60-day plan to reach senior-level fluency
 
 Or **[message me directly on WhatsApp](https://wa.link/pk4f97)** to discuss your goals.
+
+---
+
+## Keep Reading
+
+- [English for Nearshore Developers: Skills US Teams Need](/en/blog/english-nearshore-developers-skills/) — The specific communication patterns US sprint teams expect, with phrases you can use this week.
+- [The Real Cost of Weak English: Lost Deals, Blocked Promotions](/en/blog/real-cost-weak-english-mexican-companies/) — How weak English creates measurable revenue loss and career ceilings across Mexican companies.
+- [10 Business English Mistakes Mexican Professionals Make](/en/blog/business-english-mistakes-mexican-professionals/) — Fix the Spanish interference patterns that undermine your credibility in technical discussions.
 
 ---
 

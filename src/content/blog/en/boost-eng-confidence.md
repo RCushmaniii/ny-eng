@@ -32,7 +32,7 @@ Ever freeze up when it’s your turn to contribute in a meeting? Having a few re
 - To request clarification: _“Could you elaborate on that point, please?”_ or _“I want to make sure I understand correctly. Are you saying…?”_
 - To share your view: _“From my perspective…”_ or _“Here’s how I see it…”_
 
-Start by using these phrases in everyday conversations or even practice them alone. As they become more familiar, you'll find yourself sounding more assertive, polished, and confident when it counts.
+Start by using these phrases in everyday conversations or even practice them alone. As they become more familiar, you'll find yourself sounding more assertive, polished, and confident when it counts. For a curated list of meeting-specific phrases, see [Lead Meetings in English: 25 Phrases That Command Respect](/en/blog/lead-meeting-english-phrases/).
 
 _Pro Tip:_ Record yourself saying these phrases using your phone. Listen back, paying attention to your tone, pace, and pronunciation. Small adjustments can make a big impact.
 
@@ -69,7 +69,7 @@ Facing a crucial job interview, a client presentation, or a performance review? 
 - **Focus on Your Opening and Closing:** Craft a strong, confident opening (_“Thank you for the opportunity. I’m eager to discuss how my skills…”_) and a clear, decisive closing (_“I hope this provides a clear overview. I look forward to your feedback.”_).
 - **Embrace Pauses:** Don't be afraid of silence. Pausing briefly before answering a question or between points can make you seem more thoughtful and in control.
 
-Thorough preparation transforms nervous energy into focused confidence.
+Thorough preparation transforms nervous energy into focused confidence. If you want frameworks for thinking on your feet when preparation isn't possible, try [4 Secrets Executives Use to Master Impromptu Speaking](/en/blog/4-secrets-executives-use/).
 
 > As Hugo Bloom, Founder of Bricks / 100 Ladrillos, noted after presentation coaching: _“Preparing this way saved us countless hours while significantly improving our response time and clarity with investors.”_
 
@@ -83,6 +83,14 @@ Building confidence is a journey, not a destination. It grows incrementally with
 - Did you write a clear, concise email that got the result you wanted? _Pat yourself on the back._
 
 Keep a simple log of these small victories in a notebook or a digital note. Sharing them with a coach or mentor can also reinforce your progress. Actively celebrating these moments builds momentum and reinforces your belief in your growing abilities.
+
+---
+
+## Keep Reading
+
+- [5 Practical Ways to Boost Business English Confidence Today](/en/blog/5-practical-ways-to-boost-business-english/) — More actionable strategies for speaking clearly and leading with impact.
+- [10 Business English Mistakes Mexican Professionals Make](/en/blog/business-english-mistakes-mexican-professionals/) — Fix the interference patterns that undermine your hard-won confidence.
+- [Why Senior Leaders Need a Business-Savvy English Coach](/en/blog/executive-english-coaching/) — Why personalized coaching accelerates confidence faster than self-study.
 
 ---
 

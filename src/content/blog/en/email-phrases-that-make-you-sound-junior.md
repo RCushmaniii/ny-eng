@@ -22,7 +22,7 @@ You've spent years perfecting your English. You nail the grammar. You know the v
 
 The problem isn't your English level—it's the phrases you've learned that native speakers abandoned years ago.
 
-I coach Latin American executives at Fortune 500 companies, and I see this pattern constantly: technically correct emails that accidentally signal inexperience, uncertainty, or lower status.
+I coach Latin American executives at Fortune 500 companies, and I see this pattern constantly: technically correct emails that accidentally signal inexperience, uncertainty, or lower status. Many of these habits stem from the same [Spanish interference patterns](/en/blog/business-english-mistakes-mexican-professionals/) that affect spoken English as well.
 
 Here are seven phrases to delete from your vocabulary today—and exactly what to write instead.
 
@@ -144,6 +144,8 @@ Executive emails are:
 - **Specific** (clear asks, clear deadlines)
 - **Action-oriented** (every email moves something forward)
 
+These same principles apply to how you [negotiate in English](/en/blog/how-to-negotiate-in-english-framework/)—directness and specificity are just as critical in live conversations.
+
 ---
 
 ## Quick Reference: Before & After
@@ -165,6 +167,14 @@ Executive emails are:
 Before your next important email, scan for these seven phrases. Replace them using the patterns above.
 
 Want more templates for difficult email situations? **[Download my 6 Email Templates for Difficult Situations](/en/resources/email-templates-difficult-situations/)**—including scripts for pushing back, delivering bad news, and following up without sounding desperate.
+
+---
+
+## Keep Reading
+
+- [10 Business English Mistakes Mexican Professionals Make](/en/blog/business-english-mistakes-mexican-professionals/) — Fix the spoken mistakes that often accompany these email habits.
+- [How to Negotiate in English: A Proven 5-Step Framework](/en/blog/how-to-negotiate-in-english-framework/) — Apply the same directness principles to live negotiations.
+- [Executive Presence on Video Calls: 7 Trust-Building Habits](/en/blog/executive-video-call/) — Make sure your spoken authority matches your written authority.
 
 ---
 

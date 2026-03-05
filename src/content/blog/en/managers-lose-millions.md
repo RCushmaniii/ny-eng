@@ -49,7 +49,7 @@ Business English skills allow IT managers to:
 - Write compelling proposals that win business.
 - Negotiate confidently in critical meetings.
 
-_Example:_ Your competitor's SaaS platform is a year behind yours, but their flawless presentation to a panel of venture capitalists in San Francisco secures them **\$2 million in funding** while you're still struggling to get meetings. That’s painful—and preventable.
+_Example:_ Your competitor’s SaaS platform is a year behind yours, but their flawless presentation to a panel of venture capitalists in San Francisco secures them **\$2 million in funding** while you’re still struggling to get meetings. That’s painful—and preventable. For a detailed breakdown of these costs across the organization, see [The Real Cost of Weak English: Lost Deals, Blocked Promotions](/en/blog/real-cost-weak-english-mexican-companies/).
 
 ---
 
@@ -77,7 +77,7 @@ Effective Business English leadership enables IT managers to:
 - Deliver impactful feedback and performance reviews.
 - Maintain high morale and productivity through clear motivational communication.
 
-_Example:_ Teams struggle and productivity plummets when managers cannot clearly articulate project milestones and individual responsibilities in English, leading to confusion and redundant work.
+_Example:_ Teams struggle and productivity plummets when managers cannot clearly articulate project milestones and individual responsibilities in English, leading to confusion and redundant work. Learning to [lead meetings with the right phrases](/en/blog/lead-meeting-english-phrases/) solves this problem at the source.
 
 ---
 
@@ -106,5 +106,13 @@ Consider two Guadalajara-based AI startups with similar products. Startup A igno
 For Mexico's tech industry, mastering Business English is not about language—it's about unlocking potential, achieving global success, and maximizing profitability. Companies that invest in English proficiency for their IT managers and developers will outperform those who don’t. Don't lose another opportunity to language barriers.
 
 **Take action now to master Business English and put your company at the forefront of global innovation.**
+
+## Keep Reading
+
+- [The Real Cost of Weak English: Lost Deals, Blocked Promotions](/en/blog/real-cost-weak-english-mexican-companies/) — A comprehensive look at how English gaps create measurable revenue loss and career ceilings.
+- [How One Company Transformed Their C-Suite's English in 12 Months](/en/blog/corporate-english-transformation-case-study/) — See how a 500+ employee Mexican company turned communication gaps into a competitive advantage.
+- [Master Business English & Grow Your Career](/en/blog/master-business-english/) — How personalized coaching delivers real-world results for IT leaders and their teams.
+
+---
 
 **[Ready to Win More Global Contracts? Unlock Your Team's Potential with a Free Consultation.](/en/book/)**

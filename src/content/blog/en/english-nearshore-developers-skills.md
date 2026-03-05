@@ -83,7 +83,7 @@ Retros are where many nearshore developers go silent. The cultural dynamic is re
 - "What worked well for me was [X]. I'd like to keep doing that."
 - "I have a question about our process for [X]—is that intentional, or did it just evolve that way?"
 
-The key is **framing observations as questions or suggestions, not complaints.** This is a cultural English skill that no certification teaches.
+The key is **framing observations as questions or suggestions, not complaints.** This is a cultural English skill that no certification teaches. It's also a common area where [Spanish language interference](/en/blog/business-english-mistakes-mexican-professionals/) creates unexpected tone problems.
 
 ---
 
@@ -192,7 +192,7 @@ For nearshore developers working on client-facing projects, demos are the highes
 
 > "Looks like we're hitting a caching issue in this environment. This is working correctly in staging—I can share my screen from that environment, or I can send you a recorded walkthrough after this call. Which would you prefer?"
 
-**Never say:** "Sorry, it's not working, I don't know why." That answer kills client confidence instantly.
+**Never say:** "Sorry, it's not working, I don't know why." That answer kills client confidence instantly. For broader strategies on projecting confidence in these high-visibility moments, see [Executive Presence on Video Calls: 7 Trust-Building Habits](/en/blog/executive-video-call/).
 
 **Key demo phrases:**
 
@@ -292,6 +292,14 @@ Here's what I'd recommend:
 5. **Explore [Tech English Coaching](/en/services/tech-english/)** if you want structured practice with real scenarios from sprint teams, code reviews, and client presentations.
 
 Your code is already good enough. The question is whether your **communication** matches your technical ability. For most nearshore developers, closing that gap is the single highest-ROI investment they can make in their career.
+
+---
+
+## Keep Reading
+
+- [Why Senior Developers Need Advanced English, Not Conversational](/en/blog/why-senior-developers-need-advanced-english/) — The four communication gaps that block promotions to senior roles at global companies.
+- [The Real Cost of Weak English: Lost Deals, Blocked Promotions](/en/blog/real-cost-weak-english-mexican-companies/) — The business case for investing in English, with real numbers from Mexican companies.
+- [Why IT Managers Lose Millions](/en/blog/managers-lose-millions/) — When communication gaps hit the P&L, the losses go far beyond missed deadlines.
 
 ---
 

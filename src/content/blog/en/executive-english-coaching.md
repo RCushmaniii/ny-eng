@@ -47,7 +47,7 @@ _Once you’ve honed those cultural and tonal nuances, it’s time to align your
 An executive coach with real-world business insight doesn’t just teach English—they teach _your_ Business English:
 
 - **Industry-Specific Vocabulary:** From tech roadmaps to financial models and logistics KPIs.
-- **Strategic Communication:** Craft investor pitches, board presentations, and change-management announcements.
+- **Strategic Communication:** Craft investor pitches, board presentations, and change-management announcements. See how this played out in practice: [How One Company Transformed Their C-Suite's English in 12 Months](/en/blog/corporate-english-transformation-case-study/).
 - **Corporate Dynamics:** Get feedback within the framework of organizational structures and leadership expectations.
 
 Your coach becomes a strategic partner who understands the environment in which you need to excel.
@@ -66,7 +66,7 @@ Sessions are targeted interventions designed to yield real-world results.
 
 Authentic confidence comes from targeted practice and honest feedback. A skilled coach guides you to:
 
-- **Identify & Overcome Blockers:** Address nerves in executive-level presentations or tough Q&A.
+- **Identify & Overcome Blockers:** Address nerves in executive-level presentations or tough Q&A. For practical frameworks you can start using today, try [4 Secrets Executives Use to Master Impromptu Speaking](/en/blog/4-secrets-executives-use/).
 - **Refine Your Style:** Enhance articulation, pacing, and vocal variety for maximum impact.
 - **Receive Constructive Feedback:** Gain actionable insights on how you're perceived and how to improve.
 
@@ -87,6 +87,14 @@ In today’s global marketplace, clear, confident English isn’t just “nice t
 If you're a senior leader aiming to maximize your influence and effectiveness on the global stage, standard English lessons won’t give you the edge you need. Working with a native English coach who blends linguistic expertise with sharp business understanding is an investment in your leadership potential and your organization’s success.
 
 It’s about moving beyond simply being understood to truly commanding presence and driving results through powerful communication.
+
+---
+
+## Keep Reading
+
+- [How One Company Transformed Their C-Suite's English in 12 Months](/en/blog/corporate-english-transformation-case-study/) — A real case study of executive coaching in action.
+- [Executive Presence on Video Calls: 7 Trust-Building Habits](/en/blog/executive-video-call/) — Practical habits for projecting authority on camera.
+- [The Real Cost of Weak English: Lost Deals, Blocked Promotions](/en/blog/real-cost-weak-english-mexican-companies/) — Understand the business case for investing in executive English.
 
 ---
 

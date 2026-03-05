@@ -44,7 +44,7 @@ If you hesitate during meetings, you’re not alone. Preparing a few powerful ph
 
 ## 2. Get Better at Small Talk
 
-Small talk isn’t just filler—it builds trust and opens doors. It’s also a skill that improves with practice.
+Small talk isn’t just filler—it builds trust and opens doors. It’s also a skill that improves with practice. For a deeper dive with seven field-tested conversation openers, see [From Small Talk to Smart Talk: 7 Conversation Starters](/en/blog/small-talk-to-smart-talk/).
 
 1. Ask about work: “How’s the new project going?”
 2. Be friendly: “How’s your week been?” or “Any plans for the weekend?”
@@ -61,7 +61,7 @@ You don’t need complicated words to sound professional. Clear, direct language
 - “Facilitate” → “Help”
 - “Ameliorate” → “Improve”
 
-> **Clear communication isn’t basic—it’s powerful.** When your words are direct and purposeful, people listen, take action, and results follow.
+> **Clear communication isn’t basic—it’s powerful.** When your words are direct and purposeful, people listen, take action, and results follow. If you’re a Spanish speaker, watch out for the [10 common mistakes caused by Spanish interference](/en/blog/business-english-mistakes-mexican-professionals/) that can undermine even clear language.
 
 ## 4. Prepare for Executive-Level Moments
 
@@ -94,6 +94,14 @@ When you speak confidently in English, you unlock more than words:
 - Build trust with clients and coworkers
 - Win new opportunities across borders
 - Represent yourself—and your company—more effectively
+
+---
+
+## Keep Reading
+
+- [5 Simple Strategies to Gain Confidence](/en/blog/boost-eng-confidence/) — Go deeper with confidence-building techniques for business English.
+- [From Small Talk to Smart Talk: 7 Conversation Starters](/en/blog/small-talk-to-smart-talk/) — Break the ice and build rapport in any professional setting.
+- [Master Business English & Grow Your Career](/en/blog/master-business-english/) — How personalized coaching accelerates real-world results.
 
 ---
 

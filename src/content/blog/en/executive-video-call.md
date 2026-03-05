@@ -96,7 +96,7 @@ Maintain flow without sounding rigid.
 
 ## 6) Answer Tough Questions with PREP
 
-Use **PREP** (Point → Reason → Example → Point) to respond clearly under pressure.
+Use **PREP** (Point → Reason → Example → Point) to respond clearly under pressure. This is one of the [four frameworks executives use for impromptu speaking](/en/blog/4-secrets-executives-use/)—it works especially well on video calls where you have less time to organize your thoughts.
 
 **Example:**
 
@@ -106,7 +106,7 @@ Use **PREP** (Point → Reason → Example → Point) to respond clearly under p
 
 ## 7) Close with Commitments, Not “Any Questions?”
 
-Replace weak endings with actions, owners, and timing.
+Replace weak endings with actions, owners, and timing. For 25 field-tested phrases that cover every phase of meeting leadership, see [Lead Meetings in English: 25 Phrases That Command Respect](/en/blog/lead-meeting-english-phrases/).
 
 **Template:**
 
@@ -134,6 +134,14 @@ Strong video presence helps you:
 - Lead cross-border teams with clarity
 - Reduce confusion and meeting fatigue
 - Move decisions forward—today, not next week
+
+---
+
+## Keep Reading
+
+- [Lead Meetings in English: 25 Phrases That Command Respect](/en/blog/lead-meeting-english-phrases/) — The complete phrase playbook for every phase of meeting leadership.
+- [4 Secrets Executives Use to Master Impromptu Speaking](/en/blog/4-secrets-executives-use/) — Respond to unexpected questions with clarity and confidence.
+- [7 Email Phrases That Make You Sound Junior](/en/blog/email-phrases-that-make-you-sound-junior/) — Your video presence is strong, but are your emails matching it?
 
 ---
 

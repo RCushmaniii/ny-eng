@@ -22,8 +22,8 @@ At **New York English**, I help professionals like you improve your Business Eng
 
 ### What Makes My Coaching Special
 
-- **1-on-1 Sessions Designed for You**  
-  Every lesson focuses on _your_ goals. We work on what you need, like writing professional emails, speaking in meetings, or negotiating deals. No textbooks, just real-world skills.
+- **1-on-1 Sessions Designed for You**
+  Every lesson focuses on _your_ goals. We work on what you need, like writing [professional emails](/en/blog/email-phrases-that-make-you-sound-junior/), speaking in [meetings](/en/blog/lead-meeting-english-phrases/), or [negotiating deals](/en/blog/how-to-negotiate-in-english-framework/). No textbooks, just real-world skills.
 
 - **Training for Companies**  
   Want your team to communicate better? I offer workshops to improve English for entire departments, from client calls to internal reports.
@@ -59,11 +59,19 @@ Here’s what leaders from different industries say about working with me:
 
 ## Why Business English Is Important
 
-Good English opens doors in your career. Whether you work in tech, finance, logistics, or another field, clear communication helps you win promotions, build trust with clients, and show leadership. My coaching teaches you to handle meetings, negotiate with confidence, and work with people from different cultures. With better English, you’ll stand out as a strong, professional leader.
+Good English opens doors in your career. Whether you work in tech, finance, logistics, or another field, clear communication helps you win promotions, build trust with clients, and show leadership. The [real cost of weak English](/en/blog/real-cost-weak-english-mexican-companies/) goes far beyond missed words—it means lost deals, blocked promotions, and stalled careers. My coaching teaches you to handle meetings, negotiate with confidence, and work with people from different cultures. With better English, you’ll stand out as a strong, professional leader.
 
 ### Start Your Journey Today
 
 Improving your English is an investment in your future. With my coaching, you’ll gain the skills to speak confidently in any business situation, from boardrooms to client calls. Let’s work together to reach your goals.
+
+---
+
+## Keep Reading
+
+- [5 Practical Ways to Boost Business English Confidence Today](/en/blog/5-practical-ways-to-boost-business-english/) — Actionable tips you can start using immediately.
+- [The Real Cost of Weak English: Lost Deals, Blocked Promotions](/en/blog/real-cost-weak-english-mexican-companies/) — Understand what's at stake when communication gaps go unaddressed.
+- [How One Company Transformed Their C-Suite's English in 12 Months](/en/blog/corporate-english-transformation-case-study/) — See personalized coaching in action with a real case study.
 
 ---
 

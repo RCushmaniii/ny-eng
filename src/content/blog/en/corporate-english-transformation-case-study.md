@@ -76,7 +76,7 @@ What emerged was surprising. Grammar wasn't the primary issue. The real barriers
 
 Each executive received weekly one-on-one sessions tailored to their specific challenges:
 
-**For the Mexico-Based COO**, we focused on impromptu speaking. She needed to respond confidently when American executives asked unexpected questions. We practiced rapid-fire Q&A until her brain stopped translating and started _thinking_ in English.
+**For the Mexico-Based COO**, we focused on [impromptu speaking](/en/blog/4-secrets-executives-use/). She needed to respond confidently when American executives asked unexpected questions. We practiced rapid-fire Q&A until her brain stopped translating and started _thinking_ in English.
 
 **For the General Manager**, we rehearsed board presentations repeatedly. Not reading scripts—_performing_ them. We worked on pacing, emphasis, and the body language signals that project authority regardless of accent.
 
@@ -84,7 +84,7 @@ Each executive received weekly one-on-one sessions tailored to their specific ch
 
 **For the HR Director**, we developed interview frameworks. Not just questions to ask, but how to probe, how to build rapport, and how to assess candidates when both parties were working in their second language.
 
-**For the CFO**, we tackled executive-level negotiations. Supplier contracts, audit responses, financial presentations. We practiced the specific language of legal and financial authority—phrases that brook no ambiguity.
+**For the CFO**, we tackled [executive-level negotiations](/en/blog/how-to-negotiate-in-english-framework/). Supplier contracts, audit responses, financial presentations. We practiced the specific language of legal and financial authority—phrases that brook no ambiguity.
 
 ### Phase 3: Group Simulations (Monthly)
 
@@ -203,7 +203,7 @@ If your organization is considering similar development for leadership teams, co
 
 **Budget for duration.** Real transformation requires time. Eight weeks might improve confidence temporarily. Twelve months can change careers.
 
-**Address the full executive toolkit.** Language skills matter, but they're insufficient without the underlying communication frameworks. The best English in the world won't help an executive who doesn't know how to handle an objection or structure a persuasive argument.
+**Address the full executive toolkit.** Language skills matter, but they're insufficient without the underlying communication frameworks. The best English in the world won't help an executive who doesn't know how to handle an objection or structure a persuasive argument. For a look at what this costs when left unaddressed, see [The Real Cost of Weak English: Lost Deals, Blocked Promotions](/en/blog/real-cost-weak-english-mexican-companies/).
 
 **Start at the top.** When senior leaders participate visibly, they create permission for everyone else. When they hide in private coaching while sending junior staff to group classes, they signal that struggling with English is shameful. The former accelerates development; the latter inhibits it.
 
@@ -220,6 +220,14 @@ Every organization expanding across language boundaries faces a version of this 
 If the answer isn't an unqualified "yes," the gap is costing you money. In negotiations where your team can't defend value. In client relationships that never deepen beyond transactional. In opportunities that never get pursued because the right people don't feel ready.
 
 The good news: these gaps are closable. Not with grammar drills or vocabulary lists, but with sustained, strategic development focused on real business situations.
+
+---
+
+## Keep Reading
+
+- [Why Senior Leaders Need a Business-Savvy English Coach](/en/blog/executive-english-coaching/) — The principles behind executive-level coaching and why standard lessons fall short.
+- [The Real Cost of Weak English: Lost Deals, Blocked Promotions](/en/blog/real-cost-weak-english-mexican-companies/) — The financial impact when English gaps go unaddressed.
+- [5 Simple Strategies to Gain Confidence](/en/blog/boost-eng-confidence/) — Start building the confidence these executives developed over 12 months.
 
 ---
 
