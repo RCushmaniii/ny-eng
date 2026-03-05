@@ -173,7 +173,8 @@ Claude MUST execute these steps automatically. Never ask Robert to run scripts o
 
 1. **Build & Deploy**: Build, commit, push — wait for Vercel deploy
 2. **Submit to Google**: Run `node scripts/seo/gsc-submit-urls.mjs --sitemap` to resubmit sitemap
-3. **Submit to Bing/Yandex/DuckDuckGo**: Run `node scripts/seo/indexnow-submit.mjs --url <new-url>` for each new URL
+3. **Submit to Bing (API)**: Run `node scripts/seo/bing-submit.mjs --url <new-url>` for direct Bing submission
+4. **Submit to IndexNow**: Run `node scripts/seo/indexnow-submit.mjs --url <new-url>` for Bing/Yandex/DuckDuckGo
 4. **Update sitemap config**: If new blog post, add EN↔ES translation mapping to `astro.config.mjs` `blogTranslations` object
 5. **Verify structured data**: Confirm JSON-LD schemas are present (Article, BreadcrumbList, FAQ if applicable)
 
@@ -201,6 +202,7 @@ When adding ANY new external service or API endpoint that the browser calls via 
 | `scripts/seo/gsc-submit-urls.mjs` | Submit sitemap or individual URLs to Google |
 | `scripts/seo/gsc-index-status.mjs` | Check URL index status via Inspection API |
 | `scripts/seo/indexnow-submit.mjs` | Submit URLs to Bing/Yandex/DuckDuckGo via IndexNow |
+| `scripts/seo/bing-submit.mjs` | Submit URLs directly to Bing Webmaster Tools API |
 
 ### SEO Credentials
 
@@ -209,4 +211,9 @@ When adding ANY new external service or API endpoint that the browser calls via 
 - **Credentials file**: `scripts/seo/gsc-credentials.json` (gitignored, NEVER commit)
 - **IndexNow key**: `68c9a0e54a33fa63d4e4384ebe910e71`
 - **GSC Property**: `sc-domain:nyenglishteacher.com`
+- **Bing API Key**: `756a56664bea4d73b3486fd0d44b5fc8`
 - **Hosting**: Vercel (NOT Hostinger — CLAUDE.md tech stack section is outdated on this)
+
+## Marketing Plan
+
+See **[SEO-MARKETING-PLAN.md](./SEO-MARKETING-PLAN.md)** for the full content roadmap, completed work log, and upcoming initiatives. Claude should consult this file at the start of every session and update it as work is completed.
