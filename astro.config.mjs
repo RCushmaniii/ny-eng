@@ -38,6 +38,9 @@ const blogTranslations = {
   "business-english-mistakes-mexican-professionals": "/es/blog/errores-ingles-negocios-profesionales-mexicanos/",
   "english-nearshore-developers-skills": "/es/blog/ingles-desarrolladores-nearshore-habilidades/",
   "lead-meeting-english-phrases": "/es/blog/dirigir-reuniones-ingles-frases/",
+  "daily-standup-english": "/es/blog/ingles-para-daily-standup-frases/",
+  "customs-freight-english": "/es/blog/ingles-aduanas-comercio-exterior/",
+  "us-interview-prep": "/es/blog/entrevista-trabajo-empresa-americana/",
 };
 
 // Reverse map (ES slug -> EN path)

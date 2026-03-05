@@ -11,9 +11,9 @@ Each post links to a specific service page to drive conversions.
 
 | # | Status | Title (EN) | Target Keyword | Service Page | Notes |
 |---|--------|-----------|----------------|-------------|-------|
-| 1 | 🔄 In Progress | English for Daily Standups: What to Say | "english phrases for daily standup meetings" | Tech English | Awaiting hero image |
-| 2 | 🔄 In Progress | English for Customs & Cross-Border Freight | "english vocabulary for customs freight shipping" | Logistics English | Awaiting hero image |
-| 3 | 🔄 In Progress | Ace Your US Company Interview from Mexico | "job interview english american company tips" | Interview Prep | Awaiting hero image |
+| 1 | ✅ Written | English for Daily Standups: What to Say | "english phrases for daily standup meetings" | Tech English | Needs hero image: `daily-standup-english.jpg` |
+| 2 | ✅ Written | English for Customs & Cross-Border Freight | "english vocabulary for customs freight shipping" | Logistics English | Needs hero image: `customs-freight-english.jpg` |
+| 3 | ✅ Written | Ace Your US Company Interview from Mexico | "job interview english american company tips" | Interview Prep | Needs hero image: `us-interview-prep.jpg` |
 | 4 | ⬜ Planned | Slack English: Write Like a Pro, Not a Bot | "professional slack messages in english" | Tech English | |
 | 5 | ⬜ Planned | Present to US Clients on Zoom with Confidence | "present to american clients on zoom" | High-Stakes English | |
 | 6 | ⬜ Planned | Pitch Your Startup in English to US VCs | "pitch startup english to investors" | Startup Founders | |
@@ -62,8 +62,8 @@ These service pages need blog posts driving traffic to them:
 | Service Page | Status | Blog Posts Linking |
 |-------------|--------|-------------------|
 | `/en/services/technical-sales-english/` | ⬜ No blog support | Post #7 planned |
-| `/en/services/logistics-english/` | 🔄 Post #2 in progress | Post #2 |
-| `/en/services/interview-prep/` | 🔄 Post #3 in progress | Post #3 |
+| `/en/services/logistics-english/` | ✅ Post #2 written | Post #2 |
+| `/en/services/interview-prep/` | ✅ Post #3 written | Post #3 |
 | `/en/services/startup-founders/` | ⬜ Weak support | Post #6 planned |
 | `/en/services/medical-english/` | ⬜ No blog support | Need to plan |
 | `/en/services/public-speaking-english/` | ⬜ No blog support | Need to plan |
