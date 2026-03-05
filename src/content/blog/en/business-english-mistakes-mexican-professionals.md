@@ -1,5 +1,5 @@
 ---
-title: "10 Business English Mistakes Mexican Professionals Make (and How to Fix Them)"
+title: "10 Business English Mistakes Mexican Professionals Make"
 excerpt: "These common mistakes rooted in Spanish interference undermine your credibility in meetings, emails, and calls. Here's what to fix and exactly how."
 publishDate: "2026-03-03"
 lastmod: "2026-03-03"

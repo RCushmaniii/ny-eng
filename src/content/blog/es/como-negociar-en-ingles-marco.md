@@ -1,5 +1,5 @@
 ---
-title: "Cómo Negociar en Inglés: Un Marco de 5 Pasos para No Nativos"
+title: "Cómo Negociar en Inglés: Marco Probado de 5 Pasos"
 excerpt: "Negociar ya es estresante. Hacerlo en inglés agrega otra capa de miedo. Un marco probado que funciona incluso cuando no piensas en tu idioma nativo."
 publishDate: "2026-01-18"
 lastmod: "2026-01-18"

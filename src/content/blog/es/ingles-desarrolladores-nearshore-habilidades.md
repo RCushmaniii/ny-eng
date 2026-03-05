@@ -1,5 +1,5 @@
 ---
-title: "Inglés para Desarrolladores Nearshore: Las Habilidades que Empresas de EE.UU. Realmente Exigen"
+title: "Inglés para Desarrolladores Nearshore: Lo que EE.UU. Exige"
 excerpt: "Los certificados B2 no predicen tu desempeño en equipos de EE.UU. Las habilidades reales de inglés para nearshore: ceremonies, PRs, Slack y demos."
 publishDate: "2026-03-03"
 lastmod: "2026-03-03"

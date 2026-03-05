@@ -1,5 +1,5 @@
 ---
-title: "Cómo Dirigir una Reunión en Inglés: 25 Frases que Imponen Respeto"
+title: "Dirigir Reuniones en Inglés: 25 Frases con Autoridad"
 excerpt: "Deja de sobrevivir reuniones y empieza a liderarlas. 25 frases probadas para abrir, facilitar, manejar objeciones, decidir y cerrar con autoridad."
 publishDate: "2026-03-03"
 lastmod: "2026-03-03"

@@ -1,5 +1,5 @@
 ---
-title: "English for Nearshore Developers: The Skills US Companies Actually Require"
+title: "English for Nearshore Developers: Skills US Teams Need"
 excerpt: "B2 certificates don't predict performance on US teams. The real English skills nearshore developers need: sprint ceremonies, PR reviews, Slack, and demos."
 publishDate: "2026-03-03"
 lastmod: "2026-03-03"

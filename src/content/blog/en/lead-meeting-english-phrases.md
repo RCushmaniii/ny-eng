@@ -1,5 +1,5 @@
 ---
-title: "How to Lead a Meeting in English: 25 Phrases That Command Respect"
+title: "Lead Meetings in English: 25 Phrases That Command Respect"
 excerpt: "Stop surviving meetings and start leading them. 25 field-tested phrases for opening, facilitating, handling pushback, deciding, and closing strong."
 publishDate: "2026-03-03"
 lastmod: "2026-03-03"

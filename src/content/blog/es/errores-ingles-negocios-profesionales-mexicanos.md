@@ -1,5 +1,5 @@
 ---
-title: "10 Errores de Business English Que Cometen los Profesionales Mexicanos (y Cómo Corregirlos)"
+title: "10 Errores de Business English de Profesionales Mexicanos"
 excerpt: "Estos errores comunes causados por interferencia del español minan tu credibilidad en juntas, emails y llamadas. Aquí te explico qué corregir y cómo."
 publishDate: "2026-03-03"
 lastmod: "2026-03-03"
