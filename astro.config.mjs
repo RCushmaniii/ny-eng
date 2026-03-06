@@ -41,6 +41,7 @@ const blogTranslations = {
   "daily-standup-english": "/es/blog/ingles-para-daily-standup-frases/",
   "customs-freight-english": "/es/blog/ingles-aduanas-comercio-exterior/",
   "us-interview-prep": "/es/blog/entrevista-trabajo-empresa-americana/",
+  "slack-english-write-like-a-pro": "/es/blog/ingles-para-slack-profesional/",
 };
 
 // Reverse map (ES slug -> EN path)

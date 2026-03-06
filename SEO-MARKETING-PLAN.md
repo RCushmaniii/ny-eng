@@ -14,7 +14,7 @@ Each post links to a specific service page to drive conversions.
 | 1 | ✅ Written | English for Daily Standups: What to Say | "english phrases for daily standup meetings" | Tech English | Needs hero image: `daily-standup-english.jpg` |
 | 2 | ✅ Written | English for Customs & Cross-Border Freight | "english vocabulary for customs freight shipping" | Logistics English | Needs hero image: `customs-freight-english.jpg` |
 | 3 | ✅ Written | Ace Your US Company Interview from Mexico | "job interview english american company tips" | Interview Prep | Needs hero image: `us-interview-prep.jpg` |
-| 4 | ⬜ Planned | Slack English: Write Like a Pro, Not a Bot | "professional slack messages in english" | Tech English | |
+| 4 | ✅ Written | Slack English: Write Like a Pro, Not a Bot | "professional slack messages in english" | Tech English | Needs hero image: `slack-english-pro.webp` |
 | 5 | ⬜ Planned | Present to US Clients on Zoom with Confidence | "present to american clients on zoom" | High-Stakes English | |
 | 6 | ⬜ Planned | Pitch Your Startup in English to US VCs | "pitch startup english to investors" | Startup Founders | |
 | 7 | ⬜ Planned | Close Deals in English: Technical Sales Phrases | "english technical sales closing deals" | Technical Sales | |
