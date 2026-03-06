@@ -191,7 +191,7 @@ Si hay retraso de audio, di:
 
 > "It seems like we have a slight delay on the connection. I'll make sure to pause after my answers to give you space to respond."
 
-Nombrar el problema elimina la incomodidad. Es la misma habilidad de [presencia ejecutiva](/es/blog/presencia-ejecutiva-videollamadas/) que hace efectivos a los líderes senior en videollamadas.
+Nombrar el problema elimina la incomodidad. Es la misma habilidad de [presencia ejecutiva](/es/blog/presencia-ejecutiva-en-videollamadas/) que hace efectivos a los líderes senior en videollamadas.
 
 ---
 
@@ -295,8 +295,8 @@ Antes de cualquier entrevista con una empresa de EE.UU., revisa esta lista:
 ## Sigue Leyendo
 
 - [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/) — Los patrones de interferencia del español que minan tu credibilidad en entornos profesionales.
-- [Cómo negociar en inglés: Framework de 5 pasos](/es/blog/como-negociar-en-ingles-framework/) — Cuando la conversación de salario se convierte en negociación, estas frases te mantienen en control.
-- [Presencia ejecutiva en videollamadas: 7 hábitos](/es/blog/presencia-ejecutiva-videollamadas/) — Proyecta autoridad y claridad en cada entrevista virtual.
+- [Cómo negociar en inglés: Marco probado de 5 pasos](/es/blog/como-negociar-en-ingles-marco/) — Cuando la conversación de salario se convierte en negociación, estas frases te mantienen en control.
+- [Presencia ejecutiva en videollamadas: 7 hábitos](/es/blog/presencia-ejecutiva-en-videollamadas/) — Proyecta autoridad y claridad en cada entrevista virtual.
 
 ---
 
