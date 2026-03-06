@@ -80,57 +80,9 @@ export default defineConfig({
     inlineStylesheets: "never",
   },
 
-  // Redirects for URLs without language prefixes and duplicate category URLs
-  redirects: {
-    // Root "/" redirect handled by Vercel Edge Middleware (language detection)
-    "/blog": "/en/blog/",
-    "/services": "/en/services/",
-    "/contact": "/en/contact/",
-    "/about": "/en/about/",
-    "/testimonials": "/en/testimonials/",
-    "/book": "/en/book/",
-    "/quiz": "/en/quiz/it-services/",
-    "/en/quiz": "/en/quiz/it-services/",
-    "/es/quiz": "/es/quiz/it-services/",
-    "/en/quiz/start": "/en/quiz/it-services/",
-    "/es/quiz/start": "/es/quiz/it-services/",
-
-    // Redirect English paths on Spanish side to proper Spanish URLs
-    "/es/testimonials": "/es/testimonios/",
-    "/es/services": "/es/servicios/",
-    "/es/book": "/es/reservar/",
-
-    // Redirect /es/category/ to /es/categoria/ (Spanish category URLs)
-    "/es/category/business-english": "/es/categoria/ingles-para-negocios/",
-    "/es/category/career-leadership": "/es/categoria/carrera-liderazgo/",
-    "/es/category/carrera-liderazgo": "/es/categoria/carrera-liderazgo/",
-    "/es/category/coaching-en-ingles": "/es/categoria/coaching-en-ingles/",
-    "/es/category/comunicacion-de-alto-impacto":
-      "/es/categoria/comunicacion-de-alto-impacto/",
-    "/es/category/english-coaching": "/es/categoria/coaching-en-ingles/",
-    "/es/category/executive-english": "/es/categoria/ingles-ejecutivo/",
-    "/es/category/high-impact-communication":
-      "/es/categoria/comunicacion-de-alto-impacto/",
-    "/es/category/high-stakes-english": "/es/categoria/ingles-ejecutivo/",
-    "/es/category/ingles-ejecutivo": "/es/categoria/ingles-ejecutivo/",
-    "/es/category/ingles-para-fundadores-de-startups":
-      "/es/categoria/ingles-para-fundadores-de-startups/",
-    "/es/category/ingles-para-logistica":
-      "/es/categoria/ingles-para-logistica/",
-    "/es/category/ingles-para-negocios": "/es/categoria/ingles-para-negocios/",
-    "/es/category/ingles-para-presentaciones":
-      "/es/categoria/ingles-para-presentaciones/",
-    "/es/category/ingles-para-profesionales":
-      "/es/categoria/ingles-para-profesionales/",
-    "/es/category/ingles-para-tecnologia":
-      "/es/categoria/ingles-para-tecnologia/",
-    "/es/category/logistics-english": "/es/categoria/ingles-para-logistica/",
-    "/es/category/professional-english":
-      "/es/categoria/ingles-para-profesionales/",
-    "/es/category/startup-founders":
-      "/es/categoria/ingles-para-fundadores-de-startups/",
-    "/es/category/tech-english": "/es/categoria/ingles-para-tecnologia/",
-  },
+  // All redirects handled by vercel.json 301s (not Astro meta refresh).
+  // Astro static mode generates meta refresh HTML which Bing flags as an error.
+  // See vercel.json "redirects" array for the full list.
 
   vite: {
     resolve: {

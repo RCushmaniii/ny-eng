@@ -11,25 +11,15 @@ import blogHeroImage from "../../../content/blog/images/blog-hero.jpg";
 export const prerender = true;
 
 export async function getStaticPaths() {
-  // Generate paths for Spanish categories using i18n system
+  // Generate paths for Spanish categories using Spanish slugs only.
+  // English slug redirects are handled by vercel.json 301s.
   return categories.map((category) => {
     const tkey = `category/${category.slug}` as TKey;
-    const esPath = routeFor.es[tkey];
-
-    // Handle both English and Spanish slugs
-    return [
-      // English slug -> Spanish URL
-      {
-        params: { category: category.slug },
-        props: { category, tkey },
-      },
-      // Spanish slug -> Spanish URL
-      {
-        params: { category: category.esSlug || category.slug },
-        props: { category, tkey },
-      },
-    ];
-  }).flat();
+    return {
+      params: { category: category.esSlug || category.slug },
+      props: { category, tkey },
+    };
+  });
 }
 
 interface Props {
@@ -42,11 +32,6 @@ const { category, tkey } = Astro.props;
 // Get canonical paths from i18n system
 const canonicalEnPath = routeFor.en[tkey];
 const canonicalEsPath = routeFor.es[tkey];
-
-// If current URL doesn't match the canonical Spanish URL, redirect
-if (Astro.url.pathname !== canonicalEsPath) {
-  return Astro.redirect(canonicalEsPath, 301);
-}
 
 // Get Spanish blog posts for this category
 const allPosts = await getCollection("blog");
