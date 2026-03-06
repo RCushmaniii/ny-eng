@@ -48,7 +48,7 @@ The first 90 seconds set the tone. If you open with confidence and clarity, peop
 
 **In context:**
 > _People are filtering in, side conversations happening._
-> "All right, let's get started. We have three items to cover, and I want to make sure we leave with clear next steps. First up: the Q2 timeline."
+> <span class="speak-en">"All right, let's get started. We have three items to cover, and I want to make sure we leave with clear next steps. First up: the Q2 timeline."</span>
 
 ---
 
@@ -59,7 +59,7 @@ The first 90 seconds set the tone. If you open with confidence and clarity, peop
 **Why it works:** Most people announce topics. Leaders announce outcomes. This phrase signals that you're results-oriented, and it gives the group a clear target to work toward.
 
 **In context:**
-> "Thanks for joining, everyone. Before we dive in, here's what I'd like us to accomplish by the end of this meeting: a final decision on the vendor, and alignment on the rollout timeline."
+> <span class="speak-en">"Thanks for joining, everyone. Before we dive in, here's what I'd like us to accomplish by the end of this meeting: a final decision on the vendor, and alignment on the rollout timeline."</span>
 
 ---
 
@@ -70,7 +70,7 @@ The first 90 seconds set the tone. If you open with confidence and clarity, peop
 **Why it works:** It demonstrates preparation and invites input without surrendering ownership. You're the host, and everyone knows it.
 
 **In context:**
-> "I've shared the agenda ahead of time. Let me know if there's anything you'd like to add before we proceed. No? Great—let's start with item one."
+> <span class="speak-en">"I've shared the agenda ahead of time. Let me know if there's anything you'd like to add before we proceed. No? Great -- let's start with item one."</span>
 
 ---
 
@@ -81,7 +81,7 @@ The first 90 seconds set the tone. If you open with confidence and clarity, peop
 **Why it works:** Respecting people's time is one of the fastest ways to earn trust. This phrase tells the room you're organized, efficient, and considerate—and it gives you permission to cut discussions short later.
 
 **In context:**
-> "Just to set expectations, I'd like to keep this to 45 minutes so we can all get back to our priorities. That means we'll need to stay focused—so I'll jump in if we go off track."
+> <span class="speak-en">"Just to set expectations, I'd like to keep this to 45 minutes so we can all get back to our priorities. That means we'll need to stay focused -- so I'll jump in if we go off track."</span>
 
 ---
 
@@ -92,7 +92,7 @@ The first 90 seconds set the tone. If you open with confidence and clarity, peop
 **Why it works:** It eliminates the first five minutes of confusion where people try to remember what was decided. It also positions you as the person who owns the continuity of the project.
 
 **In context:**
-> "Let me provide a quick recap of where we left off last time, so everyone's on the same page. On Tuesday, we agreed to move forward with Option B pending legal review. Legal has since cleared it, so today we're finalizing the timeline."
+> <span class="speak-en">"Let me provide a quick recap of where we left off last time, so everyone's on the same page. On Tuesday, we agreed to move forward with Option B pending legal review. Legal has since cleared it, so today we're finalizing the timeline."</span>
 
 ---
 
@@ -100,14 +100,14 @@ The first 90 seconds set the tone. If you open with confidence and clarity, peop
 
 This is where most meetings go sideways. People talk over each other, go off on tangents, or—worse—sit in silence. Your job is to draw the right people in, keep the conversation productive, and move things forward.
 
-### Phrase 6: "I'd like to hear from you on this, [Name]. What's your perspective?"
+### Phrase 6: "I'd like to hear from you on this. What's your perspective?"
 
 **When to use it:** When a key stakeholder hasn't spoken, or when you need a specific person's input before moving forward.
 
 **Why it works:** Calling someone by name is the single most effective facilitation technique. It shows you value their input, it prevents the loudest person from dominating, and it keeps everyone engaged because they know they might be called on next.
 
 **In context:**
-> "We've heard a few perspectives. I'd like to hear from you on this, Maria. What's your perspective from the engineering side?"
+> <span class="speak-en">"We've heard a few perspectives. I'd like to hear from you on this, Maria. What's your perspective from the engineering side?"</span>
 
 ---
 
@@ -118,7 +118,7 @@ This is where most meetings go sideways. People talk over each other, go off on 
 **Why it works:** It validates the speaker (so they don't feel shut down) while steering the conversation back to the agenda. It's diplomatic redirection at its best.
 
 **In context:**
-> "That's a great point, Carlos. How does that connect to the timeline we discussed? I want to make sure we're solving for the deadline while we explore this."
+> <span class="speak-en">"That's a great point, Carlos. How does that connect to the timeline we discussed? I want to make sure we're solving for the deadline while we explore this."</span>
 
 ---
 
@@ -129,7 +129,7 @@ This is where most meetings go sideways. People talk over each other, go off on 
 **Why it works:** It slows the room down without blaming anyone. The word "pause" is powerful—it creates space without conflict. And "weigh in" is a natural business English phrase that signals you want diverse input.
 
 **In context:**
-> "Let's pause on that for a moment. I want to make sure everyone has had a chance to weigh in. Does anyone see a risk we haven't discussed?"
+> <span class="speak-en">"Let's pause on that for a moment. I want to make sure everyone has had a chance to weigh in. Does anyone see a risk we haven't discussed?"</span>
 
 ---
 
@@ -140,7 +140,7 @@ This is where most meetings go sideways. People talk over each other, go off on 
 **Why it works:** This is a hallmark of strong leadership: the ability to zoom out when the room is zoomed in. It prevents wasted time and keeps decisions in the right order.
 
 **In context:**
-> "I notice we're getting into the details of the implementation. Can we step back and confirm we agree on the overall approach first? Once we're aligned on the direction, we can map out the specifics."
+> <span class="speak-en">"I notice we're getting into the details of the implementation. Can we step back and confirm we agree on the overall approach first? Once we're aligned on the direction, we can map out the specifics."</span>
 
 ---
 
@@ -151,7 +151,7 @@ This is where most meetings go sideways. People talk over each other, go off on 
 **Why it works:** It introduces urgency without panic. It also gives you a framework to park lower-priority items for later, which keeps the meeting on track.
 
 **In context:**
-> "We have about 15 minutes left on this item. Let's focus on what we need to decide today versus what can wait for next week's sync."
+> <span class="speak-en">"We have about 15 minutes left on this item. Let's focus on what we need to decide today versus what can wait for next week's sync."</span>
 
 ---
 
@@ -166,7 +166,7 @@ Disagreement in meetings is healthy—if you handle it well. The goal isn't to a
 **Why it works:** It's direct without being aggressive. "I see it differently" is honest and respectful. Following it with "Here's my concern" shifts the focus to the issue, not the person. This is [executive-level communication](/en/services/executive-english/) at its most effective.
 
 **In context:**
-> "I appreciate the rationale, and I see it differently. Here's my concern: if we launch in Q2 without the integration, we risk losing the three enterprise clients who specifically requested it."
+> <span class="speak-en">"I appreciate the rationale, and I see it differently. Here's my concern: if we launch in Q2 without the integration, we risk losing the three enterprise clients who specifically requested it."</span>
 
 ---
 
@@ -177,7 +177,7 @@ Disagreement in meetings is healthy—if you handle it well. The goal isn't to a
 **Why it works:** The phrase "not to be difficult" pre-empts any perception that you're being obstructive. It frames your pushback as constructive, which makes people more likely to listen. This is exactly the kind of [high-stakes communication](/en/services/high-stakes-english/) that separates good managers from great leaders.
 
 **In context:**
-> "I want to push back on that—not to be difficult, but because I think we're missing something. The data from last quarter suggests the opposite trend."
+> <span class="speak-en">"I want to push back on that -- not to be difficult, but because I think we're missing something. The data from last quarter suggests the opposite trend."</span>
 
 ---
 
@@ -188,7 +188,7 @@ Disagreement in meetings is healthy—if you handle it well. The goal isn't to a
 **Why it works:** "And" is far more powerful than "but" in disagreements. "But" erases everything before it. "And" adds to it. This phrase validates the other person while introducing your perspective as complementary rather than competing.
 
 **In context:**
-> "That's a valid point—the cost savings are significant. And I think we also need to consider the impact on the customer experience before we commit."
+> <span class="speak-en">"That's a valid point -- the cost savings are significant. And I think we also need to consider the impact on the customer experience before we commit."</span>
 
 ---
 
@@ -199,7 +199,7 @@ Disagreement in meetings is healthy—if you handle it well. The goal isn't to a
 **Why it works:** It reframes the conflict from "we disagree" to "we agree on the destination; we just need to negotiate the route." This lowers tension immediately and opens the door to compromise.
 
 **In context:**
-> "Let's separate the what from the how. I think we agree on the goal—we want to reduce churn by 20%. We just differ on the approach. So let's evaluate both options against the same criteria."
+> <span class="speak-en">"Let's separate the what from the how. I think we agree on the goal -- we want to reduce churn by 20%. We just differ on the approach. So let's evaluate both options against the same criteria."</span>
 
 ---
 
@@ -210,7 +210,7 @@ Disagreement in meetings is healthy—if you handle it well. The goal isn't to a
 **Why it works:** Repeating someone's position back to them is the most underrated leadership technique in business. It shows respect, buys you thinking time, and often reveals that the disagreement is smaller than it seemed. This is one of the [strategies executives use](/en/blog/4-secrets-executives-use/) to stay composed under pressure.
 
 **In context:**
-> "I hear you. Let me repeat back what I'm hearing to make sure I understand before I respond. You're saying the risk is too high to launch without a beta phase, and that two additional weeks would significantly reduce that risk. Is that right?"
+> <span class="speak-en">"I hear you. Let me repeat back what I'm hearing to make sure I understand before I respond. You're saying the risk is too high to launch without a beta phase, and that two additional weeks would significantly reduce that risk. Is that right?"</span>
 
 ---
 
@@ -225,7 +225,7 @@ The whole point of most meetings is to reach a decision. Yet many meetings end w
 **Why it works:** "Leaning toward" reflects the room's energy without prematurely closing the conversation. "Strong objection" is intentional—it raises the bar for dissent, which prevents minor quibbles from derailing the decision.
 
 **In context:**
-> "It sounds like we're leaning toward Option A—launching in Q3 with the reduced feature set. Does anyone have a strong objection before we commit?"
+> <span class="speak-en">"It sounds like we're leaning toward Option A -- launching in Q3 with the reduced feature set. Does anyone have a strong objection before we commit?"</span>
 
 ---
 
@@ -236,7 +236,7 @@ The whole point of most meetings is to reach a decision. Yet many meetings end w
 **Why it works:** Sometimes consensus isn't possible, and the leader needs to decide. This phrase is direct, accountable, and transparent. Explaining the "why" ensures buy-in even when people disagree.
 
 **In context:**
-> "We've debated this thoroughly, and I appreciate everyone's input. I'm going to make the call on this. Here's what we're going to do: we're going with Vendor B. The reason is that their integration timeline aligns with our Q3 launch, and that's our top priority."
+> <span class="speak-en">"We've debated this thoroughly, and I appreciate everyone's input. I'm going to make the call on this. Here's what we're going to do: we're going with Vendor B. The reason is that their integration timeline aligns with our Q3 launch, and that's our top priority."</span>
 
 ---
 
@@ -247,7 +247,7 @@ The whole point of most meetings is to reach a decision. Yet many meetings end w
 **Why it works:** It's a lightweight consensus check that surfaces concerns without reopening the full debate. "Thumbs sideways" is less threatening than "thumbs down," which encourages honest feedback.
 
 **In context:**
-> "Before we lock this in, let's do a quick round. Thumbs up if you're aligned, thumbs sideways if you have concerns we need to address. I want to make sure we're not leaving anything unresolved."
+> <span class="speak-en">"Before we lock this in, let's do a quick round. Thumbs up if you're aligned, thumbs sideways if you have concerns we need to address. I want to make sure we're not leaving anything unresolved."</span>
 
 ---
 
@@ -258,7 +258,7 @@ The whole point of most meetings is to reach a decision. Yet many meetings end w
 **Why it works:** Naming the pattern ("going in circles") breaks it. Offering to summarize positions you as the leader who cuts through noise. And "we'll decide" creates urgency and commitment.
 
 **In context:**
-> "I think we're going in circles on this. Let me summarize the two options. Option A gives us speed but less flexibility. Option B gives us flexibility but adds three weeks. Given our deadline, I'm recommending Option A. Can we agree on that?"
+> <span class="speak-en">"I think we're going in circles on this. Let me summarize the two options. Option A gives us speed but less flexibility. Option B gives us flexibility but adds three weeks. Given our deadline, I'm recommending Option A. Can we agree on that?"</span>
 
 ---
 
@@ -269,7 +269,7 @@ The whole point of most meetings is to reach a decision. Yet many meetings end w
 **Why it works:** It creates psychological safety for dissent. By explicitly inviting concerns, you signal that speaking up is valued, not punished. This leads to better decisions—and prevents costly mistakes down the road.
 
 **In context:**
-> "This seems straightforward, but I want to make sure we're not just agreeing to avoid conflict. Does anyone see a risk we haven't named? Now's the time."
+> <span class="speak-en">"This seems straightforward, but I want to make sure we're not just agreeing to avoid conflict. Does anyone see a risk we haven't named? Now's the time."</span>
 
 ---
 
@@ -284,7 +284,7 @@ How you close a meeting determines whether anything actually happens afterward. 
 **Why it works:** This is the single most important phrase in meeting leadership. Summarizing decisions and assigning ownership eliminates ambiguity. People leave knowing exactly what they're responsible for. If you only memorize one phrase from this list, make it this one.
 
 **In context:**
-> "Let me summarize what we decided and who owns what. Decision one: we're launching in Q3—Carlos is leading the rollout plan. Decision two: we're going with Vendor B—Ana is handling the contract review. Decision three: the beta starts June 1—I'll coordinate with engineering."
+> <span class="speak-en">"Let me summarize what we decided and who owns what. Decision one: we're launching in Q3 -- Carlos is leading the rollout plan. Decision two: we're going with Vendor B -- Ana is handling the contract review. Decision three: the beta starts June 1 -- I'll coordinate with engineering."</span>
 
 ---
 
@@ -295,7 +295,7 @@ How you close a meeting determines whether anything actually happens afterward. 
 **Why it works:** Verbal agreements fade. Written follow-ups don't. Committing to a specific timeframe ("within the hour") shows discipline and signals that you take the outcomes seriously. It also prevents the classic "I thought we decided something different" problem.
 
 **In context:**
-> "I'll send a follow-up email within the hour with action items and deadlines. If I've missed anything, reply to that email so we have it documented."
+> <span class="speak-en">"I'll send a follow-up email within the hour with action items and deadlines. If I've missed anything, reply to that email so we have it documented."</span>
 
 ---
 
@@ -306,7 +306,7 @@ How you close a meeting determines whether anything actually happens afterward. 
 **Why it works:** It's a safety net. People often leave meetings with unanswered questions but don't speak up because the meeting is "over." This phrase gives permission to raise those issues and prevents them from becoming bigger problems later.
 
 **In context:**
-> "Before we wrap up—is there anything we discussed today that still feels unresolved? I'd rather address it now than have it come back to us next week."
+> <span class="speak-en">"Before we wrap up -- is there anything we discussed today that still feels unresolved? I'd rather address it now than have it come back to us next week."</span>
 
 ---
 
@@ -317,7 +317,7 @@ How you close a meeting determines whether anything actually happens afterward. 
 **Why it works:** Gratitude is a leadership multiplier. Acknowledging people's time and engagement builds goodwill and makes them more likely to show up prepared for the next meeting. It's simple, and most people skip it.
 
 **In context:**
-> "Thank you for your time. I know everyone is busy, and I appreciate you being engaged on this. We made real progress today."
+> <span class="speak-en">"Thank you for your time. I know everyone is busy, and I appreciate you being engaged on this. We made real progress today."</span>
 
 ---
 
@@ -328,7 +328,7 @@ How you close a meeting determines whether anything actually happens afterward. 
 **Why it works:** Ending early is the ultimate power move. It signals that you value efficiency, that you prepared well, and that you respect people's time. The light humor of "You're welcome" builds rapport. People will look forward to your meetings.
 
 **In context:**
-> "That covers everything. We're ending five minutes early. You're welcome. See you all on Thursday."
+> <span class="speak-en">"That covers everything. We're ending five minutes early. You're welcome. See you all on Thursday."</span>
 
 ---
 

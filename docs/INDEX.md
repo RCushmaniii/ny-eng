@@ -29,6 +29,7 @@ docs/
 
 - **[BILINGUAL-SYSTEM-GUIDE.md](./architecture/BILINGUAL-SYSTEM-GUIDE.md)** - Comprehensive guide to the bilingual English/Spanish system architecture
 - **[HREFLANG-FIX-SUMMARY.md](./seo/HREFLANG-FIX-SUMMARY.md)** - Summary of hreflang implementation fixes and SEO improvements
+- **[SEO-TECHNICAL-CHECKLIST.md](./seo/SEO-TECHNICAL-CHECKLIST.md)** - Technical SEO operations checklist including sitemap-driven Bing submission, IndexNow workflow, and reporting
 - **[BLOG-I18N-EDGE-CASES.md](./architecture/BLOG-I18N-EDGE-CASES.md)** - Edge cases and solutions for blog internationalization
 - **[REDIRECT-ANALYSIS-SUMMARY.md](./seo/REDIRECT-ANALYSIS-SUMMARY.md)** - Analysis of redirect chains and URL structure optimization
 
@@ -59,8 +60,9 @@ docs/
 ### For SEO/Content Teams
 
 1. Reference **HREFLANG-FIX-SUMMARY.md** for SEO implementation details
-2. Use **BLOG-I18N-EDGE-CASES.md** for content publishing guidelines
-3. Monitor **REDIRECT-ANALYSIS-SUMMARY.md** for URL structure requirements
+2. Use **SEO-TECHNICAL-CHECKLIST.md** for Bing submission, IndexNow, sitemap coverage, and reporting workflow
+3. Use **BLOG-I18N-EDGE-CASES.md** for content publishing guidelines
+4. Monitor **REDIRECT-ANALYSIS-SUMMARY.md** for URL structure requirements
 
 ### For Marketing/Sales Teams
 

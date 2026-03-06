@@ -32,7 +32,7 @@ The good news: every one of them has a straightforward fix. Let's walk through t
 
 **The mistake:** Using "actually" to mean "currently" or "at the present time."
 
-> "Actually, we're working on the migration to AWS."
+> <span class="speak-en">"Actually, we're working on the migration to AWS."</span>
 
 To a native speaker, "actually" means "in fact" or "to correct a misunderstanding." So this sentence sounds like you're contradicting something someone said—when you just meant "right now."
 
@@ -40,11 +40,11 @@ To a native speaker, "actually" means "in fact" or "to correct a misunderstandin
 
 **The fix:**
 
-> ❌ "Actually, we have 200 employees."
+> ❌ <span class="speak-en">"Actually, we have 200 employees."</span>
 >
-> ✅ "Currently, we have 200 employees." / "Right now, we have 200 employees."
+> ✅ <span class="speak-en">"Currently, we have 200 employees."</span> / <span class="speak-en">"Right now, we have 200 employees."</span>
 
-Reserve "actually" for corrections: "Actually, that number is closer to 250."
+Reserve "actually" for corrections: <span class="speak-en">"Actually, that number is closer to 250."</span>
 
 ---
 
@@ -52,7 +52,7 @@ Reserve "actually" for corrections: "Actually, that number is closer to 250."
 
 **The mistake:** Using "compromise" when you mean "commitment" or "obligation."
 
-> "We have a strong compromise with quality."
+> <span class="speak-en">"We have a strong compromise with quality."</span>
 
 To a native speaker, "compromise" means meeting in the middle—giving up something to reach agreement. So this sentence sounds like you're saying you've settled for less-than-perfect quality.
 
@@ -60,9 +60,9 @@ To a native speaker, "compromise" means meeting in the middle—giving up someth
 
 **The fix:**
 
-> ❌ "Our compromise to the client is total."
+> ❌ <span class="speak-en">"Our compromise to the client is total."</span>
 >
-> ✅ "Our commitment to the client is total."
+> ✅ <span class="speak-en">"Our commitment to the client is total."</span>
 
 Other correct translations of *compromiso*: obligation, engagement, dedication, promise.
 
@@ -72,7 +72,7 @@ Other correct translations of *compromiso*: obligation, engagement, dedication, 
 
 **The mistake:** Using "sensible" to mean "sensitive."
 
-> "He's very sensible about feedback."
+> <span class="speak-en">"He's very sensible about feedback."</span>
 
 In English, "sensible" means practical, reasonable, level-headed. So you just said he handles feedback in a rational way—not that he takes it personally.
 
@@ -80,9 +80,9 @@ In English, "sensible" means practical, reasonable, level-headed. So you just sa
 
 **The fix:**
 
-> ❌ "This is a sensible topic for the team."
+> ❌ <span class="speak-en">"This is a sensible topic for the team."</span>
 >
-> ✅ "This is a sensitive topic for the team."
+> ✅ <span class="speak-en">"This is a sensitive topic for the team."</span>
 
 Quick rule: if you mean emotions or feelings, the word is "sensitive." If you mean practical or reasonable, the word is "sensible."
 
@@ -92,8 +92,8 @@ Quick rule: if you mean emotions or feelings, the word is "sensitive." If you me
 
 **The mistake:** Swapping "make" and "do" in common business phrases.
 
-> "We need to make a decision" ✅ (this one is correct)
-> "I'll make the report by Friday" ❌
+> <span class="speak-en">"We need to make a decision"</span> ✅ (this one is correct)
+> <span class="speak-en">"I'll make the report by Friday"</span> ❌
 
 **Why it happens:** Spanish uses *hacer* for both "make" and "do." There's no distinction. So your brain has to learn collocations one by one, with no underlying rule to lean on.
 
@@ -101,20 +101,20 @@ Quick rule: if you mean emotions or feelings, the word is "sensitive." If you me
 
 | DO (process/task) | MAKE (create/produce) |
 |---|---|
-| do business | make a decision |
-| do research | make a presentation |
-| do an analysis | make a deal |
-| do the paperwork | make progress |
-| do your best | make a profit |
-| do a favor | make an effort |
+| <span class="speak-en">do business</span> | <span class="speak-en">make a decision</span> |
+| <span class="speak-en">do research</span> | <span class="speak-en">make a presentation</span> |
+| <span class="speak-en">do an analysis</span> | <span class="speak-en">make a deal</span> |
+| <span class="speak-en">do the paperwork</span> | <span class="speak-en">make progress</span> |
+| <span class="speak-en">do your best</span> | <span class="speak-en">make a profit</span> |
+| <span class="speak-en">do a favor</span> | <span class="speak-en">make an effort</span> |
 
-> ❌ "We need to do a decision before Q3."
+> ❌ <span class="speak-en">"We need to do a decision before Q3."</span>
 >
-> ✅ "We need to make a decision before Q3."
+> ✅ <span class="speak-en">"We need to make a decision before Q3."</span>
 
-> ❌ "Let me make some research on that."
+> ❌ <span class="speak-en">"Let me make some research on that."</span>
 >
-> ✅ "Let me do some research on that."
+> ✅ <span class="speak-en">"Let me do some research on that."</span>
 
 There's no universal rule, but a helpful pattern: "do" tends to go with tasks and processes, while "make" tends to go with things you create or produce.
 
@@ -124,7 +124,7 @@ There's no universal rule, but a helpful pattern: "do" tends to go with tasks an
 
 **The mistake:** Writing and speaking in a register that sounds like a 19th-century legal document.
 
-> "I hereby inform you that the aforementioned deliverables shall be submitted in a timely manner."
+> <span class="speak-en">"I hereby inform you that the aforementioned deliverables shall be submitted in a timely manner."</span>
 
 Native English speakers in business—especially in tech and startups—write in a much more direct, conversational tone than this.
 
@@ -132,13 +132,13 @@ Native English speakers in business—especially in tech and startups—write in
 
 **The fix:**
 
-> ❌ "I would like to take this opportunity to inform you that the project has been completed."
+> ❌ <span class="speak-en">"I would like to take this opportunity to inform you that the project has been completed."</span>
 >
-> ✅ "The project is complete. Here's the summary."
+> ✅ <span class="speak-en">"The project is complete. Here's the summary."</span>
 
-> ❌ "It would be greatly appreciated if you could kindly provide the requested documentation at your earliest convenience."
+> ❌ <span class="speak-en">"It would be greatly appreciated if you could kindly provide the requested documentation at your earliest convenience."</span>
 >
-> ✅ "Could you send the documents by Friday?"
+> ✅ <span class="speak-en">"Could you send the documents by Friday?"</span>
 
 **The principle:** In American business English, clarity and directness signal competence. Excessive formality signals distance or insecurity. Write like you'd talk to a respected colleague, not like you're drafting a legal contract.
 
@@ -150,11 +150,11 @@ If you're navigating this in high-stakes executive contexts, [executive English 
 
 **The mistake:** Translating Spanish email closings word-for-word.
 
-> "I stay attentive to your comments." (*Quedo atento a sus comentarios.*)
+> <span class="speak-en">"I stay attentive to your comments."</span> (*Quedo atento a sus comentarios.*)
 >
-> "Without more for the moment..." (*Sin más por el momento...*)
+> <span class="speak-en">"Without more for the moment..."</span> (*Sin más por el momento...*)
 >
-> "I remain at your orders." (*Quedo a sus órdenes.*)
+> <span class="speak-en">"I remain at your orders."</span> (*Quedo a sus órdenes.*)
 
 These are perfectly polished in Mexican business Spanish. In English, they sound odd, subservient, or robotic.
 
@@ -164,10 +164,10 @@ These are perfectly polished in Mexican business Spanish. In English, they sound
 
 | Spanish Sign-off | What NOT to Write | What to Write Instead |
 |---|---|---|
-| *Quedo atento a sus comentarios* | "I stay attentive to your comments" | "Looking forward to your feedback" or "Let me know your thoughts" |
-| *Sin más por el momento* | "Without more for the moment" | "That's all for now" or simply end the email |
-| *Quedo a sus órdenes* | "I remain at your orders" | "Happy to help" or "Let me know if you need anything" |
-| *Saludos cordiales* | "Cordial greetings" | "Best regards" or just "Best" |
+| *Quedo atento a sus comentarios* | <span class="speak-en">"I stay attentive to your comments"</span> | <span class="speak-en">"Looking forward to your feedback"</span> or <span class="speak-en">"Let me know your thoughts"</span> |
+| *Sin más por el momento* | <span class="speak-en">"Without more for the moment"</span> | <span class="speak-en">"That's all for now"</span> or simply end the email |
+| *Quedo a sus órdenes* | <span class="speak-en">"I remain at your orders"</span> | <span class="speak-en">"Happy to help"</span> or <span class="speak-en">"Let me know if you need anything"</span> |
+| *Saludos cordiales* | <span class="speak-en">"Cordial greetings"</span> | <span class="speak-en">"Best regards"</span> or just <span class="speak-en">"Best"</span> |
 
 For a deeper dive on email tone, check out [7 Email Phrases That Make You Sound Junior](/en/blog/email-phrases-that-make-you-sound-junior/)—it covers more patterns that undermine your professional authority.
 
@@ -177,7 +177,7 @@ For a deeper dive on email tone, check out [7 Email Phrases That Make You Sound 
 
 **The mistake:** Padding sentences with filler that weakens your message.
 
-> "Well, basically, what I mean is that, you know, we should probably, like, consider maybe looking at other options."
+> <span class="speak-en">"Well, basically, what I mean is that, you know, we should probably, like, consider maybe looking at other options."</span>
 
 **Why it happens:** Two factors collide. First, Spanish speakers often use *o sea*, *bueno*, *este*, *pues*, and *digamos* as fillers. These habits transfer to English. Second, when you're thinking in your second language, filler buys processing time.
 
@@ -189,11 +189,11 @@ Practice this substitution:
 
 | Instead of... | Try... |
 |---|---|
-| "Basically..." | [just start your sentence] |
-| "You know..." | [pause, then continue] |
-| "I mean..." | [restate clearly] |
-| "To be honest..." | [just be honest without announcing it] |
-| "Like..." | [nothing—just drop it] |
+| <span class="speak-en">"Basically..."</span> | [just start your sentence] |
+| <span class="speak-en">"You know..."</span> | [pause, then continue] |
+| <span class="speak-en">"I mean..."</span> | [restate clearly] |
+| <span class="speak-en">"To be honest..."</span> | [just be honest without announcing it] |
+| <span class="speak-en">"Like..."</span> | [nothing--just drop it] |
 
 **Exercise:** Record yourself answering a business question for 60 seconds. Count the fillers. Then do it again aiming for zero. The difference is immediate. For a structured approach to replacing fillers with confident delivery, see [4 Secrets Executives Use to Master Impromptu Speaking](/en/blog/4-secrets-executives-use/).
 
@@ -212,19 +212,19 @@ These aren't about having an accent—accents are normal and fine. These are abo
 **The top credibility killers:**
 
 **"Espeak" instead of "speak":** Adding an "e" before words starting with "sp," "st," or "sk."
-- *eschool, espeak, estart, eskip*
+- <span class="speak-en">eschool, espeak, estart, eskip</span>
 - Fix: Practice starting with the consonant cluster directly. Whisper the "s" first, then add the rest.
 
 **Confusing "sheet" and a vulgar word:** The short i/long ee distinction doesn't exist in Spanish.
-- "Sheet," "beach," "piece" — the vowel matters enormously
-- Fix: Long "ee" = smile wide. Short "i" = relax your mouth. Practice pairs: "sheet/sit," "beach/bit," "piece/pick."
+- <span class="speak-en">"Sheet," "beach," "piece"</span> -- the vowel matters enormously
+- Fix: Long "ee" = smile wide. Short "i" = relax your mouth. Practice pairs: <span class="speak-en">"sheet"</span> / <span class="speak-en">"sit,"</span> <span class="speak-en">"beach"</span> / <span class="speak-en">"bit,"</span> <span class="speak-en">"piece"</span> / <span class="speak-en">"pick."</span>
 
 **"Yob" instead of "job":** Pronouncing the English "j" sound as a Spanish "y."
-- *yust, yob, yanuary*
+- <span class="speak-en">yust, yob, yanuary</span>
 - Fix: The English "j" is a "dj" sound. Put your tongue on the roof of your mouth and push air through, like saying "d" + "zh" together.
 
 **Swallowing word endings:** Dropping final consonants, especially "-ed," "-s," and "-t."
-- "We launch the product" instead of "We launched the product"
+- <span class="speak-en">"We launch the product"</span> instead of <span class="speak-en">"We launched the product"</span>
 - Fix: Exaggerate endings in practice. In conversation, just make sure the final consonant exists—even a soft one.
 
 **The principle:** You don't need a "perfect" accent. You need clarity on the sounds that cause actual confusion or make people work harder to follow you.

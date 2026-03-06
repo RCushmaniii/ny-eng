@@ -55,22 +55,22 @@ Sprint ceremonies are where US teams form their first impression of you. Not you
 
 Most nearshore developers default to this pattern:
 
-> "Yesterday I worked on the API. Today I will continue working on the API. No blockers."
+> <span class="speak-en">"Yesterday I worked on the API. Today I will continue working on the API. No blockers."</span>
 
 This tells the team nothing useful. It sounds like you're reading a script—because you are.
 
 **What strong communicators say instead:**
 
-> "Yesterday I finished the authentication endpoint and opened a PR—it's ready for review. Today I'm starting the rate limiter, but I need to align with Sarah on the Redis configuration before I write the tests. No blockers yet, but I'll flag it by noon if we can't connect."
+> <span class="speak-en">"Yesterday I finished the authentication endpoint and opened a PR — it's ready for review. Today I'm starting the rate limiter, but I need to align with Sarah on the Redis configuration before I write the tests. No blockers yet, but I'll flag it by noon if we can't connect."</span>
 
 Notice the difference: **specificity, next steps, proactive risk communication.** You're not just reporting status—you're showing the team you're thinking ahead.
 
 **Standup phrases that build trust:**
 
-- "I'm blocked on [X] and need [person] to unblock me by [time]."
-- "I discovered a dependency we didn't account for in planning—can we discuss after standup?"
-- "I'll have the PR up by end of day. It touches [module], so [person] should review it."
-- "Quick flag: the acceptance criteria for [ticket] are ambiguous. I made an assumption—I'll document it in the PR."
+- <span class="speak-en">"I'm blocked on the database migration and need Alex to unblock me by end of day."</span>
+- <span class="speak-en">"I discovered a dependency we didn't account for in planning — can we discuss after standup?"</span>
+- <span class="speak-en">"I'll have the PR up by end of day. It touches the auth module, so Sarah should review it."</span>
+- <span class="speak-en">"Quick flag: the acceptance criteria for this ticket are ambiguous. I made an assumption — I'll document it in the PR."</span>
 
 ### Sprint Retrospectives
 
@@ -78,10 +78,10 @@ Retros are where many nearshore developers go silent. The cultural dynamic is re
 
 **Phrases for contributing to retros without overstepping:**
 
-- "One thing that slowed me down this sprint was [X]. I think we could try [Y] next sprint."
-- "I noticed we're duplicating effort on [area]. Would it help to [suggestion]?"
-- "What worked well for me was [X]. I'd like to keep doing that."
-- "I have a question about our process for [X]—is that intentional, or did it just evolve that way?"
+- <span class="speak-en">"One thing that slowed me down this sprint was the unclear requirements. I think we could try writing acceptance criteria together next sprint."</span>
+- <span class="speak-en">"I noticed we're duplicating effort on testing. Would it help to create shared test utilities?"</span>
+- <span class="speak-en">"What worked well for me was the pair programming sessions. I'd like to keep doing that."</span>
+- <span class="speak-en">"I have a question about our process for code reviews — is that intentional, or did it just evolve that way?"</span>
 
 The key is **framing observations as questions or suggestions, not complaints.** This is a cultural English skill that no certification teaches. It's also a common area where [Spanish language interference](/en/blog/business-english-mistakes-mexican-professionals/) creates unexpected tone problems.
 
@@ -95,19 +95,19 @@ Your pull request is a communication document. US reviewers spend 10-15 seconds 
 
 **Weak PR description (common pattern):**
 
-> "Fixed the bug in user service"
+> <span class="speak-en">"Fixed the bug in user service"</span>
 
 **Strong PR description:**
 
-> **What:** Fixes race condition in user service when concurrent registration requests hit the same email.
+> <span class="speak-en">What: Fixes race condition in user service when concurrent registration requests hit the same email.</span>
 >
-> **Why:** Production incident #247—two accounts were created for the same email when requests arrived within 50ms.
+> <span class="speak-en">Why: Production incident number 247 — two accounts were created for the same email when requests arrived within 50 milliseconds.</span>
 >
-> **How:** Added a database-level unique constraint + application-level idempotency check using Redis SETNX before the INSERT.
+> <span class="speak-en">How: Added a database-level unique constraint plus application-level idempotency check using Redis SETNX before the INSERT.</span>
 >
-> **Testing:** Added integration test simulating 10 concurrent registration attempts. All pass. Manual verification in staging complete.
+> <span class="speak-en">Testing: Added integration test simulating 10 concurrent registration attempts. All pass. Manual verification in staging complete.</span>
 >
-> **Risk:** Low. The Redis check is a soft guard—the DB constraint is the real protection. If Redis is down, behavior is unchanged (DB constraint still catches duplicates).
+> <span class="speak-en">Risk: Low. The Redis check is a soft guard — the database constraint is the real protection. If Redis is down, behavior is unchanged — the database constraint still catches duplicates.</span>
 
 This isn't about English fluency. It's about **communication structure**. The What/Why/How/Testing/Risk framework works regardless of your English level. If you want to sharpen how you explain technical decisions, the [Technical Explanation Formula](/en/resources/technical-explanation-formula/) is a practical tool for structuring these descriptions.
 
@@ -117,19 +117,19 @@ When reviewing others' code, your comments reveal your communication sophisticat
 
 **Blunt (common from non-native speakers):**
 
-> "This is wrong. Use a Map instead."
+> <span class="speak-en">"This is wrong. Use a Map instead."</span>
 
 **Professional-direct (what US teams expect):**
 
-> "Have you considered using a Map here? With 10K+ entries, the O(1) lookup would give us a measurable performance gain over the array filter. Happy to discuss if you see a reason to keep the current approach."
+> <span class="speak-en">"Have you considered using a Map here? With 10K+ entries, the O(1) lookup would give us a measurable performance gain over the array filter. Happy to discuss if you see a reason to keep the current approach."</span>
 
 **Useful phrases for code reviews:**
 
-- "Nit: [small suggestion]" — signals this isn't a blocker
-- "Optional: [idea]" — take it or leave it
-- "Blocking: [issue]" — this must be addressed before merge
-- "I might be missing context here, but [question]?" — challenges without confrontation
-- "Nice approach. One thought: [suggestion]" — leads with positive intent
+- <span class="speak-en">"Nit: consider renaming this variable for clarity"</span> — signals this isn't a blocker
+- <span class="speak-en">"Optional: you could extract this into a helper function"</span> — take it or leave it
+- <span class="speak-en">"Blocking: this will cause a null pointer exception in production"</span> — this must be addressed before merge
+- <span class="speak-en">"I might be missing context here, but shouldn't this handle the error case?"</span> — challenges without confrontation
+- <span class="speak-en">"Nice approach. One thought: we could add a cache layer here"</span> — leads with positive intent
 
 ---
 
@@ -139,38 +139,38 @@ Slack is where nearshore developers either build or destroy their reputation wit
 
 ### Too Formal (Signals Disconnect)
 
-> "Dear Team, I would like to inform you that I have encountered an issue with the deployment pipeline. Please find attached the relevant logs. Kind regards."
+> <span class="speak-en">"Dear Team, I would like to inform you that I have encountered an issue with the deployment pipeline. Please find attached the relevant logs. Kind regards."</span>
 
 This reads like you copied it from a business English textbook. US engineers will find it strange.
 
 ### Too Casual (Signals Unprofessionalism)
 
-> "yo deployment is broken lol anyone know whats up"
+> <span class="speak-en">"yo deployment is broken lol anyone know whats up"</span>
 
 This undermines credibility, especially as a contractor.
 
 ### The Right Tone
 
-> "Heads up—deploy pipeline is failing on the staging environment. Error is a timeout on the Docker build step. Logs here: [link]. I'm investigating but wanted to flag it in case anyone else is hitting this. Will update in 30 min."
+> <span class="speak-en">"Heads up — deploy pipeline is failing on the staging environment. Error is a timeout on the Docker build step. Logs here. I'm investigating but wanted to flag it in case anyone else is hitting this. Will update in 30 min."</span>
 
 **The formula:** Direct opener + specific context + what you're doing about it + timeline.
 
 **Slack phrases that hit the right tone:**
 
-- "Quick question:" — better than "Sorry to bother you"
-- "Heads up:" — for proactive information sharing
-- "Update:" — for threads you started earlier
-- "FYI—" — for information that doesn't require action
-- "Looping in @person for visibility" — shows you know who needs to know
-- "I'll take a crack at this" — volunteering ownership
-- "Circling back on this—" — following up without nagging
-- "TL;DR:" — when your message is long, put the summary first
+- <span class="speak-en">"Quick question:"</span> — better than "Sorry to bother you"
+- <span class="speak-en">"Heads up:"</span> — for proactive information sharing
+- <span class="speak-en">"Update:"</span> — for threads you started earlier
+- <span class="speak-en">"FYI"</span> — for information that doesn't require action
+- <span class="speak-en">"Looping in Maria for visibility"</span> — shows you know who needs to know
+- <span class="speak-en">"I'll take a crack at this"</span> — volunteering ownership
+- <span class="speak-en">"Circling back on this"</span> — following up without nagging
+- <span class="speak-en">"TL;DR:"</span> — when your message is long, put the summary first
 
 ### Thread Discipline
 
 US teams **hate** when important decisions happen in the main channel instead of threads. Always reply in threads. If a thread conclusion needs visibility, post a summary to the main channel:
 
-> "Resolved in thread: we're going with Option B (Redis cache with 5-min TTL). @backend-team—this changes nothing for you. @frontend-team—I'll update the API response format by EOD."
+> <span class="speak-en">"Resolved in thread: we're going with Option B, Redis cache with 5-minute TTL. Backend team — this changes nothing for you. Frontend team — I'll update the API response format by end of day."</span>
 
 ---
 

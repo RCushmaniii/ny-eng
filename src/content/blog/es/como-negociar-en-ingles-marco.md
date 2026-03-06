@@ -38,18 +38,18 @@ La persona que establece el primer número o términos moldea toda la conversaci
 
 **Qué decir:**
 
-> "Based on the scope and timeline we've discussed, I'm proposing $85,000 for this phase."
+> <span class="speak-en">Based on the scope and timeline we have discussed, I am proposing $85,000 for this phase.</span>
 > (Basándome en el alcance y cronograma que hemos discutido, estoy proponiendo $85,000 para esta fase.)
 >
-> "Given my experience and the market rate for this role, I'm targeting a base salary of $145,000."
+> <span class="speak-en">Given my experience and the market rate for this role, I am targeting a base salary of $145,000.</span>
 > (Dado mi experiencia y la tasa de mercado para este rol, estoy apuntando a un salario base de $145,000.)
 
 **Frases clave para anclar:**
 
-- "Based on [X], I'm proposing..." (Basándome en [X], propongo...)
-- "Given [Y], I'm targeting..." (Dado [Y], estoy apuntando a...)
-- "The figure I have in mind is..." (La cifra que tengo en mente es...)
-- "What I'm looking for is..." (Lo que estoy buscando es...)
+- <span class="speak-en">Based on our research, I am proposing...</span> (Basándome en nuestra investigacion, propongo...)
+- <span class="speak-en">Given the market data, I am targeting...</span> (Dado los datos del mercado, estoy apuntando a...)
+- <span class="speak-en">The figure I have in mind is...</span> (La cifra que tengo en mente es...)
+- <span class="speak-en">What I am looking for is...</span> (Lo que estoy buscando es...)
 
 **Por qué funciona:** Anclar obliga al otro lado a negociar desde tu número, no el de ellos.
 
@@ -61,18 +61,18 @@ Cuando rechacen, no te defiendas inmediatamente. Primero, demuestra que los escu
 
 **Qué decir:**
 
-> "I hear you—budget is tight this quarter. Let me share why this number reflects the value."
-> (Te escucho—el presupuesto está ajustado este trimestre. Déjame compartir por qué este número refleja el valor.)
+> <span class="speak-en">I hear you -- budget is tight this quarter. Let me share why this number reflects the value.</span>
+> (Te escucho -- el presupuesto está ajustado este trimestre. Déjame compartir por qué este número refleja el valor.)
 >
-> "That's a fair concern. Here's how I'm thinking about it."
+> <span class="speak-en">That is a fair concern. Here is how I am thinking about it.</span>
 > (Es una preocupación válida. Así es como lo estoy viendo.)
 
 **Frases clave para reconocer:**
 
-- "I hear you..." (Te escucho...)
-- "That's a fair point..." (Es un punto válido...)
-- "I understand where you're coming from..." (Entiendo de dónde vienes...)
-- "That makes sense from your perspective..." (Tiene sentido desde tu perspectiva...)
+- <span class="speak-en">I hear you...</span> (Te escucho...)
+- <span class="speak-en">That is a fair point...</span> (Es un punto válido...)
+- <span class="speak-en">I understand where you are coming from...</span> (Entiendo de dónde vienes...)
+- <span class="speak-en">That makes sense from your perspective...</span> (Tiene sentido desde tu perspectiva...)
 
 **Por qué funciona:** El reconocimiento reduce la defensividad. Señala que estás negociando con ellos, no contra ellos.
 

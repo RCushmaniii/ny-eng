@@ -34,10 +34,10 @@ Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué 
 
 **Qué escriben los ejecutivos:**
 
-> ❌ "I wanted to reach out to discuss the Q3 proposal."
-> (Quería contactarte para discutir la propuesta del Q3.)
+> ❌ <span class="speak-en">I wanted to reach out to discuss the Q3 proposal.</span>
+> (Queria contactarte para discutir la propuesta del Q3.)
 >
-> ✅ "The Q3 proposal needs your input by Friday."
+> ✅ <span class="speak-en">The Q3 proposal needs your input by Friday.</span>
 > (La propuesta del Q3 necesita tu aporte para el viernes.)
 
 **El principio:** Comienza con tu punto, no con una narración sobre ti mismo.
@@ -50,11 +50,11 @@ Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué 
 
 **Qué escriben los ejecutivos:**
 
-> ❌ "Sorry to bother you, but could you review this document?"
-> (Perdón por molestarte, pero ¿podrías revisar este documento?)
+> ❌ <span class="speak-en">Sorry to bother you, but could you review this document?</span>
+> (Perdon por molestarte, pero podrias revisar este documento?)
 >
-> ✅ "Could you review this document by Thursday? Your input on the pricing section would be especially valuable."
-> (¿Podrías revisar este documento para el jueves? Tu aporte en la sección de precios sería especialmente valioso.)
+> ✅ <span class="speak-en">Could you review this document by Thursday? Your input on the pricing section would be especially valuable.</span>
+> (Podrias revisar este documento para el jueves? Tu aporte en la seccion de precios seria especialmente valioso.)
 
 **El principio:** Reemplaza las disculpas con aprecio o franqueza. Si tu solicitud es legítima, adueñate de ella.
 
@@ -66,11 +66,11 @@ Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué 
 
 **Qué escriben los ejecutivos:**
 
-> ❌ "Just following up on my previous email."
+> ❌ <span class="speak-en">Just following up on my previous email.</span>
 > (Solo dando seguimiento a mi email anterior.)
 >
-> ✅ "Moving this up—I need your decision by EOD Wednesday to keep the project on track."
-> (Elevando la prioridad de esto—necesito tu decisión para el miércoles al final del día para mantener el proyecto en curso.)
+> ✅ <span class="speak-en">Moving this up -- I need your decision by end of day Wednesday to keep the project on track.</span>
+> (Elevando la prioridad de esto -- necesito tu decision para el miercoles al final del dia para mantener el proyecto en curso.)
 
 **El principio:** Cada seguimiento debe agregar nueva información, contexto o urgencia. No solo recuerdes—avanza.
 
@@ -82,11 +82,11 @@ Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué 
 
 **Qué escriben los ejecutivos:**
 
-> ❌ "I think maybe we should consider postponing the launch."
-> (Creo que tal vez deberíamos considerar posponer el lanzamiento.)
+> ❌ <span class="speak-en">I think maybe we should consider postponing the launch.</span>
+> (Creo que tal vez deberiamos considerar posponer el lanzamiento.)
 >
-> ✅ "I recommend postponing the launch. Here's why."
-> (Recomiendo posponer el lanzamiento. Esta es la razón.)
+> ✅ <span class="speak-en">I recommend postponing the launch. Here's why.</span>
+> (Recomiendo posponer el lanzamiento. Esta es la razon.)
 
 **El principio:** Una cobertura es humana. Dos coberturas es inseguridad. Declara tu recomendación, luego defiéndela.
 
@@ -98,11 +98,11 @@ Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué 
 
 **Qué escriben los ejecutivos:**
 
-> ❌ "We'll restructure the team into three pods. Does that make sense?"
-> (Reestructuraremos el equipo en tres grupos. ¿Tiene sentido?)
+> ❌ <span class="speak-en">We'll restructure the team into three pods. Does that make sense?</span>
+> (Reestructuraremos el equipo en tres grupos. Tiene sentido?)
 >
-> ✅ "We'll restructure the team into three pods. Happy to walk through the details if useful."
-> (Reestructuraremos el equipo en tres grupos. Con gusto repaso los detalles si es útil.)
+> ✅ <span class="speak-en">We'll restructure the team into three pods. Happy to walk through the details if useful.</span>
+> (Reestructuraremos el equipo en tres grupos. Con gusto repaso los detalles si es util.)
 
 **El principio:** Asume que fuiste claro. Ofrece ayuda, no te cuestiones a ti mismo.
 
@@ -114,11 +114,11 @@ Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué 
 
 **Qué escriben los ejecutivos:**
 
-> ❌ "The client requested a discount. Please advise."
-> (El cliente solicitó un descuento. Por favor, aconséjame.)
+> ❌ <span class="speak-en">The client requested a discount. Please advise.</span>
+> (El cliente solicito un descuento. Por favor, aconsejame.)
 >
-> ✅ "The client requested a 15% discount. I recommend offering 10% with faster payment terms. Do you approve, or should we counter differently?"
-> (El cliente solicitó un descuento del 15%. Recomiendo ofrecer 10% con términos de pago más rápidos. ¿Apruebas, o deberíamos contraofertar de otra manera?)
+> ✅ <span class="speak-en">The client requested a 15% discount. I recommend offering 10% with faster payment terms. Do you approve, or should we counter differently?</span>
+> (El cliente solicito un descuento del 15%. Recomiendo ofrecer 10% con terminos de pago mas rapidos. Apruebas, o deberiamos contraofertar de otra manera?)
 
 **El principio:** No pidas "consejo" genérico. Presenta opciones y pide una decisión específica.
 
@@ -130,11 +130,11 @@ Aquí hay siete frases para eliminar de tu vocabulario hoy—y exactamente qué 
 
 **Qué escriben los ejecutivos:**
 
-> ❌ "Attached is the analysis. Hope this helps!"
-> (Adjunto está el análisis. ¡Espero que esto ayude!)
+> ❌ <span class="speak-en">Attached is the analysis. Hope this helps!</span>
+> (Adjunto esta el analisis. Espero que esto ayude!)
 >
-> ✅ "Attached is the analysis. Let me know if you need anything else before Thursday's meeting."
-> (Adjunto está el análisis. Avísame si necesitas algo más antes de la reunión del jueves.)
+> ✅ <span class="speak-en">Attached is the analysis. Let me know if you need anything else before Thursday's meeting.</span>
+> (Adjunto esta el analisis. Avisame si necesitas algo mas antes de la reunion del jueves.)
 
 **El principio:** Cierra con un próximo paso claro u oferta, no con esperanza alegre.
 
@@ -166,13 +166,13 @@ Estos mismos principios aplican a toda comunicación profesional. Para un marco 
 
 | Frase Junior | Alternativa Ejecutiva |
 |-------------|----------------------|
-| "I wanted to reach out..." (Quería contactarte...) | [Declara tu punto directamente] |
-| "Sorry to bother you..." (Perdón por molestarte...) | "Could you..." (¿Podrías...) o "I'd appreciate..." (Agradecería...) |
-| "Just following up..." (Solo dando seguimiento...) | "Moving this up—[nuevo contexto o fecha límite]" (Elevando prioridad—) |
-| "I think maybe..." (Creo que tal vez...) | "I recommend..." (Recomiendo...) |
-| "Does that make sense?" (¿Tiene sentido?) | "Happy to clarify if useful." (Con gusto aclaro si es útil.) |
-| "Please advise." (Por favor, aconséjame.) | "[Opciones] Which do you prefer?" (¿Cuál prefieres?) |
-| "Hope this helps!" (¡Espero que ayude!) | "Let me know if you need anything else." (Avísame si necesitas algo más.) |
+| <span class="speak-en">I wanted to reach out...</span> (Queria contactarte...) | Declara tu punto directamente |
+| <span class="speak-en">Sorry to bother you...</span> (Perdon por molestarte...) | <span class="speak-en">Could you...</span> (Podrias...) o <span class="speak-en">I'd appreciate...</span> (Agradeceria...) |
+| <span class="speak-en">Just following up...</span> (Solo dando seguimiento...) | <span class="speak-en">Moving this up...</span> mas nuevo contexto o fecha limite |
+| <span class="speak-en">I think maybe...</span> (Creo que tal vez...) | <span class="speak-en">I recommend...</span> (Recomiendo...) |
+| <span class="speak-en">Does that make sense?</span> (Tiene sentido?) | <span class="speak-en">Happy to clarify if useful.</span> (Con gusto aclaro si es util.) |
+| <span class="speak-en">Please advise.</span> (Por favor, aconsejame.) | <span class="speak-en">Which do you prefer?</span> (Cual prefieres?) |
+| <span class="speak-en">Hope this helps!</span> (Espero que ayude!) | <span class="speak-en">Let me know if you need anything else.</span> (Avisame si necesitas algo mas.) |
 
 ---
 

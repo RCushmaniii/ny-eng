@@ -43,3 +43,4 @@ supabase/
 # Google service account credentials (NEVER commit)
 scripts/seo/gsc-credentials.json
 *-credentials.json
+scripts/seo/.submissions/

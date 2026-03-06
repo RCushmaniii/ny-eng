@@ -3,55 +3,90 @@
  * Submit URLs to Bing via Webmaster Tools API.
  *
  * Usage:
- *   node scripts/seo/bing-submit.mjs                    # Submit all blog URLs
- *   node scripts/seo/bing-submit.mjs --url https://...  # Submit single URL
- *   node scripts/seo/bing-submit.mjs --all              # Submit all pages (core + blog)
+ *   node scripts/seo/bing-submit.mjs                             # Submit all sitemap URLs
+ *   node scripts/seo/bing-submit.mjs --url https://...           # Submit single URL
+ *   node scripts/seo/bing-submit.mjs --sitemap https://...xml    # Submit URLs from a specific sitemap
  */
 
-import { readdirSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+import { appendFileSync, existsSync, mkdirSync } from "fs";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
+import dotenv from "dotenv";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const PROJECT_ROOT = join(__dirname, '..', '..');
+const PROJECT_ROOT = join(__dirname, "..", "..");
+const SUBMISSIONS_DIR = join(PROJECT_ROOT, "scripts", "seo", ".submissions");
+const BING_LOG_PATH = join(SUBMISSIONS_DIR, "bing-webmaster.jsonl");
 
-const SITE_URL = 'https://www.nyenglishteacher.com';
-const BING_API_KEY = '756a56664bea4d73b3486fd0d44b5fc8';
+const SITE_URL = "https://www.nyenglishteacher.com";
+const DEFAULT_SITEMAP_URL = `${SITE_URL}/sitemap-index.xml`;
+
+dotenv.config({ path: join(PROJECT_ROOT, ".env") });
+
+const BING_API_KEY = process.env.BING_WEBMASTER_TOOLS_API_KEY;
+if (!BING_API_KEY) {
+  console.error("❌ Missing required env var: BING_WEBMASTER_TOOLS_API_KEY");
+  console.error("Add it to your .env file in the project root and re-run.");
+  process.exit(1);
+}
 const BING_SUBMIT_URL = `https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlBatch?apikey=${BING_API_KEY}`;
 
-const args = process.argv.slice(2);
-const singleUrl = args.includes('--url') ? args[args.indexOf('--url') + 1] : null;
-const submitAll = args.includes('--all');
-
-const CORE_PAGES = [
-  '/en/', '/es/',
-  '/en/services/', '/es/servicios/',
-  '/en/about/', '/es/about/',
-  '/en/contact/', '/es/contacto/',
-  '/en/testimonials/', '/es/testimonios/',
-  '/en/blog/', '/es/blog/',
-  '/en/book/', '/es/reservar/',
-  '/en/quiz/it-services/', '/es/quiz/it-services/',
-  '/en/resources/', '/es/recursos/',
-  '/en/faq/', '/es/faq/',
-];
-
-function getBlogUrls() {
-  const urls = [];
-  for (const lang of ['en', 'es']) {
-    const dir = join(PROJECT_ROOT, 'src', 'content', 'blog', lang);
-    try {
-      const files = readdirSync(dir).filter(f => f.endsWith('.md') || f.endsWith('.mdx'));
-      for (const file of files) {
-        const slug = file.replace(/\.mdx?$/, '');
-        urls.push(`${SITE_URL}/${lang}/blog/${slug}/`);
-      }
-    } catch {
-      // skip
-    }
+function ensureSubmissionLogDir() {
+  if (!existsSync(SUBMISSIONS_DIR)) {
+    mkdirSync(SUBMISSIONS_DIR, { recursive: true });
   }
-  return urls;
+}
+
+function writeSubmissionLogEntry(entry) {
+  ensureSubmissionLogDir();
+  appendFileSync(BING_LOG_PATH, `${JSON.stringify(entry)}\n`, "utf8");
+}
+
+const args = process.argv.slice(2);
+const singleUrl = args.includes("--url")
+  ? args[args.indexOf("--url") + 1]
+  : null;
+const sitemapUrl = args.includes("--sitemap")
+  ? args[args.indexOf("--sitemap") + 1]
+  : DEFAULT_SITEMAP_URL;
+
+function normalizeUrl(url) {
+  const parsed = new URL(url);
+  parsed.hash = "";
+  parsed.search = "";
+  parsed.pathname = parsed.pathname.replace(/\/$/, "") || "/";
+  return parsed.toString();
+}
+
+function extractLocValues(xml) {
+  return [...xml.matchAll(/<loc>(.*?)<\/loc>/gsi)].map((match) => match[1].trim());
+}
+
+async function fetchXml(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${url} (HTTP ${response.status})`);
+  }
+  return response.text();
+}
+
+async function getSitemapUrls(url) {
+  const xml = await fetchXml(url);
+  const locs = extractLocValues(xml);
+
+  if (xml.includes("<sitemapindex")) {
+    const nestedXmlList = await Promise.all(locs.map((loc) => fetchXml(loc)));
+    return [
+      ...new Set(
+        nestedXmlList
+          .flatMap((nestedXml) => extractLocValues(nestedXml))
+          .map(normalizeUrl),
+      ),
+    ];
+  }
+
+  return [...new Set(locs.map(normalizeUrl))];
 }
 
 async function submitBatch(urls) {
@@ -69,21 +104,56 @@ async function submitBatch(urls) {
 
     try {
       const response = await fetch(BING_SUBMIT_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
       if (response.ok) {
         const data = await response.json().catch(() => null);
-        console.log(`✓ Batch ${Math.floor(i / batchSize) + 1}: ${batch.length} URLs submitted (HTTP ${response.status})`);
+        writeSubmissionLogEntry({
+          timestamp: new Date().toISOString(),
+          provider: "bing-webmaster",
+          siteUrl: SITE_URL,
+          status: response.status,
+          ok: true,
+          urls: batch,
+          response: data,
+        });
+        console.log(
+          `✓ Batch ${Math.floor(i / batchSize) + 1}: ${
+            batch.length
+          } URLs submitted (HTTP ${response.status})`,
+        );
         totalSuccess += batch.length;
       } else {
-        const errText = await response.text().catch(() => '');
-        console.log(`✗ Batch ${Math.floor(i / batchSize) + 1}: HTTP ${response.status} — ${errText}`);
+        const errText = await response.text().catch(() => "");
+        writeSubmissionLogEntry({
+          timestamp: new Date().toISOString(),
+          provider: "bing-webmaster",
+          siteUrl: SITE_URL,
+          status: response.status,
+          ok: false,
+          urls: batch,
+          error: errText,
+        });
+        console.log(
+          `✗ Batch ${Math.floor(i / batchSize) + 1}: HTTP ${
+            response.status
+          } — ${errText}`,
+        );
         totalFailed += batch.length;
       }
     } catch (err) {
+      writeSubmissionLogEntry({
+        timestamp: new Date().toISOString(),
+        provider: "bing-webmaster",
+        siteUrl: SITE_URL,
+        status: null,
+        ok: false,
+        urls: batch,
+        error: err.message,
+      });
       console.error(`✗ Batch ${Math.floor(i / batchSize) + 1}: ${err.message}`);
       totalFailed += batch.length;
     }
@@ -96,19 +166,20 @@ async function main() {
   let urls;
 
   if (singleUrl) {
-    urls = [singleUrl];
-  } else if (submitAll) {
-    urls = [...CORE_PAGES.map(p => `${SITE_URL}${p}`), ...getBlogUrls()];
+    urls = [normalizeUrl(singleUrl)];
   } else {
-    urls = getBlogUrls();
+    urls = await getSitemapUrls(sitemapUrl);
   }
 
   urls = [...new Set(urls)];
 
   console.log(`Bing Webmaster Tools URL Submission\n`);
+  if (!singleUrl) {
+    console.log(`Sitemap source: ${sitemapUrl}`);
+  }
   console.log(`URLs to submit: ${urls.length}`);
-  urls.forEach(u => console.log(`  ${u.replace(SITE_URL, '')}`));
-  console.log('');
+  urls.forEach((u) => console.log(`  ${u.replace(SITE_URL, "")}`));
+  console.log("");
 
   const { totalSuccess, totalFailed } = await submitBatch(urls);
   console.log(`\nDone: ${totalSuccess} submitted, ${totalFailed} failed`);

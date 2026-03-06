@@ -34,9 +34,9 @@ Here are seven phrases to delete from your vocabulary today—and exactly what t
 
 **What executives write:**
 
-> ❌ "I wanted to reach out to discuss the Q3 proposal."
+> ❌ <span class="speak-en">I wanted to reach out to discuss the Q3 proposal.</span>
 >
-> ✅ "The Q3 proposal needs your input by Friday."
+> ✅ <span class="speak-en">The Q3 proposal needs your input by Friday.</span>
 
 **The principle:** Start with your point, not with narration about yourself.
 
@@ -48,9 +48,9 @@ Here are seven phrases to delete from your vocabulary today—and exactly what t
 
 **What executives write:**
 
-> ❌ "Sorry to bother you, but could you review this document?"
+> ❌ <span class="speak-en">Sorry to bother you, but could you review this document?</span>
 >
-> ✅ "Could you review this document by Thursday? Your input on the pricing section would be especially valuable."
+> ✅ <span class="speak-en">Could you review this document by Thursday? Your input on the pricing section would be especially valuable.</span>
 
 **The principle:** Replace apologies with appreciation or directness. If your request is legitimate, own it.
 
@@ -62,9 +62,9 @@ Here are seven phrases to delete from your vocabulary today—and exactly what t
 
 **What executives write:**
 
-> ❌ "Just following up on my previous email."
+> ❌ <span class="speak-en">Just following up on my previous email.</span>
 >
-> ✅ "Moving this up—I need your decision by EOD Wednesday to keep the project on track."
+> ✅ <span class="speak-en">Moving this up -- I need your decision by end of day Wednesday to keep the project on track.</span>
 
 **The principle:** Every follow-up should add new information, context, or urgency. Don't just remind—advance.
 
@@ -76,9 +76,9 @@ Here are seven phrases to delete from your vocabulary today—and exactly what t
 
 **What executives write:**
 
-> ❌ "I think maybe we should consider postponing the launch."
+> ❌ <span class="speak-en">I think maybe we should consider postponing the launch.</span>
 >
-> ✅ "I recommend postponing the launch. Here's why."
+> ✅ <span class="speak-en">I recommend postponing the launch. Here's why.</span>
 
 **The principle:** One hedge is human. Two hedges is insecurity. State your recommendation, then defend it.
 
@@ -90,9 +90,9 @@ Here are seven phrases to delete from your vocabulary today—and exactly what t
 
 **What executives write:**
 
-> ❌ "We'll restructure the team into three pods. Does that make sense?"
+> ❌ <span class="speak-en">We'll restructure the team into three pods. Does that make sense?</span>
 >
-> ✅ "We'll restructure the team into three pods. Happy to walk through the details if useful."
+> ✅ <span class="speak-en">We'll restructure the team into three pods. Happy to walk through the details if useful.</span>
 
 **The principle:** Assume you were clear. Offer help, don't question yourself.
 
@@ -104,9 +104,9 @@ Here are seven phrases to delete from your vocabulary today—and exactly what t
 
 **What executives write:**
 
-> ❌ "The client requested a discount. Please advise."
+> ❌ <span class="speak-en">The client requested a discount. Please advise.</span>
 >
-> ✅ "The client requested a 15% discount. I recommend offering 10% with faster payment terms. Do you approve, or should we counter differently?"
+> ✅ <span class="speak-en">The client requested a 15% discount. I recommend offering 10% with faster payment terms. Do you approve, or should we counter differently?</span>
 
 **The principle:** Don't ask for generic "advice." Present options and ask for a specific decision.
 
@@ -118,9 +118,9 @@ Here are seven phrases to delete from your vocabulary today—and exactly what t
 
 **What executives write:**
 
-> ❌ "Attached is the analysis. Hope this helps!"
+> ❌ <span class="speak-en">Attached is the analysis. Hope this helps!</span>
 >
-> ✅ "Attached is the analysis. Let me know if you need anything else before Thursday's meeting."
+> ✅ <span class="speak-en">Attached is the analysis. Let me know if you need anything else before Thursday's meeting.</span>
 
 **The principle:** Close with a clear next step or offer, not cheerful hope.
 
@@ -152,13 +152,13 @@ These same principles apply to how you [negotiate in English](/en/blog/how-to-ne
 
 | Junior Phrase | Executive Alternative |
 |--------------|----------------------|
-| "I wanted to reach out..." | [State your point directly] |
-| "Sorry to bother you..." | "Could you..." or "I'd appreciate..." |
-| "Just following up..." | "Moving this up—[new context or deadline]" |
-| "I think maybe..." | "I recommend..." |
-| "Does that make sense?" | "Happy to clarify if useful." |
-| "Please advise." | "[Options] Which do you prefer?" |
-| "Hope this helps!" | "Let me know if you need anything else." |
+| <span class="speak-en">I wanted to reach out...</span> | State your point directly |
+| <span class="speak-en">Sorry to bother you...</span> | <span class="speak-en">Could you...</span> or <span class="speak-en">I'd appreciate...</span> |
+| <span class="speak-en">Just following up...</span> | <span class="speak-en">Moving this up...</span> plus new context or deadline |
+| <span class="speak-en">I think maybe...</span> | <span class="speak-en">I recommend...</span> |
+| <span class="speak-en">Does that make sense?</span> | <span class="speak-en">Happy to clarify if useful.</span> |
+| <span class="speak-en">Please advise.</span> | <span class="speak-en">Which do you prefer?</span> |
+| <span class="speak-en">Hope this helps!</span> | <span class="speak-en">Let me know if you need anything else.</span> |
 
 ---
 

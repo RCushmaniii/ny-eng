@@ -28,6 +28,35 @@
 - ✅ Fixed TestimonialsGrid to use Spanish industry labels
 - ✅ Spanish testimonials filtering now uses correct data
 
+### Search Engine Submission Workflow
+
+- ✅ `scripts/seo/bing-submit.mjs` now submits from the live sitemap by default
+- ✅ `scripts/seo/bing-submit.mjs --url <url>` supports targeted single-URL Bing submission
+- ✅ `scripts/seo/bing-submit.mjs --sitemap <xml-url>` supports alternate sitemap sources
+- ✅ Bing Webmaster API key is read from `.env` via `BING_WEBMASTER_TOOLS_API_KEY`
+- ✅ Successful Bing submissions are logged locally to `scripts/seo/.submissions/bing-webmaster.jsonl`
+- ✅ `scripts/seo/bing-submission-report.mjs` compares live sitemap URLs against the local Bing submission log
+- ✅ `scripts/seo/indexnow-submit.mjs` now submits from the live sitemap by default
+- ✅ Full sitemap IndexNow submission accepted successfully for 138 URLs
+- ⚠️ Bing Webmaster Tools daily quota can block full-batch submission even when auth/config are correct
+
+**Current operational commands:**
+
+```bash
+node scripts/seo/bing-submit.mjs
+node scripts/seo/bing-submit.mjs --url https://www.nyenglishteacher.com/en/
+node scripts/seo/bing-submit.mjs --sitemap https://www.nyenglishteacher.com/sitemap-index.xml
+node scripts/seo/bing-submission-report.mjs
+node scripts/seo/indexnow-submit.mjs
+```
+
+**Operational notes:**
+
+- Use the Bing report script to see which sitemap URLs have been successfully submitted since local logging was added
+- The local Bing log is forward-looking only; it cannot reconstruct historical submissions made before logging existed
+- If Bing quota is low, prioritize core conversion pages and newest/highest-value content for direct Bing submission
+- Use IndexNow for broader same-day coverage when Bing Webmaster quota is constrained
+
 ---
 
 ## 🔍 **Remaining Critical Issues**
@@ -220,14 +249,17 @@ node validate-url-structure.mjs
 ### From Previous Memories
 
 1. **"Plug one hole, create another"** - Fixing one SEO issue can break another
+
    - **Mitigation:** Test thoroughly after each fix
    - **Mitigation:** Run full validation suite before deployment
 
 2. **Blog routing complexity** - Double language prefixes, URL cleaning hacks
+
    - **Current Status:** Workarounds in place (url-cleaner.ts)
    - **Long-term:** Simplify blog routing architecture
 
 3. **Performance issues** - Spanish category pages showing slow TTFB
+
    - **Current Status:** Not addressed yet
    - **Impact:** May affect SEO score if Core Web Vitals are poor
 

@@ -38,16 +38,16 @@ The person who sets the first number or terms shapes the entire conversation. Ma
 
 **What to say:**
 
-> "Based on the scope and timeline we've discussed, I'm proposing $85,000 for this phase."
+> <span class="speak-en">Based on the scope and timeline we have discussed, I am proposing $85,000 for this phase.</span>
 >
-> "Given my experience and the market rate for this role, I'm targeting a base salary of $145,000."
+> <span class="speak-en">Given my experience and the market rate for this role, I am targeting a base salary of $145,000.</span>
 
 **Key phrases for anchoring:**
 
-- "Based on [X], I'm proposing..."
-- "Given [Y], I'm targeting..."
-- "The figure I have in mind is..."
-- "What I'm looking for is..."
+- <span class="speak-en">Based on our research, I am proposing...</span>
+- <span class="speak-en">Given the market data, I am targeting...</span>
+- <span class="speak-en">The figure I have in mind is...</span>
+- <span class="speak-en">What I am looking for is...</span>
 
 **Why this works:** Anchoring forces the other side to negotiate from your number, not theirs.
 
@@ -59,16 +59,16 @@ When they push back, don't immediately defend. First, show you heard them. This 
 
 **What to say:**
 
-> "I hear you—budget is tight this quarter. Let me share why this number reflects the value."
+> <span class="speak-en">I hear you -- budget is tight this quarter. Let me share why this number reflects the value.</span>
 >
-> "That's a fair concern. Here's how I'm thinking about it."
+> <span class="speak-en">That is a fair concern. Here is how I am thinking about it.</span>
 
 **Key phrases for acknowledging:**
 
-- "I hear you..."
-- "That's a fair point..."
-- "I understand where you're coming from..."
-- "That makes sense from your perspective..."
+- <span class="speak-en">I hear you...</span>
+- <span class="speak-en">That is a fair point...</span>
+- <span class="speak-en">I understand where you are coming from...</span>
+- <span class="speak-en">That makes sense from your perspective...</span>
 
 **Why this works:** Acknowledgment lowers defensiveness. It signals that you're negotiating with them, not against them.
 
@@ -80,16 +80,16 @@ Never justify your ask with your needs ("I need this salary because my rent is e
 
 **What to say:**
 
-> "This rate reflects three things: my specialized experience in [X], the tight timeline you've described, and the results I delivered for [similar client]."
+> <span class="speak-en">This rate reflects three things: my specialized experience in this area, the tight timeline you have described, and the results I delivered for a similar client.</span>
 >
-> "The salary I'm proposing aligns with what senior engineers with my background command—and reflects the impact I'll have on your product roadmap."
+> <span class="speak-en">The salary I am proposing aligns with what senior engineers with my background command -- and reflects the impact I will have on your product roadmap.</span>
 
 **Key phrases for justifying:**
 
-- "This reflects..."
-- "This is based on..."
-- "This aligns with..."
-- "The reason I'm at this number is..."
+- <span class="speak-en">This reflects...</span>
+- <span class="speak-en">This is based on...</span>
+- <span class="speak-en">This aligns with...</span>
+- <span class="speak-en">The reason I am at this number is...</span>
 
 **Why this works:** Value-based justifications are harder to dismiss than need-based ones.
 
@@ -101,16 +101,16 @@ If they can't meet your number, don't just lower it. Ask for something in return
 
 **What to say:**
 
-> "If the budget is fixed at $75K, I can work with that—if we adjust the scope to remove the third deliverable."
+> <span class="speak-en">If the budget is fixed at $75K, I can work with that -- if we adjust the scope to remove the third deliverable.</span>
 >
-> "I can be flexible on base salary if we include a signing bonus and accelerated review at six months."
+> <span class="speak-en">I can be flexible on base salary if we include a signing bonus and accelerated review at six months.</span>
 
 **Key phrases for trading:**
 
-- "If [X], I can work with that—if we [Y]."
-- "I can be flexible on [X] if we include [Y]."
-- "What if we adjusted [X] in exchange for [Y]?"
-- "I'm open to [X] provided [Y] is part of the package."
+- <span class="speak-en">If the budget is fixed, I can work with that -- if we adjust the timeline.</span>
+- <span class="speak-en">I can be flexible on the rate if we include additional scope.</span>
+- <span class="speak-en">What if we adjusted the timeline in exchange for a higher rate?</span>
+- <span class="speak-en">I am open to that provided the review schedule is part of the package.</span>
 
 **Why this works:** Trading maintains the value of your original ask while showing flexibility.
 
@@ -122,18 +122,13 @@ Verbal agreements evaporate. Before you leave the conversation, confirm what was
 
 **What to say (in the meeting):**
 
-> "Just to confirm: we're agreeing to $80K with a six-month review. Correct?"
+> <span class="speak-en">Just to confirm: we are agreeing to $80K with a six-month review. Correct?</span>
 >
-> "Let me make sure I have this right: the scope is A, B, and C, with delivery by March 15, at the rate we discussed."
+> <span class="speak-en">Let me make sure I have this right: the scope is A, B, and C, with delivery by March 15, at the rate we discussed.</span>
 
 **What to write (in the follow-up email):**
 
-> "Thanks for the conversation today. To confirm what we agreed:
-> - [Term 1]
-> - [Term 2]
-> - [Term 3]
->
-> Please let me know if I've captured anything incorrectly. Otherwise, I'll proceed on this basis."
+> <span class="speak-en">Thanks for the conversation today. To confirm what we agreed: the project scope, the timeline, and the rate. Please let me know if I have captured anything incorrectly. Otherwise, I will proceed on this basis.</span>
 
 **Why this works:** Written confirmation prevents "I thought we agreed to something different" later.
 
@@ -145,34 +140,34 @@ Verbal agreements evaporate. Before you leave the conversation, confirm what was
 
 ### When You Need Time to Think
 
-> "That's an interesting point. Let me take a moment to think through the implications."
+> <span class="speak-en">That is an interesting point. Let me take a moment to think through the implications.</span>
 >
-> "I want to give that the consideration it deserves. Can we revisit this in 24 hours?"
+> <span class="speak-en">I want to give that the consideration it deserves. Can we revisit this in 24 hours?</span>
 
 ### When They Pressure You for an Immediate Answer
 
-> "I don't make decisions this significant on the spot. I'll have an answer for you by [date]."
+> <span class="speak-en">I do not make decisions this significant on the spot. I will have an answer for you by Friday.</span>
 >
-> "I appreciate the urgency, but I want to make sure we both get this right."
+> <span class="speak-en">I appreciate the urgency, but I want to make sure we both get this right.</span>
 
 ### When You Need to Say No
 
-> "I'm not able to go that low on this project. Here's what I can do instead."
+> <span class="speak-en">I am not able to go that low on this project. Here is what I can do instead.</span>
 >
-> "That's outside what I can accept. But I'm open to other ways to make this work."
+> <span class="speak-en">That is outside what I can accept. But I am open to other ways to make this work.</span>
 
 ### When They Go Silent After Your Offer
 
 Don't fill the silence. Let it sit. If you must speak:
 
-> "I'll let you think on that. What questions do you have?"
+> <span class="speak-en">I will let you think on that. What questions do you have?</span>
 
 ---
 
 ## Common Mistakes Non-Native Speakers Make in Negotiations
 
-1. **Apologizing for your ask** — "Sorry, but I was hoping for..." removes your power. This is one of the [email phrases that make you sound junior](/en/blog/email-phrases-that-make-you-sound-junior/), and it's even more damaging when spoken aloud.
-2. **Hedging too much** — "Maybe we could possibly consider..." sounds uncertain.
+1. **Apologizing for your ask** — <span class="speak-en">Sorry, but I was hoping for...</span> removes your power. This is one of the [email phrases that make you sound junior](/en/blog/email-phrases-that-make-you-sound-junior/), and it's even more damaging when spoken aloud.
+2. **Hedging too much** — <span class="speak-en">Maybe we could possibly consider...</span> sounds uncertain.
 3. **Accepting the first offer** — Even if it's good, a small counter shows you value yourself.
 4. **Talking too much after your offer** — State your number, then stop. Silence is your friend.
 5. **Failing to prepare phrases** — Under pressure, you'll default to whatever's easiest to say.

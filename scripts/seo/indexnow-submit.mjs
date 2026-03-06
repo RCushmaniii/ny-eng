@@ -4,55 +4,58 @@
  * Instantly notifies Bing, Yandex, DuckDuckGo, and other participating engines.
  *
  * Usage:
- *   node scripts/seo/indexnow-submit.mjs                    # Submit all blog URLs
- *   node scripts/seo/indexnow-submit.mjs --url https://...  # Submit single URL
- *   node scripts/seo/indexnow-submit.mjs --all              # Submit all pages (core + blog)
+ *   node scripts/seo/indexnow-submit.mjs                             # Submit all sitemap URLs
+ *   node scripts/seo/indexnow-submit.mjs --url https://...           # Submit single URL
+ *   node scripts/seo/indexnow-submit.mjs --sitemap https://...xml    # Submit URLs from a specific sitemap
  */
 
-import { readdirSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const PROJECT_ROOT = join(__dirname, '..', '..');
-
 const SITE_URL = 'https://www.nyenglishteacher.com';
+const DEFAULT_SITEMAP_URL = `${SITE_URL}/sitemap-index.xml`;
 const INDEXNOW_KEY = '68c9a0e54a33fa63d4e4384ebe910e71';
 const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
 
 const args = process.argv.slice(2);
 const singleUrl = args.includes('--url') ? args[args.indexOf('--url') + 1] : null;
-const submitAll = args.includes('--all');
+const sitemapUrl = args.includes('--sitemap')
+  ? args[args.indexOf('--sitemap') + 1]
+  : DEFAULT_SITEMAP_URL;
 
-const CORE_PAGES = [
-  '/en/', '/es/',
-  '/en/services/', '/es/servicios/',
-  '/en/about/', '/es/about/',
-  '/en/contact/', '/es/contacto/',
-  '/en/testimonials/', '/es/testimonios/',
-  '/en/blog/', '/es/blog/',
-  '/en/book/', '/es/reservar/',
-  '/en/quiz/it-services/', '/es/quiz/it-services/',
-  '/en/resources/', '/es/recursos/',
-  '/en/faq/', '/es/faq/',
-];
+function normalizeUrl(url) {
+  const parsed = new URL(url);
+  parsed.hash = '';
+  parsed.search = '';
+  parsed.pathname = parsed.pathname.replace(/\/$/, '') || '/';
+  return parsed.toString();
+}
 
-function getBlogUrls() {
-  const urls = [];
-  for (const lang of ['en', 'es']) {
-    const dir = join(PROJECT_ROOT, 'src', 'content', 'blog', lang);
-    try {
-      const files = readdirSync(dir).filter(f => f.endsWith('.md'));
-      for (const file of files) {
-        const slug = file.replace('.md', '');
-        urls.push(`${SITE_URL}/${lang}/blog/${slug}/`);
-      }
-    } catch {
-      // skip
-    }
+function extractLocValues(xml) {
+  return [...xml.matchAll(/<loc>(.*?)<\/loc>/gsi)].map((match) => match[1].trim());
+}
+
+async function fetchXml(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${url} (HTTP ${response.status})`);
   }
-  return urls;
+  return response.text();
+}
+
+async function getSitemapUrls(url) {
+  const xml = await fetchXml(url);
+  const locs = extractLocValues(xml);
+
+  if (xml.includes('<sitemapindex')) {
+    const nestedXmlList = await Promise.all(locs.map((loc) => fetchXml(loc)));
+    return [
+      ...new Set(
+        nestedXmlList
+          .flatMap((nestedXml) => extractLocValues(nestedXml))
+          .map(normalizeUrl),
+      ),
+    ];
+  }
+
+  return [...new Set(locs.map(normalizeUrl))];
 }
 
 async function submitToIndexNow(urls) {
@@ -106,17 +109,18 @@ async function main() {
   let urls;
 
   if (singleUrl) {
-    urls = [singleUrl];
-  } else if (submitAll) {
-    urls = [...CORE_PAGES.map(p => `${SITE_URL}${p}`), ...getBlogUrls()];
+    urls = [normalizeUrl(singleUrl)];
   } else {
-    urls = getBlogUrls();
+    urls = await getSitemapUrls(sitemapUrl);
   }
 
   // Deduplicate
   urls = [...new Set(urls)];
 
   console.log(`IndexNow URL Submission\n`);
+  if (!singleUrl) {
+    console.log(`Sitemap source: ${sitemapUrl}`);
+  }
   console.log(`URLs to submit: ${urls.length}`);
   urls.forEach(u => console.log(`  ${u.replace(SITE_URL, '')}`));
   console.log('');
