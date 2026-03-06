@@ -297,9 +297,9 @@ Your code is already good enough. The question is whether your **communication**
 
 ## Keep Reading
 
+- [Slack English: Write Like a Pro, Not a Bot](/en/blog/slack-english-write-like-a-pro/) — Deep dive into the 8 Slack situations every tech professional needs to master.
 - [Why Senior Developers Need Advanced English, Not Conversational](/en/blog/why-senior-developers-need-advanced-english/) — The four communication gaps that block promotions to senior roles at global companies.
 - [The Real Cost of Weak English: Lost Deals, Blocked Promotions](/en/blog/real-cost-weak-english-mexican-companies/) — The business case for investing in English, with real numbers from Mexican companies.
-- [Why IT Managers Lose Millions](/en/blog/managers-lose-millions/) — When communication gaps hit the P&L, the losses go far beyond missed deadlines.
 
 ---
 

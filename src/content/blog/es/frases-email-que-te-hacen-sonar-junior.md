@@ -186,9 +186,9 @@ Antes de tu próximo email importante, escanea estas siete frases. Reemplázalas
 
 ## Sigue Leyendo
 
+- [Inglés para Slack: Escribe Como Profesional](/es/blog/ingles-para-slack-profesional/) — Aplica estos mismos principios de comunicación directa a tu Slack diario.
 - [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/) — Más patrones de interferencia del español que afectan tu comunicación profesional.
 - [Cómo negociar en inglés: marco probado de 5 pasos](/es/blog/como-negociar-en-ingles-marco/) — Lleva tu comunicación ejecutiva a negociaciones de alto impacto.
-- [Manual de comunicación ejecutiva: 7 pilares clave](/es/blog/manual-comunicacion-ejecutiva/) — La guía definitiva para liderar con influencia en inglés.
 
 ---
 

@@ -349,9 +349,9 @@ Evita estos y vas a destacar de inmediato:
 
 ## Sigue Leyendo
 
+- [Inglés para Slack: Escribe Como Profesional](/es/blog/ingles-para-slack-profesional/) — Domina la comunicación escrita que define cómo los equipos de EE.UU. perciben tu seniority entre reuniones.
 - [Inglés para Desarrolladores Nearshore: Lo que EE.UU. Exige](/es/blog/ingles-desarrolladores-nearshore-habilidades/) — La guía completa de inglés laboral para desarrolladores en equipos de EE.UU., desde Slack hasta respuesta a incidentes.
 - [Dirigir Reuniones en Inglés: 25 Frases que Imponen Respeto](/es/blog/dirigir-reuniones-ingles-frases/) — Cuando estés listo para pasar de participar a facilitar ceremonias de Scrum tú mismo.
-- [Por Qué Desarrolladores Senior Necesitan Inglés Avanzado](/es/blog/por-que-desarrolladores-senior-necesitan-ingles-avanzado/) — Las brechas de comunicación que bloquean ascensos a roles senior y staff engineer.
 
 ---
 

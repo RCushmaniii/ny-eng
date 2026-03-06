@@ -299,9 +299,9 @@ Tu código ya es suficientemente bueno. La pregunta es si tu **comunicación** e
 
 ## Sigue Leyendo
 
+- [Inglés para Slack: Escribe Como Profesional](/es/blog/ingles-para-slack-profesional/) — Guía profunda de las 8 situaciones de Slack que todo profesional tech necesita dominar.
 - [Por qué desarrolladores senior necesitan inglés avanzado](/es/blog/por-que-desarrolladores-senior-necesitan-ingles-avanzado/) — Las 4 brechas de comunicación que bloquean tu ascenso a roles senior.
 - [El costo real del inglés débil en empresas mexicanas](/es/blog/costo-real-ingles-debil-empresas-mexicanas/) — Datos concretos sobre el impacto financiero de la brecha de comunicación.
-- [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/) — Patrones de interferencia del español que minan tu credibilidad en standups y code reviews.
 
 ---
 

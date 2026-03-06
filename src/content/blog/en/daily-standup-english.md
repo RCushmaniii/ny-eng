@@ -349,9 +349,9 @@ Avoid these, and you'll immediately stand out:
 
 ## Keep Reading
 
+- [Slack English: Write Like a Pro, Not a Bot](/en/blog/slack-english-write-like-a-pro/) — Master the written communication that shapes how US teams perceive your seniority between meetings.
 - [English for Nearshore Developers: Skills US Teams Need](/en/blog/english-nearshore-developers-skills/) — The complete guide to workplace English for developers on US teams, from Slack to incident response.
 - [Lead Meetings in English: 25 Phrases That Command Respect](/en/blog/lead-meeting-english-phrases/) — When you're ready to move beyond participating and start facilitating Scrum ceremonies yourself.
-- [Why Senior Developers Need Advanced English, Not Conversational](/en/blog/why-senior-developers-need-advanced-english/) — The communication gaps that block promotions to senior and staff engineer roles.
 
 ---
 
