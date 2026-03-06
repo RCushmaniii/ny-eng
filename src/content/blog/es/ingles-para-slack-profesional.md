@@ -6,8 +6,8 @@ lastmod: "2026-03-06"
 categories:
   - "Tech English"
   - "Professional English"
-# featuredImage: "./images/ingles-slack-profesional.webp"  (TODO: generate image)
-# imageAlt: "Profesional escribiendo un mensaje seguro en Slack en una laptop en un ambiente moderno de oficina tech"
+featuredImage: "./images/ingles-slack-profesional.webp"
+imageAlt: "Profesional escribiendo un mensaje seguro en Slack en una laptop en un ambiente moderno de oficina tech"
 translations:
   en: "/en/blog/slack-english-write-like-a-pro/"
 publish: true
