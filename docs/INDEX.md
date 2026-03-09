@@ -30,6 +30,7 @@ docs/
 - **[BILINGUAL-SYSTEM-GUIDE.md](./architecture/BILINGUAL-SYSTEM-GUIDE.md)** - Comprehensive guide to the bilingual English/Spanish system architecture
 - **[HREFLANG-FIX-SUMMARY.md](./seo/HREFLANG-FIX-SUMMARY.md)** - Summary of hreflang implementation fixes and SEO improvements
 - **[SEO-TECHNICAL-CHECKLIST.md](./seo/SEO-TECHNICAL-CHECKLIST.md)** - Technical SEO operations checklist including sitemap-driven Bing submission, IndexNow workflow, and reporting
+- **[SITEMAP-HREFLANG-SYSTEM.md](./architecture/SITEMAP-HREFLANG-SYSTEM.md)** - How the XML sitemap and hreflang system is custom-built (filter, serialize, blogTranslations, i18n routing)
 - **[BLOG-I18N-EDGE-CASES.md](./architecture/BLOG-I18N-EDGE-CASES.md)** - Edge cases and solutions for blog internationalization
 - **[REDIRECT-ANALYSIS-SUMMARY.md](./seo/REDIRECT-ANALYSIS-SUMMARY.md)** - Analysis of redirect chains and URL structure optimization
 
