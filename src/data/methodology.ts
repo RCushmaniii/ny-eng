@@ -16,33 +16,32 @@ export interface Methodology {
 
 // Export the actual content object that will be used on the pages
 export const coreMethodology: Methodology = {
-  title: "Your Personalized Coaching Method",
-  subtitle:
-    "A proven, four-step methodology designed to understand your unique challenges and build the specific skills you need to succeed.",
+  title: "How It Works",
+  subtitle: "",
   steps: [
     {
       icon: "lucide:search-check",
-      title: "Discovery & Assessment",
+      title: "We talk first.",
       description:
-        "We start with a deep dive into your current role and communication habits to establish a clear baseline of your strengths and pinpoint exact areas for improvement.",
+        "A short intro call. Your role, goals, fit—no pressure, no pitch.",
     },
     {
       icon: "lucide:map",
-      title: "Strategic Goal Mapping",
+      title: "I build your plan.",
       description:
-        "Together, we define clear, measurable objectives tied directly to your career success, creating a strategic plan focused on your specific goals.",
+        "From your level, industry, and pressure moments. Custom sessions, not off-the-shelf.",
     },
     {
       icon: "lucide:settings",
-      title: "Tailored Curriculum & Practice",
+      title: "You practice under pressure.",
       description:
-        "Your program is built for you, focusing on the specific vocabulary, phrasing, and cultural nuances relevant to your industry and daily tasks.",
+        "Pitches, negotiations, client calls. Feedback on tone, pronunciation, those tiny signals that make \"fluent\" turn commanding. Mess up with me, not when it counts.",
     },
     {
       icon: "lucide:message-square-text",
-      title: "Real-World Simulation & Feedback",
+      title: "I refine as you grow.",
       description:
-        "This is where theory becomes instinct. We run mock presentations and role-play difficult negotiations, providing direct, actionable feedback so you are confident and prepared.",
+        "Communication sharpens? I adjust—new challenges, scenarios, targets. Evolves with your career.",
     },
   ],
 };
