@@ -289,7 +289,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
             question:
               "Will this help with my accent, or is it just vocabulary?",
             answer:
-              "Both, but the focus is strategic. I help you identify which pronunciation patterns are actually hurting your credibility (most aren't), and we work on clarity and confidence, not erasing your accent. The goal is to be understood and respected, not to sound like a native speaker.",
+              "Both, but the focus is strategic. I help you identify which pronunciation patterns are actually hurting your credibility (most aren't), and I focus on clarity and confidence, not erasing your accent. The goal is to be understood and respected, not to sound like a native speaker.",
           },
         ],
       },
