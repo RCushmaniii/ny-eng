@@ -14,6 +14,7 @@ type LucideIcon = typeof Zap;
 
 export interface Feature {
   readonly icon: LucideIcon;
+  readonly tag?: string;
   readonly title: string;
   readonly description: string;
   readonly link?: string;

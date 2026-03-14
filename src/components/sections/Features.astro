@@ -88,6 +88,11 @@ const paddingClass = getPaddingClass({
               >
                 <feature.icon size={24} class="text-white" />
               </div>
+              {feature.tag && (
+                <span class="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">
+                  {feature.tag}
+                </span>
+              )}
               <h3 class:list={["text-h4 mb-2", textColor]}>{feature.title}</h3>
               <p class:list={["text-base", textColor, ""]}>
                 {feature.description}

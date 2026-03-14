@@ -45,10 +45,10 @@ const seoDescription =
   "Mejora tu fluidez y confianza en inglés con coaching personalizado para ejecutivos y profesionales. Clases 1-a-1 adaptadas a tu industria.";
 
 const heroContent = {
-  eyebrow: "Tu Ventaja de Comunicación Global",
-  title: "Domina el Inglés de Negocios y Avanza en tu Carrera",
+  eyebrow: "Coaching Privado de Inglés para Profesionales Senior",
+  title: "Eres líder en español. Suena como uno en inglés.",
   description:
-    "Entreno a líderes internacionales para comunicarse con autoridad tranquila, claridad más aguda y presencia ejecutiva—para que puedas liderar reuniones de nivel ejecutivo y ganar confianza más rápido.",
+    "Lidera reuniones globales con autoridad tranquila. Coaching privado que hace que tu inglés esté a la altura de tu experiencia.",
   trustLine: "Confiado por líderes en empresas Fortune 500 y startups globales",
   trustLineLink: "/es/testimonios/",
   buttons: [
@@ -72,30 +72,34 @@ const featuresSection = {
     "Selecciona el camino enfocado que se alinea con tus objetivos profesionales específicos.",
   features: [
     {
-      title: "Inglés Ejecutivo para Negocios",
+      tag: "Líderes Ejecutivos",
+      title: "Tu estrategia es sólida. Tu inglés no está a la altura.",
       description:
-        "Domina la sala de juntas y negocia acuerdos complejos con matices—sin traducir en tu cabeza.",
+        "Domina la sala de juntas, lidera negociaciones y habla con la claridad que el liderazgo global exige — sin traducir en tu cabeza.",
       icon: Briefcase,
       link: "/es/quiz/executives/",
     },
     {
-      title: "Inglés para Líderes en Tecnología",
+      tag: "Líderes en Tecnología",
+      title: "Tu código es impecable. Tu explicación pierde a la audiencia.",
       description:
-        "Traduce conceptos técnicos complejos en valor de negocio claro para clientes y grupos de interés globales.",
+        "Convierte la complejidad técnica en valor de negocio claro que ejecutivos, clientes y grupos de interés entienden de inmediato.",
       icon: Presentation,
       link: "/es/quiz/it-services/",
     },
     {
-      title: "Servicios Profesionales (Médicos y Legales)",
+      tag: "Servicios Profesionales",
+      title: "Una palabra mal elegida puede costar más que tus honorarios.",
       description:
-        "Construye confianza absoluta con clientes y pacientes internacionales. Para expertos que exigen precisión y claridad.",
+        "Inglés de precisión para profesionales médicos y legales que deben comunicarse con claridad absoluta cuando lo que está en juego es real.",
       icon: Users,
       link: "/es/quiz/professional-services/",
     },
     {
-      title: "Entrevistas y Presentaciones Importantes",
+      tag: "Entrevistas y Presentaciones",
+      title: "Tienes una oportunidad. Suena preparado.",
       description:
-        "Domina tu próximo momento decisivo. Preparación enfocada para entrevistas laborales, pitches a inversionistas y discursos críticos.",
+        "Preparación enfocada para entrevistas, pitches a inversionistas y las presentaciones que cambian carreras.",
       icon: GraduationCap,
       link: "/es/quiz/high-stakes/",
     },
@@ -185,6 +189,19 @@ const recentPostsSection = {
 >
   <div class="relative bg-background-light">
     <Hero content={heroContent} />
+
+    {/* ARCS — CALL OUT: "¿Te identificas?" — espejo de identidad */}
+    <section class="bg-gray-950 py-16 sm:py-20 border-t border-gray-800">
+      <div class="site-container mx-auto px-4 max-w-3xl text-center">
+        <p class="text-sm font-bold uppercase tracking-wider mb-6" style="color: #FFC107; letter-spacing: 0.1em;">
+          ¿Te identificas?
+        </p>
+        <p class="text-xl sm:text-2xl leading-relaxed text-gray-200 font-light">
+          Si diriges juntas, cierras acuerdos y gestionas equipos en tu idioma nativo — pero te sientes menos preciso, menos contundente, <em class="text-white font-medium not-italic">menos tú mismo</em> cuando cambias al inglés — esto fue creado para ti.
+        </p>
+      </div>
+    </section>
+
     <Features content={featuresSection} padding="small" background="light" />
     <QuizPromotion lang="es" />
     <div class="mb-15 pb-0">
