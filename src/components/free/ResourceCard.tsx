@@ -167,17 +167,7 @@ export default function ResourceCard({ asset, lang }: ResourceCardProps) {
 
           {/* Stats & CTA */}
           <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-            {/* Download count */}
-            {asset.analytics?.downloadCount &&
-              asset.analytics.downloadCount > 0 && (
-                <div className="flex items-center gap-2 text-slate-500 text-sm">
-                  <Users className="w-4 h-4" />
-                  <span>
-                    {asset.analytics.downloadCount.toLocaleString()}{" "}
-                    {lang === "en" ? "downloads" : "descargas"}
-                  </span>
-                </div>
-              )}
+            {/* Download count — hidden until real tracking is in place */}
 
             {/* CTA */}
             <div className="flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform ml-auto">
