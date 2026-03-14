@@ -137,6 +137,8 @@ const filteredPosts = allPosts
                 imageAlt?: string;
                 publishDate: Date | string;
                 categories?: string[];
+                readingTime?: string;
+                audience?: string;
               };
               body: string;
               slug: string;
@@ -155,6 +157,8 @@ const filteredPosts = allPosts
                   : new Date(post.data.publishDate)
               }
               categories={post.data.categories || []}
+              readingTime={post.data.readingTime}
+              audience={post.data.audience}
               content={post.body}
               slug={post.slug.replace(/^(en|es)\//, "")}
               index={index}
