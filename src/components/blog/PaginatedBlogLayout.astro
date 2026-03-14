@@ -17,6 +17,7 @@ export interface Props {
   totalPages: number;
   baseUrl: string;
   title: string;
+  heroTitle?: string;
   subtitle?: string;
   description?: string;
   heroImage: ImageMetadata | string;
@@ -37,6 +38,7 @@ const {
   totalPages,
   baseUrl,
   title,
+  heroTitle,
   subtitle,
   description,
   heroImage,
@@ -92,7 +94,7 @@ const convertedHreflangs = languageAlternates?.map(alt => ({
 >
     <main>
     <InnerHero content={{
-      title: title,
+      title: heroTitle || title,
       description: subtitle || '',
       backgroundImage: heroImage,
       overlayOpacity: 0.2
