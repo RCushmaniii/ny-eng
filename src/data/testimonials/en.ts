@@ -52,7 +52,7 @@ export const testimonials: Testimonial[] = [
       "From Good to Great: How Coaching Transformed My Leadership Communication",
     avatarSize: "md",
     link: "/en/services/startup-founders/",
-    linkText: "👉 English Coaching for Startup Founders",
+    linkText: "English Coaching for Startup Founders",
     status: "published",
   },
   {
@@ -68,7 +68,7 @@ export const testimonials: Testimonial[] = [
     headline: "From Founder to CEO: Leading with Confidence in English",
     avatarSize: "md",
     link: "/en/services/startup-founders/",
-    linkText: "👉 English Coaching for Startup Founders & CEOs",
+    linkText: "English Coaching for Startup Founders & CEOs",
 
     status: "published",
   },
@@ -85,7 +85,7 @@ export const testimonials: Testimonial[] = [
     headline: "Building Cross-Border Confidence: My Executive English Journey",
     avatarSize: "md",
     link: "/en/services/executive-english/",
-    linkText: "👉 English Coaching for Executives",
+    linkText: "English Coaching for Executives",
     status: "published",
   },
   {
@@ -102,7 +102,7 @@ export const testimonials: Testimonial[] = [
     headline: "Executive Presence & High-Impact Communication for a Global CTO",
     avatarSize: "md",
     link: "/en/services/executive-english/",
-    linkText: "👉 English Coaching for Executives",
+    linkText: "English Coaching for Executives",
     status: "published",
   },
   {
@@ -117,7 +117,7 @@ export const testimonials: Testimonial[] = [
     headline: "Blending Language and Business Coaching for Real Growth",
     avatarSize: "md",
     link: "/en/services/high-stakes-english/",
-    linkText: "👉 English Coaching for High-Stakes Career Success",
+    linkText: "English Coaching for High-Stakes Career Success",
     status: "published",
   },
   {
@@ -137,7 +137,7 @@ export const testimonials: Testimonial[] = [
     headline: "Mastering High-Stakes Business Communication in Logistics",
     avatarSize: "md",
     link: "/en/services/high-stakes-english/",
-    linkText: "👉 English Coaching for High-Stakes Career Success",
+    linkText: "English Coaching for High-Stakes Career Success",
     status: "published",
   },
   {
@@ -156,7 +156,7 @@ Robert's coaching has not only enabled me to overcome these challenges but has a
     headline: "Elevating Executive Communication Skills in Global Logistics",
     avatarSize: "md",
     link: "/en/services/logistics-english/",
-    linkText: "👉 English Coaching for Logistics Professionals",
+    linkText: "English Coaching for Logistics Professionals",
     status: "published",
   },
   {
@@ -172,7 +172,7 @@ Robert's coaching has not only enabled me to overcome these challenges but has a
     headline: "Building Confidence and Clarity for International Patient Care",
     avatarSize: "md",
     link: "/en/services/professional-english/",
-    linkText: "👉 English Coaching for Medical Professionals",
+    linkText: "English Coaching for Medical Professionals",
     status: "published",
   },
   {
@@ -188,7 +188,7 @@ Robert's coaching has not only enabled me to overcome these challenges but has a
     headline: "Confident Legal Communication with International Clients",
     avatarSize: "md",
     link: "/en/services/professional-english/",
-    linkText: "👉 English Coaching for Medical & Legal Professionals",
+    linkText: "English Coaching for Medical & Legal Professionals",
     status: "published",
   },
   {
@@ -204,7 +204,7 @@ Robert's coaching has not only enabled me to overcome these challenges but has a
     headline: "Mastering Business English for Stronger Global Leadership",
     avatarSize: "md",
     link: "/en/services/executive-english/",
-    linkText: "👉 English Coaching for Executives",
+    linkText: "English Coaching for Executives",
     status: "published",
   },
   {
@@ -225,7 +225,7 @@ Robert will be an outstanding asset to anyone seeking to elevate their professio
     headline: "Mastering Executive Communication in Global Engineering",
     avatarSize: "md",
     link: "/en/services/high-stakes-english/",
-    linkText: "👉 English Coaching for High Pressure Presentations",
+    linkText: "English Coaching for High Pressure Presentations",
     status: "published",
   },
   {
@@ -244,7 +244,7 @@ With Robert's coaching, I've become more natural in conversations, better at str
     headline: "Fluent Technical Sales for Factory Automation",
     avatarSize: "md",
     link: "/en/services/tech-english/",
-    linkText: "👉 English Coaching for Engineers & Tech Leads",
+    linkText: "English Coaching for Engineers & Tech Leads",
     status: "draft",
   },
   {
@@ -260,7 +260,7 @@ With Robert's coaching, I've become more natural in conversations, better at str
     headline: "Confident Communication for International Logistics Success",
     avatarSize: "md",
     link: "/en/services/logistics-english/",
-    linkText: "👉 English Coaching for Logistics Professionals",
+    linkText: "English Coaching for Logistics Professionals",
     status: "published",
   },
   {
@@ -277,7 +277,7 @@ With Robert's coaching, I've become more natural in conversations, better at str
     headline: "Fluent, Confident English for Global Project Management",
     avatarSize: "md",
     link: "/en/services/executive-english/",
-    linkText: "👉 English Coaching for Executives",
+    linkText: "English Coaching for Executives",
     status: "published",
   },
   {
@@ -294,7 +294,7 @@ With Robert's coaching, I've become more natural in conversations, better at str
     headline: "Confident Communication Across Global Tech Teams",
     avatarSize: "md",
     link: "/en/services/tech-english/",
-    linkText: "👉 English Coaching for Engineers & Tech Leads",
+    linkText: "English Coaching for Engineers & Tech Leads",
     status: "published",
   },
   {
@@ -315,7 +315,7 @@ With Robert's coaching, I've become more natural in conversations, better at str
     headline: "Fluent English for Global Clients",
     avatarSize: "md",
     link: "/en/services/tech-english/",
-    linkText: "👉 English Coaching for Engineers & Tech Leads",
+    linkText: "English Coaching for Engineers & Tech Leads",
     status: "published",
   },
 ] as const;

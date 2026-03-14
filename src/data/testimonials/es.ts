@@ -52,7 +52,7 @@ export const testimonials: Testimonial[] = [
       "De bueno a excelente: Cómo el coaching transformó mi comunicación de liderazgo",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-fundadores-de-startups/",
-    linkText: "👉 Coaching de Inglés para Fundadores de Startups",
+    linkText: "Coaching de Inglés para Fundadores de Startups",
     status: "published",
   },
   {
@@ -68,7 +68,7 @@ export const testimonials: Testimonial[] = [
     headline: "Comunicación clara para liderar equipos globales",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-fundadores-de-startups",
-    linkText: "👉 Coaching de Inglés para Fundadores y CEOs de Startups",
+    linkText: "Coaching de Inglés para Fundadores y CEOs de Startups",
     status: "published",
   },
   {
@@ -84,7 +84,7 @@ export const testimonials: Testimonial[] = [
     headline: "Dominando el inglés técnico para presentaciones de alto nivel",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-ejecutivos/",
-    linkText: "👉 Coaching de Inglés para Ejecutivos",
+    linkText: "Coaching de Inglés para Ejecutivos",
     status: "published",
   },
   {
@@ -102,7 +102,7 @@ export const testimonials: Testimonial[] = [
       "Presencia Ejecutiva y Comunicación de Alto Impacto para un CTO Global",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-ejecutivos/",
-    linkText: "👉 Coaching de Inglés para Ejecutivos",
+    linkText: "Coaching de Inglés para Ejecutivos",
     status: "published",
   },
   {
@@ -118,7 +118,7 @@ export const testimonials: Testimonial[] = [
       "Combinando Idioma y Coaching de Negocios para un Crecimiento Real",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-presentaciones/",
-    linkText: "👉 Coaching de Inglés para Situaciones Críticas",
+    linkText: "Coaching de Inglés para Situaciones Críticas",
     status: "published",
   },
   {
@@ -138,7 +138,7 @@ export const testimonials: Testimonial[] = [
     headline: "Superando la barrera del idioma en ventas técnicas",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-presentaciones/",
-    linkText: "👉 Coaching de Inglés para Situaciones Críticas",
+    linkText: "Coaching de Inglés para Situaciones Críticas",
     status: "published",
   },
   {
@@ -156,7 +156,7 @@ export const testimonials: Testimonial[] = [
     headline: "Superando el miedo a hablar en público en inglés",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-logistica/",
-    linkText: "👉 Coaching de Inglés para Logística",
+    linkText: "Coaching de Inglés para Logística",
     status: "published",
   },
   {
@@ -172,7 +172,7 @@ export const testimonials: Testimonial[] = [
     headline: "Dominando las presentaciones técnicas en inglés",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-profesionales/",
-    linkText: "👉 Coaching de Inglés para Profesionales",
+    linkText: "Coaching de Inglés para Profesionales",
     status: "published",
   },
   {
@@ -188,7 +188,7 @@ export const testimonials: Testimonial[] = [
     headline: "Comunicación Legal Segura con Clientes Internacionales",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-profesionales/",
-    linkText: "👉 Coaching de Inglés para Profesionales Médicos y Legales",
+    linkText: "Coaching de Inglés para Profesionales Médicos y Legales",
     status: "published",
   },
   {
@@ -204,7 +204,7 @@ export const testimonials: Testimonial[] = [
     headline: "Comunicación efectiva para líderes técnicos",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-ejecutivos/",
-    linkText: "👉 Coaching de Inglés para Ejecutivos",
+    linkText: "Coaching de Inglés para Ejecutivos",
     status: "published",
   },
   {
@@ -224,7 +224,7 @@ export const testimonials: Testimonial[] = [
     headline: "Elevando mi comunicación ejecutiva en ingeniería global",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-presentaciones/",
-    linkText: "👉 Coaching de Inglés para Situaciones Críticas",
+    linkText: "Coaching de Inglés para Situaciones Críticas",
     status: "published",
   },
 
@@ -243,7 +243,7 @@ export const testimonials: Testimonial[] = [
     headline: "Comunicación médica precisa en entornos internacionales",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-tecnologia/",
-    linkText: "👉 Coaching de Inglés para Tecnología",
+    linkText: "Coaching de Inglés para Tecnología",
     status: "draft",
   },
   {
@@ -259,7 +259,7 @@ export const testimonials: Testimonial[] = [
     headline: "Optimizando la comunicación en logística internacional",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-logistica/",
-    linkText: "👉 Coaching de Inglés para Logística",
+    linkText: "Coaching de Inglés para Logística",
     status: "published",
   },
   {
@@ -275,7 +275,7 @@ export const testimonials: Testimonial[] = [
     headline: "Inglés Fluido y Seguro para la Gestión de Proyectos Globales",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-ejecutivos/",
-    linkText: "👉 Coaching de Inglés para Ejecutivos",
+    linkText: "Coaching de Inglés para Ejecutivos",
     status: "published",
   },
   {
@@ -293,7 +293,7 @@ export const testimonials: Testimonial[] = [
     headline: "Dominando las entrevistas técnicas en inglés",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-tecnologia/",
-    linkText: "👉 Coaching de Inglés para Tecnología",
+    linkText: "Coaching de Inglés para Tecnología",
     status: "published",
   },
   {
@@ -314,7 +314,7 @@ export const testimonials: Testimonial[] = [
     headline: "Inglés fluido para clientes globales",
     avatarSize: "md",
     link: "/es/servicios/ingles-para-tecnologia/",
-    linkText: "👉 Coaching de Inglés para Ingenieros",
+    linkText: "Coaching de Inglés para Ingenieros",
     status: "published",
   },
 ] as const;

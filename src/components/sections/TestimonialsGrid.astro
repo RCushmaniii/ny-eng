@@ -93,12 +93,12 @@ const availableIndustries = Object.entries(testimonialsByIndustry)
         testimonial.shortContent ? (
           <ExpandableTestimonialCard
             testimonial={testimonial}
-            showHeadline={true}
+            showHeadline={false}
           />
         ) : (
           <TestimonialCard
             testimonial={testimonial}
-            showHeadline={true}
+            showHeadline={false}
           />
         )
       ))}
