@@ -6,6 +6,8 @@ lastmod: "2025-12-07"
 categories:
   - "Comunicación de Alto Impacto"
   - "Inglés Ejecutivo"
+readingTime: "3 min de lectura"
+audience: "Para ejecutivos que lideran reuniones virtuales transfronterizas"
 featuredImage: "./images/executive-video-call.jpg"
 imageAlt: "Ejecutivo liderando una videollamada con confianza y claridad"
 translations:

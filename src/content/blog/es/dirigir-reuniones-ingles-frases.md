@@ -6,6 +6,8 @@ lastmod: "2026-03-03"
 categories:
   - "Inglés para Negocios"
   - "Comunicación de Alto Impacto"
+readingTime: "8 min de lectura"
+audience: "Para gerentes y directores que dirigen reuniones en inglés"
 featuredImage: "./images/meeting-phrases.jpg"
 imageAlt: "Profesional dirigiendo una reunión de negocios con confianza"
 translations:

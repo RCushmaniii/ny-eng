@@ -5,6 +5,8 @@ publishDate: "2025-04-10"
 lastmod: "2025-12-07"
 categories:
   - "Carrera & Liderazgo"
+readingTime: "4 min de lectura"
+audience: "Para profesionales que se sienten inseguros al hablar inglés en el trabajo"
 featuredImage: "./images/business-english-confidence.jpg"
 imageAlt: "Sesión de coaching de inglés de negocios"
 translations:

@@ -5,6 +5,8 @@ publishDate: "2025-04-18"
 lastmod: "2025-12-07"
 categories:
   - "Coaching en Inglés"
+readingTime: "3 min de lectura"
+audience: "Para líderes senior que buscan desarrollo estratégico en inglés"
 featuredImage: "./images/executive-english-coaching.jpg"
 imageAlt: "Sesión de coaching ejecutivo en inglés"
 translations:

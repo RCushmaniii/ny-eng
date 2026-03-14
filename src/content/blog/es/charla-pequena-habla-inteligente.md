@@ -5,6 +5,8 @@ publishDate: "2025-05-08"
 lastmod: "2025-12-07"
 categories:
   - "Inglés Ejecutivo"
+readingTime: "2 min de lectura"
+audience: "Para profesionales haciendo networking en entornos de habla inglesa"
 featuredImage: "./images/small-talk-professionals.jpg"
 imageAlt: "Sesión de coaching de inglés de negocios"
 translations:

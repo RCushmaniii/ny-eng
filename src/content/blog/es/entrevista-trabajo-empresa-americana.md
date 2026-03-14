@@ -6,6 +6,8 @@ lastmod: "2026-03-04"
 categories:
   - "Inglés para Presentaciones"
   - "Carrera & Liderazgo"
+readingTime: "7 min de lectura"
+audience: "Para profesionales en proceso de entrevista con empresas de EE. UU."
 featuredImage: "./images/us-interview-prep.webp"
 imageAlt: "Profesional mexicano preparándose para una entrevista por video con una empresa de EE.UU."
 translations:

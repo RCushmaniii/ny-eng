@@ -5,6 +5,8 @@ publishDate: "2025-07-01"
 lastmod: "2025-12-07"
 categories:
   - "Inglés para Negocios"
+readingTime: "3 min de lectura"
+audience: "Para gerentes de TI que compiten por contratos con EE. UU."
 featuredImage: "./images/managers-making-millions.jpg"
 imageAlt: "Equipo internacional confundido por mala comunicación"
 translations:

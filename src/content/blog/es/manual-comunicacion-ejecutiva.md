@@ -8,6 +8,8 @@ categories:
   - "Inglés para Negocios"
   - "Comunicación de Alto Impacto"
   - "Carrera & Liderazgo"
+readingTime: "7 min de lectura"
+audience: "Para ejecutivos que quieren dominar la comunicación de alto impacto en inglés"
 imageAlt: "Ejecutivo senior liderando con confianza una presentación en una sala de juntas en inglés"
 heroVideoPoster: "/images/blog/playbook/en/video-poster.webp"
 translations:

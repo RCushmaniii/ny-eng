@@ -6,6 +6,8 @@ lastmod: "2026-03-04"
 categories:
   - "Inglés para Tecnología"
   - "Carrera & Liderazgo"
+readingTime: "5 min de lectura"
+audience: "Para desarrolladores en entornos ágiles"
 featuredImage: "./images/daily-standup-english.webp"
 imageAlt: "Desarrollador de software dando un update seguro en un daily standup por videollamada con un equipo distribuido"
 translations:

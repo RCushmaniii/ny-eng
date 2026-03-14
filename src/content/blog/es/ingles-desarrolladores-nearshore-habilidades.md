@@ -6,6 +6,8 @@ lastmod: "2026-03-03"
 categories:
   - "Inglés para Tecnología"
   - "Carrera & Liderazgo"
+readingTime: "6 min de lectura"
+audience: "Para devs nearshore trabajando con equipos de ingeniería de EE. UU."
 featuredImage: "./images/english-for-nearshore-developers.jpg"
 imageAlt: "Desarrollador nearshore colaborando con un equipo de ingeniería de EE.UU. por videollamada"
 translations:

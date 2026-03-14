@@ -6,6 +6,8 @@ lastmod: "2026-03-03"
 categories:
   - "Inglés para Negocios"
   - "Inglés Ejecutivo"
+readingTime: "5 min de lectura"
+audience: "Para cualquiera que presente o escriba en inglés"
 featuredImage: "./images/10-mistakes.jpg"
 imageAlt: "Profesional mexicano presentando con confianza en una junta de negocios usando inglés correcto"
 translations:

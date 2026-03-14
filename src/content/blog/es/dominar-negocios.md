@@ -5,6 +5,8 @@ publishDate: "2025-04-03"
 lastmod: "2025-12-07"
 categories:
   - "Inglés para Negocios"
+readingTime: "2 min de lectura"
+audience: "Para profesionales que exploran coaching personalizado de inglés"
 featuredImage: "./images/business-english-coaching.jpg"
 imageAlt: "Sesión de coaching de inglés de negocios"
 translations:

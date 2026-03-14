@@ -6,6 +6,8 @@ lastmod: "2026-01-18"
 categories:
   - "Inglés para Negocios"
   - "Inglés Ejecutivo"
+readingTime: "4 min de lectura"
+audience: "Para profesionales que escriben emails a stakeholders senior"
 featuredImage: "./images/email-junior-vs-executive.jpg"
 imageAlt: "Profesional revisando email en laptop con expresión de confianza"
 translations:

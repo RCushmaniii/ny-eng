@@ -5,6 +5,8 @@ publishDate: "2025-06-04"
 lastmod: "2025-12-07"
 categories:
   - "Comunicación de Alto Impacto"
+readingTime: "3 min de lectura"
+audience: "Para líderes que enfrentan preguntas inesperadas en inglés"
 featuredImage: "./images/impromptu-speaking.jpg"
 imageAlt: "Ejecutivo hablando con confianza durante una discusión espontánea"
 translations:

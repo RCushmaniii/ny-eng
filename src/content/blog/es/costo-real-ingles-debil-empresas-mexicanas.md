@@ -7,6 +7,8 @@ categories:
   - "Inglés para Negocios"
   - "Carrera & Liderazgo"
   - "Inglés para Tecnología"
+readingTime: "12 min de lectura"
+audience: "Para ejecutivos y líderes de RR.HH. que cuantifican el costo del inglés débil"
 featuredImage: "./images/real-cost/real-cost-weak-english.jpg"
 imageAlt: "Profesional de negocios analizando el impacto financiero de brechas de comunicación en una oficina mexicana moderna"
 translations:

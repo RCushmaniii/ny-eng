@@ -6,6 +6,8 @@ lastmod: "2026-03-06"
 categories:
   - "Tech English"
   - "Professional English"
+readingTime: "5 min de lectura"
+audience: "Para ingenieros y tech leads en equipos de EE. UU."
 featuredImage: "./images/ingles-slack-profesional.webp"
 imageAlt: "Profesional escribiendo un mensaje seguro en Slack en una laptop en un ambiente moderno de oficina tech"
 translations:

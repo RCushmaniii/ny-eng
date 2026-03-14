@@ -6,6 +6,8 @@ lastmod: "2026-01-18"
 categories:
   - "Inglés para Negocios"
   - "Comunicación de Alto Impacto"
+readingTime: "4 min de lectura"
+audience: "Para profesionales que negocian contratos o salario en inglés"
 featuredImage: "./images/negotiation-framework-hero.jpg"
 imageAlt: "Dos profesionales en una reunión de negociación de negocios"
 translations:

@@ -6,6 +6,8 @@ lastmod: "2025-12-07"
 categories:
   - "Inglés para Tecnología"
   - "Carrera & Liderazgo"
+readingTime: "4 min de lectura"
+audience: "Para desarrolladores que buscan roles senior en empresas globales"
 featuredImage: "./images/senior-dev-english.jpg"
 imageAlt: "Desarrollador senior liderando con confianza una discusión técnica con equipo internacional"
 translations:

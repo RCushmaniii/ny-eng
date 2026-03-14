@@ -8,6 +8,8 @@ categories:
   - "Coaching en Inglés"
   - "Inglés Ejecutivo"
   - "Comunicación de Alto Impacto"
+readingTime: "5 min de lectura"
+audience: "Para líderes de RR.HH. y ejecutivos que invierten en capacitación de inglés"
 featuredImage: "../en/images/case1/corporate-case-study-hero.jpg"
 imageAlt: "Ejecutivos de negocios en una reunión de directorio"
 translations:

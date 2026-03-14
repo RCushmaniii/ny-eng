@@ -6,6 +6,8 @@ lastmod: "2026-03-04"
 categories:
   - "Inglés para Logística"
   - "Inglés de Negocios"
+readingTime: "6 min de lectura"
+audience: "Para profesionales de logística en comercio transfronterizo"
 featuredImage: "./images/customs-freight-english.webp"
 imageAlt: "Camiones de carga cruzando la frontera México-EE.UU. en un punto de inspección aduanera"
 translations:

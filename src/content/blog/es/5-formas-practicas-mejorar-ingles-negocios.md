@@ -5,6 +5,8 @@ publishDate: "2025-05-01"
 lastmod: "2025-12-07"
 categories:
   - "Inglés para Negocios"
+readingTime: "3 min de lectura"
+audience: "Para profesionales que quieren más confianza en inglés laboral"
 featuredImage: "./images/confidently-speaking.jpg"
 imageAlt: "Sesión de coaching de inglés de negocios"
 translations:
