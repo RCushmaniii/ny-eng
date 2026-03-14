@@ -6,6 +6,8 @@ lastmod: "2025-12-07"
 categories:
   - "Tech English"
   - "Career & Leadership"
+readingTime: "4 min read"
+audience: "For developers targeting senior roles at global companies"
 featuredImage: "./images/senior-dev-english.jpg"
 imageAlt: "Senior developer confidently leading a technical discussion with international team members"
 translations:

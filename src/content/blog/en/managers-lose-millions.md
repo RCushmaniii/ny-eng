@@ -5,6 +5,8 @@ publishDate: "2025-07-01"
 lastmod: "2025-12-07"
 categories:
   - "Business English"
+readingTime: "3 min read"
+audience: "For IT managers competing for US contracts"
 featuredImage: "./images/managers-making-millions.jpg"
 imageAlt: "International team confused by poor communication"
 translations:

@@ -7,6 +7,8 @@ categories:
   - "Business English"
   - "Career & Leadership"
   - "Tech English"
+readingTime: "12 min read"
+audience: "For executives and HR leaders quantifying the cost of English gaps"
 featuredImage: "./images/real-cost/real-cost-weak-english.jpg"
 imageAlt: "Business professional analyzing financial impact of communication gaps in a modern Mexican office"
 translations:

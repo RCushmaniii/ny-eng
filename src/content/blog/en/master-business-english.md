@@ -5,6 +5,8 @@ publishDate: "2025-04-03"
 lastmod: "2025-12-07"
 categories:
   - "Business English"
+readingTime: "2 min read"
+audience: "For professionals exploring personalized English coaching"
 featuredImage: "./images/business-english-coaching.jpg"
 imageAlt: "Business English coaching session"
 translations:

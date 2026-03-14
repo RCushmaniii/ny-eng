@@ -6,6 +6,8 @@ lastmod: "2025-12-07"
 categories:
   - "High-Impact Communication"
   - "Executive English"
+readingTime: "3 min read"
+audience: "For executives leading cross-border video meetings"
 featuredImage: "./images/executive-video-call.jpg"
 imageAlt: "Executive leading a video call with confidence and clarity"
 translations:

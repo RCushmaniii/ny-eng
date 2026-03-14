@@ -6,6 +6,8 @@ lastmod: "2026-03-03"
 categories:
   - "Tech English"
   - "Career & Leadership"
+readingTime: "6 min read"
+audience: "For nearshore devs working with US engineering teams"
 featuredImage: "./images/english-for-nearshore-developers.jpg"
 imageAlt: "Nearshore developer collaborating with a US-based engineering team on a video call"
 translations:

@@ -6,6 +6,8 @@ lastmod: "2026-03-03"
 categories:
   - "Business English"
   - "Executive English"
+readingTime: "5 min read"
+audience: "For anyone presenting or writing in English"
 featuredImage: "./images/10-mistakes.jpg"
 imageAlt: "Mexican professional confidently presenting in a business meeting using correct English"
 translations:

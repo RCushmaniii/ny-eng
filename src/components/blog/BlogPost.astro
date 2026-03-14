@@ -13,6 +13,8 @@ interface Props {
   imageAlt: string;
   publishDate: Date;
   categories: string[];
+  readingTime?: string;
+  audience?: string;
   content: string;
   slug?: string;
   index: number;
@@ -27,6 +29,8 @@ const {
   imageAlt,
   publishDate,
   categories: postCategories,
+  readingTime,
+  audience,
   slug = "",
   index,
   lang,
@@ -106,15 +110,21 @@ const validCategories = postCategories.filter((categoryName: string) => {
       {excerpt ?? "Read more..."}
     </p>
 
-    <!-- Categories as hashtags at the bottom -->
-    <div class="absolute bottom-6 left-4 flex flex-wrap">
-      {
-        validCategories.map((categoryName) => (
-          <div class="stop-prop">
-            <HashtagCategory category={categoryName} lang={lang} />
-          </div>
-        ))
-      }
+    <!-- Reading time + audience at the bottom -->
+    <div class="absolute bottom-6 left-4 right-4">
+      {(readingTime || audience) ? (
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          {readingTime}{readingTime && audience ? " · " : ""}{audience}
+        </p>
+      ) : (
+        <div class="flex flex-wrap">
+          {validCategories.map((categoryName) => (
+            <div class="stop-prop">
+              <HashtagCategory category={categoryName} lang={lang} />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   </div>
 </a>

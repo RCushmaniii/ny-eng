@@ -6,6 +6,8 @@ lastmod: "2026-01-18"
 categories:
   - "Business English"
   - "High-Impact Communication"
+readingTime: "4 min read"
+audience: "For professionals negotiating deals or salary in English"
 featuredImage: "./images/negotiation-framework-hero.jpg"
 imageAlt: "Two professionals in a business negotiation meeting"
 translations:

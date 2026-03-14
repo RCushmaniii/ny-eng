@@ -5,6 +5,8 @@ publishDate: "2025-05-08"
 lastmod: "2025-12-07"
 categories:
   - "Executive English"
+readingTime: "2 min read"
+audience: "For professionals networking in English-speaking environments"
 featuredImage: "./images/small-talk-professionals.jpg"
 imageAlt: "Professionals having small talk in a business setting"
 translations:

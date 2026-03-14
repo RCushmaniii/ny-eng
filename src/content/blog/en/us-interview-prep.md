@@ -6,6 +6,8 @@ lastmod: "2026-03-04"
 categories:
   - "High-Stakes English"
   - "Career & Leadership"
+readingTime: "7 min read"
+audience: "For professionals interviewing with US companies"
 featuredImage: "./images/us-interview-prep.webp"
 imageAlt: "Mexican professional preparing for a video interview with a US company on a laptop"
 translations:

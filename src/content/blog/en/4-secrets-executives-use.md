@@ -5,6 +5,8 @@ publishDate: "2025-06-04"
 lastmod: "2025-12-07"
 categories:
   - "High-Impact Communication"
+readingTime: "3 min read"
+audience: "For leaders handling unexpected questions in English"
 featuredImage: "./images/impromptu-speaking.jpg"
 imageAlt: "Executive confidently speaking during a spontaneous discussion"
 translations:

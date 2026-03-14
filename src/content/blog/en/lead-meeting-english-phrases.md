@@ -6,6 +6,8 @@ lastmod: "2026-03-03"
 categories:
   - "Business English"
   - "High-Impact Communication"
+readingTime: "8 min read"
+audience: "For managers and directors leading meetings in English"
 featuredImage: "./images/meeting-phrases.jpg"
 imageAlt: "Professional leading a business meeting with confidence"
 translations:

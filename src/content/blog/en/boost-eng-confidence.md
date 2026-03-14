@@ -5,6 +5,8 @@ publishDate: "2025-04-10"
 lastmod: "2025-12-07"
 categories:
   - "Career & Leadership"
+readingTime: "4 min read"
+audience: "For professionals who feel unsure speaking English at work"
 featuredImage: "./images/business-english-confidence.jpg"
 imageAlt: "Business English coaching session"
 translations:

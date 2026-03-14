@@ -6,6 +6,8 @@ lastmod: "2026-03-04"
 categories:
   - "Logistics English"
   - "Business English"
+readingTime: "6 min read"
+audience: "For logistics professionals working cross-border"
 featuredImage: "./images/customs-freight-english.webp"
 imageAlt: "Freight trucks crossing the US-Mexico border at a customs checkpoint"
 translations:

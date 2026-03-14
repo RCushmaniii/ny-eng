@@ -5,6 +5,8 @@ publishDate: "2025-05-01"
 lastmod: "2025-12-07"
 categories:
   - "Business English"
+readingTime: "3 min read"
+audience: "For professionals building workplace English confidence"
 featuredImage: "./images/confidently-speaking.jpg"
 imageAlt: "Business English coaching session"
 translations:

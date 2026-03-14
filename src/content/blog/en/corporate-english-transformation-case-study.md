@@ -8,6 +8,8 @@ categories:
   - "English Coaching"
   - "Executive English"
   - "High-Impact Communication"
+readingTime: "5 min read"
+audience: "For HR leaders and executives investing in team English training"
 featuredImage: "./images/case1/corporate-case-study-hero.jpg"
 imageAlt: "Business executives in a boardroom meeting"
 translations:

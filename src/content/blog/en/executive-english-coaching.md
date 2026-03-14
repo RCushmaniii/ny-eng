@@ -5,6 +5,8 @@ publishDate: "2025-04-18"
 lastmod: "2025-12-07" # Adjust date as needed
 categories:
   - "English Coaching"
+readingTime: "3 min read"
+audience: "For senior leaders seeking strategic English development"
 featuredImage: "./images/executive-english-coaching.jpg"
 imageAlt: "Executive English coaching session"
 translations:

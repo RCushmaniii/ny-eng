@@ -26,6 +26,8 @@ const blogCollection = defineCollection({
       publish: z.boolean().optional().default(true),
       // Make categories optional with a default empty array to prevent errors
       categories: z.array(z.string()).optional().default([]),
+      readingTime: z.string().optional(),
+      audience: z.string().optional(),
       seo: z
         .object({
           title: z.string().optional(),
