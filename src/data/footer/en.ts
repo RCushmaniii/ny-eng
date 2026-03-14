@@ -6,7 +6,7 @@ export const footerContentEn = (siteConfig: { companyName: string }) => {
   return {
     logoLink: routes.en.home,
     tagline:
-      "Empowering international leaders to communicate with authority and executive presence.",
+      "Private English coaching for leaders who won't settle for fluent.",
     sections: {
       about: {
         title: "About",

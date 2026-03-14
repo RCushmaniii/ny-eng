@@ -6,7 +6,7 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
   return {
     logoLink: routes.es.home,
     tagline:
-      "Empoderando a líderes internacionales para comunicarse con autoridad y presencia ejecutiva.",
+      "Coaching privado de inglés para líderes que no se conforman con ser fluidos.",
     sections: {
       about: {
         title: "Sobre Mí",
