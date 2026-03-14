@@ -48,16 +48,14 @@ const seoDescription =
   "Boost your English fluency and confidence with personalized coaching tailored for professionals, executives, and companies worldwide.";
 
 const heroContent = {
-  // Shortened to define the category instantly
-  eyebrow: "Executive Communication Coaching",
+  eyebrow: "Private English Coaching for Senior Professionals",
 
-  // Big, clear promise. No fluff.
-  title: "Master Executive Business English",
+  // ARCS Hook #1 — ASK: Identity-level question that reframes the problem
+  title: "You're a leader in Spanish. Sound like one in English.",
 
-  // Focused on THEM (the lead), not YOU (the coach).
-  // Removed "I coach..." to focus on the result: Authority & Trust.
+  // ARCS — REVEAL: The promise, outcome-focused
   description:
-    "Lead global meetings with calm authority. Specialized coaching for international leaders to earn trust instantly.",
+    "Lead global meetings with calm authority. Private coaching that makes your English match your expertise.",
 
   trustLine: "Trusted by leaders at Fortune 500 companies and global startups.",
   trustLineLink: "/en/testimonials/",
@@ -226,6 +224,19 @@ const recentPostsSection = {
 >
   <div class="relative bg-background-light">
     <Hero content={heroContent} />
+
+    {/* ARCS — CALL OUT: "Is this you?" identity mirror */}
+    <section class="bg-gray-950 py-16 sm:py-20 border-t border-gray-800">
+      <div class="site-container mx-auto px-4 max-w-3xl text-center">
+        <p class="text-sm font-bold uppercase tracking-wider mb-6" style="color: #FFC107; letter-spacing: 0.1em;">
+          Is this you?
+        </p>
+        <p class="text-xl sm:text-2xl leading-relaxed text-gray-200 font-light">
+          If you run boardrooms, close deals, and manage teams in your native language — but feel less precise, less commanding, <em class="text-white font-medium not-italic">less yourself</em> when you switch to English — this is built for you.
+        </p>
+      </div>
+    </section>
+
     <Features content={featuresSection} padding="small" background="light" />
     <QuizPromotion lang="en" />
     <div class="mb-15 pb-0">
