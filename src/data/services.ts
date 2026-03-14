@@ -43,7 +43,7 @@ export const services: Service[] = [
     title: "Business & Executive English",
     icon: "🎯",
     description:
-      "Speak confidently in meetings, lead strategic updates, and advance your career with powerful executive communication.",
+      "Lead board meetings, deliver strategic updates, and negotiate with the authority your role demands—without translating in your head.",
     link: "/en/services/executive-english/",
     backgroundImage: executiveEnglishImage,
     squareImage: executiveEnglishSquareImage,
@@ -54,7 +54,7 @@ export const services: Service[] = [
     title: "English for Startup Founders",
     icon: "🚀",
     description:
-      "Pitch your vision, win investor trust, and grow your startup across international markets—in English.",
+      "Pitch to US investors, recruit across borders, and lead your team in English—with the confidence that closes rounds.",
     link: "/en/services/startup-founders/",
     backgroundImage: startupFoundersImage,
     squareImage: startupFoundersSquareImage,
@@ -65,7 +65,7 @@ export const services: Service[] = [
     title: "English for Tech",
     icon: "💻",
     description:
-      "Boost your salary potential and career growth by communicating technical ideas clearly with global teams and clients.",
+      "Turn technical complexity into clear business value. Explain architecture to non-technical stakeholders without losing precision or credibility.",
     link: "/en/services/tech-english/",
     backgroundImage: techImage,
     squareImage: techSquareImage,
@@ -76,7 +76,7 @@ export const services: Service[] = [
     title: "English for Logistics",
     icon: "🚚",
     description:
-      "Master international shipping, customs, and supply chain communication to expand your reach and secure top logistics roles.",
+      "Navigate customs, freight forwarding, and cross-border operations in English. Communicate with US brokers, carriers, and compliance teams with precision.",
     link: "/en/services/logistics-english/",
     backgroundImage: logisticsImage,
     squareImage: logisticsSquareImage,
@@ -87,7 +87,7 @@ export const services: Service[] = [
     title: "English for Doctors, Lawyers & Professionals",
     icon: "⛑️",
     description:
-      "Expand your international client base, build trust across borders, and work confidently in global professional settings.",
+      "One wrong word changes everything. Precision English for medical and legal professionals who need absolute clarity when the stakes are real.",
     link: "/en/services/professional-english/",
     backgroundImage: medicalImage,
     squareImage: medicalSquareImage,
@@ -98,7 +98,7 @@ export const services: Service[] = [
     title: "Interview & Presentation Coaching",
     icon: "🎤",
     description:
-      "Ace job interviews, deliver high-impact presentations, and persuade decision-makers with clarity and confidence.",
+      "You get one shot. Targeted preparation for the interview, investor pitch, or career-defining presentation you can't afford to fumble.",
     link: "/en/services/high-stakes-english/",
     backgroundImage: publicSpeakingImage,
     squareImage: publicSpeakingSquareImage,
@@ -113,7 +113,7 @@ export const serviciosEs: Service[] = [
     title: "Inglés para Negocios y Ejecutivos",
     icon: "🎯",
     description:
-      "Habla con confianza en reuniones, lidera actualizaciones estratégicas y haz crecer tu carrera con una comunicación ejecutiva impactante.",
+      "Lidera juntas directivas, entrega actualizaciones estratégicas y negocia con la autoridad que tu rol exige—sin traducir en tu cabeza.",
     link: "/es/servicios/ingles-para-ejecutivos/",
     backgroundImage: executiveEnglishImage,
     squareImage: executiveEnglishSquareImage,
@@ -124,7 +124,7 @@ export const serviciosEs: Service[] = [
     title: "Inglés para Fundadores de Startups",
     icon: "🚀",
     description:
-      "Perfecciona tu pitch, gana la confianza de inversionistas y haz crecer tu startup en mercados internacionales.",
+      "Presenta ante inversionistas de EE. UU., recluta internacionalmente y lidera tu equipo en inglés—con la confianza que cierra rondas.",
     link: "/es/servicios/ingles-para-fundadores-de-startups/",
     backgroundImage: startupFoundersImage,
     squareImage: startupFoundersSquareImage,
@@ -135,7 +135,7 @@ export const serviciosEs: Service[] = [
     title: "Inglés para Tecnología",
     icon: "💻",
     description:
-      "Mejora tu perfil profesional y tu salario al comunicar ideas técnicas con claridad a equipos y clientes globales.",
+      "Convierte la complejidad técnica en valor de negocio claro. Explica arquitectura a stakeholders no técnicos sin perder precisión ni credibilidad.",
     link: "/es/servicios/ingles-para-tecnologia/",
     backgroundImage: techImage,
     squareImage: techSquareImage,
@@ -146,7 +146,7 @@ export const serviciosEs: Service[] = [
     title: "Inglés para Logística",
     icon: "🚚",
     description:
-      "Domina el lenguaje del comercio internacional, aduanas y cadena de suministro para crecer profesionalmente en logística global.",
+      "Navega aduanas, transporte de carga y operaciones transfronterizas en inglés. Comunícate con brokers, transportistas y equipos de cumplimiento de EE. UU. con precisión.",
     link: "/es/servicios/ingles-para-logistica/",
     backgroundImage: logisticsImage,
     squareImage: logisticsSquareImage,
@@ -157,7 +157,7 @@ export const serviciosEs: Service[] = [
     title: "Inglés para Doctores, Abogados y Profesionales",
     icon: "⛑️",
     description:
-      "Amplía tu cartera de clientes, genera confianza internacional y trabaja con seguridad en entornos profesionales globales.",
+      "Una palabra mal elegida cambia todo. Inglés de precisión para profesionales médicos y legales que necesitan claridad absoluta cuando lo que está en juego es real.",
     link: "/es/servicios/ingles-para-profesionales/",
     backgroundImage: medicalImage,
     squareImage: medicalSquareImage,
@@ -168,7 +168,7 @@ export const serviciosEs: Service[] = [
     title: "Coaching para Entrevistas y Presentaciones",
     icon: "🎤",
     description:
-      "Domina entrevistas laborales, presenta con impacto y convence a líderes con claridad y seguridad.",
+      "Tienes una oportunidad. Preparación enfocada para la entrevista, el pitch a inversionistas o la presentación que define tu carrera.",
     link: "/es/servicios/ingles-para-presentaciones/",
     backgroundImage: publicSpeakingImage,
     squareImage: publicSpeakingSquareImage,
