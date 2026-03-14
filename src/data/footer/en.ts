@@ -52,9 +52,9 @@ export const footerContentEn = (siteConfig: { companyName: string }) => {
     copyrightText: `© ${currentYear} ${siteConfig.companyName}. All rights reserved.`,
     // Default Footer CTA in English (can be overridden by page props passed to Layout)
     defaultFooterCta: {
-      title: "Ready to Command the Room?",
+      title: "You already lead. Now sound like it — in English.",
       description:
-        "Stop letting language barriers limit your career. Book your strategy session to gain the clarity and impact your role demands.",
+        "Book a private strategy session. In 30 minutes, I'll identify the specific gaps between your current English and the executive presence your role demands.",
       hideCta: false,
       button: {
         text: "Book My Strategy Session",

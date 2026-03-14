@@ -54,9 +54,9 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
     ],
     copyrightText: `© ${currentYear} ${siteConfig.companyName}. Todos los derechos reservados.`,
     defaultFooterCta: {
-      title: "¿Listo para Dominar la Sala?",
+      title: "Ya lideras. Ahora suena así — en inglés.",
       description:
-        "Deja de permitir que las barreras del idioma limiten tu carrera. Reserva tu sesión estratégica para obtener la claridad e impacto que tu rol exige.",
+        "Reserva una sesión estratégica privada. En 30 minutos, identificaré las brechas específicas entre tu inglés actual y la presencia ejecutiva que tu rol exige.",
       hideCta: false,
       button: {
         text: "Reservar Mi Sesión Estratégica",

@@ -116,7 +116,7 @@ export const faqLists: Record<string, FaqList> = {
       {
         question: "How much does coaching cost?",
         answer:
-          "Single Session: 500 MXN / $25 USD. 12-Session Package: 6,000 MXN / $300 USD. Note: I do not offer volume discounts. My focus is on delivering maximum value and customization in every single hour we work together.",
+          "Single Session: 500 MXN / $25 USD. 12-Session Executive Roadmap: 6,000 MXN / $300 USD. Every session is custom-built around your specific industry, upcoming presentations, and professional goals. This isn't a curriculum you follow — it's a strategy built around your calendar.",
       },
       {
         question: "Do you provide invoices for companies?",
@@ -171,7 +171,7 @@ export const faqLists: Record<string, FaqList> = {
       {
         question: "How much does coaching cost?",
         answer:
-          "Single Session: 500 MXN / $25 USD. 12-Session Package: 6,000 MXN / $300 USD. Note: I do not offer volume discounts. My focus is on delivering maximum value and customization in every single hour we work together.",
+          "Single Session: 500 MXN / $25 USD. 12-Session Executive Roadmap: 6,000 MXN / $300 USD. Every session is custom-built around your specific industry, upcoming presentations, and professional goals. This isn't a curriculum you follow — it's a strategy built around your calendar.",
       },
       {
         question: "Do you provide invoices for companies?",
@@ -221,18 +221,18 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "Can you help me prepare for meetings with US headquarters?",
             answer:
-              "Absolutely. Many of my clients report to US-based leadership or work with North American clients. We practice the specific meeting scenarios you face — status updates, escalation calls, quarterly reviews — using the communication style that US executives expect.",
+              "Absolutely. Many of my clients report to US-based leadership or work with North American clients. I practice the specific meeting scenarios you face — status updates, escalation calls, quarterly reviews — using the communication style that US executives expect.",
           },
           {
             question:
               "I work for a Mexican company expanding into the US market. Can you help our team?",
             answer:
-              "Yes. We offer corporate packages for teams making the leap into US markets. We focus on the communication skills that determine success — client-facing English, partnership negotiations, and the cultural fluency that builds trust with American business partners.",
+              "Yes. I offer corporate packages for teams making the leap into US markets. I focus on the communication skills that determine success — client-facing English, partnership negotiations, and the cultural fluency that builds trust with American business partners.",
           },
           {
             question: "Do you accept payment in Mexican pesos?",
             answer:
-              "Yes. Pricing is available in both MXN and USD. Single sessions are 500 MXN ($25 USD), and 12-session packages are 6,000 MXN ($300 USD). We can also issue Mexican corporate invoices (facturas) for company billing.",
+              "Yes. Pricing is available in both MXN and USD. Single sessions are 500 MXN ($25 USD), and 12-session packages are 6,000 MXN ($300 USD). I can also issue Mexican corporate invoices (facturas) for company billing.",
           },
         ],
       },
@@ -244,12 +244,12 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "How do I get started with coaching?",
             answer:
-              "Book a free discovery call through our website. In 15-20 minutes, we'll discuss your goals, assess your current level, and determine if coaching is the right fit. There's no obligation — it's simply a conversation about where you want to go.",
+              "Book a free discovery call through the website. In 15-20 minutes, I'll discuss your goals, assess your current level, and determine if coaching is the right fit. There's no obligation — it's simply a conversation about where you want to go.",
           },
           {
             question: "What happens in the first coaching session?",
             answer:
-              "The first session is a diagnostic. We identify your specific communication gaps, understand your professional context, and create a prioritized roadmap. You'll leave with 2-3 immediate action items you can start using that same week.",
+              "The first session is a diagnostic. I identify your specific communication gaps, understand your professional context, and create a prioritized roadmap. You'll leave with 2-3 immediate action items you can start using that same week.",
           },
           {
             question:
@@ -272,7 +272,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "What is the cost of your coaching?",
             answer:
-              "Current Rate: 500 MXN ($25 USD) per session. 12-Session Package: 6,000 MXN / $300 USD. Why this is different from standard English classes: Most English classes focus on generic grammar and textbook scenarios. I operate as your strategic communication partner. We work directly on your real-world challenges: your upcoming board presentation, your salary negotiation, or your client emails. Every session is fully customized to your industry and your specific KPIs. You aren't just learning English; you are acquiring the executive presence needed to close deals and advance your career. Because of the high level of customization and preparation required for this level of coaching, I do not offer volume discounts.",
+              "Current Rate: 500 MXN ($25 USD) per session. 12-Session Executive Roadmap: 6,000 MXN / $300 USD. Every session is custom-built around your specific industry, upcoming presentations, and professional goals. I work directly on your real-world challenges: your upcoming board presentation, your salary negotiation, or your client emails. This isn't a curriculum you follow — it's a strategy built around your calendar.",
           },
           {
             question: "How is this different from a traditional ESL course?",
@@ -312,7 +312,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
             question:
               "How many sessions per week do you recommend for optimal results?",
             answer:
-              "For rapid improvement, I recommend 2–3 sessions per week. For maintenance or lighter goals, 1 session per week works. The key is consistency and practice outside of our sessions.",
+              "For rapid improvement, I recommend 2–3 sessions per week. For maintenance or lighter goals, 1 session per week works. The key is consistency and practice between sessions.",
           },
         ],
       },
@@ -324,13 +324,13 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
             question:
               "I know the grammar, but I freeze under pressure. How do you fix that?",
             answer:
-              "This is a performance issue, not a knowledge issue. We use high-pressure simulation drills—rapid-fire Q&A, objection handling, and real-time pivoting—to rewire your brain to think directly in English under stress. It's like athletic training for your communication.",
+              "This is a performance issue, not a knowledge issue. I use high-pressure simulation drills—rapid-fire Q&A, objection handling, and real-time pivoting—to rewire your brain to think directly in English under stress. It's like athletic training for your communication.",
           },
           {
             question:
               "What specific skills do you cover (e.g., Negotiation, Q&A, Presentation)?",
             answer:
-              "We cover the exact scenarios you face: boardroom presentations, investor pitches, client negotiations, rapid-fire Q&A, and high-pressure troubleshooting. Each session is customized to your industry and role.",
+              "I cover the exact scenarios you face: boardroom presentations, investor pitches, client negotiations, rapid-fire Q&A, and high-pressure troubleshooting. Each session is customized to your industry and role.",
           },
           {
             question:

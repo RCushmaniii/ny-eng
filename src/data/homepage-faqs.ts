@@ -35,12 +35,12 @@ export const homepageFAQs: HomepageFAQData = {
       {
         question: "What is the investment for coaching?",
         answer:
-          "The current rate is 500 MXN ($25 USD) per session or 6,000 MXN ($300 USD) for a 12-session executive roadmap. Why no volume discounts? Unlike standard English tutors who follow a generic script, I operate as your strategic communication partner. Every session is custom-built around your specific industry KPIs, upcoming board presentations, and negotiation targets. You aren't just paying for 'classes'; you are investing in the executive presence needed to close deals.",
+          "The current rate is 500 MXN ($25 USD) per session or 6,000 MXN ($300 USD) for a 12-session executive roadmap. Every session is custom-built around your specific industry, upcoming presentations, and professional goals. This isn't a curriculum you follow — it's a strategy built around your calendar.",
       },
       {
         question: "How long does it take to see results?",
         answer:
-          "You will feel a shift in confidence and clarity immediately after our first strategy session. For measurable changes in fluency and executive presence, most clients see significant ROI within the 12-session roadmap. We don't aim for 'perfect grammar' in 5 years; we aim for 'effective leadership communication' in 3 months.",
+          "You'll feel a shift in confidence and clarity immediately after your first strategy session. For measurable changes in fluency and executive presence, most clients see significant ROI within the 12-session roadmap. I don't aim for 'perfect grammar' in 5 years — I aim for 'effective leadership communication' in 3 months.",
       },
       {
         question: "Do you work with teams or individuals?",
@@ -50,12 +50,12 @@ export const homepageFAQs: HomepageFAQData = {
       {
         question: "How is this different from traditional English classes?",
         answer:
-          "Traditional classes focus on textbooks and grammar rules. We focus on your reality. We use your actual emails, your slide decks, and your upcoming meeting agendas as our learning materials. We simulate your high-pressure scenarios so you can perform when it counts.",
+          "Traditional classes focus on textbooks and grammar rules. I focus on your reality — your actual emails, your slide decks, and your upcoming meeting agendas become the learning materials. I simulate your high-pressure scenarios so you can perform when it counts.",
       },
       {
         question: "What's included in the complimentary strategy session?",
         answer:
-          "This is a diagnostic call, not a sales pitch. We will assess your current communication gaps, identify your 'money-making' language goals, and outline a 30-day roadmap to fix them. You will leave with a clear plan, whether you decide to hire me or not.",
+          "This is a diagnostic call, not a sales pitch. I'll assess your current communication gaps, identify your highest-impact language goals, and outline a 30-day roadmap to address them. You'll leave with a clear plan, whether you decide to work with me or not.",
       },
     ],
     ctaText: "Still have questions?",
@@ -68,12 +68,12 @@ export const homepageFAQs: HomepageFAQData = {
       {
         question: "¿Cuál es la inversión para el coaching?",
         answer:
-          "La tarifa actual es de 500 MXN ($25 USD) por sesión o 6,000 MXN ($300 USD) por un plan ejecutivo de 12 sesiones. ¿Por qué no hay descuentos por volumen? A diferencia de los tutores de inglés estándar que siguen un guion genérico, yo opero como tu socio estratégico de comunicación. Cada sesión está construida a medida en torno a tus KPIs específicos de la industria, tus próximas presentaciones ante la junta y tus objetivos de negociación. No solo estás pagando por 'clases'; estás invirtiendo en la presencia ejecutiva necesaria para cerrar tratos.",
+          "La tarifa actual es de 500 MXN ($25 USD) por sesión o 6,000 MXN ($300 USD) por un plan ejecutivo de 12 sesiones. Cada sesión está diseñada a medida en torno a tu industria específica, tus próximas presentaciones y tus objetivos profesionales. Esto no es un plan de estudios que sigues — es una estrategia construida en torno a tu calendario.",
       },
       {
         question: "¿Cuánto tiempo toma ver resultados?",
         answer:
-          "Sentirás un cambio en confianza y claridad inmediatamente después de nuestra primera sesión estratégica. Para cambios medibles en fluidez y presencia ejecutiva, la mayoría de los clientes ven un ROI significativo dentro del plan de 12 sesiones. No apuntamos a 'gramática perfecta' en 5 años; apuntamos a 'comunicación de liderazgo efectiva' en 3 meses.",
+          "Sentirás un cambio en confianza y claridad inmediatamente después de tu primera sesión estratégica. Para cambios medibles en fluidez y presencia ejecutiva, la mayoría de los clientes ven un ROI significativo dentro del plan de 12 sesiones. No apunto a 'gramática perfecta' en 5 años — apunto a 'comunicación de liderazgo efectiva' en 3 meses.",
       },
       {
         question: "¿Trabajas con equipos o individuos?",
@@ -84,12 +84,12 @@ export const homepageFAQs: HomepageFAQData = {
         question:
           "¿En qué se diferencia esto de las clases de inglés tradicionales?",
         answer:
-          "Las clases tradicionales se enfocan en libros de texto y reglas gramaticales. Nosotros nos enfocamos en tu realidad. Usamos tus correos reales, tus presentaciones y tus agendas de reuniones próximas como materiales de aprendizaje. Simulamos tus escenarios de alta presión para que puedas rendir cuando cuenta.",
+          "Las clases tradicionales se enfocan en libros de texto y reglas gramaticales. Yo me enfoco en tu realidad — tus correos reales, tus presentaciones y tus agendas de reuniones próximas se convierten en los materiales de aprendizaje. Simulo tus escenarios de alta presión para que puedas rendir cuando cuenta.",
       },
       {
         question: "¿Qué incluye la sesión estratégica de cortesía?",
         answer:
-          "Esta es una llamada de diagnóstico, no un discurso de ventas. Evaluaremos tus brechas de comunicación actuales, identificaremos tus objetivos de lenguaje 'generadores de dinero' y delinearemos un plan de 30 días para solucionarlos. Saldrás con un plan claro, decidas contratarme o no.",
+          "Esta es una llamada de diagnóstico, no un discurso de ventas. Evaluaré tus brechas de comunicación actuales, identificaré tus objetivos de lenguaje de mayor impacto y delinearé un plan de 30 días para abordarlos. Saldrás con un plan claro, decidas trabajar conmigo o no.",
       },
     ],
     ctaText: "¿Aún tienes preguntas?",

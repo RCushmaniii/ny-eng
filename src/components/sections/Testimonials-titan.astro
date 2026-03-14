@@ -88,7 +88,7 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
               <div class="mb-4 text-yellow-500 text-xl">★★★★★</div>
 
               <blockquote class="mb-6 italic text-[--color-body-base]">
-                "{testimonial.content}"
+                "<span set:html={testimonial.content} />"
               </blockquote>
 
               <div class="flex items-center">

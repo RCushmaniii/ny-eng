@@ -16,7 +16,7 @@ import andreaTestimonial from "../assets/images/testimonials/andrea-testimonial.
 export const testimonials: Testimonial[] = [
   {
     content:
-      "El coaching de Robert no solo mejoró mi inglés, sino que aumentó mi confianza al presentar a clientes e inversionistas. Nuestras conversaciones sobre negocios, tecnología y temas globales expandieron mi vocabulario del mundo real y mejoraron mi forma de comunicarme. ¡Un verdadero cambio de juego!",
+      "El coaching de Robert no solo mejoró mi inglés, sino que aumentó mi confianza al presentar a clientes e inversionistas. Nuestras conversaciones sobre negocios, tecnología y temas globales <strong>expandieron mi vocabulario del mundo real y mejoraron mi forma de comunicarme.</strong> ¡Un verdadero cambio de juego!",
     author: "Julio Aldana",
     position: "COO",
     company: "Smarttie",
@@ -25,7 +25,7 @@ export const testimonials: Testimonial[] = [
 
   {
     content:
-      "Ser fundador significa estar constantemente presentando, persuadiendo y liderando. El coaching de Robert me dio las herramientas lingüísticas —y la confianza— para hacerlo todo en inglés. Ha marcado una verdadera diferencia en la presentación de acuerdos y la conexión con mi equipo",
+      "Ser fundador significa estar constantemente presentando, persuadiendo y liderando. El coaching de Robert me dio <strong>las herramientas lingüísticas —y la confianza— para hacerlo todo en inglés.</strong> Ha marcado una verdadera diferencia en la presentación de acuerdos y la conexión con mi equipo",
     author: "Hugo Blum",
     position: "CEO",
     company: "100 Ladrillos",
@@ -33,7 +33,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     content:
-      "El coaching con Robert me ayudó a sentirme mucho más seguro y natural al hablar inglés, especialmente con clientes estadounidenses. Ahora me siento más cómodo en las conversaciones y mejor preparado para las oportunidades de networking y reuniones transfronterizas.",
+      "El coaching con Robert me ayudó a sentirme mucho más seguro y natural al hablar inglés, especialmente con clientes estadounidenses. Ahora me siento <strong>más cómodo en las conversaciones y mejor preparado para reuniones transfronterizas.</strong>",
     author: "Andres Guzman Rubio",
     position: "COO – México",
     company: "Driscoll's",
@@ -41,7 +41,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     content:
-      "El coaching de Robert me ayudó a elevar cómo me comunico con ejecutivos senior en Norteamérica. Soy más estratégica y persuasiva en entrevistas, presentaciones y reuniones transfronterizas, especialmente en situaciones de alto riesgo. Su enfoque es práctico, enfocado e increíblemente efectivo.",
+      "El coaching de Robert me ayudó a elevar cómo me comunico con ejecutivos senior en Norteamérica. Soy <strong>más estratégica y persuasiva en entrevistas, presentaciones y reuniones transfronterizas</strong>, especialmente en situaciones de alto riesgo. Su enfoque es práctico, enfocado e increíblemente efectivo.",
     author: "Andrea Oliveira",
     position: "Directora de Desarrollo de Negocios",
     company: "CEVA Logistics",
