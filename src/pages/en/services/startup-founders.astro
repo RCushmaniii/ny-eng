@@ -24,8 +24,8 @@ const serviceData = services.find(service => service.slug === serviceSlug);
 
 // Hero content using service data (matching working pattern)
 const heroContent = {
-  title: "Scale Your Startup with Confident English Communication",
-  description: "Master the language of innovation, investment, and leadership. From pitch decks to board meetings, communicate your vision with clarity and authority.",
+  title: "Your vision is clear. Your pitch isn't landing.",
+  description: "Coaching for founders who need to pitch to US investors, recruit across borders, and lead their team in English — with the confidence that closes rounds.",
   backgroundImage: serviceData?.backgroundImage,
   overlayOpacity: 0.7
 };
@@ -34,14 +34,17 @@ const heroContent = {
 const challengeContent = {
   headline: "Does This Sound Familiar?",
   painPoints: [
-    "You struggle to articulate your vision clearly to investors and stakeholders",
-    "Technical explanations sound confusing instead of compelling in English",
-    "You lose credibility due to grammar mistakes during crucial presentations",
-    "Your team meetings lack the clarity needed to drive rapid execution",
-    "You avoid speaking opportunities that could accelerate your company's growth"
+    "You know your product cold — but when you pitch in English, the conviction doesn't come through the same way.",
+    "Investor calls feel like language tests instead of business conversations.",
+    "You lead your team in Spanish with authority. In English, you sound like you're reading from a script.",
   ],
-  icon: "🚀",
-  image: serviceData?.squareImage
+  icon: "😰",
+  image: serviceData?.squareImage,
+  quizCta: {
+    text: "Discover your Founder Communication Score in 60 seconds.",
+    link: "/en/quiz/executives/question/1",
+    linkLabel: "Start the Quiz →",
+  },
 };
 
 // Get Hugo's testimonial (perfect for startup founders - CEO who mentions pitching and leading)
@@ -49,16 +52,16 @@ const hugoTestimonial = testimonials.find(t => t.slug === "hugo-blum-100-ladrill
 
 // CTA content
 const ctaContent = {
-  eyebrow: "Take the Final Step",
-  title: "Transform Your Startup Communication",
-  description: "A free, no-obligation strategy session is the best way to understand how targeted coaching can accelerate your company's growth through better communication.",
-  buttonText: "Book My Free Strategy Session",
+  eyebrow: "",
+  title: "You already lead. Now sound like it — in English.",
+  description: "Book a private strategy session. 30 minutes: I'll spot the gaps between your English and the executive presence your role demands.",
+  buttonText: "Book My Founder Strategy Session",
   buttonLink: "/en/book/",
   whatToExpectTitle: "In Your Free Session, We Will:",
   whatToExpectList: [
-    "Assess your current communication challenges as a founder",
-    "Identify key opportunities to improve investor and team interactions",
-    "Create a personalized plan to scale your leadership communication"
+    "Assess how your English impacts investor and partner conversations",
+    "Identify the specific moments where your pitch loses power",
+    "Create a plan to close the gap between your vision and your delivery"
   ]
 };
 
