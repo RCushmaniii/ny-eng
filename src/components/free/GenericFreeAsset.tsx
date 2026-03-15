@@ -891,14 +891,14 @@ export default function GenericFreeAsset({
   // About content (reusable across all assets)
   const aboutContent = {
     en: {
-      text: "I help Latin American tech professionals communicate with executive-level confidence so they can close bigger contracts, command premium rates, and advance their international careers.",
+      text: "I spent 20 years in IT—17 at a Fortune 500, developer to Senior Manager. Now I coach international professionals to sound like the leaders they already are—in English.",
       subtext:
-        "After coaching 200+ professionals from Smarttie, Grupo Kopar, Terramar Brands, and Sourceability, I know that what separates good from great in high-pressure meetings isn't vocabulary—it's leadership communication.",
+        "After coaching 200+ professionals from companies like Smarttie, Driscoll's, CEVA Logistics, and Continental, I know what separates good from great in high-pressure meetings isn't vocabulary—it's leadership communication.",
     },
     es: {
-      text: "Ayudo a profesionales de tecnología en Latinoamérica a comunicarse con confianza de nivel ejecutivo para que puedan cerrar contratos más grandes, cobrar tarifas premium y avanzar en sus carreras internacionales.",
+      text: "Pasé 20 años en TI—17 en una Fortune 500, de desarrollador a Senior Manager. Ahora entreno a profesionales internacionales para que suenen como los líderes que ya son—en inglés.",
       subtext:
-        "Después de entrenar a más de 200 profesionales de Smarttie, Grupo Kopar, Terramar Brands y Sourceability, sé que lo que separa a los buenos de los excelentes en reuniones de alta presión no es el vocabulario—es la comunicación de liderazgo.",
+        "Después de entrenar a más de 200 profesionales de empresas como Smarttie, Driscoll's, CEVA Logistics y Continental, sé que lo que separa a los buenos de los excelentes en reuniones de alta presión no es el vocabulario—es la comunicación de liderazgo.",
     },
   };
 
