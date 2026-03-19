@@ -9,9 +9,14 @@
  *   node scripts/seo/indexnow-submit.mjs --sitemap https://...xml    # Submit URLs from a specific sitemap
  */
 
+if (!process.env.INDEXNOW_KEY) {
+  console.error('✗ Missing required environment variable: INDEXNOW_KEY');
+  process.exit(1);
+}
+
 const SITE_URL = 'https://www.nyenglishteacher.com';
 const DEFAULT_SITEMAP_URL = `${SITE_URL}/sitemap-index.xml`;
-const INDEXNOW_KEY = '68c9a0e54a33fa63d4e4384ebe910e71';
+const INDEXNOW_KEY = process.env.INDEXNOW_KEY;
 const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
 
 const args = process.argv.slice(2);
