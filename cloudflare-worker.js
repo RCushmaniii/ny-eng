@@ -22,7 +22,8 @@
  *     GOOGLE_CLIENT_ID
  *     GOOGLE_CLIENT_SECRET
  *     GOOGLE_REFRESH_TOKEN
- *     CALENDAR_ID
+ *     CALENDAR_ID                  (work calendar — bookings are created here)
+ *     PERSONAL_CALENDAR_ID         (personal calendar — checked for busy times to prevent conflicts)
  *
  *   Optional:
  *     WEEKDAY_MORNING_HOURS     (default: 09:00-14:00)
@@ -314,8 +315,9 @@ async function getAvailableSlots(dateStr, env, timeZone) {
   const timeMin = toISO(dateStr, earliestStart, timeZone);
   const timeMax = toISO(dateStr, latestEnd, timeZone);
 
-  // Fetch busy times from BOTH calendars (personal + work)
-  // PERSONAL_CALENDAR_ID should be set in environment variables
+  // Fetch busy times from BOTH calendars to avoid double-bookings:
+  //   PERSONAL_CALENDAR_ID = Robert's personal Google calendar (rcushmaniii@gmail.com)
+  //   CALENDAR_ID / GOOGLE_CALENDAR_ID = NY English Teacher work calendar (also used for event creation)
   const personalCalendar = env.PERSONAL_CALENDAR_ID || env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
   const workCalendar = env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
 

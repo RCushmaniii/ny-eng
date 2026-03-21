@@ -1,6 +1,6 @@
 # Self-Scheduling Booking System Documentation
 
-**Last Updated:** October 27, 2025  
+**Last Updated:** March 21, 2026  
 **Status:** ✅ Production Ready  
 **Purpose:** Automated calendar booking with Google Calendar integration  
 **Technology Stack:** Cloudflare Workers, Google Calendar API, Cal.com widget
@@ -239,6 +239,19 @@ return !busy.some((b) => overlaps(slotStart, slotEnd, b.start, b.end));
 
 ## Calendar Integration
 
+### **Google Calendar IDs**
+
+Robert uses two Google Calendars. The booking system must check **both** for availability to prevent double-booking.
+
+| Calendar | Calendar ID | Env Var (Cloudflare Worker) | Purpose |
+|----------|-------------|----------------------------|---------|
+| **Personal** | `rcushmaniii@gmail.com` | `PERSONAL_CALENDAR_ID` | Personal events — checked for busy times only |
+| **Shared Work** | `9lg6pj8ht2blt3ob4v1rtddsts@group.calendar.google.com` | `CALENDAR_ID` / `GOOGLE_CALENDAR_ID` | Work calendar — new bookings are **created here** + checked for busy times |
+
+Both calendars use timezone `America/Mexico_City` (UTC-6, no DST since 2022).
+
+**Important:** If `PERSONAL_CALENDAR_ID` is not set in the Cloudflare Worker environment, the system falls back to only checking the work calendar — which means personal events won't block availability and double-bookings can occur.
+
 ### **Dual Calendar Checking**
 
 **Purpose:** Prevents double-booking across personal and work calendars
@@ -246,8 +259,9 @@ return !busy.some((b) => overlaps(slotStart, slotEnd, b.start, b.end));
 **Implementation:**
 
 ```javascript
-const personalCalendar = "rcushmaniii@gmail.com";
-const workCalendar = env.GOOGLE_CALENDAR_ID;
+// Both calendar IDs come from Cloudflare Worker env vars
+const personalCalendar = env.PERSONAL_CALENDAR_ID;  // rcushmaniii@gmail.com
+const workCalendar = env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;  // shared work calendar
 
 const freeBusy = await fetchJSON(
   "https://www.googleapis.com/calendar/v3/freeBusy",
@@ -324,7 +338,8 @@ const allBusy = [...personalBusy, ...workBusy];
 
 **Calendar:**
 
-- `CALENDAR_ID` (or `GOOGLE_CALENDAR_ID`) - Target calendar ID
+- `CALENDAR_ID` (or `GOOGLE_CALENDAR_ID`) - Work calendar where bookings are created (`9lg6pj8ht2blt3ob4v1rtddsts@group.calendar.google.com`)
+- `PERSONAL_CALENDAR_ID` - Personal calendar checked for busy times (`rcushmaniii@gmail.com`)
 
 ### **Optional Variables**
 
