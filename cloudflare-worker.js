@@ -316,8 +316,8 @@ async function getAvailableSlots(dateStr, env, timeZone) {
   const timeMax = toISO(dateStr, latestEnd, timeZone);
 
   // Fetch busy times from BOTH calendars to avoid double-bookings:
-  //   PERSONAL_CALENDAR_ID = Robert's personal Google calendar (rcushmaniii@gmail.com)
-  //   CALENDAR_ID / GOOGLE_CALENDAR_ID = NY English Teacher work calendar (also used for event creation)
+  //   GOOGLE_CALENDAR_ID = rcushmaniii@gmail.com (bookings created here)
+  //   PERSONAL_CALENDAR_ID = shared work calendar (checked for conflicts only)
   const personalCalendar = env.PERSONAL_CALENDAR_ID || env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
   const workCalendar = env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
 

@@ -245,12 +245,14 @@ Robert uses two Google Calendars. The booking system must check **both** for ava
 
 | Calendar | Calendar ID | Env Var (Cloudflare Worker) | Purpose |
 |----------|-------------|----------------------------|---------|
-| **Personal** | `rcushmaniii@gmail.com` | `PERSONAL_CALENDAR_ID` | Personal events — checked for busy times only |
-| **Shared Work** | `9lg6pj8ht2blt3ob4v1rtddsts@group.calendar.google.com` | `CALENDAR_ID` / `GOOGLE_CALENDAR_ID` | Work calendar — new bookings are **created here** + checked for busy times |
+| **Personal** | `rcushmaniii@gmail.com` | `GOOGLE_CALENDAR_ID` | Personal calendar — new bookings are **created here** + checked for busy times |
+| **Shared Work** | `9lg6pj8ht2blt3ob4v1rtddsts@group.calendar.google.com` | `PERSONAL_CALENDAR_ID` | Work calendar — checked for busy times only (prevents conflicts with work events) |
 
 Both calendars use timezone `America/Mexico_City` (UTC-6, no DST since 2022).
 
-**Important:** If `PERSONAL_CALENDAR_ID` is not set in the Cloudflare Worker environment, the system falls back to only checking the work calendar — which means personal events won't block availability and double-bookings can occur.
+**Note:** The env var naming is historical — `PERSONAL_CALENDAR_ID` actually holds the shared work calendar ID, while `GOOGLE_CALENDAR_ID` holds the personal calendar where bookings are created. Both are checked via FreeBusy API for availability conflicts.
+
+**Important:** If `PERSONAL_CALENDAR_ID` is not set in the Cloudflare Worker environment, the system falls back to only checking the primary calendar — which means work calendar events won't block availability and double-bookings can occur.
 
 ### **Dual Calendar Checking**
 
@@ -260,8 +262,8 @@ Both calendars use timezone `America/Mexico_City` (UTC-6, no DST since 2022).
 
 ```javascript
 // Both calendar IDs come from Cloudflare Worker env vars
-const personalCalendar = env.PERSONAL_CALENDAR_ID;  // rcushmaniii@gmail.com
-const workCalendar = env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;  // shared work calendar
+const personalCalendar = env.PERSONAL_CALENDAR_ID;  // shared work calendar (checked for conflicts)
+const workCalendar = env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;  // rcushmaniii@gmail.com (bookings created here)
 
 const freeBusy = await fetchJSON(
   "https://www.googleapis.com/calendar/v3/freeBusy",
@@ -338,8 +340,8 @@ const allBusy = [...personalBusy, ...workBusy];
 
 **Calendar:**
 
-- `CALENDAR_ID` (or `GOOGLE_CALENDAR_ID`) - Work calendar where bookings are created (`9lg6pj8ht2blt3ob4v1rtddsts@group.calendar.google.com`)
-- `PERSONAL_CALENDAR_ID` - Personal calendar checked for busy times (`rcushmaniii@gmail.com`)
+- `CALENDAR_ID` (or `GOOGLE_CALENDAR_ID`) - Primary calendar where bookings are created (`rcushmaniii@gmail.com`)
+- `PERSONAL_CALENDAR_ID` - Secondary calendar checked for busy times (`9lg6pj8ht2blt3ob4v1rtddsts@group.calendar.google.com`)
 
 ### **Optional Variables**
 
