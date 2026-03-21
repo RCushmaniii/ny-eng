@@ -44,3 +44,6 @@ supabase/
 scripts/seo/gsc-credentials.json
 *-credentials.json
 scripts/seo/.submissions/
+
+# Cloudflare Worker config (contains client IDs)
+wrangler.toml
