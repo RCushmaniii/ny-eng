@@ -3,7 +3,6 @@ export const prerender = true;
 
 import Base from "@layouts/Base.astro";
 import FaqsSegmented from "@components/sections/FaqsSegmented.astro";
-import FAQSchema from "@components/seo/FAQSchema.astro";
 import { segmentedFaqLists } from "@data/faqs";
 import faqHeroImage from "@assets/images/faq/faq-hero.jpg";
 
@@ -12,7 +11,6 @@ const seoDescription =
   "Todo lo que necesitas saber sobre cerrar tu brecha de comunicación y escalar tu carrera con coaching premium de inglés para profesionales.";
 
 const faqData = segmentedFaqLists.premium_es;
-const allFaqs = faqData.sections.flatMap((section) => section.faqs);
 ---
 
 <Base
@@ -22,7 +20,6 @@ const allFaqs = faqData.sections.flatMap((section) => section.faqs);
   tkey="faqs"
   hideCta={true}
 >
-  <FAQSchema faqs={allFaqs} />
 
   <!-- Premium Hero Section -->
   <section
