@@ -31,7 +31,7 @@ const CORE_PAGES = [
   '/en/book/', '/es/reservar/',
   '/en/quiz/it-services/', '/es/quiz/it-services/',
   '/en/resources/', '/es/recursos/',
-  '/en/faq/', '/es/faq/',
+  '/en/faqs/', '/es/faqs/',
 ];
 
 async function inspectUrl(searchconsole, siteUrl, inspectionUrl) {
