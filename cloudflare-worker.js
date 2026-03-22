@@ -1,7 +1,10 @@
 /**
- * NY English Teacher – Cloudflare Worker v3.1
+ * NY English Teacher – Cloudflare Worker v3.2
  *
- * NEW IN V3.1:
+ * NEW IN V3.2:
+ * - Include user notes/comments in calendar event description
+ *
+ * V3.1:
  * - Rate limiting on booking endpoint
  * - OAuth token caching (1 hour TTL)
  * - Slots caching (5 minute TTL)
@@ -405,13 +408,14 @@ function sanitizeInput(str) {
 }
 
 async function createBooking(data, env, timeZone, lang) {
-  const { name: rawName, email: rawEmail, date, time } = data || {};
+  const { name: rawName, email: rawEmail, date, time, notes: rawNotes } = data || {};
   if (!rawName || !rawEmail || !date || !time)
     throw new Error(t(lang, "missing_fields"));
 
   // Sanitize user inputs
   const name = sanitizeInput(rawName);
   const email = sanitizeInput(rawEmail).toLowerCase();
+  const notes = rawNotes ? sanitizeInput(rawNotes) : "";
 
   // Validate email format
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -441,10 +445,15 @@ async function createBooking(data, env, timeZone, lang) {
   const endDateTime = `${date}T${endTime}:00`;
 
   const summary = lang === "es" ? `Consulta: ${name}` : `Consultation: ${name}`;
+  const notesLine = notes
+    ? lang === "es"
+      ? `\nNotas: ${notes}`
+      : `\nNotes: ${notes}`
+    : "";
   const description =
     lang === "es"
-      ? `Consulta gratuita de inglés de negocios\nNombre: ${name}\nEmail: ${email}`
-      : `Free business English consultation\nName: ${name}\nEmail: ${email}`;
+      ? `Consulta gratuita de inglés de negocios\nNombre: ${name}\nEmail: ${email}${notesLine}`
+      : `Free business English consultation\nName: ${name}\nEmail: ${email}${notesLine}`;
 
   const calendarId = env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID;
   const resp = await fetchJSON(
