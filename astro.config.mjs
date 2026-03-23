@@ -42,6 +42,7 @@ const blogTranslations = {
   "customs-freight-english": "/es/blog/ingles-aduanas-comercio-exterior/",
   "us-interview-prep": "/es/blog/entrevista-trabajo-empresa-americana/",
   "slack-english-write-like-a-pro": "/es/blog/ingles-para-slack-profesional/",
+  "executive-reframing-drills": "/es/blog/ejercicios-reformulacion-ejecutiva/",
 };
 
 // Reverse map (ES slug -> EN path)
