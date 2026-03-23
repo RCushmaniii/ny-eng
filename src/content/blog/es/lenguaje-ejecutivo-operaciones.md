@@ -10,6 +10,7 @@ audience: "Directores de operaciones, VPs de operaciones, líderes de cadena de 
 featuredImage: "./images/lenguaje-ejecutivo-operaciones.webp"
 imageAlt: "Ejecutivo de operaciones presentando con confianza en una sala de juntas con métricas de rendimiento, dashboard de KPIs y diagramas de flujo logístico en pantallas detrás de él"
 publish: true
+ttsVoice: "en-US-AndrewNeural"
 seo:
   title: "Lenguaje Ejecutivo para Operaciones — Reemplaza el Lenguaje de Problemas con Lenguaje de Control | NY English Teacher"
   description: "18 ejercicios antes-y-después para líderes de operaciones. Reemplaza el lenguaje reactivo con lenguaje ejecutivo de control que señala estabilidad, supervisión y avance."

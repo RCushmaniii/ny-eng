@@ -9,7 +9,15 @@
  *
  * Usage in markdown:
  *   <span class="speak-en">The shipment is pending customs clearance.</span>
+ *
+ * Per-post voice override:
+ *   Add ttsVoice in blog frontmatter (e.g., ttsVoice: "en-US-AndrewNeural")
+ *   Available: AndrewNeural, BrianNeural, GuyNeural (male), AvaNeural, EmmaNeural, JennyNeural (female)
  */
+interface Props {
+  voice?: string;
+}
+const { voice } = Astro.props;
 ---
 
 <style is:global>
@@ -54,10 +62,16 @@
   }
 </style>
 
+<div id="speak-en-root" data-voice={voice || ""}></div>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const speakables = document.querySelectorAll('.speak-en');
     if (!speakables.length) return;
+
+    // Read per-post voice override from data attribute
+    const root = document.getElementById('speak-en-root');
+    const voiceOverride = root?.dataset.voice || '';
 
     // Audio cache to avoid re-fetching the same text
     const audioCache = new Map<string, string>();
@@ -108,7 +122,7 @@
             const response = await fetch(API_BASE, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ text, lang: 'en' }),
+              body: JSON.stringify({ text, lang: 'en', ...(voiceOverride && { voice: voiceOverride }) }),
             });
 
             console.log('[TTS] Response status:', response.status, 'Content-Type:', response.headers.get('content-type'));

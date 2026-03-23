@@ -35,6 +35,7 @@ const blogCollection = defineCollection({
           image: z.string().optional(),
         })
         .optional(),
+      ttsVoice: z.string().optional(),
       translations: z
         .object({
           en: z.string().optional(),
