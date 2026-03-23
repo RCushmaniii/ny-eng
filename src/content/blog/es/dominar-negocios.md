@@ -26,7 +26,7 @@ Si quieres ver resultados concretos de este tipo de coaching, lee el [caso de es
 ### ¿Qué hace especial mi coaching?
 
 - **Sesiones 1-a-1 diseñadas para ti**  
-  Cada clase se enfoca en _tus_ metas. Trabajamos en lo que necesitas: escribir correos profesionales, hablar en reuniones o negociar acuerdos. Sin libros de texto, solo habilidades reales.
+  Cada clase se enfoca en _tus_ metas. Trabajamos en lo que necesitas: escribir correos profesionales (evitando las [frases de email que te hacen sonar junior](/es/blog/frases-email-que-te-hacen-sonar-junior/)), hablar en reuniones o negociar acuerdos. Sin libros de texto, solo habilidades reales.
 
 - **Capacitación para empresas**  
   ¿Quieres que tu equipo se comunique mejor? Ofrezco talleres para mejorar el inglés de departamentos completos, desde llamadas con clientes hasta reportes internos.
@@ -62,7 +62,7 @@ Esto dicen líderes de distintas industrias sobre trabajar conmigo:
 
 ## ¿Por qué es importante el inglés de negocios?
 
-El buen inglés abre puertas en tu carrera. Ya sea que trabajes en tecnología, finanzas, logística u otro sector, comunicarte con claridad te ayuda a lograr ascensos, generar confianza con clientes y mostrar liderazgo. Mi coaching te enseña a [manejar reuniones con autoridad](/es/blog/dirigir-reuniones-ingles-frases/), [negociar con seguridad](/es/blog/como-negociar-en-ingles-marco/) y trabajar con personas de diferentes culturas. Con mejor inglés, destacarás como un líder fuerte y profesional.
+El buen inglés abre puertas en tu carrera. Ya sea que trabajes en tecnología, finanzas, logística u otro sector, comunicarte con claridad te ayuda a lograr ascensos, generar confianza con clientes y mostrar liderazgo. Explora todos nuestros [servicios de coaching](/es/servicios/) para encontrar el programa ideal para ti. Mi coaching te enseña a [manejar reuniones con autoridad](/es/blog/dirigir-reuniones-ingles-frases/), [negociar con seguridad](/es/blog/como-negociar-en-ingles-marco/) y trabajar con personas de diferentes culturas. Con mejor inglés, destacarás como un líder fuerte y profesional.
 
 ---
 

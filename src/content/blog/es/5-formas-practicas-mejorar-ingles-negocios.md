@@ -62,7 +62,7 @@ No necesitas palabras complicadas para sonar profesional. El lenguaje claro y di
 - "Facilitate" → "Ayuda"
 - "Ameliorate" → "Mejora"
 
-> **La comunicación clara no es básica—es poderosa.** Cuando tus palabras son directas y con propósito, la gente escucha, actúa y los resultados llegan.
+> **La comunicación clara no es básica—es poderosa.** Cuando tus palabras son directas y con propósito, la gente escucha, actúa y los resultados llegan. Para aplicar esto en videollamadas, lee [Presencia ejecutiva en videollamadas: 7 hábitos que generan confianza](/es/blog/presencia-ejecutiva-en-videollamadas/).
 
 ---
 

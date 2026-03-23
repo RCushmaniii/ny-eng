@@ -36,7 +36,7 @@ Las empresas mexicanas están perdiendo valor por tener un inglés "suficienteme
 - **Vulnerabilidad del factor bus:** La dependencia excesiva de unos pocos "héroes" bilingües crea puntos únicos de falla en operaciones de cara al cliente
 - **Costos de coordinación ocultos:** Cada actualización de estado poco clara, cada reunión que necesita traducción, cada documento que requiere reescritura se multiplica en toda tu operación
 - **Cuellos de botella en promociones:** Mentes técnicas brillantes atascadas en niveles de colaborador senior porque no pueden presentar ante ejecutivos o dirigir reuniones multifuncionales
-- **Desventaja competitiva:** En nearshoring y servicios globales, la claridad de comunicación es diferenciación de producto—el inglés débil te hace intercambiable por precio
+- **Desventaja competitiva:** En nearshoring y servicios globales, la claridad de comunicación es diferenciación de producto—el inglés débil te hace intercambiable por precio. (Para un análisis detallado de este fenómeno en TI, lee [por qué gerentes de TI pierden millones por mala comunicación](/es/blog/por-que-los-gerentes-de-ti-en-mexico-pierden-clientes/))
 
 Esto no se trata de gramática. Se trata de utilidades, riesgo y capacidad estratégica.
 
@@ -411,7 +411,7 @@ Tu mejor gente nota este patrón. Se dan cuenta de que su progreso profesional e
 
 Tres cosas suceden:
 
-1. **Se van a empresas que invierten en entrenamiento de inglés.** Las empresas tecnológicas globales y las consultoras multinacionales presupuestan fuertemente para desarrollo de comunicación. Tu mejor talento se va ahí.
+1. **Se van a empresas que invierten en entrenamiento de inglés.** Las empresas tecnológicas globales y las consultoras multinacionales presupuestan fuertemente para desarrollo de comunicación. Tu mejor talento se va ahí. (Ve cómo una empresa evitó esto en el [caso de estudio de transformación del inglés corporativo](/es/blog/caso-estudio-transformacion-ingles-corporativo/).)
 2. **Se van a roles completamente en español.** En lugar de crecer en liderazgo en tu empresa, toman roles con salarios ligeramente más bajos en firmas locales donde el idioma no es una barrera.
 3. **Se desconectan.** Dejan de buscar proyectos desafiantes, dejan de ofrecerse voluntarios para trabajo de cara al cliente y se desconectan mentalmente. Pierdes su esfuerzo discrecional.
 

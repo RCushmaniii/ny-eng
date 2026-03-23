@@ -20,7 +20,7 @@ seo:
 
 ## Tu Inglés Es Bueno. Estos Errores Lo Están Frenando.
 
-Presentas resultados trimestrales a un consejo en Estados Unidos. Negocias contratos con proveedores canadienses. Lideras standups diarios con equipos distribuidos en tres zonas horarias.
+Presentas resultados trimestrales a un consejo en Estados Unidos. Negocias contratos con proveedores canadienses. Lideras [standups diarios](/es/blog/ingles-para-daily-standup-frases/) con equipos distribuidos en tres zonas horarias.
 
 Tu inglés funciona. Pero "funciona" y "impone respeto" son dos cosas muy diferentes.
 
@@ -153,7 +153,7 @@ Los hablantes nativos de inglés en negocios—especialmente en tech y startups�
 > ✅ "Could you send the documents by Friday?"
 > (¿Podrías enviar los documentos para el viernes?)
 
-**El principio:** En el inglés de negocios estadounidense, la claridad y la franqueza señalan competencia. La formalidad excesiva señala distancia o inseguridad. Escribe como le hablarías a un colega respetado, no como si estuvieras redactando un contrato legal. Para más sobre comunicar con claridad sin complicar tu lenguaje, lee [5 formas prácticas de mejorar tu inglés de negocios](/es/blog/5-formas-practicas-mejorar-ingles-negocios/).
+**El principio:** En el inglés de negocios estadounidense, la claridad y la franqueza señalan competencia. La formalidad excesiva señala distancia o inseguridad. Escribe como le hablarías a un colega respetado, no como si estuvieras redactando un contrato legal — esto aplica también en plataformas como [Slack profesional](/es/blog/ingles-para-slack-profesional/). Para más sobre comunicar con claridad sin complicar tu lenguaje, lee [5 formas prácticas de mejorar tu inglés de negocios](/es/blog/5-formas-practicas-mejorar-ingles-negocios/).
 
 Si estás navegando esto en contextos ejecutivos de alto impacto, el [coaching de inglés ejecutivo](/es/servicios/ingles-para-ejecutivos/) te puede ayudar a encontrar el registro adecuado para tu industria y audiencia específica.
 

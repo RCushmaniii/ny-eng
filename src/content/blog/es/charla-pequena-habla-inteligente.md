@@ -26,7 +26,7 @@ Muchos piensan que el small talk es solo relleno, pero en realidad es una herram
 - **Haz preguntas abiertas:** En vez de solo saludar, pregunta sobre proyectos, intereses o planes.
 - **Escucha activamente:** Presta atención y haz preguntas de seguimiento para demostrar interés genuino.
 - **Comparte algo personal:** Hablar brevemente de tus propios intereses puede humanizar la conversación.
-- **Utiliza frases clave:** Prepara algunas frases útiles para romper el hielo o cambiar de tema.
+- **Utiliza frases clave:** Prepara algunas [frases útiles para dirigir conversaciones en inglés](/es/blog/dirigir-reuniones-ingles-frases/) que te ayuden a romper el hielo o cambiar de tema.
 
 ## Ejemplos de frases para el small talk
 
@@ -39,11 +39,11 @@ Muchos piensan que el small talk es solo relleno, pero en realidad es una herram
 
 - **Conecta intereses comunes:** Si surge un tema compartido, aprovéchalo para profundizar la relación.
 - **Sigue la conversación:** Si alguien menciona un proyecto interesante, pregunta más y ofrece tu ayuda si es posible.
-- **Sé auténtico:** La sinceridad genera confianza y deja una impresión positiva.
+- **Sé auténtico:** La sinceridad genera confianza y deja una impresión positiva. Para más técnicas de comunicación profesional, consulta [5 formas prácticas de mejorar tu inglés de negocios](/es/blog/5-formas-practicas-mejorar-ingles-negocios/).
 
 Para evitar errores comunes que minan tu credibilidad en estas conversaciones, revisa los [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/).
 
-> **Recuerda:** El small talk es solo el principio. Con práctica, puedes convertirlo en conversaciones inteligentes que te ayuden a crecer profesionalmente.
+> **Recuerda:** El small talk es solo el principio. Con práctica, puedes convertirlo en conversaciones inteligentes que te ayuden a crecer profesionalmente. ¿Quieres dar el siguiente paso? [Agenda una consulta gratuita](/es/reservar/) para desarrollar tu comunicación profesional en inglés.
 
 ---
 

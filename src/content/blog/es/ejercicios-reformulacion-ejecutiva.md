@@ -22,7 +22,7 @@ No estás aquí para "aprender inglés."
 
 Estás aquí para **diseñar la percepción que generas**.
 
-La diferencia entre un gerente medio y un ejecutivo C-suite no es el vocabulario. Es la precisión bajo presión — la capacidad de reemplazar lenguaje vago, emocional y reactivo con autoridad estructurada en tiempo real.
+La diferencia entre un gerente medio y un ejecutivo C-suite no es el vocabulario. Es la precisión bajo presión — la capacidad de reemplazar lenguaje vago, emocional y reactivo con autoridad estructurada en tiempo real. Esto aplica especialmente en [videollamadas donde tu presencia ejecutiva define cómo te perciben](/es/blog/presencia-ejecutiva-en-videollamadas/).
 
 Estos 14 ejercicios están diseñados para recablear tus instintos. Lee la versión débil. Después lee — y **escucha** — la versión ejecutiva. Dila en voz alta. Sin dudar.
 
@@ -92,7 +92,7 @@ Velocidad sin estructura es caos. Los líderes agregan estructura.
 
 **Cámbialo a:** <span class="speak-en">The request exceeds the value exchange.</span>
 
-Acabas de convertir una reacción emocional en una posición de negociación.
+Acabas de convertir una reacción emocional en una posición de negociación. (Para más sobre este tipo de reformulación estratégica, lee [4 secretos que usan los ejecutivos para sonar seguros](/es/blog/4-secretos-que-usan-los-ejecutivos/).)
 
 ---
 
@@ -133,7 +133,7 @@ Los reconoces. No cedes.
 
 **Tu respuesta:** <span class="speak-en">Let's anchor this in decision criteria.</span>
 
-Una oración. La discusión ahora es un proceso. Tú controlas la sala.
+Una oración. La discusión ahora es un proceso. Tú controlas la sala. Para más frases que te dan este nivel de control, consulta [25 frases para dirigir reuniones en inglés con autoridad](/es/blog/dirigir-reuniones-ingles-frases/).
 
 ---
 

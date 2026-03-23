@@ -21,7 +21,7 @@ seo:
 
 Como líder senior en un mundo globalizado, tus necesidades de comunicación van mucho más allá de la gramática básica. Las clases tradicionales cubren reglas y vocabulario, pero suelen dejar fuera los matices críticos, el contexto estratégico y el enfoque en desempeño que requiere el nivel ejecutivo. No solo buscas hablar inglés—quieres liderar, influir, persuadir e inspirar.
 
-Aquí es donde un coach nativo con visión empresarial se convierte en **ventaja estratégica**, no solo en un ejercicio académico. Es un servicio innovador para líderes que entienden que la comunicación poderosa está ligada al rendimiento personal y organizacional.
+Aquí es donde un coach nativo con visión empresarial se convierte en **ventaja estratégica**, no solo en un ejercicio académico. Es exactamente lo que ofrecemos en nuestro programa de [inglés para ejecutivos](/es/servicios/ingles-para-ejecutivos/). Es un servicio innovador para líderes que entienden que la comunicación poderosa está ligada al rendimiento personal y organizacional.
 
 ---
 

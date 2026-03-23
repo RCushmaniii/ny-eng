@@ -21,9 +21,9 @@ seo:
 
 ¿Te sientes dudoso o inseguro al usar inglés en entornos profesionales? No eres el único. Muchos profesionales talentosos—ya sea preparando una presentación importante, liderando una reunión internacional o entrevistándose para ese trabajo soñado—ven cómo su confianza disminuye al comunicarse en un idioma no nativo.
 
-La buena noticia: la confianza no es solo algo que _tienes_, ¡es algo que _puedes construir_! Puedes empezar a fortalecer tu seguridad en inglés de negocios hoy mismo con pasos prácticos y aplicables.
+La buena noticia: la confianza no es solo algo que _tienes_, ¡es algo que _puedes construir_! Los ejecutivos exitosos lo saben — por eso aplican [4 secretos clave para sonar seguros en inglés](/es/blog/4-secretos-que-usan-los-ejecutivos/). Puedes empezar a fortalecer tu seguridad en inglés de negocios hoy mismo con pasos prácticos y aplicables.
 
-En New York English, he trabajado con cientos de profesionales de industrias como logística, tecnología, finanzas y liderazgo ejecutivo. Juntos, desarrollamos la claridad, fluidez y seguridad necesarias para destacar. Basado en esa experiencia, aquí tienes cinco estrategias efectivas que puedes implementar desde hoy:
+En New York English, he trabajado con cientos de profesionales de industrias como logística, tecnología, finanzas y [liderazgo ejecutivo](/es/servicios/ingles-para-ejecutivos/). Juntos, desarrollamos la claridad, fluidez y seguridad necesarias para destacar. Basado en esa experiencia, aquí tienes cinco estrategias efectivas que puedes implementar desde hoy:
 
 ## 1. Practica "frases clave" para reuniones
 
@@ -33,7 +33,7 @@ En New York English, he trabajado con cientos de profesionales de industrias com
 - Para pedir aclaración: _"¿Podrías profundizar en ese punto, por favor?"_ o _"Quiero asegurarme de entender bien. ¿Estás diciendo que...?"_
 - Para compartir tu opinión: _"Desde mi perspectiva..."_ o _"Así lo veo yo..."_
 
-Empieza usando estas frases en conversaciones de menor presión o incluso prácticalas solo. Cuando te resulten familiares, sonarás más seguro, pulido y asertivo cuando más lo necesites.
+Empieza usando estas frases en conversaciones de menor presión o incluso prácticalas solo. Cuando te resulten familiares, sonarás más seguro, pulido y asertivo cuando más lo necesites. Y si participas frecuentemente en videollamadas, aplica también las [5 formas prácticas de mejorar tu inglés de negocios](/es/blog/5-formas-practicas-mejorar-ingles-negocios/) para comunicar con mayor impacto.
 
 _Consejo profesional:_ Grábate diciendo estas frases con tu teléfono. Escucha tu tono, ritmo y pronunciación. Pequeños ajustes pueden tener un gran impacto.
 

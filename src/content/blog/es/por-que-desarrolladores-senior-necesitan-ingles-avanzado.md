@@ -123,7 +123,7 @@ Esto es lo que NO funciona:
 - ❌ "Practicar con colegas" (no te corregirán como lo harán clientes y liderazgo)
 
 **Lo que realmente funciona:**  
-Trabajar con un **hablante nativo de inglés que entiende comunicación técnica** y puede:
+Trabajar con un **hablante nativo de inglés que entiende comunicación técnica** — como nuestro programa de [inglés para tecnología](/es/servicios/ingles-para-tecnologia/) — y puede:
 
 - Identificar tus brechas específicas de comunicación en escenarios de negocio
 - Practicar situaciones de alta presión (revisiones de arquitectura, objeciones de clientes, respuesta a incidentes)
