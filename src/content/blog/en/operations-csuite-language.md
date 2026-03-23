@@ -6,7 +6,7 @@ categories: ["Executive English", "High-Impact Communication"]
 readingTime: "7 min read"
 audience: "Operations directors, VPs of Operations, supply chain leaders, and logistics managers who report to the C-suite"
 featuredImage: "./images/operations-csuite-language.webp"
-imageAlt: "Operations leader presenting confidently at a boardroom table with supply chain dashboards on screens behind them"
+imageAlt: "Operations executive presenting confidently in a boardroom with throughput metrics, KPI dashboard, and logistics flow charts on screens behind him"
 seo:
   title: "Operations Executive Language — Replace Problem Reporting with Control Language | NY English Teacher"
   description: "18 before-and-after drills for operations leaders. Replace reactive problem language with executive control language that signals stability, oversight, and forward momentum."
