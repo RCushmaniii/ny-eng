@@ -123,7 +123,7 @@ Here's what doesn't work:
 - ❌ "Practice with colleagues" (they won't correct you the way clients and leadership will)
 
 **What actually works:**  
-Working with a **native English speaker who understands technical communication** and can:
+Working with a **native English speaker who understands technical communication** — like the [Tech English coaching program](/en/services/tech-english/) — who can:
 
 - Identify your specific communication gaps in business scenarios
 - Practice high-pressure situations (architecture reviews, client objections, incident response)

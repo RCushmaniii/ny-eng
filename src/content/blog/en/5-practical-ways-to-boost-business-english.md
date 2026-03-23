@@ -71,7 +71,7 @@ Important interviews, presentations, or performance reviews can feel intimidatin
 
 1. **Plan your message:** Write 2–3 key points to guide your ideas.
 2. **Practice aloud:** Rehearse your points in front of a mirror or record yourself.
-3. **Anticipate questions:** Think ahead and prepare short, confident answers.
+3. **Anticipate questions:** Think ahead and prepare short, confident answers. If the moment is a video call, pair this with the [7 habits that build trust on camera](/en/blog/executive-video-call/).
 
 > **Tip:** Begin and end strong. For example:  
 > “Thanks for the opportunity. I’d like to share...”  

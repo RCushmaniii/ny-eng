@@ -24,7 +24,7 @@ Feeling hesitant or unsure when using English in professional settings? You’re
 
 The exciting news? Confidence isn't just something you _have_; it's something you can _build_. You can start strengthening your Business English poise today with practical, actionable steps.
 
-At New York English, I’ve partnered with hundreds of professionals across diverse industries like logistics, technology, finance, and executive leadership. Together, we focus on developing the clarity, fluency, and self-assurance needed to thrive. Based on that experience, here are five effective strategies you can implement right away:
+At New York English, I’ve partnered with hundreds of professionals across diverse industries like logistics, technology, finance, and [executive leadership](/en/services/executive-english/). Together, we focus on developing the clarity, fluency, and self-assurance needed to thrive. Based on that experience, here are five effective strategies you can implement right away:
 
 ## 1. Practice "Power Phrases" for Meetings
 

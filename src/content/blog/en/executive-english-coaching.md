@@ -86,7 +86,7 @@ In today’s global marketplace, clear, confident English isn’t just “nice t
 
 ## Elevate Your Leadership Impact
 
-If you're a senior leader aiming to maximize your influence and effectiveness on the global stage, standard English lessons won’t give you the edge you need. Working with a native English coach who blends linguistic expertise with sharp business understanding is an investment in your leadership potential and your organization’s success.
+If you're a senior leader aiming to maximize your influence and effectiveness on the global stage, standard English lessons won’t give you the edge you need. Working with a native English coach who blends linguistic expertise with sharp business understanding is an investment in your leadership potential and your organization’s success. Learn more about the [executive English coaching program](/en/services/executive-english/) and how it’s structured for senior leaders.
 
 It’s about moving beyond simply being understood to truly commanding presence and driving results through powerful communication.
 

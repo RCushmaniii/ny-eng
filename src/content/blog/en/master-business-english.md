@@ -61,7 +61,7 @@ Here’s what leaders from different industries say about working with me:
 
 ## Why Business English Is Important
 
-Good English opens doors in your career. Whether you work in tech, finance, logistics, or another field, clear communication helps you win promotions, build trust with clients, and show leadership. The [real cost of weak English](/en/blog/real-cost-weak-english-mexican-companies/) goes far beyond missed words—it means lost deals, blocked promotions, and stalled careers. My coaching teaches you to handle meetings, negotiate with confidence, and work with people from different cultures. With better English, you’ll stand out as a strong, professional leader.
+Good English opens doors in your career. Whether you work in tech, finance, logistics, or another field, clear communication helps you win promotions, build trust with clients, and show leadership. The [real cost of weak English](/en/blog/real-cost-weak-english-mexican-companies/) goes far beyond missed words—it means lost deals, blocked promotions, and stalled careers. My coaching teaches you to handle meetings, negotiate with confidence, and work with people from different cultures. Explore all [coaching programs](/en/services/) or [take the quick assessment](/en/quiz/professional-services/) to find the right fit. With better English, you’ll stand out as a strong, professional leader.
 
 ### Start Your Journey Today
 

@@ -20,7 +20,7 @@ seo:
 
 ## Your English Is Good. These Mistakes Are Holding It Back.
 
-You present quarterly results to a US board. You negotiate contracts with Canadian suppliers. You lead daily standups with distributed teams across three time zones.
+You present quarterly results to a US board. You negotiate contracts with Canadian suppliers. You lead [daily standups](/en/blog/daily-standup-english/) with distributed teams across three time zones.
 
 Your English works. But "works" and "commands respect" are two different things.
 
@@ -142,7 +142,7 @@ Native English speakers in business—especially in tech and startups—write in
 >
 > ✅ <span class="speak-en">"Could you send the documents by Friday?"</span>
 
-**The principle:** In American business English, clarity and directness signal competence. Excessive formality signals distance or insecurity. Write like you'd talk to a respected colleague, not like you're drafting a legal contract.
+**The principle:** In American business English, clarity and directness signal competence. Excessive formality signals distance or insecurity. Write like you'd talk to a respected colleague, not like you're drafting a legal contract. This is especially true in async tools — see [Slack English: Write Like a Pro](/en/blog/slack-english-write-like-a-pro/) for the right register in fast-paced team channels.
 
 If you're navigating this in high-stakes executive contexts, [executive English coaching](/en/services/executive-english/) can help you find the right register for your specific industry and audience.
 

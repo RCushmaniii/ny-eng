@@ -20,7 +20,7 @@ seo:
 
 ## Why Small Talk Matters
 
-Picture this: you’re at a global conference, clutching a coffee, and the person next to you is a potential client. The silence feels heavy. Small talk isn’t just chit-chat—it’s your ticket to trust, collaboration, and career-defining opportunities. It’s also the bridge between [building foundational confidence](/en/blog/boost-eng-confidence/) and becoming someone people genuinely want to work with.  
+Picture this: you’re at a global conference, clutching a coffee, and the person next to you is a potential client. The silence feels heavy. Small talk isn’t just chit-chat—it’s your ticket to trust, collaboration, and career-defining opportunities. Master it and you’ll transition naturally into [leading meetings with confidence](/en/blog/lead-meeting-english-phrases/). It’s also the bridge between [building foundational confidence](/en/blog/boost-eng-confidence/) and becoming someone people genuinely want to work with.  
 I once coached Maria, an engineer from Brazil, who turned a networking freeze into a coffee chat with a senior VP using these strategies. Ready to make every moment count?
 
 ### What You’ll Learn

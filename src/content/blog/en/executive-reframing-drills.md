@@ -196,7 +196,7 @@ You didn't fill the silence with weakness. You upgraded it to weight.
 3. **Repeat it out loud** — match the tone and rhythm.
 4. **Use one drill per day** in a real meeting or conversation.
 
-This isn't memorization. It's muscle memory. Within two weeks, these patterns become your default.
+This isn't memorization. It's muscle memory. Within two weeks, these patterns become your default — especially powerful when combined with the [7 habits that build trust on video calls](/en/blog/executive-video-call/).
 
 ---
 

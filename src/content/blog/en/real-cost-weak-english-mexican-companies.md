@@ -207,7 +207,7 @@ Notice what these stories have in common:
 3. **The cost was immediate and measurable.** Not "soft" skills issues—actual P&L impact.
 4. **Prevention was straightforward and affordable.** Focused training would have paid for itself many times over.
 
-"Good enough" English works fine in low-pressure situations. It fails exactly when it matters most.
+"Good enough" English works fine in low-pressure situations. It fails exactly when it matters most — and the pattern is consistent across industries, from [IT managers losing global contracts](/en/blog/managers-lose-millions/) to logistics coordinators freezing on client calls.
 
 **Ready to prevent these losses in your organization?**
 
@@ -472,7 +472,7 @@ It's not about grammar. It's about:
 - Speaking at an even pace, with clear structure, and without hedging ("maybe," "I think," "possibly")
 - Making eye contact, using confident body language, and owning the message
 
-These are skills. They can be trained. But random English classes don't teach them.
+These are skills. They can be trained — as [one company's 12-month transformation](/en/blog/corporate-english-transformation-case-study/) proved. But random English classes don't teach them.
 
 **Ready to build your leadership pipeline?**
 
