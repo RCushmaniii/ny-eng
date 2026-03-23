@@ -308,7 +308,7 @@ const customHreflangs = [
           >
             {(() => {
               const prevObj = previousPost?.data?.featuredImage;
-              const prevUrl = (typeof prevObj === 'object' && prevObj?.src) ? prevObj.src : (previousPost?.data?.seo?.image ?? null);
+              const prevUrl = (typeof prevObj === 'object' && prevObj?.src) ? prevObj.src : (previousPost?.data?.seo?.image ?? previousPost?.data?.heroVideoPoster ?? null);
               return prevUrl ? (
                 <div class="w-full h-48 bg-gray-100" style="margin: 0; padding: 0; display: block;">
                   <img src={prevUrl} alt={previousPost.data.imageAlt || previousPost.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style="display: block; margin: 0; padding: 0;" />
@@ -337,7 +337,7 @@ const customHreflangs = [
           >
             {(() => {
               const nextObj = nextPost?.data?.featuredImage;
-              const nextUrl = (typeof nextObj === 'object' && nextObj?.src) ? nextObj.src : (nextPost?.data?.seo?.image ?? null);
+              const nextUrl = (typeof nextObj === 'object' && nextObj?.src) ? nextObj.src : (nextPost?.data?.seo?.image ?? nextPost?.data?.heroVideoPoster ?? null);
               return nextUrl ? (
                 <div class="w-full h-48 bg-gray-100" style="margin: 0; padding: 0; display: block;">
                   <img src={nextUrl} alt={nextPost.data.imageAlt || nextPost.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style="display: block; margin: 0; padding: 0;" />
@@ -373,7 +373,7 @@ const customHreflangs = [
                 >
                   {(() => {
                     const relObj = related?.data?.featuredImage;
-                    const relUrl = (typeof relObj === 'object' && relObj?.src) ? relObj.src : (related?.data?.seo?.image ?? null);
+                    const relUrl = (typeof relObj === 'object' && relObj?.src) ? relObj.src : (related?.data?.seo?.image ?? related?.data?.heroVideoPoster ?? null);
                     return relUrl ? (
                       <div class="w-full h-36 bg-gray-100" style="margin: 0; padding: 0; display: block;">
                         <img src={relUrl} alt={related.data.imageAlt || related.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style="display: block; margin: 0; padding: 0;" />
