@@ -64,14 +64,14 @@
     let currentAudio: HTMLAudioElement | null = null;
     let currentBtn: HTMLButtonElement | null = null;
 
-    // Determine API base — same origin in production, localhost in dev
-    const API_BASE = window.location.hostname === 'localhost'
-      ? `${window.location.origin}/api/tts/synthesize`
-      : '/api/tts/synthesize';
+    const API_BASE = '/api/tts/synthesize';
 
     const speakerSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>`;
 
     speakables.forEach(el => {
+      // Store the original text BEFORE adding the button
+      const originalText = (el.textContent || '').replace(/[""'']/g, '').trim();
+
       const btn = document.createElement('button');
       btn.className = 'speak-btn';
       btn.innerHTML = speakerSVG;
@@ -82,16 +82,17 @@
         e.preventDefault();
         e.stopPropagation();
 
-        // Stop any currently playing audio
+        // Stop any currently playing audio or browser speech
         if (currentAudio) {
           currentAudio.pause();
           currentAudio.currentTime = 0;
           currentBtn?.classList.remove('speaking');
         }
+        if ('speechSynthesis' in window) {
+          speechSynthesis.cancel();
+        }
 
-        // Clean the text: remove quotes, button text artifacts
-        let text = (el as HTMLElement).textContent || '';
-        text = text.replace(/[""'']/g, '').trim();
+        const text = originalText;
         if (!text) return;
 
         btn.classList.add('speaking');
@@ -102,18 +103,38 @@
           let audioUrl = audioCache.get(text);
 
           if (!audioUrl) {
-            // Fetch from Azure TTS API
+            console.log('[TTS] Fetching Azure Neural TTS for:', text.substring(0, 50) + '...');
+
             const response = await fetch(API_BASE, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ text, lang: 'en' }),
             });
 
-            if (!response.ok) throw new Error(`TTS API error: ${response.status}`);
+            console.log('[TTS] Response status:', response.status, 'Content-Type:', response.headers.get('content-type'));
+
+            if (!response.ok) {
+              const errorText = await response.text();
+              throw new Error(`TTS API error: ${response.status} — ${errorText}`);
+            }
+
+            const contentType = response.headers.get('content-type') || '';
+            if (!contentType.includes('audio')) {
+              const body = await response.text();
+              throw new Error(`Expected audio, got ${contentType}: ${body}`);
+            }
 
             const blob = await response.blob();
+            console.log('[TTS] Received audio blob:', blob.size, 'bytes, type:', blob.type);
+
+            if (blob.size < 100) {
+              throw new Error(`Audio blob too small: ${blob.size} bytes`);
+            }
+
             audioUrl = URL.createObjectURL(blob);
             audioCache.set(text, audioUrl);
+          } else {
+            console.log('[TTS] Using cached audio for:', text.substring(0, 50) + '...');
           }
 
           // Play the audio
@@ -121,22 +142,24 @@
           currentAudio = audio;
 
           audio.addEventListener('ended', () => {
+            console.log('[TTS] Audio playback completed (Azure Neural TTS)');
             btn.classList.remove('speaking');
             currentAudio = null;
             currentBtn = null;
           });
 
-          audio.addEventListener('error', () => {
+          audio.addEventListener('error', (err) => {
+            console.error('[TTS] Audio element error:', err);
             btn.classList.remove('speaking');
             currentAudio = null;
             currentBtn = null;
-            // Fall back to browser speech
-            fallbackSpeak(text, btn);
           });
 
           await audio.play();
+          console.log('[TTS] Playing Azure Neural TTS audio');
+
         } catch (err) {
-          console.warn('Azure TTS failed, falling back to browser speech:', err);
+          console.error('[TTS] Azure TTS failed, falling back to browser speech:', err);
           fallbackSpeak(text, btn);
         }
       });
@@ -146,6 +169,7 @@
 
     /** Fallback to browser Web Speech API if Azure TTS is unavailable */
     function fallbackSpeak(text: string, btn: HTMLButtonElement) {
+      console.warn('[TTS] FALLBACK: Using browser SpeechSynthesis (not Azure)');
       if (!('speechSynthesis' in window)) {
         btn.classList.remove('speaking');
         return;

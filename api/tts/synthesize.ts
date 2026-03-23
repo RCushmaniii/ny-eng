@@ -22,8 +22,8 @@ const allowedOrigins = [
 
 // Default voices per language
 const DEFAULT_VOICES: Record<string, string> = {
-  en: "en-US-AndrewNeural",
-  es: "es-MX-JorgeNeural",
+  en: "en-US-AvaNeural",
+  es: "es-MX-DaliaNeural",
 };
 
 // Allowed voices (whitelist to prevent abuse)
