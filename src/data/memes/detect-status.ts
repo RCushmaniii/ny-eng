@@ -17,7 +17,7 @@ import type { MemeEntry, MemeStatus } from "./types";
 
 const PUBLIC_DIR = join(process.cwd(), "public");
 
-const SUPPORTED_EXTENSIONS = ["png", "jpg", "jpeg", "webp"];
+const SUPPORTED_EXTENSIONS = ["webp", "png", "jpg", "jpeg"];
 
 /** Check if an image file exists for a given meme + language */
 function imageExists(
