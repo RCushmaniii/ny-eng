@@ -43,6 +43,7 @@ const blogTranslations = {
   "us-interview-prep": "/es/blog/entrevista-trabajo-empresa-americana/",
   "slack-english-write-like-a-pro": "/es/blog/ingles-para-slack-profesional/",
   "executive-reframing-drills": "/es/blog/ejercicios-reformulacion-ejecutiva/",
+  "why-you-struggle-speaking-english-in-meetings": "/es/blog/por-que-te-cuesta-hablar-ingles-en-reuniones/",
 };
 
 // Reverse map (ES slug -> EN path)
