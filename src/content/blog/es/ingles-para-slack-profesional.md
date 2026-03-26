@@ -15,7 +15,7 @@ translations:
 publish: true
 seo:
   title: "Mensajes Profesionales en Slack en Inglés para Equipos Tech"
-  description: "Plantillas reales de mensajes en Slack usadas por ingenieros senior en empresas de EE.UU. Deja de sonar como robot y empieza a escribir como un profesional nativo."
+  description: "Plantillas reales de mensajes en Slack usadas por ingenieros senior en empresas de EE.UU. Deja de sonar como robot y escribe como un profesional nativo."
 ---
 
 ## Tus Mensajes en Slack Te Están Delatando

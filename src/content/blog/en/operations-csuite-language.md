@@ -9,8 +9,8 @@ featuredImage: "./images/operations-csuite-language.webp"
 imageAlt: "Operations executive presenting confidently in a boardroom with throughput metrics, KPI dashboard, and logistics flow charts on screens behind him"
 ttsVoice: "en-US-AndrewNeural"
 seo:
-  title: "Operations Executive Language — Replace Problem Reporting with Control Language | NY English Teacher"
-  description: "18 before-and-after drills for operations leaders. Replace reactive problem language with executive control language that signals stability, oversight, and forward momentum."
+  title: "Operations Executive Language for C-Suite Leaders"
+  description: "18 before-and-after drills for operations leaders. Replace reactive problem language with executive control language that signals stability and oversight."
 translations:
   en: "/en/blog/operations-csuite-language/"
   es: "/es/blog/lenguaje-ejecutivo-operaciones/"

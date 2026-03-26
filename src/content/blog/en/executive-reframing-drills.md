@@ -8,7 +8,7 @@ audience: "Senior professionals, directors, and executives who lead in English"
 featuredImage: "./images/executive-reframing-drills.webp"
 imageAlt: "Professional woman confidently presenting with a tablet in a boardroom, leading an executive meeting with data charts on screen behind her"
 seo:
-  title: "Executive Reframing Drills — Precision Language for Leaders | NY English Teacher"
+  title: "Executive Reframing Drills: Precision Language"
   description: "14 real-time language drills for executives. Replace vague, emotional phrasing with high-authority language that commands respect in meetings."
 translations:
   en: "/en/blog/executive-reframing-drills/"

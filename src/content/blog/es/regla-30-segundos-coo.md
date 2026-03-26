@@ -9,7 +9,7 @@ featuredImage: "./images/coo-30-second-rule.webp"
 imageAlt: "Ejecutivo seguro en sala de juntas con un cronometro en la mesa y el horizonte de Nueva York detras"
 ttsVoice: "en-US-AndrewNeural"
 seo:
-  title: "Regla 30 Segundos del COO — Respuestas Ejecutivas Bajo Presion | NY English Teacher"
+  title: "Regla de 30 Segundos del COO Bajo Presión"
   description: "9 escenarios reales de presion con marcos de respuesta de 30 segundos. Deja de reaccionar — empieza a dominar la sala como un COO."
 translations:
   en: "/en/blog/coo-30-second-rule/"

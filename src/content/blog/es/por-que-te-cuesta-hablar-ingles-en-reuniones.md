@@ -13,8 +13,8 @@ translations:
   en: "/en/blog/why-you-struggle-speaking-english-in-meetings/"
 publish: true
 seo:
-  title: "Por Qué Te Cuesta Hablar Inglés en Reuniones (Aunque Sepas Inglés)"
-  description: "¿Te trabas al hablar inglés en reuniones? Descubre la verdadera razón por la que los profesionales se bloquean — y cómo solucionarlo con lenguaje estructurado que puedes usar de inmediato."
+  title: "Por Qué Te Cuesta Hablar Inglés en Reuniones"
+  description: "¿Te trabas al hablar inglés en reuniones? Descubre por qué los profesionales se bloquean — y cómo solucionarlo con lenguaje estructurado que puedes usar ya."
 ---
 
 La mayoría de los profesionales no tienen un problema con el inglés.

@@ -9,7 +9,7 @@ featuredImage: "./images/coo-30-second-rule.webp"
 imageAlt: "Confident executive in a boardroom with a countdown timer on the table and the New York City skyline behind him"
 ttsVoice: "en-US-AndrewNeural"
 seo:
-  title: "COO 30-Second Rule — Executive Pressure Responses for Operations Leaders | NY English Teacher"
+  title: "COO 30-Second Rule: Respond Under Pressure"
   description: "9 real pressure scenarios with 30-second executive response frameworks. Stop reacting — start commanding the room like a COO."
 translations:
   en: "/en/blog/coo-30-second-rule/"

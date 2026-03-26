@@ -13,8 +13,8 @@ translations:
   es: "/es/blog/por-que-te-cuesta-hablar-ingles-en-reuniones/"
 publish: true
 seo:
-  title: "Why You Struggle to Speak English in Meetings (Even If You Know English)"
-  description: "Struggling to speak English in meetings? Learn the real reason professionals freeze — and how to fix it with simple, structured language you can use immediately."
+  title: "Why You Struggle to Speak English in Meetings"
+  description: "Struggling to speak English in meetings? Learn the real reason professionals freeze — and how to fix it with structured language you can use immediately."
 ---
 
 Most professionals don't actually struggle with English.

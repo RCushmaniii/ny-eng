@@ -12,8 +12,8 @@ imageAlt: "Ejecutivo de operaciones presentando con confianza en una sala de jun
 publish: true
 ttsVoice: "en-US-AndrewNeural"
 seo:
-  title: "Lenguaje Ejecutivo para Operaciones — Reemplaza el Lenguaje de Problemas con Lenguaje de Control | NY English Teacher"
-  description: "18 ejercicios antes-y-después para líderes de operaciones. Reemplaza el lenguaje reactivo con lenguaje ejecutivo de control que señala estabilidad, supervisión y avance."
+  title: "Lenguaje Ejecutivo para Líderes de Operaciones"
+  description: "18 ejercicios antes-y-después para líderes de operaciones. Reemplaza el lenguaje reactivo con lenguaje ejecutivo de control que señala estabilidad y supervisión."
 translations:
   en: "/en/blog/operations-csuite-language/"
   es: "/es/blog/lenguaje-ejecutivo-operaciones/"

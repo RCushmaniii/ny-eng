@@ -18,7 +18,23 @@ const __dirname = dirname(__filename);
 const rootDir = join(__dirname, "..");
 
 console.log("\n" + "=".repeat(80));
-console.log("🔍 STEP 1: JSON Resource Audit");
+console.log("STEP 0: Blog SEO Validation");
+console.log("=".repeat(80));
+
+try {
+  console.log("Checking blog post SEO fields...\n");
+  execSync("node scripts/validate-blog-seo.mjs", {
+    cwd: rootDir,
+    stdio: "inherit",
+  });
+} catch (error) {
+  console.error("\nBlog SEO validation failed!");
+  console.error("Fix the issues above before building.");
+  process.exit(1);
+}
+
+console.log("\n" + "=".repeat(80));
+console.log("STEP 1: JSON Resource Audit");
 console.log("=".repeat(80));
 
 try {

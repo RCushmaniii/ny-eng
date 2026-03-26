@@ -11,7 +11,7 @@ featuredImage: "./images/executive-reframing-drills.webp"
 imageAlt: "Mujer profesional presentando con confianza con una tablet en una sala de juntas, liderando una reunión ejecutiva con gráficos de datos en pantalla"
 publish: true
 seo:
-  title: "Ejercicios de Reformulación Ejecutiva — Lenguaje de Precisión Para Líderes | NY English Teacher"
+  title: "Ejercicios de Reformulación Ejecutiva para Líderes"
   description: "14 ejercicios de lenguaje en tiempo real para ejecutivos. Reemplaza frases vagas y emocionales con lenguaje de alta autoridad que impone respeto en reuniones."
 translations:
   en: "/en/blog/executive-reframing-drills/"
