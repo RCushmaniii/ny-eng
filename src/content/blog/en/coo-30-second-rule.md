@@ -6,7 +6,7 @@ categories: ["Executive English", "High-Impact Communication"]
 readingTime: "9 min read"
 audience: "COOs, VPs of Operations, operations directors, and supply chain leaders who present under pressure in English"
 featuredImage: "./images/coo-30-second-rule.webp"
-imageAlt: "Operations executive responding confidently under pressure in a high-stakes boardroom meeting"
+imageAlt: "Confident executive in a boardroom with a countdown timer on the table and the New York City skyline behind him"
 ttsVoice: "en-US-AndrewNeural"
 seo:
   title: "COO 30-Second Rule — Executive Pressure Responses for Operations Leaders | NY English Teacher"

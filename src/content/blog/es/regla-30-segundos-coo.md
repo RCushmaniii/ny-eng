@@ -6,7 +6,7 @@ categories: ["Executive English", "High-Impact Communication"]
 readingTime: "9 min read"
 audience: "COOs, VPs de Operaciones, directores de operaciones y lideres de cadena de suministro que presentan bajo presion en ingles"
 featuredImage: "./images/coo-30-second-rule.webp"
-imageAlt: "Ejecutivo de operaciones respondiendo con confianza bajo presion en una reunion de alta direccion"
+imageAlt: "Ejecutivo seguro en sala de juntas con un cronometro en la mesa y el horizonte de Nueva York detras"
 ttsVoice: "en-US-AndrewNeural"
 seo:
   title: "Regla 30 Segundos del COO — Respuestas Ejecutivas Bajo Presion | NY English Teacher"
