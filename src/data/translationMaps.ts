@@ -126,8 +126,8 @@ export function getAlternateLanguageUrl(
       const categorySlug = cleanPath.split("/").filter(Boolean).pop();
       if (cleanPath.startsWith("/en/category/") && categorySlug) {
         const esSlug = categoryMap[categorySlug];
-        return esSlug ? `/es/category/${esSlug}/` : null;
-      } else if (cleanPath.startsWith("/es/category/") && categorySlug) {
+        return esSlug ? `/es/categoria/${esSlug}/` : null;
+      } else if (cleanPath.startsWith("/es/categoria/") && categorySlug) {
         const enSlug = reverseCategoryMap[categorySlug];
         return enSlug ? `/en/category/${enSlug}/` : null;
       }
@@ -152,7 +152,7 @@ export function getPageType(
   if (url.includes("/blog/") && url !== "/en/blog/" && url !== "/es/blog/") {
     return "blog";
   }
-  if (url.includes("/category/")) {
+  if (url.includes("/category/") || url.includes("/categoria/")) {
     return "category";
   }
   if (staticPageMap[url] || reverseStaticPageMap[url]) {

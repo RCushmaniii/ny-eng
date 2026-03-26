@@ -205,7 +205,7 @@ Esto no es memorización. Es memoria muscular. En dos semanas, estos patrones se
 
 ## ¿Listo Para Ir Más Profundo?
 
-Estos ejercicios son una muestra de lo que construimos en las [sesiones de coaching ejecutivo](/es/servicios/ingles-ejecutivo/). Cada sesión está personalizada para tu rol, tu industria y las situaciones reales que enfrentas.
+Estos ejercicios son una muestra de lo que construimos en las [sesiones de coaching ejecutivo](/es/servicios/ingles-para-ejecutivos/). Cada sesión está personalizada para tu rol, tu industria y las situaciones reales que enfrentas.
 
 [Agenda una sesión estratégica gratuita](/es/reservar/) y juntos identificaremos exactamente dónde tu inglés te está ayudando — y dónde te está frenando.
 

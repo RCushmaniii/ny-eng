@@ -367,7 +367,7 @@ Si tu equipo nota la diferencia—y la van a notar—es señal de que tu comunic
 
 Para desarrolladores que quieren mejorar sistemáticamente su comunicación en standups, planning y retros, ofrezco [Coaching de Inglés para Tecnología](/es/servicios/ingles-para-tecnologia/) diseñado específicamente para ingenieros nearshore que trabajan en sprint teams de EE.UU. Practicamos con escenarios reales—tus standups reales, tus PRs reales, tus retros reales—no ejercicios de libro de texto.
 
-**[Agenda una sesión de estrategia gratuita](/es/book/)** y asegurémonos de que tu inglés esté al nivel de tu código.
+**[Agenda una sesión de estrategia gratuita](/es/reservar/)** y asegurémonos de que tu inglés esté al nivel de tu código.
 
 ---
 

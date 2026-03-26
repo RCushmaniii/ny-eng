@@ -56,7 +56,7 @@ export const routes: RoutesByLocale = {
       privacy: "/es/legal/privacy-policy/",
       terms: "/es/legal/terms-of-service/",
     },
-    category: (slug: string) => `/es/category/${slug}/`,
+    category: (slug: string) => `/es/categoria/${slug}/`,
     blogPage: (n: number) => (n === 1 ? "/es/blog/" : `/es/blog/${n}/`),
     post: (slug: string) => `/es/blog/${slug}/`,
   },

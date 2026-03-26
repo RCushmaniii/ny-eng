@@ -298,9 +298,9 @@ En dos semanas, el lenguaje de contención se convierte en tu modo predeterminad
 
 ## ¿Listo Para Sonar Como Si Pertenecieras a la Sala?
 
-Estos ejercicios son una muestra de lo que construimos en las [sesiones de coaching ejecutivo](/es/services/executive-english/). Cada sesión se personaliza para tu rol, tu industria y las situaciones reales que enfrentas — desde presentaciones ante la junta hasta negociaciones con proveedores y reuniones interfuncionales.
+Estos ejercicios son una muestra de lo que construimos en las [sesiones de coaching ejecutivo](/es/servicios/ingles-para-ejecutivos/). Cada sesión se personaliza para tu rol, tu industria y las situaciones reales que enfrentas — desde presentaciones ante la junta hasta negociaciones con proveedores y reuniones interfuncionales.
 
-[Agenda una sesión estratégica gratuita](/es/book/) y te ayudaremos a identificar exactamente dónde tu inglés está proyectando control — y dónde está socavando tu autoridad.
+[Agenda una sesión estratégica gratuita](/es/reservar/) y te ayudaremos a identificar exactamente dónde tu inglés está proyectando control — y dónde está socavando tu autoridad.
 
 ### Sigue Leyendo
 
