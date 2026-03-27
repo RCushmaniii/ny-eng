@@ -55,6 +55,36 @@ const blogTranslationsReverse = Object.fromEntries(
   })
 );
 
+// Category translations (EN slug -> ES slug)
+const categoryTranslations = {
+  "startup-founders": "ingles-para-fundadores-de-startups",
+  "tech-english": "ingles-para-tecnologia",
+  "logistics-english": "ingles-para-logistica",
+  "professional-english": "ingles-para-profesionales",
+  "high-stakes-english": "ingles-para-presentaciones",
+  "business-english": "ingles-para-negocios",
+  "high-impact-communication": "comunicacion-de-alto-impacto",
+  "career-leadership": "carrera-liderazgo",
+  "english-coaching": "coaching-en-ingles",
+  "executive-english": "ingles-ejecutivo",
+};
+
+// Reverse category map (ES slug -> EN slug)
+const categoryTranslationsReverse = Object.fromEntries(
+  Object.entries(categoryTranslations).map(([en, es]) => [es, en])
+);
+
+// Testimonial industry slugs (same slug used in both languages, different path prefix)
+const testimonialIndustries = [
+  "startup-founders",
+  "tech-english",
+  "logistics-english",
+  "professional-english",
+  "high-stakes-english",
+  "executive-english",
+  "all",
+];
+
 // __dirname for ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -125,9 +155,9 @@ export default defineConfig({
       customPages: [],
 
       // Filter out unwanted pages
-      // INCLUDE: blog index, blog posts, primary testimonial pages, services,
-      //          resources, booking/contact/assessment, language homepages, legal pages
-      // EXCLUDE: category archives, filtered testimonial pages, quiz results
+      // INCLUDE: blog index, blog posts, category archives, testimonial subpages,
+      //          services, resources, booking/contact/assessment, language homepages, legal pages
+      // EXCLUDE: quiz results, pagination, admin, dev, thank-you, chat
       filter: (pageUrl) => {
         const p = new URL(pageUrl).pathname;
 
@@ -144,17 +174,6 @@ export default defineConfig({
           (prefix) => p === prefix || p.startsWith(prefix),
         );
 
-        // Exclude category archive pages (both EN and ES, including /es/category/ legacy paths)
-        const isCategoryPage =
-          p.match(/^\/(en|es)\/category\//) || p.match(/^\/es\/categoria\//);
-
-        // Exclude filtered testimonial pages (subpages, not root)
-        // Keep: /en/testimonials/ and /es/testimonios/
-        // Exclude: /en/testimonials/tech/, /es/testimonios/tech/, etc.
-        const isFilteredTestimonialPage =
-          p.match(/^\/en\/testimonials\/[^\/]+\/?$/) ||
-          p.match(/^\/es\/testimonios\/[^\/]+\/?$/);
-
         return (
           !p.includes("/api/") &&
           !p.includes("/_") &&
@@ -170,8 +189,6 @@ export default defineConfig({
           !p.includes("[") &&
           !p.includes("#") &&
           !isRedirect &&
-          !isCategoryPage && // Exclude all category archive pages
-          !isFilteredTestimonialPage && // Exclude filtered testimonial pages (keep root only)
           // Prevent duplicate language prefixes
           !p.match(/\/(en|es)\/.*\/(en|es)\//) &&
           // Exclude backup files
@@ -249,6 +266,52 @@ export default defineConfig({
           }
         }
 
+        // Handle category pages
+        if (links.length === 0) {
+          const enCatMatch = u.pathname.match(/^\/en\/category\/([^\/]+)\/$/);
+          const esCatMatch = u.pathname.match(/^\/es\/categoria\/([^\/]+)\/$/);
+
+          if (enCatMatch) {
+            const enSlug = enCatMatch[1];
+            const esSlug = categoryTranslations[enSlug];
+            if (esSlug) {
+              links = [
+                { rel: "alternate", hreflang: "en-US", url: `${SITE}/en/category/${enSlug}/` },
+                { rel: "alternate", hreflang: "es-MX", url: `${SITE}/es/categoria/${esSlug}/` },
+              ];
+            }
+          } else if (esCatMatch) {
+            const esSlug = esCatMatch[1];
+            const enSlug = categoryTranslationsReverse[esSlug];
+            if (enSlug) {
+              links = [
+                { rel: "alternate", hreflang: "en-US", url: `${SITE}/en/category/${enSlug}/` },
+                { rel: "alternate", hreflang: "es-MX", url: `${SITE}/es/categoria/${esSlug}/` },
+              ];
+            }
+          }
+        }
+
+        // Handle testimonial subpages (same slug, different path prefix)
+        if (links.length === 0) {
+          const enTestMatch = u.pathname.match(/^\/en\/testimonials\/([^\/]+)\/$/);
+          const esTestMatch = u.pathname.match(/^\/es\/testimonios\/([^\/]+)\/$/);
+
+          if (enTestMatch && testimonialIndustries.includes(enTestMatch[1])) {
+            const slug = enTestMatch[1];
+            links = [
+              { rel: "alternate", hreflang: "en-US", url: `${SITE}/en/testimonials/${slug}/` },
+              { rel: "alternate", hreflang: "es-MX", url: `${SITE}/es/testimonios/${slug}/` },
+            ];
+          } else if (esTestMatch && testimonialIndustries.includes(esTestMatch[1])) {
+            const slug = esTestMatch[1];
+            links = [
+              { rel: "alternate", hreflang: "en-US", url: `${SITE}/en/testimonials/${slug}/` },
+              { rel: "alternate", hreflang: "es-MX", url: `${SITE}/es/testimonios/${slug}/` },
+            ];
+          }
+        }
+
         // If still no links from i18n or blog translations, use existing item.links
         if (links.length === 0 && item.links && item.links.length > 0) {
           links = item.links.map((alt) => {
@@ -308,6 +371,12 @@ export default defineConfig({
           priority = 0.3;
           changefreq = "yearly";
           lastmod = new Date("2025-09-01"); // Legal pages rarely change
+        } else if (
+          u.pathname.match(/^\/(en\/category|es\/categoria)\//)
+        ) {
+          priority = 0.5;
+          changefreq = "weekly";
+          lastmod = new Date("2026-03-25"); // Category pages update with new posts
         } else if (
           u.pathname.includes("/testimonial") ||
           u.pathname.includes("/testimonio")

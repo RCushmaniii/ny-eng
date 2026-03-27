@@ -6,8 +6,12 @@ interface Props {
 const { lang } = Astro.props;
 ---
 
-<!-- Chatbot widget from ny-ai-chatbot repo -->
-<script
-  is:inline
-  src="https://ny-ai-chatbot.vercel.app/api/embed?id=default"
-  data-language={lang}></script>
+<!-- Chatbot widget from ny-ai-chatbot repo — lazy-loaded after page is interactive -->
+<script is:inline define:vars={{ chatLang: lang }}>
+  window.addEventListener('load', function() {
+    var s = document.createElement('script');
+    s.src = 'https://ny-ai-chatbot.vercel.app/api/embed?id=default';
+    s.dataset.language = chatLang;
+    document.body.appendChild(s);
+  });
+</script>

@@ -13,7 +13,7 @@ publish: true
 ttsVoice: "en-US-AndrewNeural"
 seo:
   title: "Lenguaje Ejecutivo para Líderes de Operaciones"
-  description: "18 ejercicios antes-y-después para líderes de operaciones. Reemplaza el lenguaje reactivo con lenguaje ejecutivo de control que señala estabilidad y supervisión."
+  description: "18 ejercicios antes-y-después para líderes de operaciones. Reemplaza el lenguaje reactivo con lenguaje ejecutivo de control que señala estabilidad."
 translations:
   en: "/en/blog/operations-csuite-language/"
   es: "/es/blog/lenguaje-ejecutivo-operaciones/"

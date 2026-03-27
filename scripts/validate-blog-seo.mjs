@@ -152,8 +152,8 @@ async function main() {
     // Check description length
     const effectiveDesc = data.seo?.description || data.excerpt || "";
     if (effectiveDesc.length > MAX_DESC_LENGTH) {
-      warnings.push(
-        `${relPath}: Description long (${effectiveDesc.length}/${MAX_DESC_LENGTH} chars)`
+      errors.push(
+        `${relPath}: Description too long (${effectiveDesc.length}/${MAX_DESC_LENGTH} chars): "${effectiveDesc.slice(0, 80)}..."`
       );
     }
     if (effectiveDesc.length > 0 && effectiveDesc.length < MIN_DESC_LENGTH) {

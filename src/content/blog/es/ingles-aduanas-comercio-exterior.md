@@ -5,7 +5,7 @@ publishDate: "2026-03-04"
 lastmod: "2026-03-04"
 categories:
   - "Inglés para Logística"
-  - "Inglés de Negocios"
+  - "Inglés para Negocios"
 readingTime: "6 min de lectura"
 audience: "Para profesionales de logística en comercio transfronterizo"
 featuredImage: "./images/customs-freight-english.webp"
