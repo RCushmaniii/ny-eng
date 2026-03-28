@@ -3,6 +3,11 @@
 Comprehensive JSON Resource Audit System
 Validates schema compliance, language consistency, and bilingual parity
 """
+import sys
+import io
+# Fix Windows console encoding for emoji/Unicode output
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
 import json
 import re

@@ -1,14 +1,18 @@
 /**
- * Blog SEO Validator
+ * Blog SEO Validator (Hardened)
  *
- * Pre-build QA gate that checks all blog posts for SEO compliance:
- * - Meta title ≤60 characters
- * - Meta description 120–160 characters
- * - Required frontmatter fields present
- * - No " | NY English Teacher" suffix in titles (Google adds site name automatically)
+ * Pre-build QA gate that BLOCKS builds when blog posts have SEO issues.
+ *
+ * Rules enforced:
+ * 1. Rendered <title> tag (seo.title || title) must be <= 60 chars
+ * 2. If title > 60 chars, seo.title MUST exist (ERROR, not warning)
+ * 3. Rendered meta description (seo.description || excerpt) must be 120-160 chars
+ * 4. If excerpt > 160 chars, seo.description MUST exist (ERROR, not warning)
+ * 5. No " | NY English Teacher" suffix in titles
+ * 6. Required frontmatter fields: title, excerpt, publishDate, categories
  *
  * Run: node scripts/validate-blog-seo.mjs
- * Exits with code 1 if any issues found.
+ * Exits with code 1 if any errors found.
  */
 
 import { readdir, readFile } from "fs/promises";
@@ -132,34 +136,69 @@ async function main() {
       }
     }
 
-    // Determine the effective title (seo.title takes precedence)
-    const effectiveTitle = data.seo?.title || data.title || "";
+    const rawTitle = data.title || "";
+    const rawExcerpt = data.excerpt || "";
+    const hasSeoTitle = !!(data.seo?.title);
+    const hasSeoDesc = !!(data.seo?.description);
 
-    // Check title length
+    // --- TITLE CHECKS ---
+
+    // Rule: If title > 60 chars, seo.title MUST exist
+    if (rawTitle.length > MAX_TITLE_LENGTH && !hasSeoTitle) {
+      errors.push(
+        `${relPath}: title is ${rawTitle.length} chars (>${MAX_TITLE_LENGTH}) and NO seo.title override exists. ` +
+        `Add an seo.title field <=60 chars. Current title: "${rawTitle}"`
+      );
+    }
+
+    // Rule: The effective rendered title must be <= 60 chars
+    const effectiveTitle = data.seo?.title || rawTitle;
     if (effectiveTitle.length > MAX_TITLE_LENGTH) {
       errors.push(
-        `${relPath}: Title too long (${effectiveTitle.length}/${MAX_TITLE_LENGTH} chars): "${effectiveTitle}"`
+        `${relPath}: Rendered title too long (${effectiveTitle.length}/${MAX_TITLE_LENGTH} chars): "${effectiveTitle}"`
       );
     }
 
-    // Check for manual site name suffix
+    // Rule: No manual site name suffix
     if (effectiveTitle.includes("| NY English Teacher")) {
       errors.push(
-        `${relPath}: Title contains "| NY English Teacher" — Google adds site name automatically, remove it`
+        `${relPath}: Title contains "| NY English Teacher" -- Google adds site name automatically, remove it`
       );
     }
 
-    // Check description length
-    const effectiveDesc = data.seo?.description || data.excerpt || "";
-    if (effectiveDesc.length > MAX_DESC_LENGTH) {
+    // Rule: seo.title should not be empty if it exists
+    if (data.seo && "title" in data.seo && !data.seo.title) {
+      errors.push(`${relPath}: seo.title exists but is empty`);
+    }
+
+    // --- DESCRIPTION CHECKS ---
+
+    // Rule: If excerpt > 160 chars, seo.description MUST exist
+    if (rawExcerpt.length > MAX_DESC_LENGTH && !hasSeoDesc) {
       errors.push(
-        `${relPath}: Description too long (${effectiveDesc.length}/${MAX_DESC_LENGTH} chars): "${effectiveDesc.slice(0, 80)}..."`
+        `${relPath}: excerpt is ${rawExcerpt.length} chars (>${MAX_DESC_LENGTH}) and NO seo.description override exists. ` +
+        `Add an seo.description field 120-160 chars. Current excerpt: "${rawExcerpt.slice(0, 80)}..."`
       );
     }
+
+    // Rule: The effective rendered description must be <= 160 chars
+    const effectiveDesc = data.seo?.description || rawExcerpt;
+    if (effectiveDesc.length > MAX_DESC_LENGTH) {
+      errors.push(
+        `${relPath}: Rendered description too long (${effectiveDesc.length}/${MAX_DESC_LENGTH} chars): "${effectiveDesc.slice(0, 80)}..."`
+      );
+    }
+
+    // Rule: Description should be >= 120 chars (warning, not error)
     if (effectiveDesc.length > 0 && effectiveDesc.length < MIN_DESC_LENGTH) {
       warnings.push(
-        `${relPath}: Description short (${effectiveDesc.length}/${MIN_DESC_LENGTH} chars) — aim for 120-160`
+        `${relPath}: Description short (${effectiveDesc.length}/${MIN_DESC_LENGTH} chars) -- aim for 120-160`
       );
+    }
+
+    // Rule: seo.description should not be empty if it exists
+    if (data.seo && "description" in data.seo && !data.seo.description) {
+      errors.push(`${relPath}: seo.description exists but is empty`);
     }
   }
 
