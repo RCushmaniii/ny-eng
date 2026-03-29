@@ -50,7 +50,7 @@ Lee cada palabra en voz alta. Exagera la corrección al principio — naturalmen
 
 Estas son las palabras que aparecen constantemente en el inglés de negocios. Si corriges solo estas 15, sonarás notablemente más profesional.
 
-### 1. <span class="speak-en">Comfortable</span>
+### 1. <span class="speak-en" data-say="comfterbull">Comfortable</span>
 
 - **Error común**: com-FOR-tah-bleh (4 sílabas, énfasis en la segunda)
 - **Correcto**: COMF-ter-bull (3 sílabas, énfasis en la primera)
@@ -62,7 +62,7 @@ Estas son las palabras que aparecen constantemente en el inglés de negocios. Si
 - **Correcto**: dih-TUR-min
 - **Por qué pasa**: El español pone estrés igual en cada sílaba. El inglés aplasta las sílabas átonas.
 
-### 3. <span class="speak-en">Colleague</span>
+### 3. <span class="speak-en" data-say="CAHL-eeg">Colleague</span>
 
 - **Error común**: co-LEE-gah o co-LEE-goo
 - **Correcto**: CAHL-eeg
@@ -74,7 +74,7 @@ Estas son las palabras que aparecen constantemente en el inglés de negocios. Si
 - **Correcto**: STRAT-uh-jee
 - **Por qué pasa**: El español agrega una vocal antes de grupos "st-" ("estrategia"). El inglés empieza fuerte con "str."
 
-### 5. <span class="speak-en">Schedule</span>
+### 5. <span class="speak-en" data-say="SKEJ-ool">Schedule</span>
 
 - **Error común**: ess-keh-DYOO-leh o SHED-yool
 - **Correcto**: SKEJ-ool (americano) o SHED-yool (británico)
@@ -134,7 +134,7 @@ Estas son las palabras que aparecen constantemente en el inglés de negocios. Si
 - **Correcto**: eye-DEE-uh
 - **Por qué pasa**: La "i" al inicio es un diptongo en inglés — "eye," no "ee."
 
-### 15. <span class="speak-en">Executive</span>
+### 15. <span class="speak-en" data-say="ig-ZEK-yuh-tiv">Executive</span>
 
 - **Error común**: ex-eh-coo-TEE-voh
 - **Correcto**: ig-ZEK-yuh-tiv
@@ -146,7 +146,7 @@ Estas son las palabras que aparecen constantemente en el inglés de negocios. Si
 
 Cuando presentas a liderazgo o clientes, estas son las palabras que atrapan incluso a hablantes avanzados.
 
-### 16. <span class="speak-en">Hierarchy</span>
+### 16. <span class="speak-en" data-say="HY-uh-rar-kee">Hierarchy</span>
 
 - **Error común**: hee-er-AR-kee-ah
 - **Correcto**: HY-uh-rar-kee
@@ -326,13 +326,13 @@ Estas son las palabras donde la ortografía no te da ninguna pista. Tienes que a
 - **Correcto**: SWEET
 - **Por qué pasa**: Parece que debería rimar con "cute," pero rima con "sweet."
 
-### 43. <span class="speak-en">Queue</span>
+### 43. <span class="speak-en" data-say="KYOO">Queue</span>
 
 - **Error común**: KEH-oo-eh o koo-EH
 - **Correcto**: KYOO (suena exactamente como la letra "Q")
 - **Por qué pasa**: Cuatro letras silenciosas. Solo la primera importa.
 
-### 44. <span class="speak-en">Colonel</span>
+### 44. <span class="speak-en" data-say="KUR-nul">Colonel</span>
 
 - **Error común**: co-lo-NEL
 - **Correcto**: KUR-nul
@@ -350,25 +350,25 @@ Estas son las palabras donde la ortografía no te da ninguna pista. Tienes que a
 - **Correcto**: rih-SEET
 - **Por qué pasa**: La "p" es silenciosa. Como "debt" tiene una "b" silenciosa.
 
-### 47. <span class="speak-en">Subtle</span>
+### 47. <span class="speak-en" data-say="SUT-ul">Subtle</span>
 
 - **Error común**: SOO-bleh o SUB-tel
 - **Correcto**: SUT-ul
 - **Por qué pasa**: "B" silenciosa. Dos sílabas, no tres.
 
-### 48. <span class="speak-en">Chaos</span>
+### 48. <span class="speak-en" data-say="KAY-oss">Chaos</span>
 
 - **Error común**: CHAH-os
 - **Correcto**: KAY-oss
 - **Por qué pasa**: La "ch" se pronuncia como una "k" fuerte, siguiendo el origen griego. Mismo patrón que "chemistry."
 
-### 49. <span class="speak-en">Entrepreneur</span>
+### 49. <span class="speak-en" data-say="on-truh-pruh-NUR">Entrepreneur</span>
 
 - **Error común**: en-treh-preh-NER
 - **Correcto**: on-truh-pruh-NUR
 - **Por qué pasa**: Es una palabra francesa que el inglés apenas adaptó. La primera sílaba es nasal ("on"), no "en."
 
-### 50. <span class="speak-en">Worcestershire</span> (como en la salsa)
+### 50. <span class="speak-en" data-say="WOOS-ter-sher">Worcestershire</span> (como en la salsa)
 
 - **Error común**: wor-CHES-ter-shy-reh
 - **Correcto**: WOOS-ter-sher

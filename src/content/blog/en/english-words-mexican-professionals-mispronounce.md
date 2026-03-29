@@ -50,7 +50,7 @@ Read each word out loud. Exaggerate the correction at first — you'll naturally
 
 These are the words that come up constantly in business English. If you fix just these 15, you'll sound noticeably more polished.
 
-### 1. <span class="speak-en">Comfortable</span>
+### 1. <span class="speak-en" data-say="comfterbull">Comfortable</span>
 
 - **Common mistake**: com-FOR-tah-bleh (4 syllables, stress on second)
 - **Correct**: COMF-ter-bull (3 syllables, stress on first)
@@ -62,7 +62,7 @@ These are the words that come up constantly in business English. If you fix just
 - **Correct**: dih-TUR-min
 - **Why it happens**: Spanish puts equal stress on each syllable. English crushes the unstressed ones.
 
-### 3. <span class="speak-en">Colleague</span>
+### 3. <span class="speak-en" data-say="CAHL-eeg">Colleague</span>
 
 - **Common mistake**: co-LEE-gah or co-LEE-goo
 - **Correct**: CAHL-eeg
@@ -74,7 +74,7 @@ These are the words that come up constantly in business English. If you fix just
 - **Correct**: STRAT-uh-jee
 - **Why it happens**: Spanish adds a vowel before "st-" clusters ("estrategia"). English starts hard on the "str."
 
-### 5. <span class="speak-en">Schedule</span>
+### 5. <span class="speak-en" data-say="SKEJ-ool">Schedule</span>
 
 - **Common mistake**: ess-keh-DYOO-leh or SHED-yool
 - **Correct**: SKEJ-ool (American) or SHED-yool (British)
@@ -134,7 +134,7 @@ These are the words that come up constantly in business English. If you fix just
 - **Correct**: eye-DEE-uh
 - **Why it happens**: The English "i" at the start is a diphthong — "eye," not "ee."
 
-### 15. <span class="speak-en">Executive</span>
+### 15. <span class="speak-en" data-say="ig-ZEK-yuh-tiv">Executive</span>
 
 - **Common mistake**: ex-eh-coo-TEE-voh
 - **Correct**: ig-ZEK-yuh-tiv
@@ -146,7 +146,7 @@ These are the words that come up constantly in business English. If you fix just
 
 When you're presenting to leadership or clients, these are the words that trip up even advanced speakers.
 
-### 16. <span class="speak-en">Hierarchy</span>
+### 16. <span class="speak-en" data-say="HY-uh-rar-kee">Hierarchy</span>
 
 - **Common mistake**: hee-er-AR-kee-ah
 - **Correct**: HY-uh-rar-kee
@@ -326,13 +326,13 @@ These are the words where spelling gives you zero help. You have to learn them b
 - **Correct**: SWEET
 - **Why it happens**: Looks like it should rhyme with "cute," but it rhymes with "sweet."
 
-### 43. <span class="speak-en">Queue</span>
+### 43. <span class="speak-en" data-say="KYOO">Queue</span>
 
 - **Common mistake**: KEH-oo-eh or koo-EH
 - **Correct**: KYOO (sounds exactly like the letter "Q")
 - **Why it happens**: Four silent letters. Only the first one matters.
 
-### 44. <span class="speak-en">Colonel</span>
+### 44. <span class="speak-en" data-say="KUR-nul">Colonel</span>
 
 - **Common mistake**: co-lo-NEL
 - **Correct**: KUR-nul
@@ -350,25 +350,25 @@ These are the words where spelling gives you zero help. You have to learn them b
 - **Correct**: rih-SEET
 - **Why it happens**: The "p" is silent. Like "debt" has a silent "b."
 
-### 47. <span class="speak-en">Subtle</span>
+### 47. <span class="speak-en" data-say="SUT-ul">Subtle</span>
 
 - **Common mistake**: SOO-bleh or SUB-tel
 - **Correct**: SUT-ul
 - **Why it happens**: Silent "b." Two syllables, not three.
 
-### 48. <span class="speak-en">Chaos</span>
+### 48. <span class="speak-en" data-say="KAY-oss">Chaos</span>
 
 - **Common mistake**: CHAH-os
 - **Correct**: KAY-oss
 - **Why it happens**: The "ch" is pronounced as a hard "k," following the Greek origin. Same pattern as "chemistry."
 
-### 49. <span class="speak-en">Entrepreneur</span>
+### 49. <span class="speak-en" data-say="on-truh-pruh-NUR">Entrepreneur</span>
 
 - **Common mistake**: en-treh-preh-NER
 - **Correct**: on-truh-pruh-NUR
 - **Why it happens**: It's a French word that English barely adapted. The first syllable is nasal ("on"), not "en."
 
-### 50. <span class="speak-en">Worcestershire</span> (as in the sauce)
+### 50. <span class="speak-en" data-say="WOOS-ter-sher">Worcestershire</span> (as in the sauce)
 
 - **Common mistake**: wor-CHES-ter-shy-reh
 - **Correct**: WOOS-ter-sher
