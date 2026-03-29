@@ -50,91 +50,91 @@ Read each word out loud. Exaggerate the correction at first — you'll naturally
 
 These are the words that come up constantly in business English. If you fix just these 15, you'll sound noticeably more polished.
 
-### 1. Comfortable
+### 1. <span class="speak-en">Comfortable</span>
 
 - **Common mistake**: com-FOR-tah-bleh (4 syllables, stress on second)
 - **Correct**: COMF-ter-bull (3 syllables, stress on first)
 - **Why it happens**: Spanish speakers pronounce every vowel. In English, the "or" nearly disappears.
 
-### 2. Determine
+### 2. <span class="speak-en">Determine</span>
 
 - **Common mistake**: deh-ter-MEE-neh
 - **Correct**: dih-TUR-min
 - **Why it happens**: Spanish puts equal stress on each syllable. English crushes the unstressed ones.
 
-### 3. Colleague
+### 3. <span class="speak-en">Colleague</span>
 
 - **Common mistake**: co-LEE-gah or co-LEE-goo
 - **Correct**: CAHL-eeg
 - **Why it happens**: The Spanish "colega" creates a false friend pattern. English stresses the first syllable and the ending is just "-eeg."
 
-### 4. Strategy
+### 4. <span class="speak-en">Strategy</span>
 
 - **Common mistake**: ess-tra-TEH-gee
 - **Correct**: STRAT-uh-jee
 - **Why it happens**: Spanish adds a vowel before "st-" clusters ("estrategia"). English starts hard on the "str."
 
-### 5. Schedule
+### 5. <span class="speak-en">Schedule</span>
 
 - **Common mistake**: ess-keh-DYOO-leh or SHED-yool
 - **Correct**: SKEJ-ool (American) or SHED-yool (British)
 - **Why it happens**: The American pronunciation has no Spanish equivalent. Most learn the British version but work with Americans.
 
-### 6. Development
+### 6. <span class="speak-en">Development</span>
 
 - **Common mistake**: deh-veh-lop-MENT (equal stress)
 - **Correct**: dih-VEL-up-ment
 - **Why it happens**: Spanish distributes stress evenly. English hammers the second syllable and swallows the rest.
 
-### 7. Focus
+### 7. <span class="speak-en">Focus</span>
 
 - **Common mistake**: FOH-coos
 - **Correct**: FOH-kuss
 - **Why it happens**: The Spanish "u" is always "oo." English uses the schwa — a quick, lazy "uh" sound.
 
-### 8. Budget
+### 8. <span class="speak-en">Budget</span>
 
 - **Common mistake**: BOO-jet or boo-JHET
 - **Correct**: BUH-jit
 - **Why it happens**: Spanish doesn't have the short "uh" vowel sound. Every "u" becomes "oo."
 
-### 9. Success
+### 9. <span class="speak-en">Success</span>
 
 - **Common mistake**: sook-CESS
 - **Correct**: suk-SESS
 - **Why it happens**: Same "oo" vs. "uh" issue, plus Spanish speakers often stress the final syllable.
 
-### 10. Analysis
+### 10. <span class="speak-en">Analysis</span>
 
 - **Common mistake**: ah-NAH-lee-sees
 - **Correct**: uh-NAL-ih-sis
 - **Why it happens**: The Spanish "análisis" has the same letters but completely different stress and vowel sounds.
 
-### 11. Priority
+### 11. <span class="speak-en">Priority</span>
 
 - **Common mistake**: pree-oh-ree-DAHD or PREE-oh-ri-tee
 - **Correct**: pry-OR-ih-tee
 - **Why it happens**: The "i" in "pri-" is a diphthong in English (sounds like "pry"), not the Spanish "pree."
 
-### 12. Available
+### 12. <span class="speak-en">Available</span>
 
 - **Common mistake**: ah-VAI-lah-bleh
 - **Correct**: uh-VALE-uh-bull
 - **Why it happens**: Four syllables in English, not five. The "-able" ending is "-uh-bull," not "-ah-bleh."
 
-### 13. Opportunity
+### 13. <span class="speak-en">Opportunity</span>
 
 - **Common mistake**: oh-por-too-nee-DAHD (translating from Spanish) or op-or-TOO-nih-tee
 - **Correct**: op-er-TOO-nih-tee
 - **Why it happens**: The vowel in the first syllable is short "op," not the rounded Spanish "oh."
 
-### 14. Idea
+### 14. <span class="speak-en">Idea</span>
 
 - **Common mistake**: ee-DEH-ah (3 even syllables)
 - **Correct**: eye-DEE-uh
 - **Why it happens**: The English "i" at the start is a diphthong — "eye," not "ee."
 
-### 15. Executive
+### 15. <span class="speak-en">Executive</span>
 
 - **Common mistake**: ex-eh-coo-TEE-voh
 - **Correct**: ig-ZEK-yuh-tiv
@@ -146,61 +146,61 @@ These are the words that come up constantly in business English. If you fix just
 
 When you're presenting to leadership or clients, these are the words that trip up even advanced speakers.
 
-### 16. Hierarchy
+### 16. <span class="speak-en">Hierarchy</span>
 
 - **Common mistake**: hee-er-AR-kee-ah
 - **Correct**: HY-uh-rar-kee
 - **Why it happens**: The Spanish "jerarquía" has four clear syllables with stress at the end. English front-loads the stress.
 
-### 17. Revenue
+### 17. <span class="speak-en">Revenue</span>
 
 - **Common mistake**: reh-veh-NOO-eh
 - **Correct**: REV-uh-noo
 - **Why it happens**: Stress goes on the first syllable, and the middle vowel is a schwa.
 
-### 18. Accurate
+### 18. <span class="speak-en">Accurate</span>
 
 - **Common mistake**: ah-coo-RAHT or ah-KYOO-raht
 - **Correct**: AK-yur-it
 - **Why it happens**: Three syllables, not four. First syllable stress.
 
-### 19. Percentage
+### 19. <span class="speak-en">Percentage</span>
 
 - **Common mistake**: per-SEN-tah-heh
 - **Correct**: per-SENT-ij
 - **Why it happens**: The "-age" ending is "-ij" in English, not "-ah-heh."
 
-### 20. Achieve
+### 20. <span class="speak-en">Achieve</span>
 
 - **Common mistake**: ah-CHEE-veh
 - **Correct**: uh-CHEEV
 - **Why it happens**: One syllable at the end, not two. The "e" at the end is silent.
 
-### 21. Quarterly
+### 21. <span class="speak-en">Quarterly</span>
 
 - **Common mistake**: kwar-TER-lee
 - **Correct**: KWOR-ter-lee
 - **Why it happens**: Stress on the first syllable, and the "ar" sounds like "or" in American English.
 
-### 22. Thorough
+### 22. <span class="speak-en">Thorough</span>
 
 - **Common mistake**: toh-ROH or THOH-roh
 - **Correct**: THUR-oh
 - **Why it happens**: The "th" sound doesn't exist in Mexican Spanish, and the vowel combination is unfamiliar.
 
-### 23. Margin
+### 23. <span class="speak-en">Margin</span>
 
 - **Common mistake**: mar-HEEN (like Spanish "margen")
 - **Correct**: MAR-jin
 - **Why it happens**: The "g" before "i" is a soft "j" sound in English, and stress is on the first syllable.
 
-### 24. Variable
+### 24. <span class="speak-en">Variable</span>
 
 - **Common mistake**: vah-ree-AH-bleh
 - **Correct**: VAIR-ee-uh-bull
 - **Why it happens**: Stress pattern reversal — English stresses the first syllable, Spanish stresses the third.
 
-### 25. Significant
+### 25. <span class="speak-en">Significant</span>
 
 - **Common mistake**: seeg-nee-fee-CAHN-teh
 - **Correct**: sig-NIF-ih-kunt
@@ -212,61 +212,61 @@ When you're presenting to leadership or clients, these are the words that trip u
 
 If you work in tech, nearshoring, or IT operations, these are the words that catch you in standups and code reviews.
 
-### 26. Architecture
+### 26. <span class="speak-en">Architecture</span>
 
 - **Common mistake**: ar-kee-tek-TOO-rah
 - **Correct**: AR-kih-tek-chur
 - **Why it happens**: Stress moves to the front, and "-ture" is "-chur," not "-too-rah."
 
-### 27. Component
+### 27. <span class="speak-en">Component</span>
 
 - **Common mistake**: com-po-NEN-teh
 - **Correct**: kum-POH-nunt
 - **Why it happens**: Three syllables, stress on second. The final "-ent" is "-unt," barely voiced.
 
-### 28. Database
+### 28. <span class="speak-en">Database</span>
 
 - **Common mistake**: dah-tah-BAH-seh
 - **Correct**: DAY-tuh-base
 - **Why it happens**: "Data" is "DAY-tuh" in American English, not "DAH-tah." And "-base" rhymes with "face."
 
-### 29. Parameter
+### 29. <span class="speak-en">Parameter</span>
 
 - **Common mistake**: pah-RAH-meh-ter
 - **Correct**: puh-RAM-ih-ter
 - **Why it happens**: The "a" in the second syllable is short, and the unstressed vowels collapse to schwas.
 
-### 30. Algorithm
+### 30. <span class="speak-en">Algorithm</span>
 
 - **Common mistake**: al-go-REET-mo
 - **Correct**: AL-guh-rith-um
 - **Why it happens**: The Spanish "algoritmo" ending carries over. English uses "-ith-um."
 
-### 31. Scalable
+### 31. <span class="speak-en">Scalable</span>
 
 - **Common mistake**: ess-kah-LAH-bleh
 - **Correct**: SKAY-luh-bull
 - **Why it happens**: No leading vowel before "sc-" in English, and the stress moves to the front.
 
-### 32. Vulnerable
+### 32. <span class="speak-en">Vulnerable</span>
 
 - **Common mistake**: bool-neh-RAH-bleh
 - **Correct**: VUL-ner-uh-bull
 - **Why it happens**: The "v" is distinct from "b" in English (they're the same in Mexican Spanish), and the stress pattern reverses.
 
-### 33. Iterate
+### 33. <span class="speak-en">Iterate</span>
 
 - **Common mistake**: ee-teh-RAR
 - **Correct**: IT-uh-rate
 - **Why it happens**: "I" is short, stress on first syllable, and the "-ate" ending is "-ate" not "-ar."
 
-### 34. Repository
+### 34. <span class="speak-en">Repository</span>
 
 - **Common mistake**: reh-po-see-TOH-ree-oh
 - **Correct**: rih-PAH-zih-tor-ee
 - **Why it happens**: Five syllables compressed from six, with completely different stress.
 
-### 35. Debugging
+### 35. <span class="speak-en">Debugging</span>
 
 - **Common mistake**: deh-BOO-geen
 - **Correct**: dee-BUG-ing
@@ -278,31 +278,31 @@ If you work in tech, nearshoring, or IT operations, these are the words that cat
 
 These words come up in interviews, performance reviews, and career development discussions.
 
-### 36. Certificate
+### 36. <span class="speak-en">Certificate</span>
 
 - **Common mistake**: ser-tee-fee-CAH-doh (translating from Spanish)
 - **Correct**: ser-TIF-ih-kit
 - **Why it happens**: The "-ficate" ending is compressed to "-fih-kit," not the full Spanish expansion.
 
-### 37. Responsibility
+### 37. <span class="speak-en">Responsibility</span>
 
 - **Common mistake**: res-pon-sah-bee-lee-DAHD
 - **Correct**: rih-spon-suh-BIL-ih-tee
 - **Why it happens**: Six syllables with different stress placement. The "-ity" ending is "-ih-tee," not "-ee-DAHD."
 
-### 38. Candidate
+### 38. <span class="speak-en">Candidate</span>
 
 - **Common mistake**: cahn-dee-DAH-toh
 - **Correct**: KAN-dih-date
 - **Why it happens**: Three syllables in English, stress on first. The "-date" sounds like the calendar word.
 
-### 39. Specifically
+### 39. <span class="speak-en">Specifically</span>
 
 - **Common mistake**: ess-peh-SEE-fee-cah-lee
 - **Correct**: spuh-SIF-ik-lee
 - **Why it happens**: No leading vowel, compressed syllables, and "-ally" becomes "-ik-lee."
 
-### 40. Negotiate
+### 40. <span class="speak-en">Negotiate</span>
 
 - **Common mistake**: neh-go-see-AR
 - **Correct**: nih-GOH-shee-ate
@@ -314,61 +314,61 @@ These words come up in interviews, performance reviews, and career development d
 
 These are the words where spelling gives you zero help. You have to learn them by sound.
 
-### 41. Recipe
+### 41. <span class="speak-en">Recipe</span>
 
 - **Common mistake**: reh-SEE-peh
 - **Correct**: RES-ih-pee
 - **Why it happens**: The "c" is soft, the stress is on the first syllable, and the final "e" is pronounced "ee."
 
-### 42. Suite (as in software suite)
+### 42. <span class="speak-en">Suite</span> (as in software suite)
 
 - **Common mistake**: SOO-teh
 - **Correct**: SWEET
 - **Why it happens**: Looks like it should rhyme with "cute," but it rhymes with "sweet."
 
-### 43. Queue
+### 43. <span class="speak-en">Queue</span>
 
 - **Common mistake**: KEH-oo-eh or koo-EH
 - **Correct**: KYOO (sounds exactly like the letter "Q")
 - **Why it happens**: Four silent letters. Only the first one matters.
 
-### 44. Colonel
+### 44. <span class="speak-en">Colonel</span>
 
 - **Common mistake**: co-lo-NEL
 - **Correct**: KUR-nul
 - **Why it happens**: English borrowed this word from French and Italian and kept the French pronunciation but the Italian spelling. Nobody knows why.
 
-### 45. Mortgage
+### 45. <span class="speak-en">Mortgage</span>
 
 - **Common mistake**: mor-TAH-geh
 - **Correct**: MOR-gij
 - **Why it happens**: The "t" is completely silent. The word comes from Old French "mort gage" (death pledge).
 
-### 46. Receipt
+### 46. <span class="speak-en">Receipt</span>
 
 - **Common mistake**: reh-SEEPT or reh-KEET
 - **Correct**: rih-SEET
 - **Why it happens**: The "p" is silent. Like "debt" has a silent "b."
 
-### 47. Subtle
+### 47. <span class="speak-en">Subtle</span>
 
 - **Common mistake**: SOO-bleh or SUB-tel
 - **Correct**: SUT-ul
 - **Why it happens**: Silent "b." Two syllables, not three.
 
-### 48. Chaos
+### 48. <span class="speak-en">Chaos</span>
 
 - **Common mistake**: CHAH-os
 - **Correct**: KAY-oss
 - **Why it happens**: The "ch" is pronounced as a hard "k," following the Greek origin. Same pattern as "chemistry."
 
-### 49. Entrepreneur
+### 49. <span class="speak-en">Entrepreneur</span>
 
 - **Common mistake**: en-treh-preh-NER
 - **Correct**: on-truh-pruh-NUR
 - **Why it happens**: It's a French word that English barely adapted. The first syllable is nasal ("on"), not "en."
 
-### 50. Worcestershire (as in the sauce)
+### 50. <span class="speak-en">Worcestershire</span> (as in the sauce)
 
 - **Common mistake**: wor-CHES-ter-shy-reh
 - **Correct**: WOOS-ter-sher

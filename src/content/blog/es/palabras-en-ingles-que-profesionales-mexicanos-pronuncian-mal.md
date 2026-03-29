@@ -50,91 +50,91 @@ Lee cada palabra en voz alta. Exagera la corrección al principio — naturalmen
 
 Estas son las palabras que aparecen constantemente en el inglés de negocios. Si corriges solo estas 15, sonarás notablemente más profesional.
 
-### 1. Comfortable
+### 1. <span class="speak-en">Comfortable</span>
 
 - **Error común**: com-FOR-tah-bleh (4 sílabas, énfasis en la segunda)
 - **Correcto**: COMF-ter-bull (3 sílabas, énfasis en la primera)
 - **Por qué pasa**: Los hispanohablantes pronuncian cada vocal. En inglés, la "or" casi desaparece.
 
-### 2. Determine
+### 2. <span class="speak-en">Determine</span>
 
 - **Error común**: deh-ter-MEE-neh
 - **Correcto**: dih-TUR-min
 - **Por qué pasa**: El español pone estrés igual en cada sílaba. El inglés aplasta las sílabas átonas.
 
-### 3. Colleague
+### 3. <span class="speak-en">Colleague</span>
 
 - **Error común**: co-LEE-gah o co-LEE-goo
 - **Correcto**: CAHL-eeg
 - **Por qué pasa**: El "colega" español crea un patrón de falso amigo. El inglés acentúa la primera sílaba y el final es solo "-eeg."
 
-### 4. Strategy
+### 4. <span class="speak-en">Strategy</span>
 
 - **Error común**: ess-tra-TEH-gee
 - **Correcto**: STRAT-uh-jee
 - **Por qué pasa**: El español agrega una vocal antes de grupos "st-" ("estrategia"). El inglés empieza fuerte con "str."
 
-### 5. Schedule
+### 5. <span class="speak-en">Schedule</span>
 
 - **Error común**: ess-keh-DYOO-leh o SHED-yool
 - **Correcto**: SKEJ-ool (americano) o SHED-yool (británico)
 - **Por qué pasa**: La pronunciación americana no tiene equivalente en español. La mayoría aprende la versión británica pero trabaja con americanos.
 
-### 6. Development
+### 6. <span class="speak-en">Development</span>
 
 - **Error común**: deh-veh-lop-MENT (estrés igual)
 - **Correcto**: dih-VEL-up-ment
 - **Por qué pasa**: El español distribuye el estrés uniformemente. El inglés golpea la segunda sílaba y absorbe el resto.
 
-### 7. Focus
+### 7. <span class="speak-en">Focus</span>
 
 - **Error común**: FOH-coos
 - **Correcto**: FOH-kuss
 - **Por qué pasa**: La "u" española siempre es "oo." El inglés usa el schwa — un sonido rápido y relajado de "uh."
 
-### 8. Budget
+### 8. <span class="speak-en">Budget</span>
 
 - **Error común**: BOO-jet o boo-JHET
 - **Correcto**: BUH-jit
 - **Por qué pasa**: El español no tiene el sonido corto "uh." Cada "u" se convierte en "oo."
 
-### 9. Success
+### 9. <span class="speak-en">Success</span>
 
 - **Error común**: sook-CESS
 - **Correcto**: suk-SESS
 - **Por qué pasa**: Mismo problema de "oo" vs. "uh," además los hispanohablantes frecuentemente acentúan la sílaba final.
 
-### 10. Analysis
+### 10. <span class="speak-en">Analysis</span>
 
 - **Error común**: ah-NAH-lee-sees
 - **Correcto**: uh-NAL-ih-sis
 - **Por qué pasa**: El "análisis" español tiene las mismas letras pero estrés y sonidos vocálicos completamente diferentes.
 
-### 11. Priority
+### 11. <span class="speak-en">Priority</span>
 
 - **Error común**: pree-oh-ree-DAHD o PREE-oh-ri-tee
 - **Correcto**: pry-OR-ih-tee
 - **Por qué pasa**: La "i" en "pri-" es un diptongo en inglés (suena como "pry"), no el "pree" del español.
 
-### 12. Available
+### 12. <span class="speak-en">Available</span>
 
 - **Error común**: ah-VAI-lah-bleh
 - **Correcto**: uh-VALE-uh-bull
 - **Por qué pasa**: Cuatro sílabas en inglés, no cinco. La terminación "-able" es "-uh-bull," no "-ah-bleh."
 
-### 13. Opportunity
+### 13. <span class="speak-en">Opportunity</span>
 
 - **Error común**: oh-por-too-nee-DAHD (traduciendo del español) u op-or-TOO-nih-tee
 - **Correcto**: op-er-TOO-nih-tee
 - **Por qué pasa**: La vocal en la primera sílaba es corta "op," no la "oh" redondeada del español.
 
-### 14. Idea
+### 14. <span class="speak-en">Idea</span>
 
 - **Error común**: ee-DEH-ah (3 sílabas iguales)
 - **Correcto**: eye-DEE-uh
 - **Por qué pasa**: La "i" al inicio es un diptongo en inglés — "eye," no "ee."
 
-### 15. Executive
+### 15. <span class="speak-en">Executive</span>
 
 - **Error común**: ex-eh-coo-TEE-voh
 - **Correcto**: ig-ZEK-yuh-tiv
@@ -146,61 +146,61 @@ Estas son las palabras que aparecen constantemente en el inglés de negocios. Si
 
 Cuando presentas a liderazgo o clientes, estas son las palabras que atrapan incluso a hablantes avanzados.
 
-### 16. Hierarchy
+### 16. <span class="speak-en">Hierarchy</span>
 
 - **Error común**: hee-er-AR-kee-ah
 - **Correcto**: HY-uh-rar-kee
 - **Por qué pasa**: La "jerarquía" española tiene cuatro sílabas claras con estrés al final. El inglés carga el estrés al frente.
 
-### 17. Revenue
+### 17. <span class="speak-en">Revenue</span>
 
 - **Error común**: reh-veh-NOO-eh
 - **Correcto**: REV-uh-noo
 - **Por qué pasa**: El estrés va en la primera sílaba y la vocal del medio es un schwa.
 
-### 18. Accurate
+### 18. <span class="speak-en">Accurate</span>
 
 - **Error común**: ah-coo-RAHT o ah-KYOO-raht
 - **Correcto**: AK-yur-it
 - **Por qué pasa**: Tres sílabas, no cuatro. Estrés en la primera sílaba.
 
-### 19. Percentage
+### 19. <span class="speak-en">Percentage</span>
 
 - **Error común**: per-SEN-tah-heh
 - **Correcto**: per-SENT-ij
 - **Por qué pasa**: La terminación "-age" es "-ij" en inglés, no "-ah-heh."
 
-### 20. Achieve
+### 20. <span class="speak-en">Achieve</span>
 
 - **Error común**: ah-CHEE-veh
 - **Correcto**: uh-CHEEV
 - **Por qué pasa**: Una sílaba al final, no dos. La "e" al final es silenciosa.
 
-### 21. Quarterly
+### 21. <span class="speak-en">Quarterly</span>
 
 - **Error común**: kwar-TER-lee
 - **Correcto**: KWOR-ter-lee
 - **Por qué pasa**: Estrés en la primera sílaba, y la "ar" suena como "or" en inglés americano.
 
-### 22. Thorough
+### 22. <span class="speak-en">Thorough</span>
 
 - **Error común**: toh-ROH o THOH-roh
 - **Correcto**: THUR-oh
 - **Por qué pasa**: El sonido "th" no existe en el español mexicano y la combinación de vocales es poco familiar.
 
-### 23. Margin
+### 23. <span class="speak-en">Margin</span>
 
 - **Error común**: mar-HEEN (como "margen" en español)
 - **Correcto**: MAR-jin
 - **Por qué pasa**: La "g" antes de "i" es un sonido suave de "j" en inglés y el estrés está en la primera sílaba.
 
-### 24. Variable
+### 24. <span class="speak-en">Variable</span>
 
 - **Error común**: vah-ree-AH-bleh
 - **Correcto**: VAIR-ee-uh-bull
 - **Por qué pasa**: Inversión del patrón de estrés — el inglés acentúa la primera sílaba, el español la tercera.
 
-### 25. Significant
+### 25. <span class="speak-en">Significant</span>
 
 - **Error común**: seeg-nee-fee-CAHN-teh
 - **Correcto**: sig-NIF-ih-kunt
@@ -212,61 +212,61 @@ Cuando presentas a liderazgo o clientes, estas son las palabras que atrapan incl
 
 Si trabajas en tecnología, nearshoring u operaciones de IT, estas son las palabras que te atrapan en standups y code reviews.
 
-### 26. Architecture
+### 26. <span class="speak-en">Architecture</span>
 
 - **Error común**: ar-kee-tek-TOO-rah
 - **Correcto**: AR-kih-tek-chur
 - **Por qué pasa**: El estrés se mueve al frente y "-ture" es "-chur," no "-too-rah."
 
-### 27. Component
+### 27. <span class="speak-en">Component</span>
 
 - **Error común**: com-po-NEN-teh
 - **Correcto**: kum-POH-nunt
 - **Por qué pasa**: Tres sílabas, estrés en la segunda. La "-ent" final es "-unt," apenas pronunciada.
 
-### 28. Database
+### 28. <span class="speak-en">Database</span>
 
 - **Error común**: dah-tah-BAH-seh
 - **Correcto**: DAY-tuh-base
 - **Por qué pasa**: "Data" es "DAY-tuh" en inglés americano, no "DAH-tah." Y "-base" rima con "face."
 
-### 29. Parameter
+### 29. <span class="speak-en">Parameter</span>
 
 - **Error común**: pah-RAH-meh-ter
 - **Correcto**: puh-RAM-ih-ter
 - **Por qué pasa**: La "a" en la segunda sílaba es corta y las vocales átonas colapsan a schwas.
 
-### 30. Algorithm
+### 30. <span class="speak-en">Algorithm</span>
 
 - **Error común**: al-go-REET-mo
 - **Correcto**: AL-guh-rith-um
 - **Por qué pasa**: La terminación del "algoritmo" español se transfiere. El inglés usa "-ith-um."
 
-### 31. Scalable
+### 31. <span class="speak-en">Scalable</span>
 
 - **Error común**: ess-kah-LAH-bleh
 - **Correcto**: SKAY-luh-bull
 - **Por qué pasa**: Sin vocal inicial antes de "sc-" en inglés, y el estrés se mueve al frente.
 
-### 32. Vulnerable
+### 32. <span class="speak-en">Vulnerable</span>
 
 - **Error común**: bool-neh-RAH-bleh
 - **Correcto**: VUL-ner-uh-bull
 - **Por qué pasa**: La "v" es distinta de la "b" en inglés (son iguales en español mexicano) y el patrón de estrés se invierte.
 
-### 33. Iterate
+### 33. <span class="speak-en">Iterate</span>
 
 - **Error común**: ee-teh-RAR
 - **Correcto**: IT-uh-rate
 - **Por qué pasa**: "I" es corta, estrés en la primera sílaba, y la terminación "-ate" es "-ate" no "-ar."
 
-### 34. Repository
+### 34. <span class="speak-en">Repository</span>
 
 - **Error común**: reh-po-see-TOH-ree-oh
 - **Correcto**: rih-PAH-zih-tor-ee
 - **Por qué pasa**: Cinco sílabas comprimidas de seis, con estrés completamente diferente.
 
-### 35. Debugging
+### 35. <span class="speak-en">Debugging</span>
 
 - **Error común**: deh-BOO-geen
 - **Correcto**: dee-BUG-ing
@@ -278,31 +278,31 @@ Si trabajas en tecnología, nearshoring u operaciones de IT, estas son las palab
 
 Estas palabras aparecen en entrevistas, evaluaciones de desempeño y conversaciones de desarrollo profesional.
 
-### 36. Certificate
+### 36. <span class="speak-en">Certificate</span>
 
 - **Error común**: ser-tee-fee-CAH-doh (traduciendo del español)
 - **Correcto**: ser-TIF-ih-kit
 - **Por qué pasa**: La terminación "-ficate" se comprime a "-fih-kit," no la expansión completa del español.
 
-### 37. Responsibility
+### 37. <span class="speak-en">Responsibility</span>
 
 - **Error común**: res-pon-sah-bee-lee-DAHD
 - **Correcto**: rih-spon-suh-BIL-ih-tee
 - **Por qué pasa**: Seis sílabas con diferente colocación de estrés. La terminación "-ity" es "-ih-tee," no "-ee-DAHD."
 
-### 38. Candidate
+### 38. <span class="speak-en">Candidate</span>
 
 - **Error común**: cahn-dee-DAH-toh
 - **Correcto**: KAN-dih-date
 - **Por qué pasa**: Tres sílabas en inglés, estrés en la primera. La "-date" suena como la palabra del calendario.
 
-### 39. Specifically
+### 39. <span class="speak-en">Specifically</span>
 
 - **Error común**: ess-peh-SEE-fee-cah-lee
 - **Correcto**: spuh-SIF-ik-lee
 - **Por qué pasa**: Sin vocal inicial, sílabas comprimidas, y "-ally" se convierte en "-ik-lee."
 
-### 40. Negotiate
+### 40. <span class="speak-en">Negotiate</span>
 
 - **Error común**: neh-go-see-AR
 - **Correcto**: nih-GOH-shee-ate
@@ -314,61 +314,61 @@ Estas palabras aparecen en entrevistas, evaluaciones de desempeño y conversacio
 
 Estas son las palabras donde la ortografía no te da ninguna pista. Tienes que aprenderlas por sonido.
 
-### 41. Recipe
+### 41. <span class="speak-en">Recipe</span>
 
 - **Error común**: reh-SEE-peh
 - **Correcto**: RES-ih-pee
 - **Por qué pasa**: La "c" es suave, el estrés está en la primera sílaba, y la "e" final se pronuncia "ee."
 
-### 42. Suite (como en software suite)
+### 42. <span class="speak-en">Suite</span> (como en software suite)
 
 - **Error común**: SOO-teh
 - **Correcto**: SWEET
 - **Por qué pasa**: Parece que debería rimar con "cute," pero rima con "sweet."
 
-### 43. Queue
+### 43. <span class="speak-en">Queue</span>
 
 - **Error común**: KEH-oo-eh o koo-EH
 - **Correcto**: KYOO (suena exactamente como la letra "Q")
 - **Por qué pasa**: Cuatro letras silenciosas. Solo la primera importa.
 
-### 44. Colonel
+### 44. <span class="speak-en">Colonel</span>
 
 - **Error común**: co-lo-NEL
 - **Correcto**: KUR-nul
 - **Por qué pasa**: El inglés tomó esta palabra del francés e italiano y mantuvo la pronunciación francesa pero la ortografía italiana. Nadie sabe por qué.
 
-### 45. Mortgage
+### 45. <span class="speak-en">Mortgage</span>
 
 - **Error común**: mor-TAH-geh
 - **Correcto**: MOR-gij
 - **Por qué pasa**: La "t" es completamente silenciosa. La palabra viene del francés antiguo "mort gage" (compromiso de muerte).
 
-### 46. Receipt
+### 46. <span class="speak-en">Receipt</span>
 
 - **Error común**: reh-SEEPT o reh-KEET
 - **Correcto**: rih-SEET
 - **Por qué pasa**: La "p" es silenciosa. Como "debt" tiene una "b" silenciosa.
 
-### 47. Subtle
+### 47. <span class="speak-en">Subtle</span>
 
 - **Error común**: SOO-bleh o SUB-tel
 - **Correcto**: SUT-ul
 - **Por qué pasa**: "B" silenciosa. Dos sílabas, no tres.
 
-### 48. Chaos
+### 48. <span class="speak-en">Chaos</span>
 
 - **Error común**: CHAH-os
 - **Correcto**: KAY-oss
 - **Por qué pasa**: La "ch" se pronuncia como una "k" fuerte, siguiendo el origen griego. Mismo patrón que "chemistry."
 
-### 49. Entrepreneur
+### 49. <span class="speak-en">Entrepreneur</span>
 
 - **Error común**: en-treh-preh-NER
 - **Correcto**: on-truh-pruh-NUR
 - **Por qué pasa**: Es una palabra francesa que el inglés apenas adaptó. La primera sílaba es nasal ("on"), no "en."
 
-### 50. Worcestershire (como en la salsa)
+### 50. <span class="speak-en">Worcestershire</span> (como en la salsa)
 
 - **Error común**: wor-CHES-ter-shy-reh
 - **Correcto**: WOOS-ter-sher
