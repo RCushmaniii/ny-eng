@@ -1,6 +1,6 @@
 # SEO & Marketing Plan — NY English Teacher
 
-> Last updated: 2026-03-04
+> Last updated: 2026-03-29
 > Status: Active
 > Owner: Claude (execution) + Robert (approval & creative direction)
 
@@ -74,12 +74,47 @@ These service pages need blog posts driving traffic to them:
 - **Submit URL**: `https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlBatch?apikey=<key>`
 - **Script**: `scripts/seo/bing-submit.mjs`
 
+## Backlink Content Strategy
+
+Linkable asset posts designed to attract backlinks from ESL blogs, nearshoring publications, HR platforms, and business media.
+
+| # | Status | Title (EN) | Backlink Target | Approach |
+|---|--------|-----------|-----------------|----------|
+| B1 | ⬜ NotebookLM | The State of English in Mexico's Tech Industry: 2026 Report | HR blogs, nearshoring pubs, Mexican tech media | Needs real data: EF EPI, CSOFT, nearshoring stats |
+| B2 | ⬜ Planned | Mexico vs. US Workplace Communication: The Complete Guide | Cross-cultural training sites, relocation blogs | Same as Post #8 — expand into definitive reference |
+| B3 | ✅ Written | 50 English Words Mexican Professionals Mispronounce | ESL blogs, language learning sites, Reddit | Reference content — shareable, bookmarkable |
+| B4 | ⬜ NotebookLM | The Nearshoring English Gap: Why $12B Gets Lost in Translation | Business media, nearshoring consultancies | Needs real contract loss figures, industry reports |
+| B5 | ⬜ NotebookLM | English Proficiency by Industry in Mexico: Sector Rankings | Industry associations, talent acquisition blogs | Needs benchmarking data: EF EPI, IMCO, Deloitte |
+| B6 | ⬜ Planned | The Executive English Assessment Framework (Free Tool) | HR departments, executive coaching blogs | Interactive framework — pairs with quiz system |
+
+### NotebookLM Research Sources (for B1, B4, B5)
+
+Feed these into NotebookLM to generate unique data insights:
+- EF English Proficiency Index (annual reports, Mexico section)
+- Nearshore Americas industry reports
+- Deloitte/KPMG nearshoring studies (Mexico talent landscape)
+- IMCO labor market reports
+- CSOFT International language services reports
+- Manpower Group Mexico talent shortage surveys
+- Mexican Association of HR Directors (AMEDIRH) data
+
+## Completed SEO Work — 2026-03-29
+
+- [x] Hardened blog SEO validator (requires seo.title when title>60, seo.description when excerpt>160)
+- [x] Fixed 22 indexable pages not in sitemap (added noindex to meme portfolio role pages)
+- [x] Fixed ES blog index description (47 chars → 134 chars)
+- [x] Fixed ES negotiation script description (108 chars → 152 chars)
+- [x] Removed stale test-widget.html
+- [x] Fixed Python audit script Unicode crash on Windows
+- [x] Published B3: 50 English Words Mexican Professionals Mispronounce (EN + ES)
+
 ## Future Initiatives
 
 - [ ] Social media API integration (LinkedIn, Twitter/X, Facebook)
 - [ ] Automated social media content generation on publish
 - [ ] Bing Webmaster performance data pull script
 - [ ] Google Business Profile optimization (if applicable)
-- [ ] Backlink outreach strategy
+- [x] Backlink content strategy (see above)
+- [ ] Backlink outreach execution (guest posts, HARO, broken link building)
 - [ ] Microsoft Clarity integration (free heatmaps/session recording)
 - [ ] Template this SEO solution for other CushLabs repos
