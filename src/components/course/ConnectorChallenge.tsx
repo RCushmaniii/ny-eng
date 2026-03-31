@@ -112,7 +112,7 @@ export default function ConnectorChallenge({
               <p className="text-white text-2xl md:text-3xl font-bold leading-snug">
                 {bossSentence.english}
               </p>
-              <p className="text-slate-400 text-lg">
+              <p className="!text-slate-200 text-lg">
                 {bossSentence.spanish}
               </p>
               <div className="flex items-center justify-center gap-3 pt-2">
