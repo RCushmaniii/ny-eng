@@ -18,7 +18,7 @@ interface AudioButtonProps {
 export default function AudioButton({
   text,
   lang = "en-US",
-  rate = 1,
+  rate = 0.85,
   size = "md",
   className = "",
   label,
