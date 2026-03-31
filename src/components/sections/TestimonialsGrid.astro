@@ -55,37 +55,33 @@ const availableIndustries = Object.entries(testimonialsByIndustry)
     </div>
 
     {showFilters && (
-      <div class="mb-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-        <label for="industry-filter" class="font-medium text-gray-900">
-          {lang === 'en' ? 'Filter by industry:' : 'Filtrar por industria:'}
-        </label>
-        <div class="relative">
-          <select
-            id="industry-filter"
-            class="bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 font-sans"
-            style="font-family: NotoSansKR, ui-sans-serif, system-ui, sans-serif;"
-          >
-            {Object.entries(labels)
-              .filter(([key]) => availableIndustries.includes(key))
-              .map(([key, label]) => (
-                <option value={key} selected={selectedIndustry === key}>{label}</option>
-              ))}
-          </select>
-          <script define:vars={{ baseUrl }}>
-            const industryFilter = document.getElementById('industry-filter');
-            if (industryFilter instanceof HTMLSelectElement) {
-              industryFilter.addEventListener('change', function() {
-                const selectedIndustry = this.value;
-                if (selectedIndustry === 'all') {
-                  window.location.href = baseUrl;
-                } else {
-                  window.location.href = `${baseUrl}${selectedIndustry}/`;
-                }
-              });
-            }
-          </script>
+      <nav class="mb-10" aria-label={lang === 'en' ? 'Filter testimonials by specialty' : 'Filtrar testimonios por especialidad'}>
+        <p class="font-medium text-gray-900 text-center mb-4">
+          {lang === 'en' ? 'Filter by specialty:' : 'Filtrar por especialidad:'}
+        </p>
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3">
+          {Object.entries(labels)
+            .filter(([key]) => availableIndustries.includes(key))
+            .map(([key, label]) => {
+              const href = key === 'all' ? baseUrl : `${baseUrl}${key}/`;
+              const isActive = selectedIndustry === key;
+              return (
+                <a
+                  href={href}
+                  class:list={[
+                    'inline-block px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 border',
+                    isActive
+                      ? 'bg-primary-600 text-white border-primary-600 shadow-sm'
+                      : 'bg-white text-gray-700 border-gray-300 hover:bg-primary-50 hover:border-primary-400 hover:text-primary-700',
+                  ]}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {label}
+                </a>
+              );
+            })}
         </div>
-      </div>
+      </nav>
     )}
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">

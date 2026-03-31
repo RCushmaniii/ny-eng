@@ -23,16 +23,16 @@ console.log("🔧 ChatEmbed debug - embedSrc:", embedSrc);
 
 const copy = {
   en: {
-    heading: "Try my AI English Coach",
+    heading: "Get Instant Answers from My AI English Coach",
     subheading:
-      "Ask questions about coaching, pricing, and the fastest way to close your Communication Gap.",
+      "Curious about coaching, pricing, or how to close your Communication Gap? Ask anything — get a personalized response in seconds.",
     welcomeMessage: "👋 Hey... ask your questions here!",
     placeholder: "Type your message...",
   },
   es: {
-    heading: "Prueba mi Coach de Inglés con IA",
+    heading: "Respuestas Instantáneas de Mi Coach de Inglés con IA",
     subheading:
-      "Haz preguntas sobre coaching, precios y la forma más rápida de cerrar tu brecha de comunicación.",
+      "¿Tienes preguntas sobre coaching, precios o cómo cerrar tu brecha de comunicación? Pregunta lo que quieras — recibe una respuesta personalizada en segundos.",
     welcomeMessage: "👋 Hola... haz tus preguntas aquí.",
     placeholder: "Escribe tu mensaje...",
   },
@@ -98,6 +98,31 @@ const t = copy[lang];
           loading="eager"
           scrolling="no"
           tabindex="-1"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Next steps CTA below chat -->
+  <div class="container mx-auto px-4 max-w-4xl mt-10 mb-8">
+    <div class="text-center">
+      <p class="text-lg text-slate-600 mb-4">
+        {lang === 'en'
+          ? 'Ready to take the next step?'
+          : '¿Listo para dar el siguiente paso?'}
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href={lang === 'en' ? '/en/book/' : '/es/book/'}
+          class="inline-block px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors"
+        >
+          {lang === 'en' ? 'Book a Free Strategy Session' : 'Reservar Sesión Gratuita'}
+        </a>
+        <a
+          href={lang === 'en' ? '/en/assessments/' : '/es/assessments/'}
+          class="inline-block px-6 py-3 border border-primary-600 text-primary-600 font-medium rounded-lg hover:bg-primary-50 transition-colors"
+        >
+          {lang === 'en' ? 'Take a Free Assessment' : 'Tomar Evaluación Gratuita'}
+        </a>
       </div>
     </div>
   </div>

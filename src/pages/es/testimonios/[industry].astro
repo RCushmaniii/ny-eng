@@ -2,6 +2,7 @@
 import Base from "@layouts/Base.astro";
 import TestimonialsGrid from "@components/sections/TestimonialsGrid.astro";
 import { testimonialsByIndustry, industryLabels } from "@data/testimonials/es";
+import { serviceCategories } from "@data/service-categories";
 import type { Testimonial } from "@data/testimonials/es";
 
 type ValidIndustry = keyof typeof testimonialsByIndustry;
@@ -69,7 +70,11 @@ const customHreflangs = [
   { lang: "es-MX", href: currentUrl },
 ];
 
-// Create custom hreflangs for this specific category (absolute URLs)
+// Get matching service page link for the current industry
+const matchingService = currentIndustry !== "all"
+  ? serviceCategories.find((cat) => cat.slug === currentIndustry)
+  : null;
+const serviceLink = matchingService ? `/es/servicios/${matchingService.esSlug}/` : null;
 ---
 
 <Base
@@ -78,7 +83,6 @@ const customHreflangs = [
   lang="es"
   customHreflangs={customHreflangs}
   customCanonical={currentUrl}
-  hideCta={true}
 >
   <TestimonialsGrid
     testimonials={filteredTestimonials}
@@ -90,4 +94,37 @@ const customHreflangs = [
     selectedIndustry={currentIndustry}
     lang="es"
   />
+
+  <!-- Cross-links section -->
+  <section class="py-12 bg-white">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      {serviceLink && matchingService && (
+        <div class="mb-8">
+          <p class="text-lg text-gray-700 mb-4">
+            Conoce más sobre coaching para {industryLabel.toLowerCase()}
+          </p>
+          <a
+            href={serviceLink}
+            class="inline-block px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors"
+          >
+            Explorar Coaching para {matchingService.esLabel}
+          </a>
+        </div>
+      )}
+      <div class="flex flex-wrap justify-center gap-4 text-sm">
+        <a href="/es/testimonios/" class="text-primary-600 hover:text-primary-800 underline">
+          Todas las Historias
+        </a>
+        <a href="/es/servicios/" class="text-primary-600 hover:text-primary-800 underline">
+          Ver Todos los Servicios
+        </a>
+        <a href="/es/assessments/" class="text-primary-600 hover:text-primary-800 underline">
+          Evaluación Gratuita
+        </a>
+        <a href="/es/book/" class="text-primary-600 hover:text-primary-800 underline">
+          Reservar Sesión
+        </a>
+      </div>
+    </div>
+  </section>
 </Base>
