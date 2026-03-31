@@ -127,13 +127,13 @@ const iconMap: Record<string, any> = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
         {units.map((unit) => {
           const Icon = iconMap[unit.icon];
-          const isFirst = unit.id === 1;
+          const isAvailable = [1, 2].includes(unit.id);
           return (
             <a
-              href={isFirst ? `/es/curso/principiantes/${unit.slugEs}/` : undefined}
+              href={isAvailable ? `/es/curso/principiantes/${unit.slugEs}/` : undefined}
               class:list={[
                 "group flex items-start gap-4 p-5 rounded-xl border transition-all duration-200",
-                isFirst
+                isAvailable
                   ? "bg-amber-50 border-amber-300 hover:shadow-md hover:border-amber-400 cursor-pointer"
                   : "bg-white border-slate-200 opacity-75",
               ]}
@@ -141,7 +141,7 @@ const iconMap: Record<string, any> = {
               <div
                 class:list={[
                   "flex items-center justify-center w-12 h-12 rounded-xl shrink-0",
-                  isFirst ? "bg-amber-500 text-white" : "bg-slate-100 text-slate-400",
+                  isAvailable ? "bg-amber-500 text-white" : "bg-slate-100 text-slate-400",
                 ]}
               >
                 {Icon && <Icon class="w-6 h-6" />}
@@ -151,12 +151,12 @@ const iconMap: Record<string, any> = {
                   <span
                     class:list={[
                       "text-xs font-bold uppercase tracking-wider",
-                      isFirst ? "text-amber-600" : "text-slate-400",
+                      isAvailable ? "text-amber-600" : "text-slate-400",
                     ]}
                   >
                     Unidad {unit.id}
                   </span>
-                  {!isFirst && (
+                  {!isAvailable && (
                     <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">
                       Próximamente
                     </span>
@@ -165,7 +165,7 @@ const iconMap: Record<string, any> = {
                 <h3
                   class:list={[
                     "text-lg font-bold mt-0.5",
-                    isFirst ? "text-slate-900" : "text-slate-600",
+                    isAvailable ? "text-slate-900" : "text-slate-600",
                   ]}
                 >
                   {unit.titleEs}
