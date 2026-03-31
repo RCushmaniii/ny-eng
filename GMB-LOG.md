@@ -23,6 +23,21 @@ Google confirmed removal of all flagged spam reviews. Email from `noreply@google
 
 **Result**: All spam reviews removed. Profile now shows **4.7 rating with 15 reviews**.
 
+### 2026-03-30 — Israel Barajas 1-Star Review (ESCALATION PENDING)
+
+**Reviewer**: Israel Barajas
+**Rating**: 1 star (no review text)
+**Profile**: 0 reviews, 0 photos — classic spam indicators
+**Posted**: ~mid-January 2026 (10 weeks ago as of 2026-03-30)
+**Status**: Re-flagged as spam on 2026-03-30. Escalation scheduled for 2026-04-03.
+
+This review was NOT included in the batch removal request (7-9246000040870) but is believed to be part of the same spam campaign. A prior removal request was denied by Google, who deemed it legitimate.
+
+**Escalation strategy**:
+1. File new removal request citing the successful batch removal as evidence of a coordinated spam campaign
+2. Highlight the 0-review, 0-photo profile pattern matching the removed reviews
+3. If dashboard appeal fails, escalate via Google Business Profile support (chat/phone)
+
 ---
 
 ## Ongoing Tasks
