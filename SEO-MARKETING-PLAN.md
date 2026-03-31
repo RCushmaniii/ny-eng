@@ -1,6 +1,6 @@
 # SEO & Marketing Plan — NY English Teacher
 
-> Last updated: 2026-03-29
+> Last updated: 2026-03-31
 > Status: Active
 > Owner: Claude (execution) + Robert (approval & creative direction)
 
@@ -81,9 +81,9 @@ Linkable asset posts designed to attract backlinks from ESL blogs, nearshoring p
 | # | Status | Title (EN) | Backlink Target | Approach |
 |---|--------|-----------|-----------------|----------|
 | B1 | ⬜ NotebookLM | The State of English in Mexico's Tech Industry: 2026 Report | HR blogs, nearshoring pubs, Mexican tech media | Needs real data: EF EPI, CSOFT, nearshoring stats |
-| B2 | ⬜ Planned | Mexico vs. US Workplace Communication: The Complete Guide | Cross-cultural training sites, relocation blogs | Same as Post #8 — expand into definitive reference |
+| B2 | ✅ Written | Mexico vs. US Workplace Communication: The Complete Guide | Cross-cultural training sites, relocation blogs | Published 2026-03-30 |
 | B3 | ✅ Written | 50 English Words Mexican Professionals Mispronounce | ESL blogs, language learning sites, Reddit | Reference content — shareable, bookmarkable |
-| B4 | ⬜ NotebookLM | The Nearshoring English Gap: Why $12B Gets Lost in Translation | Business media, nearshoring consultancies | Needs real contract loss figures, industry reports |
+| B4 | ✅ Written | The Nearshoring English Gap: How Miscommunication Costs $1.2T | Business media, nearshoring consultancies | Published 2026-03-31, EN + ES |
 | B5 | ⬜ NotebookLM | English Proficiency by Industry in Mexico: Sector Rankings | Industry associations, talent acquisition blogs | Needs benchmarking data: EF EPI, IMCO, Deloitte |
 | B6 | ⬜ Planned | The Executive English Assessment Framework (Free Tool) | HR departments, executive coaching blogs | Interactive framework — pairs with quiz system |
 
