@@ -73,6 +73,9 @@ export type TKey =
   | "quiz/executives"
   | "quiz/professional-services"
   | "quiz/high-stakes"
+  | "course/beginners"
+  | "course/beginners/unit-1"
+  | "course/beginners/pronunciation"
   | "meme-portfolio"
   | "site-index";
 
@@ -160,6 +163,9 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "quiz/executives": "/en/quiz/executives/",
     "quiz/professional-services": "/en/quiz/professional-services/",
     "quiz/high-stakes": "/en/quiz/high-stakes/",
+    "course/beginners": "/en/course/beginners/",
+    "course/beginners/unit-1": "/en/course/beginners/unit-1/",
+    "course/beginners/pronunciation": "/en/course/beginners/pronunciation/",
     "meme-portfolio": "/en/meme-portfolio/all/",
     "site-index": "/en/site-index/",
   },
@@ -251,6 +257,9 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "quiz/executives": "/es/quiz/executives/",
     "quiz/professional-services": "/es/quiz/professional-services/",
     "quiz/high-stakes": "/es/quiz/high-stakes/",
+    "course/beginners": "/es/curso/principiantes/",
+    "course/beginners/unit-1": "/es/curso/principiantes/unidad-1/",
+    "course/beginners/pronunciation": "/es/curso/principiantes/pronunciacion/",
     "meme-portfolio": "/es/meme-portfolio/all/",
     "site-index": "/es/indice-del-sitio/",
   },

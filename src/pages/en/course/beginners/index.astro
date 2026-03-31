@@ -1,0 +1,244 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import { courseInfo, units } from "@data/course/units";
+import {
+  Lightbulb,
+  Heart,
+  Users,
+  MessageCircle,
+  Clock,
+  UsersRound,
+  Handshake,
+  Compass,
+  BookOpen,
+  Rocket,
+  Volume2,
+  CheckCircle2,
+  ArrowRight,
+  Sparkles,
+  Globe,
+  Zap,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/beginners" as const;
+
+const iconMap: Record<string, any> = {
+  Lightbulb,
+  Heart,
+  Users,
+  MessageCircle,
+  Clock,
+  UsersRound,
+  Handshake,
+  Compass,
+  BookOpen,
+  Rocket,
+};
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="First Steps Into English — Free Course for Spanish Speakers | NY English Teacher"
+  description="A free 10-unit English course for Spanish speakers. Start from the 1,500+ words you already know. Interactive lessons with audio pronunciation. No grammar textbooks — just confidence and real sentences."
+>
+  <!-- Hero -->
+  <section class="relative w-full overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-amber-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-20 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
+    </div>
+    <div class="site-container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-semibold mb-6">
+          <Sparkles class="w-4 h-4" />
+          Free Course — 10 Units — No Login Required
+        </div>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          You Already Speak English.<br />
+          <span class="text-amber-400">You Just Don't Know It Yet.</span>
+        </h1>
+        <p class="text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed">
+          If you speak Spanish, you already carry over <strong class="text-white">1,500 English words</strong> inside you.
+          This course unlocks them — and builds your first real conversations from day one.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <Button href="/en/course/beginners/unit-1/" variant="primary" size="lg">
+            Start Unit 1 — Free
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value props -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center space-y-3 p-6">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-600">
+            <Globe class="w-7 h-7" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">1,500+ Words You Already Know</h3>
+          <p class="text-slate-600 leading-relaxed">
+            English and Spanish share thousands of cognates — words that look and sound almost the same. We start there.
+          </p>
+        </div>
+        <div class="text-center space-y-3 p-6">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-600">
+            <Volume2 class="w-7 h-7" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Audio On Every Sentence</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Hear every word and sentence in natural American English. Includes slow-speed playback for tricky pronunciation.
+          </p>
+        </div>
+        <div class="text-center space-y-3 p-6">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-600">
+            <Zap class="w-7 h-7" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Real Sentences from Day One</h3>
+          <p class="text-slate-600 leading-relaxed">
+            No boring grammar drills. By the end of Unit 1, you'll build sentences like: "I need to know if it is possible."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Units -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">10 Units. Zero to Conversation.</h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          Each unit builds on the last. Start with single words, end with complex sentences and real conversations.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        {units.map((unit) => {
+          const Icon = iconMap[unit.icon];
+          const isFirst = unit.id === 1;
+          return (
+            <a
+              href={isFirst ? `/en/course/beginners/${unit.slug}/` : undefined}
+              class:list={[
+                "group flex items-start gap-4 p-5 rounded-xl border transition-all duration-200",
+                isFirst
+                  ? "bg-amber-50 border-amber-300 hover:shadow-md hover:border-amber-400 cursor-pointer"
+                  : "bg-white border-slate-200 opacity-75",
+              ]}
+            >
+              <div
+                class:list={[
+                  "flex items-center justify-center w-12 h-12 rounded-xl shrink-0",
+                  isFirst ? "bg-amber-500 text-white" : "bg-slate-100 text-slate-400",
+                ]}
+              >
+                {Icon && <Icon class="w-6 h-6" />}
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span
+                    class:list={[
+                      "text-xs font-bold uppercase tracking-wider",
+                      isFirst ? "text-amber-600" : "text-slate-400",
+                    ]}
+                  >
+                    Unit {unit.id}
+                  </span>
+                  {!isFirst && (
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">
+                      Coming soon
+                    </span>
+                  )}
+                </div>
+                <h3
+                  class:list={[
+                    "text-lg font-bold mt-0.5",
+                    isFirst ? "text-slate-900" : "text-slate-600",
+                  ]}
+                >
+                  {unit.title}
+                </h3>
+                <p class="text-sm text-slate-500 mt-1">{unit.subtitle}</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Method explanation -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">
+          The Recognition Method
+        </h2>
+        <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+          <p>
+            Most English courses start by making you feel like you know nothing. We start by showing you <strong>how much you already know</strong>.
+          </p>
+          <p>
+            If you speak Spanish, you already carry over 1,500 English words inside you — words like
+            <em> possible, information, university, elegant, fantastic</em>.
+            You recognize them because they come from the same Latin roots.
+          </p>
+          <p>
+            <strong>First Steps Into English</strong> uses these words as your launchpad. In the first lesson alone, you'll go from
+            single words to complex sentences like <em>"I need to know if it's possible to do it today because it's very important."</em>
+          </p>
+          <p>
+            No grammar textbooks. No boring drills. No feeling lost. Just recognition, confidence, and real sentences you can use today.
+          </p>
+        </div>
+        <div class="mt-10 text-center">
+          <Button href="/en/course/beginners/unit-1/" variant="primary" size="lg">
+            Start Learning — Free
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About the teacher -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Built by Robert Cushman III</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Professional English coach based in Mexico who has trained executives at Fortune 500 companies,
+          startup founders, and senior professionals. This beginner course uses the same proven methodology —
+          adapted for learners just starting their English journey.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3 justify-center">
+          <a
+            href="/en/about/"
+            class="text-amber-600 hover:text-amber-700 font-medium underline underline-offset-2"
+          >
+            About Robert
+          </a>
+          <span class="text-slate-300">|</span>
+          <a
+            href="/en/services/"
+            class="text-amber-600 hover:text-amber-700 font-medium underline underline-offset-2"
+          >
+            Advanced Coaching Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
