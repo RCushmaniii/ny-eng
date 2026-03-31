@@ -1,0 +1,244 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import { courseInfo, units } from "@data/course/units";
+import {
+  Lightbulb,
+  Heart,
+  Users,
+  MessageCircle,
+  Clock,
+  UsersRound,
+  Handshake,
+  Compass,
+  BookOpen,
+  Rocket,
+  Volume2,
+  CheckCircle2,
+  ArrowRight,
+  Sparkles,
+  Globe,
+  Zap,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/beginners" as const;
+
+const iconMap: Record<string, any> = {
+  Lightbulb,
+  Heart,
+  Users,
+  MessageCircle,
+  Clock,
+  UsersRound,
+  Handshake,
+  Compass,
+  BookOpen,
+  Rocket,
+};
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Primeros Pasos en Inglés — Curso Gratuito para Hispanohablantes | NY English Teacher"
+  description="Un curso gratuito de 10 unidades de inglés para hispanohablantes. Empieza con las más de 1,500 palabras que ya conoces. Lecciones interactivas con audio. Sin libros de gramática — solo confianza y oraciones reales."
+>
+  <!-- Hero -->
+  <section class="relative w-full overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-amber-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-20 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
+    </div>
+    <div class="site-container mx-auto px-4 relative z-10 text-white">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-semibold mb-6">
+          <Sparkles class="w-4 h-4" />
+          Curso Gratuito — 10 Unidades — Sin Registro
+        </div>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Ya Hablas Inglés.<br />
+          <span class="text-amber-400">Solo No Lo Sabes Todavía.</span>
+        </h1>
+        <p class="text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed">
+          Si hablas español, ya llevas más de <strong class="text-white">1,500 palabras en inglés</strong> dentro de ti.
+          Este curso las desbloquea — y construye tus primeras conversaciones reales desde el día uno.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <Button href="/es/curso/principiantes/unidad-1/" variant="primary" size="lg">
+            Comenzar Unidad 1 — Gratis
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value props -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center space-y-3 p-6">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-600">
+            <Globe class="w-7 h-7" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Más de 1,500 Palabras que Ya Conoces</h3>
+          <p class="text-slate-600 leading-relaxed">
+            El inglés y el español comparten miles de cognados — palabras que se ven y suenan casi igual. Empezamos ahí.
+          </p>
+        </div>
+        <div class="text-center space-y-3 p-6">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-600">
+            <Volume2 class="w-7 h-7" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Audio en Cada Oración</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Escucha cada palabra y oración en inglés americano natural. Incluye reproducción a velocidad lenta para pronunciación difícil.
+          </p>
+        </div>
+        <div class="text-center space-y-3 p-6">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-600">
+            <Zap class="w-7 h-7" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Oraciones Reales Desde el Día Uno</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Sin ejercicios aburridos de gramática. Al final de la Unidad 1, construirás oraciones como: "I need to know if it is possible."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Units -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">10 Unidades. De Cero a Conversación.</h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          Cada unidad se construye sobre la anterior. Empieza con palabras sueltas, termina con oraciones complejas y conversaciones reales.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        {units.map((unit) => {
+          const Icon = iconMap[unit.icon];
+          const isFirst = unit.id === 1;
+          return (
+            <a
+              href={isFirst ? `/es/curso/principiantes/${unit.slugEs}/` : undefined}
+              class:list={[
+                "group flex items-start gap-4 p-5 rounded-xl border transition-all duration-200",
+                isFirst
+                  ? "bg-amber-50 border-amber-300 hover:shadow-md hover:border-amber-400 cursor-pointer"
+                  : "bg-white border-slate-200 opacity-75",
+              ]}
+            >
+              <div
+                class:list={[
+                  "flex items-center justify-center w-12 h-12 rounded-xl shrink-0",
+                  isFirst ? "bg-amber-500 text-white" : "bg-slate-100 text-slate-400",
+                ]}
+              >
+                {Icon && <Icon class="w-6 h-6" />}
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span
+                    class:list={[
+                      "text-xs font-bold uppercase tracking-wider",
+                      isFirst ? "text-amber-600" : "text-slate-400",
+                    ]}
+                  >
+                    Unidad {unit.id}
+                  </span>
+                  {!isFirst && (
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">
+                      Próximamente
+                    </span>
+                  )}
+                </div>
+                <h3
+                  class:list={[
+                    "text-lg font-bold mt-0.5",
+                    isFirst ? "text-slate-900" : "text-slate-600",
+                  ]}
+                >
+                  {unit.titleEs}
+                </h3>
+                <p class="text-sm text-slate-500 mt-1">{unit.subtitleEs}</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Method explanation -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">
+          El Método de Reconocimiento
+        </h2>
+        <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+          <p>
+            La mayoría de los cursos de inglés empiezan haciéndote sentir que no sabes nada. Nosotros empezamos mostrándote <strong>cuánto ya sabes</strong>.
+          </p>
+          <p>
+            Si hablas español, ya llevas más de 1,500 palabras en inglés dentro de ti — palabras como
+            <em> possible, information, university, elegant, fantastic</em>.
+            Las reconoces porque vienen de las mismas raíces latinas.
+          </p>
+          <p>
+            <strong>Primeros Pasos en Inglés</strong> usa estas palabras como tu plataforma de lanzamiento. Solo en la primera lección, pasarás de
+            palabras sueltas a oraciones complejas como <em>"I need to know if it's possible to do it today because it's very important."</em>
+          </p>
+          <p>
+            Sin libros de gramática. Sin ejercicios aburridos. Sin sentirte perdido. Solo reconocimiento, confianza y oraciones reales que puedes usar hoy.
+          </p>
+        </div>
+        <div class="mt-10 text-center">
+          <Button href="/es/curso/principiantes/unidad-1/" variant="primary" size="lg">
+            Empezar a Aprender — Gratis
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About the teacher -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Creado por Robert Cushman III</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Coach profesional de inglés con base en México que ha entrenado a ejecutivos de empresas Fortune 500,
+          fundadores de startups y profesionales de alto nivel. Este curso para principiantes usa la misma metodología probada —
+          adaptada para quienes están comenzando su viaje con el inglés.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3 justify-center">
+          <a
+            href="/es/about/"
+            class="text-amber-600 hover:text-amber-700 font-medium underline underline-offset-2"
+          >
+            Sobre Robert
+          </a>
+          <span class="text-slate-300">|</span>
+          <a
+            href="/es/servicios/"
+            class="text-amber-600 hover:text-amber-700 font-medium underline underline-offset-2"
+          >
+            Servicios de Coaching Avanzado
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
