@@ -124,7 +124,7 @@ export default function ConnectorChallenge({
                 />
                 <AudioButton
                   text={bossSentence.english}
-                  rate={0.65}
+                  rate={0.8}
                   size="lg"
                   className="!bg-white/5 !text-white/60 hover:!bg-white/10"
                   label="Listen slowly"

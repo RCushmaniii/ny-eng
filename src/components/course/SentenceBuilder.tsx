@@ -180,7 +180,7 @@ export default function SentenceBuilder({
                           {/* Slow audio */}
                           <AudioButton
                             text={sentence.english}
-                            rate={0.7}
+                            rate={0.8}
                             size="sm"
                             className="shrink-0 mt-0.5 opacity-50 hover:opacity-100"
                             label="Listen slowly"
