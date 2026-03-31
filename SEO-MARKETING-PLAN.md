@@ -113,7 +113,7 @@ Feed these into NotebookLM to generate unique data insights:
 - [ ] Social media API integration (LinkedIn, Twitter/X, Facebook)
 - [ ] Automated social media content generation on publish
 - [ ] Bing Webmaster performance data pull script
-- [ ] Google Business Profile optimization (if applicable)
+- [x] Google Business Profile — active, spam reviews removed 2026-03-29 (see [GMB-LOG.md](./GMB-LOG.md))
 - [x] Backlink content strategy (see above)
 - [ ] Backlink outreach execution (guest posts, HARO, broken link building)
 - [ ] Microsoft Clarity integration (free heatmaps/session recording)
