@@ -76,6 +76,7 @@ export type TKey =
   | "course/beginners"
   | "course/beginners/unit-1"
   | "course/beginners/unit-2"
+  | "course/beginners/unit-3"
   | "course/beginners/pronunciation"
   | "meme-portfolio"
   | "site-index";
@@ -167,6 +168,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/beginners": "/en/course/beginners/",
     "course/beginners/unit-1": "/en/course/beginners/unit-1/",
     "course/beginners/unit-2": "/en/course/beginners/unit-2/",
+    "course/beginners/unit-3": "/en/course/beginners/unit-3/",
     "course/beginners/pronunciation": "/en/course/beginners/pronunciation/",
     "meme-portfolio": "/en/meme-portfolio/all/",
     "site-index": "/en/site-index/",
@@ -262,6 +264,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/beginners": "/es/curso/principiantes/",
     "course/beginners/unit-1": "/es/curso/principiantes/unidad-1/",
     "course/beginners/unit-2": "/es/curso/principiantes/unidad-2/",
+    "course/beginners/unit-3": "/es/curso/principiantes/unidad-3/",
     "course/beginners/pronunciation": "/es/curso/principiantes/pronunciacion/",
     "meme-portfolio": "/es/meme-portfolio/all/",
     "site-index": "/es/indice-del-sitio/",

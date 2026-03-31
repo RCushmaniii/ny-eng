@@ -2,7 +2,6 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
-import Button from "@components/ui/Button.astro";
 import CourseProgress from "@components/course/CourseProgress";
 import CognateDiscovery from "@components/course/CognateDiscovery";
 import SentenceBuilder from "@components/course/SentenceBuilder";
@@ -17,11 +16,10 @@ import {
   connectorSentences,
   pronunciationDrills,
   vocabularyList,
-} from "@data/course/unit-2";
+} from "@data/course/unit-3";
 import {
-  ArrowRight,
   ArrowLeft,
-  Heart,
+  Users,
   Layers,
   Zap,
   Link2,
@@ -29,12 +27,12 @@ import {
   ClipboardCheck,
 } from "lucide-astro";
 
-const lang = "en";
-const tkey = "course/beginners/unit-2" as const;
+const lang = "es";
+const tkey = "course/beginners/unit-3" as const;
 
 const progressUnits = units.map((u) => ({
   id: u.id,
-  slug: u.slug,
+  slug: u.slugEs,
   title: u.title,
   titleEs: u.titleEs,
 }));
@@ -45,15 +43,15 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
 <Base
   lang={lang}
   tkey={tkey}
-  title="Unit 2: What You Like — First Steps Into English | NY English Teacher"
-  description="Learn to express preferences in English: I like, I don't like, I would like. Talk about food, daily activities, and the past. Free interactive lesson with audio."
+  title="Unidad 3: Hablando de Otros — Primeros Pasos en Inglés | NY English Teacher"
+  description="Aprende a hablar de lo que él, ella puede hacer, quiere y tiene que hacer en inglés. Verbos modales en tercera persona, preguntas y él mismo/ella misma. Lección gratuita."
 >
   <CourseProgress
     client:load
     units={progressUnits}
-    currentUnit={2}
-    basePath="/en/course/beginners"
-    lang="en"
+    currentUnit={3}
+    basePath="/es/curso/principiantes"
+    lang="es"
   />
 
   <!-- Unit hero -->
@@ -61,18 +59,18 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     <div class="site-container mx-auto px-4 text-white">
       <div class="max-w-3xl">
         <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
-          <Heart class="w-4 h-4" />
-          Unit 2
+          <Users class="w-4 h-4" />
+          Unidad 3
         </div>
         <h1
           class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
           style="font-family: 'Noto Sans KR', sans-serif;"
         >
-          What You Like
+          Hablando de Otros
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Now that you can build sentences, let's make them personal. You'll learn to talk about
-          what you like, what you'd prefer, and what happened yesterday — all using simple patterns.
+          Hasta ahora, todo ha sido sobre "I". Es hora de hablar de otras personas — lo que él puede hacer,
+          lo que ella quiere, lo que alguien tiene que hacer. Mismos patrones, nueva perspectiva.
         </p>
       </div>
     </div>
@@ -82,159 +80,160 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
   <nav class="bg-white border-b border-slate-200 sticky top-[52px] z-30 overflow-x-auto">
     <div class="site-container mx-auto px-4">
       <div class="flex items-center gap-1 py-2 text-sm whitespace-nowrap">
-        <a href="#cognates" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Heart class="w-3.5 h-3.5" /> Cognates
+        <a href="#cognados" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
+          <Users class="w-3.5 h-3.5" /> Cognados
         </a>
-        <a href="#sentences" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Layers class="w-3.5 h-3.5" /> I Like
+        <a href="#oraciones" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
+          <Layers class="w-3.5 h-3.5" /> Él/Ella Puede/Quiere
         </a>
-        <a href="#power-verbs" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Zap class="w-3.5 h-3.5" /> Would Like + Past
+        <a href="#verbos" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
+          <Zap class="w-3.5 h-3.5" /> Gustaría + Preguntas
         </a>
-        <a href="#connectors" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Link2 class="w-3.5 h-3.5" /> Time Words
+        <a href="#conectores" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
+          <Link2 class="w-3.5 h-3.5" /> Sobre Otros
         </a>
-        <a href="#pronunciation" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Volume2 class="w-3.5 h-3.5" /> Pronunciation
+        <a href="#pronunciacion" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
+          <Volume2 class="w-3.5 h-3.5" /> Pronunciación
         </a>
-        <a href="#self-test" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <ClipboardCheck class="w-3.5 h-3.5" /> Self-Test
+        <a href="#auto-evaluacion" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
+          <ClipboardCheck class="w-3.5 h-3.5" /> Auto-Evaluación
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- Section A: Cognate Discovery -->
-  <section id="cognates" class="py-12 md:py-16 bg-slate-50">
+  <!-- Section A -->
+  <section id="cognados" class="py-12 md:py-16 bg-slate-50">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="mb-8">
           <div class="flex items-center gap-2 text-amber-600 text-sm font-semibold mb-2">
-            <Heart class="w-4 h-4" />
-            Section A
+            <Users class="w-4 h-4" />
+            Sección A
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-            More Words You Already Know
+            Aún Más Palabras que Conoces
           </h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Three more cognate patterns that unlock hundreds of English words. The -tion pattern alone covers over 300 words.
+            Tres patrones más: -ant/-ance (elegante, tolerancia), -ic/-ical (eléctrico, político), y más palabras en -al (emocional, profesional). Tu vocabulario sigue creciendo.
           </p>
         </div>
-        <CognateDiscovery client:visible waves={waveData} lang="en" />
+        <CognateDiscovery client:visible waves={waveData} lang="es" />
       </div>
     </div>
   </section>
 
-  <!-- Section B: I Like / I Don't Like -->
-  <section id="sentences" class="py-12 md:py-16 bg-white">
+  <!-- Section B -->
+  <section id="oraciones" class="py-12 md:py-16 bg-white">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="mb-8">
           <div class="flex items-center gap-2 text-amber-600 text-sm font-semibold mb-2">
             <Layers class="w-4 h-4" />
-            Section B
+            Sección B
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-            I Like / I Don't Like
+            He Can / She Wants / He Has To
           </h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Express your preferences. "I like" works with things (I like the food) and actions
-            (I like to swim). Add "don't" to say what you don't enjoy.
+            Los mismos verbos poderosos de la Unidad 1, pero ahora en tercera persona. Nota: "want<strong>s</strong>" y
+            "ha<strong>s</strong> to" — la 's' es la diferencia clave.
           </p>
         </div>
-        <SentenceBuilder client:visible blocks={sentenceBlocks} lang="en" />
+        <SentenceBuilder client:visible blocks={sentenceBlocks} lang="es" />
       </div>
     </div>
   </section>
 
-  <!-- Section C: I Would Like + Past Tense -->
-  <section id="power-verbs" class="py-12 md:py-16 bg-slate-50">
+  <!-- Section C -->
+  <section id="verbos" class="py-12 md:py-16 bg-slate-50">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="mb-8">
           <div class="flex items-center gap-2 text-amber-600 text-sm font-semibold mb-2">
             <Zap class="w-4 h-4" />
-            Section C
+            Sección C
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-            I Would Like + The Past
+            Gustaría + Preguntas + Él Mismo/Ella Misma
           </h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            "I would like" is your polite superpower — use it everywhere. Then we unlock the past
-            with "it was" and add three powerful words: <strong>myself</strong>, <strong>again</strong>, and <strong>soon</strong>.
+            Expresa lo que otros preferirían, haz preguntas sobre ellos, y habla de
+            hacer cosas independientemente con <strong>himself</strong> y <strong>herself</strong>.
           </p>
         </div>
-        <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="en" />
+        <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="es" />
       </div>
     </div>
   </section>
 
-  <!-- Section D: Time Words -->
-  <section id="connectors" class="py-12 md:py-16 bg-white">
+  <!-- Section D -->
+  <section id="conectores" class="py-12 md:py-16 bg-white">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="mb-8">
           <div class="flex items-center gap-2 text-amber-600 text-sm font-semibold mb-2">
             <Link2 class="w-4 h-4" />
-            Section D
+            Sección D
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-            Time Words
+            Hablando de Lo que Otros Necesitan
           </h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            New time and relationship words that make your sentences richer.
-            Tap each one, then try the Boss Sentence.
+            Nuevas palabras de relación y situación — conmigo, urgente, ocupado, él mismo, ella misma.
+            Toca cada una, luego intenta la Oración Maestra.
           </p>
         </div>
         <ConnectorChallenge
           client:visible
           connectors={connectorSentences.connectors}
           bossSentence={connectorSentences.bossSentence}
-          lang="en"
+          lang="es"
         />
       </div>
     </div>
   </section>
 
-  <!-- Section E: Pronunciation Lab -->
-  <section id="pronunciation" class="py-12 md:py-16 bg-slate-50">
+  <!-- Section E -->
+  <section id="pronunciacion" class="py-12 md:py-16 bg-slate-50">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="mb-8">
           <div class="flex items-center gap-2 text-rose-500 text-sm font-semibold mb-2">
             <Volume2 class="w-4 h-4" />
-            Pronunciation Lab
+            Laboratorio de Pronunciación
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-            B vs. V — They're Different in English!
+            Ch vs. Sh — Explosivo vs. Suave
           </h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            In Spanish, B and V sound the same. In English, they're completely different sounds.
-            This is one of the most common mistakes — and one of the easiest to fix.
+            El sonido "sh" no existe en español. Muchos hispanohablantes dicen "ch" (explosivo)
+            cuando quieren decir "sh" (suave). Esta lección lo corrige — una vez que escuches la diferencia,
+            nunca los confundirás otra vez.
           </p>
         </div>
-        <PronunciationDrill client:visible drills={pronunciationDrills} lang="en" />
+        <PronunciationDrill client:visible drills={pronunciationDrills} lang="es" />
       </div>
     </div>
   </section>
 
-  <!-- Section F: Self-Test -->
-  <section id="self-test" class="py-12 md:py-16 bg-white">
+  <!-- Section F -->
+  <section id="auto-evaluacion" class="py-12 md:py-16 bg-white">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="mb-8">
           <div class="flex items-center gap-2 text-amber-600 text-sm font-semibold mb-2">
             <ClipboardCheck class="w-4 h-4" />
-            Self-Test
+            Auto-Evaluación
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-            Test What You Learned
+            Evalúa Lo que Aprendiste
           </h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Review everything from Unit 2 — plus some Unit 1 vocabulary to keep it fresh.
+            Modales en tercera persona más repaso de las Unidades 1 y 2. La espiral sigue creciendo.
           </p>
         </div>
-        <SelfTest client:visible vocabulary={vocabularyList} lang="en" />
+        <SelfTest client:visible vocabulary={vocabularyList} lang="es" />
       </div>
     </div>
   </section>
@@ -248,35 +247,35 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 class="text-3xl font-bold text-white">Unit 2 Complete!</h2>
+        <h2 class="text-3xl font-bold text-white">Unidad 3 Completada!</h2>
         <p class="text-lg text-slate-100 leading-relaxed">
-          You can now express likes, preferences, and talk about the past. Combined with Unit 1,
-          you can build sentences that most "beginners" couldn't dream of.
+          Ahora puedes hablar de lo que otras personas pueden hacer, quieren, tienen que hacer y les gustaría.
+          Son tres unidades de inglés — y estás construyendo oraciones que la mayoría de principiantes no pueden.
         </p>
         <div class="flex flex-wrap gap-4 justify-center pt-4">
           <a
-            href="/en/course/beginners/unit-1/"
+            href="/es/curso/principiantes/unidad-2/"
             class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors"
           >
             <ArrowLeft class="w-4 h-4" />
-            Review Unit 1
+            Repasar Unidad 2
           </a>
           <a
-            href="/en/course/beginners/unit-3/"
+            href="/es/curso/principiantes/"
             class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors shadow-lg"
           >
-            Continue to Unit 3 →
+            Volver al Curso
           </a>
         </div>
         <div class="pt-8 border-t border-slate-700 mt-8">
           <p class="text-slate-200 text-sm mb-3">
-            Want personalized English coaching?
+            Quieres coaching personalizado de inglés?
           </p>
           <a
-            href="/en/contact/"
+            href="/es/contact/"
             class="text-amber-400 hover:text-amber-300 font-medium underline underline-offset-2"
           >
-            Book a free consultation with Robert →
+            Agenda una consulta gratuita con Robert →
           </a>
         </div>
       </div>

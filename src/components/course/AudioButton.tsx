@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { Volume2, Loader2 } from "lucide-react";
 
 interface AudioButtonProps {
@@ -10,10 +10,49 @@ interface AudioButtonProps {
   label?: string;
 }
 
+// Module-level voice cache — shared across all AudioButton instances
+let cachedVoices: SpeechSynthesisVoice[] = [];
+let voicesLoaded = false;
+
+function loadVoices(): SpeechSynthesisVoice[] {
+  if (typeof window === "undefined" || !window.speechSynthesis) return [];
+  const voices = window.speechSynthesis.getVoices();
+  if (voices.length > 0) {
+    cachedVoices = voices;
+    voicesLoaded = true;
+  }
+  return cachedVoices;
+}
+
+// Eagerly trigger voice loading on module import
+if (typeof window !== "undefined" && window.speechSynthesis) {
+  loadVoices();
+  window.speechSynthesis.onvoiceschanged = () => {
+    loadVoices();
+  };
+}
+
+function getBestVoice(langCode: string): SpeechSynthesisVoice | null {
+  const voices = voicesLoaded ? cachedVoices : loadVoices();
+  const langPrefix = langCode.slice(0, 2);
+
+  // Priority 1: Non-local (cloud/neural) voice matching the language
+  const neural = voices.find(
+    (v) => v.lang.startsWith(langPrefix) && !v.localService,
+  );
+  if (neural) return neural;
+
+  // Priority 2: Any voice matching the language
+  const any = voices.find((v) => v.lang.startsWith(langPrefix));
+  if (any) return any;
+
+  return null;
+}
+
 /**
  * AudioButton — Uses the browser's built-in SpeechSynthesis API
- * to speak English text aloud. Zero cost, works offline.
- * Can be upgraded to Azure TTS later for higher quality.
+ * to speak English text aloud. Preloads voices on mount so the
+ * first click always gets the best available voice.
  */
 export default function AudioButton({
   text,
@@ -24,7 +63,39 @@ export default function AudioButton({
   label,
 }: AudioButtonProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [ready, setReady] = useState(voicesLoaded);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+
+  // Ensure voices are loaded before first interaction
+  useEffect(() => {
+    if (voicesLoaded) {
+      setReady(true);
+      return;
+    }
+
+    // Force voice loading by calling getVoices
+    loadVoices();
+
+    const handleVoicesChanged = () => {
+      loadVoices();
+      setReady(true);
+    };
+
+    window.speechSynthesis.onvoiceschanged = handleVoicesChanged;
+
+    // Some browsers need a nudge — poll briefly
+    const timer = setInterval(() => {
+      const v = loadVoices();
+      if (v.length > 0) {
+        setReady(true);
+        clearInterval(timer);
+      }
+    }, 100);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
 
   const speak = useCallback(() => {
     if (typeof window === "undefined" || !window.speechSynthesis) return;
@@ -37,14 +108,9 @@ export default function AudioButton({
     utterance.rate = rate;
     utterance.pitch = 1;
 
-    // Try to pick a good voice
-    const voices = window.speechSynthesis.getVoices();
-    const preferred = voices.find(
-      (v) => v.lang.startsWith(lang.slice(0, 2)) && v.localService === false,
-    );
-    const fallback = voices.find((v) => v.lang.startsWith(lang.slice(0, 2)));
-    if (preferred) utterance.voice = preferred;
-    else if (fallback) utterance.voice = fallback;
+    // Use the cached best voice
+    const voice = getBestVoice(lang);
+    if (voice) utterance.voice = voice;
 
     utterance.onstart = () => setIsPlaying(true);
     utterance.onend = () => setIsPlaying(false);
