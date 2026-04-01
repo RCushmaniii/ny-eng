@@ -285,7 +285,7 @@ export const powerVerbBlocks: SentenceBlock[] = [
       },
       {
         english: "I just saw her and she told me the truth about what happened.",
-        spanish: "Acabo de verla y me dijo la verdad sobre qué pasó.",
+        spanish: "Acabo de verla y me dijo la verdad sobre lo que pasó.",
         highlight: "about what happened",
       },
       {
@@ -364,7 +364,7 @@ export const connectorSentences = {
     english:
       "I just found out about the problem at the party last night and she told me the truth about what happened with him, and now I have to be at the house all day because it's very important.",
     spanish:
-      "Acabo de enterarme del problema en la fiesta anoche y ella me dijo la verdad sobre qué pasó con él, y ahora tengo que estar en la casa todo el día porque es muy importante.",
+      "Acabo de enterarme del problema en la fiesta anoche y ella me dijo la verdad sobre lo que pasó con él, y ahora tengo que estar en la casa todo el día porque es muy importante.",
   },
 };
 

@@ -292,7 +292,7 @@ export const powerVerbBlocks: SentenceBlock[] = [
       },
       {
         english: "Someone should be able to tell me the truth about what happened at the party last night.",
-        spanish: "Alguien debería poder decirme la verdad sobre qué pasó en la fiesta anoche.",
+        spanish: "Alguien debería poder decirme la verdad sobre lo que pasó en la fiesta anoche.",
       },
     ],
   },
@@ -353,7 +353,7 @@ export const connectorSentences = {
     english:
       "Everyone already knows the truth about what happened, so someone should explain the reason why, because it's too important and nobody should have to wait.",
     spanish:
-      "Todos ya saben la verdad sobre qué pasó, entonces alguien debería explicar el porqué, porque es demasiado importante y nadie debería tener que esperar.",
+      "Todos ya saben la verdad sobre lo que pasó, entonces alguien debería explicar el porqué, porque es demasiado importante y nadie debería tener que esperar.",
   },
 };
 
@@ -365,7 +365,7 @@ export const pronunciationDrills: PronunciationDrill[] = [
     spanishStress: "es-pe-CIAL",
     englishStress: "SPE-shul — NO 'e' before the S",
     tip: "In Spanish, words starting with S + consonant always add an 'e' sound: 'especial.' In English, go straight to the S: 'SPECIAL', not 'e-special.' This is one of the biggest giveaways of a Spanish accent.",
-    tipEs: "En español, las palabras que empiezan con S + consonante siempre añaden un sonido 'e': 'especial.' En inglés, ve directo a la S: 'SPECIAL', no 'e-special.' Este es uno de los mayores indicadores de acento español.",
+    tipEs: "En español, las palabras que empiezan con S + consonante siempre añaden un sonido 'e': 'especial.' En inglés, ve directo a la S: 'SPECIAL', no 'e-special.' Este es uno de los mayores indicadores de acento en español.",
   },
   {
     word: "stop / start",
