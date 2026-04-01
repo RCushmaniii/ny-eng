@@ -25,6 +25,41 @@
 
 ---
 
+## Progress Report
+
+### Completed
+- **Unit 1**: "You Already Know English" — cognates, first sentences, 4 modal verbs, pronunciation (word stress) ✅
+- **Unit 2**: "What You Like" — I like/don't like/would like, past tense (it was), myself/again/soon, pronunciation (B vs V) ✅
+- **Unit 3**: "Talking About Others" — he/she can/wants/has to/would like, questions, himself/herself, pronunciation (Ch vs Sh) ✅
+- **Course landing page** — EN + ES with unit roadmap ✅
+- **Site navigation** — "Courses" added to main header nav (EN + ES) ✅
+- **AudioButton voice preloading** — fixes first-click robotic voice ✅
+- **Full bilingual** — all pages have EN + ES versions ✅
+
+### In Progress
+- **Unit 4**: "Talking to Someone" — you forms, indirect objects, tell/give me/you/him/her
+
+### Remaining (Units 5-10)
+- Unit 5: What Just Happened — recent past (I just + verb)
+- Unit 6: Everyone, Someone, No One — indefinite pronouns + should
+- Unit 7: Together — we can/want/have to
+- Unit 8: Feelings and Curiosity — I feel like, I wonder, they forms
+- Unit 9: Telling Stories — extended past tense, narratives
+- Unit 10: What's Coming Next — future tense (going to), what does it mean?
+
+### Technical Debt
+- Azure TTS integration planned (currently using browser SpeechSynthesis)
+- Progress tracking uses localStorage (no user accounts yet)
+- Pronunciation lab standalone page not yet built
+
+### Stats
+- **Pages generated**: 333 (6 new course pages)
+- **React components**: 7 (CognateDiscovery, SentenceBuilder, PronunciationDrill, ConnectorChallenge, SelfTest, AudioButton, CourseProgress)
+- **Cognate words taught**: ~100 across 9 pattern categories
+- **Date**: 2026-03-31
+
+---
+
 ## Strategic Vision
 
 ### Why Build a Beginner Course?

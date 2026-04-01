@@ -16,11 +16,10 @@ import {
   connectorSentences,
   pronunciationDrills,
   vocabularyList,
-} from "@data/course/unit-3";
+} from "@data/course/unit-4";
 import {
-  ArrowRight,
   ArrowLeft,
-  Users,
+  MessageCircle,
   Layers,
   Zap,
   Link2,
@@ -29,7 +28,7 @@ import {
 } from "lucide-astro";
 
 const lang = "en";
-const tkey = "course/beginners/unit-3" as const;
+const tkey = "course/beginners/unit-4" as const;
 
 const progressUnits = units.map((u) => ({
   id: u.id,
@@ -44,54 +43,49 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
 <Base
   lang={lang}
   tkey={tkey}
-  title="Unit 3: Talking About Others — First Steps Into English | NY English Teacher"
-  description="Learn to talk about what he, she, and it can do, wants, and has to do in English. Third person modal verbs, questions, and himself/herself. Free interactive lesson."
+  title="Unit 4: Talking to Someone — First Steps Into English | NY English Teacher"
+  description="Learn to address someone directly in English: you can, you have to, tell me the truth, what happened. Indirect objects and TH pronunciation. Free interactive lesson."
 >
   <CourseProgress
     client:load
     units={progressUnits}
-    currentUnit={3}
+    currentUnit={4}
     basePath="/en/course/beginners"
     lang="en"
   />
 
-  <!-- Unit hero -->
   <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
     <div class="site-container mx-auto px-4 text-white">
       <div class="max-w-3xl">
         <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
-          <Users class="w-4 h-4" />
-          Unit 3
+          <MessageCircle class="w-4 h-4" />
+          Unit 4
         </div>
-        <h1
-          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
-          style="font-family: 'Noto Sans KR', sans-serif;"
-        >
-          Talking About Others
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Talking to Someone
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Until now, everything has been about "I". Time to talk about other people — what he can do,
-          what she wants, what someone has to do. Same patterns, new perspective.
+          Time for real conversation. You'll learn to address someone directly — ask them questions,
+          tell them things, explain what happened. This is where English becomes truly interactive.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Section nav -->
   <nav class="bg-white border-b border-slate-200 sticky top-[52px] z-30 overflow-x-auto">
     <div class="site-container mx-auto px-4">
       <div class="flex items-center gap-1 py-2 text-sm whitespace-nowrap">
         <a href="#cognates" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Users class="w-3.5 h-3.5" /> Cognates
+          <MessageCircle class="w-3.5 h-3.5" /> Cognates
         </a>
         <a href="#sentences" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Layers class="w-3.5 h-3.5" /> He/She Can/Wants
+          <Layers class="w-3.5 h-3.5" /> You Can/Want/Have To
         </a>
         <a href="#power-verbs" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Zap class="w-3.5 h-3.5" /> Would Like + Questions
+          <Zap class="w-3.5 h-3.5" /> Tell/Call/Give + Past
         </a>
         <a href="#connectors" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Link2 class="w-3.5 h-3.5" /> About Others
+          <Link2 class="w-3.5 h-3.5" /> Direct Conversation
         </a>
         <a href="#pronunciation" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
           <Volume2 class="w-3.5 h-3.5" /> Pronunciation
@@ -103,20 +97,17 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     </div>
   </nav>
 
-  <!-- Section A: Cognate Discovery -->
   <section id="cognates" class="py-12 md:py-16 bg-slate-50">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="mb-8">
           <div class="flex items-center gap-2 text-amber-600 text-sm font-semibold mb-2">
-            <Users class="w-4 h-4" />
+            <MessageCircle class="w-4 h-4" />
             Section A
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-            Even More Words You Know
-          </h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Your Vocabulary Keeps Growing</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Three more patterns: -ant/-ance (elegant, tolerance), -ic/-ical (electric, political), and bonus -al words (emotional, professional). Your vocabulary keeps growing.
+            Three more patterns: -ment (document, moment), -ity (university, quality), and -ent (excellent, president). You're now recognizing patterns automatically.
           </p>
         </div>
         <CognateDiscovery client:visible waves={waveData} lang="en" />
@@ -124,7 +115,6 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     </div>
   </section>
 
-  <!-- Section B: He/She Can, Wants, Has To -->
   <section id="sentences" class="py-12 md:py-16 bg-white">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
@@ -133,12 +123,10 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Layers class="w-4 h-4" />
             Section B
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-            He Can / She Wants / He Has To
-          </h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">You Can / You Want / You Have To</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            The same power verbs from Unit 1, but now for third person. Notice: "want<strong>s</strong>" and
-            "ha<strong>s</strong> to" — the 's' is the key difference.
+            Address someone directly. Plus the key skill of this unit: <strong>indirect objects</strong> —
+            tell <em>me</em>, tell <em>you</em>, tell <em>him</em>. Who receives the action changes everything.
           </p>
         </div>
         <SentenceBuilder client:visible blocks={sentenceBlocks} lang="en" />
@@ -146,7 +134,6 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     </div>
   </section>
 
-  <!-- Section C: Would Like + Questions + Himself/Herself -->
   <section id="power-verbs" class="py-12 md:py-16 bg-slate-50">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
@@ -155,12 +142,10 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Zap class="w-4 h-4" />
             Section C
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-            Would Like + Questions + Himself/Herself
-          </h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Call / Give + What Happened</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Express what others would prefer, ask questions about them, and talk about
-            doing things independently with <strong>himself</strong> and <strong>herself</strong>.
+            The indirect object pattern works with every verb: call me, give you, tell him.
+            Then combine it with <strong>"what happened"</strong> to talk about past events.
           </p>
         </div>
         <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="en" />
@@ -168,7 +153,6 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     </div>
   </section>
 
-  <!-- Section D: Connectors -->
   <section id="connectors" class="py-12 md:py-16 bg-white">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
@@ -177,12 +161,9 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Link2 class="w-4 h-4" />
             Section D
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-            Talking About What Others Need
-          </h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Direct Conversation</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            New relationship and situation words — with me, urgent, busy, himself, herself.
-            Tap each one, then tackle the Boss Sentence.
+            Words that power real dialogue — why, the truth, the reason why, what happened, last night.
           </p>
         </div>
         <ConnectorChallenge
@@ -195,7 +176,6 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     </div>
   </section>
 
-  <!-- Section E: Pronunciation Lab -->
   <section id="pronunciation" class="py-12 md:py-16 bg-slate-50">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
@@ -204,13 +184,11 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Volume2 class="w-4 h-4" />
             Pronunciation Lab
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-            Ch vs. Sh — Explosive vs. Smooth
-          </h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">The TH Sounds — Tongue Between Teeth</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            The "sh" sound doesn't exist in Spanish. Many Spanish speakers say "ch" (explosive)
-            when they mean "sh" (smooth). This lesson fixes that — once you hear the difference,
-            you'll never confuse them again.
+            English has two TH sounds: voiced ("the", "this") and voiceless ("think", "truth").
+            Both require putting your tongue between your teeth — a movement that doesn't exist in Spanish.
+            Once you get it, words like "the", "with", and "three" become effortless.
           </p>
         </div>
         <PronunciationDrill client:visible drills={pronunciationDrills} lang="en" />
@@ -218,7 +196,6 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     </div>
   </section>
 
-  <!-- Section F: Self-Test -->
   <section id="self-test" class="py-12 md:py-16 bg-white">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
@@ -227,11 +204,9 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <ClipboardCheck class="w-4 h-4" />
             Self-Test
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-            Test What You Learned
-          </h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Test What You Learned</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Third person modals plus review from Units 1 and 2. The spiral keeps growing.
+            You-forms, indirect objects, and conversation vocabulary — plus review from Units 1-3.
           </p>
         </div>
         <SelfTest client:visible vocabulary={vocabularyList} lang="en" />
@@ -239,7 +214,6 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     </div>
   </section>
 
-  <!-- Unit complete CTA -->
   <section class="py-16 md:py-20 bg-gradient-to-b from-slate-900 to-slate-800">
     <div class="site-container mx-auto px-4 text-white">
       <div class="max-w-2xl mx-auto text-center space-y-6">
@@ -248,34 +222,22 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 class="text-3xl font-bold text-white">Unit 3 Complete!</h2>
+        <h2 class="text-3xl font-bold text-white">Unit 4 Complete!</h2>
         <p class="text-lg text-slate-100 leading-relaxed">
-          You can now talk about what other people can do, want, have to do, and would like.
-          That's three units of English — and you're building sentences most beginners can't touch.
+          You can now have direct conversations — ask someone questions, tell them things,
+          explain what happened. Four units in and you're building English that actually works in real life.
         </p>
         <div class="flex flex-wrap gap-4 justify-center pt-4">
-          <a
-            href="/en/course/beginners/unit-2/"
-            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors"
-          >
-            <ArrowLeft class="w-4 h-4" />
-            Review Unit 2
+          <a href="/en/course/beginners/unit-3/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors">
+            <ArrowLeft class="w-4 h-4" /> Review Unit 3
           </a>
-          <a
-            href="/en/course/beginners/unit-4/"
-            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors shadow-lg"
-          >
-            Continue to Unit 4 →
+          <a href="/en/course/beginners/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors shadow-lg">
+            Back to Course Overview
           </a>
         </div>
         <div class="pt-8 border-t border-slate-700 mt-8">
-          <p class="text-slate-200 text-sm mb-3">
-            Want personalized English coaching?
-          </p>
-          <a
-            href="/en/contact/"
-            class="text-amber-400 hover:text-amber-300 font-medium underline underline-offset-2"
-          >
+          <p class="text-slate-200 text-sm mb-3">Want personalized English coaching?</p>
+          <a href="/en/contact/" class="text-amber-400 hover:text-amber-300 font-medium underline underline-offset-2">
             Book a free consultation with Robert →
           </a>
         </div>
