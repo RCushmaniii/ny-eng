@@ -16,11 +16,11 @@ import {
   connectorSentences,
   pronunciationDrills,
   vocabularyList,
-} from "@data/course/unit-4";
+} from "@data/course/unit-5";
 import {
   ArrowLeft,
   ArrowRight,
-  MessageCircle,
+  Clock,
   Layers,
   Zap,
   Link2,
@@ -29,7 +29,7 @@ import {
 } from "lucide-astro";
 
 const lang = "en";
-const tkey = "course/beginners/unit-4" as const;
+const tkey = "course/beginners/unit-5" as const;
 
 const progressUnits = units.map((u) => ({
   id: u.id,
@@ -44,13 +44,13 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
 <Base
   lang={lang}
   tkey={tkey}
-  title="Unit 4: Talking to Someone — First Steps Into English | NY English Teacher"
-  description="Learn to address someone directly in English: you can, you have to, tell me the truth, what happened. Indirect objects and TH pronunciation. Free interactive lesson."
+  title="Unit 5: What Just Happened — First Steps Into English | NY English Teacher"
+  description="Learn to talk about recent events in English with 'just': I just ate, she just told me, he just found out. Past tense -ed pronunciation. Free interactive lesson."
 >
   <CourseProgress
     client:load
     units={progressUnits}
-    currentUnit={4}
+    currentUnit={5}
     basePath="/en/course/beginners"
     lang="en"
   />
@@ -59,15 +59,15 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     <div class="site-container mx-auto px-4 text-white">
       <div class="max-w-3xl">
         <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
-          <MessageCircle class="w-4 h-4" />
-          Unit 4
+          <Clock class="w-4 h-4" />
+          Unit 5
         </div>
         <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
-          Talking to Someone
+          What Just Happened
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Time for real conversation. You'll learn to address someone directly — ask them questions,
-          tell them things, explain what happened. This is where English becomes truly interactive.
+          Something just happened and you need to talk about it. You'll learn to narrate recent events —
+          discoveries, arrivals, conversations — using the powerful word "just."
         </p>
       </div>
     </div>
@@ -77,16 +77,16 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     <div class="site-container mx-auto px-4">
       <div class="flex items-center gap-1 py-2 text-sm whitespace-nowrap">
         <a href="#cognates" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <MessageCircle class="w-3.5 h-3.5" /> Cognates
+          <Clock class="w-3.5 h-3.5" /> Cognates
         </a>
         <a href="#sentences" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Layers class="w-3.5 h-3.5" /> You Can/Want/Have To
+          <Layers class="w-3.5 h-3.5" /> I Just / He Just
         </a>
         <a href="#power-verbs" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Zap class="w-3.5 h-3.5" /> Tell/Call/Give + Past
+          <Zap class="w-3.5 h-3.5" /> Past Tense Verbs
         </a>
         <a href="#connectors" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Link2 class="w-3.5 h-3.5" /> Direct Conversation
+          <Link2 class="w-3.5 h-3.5" /> Recent Events
         </a>
         <a href="#pronunciation" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
           <Volume2 class="w-3.5 h-3.5" /> Pronunciation
@@ -103,12 +103,13 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
       <div class="max-w-3xl mx-auto">
         <div class="mb-8">
           <div class="flex items-center gap-2 text-amber-600 text-sm font-semibold mb-2">
-            <MessageCircle class="w-4 h-4" />
+            <Clock class="w-4 h-4" />
             Section A
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Your Vocabulary Keeps Growing</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Three Powerful New Patterns</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Three more patterns: -ment (document, moment), -ity (university, quality), and -ent (excellent, president). You're now recognizing patterns automatically.
+            The -sion pattern (decision, television), the -ive pattern (positive, creative), and the -ous pattern (famous, curious).
+            By now you're recognizing English words everywhere.
           </p>
         </div>
         <CognateDiscovery client:visible waves={waveData} lang="en" />
@@ -124,10 +125,10 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Layers class="w-4 h-4" />
             Section B
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">You Can / You Want / You Have To</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">I Just / He Just / She Just</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Address someone directly. Plus the key skill of this unit: <strong>indirect objects</strong> —
-            tell <em>me</em>, tell <em>you</em>, tell <em>him</em>. Who receives the action changes everything.
+            "Just" is your key to talking about the recent past. <strong>I just ate</strong> = acabo de comer.
+            <strong>She just told me</strong> = ella me acaba de decir. Simple, powerful, and used constantly in real English.
           </p>
         </div>
         <SentenceBuilder client:visible blocks={sentenceBlocks} lang="en" />
@@ -143,10 +144,10 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Zap class="w-4 h-4" />
             Section C
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Call / Give + What Happened</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Find Out / Arrive / See / Leave</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            The indirect object pattern works with every verb: call me, give you, tell him.
-            Then combine it with <strong>"what happened"</strong> to talk about past events.
+            Four essential verbs for narrating events. Learn their past forms (found out, arrived, saw, left)
+            and combine them with "just" to tell stories about what recently happened.
           </p>
         </div>
         <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="en" />
@@ -162,9 +163,9 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Link2 class="w-4 h-4" />
             Section D
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Direct Conversation</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Narrating Recent Events</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Words that power real dialogue — why, the truth, the reason why, what happened, last night.
+            Words that let you set the scene — about, the problem, the house, at the party, with him, all day.
           </p>
         </div>
         <ConnectorChallenge
@@ -185,11 +186,11 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Volume2 class="w-4 h-4" />
             Pronunciation Lab
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">The TH Sounds — Tongue Between Teeth</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">The Three Sounds of -ed</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            English has two TH sounds: voiced ("the", "this") and voiceless ("think", "truth").
-            Both require putting your tongue between your teeth — a movement that doesn't exist in Spanish.
-            Once you get it, words like "the", "with", and "three" become effortless.
+            Spanish speakers often add an extra syllable to past tense words: "work-ED" instead of "WERKT."
+            The truth is, -ed has three different pronunciations: /t/, /d/, and /ɪd/. Once you learn the rule,
+            you'll never get it wrong again.
           </p>
         </div>
         <PronunciationDrill client:visible drills={pronunciationDrills} lang="en" />
@@ -207,7 +208,7 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Test What You Learned</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            You-forms, indirect objects, and conversation vocabulary — plus review from Units 1-3.
+            "Just" constructions, past tense verbs, and recent-event vocabulary — plus review from Units 1-4.
           </p>
         </div>
         <SelfTest client:visible vocabulary={vocabularyList} lang="en" />
@@ -223,17 +224,17 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 class="text-3xl font-bold text-white">Unit 4 Complete!</h2>
+        <h2 class="text-3xl font-bold text-white">Unit 5 Complete!</h2>
         <p class="text-lg text-slate-100 leading-relaxed">
-          You can now have direct conversations — ask someone questions, tell them things,
-          explain what happened. Four units in and you're building English that actually works in real life.
+          You can now narrate recent events — what just happened, who just arrived, what you just found out.
+          Five units in and you're telling real stories in English.
         </p>
         <div class="flex flex-wrap gap-4 justify-center pt-4">
-          <a href="/en/course/beginners/unit-3/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors">
-            <ArrowLeft class="w-4 h-4" /> Review Unit 3
+          <a href="/en/course/beginners/unit-4/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors">
+            <ArrowLeft class="w-4 h-4" /> Review Unit 4
           </a>
-          <a href="/en/course/beginners/unit-5/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors shadow-lg">
-            Next: Unit 5 <ArrowRight class="w-4 h-4" />
+          <a href="/en/course/beginners/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors shadow-lg">
+            Back to Course Overview
           </a>
         </div>
         <div class="pt-8 border-t border-slate-700 mt-8">
