@@ -16,7 +16,7 @@ publish: true
 
 seo:
   title: "Cómo sonar seguro en Zoom: 7 hábitos ejecutivos"
-  description: "Proyecta autoridad y claridad en videollamadas. Aprende siete hábitos prácticos que los ejecutivos usan para liderar, persuadir y generar confianza en inglés."
+  description: "Proyecta autoridad y claridad en videollamadas. Siete hábitos prácticos que los ejecutivos usan para liderar y generar confianza en inglés."
 ---
 
 ## Lidera con confianza en Zoom, Meet o Teams

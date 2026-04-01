@@ -9,7 +9,7 @@ featuredImage: "./images/english-mispronunciation-guide.webp"
 imageAlt: "Profesional mexicano hablando inglés con confianza en una reunión de negocios"
 seo:
   title: "50 Palabras que los Mexicanos Pronuncian Mal"
-  description: "La guía definitiva de pronunciación para profesionales mexicanos. 50 palabras de inglés de negocios que probablemente dices mal, con correcciones fonéticas."
+  description: "Guía de pronunciación para profesionales mexicanos. 50 palabras de inglés de negocios que probablemente dices mal, con correcciones."
 translations:
   en: "/en/blog/english-words-mexican-professionals-mispronounce/"
   es: "/es/blog/palabras-en-ingles-que-profesionales-mexicanos-pronuncian-mal/"
