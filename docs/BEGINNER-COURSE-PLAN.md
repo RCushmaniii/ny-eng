@@ -35,13 +35,13 @@
 - **Site navigation** — "Courses" added to main header nav (EN + ES) ✅
 - **AudioButton voice preloading** — fixes first-click robotic voice ✅
 - **Unit 4**: "Talking to Someone" — you forms, indirect objects, tell/give me/you/him/her, TH pronunciation ✅
+- **Unit 5**: "What Just Happened" — recent past (I just + verb), cognates (-sion, -ive, -ous), -ed pronunciation ✅
 - **Full bilingual** — all pages have EN + ES versions ✅
 
 ### In Progress
-- **Unit 5**: "What Just Happened" — recent past (I just + verb), cognates (-sion, -ive, -ous), -ed pronunciation
+- **Unit 6**: "Everyone, Someone, No One" — indefinite pronouns, should/shouldn't, cognates (-al, -id, -ct), initial S pronunciation
 
-### Remaining (Units 6-10)
-- Unit 6: Everyone, Someone, No One — indefinite pronouns + should
+### Remaining (Units 7-10)
 - Unit 7: Together — we can/want/have to
 - Unit 8: Feelings and Curiosity — I feel like, I wonder, they forms
 - Unit 9: Telling Stories — extended past tense, narratives
@@ -53,9 +53,9 @@
 - Pronunciation lab standalone page not yet built
 
 ### Stats
-- **Pages generated**: 337 (8 new course pages)
+- **Pages generated**: 341 (10 new course pages)
 - **React components**: 7 (CognateDiscovery, SentenceBuilder, PronunciationDrill, ConnectorChallenge, SelfTest, AudioButton, CourseProgress)
-- **Cognate words taught**: ~130 across 12 pattern categories
+- **Cognate words taught**: ~160 across 15 pattern categories
 - **Date**: 2026-04-01
 
 ---
