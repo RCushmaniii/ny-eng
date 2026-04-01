@@ -16,11 +16,10 @@ import {
   connectorSentences,
   pronunciationDrills,
   vocabularyList,
-} from "@data/course/unit-5";
+} from "@data/course/unit-6";
 import {
   ArrowLeft,
-  ArrowRight,
-  Clock,
+  UsersRound,
   Layers,
   Zap,
   Link2,
@@ -29,7 +28,7 @@ import {
 } from "lucide-astro";
 
 const lang = "en";
-const tkey = "course/beginners/unit-5" as const;
+const tkey = "course/beginners/unit-6" as const;
 
 const progressUnits = units.map((u) => ({
   id: u.id,
@@ -44,13 +43,13 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
 <Base
   lang={lang}
   tkey={tkey}
-  title="Unit 5: What Just Happened — First Steps Into English | NY English Teacher"
-  description="Learn to talk about recent events in English with 'just': I just ate, she just told me, he just found out. Past tense -ed pronunciation. Free interactive lesson."
+  title="Unit 6: Everyone, Someone, No One — First Steps Into English | NY English Teacher"
+  description="Learn indefinite pronouns in English: everyone, someone, nobody. Plus should, shouldn't, and initial S pronunciation. Free interactive lesson for Spanish speakers."
 >
   <CourseProgress
     client:load
     units={progressUnits}
-    currentUnit={5}
+    currentUnit={6}
     basePath="/en/course/beginners"
     lang="en"
   />
@@ -59,15 +58,15 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     <div class="site-container mx-auto px-4 text-white">
       <div class="max-w-3xl">
         <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
-          <Clock class="w-4 h-4" />
-          Unit 5
+          <UsersRound class="w-4 h-4" />
+          Unit 6
         </div>
         <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
-          What Just Happened
+          Everyone, Someone, No One
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Something just happened and you need to talk about it. You'll learn to narrate recent events —
-          discoveries, arrivals, conversations — using the powerful word "just."
+          Talk about people without naming them. Everyone knows. Someone told me. Nobody wants to go.
+          Plus a new power word: "should" — for giving advice and expressing expectations.
         </p>
       </div>
     </div>
@@ -77,16 +76,16 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     <div class="site-container mx-auto px-4">
       <div class="flex items-center gap-1 py-2 text-sm whitespace-nowrap">
         <a href="#cognates" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Clock class="w-3.5 h-3.5" /> Cognates
+          <UsersRound class="w-3.5 h-3.5" /> Cognates
         </a>
         <a href="#sentences" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Layers class="w-3.5 h-3.5" /> I Just / He Just
+          <Layers class="w-3.5 h-3.5" /> Everyone/Someone/No One
         </a>
         <a href="#power-verbs" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Zap class="w-3.5 h-3.5" /> Past Tense Verbs
+          <Zap class="w-3.5 h-3.5" /> Should/Shouldn't
         </a>
         <a href="#connectors" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Link2 class="w-3.5 h-3.5" /> Recent Events
+          <Link2 class="w-3.5 h-3.5" /> Advice Words
         </a>
         <a href="#pronunciation" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
           <Volume2 class="w-3.5 h-3.5" /> Pronunciation
@@ -103,13 +102,13 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
       <div class="max-w-3xl mx-auto">
         <div class="mb-8">
           <div class="flex items-center gap-2 text-amber-600 text-sm font-semibold mb-2">
-            <Clock class="w-4 h-4" />
+            <UsersRound class="w-4 h-4" />
             Section A
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Three Powerful New Patterns</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Three More Patterns You Already Know</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            The -sion pattern (decision, television), the -ive pattern (positive, creative), and the -ous pattern (famous, curious).
-            By now you're recognizing English words everywhere.
+            The -al pattern (personal, professional), the -id pattern (rapid, solid), and the -ct pattern (correct, perfect).
+            Your English vocabulary is growing faster than ever.
           </p>
         </div>
         <CognateDiscovery client:visible waves={waveData} lang="en" />
@@ -125,10 +124,11 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Layers class="w-4 h-4" />
             Section B
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">I Just / He Just / She Just</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Everyone / Someone / No One</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            "Just" is your key to talking about the recent past. <strong>I just ate</strong> = acabo de comer.
-            <strong>She just told me</strong> = ella me acaba de decir. Simple, powerful, and used constantly in real English.
+            Three words that let you talk about people without naming them.
+            <strong>Everyone</strong> = todos. <strong>Someone</strong> = alguien. <strong>No one</strong> = nadie.
+            Watch out: in English, "nobody" takes a singular verb and no double negatives.
           </p>
         </div>
         <SentenceBuilder client:visible blocks={sentenceBlocks} lang="en" />
@@ -144,10 +144,10 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Zap class="w-4 h-4" />
             Section C
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Find Out / Arrive / See / Leave</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Should / Shouldn't / Should Be Able To</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Four essential verbs for narrating events. Learn their past forms (found out, arrived, saw, left)
-            and combine them with "just" to tell stories about what recently happened.
+            Your new modal verb: <strong>should</strong>. It's softer than "have to" — it gives advice,
+            not orders. "You should tell him" = I think it's the right thing to do.
           </p>
         </div>
         <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="en" />
@@ -163,9 +163,9 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Link2 class="w-4 h-4" />
             Section D
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Narrating Recent Events</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Advice and Expectations</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Words that let you set the scene — about, the problem, the house, at the party, with him, all day.
+            Words that connect advice and consequences — so, too, already, anyone, something.
           </p>
         </div>
         <ConnectorChallenge
@@ -186,11 +186,11 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Volume2 class="w-4 h-4" />
             Pronunciation Lab
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">The Three Sounds of -ed</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">The Initial S — No "Es-" Prefix</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Spanish speakers often add an extra syllable to past tense words: "work-ED" instead of "WERKT."
-            The truth is, -ed has three different pronunciations: /t/, /d/, and /ɪd/. Once you learn the rule,
-            you'll never get it wrong again.
+            One of the most recognizable features of a Spanish accent: adding "e" before S + consonant.
+            "Especial" instead of "special." "Estudent" instead of "student."
+            This lesson breaks that habit for good.
           </p>
         </div>
         <PronunciationDrill client:visible drills={pronunciationDrills} lang="en" />
@@ -208,7 +208,7 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Test What You Learned</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            "Just" constructions, past tense verbs, and recent-event vocabulary — plus review from Units 1-4.
+            Indefinite pronouns, should/shouldn't, and advice vocabulary — plus review from Units 1-5.
           </p>
         </div>
         <SelfTest client:visible vocabulary={vocabularyList} lang="en" />
@@ -224,17 +224,17 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 class="text-3xl font-bold text-white">Unit 5 Complete!</h2>
+        <h2 class="text-3xl font-bold text-white">Unit 6 Complete!</h2>
         <p class="text-lg text-slate-100 leading-relaxed">
-          You can now narrate recent events — what just happened, who just arrived, what you just found out.
-          Five units in and you're telling real stories in English.
+          You can now talk about everyone, someone, and no one — plus give advice with "should."
+          Six units and you're expressing opinions and expectations in real English.
         </p>
         <div class="flex flex-wrap gap-4 justify-center pt-4">
-          <a href="/en/course/beginners/unit-4/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors">
-            <ArrowLeft class="w-4 h-4" /> Review Unit 4
+          <a href="/en/course/beginners/unit-5/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors">
+            <ArrowLeft class="w-4 h-4" /> Review Unit 5
           </a>
-          <a href="/en/course/beginners/unit-6/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors shadow-lg">
-            Next: Unit 6 <ArrowRight class="w-4 h-4" />
+          <a href="/en/course/beginners/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors shadow-lg">
+            Back to Course Overview
           </a>
         </div>
         <div class="pt-8 border-t border-slate-700 mt-8">
