@@ -1,7 +1,7 @@
 ---
 # === CONTROL FLAGS ===
 portfolio_enabled: true
-portfolio_priority: 2
+portfolio_priority: 6
 portfolio_featured: true
 
 # === CARD DISPLAY ===
