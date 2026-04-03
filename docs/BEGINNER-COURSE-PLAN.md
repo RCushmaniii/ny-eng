@@ -3,7 +3,7 @@
 > **Project**: NY English Teacher — Beginner English Course for Spanish Speakers
 > **Author**: Robert Cushman III / Claude (CushLabs AI)
 > **Created**: 2026-03-31
-> **Status**: Planning & Design Phase
+> **Status**: All 10 Units Complete
 > **Target URL**: `nyenglishteacher.com/en/course/beginners/`
 
 ---
@@ -38,14 +38,14 @@
 - **Unit 5**: "What Just Happened" — recent past (I just + verb), cognates (-sion, -ive, -ous), -ed pronunciation ✅
 - **Full bilingual** — all pages have EN + ES versions ✅
 
-### In Progress
-- **Unit 6**: "Everyone, Someone, No One" — indefinite pronouns, should/shouldn't, cognates (-al, -id, -ct), initial S pronunciation
+- **Unit 6**: "Everyone, Someone, No One" — indefinite pronouns, should/shouldn't, cognates (-al, -id, -ct), initial S pronunciation ✅
+- **Unit 7**: "Together" — we can/want/have to/should/would like/just, cognates (-able x3 waves, 30 words), W pronunciation ✅
+- **Unit 8**: "Feelings and Curiosity" — I feel like, I wonder, they forms, where questions, cognates (-ence, -ance, feelings), question intonation ✅
 
-### Remaining (Units 7-10)
-- Unit 7: Together — we can/want/have to
-- Unit 8: Feelings and Curiosity — I feel like, I wonder, they forms
-- Unit 9: Telling Stories — extended past tense, narratives
-- Unit 10: What's Coming Next — future tense (going to), what does it mean?
+- **Unit 9**: "Telling Stories" — was/were, used to, told/said, that's why, story connectors (at first/suddenly/finally), cognates (-ous expansion, past verbs, time words), R sound pronunciation ✅
+- **Unit 10**: "What's Coming Next" — going to (future), what does it mean?, full modal verb review, real-world scenarios, grand cognate review (1,500+ words), connected speech (gonna/wanna/hafta) ✅
+
+### COURSE COMPLETE
 
 ### Technical Debt
 - Azure TTS integration planned (currently using browser SpeechSynthesis)
@@ -53,10 +53,10 @@
 - Pronunciation lab standalone page not yet built
 
 ### Stats
-- **Pages generated**: 341 (10 new course pages)
+- **Pages generated**: ~357 (22 new course pages: 10 EN + 10 ES units + 2 landing pages)
 - **React components**: 7 (CognateDiscovery, SentenceBuilder, PronunciationDrill, ConnectorChallenge, SelfTest, AudioButton, CourseProgress)
-- **Cognate words taught**: ~160 across 15 pattern categories
-- **Date**: 2026-04-01
+- **Cognate words taught**: ~280 across 18+ pattern categories
+- **Date**: 2026-04-03
 
 ---
 

@@ -16,11 +16,10 @@ import {
   connectorSentences,
   pronunciationDrills,
   vocabularyList,
-} from "@data/course/unit-6";
+} from "@data/course/unit-10";
 import {
   ArrowLeft,
-  ArrowRight,
-  UsersRound,
+  Rocket,
   Layers,
   Zap,
   Link2,
@@ -29,7 +28,7 @@ import {
 } from "lucide-astro";
 
 const lang = "en";
-const tkey = "course/beginners/unit-6" as const;
+const tkey = "course/beginners/unit-10" as const;
 
 const progressUnits = units.map((u) => ({
   id: u.id,
@@ -44,13 +43,13 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
 <Base
   lang={lang}
   tkey={tkey}
-  title="Unit 6: Everyone, Someone, No One | NY English Teacher"
-  description="Learn indefinite pronouns in English: everyone, someone, nobody. Plus should, shouldn't, and initial S pronunciation. Free interactive lesson for Spanish speakers."
+  title="Unit 10: What's Coming Next | NY English Teacher"
+  description="The course finale: future tense with 'going to,' asking what things mean, connected speech, and your 1,500-word vocabulary explosion. Free interactive lesson for Spanish speakers."
 >
   <CourseProgress
     client:load
     units={progressUnits}
-    currentUnit={6}
+    currentUnit={10}
     basePath="/en/course/beginners"
     lang="en"
   />
@@ -59,15 +58,16 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     <div class="site-container mx-auto px-4 text-white">
       <div class="max-w-3xl">
         <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
-          <UsersRound class="w-4 h-4" />
-          Unit 6
+          <Rocket class="w-4 h-4" />
+          Unit 10 — The Finale
         </div>
         <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
-          Everyone, Someone, No One
+          What's Coming Next
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Talk about people without naming them. Everyone knows. Someone told me. Nobody wants to go.
-          Plus a new power word: "should" — for giving advice and expressing expectations.
+          The final unit. Talk about the future with "going to." Ask what things mean.
+          Unlock connected speech — the secret to sounding natural. And celebrate the 1,500+ words
+          you've been carrying inside you all along.
         </p>
       </div>
     </div>
@@ -77,16 +77,16 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     <div class="site-container mx-auto px-4">
       <div class="flex items-center gap-1 py-2 text-sm whitespace-nowrap">
         <a href="#cognates" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <UsersRound class="w-3.5 h-3.5" /> Cognates
+          <Rocket class="w-3.5 h-3.5" /> Grand Review
         </a>
         <a href="#sentences" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Layers class="w-3.5 h-3.5" /> Everyone/Someone/No One
+          <Layers class="w-3.5 h-3.5" /> Going To / Meaning
         </a>
         <a href="#power-verbs" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Zap class="w-3.5 h-3.5" /> Should/Shouldn't
+          <Zap class="w-3.5 h-3.5" /> Full Toolkit
         </a>
         <a href="#connectors" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Link2 class="w-3.5 h-3.5" /> Advice Words
+          <Link2 class="w-3.5 h-3.5" /> Final Words
         </a>
         <a href="#pronunciation" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
           <Volume2 class="w-3.5 h-3.5" /> Pronunciation
@@ -103,13 +103,14 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
       <div class="max-w-3xl mx-auto">
         <div class="mb-8">
           <div class="flex items-center gap-2 text-amber-600 text-sm font-semibold mb-2">
-            <UsersRound class="w-4 h-4" />
+            <Rocket class="w-4 h-4" />
             Section A
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Three More Patterns You Already Know</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">The 1,500-Word Vocabulary Explosion</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            The -al pattern (personal, professional), the -id pattern (rapid, solid), and the -ct pattern (correct, perfect).
-            Your English vocabulary is growing faster than ever.
+            This is the grand finale. You've learned 18 cognate patterns across 10 units.
+            Each pattern unlocks dozens — sometimes hundreds — of words.
+            You were never a beginner. You just didn't know it yet.
           </p>
         </div>
         <CognateDiscovery client:visible waves={waveData} lang="en" />
@@ -125,11 +126,11 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Layers class="w-4 h-4" />
             Section B
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Everyone / Someone / No One</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Going To / What Does It Mean?</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Three words that let you talk about people without naming them.
-            <strong>Everyone</strong> = todos. <strong>Someone</strong> = alguien. <strong>No one</strong> = nadie.
-            Watch out: in English, "nobody" takes a singular verb and no double negatives.
+            Two final superpowers: <strong>"going to"</strong> for the future (voy a),
+            and <strong>"what does it mean?"</strong> — the most important question any learner can ask.
+            With these, you have past, present, and future covered.
           </p>
         </div>
         <SentenceBuilder client:visible blocks={sentenceBlocks} lang="en" />
@@ -145,10 +146,10 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Zap class="w-4 h-4" />
             Section C
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Should / Shouldn't / Should Be Able To</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Putting It All Together</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Your new modal verb: <strong>should</strong>. It's softer than "have to" — it gives advice,
-            not orders. "You should tell him" = I think it's the right thing to do.
+            Every structure from 10 units, combined. Past + present + future. All modal verbs.
+            Real-world scenarios. This is what conversational fluency looks like.
           </p>
         </div>
         <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="en" />
@@ -164,9 +165,9 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Link2 class="w-4 h-4" />
             Section D
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Advice and Expectations</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">The Full Picture</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Words that connect advice and consequences — so, too, already, anyone, something.
+            The final connector set — meaning, timing, helping, happening, and readiness. Your toolkit is complete.
           </p>
         </div>
         <ConnectorChallenge
@@ -187,11 +188,11 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Volume2 class="w-4 h-4" />
             Pronunciation Lab
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">The Initial S — No "Es-" Prefix</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Connected Speech — Sound Like a Native</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            One of the most recognizable features of a Spanish accent: adding "e" before S + consonant.
-            "Especial" instead of "special." "Estudent" instead of "student."
-            This lesson breaks that habit for good.
+            The final pronunciation secret: native speakers don't say each word separately.
+            "Going to" becomes "gonna." "Want to" becomes "wanna." Words link and flow.
+            Master this, and you'll understand — and be understood — at full speed.
           </p>
         </div>
         <PronunciationDrill client:visible drills={pronunciationDrills} lang="en" />
@@ -207,9 +208,9 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <ClipboardCheck class="w-4 h-4" />
             Self-Test
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Test What You Learned</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">The Final Test</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Indefinite pronouns, should/shouldn't, and advice vocabulary — plus review from Units 1-5.
+            Future tense, meaning questions, connected speech, and a grand review of everything from Units 1-10.
           </p>
         </div>
         <SelfTest client:visible vocabulary={vocabularyList} lang="en" />
@@ -217,31 +218,61 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     </div>
   </section>
 
+  <!-- ─── Course Completion Celebration ──────────────────────────────────── -->
+  <section class="py-16 md:py-24 bg-gradient-to-b from-amber-500 to-amber-600">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-2xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/20 text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+          </svg>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold text-white" style="font-family: 'Noto Sans KR', sans-serif;">
+          Congratulations!
+        </h2>
+        <p class="text-xl text-amber-100 leading-relaxed">
+          You completed <strong>First Steps Into English</strong> — all 10 units.
+        </p>
+        <div class="bg-white/10 rounded-2xl p-6 md:p-8 text-left space-y-4">
+          <h3 class="text-lg font-semibold text-white text-center">Here's what you can now do in English:</h3>
+          <ul class="space-y-2 text-amber-100">
+            <li class="flex items-start gap-2"><span class="text-white font-bold mt-0.5">1,500+</span> words you recognize instantly from Spanish</li>
+            <li class="flex items-start gap-2"><span class="text-white font-bold mt-0.5">11</span> modal verb structures (can, want, need, have to, should, would like, feel like, wonder, just, used to, going to)</li>
+            <li class="flex items-start gap-2"><span class="text-white font-bold mt-0.5">All</span> pronouns covered: I, you, he, she, we, they, everyone, someone, nobody</li>
+            <li class="flex items-start gap-2"><span class="text-white font-bold mt-0.5">3</span> time frames: past (was/used to), present (can/want), future (going to)</li>
+            <li class="flex items-start gap-2"><span class="text-white font-bold mt-0.5">10</span> pronunciation skills targeting Spanish-speaker challenges</li>
+          </ul>
+        </div>
+        <p class="text-lg text-amber-100">
+          You were never a beginner. You just didn't know it yet.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="py-16 md:py-20 bg-gradient-to-b from-slate-900 to-slate-800">
     <div class="site-container mx-auto px-4 text-white">
       <div class="max-w-2xl mx-auto text-center space-y-6">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-          </svg>
-        </div>
-        <h2 class="text-3xl font-bold text-white">Unit 6 Complete!</h2>
-        <p class="text-lg text-slate-100 leading-relaxed">
-          You can now talk about everyone, someone, and no one — plus give advice with "should."
-          Six units and you're expressing opinions and expectations in real English.
+        <h2 class="text-2xl md:text-3xl font-bold text-white">What's Next?</h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          This course gave you the foundation. Now it's time to build on it — with real conversations,
+          professional English, and personalized coaching.
         </p>
         <div class="flex flex-wrap gap-4 justify-center pt-4">
-          <a href="/en/course/beginners/unit-5/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors">
-            <ArrowLeft class="w-4 h-4" /> Review Unit 5
+          <a href="/en/course/beginners/unit-9/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors">
+            <ArrowLeft class="w-4 h-4" /> Review Unit 9
           </a>
-          <a href="/en/course/beginners/unit-7/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors shadow-lg">
-            Unit 7: Together <ArrowRight class="w-4 h-4" />
+          <a href="/en/contact/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors shadow-lg">
+            Book a Free Consultation
           </a>
         </div>
-        <div class="pt-8 border-t border-slate-700 mt-8">
-          <p class="text-slate-200 text-sm mb-3">Want personalized English coaching?</p>
-          <a href="/en/contact/" class="text-amber-400 hover:text-amber-300 font-medium underline underline-offset-2">
-            Book a free consultation with Robert →
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/en/course/beginners/" class="text-amber-400 hover:text-amber-300 font-medium underline underline-offset-2">
+            Back to Course Overview
+          </a>
+          <span class="text-slate-600">|</span>
+          <a href="/en/services/" class="text-amber-400 hover:text-amber-300 font-medium underline underline-offset-2">
+            View Coaching Services
           </a>
         </div>
       </div>
