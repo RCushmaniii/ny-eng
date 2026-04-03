@@ -9,7 +9,7 @@ featuredImage: "./images/english-mispronunciation-guide.webp"
 imageAlt: "Mexican professional confidently speaking English in a business meeting with colleagues"
 seo:
   title: "50 English Words Mexicans Mispronounce at Work"
-  description: "The definitive pronunciation guide for Mexican professionals. 50 business English words you're probably saying wrong, organized by meeting context with fixes."
+  description: "The pronunciation guide for Mexican professionals. 50 business English words you're probably saying wrong, organized by meeting context."
 translations:
   en: "/en/blog/english-words-mexican-professionals-mispronounce/"
   es: "/es/blog/palabras-en-ingles-que-profesionales-mexicanos-pronuncian-mal/"

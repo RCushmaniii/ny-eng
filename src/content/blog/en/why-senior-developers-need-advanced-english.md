@@ -15,7 +15,7 @@ translations:
 publish: true
 seo:
   title: "Senior Developer English: Why Conversational Isn't Enough"
-  description: "Targeting senior roles at global tech companies? Conversational English is your ceiling. Learn why technical English fluency is non-negotiable for advancement."
+  description: "Targeting senior roles at global tech companies? Conversational English is your ceiling. Learn why technical fluency is non-negotiable."
   keywords: "senior developer english, technical english for developers, english for software engineers, global tech jobs english, developer career advancement"
 ---
 

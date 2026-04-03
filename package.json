@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "prebuild": "node scripts/prebuild.js",
-    "build": "npm run prebuild && cross-env NODE_OPTIONS=--max-old-space-size=7168 astro build",
+    "build": "npm run prebuild && cross-env NODE_OPTIONS=--max-old-space-size=7168 astro build && node scripts/pre-deploy/audits/sitemap-validator.js",
     "build:hostinger": "npm run prebuild && powershell -ExecutionPolicy Bypass -File ./scripts/build-for-hostinger.ps1",
     "build:check": "npm run prebuild && astro check && astro build",
     "preview": "astro preview",

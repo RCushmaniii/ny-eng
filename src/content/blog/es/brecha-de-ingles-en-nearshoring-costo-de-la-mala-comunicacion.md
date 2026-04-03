@@ -9,7 +9,7 @@ featuredImage: "./images/nearshoring-english-gap.webp"
 imageAlt: "Profesionales de negocios revisando datos financieros sobre el costo de la mala comunicación en equipos globales"
 seo:
   title: "Brecha de Inglés en Nearshoring: Costo de $1.2B"
-  description: "Datos concretos sobre lo que la mala comunicación cuesta a equipos de nearshoring. $62.4M por empresa grande, 20-25% menos productividad y el ROI de arreglarlo."
+  description: "Lo que la mala comunicación cuesta a equipos de nearshoring: $62.4M por empresa grande, 20-25% menos productividad y el ROI de arreglarlo."
 translations:
   en: "/en/blog/nearshoring-english-gap-cost-of-miscommunication/"
   es: "/es/blog/brecha-de-ingles-en-nearshoring-costo-de-la-mala-comunicacion/"

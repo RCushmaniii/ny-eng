@@ -14,7 +14,7 @@ translations:
 publish: true
 seo:
   title: "Por Qué Te Cuesta Hablar Inglés en Reuniones"
-  description: "¿Te trabas al hablar inglés en reuniones? Descubre por qué los profesionales se bloquean — y cómo solucionarlo con lenguaje estructurado que puedes usar ya."
+  description: "¿Te trabas al hablar inglés en reuniones? Descubre por qué los profesionales se bloquean y cómo solucionarlo con lenguaje estructurado."
 ---
 
 La mayoría de los profesionales no tienen un problema con el inglés.
