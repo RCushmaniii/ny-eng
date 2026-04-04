@@ -127,7 +127,7 @@ const iconMap: Record<string, any> = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
         {units.map((unit) => {
           const Icon = iconMap[unit.icon];
-          const isAvailable = [1, 2, 3, 4, 5, 6].includes(unit.id);
+          const isAvailable = true;
           return (
             <a
               href={isAvailable ? `/en/course/beginners/${unit.slug}/` : undefined}
@@ -175,6 +175,25 @@ const iconMap: Record<string, any> = {
             </a>
           );
         })}
+
+        <!-- Final Exam Card -->
+        <div class="max-w-4xl mx-auto mt-6">
+          <a
+            href="/en/course/beginners/exam/"
+            class="group flex items-center gap-4 p-5 rounded-xl border-2 border-dashed border-amber-400 bg-amber-50 hover:bg-amber-100 hover:border-amber-500 transition-all duration-200 cursor-pointer"
+          >
+            <div class="flex items-center justify-center w-12 h-12 rounded-xl shrink-0 bg-amber-500 text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-600">After Unit 10</span>
+              <h3 class="text-lg font-bold text-slate-900 mt-0.5">Final Exam</h3>
+              <p class="text-sm text-slate-500 mt-1">20 questions covering all 10 units — vocabulary, grammar, and translation</p>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
