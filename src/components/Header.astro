@@ -7,7 +7,7 @@ import {
   cleanBlogUrl,
 } from "@utils/url-cleaner";
 import Logo from "@components/Logo.astro";
-import { Menu, X } from "lucide-astro";
+import { Menu, X, Globe } from "lucide-astro";
 import Button from "@components/ui/Button.astro";
 
 interface MenuItem {
@@ -214,23 +214,27 @@ const isCurrentPage = (link: string | undefined) => {
               {!currentPath.startsWith("/es") && translationSlugEs && (
                 <a
                   href={translationSlugEs}
-                  class="lang-flag inline-flex items-center justify-center px-3 py-1.5 rounded-full bg-neutral-800 text-white text-xs font-semibold tracking-wide hover:bg-neutral-700 dark:bg-neutral-700 dark:hover:bg-neutral-600 transition-colors"
+                  class="lang-flag inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border border-slate-300 bg-slate-50 text-xs font-medium text-slate-600 hover:border-slate-400 hover:bg-slate-100 hover:text-slate-800 transition-colors"
                   aria-label="Cambiar a Español"
                   data-lang="es"
                   data-astro-reload
                 >
-                  ES
+                  <Globe class="w-3.5 h-3.5" />
+                  <span class="font-semibold">English</span>
+                  <span class="text-[0.6rem] text-slate-400">&rarr;Español</span>
                 </a>
               )}
               {!currentPath.startsWith("/en") && translationSlugEn && (
                 <a
                   href={translationSlugEn}
-                  class="lang-flag inline-flex items-center justify-center px-3 py-1.5 rounded-full bg-neutral-800 text-white text-xs font-semibold tracking-wide hover:bg-neutral-700 dark:bg-neutral-700 dark:hover:bg-neutral-600 transition-colors"
+                  class="lang-flag inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border border-slate-300 bg-slate-50 text-xs font-medium text-slate-600 hover:border-slate-400 hover:bg-slate-100 hover:text-slate-800 transition-colors"
                   aria-label="Switch to English"
                   data-lang="en"
                   data-astro-reload
                 >
-                  EN
+                  <Globe class="w-3.5 h-3.5" />
+                  <span class="font-semibold">Español</span>
+                  <span class="text-[0.6rem] text-slate-400">&rarr;English</span>
                 </a>
               )}
             </div>
@@ -292,18 +296,20 @@ const isCurrentPage = (link: string | undefined) => {
       <!-- Language Switcher for Mobile Menu -->
       {
         !hideLanguageSwitcher && (
-          <div class="mt-6 mb-4 flex justify-center gap-4">
+          <div class="mt-6 mb-4 flex justify-center">
             {translationSlugEs &&
               typeof translationSlugEs === "string" &&
               !currentPath.startsWith("/es") && (
                 <a
                   href={translationSlugEs}
-                  class="lang-flag inline-flex items-center justify-center px-5 py-2 rounded-full bg-neutral-800 text-white text-sm font-semibold tracking-wide hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                  class="lang-flag inline-flex items-center gap-2 px-5 py-2.5 rounded-md border border-slate-300 bg-slate-50 text-sm font-medium text-slate-600 hover:border-slate-400 hover:bg-slate-100 hover:text-slate-800 focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
                   aria-label="Cambiar a Español"
                   data-lang="es"
                   data-astro-reload
                 >
-                  ES — Español
+                  <Globe class="w-4 h-4" />
+                  <span class="font-semibold">English</span>
+                  <span class="text-xs text-slate-400">&rarr;Español</span>
                 </a>
               )}
             {translationSlugEn &&
@@ -311,12 +317,14 @@ const isCurrentPage = (link: string | undefined) => {
               !currentPath.startsWith("/en") && (
                 <a
                   href={translationSlugEn}
-                  class="lang-flag inline-flex items-center justify-center px-5 py-2 rounded-full bg-neutral-800 text-white text-sm font-semibold tracking-wide hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                  class="lang-flag inline-flex items-center gap-2 px-5 py-2.5 rounded-md border border-slate-300 bg-slate-50 text-sm font-medium text-slate-600 hover:border-slate-400 hover:bg-slate-100 hover:text-slate-800 focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
                   aria-label="Switch to English"
                   data-lang="en"
                   data-astro-reload
                 >
-                  EN — English
+                  <Globe class="w-4 h-4" />
+                  <span class="font-semibold">Español</span>
+                  <span class="text-xs text-slate-400">&rarr;English</span>
                 </a>
               )}
           </div>
