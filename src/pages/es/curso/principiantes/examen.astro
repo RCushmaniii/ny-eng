@@ -1,0 +1,73 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import CourseExam from "@components/course/CourseExam";
+import { units } from "@data/course/units";
+import { examQuestions, examMeta } from "@data/course/exam";
+import { ArrowLeft, GraduationCap } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/beginners/exam" as const;
+
+const progressUnits = units.map((u) => ({
+  id: u.id,
+  slug: u.slugEs,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Examen Final: Primeros Pasos en Inglés | NY English Teacher"
+  description="Toma el examen final integral del curso Primeros Pasos en Inglés. 20 preguntas sobre vocabulario, gramática y traducción de las 10 unidades. Gratis para hispanohablantes."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={0}
+    basePath="/es/curso/principiantes"
+    lang="es"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
+          <GraduationCap class="w-4 h-4" />
+          Examen Final
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Primeros Pasos en Inglés
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Has completado las 10 unidades. Ahora demuestra lo que has aprendido.
+          20 preguntas sobre vocabulario, gramática y traducción — el curso completo en un examen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <CourseExam
+        client:load
+        questions={examQuestions}
+        lang="es"
+        passingScore={examMeta.passingScore}
+        courseBasePath="/es/curso/principiantes"
+      />
+    </div>
+  </section>
+
+  <section class="py-8 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4 text-center">
+      <a href="/es/curso/principiantes/" class="inline-flex items-center gap-2 text-slate-500 hover:text-amber-600 transition-colors text-sm">
+        <ArrowLeft class="w-4 h-4" /> Volver al Curso
+      </a>
+    </div>
+  </section>
+</Base>
