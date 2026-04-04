@@ -16,11 +16,11 @@ import {
   connectorSentences,
   pronunciationDrills,
   vocabularyList,
-} from "@data/course/unit-6";
+} from "@data/course/unit-9";
 import {
   ArrowLeft,
   ArrowRight,
-  UsersRound,
+  BookOpen,
   Layers,
   Zap,
   Link2,
@@ -29,7 +29,7 @@ import {
 } from "lucide-astro";
 
 const lang = "es";
-const tkey = "course/beginners/unit-6" as const;
+const tkey = "course/beginners/unit-9" as const;
 
 const progressUnits = units.map((u) => ({
   id: u.id,
@@ -44,13 +44,13 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
 <Base
   lang={lang}
   tkey={tkey}
-  title="Unidad 6: Todos, Alguien, Nadie | NY English Teacher"
-  description="Aprende pronombres indefinidos en inglés: everyone, someone, nobody. Más should, shouldn't y pronunciación de la S inicial. Lección gratuita interactiva."
+  title="Unidad 9: Contando Historias | NY English Teacher"
+  description="Aprende a contar historias en pasado en inglés: was/were, used to, told me, that's why. Más vocabulario narrativo, cognados -ous y pronunciación de la R. Lección gratuita interactiva."
 >
   <CourseProgress
     client:load
     units={progressUnits}
-    currentUnit={6}
+    currentUnit={9}
     basePath="/es/curso/principiantes"
     lang="es"
   />
@@ -59,15 +59,15 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     <div class="site-container mx-auto px-4 text-white">
       <div class="max-w-3xl">
         <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
-          <UsersRound class="w-4 h-4" />
-          Unidad 6
+          <BookOpen class="w-4 h-4" />
+          Unidad 9
         </div>
         <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
-          Todos, Alguien, Nadie
+          Contando Historias
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Habla de personas sin nombrarlas. Everyone knows. Someone told me. Nobody wants to go.
-          Más una nueva palabra poderosa: "should" — para dar consejos y expresar expectativas.
+          Cada conversación se convierte en una historia cuando puedes hablar del pasado.
+          It was dangerous. I used to live there. She told me everything. That's why nobody wanted to go.
         </p>
       </div>
     </div>
@@ -77,16 +77,16 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     <div class="site-container mx-auto px-4">
       <div class="flex items-center gap-1 py-2 text-sm whitespace-nowrap">
         <a href="#cognados" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <UsersRound class="w-3.5 h-3.5" /> Cognados
+          <BookOpen class="w-3.5 h-3.5" /> Palabras
         </a>
         <a href="#oraciones" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Layers class="w-3.5 h-3.5" /> Todos/Alguien/Nadie
+          <Layers class="w-3.5 h-3.5" /> Was/Were/Used To
         </a>
         <a href="#verbos" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Zap class="w-3.5 h-3.5" /> Should/Shouldn't
+          <Zap class="w-3.5 h-3.5" /> Told/Said/That's Why
         </a>
         <a href="#conectores" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Link2 class="w-3.5 h-3.5" /> Consejos
+          <Link2 class="w-3.5 h-3.5" /> Narrativa
         </a>
         <a href="#pronunciacion" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
           <Volume2 class="w-3.5 h-3.5" /> Pronunciación
@@ -103,13 +103,13 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
       <div class="max-w-3xl mx-auto">
         <div class="mb-8">
           <div class="flex items-center gap-2 text-amber-600 text-sm font-semibold mb-2">
-            <UsersRound class="w-4 h-4" />
+            <BookOpen class="w-4 h-4" />
             Sección A
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Tres Patrones Más que Ya Conoces</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Palabras para Historias y Verbos en Pasado</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            El patrón -al (personal, profesional), el patrón -id (rápido, sólido), y el patrón -ct (correcto, perfecto).
-            Tu vocabulario en inglés crece más rápido que nunca.
+            Adjetivos dramáticos para contar historias, verbos cognados en pasado,
+            y expresiones de tiempo que establecen la escena. Todo lo que necesitas para ser un narrador.
           </p>
         </div>
         <CognateDiscovery client:visible waves={waveData} lang="es" />
@@ -125,11 +125,11 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Layers class="w-4 h-4" />
             Sección B
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Everyone / Someone / No One</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Was / Were / Used To</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Tres palabras que te permiten hablar de personas sin nombrarlas.
-            <strong>Everyone</strong> = todos. <strong>Someone</strong> = alguien. <strong>No one</strong> = nadie.
-            Ojo: en inglés, "nobody" usa verbo en singular y no lleva doble negación.
+            La columna vertebral del pasado: <strong>"was/were"</strong> describe cómo eran las cosas,
+            y <strong>"used to"</strong> describe lo que hacías regularmente pero ya no haces.
+            Dos estructuras que desbloquean todo el pasado.
           </p>
         </div>
         <SentenceBuilder client:visible blocks={sentenceBlocks} lang="es" />
@@ -145,10 +145,10 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Zap class="w-4 h-4" />
             Sección C
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Should / Shouldn't / Should Be Able To</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Told Me / Said / That's Why / Finally</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Tu nuevo verbo modal: <strong>should</strong>. Es más suave que "have to" — da consejos,
-            no órdenes. "You should tell him" = creo que es lo correcto.
+            Reporta lo que la gente dijo, explica por qué pasaron las cosas y estructura tus historias
+            con "at first," "suddenly," y "finally." Estas son las herramientas del narrador.
           </p>
         </div>
         <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="es" />
@@ -164,9 +164,9 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Link2 class="w-4 h-4" />
             Sección D
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Consejos y Expectativas</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Construyendo una Narrativa</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Palabras que conectan consejos y consecuencias — so, too, already, anyone, something.
+            Conectores narrativos que crean suspenso y avanzan la trama — that's why, at first, suddenly, finally, a long time ago.
           </p>
         </div>
         <ConnectorChallenge
@@ -187,11 +187,11 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Volume2 class="w-4 h-4" />
             Laboratorio de Pronunciación
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">La S Inicial — Sin Prefijo "Es-"</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">El Sonido R — Sin Vibración</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Una de las características más reconocibles del acento español: agregar "e" antes de S + consonante.
-            "Especial" en vez de "special." "Estudent" en vez de "student."
-            Esta lección elimina ese hábito definitivamente.
+            El marcador de acento más grande para hispanohablantes: la R. En inglés, tu lengua
+            se curva hacia atrás sin tocar nada — lo opuesto de la R española.
+            Más el sonido "schwa-R" en palabras como "teacher," "never," y "discover."
           </p>
         </div>
         <PronunciationDrill client:visible drills={pronunciationDrills} lang="es" />
@@ -209,7 +209,7 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Evalúa Lo que Aprendiste</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Pronombres indefinidos, should/shouldn't y vocabulario de consejos — más repaso de las Unidades 1-5.
+            Was/were, used to, conectores narrativos, verbos en pasado y palabras de tiempo — más repaso de las Unidades 1-8.
           </p>
         </div>
         <SelfTest client:visible vocabulary={vocabularyList} lang="es" />
@@ -225,17 +225,17 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 class="text-3xl font-bold text-white">¡Unidad 6 Completada!</h2>
+        <h2 class="text-3xl font-bold text-white">¡Unidad 9 Completada!</h2>
         <p class="text-lg text-slate-100 leading-relaxed">
-          Ahora puedes hablar de todos, alguien y nadie — además de dar consejos con "should."
-          Seis unidades y ya expresas opiniones y expectativas en inglés real.
+          Ahora puedes contar historias sobre el pasado — qué pasó, qué solías hacer y por qué.
+          Nueve unidades completas. Una más y tendrás el kit completo.
         </p>
         <div class="flex flex-wrap gap-4 justify-center pt-4">
-          <a href="/es/curso/principiantes/unidad-5/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors">
-            <ArrowLeft class="w-4 h-4" /> Repasar Unidad 5
+          <a href="/es/curso/principiantes/unidad-8/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors">
+            <ArrowLeft class="w-4 h-4" /> Repasar Unidad 8
           </a>
-          <a href="/es/curso/principiantes/unidad-7/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors shadow-lg">
-            Unidad 7: Juntos <ArrowRight class="w-4 h-4" />
+          <a href="/es/curso/principiantes/unidad-10/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors shadow-lg">
+            Unidad 10: El Final <ArrowRight class="w-4 h-4" />
           </a>
         </div>
         <div class="pt-8 border-t border-slate-700 mt-8">

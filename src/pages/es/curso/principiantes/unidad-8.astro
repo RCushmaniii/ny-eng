@@ -16,11 +16,11 @@ import {
   connectorSentences,
   pronunciationDrills,
   vocabularyList,
-} from "@data/course/unit-6";
+} from "@data/course/unit-8";
 import {
   ArrowLeft,
   ArrowRight,
-  UsersRound,
+  Compass,
   Layers,
   Zap,
   Link2,
@@ -29,7 +29,7 @@ import {
 } from "lucide-astro";
 
 const lang = "es";
-const tkey = "course/beginners/unit-6" as const;
+const tkey = "course/beginners/unit-8" as const;
 
 const progressUnits = units.map((u) => ({
   id: u.id,
@@ -44,13 +44,13 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
 <Base
   lang={lang}
   tkey={tkey}
-  title="Unidad 6: Todos, Alguien, Nadie | NY English Teacher"
-  description="Aprende pronombres indefinidos en inglés: everyone, someone, nobody. Más should, shouldn't y pronunciación de la S inicial. Lección gratuita interactiva."
+  title="Unidad 8: Sentimientos y Curiosidad | NY English Teacher"
+  description="Aprende a expresar sentimientos y curiosidad en inglés: I feel like, I wonder, formas de they. Más cognados -ence/-ance y entonación de preguntas. Lección gratuita interactiva."
 >
   <CourseProgress
     client:load
     units={progressUnits}
-    currentUnit={6}
+    currentUnit={8}
     basePath="/es/curso/principiantes"
     lang="es"
   />
@@ -59,15 +59,15 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     <div class="site-container mx-auto px-4 text-white">
       <div class="max-w-3xl">
         <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
-          <UsersRound class="w-4 h-4" />
-          Unidad 6
+          <Compass class="w-4 h-4" />
+          Unidad 8
         </div>
         <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
-          Todos, Alguien, Nadie
+          Sentimientos y Curiosidad
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Habla de personas sin nombrarlas. Everyone knows. Someone told me. Nobody wants to go.
-          Más una nueva palabra poderosa: "should" — para dar consejos y expresar expectativas.
+          Expresa lo que tienes ganas de hacer. Pregúntate sobre cosas que no sabes.
+          Habla de lo que "ellos" están haciendo. I feel like going out. I wonder where it is. They want to know.
         </p>
       </div>
     </div>
@@ -77,16 +77,16 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     <div class="site-container mx-auto px-4">
       <div class="flex items-center gap-1 py-2 text-sm whitespace-nowrap">
         <a href="#cognados" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <UsersRound class="w-3.5 h-3.5" /> Cognados
+          <Compass class="w-3.5 h-3.5" /> Cognados
         </a>
         <a href="#oraciones" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Layers class="w-3.5 h-3.5" /> Todos/Alguien/Nadie
+          <Layers class="w-3.5 h-3.5" /> Ganas/Pregunto/Dónde
         </a>
         <a href="#verbos" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Zap class="w-3.5 h-3.5" /> Should/Shouldn't
+          <Zap class="w-3.5 h-3.5" /> Formas de They
         </a>
         <a href="#conectores" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Link2 class="w-3.5 h-3.5" /> Consejos
+          <Link2 class="w-3.5 h-3.5" /> Sentimientos
         </a>
         <a href="#pronunciacion" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
           <Volume2 class="w-3.5 h-3.5" /> Pronunciación
@@ -103,13 +103,13 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
       <div class="max-w-3xl mx-auto">
         <div class="mb-8">
           <div class="flex items-center gap-2 text-amber-600 text-sm font-semibold mb-2">
-            <UsersRound class="w-4 h-4" />
+            <Compass class="w-4 h-4" />
             Sección A
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Tres Patrones Más que Ya Conoces</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Experience, Confidence, Patience</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            El patrón -al (personal, profesional), el patrón -id (rápido, sólido), y el patrón -ct (correcto, perfecto).
-            Tu vocabulario en inglés crece más rápido que nunca.
+            Los patrones -ence y -ance te dan sustantivos abstractos poderosos — el tipo de palabras
+            que hacen que tu inglés suene educado y preciso. Más vocabulario esencial de sentimientos.
           </p>
         </div>
         <CognateDiscovery client:visible waves={waveData} lang="es" />
@@ -125,11 +125,10 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Layers class="w-4 h-4" />
             Sección B
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Everyone / Someone / No One</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">I Feel Like / I Wonder / Where Is It?</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Tres palabras que te permiten hablar de personas sin nombrarlas.
-            <strong>Everyone</strong> = todos. <strong>Someone</strong> = alguien. <strong>No one</strong> = nadie.
-            Ojo: en inglés, "nobody" usa verbo en singular y no lleva doble negación.
+            Dos expresiones nuevas y poderosas: <strong>"I feel like"</strong> para estados de ánimo y deseos (tengo ganas de),
+            e <strong>"I wonder"</strong> para curiosidad (me pregunto). Más preguntas y respuestas con "where."
           </p>
         </div>
         <SentenceBuilder client:visible blocks={sentenceBlocks} lang="es" />
@@ -145,10 +144,10 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Zap class="w-4 h-4" />
             Sección C
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Should / Shouldn't / Should Be Able To</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">They Can / They Want / They Feel Like</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Tu nuevo verbo modal: <strong>should</strong>. Es más suave que "have to" — da consejos,
-            no órdenes. "You should tell him" = creo que es lo correcto.
+            El último grupo de pronombres: <strong>"they."</strong> Buenas noticias otra vez — como "we," los verbos no cambian para "they."
+            They can, they want, they have to, they feel like, they wonder. Ahora tienes todos los pronombres cubiertos.
           </p>
         </div>
         <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="es" />
@@ -164,9 +163,9 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Link2 class="w-4 h-4" />
             Sección D
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Consejos y Expectativas</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Sentimientos y Preguntas</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Palabras que conectan consejos y consecuencias — so, too, already, anyone, something.
+            Palabras para lugares, actividades y preguntas — a la playa, una película, cómo, preguntar, lejos.
           </p>
         </div>
         <ConnectorChallenge
@@ -187,11 +186,11 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Volume2 class="w-4 h-4" />
             Laboratorio de Pronunciación
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">La S Inicial — Sin Prefijo "Es-"</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Entonación de Preguntas — ¿Sube o Baja?</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Una de las características más reconocibles del acento español: agregar "e" antes de S + consonante.
-            "Especial" en vez de "special." "Estudent" en vez de "student."
-            Esta lección elimina ese hábito definitivamente.
+            Las preguntas en inglés tienen dos patrones melódicos: las preguntas de sí/no SUBEN al final,
+            y las preguntas WH (where, what, why) BAJAN. Hacerlo bien te hace sonar
+            natural y seguro — hacerlo mal puede confundir a los oyentes.
           </p>
         </div>
         <PronunciationDrill client:visible drills={pronunciationDrills} lang="es" />
@@ -209,7 +208,7 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Evalúa Lo que Aprendiste</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Pronombres indefinidos, should/shouldn't y vocabulario de consejos — más repaso de las Unidades 1-5.
+            Feel like, wonder, formas de they, vocabulario de sentimientos y cognados -ence/-ance — más repaso de las Unidades 1-7.
           </p>
         </div>
         <SelfTest client:visible vocabulary={vocabularyList} lang="es" />
@@ -225,17 +224,17 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 class="text-3xl font-bold text-white">¡Unidad 6 Completada!</h2>
+        <h2 class="text-3xl font-bold text-white">¡Unidad 8 Completada!</h2>
         <p class="text-lg text-slate-100 leading-relaxed">
-          Ahora puedes hablar de todos, alguien y nadie — además de dar consejos con "should."
-          Seis unidades y ya expresas opiniones y expectativas en inglés real.
+          Ahora puedes expresar sentimientos, preguntarte sobre cosas y hablar de lo que "ellos" están haciendo.
+          Ocho unidades completas — tienes todos los pronombres en inglés. ¡Solo quedan dos unidades!
         </p>
         <div class="flex flex-wrap gap-4 justify-center pt-4">
-          <a href="/es/curso/principiantes/unidad-5/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors">
-            <ArrowLeft class="w-4 h-4" /> Repasar Unidad 5
+          <a href="/es/curso/principiantes/unidad-7/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors">
+            <ArrowLeft class="w-4 h-4" /> Repasar Unidad 7
           </a>
-          <a href="/es/curso/principiantes/unidad-7/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors shadow-lg">
-            Unidad 7: Juntos <ArrowRight class="w-4 h-4" />
+          <a href="/es/curso/principiantes/unidad-9/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors shadow-lg">
+            Unidad 9: Historias <ArrowRight class="w-4 h-4" />
           </a>
         </div>
         <div class="pt-8 border-t border-slate-700 mt-8">

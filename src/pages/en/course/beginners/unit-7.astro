@@ -16,11 +16,11 @@ import {
   connectorSentences,
   pronunciationDrills,
   vocabularyList,
-} from "@data/course/unit-6";
+} from "@data/course/unit-7";
 import {
   ArrowLeft,
   ArrowRight,
-  UsersRound,
+  Handshake,
   Layers,
   Zap,
   Link2,
@@ -29,7 +29,7 @@ import {
 } from "lucide-astro";
 
 const lang = "en";
-const tkey = "course/beginners/unit-6" as const;
+const tkey = "course/beginners/unit-7" as const;
 
 const progressUnits = units.map((u) => ({
   id: u.id,
@@ -44,13 +44,13 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
 <Base
   lang={lang}
   tkey={tkey}
-  title="Unit 6: Everyone, Someone, No One | NY English Teacher"
-  description="Learn indefinite pronouns in English: everyone, someone, nobody. Plus should, shouldn't, and initial S pronunciation. Free interactive lesson for Spanish speakers."
+  title="Unit 7: Together | NY English Teacher"
+  description="Learn 'we' forms in English: we can, we want, we have to, we should, we would like. Plus the massive -able cognate family and W pronunciation. Free interactive lesson for Spanish speakers."
 >
   <CourseProgress
     client:load
     units={progressUnits}
-    currentUnit={6}
+    currentUnit={7}
     basePath="/en/course/beginners"
     lang="en"
   />
@@ -59,15 +59,15 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     <div class="site-container mx-auto px-4 text-white">
       <div class="max-w-3xl">
         <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
-          <UsersRound class="w-4 h-4" />
-          Unit 6
+          <Handshake class="w-4 h-4" />
+          Unit 7
         </div>
         <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
-          Everyone, Someone, No One
+          Together
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Talk about people without naming them. Everyone knows. Someone told me. Nobody wants to go.
-          Plus a new power word: "should" — for giving advice and expressing expectations.
+          Everything changes when you say "we." We can go. We want to know. We have to be there.
+          This unit unlocks group actions — plans, obligations, and decisions made together.
         </p>
       </div>
     </div>
@@ -77,16 +77,16 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
     <div class="site-container mx-auto px-4">
       <div class="flex items-center gap-1 py-2 text-sm whitespace-nowrap">
         <a href="#cognates" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <UsersRound class="w-3.5 h-3.5" /> Cognates
+          <Handshake class="w-3.5 h-3.5" /> Cognates
         </a>
         <a href="#sentences" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Layers class="w-3.5 h-3.5" /> Everyone/Someone/No One
+          <Layers class="w-3.5 h-3.5" /> We Can/Want/Have To
         </a>
         <a href="#power-verbs" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Zap class="w-3.5 h-3.5" /> Should/Shouldn't
+          <Zap class="w-3.5 h-3.5" /> Should/Would Like/Just
         </a>
         <a href="#connectors" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
-          <Link2 class="w-3.5 h-3.5" /> Advice Words
+          <Link2 class="w-3.5 h-3.5" /> Planning Words
         </a>
         <a href="#pronunciation" class="px-3 py-1.5 rounded-full hover:bg-amber-50 text-slate-600 hover:text-amber-600 transition-colors flex items-center gap-1.5">
           <Volume2 class="w-3.5 h-3.5" /> Pronunciation
@@ -103,13 +103,13 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
       <div class="max-w-3xl mx-auto">
         <div class="mb-8">
           <div class="flex items-center gap-2 text-amber-600 text-sm font-semibold mb-2">
-            <UsersRound class="w-4 h-4" />
+            <Handshake class="w-4 h-4" />
             Section A
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Three More Patterns You Already Know</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">The Biggest Cognate Family: -able</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            The -al pattern (personal, professional), the -id pattern (rapid, solid), and the -ct pattern (correct, perfect).
-            Your English vocabulary is growing faster than ever.
+            Over 80 English words end in -able — and they're nearly identical in Spanish.
+            Comfortable, probable, favorable, remarkable, inevitable... you already know them all.
           </p>
         </div>
         <CognateDiscovery client:visible waves={waveData} lang="en" />
@@ -125,11 +125,11 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Layers class="w-4 h-4" />
             Section B
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Everyone / Someone / No One</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">We Can / We Want / We Have To</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Three words that let you talk about people without naming them.
-            <strong>Everyone</strong> = todos. <strong>Someone</strong> = alguien. <strong>No one</strong> = nadie.
-            Watch out: in English, "nobody" takes a singular verb and no double negatives.
+            Until now, you've talked about I, you, he, she, everyone, and no one.
+            Now you unlock <strong>"we"</strong> — the word that turns individuals into a team.
+            Good news: the verb doesn't change. "I can" becomes "we can." That's it.
           </p>
         </div>
         <SentenceBuilder client:visible blocks={sentenceBlocks} lang="en" />
@@ -145,10 +145,10 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Zap class="w-4 h-4" />
             Section C
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Should / Shouldn't / Should Be Able To</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">We Should / We Would Like / We Just</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Your new modal verb: <strong>should</strong>. It's softer than "have to" — it gives advice,
-            not orders. "You should tell him" = I think it's the right thing to do.
+            Combine "we" with every modal verb you've learned: should (advice), would like (polite requests),
+            and just (recent actions). You can now express group opinions, preferences, and news.
           </p>
         </div>
         <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="en" />
@@ -164,9 +164,9 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Link2 class="w-4 h-4" />
             Section D
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Advice and Expectations</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Planning Together</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Words that connect advice and consequences — so, too, already, anyone, something.
+            Words for making plans and talking about routines — together, every day, all day, again, there.
           </p>
         </div>
         <ConnectorChallenge
@@ -187,11 +187,11 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <Volume2 class="w-4 h-4" />
             Pronunciation Lab
           </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">The Initial S — No "Es-" Prefix</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">The W Sound — Not "GW"</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            One of the most recognizable features of a Spanish accent: adding "e" before S + consonant.
-            "Especial" instead of "special." "Estudent" instead of "student."
-            This lesson breaks that habit for good.
+            Spanish doesn't have the W sound, so speakers often substitute "gu" — saying "gui" for "we"
+            and "guant" for "want." The fix: round your lips into a tiny circle before the sound starts.
+            Think of it as a mini-whistle position.
           </p>
         </div>
         <PronunciationDrill client:visible drills={pronunciationDrills} lang="en" />
@@ -209,7 +209,7 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Test What You Learned</h2>
           <p class="text-lg text-slate-600 leading-relaxed">
-            Indefinite pronouns, should/shouldn't, and advice vocabulary — plus review from Units 1-5.
+            All the "we" forms, planning vocabulary, and -able cognates — plus review from Units 1-6.
           </p>
         </div>
         <SelfTest client:visible vocabulary={vocabularyList} lang="en" />
@@ -225,17 +225,17 @@ const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 class="text-3xl font-bold text-white">Unit 6 Complete!</h2>
+        <h2 class="text-3xl font-bold text-white">Unit 7 Complete!</h2>
         <p class="text-lg text-slate-100 leading-relaxed">
-          You can now talk about everyone, someone, and no one — plus give advice with "should."
-          Six units and you're expressing opinions and expectations in real English.
+          You can now speak as "we" — making plans, giving group advice, and talking about what you just did together.
+          Seven units down. You're building real conversational English.
         </p>
         <div class="flex flex-wrap gap-4 justify-center pt-4">
-          <a href="/en/course/beginners/unit-5/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors">
-            <ArrowLeft class="w-4 h-4" /> Review Unit 5
+          <a href="/en/course/beginners/unit-6/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors">
+            <ArrowLeft class="w-4 h-4" /> Review Unit 6
           </a>
-          <a href="/en/course/beginners/unit-7/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors shadow-lg">
-            Unit 7: Together <ArrowRight class="w-4 h-4" />
+          <a href="/en/course/beginners/unit-8/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors shadow-lg">
+            Unit 8: Feelings <ArrowRight class="w-4 h-4" />
           </a>
         </div>
         <div class="pt-8 border-t border-slate-700 mt-8">
