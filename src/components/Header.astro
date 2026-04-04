@@ -519,6 +519,7 @@ const isCurrentPage = (link: string | undefined) => {
       const logoForDark = document.querySelector(".logo-light");
       const logoForWhite = document.querySelector(".logo-dark");
       const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const langSwitcher = document.querySelector("#lang-switcher-container a.lg\\:hidden");
       const buildingsParallax = document.getElementById(
         "hero-buildings-parallax"
       );
@@ -555,6 +556,10 @@ const isCurrentPage = (link: string | undefined) => {
         if (mobileMenuBtn instanceof HTMLElement) {
           mobileMenuBtn.style.setProperty("color", "#374151", "important");
         }
+
+        if (langSwitcher instanceof HTMLElement) {
+          langSwitcher.style.setProperty("color", "#64748b", "important");
+        }
       } else {
         // At top - transparent background
         innerElement.style.backgroundColor = "transparent";
@@ -574,6 +579,10 @@ const isCurrentPage = (link: string | undefined) => {
 
         if (mobileMenuBtn instanceof HTMLElement) {
           mobileMenuBtn.style.setProperty("color", "#ffffff", "important");
+        }
+
+        if (langSwitcher instanceof HTMLElement) {
+          langSwitcher.style.setProperty("color", "#ffffff", "important");
         }
       }
 
@@ -618,8 +627,9 @@ const isCurrentPage = (link: string | undefined) => {
     color: #ffc107 !important;
   }
 
-  /* Mobile menu button on transparent header */
-  .header-transparent .mobile-menu-btn {
+  /* Mobile menu button and lang switcher on transparent header */
+  .header-transparent .mobile-menu-btn,
+  .header-transparent #lang-switcher-container a {
     color: #ffffff !important;
   }
 
