@@ -211,10 +211,34 @@ const isCurrentPage = (link: string | undefined) => {
         {
           !hideLanguageSwitcher && (
             <div class="flex items-center" id="lang-switcher-container">
+              {/* Mobile: Globe icon only */}
               {!currentPath.startsWith("/es") && translationSlugEs && (
                 <a
                   href={translationSlugEs}
-                  class="lang-flag inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border border-slate-300 bg-slate-50 text-xs font-medium text-slate-600 hover:border-slate-400 hover:bg-slate-100 hover:text-slate-800 transition-colors"
+                  class="lang-flag lg:hidden inline-flex items-center justify-center w-8 h-8 rounded-md text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors"
+                  aria-label="Cambiar a Español"
+                  data-lang="es"
+                  data-astro-reload
+                >
+                  <Globe class="w-4.5 h-4.5" />
+                </a>
+              )}
+              {!currentPath.startsWith("/en") && translationSlugEn && (
+                <a
+                  href={translationSlugEn}
+                  class="lang-flag lg:hidden inline-flex items-center justify-center w-8 h-8 rounded-md text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors"
+                  aria-label="Switch to English"
+                  data-lang="en"
+                  data-astro-reload
+                >
+                  <Globe class="w-4.5 h-4.5" />
+                </a>
+              )}
+              {/* Desktop: Full label */}
+              {!currentPath.startsWith("/es") && translationSlugEs && (
+                <a
+                  href={translationSlugEs}
+                  class="lang-flag hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border border-slate-300 bg-slate-50 text-xs font-medium text-slate-600 hover:border-slate-400 hover:bg-slate-100 hover:text-slate-800 transition-colors"
                   aria-label="Cambiar a Español"
                   data-lang="es"
                   data-astro-reload
@@ -227,7 +251,7 @@ const isCurrentPage = (link: string | undefined) => {
               {!currentPath.startsWith("/en") && translationSlugEn && (
                 <a
                   href={translationSlugEn}
-                  class="lang-flag inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border border-slate-300 bg-slate-50 text-xs font-medium text-slate-600 hover:border-slate-400 hover:bg-slate-100 hover:text-slate-800 transition-colors"
+                  class="lang-flag hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border border-slate-300 bg-slate-50 text-xs font-medium text-slate-600 hover:border-slate-400 hover:bg-slate-100 hover:text-slate-800 transition-colors"
                   aria-label="Switch to English"
                   data-lang="en"
                   data-astro-reload
