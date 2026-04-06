@@ -520,6 +520,8 @@ const isCurrentPage = (link: string | undefined) => {
       const logoForWhite = document.querySelector(".logo-dark");
       const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
       const langSwitcher = document.querySelector("#lang-switcher-container a.lg\\:hidden");
+      const langSwitcherDesktop = document.querySelector("#lang-switcher-container a.lg\\:inline-flex");
+      const langSwitcherDesktopSpans = langSwitcherDesktop?.querySelectorAll("span");
       const buildingsParallax = document.getElementById(
         "hero-buildings-parallax"
       );
@@ -560,6 +562,18 @@ const isCurrentPage = (link: string | undefined) => {
         if (langSwitcher instanceof HTMLElement) {
           langSwitcher.style.setProperty("color", "#64748b", "important");
         }
+
+        // Desktop lang switcher: restore solid style
+        if (langSwitcherDesktop instanceof HTMLElement) {
+          langSwitcherDesktop.style.setProperty("background-color", "rgb(248 250 252)", "important");
+          langSwitcherDesktop.style.setProperty("border-color", "rgb(203 213 225)", "important");
+          langSwitcherDesktop.style.setProperty("color", "rgb(71 85 105)", "important");
+          langSwitcherDesktopSpans?.forEach((span) => {
+            if (span instanceof HTMLElement) {
+              span.style.removeProperty("color");
+            }
+          });
+        }
       } else {
         // At top - transparent background
         innerElement.style.backgroundColor = "transparent";
@@ -583,6 +597,18 @@ const isCurrentPage = (link: string | undefined) => {
 
         if (langSwitcher instanceof HTMLElement) {
           langSwitcher.style.setProperty("color", "#ffffff", "important");
+        }
+
+        // Desktop lang switcher: transparent style
+        if (langSwitcherDesktop instanceof HTMLElement) {
+          langSwitcherDesktop.style.setProperty("background-color", "rgba(255, 255, 255, 0.15)", "important");
+          langSwitcherDesktop.style.setProperty("border-color", "rgba(255, 255, 255, 0.35)", "important");
+          langSwitcherDesktop.style.setProperty("color", "#ffffff", "important");
+          langSwitcherDesktopSpans?.forEach((span) => {
+            if (span instanceof HTMLElement) {
+              span.style.setProperty("color", "#ffffff", "important");
+            }
+          });
         }
       }
 
@@ -633,12 +659,27 @@ const isCurrentPage = (link: string | undefined) => {
     color: #ffffff !important;
   }
 
+  /* Desktop lang switcher: transparent style on hero */
+  .header-transparent #lang-switcher-container a.lg\:inline-flex {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    color: #ffffff !important;
+  }
+  .header-transparent #lang-switcher-container a.lg\:inline-flex span {
+    color: #ffffff !important;
+  }
+  .header-transparent #lang-switcher-container a.lg\:inline-flex:hover {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+  }
+
   /* Smooth transitions */
   #header-inner,
   .nav-link,
   .mobile-menu-btn,
   .logo-light,
-  .logo-dark {
+  .logo-dark,
+  #lang-switcher-container a {
     transition: all 0.3s ease;
   }
 </style>
