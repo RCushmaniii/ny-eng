@@ -87,7 +87,7 @@ tags:
 date_completed: "2026-02"
 
 # === REPO HEALTH STATUS ===
-# Last audited: 2026-04-06
+# Last audited: 2026-04-06 (post-session: hydration fixes, lang switcher fix)
 # Standards defined in: operating-system/delivery/repo-health-baseline.md
 health_status:
   sentry: "-"           # Not installed — CLAUDE.md mandates for all production apps
