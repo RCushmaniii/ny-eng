@@ -570,7 +570,7 @@ const isCurrentPage = (link: string | undefined) => {
           langSwitcherDesktop.style.setProperty("color", "rgb(71 85 105)", "important");
           langSwitcherDesktopSpans?.forEach((span) => {
             if (span instanceof HTMLElement) {
-              span.style.removeProperty("color");
+              span.style.setProperty("color", "rgb(71 85 105)", "important");
             }
           });
         }
