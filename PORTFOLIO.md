@@ -87,34 +87,45 @@ tags:
 date_completed: "2026-02"
 
 # === REPO HEALTH STATUS ===
-# Last audited: 2026-04-05
+# Last audited: 2026-04-06
 # Standards defined in: operating-system/delivery/repo-health-baseline.md
 health_status:
-  sentry: "-"
-  testing: "-"
-  ci_cd: "Y"
-  health_endpoint: "n/a"
-  security_headers: "Y"
-  rate_limiting: "n/a"
-  env_validation: "-"
-  analytics: "DEFERRED"
-  structured_logging: "-"
-  dependabot: "Y"
-  secret_scanning: "Y"
-  db_backup: "-"
-health_status:
-  sentry: "-"
-  testing: "-"
-  ci_cd: "Y"
-  health_endpoint: "n/a"
-  security_headers: "-"
-  rate_limiting: "n/a"
-  env_validation: "Y"
-  analytics: "DEFERRED"
-  structured_logging: "-"
-  dependabot: "Y"
-  secret_scanning: "Y"
-  db_backup: "-"
+  sentry: "-"           # Not installed — CLAUDE.md mandates for all production apps
+  testing: "-"          # No unit/integration framework (vitest/jest); has 7 validators + env smoke tests
+  ci_cd: "Y"            # GitHub Actions: build on push/PR to main
+  health_endpoint: "n/a"  # Static site — no server runtime
+  security_headers: "Y" # vercel.json: CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy
+  rate_limiting: "n/a"  # Static site; Cloudflare Worker has IP-based rate limiting (5/hr)
+  env_validation: "-"   # .env.example exists; no runtime startup validation; manual test:env script
+  analytics: "DEFERRED" # No analytics SDK installed
+  structured_logging: "-"  # Expected — static site with no server runtime
+  dependabot: "Y"       # Weekly: npm deps (max 5 PRs) + GH Actions (max 3 PRs)
+  secret_scanning: "Y"  # GitHub secret scanning enabled
+  db_backup: "-"        # No Neon PostgreSQL backup automation
+
+# === DEPENDENCY HEALTH ===
+# npm audit: 18 vulnerabilities (2 critical, 6 high, 10 moderate) — all transitive, none affect production runtime
+#   - Vercel platform internals (ajv, minimatch, path-to-regexp, undici, smol-toml)
+#   - Dev-only tooling (esbuild/vite, yaml/@astrojs/check)
+#   - Build-time PDF libs (html2pdf.js/jspdf) — not user-facing
+# Removed unused @astrojs/node (was never configured as adapter)
+# Open Dependabot PRs: 0 — all resolved (5 merged, 1 closed as unused dep, 1 resolved manually)
+
+# === TESTING & VALIDATION SUITE ===
+# Pre-build (automatic on `npm run build`):
+#   - Blog SEO field validation (title ≤60, description 120-160)
+#   - JSON resource schema audit (Python)
+#   - Smart-cached PDF generation
+# Pre-deploy (`npm run pre-deploy`):
+#   - Project health checker (package.json, license, README, .gitignore, .env security, tsconfig, astro config, lockfile, free assets schema, bilingual parity, i18n routes)
+#   - Technical SEO audit (meta tags, h1, canonicals, hreflang, OG tags)
+#   - Sitemap integrity (URL coverage, hreflang consistency)
+#   - Full site HTML scan
+# Individual validators (`npm run validate:all` — 7 scripts):
+#   - hreflang, 404 patterns, redirects, canonical URLs, internal links, performance, URL structure
+# Environment smoke tests (manual):
+#   - `npm run test:env` — Google Calendar OAuth env var presence
+#   - `npm run test:calendar` — Google Calendar API connectivity
 ---
 
 ## The Architecture of Authority
@@ -152,7 +163,7 @@ In the Guadalajara market specifically, the local English tutoring market is sat
 - **Serverless lead capture:** Quiz submissions hit a Vercel serverless function that writes to Neon PostgreSQL (pooled connection). Schema captures raw scores, category breakdowns, gap analysis, UTM params, referrer, and device metadata.
 - **Type-safe bilingual routing:** A central `TKey` system maps every page to its EN/ES path. Adding a new page requires one TKey entry — hreflang tags, sitemap entries, and navigation links generate automatically.
 - **Build-time meme status detection:** The 80-meme portfolio uses a detection module that scans image directories at build time and auto-classifies each entry as planned, prompt-ready, image-uploaded, or published based on which language images exist on disk.
-- **$0 infrastructure:** Astro on Hostinger (static), Cloudflare Workers (free tier), Neon PostgreSQL (free tier), Vercel serverless (free tier), Formspree (free tier). Every dollar of revenue is profit minus delivery time.
+- **$0 infrastructure:** Astro on Vercel (static + serverless), Cloudflare Workers (free tier), Neon PostgreSQL (free tier), Formspree (free tier). Every dollar of revenue is profit minus delivery time.
 
 ## Results
 
