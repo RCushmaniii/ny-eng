@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import {
   RotateCcw,
   Eye,
@@ -23,11 +23,11 @@ export default function SelfTest({ vocabulary, lang }: Props) {
   const [score, setScore] = useState({ correct: 0, total: 0 });
   const [isFinished, setIsFinished] = useState(false);
 
-  // Shuffle vocabulary
-  const shuffled = useMemo(
-    () => [...vocabulary].sort(() => Math.random() - 0.5),
-    [],
-  );
+  // Shuffle vocabulary after hydration to avoid server/client mismatch
+  const [shuffled, setShuffled] = useState(vocabulary);
+  useEffect(() => {
+    setShuffled([...vocabulary].sort(() => Math.random() - 0.5));
+  }, []);
 
   const current = shuffled[currentIndex];
 

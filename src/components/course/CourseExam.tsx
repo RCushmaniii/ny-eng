@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import type { ExamQuestion, ExamResult } from "@data/course/exam";
 import { calculateExamResult, getScoreTier } from "@data/course/exam";
 
@@ -19,21 +19,22 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
 
   const en = lang === "en";
 
-  // Shuffle questions once per session
-  const shuffledQuestions = useMemo(
-    () => [...questions].sort(() => Math.random() - 0.5),
-    [questions]
-  );
+  // Shuffle questions after hydration to avoid server/client mismatch
+  const [shuffledQuestions, setShuffledQuestions] = useState(questions);
+  useEffect(() => {
+    setShuffledQuestions([...questions].sort(() => Math.random() - 0.5));
+  }, []);
 
   const current = shuffledQuestions[currentIndex];
   const totalQuestions = shuffledQuestions.length;
   const progress = ((currentIndex) / totalQuestions) * 100;
 
-  // Shuffle options for current question
-  const shuffledOptions = useMemo(() => {
-    if (!current) return [];
+  // Shuffle options after hydration — re-shuffle when question changes
+  const [shuffledOptions, setShuffledOptions] = useState<Array<{ text: string; correct: boolean; originalIndex: number }>>([]);
+  useEffect(() => {
+    if (!current) return;
     const indexed = current.options.map((opt, i) => ({ ...opt, originalIndex: i }));
-    return indexed.sort(() => Math.random() - 0.5);
+    setShuffledOptions(indexed.sort(() => Math.random() - 0.5));
   }, [current?.id]);
 
   const handleSelectOption = useCallback(
