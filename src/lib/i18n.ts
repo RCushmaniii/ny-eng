@@ -86,6 +86,18 @@ export type TKey =
   | "course/beginners/unit-10"
   | "course/beginners/exam"
   | "course/beginners/pronunciation"
+  | "course/intermediate"
+  | "course/intermediate/unit-1"
+  | "course/intermediate/unit-2"
+  | "course/intermediate/unit-3"
+  | "course/intermediate/unit-4"
+  | "course/intermediate/unit-5"
+  | "course/intermediate/unit-6"
+  | "course/intermediate/unit-7"
+  | "course/intermediate/unit-8"
+  | "course/intermediate/unit-9"
+  | "course/intermediate/unit-10"
+  | "course/intermediate/exam"
   | "meme-portfolio"
   | "site-index";
 
@@ -186,6 +198,18 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/beginners/unit-10": "/en/course/beginners/unit-10/",
     "course/beginners/exam": "/en/course/beginners/exam/",
     "course/beginners/pronunciation": "/en/course/beginners/pronunciation/",
+    "course/intermediate": "/en/course/intermediate/",
+    "course/intermediate/unit-1": "/en/course/intermediate/unit-1/",
+    "course/intermediate/unit-2": "/en/course/intermediate/unit-2/",
+    "course/intermediate/unit-3": "/en/course/intermediate/unit-3/",
+    "course/intermediate/unit-4": "/en/course/intermediate/unit-4/",
+    "course/intermediate/unit-5": "/en/course/intermediate/unit-5/",
+    "course/intermediate/unit-6": "/en/course/intermediate/unit-6/",
+    "course/intermediate/unit-7": "/en/course/intermediate/unit-7/",
+    "course/intermediate/unit-8": "/en/course/intermediate/unit-8/",
+    "course/intermediate/unit-9": "/en/course/intermediate/unit-9/",
+    "course/intermediate/unit-10": "/en/course/intermediate/unit-10/",
+    "course/intermediate/exam": "/en/course/intermediate/exam/",
     "meme-portfolio": "/en/meme-portfolio/all/",
     "site-index": "/en/site-index/",
   },
@@ -290,6 +314,18 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/beginners/unit-10": "/es/curso/principiantes/unidad-10/",
     "course/beginners/exam": "/es/curso/principiantes/examen/",
     "course/beginners/pronunciation": "/es/curso/principiantes/pronunciacion/",
+    "course/intermediate": "/es/curso/intermedio/",
+    "course/intermediate/unit-1": "/es/curso/intermedio/unidad-1/",
+    "course/intermediate/unit-2": "/es/curso/intermedio/unidad-2/",
+    "course/intermediate/unit-3": "/es/curso/intermedio/unidad-3/",
+    "course/intermediate/unit-4": "/es/curso/intermedio/unidad-4/",
+    "course/intermediate/unit-5": "/es/curso/intermedio/unidad-5/",
+    "course/intermediate/unit-6": "/es/curso/intermedio/unidad-6/",
+    "course/intermediate/unit-7": "/es/curso/intermedio/unidad-7/",
+    "course/intermediate/unit-8": "/es/curso/intermedio/unidad-8/",
+    "course/intermediate/unit-9": "/es/curso/intermedio/unidad-9/",
+    "course/intermediate/unit-10": "/es/curso/intermedio/unidad-10/",
+    "course/intermediate/exam": "/es/curso/intermedio/examen/",
     "meme-portfolio": "/es/meme-portfolio/all/",
     "site-index": "/es/indice-del-sitio/",
   },

@@ -1,0 +1,208 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import PhrasalVerbExplorer from "@components/course/PhrasalVerbExplorer";
+import DialoguePractice from "@components/course/DialoguePractice";
+import SentenceBuilder from "@components/course/SentenceBuilder";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import PronunciationDrill from "@components/course/PronunciationDrill";
+import SelfTest from "@components/course/SelfTest";
+import AudioButton from "@components/course/AudioButton";
+import { intermediateUnits, intermediateInfo } from "@data/intermediate/units";
+import {
+  phrasalVerbGroups,
+  dialogues,
+  structureBlocks,
+  errorCorrections,
+  pronunciationDrills,
+  vocabularyList,
+} from "@data/intermediate/unit-1";
+import {
+  ArrowRight,
+  Puzzle,
+  MessageCircle,
+  Layers,
+  AlertTriangle,
+  Volume2,
+  ClipboardCheck,
+  BookOpen,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/intermediate/unit-1" as const;
+
+const progressUnits = intermediateUnits.map((u) => ({
+  id: u.id,
+  slug: u.slug,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unit 1: The Phrasal Verb Problem | Building Fluency | NY English Teacher"
+  description="Why 'give up' doesn't mean 'dar arriba'. Master 8 essential phrasal verbs and the present perfect tense. Free interactive lesson for B1-B2 Spanish speakers."
+>
+  <!-- Course progress bar -->
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={1}
+    basePath="/en/course/intermediate"
+    lang="en"
+    courseId="intermediate"
+  />
+
+  <!-- Unit hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
+          <Puzzle class="w-4 h-4" />
+          Unit 1
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          The Phrasal Verb Problem
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Phrasal verbs are the #1 thing that blocks Spanish speakers from sounding natural in English.
+          "Give up" doesn't mean "dar arriba." "Find out" doesn't mean "encontrar afuera."
+          In this unit, you'll learn how to decode them — and stop translating word by word.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Puzzle class="w-3.5 h-3.5" /> 8 Phrasal Verbs
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Layers class="w-3.5 h-3.5" /> Present Perfect
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Volume2 class="w-3.5 h-3.5" /> Phrasal Verb Stress
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section A: Phrasal Verb Explorer -->
+  <section class="py-16 md:py-20 bg-white" id="section-a">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">A</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Phrasal Verb Explorer</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Tap each phrasal verb to reveal its meaning. Try to guess before you look!
+        </p>
+        <PhrasalVerbExplorer client:visible groups={phrasalVerbGroups} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section B: Dialogue Practice -->
+  <section class="py-16 md:py-20 bg-slate-50" id="section-b">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">B</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Dialogue Practice</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          See the phrasal verbs in action. Tap any line to see the Spanish translation.
+        </p>
+        <DialoguePractice client:visible dialogues={dialogues} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section C: Structure Builder -->
+  <section class="py-16 md:py-20 bg-white" id="section-c">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">C</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Structure Builder</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Present perfect vs. simple past — the difference that changes everything.
+        </p>
+        <SentenceBuilder client:visible blocks={structureBlocks} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section D: Error Correction -->
+  <section class="py-16 md:py-20 bg-slate-50" id="section-d">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">D</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Error Correction</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Can you spot the mistakes that Spanish speakers make most often?
+        </p>
+        <ErrorCorrection client:visible data={errorCorrections} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section E: Pronunciation Lab -->
+  <section class="py-16 md:py-20 bg-white" id="section-e">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">E</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Pronunciation Lab</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Where does the stress go in a phrasal verb? Not where you think.
+        </p>
+        <PronunciationDrill client:visible drills={pronunciationDrills} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section F: Self-Test -->
+  <section class="py-16 md:py-20 bg-slate-50" id="section-f">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">F</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Self-Test</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Test yourself on everything from this unit — phrasal verbs, grammar, and key vocabulary.
+        </p>
+        <SelfTest client:visible vocabulary={vocabularyList} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="py-12 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex justify-between items-center">
+        <a
+          href="/en/course/intermediate/"
+          class="text-sm text-slate-500 hover:text-amber-600 transition-colors"
+        >
+          &larr; Course Overview
+        </a>
+        <Button href="/en/course/intermediate/unit-2/" variant="primary" size="md">
+          Unit 2: At the Office
+          <ArrowRight class="w-4 h-4 ml-1" />
+        </Button>
+      </div>
+    </div>
+  </section>
+</Base>

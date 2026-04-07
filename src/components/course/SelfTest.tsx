@@ -7,10 +7,14 @@ import {
   Languages,
 } from "lucide-react";
 import AudioButton from "./AudioButton";
-import type { VocabItem } from "@data/course/unit-1";
+interface VocabItemBase {
+  english: string;
+  spanish: string;
+  type: string;
+}
 
 interface Props {
-  vocabulary: VocabItem[];
+  vocabulary: VocabItemBase[];
   lang: "en" | "es";
 }
 
@@ -172,7 +176,11 @@ export default function SelfTest({ vocabulary, lang }: Props) {
                   ? "bg-blue-100 text-blue-700"
                   : current.type === "phrase"
                     ? "bg-green-100 text-green-700"
-                    : "bg-slate-100 text-slate-600"
+                    : current.type === "phrasal-verb"
+                      ? "bg-orange-100 text-orange-700"
+                      : current.type === "expression"
+                        ? "bg-teal-100 text-teal-700"
+                        : "bg-slate-100 text-slate-600"
             }`}
           >
             {current.type}

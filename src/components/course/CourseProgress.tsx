@@ -13,28 +13,32 @@ interface Props {
   currentUnit: number;
   basePath: string;
   lang: "en" | "es";
+  courseId?: string;
 }
 
-const STORAGE_KEY = "nye_course_beginners_progress";
+function getStorageKey(courseId: string) {
+  return `nye_course_${courseId}_progress`;
+}
 
-function getCompletedUnits(): number[] {
+function getCompletedUnits(courseId: string = "beginners"): number[] {
   if (typeof window === "undefined") return [];
   try {
-    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+    const data = JSON.parse(localStorage.getItem(getStorageKey(courseId)) || "{}");
     return data.completedUnits || [];
   } catch {
     return [];
   }
 }
 
-export function markUnitComplete(unitId: number) {
+export function markUnitComplete(unitId: number, courseId: string = "beginners") {
   if (typeof window === "undefined") return;
   try {
-    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+    const key = getStorageKey(courseId);
+    const data = JSON.parse(localStorage.getItem(key) || "{}");
     const completed = new Set(data.completedUnits || []);
     completed.add(unitId);
     localStorage.setItem(
-      STORAGE_KEY,
+      key,
       JSON.stringify({
         ...data,
         completedUnits: [...completed],
@@ -51,13 +55,14 @@ export default function CourseProgress({
   currentUnit,
   basePath,
   lang,
+  courseId = "beginners",
 }: Props) {
   const [completed, setCompleted] = useState<number[]>([]);
   const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
-    setCompleted(getCompletedUnits());
-  }, []);
+    setCompleted(getCompletedUnits(courseId));
+  }, [courseId]);
 
   const progress = Math.round((completed.length / units.length) * 100);
   const currentUnitData = units.find((u) => u.id === currentUnit);
