@@ -73,6 +73,7 @@ export type TKey =
   | "quiz/executives"
   | "quiz/professional-services"
   | "quiz/high-stakes"
+  | "courses"
   | "course/beginners"
   | "course/beginners/unit-1"
   | "course/beginners/unit-2"
@@ -185,6 +186,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "quiz/executives": "/en/quiz/executives/",
     "quiz/professional-services": "/en/quiz/professional-services/",
     "quiz/high-stakes": "/en/quiz/high-stakes/",
+    courses: "/en/courses/",
     "course/beginners": "/en/course/beginners/",
     "course/beginners/unit-1": "/en/course/beginners/unit-1/",
     "course/beginners/unit-2": "/en/course/beginners/unit-2/",
@@ -301,6 +303,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "quiz/executives": "/es/quiz/executives/",
     "quiz/professional-services": "/es/quiz/professional-services/",
     "quiz/high-stakes": "/es/quiz/high-stakes/",
+    courses: "/es/cursos/",
     "course/beginners": "/es/curso/principiantes/",
     "course/beginners/unit-1": "/es/curso/principiantes/unidad-1/",
     "course/beginners/unit-2": "/es/curso/principiantes/unidad-2/",

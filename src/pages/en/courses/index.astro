@@ -1,0 +1,167 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import { courseInfo, units } from "@data/course/units";
+import { intermediateInfo, intermediateUnits } from "@data/intermediate/units";
+import {
+  Sparkles,
+  Puzzle,
+  ArrowRight,
+  CheckCircle2,
+  GraduationCap,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "courses" as const;
+
+const beginnerAvailable = units.length;
+const intermediateAvailable = intermediateUnits.filter((u) => u.id < 3).length;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Free English Courses for Spanish Speakers | NY English Teacher"
+  description="Free, interactive English courses for Spanish speakers — from absolute beginner to upper-intermediate. No sign-up. No paywall. Built by a real NYC English teacher."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-16 pb-20 md:pt-20 md:pb-24">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
+          <GraduationCap class="w-4 h-4" />
+          Free Courses
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          English Courses That Actually Work for Spanish Speakers
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Two free, interactive courses built specifically for Spanish speakers.
+          No sign-up. No paywall. No textbook drudgery. Just real progress
+          from the first lesson.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course cards -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+
+        <!-- Beginner -->
+        <a
+          href="/en/course/beginners/"
+          class="group block bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl hover:border-amber-300 transition-all duration-200"
+        >
+          <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 p-6 text-white">
+            <div class="flex items-center gap-2 text-emerald-100 text-xs font-bold uppercase tracking-wider mb-2">
+              <Sparkles class="w-3.5 h-3.5" />
+              Level A1 — Beginner
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold mb-2" style="font-family: 'Noto Sans KR', sans-serif;">
+              {courseInfo.title}
+            </h2>
+            <p class="text-emerald-50 text-sm leading-relaxed">
+              {courseInfo.tagline}
+            </p>
+          </div>
+          <div class="p-6">
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              {courseInfo.description}
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                <span>10 interactive units + final exam</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                <span>1,500+ English/Spanish cognates</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                <span>Audio for every word and phrase</span>
+              </li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold text-emerald-600 uppercase tracking-wider">
+                {beginnerAvailable} units available
+              </span>
+              <span class="inline-flex items-center gap-1 text-amber-600 font-semibold text-sm group-hover:gap-2 transition-all">
+                Start course
+                <ArrowRight class="w-4 h-4" />
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Intermediate -->
+        <a
+          href="/en/course/intermediate/"
+          class="group block bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl hover:border-amber-300 transition-all duration-200"
+        >
+          <div class="bg-gradient-to-br from-amber-500 to-amber-600 p-6 text-white">
+            <div class="flex items-center gap-2 text-amber-100 text-xs font-bold uppercase tracking-wider mb-2">
+              <Puzzle class="w-3.5 h-3.5" />
+              Level B1–B2 — Intermediate
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold mb-2" style="font-family: 'Noto Sans KR', sans-serif;">
+              {intermediateInfo.title}
+            </h2>
+            <p class="text-amber-50 text-sm leading-relaxed">
+              {intermediateInfo.tagline}
+            </p>
+          </div>
+          <div class="p-6">
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              {intermediateInfo.description}
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                <span>80+ phrasal verbs in real context</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                <span>Office, travel, and social English</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                <span>Fixes the exact mistakes Spanish speakers make</span>
+              </li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">
+                {intermediateAvailable} units available · more coming
+              </span>
+              <span class="inline-flex items-center gap-1 text-amber-600 font-semibold text-sm group-hover:gap-2 transition-all">
+                Start course
+                <ArrowRight class="w-4 h-4" />
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Which one? -->
+      <div class="max-w-3xl mx-auto mt-16 text-center">
+        <h3 class="text-2xl font-bold text-slate-900 mb-3">Not sure which one to start?</h3>
+        <p class="text-slate-600 mb-6">
+          If you can introduce yourself, order food, and read simple signs in English — start with
+          the <strong>intermediate</strong> course. If English still feels brand new, start with
+          the <strong>beginner</strong> course. You can always switch later — your progress is saved separately for each course.
+        </p>
+        <Button href="/en/services/" variant="secondary" size="md">
+          Or work 1-on-1 with Robert
+          <ArrowRight class="w-4 h-4 ml-1" />
+        </Button>
+      </div>
+    </div>
+  </section>
+</Base>
