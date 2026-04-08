@@ -1,0 +1,193 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import SpecifierBuilder from "@components/course/SpecifierBuilder";
+import DialoguePractice from "@components/course/DialoguePractice";
+import SentenceBuilder from "@components/course/SentenceBuilder";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import PronunciationDrill from "@components/course/PronunciationDrill";
+import SelfTest from "@components/course/SelfTest";
+import { intermediateUnits } from "@data/intermediate/units";
+import {
+  specifierExamples,
+  dialogues,
+  structureBlocks,
+  errorCorrections,
+  pronunciationDrills,
+  vocabularyList,
+} from "@data/intermediate/unit-8";
+import { ArrowRight, Wallet, Layers, Volume2, Target } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/intermediate/unit-8" as const;
+
+const progressUnits = intermediateUnits.map((u) => ({
+  id: u.id,
+  slug: u.slug,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unit 8: Money and Shopping | Building Fluency | NY English Teacher"
+  description="Consumer English for shopping, banking, and complaints. Master relative clauses to specify exactly what you want, plus preference modals (would rather, would prefer). Free B1-B2 lesson for Spanish speakers."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={8}
+    basePath="/en/course/intermediate"
+    lang="en"
+    courseId="intermediate"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
+          <Wallet class="w-4 h-4" />
+          Unit 8
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Money and Shopping
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          When something goes wrong with a purchase, vague English gets ignored — specific
+          English gets results. This unit teaches you to identify, describe, and complain
+          with precision using <strong class="text-white">relative clauses</strong>, plus
+          state your preferences politely with <strong class="text-white">would rather</strong>
+          and <strong class="text-white">would prefer</strong>.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Target class="w-3.5 h-3.5" /> Specifier Builder
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Layers class="w-3.5 h-3.5" /> Relative Clauses
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Volume2 class="w-3.5 h-3.5" /> Preference Modals
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-a">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">A</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Specifier Builder</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          See how vague sentences become specific with relative clauses. Each example
+          highlights the relative pronoun and explains why it's the right choice.
+        </p>
+        <SpecifierBuilder client:visible examples={specifierExamples} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-b">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">B</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Dialogue Practice</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          A real return at a real store — watch how the customer uses relative clauses to
+          identify the item and preference modals to state what they want.
+        </p>
+        <DialoguePractice client:visible dialogues={dialogues} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-c">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">C</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Structure Builder</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Defining vs. non-defining relative clauses, plus 'would rather' and 'would prefer'.
+        </p>
+        <SentenceBuilder client:visible blocks={structureBlocks} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-d">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">D</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Error Correction</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Six errors that confuse store clerks and bank tellers — fix them before your next return.
+        </p>
+        <ErrorCorrection client:visible data={errorCorrections} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-e">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">E</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Pronunciation Lab</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Sentence stress for emphasis — how the same words can mean different things based on which one you stress.
+        </p>
+        <PronunciationDrill client:visible drills={pronunciationDrills} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-f">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">F</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Self-Test</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Test yourself on relative clause expressions, preference phrases, and money/shopping vocabulary.
+        </p>
+        <SelfTest client:visible vocabulary={vocabularyList} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex justify-between items-center">
+        <a
+          href="/en/course/intermediate/unit-7/"
+          class="text-sm text-slate-500 hover:text-amber-600 transition-colors"
+        >
+          &larr; Unit 7
+        </a>
+        <Button href="/en/course/intermediate/" variant="primary" size="md">
+          Course Overview
+          <ArrowRight class="w-4 h-4 ml-1" />
+        </Button>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,194 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import SurvivalPhrases from "@components/course/SurvivalPhrases";
+import DialoguePractice from "@components/course/DialoguePractice";
+import SentenceBuilder from "@components/course/SentenceBuilder";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import PronunciationDrill from "@components/course/PronunciationDrill";
+import SelfTest from "@components/course/SelfTest";
+import { intermediateUnits } from "@data/intermediate/units";
+import {
+  survivalCategories,
+  dialogues,
+  structureBlocks,
+  errorCorrections,
+  pronunciationDrills,
+  vocabularyList,
+} from "@data/intermediate/unit-7";
+import { ArrowRight, HeartPulse, Layers, Volume2, Stethoscope } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/intermediate/unit-7" as const;
+
+const progressUnits = intermediateUnits.map((u) => ({
+  id: u.id,
+  slug: u.slug,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unit 7: Health and Emergencies | Building Fluency | NY English Teacher"
+  description="High-stakes medical English. Master passive voice, advice modals (should, ought to), and the exact phrases you need at the doctor, pharmacy, or hospital. Free B1-B2 lesson for Spanish speakers."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={7}
+    basePath="/en/course/intermediate"
+    lang="en"
+    courseId="intermediate"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
+          <HeartPulse class="w-4 h-4" />
+          Unit 7
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Health and Emergencies
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          This is the unit where English stops being a school subject and becomes a real
+          tool. The phrases here can help you describe symptoms, ask for the right medication,
+          and — in the worst case — get an ambulance to your door. Master the passive voice
+          and advice modals: <strong class="text-white">should</strong>,
+          <strong class="text-white">ought to</strong>, and
+          <strong class="text-white">had better</strong>.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Stethoscope class="w-3.5 h-3.5" /> Survival Phrases
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Layers class="w-3.5 h-3.5" /> Passive Voice
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Volume2 class="w-3.5 h-3.5" /> Advice Modals
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-a">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">A</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Survival Phrases</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Real medical situations with the exact English you need. Read the situation,
+          then reveal the phrase. Memorize the high-urgency ones — your safety may depend on them.
+        </p>
+        <SurvivalPhrases client:visible categories={survivalCategories} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-b">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">B</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Dialogue Practice</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          A typical doctor's appointment from start to finish. Notice how every patient question
+          and doctor recommendation uses the structures from this unit.
+        </p>
+        <DialoguePractice client:visible dialogues={dialogues} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-c">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">C</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Structure Builder</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Passive voice and advice modals — the foundation of medical English.
+        </p>
+        <SentenceBuilder client:visible blocks={structureBlocks} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-d">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">D</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Error Correction</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Six errors that can confuse doctors or, worse, minimize serious symptoms.
+        </p>
+        <ErrorCorrection client:visible data={errorCorrections} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-e">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">E</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Pronunciation Lab</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Schwa sounds in passive constructions and tricky medical vocabulary.
+        </p>
+        <PronunciationDrill client:visible drills={pronunciationDrills} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-f">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">F</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Self-Test</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Test yourself on symptom expressions, doctor question phrases, and emergency vocabulary.
+        </p>
+        <SelfTest client:visible vocabulary={vocabularyList} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex justify-between items-center">
+        <a
+          href="/en/course/intermediate/unit-6/"
+          class="text-sm text-slate-500 hover:text-amber-600 transition-colors"
+        >
+          &larr; Unit 6
+        </a>
+        <Button href="/en/course/intermediate/unit-8/" variant="primary" size="md">
+          Unit 8: Money and Shopping
+          <ArrowRight class="w-4 h-4 ml-1" />
+        </Button>
+      </div>
+    </div>
+  </section>
+</Base>
