@@ -1,0 +1,37 @@
+Page: /en/services/
+
+Business English Coaching Services | NY English
+
+Explore personalized English coaching for executives, tech, and medical professionals. Improve your fluency and confidence in business settings.
+
+You already lead. Now sound like it — in English.
+Private coaching for the specific moments where your English matters most.
+CTA: Book Your Free Consultation — /en/book/
+
+Services
+
+- Business & Executive English — Lead board meetings, deliver strategic updates, and negotiate with the authority your role demands—without translating in your head. /en/services/executive-english/
+- English for Startup Founders — Pitch to US investors, recruit across borders, and lead your team in English—with the confidence that closes rounds. /en/services/startup-founders/
+- English for Tech — Turn technical complexity into clear business value. Explain architecture to non-technical stakeholders without losing precision or credibility. /en/services/tech-english/
+- English for Logistics — Navigate customs, freight forwarding, and cross-border operations in English. Communicate with US brokers, carriers, and compliance teams with precision. /en/services/logistics-english/
+- English for Doctors, Lawyers & Professionals — One wrong word changes everything. Precision English for medical and legal professionals who need absolute clarity when the stakes are real. /en/services/professional-english/
+- Interview & Presentation Coaching — You get one shot. Targeted preparation for the interview, investor pitch, or career-defining presentation you can't afford to fumble. /en/services/high-stakes-english/
+
+Find coaching for your role
+Each role has different pressure points. Pick yours.
+
+- C-Suite Executives — /en/services/executive-english/
+- Directors & VPs — /en/services/executive-english/
+- Startup Founders — /en/services/startup-founders/
+- Software Engineers — /en/services/tech-english/
+- Tech Team Leads — /en/services/tech-english/
+- Supply Chain Managers — /en/services/logistics-english/
+- Logistics Coordinators — /en/services/logistics-english/
+- Medical Professionals — /en/services/professional-english/
+- Legal Professionals — /en/services/professional-english/
+- Public Speakers — /en/services/high-stakes-english/
+- Job Seekers — /en/services/high-stakes-english/
+
+Final CTA: You already lead. Now sound like it — in English.
+Book a private strategy session. 30 minutes: I'll spot the gaps between your English and the executive presence your role demands.
+Book My Strategy Session — /en/book/

@@ -1,0 +1,44 @@
+Page: /es/servicios/ingles-para-tecnologia/
+
+Coaching de Inglés para Tecnología | NY English
+
+Domina el inglés técnico para comunicar conceptos complejos con claridad. Code reviews, arquitectura y colaboración global en tecnología.
+
+Hero: Tu código es impecable. Tu explicación pierde a la sala.
+Coaching para líderes técnicos que necesitan convertir complejidad técnica en valor de negocio claro — sin perder precisión ni credibilidad.
+
+¿Te suena familiar?
+- Entiendes la arquitectura perfecto — pero cuando la explicas en inglés, los stakeholders no-técnicos se desconectan.
+- En ceremonias de sprint, tus ideas se pasan por alto porque alguien más las articula mejor — no porque sean mejores ideas.
+- Evitas hablar en reuniones cross-team. No porque no tengas la respuesta, sino porque construirla en inglés tarda demasiado.
+
+Cómo funciona
+1. Primero hablamos. Tu stack, tu equipo, tus interacciones en inglés — sin presión.
+2. Construyo tu plan. Sesiones diseñadas para tu día a día en tech, no genéricas.
+3. Practicas bajo presión. Code reviews, demos de arquitectura, reuniones cross-team. Comete errores conmigo, no en la daily.
+4. Refino conforme creces.
+
+CTA Final: Ya lideras. Ahora suena así — en inglés.
+Reservar Mi Sesión Estratégica — /es/reservar/
+
+En Tu Sesión Gratuita, Haremos:
+- Evaluar cómo tu inglés impacta discusiones técnicas y confianza con stakeholders
+- Identificar los escenarios donde la comunicación te cuesta influencia
+- Crear un plan para explicar ideas complejas con claridad — en cualquier sala
+
+Preguntas Frecuentes del Servicio
+
+P: ¿Por qué los desarrolladores necesitan coaching de inglés especializado en lugar de inglés general?
+R: El inglés general no te enseñará cómo explicar arquitectura técnica a stakeholders no técnicos, dirigir retrospectivas de sprint, o escribir descripciones claras de PR. El coaching de inglés para tech se enfoca en los patrones de comunicación que determinan si te quedas como programador o te conviertes en líder técnico.
+
+P: Tengo un certificado B2 de inglés. ¿Por qué sigo batallando en reuniones con clientes de EE.UU.?
+R: El B2 certifica habilidad conversacional, no desempeño profesional. La mayoría de los desarrolladores con B2 batallan con el tono de comunicación asíncrona en Slack, debates técnicos en tiempo real, y las señales culturales sutiles que los equipos de EE.UU. esperan. Nosotros cerramos esa brecha.
+
+P: ¿Pueden ayudar a desarrolladores nearshore a comunicarse mejor con equipos de EE.UU.?
+R: Esta es una de nuestras especialidades principales. Entrenamos a desarrolladores nearshore en inglés para ceremonias de sprint, comunicación en code reviews, presentaciones de demos a clientes, y las habilidades de comunicación asíncrona que las empresas de EE.UU. buscan específicamente al contratar talento de LATAM.
+
+P: ¿Trabajan con engineering managers o solo con desarrolladores individuales?
+R: Con ambos. Los engineering managers tienen necesidades únicas — dirigir 1:1s en inglés, dar retroalimentación de desempeño, presentar roadmaps técnicos al liderazgo. Personalizamos el coaching a tu rol específico y los retos de comunicación que implica.
+
+P: ¿Cómo se estructuran las sesiones de inglés para tech?
+R: Sesiones de 60 minutos por Google Meet enfocadas en tus escenarios laborales reales. Podemos practicar un demo de cliente que tengas próximo, refinar tu presentación de standup, o trabajar cómo rechazar scope en un sprint planning — siempre usando tu contexto real.

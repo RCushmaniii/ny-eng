@@ -1,0 +1,46 @@
+Page: /en/services/tech-english/
+
+Tech English Coaching for IT Professionals | NY
+
+Master technical English for IT and engineering. Explain complex ideas clearly, lead code reviews, and boost your tech career with confidence.
+
+Hero: Your code is flawless. Your explanation loses the room.
+Coaching for tech leaders who need to turn technical complexity into clear business value — without losing precision or credibility.
+
+Does This Sound Familiar?
+- You understand the architecture perfectly — but when you explain it in English, non-technical stakeholders check out.
+- In sprint ceremonies, your ideas get passed over because someone else articulates them better — not because they're better ideas.
+- You avoid speaking up in cross-team meetings. Not because you don't have the answer, but because constructing it in English takes too long.
+
+Get your Technical Communication Score in 60 seconds. Start the Quiz.
+
+How It Works
+1. We talk first.
+2. I build your plan.
+3. You practice under pressure.
+4. I refine as you grow.
+
+Final CTA: You already lead. Now sound like it — in English.
+Book My Tech Strategy Session — /en/book/
+
+In Your Free Session, We Will:
+- Assess how your English impacts technical discussions and stakeholder trust
+- Identify the scenarios where communication costs you influence
+- Create a plan to explain complex ideas clearly — in any room
+
+Service FAQs
+
+Q: Why do developers need specialized English coaching instead of general English?
+A: General English won't teach you how to explain technical architecture to non-technical stakeholders, run sprint retrospectives, or write clear PR descriptions. Tech English coaching focuses on the communication patterns that determine whether you stay a coder or become a tech leader.
+
+Q: I have a B2 English certificate. Why do I still struggle in meetings with US clients?
+A: B2 certifies conversational ability, not professional performance. Most developers with B2 struggle with async communication tone on Slack, real-time technical debates, and the subtle cultural signals that US teams expect. We bridge that gap.
+
+Q: Can you help nearshore developers communicate better with US teams?
+A: This is one of our core specialties. We train nearshore developers on sprint ceremony English, code review communication, client demo delivery, and the async communication skills that US companies specifically look for when hiring LATAM talent.
+
+Q: Do you work with engineering managers or just individual developers?
+A: Both. Engineering managers have unique needs — running 1:1s in English, delivering performance feedback, presenting technical roadmaps to leadership. We tailor coaching to your specific role and the communication challenges it brings.
+
+Q: How are tech English sessions structured?
+A: 60-minute Google Meet sessions focused on your real work scenarios. We might practice a client demo you have coming up, refine your standup delivery, or workshop how to push back on scope in a sprint planning meeting — always using your actual context.
