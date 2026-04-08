@@ -93,9 +93,9 @@ const iconMap: Record<string, any> = {
           <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-600">
             <Puzzle class="w-7 h-7" />
           </div>
-          <h3 class="text-xl font-bold text-slate-900">80+ Phrasal Verbs</h3>
+          <h3 class="text-xl font-bold text-slate-900">Modals & Sentence Construction</h3>
           <p class="text-slate-600 leading-relaxed">
-            The #1 blocker for Spanish speakers. Learn them grouped by base verb so they finally make sense.
+            Master 'would', 'could', and 'should' — the politeness layer that turns B1 English into B2 fluency. Build sentences the way native speakers actually do.
           </p>
         </div>
         <div class="text-center space-y-3 p-6">
@@ -133,7 +133,7 @@ const iconMap: Record<string, any> = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
         {intermediateUnits.map((unit) => {
           const Icon = iconMap[unit.icon];
-          const isAvailable = unit.id < 4;
+          const isAvailable = unit.id < 5;
           return (
             <a
               href={isAvailable ? `/en/course/intermediate/${unit.slug}/` : undefined}
