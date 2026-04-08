@@ -1,0 +1,194 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import SpecifierBuilder from "@components/course/SpecifierBuilder";
+import DialoguePractice from "@components/course/DialoguePractice";
+import SentenceBuilder from "@components/course/SentenceBuilder";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import PronunciationDrill from "@components/course/PronunciationDrill";
+import SelfTest from "@components/course/SelfTest";
+import { intermediateUnits } from "@data/intermediate/units";
+import {
+  specifierExamples,
+  dialogues,
+  structureBlocks,
+  errorCorrections,
+  pronunciationDrills,
+  vocabularyList,
+} from "@data/intermediate/unit-8";
+import { ArrowRight, Wallet, Layers, Volume2, Target } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/intermediate/unit-8" as const;
+
+const progressUnits = intermediateUnits.map((u) => ({
+  id: u.id,
+  slug: u.slugEs,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unidad 8: Dinero y Compras | Construyendo Fluidez | NY English Teacher"
+  description="Inglés de consumidor para compras, banca y quejas. Domina las cláusulas relativas para especificar exactamente lo que quieres, más los modales de preferencia (would rather, would prefer). Lección B1-B2 gratis para hispanohablantes."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={8}
+    basePath="/es/curso/intermedio"
+    lang="es"
+    courseId="intermediate"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
+          <Wallet class="w-4 h-4" />
+          Unidad 8
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Dinero y Compras
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Cuando algo sale mal con una compra, el inglés vago se ignora — el inglés
+          específico obtiene resultados. Esta unidad te enseña a identificar, describir
+          y quejarte con precisión usando <strong class="text-white">cláusulas relativas</strong>,
+          además de expresar tus preferencias cortésmente con
+          <strong class="text-white">would rather</strong> y
+          <strong class="text-white">would prefer</strong>.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Target class="w-3.5 h-3.5" /> Constructor de Especificaciones
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Layers class="w-3.5 h-3.5" /> Cláusulas Relativas
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Volume2 class="w-3.5 h-3.5" /> Modales de Preferencia
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-a">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">A</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Constructor de Especificaciones</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Mira cómo las oraciones vagas se vuelven específicas con cláusulas relativas. Cada
+          ejemplo destaca el pronombre relativo y explica por qué es la elección correcta.
+        </p>
+        <SpecifierBuilder client:visible examples={specifierExamples} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-b">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">B</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Práctica de Diálogo</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Una devolución real en una tienda real — observa cómo el cliente usa cláusulas
+          relativas para identificar el artículo y modales de preferencia para expresar lo que quiere.
+        </p>
+        <DialoguePractice client:visible dialogues={dialogues} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-c">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">C</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Constructor de Estructuras</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Cláusulas relativas definitorias vs. no definitorias, más 'would rather' y 'would prefer'.
+        </p>
+        <SentenceBuilder client:visible blocks={structureBlocks} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-d">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">D</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Corrección de Errores</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Seis errores que confunden a empleados de tienda y cajeros bancarios — corrígelos antes de tu próxima devolución.
+        </p>
+        <ErrorCorrection client:visible data={errorCorrections} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-e">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">E</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Laboratorio de Pronunciación</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Acento de oración para énfasis — cómo las mismas palabras pueden significar cosas diferentes según cuál acentúes.
+        </p>
+        <PronunciationDrill client:visible drills={pronunciationDrills} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-f">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">F</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Auto-Evaluación</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Ponte a prueba con expresiones de cláusulas relativas, frases de preferencia y vocabulario de dinero y compras.
+        </p>
+        <SelfTest client:visible vocabulary={vocabularyList} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex justify-between items-center">
+        <a
+          href="/es/curso/intermedio/unidad-7/"
+          class="text-sm text-slate-500 hover:text-amber-600 transition-colors"
+        >
+          &larr; Unidad 7
+        </a>
+        <Button href="/es/curso/intermedio/" variant="primary" size="md">
+          Resumen del Curso
+          <ArrowRight class="w-4 h-4 ml-1" />
+        </Button>
+      </div>
+    </div>
+  </section>
+</Base>

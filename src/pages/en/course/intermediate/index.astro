@@ -133,7 +133,7 @@ const iconMap: Record<string, any> = {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
         {intermediateUnits.map((unit) => {
           const Icon = iconMap[unit.icon];
-          const isAvailable = unit.id < 7;
+          const isAvailable = unit.id < 9;
           return (
             <a
               href={isAvailable ? `/en/course/intermediate/${unit.slug}/` : undefined}
