@@ -7,7 +7,7 @@ export const headerContent = {
     { name: "Blog", link: routes.en.blog },
     { name: "Testimonials", link: routes.en.testimonials },
     { name: "Resources", link: routes.en.resources },
-    { name: "Courses", link: "/en/course/beginners/" },
+    { name: "Courses", link: "/en/courses/" },
   ],
   cta: { text: "Contact", link: routes.en.contact },
   logoLink: routes.en.home,
