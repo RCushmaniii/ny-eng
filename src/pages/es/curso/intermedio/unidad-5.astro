@@ -1,0 +1,192 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import NarrativeTimeline from "@components/course/NarrativeTimeline";
+import DialoguePractice from "@components/course/DialoguePractice";
+import SentenceBuilder from "@components/course/SentenceBuilder";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import PronunciationDrill from "@components/course/PronunciationDrill";
+import SelfTest from "@components/course/SelfTest";
+import { intermediateUnits } from "@data/intermediate/units";
+import {
+  stories,
+  dialogues,
+  structureBlocks,
+  errorCorrections,
+  pronunciationDrills,
+  vocabularyList,
+} from "@data/intermediate/unit-5";
+import { ArrowRight, MessageSquare, Layers, Volume2, Clock } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/intermediate/unit-5" as const;
+
+const progressUnits = intermediateUnits.map((u) => ({
+  id: u.id,
+  slug: u.slugEs,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unidad 5: Contando Historias | Construyendo Fluidez | NY English Teacher"
+  description="Narra eventos como un hablante nativo. Domina el pasado perfecto, el discurso indirecto y 'would' para hábitos pasados. Lección interactiva gratis para hispanohablantes B1-B2."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={5}
+    basePath="/es/curso/intermedio"
+    lang="es"
+    courseId="intermediate"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
+          <MessageSquare class="w-4 h-4" />
+          Unidad 5
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Contando Historias
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Contar historias es donde la fluidez realmente se nota. Esta unidad te da las
+          tres herramientas que los nativos usan para narrar eventos:
+          <strong class="text-white">pasado perfecto</strong> para lo que pasó antes,
+          <strong class="text-white">discurso indirecto</strong> para lo que la gente dijo,
+          y <strong class="text-white">'would'</strong> para lo que solías hacer.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Clock class="w-3.5 h-3.5" /> Pasado Perfecto
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Layers class="w-3.5 h-3.5" /> Discurso Indirecto
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Volume2 class="w-3.5 h-3.5" /> 'Would' (Pasado Habitual)
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-a">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">A</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Línea de Tiempo Narrativa</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Toca cada momento de esta historia para revelarlo. Observa cómo el pasado simple,
+          el pasado perfecto y 'would' se conectan para construir una línea de tiempo clara.
+        </p>
+        <NarrativeTimeline client:visible stories={stories} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-b">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">B</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Práctica de Diálogo</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Una historia real contada entre amigos. Nota cada cambio de tiempo verbal.
+        </p>
+        <DialoguePractice client:visible dialogues={dialogues} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-c">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">C</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Constructor de Estructuras</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Pasado perfecto, discurso indirecto y 'would' para hábitos — construido bloque por bloque.
+        </p>
+        <SentenceBuilder client:visible blocks={structureBlocks} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-d">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">D</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Corrección de Errores</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Seis errores que aplanan las historias. Detéctalos, corrígelos.
+        </p>
+        <ErrorCorrection client:visible data={errorCorrections} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-e">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">E</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Laboratorio de Pronunciación</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Habla conectada en narrativas pasadas — las contracciones y enlaces que usan los nativos.
+        </p>
+        <PronunciationDrill client:visible drills={pronunciationDrills} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-f">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">F</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Auto-Evaluación</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Ponte a prueba con vocabulario de narración, frases de discurso indirecto y conectores narrativos.
+        </p>
+        <SelfTest client:visible vocabulary={vocabularyList} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex justify-between items-center">
+        <a
+          href="/es/curso/intermedio/unidad-4/"
+          class="text-sm text-slate-500 hover:text-amber-600 transition-colors"
+        >
+          &larr; Unidad 4
+        </a>
+        <Button href="/es/curso/intermedio/unidad-6/" variant="primary" size="md">
+          Unidad 6: Expresando Opiniones
+          <ArrowRight class="w-4 h-4 ml-1" />
+        </Button>
+      </div>
+    </div>
+  </section>
+</Base>
