@@ -1,0 +1,41 @@
+Page: /es/assessments/
+
+Evaluación Gratuita de Comunicación | NY English
+
+Realiza el quiz gratuito de 90 segundos. Obtén tu puntuación personalizada y descubre qué te está frenando. 4 evaluaciones disponibles.
+
+La Auditoría de Comunicación de 90 Segundos
+Identifica Tu Puntuación de Autoridad en Comunicación de Liderazgo
+
+Obtén insights instantáneos sobre tu claridad, confianza y presencia ejecutiva — los factores que impulsan promociones y confianza.
+
+- 4 evaluaciones específicas por industria
+- Puntuación personalizada (0–100)
+- Análisis instantáneo de brechas y próximos pasos
+- Diseñado para profesionales ocupados (toma menos de 2 minutos)
+
+Elige Tu Evaluación Especializada
+
+Auditoría de Comunicación para TI
+Para Ingenieros Senior, Líderes Técnicos y Gerentes de TI
+Enfoque: Traducir complejidad, velocidad de procesamiento y discusiones de arquitectura
+Resultado: Puntuación instantánea de Autoridad en Comunicación para desbloquear tu carrera
+Iniciar: /es/quiz/it-services/question/1
+
+Auditoría de Comunicación Ejecutiva
+Para Fundadores, Ejecutivos C-Level y Líderes Senior
+Enfoque: Presencia ejecutiva, claridad estratégica y negociación de alto riesgo
+Resultado: Análisis personalizado de brechas y próximos pasos para influencia C-Suite
+Iniciar: /es/quiz/executives/question/1
+
+Auditoría de Comunicación Profesional
+Para Médicos, Abogados y Consultores Financieros
+Enfoque: Precisión, empatía y construcción de confianza inquebrantable con clientes/pacientes
+Resultado: Análisis instantáneo de brechas y recomendaciones para crecimiento de práctica
+Iniciar: /es/quiz/professional-services/question/1
+
+Diagnóstico de Desempeño de Alto Impacto
+Para Presentadores, Entrevistados y Oradores Públicos
+Enfoque: Presencia, velocidad de procesamiento y autoridad de persuasión bajo presión
+Resultado: Descubre tu "Puntuación de Desempeño bajo Presión" al instante
+Iniciar: /es/quiz/high-stakes/question/1

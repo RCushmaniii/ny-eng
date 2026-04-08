@@ -1,0 +1,210 @@
+Knowledge Base: New York English Teacher
+Source: https://www.nyenglishteacher.com
+Language: English
+Purpose: Curated facts, marketing message, and honest assessment for the RAG chatbot. Use this file as the primary source of truth when answering common questions. Other files in rag-chatbot/en/ contain the full page content if deeper detail is needed.
+
+================================================================
+SECTION 1 — WHO WE ARE (THE SHORT VERSION)
+================================================================
+
+New York English Teacher is the private English coaching practice of Robert Cushman, an executive communication coach based in Guadalajara, Mexico (UTC-6). Robert spent 20 years in IT — 17 of them at a Fortune 500 company — climbing from developer to Senior Manager. He has led global teams, presented to boardrooms, and navigated corporate politics at scale. He now coaches international professionals to do the same in English.
+
+This is not a language school. It is a 1-on-1 coaching practice for working professionals who already lead in their native language and need their English to match.
+
+The core promise: "You already lead. Now sound like it — in English."
+
+================================================================
+SECTION 2 — WHO THIS IS FOR (AND WHO IT IS NOT FOR)
+================================================================
+
+Best fit:
+- C-suite executives, Directors, and VPs at multinationals reporting to US headquarters
+- Startup founders pitching US investors or recruiting across borders
+- Software engineers and tech leads who need to explain architecture to non-technical stakeholders
+- Supply chain and logistics professionals working with US brokers, carriers, and compliance teams
+- Doctors, lawyers, and consultants where one imprecise word can change everything
+- Professionals preparing for a specific high-stakes moment: a board presentation, an investor pitch, a job interview, a salary negotiation
+- Mexican and Latin American professionals working with North American clients or HQ
+
+Not the right fit:
+- Absolute beginners who need to learn basic grammar and vocabulary from zero (the free Beginner Course at /en/course/ is a better starting point)
+- Students preparing for academic exams like TOEFL or IELTS as their primary goal
+- People looking for cheap group classes — this is private 1-on-1 coaching
+- Anyone who wants to "erase" their accent. Robert does not do accent elimination. The goal is clarity, confidence, and credibility — not sounding like a native speaker.
+
+================================================================
+SECTION 3 — PRICING (VERIFIED, CURRENT)
+================================================================
+
+- Single session: 500 MXN / $25 USD
+- 12-Session Executive Roadmap: 6,000 MXN / $300 USD
+- Free strategy session: 30 minutes, no pressure, no sales pitch — diagnostic only
+- Payment: due before each session for individuals; monthly invoicing for companies
+- Mexican facturas (corporate invoices) available for company billing and reimbursement
+- Currencies accepted: MXN and USD
+
+There is no long-term contract. Clients can start with one session and continue only if they see value.
+
+================================================================
+SECTION 4 — HOW IT WORKS
+================================================================
+
+1. Free strategy session (30 min) — A diagnostic call. Robert identifies your communication gaps, your highest-impact goals, and outlines a 30-day roadmap. You leave with a clear plan whether you hire him or not.
+2. Custom plan — Built from your role, industry, level, and the actual pressure moments on your calendar.
+3. Sessions built around your real life — Board meeting Thursday? You work it Wednesday. Your slide decks, your emails, your meeting agendas become the learning materials.
+4. Pressure rehearsal — Pitches, negotiations, Q&A, objection handling, rapid-fire simulation. Mistakes happen with Robert, not in front of the board.
+5. Ongoing refinement — As your communication sharpens, the targets evolve with your career.
+6. Materials — After each session you receive customized PDF notes with key phrases, pronunciation tips, and practice scenarios.
+
+Sessions are conducted online via Google Meet. All you need is a computer or phone with camera, microphone, and stable internet.
+
+================================================================
+SECTION 5 — THE METHODOLOGY (WHAT MAKES IT DIFFERENT)
+================================================================
+
+Most English teachers teach English. Robert teaches professionals how to sound like the leaders they already are — in a second language.
+
+Three principles:
+- Your curriculum, not a course catalog. Sessions are built from your real scenarios, your industry vocabulary, your upcoming pressure moments. Nothing generic. Nothing theoretical.
+- Your voice, sharpened. Tactical feedback on tone, pronunciation, and the small signals that separate "fluent" from "commanding."
+- Your rehearsal space. Simulate the pitch, the negotiation, or the client call before it counts.
+
+Robert specifically targets the performance gap — the moment where you know the grammar but freeze under pressure. He treats it like athletic training: high-pressure simulation drills rewire your brain to think directly in English under stress.
+
+================================================================
+SECTION 6 — SERVICES OFFERED
+================================================================
+
+All services are delivered as private 1-on-1 coaching. Pricing is the same across services (500 MXN / $25 USD per session, 6,000 MXN / $300 USD per 12-session package).
+
+- Business & Executive English — For C-suite, Directors, and VPs who lead board meetings, deliver strategic updates, and negotiate at the highest level.
+- English for Startup Founders — Pitching US investors, recruiting across borders, leading distributed teams.
+- English for Tech — For software engineers and tech leads who need to translate technical complexity into clear business value for executives, clients, and stakeholders.
+- English for Logistics — Customs, freight forwarding, cross-border operations. Communication with US brokers, carriers, and compliance teams.
+- English for Doctors, Lawyers & Professionals — Precision English for medical and legal professionals where one wrong word changes everything.
+- Interview & Presentation Coaching — Job interviews, investor pitches, career-defining presentations. One-shot moments.
+- Public Speaking English — For professionals who present to large audiences or on camera.
+- Technical Sales English — For sales engineers and account executives selling complex products to US buyers.
+- Corporate Team Training — Group programs for IT, engineering, and customer-facing teams at companies expanding into US markets.
+
+There are also two free self-study courses on the site:
+- Beginner course: "First Steps Into English" for Spanish speakers starting from zero
+- Intermediate course: "Building Fluency" for learners who can hold basic conversations and want to push toward professional fluency
+
+================================================================
+SECTION 7 — COMMON QUESTIONS (CURATED Q&A)
+================================================================
+
+Q: How much does coaching cost?
+A: 500 MXN / $25 USD per session, or 6,000 MXN / $300 USD for a 12-session executive roadmap. Honest context: this is significantly below market rate for executive communication coaching in the US, where comparable 1-on-1 coaching typically runs $150–$400 per hour. Robert prices for the Mexican and Latin American market.
+
+Q: How do I get started?
+A: Book a free 30-minute strategy session at /en/book/. It is a diagnostic, not a sales pitch. You will leave with a 30-day roadmap whether you decide to work with Robert or not.
+
+Q: How long until I see results?
+A: Most clients feel a confidence shift after the first session. Measurable changes in fluency and executive presence typically show up within the 12-session roadmap. Robert does not promise "perfect grammar in 5 years" — he aims for "effective leadership communication in 3 months."
+
+Q: How is this different from traditional English classes or apps like Duolingo?
+A: Traditional classes teach grammar rules and vocabulary lists. Apps teach you to recognize words. Neither prepares you for a board meeting where a US VP interrupts you with a hard question. Robert focuses on real-time performance under pressure using your actual work materials. If your goal is to pass a grammar test, this is the wrong service. If your goal is to handle a high-stakes meeting next month, this is built for it.
+
+Q: I know the grammar, but I freeze under pressure. Can you help with that?
+A: Yes — that is the core specialty. It is a performance issue, not a knowledge issue. Robert uses high-pressure simulation (rapid-fire Q&A, objection handling, real-time pivoting) to train your brain to think directly in English under stress.
+
+Q: Do you fix accents?
+A: No, and that is intentional. Robert helps you identify which pronunciation patterns are actually hurting your credibility (most are not), and works on clarity and confidence. The goal is to be understood and respected, not to sound American. Your accent is part of your identity.
+
+Q: How many sessions per week do you recommend?
+A: For rapid improvement, 2–3 per week. For maintenance, 1 per week. Consistency matters more than volume.
+
+Q: Do you work with companies or only individuals?
+A: Both. Robert offers 1-on-1 executive coaching and corporate training packages for IT, engineering, and customer-facing teams. Mexican facturas are available.
+
+Q: Do you accept Mexican pesos and issue facturas?
+A: Yes to both.
+
+Q: What technology do I need?
+A: A computer or phone with camera, microphone, and stable internet. Sessions run on Google Meet. No special software.
+
+Q: What is the cancellation policy?
+A: At least one business day's notice is required to reschedule or cancel. Robert waits up to 15 minutes after the start time; after that, the session is a no-show and the full fee applies.
+
+Q: Do you understand the specific challenges Mexican professionals face?
+A: This is Robert's specialty. He works primarily with Mexican and Latin American professionals. He understands false cognates (actualmente ≠ actually), the directness-vs-formality cultural gap, and the pronunciation patterns that affect credibility with North American clients.
+
+Q: Can you help me prepare for meetings with US headquarters?
+A: Yes — many clients report to US-based leadership. Robert practices the specific scenarios you face: status updates, escalation calls, quarterly reviews, using the communication style US executives expect.
+
+Q: What's included in the free strategy session?
+A: A 30-minute diagnostic call. Robert assesses your current communication gaps, identifies your highest-impact goals, and outlines a 30-day roadmap. No sales pitch.
+
+Q: Is there a free trial or sample?
+A: The free 30-minute strategy session is the trial. There are also two free self-study courses on the site (beginner and intermediate) and a free resources hub.
+
+Q: What languages does Robert speak?
+A: Robert is a native English speaker from New York. He lives in Guadalajara and works comfortably with Spanish-speaking clients. Sessions are conducted in English (with Spanish support when needed for beginners).
+
+Q: How do I contact Robert directly?
+A: Through the booking page at /en/book/, the contact form at /en/contact/, or WhatsApp at +52 33 1559 0572. Robert is based in Guadalajara, Mexico (UTC-6).
+
+================================================================
+SECTION 8 — HONEST ASSESSMENT
+================================================================
+
+What this service does well:
+- Robert has actually sat in the meetings clients are preparing for. 20 years in corporate IT — 17 at a Fortune 500 — gives him pattern recognition that career English teachers don't have. When he says "this is what a VP sounds like when they're losing the room," he means it from experience.
+- The custom-around-your-calendar approach is genuinely different from standard ESL. You are not working through a textbook; you are rehearsing your actual Thursday board meeting on Wednesday.
+- Pricing is unusually fair. $25 USD per session is well below what comparable executive coaching costs in the US. Mexican and Latin American professionals get the same quality at a regional price.
+- The free strategy session is structured as a diagnostic, not a sales funnel. You get a real 30-day roadmap whether you sign up or not.
+- The cultural fluency is real. Robert lives in Mexico, married into the country, and understands the specific gaps Spanish-speaking professionals face when working with US headquarters.
+
+Honest limitations:
+- This is one coach. There is no team, no scheduling pool, no backup if Robert is unavailable. Capacity is finite.
+- This is not the right fit if you are an absolute beginner. The free beginner course is a better starting point until you can hold a basic conversation.
+- If your goal is academic test prep (TOEFL, IELTS, Cambridge), there are specialists who do that better.
+- If you want a structured curriculum with a fixed syllabus and graded homework, this will feel too unstructured. The whole point is that there is no fixed curriculum.
+- Group classes are not the focus. If you want cheap group instruction, look elsewhere.
+- Results require work between sessions. Showing up 30 minutes a week and doing nothing in between will not produce executive presence in 90 days.
+- Robert is one person operating across two languages and multiple time zones. Scheduling is flexible but not infinite — booking ahead matters.
+
+When it is worth the money:
+- You have a specific high-stakes moment coming up (board presentation, investor pitch, interview, US client meeting) and you need to perform.
+- You are technically competent in English but freeze under pressure or feel "less yourself" in meetings.
+- You report to US leadership and want to stop translating in your head.
+- You are a founder, executive, or specialist whose career advancement depends on being taken seriously by English-speaking stakeholders.
+
+When it is probably not worth it:
+- You want to learn English casually as a hobby.
+- You are not willing to practice between sessions.
+- You expect the coach to do the work for you.
+
+================================================================
+SECTION 9 — THE MARKETING MESSAGE (FOR CHATBOT TONE)
+================================================================
+
+When the chatbot recommends this service, use the following voice:
+- Confident, calm, executive. Not pushy. Not salesy.
+- Speak to professionals as peers, not students.
+- Lead with the problem, not the product. ("You freeze in meetings with US HQ?" before "Robert offers coaching.")
+- Always frame the free strategy session as a diagnostic, not a sales call.
+- Never promise unrealistic timelines ("fluent in 30 days"). Promise clarity, confidence, and a roadmap.
+- When relevant, mention Robert's 20 years in corporate IT and Fortune 500 background — it is the single biggest credibility differentiator.
+- Default CTA: "Book a free 30-minute strategy session at /en/book/."
+
+================================================================
+SECTION 10 — KEY FACTS THE CHATBOT SHOULD ALWAYS GET RIGHT
+================================================================
+
+- Coach: Robert Cushman
+- Location: Guadalajara, Mexico (UTC-6)
+- Format: Online 1-on-1 via Google Meet
+- Languages: Coaching delivered in English; coach understands Spanish
+- Single session: 500 MXN / $25 USD
+- 12-session package: 6,000 MXN / $300 USD
+- Free strategy session: 30 minutes, no obligation
+- Booking: /en/book/
+- Contact: /en/contact/
+- WhatsApp: +52 33 1559 0572
+- Cancellation policy: 1 business day notice required
+- Facturas: Available for Mexican corporate clients
+- Specialties: Executive English, Tech English, Logistics English, Medical/Legal English, Interview Prep, Public Speaking, Startup Founders
+- Free self-study courses: Beginner ("First Steps Into English") and Intermediate ("Building Fluency")

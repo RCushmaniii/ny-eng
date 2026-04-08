@@ -1,0 +1,43 @@
+Page: /en/assessments/
+
+Free Communication Assessment Quiz | NY English
+
+Take the free 90-second quiz. Get your personalized score and discover what's holding you back. 4 industry-specific assessments available.
+
+The 90-Second Communication Audit
+Discover What's Holding Your English Back
+
+Gain instant insights into your clarity, confidence, and executive presence—the factors that drive promotions and trust.
+
+- 4 industry-specific assessments
+- Personalized score (0–100)
+- Instant gap analysis & next steps
+- Designed for busy professionals (takes under 2 minutes)
+
+Pick Your Industry — Get Your Score Instantly
+
+IT Communication Audit
+For Senior Engineers, Tech Leads, and IT Managers
+Focus: Translating complexity, processing speed, and architecture discussions
+Outcome: Instant Communication Authority Score to unblock your career path
+Start: /en/quiz/it-services/question/1
+
+Executive Communication Audit
+For Founders, C-Level Executives, and Senior Leaders
+Focus: Executive presence, strategic clarity, and high-stakes negotiation
+Outcome: Personalized gap analysis and next steps for C-Suite influence
+Start: /en/quiz/executives/question/1
+
+Professional Communication Audit
+For Doctors, Lawyers, and Financial Consultants
+Focus: Precision, empathy, and building unbreakable client/patient trust
+Outcome: Instant gap analysis and recommendations for practice growth
+Start: /en/quiz/professional-services/question/1
+
+High-Stakes Performance Diagnostic
+For Presenters, Interviewees, and Public Speakers
+Focus: Presence, processing speed, and persuasion authority under pressure
+Outcome: Discover your "Pressure Performance Score" instantly
+Start: /en/quiz/high-stakes/question/1
+
+No email required. Your results appear instantly — with a personalized gap analysis and recommended next steps.

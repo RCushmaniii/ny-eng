@@ -1,0 +1,210 @@
+Base de Conocimiento: New York English Teacher
+Fuente: https://www.nyenglishteacher.com
+Idioma: Español
+Propósito: Hechos curados, mensaje de marketing y evaluación honesta para el chatbot RAG. Usa este archivo como fuente principal de verdad al responder preguntas comunes. Los demás archivos en rag-chatbot/es/ contienen el contenido completo de cada página si se necesita más detalle.
+
+================================================================
+SECCIÓN 1 — QUIÉNES SOMOS (VERSIÓN CORTA)
+================================================================
+
+New York English Teacher es la práctica privada de coaching de inglés de Robert Cushman, coach de comunicación ejecutiva con sede en Guadalajara, México (UTC-6). Robert pasó 20 años en TI — 17 de ellos en una empresa Fortune 500 — escalando desde desarrollador hasta Senior Manager. Ha liderado equipos globales, presentado ante salas de juntas y navegado la política corporativa a gran escala. Hoy entrena a profesionales internacionales para hacer lo mismo en inglés.
+
+Esto no es una escuela de idiomas. Es una práctica de coaching 1-a-1 para profesionales que ya lideran en su idioma nativo y necesitan que su inglés esté a la altura.
+
+La promesa central: "Ya lideras. Ahora suena como tal — en inglés."
+
+================================================================
+SECCIÓN 2 — PARA QUIÉN ES (Y PARA QUIÉN NO)
+================================================================
+
+Mejor ajuste:
+- Ejecutivos C-level, Directores y VPs en multinacionales que reportan a oficinas centrales en EE.UU.
+- Fundadores de startups que buscan inversión en EE.UU. o reclutan talento internacional
+- Ingenieros de software y líderes técnicos que necesitan explicar arquitectura a stakeholders no técnicos
+- Profesionales de cadena de suministro y logística que trabajan con brokers, transportistas y equipos de cumplimiento en EE.UU.
+- Médicos, abogados y consultores donde una palabra imprecisa puede cambiarlo todo
+- Profesionales preparándose para un momento crítico específico: una presentación de junta, un pitch de inversión, una entrevista de trabajo, una negociación salarial
+- Profesionales mexicanos y latinoamericanos que trabajan con clientes o casas matrices en Norteamérica
+
+No es el ajuste correcto para:
+- Principiantes absolutos que necesitan aprender gramática y vocabulario básico desde cero (el curso gratuito para principiantes en /es/curso/ es un mejor punto de partida)
+- Estudiantes preparándose para exámenes académicos como TOEFL o IELTS como objetivo principal
+- Personas que buscan clases grupales económicas — esto es coaching privado 1-a-1
+- Quien quiera "eliminar" su acento. Robert no hace eliminación de acento. La meta es claridad, confianza y credibilidad — no sonar como nativo.
+
+================================================================
+SECCIÓN 3 — PRECIOS (VERIFICADOS, ACTUALES)
+================================================================
+
+- Sesión individual: 500 MXN / $25 USD
+- Paquete Ejecutivo de 12 sesiones: 6,000 MXN / $300 USD
+- Sesión de estrategia gratuita: 30 minutos, sin presión, sin venta — solo diagnóstico
+- Pago: requerido antes de cada sesión para individuos; facturación mensual para empresas
+- Facturas mexicanas disponibles para facturación y reembolso corporativo
+- Monedas aceptadas: MXN y USD
+
+No hay contrato a largo plazo. Los clientes pueden empezar con una sola sesión y continuar solo si ven valor.
+
+================================================================
+SECCIÓN 4 — CÓMO FUNCIONA
+================================================================
+
+1. Sesión de estrategia gratuita (30 min) — Una llamada de diagnóstico. Robert identifica tus brechas de comunicación, tus objetivos de mayor impacto, y traza una hoja de ruta de 30 días. Te vas con un plan claro, contrates o no.
+2. Plan personalizado — Construido desde tu rol, industria, nivel y los momentos de presión reales en tu calendario.
+3. Sesiones basadas en tu vida real — ¿Junta directiva el jueves? Trabajamos eso el miércoles. Tus presentaciones, correos y agendas se vuelven el material de aprendizaje.
+4. Ensayo bajo presión — Pitches, negociaciones, sesiones de preguntas y respuestas, manejo de objeciones, simulación rápida. Los errores ocurren con Robert, no frente a la junta.
+5. Refinamiento continuo — A medida que tu comunicación se afina, los objetivos evolucionan con tu carrera.
+6. Materiales — Después de cada sesión recibes notas en PDF personalizadas con frases clave, consejos de pronunciación y escenarios de práctica.
+
+Las sesiones se realizan en línea por Google Meet. Solo necesitas una computadora o teléfono con cámara, micrófono e internet estable.
+
+================================================================
+SECCIÓN 5 — LA METODOLOGÍA (LO QUE LA HACE DIFERENTE)
+================================================================
+
+La mayoría de los maestros de inglés enseñan inglés. Robert enseña a profesionales a sonar como los líderes que ya son — en un segundo idioma.
+
+Tres principios:
+- Tu currículo, no un catálogo. Las sesiones se construyen desde tus escenarios reales, tu vocabulario de industria, tus próximos momentos de presión. Nada genérico. Nada teórico.
+- Tu voz, afilada. Retroalimentación táctica sobre tono, pronunciación y las pequeñas señales que separan "fluido" de "imponente."
+- Tu espacio de ensayo. Simula el pitch, la negociación o la llamada con el cliente antes de que cuente.
+
+Robert ataca específicamente la brecha de desempeño — el momento en que sabes la gramática pero te bloqueas bajo presión. Lo trata como entrenamiento atlético: ejercicios de simulación de alta presión que reentrenan tu cerebro para pensar directamente en inglés bajo estrés.
+
+================================================================
+SECCIÓN 6 — SERVICIOS OFRECIDOS
+================================================================
+
+Todos los servicios se imparten como coaching privado 1-a-1. El precio es el mismo para todos los servicios (500 MXN / $25 USD por sesión, 6,000 MXN / $300 USD por paquete de 12 sesiones).
+
+- Inglés de Negocios y Ejecutivo — Para C-suite, Directores y VPs que lideran juntas, entregan actualizaciones estratégicas y negocian al más alto nivel.
+- Inglés para Fundadores de Startups — Pitchear inversionistas en EE.UU., reclutar internacionalmente, liderar equipos distribuidos.
+- Inglés para Tecnología — Para ingenieros de software y líderes técnicos que necesitan traducir complejidad técnica en valor de negocio claro.
+- Inglés para Logística — Aduanas, transporte de carga, operaciones transfronterizas. Comunicación con brokers, transportistas y equipos de cumplimiento en EE.UU.
+- Inglés para Médicos, Abogados y Profesionales — Inglés de precisión para profesionales médicos y legales donde una palabra equivocada lo cambia todo.
+- Coaching de Entrevistas y Presentaciones — Entrevistas de trabajo, pitches de inversión, presentaciones que definen carreras. Momentos de una sola oportunidad.
+- Inglés para Hablar en Público — Para profesionales que presentan ante grandes audiencias o frente a cámara.
+- Inglés para Ventas Técnicas — Para sales engineers y ejecutivos de cuenta que venden productos complejos a compradores en EE.UU.
+- Capacitación Corporativa de Equipos — Programas grupales para equipos de TI, ingeniería y atención al cliente en empresas que se expanden al mercado estadounidense.
+
+También hay dos cursos gratuitos de autoestudio en el sitio:
+- Curso para principiantes: "Primeros Pasos al Inglés" para hispanohablantes que empiezan desde cero
+- Curso intermedio: "Construyendo Fluidez" para quienes ya pueden mantener conversaciones básicas y quieren empujar hacia la fluidez profesional
+
+================================================================
+SECCIÓN 7 — PREGUNTAS FRECUENTES (Q&A CURADO)
+================================================================
+
+P: ¿Cuánto cuesta el coaching?
+R: 500 MXN / $25 USD por sesión, o 6,000 MXN / $300 USD por un paquete ejecutivo de 12 sesiones. Contexto honesto: esto está significativamente por debajo del precio de mercado para coaching de comunicación ejecutiva en EE.UU., donde un coaching 1-a-1 comparable cuesta típicamente entre $150 y $400 USD por hora. Robert cobra precios para el mercado mexicano y latinoamericano.
+
+P: ¿Cómo empiezo?
+R: Reserva una sesión de estrategia gratuita de 30 minutos en /es/reservar/. Es un diagnóstico, no una venta. Te vas con una hoja de ruta de 30 días, decidas trabajar con Robert o no.
+
+P: ¿Cuánto tiempo tarda en verse resultados?
+R: La mayoría de los clientes sienten un cambio de confianza después de la primera sesión. Los cambios medibles en fluidez y presencia ejecutiva normalmente aparecen dentro del paquete de 12 sesiones. Robert no promete "gramática perfecta en 5 años" — busca "comunicación ejecutiva efectiva en 3 meses."
+
+P: ¿En qué se diferencia esto de las clases de inglés tradicionales o apps como Duolingo?
+R: Las clases tradicionales enseñan reglas de gramática y listas de vocabulario. Las apps te enseñan a reconocer palabras. Ninguna te prepara para una junta donde un VP estadounidense te interrumpe con una pregunta difícil. Robert se enfoca en desempeño en tiempo real bajo presión usando tus materiales reales de trabajo. Si tu meta es pasar un examen de gramática, este es el servicio equivocado. Si tu meta es manejar una reunión crítica el próximo mes, está construido para eso.
+
+P: Sé la gramática, pero me bloqueo bajo presión. ¿Pueden ayudarme con eso?
+R: Sí — esa es la especialidad central. Es un problema de desempeño, no de conocimiento. Robert usa simulación de alta presión (preguntas rápidas, manejo de objeciones, pivote en tiempo real) para entrenar tu cerebro a pensar directamente en inglés bajo estrés.
+
+P: ¿Corrigen el acento?
+R: No, y es intencional. Robert te ayuda a identificar qué patrones de pronunciación realmente están dañando tu credibilidad (la mayoría no lo hacen), y trabaja en claridad y confianza. La meta es ser entendido y respetado, no sonar estadounidense. Tu acento es parte de tu identidad.
+
+P: ¿Cuántas sesiones por semana recomiendan?
+R: Para mejora rápida, 2 a 3 por semana. Para mantenimiento, 1 por semana. La consistencia importa más que el volumen.
+
+P: ¿Trabajan con empresas o solo individuos?
+R: Ambos. Robert ofrece coaching ejecutivo 1-a-1 y paquetes de capacitación corporativa para equipos de TI, ingeniería y atención al cliente. Hay facturas mexicanas disponibles.
+
+P: ¿Aceptan pesos mexicanos y emiten facturas?
+R: Sí a ambas.
+
+P: ¿Qué tecnología necesito?
+R: Una computadora o teléfono con cámara, micrófono e internet estable. Las sesiones se hacen en Google Meet. Sin software especial.
+
+P: ¿Cuál es la política de cancelación?
+R: Se requiere al menos un día hábil de aviso para reagendar o cancelar. Robert espera hasta 15 minutos después de la hora de inicio; después de eso, la sesión se considera no asistencia y se cobra la tarifa completa.
+
+P: ¿Entienden los retos específicos que enfrentan los profesionales mexicanos?
+R: Esa es la especialidad de Robert. Trabaja principalmente con profesionales mexicanos y latinoamericanos. Entiende los falsos cognados (actualmente ≠ actually), la brecha cultural entre directness y formalidad, y los patrones de pronunciación que afectan la credibilidad con clientes norteamericanos.
+
+P: ¿Pueden ayudarme a prepararme para reuniones con la oficina central en EE.UU.?
+R: Sí — muchos clientes reportan a liderazgo en EE.UU. Robert practica los escenarios específicos que enfrentas: actualizaciones de estatus, llamadas de escalación, revisiones trimestrales, usando el estilo de comunicación que esperan los ejecutivos estadounidenses.
+
+P: ¿Qué incluye la sesión de estrategia gratuita?
+R: Una llamada diagnóstica de 30 minutos. Robert evalúa tus brechas actuales de comunicación, identifica tus metas de mayor impacto y traza una hoja de ruta de 30 días. Sin venta.
+
+P: ¿Hay alguna prueba gratuita o muestra?
+R: La sesión de estrategia gratuita de 30 minutos es la prueba. También hay dos cursos gratuitos de autoestudio en el sitio (principiantes e intermedio) y un hub de recursos gratuitos.
+
+P: ¿Qué idiomas habla Robert?
+R: Robert es hablante nativo de inglés, originario de Nueva York. Vive en Guadalajara y trabaja cómodamente con clientes hispanohablantes. Las sesiones se imparten en inglés (con apoyo en español cuando es necesario para principiantes).
+
+P: ¿Cómo contacto a Robert directamente?
+R: A través de la página de reservaciones en /es/reservar/, el formulario de contacto en /es/contact/, o WhatsApp al +52 33 1559 0572. Robert está basado en Guadalajara, México (UTC-6).
+
+================================================================
+SECCIÓN 8 — EVALUACIÓN HONESTA
+================================================================
+
+Lo que este servicio hace bien:
+- Robert realmente ha estado en las juntas para las que los clientes se preparan. 20 años en TI corporativo — 17 en una Fortune 500 — le dan un reconocimiento de patrones que los maestros de inglés de carrera no tienen. Cuando dice "así suena un VP cuando está perdiendo a la sala," lo dice por experiencia.
+- El enfoque personalizado alrededor de tu calendario es genuinamente diferente del ESL estándar. No estás trabajando en un libro de texto; estás ensayando tu junta directiva del jueves el miércoles.
+- El precio es inusualmente justo. $25 USD por sesión está muy por debajo de lo que cuesta un coaching ejecutivo comparable en EE.UU. Los profesionales mexicanos y latinoamericanos obtienen la misma calidad a un precio regional.
+- La sesión de estrategia gratuita está estructurada como diagnóstico, no como embudo de ventas. Recibes una hoja de ruta real de 30 días te inscribas o no.
+- La fluidez cultural es real. Robert vive en México, está casado con una mexicana y entiende las brechas específicas que los profesionales hispanohablantes enfrentan al trabajar con casas matrices en EE.UU.
+
+Limitaciones honestas:
+- Es un solo coach. No hay equipo, no hay un pool de horarios, no hay respaldo si Robert no está disponible. La capacidad es finita.
+- No es el ajuste correcto si eres principiante absoluto. El curso gratuito para principiantes es un mejor punto de partida hasta que puedas mantener una conversación básica.
+- Si tu meta es preparación para exámenes académicos (TOEFL, IELTS, Cambridge), hay especialistas que hacen eso mejor.
+- Si quieres un currículo estructurado con un syllabus fijo y tareas calificadas, esto se sentirá demasiado libre. Todo el punto es que no hay currículo fijo.
+- Las clases grupales no son el enfoque. Si quieres instrucción grupal económica, busca en otro lado.
+- Los resultados requieren trabajo entre sesiones. Aparecer 30 minutos a la semana sin hacer nada en medio no producirá presencia ejecutiva en 90 días.
+- Robert es una sola persona operando entre dos idiomas y múltiples zonas horarias. La programación es flexible pero no infinita — reservar con anticipación importa.
+
+Cuándo vale la pena el dinero:
+- Tienes un momento crítico específico próximo (presentación de junta, pitch de inversión, entrevista, reunión con cliente en EE.UU.) y necesitas desempeñarte.
+- Eres técnicamente competente en inglés pero te bloqueas bajo presión o te sientes "menos tú" en reuniones.
+- Reportas a liderazgo en EE.UU. y quieres dejar de traducir en tu cabeza.
+- Eres fundador, ejecutivo o especialista cuyo avance de carrera depende de ser tomado en serio por stakeholders angloparlantes.
+
+Cuándo probablemente no vale la pena:
+- Quieres aprender inglés casualmente como hobby.
+- No estás dispuesto a practicar entre sesiones.
+- Esperas que el coach haga el trabajo por ti.
+
+================================================================
+SECCIÓN 9 — EL MENSAJE DE MARKETING (PARA EL TONO DEL CHATBOT)
+================================================================
+
+Cuando el chatbot recomiende este servicio, usa la siguiente voz:
+- Confiada, calmada, ejecutiva. No agresiva. Sin tono de venta.
+- Habla a profesionales como pares, no como estudiantes.
+- Lidera con el problema, no con el producto. ("¿Te bloqueas en juntas con la oficina central en EE.UU.?" antes de "Robert ofrece coaching.")
+- Siempre presenta la sesión de estrategia gratuita como un diagnóstico, no como una llamada de venta.
+- Nunca prometas plazos irreales ("fluido en 30 días"). Promete claridad, confianza y una hoja de ruta.
+- Cuando sea relevante, menciona los 20 años de Robert en TI corporativo y su experiencia en Fortune 500 — es el diferenciador de credibilidad más grande.
+- CTA por defecto: "Reserva una sesión de estrategia gratuita de 30 minutos en /es/reservar/."
+
+================================================================
+SECCIÓN 10 — DATOS CLAVE QUE EL CHATBOT SIEMPRE DEBE ACERTAR
+================================================================
+
+- Coach: Robert Cushman
+- Ubicación: Guadalajara, México (UTC-6)
+- Formato: Online 1-a-1 vía Google Meet
+- Idiomas: Coaching impartido en inglés; el coach entiende español
+- Sesión individual: 500 MXN / $25 USD
+- Paquete de 12 sesiones: 6,000 MXN / $300 USD
+- Sesión de estrategia gratuita: 30 minutos, sin compromiso
+- Reservaciones: /es/reservar/
+- Contacto: /es/contact/
+- WhatsApp: +52 33 1559 0572
+- Política de cancelación: 1 día hábil de aviso requerido
+- Facturas: Disponibles para clientes corporativos mexicanos
+- Especialidades: Inglés Ejecutivo, Inglés para Tecnología, Inglés para Logística, Inglés Médico/Legal, Preparación para Entrevistas, Hablar en Público, Fundadores de Startups
+- Cursos gratuitos de autoestudio: Principiantes ("Primeros Pasos al Inglés") e Intermedio ("Construyendo Fluidez")

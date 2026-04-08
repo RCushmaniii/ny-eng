@@ -1,0 +1,37 @@
+Page: /es/servicios/
+
+Servicios de Coaching de Inglés de Negocios | NY English
+
+Explora coaching personalizado de inglés para ejecutivos, tecnología y médicos. Mejora tu fluidez y confianza en entornos empresariales.
+
+Ya lideras. Ahora suena así — en inglés.
+Coaching privado para los momentos específicos donde tu inglés importa más.
+CTA: Reserva Tu Consulta Gratuita — /es/reservar/
+
+Servicios
+
+- Inglés para Negocios y Ejecutivos — Lidera juntas directivas, entrega actualizaciones estratégicas y negocia con la autoridad que tu rol exige — sin traducir en tu cabeza. /es/servicios/ingles-para-ejecutivos/
+- Inglés para Fundadores de Startups — Presenta ante inversionistas de EE. UU., recluta internacionalmente y lidera tu equipo en inglés — con la confianza que cierra rondas. /es/servicios/ingles-para-fundadores-de-startups/
+- Inglés para Tecnología — Convierte la complejidad técnica en valor de negocio claro. Explica arquitectura a stakeholders no técnicos sin perder precisión ni credibilidad. /es/servicios/ingles-para-tecnologia/
+- Inglés para Logística — Navega aduanas, transporte de carga y operaciones transfronterizas en inglés. Comunícate con brokers, transportistas y equipos de cumplimiento de EE. UU. con precisión. /es/servicios/ingles-para-logistica/
+- Inglés para Doctores, Abogados y Profesionales — Una palabra mal elegida cambia todo. Inglés de precisión para profesionales médicos y legales que necesitan claridad absoluta cuando lo que está en juego es real. /es/servicios/ingles-para-profesionales/
+- Coaching para Entrevistas y Presentaciones — Tienes una oportunidad. Preparación enfocada para la entrevista, el pitch a inversionistas o la presentación que define tu carrera. /es/servicios/ingles-para-presentaciones/
+
+Encuentra coaching para tu rol
+Cada rol tiene puntos de presión diferentes. Elige el tuyo.
+
+- Ejecutivos C-Suite — /es/servicios/ingles-para-ejecutivos/
+- Directores y VPs — /es/servicios/ingles-para-ejecutivos/
+- Fundadores de Startups — /es/servicios/ingles-para-fundadores-de-startups/
+- Ingenieros de Software — /es/servicios/ingles-para-tecnologia/
+- Líderes de Equipos Técnicos — /es/servicios/ingles-para-tecnologia/
+- Gerentes de Cadena de Suministro — /es/servicios/ingles-para-logistica/
+- Coordinadores de Logística — /es/servicios/ingles-para-logistica/
+- Profesionales Médicos — /es/servicios/ingles-para-profesionales/
+- Profesionales Legales — /es/servicios/ingles-para-profesionales/
+- Conferencistas — /es/servicios/ingles-para-presentaciones/
+- Buscadores de Empleo — /es/servicios/ingles-para-presentaciones/
+
+CTA Final: Ya lideras. Ahora suena así — en inglés.
+Reserva una sesión estratégica privada. 30 minutos: identificaré las brechas entre tu inglés y la presencia ejecutiva que tu rol exige.
+Reservar Mi Sesión Estratégica — /es/reservar/
