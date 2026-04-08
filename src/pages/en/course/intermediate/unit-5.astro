@@ -1,0 +1,191 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import NarrativeTimeline from "@components/course/NarrativeTimeline";
+import DialoguePractice from "@components/course/DialoguePractice";
+import SentenceBuilder from "@components/course/SentenceBuilder";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import PronunciationDrill from "@components/course/PronunciationDrill";
+import SelfTest from "@components/course/SelfTest";
+import { intermediateUnits } from "@data/intermediate/units";
+import {
+  stories,
+  dialogues,
+  structureBlocks,
+  errorCorrections,
+  pronunciationDrills,
+  vocabularyList,
+} from "@data/intermediate/unit-5";
+import { ArrowRight, MessageSquare, Layers, Volume2, Clock } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/intermediate/unit-5" as const;
+
+const progressUnits = intermediateUnits.map((u) => ({
+  id: u.id,
+  slug: u.slug,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unit 5: Telling Stories | Building Fluency | NY English Teacher"
+  description="Narrate events like a native speaker. Master past perfect, reported speech, and 'would' for past habits. Free interactive lesson for B1-B2 Spanish speakers."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={5}
+    basePath="/en/course/intermediate"
+    lang="en"
+    courseId="intermediate"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
+          <MessageSquare class="w-4 h-4" />
+          Unit 5
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Telling Stories
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Storytelling is where fluency really shows. This unit gives you the three
+          tools native speakers use to narrate events: <strong class="text-white">past perfect</strong>
+          for what happened before, <strong class="text-white">reported speech</strong> for what
+          people said, and <strong class="text-white">'would'</strong> for what you used to do.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Clock class="w-3.5 h-3.5" /> Past Perfect
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Layers class="w-3.5 h-3.5" /> Reported Speech
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Volume2 class="w-3.5 h-3.5" /> 'Would' (Habitual Past)
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-a">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">A</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Narrative Timeline</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Tap each moment in this story to reveal it. Watch how past simple, past perfect,
+          and 'would' connect to build a clear timeline.
+        </p>
+        <NarrativeTimeline client:visible stories={stories} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-b">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">B</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Dialogue Practice</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          A real story being told between friends. Notice every tense shift.
+        </p>
+        <DialoguePractice client:visible dialogues={dialogues} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-c">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">C</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Structure Builder</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Past perfect, reported speech, and 'would' for habits — built one block at a time.
+        </p>
+        <SentenceBuilder client:visible blocks={structureBlocks} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-d">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">D</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Error Correction</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Six errors that flatten storytelling. Spot them, fix them.
+        </p>
+        <ErrorCorrection client:visible data={errorCorrections} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-e">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">E</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Pronunciation Lab</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Connected speech in past narratives — the contractions and linkings native speakers use.
+        </p>
+        <PronunciationDrill client:visible drills={pronunciationDrills} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-f">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">F</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Self-Test</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Test yourself on storytelling vocabulary, reported speech phrases, and narrative connectors.
+        </p>
+        <SelfTest client:visible vocabulary={vocabularyList} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex justify-between items-center">
+        <a
+          href="/en/course/intermediate/unit-4/"
+          class="text-sm text-slate-500 hover:text-amber-600 transition-colors"
+        >
+          &larr; Unit 4
+        </a>
+        <Button href="/en/course/intermediate/unit-6/" variant="primary" size="md">
+          Unit 6: Expressing Opinions
+          <ArrowRight class="w-4 h-4 ml-1" />
+        </Button>
+      </div>
+    </div>
+  </section>
+</Base>
