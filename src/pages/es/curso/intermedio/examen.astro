@@ -4,16 +4,21 @@ export const prerender = true;
 import Base from "@layouts/Base.astro";
 import CourseProgress from "@components/course/CourseProgress";
 import CourseExam from "@components/course/CourseExam";
-import { units } from "@data/course/units";
-import { examQuestions, examMeta, calculateExamResult, getScoreTier } from "@data/course/exam";
+import { intermediateUnits } from "@data/intermediate/units";
+import {
+  examQuestions,
+  examMeta,
+  calculateExamResult,
+  getScoreTier,
+} from "@data/intermediate/exam";
 import { ArrowLeft, GraduationCap } from "lucide-astro";
 
-const lang = "en";
-const tkey = "course/beginners/exam" as const;
+const lang = "es";
+const tkey = "course/intermediate/exam" as const;
 
-const progressUnits = units.map((u) => ({
+const progressUnits = intermediateUnits.map((u) => ({
   id: u.id,
-  slug: u.slug,
+  slug: u.slugEs,
   title: u.title,
   titleEs: u.titleEs,
 }));
@@ -22,15 +27,16 @@ const progressUnits = units.map((u) => ({
 <Base
   lang={lang}
   tkey={tkey}
-  title="Final Exam: First Steps Into English | NY English Teacher"
-  description="Take the comprehensive final exam for the First Steps Into English beginner course. 20 questions covering vocabulary, grammar, and translation from all 10 units. Free for Spanish speakers."
+  title="Examen Final: Construyendo Fluidez | NY English Teacher"
+  description="Toma el examen final integral del curso intermedio Construyendo Fluidez. 20 preguntas sobre modales, condicionales, tiempos narrativos, opiniones y deducciones de las 10 unidades. Gratis para hispanohablantes B1-B2."
 >
   <CourseProgress
     client:load
     units={progressUnits}
     currentUnit={0}
-    basePath="/en/course/beginners"
-    lang="en"
+    basePath="/es/curso/intermedio"
+    lang="es"
+    courseId="intermediate"
   />
 
   <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
@@ -38,14 +44,15 @@ const progressUnits = units.map((u) => ({
       <div class="max-w-3xl">
         <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
           <GraduationCap class="w-4 h-4" />
-          Final Exam
+          Examen Final
         </div>
         <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
-          First Steps Into English
+          Construyendo Fluidez
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          You've completed all 10 units. Now prove what you've learned.
-          20 questions covering vocabulary, grammar, and translation — the complete course in one exam.
+          Has completado las 10 unidades del curso intermedio. Ahora demuéstralo.
+          20 preguntas sobre modales, condicionales, tiempos narrativos, opiniones y deducciones —
+          todo lo que has construido a lo largo del curso completo.
         </p>
       </div>
     </div>
@@ -56,9 +63,9 @@ const progressUnits = units.map((u) => ({
       <CourseExam
         client:load
         questions={examQuestions}
-        lang="en"
+        lang="es"
         passingScore={examMeta.passingScore}
-        courseBasePath="/en/course/beginners"
+        courseBasePath="/es/curso/intermedio"
         calculateExamResult={calculateExamResult}
         getScoreTier={getScoreTier}
       />
@@ -67,8 +74,8 @@ const progressUnits = units.map((u) => ({
 
   <section class="py-8 bg-white border-t border-slate-200">
     <div class="site-container mx-auto px-4 text-center">
-      <a href="/en/course/beginners/" class="inline-flex items-center gap-2 text-slate-500 hover:text-amber-600 transition-colors text-sm">
-        <ArrowLeft class="w-4 h-4" /> Back to Course Overview
+      <a href="/es/curso/intermedio/" class="inline-flex items-center gap-2 text-slate-500 hover:text-amber-600 transition-colors text-sm">
+        <ArrowLeft class="w-4 h-4" /> Volver al Resumen del Curso
       </a>
     </div>
   </section>
