@@ -1,15 +1,24 @@
 import { useState, useMemo, useCallback, useEffect } from "react";
 import type { ExamQuestion, ExamResult } from "@data/course/exam";
-import { calculateExamResult, getScoreTier } from "@data/course/exam";
+
+export type ScoreTier = {
+  tier: string;
+  tierEs: string;
+  color: string;
+  message: string;
+  messageEs: string;
+};
 
 interface Props {
   questions: ExamQuestion[];
   lang: "en" | "es";
   passingScore: number;
   courseBasePath: string;
+  calculateExamResult: (answers: Record<number, number>) => ExamResult;
+  getScoreTier: (percentage: number) => ScoreTier;
 }
 
-export default function CourseExam({ questions, lang, passingScore, courseBasePath }: Props) {
+export default function CourseExam({ questions, lang, passingScore, courseBasePath, calculateExamResult, getScoreTier }: Props) {
   const [phase, setPhase] = useState<"intro" | "exam" | "results">("intro");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});

@@ -1,0 +1,216 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import DeductionLab from "@components/course/DeductionLab";
+import DialoguePractice from "@components/course/DialoguePractice";
+import SentenceBuilder from "@components/course/SentenceBuilder";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import PronunciationDrill from "@components/course/PronunciationDrill";
+import SelfTest from "@components/course/SelfTest";
+import { intermediateUnits } from "@data/intermediate/units";
+import {
+  deductionScenarios,
+  dialogues,
+  structureBlocks,
+  errorCorrections,
+  pronunciationDrills,
+  vocabularyList,
+} from "@data/intermediate/unit-10";
+import { ArrowRight, Rocket, Layers, Volume2, Search } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/intermediate/unit-10" as const;
+
+const progressUnits = intermediateUnits.map((u) => ({
+  id: u.id,
+  slug: u.slug,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unit 10: Sounding Native | Building Fluency | NY English Teacher"
+  description="The capstone unit. Master modals of deduction (must be, can't be, might have been) — the structure that lets you reason out loud like a native. Free B1-B2 lesson for Spanish speakers."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={10}
+    basePath="/en/course/intermediate"
+    lang="en"
+    courseId="intermediate"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
+          <Rocket class="w-4 h-4" />
+          Unit 10 — Capstone
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Sounding Native
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          The final structure that separates intermediate from advanced English:
+          <strong class="text-white">modals of deduction</strong>. Learn to reason, speculate,
+          and infer out loud — to say "she must have left" or "it can't have been him" with
+          the natural rhythm of a native speaker. After this unit, you'll be ready for the
+          final exam — and for real-world conversations.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Search class="w-3.5 h-3.5" /> Deduction Lab
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Layers class="w-3.5 h-3.5" /> Modals of Deduction
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 text-sm font-medium">
+            <Volume2 class="w-3.5 h-3.5" /> Thought Groups
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-a">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">A</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Deduction Lab</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Read each clue and pick the most likely deduction. Each scenario teaches you when
+          to use 'must', 'can't', 'might', and 'could' — and why.
+        </p>
+        <DeductionLab client:visible scenarios={deductionScenarios} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-b">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">B</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Dialogue Practice</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Two coworkers reasoning out loud about a workplace mystery. Watch how they layer
+          modal after modal to build a theory.
+        </p>
+        <DialoguePractice client:visible dialogues={dialogues} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-c">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">C</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Structure Builder</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Modals of deduction across present and past — plus the final block combining
+          everything you've learned across all 10 units.
+        </p>
+        <SentenceBuilder client:visible blocks={structureBlocks} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-d">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">D</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Error Correction</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Six errors that confuse confidence levels and time frames in deductions.
+        </p>
+        <ErrorCorrection client:visible data={errorCorrections} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-e">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">E</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Pronunciation Lab</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Thought groups, chunking, and the natural fillers ('I think', 'you know', 'I mean') that make reasoning sound native.
+        </p>
+        <PronunciationDrill client:visible drills={pronunciationDrills} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-f">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">F</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Self-Test</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Test yourself on modal deduction expressions, reasoning fillers, and self-assessment vocabulary.
+        </p>
+        <SelfTest client:visible vocabulary={vocabularyList} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Final exam call-to-action -->
+  <section class="py-16 md:py-20 bg-gradient-to-br from-amber-500 to-amber-600 text-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <Rocket class="w-12 h-12 mx-auto mb-4" />
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">
+          You've Reached the End. Now Prove It.
+        </h2>
+        <p class="text-amber-50 mb-6 leading-relaxed">
+          You've completed all 10 units. Take the final exam to test everything you've learned —
+          modals, conditionals, narratives, opinions, deductions, and more.
+        </p>
+        <Button href="/en/course/intermediate/exam/" variant="secondary" size="lg">
+          Take the Final Exam
+          <ArrowRight class="w-5 h-5 ml-2" />
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex justify-between items-center">
+        <a
+          href="/en/course/intermediate/unit-9/"
+          class="text-sm text-slate-500 hover:text-amber-600 transition-colors"
+        >
+          &larr; Unit 9
+        </a>
+        <a
+          href="/en/course/intermediate/"
+          class="text-sm text-slate-500 hover:text-amber-600 transition-colors"
+        >
+          Course Overview
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
