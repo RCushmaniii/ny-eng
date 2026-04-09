@@ -954,30 +954,24 @@ Each unit page targets specific long-tail keywords:
 
 ---
 
-## Future Phases
+## The Course Roadmap (Status as of April 2026)
 
-### Phase 2: Intermediate Course — "Building Fluency"
-- Past tenses in depth
-- Phrasal verbs (the Spanish speaker's nemesis)
-- Conditional structures
-- Travel, shopping, social English
-- More complex pronunciation (connected speech, weak forms)
+The original Phase 2/3/4 sketch in this document has evolved into three full course plans with detailed curricula. See the linked plans for specifics.
 
-### Phase 3: Advanced Course — "Professional English"
-- Business vocabulary beyond cognates
-- Meeting participation
-- Email writing
-- Phone and video calls
-- Presentation basics
-- Cultural communication differences
+### ✅ Phase 2: Intermediate Course — "Building Fluency" (B1-B2) — **SHIPPED**
+Live at [/en/course/intermediate/](https://www.nyenglishteacher.com/en/course/intermediate/) and [/es/curso/intermedio/](https://www.nyenglishteacher.com/es/curso/intermedio/). 10 units + final exam, modal-driven curriculum, 7 unique React components built specifically for the course.
 
-### Phase 4: Executive Communication Course
-- High-stakes presentations
-- Negotiation in English
-- Leadership communication
-- Boardroom English
-- C-suite language and register
-- This is essentially a gateway to Robert's 1-on-1 coaching
+📄 **Retrospective:** [INTERMEDIATE-COURSE-RETROSPECTIVE.md](./INTERMEDIATE-COURSE-RETROSPECTIVE.md) — what we shipped, the principles we discovered (modal-driven, no cookie-cutter Section A, no phrasal verb fixation, no slang), and the post-mortem on the Astro island prop crash bug.
+
+### ⏳ Phase 3: Advanced Course — "Speak with Confidence" (B2-C1) — **PLANNED, READY TO BUILD**
+Skill-based bootcamp focused on the granular errors that mark a non-native speaker even at C1: weak vs strong phrasing, word traps (fewer/less, say/tell), pronouns, articles, pronunciation tells, contractions, prefixes/suffixes, sentence flow, sounding natural instead of translated. 10 units × 3 sections each, free, 5 reusable components, multiple-choice final exam with a strategy-session funnel as the speaking-task replacement.
+
+📄 **Full plan:** [ADVANCED-COURSE-PLAN.md](./ADVANCED-COURSE-PLAN.md)
+
+### ⏳ Phase 4: Executive Communication — "Communicate Like a Leader" (C1-C2) — **PLANNED, BUILD DEFERRED UNTIL ADVANCED SHIPS**
+The funnel into Robert's 1-on-1 coaching. 10 units covering executive presence, meetings, presentations, negotiation, small talk, difficult conversations, storytelling, cross-cultural communication, leadership vocabulary, and a personal-brand capstone. Capstone is a recorded executive presentation submitted directly to Robert for personal feedback — the ultimate coaching funnel hook. Free during launch (Phase 1), Stripe paywall in Phase 2.
+
+📄 **Full plan:** [EXECUTIVE-COURSE-PLAN.md](./EXECUTIVE-COURSE-PLAN.md)
 
 ### Platform Enhancements (Any Phase)
 - **User accounts** — save progress across devices
