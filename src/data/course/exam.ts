@@ -403,6 +403,44 @@ export function calculateExamResult(answers: Record<number, number>): ExamResult
   };
 }
 
+/**
+ * Tier definitions for the beginner course exam. Pure data so it can be passed
+ * across the Astro→React island JSON boundary. The component picks the highest
+ * matching tier based on the user's percentage score.
+ */
+export const examTiers = [
+  {
+    minPercent: 90,
+    tier: "Outstanding",
+    tierEs: "Sobresaliente",
+    color: "emerald",
+    message:
+      "Incredible work. You've mastered the foundations of English. You're ready for intermediate-level challenges.",
+    messageEs:
+      "Trabajo increíble. Has dominado las bases del inglés. Estás listo para desafíos de nivel intermedio.",
+  },
+  {
+    minPercent: 70,
+    tier: "Passed",
+    tierEs: "Aprobado",
+    color: "amber",
+    message:
+      "Great job! You have a solid foundation. Review the units where you missed questions, then move forward with confidence.",
+    messageEs:
+      "¡Buen trabajo! Tienes una base sólida. Repasa las unidades donde fallaste preguntas, luego avanza con confianza.",
+  },
+  {
+    minPercent: 0,
+    tier: "Keep Practicing",
+    tierEs: "Sigue Practicando",
+    color: "rose",
+    message:
+      "You're making progress, but some areas need more review. Go back to the units where you struggled and try the exam again.",
+    messageEs:
+      "Estás progresando, pero algunas áreas necesitan más repaso. Vuelve a las unidades donde tuviste dificultades e intenta el examen de nuevo.",
+  },
+] as const;
+
 export function getScoreTier(percentage: number): {
   tier: string;
   tierEs: string;
