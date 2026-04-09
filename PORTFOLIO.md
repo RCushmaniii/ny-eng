@@ -6,7 +6,7 @@ portfolio_featured: true
 
 # === CARD DISPLAY ===
 title: "NY English Teacher"
-tagline: "Lead generation platform replacing 4 roles on $0/month infrastructure"
+tagline: "Lead generation website for an English coaching business — replaced 4 roles, runs for $0/month"
 slug: "ny-english-teacher"
 category: "Client Work"
 tech_stack:
