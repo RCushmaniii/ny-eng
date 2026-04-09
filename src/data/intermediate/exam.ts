@@ -131,18 +131,18 @@ export const examQuestions: ExamQuestion[] = [
     id: 7,
     unit: 4,
     category: "translation",
-    prompt: "What is the most polite way to invite someone to dinner?",
-    promptEs: "¿Cuál es la forma más cortés de invitar a alguien a cenar?",
+    prompt: 'How do you say "¿Te gustaría acompañarnos a cenar?" in polite English?',
+    promptEs: 'Traduce al inglés cortés: "¿Te gustaría acompañarnos a cenar?"',
     options: [
       { text: "Would you like to join us for dinner?", correct: true },
-      { text: "Do you want to come to dinner?", correct: false },
-      { text: "You come to dinner with us?", correct: false },
-      { text: "Come to dinner with us!", correct: false },
+      { text: "Do you want to come to dinner with us?", correct: false },
+      { text: "You like to come to dinner with us?", correct: false },
+      { text: "Are you wanting to come to dinner?", correct: false },
     ],
     explanation:
-      "'Would you like to' is the polite, sophisticated form for invitations. 'Do you want' is too direct for most social contexts.",
+      "'Would you like to' is the polite, sophisticated form for invitations — the natural translation of '¿Te gustaría?'. 'Do you want' is too direct for social contexts.",
     explanationEs:
-      "'Would you like to' es la forma cortés y sofisticada para invitaciones. 'Do you want' es demasiado directo para la mayoría de contextos sociales.",
+      "'Would you like to' es la forma cortés y sofisticada para invitaciones — la traducción natural de '¿Te gustaría?'. 'Do you want' es demasiado directo para contextos sociales.",
   },
   {
     id: 8,
@@ -183,7 +183,7 @@ export const examQuestions: ExamQuestion[] = [
   {
     id: 10,
     unit: 5,
-    category: "translation",
+    category: "grammar",
     prompt: "How do you correctly report what someone said in the past?",
     promptEs: "¿Cómo reportas correctamente lo que alguien dijo en el pasado?",
     options: [
@@ -257,7 +257,7 @@ export const examQuestions: ExamQuestion[] = [
     unit: 7,
     category: "vocabulary",
     prompt: 'Which English term means "efectos secundarios"?',
-    promptEs: 'Qué término en inglés significa "efectos secundarios"?',
+    promptEs: '¿Qué término en inglés significa "efectos secundarios"?',
     options: [
       { text: "side effects", correct: true },
       { text: "secondary effects", correct: false },
@@ -328,8 +328,8 @@ export const examQuestions: ExamQuestion[] = [
     id: 18,
     unit: 9,
     category: "translation",
-    prompt: "How do you express regret about a past action?",
-    promptEs: "¿Cómo expresas arrepentimiento sobre una acción pasada?",
+    prompt: 'How do you say "Debería haberte llamado antes" in English?',
+    promptEs: 'Traduce: "Debería haberte llamado antes"',
     options: [
       { text: "I should have called you sooner.", correct: true },
       { text: "I should called you sooner.", correct: false },
@@ -337,9 +337,9 @@ export const examQuestions: ExamQuestion[] = [
       { text: "I should call you sooner.", correct: false },
     ],
     explanation:
-      "For past regrets with 'should', use 'should have + past participle'. In speech this contracts to 'should've called' (NOT 'should of').",
+      "For past regrets with 'should', use 'should have + past participle'. In speech this contracts to 'should've called' (NOT 'should of', even though it sounds that way).",
     explanationEs:
-      "Para arrepentimientos del pasado con 'should', usa 'should have + participio'. En el habla se contrae a 'should've called' (NO 'should of').",
+      "Para arrepentimientos del pasado con 'should', usa 'should have + participio'. En el habla se contrae a 'should've called' (NO 'should of', aunque suene así).",
   },
 
   // ─── Unit 10: Sounding Native ──────────────────────────────────────
