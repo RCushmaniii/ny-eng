@@ -9,16 +9,70 @@ export type ScoreTier = {
   messageEs: string;
 };
 
+/**
+ * A tier definition is just data: a minimum percentage and the labels/colors
+ * to display when the user scores that high. The component picks the highest
+ * matching tier from the array. Tiers MUST be JSON-serializable because Astro
+ * passes island props as JSON — functions cannot cross the SSR boundary.
+ */
+export type ScoreTierDefinition = ScoreTier & {
+  minPercent: number;
+};
+
 interface Props {
   questions: ExamQuestion[];
   lang: "en" | "es";
   passingScore: number;
   courseBasePath: string;
-  calculateExamResult: (answers: Record<number, number>) => ExamResult;
-  getScoreTier: (percentage: number) => ScoreTier;
+  /** Tier definitions in any order; the component picks the highest matching one. */
+  tiers: ScoreTierDefinition[];
 }
 
-export default function CourseExam({ questions, lang, passingScore, courseBasePath, calculateExamResult, getScoreTier }: Props) {
+function computeResult(
+  questions: ExamQuestion[],
+  answers: Record<number, number>,
+): ExamResult {
+  const unitScores: Record<number, { correct: number; total: number }> = {};
+  const categoryScores: Record<string, { correct: number; total: number }> = {};
+  let totalCorrect = 0;
+
+  for (const q of questions) {
+    if (!unitScores[q.unit]) unitScores[q.unit] = { correct: 0, total: 0 };
+    if (!categoryScores[q.category])
+      categoryScores[q.category] = { correct: 0, total: 0 };
+
+    unitScores[q.unit].total++;
+    categoryScores[q.category].total++;
+
+    const selectedIndex = answers[q.id];
+    if (selectedIndex !== undefined && q.options[selectedIndex]?.correct) {
+      totalCorrect++;
+      unitScores[q.unit].correct++;
+      categoryScores[q.category].correct++;
+    }
+  }
+
+  return {
+    totalCorrect,
+    totalQuestions: questions.length,
+    percentage: Math.round((totalCorrect / questions.length) * 100),
+    unitScores,
+    categoryScores,
+  };
+}
+
+function pickTier(
+  percentage: number,
+  tiers: ScoreTierDefinition[],
+): ScoreTier {
+  // Sort descending by minPercent and pick the first one the user qualifies for.
+  const sorted = [...tiers].sort((a, b) => b.minPercent - a.minPercent);
+  const match = sorted.find((t) => percentage >= t.minPercent) ?? sorted[sorted.length - 1];
+  const { minPercent: _ignored, ...rest } = match;
+  return rest;
+}
+
+export default function CourseExam({ questions, lang, passingScore, courseBasePath, tiers }: Props) {
   const [phase, setPhase] = useState<"intro" | "exam" | "results">("intro");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
@@ -66,11 +120,11 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
       setSelectedOption(null);
       setShowFeedback(false);
     } else {
-      const examResult = calculateExamResult(answers);
+      const examResult = computeResult(questions, answers);
       setResult(examResult);
       setPhase("results");
     }
-  }, [currentIndex, totalQuestions, answers]);
+  }, [currentIndex, totalQuestions, answers, questions]);
 
   const handleRestart = useCallback(() => {
     setPhase("intro");
@@ -135,7 +189,7 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
 
   // ─── Results Screen ────────────────────────────────────────────────
   if (phase === "results" && result) {
-    const tier = getScoreTier(result.percentage);
+    const tier = pickTier(result.percentage, tiers);
     const passed = result.percentage >= passingScore;
     const unitNumbers = Object.keys(result.unitScores)
       .map(Number)

@@ -5,12 +5,7 @@ import Base from "@layouts/Base.astro";
 import CourseProgress from "@components/course/CourseProgress";
 import CourseExam from "@components/course/CourseExam";
 import { intermediateUnits } from "@data/intermediate/units";
-import {
-  examQuestions,
-  examMeta,
-  calculateExamResult,
-  getScoreTier,
-} from "@data/intermediate/exam";
+import { examQuestions, examMeta, examTiers } from "@data/intermediate/exam";
 import { ArrowLeft, GraduationCap } from "lucide-astro";
 
 const lang = "es";
@@ -66,8 +61,7 @@ const progressUnits = intermediateUnits.map((u) => ({
         lang="es"
         passingScore={examMeta.passingScore}
         courseBasePath="/es/curso/intermedio"
-        calculateExamResult={calculateExamResult}
-        getScoreTier={getScoreTier}
+        tiers={examTiers}
       />
     </div>
   </section>

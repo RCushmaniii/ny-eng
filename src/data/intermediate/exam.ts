@@ -115,15 +115,15 @@ export const examQuestions: ExamQuestion[] = [
     prompt: "Which sentence uses the correct travel phrasal verb?",
     promptEs: "¿Qué oración usa el phrasal verb de viaje correcto?",
     options: [
-      { text: "I need to get on the bus at the next stop.", correct: true },
-      { text: "I need to get in the bus at the next stop.", correct: false },
-      { text: "I need to get up the bus at the next stop.", correct: false },
-      { text: "I need to get into the bus at the next stop.", correct: false },
+      { text: "Hurry — we need to get on the train before it leaves.", correct: true },
+      { text: "Hurry — we need to get in the train before it leaves.", correct: false },
+      { text: "Hurry — we need to get up the train before it leaves.", correct: false },
+      { text: "Hurry — we need to get into the train before it leaves.", correct: false },
     ],
     explanation:
-      "For buses, trains, planes and bikes, use 'get ON'. Use 'get IN' only for cars and small enclosed vehicles.",
+      "For buses, trains, planes and bikes, use 'get ON'. Use 'get IN' only for cars, taxis, and small enclosed vehicles. (Note: 'get off at the next stop' is the natural phrase for leaving a bus or train.)",
     explanationEs:
-      "Para autobuses, trenes, aviones y bicicletas, usa 'get ON'. Usa 'get IN' solo para coches y vehículos pequeños cerrados.",
+      "Para autobuses, trenes, aviones y bicicletas, usa 'get ON'. Usa 'get IN' solo para coches, taxis y vehículos pequeños cerrados. (Nota: 'get off at the next stop' es la frase natural para bajarse de un autobús o tren.)",
   },
 
   // ─── Unit 4: Making Plans ──────────────────────────────────────────
@@ -410,6 +410,43 @@ export function calculateExamResult(
     categoryScores,
   };
 }
+
+/**
+ * Tier definitions for the intermediate course exam. Pure data so it can be
+ * passed across the Astro→React island JSON boundary.
+ */
+export const examTiers = [
+  {
+    minPercent: 90,
+    tier: "Outstanding",
+    tierEs: "Sobresaliente",
+    color: "emerald",
+    message:
+      "Exceptional work. You've truly built fluency. You're ready for advanced English and real-world situations of any kind.",
+    messageEs:
+      "Trabajo excepcional. Realmente has construido fluidez. Estás listo para inglés avanzado y situaciones del mundo real de cualquier tipo.",
+  },
+  {
+    minPercent: 70,
+    tier: "Passed",
+    tierEs: "Aprobado",
+    color: "amber",
+    message:
+      "Solid performance. You've mastered the core of intermediate English. Review the units where you missed questions and keep practicing in real conversations.",
+    messageEs:
+      "Desempeño sólido. Has dominado el núcleo del inglés intermedio. Repasa las unidades donde fallaste preguntas y sigue practicando en conversaciones reales.",
+  },
+  {
+    minPercent: 0,
+    tier: "Keep Practicing",
+    tierEs: "Sigue Practicando",
+    color: "rose",
+    message:
+      "You're making progress, but key structures need more review. Go back to the units where you struggled — especially modals and conditionals — and try again.",
+    messageEs:
+      "Estás progresando, pero las estructuras clave necesitan más repaso. Vuelve a las unidades donde tuviste dificultades — especialmente modales y condicionales — e intenta de nuevo.",
+  },
+] as const;
 
 export function getScoreTier(percentage: number): ScoreTier {
   if (percentage >= 90) {
