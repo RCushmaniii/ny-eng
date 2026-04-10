@@ -1,0 +1,215 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import { advancedInfo, advancedUnits } from "@data/advanced/units";
+import {
+  Sparkles,
+  AlertTriangle,
+  Users,
+  Link,
+  Type,
+  Mic,
+  Zap,
+  Puzzle,
+  Layers,
+  ArrowRight,
+  GraduationCap,
+  Target,
+  CheckCircle2,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/advanced" as const;
+
+const iconMap: Record<string, any> = {
+  Sparkles,
+  AlertTriangle,
+  Users,
+  Link,
+  Type,
+  Mic,
+  Zap,
+  Puzzle,
+  Layers,
+  Sparkle: Sparkles,
+};
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Habla con Confianza — Curso Avanzado Gratis de Inglés (B2-C1) | NY English Teacher"
+  description="Un curso avanzado gratuito de 10 unidades para hispanohablantes de nivel B2 alto a C1. Corrige los errores granulares que delatan al hablante no nativo — frases débiles, trampas de palabras, artículos, detalles de pronunciación."
+>
+  <section class="relative w-full overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-violet-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-amber-500 rounded-full blur-3xl"></div>
+    </div>
+    <div class="site-container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-4">
+          <GraduationCap class="w-4 h-4" />
+          Curso Gratis · B2 → C1
+        </div>
+        <h1
+          class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          {advancedInfo.titleEs}
+        </h1>
+        <p class="text-xl text-slate-300 max-w-2xl leading-relaxed mb-8">
+          Puedes tener conversaciones. Puedes escribir correos. Puedes presentar.
+          Pero algo todavía suena <strong class="text-white">mal</strong> — y no
+          logras descifrar qué es. Este curso corrige los errores específicos y granulares
+          que delatan a un hablante avanzado como no nativo.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <Button href="#units" variant="primary" size="lg">
+            Ver las 10 Unidades
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center space-y-3 p-6">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-violet-100 text-violet-600">
+            <Target class="w-7 h-7" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Precisión, No Volumen</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Sin más listas de vocabulario. 3 secciones enfocadas por unidad que practican
+            la habilidad exacta hasta que se vuelve automática.
+          </p>
+        </div>
+        <div class="text-center space-y-3 p-6">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-violet-100 text-violet-600">
+            <Zap class="w-7 h-7" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Frases Fuertes</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Reemplaza verbos débiles, adverbios de relleno y oraciones planas con
+            el lenguaje preciso y confiado que usan los profesionales nativos.
+          </p>
+        </div>
+        <div class="text-center space-y-3 p-6">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-violet-100 text-violet-600">
+            <Mic class="w-7 h-7" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Detalles de Pronunciación</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Las terminaciones en S, los sonidos TH y los cambios de vocales que delatan
+            incluso a hispanohablantes fluidos. Ejercicios dirigidos, no práctica genérica.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="units">
+    <div class="site-container mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style="font-family: 'Noto Sans KR', sans-serif;">
+          10 Unidades. 3 Secciones Cada Una.
+        </h2>
+        <p class="text-slate-600 leading-relaxed">
+          Cada unidad se enfoca en una debilidad específica. 3 secciones enfocadas por unidad:
+          aprende el concepto, detecta el error, construye la corrección.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        {advancedUnits.map((unit) => {
+          const Icon = iconMap[unit.icon];
+          const isAvailable = unit.id === 1;
+          return (
+            <a
+              href={isAvailable ? `/es/curso/avanzado/${unit.slugEs}/` : undefined}
+              class:list={[
+                "group flex items-start gap-4 p-5 rounded-xl border transition-all duration-200",
+                isAvailable
+                  ? "bg-violet-50 border-violet-300 hover:shadow-md hover:border-violet-400 cursor-pointer"
+                  : "bg-white border-slate-200 opacity-75",
+              ]}
+            >
+              <div
+                class:list={[
+                  "flex items-center justify-center w-12 h-12 rounded-xl shrink-0",
+                  isAvailable ? "bg-violet-500 text-white" : "bg-slate-100 text-slate-400",
+                ]}
+              >
+                {Icon && <Icon class="w-6 h-6" />}
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span
+                    class:list={[
+                      "text-xs font-bold uppercase tracking-wider",
+                      isAvailable ? "text-violet-600" : "text-slate-400",
+                    ]}
+                  >
+                    Unidad {unit.id}
+                  </span>
+                  {!isAvailable && (
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">
+                      Próximamente
+                    </span>
+                  )}
+                </div>
+                <h3
+                  class:list={[
+                    "text-lg font-bold mt-0.5",
+                    isAvailable ? "text-slate-900" : "text-slate-600",
+                  ]}
+                >
+                  {unit.titleEs}
+                </h3>
+                <p class="text-sm text-slate-500 mt-1">{unit.subtitleEs}</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6" style="font-family: 'Noto Sans KR', sans-serif;">
+          ¿Es este curso para ti?
+        </h2>
+        <div class="space-y-4 text-slate-600 leading-relaxed">
+          <p>
+            Este curso es para ti si ya puedes mantener una conversación en inglés pero algo
+            todavía se siente mal. Usas la gramática correcta, entiendes a los nativos,
+            puedes enviar correos y presentar — pero tu inglés no suena <em>pulido</em>.
+          </p>
+          <p>
+            El problema no es vocabulario ni gramática. Es <strong>precisión</strong>. Usas "got"
+            cuando podrías decir "earned." Hedges con "very" y "really" cuando un solo adjetivo
+            fuerte tendría más impacto. Dudas con los artículos. Usas "and" de más para conectar ideas.
+          </p>
+          <p>
+            Si completaste el <a href="/es/curso/intermedio/" class="text-amber-600 hover:text-amber-500 underline">curso intermedio</a> o
+            ya estás en B2+, este es tu siguiente paso. Si el inglés todavía es nuevo para ti,
+            empieza con el <a href="/es/curso/principiantes/" class="text-amber-600 hover:text-amber-500 underline">curso principiante</a>.
+          </p>
+        </div>
+        <div class="mt-8">
+          <Button href="/es/servicios/" variant="secondary" size="md">
+            O trabaja 1-a-1 con Robert
+            <ArrowRight class="w-4 h-4 ml-1" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

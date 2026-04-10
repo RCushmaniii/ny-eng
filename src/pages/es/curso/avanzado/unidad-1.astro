@@ -1,0 +1,139 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import WordPairLab from "@components/course/WordPairLab";
+import ErrorSpotter from "@components/course/ErrorSpotter";
+import SentenceTransformer from "@components/course/SentenceTransformer";
+import { advancedUnits } from "@data/advanced/units";
+import { verbPairs, weakAdverbs, sentenceTransforms } from "@data/advanced/unit-1";
+import { ArrowRight, Sparkles, TrendingUp, Search, Zap } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/advanced/unit-1" as const;
+
+const progressUnits = advancedUnits.map((u) => ({
+  id: u.id,
+  slug: u.slugEs,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unidad 1: Frases Débiles → Frases Fuertes | Habla con Confianza | NY English Teacher"
+  description="Reemplaza 'got', 'made' y 'did' por 'earned', 'built' y 'delivered'. Elimina adverbios débiles. Transforma oraciones planas en oraciones con impacto. Lección avanzada gratis para hispanohablantes B2-C1."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={1}
+    basePath="/es/curso/avanzado"
+    lang="es"
+    courseId="advanced"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-violet-400 text-sm font-semibold mb-3">
+          <Sparkles class="w-4 h-4" />
+          Unidad 1
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Frases Débiles → Frases Fuertes
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Los hablantes avanzados se apoyan en un conjunto pequeño de verbos débiles — "got",
+          "made", "did" — y los rellenan con adverbios vacíos como "very", "really" y "just."
+          Los profesionales nativos eligen un lenguaje específico y fuerte que transmite autoridad.
+          Esta unidad reprograma tus elecciones de palabras en tres niveles: el verbo, el adverbio
+          y la oración completa.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium">
+            <TrendingUp class="w-3.5 h-3.5" /> Verbos Fuertes
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium">
+            <Search class="w-3.5 h-3.5" /> Eliminación de Adverbios
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium">
+            <Zap class="w-3.5 h-3.5" /> Impacto de Oración
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Verbos Débiles → Verbos Fuertes</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Mira la versión débil, luego revela la versión fuerte. Nota cómo una palabra
+          cambia el impacto completo de la oración.
+        </p>
+        <WordPairLab client:visible pairs={verbPairs} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Eliminando Adverbios Débiles</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Cada oración tiene una palabra que la debilita. Toca la palabra ofensiva para
+          eliminarla y ver la versión mejorada.
+        </p>
+        <ErrorSpotter client:visible items={weakAdverbs} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Reescribiendo Oraciones Planas</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Las oraciones planas son la mayor señal de un hablante no nativo. Mira el antes y
+          el después — y aprende la técnica detrás de cada transformación.
+        </p>
+        <SentenceTransformer client:visible transforms={sentenceTransforms} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex justify-between items-center">
+        <a
+          href="/es/curso/avanzado/"
+          class="text-sm text-slate-500 hover:text-violet-600 transition-colors"
+        >
+          &larr; Resumen del Curso
+        </a>
+        <Button href="/es/curso/avanzado/" variant="primary" size="md">
+          Resumen del Curso
+          <ArrowRight class="w-4 h-4 ml-1" />
+        </Button>
+      </div>
+    </div>
+  </section>
+</Base>
