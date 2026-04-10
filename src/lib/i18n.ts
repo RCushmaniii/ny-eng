@@ -99,6 +99,18 @@ export type TKey =
   | "course/intermediate/unit-9"
   | "course/intermediate/unit-10"
   | "course/intermediate/exam"
+  | "course/advanced"
+  | "course/advanced/unit-1"
+  | "course/advanced/unit-2"
+  | "course/advanced/unit-3"
+  | "course/advanced/unit-4"
+  | "course/advanced/unit-5"
+  | "course/advanced/unit-6"
+  | "course/advanced/unit-7"
+  | "course/advanced/unit-8"
+  | "course/advanced/unit-9"
+  | "course/advanced/unit-10"
+  | "course/advanced/exam"
   | "meme-portfolio"
   | "site-index";
 
@@ -212,6 +224,18 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/intermediate/unit-9": "/en/course/intermediate/unit-9/",
     "course/intermediate/unit-10": "/en/course/intermediate/unit-10/",
     "course/intermediate/exam": "/en/course/intermediate/exam/",
+    "course/advanced": "/en/course/advanced/",
+    "course/advanced/unit-1": "/en/course/advanced/unit-1/",
+    "course/advanced/unit-2": "/en/course/advanced/unit-2/",
+    "course/advanced/unit-3": "/en/course/advanced/unit-3/",
+    "course/advanced/unit-4": "/en/course/advanced/unit-4/",
+    "course/advanced/unit-5": "/en/course/advanced/unit-5/",
+    "course/advanced/unit-6": "/en/course/advanced/unit-6/",
+    "course/advanced/unit-7": "/en/course/advanced/unit-7/",
+    "course/advanced/unit-8": "/en/course/advanced/unit-8/",
+    "course/advanced/unit-9": "/en/course/advanced/unit-9/",
+    "course/advanced/unit-10": "/en/course/advanced/unit-10/",
+    "course/advanced/exam": "/en/course/advanced/exam/",
     "meme-portfolio": "/en/meme-portfolio/all/",
     "site-index": "/en/site-index/",
   },
@@ -329,6 +353,18 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/intermediate/unit-9": "/es/curso/intermedio/unidad-9/",
     "course/intermediate/unit-10": "/es/curso/intermedio/unidad-10/",
     "course/intermediate/exam": "/es/curso/intermedio/examen/",
+    "course/advanced": "/es/curso/avanzado/",
+    "course/advanced/unit-1": "/es/curso/avanzado/unidad-1/",
+    "course/advanced/unit-2": "/es/curso/avanzado/unidad-2/",
+    "course/advanced/unit-3": "/es/curso/avanzado/unidad-3/",
+    "course/advanced/unit-4": "/es/curso/avanzado/unidad-4/",
+    "course/advanced/unit-5": "/es/curso/avanzado/unidad-5/",
+    "course/advanced/unit-6": "/es/curso/avanzado/unidad-6/",
+    "course/advanced/unit-7": "/es/curso/avanzado/unidad-7/",
+    "course/advanced/unit-8": "/es/curso/avanzado/unidad-8/",
+    "course/advanced/unit-9": "/es/curso/avanzado/unidad-9/",
+    "course/advanced/unit-10": "/es/curso/avanzado/unidad-10/",
+    "course/advanced/exam": "/es/curso/avanzado/examen/",
     "meme-portfolio": "/es/meme-portfolio/all/",
     "site-index": "/es/indice-del-sitio/",
   },
