@@ -1,0 +1,143 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import WordPairLab from "@components/course/WordPairLab";
+import ErrorSpotter from "@components/course/ErrorSpotter";
+import SentenceTransformer from "@components/course/SentenceTransformer";
+import { advancedUnits } from "@data/advanced/units";
+import { verbPairs, weakAdverbs, sentenceTransforms } from "@data/advanced/unit-1";
+import { ArrowRight, Sparkles, TrendingUp, Search, Zap } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/advanced/unit-1" as const;
+
+const progressUnits = advancedUnits.map((u) => ({
+  id: u.id,
+  slug: u.slug,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unit 1: Weak Phrasing → Strong Phrasing | Speak with Confidence | NY English Teacher"
+  description="Replace 'got', 'made', and 'did' with 'earned', 'built', and 'delivered'. Kill weak adverbs. Rewrite flat sentences into sentences with impact. Free advanced English lesson for B2-C1 Spanish speakers."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={1}
+    basePath="/en/course/advanced"
+    lang="en"
+    courseId="advanced"
+  />
+
+  <!-- Unit hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-violet-400 text-sm font-semibold mb-3">
+          <Sparkles class="w-4 h-4" />
+          Unit 1
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Weak Phrasing → Strong Phrasing
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Advanced learners lean on a small set of weak verbs — "got", "made", "did" — and
+          pad them with empty adverbs like "very", "really", and "just." Native professionals
+          reach for specific, strong language that carries authority. This unit rewires
+          your word choices at three levels: the verb, the adverb, and the full sentence.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium">
+            <TrendingUp class="w-3.5 h-3.5" /> Strong Verbs
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium">
+            <Search class="w-3.5 h-3.5" /> Adverb Removal
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium">
+            <Zap class="w-3.5 h-3.5" /> Sentence Impact
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Weak verbs → Strong verbs -->
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Weak Verbs → Strong Verbs</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          See the weak version, then reveal the strong upgrade. Notice how one word changes
+          the entire impact of the sentence.
+        </p>
+        <WordPairLab client:visible pairs={verbPairs} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Killing Weak Adverbs -->
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Killing Weak Adverbs</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Each sentence has one word that weakens it. Tap the offending word to remove it
+          and see the upgraded version.
+        </p>
+        <ErrorSpotter client:visible items={weakAdverbs} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Rewriting Flat Sentences -->
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Rewriting Flat Sentences</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Flat sentences are the biggest tell of a non-native speaker. See the before and
+          after — and learn the technique behind each transformation.
+        </p>
+        <SentenceTransformer client:visible transforms={sentenceTransforms} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex justify-between items-center">
+        <a
+          href="/en/course/advanced/"
+          class="text-sm text-slate-500 hover:text-violet-600 transition-colors"
+        >
+          &larr; Course Overview
+        </a>
+        <Button href="/en/course/advanced/" variant="primary" size="md">
+          Course Overview
+          <ArrowRight class="w-4 h-4 ml-1" />
+        </Button>
+      </div>
+    </div>
+  </section>
+</Base>
