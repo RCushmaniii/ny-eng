@@ -1,0 +1,136 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import WordPairLab from "@components/course/WordPairLab";
+import ErrorSpotter from "@components/course/ErrorSpotter";
+import SentenceTransformer from "@components/course/SentenceTransformer";
+import { advancedUnits } from "@data/advanced/units";
+import { countablePairs, confusableVerbs, verbChoiceTransforms } from "@data/advanced/unit-2";
+import { ArrowRight, AlertTriangle, Scale, Search, Zap } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/advanced/unit-2" as const;
+
+const progressUnits = advancedUnits.map((u) => ({
+  id: u.id,
+  slug: u.slug,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unit 2: Word Traps | Speak with Confidence | NY English Teacher"
+  description="Fewer vs less, say vs tell, make vs do, bring vs take — the word traps that haunt every advanced speaker. Free B2-C1 English lesson for Spanish speakers."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={2}
+    basePath="/en/course/advanced"
+    lang="en"
+    courseId="advanced"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-violet-400 text-sm font-semibold mb-3">
+          <AlertTriangle class="w-4 h-4" />
+          Unit 2
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Word Traps That Trip Up Advanced Speakers
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          There's a short list of word pairs that even C1 speakers get wrong consistently.
+          Fewer vs less. Say vs tell. Make vs do. Win vs beat. This unit drills them until the
+          right choice becomes automatic — no more hesitating mid-sentence.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium">
+            <Scale class="w-3.5 h-3.5" /> Countable vs Uncountable
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium">
+            <Search class="w-3.5 h-3.5" /> Confusable Verbs
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium">
+            <Zap class="w-3.5 h-3.5" /> Verb Choice
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Much vs Many, Few vs Little, Fewer vs Less</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          The countable/uncountable distinction. See the wrong version, then reveal the right one
+          with the rule explained.
+        </p>
+        <WordPairLab client:visible pairs={countablePairs} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Loan vs Borrow, Bring vs Take, Lend vs Let</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          Tap the wrong word in each sentence. These verb pairs are confused because Spanish
+          uses one word where English uses two.
+        </p>
+        <ErrorSpotter client:visible items={confusableVerbs} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Say vs Tell, Make vs Do, Win vs Earn vs Beat</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">
+          See the sentence with the wrong verb, then reveal the corrected version with the rule.
+        </p>
+        <SentenceTransformer client:visible transforms={verbChoiceTransforms} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex justify-between items-center">
+        <a
+          href="/en/course/advanced/unit-1/"
+          class="text-sm text-slate-500 hover:text-violet-600 transition-colors"
+        >
+          &larr; Unit 1
+        </a>
+        <Button href="/en/course/advanced/" variant="primary" size="md">
+          Course Overview
+          <ArrowRight class="w-4 h-4 ml-1" />
+        </Button>
+      </div>
+    </div>
+  </section>
+</Base>
