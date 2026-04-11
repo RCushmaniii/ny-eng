@@ -25,7 +25,7 @@ function renderHighlighted(
   text: string,
   highlight: string,
   flavor: "weak" | "strong",
-): React.ReactNode {
+): JSX.Element {
   if (!highlight || !text.includes(highlight)) {
     return text;
   }

@@ -6,6 +6,7 @@ import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
+import sentry from "@sentry/astro";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -138,6 +139,22 @@ export default defineConfig({
     mdx(),
     tailwind({ applyBaseStyles: false }),
     icon({ include: { lucide: ["*"] } }),
+
+    // Sentry error monitoring — org: cushlabsai, project: ny-eng
+    // DSN must be set in env vars (SENTRY_DSN) for error reporting to activate.
+    // Without the DSN the integration is a no-op — safe to deploy.
+    ...(process.env.SENTRY_DSN
+      ? [
+          sentry({
+            dsn: process.env.SENTRY_DSN,
+            sourceMapsUploadOptions: {
+              project: "ny-eng",
+              org: "cushlabsai",
+              authToken: process.env.SENTRY_AUTH_TOKEN,
+            },
+          }),
+        ]
+      : []),
 
     sitemap({
       changefreq: "weekly",
