@@ -7,6 +7,7 @@ import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import sentry from "@sentry/astro";
+import vercel from "@astrojs/vercel/static";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -94,6 +95,11 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   site: SITE,
   output: "static",
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   // API routes are excluded from build - they won't be included in dist/
 
   image: {
