@@ -47,3 +47,6 @@ scripts/seo/.submissions/
 
 # Cloudflare Worker config (contains client IDs)
 wrangler.toml
+
+.vercel
+.env*.local

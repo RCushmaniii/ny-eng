@@ -1,0 +1,102 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import WordPairLab from "@components/course/WordPairLab";
+import ErrorSpotter from "@components/course/ErrorSpotter";
+import SentenceTransformer from "@components/course/SentenceTransformer";
+import { advancedUnits } from "@data/advanced/units";
+import { pronounPairs, reflexiveErrors, objectPronounTransforms } from "@data/advanced/unit-3";
+import { ArrowRight, Users, UserCheck, Search, Zap } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/advanced/unit-3" as const;
+
+const progressUnits = advancedUnits.map((u) => ({
+  id: u.id, slug: u.slugEs, title: u.title, titleEs: u.titleEs,
+}));
+---
+
+<Base lang={lang} tkey={tkey}
+  title="Unidad 3: Pronombres Bien Usados | Habla con Confianza | NY English Teacher"
+  description="Sujeto vs objeto, trampas reflexivas, objeto directo vs indirecto. Corrige los errores de pronombres que delatan a hablantes avanzados como no nativos. Lección B2-C1 gratis para hispanohablantes."
+>
+  <CourseProgress client:load units={progressUnits} currentUnit={3} basePath="/es/curso/avanzado" lang="es" courseId="advanced" />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-violet-400 text-sm font-semibold mb-3">
+          <Users class="w-4 h-4" />
+          Unidad 3
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Pronombres Bien Usados
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Los errores de pronombres son sutiles — pero son una de las señales más rápidas
+          de un hablante no nativo. "Between you and I" suena educado pero en realidad es
+          incorrecto. "Please contact myself" suena profesional pero es un mal uso del
+          reflexivo. Esta unidad limpia todas las trampas de pronombres.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium">
+            <UserCheck class="w-3.5 h-3.5" /> Sujeto vs Objeto
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium">
+            <Search class="w-3.5 h-3.5" /> Trampas Reflexivas
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium">
+            <Zap class="w-3.5 h-3.5" /> Colocación de Objetos
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">1</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Pronombres de Sujeto vs Objeto</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">¿He o him? ¿She o her? La prueba de "quita a la otra persona" lo hace instantáneo.</p>
+      <WordPairLab client:visible pairs={pronounPairs} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">2</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Pronombres Reflexivos — Cuándo Están Mal</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">"Please contact myself" suena profesional. No lo es — es incorrecto. Toca el reflexivo mal usado en cada oración.</p>
+      <ErrorSpotter client:visible items={reflexiveErrors} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">3</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Pronombres de Objeto Directo vs Indirecto</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">"I gave to her the book" vs "I gave her the book" — el orden de las palabras importa más de lo que piensas.</p>
+      <SentenceTransformer client:visible transforms={objectPronounTransforms} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex justify-between items-center">
+        <a href="/es/curso/avanzado/unidad-2/" class="text-sm text-slate-500 hover:text-violet-600 transition-colors">&larr; Unidad 2</a>
+        <Button href="/es/curso/avanzado/unidad-4/" variant="primary" size="md">
+          Unidad 4: Which, That, Who, When <ArrowRight class="w-4 h-4 ml-1" />
+        </Button>
+      </div>
+    </div>
+  </section>
+</Base>
