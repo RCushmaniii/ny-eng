@@ -16,5 +16,12 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - name: Build
+
+      - name: Lint (TypeScript & React)
+        run: npx eslint "src/**/*.{ts,tsx}" 2>&1 || echo "::warning::Lint found issues — see output above"
+
+      - name: Type check
+        run: npx astro check --minimumSeverity warning 2>&1 || true
+
+      - name: Build (includes sitemap validation)
         run: npm run build
