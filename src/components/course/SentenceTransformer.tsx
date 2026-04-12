@@ -70,9 +70,14 @@ export default function SentenceTransformer({ transforms, lang }: Props) {
             {lang === "es" ? "La versión plana:" : "The flat version:"}
           </p>
           <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
-            <p className="text-base text-slate-700 italic leading-relaxed">
-              "{current.flat}"
-            </p>
+            <div className="flex items-start justify-between gap-3">
+              <p className="text-base text-slate-700 italic leading-relaxed flex-1">
+                "{current.flat}"
+              </p>
+              <div className="shrink-0 mt-1">
+                <AudioButton text={current.flat} size="sm" />
+              </div>
+            </div>
             <p className="text-sm text-slate-400 mt-1">{current.flatEs}</p>
           </div>
         </div>
@@ -101,14 +106,9 @@ export default function SentenceTransformer({ transforms, lang }: Props) {
           ) : (
             <div className="space-y-3">
               <div className="bg-gradient-to-br from-amber-50 to-amber-100 border-2 border-amber-300 rounded-xl p-4">
-                <div className="flex items-start justify-between gap-3">
-                  <p className="text-base text-slate-900 font-medium leading-relaxed flex-1">
-                    "{current.strong}"
-                  </p>
-                  <div className="shrink-0 mt-1">
-                    <AudioButton text={current.strong} size="sm" />
-                  </div>
-                </div>
+                <p className="text-base text-slate-900 font-medium leading-relaxed">
+                  "{current.strong}"
+                </p>
                 <p className="text-sm text-slate-500 mt-2">{current.strongEs}</p>
 
                 {/* Technique badge + explanation */}

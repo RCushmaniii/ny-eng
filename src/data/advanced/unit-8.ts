@@ -13,6 +13,7 @@ import type { WordBreakdown, SentenceTransform } from "./types";
 export const prefixWords: WordBreakdown[] = [
   {
     word: "uncomfortable",
+    phoneme: "ʌnˈkʌmf.tɚ.bəl",
     parts: [
       { text: "un-", role: "prefix", meaning: "not / opposite of", meaningEs: "no / lo opuesto de" },
       { text: "comfort", role: "root", meaning: "ease, relief", meaningEs: "comodidad, alivio" },
@@ -36,6 +37,7 @@ export const prefixWords: WordBreakdown[] = [
   },
   {
     word: "misunderstand",
+    phoneme: "ˌmɪs.ʌn.dɚˈstænd",
     parts: [
       { text: "mis-", role: "prefix", meaning: "wrongly / badly", meaningEs: "incorrectamente / mal" },
       { text: "understand", role: "root", meaning: "to comprehend", meaningEs: "comprender" },
@@ -47,6 +49,7 @@ export const prefixWords: WordBreakdown[] = [
   },
   {
     word: "overestimate",
+    phoneme: "ˌoʊ.vɚˈɛs.tɪ.meɪt",
     parts: [
       { text: "over-", role: "prefix", meaning: "too much / excessively", meaningEs: "demasiado / excesivamente" },
       { text: "estimate", role: "root", meaning: "to guess the value/amount", meaningEs: "calcular el valor/cantidad" },
@@ -98,6 +101,7 @@ export const prefixWords: WordBreakdown[] = [
 export const suffixWords: WordBreakdown[] = [
   {
     word: "communication",
+    phoneme: "kəˌmjuː.nɪˈkeɪ.ʃən",
     parts: [
       { text: "communicate", role: "root", meaning: "to exchange information (verb)", meaningEs: "intercambiar información (verbo)" },
       { text: "-tion", role: "suffix", meaning: "turns a verb into a noun (the act of)", meaningEs: "convierte un verbo en sustantivo (el acto de)" },
@@ -131,6 +135,7 @@ export const suffixWords: WordBreakdown[] = [
   },
   {
     word: "strengthen",
+    phoneme: "ˈstrɛŋ.θən",
     parts: [
       { text: "strength", role: "root", meaning: "power, force (noun)", meaningEs: "fuerza, poder (sustantivo)" },
       { text: "-en", role: "suffix", meaning: "to make or become (verb)", meaningEs: "hacer o volverse (verbo)" },
@@ -164,6 +169,7 @@ export const suffixWords: WordBreakdown[] = [
   },
   {
     word: "basically",
+    phoneme: "ˈbeɪ.sɪ.kli",
     parts: [
       { text: "basic", role: "root", meaning: "fundamental (adjective)", meaningEs: "fundamental (adjetivo)" },
       { text: "-ally", role: "suffix", meaning: "in the manner of (adverb)", meaningEs: "de la manera de (adverbio)" },

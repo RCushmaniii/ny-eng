@@ -6,8 +6,13 @@
  * API key stays server-side — never exposed to the browser.
  *
  * POST /api/tts/synthesize
- * Body: { text: string, voice?: string, lang?: "en" | "es" }
+ * Body: { text: string, voice?: string, lang?: "en" | "es", phoneme?: string }
  * Response: audio/mpeg binary
+ *
+ * The optional `phoneme` field accepts an IPA string that overrides how
+ * Azure pronounces the text. Example: { text: "uncomfortable", phoneme: "ʌnˈkʌmf.tɚ.bəl" }
+ * This wraps the text in an SSML <phoneme> tag server-side so the client
+ * never needs to craft raw SSML.
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node";
@@ -68,7 +73,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: "TTS service not configured" });
   }
 
-  const { text, voice, lang } = req.body || {};
+  const { text, voice, lang, phoneme } = req.body || {};
 
   if (!text || typeof text !== "string") {
     return res.status(400).json({ error: "Missing or invalid 'text' field" });
@@ -98,10 +103,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Extract language tag from voice name (e.g., "en-US" from "en-US-AndrewNeural")
   const voiceLang = selectedVoice.split("-").slice(0, 2).join("-");
 
-  // Build SSML
+  // Build SSML content — optionally wrap in <phoneme> for pronunciation override
+  const escapedText = escapeXml(cleanText);
+  const ipaRegex = /^[\u0020-\u007E\u00C0-\u024F\u0250-\u02AF\u0300-\u036F\u2000-\u206F.ˈˌːˑ]+$/;
+  const textContent =
+    phoneme && typeof phoneme === "string" && phoneme.length <= 100 && ipaRegex.test(phoneme)
+      ? `<phoneme alphabet="ipa" ph="${escapeXml(phoneme)}">${escapedText}</phoneme>`
+      : escapedText;
+
   const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="${voiceLang}">
   <voice name="${selectedVoice}">
-    <prosody rate="0.9">${escapeXml(cleanText)}</prosody>
+    <prosody rate="0.9">${textContent}</prosody>
   </voice>
 </speak>`;
 
