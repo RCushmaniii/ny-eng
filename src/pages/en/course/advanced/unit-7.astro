@@ -1,0 +1,96 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import WordPairLab from "@components/course/WordPairLab";
+import ErrorSpotter from "@components/course/ErrorSpotter";
+import SentenceTransformer from "@components/course/SentenceTransformer";
+import { advancedUnits } from "@data/advanced/units";
+import { advancedContractions, negativeErrors, noContractTransforms } from "@data/advanced/unit-7";
+import { ArrowRight, Zap, ShieldAlert, Scale } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/advanced/unit-7" as const;
+const progressUnits = advancedUnits.map((u) => ({ id: u.id, slug: u.slug, title: u.title, titleEs: u.titleEs }));
+---
+
+<Base lang={lang} tkey={tkey}
+  title="Unit 7: Contractions, Flipped | Speak with Confidence | NY English Teacher"
+  description="Advanced contractions like I'd've and shouldn't've — plus when NOT to contract. Master the compression and expansion of spoken English. Free advanced English lesson for B2-C1 Spanish speakers."
+>
+  <CourseProgress client:load units={progressUnits} currentUnit={7} basePath="/en/course/advanced" lang="en" courseId="advanced" />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-violet-400 text-sm font-semibold mb-3"><Zap class="w-4 h-4" /> Unit 7</div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Contractions, Flipped
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Native speakers compress words constantly — I'd've, shouldn't've, gonna, wanna.
+          These aren't slang. They're how English actually sounds. But knowing when to
+          expand back out — for emphasis, formality, or power — is equally important.
+          This unit teaches both directions.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Zap class="w-3.5 h-3.5" /> Advanced Contractions</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><ShieldAlert class="w-3.5 h-3.5" /> Double Negatives</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Scale class="w-3.5 h-3.5" /> Register Awareness</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">1</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Advanced Contractions</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">
+        Beyond I'm, he's, and we'll — these are the double contractions and informal
+        compressions that make you sound like a native speaker, not a textbook.
+      </p>
+      <WordPairLab client:visible pairs={advancedContractions} lang="en" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">2</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Negative Contractions & Double Negatives</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">
+        In Spanish, double negatives are correct. In English, they cancel each other out.
+        Tap the word that creates the double negative in each sentence.
+      </p>
+      <ErrorSpotter client:visible items={negativeErrors} lang="en" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">3</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">When NOT to Contract</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">
+        Contractions compress. But sometimes you need to expand — for emphasis, formality,
+        or precision. Knowing when to switch registers is what separates an advanced
+        speaker from a truly polished one.
+      </p>
+      <SentenceTransformer client:visible transforms={noContractTransforms} lang="en" />
+    </div></div>
+  </section>
+
+  <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto flex justify-between items-center">
+      <a href="/en/course/advanced/unit-6/" class="text-sm text-slate-500 hover:text-violet-600 transition-colors">&larr; Unit 6</a>
+      <Button href="/en/course/advanced/" variant="primary" size="md">Course Overview <ArrowRight class="w-4 h-4 ml-1" /></Button>
+    </div></div>
+  </section>
+</Base>

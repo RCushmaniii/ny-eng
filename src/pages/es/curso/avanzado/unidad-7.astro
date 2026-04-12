@@ -1,0 +1,77 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import WordPairLab from "@components/course/WordPairLab";
+import ErrorSpotter from "@components/course/ErrorSpotter";
+import SentenceTransformer from "@components/course/SentenceTransformer";
+import { advancedUnits } from "@data/advanced/units";
+import { advancedContractions, negativeErrors, noContractTransforms } from "@data/advanced/unit-7";
+import { ArrowRight, Zap, ShieldAlert, Scale } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/advanced/unit-7" as const;
+const progressUnits = advancedUnits.map((u) => ({ id: u.id, slug: u.slugEs, title: u.title, titleEs: u.titleEs }));
+---
+
+<Base lang={lang} tkey={tkey}
+  title="Unidad 7: Contracciones, Invertidas | Habla con Confianza | NY English Teacher"
+  description="Contracciones avanzadas como I'd've y shouldn't've — y cuándo NO contraer. Domina la compresión y expansión del inglés hablado. Lección B2-C1 gratis para hispanohablantes."
+>
+  <CourseProgress client:load units={progressUnits} currentUnit={7} basePath="/es/curso/avanzado" lang="es" courseId="advanced" />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-violet-400 text-sm font-semibold mb-3"><Zap class="w-4 h-4" /> Unidad 7</div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Contracciones, Invertidas
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Los hablantes nativos comprimen palabras constantemente — I'd've, shouldn't've,
+          gonna, wanna. No son jerga. Son como realmente suena el inglés. Pero saber
+          cuándo expandir — por énfasis, formalidad o poder — es igualmente importante.
+          Esta unidad enseña ambas direcciones.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Zap class="w-3.5 h-3.5" /> Contracciones Avanzadas</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><ShieldAlert class="w-3.5 h-3.5" /> Dobles Negativos</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Scale class="w-3.5 h-3.5" /> Conciencia de Registro</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2"><span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">1</span><h2 class="text-2xl md:text-3xl font-bold text-slate-900">Contracciones Avanzadas</h2></div>
+      <p class="text-slate-500 mb-8 ml-11">Más allá de I'm, he's y we'll — estas son las contracciones dobles y compresiones informales que te hacen sonar como un nativo, no como un libro de texto.</p>
+      <WordPairLab client:visible pairs={advancedContractions} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2"><span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">2</span><h2 class="text-2xl md:text-3xl font-bold text-slate-900">Contracciones Negativas y Dobles Negativos</h2></div>
+      <p class="text-slate-500 mb-8 ml-11">En español, los dobles negativos son correctos. En inglés, se cancelan entre sí. Toca la palabra que crea el doble negativo en cada oración.</p>
+      <ErrorSpotter client:visible items={negativeErrors} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2"><span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">3</span><h2 class="text-2xl md:text-3xl font-bold text-slate-900">Cuándo NO Contraer</h2></div>
+      <p class="text-slate-500 mb-8 ml-11">Las contracciones comprimen. Pero a veces necesitas expandir — por énfasis, formalidad o precisión. Saber cuándo cambiar de registro es lo que separa a un hablante avanzado de uno verdaderamente pulido.</p>
+      <SentenceTransformer client:visible transforms={noContractTransforms} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto flex justify-between items-center">
+      <a href="/es/curso/avanzado/unidad-6/" class="text-sm text-slate-500 hover:text-violet-600 transition-colors">&larr; Unidad 6</a>
+      <Button href="/es/curso/avanzado/" variant="primary" size="md">Resumen del Curso <ArrowRight class="w-4 h-4 ml-1" /></Button>
+    </div></div>
+  </section>
+</Base>
