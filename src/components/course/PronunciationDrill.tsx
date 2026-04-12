@@ -10,7 +10,7 @@ interface Props {
 
 export default function PronunciationDrill({ drills, lang }: Props) {
   const [activeDrill, setActiveDrill] = useState(0);
-  const [showAnswer, setShowAnswer] = useState(false);
+  const [_showAnswer, setShowAnswer] = useState(false);
 
   const drill = drills[activeDrill];
 

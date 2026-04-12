@@ -100,7 +100,7 @@ export function getAlternateLanguageUrl(
         staticPageMap[cleanPath] || reverseStaticPageMap[cleanPath] || null
       );
 
-    case "service":
+    case "service": {
       const serviceSlug = cleanPath.split("/").filter(Boolean).pop();
       if (cleanPath.startsWith("/en/services/") && serviceSlug) {
         const esSlug = serviceMap[serviceSlug];
@@ -110,8 +110,9 @@ export function getAlternateLanguageUrl(
         return enSlug ? `/en/services/${enSlug}/` : null;
       }
       return null;
+    }
 
-    case "blog":
+    case "blog": {
       const blogSlug = cleanPath.split("/").filter(Boolean).pop();
       if (cleanPath.startsWith("/en/blog/") && blogSlug) {
         const esSlug = blogTranslationMap[blogSlug];
@@ -121,8 +122,9 @@ export function getAlternateLanguageUrl(
         return enSlug ? `/en/blog/${enSlug}/` : null;
       }
       return null;
+    }
 
-    case "category":
+    case "category": {
       const categorySlug = cleanPath.split("/").filter(Boolean).pop();
       if (cleanPath.startsWith("/en/category/") && categorySlug) {
         const esSlug = categoryMap[categorySlug];
@@ -132,6 +134,7 @@ export function getAlternateLanguageUrl(
         return enSlug ? `/en/category/${enSlug}/` : null;
       }
       return null;
+    }
 
     default:
       return null;

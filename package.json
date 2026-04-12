@@ -87,6 +87,8 @@
     "postcss": "^8.5.4",
     "postcss-discard-duplicates": "^7.0.2",
     "postcss-merge-longhand": "^7.0.5",
+    "prettier": "^3.8.2",
+    "prettier-plugin-astro": "^0.14.1",
     "resend": "^6.7.0",
     "sharp": "^0.34.3",
     "tailwind-merge": "^3.3.1",

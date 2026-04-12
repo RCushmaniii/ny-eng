@@ -1,29 +1,22 @@
 // src/data/services.ts
 
-// Import from the central service categories using proper Astro alias pattern
-import { serviceCategories } from "@data/service-categories.js";
 import type { ImageMetadata } from "astro";
 
 // Import service images from assets
 import executiveEnglishImage from "@assets/images/services/executive-english-services.jpg";
-import technicalSalesImage from "@assets/images/services/technical-sales-services.jpg";
 import logisticsImage from "@assets/images/services/logistics-services.jpg";
 import medicalImage from "@assets/images/services/medical-services.jpg";
-import interviewPrepImage from "@assets/images/services/interview-prep-services.jpg";
 import publicSpeakingImage from "@assets/images/services/public-speaking-services.jpg";
 import startupFoundersImage from "@assets/images/services/startup-founders-services.jpg";
 import techImage from "@assets/images/services/tech-services.jpg";
 
 // Import industry square images
-import executiveEngSquareImage from "@assets/images/industries/executive-eng.jpg";
 import executiveEnglishSquareImage from "@assets/images/industries/executive-english.jpg";
-import interviewPrepSquareImage from "@assets/images/industries/interview-prep.jpg";
 import logisticsSquareImage from "@assets/images/industries/logistics.jpg";
 import medicalSquareImage from "@assets/images/industries/medical.jpg";
 import publicSpeakingSquareImage from "@assets/images/industries/public-speaking.jpg";
 import startupFoundersSquareImage from "@assets/images/industries/startup-founders.jpg";
 import techSquareImage from "@assets/images/industries/tech.jpg";
-import technicalSalesSquareImage from "@assets/images/industries/technical-sales.jpg";
 
 export interface Service {
   title: string;

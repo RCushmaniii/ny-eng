@@ -11,9 +11,7 @@ export function generateJsonLd(lang: string = "en") {
 
   // Determine language-specific properties
   const inLanguage = lang === "es" ? "es-ES" : "en-US";
-  const aboutPage = lang === "es" ? "/es/about/" : "/en/about/";
   const contactPage = lang === "es" ? "/es/contact/" : "/en/contact/";
-  const servicesPage = lang === "es" ? "/es/servicios/" : "/en/services/";
   const blogPage = lang === "es" ? "/es/blog/" : "/en/blog/";
 
   // Build the JSON-LD schema

@@ -63,7 +63,7 @@ export default function AudioButton({
   label,
 }: AudioButtonProps) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [ready, setReady] = useState(voicesLoaded);
+  const [_ready, setReady] = useState(voicesLoaded);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
   // Ensure voices are loaded before first interaction

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Eye, RotateCcw, Clock, ArrowDown } from "lucide-react";
+import { Eye, RotateCcw, Clock } from "lucide-react";
 import AudioButton from "./AudioButton";
 
 export interface TimelineEvent {

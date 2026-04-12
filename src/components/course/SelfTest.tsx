@@ -1,10 +1,8 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   RotateCcw,
   Eye,
-  ArrowRight,
   Trophy,
-  Languages,
 } from "lucide-react";
 import AudioButton from "./AudioButton";
 interface VocabItemBase {

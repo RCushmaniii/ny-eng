@@ -89,7 +89,7 @@ export default function FreeResourcesHub({
     // Apply sorting
     filtered.sort((a, b) => {
       switch (sortBy) {
-        case "popular":
+        case "popular": {
           const aDownloads = a.analytics?.downloadCount || 0;
           const bDownloads = b.analytics?.downloadCount || 0;
           if (bDownloads !== aDownloads) return bDownloads - aDownloads;
@@ -97,6 +97,7 @@ export default function FreeResourcesHub({
             new Date(b.metadata.datePublished).getTime() -
             new Date(a.metadata.datePublished).getTime()
           );
+        }
 
         case "newest":
           return (

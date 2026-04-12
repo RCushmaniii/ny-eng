@@ -30,7 +30,7 @@ export const executivesConfig: QuizConfig = {
             index: 2,
             score: 3,
             label:
-              "Regularly—people ask follow-up questions because they didn\'t fully get it",
+              "Regularly—people ask follow-up questions because they didn't fully get it",
           },
           {
             index: 3,

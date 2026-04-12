@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, ExternalLink } from "lucide-react";
-import { homepageFAQs, type HomepageFAQ } from "@data/homepage-faqs";
+import { homepageFAQs } from "@data/homepage-faqs";
 
 interface HomepageFAQProps {
   lang: "en" | "es";

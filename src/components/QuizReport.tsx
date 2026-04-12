@@ -138,7 +138,7 @@ export default function QuizReport() {
     }
 
     // Determine Impact Info based on config + score
-    let impact = { sectionTitle: "The Real Cost", title: "", text: "" };
+    const impact = { sectionTitle: "The Real Cost", title: "", text: "" };
     const { totalScore, scoreTier } = scoreBreakdown;
 
     if (config.results) {
@@ -205,7 +205,7 @@ export default function QuizReport() {
     let assessment: string | null = null;
     try {
       assessment = sessionStorage.getItem("aiAssessment");
-    } catch {}
+    } catch { /* Silent fail */ }
 
     // --- Set State ---
     setLeadData(lead);
