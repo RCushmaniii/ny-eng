@@ -21,7 +21,7 @@ const roleColors: Record<string, { bg: string; text: string; label: string; labe
   suffix: { bg: "bg-emerald-100", text: "text-emerald-700", label: "suffix", labelEs: "sufijo" },
 };
 
-function AzureAudioButton({ text, className = "" }: { text: string; className?: string }) {
+function AzureAudioButton({ text, phoneme, className = "" }: { text: string; phoneme?: string; className?: string }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const cacheRef = useRef<Map<string, string>>(new Map());
@@ -42,7 +42,7 @@ function AzureAudioButton({ text, className = "" }: { text: string; className?: 
         const response = await fetch("/api/tts/synthesize", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text, lang: "en" }),
+          body: JSON.stringify({ text, lang: "en", ...(phoneme && { phoneme }) }),
         });
 
         if (!response.ok) throw new Error(`TTS error: ${response.status}`);
@@ -73,7 +73,7 @@ function AzureAudioButton({ text, className = "" }: { text: string; className?: 
         setIsPlaying(false);
       }
     }
-  }, [text]);
+  }, [text, phoneme]);
 
   return (
     <button
@@ -144,7 +144,7 @@ export default function WordBuilder({ words, lang }: Props) {
             <span className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
               {current.word}
             </span>
-            <AzureAudioButton text={current.word} />
+            <AzureAudioButton text={current.word} phoneme={current.phoneme} />
           </div>
           {!isRevealed && (
             <p className="text-slate-400 text-sm mt-3">

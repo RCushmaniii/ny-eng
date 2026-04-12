@@ -96,6 +96,8 @@ export interface MinimalPair {
 export interface WordBreakdown {
   /** The whole word */
   word: string;
+  /** Optional IPA phoneme for Azure TTS pronunciation override */
+  phoneme?: string;
   /** Each meaningful piece in order */
   parts: Array<{
     text: string;
