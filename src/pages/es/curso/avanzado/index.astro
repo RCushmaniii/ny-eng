@@ -48,29 +48,36 @@ const iconMap: Record<string, any> = {
       <div class="absolute top-20 left-10 w-72 h-72 bg-violet-500 rounded-full blur-3xl"></div>
       <div class="absolute bottom-10 right-10 w-96 h-96 bg-amber-500 rounded-full blur-3xl"></div>
     </div>
-    <div class="site-container mx-auto px-4 relative z-10">
+    <div class="site-container mx-auto px-4 relative z-10 text-white">
       <div class="max-w-3xl">
-        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-semibold mb-6">
           <GraduationCap class="w-4 h-4" />
           Curso Gratis · B2 → C1
         </div>
         <h1
-          class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
           style="font-family: 'Noto Sans KR', sans-serif;"
         >
-          {advancedInfo.titleEs}
+          Tu Inglés Es Bueno.<br />
+          <span class="text-amber-400">Vamos a Hacerlo Increíble.</span>
         </h1>
-        <p class="text-xl text-slate-300 max-w-2xl leading-relaxed mb-8">
+        <p class="text-xl text-slate-200 mb-8 max-w-2xl leading-relaxed">
           Puedes tener conversaciones. Puedes escribir correos. Puedes presentar.
           Pero algo todavía suena <strong class="text-white">mal</strong> — y no
           logras descifrar qué es. Este curso corrige los errores específicos y granulares
           que delatan a un hablante avanzado como no nativo.
         </p>
-        <div class="flex flex-wrap gap-3">
-          <Button href="#units" variant="primary" size="lg">
-            Ver las 10 Unidades
+        <div class="flex flex-wrap gap-4">
+          <Button href="/es/curso/avanzado/unidad-1/" variant="primary" size="lg">
+            Empezar Unidad 1 — Gratis
             <ArrowRight class="w-5 h-5 ml-1" />
           </Button>
+          <a
+            href="#units"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            Ver las 10 Unidades
+          </a>
         </div>
       </div>
     </div>
