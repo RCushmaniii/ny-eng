@@ -1,0 +1,86 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import WordPairLab from "@components/course/WordPairLab";
+import ErrorSpotter from "@components/course/ErrorSpotter";
+import SentenceTransformer from "@components/course/SentenceTransformer";
+import { advancedUnits } from "@data/advanced/units";
+import { articlePairs, zeroArticleErrors, articleTrapTransforms } from "@data/advanced/unit-5";
+import { ArrowRight, Type, BookOpen, Search, Zap } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/advanced/unit-5" as const;
+const progressUnits = advancedUnits.map((u) => ({ id: u.id, slug: u.slug, title: u.title, titleEs: u.titleEs }));
+---
+
+<Base lang={lang} tkey={tkey}
+  title="Unit 5: Articles — A, An, The, or Nothing | Speak with Confidence | NY English Teacher"
+  description="The lifelong Spanish-speaker error, finally fixed. When to use a/an, the, or no article at all. Free advanced English lesson for B2-C1 Spanish speakers."
+>
+  <CourseProgress client:load units={progressUnits} currentUnit={5} basePath="/en/course/advanced" lang="en" courseId="advanced" />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-violet-400 text-sm font-semibold mb-3"><Type class="w-4 h-4" /> Unit 5</div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Articles: A, An, The, or Nothing
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Articles are the single most persistent error for Spanish speakers. They appear
+          in nearly every sentence. Even C2 speakers get them wrong. Spanish uses articles
+          where English doesn't, and English uses them where Spanish doesn't. This unit
+          drills the patterns until article choice becomes instinct.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><BookOpen class="w-3.5 h-3.5" /> A/An vs The</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Search class="w-3.5 h-3.5" /> Zero Article</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Zap class="w-3.5 h-3.5" /> Article Traps</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">1</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">When to Use A/An vs The</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">First mention, second mention, unique in context, superlatives — the core rules.</p>
+      <WordPairLab client:visible pairs={articlePairs} lang="en" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">2</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">When to Use No Article</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">Tap the article that shouldn't be there. Spanish uses articles for abstract nouns, meals, and transport — English doesn't.</p>
+      <ErrorSpotter client:visible items={zeroArticleErrors} lang="en" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">3</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Traps: Institutions, Geography, Fixed Expressions</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">The hardest article rules — instruments vs sports, "go to school" vs "go to the school," and the ultimate test sentence.</p>
+      <SentenceTransformer client:visible transforms={articleTrapTransforms} lang="en" />
+    </div></div>
+  </section>
+
+  <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto flex justify-between items-center">
+      <a href="/en/course/advanced/unit-4/" class="text-sm text-slate-500 hover:text-violet-600 transition-colors">&larr; Unit 4</a>
+      <Button href="/en/course/advanced/unit-6/" variant="primary" size="md">Unit 6: Pronunciation <ArrowRight class="w-4 h-4 ml-1" /></Button>
+    </div></div>
+  </section>
+</Base>
