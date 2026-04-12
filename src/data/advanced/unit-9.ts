@@ -107,26 +107,26 @@ export const wordOrderItems: ErrorSpotterItem[] = [
       "'Even' como enfatizador va después del primer auxiliar, no antes. El patrón es: [sujeto] + [auxiliar] + even + [verbo principal]. Es una de las reglas de orden más sutiles — pero los nativos lo notan de inmediato cuando está mal.",
   },
   {
-    sentence: "It was a round small black leather Italian bag.",
-    errorWord: "round",
-    improved: "It was a small round black Italian leather bag.",
-    sentenceEs: "Era una bolsa redonda pequeña negra de cuero italiana.",
-    improvedEs: "Era una pequeña bolsa redonda negra italiana de cuero.",
+    sentence: "She wore a long beautiful red dress to the interview.",
+    errorWord: "long",
+    improved: "She wore a beautiful long red dress to the interview.",
+    sentenceEs: "Ella usó un largo hermoso vestido rojo para la entrevista.",
+    improvedEs: "Ella usó un hermoso vestido largo y rojo para la entrevista.",
     explanation:
-      "English has a fixed adjective order: size → shape → color → origin → material. 'Small' (size) must come before 'round' (shape). Native speakers follow this instinctively — breaking the order sounds immediately wrong, even if you can't explain why.",
+      "English adjectives follow a strict order: opinion → size → age → shape → color → origin → material. 'Beautiful' is an opinion adjective — it always comes first, before 'long' (size). The full sequence here: beautiful (opinion) → long (size) → red (color). Native speakers follow this order instinctively and notice immediately when it's broken.",
     explanationEs:
-      "El inglés tiene un orden fijo de adjetivos: tamaño → forma → color → origen → material. 'Small' (tamaño) debe ir antes que 'round' (forma). Los nativos siguen esto instintivamente — romper el orden suena mal de inmediato, aunque no puedas explicar por qué.",
+      "Los adjetivos en inglés siguen un orden estricto: opinión → tamaño → edad → forma → color → origen → material. 'Beautiful' es un adjetivo de opinión — siempre va primero, antes de 'long' (tamaño). La secuencia correcta: beautiful (opinión) → long (tamaño) → red (color). Los nativos siguen este orden instintivamente y lo notan de inmediato cuando está roto.",
   },
   {
-    sentence: "He quickly very presented the results to the board.",
-    errorWord: "quickly",
-    improved: "He presented the results to the board very quickly.",
-    sentenceEs: "Él rápidamente muy presentó los resultados a la junta.",
-    improvedEs: "Presentó los resultados a la junta muy rápidamente.",
+    sentence: "She explained carefully the new process to her team.",
+    errorWord: "carefully",
+    improved: "She carefully explained the new process to her team.",
+    sentenceEs: "Ella explicó cuidadosamente el nuevo proceso a su equipo.",
+    improvedEs: "Ella explicó el nuevo proceso a su equipo con cuidado.",
     explanation:
-      "Never split a verb from its direct object with an adverb. 'Quickly' and 'very' are manner adverbs — they go after the full verb phrase, not between the verb and its object. The rule: verb + object first, then the manner adverb.",
+      "Never place a manner adverb between the verb and its direct object. 'Carefully' belongs either before the main verb ('She carefully explained...') or at the end of the sentence ('...to her team carefully'). Both positions are correct — the middle is not.",
     explanationEs:
-      "Nunca separes un verbo de su objeto directo con un adverbio. 'Quickly' y 'very' son adverbios de manera — van después de la frase verbal completa, no entre el verbo y su objeto. La regla: verbo + objeto primero, luego el adverbio de manera.",
+      "Nunca coloques un adverbio de manera entre el verbo y su objeto directo. 'Carefully' va antes del verbo principal ('She carefully explained...') o al final de la oración ('...to her team carefully'). Ambas posiciones son correctas — la del medio no lo es.",
   },
   {
     sentence: "She told yesterday to her manager about the issue.",

@@ -53,7 +53,7 @@ const progressUnits = advancedUnits.map((u) => ({ id: u.id, slug: u.slug, title:
         an intermediate speaker. Spot the repeated word that's making these sentences
         choppy — then see how a professional would combine them.
       </p>
-      <ErrorSpotter client:visible items={varietyItems} lang="en" />
+      <ErrorSpotter client:visible items={varietyItems} lang="en" instruction="Tap the repeated word making this sentence choppy:" instructionEs="Toca la palabra repetida que hace esta oración cortada:" />
     </div></div>
   </section>
 
@@ -68,7 +68,7 @@ const progressUnits = advancedUnits.map((u) => ({ id: u.id, slug: u.slug, title:
         These are the exact word-order mistakes that native speakers hear immediately —
         even when every individual word is correct. Tap the word that's in the wrong place.
       </p>
-      <ErrorSpotter client:visible items={wordOrderItems} lang="en" />
+      <ErrorSpotter client:visible items={wordOrderItems} lang="en" instruction="Tap the word that is in the wrong position:" instructionEs="Toca la palabra que está en la posición incorrecta:" />
     </div></div>
   </section>
 

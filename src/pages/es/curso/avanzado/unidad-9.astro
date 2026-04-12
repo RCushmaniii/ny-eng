@@ -54,7 +54,7 @@ const progressUnits = advancedUnits.map((u) => ({ id: u.id, slug: u.slugEs, titl
         un hablante intermedio. Detecta la palabra repetida que hace estas oraciones
         cortadas — luego ve cómo un profesional las combinaría.
       </p>
-      <ErrorSpotter client:visible items={varietyItems} lang="es" />
+      <ErrorSpotter client:visible items={varietyItems} lang="es" instruction="Tap the repeated word making this sentence choppy:" instructionEs="Toca la palabra repetida que hace esta oración cortada:" />
     </div></div>
   </section>
 
@@ -70,7 +70,7 @@ const progressUnits = advancedUnits.map((u) => ({ id: u.id, slug: u.slugEs, titl
         de inmediato — incluso cuando cada palabra individual es correcta. Toca la
         palabra que está en el lugar equivocado.
       </p>
-      <ErrorSpotter client:visible items={wordOrderItems} lang="es" />
+      <ErrorSpotter client:visible items={wordOrderItems} lang="es" instruction="Tap the word that is in the wrong position:" instructionEs="Toca la palabra que está en la posición incorrecta:" />
     </div></div>
   </section>
 
