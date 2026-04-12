@@ -1,0 +1,76 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import MinimalPairDrill from "@components/course/MinimalPairDrill";
+import ErrorSpotter from "@components/course/ErrorSpotter";
+import { advancedUnits } from "@data/advanced/units";
+import { sSoundPairs, enEndingErrors, hardSoundPairs } from "@data/advanced/unit-6";
+import { ArrowRight, Mic, Volume2, Search } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/advanced/unit-6" as const;
+const progressUnits = advancedUnits.map((u) => ({ id: u.id, slug: u.slugEs, title: u.title, titleEs: u.titleEs }));
+---
+
+<Base lang={lang} tkey={tkey}
+  title="Unidad 6: Pronunciación — Los Sonidos Difíciles | Habla con Confianza | NY English Teacher"
+  description="Las terminaciones en S, terminaciones en -en, TH, R y las vocales que delatan incluso a hispanohablantes fluidos. Ejercicios de pares mínimos. Lección B2-C1 gratis para hispanohablantes."
+>
+  <CourseProgress client:load units={progressUnits} currentUnit={6} basePath="/es/curso/avanzado" lang="es" courseId="advanced" />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-violet-400 text-sm font-semibold mb-3"><Mic class="w-4 h-4" /> Unidad 6</div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Pronunciación: Los Sonidos Difíciles
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Incluso los hablantes fluidos llevan detalles de pronunciación que delatan al inglés
+          no nativo. Esta unidad se enfoca en los sonidos específicos que marcan al hispanohablante:
+          las terminaciones en S que la mayoría confunde, las terminaciones en -en que se
+          sobre-pronuncian, y los sonidos TH/R/vocales que el español simplemente no tiene.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Volume2 class="w-3.5 h-3.5" /> Terminaciones en S</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Search class="w-3.5 h-3.5" /> Terminaciones en -EN</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Mic class="w-3.5 h-3.5" /> TH, R, Vocales</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2"><span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">1</span><h2 class="text-2xl md:text-3xl font-bold text-slate-900">El Sonido S</h2></div>
+      <p class="text-slate-500 mb-8 ml-11">Una letra, tres pronunciaciones: /s/, /z/, o /ɪz/. Escucha ambas palabras en cada par y aprende la regla que gobierna todos los plurales, verbos y posesivos.</p>
+      <MinimalPairDrill client:visible pairs={sSoundPairs} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2"><span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">2</span><h2 class="text-2xl md:text-3xl font-bold text-slate-900">Terminaciones en -EN</h2></div>
+      <p class="text-slate-500 mb-8 ml-11">Written, forgotten, strengthen, kitchen — la terminación -en apenas es una sílaba. Toca la versión sobre-pronunciada para ver cómo realmente debería sonar.</p>
+      <ErrorSpotter client:visible items={enEndingErrors} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2"><span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">3</span><h2 class="text-2xl md:text-3xl font-bold text-slate-900">TH, R, y las Vocales que Te Delatan</h2></div>
+      <p class="text-slate-500 mb-8 ml-11">Pares mínimos que atacan los sonidos exactos que el español no tiene. Escucha, compara y practica hasta que tu boca produzca el correcto.</p>
+      <MinimalPairDrill client:visible pairs={hardSoundPairs} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto flex justify-between items-center">
+      <a href="/es/curso/avanzado/unidad-5/" class="text-sm text-slate-500 hover:text-violet-600 transition-colors">&larr; Unidad 5</a>
+      <Button href="/es/curso/avanzado/" variant="primary" size="md">Resumen del Curso <ArrowRight class="w-4 h-4 ml-1" /></Button>
+    </div></div>
+  </section>
+</Base>

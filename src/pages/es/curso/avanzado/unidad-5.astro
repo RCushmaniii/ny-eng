@@ -1,0 +1,72 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import WordPairLab from "@components/course/WordPairLab";
+import ErrorSpotter from "@components/course/ErrorSpotter";
+import SentenceTransformer from "@components/course/SentenceTransformer";
+import { advancedUnits } from "@data/advanced/units";
+import { articlePairs, zeroArticleErrors, articleTrapTransforms } from "@data/advanced/unit-5";
+import { ArrowRight, Type, BookOpen, Search, Zap } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/advanced/unit-5" as const;
+const progressUnits = advancedUnits.map((u) => ({ id: u.id, slug: u.slugEs, title: u.title, titleEs: u.titleEs }));
+---
+
+<Base lang={lang} tkey={tkey}
+  title="Unidad 5: Artículos — A, An, The, o Nada | Habla con Confianza | NY English Teacher"
+  description="El error eterno de los hispanohablantes, finalmente corregido. Cuándo usar a/an, the, o ningún artículo. Lección avanzada B2-C1 gratis para hispanohablantes."
+>
+  <CourseProgress client:load units={progressUnits} currentUnit={5} basePath="/es/curso/avanzado" lang="es" courseId="advanced" />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-8 pb-16 md:pt-12 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-violet-400 text-sm font-semibold mb-3"><Type class="w-4 h-4" /> Unidad 5</div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">Artículos: A, An, The, o Nada</h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Los artículos son el error más persistente para los hispanohablantes. Aparecen en casi cada oración. Incluso los hablantes C2 los confunden. El español usa artículos donde el inglés no, y el inglés los usa donde el español no. Esta unidad practica los patrones hasta que la elección de artículos se vuelva instintiva.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><BookOpen class="w-3.5 h-3.5" /> A/An vs The</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Search class="w-3.5 h-3.5" /> Artículo Cero</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Zap class="w-3.5 h-3.5" /> Trampas de Artículos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2"><span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">1</span><h2 class="text-2xl md:text-3xl font-bold text-slate-900">Cuándo Usar A/An vs The</h2></div>
+      <p class="text-slate-500 mb-8 ml-11">Primera mención, segunda mención, único en contexto, superlativos — las reglas centrales.</p>
+      <WordPairLab client:visible pairs={articlePairs} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2"><span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">2</span><h2 class="text-2xl md:text-3xl font-bold text-slate-900">Cuándo No Usar Artículo</h2></div>
+      <p class="text-slate-500 mb-8 ml-11">Toca el artículo que sobra. El español usa artículos para sustantivos abstractos, comidas y transporte — el inglés no.</p>
+      <ErrorSpotter client:visible items={zeroArticleErrors} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2"><span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">3</span><h2 class="text-2xl md:text-3xl font-bold text-slate-900">Las Trampas: Instituciones, Geografía, Expresiones Fijas</h2></div>
+      <p class="text-slate-500 mb-8 ml-11">Las reglas de artículos más difíciles — instrumentos vs deportes, "go to school" vs "go to the school," y la oración prueba definitiva.</p>
+      <SentenceTransformer client:visible transforms={articleTrapTransforms} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto flex justify-between items-center">
+      <a href="/es/curso/avanzado/unidad-4/" class="text-sm text-slate-500 hover:text-violet-600 transition-colors">&larr; Unidad 4</a>
+      <Button href="/es/curso/avanzado/unidad-6/" variant="primary" size="md">Unidad 6: Pronunciación <ArrowRight class="w-4 h-4 ml-1" /></Button>
+    </div></div>
+  </section>
+</Base>
