@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect } from "react";
 import type { ExamQuestion, ExamResult } from "@data/course/exam";
 
 export type ScoreTier = {

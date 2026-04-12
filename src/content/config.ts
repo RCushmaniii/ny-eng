@@ -1,10 +1,4 @@
 import { defineCollection, z } from "astro:content";
-import { categories } from "../data/categories.js";
-
-// Extract category names for the enum
-const categoryNames = categories.map(
-  (category: { name: string }) => category.name,
-);
 
 // Define blog collection with proper schema
 const blogCollection = defineCollection({

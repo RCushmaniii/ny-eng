@@ -3,9 +3,7 @@ import type { ImageMetadata } from "astro";
 // Import avatar images (paths are relative to src/data/)
 import julioTestimonial from "../assets/images/testimonials/julio-testimonial.jpg";
 import hugobTestimonial from "../assets/images/testimonials/hugob-testimonial.jpg";
-import hugolTestimonial from "../assets/images/testimonials/hugo-l-testimonial.jpg";
 import andresTestimonial from "../assets/images/testimonials/andres-testimonial.jpg";
-import karlaTestimonial from "../assets/images/testimonials/karla-testimonial.jpg";
 import andreaTestimonial from "../assets/images/testimonials/andrea-testimonial.jpg";
 
 export interface Testimonial {

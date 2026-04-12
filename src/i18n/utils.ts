@@ -11,9 +11,6 @@ export const LANGUAGES = {
 // Type for supported languages
 export type Language = keyof typeof LANGUAGES;
 
-// Type for our translations based on the imported JSON structure
-type TranslationsType = typeof en;
-
 /**
  * Get language from URL path
  * @param url Current URL

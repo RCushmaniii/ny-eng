@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Play, Eye, EyeOff, MapPin } from "lucide-react";
+import { Eye, EyeOff, MapPin } from "lucide-react";
 import AudioButton from "./AudioButton";
 import type { Dialogue } from "@data/intermediate/types";
 

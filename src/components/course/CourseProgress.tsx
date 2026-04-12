@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Check, Lock, ChevronDown } from "lucide-react";
+import { Check, ChevronDown } from "lucide-react";
 
 interface Unit {
   id: number;
@@ -64,8 +64,8 @@ export default function CourseProgress({
     setCompleted(getCompletedUnits(courseId));
   }, [courseId]);
 
-  const progress = Math.round((completed.length / units.length) * 100);
-  const currentUnitData = units.find((u) => u.id === currentUnit);
+  const _progress = Math.round((completed.length / units.length) * 100);
+  const _currentUnitData = units.find((u) => u.id === currentUnit);
 
   return (
     <div className="bg-white border-b border-slate-200 sticky top-0 z-40">

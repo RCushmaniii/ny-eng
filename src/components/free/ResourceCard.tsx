@@ -6,10 +6,8 @@
 
 import {
   FileText,
-  Download,
   ArrowRight,
   Clock,
-  Users,
   Sparkles,
 } from "lucide-react";
 import type { FreeAsset } from "@/types/free-asset";

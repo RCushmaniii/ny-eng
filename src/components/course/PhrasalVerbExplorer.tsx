@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, Eye, Volume2 } from "lucide-react";
+import { ChevronDown, Eye } from "lucide-react";
 import AudioButton from "./AudioButton";
 import type { PhrasalVerbGroup } from "@data/intermediate/types";
 

@@ -8,15 +8,10 @@ export interface Testimonial {
   avatar: ImageMetadata;
 }
 
-import emmanuelTestimonial from "../assets/images/testimonials/emmanuel-testimonial.jpg";
-import erikaTestimonial from "../assets/images/testimonials/erika-testimonial.jpg";
 import julioTestimonial from "../assets/images/testimonials/julio-testimonial.jpg";
 import hugobTestimonial from "../assets/images/testimonials/hugob-testimonial.jpg";
-import hugolTestimonial from "../assets/images/testimonials/hugo-l-testimonial.jpg";
 import andresTestimonial from "../assets/images/testimonials/andres-testimonial.jpg";
-import karlaTestimonial from "../assets/images/testimonials/karla-testimonial.jpg";
 import andreaTestimonial from "../assets/images/testimonials/andrea-testimonial.jpg";
-import albertoTestimonial from "../assets/images/testimonials/alberto-testimonial.jpg";
 
 export const testimonials: Testimonial[] = [
   {

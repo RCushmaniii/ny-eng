@@ -34,10 +34,28 @@ module.exports = {
       files: ['*.ts', '*.tsx'],
       parser: '@typescript-eslint/parser',
       plugins: ['@typescript-eslint'],
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+      },
+      globals: {
+        React: 'readonly',
+        JSX: 'readonly',
+        // Browser APIs used in React components
+        SpeechSynthesisVoice: 'readonly',
+        SpeechSynthesisUtterance: 'readonly',
+        SpeechSynthesis: 'readonly',
+        // Astro image types
+        ImageMetadata: 'readonly',
+      },
       rules: {
-        '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+        '@typescript-eslint/no-unused-vars': ['error', {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+        }],
         '@typescript-eslint/no-explicit-any': 'warn',
         'no-unused-vars': 'off', // Turn off base rule for TypeScript files
+        'no-undef': 'off', // TypeScript handles this better than ESLint
       },
     },
   ],

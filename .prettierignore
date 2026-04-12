@@ -1,0 +1,8 @@
+node_modules/
+dist/
+build/
+.astro/
+public/
+coverage/
+package-lock.json
+*.md
