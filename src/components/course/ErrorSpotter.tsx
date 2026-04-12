@@ -16,6 +16,9 @@ import type { ErrorSpotterItem } from "@data/advanced/types";
 interface Props {
   items: ErrorSpotterItem[];
   lang: "en" | "es";
+  /** Override the card-level instruction shown above the sentence */
+  instruction?: string;
+  instructionEs?: string;
 }
 
 // Tokenize a sentence into clickable word chunks. We split on whitespace
@@ -46,7 +49,7 @@ function tokenize(sentence: string): Token[] {
   });
 }
 
-export default function ErrorSpotter({ items, lang }: Props) {
+export default function ErrorSpotter({ items, lang, instruction, instructionEs }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   // null = no choice yet, string = the stripped token the user clicked
   const [pickedToken, setPickedToken] = useState<string | null>(null);
@@ -110,8 +113,8 @@ export default function ErrorSpotter({ items, lang }: Props) {
       <div className="bg-white rounded-2xl border-2 border-slate-200 p-6">
         <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">
           {lang === "es"
-            ? "Toca la palabra que sobra o suena débil:"
-            : "Tap the word that is unnecessary or sounds weak:"}
+            ? (instructionEs ?? "Toca la palabra que sobra o suena débil:")
+            : (instruction ?? "Tap the word that is unnecessary or sounds weak:")}
         </p>
 
         {/* Clickable sentence */}
