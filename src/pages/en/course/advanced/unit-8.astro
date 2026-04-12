@@ -1,0 +1,96 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import WordBuilder from "@components/course/WordBuilder";
+import SentenceTransformer from "@components/course/SentenceTransformer";
+import { advancedUnits } from "@data/advanced/units";
+import { prefixWords, suffixWords, decodingTransforms } from "@data/advanced/unit-8";
+import { ArrowRight, Puzzle, Layers, Zap } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/advanced/unit-8" as const;
+const progressUnits = advancedUnits.map((u) => ({ id: u.id, slug: u.slug, title: u.title, titleEs: u.titleEs }));
+---
+
+<Base lang={lang} tkey={tkey}
+  title="Unit 8: Prefixes & Suffixes — Decode Any English Word | Speak with Confidence | NY English Teacher"
+  description="Learn the prefixes and suffixes that unlock thousands of English words. un-, dis-, mis-, over-, -tion, -ment, -ness, -ful, -less. Stop memorizing vocabulary — start decoding it. Free advanced English lesson for B2-C1 Spanish speakers."
+>
+  <CourseProgress client:load units={progressUnits} currentUnit={8} basePath="/en/course/advanced" lang="en" courseId="advanced" />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-violet-400 text-sm font-semibold mb-3"><Puzzle class="w-4 h-4" /> Unit 8</div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Prefixes & Suffixes
+        </h1>
+        <p class="text-lg text-slate-200 max-w-2xl leading-relaxed">
+          Most English words are built from reusable parts. Learn the 12 most common
+          prefixes and suffixes and you'll decode thousands of words you've never seen
+          before — without a dictionary. Stop memorizing. Start decoding.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Puzzle class="w-3.5 h-3.5" /> Prefixes</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Layers class="w-3.5 h-3.5" /> Suffixes</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Zap class="w-3.5 h-3.5" /> Word Decoding</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">1</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Prefixes: The Front of the Word</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">
+        A prefix changes the meaning of a word — usually to its opposite or to add
+        "too much," "again," or "before." Tap each word to see how the prefix works,
+        then listen to the pronunciation.
+      </p>
+      <WordBuilder client:visible words={prefixWords} lang="en" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">2</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Suffixes: The Back of the Word</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">
+        A suffix changes what TYPE of word it is — verb to noun, noun to adjective,
+        adjective to adverb. Master these 7 suffixes and you can generate dozens of
+        new words from any root you already know.
+      </p>
+      <WordBuilder client:visible words={suffixWords} lang="en" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">3</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Decode Words in Context</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">
+        Now put it all together. Read each sentence, identify the complex word, and
+        see if you can decode it before revealing the breakdown. This is how native
+        speakers handle unfamiliar words — they decode, not memorize.
+      </p>
+      <SentenceTransformer client:visible transforms={decodingTransforms} lang="en" />
+    </div></div>
+  </section>
+
+  <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto flex justify-between items-center">
+      <a href="/en/course/advanced/unit-7/" class="text-sm text-slate-500 hover:text-violet-600 transition-colors">&larr; Unit 7</a>
+      <Button href="/en/course/advanced/" variant="primary" size="md">Course Overview <ArrowRight class="w-4 h-4 ml-1" /></Button>
+    </div></div>
+  </section>
+</Base>
