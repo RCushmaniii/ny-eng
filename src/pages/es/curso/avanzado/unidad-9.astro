@@ -1,0 +1,98 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import ErrorSpotter from "@components/course/ErrorSpotter";
+import SentenceTransformer from "@components/course/SentenceTransformer";
+import { advancedUnits } from "@data/advanced/units";
+import { varietyItems, wordOrderItems, linkingTransforms } from "@data/advanced/unit-9";
+import { ArrowRight, ArrowLeft, Layers, AlignLeft, Link2 } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/advanced/unit-9" as const;
+const progressUnits = advancedUnits.map((u) => ({ id: u.id, slug: u.slugEs, title: u.title, titleEs: u.titleEs }));
+---
+
+<Base lang={lang} tkey={tkey}
+  title="Unidad 9: Construcción de Oraciones y Fluidez — Deja de Sonar Robótico | Habla con Confianza | NY English Teacher"
+  description="Aprende a construir oraciones que fluyan con naturalidad en inglés. Corrige la variedad de oraciones, el orden de palabras y los conectores robóticos. Lección avanzada gratis para hispanohablantes B2-C1."
+>
+  <CourseProgress client:load units={progressUnits} currentUnit={9} basePath="/es/curso/avanzado" lang="es" courseId="advanced" />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-violet-400 text-sm font-semibold mb-3"><Layers class="w-4 h-4" /> Unidad 9</div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Construcción de Oraciones<br /><span class="text-amber-400">y Fluidez</span>
+        </h1>
+        <p class="text-lg text-slate-200 max-w-2xl leading-relaxed">
+          La mayoría de los hablantes avanzados conocen las palabras correctas — pero
+          las encadenan como una lista. Esta unidad lo corrige. Aprenderás a combinar
+          ideas con fluidez, colocar palabras en el orden correcto y conectar oraciones
+          como lo hacen los nativos.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><AlignLeft class="w-3.5 h-3.5" /> Variedad de Oraciones</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Layers class="w-3.5 h-3.5" /> Orden de Palabras</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Link2 class="w-3.5 h-3.5" /> Conectar Ideas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">1</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Variedad de Oraciones</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">
+        Escribir tres oraciones cortas seguidas con el mismo sujeto es la señal #1 de
+        un hablante intermedio. Detecta la palabra repetida que hace estas oraciones
+        cortadas — luego ve cómo un profesional las combinaría.
+      </p>
+      <ErrorSpotter client:visible items={varietyItems} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">2</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Trampas de Orden de Palabras</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">
+        El español y el inglés colocan adverbios, adjetivos y preposiciones de manera
+        diferente. Estos son exactamente los errores de orden que los nativos escuchan
+        de inmediato — incluso cuando cada palabra individual es correcta. Toca la
+        palabra que está en el lugar equivocado.
+      </p>
+      <ErrorSpotter client:visible items={wordOrderItems} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">3</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Conectar Ideas Sin Sonar Robótico</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">
+        La versión plana muestra cómo suenas actualmente. La versión con impacto muestra
+        cómo diría lo mismo un profesional fluido. Presta atención a las barras oblicuas —
+        marcan las pausas naturales al hablar, los bloques de respiración que le dan ritmo al inglés.
+      </p>
+      <SentenceTransformer client:visible transforms={linkingTransforms} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto flex justify-between items-center">
+      <a href="/es/curso/avanzado/unidad-8/" class="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-violet-600 transition-colors"><ArrowLeft class="w-4 h-4" /> Unidad 8</a>
+      <Button href="/es/curso/avanzado/unidad-10/" variant="primary" size="md">Unidad 10 <ArrowRight class="w-4 h-4 ml-1" /></Button>
+    </div></div>
+  </section>
+</Base>
