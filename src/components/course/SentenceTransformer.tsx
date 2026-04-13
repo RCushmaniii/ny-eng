@@ -17,6 +17,14 @@ interface Props {
   lang: "en" | "es";
 }
 
+// Strip prosody notation (CAPS stress marks, "/" pause markers) for clean TTS
+function cleanForSpeech(text: string): string {
+  return text
+    .replace(/\s*\/\s*/g, " ") // remove pause markers
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export default function SentenceTransformer({ transforms, lang }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isRevealed, setIsRevealed] = useState(false);
@@ -106,9 +114,14 @@ export default function SentenceTransformer({ transforms, lang }: Props) {
           ) : (
             <div className="space-y-3">
               <div className="bg-gradient-to-br from-amber-50 to-amber-100 border-2 border-amber-300 rounded-xl p-4">
-                <p className="text-base text-slate-900 font-medium leading-relaxed">
-                  "{current.strong}"
-                </p>
+                <div className="flex items-start justify-between gap-3">
+                  <p className="text-base text-slate-900 font-medium leading-relaxed flex-1">
+                    "{current.strong}"
+                  </p>
+                  <div className="shrink-0 mt-1">
+                    <AudioButton text={cleanForSpeech(current.strong)} size="sm" />
+                  </div>
+                </div>
                 <p className="text-sm text-slate-500 mt-2">{current.strongEs}</p>
 
                 {/* Technique badge + explanation */}
