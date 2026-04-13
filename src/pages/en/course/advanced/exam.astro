@@ -1,0 +1,99 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import CourseExam from "@components/course/CourseExam";
+import Button from "@components/ui/Button.astro";
+import { advancedUnits } from "@data/advanced/units";
+import { examQuestions, examMeta, examTiers } from "@data/advanced/exam";
+import { ArrowLeft, GraduationCap, CalendarDays } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/advanced/exam" as const;
+
+const progressUnits = advancedUnits.map((u) => ({
+  id: u.id,
+  slug: u.slug,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Final Exam: Speak with Confidence | Advanced English Course | NY English Teacher"
+  description="Take the comprehensive final exam for the Speak with Confidence advanced course. 20 questions covering all 10 units — strong phrasing, word traps, articles, pronunciation, collocations and more. Free for B2-C1 Spanish speakers."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={0}
+    basePath="/en/course/advanced"
+    lang="en"
+    courseId="advanced"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
+          <GraduationCap class="w-4 h-4" />
+          Final Exam
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Speak with Confidence
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          You've completed all 10 units of the advanced course. Now prove it.
+          20 questions covering every skill — strong phrasing, collocations, articles,
+          word order, pronunciation, prefixes, and natural spoken English.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <CourseExam
+        client:load
+        questions={examQuestions}
+        lang="en"
+        passingScore={examMeta.passingScore}
+        courseBasePath="/en/course/advanced"
+        tiers={examTiers}
+      />
+    </div>
+  </section>
+
+  <!-- Speaking task funnel CTA -->
+  <section class="py-16 md:py-20 bg-gradient-to-br from-violet-900 to-slate-900">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center text-white">
+        <p class="text-violet-300 text-sm font-semibold uppercase tracking-wider mb-3">Want a real speaking evaluation?</p>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 leading-tight">
+          The most reliable way to know if your spoken English has reached C1 is to be heard.
+        </h2>
+        <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+          Book a free 30-minute strategy session with Robert. Bring a 60-second
+          recording of yourself speaking English on any topic. He'll listen personally
+          and give you honest, actionable feedback on exactly where you are and
+          what to work on next.
+        </p>
+        <Button href="/en/book/" variant="primary" size="lg">
+          <CalendarDays class="w-5 h-5 mr-2" /> Book a Free Strategy Session
+        </Button>
+        <p class="text-slate-400 text-sm mt-4">30 minutes · no obligation · honest feedback</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-8 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4 text-center">
+      <a href="/en/course/advanced/" class="inline-flex items-center gap-2 text-slate-500 hover:text-violet-600 transition-colors text-sm">
+        <ArrowLeft class="w-4 h-4" /> Back to Course Overview
+      </a>
+    </div>
+  </section>
+</Base>
