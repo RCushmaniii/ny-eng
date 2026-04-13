@@ -1,4 +1,13 @@
-import { useState, useCallback, useRef, useEffect } from "react";
+// AudioButton — shared audio component for the advanced course.
+//
+// Calls Azure Neural TTS via /api/tts/synthesize first. Falls back to
+// browser SpeechSynthesis if Azure is unavailable (dev server, API error).
+// Client-side caching prevents re-fetching the same text.
+//
+// Used in: SentenceTransformer, ErrorSpotter, WordPairLab, and any
+// component that needs text-to-speech.
+
+import { useState, useCallback, useRef } from "react";
 import { Volume2, Loader2 } from "lucide-react";
 
 interface AudioButtonProps {
@@ -10,50 +19,9 @@ interface AudioButtonProps {
   label?: string;
 }
 
-// Module-level voice cache — shared across all AudioButton instances
-let cachedVoices: SpeechSynthesisVoice[] = [];
-let voicesLoaded = false;
+// Module-level audio cache shared across all AudioButton instances
+const audioCache = new Map<string, string>();
 
-function loadVoices(): SpeechSynthesisVoice[] {
-  if (typeof window === "undefined" || !window.speechSynthesis) return [];
-  const voices = window.speechSynthesis.getVoices();
-  if (voices.length > 0) {
-    cachedVoices = voices;
-    voicesLoaded = true;
-  }
-  return cachedVoices;
-}
-
-// Eagerly trigger voice loading on module import
-if (typeof window !== "undefined" && window.speechSynthesis) {
-  loadVoices();
-  window.speechSynthesis.onvoiceschanged = () => {
-    loadVoices();
-  };
-}
-
-function getBestVoice(langCode: string): SpeechSynthesisVoice | null {
-  const voices = voicesLoaded ? cachedVoices : loadVoices();
-  const langPrefix = langCode.slice(0, 2);
-
-  // Priority 1: Non-local (cloud/neural) voice matching the language
-  const neural = voices.find(
-    (v) => v.lang.startsWith(langPrefix) && !v.localService,
-  );
-  if (neural) return neural;
-
-  // Priority 2: Any voice matching the language
-  const any = voices.find((v) => v.lang.startsWith(langPrefix));
-  if (any) return any;
-
-  return null;
-}
-
-/**
- * AudioButton — Uses the browser's built-in SpeechSynthesis API
- * to speak English text aloud. Preloads voices on mount so the
- * first click always gets the best available voice.
- */
 export default function AudioButton({
   text,
   lang = "en-US",
@@ -63,62 +31,66 @@ export default function AudioButton({
   label,
 }: AudioButtonProps) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [_ready, setReady] = useState(voicesLoaded);
-  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Ensure voices are loaded before first interaction
-  useEffect(() => {
-    if (voicesLoaded) {
-      setReady(true);
+  const speakBrowserFallback = useCallback(() => {
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) {
+      setIsPlaying(false);
       return;
     }
-
-    // Force voice loading by calling getVoices
-    loadVoices();
-
-    const handleVoicesChanged = () => {
-      loadVoices();
-      setReady(true);
-    };
-
-    window.speechSynthesis.onvoiceschanged = handleVoicesChanged;
-
-    // Some browsers need a nudge — poll briefly
-    const timer = setInterval(() => {
-      const v = loadVoices();
-      if (v.length > 0) {
-        setReady(true);
-        clearInterval(timer);
-      }
-    }, 100);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
-
-  const speak = useCallback(() => {
-    if (typeof window === "undefined" || !window.speechSynthesis) return;
-
-    // Cancel any ongoing speech
-    window.speechSynthesis.cancel();
-
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = lang;
-    utterance.rate = rate;
-    utterance.pitch = 1;
-
-    // Use the cached best voice
-    const voice = getBestVoice(lang);
-    if (voice) utterance.voice = voice;
-
-    utterance.onstart = () => setIsPlaying(true);
-    utterance.onend = () => setIsPlaying(false);
-    utterance.onerror = () => setIsPlaying(false);
-
-    utteranceRef.current = utterance;
-    window.speechSynthesis.speak(utterance);
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = lang;
+    u.rate = rate;
+    u.pitch = 1;
+    u.onend = () => setIsPlaying(false);
+    u.onerror = () => setIsPlaying(false);
+    speechSynthesis.speak(u);
   }, [text, lang, rate]);
+
+  const speak = useCallback(async () => {
+    // Stop any current playback
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+
+    setIsPlaying(true);
+
+    try {
+      // Check cache first
+      let audioUrl = audioCache.get(text);
+
+      if (!audioUrl) {
+        const ttsLang = lang.startsWith("es") ? "es" : "en";
+        const response = await fetch("/api/tts/synthesize", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text, lang: ttsLang }),
+        });
+
+        if (!response.ok) throw new Error(`TTS ${response.status}`);
+
+        const blob = await response.blob();
+        if (blob.size < 100) throw new Error("Audio too small");
+
+        audioUrl = URL.createObjectURL(blob);
+        audioCache.set(text, audioUrl);
+      }
+
+      const audio = new Audio(audioUrl);
+      audioRef.current = audio;
+      audio.addEventListener("ended", () => setIsPlaying(false));
+      audio.addEventListener("error", () => {
+        setIsPlaying(false);
+        speakBrowserFallback();
+      });
+      await audio.play();
+    } catch {
+      // Azure TTS unavailable — fall back to browser SpeechSynthesis
+      speakBrowserFallback();
+    }
+  }, [text, lang, speakBrowserFallback]);
 
   const sizeClasses = {
     sm: "w-7 h-7",
