@@ -1,0 +1,47 @@
+---
+export const prerender = true;
+
+import Base from '@layouts/Base.astro';
+import InnerHero from '@components/sections/InnerHero.astro';
+import { getLegalContent } from '@utils/legalContent.js';
+
+const legalData = await getLegalContent('data-deletion', 'es');
+const { Content } = legalData;
+const entry = legalData;
+
+const lang = 'es';
+const translations = {
+  en: '/en/legal/data-deletion/',
+  es: '/es/legal/data-deletion/'
+};
+
+const heroContent = {
+  title: entry.data.title,
+  description: entry.data.seo?.description || "",
+  overlayOpacity: 0.8
+} as const;
+
+const footerCta = {
+  eyebrow: "",
+  title: "Transforma tu Inglés Profesional Hoy",
+  description: "Reserva tu consulta gratuita para obtener la claridad, confianza e impacto que tu rol demanda.",
+  hideCta: false,
+  button: {
+    text: "Reservar Mi Consulta Gratuita",
+    link: "/es/reservar/",
+    variant: "primary" as const
+  }
+} as const;
+---
+
+<Base
+  tkey="legal/data-deletion"
+  lang="es"
+  title={entry.data.seo?.title || entry.data.title}
+  description={entry.data.seo?.description || ""}
+>
+  <InnerHero content={heroContent} />
+  <article class="site-container--small mx-auto px-8 prose pb-base pt-16">
+    <Content />
+  </article>
+</Base>
