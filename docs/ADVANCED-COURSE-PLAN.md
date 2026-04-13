@@ -1,6 +1,6 @@
 # Advanced Course Plan — "Speak with Confidence" (B2 → C1)
 
-**Status:** Planned, ready to build
+**Status:** ✅ Complete — shipped 2026-04-13
 **Target audience:** High B2 to C1 Spanish speakers — professionals who can already hold conversations comfortably but plateau on the precision and naturalness that separates "fluent" from "polished"
 **Tagline:** *Speak with Confidence*
 **Pricing:** **Free** (no email gate). Strong "Book a Strategy Session" CTA at end of every unit and after the final exam.

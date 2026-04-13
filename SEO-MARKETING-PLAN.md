@@ -108,6 +108,28 @@ Feed these into NotebookLM to generate unique data insights:
 - [x] Fixed Python audit script Unicode crash on Windows
 - [x] Published B3: 50 English Words Mexican Professionals Mispronounce (EN + ES)
 
+## Completed Course Builds
+
+### Course #1 — Beginner: "First Steps Into English" ✅
+- Free course targeting A0-A1 Spanish speakers
+- EN + ES mirror pages with hreflang
+- CTA: book strategy session
+
+### Course #2 — Intermediate: "Building Fluency" ✅
+- Free course targeting B1-B2 Spanish speakers
+- 10 units + final exam, EN + ES mirrors
+- Modal-driven, sentence-construction-focused
+- CTA: book strategy session
+
+### Course #3 — Advanced: "Speak with Confidence" ✅ — shipped 2026-04-13
+- Free course targeting B2-C1 Spanish speakers
+- 10 units × 3 sections + 20-question final exam
+- EN (`/en/course/advanced/`) + ES (`/es/curso/avanzado/`) mirrors with full hreflang
+- 5 reusable React components: `WordPairLab`, `ErrorSpotter`, `SentenceTransformer`, `MinimalPairDrill`, `WordBuilder`
+- Azure Neural TTS throughout: `en-US-AvaNeural` (English), `es-MX-DaliaNeural` (Spanish)
+- Speaking task stubbed as strategy-session CTA at end of exam
+- **Next:** Course #4 — Executive: "Communicate Like a Leader" (C1-C2, paid)
+
 ## Future Initiatives
 
 - [ ] Social media API integration (LinkedIn, Twitter/X, Facebook)
