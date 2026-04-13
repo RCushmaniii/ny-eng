@@ -46,7 +46,7 @@
     "@astrojs/sitemap": "^3.3.0",
     "@astrolib/seo": "^1.0.0-beta.8",
     "@iconify-json/lucide": "^1.2.51",
-    "@iconify-json/tabler": "^1.2.17",
+    "@iconify-json/tabler": "^1.2.33",
     "@neondatabase/serverless": "^1.0.2",
     "@sentry/astro": "^10.48.0",
     "@types/marked": "^5.0.2",
