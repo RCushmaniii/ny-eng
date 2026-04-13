@@ -1,0 +1,117 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import WordPairLab from "@components/course/WordPairLab";
+import SentenceTransformer from "@components/course/SentenceTransformer";
+import { advancedUnits } from "@data/advanced/units";
+import { collocationPairs, rhythmTransforms, thinkingTransforms } from "@data/advanced/unit-10";
+import { ArrowRight, ArrowLeft, MessageCircle, Waves, Brain } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/advanced/unit-10" as const;
+const progressUnits = advancedUnits.map((u) => ({ id: u.id, slug: u.slugEs, title: u.title, titleEs: u.titleEs }));
+---
+
+<Base lang={lang} tkey={tkey}
+  title="Unidad 10: Sonar Natural, No Traducido — Habla con Confianza | NY English Teacher"
+  description="Deja de traducir del español. Aprende las colocaciones, el ritmo y los patrones de pensamiento que hacen que el inglés suene naturalmente fluido. Lección avanzada gratis para hispanohablantes B2-C1."
+>
+  <CourseProgress client:load units={progressUnits} currentUnit={10} basePath="/es/curso/avanzado" lang="es" courseId="advanced" />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-violet-400 text-sm font-semibold mb-3"><MessageCircle class="w-4 h-4" /> Unidad 10</div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Sonar Natural,<br /><span class="text-amber-400">No Traducido</span>
+        </h1>
+        <p class="text-lg text-slate-200 max-w-2xl leading-relaxed">
+          La última barrera entre fluido y natural. Aprenderás las colocaciones que
+          los nativos esperan, los patrones de acento y pausa que le dan ritmo al
+          inglés, y cómo dejar de traducir del español para pensar directamente en inglés.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><MessageCircle class="w-3.5 h-3.5" /> Colocaciones</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Waves class="w-3.5 h-3.5" /> Ritmo y Acento</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Brain class="w-3.5 h-3.5" /> Piensa en Inglés</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">1</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Colocaciones Que Esperan los Nativos</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">
+        Las colocaciones son combinaciones de palabras fijas que los nativos usan sin
+        pensarlo. No se aprenden con reglas gramaticales — hay que absorberlas. Estas
+        son las combinaciones que los hispanohablantes confunden con más frecuencia en nivel avanzado.
+      </p>
+      <WordPairLab client:visible pairs={collocationPairs} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">2</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">El Ritmo del Inglés Hablado</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">
+        El inglés no se lee palabra por palabra — se entrega en bloques, con palabras
+        enfatizadas que llevan el significado y palabras sin énfasis comprimidas entre ellas.
+        En la versión con impacto, <strong>MAYÚSCULAS</strong> muestran palabras enfatizadas y <strong>/</strong> marca pausas naturales al hablar.
+        Lee cada una en voz alta y siente la diferencia.
+      </p>
+      <SentenceTransformer client:visible transforms={rhythmTransforms} lang="es" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">3</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Piensa en Inglés, No en Español</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">
+        La versión plana muestra lo que sale cuando piensas en español y traduces
+        palabra por palabra. La versión con impacto es lo que dice un nativo. La
+        brecha no es gramática — es pensar directamente en el idioma objetivo.
+      </p>
+      <SentenceTransformer client:visible transforms={thinkingTransforms} lang="es" />
+    </div></div>
+  </section>
+
+  <!-- Course complete CTA -->
+  <section class="py-16 md:py-20 bg-gradient-to-br from-violet-900 to-slate-900">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center text-white">
+        <p class="text-violet-300 text-sm font-semibold uppercase tracking-wider mb-3">Has completado las 10 unidades</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+          ¿Listo para demostrarlo?
+        </h2>
+        <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+          El examen final cubre las 10 unidades. Mira hasta dónde has llegado
+          y descubre exactamente dónde afinar tu nivel.
+        </p>
+        <Button href="/es/curso/avanzado/examen/" variant="primary" size="lg">
+          Tomar el Examen Final <ArrowRight class="w-5 h-5 ml-2" />
+        </Button>
+        <p class="text-slate-400 text-sm mt-4">20 preguntas · ~10 minutos · sin registro</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto flex justify-between items-center">
+      <a href="/es/curso/avanzado/unidad-9/" class="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-violet-600 transition-colors"><ArrowLeft class="w-4 h-4" /> Unidad 9</a>
+      <Button href="/es/curso/avanzado/examen/" variant="primary" size="md">Examen Final <ArrowRight class="w-4 h-4 ml-1" /></Button>
+    </div></div>
+  </section>
+</Base>
