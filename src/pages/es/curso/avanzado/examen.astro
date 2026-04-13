@@ -1,0 +1,99 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import CourseExam from "@components/course/CourseExam";
+import Button from "@components/ui/Button.astro";
+import { advancedUnits } from "@data/advanced/units";
+import { examQuestions, examMeta, examTiers } from "@data/advanced/exam";
+import { ArrowLeft, GraduationCap, CalendarDays } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/advanced/exam" as const;
+
+const progressUnits = advancedUnits.map((u) => ({
+  id: u.id,
+  slug: u.slugEs,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Examen Final: Habla con Confianza | Curso Avanzado de Inglés | NY English Teacher"
+  description="Toma el examen final integral del curso avanzado Habla con Confianza. 20 preguntas sobre las 10 unidades — frases fuertes, trampas de palabras, artículos, pronunciación, colocaciones y más. Gratis para hispanohablantes B2-C1."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={0}
+    basePath="/es/curso/avanzado"
+    lang="es"
+    courseId="advanced"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
+          <GraduationCap class="w-4 h-4" />
+          Examen Final
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Habla con Confianza
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Has completado las 10 unidades del curso avanzado. Ahora demuéstralo.
+          20 preguntas que cubren cada habilidad — frases fuertes, colocaciones, artículos,
+          orden de palabras, pronunciación, prefijos e inglés hablado natural.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <CourseExam
+        client:load
+        questions={examQuestions}
+        lang="es"
+        passingScore={examMeta.passingScore}
+        courseBasePath="/es/curso/avanzado"
+        tiers={examTiers}
+      />
+    </div>
+  </section>
+
+  <!-- Speaking task funnel CTA -->
+  <section class="py-16 md:py-20 bg-gradient-to-br from-violet-900 to-slate-900">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center text-white">
+        <p class="text-violet-300 text-sm font-semibold uppercase tracking-wider mb-3">¿Quieres una evaluación real de tu inglés hablado?</p>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 leading-tight">
+          La forma más confiable de saber si tu inglés hablado ha llegado al C1 es ser escuchado.
+        </h2>
+        <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+          Reserva una sesión estratégica gratuita de 30 minutos con Robert. Trae una
+          grabación de 60 segundos hablando en inglés sobre cualquier tema. Él escuchará
+          personalmente y te dará retroalimentación honesta y accionable sobre exactamente
+          dónde estás y qué trabajar a continuación.
+        </p>
+        <Button href="/es/reservar/" variant="primary" size="lg">
+          <CalendarDays class="w-5 h-5 mr-2" /> Reservar una Sesión Gratuita
+        </Button>
+        <p class="text-slate-400 text-sm mt-4">30 minutos · sin obligación · retroalimentación honesta</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-8 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4 text-center">
+      <a href="/es/curso/avanzado/" class="inline-flex items-center gap-2 text-slate-500 hover:text-violet-600 transition-colors text-sm">
+        <ArrowLeft class="w-4 h-4" /> Volver al Resumen del Curso
+      </a>
+    </div>
+  </section>
+</Base>
