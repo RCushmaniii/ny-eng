@@ -1,0 +1,118 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import WordPairLab from "@components/course/WordPairLab";
+import SentenceTransformer from "@components/course/SentenceTransformer";
+import { advancedUnits } from "@data/advanced/units";
+import { collocationPairs, rhythmTransforms, thinkingTransforms } from "@data/advanced/unit-10";
+import { ArrowRight, ArrowLeft, MessageCircle, Waves, Brain } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/advanced/unit-10" as const;
+const progressUnits = advancedUnits.map((u) => ({ id: u.id, slug: u.slug, title: u.title, titleEs: u.titleEs }));
+---
+
+<Base lang={lang} tkey={tkey}
+  title="Unit 10: Sounding Natural, Not Translated — Speak with Confidence | NY English Teacher"
+  description="Stop translating from Spanish. Learn the collocations, rhythm, and thinking patterns that make English sound effortlessly natural. Free advanced English lesson for B2-C1 Spanish speakers."
+>
+  <CourseProgress client:load units={progressUnits} currentUnit={10} basePath="/en/course/advanced" lang="en" courseId="advanced" />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-violet-400 text-sm font-semibold mb-3"><MessageCircle class="w-4 h-4" /> Unit 10</div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Sounding Natural,<br /><span class="text-amber-400">Not Translated</span>
+        </h1>
+        <p class="text-lg text-slate-200 max-w-2xl leading-relaxed">
+          The final barrier between fluent and native-sounding. You'll learn the
+          collocations English speakers expect, the stress and pause patterns that
+          give English its rhythm, and how to stop translating from Spanish and
+          start thinking in English.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><MessageCircle class="w-3.5 h-3.5" /> Collocations</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Waves class="w-3.5 h-3.5" /> Rhythm & Stress</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 text-sm font-medium"><Brain class="w-3.5 h-3.5" /> Think in English</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">1</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Collocations Native Speakers Expect</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">
+        Collocations are fixed word combinations that native speakers use without
+        thinking. You can't learn them from grammar rules — you have to absorb them.
+        These are the pairings Spanish speakers get wrong most often at advanced level.
+      </p>
+      <WordPairLab client:visible pairs={collocationPairs} lang="en" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">2</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Rhythm of Spoken English</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">
+        English isn't read word by word — it's delivered in chunks, with stressed
+        words carrying the meaning and unstressed words compressed between them.
+        In the strong version, <strong>CAPS</strong> show stressed words and <strong>/</strong> marks natural spoken pauses.
+        Read each one aloud and feel the difference.
+      </p>
+      <SentenceTransformer client:visible transforms={rhythmTransforms} lang="en" />
+    </div></div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500 text-white text-sm font-bold">3</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Think in English, Not Spanish</h2>
+      </div>
+      <p class="text-slate-500 mb-8 ml-11">
+        The flat version shows what comes out when you think in Spanish and translate
+        word by word. The strong version is what a native speaker actually says. The
+        gap between them isn't grammar — it's thinking in the target language.
+      </p>
+      <SentenceTransformer client:visible transforms={thinkingTransforms} lang="en" />
+    </div></div>
+  </section>
+
+  <!-- Course complete CTA -->
+  <section class="py-16 md:py-20 bg-gradient-to-br from-violet-900 to-slate-900">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center text-white">
+        <p class="text-violet-300 text-sm font-semibold uppercase tracking-wider mb-3">You've completed all 10 units</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+          Ready to prove it?
+        </h2>
+        <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+          The final exam covers all 10 units. See how far you've come — and
+          find out exactly where to sharpen your edge.
+        </p>
+        <Button href="/en/course/advanced/exam/" variant="primary" size="lg">
+          Take the Final Exam <ArrowRight class="w-5 h-5 ml-2" />
+        </Button>
+        <p class="text-slate-400 text-sm mt-4">20 questions · ~10 minutes · no signup required</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4"><div class="max-w-3xl mx-auto flex justify-between items-center">
+      <a href="/en/course/advanced/unit-9/" class="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-violet-600 transition-colors"><ArrowLeft class="w-4 h-4" /> Unit 9</a>
+      <Button href="/en/course/advanced/exam/" variant="primary" size="md">Final Exam <ArrowRight class="w-4 h-4 ml-1" /></Button>
+    </div></div>
+  </section>
+</Base>
