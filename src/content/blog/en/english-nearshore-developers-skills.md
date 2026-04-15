@@ -15,7 +15,7 @@ translations:
 publish: true
 seo:
   title: "English for Nearshore Developers: Must-Have Skills"
-  description: "B2 certificates don't cut it. Learn the real English skills US companies expect from nearshore developers: standups, PRs, Slack, demos, and more."
+  description: "B2 certificates don't predict success on US sprint teams. Master the English skills nearshore developers truly need: standups, PRs, Slack, and client demos."
 ---
 
 ## Your B2 Certificate Means Nothing on a US Sprint Team

@@ -5,7 +5,7 @@ translations:
   es: "/es/legal/terms-of-service/"
 seo:
   title: "Terms of Service - New York English Teacher"
-  description: "Terms and conditions for New York English Teacher's website, coaching services, and AI-powered Messenger Assistant. Includes acceptable use, disclaimers, and service commitments."
+  description: "Read the terms of service for NY English Teacher's website, coaching sessions, and AI Messenger Assistant — covering acceptable use and service commitments."
 ---
 
 ## Terms and Conditions of Use
