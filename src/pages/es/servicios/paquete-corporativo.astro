@@ -1,0 +1,213 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import Challenge from "@components/sections/Challenge.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
+import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
+import { serviceFaqs } from "@data/service-faqs";
+import { serviciosEs } from "@data/services";
+
+const serviceData = serviciosEs.find((s) => s.slug === "paquete-corporativo");
+if (!serviceData) {
+  throw new Error("Corporate package service data (ES) not found");
+}
+
+const title = "Valentía al Liderar en Inglés — Programa Corporativo | NY";
+const seoDescription =
+  "Un programa corporativo de 12 semanas para equipos de liderazgo senior. Preparación individual, presentaciones grupales bajo presión de pares y evaluación final — todo en inglés.";
+
+const heroContent = {
+  title: "Tu equipo directivo está listo. Su inglés no les está siguiendo el ritmo.",
+  description:
+    "Un programa de 12 semanas que usa la presión de pares — no un salón de clases — para cerrar la brecha entre preparación y desempeño.",
+  backgroundImage: serviceData.backgroundImage,
+  overlayOpacity: 0.75,
+};
+
+const challengeContent = {
+  headline: "El Problema que la Mayoría de los Programas de L&D Ignoran",
+  painPoints: [
+    "Tus líderes senior se comunican bien en sesiones privadas de inglés — pero se congelan, se apresuran o cambian al español en el momento en que sus pares los están observando.",
+    "Los cursos genéricos de inglés producen certificados, no desempeño. Tu equipo sigue un temario construido para otra persona.",
+    "La brecha entre 'inglés funcional' e 'inglés ejecutivo' se muestra en la sala de juntas, no en un examen de gramática.",
+  ],
+  icon: "💡",
+  image: serviceData.squareImage,
+  quizCta: {
+    text: "Realiza la Evaluación de Comunicación Ejecutiva — 60 segundos.",
+    link: "/en/quiz/executives/question/1",
+    linkLabel: "Iniciar la Evaluación →",
+  },
+};
+
+const ctaContent = {
+  eyebrow: "Programas Corporativos",
+  title: "¿Listo para construir un equipo directivo que lidere en inglés?",
+  description:
+    "Este programa requiere una llamada de descubrimiento para definir el alcance según el tamaño de tu grupo, agenda y objetivos. Robert responde en 24 horas.",
+  buttonText: "Contactar a Robert por WhatsApp",
+  buttonLink: "https://wa.me/523315590572",
+  whatToExpectTitle: "En Tu Llamada de Descubrimiento:",
+  whatToExpectList: [
+    "Evaluaremos la línea base actual de comunicación en inglés de tu equipo",
+    "Definiremos el alcance del programa para tu tamaño de grupo, agenda y contexto de industria",
+    "Estableceremos cómo se ve un resultado exitoso para tu equipo de liderazgo",
+  ],
+};
+
+const faqs = serviceFaqs["corporate-package"]?.es || [];
+---
+
+<Base
+  title={title}
+  description={seoDescription}
+  lang="es"
+  tkey="services/corporate-package"
+  hideCta={true}
+  customHreflangs={[
+    {
+      lang: "en-US",
+      href: "https://www.nyenglishteacher.com/en/services/corporate-package/",
+    },
+    {
+      lang: "es-MX",
+      href: "https://www.nyenglishteacher.com/es/servicios/paquete-corporativo/",
+    },
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/es/servicios/paquete-corporativo/"
+>
+  <!-- Hero -->
+  <InnerHero content={heroContent} />
+
+  <!-- Challenge -->
+  <Challenge content={challengeContent} background="white" padding="lg" />
+
+  <!-- Estructura del Programa -->
+  <section class="bg-light py-16 px-8">
+    <div class="site-container--small mx-auto">
+      <h2 class="text-3xl font-bold mb-2 text-center">Cómo Funciona el Programa</h2>
+      <p class="text-center text-gray-600 mb-12">12 semanas. 3 fases. Un objetivo: tu equipo lidera en inglés.</p>
+
+      <div class="grid gap-8 md:grid-cols-3">
+        <!-- Fase 1 -->
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Semanas 1–8</div>
+          <h3 class="text-xl font-bold mb-3">Fase 1 — Evaluación Individual y Preparación</h3>
+          <p class="text-gray-600 mb-4">Cada participante trabaja en privado con Robert. Las semanas 1–2 establecen una línea base honesta. Las semanas 3–8 son preparación dirigida construida alrededor del contenido real de su presentación y rol.</p>
+          <div class="text-sm text-gray-500">
+            <strong>8–12 sesiones por participante</strong><br />
+            4,800 – 7,200 MXN
+          </div>
+        </div>
+
+        <!-- Fase 2 -->
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Semanas 9–10</div>
+          <h3 class="text-xl font-bold mb-3">Fase 2 — Presentación Grupal</h3>
+          <p class="text-gray-600 mb-4">Cada participante entrega su presentación preparada en inglés frente al grupo completo de liderazgo — muchas veces por primera vez. La presión es real, deliberada y productiva. Los avances ocurren aquí.</p>
+          <div class="text-sm text-gray-500">
+            <strong>1–2 sesiones grupales</strong><br />
+            600 – 1,200 MXN por participante
+          </div>
+        </div>
+
+        <!-- Fase 3 -->
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Semanas 11–12</div>
+          <h3 class="text-xl font-bold mb-3">Fase 3 — Lecciones Aprendidas y Evaluación Final</h3>
+          <p class="text-gray-600 mb-4">Sesiones individuales de debrief con retroalimentación directa y honesta. Una evaluación final mide el progreso contra la línea base de las semanas 1–2. Cada participante recibe un plan de ruta escrito. La empresa recibe un reporte de progreso consolidado.</p>
+          <div class="text-sm text-gray-500">
+            <strong>2–3 sesiones por participante</strong><br />
+            1,200 – 1,800 MXN
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inversión -->
+  <section class="bg-white py-16 px-8">
+    <div class="site-container--small mx-auto">
+      <h2 class="text-3xl font-bold mb-2 text-center">Inversión</h2>
+      <p class="text-center text-gray-600 mb-10">600 MXN por sesión por participante. Facturas mexicanas emitidas mensualmente.</p>
+
+      <div class="max-w-2xl mx-auto bg-gray-50 rounded-xl p-8 border border-gray-200">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-gray-200">
+              <th class="text-left pb-3 font-semibold">Escenario</th>
+              <th class="text-right pb-3 font-semibold">Por Participante</th>
+              <th class="text-right pb-3 font-semibold">Equipo de 5</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-600">
+            <tr class="border-b border-gray-100">
+              <td class="py-3">Conservador (12 sesiones)</td>
+              <td class="text-right py-3">7,200 MXN</td>
+              <td class="text-right py-3">~36,000 MXN</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-3">Moderado (14–15 sesiones)</td>
+              <td class="text-right py-3">8,400 – 9,000 MXN</td>
+              <td class="text-right py-3">~42,000–45,000 MXN</td>
+            </tr>
+            <tr>
+              <td class="py-3">Intensivo (17 sesiones)</td>
+              <td class="text-right py-3">10,200 MXN</td>
+              <td class="text-right py-3">~51,000 MXN</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-xs text-gray-400 mt-4">El total varía porque las agendas varían — no todos los participantes asisten a todas las sesiones posibles. Precios en USD disponibles para empresas internacionales.</p>
+      </div>
+
+      <div class="max-w-2xl mx-auto mt-6 bg-amber-50 border border-amber-200 rounded-xl p-6 text-sm text-amber-900">
+        <strong>Los resultados dependen del compromiso individual.</strong> El programa está diseñado para crear avances — pero los avances requieren preparación entre sesiones, participación honesta con la retroalimentación y disposición a actuar bajo presión. Los participantes que se preparan seriamente típicamente ven ganancias de desempeño significativas. Los que asisten pero no se preparan verán resultados limitados.
+      </div>
+    </div>
+  </section>
+
+  <!-- Resultados -->
+  <section class="bg-light py-16 px-8">
+    <div class="site-container--small mx-auto">
+      <h2 class="text-3xl font-bold mb-10 text-center">Qué Produce Este Programa</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        <div>
+          <h3 class="font-bold text-lg mb-4">Para Cada Participante</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Mejora medible en la fluidez del inglés bajo presión de pares — no solo en práctica aislada</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Entregó una presentación real preparada en inglés frente a una audiencia de nivel par</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Un mapa preciso de sus propias brechas de comunicación — no una sensación vaga, un objetivo específico</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Mayor confianza en reuniones con liderazgo en EE.UU., clientes globales y partes interesadas angloparlantes</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Un plan de ruta escrito para desarrollo continuo después del programa</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-4">Para la Empresa</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Un equipo senior que puede representar a la empresa en inglés sin cuellos de botella</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Una inversión estructurada en L&D con resultados de desempeño observables, no solo certificados</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Un reporte de progreso consolidado para RH y revisión ejecutiva</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> El inicio de un cambio cultural — de evitar el inglés a prepararse para él</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Un efecto secundario inesperado: los pares se ven mutuamente con nuevos ojos, cambiando la dinámica en las reuniones reales</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CtaSection content={ctaContent} />
+
+  <!-- FAQ -->
+  <ServiceFAQ faqs={faqs} lang="es" />
+
+  <BreadcrumbSchema items={[
+    { name: "Inicio", url: "https://www.nyenglishteacher.com/es/" },
+    { name: "Servicios", url: "https://www.nyenglishteacher.com/es/servicios/" },
+    { name: "Valentía al Liderar en Inglés", url: "https://www.nyenglishteacher.com/es/servicios/paquete-corporativo/" }
+  ]} />
+</Base>

@@ -31,6 +31,7 @@ export const serviceMap: TranslationMap = {
   "logistics-english": "ingles-para-logistica",
   "professional-english": "ingles-para-profesionales",
   "high-stakes-english": "ingles-para-presentaciones",
+  "corporate-package": "paquete-corporativo",
   // Additional mappings that might be needed
   //'interview-prep': 'preparacion-para-entrevistas',
   //'medical-english': 'ingles-para-medicos',

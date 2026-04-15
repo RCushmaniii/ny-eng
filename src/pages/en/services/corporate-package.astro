@@ -1,0 +1,213 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import Challenge from "@components/sections/Challenge.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
+import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
+import { serviceFaqs } from "@data/service-faqs";
+import { services } from "@data/services";
+
+const serviceData = services.find((s) => s.slug === "corporate-package");
+if (!serviceData) {
+  throw new Error("Corporate package service data not found");
+}
+
+const title = "Courage While Leading in English — Corporate Team Program | NY";
+const seoDescription =
+  "A 12-week corporate coaching program for senior leadership teams. Individual preparation, peer-pressure group presentations, and a final assessment — all in English.";
+
+const heroContent = {
+  title: "Your leadership team is ready. Their English isn't keeping up.",
+  description:
+    "A 12-week program that uses peer pressure — not a classroom — to close the gap between preparation and performance.",
+  backgroundImage: serviceData.backgroundImage,
+  overlayOpacity: 0.75,
+};
+
+const challengeContent = {
+  headline: "The Problem Most L&D Programs Miss",
+  painPoints: [
+    "Your senior leaders communicate well in private English sessions — but freeze, rush, or switch to Spanish the moment their peers are watching.",
+    "Generic English courses produce certificates, not performance. Your team sits through a curriculum built for someone else.",
+    "The gap between 'functional English' and 'executive English' shows up in the boardroom, not in a grammar test.",
+  ],
+  icon: "💡",
+  image: serviceData.squareImage,
+  quizCta: {
+    text: "Take the Executive Communication Assessment — 60 seconds.",
+    link: "/en/quiz/executives/question/1",
+    linkLabel: "Start the Quiz →",
+  },
+};
+
+const ctaContent = {
+  eyebrow: "Corporate Programs",
+  title: "Ready to build a leadership team that leads in English?",
+  description:
+    "This program requires a discovery call to scope for your group size, schedule, and goals. Robert responds within 24 hours.",
+  buttonText: "Contact Robert on WhatsApp",
+  buttonLink: "https://wa.me/523315590572",
+  whatToExpectTitle: "In Your Discovery Call, We Will:",
+  whatToExpectList: [
+    "Assess your team's current English communication baseline",
+    "Scope the program for your group size, schedule, and industry context",
+    "Define what a successful outcome looks like for your leadership team",
+  ],
+};
+
+const faqs = serviceFaqs["corporate-package"]?.en || [];
+---
+
+<Base
+  title={title}
+  description={seoDescription}
+  lang="en"
+  tkey="services/corporate-package"
+  hideCta={true}
+  customHreflangs={[
+    {
+      lang: "en-US",
+      href: "https://www.nyenglishteacher.com/en/services/corporate-package/",
+    },
+    {
+      lang: "es-MX",
+      href: "https://www.nyenglishteacher.com/es/servicios/paquete-corporativo/",
+    },
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/en/services/corporate-package/"
+>
+  <!-- Hero -->
+  <InnerHero content={heroContent} />
+
+  <!-- Challenge -->
+  <Challenge content={challengeContent} background="white" padding="lg" />
+
+  <!-- Program Structure -->
+  <section class="bg-light py-16 px-8">
+    <div class="site-container--small mx-auto">
+      <h2 class="text-3xl font-bold mb-2 text-center">How the Program Works</h2>
+      <p class="text-center text-gray-600 mb-12">12 weeks. 3 phases. One goal: your team leads in English.</p>
+
+      <div class="grid gap-8 md:grid-cols-3">
+        <!-- Phase 1 -->
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Weeks 1–8</div>
+          <h3 class="text-xl font-bold mb-3">Phase 1 — Individual Assessment & Preparation</h3>
+          <p class="text-gray-600 mb-4">Each participant works privately with Robert. Weeks 1–2 establish an honest baseline. Weeks 3–8 are targeted preparation built around their real presentation content and role.</p>
+          <div class="text-sm text-gray-500">
+            <strong>8–12 sessions per participant</strong><br />
+            4,800 – 7,200 MXN
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Weeks 9–10</div>
+          <h3 class="text-xl font-bold mb-3">Phase 2 — Group Presentation</h3>
+          <p class="text-gray-600 mb-4">Every participant delivers their prepared presentation in English to the full leadership group — often for the first time. The pressure is real, deliberate, and productive. Breakthroughs happen here.</p>
+          <div class="text-sm text-gray-500">
+            <strong>1–2 group sessions</strong><br />
+            600 – 1,200 MXN per participant
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Weeks 11–12</div>
+          <h3 class="text-xl font-bold mb-3">Phase 3 — Lessons Learned & Final Assessment</h3>
+          <p class="text-gray-600 mb-4">Individual debrief sessions with direct, honest feedback. A final assessment measures progress against the Week 1–2 baseline. Each participant receives a written roadmap. The company receives a consolidated progress report.</p>
+          <div class="text-sm text-gray-500">
+            <strong>2–3 sessions per participant</strong><br />
+            1,200 – 1,800 MXN
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment -->
+  <section class="bg-white py-16 px-8">
+    <div class="site-container--small mx-auto">
+      <h2 class="text-3xl font-bold mb-2 text-center">Investment</h2>
+      <p class="text-center text-gray-600 mb-10">600 MXN per session per participant. Mexican facturas issued monthly.</p>
+
+      <div class="max-w-2xl mx-auto bg-gray-50 rounded-xl p-8 border border-gray-200">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-gray-200">
+              <th class="text-left pb-3 font-semibold">Scenario</th>
+              <th class="text-right pb-3 font-semibold">Per Participant</th>
+              <th class="text-right pb-3 font-semibold">5-Person Team</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-600">
+            <tr class="border-b border-gray-100">
+              <td class="py-3">Conservative (12 sessions)</td>
+              <td class="text-right py-3">7,200 MXN</td>
+              <td class="text-right py-3">~36,000 MXN</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-3">Moderate (14–15 sessions)</td>
+              <td class="text-right py-3">8,400 – 9,000 MXN</td>
+              <td class="text-right py-3">~42,000–45,000 MXN</td>
+            </tr>
+            <tr>
+              <td class="py-3">Intensive (17 sessions)</td>
+              <td class="text-right py-3">10,200 MXN</td>
+              <td class="text-right py-3">~51,000 MXN</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-xs text-gray-400 mt-4">Total varies because schedules vary — not every participant attends every possible session. USD pricing available for international companies.</p>
+      </div>
+
+      <div class="max-w-2xl mx-auto mt-6 bg-amber-50 border border-amber-200 rounded-xl p-6 text-sm text-amber-900">
+        <strong>Results depend on individual commitment.</strong> The program is designed to create breakthroughs — but breakthroughs require preparation between sessions, honest engagement with feedback, and the willingness to perform under pressure. Participants who prepare seriously typically see significant performance gains. Those who attend but don't prepare will see limited results.
+      </div>
+    </div>
+  </section>
+
+  <!-- Outcomes -->
+  <section class="bg-light py-16 px-8">
+    <div class="site-container--small mx-auto">
+      <h2 class="text-3xl font-bold mb-10 text-center">What This Program Produces</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        <div>
+          <h3 class="font-bold text-lg mb-4">For Each Participant</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Measurable improvement in English fluency under peer pressure — not just in isolated practice</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Delivered a real prepared presentation in English to a peer-level audience</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> A precise map of their own communication gaps — not a vague feeling, a specific target</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Greater confidence in meetings with US leadership, global clients, and English-speaking stakeholders</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> A written roadmap for continued development after the program</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-4">For the Company</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> A senior team that can represent the company in English without bottlenecks</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> A structured L&D investment with observable performance outcomes, not just certificates</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> A consolidated progress report for HR and executive review</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> The beginning of a culture shift — from avoiding English to preparing for it</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> An unexpected side effect: peers see each other differently, which changes dynamics in real meetings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CtaSection content={ctaContent} />
+
+  <!-- FAQ -->
+  <ServiceFAQ faqs={faqs} lang="en" />
+
+  <BreadcrumbSchema items={[
+    { name: "Home", url: "https://www.nyenglishteacher.com/en/" },
+    { name: "Services", url: "https://www.nyenglishteacher.com/en/services/" },
+    { name: "Courage While Leading in English", url: "https://www.nyenglishteacher.com/en/services/corporate-package/" }
+  ]} />
+</Base>
