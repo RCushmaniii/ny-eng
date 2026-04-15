@@ -5,7 +5,7 @@ translations:
   en: "/en/legal/terms-of-service/"
 seo:
   title: "Términos de Servicio - New York English Teacher"
-  description: "Términos y condiciones para el sitio web, servicios de coaching y Asistente de Messenger con IA de New York English Teacher. Incluye uso aceptable, descargos de responsabilidad y compromisos de servicio."
+  description: "Términos de servicio del sitio web, sesiones de coaching y Asistente de Messenger con IA de NY English Teacher — uso aceptable y compromisos de servicio."
 ---
 
 ## Términos y Condiciones de Uso
