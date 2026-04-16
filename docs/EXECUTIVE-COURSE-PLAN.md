@@ -1,182 +1,272 @@
 # Executive Communication Course Plan — "Communicate Like a Leader" (C1 → C2)
 
-**Status:** Planned, build deferred until Advanced course ships
+**Status:** Plan finalized 2026-04-16 after analysis of two of Robert's real executive lessons (one C1, one C2, same student). Ready to build.
 **Target audience:** Founders, executives, senior professionals — people who already communicate competently in English but want to **lead** in English
 **Tagline:** *Communicate Like a Leader*
-**Pricing:** **Paid** (with free preview units, paywall added in Phase 2). Strong funnel into Robert's 1-on-1 coaching.
+**Level:** C1 core with optional C2 "Elite" upgrades throughout
+**Pricing:** Free during launch (Phase 1). Stripe paywall Phase 2. Strongest funnel into Robert's 1-on-1 coaching.
 
 ---
 
 ## The thesis
 
-This course is fundamentally different from the first three. **It is essentially a productized version of Robert's 1-on-1 executive coaching.** The conversion play is:
+This course is fundamentally different from the first three. It is **a productized version of Robert's 1-on-1 executive coaching**, modeled directly on his proven drill-based pedagogy — the same teaching pattern he uses successfully with senior Fortune 500 clients.
 
-1. **The course gets executives in the door** — they pay a small amount or commit an email for premium content
-2. **The course makes 1-on-1 coaching feel inevitable** — every unit reminds the learner that personalized coaching will accelerate them faster
-3. **Strong, well-placed CTAs convert course completers into coaching clients**
+**The conversion play:**
+1. The course gets executives in the door — free now, paid later
+2. The course makes 1-on-1 coaching feel inevitable — every unit reminds the learner that a real coach accelerates them further
+3. Strong, well-placed CTAs convert course completers into coaching clients
 
-Robert IS the differentiator. His Bronx-born background, his Fortune 500 client roster, his personality — none of that can be copied by AI or generic course platforms. The course should feel like an extended seminar with Robert, not a textbook.
+Robert IS the differentiator. His Bronx-born delivery, his Fortune 500 client roster, his voice — none of it can be copied by AI or generic course platforms. The course should feel like an extended drill session with Robert, not a textbook.
 
 ---
 
-## What's CUT from this course (deliberate)
+## Pedagogy (derived from Robert's real lessons)
+
+Every unit section follows a very specific rhythm:
+
+1. **Goal** — what the learner will be able to do after this section
+2. **Why this matters** — the stakes at senior level
+3. **Core drill** — weak version → stronger options → integrated model reply
+4. **Technique focus / "Why this works"** — one-line strategic principle
+5. **Rapid Repeat** — 3-5 reusable sentence stems, say aloud
+6. **Final Shift** — Before: X / After: Y
+
+### The core drill pattern: Weak → Strong → Elite
+
+- **Weak:** Vague, hedging, generic. *"We looked into the issue."*
+- **Strong (C1):** Decisive, specific. *"We investigated the issue."*
+- **Elite (C2):** Analytically sharper. *"We diagnosed the root cause."*
+
+Most drills present **2-3 strong options** with a **usage guide** (when to use each) and an **integrated model reply** that uses all options in one fluent sentence. The goal is not to memorize synonyms — it's to train the ear to hear the strategic distinction.
+
+### Speaking-first, not reading-first
+
+Every drill has a "say aloud" prompt. Audio playback via Azure Neural TTS is critical — learners hear the model reply, then repeat it. The `AudioButton` shared component from the Advanced course handles this.
+
+### Named frameworks are memorizable products
+
+Executives walk away with specific, named mental models they can deploy under pressure:
+- **Cause → Action → Outcome** (simple status/update)
+- **Problem → Impact → Solution → Recommendation** (driving decisions)
+- **Context → Tension → Insight → Action → Outcome** (strategic storytelling)
+- **Acknowledge → Explain → Action → Prevention** (tough questions)
+- **State → Issue → Action → Timeline** (board updates)
+- **Defensive → Executive → Strategic** (reframing under pressure)
+
+---
+
+## What is CUT from this course (deliberate)
 
 | Cut | Why |
 |---|---|
-| **The written email unit** | Same reasoning as advanced — anyone who needs polished writing has Claude/ChatGPT. Spoken executive communication is the irreplaceable skill. |
-| **Verb tense drills** | Assumed mastered by C1+. |
-| **Phrasal verbs** | Same as before. |
-| **Modal drills** | Same as before. |
-| **Vocabulary memorization** | C1 learners build vocabulary by reading and listening, not by memorizing flashcards. |
+| Written email unit | Executive writing needs = Claude/ChatGPT. Spoken command under pressure is the irreplaceable skill. |
+| Verb tense drills | Assumed mastered by C1+. |
+| Phrasal verbs, modals, vocabulary memorization | C1 learners build vocabulary by reading and listening — not by memorizing lists. |
+| Case study analysis | Originally planned, but Robert's real lessons are pure drill, not analysis. Cut. |
+| Small talk, networking, cross-cultural as standalone units | Too "MBA textbook." Dilute the linguistic-authority positioning. Integrated into application units where relevant. |
 
 ---
 
-## 10-unit outline (3 sections per unit)
+## 10-unit outline (rebuilt on Robert's proven pedagogy)
 
-| # | Title | Section 1 | Section 2 | Section 3 |
-|---|---|---|---|---|
-| 1 | **Executive Presence in English** | How leaders speak — pace, pause, and presence | Eliminating filler and hedging language | Sounding decisive without sounding aggressive |
-| 2 | **Meetings That Move Forward** | Opening, steering, and closing a meeting | Interrupting politely and holding the floor | Disagreeing professionally — the diplomatic toolkit |
-| 3 | **Presentations & Public Speaking** | Structuring a talk for English-speaking audiences | Signposting language that keeps listeners engaged | Handling Q&A, including hostile questions |
-| 4 | **Negotiation Language** | Positioning, anchoring, and concession language | Diplomatic "no" — refusing without damaging the relationship | Closing the deal in English |
-| 5 | **Small Talk & Relationship Building** | Opening conversations with clients and colleagues | Networking events — what to say beyond "what do you do?" | Building rapport across the meeting, the meal, and the follow-up |
-| 6 | **Difficult Conversations** | Giving feedback without offending | Receiving feedback with poise | Conflict, apology, and repair language |
-| 7 | **Storytelling for Business** | The narrative arc in pitches and proposals | Data storytelling — making numbers memorable | Personal anecdotes that build credibility |
-| 8 | **Cross-Cultural Communication** | American business culture — directness, small talk, hierarchy | Meeting and call norms across cultures | Avoiding misunderstandings with international teams |
-| 9 | **Leadership Vocabulary & Register** | The language of strategy, vision, and execution | Business idioms that signal seniority | Avoiding jargon that makes you sound junior |
-| 10 | **Your Executive Voice** | Personal brand in English — how you want to be heard | Building a long-term communication practice | **Capstone: a recorded executive presentation with coaching feedback** |
+**Units 1-6 = Mechanics.** Teach the linguistic habits of executive speech.
+**Units 7-9 = Applications.** Apply the mechanics to specific senior-level situations.
+**Unit 10 = Integration + Capstone.**
 
-**Final Assessment:** Different from the multiple-choice exams in the other courses. See "The capstone strategy" below.
+| # | Title | Core focus | Frameworks taught |
+|---|---|---|---|
+| 1 | **Executive Word Choice** | Verb precision drills (the core Robert drill). Weak→Strong→Elite ladder. "We didn't just X, we Y" rapid drill. | Usage-guide system |
+| 2 | **Eliminating Weak Language** | Filler and hedging elimination. Calibrated certainty — direct without aggressive. Controlled assertion. | — |
+| 3 | **Structured Responses & Connectors** | Organizing thinking in real time. Executive connectors. | Cause→Action→Outcome. Problem→Impact→Solution→Recommendation. |
+| 4 | **Controlled Tone Under Pressure** | Defensive→Executive→Strategic reframing. Downgrade emotion, upgrade control. | 3-tier reframe ladder |
+| 5 | **Strategic Storytelling** | Fact → meaning → direction. Turning updates into influence. | Context→Tension→Insight→Action→Outcome |
+| 6 | **The Impromptu Toolkit** | 60-second replies under pressure. Three flagship scenarios. | Board Update, Tough Question, Drive Decision |
+| 7 | **High-Stakes Meetings** | Applying mechanics to meetings. Opening/closing. Holding the floor. Diplomatic disagreement. | — |
+| 8 | **Feedback and Difficult Conversations** | Giving feedback without offending. Receiving with poise. Conflict, apology, repair. | — |
+| 9 | **Negotiation and Driving Decisions** | Anchoring, concessions, diplomatic "no". Closing language. | Problem→Impact→Solution→Recommendation applied |
+| 10 | **Your Executive Voice + Capstone** | Integration. Personal brand in English. Long-term practice. **Capstone recording submission.** | All |
 
----
+### Section structure within each unit
 
-## Component reuse from advanced
+Each unit has **3 sections**. Each section follows Robert's rhythm (Goal → Why → Drill → Technique Focus → Rapid Repeat → Final Shift).
 
-The 5 reusable components built for advanced will work here too:
-- `WordPairLab` for U9 (vocabulary register comparisons)
-- `SentenceTransformer` for U1 (eliminating hedging) and U7 (data storytelling)
-- `ErrorSpotter` for U6 (feedback phrasing pitfalls)
-
-Most executive sections will use **less interactivity, more analysis**. Each unit will lean on:
-- **Case studies** — real examples of executive communication (public-domain speeches, leaked memos, famous interviews) with analytical reveals
-- **Frameworks** — SCQA, BLUF, Pyramid Principle, Aristotle's ethos/pathos/logos
-- **Robert's voice** in the prose — opinionated, specific, premium-feeling
-
-This means the executive course will need at most **1-2 new components**:
-
-| Component | Purpose |
-|---|---|
-| `CaseStudyLab` | Show an executive example (text + context), analytical reveal explaining why it worked |
-| `RhetoricalPatternLab` (optional) | Show a rhetorical pattern (rule of three, contrast pair, callback), give examples, learner identifies the pattern in new examples |
+Example — Unit 1 sections:
+- **1.1** Verb Precision — core "weak → 3 strong options" drill
+- **1.2** Progressive Discovery — "identified → isolated → exposed" depth language
+- **1.3** Integrated Executive Phrasing — putting it into model replies
 
 ---
 
-## The capstone strategy — Unit 10 + Final Assessment
+## C1 vs C2 progression (how one course serves both levels)
 
-Robert's outline says Unit 10 ends with "a recorded executive presentation with coaching feedback." This is the **single most important conversion moment in the entire course**.
+Rather than build two separate courses, each drill surfaces **progressive tiers**:
 
-We will NOT build in-browser audio recording for v1 (same reason as advanced — it's a 1-3 day side project that distracts from shipping content). Instead, the capstone will be:
+- **Default view:** C1 — Weak → Strong
+- **Optional C2 expansion:** Reveals the "Elite" upgrade with a **C2 Insight** callout (e.g., *"Differentiates reactive vs strategic delay"* or *"Moves from communication → alignment → influence"*)
 
-1. **A clear prompt** — "Record a 90-second executive update on a project you're leading. Use the SCQA framework. Submit it via email or book a strategy session."
-2. **A submission CTA** — Two paths:
-    - **Path A:** Email the recording to a dedicated address (e.g., `capstone@nyenglishteacher.com`). Robert listens and replies personally with feedback within 48 hours.
+**Benefits:**
+- C1 learner gets a focused, achievable course
+- C2 learner can push into the Elite tier for real stretch
+- Robert uses the same course to coach both levels of client
+
+**Technical note:** The `VerbUpgradeLab` component must support 2-tier (C1 only) or 3-tier (C1+C2) modes via the data file.
+
+---
+
+## Components
+
+### Reused from Advanced course (no new build)
+- `AudioButton` — Azure Neural TTS playback on all model replies (`en-US-AvaNeural` / `es-MX-DaliaNeural`)
+- `SentenceTransformer` — backup/general transformation drill where appropriate
+
+### New components for this course
+
+| Component | Purpose | Primary units |
+|---|---|---|
+| `VerbUpgradeLab` | Weak verb sentence → 2-3 stronger options with usage guide → "C2 Insight" callout → integrated model reply with audio | U1 (core), U3, U9 |
+| `WeakStrongElite` | 3-tier ladder drill (weak → strong → elite). Simpler than VerbUpgradeLab — single-line progression | U2, U4 |
+| `StructuredResponseBuilder` | Prompt → weak reply → model reply in named parts → expandable "why it works" reveal | U3, U6, U8, U9 |
+| `ConnectorDrill` | Transition upgrade — raw sentence pair → connected version with labeled connector | U3 |
+| `StoryBuilder` | Flat description → 5-step strategic narrative (Context→Tension→Insight→Action→Outcome) | U5 |
+| `RapidRepeat` | 3-5 reusable sentence stems with AudioButton, "say aloud" affordance | Every unit (section footer) |
+| `ImpromptuScenario` | Scenario + framework + 60-second timer + model answer with audio | U6, U9 |
+| `FinalShiftCard` | Display-only: "Before: X. After: Y." transformation summary | Every unit ending |
+
+**Total: 8 new, 2 reused = 10 components.** Most new components are small and share similar structure (data-in, audio-out, reveal affordance).
+
+---
+
+## The capstone strategy
+
+Unit 10 ends with a recorded executive presentation with Robert's personal feedback. **This is the single most important conversion moment in the entire course.**
+
+We will NOT build in-browser audio recording for v1 (same reasoning as Advanced — 1-3 days of side work that distracts from shipping content). Instead:
+
+1. **A clear prompt** — *"Record a 90-second executive update on a project you're leading. Use the Context → Tension → Insight → Action → Outcome framework. Submit it via email or book a strategy session."*
+2. **Two submission paths:**
+    - **Path A:** Email the recording to a dedicated address (`capstone@nyenglishteacher.com`). Robert listens and replies personally within 48 hours.
     - **Path B:** Book a free 30-minute strategy session and present it live to Robert.
-3. **The funnel hook** — Either path puts the executive into direct contact with Robert. The strategy session converts at a high rate. Path A nurtures the email list and creates a personalized touch point.
+3. **The funnel hook** — Either path puts the executive into direct contact with Robert. Path B converts at the highest rate. Path A nurtures the email list with a personalized touch.
 
-This is **the entire point of the executive course.** The capstone IS the conversion event.
+**The capstone IS the conversion event.** Everything leads here.
 
 ---
 
 ## Pricing & Phase 1 vs Phase 2
 
-### Phase 1 (build now, ship after Advanced)
+### Phase 1 (build now)
+**Free during launch.** Frame as *"Early Access — free for the first wave of executives."* Removes friction while we learn what content lands, builds testimonials, aligns with the real conversion (coaching).
 
-**Free during launch.** Frame it as "Early Access — free for the first wave of executives." This:
-- Removes friction during the period when we're still learning what content lands
-- Builds testimonials and case studies before charging
-- Lets us gather feedback before locking in a price point
-- Aligns with "free with strategy session booking" — the real conversion is the coaching
+### Phase 2 (after content validates)
+Add Stripe paywall. Recommended: **Course + strategy session bundle at $299.** The session is the real value driver. Course alone at $149 as a secondary option.
 
-### Phase 2 (after we know the content works)
-
-Add a Stripe paywall. Three pricing options to consider when we get there:
-
-| Option | Price | Notes |
-|---|---|---|
-| **A) Standalone course** | $99–$149 one-time | Self-serve, lower commitment |
-| **B) Course + strategy session** | $299 bundle | Includes one 30-minute session with Robert. The session is the value driver. |
-| **C) Course free, coaching paid** | Free / $499 per coaching package | Course as lead magnet only. Highest funnel volume, lowest course revenue. |
-
-**Recommendation when we get to Phase 2:** Option B. Bundles the course with a touch point with Robert, captures actual revenue, and the strategy session anchors the value perception.
-
-**Why we're deferring this:** Building Stripe checkout, payment tracking, course access gating (per-user paid status), and refund handling is a substantial system — probably 2-3 days on its own. We don't want to spend that time before we know the product is good. Free during launch reduces risk.
+Deferred because Stripe checkout, access gating, and refund handling is ~2-3 days of work that shouldn't block shipping.
 
 ---
 
-## Files to be created (estimated)
+## Files to be created
 
-### React components (1-2 new)
-- `src/components/course/CaseStudyLab.tsx`
-- `src/components/course/RhetoricalPatternLab.tsx` (optional)
+### React components (8 new)
+- `src/components/course/VerbUpgradeLab.tsx`
+- `src/components/course/WeakStrongElite.tsx`
+- `src/components/course/StructuredResponseBuilder.tsx`
+- `src/components/course/ConnectorDrill.tsx`
+- `src/components/course/StoryBuilder.tsx`
+- `src/components/course/RapidRepeat.tsx`
+- `src/components/course/ImpromptuScenario.tsx`
+- `src/components/course/FinalShiftCard.tsx`
 
 ### Data files (12)
 - `src/data/executive/types.ts`
 - `src/data/executive/units.ts`
 - `src/data/executive/unit-1.ts` through `unit-10.ts`
-- `src/data/executive/assessment.ts` (smaller than a full exam — capstone-focused)
+- `src/data/executive/capstone.ts`
 
 ### Page files (24)
-- `src/pages/en/course/executive/index.astro` + 10 unit pages + assessment page (12 EN)
-- `src/pages/es/curso/ejecutivo/index.astro` + 10 unit pages + assessment page (12 ES)
+- `src/pages/en/course/executive/index.astro` + 10 unit pages + capstone page
+- `src/pages/es/curso/ejecutivo/index.astro` + 10 unit pages + capstone page
 
 ### Modified files
 - `src/lib/i18n.ts` — add 12 new TKey entries + routes
 - `src/pages/en/courses/index.astro` and `src/pages/es/cursos/index.astro` — add Executive course card
 
-**Total: ~38 new files, 3 modified.** Slightly less than advanced because the components are mostly reused.
+**Total: ~44 new files, 3 modified.**
 
 ---
 
-## Build order (recommended PR cadence)
+## Build order (5 PRs)
 
 | PR | Contents |
 |---|---|
-| **PR 1** | Foundation — i18n routes, types, units metadata, landing page (EN+ES), CaseStudyLab component |
-| **PR 2** | Units 1, 2, 3 |
-| **PR 3** | Units 4, 5, 6 |
+| **PR 1** | Foundation: i18n routes, types, units metadata, landing pages (EN+ES), `VerbUpgradeLab`, `RapidRepeat`, `FinalShiftCard`, courses hub card |
+| **PR 2** | Units 1, 2, 3 + `WeakStrongElite`, `StructuredResponseBuilder`, `ConnectorDrill` |
+| **PR 3** | Units 4, 5, 6 + `StoryBuilder`, `ImpromptuScenario` |
 | **PR 4** | Units 7, 8, 9 |
-| **PR 5** | Unit 10 + Capstone funnel + courses hub card |
+| **PR 5** | Unit 10 + Capstone funnel + capstone email handler + capstone landing page |
 
-Same cadence as advanced. Defer the Stripe paywall to a Phase 2 PR after we ship and validate.
+PR 1 is heavier (3 components) because we front-load the foundational drill component (`VerbUpgradeLab`) and the display utilities (`RapidRepeat`, `FinalShiftCard`) that appear in every unit. PRs 4-5 are lighter — no new components, just content authoring.
 
 ---
 
 ## URL structure
 
 - EN landing: `/en/course/executive/`
-- EN unit: `/en/course/executive/unit-1/` through `/unit-10/`
-- EN assessment: `/en/course/executive/assessment/`
+- EN units: `/en/course/executive/unit-1/` through `/unit-10/`
+- EN capstone: `/en/course/executive/capstone/`
 - ES landing: `/es/curso/ejecutivo/`
-- ES unit: `/es/curso/ejecutivo/unidad-1/` through `/unidad-10/`
-- ES assessment: `/es/curso/ejecutivo/evaluacion/`
+- ES units: `/es/curso/ejecutivo/unidad-1/` through `/unidad-10/`
+- ES capstone: `/es/curso/ejecutivo/reto-final/`
+
+---
+
+## Content authoring strategy
+
+The two reference lessons Robert has shared are the **canonical style guide**. Claude drafts drills matching that voice; Robert reviews and corrects.
+
+**Voice rules (from analyzing real lessons):**
+- Direct, specific, no fluff
+- Every drill has a concrete scenario (operations, strategy, team, client, performance)
+- Weak examples are relatable — things real executives actually say
+- Strong examples sound like Robert would say them
+- "Why this works" reveals are **one-liners**, not paragraphs
+- "C2 Insight" callouts name the **strategic distinction**, not the grammar
+- "Final Shift" cards use exact Before/After contrast
+
+**Quality bar:** Production-grade, client-facing. This course represents Robert's business. Each drill should feel like it came from the same coach who delivered the two reference lessons.
 
 ---
 
 ## What this course does NOT try to be
 
-- A grammar refresher (intermediate handled that)
-- A cultural exchange program
-- A networking platform
+- A grammar refresher (Intermediate handled that)
+- A cultural exchange or networking program
+- A soft-skills or leadership course with English as a wrapper
 - A self-paced certification program
 - A replacement for 1-on-1 coaching
 
-It is **a focused, premium-positioned series of leadership communication lessons designed to convert qualified executives into Robert's coaching clients.** Every unit serves that goal.
+It is **a focused, premium-positioned series of linguistic command drills designed to convert qualified executives into Robert's coaching clients.** Every unit serves that goal.
 
 ---
 
 ## Open questions / decisions for later
 
-- **Robert recording video intros for each unit** — flagged in the original alignment discussion. Robert declined for now ("not ready to record a video right now"). If/when he changes his mind, even 2-3 minute video intros per unit would dramatically increase perceived value and conversion. Worth revisiting after Phase 1 ships.
-- **Whether to write a separate Spanish version of the case studies** — most executive content references American business culture and English-language sources. Translation may be straightforward, but some cultural context will need adaptation.
-- **Whether to bundle the course with Robert's existing executive training products** (the Cushlabs offerings, etc.). Worth a strategic conversation when we get to Phase 2 paywall.
-- **Whether to create a private Slack/Discord community for executive course enrollees** — could be a high-value add but creates ongoing moderation work.
+- **Robert recording video intros per unit** — flagged originally, Robert declined for Phase 1. If revisited after launch, 2-3 minute intros would dramatically increase perceived value and conversion.
+- **Spanish adaptation** — most executive phrasing is English-specific. The Spanish course should teach Spanish speakers how to handle *English* executive situations — not translate word-for-word. Handle during content authoring, unit by unit.
+- **Bundling with Cushlabs executive offerings** — worth strategic conversation at Phase 2 paywall.
+- **Private community** (Slack/Discord for enrollees) — high-value add but creates ongoing moderation overhead. Defer to post-launch.
+
+---
+
+## Success metrics
+
+**Phase 1 (free launch):**
+- 50+ course completions in first 90 days
+- 10+ capstone submissions (email or strategy session)
+- 5+ strategy sessions booked from capstone path
+- 2+ coaching clients converted from strategy sessions
+
+**Phase 2 (paywall):**
+- $10K+ revenue in first 90 days post-paywall
+- Landing page → purchase conversion > 2%
+- Course-to-coaching funnel: 10%+ of course buyers convert to coaching package
