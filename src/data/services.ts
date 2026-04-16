@@ -99,6 +99,19 @@ export const services: Service[] = [
   },
 ] as const;
 
+// Corporate program — rendered as its own section on the services index,
+// not in the individual-coaching grid, so it lives as a standalone export.
+export const corporatePackage: Service = {
+  title: "Courage While Leading in English",
+  icon: "🏢",
+  description:
+    "A 12-week program for senior leadership teams. Individual preparation, group presentation under peer pressure, and a final assessment — designed to close the gap between private fluency and public performance.",
+  link: "/en/services/corporate-package/",
+  backgroundImage: executiveEnglishImage,
+  squareImage: executiveEnglishSquareImage,
+  slug: "corporate-package",
+};
+
 // Spanish version
 export const serviciosEs: Service[] = [
   // 1. Ejecutivos y Directores
@@ -168,6 +181,17 @@ export const serviciosEs: Service[] = [
     slug: "ingles-para-presentaciones",
   },
 ] as const;
+
+export const paqueteCorporativo: Service = {
+  title: "Valentía al Liderar en Inglés",
+  icon: "🏢",
+  description:
+    "Un programa de 12 semanas para equipos de liderazgo senior. Preparación individual, presentación grupal bajo presión de pares y evaluación final — diseñado para cerrar la brecha entre la fluidez privada y el desempeño público.",
+  link: "/es/servicios/paquete-corporativo/",
+  backgroundImage: executiveEnglishImage,
+  squareImage: executiveEnglishSquareImage,
+  slug: "paquete-corporativo",
+};
 
 // Updated professional profiles to match standardized categories
 export const professionalProfiles = [

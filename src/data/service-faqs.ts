@@ -404,5 +404,51 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
         answer: "Nuestro enfoque principal es comunicación oral — llamadas, demos y reuniones. Sin embargo, podemos ayudarte a crear y practicar versiones verbales de tus propuestas, elevator pitches, y los patrones de lenguaje persuasivo que se trasladan a tus seguimientos escritos."
       }
     ]
+  },
+  "corporate-package": {
+    en: [
+      {
+        question: "How is this different from sending employees to a regular English course?",
+        answer: "A standard English course teaches grammar and vocabulary to a generic syllabus. This program builds around each participant's actual role, their real presentations, and their specific communication gaps — then uses peer pressure in the group session to surface the gap between private preparation and public performance. That's a different problem and a different solution."
+      },
+      {
+        question: "What level of English do participants need to join this program?",
+        answer: "Participants should be able to hold a professional English conversation — at least intermediate level (B1+). This is not a beginner program. The work in Phase 1 is preparation for performance, not foundational language learning."
+      },
+      {
+        question: "What happens if a participant has a bad group presentation session?",
+        answer: "A difficult group session is part of the design, not a failure. It produces precise data about exactly where that person's gap is — which is more valuable than a comfortable session that masks the real problem. Robert uses Phase 3 to debrief directly, honestly, and constructively with each participant."
+      },
+      {
+        question: "How is pricing structured for a team?",
+        answer: "The program is priced at 600 MXN per session per participant. Total investment per participant typically ranges from 7,200 to 10,200 MXN across all three phases, depending on session frequency and schedule. Mexican facturas are issued monthly and a consolidated invoice is available for the company."
+      },
+      {
+        question: "Can we run this program in Spanish?",
+        answer: "The program is conducted in English — that's the point. Robert understands Spanish and can provide context or clarification in Spanish when needed, but the coaching sessions and group presentation are in English. The pressure of speaking English in front of peers is the core mechanism of the program."
+      }
+    ],
+    es: [
+      {
+        question: "¿En qué se diferencia esto de enviar empleados a un curso de inglés regular?",
+        answer: "Un curso de inglés estándar enseña gramática y vocabulario con un temario genérico. Este programa está construido alrededor del rol real de cada participante, sus presentaciones reales y sus brechas de comunicación específicas — y luego usa la presión de pares en la sesión grupal para sacar a la luz la brecha entre la preparación privada y el desempeño público. Es un problema diferente y requiere una solución diferente."
+      },
+      {
+        question: "¿Qué nivel de inglés necesitan tener los participantes para unirse a este programa?",
+        answer: "Los participantes deben poder sostener una conversación profesional en inglés — al menos nivel intermedio (B1+). Este no es un programa para principiantes. El trabajo en la Fase 1 es preparación para el desempeño, no aprendizaje del idioma desde cero."
+      },
+      {
+        question: "¿Qué pasa si un participante tiene una mala sesión de presentación grupal?",
+        answer: "Una sesión grupal difícil es parte del diseño, no un fracaso. Produce datos precisos sobre exactamente dónde está la brecha de esa persona — lo cual es más valioso que una sesión cómoda que oculta el problema real. Robert usa la Fase 3 para debriefar directa, honesta y constructivamente con cada participante."
+      },
+      {
+        question: "¿Cómo se estructura el precio para un equipo?",
+        answer: "El programa tiene un precio de 600 MXN por sesión por participante. La inversión total por participante típicamente oscila entre 7,200 y 10,200 MXN a lo largo de las tres fases, según la frecuencia de sesiones y la agenda. Las facturas mexicanas se emiten mensualmente y hay una factura consolidada disponible para la empresa."
+      },
+      {
+        question: "¿Podemos hacer este programa en español?",
+        answer: "El programa se realiza en inglés — ese es el punto. Robert entiende español y puede proporcionar contexto o aclaraciones en español cuando sea necesario, pero las sesiones de coaching y la presentación grupal son en inglés. La presión de hablar inglés frente a los pares es el mecanismo central del programa."
+      }
+    ]
   }
 };
