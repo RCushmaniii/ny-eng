@@ -8,12 +8,7 @@ import CtaSection from "@components/sections/CtaSection.astro";
 import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
 import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
 import { serviceFaqs } from "@data/service-faqs";
-import { serviciosEs } from "@data/services";
-
-const serviceData = serviciosEs.find((s) => s.slug === "paquete-corporativo");
-if (!serviceData) {
-  throw new Error("Corporate package service data (ES) not found");
-}
+import { paqueteCorporativo as serviceData } from "@data/services";
 
 const title = "Valentía al Liderar en Inglés — Programa Corporativo | NY";
 const seoDescription =

@@ -8,12 +8,7 @@ import CtaSection from "@components/sections/CtaSection.astro";
 import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
 import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
 import { serviceFaqs } from "@data/service-faqs";
-import { services } from "@data/services";
-
-const serviceData = services.find((s) => s.slug === "corporate-package");
-if (!serviceData) {
-  throw new Error("Corporate package service data not found");
-}
+import { corporatePackage as serviceData } from "@data/services";
 
 const title = "Courage While Leading in English — Corporate Team Program | NY";
 const seoDescription =
