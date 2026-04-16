@@ -45,25 +45,25 @@ export default function RapidRepeat({
       <p className="text-sm text-slate-400 leading-relaxed">{instruction}</p>
 
       <ul className="space-y-2">
-        {stems.map((stem, idx) => {
-          const text = lang === "es" ? stem.textEs : stem.text;
-          return (
-            <li
-              key={idx}
-              className="flex items-center gap-3 bg-slate-800/80 border border-slate-700 rounded-xl px-4 py-3"
-            >
-              <div className="shrink-0 w-7 h-7 rounded-full bg-amber-500 text-slate-900 text-xs font-bold flex items-center justify-center">
-                {idx + 1}
-              </div>
-              <p className="flex-1 text-base text-slate-100 font-medium leading-relaxed">
-                "{text}"
+        {stems.map((stem, idx) => (
+          <li
+            key={idx}
+            className="flex items-start gap-3 bg-slate-800/80 border border-slate-700 rounded-xl px-4 py-3"
+          >
+            <div className="shrink-0 mt-0.5 w-7 h-7 rounded-full bg-amber-500 text-slate-900 text-xs font-bold flex items-center justify-center">
+              {idx + 1}
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-base text-slate-100 font-medium leading-relaxed">
+                "{stem.text}"
               </p>
-              <div className="shrink-0">
-                <AudioButton text={text} size="sm" />
-              </div>
-            </li>
-          );
-        })}
+              <p className="text-xs text-slate-400 mt-0.5">{stem.textEs}</p>
+            </div>
+            <div className="shrink-0 mt-0.5">
+              <AudioButton text={stem.text} size="sm" />
+            </div>
+          </li>
+        ))}
       </ul>
 
       <div className="flex items-center gap-2 text-xs text-slate-500 pt-1">
