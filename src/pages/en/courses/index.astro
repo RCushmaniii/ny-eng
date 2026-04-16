@@ -6,9 +6,11 @@ import Button from "@components/ui/Button.astro";
 import { courseInfo, units } from "@data/course/units";
 import { intermediateInfo, intermediateUnits } from "@data/intermediate/units";
 import { advancedInfo, advancedUnits } from "@data/advanced/units";
+import { executiveInfo, executiveUnits } from "@data/executive/units";
 import {
   Sparkles,
   Puzzle,
+  Crown,
   ArrowRight,
   CheckCircle2,
   GraduationCap,
@@ -20,6 +22,7 @@ const tkey = "courses" as const;
 const beginnerAvailable = units.length;
 const intermediateAvailable = intermediateUnits.length;
 const advancedAvailable = advancedUnits.filter((u) => u.id === 1).length;
+const executiveAvailable = executiveUnits.filter((u) => u.published).length;
 ---
 
 <Base
@@ -54,7 +57,7 @@ const advancedAvailable = advancedUnits.filter((u) => u.id === 1).length;
   <!-- Course cards -->
   <section class="py-16 md:py-20 bg-slate-50">
     <div class="site-container mx-auto px-4">
-      <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <!-- Beginner -->
         <a
@@ -196,15 +199,62 @@ const advancedAvailable = advancedUnits.filter((u) => u.id === 1).length;
             </div>
           </div>
         </a>
+
+        <!-- Executive -->
+        <a
+          href="/en/course/executive/"
+          class="group block bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl hover:border-amber-400 transition-all duration-200"
+        >
+          <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900 p-6 text-white min-h-[180px] flex flex-col justify-end">
+            <div class="flex items-center gap-2 text-amber-300 text-xs font-bold uppercase tracking-wider mb-2">
+              <Crown class="w-3.5 h-3.5" />
+              Level C1–C2 — Executive
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold mb-2" style="font-family: 'Noto Sans KR', sans-serif;">
+              {executiveInfo.title}
+            </h2>
+            <p class="text-amber-100 text-sm leading-relaxed">
+              {executiveInfo.tagline}
+            </p>
+          </div>
+          <div class="p-6">
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              The productized version of Robert's 1-on-1 executive coaching. Drill-based, speaking-first training for senior leaders who need to lead in English.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                <span>Word precision, structured responses & named frameworks</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                <span>C1 core with optional C2 Elite tier per drill</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                <span>Capstone: recorded exec presentation + personal feedback</span>
+              </li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">
+                {executiveAvailable > 0
+                  ? `${executiveAvailable} unit${executiveAvailable === 1 ? "" : "s"} available · more coming`
+                  : "Early access · building now"}
+              </span>
+              <span class="inline-flex items-center gap-1 text-amber-600 font-semibold text-sm group-hover:gap-2 transition-all">
+                Start course
+                <ArrowRight class="w-4 h-4" />
+              </span>
+            </div>
+          </div>
+        </a>
       </div>
 
       <!-- Which one? -->
       <div class="max-w-3xl mx-auto mt-16 text-center">
         <h3 class="text-2xl font-bold text-slate-900 mb-3">Not sure which one to start?</h3>
         <p class="text-slate-600 mb-6">
-          If you can introduce yourself, order food, and read simple signs in English — start with
-          the <strong>intermediate</strong> course. If English still feels brand new, start with
-          the <strong>beginner</strong> course. You can always switch later — your progress is saved separately for each course.
+          If English still feels brand new, start with the <strong>beginner</strong> course. If you can hold a conversation, start with <strong>intermediate</strong>. If your English is fluent but not polished, go to <strong>advanced</strong>. And if you're a senior leader who already communicates competently in English but wants to <em>lead</em> in English, go straight to <strong>executive</strong>. Your progress is saved separately for each course.
         </p>
         <Button href="/en/services/" variant="secondary" size="md">
           Or work 1-on-1 with Robert
