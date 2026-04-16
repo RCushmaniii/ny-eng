@@ -1,32 +1,21 @@
-// VerbUpgradeLab — the signature drill of the Executive Communication course.
+// ConnectorDrill — transition upgrade drill.
 //
-// Shows a weak / vague sentence, 2-3 stronger options each with a usage note,
-// and an integrated model reply that uses all options in one fluent sentence.
-// Optional C2 Elite tier reveals a sharper single phrasing plus a C2 Insight
-// callout naming the strategic distinction.
-//
-// This mirrors Robert's proven pedagogy: the learner hears the weak version,
-// studies the usage distinctions, then reveals the integrated model reply and
-// can optionally push past Strong (C1) into Elite (C2).
+// A weak two-sentence pair ("We had delays. We are fixing it.") is
+// upgraded into a connected version using a labeled executive connector
+// ("As a result…", "In response…", "Accordingly…"). Optional elite tier
+// layers in a second connector for more sophisticated phrasing.
 
 import { useState } from "react";
-import {
-  ArrowDown,
-  Lightbulb,
-  RotateCcw,
-  Sparkles,
-  Target,
-  Zap,
-} from "lucide-react";
+import { ArrowDown, Link2, RotateCcw, Zap } from "lucide-react";
 import AudioButton from "./AudioButton";
-import type { VerbUpgradeItem } from "@data/executive/types";
+import type { ConnectorDrillItem } from "@data/executive/types";
 
 interface Props {
-  items: VerbUpgradeItem[];
+  items: ConnectorDrillItem[];
   lang: "en" | "es";
 }
 
-export default function VerbUpgradeLab({ items, lang }: Props) {
+export default function ConnectorDrill({ items, lang }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const [eliteRevealed, setEliteRevealed] = useState(false);
@@ -34,6 +23,8 @@ export default function VerbUpgradeLab({ items, lang }: Props) {
   const current = items[currentIndex];
   const isLast = currentIndex === items.length - 1;
   const hasElite = Boolean(current.elite);
+
+  const connector = lang === "es" ? current.connectorEs : current.connector;
 
   const handleReveal = () => setRevealed(true);
   const handleRevealElite = () => setEliteRevealed(true);
@@ -51,14 +42,12 @@ export default function VerbUpgradeLab({ items, lang }: Props) {
     setEliteRevealed(false);
   };
 
-  const why = lang === "es" ? current.whyItWorksEs : current.whyItWorks;
-
   return (
     <section className="space-y-6">
-      {/* Progress */}
       <div className="flex items-center justify-between">
         <span className="text-sm text-slate-500">
-          {lang === "es" ? "Drill" : "Drill"} {currentIndex + 1} / {items.length}
+          {lang === "es" ? "Conector" : "Connector"} {currentIndex + 1} /{" "}
+          {items.length}
         </span>
         <button
           onClick={handleRestart}
@@ -76,12 +65,11 @@ export default function VerbUpgradeLab({ items, lang }: Props) {
         />
       </div>
 
-      {/* Card */}
       <div className="bg-white rounded-2xl border-2 border-slate-200 overflow-hidden">
-        {/* Weak sentence */}
+        {/* Weak */}
         <div className="px-6 pt-6">
           <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-            {lang === "es" ? "El fraseo débil:" : "The weak phrasing:"}
+            {lang === "es" ? "Sin conectar:" : "Unconnected:"}
           </p>
           <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
             <div className="flex items-start justify-between gap-3">
@@ -96,48 +84,22 @@ export default function VerbUpgradeLab({ items, lang }: Props) {
           </div>
         </div>
 
-        {/* Options */}
-        <div className="px-6 pt-5">
-          <p className="text-xs font-semibold uppercase tracking-wider text-amber-600 mb-3 flex items-center gap-1">
-            <Target size={12} />
-            {lang === "es" ? "Opciones más fuertes:" : "Stronger options:"}
-          </p>
-          <div className="grid gap-2">
-            {current.options.map((option, idx) => (
-              <div
-                key={idx}
-                className="bg-amber-50/60 border border-amber-200 rounded-xl p-3 flex items-center gap-3"
-              >
-                <div className="shrink-0 w-7 h-7 rounded-full bg-amber-500 text-white text-xs font-bold flex items-center justify-center">
-                  {idx + 1}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className="font-semibold text-slate-900">{option.verb}</span>
-                    <AudioButton text={option.verb} size="sm" />
-                  </div>
-                  <p className="text-xs text-slate-600 mt-0.5">
-                    {lang === "es" ? option.usageEs : option.usage}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Arrow */}
-        <div className="flex justify-center py-4">
+        <div className="flex justify-center py-3">
           <ArrowDown className="w-5 h-5 text-slate-300" />
         </div>
 
-        {/* Model reply */}
+        {/* Strong with connector */}
         <div className="px-6 pb-6">
-          <p className="text-xs font-semibold uppercase tracking-wider text-amber-600 mb-2 flex items-center gap-1">
-            <Zap size={12} />
-            {lang === "es"
-              ? "Respuesta modelo integrada:"
-              : "Integrated model reply:"}
-          </p>
+          <div className="flex items-center justify-between mb-2">
+            <p className="text-xs font-semibold uppercase tracking-wider text-amber-600 flex items-center gap-1">
+              <Zap size={12} />
+              {lang === "es" ? "Conectado:" : "Connected:"}
+            </p>
+            <span className="inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 border border-amber-200">
+              <Link2 size={10} />
+              {connector}
+            </span>
+          </div>
 
           {!revealed ? (
             <button
@@ -145,80 +107,62 @@ export default function VerbUpgradeLab({ items, lang }: Props) {
               className="w-full py-4 rounded-xl border-2 border-dashed border-amber-300 text-amber-600 font-medium hover:bg-amber-50 transition-colors"
             >
               {lang === "es"
-                ? "Toca para revelar la respuesta modelo"
-                : "Tap to reveal the model reply"}
+                ? "Toca para revelar la versión conectada"
+                : "Tap to reveal the connected version"}
             </button>
           ) : (
             <div className="space-y-3">
               <div className="bg-gradient-to-br from-amber-50 to-amber-100 border-2 border-amber-300 rounded-xl p-4">
                 <div className="flex items-start justify-between gap-3">
                   <p className="text-base text-slate-900 font-medium leading-relaxed flex-1">
-                    "{current.modelReply}"
+                    "{current.strong}"
                   </p>
                   <div className="shrink-0 mt-1">
-                    <AudioButton text={current.modelReply} size="sm" />
+                    <AudioButton text={current.strong} size="sm" />
                   </div>
                 </div>
-                <p className="text-sm text-slate-500 mt-2">{current.modelReplyEs}</p>
-                <div className="mt-3 pt-3 border-t border-amber-200">
-                  <p className="text-xs text-slate-600 leading-relaxed flex items-start gap-1">
-                    <Sparkles size={11} className="text-amber-500 shrink-0 mt-0.5" />
-                    <span>{why}</span>
-                  </p>
-                </div>
+                <p className="text-sm text-slate-500 mt-2">{current.strongEs}</p>
               </div>
 
-              {/* Elite (C2) tier */}
               {hasElite && current.elite && (
-                <div className="mt-4">
+                <>
                   {!eliteRevealed ? (
                     <button
                       onClick={handleRevealElite}
                       className="w-full py-3 rounded-xl border-2 border-dashed border-violet-300 text-violet-700 text-sm font-medium hover:bg-violet-50 transition-colors inline-flex items-center justify-center gap-2"
                     >
-                      <Lightbulb size={14} />
+                      <Link2 size={12} />
                       {lang === "es"
                         ? "Revelar el nivel C2 Elite"
                         : "Reveal the C2 Elite tier"}
                     </button>
                   ) : (
                     <div className="bg-gradient-to-br from-violet-50 to-violet-100 border-2 border-violet-300 rounded-xl p-4">
-                      <div className="flex items-center justify-between gap-2 mb-2">
-                        <span className="inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-violet-200 text-violet-800">
-                          C2 Elite
-                        </span>
-                      </div>
+                      <span className="inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-violet-200 text-violet-800 mb-2">
+                        C2 Elite
+                      </span>
                       <div className="flex items-start justify-between gap-3">
                         <p className="text-base text-slate-900 font-medium leading-relaxed flex-1">
-                          "{current.elite.modelReply}"
+                          "{current.elite}"
                         </p>
                         <div className="shrink-0 mt-1">
-                          <AudioButton text={current.elite.modelReply} size="sm" />
+                          <AudioButton text={current.elite} size="sm" />
                         </div>
                       </div>
-                      <p className="text-sm text-slate-500 mt-2">
-                        {current.elite.modelReplyEs}
-                      </p>
-                      <div className="mt-3 pt-3 border-t border-violet-200">
-                        <p className="text-[11px] font-semibold uppercase tracking-wider text-violet-700 mb-1">
-                          {lang === "es" ? "Perspectiva C2" : "C2 Insight"}
+                      {current.eliteEs && (
+                        <p className="text-sm text-slate-500 mt-2">
+                          {current.eliteEs}
                         </p>
-                        <p className="text-xs text-slate-700 leading-relaxed">
-                          {lang === "es"
-                            ? current.elite.c2InsightEs
-                            : current.elite.c2Insight}
-                        </p>
-                      </div>
+                      )}
                     </div>
                   )}
-                </div>
+                </>
               )}
             </div>
           )}
         </div>
       </div>
 
-      {/* Next button */}
       {revealed && !isLast && (
         <div className="flex justify-end">
           <button
@@ -234,8 +178,8 @@ export default function VerbUpgradeLab({ items, lang }: Props) {
         <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
           <p className="text-emerald-800 font-medium text-sm">
             {lang === "es"
-              ? "Excelente. Has trabajado los drills — ahora di las respuestas modelo en voz alta, tres veces cada una."
-              : "Excellent. You've worked the drills — now say the model replies aloud, three times each."}
+              ? "Has practicado los conectores. Conectar ideas = sonar más inteligente al instante."
+              : "You've worked the connectors. Connecting ideas = sounding more intelligent, instantly."}
           </p>
         </div>
       )}

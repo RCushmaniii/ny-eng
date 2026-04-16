@@ -62,7 +62,7 @@ export const executiveUnits: ExecutiveUnit[] = [
     outcomeEs:
       "Reemplazarás los verbos genéricos con el lenguaje preciso y estratégico que los ejecutivos esperan.",
     icon: "Target",
-    published: false,
+    published: true,
   },
   {
     id: 2,
@@ -81,7 +81,7 @@ export const executiveUnits: ExecutiveUnit[] = [
     outcomeEs:
       "Hablarás con certeza calibrada — directo, pero nunca tenso.",
     icon: "Zap",
-    published: false,
+    published: true,
   },
   {
     id: 3,
@@ -100,7 +100,7 @@ export const executiveUnits: ExecutiveUnit[] = [
     outcomeEs:
       "Organizarás tu pensamiento en voz alta usando marcos con nombre, bajo presión.",
     icon: "Layers",
-    published: false,
+    published: true,
   },
   {
     id: 4,
