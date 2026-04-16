@@ -119,7 +119,7 @@ export const executiveUnits: ExecutiveUnit[] = [
     outcomeEs:
       "Responderás a la presión con autoridad, no con emoción.",
     icon: "Shield",
-    published: false,
+    published: true,
   },
   {
     id: 5,
@@ -138,7 +138,7 @@ export const executiveUnits: ExecutiveUnit[] = [
     outcomeEs:
       "Transformarás las actualizaciones en narrativas que moldean decisiones.",
     icon: "BookOpen",
-    published: false,
+    published: true,
   },
   {
     id: 6,
@@ -157,7 +157,7 @@ export const executiveUnits: ExecutiveUnit[] = [
     outcomeEs:
       "Responderás a cualquier pregunta improvisada con un marco con nombre.",
     icon: "Clock",
-    published: false,
+    published: true,
   },
   {
     id: 7,
