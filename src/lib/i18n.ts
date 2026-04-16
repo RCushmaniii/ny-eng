@@ -112,6 +112,18 @@ export type TKey =
   | "course/advanced/unit-9"
   | "course/advanced/unit-10"
   | "course/advanced/exam"
+  | "course/executive"
+  | "course/executive/unit-1"
+  | "course/executive/unit-2"
+  | "course/executive/unit-3"
+  | "course/executive/unit-4"
+  | "course/executive/unit-5"
+  | "course/executive/unit-6"
+  | "course/executive/unit-7"
+  | "course/executive/unit-8"
+  | "course/executive/unit-9"
+  | "course/executive/unit-10"
+  | "course/executive/capstone"
   | "meme-portfolio"
   | "site-index";
 
@@ -238,6 +250,18 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/advanced/unit-9": "/en/course/advanced/unit-9/",
     "course/advanced/unit-10": "/en/course/advanced/unit-10/",
     "course/advanced/exam": "/en/course/advanced/exam/",
+    "course/executive": "/en/course/executive/",
+    "course/executive/unit-1": "/en/course/executive/unit-1/",
+    "course/executive/unit-2": "/en/course/executive/unit-2/",
+    "course/executive/unit-3": "/en/course/executive/unit-3/",
+    "course/executive/unit-4": "/en/course/executive/unit-4/",
+    "course/executive/unit-5": "/en/course/executive/unit-5/",
+    "course/executive/unit-6": "/en/course/executive/unit-6/",
+    "course/executive/unit-7": "/en/course/executive/unit-7/",
+    "course/executive/unit-8": "/en/course/executive/unit-8/",
+    "course/executive/unit-9": "/en/course/executive/unit-9/",
+    "course/executive/unit-10": "/en/course/executive/unit-10/",
+    "course/executive/capstone": "/en/course/executive/capstone/",
     "meme-portfolio": "/en/meme-portfolio/all/",
     "site-index": "/en/site-index/",
   },
@@ -368,6 +392,18 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/advanced/unit-9": "/es/curso/avanzado/unidad-9/",
     "course/advanced/unit-10": "/es/curso/avanzado/unidad-10/",
     "course/advanced/exam": "/es/curso/avanzado/examen/",
+    "course/executive": "/es/curso/ejecutivo/",
+    "course/executive/unit-1": "/es/curso/ejecutivo/unidad-1/",
+    "course/executive/unit-2": "/es/curso/ejecutivo/unidad-2/",
+    "course/executive/unit-3": "/es/curso/ejecutivo/unidad-3/",
+    "course/executive/unit-4": "/es/curso/ejecutivo/unidad-4/",
+    "course/executive/unit-5": "/es/curso/ejecutivo/unidad-5/",
+    "course/executive/unit-6": "/es/curso/ejecutivo/unidad-6/",
+    "course/executive/unit-7": "/es/curso/ejecutivo/unidad-7/",
+    "course/executive/unit-8": "/es/curso/ejecutivo/unidad-8/",
+    "course/executive/unit-9": "/es/curso/ejecutivo/unidad-9/",
+    "course/executive/unit-10": "/es/curso/ejecutivo/unidad-10/",
+    "course/executive/capstone": "/es/curso/ejecutivo/reto-final/",
     "meme-portfolio": "/es/meme-portfolio/all/",
     "site-index": "/es/indice-del-sitio/",
   },

@@ -1,0 +1,265 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import { executiveInfo, executiveUnits } from "@data/executive/units";
+import {
+  Target,
+  Zap,
+  Layers,
+  Shield,
+  BookOpen,
+  Clock,
+  Users,
+  MessageSquare,
+  TrendingUp,
+  Crown,
+  ArrowRight,
+  Briefcase,
+  Mic,
+  CheckCircle2,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/executive" as const;
+
+const iconMap: Record<string, any> = {
+  Target,
+  Zap,
+  Layers,
+  Shield,
+  BookOpen,
+  Clock,
+  Users,
+  MessageSquare,
+  TrendingUp,
+  Crown,
+};
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Communicate Like a Leader — Executive English Course (C1-C2) | NY English Teacher"
+  description="A paid-quality executive communication course — free during launch. Ten units of drill-based training that replace vague English with precision, structure, and calm authority. The productized version of Robert's 1-on-1 coaching."
+>
+  <!-- Hero -->
+  <section class="relative w-full overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-amber-950 pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-amber-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-slate-400 rounded-full blur-3xl"></div>
+    </div>
+    <div class="site-container mx-auto px-4 relative z-10 text-white">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-300 text-sm font-semibold mb-6">
+          <Briefcase class="w-4 h-4" />
+          Executive Course · C1 → C2 · Early Access (Free)
+        </div>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Communicate Like<br />
+          <span class="text-amber-400">a Leader.</span>
+        </h1>
+        <p class="text-xl text-slate-200 mb-8 max-w-2xl leading-relaxed">
+          You already communicate competently in English. This course teaches you to <strong class="text-white">lead</strong> in English — with the precision, structure, and calm authority that senior leaders demand. Not a grammar course. A linguistic command course.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <Button href="/en/course/executive/unit-1/" variant="primary" size="lg">
+            Start Unit 1 — Free
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+          <a
+            href="#units"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            See All 10 Units
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thesis band -->
+  <section class="py-16 md:py-20 bg-white border-b border-slate-100">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-[11px] font-mono uppercase tracking-[0.3em] text-amber-600 mb-4">The Thesis</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Weak language creates doubt. Precision creates alignment.
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          At senior level, your language is not descriptive — it is <em>diagnostic and directional</em>. Vague verbs blur meaning. Filler signals hesitation. Unstructured speech forces the listener to guess what you mean. This course drills the specific linguistic habits that separate competent English from executive English.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value props -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center space-y-3 p-6">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-700">
+            <Target class="w-7 h-7" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Drill-Based, Speaking-First</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Every section is a drill: weak → strong → elite. Every model reply has audio. You don't read executive English — you speak it aloud until it's automatic.
+          </p>
+        </div>
+        <div class="text-center space-y-3 p-6">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-700">
+            <Layers class="w-7 h-7" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Named Frameworks</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Cause → Action → Outcome. Problem → Impact → Solution → Recommendation. Context → Tension → Insight → Action → Outcome. You leave with memorable structures you can deploy under pressure.
+          </p>
+        </div>
+        <div class="text-center space-y-3 p-6">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-amber-700">
+            <Crown class="w-7 h-7" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">C1 Core, C2 Elite</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Each drill runs at two levels. Start with C1 for a focused course. Unlock the C2 Elite tier for analytically sharper phrasing and the strategic distinction behind it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Unit grid -->
+  <section class="py-16 md:py-20 bg-white" id="units">
+    <div class="site-container mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style="font-family: 'Noto Sans KR', sans-serif;">
+          Ten Units. Three Sections Each.
+        </h2>
+        <p class="text-slate-600 leading-relaxed">
+          Units 1-6 teach the mechanics. Units 7-9 apply them to meetings, feedback, and negotiation. Unit 10 integrates everything and launches your recorded capstone.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        {executiveUnits.map((unit) => {
+          const Icon = iconMap[unit.icon];
+          const isAvailable = unit.published;
+          return (
+            <a
+              href={isAvailable ? `/en/course/executive/${unit.slug}/` : undefined}
+              class:list={[
+                "group flex items-start gap-4 p-5 rounded-xl border transition-all duration-200",
+                isAvailable
+                  ? "bg-amber-50 border-amber-300 hover:shadow-md hover:border-amber-400 cursor-pointer"
+                  : "bg-white border-slate-200 opacity-75",
+              ]}
+            >
+              <div
+                class:list={[
+                  "flex items-center justify-center w-12 h-12 rounded-xl shrink-0",
+                  isAvailable ? "bg-amber-500 text-white" : "bg-slate-100 text-slate-400",
+                ]}
+              >
+                {Icon && <Icon class="w-6 h-6" />}
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span
+                    class:list={[
+                      "text-xs font-bold uppercase tracking-wider",
+                      isAvailable ? "text-amber-700" : "text-slate-400",
+                    ]}
+                  >
+                    Unit {unit.id}
+                  </span>
+                  {!isAvailable && (
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">
+                      Coming soon
+                    </span>
+                  )}
+                </div>
+                <h3
+                  class:list={[
+                    "text-lg font-bold mt-0.5",
+                    isAvailable ? "text-slate-900" : "text-slate-600",
+                  ]}
+                >
+                  {unit.title}
+                </h3>
+                <p class="text-sm text-slate-500 mt-1">{unit.subtitle}</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Capstone tease -->
+  <section class="py-16 md:py-20 bg-slate-950 text-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold mb-5">
+          <Mic class="w-3.5 h-3.5" />
+          Unit 10 — The Capstone
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Your executive voice, recorded.
+        </h2>
+        <p class="text-lg text-slate-300 leading-relaxed mb-6">
+          The course closes with a 90-second executive presentation on a project you're leading. You submit it by email — and Robert listens and replies personally within 48 hours. Or you book a strategy session and present it live. Either path puts you in direct conversation with the coach behind every drill in this course.
+        </p>
+        <div class="flex flex-wrap gap-3 text-sm text-slate-400">
+          <span class="inline-flex items-center gap-1.5">
+            <CheckCircle2 class="w-4 h-4 text-amber-400" />
+            Personal feedback from Robert
+          </span>
+          <span class="inline-flex items-center gap-1.5">
+            <CheckCircle2 class="w-4 h-4 text-amber-400" />
+            48-hour turnaround
+          </span>
+          <span class="inline-flex items-center gap-1.5">
+            <CheckCircle2 class="w-4 h-4 text-amber-400" />
+            No recording tools required
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who it's for -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6" style="font-family: 'Noto Sans KR', sans-serif;">
+          Is this course for you?
+        </h2>
+        <div class="space-y-4 text-slate-600 leading-relaxed">
+          <p>
+            This course is for <strong>founders, executives, and senior professionals</strong> who already communicate competently in English but need to lead in English. You're not trying to survive a conversation — you're trying to run a meeting, close a deal, deliver a board update, or give difficult feedback in a language that isn't your first.
+          </p>
+          <p>
+            If your English still lacks fluency at the sentence level, start with the <a href="/en/course/advanced/" class="text-amber-600 hover:text-amber-500 underline">advanced course</a> — it fixes the granular errors that make even fluent speakers sound non-native. This course picks up where advanced leaves off.
+          </p>
+          <p>
+            This is also the productized version of Robert's 1-on-1 executive coaching. If you want the accelerated version, the capstone unit funnels directly into a strategy session with Robert.
+          </p>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <Button href="/en/course/executive/unit-1/" variant="primary" size="md">
+            Start Unit 1
+            <ArrowRight class="w-4 h-4 ml-1" />
+          </Button>
+          <Button href="/en/book/" variant="secondary" size="md">
+            Or work 1-on-1 with Robert
+            <ArrowRight class="w-4 h-4 ml-1" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
