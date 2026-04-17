@@ -233,6 +233,6 @@ export const executiveUnits: ExecutiveUnit[] = [
     outcomeEs:
       "Enviarás una presentación ejecutiva grabada de 90 segundos a Robert para recibir retroalimentación personal.",
     icon: "Crown",
-    published: false,
+    published: true,
   },
 ];
