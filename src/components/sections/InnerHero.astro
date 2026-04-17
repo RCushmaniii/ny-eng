@@ -5,7 +5,8 @@ interface HeroContent {
     title: string;
     description: string;
     backgroundImage?: any;
-    overlayOpacity?: number; // Value between 0 and 1
+    overlayOpacity?: number;
+    imageAlt?: string;
 }
 
 interface Props {
@@ -21,7 +22,7 @@ const opacity = content.overlayOpacity ?? 1;
             {content.backgroundImage && typeof content.backgroundImage === 'object' && (
                 <Image 
                     src={content.backgroundImage}
-                    alt="Background image"
+                    alt={content.imageAlt ?? "Background image"}
                     width={1920}
                     height={1080}
                     class="w-full h-full object-cover"
