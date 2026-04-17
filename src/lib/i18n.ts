@@ -65,6 +65,7 @@ export type TKey =
   | "services/tech-english"
   | "services/technical-sales-english"
   | "services/corporate-package"
+  | "services/ongoing-coaching"
   | `category/${CategorySlug}`
   | "assessments"
   | "quiz"
@@ -194,6 +195,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "services/tech-english": "/en/services/tech-english/",
     "services/technical-sales-english": "/en/services/technical-sales-english/",
     "services/corporate-package": "/en/services/corporate-package/",
+    "services/ongoing-coaching": "/en/services/ongoing-coaching/",
     "category/startup-founders": "/en/category/startup-founders/",
     "category/tech-english": "/en/category/tech-english/",
     "category/logistics-english": "/en/category/logistics-english/",
@@ -336,6 +338,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "services/technical-sales-english":
       "/es/servicios/ingles-para-ventas-tecnicas/",
     "services/corporate-package": "/es/servicios/paquete-corporativo/",
+    "services/ongoing-coaching": "/es/servicios/coaching-continuo/",
     "category/startup-founders":
       "/es/categoria/ingles-para-fundadores-de-startups/",
     "category/tech-english": "/es/categoria/ingles-para-tecnologia/",

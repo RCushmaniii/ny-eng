@@ -405,6 +405,52 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
       }
     ]
   },
+  "ongoing-coaching": {
+    en: [
+      {
+        question: "How is this different from the Executive Communication Program?",
+        answer: "The Executive Communication Program is a structured, performance-based sprint — formal assessments, a defined timeline, and a group presentation designed to surface gaps under pressure. This ongoing coaching format is more flexible and open-ended: no fixed structure, no performance milestones, and built around steady improvement in everyday professional communication."
+      },
+      {
+        question: "What level of English do participants need?",
+        answer: "Participants should be at intermediate level (B1) or above. The coaching is conducted entirely in English and is built around real professional communication — it's not a foundational language program. If someone is still building basic vocabulary and grammar, they aren't the right fit."
+      },
+      {
+        question: "Why is small talk included? That sounds informal.",
+        answer: "Small talk is a professional skill. It's how you open a business relationship before the agenda starts, build rapport with a client or colleague you've never met, and signal cultural fluency to the people around you. Professionals who can't engage naturally in informal English in a business setting often struggle to close deals, build trust, or be seen as full participants in meetings. We treat it as a real communication skill, not a social nicety."
+      },
+      {
+        question: "How are sessions scheduled?",
+        answer: "Scheduling is flexible and designed to work around professional calendars. Sessions are primarily conducted online via Google Meet. We'll coordinate timing based on your team's availability — there's no fixed weekly schedule that has to be adhered to rigidly."
+      },
+      {
+        question: "Can I mix 1:1 and group sessions for my team?",
+        answer: "Yes. Most teams benefit from a combination of both. Individual sessions address each person's specific gaps in a direct, private setting. Group sessions create the kind of dynamic, real-time communication pressure that individual sessions alone can't replicate. Robert will recommend a balance based on your team's size and goals."
+      }
+    ],
+    es: [
+      {
+        question: "¿En qué se diferencia del Programa de Comunicación Ejecutiva?",
+        answer: "El Programa de Comunicación Ejecutiva es un sprint estructurado y basado en desempeño — evaluaciones formales, una línea de tiempo definida y una presentación grupal diseñada para exponer brechas bajo presión. Este formato de coaching continuo es más flexible y abierto: sin estructura fija, sin hitos de desempeño, enfocado en la mejora constante de la comunicación profesional cotidiana."
+      },
+      {
+        question: "¿Qué nivel de inglés necesitan los participantes?",
+        answer: "Los participantes deben tener nivel intermedio (B1) o superior. El coaching se realiza íntegramente en inglés y está construido alrededor de la comunicación profesional real — no es un programa de inglés desde cero. Si alguien todavía está construyendo vocabulario y gramática básicos, no es el candidato adecuado."
+      },
+      {
+        question: "¿Por qué incluyen small talk? Eso suena informal.",
+        answer: "El small talk es una habilidad profesional. Es cómo se abre una relación de negocios antes de que empiece la agenda, cómo se construye rapport con un cliente o colega nuevo, y cómo se muestra fluidez cultural a quienes te rodean. Los profesionales que no pueden desenvolverse naturalmente en inglés informal en contextos de negocios con frecuencia tienen dificultades para cerrar tratos, generar confianza o ser percibidos como participantes plenos en reuniones. Lo tratamos como una habilidad de comunicación real, no como un detalle social."
+      },
+      {
+        question: "¿Cómo se programan las sesiones?",
+        answer: "La programación es flexible y está diseñada para adaptarse a las agendas profesionales. Las sesiones se realizan principalmente en línea por Google Meet. Coordinamos los horarios según la disponibilidad de tu equipo — no hay un horario semanal fijo que deba seguirse de manera rígida."
+      },
+      {
+        question: "¿Puedo combinar sesiones individuales y grupales para mi equipo?",
+        answer: "Sí. La mayoría de los equipos se benefician de una combinación de ambas. Las sesiones individuales abordan las brechas específicas de cada persona en un entorno directo y privado. Las sesiones grupales crean el tipo de presión dinámica de comunicación en tiempo real que las sesiones individuales por sí solas no pueden replicar. Robert recomendará un equilibrio basado en el tamaño y los objetivos de tu equipo."
+      }
+    ]
+  },
   "corporate-package": {
     en: [
       {
