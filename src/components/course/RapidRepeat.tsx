@@ -66,8 +66,8 @@ export default function RapidRepeat({
         ))}
       </ul>
 
-      <div className="flex items-center gap-2 text-xs text-slate-500 pt-1">
-        <Volume2 size={12} />
+      <div className="flex items-center gap-2 text-sm text-slate-400 pt-1">
+        <Volume2 size={14} />
         <span>
           {lang === "es"
             ? "Cada frase es un anclaje — memorízala, luego desplégala."
