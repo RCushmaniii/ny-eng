@@ -1,17 +1,4 @@
-/**
- * CapstoneUploadForm — handles the "submit by recording" path on the
- * Executive Course capstone page.
- *
- * Flow:
- *  1. Learner fills in name + email and selects an audio file.
- *  2. On submit, client calls /api/capstone/upload-token to get a
- *     Vercel Blob presigned URL, then uploads the file directly to the
- *     Blob CDN (bypassing the 4.5 MB serverless body limit).
- *  3. The server's onUploadCompleted hook sends Robert a Resend email
- *     with a clickable link to the recording.
- *  4. UI shows a success confirmation.
- */
-
+import { upload } from "@vercel/blob/client";
 import { useState, useRef } from "react";
 import { CheckCircle, Mic, Upload, AlertCircle, Loader2 } from "lucide-react";
 
@@ -91,6 +78,7 @@ export default function CapstoneUploadForm({ lang }: Props) {
   const [email, setEmail] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [status, setStatus] = useState<"idle" | "uploading" | "success" | "error">("idle");
+  const [progress, setProgress] = useState(0);
   const [errorMsg, setErrorMsg] = useState("");
 
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -122,26 +110,24 @@ export default function CapstoneUploadForm({ lang }: Props) {
     if (!file || !name.trim() || !email.trim()) return;
 
     setStatus("uploading");
+    setProgress(0);
     setErrorMsg("");
 
     try {
-      // POST raw audio bytes — server reads stream directly, no multipart overhead
-      const response = await fetch("/api/capstone/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": file.type || "audio/mpeg",
-          "X-Filename": file.name.replace(/[^a-zA-Z0-9._-]/g, "_"),
-          "X-Learner-Name": name.trim(),
-          "X-Learner-Email": email.trim(),
-          "X-Learner-Lang": lang,
-        },
-        body: file,
-      });
+      const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
 
-      if (!response.ok) {
-        const data = await response.json().catch(() => ({}));
-        throw new Error((data as { error?: string }).error ?? "Upload failed");
-      }
+      await upload(`capstone/${Date.now()}-${safeName}`, file, {
+        access: "public",
+        handleUploadUrl: "/api/capstone/upload-token",
+        clientPayload: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          lang,
+        }),
+        onUploadProgress: ({ percentage }) => {
+          setProgress(Math.round(percentage));
+        },
+      });
 
       setStatus("success");
     } catch (err) {
@@ -255,9 +241,17 @@ export default function CapstoneUploadForm({ lang }: Props) {
 
       {/* Uploading indicator */}
       {status === "uploading" && (
-        <div className="flex items-center gap-2 text-sm text-slate-500 py-1">
-          <Loader2 className="w-4 h-4 animate-spin text-amber-500" />
-          <span>{copy.uploading}</span>
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 text-sm text-slate-500">
+            <Loader2 className="w-4 h-4 animate-spin text-amber-500" />
+            <span>{copy.uploading} {progress > 0 ? `${progress}%` : ""}</span>
+          </div>
+          <div className="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+            <div
+              className="bg-amber-500 h-1.5 rounded-full transition-all duration-300"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
         </div>
       )}
 
