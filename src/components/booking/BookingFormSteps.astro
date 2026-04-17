@@ -919,6 +919,24 @@ const t = translations[lang];
         }
       });
 
+    // Pre-fill notes from URL params (e.g. coming from the Executive Course capstone page)
+    const urlParams = new URLSearchParams(window.location.search);
+    const preNotes = urlParams.get("notes");
+    if (preNotes) {
+      const notesEl = document.getElementById("notes");
+      if (notesEl) {
+        notesEl.value = preNotes;
+        // Show a subtle banner so the learner knows the context was set
+        const banner = document.createElement("p");
+        banner.className = "text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mt-2";
+        banner.textContent =
+          lang === "es"
+            ? "Contexto pre-llenado desde el curso. Puedes editarlo si gustas."
+            : "Context pre-filled from the course. Feel free to edit.";
+        notesEl.parentElement?.insertBefore(banner, notesEl.nextSibling);
+      }
+    }
+
     // Initialize
     updateDateDisplay(selectedDate);
     fetchAvailableSlots(selectedDate);
