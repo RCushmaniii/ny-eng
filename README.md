@@ -36,9 +36,13 @@ The platform ships a complete A1→C2 English curriculum — the productized ver
 | **Beginner** — "First Steps Into English" | A0–A1 | Vocabulary, greetings, survival English | Interactive matching + pronunciation |
 | **Intermediate** — "Building Fluency" | B1–B2 | Sentence construction, modals, fluency | Modal-driven sentence builder, 10 units + final exam |
 | **Advanced** — "Speak with Confidence" | B2–C1 | Precision, error spotting, minimal pairs | 5 components: WordPairLab, ErrorSpotter, SentenceTransformer, MinimalPairDrill, WordBuilder |
-| **Executive** — "Communicate Like a Leader" | C1–C2 | Executive frameworks, negotiation, storytelling, leadership voice | 10 components, ~130+ drills, capstone recorded presentation |
+| **Executive** — "Communicate Like a Leader" | C1–C2 | Executive frameworks, negotiation, storytelling, leadership voice | 10 components, ~130+ drills, capstone recorded presentation with direct upload |
 
-The Executive course alone contains 10 units × 3 sections, 8 original drill components (VerbUpgradeLab, WeakStrongElite, StructuredResponseBuilder, ConnectorDrill, StoryBuilder, ImpromptuScenario, RapidRepeat, FinalShiftCard), Azure Neural TTS on every English element, and a capstone funnel that converts to a strategy session booking. Pedagogy: Weak→Strong→Elite (C2) progression with named frameworks (Cause→Action→Outcome, Problem→Impact→Solution→Recommendation, Context→Tension→Insight→Action→Outcome).
+The Executive course contains 10 units × 3 sections, 8 original drill components (VerbUpgradeLab, WeakStrongElite, StructuredResponseBuilder, ConnectorDrill, StoryBuilder, ImpromptuScenario, RapidRepeat, FinalShiftCard), Azure Neural TTS on every English element, and a capstone funnel that converts to a strategy session booking. Pedagogy: Weak→Strong→Elite (C2) progression with named frameworks (Cause→Action→Outcome, Problem→Impact→Solution→Recommendation, Context→Tension→Insight→Action→Outcome).
+
+### Capstone Submission System
+
+Learners record a 90-second executive presentation and upload it directly to Vercel Blob storage (browser-to-CDN, no server body limit, up to 25 MB). Robert receives a branded Resend email with a one-click listen link and can reply directly with personal feedback within 48 hours.
 
 ### Lead Generation System
 - **4 Persona-Specific Quizzes** — IT Services, Executives, Professional Services, High-Stakes Communication
@@ -49,11 +53,12 @@ The Executive course alone contains 10 units × 3 sections, 8 original drill com
 - **3-Step Executive Strategy Session** — Date → Details → Confirmation
 - **Google Calendar Integration** — Cloudflare Worker API with double-booking prevention
 - **Google Meet Auto-Generation** — Video conference links included in confirmation
+- **Context Pre-fill** — Capstone page passes learner context to the booking form via URL params
 
 ### SEO & Performance
 - **Perfect Sitemap** — 130+ URLs with bidirectional hreflang (en-US ↔ es-MX)
 - **JSON-LD Structured Data** — Organization, FAQ, Blog, and Service schemas
-- **Core Web Vitals Optimized** — Static generation, lazy loading, external stylesheets
+- **Core Web Vitals Optimized** — Static generation, lazy loading, edge caching
 
 ### Content Architecture
 - **12 Service Pages** — Industry-specific coaching offerings
@@ -67,15 +72,17 @@ The Executive course alone contains 10 units × 3 sections, 8 original drill com
 | Layer | Technology |
 |-------|------------|
 | Framework | [Astro 5.5](https://astro.build) — Static site generation with islands architecture |
-| UI Components | [React 19](https://react.dev) — For interactive quiz reports |
+| UI Components | [React 19](https://react.dev) — Interactive drills, quizzes, booking wizard |
 | Styling | [Tailwind CSS 3.4](https://tailwindcss.com) — Utility-first CSS |
 | Language | [TypeScript 5.9](https://typescriptlang.org) — Strict mode enabled |
 | Database | [Neon PostgreSQL](https://neon.tech) — Quiz submission storage (serverless) |
-| Email | [Resend](https://resend.com) — Transactional email for lead notifications |
+| File Storage | [Vercel Blob](https://vercel.com/docs/storage/vercel-blob) — Capstone audio uploads (direct browser upload) |
+| Email | [Resend](https://resend.com) — Lead notifications + capstone feedback delivery |
 | Calendar | Google Calendar API — Via Cloudflare Worker |
-| Hosting | [Vercel](https://vercel.com) (static + serverless) + Cloudflare Workers (API) |
+| Hosting | [Vercel](https://vercel.com) (static + serverless) + Cloudflare Workers (booking API) |
 | TTS | Azure Neural TTS — en-US-AvaNeural (EN) + es-MX-DaliaNeural (ES) |
 | Icons | [Lucide React](https://lucide.dev) — Consistent icon library |
+| Monitoring | [Sentry](https://sentry.io) — Error tracking (org: cushlabsai) |
 
 ---
 
@@ -83,19 +90,14 @@ The Executive course alone contains 10 units × 3 sections, 8 original drill com
 
 ### Prerequisites
 - Node.js 18+
-- npm or pnpm
+- npm
 
 ### Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/ny-english-teacher.git
-cd ny-english-teacher
-
-# Install dependencies
+git clone https://github.com/RCushmaniii/ny-eng.git
+cd ny-eng
 npm install
-
-# Start development server
 npm run dev
 ```
 
@@ -104,17 +106,11 @@ Open [http://localhost:4321](http://localhost:4321) in your browser.
 ### Build & Deploy
 
 ```bash
-# Production build
-npm run build
-
-# Preview production build locally
-npm run preview
-
-# Run pre-deploy audits (SEO, sitemap, accessibility)
-npm run pre-deploy
+npm run build         # Production build
+npm run preview       # Preview production build locally
+npm run build:check   # Build with TypeScript type checking
+npm run validate:all  # Run all SEO validators
 ```
-
-The `dist/` folder contains the static site ready for deployment.
 
 ---
 
@@ -127,50 +123,55 @@ src/
 │   └── es/                 # Spanish pages (mirror structure)
 ├── components/
 │   ├── sections/           # Page sections (Hero, Features, etc.)
+│   ├── course/             # 10 drill components + CourseProgress
 │   ├── booking/            # 3-step booking wizard
 │   ├── chat/               # AI chatbot embed
-│   └── seo/                # Structured data components
+│   └── seo/                # Structured data (JSON-LD)
 ├── layouts/
 │   └── Base.astro          # Master layout with SEO, header, footer
 ├── data/                   # TypeScript data files
 │   ├── services.ts         # Service definitions
 │   ├── quiz/               # Quiz config, scoring, questions
+│   ├── executive/          # Executive course data (10 units)
 │   └── header/             # Navigation (en.ts, es.ts)
 ├── content/                # Astro content collections
 │   ├── blog/               # Markdown blog posts (en/, es/)
 │   └── legal/              # Privacy, terms
 ├── lib/                    # Utilities
-│   ├── i18n.ts             # Bilingual routing system
+│   ├── i18n.ts             # Bilingual routing system (TKey)
 │   └── db.ts               # Quiz submission database
 └── styles/                 # Global CSS
+api/
+├── capstone/
+│   └── upload-token.ts     # Vercel Blob client upload handler + Resend email
+├── quiz/
+│   └── submit.ts           # Quiz submission → Neon PostgreSQL
+└── tts/
+    └── synthesize.ts       # Azure Neural TTS proxy
 ```
 
 ---
 
-## Configuration
-
-### Environment Variables
-
-Create a `.env` file in the project root:
+## Environment Variables
 
 ```env
-# Database (Hostinger MySQL)
-MYSQL_HOST=
-MYSQL_USER=
-MYSQL_PASSWORD=
-MYSQL_DATABASE=
+# Database
+POSTGRES_URL=
 
-# Google Calendar (for booking system)
+# Google Calendar (booking system)
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
 GOOGLE_REFRESH_TOKEN=
 GOOGLE_CALENDAR_ID=
 
-# Email notifications (Resend)
+# Email (Resend)
 RESEND_API_KEY=
 RESEND_FROM_EMAIL=
 
-# Site URL
+# File storage (Vercel Blob — capstone uploads)
+BLOB_READ_WRITE_TOKEN=
+
+# Site
 SITE_URL=https://www.nyenglishteacher.com
 ```
 
@@ -204,19 +205,19 @@ const tkey = "new-page";
 │                         │                                   │
 │                         ▼                                   │
 │  ┌──────────────────────────────────────────────┐          │
-│  │              Hostinger (Static)               │          │
-│  │         .htaccess (redirects, CSP)           │          │
+│  │              Vercel (Static + Serverless)     │          │
+│  │         vercel.json (redirects, CSP headers) │          │
 │  └──────────────────────────────────────────────┘          │
 └─────────────────────────────────────────────────────────────┘
                           │
-          ┌───────────────┼───────────────┐
-          ▼               ▼               ▼
-┌─────────────────┐ ┌───────────┐ ┌─────────────────┐
-│ Cloudflare      │ │  Resend   │ │    Chatwoot     │
-│ Worker (API)    │ │  (Email)  │ │   (Chatbot)     │
-│ - Calendar      │ │           │ │                 │
-│ - Booking       │ │           │ │                 │
-└─────────────────┘ └───────────┘ └─────────────────┘
+          ┌───────────────┼──────────────────┐
+          ▼               ▼                  ▼
+┌─────────────────┐ ┌───────────┐ ┌──────────────────┐
+│ Cloudflare      │ │  Resend   │ │  Vercel Blob     │
+│ Worker (API)    │ │  (Email)  │ │  (Audio uploads) │
+│ - Calendar      │ │           │ │                  │
+│ - Booking       │ │           │ │                  │
+└─────────────────┘ └───────────┘ └──────────────────┘
           │
           ▼
 ┌─────────────────┐
@@ -229,26 +230,11 @@ const tkey = "new-page";
 
 ## SEO Implementation
 
-### Sitemap Rules
-
-**Included:**
-- Language homepages (`/en/`, `/es/`)
-- Blog index and individual posts
-- Service pages
-- Resource/lead magnet pages
-- Primary testimonial pages
-
-**Excluded:**
-- Category archives
-- Quiz question/result pages
-- Filtered testimonial pages
-- Thank-you pages
-
-### Hreflang Strategy
-
 Every URL has bidirectional hreflang:
 - `/en/*` → points to itself (en-US) + Spanish equivalent (es-MX)
 - `/es/*` → points to itself (es-MX) + English equivalent (en-US)
+
+Sitemap covers 130+ URLs. JSON-LD structured data on every page (Organization, FAQ, Article, BreadcrumbList, Service schemas).
 
 ---
 
@@ -259,17 +245,8 @@ Every URL has bidirectional hreflang:
 | `npm run dev` | Start dev server on port 4321 |
 | `npm run build` | Production build to `dist/` |
 | `npm run preview` | Preview production build |
-| `npm run pre-deploy` | Run SEO and sitemap audits |
 | `npm run build:check` | Build with TypeScript checking |
-
----
-
-## Contributing
-
-1. Follow the coding standards in [CLAUDE.md](./CLAUDE.md)
-2. Ensure bilingual parity — features must work in both EN and ES
-3. Run `npm run pre-deploy` before submitting PRs
-4. Use TypeScript strict mode — no `any` types
+| `npm run validate:all` | Run all 7 SEO validators |
 
 ---
 
@@ -279,13 +256,5 @@ Proprietary — All rights reserved.
 
 ---
 
-## Acknowledgments
-
-- Built with [Astro](https://astro.build) and the Titan theme
-- Icons by [Lucide](https://lucide.dev)
-- Hosted on [Hostinger](https://hostinger.com) with [Cloudflare](https://cloudflare.com) edge functions
-
----
-
-**Maintained by**: Robert Cushman
+**Maintained by**: Robert Cushman  
 **Last Updated**: April 2026

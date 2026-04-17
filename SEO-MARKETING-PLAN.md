@@ -24,6 +24,15 @@ Each post links to a specific service page to drive conversions.
 
 ## Completed SEO Work
 
+### 2026-04-16 — Post-Launch Bug Fixes + Capstone Upload (v2.1.0)
+- [x] Fixed FinalShiftCard text invisible on unit-10 after hard refresh (CSS cascade layer issue — `.site-container p { color: inherit }` overrode Tailwind `text-*`; fixed with base color + `!important` modifiers)
+- [x] Rebuilt capstone upload: switched from `fetch` POST to `@vercel/blob/client` `upload()` — bypasses Vercel's 4.5 MB serverless body limit; files go browser→CDN directly
+- [x] Added upload progress bar to CapstoneUploadForm
+- [x] Lowered file size limit to 25 MB with clearer hint text ("A 90-second recording is typically under 5 MB")
+- [x] CSP hardening: added Sentry ingest, Cloudflare Insights, `*.public.blob.vercel-storage.com`, `vercel.com` (blob API), `worker-src blob:` for Sentry web worker
+- [x] Installed Sentry error monitoring (org: cushlabsai, project: ny-eng)
+- [x] Fixed Clerk `ERR_NAME_NOT_RESOLVED` causing React hydration error #418 on every page — moved ClerkProvider to `(auth)` route group in ny-ai-chatbot so public routes no longer load Clerk
+
 ### 2026-03-04 — Foundation Sprint
 - [x] Google Search Console API integration (5 scripts)
 - [x] IndexNow protocol setup (Bing/Yandex/DuckDuckGo)
