@@ -10,9 +10,9 @@ import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
 import { serviceFaqs } from "@data/service-faqs";
 import { corporatePackage as serviceData } from "@data/services";
 
-const title = "Courage While Leading in English — Corporate Team Program | NY";
+const title = "Corporate English Training for Leadership Teams | NY English Teacher";
 const seoDescription =
-  "A 12-week corporate coaching program for senior leadership teams. Individual preparation, peer-pressure group presentations, and a final assessment — all in English.";
+  "Corporate English coaching for senior leadership teams in Mexico. 12 weeks of individual prep, peer-pressure group sessions, and measurable outcomes — not just certificates.";
 
 const heroContent = {
   title: "Your leadership team is ready. Their English isn't keeping up.",
@@ -20,6 +20,7 @@ const heroContent = {
     "A 12-week program that uses peer pressure — not a classroom — to close the gap between preparation and performance.",
   backgroundImage: serviceData.backgroundImage,
   overlayOpacity: 0.75,
+  imageAlt: "Senior leadership team in a business English coaching session",
 };
 
 const challengeContent = {
@@ -31,6 +32,7 @@ const challengeContent = {
   ],
   icon: "💡",
   image: serviceData.squareImage,
+  imageAlt: "Executive professional preparing for a high-stakes English presentation",
   quizCta: {
     text: "Take the Executive Communication Assessment — 60 seconds.",
     link: "/en/quiz/executives/question/1",
@@ -42,7 +44,8 @@ const ctaContent = {
   eyebrow: "Corporate Programs",
   title: "Ready to build a leadership team that leads in English?",
   description:
-    "This program requires a discovery call to scope for your group size, schedule, and goals. Robert responds within 24 hours.",
+    "This program requires a discovery call to scope for your group size, schedule, and goals. Robert is a native New Yorker who has coached senior executives and leadership teams across Mexico for over a decade. He responds within 24 hours.",
+  buttonSubtext: "Most discovery calls take 20 minutes.",
   buttonText: "Contact Robert on WhatsApp",
   buttonLink: "https://wa.me/523315590572",
   whatToExpectTitle: "In Your Discovery Call, We Will:",
@@ -192,6 +195,33 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
   <BreadcrumbSchema items={[
     { name: "Home", url: "https://www.nyenglishteacher.com/en/" },
     { name: "Services", url: "https://www.nyenglishteacher.com/en/services/" },
-    { name: "Courage While Leading in English", url: "https://www.nyenglishteacher.com/en/services/corporate-package/" }
+    { name: "Corporate English Training for Leadership Teams", url: "https://www.nyenglishteacher.com/en/services/corporate-package/" }
   ]} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Corporate English Training for Leadership Teams",
+    "alternateName": "Courage While Leading in English",
+    "description": "A 12-week structured English coaching program for senior leadership teams. Individual preparation, peer-pressure group presentations, and a final assessment — designed to close the gap between private fluency and public performance.",
+    "provider": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "jobTitle": "English Coach",
+      "url": "https://www.nyenglishteacher.com/en/about/"
+    },
+    "serviceType": "Corporate English Coaching",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Mexico"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "600",
+      "priceCurrency": "MXN",
+      "description": "600 MXN per session per participant. Total investment typically 7,200–10,200 MXN per participant across all three phases.",
+      "eligibleCustomerType": "https://schema.org/BusinessCustomer"
+    },
+    "url": "https://www.nyenglishteacher.com/en/services/corporate-package/"
+  })} />
 </Base>
