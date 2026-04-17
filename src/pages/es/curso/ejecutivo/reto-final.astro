@@ -3,41 +3,32 @@ export const prerender = true;
 
 import Base from "@layouts/Base.astro";
 import Button from "@components/ui/Button.astro";
-import { capstoneContent } from "@data/executive/capstone";
-import {
-  Crown,
-  Mail,
-  Calendar,
-  CheckCircle2,
-  ArrowLeft,
-  Mic,
-} from "lucide-astro";
+import CapstoneUploadForm from "@components/course/CapstoneUploadForm";
+import { Crown, Calendar, Mic, ArrowLeft, CheckCircle2 } from "lucide-astro";
 
 const lang = "es";
 const tkey = "course/executive/capstone" as const;
 
-const mailtoLink = `mailto:${capstoneContent.submissionPaths.email.email}?subject=Executive%20Capstone%20Submission`;
+const bookingLink =
+  "/es/reservar/?notes=" +
+  encodeURIComponent(
+    "Acabo de completar el curso de Comunicación Ejecutiva y grabé mi presentación final. Me gustaría retroalimentación en vivo de Robert sobre mi entrega y presencia ejecutiva."
+  );
 ---
 
 <Base
   lang={lang}
   tkey={tkey}
   title="Reto Final Ejecutivo — Presentación de 90 Seg | NY English"
-  description="Graba una actualización ejecutiva de 90 segundos con los marcos que dominaste. Recibe retroalimentación personal de Robert."
+  description="Graba una actualización ejecutiva de 90 segundos con los marcos que dominaste. Envíala para recibir retroalimentación personal de Robert, o preséntala en vivo."
 >
   <!-- Hero -->
   <section
     class="relative w-full overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-amber-950 pt-32 pb-20 md:pt-40 md:pb-28"
   >
-    <div class="absolute inset-0 opacity-10">
-      <div
-        class="absolute top-20 left-10 w-72 h-72 bg-amber-500 rounded-full blur-3xl"
-      >
-      </div>
-      <div
-        class="absolute bottom-10 right-10 w-96 h-96 bg-slate-400 rounded-full blur-3xl"
-      >
-      </div>
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-amber-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-slate-400 rounded-full blur-3xl"></div>
     </div>
     <div class="site-container mx-auto px-4 relative z-10 text-white">
       <div class="max-w-3xl">
@@ -61,10 +52,10 @@ const mailtoLink = `mailto:${capstoneContent.submissionPaths.email.email}?subjec
           Tu Voz Ejecutiva,<br />
           <span class="text-amber-400">Grabada.</span>
         </h1>
-        <p class="text-xl text-slate-200 mb-4 max-w-2xl leading-relaxed">
-          Has practicado los verbos. Eliminaste el relleno. Internalizaste los
-          marcos. Ahora ponlo todo junto en una presentación ejecutiva de 90
-          segundos — y recibe retroalimentación personal de Robert.
+        <p class="text-xl text-slate-200 max-w-2xl leading-relaxed">
+          Diez unidades. Más de 130 ejercicios. Cada marco que internalizaste. Ahora ponlo
+          todo junto en una presentación ejecutiva de 90 segundos — y recibe la
+          retroalimentación personal de Robert sobre tu entrega.
         </p>
       </div>
     </div>
@@ -74,159 +65,146 @@ const mailtoLink = `mailto:${capstoneContent.submissionPaths.email.email}?subjec
   <section class="py-16 md:py-20 bg-white">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
-        <p
-          class="text-[11px] font-mono uppercase tracking-[0.3em] text-amber-600 mb-4 text-center"
-        >
+        <p class="text-[11px] font-mono uppercase tracking-[0.3em] text-amber-600 mb-4">
           Tu Tarea
         </p>
-        <div
-          class="relative bg-slate-50 border-2 border-amber-200 rounded-2xl p-8 md:p-10"
+        <h2
+          class="text-2xl md:text-3xl font-bold text-slate-900 mb-6"
+          style="font-family: 'Noto Sans KR', sans-serif;"
         >
-          <div
-            class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center"
-          >
-            <Mic class="w-5 h-5" />
+          Graba una actualización ejecutiva de 90 segundos.
+        </h2>
+        <div class="bg-slate-50 border-l-4 border-amber-400 rounded-r-xl p-6 md:p-8 mb-8">
+          <p class="text-lg text-slate-800 leading-relaxed font-medium">
+            Elige un proyecto real que estés liderando ahora mismo. Preséntalo como si
+            estuvieras informando a la dirección senior — usando el marco
+            <strong>Contexto → Tensión → Perspectiva → Acción → Resultado</strong>
+            de la Unidad 5. 90 segundos. Sin notas. Habla desde el conocimiento, no de un guion.
+          </p>
+        </div>
+
+        <!-- How to record -->
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <Mic class="w-5 h-5 text-amber-600" />
+            <p class="text-sm font-bold text-amber-800 uppercase tracking-wide">Cómo Grabar</p>
           </div>
-          <p
-            class="text-lg md:text-xl text-slate-800 leading-relaxed text-center font-medium mt-2"
-          >
-            {capstoneContent.promptEs}
+          <ul class="space-y-2 text-sm text-amber-900 leading-relaxed">
+            <li><strong>iPhone:</strong> Abre la app Notas de Voz → toca el botón rojo → guarda y exporta como M4A.</li>
+            <li><strong>Android:</strong> Usa la app de Grabadora de Voz integrada → exporta como MP3 o M4A.</li>
+            <li><strong>Computadora:</strong> Usa Zoom (graba una reunión contigo mismo), Loom o la grabación de audio de QuickTime.</li>
+          </ul>
+          <p class="text-xs text-amber-700 mt-4">
+            Cualquier formato de audio funciona: MP3, M4A, WAV u OGG. Mantenlo bajo 50 MB (todas las grabaciones de voz califican).
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Framework Reminder -->
-  <section class="py-16 md:py-20 bg-slate-50">
-    <div class="site-container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <h2
-          class="text-2xl md:text-3xl font-bold text-slate-900 mb-3 text-center"
-          style="font-family: 'Noto Sans KR', sans-serif;"
-        >
-          El Marco
-        </h2>
-        <p class="text-slate-600 text-center mb-10">
-          Estructura tus 90 segundos alrededor de estos cinco movimientos.
-        </p>
-        <div class="space-y-4">
-          {
-            capstoneContent.frameworkSteps.map((step, i) => (
-              <div class="flex items-start gap-4 p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
-                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-500 text-white font-bold text-sm shrink-0">
-                  {i + 1}
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold text-slate-900">
-                    {step.labelEs}
-                  </h3>
-                  <p class="text-slate-600 mt-0.5">{step.descriptionEs}</p>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tips -->
-  <section class="py-16 md:py-20 bg-white">
-    <div class="site-container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <h2
-          class="text-2xl md:text-3xl font-bold text-slate-900 mb-3 text-center"
-          style="font-family: 'Noto Sans KR', sans-serif;"
-        >
-          Antes de Grabar
-        </h2>
-        <p class="text-slate-600 text-center mb-10">
-          Revisa estos recordatorios de todo el curso.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {
-            capstoneContent.tips.map((tip) => (
-              <div class="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
-                <CheckCircle2 class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
-                <p class="text-slate-700 text-sm leading-relaxed">
-                  {tip.textEs}
-                </p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Submission Paths -->
+  <!-- Submission — Upload form + Booking CTA -->
   <section class="py-16 md:py-20 bg-slate-50">
     <div class="site-container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
+        <p class="text-[11px] font-mono uppercase tracking-[0.3em] text-amber-600 mb-4 text-center">
+          Envía Tu Trabajo
+        </p>
         <h2
           class="text-2xl md:text-3xl font-bold text-slate-900 mb-3 text-center"
           style="font-family: 'Noto Sans KR', sans-serif;"
         >
-          Elige Tu Camino
+          Elige tu camino.
         </h2>
         <p class="text-slate-600 text-center mb-10">
-          Dos formas de enviar. Ambas incluyen retroalimentación personal de
-          Robert.
+          Ambas opciones incluyen retroalimentación personal de Robert.
         </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Email Path -->
-          <div
-            class="bg-white rounded-2xl border border-slate-200 p-8 flex flex-col shadow-sm"
-          >
-            <div
-              class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-5"
-            >
-              <Mail class="w-6 h-6" />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <!-- Path A: Upload -->
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-6 h-6 rounded-full bg-amber-500 text-white text-xs font-bold flex items-center justify-center">A</span>
+              <h3 class="text-lg font-bold text-slate-900">Sube Tu Grabación</h3>
             </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-3">
-              {capstoneContent.submissionPaths.email.titleEs}
-            </h3>
-            <p class="text-slate-600 leading-relaxed mb-6 flex-1">
-              {capstoneContent.submissionPaths.email.descriptionEs}
+            <p class="text-sm text-slate-600 mb-5 leading-relaxed">
+              Graba en tu teléfono o computadora y súbela aquí. Robert escucha personalmente
+              cada grabación y te envía retroalimentación detallada por correo en 48 horas.
             </p>
-            <Button href={mailtoLink} variant="primary" size="lg">
-              <Mail class="w-4 h-4" />
-              {capstoneContent.submissionPaths.email.ctaEs}
-            </Button>
+            <CapstoneUploadForm client:load lang="es" />
           </div>
 
-          <!-- Strategy Session Path -->
-          <div
-            class="bg-white rounded-2xl border-2 border-amber-300 p-8 flex flex-col shadow-sm ring-1 ring-amber-100"
-          >
-            <div class="flex items-center justify-between mb-5">
-              <div
-                class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center"
-              >
-                <Calendar class="w-6 h-6" />
-              </div>
-              <span
-                class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full"
-              >
+          <!-- Path B: Strategy Session -->
+          <div class="md:mt-14">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-6 h-6 rounded-full bg-slate-800 text-white text-xs font-bold flex items-center justify-center">B</span>
+              <h3 class="text-lg font-bold text-slate-900">Preséntalo en Vivo con Robert</h3>
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full ml-auto">
                 Recomendado
               </span>
             </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-3">
-              {capstoneContent.submissionPaths.session.titleEs}
-            </h3>
-            <p class="text-slate-600 leading-relaxed mb-6 flex-1">
-              {capstoneContent.submissionPaths.session.descriptionEs}
+            <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+              Reserva una sesión de estrategia gratuita de 30 minutos. Entrega tu actualización
+              de 90 segundos en vivo — y recibe coaching en tiempo real sobre tu entrega,
+              elección de palabras y presencia ejecutiva. Este es el camino de mayor valor.
             </p>
-            <Button
-              href={capstoneContent.submissionPaths.session.linkEs}
-              variant="primary"
-              size="lg"
-            >
-              <Calendar class="w-4 h-4" />
-              {capstoneContent.submissionPaths.session.ctaEs}
-            </Button>
+            <div class="bg-white rounded-2xl border-2 border-amber-300 p-6 shadow-sm">
+              <div class="flex items-center gap-3 mb-4">
+                <Calendar class="w-6 h-6 text-amber-600" />
+                <div>
+                  <p class="text-sm font-bold text-slate-900">Sesión de Estrategia Gratuita</p>
+                  <p class="text-xs text-slate-500">30 minutos · Google Meet · Sin preparación requerida</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-500 mb-5 leading-relaxed">
+                El contexto de tu sesión se pre-llena — Robert sabrá que vienes del
+                curso Ejecutivo y tendrá tu reto final listo.
+              </p>
+              <Button href={bookingLink} variant="primary" size="lg" class="w-full">
+                <Calendar class="w-4 h-4" />
+                Reservar Sesión de Estrategia
+              </Button>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Robert's Coaching Reminders -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-[11px] font-mono uppercase tracking-[0.3em] text-amber-600 mb-4">
+          Recordatorios de Robert
+        </p>
+        <h2
+          class="text-2xl font-bold text-slate-900 mb-8"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Cuatro cosas que escucho.
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {
+            [
+              {
+                tip: "Verbos ejecutivos — no 'looked into' sino 'diagnosed.' No 'worked on' sino 'drove.' (Unidad 1)",
+              },
+              {
+                tip: "Cero relleno. Nada de 'I think', 'kind of', 'basically', 'you know.' Si te atrapas, haz una pausa — luego continúa. (Unidad 2)",
+              },
+              {
+                tip: "Un marco con nombre. El briefing debe tener una estructura clara que cualquiera pueda seguir. (Unidades 3–5)",
+              },
+              {
+                tip: "Entrega tranquila. Ve un 20% más lento que tu ritmo natural. La brevedad y la quietud señalan autoridad. (Unidad 10)",
+              },
+            ].map((item) => (
+              <div class="flex items-start gap-3 p-5 bg-slate-50 rounded-xl border border-slate-100">
+                <CheckCircle2 class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+                <p class="text-sm text-slate-700 leading-relaxed">{item.tip}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>
@@ -244,24 +222,10 @@ const mailtoLink = `mailto:${capstoneContent.submissionPaths.email.email}?subjec
           Esto no es un examen.<br />
           <span class="text-amber-400">Este es tu momento.</span>
         </h2>
-        <p class="text-lg text-slate-300 leading-relaxed mb-8">
-          Cada ejercicio, cada marco, cada corrección en este curso fue
-          construido para esto. Graba tus 90 segundos. Envíalo. Hazlo tuyo.
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Cada ejercicio, cada marco, cada corrección en este curso fue construido
+          para esto. Graba tus 90 segundos. Envíalo. Hazlo tuyo.
         </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <Button href={mailtoLink} variant="primary" size="lg">
-            <Mail class="w-4 h-4" />
-            Enviar Grabación
-          </Button>
-          <Button
-            href={capstoneContent.submissionPaths.session.linkEs}
-            variant="ghostLight"
-            size="lg"
-          >
-            <Calendar class="w-4 h-4" />
-            Reservar Sesión en Vivo
-          </Button>
-        </div>
       </div>
     </div>
   </section>
