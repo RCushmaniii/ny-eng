@@ -117,8 +117,8 @@ export default function CapstoneUploadForm({ lang }: Props) {
       const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
 
       await upload(`capstone/${Date.now()}-${safeName}`, file, {
-        access: "public",
-        handleUploadUrl: "/api/capstone/upload-token",
+        access: "private",
+        handleUploadUrl: "/api/capstone/blob-upload",
         clientPayload: JSON.stringify({
           name: name.trim(),
           email: email.trim(),

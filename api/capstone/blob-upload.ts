@@ -1,16 +1,18 @@
 /**
- * Vercel Serverless Function: Capstone Upload Token
+ * Vercel Serverless Function: Capstone Blob Upload Handler
  *
  * Two responsibilities handled in one endpoint:
  * 1. (POST with Vercel Blob client payload) — generates a presigned upload URL
  *    so the learner's browser uploads the audio file directly to Vercel Blob CDN,
  *    bypassing the 4.5 MB serverless body limit.
  * 2. onUploadCompleted callback — fires server-side after the CDN upload finishes;
- *    sends Robert a branded Resend email with a clickable link to the recording.
+ *    sends Robert a branded Resend email with a link to /api/capstone/listen
+ *    (server-side proxy that streams the private blob — so Robert just clicks and listens).
  *
  * Client flow:
  *   1. import { upload } from '@vercel/blob/client'
- *   2. upload(filename, file, { handleUploadUrl: '/api/capstone/upload-token',
+ *   2. upload(filename, file, { handleUploadUrl: '/api/capstone/blob-upload',
+ *                               access: 'private',
  *                               clientPayload: JSON.stringify({name,email,lang}) })
  *   3. On success → show confirmation UI
  */
@@ -18,6 +20,8 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { handleUpload, type HandleUploadBody } from "@vercel/blob/client";
 import { Resend } from "resend";
+
+const SITE = "https://www.nyenglishteacher.com";
 
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
@@ -174,10 +178,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           // use defaults
         }
 
+        // Build a listen URL — server-side proxy streams the private blob to Robert's browser
+        const b64 = Buffer.from(blob.url).toString("base64url");
+        const listenUrl = `${SITE}/api/capstone/listen?b=${b64}`;
+
         await sendCapstoneEmail({
           name: payload.name,
           email: payload.email,
-          recordingUrl: blob.url,
+          recordingUrl: listenUrl,
           lang: payload.lang,
         });
       },
