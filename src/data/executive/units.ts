@@ -15,6 +15,9 @@ export interface ExecutiveUnit {
   subtitleEs: string;
   description: string;
   descriptionEs: string;
+  /** Short meta description for SEO (120-160 chars) */
+  seoDescription: string;
+  seoDescriptionEs: string;
   /** What learners will be able to do after this unit */
   outcome: string;
   outcomeEs: string;
@@ -57,6 +60,10 @@ export const executiveUnits: ExecutiveUnit[] = [
       "Senior leaders don't 'look into' issues — they investigate, analyze, and diagnose. This unit trains your ear to hear the strategic distinction between similar verbs and rebuilds your speech around the verbs that signal analytical depth.",
     descriptionEs:
       "Los líderes senior no 'revisan' los problemas — investigan, analizan y diagnostican. Esta unidad entrena tu oído para escuchar la distinción estratégica entre verbos similares y reconstruye tu discurso alrededor de los verbos que señalan profundidad analítica.",
+    seoDescription:
+      "Replace generic verbs with precision executive language. Free C1-C2 drill-based course from a real executive English coach.",
+    seoDescriptionEs:
+      "Reemplaza verbos genéricos con lenguaje ejecutivo preciso. Curso gratuito C1-C2 basado en drills de un coach ejecutivo real.",
     outcome:
       "You'll replace generic verbs with the precise, strategic language executives expect.",
     outcomeEs:
@@ -76,6 +83,10 @@ export const executiveUnits: ExecutiveUnit[] = [
       "Over-hedging at senior level signals lack of control — but over-directness reads as aggression. This unit drills the middle path: measured authority. You remove 'I think', 'maybe', 'kind of', and 'sort of' while keeping your tone calm and senior.",
     descriptionEs:
       "El exceso de atenuación en el nivel senior señala falta de control — pero el exceso de directividad se percibe como agresión. Esta unidad practica el camino medio: autoridad medida. Eliminas 'I think', 'maybe', 'kind of' y 'sort of' mientras mantienes un tono calmado y senior.",
+    seoDescription:
+      "Eliminate filler and hedging from your executive English. Decisive without aggressive. Free drill-based course for C1-C2 speakers.",
+    seoDescriptionEs:
+      "Elimina muletillas y atenuación de tu inglés ejecutivo. Decisivo sin ser agresivo. Curso gratuito basado en drills para nivel C1-C2.",
     outcome:
       "You'll speak with calibrated certainty — direct, but never tense.",
     outcomeEs:
@@ -95,6 +106,10 @@ export const executiveUnits: ExecutiveUnit[] = [
       "Unstructured speech forces the listener to guess your meaning. Structured speech signals leadership control. This unit gives you two named frameworks plus the executive connectors that reveal your logic in real time.",
     descriptionEs:
       "El discurso no estructurado obliga al oyente a adivinar tu significado. El discurso estructurado señala control de liderazgo. Esta unidad te da dos marcos con nombre más los conectores ejecutivos que revelan tu lógica en tiempo real.",
+    seoDescription:
+      "Structure your speech like a senior leader. Learn executive frameworks and connectors that signal control under pressure.",
+    seoDescriptionEs:
+      "Estructura tu discurso como un líder senior. Aprende marcos ejecutivos y conectores que señalan control bajo presión.",
     outcome:
       "You'll organize your thinking out loud using named frameworks, under pressure.",
     outcomeEs:
@@ -114,6 +129,10 @@ export const executiveUnits: ExecutiveUnit[] = [
       "When leadership challenges you, defensive language signals loss of control. This unit drills the three-tier reframe — taking a defensive line and upgrading it through executive and strategic phrasing — plus the downgrade-emotion / upgrade-control pattern that keeps you measured.",
     descriptionEs:
       "Cuando el liderazgo te desafía, el lenguaje defensivo señala pérdida de control. Esta unidad practica el reencuadre de tres niveles — tomar una línea defensiva y elevarla con fraseo ejecutivo y estratégico — además del patrón reducir-emoción / elevar-control que te mantiene medido.",
+    seoDescription:
+      "Master the three-tier reframe to stay composed when challenged. Drills that replace defensive reactions with executive authority.",
+    seoDescriptionEs:
+      "Domina el reencuadre de tres niveles para mantener la compostura bajo desafío. Drills que reemplazan reacciones defensivas con autoridad.",
     outcome:
       "You'll respond to pressure with authority, not emotion.",
     outcomeEs:
@@ -133,6 +152,10 @@ export const executiveUnits: ExecutiveUnit[] = [
       "At senior level, facts alone are not enough — everyone has access to the data. What executives don't have is clear interpretation. This unit turns flat reporting into strategic narrative using a single five-step structure.",
     descriptionEs:
       "En el nivel senior, los hechos solos no son suficientes — todos tienen acceso a los datos. Lo que los ejecutivos no tienen es una interpretación clara. Esta unidad convierte los reportes planos en narrativa estratégica usando una sola estructura de cinco pasos.",
+    seoDescription:
+      "Turn flat status updates into strategic narratives that drive decisions. A five-step storytelling framework for executive English.",
+    seoDescriptionEs:
+      "Convierte actualizaciones planas en narrativas estratégicas que impulsan decisiones. Un marco de cinco pasos para inglés ejecutivo.",
     outcome:
       "You'll transform updates into decision-shaping narratives.",
     outcomeEs:
@@ -152,6 +175,10 @@ export const executiveUnits: ExecutiveUnit[] = [
       "Board update. Tough question. Drive decision. Acknowledge and prevent. Four named frameworks — each a 60-second structure — that you can deploy the moment leadership turns to you and says 'what do you think?' The drills here are the closest thing to a script you'll ever have.",
     descriptionEs:
       "Actualización de junta directiva. Pregunta difícil. Impulsar decisión. Reconocer y prevenir. Cuatro marcos con nombre — cada uno una estructura de 60 segundos — que puedes desplegar el momento en que el liderazgo te mire y diga '¿qué piensas?' Los drills aquí son lo más cercano a un guion que tendrás jamás.",
+    seoDescription:
+      "Four 60-second frameworks for when leadership puts you on the spot. Drill-based training for impromptu executive responses.",
+    seoDescriptionEs:
+      "Cuatro marcos de 60 segundos para cuando el liderazgo te pone en el centro. Entrenamiento basado en drills para respuestas improvisadas.",
     outcome:
       "You'll respond to any impromptu question with a named framework.",
     outcomeEs:
@@ -171,6 +198,10 @@ export const executiveUnits: ExecutiveUnit[] = [
       "Meetings are where executive English either holds up or breaks down. This unit applies the mechanics from Units 1-6 to the specific meeting language you need: opening and closing phrases, interrupting politely, holding the floor when pressed, and disagreeing without damaging the relationship.",
     descriptionEs:
       "Las reuniones son donde el inglés ejecutivo se mantiene o se desmorona. Esta unidad aplica las mecánicas de las Unidades 1-6 al lenguaje específico de reuniones que necesitas: frases de apertura y cierre, interrumpir educadamente, mantener el turno bajo presión y discrepar sin dañar la relación.",
+    seoDescription:
+      "Lead meetings in English with authority. Drills for opening, holding the floor, interrupting, and disagreeing diplomatically.",
+    seoDescriptionEs:
+      "Dirige reuniones en inglés con autoridad. Drills para abrir, mantener el turno, interrumpir y discrepar diplomáticamente.",
     outcome:
       "You'll steer meetings in English with the same control you have in Spanish.",
     outcomeEs:
@@ -190,6 +221,10 @@ export const executiveUnits: ExecutiveUnit[] = [
       "The hardest conversations at senior level happen in English with people who outrank you, report to you, or partner with you. This unit drills the phrasing for giving tough feedback, receiving it without defensiveness, and navigating conflict, apology, and repair.",
     descriptionEs:
       "Las conversaciones más difíciles en el nivel senior ocurren en inglés con personas que te superan, te reportan o se asocian contigo. Esta unidad practica el fraseo para dar retroalimentación difícil, recibirla sin ponerte a la defensiva y navegar conflicto, disculpa y reparación.",
+    seoDescription:
+      "Give tough feedback and handle difficult conversations in executive English. Drills for conflict, apology, and repair at senior level.",
+    seoDescriptionEs:
+      "Da retroalimentación difícil y maneja conversaciones complicadas en inglés ejecutivo. Drills para conflicto, disculpa y reparación.",
     outcome:
       "You'll handle feedback — up, down, or sideways — with senior-grade language.",
     outcomeEs:
@@ -209,6 +244,10 @@ export const executiveUnits: ExecutiveUnit[] = [
       "Negotiation language and decision-driving are where executive English pays off in hard numbers. This unit drills the positioning, anchoring, and concession language that moves a negotiation forward — plus the Problem → Impact → Solution → Recommendation framework applied to the moment you need leadership approval.",
     descriptionEs:
       "El lenguaje de negociación y la toma de decisiones es donde el inglés ejecutivo se traduce en números reales. Esta unidad practica el posicionamiento, anclaje y lenguaje de concesión que avanza una negociación — más el marco Problema → Impacto → Solución → Recomendación aplicado al momento en que necesitas aprobación del liderazgo.",
+    seoDescription:
+      "Negotiate and drive decisions in executive English. Anchoring, concessions, and the diplomatic 'no' drilled under pressure.",
+    seoDescriptionEs:
+      "Negocia e impulsa decisiones en inglés ejecutivo. Anclaje, concesiones y el 'no' diplomático practicados bajo presión.",
     outcome:
       "You'll lead negotiations and drive decisions in English with measurable outcomes.",
     outcomeEs:
@@ -228,6 +267,10 @@ export const executiveUnits: ExecutiveUnit[] = [
       "The capstone unit. A final integration of everything from Units 1-9, plus the prompt that launches your recorded executive presentation. This is the graduation moment — and the bridge into 1-on-1 coaching with Robert.",
     descriptionEs:
       "La unidad final. Una integración final de todo desde las Unidades 1-9, más la consigna que lanza tu presentación ejecutiva grabada. Este es el momento de graduación — y el puente al coaching 1-a-1 con Robert.",
+    seoDescription:
+      "Integrate all 10 units into your executive voice. The final drill set before your recorded capstone presentation.",
+    seoDescriptionEs:
+      "Integra las 10 unidades en tu voz ejecutiva. El set final de drills antes de tu presentación grabada de cierre.",
     outcome:
       "You'll submit a recorded 90-second executive presentation to Robert for personal feedback.",
     outcomeEs:

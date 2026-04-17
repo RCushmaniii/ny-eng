@@ -58,7 +58,7 @@ export const unit10Sections: UnitSection[] = [
     whyEs: "Este es el ensayo general. Entregarás actualizaciones ejecutivas completas de 60 segundos usando los marcos más fuertes del curso. Si puedes hacerlo con fluidez — con verbos de precisión, pensamiento estructurado y entrega segura — estás listo para la grabación del proyecto final.",
     mechanic: "structured-response",
     techniqueFocus: "Context → Tension → Insight → Action → Outcome. This is the storytelling framework — the most powerful one for the capstone. Master it, and every executive conversation becomes an opportunity to lead.",
-    techniqueFocusEs: "Contexto → Tensión → Insight → Acción → Resultado. Este es el marco narrativo — el más poderoso para el proyecto final. Domínalo, y cada conversación ejecutiva se convierte en una oportunidad para liderar.",
+    techniqueFocusEs: "Contexto → Tensión → Perspectiva → Acción → Resultado. Este es el marco narrativo — el más poderoso para el proyecto final. Domínalo, y cada conversación ejecutiva se convierte en una oportunidad para liderar.",
     rapidRepeat: [
       { text: "Operations are stable overall, but we are seeing…", textEs: "Las operaciones están estables en general, pero estamos viendo…" },
       { text: "What this indicates is…", textEs: "Lo que esto indica es…" },
@@ -99,12 +99,12 @@ export const unit10Section1Drills: VerbUpgradeItem[] = [
     whyItWorks: "You just used verb precision, structured thinking, and executive connectors — all in one reply.",
     whyItWorksEs: "Acabas de usar precisión verbal, pensamiento estructurado y conectores ejecutivos — todo en una sola respuesta.",
     elite: {
-      verb: "Context → Tension → Insight → Action → Outcome",
-      verbEs: "Contexto → Tensión → Insight → Acción → Resultado",
+      verb: "Narrative Arc",
+      verbEs: "Arco Narrativo",
       modelReply: "The project was tracking on schedule until we hit a dependency bottleneck in Sprint 4. What became clear was that the original workstream sequencing assumed linear progression — which didn't hold under load. We restructured the pipeline to run parallel tracks, resolved the backlog within two sprints, and delivered on the original date.",
       modelReplyEs: "El proyecto estaba en camino según lo programado hasta que encontramos un cuello de botella de dependencias en el Sprint 4. Lo que quedó claro fue que la secuencia original de flujos de trabajo asumía una progresión lineal — lo cual no se sostuvo bajo carga. Reestructuramos el pipeline para ejecutar carriles paralelos, resolvimos el atraso en dos sprints y entregamos en la fecha original.",
       c2Insight: "The narrative arc transforms a problem report into a leadership story — you show the challenge, the insight, the action, and the result.",
-      c2InsightEs: "El arco narrativo transforma un reporte de problemas en una historia de liderazgo — muestras el desafío, el insight, la acción y el resultado.",
+      c2InsightEs: "El arco narrativo transforma un reporte de problemas en una historia de liderazgo — muestras el desafío, la perspectiva, la acción y el resultado.",
     },
   },
   {
@@ -155,7 +155,7 @@ export const unit10Section1Drills: VerbUpgradeItem[] = [
         verb: "Operationalized",
         verbEs: "Operacionalizamos",
         usage: "Turning insight into action — signals systematic implementation",
-        usageEs: "Convertir insight en acción — señala implementación sistemática",
+        usageEs: "Convertir perspectiva en acción — señala implementación sistemática",
       },
     ],
     modelReply: "We assessed the root cause of the performance gap, reframed the issue from individual accountability to a process design problem, and operationalized a new quality gate that prevents recurrence.",
@@ -163,8 +163,8 @@ export const unit10Section1Drills: VerbUpgradeItem[] = [
     whyItWorks: "You showed progressive thinking — assessment, reinterpretation, then systematic action.",
     whyItWorksEs: "Mostraste pensamiento progresivo — evaluación, reinterpretación, y luego acción sistemática.",
     elite: {
-      verb: "Acknowledge → Explain → Action → Prevention",
-      verbEs: "Reconocer → Explicar → Acción → Prevención",
+      verb: "Accountability Framework",
+      verbEs: "Marco de Responsabilidad",
       modelReply: "The team underdelivered on the last sprint — I take responsibility for that. The root cause was a process gap: we didn't have a quality gate between development and release. We've since operationalized a structured review checkpoint, and early indicators show a 40% reduction in defects. The system now prevents the problem, not just detects it.",
       modelReplyEs: "El equipo no cumplió en el último sprint — asumo la responsabilidad. La causa raíz fue una brecha de proceso: no teníamos una puerta de calidad entre desarrollo y lanzamiento. Desde entonces hemos operacionalizado un punto de revisión estructurado, y los indicadores tempranos muestran una reducción del 40% en defectos. El sistema ahora previene el problema, no solo lo detecta.",
       c2Insight: "The Acknowledge → Explain → Action → Prevention framework turns a failure into a leadership moment — you own it, explain it, fix it, and prove it won't recur.",
@@ -265,7 +265,7 @@ export const unit10Section3Drills: StructuredResponseItem[] = [
     weak: "Things are going okay, we're working on some stuff.",
     weakEs: "Las cosas van bien, estamos trabajando en algunas cosas.",
     framework: "Context → Tension → Insight → Action → Outcome",
-    frameworkEs: "Contexto → Tensión → Insight → Acción → Resultado",
+    frameworkEs: "Contexto → Tensión → Perspectiva → Acción → Resultado",
     parts: [
       {
         label: "Context",
@@ -281,7 +281,7 @@ export const unit10Section3Drills: StructuredResponseItem[] = [
       },
       {
         label: "Insight",
-        labelEs: "Insight",
+        labelEs: "Perspectiva",
         sentence: "What this indicates is that our current staffing model doesn't scale with the volume increase we're projecting for Q3.",
         sentenceEs: "Lo que esto indica es que nuestro modelo actual de personal no escala con el aumento de volumen que proyectamos para Q3.",
       },
@@ -307,7 +307,7 @@ export const unit10Section3Drills: StructuredResponseItem[] = [
     weak: "The project is mostly on track with a few issues.",
     weakEs: "El proyecto está mayormente en camino con algunos problemas.",
     framework: "Context → Tension → Insight → Action → Outcome",
-    frameworkEs: "Contexto → Tensión → Insight → Acción → Resultado",
+    frameworkEs: "Contexto → Tensión → Perspectiva → Acción → Resultado",
     parts: [
       {
         label: "Context",
@@ -323,7 +323,7 @@ export const unit10Section3Drills: StructuredResponseItem[] = [
       },
       {
         label: "Insight",
-        labelEs: "Insight",
+        labelEs: "Perspectiva",
         sentence: "The root cause is that the legacy system wasn't designed for token-based auth — this was a known risk, and we're now seeing it materialize.",
         sentenceEs: "La causa raíz es que el sistema heredado no fue diseñado para autenticación basada en tokens — este era un riesgo conocido, y ahora lo estamos viendo materializarse.",
       },

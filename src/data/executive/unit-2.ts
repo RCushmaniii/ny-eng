@@ -224,7 +224,7 @@ export const unit2Section3Drills: WeakStrongEliteItem[] = [
     strong: "The situation is more serious now.",
     strongEs: "La situación es más seria ahora.",
     elite: "The situation has escalated and requires a revised approach.",
-    eliteEs: "La situación se ha escalado y requiere un enfoque revisado.",
+    eliteEs: "La situación ha escalado y requiere un enfoque revisado.",
   },
 ];
 

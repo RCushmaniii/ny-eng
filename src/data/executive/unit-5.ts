@@ -25,7 +25,7 @@ export const unit5Sections: UnitSection[] = [
     whyEs: "La mayoría de los profesionales reportan hechos — qué pasó, luego qué hicieron. Pero los ejecutivos que influyen en decisiones cuentan historias con estructura. En esta sección, aprendes el arco narrativo de cinco pasos que transforma actualizaciones planas en comunicación estratégica.",
     mechanic: "story",
     techniqueFocus: "Each step builds on the previous one. Context sets the stage, Tension creates urgency, Insight shows understanding, Action demonstrates control, Outcome projects confidence.",
-    techniqueFocusEs: "Cada paso se construye sobre el anterior. Contexto establece el escenario, Tensión crea urgencia, Insight muestra comprensión, Acción demuestra control, Resultado proyecta confianza.",
+    techniqueFocusEs: "Cada paso se construye sobre el anterior. Contexto establece el escenario, Tensión crea urgencia, Perspectiva muestra comprensión, Acción demuestra control, Resultado proyecta confianza.",
     rapidRepeat: [
       { text: "We are currently seeing…", textEs: "Actualmente estamos viendo…" },
       { text: "This is driven by…", textEs: "Esto es impulsado por…" },
@@ -369,5 +369,5 @@ export const unit5FinalShift: FinalShift = {
   before: "You reported facts — what happened, then what you did. The listener had to figure out what it meant.",
   beforeEs: "Reportabas hechos — qué pasó, luego qué hiciste. El oyente tenía que descifrar qué significaba.",
   after: "You tell strategic stories — context, tension, insight, action, outcome. You control how others understand what happened.",
-  afterEs: "Cuentas historias estratégicas — contexto, tensión, insight, acción, resultado. Controlas cómo otros entienden lo que pasó.",
+  afterEs: "Cuentas historias estratégicas — contexto, tensión, perspectiva, acción, resultado. Controlas cómo otros entienden lo que pasó.",
 };
