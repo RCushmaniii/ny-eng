@@ -8,6 +8,7 @@ export const headerContent = {
     { name: "Casos de Éxito", link: routes.es.testimonios },
     { name: "Recursos", link: routes.es.recursos },
     { name: "Cursos", link: "/es/cursos/" },
+    { name: "Corporativo", link: "/es/servicios/paquete-corporativo/" },
   ],
   cta: { text: "Contacto", link: routes.es.contact },
   logoLink: routes.es.home,

@@ -7,7 +7,8 @@ interface Props {
     headline: string;
     painPoints: string[];
     icon?: string;
-    image?: any; // ImageMetadata for challenge image
+    image?: any;
+    imageAlt?: string;
     quizCta?: {
       text: string;
       link: string;
@@ -79,7 +80,7 @@ const backgroundClasses = {
           <div class="relative">
             <Image 
               src={content.image}
-              alt="Challenge illustration"
+              alt={content.imageAlt ?? "Challenge illustration"}
               class="w-80 h-80 object-cover rounded-lg shadow-lg"
               quality={80}
               format="webp"

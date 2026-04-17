@@ -34,7 +34,7 @@ export default function RapidRepeat({
       : "Say them aloud. One sentence each. Then repeat, shorter and cleaner.";
 
   return (
-    <section className="bg-slate-900 rounded-2xl border border-slate-800 p-6 space-y-4">
+    <section className="bg-slate-900 rounded-2xl border border-slate-800 p-6 space-y-4 text-slate-100">
       <div className="flex items-center gap-2 text-amber-400">
         <Megaphone size={18} />
         <h3 className="text-sm font-semibold uppercase tracking-widest">
@@ -42,7 +42,7 @@ export default function RapidRepeat({
         </h3>
       </div>
 
-      <p className="text-sm text-slate-400 leading-relaxed">{instruction}</p>
+      <span className="block text-sm text-slate-400 leading-relaxed">{instruction}</span>
 
       <ul className="space-y-2">
         {stems.map((stem, idx) => (
@@ -54,10 +54,10 @@ export default function RapidRepeat({
               {idx + 1}
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-base text-slate-100 font-medium leading-relaxed">
+              <p className="text-base font-medium leading-relaxed">
                 "{stem.text}"
               </p>
-              <p className="text-xs text-slate-400 mt-0.5">{stem.textEs}</p>
+              <span className="block text-xs text-slate-400 mt-0.5">{stem.textEs}</span>
             </div>
             <div className="shrink-0 mt-0.5">
               <AudioButton text={stem.text} size="sm" />

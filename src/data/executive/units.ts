@@ -176,7 +176,7 @@ export const executiveUnits: ExecutiveUnit[] = [
     outcomeEs:
       "Dirigirás reuniones en inglés con el mismo control que tienes en español.",
     icon: "Users",
-    published: false,
+    published: true,
   },
   {
     id: 8,
@@ -195,7 +195,7 @@ export const executiveUnits: ExecutiveUnit[] = [
     outcomeEs:
       "Manejarás la retroalimentación — hacia arriba, hacia abajo o lateral — con lenguaje de nivel senior.",
     icon: "MessageSquare",
-    published: false,
+    published: true,
   },
   {
     id: 9,
@@ -214,7 +214,7 @@ export const executiveUnits: ExecutiveUnit[] = [
     outcomeEs:
       "Liderarás negociaciones e impulsarás decisiones en inglés con resultados medibles.",
     icon: "TrendingUp",
-    published: false,
+    published: true,
   },
   {
     id: 10,

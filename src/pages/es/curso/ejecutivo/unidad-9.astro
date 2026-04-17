@@ -1,0 +1,153 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import WeakStrongElite from "@components/course/WeakStrongElite";
+import StructuredResponseBuilder from "@components/course/StructuredResponseBuilder";
+import RapidRepeat from "@components/course/RapidRepeat";
+import FinalShiftCard from "@components/course/FinalShiftCard";
+import { executiveUnits } from "@data/executive/units";
+import {
+  unit9Sections,
+  unit9Section1Drills,
+  unit9Section2Drills,
+  unit9Section3Drills,
+  unit9FinalShift,
+} from "@data/executive/unit-9";
+import { ArrowRight, ArrowLeft, TrendingUp } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/executive/unit-9" as const;
+const unit = executiveUnits[8];
+
+const progressUnits = executiveUnits
+  .filter((u) => u.published)
+  .map((u) => ({ id: u.id, slug: u.slug, title: u.title, titleEs: u.titleEs }));
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title={`Unidad 9: ${unit.titleEs} | Curso Ejecutivo de Inglés`}
+  description={unit.descriptionEs}
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={9}
+    basePath="/es/curso/ejecutivo"
+    lang="es"
+    courseId="executive"
+  />
+
+  <!-- Unit hero -->
+  <section class="bg-gradient-to-b from-slate-950 to-slate-900 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
+          <TrendingUp class="w-4 h-4" />
+          Unidad 9
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          {unit.titleEs}
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          {unit.descriptionEs}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Anchoring and Positioning -->
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{unit9Sections[0].titleEs}</h2>
+        </div>
+        <p class="text-slate-500 mb-4 ml-11">{unit9Sections[0].whyEs}</p>
+        <div class="ml-11">
+          <WeakStrongElite client:visible items={unit9Section1Drills} lang="es" />
+        </div>
+        <div class="mt-8 ml-11 space-y-4">
+          <p class="text-sm font-semibold text-slate-600">{unit9Sections[0].techniqueFocusEs}</p>
+          <RapidRepeat client:visible stems={unit9Sections[0].rapidRepeat} lang="es" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Diplomatic 'No' -->
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{unit9Sections[1].titleEs}</h2>
+        </div>
+        <p class="text-slate-500 mb-4 ml-11">{unit9Sections[1].whyEs}</p>
+        <div class="ml-11">
+          <WeakStrongElite client:visible items={unit9Section2Drills} lang="es" />
+        </div>
+        <div class="mt-8 ml-11 space-y-4">
+          <p class="text-sm font-semibold text-slate-600">{unit9Sections[1].techniqueFocusEs}</p>
+          <RapidRepeat client:visible stems={unit9Sections[1].rapidRepeat} lang="es" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Closing and Securing Commitment -->
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{unit9Sections[2].titleEs}</h2>
+        </div>
+        <p class="text-slate-500 mb-4 ml-11">{unit9Sections[2].whyEs}</p>
+        <div class="ml-11">
+          <StructuredResponseBuilder client:visible items={unit9Section3Drills} lang="es" />
+        </div>
+        <div class="mt-8 ml-11 space-y-4">
+          <p class="text-sm font-semibold text-slate-600">{unit9Sections[2].techniqueFocusEs}</p>
+          <RapidRepeat client:visible stems={unit9Sections[2].rapidRepeat} lang="es" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Shift -->
+  <section class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <FinalShiftCard client:visible shift={unit9FinalShift} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="py-12 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex justify-between items-center">
+        <a
+          href="/es/curso/ejecutivo/unidad-8/"
+          class="inline-flex items-center gap-1 text-sm text-slate-500 hover:text-amber-600 transition-colors"
+        >
+          <ArrowLeft class="w-4 h-4" />
+          Unidad 8: Retroalimentación
+        </a>
+        <Button href="/es/curso/ejecutivo/" variant="primary" size="md">
+          Resumen del Curso
+          <ArrowRight class="w-4 h-4 ml-1" />
+        </Button>
+      </div>
+    </div>
+  </section>
+</Base>

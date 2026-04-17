@@ -64,6 +64,7 @@ export type TKey =
   | "services/startup-founders"
   | "services/tech-english"
   | "services/technical-sales-english"
+  | "services/corporate-package"
   | `category/${CategorySlug}`
   | "assessments"
   | "quiz"
@@ -192,6 +193,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "services/startup-founders": "/en/services/startup-founders/",
     "services/tech-english": "/en/services/tech-english/",
     "services/technical-sales-english": "/en/services/technical-sales-english/",
+    "services/corporate-package": "/en/services/corporate-package/",
     "category/startup-founders": "/en/category/startup-founders/",
     "category/tech-english": "/en/category/tech-english/",
     "category/logistics-english": "/en/category/logistics-english/",
@@ -333,6 +335,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "services/tech-english": "/es/servicios/ingles-para-tecnologia/",
     "services/technical-sales-english":
       "/es/servicios/ingles-para-ventas-tecnicas/",
+    "services/corporate-package": "/es/servicios/paquete-corporativo/",
     "category/startup-founders":
       "/es/categoria/ingles-para-fundadores-de-startups/",
     "category/tech-english": "/es/categoria/ingles-para-tecnologia/",
@@ -482,6 +485,7 @@ export function getAllTKeys(): TKey[] {
     "services/startup-founders",
     "services/tech-english",
     "services/technical-sales-english",
+    "services/corporate-package",
     "category/startup-founders",
     "category/tech-english",
     "category/logistics-english",

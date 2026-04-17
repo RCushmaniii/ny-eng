@@ -10,9 +10,9 @@ import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
 import { serviceFaqs } from "@data/service-faqs";
 import { paqueteCorporativo as serviceData } from "@data/services";
 
-const title = "Valentía al Liderar en Inglés — Programa Corporativo | NY";
+const title = "Inglés Corporativo para Equipos Directivos | NY English Teacher";
 const seoDescription =
-  "Un programa corporativo de 12 semanas para equipos de liderazgo senior. Preparación individual, presentaciones grupales bajo presión de pares y evaluación final — todo en inglés.";
+  "Capacitación de inglés corporativo para equipos directivos en México. 12 semanas de preparación individual, presión de pares y resultados medibles — no solo certificados.";
 
 const heroContent = {
   title: "Tu equipo directivo está listo. Su inglés no les está siguiendo el ritmo.",
@@ -20,6 +20,7 @@ const heroContent = {
     "Un programa de 12 semanas que usa la presión de pares — no un salón de clases — para cerrar la brecha entre preparación y desempeño.",
   backgroundImage: serviceData.backgroundImage,
   overlayOpacity: 0.75,
+  imageAlt: "Equipo directivo senior en una sesión de coaching de inglés empresarial",
 };
 
 const challengeContent = {
@@ -31,6 +32,7 @@ const challengeContent = {
   ],
   icon: "💡",
   image: serviceData.squareImage,
+  imageAlt: "Profesional ejecutivo practicando presentaciones en inglés bajo presión",
   quizCta: {
     text: "Realiza la Evaluación de Comunicación Ejecutiva — 60 segundos.",
     link: "/en/quiz/executives/question/1",
@@ -42,7 +44,8 @@ const ctaContent = {
   eyebrow: "Programas Corporativos",
   title: "¿Listo para construir un equipo directivo que lidere en inglés?",
   description:
-    "Este programa requiere una llamada de descubrimiento para definir el alcance según el tamaño de tu grupo, agenda y objetivos. Robert responde en 24 horas.",
+    "Este programa requiere una llamada de descubrimiento para definir el alcance según el tamaño de tu grupo, agenda y objetivos. Robert es neoyorquino de nacimiento y lleva más de una década entrenando ejecutivos y equipos directivos en toda México. Responde en 24 horas.",
+  buttonSubtext: "La mayoría de las llamadas de descubrimiento duran 20 minutos.",
   buttonText: "Contactar a Robert por WhatsApp",
   buttonLink: "https://wa.me/523315590572",
   whatToExpectTitle: "En Tu Llamada de Descubrimiento:",
@@ -62,17 +65,6 @@ const faqs = serviceFaqs["corporate-package"]?.es || [];
   lang="es"
   tkey="services/corporate-package"
   hideCta={true}
-  customHreflangs={[
-    {
-      lang: "en-US",
-      href: "https://www.nyenglishteacher.com/en/services/corporate-package/",
-    },
-    {
-      lang: "es-MX",
-      href: "https://www.nyenglishteacher.com/es/servicios/paquete-corporativo/",
-    },
-  ]}
-  customCanonical="https://www.nyenglishteacher.com/es/servicios/paquete-corporativo/"
 >
   <!-- Hero -->
   <InnerHero content={heroContent} />
@@ -203,6 +195,33 @@ const faqs = serviceFaqs["corporate-package"]?.es || [];
   <BreadcrumbSchema items={[
     { name: "Inicio", url: "https://www.nyenglishteacher.com/es/" },
     { name: "Servicios", url: "https://www.nyenglishteacher.com/es/servicios/" },
-    { name: "Valentía al Liderar en Inglés", url: "https://www.nyenglishteacher.com/es/servicios/paquete-corporativo/" }
+    { name: "Inglés Corporativo para Equipos Directivos", url: "https://www.nyenglishteacher.com/es/servicios/paquete-corporativo/" }
   ]} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Inglés Corporativo para Equipos Directivos",
+    "alternateName": "Valentía al Liderar en Inglés",
+    "description": "Un programa estructurado de 12 semanas para equipos de liderazgo senior. Preparación individual, presentaciones grupales bajo presión de pares y evaluación final — diseñado para cerrar la brecha entre la fluidez privada y el desempeño público.",
+    "provider": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "jobTitle": "Coach de Inglés",
+      "url": "https://www.nyenglishteacher.com/es/about/"
+    },
+    "serviceType": "Coaching de Inglés Corporativo",
+    "areaServed": {
+      "@type": "Country",
+      "name": "México"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "600",
+      "priceCurrency": "MXN",
+      "description": "600 MXN por sesión por participante. Inversión total típicamente 7,200–10,200 MXN por participante en las tres fases.",
+      "eligibleCustomerType": "https://schema.org/BusinessCustomer"
+    },
+    "url": "https://www.nyenglishteacher.com/es/servicios/paquete-corporativo/"
+  })} />
 </Base>
