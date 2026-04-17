@@ -23,7 +23,7 @@ problem: "Solo professional service providers burn 10-15 hours per week on manua
 solution: "A fully automated lead generation platform that functions as four digital employees — SDR, marketing department, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase."
 key_features:
   - "Complete 4-course A1→C2 English curriculum — Beginner, Intermediate, Advanced, Executive — entirely free, bilingual EN/ES"
-  - "Executive course alone: 10 units × 3 sections, 8 original React drill components, ~130+ drills, Azure Neural TTS, capstone recorded presentation funnel"
+  - "Executive course alone: 10 units × 3 sections, 8 original React drill components, ~130+ drills, Azure Neural TTS, capstone recorded presentation with direct browser-to-CDN audio upload (Vercel Blob) and 48-hour personal feedback loop"
   - "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps — no discovery calls needed"
   - "3-step booking flow via Cloudflare Workers + Google Calendar OAuth — interest to confirmed Google Meet in under 60 seconds"
   - "Full EN/ES bilingual mirror with localized routing (/es/servicios/, /es/reservar/) and bidirectional hreflang SEO"
@@ -88,13 +88,13 @@ tags:
   - "bilingual"
   - "lead-generation"
   - "solopreneur"
-date_completed: "2026-04"
+date_completed: "2026-04-17"
 
 # === REPO HEALTH STATUS ===
-# Last audited: 2026-04-06 (post-session: hydration fixes, lang switcher fix)
+# Last audited: 2026-04-16 (capstone upload, CSP hardening, Sentry install, Clerk chatbot fix)
 # Standards defined in: operating-system/delivery/repo-health-baseline.md
 health_status:
-  sentry: "-"           # Not installed — CLAUDE.md mandates for all production apps
+  sentry: "Y"           # Installed 2026-04-16 — org: cushlabsai, project: ny-eng
   testing: "-"          # No unit/integration framework (vitest/jest); has 7 validators + env smoke tests
   ci_cd: "Y"            # GitHub Actions: build on push/PR to main
   health_endpoint: "n/a"  # Static site — no server runtime
