@@ -22,12 +22,16 @@ status: "Production"
 problem: "Solo professional service providers burn 10-15 hours per week on manual qualification, scheduling ping-pong, and follow-ups. Their websites look identical to commodity competitors, making it impossible to justify premium pricing while the Spanish-speaking professional market remains underserved."
 solution: "A fully automated lead generation platform that functions as four digital employees — SDR, marketing department, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase."
 key_features:
+  - "Complete 4-course A1→C2 English curriculum — Beginner, Intermediate, Advanced, Executive — entirely free, bilingual EN/ES"
+  - "Executive course alone: 10 units × 3 sections, 8 original React drill components, ~130+ drills, Azure Neural TTS, capstone recorded presentation funnel"
   - "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps — no discovery calls needed"
   - "3-step booking flow via Cloudflare Workers + Google Calendar OAuth — interest to confirmed Google Meet in under 60 seconds"
   - "Full EN/ES bilingual mirror with localized routing (/es/servicios/, /es/reservar/) and bidirectional hreflang SEO"
   - "Premium positioning hard-coded into UX — named executive testimonials from Driscoll's, CEVA Logistics, no discount codes"
   - "$0/month infrastructure — Astro static, Cloudflare Workers free tier, Neon free tier, Vercel serverless free tier"
 metrics:
+  - "4 complete courses (A1→C2) — more structured free content than most paid English platforms"
+  - "~130+ individual drills in the Executive course alone across 10 drill components"
   - "100 Lighthouse performance score — zero database queries on page load"
   - "$0/month infrastructure cost across all services"
   - "< 60 seconds from interest to confirmed booking with Google Meet link"
@@ -84,7 +88,7 @@ tags:
   - "bilingual"
   - "lead-generation"
   - "solopreneur"
-date_completed: "2026-02"
+date_completed: "2026-04"
 
 # === REPO HEALTH STATUS ===
 # Last audited: 2026-04-06 (post-session: hydration fixes, lang switcher fix)
@@ -171,6 +175,21 @@ In the Guadalajara market specifically, the local English tutoring market is sat
 - Automated qualification eliminates 10-15 hours/week of administrative overhead that would otherwise require a virtual assistant or SDR hire
 - Premium pricing (500 MXN / $25 USD per session) sustained at 3-5x local market rate, validated by executive-level client roster
 - Bilingual system captures both English-language searches (higher purchase intent) and Spanish-language searches (higher volume) across the Guadalajara market
+
+## The Fifth Digital Employee: A Free University
+
+In 2026, the platform grew beyond lead generation to include a complete A1→C2 English curriculum — four full courses offered entirely free. This is not a teaser or a gated demo. It is the productized version of Robert's 1-on-1 executive coaching, built at a depth that most paid platforms don't match.
+
+**The four courses:**
+
+- **Beginner** ("First Steps Into English", A0–A1) — vocabulary, greetings, survival English; full EN/ES mirrors
+- **Intermediate** ("Building Fluency", B1–B2) — modal-driven sentence construction; 10 units + 20-question final exam
+- **Advanced** ("Speak with Confidence", B2–C1) — error spotting, minimal pairs, sentence transformation; 5 custom React components; Azure Neural TTS
+- **Executive** ("Communicate Like a Leader", C1–C2) — 10 units × 3 sections + capstone recorded presentation; 8 original drill components; ~130+ drills across verb precision, filler elimination, structured frameworks, storytelling, impromptu speaking, negotiation, and leadership tone; Azure Neural TTS on every English element
+
+The Executive course pedagogy is built on the Weak→Strong→Elite (C2) progression model with named executive communication frameworks: Cause→Action→Outcome, Problem→Impact→Solution→Recommendation, Context→Tension→Insight→Action→Outcome, Acknowledge→Explain→Action→Prevention. The capstone converts: learners record a 90-second executive update and submit it to Robert by email (48-hour personal feedback) or book a strategy session — the primary conversion event.
+
+This transforms the platform from a lead generation site into a content moat. A learner who completes the free Executive course has already experienced Robert's methodology at depth. The strategy session becomes the obvious next step, not a cold ask.
 
 ## The Universal Model
 

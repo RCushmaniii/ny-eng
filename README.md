@@ -7,7 +7,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Status](https://img.shields.io/badge/Status-Production-success)](https://www.nyenglishteacher.com)
 
-A bilingual (EN/ES) lead generation and conversion platform for executive English coaching. Built for performance, SEO excellence, and conversion optimization.
+A bilingual (EN/ES) lead generation, conversion, and self-study platform for executive English coaching. Built for performance, SEO excellence, conversion optimization, and free-tier learner education at a scale most paid platforms don't match.
 
 **Live Site**: [nyenglishteacher.com](https://www.nyenglishteacher.com)
 
@@ -21,10 +21,24 @@ Most English coaching websites are generic and forgettable. This platform is bui
 - **Rank in search engines** with perfect hreflang, structured data, and technical SEO
 - **Serve two markets** with full bilingual parity (English + Mexican Spanish)
 - **Load fast** with static generation, optimized images, and edge caching
+- **Educate at scale** with a full 4-course, drill-based curriculum — completely free
 
 ---
 
 ## Key Features
+
+### Free Course Curriculum — All Four Levels, Completely Free
+
+The platform ships a complete A1→C2 English curriculum — the productized version of Robert's 1-on-1 executive coaching, offered entirely for free as a lead generation and authority engine.
+
+| Course | Level | Focus | Drills |
+|--------|-------|-------|--------|
+| **Beginner** — "First Steps Into English" | A0–A1 | Vocabulary, greetings, survival English | Interactive matching + pronunciation |
+| **Intermediate** — "Building Fluency" | B1–B2 | Sentence construction, modals, fluency | Modal-driven sentence builder, 10 units + final exam |
+| **Advanced** — "Speak with Confidence" | B2–C1 | Precision, error spotting, minimal pairs | 5 components: WordPairLab, ErrorSpotter, SentenceTransformer, MinimalPairDrill, WordBuilder |
+| **Executive** — "Communicate Like a Leader" | C1–C2 | Executive frameworks, negotiation, storytelling, leadership voice | 10 components, ~130+ drills, capstone recorded presentation |
+
+The Executive course alone contains 10 units × 3 sections, 8 original drill components (VerbUpgradeLab, WeakStrongElite, StructuredResponseBuilder, ConnectorDrill, StoryBuilder, ImpromptuScenario, RapidRepeat, FinalShiftCard), Azure Neural TTS on every English element, and a capstone funnel that converts to a strategy session booking. Pedagogy: Weak→Strong→Elite (C2) progression with named frameworks (Cause→Action→Outcome, Problem→Impact→Solution→Recommendation, Context→Tension→Insight→Action→Outcome).
 
 ### Lead Generation System
 - **4 Persona-Specific Quizzes** — IT Services, Executives, Professional Services, High-Stakes Communication
@@ -37,12 +51,12 @@ Most English coaching websites are generic and forgettable. This platform is bui
 - **Google Meet Auto-Generation** — Video conference links included in confirmation
 
 ### SEO & Performance
-- **Perfect Sitemap** — 116 URLs with bidirectional hreflang (en-US ↔ es-MX)
+- **Perfect Sitemap** — 130+ URLs with bidirectional hreflang (en-US ↔ es-MX)
 - **JSON-LD Structured Data** — Organization, FAQ, Blog, and Service schemas
 - **Core Web Vitals Optimized** — Static generation, lazy loading, external stylesheets
 
 ### Content Architecture
-- **11 Service Pages** — Industry-specific coaching offerings
+- **12 Service Pages** — Industry-specific coaching offerings
 - **22 Blog Posts** — Bilingual content with cross-language links
 - **20+ Lead Magnets** — Downloadable resources for email capture
 
@@ -56,10 +70,11 @@ Most English coaching websites are generic and forgettable. This platform is bui
 | UI Components | [React 19](https://react.dev) — For interactive quiz reports |
 | Styling | [Tailwind CSS 3.4](https://tailwindcss.com) — Utility-first CSS |
 | Language | [TypeScript 5.9](https://typescriptlang.org) — Strict mode enabled |
-| Database | MySQL (Hostinger) — Quiz submission storage |
+| Database | [Neon PostgreSQL](https://neon.tech) — Quiz submission storage (serverless) |
 | Email | [Resend](https://resend.com) — Transactional email for lead notifications |
 | Calendar | Google Calendar API — Via Cloudflare Worker |
-| Hosting | Hostinger (static) + Cloudflare Workers (API) |
+| Hosting | [Vercel](https://vercel.com) (static + serverless) + Cloudflare Workers (API) |
+| TTS | Azure Neural TTS — en-US-AvaNeural (EN) + es-MX-DaliaNeural (ES) |
 | Icons | [Lucide React](https://lucide.dev) — Consistent icon library |
 
 ---
@@ -273,4 +288,4 @@ Proprietary — All rights reserved.
 ---
 
 **Maintained by**: Robert Cushman
-**Last Updated**: January 2026
+**Last Updated**: April 2026
