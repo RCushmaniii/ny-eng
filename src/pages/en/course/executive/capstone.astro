@@ -1,0 +1,265 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import { capstoneContent } from "@data/executive/capstone";
+import {
+  Crown,
+  Mail,
+  Calendar,
+  CheckCircle2,
+  ArrowLeft,
+  Mic,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/executive/capstone" as const;
+
+const mailtoLink = `mailto:${capstoneContent.submissionPaths.email.email}?subject=Executive%20Capstone%20Submission`;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Executive Capstone — 90-Second Presentation | NY English"
+  description="Record a 90-second executive update using the frameworks you mastered. Get personal feedback from Robert on your executive English."
+>
+  <!-- Hero -->
+  <section
+    class="relative w-full overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-amber-950 pt-32 pb-20 md:pt-40 md:pb-28"
+  >
+    <div class="absolute inset-0 opacity-10">
+      <div
+        class="absolute top-20 left-10 w-72 h-72 bg-amber-500 rounded-full blur-3xl"
+      >
+      </div>
+      <div
+        class="absolute bottom-10 right-10 w-96 h-96 bg-slate-400 rounded-full blur-3xl"
+      >
+      </div>
+    </div>
+    <div class="site-container mx-auto px-4 relative z-10 text-white">
+      <div class="max-w-3xl">
+        <a
+          href="/en/course/executive/unit-10/"
+          class="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-white transition-colors mb-6"
+        >
+          <ArrowLeft class="w-4 h-4" />
+          Back to Unit 10
+        </a>
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-300 text-sm font-semibold mb-6"
+        >
+          <Crown class="w-4 h-4" />
+          The Capstone
+        </div>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Your Executive Voice,<br />
+          <span class="text-amber-400">Recorded.</span>
+        </h1>
+        <p class="text-xl text-slate-200 mb-4 max-w-2xl leading-relaxed">
+          You've drilled the verbs. Eliminated the filler. Internalized the
+          frameworks. Now put it all together in one 90-second executive
+          presentation — and get personal feedback from Robert.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Prompt -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p
+          class="text-[11px] font-mono uppercase tracking-[0.3em] text-amber-600 mb-4 text-center"
+        >
+          Your Assignment
+        </p>
+        <div
+          class="relative bg-slate-50 border-2 border-amber-200 rounded-2xl p-8 md:p-10"
+        >
+          <div
+            class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center"
+          >
+            <Mic class="w-5 h-5" />
+          </div>
+          <p
+            class="text-lg md:text-xl text-slate-800 leading-relaxed text-center font-medium mt-2"
+          >
+            {capstoneContent.prompt}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Framework Reminder -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-slate-900 mb-3 text-center"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          The Framework
+        </h2>
+        <p class="text-slate-600 text-center mb-10">
+          Structure your 90 seconds around these five moves.
+        </p>
+        <div class="space-y-4">
+          {
+            capstoneContent.frameworkSteps.map((step, i) => (
+              <div class="flex items-start gap-4 p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-500 text-white font-bold text-sm shrink-0">
+                  {i + 1}
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-slate-900">
+                    {step.label}
+                  </h3>
+                  <p class="text-slate-600 mt-0.5">{step.description}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-slate-900 mb-3 text-center"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Before You Record
+        </h2>
+        <p class="text-slate-600 text-center mb-10">
+          Review these reminders from across the course.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {
+            capstoneContent.tips.map((tip) => (
+              <div class="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+                <CheckCircle2 class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+                <p class="text-slate-700 text-sm leading-relaxed">{tip.text}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Submission Paths -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-slate-900 mb-3 text-center"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Choose Your Path
+        </h2>
+        <p class="text-slate-600 text-center mb-10">
+          Two ways to submit. Both include personal feedback from Robert.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Email Path -->
+          <div
+            class="bg-white rounded-2xl border border-slate-200 p-8 flex flex-col shadow-sm"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-5"
+            >
+              <Mail class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              {capstoneContent.submissionPaths.email.title}
+            </h3>
+            <p class="text-slate-600 leading-relaxed mb-6 flex-1">
+              {capstoneContent.submissionPaths.email.description}
+            </p>
+            <Button href={mailtoLink} variant="primary" size="lg">
+              <Mail class="w-4 h-4" />
+              {capstoneContent.submissionPaths.email.cta}
+            </Button>
+          </div>
+
+          <!-- Strategy Session Path -->
+          <div
+            class="bg-white rounded-2xl border-2 border-amber-300 p-8 flex flex-col shadow-sm ring-1 ring-amber-100"
+          >
+            <div class="flex items-center justify-between mb-5">
+              <div
+                class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center"
+              >
+                <Calendar class="w-6 h-6" />
+              </div>
+              <span
+                class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full"
+              >
+                Recommended
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              {capstoneContent.submissionPaths.session.title}
+            </h3>
+            <p class="text-slate-600 leading-relaxed mb-6 flex-1">
+              {capstoneContent.submissionPaths.session.description}
+            </p>
+            <Button
+              href={capstoneContent.submissionPaths.session.link}
+              variant="primary"
+              size="lg"
+            >
+              <Calendar class="w-4 h-4" />
+              {capstoneContent.submissionPaths.session.cta}
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Encouragement -->
+  <section class="py-20 md:py-28 bg-slate-950 text-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <Crown class="w-10 h-10 text-amber-400 mx-auto mb-6" />
+        <h2
+          class="text-3xl md:text-4xl font-bold mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          This is not a test.<br />
+          <span class="text-amber-400">This is your moment.</span>
+        </h2>
+        <p class="text-lg text-slate-300 leading-relaxed mb-8">
+          Every drill, every framework, every correction in this course was
+          building toward this. Record your 90 seconds. Send it. Own it.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <Button href={mailtoLink} variant="primary" size="lg">
+            <Mail class="w-4 h-4" />
+            Send Recording
+          </Button>
+          <Button
+            href={capstoneContent.submissionPaths.session.link}
+            variant="ghostLight"
+            size="lg"
+          >
+            <Calendar class="w-4 h-4" />
+            Book Live Session
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

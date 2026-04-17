@@ -128,7 +128,21 @@ Feed these into NotebookLM to generate unique data insights:
 - 5 reusable React components: `WordPairLab`, `ErrorSpotter`, `SentenceTransformer`, `MinimalPairDrill`, `WordBuilder`
 - Azure Neural TTS throughout: `en-US-AvaNeural` (English), `es-MX-DaliaNeural` (Spanish)
 - Speaking task stubbed as strategy-session CTA at end of exam
-- **Next:** Course #4 — Executive: "Communicate Like a Leader" (C1-C2, paid)
+
+### Course #4 — Executive: "Communicate Like a Leader" ✅ — shipped 2026-04-16
+- Free (Phase 1) course targeting C1-C2 executives, founders, senior professionals
+- **The productized version of Robert's 1-on-1 executive coaching** — drill-based, speaking-first
+- 10 units × 3 sections + recorded capstone presentation (90-sec exec update)
+- EN (`/en/course/executive/`) + ES (`/es/curso/ejecutivo/`) mirrors with full hreflang
+- **8 new drill components**: `VerbUpgradeLab`, `WeakStrongElite`, `StructuredResponseBuilder`, `ConnectorDrill`, `StoryBuilder`, `ImpromptuScenario`, `RapidRepeat`, `FinalShiftCard`
+- Reused from Advanced: `AudioButton`, `SentenceTransformer`
+- Azure Neural TTS on every English content element
+- **Pedagogy**: Weak → Strong → Elite (C2) tier, named frameworks (Cause→Action→Outcome, Problem→Impact→Solution→Recommendation, Context→Tension→Insight→Action→Outcome), Rapid Repeat memory anchors, Final Shift transformation cards
+- **Capstone funnel**: recorded presentation → email (48hr personal feedback) OR strategy session (the conversion event)
+- **~130+ individual drills** across: verb precision, filler elimination, structured responses, connectors, storytelling, impromptu frameworks, tone control, meetings, feedback, negotiation
+- **Pre-publish audit**: content quality review (duplicate drill removal, unique coaching notes), Mexican Spanish translation audit (standardized Perspectiva, fixed reflexive verbs, fixed non-standard vocabulary), SEO metadata audit (120-155 char descriptions, <60 char titles)
+- **Phase 2 planned**: Stripe paywall, recommended bundle: course + strategy session at $299
+- Full plan: `docs/EXECUTIVE-COURSE-PLAN.md`
 
 ## Future Initiatives
 

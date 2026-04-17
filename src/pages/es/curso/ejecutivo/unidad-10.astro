@@ -4,22 +4,24 @@ export const prerender = true;
 import Base from "@layouts/Base.astro";
 import Button from "@components/ui/Button.astro";
 import CourseProgress from "@components/course/CourseProgress";
+import VerbUpgradeLab from "@components/course/VerbUpgradeLab";
 import WeakStrongElite from "@components/course/WeakStrongElite";
+import StructuredResponseBuilder from "@components/course/StructuredResponseBuilder";
 import RapidRepeat from "@components/course/RapidRepeat";
 import FinalShiftCard from "@components/course/FinalShiftCard";
 import { executiveUnits } from "@data/executive/units";
 import {
-  unit4Sections,
-  unit4Section1Drills,
-  unit4Section2Drills,
-  unit4Section3Drills,
-  unit4FinalShift,
-} from "@data/executive/unit-4";
-import { ArrowRight, ArrowLeft, Shield } from "lucide-astro";
+  unit10Sections,
+  unit10Section1Drills,
+  unit10Section2Drills,
+  unit10Section3Drills,
+  unit10FinalShift,
+} from "@data/executive/unit-10";
+import { ArrowRight, ArrowLeft, Crown } from "lucide-astro";
 
-const lang = "en";
-const tkey = "course/executive/unit-4" as const;
-const unit = executiveUnits[3];
+const lang = "es";
+const tkey = "course/executive/unit-10" as const;
+const unit = executiveUnits[9];
 
 const progressUnits = executiveUnits
   .filter((u) => u.published)
@@ -29,15 +31,15 @@ const progressUnits = executiveUnits
 <Base
   lang={lang}
   tkey={tkey}
-  title={`Unit 4: ${unit.title} | NY English`}
-  description={unit.seoDescription}
+  title={`Unidad 10: ${unit.titleEs} | NY English`}
+  description={unit.seoDescriptionEs}
 >
   <CourseProgress
     client:load
     units={progressUnits}
-    currentUnit={4}
-    basePath="/en/course/executive"
-    lang="en"
+    currentUnit={10}
+    basePath="/es/curso/ejecutivo"
+    lang="es"
     courseId="executive"
   />
 
@@ -46,77 +48,77 @@ const progressUnits = executiveUnits
     <div class="site-container mx-auto px-4 text-white">
       <div class="max-w-3xl">
         <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
-          <Shield class="w-4 h-4" />
-          Unit 4
+          <Crown class="w-4 h-4" />
+          Unidad 10
         </div>
         <h1
           class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
           style="font-family: 'Noto Sans KR', sans-serif;"
         >
-          {unit.title}
+          {unit.titleEs}
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          {unit.description}
+          {unit.descriptionEs}
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Section 1 -->
+  <!-- Section 1: Integration Review (VerbUpgradeLab) -->
   <section class="py-16 md:py-20 bg-white" id="section-1">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-2">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">1</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{unit4Sections[0].title}</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{unit10Sections[0].titleEs}</h2>
         </div>
-        <p class="text-slate-500 mb-4 ml-11">{unit4Sections[0].why}</p>
+        <p class="text-slate-500 mb-4 ml-11">{unit10Sections[0].whyEs}</p>
         <div class="ml-11">
-          <WeakStrongElite client:visible items={unit4Section1Drills} lang="en" />
+          <VerbUpgradeLab client:visible items={unit10Section1Drills} lang="es" />
         </div>
         <div class="mt-8 ml-11 space-y-4">
-          <p class="text-sm font-semibold text-slate-600">{unit4Sections[0].techniqueFocus}</p>
-          <RapidRepeat client:visible stems={unit4Sections[0].rapidRepeat} lang="en" />
+          <p class="text-sm font-semibold text-slate-600">{unit10Sections[0].techniqueFocusEs}</p>
+          <RapidRepeat client:visible stems={unit10Sections[0].rapidRepeat} lang="es" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 2 -->
+  <!-- Section 2: Personal Brand in English (WeakStrongElite) -->
   <section class="py-16 md:py-20 bg-slate-50" id="section-2">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-2">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">2</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{unit4Sections[1].title}</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{unit10Sections[1].titleEs}</h2>
         </div>
-        <p class="text-slate-500 mb-4 ml-11">{unit4Sections[1].why}</p>
+        <p class="text-slate-500 mb-4 ml-11">{unit10Sections[1].whyEs}</p>
         <div class="ml-11">
-          <WeakStrongElite client:visible items={unit4Section2Drills} lang="en" />
+          <WeakStrongElite client:visible items={unit10Section2Drills} lang="es" />
         </div>
         <div class="mt-8 ml-11 space-y-4">
-          <p class="text-sm font-semibold text-slate-600">{unit4Sections[1].techniqueFocus}</p>
-          <RapidRepeat client:visible stems={unit4Sections[1].rapidRepeat} lang="en" />
+          <p class="text-sm font-semibold text-slate-600">{unit10Sections[1].techniqueFocusEs}</p>
+          <RapidRepeat client:visible stems={unit10Sections[1].rapidRepeat} lang="es" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 3 -->
+  <!-- Section 3: Capstone Preparation (StructuredResponseBuilder) -->
   <section class="py-16 md:py-20 bg-white" id="section-3">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-2">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">3</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{unit4Sections[2].title}</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{unit10Sections[2].titleEs}</h2>
         </div>
-        <p class="text-slate-500 mb-4 ml-11">{unit4Sections[2].why}</p>
+        <p class="text-slate-500 mb-4 ml-11">{unit10Sections[2].whyEs}</p>
         <div class="ml-11">
-          <WeakStrongElite client:visible items={unit4Section3Drills} lang="en" />
+          <StructuredResponseBuilder client:visible items={unit10Section3Drills} lang="es" />
         </div>
         <div class="mt-8 ml-11 space-y-4">
-          <p class="text-sm font-semibold text-slate-600">{unit4Sections[2].techniqueFocus}</p>
-          <RapidRepeat client:visible stems={unit4Sections[2].rapidRepeat} lang="en" />
+          <p class="text-sm font-semibold text-slate-600">{unit10Sections[2].techniqueFocusEs}</p>
+          <RapidRepeat client:visible stems={unit10Sections[2].rapidRepeat} lang="es" />
         </div>
       </div>
     </div>
@@ -126,7 +128,7 @@ const progressUnits = executiveUnits
   <section class="py-12 md:py-16 bg-slate-50">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
-        <FinalShiftCard client:visible shift={unit4FinalShift} lang="en" />
+        <FinalShiftCard client:visible shift={unit10FinalShift} lang="es" />
       </div>
     </div>
   </section>
@@ -134,17 +136,17 @@ const progressUnits = executiveUnits
   <!-- Navigation -->
   <section class="py-12 bg-white border-t border-slate-200">
     <div class="site-container mx-auto px-4">
-      <div class="max-w-3xl mx-auto flex justify-between items-center">
+      <div class="max-w-3xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
         <a
-          href="/en/course/executive/unit-3/"
+          href="/es/curso/ejecutivo/unidad-9/"
           class="inline-flex items-center gap-1 text-sm text-slate-500 hover:text-amber-600 transition-colors"
         >
           <ArrowLeft class="w-4 h-4" />
-          Unit 3: Structured Responses
+          Unidad 9: Negociación
         </a>
-        <Button href="/en/course/executive/unit-5/" variant="primary" size="md">
-          Unit 5: Strategic Storytelling
-          <ArrowRight class="w-4 h-4 ml-1" />
+        <Button href="/es/curso/ejecutivo/reto-final/" variant="primary" size="lg">
+          Graba Tu Reto Final
+          <ArrowRight class="w-5 h-5 ml-1" />
         </Button>
       </div>
     </div>

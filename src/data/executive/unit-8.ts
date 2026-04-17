@@ -200,8 +200,8 @@ export const unit8Section2Drills: WeakStrongEliteItem[] = [
     strongEs: "Agradezco que lo plantees. ¿Puedes ayudarme a entender la preocupación específica?",
     elite: "Thank you for the directness. I'd like to understand the specific behavior or outcome you're referring to so I can address it.",
     eliteEs: "Gracias por la franqueza. Me gustaría entender el comportamiento o resultado específico al que te refieres para poder abordarlo.",
-    note: "Executive poise means taking the feedback seriously, even when it stings.",
-    noteEs: "La compostura ejecutiva significa tomar la retroalimentación en serio, incluso cuando duele.",
+    note: "The shift from denial to curiosity. 'That's not fair' closes the door. Asking for specifics opens it — and gives you information you can actually act on.",
+    noteEs: "El cambio de la negación a la curiosidad. 'Eso no es justo' cierra la puerta. Pedir especificidad la abre — y te da información sobre la cual realmente puedes actuar.",
   },
   {
     weak: "I disagree.",
@@ -210,8 +210,8 @@ export const unit8Section2Drills: WeakStrongEliteItem[] = [
     strongEs: "Lo veo de manera diferente, pero quiero entender tu perspectiva primero.",
     elite: "I have a different reading of the situation, but I'd like to hear your full assessment before I respond.",
     eliteEs: "Tengo una lectura diferente de la situación, pero me gustaría escuchar tu evaluación completa antes de responder.",
-    note: "Executive poise means taking the feedback seriously, even when it stings.",
-    noteEs: "La compostura ejecutiva significa tomar la retroalimentación en serio, incluso cuando duele.",
+    note: "Lead with listening, not rebuttal. When you hear feedback and immediately disagree, you signal that you're defending, not processing. Asking to hear the full picture first shows intellectual maturity.",
+    noteEs: "Lidera con escucha, no con réplica. Cuando recibes retroalimentación e inmediatamente no estás de acuerdo, señalas que estás defendiéndote, no procesando. Pedir escuchar el panorama completo primero muestra madurez intelectual.",
   },
   {
     weak: "But I had a reason for that.",
@@ -220,8 +220,8 @@ export const unit8Section2Drills: WeakStrongEliteItem[] = [
     strongEs: "Hubo un contexto detrás de esa decisión que puede no haber sido visible. Déjame compartirlo.",
     elite: "There were factors driving that decision that I should have communicated more clearly. Let me walk you through the reasoning.",
     eliteEs: "Hubo factores que impulsaron esa decisión que debí haber comunicado con más claridad. Déjame explicarte el razonamiento.",
-    note: "Executive poise means taking the feedback seriously, even when it stings.",
-    noteEs: "La compostura ejecutiva significa tomar la retroalimentación en serio, incluso cuando duele.",
+    note: "Context is not an excuse. The difference is ownership: 'I had a reason' sounds defensive. 'I should have communicated more clearly' acknowledges the gap while still providing the context.",
+    noteEs: "El contexto no es una excusa. La diferencia es la responsabilidad: 'Tenía una razón' suena defensivo. 'Debí haber comunicado con más claridad' reconoce la brecha mientras aún proporciona el contexto.",
   },
   {
     weak: "I already know that.",
@@ -230,8 +230,8 @@ export const unit8Section2Drills: WeakStrongEliteItem[] = [
     strongEs: "Es un punto válido. He sido consciente de ello pero no lo he abordado de manera efectiva aún.",
     elite: "You're right to flag it. I've been tracking this but haven't made enough progress — here's what I'm adjusting.",
     eliteEs: "Tienes razón en señalarlo. He estado dando seguimiento pero no he avanzado lo suficiente — esto es lo que estoy ajustando.",
-    note: "Executive poise means taking the feedback seriously, even when it stings.",
-    noteEs: "La compostura ejecutiva significa tomar la retroalimentación en serio, incluso cuando duele.",
+    note: "Acknowledge the gap honestly. 'I already know that' shuts down the person trying to help you. Admitting you knew but haven't acted is harder — and far more credible.",
+    noteEs: "Reconoce la brecha honestamente. 'Ya lo sé' silencia a la persona que intenta ayudarte. Admitir que lo sabías pero no has actuado es más difícil — y mucho más creíble.",
   },
   {
     weak: "It's not my fault.",
@@ -240,8 +240,8 @@ export const unit8Section2Drills: WeakStrongEliteItem[] = [
     strongEs: "Entiendo la preocupación. Déjame aclarar qué estuvo dentro de mi control y qué estoy haciendo al respecto.",
     elite: "I want to be clear about where ownership sits. Here's what was within my control, and here's what I'm doing to address it.",
     eliteEs: "Quiero ser claro sobre dónde está la responsabilidad. Esto es lo que estuvo dentro de mi control, y esto es lo que estoy haciendo para abordarlo.",
-    note: "Executive poise means taking the feedback seriously, even when it stings.",
-    noteEs: "La compostura ejecutiva significa tomar la retroalimentación en serio, incluso cuando duele.",
+    note: "Own your sphere of control. You don't have to accept blame for everything — but you do have to own your part. Sorting 'within my control' from 'outside my control' is executive accountability.",
+    noteEs: "Asume tu esfera de control. No tienes que aceptar culpa por todo — pero sí debes asumir tu parte. Separar 'dentro de mi control' de 'fuera de mi control' es responsabilidad ejecutiva.",
   },
   {
     weak: "Fine, whatever.",
@@ -250,8 +250,8 @@ export const unit8Section2Drills: WeakStrongEliteItem[] = [
     strongEs: "Entendido. Tomaré esto en cuenta y ajustaré mi enfoque.",
     elite: "I hear you. I'll reflect on this and come back with a specific plan to address it.",
     eliteEs: "Te escucho. Reflexionaré sobre esto y volveré con un plan específico para abordarlo.",
-    note: "Executive poise means taking the feedback seriously, even when it stings.",
-    noteEs: "La compostura ejecutiva significa tomar la retroalimentación en serio, incluso cuando duele.",
+    note: "Engagement over withdrawal. 'Fine, whatever' is passive-aggressive surrender — it tells people you've checked out. Committing to reflect and return with a plan shows you're still in the game.",
+    noteEs: "Compromiso sobre retirada. 'Bueno, como sea' es una rendición pasivo-agresiva — le dice a la gente que te desconectaste. Comprometerte a reflexionar y volver con un plan demuestra que sigues en el juego.",
   },
 ];
 
