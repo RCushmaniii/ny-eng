@@ -15,7 +15,7 @@ const t = {
     emailPlaceholder: "maria@empresa.com",
     fileLabel: "Your recording",
     fileHint:
-      "MP3, M4A, WAV, or OGG · Max 50 MB · Record on your phone's Voice Memos app, Loom, or Zoom",
+      "MP3, M4A, WAV, or OGG · Max 25 MB · A 90-second recording is typically under 5 MB",
     fileCta: "Choose audio file",
     fileSelected: "File selected",
     submitCta: "Send to Robert",
@@ -39,7 +39,7 @@ const t = {
     emailPlaceholder: "maria@empresa.com",
     fileLabel: "Tu grabación",
     fileHint:
-      "MP3, M4A, WAV u OGG · Máx 50 MB · Graba en la app Notas de Voz de tu teléfono, Loom o Zoom",
+      "MP3, M4A, WAV u OGG · Máx 25 MB · Una grabación de 90 segundos suele pesar menos de 5 MB",
     fileCta: "Elegir archivo de audio",
     fileSelected: "Archivo seleccionado",
     submitCta: "Enviar a Robert",
@@ -68,7 +68,7 @@ const ALLOWED_TYPES = [
   "audio/aac",
 ];
 
-const MAX_BYTES = 50 * 1024 * 1024;
+const MAX_BYTES = 25 * 1024 * 1024;
 
 export default function CapstoneUploadForm({ lang }: Props) {
   const copy = t[lang];
