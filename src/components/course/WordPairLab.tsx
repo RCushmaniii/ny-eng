@@ -8,7 +8,7 @@
 // Used in: U1 (weak verbs vs strong verbs), U2 (word traps), U3 (pronoun
 // corrections), U10 (collocations).
 
-import { useState } from "react";
+import { type ReactElement, useState } from "react";
 import { ArrowDown, RotateCcw, Sparkles, TrendingUp } from "lucide-react";
 import AudioButton from "./AudioButton";
 import type { WordPair } from "@data/advanced/types";
@@ -25,9 +25,9 @@ function renderHighlighted(
   text: string,
   highlight: string,
   flavor: "weak" | "strong",
-): JSX.Element {
+): ReactElement {
   if (!highlight || !text.includes(highlight)) {
-    return text;
+    return <>{text}</>;
   }
   const idx = text.indexOf(highlight);
   const before = text.slice(0, idx);

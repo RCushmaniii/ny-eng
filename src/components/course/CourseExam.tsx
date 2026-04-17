@@ -25,7 +25,7 @@ interface Props {
   passingScore: number;
   courseBasePath: string;
   /** Tier definitions in any order; the component picks the highest matching one. */
-  tiers: ScoreTierDefinition[];
+  tiers: readonly ScoreTierDefinition[];
 }
 
 function computeResult(
@@ -63,7 +63,7 @@ function computeResult(
 
 function pickTier(
   percentage: number,
-  tiers: ScoreTierDefinition[],
+  tiers: readonly ScoreTierDefinition[],
 ): ScoreTier {
   // Sort descending by minPercent and pick the first one the user qualifies for.
   const sorted = [...tiers].sort((a, b) => b.minPercent - a.minPercent);

@@ -7,9 +7,10 @@
  * 3. Exports helper functions for filtering, grouping, and stats
  */
 
-import type { MemeEntry } from "./types";
+import type { MemeEntry, RoleCategory } from "./types";
 import { allMemeEntries } from "./meme-entries";
 import { enrichWithDetectedStatus, findImageExtension } from "./detect-status";
+import { allRoleCategories } from "./role-categories";
 
 // Re-export types and configs for convenience
 export type { MemeEntry, MemeStatus, RoleCategory } from "./types";

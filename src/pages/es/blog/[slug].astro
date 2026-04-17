@@ -109,10 +109,10 @@ const relatedPosts = allPosts
     const overlap = pCats.filter((c: string) => currentCategories.has(c)).length;
     return { post: p, score: overlap };
   })
-  .filter((item) => item.score > 0)
-  .sort((a, b) => b.score - a.score || new Date(b.post.data.publishDate).valueOf() - new Date(a.post.data.publishDate).valueOf())
+  .filter((item: { post: CollectionEntry<'blog'>; score: number }) => item.score > 0)
+  .sort((a: { post: CollectionEntry<'blog'>; score: number }, b: { post: CollectionEntry<'blog'>; score: number }) => b.score - a.score || new Date(b.post.data.publishDate).valueOf() - new Date(a.post.data.publishDate).valueOf())
   .slice(0, 3)
-  .map((item) => item.post);
+  .map((item: { post: CollectionEntry<'blog'>; score: number }) => item.post);
 
 // Get site URL for structured data
 const siteUrl = siteConfig.siteUrl || 'https://www.nyenglishteacher.com';

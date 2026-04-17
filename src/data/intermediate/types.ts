@@ -9,7 +9,7 @@ export type { SentenceBlock, PronunciationDrill };
 export interface IntermediateVocabItem {
   english: string;
   spanish: string;
-  type: "word" | "phrase" | "verb" | "modal" | "phrasal-verb" | "expression";
+  type: "word" | "phrase" | "verb" | "modal" | "phrasal-verb" | "expression" | "noun";
 }
 
 // Section A: Phrasal Verb Explorer

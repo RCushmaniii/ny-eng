@@ -3,7 +3,7 @@
 // Reuses ExamQuestion / ExamOption / ExamResult types
 
 import type { ExamQuestion, ExamResult } from "../course/exam";
-import type { ScoreTier } from "../../components/course/CourseExam";
+import type { ScoreTier, ScoreTierDefinition } from "../../components/course/CourseExam";
 
 export const examMeta = {
   title: "Final Exam",
@@ -379,7 +379,7 @@ export const examQuestions: ExamQuestion[] = [
   },
 ];
 
-export const examTiers: ScoreTier[] = [
+export const examTiers: ScoreTierDefinition[] = [
   {
     minPercent: 90,
     tier: "Outstanding",
