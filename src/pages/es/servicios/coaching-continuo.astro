@@ -1,0 +1,293 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
+import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
+import { serviceFaqs } from "@data/service-faqs";
+import { services } from "@data/services";
+
+const serviceData = services.find((s) => s.slug === "executive-english");
+if (!serviceData) throw new Error("Service data not found");
+
+const title = "Coaching Continuo de Inglés para Equipos | NY English Teacher";
+const seoDescription =
+  "Coaching flexible de inglés para equipos profesionales en México. Desarrolla fluidez en conversación, mejora reuniones y construye rapport natural — sin currículo fijo ni curso genérico.";
+
+const heroContent = {
+  title: "Tu equipo funciona en inglés. Ahora haz que fluya con naturalidad.",
+  description:
+    "Coaching continuo para profesionales que quieren comunicarse mejor en todos los niveles de su jornada laboral — no solo en los momentos de alta presión.",
+  backgroundImage: serviceData.backgroundImage,
+  overlayOpacity: 0.72,
+  imageAlt: "Equipo profesional en sesión de coaching de inglés de negocios",
+};
+
+const ctaContent = {
+  eyebrow: "Coaching Continuo",
+  title: "¿Listo para construir fluidez real en tu equipo?",
+  description:
+    "Agenda una llamada de descubrimiento. Hablaremos sobre el nivel actual de tu equipo, dónde están las brechas, y qué formato de coaching se adapta realmente a tu agenda y objetivos.",
+  buttonText: "Agendar Llamada de Descubrimiento",
+  buttonLink: "/es/reservar/",
+  whatToExpectTitle: "En Tu Llamada de Descubrimiento:",
+  whatToExpectList: [
+    "Evaluamos la base de comunicación actual de tu equipo",
+    "Identificamos los escenarios donde un mejor inglés marcaría mayor diferencia",
+    "Definimos un formato y horario que funcione para tu equipo",
+  ],
+};
+
+const faqs = serviceFaqs["ongoing-coaching"]?.es || [];
+---
+
+<Base
+  title={title}
+  description={seoDescription}
+  lang="es"
+  tkey="services/ongoing-coaching"
+  hideCta={true}
+  customHreflangs={[
+    {
+      lang: "en-US",
+      href: "https://www.nyenglishteacher.com/en/services/ongoing-coaching/",
+    },
+    {
+      lang: "es-MX",
+      href: "https://www.nyenglishteacher.com/es/servicios/coaching-continuo/",
+    },
+  ]}
+  customCanonical="https://www.nyenglishteacher.com/es/servicios/coaching-continuo/"
+>
+  <InnerHero content={heroContent} />
+
+  <!-- Sección del Problema -->
+  <section class="bg-white py-16 px-8">
+    <div class="site-container--small mx-auto max-w-3xl">
+      <h2 class="text-3xl font-bold mb-6">El estancamiento del que pocos hablan</h2>
+      <p class="text-gray-600 text-lg mb-5">
+        Muchos profesionales llegan a un punto en el que su inglés ya es funcional — pueden seguir una reunión, responder preguntas directas y salir adelante en una presentación. Pero la comunicación sigue sintiéndose forzada en formas que importan.
+      </p>
+      <p class="text-gray-600 mb-4">
+        El small talk antes de una llamada con un cliente que define el tono de todo lo que sigue. Un almuerzo de networking donde la conversación avanza rápido y todos los demás parecen a gusto. Una pregunta fuera del guión en medio de una presentación. El momento después de una reunión cuando los colegas conversan informalmente y sientes que vas dos pasos atrás.
+      </p>
+      <p class="text-gray-600 mb-4">
+        Estos no son inconvenientes menores. El small talk es una de las habilidades más subestimadas en la vida profesional. Es como se construye confianza antes de que empiece la agenda, como se forman las relaciones de negocios entre reuniones, y como se lee una sala antes de tener que liderarla. Los profesionales que lo hacen bien en inglés no solo se comunican — conectan.
+      </p>
+      <p class="text-gray-600">
+        La brecha no está en el vocabulario. Está en la fluidez a lo largo de toda la gama de comunicación profesional — el tipo que sucede de forma natural, sin esfuerzo, en todos los niveles de la jornada laboral.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sección de Solución -->
+  <section class="bg-light py-16 px-8">
+    <div class="site-container--small mx-auto max-w-3xl">
+      <h2 class="text-3xl font-bold mb-4">Cómo funciona este coaching en la práctica</h2>
+      <p class="text-gray-600 mb-4">
+        Esto no es un currículo. No hay un temario fijo, no hay libro de gramática, no hay examen al final del módulo. Las sesiones son inmersivas y completamente en inglés. El contenido está construido alrededor del entorno laboral real de tu equipo: escenarios de reuniones reales, las conversaciones que ocurren antes y después de una llamada, cómo manejar una pregunta inesperada bajo presión, cómo construir rapport con un nuevo cliente en los primeros cinco minutos.
+      </p>
+      <p class="text-gray-600 mb-8">
+        El trabajo puede incluir conversación y discusión, reuniones y Q&A, presentaciones, práctica de small talk y networking, y cualquier interacción profesional que tu equipo encuentre difícil o poco natural. El objetivo es que toda la gama del inglés en el trabajo se sienta menos como esfuerzo y más como instinto.
+      </p>
+
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="bg-white rounded-xl p-6 border border-gray-100">
+          <h3 class="font-bold mb-3">Qué cubre cada sesión</h3>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span>
+              Reuniones — participar, preguntar, liderar
+            </li>
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span>
+              Small talk y construcción de relaciones en inglés
+            </li>
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span>
+              Presentaciones y Q&A sin guión
+            </li>
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span>
+              Networking e interacción informal de negocios
+            </li>
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span>
+              Comunicación cotidiana en el trabajo, hecha con naturalidad
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-100">
+          <h3 class="font-bold mb-3">Lo que esto no es</h3>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li class="flex gap-2">
+              <span class="text-red-400 font-bold shrink-0">✗</span>
+              Un curso de inglés genérico con temario prefabricado
+            </li>
+            <li class="flex gap-2">
+              <span class="text-red-400 font-bold shrink-0">✗</span>
+              Instrucción enfocada en gramática
+            </li>
+            <li class="flex gap-2">
+              <span class="text-red-400 font-bold shrink-0">✗</span>
+              Preparación para certificaciones o exámenes
+            </li>
+            <li class="flex gap-2">
+              <span class="text-red-400 font-bold shrink-0">✗</span>
+              Clase grupal estilo salón de clases
+            </li>
+            <li class="flex gap-2">
+              <span class="text-red-400 font-bold shrink-0">✗</span>
+              Un programa de inglés básico para principiantes
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo Funciona -->
+  <section class="bg-white py-16 px-8">
+    <div class="site-container--small mx-auto">
+      <h2 class="text-3xl font-bold mb-2 text-center">Cómo se estructura</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-xl mx-auto">
+        El formato combina sesiones individuales enfocadas con práctica en grupos pequeños. Ambas son completamente en inglés y construidas alrededor de escenarios profesionales reales.
+      </p>
+      <div class="grid gap-8 md:grid-cols-2 max-w-3xl mx-auto">
+        <div class="bg-light rounded-xl p-8 border border-gray-100">
+          <div class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Desarrollo central</div>
+          <h3 class="text-xl font-bold mb-3">Sesiones 1:1</h3>
+          <p class="text-gray-600 text-sm">
+            Las sesiones individuales son el núcleo del trabajo. Cada participante recibe coaching dirigido a sus brechas específicas — cómo estructura sus ideas en inglés, cómo proyecta bajo presión, dónde se rompe la fluidez natural. Es directo, privado y adaptado a la persona.
+          </p>
+        </div>
+        <div class="bg-light rounded-xl p-8 border border-gray-100">
+          <div class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Práctica aplicada</div>
+          <h3 class="text-xl font-bold mb-3">Sesiones en Grupo Pequeño</h3>
+          <p class="text-gray-600 text-sm">
+            Las sesiones grupales tienen un máximo de 4 participantes. Son basadas en desempeño — no es enseñanza de inglés grupal tradicional. Los participantes presentan, discuten, responden preguntas y se comunican en tiempo real con sus pares. Esto genera el tipo de fluidez dinámica que las sesiones individuales por sí solas no pueden producir.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Para Quién Es -->
+  <section class="bg-light py-16 px-8">
+    <div class="site-container--small mx-auto max-w-3xl">
+      <h2 class="text-3xl font-bold mb-10 text-center">Para quién es este programa</h2>
+      <div class="grid gap-8 md:grid-cols-2">
+        <div>
+          <h3 class="font-semibold mb-4">Es un buen ajuste si...</h3>
+          <ul class="space-y-3 text-gray-600 text-sm">
+            <li class="flex gap-2">
+              <span class="text-green-500 font-bold shrink-0">✓</span>
+              Tu equipo está en nivel B1 o superior
+            </li>
+            <li class="flex gap-2">
+              <span class="text-green-500 font-bold shrink-0">✓</span>
+              Quieres mejora práctica, no una certificación
+            </li>
+            <li class="flex gap-2">
+              <span class="text-green-500 font-bold shrink-0">✓</span>
+              Las reuniones, el small talk y la interacción cotidiana importan en tu trabajo
+            </li>
+            <li class="flex gap-2">
+              <span class="text-green-500 font-bold shrink-0">✓</span>
+              Quieres coaching adaptado al contexto real de tu empresa
+            </li>
+            <li class="flex gap-2">
+              <span class="text-green-500 font-bold shrink-0">✓</span>
+              La mejora constante en el tiempo encaja mejor con tus objetivos que un sprint puntual
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-4">Quién dirige las sesiones</h3>
+          <p class="text-gray-600 text-sm mb-3">
+            Robert Cushman es un neoyorquino nativo con más de una década de experiencia trabajando con ejecutivos, equipos y profesionales en México. Trabaja íntegramente en inglés y se enfoca en comunicación que funciona — no solo en comunicación técnicamente correcta.
+          </p>
+          <p class="text-gray-600 text-sm">
+            Las sesiones se realizan en línea por Google Meet. Las sesiones grupales presenciales pueden ser posibles según la ubicación y la logística, pero el formato estándar es en línea.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inversión -->
+  <section class="bg-white py-16 px-8">
+    <div class="site-container--small mx-auto max-w-2xl">
+      <h2 class="text-3xl font-bold mb-2 text-center">Inversión</h2>
+      <p class="text-center text-gray-600 mb-10">Precio claro. Sin paquetes, sin compromiso mínimo.</p>
+      <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 text-center">
+        <div class="text-4xl font-bold mb-2">$500 MXN</div>
+        <div class="text-gray-500 mb-6">por hora, por participante</div>
+        <ul class="text-sm text-gray-600 space-y-3 text-left max-w-xs mx-auto">
+          <li class="flex gap-2">
+            <span class="text-green-500 font-bold shrink-0">✓</span>
+            Facturas mexicanas disponibles
+          </li>
+          <li class="flex gap-2">
+            <span class="text-green-500 font-bold shrink-0">✓</span>
+            Programación flexible para agendas profesionales
+          </li>
+          <li class="flex gap-2">
+            <span class="text-green-500 font-bold shrink-0">✓</span>
+            Principalmente en línea — formato estándar por Google Meet
+          </li>
+          <li class="flex gap-2">
+            <span class="text-green-500 font-bold shrink-0">✓</span>
+            Sin plazo fijo ni compromiso mínimo requerido
+          </li>
+        </ul>
+      </div>
+      <p class="text-xs text-gray-400 text-center mt-4">
+        Las sesiones grupales se facturan por participante por hora. Las sesiones individuales se facturan por hora de coaching.
+      </p>
+    </div>
+  </section>
+
+  <CtaSection content={ctaContent} />
+  <ServiceFAQ faqs={faqs} lang="es" />
+
+  <BreadcrumbSchema
+    items={[
+      { name: "Inicio", url: "https://www.nyenglishteacher.com/es/" },
+      { name: "Servicios", url: "https://www.nyenglishteacher.com/es/servicios/" },
+      {
+        name: "Coaching Continuo de Inglés para Equipos",
+        url: "https://www.nyenglishteacher.com/es/servicios/coaching-continuo/",
+      },
+    ]}
+  />
+
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Coaching Continuo de Inglés para Equipos",
+      description:
+        "Coaching flexible e inmersivo de inglés para equipos profesionales. Sesiones 1:1 y práctica en grupos pequeños enfocadas en reuniones, small talk, presentaciones y comunicación cotidiana de negocios.",
+      provider: {
+        "@type": "Person",
+        name: "Robert Cushman",
+        jobTitle: "English Coach",
+        url: "https://www.nyenglishteacher.com/es/about/",
+      },
+      serviceType: "Business English Coaching",
+      areaServed: { "@type": "Country", name: "Mexico" },
+      offers: {
+        "@type": "Offer",
+        price: "500",
+        priceCurrency: "MXN",
+        description: "500 MXN por hora por participante",
+        eligibleCustomerType: "https://schema.org/BusinessCustomer",
+      },
+      url: "https://www.nyenglishteacher.com/es/servicios/coaching-continuo/",
+    })}
+  />
+</Base>
