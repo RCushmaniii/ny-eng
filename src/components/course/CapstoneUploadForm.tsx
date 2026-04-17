@@ -13,7 +13,6 @@
  */
 
 import { useState, useRef } from "react";
-import { upload } from "@vercel/blob/client";
 import { CheckCircle, Mic, Upload, AlertCircle, Loader2 } from "lucide-react";
 
 interface Props {
@@ -44,7 +43,6 @@ const t = {
       "Please select an audio file (MP3, M4A, WAV, or OGG).",
     errorFileSize: "File is too large. Please keep recordings under 50 MB.",
     required: "Required",
-    progress: (pct: number) => `Uploading — ${pct}%`,
   },
   es: {
     heading: "Envía Tu Grabación",
@@ -70,7 +68,6 @@ const t = {
     errorFileSize:
       "El archivo es demasiado grande. Por favor mantén las grabaciones bajo 50 MB.",
     required: "Requerido",
-    progress: (pct: number) => `Subiendo — ${pct}%`,
   },
 };
 
@@ -93,7 +90,6 @@ export default function CapstoneUploadForm({ lang }: Props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [file, setFile] = useState<File | null>(null);
-  const [progress, setProgress] = useState(0);
   const [status, setStatus] = useState<"idle" | "uploading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -126,21 +122,26 @@ export default function CapstoneUploadForm({ lang }: Props) {
     if (!file || !name.trim() || !email.trim()) return;
 
     setStatus("uploading");
-    setProgress(0);
     setErrorMsg("");
 
     try {
-      // Sanitise filename — strip spaces/special chars for the blob key
-      const safeFilename = `capstone/${Date.now()}-${file.name.replace(/[^a-zA-Z0-9._-]/g, "_")}`;
-
-      await upload(safeFilename, file, {
-        access: "public",
-        handleUploadUrl: "/api/capstone/upload-token",
-        clientPayload: JSON.stringify({ name: name.trim(), email: email.trim(), lang }),
-        onUploadProgress: ({ percentage }) => {
-          setProgress(Math.round(percentage));
+      // POST raw audio bytes — server reads stream directly, no multipart overhead
+      const response = await fetch("/api/capstone/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": file.type || "audio/mpeg",
+          "X-Filename": file.name.replace(/[^a-zA-Z0-9._-]/g, "_"),
+          "X-Learner-Name": name.trim(),
+          "X-Learner-Email": email.trim(),
+          "X-Learner-Lang": lang,
         },
+        body: file,
       });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error((data as { error?: string }).error ?? "Upload failed");
+      }
 
       setStatus("success");
     } catch (err) {
@@ -252,22 +253,11 @@ export default function CapstoneUploadForm({ lang }: Props) {
         )}
       </div>
 
-      {/* Upload progress */}
+      {/* Uploading indicator */}
       {status === "uploading" && (
-        <div className="space-y-2">
-          <div className="flex items-center justify-between text-sm text-slate-600">
-            <span className="flex items-center gap-1.5">
-              <Loader2 className="w-4 h-4 animate-spin" />
-              {copy.progress(progress)}
-            </span>
-            <span>{progress}%</span>
-          </div>
-          <div className="w-full bg-slate-100 rounded-full h-2">
-            <div
-              className="bg-amber-400 h-2 rounded-full transition-all duration-200"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
+        <div className="flex items-center gap-2 text-sm text-slate-500 py-1">
+          <Loader2 className="w-4 h-4 animate-spin text-amber-500" />
+          <span>{copy.uploading}</span>
         </div>
       )}
 

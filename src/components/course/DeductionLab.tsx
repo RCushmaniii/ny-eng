@@ -148,7 +148,7 @@ export default function DeductionLab({ scenarios, lang }: Props) {
               {showCorrectness && (isSelected || isCorrect) && (
                 <div className="mt-3 pt-3 border-t border-slate-200 flex items-start gap-2">
                   <Sparkles size={12} className="text-amber-500 shrink-0 mt-0.5" />
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {lang === "es" ? d.whyEs : d.why}
                   </p>
                 </div>

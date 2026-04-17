@@ -57,7 +57,7 @@ export default function RapidRepeat({
               <p className="text-base font-medium leading-relaxed">
                 "{stem.text}"
               </p>
-              <span className="block text-xs text-slate-400 mt-0.5">{stem.textEs}</span>
+              <span className="block text-sm text-slate-400 mt-0.5">{stem.textEs}</span>
             </div>
             <div className="shrink-0 mt-0.5">
               <AudioButton text={stem.text} size="sm" />

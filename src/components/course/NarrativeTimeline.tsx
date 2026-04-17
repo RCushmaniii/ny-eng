@@ -184,7 +184,7 @@ export default function NarrativeTimeline({ stories, lang }: Props) {
                       >
                         {tenseLabels[event.tense][lang]}
                       </span>
-                      <p className="text-xs text-slate-500 leading-relaxed">
+                      <p className="text-sm text-slate-500 leading-relaxed">
                         {lang === "es" ? event.whyTenseEs : event.whyTense}
                       </p>
                     </div>

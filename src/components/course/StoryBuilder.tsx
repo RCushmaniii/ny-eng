@@ -103,7 +103,7 @@ export default function StoryBuilder({ items, lang }: Props) {
             <p className="text-sm text-red-900 italic leading-relaxed">
               "{current.flat}"
             </p>
-            <p className="text-xs text-red-700/70 mt-1">{current.flatEs}</p>
+            <p className="text-sm text-red-700/70 mt-1">{current.flatEs}</p>
           </div>
         </div>
 
@@ -148,14 +148,14 @@ export default function StoryBuilder({ items, lang }: Props) {
                       <p className="text-sm text-slate-900 leading-relaxed">
                         {step.sentence}
                       </p>
-                      <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                      <p className="text-sm text-slate-500 mt-1 leading-relaxed">
                         {step.sentenceEs}
                       </p>
                     </li>
                   ))}
                 </ul>
                 <div className="px-4 py-3 bg-amber-100 border-t-2 border-amber-300 flex items-center justify-between gap-3">
-                  <p className="text-xs font-medium text-amber-800">
+                  <p className="text-sm font-medium text-amber-800">
                     {lang === "es"
                       ? "Escucha toda la narrativa integrada:"
                       : "Listen to the full integrated narrative:"}

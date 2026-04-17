@@ -115,7 +115,7 @@ export default function WeakStrongElite({ items, lang }: Props) {
               </div>
               <p className="text-sm text-slate-500 mt-2">{current.strongEs}</p>
               {note && (
-                <p className="text-xs text-slate-600 mt-3 pt-3 border-t border-amber-200 leading-relaxed">
+                <p className="text-sm text-slate-600 mt-3 pt-3 border-t border-amber-200 leading-relaxed">
                   {note}
                 </p>
               )}

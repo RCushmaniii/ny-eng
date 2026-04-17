@@ -147,7 +147,7 @@ export default function WishTransformer({ transformations, lang }: Props) {
                   </div>
                 </div>
                 <div className="mt-3 pt-3 border-t border-rose-200">
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {lang === "es" ? current.whyTransformEs : current.whyTransform}
                   </p>
                 </div>

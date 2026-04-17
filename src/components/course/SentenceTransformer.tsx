@@ -129,8 +129,8 @@ export default function SentenceTransformer({ transforms, lang }: Props) {
                   <span className="inline-flex items-center gap-1 text-xs font-mono px-2 py-0.5 rounded-full border bg-violet-100 text-violet-700 border-violet-200">
                     {lang === "es" ? current.techniqueEs : current.technique}
                   </span>
-                  <p className="text-xs text-slate-600 leading-relaxed flex items-start gap-1">
-                    <Sparkles size={11} className="text-amber-500 shrink-0 mt-0.5" />
+                  <p className="text-sm text-slate-600 leading-relaxed flex items-start gap-1">
+                    <Sparkles size={12} className="text-amber-500 shrink-0 mt-0.5" />
                     <span>{lang === "es" ? current.whyEs : current.why}</span>
                   </p>
                 </div>

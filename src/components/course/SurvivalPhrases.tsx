@@ -192,7 +192,7 @@ export default function SurvivalPhrases({ categories, lang }: Props) {
                     </div>
                     <div className="flex items-start gap-2 px-1">
                       <AlertTriangle className="w-3.5 h-3.5 text-amber-500 shrink-0 mt-0.5" />
-                      <p className="text-xs text-slate-500 leading-relaxed">
+                      <p className="text-sm text-slate-500 leading-relaxed">
                         {lang === "es" ? phrase.whyExactEs : phrase.whyExact}
                       </p>
                     </div>

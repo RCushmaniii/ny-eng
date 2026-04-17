@@ -150,7 +150,7 @@ export default function WordPairLab({ pairs, lang }: Props) {
                 <p className="text-sm text-slate-500 mt-2">{current.strongEs}</p>
                 <div className="mt-3 pt-3 border-t border-amber-200 flex items-start gap-2">
                   <Sparkles size={12} className="text-amber-500 shrink-0 mt-0.5" />
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {lang === "es" ? current.whyEs : current.why}
                   </p>
                 </div>

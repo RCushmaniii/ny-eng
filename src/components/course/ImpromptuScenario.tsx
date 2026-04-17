@@ -121,7 +121,7 @@ export default function ImpromptuScenario({ items, lang }: Props) {
             <p className="text-sm text-red-900 italic leading-relaxed">
               "{current.weak}"
             </p>
-            <p className="text-xs text-red-700/70 mt-1">{current.weakEs}</p>
+            <p className="text-sm text-red-700/70 mt-1">{current.weakEs}</p>
           </div>
         </div>
 

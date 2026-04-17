@@ -126,7 +126,7 @@ export default function PhrasalVerbExplorer({ groups, lang }: Props) {
                                 <p className="text-sm text-slate-800">
                                   {pv.example}
                                 </p>
-                                <p className="text-xs text-slate-500 mt-1">
+                                <p className="text-sm text-slate-500 mt-1">
                                   {pv.exampleEs}
                                 </p>
                               </div>
@@ -134,7 +134,7 @@ export default function PhrasalVerbExplorer({ groups, lang }: Props) {
                           </div>
 
                           {pv.contextNote && (
-                            <p className="text-xs text-slate-400 italic">
+                            <p className="text-sm text-slate-400 italic">
                               {lang === "es"
                                 ? pv.contextNoteEs
                                 : pv.contextNote}

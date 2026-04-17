@@ -191,7 +191,7 @@ export default function ErrorSpotter({ items, lang, instruction, instructionEs }
 
             <div className="flex items-start gap-2">
               <Sparkles size={12} className="text-amber-500 shrink-0 mt-1" />
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed">
                 {lang === "es" ? current.explanationEs : current.explanation}
               </p>
             </div>

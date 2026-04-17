@@ -116,7 +116,7 @@ export default function VerbUpgradeLab({ items, lang }: Props) {
                     <span className="font-semibold text-slate-900">{option.verb}</span>
                     <AudioButton text={option.verb} size="sm" />
                   </div>
-                  <p className="text-xs text-slate-600 mt-0.5">
+                  <p className="text-sm text-slate-600 mt-0.5">
                     {lang === "es" ? option.usageEs : option.usage}
                   </p>
                 </div>
@@ -161,8 +161,8 @@ export default function VerbUpgradeLab({ items, lang }: Props) {
                 </div>
                 <p className="text-sm text-slate-500 mt-2">{current.modelReplyEs}</p>
                 <div className="mt-3 pt-3 border-t border-amber-200">
-                  <p className="text-xs text-slate-600 leading-relaxed flex items-start gap-1">
-                    <Sparkles size={11} className="text-amber-500 shrink-0 mt-0.5" />
+                  <p className="text-sm text-slate-600 leading-relaxed flex items-start gap-1">
+                    <Sparkles size={12} className="text-amber-500 shrink-0 mt-0.5" />
                     <span>{why}</span>
                   </p>
                 </div>
@@ -203,7 +203,7 @@ export default function VerbUpgradeLab({ items, lang }: Props) {
                         <p className="text-[11px] font-semibold uppercase tracking-wider text-violet-700 mb-1">
                           {lang === "es" ? "Perspectiva C2" : "C2 Insight"}
                         </p>
-                        <p className="text-xs text-slate-700 leading-relaxed">
+                        <p className="text-sm text-slate-700 leading-relaxed">
                           {lang === "es"
                             ? current.elite.c2InsightEs
                             : current.elite.c2Insight}

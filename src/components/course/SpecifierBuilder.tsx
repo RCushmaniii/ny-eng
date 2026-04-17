@@ -165,7 +165,7 @@ export default function SpecifierBuilder({ examples, lang }: Props) {
                   >
                     {current.relativePronoun}
                   </span>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {lang === "es" ? current.whyPronounEs : current.whyPronoun}
                   </p>
                 </div>

@@ -137,7 +137,7 @@ export default function CognateDiscovery({ waves, lang }: Props) {
                   {word.spanish}
                 </span>
                 {word.pronunciationNote && (
-                  <p className="text-xs text-slate-500 mt-1 leading-snug">
+                  <p className="text-sm text-slate-500 mt-1 leading-snug">
                     {lang === "es"
                       ? word.pronunciationNoteEs
                       : word.pronunciationNote}

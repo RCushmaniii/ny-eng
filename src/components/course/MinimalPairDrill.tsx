@@ -73,14 +73,14 @@ export default function MinimalPairDrill({ pairs, lang }: Props) {
           <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-4 text-center space-y-3">
             <p className="text-2xl font-bold text-blue-900">{current.wordA}</p>
             <AudioButton text={current.wordA} size="md" />
-            <p className="text-xs text-blue-600 leading-relaxed italic">
+            <p className="text-sm text-blue-600 leading-relaxed italic">
               "{current.exampleA}"
             </p>
           </div>
           <div className="bg-amber-50 border-2 border-amber-200 rounded-xl p-4 text-center space-y-3">
             <p className="text-2xl font-bold text-amber-900">{current.wordB}</p>
             <AudioButton text={current.wordB} size="md" />
-            <p className="text-xs text-amber-600 leading-relaxed italic">
+            <p className="text-sm text-amber-600 leading-relaxed italic">
               "{current.exampleB}"
             </p>
           </div>

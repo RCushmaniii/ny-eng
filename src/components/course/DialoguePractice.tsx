@@ -140,12 +140,12 @@ export default function DialoguePractice({ dialogues, lang }: Props) {
                         )}
                       </p>
                       {revealed && (
-                        <p className="text-xs text-slate-500 mt-1 italic">
+                        <p className="text-sm text-slate-500 mt-1 italic">
                           {line.spanish}
                         </p>
                       )}
                       {!revealed && (
-                        <p className="text-xs text-slate-400 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <p className="text-sm text-slate-400 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
                           {lang === "es"
                             ? "Toca para traducir"
                             : "Tap to translate"}
@@ -174,9 +174,9 @@ export default function DialoguePractice({ dialogues, lang }: Props) {
                   <p className="text-sm font-medium text-slate-800">
                     {kp.english}
                   </p>
-                  <p className="text-xs text-slate-500">{kp.spanish}</p>
+                  <p className="text-sm text-slate-500">{kp.spanish}</p>
                   {kp.note && (
-                    <p className="text-xs text-amber-600 mt-0.5 italic">
+                    <p className="text-sm text-amber-600 mt-0.5 italic">
                       {lang === "es" ? kp.noteEs : kp.note}
                     </p>
                   )}

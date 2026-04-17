@@ -99,7 +99,7 @@ export default function StructuredResponseBuilder({ items, lang }: Props) {
             <p className="text-sm text-red-900 italic leading-relaxed">
               "{current.weak}"
             </p>
-            <p className="text-xs text-red-700/70 mt-1">{current.weakEs}</p>
+            <p className="text-sm text-red-700/70 mt-1">{current.weakEs}</p>
           </div>
         </div>
 
@@ -144,7 +144,7 @@ export default function StructuredResponseBuilder({ items, lang }: Props) {
                         <p className="text-sm text-slate-900 leading-relaxed">
                           {part.sentence}
                         </p>
-                        <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                        <p className="text-sm text-slate-500 mt-1 leading-relaxed">
                           {part.sentenceEs}
                         </p>
                       </li>
@@ -152,7 +152,7 @@ export default function StructuredResponseBuilder({ items, lang }: Props) {
                   })}
                 </ul>
                 <div className="px-4 py-3 bg-amber-100 border-t-2 border-amber-300 flex items-center justify-between gap-3">
-                  <p className="text-xs font-medium text-amber-800">
+                  <p className="text-sm font-medium text-amber-800">
                     {lang === "es"
                       ? "Escucha toda la respuesta integrada:"
                       : "Listen to the full integrated reply:"}
