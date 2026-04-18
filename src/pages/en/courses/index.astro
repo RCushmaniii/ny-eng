@@ -263,4 +263,50 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
       </div>
     </div>
   </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Free English Courses for Spanish Speakers",
+  "description": "Free, interactive English courses for Spanish speakers — beginner to upper-intermediate. No sign-up, no paywall.",
+  "url": "https://www.nyenglishteacher.com/en/courses/",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Course",
+        "name": "Free English Course (Beginner)",
+        "url": "https://www.nyenglishteacher.com/en/course/beginners/"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Course",
+        "name": "Free Intermediate English Course (B1-B2)",
+        "url": "https://www.nyenglishteacher.com/en/course/intermediate/"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Course",
+        "name": "Free Advanced English Course (B2-C1)",
+        "url": "https://www.nyenglishteacher.com/en/course/advanced/"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Course",
+        "name": "Executive English Course (C1-C2)",
+        "url": "https://www.nyenglishteacher.com/en/course/executive/"
+      }
+    }
+  ]
+})} />
 </Base>

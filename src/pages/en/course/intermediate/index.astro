@@ -263,4 +263,25 @@ const iconMap: Record<string, any> = {
       </div>
     </div>
   </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Free Intermediate English Course (B1-B2)",
+  "description": "A free 10-unit intermediate English course for B1-B2 Spanish speakers. Master phrasal verbs, complex tenses, and natural speech through real-world dialogues.",
+  "provider": {
+    "@type": "Person",
+    "name": "Robert Cushman",
+    "url": "https://www.nyenglishteacher.com/en/about/"
+  },
+  "educationalLevel": "Intermediate (B1-B2)",
+  "inLanguage": "en",
+  "url": "https://www.nyenglishteacher.com/en/course/intermediate/",
+  "isAccessibleForFree": true,
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "inLanguage": "en"
+  }
+})} />
 </Base>
