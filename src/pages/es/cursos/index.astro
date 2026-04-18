@@ -260,4 +260,50 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
       </div>
     </div>
   </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Cursos Gratis de Ingles para Hispanohablantes",
+  "description": "Cursos de ingles gratuitos para hispanohablantes. De principiante a intermedio alto. Sin registro ni barreras.",
+  "url": "https://www.nyenglishteacher.com/es/cursos/",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Course",
+        "name": "Curso Gratis de Ingles (Principiante)",
+        "url": "https://www.nyenglishteacher.com/es/curso/principiantes/"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Course",
+        "name": "Curso Gratis de Ingles Intermedio (B1-B2)",
+        "url": "https://www.nyenglishteacher.com/es/curso/intermedio/"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Course",
+        "name": "Curso Avanzado de Ingles (B2-C1)",
+        "url": "https://www.nyenglishteacher.com/es/curso/avanzado/"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Course",
+        "name": "Curso Ejecutivo de Ingles (C1-C2)",
+        "url": "https://www.nyenglishteacher.com/es/curso/ejecutivo/"
+      }
+    }
+  ]
+})} />
 </Base>
