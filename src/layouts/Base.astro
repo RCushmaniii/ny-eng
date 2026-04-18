@@ -138,9 +138,9 @@ if (ogImage?.src) {
   // If it's an Astro image object with .src property, extract the path
   const srcValue =
     typeof ogImage.src === "string" ? ogImage.src : (ogImage.src as any)?.src;
-  ogImgPath = srcValue ?? "/images/logos/new-york-english-og.jpg";
+  ogImgPath = srcValue ?? "/images/logos/new-york-english-sq-og.jpg";
 } else {
-  ogImgPath = "/images/logos/new-york-english-og.jpg";
+  ogImgPath = "/images/logos/new-york-english-sq-og.jpg";
 }
 
 // Convert relative paths to absolute URLs, but avoid processing Astro's @fs paths
@@ -149,7 +149,7 @@ const ogImg = ogImgPath.startsWith("http")
   : ogImgPath.startsWith("/@fs") ||
       ogImgPath.includes("C:/") ||
       ogImgPath.includes("C:\\")
-    ? SITE + "/images/logos/new-york-english-og.jpg" // Fallback for dev paths
+    ? SITE + "/images/logos/new-york-english-sq-og.jpg" // Fallback for dev paths
     : SITE + (ogImgPath.startsWith("/") ? ogImgPath : "/" + ogImgPath);
 
 const ogAlt =
@@ -158,9 +158,9 @@ const ogAlt =
     ? "New York English Teacher (ES)"
     : "New York English Teacher (EN)");
 
-// OG image dimensions
-const ogImgWidth = ogImage?.width ?? 1200;
-const ogImgHeight = ogImage?.height ?? 675;
+// OG image dimensions — square (800×800) renders correctly in WhatsApp thumbnails
+const ogImgWidth = ogImage?.width ?? 800;
+const ogImgHeight = ogImage?.height ?? 800;
 
 // Convert dates to ISO 8601 format with timezone (Mexico City: UTC-6)
 // Using timezone-aware format prevents date confusion across regions
