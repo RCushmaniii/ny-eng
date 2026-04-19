@@ -100,8 +100,8 @@ Robert Cushman III operates NY English Teacher as a solo business from Guadalaja
 6. **Interview & Presentation Coaching** — For professionals preparing for high-stakes English-language moments
 
 **Pricing model:**
-- 500 MXN (~$25 USD) per session
-- 6,000 MXN (~$300 USD) for a 12-session executive roadmap
+- 500 MXN (~$30 USD) per session
+- 6,000 MXN (~$360 USD) for a 12-session executive roadmap
 - Custom corporate training quotes
 
 ### The Guadalajara Market Opportunity
@@ -171,9 +171,9 @@ Robert already has all of this live and compounding. The longer the platform run
 
 | Revenue Stream | Calculation | Monthly |
 |---|---|---|
-| 12-session packages | 6 clients x $300 USD | $1,800 |
-| Single sessions | 4 clients x 4 sessions x $25 | $400 |
-| **Total revenue** | | **$2,200** |
+| 12-session packages | 6 clients x $360 USD | $2,160 |
+| Single sessions | 4 clients x 4 sessions x $30 | $480 |
+| **Total revenue** | | **$2,640** |
 | Infrastructure cost | Free tiers | $0 |
 | **Gross margin** | | **100%** |
 
@@ -181,10 +181,10 @@ Robert already has all of this live and compounding. The longer the platform run
 
 | Revenue Stream | Calculation | Monthly |
 |---|---|---|
-| 12-session packages | 12 clients x $300 USD | $3,600 |
-| Single sessions | 8 clients x 4 sessions x $25 | $800 |
+| 12-session packages | 12 clients x $360 USD | $4,320 |
+| Single sessions | 8 clients x 4 sessions x $30 | $960 |
 | Corporate workshops | 1 engagement x $500 | $500 |
-| **Total revenue** | | **$4,900** |
+| **Total revenue** | | **$5,780** |
 | Infrastructure cost | Free tiers | $0 |
 | **Gross margin** | | **100%** |
 

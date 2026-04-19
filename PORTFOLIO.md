@@ -173,7 +173,7 @@ In the Guadalajara market specifically, the local English tutoring market is sat
 
 - Platform serves as the sole sales and marketing operation for a solo coaching business generating revenue from day one
 - Automated qualification eliminates 10-15 hours/week of administrative overhead that would otherwise require a virtual assistant or SDR hire
-- Premium pricing (500 MXN / $25 USD per session) sustained at 3-5x local market rate, validated by executive-level client roster
+- Premium pricing (500 MXN / $30 USD per session) sustained at 3-5x local market rate, validated by executive-level client roster
 - Bilingual system captures both English-language searches (higher purchase intent) and Spanish-language searches (higher volume) across the Guadalajara market
 
 ## The Fifth Digital Employee: A Free University

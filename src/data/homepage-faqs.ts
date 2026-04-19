@@ -35,7 +35,7 @@ export const homepageFAQs: HomepageFAQData = {
       {
         question: "What is the investment for coaching?",
         answer:
-          "The current rate is 500 MXN ($25 USD) per session or 6,000 MXN ($300 USD) for a 12-session executive roadmap. Every session is custom-built around your specific industry, upcoming presentations, and professional goals. This isn't a curriculum you follow — it's a strategy built around your calendar.",
+          "The current rate is 500 MXN ($30 USD) per session or 6,000 MXN ($360 USD) for a 12-session executive roadmap. Every session is custom-built around your specific industry, upcoming presentations, and professional goals. This isn't a curriculum you follow — it's a strategy built around your calendar.",
       },
       {
         question: "How long does it take to see results?",
@@ -68,7 +68,7 @@ export const homepageFAQs: HomepageFAQData = {
       {
         question: "¿Cuál es la inversión para el coaching?",
         answer:
-          "La tarifa actual es de 500 MXN ($25 USD) por sesión o 6,000 MXN ($300 USD) por un plan ejecutivo de 12 sesiones. Cada sesión está diseñada a medida en torno a tu industria específica, tus próximas presentaciones y tus objetivos profesionales. Esto no es un plan de estudios que sigues — es una estrategia construida en torno a tu calendario.",
+          "La tarifa actual es de 500 MXN ($30 USD) por sesión o 6,000 MXN ($360 USD) por un plan ejecutivo de 12 sesiones. Cada sesión está diseñada a medida en torno a tu industria específica, tus próximas presentaciones y tus objetivos profesionales. Esto no es un plan de estudios que sigues — es una estrategia construida en torno a tu calendario.",
       },
       {
         question: "¿Cuánto tiempo toma ver resultados?",
