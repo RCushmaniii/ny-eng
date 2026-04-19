@@ -47,6 +47,7 @@ const blogTranslations = {
   "why-you-struggle-speaking-english-in-meetings": "/es/blog/por-que-te-cuesta-hablar-ingles-en-reuniones/",
   "coo-30-second-rule": "/es/blog/regla-30-segundos-coo/",
   "nearshoring-english-gap-cost-of-miscommunication": "/es/blog/brecha-de-ingles-en-nearshoring-costo-de-la-mala-comunicacion/",
+  "women-leaders-command-rooms-english": "/es/blog/lideres-mujeres-dominan-ingles/",
 };
 
 // Reverse map (ES slug -> EN path)
