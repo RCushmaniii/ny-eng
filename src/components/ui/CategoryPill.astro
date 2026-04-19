@@ -21,8 +21,13 @@ function normalize(str: string = ""): string {
 
 const normalizedCategoryName = normalize(category);
 
+// 0. Find by slug first — frontmatter always stores slugs, not display names
+let categoryData = categories.find(cat => cat.slug === cleanCategoryName || cat.esSlug === cleanCategoryName);
+
 // 1. Find by normalized English name
-let categoryData = categories.find(cat => normalize(cat.name) === normalizedCategoryName);
+if (!categoryData) {
+  categoryData = categories.find(cat => normalize(cat.name) === normalizedCategoryName);
+}
 
 // 2. If not found and using Spanish, try normalized Spanish name
 if (!categoryData && lang === 'es') {

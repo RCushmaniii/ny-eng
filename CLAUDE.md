@@ -181,7 +181,6 @@ Claude MUST execute these steps automatically. Never ask Robert to run scripts o
 ### After Publishing a New Blog Post (Additional Steps)
 
 6. **Generate social media content** for the new post:
-   - **LinkedIn post**: Professional tone, 1-3 paragraphs, include key insight from the article, end with CTA to read the full post
    - **Twitter/X thread**: 3-5 tweets, hook + key points + CTA, use relevant hashtags
    - **Facebook post**: Conversational tone, 1-2 paragraphs with link
    - Output these in a markdown file at `content-marketing/<slug>-social.md` for Robert to review and post (until social media APIs are integrated)
