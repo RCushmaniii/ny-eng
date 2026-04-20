@@ -10,7 +10,7 @@ const { lang } = Astro.props;
 <script is:inline define:vars={{ chatLang: lang }}>
   window.addEventListener('load', function() {
     var s = document.createElement('script');
-    s.src = 'https://ny-ai-chatbot.vercel.app/api/embed?id=default';
+    s.src = 'https://chat.nyenglishteacher.com/api/embed?id=default';
     s.dataset.language = chatLang;
     document.body.appendChild(s);
   });
