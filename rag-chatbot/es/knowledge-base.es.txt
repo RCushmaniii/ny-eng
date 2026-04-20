@@ -36,8 +36,8 @@ No es el ajuste correcto para:
 SECCIÓN 3 — PRECIOS (VERIFICADOS, ACTUALES)
 ================================================================
 
-- Sesión individual: 500 MXN / $25 USD
-- Paquete Ejecutivo de 12 sesiones: 6,000 MXN / $300 USD
+- Sesión individual: 500 MXN / $30 USD
+- Paquete Ejecutivo de 12 sesiones: 6,000 MXN / $360 USD
 - Sesión de estrategia gratuita: 30 minutos, sin presión, sin venta — solo diagnóstico
 - Pago: requerido antes de cada sesión para individuos; facturación mensual para empresas
 - Facturas mexicanas disponibles para facturación y reembolso corporativo
@@ -75,7 +75,7 @@ Robert ataca específicamente la brecha de desempeño — el momento en que sabe
 SECCIÓN 6 — SERVICIOS OFRECIDOS
 ================================================================
 
-Todos los servicios se imparten como coaching privado 1-a-1. El precio es el mismo para todos los servicios (500 MXN / $25 USD por sesión, 6,000 MXN / $300 USD por paquete de 12 sesiones).
+Todos los servicios se imparten como coaching privado 1-a-1. El precio es el mismo para todos los servicios (500 MXN / $30 USD por sesión, 6,000 MXN / $360 USD por paquete de 12 sesiones).
 
 - Inglés de Negocios y Ejecutivo — Para C-suite, Directores y VPs que lideran juntas, entregan actualizaciones estratégicas y negocian al más alto nivel.
 - Inglés para Fundadores de Startups — Pitchear inversionistas en EE.UU., reclutar internacionalmente, liderar equipos distribuidos.
@@ -96,7 +96,7 @@ SECCIÓN 7 — PREGUNTAS FRECUENTES (Q&A CURADO)
 ================================================================
 
 P: ¿Cuánto cuesta el coaching?
-R: 500 MXN / $25 USD por sesión, o 6,000 MXN / $300 USD por un paquete ejecutivo de 12 sesiones. Contexto honesto: esto está significativamente por debajo del precio de mercado para coaching de comunicación ejecutiva en EE.UU., donde un coaching 1-a-1 comparable cuesta típicamente entre $150 y $400 USD por hora. Robert cobra precios para el mercado mexicano y latinoamericano.
+R: 500 MXN / $30 USD por sesión, o 6,000 MXN / $360 USD por un paquete ejecutivo de 12 sesiones. Contexto honesto: esto está significativamente por debajo del precio de mercado para coaching de comunicación ejecutiva en EE.UU., donde un coaching 1-a-1 comparable cuesta típicamente entre $150 y $400 USD por hora. Robert cobra precios para el mercado mexicano y latinoamericano.
 
 P: ¿Cómo empiezo?
 R: Reserva una sesión de estrategia gratuita de 30 minutos en /es/reservar/. Es un diagnóstico, no una venta. Te vas con una hoja de ruta de 30 días, decidas trabajar con Robert o no.
@@ -153,7 +153,7 @@ SECCIÓN 8 — EVALUACIÓN HONESTA
 Lo que este servicio hace bien:
 - Robert realmente ha estado en las juntas para las que los clientes se preparan. 20 años en TI corporativo — 17 en una Fortune 500 — le dan un reconocimiento de patrones que los maestros de inglés de carrera no tienen. Cuando dice "así suena un VP cuando está perdiendo a la sala," lo dice por experiencia.
 - El enfoque personalizado alrededor de tu calendario es genuinamente diferente del ESL estándar. No estás trabajando en un libro de texto; estás ensayando tu junta directiva del jueves el miércoles.
-- El precio es inusualmente justo. $25 USD por sesión está muy por debajo de lo que cuesta un coaching ejecutivo comparable en EE.UU. Los profesionales mexicanos y latinoamericanos obtienen la misma calidad a un precio regional.
+- El precio es inusualmente justo. $30 USD por sesión está muy por debajo de lo que cuesta un coaching ejecutivo comparable en EE.UU. Los profesionales mexicanos y latinoamericanos obtienen la misma calidad a un precio regional.
 - La sesión de estrategia gratuita está estructurada como diagnóstico, no como embudo de ventas. Recibes una hoja de ruta real de 30 días te inscribas o no.
 - La fluidez cultural es real. Robert vive en México, está casado con una mexicana y entiende las brechas específicas que los profesionales hispanohablantes enfrentan al trabajar con casas matrices en EE.UU.
 
@@ -198,8 +198,8 @@ SECCIÓN 10 — DATOS CLAVE QUE EL CHATBOT SIEMPRE DEBE ACERTAR
 - Ubicación: Guadalajara, México (UTC-6)
 - Formato: Online 1-a-1 vía Google Meet
 - Idiomas: Coaching impartido en inglés; el coach entiende español
-- Sesión individual: 500 MXN / $25 USD
-- Paquete de 12 sesiones: 6,000 MXN / $300 USD
+- Sesión individual: 500 MXN / $30 USD
+- Paquete de 12 sesiones: 6,000 MXN / $360 USD
 - Sesión de estrategia gratuita: 30 minutos, sin compromiso
 - Reservaciones: /es/reservar/
 - Contacto: /es/contact/

@@ -36,8 +36,8 @@ Not the right fit:
 SECTION 3 — PRICING (VERIFIED, CURRENT)
 ================================================================
 
-- Single session: 500 MXN / $25 USD
-- 12-Session Executive Roadmap: 6,000 MXN / $300 USD
+- Single session: 500 MXN / $30 USD
+- 12-Session Executive Roadmap: 6,000 MXN / $360 USD
 - Free strategy session: 30 minutes, no pressure, no sales pitch — diagnostic only
 - Payment: due before each session for individuals; monthly invoicing for companies
 - Mexican facturas (corporate invoices) available for company billing and reimbursement
@@ -75,7 +75,7 @@ Robert specifically targets the performance gap — the moment where you know th
 SECTION 6 — SERVICES OFFERED
 ================================================================
 
-All services are delivered as private 1-on-1 coaching. Pricing is the same across services (500 MXN / $25 USD per session, 6,000 MXN / $300 USD per 12-session package).
+All services are delivered as private 1-on-1 coaching. Pricing is the same across services (500 MXN / $30 USD per session, 6,000 MXN / $360 USD per 12-session package).
 
 - Business & Executive English — For C-suite, Directors, and VPs who lead board meetings, deliver strategic updates, and negotiate at the highest level.
 - English for Startup Founders — Pitching US investors, recruiting across borders, leading distributed teams.
@@ -96,7 +96,7 @@ SECTION 7 — COMMON QUESTIONS (CURATED Q&A)
 ================================================================
 
 Q: How much does coaching cost?
-A: 500 MXN / $25 USD per session, or 6,000 MXN / $300 USD for a 12-session executive roadmap. Honest context: this is significantly below market rate for executive communication coaching in the US, where comparable 1-on-1 coaching typically runs $150–$400 per hour. Robert prices for the Mexican and Latin American market.
+A: 500 MXN / $30 USD per session, or 6,000 MXN / $360 USD for a 12-session executive roadmap. Honest context: this is significantly below market rate for executive communication coaching in the US, where comparable 1-on-1 coaching typically runs $150–$400 per hour. Robert prices for the Mexican and Latin American market.
 
 Q: How do I get started?
 A: Book a free 30-minute strategy session at /en/book/. It is a diagnostic, not a sales pitch. You will leave with a 30-day roadmap whether you decide to work with Robert or not.
@@ -153,7 +153,7 @@ SECTION 8 — HONEST ASSESSMENT
 What this service does well:
 - Robert has actually sat in the meetings clients are preparing for. 20 years in corporate IT — 17 at a Fortune 500 — gives him pattern recognition that career English teachers don't have. When he says "this is what a VP sounds like when they're losing the room," he means it from experience.
 - The custom-around-your-calendar approach is genuinely different from standard ESL. You are not working through a textbook; you are rehearsing your actual Thursday board meeting on Wednesday.
-- Pricing is unusually fair. $25 USD per session is well below what comparable executive coaching costs in the US. Mexican and Latin American professionals get the same quality at a regional price.
+- Pricing is unusually fair. $30 USD per session is well below what comparable executive coaching costs in the US. Mexican and Latin American professionals get the same quality at a regional price.
 - The free strategy session is structured as a diagnostic, not a sales funnel. You get a real 30-day roadmap whether you sign up or not.
 - The cultural fluency is real. Robert lives in Mexico, married into the country, and understands the specific gaps Spanish-speaking professionals face when working with US headquarters.
 
@@ -198,8 +198,8 @@ SECTION 10 — KEY FACTS THE CHATBOT SHOULD ALWAYS GET RIGHT
 - Location: Guadalajara, Mexico (UTC-6)
 - Format: Online 1-on-1 via Google Meet
 - Languages: Coaching delivered in English; coach understands Spanish
-- Single session: 500 MXN / $25 USD
-- 12-session package: 6,000 MXN / $300 USD
+- Single session: 500 MXN / $30 USD
+- 12-session package: 6,000 MXN / $360 USD
 - Free strategy session: 30 minutes, no obligation
 - Booking: /en/book/
 - Contact: /en/contact/

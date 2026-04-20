@@ -26,7 +26,7 @@ export const faqLists: Record<string, FaqList> = {
       {
         question: "¿Cuánto cuesta el coaching?",
         answer:
-          "Sesión Individual: 500 MXN / $25 USD. Paquete de 12 Sesiones: 6,000 MXN / $300 USD. Nota: No ofrezco descuentos por volumen. Mi enfoque es entregar el máximo valor y personalización en cada hora que trabajamos juntos.",
+          "Sesión Individual: 500 MXN / $30 USD. Paquete de 12 Sesiones: 6,000 MXN / $360 USD. Nota: No ofrezco descuentos por volumen. Mi enfoque es entregar el máximo valor y personalización en cada hora que trabajamos juntos.",
       },
       {
         question: "¿Proporcionas facturas para empresas?",
@@ -81,7 +81,7 @@ export const faqLists: Record<string, FaqList> = {
       {
         question: "¿Cuánto cuesta el coaching?",
         answer:
-          "Sesión Individual: 500 MXN / $25 USD. Paquete de 12 Sesiones: 6,000 MXN / $300 USD. Nota: No ofrezco descuentos por volumen. Mi enfoque es entregar el máximo valor y personalización en cada hora que trabajamos juntos.",
+          "Sesión Individual: 500 MXN / $30 USD. Paquete de 12 Sesiones: 6,000 MXN / $360 USD. Nota: No ofrezco descuentos por volumen. Mi enfoque es entregar el máximo valor y personalización en cada hora que trabajamos juntos.",
       },
       {
         question: "¿Proporcionas facturas para empresas?",
@@ -116,7 +116,7 @@ export const faqLists: Record<string, FaqList> = {
       {
         question: "How much does coaching cost?",
         answer:
-          "Single Session: 500 MXN / $25 USD. 12-Session Executive Roadmap: 6,000 MXN / $300 USD. Every session is custom-built around your specific industry, upcoming presentations, and professional goals. This isn't a curriculum you follow — it's a strategy built around your calendar.",
+          "Single Session: 500 MXN / $30 USD. 12-Session Executive Roadmap: 6,000 MXN / $360 USD. Every session is custom-built around your specific industry, upcoming presentations, and professional goals. This isn't a curriculum you follow — it's a strategy built around your calendar.",
       },
       {
         question: "Do you provide invoices for companies?",
@@ -171,7 +171,7 @@ export const faqLists: Record<string, FaqList> = {
       {
         question: "How much does coaching cost?",
         answer:
-          "Single Session: 500 MXN / $25 USD. 12-Session Executive Roadmap: 6,000 MXN / $300 USD. Every session is custom-built around your specific industry, upcoming presentations, and professional goals. This isn't a curriculum you follow — it's a strategy built around your calendar.",
+          "Single Session: 500 MXN / $30 USD. 12-Session Executive Roadmap: 6,000 MXN / $360 USD. Every session is custom-built around your specific industry, upcoming presentations, and professional goals. This isn't a curriculum you follow — it's a strategy built around your calendar.",
       },
       {
         question: "Do you provide invoices for companies?",
@@ -232,7 +232,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "Do you accept payment in Mexican pesos?",
             answer:
-              "Yes. Pricing is available in both MXN and USD. Single sessions are 500 MXN ($25 USD), and 12-session packages are 6,000 MXN ($300 USD). I can also issue Mexican corporate invoices (facturas) for company billing.",
+              "Yes. Pricing is available in both MXN and USD. Single sessions are 500 MXN ($30 USD), and 12-session packages are 6,000 MXN ($360 USD). I can also issue Mexican corporate invoices (facturas) for company billing.",
           },
         ],
       },
@@ -255,7 +255,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
             question:
               "Do I need to commit to a long-term package, or can I try a single session?",
             answer:
-              "You can absolutely start with a single session at 500 MXN / $25 USD. Many clients try one session and then choose to continue because they see immediate value. There's no pressure to commit — results speak for themselves.",
+              "You can absolutely start with a single session at 500 MXN / $30 USD. Many clients try one session and then choose to continue because they see immediate value. There's no pressure to commit — results speak for themselves.",
           },
           {
             question: "What technology do I need for online sessions?",
@@ -272,7 +272,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "What is the cost of your coaching?",
             answer:
-              "Current Rate: 500 MXN ($25 USD) per session. 12-Session Executive Roadmap: 6,000 MXN / $300 USD. Every session is custom-built around your specific industry, upcoming presentations, and professional goals. I work directly on your real-world challenges: your upcoming board presentation, your salary negotiation, or your client emails. This isn't a curriculum you follow — it's a strategy built around your calendar.",
+              "Current Rate: 500 MXN ($30 USD) per session. 12-Session Executive Roadmap: 6,000 MXN / $360 USD. Every session is custom-built around your specific industry, upcoming presentations, and professional goals. I work directly on your real-world challenges: your upcoming board presentation, your salary negotiation, or your client emails. This isn't a curriculum you follow — it's a strategy built around your calendar.",
           },
           {
             question: "How is this different from a traditional ESL course?",
@@ -376,7 +376,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "¿Aceptan pago en pesos mexicanos?",
             answer:
-              "Sí. Los precios están disponibles tanto en MXN como en USD. Las sesiones individuales son de 500 MXN ($25 USD), y los paquetes de 12 sesiones son de 6,000 MXN ($300 USD). También podemos emitir facturas corporativas mexicanas para facturación empresarial.",
+              "Sí. Los precios están disponibles tanto en MXN como en USD. Las sesiones individuales son de 500 MXN ($30 USD), y los paquetes de 12 sesiones son de 6,000 MXN ($360 USD). También podemos emitir facturas corporativas mexicanas para facturación empresarial.",
           },
         ],
       },
@@ -399,7 +399,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
             question:
               "¿Necesito comprometerme con un paquete a largo plazo, o puedo probar una sola sesión?",
             answer:
-              "Puedes comenzar con una sola sesión a 500 MXN / $25 USD. Muchos clientes prueban una sesión y luego eligen continuar porque ven valor inmediato. No hay presión para comprometerte — los resultados hablan por sí mismos.",
+              "Puedes comenzar con una sola sesión a 500 MXN / $30 USD. Muchos clientes prueban una sesión y luego eligen continuar porque ven valor inmediato. No hay presión para comprometerte — los resultados hablan por sí mismos.",
           },
           {
             question: "¿Qué tecnología necesito para las sesiones en línea?",
@@ -416,7 +416,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "¿Cuál es el costo de tu coaching?",
             answer:
-              "Tarifa Actual: 500 MXN ($25 USD) por sesión. Paquete de 12 Sesiones: 6,000 MXN / $300 USD. Por qué esto es diferente de las clases de inglés estándar: La mayoría de las clases de inglés se enfocan en gramática genérica y escenarios de libros de texto. Yo opero como tu socio estratégico de comunicación. Trabajamos directamente en tus desafíos del mundo real: tu próxima presentación ante la junta, tu negociación salarial o tus correos con clientes. Cada sesión está completamente personalizada para tu industria y tus KPIs específicos. No solo estás aprendiendo inglés; estás adquiriendo la presencia ejecutiva necesaria para cerrar tratos y avanzar en tu carrera. Debido al alto nivel de personalización y preparación requerido para este nivel de coaching, no ofrezco descuentos por volumen.",
+              "Tarifa Actual: 500 MXN ($30 USD) por sesión. Paquete de 12 Sesiones: 6,000 MXN / $360 USD. Por qué esto es diferente de las clases de inglés estándar: La mayoría de las clases de inglés se enfocan en gramática genérica y escenarios de libros de texto. Yo opero como tu socio estratégico de comunicación. Trabajamos directamente en tus desafíos del mundo real: tu próxima presentación ante la junta, tu negociación salarial o tus correos con clientes. Cada sesión está completamente personalizada para tu industria y tus KPIs específicos. No solo estás aprendiendo inglés; estás adquiriendo la presencia ejecutiva necesaria para cerrar tratos y avanzar en tu carrera. Debido al alto nivel de personalización y preparación requerido para este nivel de coaching, no ofrezco descuentos por volumen.",
           },
           {
             question:
