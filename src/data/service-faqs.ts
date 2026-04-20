@@ -426,6 +426,14 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
       {
         question: "Can I mix 1:1 and group sessions for my team?",
         answer: "Yes. Most teams benefit from a combination of both. Individual sessions address each person's specific gaps in a direct, private setting. Group sessions create the kind of dynamic, real-time communication pressure that individual sessions alone can't replicate. Robert will recommend a balance based on your team's size and goals."
+      },
+      {
+        question: "How does the session structure work day-to-day — individual, group, or both?",
+        answer: "Both, combined. Each participant gets regular 1:1 sessions focused on their specific gaps — how they structure ideas in English, where fluency breaks down, how they perform under pressure. These are private and direct. Group sessions (capped at 4 participants) are layered in for applied practice — participants present, discuss, and respond to peers in real time. The 1:1 sessions build the foundation; the group sessions build the kind of dynamic fluency that private practice alone can't produce. The balance between individual and group is determined based on your team's size, schedule, and goals in the discovery call."
+      },
+      {
+        question: "What if we have more than 4 people on the team?",
+        answer: "Teams larger than 4 are handled by splitting into smaller groups for group sessions while continuing individual sessions in parallel. For example, a team of 6 might have two group-of-3 sessions running alongside individual sessions for each participant. This keeps the group sessions small enough to maintain quality and individual attention."
       }
     ],
     es: [
@@ -448,6 +456,14 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
       {
         question: "¿Puedo combinar sesiones individuales y grupales para mi equipo?",
         answer: "Sí. La mayoría de los equipos se benefician de una combinación de ambas. Las sesiones individuales abordan las brechas específicas de cada persona en un entorno directo y privado. Las sesiones grupales crean el tipo de presión dinámica de comunicación en tiempo real que las sesiones individuales por sí solas no pueden replicar. Robert recomendará un equilibrio basado en el tamaño y los objetivos de tu equipo."
+      },
+      {
+        question: "¿Cómo funciona la estructura de sesiones día a día — individual, grupal o ambas?",
+        answer: "Ambas, combinadas. Cada participante tiene sesiones 1:1 regulares enfocadas en sus brechas específicas — cómo estructura ideas en inglés, dónde se quiebra la fluidez, cómo se desempeña bajo presión. Estas son privadas y directas. Las sesiones grupales (máximo 4 participantes) se integran para práctica aplicada — los participantes presentan, discuten y responden a sus pares en tiempo real. Las sesiones individuales construyen la base; las sesiones grupales desarrollan el tipo de fluidez dinámica que la práctica privada sola no puede producir. El equilibrio entre individual y grupal se determina según el tamaño, horario y objetivos de tu equipo en la llamada de descubrimiento."
+      },
+      {
+        question: "¿Qué pasa si tenemos más de 4 personas en el equipo?",
+        answer: "Los equipos de más de 4 personas se manejan dividiendo en grupos más pequeños para las sesiones grupales, mientras se continúan las sesiones individuales en paralelo. Por ejemplo, un equipo de 6 podría tener dos grupos de 3 para las sesiones grupales junto con sesiones individuales para cada participante. Esto mantiene los grupos lo suficientemente pequeños para garantizar calidad y atención individualizada."
       }
     ]
   },
@@ -472,6 +488,14 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
       {
         question: "Can we run this program in Spanish?",
         answer: "The program is conducted in English — that's the point. Robert understands Spanish and can provide context or clarification in Spanish when needed, but the coaching sessions and group presentation are in English. The pressure of speaking English in front of peers is the core mechanism of the program."
+      },
+      {
+        question: "How does the session structure actually work — individual sessions, group sessions, or both?",
+        answer: "Mostly individual, with one high-pressure group session at the pivotal moment. Phases 1 and 3 are almost entirely 1:1 — each participant works privately with Robert on their preparation and their personal debrief. Phase 2 is the group session, where every participant delivers their prepared presentation to the full team. Most people have never done this before. The combination is deliberate: individual sessions build the preparation, the group session exposes the gap between private preparation and public performance under peer pressure. That gap is the real target."
+      },
+      {
+        question: "What exactly do the formal reviews include?",
+        answer: "Three written deliverables per participant: (1) An Initial Student Profile after the first session — current level, job role, English goals, and priority focus areas, which becomes the program baseline. (2) Monthly Assessments throughout the program covering ongoing gaps, level of effort outside sessions, enthusiasm, in-session performance, and updated priorities. Sessions are never AI-recorded — all assessment content comes from Robert's direct observation. (3) A Written Individual Roadmap at program close — progress against the baseline, remaining gaps, and a specific development plan for what comes next. The company also receives a Consolidated Progress Report for HR and executive review."
       }
     ],
     es: [
@@ -494,6 +518,14 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
       {
         question: "¿Podemos hacer este programa en español?",
         answer: "El programa se realiza en inglés — ese es el punto. Robert entiende español y puede proporcionar contexto o aclaraciones en español cuando sea necesario, pero las sesiones de coaching y la presentación grupal son en inglés. La presión de hablar inglés frente a los pares es el mecanismo central del programa."
+      },
+      {
+        question: "¿Cómo funciona realmente la estructura de sesiones — individuales, grupales o ambas?",
+        answer: "Principalmente individuales, con una sesión grupal de alta presión en el momento crucial. Las Fases 1 y 3 son casi completamente 1:1 — cada participante trabaja en privado con Robert en su preparación y su debrief personal. La Fase 2 es la sesión grupal, donde cada participante entrega su presentación preparada frente a todo el equipo. La mayoría no ha hecho esto antes. La combinación es deliberada: las sesiones individuales construyen la preparación, la sesión grupal expone la brecha entre la preparación privada y el desempeño público bajo presión de pares. Esa brecha es el objetivo real."
+      },
+      {
+        question: "¿Qué incluyen exactamente las revisiones formales?",
+        answer: "Tres entregables escritos por participante: (1) Un Perfil Inicial del Estudiante después de la primera sesión — nivel actual, puesto, objetivos en inglés y áreas de enfoque prioritarias, que se convierte en la línea base del programa. (2) Evaluaciones Mensuales durante todo el programa que cubren brechas actuales, nivel de esfuerzo fuera de sesiones, entusiasmo, desempeño en sesión y prioridades actualizadas. Las sesiones nunca se graban con IA — todo el contenido de evaluación proviene de la observación directa de Robert. (3) Una Hoja de Ruta Individual Escrita al cierre del programa — progreso contra la línea base, brechas restantes y un plan específico para lo que sigue. La empresa también recibe un Reporte Consolidado de Progreso para revisión de RH y liderazgo ejecutivo."
       }
     ]
   }
