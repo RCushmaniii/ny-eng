@@ -213,6 +213,18 @@ When adding ANY new external service or API endpoint that the browser calls via 
 - **Bing API Key**: `756a56664bea4d73b3486fd0d44b5fc8`
 - **Hosting**: Vercel (NOT Hostinger — CLAUDE.md tech stack section is outdated on this)
 
+## Vercel Analytics
+
+Analytics is enabled on this project. The tracking script is injected via `src/layouts/Base.astro` (just before `</body>`):
+
+```html
+<script defer src="/_vercel/insights/script.js"></script>
+```
+
+**Lesson learned:** Toggling Analytics "on" in the Vercel dashboard only tells Vercel to *serve* the script at that path. It does **not** inject the script into your pages. You must explicitly load it in your layout. Without this tag, zero data is collected even if the dashboard shows Analytics as "enabled."
+
+The `@vercel/analytics` npm package is installed but we use the direct script tag because the package's Astro component export has resolution issues with this version of Astro/Vite. The script tag approach is equivalent and more reliable.
+
 ## Marketing Plan
 
 See **[SEO-MARKETING-PLAN.md](./SEO-MARKETING-PLAN.md)** for the full content roadmap, completed work log, and upcoming initiatives. Claude should consult this file at the start of every session and update it as work is completed.
