@@ -340,8 +340,8 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
         answer: "Absolutely. Public speaking anxiety multiplies when you're speaking in a second language. Our coaching builds confidence through progressive practice — starting with comfortable scenarios and building to increasingly challenging audiences until presenting feels natural."
       },
       {
-        question: "Do you coach for virtual presentations too, not just in-person?",
-        answer: "Yes. Virtual presentations require different skills — camera presence, slide pacing, voice modulation without physical cues, and engaging an audience you can't see. We practice the specific techniques that make virtual delivery compelling and authoritative."
+        question: "Do you coach for virtual presentations — calls, webinars, remote pitches?",
+        answer: "Yes, and that's the primary format we work in. Virtual presentations require different skills — camera presence, slide pacing, voice modulation without physical cues, and engaging an audience you can't see. We practice the specific techniques that make virtual delivery compelling and authoritative."
       },
       {
         question: "Can I bring my actual presentation to practice in our sessions?",
@@ -358,8 +358,8 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
         answer: "Por supuesto. La ansiedad de hablar en público se multiplica cuando hablas en un segundo idioma. Nuestro coaching construye confianza a través de práctica progresiva — comenzando con escenarios cómodos y avanzando a audiencias cada vez más retadoras hasta que presentar se sienta natural."
       },
       {
-        question: "¿Dan coaching para presentaciones virtuales también, no solo presenciales?",
-        answer: "Sí. Las presentaciones virtuales requieren habilidades diferentes — presencia ante cámara, ritmo de slides, modulación de voz sin señales físicas, y captar una audiencia que no puedes ver. Practicamos las técnicas específicas que hacen que la entrega virtual sea convincente y con autoridad."
+        question: "¿Dan coaching para presentaciones virtuales — llamadas, webinars, pitches remotos?",
+        answer: "Sí, y ese es el formato principal con el que trabajamos. Las presentaciones virtuales requieren habilidades diferentes — presencia ante cámara, ritmo de slides, modulación de voz sin señales físicas, y captar una audiencia que no puedes ver. Practicamos las técnicas específicas que hacen que la entrega virtual sea convincente y con autoridad."
       },
       {
         question: "¿Puedo traer mi presentación real para practicar en las sesiones?",
