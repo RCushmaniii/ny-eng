@@ -89,7 +89,6 @@ Específicamente para el Asistente de Messenger, tus mensajes son transmitidos a
 - **Meta Platforms, Inc.** — entrega mensajes a través de la Plataforma Messenger. [Política de Privacidad](https://www.facebook.com/privacy/policy)
 - **Anthropic, PBC** — proporciona el modelo de IA Claude que genera las respuestas. [Política de Privacidad](https://www.anthropic.com/legal/privacy)
 - **Cloudflare, Inc.** — aloja el Worker y proporciona almacenamiento KV y enrutamiento de AI Gateway. [Política de Privacidad](https://www.cloudflare.com/privacypolicy/)
-- **Qdrant Solutions GmbH** — aloja la base de datos vectorial utilizada para recuperar contenido relevante. [Política de Privacidad](https://qdrant.tech/legal/privacy-policy/)
 - **Functional Software, Inc. (Sentry)** — recibe informes de errores para monitoreo. [Política de Privacidad](https://sentry.io/privacy/)
 
 ## Tus Derechos
