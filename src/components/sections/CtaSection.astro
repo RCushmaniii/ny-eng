@@ -10,6 +10,8 @@ export interface Props {
     buttonText: string;
     buttonLink: string;
     buttonSubtext?: string;
+    secondaryButtonText?: string;
+    secondaryButtonLink?: string;
     whatToExpectTitle: string;
     whatToExpectList: string[];
   }
@@ -36,18 +38,28 @@ const { content } = Astro.props;
         <p class="text-lg text-blue-100 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
           {content.description}
         </p>
-        <div class="flex justify-center lg:justify-start">
+        <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
           <a
             href={normalizePath(content.buttonLink)}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center px-8 py-4 bg-blue-500 hover:bg-blue-400 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
+            target={content.buttonLink.startsWith('http') ? '_blank' : undefined}
+            rel={content.buttonLink.startsWith('http') ? 'noopener noreferrer' : undefined}
+            class="inline-flex items-center justify-center px-8 py-4 bg-blue-500 hover:bg-blue-400 text-white font-semibold text-lg rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
           >
             {content.buttonText}
             <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
           </a>
+          {content.secondaryButtonText && content.secondaryButtonLink && (
+            <a
+              href={normalizePath(content.secondaryButtonLink)}
+              target={content.secondaryButtonLink.startsWith('http') ? '_blank' : undefined}
+              rel={content.secondaryButtonLink.startsWith('http') ? 'noopener noreferrer' : undefined}
+              class="inline-flex items-center justify-center px-8 py-4 border border-blue-400/50 hover:border-blue-300 text-blue-100 hover:text-white font-semibold text-lg rounded-lg transition-all duration-300"
+            >
+              {content.secondaryButtonText}
+            </a>
+          )}
         </div>
         {content.buttonSubtext && (
           <p class="mt-3 text-sm text-blue-200 text-center lg:text-left">{content.buttonSubtext}</p>
