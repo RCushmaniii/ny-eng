@@ -1,0 +1,676 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import InnerHero from "@components/sections/InnerHero.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
+import { corporatePackage as serviceData } from "@data/services";
+import { testimonials } from "@data/testimonials/en";
+import { Image } from "astro:assets";
+
+const title =
+  "Corporate English Training for HR Managers | NY English Teacher";
+const seoDescription =
+  "Evaluating English training for your management team? See the formal deliverables you receive, how progress is documented, and what makes this different from a generic language course.";
+
+const heroContent = {
+  title:
+    "Your team's English is good enough for class. Not good enough for the boardroom.",
+  description:
+    "This page is written for whoever is evaluating the program — not for the people who will attend it.",
+  backgroundImage: serviceData.backgroundImage,
+  overlayOpacity: 0.75,
+  imageAlt: "HR manager evaluating a corporate English training program",
+};
+
+const ctaContent = {
+  eyebrow: "Corporate Programs",
+  title: "Ready to discuss what this would look like for your team?",
+  description:
+    "Discovery calls take about 20 minutes. Robert scopes the program to your team size, schedule, and industry context — and answers whatever you need to move it forward internally.",
+  buttonSubtext: "Most discovery calls take 20 minutes.",
+  buttonText: "Contact Robert on WhatsApp",
+  buttonLink: "https://wa.me/523315590572",
+  whatToExpectTitle: "In Your Discovery Call, We Will:",
+  whatToExpectList: [
+    "Establish your team's current English communication baseline",
+    "Define what success looks like — and how it's measured",
+    "Scope the program for your group size, schedule, and industry context",
+  ],
+};
+
+const hrFaqs = [
+  {
+    question: "What documentation do we receive at the end of the program?",
+    answer:
+      "Four formal deliverables: an Initial Student Profile per participant (baseline document from Week 1), monthly progress assessments throughout the program, a Written Individual Roadmap per participant at program close, and a Consolidated Company Report summarizing team-level outcomes. Individual performance details stay in the personal documents — not the company report.",
+  },
+  {
+    question: "Can we get a factura?",
+    answer: "Yes. Mexican facturas are issued monthly throughout the program.",
+  },
+  {
+    question: "What is the minimum team size?",
+    answer:
+      "The structured program works best with 3–8 participants from the same leadership team. For groups larger than 8, Robert scopes a custom arrangement. For a single participant, the executive coaching program is the better fit.",
+  },
+  {
+    question:
+      "What if an employee doesn't engage or misses sessions?",
+    answer:
+      "That gets documented in the monthly assessments — specifically the level-of-effort and engagement fields. You will see it on paper before the program ends, not as a surprise in the final report. Participants who prepare between sessions see measurable gains. Those who attend but don't prepare will see limited results — and the assessments will reflect that honestly.",
+  },
+  {
+    question: "Is all instruction in English?",
+    answer:
+      "Yes. Sessions can include brief Spanish clarification when something genuinely needs it, but the program is designed for maximum English exposure. Switching to Spanish to avoid discomfort defeats the purpose — and Robert won't do it.",
+  },
+  {
+    question:
+      "How is this different from a language school or generic English course?",
+    answer:
+      "Generic courses follow a preset curriculum built for no one in particular. This program is scoped to your team's actual roles, communication gaps, and real-world English situations: presentations, client calls, cross-border negotiations. Formal assessments track individual progress against a Week 1 baseline. At the end, you have documentation of what changed — not just attendance records and a certificate.",
+  },
+  {
+    question: "Is USD pricing available?",
+    answer:
+      "Yes. For international companies, USD pricing is available. The session rate converts at the exchange rate at program start. Facturas are issued in MXN regardless of how your company settles payment internally.",
+  },
+];
+
+const selectedSlugs = [
+  "julio-smarttie",
+  "hugo-blum-100-ladrillos",
+  "andres-driscolls",
+  "andrea-ceva-logistics",
+];
+const hrTestimonials = testimonials.filter((t) =>
+  selectedSlugs.includes(t.slug)
+);
+---
+
+<Base
+  title={title}
+  description={seoDescription}
+  lang="en"
+  tkey="corporate/for-hr"
+  hideCta={true}
+>
+  <!-- Hero -->
+  <InnerHero content={heroContent} />
+
+  <!-- HR crosslink callout -->
+  <div class="bg-blue-50 border-b border-blue-100 py-4 px-8">
+    <div class="site-container--small mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <p class="text-sm text-blue-800">
+        <strong>You're on the HR manager page.</strong> Looking for the program details written for participants?
+      </p>
+      <a
+        href="/en/services/corporate-package/"
+        class="text-sm font-semibold text-blue-700 hover:underline whitespace-nowrap shrink-0"
+      >
+        See the full program page →
+      </a>
+    </div>
+  </div>
+
+  <!-- Cost of weak English -->
+  <section class="bg-gray-900 text-white py-16 px-8">
+    <div class="site-container--small mx-auto">
+      <p
+        class="text-sm font-semibold text-primary uppercase tracking-wide mb-3 text-center"
+      >
+        The Business Case
+      </p>
+      <h2 class="text-3xl font-bold mb-4 text-center">
+        What Weak English Actually Costs Your Business
+      </h2>
+      <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+        These aren't abstract statistics. They're situations your team has
+        already been in.
+      </p>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="bg-gray-800 rounded-xl p-8 border border-gray-700">
+          <h3 class="text-lg font-bold mb-3 text-white">
+            The "I'll follow up by email" moment
+          </h3>
+          <p class="text-gray-300 text-sm leading-relaxed mb-4">
+            Your manager is on a live call with a US client. They understand the
+            question. They know the answer. But they can't find the words fast
+            enough under pressure, so they say "I'll follow up by email." The
+            meeting ends. The client moves on. Three days later, an email goes
+            out that should have been a 30-second answer.
+          </p>
+          <p class="text-sm text-gray-500 italic">
+            That's not a communication gap. That's a deal gap.
+          </p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-8 border border-gray-700">
+          <h3 class="text-lg font-bold mb-3 text-white">
+            The bottlenecked relationship
+          </h3>
+          <p class="text-gray-300 text-sm leading-relaxed mb-4">
+            Your team can't escalate directly to US or European leadership
+            without routing every important message through the one bilingual
+            person in the room. That person becomes the bottleneck. Decisions
+            slow down. Your local managers can't build direct relationships with
+            decision-makers. Over time, your office becomes "the team that
+            always needs a translator" — and gets treated accordingly.
+          </p>
+          <p class="text-sm text-gray-500 italic">
+            The gap compounds quietly, until it doesn't.
+          </p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-8 border border-gray-700">
+          <h3 class="text-lg font-bold mb-3 text-white">
+            The negotiation that drags
+          </h3>
+          <p class="text-gray-300 text-sm leading-relaxed mb-4">
+            A 30-minute negotiation with a US supplier becomes a 90-minute call
+            because your team needs extra time to process, confirm, and respond
+            in English. The supplier notices. The dynamic shifts. Deals that
+            should close in two calls take five. Your position weakens — not
+            because of your terms, but because of your pace.
+          </p>
+          <p class="text-sm text-gray-500 italic">
+            Speed signals confidence. Hesitation signals weakness.
+          </p>
+        </div>
+
+        <div class="bg-gray-800 rounded-xl p-8 border border-gray-700">
+          <h3 class="text-lg font-bold mb-3 text-white">
+            The talent you're about to lose
+          </h3>
+          <p class="text-gray-300 text-sm leading-relaxed mb-4">
+            Your best managers are ambitious. They see the cross-border roles,
+            the international projects, the leadership tracks that require
+            strong English. They know their English is the ceiling. If your
+            company doesn't invest in removing that ceiling, they'll find one
+            that does — or they'll plateau, disengage, and coast.
+          </p>
+          <p class="text-sm text-gray-500 italic">
+            Training English is a retention strategy. Not training it is a
+            risk.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What HR receives -->
+  <section class="bg-white py-16 px-8">
+    <div class="site-container--small mx-auto">
+      <p
+        class="text-sm font-semibold text-primary uppercase tracking-wide mb-3 text-center"
+      >
+        Formal Deliverables
+      </p>
+      <h2 class="text-3xl font-bold mb-4 text-center">
+        What You Have on Paper When It's Done
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        This is what separates a structured program from ongoing private
+        tutoring. Four formal documents — three per participant, one for the
+        company.
+      </p>
+
+      <div class="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+        <div class="bg-light rounded-xl p-8 border border-gray-100">
+          <div
+            class="text-sm font-semibold text-primary uppercase tracking-wide mb-2"
+          >
+            Delivered after Week 1–2
+          </div>
+          <h3 class="text-xl font-bold mb-3">Initial Student Profile</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            A written baseline document for each participant. Covers their
+            current English level, job role, communication gaps, and priority
+            focus areas. This is the document Phase 3 measures progress
+            against.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span> Current
+              level and observable communication patterns
+            </li>
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span> Job role
+              and high-stakes communication moments
+            </li>
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span> Priority
+              focus areas for the program
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-light rounded-xl p-8 border border-gray-100">
+          <div
+            class="text-sm font-semibold text-primary uppercase tracking-wide mb-2"
+          >
+            Delivered monthly throughout the program
+          </div>
+          <h3 class="text-xl font-bold mb-3">Monthly Assessments</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            One written assessment per participant per month, covering five
+            areas:
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span> Ongoing
+              communication gaps
+            </li>
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span> Level of
+              effort and preparation quality
+            </li>
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span> Engagement
+              and in-session performance
+            </li>
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span> Updated
+              priority areas
+            </li>
+          </ul>
+          <p class="text-xs text-gray-400 mt-4">
+            Based on Robert's direct observation — no AI recording or
+            transcription.
+          </p>
+        </div>
+
+        <div class="bg-light rounded-xl p-8 border border-gray-100">
+          <div
+            class="text-sm font-semibold text-primary uppercase tracking-wide mb-2"
+          >
+            Delivered at program close — per participant
+          </div>
+          <h3 class="text-xl font-bold mb-3">Written Individual Roadmap</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            A personalized written document for each participant:
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span> Progress
+              measured against the Week 1 baseline
+            </li>
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span> Remaining
+              gaps and recommended focus areas
+            </li>
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span> Honest
+              summary of where they stand after the program
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-light rounded-xl p-8 border border-gray-100">
+          <div
+            class="text-sm font-semibold text-primary uppercase tracking-wide mb-2"
+          >
+            Delivered at program close — for the company
+          </div>
+          <h3 class="text-xl font-bold mb-3">Consolidated Company Report</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            A summary-level document for internal review and reporting:
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2">
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span> Team-level
+              progress and collective patterns
+            </li>
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span> Notable
+              achievements across the group
+            </li>
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span> Program
+              outcomes vs. original goals
+            </li>
+            <li class="flex gap-2">
+              <span class="text-primary font-bold shrink-0">→</span> Recommendations
+              for continued team development
+            </li>
+          </ul>
+          <p class="text-xs text-gray-400 mt-4">
+            Individual performance details are kept in the personal roadmaps —
+            not this document.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Structure -->
+  <section class="bg-light py-16 px-8">
+    <div class="site-container--small mx-auto">
+      <p
+        class="text-sm font-semibold text-primary uppercase tracking-wide mb-3 text-center"
+      >
+        How It Works
+      </p>
+      <h2 class="text-3xl font-bold mb-2 text-center">12 Weeks. 3 Phases.</h2>
+      <p class="text-center text-gray-600 mb-12">
+        Not a course that runs indefinitely with no defined outcome. A
+        structured sprint with a clear beginning, a pressure point, and a
+        formal close.
+      </p>
+
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div
+            class="text-sm font-semibold text-primary uppercase tracking-wide mb-2"
+          >
+            Weeks 1–8
+          </div>
+          <h3 class="text-xl font-bold mb-3">Individual Preparation</h3>
+          <p class="text-gray-600 mb-4 text-sm">
+            Each participant works privately with Robert. The first two weeks
+            establish an honest baseline. The remaining weeks build preparation
+            around their real role, actual presentations, and specific
+            communication challenges.
+          </p>
+          <div class="text-sm text-gray-500">8–12 sessions per participant</div>
+        </div>
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div
+            class="text-sm font-semibold text-primary uppercase tracking-wide mb-2"
+          >
+            Weeks 9–10
+          </div>
+          <h3 class="text-xl font-bold mb-3">Group Presentation</h3>
+          <p class="text-gray-600 mb-4 text-sm">
+            Every participant delivers their prepared presentation in English to
+            the full leadership group — often for the first time. The pressure
+            is real, deliberate, and productive. This is where the program
+            earns its results.
+          </p>
+          <div class="text-sm text-gray-500">1–2 group sessions</div>
+        </div>
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+          <div
+            class="text-sm font-semibold text-primary uppercase tracking-wide mb-2"
+          >
+            Weeks 11–12
+          </div>
+          <h3 class="text-xl font-bold mb-3">Assessment & Debrief</h3>
+          <p class="text-gray-600 mb-4 text-sm">
+            Individual debrief sessions with direct feedback. Final assessment
+            measures progress against the Week 1 baseline. Individual roadmaps
+            and the consolidated company report are delivered at close.
+          </p>
+          <div class="text-sm text-gray-500">2–3 sessions per participant</div>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a
+          href="/en/services/corporate-package/"
+          class="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline"
+        >
+          See the full program detail <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What you bring back to leadership -->
+  <section class="bg-white py-16 px-8">
+    <div class="site-container--small mx-auto max-w-4xl">
+      <p
+        class="text-sm font-semibold text-primary uppercase tracking-wide mb-3 text-center"
+      >
+        Reporting Upward
+      </p>
+      <h2 class="text-3xl font-bold mb-4 text-center">
+        What You Bring Back to Leadership
+      </h2>
+      <p class="text-center text-gray-600 mb-12">
+        When the program ends, you're not reporting "everyone felt more
+        confident." You're reporting specific, documented outcomes.
+      </p>
+
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="flex gap-4 p-6 bg-light rounded-xl border border-gray-100">
+          <span class="text-green-500 font-bold text-lg mt-0.5 shrink-0"
+            >✓</span
+          >
+          <div>
+            <p class="font-semibold text-gray-900 mb-1">
+              Progress measured against a documented baseline
+            </p>
+            <p class="text-sm text-gray-600">
+              Not "they improved" — the Initial Student Profile and final
+              roadmap show specifically where each participant started and where
+              they finished.
+            </p>
+          </div>
+        </div>
+        <div class="flex gap-4 p-6 bg-light rounded-xl border border-gray-100">
+          <span class="text-green-500 font-bold text-lg mt-0.5 shrink-0"
+            >✓</span
+          >
+          <div>
+            <p class="font-semibold text-gray-900 mb-1">
+              A deliverable you can show — not just describe
+            </p>
+            <p class="text-sm text-gray-600">
+              The Consolidated Company Report is a formal document. You can
+              attach it to an internal review, a budget justification, or a
+              follow-up proposal for the next program cycle.
+            </p>
+          </div>
+        </div>
+        <div class="flex gap-4 p-6 bg-light rounded-xl border border-gray-100">
+          <span class="text-green-500 font-bold text-lg mt-0.5 shrink-0"
+            >✓</span
+          >
+          <div>
+            <p class="font-semibold text-gray-900 mb-1">
+              Engagement and effort tracked throughout
+            </p>
+            <p class="text-sm text-gray-600">
+              Monthly assessments document each participant's preparation
+              quality and engagement — so results are honest, not inflated.
+            </p>
+          </div>
+        </div>
+        <div class="flex gap-4 p-6 bg-light rounded-xl border border-gray-100">
+          <span class="text-green-500 font-bold text-lg mt-0.5 shrink-0"
+            >✓</span
+          >
+          <div>
+            <p class="font-semibold text-gray-900 mb-1">
+              A recommendation for what comes next
+            </p>
+            <p class="text-sm text-gray-600">
+              Every company report includes Robert's recommendation for
+              continued development — whether that's another program cycle,
+              individual follow-up coaching, or a specific focus area for the
+              team.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-light py-16 px-8">
+    <div class="site-container--small mx-auto">
+      <p
+        class="text-sm font-semibold text-primary uppercase tracking-wide mb-3 text-center"
+      >
+        Program Alumni
+      </p>
+      <h2 class="text-3xl font-bold mb-4 text-center">
+        Who Has Been Through This
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        These are the participants — COOs, CEOs, and directors from companies
+        you know. Their titles are the outcome you're trying to produce.
+      </p>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        {
+          hrTestimonials.map((t) => (
+            <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 flex flex-col gap-4">
+              <p class="text-gray-700 text-sm leading-relaxed italic">
+                "{t.content}"
+              </p>
+              <div class="flex items-center gap-4 mt-auto pt-4 border-t border-gray-100">
+                {typeof t.avatar !== "string" && (
+                  <Image
+                    src={t.avatar}
+                    alt={t.author}
+                    width={48}
+                    height={48}
+                    class="rounded-full object-cover w-12 h-12 shrink-0"
+                  />
+                )}
+                <div>
+                  <p class="font-bold text-gray-900 text-sm">{t.author}</p>
+                  <p class="text-xs text-gray-500">
+                    {t.position}, {t.company}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment -->
+  <section class="bg-white py-16 px-8">
+    <div class="site-container--small mx-auto">
+      <p
+        class="text-sm font-semibold text-primary uppercase tracking-wide mb-3 text-center"
+      >
+        Investment
+      </p>
+      <h2 class="text-3xl font-bold mb-2 text-center">Pricing</h2>
+      <p class="text-center text-gray-600 mb-10">
+        600 MXN per session per participant. <strong
+          >Mexican facturas issued monthly.</strong
+        >
+      </p>
+
+      <div class="max-w-2xl mx-auto bg-gray-50 rounded-xl p-8 border border-gray-200">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-gray-200">
+              <th class="text-left pb-3 font-semibold">Scenario</th>
+              <th class="text-right pb-3 font-semibold">Per Participant</th>
+              <th class="text-right pb-3 font-semibold">5-Person Team</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-600">
+            <tr class="border-b border-gray-100">
+              <td class="py-3">Conservative (12 sessions)</td>
+              <td class="text-right py-3">7,200 MXN</td>
+              <td class="text-right py-3">~36,000 MXN</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-3">Moderate (14–15 sessions)</td>
+              <td class="text-right py-3">8,400 – 9,000 MXN</td>
+              <td class="text-right py-3">~42,000–45,000 MXN</td>
+            </tr>
+            <tr>
+              <td class="py-3">Intensive (17 sessions)</td>
+              <td class="text-right py-3">10,200 MXN</td>
+              <td class="text-right py-3">~51,000 MXN</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-xs text-gray-400 mt-4">
+          Total varies because schedules vary — not every participant attends
+          every possible session. USD pricing available for international
+          companies.
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto mt-6 text-center">
+        <a
+          href="/en/services/corporate-package/"
+          class="text-sm text-primary font-semibold hover:underline"
+        >
+          See full program detail and FAQ →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-light py-16 px-8">
+    <div class="site-container--small mx-auto max-w-3xl">
+      <h2 class="text-3xl font-bold mb-2 text-center">Common Questions</h2>
+      <p class="text-center text-gray-600 mb-12">
+        The things people ask before moving this forward internally.
+      </p>
+
+      <div class="space-y-4">
+        {
+          hrFaqs.map((faq) => (
+            <div class="bg-white rounded-xl p-8 border border-gray-100">
+              <h3 class="font-bold text-gray-900 mb-3">{faq.question}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CtaSection content={ctaContent} />
+
+  <BreadcrumbSchema
+    items={[
+      { name: "Home", url: "https://www.nyenglishteacher.com/en/" },
+      {
+        name: "Services",
+        url: "https://www.nyenglishteacher.com/en/services/",
+      },
+      {
+        name: "Corporate English Training for HR Managers",
+        url: "https://www.nyenglishteacher.com/en/for-hr-managers/",
+      },
+    ]}
+  />
+
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Corporate English Training for Management Teams",
+      description:
+        "A 12-week structured English coaching program for management teams in Mexico, with formal documentation for HR managers and training coordinators.",
+      provider: {
+        "@type": "Person",
+        name: "Robert Cushman",
+        jobTitle: "English Coach",
+        url: "https://www.nyenglishteacher.com/en/about/",
+      },
+      serviceType: "Corporate English Coaching",
+      areaServed: {
+        "@type": "Country",
+        name: "Mexico",
+      },
+      offers: {
+        "@type": "Offer",
+        price: "600",
+        priceCurrency: "MXN",
+        eligibleCustomerType: "https://schema.org/BusinessCustomer",
+      },
+      url: "https://www.nyenglishteacher.com/en/for-hr-managers/",
+    })}
+  />
+</Base>

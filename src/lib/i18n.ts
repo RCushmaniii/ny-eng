@@ -126,6 +126,7 @@ export type TKey =
   | "course/executive/unit-9"
   | "course/executive/unit-10"
   | "course/executive/capstone"
+  | "corporate/for-hr"
   | "meme-portfolio"
   | "site-index";
 
@@ -266,6 +267,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/executive/unit-9": "/en/course/executive/unit-9/",
     "course/executive/unit-10": "/en/course/executive/unit-10/",
     "course/executive/capstone": "/en/course/executive/capstone/",
+    "corporate/for-hr": "/en/for-hr-managers/",
     "meme-portfolio": "/en/meme-portfolio/all/",
     "site-index": "/en/site-index/",
   },
@@ -410,6 +412,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/executive/unit-9": "/es/curso/ejecutivo/unidad-9/",
     "course/executive/unit-10": "/es/curso/ejecutivo/unidad-10/",
     "course/executive/capstone": "/es/curso/ejecutivo/reto-final/",
+    "corporate/for-hr": "/es/para-rh/",
     "meme-portfolio": "/es/meme-portfolio/all/",
     "site-index": "/es/indice-del-sitio/",
   },
@@ -514,6 +517,7 @@ export function getAllTKeys(): TKey[] {
     "quiz/executives",
     "quiz/professional-services",
     "quiz/high-stakes",
+    "corporate/for-hr",
     "meme-portfolio",
     "site-index",
   ];
