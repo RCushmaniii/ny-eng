@@ -10,14 +10,14 @@ import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
 import { serviceFaqs } from "@data/service-faqs";
 import { paqueteCorporativo as serviceData } from "@data/services";
 
-const title = "Inglés Corporativo para Equipos | NY English Teacher";
+const title = "Coaching de Inglés de Negocios | NY English Teacher";
 const seoDescription =
-  "Capacitación de inglés corporativo para equipos directivos en México. 12 semanas de preparación individual, presión de pares y resultados medibles — no solo certificados.";
+  "Coaching de inglés de negocios 1-a-1 en línea para equipos directivos en México. Programa de 12 semanas con coach nativo de Nueva York.";
 
 const heroContent = {
   title: "Tu equipo de gestión está listo. Su inglés no les está siguiendo el ritmo.",
   description:
-    "Un programa de 12 semanas que usa la presión de pares — no un salón de clases — para cerrar la brecha entre preparación y desempeño.",
+    "Coaching de inglés de negocios 1-a-1 con coach nativo de Nueva York. Programa de 12 semanas que usa la presión de pares para construir desempeño real.",
   backgroundImage: serviceData.backgroundImage,
   overlayOpacity: 0.75,
   imageAlt: "Equipo de gestión en una sesión de coaching de inglés empresarial",
@@ -78,7 +78,7 @@ const faqs = serviceFaqs["corporate-package"]?.es || [];
   <section class="bg-light py-16 px-8">
     <div class="site-container--small mx-auto">
       <h2 class="text-3xl font-bold mb-2 text-center">Cómo Funciona el Programa</h2>
-      <p class="text-center text-gray-600 mb-12">12 semanas. 3 fases. Un objetivo: tu equipo lidera en inglés.</p>
+      <p class="text-center text-gray-600 mb-12">Coaching de inglés de negocios en 3 fases. 12 semanas. Un objetivo: tu equipo lidera en inglés.</p>
 
       <div class="grid gap-8 md:grid-cols-3">
         <!-- Fase 1 -->
@@ -229,22 +229,22 @@ const faqs = serviceFaqs["corporate-package"]?.es || [];
   <BreadcrumbSchema items={[
     { name: "Inicio", url: "https://www.nyenglishteacher.com/es/" },
     { name: "Servicios", url: "https://www.nyenglishteacher.com/es/servicios/" },
-    { name: "Inglés Corporativo para Equipos Directivos", url: "https://www.nyenglishteacher.com/es/servicios/paquete-corporativo/" }
+    { name: "Coaching de Inglés de Negocios para Equipos Directivos", url: "https://www.nyenglishteacher.com/es/servicios/paquete-corporativo/" }
   ]} />
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Inglés Corporativo para Equipos Directivos",
-    "alternateName": "Valentía al Liderar en Inglés",
-    "description": "Un programa estructurado de 12 semanas para equipos de gestión. Preparación individual, presentaciones grupales bajo presión de pares y evaluación final — diseñado para cerrar la brecha entre la fluidez privada y el desempeño público.",
+    "name": "Coaching de Inglés de Negocios para Equipos Directivos",
+    "alternateName": ["Inglés Corporativo para Equipos Directivos", "Valentía al Liderar en Inglés"],
+    "description": "Coaching de inglés de negocios 1-a-1 en línea para equipos directivos en México. Programa estructurado de 12 semanas que combina preparación individual, presentaciones grupales bajo presión de pares y evaluación final — diseñado para cerrar la brecha entre la fluidez privada y el desempeño público.",
     "provider": {
       "@type": "Person",
       "name": "Robert Cushman",
       "jobTitle": "Coach de Inglés",
       "url": "https://www.nyenglishteacher.com/es/about/"
     },
-    "serviceType": "Coaching de Inglés Corporativo",
+    "serviceType": "Coaching de Inglés de Negocios",
     "areaServed": {
       "@type": "Country",
       "name": "México"
