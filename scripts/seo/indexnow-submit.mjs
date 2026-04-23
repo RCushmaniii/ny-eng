@@ -9,6 +9,15 @@
  *   node scripts/seo/indexnow-submit.mjs --sitemap https://...xml    # Submit URLs from a specific sitemap
  */
 
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import dotenv from 'dotenv';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const PROJECT_ROOT = join(__dirname, '..', '..');
+dotenv.config({ path: join(PROJECT_ROOT, '.env') });
+
 if (!process.env.INDEXNOW_KEY) {
   console.error('✗ Missing required environment variable: INDEXNOW_KEY');
   process.exit(1);
