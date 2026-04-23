@@ -26,6 +26,7 @@ const blogTranslations = {
   "5-practical-ways-to-boost-business-english": "/es/blog/5-formas-practicas-mejorar-ingles-negocios/",
   "boost-eng-confidence": "/es/blog/aumentar-confianza/",
   "corporate-english-transformation-case-study": "/es/blog/caso-estudio-transformacion-ingles-corporativo/",
+  "why-corporate-english-training-fails-mexico": "/es/blog/por-que-fracasa-la-capacitacion-de-ingles-corporativo-en-mexico/",
   "executive-english-coaching": "/es/blog/coaching-ejecutivo/",
   "executive-video-call": "/es/blog/presencia-ejecutiva-en-videollamadas/",
   "managers-lose-millions": "/es/blog/por-que-los-gerentes-de-ti-en-mexico-pierden-clientes/",
