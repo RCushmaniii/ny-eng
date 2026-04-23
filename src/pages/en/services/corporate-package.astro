@@ -10,14 +10,14 @@ import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
 import { serviceFaqs } from "@data/service-faqs";
 import { corporatePackage as serviceData } from "@data/services";
 
-const title = "Corporate English Training for Teams | NY English Teacher";
+const title = "Business English Coaching for Teams | NY English Teacher";
 const seoDescription =
-  "Corporate English coaching for management teams in Mexico. 12 weeks of individual prep, peer-pressure group sessions, and measurable outcomes — not just certificates.";
+  "Business English coaching 1-on-1 online for leadership teams in Mexico. A 12-week structured program with a New York native executive coach. Measurable outcomes.";
 
 const heroContent = {
   title: "Your management team is ready. Their English isn't keeping up.",
   description:
-    "A 12-week program that uses peer pressure — not a classroom — to close the gap between preparation and performance.",
+    "Business English coaching 1-on-1 with a native New Yorker. A 12-week program using peer pressure to close the gap between preparation and performance.",
   backgroundImage: serviceData.backgroundImage,
   overlayOpacity: 0.75,
   imageAlt: "Management team in a business English coaching session",
@@ -78,7 +78,7 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
   <section class="bg-light py-16 px-8">
     <div class="site-container--small mx-auto">
       <h2 class="text-3xl font-bold mb-2 text-center">How the Program Works</h2>
-      <p class="text-center text-gray-600 mb-12">12 weeks. 3 phases. One goal: your team leads in English.</p>
+      <p class="text-center text-gray-600 mb-12">Business English coaching in 3 phases. 12 weeks. One goal: your team leads in English.</p>
 
       <div class="grid gap-8 md:grid-cols-3">
         <!-- Phase 1 -->
@@ -293,22 +293,22 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
   <BreadcrumbSchema items={[
     { name: "Home", url: "https://www.nyenglishteacher.com/en/" },
     { name: "Services", url: "https://www.nyenglishteacher.com/en/services/" },
-    { name: "Corporate English Training for Leadership Teams", url: "https://www.nyenglishteacher.com/en/services/corporate-package/" }
+    { name: "Business English Coaching for Leadership Teams", url: "https://www.nyenglishteacher.com/en/services/corporate-package/" }
   ]} />
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Corporate English Training for Leadership Teams",
-    "alternateName": "Courage While Leading in English",
-    "description": "A 12-week structured English coaching program for management teams. Individual preparation, peer-pressure group presentations, and a final assessment — designed to close the gap between private fluency and public performance.",
+    "name": "Business English Coaching for Leadership Teams",
+    "alternateName": ["Corporate English Training for Leadership Teams", "Executive English Coaching", "Courage While Leading in English"],
+    "description": "Business English coaching 1-on-1 online for leadership teams in Mexico. A 12-week structured program that combines individual preparation, peer-pressure group presentations, and a final assessment — designed to close the gap between private fluency and public performance.",
     "provider": {
       "@type": "Person",
       "name": "Robert Cushman",
       "jobTitle": "English Coach",
       "url": "https://www.nyenglishteacher.com/en/about/"
     },
-    "serviceType": "Corporate English Coaching",
+    "serviceType": "Business English Coaching",
     "areaServed": {
       "@type": "Country",
       "name": "Mexico"
