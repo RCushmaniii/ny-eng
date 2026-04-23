@@ -8,7 +8,7 @@ categories:
   - "Comunicación de Alto Impacto"
 readingTime: "6 min de lectura"
 audience: "Para directores de RR.HH., gerentes de L&D y ejecutivos que evalúan capacitación en inglés para sus equipos directivos"
-featuredImage: "../en/images/operations-csuite-language.webp"
+featuredImage: "../en/images/why-corporate-english-training-fails-mexico.webp"
 imageAlt: "Equipo directivo en una reunión corporativa con dificultades para comunicarse en inglés"
 translations:
   en: "/en/blog/why-corporate-english-training-fails-mexico/"

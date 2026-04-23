@@ -8,7 +8,7 @@ categories:
   - "High-Impact Communication"
 readingTime: "6 min read"
 audience: "For HR directors, L&D managers, and executives evaluating English training for their management teams"
-featuredImage: "./images/operations-csuite-language.webp"
+featuredImage: "./images/why-corporate-english-training-fails-mexico.webp"
 imageAlt: "Management team in a corporate meeting struggling to communicate in English"
 translations:
   es: "/es/blog/por-que-fracasa-la-capacitacion-de-ingles-corporativo-en-mexico/"
