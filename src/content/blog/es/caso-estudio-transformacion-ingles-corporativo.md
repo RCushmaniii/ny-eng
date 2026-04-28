@@ -74,6 +74,16 @@ Lo que surgió fue sorprendente. La gramática no era el problema principal. Las
 3. **Falta de marcos de referencia** — Les faltaban enfoques estructurados para manejar objeciones, negociación y presencia ejecutiva
 4. **Aislamiento** — Cada líder pensaba que era el único que estaba luchando
 
+<aside class="not-prose my-12 rounded-xl border border-blue-100 bg-blue-50 p-6 sm:p-8">
+  <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex-1">
+      <p class="mb-1.5 text-xs font-semibold uppercase tracking-wide text-blue-700">¿Quiere hacer un diagnóstico rápido de su propio equipo?</p>
+      <p class="m-0 text-base leading-snug text-gray-800">La Guía de Evaluación de Capacitación de Inglés Corporativo es una versión auto-servicio del proceso de diagnóstico de la Fase 1 — 7 preguntas para proveedores más señales de alerta y métricas de éxito.</p>
+    </div>
+    <a href="/es/para-rh/?utm_source=blog&utm_medium=callout&utm_campaign=audit&utm_content=caso-estudio-mid#descargar-guia" class="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-blue-700">Ver la guía gratuita <span aria-hidden="true">→</span></a>
+  </div>
+</aside>
+
 ### Fase 2: Coaching Individual (Continuo)
 
 Cada ejecutivo recibió sesiones semanales uno a uno adaptadas a sus desafíos específicos:
@@ -208,6 +218,16 @@ Si tu organización está considerando un desarrollo similar para equipos direct
 **Aborda el kit completo de herramientas ejecutivas.** Las habilidades de idioma importan, pero son insuficientes sin los marcos de comunicación subyacentes. El mejor inglés del mundo no ayudará a un ejecutivo que no sabe cómo manejar una objeción o estructurar un argumento persuasivo.
 
 **Empieza desde arriba.** Cuando los líderes senior participan visiblemente, crean permiso para todos los demás. Cuando se esconden en coaching privado mientras envían al personal junior a clases grupales, señalan que luchar con el inglés es vergonzoso. Lo primero acelera el desarrollo; lo segundo lo inhibe.
+
+<aside class="not-prose my-12 rounded-xl border border-blue-100 bg-blue-50 p-6 sm:p-8">
+  <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex-1">
+      <p class="mb-1.5 text-xs font-semibold uppercase tracking-wide text-blue-700">¿Evaluando proveedores para su propio equipo directivo?</p>
+      <p class="m-0 text-base leading-snug text-gray-800">Use La Guía de Evaluación de Capacitación de Inglés Corporativo como una lista de verificación estructurada antes de comprometerse — 7 preguntas para proveedores, las señales de alerta y cómo definir el éxito.</p>
+    </div>
+    <a href="/es/para-rh/?utm_source=blog&utm_medium=callout&utm_campaign=audit&utm_content=caso-estudio-end#descargar-guia" class="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-blue-700">Descargar la guía <span aria-hidden="true">→</span></a>
+  </div>
+</aside>
 
 ## Qué Sigue para Este Equipo
 

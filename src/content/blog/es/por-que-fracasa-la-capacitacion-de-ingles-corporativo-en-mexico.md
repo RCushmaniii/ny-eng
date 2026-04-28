@@ -72,6 +72,16 @@ La incomodidad de hablar inglés frente a colegas que podrían notar tus errores
 
 ---
 
+<aside class="not-prose my-12 rounded-xl border border-blue-100 bg-blue-50 p-6 sm:p-8">
+  <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex-1">
+      <p class="mb-1.5 text-xs font-semibold uppercase tracking-wide text-blue-700">¿Está investigando proveedores en este momento?</p>
+      <p class="m-0 text-base leading-snug text-gray-800">Descargue La Guía de Evaluación de Capacitación de Inglés Corporativo — las 7 preguntas que separan los programas reales de las propuestas brillantes, además de las señales de alerta y cómo definir el éxito.</p>
+    </div>
+    <a href="/es/para-rh/?utm_source=blog&utm_medium=callout&utm_campaign=audit&utm_content=por-que-fracasa-mid#descargar-guia" class="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-blue-700">Ver la guía gratuita <span aria-hidden="true">→</span></a>
+  </div>
+</aside>
+
 ## Lo Que Sí Funciona
 
 Los programas que producen cambios reales y observables en el desempeño tienen tres cosas en común.
@@ -121,6 +131,16 @@ Si eres responsable de seleccionar un programa de capacitación en inglés para 
 Las respuestas te dirán rápidamente si estás evaluando un programa construido para el desempeño o un programa construido para la finalización.
 
 ---
+
+<aside class="not-prose my-12 rounded-xl border border-blue-100 bg-blue-50 p-6 sm:p-8">
+  <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex-1">
+      <p class="mb-1.5 text-xs font-semibold uppercase tracking-wide text-blue-700">5 preguntas son un inicio. La guía completa tiene 7 más.</p>
+      <p class="m-0 text-base leading-snug text-gray-800">Además, las señales de alerta de un programa genérico disfrazado de solución personalizada, y una forma estructurada de definir el éxito antes de firmar un contrato.</p>
+    </div>
+    <a href="/es/para-rh/?utm_source=blog&utm_medium=callout&utm_campaign=audit&utm_content=por-que-fracasa-end#descargar-guia" class="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-blue-700">Descargar la guía <span aria-hidden="true">→</span></a>
+  </div>
+</aside>
 
 El objetivo no es inglés en un certificado. Es un equipo directivo que pueda representar a tu empresa en inglés sin cuellos de botella — sin necesitar canalizar todo a través de la única persona que ya habla con fluidez, sin ralentizar decisiones por una brecha de comunicación, sin llegar a una reunión con sus socios internacionales sintiéndose sin preparación.
 
