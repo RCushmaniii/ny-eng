@@ -310,7 +310,9 @@ export default async function handler(
 
     const leadId = rows[0].id;
 
-    // Send emails (fire and forget — do not block the response)
+    // Send emails — MUST await before responding. Vercel serverless functions
+    // terminate the moment res.json() returns, killing in-flight Promise.all
+    // calls. Fire-and-forget here results in delivered_at staying null forever.
     if (resend) {
       const fromAddress =
         process.env.RESEND_FROM_EMAIL ||
@@ -361,7 +363,7 @@ export default async function handler(
           ),
       );
 
-      Promise.all(emailPromises).catch(() => {});
+      await Promise.all(emailPromises);
     }
 
     res.status(200).json({
