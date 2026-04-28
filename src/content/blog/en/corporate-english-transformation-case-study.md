@@ -74,6 +74,16 @@ What emerged was surprising. Grammar wasn't the primary issue. The real barriers
 3. **Missing frameworks** — They lacked structured approaches to objection handling, negotiation, and executive presence
 4. **Isolation** — Each leader thought they were the only one struggling
 
+<aside class="not-prose my-12 rounded-xl border border-blue-100 bg-blue-50 p-6 sm:p-8">
+  <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex-1">
+      <p class="mb-1.5 text-xs font-semibold uppercase tracking-wide text-blue-700">Want to run a quick diagnostic on your own team?</p>
+      <p class="m-0 text-base leading-snug text-gray-800">The Corporate English Training Audit is a self-service version of the Phase 1 diagnostic process — 7 vendor questions plus warning signs and success metrics.</p>
+    </div>
+    <a href="/en/for-hr-managers/?utm_source=blog&utm_medium=callout&utm_campaign=audit&utm_content=case-study-mid#download-the-guide" class="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-blue-700">Get the free guide <span aria-hidden="true">→</span></a>
+  </div>
+</aside>
+
 ### Phase 2: Individual Coaching (Ongoing)
 
 Each executive received weekly one-on-one sessions tailored to their specific challenges:
@@ -208,6 +218,16 @@ If your organization is considering similar development for leadership teams, co
 **Address the full executive toolkit.** Language skills matter, but they're insufficient without the underlying communication frameworks. The best English in the world won't help an executive who doesn't know how to handle an objection or structure a persuasive argument. For a look at what this costs when left unaddressed, see [The Real Cost of Weak English: Lost Deals, Blocked Promotions](/en/blog/real-cost-weak-english-mexican-companies/).
 
 **Start at the top.** When senior leaders participate visibly, they create permission for everyone else. When they hide in private coaching while sending junior staff to group classes, they signal that struggling with English is shameful. The former accelerates development; the latter inhibits it.
+
+<aside class="not-prose my-12 rounded-xl border border-blue-100 bg-blue-50 p-6 sm:p-8">
+  <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex-1">
+      <p class="mb-1.5 text-xs font-semibold uppercase tracking-wide text-blue-700">Evaluating providers for your own leadership team?</p>
+      <p class="m-0 text-base leading-snug text-gray-800">Use The Corporate English Training Audit as a structured checklist before you commit — 7 vendor questions, the warning signs, and how to define success.</p>
+    </div>
+    <a href="/en/for-hr-managers/?utm_source=blog&utm_medium=callout&utm_campaign=audit&utm_content=case-study-end#download-the-guide" class="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-blue-700">Download the audit <span aria-hidden="true">→</span></a>
+  </div>
+</aside>
 
 ## What's Next for This Team
 

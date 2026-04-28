@@ -72,6 +72,16 @@ The discomfort of speaking English in front of colleagues who might notice your 
 
 ---
 
+<aside class="not-prose my-12 rounded-xl border border-blue-100 bg-blue-50 p-6 sm:p-8">
+  <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex-1">
+      <p class="mb-1.5 text-xs font-semibold uppercase tracking-wide text-blue-700">Researching providers right now?</p>
+      <p class="m-0 text-base leading-snug text-gray-800">Download The Corporate English Training Audit — the 7 questions that separate real programs from glossy proposals, plus the warning signs and how to define success.</p>
+    </div>
+    <a href="/en/for-hr-managers/?utm_source=blog&utm_medium=callout&utm_campaign=audit&utm_content=why-fails-mid#download-the-guide" class="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-blue-700">Get the free guide <span aria-hidden="true">→</span></a>
+  </div>
+</aside>
+
 ## What Actually Works
 
 The programs that produce real, observable performance change have three things in common.
@@ -121,6 +131,16 @@ If you're responsible for selecting an English training program for your managem
 The answers will tell you quickly whether you're looking at a program built for performance or a program built for completion.
 
 ---
+
+<aside class="not-prose my-12 rounded-xl border border-blue-100 bg-blue-50 p-6 sm:p-8">
+  <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex-1">
+      <p class="mb-1.5 text-xs font-semibold uppercase tracking-wide text-blue-700">5 questions is a start. The full audit has 7 more.</p>
+      <p class="m-0 text-base leading-snug text-gray-800">Plus the warning signs of a generic program disguised as a tailored solution, and a structured way to define success before you sign a contract.</p>
+    </div>
+    <a href="/en/for-hr-managers/?utm_source=blog&utm_medium=callout&utm_campaign=audit&utm_content=why-fails-end#download-the-guide" class="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-blue-700">Download the audit <span aria-hidden="true">→</span></a>
+  </div>
+</aside>
 
 The goal isn't English on a certificate. It's a management team that can represent your company in English without a bottleneck — without needing to run everything through the one person who is already fluent, without slowing down decisions because of a communication gap, without showing up to a meeting with your international partners feeling unprepared.
 
