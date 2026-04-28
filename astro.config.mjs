@@ -134,6 +134,12 @@ export default defineConfig({
         "@utils": path.resolve(__dirname, "src/utils"),
       },
     },
+    // Inline the Sentry DSN into client bundles at build time. The DSN is
+    // public by design (it's embedded in every client-side Sentry SDK), so
+    // bridging it from the server-only SENTRY_DSN env var is safe.
+    define: {
+      __SENTRY_CLIENT_DSN__: JSON.stringify(process.env.SENTRY_DSN || ""),
+    },
   },
 
   integrations: [
