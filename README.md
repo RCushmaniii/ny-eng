@@ -48,6 +48,7 @@ Learners record a 90-second executive presentation and upload it directly to Ver
 - **4 Persona-Specific Quizzes** — IT Services, Executives, Professional Services, High-Stakes Communication
 - **Instant Score & Premium Report** — Communication Confidence Score with PDF export
 - **Email Capture + Notifications** — Resend-powered lead alerts with full score breakdown
+- **Corporate Lead Magnet — "The Corporate English Training Audit"** — Bilingual PDF + video download targeting HR managers and corporate decision-makers. Branded delivery email with dual format CTAs (read or watch), three-bullet preview, and dedicated booking CTA. Stored in Neon with `delivered_at` tracking and full UTM attribution.
 
 ### Booking System
 - **3-Step Executive Strategy Session** — Date → Details → Confirmation
@@ -144,6 +145,8 @@ src/
 api/
 ├── capstone/
 │   └── upload-token.ts     # Vercel Blob client upload handler + Resend email
+├── corporate-guide/
+│   └── download.ts         # Corporate audit lead magnet — Neon insert + dual Resend send
 ├── quiz/
 │   └── submit.ts           # Quiz submission → Neon PostgreSQL
 └── tts/

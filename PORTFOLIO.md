@@ -24,6 +24,7 @@ solution: "A fully automated lead generation platform that functions as four dig
 key_features:
   - "Complete 4-course A1→C2 English curriculum — Beginner, Intermediate, Advanced, Executive — entirely free, bilingual EN/ES"
   - "Executive course alone: 10 units × 3 sections, 8 original React drill components, ~130+ drills, Azure Neural TTS, capstone recorded presentation with direct browser-to-CDN audio upload (Vercel Blob) and 48-hour personal feedback loop"
+  - "Corporate lead-magnet funnel — bilingual PDF + video audit guide for HR managers, dual-format branded delivery email, Neon-tracked attribution, and a single-CTA path to a discovery call"
   - "4 role-specific diagnostic quizzes pre-qualify leads with mapped communication gaps — no discovery calls needed"
   - "3-step booking flow via Cloudflare Workers + Google Calendar OAuth — interest to confirmed Google Meet in under 60 seconds"
   - "Full EN/ES bilingual mirror with localized routing (/es/servicios/, /es/reservar/) and bidirectional hreflang SEO"
@@ -32,6 +33,7 @@ key_features:
 metrics:
   - "4 complete courses (A1→C2) — more structured free content than most paid English platforms"
   - "~130+ individual drills in the Executive course alone across 10 drill components"
+  - "Two distinct lead-capture funnels — diagnostic quizzes for individual professionals, audit-guide download for corporate HR decision-makers"
   - "100 Lighthouse performance score — zero database queries on page load"
   - "$0/month infrastructure cost across all services"
   - "< 60 seconds from interest to confirmed booking with Google Meet link"
@@ -88,7 +90,7 @@ tags:
   - "bilingual"
   - "lead-generation"
   - "solopreneur"
-date_completed: "2026-04-17"
+date_completed: "2026-04-27"
 
 # === REPO HEALTH STATUS ===
 # Last audited: 2026-04-16 (capstone upload, CSP hardening, Sentry install, Clerk chatbot fix)
@@ -190,6 +192,14 @@ In 2026, the platform grew beyond lead generation to include a complete A1→C2 
 The Executive course pedagogy is built on the Weak→Strong→Elite (C2) progression model with named executive communication frameworks: Cause→Action→Outcome, Problem→Impact→Solution→Recommendation, Context→Tension→Insight→Action→Outcome, Acknowledge→Explain→Action→Prevention. The capstone converts: learners record a 90-second executive update and submit it to Robert by email (48-hour personal feedback) or book a strategy session — the primary conversion event.
 
 This transforms the platform from a lead generation site into a content moat. A learner who completes the free Executive course has already experienced Robert's methodology at depth. The strategy session becomes the obvious next step, not a cold ask.
+
+## The Corporate Decision-Maker Funnel
+
+The diagnostic quizzes capture individual professionals. The corporate audit guide captures the people who buy training for them. Launched in April 2026, "The Corporate English Training Audit" is a bilingual PDF + video lead magnet aimed at HR managers, training directors, and executives shopping for English coaching providers in Mexico.
+
+Form-based capture lives on the HR-manager landing page and the corporate package service page — and their Spanish mirrors — using the same `LeadMagnetForm` component for parity. Submissions hit a Vercel serverless endpoint that writes to a dedicated Neon table (with full UTM attribution, source page, referrer, and user agent), then sends two emails through Resend: an internal lead alert and a branded delivery email to the prospect. The delivery email presents both formats side-by-side — PDF for skimmers, video for listeners — followed by a three-bullet preview of what's inside the audit and a single CTA to book a 30-minute discovery call. There is no nurture sequence, no pricing teaser, no upsell — the audit is the entire offer, and the call is the entire next step.
+
+The system runs every email through `await Promise.all` before responding so Vercel doesn't terminate the function mid-send, and a `delivered_at` timestamp on the Neon row distinguishes successful delivery from queued/failed. Sentry filters out browser-extension noise so the inbox surfaces only real bugs.
 
 ## The Universal Model
 

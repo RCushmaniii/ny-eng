@@ -24,6 +24,17 @@ Each post links to a specific service page to drive conversions.
 
 ## Completed SEO Work
 
+### 2026-04-27 — Corporate Lead Magnet: "The Corporate English Training Audit"
+- [x] Built bilingual (EN + ES) lead magnet flow targeting HR managers and corporate decision-makers researching English training providers
+- [x] Two delivery formats: PDF (`/downloads/Corporate_English_Audit_{EN,ES}.pdf`) + video (Vercel Blob) — recipient picks preferred format
+- [x] Vercel serverless endpoint `api/corporate-guide/download.ts` — Neon insert + Resend dual-send (admin notification + branded delivery email) with `delivered_at` tracking
+- [x] Branded delivery email: dual-CTA layout (PDF / video), three-bullet "what's inside" preview, dedicated "next step" booking CTA → `/{en/book,es/reservar}/`
+- [x] Form-based capture: `LeadMagnetForm.astro` (full form) + `LeadMagnetCallout.astro` (compact teaser) embedded on `/en/for-hr-managers/`, `/en/services/corporate-package/` and ES mirrors
+- [x] Bug fix: `await Promise.all(emailPromises)` before `res.json()` — Vercel was killing the function before Resend completed, leaving `delivered_at` null
+- [x] CSP fix: added `*.public.blob.vercel-storage.com` to `media-src` so the video plays on the page itself
+- [x] Sentry SDK config (`sentry.client.config.mjs`): filter browser-extension noise (`removeHighlight`, `tapAt`, `onLoad`, SVG `className.indexOf`, duplicate-identifier syntax errors) so the inbox surfaces real bugs only
+- [x] Neon table: `corporate_guide_leads` with UTM tracking, source page, referrer, user agent
+
 ### 2026-04-16 — Post-Launch Bug Fixes + Capstone Upload (v2.1.0)
 - [x] Fixed FinalShiftCard text invisible on unit-10 after hard refresh (CSS cascade layer issue — `.site-container p { color: inherit }` overrode Tailwind `text-*`; fixed with base color + `!important` modifiers)
 - [x] Rebuilt capstone upload: switched from `fetch` POST to `@vercel/blob/client` `upload()` — bypasses Vercel's 4.5 MB serverless body limit; files go browser→CDN directly
