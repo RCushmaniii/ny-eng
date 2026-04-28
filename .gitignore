@@ -50,3 +50,9 @@ wrangler.toml
 
 .vercel
 .env*.local
+
+.env*.local
+
+# Corporate guide videos — hosted on Vercel Blob, not in repo
+public/video/The_Corporate_English_Audit.mp4
+public/video/Auditoria_de_Ingles_Corporativo.mp4
