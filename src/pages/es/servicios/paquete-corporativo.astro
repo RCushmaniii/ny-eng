@@ -5,6 +5,8 @@ import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import Challenge from "@components/sections/Challenge.astro";
 import CtaSection from "@components/sections/CtaSection.astro";
+import LeadMagnetCallout from "@components/sections/LeadMagnetCallout.astro";
+import LeadMagnetForm from "@components/sections/LeadMagnetForm.astro";
 import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
 import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
 import { serviceFaqs } from "@data/service-faqs";
@@ -73,6 +75,9 @@ const faqs = serviceFaqs["corporate-package"]?.es || [];
 
   <!-- Challenge -->
   <Challenge content={challengeContent} background="white" padding="lg" />
+
+  <!-- Lead Magnet Callout (subtle early touchpoint) -->
+  <LeadMagnetCallout lang="es" />
 
   <!-- Estructura del Programa -->
   <section class="bg-light py-16 px-8">
@@ -219,6 +224,9 @@ const faqs = serviceFaqs["corporate-package"]?.es || [];
       </div>
     </div>
   </section>
+
+  <!-- Lead Magnet Form (conversion surface before final CTA) -->
+  <LeadMagnetForm lang="es" sourcePage="/es/servicios/paquete-corporativo/" />
 
   <!-- CTA -->
   <CtaSection content={ctaContent} />

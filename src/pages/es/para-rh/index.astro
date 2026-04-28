@@ -4,6 +4,8 @@ export const prerender = true;
 import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import CtaSection from "@components/sections/CtaSection.astro";
+import LeadMagnetCallout from "@components/sections/LeadMagnetCallout.astro";
+import LeadMagnetForm from "@components/sections/LeadMagnetForm.astro";
 import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
 import { paqueteCorporativo as serviceData } from "@data/services";
 import { testimonials } from "@data/testimonials/es";
@@ -120,6 +122,9 @@ const hrTestimonials = testimonials.filter((t) =>
       </a>
     </div>
   </div>
+
+  <!-- Lead Magnet Callout (early touchpoint) -->
+  <LeadMagnetCallout lang="es" />
 
   <!-- Costo del inglés débil -->
   <section class="bg-gray-900 text-white py-16 px-4 sm:px-8">
@@ -644,6 +649,9 @@ const hrTestimonials = testimonials.filter((t) =>
       </div>
     </div>
   </section>
+
+  <!-- Lead Magnet Form (conversion surface before final CTA) -->
+  <LeadMagnetForm lang="es" sourcePage="/es/para-rh/" />
 
   <!-- CTA -->
   <CtaSection content={ctaContent} />

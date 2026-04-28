@@ -117,6 +117,59 @@ CREATE TRIGGER update_quiz_submissions_updated_at
   EXECUTE FUNCTION update_updated_at_column();
 
 -- ============================================================================
+-- corporate_guide_leads table
+-- Lead magnet: "The Corporate English Training Audit" PDF download
+-- ============================================================================
+CREATE TABLE IF NOT EXISTS corporate_guide_leads (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+
+  -- Lead information
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  company TEXT NOT NULL,
+
+  -- Language version requested (en or es)
+  language TEXT NOT NULL DEFAULT 'en',
+
+  -- Source page that generated the lead
+  source_page TEXT,
+
+  -- Marketing attribution
+  utm_source TEXT,
+  utm_medium TEXT,
+  utm_campaign TEXT,
+  utm_content TEXT,
+  utm_term TEXT,
+
+  -- Behavioral context
+  referrer TEXT,
+  user_agent TEXT,
+
+  -- Follow-up tracking
+  delivered_at TIMESTAMPTZ,
+  booked_consultation BOOLEAN DEFAULT FALSE,
+  booking_date TIMESTAMPTZ,
+
+  -- Admin management
+  status TEXT NOT NULL DEFAULT 'new',
+  admin_notes TEXT,
+
+  -- Timestamps
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_corporate_guide_leads_email ON corporate_guide_leads(email);
+CREATE INDEX IF NOT EXISTS idx_corporate_guide_leads_created_at ON corporate_guide_leads(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_corporate_guide_leads_language ON corporate_guide_leads(language);
+CREATE INDEX IF NOT EXISTS idx_corporate_guide_leads_status ON corporate_guide_leads(status);
+
+CREATE TRIGGER update_corporate_guide_leads_updated_at
+  BEFORE UPDATE ON corporate_guide_leads
+  FOR EACH ROW
+  EXECUTE FUNCTION update_updated_at_column();
+
+-- ============================================================================
 -- Migrations
 -- ============================================================================
 -- Add ai_assessment column (safe to run multiple times)

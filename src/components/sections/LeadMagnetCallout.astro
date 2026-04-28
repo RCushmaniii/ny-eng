@@ -1,0 +1,52 @@
+---
+/**
+ * LeadMagnetCallout — subtle inline callout that links down to the
+ * LeadMagnetForm section anchor on the same page. Non-intrusive, no popup.
+ */
+
+export interface Props {
+  lang?: "en" | "es";
+}
+
+const { lang = "en" } = Astro.props;
+
+const copy =
+  lang === "es"
+    ? {
+        eyebrow: "¿Aún no está listo para agendar?",
+        headline:
+          "Descargue primero La Guía de Evaluación Corporativa — 7 preguntas que debe hacer antes de invertir.",
+        cta: "Ver la guía gratuita",
+        anchor: "#descargar-guia",
+      }
+    : {
+        eyebrow: "Not ready to book a discovery call yet?",
+        headline:
+          "Download The Corporate English Training Audit first — 7 questions to ask before you invest.",
+        cta: "See the free guide",
+        anchor: "#download-the-guide",
+      };
+---
+
+<section class="bg-white py-10 px-4 sm:px-8 border-t border-gray-100">
+  <div class="site-container--small mx-auto max-w-3xl">
+    <div
+      class="bg-blue-50 border border-blue-100 rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+    >
+      <div class="flex-1">
+        <p class="text-xs font-semibold text-blue-700 uppercase tracking-wide mb-1.5">
+          {copy.eyebrow}
+        </p>
+        <p class="text-base text-gray-800 leading-snug">
+          {copy.headline}
+        </p>
+      </div>
+      <a
+        href={copy.anchor}
+        class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm py-2.5 px-5 rounded-lg transition shadow-sm whitespace-nowrap shrink-0"
+      >
+        {copy.cta} <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </div>
+</section>
