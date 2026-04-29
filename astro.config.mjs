@@ -49,6 +49,7 @@ const blogTranslations = {
   "coo-30-second-rule": "/es/blog/regla-30-segundos-coo/",
   "nearshoring-english-gap-cost-of-miscommunication": "/es/blog/brecha-de-ingles-en-nearshoring-costo-de-la-mala-comunicacion/",
   "women-leaders-command-rooms-english": "/es/blog/lideres-mujeres-dominan-ingles/",
+  "7-questions-corporate-english-vendor": "/es/blog/7-preguntas-proveedor-ingles-corporativo/",
 };
 
 // Reverse map (ES slug -> EN path)
