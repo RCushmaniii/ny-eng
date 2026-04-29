@@ -24,53 +24,57 @@ They all look reasonable. Polished decks. Comparable pricing. Glossy case studie
 
 And yet, something feels off. Maybe you've been here before — invested in training that produced certificates but no real performance change. Maybe a peer at another company recently mentioned that their last vendor relationship ended in quiet disappointment. Maybe you're just experienced enough to know that polished proposals don't always translate into results.
 
-The truth is that most corporate English training in Mexico is sold to HR managers using the same playbook: assessment, curriculum, weekly sessions, completion certificates. The differences between vendors are often surface-level — branding, packaging, salesperson polish — while the underlying methodology is nearly identical, and nearly identically generic.
+Most corporate English programs in Mexico don't fail because employees aren't trying. They fail because the program was never designed to produce business results. That's the illusion: employees attend sessions, finish the curriculum, get a certificate, and the budget is approved for next year — because no one measured anything that actually mattered. The reality, on the manager's side, is unchanged behavior in the meetings, calls, and written exchanges that the training was supposed to fix.
 
-The seven questions below cut through that. Asked sincerely, they'll surface a vendor's actual approach within fifteen minutes of conversation. The answers reveal whether you're looking at a program designed to change how your team communicates, or a program designed to produce something measurable in an L&D report.
+For companies with international teams or global clients, English is not a soft skill. It's operational infrastructure. Unclear communication delays decisions, damages client relationships, drives rework, and quietly closes off opportunities. The right investment produces visible results within months. The wrong investment produces completed attendance records and nothing else.
 
-If a vendor can't answer these comfortably, that's the answer.
-
----
-
-## 1. What does success actually look like for our team — and how will we measure it?
-
-This is the question that frames everything else.
-
-A real corporate English program defines success in terms of behavior change. Specific situations your team will handle differently after the program. Specific frameworks they'll deploy. Specific moments where the bottleneck of "my English isn't good enough" will no longer apply.
-
-Vendors who can't answer this question — or who answer it with "improved fluency" or "higher CEFR scores" — are telling you that they don't think in terms of performance. They think in terms of completion metrics. The certificate is the deliverable. Your team's actual ability to lead a US client call without rehearsing every sentence is incidental.
-
-Listen carefully to how a vendor responds. The right answer sounds like: *"Tell me what your management team needs to do in English that they currently can't do well — and we'll work backwards from there. Your success metrics should be tied to those specific situations."*
-
-The wrong answer sounds like: *"We have a comprehensive assessment system that tracks progress across multiple linguistic competencies."*
+The seven questions below are the structured way to tell which one you're being sold. Asked sincerely, they surface a vendor's actual approach within fifteen minutes of conversation. If a vendor can't answer them comfortably, that's the answer.
 
 ---
 
-## 2. What does a typical session actually look like — performance simulation, conversation practice, or grammar instruction?
+## 1. Is the program built for your team, or is it generic?
 
-The honest answer to this question separates real coaching from glorified tutoring.
+"Business English" is a category, not a program.
 
-Generic programs run sessions that look like classes: vocabulary drills, grammar review, structured exercises from a textbook or app. Conversation practice happens, but it's loosely structured — talk about your weekend, describe your job, discuss this article.
+A real corporate English program treats your team as a set of distinct roles with distinct communication needs. A software engineer's job is to write clear technical documentation, navigate asynchronous discussions, and explain technical issues in live conversations — system errors and delayed sprints are the cost of failure. A sales director's job is to lead high-stakes client calls and deliver persuasive presentations — lost revenue and damaged trust are the cost of failure.
 
-Real corporate English coaching looks different. Sessions are built around performance simulation: rehearsing the actual scenarios your team will face. Mock executive presentations. Role-played client calls. Live practice of objection handling. Real materials from your team's actual work — emails they need to send, decks they need to deliver, meetings they need to lead.
+Those are not the same skill set. The communication gaps are different. The risk profile is different. The training that closes those gaps cannot be the same content delivered with a different cover sheet.
 
-If a vendor describes their sessions in textbook-curriculum terms, that's what your team will get. If a vendor describes their sessions in performance-rehearsal terms, you're looking at something different.
+The diagnostic question is direct: *"How would you structure sessions differently for a developer versus a director?"*
 
-Either approach can be valuable. But you should know which one you're buying — and whether it matches what your team actually needs.
+If the provider gives the same answer for every role — same materials, same exercises, same approach with surface-level adjustments — the program is generic. Generic programs produce generic results.
+
+What you should hear instead is something specific: that the developer's sessions will lean toward technical-discussion practice, asynchronous-text clarity, and explaining-without-jargon drills, while the director's sessions will lean toward live-pressure simulation, persuasive structure, and recovery-from-objection rehearsal. If a vendor can't explain that difference in detail, they don't have it.
 
 ---
 
-## 3. How is the content personalized to each participant's role, industry, and actual communication gaps?
+## 2. How does the program measure progress?
 
-Every vendor will say their content is personalized.
+The trap is grammar test scores.
 
-The right follow-up question is: *show me what that means in practice.*
+The trap works because tests are easy to administer, easy to score, easy to put in an L&D report. They produce numbers that go up. They give the impression of progress. And they have almost nothing to do with whether your team can actually function in English when it counts.
 
-Generic personalization looks like a placement test that sorts participants into A1, A2, B1, B2, C1 levels — and then assigns each level a different version of the same standardized curriculum. That's not personalization. That's stratification.
+The standard is demonstrated business outcomes — specific capabilities tied to real situations, documented before the program starts and re-evaluated when it ends. Not "Lucia's CEFR level improved from B2 to B2+." Instead: *"By week 8, this manager can lead a client call independently."* *"This engineer can explain technical issues live without needing follow-up clarification."* *"This director can present quarterly results without preparation anxiety."*
 
-Real personalization looks like this: each participant has a customized communication profile based on their role, the audiences they communicate with, and the specific situations where their English breaks down. The materials in their sessions are drawn from their actual work — their emails, their decks, their negotiation scripts. Their coaching addresses their specific weaknesses, not a generic curriculum's idea of where someone at their level should improve next.
+These are the kinds of statements an HR sponsor can read, immediately understand, and present to a CFO.
 
-If a vendor's "personalized program" looks identical for your CFO and your Operations Manager, the personalization is cosmetic.
+If a vendor's measurement system produces level-jump claims and percentage-improvement charts but no documented before-and-after of actual job performance, you have nothing to show for the spend when the program ends.
+
+---
+
+## 3. How long until we see results in real business situations?
+
+A serious vendor can describe what changes happen when, and what method produces those changes.
+
+The shape of a real corporate English program looks roughly like this. **Weeks 1 through 4: cleaner communication.** Reduced daily misunderstandings. Confident participation in meetings that participants previously stayed quiet in. **Weeks 5 through 8: more structured responses.** Reduced hesitation. Greater control in discussions, especially when responding to unexpected questions. **Weeks 8 through 12 and beyond: leading conversations.** Handling pressure effectively. Speaking with the kind of clarity that signals authority rather than effort.
+
+That timeline assumes consistent work — both inside and outside sessions — and a structured methodology that targets each phase deliberately. It is not a guarantee. It is a benchmark for what good looks like.
+
+Be cautious of programs that promise faster results without explaining the method. Higher-level communication outcomes — executive presence, negotiation under pressure, persuasive presentation — require two to four months of focused work. Anyone selling those outcomes in four weeks is selling something else: hope, packaging, or a different (lower) definition of "result."
+
+The right answer to this question sounds like: *"Here's what your team will be able to do at week 4, week 8, and week 12 — and here's the work, in and outside sessions, that produces those changes."*
+
+The wrong answer sounds like: *"Every learner is different, but most see significant improvement throughout the program."*
 
 <aside class="not-prose my-12 rounded-xl border border-blue-100 bg-blue-50 p-6 sm:p-8">
   <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -84,65 +88,66 @@ If a vendor's "personalized program" looks identical for your CFO and your Opera
 
 ---
 
-## 4. What's the actual professional background of the coach assigned to my team — and will the same coach work with us throughout the program?
+## 4. What is the instruction format, and why does it matter?
 
-This question reveals more about a vendor than almost any other.
+There are three formats. Each has a different use.
 
-Many providers in Mexico operate on a staffing-agency model: a sales team closes the contract, and then the actual instruction is delivered by a roster of contract teachers who may or may not have business experience, who may or may not be the person who showed up to the sales call, and who may rotate in and out depending on availability.
+**Large group classes** move at the pace of the group. A C1 participant in a B1 class spends most of their session waiting; a B1 participant in a C1 class spends most of their session lost. Large groups cannot address individual weaknesses, and they almost always default to the lowest common denominator.
 
-That model produces inconsistent results. The person teaching your CFO supplier negotiations should understand supplier negotiations. The person coaching your Operations Director on cross-border meetings should have real experience in cross-border meetings. Native English fluency and a TEFL certificate are necessary but nowhere near sufficient for executive-level coaching.
+**Small groups of three or four** are effective when the peers share the same role, the same gaps, and the same need for interactive practice. Four operations managers all preparing for cross-border quarterly reviews will accelerate together — they're rehearsing the same scenarios, hearing each other's mistakes, absorbing each other's improvements. The same group composed of a CFO, an HR director, a developer, and a sales lead will not.
 
-Ask: who specifically will work with my team? What's their professional background outside of English teaching? Have they ever worked at a senior level in industry? Will the same person be there in week 1, week 6, and week 12?
+**One-on-one instruction** is the fastest path to improvement for your highest-priority roles. There's no group pace to match, no peer composition to manage. Every minute is targeted at the participant's specific gaps.
 
-If the answers are vague, you're being sold a brand, not a coach.
+The diagnostic question is: *"How do you determine the format for each employee?"*
 
----
+A provider that offers only one format isn't personalizing the program — they're simplifying their own operations. The right answer accounts for the participant's role, the urgency, the budget, and whether their development needs interactive peer work or focused individual coaching.
 
-## 5. Is there a group component, or is all training done individually in isolation?
-
-Most corporate English programs are delivered one-on-one or in small groups of similar level. That has its place — individual instruction is where the deepest skill-building happens.
-
-But there's a category of professional moment that individual coaching alone cannot prepare for: speaking English in front of peers, leadership, or clients, where the social and performance pressure is real.
-
-Many fluent professionals freeze in group settings even when they're confident in 1:1 conversation. The fear of being judged by colleagues is its own performance challenge — separate from the language itself. Programs that never expose participants to that condition produce graduates who pass tests but freeze in meetings.
-
-Ask whether the program includes monthly or quarterly group simulations — board presentation rehearsals, cross-functional negotiations, mock client calls with team members playing skeptical observers. If everything is individual and remote, your team will improve in isolation but not necessarily in the conditions that actually matter.
+One additional point: even programs that deliver primarily one-on-one instruction benefit from periodic group simulations — board presentation rehearsals, cross-functional negotiations — because there's a category of professional moment that one-on-one alone cannot prepare for. Speaking under social pressure, in front of peers or leadership, is a separate skill from speaking with a coach.
 
 ---
 
-## 6. How do you measure progress — is there a documented baseline assessment and a documented final deliverable?
+## 5. Does the instructor understand business, not just language?
 
-"Trust us, your team is improving" isn't a valid program output for an HR manager who has to defend the spend internally.
+There's a meaningful difference between a certified language teacher and a business communication coach.
 
-A serious program produces two artifacts. First, a baseline assessment — not a placement test that produces a CEFR level, but a documented evaluation of each participant's specific communication strengths and gaps relative to their actual job. Second, a final deliverable — a documented assessment at the end of the program comparing where each participant started to where they finished, with concrete examples of behavior change.
+A certified language teacher has training in linguistics and teaching methods. That's necessary, but it doesn't carry your team's communication into actual business situations. Knowing how to explain the past perfect tense doesn't qualify someone to coach a CFO through a supplier negotiation.
 
-These artifacts should be specific enough that you, as the HR sponsor, can read them and immediately understand what the program produced. Not *"advanced fluency improvement of 1.2 levels,"* but *"Lucia can now lead her quarterly review with US headquarters without preparing scripts in advance — a behavior we documented her struggling with during the baseline assessment."*
+A business communication coach combines strong teaching skills with direct experience in professional contexts. They've worked at a senior level in industry. They know what's at stake when a message is unclear at the wrong moment. They can listen to your operations director rehearse a quarterly review and, alongside any English correction, immediately identify where the structure of the argument is going to lose the room.
 
-If a vendor's measurement system produces vague language and no documented before-and-after, you have nothing to show your CFO when the program ends.
+The diagnostic question is: *"What's the instructor's professional background outside the classroom? Have they coached the specific type of professional our team needs?"*
 
----
-
-## 7. What's your policy on participants who attend sessions but don't engage outside of them?
-
-This is the question that vendors expect least and that reveals the most.
-
-Real adult language acquisition requires effort outside of sessions. Watching content in English. Reading in English. Practicing in real situations. One or two hours of weekly coaching is not enough on its own — it directs the work, but the work has to happen.
-
-Most programs have no policy at all. Participants attend, complete enough exercises to earn a certificate, and the program produces certificates regardless of whether anyone actually changed their behavior. The vendor gets paid. HR gets a clean L&D report. Nothing changes.
-
-A serious program has accountability built into the structure. Pre-session preparation that the coach reviews. Between-session work the coach references. A clear conversation early in the program that addresses what happens if a participant repeatedly attends but doesn't engage — including the option to pause their participation and reallocate the seat to someone who will use it.
-
-Vendors who don't have an answer to this are signaling that they're optimized for retention, not results. They'd rather keep an unengaged participant in the program for the full contract than have an honest conversation about what's not working.
+If the answer is vague, or if the instructor is generic ("an experienced ESL professional with native fluency"), you're being sold a teacher. For executive coaching, that's not enough. Your team's coach should be someone whose own résumé, in any language, would be credible to your team.
 
 ---
 
-## A note on warning signs
+## 6. Does the program use real work, or simulated exercises?
 
-The questions above will reveal a lot. So will *how* a vendor responds to them.
+The single biggest predictor of whether English training transfers to job performance is whether sessions use the participant's actual work materials.
 
-The vendors who have a real methodology will answer specifically and confidently. They've thought about these questions before. They'll likely have asked you a few of their own — about your team, your industry, your specific situations — by the end of the conversation.
+Generic programs use fictional business situations: textbook case studies, standardized exercises, made-up companies in made-up industries. Improvements happen in the classroom. Then participants leave the classroom and discover that their improvements don't transfer at speed or depth — because the gap between the simulated material and their real work is exactly where their breakdown happens.
 
-The vendors who don't have a real methodology will respond with marketing language. *"We follow industry best practices."* *"Our methodology is based on the latest pedagogical research."* *"Our coaches are highly qualified professionals with extensive international experience."* This kind of language is its own warning sign — it sounds substantive, but it answers nothing concrete.
+Real-work programs use the participant's actual materials. The email they need to send tomorrow. The presentation they're preparing for next month's board meeting. The client scenario that fell apart last week. The negotiation transcript they want to redo. Improvements made on this material transfer immediately, because the material *is* the job.
+
+The diagnostic question is: *"Will sessions use my team's actual emails, presentations, and meeting recordings — or are you working from a standard curriculum?"*
+
+If the answer is anything other than yes — if there's any version of "we have an extensive library of business scenarios that closely mirror real work" — you're getting classroom improvement, not on-the-job improvement.
+
+---
+
+## 7. What does success look like, and who is responsible?
+
+A real program operates on a three-way accountability structure.
+
+**The learner** practices consistently and applies corrections in real conversations. Without that, no methodology works. **The instructor** diagnoses gaps, provides real-time correction under pressure, and adjusts the trajectory based on what's working. **The organization** prioritizes training time, aligns the development with actual job demands, and treats the program as an investment rather than a benefit.
+
+Success is measured along three dimensions. **Execution quality**: clarity, structure, faster response time. **Risk reduction**: fewer misunderstandings, faster decision cycles, fewer mis-routed conversations through a single bilingual bottleneck person. **Support reduction**: less prompting from peers, fewer corrections, more autonomous handling of high-stakes situations.
+
+Underneath all three is a single, simpler measurement: the curve from dependency to autonomy. Participants come in needing support — help finding words, external correction, time to organize thoughts. They leave handling conversations independently and at speed.
+
+Before: *"I think maybe the issue is... something with the system."*
+After: *"The issue is in the integration layer."*
+
+That's not a CEFR jump. It's a person who can now do their job in English. Programs that deliver real outcomes can articulate exactly who is responsible for what, and exactly how progress will be visible at every stage. Programs that frame success in any other terms — completion percentages, satisfaction scores, level-jump certificates — don't have the accountability structure to produce that change.
 
 <aside class="not-prose my-12 rounded-xl border border-blue-100 bg-blue-50 p-6 sm:p-8">
   <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -153,6 +158,28 @@ The vendors who don't have a real methodology will respond with marketing langua
     <a href="/en/for-hr-managers/?utm_source=blog&utm_medium=callout&utm_campaign=audit&utm_content=7-questions-end#download-the-guide" class="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-blue-700">Download the audit <span aria-hidden="true">→</span></a>
   </div>
 </aside>
+
+---
+
+## Efficiency vs. effectiveness — the final filter
+
+If you're still unsure after asking the seven questions, hold each proposal up against this binary.
+
+**Signs of an efficiency-driven program** (warning signs):
+
+- "All levels welcome" with no role segmentation
+- No baseline assessment tied to real job demands
+- Price is the primary differentiator
+- Fixed, generic curriculum regardless of industry
+
+**Signs of an outcome-driven program**:
+
+- Custom-built content based on level, role, and professional goals
+- Progress tracked via execution quality, not just language proficiency
+- Format and intensity adjust dynamically as the learner develops
+- Performance measured under real business conditions
+
+Efficiency-driven programs optimize for the vendor's operating costs. Outcome-driven programs optimize for your team's results. They cost more. They're worth more. And they're rarer than the proposals on your desk would suggest.
 
 ---
 
