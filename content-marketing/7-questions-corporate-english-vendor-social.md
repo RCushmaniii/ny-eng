@@ -9,20 +9,20 @@
 
 You're sitting on three corporate English training proposals. They all look reasonable — polished decks, comparable pricing, glossy case studies featuring brands you recognize. There's no obvious basis for choice.
 
-After years of watching Mexican companies invest in corporate English training only to receive certificates instead of performance, I wrote down the 7 questions that separate substance from polish.
+Most corporate English programs in Mexico don't fail because employees aren't trying. They fail because the program was never designed to produce business results. Employees attend sessions, finish the curriculum, get a certificate, and the budget is approved for next year — because no one measured anything that actually mattered.
 
-Asked sincerely, they surface a vendor's actual approach within 15 minutes. The answers reveal whether you're looking at a program designed to change how your team communicates, or a program designed to produce something measurable in an L&D report.
+For companies with international teams or global clients, English isn't a soft skill. It's operational infrastructure.
 
-A few of them:
+I wrote down the 7 questions that separate substance from polish. Asked sincerely, they surface a vendor's actual approach within 15 minutes. A few of them:
 
-→ "What does success actually look like for our team — and how will we measure it?"
-   Vendors who answer "improved fluency" or "higher CEFR scores" are telling you that they think in completion metrics, not behavior change.
+→ "Is the program built for our team, or is it generic?"
+   The diagnostic that cuts through every polished proposal: *"How would you structure sessions differently for a developer versus a director?"* If the answer is the same for every role, the program is generic.
 
-→ "What's the actual professional background of the coach assigned to my team — and will the same coach work with us throughout the program?"
-   Many providers in Mexico operate on a staffing-agency model. Sales closes the deal; rotating contract teachers deliver the work. That model produces inconsistent results.
+→ "Does the instructor understand business, not just language?"
+   There's a meaningful difference between a certified language teacher and a business communication coach. Knowing how to explain the past perfect tense doesn't qualify someone to coach a CFO through a supplier negotiation.
 
-→ "What's your policy on participants who attend sessions but don't engage outside of them?"
-   The question vendors expect least and that reveals the most. Most programs have no policy at all — and that's the answer.
+→ "Does the program use real work, or simulated exercises?"
+   The single biggest predictor of whether English training transfers to job performance is whether sessions use the participant's actual emails, presentations, and meeting recordings.
 
 The full breakdown of all 7 questions, with concrete "right answer / wrong answer" examples, is in the post:
 
@@ -37,34 +37,35 @@ If you're evaluating proposals right now, this is the framework I wish every HR 
 ## Twitter/X Thread
 
 **Tweet 1 (Hook):**
-Most corporate English training in Mexico is sold to HR managers using the same playbook.
+Most corporate English programs in Mexico don't fail because employees aren't trying.
 
-Polished proposals. Comparable pricing. Identical underlying methodology.
+They fail because the program was never designed to produce business results.
 
 7 questions that surface a vendor's real approach in 15 minutes (thread):
 
 **Tweet 2:**
-Q1: "What does success actually look like for our team — and how will we measure it?"
+Q1: "Is the program built for our team, or is it generic?"
 
-Wrong answer: "Improved fluency."
-Right answer: "Tell me what your team needs to do in English that they currently can't — we'll work backwards from there."
+The diagnostic: *"How would you structure sessions differently for a developer versus a director?"*
+
+If the answer is the same for every role, the program is generic. Generic programs produce generic results.
 
 **Tweet 3:**
-Q4: "What's the actual professional background of the coach assigned to my team — and will the same coach work with us throughout the program?"
+Q5: "Does the instructor understand business, not just language?"
 
-Many providers run on a staffing-agency model. Sales closes the deal. Rotating contract teachers deliver the work.
+A certified language teacher has training in linguistics. A business communication coach has worked at a senior level in industry.
 
-That's why results vary.
+Knowing the past perfect tense doesn't qualify someone to coach a CFO.
 
 **Tweet 4:**
-Q7: "What's your policy on participants who attend but don't engage outside sessions?"
+Q6: "Does the program use real work, or simulated exercises?"
 
-The question vendors expect least.
+Generic programs use textbook case studies. Real programs use the participant's actual emails, presentations, and meeting recordings.
 
-Most programs have no policy at all — they want retention, not results. They'd rather keep an unengaged seat filled for the full contract than have an honest conversation.
+The first improves classroom skills. The second improves on-the-job skills.
 
 **Tweet 5 (CTA):**
-The other 4 questions, plus warning signs to watch for in vendor proposals, are in the full post:
+The other 4 questions, plus the efficiency-vs-effectiveness red-flag matrix, are in the full post:
 
 https://www.nyenglishteacher.com/en/blog/7-questions-corporate-english-vendor/
 
@@ -78,7 +79,9 @@ If you're evaluating proposals right now, this is the framework to use.
 
 If you're an HR manager or L&D director evaluating corporate English training proposals in Mexico, this one's for you.
 
-I just published the 7 questions that separate real performance programs from glossy proposals — questions like "what does success actually look like for our team" and "will the same coach be there in week 1, week 6, and week 12, or are you sending whoever is available?" Asked in a vendor call, they surface a provider's real methodology within 15 minutes.
+For companies with international teams or global clients, English isn't a soft skill — it's operational infrastructure. Unclear communication delays decisions, damages client relationships, and quietly closes off opportunities. The right training investment produces visible results within months. The wrong investment produces completed attendance records and nothing else.
+
+I just published the 7 questions that separate real performance programs from glossy proposals — questions like *"How would you structure sessions differently for a developer versus a director?"* and *"Will sessions use my team's actual emails and presentations, or are you working from a standard curriculum?"* Asked in a vendor call, they surface a provider's real methodology within 15 minutes.
 
 If a vendor can't answer them comfortably, that's information.
 
