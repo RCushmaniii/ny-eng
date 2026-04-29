@@ -56,3 +56,6 @@ wrangler.toml
 # Corporate guide videos — hosted on Vercel Blob, not in repo
 public/video/The_Corporate_English_Audit.mp4
 public/video/Auditoria_de_Ingles_Corporativo.mp4
+
+# Generated audit/validator reports — regenerated on every run, no value in source control
+project-reports/
