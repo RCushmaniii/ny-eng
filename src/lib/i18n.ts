@@ -90,6 +90,18 @@ export type TKey =
   | "course/beginners/unit-10"
   | "course/beginners/exam"
   | "course/beginners/pronunciation"
+  | "course/elementary"
+  | "course/elementary/unit-1"
+  | "course/elementary/unit-2"
+  | "course/elementary/unit-3"
+  | "course/elementary/unit-4"
+  | "course/elementary/unit-5"
+  | "course/elementary/unit-6"
+  | "course/elementary/unit-7"
+  | "course/elementary/unit-8"
+  | "course/elementary/unit-9"
+  | "course/elementary/unit-10"
+  | "course/elementary/exam"
   | "course/intermediate"
   | "course/intermediate/unit-1"
   | "course/intermediate/unit-2"
@@ -231,6 +243,18 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/beginners/unit-10": "/en/course/beginners/unit-10/",
     "course/beginners/exam": "/en/course/beginners/exam/",
     "course/beginners/pronunciation": "/en/course/beginners/pronunciation/",
+    "course/elementary": "/en/course/elementary/",
+    "course/elementary/unit-1": "/en/course/elementary/unit-1/",
+    "course/elementary/unit-2": "/en/course/elementary/unit-2/",
+    "course/elementary/unit-3": "/en/course/elementary/unit-3/",
+    "course/elementary/unit-4": "/en/course/elementary/unit-4/",
+    "course/elementary/unit-5": "/en/course/elementary/unit-5/",
+    "course/elementary/unit-6": "/en/course/elementary/unit-6/",
+    "course/elementary/unit-7": "/en/course/elementary/unit-7/",
+    "course/elementary/unit-8": "/en/course/elementary/unit-8/",
+    "course/elementary/unit-9": "/en/course/elementary/unit-9/",
+    "course/elementary/unit-10": "/en/course/elementary/unit-10/",
+    "course/elementary/exam": "/en/course/elementary/exam/",
     "course/intermediate": "/en/course/intermediate/",
     "course/intermediate/unit-1": "/en/course/intermediate/unit-1/",
     "course/intermediate/unit-2": "/en/course/intermediate/unit-2/",
@@ -376,6 +400,18 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/beginners/unit-10": "/es/curso/principiantes/unidad-10/",
     "course/beginners/exam": "/es/curso/principiantes/examen/",
     "course/beginners/pronunciation": "/es/curso/principiantes/pronunciacion/",
+    "course/elementary": "/es/curso/elemental/",
+    "course/elementary/unit-1": "/es/curso/elemental/unidad-1/",
+    "course/elementary/unit-2": "/es/curso/elemental/unidad-2/",
+    "course/elementary/unit-3": "/es/curso/elemental/unidad-3/",
+    "course/elementary/unit-4": "/es/curso/elemental/unidad-4/",
+    "course/elementary/unit-5": "/es/curso/elemental/unidad-5/",
+    "course/elementary/unit-6": "/es/curso/elemental/unidad-6/",
+    "course/elementary/unit-7": "/es/curso/elemental/unidad-7/",
+    "course/elementary/unit-8": "/es/curso/elemental/unidad-8/",
+    "course/elementary/unit-9": "/es/curso/elemental/unidad-9/",
+    "course/elementary/unit-10": "/es/curso/elemental/unidad-10/",
+    "course/elementary/exam": "/es/curso/elemental/examen/",
     "course/intermediate": "/es/curso/intermedio/",
     "course/intermediate/unit-1": "/es/curso/intermedio/unidad-1/",
     "course/intermediate/unit-2": "/es/curso/intermedio/unidad-2/",
