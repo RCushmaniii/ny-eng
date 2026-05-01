@@ -60,7 +60,7 @@ export const elementaryUnits: ElementaryUnit[] = [
     pronunciationFocus: "Was vs. were stress patterns",
     pronunciationFocusEs: "Patrones de acento en was vs. were",
     icon: "BookOpen",
-    published: false,
+    published: true,
   },
   {
     id: 3,
