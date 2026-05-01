@@ -8,8 +8,8 @@ categories:
   - "High-Impact Communication"
 readingTime: "8 min read"
 audience: "Senior professionals, directors, and high-performing managers deciding whether to invest in elevating their executive English"
-featuredImage: "./images/executive-english-coaching.jpg"
-imageAlt: "Senior executive speaking with calm authority during a high-stakes leadership meeting"
+featuredImage: "./images/why-executive-english-accelerates-careers.webp"
+imageAlt: "Senior executive standing at a Manhattan corner-office window, looking out over Midtown and the Empire State Building"
 translations:
   es: "/es/blog/por-que-ingles-ejecutivo-acelera-tu-carrera/"
 publish: true
@@ -24,7 +24,7 @@ Sylvia Ann Hewlett's research at Coqual surveyed nearly 4,000 college-educated p
 
 That number is the entire reason this article exists.
 
-If you are a senior professional weighing whether to invest in elevating your executive English, the question you are really asking is: *does this move the needle on my career, or is it polish?* The honest answer, supported by decades of research, is that it moves the needle. Often more than the technical skill you have spent years developing.
+If you are weighing whether to invest in elevating your executive English, the question you are really asking is: *does this move the needle on my career, or is it polish?* The honest answer, supported by decades of research, is that it moves the needle. Often more than the technical skill you have spent years developing.
 
 This is not motivation. This is the data.
 
@@ -48,7 +48,7 @@ In 1980, linguists William O'Barr and Bowman Atkins published a study of courtro
 
 The implication is uncomfortable. The instinct most professionals develop in their second language — softening, qualifying, adding "I think maybe," over-explaining — is the exact pattern listeners interpret as low-status. Your competence does not show through. Your hesitation does.
 
-Filler words add their own measurable tax. A study analyzing sales calls found that success rates dropped sharply once filler words ("um," "uh," "like") exceeded **1.3% of total words spoken**. (Rosenblum et al., *Advances in Physiology Education*, 2022.) Cal Poly research confirms the same pattern in professional contexts: filler density correlates inversely with perceived competence and credibility.
+Filler words add their own measurable tax. A study analyzing sales calls found that success rates dropped sharply once filler words ("um," "uh," "like") exceeded **1.3% of total words spoken** (Rosenblum et al., *Advances in Physiology Education*, 2022). Earlier work out of Cal Poly's Communication Studies department (Gikas & Sutcliffe) found the same pattern across professional settings: filler density correlates inversely with perceived competence and credibility, regardless of who is speaking.
 
 These are small linguistic habits. The career cost compounds for years.
 
@@ -56,7 +56,7 @@ These are small linguistic habits. The career cost compounds for years.
 
 ## The four signals that quietly cost you the room
 
-Senior leaders who command rooms are not the loudest, the most charismatic, or the most articulate. They are the ones who have learned to suppress four specific signals that mark someone as not-quite-ready:
+Senior leaders who command rooms are not the loudest, the most charismatic, or the most polished. They are the ones who have learned to suppress four specific signals that mark someone as not-quite-ready:
 
 **Emotion.** Visible reactivity reads as loss of control. Peer-reviewed research links cognitive reappraisal — the ability to reframe rather than react — to higher leadership performance ratings from both supervisors and peers (Lopes et al., *Frontiers in Psychology*). The senior leader does not say "this is a disaster." They say "this is impacting performance and requires adjustment." Same reality. Different signal.
 
@@ -64,7 +64,7 @@ Senior leaders who command rooms are not the loudest, the most charismatic, or t
 
 **Unpreparedness.** "I'm not sure yet" sounds honest, but in a senior meeting it reads as unprepared. "The analysis is still being finalized" communicates the same uncertainty without the credibility cost. Executives are allowed to not know. They are not allowed to *sound* unprepared.
 
-**Deference where authority is required.** "Can you take a look when you have time?" gives away control. "This requires your review" preserves it. The most consistent pattern across senior leaders is that they do not soften where the situation calls for direction. Softening is not politeness — it is delegation of authority that the moment did not require you to delegate.
+**Deference where authority is required.** "Can you take a look when you have time?" gives away control. "This requires your review" preserves it. The most consistent pattern across senior leaders is that they do not soften where the situation calls for direction. Softening is not politeness — it is a quiet transfer of authority the moment did not ask you to make.
 
 These four shifts are not personality. They are habits — and habits are trainable.
 
@@ -98,19 +98,19 @@ The professionals who advance fastest add one more layer on top of executive sty
 
 Communication researchers Roderick Hart and Don Burks named this *rhetorical sensitivity* in 1972 (*Speech Monographs*) — the ability to "undergo the strain of adaptation" while preserving message integrity. Andrew Molinsky at Brandeis later quantified the cognitive cost of cross-cultural code-switching (*Academy of Management Review*, 2007), and Anicich and Hirsh (2017, *AMR*) documented how middle-power roles specifically require leaders to switch register vertically — deferential up, directive down, peer-level lateral — without falling into "behavioral inhibition."
 
-In practice this means: how you brief the board is not how you talk to your engineering team, which is not how you negotiate with a vendor, which is not how you reassure a client whose project just slipped. The frame stays consistent — calm, structured, decision-oriented. The register flexes. Leaders who can do this fluently in English open doors that monolingual or single-register communicators cannot.
+In practice this means: how you brief the board is not how you talk to your engineering team, which is not how you negotiate with a vendor, which is not how you reassure a client whose project just slipped. The frame stays consistent — calm, structured, decision-oriented. The register flexes. Leaders who can do this fluently in English open doors that single-register communicators never see.
 
 This is where most "advanced English" training stops short. Vocabulary and grammar do not teach you when to compress and when to expand, when to push and when to defer, when to be the room's structure and when to be its diplomat.
 
 ---
 
-## What changes when you train this
+## What changes when you close the gap
 
-The professionals who have done this work consistently report the same shift: they stop being talked over, ideas they have always had start landing the first time, and they get pulled into the conversations that shape decisions rather than the ones that execute them.
+The professionals who have done this work consistently report the same shift: they stop being talked over, the ideas they have always had start landing the first time they say them, and they get pulled into the conversations that *shape* decisions rather than the ones that execute them.
 
 That is not a soft transformation. That is the 26% Hewlett's research identified — moving in your favor instead of against you.
 
-If your English is the ceiling on what you have built, the data is unambiguous: it is worth the work to raise it.
+If your English is the ceiling on what you have built, the data is unambiguous: it is worth raising.
 
 ---
 

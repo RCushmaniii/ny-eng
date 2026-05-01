@@ -8,8 +8,8 @@ categories:
   - "Comunicación de Alto Impacto"
 readingTime: "8 min de lectura"
 audience: "Profesionales senior, directores y gerentes de alto desempeño que están decidiendo si invertir en elevar su inglés ejecutivo"
-featuredImage: "./images/executive-english-coaching.jpg"
-imageAlt: "Ejecutivo senior hablando con autoridad y calma durante una junta de liderazgo de alto impacto"
+featuredImage: "./images/por-que-ingles-ejecutivo-acelera-tu-carrera.webp"
+imageAlt: "Ejecutivo senior parado frente al ventanal de una oficina de esquina en Manhattan, mirando hacia Midtown y el Empire State Building"
 translations:
   en: "/en/blog/why-executive-english-accelerates-careers/"
 publish: true
@@ -24,7 +24,7 @@ La investigación de Sylvia Ann Hewlett en Coqual encuestó a casi 4,000 profesi
 
 Ese número es la razón completa por la que existe este artículo.
 
-Si eres un profesional senior evaluando si invertir en elevar tu inglés ejecutivo, la pregunta que realmente estás haciendo es: *¿esto mueve la aguja en mi carrera, o es solo pulir?* La respuesta honesta, respaldada por décadas de investigación, es que mueve la aguja. Frecuentemente más que la habilidad técnica que has pasado años desarrollando.
+Si estás evaluando si invertir en elevar tu inglés ejecutivo, la pregunta que realmente estás haciendo es: *¿esto mueve la aguja en mi carrera, o es solo pulir?* La respuesta honesta, respaldada por décadas de investigación, es que mueve la aguja. Frecuentemente más que la habilidad técnica que has pasado años desarrollando.
 
 Esto no es motivación. Son los datos.
 
@@ -48,7 +48,7 @@ En 1980, los lingüistas William O'Barr y Bowman Atkins publicaron un estudio de
 
 La implicación es incómoda. El instinto que la mayoría de los profesionales desarrolla en su segundo idioma — suavizar, calificar, agregar "yo creo que tal vez", sobre-explicar — es exactamente el patrón que los oyentes interpretan como bajo estatus. Tu competencia no se transmite. Tu vacilación sí.
 
-Las muletillas tienen su propio impuesto medible. Un estudio analizando llamadas de ventas encontró que las tasas de éxito caían bruscamente una vez que las muletillas ("um", "eh", "este") excedían el **1.3% del total de palabras habladas**. (Rosenblum et al., *Advances in Physiology Education*, 2022.) La investigación de Cal Poly confirma el mismo patrón en contextos profesionales: la densidad de muletillas correlaciona inversamente con la competencia y credibilidad percibidas.
+Las muletillas tienen su propio impuesto medible. Un estudio analizando llamadas de ventas encontró que las tasas de éxito caían bruscamente una vez que las muletillas ("um", "eh", "este") excedían el **1.3% del total de palabras habladas** (Rosenblum et al., *Advances in Physiology Education*, 2022). Trabajo anterior del departamento de Estudios de Comunicación de Cal Poly (Gikas y Sutcliffe) encontró el mismo patrón en entornos profesionales: la densidad de muletillas correlaciona inversamente con la competencia y credibilidad percibidas, sin importar quién hable.
 
 Estos son pequeños hábitos lingüísticos. El costo a la carrera se acumula durante años.
 
@@ -56,7 +56,7 @@ Estos son pequeños hábitos lingüísticos. El costo a la carrera se acumula du
 
 ## Las cuatro señales que silenciosamente te cuestan la sala
 
-Los líderes senior que dominan las salas no son los más ruidosos, los más carismáticos, ni los más articulados. Son los que han aprendido a suprimir cuatro señales específicas que marcan a alguien como aún-no-listo:
+Los líderes senior que dominan las salas no son los más ruidosos, los más carismáticos, ni los más pulidos. Son los que han aprendido a suprimir cuatro señales específicas que marcan a alguien como aún-no-listo:
 
 **Emoción.** La reactividad visible se lee como pérdida de control. Investigación revisada por pares conecta la reevaluación cognitiva — la capacidad de reformular en lugar de reaccionar — con calificaciones de desempeño de liderazgo más altas, tanto de supervisores como de pares (Lopes et al., *Frontiers in Psychology*). El líder senior no dice "esto es un desastre". Dice "esto está impactando el desempeño y requiere ajuste". Misma realidad. Diferente señal.
 
@@ -64,7 +64,7 @@ Los líderes senior que dominan las salas no son los más ruidosos, los más car
 
 **Falta de preparación.** "Aún no estoy seguro" suena honesto, pero en una junta senior se lee como no preparado. "El análisis aún se está finalizando" comunica la misma incertidumbre sin el costo de credibilidad. A los ejecutivos se les permite no saber. No se les permite *sonar* no preparados.
 
-**Deferencia donde se requiere autoridad.** "¿Puedes revisarlo cuando tengas tiempo?" cede el control. "Esto requiere tu revisión" lo preserva. El patrón más consistente entre los líderes senior es que no suavizan donde la situación pide dirección. Suavizar no es cortesía — es delegar la autoridad que el momento no te pidió delegar.
+**Deferencia donde se requiere autoridad.** "¿Puedes revisarlo cuando tengas tiempo?" cede el control. "Esto requiere tu revisión" lo preserva. El patrón más consistente entre los líderes senior es que no suavizan donde la situación pide dirección. Suavizar no es cortesía — es una transferencia silenciosa de autoridad que el momento no te pidió hacer.
 
 Estos cuatro cambios no son personalidad. Son hábitos — y los hábitos son entrenables.
 
@@ -98,19 +98,19 @@ Los profesionales que avanzan más rápido agregan una capa más sobre el estilo
 
 Los investigadores de comunicación Roderick Hart y Don Burks llamaron a esto *sensibilidad retórica* en 1972 (*Speech Monographs*) — la capacidad de "soportar la tensión de la adaptación" mientras se preserva la integridad del mensaje. Andrew Molinsky en Brandeis posteriormente cuantificó el costo cognitivo del code-switching transcultural (*Academy of Management Review*, 2007), y Anicich y Hirsh (2017, *AMR*) documentaron cómo los roles de poder medio específicamente requieren que los líderes cambien de registro verticalmente — deferentes hacia arriba, directivos hacia abajo, de igual a igual lateralmente — sin caer en "inhibición conductual".
 
-En la práctica esto significa: cómo informas al consejo no es cómo hablas con tu equipo de ingeniería, que no es cómo negocias con un proveedor, que no es cómo tranquilizas a un cliente cuyo proyecto acaba de retrasarse. El marco se mantiene consistente — calmado, estructurado, orientado a la decisión. El registro flexiona. Los líderes que pueden hacer esto con fluidez en inglés abren puertas que los comunicadores monolingües o de un solo registro no pueden.
+En la práctica esto significa: cómo informas al consejo no es cómo hablas con tu equipo de ingeniería, que no es cómo negocias con un proveedor, que no es cómo tranquilizas a un cliente cuyo proyecto acaba de retrasarse. El marco se mantiene consistente — calmado, estructurado, orientado a la decisión. El registro flexiona. Los líderes que pueden hacer esto con fluidez en inglés abren puertas que los comunicadores de un solo registro nunca ven.
 
 Aquí es donde la mayoría de la capacitación de "inglés avanzado" se queda corta. El vocabulario y la gramática no te enseñan cuándo comprimir y cuándo expandir, cuándo empujar y cuándo ceder, cuándo ser la estructura de la sala y cuándo ser su diplomático.
 
 ---
 
-## Qué cambia cuando entrenas esto
+## Qué cambia cuando cierras la brecha
 
-Los profesionales que han hecho este trabajo reportan consistentemente el mismo cambio: dejan de ser interrumpidos, las ideas que siempre han tenido empiezan a aterrizar a la primera, y los integran en las conversaciones que dan forma a las decisiones en lugar de en las que solo las ejecutan.
+Los profesionales que han hecho este trabajo reportan consistentemente el mismo cambio: dejan de ser interrumpidos, las ideas que siempre han tenido empiezan a aterrizar la primera vez que las dicen, y los integran en las conversaciones que *dan forma* a las decisiones en lugar de en las que solo las ejecutan.
 
 Esa no es una transformación blanda. Es el 26% que la investigación de Hewlett identificó — moviéndose a tu favor en lugar de en tu contra.
 
-Si tu inglés es el techo de lo que has construido, los datos son inequívocos: vale la pena el trabajo de elevarlo.
+Si tu inglés es el techo de lo que has construido, los datos son inequívocos: vale la pena elevarlo.
 
 ---
 
