@@ -79,7 +79,7 @@ export const elementaryUnits: ElementaryUnit[] = [
     pronunciationFocus: "Reduced 'ago' and 'last' in fast speech",
     pronunciationFocusEs: "Reducción de 'ago' y 'last' en habla rápida",
     icon: "Calendar",
-    published: false,
+    published: true,
   },
   {
     id: 4,
