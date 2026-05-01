@@ -102,6 +102,8 @@ In practice this means: how you brief the board is not how you talk to your engi
 
 This is where most "advanced English" training stops short. Vocabulary and grammar do not teach you when to compress and when to expand, when to push and when to defer, when to be the room's structure and when to be its diplomat.
 
+For Spanish speakers, register comes with its own twist: Spanish encodes much of it in the grammar (tú/usted, the subjunctive, the conditional), and English does not — which makes the transfer harder than it looks. The deep dive on those mechanics is in [English Register: The Skill Your Spanish Doesn't Translate](/en/blog/english-register-for-spanish-speakers/).
+
 ---
 
 ## What changes when you close the gap
