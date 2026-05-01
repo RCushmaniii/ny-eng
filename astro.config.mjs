@@ -51,6 +51,7 @@ const blogTranslations = {
   "women-leaders-command-rooms-english": "/es/blog/lideres-mujeres-dominan-ingles/",
   "7-questions-corporate-english-vendor": "/es/blog/7-preguntas-proveedor-ingles-corporativo/",
   "corporate-english-training-roi": "/es/blog/roi-capacitacion-ingles-corporativo/",
+  "why-executive-english-accelerates-careers": "/es/blog/por-que-ingles-ejecutivo-acelera-tu-carrera/",
 };
 
 // Reverse map (ES slug -> EN path)
