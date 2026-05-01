@@ -109,7 +109,7 @@ export const executiveUnits: ExecutiveUnit[] = [
     seoDescription:
       "Structure your speech like a senior leader. Learn executive frameworks and connectors that signal control under pressure.",
     seoDescriptionEs:
-      "Estructura tu discurso como un líder senior. Aprende marcos ejecutivos y conectores que señalan control bajo presión.",
+      "Estructura tu discurso como un líder senior con marcos ejecutivos con nombre y los conectores que revelan tu lógica y señalan control bajo presión.",
     outcome:
       "You'll organize your thinking out loud using named frameworks, under pressure.",
     outcomeEs:
@@ -247,7 +247,7 @@ export const executiveUnits: ExecutiveUnit[] = [
     seoDescription:
       "Negotiate and drive decisions in executive English. Anchoring, concessions, and the diplomatic 'no' drilled under pressure.",
     seoDescriptionEs:
-      "Negocia e impulsa decisiones en inglés ejecutivo. Anclaje, concesiones y el 'no' diplomático practicados bajo presión.",
+      "Negocia e impulsa decisiones en inglés ejecutivo: anclaje, concesiones, el 'no' diplomático y cierre, practicados bajo presión real.",
     outcome:
       "You'll lead negotiations and drive decisions in English with measurable outcomes.",
     outcomeEs:
@@ -268,9 +268,9 @@ export const executiveUnits: ExecutiveUnit[] = [
     descriptionEs:
       "La unidad final. Una integración final de todo desde las Unidades 1-9, más la consigna que lanza tu presentación ejecutiva grabada. Este es el momento de graduación — y el puente al coaching 1-a-1 con Robert.",
     seoDescription:
-      "Integrate all 10 units into your executive voice. The final drill set before your recorded capstone presentation.",
+      "Integrate all 10 units into your executive voice. The final drill set before you record your capstone presentation for Robert's feedback.",
     seoDescriptionEs:
-      "Integra las 10 unidades en tu voz ejecutiva. El set final de drills antes de tu presentación grabada de cierre.",
+      "Integra las 10 unidades en tu voz ejecutiva. El set final de drills antes de grabar tu presentación final para recibir feedback de Robert.",
     outcome:
       "You'll submit a recorded 90-second executive presentation to Robert for personal feedback.",
     outcomeEs:
