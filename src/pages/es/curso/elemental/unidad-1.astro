@@ -1,0 +1,291 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import CognateDiscovery from "@components/course/CognateDiscovery";
+import SentenceBuilder from "@components/course/SentenceBuilder";
+import PronunciationDrill from "@components/course/PronunciationDrill";
+import ConnectorChallenge from "@components/course/ConnectorChallenge";
+import SelfTest from "@components/course/SelfTest";
+import { elementaryUnits } from "@data/elementary/units";
+import {
+  cognateWaves,
+  sentenceBlocks,
+  powerVerbBlocks,
+  connectorSentences,
+  pronunciationDrills,
+  vocabularyList,
+} from "@data/elementary/unit-1";
+import {
+  Clock,
+  Layers,
+  Zap,
+  Link2,
+  Volume2,
+  ClipboardCheck,
+  BookOpen,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/elementary/unit-1" as const;
+
+const progressUnits = elementaryUnits.map((u) => ({
+  id: u.id,
+  slug: u.slugEs,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+
+const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
+
+const nextUnit = elementaryUnits.find((u) => u.id === 2);
+const nextUnitPublished = nextUnit?.published ?? false;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unidad 1: Ayer Trabajé | Inglés Elemental (A2)"
+  description="Pasado simple con verbos regulares y los tres sonidos de -ed (/t/, /d/, /ɪd/). Construye tus primeras oraciones en pasado. Lección A2 gratis."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={1}
+    basePath="/es/curso/elemental"
+    lang="es"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-sky-400 text-sm font-semibold mb-3">
+          <Clock class="w-4 h-4" />
+          Unidad 1
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Ayer Trabajé
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Hablar de ayer es el primer gran salto más allá del nivel principiante.
+          Hoy aprendes la regla que convierte CUALQUIER verbo regular en pasado —
+          más los tres sonidos diferentes de -ed que nadie te advirtió.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <nav class="bg-white border-b border-slate-200 sticky top-[52px] z-30 overflow-x-auto">
+    <div class="site-container mx-auto px-4">
+      <div class="flex items-center gap-1 py-2 text-sm whitespace-nowrap">
+        <a href="#sounds" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <BookOpen class="w-3.5 h-3.5" /> Los 3 Sonidos
+        </a>
+        <a href="#sentences" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Layers class="w-3.5 h-3.5" /> Oraciones
+        </a>
+        <a href="#cognates" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Zap class="w-3.5 h-3.5" /> Verbos Cognados
+        </a>
+        <a href="#time-markers" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Link2 class="w-3.5 h-3.5" /> Marcadores
+        </a>
+        <a href="#pronunciation" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Volume2 class="w-3.5 h-3.5" /> Pronunciación
+        </a>
+        <a href="#self-test" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <ClipboardCheck class="w-3.5 h-3.5" /> Auto-Test
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="sounds" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <BookOpen class="w-4 h-4" />
+            Sección A
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Los Tres Sonidos de -ed
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Agregar -ed al verbo es la regla. Pero esto es lo que la mayoría de los cursos omiten:
+            el -ed tiene <strong>tres pronunciaciones diferentes</strong> dependiendo del sonido
+            anterior. Toca cualquier verbo para escuchar la diferencia.
+          </p>
+        </div>
+        <CognateDiscovery client:visible waves={waveData} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="sentences" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Layers class="w-4 h-4" />
+            Sección B
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Construyendo Oraciones en Pasado
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Apila los bloques uno a uno: sujeto, verbo, objeto, marcador de tiempo.
+            Al final de esta sección tendrás oraciones completas en pasado.
+          </p>
+        </div>
+        <SentenceBuilder client:visible blocks={sentenceBlocks} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="cognates" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Zap class="w-4 h-4" />
+            Sección C
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Verbos Cognados en Pasado
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Los verbos cognados español-inglés son en su mayoría regulares — lo que significa que
+            ya los hablas en pasado. Solo agrega -ed. Aquí hay nueve que puedes usar hoy.
+          </p>
+        </div>
+        <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="time-markers" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Link2 class="w-4 h-4" />
+            Sección D
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Marcadores de Tiempo — ¿Cuándo Pasó?
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Cinco expresiones de tiempo que anclan oraciones en pasado. Después una Oración Maestra
+            — cuatro marcadores de tiempo en fila, contando una historia real.
+          </p>
+        </div>
+        <ConnectorChallenge
+          client:visible
+          connectors={connectorSentences.connectors}
+          bossSentence={connectorSentences.bossSentence}
+          lang="es"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="pronunciation" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-rose-500 text-sm font-semibold mb-2">
+            <Volume2 class="w-4 h-4" />
+            Laboratorio de Pronunciación
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            No Agregues una Sílaba Extra
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            El error más grande de los hispanohablantes: pronunciar -ed como sílaba separada
+            cuando no debería serlo. "Worked" es UNA sílaba: WORKT. Practica hasta que se sienta
+            natural.
+          </p>
+        </div>
+        <PronunciationDrill client:visible drills={pronunciationDrills} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="self-test" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <ClipboardCheck class="w-4 h-4" />
+            Auto-Evaluación
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Evalúa Lo que Aprendiste
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Repaso tipo flashcard de cada verbo en pasado, marcador de tiempo y frase de la Unidad 1.
+            Cambia entre los modos español→inglés e inglés→español.
+          </p>
+        </div>
+        <SelfTest client:visible vocabulary={vocabularyList} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-gradient-to-b from-slate-900 to-slate-800">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-2xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-white">¡Unidad 1 Completada!</h2>
+        <p class="text-lg text-slate-100 leading-relaxed">
+          Ahora puedes hablar de ayer con verbos regulares. Eso solo desbloquea la mitad de
+          la conversación cotidiana. Sigue: los verbos que no siguen las reglas — y siguen
+          patrones propios.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center pt-4">
+          <a
+            href="/es/curso/elemental/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors"
+          >
+            Vista General del Curso
+          </a>
+          {nextUnitPublished ? (
+            <a
+              href="/es/curso/elemental/unidad-2/"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-colors shadow-lg"
+            >
+              Continuar a Unidad 2 →
+            </a>
+          ) : (
+            <a
+              href="/es/curso/intermedio/"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-colors shadow-lg"
+            >
+              Prueba Construyendo Fluidez (B1-B2) →
+            </a>
+          )}
+        </div>
+        <div class="pt-8 border-t border-slate-700 mt-8">
+          <p class="text-slate-200 text-sm mb-3">
+            ¿Quieres coaching personalizado de inglés?
+          </p>
+          <a
+            href="/es/contact/"
+            class="text-sky-400 hover:text-sky-300 font-medium underline underline-offset-2"
+          >
+            Reserva una consulta gratuita con Robert →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

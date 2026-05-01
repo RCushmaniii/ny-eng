@@ -41,7 +41,7 @@ export const elementaryUnits: ElementaryUnit[] = [
     pronunciationFocus: "The three -ed sounds: /t/, /d/, /ɪd/",
     pronunciationFocusEs: "Los tres sonidos de -ed: /t/, /d/, /ɪd/",
     icon: "Clock",
-    published: false,
+    published: true,
   },
   {
     id: 2,

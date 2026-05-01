@@ -1,0 +1,290 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import CognateDiscovery from "@components/course/CognateDiscovery";
+import SentenceBuilder from "@components/course/SentenceBuilder";
+import PronunciationDrill from "@components/course/PronunciationDrill";
+import ConnectorChallenge from "@components/course/ConnectorChallenge";
+import SelfTest from "@components/course/SelfTest";
+import { elementaryUnits } from "@data/elementary/units";
+import {
+  cognateWaves,
+  sentenceBlocks,
+  powerVerbBlocks,
+  connectorSentences,
+  pronunciationDrills,
+  vocabularyList,
+} from "@data/elementary/unit-1";
+import {
+  Clock,
+  Layers,
+  Zap,
+  Link2,
+  Volume2,
+  ClipboardCheck,
+  BookOpen,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/elementary/unit-1" as const;
+
+const progressUnits = elementaryUnits.map((u) => ({
+  id: u.id,
+  slug: u.slug,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+
+const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
+
+const nextUnit = elementaryUnits.find((u) => u.id === 2);
+const nextUnitPublished = nextUnit?.published ?? false;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unit 1: Yesterday I Worked | Elementary English (A2)"
+  description="Past simple regular verbs and the three sounds of -ed (/t/, /d/, /ɪd/). Build your first past tense sentences. Free A2 lesson for Spanish speakers."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={1}
+    basePath="/en/course/elementary"
+    lang="en"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-sky-400 text-sm font-semibold mb-3">
+          <Clock class="w-4 h-4" />
+          Unit 1
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Yesterday I Worked
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Talking about yesterday is the first big leap past beginner English.
+          Today you learn the rule that turns ANY regular verb into past tense —
+          plus the three different sounds of -ed that nobody warned you about.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <nav class="bg-white border-b border-slate-200 sticky top-[52px] z-30 overflow-x-auto">
+    <div class="site-container mx-auto px-4">
+      <div class="flex items-center gap-1 py-2 text-sm whitespace-nowrap">
+        <a href="#sounds" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <BookOpen class="w-3.5 h-3.5" /> The 3 Sounds
+        </a>
+        <a href="#sentences" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Layers class="w-3.5 h-3.5" /> Sentences
+        </a>
+        <a href="#cognates" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Zap class="w-3.5 h-3.5" /> Cognate Verbs
+        </a>
+        <a href="#time-markers" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Link2 class="w-3.5 h-3.5" /> Time Markers
+        </a>
+        <a href="#pronunciation" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Volume2 class="w-3.5 h-3.5" /> Pronunciation
+        </a>
+        <a href="#self-test" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <ClipboardCheck class="w-3.5 h-3.5" /> Self-Test
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="sounds" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <BookOpen class="w-4 h-4" />
+            Section A
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            The Three Sounds of -ed
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Adding -ed to a verb is the rule. But here's what most courses skip: the -ed has
+            <strong>three different pronunciations</strong> depending on the sound right before it.
+            Tap any verb to hear the difference.
+          </p>
+        </div>
+        <CognateDiscovery client:visible waves={waveData} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section id="sentences" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Layers class="w-4 h-4" />
+            Section B
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Building Past Tense Sentences
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Stack the blocks one at a time: subject, verb, object, time marker.
+            By the end of this section you'll have full past-tense sentences.
+          </p>
+        </div>
+        <SentenceBuilder client:visible blocks={sentenceBlocks} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section id="cognates" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Zap class="w-4 h-4" />
+            Section C
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Cognate Verbs in Past Tense
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Spanish-English cognate verbs are mostly regular — which means you already speak
+            them in past tense. Just add -ed. Here are nine you can use today.
+          </p>
+        </div>
+        <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section id="time-markers" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Link2 class="w-4 h-4" />
+            Section D
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Time Markers — When Did It Happen?
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Five time expressions that anchor past sentences. Then a Boss Sentence — four time
+            markers in a row, telling a real story.
+          </p>
+        </div>
+        <ConnectorChallenge
+          client:visible
+          connectors={connectorSentences.connectors}
+          bossSentence={connectorSentences.bossSentence}
+          lang="en"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="pronunciation" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-rose-500 text-sm font-semibold mb-2">
+            <Volume2 class="w-4 h-4" />
+            Pronunciation Lab
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Don't Add an Extra Syllable
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            The biggest Spanish-speaker error: pronouncing -ed as a separate syllable when it
+            shouldn't be. "Worked" is ONE syllable: WORKT. Drill until it feels natural.
+          </p>
+        </div>
+        <PronunciationDrill client:visible drills={pronunciationDrills} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section id="self-test" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <ClipboardCheck class="w-4 h-4" />
+            Self-Test
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Test What You Learned
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Flashcard review of every past-tense verb, time marker, and phrase from Unit 1.
+            Switch between Spanish→English and English→Spanish modes.
+          </p>
+        </div>
+        <SelfTest client:visible vocabulary={vocabularyList} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-gradient-to-b from-slate-900 to-slate-800">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-2xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-white">Unit 1 Complete!</h2>
+        <p class="text-lg text-slate-100 leading-relaxed">
+          You can now talk about yesterday with regular verbs. That alone unlocks half of all
+          everyday conversation. Next: the verbs that don't follow the rules — and follow patterns
+          of their own.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center pt-4">
+          <a
+            href="/en/course/elementary/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors"
+          >
+            Course Overview
+          </a>
+          {nextUnitPublished ? (
+            <a
+              href="/en/course/elementary/unit-2/"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-colors shadow-lg"
+            >
+              Continue to Unit 2 →
+            </a>
+          ) : (
+            <a
+              href="/en/course/intermediate/"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-colors shadow-lg"
+            >
+              Try Building Fluency (B1-B2) →
+            </a>
+          )}
+        </div>
+        <div class="pt-8 border-t border-slate-700 mt-8">
+          <p class="text-slate-200 text-sm mb-3">
+            Want personalized English coaching?
+          </p>
+          <a
+            href="/en/contact/"
+            class="text-sky-400 hover:text-sky-300 font-medium underline underline-offset-2"
+          >
+            Book a free consultation with Robert →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
