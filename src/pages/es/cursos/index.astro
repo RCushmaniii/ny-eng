@@ -21,7 +21,7 @@ const tkey = "courses" as const;
 
 const beginnerAvailable = units.length;
 const intermediateAvailable = intermediateUnits.length;
-const advancedAvailable = advancedUnits.filter((u) => u.id === 1).length;
+const advancedAvailable = advancedUnits.length;
 const executiveAvailable = executiveUnits.filter((u) => u.published).length;
 ---
 
@@ -29,7 +29,7 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
   lang={lang}
   tkey={tkey}
   title="Cursos Gratis de Inglés para Hispanohablantes | NY English"
-  description="Cursos de inglés gratuitos para hispanohablantes. De principiante a intermedio alto. Sin registro ni barreras. Hechos por un maestro de inglés de Nueva York."
+  description="Cursos de inglés gratuitos para hispanohablantes — de A1 principiante a C2 ejecutivo. Sin registro ni barreras. Hechos por un maestro de inglés de NY."
 >
   <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-16 pb-20 md:pt-20 md:pb-24">
     <div class="site-container mx-auto px-4 text-white">
@@ -45,9 +45,9 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
           Cursos de Inglés que Realmente Funcionan para Hispanohablantes
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Dos cursos gratuitos e interactivos hechos específicamente para hispanohablantes.
-          Sin registro. Sin barreras. Sin la pesadez de los libros de texto.
-          Solo progreso real desde la primera lección.
+          Cuatro cursos gratuitos e interactivos hechos para hispanohablantes —
+          de principiante a ejecutivo. Sin registro. Sin barreras. Sin la pesadez
+          de los libros de texto. Solo progreso real desde la primera lección.
         </p>
       </div>
     </div>
@@ -76,7 +76,10 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
           </div>
           <div class="p-6">
             <p class="text-slate-600 text-sm leading-relaxed mb-4">
-              {courseInfo.descriptionEs}
+              La mayoría de los cursos hacen que los hispanohablantes empiecen
+              desde cero. Nosotros no. Ya conoces más de 1,500 palabras en
+              inglés — están escondidas en tu español. Para la Unidad 10,
+              sostienes una conversación real.
             </p>
             <ul class="space-y-2 mb-6">
               <li class="flex items-start gap-2 text-sm text-slate-700">
@@ -123,7 +126,10 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
           </div>
           <div class="p-6">
             <p class="text-slate-600 text-sm leading-relaxed mb-4">
-              {intermediateInfo.descriptionEs}
+              Sostienes una conversación — pero cada oración pasa primero por
+              el español. Este curso lo recablea. Phrasal verbs, condicionales
+              y los patrones naturales que usan los nativos, practicados hasta
+              que el inglés sale sin traducir.
             </p>
             <ul class="space-y-2 mb-6">
               <li class="flex items-start gap-2 text-sm text-slate-700">
@@ -170,7 +176,11 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
           </div>
           <div class="p-6">
             <p class="text-slate-600 text-sm leading-relaxed mb-4">
-              Corrige los errores granulares que delatan al hablante no nativo incluso a nivel C1. Ejercicios basados en habilidades — sin temas, sin memorización de vocabulario.
+              Tu inglés es fluido. No está pulido. Incluso a nivel C1, el
+              artículo equivocado, el "fewer" perdido y la TH suave te delatan
+              en los primeros treinta segundos. Drills que corrigen los errores
+              exactos que persiguen a los hispanohablantes avanzados — sin
+              temas, sin memorización.
             </p>
             <ul class="space-y-2 mb-6">
               <li class="flex items-start gap-2 text-sm text-slate-700">
@@ -188,7 +198,7 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
             </ul>
             <div class="flex items-center justify-between">
               <span class="text-xs font-semibold text-violet-600 uppercase tracking-wider">
-                {advancedAvailable} unidad disponible · más en camino
+                {advancedAvailable} unidades disponibles
               </span>
               <span class="inline-flex items-center gap-1 text-violet-600 font-semibold text-sm group-hover:gap-2 transition-all">
                 Empezar curso
@@ -217,7 +227,10 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
           </div>
           <div class="p-6">
             <p class="text-slate-600 text-sm leading-relaxed mb-4">
-              La versión productizada del coaching ejecutivo 1-a-1 de Robert. Entrenamiento basado en drills, hablado primero, para líderes senior que necesitan liderar en inglés.
+              Cuando la sala espera a un líder, ser fluido no basta. La versión
+              productizada del coaching ejecutivo 1-a-1 de Robert — drills
+              hablados, marcos con nombre, y el lenguaje preciso que señala
+              mando bajo presión.
             </p>
             <ul class="space-y-2 mb-6">
               <li class="flex items-start gap-2 text-sm text-slate-700">
@@ -235,9 +248,7 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
             </ul>
             <div class="flex items-center justify-between">
               <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">
-                {executiveAvailable > 0
-                  ? `${executiveAvailable} unidad${executiveAvailable === 1 ? "" : "es"} disponible${executiveAvailable === 1 ? "" : "s"} · más en camino`
-                  : "Acceso anticipado · construyendo ahora"}
+                {executiveAvailable} unidades disponibles
               </span>
               <span class="inline-flex items-center gap-1 text-amber-600 font-semibold text-sm group-hover:gap-2 transition-all">
                 Empezar curso

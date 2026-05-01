@@ -21,7 +21,7 @@ const tkey = "courses" as const;
 
 const beginnerAvailable = units.length;
 const intermediateAvailable = intermediateUnits.length;
-const advancedAvailable = advancedUnits.filter((u) => u.id === 1).length;
+const advancedAvailable = advancedUnits.length;
 const executiveAvailable = executiveUnits.filter((u) => u.published).length;
 ---
 
@@ -29,7 +29,7 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
   lang={lang}
   tkey={tkey}
   title="Free English Courses for Spanish Speakers | NY English"
-  description="Free, interactive English courses for Spanish speakers — beginner to upper-intermediate. No sign-up, no paywall. Built by a real NYC English teacher."
+  description="Free, interactive English courses for Spanish speakers — A1 beginner through C2 executive. No sign-up, no paywall. Built by a real NYC English teacher."
 >
   <!-- Hero -->
   <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-16 pb-20 md:pt-20 md:pb-24">
@@ -46,9 +46,9 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
           English Courses That Actually Work for Spanish Speakers
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Two free, interactive courses built specifically for Spanish speakers.
-          No sign-up. No paywall. No textbook drudgery. Just real progress
-          from the first lesson.
+          Four free, interactive courses built for Spanish speakers — beginner
+          through executive. No sign-up. No paywall. No textbook drudgery.
+          Just real progress from the first lesson.
         </p>
       </div>
     </div>
@@ -78,7 +78,9 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
           </div>
           <div class="p-6">
             <p class="text-slate-600 text-sm leading-relaxed mb-4">
-              {courseInfo.description}
+              Most courses make Spanish speakers start from zero. We don't.
+              You already know 1,500+ English words — they're hiding in your
+              Spanish. By Unit 10, you're holding a real conversation.
             </p>
             <ul class="space-y-2 mb-6">
               <li class="flex items-start gap-2 text-sm text-slate-700">
@@ -125,7 +127,10 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
           </div>
           <div class="p-6">
             <p class="text-slate-600 text-sm leading-relaxed mb-4">
-              {intermediateInfo.description}
+              You can hold a conversation — but every sentence still goes
+              through Spanish first. This course rewires that. Phrasal verbs,
+              conditionals, and the natural patterns natives actually use,
+              drilled until English comes out without translating.
             </p>
             <ul class="space-y-2 mb-6">
               <li class="flex items-start gap-2 text-sm text-slate-700">
@@ -172,7 +177,10 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
           </div>
           <div class="p-6">
             <p class="text-slate-600 text-sm leading-relaxed mb-4">
-              Fix the granular errors that mark a non-native speaker even at C1. Skill-based drills — no themes, no vocabulary memorization.
+              Your English is fluent. It's not polished. Even at C1, the wrong
+              article, the missed "fewer", and the soft TH give you away in
+              the first thirty seconds. Drills that fix the exact errors
+              haunting advanced Spanish speakers — no themes, no memorization.
             </p>
             <ul class="space-y-2 mb-6">
               <li class="flex items-start gap-2 text-sm text-slate-700">
@@ -190,7 +198,7 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
             </ul>
             <div class="flex items-center justify-between">
               <span class="text-xs font-semibold text-violet-600 uppercase tracking-wider">
-                {advancedAvailable} unit available · more coming
+                {advancedAvailable} units available
               </span>
               <span class="inline-flex items-center gap-1 text-violet-600 font-semibold text-sm group-hover:gap-2 transition-all">
                 Start course
@@ -219,7 +227,10 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
           </div>
           <div class="p-6">
             <p class="text-slate-600 text-sm leading-relaxed mb-4">
-              The productized version of Robert's 1-on-1 executive coaching. Drill-based, speaking-first training for senior leaders who need to lead in English.
+              When the room expects a leader, fluent isn't enough. The
+              productized version of Robert's 1-on-1 executive coaching —
+              speaking-first drills, named frameworks, and the precision
+              language that signals command under pressure.
             </p>
             <ul class="space-y-2 mb-6">
               <li class="flex items-start gap-2 text-sm text-slate-700">
@@ -237,9 +248,7 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
             </ul>
             <div class="flex items-center justify-between">
               <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">
-                {executiveAvailable > 0
-                  ? `${executiveAvailable} unit${executiveAvailable === 1 ? "" : "s"} available · more coming`
-                  : "Early access · building now"}
+                {executiveAvailable} units available
               </span>
               <span class="inline-flex items-center gap-1 text-amber-600 font-semibold text-sm group-hover:gap-2 transition-all">
                 Start course
