@@ -4,11 +4,13 @@ export const prerender = true;
 import Base from "@layouts/Base.astro";
 import Button from "@components/ui/Button.astro";
 import { courseInfo, units } from "@data/course/units";
+import { elementaryInfo, elementaryUnits } from "@data/elementary/units";
 import { intermediateInfo, intermediateUnits } from "@data/intermediate/units";
 import { advancedInfo, advancedUnits } from "@data/advanced/units";
 import { executiveInfo, executiveUnits } from "@data/executive/units";
 import {
   Sparkles,
+  BookOpen,
   Puzzle,
   Crown,
   ArrowRight,
@@ -20,6 +22,8 @@ const lang = "es";
 const tkey = "courses" as const;
 
 const beginnerAvailable = units.length;
+const elementaryAvailable = elementaryUnits.filter((u) => u.published).length;
+const elementaryTotal = elementaryUnits.length;
 const intermediateAvailable = intermediateUnits.length;
 const advancedAvailable = advancedUnits.length;
 const executiveAvailable = executiveUnits.filter((u) => u.published).length;
@@ -45,9 +49,9 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
           Cursos de Inglés que Realmente Funcionan para Hispanohablantes
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Cuatro cursos gratuitos e interactivos hechos para hispanohablantes —
-          de principiante a ejecutivo. Sin registro. Sin barreras. Sin la pesadez
-          de los libros de texto. Solo progreso real desde la primera lección.
+          Cinco cursos gratuitos e interactivos hechos para hispanohablantes —
+          de A1 principiante a C2 ejecutivo. Sin registro. Sin barreras. Sin la
+          pesadez de los libros de texto. Solo progreso real desde la primera lección.
         </p>
       </div>
     </div>
@@ -55,7 +59,7 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
 
   <section class="py-16 md:py-20 bg-slate-50">
     <div class="site-container mx-auto px-4">
-      <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
 
         <!-- Beginner -->
         <a
@@ -101,6 +105,58 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
               </span>
               <span class="inline-flex items-center gap-1 text-amber-600 font-semibold text-sm group-hover:gap-2 transition-all">
                 Empezar curso
+                <ArrowRight class="w-4 h-4" />
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Elementary -->
+        <a
+          href="/es/curso/elemental/"
+          class="group block bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl hover:border-sky-300 transition-all duration-200"
+        >
+          <div class="bg-gradient-to-br from-sky-500 to-sky-600 p-6 text-white min-h-[180px] flex flex-col justify-end">
+            <div class="flex items-center gap-2 text-sky-100 text-xs font-bold uppercase tracking-wider mb-2">
+              <BookOpen class="w-3.5 h-3.5" />
+              Nivel A2 — Elemental
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold mb-2" style="font-family: 'Noto Sans KR', sans-serif;">
+              {elementaryInfo.titleEs}
+            </h2>
+            <p class="text-sky-50 text-sm leading-relaxed">
+              De fragmentos a historias completas — pasado, presente y futuro de tu vida real.
+            </p>
+          </div>
+          <div class="p-6">
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              El puente del nivel principiante al intermedio. Pasado, planes
+              futuros, comparar cosas, y las preguntas que convierten respuestas
+              de "sí/no" en conversación real. Para la Unidad 10, cuentas tu
+              propia historia.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-sky-500 shrink-0 mt-0.5" />
+                <span>Pasado simple — verbos regulares e irregulares</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-sky-500 shrink-0 mt-0.5" />
+                <span>Going to + will, comparativos, cuantificadores</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-sky-500 shrink-0 mt-0.5" />
+                <span>Reto final: una historia de 60 segundos sobre tu vida</span>
+              </li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold text-sky-600 uppercase tracking-wider">
+                {elementaryAvailable > 0
+                  ? `${elementaryAvailable} de ${elementaryTotal} unidades disponibles`
+                  : "Próximamente · construyendo ahora"}
+              </span>
+              <span class="inline-flex items-center gap-1 text-sky-600 font-semibold text-sm group-hover:gap-2 transition-all">
+                {elementaryAvailable > 0 ? "Empezar curso" : "Vista previa"}
                 <ArrowRight class="w-4 h-4" />
               </span>
             </div>
@@ -262,7 +318,7 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
       <div class="max-w-3xl mx-auto mt-16 text-center">
         <h3 class="text-2xl font-bold text-slate-900 mb-3">¿No sabes con cuál empezar?</h3>
         <p class="text-slate-600 mb-6">
-          Si el inglés todavía se siente totalmente nuevo, empieza con el curso <strong>principiante</strong>. Si puedes sostener una conversación, empieza con <strong>intermedio</strong>. Si tu inglés es fluido pero no pulido, pasa a <strong>avanzado</strong>. Y si eres un líder senior que ya se comunica con competencia en inglés pero quiere <em>liderar</em> en inglés, ve directo al curso <strong>ejecutivo</strong>. Tu progreso se guarda por separado para cada curso.
+          Si el inglés todavía se siente totalmente nuevo, empieza con el curso <strong>principiante</strong>. Si terminaste lo básico pero todavía no puedes hablar de ayer ni hacer planes, toma <strong>elemental</strong>. Si ya puedes sostener una conversación, salta a <strong>intermedio</strong>. Si tu inglés es fluido pero no pulido, pasa a <strong>avanzado</strong>. Y si eres un líder senior que ya se comunica con competencia en inglés pero quiere <em>liderar</em> en inglés, ve directo al curso <strong>ejecutivo</strong>. Tu progreso se guarda por separado para cada curso.
         </p>
         <Button href="/es/servicios/" variant="secondary" size="md">
           O trabaja 1-a-1 con Robert
@@ -293,13 +349,22 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
       "position": 2,
       "item": {
         "@type": "Course",
+        "name": "Curso Elemental de Ingles Gratis (A2)",
+        "url": "https://www.nyenglishteacher.com/es/curso/elemental/"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Course",
         "name": "Curso Gratis de Ingles Intermedio (B1-B2)",
         "url": "https://www.nyenglishteacher.com/es/curso/intermedio/"
       }
     },
     {
       "@type": "ListItem",
-      "position": 3,
+      "position": 4,
       "item": {
         "@type": "Course",
         "name": "Curso Avanzado de Ingles (B2-C1)",
@@ -308,7 +373,7 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
     },
     {
       "@type": "ListItem",
-      "position": 4,
+      "position": 5,
       "item": {
         "@type": "Course",
         "name": "Curso Ejecutivo de Ingles (C1-C2)",
