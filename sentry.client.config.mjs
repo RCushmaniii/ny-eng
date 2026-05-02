@@ -15,6 +15,7 @@ Sentry.init({
     /removeHighlight is not defined/,
     /tapAt is not defined/,
     /onLoad is not defined/,
+    /onReady is not defined/,
     /className\.indexOf is not a function/,
     /Identifier '.+' has already been declared/,
 
