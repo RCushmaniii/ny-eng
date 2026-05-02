@@ -13,7 +13,6 @@ import Button from "@components/ui/Button.astro";
 
 const isSpanishPath = Astro.url.pathname.startsWith("/es");
 const lang = isSpanishPath ? "es" : "en";
-const translationSlug = isSpanishPath ? "/en/404" : "/es/404";
 
 // Define all text content for both languages
 const content = {

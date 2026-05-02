@@ -48,12 +48,6 @@ const description =
     ? "Read success stories from executives, founders, and professionals who transformed their English communication with personalized coaching."
     : `Success stories from ${industryLabel.toLowerCase()} who transformed their English communication with personalized coaching. See real results.`;
 
-// Spanish counterpart for language switcher
-const translationSlugEs =
-  currentIndustry === "all"
-    ? "/es/testimonios/"
-    : `/es/testimonios/${currentIndustry}/`;
-
 // Create custom hreflangs for each industry page
 const currentUrl =
   currentIndustry === "all"

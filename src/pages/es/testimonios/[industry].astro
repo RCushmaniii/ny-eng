@@ -48,12 +48,6 @@ const description =
     ? "Historias de éxito de ejecutivos y profesionales que transformaron su comunicación en inglés con coaching personalizado."
     : `Historias de ${industryLabel.toLowerCase()} que transformaron su comunicación en inglés con coaching personalizado. Resultados reales.`;
 
-// English counterpart for language switcher
-const translationSlugEn =
-  currentIndustry === "all"
-    ? "/en/testimonials/"
-    : `/en/testimonials/${currentIndustry}/`;
-
 // Create custom hreflangs for each industry page
 const currentUrl =
   currentIndustry === "all"

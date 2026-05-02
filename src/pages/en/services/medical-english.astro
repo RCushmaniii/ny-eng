@@ -9,7 +9,6 @@ import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro"
 import CtaSection from "@components/sections/CtaSection.astro";
 import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
 import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
-import Breadcrumbs from "@components/ui/Breadcrumbs.astro";
 import { serviceFaqs } from "@data/service-faqs";
 
 // prevent autosave tools from removing imports (used in template)
@@ -73,8 +72,6 @@ const ctaContent = {
   ]
 };
 
-// Translation slug for Spanish version
-const translationSlug = "ingles-para-medicos";
 
 const faqs = serviceFaqs["medical-english"]?.en || [];
 ---

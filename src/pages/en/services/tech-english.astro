@@ -10,7 +10,6 @@ import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro"
 import CtaSection from "@components/sections/CtaSection.astro";
 import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
 import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
-import Breadcrumbs from "@components/ui/Breadcrumbs.astro";
 import { serviceFaqs } from "@data/service-faqs";
 
 // Import data
@@ -67,8 +66,6 @@ const ctaContent = {
   ],
 };
 
-// Translation slug for Spanish version
-const translationSlug = "ingles-para-tecnologia";
 
 const faqs = serviceFaqs["tech-english"]?.en || [];
 ---
