@@ -24,6 +24,8 @@ Video calls are where deals move forward, teams align, and leaders are judged—
 
 At New York English, I coach executives and senior managers in tech, finance, logistics, and professional services to communicate with clarity and authority. If you're looking to build foundational confidence first, check out my guide on [5 Simple Strategies to Gain Confidence](/en/blog/boost-eng-confidence/). Here are seven field-tested habits you can apply today.
 
+*Click the speaker icon next to any example phrase below to hear it with proper executive pacing and tone.*
+
 ---
 
 ### What You’ll Learn
@@ -42,7 +44,7 @@ Open the room and set expectations immediately.
 
 **Template:**
 
-> “Thanks for joining. We’ll use 25 minutes. Agenda: status in 5, decision on X in 10, next steps in 10. If questions pop up, drop them in chat and I’ll park them for the Q\&A.”
+> <span class="speak-en">“Thanks for joining. We’ll use 25 minutes. Agenda: status in 5, decision on X in 10, next steps in 10. If questions pop up, drop them in chat and I’ll park them for the Q\&A.”</span>
 
 This signals control, respect for time, and a clear path to outcomes.
 
@@ -54,7 +56,7 @@ Aim for **three sentences** of **\~30 words total** before you pause. Short bloc
 
 **Example:**
 
-> “We met last week’s target. Two risks remain: timeline and budget. I’ll propose a trade-off that protects launch.”
+> <span class="speak-en">“We met last week’s target. Two risks remain: timeline and budget. I’ll propose a trade-off that protects launch.”</span>
 
 ---
 
@@ -90,9 +92,9 @@ Maintain flow without sounding rigid.
 
 **Phrases that work:**
 
-- “Great point—let me finish this thought and I’ll come back to you.”
-- “I’ll park that in chat so we can decide on X first.”
-- “Can we hold questions for two minutes while I show the impact?”
+- <span class="speak-en">“Great point—let me finish this thought and I’ll come back to you.”</span>
+- <span class="speak-en">“I’ll park that in chat so we can decide on X first.”</span>
+- <span class="speak-en">“Can we hold questions for two minutes while I show the impact?”</span>
 
 ---
 
@@ -102,7 +104,7 @@ Use **PREP** (Point → Reason → Example → Point) to respond clearly under p
 
 **Example:**
 
-> “We should delay launch (Point). Quality risks could damage trust (Reason). Our last rushed release cost two clients (Example). So a two-week delay protects the relationship (Point).”
+> <span class="speak-en">“We should delay launch. Quality risks could damage trust. Our last rushed release cost two clients. So a two-week delay protects the relationship.”</span> (Point — Reason — Example — Point)
 
 ---
 
@@ -112,7 +114,7 @@ Replace weak endings with actions, owners, and timing. For 25 field-tested phras
 
 **Template:**
 
-> “Recap: Decision A approved. Next steps—**Maria** drafts the client note by **Thursday**, **Jorge** updates the timeline by **EOD Friday**. I’ll send a summary in 30 minutes. Anything blocking those?”
+> <span class="speak-en">“Recap: Decision A approved. Next steps — Maria drafts the client note by Thursday, Jorge updates the timeline by end of day Friday. I’ll send a summary in 30 minutes. Anything blocking those?”</span>
 
 This prevents drift and boosts accountability.
 

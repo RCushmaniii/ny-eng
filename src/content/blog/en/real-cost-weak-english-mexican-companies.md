@@ -96,7 +96,7 @@ Here's where the money disappears:
 
 A 50-person Guadalajara software house reached the final round for a U.S. fintech company's year-long engagement. The technical evaluation went well. Then came the executive presentation.
 
-The CTO spoke for 40 minutes. He knew the material cold—architecture decisions, security compliance, delivery model. But his delivery was halting. He translated in his head. He said "How I can say..." twice. He missed the CEO's question about risk mitigation strategy entirely and had to ask him to repeat it.
+The CTO spoke for 40 minutes. He knew the material cold—architecture decisions, security compliance, delivery model. But his delivery was halting. He translated in his head. He said <span class="speak-en">"How I can say..."</span> twice. He missed the CEO's question about risk mitigation strategy entirely and had to ask him to repeat it.
 
 **The Consequence:**
 
@@ -453,19 +453,19 @@ The stuck developers see this. They know they're passed over because of language
 
 It's not about grammar. It's about:
 
-**Running effective meetings in English:**
+**Running effective meetings in English.** *Click the speaker icon to hear each phrase with proper executive pacing.*
 
-- "Let's start with the biggest blocker."
-- "I hear two different perspectives—let me make sure I understand both."
-- "We need to make a decision today. Here are the tradeoffs."
+- <span class="speak-en">"Let's start with the biggest blocker."</span>
+- <span class="speak-en">"I hear two different perspectives—let me make sure I understand both."</span>
+- <span class="speak-en">"We need to make a decision today. Here are the tradeoffs."</span>
 
 **Explaining technical concepts to non-technical people:**
 
-- "Think of it like a restaurant kitchen. We can serve more customers if we hire more cooks, but only if the kitchen space can handle them. That's our scalability constraint."
+- <span class="speak-en">"Think of it like a restaurant kitchen. We can serve more customers if we hire more cooks, but only if the kitchen space can handle them. That's our scalability constraint."</span>
 
 **Handling conflict diplomatically:**
 
-- "I understand the urgency, but this approach creates technical debt. Let me show you the long-term cost."
+- <span class="speak-en">"I understand the urgency, but this approach creates technical debt. Let me show you the long-term cost."</span>
 
 **Projecting executive presence:**
 
@@ -689,15 +689,15 @@ Don't memorize individual words. Learn high-frequency phrases.
 
 **Framework phrases:**
 
-- "Let me walk you through three options."
-- "The tradeoff here is X versus Y."
-- "To clarify, are you asking about A or B?"
+- <span class="speak-en">"Let me walk you through three options."</span>
+- <span class="speak-en">"The tradeoff here is X versus Y."</span>
+- <span class="speak-en">"To clarify, are you asking about A or B?"</span>
 
 **Scenario-specific phrases:**
 
-- **Starting a story:** "Let me give you some context." / "Here's what happened."
-- **Status updates:** "We're on track for X. The blocker is Y. We'll resolve it by Z."
-- **Handling objections:** "I understand your concern. Let me address that directly."
+- **Starting a story:** <span class="speak-en">"Let me give you some context."</span> / <span class="speak-en">"Here's what happened."</span>
+- **Status updates:** <span class="speak-en">"We're on track for X. The blocker is Y. We'll resolve it by Z."</span>
+- **Handling objections:** <span class="speak-en">"I understand your concern. Let me address that directly."</span>
 
 Build a personal phrase bank for the situations you face repeatedly. Practice these until they're automatic.
 
@@ -728,8 +728,8 @@ Your language choices signal your identity. Train to match the persona you want 
 
 **Example:**
 
-- **Weak:** "Um, yeah, I think we could maybe try to do it that way, if that works for everyone."
-- **Strong:** "Yes, that approach is feasible. Here's what we'll need to make it work."
+- **Weak:** <span class="speak-en">"Um, yeah, I think we could maybe try to do it that way, if that works for everyone."</span>
+- **Strong:** <span class="speak-en">"Yes, that approach is feasible. Here's what we'll need to make it work."</span>
 
 The content is similar. The perception is completely different.
 

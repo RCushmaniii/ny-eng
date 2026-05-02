@@ -53,6 +53,7 @@ const blogTranslations = {
   "corporate-english-training-roi": "/es/blog/roi-capacitacion-ingles-corporativo/",
   "why-executive-english-accelerates-careers": "/es/blog/por-que-ingles-ejecutivo-acelera-tu-carrera/",
   "english-register-for-spanish-speakers": "/es/blog/registro-en-ingles-para-hispanohablantes/",
+  "mexico-us-workplace-communication-guide": "/es/blog/guia-comunicacion-laboral-mexico-estados-unidos/",
 };
 
 // Reverse map (ES slug -> EN path)
