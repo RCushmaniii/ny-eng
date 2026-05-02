@@ -55,13 +55,15 @@ Sin la perilla, el hablante muchas veces cae en uno de dos modos de falla — de
 
 Estas son las cuatro palancas que un profesional senior hispanohablante necesita aprender a operar conscientemente, porque no hay ningún piloto automático gramatical en inglés haciéndolo por él.
 
+*Haz clic en el ícono del altavoz junto a cada ejemplo para escucharlo con la cadencia y el tono ejecutivo correctos.*
+
 ### 1. Verbos modales
 
 El inglés hace su cambio de registro en la capa modal — *can / could / would / might / should / may*. Aquí es donde sucede la mayor parte del trabajo.
 
-- "Send the report by Friday." (directo, sin atenuantes — apropiado hacia abajo, a un colaborador directo, en una tarea clara)
-- "Could you send the report by Friday?" (consultativo — petición a un par o hacia arriba)
-- "Would it be possible to have the report by Friday?" (formal, deferente — cliente externo o stakeholder senior con quien no tienes cercanía)
+- <span class="speak-en">"Send the report by Friday."</span> (directo, sin atenuantes — apropiado hacia abajo, a un colaborador directo, en una tarea clara)
+- <span class="speak-en">"Could you send the report by Friday?"</span> (consultativo — petición a un par o hacia arriba)
+- <span class="speak-en">"Would it be possible to have the report by Friday?"</span> (formal, deferente — cliente externo o stakeholder senior con quien no tienes cercanía)
 
 Mismo contenido. Tres posiciones distintas en el gradiente de formalidad. La gramática no cambió — solo cambió la pila de verbos modales. Para un hispanohablante, *podría* es una forma verbal. En inglés, *could / would / might* son herramientas que apilas y combinas.
 
@@ -69,9 +71,9 @@ Mismo contenido. Tres posiciones distintas en el gradiente de formalidad. La gra
 
 Los hablantes de inglés señalan el registro en parte por la frecuencia con la que atenúan. Los comunicadores senior en inglés rara vez quitan los atenuantes por completo (eso se lee como agresivo); varían la *densidad* según el contexto. Una actualización al consejo tiene menor densidad de atenuantes que una lluvia de ideas con pares. Una escalación a un proveedor tiene menor densidad que una petición a un líder senior por una decisión que probablemente resista.
 
-- Atenuación baja: "We're behind plan and need to recalibrate the forecast."
-- Atenuación media: "We're tracking somewhat behind plan, and I think it would be worth recalibrating the forecast this week."
-- Atenuación alta: "I wonder if it might be worth us taking another look at the forecast — there are a few signals suggesting we may need to recalibrate."
+- Atenuación baja: <span class="speak-en">"We're behind plan and need to recalibrate the forecast."</span>
+- Atenuación media: <span class="speak-en">"We're tracking somewhat behind plan, and I think it would be worth recalibrating the forecast this week."</span>
+- Atenuación alta: <span class="speak-en">"I wonder if it might be worth us taking another look at the forecast — there are a few signals suggesting we may need to recalibrate."</span>
 
 El español también tiene atenuantes (*creo que, me parece que, sería bueno que*). El error es el mapeo uno-a-uno — un hispanohablante traduce *me parece* a "I think" y asume que el inglés necesita la misma densidad en todas partes. Generalmente necesita *menos* en contextos de decisión senior y *más* en contextos deferentes de lo que el instinto en español sugiere.
 
@@ -79,9 +81,9 @@ El español también tiene atenuantes (*creo que, me parece que, sería bueno qu
 
 El inglés codifica la deferencia y el suavizado convirtiendo afirmaciones en preguntas. Los líderes senior haciendo una petición rara vez dan órdenes directas a pares o hacia arriba — casi siempre enmarcan la decisión como una pregunta que contiene la respuesta.
 
-- Afirmación directa: "Move the meeting to Tuesday."
-- Indirecta vía pregunta: "Would it work to move the meeting to Tuesday?"
-- Más indirecta: "I wonder if Tuesday might work better for everyone."
+- Afirmación directa: <span class="speak-en">"Move the meeting to Tuesday."</span>
+- Indirecta vía pregunta: <span class="speak-en">"Would it work to move the meeting to Tuesday?"</span>
+- Más indirecta: <span class="speak-en">"I wonder if Tuesday might work better for everyone."</span>
 
 El español también lo hace, pero menos. La comunicación de registro alto en inglés se apoya fuertemente en el interrogativo-como-petición. El hispanohablante que sigue emitiendo afirmaciones directas hacia arriba en inglés — incluso técnicamente correctas — se lee como brusco de una manera que no tiene nada que ver con su intención.
 
@@ -99,7 +101,7 @@ Para los hispanohablantes esto es paradójicamente *más fácil* que para los na
 
 Cuando el control gramatical desaparece y el instinto no se redirige a las cuatro mecánicas, emergen dos patrones de falla.
 
-**Modo de falla 1: demasiado rígido.** El hablante traduce *usted* en una manta de formalidad. Cada correo se lee como un documento legal. Los modales se apilan defensivamente ("I would like to kindly request that you would consider…"). El vocabulario es uniformemente latino. El lector se siente mantenido a distancia incluso en momentos donde la calidez construiría alineación. Los hispanohablantes caen aquí más a menudo cuando asocian la formalidad-en-español con el respeto-en-inglés y sobre-traducen la formalidad.
+**Modo de falla 1: demasiado rígido.** El hablante traduce *usted* en una manta de formalidad. Cada correo se lee como un documento legal. Los modales se apilan defensivamente (<span class="speak-en">"I would like to kindly request that you would consider…"</span>). El vocabulario es uniformemente latino. El lector se siente mantenido a distancia incluso en momentos donde la calidez construiría alineación. Los hispanohablantes caen aquí más a menudo cuando asocian la formalidad-en-español con el respeto-en-inglés y sobre-traducen la formalidad.
 
 **Modo de falla 2: demasiado casual.** El hablante, intuyendo que el inglés no tiene *usted*, se establece en un registro medio neutro y plano para todo — consejo, equipo, proveedor, cliente. La gramática es correcta. El texto está bien. Pero la calibración desapareció. Para un oyente senior anglohablante, esto a menudo se lee como *no del todo en serio* — la ausencia del cambio de registro se lee como la ausencia de conciencia situacional.
 
