@@ -57,13 +57,13 @@ Los hiring managers estadounidenses no quieren tu biografía. Quieren una **prop
 
 ### La Respuesta Débil (Patrón Común)
 
-> "Well, I studied at Tec de Monterrey where I got my degree in industrial engineering. Then I worked at a manufacturing company for three years. After that, I moved to a tech company where I've been working for five years. I'm very responsible and I like teamwork."
+> <span class="speak-en">"Well, I studied at Tec de Monterrey where I got my degree in industrial engineering. Then I worked at a manufacturing company for three years. After that, I moved to a tech company where I've been working for five years. I'm very responsible and I like teamwork."</span>
 
 **Lo que escucha el entrevistador:** Una lista de datos que ya puedo ver en tu CV. Ningún insight sobre lo que realmente aportas a este puesto.
 
 ### La Respuesta Fuerte
 
-> "I'm an operations manager with eight years of experience optimizing supply chains for manufacturing and tech companies in Mexico. My specialty is reducing lead times without increasing cost—at my current company, I cut our fulfillment cycle from 14 days to 6, which saved $2.3 million annually. I'm excited about this role because you're scaling your Mexico operations, and I've done exactly that: built and led cross-border teams that hit US quality standards while working within Latin American supply networks."
+> <span class="speak-en">"I'm an operations manager with eight years of experience optimizing supply chains for manufacturing and tech companies in Mexico. My specialty is reducing lead times without increasing cost—at my current company, I cut our fulfillment cycle from 14 days to 6, which saved $2.3 million annually. I'm excited about this role because you're scaling your Mexico operations, and I've done exactly that: built and led cross-border teams that hit US quality standards while working within Latin American supply networks."</span>
 
 **Lo que escucha el entrevistador:** Un profesional que conoce su valor, puede cuantificar su impacto y ya conectó su experiencia con nuestras necesidades.
 
@@ -96,17 +96,17 @@ El framework que necesitas es **STAR: Situation, Task, Action, Result.**
 
 **Respuesta débil (sin estructura):**
 
-> "In my last job, I had a difficult client who was always changing requirements. I tried to communicate better and eventually we resolved the issues. It was a good learning experience."
+> <span class="speak-en">"In my last job, I had a difficult client who was always changing requirements. I tried to communicate better and eventually we resolved the issues. It was a good learning experience."</span>
 
 **Respuesta fuerte (método STAR):**
 
-> "**Situation:** At my previous company, I managed the implementation of an ERP system for a client in Monterrey. The CFO kept changing requirements mid-sprint, which was derailing our timeline and frustrating the development team.
+> <span class="speak-en">"Situation: At my previous company, I managed the implementation of an ERP system for a client in Monterrey. The CFO kept changing requirements mid-sprint, which was derailing our timeline and frustrating the development team.</span>
 >
-> **Task:** I needed to protect the project timeline while maintaining the client relationship—the account was worth $400K annually.
+> <span class="speak-en">Task: I needed to protect the project timeline while maintaining the client relationship—the account was worth $400K annually.</span>
 >
-> **Action:** I scheduled a one-on-one with the CFO and brought data: I showed him that each mid-sprint change was adding 8-12 days to the timeline and $15K in rework costs. I proposed a change request process where new requirements would be evaluated and prioritized at the start of each sprint, rather than injected mid-cycle. I also created a shared requirements backlog that gave him visibility into everything planned, so he could see his requests were being captured even when they weren't implemented immediately.
+> <span class="speak-en">Action: I scheduled a one-on-one with the CFO and brought data: I showed him that each mid-sprint change was adding 8-12 days to the timeline and $15K in rework costs. I proposed a change request process where new requirements would be evaluated and prioritized at the start of each sprint, rather than injected mid-cycle. I also created a shared requirements backlog that gave him visibility into everything planned, so he could see his requests were being captured even when they weren't implemented immediately.</span>
 >
-> **Result:** Mid-sprint changes dropped by 85%. We delivered the project two weeks ahead of the revised timeline. The CFO actually became one of our strongest references—he told our sales team that the structured process made him more confident in the final product."
+> <span class="speak-en">Result: Mid-sprint changes dropped by 85%. We delivered the project two weeks ahead of the revised timeline. The CFO actually became one of our strongest references—he told our sales team that the structured process made him more confident in the final product."</span>
 
 Nota lo que hace funcionar la respuesta fuerte: **detalles específicos, números y un arco narrativo claro.** El entrevistador puede visualizar la situación, evaluar tu criterio y verificar el resultado.
 
@@ -118,16 +118,16 @@ Estas son las preguntas que más probablemente enfrentarás, con frases de apert
 
 | Pregunta | Frase de Apertura Fuerte |
 |----------|--------------------------|
-| "Tell me about yourself." | "I'm a [rol] with [X years] of experience in [especialidad]. My focus is..." |
-| "Why do you want to work here?" | "What drew me to this role specifically is..." |
-| "Tell me about a time you failed." | "One situation that taught me a lot was when..." |
-| "How do you handle conflict?" | "I had a situation where two stakeholders disagreed on [X]. Here's how I approached it..." |
-| "What's your greatest strength?" | "The feedback I consistently get from managers and colleagues is..." |
-| "Where do you see yourself in 5 years?" | "My goal is to [área de crecimiento]. This role is a strong fit because..." |
-| "Why are you leaving your current role?" | "I've accomplished [X] in my current position, and I'm looking for..." |
-| "Tell me about a time you led a project." | "I led a [tipo] project with [alcance]. The biggest challenge was..." |
-| "How do you prioritize competing deadlines?" | "A recent example: I had [X] and [Y] due the same week. I evaluated them by..." |
-| "Do you have any questions for us?" | "Yes—I'd love to understand [algo específico sobre el equipo/rol/estrategia]." |
+| <span class="speak-en">"Tell me about yourself."</span> | <span class="speak-en">"I'm a project manager with five years of experience in supply chain optimization. My focus is..."</span> |
+| <span class="speak-en">"Why do you want to work here?"</span> | <span class="speak-en">"What drew me to this role specifically is..."</span> |
+| <span class="speak-en">"Tell me about a time you failed."</span> | <span class="speak-en">"One situation that taught me a lot was when..."</span> |
+| <span class="speak-en">"How do you handle conflict?"</span> | <span class="speak-en">"I had a situation where two stakeholders disagreed on the timeline. Here's how I approached it..."</span> |
+| <span class="speak-en">"What's your greatest strength?"</span> | <span class="speak-en">"The feedback I consistently get from managers and colleagues is..."</span> |
+| <span class="speak-en">"Where do you see yourself in 5 years?"</span> | <span class="speak-en">"My goal is to move into a senior leadership role. This role is a strong fit because..."</span> |
+| <span class="speak-en">"Why are you leaving your current role?"</span> | <span class="speak-en">"I've accomplished a lot in my current position, and I'm looking for..."</span> |
+| <span class="speak-en">"Tell me about a time you led a project."</span> | <span class="speak-en">"I led a cross-functional project with a team of eight. The biggest challenge was..."</span> |
+| <span class="speak-en">"How do you prioritize competing deadlines?"</span> | <span class="speak-en">"A recent example: I had a product launch and a quarterly report due the same week. I evaluated them by..."</span> |
+| <span class="speak-en">"Do you have any questions for us?"</span> | <span class="speak-en">"Yes, I'd love to understand what success looks like in the first 90 days."</span> |
 
 **Tip crítico:** Para "Do you have any questions?", siempre ten 2-3 preparadas. No preguntar nada indica desinterés. Pregunta sobre el equipo, el mayor reto que enfrenta el puesto, o cómo se mide el éxito en los primeros 90 días. Nunca preguntes sobre vacaciones o beneficios en rondas tempranas.
 
@@ -141,15 +141,15 @@ En México, la negociación salarial suele pasar tarde en el proceso, a veces a 
 
 ### El Enfoque Incorrecto
 
-> **Entrevistador:** "What are your salary expectations?"
+> **Entrevistador:** <span class="speak-en">"What are your salary expectations?"</span>
 >
-> **Candidato:** "I'm flexible. Whatever you think is fair."
+> **Candidato:** <span class="speak-en">"I'm flexible. Whatever you think is fair."</span>
 
 Esto no es modestia—es una bandera roja. Los hiring managers de EE.UU. interpretan esto como (a) no investigaste el mercado, (b) no valoras tus propias habilidades, o (c) estás tratando de evitar la negociación, lo que les hace preguntarse qué más vas a evitar.
 
 ### El Enfoque Correcto
 
-> "Based on my research and the scope of this role, I'm targeting a range of $85,000 to $95,000 USD annually. That's aligned with market data for this level of experience in [industria/ubicación]. I'm open to discussing the full compensation package—salary, equity, benefits—to find something that works for both of us."
+> <span class="speak-en">"Based on my research and the scope of this role, I'm targeting a range of $85,000 to $95,000 USD annually. That's aligned with market data for this level of experience in the software industry. I'm open to discussing the full compensation package — salary, equity, benefits — to find something that works for both of us."</span>
 
 ### Cómo Investigar Tu Número
 
@@ -160,7 +160,7 @@ Esto no es modestia—es una bandera roja. Los hiring managers de EE.UU. interpr
 
 **Si te presionan por un número antes de que estés listo:**
 
-> "I'd like to understand the full scope of the role before committing to a specific number. Can you share the budgeted range for this position?"
+> <span class="speak-en">"I'd like to understand the full scope of the role before committing to a specific number. Can you share the budgeted range for this position?"</span>
 
 Esto es directo, profesional y común en entrevistas de EE.UU. No es grosero—es cómo funciona la [comunicación de alto impacto](/es/servicios/ingles-para-presentaciones/).
 
@@ -183,7 +183,7 @@ La mayoría de las entrevistas EE.UU.-México se hacen por Zoom, Teams o Google 
 En video, pierdes el ida y vuelta natural de la conversación en persona. Compensa:
 
 - **Pausa antes de responder.** Una pausa de 2 segundos en video se percibe como reflexiva. Contestar inmediatamente puede crear superposición de audio.
-- **Señala cuando terminas.** Cierra tus respuestas con un cierre claro: "That's the main takeaway from that experience" o "Would you like me to go deeper on any part of that?"
+- **Señala cuando terminas.** Cierra tus respuestas con un cierre claro: <span class="speak-en">"That's the main takeaway from that experience"</span> o <span class="speak-en">"Would you like me to go deeper on any part of that?"</span>
 - **No leas notas en pantalla.** Es obvio—tus ojos se mueven y parece que estás leyendo un guion. Ten puntos clave en un bloc de notas junto a tu pantalla si lo necesitas.
 - **Asiente de forma visible.** En video, los movimientos sutiles no se registran. Exagera ligeramente para que el entrevistador sepa que estás siguiendo la conversación.
 
@@ -191,7 +191,7 @@ En video, pierdes el ida y vuelta natural de la conversación en persona. Compen
 
 Si hay retraso de audio, di:
 
-> "It seems like we have a slight delay on the connection. I'll make sure to pause after my answers to give you space to respond."
+> <span class="speak-en">"It seems like we have a slight delay on the connection. I'll make sure to pause after my answers to give you space to respond."</span>
 
 Nombrar el problema elimina la incomodidad. Es la misma habilidad de [presencia ejecutiva](/es/blog/presencia-ejecutiva-en-videollamadas/) que hace efectivos a los líderes senior en videollamadas.
 
@@ -207,7 +207,7 @@ La cultura profesional mexicana valora la cortesía, la construcción de relacio
 
 | Hábito de Comunicación Mexicano | Cómo se Lee en una Entrevista de EE.UU. |
 |--------------------------------|----------------------------------------|
-| "I think maybe I could possibly contribute..." | Falta de confianza |
+| <span class="speak-en">"I think maybe I could possibly contribute..."</span> | Falta de confianza |
 | Preámbulos largos antes del punto principal | Evasivo, sin enfoque |
 | Desviar el crédito al equipo | No puede identificar su contribución personal |
 | Evitar hablar de fracasos | Defensivo, falta de autoconocimiento |
@@ -218,9 +218,9 @@ La cultura profesional mexicana valora la cortesía, la construcción de relacio
 La franqueza en una entrevista de EE.UU. no significa ser brusco o arrogante. Significa:
 
 - **Liderar con la respuesta, luego explicar.** No al revés.
-- **Usar "I" al describir tus contribuciones.** "I led," "I decided," "I built"—no "we did."
-- **Cuantificar resultados.** "$2M in savings," "reduced cycle time by 40%," "managed a team of 12."
-- **Admitir fracasos directamente, luego pivotar a la lección.** "I made the wrong call on the vendor. Here's what I learned and what I did differently next time."
+- **Usar "I" al describir tus contribuciones.** <span class="speak-en">"I led,"</span> <span class="speak-en">"I decided,"</span> <span class="speak-en">"I built"</span>—no <span class="speak-en">"we did."</span>
+- **Cuantificar resultados.** <span class="speak-en">"$2M in savings,"</span> <span class="speak-en">"reduced cycle time by 40%,"</span> <span class="speak-en">"managed a team of 12."</span>
+- **Admitir fracasos directamente, luego pivotar a la lección.** <span class="speak-en">"I made the wrong call on the vendor. Here's what I learned and what I did differently next time."</span>
 
 ### El Problema del "I vs. We"
 
