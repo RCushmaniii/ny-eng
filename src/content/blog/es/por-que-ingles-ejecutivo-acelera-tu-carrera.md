@@ -102,6 +102,8 @@ En la práctica esto significa: cómo informas al consejo no es cómo hablas con
 
 Aquí es donde la mayoría de la capacitación de "inglés avanzado" se queda corta. El vocabulario y la gramática no te enseñan cuándo comprimir y cuándo expandir, cuándo empujar y cuándo ceder, cuándo ser la estructura de la sala y cuándo ser su diplomático.
 
+Para los hispanohablantes, el registro tiene su propio giro: el español codifica gran parte del registro en la gramática (tú/usted, el subjuntivo, el condicional), y el inglés no — lo que hace la transferencia más difícil de lo que parece. El análisis profundo de esas mecánicas está en [Registro en inglés: la habilidad que tu español no traduce](/es/blog/registro-en-ingles-para-hispanohablantes/).
+
 ---
 
 ## Qué cambia cuando cierras la brecha

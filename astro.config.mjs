@@ -52,6 +52,7 @@ const blogTranslations = {
   "7-questions-corporate-english-vendor": "/es/blog/7-preguntas-proveedor-ingles-corporativo/",
   "corporate-english-training-roi": "/es/blog/roi-capacitacion-ingles-corporativo/",
   "why-executive-english-accelerates-careers": "/es/blog/por-que-ingles-ejecutivo-acelera-tu-carrera/",
+  "english-register-for-spanish-speakers": "/es/blog/registro-en-ingles-para-hispanohablantes/",
 };
 
 // Reverse map (ES slug -> EN path)
