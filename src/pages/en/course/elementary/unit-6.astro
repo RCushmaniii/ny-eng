@@ -1,0 +1,296 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import CognateDiscovery from "@components/course/CognateDiscovery";
+import SentenceBuilder from "@components/course/SentenceBuilder";
+import PronunciationDrill from "@components/course/PronunciationDrill";
+import ConnectorChallenge from "@components/course/ConnectorChallenge";
+import SelfTest from "@components/course/SelfTest";
+import { elementaryUnits } from "@data/elementary/units";
+import {
+  cognateWaves,
+  sentenceBlocks,
+  powerVerbBlocks,
+  connectorSentences,
+  pronunciationDrills,
+  vocabularyList,
+} from "@data/elementary/unit-6";
+import {
+  Hash,
+  Layers,
+  Zap,
+  Link2,
+  Volume2,
+  ClipboardCheck,
+  BookOpen,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/elementary/unit-6" as const;
+
+const progressUnits = elementaryUnits.map((u) => ({
+  id: u.id,
+  slug: u.slug,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+
+const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
+
+const nextUnit = elementaryUnits.find((u) => u.id === 7);
+const nextUnitPublished = nextUnit?.published ?? false;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unit 6: How Much, How Many | Elementary English (A2)"
+  description="Quantifiers — much/many, some/any, a few, a little. The countable/uncountable rule that exposes Spanish speakers in seconds. Free A2 lesson."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={6}
+    basePath="/en/course/elementary"
+    lang="en"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-sky-400 text-sm font-semibold mb-3">
+          <Hash class="w-4 h-4" />
+          Unit 6
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          How Much, How Many
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          The quiet grammar that exposes Spanish speakers in seconds. Much vs. many. Some vs.
+          any. Why 'advice' has no plural. Why 'informations' is wrong every time. The rule:
+          some nouns can be counted, others can't — and the quantifier you choose has to match.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <nav class="bg-white border-b border-slate-200 sticky top-[52px] z-30 overflow-x-auto">
+    <div class="site-container mx-auto px-4">
+      <div class="flex items-center gap-1 py-2 text-sm whitespace-nowrap">
+        <a href="#vocabulary" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <BookOpen class="w-3.5 h-3.5" /> Countables
+        </a>
+        <a href="#much-many" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Layers class="w-3.5 h-3.5" /> Much / Many
+        </a>
+        <a href="#some-any" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Zap class="w-3.5 h-3.5" /> Some / Any
+        </a>
+        <a href="#boss" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Link2 class="w-3.5 h-3.5" /> Boss Sentence
+        </a>
+        <a href="#pronunciation" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Volume2 class="w-3.5 h-3.5" /> Pronunciation
+        </a>
+        <a href="#self-test" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <ClipboardCheck class="w-3.5 h-3.5" /> Self-Test
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="vocabulary" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <BookOpen class="w-4 h-4" />
+            Section A
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Countables, Uncountables, and Quantifiers
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Three waves. Wave 1: nouns you can count (chairs, people, hours). Wave 2: nouns you
+            CAN'T count (water, time, advice — yes, advice). Wave 3: the ten quantifiers and
+            which type each pairs with. Tap any entry to hear it.
+          </p>
+        </div>
+        <CognateDiscovery client:visible waves={waveData} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section id="much-many" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Layers class="w-4 h-4" />
+            Section B
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Much vs. Many — Plus 'A Lot Of', 'A Few', 'A Little'
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            'Many' takes countable. 'Much' takes uncountable. 'A lot of' is the safe choice — it
+            works with both, and it sounds more natural in affirmatives than 'much' or 'many'
+            alone. 'A few' (countable) and 'a little' (uncountable) are the small-amount pair.
+          </p>
+        </div>
+        <SentenceBuilder client:visible blocks={sentenceBlocks} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section id="some-any" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Zap class="w-4 h-4" />
+            Section C
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Some / Any / No — The Affirmative-Negative-Question Pattern
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            'Some' in affirmatives. 'Any' in negatives and questions. 'No' for stronger
+            negation. Plus the exception: when you OFFER or REQUEST something, switch back to
+            'some' — even in question form ('Would you like some coffee?').
+          </p>
+        </div>
+        <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section id="boss" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Link2 class="w-4 h-4" />
+            Section D
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            The Boss Sentence — A Real Meeting Recap
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Five sentences. Six different quantifiers (many, a few, much, some, no, plenty of,
+            a lot of). Mixing countable nouns (people, ideas, questions, concerns) and
+            uncountable nouns (time, energy, work). This is what natural quantification sounds
+            like in real meetings.
+          </p>
+        </div>
+        <ConnectorChallenge
+          client:visible
+          connectors={connectorSentences.connectors}
+          bossSentence={connectorSentences.bossSentence}
+          lang="en"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="pronunciation" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-rose-500 text-sm font-semibold mb-2">
+            <Volume2 class="w-4 h-4" />
+            Pronunciation Lab
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Quantifier Sounds — Vowels and Linking
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            'Many' and 'any' both have the short 'e' sound (like 'pen'). 'Much' has the 'uh'
+            sound (like 'cup'). 'A lot of' merges into 'uh-LOT-uh'. 'Some' rhymes with 'sum'.
+            Drill these — the pronunciation is what makes quantifiers sound natural, not just
+            grammatically correct.
+          </p>
+        </div>
+        <PronunciationDrill client:visible drills={pronunciationDrills} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section id="self-test" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <ClipboardCheck class="w-4 h-4" />
+            Self-Test
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Test What You Learned
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Flashcard review of every countable/uncountable noun, quantifier, and useful phrase
+            from Unit 6. Switch between Spanish→English and English→Spanish modes.
+          </p>
+        </div>
+        <SelfTest client:visible vocabulary={vocabularyList} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-gradient-to-b from-slate-900 to-slate-800">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-2xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-white">Unit 6 Complete!</h2>
+        <p class="text-lg text-slate-100 leading-relaxed">
+          You can now talk about quantities the way native speakers do — without saying
+          'advices', 'informations', or 'much chairs'. Six units down, four to go. Next: real
+          questions that go beyond yes and no.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center pt-4">
+          <a
+            href="/en/course/elementary/unit-5/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors"
+          >
+            ← Review Unit 5
+          </a>
+          {nextUnitPublished ? (
+            <a
+              href="/en/course/elementary/unit-7/"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-colors shadow-lg"
+            >
+              Continue to Unit 7 →
+            </a>
+          ) : (
+            <a
+              href="/en/course/elementary/"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-colors shadow-lg"
+            >
+              Course Overview
+            </a>
+          )}
+        </div>
+        <div class="pt-8 border-t border-slate-700 mt-8">
+          <p class="text-slate-200 text-sm mb-3">
+            Want personalized English coaching?
+          </p>
+          <a
+            href="/en/contact/"
+            class="text-sky-400 hover:text-sky-300 font-medium underline underline-offset-2"
+          >
+            Book a free consultation with Robert →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
