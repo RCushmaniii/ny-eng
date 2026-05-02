@@ -46,11 +46,13 @@ Cuando algo sale mal, la mayoría de los hablantes no nativos recurren al lengua
 
 Así suena el lenguaje reactivo vs. el lenguaje de liderazgo en la práctica:
 
+*Haz clic en el ícono del altavoz junto a cada frase en inglés para escucharla con la cadencia y el tono ejecutivo correctos.*
+
 **Reactivo (cómo reporta la mayoría):**
-> "There's a problem with the shipment. The carrier didn't pick up on time and the client is upset."
+> <span class="speak-en">"There's a problem with the shipment. The carrier didn't pick up on time and the client is upset."</span>
 
 **Liderazgo (lo que realmente dicen los ejecutivos):**
-> "We've identified a delay in the carrier pickup. We've already escalated with the logistics partner, the client has been notified with an updated timeline, and I'll have a confirmed resolution by 3 PM."
+> <span class="speak-en">"We've identified a delay in the carrier pickup. We've already escalated with the logistics partner, the client has been notified with an updated timeline, and I'll have a confirmed resolution by 3 PM."</span>
 
 La diferencia no está en usar palabras más elegantes. Está en responder tres preguntas en cada declaración:
 
@@ -119,11 +121,11 @@ La primera versión crea enemigos. La segunda crea alineación. Ambas describen 
 Esta distinción importa enormemente en los negocios interculturales. Los ejecutivos latinoamericanos frecuentemente se preocupan por sonar demasiado directos o agresivos en inglés. La solución no es suavizar todo — es redirigir la franqueza hacia sistemas y procesos en lugar de personas.
 
 **Frases clave de persuasión que debes dominar:**
-- "What I'm proposing is..."
-- "The strategic case for this is..."
-- "If we invest in X, we unlock Y..."
-- "This positions us to..."
-- "The opportunity cost of not acting is..."
+- <span class="speak-en">"What I'm proposing is..."</span>
+- <span class="speak-en">"The strategic case for this is..."</span>
+- <span class="speak-en">"If we invest in X, we unlock Y..."</span>
+- <span class="speak-en">"This positions us to..."</span>
+- <span class="speak-en">"The opportunity cost of not acting is..."</span>
 
 ---
 
@@ -154,16 +156,16 @@ Observa lo que logra esto: no dice "no." No pelea. Reposiciona la conversación 
 Este es un error costoso que veo constantemente: usar lenguaje débil en negociaciones crea precedentes caros.
 
 Cuando dices cosas como:
-> "I guess we could probably do that..."
-> "Maybe we could make it work..."
-> "I suppose that's okay..."
+> <span class="speak-en">"I guess we could probably do that..."</span>
+> <span class="speak-en">"Maybe we could make it work..."</span>
+> <span class="speak-en">"I suppose that's okay..."</span>
 
 Estás señalando que tu posición no es firme — y la otra parte va a presionar más fuerte la próxima vez. Cada "I guess" te cuesta dinero, tiempo o alcance en futuras negociaciones.
 
 **Alternativas fuertes:**
-- "That's something I can commit to." (un sí claro)
-- "That's outside what I can accommodate in this scope." (un no claro)
-- "Here's what I can do..." (redirigiendo)
+- <span class="speak-en">"That's something I can commit to."</span> (un sí claro)
+- <span class="speak-en">"That's outside what I can accommodate in this scope."</span> (un no claro)
+- <span class="speak-en">"Here's what I can do..."</span> (redirigiendo)
 
 **¿Listo para evaluar tu comunicación en negociaciones?** [Toma el Quiz de Confianza en Comunicación](/es/quiz/executives/) para ver dónde estás parado.
 
@@ -312,11 +314,11 @@ Los profesionales junior describen. Los profesionales senior dirigen. Compara:
 
 | Junior | Senior |
 |--------|--------|
-| "I think we should maybe consider..." | "My recommendation is..." |
-| "We had some problems with..." | "We navigated a challenge around..." |
-| "It's kind of complicated because..." | "The complexity here is..." |
-| "I was wondering if we could..." | "What I'd propose is..." |
-| "Sorry, but I disagree..." | "I see it differently, and here's why..." |
+| <span class="speak-en">"I think we should maybe consider..."</span> | <span class="speak-en">"My recommendation is..."</span> |
+| <span class="speak-en">"We had some problems with..."</span> | <span class="speak-en">"We navigated a challenge around..."</span> |
+| <span class="speak-en">"It's kind of complicated because..."</span> | <span class="speak-en">"The complexity here is..."</span> |
+| <span class="speak-en">"I was wondering if we could..."</span> | <span class="speak-en">"What I'd propose is..."</span> |
+| <span class="speak-en">"Sorry, but I disagree..."</span> | <span class="speak-en">"I see it differently, and here's why..."</span> |
 
 Cada elección de palabra es una señal. Cuando consistentemente eliges lenguaje que proyecta claridad y dirección, las personas inconscientemente te asignan más autoridad — independientemente de tu acento, tu título o tu primer idioma.
 

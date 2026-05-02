@@ -41,13 +41,13 @@ Los profesionales estadounidenses prefieren ir directo al grano. La contundencia
 
 Los profesionales mexicanos consideran que el desacuerdo abierto o la crítica directa son irrespetuosos. Preservar la dignidad personal — **cuidar las apariencias** — tiene prioridad sobre la claridad transaccional.
 
-**La misma retroalimentación, dos culturas:**
+**La misma retroalimentación, dos culturas.** *Las frases ejemplo se mantienen en inglés porque son las que vas a escuchar y necesitas reconocer en el trabajo. Haz clic en el ícono del altavoz junto a cada una para escucharla.*
 
 | Situación | Gerente Estadounidense | Gerente Mexicano |
 |-----------|----------------------|-----------------|
-| El reporte tiene datos faltantes | "A este reporte le faltan datos." | "El reporte es muy completo; quizás podríamos agregar más datos." |
-| Se va a incumplir el plazo | "No vamos a cumplir con la fecha límite." | "Estamos avanzando. Hay algunos factores que estamos gestionando." |
-| Desacuerdo con una propuesta | "No creo que ese enfoque vaya a funcionar." | "Es interesante. ¿También hemos considerado...?" |
+| El reporte tiene datos faltantes | <span class="speak-en">"This report is missing data."</span> | <span class="speak-en">"The report is very comprehensive; perhaps we could add more data."</span> |
+| Se va a incumplir el plazo | <span class="speak-en">"We're going to miss the deadline."</span> | <span class="speak-en">"We're making progress. There are some factors we're managing."</span> |
+| Desacuerdo con una propuesta | <span class="speak-en">"I don't think that approach will work."</span> | <span class="speak-en">"That's interesting. Have we also considered...?"</span> |
 
 Ninguno de los dos enfoques es incorrecto. Pero cuando un estadounidense interpreta el encuadre diplomático de un mexicano como evasión, o un mexicano interpreta la franqueza de un estadounidense como agresión, la relación se deteriora.
 
@@ -165,9 +165,9 @@ México emplea una **retroalimentación negativa altamente indirecta.** Dado que
 
 | Retroalimentación Estadounidense | Equivalente Mexicano |
 |--------------------------------|---------------------|
-| "A este reporte le faltan datos." | "El reporte es muy completo; quizás podríamos considerar agregar más datos para hacerlo aún más sólido." |
-| "Este enfoque no va a funcionar." | "Es una dirección interesante. ¿También hemos considerado algunas alternativas?" |
-| "No cumpliste con la fecha límite." | "Sé que has estado trabajando muy duro en esto. ¿Cuándo crees que podríamos ver la versión final?" |
+| <span class="speak-en">"This report is missing data."</span> | <span class="speak-en">"The report is very comprehensive; perhaps we could look at adding more data to make it even stronger."</span> |
+| <span class="speak-en">"This approach won't work."</span> | <span class="speak-en">"This is an interesting direction. Have we also considered some alternatives?"</span> |
+| <span class="speak-en">"You missed the deadline."</span> | <span class="speak-en">"I know you've been working very hard on this. When do you think we might see the final version?"</span> |
 
 ### Desacuerdo: Confrontación (EE.UU.) vs. Evitación de la Confrontación (México)
 
@@ -284,17 +284,17 @@ Esto significa que las dinámicas culturales descritas anteriormente se **agrava
 
 4. **Adapta tu cultura de fechas límite.** Usa check-ins de alta frecuencia y marcadores de progreso diarios en lugar de fechas lejanas con límites rígidos.
 
-5. **Suaviza tu Slack.** Agrega contexto, amabilidades y saludos a los mensajes digitales. "Hola María, espero que tu mañana vaya bien — una pregunta rápida sobre el API endpoint" aterriza muy diferente que "¿Cuál es el estatus del API endpoint?"
+5. **Suaviza tu Slack.** Agrega contexto, amabilidades y saludos a los mensajes digitales. <span class="speak-en">"Hey María, hope your morning is going well — quick question on the API endpoint"</span> aterriza muy diferente que <span class="speak-en">"What's the status on the API endpoint?"</span>
 
 ### Para Profesionales Mexicanos que Trabajan con Estadounidenses
 
 1. **Entiende que la franqueza no es agresión.** Cuando tu colega estadounidense dice "esto no funciona", está dando retroalimentación eficiente, no atacándote personalmente.
 
-2. **Señala los bloqueos temprano y de forma explícita.** En la cultura laboral estadounidense, admitir un problema temprano es respetado — ocultarlo hasta que se convierta en crisis no lo es. "Estoy bloqueado en X y necesito Y para avanzar" es la frase que más confianza genera.
+2. **Señala los bloqueos temprano y de forma explícita.** En la cultura laboral estadounidense, admitir un problema temprano es respetado — ocultarlo hasta que se convierta en crisis no lo es. <span class="speak-en">"I'm blocked on X and need Y to proceed"</span> es la frase que más confianza genera.
 
 3. **Di "no" cuando quieras decir no.** El "sí" estadounidense es un compromiso vinculante. Si no estás seguro, di "necesito verificar eso" o "déjame confirmar el cronograma." Esto es más respetado que aceptar y entregar menos de lo prometido.
 
-4. **Empieza con la recomendación.** Los estadounidenses prefieren la comunicación centrada en la aplicación. En lugar de construir hacia tu conclusión, comienza con ella: "Recomiendo X porque Y" — y luego proporciona el detalle de respaldo.
+4. **Empieza con la recomendación.** Los estadounidenses prefieren la comunicación centrada en la aplicación. En lugar de construir hacia tu conclusión, comienza con ella: <span class="speak-en">"I recommend X because Y"</span> — y luego proporciona el detalle de respaldo.
 
 5. **Asume la responsabilidad individual.** En equipos estadounidenses, hacerse responsable de un resultado específico — incluso de un fracaso — genera credibilidad más rápido que la ambigüedad colectiva.
 

@@ -96,7 +96,7 @@ Aquí es donde desaparece el dinero:
 
 Una casa de software de 50 personas en Guadalajara llegó a la ronda final para un compromiso de un año con una empresa fintech estadounidense. La evaluación técnica salió bien. Luego vino la presentación ejecutiva.
 
-El CTO habló durante 40 minutos. Conocía el material perfectamente—decisiones de arquitectura, cumplimiento de seguridad, modelo de entrega. Pero su entrega era vacilante. Traducía en su cabeza. Dijo "How I can say..." dos veces. Se perdió completamente la pregunta del CEO sobre estrategia de mitigación de riesgos y tuvo que pedirle que la repitiera.
+El CTO habló durante 40 minutos. Conocía el material perfectamente—decisiones de arquitectura, cumplimiento de seguridad, modelo de entrega. Pero su entrega era vacilante. Traducía en su cabeza. Dijo <span class="speak-en">"How I can say..."</span> dos veces. Se perdió completamente la pregunta del CEO sobre estrategia de mitigación de riesgos y tuvo que pedirle que la repitiera.
 
 **La Consecuencia:**
 
@@ -453,19 +453,19 @@ Los desarrolladores estancados ven esto. Saben que los pasan por alto por el idi
 
 No se trata de gramática. Se trata de:
 
-**Dirigir reuniones efectivas en inglés:**
+**Dirigir reuniones efectivas en inglés.** *Haz clic en el ícono del altavoz junto a cada frase para escucharla con la cadencia ejecutiva correcta.*
 
-- "Empecemos con el mayor obstáculo."
-- "Escucho dos perspectivas diferentes—déjenme asegurarme de que entiendo ambas."
-- "Necesitamos tomar una decisión hoy. Aquí están las compensaciones."
+- <span class="speak-en">"Let's start with the biggest blocker."</span>
+- <span class="speak-en">"I hear two different perspectives—let me make sure I understand both."</span>
+- <span class="speak-en">"We need to make a decision today. Here are the tradeoffs."</span>
 
 **Explicar conceptos técnicos a personas no técnicas:**
 
-- "Piénsenlo como una cocina de restaurante. Podemos servir a más clientes si contratamos más cocineros, pero solo si el espacio de la cocina puede manejarlos. Esa es nuestra restricción de escalabilidad."
+- <span class="speak-en">"Think of it like a restaurant kitchen. We can serve more customers if we hire more cooks, but only if the kitchen space can handle them. That's our scalability constraint."</span>
 
 **Manejar conflictos diplomáticamente:**
 
-- "Entiendo la urgencia, pero este enfoque crea deuda técnica. Déjenme mostrarles el costo a largo plazo."
+- <span class="speak-en">"I understand the urgency, but this approach creates technical debt. Let me show you the long-term cost."</span>
 
 **Proyectar presencia ejecutiva:**
 
@@ -689,15 +689,15 @@ No memorices palabras individuales. Aprende frases de alta frecuencia.
 
 **Frases marco:**
 
-- "Let me walk you through three options."
-- "The tradeoff here is X versus Y."
-- "To clarify, are you asking about A or B?"
+- <span class="speak-en">"Let me walk you through three options."</span>
+- <span class="speak-en">"The tradeoff here is X versus Y."</span>
+- <span class="speak-en">"To clarify, are you asking about A or B?"</span>
 
 **Frases específicas de escenario:**
 
-- **Comenzar una historia:** "Let me give you some context." / "Here's what happened."
-- **Actualizaciones de estado:** "We're on track for X. The blocker is Y. We'll resolve it by Z."
-- **Manejo de objeciones:** "I understand your concern. Let me address that directly."
+- **Comenzar una historia:** <span class="speak-en">"Let me give you some context."</span> / <span class="speak-en">"Here's what happened."</span>
+- **Actualizaciones de estado:** <span class="speak-en">"We're on track for X. The blocker is Y. We'll resolve it by Z."</span>
+- **Manejo de objeciones:** <span class="speak-en">"I understand your concern. Let me address that directly."</span>
 
 Construye un banco de frases personal para las situaciones que enfrentas repetidamente. Practica estas hasta que sean automáticas.
 
@@ -728,8 +728,8 @@ Tus elecciones de lenguaje señalan tu identidad. Entrena para coincidir con la 
 
 **Ejemplo:**
 
-- **Débil:** "Um, sí, creo que podríamos tal vez intentar hacerlo de esa manera, si funciona para todos."
-- **Fuerte:** "Sí, ese enfoque es factible. Esto es lo que necesitaremos para que funcione."
+- **Débil:** <span class="speak-en">"Um, yeah, I think we could maybe try to do it that way, if that works for everyone."</span>
+- **Fuerte:** <span class="speak-en">"Yes, that approach is feasible. Here's what we'll need to make it work."</span>
 
 El contenido es similar. La percepción es completamente diferente.
 
