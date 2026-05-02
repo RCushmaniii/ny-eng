@@ -8,8 +8,8 @@ categories:
   - "Carrera y Liderazgo"
 readingTime: "8 min de lectura"
 audience: "Profesionales senior hispanohablantes que dominan el registro sin esfuerzo en español pero sienten que su inglés se aplana en situaciones de alto impacto"
-featuredImage: "./images/mexico-us-workplace-communication.webp"
-imageAlt: "Ejecutivo senior hispanohablante en una videollamada con contrapartes en EE. UU., calibrando el registro entre idiomas"
+featuredImage: "./images/registro-en-ingles-para-hispanohablantes.webp"
+imageAlt: "Imagen dividida del mismo ejecutivo latino en dos registros — liderando un standup con su equipo en un espacio de trabajo casual a la izquierda, dirigiéndose a un consejo de contrapartes senior con traje impecable a la derecha"
 translations:
   en: "/en/blog/english-register-for-spanish-speakers/"
 publish: true

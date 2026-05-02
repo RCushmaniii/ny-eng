@@ -8,8 +8,8 @@ categories:
   - "Career & Leadership"
 readingTime: "8 min read"
 audience: "Senior Spanish-speaking professionals who command register effortlessly in Spanish but feel their English flatten in high-stakes settings"
-featuredImage: "./images/mexico-us-workplace-communication.webp"
-imageAlt: "Senior Spanish-speaking executive on a video call with US counterparts, calibrating register across languages"
+featuredImage: "./images/english-register-for-spanish-speakers.webp"
+imageAlt: "Split image of the same Latino executive in two registers — leading a team standup in a casual workspace on the left, addressing a boardroom of senior counterparts in a sharp suit on the right"
 translations:
   es: "/es/blog/registro-en-ingles-para-hispanohablantes/"
 publish: true
