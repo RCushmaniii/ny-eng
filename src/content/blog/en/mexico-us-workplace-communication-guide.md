@@ -41,13 +41,13 @@ American professionals favor getting straight to the point. Bluntness signals ef
 
 Mexican professionals view open disagreement or blunt criticism as disrespectful. Preserving personal dignity — **saving face** — takes priority over transactional clarity.
 
-**The same feedback, two cultures:**
+**The same feedback, two cultures.** *Click the speaker icon next to any phrase to hear it spoken with proper executive pacing and tone.*
 
 | Situation | American Manager | Mexican Manager |
 |-----------|-----------------|-----------------|
-| Report has missing data | "This report is missing data." | "The report is very comprehensive; perhaps we could add more data." |
-| Deadline will be missed | "We're going to miss the deadline." | "We're making progress. There are some factors we're managing." |
-| Disagreeing with a proposal | "I don't think that approach will work." | "That's interesting. Have we also considered...?" |
+| Report has missing data | <span class="speak-en">"This report is missing data."</span> | <span class="speak-en">"The report is very comprehensive; perhaps we could add more data."</span> |
+| Deadline will be missed | <span class="speak-en">"We're going to miss the deadline."</span> | <span class="speak-en">"We're making progress. There are some factors we're managing."</span> |
+| Disagreeing with a proposal | <span class="speak-en">"I don't think that approach will work."</span> | <span class="speak-en">"That's interesting. Have we also considered...?"</span> |
 
 Neither approach is wrong. But when an American reads a Mexican's diplomatic framing as evasion, or a Mexican reads an American's directness as aggression, the relationship breaks down.
 
@@ -165,9 +165,9 @@ Mexico relies on **highly indirect negative feedback.** Because personal dignity
 
 | American Feedback | Mexican Equivalent |
 |------------------|-------------------|
-| "This report is missing data." | "The report is very comprehensive; perhaps we could look at adding more data to make it even stronger." |
-| "This approach won't work." | "This is an interesting direction. Have we also considered some alternatives?" |
-| "You missed the deadline." | "I know you've been working very hard on this. When do you think we might see the final version?" |
+| <span class="speak-en">"This report is missing data."</span> | <span class="speak-en">"The report is very comprehensive; perhaps we could look at adding more data to make it even stronger."</span> |
+| <span class="speak-en">"This approach won't work."</span> | <span class="speak-en">"This is an interesting direction. Have we also considered some alternatives?"</span> |
+| <span class="speak-en">"You missed the deadline."</span> | <span class="speak-en">"I know you've been working very hard on this. When do you think we might see the final version?"</span> |
 
 ### Disagreeing: Confrontational (US) vs. Avoids Confrontation (Mexico)
 
@@ -284,17 +284,17 @@ This means the cultural dynamics described above are **compounded by language ba
 
 4. **Adapt your deadline culture.** Use high-frequency check-ins and daily progress markers instead of distant deadlines with hard boundaries.
 
-5. **Soften your Slack.** Add context, pleasantries, and greetings to digital messages. "Hey María, hope your morning is going well — quick question on the API endpoint" lands differently than "What's the status on the API endpoint?"
+5. **Soften your Slack.** Add context, pleasantries, and greetings to digital messages. <span class="speak-en">"Hey María, hope your morning is going well — quick question on the API endpoint"</span> lands differently than <span class="speak-en">"What's the status on the API endpoint?"</span>
 
 ### For Mexican Professionals Working with Americans
 
 1. **Understand that directness isn't aggression.** When your US colleague says "this doesn't work," they're providing efficient feedback, not attacking you personally.
 
-2. **Flag blockers early and explicitly.** In American work culture, admitting a problem early is respected — hiding it until it becomes a crisis is not. "I'm blocked on X and need Y to proceed" is the highest-trust sentence you can say.
+2. **Flag blockers early and explicitly.** In American work culture, admitting a problem early is respected — hiding it until it becomes a crisis is not. <span class="speak-en">"I'm blocked on X and need Y to proceed"</span> is the highest-trust sentence you can say.
 
 3. **Say "no" when you mean no.** The American "yes" is a binding commitment. If you're uncertain, say "I need to check on that" or "Let me confirm the timeline." This is more respected than agreeing and underdelivering.
 
-4. **Lead with the recommendation.** Americans prefer applications-first communication. Instead of building to your conclusion, start with it: "I recommend X because Y" — then provide the supporting detail.
+4. **Lead with the recommendation.** Americans prefer applications-first communication. Instead of building to your conclusion, start with it: <span class="speak-en">"I recommend X because Y"</span> — then provide the supporting detail.
 
 5. **Own individual accountability.** In US teams, taking responsibility for a specific outcome — even failure — builds credibility faster than collective ambiguity.
 

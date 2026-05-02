@@ -58,13 +58,15 @@ These are small linguistic habits. The career cost compounds for years.
 
 Senior leaders who command rooms are not the loudest, the most charismatic, or the most polished. They are the ones who have learned to suppress four specific signals that mark someone as not-quite-ready:
 
-**Emotion.** Visible reactivity reads as loss of control. Peer-reviewed research links cognitive reappraisal — the ability to reframe rather than react — to higher leadership performance ratings from both supervisors and peers (Lopes et al., *Frontiers in Psychology*). The senior leader does not say "this is a disaster." They say "this is impacting performance and requires adjustment." Same reality. Different signal.
+*Click the speaker icon next to each example below to hear the weak version and the executive reframing — the difference lives in the delivery, not just the words.*
 
-**Weakness.** "I'm struggling with this" is a true statement. It is also a signal that downgrades you in the listener's mental model. The executive equivalent — "this is currently a challenge that needs to be addressed" — communicates the same fact while preserving authority. The skill is not denial. It is *framing*.
+**Emotion.** Visible reactivity reads as loss of control. Peer-reviewed research links cognitive reappraisal — the ability to reframe rather than react — to higher leadership performance ratings from both supervisors and peers (Lopes et al., *Frontiers in Psychology*). The senior leader does not say <span class="speak-en">"this is a disaster."</span> They say <span class="speak-en">"this is impacting performance and requires adjustment."</span> Same reality. Different signal.
 
-**Unpreparedness.** "I'm not sure yet" sounds honest, but in a senior meeting it reads as unprepared. "The analysis is still being finalized" communicates the same uncertainty without the credibility cost. Executives are allowed to not know. They are not allowed to *sound* unprepared.
+**Weakness.** <span class="speak-en">"I'm struggling with this"</span> is a true statement. It is also a signal that downgrades you in the listener's mental model. The executive equivalent — <span class="speak-en">"this is currently a challenge that needs to be addressed"</span> — communicates the same fact while preserving authority. The skill is not denial. It is *framing*.
 
-**Deference where authority is required.** "Can you take a look when you have time?" gives away control. "This requires your review" preserves it. The most consistent pattern across senior leaders is that they do not soften where the situation calls for direction. Softening is not politeness — it is a quiet transfer of authority the moment did not ask you to make.
+**Unpreparedness.** <span class="speak-en">"I'm not sure yet"</span> sounds honest, but in a senior meeting it reads as unprepared. <span class="speak-en">"The analysis is still being finalized"</span> communicates the same uncertainty without the credibility cost. Executives are allowed to not know. They are not allowed to *sound* unprepared.
+
+**Deference where authority is required.** <span class="speak-en">"Can you take a look when you have time?"</span> gives away control. <span class="speak-en">"This requires your review"</span> preserves it. The most consistent pattern across senior leaders is that they do not soften where the situation calls for direction. Softening is not politeness — it is a quiet transfer of authority the moment did not ask you to make.
 
 These four shifts are not personality. They are habits — and habits are trainable.
 
