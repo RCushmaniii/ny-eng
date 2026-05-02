@@ -136,7 +136,7 @@ export const elementaryUnits: ElementaryUnit[] = [
     pronunciationFocus: "Stress on quantifiers in negation ('NOT many', 'NOT much')",
     pronunciationFocusEs: "Acento en cuantificadores en negación ('NOT many', 'NOT much')",
     icon: "Hash",
-    published: false,
+    published: true,
   },
   {
     id: 7,
