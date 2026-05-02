@@ -98,7 +98,7 @@ export const elementaryUnits: ElementaryUnit[] = [
     pronunciationFocus: "Reduced 'gonna' and contractions ('I'll', 'we'll')",
     pronunciationFocusEs: "Reducción de 'gonna' y contracciones ('I'll', 'we'll')",
     icon: "Rocket",
-    published: false,
+    published: true,
   },
   {
     id: 5,

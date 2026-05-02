@@ -1,0 +1,295 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import CognateDiscovery from "@components/course/CognateDiscovery";
+import SentenceBuilder from "@components/course/SentenceBuilder";
+import PronunciationDrill from "@components/course/PronunciationDrill";
+import ConnectorChallenge from "@components/course/ConnectorChallenge";
+import SelfTest from "@components/course/SelfTest";
+import { elementaryUnits } from "@data/elementary/units";
+import {
+  cognateWaves,
+  sentenceBlocks,
+  powerVerbBlocks,
+  connectorSentences,
+  pronunciationDrills,
+  vocabularyList,
+} from "@data/elementary/unit-4";
+import {
+  Rocket,
+  Layers,
+  Zap,
+  Link2,
+  Volume2,
+  ClipboardCheck,
+  BookOpen,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/elementary/unit-4" as const;
+
+const progressUnits = elementaryUnits.map((u) => ({
+  id: u.id,
+  slug: u.slug,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+
+const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
+
+const nextUnit = elementaryUnits.find((u) => u.id === 5);
+const nextUnitPublished = nextUnit?.published ?? false;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unit 4: What's Coming Next | Elementary English (A2)"
+  description="Going to vs. will — when to use each. Talk about plans, promises, predictions, and in-the-moment decisions in natural English. Free A2 lesson."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={4}
+    basePath="/en/course/elementary"
+    lang="en"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-sky-400 text-sm font-semibold mb-3">
+          <Rocket class="w-4 h-4" />
+          Unit 4
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          What's Coming Next
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Past tense is finished. Today we pivot to the future. Two ways to talk about it:
+          <strong>going to</strong> for plans you've already decided, <strong>will</strong> for
+          promises, predictions, and decisions you make as you speak. The difference matters —
+          and natives switch between them constantly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <nav class="bg-white border-b border-slate-200 sticky top-[52px] z-30 overflow-x-auto">
+    <div class="site-container mx-auto px-4">
+      <div class="flex items-center gap-1 py-2 text-sm whitespace-nowrap">
+        <a href="#vocabulary" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <BookOpen class="w-3.5 h-3.5" /> Vocabulary
+        </a>
+        <a href="#going-to" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Layers class="w-3.5 h-3.5" /> Going To
+        </a>
+        <a href="#will" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Zap class="w-3.5 h-3.5" /> Will
+        </a>
+        <a href="#boss" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Link2 class="w-3.5 h-3.5" /> Boss Sentence
+        </a>
+        <a href="#pronunciation" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Volume2 class="w-3.5 h-3.5" /> Pronunciation
+        </a>
+        <a href="#self-test" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <ClipboardCheck class="w-3.5 h-3.5" /> Self-Test
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="vocabulary" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <BookOpen class="w-4 h-4" />
+            Section A
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Future Vocabulary in 3 Waves
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Future time markers tell WHEN. Going-to verbs are for plans you've ALREADY DECIDED.
+            Will phrases are for promises, predictions, and IN-THE-MOMENT decisions. Tap any
+            word to hear it.
+          </p>
+        </div>
+        <CognateDiscovery client:visible waves={waveData} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section id="going-to" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Layers class="w-4 h-4" />
+            Section B
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Going To — Plans You've Already Decided
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            The pattern: subject + am/is/are + going to + base verb. Build it up across all six
+            subject pronouns, then drill negatives and questions. Native speakers always
+            contract: I'm, she's, we're.
+          </p>
+        </div>
+        <SentenceBuilder client:visible blocks={sentenceBlocks} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section id="will" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Zap class="w-4 h-4" />
+            Section C
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Will — Promises, Predictions, In-the-Moment Decisions
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            'Will' is for what you decide AS YOU SPEAK — an offer, a prediction, a snap
+            decision. It's almost always contracted ('I'll', 'we'll', 'they'll'). The final
+            block drills the choice between 'going to' and 'will' in real situations.
+          </p>
+        </div>
+        <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section id="boss" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Link2 class="w-4 h-4" />
+            Section D
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            The Boss Sentence — A Real Tomorrow Plan
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Five connectors. Six sentences. A full tomorrow plan that mixes 'going to' (planned
+            events) with 'will' (in-the-moment additions) the way native speakers naturally do.
+          </p>
+        </div>
+        <ConnectorChallenge
+          client:visible
+          connectors={connectorSentences.connectors}
+          bossSentence={connectorSentences.bossSentence}
+          lang="en"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="pronunciation" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-rose-500 text-sm font-semibold mb-2">
+            <Volume2 class="w-4 h-4" />
+            Pronunciation Lab
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Future Reductions and Contractions
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            'Going to' becomes 'gonna' in fast speech. 'I'll' is one syllable, rhymes with
+            'aisle'. 'Won't' rhymes with 'don't' (NOT 'wont'). Drill these until they sound
+            natural — they're how natives speak about the future.
+          </p>
+        </div>
+        <PronunciationDrill client:visible drills={pronunciationDrills} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section id="self-test" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <ClipboardCheck class="w-4 h-4" />
+            Self-Test
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Test What You Learned
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Flashcard review of every future time marker, going-to phrase, will phrase, and
+            useful future sentence from Unit 4. Switch between Spanish→English and
+            English→Spanish modes.
+          </p>
+        </div>
+        <SelfTest client:visible vocabulary={vocabularyList} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-gradient-to-b from-slate-900 to-slate-800">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-2xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-white">Unit 4 Complete!</h2>
+        <p class="text-lg text-slate-100 leading-relaxed">
+          You now own past AND future tense. You can talk about yesterday with regular and
+          irregular verbs, and about tomorrow with both 'going to' and 'will'. Next: comparing
+          things — bigger, smaller, the best, the most expensive.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center pt-4">
+          <a
+            href="/en/course/elementary/unit-3/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors"
+          >
+            ← Review Unit 3
+          </a>
+          {nextUnitPublished ? (
+            <a
+              href="/en/course/elementary/unit-5/"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-colors shadow-lg"
+            >
+              Continue to Unit 5 →
+            </a>
+          ) : (
+            <a
+              href="/en/course/elementary/"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-colors shadow-lg"
+            >
+              Course Overview
+            </a>
+          )}
+        </div>
+        <div class="pt-8 border-t border-slate-700 mt-8">
+          <p class="text-slate-200 text-sm mb-3">
+            Want personalized English coaching?
+          </p>
+          <a
+            href="/en/contact/"
+            class="text-sky-400 hover:text-sky-300 font-medium underline underline-offset-2"
+          >
+            Book a free consultation with Robert →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
