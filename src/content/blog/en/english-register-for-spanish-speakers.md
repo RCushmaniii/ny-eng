@@ -55,13 +55,15 @@ Without the knob, the speaker often defaults to one of two failure modes — too
 
 These are the four levers a Spanish-native senior professional needs to learn to operate consciously, because there is no grammatical autopilot in English doing it for them.
 
+*Click the speaker icon next to each example below to hear it with proper executive pacing and tone.*
+
 ### 1. Modal verbs
 
 English does its register-shifting in the modal layer — *can / could / would / might / should / may*. This is where most of the work happens.
 
-- "Send the report by Friday." (direct, unhedged — appropriate downward to a direct report on a clear task)
-- "Could you send the report by Friday?" (consultative — peer or upward request)
-- "Would it be possible to have the report by Friday?" (formal, deferential — external client or senior stakeholder you are not close to)
+- <span class="speak-en">"Send the report by Friday."</span> (direct, unhedged — appropriate downward to a direct report on a clear task)
+- <span class="speak-en">"Could you send the report by Friday?"</span> (consultative — peer or upward request)
+- <span class="speak-en">"Would it be possible to have the report by Friday?"</span> (formal, deferential — external client or senior stakeholder you are not close to)
 
 Same content. Three different positions on the formality gradient. The grammar did not change — only the modal verb stack did. For a Spanish speaker, *podría* is a verb form. In English, *could / would / might* are tools you stack and combine.
 
@@ -69,9 +71,9 @@ Same content. Three different positions on the formality gradient. The grammar d
 
 English speakers signal register partly through how often they hedge. Senior English communicators rarely strip hedges entirely (that reads as aggressive); they vary the *density* by context. A board update has lower hedging density than a peer brainstorm. A vendor escalation has lower hedging density than a request to a senior leader for a decision they may resist.
 
-- Low hedging: "We're behind plan and need to recalibrate the forecast."
-- Medium hedging: "We're tracking somewhat behind plan, and I think it would be worth recalibrating the forecast this week."
-- High hedging: "I wonder if it might be worth us taking another look at the forecast — there are a few signals suggesting we may need to recalibrate."
+- Low hedging: <span class="speak-en">"We're behind plan and need to recalibrate the forecast."</span>
+- Medium hedging: <span class="speak-en">"We're tracking somewhat behind plan, and I think it would be worth recalibrating the forecast this week."</span>
+- High hedging: <span class="speak-en">"I wonder if it might be worth us taking another look at the forecast — there are a few signals suggesting we may need to recalibrate."</span>
 
 Spanish has hedges too (*creo que, me parece que, sería bueno que*). The mistake is one-to-one mapping — a Spanish speaker drops their *me parece* into English as "I think" and assumes English needs the same density everywhere. It usually needs *less* in senior decision contexts and *more* in deferential ones than the Spanish instinct suggests.
 
@@ -79,9 +81,9 @@ Spanish has hedges too (*creo que, me parece que, sería bueno que*). The mistak
 
 English encodes deference and softening by converting statements into questions. Senior leaders making a request rarely give direct commands to peers or upward — they almost always frame the decision as a question that contains the answer.
 
-- Direct statement: "Move the meeting to Tuesday."
-- Indirect via question: "Would it work to move the meeting to Tuesday?"
-- More indirect: "I wonder if Tuesday might work better for everyone."
+- Direct statement: <span class="speak-en">"Move the meeting to Tuesday."</span>
+- Indirect via question: <span class="speak-en">"Would it work to move the meeting to Tuesday?"</span>
+- More indirect: <span class="speak-en">"I wonder if Tuesday might work better for everyone."</span>
 
 Spanish does this too, but less. English upper-register communication leans heavily on the interrogative-as-request. The Spanish speaker who keeps issuing direct statements upward in English — even technically correct ones — reads as blunt in a way that has nothing to do with their intention.
 
@@ -99,7 +101,7 @@ For Spanish speakers, this is paradoxically *easier* than for English natives �
 
 When the grammatical control disappears and the instinct does not get redirected to the four mechanics, two failure patterns emerge.
 
-**Failure mode 1: too stiff.** The speaker translates *usted* into a formality blanket. Every email reads like a legal document. Modal verbs stack defensively ("I would like to kindly request that you would consider…"). The vocabulary is uniformly Latinate. The reader feels held at arm's length even in moments where warmth would build alignment. Spanish speakers most often fall into this when they associate formality-in-Spanish with respect-in-English and over-translate the formality.
+**Failure mode 1: too stiff.** The speaker translates *usted* into a formality blanket. Every email reads like a legal document. Modal verbs stack defensively (<span class="speak-en">"I would like to kindly request that you would consider…"</span>). The vocabulary is uniformly Latinate. The reader feels held at arm's length even in moments where warmth would build alignment. Spanish speakers most often fall into this when they associate formality-in-Spanish with respect-in-English and over-translate the formality.
 
 **Failure mode 2: too casual.** The speaker, sensing that English does not have *usted*, defaults to a flat neutral middle register everywhere — board, team, vendor, client. The grammar is correct. The text is fine. But the calibration has gone missing. To a senior English-speaking listener, this often reads as *not quite serious enough* — the absence of register-shifting reads as the absence of situational awareness.
 
