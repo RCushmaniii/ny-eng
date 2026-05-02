@@ -1,0 +1,296 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import CognateDiscovery from "@components/course/CognateDiscovery";
+import SentenceBuilder from "@components/course/SentenceBuilder";
+import PronunciationDrill from "@components/course/PronunciationDrill";
+import ConnectorChallenge from "@components/course/ConnectorChallenge";
+import SelfTest from "@components/course/SelfTest";
+import { elementaryUnits } from "@data/elementary/units";
+import {
+  cognateWaves,
+  sentenceBlocks,
+  powerVerbBlocks,
+  connectorSentences,
+  pronunciationDrills,
+  vocabularyList,
+} from "@data/elementary/unit-5";
+import {
+  Scale,
+  Layers,
+  Zap,
+  Link2,
+  Volume2,
+  ClipboardCheck,
+  BookOpen,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/elementary/unit-5" as const;
+
+const progressUnits = elementaryUnits.map((u) => ({
+  id: u.id,
+  slug: u.slugEs,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+
+const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
+
+const nextUnit = elementaryUnits.find((u) => u.id === 6);
+const nextUnitPublished = nextUnit?.published ?? false;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unidad 5: Comparando Cosas | Inglés Elemental (A2)"
+  description="Comparativos y superlativos en inglés: -er than, more X than, the best, the worst. Domina los irregulares que confunden a los hispanohablantes. Gratis A2."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={5}
+    basePath="/es/curso/elemental"
+    lang="es"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-sky-400 text-sm font-semibold mb-3">
+          <Scale class="w-4 h-4" />
+          Unidad 5
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Comparando Cosas
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          El pasado y el futuro están listos. Hoy: comparar cosas. Bigger than. The best. The
+          most expensive. La gramática es directa, pero los irregulares (good/better/best,
+          bad/worse/worst) confunden a casi todos los hispanohablantes. Después de esta unidad,
+          tú no.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <nav class="bg-white border-b border-slate-200 sticky top-[52px] z-30 overflow-x-auto">
+    <div class="site-container mx-auto px-4">
+      <div class="flex items-center gap-1 py-2 text-sm whitespace-nowrap">
+        <a href="#vocabulary" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <BookOpen class="w-3.5 h-3.5" /> Vocabulario
+        </a>
+        <a href="#comparatives" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Layers class="w-3.5 h-3.5" /> Comparativos
+        </a>
+        <a href="#superlatives" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Zap class="w-3.5 h-3.5" /> Superlativos
+        </a>
+        <a href="#boss" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Link2 class="w-3.5 h-3.5" /> Oración Maestra
+        </a>
+        <a href="#pronunciation" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Volume2 class="w-3.5 h-3.5" /> Pronunciación
+        </a>
+        <a href="#self-test" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <ClipboardCheck class="w-3.5 h-3.5" /> Auto-Test
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="vocabulary" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <BookOpen class="w-4 h-4" />
+            Sección A
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Tres Patrones de Comparación
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Adjetivos cortos usan -er y -est. Adjetivos largos usan 'more' y 'the most'. Cinco
+            irregulares no siguen ninguna regla — y son los más comunes. Toca cualquier entrada
+            para escuchar las tres formas.
+          </p>
+        </div>
+        <CognateDiscovery client:visible waves={waveData} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="comparatives" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Layers class="w-4 h-4" />
+            Sección B
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Construyendo Comparativos — X is -er/more X than Y
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Cuatro bloques: adjetivos cortos + -er, adjetivos largos + 'more', los irregulares
+            (better/worse/more/less), y comparación de igualdad ('as X as'). NUNCA combines —
+            'more better' es el error más común de los hispanohablantes.
+          </p>
+        </div>
+        <SentenceBuilder client:visible blocks={sentenceBlocks} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="superlatives" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Zap class="w-4 h-4" />
+            Sección C
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Construyendo Superlativos — The -est / The Most X
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            'The' es OBLIGATORIO — eso es lo que hace que un superlativo sea superlativo.
+            Después -est para cortos, 'most' para largos, irregulares para los irregulares. El
+            último bloque teje comparativos Y superlativos en un solo pensamiento como lo hacen
+            los nativos.
+          </p>
+        </div>
+        <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="boss" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Link2 class="w-4 h-4" />
+            Sección D
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            La Oración Maestra — Comparando un Departamento Nuevo
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Seis oraciones. Tres comparativos (bigger, more comfortable, more expensive). Tres
+            superlativos (the most modern, by far the best, the best). Más intensificadores
+            (way more, much better). Así suena comparar cosas reales.
+          </p>
+        </div>
+        <ConnectorChallenge
+          client:visible
+          connectors={connectorSentences.connectors}
+          bossSentence={connectorSentences.bossSentence}
+          lang="es"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="pronunciation" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-rose-500 text-sm font-semibold mb-2">
+            <Volume2 class="w-4 h-4" />
+            Laboratorio de Pronunciación
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Sonidos de Comparación — Reducción de 'than', Schwa-R, T Suave
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            'Than' se reduce a 'thun' en habla rápida. La terminación -er es el schwa-r
+            (relajado, sin acento). El 'better' americano suena como 'BED-er' (T del medio
+            suave). Practica hasta que las comparaciones fluyan naturalmente.
+          </p>
+        </div>
+        <PronunciationDrill client:visible drills={pronunciationDrills} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="self-test" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <ClipboardCheck class="w-4 h-4" />
+            Auto-Evaluación
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Evalúa Lo que Aprendiste
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Repaso tipo flashcard de cada comparativo, superlativo, irregular, intensificador, y
+            frase útil de la Unidad 5. Cambia entre los modos español→inglés e inglés→español.
+          </p>
+        </div>
+        <SelfTest client:visible vocabulary={vocabularyList} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-gradient-to-b from-slate-900 to-slate-800">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-2xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-white">¡Unidad 5 Completada!</h2>
+        <p class="text-lg text-slate-100 leading-relaxed">
+          Ahora cubriste el pasado, el futuro, y cómo comparar cualquier cosa. Eso es la MITAD
+          del curso A2. Cinco unidades terminadas, cinco por venir. Sigue: cuánto, cuántos —
+          cuantificadores y la distinción contable/incontable.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center pt-4">
+          <a
+            href="/es/curso/elemental/unidad-4/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors"
+          >
+            ← Repasar Unidad 4
+          </a>
+          {nextUnitPublished ? (
+            <a
+              href="/es/curso/elemental/unidad-6/"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-colors shadow-lg"
+            >
+              Continuar a Unidad 6 →
+            </a>
+          ) : (
+            <a
+              href="/es/curso/elemental/"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-colors shadow-lg"
+            >
+              Vista General del Curso
+            </a>
+          )}
+        </div>
+        <div class="pt-8 border-t border-slate-700 mt-8">
+          <p class="text-slate-200 text-sm mb-3">
+            ¿Quieres coaching personalizado de inglés?
+          </p>
+          <a
+            href="/es/contact/"
+            class="text-sky-400 hover:text-sky-300 font-medium underline underline-offset-2"
+          >
+            Reserva una consulta gratuita con Robert →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

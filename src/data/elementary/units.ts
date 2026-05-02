@@ -117,7 +117,7 @@ export const elementaryUnits: ElementaryUnit[] = [
     pronunciationFocus: "-er and -est endings + 'than' reduction",
     pronunciationFocusEs: "Terminaciones -er y -est + reducción de 'than'",
     icon: "Scale",
-    published: false,
+    published: true,
   },
   {
     id: 6,
