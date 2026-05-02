@@ -58,13 +58,15 @@ Estos son pequeños hábitos lingüísticos. El costo a la carrera se acumula du
 
 Los líderes senior que dominan las salas no son los más ruidosos, los más carismáticos, ni los más pulidos. Son los que han aprendido a suprimir cuatro señales específicas que marcan a alguien como aún-no-listo:
 
-**Emoción.** La reactividad visible se lee como pérdida de control. Investigación revisada por pares conecta la reevaluación cognitiva — la capacidad de reformular en lugar de reaccionar — con calificaciones de desempeño de liderazgo más altas, tanto de supervisores como de pares (Lopes et al., *Frontiers in Psychology*). El líder senior no dice "esto es un desastre". Dice "esto está impactando el desempeño y requiere ajuste". Misma realidad. Diferente señal.
+*Haz clic en el ícono del altavoz junto a cada ejemplo en inglés para escuchar la versión débil y la reformulación ejecutiva — la diferencia vive en la entrega, no solo en las palabras.*
 
-**Debilidad.** "Estoy batallando con esto" es una afirmación verdadera. También es una señal que te degrada en el modelo mental del oyente. El equivalente ejecutivo — "este es actualmente un reto que necesita ser atendido" — comunica el mismo hecho mientras preserva la autoridad. La habilidad no es negación. Es *encuadre*.
+**Emoción.** La reactividad visible se lee como pérdida de control. Investigación revisada por pares conecta la reevaluación cognitiva — la capacidad de reformular en lugar de reaccionar — con calificaciones de desempeño de liderazgo más altas, tanto de supervisores como de pares (Lopes et al., *Frontiers in Psychology*). El líder senior no dice <span class="speak-en">"this is a disaster."</span> Dice <span class="speak-en">"this is impacting performance and requires adjustment."</span> Misma realidad. Diferente señal.
 
-**Falta de preparación.** "Aún no estoy seguro" suena honesto, pero en una junta senior se lee como no preparado. "El análisis aún se está finalizando" comunica la misma incertidumbre sin el costo de credibilidad. A los ejecutivos se les permite no saber. No se les permite *sonar* no preparados.
+**Debilidad.** Decir <span class="speak-en">"I'm struggling with this"</span> es una afirmación verdadera. También es una señal que te degrada en el modelo mental del oyente. El equivalente ejecutivo — <span class="speak-en">"this is currently a challenge that needs to be addressed"</span> — comunica el mismo hecho mientras preserva la autoridad. La habilidad no es negación. Es *encuadre*.
 
-**Deferencia donde se requiere autoridad.** "¿Puedes revisarlo cuando tengas tiempo?" cede el control. "Esto requiere tu revisión" lo preserva. El patrón más consistente entre los líderes senior es que no suavizan donde la situación pide dirección. Suavizar no es cortesía — es una transferencia silenciosa de autoridad que el momento no te pidió hacer.
+**Falta de preparación.** <span class="speak-en">"I'm not sure yet"</span> suena honesto, pero en una junta senior se lee como no preparado. <span class="speak-en">"The analysis is still being finalized"</span> comunica la misma incertidumbre sin el costo de credibilidad. A los ejecutivos se les permite no saber. No se les permite *sonar* no preparados.
+
+**Deferencia donde se requiere autoridad.** <span class="speak-en">"Can you take a look when you have time?"</span> cede el control. <span class="speak-en">"This requires your review"</span> lo preserva. El patrón más consistente entre los líderes senior es que no suavizan donde la situación pide dirección. Suavizar no es cortesía — es una transferencia silenciosa de autoridad que el momento no te pidió hacer.
 
 Estos cuatro cambios no son personalidad. Son hábitos — y los hábitos son entrenables.
 

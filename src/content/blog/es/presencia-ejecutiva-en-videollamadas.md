@@ -25,6 +25,8 @@ Las videollamadas son donde avanzan los acuerdos, se alinean equipos y se evalú
 
 En New York English, entreno a ejecutivos y gerentes senior en tecnología, finanzas, logística y servicios profesionales para comunicar con claridad y autoridad. Si necesitas construir confianza básica primero, revisa mi guía sobre [5 estrategias simples para ganar confianza](/es/blog/aumentar-confianza/). Aquí tienes siete hábitos comprobados que puedes aplicar hoy.
 
+*Las plantillas y frases ejemplo a continuación se mantienen en inglés porque son las que vas a usar en una videollamada en inglés. Haz clic en el ícono del altavoz junto a cada una para escucharla con la cadencia ejecutiva correcta.*
+
 ---
 
 ### Lo que aprenderás
@@ -43,7 +45,7 @@ Abre la sala y fija expectativas de inmediato.
 
 **Plantilla:**
 
-> “Gracias por unirse. Usaremos 25 minutos. Agenda: estatus en 5, decisión sobre X en 10, siguientes pasos en 10. Si surgen preguntas, déjenlas en el chat y las trato en el Q&A.”
+> <span class="speak-en">“Thanks for joining. We’ll use 25 minutes. Agenda: status in 5, decision on X in 10, next steps in 10. If questions pop up, drop them in chat and I’ll park them for the Q&A.”</span>
 
 Esto comunica control, respeto por el tiempo y una ruta clara a resultados.
 
@@ -55,7 +57,7 @@ Apunta a **tres oraciones** de **~30 palabras en total** antes de pausar. En vid
 
 **Ejemplo:**
 
-> “Cumplimos la meta de la semana pasada. Quedan dos riesgos: tiempos y presupuesto. Propondré un trade-off que protege el lanzamiento.”
+> <span class="speak-en">“We met last week’s target. Two risks remain: timeline and budget. I’ll propose a trade-off that protects launch.”</span>
 
 ---
 
@@ -91,9 +93,9 @@ Mantén el flujo sin sonar rígido. Si necesitas más frases para dirigir reunio
 
 **Frases que funcionan:**
 
-- “Excelente punto—déjame cerrar esta idea y vuelvo contigo.”
-- “Lo dejo pendiente en el chat para decidir X primero.”
-- “¿Podemos guardar preguntas dos minutos mientras muestro el impacto?”
+- <span class="speak-en">“Great point—let me finish this thought and I’ll come back to you.”</span>
+- <span class="speak-en">“I’ll park that in chat so we can decide on X first.”</span>
+- <span class="speak-en">“Can we hold questions for two minutes while I show the impact?”</span>
 
 ---
 
@@ -103,7 +105,7 @@ Usa **PREP** (Punto → Razón → Ejemplo → Punto) para responder con clarida
 
 **Ejemplo:**
 
-> “Debemos retrasar el lanzamiento (Punto). Los riesgos de calidad pueden dañar la confianza (Razón). La última prisa nos costó dos clientes (Ejemplo). Por eso dos semanas protegen la relación (Punto).”
+> <span class="speak-en">“We should delay launch. Quality risks could damage trust. Our last rushed release cost two clients. So a two-week delay protects the relationship.”</span> (Punto — Razón — Ejemplo — Punto)
 
 ---
 
@@ -113,7 +115,7 @@ Sustituye cierres débiles por acciones, responsables y tiempos.
 
 **Plantilla:**
 
-> "Resumen: Decisión A aprobada. Próximos pasos—**María** redacta la nota al cliente para el **jueves**, **José** revisa presupuesto para el **viernes**. ¿Alguna pregunta sobre responsabilidades?"
+> <span class="speak-en">“Recap: Decision A approved. Next steps — Maria drafts the client note by Thursday, Jorge updates the timeline by end of day Friday. I’ll send a summary in 30 minutes. Anything blocking those?”</span>
 
 ---
 
