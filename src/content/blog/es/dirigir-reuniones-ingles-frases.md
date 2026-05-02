@@ -52,7 +52,7 @@ _(Comencemos. Tenemos tres temas que cubrir, y quiero asegurarme de que salgamos
 
 **En contexto:**
 > _La gente va entrando, hay conversaciones paralelas._
-> "All right, let's get started. We have three items to cover, and I want to make sure we leave with clear next steps. First up: the Q2 timeline."
+> <span class="speak-en">"All right, let's get started. We have three items to cover, and I want to make sure we leave with clear next steps. First up: the Q2 timeline."</span>
 
 ---
 
@@ -65,7 +65,7 @@ _(Antes de empezar, esto es lo que me gustaría que logremos al final de esta re
 **Por qué funciona:** La mayoría de las personas anuncia temas. Los líderes anuncian resultados. Esta frase señala que estás orientado a resultados y le da al grupo un objetivo claro hacia el cual trabajar.
 
 **En contexto:**
-> "Thanks for joining, everyone. Before we dive in, here's what I'd like us to accomplish by the end of this meeting: a final decision on the vendor, and alignment on the rollout timeline."
+> <span class="speak-en">"Thanks for joining, everyone. Before we dive in, here's what I'd like us to accomplish by the end of this meeting: a final decision on the vendor, and alignment on the rollout timeline."</span>
 
 ---
 
@@ -78,7 +78,7 @@ _(Compartí la agenda con anticipación. Díganme si hay algo que quieran agrega
 **Por qué funciona:** Demuestra preparación e invita participación sin ceder la propiedad de la reunión. Tú eres el anfitrión, y todos lo saben.
 
 **En contexto:**
-> "I've shared the agenda ahead of time. Let me know if there's anything you'd like to add before we proceed. No? Great—let's start with item one."
+> <span class="speak-en">"I've shared the agenda ahead of time. Let me know if there's anything you'd like to add before we proceed. No? Great—let's start with item one."</span>
 
 ---
 
@@ -91,7 +91,7 @@ _(Solo para establecer expectativas, me gustaría mantener esto en 45 minutos pa
 **Por qué funciona:** Respetar el tiempo de los demás es una de las formas más rápidas de ganarte su confianza. Esta frase le dice a la sala que eres organizado, eficiente y considerado—y te da permiso para cortar discusiones más adelante.
 
 **En contexto:**
-> "Just to set expectations, I'd like to keep this to 45 minutes so we can all get back to our priorities. That means we'll need to stay focused—so I'll jump in if we go off track."
+> <span class="speak-en">"Just to set expectations, I'd like to keep this to 45 minutes so we can all get back to our priorities. That means we'll need to stay focused—so I'll jump in if we go off track."</span>
 
 ---
 
@@ -104,7 +104,7 @@ _(Permítanme hacer un breve resumen de dónde nos quedamos la última vez, para
 **Por qué funciona:** Elimina los primeros cinco minutos de confusión donde todos intentan recordar qué se decidió. También te posiciona como la persona que es dueña de la continuidad del proyecto.
 
 **En contexto:**
-> "Let me provide a quick recap of where we left off last time, so everyone's on the same page. On Tuesday, we agreed to move forward with Option B pending legal review. Legal has since cleared it, so today we're finalizing the timeline."
+> <span class="speak-en">"Let me provide a quick recap of where we left off last time, so everyone's on the same page. On Tuesday, we agreed to move forward with Option B pending legal review. Legal has since cleared it, so today we're finalizing the timeline."</span>
 
 ---
 
@@ -121,7 +121,7 @@ _(Me gustaría escuchar tu opinión sobre esto, [Nombre]. ¿Cuál es tu perspect
 **Por qué funciona:** Llamar a alguien por su nombre es la técnica de facilitación más efectiva que existe. Muestra que valoras su opinión, evita que la persona más ruidosa domine y mantiene a todos atentos porque saben que podrían ser los siguientes.
 
 **En contexto:**
-> "We've heard a few perspectives. I'd like to hear from you on this, Maria. What's your perspective from the engineering side?"
+> <span class="speak-en">"We've heard a few perspectives. I'd like to hear from you on this, Maria. What's your perspective from the engineering side?"</span>
 
 ---
 
@@ -134,7 +134,7 @@ _(Excelente punto. ¿Cómo se conecta eso con el cronograma que discutimos?)_
 **Por qué funciona:** Valida al hablante (para que no se sienta callado) mientras redirige la conversación hacia la agenda. Es redirección diplomática en su mejor expresión.
 
 **En contexto:**
-> "That's a great point, Carlos. How does that connect to the timeline we discussed? I want to make sure we're solving for the deadline while we explore this."
+> <span class="speak-en">"That's a great point, Carlos. How does that connect to the timeline we discussed? I want to make sure we're solving for the deadline while we explore this."</span>
 
 ---
 
@@ -147,7 +147,7 @@ _(Hagamos una pausa en eso por un momento. Quiero asegurarme de que todos hayan 
 **Por qué funciona:** Desacelera la sala sin culpar a nadie. La palabra "pause" es poderosa—crea espacio sin generar conflicto. Y "weigh in" es una expresión natural del inglés de negocios que señala que quieres diversidad de opiniones.
 
 **En contexto:**
-> "Let's pause on that for a moment. I want to make sure everyone has had a chance to weigh in. Does anyone see a risk we haven't discussed?"
+> <span class="speak-en">"Let's pause on that for a moment. I want to make sure everyone has had a chance to weigh in. Does anyone see a risk we haven't discussed?"</span>
 
 ---
 
@@ -160,7 +160,7 @@ _(Noto que estamos entrando en los detalles. ¿Podemos dar un paso atrás y conf
 **Por qué funciona:** Esta es una marca de liderazgo fuerte: la capacidad de alejarse del zoom cuando la sala está demasiado cerca. Previene tiempo desperdiciado y mantiene las decisiones en el orden correcto.
 
 **En contexto:**
-> "I notice we're getting into the details of the implementation. Can we step back and confirm we agree on the overall approach first? Once we're aligned on the direction, we can map out the specifics."
+> <span class="speak-en">"I notice we're getting into the details of the implementation. Can we step back and confirm we agree on the overall approach first? Once we're aligned on the direction, we can map out the specifics."</span>
 
 ---
 
@@ -173,7 +173,7 @@ _(Nos quedan unos 15 minutos en este tema. Enfoquémonos en lo que necesitamos d
 **Por qué funciona:** Introduce urgencia sin pánico. También te da un marco para apartar temas de menor prioridad para después, lo que mantiene la reunión en rumbo.
 
 **En contexto:**
-> "We have about 15 minutes left on this item. Let's focus on what we need to decide today versus what can wait for next week's sync."
+> <span class="speak-en">"We have about 15 minutes left on this item. Let's focus on what we need to decide today versus what can wait for next week's sync."</span>
 
 ---
 
@@ -190,7 +190,7 @@ _(Lo veo de otra manera. Esta es mi preocupación.)_
 **Por qué funciona:** Es directa sin ser agresiva. "I see it differently" es honesto y respetuoso. Seguirlo con "Here's my concern" cambia el foco hacia el problema, no hacia la persona. Esta es [comunicación a nivel ejecutivo](/es/servicios/ingles-para-ejecutivos/) en su forma más efectiva.
 
 **En contexto:**
-> "I appreciate the rationale, and I see it differently. Here's my concern: if we launch in Q2 without the integration, we risk losing the three enterprise clients who specifically requested it."
+> <span class="speak-en">"I appreciate the rationale, and I see it differently. Here's my concern: if we launch in Q2 without the integration, we risk losing the three enterprise clients who specifically requested it."</span>
 
 ---
 
@@ -203,7 +203,7 @@ _(Quiero objetar eso—no por ser difícil, sino porque creo que estamos pasando
 **Por qué funciona:** La frase "not to be difficult" anticipa cualquier percepción de que estás siendo obstructivo. Enmarca tu objeción como constructiva, lo que hace más probable que la gente escuche. Este es exactamente el tipo de [comunicación de alto impacto](/es/servicios/ingles-para-presentaciones/) que separa a los buenos gerentes de los grandes líderes.
 
 **En contexto:**
-> "I want to push back on that—not to be difficult, but because I think we're missing something. The data from last quarter suggests the opposite trend."
+> <span class="speak-en">"I want to push back on that—not to be difficult, but because I think we're missing something. The data from last quarter suggests the opposite trend."</span>
 
 ---
 
@@ -216,7 +216,7 @@ _(Es un punto válido. Y creo que también necesitamos considerar...)_
 **Por qué funciona:** "And" es mucho más poderoso que "but" en desacuerdos. "But" borra todo lo que vino antes. "And" le suma. Esta frase valida a la otra persona mientras introduce tu perspectiva como complementaria en lugar de competitiva.
 
 **En contexto:**
-> "That's a valid point—the cost savings are significant. And I think we also need to consider the impact on the customer experience before we commit."
+> <span class="speak-en">"That's a valid point—the cost savings are significant. And I think we also need to consider the impact on the customer experience before we commit."</span>
 
 ---
 
@@ -229,7 +229,7 @@ _(Separemos el qué del cómo. Creo que estamos de acuerdo en la meta—solo dif
 **Por qué funciona:** Reformula el conflicto de "no estamos de acuerdo" a "estamos de acuerdo en el destino; solo necesitamos negociar la ruta." Esto baja la tensión inmediatamente y abre la puerta al compromiso.
 
 **En contexto:**
-> "Let's separate the what from the how. I think we agree on the goal—we want to reduce churn by 20%. We just differ on the approach. So let's evaluate both options against the same criteria."
+> <span class="speak-en">"Let's separate the what from the how. I think we agree on the goal—we want to reduce churn by 20%. We just differ on the approach. So let's evaluate both options against the same criteria."</span>
 
 ---
 
@@ -242,7 +242,7 @@ _(Te escucho. Déjame repetir lo que estoy entendiendo para asegurarme antes de 
 **Por qué funciona:** Repetir la posición de alguien es la técnica de liderazgo más subestimada en los negocios. Muestra respeto, te da tiempo para pensar, y muchas veces revela que el desacuerdo es menor de lo que parecía. Esta es una de las [estrategias que usan los ejecutivos](/es/blog/4-secretos-que-usan-los-ejecutivos/) para mantener la compostura bajo presión.
 
 **En contexto:**
-> "I hear you. Let me repeat back what I'm hearing to make sure I understand before I respond. You're saying the risk is too high to launch without a beta phase, and that two additional weeks would significantly reduce that risk. Is that right?"
+> <span class="speak-en">"I hear you. Let me repeat back what I'm hearing to make sure I understand before I respond. You're saying the risk is too high to launch without a beta phase, and that two additional weeks would significantly reduce that risk. Is that right?"</span>
 
 ---
 
@@ -259,7 +259,7 @@ _(Parece que nos inclinamos hacia la Opción A. ¿Alguien tiene una objeción fu
 **Por qué funciona:** "Leaning toward" refleja la energía de la sala sin cerrar prematuramente la conversación. "Strong objection" es intencional—eleva la barra para el disenso, lo que previene que quejas menores descarrilen la decisión.
 
 **En contexto:**
-> "It sounds like we're leaning toward Option A—launching in Q3 with the reduced feature set. Does anyone have a strong objection before we commit?"
+> <span class="speak-en">"It sounds like we're leaning toward Option A—launching in Q3 with the reduced feature set. Does anyone have a strong objection before we commit?"</span>
 
 ---
 
@@ -272,7 +272,7 @@ _(Voy a tomar la decisión en esto. Esto es lo que vamos a hacer, y esta es la r
 **Por qué funciona:** A veces el consenso no es posible, y el líder necesita decidir. Esta frase es directa, responsable y transparente. Explicar el "por qué" asegura la aceptación incluso cuando la gente no está de acuerdo.
 
 **En contexto:**
-> "We've debated this thoroughly, and I appreciate everyone's input. I'm going to make the call on this. Here's what we're going to do: we're going with Vendor B. The reason is that their integration timeline aligns with our Q3 launch, and that's our top priority."
+> <span class="speak-en">"We've debated this thoroughly, and I appreciate everyone's input. I'm going to make the call on this. Here's what we're going to do: we're going with Vendor B. The reason is that their integration timeline aligns with our Q3 launch, and that's our top priority."</span>
 
 ---
 
@@ -285,7 +285,7 @@ _(Hagamos una ronda rápida. Pulgar arriba si están alineados, pulgar de lado s
 **Por qué funciona:** Es una verificación de consenso ligera que saca a la luz las preocupaciones sin reabrir todo el debate. "Thumbs sideways" es menos amenazante que "thumbs down," lo que fomenta retroalimentación honesta.
 
 **En contexto:**
-> "Before we lock this in, let's do a quick round. Thumbs up if you're aligned, thumbs sideways if you have concerns we need to address. I want to make sure we're not leaving anything unresolved."
+> <span class="speak-en">"Before we lock this in, let's do a quick round. Thumbs up if you're aligned, thumbs sideways if you have concerns we need to address. I want to make sure we're not leaving anything unresolved."</span>
 
 ---
 
@@ -298,7 +298,7 @@ _(Estamos dando vueltas. Déjenme resumir las dos opciones y decidimos.)_
 **Por qué funciona:** Nombrar el patrón ("going in circles") lo rompe. Ofrecer resumir te posiciona como el líder que corta el ruido. Y "we'll decide" crea urgencia y compromiso.
 
 **En contexto:**
-> "I think we're going in circles on this. Let me summarize the two options. Option A gives us speed but less flexibility. Option B gives us flexibility but adds three weeks. Given our deadline, I'm recommending Option A. Can we agree on that?"
+> <span class="speak-en">"I think we're going in circles on this. Let me summarize the two options. Option A gives us speed but less flexibility. Option B gives us flexibility but adds three weeks. Given our deadline, I'm recommending Option A. Can we agree on that?"</span>
 
 ---
 
@@ -311,7 +311,7 @@ _(Quiero asegurarme de que no estamos aceptando solo para evitar conflicto. ¿Al
 **Por qué funciona:** Crea seguridad psicológica para el disenso. Al invitar preocupaciones explícitamente, señalas que hablar es valorado, no castigado. Esto lleva a mejores decisiones—y previene errores costosos más adelante.
 
 **En contexto:**
-> "This seems straightforward, but I want to make sure we're not just agreeing to avoid conflict. Does anyone see a risk we haven't named? Now's the time."
+> <span class="speak-en">"This seems straightforward, but I want to make sure we're not just agreeing to avoid conflict. Does anyone see a risk we haven't named? Now's the time."</span>
 
 ---
 
@@ -328,7 +328,7 @@ _(Déjenme resumir lo que decidimos y quién es responsable de qué.)_
 **Por qué funciona:** Esta es la frase más importante del liderazgo en reuniones. Resumir decisiones y asignar responsables elimina la ambigüedad. La gente sale sabiendo exactamente de qué es responsable. Si solo memorizas una frase de esta lista, que sea esta.
 
 **En contexto:**
-> "Let me summarize what we decided and who owns what. Decision one: we're launching in Q3—Carlos is leading the rollout plan. Decision two: we're going with Vendor B—Ana is handling the contract review. Decision three: the beta starts June 1—I'll coordinate with engineering."
+> <span class="speak-en">"Let me summarize what we decided and who owns what. Decision one: we're launching in Q3—Carlos is leading the rollout plan. Decision two: we're going with Vendor B—Ana is handling the contract review. Decision three: the beta starts June 1—I'll coordinate with engineering."</span>
 
 ---
 
@@ -341,7 +341,7 @@ _(Enviaré un correo de seguimiento en menos de una hora con acciones a seguir y
 **Por qué funciona:** Los acuerdos verbales se olvidan. Los seguimientos escritos no. Comprometerte a un tiempo específico ("within the hour") muestra disciplina y señala que tomas los resultados en serio. También previene el clásico "yo pensé que habíamos decidido otra cosa."
 
 **En contexto:**
-> "I'll send a follow-up email within the hour with action items and deadlines. If I've missed anything, reply to that email so we have it documented."
+> <span class="speak-en">"I'll send a follow-up email within the hour with action items and deadlines. If I've missed anything, reply to that email so we have it documented."</span>
 
 ---
 
@@ -354,7 +354,7 @@ _(¿Hay algo que discutimos hoy que todavía se sienta sin resolver?)_
 **Por qué funciona:** Es una red de seguridad. La gente muchas veces sale de reuniones con preguntas sin responder pero no dice nada porque la reunión "ya terminó." Esta frase da permiso para plantear esos temas y evita que se conviertan en problemas mayores después.
 
 **En contexto:**
-> "Before we wrap up—is there anything we discussed today that still feels unresolved? I'd rather address it now than have it come back to us next week."
+> <span class="speak-en">"Before we wrap up—is there anything we discussed today that still feels unresolved? I'd rather address it now than have it come back to us next week."</span>
 
 ---
 
@@ -367,7 +367,7 @@ _(Gracias por su tiempo. Sé que todos están ocupados y aprecio que estuvieran 
 **Por qué funciona:** La gratitud es un multiplicador de liderazgo. Reconocer el tiempo y la participación de las personas genera buena voluntad y hace más probable que lleguen preparados a la siguiente reunión. Es simple, y la mayoría de las personas lo omite.
 
 **En contexto:**
-> "Thank you for your time. I know everyone is busy, and I appreciate you being engaged on this. We made real progress today."
+> <span class="speak-en">"Thank you for your time. I know everyone is busy, and I appreciate you being engaged on this. We made real progress today."</span>
 
 ---
 
@@ -380,7 +380,7 @@ _(Terminamos cinco minutos antes. De nada.)_
 **Por qué funciona:** Terminar antes de tiempo es la jugada de poder definitiva. Señala que valoras la eficiencia, que te preparaste bien y que respetas el tiempo de los demás. El toque de humor ligero de "You're welcome" genera conexión. La gente esperará con ganas tus reuniones.
 
 **En contexto:**
-> "That covers everything. We're ending five minutes early. You're welcome. See you all on Thursday."
+> <span class="speak-en">"That covers everything. We're ending five minutes early. You're welcome. See you all on Thursday."</span>
 
 ---
 

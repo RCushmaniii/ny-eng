@@ -86,18 +86,18 @@ Nunca justifiques tu pedido con tus necesidades ("Necesito este salario porque m
 
 **Qué decir:**
 
-> "This rate reflects three things: my specialized experience in [X], the tight timeline you've described, and the results I delivered for [similar client]."
+> <span class="speak-en">"This rate reflects three things: my specialized experience in [X], the tight timeline you've described, and the results I delivered for [similar client]."</span>
 > (Esta tarifa refleja tres cosas: mi experiencia especializada en [X], el cronograma ajustado que has descrito, y los resultados que entregué para [cliente similar].)
 >
-> "The salary I'm proposing aligns with what senior engineers with my background command—and reflects the impact I'll have on your product roadmap."
+> <span class="speak-en">"The salary I'm proposing aligns with what senior engineers with my background command—and reflects the impact I'll have on your product roadmap."</span>
 > (El salario que propongo se alinea con lo que ganan ingenieros senior con mi experiencia—y refleja el impacto que tendré en tu roadmap de producto.)
 
 **Frases clave para justificar:**
 
-- "This reflects..." (Esto refleja...)
-- "This is based on..." (Esto se basa en...)
-- "This aligns with..." (Esto se alinea con...)
-- "The reason I'm at this number is..." (La razón por la que estoy en este número es...)
+- "<span class="speak-en">This reflects...</span>" (Esto refleja...)
+- "<span class="speak-en">This is based on...</span>" (Esto se basa en...)
+- "<span class="speak-en">This aligns with...</span>" (Esto se alinea con...)
+- <span class="speak-en">"The reason I'm at this number is..."</span> (La razón por la que estoy en este número es...)
 
 **Por qué funciona:** Las justificaciones basadas en valor son más difíciles de rechazar que las basadas en necesidad.
 
@@ -109,18 +109,18 @@ Si no pueden alcanzar tu número, no solo lo bajes. Pide algo a cambio.
 
 **Qué decir:**
 
-> "If the budget is fixed at $75K, I can work with that—if we adjust the scope to remove the third deliverable."
+> <span class="speak-en">"If the budget is fixed at $75K, I can work with that—if we adjust the scope to remove the third deliverable."</span>
 > (Si el presupuesto está fijo en $75K, puedo trabajar con eso—si ajustamos el alcance para eliminar el tercer entregable.)
 >
-> "I can be flexible on base salary if we include a signing bonus and accelerated review at six months."
+> <span class="speak-en">"I can be flexible on base salary if we include a signing bonus and accelerated review at six months."</span>
 > (Puedo ser flexible en el salario base si incluimos un bono de firma y una revisión acelerada a los seis meses.)
 
 **Frases clave para intercambiar:**
 
-- "If [X], I can work with that—if we [Y]." (Si [X], puedo trabajar con eso—si [Y].)
-- "I can be flexible on [X] if we include [Y]." (Puedo ser flexible en [X] si incluimos [Y].)
-- "What if we adjusted [X] in exchange for [Y]?" (¿Qué tal si ajustamos [X] a cambio de [Y]?)
-- "I'm open to [X] provided [Y] is part of the package." (Estoy abierto a [X] siempre que [Y] sea parte del paquete.)
+- <span class="speak-en">"If [X], I can work with that—if we [Y]."</span> (Si [X], puedo trabajar con eso—si [Y].)
+- <span class="speak-en">"I can be flexible on [X] if we include [Y]."</span> (Puedo ser flexible en [X] si incluimos [Y].)
+- <span class="speak-en">"What if we adjusted [X] in exchange for [Y]?"</span> (¿Qué tal si ajustamos [X] a cambio de [Y]?)
+- <span class="speak-en">"I'm open to [X] provided [Y] is part of the package."</span> (Estoy abierto a [X] siempre que [Y] sea parte del paquete.)
 
 **Por qué funciona:** Intercambiar mantiene el valor de tu pedido original mientras muestras flexibilidad.
 
@@ -132,15 +132,15 @@ Los acuerdos verbales se evaporan. Antes de salir de la conversación, confirma 
 
 **Qué decir (en la reunión):**
 
-> "Just to confirm: we're agreeing to $80K with a six-month review. Correct?"
+> <span class="speak-en">"Just to confirm: we're agreeing to $80K with a six-month review. Correct?"</span>
 > (Solo para confirmar: estamos acordando $80K con una revisión a los seis meses. ¿Correcto?)
 >
-> "Let me make sure I have this right: the scope is A, B, and C, with delivery by March 15, at the rate we discussed."
+> "<span class="speak-en">Let me make sure I have this right: the scope is A, B, and C, with delivery by March 15, at the rate we discussed.</span>"
 > (Déjame asegurarme de que lo tengo bien: el alcance es A, B y C, con entrega para el 15 de marzo, a la tarifa que discutimos.)
 
 **Qué escribir (en el email de seguimiento):**
 
-> "Thanks for the conversation today. To confirm what we agreed:
+> <span class="speak-en">"Thanks for the conversation today. To confirm what we agreed:</span>
 > - [Término 1]
 > - [Término 2]
 > - [Término 3]
@@ -157,41 +157,41 @@ Los acuerdos verbales se evaporan. Antes de salir de la conversación, confirma 
 
 ### Cuando Necesitas Tiempo para Pensar
 
-> "That's an interesting point. Let me take a moment to think through the implications."
+> <span class="speak-en">"That's an interesting point. Let me take a moment to think through the implications."</span>
 > (Es un punto interesante. Déjame tomar un momento para pensar en las implicaciones.)
 >
-> "I want to give that the consideration it deserves. Can we revisit this in 24 hours?"
+> "<span class="speak-en">I want to give that the consideration it deserves. Can we revisit this in 24 hours?</span>"
 > (Quiero darle la consideración que merece. ¿Podemos retomar esto en 24 horas?)
 
 ### Cuando Te Presionan por una Respuesta Inmediata
 
-> "I don't make decisions this significant on the spot. I'll have an answer for you by [date]."
+> <span class="speak-en">"I don't make decisions this significant on the spot. I'll have an answer for you by Friday."</span>
 > (No tomo decisiones tan significativas en el momento. Tendré una respuesta para ti para [fecha].)
 >
-> "I appreciate the urgency, but I want to make sure we both get this right."
+> "<span class="speak-en">I appreciate the urgency, but I want to make sure we both get this right.</span>"
 > (Aprecio la urgencia, pero quiero asegurarme de que ambos hagamos esto bien.)
 
 ### Cuando Necesitas Decir No
 
-> "I'm not able to go that low on this project. Here's what I can do instead."
+> <span class="speak-en">"I'm not able to go that low on this project. Here's what I can do instead."</span>
 > (No puedo ir tan bajo en este proyecto. Esto es lo que puedo hacer en su lugar.)
 >
-> "That's outside what I can accept. But I'm open to other ways to make this work."
+> <span class="speak-en">"That's outside what I can accept. But I'm open to other ways to make this work."</span>
 > (Eso está fuera de lo que puedo aceptar. Pero estoy abierto a otras formas de hacer que esto funcione.)
 
 ### Cuando Se Quedan en Silencio Después de Tu Oferta
 
 No llenes el silencio. Déjalo estar. Si debes hablar:
 
-> "I'll let you think on that. What questions do you have?"
+> <span class="speak-en">"I'll let you think on that. What questions do you have?"</span>
 > (Te dejaré pensar en eso. ¿Qué preguntas tienes?)
 
 ---
 
 ## Errores Comunes Que Cometen los Hablantes No Nativos en Negociaciones
 
-1. **Disculparte por tu pedido** — "Sorry, but I was hoping for..." elimina tu poder.
-2. **Cubrirse demasiado** — "Maybe we could possibly consider..." suena incierto.
+1. **Disculparte por tu pedido** — "<span class="speak-en">Sorry, but I was hoping for...</span>" elimina tu poder.
+2. **Cubrirse demasiado** — "<span class="speak-en">Maybe we could possibly consider...</span>" suena incierto.
 3. **Aceptar la primera oferta** — Incluso si es buena, una pequeña contraoferta muestra que te valoras.
 4. **Hablar demasiado después de tu oferta** — Di tu número, luego para. El silencio es tu amigo.
 5. **No preparar frases** — Bajo presión, recurrirás a lo que sea más fácil de decir. (Para más sobre este tema, lee sobre los [errores de email que te hacen sonar junior](/es/blog/frases-email-que-te-hacen-sonar-junior/) — el mismo patrón aplica en negociaciones escritas.)

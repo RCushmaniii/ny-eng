@@ -12,7 +12,18 @@ This file is **complementary** to:
 
 ## Content & Copy Debt
 
-### 🚨 ES Bilingual Architecture Decision (HIGH PRIORITY — UNRESOLVED)
+### ✅ ES Bilingual Architecture Decision (RESOLVED — Option A chosen and applied)
+
+**Status:** Resolved 2026-05-02. Robert chose **Option A** (bilingual rewrite for teaching-English ES posts — example phrases stay in English with Spanish prose around them). Applied to:
+
+- Tier 1 (5 ES posts via PR #132): full parity with EN, 69 spans each side
+- Backlog (5 ES posts via this PR): full parity restored — 204 ES spans matching 204 EN spans across `dirigir-reuniones-ingles-frases`, `como-negociar-en-ingles-marco`, `entrevista-trabajo-empresa-americana`, `ingles-desarrolladores-nearshore-habilidades`, `errores-ingles-negocios-profesionales-mexicanos`
+
+The pattern is now applied consistently across all teaching-English posts identified in the audit. Future posts should keep example phrases in English on the ES side from day one.
+
+---
+
+### 🚨 ES Bilingual Architecture Decision (HISTORICAL — for context)
 
 **Status:** Discovered 2026-05-02 during the Tier 1 TTS retrofit work. Needs Robert's strategic decision before remediation.
 
@@ -116,7 +127,9 @@ LinkedIn long-form, Twitter/X threads, Facebook posts, Spanish versions. Robert 
 
 *(items here are resolved/shipped — keep for ~30 days for reference, then prune)*
 
-- **2026-05-02** — Tier 1 TTS retrofit (EN side): added `speak-en` spans to 5 high-value posts (`why-executive-english-accelerates-careers`, `executive-video-call`, `mexico-us-workplace-communication-guide`, `real-cost-weak-english-mexican-companies`, `executive-communication-playbook`). ES side blocked pending architecture decision (see above).
+- **2026-05-02** — Backlog ES TTS parity sweep: 204 phrases across 5 ES posts brought to full parity with their EN siblings (`dirigir-reuniones-ingles-frases`, `como-negociar-en-ingles-marco`, `entrevista-trabajo-empresa-americana`, `ingles-desarrolladores-nearshore-habilidades`, `errores-ingles-negocios-profesionales-mexicanos`). Mix of bulk-wrap (140 phrases where English was preserved) + manual restoration (64 phrases where Spanish translations needed swap-out). Helper scripts at `scripts/bulk-wrap-tts.mjs` and `scripts/list-missing-tts.mjs` for future audit/sweep work.
+- **2026-05-02** — Tier 1 ES bilingual rewrite (PR #132): 69 ES spans matching 69 EN spans across 5 sister posts of the Tier 1 EN sweep.
+- **2026-05-02** — Tier 1 TTS retrofit (EN side, PR #131): added `speak-en` spans to 5 high-value posts (`why-executive-english-accelerates-careers`, `executive-video-call`, `mexico-us-workplace-communication-guide`, `real-cost-weak-english-mexican-companies`, `executive-communication-playbook`).
 - **2026-05-01** — Register article TTS sweep (EN+ES) — all 10 phrases wrapped, audio working in production.
 - **2026-05-01** — Register article published with custom split-image hero (EN+ES). Cross-linked to exec post.
 - **2026-04-30** — Executive English Accelerates Careers article published (EN+ES).
