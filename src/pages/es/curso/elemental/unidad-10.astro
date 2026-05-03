@@ -1,0 +1,317 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import CapstoneUploadForm from "@components/course/CapstoneUploadForm";
+import { elementaryUnits } from "@data/elementary/units";
+import { Sparkles, Calendar, Mic, ArrowLeft, CheckCircle2 } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/elementary/unit-10" as const;
+
+const progressUnits = elementaryUnits.map((u) => ({
+  id: u.id,
+  slug: u.slugEs,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+
+const bookingLink =
+  "/es/reservar/?notes=" +
+  encodeURIComponent(
+    "Acabo de completar el curso Elemental (A2) y grabé mi historia de 60 segundos. Me gustaría retroalimentación en vivo sobre mi pasado, planes futuros y pronunciación."
+  );
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unidad 10: Cuenta Tu Historia — Reto Final A2 | NY English"
+  description="El reto final A2. Graba una historia de 60 segundos combinando pasado simple, continuo, going to y comparativos. Recibe retroalimentación personal. Gratis."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={10}
+    basePath="/es/curso/elemental"
+    lang="es"
+  />
+
+  <!-- Hero -->
+  <section
+    class="relative w-full overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-sky-950 pt-28 pb-16 md:pt-36 md:pb-24"
+  >
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-sky-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-cyan-400 rounded-full blur-3xl"></div>
+    </div>
+    <div class="site-container mx-auto px-4 relative z-10 text-white">
+      <div class="max-w-3xl">
+        <a
+          href="/es/curso/elemental/unidad-9/"
+          class="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-white transition-colors mb-6"
+        >
+          <ArrowLeft class="w-4 h-4" />
+          Volver a Unidad 9
+        </a>
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/20 text-sky-300 text-sm font-semibold mb-6"
+        >
+          <Sparkles class="w-4 h-4" />
+          El Reto Final
+        </div>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Cuenta Tu Historia.<br />
+          <span class="text-sky-400">En 60 Segundos.</span>
+        </h1>
+        <p class="text-xl text-slate-200 max-w-2xl leading-relaxed">
+          Nueve unidades. Pasado simple, pasado continuo, going to, comparativos, cuantificadores,
+          preguntas Wh-, adverbios de frecuencia. Ahora combínalos todos en una historia de 60
+          segundos sobre tu vida real — y Robert escuchará personalmente.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Prompt -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-[11px] font-mono uppercase tracking-[0.3em] text-sky-600 mb-4">
+          Tu Tarea
+        </p>
+        <h2
+          class="text-2xl md:text-3xl font-bold text-slate-900 mb-6"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Graba una historia autobiográfica de 60 segundos.
+        </h2>
+        <div class="bg-slate-50 border-l-4 border-sky-400 rounded-r-xl p-6 md:p-8 mb-8">
+          <p class="text-lg text-slate-800 leading-relaxed font-medium mb-4">
+            Elige cualquier historia de 60 segundos de tu vida real. Ejemplos: un viaje
+            memorable, tu primer día en un trabajo, un momento gracioso en familia, el día que
+            decidiste aprender inglés, algo inesperado que pasó la semana pasada.
+          </p>
+          <p class="text-base text-slate-700 leading-relaxed">
+            <strong>La estructura:</strong> arma la escena con pasado continuo ('I was
+            walking…'), introduce el momento con pasado simple ('then suddenly…'), di qué
+            sigue con 'going to' ('next month I'm going to…'), y usa al menos un comparativo
+            ('it was better than…').
+          </p>
+        </div>
+
+        <!-- The 6 ingredients -->
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Seis ingredientes para incluir:</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-10">
+          {
+            [
+              { unit: "Unidad 1-2", req: "Al menos 3 verbos en pasado simple (regulares Y irregulares)" },
+              { unit: "Unidad 3", req: "Un marcador de tiempo (yesterday, last week, two months ago)" },
+              { unit: "Unidad 4", req: "Un plan futuro con 'going to' o 'will'" },
+              { unit: "Unidad 5", req: "Un comparativo ('better than', 'bigger than')" },
+              { unit: "Unidad 8", req: "Un adverbio de frecuencia ('I usually…', 'I often…')" },
+              { unit: "Unidad 9", req: "Un pasado continuo + interrupción ('I was X-ing when…')" },
+            ].map((item) => (
+              <div class="flex items-start gap-3 p-4 bg-sky-50 rounded-xl border border-sky-100">
+                <CheckCircle2 class="w-5 h-5 text-sky-500 shrink-0 mt-0.5" />
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider text-sky-600 mb-1">{item.unit}</p>
+                  <p class="text-sm text-slate-700 leading-relaxed">{item.req}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- How to record -->
+        <div class="bg-sky-50 border border-sky-200 rounded-xl p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <Mic class="w-5 h-5 text-sky-600" />
+            <p class="text-sm font-bold text-sky-800 uppercase tracking-wide">Cómo Grabar</p>
+          </div>
+          <ul class="space-y-2 text-sm text-sky-900 leading-relaxed">
+            <li><strong>iPhone:</strong> Abre la app Voice Memos → toca el botón rojo → guarda y exporta como M4A.</li>
+            <li><strong>Android:</strong> Usa la app Grabador de Voz integrada → exporta como MP3 o M4A.</li>
+            <li><strong>Computadora:</strong> Usa Zoom (graba una reunión contigo mismo), Loom, o QuickTime audio.</li>
+          </ul>
+          <p class="text-xs text-sky-700 mt-4">
+            Cualquier formato de audio funciona: MP3, M4A, WAV, u OGG. Una grabación de voz
+            de 60 segundos pesa muy por debajo de 5 MB.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Submission — Upload form + Booking CTA -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <p class="text-[11px] font-mono uppercase tracking-[0.3em] text-sky-600 mb-4 text-center">
+          Envía Tu Trabajo
+        </p>
+        <h2
+          class="text-2xl md:text-3xl font-bold text-slate-900 mb-3 text-center"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Elige tu camino.
+        </h2>
+        <p class="text-slate-600 text-center mb-10">
+          Ambas opciones incluyen retroalimentación personal de Robert.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <!-- Path A: Upload -->
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-6 h-6 rounded-full bg-sky-500 text-white text-xs font-bold flex items-center justify-center">A</span>
+              <h3 class="text-lg font-bold text-slate-900">Sube Tu Grabación</h3>
+            </div>
+            <p class="text-sm text-slate-600 mb-5 leading-relaxed">
+              Graba en tu celular o computadora, luego súbela aquí. Robert escucha
+              personalmente y te envía retroalimentación detallada por correo en 48 horas.
+            </p>
+            <CapstoneUploadForm client:load lang="es" />
+          </div>
+
+          <!-- Path B: Strategy Session -->
+          <div class="md:mt-14">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-6 h-6 rounded-full bg-slate-800 text-white text-xs font-bold flex items-center justify-center">B</span>
+              <h3 class="text-lg font-bold text-slate-900">Cuéntala En Vivo con Robert</h3>
+              <span class="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 border border-sky-200 px-2 py-0.5 rounded-full ml-auto">
+                Recomendada
+              </span>
+            </div>
+            <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+              Reserva una consulta gratuita de 30 minutos. Cuenta tu historia de 60 segundos
+              en vivo — y recibe coaching en tiempo real sobre formas del pasado,
+              pronunciación y cómo seguir cuando te trabes. La forma más rápida de avanzar.
+            </p>
+            <div class="bg-white rounded-2xl border-2 border-sky-300 p-6 shadow-sm">
+              <div class="flex items-center gap-3 mb-4">
+                <Calendar class="w-6 h-6 text-sky-600" />
+                <div>
+                  <p class="text-sm font-bold text-slate-900">Consulta Gratuita</p>
+                  <p class="text-xs text-slate-500">30 minutos · Google Meet · Sin preparación</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-500 mb-5 leading-relaxed">
+                El contexto de tu sesión está pre-llenado — Robert sabrá que vienes del Curso
+                Elemental y que tienes tu historia lista.
+              </p>
+              <Button href={bookingLink} variant="primary" size="lg" class="w-full">
+                <Calendar class="w-4 h-4" />
+                Reserva Tu Sesión Gratuita
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Robert's Coaching Reminders -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-[11px] font-mono uppercase tracking-[0.3em] text-sky-600 mb-4">
+          Recordatorios de Robert
+        </p>
+        <h2
+          class="text-2xl font-bold text-slate-900 mb-8"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Cuatro cosas que escucho.
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {
+            [
+              {
+                tip: "Formas del pasado — verbos irregulares especialmente. 'Went' no 'goed'. 'Saw' no 'seed'. (Unidades 1-2)",
+              },
+              {
+                tip: "Posición del adverbio de frecuencia — 'I usually…' ANTES del verbo, NUNCA al final. (Unidad 8)",
+              },
+              {
+                tip: "Pasado continuo + interrupción — pon la escena con 'was X-ing', luego suelta el momento con pasado simple. (Unidad 9)",
+              },
+              {
+                tip: "No te detengas. Si te trabas, sigue. Los nativos también se traban. La fluidez no es perfección — es recuperación.",
+              },
+            ].map((item) => (
+              <div class="flex items-start gap-3 p-5 bg-slate-50 rounded-xl border border-slate-100">
+                <CheckCircle2 class="w-5 h-5 text-sky-500 shrink-0 mt-0.5" />
+                <p class="text-sm text-slate-700 leading-relaxed">{item.tip}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final exam CTA -->
+  <section class="py-16 md:py-20 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-[11px] font-mono uppercase tracking-[0.3em] text-sky-600 mb-4">
+          Una Última Cosa
+        </p>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4" style="font-family: 'Noto Sans KR', sans-serif;">
+          Toma el examen final.
+        </h2>
+        <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+          20 preguntas sobre las 10 unidades. Evalúa lo que aprendiste y mira exactamente
+          dónde estás antes de seguir al curso intermedio.
+        </p>
+        <Button href="/es/curso/elemental/examen/" variant="primary" size="lg">
+          Empezar el Examen Final →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Encouragement -->
+  <section class="py-20 md:py-28 bg-slate-950 text-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <Sparkles class="w-10 h-10 text-sky-400 mx-auto mb-6" />
+        <h2
+          class="text-3xl md:text-4xl font-bold mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Esto no es una prueba.<br />
+          <span class="text-sky-400">Es tu voz en inglés.</span>
+        </h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Cada práctica, cada sonido, cada corrección en nueve unidades construyó hacia esto.
+          Dale rec. Cuenta tus 60 segundos. Envíalo. La próxima conversación de tu vida será
+          más fácil gracias a esta.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "Reto Final del Curso Elemental — Historia de 60 Segundos",
+  "description": "Graba una historia autobiográfica de 60 segundos combinando pasado simple, pasado continuo, going to y comparativos. Recibe retroalimentación personal de Robert.",
+  "learningResourceType": "Assessment",
+  "educationalLevel": "A2",
+  "inLanguage": "es",
+  "url": "https://www.nyenglishteacher.com/es/curso/elemental/unidad-10/",
+  "isAccessibleForFree": true,
+  "isPartOf": {
+    "@type": "Course",
+    "name": "Curso Gratis de Inglés Elemental (A2)",
+    "url": "https://www.nyenglishteacher.com/es/curso/elemental/"
+  }
+})} />
+</Base>

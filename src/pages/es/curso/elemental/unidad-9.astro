@@ -1,0 +1,298 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import CognateDiscovery from "@components/course/CognateDiscovery";
+import SentenceBuilder from "@components/course/SentenceBuilder";
+import PronunciationDrill from "@components/course/PronunciationDrill";
+import ConnectorChallenge from "@components/course/ConnectorChallenge";
+import SelfTest from "@components/course/SelfTest";
+import { elementaryUnits } from "@data/elementary/units";
+import {
+  cognateWaves,
+  sentenceBlocks,
+  powerVerbBlocks,
+  connectorSentences,
+  pronunciationDrills,
+  vocabularyList,
+} from "@data/elementary/unit-9";
+import {
+  Pause,
+  Layers,
+  Zap,
+  Link2,
+  Volume2,
+  ClipboardCheck,
+  BookOpen,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/elementary/unit-9" as const;
+
+const progressUnits = elementaryUnits.map((u) => ({
+  id: u.id,
+  slug: u.slugEs,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+
+const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
+
+const nextUnit = elementaryUnits.find((u) => u.id === 10);
+const nextUnitPublished = nextUnit?.published ?? false;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unidad 9: Estaba Comiendo Cuando… | Inglés Elemental (A2)"
+  description="Pasado continuo para hispanohablantes — was/were + verbo-ing. La herramienta que convierte el pasado plano en historias con interrupciones. Lección A2."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={9}
+    basePath="/es/curso/elemental"
+    lang="es"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-sky-400 text-sm font-semibold mb-3">
+          <Pause class="w-4 h-4" />
+          Unidad 9
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Estaba Comiendo Cuando…
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Was/were + -ing. El tiempo que te permite decir 'I was eating when she called' — poner
+          una acción pasada de fondo mientras otra la interrumpe. La herramienta narrativa. Al
+          terminar esta unidad, tus historias en pasado tienen textura, ritmo y un punto de
+          giro real.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <nav class="bg-white border-b border-slate-200 sticky top-[52px] z-30 overflow-x-auto">
+    <div class="site-container mx-auto px-4">
+      <div class="flex items-center gap-1 py-2 text-sm whitespace-nowrap">
+        <a href="#vocabulary" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <BookOpen class="w-3.5 h-3.5" /> Vocabulario
+        </a>
+        <a href="#structure" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Layers class="w-3.5 h-3.5" /> Estructura
+        </a>
+        <a href="#interruption" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Zap class="w-3.5 h-3.5" /> Interrupción
+        </a>
+        <a href="#boss" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Link2 class="w-3.5 h-3.5" /> Oración Maestra
+        </a>
+        <a href="#pronunciation" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Volume2 class="w-3.5 h-3.5" /> Pronunciación
+        </a>
+        <a href="#self-test" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <ClipboardCheck class="w-3.5 h-3.5" /> Auto-Test
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="vocabulary" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <BookOpen class="w-4 h-4" />
+            Sección A
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Formas de Was/Were, Verbos -ing y Marcadores Narrativos
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Tres olas. Ola 1: was/were emparejados con cada pronombre sujeto. Ola 2: los verbos
+            -ing más comunes al contar historias, más las reglas de escritura. Ola 3: los
+            marcadores narrativos (when, while, suddenly, at that moment) que dan ritmo a las
+            historias en pasado.
+          </p>
+        </div>
+        <CognateDiscovery client:visible waves={waveData} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="structure" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Layers class="w-4 h-4" />
+            Sección B
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Estructura del Pasado Continuo — Afirmativo, Negativo, Pregunta
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Sujeto + was/were + verbo-ing. Practica las tres formas — afirmativo ('I was
+            working'), negativo ('I wasn't working'), pregunta ('Were you working?') — más la
+            diferencia crítica entre pasado simple y pasado continuo.
+          </p>
+        </div>
+        <SentenceBuilder client:visible blocks={sentenceBlocks} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="interruption" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Zap class="w-4 h-4" />
+            Sección C
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            El Patrón de Interrupción — Pasado Continuo + Pasado Simple
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            La combinación narrativa clásica. Acción larga en pasado continuo ('I was eating
+            dinner'). Acción corta interrumpe en pasado simple ('when she called'). Más 'while'
+            para dos acciones continuas simultáneas, y 'suddenly' para interrupciones
+            dramáticas.
+          </p>
+        </div>
+        <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="boss" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Link2 class="w-4 h-4" />
+            Sección D
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            La Oración Maestra — Una Narrativa Personal Real
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Cinco oraciones. Dos verbos en pasado continuo, tres en pasado simple, cinco
+            marcadores de tiempo distintos. Un arco real con planteamiento, interrupción, giro y
+            resolución. Así narran un recuerdo los hablantes nativos de inglés.
+          </p>
+        </div>
+        <ConnectorChallenge
+          client:visible
+          connectors={connectorSentences.connectors}
+          bossSentence={connectorSentences.bossSentence}
+          lang="es"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="pronunciation" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-rose-500 text-sm font-semibold mb-2">
+            <Volume2 class="w-4 h-4" />
+            Laboratorio de Pronunciación
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Reducción de Was/Were — y la Música de Contar Historias
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Acentuados, 'was' = WUZ y 'were' = WUR. En habla normal se REDUCEN casi al silencio:
+            'I was working' = 'I-wuz-WORKING'. Más reducciones de -ing ('workin'), contracciones
+            wasn't/weren't, y cómo el verbo en pasado simple lleva el acento en oraciones de
+            interrupción.
+          </p>
+        </div>
+        <PronunciationDrill client:visible drills={pronunciationDrills} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="self-test" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <ClipboardCheck class="w-4 h-4" />
+            Auto-Evaluación
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Evalúa Lo que Aprendiste
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Repaso tipo flashcard de cada forma was/were, verbo -ing, marcador de tiempo y
+            frase útil de la Unidad 9. Cambia entre los modos español→inglés e inglés→español.
+          </p>
+        </div>
+        <SelfTest client:visible vocabulary={vocabularyList} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-gradient-to-b from-slate-900 to-slate-800">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-2xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-white">¡Unidad 9 Completada!</h2>
+        <p class="text-lg text-slate-100 leading-relaxed">
+          Ahora puedes narrar historias en pasado como un nativo — poniendo la acción larga de
+          fondo, soltando la interrupción y usando marcadores de tiempo para controlar el
+          ritmo. Nueve unidades terminadas. Queda una: el reto final, donde grabas TU historia.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center pt-4">
+          <a
+            href="/es/curso/elemental/unidad-8/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors"
+          >
+            ← Repasar Unidad 8
+          </a>
+          {nextUnitPublished ? (
+            <a
+              href="/es/curso/elemental/unidad-10/"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-colors shadow-lg"
+            >
+              Continuar a Unidad 10 →
+            </a>
+          ) : (
+            <a
+              href="/es/curso/elemental/"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-colors shadow-lg"
+            >
+              Vista General del Curso
+            </a>
+          )}
+        </div>
+        <div class="pt-8 border-t border-slate-700 mt-8">
+          <p class="text-slate-200 text-sm mb-3">
+            ¿Quieres coaching personalizado de inglés?
+          </p>
+          <a
+            href="/es/contact/"
+            class="text-sky-400 hover:text-sky-300 font-medium underline underline-offset-2"
+          >
+            Reserva una consulta gratuita con Robert →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

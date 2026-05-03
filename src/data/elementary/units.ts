@@ -155,7 +155,7 @@ export const elementaryUnits: ElementaryUnit[] = [
     pronunciationFocus: "Question intonation patterns",
     pronunciationFocusEs: "Patrones de entonación en preguntas",
     icon: "MessageCircleQuestion",
-    published: false,
+    published: true,
   },
   {
     id: 8,
@@ -174,7 +174,7 @@ export const elementaryUnits: ElementaryUnit[] = [
     pronunciationFocus: "Stress on frequency adverbs",
     pronunciationFocusEs: "Acento en adverbios de frecuencia",
     icon: "Repeat",
-    published: false,
+    published: true,
   },
   {
     id: 9,
@@ -193,7 +193,7 @@ export const elementaryUnits: ElementaryUnit[] = [
     pronunciationFocus: "Reduced 'was' and 'were' in fast speech",
     pronunciationFocusEs: "Reducción de 'was' y 'were' en habla rápida",
     icon: "Pause",
-    published: false,
+    published: true,
   },
   {
     id: 10,
@@ -212,6 +212,6 @@ export const elementaryUnits: ElementaryUnit[] = [
     pronunciationFocus: "Natural rhythm and pacing in story telling",
     pronunciationFocusEs: "Ritmo natural y pausas al contar historias",
     icon: "Sparkles",
-    published: false,
+    published: true,
   },
 ];

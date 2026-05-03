@@ -83,6 +83,39 @@ const categoryTranslationsReverse = Object.fromEntries(
   Object.entries(categoryTranslations).map(([en, es]) => [es, en])
 );
 
+// Course slug translations (EN slug -> ES slug) for unit pages and exams
+const courseTranslations = {
+  beginners: "principiantes",
+  elementary: "elemental",
+  intermediate: "intermedio",
+  advanced: "avanzado",
+  executive: "ejecutivo",
+};
+const courseTranslationsReverse = Object.fromEntries(
+  Object.entries(courseTranslations).map(([en, es]) => [es, en]),
+);
+
+// Course leaf-page translations (EN leaf -> ES leaf)
+// Covers unit pages, exam pages, and the executive capstone.
+const courseLeafTranslations = {
+  "unit-1": "unidad-1",
+  "unit-2": "unidad-2",
+  "unit-3": "unidad-3",
+  "unit-4": "unidad-4",
+  "unit-5": "unidad-5",
+  "unit-6": "unidad-6",
+  "unit-7": "unidad-7",
+  "unit-8": "unidad-8",
+  "unit-9": "unidad-9",
+  "unit-10": "unidad-10",
+  exam: "examen",
+  pronunciation: "pronunciacion",
+  capstone: "reto-final",
+};
+const courseLeafTranslationsReverse = Object.fromEntries(
+  Object.entries(courseLeafTranslations).map(([en, es]) => [es, en]),
+);
+
 // Testimonial industry slugs (same slug used in both languages, different path prefix)
 const testimonialIndustries = [
   "startup-founders",
@@ -318,6 +351,37 @@ export default defineConfig({
               links = [
                 { rel: "alternate", hreflang: "en-US", url: `${SITE}/en/category/${enSlug}/` },
                 { rel: "alternate", hreflang: "es-MX", url: `${SITE}/es/categoria/${esSlug}/` },
+              ];
+            }
+          }
+        }
+
+        // Handle course unit / exam / capstone pages
+        // EN: /en/course/{course}/{leaf}/  ES: /es/curso/{course-es}/{leaf-es}/
+        if (links.length === 0) {
+          const enCourseMatch = u.pathname.match(/^\/en\/course\/([^\/]+)\/([^\/]+)\/$/);
+          const esCourseMatch = u.pathname.match(/^\/es\/curso\/([^\/]+)\/([^\/]+)\/$/);
+
+          if (enCourseMatch) {
+            const enCourse = enCourseMatch[1];
+            const enLeaf = enCourseMatch[2];
+            const esCourse = courseTranslations[enCourse];
+            const esLeaf = courseLeafTranslations[enLeaf];
+            if (esCourse && esLeaf) {
+              links = [
+                { rel: "alternate", hreflang: "en-US", url: `${SITE}/en/course/${enCourse}/${enLeaf}/` },
+                { rel: "alternate", hreflang: "es-MX", url: `${SITE}/es/curso/${esCourse}/${esLeaf}/` },
+              ];
+            }
+          } else if (esCourseMatch) {
+            const esCourse = esCourseMatch[1];
+            const esLeaf = esCourseMatch[2];
+            const enCourse = courseTranslationsReverse[esCourse];
+            const enLeaf = courseLeafTranslationsReverse[esLeaf];
+            if (enCourse && enLeaf) {
+              links = [
+                { rel: "alternate", hreflang: "en-US", url: `${SITE}/en/course/${enCourse}/${enLeaf}/` },
+                { rel: "alternate", hreflang: "es-MX", url: `${SITE}/es/curso/${esCourse}/${esLeaf}/` },
               ];
             }
           }

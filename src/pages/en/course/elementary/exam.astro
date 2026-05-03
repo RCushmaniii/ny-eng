@@ -1,0 +1,76 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import CourseExam from "@components/course/CourseExam";
+import { elementaryUnits } from "@data/elementary/units";
+import { examQuestions, examMeta, examTiers } from "@data/elementary/exam";
+import { ArrowLeft, GraduationCap } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/elementary/exam" as const;
+
+const progressUnits = elementaryUnits.map((u) => ({
+  id: u.id,
+  slug: u.slug,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Final Exam: Tell Your Story (A2) | NY English Teacher"
+  description="Test your A2 English with 20 questions on past tense, future plans, comparatives, quantifiers, Wh-questions, and frequency adverbs. Free for Spanish speakers."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={0}
+    basePath="/en/course/elementary"
+    lang="en"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
+          <GraduationCap class="w-4 h-4" />
+          Final Exam
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Tell Your Story
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          You've completed all 10 units of the elementary course. Now prove it. 20 questions
+          covering past simple, future plans, comparatives, quantifiers, Wh-questions,
+          frequency adverbs, and past continuous — everything you've built across the entire
+          course.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <CourseExam
+        client:load
+        questions={examQuestions}
+        lang="en"
+        passingScore={examMeta.passingScore}
+        courseBasePath="/en/course/elementary"
+        tiers={examTiers}
+      />
+    </div>
+  </section>
+
+  <section class="py-8 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4 text-center">
+      <a href="/en/course/elementary/" class="inline-flex items-center gap-2 text-slate-500 hover:text-amber-600 transition-colors text-sm">
+        <ArrowLeft class="w-4 h-4" /> Back to Course Overview
+      </a>
+    </div>
+  </section>
+</Base>
