@@ -1,0 +1,298 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import CognateDiscovery from "@components/course/CognateDiscovery";
+import SentenceBuilder from "@components/course/SentenceBuilder";
+import PronunciationDrill from "@components/course/PronunciationDrill";
+import ConnectorChallenge from "@components/course/ConnectorChallenge";
+import SelfTest from "@components/course/SelfTest";
+import { elementaryUnits } from "@data/elementary/units";
+import {
+  cognateWaves,
+  sentenceBlocks,
+  powerVerbBlocks,
+  connectorSentences,
+  pronunciationDrills,
+  vocabularyList,
+} from "@data/elementary/unit-8";
+import {
+  Repeat,
+  Layers,
+  Zap,
+  Link2,
+  Volume2,
+  ClipboardCheck,
+  BookOpen,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/elementary/unit-8" as const;
+
+const progressUnits = elementaryUnits.map((u) => ({
+  id: u.id,
+  slug: u.slugEs,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+
+const waveData = [cognateWaves.wave1, cognateWaves.wave2, cognateWaves.wave3];
+
+const nextUnit = elementaryUnits.find((u) => u.id === 9);
+const nextUnitPublished = nextUnit?.published ?? false;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unidad 8: La Vida Diaria y Adverbios de Frecuencia | Inglés A2"
+  description="Always, usually, often, sometimes, never — la trampa de posición que delata a los hispanohablantes. Domina rutinas y la regla de orden. Lección A2 gratis."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={8}
+    basePath="/es/curso/elemental"
+    lang="es"
+  />
+
+  <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-sky-400 text-sm font-semibold mb-3">
+          <Repeat class="w-4 h-4" />
+          Unidad 8
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          La Vida Diaria
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Always, usually, often, sometimes, never. Dónde van en la oración (los hispanohablantes
+          siempre lo confunden) y cómo describir una rutina diaria real — la tuya. Una regla de
+          posición, tres excepciones, y el ritmo natural del inglés cotidiano.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <nav class="bg-white border-b border-slate-200 sticky top-[52px] z-30 overflow-x-auto">
+    <div class="site-container mx-auto px-4">
+      <div class="flex items-center gap-1 py-2 text-sm whitespace-nowrap">
+        <a href="#vocabulary" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <BookOpen class="w-3.5 h-3.5" /> Adverbios
+        </a>
+        <a href="#position" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Layers class="w-3.5 h-3.5" /> Reglas de Posición
+        </a>
+        <a href="#phrases" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Zap class="w-3.5 h-3.5" /> Frases de Frecuencia
+        </a>
+        <a href="#boss" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Link2 class="w-3.5 h-3.5" /> Oración Maestra
+        </a>
+        <a href="#pronunciation" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <Volume2 class="w-3.5 h-3.5" /> Pronunciación
+        </a>
+        <a href="#self-test" class="px-3 py-1.5 rounded-full hover:bg-sky-50 text-slate-600 hover:text-sky-600 transition-colors flex items-center gap-1.5">
+          <ClipboardCheck class="w-3.5 h-3.5" /> Auto-Test
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="vocabulary" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <BookOpen class="w-4 h-4" />
+            Sección A
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Adverbios de Frecuencia, Verbos de Rutina y Períodos de Tiempo
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Tres olas. Ola 1: los siete adverbios de frecuencia, de 100% (always) a 0% (never).
+            Ola 2: los verbos de rutina diaria que todo adulto usa. Ola 3: las frases de
+            período que van al FINAL de la oración. Toca cualquier entrada para escucharla.
+          </p>
+        </div>
+        <CognateDiscovery client:visible waves={waveData} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="position" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Layers class="w-4 h-4" />
+            Sección B
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Reglas de Posición — Dónde Van los Adverbios de Frecuencia
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Una regla principal, tres excepciones. Los adverbios de frecuencia van ANTES del
+            verbo principal — pero DESPUÉS de 'be', y ENTRE el auxiliar y el verbo principal.
+            'Sometimes' y 'usually' también pueden iniciar la oración. Practica cada patrón
+            hasta que el correcto salga automático.
+          </p>
+        </div>
+        <SentenceBuilder client:visible blocks={sentenceBlocks} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="phrases" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Zap class="w-4 h-4" />
+            Sección C
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Frases de Frecuencia — Every Day, Twice a Week, On Mondays
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            'Every X', 'once / twice / X times a [período]', 'on + día', 'in + parte del día'.
+            Estas frases van al FINAL de la oración (o a veces al inicio). Combínalas con la
+            preposición correcta: ON Mondays, IN the morning, AT night.
+          </p>
+        </div>
+        <SentenceBuilder client:visible blocks={powerVerbBlocks} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="boss" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <Link2 class="w-4 h-4" />
+            Sección D
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            La Oración Maestra — Una Semana Típica Real
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Cuatro oraciones. Ocho expresiones de frecuencia diferentes en ocho posiciones
+            distintas. Mezclando adverbios ('usually', 'always', 'rarely', 'never') con frases
+            ('every day', 'three times a week', 'every Monday morning'). Así suena hablar de la
+            vida diaria de forma natural.
+          </p>
+        </div>
+        <ConnectorChallenge
+          client:visible
+          connectors={connectorSentences.connectors}
+          bossSentence={connectorSentences.bossSentence}
+          lang="es"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="pronunciation" class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-rose-500 text-sm font-semibold mb-2">
+            <Volume2 class="w-4 h-4" />
+            Laboratorio de Pronunciación
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Sonidos de Adverbios de Frecuencia — y la T Muda
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            'Usually' tiene TRES sílabas y una 'zh' suave en medio. 'Often' típicamente quita
+            la 't' — 'OFF-en'. 'Rarely' usa la 'r' americana. 'Every day' en habla rápida
+            reduce la 'e' del medio a 'EV-ree'. Practica estos y el ritmo de hablar de rutina
+            cae natural.
+          </p>
+        </div>
+        <PronunciationDrill client:visible drills={pronunciationDrills} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section id="self-test" class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 text-sky-600 text-sm font-semibold mb-2">
+            <ClipboardCheck class="w-4 h-4" />
+            Auto-Evaluación
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            Evalúa Lo que Aprendiste
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Repaso tipo flashcard de cada adverbio de frecuencia, verbo de rutina y frase útil
+            de la Unidad 8. Cambia entre los modos español→inglés e inglés→español.
+          </p>
+        </div>
+        <SelfTest client:visible vocabulary={vocabularyList} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-gradient-to-b from-slate-900 to-slate-800">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-2xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-white">¡Unidad 8 Completada!</h2>
+        <p class="text-lg text-slate-100 leading-relaxed">
+          Ahora puedes describir un día, semana o rutina real — con los adverbios en la posición
+          correcta, la preposición correcta para el tiempo, y el ritmo natural del habla nativa.
+          Ocho unidades terminadas, dos por venir. Sigue: pasado continuo — la herramienta
+          narrativa.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center pt-4">
+          <a
+            href="/es/curso/elemental/unidad-7/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-700 text-slate-300 font-medium hover:bg-slate-600 transition-colors"
+          >
+            ← Repasar Unidad 7
+          </a>
+          {nextUnitPublished ? (
+            <a
+              href="/es/curso/elemental/unidad-9/"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-colors shadow-lg"
+            >
+              Continuar a Unidad 9 →
+            </a>
+          ) : (
+            <a
+              href="/es/curso/elemental/"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-colors shadow-lg"
+            >
+              Vista General del Curso
+            </a>
+          )}
+        </div>
+        <div class="pt-8 border-t border-slate-700 mt-8">
+          <p class="text-slate-200 text-sm mb-3">
+            ¿Quieres coaching personalizado de inglés?
+          </p>
+          <a
+            href="/es/contact/"
+            class="text-sky-400 hover:text-sky-300 font-medium underline underline-offset-2"
+          >
+            Reserva una consulta gratuita con Robert →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

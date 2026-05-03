@@ -1,0 +1,317 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import CourseProgress from "@components/course/CourseProgress";
+import CapstoneUploadForm from "@components/course/CapstoneUploadForm";
+import { elementaryUnits } from "@data/elementary/units";
+import { Sparkles, Calendar, Mic, ArrowLeft, CheckCircle2 } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/elementary/unit-10" as const;
+
+const progressUnits = elementaryUnits.map((u) => ({
+  id: u.id,
+  slug: u.slug,
+  title: u.title,
+  titleEs: u.titleEs,
+}));
+
+const bookingLink =
+  "/en/book/?notes=" +
+  encodeURIComponent(
+    "I just completed the Elementary (A2) course and recorded my 60-second story. I would like live coaching feedback on my past tense, future plans, and pronunciation."
+  );
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Unit 10: Tell Your Story — A2 Capstone | NY English Teacher"
+  description="The A2 capstone. Record a 60-second story combining past simple, past continuous, going to, and comparatives. Get personal feedback from Robert. Free."
+>
+  <CourseProgress
+    client:load
+    units={progressUnits}
+    currentUnit={10}
+    basePath="/en/course/elementary"
+    lang="en"
+  />
+
+  <!-- Hero -->
+  <section
+    class="relative w-full overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-sky-950 pt-28 pb-16 md:pt-36 md:pb-24"
+  >
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-sky-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-cyan-400 rounded-full blur-3xl"></div>
+    </div>
+    <div class="site-container mx-auto px-4 relative z-10 text-white">
+      <div class="max-w-3xl">
+        <a
+          href="/en/course/elementary/unit-9/"
+          class="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-white transition-colors mb-6"
+        >
+          <ArrowLeft class="w-4 h-4" />
+          Back to Unit 9
+        </a>
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/20 text-sky-300 text-sm font-semibold mb-6"
+        >
+          <Sparkles class="w-4 h-4" />
+          The Capstone
+        </div>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Tell Your Story.<br />
+          <span class="text-sky-400">In 60 Seconds.</span>
+        </h1>
+        <p class="text-xl text-slate-200 max-w-2xl leading-relaxed">
+          Nine units. Past simple, past continuous, going to, comparatives, quantifiers,
+          Wh-questions, frequency adverbs. Now combine them all into a 60-second story about
+          your real life — and Robert will listen personally.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Prompt -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-[11px] font-mono uppercase tracking-[0.3em] text-sky-600 mb-4">
+          Your Assignment
+        </p>
+        <h2
+          class="text-2xl md:text-3xl font-bold text-slate-900 mb-6"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Record a 60-second autobiographical story.
+        </h2>
+        <div class="bg-slate-50 border-l-4 border-sky-400 rounded-r-xl p-6 md:p-8 mb-8">
+          <p class="text-lg text-slate-800 leading-relaxed font-medium mb-4">
+            Pick any 60-second story from your real life. Examples: a memorable trip, your
+            first day at a job, a funny family moment, the day you decided to learn English,
+            something unexpected that happened last week.
+          </p>
+          <p class="text-base text-slate-700 leading-relaxed">
+            <strong>The structure:</strong> set the scene with past continuous ('I was
+            walking…'), introduce the moment with past simple ('then suddenly…'), say what's
+            coming next with 'going to' ('next month I'm going to…'), and use at least one
+            comparative ('it was better than…').
+          </p>
+        </div>
+
+        <!-- The 5 ingredients -->
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Five ingredients to include:</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-10">
+          {
+            [
+              { unit: "Unit 1-2", req: "At least 3 past simple verbs (regular AND irregular)" },
+              { unit: "Unit 3", req: "A time marker (yesterday, last week, two months ago)" },
+              { unit: "Unit 4", req: "One future plan with 'going to' or 'will'" },
+              { unit: "Unit 5", req: "One comparative ('better than', 'bigger than')" },
+              { unit: "Unit 8", req: "One frequency adverb ('I usually…', 'I often…')" },
+              { unit: "Unit 9", req: "One past continuous + interruption ('I was X-ing when…')" },
+            ].map((item) => (
+              <div class="flex items-start gap-3 p-4 bg-sky-50 rounded-xl border border-sky-100">
+                <CheckCircle2 class="w-5 h-5 text-sky-500 shrink-0 mt-0.5" />
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider text-sky-600 mb-1">{item.unit}</p>
+                  <p class="text-sm text-slate-700 leading-relaxed">{item.req}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- How to record -->
+        <div class="bg-sky-50 border border-sky-200 rounded-xl p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <Mic class="w-5 h-5 text-sky-600" />
+            <p class="text-sm font-bold text-sky-800 uppercase tracking-wide">How to Record</p>
+          </div>
+          <ul class="space-y-2 text-sm text-sky-900 leading-relaxed">
+            <li><strong>iPhone:</strong> Open the Voice Memos app → tap the red button → save and export as M4A.</li>
+            <li><strong>Android:</strong> Use the built-in Voice Recorder app → export as MP3 or M4A.</li>
+            <li><strong>Computer:</strong> Use Zoom (record a meeting with yourself), Loom, or QuickTime audio recording.</li>
+          </ul>
+          <p class="text-xs text-sky-700 mt-4">
+            Any audio format works: MP3, M4A, WAV, or OGG. A 60-second voice recording is well
+            under 5 MB.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Submission — Upload form + Booking CTA -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <p class="text-[11px] font-mono uppercase tracking-[0.3em] text-sky-600 mb-4 text-center">
+          Submit Your Work
+        </p>
+        <h2
+          class="text-2xl md:text-3xl font-bold text-slate-900 mb-3 text-center"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Choose your path.
+        </h2>
+        <p class="text-slate-600 text-center mb-10">
+          Both options include personal feedback from Robert.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <!-- Path A: Upload -->
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-6 h-6 rounded-full bg-sky-500 text-white text-xs font-bold flex items-center justify-center">A</span>
+              <h3 class="text-lg font-bold text-slate-900">Upload Your Recording</h3>
+            </div>
+            <p class="text-sm text-slate-600 mb-5 leading-relaxed">
+              Record on your phone or computer, then upload it here. Robert listens personally
+              and emails you detailed feedback within 48 hours.
+            </p>
+            <CapstoneUploadForm client:load lang="en" />
+          </div>
+
+          <!-- Path B: Strategy Session -->
+          <div class="md:mt-14">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-6 h-6 rounded-full bg-slate-800 text-white text-xs font-bold flex items-center justify-center">B</span>
+              <h3 class="text-lg font-bold text-slate-900">Tell It Live with Robert</h3>
+              <span class="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 border border-sky-200 px-2 py-0.5 rounded-full ml-auto">
+                Recommended
+              </span>
+            </div>
+            <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+              Book a free 30-minute consultation. Tell your 60-second story live — then get
+              real-time coaching on past tense forms, pronunciation, and how to keep going
+              when you stumble. The fastest way to level up.
+            </p>
+            <div class="bg-white rounded-2xl border-2 border-sky-300 p-6 shadow-sm">
+              <div class="flex items-center gap-3 mb-4">
+                <Calendar class="w-6 h-6 text-sky-600" />
+                <div>
+                  <p class="text-sm font-bold text-slate-900">Free Consultation</p>
+                  <p class="text-xs text-slate-500">30 minutes · Google Meet · No prep required</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-500 mb-5 leading-relaxed">
+                Your session context is pre-filled — Robert will know you're coming from the
+                Elementary Course and have your story ready.
+              </p>
+              <Button href={bookingLink} variant="primary" size="lg" class="w-full">
+                <Calendar class="w-4 h-4" />
+                Book Your Free Session
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Robert's Coaching Reminders -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-[11px] font-mono uppercase tracking-[0.3em] text-sky-600 mb-4">
+          Robert's Reminders
+        </p>
+        <h2
+          class="text-2xl font-bold text-slate-900 mb-8"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Four things I listen for.
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {
+            [
+              {
+                tip: "Past tense forms — irregular verbs especially. 'Went' not 'goed'. 'Saw' not 'seed'. (Units 1-2)",
+              },
+              {
+                tip: "Frequency adverb position — 'I usually…' BEFORE the verb, NEVER at the end. (Unit 8)",
+              },
+              {
+                tip: "Past continuous + interruption — set the scene with 'was X-ing', then drop the moment with past simple. (Unit 9)",
+              },
+              {
+                tip: "Don't stop. If you stumble, keep going. Native speakers stumble too. Fluency is not perfection — it's recovery.",
+              },
+            ].map((item) => (
+              <div class="flex items-start gap-3 p-5 bg-slate-50 rounded-xl border border-slate-100">
+                <CheckCircle2 class="w-5 h-5 text-sky-500 shrink-0 mt-0.5" />
+                <p class="text-sm text-slate-700 leading-relaxed">{item.tip}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final exam CTA -->
+  <section class="py-16 md:py-20 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-[11px] font-mono uppercase tracking-[0.3em] text-sky-600 mb-4">
+          One Last Thing
+        </p>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4" style="font-family: 'Noto Sans KR', sans-serif;">
+          Take the final exam.
+        </h2>
+        <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+          20 questions covering all 10 units. Test what you've learned and see exactly where
+          you stand before moving on to the intermediate course.
+        </p>
+        <Button href="/en/course/elementary/exam/" variant="primary" size="lg">
+          Start the Final Exam →
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Encouragement -->
+  <section class="py-20 md:py-28 bg-slate-950 text-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <Sparkles class="w-10 h-10 text-sky-400 mx-auto mb-6" />
+        <h2
+          class="text-3xl md:text-4xl font-bold mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          This is not a test.<br />
+          <span class="text-sky-400">This is your voice in English.</span>
+        </h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Every drill, every sound, every correction across nine units built toward this. Hit
+          record. Tell your 60 seconds. Send it. The next conversation in your life will be
+          easier because of this one.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "Elementary English Capstone — 60-Second Story Challenge",
+  "description": "Record a 60-second autobiographical story combining past simple, past continuous, going to, and comparatives. Submit it for personal feedback from Robert.",
+  "learningResourceType": "Assessment",
+  "educationalLevel": "A2",
+  "inLanguage": "en",
+  "url": "https://www.nyenglishteacher.com/en/course/elementary/unit-10/",
+  "isAccessibleForFree": true,
+  "isPartOf": {
+    "@type": "Course",
+    "name": "Free Elementary English Course (A2)",
+    "url": "https://www.nyenglishteacher.com/en/course/elementary/"
+  }
+})} />
+</Base>
