@@ -22,7 +22,7 @@ You're on a board update with your US parent company. Your English is fine — b
 
 Your English didn't break. The controls did.
 
-In Spanish, register lives in your grammar. Tú versus usted. Ustedes versus vosotros. The subjunctive as a softening device — *quisiera, podría, hubiera*. The conditional cushion. The diminutive that takes the edge off a request without weakening it. You have been switching registers effortlessly for thirty years. The intuition is wired in.
+In Spanish, register lives in your grammar. Tú versus usted. The subjunctive as a softening device — *quisiera, podría, hubiera*. The conditional cushion. The diminutive that takes the edge off a request without weakening it — *un momentito, tantito, ahorita*. You have been switching registers effortlessly for thirty years. The intuition is wired in.
 
 In English, those controls do not exist. The same calibration work is done through completely different mechanics — and nobody ever taught them to you, because if you had grown up in English you would have absorbed them by osmosis the same way you absorbed *tú* and *usted*.
 

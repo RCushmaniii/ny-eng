@@ -6,6 +6,32 @@ Professional English coaching and training platform for Robert Cushman's "NY Eng
 
 **Live Site**: https://www.nyenglishteacher.com
 
+## Spanish Content — Mexican Professional Spanish ONLY (CRITICAL)
+
+**All Spanish content on this site must be Mexican Professional Spanish** (`es-MX`). The audience is Mexico-based corporate professionals. Iberian/Spain Spanish reads as foreign and damages credibility — flagged by a native Mexican reviewer (Julio Aldana, 2026-05-03) on the "registro" blog post.
+
+**When translating EN → ES, the prompt must explicitly say "Mexican Professional Spanish"** — never just "Spanish" or "Latin American Spanish" (still ambiguous).
+
+**Forbidden Iberian markers — never appear in our ES content:**
+- `vosotros` / `vuestro` / vosotros conjugations (`habláis`, `tenéis`, `sois`, `vosotras`) — Mexico uses `ustedes` for ALL plural; possessive `su / sus`. Never include `vosotros` even as a contrastive example — Mexicans don't think of it as part of their language.
+- `vale` (as "okay") → use `está bien`, `de acuerdo`, `ok`
+- `coger` (to take/grab) — vulgar in Mexico → use `tomar`, `agarrar`, `recoger`
+- `móvil` → `celular` · `ordenador` → `computadora` · `coche` → `carro`/`auto` · `conducir` → `manejar` · `aparcar` → `estacionar`
+- `jersey` → `suéter` · `gafas` → `lentes` · `patata` → `papa` · `zumo` → `jugo` · `ascensor` → `elevador` · `piso` (apartment) → `departamento`
+- Spain slang: `tío/tía` (as friend), `guay`, `molar`, `flipar`, `chaval` — none of this in professional MX
+- `Vd.` abbreviation → Mexico writes `Ud.` if abbreviating; spelling out `usted` is more common in formal copy
+- `leísmo` (using `le` for direct objects of people) — Mexican standard is `lo/la` as direct object, `le` only as indirect object
+
+**Mexican-preferred phrasings:**
+- "Right now": `ahora mismo` (formal), `ahorita` (slightly more colloquial / common in MX speech)
+- "Approximately": `aproximadamente`, `como` — Spain often uses `unos/unas`
+- "Take a look": `revisar`, `echar un ojo`, `ver` — Spain's `echar un vistazo` is understood but less natural in MX professional copy
+- Diminutives (`ahorita`, `un momentito`) are warmer in MX professional speech — fine in casual register, avoid in C-suite copy unless tone calls for warmth
+
+**When auditing existing ES content for Iberian drift**, grep for: `vosotros`, `vosotras`, `vuestr`, `vale\.`, `coger`, `móvil`, `ordenador`, `coche`, `aparcar`, `habéis`, `sois`, `tenéis`, `gafas`, `jersey`, `patata`, `zumo`, `tío\b`. Any hit → fix on the spot.
+
+The site's hreflang is already `es-MX` (`src/lib/i18n.ts` `getHreflangCode`). The variant is committed at the technical layer; the content layer must match.
+
 ## Tech Stack
 
 - **Framework**: Astro 5.5 with React 19 for interactive components
@@ -228,3 +254,7 @@ The `@vercel/analytics` npm package is installed but we use the direct script ta
 ## Marketing Plan
 
 See **[SEO-MARKETING-PLAN.md](./SEO-MARKETING-PLAN.md)** for the full content roadmap, completed work log, and upcoming initiatives. Claude should consult this file at the start of every session and update it as work is completed.
+
+## Session Logs
+
+Every working session creates / updates a log at `docs/session-logs/YYYY-MM-DD-NNN.md` (NNN = zero-padded sequence number for that day). See the global CLAUDE.md "Session Logs" section for the required format. Logs are committed to the repo. The log captures: accomplishments (with PR numbers), technical debt accumulated, work remaining, future ideas, files touched, and lessons/surprises. Updated as work happens, not just at session end.

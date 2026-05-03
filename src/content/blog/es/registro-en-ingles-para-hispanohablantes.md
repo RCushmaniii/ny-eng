@@ -22,7 +22,7 @@ Estás en una junta de actualización con la matriz en Estados Unidos. Tu inglé
 
 Tu inglés no se rompió. Los controles sí.
 
-En español, el registro vive en tu gramática. Tú versus usted. Ustedes versus vosotros. El subjuntivo como dispositivo suavizador — *quisiera, podría, hubiera*. La almohadilla del condicional. El diminutivo que le quita el filo a una petición sin debilitarla. Has estado cambiando de registro sin esfuerzo durante treinta años. La intuición está cableada.
+En español, el registro vive en tu gramática. Tú versus usted. El subjuntivo como mecanismo para suavizar — *quisiera, podría, hubiera*. El cojín del condicional. El diminutivo que le quita el filo a una petición sin debilitarla — *un momentito, tantito, ahorita*. Llevas treinta años cambiando de registro sin esfuerzo. La intuición está cableada.
 
 En inglés, esos controles no existen. El mismo trabajo de calibración se hace a través de mecánicas completamente distintas — y nadie te las enseñó, porque si hubieras crecido en inglés las habrías absorbido por ósmosis igual que absorbiste *tú* y *usted*.
 
