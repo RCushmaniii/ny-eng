@@ -10,6 +10,22 @@ updates:
       - dependencies
     commit-message:
       prefix: "deps:"
+    ignore:
+      # Lint toolchain — the eslint ecosystem (eslint, @eslint/js,
+      # @typescript-eslint/*, eslint-plugin-*) must move as a single
+      # coordinated upgrade because peerDependencies cross-couple them.
+      # Dependabot proposing major bumps individually breaks `npm install`
+      # with ERESOLVE every time. When ready to upgrade, do it manually
+      # in one PR that bumps all of them together. See PRs #137 and #140
+      # (closed 2026-05-04) for prior incidents.
+      - dependency-name: "eslint"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@eslint/js"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@typescript-eslint/*"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "eslint-plugin-*"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: "/"
