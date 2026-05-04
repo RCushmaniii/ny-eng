@@ -85,7 +85,7 @@
     "glob": "^11.0.3",
     "postcss": "^8.5.4",
     "postcss-discard-duplicates": "^7.0.2",
-    "postcss-merge-longhand": "^7.0.5",
+    "postcss-merge-longhand": "^7.0.7",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "resend": "^6.7.0",
