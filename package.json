@@ -51,7 +51,7 @@
     "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.3.3",
     "aos": "^2.3.4",
-    "astro": "^5.5.3",
+    "astro": "^6.2.2",
     "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.3",
