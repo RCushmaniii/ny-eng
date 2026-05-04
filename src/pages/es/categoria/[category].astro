@@ -40,18 +40,6 @@ const allSpanishPosts = allPosts
       new Date(a.data.publishDate).getTime()
   );
 
-// Filter posts for this specific category (for display)
-const categoryPosts = allSpanishPosts.filter(
-  (post: CollectionEntry<"blog">) => {
-    const categoryNames = post.data.categories || [];
-    // Check both Spanish and English category names for compatibility
-    return (
-      categoryNames.includes(categoryData.name_es || categoryData.name) ||
-      categoryNames.includes(categoryData.name)
-    );
-  }
-);
-
 // Generate proper TKey for i18n system
 const tkey = `category/${categoryData.slug}` as TKey;
 

@@ -9,7 +9,6 @@ import FeaturedTestimonial from "@components/sections/FeaturedTestimonial.astro"
 import CtaSection from "@components/sections/CtaSection.astro";
 import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
 import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
-import Breadcrumbs from "@components/ui/Breadcrumbs.astro";
 import { serviceFaqs } from "@data/service-faqs";
 
 // Import services data
@@ -110,8 +109,6 @@ const ctaContent = {
   ],
 };
 
-// Translation slug for English version
-const translationSlug = "public-speaking-english";
 
 const faqs = serviceFaqs["public-speaking-english"]?.es || [];
 ---
