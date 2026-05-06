@@ -189,7 +189,7 @@ export const testimonials: Testimonial[] = [
     avatarSize: "md",
     link: "/es/servicios/ingles-para-profesionales/",
     linkText: "Coaching de Inglés para Profesionales Médicos y Legales",
-    status: "published",
+    status: "draft",
   },
   {
     content:
