@@ -50,7 +50,7 @@ const baseUrl = lang === "en" ? "/en/meme-portfolio/" : "/es/meme-portfolio/";
         <div class="relative">
           <select
             id="role-filter"
-            class="bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500 font-sans"
+            class="bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary font-sans"
             style="font-family: NotoSansKR, ui-sans-serif, system-ui, sans-serif;"
           >
             {Object.entries(labels).map(([key, label]) => (
@@ -89,7 +89,7 @@ const baseUrl = lang === "en" ? "/en/meme-portfolio/" : "/es/meme-portfolio/";
         </p>
         <a
           href={`${baseUrl}all/`}
-          class="inline-block px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors"
+          class="inline-block px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors"
         >
           {lang === "en" ? "View All Memes" : "Ver Todos los Memes"}
         </a>
