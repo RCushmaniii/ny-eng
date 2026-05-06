@@ -69,7 +69,7 @@ const stars = "★".repeat(testimonial.stars || 5);
     <div class="mt-4 text-right">
       <a 
         href={testimonial.link?.endsWith('/') ? testimonial.link : `${testimonial.link}/`} 
-        class="text-primary-600 hover:text-primary-800 font-medium inline-flex items-center"
+        class="text-primary hover:text-primary-dark font-medium inline-flex items-center"
         {...(testimonial.link.startsWith('http') ? {
           target: "_blank",
           rel: "noopener noreferrer"

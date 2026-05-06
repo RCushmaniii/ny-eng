@@ -38,7 +38,7 @@ const hasShortContent = !!testimonial.shortContent;
       <blockquote class="mb-6 italic text-gray-700 dark:text-gray-300 short-content">
         "{testimonial.shortContent}" 
         <span 
-          class="text-primary-600 hover:text-primary-800 font-medium text-sm toggle-content-btn cursor-pointer"
+          class="text-primary hover:text-primary-dark font-medium text-sm toggle-content-btn cursor-pointer"
           data-action="expand"
           data-lang={testimonial.link?.includes('/es/') ? 'es' : 'en'}
         >
@@ -48,7 +48,7 @@ const hasShortContent = !!testimonial.shortContent;
       <blockquote class="mb-6 italic text-gray-700 dark:text-gray-300 full-content hidden">
         "{testimonial.content}" 
         <span 
-          class="text-primary-600 hover:text-primary-800 font-medium text-sm toggle-content-btn cursor-pointer"
+          class="text-primary hover:text-primary-dark font-medium text-sm toggle-content-btn cursor-pointer"
           data-action="collapse"
           data-lang={testimonial.link?.includes('/es/') ? 'es' : 'en'}
         >
@@ -97,7 +97,7 @@ const hasShortContent = !!testimonial.shortContent;
     <div class="mt-4 text-right">
       <a 
         href={testimonial.link?.endsWith('/') ? testimonial.link : `${testimonial.link}/`} 
-        class="text-primary-600 hover:text-primary-800 font-medium inline-flex items-center"
+        class="text-primary hover:text-primary-dark font-medium inline-flex items-center"
         {...(testimonial.link.startsWith('http') ? {
           target: "_blank",
           rel: "noopener noreferrer"
