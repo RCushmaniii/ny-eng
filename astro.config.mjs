@@ -1,7 +1,6 @@
 // astro.config.mjs (pure JS, safe for .mjs)
 
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
@@ -183,7 +182,6 @@ export default defineConfig({
   integrations: [
     react(),
     mdx(),
-    tailwind({ applyBaseStyles: false }),
     icon({ include: { lucide: ["*"] } }),
 
     // Sentry error monitoring — org: cushlabsai, project: ny-eng

@@ -1,5 +1,5 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Base from "@layouts/Base.astro";
 import BlogPostSchema from "@components/seo/BlogPostSchema.astro";
 import BreadcrumbSchema from '@components/seo/BreadcrumbSchema.astro';
@@ -19,11 +19,11 @@ export const prerender = true;
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   // Filter for published Spanish posts
-  const esPosts = posts.filter((post: CollectionEntry<'blog'>) => post.slug.startsWith('es/') && post.data.publish !== false);
-  
+  const esPosts = posts.filter((post: CollectionEntry<'blog'>) => post.id.startsWith('es/') && post.data.publish !== false);
+
   return esPosts.map((post: CollectionEntry<'blog'>) => {
     // Normalize the slug to prevent duplicate URLs
-    const { segments } = normalizeBlogSlug(post.slug);
+    const { segments } = normalizeBlogSlug(post.id);
     
     // For single-segment routes, we only want the first segment
     const singleSegment = segments[0] || '';
@@ -49,7 +49,7 @@ interface Props {
 }
 
 const { post } = Astro.props as Props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 // Use the canonicalUrl passed from getStaticPaths
 const { canonicalUrl } = Astro.props as Props;

@@ -15,7 +15,9 @@ const title = "Complete Site Index | NY English Teacher";
 const description = "Browse all pages, resources, and services from NY English Teacher. Find executive English coaching, negotiation scripts, and interview templates.";
 
 // Auto-discover all free resources from JSON files
-const allAssets = await Astro.glob("../../../data/free/*.json");
+const allAssets = Object.values(
+  import.meta.glob("../../../data/free/*.json", { eager: true }),
+) as Array<{ default: any }>;
 
 // Filter and map resources
 const resources: FreeAsset[] = allAssets
