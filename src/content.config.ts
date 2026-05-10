@@ -1,8 +1,8 @@
 import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 
-// Define blog collection with proper schema
 const blogCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog" }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -11,14 +11,12 @@ const blogCollection = defineCollection({
       imageAlt: z.string().optional(),
       heroVideo: z.string().optional(),
       heroVideoPoster: z.string().optional(),
-      // Handle dates safely to ensure they work in both dev and build
       publishDate: z.string().transform((str) => new Date(str)),
       lastmod: z
         .string()
         .transform((str) => new Date(str))
         .optional(),
       publish: z.boolean().optional().default(true),
-      // Make categories optional with a default empty array to prevent errors
       categories: z.array(z.string()).optional().default([]),
       readingTime: z.string().optional(),
       audience: z.string().optional(),
@@ -40,7 +38,7 @@ const blogCollection = defineCollection({
 });
 
 const legalCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.md", base: "./src/content/legal" }),
   schema: z.object({
     title: z.string(),
     lastUpdated: z.string().transform((str) => new Date(str)),

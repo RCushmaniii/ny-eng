@@ -3,7 +3,7 @@ export const prerender = true;
 
 import Base from "@layouts/Base.astro";
 import InnerHero from '@components/sections/InnerHero.astro';
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 // Define language and tkey for i18n
 const lang = 'en';
@@ -11,13 +11,13 @@ const tkey = 'legal/privacy-policy';
 
 // Get the legal content
 const legalData = await getCollection('legal');
-const entry = legalData.find((item: { slug: string; data: { title: string; seo?: { title?: string; description?: string } } }) => item.slug === 'en/privacy-policy');
+const entry = legalData.find((item: { id: string; data: { title: string; seo?: { title?: string; description?: string } } }) => item.id === 'en/privacy-policy');
 
 if (!entry) {
   throw new Error('Privacy policy content not found');
 }
 
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 const heroContent = {
   title: entry.data.title,

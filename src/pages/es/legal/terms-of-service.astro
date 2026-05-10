@@ -3,7 +3,7 @@ export const prerender = true;
 
 import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 // Define language and tkey for i18n
 const lang = "es";
@@ -12,14 +12,14 @@ const tkey = "legal/terms-of-service";
 // Get the legal content
 const legalData = await getCollection("legal");
 const entry = legalData.find(
-  (item: (typeof legalData)[number]) => item.slug === "es/terms-of-service"
+  (item: (typeof legalData)[number]) => item.id === "es/terms-of-service"
 );
 
 if (!entry) {
   throw new Error("Terms of service content not found");
 }
 
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 const heroContent = {
   title: entry.data.title,

@@ -37,12 +37,11 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.93.0",
-    "@astrojs/check": "^0.9.8",
-    "@astrojs/mdx": "^4.3.13",
-    "@astrojs/netlify": "^6.6.3",
-    "@astrojs/react": "^5.0.3",
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/mdx": "^5.0.4",
+    "@astrojs/netlify": "^7.0.8",
+    "@astrojs/react": "^5.0.4",
     "@astrojs/sitemap": "^3.7.2",
-    "@astrolib/seo": "^1.0.0-beta.8",
     "@iconify-json/lucide": "^1.2.51",
     "@iconify-json/tabler": "^1.2.33",
     "@neondatabase/serverless": "^1.1.0",
@@ -51,7 +50,7 @@
     "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.3.3",
     "aos": "^2.3.4",
-    "astro": "^5.5.3",
+    "astro": "^6.3.1",
     "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.3",
@@ -68,7 +67,6 @@
     "unpic": "^4.2.2"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^6.0.2",
     "@eslint/js": "^9.39.2",
     "@fullhuman/postcss-purgecss": "^8.0.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
@@ -96,6 +94,6 @@
     "tsx": "^4.20.3",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.59.2",
-    "vite": "^5.4.10"
+    "vite": "^7.0.0"
   }
 }

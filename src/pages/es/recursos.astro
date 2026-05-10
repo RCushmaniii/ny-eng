@@ -15,7 +15,9 @@ const description =
   "Scripts de negociación probados, marcos de comunicación y guías ejecutivas diseñadas para profesionales latinoamericanos liderando equipos globales.";
 
 // Auto-discover all free resources from JSON files
-const allAssets = await Astro.glob("../../data/free/*.json");
+const allAssets = Object.values(
+  import.meta.glob("../../data/free/*.json", { eager: true }),
+) as Array<{ default: any }>;
 
 // Filter out schema and template files, only keep actual assets with valid content
 // Support both new schema (es at root) and old schema (content.es)
