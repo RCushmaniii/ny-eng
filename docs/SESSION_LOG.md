@@ -4,6 +4,40 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-05-10
+
+### Accomplished
+- Astro 5.5 → 6.3 migration (PR #153) — merged and deployed to production
+  - Bumped: astro, @astrojs/mdx 4→5, @astrojs/react →5.0.4, @astrojs/check →0.9.9, @astrojs/netlify 6→7, vite 5→7
+  - Removed @astrolib/seo (unused dep, peer-pinned to astro ^5) and @astrojs/tailwind (abandoned, peer-pinned to ^5)
+  - Content collections migrated to Content Layer API — `src/content/config.ts` → `src/content.config.ts`, glob loader, `.slug` → `.id`, `entry.render()` → `render(entry)` across 9 files
+  - Replaced 4 `Astro.glob()` calls with `import.meta.glob({ eager: true })`
+- Bumped GitHub Actions runner Node 20 → 22 (followup commit after CI failed on Astro 6's `>=22.12.0` requirement)
+- Closed Dependabot PR #144 (bare astro bump that couldn't land alone)
+- Smoke-tested 14 routes locally on Astro 6.3.1 pre-merge; verified production 200s post-deploy
+
+### Decisions Made
+- Kept Tailwind 3 via raw PostCSS instead of migrating TW3 → TW4 in the same PR — avoids compounding migration risk (color collisions, `@theme` rewrite). Done since `postcss.config.cjs` was already wired.
+- Closed Dependabot's bare astro PR and did the migration on a fresh branch — cleaner than reusing Dependabot's branch when 5+ packages needed coordinated bumps.
+- Deferred 18 pre-existing `Connector[]` type mismatches in elementary course unit pages — surfaced by v6's stricter type generation, but `npm run build` doesn't gate on `astro check` and pages render fine. Out of migration scope.
+
+### Immediate Next Steps
+- [ ] Blog post #5 — *Present to US Clients on Zoom with Confidence* (next in SEO-MARKETING-PLAN.md queue)
+- [ ] Optional: TW3 → TW4 migration as a standalone PR when there's a reason
+- [ ] Optional: Fix `Connector[]` type/data mismatch in elementary course units (component interface vs `@data/elementary/unit-*` data shape)
+
+### Technical Debt
+- 18 elementary course unit pages fail `astro check` on `Connector[]` shape — passes build, type drift surfaced by v6
+- `@astrojs/tailwind` replaced with raw PostCSS; eventual TW4 move still pending
+
+### Open Questions / Blockers
+- None
+
+### Process Note
+Pre-flight for major version bumps should grep `.github/workflows/` for runner Node version. Missed it pre-merge on Astro 5→6 — caught only when CI failed on Node 20. Local Node 22.17 was fine, but the check is two places, not one.
+
+---
+
 ## Session: 2026-05-06
 
 ### Accomplished
