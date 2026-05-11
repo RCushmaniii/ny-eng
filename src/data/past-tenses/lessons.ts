@@ -30,7 +30,7 @@ export interface PastTenseBonus {
 export const pastTensesInfo = {
   title: "Master English Past Tenses",
   titleEs: "Domina los Tiempos del Pasado en Inglés",
-  tagline: "Feel the Story. Don't Think the Rules.",
+  tagline: "Feel the Story. Don't Think About the Rules.",
   taglineEs: "Siente la historia. No pienses en las reglas.",
   description:
     "A focused master class for Mexican professionals who know the rules but freeze in conversation. Learn to visualize the scene — and the right past tense becomes obvious.",
