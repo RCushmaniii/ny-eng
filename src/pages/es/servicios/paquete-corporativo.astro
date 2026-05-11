@@ -9,8 +9,14 @@ import LeadMagnetCallout from "@components/sections/LeadMagnetCallout.astro";
 import LeadMagnetForm from "@components/sections/LeadMagnetForm.astro";
 import ServiceFAQ from "@components/sections/ServiceFAQ.astro";
 import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
+import TestimonialCard from "@components/ui/TestimonialCard.astro";
 import { serviceFaqs } from "@data/service-faqs";
 import { paqueteCorporativo as serviceData } from "@data/services";
+import { testimonials as esTestimonials } from "@data/testimonials/es";
+
+const corporateTestimonial = esTestimonials.find(
+  (t) => t.slug === "jose-antonio-lopez-terramar-brands",
+);
 
 const title = "Coaching de Inglés de Negocios | NY English Teacher";
 const seoDescription =
@@ -192,6 +198,17 @@ const faqs = serviceFaqs["corporate-package"]?.es || [];
       </div>
     </div>
   </section>
+
+  <!-- Testimonio de Cliente -->
+  {corporateTestimonial && (
+    <section class="bg-white py-16 px-8 border-t border-gray-100">
+      <div class="site-container--small mx-auto max-w-2xl">
+        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2 text-center">De un cliente reciente</p>
+        <h2 class="text-3xl font-bold mb-10 text-center">Lo que dice Recursos Humanos</h2>
+        <TestimonialCard testimonial={corporateTestimonial} showHeadline={true} showReadMore={false} />
+      </div>
+    </section>
+  )}
 
   <!-- Enlace cruzado — Página para RH -->
   <section class="bg-white py-12 px-8 border-t border-gray-100">
