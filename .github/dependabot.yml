@@ -3,13 +3,20 @@ updates:
   - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: weekly
+      interval: monthly
       day: monday
     open-pull-requests-limit: 5
     labels:
       - dependencies
     commit-message:
       prefix: "deps:"
+    groups:
+      # One PR per month bundling all minor + patch npm updates.
+      # Major bumps still come through as individual PRs for review.
+      npm-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
     ignore:
       # Lint toolchain — the eslint ecosystem (eslint, @eslint/js,
       # @typescript-eslint/*, eslint-plugin-*) must move as a single
@@ -30,10 +37,15 @@ updates:
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
-      interval: weekly
+      interval: monthly
       day: monday
     open-pull-requests-limit: 3
     labels:
       - dependencies
     commit-message:
       prefix: "ci:"
+    groups:
+      actions-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
