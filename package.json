@@ -54,7 +54,7 @@
     "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.3",
-    "googleapis": "^161.0.0",
+    "googleapis": "^171.4.0",
     "gray-matter": "^4.0.3",
     "lucide-astro": "^0.473.0",
     "lucide-react": "^1.14.0",
