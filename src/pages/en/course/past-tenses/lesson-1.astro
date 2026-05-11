@@ -1,0 +1,319 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import {
+  ArrowRight,
+  Clock,
+  Camera,
+  Lock,
+  AlertTriangle,
+  Eye,
+  CheckCircle2,
+  XCircle,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/past-tenses/lesson-1" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Lesson 1: Past Simple — It Happened. It's Done. | NY English Teacher"
+  description="The first tense in the Master Past Tenses course. Learn to feel the closed-box moment — and stop overthinking when to use 'I worked' vs 'I have worked.'"
+>
+  <!-- Lesson hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-emerald-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-3">
+          <Clock class="w-4 h-4" />
+          Lesson 1 of 5
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Past Simple
+        </h1>
+        <p class="text-2xl text-emerald-300 italic font-light mb-4">It happened. It's done.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          This is the foundation. The closed box. The snapshot.
+          Before you can master the trickier tenses, you have to feel exactly what Past Simple is doing — and just as importantly, what it isn't.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
+            <Camera class="w-3.5 h-3.5" /> The Snapshot
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
+            <Lock class="w-3.5 h-3.5" /> Closed Time
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
+            <AlertTriangle class="w-3.5 h-3.5" /> Mexican Trap
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: The Mental Picture -->
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Mental Picture</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Before any grammar. Just the image.</p>
+
+        <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+          <p>
+            Close your eyes for a second. Picture this: you walk into a room, do something, walk out, and close the door behind you. The room is sealed. Whatever happened in there is over. It belongs to <em>before</em> — not to right now.
+          </p>
+          <p>
+            <strong>That is Past Simple.</strong> A door closed. A box sealed. A photograph from a moment that is no longer happening. The action might have taken a second ("I sneezed") or eight years ("I worked at Telmex"), but the time is locked. It does not bleed into the present.
+          </p>
+
+          <div class="rounded-2xl border-2 border-emerald-300 bg-emerald-50 p-8 my-8">
+            <div class="flex items-center gap-3 mb-4">
+              <Eye class="w-6 h-6 text-emerald-700" />
+              <h3 class="text-xl font-bold text-slate-900">Your Mental Image</h3>
+            </div>
+            <p class="text-slate-800 mb-3">A snapshot. A closed door. A finished chapter. The time window is shut.</p>
+            <p class="text-slate-700 text-base">If you can see the moment as <em>sealed off</em> from now, Past Simple is the right tense. If the moment still connects to now — that's Lesson 3.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Story Scenes -->
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Story Scenes</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Three scenes. Three different shapes of "closed time."</p>
+
+        <div class="space-y-5">
+          <!-- Scene 1: A single moment -->
+          <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Scene 1 — A Single Moment</p>
+            </div>
+            <div class="p-6">
+              <p class="text-lg text-slate-800 mb-3"><em>"I called the client yesterday."</em></p>
+              <p class="text-sm text-slate-600">
+                Picture it: yesterday, one phone call. One specific moment. Done. The time word "yesterday" seals the box — there is no way for that call to keep happening today. <strong class="text-emerald-700">Past Simple.</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- Scene 2: A long stretch -->
+          <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Scene 2 — A Long Stretch, But Closed</p>
+            </div>
+            <div class="p-6">
+              <p class="text-lg text-slate-800 mb-3"><em>"I worked at Telmex for eight years."</em></p>
+              <p class="text-sm text-slate-600">
+                Eight years is a long time. But the picture is still a closed chapter — you don't work there anymore. The whole period is one sealed box. <strong class="text-emerald-700">Past Simple.</strong>
+              </p>
+              <p class="text-sm text-amber-700 mt-3 bg-amber-50 border border-amber-200 rounded-lg p-3">
+                <strong>Watch this trap:</strong> If you <em>still work there</em>, the box isn't closed — it bleeds into now. That's <em>"I have worked at Telmex for eight years."</em> A different tense. We'll get there in Lesson 3.
+              </p>
+            </div>
+          </div>
+
+          <!-- Scene 3: A sequence -->
+          <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Scene 3 — A Sequence of Snapshots</p>
+            </div>
+            <div class="p-6">
+              <p class="text-lg text-slate-800 mb-3"><em>"He arrived at nine, opened his laptop, sent three emails, and left."</em></p>
+              <p class="text-sm text-slate-600">
+                Four closed boxes in a row. Each one a snapshot. The whole sequence is in the past, narrated as completed events one after another. This is how native speakers tell stories — Past Simple verbs strung together like a film strip. <strong class="text-emerald-700">Past Simple, four times.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Time Markers -->
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Words That Seal the Box</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">When these words appear in a sentence, the time is closed — and Past Simple is almost always the right choice.</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">yesterday</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">last week</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">last year</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">in 2019</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">two days ago</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">when I was a kid</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">at 9am</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">on Monday</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">that morning</div>
+        </div>
+
+        <p class="text-slate-600 text-sm mt-6">
+          The rule of thumb: <strong>if the sentence names a specific finished time</strong>, the box is closed and Past Simple does the work. If the time is fuzzy or still connected to now (no time marker at all, or words like <em>just</em>, <em>already</em>, <em>ever</em>) — that's a signal for a different tense.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: The Mexican Trap -->
+  <section class="py-16 md:py-20 bg-slate-50" id="section-4">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Mexican Trap</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Three specific mistakes Spanish speakers make with Past Simple. Spot them in your own speech.</p>
+
+        <div class="space-y-5">
+          <!-- Trap 1 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-3">Trap 1 — Using present instead of past</h3>
+            <div class="space-y-2">
+              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"Last year I work in Monterrey."</em></span></p>
+              <p class="flex items-start gap-2"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"Last year I <strong>worked</strong> in Monterrey."</em></span></p>
+            </div>
+            <p class="text-sm text-slate-600 mt-3">"Last year" seals the box. The verb must move to the past form. In Spanish you would naturally say <em>"trabajé"</em> — don't leave the English verb in present form just because the time marker is doing the heavy lifting.</p>
+          </div>
+
+          <!-- Trap 2 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-3">Trap 2 — Wrong perfect with a specific past time</h3>
+            <div class="space-y-2">
+              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"Yesterday I have sent the report."</em></span></p>
+              <p class="flex items-start gap-2"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"Yesterday I <strong>sent</strong> the report."</em></span></p>
+            </div>
+            <p class="text-sm text-slate-600 mt-3">"Have sent" lives in Present Perfect (Lesson 3), and Present Perfect <strong>cannot</strong> share a sentence with a sealed-time word like "yesterday." The two pictures contradict each other. When a finished time is named, use Past Simple — full stop.</p>
+          </div>
+
+          <!-- Trap 3 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-3">Trap 3 — Forgetting the irregular forms</h3>
+            <div class="space-y-2">
+              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"I goed to the meeting and telled him."</em></span></p>
+              <p class="flex items-start gap-2"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"I <strong>went</strong> to the meeting and <strong>told</strong> him."</em></span></p>
+            </div>
+            <p class="text-sm text-slate-600 mt-3">English past forms are unfair — most add <em>-ed</em>, but a few hundred high-frequency verbs change shape entirely: <em>go → went, tell → told, see → saw, take → took, get → got</em>. There is no rule that predicts them. You memorize the top ~50 and the rest you absorb from listening. Use the Bonus #2 cheat sheet when it's released.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Check Yourself -->
+  <section class="py-16 md:py-20 bg-white" id="section-5">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Check Yourself</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Five quick scenes. Pick the right tense — then check. The goal isn't to get them all right; the goal is to notice <em>why</em>.</p>
+
+        <div class="space-y-4">
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>1.</strong> <em>"I ___ (have/had) lunch with the CEO last Tuesday."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Answer: had.</strong> "Last Tuesday" seals the box. Past Simple.</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>2.</strong> <em>"She ___ (sent/has sent) three emails this morning."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Tricky.</strong> If the morning is over → <em>sent</em>. If it's still morning → <em>has sent</em>. The same fact, two different mental pictures. This is the heart of Lesson 3.</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>3.</strong> <em>"When I ___ (was/am) at Cemex, the team ___ (work/worked) overtime almost every Friday."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>was / worked.</strong> "When I was at Cemex" tells us the whole period is closed. The repeated Friday overtime lives inside that closed box.</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>4.</strong> <em>"He ___ (go/went) to the airport, ___ (check/checked) in, and ___ (board/boarded) the plane without saying a word."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>went / checked / boarded.</strong> Three snapshots in a row — the classic sequence-of-Past-Simple pattern that drives narration.</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>5.</strong> <em>"I ___ (lived/have lived) in Guadalajara for five years."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Both are possible — and they mean different things.</strong> "I lived in Guadalajara for five years" = you don't live there anymore (closed box). "I have lived in Guadalajara for five years" = you still live there (Lesson 3). Same English words. Different mental picture.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap + next -->
+  <section class="py-16 md:py-20 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">The Recap</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-8 mb-10">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Past Simple = closed box.</strong> The action and its time are sealed off from now.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Specific past time words</strong> (yesterday, last week, in 2019, when I was a kid) almost always require Past Simple.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Sequences of finished events</strong> are strings of Past Simple verbs — "he arrived, opened, sent, left."</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>If the moment still connects to now</strong> — that's a different tense (Lesson 3).</span></li>
+          </ul>
+        </div>
+
+        <div class="text-center">
+          <p class="text-slate-600 mb-6">Next up: <strong class="text-slate-900">the background scene</strong> — what you do when the action wasn't a snapshot but a movie running in the background.</p>
+          <div class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-200 text-slate-500 font-medium cursor-not-allowed">
+            Lesson 2: Past Continuous — Coming Soon
+          </div>
+          <div class="mt-6">
+            <a
+              href="/en/course/past-tenses/"
+              class="text-sm text-emerald-700 hover:text-emerald-800 underline underline-offset-2"
+            >
+              ← Back to course overview
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
