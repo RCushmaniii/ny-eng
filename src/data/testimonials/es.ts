@@ -19,6 +19,7 @@ import jonathanTestimonial from "../../assets/images/testimonials/jonathan-testi
 import taniaTestimonial from "../../assets/images/testimonials/tania-testimonial.jpg";
 import luislTestimonial from "../../assets/images/testimonials/luisl-testimonial.jpg";
 import noeTestimonial from "../../assets/images/testimonials/noe-testimonial.jpg";
+import joseAntonioLopezTestimonial from "../../assets/images/testimonials/jose-antonio-lopez-testimonial.jpg";
 
 export interface Testimonial {
   content: string;
@@ -315,6 +316,22 @@ export const testimonials: Testimonial[] = [
     avatarSize: "md",
     link: "/es/servicios/ingles-para-tecnologia/",
     linkText: "Coaching de Inglés para Ingenieros",
+    status: "published",
+  },
+  {
+    content:
+      "Teníamos gerentes con un buen nivel de inglés que aún dudaban en usarlo en las juntas. Este programa cambió eso. El coaching personalizado y la retroalimentación entre pares lo hicieron real, y los resultados fueron significativos.",
+    author: "José Antonio López Monroy",
+    position: "Director de Recursos Humanos",
+    company: "Terramar Brands Corporativo",
+    avatar: joseAntonioLopezTestimonial,
+    stars: 5,
+    industries: ["executive-english"],
+    slug: "jose-antonio-lopez-terramar-brands",
+    headline: "De capaz a seguro: un equipo de liderazgo se apropia del inglés",
+    avatarSize: "md",
+    link: "/es/servicios/ingles-para-ejecutivos/",
+    linkText: "Coaching de Inglés para Ejecutivos",
     status: "published",
   },
 ] as const;
