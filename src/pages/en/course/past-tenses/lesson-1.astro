@@ -3,6 +3,7 @@ export const prerender = true;
 
 import Base from "@layouts/Base.astro";
 import Button from "@components/ui/Button.astro";
+import AudioButton from "@components/course/AudioButton";
 import {
   ArrowRight,
   Clock,
@@ -51,7 +52,7 @@ const tkey = "course/past-tenses/lesson-1" as const;
             <Lock class="w-3.5 h-3.5" /> Closed Time
           </span>
           <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
-            <AlertTriangle class="w-3.5 h-3.5" /> Mexican Trap
+            <AlertTriangle class="w-3.5 h-3.5" /> Spanish-Speaker Traps
           </span>
         </div>
       </div>
@@ -97,7 +98,7 @@ const tkey = "course/past-tenses/lesson-1" as const;
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">2</span>
           <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Story Scenes</h2>
         </div>
-        <p class="text-slate-500 mb-8 ml-11">Three scenes. Three different shapes of "closed time."</p>
+        <p class="text-slate-500 mb-8 ml-11">Three scenes. Three different shapes of "closed time." Tap the speaker to hear each sentence read aloud.</p>
 
         <div class="space-y-5">
           <!-- Scene 1: A single moment -->
@@ -106,7 +107,10 @@ const tkey = "course/past-tenses/lesson-1" as const;
               <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Scene 1 — A Single Moment</p>
             </div>
             <div class="p-6">
-              <p class="text-lg text-slate-800 mb-3"><em>"I called the client yesterday."</em></p>
+              <div class="flex items-center gap-3 mb-3">
+                <p class="text-lg text-slate-800 flex-1"><em>"I called the client yesterday."</em></p>
+                <AudioButton client:visible text="I called the client yesterday." lang="en-US" size="sm" />
+              </div>
               <p class="text-sm text-slate-600">
                 Picture it: yesterday, one phone call. One specific moment. Done. The time word "yesterday" seals the box — there is no way for that call to keep happening today. <strong class="text-emerald-700">Past Simple.</strong>
               </p>
@@ -119,13 +123,22 @@ const tkey = "course/past-tenses/lesson-1" as const;
               <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Scene 2 — A Long Stretch, But Closed</p>
             </div>
             <div class="p-6">
-              <p class="text-lg text-slate-800 mb-3"><em>"I worked at Telmex for eight years."</em></p>
+              <div class="flex items-center gap-3 mb-3">
+                <p class="text-lg text-slate-800 flex-1"><em>"I worked at Telmex for eight years."</em></p>
+                <AudioButton client:visible text="I worked at Telmex for eight years." lang="en-US" size="sm" />
+              </div>
               <p class="text-sm text-slate-600">
                 Eight years is a long time. But the picture is still a closed chapter — you don't work there anymore. The whole period is one sealed box. <strong class="text-emerald-700">Past Simple.</strong>
               </p>
-              <p class="text-sm text-amber-700 mt-3 bg-amber-50 border border-amber-200 rounded-lg p-3">
-                <strong>Watch this trap:</strong> If you <em>still work there</em>, the box isn't closed — it bleeds into now. That's <em>"I have worked at Telmex for eight years."</em> A different tense. We'll get there in Lesson 3.
-              </p>
+              <div class="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-3">
+                <p class="text-sm text-amber-700 mb-2">
+                  <strong>Watch this trap:</strong> If you <em>still work there</em>, the box isn't closed — it bleeds into now. That's a different tense (Lesson 3):
+                </p>
+                <div class="flex items-center gap-3">
+                  <p class="text-sm text-amber-900 italic flex-1">"I have worked at Telmex for eight years."</p>
+                  <AudioButton client:visible text="I have worked at Telmex for eight years." lang="en-US" size="sm" />
+                </div>
+              </div>
             </div>
           </div>
 
@@ -135,7 +148,10 @@ const tkey = "course/past-tenses/lesson-1" as const;
               <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Scene 3 — A Sequence of Snapshots</p>
             </div>
             <div class="p-6">
-              <p class="text-lg text-slate-800 mb-3"><em>"He arrived at nine, opened his laptop, sent three emails, and left."</em></p>
+              <div class="flex items-center gap-3 mb-3">
+                <p class="text-lg text-slate-800 flex-1"><em>"He arrived at nine, opened his laptop, sent three emails, and left."</em></p>
+                <AudioButton client:visible text="He arrived at nine, opened his laptop, sent three emails, and left." lang="en-US" size="sm" />
+              </div>
               <p class="text-sm text-slate-600">
                 Four closed boxes in a row. Each one a snapshot. The whole sequence is in the past, narrated as completed events one after another. This is how native speakers tell stories — Past Simple verbs strung together like a film strip. <strong class="text-emerald-700">Past Simple, four times.</strong>
               </p>
@@ -181,9 +197,9 @@ const tkey = "course/past-tenses/lesson-1" as const;
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-2">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">4</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Mexican Trap</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Spanish Speaker's Traps</h2>
         </div>
-        <p class="text-slate-500 mb-8 ml-11">Three specific mistakes Spanish speakers make with Past Simple. Spot them in your own speech.</p>
+        <p class="text-slate-500 mb-8 ml-11">Three specific mistakes Spanish speakers make with Past Simple — pan-Hispanic, not Mexico-specific. Spot them in your own speech. Tap the speaker on each correct version to hear the right form.</p>
 
         <div class="space-y-5">
           <!-- Trap 1 -->
@@ -191,7 +207,11 @@ const tkey = "course/past-tenses/lesson-1" as const;
             <h3 class="font-bold text-slate-900 mb-3">Trap 1 — Using present instead of past</h3>
             <div class="space-y-2">
               <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"Last year I work in Monterrey."</em></span></p>
-              <p class="flex items-start gap-2"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"Last year I <strong>worked</strong> in Monterrey."</em></span></p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"Last year I <strong>worked</strong> in Monterrey."</em></span>
+                <AudioButton client:visible text="Last year I worked in Monterrey." lang="en-US" size="sm" />
+              </div>
             </div>
             <p class="text-sm text-slate-600 mt-3">"Last year" seals the box. The verb must move to the past form. In Spanish you would naturally say <em>"trabajé"</em> — don't leave the English verb in present form just because the time marker is doing the heavy lifting.</p>
           </div>
@@ -201,7 +221,11 @@ const tkey = "course/past-tenses/lesson-1" as const;
             <h3 class="font-bold text-slate-900 mb-3">Trap 2 — Wrong perfect with a specific past time</h3>
             <div class="space-y-2">
               <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"Yesterday I have sent the report."</em></span></p>
-              <p class="flex items-start gap-2"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"Yesterday I <strong>sent</strong> the report."</em></span></p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"Yesterday I <strong>sent</strong> the report."</em></span>
+                <AudioButton client:visible text="Yesterday I sent the report." lang="en-US" size="sm" />
+              </div>
             </div>
             <p class="text-sm text-slate-600 mt-3">"Have sent" lives in Present Perfect (Lesson 3), and Present Perfect <strong>cannot</strong> share a sentence with a sealed-time word like "yesterday." The two pictures contradict each other. When a finished time is named, use Past Simple — full stop.</p>
           </div>
@@ -211,7 +235,11 @@ const tkey = "course/past-tenses/lesson-1" as const;
             <h3 class="font-bold text-slate-900 mb-3">Trap 3 — Forgetting the irregular forms</h3>
             <div class="space-y-2">
               <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"I goed to the meeting and telled him."</em></span></p>
-              <p class="flex items-start gap-2"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"I <strong>went</strong> to the meeting and <strong>told</strong> him."</em></span></p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"I <strong>went</strong> to the meeting and <strong>told</strong> him."</em></span>
+                <AudioButton client:visible text="I went to the meeting and told him." lang="en-US" size="sm" />
+              </div>
             </div>
             <p class="text-sm text-slate-600 mt-3">English past forms are unfair — most add <em>-ed</em>, but a few hundred high-frequency verbs change shape entirely: <em>go → went, tell → told, see → saw, take → took, get → got</em>. There is no rule that predicts them. You memorize the top ~50 and the rest you absorb from listening. Use the Bonus #2 cheat sheet when it's released.</p>
           </div>
