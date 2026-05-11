@@ -19,6 +19,7 @@ import jonathanTestimonial from "../../assets/images/testimonials/jonathan-testi
 import taniaTestimonial from "../../assets/images/testimonials/tania-testimonial.jpg";
 import luislTestimonial from "../../assets/images/testimonials/luisl-testimonial.jpg";
 import noeTestimonial from "../../assets/images/testimonials/noe-testimonial.jpg";
+import joseAntonioLopezTestimonial from "../../assets/images/testimonials/jose-antonio-lopez-testimonial.jpg";
 
 export interface Testimonial {
   content: string;
@@ -316,6 +317,22 @@ With Robert's coaching, I've become more natural in conversations, better at str
     avatarSize: "md",
     link: "/en/services/tech-english/",
     linkText: "English Coaching for Engineers & Tech Leads",
+    status: "published",
+  },
+  {
+    content:
+      "We had managers with solid English skills who still hesitated to use English in meetings. This program changed that. The personalized coaching and peer review made it real—and the results were significant.",
+    author: "José Antonio López Monroy",
+    position: "HR Director",
+    company: "Terramar Brands Corporativo",
+    avatar: joseAntonioLopezTestimonial,
+    stars: 5,
+    industries: ["executive-english"],
+    slug: "jose-antonio-lopez-terramar-brands",
+    headline: "From Capable to Confident: A Leadership Team Owns English",
+    avatarSize: "md",
+    link: "/en/services/corporate-package/",
+    linkText: "Business English Coaching for Leadership Teams",
     status: "published",
   },
 ] as const;
