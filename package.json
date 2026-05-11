@@ -46,7 +46,7 @@
     "@iconify-json/tabler": "^1.2.33",
     "@neondatabase/serverless": "^1.1.0",
     "@sentry/astro": "^10.48.0",
-    "@types/marked": "^5.0.2",
+    "@types/marked": "^6.0.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.3.3",
     "aos": "^2.3.4",
