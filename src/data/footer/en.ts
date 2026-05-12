@@ -24,7 +24,7 @@ export const footerContentEn = (siteConfig: { companyName: string }) => {
             href: routes.en.resources ?? "/en/resources/",
           },
           { name: "FAQs", href: "/en/faqs/" },
-          { name: "Try my AI English Coach", href: "/en/chat/" },
+          { name: "Try my AI Practice Chat", href: "/en/chat/" },
           { name: "Blog", href: routes.en.blog },
           { name: "Benchmark Assessment", href: "/en/assessments/" },
           { name: "Executive Memes", href: "/en/meme-portfolio/all/" },
