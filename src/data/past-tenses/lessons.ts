@@ -106,7 +106,7 @@ export const pastTenseLessons: PastTenseLesson[] = [
     subtitle: "Choose the right tense in real time, mid-sentence",
     subtitleEs: "Elige el tiempo correcto en tiempo real, a mitad de frase",
     icon: "Map",
-    available: false,
+    available: true,
   },
 ];
 
