@@ -1,0 +1,346 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import AudioButton from "@components/course/AudioButton";
+import {
+  ArrowRight,
+  Film,
+  Camera,
+  AlertTriangle,
+  Eye,
+  CheckCircle2,
+  XCircle,
+  Zap,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/past-tenses/lesson-2" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Lección 2: Past Continuous — Estaba sucediendo cuando… | NY English Teacher"
+  description="Segunda lección del curso de tiempos del pasado en inglés. Aprende a sentir la escena de fondo — y deja de sonar cortado al narrar lo que pasaba."
+>
+  <!-- Hero de la lección -->
+  <section class="bg-gradient-to-b from-slate-900 to-emerald-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-3">
+          <Film class="w-4 h-4" />
+          Lección 2 de 5
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Past Continuous <span class="text-emerald-400 text-2xl md:text-3xl font-normal">(Pasado Continuo)</span>
+        </h1>
+        <p class="text-2xl text-emerald-300 italic font-light mb-4">Estaba sucediendo cuando…</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          El Past Simple es la foto. El Past Continuous es la película corriendo detrás.
+          Domina este tiempo y tus historias dejan de sonar como una lista de bullet points — empiezan a sonar como las escenas que un nativo realmente narraría.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
+            <Film class="w-3.5 h-3.5" /> La escena de fondo
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
+            <Zap class="w-3.5 h-3.5" /> Patrón de interrupción
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
+            <AlertTriangle class="w-3.5 h-3.5" /> Trampas del hispanohablante
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 1: La imagen mental -->
+  <section class="py-16 md:py-20 bg-white" id="seccion-1">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">La imagen mental</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Antes de cualquier gramática. Solo la imagen.</p>
+
+        <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+          <p>
+            Imagina que pausas una película a la mitad de una escena. El actor está a media seña, la boca medio abierta, la luz cambiando en la pared. Nada se ha resuelto. Todo está <em>en movimiento</em>. Ese cuadro pausado es el Past Continuous.
+          </p>
+          <p>
+            <strong>El Past Simple dice "esto sucedió":</strong> un evento cerrado, terminado. El Past Continuous dice "esto <em>estaba sucediendo</em>" — abierto, en proceso, en plena acción. Es la cámara siguiendo algo que aún no había terminado. La forma del verbo lo delata: <em>was/were + verbo-ing</em>.
+          </p>
+
+          <div class="rounded-2xl border-2 border-emerald-300 bg-emerald-50 p-8 my-8">
+            <div class="flex items-center gap-3 mb-4">
+              <Eye class="w-6 h-6 text-emerald-700" />
+              <h3 class="text-xl font-bold text-slate-900">Tu imagen mental</h3>
+            </div>
+            <p class="text-slate-800 mb-3">Una película corriendo. Una escena a medio cuadro. Una acción en proceso — aún no resuelta.</p>
+            <p class="text-slate-700 text-base">Si el momento <em>seguía desarrollándose</em> cuando lo describes, Past Continuous es el tiempo correcto. Si el momento estaba <em>completo y cerrado</em>, eso es Past Simple (Lección 1).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 2: Escenas de la historia -->
+  <section class="py-16 md:py-20 bg-slate-50" id="seccion-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Escenas de la historia</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Tres escenas. Tres formas de pasado "en proceso". Toca la bocina para escuchar cada una en inglés.</p>
+
+        <div class="space-y-5">
+          <!-- Escena 1 -->
+          <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Escena 1 — Fondo interrumpido por un evento</p>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <p class="text-lg text-slate-800 flex-1"><em>"I was driving home from the office when my phone rang."</em></p>
+                <AudioButton client:visible text="I was driving home from the office when my phone rang." lang="en-US" size="sm" />
+              </div>
+              <p class="text-sm text-slate-600">
+                Manejar es la escena de fondo — ya estaba en movimiento, e iba a seguir. El teléfono sonando es el evento puntual que la corta. <strong class="text-emerald-700">Past Continuous</strong> para el fondo (<em>was driving</em>), <strong class="text-emerald-700">Past Simple</strong> para la interrupción (<em>rang</em>). Este es el patrón de tiempo pasado más común en el inglés hablado.
+              </p>
+            </div>
+          </div>
+
+          <!-- Escena 2 -->
+          <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Escena 2 — Dos acciones paralelas en proceso</p>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <p class="text-lg text-slate-800 flex-1"><em>"While the team was finalizing the deck, the CEO was reviewing the budget."</em></p>
+                <AudioButton client:visible text="While the team was finalizing the deck, the CEO was reviewing the budget." lang="en-US" size="sm" />
+              </div>
+              <p class="text-sm text-slate-600">
+                Dos oficinas, dos acciones en proceso, mismo momento. Ambas sin resolverse. Ambas a media acción. La palabra "while" las empareja como simultáneas. <strong class="text-emerald-700">Past Continuous, dos veces.</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- Escena 3 -->
+          <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Escena 3 — Estableciendo el ambiente</p>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <p class="text-lg text-slate-800 flex-1"><em>"It was raining heavily, the wind was howling, and the streetlights were flickering on and off."</em></p>
+                <AudioButton client:visible text="It was raining heavily, the wind was howling, and the streetlights were flickering on and off." lang="en-US" size="sm" />
+              </div>
+              <p class="text-sm text-slate-600">
+                La apertura de una película de suspenso. Puro ambiente. Tres acciones en proceso pintando la atmósfera de un momento — ninguna resuelta, ninguna completa. Así construyen el ambiente los narradores nativos antes de que arranque la acción. <strong class="text-emerald-700">Past Continuous, tres veces.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 3: Palabras que señalan escena en proceso -->
+  <section class="py-16 md:py-20 bg-white" id="seccion-3">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Palabras que señalan escena en proceso</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Cuando aparecen estas palabras, casi seguro estás en territorio del Past Continuous.</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">while</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">as</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">when (+ evento)</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">at 9pm yesterday</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">at that moment</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">all morning</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">the whole time</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">throughout the day</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">in the middle of</div>
+        </div>
+
+        <p class="text-slate-600 text-sm mt-6">
+          Regla práctica: <strong>si puedes insertar mentalmente "en ese mismo instante" antes del verbo</strong>, estás en territorio Past Continuous. <em>"En ese mismo instante, el equipo estaba finalizando el deck"</em> — sí, en proceso. <em>"En ese mismo instante, trabajé en Telmex por ocho años"</em> — no, eso es un dato de largo plazo, no un momento.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 4: Trampas del hispanohablante -->
+  <section class="py-16 md:py-20 bg-slate-50" id="seccion-4">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Trampas del hispanohablante</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Tres errores específicos que cometen los hispanohablantes con el Past Continuous — comunes en todo el mundo hispano, no solo en México. Toca la bocina en la versión correcta para escuchar cómo suena.</p>
+
+        <div class="space-y-5">
+          <!-- Trampa 1 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-3">Trampa 1 — Usar Past Simple para una escena de fondo</h3>
+            <div class="space-y-2">
+              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"I drove home when my phone rang."</em></span></p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"I <strong>was driving</strong> home when my phone rang."</em></span>
+                <AudioButton client:visible text="I was driving home when my phone rang." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 mt-3">La versión incorrecta suena como dos fotos pegadas — <em>manejé. Sonó el teléfono.</em> Cortado, no natural. Manejar era la escena de fondo que la llamada interrumpió. Usa <em>was driving</em> para pintar esa escena y Past Simple (<em>rang</em>) para la interrupción. Este patrón <strong>fondo + interrupción</strong> es el uso #1 del Past Continuous en inglés hablado.</p>
+          </div>
+
+          <!-- Trampa 2 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-3">Trampa 2 — Usar Past Continuous para hábitos o períodos largos</h3>
+            <div class="space-y-2">
+              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"I was working at Telmex every day for eight years."</em></span></p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"I <strong>worked</strong> at Telmex every day for eight years."</em></span>
+                <AudioButton client:visible text="I worked at Telmex every day for eight years." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 mt-3">Ocho años de trabajo rutinario es un hábito, no un solo momento en proceso. El Past Continuous es para la cámara <em>congelada en un instante específico</em>. En el momento en que dices "every day for eight years", la imagen deja de ser un cuadro congelado y se vuelve un dato de largo plazo — eso es territorio del Past Simple. Los hispanohablantes a veces sobreextienden el continuo porque en español <em>estaba trabajando</em> se usa más libremente en contextos similares.</p>
+          </div>
+
+          <!-- Trampa 3 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-3">Trampa 3 — Saltarse "was/were" en oraciones largas</h3>
+            <div class="space-y-2">
+              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"I driving home, listening to the news, when the call came in."</em></span></p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"I <strong>was</strong> driving home, listening to the news, when the call came in."</em></span>
+                <AudioButton client:visible text="I was driving home, listening to the news, when the call came in." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 mt-3">El Past Continuous siempre necesita <em>was</em> (I, he, she, it) o <em>were</em> (you, we, they) antes del verbo en <em>-ing</em>. El español no tiene un equivalente exacto de esta estructura auxiliar — en español puedes decir <em>"manejaba"</em> en una sola palabra. Cuando traduces la imagen al inglés bajo presión, el auxiliar es lo primero que se cae. Practica forzándolo de vuelta: <em>was + verbo-ing, was + verbo-ing</em>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 5: Revísate -->
+  <section class="py-16 md:py-20 bg-white" id="seccion-5">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Revísate</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Cinco escenas. Escoge el tiempo correcto — luego verifica la respuesta. Nota el <em>porqué</em>, no solo el <em>qué</em>.</p>
+
+        <div class="space-y-4">
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>1.</strong> <em>"When the alarm rang, I ___ (slept / was sleeping)."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Respuesta: was sleeping.</strong> Dormir era la escena de fondo; la alarma fue la interrupción. Patrón clásico <strong>was-ing + when + Past Simple</strong>.</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>2.</strong> <em>"He ___ (worked / was working) at the company for ten years before he retired."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Respuesta: worked.</strong> "For ten years" es un período largo / hábito — no un solo momento en proceso. Past Simple. (Si fuera "He was working on the proposal when the email arrived", sí sería Past Continuous — un momento congelado.)</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>3.</strong> <em>"While she ___ (prepared / was preparing) the presentation, the network crashed."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Respuesta: was preparing.</strong> "While" + fondo en proceso. La preparación era la escena; la caída de red fue el evento puntual. Mismo patrón que la #1.</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>4.</strong> <em>"At 9pm yesterday, the team ___ (ate / was eating) dinner."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Respuesta: was eating.</strong> "At 9pm yesterday" pregunta: ¿qué estaba sucediendo en ese instante exacto? La cámara está congelada en las 9pm. La cena estaba en proceso en ese momento. Past Continuous.</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>5.</strong> <em>"I ___ (read / was reading) the news this morning when I ___ (saw / was seeing) the headline."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Respuesta: was reading / saw.</strong> Leer las noticias era la escena de fondo. Ver el titular fue el evento puntual que emergió dentro de esa escena. Fondo continuo + evento simple.</p>
+              <p class="text-sm text-slate-600 mt-2"><em>Nota aparte:</em> "Was seeing" es gramaticalmente posible pero significa algo distinto (andar saliendo con alguien — "I was seeing her at the time"). Quédate con <em>saw</em> aquí.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap + siguiente -->
+  <section class="py-16 md:py-20 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">El resumen</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-8 mb-10">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Past Continuous = película corriendo.</strong> La acción se estaba desarrollando, aún no completa.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Forma:</strong> <em>was/were + verbo-ing</em>. Siempre incluye el auxiliar, aunque la oración sea larga.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Fondo + interrupción</strong> es el patrón #1: <em>was-ing + when + Past Simple</em>.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>No lo uses para hábitos o períodos largos</strong> ("for eight years", "every day") — esos van en Past Simple, aunque el período sea largo.</span></li>
+          </ul>
+        </div>
+
+        <div class="text-center">
+          <p class="text-slate-600 mb-6">A continuación: <strong class="text-slate-900">el hilo hacia el ahora</strong> — el tiempo que cuela el pasado en el presente y al que los profesionales mexicanos le tropiezan más que a cualquier otro.</p>
+          <div class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-200 text-slate-500 font-medium cursor-not-allowed">
+            Lección 3: Present Perfect — Próximamente
+          </div>
+          <div class="mt-6 flex flex-wrap gap-4 justify-center">
+            <a
+              href="/es/curso/tiempos-del-pasado/leccion-1/"
+              class="text-sm text-slate-500 hover:text-emerald-700 underline underline-offset-2"
+            >
+              ← Lección 1: Past Simple
+            </a>
+            <span class="text-slate-300">|</span>
+            <a
+              href="/es/curso/tiempos-del-pasado/"
+              class="text-sm text-emerald-700 hover:text-emerald-800 underline underline-offset-2"
+            >
+              Resumen del curso
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -67,7 +67,7 @@ export const pastTenseLessons: PastTenseLesson[] = [
     subtitle: "Background scenes, actions in progress, interruptions",
     subtitleEs: "Escenas de fondo, acciones en progreso, interrupciones",
     icon: "Film",
-    available: false,
+    available: true,
   },
   {
     id: 3,
