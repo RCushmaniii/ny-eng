@@ -1,0 +1,349 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import AudioButton from "@components/course/AudioButton";
+import {
+  ArrowRight,
+  Layers,
+  AlertTriangle,
+  Eye,
+  CheckCircle2,
+  XCircle,
+  Clock,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/past-tenses/lesson-4" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Lesson 4: Past Perfect — The Layer Below | NY English Teacher"
+  description="The fourth lesson — Past Perfect, the layered past. Mark which event came first when you're telling a story with two past moments."
+>
+  <!-- Lesson hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-emerald-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-3">
+          <Layers class="w-4 h-4" />
+          Lesson 4 of 5
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Past Perfect
+        </h1>
+        <p class="text-2xl text-emerald-300 italic font-light mb-4">It happened before that other thing.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Past Simple is one moment. Past Perfect is the moment <em>underneath</em> another moment — the earlier event in a two-event story.
+          Mexican professionals often skip this tense entirely and lose the order of events in their narratives.
+          One layer down, and your stories make twice as much sense.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
+            <Layers class="w-3.5 h-3.5" /> The Layer Below
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
+            <Clock class="w-3.5 h-3.5" /> Earlier-Than-Past
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
+            <AlertTriangle class="w-3.5 h-3.5" /> Spanish-Speaker Traps
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: The Mental Picture -->
+  <section class="py-16 md:py-20 bg-white" id="section-1">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Mental Picture</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Before any grammar. Just the image.</p>
+
+        <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+          <p>
+            Imagine a timeline drawn on a whiteboard. On the right side is <em>now</em>. To the left of now, there's a dot — call it the moment of your story. Past Simple lives at that dot.
+          </p>
+          <p>
+            Now imagine a <em>second</em> dot — further to the left, earlier than the first one. Something happened before the main moment of your story. That earlier dot is <strong>Past Perfect</strong>.
+          </p>
+          <p>
+            <strong>Form: <em>had + past participle</em></strong> (had done, had sent, had finished, had left). The word <em>"had"</em> is the time-machine marker. It says "this happened in a layer beneath the past moment we're already talking about."
+          </p>
+
+          <div class="rounded-2xl border-2 border-emerald-300 bg-emerald-50 p-8 my-8">
+            <div class="flex items-center gap-3 mb-4">
+              <Eye class="w-6 h-6 text-emerald-700" />
+              <h3 class="text-xl font-bold text-slate-900">Your Mental Image</h3>
+            </div>
+            <p class="text-slate-800 mb-3">Two past events stacked. The earlier one is deeper — Past Perfect. The later one is the main story moment — Past Simple.</p>
+            <p class="text-slate-700 text-base">If you can ask "which one happened first?" and the answer is "the one with <em>had</em>", you're using Past Perfect correctly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Story Scenes -->
+  <section class="py-16 md:py-20 bg-slate-50" id="section-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Story Scenes</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Three scenes. Three ways to layer a past event under another. Tap the speaker to hear each one.</p>
+
+        <div class="space-y-5">
+          <!-- Scene 1: By the time -->
+          <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Scene 1 — "By the time" pattern</p>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <p class="text-lg text-slate-800 flex-1"><em>"By the time I arrived at the office, the team had already left for lunch."</em></p>
+                <AudioButton client:visible text="By the time I arrived at the office, the team had already left for lunch." lang="en-US" size="sm" />
+              </div>
+              <p class="text-sm text-slate-600">
+                Two events. The team's departure was <em>earlier</em>. My arrival was <em>later</em>. <strong class="text-emerald-700">Had left</strong> (Past Perfect) marks the earlier event. <strong class="text-emerald-700">Arrived</strong> (Past Simple) marks the main story moment. The phrase "by the time" almost always triggers this pattern.
+              </p>
+            </div>
+          </div>
+
+          <!-- Scene 2: Background before a past moment -->
+          <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Scene 2 — Background story before a past moment</p>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <p class="text-lg text-slate-800 flex-1"><em>"She had worked at three different companies before she joined our team."</em></p>
+                <AudioButton client:visible text="She had worked at three different companies before she joined our team." lang="en-US" size="sm" />
+              </div>
+              <p class="text-sm text-slate-600">
+                The main story moment: <em>she joined our team</em>. Everything that came before — the three previous companies — sits in the layer below. <strong class="text-emerald-700">Had worked</strong> (Past Perfect) for the earlier history. <strong class="text-emerald-700">Joined</strong> (Past Simple) for the main moment.
+              </p>
+            </div>
+          </div>
+
+          <!-- Scene 3: Explanation of a past situation -->
+          <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Scene 3 — Explaining a past situation</p>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <p class="text-lg text-slate-800 flex-1"><em>"He was exhausted because he hadn't slept the night before."</em></p>
+                <AudioButton client:visible text="He was exhausted because he hadn't slept the night before." lang="en-US" size="sm" />
+              </div>
+              <p class="text-sm text-slate-600">
+                The main moment: <em>he was exhausted</em>. The reason — sitting one layer beneath — is what happened (or didn't happen) the night before. <strong class="text-emerald-700">Hadn't slept</strong> (Past Perfect negative) explains the deeper cause. This is how you give backstory cleanly in English without going back and re-telling the timeline.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Words That Signal the Layer -->
+  <section class="py-16 md:py-20 bg-white" id="section-3">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Words That Signal the Earlier Layer</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">When you see these words paired with a past moment, the other event almost always goes in Past Perfect.</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">by the time</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">before</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">after</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">already (with had)</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">just (with had)</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">yet / never (with had)</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">until</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">because (giving past reason)</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">when (with order matters)</div>
+        </div>
+
+        <p class="text-slate-600 text-sm mt-6">
+          The rule of thumb: <strong>if you can rewrite the sentence with "earlier" attached to one of the events</strong>, that earlier event goes in Past Perfect. <em>"The meeting (earlier) had started by the time I arrived."</em> The "earlier" test is the simplest way to spot it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Spanish-Speaker Traps -->
+  <section class="py-16 md:py-20 bg-slate-50" id="section-4">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Spanish Speaker's Traps</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Three specific mistakes Spanish speakers make with Past Perfect. Tap the speaker on each correct version to hear the right form.</p>
+
+        <div class="space-y-5">
+          <!-- Trap 1: Skipping it entirely -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-3">Trap 1 — Skipping Past Perfect entirely (the biggest trap)</h3>
+            <div class="space-y-2">
+              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"When I arrived, the meeting started."</em></span></p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"When I arrived, the meeting <strong>had</strong> already <strong>started</strong>."</em></span>
+                <AudioButton client:visible text="When I arrived, the meeting had already started." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 mt-3">The wrong version sounds like the meeting started <em>at the same moment</em> you walked in — like your arrival was the trigger. The right version makes it clear: the meeting was already in progress <em>before</em> you got there. Spanish speakers often default to two Past Simple verbs because <em>"Cuando llegué, la junta empezó"</em> can carry the "had already" implication contextually. English doesn't — you need the explicit Past Perfect marker.</p>
+          </div>
+
+          <!-- Trap 2: Over-using Past Perfect -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-3">Trap 2 — Over-using Past Perfect when sequence is already clear</h3>
+            <div class="space-y-2">
+              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"He had arrived at the office, had opened his laptop, and had sent three emails."</em></span></p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"He <strong>arrived</strong> at the office, <strong>opened</strong> his laptop, and <strong>sent</strong> three emails."</em></span>
+                <AudioButton client:visible text="He arrived at the office, opened his laptop, and sent three emails." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 mt-3">If the events happen in order and you're listing them in that order, Past Simple is enough. Past Perfect is only needed when you're going <em>back</em> in time from a later anchor point. A simple narrated sequence ("first this, then that, then this") doesn't need <em>had</em> on every verb — that sounds stiff and over-formal, almost academic. Save Past Perfect for the moments where order matters and isn't already clear from the sequence.</p>
+          </div>
+
+          <!-- Trap 3: Dropping had -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-3">Trap 3 — Dropping "had" in compound sentences</h3>
+            <div class="space-y-2">
+              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"She told me she seen the email earlier."</em></span></p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"She told me she <strong>had seen</strong> the email earlier."</em></span>
+                <AudioButton client:visible text="She told me she had seen the email earlier." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 mt-3">In Spanish you can use the simple imperfect or pluperfect interchangeably in some contexts (<em>"me dijo que vio"</em> / <em>"me dijo que había visto"</em>). When translating to English under pressure, the auxiliary <em>had</em> is what drops out — same reflex as dropping <em>was</em> in Past Continuous (Lesson 2, Trap 3). Force it back in: <em>had + past participle</em>, every time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Check Yourself -->
+  <section class="py-16 md:py-20 bg-white" id="section-5">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Check Yourself</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Five scenes. Pick the right tense — then check why. The "which one happened first?" question is your friend.</p>
+
+        <div class="space-y-4">
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>1.</strong> <em>"By the time we got to the airport, our flight ___ (left / had left)."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Answer: had left.</strong> "By the time" is the classic trigger. The flight's departure was earlier than our arrival. Past Perfect for the earlier event, Past Simple for the main moment.</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>2.</strong> <em>"She told me she ___ (saw / had seen) the email earlier."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Answer: had seen.</strong> She told me at one moment in the past. Seeing the email happened <em>before</em> that moment ("earlier"). Two past events in order — Past Perfect for the earlier one.</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>3.</strong> <em>"I ___ (never visited / had never visited) Japan until last year."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Answer: had never visited.</strong> "Until last year" anchors a past moment. Everything before that moment — your entire prior life of not visiting Japan — sits in the layer below.</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>4.</strong> <em>"He arrived at nine, opened his laptop, and ___ (started / had started) working."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Answer: started.</strong> This is a simple sequence — three events in chronological order. No layering. No going back in time. Past Simple all the way through. (Don't fall into Trap 2 and over-apply <em>had</em>.)</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>5.</strong> <em>"The team was relieved because they ___ (finished / had finished) the proposal the day before."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Answer: had finished.</strong> The main moment: the team was relieved. The cause — finishing the proposal — happened the day before. Past Perfect explains the deeper reason.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap + next -->
+  <section class="py-16 md:py-20 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">The Recap</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-8 mb-10">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Past Perfect = the layer below.</strong> An event that happened earlier than the main past moment of your story.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Form:</strong> <em>had + past participle</em> (had done, had seen, had finished).</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Trigger phrases:</strong> "by the time", "before", "after", "already", "until", "because" (giving past reason).</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Don't over-use it.</strong> Simple chronological sequences ("he arrived, opened, sent") stay in Past Simple. Past Perfect is only for going back in time from a later anchor point.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>The "which one happened first?" test.</strong> If the answer is "the one with <em>had</em>," you're using it right.</span></li>
+          </ul>
+        </div>
+
+        <div class="text-center">
+          <p class="text-slate-600 mb-6">Final lesson: <strong class="text-slate-900">The Story Flow Map</strong> — choosing the right tense in real time, mid-sentence, by reading the shape of the story you're telling.</p>
+          <div class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-200 text-slate-500 font-medium cursor-not-allowed">
+            Lesson 5: The Story Flow Map — Coming Soon
+          </div>
+          <div class="mt-6 flex flex-wrap gap-4 justify-center">
+            <a
+              href="/en/course/past-tenses/lesson-3/"
+              class="text-sm text-slate-500 hover:text-emerald-700 underline underline-offset-2"
+            >
+              ← Lesson 3: Present Perfect
+            </a>
+            <span class="text-slate-300">|</span>
+            <a
+              href="/en/course/past-tenses/"
+              class="text-sm text-emerald-700 hover:text-emerald-800 underline underline-offset-2"
+            >
+              Course overview
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

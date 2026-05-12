@@ -93,7 +93,7 @@ export const pastTenseLessons: PastTenseLesson[] = [
     subtitle: "Two past events, one earlier than the other",
     subtitleEs: "Dos eventos pasados, uno antes que el otro",
     icon: "Layers",
-    available: false,
+    available: true,
   },
   {
     id: 5,
