@@ -27,7 +27,7 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
             href: routes.es.recursos ?? "/es/recursos/",
           },
           { name: "Preguntas Frecuentes", href: "/es/faqs/" },
-          { name: "Prueba mi Coach de Inglés con IA", href: "/es/chat/" },
+          { name: "Prueba mi Chat de Práctica con IA", href: "/es/chat/" },
           { name: "Blog", href: routes.es.blog },
           { name: "Evaluación de Referencia", href: "/es/assessments/" },
           { name: "Memes Ejecutivos", href: "/es/meme-portfolio/all/" },

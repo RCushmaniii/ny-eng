@@ -9,6 +9,15 @@ export interface Props {
 
 const { faqs, lang } = Astro.props;
 const heading = lang === "es" ? "Preguntas Frecuentes" : "Frequently Asked Questions";
+
+const slugify = (s: string) =>
+  s
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 60);
 ---
 
 <FAQSchema faqs={faqs} />
@@ -17,8 +26,11 @@ const heading = lang === "es" ? "Preguntas Frecuentes" : "Frequently Asked Quest
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl font-bold text-gray-900 text-center mb-10">{heading}</h2>
     <div class="space-y-4">
-      {faqs.map((faq, index) => (
-        <details class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+      {faqs.map((faq) => (
+        <details
+          id={`faq-${slugify(faq.question)}`}
+          class="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden scroll-mt-24"
+        >
           <summary class="flex items-center justify-between cursor-pointer px-6 py-4 text-left font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
             <span class="pr-4">{faq.question}</span>
             <span class="flex-shrink-0 text-primary transition-transform group-open:rotate-45 text-xl font-bold">+</span>
