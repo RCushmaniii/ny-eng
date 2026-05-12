@@ -80,7 +80,7 @@ export const pastTenseLessons: PastTenseLesson[] = [
     subtitle: "The tense Mexicans miss most. A thread from past to now.",
     subtitleEs: "El tiempo que los mexicanos más omiten. Un hilo del pasado al presente.",
     icon: "Link",
-    available: false,
+    available: true,
   },
   {
     id: 4,

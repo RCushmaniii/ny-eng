@@ -1,0 +1,413 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import AudioButton from "@components/course/AudioButton";
+import {
+  ArrowRight,
+  Link as LinkIcon,
+  Sparkles,
+  AlertTriangle,
+  Eye,
+  CheckCircle2,
+  XCircle,
+  Clock,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/past-tenses/lesson-3" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Lección 3: Present Perfect — El hilo hacia el ahora | NY English Teacher"
+  description="La tercera lección — y la más importante. Domina el tiempo que los mexicanos más omiten: cuándo 'I have done it' le gana a 'I did it' y por qué importa."
+>
+  <!-- Hero de la lección -->
+  <section class="bg-gradient-to-b from-slate-900 to-emerald-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-3">
+          <LinkIcon class="w-4 h-4" />
+          Lección 3 de 5 — La más importante
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Present Perfect <span class="text-emerald-400 text-2xl md:text-3xl font-normal">(Presente Perfecto)</span>
+        </h1>
+        <p class="text-2xl text-emerald-300 italic font-light mb-4">Sucedió — pero todavía importa ahora.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Este es el tiempo que los profesionales mexicanos omiten más que cualquier otro.
+          En español, el pasado simple hace casi todo: <em class="text-white not-italic">"¿Ya comiste?"</em>
+          puede significar tanto "Did you eat?" como "Have you eaten?" En inglés, esas dos preguntas pintan imágenes distintas —
+          y usar la incorrecta calladamente delata "no nativo" en cada junta a la que entras.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
+            <LinkIcon class="w-3.5 h-3.5" /> El hilo hacia el ahora
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
+            <Clock class="w-3.5 h-3.5" /> Ventanas de tiempo abiertas
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
+            <AlertTriangle class="w-3.5 h-3.5" /> Trampas del hispanohablante
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 1: La imagen mental -->
+  <section class="py-16 md:py-20 bg-white" id="seccion-1">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">La imagen mental</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Antes de cualquier gramática. Solo la imagen.</p>
+
+        <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+          <p>
+            El Past Simple era una caja cerrada. El Past Continuous era una película corriendo.
+            El Present Perfect es algo completamente distinto: <strong>un hilo que va desde algún punto del pasado hasta donde estás parado ahora mismo.</strong>
+          </p>
+          <p>
+            Algo sucedió. Tal vez hace una hora, tal vez hace años. <em>Cuándo</em> sucedió no es el punto. El punto es que lo que sea que sucedió <strong>aún toca el presente</strong> — la ventana de tiempo no se ha cerrado, o la acción empezó en el pasado y sigue, o la experiencia vive dentro de ti y moldea quién eres ahora.
+          </p>
+          <p>
+            Por eso este tiempo usa el auxiliar <em>have/has</em>: literalmente <em>"has"</em> ("tienes") el pasado pegado al momento presente. La forma es <strong><em>have/has + participio pasado</em></strong> (have done, has sent, have lived).
+          </p>
+
+          <div class="rounded-2xl border-2 border-emerald-300 bg-emerald-50 p-8 my-8">
+            <div class="flex items-center gap-3 mb-4">
+              <Eye class="w-6 h-6 text-emerald-700" />
+              <h3 class="text-xl font-bold text-slate-900">Tu imagen mental</h3>
+            </div>
+            <p class="text-slate-800 mb-3">Un hilo del pasado al ahora. Una puerta abierta. Huellas que llegan hasta donde estás parado.</p>
+            <p class="text-slate-700 text-base">Si el evento pasado aún conecta con el presente — la ventana de tiempo sigue abierta, la acción sigue ocurriendo, o la experiencia moldea quién eres ahora — eso es Present Perfect. Si el momento está sellado en tiempo terminado, eso es Past Simple (Lección 1).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 2: Los tres usos -->
+  <section class="py-16 md:py-20 bg-slate-50" id="seccion-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Las tres razones para usarlo</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Tres hilos distintos, tres formas diferentes — todas apuntando a "aún conectado al ahora". Toca la bocina para escuchar cada una.</p>
+
+        <div class="space-y-5">
+          <!-- Uso 1: Ventana de tiempo abierta -->
+          <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Uso 1 — La ventana de tiempo sigue abierta</p>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <p class="text-lg text-slate-800 flex-1"><em>"I have sent three emails this morning."</em></p>
+                <AudioButton client:visible text="I have sent three emails this morning." lang="en-US" size="sm" />
+              </div>
+              <p class="text-sm text-slate-600">
+                Si todavía es de mañana cuando lo dices, "this morning" no se ha cerrado — podrías mandar más antes del mediodía. El hilo corre desde cada email enviado hacia adelante, hacia la mañana que sigue abierta. <strong class="text-emerald-700">Present Perfect.</strong>
+              </p>
+              <div class="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-3">
+                <p class="text-sm text-amber-700 mb-2">
+                  <strong>Compara:</strong> si lo dices a las 5pm, la mañana ya terminó — tiempo sellado:
+                </p>
+                <div class="flex items-center gap-3">
+                  <p class="text-sm text-amber-900 italic flex-1">"I sent three emails this morning."</p>
+                  <AudioButton client:visible text="I sent three emails this morning." lang="en-US" size="sm" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Uso 2: Empezó en el pasado, sigue ocurriendo -->
+          <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Uso 2 — Empezó en el pasado y sigue ocurriendo</p>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <p class="text-lg text-slate-800 flex-1"><em>"I have worked at this company for ten years."</em></p>
+                <AudioButton client:visible text="I have worked at this company for ten years." lang="en-US" size="sm" />
+              </div>
+              <p class="text-sm text-slate-600">
+                Empezaste hace diez años y sigues ahí hoy — el hilo no se ha roto. Aquí es donde los profesionales mexicanos más se tropiezan: en español dirías <em>"trabajo aquí desde hace diez años"</em> (tiempo presente), pero en inglés la forma es <em>have worked</em>, no <em>work</em>. <strong class="text-emerald-700">Present Perfect.</strong>
+              </p>
+              <div class="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-3">
+                <p class="text-sm text-amber-700 mb-2">
+                  <strong>Compara:</strong> si te saliste de la empresa, el hilo se rompe — tiempo sellado:
+                </p>
+                <div class="flex items-center gap-3">
+                  <p class="text-sm text-amber-900 italic flex-1">"I worked at that company for ten years."</p>
+                  <AudioButton client:visible text="I worked at that company for ten years." lang="en-US" size="sm" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Uso 3: Experiencia de vida -->
+          <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Uso 3 — Una experiencia de vida que sigue viva en ti</p>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <p class="text-lg text-slate-800 flex-1"><em>"Have you ever been to Chicago?"</em></p>
+                <AudioButton client:visible text="Have you ever been to Chicago?" lang="en-US" size="sm" />
+              </div>
+              <p class="text-sm text-slate-600">
+                No estás preguntando <em>cuándo</em> fue — estás preguntando si la experiencia existe en su vida, punto. El viaje está en su memoria, moldeando quién es ahora. La palabra <em>"ever"</em> es la pista: la pregunta cubre toda su vida hasta este momento. <strong class="text-emerald-700">Present Perfect.</strong>
+              </p>
+              <div class="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-3">
+                <p class="text-sm text-amber-700 mb-2">
+                  <strong>Compara:</strong> si sabes que sí fue y estás preguntando <em>cuándo</em> — esa es una pregunta de tiempo cerrado:
+                </p>
+                <div class="flex items-center gap-3">
+                  <p class="text-sm text-amber-900 italic flex-1">"When did you go to Chicago?"</p>
+                  <AudioButton client:visible text="When did you go to Chicago?" lang="en-US" size="sm" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 3: Palabras que señalan el hilo -->
+  <section class="py-16 md:py-20 bg-white" id="seccion-3">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Palabras que señalan el hilo</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Cuando escuches o escribas estas palabras, casi siempre estás en territorio del Present Perfect. Cada una ancla el evento pasado al momento presente.</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">today</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">this morning (sigue siendo mañana)</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">this week / month / year</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">for + duración</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">since + punto inicial</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">ever / never</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">already</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">just</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">yet (preguntas/negativos)</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">so far</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">lately / recently</div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 text-center text-emerald-800 font-medium">in my life</div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-4">
+          <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+            <p class="text-sm font-bold text-emerald-800 uppercase tracking-wide mb-2">"For" — cuánto tiempo</p>
+            <p class="text-slate-700 text-sm mb-3"><em>For</em> + una duración. Responde "¿cuánto tiempo lleva corriendo el hilo?"</p>
+            <div class="flex items-center gap-2">
+              <p class="text-sm text-slate-800 italic flex-1">"I have lived here for five years."</p>
+              <AudioButton client:visible text="I have lived here for five years." lang="en-US" size="sm" />
+            </div>
+          </div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+            <p class="text-sm font-bold text-emerald-800 uppercase tracking-wide mb-2">"Since" — punto de inicio</p>
+            <p class="text-slate-700 text-sm mb-3"><em>Since</em> + un momento en el tiempo. Responde "¿cuándo empezó el hilo?"</p>
+            <div class="flex items-center gap-2">
+              <p class="text-sm text-slate-800 italic flex-1">"I have lived here since 2020."</p>
+              <AudioButton client:visible text="I have lived here since 2020." lang="en-US" size="sm" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 4: Trampas del hispanohablante -->
+  <section class="py-16 md:py-20 bg-slate-50" id="seccion-4">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Trampas del hispanohablante</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Estas son las trampas más críticas de todo el curso. Los profesionales mexicanos omiten el Present Perfect más que cualquier otro tiempo en juntas en inglés. Toca la bocina en cada versión correcta para escuchar cómo suena.</p>
+
+        <div class="space-y-5">
+          <!-- Trampa 1 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-3">Trampa 1 — Usar Past Simple por default cuando la ventana de tiempo sigue abierta</h3>
+            <div class="space-y-2">
+              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"Did you eat lunch?"</em> (preguntado al mediodía, cuando aún hay tiempo de comer)</span></p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"<strong>Have you eaten</strong> lunch?"</em></span>
+                <AudioButton client:visible text="Have you eaten lunch?" lang="en-US" size="sm" />
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 mt-3">En México, <em>"¿Ya comiste?"</em> sirve para ambas situaciones. En inglés son imágenes distintas. <strong>"Did you eat?"</strong> implica que la ventana de la comida está cerrada — ya acabó la junta, perdió su oportunidad. <strong>"Have you eaten?"</strong> implica que todavía es posible — el hilo sigue abierto. Los colegas estadounidenses forman una impresión sutil basada en cuál elijas. Esta es la señal más común de "no nativo" mexicano en juntas de negocios en EE.UU.</p>
+          </div>
+
+          <!-- Trampa 2 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-3">Trampa 2 — Confundir "for" y "since"</h3>
+            <div class="space-y-2">
+              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"I have worked here since five years."</em></span></p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"I have worked here <strong>for</strong> five years."</em></span>
+                <AudioButton client:visible text="I have worked here for five years." lang="en-US" size="sm" />
+              </div>
+              <p class="text-sm text-slate-500 mt-1 ml-7">o, con el mismo significado:</p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"I have worked here <strong>since</strong> 2020."</em></span>
+                <AudioButton client:visible text="I have worked here since 2020." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 mt-3">El español usa <em>"desde hace cinco años"</em> que tiene un sentido literal de "since" — entonces el cerebro hispanohablante alcanza <em>"since"</em> en inglés. Pero en inglés, <em>since</em> necesita un <strong>punto de inicio</strong> (2020, marzo, mi graduación), no una <strong>duración</strong> (cinco años). Cuando el número es una duración, la palabra es <em>for</em>.</p>
+          </div>
+
+          <!-- Trampa 3 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-3">Trampa 3 — Usar Present Perfect con palabras de tiempo cerrado</h3>
+            <div class="space-y-2">
+              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"Yesterday I have called you."</em></span></p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"Yesterday I <strong>called</strong> you."</em></span>
+                <AudioButton client:visible text="Yesterday I called you." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 mt-3">Esta es la misma regla de tiempo cerrado de la Lección 1, vista desde el otro lado. Palabras como <em>yesterday, last week, in 2019, two days ago, when I was a kid</em> todas <strong>cierran la caja</strong>. No pueden compartir oración con Present Perfect, porque el momento está sellado, separado del ahora — el hilo no puede cruzar. Si una palabra de tiempo cerrado aparece en la oración, usa Past Simple. Siempre.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 5: Revísate -->
+  <section class="py-16 md:py-20 bg-white" id="seccion-5">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Revísate</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Cinco escenas. Escoge el tiempo, luego nota el <em>porqué</em>. El patrón es lo que entrena tu instinto.</p>
+
+        <div class="space-y-4">
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>1.</strong> <em>"She ___ (worked / has worked) here since 2020."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Respuesta: has worked.</strong> "Since 2020" + sigue trabajando ahí = el hilo sigue corriendo. Present Perfect.</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>2.</strong> <em>"I ___ (called / have called) him yesterday."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Respuesta: called.</strong> "Yesterday" es una palabra de tiempo cerrado. La caja está sellada. Past Simple es la única opción correcta aquí — aunque el español permite <em>"lo he llamado ayer"</em> en algunas regiones, el inglés no.</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>3.</strong> <em>"___ (Did you ever / Have you ever) visited Cancún?"</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Respuesta: Have you ever.</strong> "Ever" cubre toda su vida hasta ahora. Pregunta de experiencia de vida = Present Perfect.</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>4.</strong> <em>"We ___ (finished / have finished) the project last Friday."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Respuesta: finished.</strong> "Last Friday" es una palabra de tiempo cerrado. Past Simple. (Si fuera "We have finished the project" sin palabra de tiempo, sería Present Perfect — significando que está terminado y el resultado todavía importa ahora.)</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>5.</strong> <em>"He ___ (sent / has sent) three emails today, and he might send more."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Respuesta: has sent.</strong> "Today" sigue abierto Y podría mandar más — el hilo está inconfundiblemente vivo. Present Perfect clásico.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap + siguiente -->
+  <section class="py-16 md:py-20 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">El resumen</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-8 mb-10">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Present Perfect = un hilo del pasado al ahora.</strong> El evento todavía toca el presente.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Forma:</strong> <em>have/has + participio pasado</em> (have done, has sent, have lived).</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Tres razones para usarlo:</strong> la ventana de tiempo sigue abierta · la acción empezó en el pasado y sigue · la experiencia vive en ti.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>"For" + duración, "since" + punto de inicio.</strong> Nunca los inviertas.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Nunca compartir oración con palabras de tiempo cerrado</strong> (yesterday, last week, in 2019). Esas obligan a Past Simple.</span></li>
+          </ul>
+        </div>
+
+        <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6 mb-10">
+          <div class="flex items-start gap-3">
+            <Sparkles class="w-6 h-6 text-emerald-700 shrink-0 mt-0.5" />
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">La prueba del profesional mexicano</h3>
+              <p class="text-slate-700 text-sm">Durante una semana, cada vez que vayas a usar <em>"Did you..."</em> en inglés, pausa y pregúntate: "¿La ventana de tiempo sigue abierta? ¿El resultado sigue vivo?" Si la respuesta a cualquiera de las dos es sí, cámbialo a <em>"Have you..."</em>. Este solo hábito moverá tu inglés de "competente" a "sonar fluido" más rápido que cualquier otro cambio que puedas hacer.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p class="text-slate-600 mb-6">A continuación: <strong class="text-slate-900">el pasado en capas</strong> — cuando un evento pasado sucedió antes que otro, y necesitas marcar cuál vino primero.</p>
+          <div class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-200 text-slate-500 font-medium cursor-not-allowed">
+            Lección 4: Past Perfect — Próximamente
+          </div>
+          <div class="mt-6 flex flex-wrap gap-4 justify-center">
+            <a
+              href="/es/curso/tiempos-del-pasado/leccion-2/"
+              class="text-sm text-slate-500 hover:text-emerald-700 underline underline-offset-2"
+            >
+              ← Lección 2: Past Continuous
+            </a>
+            <span class="text-slate-300">|</span>
+            <a
+              href="/es/curso/tiempos-del-pasado/"
+              class="text-sm text-emerald-700 hover:text-emerald-800 underline underline-offset-2"
+            >
+              Resumen del curso
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
