@@ -138,6 +138,8 @@ export type TKey =
   | "course/executive/unit-9"
   | "course/executive/unit-10"
   | "course/executive/capstone"
+  | "course/past-tenses"
+  | "course/past-tenses/lesson-1"
   | "corporate/for-hr"
   | "meme-portfolio"
   | "site-index";
@@ -291,6 +293,8 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/executive/unit-9": "/en/course/executive/unit-9/",
     "course/executive/unit-10": "/en/course/executive/unit-10/",
     "course/executive/capstone": "/en/course/executive/capstone/",
+    "course/past-tenses": "/en/course/past-tenses/",
+    "course/past-tenses/lesson-1": "/en/course/past-tenses/lesson-1/",
     "corporate/for-hr": "/en/for-hr-managers/",
     "meme-portfolio": "/en/meme-portfolio/all/",
     "site-index": "/en/site-index/",
@@ -448,6 +452,8 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/executive/unit-9": "/es/curso/ejecutivo/unidad-9/",
     "course/executive/unit-10": "/es/curso/ejecutivo/unidad-10/",
     "course/executive/capstone": "/es/curso/ejecutivo/reto-final/",
+    "course/past-tenses": "/es/curso/tiempos-del-pasado/",
+    "course/past-tenses/lesson-1": "/es/curso/tiempos-del-pasado/leccion-1/",
     "corporate/for-hr": "/es/para-rh/",
     "meme-portfolio": "/es/meme-portfolio/all/",
     "site-index": "/es/indice-del-sitio/",
@@ -534,6 +540,8 @@ export function getAllTKeys(): TKey[] {
     "course/intermediate",
     "course/advanced",
     "course/executive",
+    "course/past-tenses",
+    "course/past-tenses/lesson-1",
     "category/startup-founders",
     "category/tech-english",
     "category/logistics-english",

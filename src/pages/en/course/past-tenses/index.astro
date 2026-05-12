@@ -1,0 +1,332 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import { pastTenseLessons, pastTenseBonuses, pastTensesInfo } from "@data/past-tenses/lessons";
+import {
+  ArrowRight,
+  Sparkles,
+  Clock,
+  Film,
+  Link as LinkIcon,
+  Layers,
+  Map,
+  FileText,
+  AlertCircle,
+  Lightbulb,
+  Mic,
+  MessageSquare,
+  Eye,
+  Brain,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/past-tenses" as const;
+
+const iconMap: Record<string, any> = {
+  Clock,
+  Film,
+  Link: LinkIcon,
+  Layers,
+  Map,
+  FileText,
+  AlertCircle,
+  Lightbulb,
+  Mic,
+  MessageSquare,
+};
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Master English Past Tenses | Free Course for Spanish Speakers"
+  description="Free master class for Mexican professionals. Don't think about the rules — feel the story. A 4-tense method for English past tenses."
+>
+  <!-- Hero -->
+  <section class="relative w-full overflow-hidden bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-emerald-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-20 w-96 h-96 bg-teal-500 rounded-full blur-3xl"></div>
+    </div>
+    <div class="site-container mx-auto px-4 relative z-10 text-white">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-semibold mb-6">
+          <Sparkles class="w-4 h-4" />
+          Free Master Class — The 4-Tense Method
+        </div>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Master English Past Tenses.<br />
+          <span class="text-emerald-400">Feel the story. Don't think about the rules.</span>
+        </h1>
+        <p class="text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed">
+          You know the rules. You can recite them. But in a real meeting, in a real conversation,
+          you still freeze — and end up saying <em class="text-white not-italic">"I did the report"</em>
+          when the situation actually calls for <em class="text-white not-italic">"I have done the report."</em>
+          This course rewires the way you choose past tenses — by seeing the story instead of running grammar in your head.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <Button href="/en/course/past-tenses/lesson-1/" variant="primary" size="lg">
+            Start Lesson 1 — Free
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+          <a
+            href="/en/course/intermediate/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            Looking for the full B1-B2 course?
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Shift: Think vs Feel -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">The Shift That Changes Everything</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Native speakers don't run grammar calculations when they tell a story. They see the scene in their mind — and the right tense follows automatically. You can train yourself to do the same.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Old way -->
+          <div class="rounded-2xl border-2 border-red-200 bg-red-50/50 p-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-red-100 text-red-600 mb-4">
+              <Brain class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">The Old Way: Think About the Rules</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> "Is this a finished action or an ongoing state?"</li>
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> "Do I need 'have done' or 'did' here?"</li>
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> Mid-sentence freeze. Switch to Spanish. Lose the room.</li>
+            </ul>
+          </div>
+
+          <!-- New way -->
+          <div class="rounded-2xl border-2 border-emerald-300 bg-emerald-50 p-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 mb-4">
+              <Eye class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">The New Way: Feel the Story</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-emerald-600 shrink-0">✓</span> See the scene play in your mind, like a movie.</li>
+              <li class="flex gap-2"><span class="text-emerald-600 shrink-0">✓</span> Notice if the moment is closed, open, or layered.</li>
+              <li class="flex gap-2"><span class="text-emerald-600 shrink-0">✓</span> The tense matches the picture — automatically.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain points -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">Sound Familiar?</h2>
+        <p class="text-center text-slate-600 mb-10">If any of these hit close to home, this course was built for you.</p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-white rounded-xl p-5 border border-slate-200 italic text-slate-700">"I know the rules but I still get it wrong when I speak."</div>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 italic text-slate-700">"In a meeting with US clients, I default to simple past for everything."</div>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 italic text-slate-700">"I overthink every sentence — and then I lose the thread of what I was saying."</div>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 italic text-slate-700">"Sometimes 'I went' and 'I have gone' both seem right and I just have to guess."</div>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 italic text-slate-700">"I freeze mid-sentence and start second-guessing if it should be 'did' or 'have done.'"</div>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 italic text-slate-700">"I've been studying English for years and still can't tell a story without stopping."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lessons grid -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">5 Focused Lessons. One Method.</h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          Four tenses, plus the capstone that ties them together. Each lesson trains the same instinct from a different angle.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        {pastTenseLessons.map((lesson) => {
+          const Icon = iconMap[lesson.icon];
+          const href = lesson.available ? `/en/course/past-tenses/${lesson.slug}/` : undefined;
+          return (
+            <a
+              href={href}
+              class:list={[
+                "group flex items-start gap-4 p-5 rounded-xl border transition-all duration-200",
+                lesson.available
+                  ? "bg-emerald-50 border-emerald-300 hover:shadow-md hover:border-emerald-400 cursor-pointer"
+                  : "bg-white border-slate-200 opacity-75",
+              ]}
+            >
+              <div
+                class:list={[
+                  "flex items-center justify-center w-12 h-12 rounded-xl shrink-0",
+                  lesson.available ? "bg-emerald-500 text-white" : "bg-slate-100 text-slate-400",
+                ]}
+              >
+                {Icon && <Icon class="w-6 h-6" />}
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2">
+                  <span
+                    class:list={[
+                      "text-xs font-bold uppercase tracking-wider",
+                      lesson.available ? "text-emerald-700" : "text-slate-400",
+                    ]}
+                  >
+                    Lesson {lesson.id}
+                  </span>
+                  {!lesson.available && (
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">Coming soon</span>
+                  )}
+                </div>
+                <h3
+                  class:list={[
+                    "text-lg font-bold mt-0.5",
+                    lesson.available ? "text-slate-900" : "text-slate-600",
+                  ]}
+                >
+                  {lesson.title}
+                </h3>
+                <p class="text-sm font-medium text-slate-700 mt-1 italic">{lesson.tense}</p>
+                <p class="text-xs text-slate-500 mt-1">{lesson.subtitle}</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bonuses preview -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold mb-4">
+            <Sparkles class="w-4 h-4" />
+            Bonus Resources
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Five Bonus Resources</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Compact reference guides for the verb pairs and patterns that trip up Spanish speakers most. Released as the lessons go live.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {pastTenseBonuses.map((bonus) => {
+            const Icon = iconMap[bonus.icon];
+            return (
+              <div class="bg-white rounded-xl p-5 border border-slate-200 flex items-start gap-4">
+                <div class="flex items-center justify-center w-10 h-10 rounded-lg shrink-0 bg-slate-100 text-slate-500">
+                  {Icon && <Icon class="w-5 h-5" />}
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Bonus {bonus.id}</span>
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">Coming soon</span>
+                  </div>
+                  <h3 class="text-base font-bold text-slate-900 mt-0.5">{bonus.title}</h3>
+                  <p class="text-sm text-slate-600 mt-1">{bonus.description}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why this works -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">Why a Visual Method Works</h2>
+        <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+          <p>
+            Spanish past tense choice is mostly aspectual — preterite vs. imperfect, perfective vs. imperfective.
+            Rule-based. Largely predictable. <strong>English is different.</strong>
+          </p>
+          <p>
+            English past choice depends on two relationships your grammar book never visualized for you:
+            the relationship between the past event and <em>now</em> (Present Perfect),
+            and the relationship between the past event and <em>another past event</em> (Past Perfect).
+            Those are spatial, not grammatical. They're easier to see than to memorize.
+          </p>
+          <p>
+            That's what this course teaches: a mental picture for each tense, a story-flow framework for choosing between them,
+            and the specific verb pairs Mexican professionals miss most — <em>knew vs. found out</em>,
+            <em>there was vs. there has been</em>, <em>did vs. have done</em>.
+          </p>
+        </div>
+        <div class="mt-10 text-center">
+          <Button href="/en/course/past-tenses/lesson-1/" variant="primary" size="lg">
+            Start Lesson 1 — Free
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-link to other courses -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Where Does This Fit?</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          This is a <strong>focused master class</strong> — one topic, done thoroughly.
+          For a full level course, check the four-tier series: <strong>Elemental → Intermediate → Advanced → Executive</strong>.
+          For 1-on-1 corporate coaching, see the Business English program.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/en/courses/"
+            class="text-emerald-700 hover:text-emerald-800 font-medium underline underline-offset-2"
+          >
+            See all courses
+          </a>
+          <span class="text-slate-300">|</span>
+          <a
+            href="/en/services/corporate-package/"
+            class="text-emerald-700 hover:text-emerald-800 font-medium underline underline-offset-2"
+          >
+            Corporate coaching program
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Master English Past Tenses — Free Master Class",
+    "description": "A focused 5-lesson master class teaching English past tenses through visualization rather than rule-memorization. Built for Mexican professionals who freeze in conversation despite knowing the rules.",
+    "provider": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/en/about/"
+    },
+    "educationalLevel": "Intermediate to Advanced",
+    "inLanguage": "en",
+    "url": "https://www.nyenglishteacher.com/en/course/past-tenses/",
+    "isAccessibleForFree": true,
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "inLanguage": "en"
+    }
+  })} />
+</Base>

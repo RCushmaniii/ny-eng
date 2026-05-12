@@ -1,0 +1,332 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import { pastTenseLessons, pastTenseBonuses } from "@data/past-tenses/lessons";
+import {
+  ArrowRight,
+  Sparkles,
+  Clock,
+  Film,
+  Link as LinkIcon,
+  Layers,
+  Map,
+  FileText,
+  AlertCircle,
+  Lightbulb,
+  Mic,
+  MessageSquare,
+  Eye,
+  Brain,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/past-tenses" as const;
+
+const iconMap: Record<string, any> = {
+  Clock,
+  Film,
+  Link: LinkIcon,
+  Layers,
+  Map,
+  FileText,
+  AlertCircle,
+  Lightbulb,
+  Mic,
+  MessageSquare,
+};
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Domina los Tiempos del Pasado en Inglés | Curso Gratuito"
+  description="Clase magistral gratuita. Deja de pensar en reglas — aprende a sentir la historia. Un método de 4 tiempos para dominar los pasados en inglés."
+>
+  <!-- Hero -->
+  <section class="relative w-full overflow-hidden bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-emerald-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-20 w-96 h-96 bg-teal-500 rounded-full blur-3xl"></div>
+    </div>
+    <div class="site-container mx-auto px-4 relative z-10 text-white">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-semibold mb-6">
+          <Sparkles class="w-4 h-4" />
+          Clase Magistral Gratuita — El Método de 4 Tiempos
+        </div>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Domina los Tiempos del Pasado en Inglés.<br />
+          <span class="text-emerald-400">Siente la historia. No pienses en las reglas.</span>
+        </h1>
+        <p class="text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed">
+          Conoces las reglas. Las puedes recitar. Pero en una junta real, en una conversación real,
+          aún te congelas — y terminas diciendo <em class="text-white not-italic">"I did the report"</em>
+          cuando la situación pide <em class="text-white not-italic">"I have done the report."</em>
+          Este curso reconecta cómo eliges los tiempos del pasado — viendo la escena en lugar de correr la gramática en tu cabeza.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <Button href="/es/curso/tiempos-del-pasado/leccion-1/" variant="primary" size="lg">
+            Empieza la Lección 1 — Gratis
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+          <a
+            href="/es/curso/intermedio/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            ¿Buscas el curso completo B1-B2?
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- El cambio: pensar vs sentir -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">El cambio que lo transforma todo</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Los nativos no hacen cálculos gramaticales cuando cuentan una historia. Ven la escena en su mente — y el tiempo correcto sale solo. Tú también puedes entrenar ese instinto.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Forma antigua -->
+          <div class="rounded-2xl border-2 border-red-200 bg-red-50/50 p-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-red-100 text-red-600 mb-4">
+              <Brain class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">La forma antigua: Pensar en las reglas</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> "¿Esta acción está terminada o sigue en curso?"</li>
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> "¿Necesito 'have done' o 'did' aquí?"</li>
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> Te congelas a la mitad. Te pasas al español. Pierdes la junta.</li>
+            </ul>
+          </div>
+
+          <!-- Forma nueva -->
+          <div class="rounded-2xl border-2 border-emerald-300 bg-emerald-50 p-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 mb-4">
+              <Eye class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">La forma nueva: Sentir la historia</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-emerald-600 shrink-0">✓</span> Visualizas la escena en tu mente, como una película.</li>
+              <li class="flex gap-2"><span class="text-emerald-600 shrink-0">✓</span> Notas si el momento está cerrado, abierto, o tiene capas.</li>
+              <li class="flex gap-2"><span class="text-emerald-600 shrink-0">✓</span> El tiempo verbal sale automáticamente — coincide con la imagen.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dolores -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">¿Te suena familiar?</h2>
+        <p class="text-center text-slate-600 mb-10">Si cualquiera de estas frases te resuena, este curso es para ti.</p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-white rounded-xl p-5 border border-slate-200 italic text-slate-700">"Me sé las reglas pero igual me equivoco al hablar."</div>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 italic text-slate-700">"En juntas con clientes de EE.UU., uso el pasado simple para todo por default."</div>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 italic text-slate-700">"Pienso demasiado cada oración — y se me pierde el hilo de lo que estaba diciendo."</div>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 italic text-slate-700">"A veces 'I went' y 'I have gone' parecen correctos los dos y termino adivinando."</div>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 italic text-slate-700">"Me congelo a la mitad y me pongo a cuestionar si debe ser 'did' o 'have done.'"</div>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 italic text-slate-700">"Llevo años estudiando inglés y aún no puedo contar una historia sin pararme."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lecciones -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">5 lecciones enfocadas. Un solo método.</h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          Cuatro tiempos, más la lección final que los une. Cada lección entrena el mismo instinto desde un ángulo distinto.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        {pastTenseLessons.map((lesson) => {
+          const Icon = iconMap[lesson.icon];
+          const href = lesson.available ? `/es/curso/tiempos-del-pasado/${lesson.slugEs}/` : undefined;
+          return (
+            <a
+              href={href}
+              class:list={[
+                "group flex items-start gap-4 p-5 rounded-xl border transition-all duration-200",
+                lesson.available
+                  ? "bg-emerald-50 border-emerald-300 hover:shadow-md hover:border-emerald-400 cursor-pointer"
+                  : "bg-white border-slate-200 opacity-75",
+              ]}
+            >
+              <div
+                class:list={[
+                  "flex items-center justify-center w-12 h-12 rounded-xl shrink-0",
+                  lesson.available ? "bg-emerald-500 text-white" : "bg-slate-100 text-slate-400",
+                ]}
+              >
+                {Icon && <Icon class="w-6 h-6" />}
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2">
+                  <span
+                    class:list={[
+                      "text-xs font-bold uppercase tracking-wider",
+                      lesson.available ? "text-emerald-700" : "text-slate-400",
+                    ]}
+                  >
+                    Lección {lesson.id}
+                  </span>
+                  {!lesson.available && (
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">Próximamente</span>
+                  )}
+                </div>
+                <h3
+                  class:list={[
+                    "text-lg font-bold mt-0.5",
+                    lesson.available ? "text-slate-900" : "text-slate-600",
+                  ]}
+                >
+                  {lesson.titleEs} <span class="font-normal text-slate-500 text-base">({lesson.title})</span>
+                </h3>
+                <p class="text-sm font-medium text-slate-700 mt-1 italic">{lesson.tenseEs}</p>
+                <p class="text-xs text-slate-500 mt-1">{lesson.subtitleEs}</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bonos -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold mb-4">
+            <Sparkles class="w-4 h-4" />
+            Recursos Adicionales
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Cinco recursos extra</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Guías de referencia compactas para los pares de verbos y patrones que más confunden a los hispanohablantes. Se irán publicando conforme avancen las lecciones.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {pastTenseBonuses.map((bonus) => {
+            const Icon = iconMap[bonus.icon];
+            return (
+              <div class="bg-white rounded-xl p-5 border border-slate-200 flex items-start gap-4">
+                <div class="flex items-center justify-center w-10 h-10 rounded-lg shrink-0 bg-slate-100 text-slate-500">
+                  {Icon && <Icon class="w-5 h-5" />}
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Bono {bonus.id}</span>
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">Próximamente</span>
+                  </div>
+                  <h3 class="text-base font-bold text-slate-900 mt-0.5">{bonus.titleEs}</h3>
+                  <p class="text-sm text-slate-600 mt-1">{bonus.descriptionEs}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué funciona -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">Por qué funciona un método visual</h2>
+        <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+          <p>
+            En español, la elección entre tiempos del pasado es principalmente aspectual — pretérito vs. imperfecto, perfectivo vs. imperfectivo.
+            Es algo basado en reglas y bastante predecible. <strong>El inglés es distinto.</strong>
+          </p>
+          <p>
+            La elección en inglés depende de dos relaciones que ningún libro de gramática te visualizó:
+            la relación entre el evento pasado y <em>el ahora</em> (Present Perfect),
+            y la relación entre el evento pasado y <em>otro evento pasado</em> (Past Perfect).
+            Son espaciales, no gramaticales. Son más fáciles de ver que de memorizar.
+          </p>
+          <p>
+            Eso es lo que enseña este curso: una imagen mental para cada tiempo, un mapa de flujo de historia para escoger entre ellos,
+            y los pares de verbos específicos que los profesionales mexicanos más confunden — <em>knew vs. found out</em>,
+            <em>there was vs. there has been</em>, <em>did vs. have done</em>.
+          </p>
+        </div>
+        <div class="mt-10 text-center">
+          <Button href="/es/curso/tiempos-del-pasado/leccion-1/" variant="primary" size="lg">
+            Empieza la Lección 1 — Gratis
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enlace cruzado -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">¿Dónde encaja esto?</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          Esta es una <strong>clase magistral enfocada</strong> — un solo tema, a fondo.
+          Si buscas un curso completo por nivel, revisa la serie de cuatro niveles: <strong>Elemental → Intermedio → Avanzado → Ejecutivo</strong>.
+          Para coaching corporativo 1-a-1, ve el programa de Inglés de Negocios.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/es/cursos/"
+            class="text-emerald-700 hover:text-emerald-800 font-medium underline underline-offset-2"
+          >
+            Ver todos los cursos
+          </a>
+          <span class="text-slate-300">|</span>
+          <a
+            href="/es/servicios/paquete-corporativo/"
+            class="text-emerald-700 hover:text-emerald-800 font-medium underline underline-offset-2"
+          >
+            Programa corporativo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Domina los Tiempos del Pasado en Inglés — Clase Magistral Gratuita",
+    "description": "Una clase magistral de 5 lecciones enfocada en los tiempos del pasado en inglés a través de la visualización en lugar de memorizar reglas. Diseñada para profesionales mexicanos que se congelan al hablar a pesar de conocer las reglas.",
+    "provider": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/es/about/"
+    },
+    "educationalLevel": "Intermedio a Avanzado",
+    "inLanguage": "es",
+    "url": "https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/",
+    "isAccessibleForFree": true,
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "inLanguage": "es"
+    }
+  })} />
+</Base>
