@@ -1,36 +1,56 @@
 /**
- * Google Search Console API Client
+ * Google Search Console API Client — nyenglishteacher.com
  *
- * Provides authenticated access to GSC for:
+ * Authenticated access to GSC for:
  * - Submitting sitemaps
  * - Inspecting URL index status
  * - Pulling search performance data (clicks, impressions, CTR, position)
  * - Checking index coverage
  *
- * Usage: import { getGSCClient, SITE_URL } from './gsc-client.mjs'
+ * Credentials: GOOGLE_SA_KEY_BASE64 in .env.local (base64-encoded service-account JSON).
+ * Service account: seo-api-access@seo-automation-489217.iam.gserviceaccount.com
+ * (Same SA covers cushlabs.ai, voice.cushlabs.ai, nyenglishteacher.com, marketsignal.cushlabs.ai)
+ *
+ * Migrated from file-on-disk gsc-credentials.json to env-decode on 2026-05-12
+ * to match the cushlabs/voice convention and eliminate the credential file
+ * from the working tree.
+ *
+ * Usage: import { getAuthClient, getWebmasters, SITE_URL } from './gsc-client.mjs'
  */
 
 import { google } from 'googleapis';
-import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+import { config as loadEnv } from 'dotenv';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+loadEnv({ path: '.env.local', override: true });
+loadEnv({ path: '.env' });
 
-const CREDENTIALS_PATH = join(__dirname, 'gsc-credentials.json');
 export const SITE_URL = 'https://www.nyenglishteacher.com';
+export const SITE_PROPERTY = 'sc-domain:nyenglishteacher.com';
+export const SITE_PROPERTY_URL = 'https://www.nyenglishteacher.com/';
 
-// sc-domain: prefix is for domain-level properties; use URL prefix if that's how it's verified
-export const SITE_PROPERTY = `sc-domain:nyenglishteacher.com`;
-export const SITE_PROPERTY_URL = `https://www.nyenglishteacher.com/`;
+function decodeCredentials() {
+  const b64 = process.env.GOOGLE_SA_KEY_BASE64;
+  if (!b64) {
+    throw new Error(
+      'GOOGLE_SA_KEY_BASE64 is not set. Add the base64-encoded service-account JSON to .env.local.'
+    );
+  }
+  try {
+    return JSON.parse(Buffer.from(b64, 'base64').toString('utf-8'));
+  } catch (err) {
+    throw new Error(
+      `Failed to decode GOOGLE_SA_KEY_BASE64: ${err.message}. ` +
+      `Verify the value is a single-line base64 of a valid service-account JSON.`
+    );
+  }
+}
 
 let _authClient = null;
 
 export async function getAuthClient() {
   if (_authClient) return _authClient;
 
-  const credentials = JSON.parse(readFileSync(CREDENTIALS_PATH, 'utf-8'));
+  const credentials = decodeCredentials();
   const auth = new google.auth.GoogleAuth({
     credentials,
     scopes: [
@@ -62,18 +82,15 @@ export async function detectSiteProperty() {
     const res = await webmasters.sites.list();
     const sites = res.data.siteEntry || [];
     console.log('Available GSC properties:');
-    sites.forEach(s => console.log(`  - ${s.siteUrl} (${s.permissionLevel})`));
+    sites.forEach((s) => console.log(`  - ${s.siteUrl} (${s.permissionLevel})`));
 
-    // Try to find our site
-    const match = sites.find(s =>
-      s.siteUrl.includes('nyenglishteacher.com')
-    );
+    const match = sites.find((s) => s.siteUrl.includes('nyenglishteacher.com'));
     if (match) {
       console.log(`\nUsing property: ${match.siteUrl}`);
       return match.siteUrl;
     }
     console.log('\nSite not found in available properties.');
-    console.log('Make sure the service account email is added as a user in GSC.');
+    console.log('Make sure the service account is added as Owner in GSC.');
     return null;
   } catch (err) {
     console.error('Error listing sites:', err.message);
