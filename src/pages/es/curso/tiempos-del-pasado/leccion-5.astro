@@ -1,0 +1,452 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import AudioButton from "@components/course/AudioButton";
+import {
+  ArrowRight,
+  Map,
+  Trophy,
+  AlertTriangle,
+  Eye,
+  CheckCircle2,
+  XCircle,
+  Sparkles,
+  Clock,
+  Film,
+  Link as LinkIcon,
+  Layers,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/past-tenses/lesson-5" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Lección 5: El Mapa del Flujo de la Historia | NY English Teacher"
+  description="La lección final. Combina Past Simple, Past Continuous, Present Perfect y Past Perfect como un nativo — eligiendo cada tiempo según la forma de la historia."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-emerald-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-3">
+          <Map class="w-4 h-4" />
+          Lección 5 de 5 — La lección final
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          El Mapa del Flujo de la Historia
+        </h1>
+        <p class="text-2xl text-emerald-300 italic font-light mb-4">Combinando los cuatro — como un nativo.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Ya aprendiste los cuatro tiempos. Ahora tienes que <em>elegir</em> entre ellos en tiempo real —
+          mientras tu jefe espera tu respuesta, mientras tu cliente está en la llamada, mientras las palabras te están saliendo de la boca.
+          Esta lección te enseña el árbol de decisión que los nativos corren inconscientemente, y cómo instalarlo en tu propio instinto.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
+            <Map class="w-3.5 h-3.5" /> El árbol de decisión
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
+            <Sparkles class="w-3.5 h-3.5" /> Ejemplo completo
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
+            <Trophy class="w-3.5 h-3.5" /> Capstone del curso
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 1: El mapa -->
+  <section class="py-16 md:py-20 bg-white" id="seccion-1">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">El mapa del flujo de la historia</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Los cuatro tiempos en un solo lienzo mental. La forma de la historia te dice cuál alcanzar.</p>
+
+        <div class="space-y-4">
+          <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6 flex items-start gap-4">
+            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500 text-white shrink-0">
+              <Clock class="w-6 h-6" />
+            </div>
+            <div class="flex-1">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">Past Simple — La foto</p>
+              <h3 class="text-lg font-bold text-slate-900 mb-1">Caja cerrada. Tiempo sellado.</h3>
+              <p class="text-sm text-slate-700">Un evento completo único, o una secuencia de eventos, con la ventana de tiempo sellada. Disparado por palabras como <em>yesterday, last week, in 2019</em>.</p>
+            </div>
+          </div>
+
+          <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6 flex items-start gap-4">
+            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500 text-white shrink-0">
+              <Film class="w-6 h-6" />
+            </div>
+            <div class="flex-1">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">Past Continuous — La película</p>
+              <h3 class="text-lg font-bold text-slate-900 mb-1">En movimiento. A media acción. Escena de fondo.</h3>
+              <p class="text-sm text-slate-700">Una acción que <em>estaba sucediendo</em> cuando algo más la cortó. La cámara congelada en un momento aún en proceso. Disparado por <em>while, as, when (+ evento)</em>.</p>
+            </div>
+          </div>
+
+          <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6 flex items-start gap-4">
+            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500 text-white shrink-0">
+              <LinkIcon class="w-6 h-6" />
+            </div>
+            <div class="flex-1">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">Present Perfect — El hilo</p>
+              <h3 class="text-lg font-bold text-slate-900 mb-1">El pasado se cuela al ahora.</h3>
+              <p class="text-sm text-slate-700">La ventana de tiempo sigue abierta, O la acción sigue ocurriendo, O la experiencia vive en ti. Disparado por <em>today, this week, for/since, ever, never, already, just</em>.</p>
+            </div>
+          </div>
+
+          <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6 flex items-start gap-4">
+            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500 text-white shrink-0">
+              <Layers class="w-6 h-6" />
+            </div>
+            <div class="flex-1">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">Past Perfect — La capa de abajo</p>
+              <h3 class="text-lg font-bold text-slate-900 mb-1">Más temprano que el momento principal pasado.</h3>
+              <p class="text-sm text-slate-700">Un segundo evento pasado que ocurrió <em>antes</em> del momento principal pasado de tu historia. Disparado por <em>by the time, before, after, already (+ had), until</em>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 2: Árbol de decisión -->
+  <section class="py-16 md:py-20 bg-slate-50" id="seccion-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">El árbol de decisión</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Cuatro preguntas, en orden. Córrelas en tu cabeza hasta que el instinto se haga cargo. Esto es lo que los nativos hacen inconscientemente cada vez que abren la boca.</p>
+
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl border-2 border-slate-200 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-600 mb-2">Pregunta 1</p>
+            <h3 class="text-lg font-bold text-slate-900 mb-3">¿Este evento sucedió <em>antes</em> que otro momento pasado de mi historia?</h3>
+            <div class="grid grid-cols-2 gap-3 text-sm">
+              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                <p class="font-semibold text-emerald-800">Sí →</p>
+                <p class="text-slate-700">Past Perfect (<em>had + pp</em>)</p>
+              </div>
+              <div class="bg-slate-50 border border-slate-200 rounded-lg p-3">
+                <p class="font-semibold text-slate-600">No →</p>
+                <p class="text-slate-700">Sigue a la Pregunta 2</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl border-2 border-slate-200 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-600 mb-2">Pregunta 2</p>
+            <h3 class="text-lg font-bold text-slate-900 mb-3">¿El momento todavía conecta con el ahora (tiempo abierto, aún ocurriendo, experiencia de vida)?</h3>
+            <div class="grid grid-cols-2 gap-3 text-sm">
+              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                <p class="font-semibold text-emerald-800">Sí →</p>
+                <p class="text-slate-700">Present Perfect (<em>have/has + pp</em>)</p>
+              </div>
+              <div class="bg-slate-50 border border-slate-200 rounded-lg p-3">
+                <p class="font-semibold text-slate-600">No →</p>
+                <p class="text-slate-700">Sigue a la Pregunta 3</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl border-2 border-slate-200 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-600 mb-2">Pregunta 3</p>
+            <h3 class="text-lg font-bold text-slate-900 mb-3">¿La acción estaba en proceso cuando algo más sucedió, o estableciendo el escenario?</h3>
+            <div class="grid grid-cols-2 gap-3 text-sm">
+              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                <p class="font-semibold text-emerald-800">Sí →</p>
+                <p class="text-slate-700">Past Continuous (<em>was/were + verbo-ing</em>)</p>
+              </div>
+              <div class="bg-slate-50 border border-slate-200 rounded-lg p-3">
+                <p class="font-semibold text-slate-600">No →</p>
+                <p class="text-slate-700">Sigue a la Pregunta 4</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl border-2 border-emerald-400 p-6 shadow-md">
+            <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Default — Pregunta 4</p>
+            <h3 class="text-lg font-bold text-slate-900 mb-3">¿Evento único cerrado en tiempo pasado sellado?</h3>
+            <div class="grid grid-cols-1 gap-3 text-sm">
+              <div class="bg-emerald-100 border border-emerald-300 rounded-lg p-3">
+                <p class="font-semibold text-emerald-800">→ Past Simple (<em>did, went, worked</em>)</p>
+                <p class="text-slate-700 mt-1">Si corriste las primeras tres preguntas y ninguna aplicó, estás casi siempre en territorio del Past Simple. Es el caballo de batalla — pero solo cuando nada más aplica.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-amber-50 border-2 border-amber-300 rounded-xl p-5">
+          <p class="text-sm text-amber-900"><strong>El problema de la inversión en el hispanohablante:</strong> Los hispanohablantes típicamente corren este árbol de decisión <em>al revés</em> — default al Past Simple y solo cambian a otro tiempo cuando los obliga el contexto. Los nativos lo corren hacia adelante — revisando Past Perfect, Present Perfect, y Past Continuous <em>primero</em>, y cayendo al Past Simple solo cuando ninguno de los tres aplica. Invertir el orden de estas verificaciones en tu cabeza es la mejora de fluidez más grande de todo el curso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 3: Ejemplo completo -->
+  <section class="py-16 md:py-20 bg-white" id="seccion-3">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Un ejemplo completo</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Una historia real de la oficina mexicana. Los cuatro tiempos, usados naturalmente, con el razonamiento detrás de cada elección.</p>
+
+        <div class="bg-slate-900 text-white rounded-2xl p-6 md:p-8 mb-6">
+          <p class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-3">La historia completa</p>
+          <div class="flex items-start gap-3">
+            <p class="text-lg leading-relaxed text-slate-100 flex-1">
+              "Last Tuesday morning, I <span class="bg-cyan-500/30 text-cyan-200 px-1.5 py-0.5 rounded">was preparing</span> the quarterly presentation when my CEO <span class="bg-emerald-500/30 text-emerald-200 px-1.5 py-0.5 rounded">called</span>. She <span class="bg-emerald-500/30 text-emerald-200 px-1.5 py-0.5 rounded">told</span> me she <span class="bg-amber-500/30 text-amber-200 px-1.5 py-0.5 rounded">had reviewed</span> the previous version the night before and <span class="bg-emerald-500/30 text-emerald-200 px-1.5 py-0.5 rounded">wasn't</span> happy with the numbers. By the time I <span class="bg-emerald-500/30 text-emerald-200 px-1.5 py-0.5 rounded">got off</span> the phone, the team <span class="bg-amber-500/30 text-amber-200 px-1.5 py-0.5 rounded">had already started</span> rebuilding the slides. I <span class="bg-violet-500/30 text-violet-200 px-1.5 py-0.5 rounded">have presented</span> the new version twice this week, and so far the feedback <span class="bg-violet-500/30 text-violet-200 px-1.5 py-0.5 rounded">has been</span> positive."
+            </p>
+            <AudioButton client:visible text="Last Tuesday morning, I was preparing the quarterly presentation when my CEO called. She told me she had reviewed the previous version the night before and wasn't happy with the numbers. By the time I got off the phone, the team had already started rebuilding the slides. I have presented the new version twice this week, and so far the feedback has been positive." lang="en-US" size="md" />
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-3 mb-6">
+          <div class="flex items-center gap-2 text-sm"><span class="bg-cyan-500/30 text-cyan-700 px-1.5 py-0.5 rounded text-xs font-semibold">Past Continuous</span></div>
+          <div class="flex items-center gap-2 text-sm"><span class="bg-emerald-500/30 text-emerald-700 px-1.5 py-0.5 rounded text-xs font-semibold">Past Simple</span></div>
+          <div class="flex items-center gap-2 text-sm"><span class="bg-amber-500/30 text-amber-700 px-1.5 py-0.5 rounded text-xs font-semibold">Past Perfect</span></div>
+          <div class="flex items-center gap-2 text-sm"><span class="bg-violet-500/30 text-violet-700 px-1.5 py-0.5 rounded text-xs font-semibold">Present Perfect</span></div>
+        </div>
+
+        <h3 class="text-xl font-bold text-slate-900 mb-4">El razonamiento, oración por oración</h3>
+        <div class="space-y-3">
+          <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+            <p class="text-sm text-slate-700"><strong class="text-slate-900">"I was preparing the presentation when my CEO called."</strong></p>
+            <p class="text-sm text-slate-600 mt-1">Preparar era la escena de fondo ya en movimiento. La llamada la cortó. Patrón clásico de Past Continuous + Past Simple con interrupción (Lección 2).</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+            <p class="text-sm text-slate-700"><strong class="text-slate-900">"She told me she had reviewed the previous version the night before."</strong></p>
+            <p class="text-sm text-slate-600 mt-1">El "decirme" ocurrió en un momento pasado. La revisión ocurrió <em>antes</em> de eso — la capa de abajo. Past Perfect para el evento más temprano (Lección 4).</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+            <p class="text-sm text-slate-700"><strong class="text-slate-900">"By the time I got off the phone, the team had already started rebuilding."</strong></p>
+            <p class="text-sm text-slate-600 mt-1">Disparador "By the time" otra vez. El inicio del equipo sucedió antes de que colgara. Past Perfect para el más temprano; Past Simple para el ancla (Lección 4).</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+            <p class="text-sm text-slate-700"><strong class="text-slate-900">"I have presented the new version twice this week."</strong></p>
+            <p class="text-sm text-slate-600 mt-1">"This week" sigue abierto. Las presentaciones podrían seguir. El hilo va desde cada presentación hacia adelante, hacia la semana aún abierta. Present Perfect (Lección 3).</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
+            <p class="text-sm text-slate-700"><strong class="text-slate-900">"...and so far the feedback has been positive."</strong></p>
+            <p class="text-sm text-slate-600 mt-1">"So far" es la pista clave — la situación sigue. La retroalimentación podría cambiar. Present Perfect otra vez (Lección 3).</p>
+          </div>
+        </div>
+
+        <div class="mt-6 bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+          <p class="text-sm text-emerald-900"><strong>A lo que un hispanohablante típicamente recurriría por default:</strong> "Last Tuesday I prepared the presentation when my CEO called. She told me she reviewed it. I presented the new version twice this week." La misma historia — pero plana, con las relaciones temporales aplanadas. La versión nativa de arriba carga información que la versión aplanada simplemente <em>no puede</em>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 4: Trampas de síntesis -->
+  <section class="py-16 md:py-20 bg-slate-50" id="seccion-4">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Trampas de síntesis</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Tres errores de alto nivel que aparecen al combinar tiempos, incluso después de dominar cada uno por separado. Toca la bocina en la versión correcta para escuchar la forma correcta.</p>
+
+        <div class="space-y-5">
+          <!-- Trampa 1 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-3">Trampa 1 — La cascada del Past Simple</h3>
+            <div class="space-y-2">
+              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"I went to the meeting. The CEO told me she reviewed the proposal. I sent the new version yesterday."</em></span></p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"I <strong>went</strong> to the meeting. The CEO <strong>told</strong> me she <strong>had reviewed</strong> the proposal. I <strong>sent</strong> the new version yesterday."</em></span>
+                <AudioButton client:visible text="I went to the meeting. The CEO told me she had reviewed the proposal. I sent the new version yesterday." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 mt-3">Poner todos los verbos en Past Simple es el default hispanohablante. Aplana la línea de tiempo. La revisión sucedió <em>antes</em> del "decirme" — eso necesita Past Perfect. Olvidarlo no es gramaticalmente incorrecto, pero pierde información y señala "no nativo" al que escucha.</p>
+          </div>
+
+          <!-- Trampa 2 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-3">Trampa 2 — Latigazo de tiempos dentro de una sola historia</h3>
+            <div class="space-y-2">
+              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"Yesterday I went to the office and I have seen my colleague. We discussed the project."</em></span></p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"Yesterday I <strong>went</strong> to the office and <strong>saw</strong> my colleague. We <strong>discussed</strong> the project."</em></span>
+                <AudioButton client:visible text="Yesterday I went to the office and saw my colleague. We discussed the project." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 mt-3">"Yesterday" cierra la caja. Todos los verbos de la oración tienen que vivir dentro de esa caja cerrada — Past Simple en todos. Desviarse al Present Perfect a mitad de la historia es el error clásico de "por feeling, no por imagen". La disciplina mental es: primero cierra la ventana de tiempo, luego escoge el tiempo verbal que coincida.</p>
+          </div>
+
+          <!-- Trampa 3 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <h3 class="font-bold text-slate-900 mb-3">Trampa 3 — Saltarse el marcador de capa cuando el orden importa</h3>
+            <div class="space-y-2">
+              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"When I called him, he already left the office. He was driving home."</em></span></p>
+              <div class="flex items-start gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <span class="text-slate-800 flex-1"><em>"When I called him, he <strong>had</strong> already <strong>left</strong> the office. He <strong>was driving</strong> home."</em></span>
+                <AudioButton client:visible text="When I called him, he had already left the office. He was driving home." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 mt-3">La salida sucedió antes de la llamada (Past Perfect). El manejar estaba en proceso cuando llamé (Past Continuous). La llamada en sí fue el momento ancla (Past Simple). Tres tiempos distintos en dos oraciones — y todos cargan significado. Saltarse cualquiera aplana la imagen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 5: Revísate mixto -->
+  <section class="py-16 md:py-20 bg-white" id="seccion-5">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Revísate (mixto)</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Cinco escenas cubriendo los cuatro tiempos. Corre el árbol de decisión desde la Pregunta 1 cada vez. El patrón es lo que construye el instinto.</p>
+
+        <div class="space-y-4">
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>1.</strong> <em>"I ___ (lived / have lived / was living) in Guadalajara since 2020."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Respuesta: have lived.</strong> "Since 2020" + sigues viviendo ahí = el hilo va hasta el ahora. Present Perfect (Lección 3).</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>2.</strong> <em>"By the time the meeting started, I ___ (forgot / had forgotten / have forgotten / was forgetting) my notes at home."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Respuesta: had forgotten.</strong> Disparador "By the time". El olvido sucedió antes de que la junta empezara. Past Perfect para el evento más temprano (Lección 4).</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>3.</strong> <em>"I ___ (drove / was driving) home when I ___ (saw / had seen) the accident."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Respuesta: was driving / saw.</strong> El manejar era la escena de fondo. El ver fue el evento de interrupción. Clásico Past Continuous + Past Simple (Lección 2).</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>4.</strong> <em>Tu jefe pregunta "Have you eaten?" a las 2pm. ¿Cuál es la respuesta natural: "No, I didn't" o "No, I haven't"?</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Respuesta: "No, I haven't."</strong> La pregunta estaba en Present Perfect — la ventana de tiempo sigue abierta (todavía podrías comer). Refleja el tiempo de la pregunta en tu respuesta. "No, I didn't" sonaría como que la ventana de la comida ya cerró (Lección 3, la Prueba del Profesional Mexicano).</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
+            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
+              <span><strong>5.</strong> <em>"She told me she ___ (worked / had worked / has worked) in Mexico City for five years before she ___ (moved / had moved) to Monterrey."</em></span>
+              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
+              <p class="text-slate-800"><strong>Respuesta: had worked / moved.</strong> Dos eventos pasados seguidos, donde el orden importa. Los años en CDMX sucedieron antes de la mudanza a Monterrey. Past Perfect para el evento más temprano (worked), Past Simple para el momento principal (moved). (Lección 4.)</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curso completo + recap -->
+  <section class="py-16 md:py-20 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-10">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500 text-white mb-4">
+            <Trophy class="w-8 h-8" />
+          </div>
+          <h2 class="text-3xl font-bold text-slate-900 mb-3">Curso completo.</h2>
+          <p class="text-lg text-slate-600">Ya tienes las cuatro imágenes mentales y el árbol de decisión que las activa.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-200 p-8 mb-10">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Las cuatro imágenes, una última vez</h3>
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><Clock class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Past Simple</strong> — caja cerrada, tiempo sellado, una foto.</span></li>
+            <li class="flex gap-3"><Film class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Past Continuous</strong> — una película corriendo de fondo, la escena en movimiento.</span></li>
+            <li class="flex gap-3"><LinkIcon class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Present Perfect</strong> — un hilo del pasado al ahora, aún vivo.</span></li>
+            <li class="flex gap-3"><Layers class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Past Perfect</strong> — la capa de abajo, un evento más temprano que el momento principal pasado.</span></li>
+          </ul>
+        </div>
+
+        <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6 mb-10">
+          <div class="flex items-start gap-3">
+            <Sparkles class="w-6 h-6 text-emerald-700 shrink-0 mt-0.5" />
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">Lo que cambia a partir de aquí</h3>
+              <p class="text-slate-700 text-sm mb-2">La gramática es la parte fácil. La parte difícil es recablear el instinto — correr el árbol de decisión hacia adelante (Past Perfect primero, Past Simple al último) en vez de al revés.</p>
+              <p class="text-slate-700 text-sm">Escucha a nativos de inglés durante una semana con este mapa en mente. Vas a empezar a oír las elecciones de tiempos que los nativos hacen instintivamente — y las elecciones que tú has estado omitiendo. Los bonos (que se publicarán próximamente) afinarán los pares de verbos más complicados: <em>knew vs. found out, there was vs. there has been, equivalentes a fue vs. era</em>, además de las 30 frases del Confidence Builder para empezar historias en pasado sin trabarte.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cross-link al corporativo -->
+        <div class="bg-white rounded-2xl border-2 border-emerald-300 p-8 mb-10">
+          <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">¿Listo para el siguiente nivel?</p>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">Lleva este método a un programa de coaching real</h3>
+          <p class="text-slate-700 mb-5">Si eres director(a) de RH o ejecutivo(a) buscando elevar el inglés de tu equipo directivo, el mismo método de visualización que potenció este curso es la base del programa de Inglés de Negocios de 12 semanas — coaching 1-a-1 con un neoyorquino nativo, estructurado alrededor de presentaciones reales que tu equipo entregará bajo condiciones de presión de pares.</p>
+          <Button href="/es/servicios/paquete-corporativo/" variant="primary" size="lg">
+            Ver el programa corporativo
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+        </div>
+
+        <div class="text-center">
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a
+              href="/es/curso/tiempos-del-pasado/leccion-4/"
+              class="text-sm text-slate-500 hover:text-emerald-700 underline underline-offset-2"
+            >
+              ← Lección 4: Past Perfect
+            </a>
+            <span class="text-slate-300">|</span>
+            <a
+              href="/es/curso/tiempos-del-pasado/"
+              class="text-sm text-emerald-700 hover:text-emerald-800 underline underline-offset-2"
+            >
+              Resumen del curso
+            </a>
+            <span class="text-slate-300">|</span>
+            <a
+              href="/es/cursos/"
+              class="text-sm text-emerald-700 hover:text-emerald-800 underline underline-offset-2"
+            >
+              Todos los cursos gratuitos
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
