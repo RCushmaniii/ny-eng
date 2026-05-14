@@ -1416,6 +1416,11 @@ Si estás listo para tratar el inglés como un sistema de capacidad—no como un
 - [Por qué gerentes de TI pierden millones](/es/blog/por-que-los-gerentes-de-ti-en-mexico-pierden-clientes/) — Profundiza en los costos de ventas y entrega del inglés débil en servicios de TI.
 - [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/) — Los patrones específicos de interferencia del español que minan la credibilidad de tu equipo.
 - [Caso de estudio: transformación del inglés corporativo en 12 meses](/es/blog/caso-estudio-transformacion-ingles-corporativo/) — Cómo una empresa real resolvió estos problemas con coaching ejecutivo estructurado.
+- [La brecha de inglés en nearshoring: el costo de $1.2B](/es/blog/brecha-de-ingles-en-nearshoring-costo-de-la-mala-comunicacion/) — Datos duros sobre lo que la mala comunicación cuesta a los equipos de nearshoring.
+- [Inglés para aduanas y comercio exterior](/es/blog/ingles-aduanas-comercio-exterior/) — 50 términos esenciales para profesionales de aduanas y carga transfronteriza.
+- [Lenguaje ejecutivo para líderes de operaciones](/es/blog/lenguaje-ejecutivo-operaciones/) — 18 ejercicios para reemplazar lenguaje reactivo con lenguaje ejecutivo de control.
+- [Entrevista en inglés con empresa americana: guía](/es/blog/entrevista-trabajo-empresa-americana/) — El método STAR, preguntas conductuales y negociación salarial en inglés.
+- [Domina el inglés de negocios](/es/blog/dominar-negocios/) — Coaching personalizado para hablar con confianza en entornos profesionales.
 
 ---
 

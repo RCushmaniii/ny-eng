@@ -185,7 +185,7 @@ Efficiency-driven programs optimize for the vendor's operating costs. Outcome-dr
 
 The point of these seven questions isn't to disqualify every vendor. It's to give you a way to separate substance from polish.
 
-Most corporate English programs in Mexico are sold to HR managers who don't have a structured way to evaluate what they're buying. The proposals all look comparable. The pricing is in the same range. The case studies feature comparable companies. There's no obvious basis for choice — so HR ends up choosing on relationship, on brand, or on whoever is cheapest at the right moment.
+Most corporate English programs in Mexico are sold to [HR managers](/en/for-hr-managers/) who don't have a structured way to evaluate what they're buying. The proposals all look comparable. The pricing is in the same range. The case studies feature comparable companies. There's no obvious basis for choice — so HR ends up choosing on relationship, on brand, or on whoever is cheapest at the right moment.
 
 These questions give you a basis for choice.
 
