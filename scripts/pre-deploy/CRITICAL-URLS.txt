@@ -1,5 +1,5 @@
 # Critical URLs Whitelist - New York English Teacher
-# Last Updated: 2024-11-30
+# Last Updated: 2026-05-16
 # 
 # This is the baseline truth for what MUST be in sitemap.xml
 # Organized by: Language > Page Type
@@ -62,6 +62,80 @@ LEGAL
 https://www.nyenglishteacher.com/en/legal/privacy-policy/
 https://www.nyenglishteacher.com/en/legal/terms-of-service/
 
+COURSES
+-------
+https://www.nyenglishteacher.com/en/course/past-tenses/
+https://www.nyenglishteacher.com/en/course/past-tenses/lesson-1/
+https://www.nyenglishteacher.com/en/course/past-tenses/lesson-2/
+https://www.nyenglishteacher.com/en/course/past-tenses/lesson-3/
+https://www.nyenglishteacher.com/en/course/past-tenses/lesson-4/
+https://www.nyenglishteacher.com/en/course/past-tenses/lesson-5/
+https://www.nyenglishteacher.com/en/course/past-tenses/cheat-sheet/
+https://www.nyenglishteacher.com/en/course/past-tenses/knew-vs-found-out/
+https://www.nyenglishteacher.com/en/course/past-tenses/story-openers/
+https://www.nyenglishteacher.com/en/course/past-tenses/there-was-vs-there-has-been/
+https://www.nyenglishteacher.com/en/course/past-tenses/top-10-confused-pairs/
+https://www.nyenglishteacher.com/en/course/beginners/
+https://www.nyenglishteacher.com/en/course/beginners/unit-1/
+https://www.nyenglishteacher.com/en/course/beginners/unit-2/
+https://www.nyenglishteacher.com/en/course/beginners/unit-3/
+https://www.nyenglishteacher.com/en/course/beginners/unit-4/
+https://www.nyenglishteacher.com/en/course/beginners/unit-5/
+https://www.nyenglishteacher.com/en/course/beginners/unit-6/
+https://www.nyenglishteacher.com/en/course/beginners/unit-7/
+https://www.nyenglishteacher.com/en/course/beginners/unit-8/
+https://www.nyenglishteacher.com/en/course/beginners/unit-9/
+https://www.nyenglishteacher.com/en/course/beginners/unit-10/
+https://www.nyenglishteacher.com/en/course/beginners/exam/
+https://www.nyenglishteacher.com/en/course/elementary/
+https://www.nyenglishteacher.com/en/course/elementary/unit-1/
+https://www.nyenglishteacher.com/en/course/elementary/unit-2/
+https://www.nyenglishteacher.com/en/course/elementary/unit-3/
+https://www.nyenglishteacher.com/en/course/elementary/unit-4/
+https://www.nyenglishteacher.com/en/course/elementary/unit-5/
+https://www.nyenglishteacher.com/en/course/elementary/unit-6/
+https://www.nyenglishteacher.com/en/course/elementary/unit-7/
+https://www.nyenglishteacher.com/en/course/elementary/unit-8/
+https://www.nyenglishteacher.com/en/course/elementary/unit-9/
+https://www.nyenglishteacher.com/en/course/elementary/unit-10/
+https://www.nyenglishteacher.com/en/course/elementary/exam/
+https://www.nyenglishteacher.com/en/course/intermediate/
+https://www.nyenglishteacher.com/en/course/intermediate/unit-1/
+https://www.nyenglishteacher.com/en/course/intermediate/unit-2/
+https://www.nyenglishteacher.com/en/course/intermediate/unit-3/
+https://www.nyenglishteacher.com/en/course/intermediate/unit-4/
+https://www.nyenglishteacher.com/en/course/intermediate/unit-5/
+https://www.nyenglishteacher.com/en/course/intermediate/unit-6/
+https://www.nyenglishteacher.com/en/course/intermediate/unit-7/
+https://www.nyenglishteacher.com/en/course/intermediate/unit-8/
+https://www.nyenglishteacher.com/en/course/intermediate/unit-9/
+https://www.nyenglishteacher.com/en/course/intermediate/unit-10/
+https://www.nyenglishteacher.com/en/course/intermediate/exam/
+https://www.nyenglishteacher.com/en/course/advanced/
+https://www.nyenglishteacher.com/en/course/advanced/unit-1/
+https://www.nyenglishteacher.com/en/course/advanced/unit-2/
+https://www.nyenglishteacher.com/en/course/advanced/unit-3/
+https://www.nyenglishteacher.com/en/course/advanced/unit-4/
+https://www.nyenglishteacher.com/en/course/advanced/unit-5/
+https://www.nyenglishteacher.com/en/course/advanced/unit-6/
+https://www.nyenglishteacher.com/en/course/advanced/unit-7/
+https://www.nyenglishteacher.com/en/course/advanced/unit-8/
+https://www.nyenglishteacher.com/en/course/advanced/unit-9/
+https://www.nyenglishteacher.com/en/course/advanced/unit-10/
+https://www.nyenglishteacher.com/en/course/advanced/exam/
+https://www.nyenglishteacher.com/en/course/executive/
+https://www.nyenglishteacher.com/en/course/executive/unit-1/
+https://www.nyenglishteacher.com/en/course/executive/unit-2/
+https://www.nyenglishteacher.com/en/course/executive/unit-3/
+https://www.nyenglishteacher.com/en/course/executive/unit-4/
+https://www.nyenglishteacher.com/en/course/executive/unit-5/
+https://www.nyenglishteacher.com/en/course/executive/unit-6/
+https://www.nyenglishteacher.com/en/course/executive/unit-7/
+https://www.nyenglishteacher.com/en/course/executive/unit-8/
+https://www.nyenglishteacher.com/en/course/executive/unit-9/
+https://www.nyenglishteacher.com/en/course/executive/unit-10/
+https://www.nyenglishteacher.com/en/course/executive/capstone/
+
 
 ================================================================================
 SPANISH PAGES
@@ -113,13 +187,87 @@ LEGAL
 https://www.nyenglishteacher.com/es/legal/privacy-policy/
 https://www.nyenglishteacher.com/es/legal/terms-of-service/
 
+COURSES
+-------
+https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/
+https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/leccion-1/
+https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/leccion-2/
+https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/leccion-3/
+https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/leccion-4/
+https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/leccion-5/
+https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/guia-rapida/
+https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/frases-iniciales/
+https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/knew-vs-found-out/
+https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/there-was-vs-there-has-been/
+https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/top-10-pares-confundidos/
+https://www.nyenglishteacher.com/es/curso/principiantes/
+https://www.nyenglishteacher.com/es/curso/principiantes/unidad-1/
+https://www.nyenglishteacher.com/es/curso/principiantes/unidad-2/
+https://www.nyenglishteacher.com/es/curso/principiantes/unidad-3/
+https://www.nyenglishteacher.com/es/curso/principiantes/unidad-4/
+https://www.nyenglishteacher.com/es/curso/principiantes/unidad-5/
+https://www.nyenglishteacher.com/es/curso/principiantes/unidad-6/
+https://www.nyenglishteacher.com/es/curso/principiantes/unidad-7/
+https://www.nyenglishteacher.com/es/curso/principiantes/unidad-8/
+https://www.nyenglishteacher.com/es/curso/principiantes/unidad-9/
+https://www.nyenglishteacher.com/es/curso/principiantes/unidad-10/
+https://www.nyenglishteacher.com/es/curso/principiantes/examen/
+https://www.nyenglishteacher.com/es/curso/elemental/
+https://www.nyenglishteacher.com/es/curso/elemental/unidad-1/
+https://www.nyenglishteacher.com/es/curso/elemental/unidad-2/
+https://www.nyenglishteacher.com/es/curso/elemental/unidad-3/
+https://www.nyenglishteacher.com/es/curso/elemental/unidad-4/
+https://www.nyenglishteacher.com/es/curso/elemental/unidad-5/
+https://www.nyenglishteacher.com/es/curso/elemental/unidad-6/
+https://www.nyenglishteacher.com/es/curso/elemental/unidad-7/
+https://www.nyenglishteacher.com/es/curso/elemental/unidad-8/
+https://www.nyenglishteacher.com/es/curso/elemental/unidad-9/
+https://www.nyenglishteacher.com/es/curso/elemental/unidad-10/
+https://www.nyenglishteacher.com/es/curso/elemental/examen/
+https://www.nyenglishteacher.com/es/curso/intermedio/
+https://www.nyenglishteacher.com/es/curso/intermedio/unidad-1/
+https://www.nyenglishteacher.com/es/curso/intermedio/unidad-2/
+https://www.nyenglishteacher.com/es/curso/intermedio/unidad-3/
+https://www.nyenglishteacher.com/es/curso/intermedio/unidad-4/
+https://www.nyenglishteacher.com/es/curso/intermedio/unidad-5/
+https://www.nyenglishteacher.com/es/curso/intermedio/unidad-6/
+https://www.nyenglishteacher.com/es/curso/intermedio/unidad-7/
+https://www.nyenglishteacher.com/es/curso/intermedio/unidad-8/
+https://www.nyenglishteacher.com/es/curso/intermedio/unidad-9/
+https://www.nyenglishteacher.com/es/curso/intermedio/unidad-10/
+https://www.nyenglishteacher.com/es/curso/intermedio/examen/
+https://www.nyenglishteacher.com/es/curso/avanzado/
+https://www.nyenglishteacher.com/es/curso/avanzado/unidad-1/
+https://www.nyenglishteacher.com/es/curso/avanzado/unidad-2/
+https://www.nyenglishteacher.com/es/curso/avanzado/unidad-3/
+https://www.nyenglishteacher.com/es/curso/avanzado/unidad-4/
+https://www.nyenglishteacher.com/es/curso/avanzado/unidad-5/
+https://www.nyenglishteacher.com/es/curso/avanzado/unidad-6/
+https://www.nyenglishteacher.com/es/curso/avanzado/unidad-7/
+https://www.nyenglishteacher.com/es/curso/avanzado/unidad-8/
+https://www.nyenglishteacher.com/es/curso/avanzado/unidad-9/
+https://www.nyenglishteacher.com/es/curso/avanzado/unidad-10/
+https://www.nyenglishteacher.com/es/curso/avanzado/examen/
+https://www.nyenglishteacher.com/es/curso/ejecutivo/
+https://www.nyenglishteacher.com/es/curso/ejecutivo/unidad-1/
+https://www.nyenglishteacher.com/es/curso/ejecutivo/unidad-2/
+https://www.nyenglishteacher.com/es/curso/ejecutivo/unidad-3/
+https://www.nyenglishteacher.com/es/curso/ejecutivo/unidad-4/
+https://www.nyenglishteacher.com/es/curso/ejecutivo/unidad-5/
+https://www.nyenglishteacher.com/es/curso/ejecutivo/unidad-6/
+https://www.nyenglishteacher.com/es/curso/ejecutivo/unidad-7/
+https://www.nyenglishteacher.com/es/curso/ejecutivo/unidad-8/
+https://www.nyenglishteacher.com/es/curso/ejecutivo/unidad-9/
+https://www.nyenglishteacher.com/es/curso/ejecutivo/unidad-10/
+https://www.nyenglishteacher.com/es/curso/ejecutivo/reto-final/
+
 
 ================================================================================
 SUMMARY
 ================================================================================
-English Pages: 40 (10 blog posts + 30 other pages)
-Spanish Pages: 40 (10 blog posts + 30 other pages)
-Total: 80 critical URLs
+English Pages: 111 (10 blog posts + 30 other pages + 71 course pages)
+Spanish Pages: 111 (10 blog posts + 30 other pages + 71 course pages)
+Total: 222 critical URLs
 
 EXCLUDED FROM SITEMAP (by design):
 - Quiz question pages (/quiz/question/1/, etc.) - thin content, no SEO value
