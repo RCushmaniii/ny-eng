@@ -305,6 +305,16 @@ const description =
           <span>No spam</span>
         </div>
       </div>
+
+      <div class="role-quizzes">
+        <p class="role-quizzes-label">Or pick a quiz built for your role:</p>
+        <div class="role-quiz-links">
+          <a href="/en/quiz/executives/">For Executives &amp; Directors</a>
+          <a href="/en/quiz/high-stakes/">For High-Stakes Speakers</a>
+          <a href="/en/quiz/professional-services/">For Professional Services</a>
+          <a href="/en/quiz/it-services/">For IT &amp; Tech Teams</a>
+        </div>
+      </div>
     </div>
   </section>
 </Base>
@@ -1476,5 +1486,37 @@ const description =
     .final-cta .trust-signals {
       margin-top: 1.5rem;
     }
+  }
+
+  .role-quizzes {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+  }
+
+  .role-quizzes-label {
+    color: #94a3b8;
+    font-size: 0.875rem;
+    margin: 0 0 0.75rem;
+  }
+
+  .role-quiz-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.25rem;
+  }
+
+  .role-quiz-links a {
+    color: #93c5fd;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .role-quiz-links a:hover {
+    color: #dbeafe;
+    text-decoration: underline;
   }
 </style>

@@ -10,9 +10,13 @@ type ValidIndustry = keyof typeof testimonialsByIndustry;
 export const prerender = true;
 
 export async function getStaticPaths() {
-  // Get all valid industries that have testimonials
+  // Get all valid industries that have testimonials.
+  // Exclude "all" — its content is identical to /es/testimonios/ and is
+  // redirected to the index in vercel.json.
   const validIndustries = Object.keys(testimonialsByIndustry).filter(
-    (industry) => testimonialsByIndustry[industry as ValidIndustry]?.length > 0
+    (industry) =>
+      industry !== "all" &&
+      testimonialsByIndustry[industry as ValidIndustry]?.length > 0
   );
 
   return validIndustries.map((industry) => ({
