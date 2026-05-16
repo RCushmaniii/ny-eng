@@ -170,6 +170,7 @@ Or **[message me directly on WhatsApp](https://wa.link/pk4f97)** to discuss your
 - [English for Nearshore Developers: Skills US Teams Need](/en/blog/english-nearshore-developers-skills/) — The specific communication patterns US sprint teams expect, with phrases you can use this week.
 - [The Real Cost of Weak English: Lost Deals, Blocked Promotions](/en/blog/real-cost-weak-english-mexican-companies/) — How weak English creates measurable revenue loss and career ceilings across Mexican companies.
 - [10 Business English Mistakes Mexican Professionals Make](/en/blog/business-english-mistakes-mexican-professionals/) — Fix the Spanish interference patterns that undermine your credibility in technical discussions.
+- [Technical Sales English Coaching](/en/services/technical-sales-english/) — Moving into a solutions architect or pre-sales role? Coaching built for engineers who sell.
 
 ---
 
