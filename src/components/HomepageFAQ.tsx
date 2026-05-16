@@ -95,25 +95,6 @@ export default function HomepageFAQComponent({ lang }: HomepageFAQProps) {
           </a>
         </div>
       </div>
-
-      {/* JSON-LD Schema for SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: content.faqs.map((faq) => ({
-              "@type": "Question",
-              name: faq.question,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: faq.answer,
-              },
-            })),
-          }),
-        }}
-      />
     </section>
   );
 }
