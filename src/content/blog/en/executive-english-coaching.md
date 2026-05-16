@@ -97,6 +97,7 @@ It’s about moving beyond simply being understood to truly commanding presence 
 - [How One Company Transformed Their C-Suite's English in 12 Months](/en/blog/corporate-english-transformation-case-study/) — A real case study of executive coaching in action.
 - [Executive Presence on Video Calls: 7 Trust-Building Habits](/en/blog/executive-video-call/) — Practical habits for projecting authority on camera.
 - [The Real Cost of Weak English: Lost Deals, Blocked Promotions](/en/blog/real-cost-weak-english-mexican-companies/) — Understand the business case for investing in executive English.
+- [For HR Managers: Program Deliverables & Reporting](/en/for-hr-managers/) — Evaluating an English coaching program for your team? See exactly what you get — progress reports, assessment metrics, and formal documentation.
 
 ---
 
