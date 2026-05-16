@@ -4,6 +4,33 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-05-16
+
+### Accomplished
+- Merged PR #175: hreflang fixes — removed phantom `executive-communication-playbook` from `astro.config.mjs` blogTranslations, removed broken `translations.en` from `manual-comunicacion-ejecutiva.md`, added 2 missing EN↔ES blog pairs
+- Merged PR #176: schema.org fixes on 202 pages — `ContactPoint.contactType` → `"customer support"`, removed invalid `areaServed`, 12 course index + corporate-package `Course.provider` Person→Organization, `BlogPostSchema` publisher logo corrected
+- Merged PR #178: lesson-2 titles (EN 69→59, ES 68→57 chars); `validate:seo` added to `validate:all` so title violations now fail the build; `CRITICAL-URLS.txt` expanded 80→222 URLs (all 142 course pages added)
+- Merged PR #179: elementary connector data migrated from flat `{example, exampleEs, use, useEs}` to `{example: {english, spanish}}` to match `ConnectorChallenge.tsx` shape
+- Merged PR #180: added 2-3 inlinks to all 13 Ahrefs-flagged near-orphan pages — high-stakes service page now cross-links 3 services, assessments page links quiz landing page + course endpoints, 4 ES service pages link related blog posts
+
+### Decisions Made
+- `validate:seo` wired into `validate:all` (not just `pre-deploy`): catches title violations in the standard build pipeline, not just a manual gate
+- `manual-comunicacion-ejecutiva.md` stays ES-only, no EN counterpart created — removing broken `translations.en` was the correct fix
+- Inlinks added as contextual callouts on existing service pages rather than modifying the main nav or services data file
+
+### Immediate Next Steps
+- [ ] Re-run Ahrefs full crawl in 3-5 days to verify all 5 issue categories cleared (hreflang, schema, titles, inlinks)
+- [ ] Dependabot upgrade session: PRs #156-162 (Tailwind 4, TypeScript 6, PostCSS majors) — read Tailwind 4 migration notes first (`~/.claude/reference/tailwind-4-migration.md`)
+- [ ] Submit updated sitemap to GSC: `node scripts/seo/gsc-submit-urls.mjs --sitemap`
+
+### Technical Debt
+- `manual-comunicacion-ejecutiva.md` has no EN counterpart — could create an EN version to make it a proper bilingual pair
+
+### Open Questions / Blockers
+- Several ES blog inlinks were already present in source but not yet counted by Ahrefs (crawl lag); should self-resolve on next crawl
+
+---
+
 ## Session: 2026-05-10
 
 ### Accomplished
