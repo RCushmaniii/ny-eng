@@ -16,6 +16,12 @@ import {
   ArrowRight,
   CheckCircle2,
   GraduationCap,
+  Target,
+  Clock,
+  Film,
+  Link as LinkIcon,
+  Layers,
+  Map,
 } from "lucide-astro";
 
 const lang = "es";
@@ -315,6 +321,76 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
         </a>
       </div>
 
+      <!-- Clases Magistrales Enfocadas -->
+      <div class="max-w-7xl mx-auto mt-20">
+        <div class="text-center mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold mb-3">
+            <Target class="w-4 h-4" />
+            Clases Magistrales Enfocadas
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
+            Un tema. A fondo.
+          </h2>
+          <p class="text-slate-600 max-w-2xl mx-auto">
+            Cursos cortos enfocados en lo que congela a los profesionales mexicanos — incluso después de años de estudio. Toma uno en una tarde.
+          </p>
+        </div>
+
+        <a
+          href="/es/curso/tiempos-del-pasado/"
+          class="group block bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 rounded-2xl border border-emerald-700/40 overflow-hidden hover:shadow-2xl hover:border-emerald-500 transition-all duration-200"
+        >
+          <div class="grid md:grid-cols-5 gap-0">
+            <div class="md:col-span-3 p-8 md:p-10 text-white">
+              <div class="flex items-center gap-2 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-3">
+                <Sparkles class="w-3.5 h-3.5" />
+                Clase Magistral · Nivel B1–C1
+              </div>
+              <h3 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">
+                Domina los Tiempos del Pasado en Inglés
+              </h3>
+              <p class="text-emerald-100 text-base leading-relaxed mb-5">
+                Conoces las reglas. Las puedes recitar. Pero en una junta real te congelas — y dices <em class="not-italic text-white">"I did the report"</em> cuando la situación pide <em class="not-italic text-white">"I have done the report."</em> Esta clase magistral te recablea la elección de tiempo pasado mediante la visualización, no la memorización de reglas.
+              </p>
+              <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-emerald-100 mb-6">
+                <span class="inline-flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-400" /> 5 lecciones enfocadas</span>
+                <span class="inline-flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-400" /> El método de los 4 tiempos</span>
+                <span class="inline-flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-400" /> Hecho para mexicanos</span>
+              </div>
+              <span class="inline-flex items-center gap-1 text-amber-400 font-semibold text-sm group-hover:gap-2 transition-all">
+                Empezar la clase magistral
+                <ArrowRight class="w-4 h-4" />
+              </span>
+            </div>
+            <div class="md:col-span-2 bg-emerald-950/40 p-8 md:p-10 border-t md:border-t-0 md:border-l border-emerald-700/30">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-300 mb-4">Qué vas a aprender</p>
+              <ul class="space-y-3 text-emerald-50 text-sm">
+                <li class="flex items-start gap-3">
+                  <Clock class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong class="text-white">Pasado Simple</strong> — momentos cerrados, tiempo terminado</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <Film class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong class="text-white">Pasado Continuo</strong> — escenas de fondo, interrupciones</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <LinkIcon class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong class="text-white">Presente Perfecto</strong> — pasado con un hilo al ahora</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <Layers class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong class="text-white">Pasado Perfecto</strong> — la capa debajo de otro pasado</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <Map class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong class="text-white">Mapa del Flujo</strong> — elige tiempos en tiempo real</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </a>
+      </div>
+
       <div class="max-w-3xl mx-auto mt-16 text-center">
         <h3 class="text-2xl font-bold text-slate-900 mb-3">¿No sabes con cuál empezar?</h3>
         <p class="text-slate-600 mb-6">
@@ -378,6 +454,15 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
         "@type": "Course",
         "name": "Curso Ejecutivo de Ingles (C1-C2)",
         "url": "https://www.nyenglishteacher.com/es/curso/ejecutivo/"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Course",
+        "name": "Domina los Tiempos del Pasado en Ingles (Clase Magistral Gratis)",
+        "url": "https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/"
       }
     }
   ]

@@ -120,7 +120,7 @@ export const pastTenseBonuses: PastTenseBonus[] = [
     description: "Every past tense, every trigger, every story-flow rule — on one printable page.",
     descriptionEs: "Cada tiempo del pasado, cada disparador, cada regla del flujo de historia — en una página imprimible.",
     icon: "FileText",
-    available: false,
+    available: true,
   },
   {
     id: 2,

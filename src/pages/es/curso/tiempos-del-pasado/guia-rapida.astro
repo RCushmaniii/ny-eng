@@ -1,0 +1,388 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Clock,
+  Film,
+  Link as LinkIcon,
+  Layers,
+  Map,
+  FileText,
+  Printer,
+  AlertTriangle,
+  Lightbulb,
+  Eye,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/past-tenses/cheat-sheet" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Guía Rápida — Tiempos del Pasado en Inglés (Una Página) | NY English Teacher"
+  description="Clase magistral de tiempos del pasado en inglés, en una página imprimible. Cada tiempo, palabra clave y trampa para hispanohablantes — gratis."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-emerald-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-3">
+          <FileText class="w-4 h-4" />
+          Bono 1 · Guía Rápida de la Clase Magistral
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          La Guía Rápida de Una Página
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          Cada tiempo del pasado. Cada palabra clave. Cada trampa para hispanohablantes.
+          Una referencia para tener abierta en otra pestaña — o imprimirla y pegarla en la pared.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Imprimir esta página
+          </button>
+          <a
+            href="/es/curso/tiempos-del-pasado/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Volver a la clase magistral
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Print-only header -->
+  <div class="hidden print:block py-4 border-b-2 border-slate-300">
+    <h1 class="text-2xl font-bold text-slate-900">Tiempos del Pasado en Inglés — Guía Rápida</h1>
+    <p class="text-sm text-slate-600">nyenglishteacher.com — gratis para profesionales mexicanos</p>
+  </div>
+
+  <!-- Los 4 tiempos, compactos -->
+  <section class="py-12 md:py-16 bg-white print:py-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-10 print:mb-4 print:text-left">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2 print:text-xl">Los Cuatro Tiempos del Pasado, de un Vistazo</h2>
+          <p class="text-slate-600 print:hidden">Imagen mental · cuándo usarlo · palabras clave · la trampa donde caen los mexicanos.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 print:gap-3">
+
+          <!-- Past Simple -->
+          <div class="rounded-2xl border-2 border-emerald-300 bg-emerald-50/60 p-6 print:p-3 print:rounded-md print:break-inside-avoid">
+            <div class="flex items-start gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500 text-white shrink-0 print:w-7 print:h-7">
+                <Clock class="w-5 h-5" />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold text-slate-900 print:text-base">Pasado Simple <span class="text-xs font-normal text-slate-500">(Past Simple)</span></h3>
+                <p class="text-sm text-emerald-700 italic">Sucedió. Está terminado.</p>
+              </div>
+            </div>
+            <div class="space-y-2.5 text-sm text-slate-700 print:text-xs">
+              <p><strong class="text-slate-900">Imagen:</strong> una caja cerrada. Una foto. El tiempo está sellado.</p>
+              <p><strong class="text-slate-900">Forma:</strong> <code class="text-xs bg-white px-1.5 py-0.5 rounded">sujeto + V<sub>2</sub></code> · <em>worked, went, ate, did</em></p>
+              <p><strong class="text-slate-900">Disparadores:</strong> yesterday · last week · in 2019 · when I was 20 · ago</p>
+              <div class="bg-white rounded p-2.5 border border-emerald-200">
+                <p class="text-xs text-emerald-700 font-semibold mb-1">EJEMPLOS</p>
+                <p>"I <strong>worked</strong> at Telmex for eight years."</p>
+                <p>"She <strong>quit</strong> last Friday."</p>
+              </div>
+              <div class="bg-red-50 rounded p-2.5 border border-red-200">
+                <p class="text-xs text-red-700 font-semibold mb-1 flex items-center gap-1"><AlertTriangle class="w-3 h-3" /> TRAMPA MEXICANA</p>
+                <p class="text-slate-700">Usar Pasado Simple para todo. Si el tiempo está <em>abierto</em> ("this morning" — y todavía es la mañana), probablemente necesitas Presente Perfecto.</p>
+              </div>
+            </div>
+            <a href="/es/curso/tiempos-del-pasado/leccion-1/" class="inline-flex items-center gap-1 mt-3 text-emerald-700 hover:text-emerald-900 text-sm font-medium print:hidden">
+              Lección completa <ArrowRight class="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+          <!-- Past Continuous -->
+          <div class="rounded-2xl border-2 border-emerald-300 bg-emerald-50/60 p-6 print:p-3 print:rounded-md print:break-inside-avoid">
+            <div class="flex items-start gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500 text-white shrink-0 print:w-7 print:h-7">
+                <Film class="w-5 h-5" />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold text-slate-900 print:text-base">Pasado Continuo <span class="text-xs font-normal text-slate-500">(Past Continuous)</span></h3>
+                <p class="text-sm text-emerald-700 italic">Estaba sucediendo cuando…</p>
+              </div>
+            </div>
+            <div class="space-y-2.5 text-sm text-slate-700 print:text-xs">
+              <p><strong class="text-slate-900">Imagen:</strong> una película corriendo. La cámara rueda. Luego algo interrumpe.</p>
+              <p><strong class="text-slate-900">Forma:</strong> <code class="text-xs bg-white px-1.5 py-0.5 rounded">was/were + V-ing</code> · <em>was working, were eating</em></p>
+              <p><strong class="text-slate-900">Disparadores:</strong> when… · while… · as… · at 3pm yesterday · all morning</p>
+              <div class="bg-white rounded p-2.5 border border-emerald-200">
+                <p class="text-xs text-emerald-700 font-semibold mb-1">EJEMPLOS</p>
+                <p>"I <strong>was driving</strong> home when she <strong>called</strong>."</p>
+                <p>"We <strong>were having</strong> dinner at 8."</p>
+              </div>
+              <div class="bg-red-50 rounded p-2.5 border border-red-200">
+                <p class="text-xs text-red-700 font-semibold mb-1 flex items-center gap-1"><AlertTriangle class="w-3 h-3" /> TRAMPA MEXICANA</p>
+                <p class="text-slate-700">Usarlo para acciones terminadas, únicas. "I <em>was watching</em> the movie last night" suena mal — viste <em>la película completa</em>, eso es Pasado Simple.</p>
+              </div>
+            </div>
+            <a href="/es/curso/tiempos-del-pasado/leccion-2/" class="inline-flex items-center gap-1 mt-3 text-emerald-700 hover:text-emerald-900 text-sm font-medium print:hidden">
+              Lección completa <ArrowRight class="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+          <!-- Present Perfect -->
+          <div class="rounded-2xl border-2 border-emerald-400 bg-emerald-100/60 p-6 print:p-3 print:rounded-md print:break-inside-avoid">
+            <div class="flex items-start gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-600 text-white shrink-0 print:w-7 print:h-7">
+                <LinkIcon class="w-5 h-5" />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold text-slate-900 print:text-base">Presente Perfecto <span class="text-xs font-semibold text-emerald-700 ml-1">★ alto riesgo</span><br/><span class="text-xs font-normal text-slate-500">(Present Perfect)</span></h3>
+                <p class="text-sm text-emerald-700 italic">Sucedió — pero todavía importa ahora.</p>
+              </div>
+            </div>
+            <div class="space-y-2.5 text-sm text-slate-700 print:text-xs">
+              <p><strong class="text-slate-900">Imagen:</strong> un hilo del pasado <em>hacia</em> el presente. El tiempo no está cerrado — entra hasta el ahora.</p>
+              <p><strong class="text-slate-900">Forma:</strong> <code class="text-xs bg-white px-1.5 py-0.5 rounded">have/has + V<sub>3</sub></code> · <em>have worked, has gone, have done</em></p>
+              <p><strong class="text-slate-900">Disparadores:</strong> already · yet · ever · never · just · since · for · this week (sigue corriendo) · so far</p>
+              <div class="bg-white rounded p-2.5 border border-emerald-300">
+                <p class="text-xs text-emerald-700 font-semibold mb-1">EJEMPLOS</p>
+                <p>"I <strong>have done</strong> the report." (está listo <em>ahora</em>)</p>
+                <p>"She <strong>has lived</strong> here since 2018." (todavía vive aquí)</p>
+                <p>"<strong>Have</strong> you <strong>seen</strong> the email?" (en cualquier momento hasta ahora)</p>
+              </div>
+              <div class="bg-red-50 rounded p-2.5 border border-red-200">
+                <p class="text-xs text-red-700 font-semibold mb-1 flex items-center gap-1"><AlertTriangle class="w-3 h-3" /> TRAMPA MEXICANA</p>
+                <p class="text-slate-700"><strong>La grande.</strong> Los mexicanos caen en Pasado Simple aquí. "I did the report" suena terminado-y-cerrado. Usa Presente Perfecto cuando la acción <em>todavía importa ahora</em>.</p>
+              </div>
+            </div>
+            <a href="/es/curso/tiempos-del-pasado/leccion-3/" class="inline-flex items-center gap-1 mt-3 text-emerald-700 hover:text-emerald-900 text-sm font-medium print:hidden">
+              Lección completa <ArrowRight class="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+          <!-- Past Perfect -->
+          <div class="rounded-2xl border-2 border-emerald-300 bg-emerald-50/60 p-6 print:p-3 print:rounded-md print:break-inside-avoid">
+            <div class="flex items-start gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500 text-white shrink-0 print:w-7 print:h-7">
+                <Layers class="w-5 h-5" />
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-bold text-slate-900 print:text-base">Pasado Perfecto <span class="text-xs font-normal text-slate-500">(Past Perfect)</span></h3>
+                <p class="text-sm text-emerald-700 italic">Sucedió antes que <em>esa</em> otra cosa.</p>
+              </div>
+            </div>
+            <div class="space-y-2.5 text-sm text-slate-700 print:text-xs">
+              <p><strong class="text-slate-900">Imagen:</strong> dos capas. El primer evento queda <em>debajo</em> del segundo evento pasado.</p>
+              <p><strong class="text-slate-900">Forma:</strong> <code class="text-xs bg-white px-1.5 py-0.5 rounded">had + V<sub>3</sub></code> · <em>had worked, had gone, had eaten</em></p>
+              <p><strong class="text-slate-900">Disparadores:</strong> by the time… · before… · after… · already had… · when she arrived, I had already…</p>
+              <div class="bg-white rounded p-2.5 border border-emerald-200">
+                <p class="text-xs text-emerald-700 font-semibold mb-1">EJEMPLOS</p>
+                <p>"When I got there, the meeting <strong>had started</strong>."</p>
+                <p>"She <strong>had finished</strong> before I asked."</p>
+              </div>
+              <div class="bg-red-50 rounded p-2.5 border border-red-200">
+                <p class="text-xs text-red-700 font-semibold mb-1 flex items-center gap-1"><AlertTriangle class="w-3 h-3" /> TRAMPA MEXICANA</p>
+                <p class="text-slate-700">Usarlo de más. Solo necesitas Pasado Perfecto cuando el orden no es obvio por contexto. Si ya dijiste "first…, then…" — usa Pasado Simple dos veces.</p>
+              </div>
+            </div>
+            <a href="/es/curso/tiempos-del-pasado/leccion-4/" class="inline-flex items-center gap-1 mt-3 text-emerald-700 hover:text-emerald-900 text-sm font-medium print:hidden">
+              Lección completa <ArrowRight class="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Decision tree -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-6 print:mb-3">
+          <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-500 text-white shrink-0">
+            <Map class="w-5 h-5" />
+          </div>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">El Árbol de Decisión del Flujo de Historia</h2>
+            <p class="text-sm text-slate-600 print:hidden">Tres preguntas, en orden. El tiempo correcto cae al final.</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border-2 border-slate-300 bg-white p-6 md:p-8 print:p-3 print:rounded-md print:border print:border-slate-400">
+          <ol class="space-y-5 print:space-y-3">
+            <li class="flex gap-4 print:gap-2">
+              <span class="flex items-center justify-center w-8 h-8 rounded-full bg-amber-500 text-white text-sm font-bold shrink-0 print:w-6 print:h-6 print:text-xs">1</span>
+              <div class="flex-1">
+                <p class="font-semibold text-slate-900 mb-1 print:text-sm">¿La acción todavía importa <em>ahora</em>?</p>
+                <p class="text-sm text-slate-600 print:text-xs">→ ¿Sí? <strong class="text-emerald-700">Presente Perfecto.</strong> ("I have finished.")</p>
+                <p class="text-sm text-slate-600 print:text-xs">→ ¿No, el tiempo está cerrado? Sigue a la Q2.</p>
+              </div>
+            </li>
+            <li class="flex gap-4 print:gap-2">
+              <span class="flex items-center justify-center w-8 h-8 rounded-full bg-amber-500 text-white text-sm font-bold shrink-0 print:w-6 print:h-6 print:text-xs">2</span>
+              <div class="flex-1">
+                <p class="font-semibold text-slate-900 mb-1 print:text-sm">¿Algo está interrumpiendo una acción en progreso?</p>
+                <p class="text-sm text-slate-600 print:text-xs">→ ¿Sí? <strong class="text-emerald-700">Pasado Continuo + Pasado Simple.</strong> ("I was driving when she called.")</p>
+                <p class="text-sm text-slate-600 print:text-xs">→ ¿No? Sigue a la Q3.</p>
+              </div>
+            </li>
+            <li class="flex gap-4 print:gap-2">
+              <span class="flex items-center justify-center w-8 h-8 rounded-full bg-amber-500 text-white text-sm font-bold shrink-0 print:w-6 print:h-6 print:text-xs">3</span>
+              <div class="flex-1">
+                <p class="font-semibold text-slate-900 mb-1 print:text-sm">¿Un evento pasado sucedió <em>antes</em> que otro evento pasado — y el orden no es obvio?</p>
+                <p class="text-sm text-slate-600 print:text-xs">→ ¿Sí? <strong class="text-emerald-700">Pasado Perfecto + Pasado Simple.</strong> ("By the time I arrived, she had left.")</p>
+                <p class="text-sm text-slate-600 print:text-xs">→ ¿No? <strong class="text-emerald-700">Pasado Simple.</strong> ("I worked. She quit. We moved on.")</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trigger words table -->
+  <section class="py-12 md:py-16 bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-6 print:mb-3">
+          <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500 text-white shrink-0">
+            <Eye class="w-5 h-5" />
+          </div>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">Palabras Clave de Referencia Rápida</h2>
+            <p class="text-sm text-slate-600 print:hidden">Cuando escuchas una de éstas, el tiempo a menudo se elige solo.</p>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="border-b-2 border-slate-300">
+                <th class="text-left py-2 px-3 font-bold text-slate-900 print:text-xs">Palabra clave</th>
+                <th class="text-left py-2 px-3 font-bold text-slate-900 print:text-xs">Usualmente pide</th>
+                <th class="text-left py-2 px-3 font-bold text-slate-900 print:text-xs">Por qué</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 print:text-xs">
+              <tr><td class="py-2 px-3 font-mono text-emerald-700">yesterday, last week, in 2019, ago</td><td class="py-2 px-3"><strong>Pasado Simple</strong></td><td class="py-2 px-3 text-slate-600">Tiempo cerrado</td></tr>
+              <tr><td class="py-2 px-3 font-mono text-emerald-700">when, while, as, at 3pm</td><td class="py-2 px-3"><strong>Pasado Continuo</strong> (a menudo)</td><td class="py-2 px-3 text-slate-600">Acción en progreso / fondo</td></tr>
+              <tr><td class="py-2 px-3 font-mono text-emerald-700">already, yet, just, ever, never</td><td class="py-2 px-3"><strong>Presente Perfecto</strong></td><td class="py-2 px-3 text-slate-600">Pasado con relevancia ahora</td></tr>
+              <tr><td class="py-2 px-3 font-mono text-emerald-700">since, for (+ duración)</td><td class="py-2 px-3"><strong>Presente Perfecto</strong></td><td class="py-2 px-3 text-slate-600">Empezó en pasado, sigue ahora</td></tr>
+              <tr><td class="py-2 px-3 font-mono text-emerald-700">this morning / today / this week (sigue corriendo)</td><td class="py-2 px-3"><strong>Presente Perfecto</strong></td><td class="py-2 px-3 text-slate-600">Periodo abierto</td></tr>
+              <tr><td class="py-2 px-3 font-mono text-emerald-700">this morning (y ya es la tarde)</td><td class="py-2 px-3"><strong>Pasado Simple</strong></td><td class="py-2 px-3 text-slate-600">El periodo ya está cerrado</td></tr>
+              <tr><td class="py-2 px-3 font-mono text-emerald-700">by the time, before, after, already had</td><td class="py-2 px-3"><strong>Pasado Perfecto</strong></td><td class="py-2 px-3 text-slate-600">Dos eventos pasados, el anterior</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three Spanish mirrors -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-6 print:mb-3">
+          <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-500 text-white shrink-0">
+            <Lightbulb class="w-5 h-5" />
+          </div>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">Los Tres Espejos del Español</h2>
+            <p class="text-sm text-slate-600 print:hidden">Si los detectas en español, el tiempo en inglés se elige automáticamente.</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-4 print:gap-2">
+          <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-2 print:rounded-md print:break-inside-avoid">
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">Knew vs. Found out</p>
+            <p class="text-sm text-slate-700 mb-2"><strong>Español:</strong> <em>sabía</em> (estado) vs. <em>supe</em> (momento de descubrir)</p>
+            <p class="text-sm text-slate-700"><strong>Inglés:</strong> "I <strong>knew</strong> she was leaving" (estado continuo). "I <strong>found out</strong> she was leaving" (un momento de descubrimiento — nunca "I knew it yesterday").</p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-2 print:rounded-md print:break-inside-avoid">
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">There was vs. There has been</p>
+            <p class="text-sm text-slate-700 mb-2"><strong>Español:</strong> <em>hubo</em> (cerrado) vs. <em>ha habido</em> (todavía relevante)</p>
+            <p class="text-sm text-slate-700"><strong>Inglés:</strong> "There <strong>was</strong> a problem last week" (cerrado). "There <strong>has been</strong> a problem this morning" (todavía aquí, todavía me toca resolverlo).</p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-2 print:rounded-md print:break-inside-avoid">
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">Did vs. Have done</p>
+            <p class="text-sm text-slate-700 mb-2"><strong>Español:</strong> <em>hice</em> vs. <em>he hecho</em> — el mismo instinto funciona.</p>
+            <p class="text-sm text-slate-700"><strong>Inglés:</strong> "I <strong>did</strong> the report yesterday" (cerrado). "I <strong>have done</strong> the report" (está en tu escritorio ahora — relevante).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Save / share -->
+  <section class="py-12 md:py-16 bg-emerald-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">Tenla a la Mano</h2>
+        <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">
+          Guarda esta página en favoritos. Imprímela. Pégala junto al monitor para la próxima junta con clientes en EE.UU.
+          Luego toma las cinco lecciones — la guía rápida empieza a tener sentido una vez que sentiste las historias.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+          >
+            <Printer class="w-5 h-5" />
+            Imprimir esta página
+          </button>
+          <a
+            href="/es/curso/tiempos-del-pasado/leccion-1/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold transition-colors"
+          >
+            Empezar el curso desde la Lección 1
+            <ArrowRight class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      header, footer, nav { display: none !important; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #064e3b !important; }
+      code { background: #f1f5f9 !important; color: #064e3b !important; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Tiempos del Pasado en Ingles — Guia Rapida de Una Pagina",
+    "description": "Referencia compacta e imprimible que cubre Past Simple, Past Continuous, Present Perfect y Past Perfect — incluyendo palabras clave, el arbol de decision del flujo de historia y los tres pares de verbos espejo del espanol.",
+    "learningResourceType": "Cheat sheet",
+    "educationalLevel": "Intermedio a Avanzado",
+    "inLanguage": "es",
+    "isAccessibleForFree": true,
+    "url": "https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/guia-rapida/",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Domina los Tiempos del Pasado en Ingles — Clase Magistral Gratis",
+      "url": "https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/es/about/"
+    }
+  })} />
+</Base>

@@ -144,6 +144,7 @@ export type TKey =
   | "course/past-tenses/lesson-3"
   | "course/past-tenses/lesson-4"
   | "course/past-tenses/lesson-5"
+  | "course/past-tenses/cheat-sheet"
   | "corporate/for-hr"
   | "meme-portfolio"
   | "site-index";
@@ -303,6 +304,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/past-tenses/lesson-3": "/en/course/past-tenses/lesson-3/",
     "course/past-tenses/lesson-4": "/en/course/past-tenses/lesson-4/",
     "course/past-tenses/lesson-5": "/en/course/past-tenses/lesson-5/",
+    "course/past-tenses/cheat-sheet": "/en/course/past-tenses/cheat-sheet/",
     "corporate/for-hr": "/en/for-hr-managers/",
     "meme-portfolio": "/en/meme-portfolio/all/",
     "site-index": "/en/site-index/",
@@ -466,6 +468,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/past-tenses/lesson-3": "/es/curso/tiempos-del-pasado/leccion-3/",
     "course/past-tenses/lesson-4": "/es/curso/tiempos-del-pasado/leccion-4/",
     "course/past-tenses/lesson-5": "/es/curso/tiempos-del-pasado/leccion-5/",
+    "course/past-tenses/cheat-sheet": "/es/curso/tiempos-del-pasado/guia-rapida/",
     "corporate/for-hr": "/es/para-rh/",
     "meme-portfolio": "/es/meme-portfolio/all/",
     "site-index": "/es/indice-del-sitio/",
@@ -558,6 +561,7 @@ export function getAllTKeys(): TKey[] {
     "course/past-tenses/lesson-3",
     "course/past-tenses/lesson-4",
     "course/past-tenses/lesson-5",
+    "course/past-tenses/cheat-sheet",
     "category/startup-founders",
     "category/tech-english",
     "category/logistics-english",
