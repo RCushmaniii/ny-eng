@@ -349,6 +349,7 @@ Si trabajas en tech y tratas con equipos internacionales todos los días, el [co
 - [7 frases de email que te hacen sonar junior](/es/blog/frases-email-que-te-hacen-sonar-junior/) — Más patrones que minan tu autoridad profesional en la comunicación escrita.
 - [5 formas prácticas de mejorar tu inglés de negocios](/es/blog/5-formas-practicas-mejorar-ingles-negocios/) — Estrategias concretas para comunicar con claridad y confianza.
 - [El costo real del inglés débil en empresas mexicanas](/es/blog/costo-real-ingles-debil-empresas-mexicanas/) — Cuánto le cuestan estos errores a tu empresa en ingresos y oportunidades.
+- [50 palabras en inglés que los profesionales mexicanos pronuncian mal](/es/blog/palabras-en-ingles-que-profesionales-mexicanos-pronuncian-mal/) — Guía fonética para corregir los patrones de pronunciación que delatan tu acento en reuniones de negocios.
 
 ---
 
