@@ -17,11 +17,6 @@ import {
   CheckCircle2,
   GraduationCap,
   Target,
-  Clock,
-  Film,
-  Link as LinkIcon,
-  Layers,
-  Map,
 } from "lucide-astro";
 
 const lang = "en";
@@ -56,8 +51,9 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
           English Courses That Actually Work for Spanish Speakers
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Five free, interactive courses built for Spanish speakers — A1
-          beginner through C2 executive. No sign-up. No paywall. No textbook
+          Six free, interactive courses built for Spanish speakers — five
+          leveled tracks from A1 beginner through C2 executive, plus a focused
+          master class on past tenses. No sign-up. No paywall. No textbook
           drudgery. Just real progress from the first lesson.
         </p>
       </div>
@@ -67,7 +63,7 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
   <!-- Course cards -->
   <section class="py-16 md:py-20 bg-slate-50">
     <div class="site-container mx-auto px-4">
-      <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Beginner -->
         <a
@@ -318,73 +314,50 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
             </div>
           </div>
         </a>
-      </div>
 
-      <!-- Targeted Master Classes -->
-      <div class="max-w-7xl mx-auto mt-20">
-        <div class="text-center mb-10">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold mb-3">
-            <Target class="w-4 h-4" />
-            Targeted Master Classes
-          </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
-            One topic. Done thoroughly.
-          </h2>
-          <p class="text-slate-600 max-w-2xl mx-auto">
-            Focused short courses on the specific things Mexican professionals freeze on — even after years of study. Take one in an afternoon.
-          </p>
-        </div>
-
+        <!-- Master Class — Past Tenses -->
         <a
           href="/en/course/past-tenses/"
-          class="group block bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 rounded-2xl border border-emerald-700/40 overflow-hidden hover:shadow-2xl hover:border-emerald-500 transition-all duration-200"
+          class="group block bg-white rounded-2xl border-2 border-emerald-500/30 overflow-hidden hover:shadow-xl hover:border-emerald-400 transition-all duration-200"
         >
-          <div class="grid md:grid-cols-5 gap-0">
-            <div class="md:col-span-3 p-8 md:p-10 text-white">
-              <div class="flex items-center gap-2 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-3">
-                <Sparkles class="w-3.5 h-3.5" />
-                Master Class · Level B1–C1
-              </div>
-              <h3 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">
-                Master English Past Tenses
-              </h3>
-              <p class="text-emerald-100 text-base leading-relaxed mb-5">
-                You know the rules. You can recite them. But in a real meeting you still freeze — and say <em class="not-italic text-white">"I did the report"</em> when the situation actually calls for <em class="not-italic text-white">"I have done the report."</em> This master class rewires past-tense choice through visualization, not rule-memorization.
-              </p>
-              <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-emerald-100 mb-6">
-                <span class="inline-flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-400" /> 5 focused lessons</span>
-                <span class="inline-flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-400" /> The 4-tense method</span>
-                <span class="inline-flex items-center gap-1.5"><CheckCircle2 class="w-4 h-4 text-emerald-400" /> Built for Mexican speakers</span>
-              </div>
-              <span class="inline-flex items-center gap-1 text-amber-400 font-semibold text-sm group-hover:gap-2 transition-all">
-                Start the master class
+          <div class="bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 p-6 text-white min-h-[180px] flex flex-col justify-end">
+            <div class="flex items-center gap-2 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">
+              <Target class="w-3.5 h-3.5" />
+              Master Class — B1 to C1
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold mb-2" style="font-family: 'Noto Sans KR', sans-serif;">
+              Master English Past Tenses
+            </h2>
+            <p class="text-emerald-100 text-sm leading-relaxed">
+              Feel the story. Don't think about the rules.
+            </p>
+          </div>
+          <div class="p-6">
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              The targeted master class. You know the rules but freeze in real meetings — defaulting to <em>"I did"</em> when it should be <em>"I have done."</em> This rewires the choice through visualization, not memorization.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                <span>The 4-tense method + the habitual past</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                <span>6 lessons + 6 bonuses (cheat sheet, 30-day plan)</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                <span>Built for Mexican corporate speakers</span>
+              </li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold text-emerald-700 uppercase tracking-wider">
+                6 lessons available
+              </span>
+              <span class="inline-flex items-center gap-1 text-emerald-700 font-semibold text-sm group-hover:gap-2 transition-all">
+                Start master class
                 <ArrowRight class="w-4 h-4" />
               </span>
-            </div>
-            <div class="md:col-span-2 bg-emerald-950/40 p-8 md:p-10 border-t md:border-t-0 md:border-l border-emerald-700/30">
-              <p class="text-xs font-bold uppercase tracking-wider text-emerald-300 mb-4">What you'll learn</p>
-              <ul class="space-y-3 text-emerald-50 text-sm">
-                <li class="flex items-start gap-3">
-                  <Clock class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong class="text-white">Past Simple</strong> — closed moments, finished time</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <Film class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong class="text-white">Past Continuous</strong> — background scenes, interruptions</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <LinkIcon class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong class="text-white">Present Perfect</strong> — past with a thread to now</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <Layers class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong class="text-white">Past Perfect</strong> — the layer below another past</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <Map class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span><strong class="text-white">Story Flow Map</strong> — choose tenses in real time</span>
-                </li>
-              </ul>
             </div>
           </div>
         </a>
@@ -394,7 +367,7 @@ const executiveAvailable = executiveUnits.filter((u) => u.published).length;
       <div class="max-w-3xl mx-auto mt-16 text-center">
         <h3 class="text-2xl font-bold text-slate-900 mb-3">Not sure which one to start?</h3>
         <p class="text-slate-600 mb-6">
-          If English still feels brand new, start with the <strong>beginner</strong> course. If you've finished the basics but can't yet talk about yesterday or make plans, take <strong>elementary</strong>. If you can already hold a conversation, jump to <strong>intermediate</strong>. If your English is fluent but not polished, go to <strong>advanced</strong>. And if you're a senior leader who already communicates competently in English but wants to <em>lead</em> in English, go straight to <strong>executive</strong>. Your progress is saved separately for each course.
+          If English still feels brand new, start with the <strong>beginner</strong> course. If you've finished the basics but can't yet talk about yesterday or make plans, take <strong>elementary</strong>. If you can already hold a conversation, jump to <strong>intermediate</strong>. If your English is fluent but not polished, go to <strong>advanced</strong>. If you're a senior leader who wants to <em>lead</em> in English, go straight to <strong>executive</strong>. And if you keep freezing on past tense specifically, the <strong>past tenses master class</strong> fits beside any of them. Your progress is saved separately for each course.
         </p>
         <Button href="/en/services/" variant="secondary" size="md">
           Or work 1-on-1 with Robert

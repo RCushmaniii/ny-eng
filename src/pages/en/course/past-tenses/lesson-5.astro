@@ -6,17 +6,12 @@ import Button from "@components/ui/Button.astro";
 import AudioButton from "@components/course/AudioButton";
 import {
   ArrowRight,
-  Map,
-  Trophy,
-  AlertTriangle,
+  Repeat,
   Eye,
+  AlertTriangle,
   CheckCircle2,
   XCircle,
   Sparkles,
-  Clock,
-  Film,
-  Link as LinkIcon,
-  Layers,
 } from "lucide-astro";
 
 const lang = "en";
@@ -26,404 +21,286 @@ const tkey = "course/past-tenses/lesson-5" as const;
 <Base
   lang={lang}
   tkey={tkey}
-  title="Lesson 5: The Story Flow Map — Capstone | NY English Teacher"
-  description="The final lesson. Combine Past Simple, Past Continuous, Present Perfect, and Past Perfect like a native — choosing each tense by reading the shape of the story."
+  title="Lesson 5: Used to / Would — The Habitual Past | NY English Teacher"
+  description="The English equivalent of solía and the imperfecto for old habits. used to vs. would, the traps that trip Mexican speakers, and the drill that fixes it."
 >
-  <!-- Lesson hero -->
+  <!-- Hero -->
   <section class="bg-gradient-to-b from-slate-900 to-emerald-950 pt-28 pb-16 md:pt-36 md:pb-20">
     <div class="site-container mx-auto px-4 text-white">
       <div class="max-w-3xl">
         <div class="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-3">
-          <Map class="w-4 h-4" />
-          Lesson 5 of 5 — The Capstone
+          <Repeat class="w-4 h-4" />
+          Lesson 5 of 6
         </div>
         <h1
           class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
           style="font-family: 'Noto Sans KR', sans-serif;"
         >
-          The Story Flow Map
+          Used to / Would
         </h1>
-        <p class="text-2xl text-emerald-300 italic font-light mb-4">Putting all four together — like a native.</p>
+        <p class="text-2xl text-emerald-300 italic font-light mb-4">It was a habit. It was repeated. It was who I was back then.</p>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          You've learned the four tenses. Now you have to <em>choose</em> between them in real time —
-          while your boss is waiting for an answer, while your client is on the call, while the words are coming out of your mouth.
-          This lesson teaches the decision tree native speakers run unconsciously, and how to install it in your own instinct.
+          Spanish has <em>solía</em> and the <em>imperfecto</em> for the way things <em>used to be</em>.
+          English has two structures — <strong>used to</strong> and habitual <strong>would</strong> — and they don't behave the same.
+          Mistake them and you sound flat (everything in Past Simple) or unintentionally conditional ("I would going" / "I would be"). Master them and your past stories get texture.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
-            <Map class="w-3.5 h-3.5" /> The Decision Tree
+            <Repeat class="w-3.5 h-3.5" /> The Habitual Loop
           </span>
           <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
-            <Sparkles class="w-3.5 h-3.5" /> Worked Example
+            <Sparkles class="w-3.5 h-3.5" /> Two Forms, One Idea
           </span>
           <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium">
-            <Trophy class="w-3.5 h-3.5" /> Course Capstone
+            <AlertTriangle class="w-3.5 h-3.5" /> Spanish-Speaker Traps
           </span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 1: The Story Flow Map -->
+  <!-- Section 1: The Mental Picture -->
   <section class="py-16 md:py-20 bg-white" id="section-1">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-2">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">1</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Story Flow Map</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Mental Picture</h2>
         </div>
-        <p class="text-slate-500 mb-8 ml-11">All four tenses on one mental canvas. The shape of the story tells you which one to reach for.</p>
+        <p class="text-slate-500 mb-8 ml-11">Before any grammar. Just the image.</p>
 
-        <div class="space-y-4">
-          <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6 flex items-start gap-4">
-            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500 text-white shrink-0">
-              <Clock class="w-6 h-6" />
+        <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+          <p>
+            Past Simple is a snapshot. Past Continuous is a paused frame. Past Perfect is a layer below another past event. <strong>Used to / would is a loop on repeat.</strong>
+          </p>
+          <p>
+            Picture a routine you had ten years ago. Not one specific morning — the whole shape of mornings, replayed over and over. Coffee at 6am. Same news on the radio. Same walk to the train. The brain doesn't store each instance — it stores the pattern. <strong>That pattern is what these two forms describe.</strong>
+          </p>
+
+          <div class="rounded-2xl border-2 border-emerald-300 bg-emerald-50 p-8 my-8">
+            <div class="flex items-center gap-3 mb-4">
+              <Eye class="w-6 h-6 text-emerald-700" />
+              <h3 class="text-xl font-bold text-slate-900">Your Mental Image</h3>
             </div>
-            <div class="flex-1">
-              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">Past Simple — The Snapshot</p>
-              <h3 class="text-lg font-bold text-slate-900 mb-1">Closed box. Sealed time.</h3>
-              <p class="text-sm text-slate-700">A single completed event, or a sequence of events, with the time window sealed. Triggered by words like <em>yesterday, last week, in 2019</em>.</p>
-            </div>
+            <p class="text-slate-800 mb-3">A loop. A pattern. A repeated scene from <em>back then</em> that doesn't happen anymore.</p>
+            <p class="text-slate-700 text-base">If the action <em>repeated</em>, or the situation <em>persisted</em>, in a past period that's now closed — you want this lesson's structures, not plain Past Simple.</p>
           </div>
 
-          <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6 flex items-start gap-4">
-            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500 text-white shrink-0">
-              <Film class="w-6 h-6" />
-            </div>
-            <div class="flex-1">
-              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">Past Continuous — The Movie</p>
-              <h3 class="text-lg font-bold text-slate-900 mb-1">In motion. Mid-action. Background scene.</h3>
-              <p class="text-sm text-slate-700">An action that <em>was happening</em> when something else cut in. The camera frozen on a moment still unfolding. Triggered by <em>while, as, when (+ snapshot)</em>.</p>
-            </div>
-          </div>
-
-          <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6 flex items-start gap-4">
-            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500 text-white shrink-0">
-              <LinkIcon class="w-6 h-6" />
-            </div>
-            <div class="flex-1">
-              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">Present Perfect — The Thread</p>
-              <h3 class="text-lg font-bold text-slate-900 mb-1">Past leaks into now.</h3>
-              <p class="text-sm text-slate-700">The time window is still open, OR the action is still going, OR the experience lives in you. Triggered by <em>today, this week, for/since, ever, never, already, just</em>.</p>
-            </div>
-          </div>
-
-          <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6 flex items-start gap-4">
-            <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500 text-white shrink-0">
-              <Layers class="w-6 h-6" />
-            </div>
-            <div class="flex-1">
-              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">Past Perfect — The Layer Below</p>
-              <h3 class="text-lg font-bold text-slate-900 mb-1">Earlier than the main past moment.</h3>
-              <p class="text-sm text-slate-700">A second past event that happened <em>before</em> the main past moment of your story. Triggered by <em>by the time, before, after, already (+ had), until</em>.</p>
-            </div>
-          </div>
+          <p>
+            The contrast that matters most: <strong>Past Simple is one event</strong> ("Last Sunday I called my grandmother"). <strong>Used to / would is the habit</strong> ("Every Sunday, I used to call her" / "Every Sunday, I would call her"). Same verb. Same person. Different shape of time.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 2: The Decision Tree -->
+  <!-- Section 2: The Two Forms -->
   <section class="py-16 md:py-20 bg-slate-50" id="section-2">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-2">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">2</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Decision Tree</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Two Forms. One Idea. Different Rules.</h2>
         </div>
-        <p class="text-slate-500 mb-8 ml-11">Four questions, in order. Run them in your head until the instinct takes over. This is what native speakers do unconsciously every time they open their mouth.</p>
+        <p class="text-slate-500 mb-8 ml-11"><em>Used to</em> and habitual <em>would</em> both describe the past loop. But they don't overlap completely.</p>
 
-        <div class="space-y-4">
-          <div class="bg-white rounded-xl border-2 border-slate-200 p-6">
-            <p class="text-xs font-bold uppercase tracking-wider text-amber-600 mb-2">Question 1</p>
-            <h3 class="text-lg font-bold text-slate-900 mb-3">Did this event happen <em>before</em> another past moment in my story?</h3>
-            <div class="grid grid-cols-2 gap-3 text-sm">
-              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
-                <p class="font-semibold text-emerald-800">Yes →</p>
-                <p class="text-slate-700">Past Perfect (<em>had + pp</em>)</p>
-              </div>
-              <div class="bg-slate-50 border border-slate-200 rounded-lg p-3">
-                <p class="font-semibold text-slate-600">No →</p>
-                <p class="text-slate-700">Continue to Question 2</p>
-              </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-2xl border-2 border-emerald-300 p-7">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">used to + V</h3>
+            <p class="text-sm text-emerald-700 font-mono mb-3">Works for actions AND states.</p>
+            <p class="text-slate-700 text-sm mb-4">The flexible one. Covers anything that was repeatedly true or repeatedly done in the past.</p>
+            <div class="bg-emerald-50 rounded-lg p-3 border border-emerald-200 text-sm space-y-2">
+              <p><strong>State:</strong> "I <strong>used to live</strong> in Guadalajara." (a situation that persisted)</p>
+              <p><strong>Action:</strong> "I <strong>used to play</strong> soccer every Saturday." (a habit)</p>
+              <p><strong>Feeling:</strong> "She <strong>used to love</strong> chocolate." (an old preference)</p>
             </div>
           </div>
 
-          <div class="bg-white rounded-xl border-2 border-slate-200 p-6">
-            <p class="text-xs font-bold uppercase tracking-wider text-amber-600 mb-2">Question 2</p>
-            <h3 class="text-lg font-bold text-slate-900 mb-3">Is the moment still connected to now (open time, still going, life experience)?</h3>
-            <div class="grid grid-cols-2 gap-3 text-sm">
-              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
-                <p class="font-semibold text-emerald-800">Yes →</p>
-                <p class="text-slate-700">Present Perfect (<em>have/has + pp</em>)</p>
-              </div>
-              <div class="bg-slate-50 border border-slate-200 rounded-lg p-3">
-                <p class="font-semibold text-slate-600">No →</p>
-                <p class="text-slate-700">Continue to Question 3</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-xl border-2 border-slate-200 p-6">
-            <p class="text-xs font-bold uppercase tracking-wider text-amber-600 mb-2">Question 3</p>
-            <h3 class="text-lg font-bold text-slate-900 mb-3">Was the action in progress when something else happened, or setting the scene?</h3>
-            <div class="grid grid-cols-2 gap-3 text-sm">
-              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
-                <p class="font-semibold text-emerald-800">Yes →</p>
-                <p class="text-slate-700">Past Continuous (<em>was/were + verb-ing</em>)</p>
-              </div>
-              <div class="bg-slate-50 border border-slate-200 rounded-lg p-3">
-                <p class="font-semibold text-slate-600">No →</p>
-                <p class="text-slate-700">Continue to Question 4</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-xl border-2 border-emerald-400 p-6 shadow-md">
-            <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Default — Question 4</p>
-            <h3 class="text-lg font-bold text-slate-900 mb-3">Single closed event in sealed past time?</h3>
-            <div class="grid grid-cols-1 gap-3 text-sm">
-              <div class="bg-emerald-100 border border-emerald-300 rounded-lg p-3">
-                <p class="font-semibold text-emerald-800">→ Past Simple (<em>did, went, worked</em>)</p>
-                <p class="text-slate-700 mt-1">If you've run through the first three questions and none of them fit, you're almost always in Past Simple territory. It's the workhorse — but only when nothing else applies.</p>
-              </div>
+          <div class="bg-white rounded-2xl border-2 border-amber-400 p-7">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">would + V</h3>
+            <p class="text-sm text-amber-700 font-mono mb-3">Works for repeated ACTIONS only.</p>
+            <p class="text-slate-700 text-sm mb-4">The restricted one. Use it for things that <em>happened</em> repeatedly — but never for states like <em>live</em>, <em>have</em>, <em>be</em>, <em>love</em>.</p>
+            <div class="bg-amber-50 rounded-lg p-3 border border-amber-200 text-sm space-y-2">
+              <p>✓ "Every Sunday, I <strong>would call</strong> my grandmother."</p>
+              <p>✓ "When we were kids, we <strong>would walk</strong> to school together."</p>
+              <p>✗ <span class="text-red-600">"I would live in Guadalajara"</span> — sounds like a conditional. Use <em>used to live</em>.</p>
             </div>
           </div>
         </div>
 
-        <div class="mt-8 bg-amber-50 border-2 border-amber-300 rounded-xl p-5">
-          <p class="text-sm text-amber-900"><strong>The Mexican-Speaker Inversion Problem:</strong> Spanish speakers typically run this decision tree <em>in reverse</em> — defaulting to Past Simple and only switching to another tense when forced. Native English speakers run it forward — checking for Past Perfect, Present Perfect, and Past Continuous <em>first</em>, and falling back to Past Simple only when none of the first three apply. Reversing the order of these checks in your head is the single biggest fluency upgrade in this course.</p>
+        <div class="mt-8 rounded-2xl bg-slate-900 text-white p-7">
+          <p class="text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">The shortcut rule</p>
+          <p class="text-lg leading-relaxed">
+            If the verb is something <em>you do</em> (call, walk, run, drink, ask), both <strong>used to</strong> and <strong>would</strong> work.<br />
+            If the verb is something <em>you are</em> or <em>you have</em> (live, be, love, know, own), only <strong>used to</strong> works.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 3: A Worked Example -->
+  <!-- Section 3: Forms in detail (negative, question) -->
   <section class="py-16 md:py-20 bg-white" id="section-3">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-2">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">3</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">A Worked Example</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Negative & Question Forms</h2>
         </div>
-        <p class="text-slate-500 mb-8 ml-11">One real-world Mexican corporate story. All four tenses, used naturally, with the reasoning behind every choice.</p>
+        <p class="text-slate-500 mb-8 ml-11">This is where Spanish speakers slip — the "d" drops off when you add <em>did</em>.</p>
 
-        <div class="bg-slate-900 text-white rounded-2xl p-6 md:p-8 mb-6">
-          <p class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-3">The Full Story</p>
-          <div class="flex items-start gap-3">
-            <p class="text-lg leading-relaxed text-slate-100 flex-1">
-              "Last Tuesday morning, I <span class="bg-cyan-500/30 text-cyan-200 px-1.5 py-0.5 rounded">was preparing</span> the quarterly presentation when my CEO <span class="bg-emerald-500/30 text-emerald-200 px-1.5 py-0.5 rounded">called</span>. She <span class="bg-emerald-500/30 text-emerald-200 px-1.5 py-0.5 rounded">told</span> me she <span class="bg-amber-500/30 text-amber-200 px-1.5 py-0.5 rounded">had reviewed</span> the previous version the night before and <span class="bg-emerald-500/30 text-emerald-200 px-1.5 py-0.5 rounded">wasn't</span> happy with the numbers. By the time I <span class="bg-emerald-500/30 text-emerald-200 px-1.5 py-0.5 rounded">got off</span> the phone, the team <span class="bg-amber-500/30 text-amber-200 px-1.5 py-0.5 rounded">had already started</span> rebuilding the slides. I <span class="bg-violet-500/30 text-violet-200 px-1.5 py-0.5 rounded">have presented</span> the new version twice this week, and so far the feedback <span class="bg-violet-500/30 text-violet-200 px-1.5 py-0.5 rounded">has been</span> positive."
-            </p>
-            <AudioButton client:visible text="Last Tuesday morning, I was preparing the quarterly presentation when my CEO called. She told me she had reviewed the previous version the night before and wasn't happy with the numbers. By the time I got off the phone, the team had already started rebuilding the slides. I have presented the new version twice this week, and so far the feedback has been positive." lang="en-US" size="md" />
+        <div class="space-y-5">
+          <div class="rounded-xl border-2 border-emerald-300 bg-emerald-50/60 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Positive</p>
+            <p class="text-slate-800">"I <strong>used to</strong> drink coffee every morning."</p>
           </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-3 mb-6">
-          <div class="flex items-center gap-2 text-sm"><span class="bg-cyan-500/30 text-cyan-700 px-1.5 py-0.5 rounded text-xs font-semibold">Past Continuous</span></div>
-          <div class="flex items-center gap-2 text-sm"><span class="bg-emerald-500/30 text-emerald-700 px-1.5 py-0.5 rounded text-xs font-semibold">Past Simple</span></div>
-          <div class="flex items-center gap-2 text-sm"><span class="bg-amber-500/30 text-amber-700 px-1.5 py-0.5 rounded text-xs font-semibold">Past Perfect</span></div>
-          <div class="flex items-center gap-2 text-sm"><span class="bg-violet-500/30 text-violet-700 px-1.5 py-0.5 rounded text-xs font-semibold">Present Perfect</span></div>
-        </div>
-
-        <h3 class="text-xl font-bold text-slate-900 mb-4">The reasoning, sentence by sentence</h3>
-        <div class="space-y-3">
-          <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
-            <p class="text-sm text-slate-700"><strong class="text-slate-900">"I was preparing the presentation when my CEO called."</strong></p>
-            <p class="text-sm text-slate-600 mt-1">Preparing was the background scene already in motion. The call cut into it. Classic Past Continuous + Past Simple interruption pattern (Lesson 2).</p>
+          <div class="rounded-xl border-2 border-amber-300 bg-amber-50/60 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">Negative (notice — no <em>'d'</em> after <em>didn't</em>)</p>
+            <p class="text-slate-800">"I <strong>didn't use to</strong> drink coffee."</p>
+            <p class="text-sm text-slate-500 mt-1">Not "didn't <s>used</s> to." The <em>did</em> already carries the past — the verb drops to <em>use</em>.</p>
           </div>
-          <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
-            <p class="text-sm text-slate-700"><strong class="text-slate-900">"She told me she had reviewed the previous version the night before."</strong></p>
-            <p class="text-sm text-slate-600 mt-1">The telling happened in one past moment. The reviewing happened <em>before</em> that — the layer below. Past Perfect for the earlier event (Lesson 4).</p>
-          </div>
-          <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
-            <p class="text-sm text-slate-700"><strong class="text-slate-900">"By the time I got off the phone, the team had already started rebuilding."</strong></p>
-            <p class="text-sm text-slate-600 mt-1">"By the time" trigger again. The team's start happened before my hanging up. Past Perfect for the earlier; Past Simple for the anchor (Lesson 4).</p>
-          </div>
-          <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
-            <p class="text-sm text-slate-700"><strong class="text-slate-900">"I have presented the new version twice this week."</strong></p>
-            <p class="text-sm text-slate-600 mt-1">"This week" is still open. The presentations might continue. The thread runs from each presentation forward into the still-open week. Present Perfect (Lesson 3).</p>
-          </div>
-          <div class="bg-slate-50 border border-slate-200 rounded-lg p-4">
-            <p class="text-sm text-slate-700"><strong class="text-slate-900">"...and so far the feedback has been positive."</strong></p>
-            <p class="text-sm text-slate-600 mt-1">"So far" is the giveaway — the situation is ongoing. The feedback might shift. Present Perfect again (Lesson 3).</p>
+          <div class="rounded-xl border-2 border-amber-300 bg-amber-50/60 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">Question</p>
+            <p class="text-slate-800">"<strong>Did</strong> you <strong>use to</strong> drink coffee?"</p>
+            <p class="text-sm text-slate-500 mt-1">Same rule. <em>Did</em> first, then <em>use to</em> (no 'd').</p>
           </div>
         </div>
 
-        <div class="mt-6 bg-emerald-50 border border-emerald-200 rounded-xl p-5">
-          <p class="text-sm text-emerald-900"><strong>What a Mexican speaker would typically default to:</strong> "Last Tuesday I prepared the presentation when my CEO called. She told me she reviewed it. I presented the new version twice this week." Same story — but flat, with the time relationships flattened. The native version above carries information that the flattened version simply <em>cannot</em>.</p>
+        <div class="mt-8 bg-slate-50 rounded-xl border border-slate-200 p-5">
+          <p class="text-sm text-slate-700">
+            <strong class="text-slate-900">For <em>would</em>:</strong> the negative ("wouldn't") and question forms ("Would you call her every Sunday?") usually <em>aren't</em> used for the habitual sense — they sound more like the conditional. Stick to <strong>didn't use to</strong> and <strong>Did you use to</strong> for negatives and questions about old habits.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 4: Spanish-Speaker Synthesis Traps -->
+  <!-- Section 4: The Mexican Traps -->
   <section class="py-16 md:py-20 bg-slate-50" id="section-4">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-2">
-          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">4</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Synthesis Traps</h2>
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Four Traps that Trip Mexican Speakers</h2>
         </div>
-        <p class="text-slate-500 mb-8 ml-11">Three high-level errors that show up when combining tenses, even after you've mastered each one individually. Tap the speaker on the correct version to hear the right form.</p>
+        <p class="text-slate-500 mb-8 ml-11">These four account for almost every "used to / would" mistake in real conversation.</p>
 
-        <div class="space-y-5">
-          <!-- Trap 1: Past Simple cascade -->
-          <div class="bg-white rounded-xl border border-slate-200 p-6">
-            <h3 class="font-bold text-slate-900 mb-3">Trap 1 — The Past Simple cascade</h3>
-            <div class="space-y-2">
-              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"I went to the meeting. The CEO told me she reviewed the proposal. I sent the new version yesterday."</em></span></p>
-              <div class="flex items-start gap-2">
-                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                <span class="text-slate-800 flex-1"><em>"I <strong>went</strong> to the meeting. The CEO <strong>told</strong> me she <strong>had reviewed</strong> the proposal. I <strong>sent</strong> the new version yesterday."</em></span>
-                <AudioButton client:visible text="I went to the meeting. The CEO told me she had reviewed the proposal. I sent the new version yesterday." lang="en-US" size="sm" />
+        <div class="space-y-4">
+          <div class="bg-white rounded-2xl border-2 border-red-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-1" />
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-red-700">Trap 1 — Confusing habitual <em>would</em> with conditional <em>would</em></p>
+                <p class="text-slate-800 mt-1">"I would be a teacher when I was young."</p>
+                <p class="text-sm text-slate-500 mt-2">This sounds <em>conditional</em> ("would be" if X). For an old state, use <strong>used to be</strong>: "I <strong>used to be</strong> a teacher when I was young."</p>
               </div>
             </div>
-            <p class="text-sm text-slate-600 mt-3">Putting every verb in Past Simple is the Mexican default. It flattens the timeline. The review happened <em>before</em> the telling — that needs Past Perfect. Forgetting it isn't grammatically wrong, but it loses information and signals "non-native" to the listener.</p>
           </div>
 
-          <!-- Trap 2: Tense whiplash -->
-          <div class="bg-white rounded-xl border border-slate-200 p-6">
-            <h3 class="font-bold text-slate-900 mb-3">Trap 2 — Tense whiplash within a single story</h3>
-            <div class="space-y-2">
-              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"Yesterday I went to the office and I have seen my colleague. We discussed the project."</em></span></p>
-              <div class="flex items-start gap-2">
-                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                <span class="text-slate-800 flex-1"><em>"Yesterday I <strong>went</strong> to the office and <strong>saw</strong> my colleague. We <strong>discussed</strong> the project."</em></span>
-                <AudioButton client:visible text="Yesterday I went to the office and saw my colleague. We discussed the project." lang="en-US" size="sm" />
+          <div class="bg-white rounded-2xl border-2 border-red-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-1" />
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-red-700">Trap 2 — Adding 'd' after didn't</p>
+                <p class="text-slate-800 mt-1">"I didn't <s>used</s> to like coffee."</p>
+                <p class="text-sm text-slate-500 mt-2">The <em>did</em> already carries the past. Drop the 'd': "I <strong>didn't use to</strong> like coffee."</p>
               </div>
             </div>
-            <p class="text-sm text-slate-600 mt-3">"Yesterday" closes the box. Every verb in the sentence has to live inside that closed box — Past Simple all the way through. Drifting into Present Perfect mid-story is the classic "by feel, not by picture" mistake. The mental discipline is to lock the time window first, then choose the tense to match.</p>
           </div>
 
-          <!-- Trap 3: Skipping the layer marker -->
-          <div class="bg-white rounded-xl border border-slate-200 p-6">
-            <h3 class="font-bold text-slate-900 mb-3">Trap 3 — Skipping the layer marker when order matters</h3>
-            <div class="space-y-2">
-              <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"When I called him, he already left the office. He was driving home."</em></span></p>
-              <div class="flex items-start gap-2">
-                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                <span class="text-slate-800 flex-1"><em>"When I called him, he <strong>had</strong> already <strong>left</strong> the office. He <strong>was driving</strong> home."</em></span>
-                <AudioButton client:visible text="When I called him, he had already left the office. He was driving home." lang="en-US" size="sm" />
+          <div class="bg-white rounded-2xl border-2 border-red-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-1" />
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-red-700">Trap 3 — Mapping every <em>imperfecto</em> to <em>used to</em></p>
+                <p class="text-slate-800 mt-1">"It was raining when I arrived" ≠ "It used to rain when I arrived."</p>
+                <p class="text-sm text-slate-500 mt-2"><em>Imperfecto</em> covers BOTH habitual ("I used to walk to school") AND in-progress ("I was walking to school when…"). The choice in English depends on whether it's a <em>habit</em> (used to / would) or a <em>scene mid-action</em> (Past Continuous — Lesson 2).</p>
               </div>
             </div>
-            <p class="text-sm text-slate-600 mt-3">The leaving happened before the call (Past Perfect). The driving was in progress when I called (Past Continuous). The call itself was the anchor moment (Past Simple). Three different tenses in two sentences — and they all carry meaning. Dropping any of them flattens the picture.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl border-2 border-red-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-1" />
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-red-700">Trap 4 — Using -ing after <em>used to</em></p>
+                <p class="text-slate-800 mt-1">"I used to <s>working</s> at Telmex."</p>
+                <p class="text-sm text-slate-500 mt-2"><strong>Used to + base verb.</strong> "I used to <strong>work</strong> at Telmex." (The form <em>be used to + V-ing</em> means something completely different — being <em>accustomed</em> — and isn't past at all.)</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 5: Mixed Check Yourself -->
+  <!-- Section 5: Used to vs Past Simple -->
   <section class="py-16 md:py-20 bg-white" id="section-5">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-2">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500 text-white text-sm font-bold">5</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Mixed Check Yourself</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">"Used to" vs. Past Simple — The Choose-It Drill</h2>
         </div>
-        <p class="text-slate-500 mb-8 ml-11">Five scenes spanning all four tenses. Run the decision tree from Question 1 each time. The pattern is what builds the instinct.</p>
+        <p class="text-slate-500 mb-8 ml-11">Both work in many sentences. The choice is about <em>shape</em> — repeated pattern vs. single event.</p>
 
-        <div class="space-y-4">
-          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
-            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
-              <span><strong>1.</strong> <em>"I ___ (lived / have lived / was living) in Guadalajara since 2020."</em></span>
-              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
-            </summary>
-            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
-              <p class="text-slate-800"><strong>Answer: have lived.</strong> "Since 2020" + still living there = the thread runs to now. Present Perfect (Lesson 3).</p>
+        <div class="bg-emerald-50 rounded-2xl border-2 border-emerald-300 p-6 md:p-8">
+          <div class="space-y-4">
+            <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">"___ I ___ in Monterrey for three years."</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>I lived</strong> — a closed period with a specific duration → Past Simple.</p>
             </div>
-          </details>
-
-          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
-            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
-              <span><strong>2.</strong> <em>"By the time the meeting started, I ___ (forgot / had forgotten / have forgotten / was forgetting) my notes at home."</em></span>
-              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
-            </summary>
-            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
-              <p class="text-slate-800"><strong>Answer: had forgotten.</strong> "By the time" trigger. The forgetting happened before the meeting started. Past Perfect for the earlier event (Lesson 4).</p>
+            <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">"___ When I was a kid, I ___ in Monterrey."</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>used to live</strong> — describing an old state with no duration ("when I was a kid" → vague past period).</p>
             </div>
-          </details>
-
-          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
-            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
-              <span><strong>3.</strong> <em>"I ___ (drove / was driving) home when I ___ (saw / had seen) the accident."</em></span>
-              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
-            </summary>
-            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
-              <p class="text-slate-800"><strong>Answer: was driving / saw.</strong> The driving was the background scene. The seeing was the interruption event. Classic Past Continuous + Past Simple (Lesson 2).</p>
+            <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">"Last Sunday, I ___ my grandmother."</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>called</strong> — one specific event → Past Simple.</p>
             </div>
-          </details>
-
-          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
-            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
-              <span><strong>4.</strong> <em>Your boss asks "Have you eaten?" at 2pm. What's the natural reply: "No, I didn't" or "No, I haven't"?</em></span>
-              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
-            </summary>
-            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
-              <p class="text-slate-800"><strong>Answer: "No, I haven't."</strong> The question was in Present Perfect — the time window is still open (you might still eat). Mirror the tense in your reply. "No, I didn't" would sound like the lunch window has already closed (Lesson 3, the Mexican Professional Test).</p>
+            <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">"Every Sunday, I ___ my grandmother."</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>used to call</strong> OR <strong>would call</strong> — the repeated habit. Both work because <em>call</em> is an action.</p>
             </div>
-          </details>
-
-          <details class="bg-slate-50 rounded-xl border border-slate-200 group">
-            <summary class="cursor-pointer p-5 list-none font-medium text-slate-900 flex items-center justify-between">
-              <span><strong>5.</strong> <em>"She told me she ___ (worked / had worked / has worked) in Mexico City for five years before she ___ (moved / had moved) to Monterrey."</em></span>
-              <span class="text-emerald-600 text-sm group-open:rotate-180 transition-transform">▼</span>
-            </summary>
-            <div class="px-5 pb-5 border-t border-slate-200 pt-4">
-              <p class="text-slate-800"><strong>Answer: had worked / moved.</strong> Two past events in a row, with order matters. The Mexico City years happened before the Monterrey move. Past Perfect for the earlier event (worked), Past Simple for the main moment (moved). (Lesson 4.)</p>
+            <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">"She ___ coffee, but now she drinks tea."</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>used to drink</strong> — past habit explicitly contrasted with the present → screams for <em>used to</em>.</p>
             </div>
-          </details>
+            <div class="grid md:grid-cols-2 gap-3 items-start">
+              <p class="text-slate-700">"Back then, we ___ broke."</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>used to be</strong> — state. <em>Would be</em> is wrong here (sounds conditional).</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Course Complete + Recap -->
-  <section class="py-16 md:py-20 bg-slate-50 border-t border-slate-200">
+  <!-- Wrap-up -->
+  <section class="py-16 md:py-20 bg-slate-50">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-10">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500 text-white mb-4">
-            <Trophy class="w-8 h-8" />
-          </div>
-          <h2 class="text-3xl font-bold text-slate-900 mb-3">Course Complete.</h2>
-          <p class="text-lg text-slate-600">You now have the four mental images and the decision tree that runs them.</p>
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Lesson 5 Wrap-Up</h2>
+          <p class="text-lg text-slate-600">Take the five rules below into your next conversation.</p>
         </div>
-
         <div class="bg-white rounded-2xl border border-slate-200 p-8 mb-10">
-          <h3 class="text-xl font-bold text-slate-900 mb-4">The four images, one last time</h3>
           <ul class="space-y-3 text-slate-700">
-            <li class="flex gap-3"><Clock class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Past Simple</strong> — closed box, sealed time, a snapshot.</span></li>
-            <li class="flex gap-3"><Film class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Past Continuous</strong> — a movie running in the background, the scene mid-motion.</span></li>
-            <li class="flex gap-3"><LinkIcon class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Present Perfect</strong> — a thread from the past to now, still alive.</span></li>
-            <li class="flex gap-3"><Layers class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Past Perfect</strong> — the layer below, an event earlier than the main past moment.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Used to / would = the past loop.</strong> Repeated actions or old states. The English version of <em>solía</em> and habitual <em>imperfecto</em>.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Used to</strong> = states + actions. <strong>Would</strong> = actions only. "Would be" / "would live" / "would have" almost always sound conditional, not habitual.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>After <em>didn't</em> and <em>did</em>, drop the 'd'.</strong> "I <em>didn't use to</em>", "<em>Did you use to</em>".</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Always base verb after <em>used to</em>.</strong> Never -ing in the past sense ("used to working" is wrong for past habit).</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Imperfecto splits into two English tenses.</strong> Habit → used to / would. Mid-action scene → Past Continuous (Lesson 2). Don't conflate them.</span></li>
           </ul>
         </div>
 
-        <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6 mb-10">
-          <div class="flex items-start gap-3">
-            <Sparkles class="w-6 h-6 text-emerald-700 shrink-0 mt-0.5" />
-            <div>
-              <h3 class="font-bold text-slate-900 mb-2">What changes from here</h3>
-              <p class="text-slate-700 text-sm mb-2">The grammar is the easy part. The hard part is rewiring the instinct — running the decision tree forward (Past Perfect first, Past Simple last) instead of in reverse.</p>
-              <p class="text-slate-700 text-sm">Listen to native English speakers for a week with this map in mind. You'll start hearing the tense choices native speakers make instinctively — and the choices you've been missing. The bonuses (still being released) will sharpen the trickiest verb pairs: <em>knew vs. found out, there was vs. there has been, fue vs. era equivalents</em>, plus the 30-phrase Confidence Builder for jumping into past-tense stories effortlessly.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cross-link to corporate -->
-        <div class="bg-white rounded-2xl border-2 border-emerald-300 p-8 mb-10">
-          <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Ready for the next level?</p>
-          <h3 class="text-2xl font-bold text-slate-900 mb-3">Bring this method into a real coaching program</h3>
-          <p class="text-slate-700 mb-5">If you're an HR director or executive looking to upgrade your management team's English, the same visualization-first method that powered this course is the foundation of the 12-week Business English program — 1-on-1 coaching with a native New Yorker, structured around real presentations your team will deliver under peer-pressure conditions.</p>
-          <Button href="/en/services/corporate-package/" variant="primary" size="lg">
-            See the corporate program
+        <div class="text-center">
+          <p class="text-slate-600 mb-6">Final lesson: <strong class="text-slate-900">The Story Flow Map</strong> — combining all the past tenses you've learned and choosing each one in real time, mid-sentence.</p>
+          <Button href="/en/course/past-tenses/lesson-6/" variant="primary" size="lg">
+            Lesson 6: The Story Flow Map
             <ArrowRight class="w-5 h-5 ml-1" />
           </Button>
-        </div>
-
-        <div class="text-center">
-          <div class="flex flex-wrap gap-4 justify-center">
+          <div class="mt-6 flex flex-wrap gap-4 justify-center">
             <a
               href="/en/course/past-tenses/lesson-4/"
               class="text-sm text-slate-500 hover:text-emerald-700 underline underline-offset-2"
@@ -437,16 +314,31 @@ const tkey = "course/past-tenses/lesson-5" as const;
             >
               Course overview
             </a>
-            <span class="text-slate-300">|</span>
-            <a
-              href="/en/courses/"
-              class="text-sm text-emerald-700 hover:text-emerald-800 underline underline-offset-2"
-            >
-              All free courses
-            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Lesson 5: Used to / Would — The Habitual Past",
+    "description": "The English equivalent of Spanish solia and the imperfecto for old habits and states. Used to vs would, four Mexican-speaker traps, and a choose-it drill against Past Simple.",
+    "learningResourceType": "Lesson",
+    "educationalLevel": "Intermediate to Advanced",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "url": "https://www.nyenglishteacher.com/en/course/past-tenses/lesson-5/",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Master English Past Tenses — Free Master Class",
+      "url": "https://www.nyenglishteacher.com/en/course/past-tenses/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/en/about/"
+    }
+  })} />
 </Base>
