@@ -144,7 +144,9 @@ export type TKey =
   | "course/past-tenses/lesson-3"
   | "course/past-tenses/lesson-4"
   | "course/past-tenses/lesson-5"
+  | "course/past-tenses/lesson-6"
   | "course/past-tenses/cheat-sheet"
+  | "course/past-tenses/practice-plan"
   | "course/past-tenses/top-10-confused-pairs"
   | "course/past-tenses/knew-vs-found-out"
   | "course/past-tenses/story-openers"
@@ -308,7 +310,10 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/past-tenses/lesson-3": "/en/course/past-tenses/lesson-3/",
     "course/past-tenses/lesson-4": "/en/course/past-tenses/lesson-4/",
     "course/past-tenses/lesson-5": "/en/course/past-tenses/lesson-5/",
+    "course/past-tenses/lesson-6": "/en/course/past-tenses/lesson-6/",
     "course/past-tenses/cheat-sheet": "/en/course/past-tenses/cheat-sheet/",
+    "course/past-tenses/practice-plan":
+      "/en/course/past-tenses/practice-plan/",
     "course/past-tenses/top-10-confused-pairs":
       "/en/course/past-tenses/top-10-confused-pairs/",
     "course/past-tenses/knew-vs-found-out":
@@ -479,7 +484,10 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/past-tenses/lesson-3": "/es/curso/tiempos-del-pasado/leccion-3/",
     "course/past-tenses/lesson-4": "/es/curso/tiempos-del-pasado/leccion-4/",
     "course/past-tenses/lesson-5": "/es/curso/tiempos-del-pasado/leccion-5/",
+    "course/past-tenses/lesson-6": "/es/curso/tiempos-del-pasado/leccion-6/",
     "course/past-tenses/cheat-sheet": "/es/curso/tiempos-del-pasado/guia-rapida/",
+    "course/past-tenses/practice-plan":
+      "/es/curso/tiempos-del-pasado/plan-de-practica/",
     "course/past-tenses/top-10-confused-pairs":
       "/es/curso/tiempos-del-pasado/top-10-pares-confundidos/",
     "course/past-tenses/knew-vs-found-out":
@@ -580,7 +588,9 @@ export function getAllTKeys(): TKey[] {
     "course/past-tenses/lesson-3",
     "course/past-tenses/lesson-4",
     "course/past-tenses/lesson-5",
+    "course/past-tenses/lesson-6",
     "course/past-tenses/cheat-sheet",
+    "course/past-tenses/practice-plan",
     "course/past-tenses/top-10-confused-pairs",
     "course/past-tenses/knew-vs-found-out",
     "course/past-tenses/story-openers",

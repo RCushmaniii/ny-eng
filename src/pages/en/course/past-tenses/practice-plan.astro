@@ -1,0 +1,436 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Calendar,
+  Headphones,
+  BookOpen,
+  Mic,
+  Tv,
+  Users,
+  Sparkles,
+  CheckCircle2,
+  Printer,
+  Coffee,
+  PenLine,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/past-tenses/practice-plan" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Your 30-Day Past Tenses Practice Plan | NY English Teacher"
+  description="The course taught you the rules. This plan installs them in real speech: daily drills, what to watch and read, how to find a practice buddy."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-emerald-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-3">
+          <Calendar class="w-4 h-4" />
+          Bonus 6 · Make It Stick
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Your 30-Day Past Tenses Practice Plan
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          You learned the rules. You drilled the patterns. Now the real work: <em>getting them into your speech</em>.
+          A practical, no-fluff plan for the next 30 days — what to do daily, what to watch, what to read, and who to practice with.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Print this page
+          </button>
+          <a
+            href="/en/course/past-tenses/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Back to the master class
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Real Problem -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">The Gap This Plan Closes</h2>
+        <p class="text-lg text-slate-700 leading-relaxed mb-4">
+          You can finish a course, ace every drill, and still freeze in a real meeting. That's because <em>knowing</em> a tense and <em>reaching for it under pressure</em> are two different skills. The course built the first. This plan builds the second.
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed">
+          Three principles drive the whole plan: <strong>daily exposure</strong> (your ear has to hear the patterns hundreds of times), <strong>daily production</strong> (your mouth has to make them — even alone, even badly), and <strong>weekly conversation</strong> (one real conversation a week, where you'll fail and then improve). Skip any of the three and it doesn't stick.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Daily Stack -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-6 print:mb-3">
+          <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500 text-white shrink-0">
+            <Calendar class="w-5 h-5" />
+          </div>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">The Daily Stack — 10 Minutes</h2>
+            <p class="text-sm text-slate-600 print:hidden">Three drills, stacked. Do them at the same time every day until they're automatic.</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5 print:gap-2">
+          <div class="bg-white rounded-2xl border-2 border-emerald-300 p-6 print:p-3 print:break-inside-avoid">
+            <div class="flex items-center gap-2 mb-3">
+              <PenLine class="w-5 h-5 text-emerald-600" />
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700">Drill 1 · 3 min</p>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">The 3-Sentence Diary</h3>
+            <p class="text-sm text-slate-700 mb-3">Write exactly three sentences about yesterday. Use three different past tenses. Don't translate from Spanish.</p>
+            <div class="bg-emerald-50 rounded-lg p-3 border border-emerald-200 text-xs space-y-1.5 text-slate-700">
+              <p><strong>Past Simple:</strong> "Yesterday I had a meeting with the new client."</p>
+              <p><strong>Past Continuous:</strong> "While I was preparing, the office WiFi went down."</p>
+              <p><strong>Present Perfect:</strong> "I have already followed up with him this morning."</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border-2 border-emerald-300 p-6 print:p-3 print:break-inside-avoid">
+            <div class="flex items-center gap-2 mb-3">
+              <Coffee class="w-5 h-5 text-emerald-600" />
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700">Drill 2 · 3 min</p>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Narrate Your Morning</h3>
+            <p class="text-sm text-slate-700 mb-3">While you make coffee or commute, narrate what you did this morning. <em>Aloud.</em> In English. Whisper if you must. No one is listening.</p>
+            <p class="text-xs text-slate-500 italic">"I woke up at six. I had a coffee. I checked my email — there were already twelve new messages…"</p>
+          </div>
+
+          <div class="bg-white rounded-2xl border-2 border-emerald-300 p-6 print:p-3 print:break-inside-avoid">
+            <div class="flex items-center gap-2 mb-3">
+              <Headphones class="w-5 h-5 text-emerald-600" />
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700">Drill 3 · 4 min</p>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">The Headline Drill</h3>
+            <p class="text-sm text-slate-700 mb-3">Open any English-language news site. Read four headlines aloud and rewrite each one as a full sentence in your head. Headlines drop articles and tense markers — your job is to restore them.</p>
+            <p class="text-xs text-slate-500 italic">Headline: "CEO Resigns After Board Vote" → Full: "The CEO has resigned after the board voted."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Watch -->
+  <section class="py-12 md:py-16 bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-6 print:mb-3">
+          <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-500 text-white shrink-0">
+            <Tv class="w-5 h-5" />
+          </div>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">Watch — With Intention</h2>
+            <p class="text-sm text-slate-600 print:hidden">Passive watching teaches almost nothing. Active watching with this method teaches more than a textbook.</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border-2 border-amber-300 bg-amber-50/50 p-6 md:p-7 print:p-3 mb-6">
+          <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">The Subtitle Trick</p>
+          <p class="text-slate-800 mb-3"><strong>English audio + English subtitles.</strong> Never Spanish subs over English audio — your brain reads instead of listening. With English subs, your ear and eye reinforce each other.</p>
+          <p class="text-sm text-slate-600">Pause whenever you hear a past-tense pattern that catches your ear. Rewind. Say it aloud. That ten-second loop teaches more than ten minutes of passive watching.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5 print:gap-2">
+          <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-3 print:break-inside-avoid">
+            <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Casual / conversational past</p>
+            <ul class="space-y-1.5 text-sm text-slate-700">
+              <li><strong>Friends</strong> — dense Past Simple + Present Perfect. Easy to parse.</li>
+              <li><strong>The Office (US)</strong> — flat, modern American business English.</li>
+              <li><strong>Modern Family</strong> — natural family/work dialogue, lots of "used to" and habitual past.</li>
+              <li><strong>Ted Lasso</strong> — slower-paced, expressive, great for hearing tense shifts.</li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-3 print:break-inside-avoid">
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">Professional / executive past</p>
+            <ul class="space-y-1.5 text-sm text-slate-700">
+              <li><strong>Succession</strong> — high-stakes boardroom English, dense in past-perfect storytelling.</li>
+              <li><strong>The Newsroom</strong> — fast professional speech with clear past-tense narration.</li>
+              <li><strong>Industry (HBO)</strong> — finance vocabulary + natural workplace past.</li>
+              <li><strong>Mad Men</strong> — slower, more careful diction; rich in "used to" and reflective past.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Listen + Read -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 print:gap-3">
+
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500 text-white shrink-0">
+              <Headphones class="w-5 h-5" />
+            </div>
+            <h2 class="text-xl md:text-2xl font-bold text-slate-900 print:text-base">Listen — On Your Commute</h2>
+          </div>
+          <div class="bg-white rounded-2xl border-2 border-emerald-300 p-5 print:p-3 print:break-inside-avoid">
+            <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-3">Podcasts</p>
+            <ul class="space-y-1.5 text-sm text-slate-700 mb-4">
+              <li><strong>NPR's Code Switch</strong> — accessible, conversational past tenses.</li>
+              <li><strong>Planet Money</strong> — short business stories rich in past simple + present perfect.</li>
+              <li><strong>The Daily (NYT)</strong> — 20 minutes of news English. Slower-paced.</li>
+              <li><strong>This American Life</strong> — long-form storytelling; the gold standard for natural past-tense narration.</li>
+            </ul>
+            <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-3">YouTube channels</p>
+            <ul class="space-y-1.5 text-sm text-slate-700">
+              <li><strong>Rachel's English</strong> — pronunciation + clear past-tense breakdowns.</li>
+              <li><strong>Adept English</strong> — listening-first method; great for tense-pattern ear training.</li>
+              <li><strong>Speak English with Vanessa</strong> — slow, deliberate, full transcripts.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-500 text-white shrink-0">
+              <BookOpen class="w-5 h-5" />
+            </div>
+            <h2 class="text-xl md:text-2xl font-bold text-slate-900 print:text-base">Read — 10 Minutes Daily</h2>
+          </div>
+          <div class="bg-white rounded-2xl border-2 border-amber-300 p-5 print:p-3 print:break-inside-avoid">
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-3">News + short-form</p>
+            <ul class="space-y-1.5 text-sm text-slate-700 mb-4">
+              <li><strong>BBC News headlines</strong> — past-tense-dense by design.</li>
+              <li><strong>The Atlantic</strong> short stories — sophisticated past-tense storytelling.</li>
+              <li><strong>NPR daily briefing</strong> — short, professional past tense.</li>
+            </ul>
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-3">Long-form fiction (when you have time)</p>
+            <ul class="space-y-1.5 text-sm text-slate-700">
+              <li>Anything by <strong>Raymond Carver</strong> — minimalist past-tense storytelling.</li>
+              <li><strong>The New Yorker fiction</strong> — weekly short stories, mostly past.</li>
+              <li><strong>Hemingway</strong> short stories — the best Past Simple training in literature.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speak / Practice Buddy -->
+  <section class="py-12 md:py-16 bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-6 print:mb-3">
+          <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500 text-white shrink-0">
+            <Users class="w-5 h-5" />
+          </div>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">Find a Practice Buddy</h2>
+            <p class="text-sm text-slate-600 print:hidden">One real conversation a week beats five hours of solo study. Free options:</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-4 mb-6 print:gap-2">
+          <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-3 print:break-inside-avoid">
+            <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">italki</p>
+            <p class="text-sm text-slate-700">Find a native English speaker who wants to practice Spanish. Trade 30 minutes each. Free.</p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-3 print:break-inside-avoid">
+            <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Tandem</p>
+            <p class="text-sm text-slate-700">Same model as italki but chat-first. Lower barrier to start.</p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-3 print:break-inside-avoid">
+            <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Conversation Exchange</p>
+            <p class="text-sm text-slate-700">Old-school but works. In-person meetups available in most major Mexican cities.</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-slate-900 text-white p-6 md:p-7 print:p-3 print:bg-slate-100 print:text-slate-900">
+          <p class="text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2 print:text-emerald-700">The past-tense buddy prompt</p>
+          <p class="leading-relaxed">
+            Once a week, ask your buddy: <em>"Tell me a story about your worst job interview."</em> Then you tell yours. That single prompt forces every past tense you've learned — Past Simple for events, Past Continuous for the setup, Present Perfect for the reflection ("I've never been so embarrassed"), Past Perfect for the back-story ("I had prepared for the wrong role"). Other prompts that work: "your best vacation", "a time you got lost", "the last meeting that didn't go as planned".
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Storytelling Reps -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6 print:mb-3">
+          <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-500 text-white shrink-0">
+            <Sparkles class="w-5 h-5" />
+          </div>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">The Storytelling Reps</h2>
+            <p class="text-sm text-slate-600 print:hidden">The single most important drill in this whole bonus. Do it twice a week.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border-2 border-amber-300 p-6 md:p-7 print:p-3">
+          <p class="text-slate-700 mb-4">
+            Pick one true story from your life — work, family, anything. Tell it aloud <strong>three times</strong>, each version emphasizing a different tense mix:
+          </p>
+          <ol class="space-y-3 text-slate-700">
+            <li class="flex gap-3">
+              <span class="flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white text-sm font-bold shrink-0">1</span>
+              <span><strong>The bullet-points version.</strong> Past Simple only. "I did this. Then I did that. Then this happened." Stripped down.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white text-sm font-bold shrink-0">2</span>
+              <span><strong>The scene version.</strong> Add Past Continuous backgrounds. "I was walking to the meeting when…" "She was already presenting when I…"</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white text-sm font-bold shrink-0">3</span>
+              <span><strong>The reflective version.</strong> Add Present Perfect ("I've never forgotten that meeting") and Past Perfect ("By the time I got there, she had already…"). Make it sound like a story you've told before, polished, with a point.</span>
+            </li>
+          </ol>
+          <p class="text-sm text-slate-500 italic mt-5">
+            The same story, three textures. By round three your mouth knows the patterns. The next time you tell that story in a real meeting, the right tense surfaces automatically.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 30-Day Calendar -->
+  <section class="py-12 md:py-16 bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-6 print:mb-3">
+          <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500 text-white shrink-0">
+            <Calendar class="w-5 h-5" />
+          </div>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">The 30-Day Calendar</h2>
+            <p class="text-sm text-slate-600 print:hidden">Print this. Cross off each day. Don't break the chain.</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border-2 border-emerald-300 bg-white p-6 md:p-8 print:p-3">
+          <div class="grid md:grid-cols-4 gap-4 print:gap-2">
+            <div class="border border-slate-200 rounded-lg p-4 print:p-2 print:break-inside-avoid">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Week 1 — Build the habit</p>
+              <ul class="text-xs text-slate-700 space-y-1">
+                <li>Daily Stack (10 min)</li>
+                <li>2 episodes of one show (with subs)</li>
+                <li>1 storytelling rep</li>
+                <li>0 buddy sessions — get the habit first</li>
+              </ul>
+            </div>
+            <div class="border border-slate-200 rounded-lg p-4 print:p-2 print:break-inside-avoid">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Week 2 — Add a buddy</p>
+              <ul class="text-xs text-slate-700 space-y-1">
+                <li>Daily Stack (10 min)</li>
+                <li>1 podcast on commute</li>
+                <li>2 storytelling reps</li>
+                <li>1 buddy session — the past-tense prompt</li>
+              </ul>
+            </div>
+            <div class="border border-slate-200 rounded-lg p-4 print:p-2 print:break-inside-avoid">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Week 3 — Push the level</p>
+              <ul class="text-xs text-slate-700 space-y-1">
+                <li>Daily Stack (10 min)</li>
+                <li>Switch to a harder show (Succession / Industry)</li>
+                <li>2 storytelling reps</li>
+                <li>1 buddy session — let them correct you</li>
+              </ul>
+            </div>
+            <div class="border border-slate-200 rounded-lg p-4 print:p-2 print:break-inside-avoid">
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Week 4 — Bring it to work</p>
+              <ul class="text-xs text-slate-700 space-y-1">
+                <li>Daily Stack (10 min)</li>
+                <li>Tell ONE past-tense story in a real meeting</li>
+                <li>2 storytelling reps</li>
+                <li>1 buddy session — review what worked</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-slate-200">
+            <p class="text-sm text-slate-700">
+              <strong class="text-slate-900">Day 30 check-in:</strong> reopen the <a href="/en/course/past-tenses/cheat-sheet/" class="text-emerald-700 underline">cheat sheet</a> and skim the four tenses. If the rules feel <em>more obvious</em> than they did 30 days ago, the practice worked. If the cheat sheet still feels essential, do another 30 days — most learners need 60-90 days of consistent practice before the tenses become automatic.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-emerald-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">You're Done with the Course</h2>
+        <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">
+          6 lessons + 6 bonuses. The 4-tense method + the habitual past + the synthesis. Everything a Mexican professional needs to stop freezing on past tense — in a real meeting, in real time. Now the work shifts from the page to your mouth. The 30-day plan above is how that happens.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/en/course/past-tenses/cheat-sheet/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+          >
+            Save the cheat sheet
+            <ArrowRight class="w-5 h-5" />
+          </a>
+          <a
+            href="/en/services/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold transition-colors"
+          >
+            Work 1-on-1 with Robert
+            <ArrowRight class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      header, footer, nav { display: none !important; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #064e3b !important; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Your 30-Day Past Tenses Practice Plan",
+    "description": "A practical implementation plan for installing English past tenses into real speech. Daily 10-minute drill stack, what to watch/listen/read, how to find a practice buddy, the storytelling-reps technique, and a 30-day calendar.",
+    "learningResourceType": "Study Guide",
+    "educationalLevel": "Intermediate to Advanced",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "url": "https://www.nyenglishteacher.com/en/course/past-tenses/practice-plan/",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Master English Past Tenses — Free Master Class",
+      "url": "https://www.nyenglishteacher.com/en/course/past-tenses/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/en/about/"
+    }
+  })} />
+</Base>
