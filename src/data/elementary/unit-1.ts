@@ -304,42 +304,42 @@ export const connectorSentences = {
     {
       word: "Yesterday",
       wordEs: "Ayer",
-      example: "Yesterday, I worked from home.",
-      exampleEs: "Ayer, trabajé desde casa.",
-      use: "The day before today. Most common past time marker.",
-      useEs: "El día antes de hoy. El marcador de pasado más común.",
+      example: {
+        english: "Yesterday, I worked from home.",
+        spanish: "Ayer, trabajé desde casa.",
+      },
     },
     {
       word: "Last night",
       wordEs: "Anoche",
-      example: "Last night, I watched a great movie.",
-      exampleEs: "Anoche, vi una película excelente.",
-      use: "Refers specifically to the evening/night before today.",
-      useEs: "Se refiere específicamente a la tarde/noche antes de hoy.",
+      example: {
+        english: "Last night, I watched a great movie.",
+        spanish: "Anoche, vi una película excelente.",
+      },
     },
     {
       word: "Two days ago",
       wordEs: "Hace dos días",
-      example: "Two days ago, I called my friend.",
-      exampleEs: "Hace dos días, llamé a mi amigo.",
-      use: "Use 'X days ago' for any number of days back.",
-      useEs: "Usa 'X days ago' para cualquier número de días atrás.",
+      example: {
+        english: "Two days ago, I called my friend.",
+        spanish: "Hace dos días, llamé a mi amigo.",
+      },
     },
     {
       word: "Last week",
       wordEs: "La semana pasada",
-      example: "Last week, we visited the museum.",
-      exampleEs: "La semana pasada, visitamos el museo.",
-      use: "Anywhere in the previous 7-day period.",
-      useEs: "En cualquier momento de la semana anterior.",
+      example: {
+        english: "Last week, we visited the museum.",
+        spanish: "La semana pasada, visitamos el museo.",
+      },
     },
     {
       word: "This morning",
       wordEs: "Esta mañana",
-      example: "This morning, she cooked breakfast.",
-      exampleEs: "Esta mañana, ella cocinó el desayuno.",
-      use: "Earlier today. Past, but very recent.",
-      useEs: "Más temprano hoy. Pasado, pero muy reciente.",
+      example: {
+        english: "This morning, she cooked breakfast.",
+        spanish: "Esta mañana, ella cocinó el desayuno.",
+      },
     },
   ],
   bossSentence: {

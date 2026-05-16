@@ -273,42 +273,42 @@ export const connectorSentences = {
     {
       word: "than",
       wordEs: "que",
-      example: "My new phone is faster than my old one.",
-      exampleEs: "Mi teléfono nuevo es más rápido que el viejo.",
-      use: "The comparison connector. Always pairs with -er or 'more'. Reduced to 'thun' in fast speech.",
-      useEs: "El conector de comparación. Siempre va con -er o 'more'. Se reduce a 'thun' en habla rápida.",
+      example: {
+        english: "My new phone is faster than my old one.",
+        spanish: "Mi teléfono nuevo es más rápido que el viejo.",
+      },
     },
     {
       word: "the most",
       wordEs: "el/la más",
-      example: "It's the most interesting book in my library.",
-      exampleEs: "Es el libro más interesante de mi biblioteca.",
-      use: "Superlative for long adjectives. The 'the' is REQUIRED — never just 'most interesting'.",
-      useEs: "Superlativo para adjetivos largos. El 'the' es OBLIGATORIO — nunca solo 'most interesting'.",
+      example: {
+        english: "It's the most interesting book in my library.",
+        spanish: "Es el libro más interesante de mi biblioteca.",
+      },
     },
     {
       word: "as ... as",
       wordEs: "tan ... como",
-      example: "My phone is as fast as yours.",
-      exampleEs: "Mi teléfono es tan rápido como el tuyo.",
-      use: "Equal comparison. Same idea on both sides. Add 'not' in front to negate: 'not as fast as'.",
-      useEs: "Comparación de igualdad. Misma idea en ambos lados. Agrega 'not' adelante para negar: 'not as fast as'.",
+      example: {
+        english: "My phone is as fast as yours.",
+        spanish: "Mi teléfono es tan rápido como el tuyo.",
+      },
     },
     {
       word: "much / way more",
       wordEs: "mucho más",
-      example: "This route is way more dangerous than the highway.",
-      exampleEs: "Esta ruta es mucho más peligrosa que la autopista.",
-      use: "Intensifies comparisons. 'Way more' is informal but very common in spoken English.",
-      useEs: "Intensifica las comparaciones. 'Way more' es informal pero muy común en inglés hablado.",
+      example: {
+        english: "This route is way more dangerous than the highway.",
+        spanish: "Esta ruta es mucho más peligrosa que la autopista.",
+      },
     },
     {
       word: "by far",
       wordEs: "por mucho",
-      example: "She's by far the best player on the team.",
-      exampleEs: "Ella es por mucho la mejor jugadora del equipo.",
-      use: "Strengthens superlatives. Signals there's no close second.",
-      useEs: "Refuerza superlativos. Señala que no hay un segundo cercano.",
+      example: {
+        english: "She's by far the best player on the team.",
+        spanish: "Ella es por mucho la mejor jugadora del equipo.",
+      },
     },
   ],
   bossSentence: {
