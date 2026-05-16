@@ -131,7 +131,7 @@ export const pastTenseBonuses: PastTenseBonus[] = [
     description: "say/tell, do/make, lay/lie, rise/raise, and the seven others that trip up intermediate Mexican speakers.",
     descriptionEs: "say/tell, do/make, lay/lie, rise/raise y los otros siete que confunden a hispanohablantes intermedios.",
     icon: "AlertCircle",
-    available: false,
+    available: true,
   },
   {
     id: 3,
@@ -142,7 +142,7 @@ export const pastTenseBonuses: PastTenseBonus[] = [
     description: "The English equivalent of sabía vs supe. Same trap, same solution.",
     descriptionEs: 'El equivalente en inglés de "sabía vs supe". La misma trampa, la misma solución.',
     icon: "Lightbulb",
-    available: false,
+    available: true,
   },
   {
     id: 4,
@@ -153,7 +153,7 @@ export const pastTenseBonuses: PastTenseBonus[] = [
     description: '"Back when I was at…", "I remember when…", "The other day…" — ready-made launchpads native speakers actually use.',
     descriptionEs: '"Back when I was at…", "I remember when…", "The other day…" — frases iniciales reales que usan los nativos.',
     icon: "Mic",
-    available: false,
+    available: true,
   },
   {
     id: 5,
@@ -164,6 +164,6 @@ export const pastTenseBonuses: PastTenseBonus[] = [
     description: "The English equivalent of hubo vs había. Why one closes the story and the other keeps it open.",
     descriptionEs: 'El equivalente en inglés de "hubo vs había". Por qué uno cierra la historia y el otro la deja abierta.',
     icon: "MessageSquare",
-    available: false,
+    available: true,
   },
 ];

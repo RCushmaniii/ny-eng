@@ -1,0 +1,251 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import {
+  ArrowRight,
+  ArrowLeft,
+  AlertCircle,
+  CheckCircle2,
+  XCircle,
+  Printer,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/past-tenses/top-10-confused-pairs" as const;
+
+const pairs = [
+  {
+    n: 1,
+    a: "say",
+    b: "tell",
+    spanish: "Ambos vienen de <em>decir</em>.",
+    rule: "<strong>Say</strong> las palabras. <strong>Tell</strong> a una persona.",
+    good: "She <strong>told me</strong> the news. / She <strong>said</strong> the news was bad.",
+    trap: "\"She told that…\" — mal. Le dices <em>a alguien</em>. \"She told <strong>me</strong> that…\"",
+  },
+  {
+    n: 2,
+    a: "do",
+    b: "make",
+    spanish: "Ambos vienen de <em>hacer</em>.",
+    rule: "<strong>Do</strong> una tarea o actividad. <strong>Make</strong> una cosa o un resultado.",
+    good: "I <strong>did</strong> the report. / I <strong>made</strong> a decision.",
+    trap: "\"I made the homework\" — mal. Tarea es actividad → <strong>did</strong> the homework.",
+  },
+  {
+    n: 3,
+    a: "lay",
+    b: "lie",
+    spanish: "Ambos se sienten como <em>acostar(se)</em>.",
+    rule: "<strong>Lay</strong> lleva objeto. <strong>Lie</strong> no.",
+    good: "I <strong>laid</strong> the report on his desk. / I <strong>lay</strong> on the sofa for an hour.",
+    trap: "Pasado de <em>lie</em> es <em>lay</em>. Pasado de <em>lay</em> es <em>laid</em>. \"I <strong>lay</strong> down yesterday\" = pasado de <em>lie</em>, sin objeto.",
+  },
+  {
+    n: 4,
+    a: "rise",
+    b: "raise",
+    spanish: "<em>Subir / levantar(se)</em> se traslapan.",
+    rule: "<strong>Rise</strong> sube por sí solo. <strong>Raise</strong> lleva objeto.",
+    good: "Prices <strong>rose</strong> last quarter. / The CEO <strong>raised</strong> prices last quarter.",
+    trap: "\"They raised\" sin objeto = mal. Usa <em>rose</em>.",
+  },
+  {
+    n: 5,
+    a: "win",
+    b: "beat",
+    spanish: "Ambos se sienten como <em>ganar</em>.",
+    rule: "<strong>Win</strong> una cosa (un juego, un premio, una discusión). <strong>Beat</strong> a una persona o equipo.",
+    good: "We <strong>won</strong> the contract. / We <strong>beat</strong> their team.",
+    trap: "\"We won them\" — mal. \"We <strong>beat</strong> them\" o \"we won <strong>against</strong> them.\"",
+  },
+  {
+    n: 6,
+    a: "borrow",
+    b: "lend",
+    spanish: "<em>Prestar</em> va en ambas direcciones en español.",
+    rule: "<strong>Borrow</strong> = tomar prestado de alguien. <strong>Lend</strong> = prestar a alguien.",
+    good: "Can I <strong>borrow</strong> your charger? / Can you <strong>lend</strong> me your charger?",
+    trap: "\"Can you borrow me…\" — mal. Estarías tomando prestado de ti mismo.",
+  },
+  {
+    n: 7,
+    a: "bring",
+    b: "take",
+    spanish: "<em>Traer / llevar</em> — pero la perspectiva en inglés cambia.",
+    rule: "<strong>Bring</strong> hacia quien habla. <strong>Take</strong> lejos de quien habla.",
+    good: "<strong>Bring</strong> the report <em>here</em>. / <strong>Take</strong> the report <em>there</em>.",
+    trap: "\"I'll bring it to the meeting\" (vas <em>a</em> la junta) — usualmente <em>take</em>. Usa <em>bring</em> solo si quien escucha <em>está</em> en la junta.",
+  },
+  {
+    n: 8,
+    a: "remember",
+    b: "remind",
+    spanish: "Ambos pueden caer como <em>recordar</em>.",
+    rule: "<strong>Remember</strong> = recordar tú solo. <strong>Remind</strong> = hacer que alguien más recuerde.",
+    good: "I <strong>remember</strong> the meeting. / Can you <strong>remind</strong> me about the meeting?",
+    trap: "\"Remember me to call her\" — mal. \"<strong>Remind</strong> me to call her.\"",
+  },
+  {
+    n: 9,
+    a: "miss",
+    b: "lose",
+    spanish: "<em>Perder</em> cubre ambos en español.",
+    rule: "<strong>Miss</strong> una fecha límite, un vuelo, una oportunidad. <strong>Lose</strong> una cosa o una competencia.",
+    good: "I <strong>missed</strong> the flight. / I <strong>lost</strong> my keys.",
+    trap: "\"I lost the bus\" — mal. Lo <strong>missed</strong>. Solo <em>lose</em> cosas que posees.",
+  },
+  {
+    n: 10,
+    a: "listen",
+    b: "hear",
+    spanish: "<em>Escuchar / oír</em> — pero el reparto cambia.",
+    rule: "<strong>Listen</strong> es activo (intención). <strong>Hear</strong> es pasivo (solo el sonido).",
+    good: "I <strong>listened</strong> to the call carefully. / I <strong>heard</strong> a noise outside.",
+    trap: "\"I'm hearing music\" — usualmente mal. Si la pusiste con intención, estás <strong>listening to</strong> music.",
+  },
+];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Top 10 Pares de Verbos Confundidos en Inglés | NY English Teacher"
+  description="Los diez pares de verbos que más confunden a hispanohablantes intermedios — say/tell, do/make, lay/lie y siete más. Cada par: regla, trampa y ejemplo."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-emerald-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-3">
+          <AlertCircle class="w-4 h-4" />
+          Bono 2 · Referencia de la Clase Magistral
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Top 10 Pares de Verbos Más Confundidos
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          Un solo verbo en español a menudo se parte en dos verbos en inglés. Estos diez pares causan
+          más errores que cualquier otra fuente para hispanohablantes intermedios. Memoriza la trampa, no la regla.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Imprimir esta página
+          </button>
+          <a
+            href="/es/curso/tiempos-del-pasado/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Volver a la clase magistral
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Print header -->
+  <div class="hidden print:block py-4 border-b-2 border-slate-300">
+    <h1 class="text-2xl font-bold text-slate-900">Top 10 Pares de Verbos Confundidos en Inglés</h1>
+    <p class="text-sm text-slate-600">nyenglishteacher.com — gratis para profesionales mexicanos</p>
+  </div>
+
+  <!-- The 10 pairs -->
+  <section class="py-12 md:py-16 bg-white print:py-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 print:gap-2">
+          {pairs.map((p) => (
+            <div class="rounded-2xl border-2 border-emerald-300 bg-white p-5 print:p-3 print:rounded-md print:break-inside-avoid">
+              <div class="flex items-baseline gap-2 mb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">#{p.n}</span>
+                <h3 class="text-xl font-bold text-slate-900 print:text-base">
+                  <span class="text-emerald-700">{p.a}</span> <span class="text-slate-400 font-normal">vs.</span> <span class="text-emerald-700">{p.b}</span>
+                </h3>
+              </div>
+              <p class="text-xs text-slate-500 italic mb-3 print:text-xs" set:html={p.spanish} />
+              <div class="space-y-2.5 text-sm text-slate-700 print:text-xs">
+                <p set:html={`<strong class="text-slate-900">Regla:</strong> ${p.rule}`} />
+                <div class="bg-emerald-50 rounded p-2.5 border border-emerald-200 flex gap-2">
+                  <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <p set:html={p.good} />
+                </div>
+                <div class="bg-red-50 rounded p-2.5 border border-red-200 flex gap-2">
+                  <XCircle class="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+                  <p class="text-slate-700" set:html={`<strong class="text-red-700">Trampa:</strong> ${p.trap}`} />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-emerald-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">Siguiente: Las Trampas de Tiempo</h2>
+        <p class="text-emerald-100 mb-6 max-w-2xl mx-auto">
+          El verbo equivocado es un error. El tiempo equivocado es otro. Estos dos bonos extra trabajan
+          las decisiones exactas de tiempo que deciden si suenas fluido o si suenas traduciendo.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/es/curso/tiempos-del-pasado/knew-vs-found-out/"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold transition-colors"
+          >
+            "Knew" vs "Found Out"
+            <ArrowRight class="w-4 h-4" />
+          </a>
+          <a
+            href="/es/curso/tiempos-del-pasado/there-was-vs-there-has-been/"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold transition-colors"
+          >
+            "There Was" vs "There Has Been"
+            <ArrowRight class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      header, footer, nav { display: none !important; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #064e3b !important; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Top 10 Pares de Verbos Mas Confundidos en Ingles",
+    "description": "Referencia compacta de los diez pares de verbos en ingles que mas confunden a hispanohablantes intermedios: say/tell, do/make, lay/lie, rise/raise, win/beat, borrow/lend, bring/take, remember/remind, miss/lose, listen/hear.",
+    "learningResourceType": "Reference",
+    "educationalLevel": "Intermedio a Avanzado",
+    "inLanguage": "es",
+    "isAccessibleForFree": true,
+    "url": "https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/top-10-pares-confundidos/",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Domina los Tiempos del Pasado en Ingles — Clase Magistral Gratis",
+      "url": "https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/es/about/"
+    }
+  })} />
+</Base>

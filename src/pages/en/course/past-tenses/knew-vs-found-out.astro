@@ -1,0 +1,267 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Lightbulb,
+  CheckCircle2,
+  XCircle,
+  Eye,
+  Brain,
+  Printer,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/past-tenses/knew-vs-found-out" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="&quot;Knew&quot; vs &quot;Found Out&quot; in English | NY English Teacher"
+  description="The English equivalent of sabía vs supe. Why one is a state and one is a moment — and the drill that fixes it for Mexican speakers in 30 seconds."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-emerald-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-3">
+          <Lightbulb class="w-4 h-4" />
+          Bonus 3 · The Spanish Mirror
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          "Knew" vs "Found Out"
+        </h1>
+        <p class="text-2xl text-emerald-300 italic font-light mb-4">The English equivalent of <em>sabía</em> vs <em>supe</em>.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          Same trap. Same solution. If you can feel the difference in Spanish, you can feel it in English —
+          but English uses two different verbs instead of one verb in two tenses.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Print this page
+          </button>
+          <a
+            href="/en/course/past-tenses/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Back to the master class
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The split -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">The Spanish Split</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            In Spanish, <em>saber</em> changes meaning between imperfect and preterite. In English, it splits into <strong>two different verbs</strong>.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border-2 border-emerald-300 bg-emerald-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500 text-white">
+                <Brain class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">knew</h3>
+            </div>
+            <p class="text-sm font-mono text-emerald-700 mb-3"><em>sabía</em> — imperfect</p>
+            <p class="text-slate-700 mb-3">
+              A <strong>state</strong> of knowing. You already had the information. The knowledge was sitting in your head, possibly for years.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-emerald-200 text-sm space-y-1.5">
+              <p>"I <strong>knew</strong> she was leaving." (the whole time)</p>
+              <p>"He <strong>knew</strong> the answer." (already had it)</p>
+              <p>"We <strong>knew</strong> each other from college."</p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border-2 border-amber-400 bg-amber-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-500 text-white">
+                <Eye class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">found out</h3>
+            </div>
+            <p class="text-sm font-mono text-amber-700 mb-3"><em>supe</em> — preterite</p>
+            <p class="text-slate-700 mb-3">
+              The <strong>moment</strong> of discovering. A single point in time when the knowledge entered your head.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-amber-200 text-sm space-y-1.5">
+              <p>"I <strong>found out</strong> she was leaving." (one moment — maybe yesterday)</p>
+              <p>"He <strong>found out</strong> the answer at 5pm."</p>
+              <p>"We <strong>found out</strong> about it on Monday."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The mental picture -->
+  <section class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Mental Picture</h2>
+        <div class="bg-white rounded-2xl border-2 border-slate-200 p-7">
+          <p class="text-slate-700 leading-relaxed mb-4">
+            Picture a <strong>line</strong> stretching across time. Now picture a <strong>dot</strong> on that line.
+          </p>
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-white text-sm font-bold shrink-0">━</span>
+              <span><strong class="text-slate-900">The line is "knew."</strong> The knowledge was there the whole time. It has duration. It's a state.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white text-sm font-bold shrink-0">●</span>
+              <span><strong class="text-slate-900">The dot is "found out."</strong> A specific moment when the knowledge entered. It's an event.</span>
+            </li>
+          </ul>
+          <p class="text-slate-700 leading-relaxed mt-4">
+            If you can put a <em>when</em> on it ("yesterday", "at 3pm", "this morning"), you almost always need <strong>found out</strong>.
+            If the knowledge has been sitting there for an indefinite period, you need <strong>knew</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 30-second drill -->
+  <section class="py-12 md:py-16 bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">The 30-Second Drill</h2>
+          <p class="text-slate-600">Pick the right verb. Cover the right side. Don't think — feel.</p>
+        </div>
+
+        <div class="bg-emerald-50 rounded-2xl border-2 border-emerald-300 p-6 md:p-8 print:p-3 print:rounded-md">
+          <div class="space-y-4 print:space-y-2">
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">"___ you ___ that he had quit?"</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>Did you know</strong> (state) <span class="text-slate-400">or</span> <strong>Did you find out</strong> (moment) — both work, depending on intent</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">"I ___ about the meeting at 4pm."</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>found out</strong> — "at 4pm" is a moment</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">"She ___ him for years before they dated."</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>knew</strong> — "for years" is a state</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">"How did you ___ that the company was sold?"</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>find out</strong> — "How" asks about the moment of discovery</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">"He ___ the answer the whole time."</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>knew</strong> — "the whole time" is duration</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center">
+              <p class="text-slate-700">"We ___ about the layoffs yesterday."</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>found out</strong> — "yesterday" + new information = moment</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common errors -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Mexican Trap</h2>
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span>"I <strong>knew</strong> it yesterday."</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">"Yesterday" is a moment. You can't <em>know</em> something only on one day. You <strong>found out</strong>.</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span>"How did you <strong>know</strong> about it?"</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">Possible — but you're usually asking <em>how the discovery happened</em>. Native speakers say "How did you <strong>find out</strong> about it?"</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-emerald-300 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+              <span><strong>Native ear test:</strong> if you can replace it with <em>realized</em> or <em>learned</em>, you want <strong>found out</strong>.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-emerald-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">Keep Going</h2>
+        <p class="text-emerald-100 mb-6">
+          The "knew vs. found out" pattern is one of three Spanish mirrors. The other two — <em>there was vs. has been</em> and <em>did vs. have done</em> — follow the same logic.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/en/course/past-tenses/there-was-vs-there-has-been/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+          >
+            Next: "There Was" vs "There Has Been"
+            <ArrowRight class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      header, footer, nav { display: none !important; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #064e3b !important; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Knew vs Found Out in English",
+    "description": "Focused reference on the English equivalent of Spanish sabia vs supe: knew (state) vs found out (moment). Includes mental picture, 30-second drill, and Mexican-speaker traps.",
+    "learningResourceType": "Reference",
+    "educationalLevel": "Intermediate to Advanced",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "url": "https://www.nyenglishteacher.com/en/course/past-tenses/knew-vs-found-out/",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Master English Past Tenses — Free Master Class",
+      "url": "https://www.nyenglishteacher.com/en/course/past-tenses/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/en/about/"
+    }
+  })} />
+</Base>
