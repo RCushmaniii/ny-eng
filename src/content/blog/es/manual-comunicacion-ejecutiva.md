@@ -12,8 +12,6 @@ readingTime: "7 min de lectura"
 audience: "Para ejecutivos que quieren dominar la comunicación de alto impacto en inglés"
 imageAlt: "Ejecutivo senior liderando con confianza una presentación en una sala de juntas en inglés"
 heroVideoPoster: "/images/blog/playbook/en/video-poster.webp"
-translations:
-  en: "/en/blog/executive-communication-playbook"
 publish: true
 seo:
   title: "Manual de Comunicación Ejecutiva | 7 Pilares Clave"
