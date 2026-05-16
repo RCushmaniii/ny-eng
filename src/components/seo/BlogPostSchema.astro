@@ -73,10 +73,13 @@ const article = {
   },
   "publisher": {
     "@type": "Organization",
+    "@id": `${cleanSiteUrl}/#org`,
     "name": siteConfig.companyName,
     "logo": {
       "@type": "ImageObject",
-      "url": `${cleanSiteUrl}/images/logos/new-york-english-og.jpg`
+      "url": `${cleanSiteUrl}/images/logos/logo-512.png`,
+      "width": 512,
+      "height": 512
     }
   },
   "mainEntityOfPage": {
