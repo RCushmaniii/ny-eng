@@ -1,0 +1,266 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import {
+  ArrowRight,
+  ArrowLeft,
+  MessageSquare,
+  CheckCircle2,
+  XCircle,
+  Lock,
+  Link as LinkIcon,
+  Printer,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/past-tenses/there-was-vs-there-has-been" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="&quot;There Was&quot; vs &quot;There Has Been&quot; in English | NY English Teacher"
+  description="The English equivalent of Spanish hubo vs ha habido. Why one closes the story and the other keeps it open — and how to feel the difference instantly."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-emerald-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-3">
+          <MessageSquare class="w-4 h-4" />
+          Bonus 5 · The Closing Trap
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          "There Was" vs "There Has Been"
+        </h1>
+        <p class="text-2xl text-emerald-300 italic font-light mb-4">The English equivalent of <em>hubo</em> vs <em>ha habido</em>.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          One closes the story. The other keeps it open. In a status update, in a meeting, in a Slack reply — choosing wrong
+          sends a different message than you intended.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Print this page
+          </button>
+          <a
+            href="/en/course/past-tenses/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Back to the master class
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The split -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Closed Story vs. Open Story</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Same situation. Different relationship to <em>now</em>. The verb you choose tells your listener whether the matter is done or still on your plate.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border-2 border-emerald-300 bg-emerald-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500 text-white">
+                <Lock class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">there was</h3>
+            </div>
+            <p class="text-sm font-mono text-emerald-700 mb-3"><em>hubo</em> — Past Simple</p>
+            <p class="text-slate-700 mb-3">
+              The situation existed in <strong>closed past time</strong>. It's done. It's filed. It's a fact you're reporting from a sealed past.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-emerald-200 text-sm space-y-1.5">
+              <p>"<strong>There was</strong> a fire in 2018."</p>
+              <p>"<strong>There was</strong> an issue last week — we fixed it."</p>
+              <p>"<strong>There was</strong> a problem during the demo." (the demo is over)</p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border-2 border-amber-400 bg-amber-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-500 text-white">
+                <LinkIcon class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">there has been</h3>
+            </div>
+            <p class="text-sm font-mono text-amber-700 mb-3"><em>ha habido</em> — Present Perfect</p>
+            <p class="text-slate-700 mb-3">
+              The situation is <strong>still relevant</strong>. It started in the past and the consequence is still here, still mine to deal with.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-amber-200 text-sm space-y-1.5">
+              <p>"<strong>There has been</strong> a problem this morning." (still today, still happening)</p>
+              <p>"<strong>There have been</strong> delays — we're working on it." (currently)</p>
+              <p>"<strong>There has been</strong> an update since we last spoke."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The business impact -->
+  <section class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3 text-center">Why This Matters in Business English</h2>
+        <p class="text-slate-600 mb-8 text-center">The same news lands two completely different ways depending on which one you pick.</p>
+
+        <div class="space-y-4">
+          <div class="bg-white rounded-2xl border-2 border-slate-200 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Closed — "Don't worry about it"</p>
+            <p class="text-slate-800 text-lg italic">"There was an issue with the deployment last night."</p>
+            <p class="text-sm text-slate-500 mt-2">→ The listener hears: "I'm reporting history. It's fixed. Moving on."</p>
+          </div>
+          <div class="bg-white rounded-2xl border-2 border-amber-300 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">Open — "I need your attention"</p>
+            <p class="text-slate-800 text-lg italic">"There has been an issue with the deployment."</p>
+            <p class="text-sm text-slate-500 mt-2">→ The listener hears: "This is still happening. Drop what you're doing."</p>
+          </div>
+        </div>
+
+        <p class="text-center text-slate-600 mt-8 text-sm italic">
+          A Mexican speaker who defaults to "there was" for everything sounds like they're <em>always reporting closed events</em> — even when the problem is on fire right now.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Drill -->
+  <section class="py-12 md:py-16 bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">The Choose-It Drill</h2>
+          <p class="text-slate-600">Read the situation. Pick "there was" or "there has been."</p>
+        </div>
+
+        <div class="bg-emerald-50 rounded-2xl border-2 border-emerald-300 p-6 md:p-8 print:p-3 print:rounded-md">
+          <div class="space-y-4 print:space-y-2">
+            <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">A fire happened in 2018. Now it's 2026.</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There was</strong> a fire — closed time.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">Three Slack messages came in this morning. It's still morning.</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There have been</strong> three messages — period still open.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">You're explaining a closed Q1 result to the board in Q3.</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There was</strong> a 12% dip in Q1 — Q1 is sealed.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">Customer complaints have been arriving all week. It's Thursday.</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There have been</strong> complaints this week — the week isn't over.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-start">
+              <p class="text-slate-700">Server outage happened yesterday. Already resolved.</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There was</strong> an outage yesterday — fixed, closed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick test -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Two-Second Test</h2>
+        <div class="bg-white rounded-2xl border-2 border-emerald-300 p-7">
+          <p class="text-slate-700 leading-relaxed mb-4">
+            Ask yourself: <strong>"Is this period of time still going?"</strong>
+          </p>
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3">
+              <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+              <span>If yes (this week, today, this year, since Monday) → <strong>there has been</strong></span>
+            </li>
+            <li class="flex gap-3">
+              <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+              <span>If no (yesterday, last week, in 2019, at 3pm yesterday) → <strong>there was</strong></span>
+            </li>
+            <li class="flex gap-3">
+              <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+              <span>If the consequence is still on your plate <em>regardless</em> of when it started → <strong>there has been</strong></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-emerald-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">You've Completed the Master Class</h2>
+        <p class="text-emerald-100 mb-6">
+          5 lessons. 5 bonuses. The 4-tense method. You have everything the Mexican professional needs to stop freezing on past tense — in a real meeting, in real time.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/en/course/past-tenses/cheat-sheet/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+          >
+            Save the cheat sheet
+            <ArrowRight class="w-5 h-5" />
+          </a>
+          <a
+            href="/en/services/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold transition-colors"
+          >
+            Work 1-on-1 with Robert
+            <ArrowRight class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      header, footer, nav { display: none !important; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #064e3b !important; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "There Was vs There Has Been in English",
+    "description": "Focused reference on the English equivalent of Spanish hubo vs ha habido. Why one closes the story and the other keeps it open — with business-context examples and a two-second decision test.",
+    "learningResourceType": "Reference",
+    "educationalLevel": "Intermediate to Advanced",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "url": "https://www.nyenglishteacher.com/en/course/past-tenses/there-was-vs-there-has-been/",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Master English Past Tenses — Free Master Class",
+      "url": "https://www.nyenglishteacher.com/en/course/past-tenses/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/en/about/"
+    }
+  })} />
+</Base>

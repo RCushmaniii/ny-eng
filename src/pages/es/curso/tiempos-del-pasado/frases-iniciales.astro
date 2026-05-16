@@ -1,0 +1,244 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Mic,
+  Coffee,
+  Briefcase,
+  GitBranch,
+  Printer,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/past-tenses/story-openers" as const;
+
+const groups = [
+  {
+    icon: "Coffee",
+    title: "Casual — café, comida, after-work",
+    description: "Cuando intercambias historias con compañeros o cuentas algo que viste en el camino al trabajo.",
+    color: "emerald",
+    openers: [
+      { en: "The other day…", note: "Tiempo reciente pero vago. Sigue Past Simple." },
+      { en: "I remember when…", note: "Señala una historia real que estás recordando." },
+      { en: "Funny story —", note: "Prepara algo ligero o sorprendente." },
+      { en: "So get this…", note: "Enérgico; avisa al que escucha que viene algo bueno." },
+      { en: "You know what's weird?", note: "Engancha con curiosidad antes de soltar la historia." },
+      { en: "Speaking of [X]…", note: "Puente desde el tema actual — los nativos lo usan constantemente." },
+      { en: "That reminds me of the time…", note: "Disparado por algo que dijo la otra persona." },
+      { en: "Back when I was a kid…", note: "Casual de hace mucho. Mezcla Past Simple + Past Continuous." },
+      { en: "There was this one time…", note: "El abridor clásico de historias. Singular, vívido, específico." },
+      { en: "Picture this:", note: "Cinematográfico. Obliga a quien escucha a visualizar la escena." },
+    ],
+  },
+  {
+    icon: "Briefcase",
+    title: "Profesional — juntas, entrevistas, presentaciones",
+    description: "Cuando importa la credibilidad. Señalan experiencia sin presumir.",
+    color: "amber",
+    openers: [
+      { en: "Back when I was at [Company]…", note: "Establece contexto + antigüedad en una frase." },
+      { en: "A few years ago, I…", note: "Distancia ligeramente — te permite contar una historia de aprendizaje." },
+      { en: "In my last role, we…", note: "Pivote del trabajo pasado a la relevancia actual." },
+      { en: "We had a situation where…", note: "Prepara a quien escucha para un arco problema-solución." },
+      { en: "I'll never forget the time…", note: "Peso emocional — úsalo para historias de alto impacto." },
+      { en: "Let me give you some background:", note: "Te compra 60 segundos para contexto. Ideal para entrevistas." },
+      { en: "To put it in context, …", note: "Lo mismo pero más conciso y ejecutivo." },
+      { en: "Earlier this year, we…", note: "Reciente, profesional y todavía relevante." },
+      { en: "Walking into that meeting, I had no idea that…", note: "Past Continuous + giro con Past Perfect." },
+      { en: "The lesson I learned the hard way was…", note: "Prepara una historia cuya recompensa es sabiduría." },
+    ],
+  },
+  {
+    icon: "GitBranch",
+    title: "Puentes — para que la historia avance",
+    description: "Úsalos a mitad de la historia para avanzar, dar giros, o aterrizar el punto.",
+    color: "violet",
+    openers: [
+      { en: "Which brings me to…", note: "Conecta la historia con tu punto actual." },
+      { en: "And that's how I ended up…", note: "Resuelve en un resultado inesperado." },
+      { en: "Long story short, …", note: "Salta el medio. Úsalo cuando hay poco tiempo." },
+      { en: "What happened next was…", note: "Construye suspenso; señala un giro." },
+      { en: "So I ended up …ing…", note: "Resolución casual — \"So I ended up calling her.\"" },
+      { en: "It turned out that…", note: "Revela un giro o información oculta." },
+      { en: "Looking back, I realize…", note: "Registro reflexivo — natural en C1+." },
+      { en: "By the time we got there, …", note: "Disparador de Past Perfect — \"By the time we got there, she had left.\"" },
+      { en: "That was the moment when…", note: "Marca el evento pivote de la historia." },
+      { en: "And the punchline is…", note: "Modismo nativo para preparar el remate." },
+    ],
+  },
+];
+
+const colorClasses = {
+  emerald: { ring: "border-emerald-300", icon: "bg-emerald-500", chip: "text-emerald-700" },
+  amber: { ring: "border-amber-300", icon: "bg-amber-500", chip: "text-amber-700" },
+  violet: { ring: "border-violet-300", icon: "bg-violet-500", chip: "text-violet-700" },
+};
+
+const iconMap: Record<string, any> = { Coffee, Briefcase, GitBranch };
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="30 Frases para Empezar una Historia en Inglés | NY English Teacher"
+  description="Treinta lanzaderas para contar historias en inglés — casuales, profesionales y puentes. Las frases exactas que usan los nativos, no rellenos."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-emerald-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-3">
+          <Mic class="w-4 h-4" />
+          Bono 4 · Referencia de la Clase Magistral
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          30 Frases para Empezar una Historia en Inglés
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          Los profesionales mexicanos se congelan al empezar una historia — no a mitad. La frase de apertura es la más difícil.
+          Memoriza tres de esta lista y tienes una lanzadera para cada situación.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Imprimir esta página
+          </button>
+          <a
+            href="/es/curso/tiempos-del-pasado/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Volver a la clase magistral
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Print header -->
+  <div class="hidden print:block py-4 border-b-2 border-slate-300">
+    <h1 class="text-2xl font-bold text-slate-900">30 Frases para Empezar una Historia en Inglés — Referencia Nativa</h1>
+    <p class="text-sm text-slate-600">nyenglishteacher.com — gratis para profesionales mexicanos</p>
+  </div>
+
+  <!-- Groups -->
+  <section class="py-12 md:py-16 bg-white print:py-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto space-y-10 print:space-y-4">
+        {groups.map((g) => {
+          const Icon = iconMap[g.icon];
+          const c = colorClasses[g.color as keyof typeof colorClasses];
+          return (
+            <div class="print:break-inside-avoid">
+              <div class="flex items-center gap-3 mb-4 print:mb-2">
+                <div class:list={["flex items-center justify-center w-10 h-10 rounded-lg text-white shrink-0", c.icon]}>
+                  {Icon && <Icon class="w-5 h-5" />}
+                </div>
+                <div>
+                  <h2 class="text-xl md:text-2xl font-bold text-slate-900 print:text-base">{g.title}</h2>
+                  <p class="text-sm text-slate-500 print:hidden">{g.description}</p>
+                </div>
+              </div>
+
+              <div class:list={["rounded-2xl border-2 bg-white p-6 print:p-2 print:rounded-md", c.ring]}>
+                <ol class="space-y-3 print:space-y-1">
+                  {g.openers.map((o, i) => (
+                    <li class="flex gap-3 pb-3 last:pb-0 last:border-0 border-b border-slate-100 print:pb-1">
+                      <span class:list={["font-mono text-xs font-bold shrink-0 w-6 text-right", c.chip]}>{i + 1}.</span>
+                      <div class="flex-1">
+                        <p class="font-semibold text-slate-900 text-base print:text-sm">"{o.en}"</p>
+                        <p class="text-xs text-slate-500 mt-0.5 print:hidden">{o.note}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- How to drill -->
+  <section class="py-12 md:py-16 bg-slate-50 print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">Cómo Practicarlo</h2>
+        <ol class="space-y-4 text-slate-700">
+          <li class="flex gap-4">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 text-white text-sm font-bold shrink-0">1</span>
+            <p><strong>Elige tres.</strong> Una casual, una profesional, una puente. No intentes memorizar las treinta.</p>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 text-white text-sm font-bold shrink-0">2</span>
+            <p><strong>Cuenta la misma historia tres veces</strong> — una con cada abridor. Nota cómo el abridor cambia el tono, el patrón de tiempos, y la expectativa de quien escucha.</p>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 text-white text-sm font-bold shrink-0">3</span>
+            <p><strong>Usa una en conversación real esta semana.</strong> No esperes el momento perfecto. Fuerza uno. La fluidez viene de <em>usar</em>, no de <em>saber</em>.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-emerald-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">Queda Un Bono</h2>
+        <p class="text-emerald-100 mb-6">
+          Ya tienes los abridores. Ahora la trampa del cierre: <em>there was</em> vs <em>there has been</em> — la diferencia que decide si tu historia suena <em>terminada</em> o <em>todavía me toca resolverla</em>.
+        </p>
+        <a
+          href="/es/curso/tiempos-del-pasado/there-was-vs-there-has-been/"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+        >
+          "There Was" vs "There Has Been"
+          <ArrowRight class="w-5 h-5" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      header, footer, nav { display: none !important; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #064e3b !important; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "30 Frases Iniciales en Ingles que Usan los Nativos",
+    "description": "Treinta lanzaderas para contar historias en ingles, agrupadas por registro: casual, profesional y puentes. Las frases exactas que usan los nativos, con notas sobre patrones de tiempo verbal.",
+    "learningResourceType": "Reference",
+    "educationalLevel": "Intermedio a Avanzado",
+    "inLanguage": "es",
+    "isAccessibleForFree": true,
+    "url": "https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/frases-iniciales/",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Domina los Tiempos del Pasado en Ingles — Clase Magistral Gratis",
+      "url": "https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/es/about/"
+    }
+  })} />
+</Base>

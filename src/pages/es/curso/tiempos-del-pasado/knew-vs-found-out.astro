@@ -1,0 +1,267 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Lightbulb,
+  CheckCircle2,
+  XCircle,
+  Eye,
+  Brain,
+  Printer,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/past-tenses/knew-vs-found-out" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="&quot;Knew&quot; vs &quot;Found Out&quot; en Inglés | NY English Teacher"
+  description="El equivalente en inglés de sabía vs supe. Por qué uno es un estado y el otro un momento — y el drill que lo arregla en 30 segundos."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-emerald-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-3">
+          <Lightbulb class="w-4 h-4" />
+          Bono 3 · El Espejo del Español
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          "Knew" vs "Found Out"
+        </h1>
+        <p class="text-2xl text-emerald-300 italic font-light mb-4">El equivalente en inglés de <em>sabía</em> vs <em>supe</em>.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          La misma trampa. La misma solución. Si puedes sentir la diferencia en español, la puedes sentir en inglés —
+          pero el inglés usa dos verbos diferentes en lugar de un verbo en dos tiempos.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Imprimir esta página
+          </button>
+          <a
+            href="/es/curso/tiempos-del-pasado/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Volver a la clase magistral
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The split -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">La División del Español</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            En español, <em>saber</em> cambia de significado entre imperfecto y pretérito. En inglés, se parte en <strong>dos verbos diferentes</strong>.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border-2 border-emerald-300 bg-emerald-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500 text-white">
+                <Brain class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">knew</h3>
+            </div>
+            <p class="text-sm font-mono text-emerald-700 mb-3"><em>sabía</em> — imperfecto</p>
+            <p class="text-slate-700 mb-3">
+              Un <strong>estado</strong> de saber. Ya tenías la información. El conocimiento estaba en tu cabeza, posiblemente desde hace años.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-emerald-200 text-sm space-y-1.5">
+              <p>"I <strong>knew</strong> she was leaving." (todo el tiempo)</p>
+              <p>"He <strong>knew</strong> the answer." (ya la tenía)</p>
+              <p>"We <strong>knew</strong> each other from college."</p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border-2 border-amber-400 bg-amber-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-500 text-white">
+                <Eye class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">found out</h3>
+            </div>
+            <p class="text-sm font-mono text-amber-700 mb-3"><em>supe</em> — pretérito</p>
+            <p class="text-slate-700 mb-3">
+              El <strong>momento</strong> de descubrir. Un punto único en el tiempo cuando el conocimiento entró a tu cabeza.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-amber-200 text-sm space-y-1.5">
+              <p>"I <strong>found out</strong> she was leaving." (un momento — quizás ayer)</p>
+              <p>"He <strong>found out</strong> the answer at 5pm."</p>
+              <p>"We <strong>found out</strong> about it on Monday."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mental picture -->
+  <section class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">La Imagen Mental</h2>
+        <div class="bg-white rounded-2xl border-2 border-slate-200 p-7">
+          <p class="text-slate-700 leading-relaxed mb-4">
+            Imagina una <strong>línea</strong> que cruza el tiempo. Ahora imagina un <strong>punto</strong> sobre esa línea.
+          </p>
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-white text-sm font-bold shrink-0">━</span>
+              <span><strong class="text-slate-900">La línea es "knew."</strong> El conocimiento estuvo ahí todo el tiempo. Tiene duración. Es un estado.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white text-sm font-bold shrink-0">●</span>
+              <span><strong class="text-slate-900">El punto es "found out."</strong> Un momento específico cuando entró el conocimiento. Es un evento.</span>
+            </li>
+          </ul>
+          <p class="text-slate-700 leading-relaxed mt-4">
+            Si puedes poner un <em>cuándo</em> ("ayer", "a las 3pm", "esta mañana"), casi siempre necesitas <strong>found out</strong>.
+            Si el conocimiento ha estado ahí por un período indefinido, necesitas <strong>knew</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Drill -->
+  <section class="py-12 md:py-16 bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">El Drill de 30 Segundos</h2>
+          <p class="text-slate-600">Elige el verbo correcto. Cubre el lado derecho. No pienses — siente.</p>
+        </div>
+
+        <div class="bg-emerald-50 rounded-2xl border-2 border-emerald-300 p-6 md:p-8 print:p-3 print:rounded-md">
+          <div class="space-y-4 print:space-y-2">
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">"___ you ___ that he had quit?"</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>Did you know</strong> (estado) <span class="text-slate-400">o</span> <strong>Did you find out</strong> (momento) — ambos sirven, depende de la intención</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">"I ___ about the meeting at 4pm."</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>found out</strong> — "at 4pm" es un momento</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">"She ___ him for years before they dated."</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>knew</strong> — "for years" es estado</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">"How did you ___ that the company was sold?"</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>find out</strong> — "How" pregunta por el momento del descubrimiento</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-emerald-200">
+              <p class="text-slate-700">"He ___ the answer the whole time."</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>knew</strong> — "the whole time" es duración</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center">
+              <p class="text-slate-700">"We ___ about the layoffs yesterday."</p>
+              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>found out</strong> — "yesterday" + información nueva = momento</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traps -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">La Trampa Mexicana</h2>
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span>"I <strong>knew</strong> it yesterday."</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">"Yesterday" es un momento. No puedes <em>saber</em> algo solo un día. Lo <strong>found out</strong>.</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span>"How did you <strong>know</strong> about it?"</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">Posible — pero usualmente preguntas <em>cómo sucedió el descubrimiento</em>. Los nativos dicen "How did you <strong>find out</strong> about it?"</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-emerald-300 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+              <span><strong>Prueba del oído nativo:</strong> si lo puedes reemplazar con <em>realized</em> o <em>learned</em>, quieres <strong>found out</strong>.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-emerald-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">Sigue</h2>
+        <p class="text-emerald-100 mb-6">
+          El patrón "knew vs. found out" es uno de tres espejos del español. Los otros dos — <em>there was vs. has been</em> y <em>did vs. have done</em> — siguen la misma lógica.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/es/curso/tiempos-del-pasado/there-was-vs-there-has-been/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+          >
+            Siguiente: "There Was" vs "There Has Been"
+            <ArrowRight class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      header, footer, nav { display: none !important; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #064e3b !important; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Knew vs Found Out en Ingles",
+    "description": "Referencia enfocada en el equivalente en ingles del espanol sabia vs supe: knew (estado) vs found out (momento). Incluye imagen mental, drill de 30 segundos y trampas para hispanohablantes.",
+    "learningResourceType": "Reference",
+    "educationalLevel": "Intermedio a Avanzado",
+    "inLanguage": "es",
+    "isAccessibleForFree": true,
+    "url": "https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/knew-vs-found-out/",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Domina los Tiempos del Pasado en Ingles — Clase Magistral Gratis",
+      "url": "https://www.nyenglishteacher.com/es/curso/tiempos-del-pasado/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/es/about/"
+    }
+  })} />
+</Base>

@@ -145,6 +145,10 @@ export type TKey =
   | "course/past-tenses/lesson-4"
   | "course/past-tenses/lesson-5"
   | "course/past-tenses/cheat-sheet"
+  | "course/past-tenses/top-10-confused-pairs"
+  | "course/past-tenses/knew-vs-found-out"
+  | "course/past-tenses/story-openers"
+  | "course/past-tenses/there-was-vs-there-has-been"
   | "corporate/for-hr"
   | "meme-portfolio"
   | "site-index";
@@ -305,6 +309,13 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/past-tenses/lesson-4": "/en/course/past-tenses/lesson-4/",
     "course/past-tenses/lesson-5": "/en/course/past-tenses/lesson-5/",
     "course/past-tenses/cheat-sheet": "/en/course/past-tenses/cheat-sheet/",
+    "course/past-tenses/top-10-confused-pairs":
+      "/en/course/past-tenses/top-10-confused-pairs/",
+    "course/past-tenses/knew-vs-found-out":
+      "/en/course/past-tenses/knew-vs-found-out/",
+    "course/past-tenses/story-openers": "/en/course/past-tenses/story-openers/",
+    "course/past-tenses/there-was-vs-there-has-been":
+      "/en/course/past-tenses/there-was-vs-there-has-been/",
     "corporate/for-hr": "/en/for-hr-managers/",
     "meme-portfolio": "/en/meme-portfolio/all/",
     "site-index": "/en/site-index/",
@@ -469,6 +480,14 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/past-tenses/lesson-4": "/es/curso/tiempos-del-pasado/leccion-4/",
     "course/past-tenses/lesson-5": "/es/curso/tiempos-del-pasado/leccion-5/",
     "course/past-tenses/cheat-sheet": "/es/curso/tiempos-del-pasado/guia-rapida/",
+    "course/past-tenses/top-10-confused-pairs":
+      "/es/curso/tiempos-del-pasado/top-10-pares-confundidos/",
+    "course/past-tenses/knew-vs-found-out":
+      "/es/curso/tiempos-del-pasado/knew-vs-found-out/",
+    "course/past-tenses/story-openers":
+      "/es/curso/tiempos-del-pasado/frases-iniciales/",
+    "course/past-tenses/there-was-vs-there-has-been":
+      "/es/curso/tiempos-del-pasado/there-was-vs-there-has-been/",
     "corporate/for-hr": "/es/para-rh/",
     "meme-portfolio": "/es/meme-portfolio/all/",
     "site-index": "/es/indice-del-sitio/",
@@ -562,6 +581,10 @@ export function getAllTKeys(): TKey[] {
     "course/past-tenses/lesson-4",
     "course/past-tenses/lesson-5",
     "course/past-tenses/cheat-sheet",
+    "course/past-tenses/top-10-confused-pairs",
+    "course/past-tenses/knew-vs-found-out",
+    "course/past-tenses/story-openers",
+    "course/past-tenses/there-was-vs-there-has-been",
     "category/startup-founders",
     "category/tech-english",
     "category/logistics-english",

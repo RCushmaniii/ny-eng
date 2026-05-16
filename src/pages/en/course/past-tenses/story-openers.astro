@@ -1,0 +1,244 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Mic,
+  Coffee,
+  Briefcase,
+  GitBranch,
+  Printer,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/past-tenses/story-openers" as const;
+
+const groups = [
+  {
+    icon: "Coffee",
+    title: "Casual — coffee, lunch, after-work",
+    description: "When you're swapping stories with peers or telling something you saw on the way to work.",
+    color: "emerald",
+    openers: [
+      { en: "The other day…", note: "Recent but vague timing. Past Simple follows." },
+      { en: "I remember when…", note: "Signals a true story you're recalling." },
+      { en: "Funny story —", note: "Sets up something light or surprising." },
+      { en: "So get this…", note: "Energetic; warns the listener something good is coming." },
+      { en: "You know what's weird?", note: "Hooks with curiosity before the story lands." },
+      { en: "Speaking of [X]…", note: "Bridges from the current topic — natives use this constantly." },
+      { en: "That reminds me of the time…", note: "Triggered by something the other person said." },
+      { en: "Back when I was a kid…", note: "Long-ago casual. Past Simple + Past Continuous mix." },
+      { en: "There was this one time…", note: "The classic story opener. Singular, vivid, specific." },
+      { en: "Picture this:", note: "Cinematic. Forces the listener to visualize the scene." },
+    ],
+  },
+  {
+    icon: "Briefcase",
+    title: "Professional — meetings, interviews, presentations",
+    description: "When credibility matters. These signal experience without bragging.",
+    color: "amber",
+    openers: [
+      { en: "Back when I was at [Company]…", note: "Establishes context + tenure in one phrase." },
+      { en: "A few years ago, I…", note: "Slightly distancing — lets you tell a learning story." },
+      { en: "In my last role, we…", note: "Pivot from past job to current relevance." },
+      { en: "We had a situation where…", note: "Pre-loads the listener for a problem-solution arc." },
+      { en: "I'll never forget the time…", note: "Emotional weight — use for high-stakes stories." },
+      { en: "Let me give you some background:", note: "Buys you 60 seconds for context. Perfect for interviews." },
+      { en: "To put it in context, …", note: "Same as above but tighter, more executive." },
+      { en: "Earlier this year, we…", note: "Recent, professional, and still relevant." },
+      { en: "Walking into that meeting, I had no idea that…", note: "Past Continuous opener + Past Perfect twist." },
+      { en: "The lesson I learned the hard way was…", note: "Sets up a story whose payoff is wisdom." },
+    ],
+  },
+  {
+    icon: "GitBranch",
+    title: "Bridges — keeping the story moving",
+    description: "Use these mid-story to advance, twist, or land the point.",
+    color: "violet",
+    openers: [
+      { en: "Which brings me to…", note: "Connects the story to your current point." },
+      { en: "And that's how I ended up…", note: "Resolves into an unexpected outcome." },
+      { en: "Long story short, …", note: "Skips the middle. Use when time is short." },
+      { en: "What happened next was…", note: "Builds suspense; signals a turn." },
+      { en: "So I ended up …ing…", note: "Casual resolution — \"So I ended up calling her.\"" },
+      { en: "It turned out that…", note: "Reveals a twist or hidden information." },
+      { en: "Looking back, I realize…", note: "Reflective register — natural in C1+ speech." },
+      { en: "By the time we got there, …", note: "Past Perfect trigger — \"By the time we got there, she had left.\"" },
+      { en: "That was the moment when…", note: "Marks the pivotal event of the story." },
+      { en: "And the punchline is…", note: "Native idiom for setting up the payoff." },
+    ],
+  },
+];
+
+const colorClasses = {
+  emerald: { ring: "border-emerald-300", icon: "bg-emerald-500", chip: "text-emerald-700" },
+  amber: { ring: "border-amber-300", icon: "bg-amber-500", chip: "text-amber-700" },
+  violet: { ring: "border-violet-300", icon: "bg-violet-500", chip: "text-violet-700" },
+};
+
+const iconMap: Record<string, any> = { Coffee, Briefcase, GitBranch };
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="30 English Story Openers Native Speakers Actually Use | NY English Teacher"
+  description="Thirty ready-made launchpads for telling stories in English — casual, professional, and bridges. The phrases native speakers actually reach for."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-emerald-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-emerald-400 text-sm font-semibold mb-3">
+          <Mic class="w-4 h-4" />
+          Bonus 4 · Master Class Reference
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          30 Story Openers in English
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          Mexican professionals freeze at the start of a story — not the middle. The opening line is the hardest.
+          Memorize three from this list and you have a launchpad for every situation.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Print this page
+          </button>
+          <a
+            href="/en/course/past-tenses/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Back to the master class
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Print header -->
+  <div class="hidden print:block py-4 border-b-2 border-slate-300">
+    <h1 class="text-2xl font-bold text-slate-900">30 English Story Openers — Native-Speaker Reference</h1>
+    <p class="text-sm text-slate-600">nyenglishteacher.com — free for Mexican professionals</p>
+  </div>
+
+  <!-- Groups -->
+  <section class="py-12 md:py-16 bg-white print:py-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto space-y-10 print:space-y-4">
+        {groups.map((g) => {
+          const Icon = iconMap[g.icon];
+          const c = colorClasses[g.color as keyof typeof colorClasses];
+          return (
+            <div class="print:break-inside-avoid">
+              <div class="flex items-center gap-3 mb-4 print:mb-2">
+                <div class:list={["flex items-center justify-center w-10 h-10 rounded-lg text-white shrink-0", c.icon]}>
+                  {Icon && <Icon class="w-5 h-5" />}
+                </div>
+                <div>
+                  <h2 class="text-xl md:text-2xl font-bold text-slate-900 print:text-base">{g.title}</h2>
+                  <p class="text-sm text-slate-500 print:hidden">{g.description}</p>
+                </div>
+              </div>
+
+              <div class:list={["rounded-2xl border-2 bg-white p-6 print:p-2 print:rounded-md", c.ring]}>
+                <ol class="space-y-3 print:space-y-1">
+                  {g.openers.map((o, i) => (
+                    <li class="flex gap-3 pb-3 last:pb-0 last:border-0 border-b border-slate-100 print:pb-1">
+                      <span class:list={["font-mono text-xs font-bold shrink-0 w-6 text-right", c.chip]}>{i + 1}.</span>
+                      <div class="flex-1">
+                        <p class="font-semibold text-slate-900 text-base print:text-sm">"{o.en}"</p>
+                        <p class="text-xs text-slate-500 mt-0.5 print:hidden">{o.note}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- How to drill -->
+  <section class="py-12 md:py-16 bg-slate-50 print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">How to Drill This</h2>
+        <ol class="space-y-4 text-slate-700">
+          <li class="flex gap-4">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 text-white text-sm font-bold shrink-0">1</span>
+            <p><strong>Pick three.</strong> One casual, one professional, one bridge. Don't try to memorize all thirty.</p>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 text-white text-sm font-bold shrink-0">2</span>
+            <p><strong>Tell the same story three times</strong> — once with each opener. Notice how the opener changes the tone, the tense pattern, the listener's expectation.</p>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 text-white text-sm font-bold shrink-0">3</span>
+            <p><strong>Use one in real conversation this week.</strong> Don't wait for the perfect moment. Force one in. The fluency comes from <em>using</em>, not <em>knowing</em>.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-emerald-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">One Bonus Left</h2>
+        <p class="text-emerald-100 mb-6">
+          You've got the openers. Now the closing trap: <em>there was</em> vs <em>there has been</em> — the difference that decides whether your story sounds <em>finished</em> or <em>still mine to fix</em>.
+        </p>
+        <a
+          href="/en/course/past-tenses/there-was-vs-there-has-been/"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+        >
+          "There Was" vs "There Has Been"
+          <ArrowRight class="w-5 h-5" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      header, footer, nav { display: none !important; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #064e3b !important; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "30 English Story Openers Native Speakers Actually Use",
+    "description": "Thirty ready-made launchpads for telling stories in English, grouped by register: casual, professional, and bridges. The exact phrases native speakers reach for, with notes on tense patterns.",
+    "learningResourceType": "Reference",
+    "educationalLevel": "Intermediate to Advanced",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "url": "https://www.nyenglishteacher.com/en/course/past-tenses/story-openers/",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Master English Past Tenses — Free Master Class",
+      "url": "https://www.nyenglishteacher.com/en/course/past-tenses/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/en/about/"
+    }
+  })} />
+</Base>
