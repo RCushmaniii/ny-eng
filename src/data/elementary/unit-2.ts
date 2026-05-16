@@ -280,42 +280,42 @@ export const connectorSentences = {
     {
       word: "Yesterday morning",
       wordEs: "Ayer en la mañana",
-      example: "Yesterday morning, I went to a meeting.",
-      exampleEs: "Ayer en la mañana, fui a una junta.",
-      use: "More precise than just 'yesterday' — narrows the time of day.",
-      useEs: "Más preciso que solo 'yesterday' — acota la hora del día.",
+      example: {
+        english: "Yesterday morning, I went to a meeting.",
+        spanish: "Ayer en la mañana, fui a una junta.",
+      },
     },
     {
       word: "After that",
       wordEs: "Después de eso",
-      example: "After that, I had lunch with a colleague.",
-      exampleEs: "Después de eso, almorcé con un colega.",
-      use: "Connects one past event to the next. The story-telling connector.",
-      useEs: "Conecta un evento pasado con el siguiente. El conector narrativo.",
+      example: {
+        english: "After that, I had lunch with a colleague.",
+        spanish: "Después de eso, almorcé con un colega.",
+      },
     },
     {
       word: "Later",
       wordEs: "Más tarde",
-      example: "Later, she sent me an email.",
-      exampleEs: "Más tarde, ella me mandó un correo.",
-      use: "An unspecified time after another past event. Looser than 'after that'.",
-      useEs: "Un tiempo no especificado después de otro evento pasado. Más amplio que 'after that'.",
+      example: {
+        english: "Later, she sent me an email.",
+        spanish: "Más tarde, ella me mandó un correo.",
+      },
     },
     {
       word: "Then",
       wordEs: "Entonces / Luego",
-      example: "Then I went home.",
-      exampleEs: "Luego me fui a casa.",
-      use: "The most common sequencing word. Use it freely.",
-      useEs: "La palabra de secuencia más común. Úsala libremente.",
+      example: {
+        english: "Then I went home.",
+        spanish: "Luego me fui a casa.",
+      },
     },
     {
       word: "Finally",
       wordEs: "Finalmente",
-      example: "Finally, I got the answer I needed.",
-      exampleEs: "Finalmente, obtuve la respuesta que necesitaba.",
-      use: "Marks the LAST event in a sequence. Strong story closer.",
-      useEs: "Marca el ÚLTIMO evento en una secuencia. Fuerte cerrador de historia.",
+      example: {
+        english: "Finally, I got the answer I needed.",
+        spanish: "Finalmente, obtuve la respuesta que necesitaba.",
+      },
     },
   ],
   bossSentence: {

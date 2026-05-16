@@ -272,42 +272,42 @@ export const connectorSentences = {
     {
       word: "Tomorrow",
       wordEs: "Mañana",
-      example: "Tomorrow, I'm going to visit my parents.",
-      exampleEs: "Mañana, voy a visitar a mis padres.",
-      use: "The most common future opener. Pair with 'going to' for planned events.",
-      useEs: "El inicio de futuro más común. Combina con 'going to' para eventos planeados.",
+      example: {
+        english: "Tomorrow, I'm going to visit my parents.",
+        spanish: "Mañana, voy a visitar a mis padres.",
+      },
     },
     {
       word: "Next",
       wordEs: "Después",
-      example: "Next, we're going to have lunch together.",
-      exampleEs: "Después, vamos a almorzar juntos.",
-      use: "Sequences future events. Same role as 'then', but slightly more formal.",
-      useEs: "Secuencia eventos futuros. Mismo rol que 'then', pero ligeramente más formal.",
+      example: {
+        english: "Next, we're going to have lunch together.",
+        spanish: "Después, vamos a almorzar juntos.",
+      },
     },
     {
       word: "After that",
       wordEs: "Después de eso",
-      example: "After that, I'll probably take a walk in the park.",
-      exampleEs: "Después de eso, probablemente daré un paseo en el parque.",
-      use: "Same connector you used in past tense — works identically in future.",
-      useEs: "El mismo conector que usaste en pasado — funciona igual en futuro.",
+      example: {
+        english: "After that, I'll probably take a walk in the park.",
+        spanish: "Después de eso, probablemente daré un paseo en el parque.",
+      },
     },
     {
       word: "Later",
       wordEs: "Más tarde",
-      example: "Later, we're going to watch a movie.",
-      exampleEs: "Más tarde, vamos a ver una película.",
-      use: "Some time after the previous event — looser than 'after that'.",
-      useEs: "Algo de tiempo después del evento anterior — más amplio que 'after that'.",
+      example: {
+        english: "Later, we're going to watch a movie.",
+        spanish: "Más tarde, vamos a ver una película.",
+      },
     },
     {
       word: "Finally",
       wordEs: "Finalmente",
-      example: "Finally, I'll drive home around nine.",
-      exampleEs: "Finalmente, manejaré a casa cerca de las nueve.",
-      use: "Marks the LAST event in your plan. Strong story closer.",
-      useEs: "Marca el ÚLTIMO evento en tu plan. Cierre fuerte de historia.",
+      example: {
+        english: "Finally, I'll drive home around nine.",
+        spanish: "Finalmente, manejaré a casa cerca de las nueve.",
+      },
     },
   ],
   bossSentence: {

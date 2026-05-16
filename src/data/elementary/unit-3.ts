@@ -415,42 +415,42 @@ export const connectorSentences = {
     {
       word: "First",
       wordEs: "Primero",
-      example: "First, I made coffee.",
-      exampleEs: "Primero, hice café.",
-      use: "Opens a sequence. Tells the listener 'here's where the story starts'.",
-      useEs: "Abre una secuencia. Le dice al oyente 'aquí empieza la historia'.",
+      example: {
+        english: "First, I made coffee.",
+        spanish: "Primero, hice café.",
+      },
     },
     {
       word: "Then",
       wordEs: "Luego / Entonces",
-      example: "Then I checked my email.",
-      exampleEs: "Luego revisé mi correo.",
-      use: "The most common middle connector. Use it freely between events.",
-      useEs: "El conector intermedio más común. Úsalo libremente entre eventos.",
+      example: {
+        english: "Then I checked my email.",
+        spanish: "Luego revisé mi correo.",
+      },
     },
     {
       word: "After that",
       wordEs: "Después de eso",
-      example: "After that, I had a video call.",
-      exampleEs: "Después de eso, tuve una videollamada.",
-      use: "Stronger than 'then'. Signals the next event was directly caused by the previous one.",
-      useEs: "Más fuerte que 'then'. Señala que el siguiente evento fue causado directamente por el anterior.",
+      example: {
+        english: "After that, I had a video call.",
+        spanish: "Después de eso, tuve una videollamada.",
+      },
     },
     {
       word: "Later",
       wordEs: "Más tarde",
-      example: "Later, I went out for lunch.",
-      exampleEs: "Más tarde, salí a almorzar.",
-      use: "Some time has passed — minutes, hours, even days. Looser than 'after that'.",
-      useEs: "Pasó algo de tiempo — minutos, horas, incluso días. Más amplio que 'after that'.",
+      example: {
+        english: "Later, I went out for lunch.",
+        spanish: "Más tarde, salí a almorzar.",
+      },
     },
     {
       word: "Finally",
       wordEs: "Finalmente",
-      example: "Finally, I went to bed.",
-      exampleEs: "Finalmente, me fui a dormir.",
-      use: "Marks the LAST event. Strong story closer — your listener knows you're done.",
-      useEs: "Marca el ÚLTIMO evento. Cierre fuerte de historia — tu oyente sabe que terminaste.",
+      example: {
+        english: "Finally, I went to bed.",
+        spanish: "Finalmente, me fui a dormir.",
+      },
     },
   ],
   bossSentence: {
