@@ -227,20 +227,30 @@ const iconMap: Record<string, any> = {
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           {pastTenseBonuses.map((bonus) => {
             const Icon = iconMap[bonus.icon];
+            const href = bonus.available ? `/en/course/past-tenses/${bonus.slug}/` : undefined;
+            const cardClasses = bonus.available
+              ? "bg-white rounded-xl p-5 border border-emerald-300 flex items-start gap-4 hover:shadow-md hover:border-emerald-400 transition-all duration-200 cursor-pointer"
+              : "bg-white rounded-xl p-5 border border-slate-200 flex items-start gap-4";
+            const iconBg = bonus.available
+              ? "bg-emerald-500 text-white"
+              : "bg-slate-100 text-slate-500";
+            const Tag = bonus.available ? "a" : "div";
             return (
-              <div class="bg-white rounded-xl p-5 border border-slate-200 flex items-start gap-4">
-                <div class="flex items-center justify-center w-10 h-10 rounded-lg shrink-0 bg-slate-100 text-slate-500">
+              <Tag href={href} class={cardClasses}>
+                <div class:list={["flex items-center justify-center w-10 h-10 rounded-lg shrink-0", iconBg]}>
                   {Icon && <Icon class="w-5 h-5" />}
                 </div>
                 <div class="flex-1">
                   <div class="flex items-center gap-2">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Bonus {bonus.id}</span>
-                    <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">Coming soon</span>
+                    <span class:list={["text-xs font-bold uppercase tracking-wider", bonus.available ? "text-emerald-700" : "text-slate-400"]}>Bonus {bonus.id}</span>
+                    {!bonus.available && (
+                      <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">Coming soon</span>
+                    )}
                   </div>
                   <h3 class="text-base font-bold text-slate-900 mt-0.5">{bonus.title}</h3>
                   <p class="text-sm text-slate-600 mt-1">{bonus.description}</p>
                 </div>
-              </div>
+              </Tag>
             );
           })}
         </div>
