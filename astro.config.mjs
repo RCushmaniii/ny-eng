@@ -15,28 +15,35 @@ import { routeFor, getAllTKeys } from "./src/lib/i18n.ts";
 const SITE = "https://www.nyenglishteacher.com";
 
 // Helper usable in serialize()
-const ensureSlashPath = (p = "/") =>
-  ("/" + (p || "/")).replace(/\/+/g, "/").replace(/\/?$/, "/");
+const ensureSlashPath = (p = "/") => ("/" + (p || "/")).replace(/\/+/g, "/").replace(/\/?$/, "/");
 
 // Blog post translations map (EN slug -> ES path)
 // Used by sitemap to generate correct hreflang for blog posts
 const blogTranslations = {
+  "free-english-courses-spanish-speakers": "/es/blog/cursos-ingles-gratis-hispanohablantes/",
   "4-secrets-executives-use": "/es/blog/4-secretos-que-usan-los-ejecutivos/",
-  "5-practical-ways-to-boost-business-english": "/es/blog/5-formas-practicas-mejorar-ingles-negocios/",
+  "5-practical-ways-to-boost-business-english":
+    "/es/blog/5-formas-practicas-mejorar-ingles-negocios/",
   "boost-eng-confidence": "/es/blog/aumentar-confianza/",
-  "corporate-english-transformation-case-study": "/es/blog/caso-estudio-transformacion-ingles-corporativo/",
-  "why-corporate-english-training-fails-mexico": "/es/blog/por-que-fracasa-la-capacitacion-de-ingles-corporativo-en-mexico/",
+  "corporate-english-transformation-case-study":
+    "/es/blog/caso-estudio-transformacion-ingles-corporativo/",
+  "why-corporate-english-training-fails-mexico":
+    "/es/blog/por-que-fracasa-la-capacitacion-de-ingles-corporativo-en-mexico/",
   "executive-english-coaching": "/es/blog/coaching-ejecutivo/",
   "executive-video-call": "/es/blog/presencia-ejecutiva-en-videollamadas/",
   "managers-lose-millions": "/es/blog/por-que-los-gerentes-de-ti-en-mexico-pierden-clientes/",
   "master-business-english": "/es/blog/dominar-negocios/",
-  "real-cost-weak-english-mexican-companies": "/es/blog/costo-real-ingles-debil-empresas-mexicanas/",
+  "real-cost-weak-english-mexican-companies":
+    "/es/blog/costo-real-ingles-debil-empresas-mexicanas/",
   "small-talk-to-smart-talk": "/es/blog/charla-pequena-habla-inteligente/",
-  "why-senior-developers-need-advanced-english": "/es/blog/por-que-desarrolladores-senior-necesitan-ingles-avanzado/",
+  "why-senior-developers-need-advanced-english":
+    "/es/blog/por-que-desarrolladores-senior-necesitan-ingles-avanzado/",
   "email-phrases-that-make-you-sound-junior": "/es/blog/frases-email-que-te-hacen-sonar-junior/",
   "how-to-negotiate-in-english-framework": "/es/blog/como-negociar-en-ingles-marco/",
-  "business-english-mistakes-mexican-professionals": "/es/blog/errores-ingles-negocios-profesionales-mexicanos/",
-  "english-words-mexican-professionals-mispronounce": "/es/blog/palabras-en-ingles-que-profesionales-mexicanos-pronuncian-mal/",
+  "business-english-mistakes-mexican-professionals":
+    "/es/blog/errores-ingles-negocios-profesionales-mexicanos/",
+  "english-words-mexican-professionals-mispronounce":
+    "/es/blog/palabras-en-ingles-que-profesionales-mexicanos-pronuncian-mal/",
   "operations-csuite-language": "/es/blog/lenguaje-ejecutivo-operaciones/",
   "english-nearshore-developers-skills": "/es/blog/ingles-desarrolladores-nearshore-habilidades/",
   "lead-meeting-english-phrases": "/es/blog/dirigir-reuniones-ingles-frases/",
@@ -45,15 +52,19 @@ const blogTranslations = {
   "us-interview-prep": "/es/blog/entrevista-trabajo-empresa-americana/",
   "slack-english-write-like-a-pro": "/es/blog/ingles-para-slack-profesional/",
   "executive-reframing-drills": "/es/blog/ejercicios-reformulacion-ejecutiva/",
-  "why-you-struggle-speaking-english-in-meetings": "/es/blog/por-que-te-cuesta-hablar-ingles-en-reuniones/",
+  "why-you-struggle-speaking-english-in-meetings":
+    "/es/blog/por-que-te-cuesta-hablar-ingles-en-reuniones/",
   "coo-30-second-rule": "/es/blog/regla-30-segundos-coo/",
-  "nearshoring-english-gap-cost-of-miscommunication": "/es/blog/brecha-de-ingles-en-nearshoring-costo-de-la-mala-comunicacion/",
+  "nearshoring-english-gap-cost-of-miscommunication":
+    "/es/blog/brecha-de-ingles-en-nearshoring-costo-de-la-mala-comunicacion/",
   "women-leaders-command-rooms-english": "/es/blog/lideres-mujeres-dominan-ingles/",
   "7-questions-corporate-english-vendor": "/es/blog/7-preguntas-proveedor-ingles-corporativo/",
   "corporate-english-training-roi": "/es/blog/roi-capacitacion-ingles-corporativo/",
-  "why-executive-english-accelerates-careers": "/es/blog/por-que-ingles-ejecutivo-acelera-tu-carrera/",
+  "why-executive-english-accelerates-careers":
+    "/es/blog/por-que-ingles-ejecutivo-acelera-tu-carrera/",
   "english-register-for-spanish-speakers": "/es/blog/registro-en-ingles-para-hispanohablantes/",
-  "mexico-us-workplace-communication-guide": "/es/blog/guia-comunicacion-laboral-mexico-estados-unidos/",
+  "mexico-us-workplace-communication-guide":
+    "/es/blog/guia-comunicacion-laboral-mexico-estados-unidos/",
 };
 
 // Reverse map (ES slug -> EN path)
@@ -61,7 +72,7 @@ const blogTranslationsReverse = Object.fromEntries(
   Object.entries(blogTranslations).map(([enSlug, esPath]) => {
     const esSlug = esPath.replace(/^\/es\/blog\//, "").replace(/\/$/, "");
     return [esSlug, `/en/blog/${enSlug}/`];
-  })
+  }),
 );
 
 // Category translations (EN slug -> ES slug)
@@ -80,7 +91,7 @@ const categoryTranslations = {
 
 // Reverse category map (ES slug -> EN slug)
 const categoryTranslationsReverse = Object.fromEntries(
-  Object.entries(categoryTranslations).map(([en, es]) => [es, en])
+  Object.entries(categoryTranslations).map(([en, es]) => [es, en]),
 );
 
 // Course slug translations (EN slug -> ES slug) for unit pages and exams
@@ -225,17 +236,9 @@ export default defineConfig({
         const p = new URL(pageUrl).pathname;
 
         // Exclude URLs that redirect (non-canonical)
-        const redirectPaths = [
-          "/blog",
-          "/services",
-          "/contact",
-          "/about",
-          "/testimonials",
-        ];
+        const redirectPaths = ["/blog", "/services", "/contact", "/about", "/testimonials"];
 
-        const isRedirect = redirectPaths.some(
-          (prefix) => p === prefix || p.startsWith(prefix),
-        );
+        const isRedirect = redirectPaths.some((prefix) => p === prefix || p.startsWith(prefix));
 
         return (
           !p.includes("/api/") &&
@@ -368,8 +371,16 @@ export default defineConfig({
             const esLeaf = courseLeafTranslations[enLeaf];
             if (esCourse && esLeaf) {
               links = [
-                { rel: "alternate", hreflang: "en-US", url: `${SITE}/en/course/${enCourse}/${enLeaf}/` },
-                { rel: "alternate", hreflang: "es-MX", url: `${SITE}/es/curso/${esCourse}/${esLeaf}/` },
+                {
+                  rel: "alternate",
+                  hreflang: "en-US",
+                  url: `${SITE}/en/course/${enCourse}/${enLeaf}/`,
+                },
+                {
+                  rel: "alternate",
+                  hreflang: "es-MX",
+                  url: `${SITE}/es/curso/${esCourse}/${esLeaf}/`,
+                },
               ];
             }
           } else if (esCourseMatch) {
@@ -379,8 +390,16 @@ export default defineConfig({
             const enLeaf = courseLeafTranslationsReverse[esLeaf];
             if (enCourse && enLeaf) {
               links = [
-                { rel: "alternate", hreflang: "en-US", url: `${SITE}/en/course/${enCourse}/${enLeaf}/` },
-                { rel: "alternate", hreflang: "es-MX", url: `${SITE}/es/curso/${esCourse}/${esLeaf}/` },
+                {
+                  rel: "alternate",
+                  hreflang: "en-US",
+                  url: `${SITE}/en/course/${enCourse}/${enLeaf}/`,
+                },
+                {
+                  rel: "alternate",
+                  hreflang: "es-MX",
+                  url: `${SITE}/es/curso/${esCourse}/${esLeaf}/`,
+                },
               ];
             }
           }
@@ -447,10 +466,7 @@ export default defineConfig({
           priority = 0.7;
           changefreq = "monthly";
           lastmod = new Date("2025-11-20"); // Blog posts stable after publishing
-        } else if (
-          u.pathname.includes("/services/") ||
-          u.pathname.includes("/servicios/")
-        ) {
+        } else if (u.pathname.includes("/services/") || u.pathname.includes("/servicios/")) {
           priority = 0.8;
           changefreq = "yearly";
           lastmod = new Date("2025-10-15"); // Service pages rarely change
@@ -458,30 +474,19 @@ export default defineConfig({
           priority = 0.6;
           changefreq = "monthly";
           lastmod = new Date("2025-11-15"); // Quiz system update date
-        } else if (
-          u.pathname.includes("/terms") ||
-          u.pathname.includes("/privacy")
-        ) {
+        } else if (u.pathname.includes("/terms") || u.pathname.includes("/privacy")) {
           priority = 0.3;
           changefreq = "yearly";
           lastmod = new Date("2025-09-01"); // Legal pages rarely change
-        } else if (
-          u.pathname.match(/^\/(en\/category|es\/categoria)\//)
-        ) {
+        } else if (u.pathname.match(/^\/(en\/category|es\/categoria)\//)) {
           priority = 0.5;
           changefreq = "weekly";
           lastmod = new Date("2026-03-25"); // Category pages update with new posts
-        } else if (
-          u.pathname.includes("/testimonial") ||
-          u.pathname.includes("/testimonio")
-        ) {
+        } else if (u.pathname.includes("/testimonial") || u.pathname.includes("/testimonio")) {
           priority = 0.6;
           changefreq = "monthly";
           lastmod = new Date("2025-11-10"); // Testimonials update date
-        } else if (
-          u.pathname.includes("/resources/") ||
-          u.pathname.includes("/recursos/")
-        ) {
+        } else if (u.pathname.includes("/resources/") || u.pathname.includes("/recursos/")) {
           priority = 0.6;
           changefreq = "monthly";
           lastmod = new Date("2025-12-05"); // Resources updated periodically
