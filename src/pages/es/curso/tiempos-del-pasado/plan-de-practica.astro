@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import AudioButton from "@components/course/AudioButton";
 import {
   ArrowRight,
   ArrowLeft,
@@ -104,9 +105,18 @@ const tkey = "course/past-tenses/practice-plan" as const;
             <h3 class="text-lg font-bold text-slate-900 mb-2">El Diario de 3 Oraciones</h3>
             <p class="text-sm text-slate-700 mb-3">Escribe exactamente tres oraciones sobre ayer. Usa tres tiempos del pasado distintos. No traduzcas del español.</p>
             <div class="bg-emerald-50 rounded-lg p-3 border border-emerald-200 text-xs space-y-1.5 text-slate-700">
-              <p><strong>Past Simple:</strong> "Yesterday I had a meeting with the new client."</p>
-              <p><strong>Past Continuous:</strong> "While I was preparing, the office WiFi went down."</p>
-              <p><strong>Present Perfect:</strong> "I have already followed up with him this morning."</p>
+              <div class="flex items-center gap-2">
+                <p class="flex-1"><strong>Past Simple:</strong> "Yesterday I had a meeting with the new client."</p>
+                <AudioButton client:load text="Yesterday I had a meeting with the new client." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1"><strong>Past Continuous:</strong> "While I was preparing, the office WiFi went down."</p>
+                <AudioButton client:load text="While I was preparing, the office WiFi went down." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1"><strong>Present Perfect:</strong> "I have already followed up with him this morning."</p>
+                <AudioButton client:load text="I have already followed up with him this morning." lang="en-US" size="sm" />
+              </div>
             </div>
           </div>
 

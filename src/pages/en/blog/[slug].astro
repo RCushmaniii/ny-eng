@@ -9,6 +9,7 @@ import CategoryPill from '@components/ui/CategoryPill.astro';
 import DateComponent from '@components/ui/Date.astro';
 import { Image } from 'astro:assets';
 import VideoHero from '@components/blog/VideoHero.tsx';
+import BlogImageLightbox from '@components/blog/BlogImageLightbox.tsx';
 import SpeakEnglish from '@components/blog/SpeakEnglish.astro';
 import { siteConfig } from '@data/config';
 import { normalizeBlogSlug, buildPostUrl, assertNoDoubleLang, stripLangPrefix } from '@utils/i18nRoutes';
@@ -215,31 +216,37 @@ const customHreflangs = [
           />
         </div>
       ) : (featuredObj || featuredUrl) && (
-        <div class="relative mb-12 rounded-lg shadow-lg" style="overflow: hidden;">
-          {featuredObj ? (
-            <Image
-              src={featuredObj}
-              alt={post.data.imageAlt || post.data.title}
-              width={1200}
-              height={675}
-              class="w-full object-cover h-[300px] md:h-[450px] lg:h-[675px] rounded-lg"
-              quality={80}
-              format="webp"
-              style="display: block; margin: 0; padding: 0;"
-            />
-          ) : (
-            <img
-              src={featuredUrl!}
-              alt={post.data.imageAlt || post.data.title}
-              class="w-full object-cover h-[300px] md:h-[450px] lg:h-[675px] rounded-lg"
-              loading="eager"
-              width="1200"
-              height="675"
-              style="display: block; margin: 0; padding: 0;"
-            />
-          )}
-          <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/50 to-transparent rounded-b-lg"></div>
-        </div>
+        <BlogImageLightbox
+          client:load
+          src={featuredUrl || (featuredObj?.src as string)}
+          alt={post.data.imageAlt || post.data.title}
+        >
+          <div class="relative mb-12 rounded-lg shadow-lg" style="overflow: hidden;">
+            {featuredObj ? (
+              <Image
+                src={featuredObj}
+                alt={post.data.imageAlt || post.data.title}
+                width={1200}
+                height={675}
+                class="w-full object-cover h-[300px] md:h-[450px] lg:h-[675px] rounded-lg"
+                quality={80}
+                format="webp"
+                style="display: block; margin: 0; padding: 0;"
+              />
+            ) : (
+              <img
+                src={featuredUrl!}
+                alt={post.data.imageAlt || post.data.title}
+                class="w-full object-cover h-[300px] md:h-[450px] lg:h-[675px] rounded-lg"
+                loading="eager"
+                width="1200"
+                height="675"
+                style="display: block; margin: 0; padding: 0;"
+              />
+            )}
+            <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/50 to-transparent rounded-b-lg"></div>
+          </div>
+        </BlogImageLightbox>
       )}
       
       <Content />
@@ -367,21 +374,24 @@ const customHreflangs = [
             {relatedPosts.map((related: CollectionEntry<'blog'>) => (
                 <a
                   href={cleanBlogUrl(buildPostUrl('en', stripLangPrefix(related.slug)))}
-                  class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 no-underline"
+                  class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 no-underline flex flex-col h-full"
                   style="overflow: hidden; padding: 0; margin: 0;"
                 >
                   {(() => {
                     const relObj = related?.data?.featuredImage;
                     const relUrl = (typeof relObj === 'object' && relObj?.src) ? relObj.src : (related?.data?.seo?.image ?? related?.data?.heroVideoPoster ?? null);
                     return relUrl ? (
-                      <div class="w-full h-36 bg-gray-100" style="margin: 0; padding: 0; display: block;">
+                      <div class="w-full h-36 bg-gray-100 overflow-hidden" style="margin: 0; padding: 0; display: block;">
                         <img src={relUrl} alt={related.data.imageAlt || related.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" style="display: block; margin: 0; padding: 0;" />
                       </div>
                     ) : null;
                   })()}
-                  <div class="p-4">
+                  <div class="p-4 flex flex-col flex-grow">
                     <h3 class="font-bold text-sm mb-2 text-gray-900 group-hover:text-primary transition-colors line-clamp-2">{related.data.title}</h3>
-                    <p class="text-xs text-gray-600 line-clamp-2">{related.data.excerpt}</p>
+                    <p class="text-xs text-gray-600 line-clamp-2 flex-grow">{related.data.excerpt}</p>
+                    <div class="mt-3 inline-block text-primary font-semibold text-xs uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Read More →
+                    </div>
                   </div>
                 </a>
             ))}

@@ -110,9 +110,18 @@ const tkey = "course/past-tenses/lesson-5" as const;
             <p class="text-sm text-emerald-700 font-mono mb-3">Funciona para acciones Y estados.</p>
             <p class="text-slate-700 text-sm mb-4">El flexible. Cubre cualquier cosa que era repetidamente verdad o se hacía repetidamente en el pasado.</p>
             <div class="bg-emerald-50 rounded-lg p-3 border border-emerald-200 text-sm space-y-2">
-              <p><strong>Estado:</strong> "I <strong>used to live</strong> in Guadalajara." (una situación que persistía)</p>
-              <p><strong>Acción:</strong> "I <strong>used to play</strong> soccer every Saturday." (un hábito)</p>
-              <p><strong>Sentimiento:</strong> "She <strong>used to love</strong> chocolate." (una preferencia vieja)</p>
+              <div class="flex items-center gap-2">
+                <p class="flex-1"><strong>Estado:</strong> "I <strong>used to live</strong> in Guadalajara." (una situación que persistía)</p>
+                <AudioButton client:load text="I used to live in Guadalajara." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1"><strong>Acción:</strong> "I <strong>used to play</strong> soccer every Saturday." (un hábito)</p>
+                <AudioButton client:load text="I used to play soccer every Saturday." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1"><strong>Sentimiento:</strong> "She <strong>used to love</strong> chocolate." (una preferencia vieja)</p>
+                <AudioButton client:load text="She used to love chocolate." lang="en-US" size="sm" />
+              </div>
             </div>
           </div>
 
@@ -121,8 +130,14 @@ const tkey = "course/past-tenses/lesson-5" as const;
             <p class="text-sm text-amber-700 font-mono mb-3">Funciona solo para ACCIONES repetidas.</p>
             <p class="text-slate-700 text-sm mb-4">El restringido. Úsalo para cosas que <em>sucedían</em> repetidamente — pero nunca para estados como <em>live</em>, <em>have</em>, <em>be</em>, <em>love</em>.</p>
             <div class="bg-amber-50 rounded-lg p-3 border border-amber-200 text-sm space-y-2">
-              <p>✓ "Every Sunday, I <strong>would call</strong> my grandmother."</p>
-              <p>✓ "When we were kids, we <strong>would walk</strong> to school together."</p>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">✓ "Every Sunday, I <strong>would call</strong> my grandmother."</p>
+                <AudioButton client:load text="Every Sunday, I would call my grandmother." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">✓ "When we were kids, we <strong>would walk</strong> to school together."</p>
+                <AudioButton client:load text="When we were kids, we would walk to school together." lang="en-US" size="sm" />
+              </div>
               <p>✗ <span class="text-red-600">"I would live in Guadalajara"</span> — suena condicional. Usa <em>used to live</em>.</p>
             </div>
           </div>
@@ -152,17 +167,26 @@ const tkey = "course/past-tenses/lesson-5" as const;
         <div class="space-y-5">
           <div class="rounded-xl border-2 border-emerald-300 bg-emerald-50/60 p-6">
             <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Positivo</p>
-            <p class="text-slate-800">"I <strong>used to</strong> drink coffee every morning."</p>
+            <div class="flex items-center gap-2">
+              <p class="text-slate-800 flex-1">"I <strong>used to</strong> drink coffee every morning."</p>
+              <AudioButton client:load text="I used to drink coffee every morning." lang="en-US" size="sm" />
+            </div>
           </div>
           <div class="rounded-xl border-2 border-amber-300 bg-amber-50/60 p-6">
             <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">Negativo (fíjate — sin <em>'d'</em> después de <em>didn't</em>)</p>
-            <p class="text-slate-800">"I <strong>didn't use to</strong> drink coffee."</p>
-            <p class="text-sm text-slate-500 mt-1">No "didn't <s>used</s> to." El <em>did</em> ya carga el pasado — el verbo se queda en <em>use</em>.</p>
+            <div class="flex items-center gap-2 mb-1">
+              <p class="text-slate-800 flex-1">"I <strong>didn't use to</strong> drink coffee."</p>
+              <AudioButton client:load text="I didn't use to drink coffee." lang="en-US" size="sm" />
+            </div>
+            <p class="text-sm text-slate-500">No "didn't <s>used</s> to." El <em>did</em> ya carga el pasado — el verbo se queda en <em>use</em>.</p>
           </div>
           <div class="rounded-xl border-2 border-amber-300 bg-amber-50/60 p-6">
             <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">Pregunta</p>
-            <p class="text-slate-800">"<strong>Did</strong> you <strong>use to</strong> drink coffee?"</p>
-            <p class="text-sm text-slate-500 mt-1">Misma regla. <em>Did</em> primero, luego <em>use to</em> (sin 'd').</p>
+            <div class="flex items-center gap-2 mb-1">
+              <p class="text-slate-800 flex-1">"<strong>Did</strong> you <strong>use to</strong> drink coffee?"</p>
+              <AudioButton client:load text="Did you use to drink coffee?" lang="en-US" size="sm" />
+            </div>
+            <p class="text-sm text-slate-500">Misma regla. <em>Did</em> primero, luego <em>use to</em> (sin 'd').</p>
           </div>
         </div>
 
@@ -248,27 +272,51 @@ const tkey = "course/past-tenses/lesson-5" as const;
           <div class="space-y-4">
             <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
               <p class="text-slate-700">"___ I ___ in Monterrey for three years."</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>I lived</strong> — periodo cerrado con duración específica → Past Simple.</p>
+              <div class="flex items-start gap-2 text-sm">
+                <p class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>I lived</strong> — periodo cerrado con duración específica → Past Simple.</p>
+                <AudioButton client:load text="I lived in Monterrey for three years." lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
               <p class="text-slate-700">"When I was a kid, I ___ in Monterrey."</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>used to live</strong> — describe un estado viejo sin duración ("when I was a kid" → periodo pasado vago).</p>
+              <div class="flex items-start gap-2 text-sm">
+                <p class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>used to live</strong> — estado viejo sin duración específica.</p>
+                <AudioButton client:load text="When I was a kid, I used to live in Monterrey." lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
               <p class="text-slate-700">"Last Sunday, I ___ my grandmother."</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>called</strong> — un evento específico → Past Simple.</p>
+              <div class="flex items-start gap-2 text-sm">
+                <p class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>called</strong> — un evento específico → Past Simple.</p>
+                <AudioButton client:load text="Last Sunday, I called my grandmother." lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
               <p class="text-slate-700">"Every Sunday, I ___ my grandmother."</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>used to call</strong> O <strong>would call</strong> — el hábito repetido. Los dos sirven porque <em>call</em> es acción.</p>
+              <div class="flex flex-col gap-1 text-sm">
+                <div class="flex items-center gap-2">
+                  <p class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>used to call</strong></p>
+                  <AudioButton client:load text="Every Sunday, I used to call my grandmother." lang="en-US" size="sm" />
+                </div>
+                <div class="flex items-center gap-2">
+                  <p class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>would call</strong> — ambos sirven para acciones.</p>
+                  <AudioButton client:load text="Every Sunday, I would call my grandmother." lang="en-US" size="sm" />
+                </div>
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
               <p class="text-slate-700">"She ___ coffee, but now she drinks tea."</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>used to drink</strong> — hábito pasado contrastado explícitamente con el presente → grita por <em>used to</em>.</p>
+              <div class="flex items-start gap-2 text-sm">
+                <p class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>used to drink</strong> — hábito pasado contrastado con el presente.</p>
+                <AudioButton client:load text="She used to drink coffee, but now she drinks tea." lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-start">
               <p class="text-slate-700">"Back then, we ___ broke."</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>used to be</strong> — estado. <em>Would be</em> está mal aquí (suena condicional).</p>
+              <div class="flex items-start gap-2 text-sm">
+                <p class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>used to be</strong> — estado. <em>Would be</em> suena condicional.</p>
+                <AudioButton client:load text="Back then, we used to be broke." lang="en-US" size="sm" />
+              </div>
             </div>
           </div>
         </div>

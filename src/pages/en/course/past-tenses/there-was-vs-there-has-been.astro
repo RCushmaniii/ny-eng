@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import AudioButton from "@components/course/AudioButton";
 import {
   ArrowRight,
   ArrowLeft,
@@ -86,9 +87,18 @@ const tkey = "course/past-tenses/there-was-vs-there-has-been" as const;
               The situation existed in <strong>closed past time</strong>. It's done. It's filed. It's a fact you're reporting from a sealed past.
             </p>
             <div class="bg-white rounded-lg p-3 border border-emerald-200 text-sm space-y-1.5">
-              <p>"<strong>There was</strong> a fire in 2018."</p>
-              <p>"<strong>There was</strong> an issue last week — we fixed it."</p>
-              <p>"<strong>There was</strong> a problem during the demo." (the demo is over)</p>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"<strong>There was</strong> a fire in 2018."</p>
+                <AudioButton client:load text="There was a fire in 2018." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"<strong>There was</strong> an issue last week — we fixed it."</p>
+                <AudioButton client:load text="There was an issue last week. We fixed it." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"<strong>There was</strong> a problem during the demo." (the demo is over)</p>
+                <AudioButton client:load text="There was a problem during the demo." lang="en-US" size="sm" />
+              </div>
             </div>
           </div>
 
@@ -104,9 +114,18 @@ const tkey = "course/past-tenses/there-was-vs-there-has-been" as const;
               The situation is <strong>still relevant</strong>. It started in the past and the consequence is still here, still mine to deal with.
             </p>
             <div class="bg-white rounded-lg p-3 border border-amber-200 text-sm space-y-1.5">
-              <p>"<strong>There has been</strong> a problem this morning." (still today, still happening)</p>
-              <p>"<strong>There have been</strong> delays — we're working on it." (currently)</p>
-              <p>"<strong>There has been</strong> an update since we last spoke."</p>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"<strong>There has been</strong> a problem this morning." (still today, still happening)</p>
+                <AudioButton client:load text="There has been a problem this morning." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"<strong>There have been</strong> delays — we're working on it." (currently)</p>
+                <AudioButton client:load text="There have been delays. We're working on it." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"<strong>There has been</strong> an update since we last spoke."</p>
+                <AudioButton client:load text="There has been an update since we last spoke." lang="en-US" size="sm" />
+              </div>
             </div>
           </div>
         </div>
@@ -124,13 +143,19 @@ const tkey = "course/past-tenses/there-was-vs-there-has-been" as const;
         <div class="space-y-4">
           <div class="bg-white rounded-2xl border-2 border-slate-200 p-6">
             <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Closed — "Don't worry about it"</p>
-            <p class="text-slate-800 text-lg italic">"There was an issue with the deployment last night."</p>
-            <p class="text-sm text-slate-500 mt-2">→ The listener hears: "I'm reporting history. It's fixed. Moving on."</p>
+            <div class="flex items-start gap-3 mb-2">
+              <p class="text-slate-800 text-lg italic flex-1">"There was an issue with the deployment last night."</p>
+              <AudioButton client:load text="There was an issue with the deployment last night." lang="en-US" size="sm" />
+            </div>
+            <p class="text-sm text-slate-500">→ The listener hears: "I'm reporting history. It's fixed. Moving on."</p>
           </div>
           <div class="bg-white rounded-2xl border-2 border-amber-300 p-6">
             <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">Open — "I need your attention"</p>
-            <p class="text-slate-800 text-lg italic">"There has been an issue with the deployment."</p>
-            <p class="text-sm text-slate-500 mt-2">→ The listener hears: "This is still happening. Drop what you're doing."</p>
+            <div class="flex items-start gap-3 mb-2">
+              <p class="text-slate-800 text-lg italic flex-1">"There has been an issue with the deployment."</p>
+              <AudioButton client:load text="There has been an issue with the deployment." lang="en-US" size="sm" />
+            </div>
+            <p class="text-sm text-slate-500">→ The listener hears: "This is still happening. Drop what you're doing."</p>
           </div>
         </div>
 
@@ -154,23 +179,38 @@ const tkey = "course/past-tenses/there-was-vs-there-has-been" as const;
           <div class="space-y-4 print:space-y-2">
             <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
               <p class="text-slate-700">A fire happened in 2018. Now it's 2026.</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There was</strong> a fire — closed time.</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There was</strong> a fire — closed time.</div>
+                <AudioButton client:load text="There was a fire in 2018." lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
               <p class="text-slate-700">Three Slack messages came in this morning. It's still morning.</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There have been</strong> three messages — period still open.</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There have been</strong> three messages — period still open.</div>
+                <AudioButton client:load text="There have been three messages this morning." lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
               <p class="text-slate-700">You're explaining a closed Q1 result to the board in Q3.</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There was</strong> a 12% dip in Q1 — Q1 is sealed.</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There was</strong> a 12% dip in Q1 — Q1 is sealed.</div>
+                <AudioButton client:load text="There was a 12% dip in Q1." lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
               <p class="text-slate-700">Customer complaints have been arriving all week. It's Thursday.</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There have been</strong> complaints this week — the week isn't over.</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There have been</strong> complaints this week — the week isn't over.</div>
+                <AudioButton client:load text="There have been complaints this week." lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-start">
               <p class="text-slate-700">Server outage happened yesterday. Already resolved.</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There was</strong> an outage yesterday — fixed, closed.</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There was</strong> an outage yesterday — fixed, closed.</div>
+                <AudioButton client:load text="There was an outage yesterday." lang="en-US" size="sm" />
+              </div>
             </div>
           </div>
         </div>

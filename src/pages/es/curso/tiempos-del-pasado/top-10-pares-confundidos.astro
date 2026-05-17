@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import AudioButton from "@components/course/AudioButton";
 import {
   ArrowRight,
   ArrowLeft,
@@ -22,6 +23,7 @@ const pairs = [
     spanish: "Ambos vienen de <em>decir</em>.",
     rule: "<strong>Say</strong> las palabras. <strong>Tell</strong> a una persona.",
     good: "She <strong>told me</strong> the news. / She <strong>said</strong> the news was bad.",
+    audioText: "She told me the news. She said the news was bad.",
     trap: "\"She told that…\" — mal. Le dices <em>a alguien</em>. \"She told <strong>me</strong> that…\"",
   },
   {
@@ -31,6 +33,7 @@ const pairs = [
     spanish: "Ambos vienen de <em>hacer</em>.",
     rule: "<strong>Do</strong> una tarea o actividad. <strong>Make</strong> una cosa o un resultado.",
     good: "I <strong>did</strong> the report. / I <strong>made</strong> a decision.",
+    audioText: "I did the report. I made a decision.",
     trap: "\"I made the homework\" — mal. Tarea es actividad → <strong>did</strong> the homework.",
   },
   {
@@ -40,6 +43,7 @@ const pairs = [
     spanish: "Ambos se sienten como <em>acostar(se)</em>.",
     rule: "<strong>Lay</strong> lleva objeto. <strong>Lie</strong> no.",
     good: "I <strong>laid</strong> the report on his desk. / I <strong>lay</strong> on the sofa for an hour.",
+    audioText: "I laid the report on his desk. I lay on the sofa for an hour.",
     trap: "Pasado de <em>lie</em> es <em>lay</em>. Pasado de <em>lay</em> es <em>laid</em>. \"I <strong>lay</strong> down yesterday\" = pasado de <em>lie</em>, sin objeto.",
   },
   {
@@ -49,6 +53,7 @@ const pairs = [
     spanish: "<em>Subir / levantar(se)</em> se traslapan.",
     rule: "<strong>Rise</strong> sube por sí solo. <strong>Raise</strong> lleva objeto.",
     good: "Prices <strong>rose</strong> last quarter. / The CEO <strong>raised</strong> prices last quarter.",
+    audioText: "Prices rose last quarter. The CEO raised prices last quarter.",
     trap: "\"They raised\" sin objeto = mal. Usa <em>rose</em>.",
   },
   {
@@ -58,6 +63,7 @@ const pairs = [
     spanish: "Ambos se sienten como <em>ganar</em>.",
     rule: "<strong>Win</strong> una cosa (un juego, un premio, una discusión). <strong>Beat</strong> a una persona o equipo.",
     good: "We <strong>won</strong> the contract. / We <strong>beat</strong> their team.",
+    audioText: "We won the contract. We beat their team.",
     trap: "\"We won them\" — mal. \"We <strong>beat</strong> them\" o \"we won <strong>against</strong> them.\"",
   },
   {
@@ -67,6 +73,7 @@ const pairs = [
     spanish: "<em>Prestar</em> va en ambas direcciones en español.",
     rule: "<strong>Borrow</strong> = tomar prestado de alguien. <strong>Lend</strong> = prestar a alguien.",
     good: "Can I <strong>borrow</strong> your charger? / Can you <strong>lend</strong> me your charger?",
+    audioText: "Can I borrow your charger? Can you lend me your charger?",
     trap: "\"Can you borrow me…\" — mal. Estarías tomando prestado de ti mismo.",
   },
   {
@@ -76,6 +83,7 @@ const pairs = [
     spanish: "<em>Traer / llevar</em> — pero la perspectiva en inglés cambia.",
     rule: "<strong>Bring</strong> hacia quien habla. <strong>Take</strong> lejos de quien habla.",
     good: "<strong>Bring</strong> the report <em>here</em>. / <strong>Take</strong> the report <em>there</em>.",
+    audioText: "Bring the report here. Take the report there.",
     trap: "\"I'll bring it to the meeting\" (vas <em>a</em> la junta) — usualmente <em>take</em>. Usa <em>bring</em> solo si quien escucha <em>está</em> en la junta.",
   },
   {
@@ -85,6 +93,7 @@ const pairs = [
     spanish: "Ambos pueden caer como <em>recordar</em>.",
     rule: "<strong>Remember</strong> = recordar tú solo. <strong>Remind</strong> = hacer que alguien más recuerde.",
     good: "I <strong>remember</strong> the meeting. / Can you <strong>remind</strong> me about the meeting?",
+    audioText: "I remember the meeting. Can you remind me about the meeting?",
     trap: "\"Remember me to call her\" — mal. \"<strong>Remind</strong> me to call her.\"",
   },
   {
@@ -94,6 +103,7 @@ const pairs = [
     spanish: "<em>Perder</em> cubre ambos en español.",
     rule: "<strong>Miss</strong> una fecha límite, un vuelo, una oportunidad. <strong>Lose</strong> una cosa o una competencia.",
     good: "I <strong>missed</strong> the flight. / I <strong>lost</strong> my keys.",
+    audioText: "I missed the flight. I lost my keys.",
     trap: "\"I lost the bus\" — mal. Lo <strong>missed</strong>. Solo <em>lose</em> cosas que posees.",
   },
   {
@@ -103,6 +113,7 @@ const pairs = [
     spanish: "<em>Escuchar / oír</em> — pero el reparto cambia.",
     rule: "<strong>Listen</strong> es activo (intención). <strong>Hear</strong> es pasivo (solo el sonido).",
     good: "I <strong>listened</strong> to the call carefully. / I <strong>heard</strong> a noise outside.",
+    audioText: "I listened to the call carefully. I heard a noise outside.",
     trap: "\"I'm hearing music\" — usualmente mal. Si la pusiste con intención, estás <strong>listening to</strong> music.",
   },
 ];
@@ -174,9 +185,12 @@ const pairs = [
               <p class="text-xs text-slate-500 italic mb-3 print:text-xs" set:html={p.spanish} />
               <div class="space-y-2.5 text-sm text-slate-700 print:text-xs">
                 <p set:html={`<strong class="text-slate-900">Regla:</strong> ${p.rule}`} />
-                <div class="bg-emerald-50 rounded p-2.5 border border-emerald-200 flex gap-2">
+                <div class="bg-emerald-50 rounded p-2.5 border border-emerald-200 flex gap-2 items-start">
                   <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <p set:html={p.good} />
+                  <p set:html={p.good} class="flex-1" />
+                  <div class="print:hidden shrink-0">
+                    <AudioButton client:load text={p.audioText} lang="en-US" size="sm" />
+                  </div>
                 </div>
                 <div class="bg-red-50 rounded p-2.5 border border-red-200 flex gap-2">
                   <XCircle class="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
