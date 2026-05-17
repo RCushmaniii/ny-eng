@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import AudioButton from "@components/course/AudioButton";
 import {
   ArrowRight,
   ArrowLeft,
@@ -156,7 +157,12 @@ const iconMap: Record<string, any> = { Coffee, Briefcase, GitBranch };
                     <li class="flex gap-3 pb-3 last:pb-0 last:border-0 border-b border-slate-100 print:pb-1">
                       <span class:list={["font-mono text-xs font-bold shrink-0 w-6 text-right", c.chip]}>{i + 1}.</span>
                       <div class="flex-1">
-                        <p class="font-semibold text-slate-900 text-base print:text-sm">"{o.en}"</p>
+                        <div class="flex items-center gap-2">
+                          <p class="font-semibold text-slate-900 text-base print:text-sm flex-1">"{o.en}"</p>
+                          <div class="print:hidden shrink-0">
+                            <AudioButton client:load text={o.en} lang="en-US" size="sm" />
+                          </div>
+                        </div>
                         <p class="text-xs text-slate-500 mt-0.5 print:hidden">{o.note}</p>
                       </div>
                     </li>
