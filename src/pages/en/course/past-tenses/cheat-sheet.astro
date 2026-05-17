@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import AudioButton from "@components/course/AudioButton";
 import {
   ArrowRight,
   ArrowLeft,
@@ -101,8 +102,14 @@ const tkey = "course/past-tenses/cheat-sheet" as const;
               <p><strong class="text-slate-900">Triggers:</strong> yesterday · last week · in 2019 · when I was 20 · ago</p>
               <div class="bg-white rounded p-2.5 border border-emerald-200">
                 <p class="text-xs text-emerald-700 font-semibold mb-1">EXAMPLES</p>
-                <p>"I <strong>worked</strong> at Telmex for eight years."</p>
-                <p>"She <strong>quit</strong> last Friday."</p>
+                <div class="flex items-center gap-2">
+                  <p class="flex-1">"I <strong>worked</strong> at Telmex for eight years."</p>
+                  <AudioButton client:load text="I worked at Telmex for eight years." lang="en-US" size="sm" />
+                </div>
+                <div class="flex items-center gap-2">
+                  <p class="flex-1">"She <strong>quit</strong> last Friday."</p>
+                  <AudioButton client:load text="She quit last Friday." lang="en-US" size="sm" />
+                </div>
               </div>
               <div class="bg-red-50 rounded p-2.5 border border-red-200">
                 <p class="text-xs text-red-700 font-semibold mb-1 flex items-center gap-1"><AlertTriangle class="w-3 h-3" /> MEXICAN TRAP</p>
@@ -131,8 +138,14 @@ const tkey = "course/past-tenses/cheat-sheet" as const;
               <p><strong class="text-slate-900">Triggers:</strong> when… · while… · as… · at 3pm yesterday · all morning</p>
               <div class="bg-white rounded p-2.5 border border-emerald-200">
                 <p class="text-xs text-emerald-700 font-semibold mb-1">EXAMPLES</p>
-                <p>"I <strong>was driving</strong> home when she <strong>called</strong>."</p>
-                <p>"We <strong>were having</strong> dinner at 8."</p>
+                <div class="flex items-center gap-2">
+                  <p class="flex-1">"I <strong>was driving</strong> home when she <strong>called</strong>."</p>
+                  <AudioButton client:load text="I was driving home when she called." lang="en-US" size="sm" />
+                </div>
+                <div class="flex items-center gap-2">
+                  <p class="flex-1">"We <strong>were having</strong> dinner at 8."</p>
+                  <AudioButton client:load text="We were having dinner at 8." lang="en-US" size="sm" />
+                </div>
               </div>
               <div class="bg-red-50 rounded p-2.5 border border-red-200">
                 <p class="text-xs text-red-700 font-semibold mb-1 flex items-center gap-1"><AlertTriangle class="w-3 h-3" /> MEXICAN TRAP</p>
@@ -161,9 +174,18 @@ const tkey = "course/past-tenses/cheat-sheet" as const;
               <p><strong class="text-slate-900">Triggers:</strong> already · yet · ever · never · just · since · for · this week (still going) · so far</p>
               <div class="bg-white rounded p-2.5 border border-emerald-300">
                 <p class="text-xs text-emerald-700 font-semibold mb-1">EXAMPLES</p>
-                <p>"I <strong>have done</strong> the report." (it's ready <em>now</em>)</p>
-                <p>"She <strong>has lived</strong> here since 2018." (still does)</p>
-                <p>"<strong>Have</strong> you <strong>seen</strong> the email?" (any time up to now)</p>
+                <div class="flex items-center gap-2">
+                  <p class="flex-1">"I <strong>have done</strong> the report." (it's ready <em>now</em>)</p>
+                  <AudioButton client:load text="I have done the report." lang="en-US" size="sm" />
+                </div>
+                <div class="flex items-center gap-2">
+                  <p class="flex-1">"She <strong>has lived</strong> here since 2018." (still does)</p>
+                  <AudioButton client:load text="She has lived here since 2018." lang="en-US" size="sm" />
+                </div>
+                <div class="flex items-center gap-2">
+                  <p class="flex-1">"<strong>Have</strong> you <strong>seen</strong> the email?" (any time up to now)</p>
+                  <AudioButton client:load text="Have you seen the email?" lang="en-US" size="sm" />
+                </div>
               </div>
               <div class="bg-red-50 rounded p-2.5 border border-red-200">
                 <p class="text-xs text-red-700 font-semibold mb-1 flex items-center gap-1"><AlertTriangle class="w-3 h-3" /> MEXICAN TRAP</p>
@@ -192,8 +214,14 @@ const tkey = "course/past-tenses/cheat-sheet" as const;
               <p><strong class="text-slate-900">Triggers:</strong> by the time… · before… · after… · already had… · when she arrived, I had already…</p>
               <div class="bg-white rounded p-2.5 border border-emerald-200">
                 <p class="text-xs text-emerald-700 font-semibold mb-1">EXAMPLES</p>
-                <p>"When I got there, the meeting <strong>had started</strong>."</p>
-                <p>"She <strong>had finished</strong> before I asked."</p>
+                <div class="flex items-center gap-2">
+                  <p class="flex-1">"When I got there, the meeting <strong>had started</strong>."</p>
+                  <AudioButton client:load text="When I got there, the meeting had started." lang="en-US" size="sm" />
+                </div>
+                <div class="flex items-center gap-2">
+                  <p class="flex-1">"She <strong>had finished</strong> before I asked."</p>
+                  <AudioButton client:load text="She had finished before I asked." lang="en-US" size="sm" />
+                </div>
               </div>
               <div class="bg-red-50 rounded p-2.5 border border-red-200">
                 <p class="text-xs text-red-700 font-semibold mb-1 flex items-center gap-1"><AlertTriangle class="w-3 h-3" /> MEXICAN TRAP</p>
@@ -311,17 +339,38 @@ const tkey = "course/past-tenses/cheat-sheet" as const;
           <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-2 print:rounded-md print:break-inside-avoid">
             <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">Knew vs. Found out</p>
             <p class="text-sm text-slate-700 mb-2"><strong>Spanish:</strong> <em>sabía</em> (state) vs. <em>supe</em> (moment of discovery)</p>
-            <p class="text-sm text-slate-700"><strong>English:</strong> "I <strong>knew</strong> she was leaving" (ongoing state). "I <strong>found out</strong> she was leaving" (one moment of discovery — never "I knew it yesterday").</p>
+            <div class="flex items-center gap-2 text-sm text-slate-700 mb-1">
+              <p class="flex-1">"I <strong>knew</strong> she was leaving" (ongoing state).</p>
+              <AudioButton client:load text="I knew she was leaving." lang="en-US" size="sm" />
+            </div>
+            <div class="flex items-center gap-2 text-sm text-slate-700">
+              <p class="flex-1">"I <strong>found out</strong> she was leaving" (one moment of discovery).</p>
+              <AudioButton client:load text="I found out she was leaving." lang="en-US" size="sm" />
+            </div>
           </div>
           <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-2 print:rounded-md print:break-inside-avoid">
             <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">There was vs. There has been</p>
             <p class="text-sm text-slate-700 mb-2"><strong>Spanish:</strong> <em>hubo</em> (closed) vs. <em>ha habido</em> (still relevant)</p>
-            <p class="text-sm text-slate-700"><strong>English:</strong> "There <strong>was</strong> a problem last week" (closed). "There <strong>has been</strong> a problem this morning" (still here, still mine to fix).</p>
+            <div class="flex items-center gap-2 text-sm text-slate-700 mb-1">
+              <p class="flex-1">"There <strong>was</strong> a problem last week" (closed).</p>
+              <AudioButton client:load text="There was a problem last week." lang="en-US" size="sm" />
+            </div>
+            <div class="flex items-center gap-2 text-sm text-slate-700">
+              <p class="flex-1">"There <strong>has been</strong> a problem this morning" (still here, still mine to fix).</p>
+              <AudioButton client:load text="There has been a problem this morning." lang="en-US" size="sm" />
+            </div>
           </div>
           <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-2 print:rounded-md print:break-inside-avoid">
             <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">Did vs. Have done</p>
             <p class="text-sm text-slate-700 mb-2"><strong>Spanish:</strong> <em>hice</em> vs. <em>he hecho</em> — the same instinct works.</p>
-            <p class="text-sm text-slate-700"><strong>English:</strong> "I <strong>did</strong> the report yesterday" (closed). "I <strong>have done</strong> the report" (it's on your desk now — relevant).</p>
+            <div class="flex items-center gap-2 text-sm text-slate-700 mb-1">
+              <p class="flex-1">"I <strong>did</strong> the report yesterday" (closed).</p>
+              <AudioButton client:load text="I did the report yesterday." lang="en-US" size="sm" />
+            </div>
+            <div class="flex items-center gap-2 text-sm text-slate-700">
+              <p class="flex-1">"I <strong>have done</strong> the report" (it's on your desk now — relevant).</p>
+              <AudioButton client:load text="I have done the report." lang="en-US" size="sm" />
+            </div>
           </div>
         </div>
       </div>

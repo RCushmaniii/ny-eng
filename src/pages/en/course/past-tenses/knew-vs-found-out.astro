@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import AudioButton from "@components/course/AudioButton";
 import {
   ArrowRight,
   ArrowLeft,
@@ -86,9 +87,18 @@ const tkey = "course/past-tenses/knew-vs-found-out" as const;
               A <strong>state</strong> of knowing. You already had the information. The knowledge was sitting in your head, possibly for years.
             </p>
             <div class="bg-white rounded-lg p-3 border border-emerald-200 text-sm space-y-1.5">
-              <p>"I <strong>knew</strong> she was leaving." (the whole time)</p>
-              <p>"He <strong>knew</strong> the answer." (already had it)</p>
-              <p>"We <strong>knew</strong> each other from college."</p>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I <strong>knew</strong> she was leaving." (the whole time)</p>
+                <AudioButton client:load text="I knew she was leaving." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"He <strong>knew</strong> the answer." (already had it)</p>
+                <AudioButton client:load text="He knew the answer." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"We <strong>knew</strong> each other from college."</p>
+                <AudioButton client:load text="We knew each other from college." lang="en-US" size="sm" />
+              </div>
             </div>
           </div>
 
@@ -104,9 +114,18 @@ const tkey = "course/past-tenses/knew-vs-found-out" as const;
               The <strong>moment</strong> of discovering. A single point in time when the knowledge entered your head.
             </p>
             <div class="bg-white rounded-lg p-3 border border-amber-200 text-sm space-y-1.5">
-              <p>"I <strong>found out</strong> she was leaving." (one moment — maybe yesterday)</p>
-              <p>"He <strong>found out</strong> the answer at 5pm."</p>
-              <p>"We <strong>found out</strong> about it on Monday."</p>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I <strong>found out</strong> she was leaving." (one moment — maybe yesterday)</p>
+                <AudioButton client:load text="I found out she was leaving." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"He <strong>found out</strong> the answer at 5pm."</p>
+                <AudioButton client:load text="He found out the answer at 5pm." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"We <strong>found out</strong> about it on Monday."</p>
+                <AudioButton client:load text="We found out about it on Monday." lang="en-US" size="sm" />
+              </div>
             </div>
           </div>
         </div>
@@ -155,27 +174,48 @@ const tkey = "course/past-tenses/knew-vs-found-out" as const;
           <div class="space-y-4 print:space-y-2">
             <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-emerald-200">
               <p class="text-slate-700">"___ you ___ that he had quit?"</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>Did you know</strong> (state) <span class="text-slate-400">or</span> <strong>Did you find out</strong> (moment) — both work, depending on intent</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>Did you know</strong> (state) <span class="text-slate-400">or</span> <strong>Did you find out</strong> (moment) — both work, depending on intent</div>
+                <div class="flex flex-col gap-1">
+                  <AudioButton client:load text="Did you know that he had quit?" lang="en-US" size="sm" />
+                  <AudioButton client:load text="Did you find out that he had quit?" lang="en-US" size="sm" />
+                </div>
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-emerald-200">
               <p class="text-slate-700">"I ___ about the meeting at 4pm."</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>found out</strong> — "at 4pm" is a moment</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>found out</strong> — "at 4pm" is a moment</div>
+                <AudioButton client:load text="I found out about the meeting at 4pm." lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-emerald-200">
               <p class="text-slate-700">"She ___ him for years before they dated."</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>knew</strong> — "for years" is a state</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>knew</strong> — "for years" is a state</div>
+                <AudioButton client:load text="She knew him for years before they dated." lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-emerald-200">
               <p class="text-slate-700">"How did you ___ that the company was sold?"</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>find out</strong> — "How" asks about the moment of discovery</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>find out</strong> — "How" asks about the moment of discovery</div>
+                <AudioButton client:load text="How did you find out that the company was sold?" lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-emerald-200">
               <p class="text-slate-700">"He ___ the answer the whole time."</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>knew</strong> — "the whole time" is duration</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>knew</strong> — "the whole time" is duration</div>
+                <AudioButton client:load text="He knew the answer the whole time." lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-center">
               <p class="text-slate-700">"We ___ about the layoffs yesterday."</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>found out</strong> — "yesterday" + new information = moment</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>found out</strong> — "yesterday" + new information = moment</div>
+                <AudioButton client:load text="We found out about the layoffs yesterday." lang="en-US" size="sm" />
+              </div>
             </div>
           </div>
         </div>
