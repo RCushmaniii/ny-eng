@@ -4,6 +4,32 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-05-17
+
+### Accomplished
+- Merged PR #174: Past Tenses promo + Bonus 1 (cheat sheet EN+ES). Added "Targeted Master Classes" section to `/en/courses/` + `/es/cursos/`, cross-link callouts on intermediate + advanced course landings, ItemList JSON-LD updated
+- Merged PR #177: shipped Bonuses 2-5 — `top-10-confused-pairs`, `knew-vs-found-out`, `story-openers`, `there-was-vs-there-has-been` (EN + ES). All flipped to `available: true`, 4 new tkeys registered in `src/lib/i18n.ts`
+- Merged PR #181: 6+6 symmetric expansion. NEW Lesson 5 (Used to / Would, the habitual past); old Lesson 5 (Story Flow Map) renumbered to Lesson 6; NEW Bonus 6 (Your 30-Day Practice Plan). Courses index redesigned to 3×2 grid with Past Tenses as 6th card (distinct dark/emerald header). Hero copy updated to "Six free, interactive courses"
+- Merged PR #182: fixed misleading CTAs on practice-plan + there-was-vs-there-has-been (EN+ES). "Save the cheat sheet" → "Open the cheat sheet"; "Work 1-on-1 with Robert" → /services/ → "Book a session with Robert" → `/en/book/`
+- Submitted all new/changed URLs to Google sitemap, IndexNow (Bing/Yandex/DuckDuckGo/Seznam/Naver), and Bing Webmaster API direct
+
+### Decisions Made
+- Lesson 5 = "Used to / Would" (over Past Modals, Third Conditional, or Reported Speech): biggest true gap in a past-tenses-specific master class. Others are modality/irrealis, save for a future master class
+- No 301 redirects for lesson-5 → lesson-6 renumber: the `/lesson-5/` URL doesn't go away, it just serves new Used to/Would content. Google re-crawl handles the re-index
+- CTA button 2 routed to `/en/book/` over `/services/ongoing-coaching/`: more action-aligned with "Book a session" verb; stronger conversion path from a free-course completer
+
+### Immediate Next Steps
+- [ ] Verify production deploy of PR #182 (CTA fix) lands clean on both bonus pages
+- [ ] Monitor GSC over next 7 days for re-crawl of `/lesson-5/` (URL content reassigned)
+
+### Technical Debt
+- Parallel Claude session running concurrently caused branch-name collisions (3 incidents — one commit ended up on `main` locally, recovered via cherry-pick + reset). Single-session is meaningfully faster
+
+### Open Questions / Blockers
+- None
+
+---
+
 ## Session: 2026-05-16
 
 ### Accomplished
