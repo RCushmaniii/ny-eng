@@ -47,7 +47,7 @@ Un detalle más: si estás leyendo la versión en español de un artículo o lec
 
 Estos cursos no empiezan desde cero. Empiezan desde tu español.
 
-Ya conoces más de 1,500 palabras en inglés gracias a los cognados — palabras que existen en los dos idiomas con el mismo significado. Palabras como *professional*, *communication*, *executive*, *presentation*, *organization*. La mayoría de los cursos de inglés ignoran esto y te hacen perder el primer mes aprendiendo cosas que ya sabes.
+Ya conoces más de 1,500 palabras en inglés gracias a los cognados — palabras que existen en los dos idiomas con el mismo significado. Palabras como <span class="speak-en">professional</span>, <span class="speak-en">communication</span>, <span class="speak-en">executive</span>, <span class="speak-en">presentation</span>, <span class="speak-en">organization</span>. Presiona cualquiera para escuchar cómo se pronuncian en inglés americano. La mayoría de los cursos ignoran esto y te hacen perder el primer mes aprendiendo cosas que ya sabes.
 
 Estos cursos no. Los principiantes activan lo que ya está ahí. Los estudiantes más avanzados corrigen los patrones de interferencia específicos que el español crea en el inglés: la tendencia a traducir palabra por palabra, la confusión entre el pasado simple y el presente perfecto, los falsos cognados que te avergüenzan en contextos formales, los momentos en que tu mente se bloquea mientras busca el equivalente en inglés.
 
@@ -58,7 +58,7 @@ Cada curso apunta exactamente a la brecha que los hispanohablantes enfrentan en 
 ### Nivel A1 — Primeros Pasos en Inglés
 *"Ya hablas inglés. Solo no lo sabes todavía."*
 
-Para principiantes completos o para quien siempre ha sentido que el inglés es imposible. Este curso empieza con las más de 1,500 palabras en inglés que ya conoces gracias al español y construye conversaciones reales capa por capa. Para la Unidad 10, estás sosteniendo un diálogo real.
+Para principiantes completos o para quien siempre ha sentido que el inglés es imposible. Este curso empieza con las más de 1,500 palabras en inglés que ya conoces gracias al español y construye conversaciones reales capa por capa. Para la Unidad 10, sostienes diálogos como: <span class="speak-en">My name is Carlos. I work in IT. Nice to meet you.</span>
 [Empezar el curso de principiante →](/es/curso/principiantes/)
 
 ---
@@ -66,7 +66,7 @@ Para principiantes completos o para quien siempre ha sentido que el inglés es i
 ### Nivel A2 — Cuenta Tu Historia
 *"De fragmentos a historias completas — pasado, presente y futuro de tu vida real."*
 
-Puedes decir algunas cosas en inglés, pero te desmoronas cuando alguien hace una pregunta que requiere más de una oración. Este curso lo corrige. Aprenderás a hablar de ayer, de mañana y de todo lo demás — con audio en cada oración para que escuches cómo debe sonar la historia.
+Puedes decir algunas cosas en inglés, pero te desmoronas cuando alguien hace una pregunta que requiere más de una oración. Este curso lo corrige. Al terminar, oraciones como esta salen naturalmente: <span class="speak-en">Last week I had an important meeting. It went really well. Next month we're launching a new product.</span>
 [Empezar el curso elemental →](/es/curso/elemental/)
 
 ---
@@ -74,7 +74,7 @@ Puedes decir algunas cosas en inglés, pero te desmoronas cuando alguien hace un
 ### Nivel B1–B2 — Construyendo Fluidez
 *"Deja de traducir. Empieza a pensar en inglés."*
 
-Puedes sostener una conversación, pero cada oración todavía pasa primero por el español. Hay un medio segundo de retraso antes de hablar — y lo sientes. Este curso recablea eso. Phrasal verbs, condicionales, los conectores naturales que usan los nativos — practicados hasta que el inglés sale sin traducción. Audio en cada drill.
+Puedes sostener una conversación, pero cada oración todavía pasa primero por el español. Hay un medio segundo de retraso antes de hablar — y lo sientes. Este curso recablea eso. Frases como <span class="speak-en">Can you fill me in on what happened?</span> y <span class="speak-en">I'll look into it and get back to you by Friday.</span> dejan de ser cosas que traduces y se convierten en cosas que simplemente dices.
 [Empezar el curso intermedio →](/es/curso/intermedio/)
 
 ---
@@ -82,7 +82,7 @@ Puedes sostener una conversación, pero cada oración todavía pasa primero por 
 ### Nivel B2–C1 — Habla con Confianza
 *"El pulido que convierte 'fluido' en 'impecable'."*
 
-Tu inglés es fluido. No está pulido. Incluso a nivel C1, el artículo equivocado, un *"fewer"* perdido y la TH suave te delatan en los primeros treinta segundos. Este curso apunta exactamente a esos detalles. Vocabulario de precisión, reglas de artículos, los detalles de pronunciación que te distinguen como un profesional serio en lugar de un estudiante avanzado.
+Tu inglés es fluido. No está pulido. Incluso a nivel C1, el artículo equivocado, un <span class="speak-en">fewer</span> perdido (no "less") y la TH suave te delatan en los primeros treinta segundos. La diferencia entre <span class="speak-en">There were fewer delays than we expected.</span> y "There were less delays" — uno te marca como profesional serio, el otro como estudiante avanzado. El audio en cada drill hace que la versión correcta sea la que tu oído busca de forma automática.
 [Empezar el curso avanzado →](/es/curso/avanzado/)
 
 ---
@@ -90,7 +90,7 @@ Tu inglés es fluido. No está pulido. Incluso a nivel C1, el artículo equivoca
 ### Nivel C1–C2 — Comunícate Como un Líder
 *"Lenguaje de mando ejecutivo bajo presión."*
 
-Cuando la sala espera a un líder, ser fluido no basta. Esta es la versión productizada del coaching ejecutivo uno a uno — drills con énfasis en el habla, marcos con nombre y el registro de precisión que señala autoridad más que solo competencia. Usa de manera predeterminada una voz masculina de inglés americano, calibrada al registro de comunicación ejecutiva.
+Cuando la sala espera a un líder, ser fluido no basta. La diferencia entre "I think we should change this" y <span class="speak-en">I'd like to reframe that before we move forward.</span> O entre "I don't agree" y <span class="speak-en">Let me push back on that assumption for a moment.</span> Mismo significado. Sala completamente diferente. Esta es la versión productizada del coaching ejecutivo uno a uno, con una voz masculina de inglés americano calibrada al registro ejecutivo.
 [Empezar el curso ejecutivo →](/es/curso/ejecutivo/)
 
 ---
@@ -98,7 +98,7 @@ Cuando la sala espera a un líder, ser fluido no basta. Esta es la versión prod
 ### Clase Magistral — Domina los Tiempos del Pasado
 *"Siente la historia. No pienses en las reglas."*
 
-Sabes las reglas del pasado. Aun así te congelas y usas *"I did"* cuando debe ser *"I have done."* Esta clase magistral recablea la elección mediante visualización, no memorización. Seis lecciones enfocadas más seis recursos adicionales — una guía rápida, un plan de práctica de 30 días y más. Diseñada específicamente para profesionales corporativos mexicanos.
+Sabes las reglas del pasado. Aun así te congelas y usas <span class="speak-en">I worked there for three years</span> cuando la situación pide <span class="speak-en">I've worked here for three years.</span> O dices <span class="speak-en">I was finishing the report when my manager called</span> sin saber si está bien. Esta clase magistral recablea esas elecciones mediante visualización y audio, no memorización. Presiona cada frase de arriba y nota cómo el sonido mismo te dice que algo diferente está pasando — así funciona exactamente el curso.
 [Empezar la clase magistral de tiempos del pasado →](/es/curso/tiempos-del-pasado/)
 
 ---
