@@ -38,7 +38,6 @@ const professionalService = {
   ],
   "serviceType": "Business English Coaching",
   "knowsLanguage": ["English", "Spanish"],
-  "priceRange": "500-6000",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "English Coaching Services",
@@ -99,12 +98,7 @@ const professionalService = {
     "email": "info@nyenglishteacher.com",
     "contactType": "customer support",
     "availableLanguage": ["English", "Spanish"]
-  },
-  "sameAs": [
-    siteConfig.Socials.LinkedIn,
-    siteConfig.Socials.Instagram,
-    siteConfig.Socials.xSocial
-  ].filter(Boolean)
+  }
 };
 ---
 <script type="application/ld+json" is:inline set:html={JSON.stringify(professionalService)}></script>
