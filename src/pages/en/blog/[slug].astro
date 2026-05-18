@@ -307,7 +307,7 @@ const customHreflangs = [
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {previousPost && (
           <a
-            href={cleanBlogUrl(buildPostUrl('en', stripLangPrefix(previousPost.slug)))}
+            href={cleanBlogUrl(buildPostUrl('en', previousPost.id.replace(/^en\/|\.mdx?$/g, '')))}
             rel="prev"
             class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 no-underline"
             style="overflow: hidden; padding: 0; margin: 0;"
@@ -336,7 +336,7 @@ const customHreflangs = [
         )}
         {nextPost && (
           <a
-            href={cleanBlogUrl(buildPostUrl('en', stripLangPrefix(nextPost.slug)))}
+            href={cleanBlogUrl(buildPostUrl('en', nextPost.id.replace(/^en\/|\.mdx?$/g, '')))}
             rel="next"
             class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 no-underline"
             style="overflow: hidden; padding: 0; margin: 0;"
@@ -373,7 +373,7 @@ const customHreflangs = [
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedPosts.map((related: CollectionEntry<'blog'>) => (
                 <a
-                  href={cleanBlogUrl(buildPostUrl('en', stripLangPrefix(related.slug)))}
+                  href={cleanBlogUrl(buildPostUrl('en', related.id.replace(/^en\/|\.mdx?$/g, '')))}
                   class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 no-underline flex flex-col h-full"
                   style="overflow: hidden; padding: 0; margin: 0;"
                 >
