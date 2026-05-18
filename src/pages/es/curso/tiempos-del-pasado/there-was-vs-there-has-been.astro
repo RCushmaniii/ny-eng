@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import AudioButton from "@components/course/AudioButton";
 import {
   ArrowRight,
   ArrowLeft,
@@ -86,9 +87,18 @@ const tkey = "course/past-tenses/there-was-vs-there-has-been" as const;
               La situación existió en <strong>tiempo pasado cerrado</strong>. Está hecho. Está archivado. Es un hecho que reportas desde un pasado sellado.
             </p>
             <div class="bg-white rounded-lg p-3 border border-emerald-200 text-sm space-y-1.5">
-              <p>"<strong>There was</strong> a fire in 2018."</p>
-              <p>"<strong>There was</strong> an issue last week — we fixed it."</p>
-              <p>"<strong>There was</strong> a problem during the demo." (la demo ya terminó)</p>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"<strong>There was</strong> a fire in 2018."</p>
+                <AudioButton client:load text="There was a fire in 2018." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"<strong>There was</strong> an issue last week — we fixed it."</p>
+                <AudioButton client:load text="There was an issue last week. We fixed it." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"<strong>There was</strong> a problem during the demo." (la demo ya terminó)</p>
+                <AudioButton client:load text="There was a problem during the demo." lang="en-US" size="sm" />
+              </div>
             </div>
           </div>
 
@@ -104,9 +114,18 @@ const tkey = "course/past-tenses/there-was-vs-there-has-been" as const;
               La situación <strong>todavía es relevante</strong>. Empezó en el pasado y la consecuencia sigue aquí, todavía me toca atenderla.
             </p>
             <div class="bg-white rounded-lg p-3 border border-amber-200 text-sm space-y-1.5">
-              <p>"<strong>There has been</strong> a problem this morning." (todavía hoy, todavía pasando)</p>
-              <p>"<strong>There have been</strong> delays — we're working on it." (actualmente)</p>
-              <p>"<strong>There has been</strong> an update since we last spoke."</p>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"<strong>There has been</strong> a problem this morning." (todavía hoy, todavía pasando)</p>
+                <AudioButton client:load text="There has been a problem this morning." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"<strong>There have been</strong> delays — we're working on it." (actualmente)</p>
+                <AudioButton client:load text="There have been delays. We're working on it." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"<strong>There has been</strong> an update since we last spoke."</p>
+                <AudioButton client:load text="There has been an update since we last spoke." lang="en-US" size="sm" />
+              </div>
             </div>
           </div>
         </div>
@@ -124,13 +143,19 @@ const tkey = "course/past-tenses/there-was-vs-there-has-been" as const;
         <div class="space-y-4">
           <div class="bg-white rounded-2xl border-2 border-slate-200 p-6">
             <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Cerrado — "No te preocupes"</p>
-            <p class="text-slate-800 text-lg italic">"There was an issue with the deployment last night."</p>
-            <p class="text-sm text-slate-500 mt-2">→ Quien escucha entiende: "Estoy reportando historia. Está arreglado. Seguimos."</p>
+            <div class="flex items-start gap-3 mb-2">
+              <p class="text-slate-800 text-lg italic flex-1">"There was an issue with the deployment last night."</p>
+              <AudioButton client:load text="There was an issue with the deployment last night." lang="en-US" size="sm" />
+            </div>
+            <p class="text-sm text-slate-500">→ Quien escucha entiende: "Estoy reportando historia. Está arreglado. Seguimos."</p>
           </div>
           <div class="bg-white rounded-2xl border-2 border-amber-300 p-6">
             <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">Abierto — "Necesito tu atención"</p>
-            <p class="text-slate-800 text-lg italic">"There has been an issue with the deployment."</p>
-            <p class="text-sm text-slate-500 mt-2">→ Quien escucha entiende: "Esto sigue pasando. Deja lo que estés haciendo."</p>
+            <div class="flex items-start gap-3 mb-2">
+              <p class="text-slate-800 text-lg italic flex-1">"There has been an issue with the deployment."</p>
+              <AudioButton client:load text="There has been an issue with the deployment." lang="en-US" size="sm" />
+            </div>
+            <p class="text-sm text-slate-500">→ Quien escucha entiende: "Esto sigue pasando. Deja lo que estés haciendo."</p>
           </div>
         </div>
 
@@ -154,23 +179,38 @@ const tkey = "course/past-tenses/there-was-vs-there-has-been" as const;
           <div class="space-y-4 print:space-y-2">
             <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
               <p class="text-slate-700">Hubo un incendio en 2018. Ahora es 2026.</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There was</strong> a fire — tiempo cerrado.</p>
+              <div class="flex items-center gap-2 text-sm">
+                <p class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There was</strong> a fire — tiempo cerrado.</p>
+                <AudioButton client:load text="There was a fire in 2018." lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
               <p class="text-slate-700">Llegaron tres mensajes de Slack esta mañana. Todavía es la mañana.</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There have been</strong> three messages — el periodo sigue abierto.</p>
+              <div class="flex items-center gap-2 text-sm">
+                <p class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There have been</strong> three messages — el periodo sigue abierto.</p>
+                <AudioButton client:load text="There have been three messages this morning." lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
               <p class="text-slate-700">Estás explicando un resultado cerrado del Q1 a la junta directiva en el Q3.</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There was</strong> a 12% dip in Q1 — el Q1 está sellado.</p>
+              <div class="flex items-center gap-2 text-sm">
+                <p class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There was</strong> a 12% dip in Q1 — el Q1 está sellado.</p>
+                <AudioButton client:load text="There was a 12% dip in Q1." lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-start pb-3 border-b border-emerald-200">
               <p class="text-slate-700">Han llegado quejas de clientes toda la semana. Es jueves.</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There have been</strong> complaints this week — la semana no termina.</p>
+              <div class="flex items-center gap-2 text-sm">
+                <p class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There have been</strong> complaints this week — la semana no termina.</p>
+                <AudioButton client:load text="There have been complaints this week." lang="en-US" size="sm" />
+              </div>
             </div>
             <div class="grid md:grid-cols-2 gap-3 items-start">
               <p class="text-slate-700">Hubo una caída del servidor ayer. Ya está resuelto.</p>
-              <p class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There was</strong> an outage yesterday — arreglado, cerrado.</p>
+              <div class="flex items-center gap-2 text-sm">
+                <p class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-emerald-600" /> <strong>There was</strong> an outage yesterday — arreglado, cerrado.</p>
+                <AudioButton client:load text="There was an outage yesterday." lang="en-US" size="sm" />
+              </div>
             </div>
           </div>
         </div>
