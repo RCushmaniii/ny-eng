@@ -8,8 +8,17 @@ const cleanSiteUrl = siteUrl.replace(/https?:\/\/www\.www\./i, 'https://www.').r
 const website = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${cleanSiteUrl}/#website`,
   "name": siteConfig.companyName,
-  "url": cleanSiteUrl
+  "url": cleanSiteUrl + "/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": cleanSiteUrl + "/?s={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
 };
 ---
 <script type="application/ld+json" is:inline set:html={JSON.stringify(website)}></script>
