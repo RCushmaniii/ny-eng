@@ -4,6 +4,31 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-05-17 (continued — audio pass + blog post)
+
+### Accomplished
+- Merged PR #183: completed AudioButton pass across all remaining Past Tenses pages EN+ES (`story-openers`, `top-10-confused-pairs`, `practice-plan` EN; `leccion-5`, `guia-rapida`, `knew-vs-found-out`, `there-was-vs-there-has-been`, `frases-iniciales`, `top-10-pares-confundidos`, `plan-de-practica` ES). 108 AudioButton instances × 2 languages = 216 total buttons across all 14 course pages
+- Merged PR #183 — prior commit `d9b7951` (same day) covered EN lesson-5, cheat-sheet, knew-vs-found-out, there-was-vs-there-has-been AudioButton pass
+- Merged (earlier, separate commits): free-courses blog post EN+ES (`src/content/blog/en/free-english-courses-spanish-speakers.md`, `src/content/blog/es/cursos-ingles-gratis-hispanohablantes.md`); hero images processed PNG→WebP 1200×675 and placed in both `images/` dirs; `astro.config.mjs` blogTranslations updated; GSC sitemap submitted
+- `data-driven` pages (`story-openers`, `top-10-confused-pairs` and ES mirrors): added `audioText` field to pairs data arrays (since `set:html` blocks can't embed React); AudioButton rendered alongside `set:html` paragraph
+
+### Decisions Made
+- `print:hidden` wrapping div on AudioButtons (not inline class): keeps markup readable and prevents buttons appearing on print for pages with print stylesheets
+- One `audioText: string` field per pair (clean plain-text) alongside `good: string` (HTML-formatted): AudioButton gets clean text, the `set:html` block gets the bold/em formatting — no duplication of the data
+
+### Immediate Next Steps
+- [ ] Verify Vercel deploy of PR #183 — spot-check speaker buttons on EN story-openers and ES guia-rapida: https://www.nyenglishteacher.com/en/course/past-tenses/story-openers/
+- [ ] Run `node scripts/seo/bing-submit.mjs` and `indexnow-submit.mjs` for the two blog post URLs
+- [ ] Re-run Ahrefs full crawl in 3-5 days to verify all 5 issue categories cleared (carried from prior session)
+
+### Technical Debt
+- None new
+
+### Open Questions / Blockers
+- None
+
+---
+
 ## Session: 2026-05-17
 
 ### Accomplished
