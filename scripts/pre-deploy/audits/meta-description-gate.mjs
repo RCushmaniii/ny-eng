@@ -11,13 +11,16 @@ const MAX = 160;
 const EXCLUDE_PREFIXES = [
   "dev/docs/",
   "en/chat-test/",
+  "en/quiz/", // Quiz assessment pages (thin content)
+  "es/quiz/", // Spanish quiz pages
+  "en/404/", // 404 error page
+  "es/404/", // Spanish 404 page
+  "en/thank-you/", // Thank you page
+  "es/thank-you/", // Spanish thank you page
 ];
-const EXCLUDE_FILES = new Set([
-  "index.html",
-]);
+const EXCLUDE_FILES = new Set(["index.html"]);
 
-const META_RE =
-  /<meta\s+[^>]*name=["']description["'][^>]*content=(?:"([^"]*)"|'([^']*)')[^>]*>/i;
+const META_RE = /<meta\s+[^>]*name=["']description["'][^>]*content=(?:"([^"]*)"|'([^']*)')[^>]*>/i;
 
 function walk(dir) {
   const out = [];
@@ -61,25 +64,33 @@ for (const file of files) {
 }
 
 console.log(
-  `meta-description-gate: ${checked} pages checked, ${tooShort.length} too short (warn), ${tooLong.length} too long (FAIL), ${missing} missing meta, ${excluded} excluded`,
+  `meta-description-gate: ${checked} pages checked, ${tooShort.length} too short (FAIL), ${tooLong.length} too long (FAIL), ${missing} missing meta, ${excluded} excluded`,
 );
 
+const failed = tooShort.length + tooLong.length;
+
 if (tooShort.length > 0) {
-  console.warn(`\nWARN — ${tooShort.length} pages with description < ${MIN} chars (Ahrefs flags but not blocking):`);
+  console.error(`\n❌ FAIL — ${tooShort.length} pages with description < ${MIN} chars:`);
   for (const v of tooShort) {
-    console.warn(`  /${v.rel} (${v.len} chars) "${v.desc.slice(0, 80)}${v.desc.length > 80 ? "..." : ""}"`);
+    console.error(`  /${v.rel} (${v.len} chars)`);
+    console.error(`    "${v.desc}"`);
   }
 }
 
-if (tooLong.length === 0) {
-  console.log(`\nPASS — no descriptions exceed ${MAX} chars`);
+if (tooLong.length > 0) {
+  console.error(`\n❌ FAIL — ${tooLong.length} pages with description > ${MAX} chars:`);
+  for (const v of tooLong) {
+    console.error(`  /${v.rel} (${v.len} chars)`);
+    console.error(`    "${v.desc}"`);
+  }
+}
+
+if (failed === 0) {
+  console.log(`\n✅ PASS — all ${checked} pages have descriptions between ${MIN}-${MAX} chars`);
   process.exit(0);
 }
 
-console.error(`\nFAIL — ${tooLong.length} descriptions exceed ${MAX} chars:\n`);
-for (const v of tooLong) {
-  console.error(`  /${v.rel} (${v.len} chars)`);
-  console.error(`    "${v.desc}"`);
-}
-console.error(`\nFix descriptions to be ${MIN}-${MAX} characters.`);
+console.error(
+  `\n🚫 FIX REQUIRED — adjust ${failed} meta description(s) to be ${MIN}-${MAX} characters before deploying.`,
+);
 process.exit(1);
