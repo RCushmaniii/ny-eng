@@ -52,6 +52,8 @@ Here’s what leaders from different industries say about working with me:
 > **Hugo Blum**  
 > _CEO, 100 Ladrillos_
 
+If you're building a company and need to pitch, sell, or lead in English, browse [all articles for startup founders](/en/category/startup-founders/) or see the dedicated [English coaching for startup founders](/en/services/startup-founders/) program.
+
 > ★★★★★  
 > “Robert’s coaching made me feel natural speaking English, especially with U.S. clients. I’m now comfortable in conversations and ready for networking and international meetings.”  
 > **Andres Guzman Rubio**  
