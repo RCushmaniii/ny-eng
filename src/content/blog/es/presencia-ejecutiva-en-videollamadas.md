@@ -122,6 +122,7 @@ Sustituye cierres débiles por acciones, responsables y tiempos.
 ## Sigue Leyendo
 
 - [Dirigir reuniones en inglés: 25 frases con autoridad](/es/blog/dirigir-reuniones-ingles-frases/) — Las frases exactas para abrir, facilitar y cerrar reuniones con impacto.
+- [14 ejercicios de reformulación ejecutiva para sonar como un líder](/es/blog/ejercicios-reformulacion-ejecutiva/) — Reemplaza frases vagas con lenguaje de autoridad en tiempo real durante tus videollamadas.
 - [4 secretos para dominar el hablar improvisado en inglés](/es/blog/4-secretos-que-usan-los-ejecutivos/) — Domina las preguntas inesperadas que surgen en cualquier videollamada.
 - [Manual de comunicación ejecutiva: 7 pilares clave](/es/blog/manual-comunicacion-ejecutiva/) — La guía completa para liderar con influencia en inglés.
 

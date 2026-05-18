@@ -333,6 +333,7 @@ Entender estos 7 pilares es el primer paso. Pero leer sobre comunicación ejecut
 ## Sigue Leyendo
 
 - [Caso de estudio: transformación del inglés corporativo en 12 meses](/es/blog/caso-estudio-transformacion-ingles-corporativo/) — Cómo un equipo directivo aplicó estos pilares para transformar su comunicación.
+- [14 ejercicios de reformulación ejecutiva para sonar como un líder](/es/blog/ejercicios-reformulacion-ejecutiva/) — Lenguaje de precisión en tiempo real para reemplazar frases vagas con autoridad ejecutiva.
 - [4 secretos para dominar el hablar improvisado en inglés](/es/blog/4-secretos-que-usan-los-ejecutivos/) — Profundiza en el Pilar 5 con estrategias prácticas para brillar sin guión.
 - [El costo real del inglés débil en empresas mexicanas](/es/blog/costo-real-ingles-debil-empresas-mexicanas/) — Los datos duros detrás de por qué estas habilidades impactan directamente en ingresos.
 
