@@ -4,6 +4,33 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-05-17 (Blog UX + Lightbox)
+
+### Accomplished
+- Fixed article card UX: added "Read More →" button with opacity hover transition to clearly signal clickability
+- Created BlogImageLightbox.tsx React component for hero image interactivity with full-resolution modal display
+- Implemented lightbox close mechanisms: ESC key, click outside image, X button in top-right
+- Applied card and lightbox improvements to both EN and ES blog detail pages (`src/pages/en/blog/[slug].astro`, `src/pages/es/blog/[slug].astro`)
+- Verified all features working via Playwright testing (5 article cards found, 3 "Read More" elements, hero image interactive)
+- Committed changes: `feat(blog): make article cards clickable with clear UX affordance and add hero image lightbox`
+- Bumped version: 2.1.0 → 2.2.0 (minor release for new features)
+
+### Decisions Made
+- Custom React lightbox component vs. npm package: Custom solution keeps dependencies minimal and avoids dependency bloat for a simple use case
+- Opacity transition for "Read More": Maintains card height consistency and avoids layout shift on hover
+- Flex layout for cards: Ensures content distribution is consistent and excerpt doesn't overflow when "Read More" appears
+
+### Immediate Next Steps
+- [ ] None — feature is complete and live
+
+### Technical Debt
+- None
+
+### Open Questions / Blockers
+- None
+
+---
+
 ## Session: 2026-05-17 (continued — audio pass + blog post)
 
 ### Accomplished
