@@ -151,6 +151,18 @@ export type TKey =
   | "course/past-tenses/knew-vs-found-out"
   | "course/past-tenses/story-openers"
   | "course/past-tenses/there-was-vs-there-has-been"
+  | "course/drive-the-decision"
+  | "course/drive-the-decision/series-a-cac-pushback"
+  | "course/drive-the-decision/board-meeting-burn-rate"
+  | "course/drive-the-decision/all-hands-pivot"
+  | "course/drive-the-decision/ceo-technical-debt"
+  | "course/drive-the-decision/enterprise-outage"
+  | "course/drive-the-decision/sales-product-conflict"
+  | "course/drive-the-decision/series-b-competitor"
+  | "course/drive-the-decision/layoff-communication"
+  | "course/drive-the-decision/missed-quarter"
+  | "course/drive-the-decision/declining-major-deal"
+  | "course/drive-the-decision/reflex-drill"
   | "corporate/for-hr"
   | "meme-portfolio"
   | "site-index";
@@ -171,16 +183,12 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     faqs: "/en/faqs/",
     resources: "/en/resources/",
     "resources/5-questions": "/en/resources/5-questions/",
-    "resources/5-minute-negotiation-script":
-      "/en/resources/5-minute-negotiation-script/",
-    "resources/7-sentences-leadership-english":
-      "/en/resources/7-sentences-leadership-english/",
-    "resources/5-principles-executive-english":
-      "/en/resources/5-principles-executive-english/",
+    "resources/5-minute-negotiation-script": "/en/resources/5-minute-negotiation-script/",
+    "resources/7-sentences-leadership-english": "/en/resources/7-sentences-leadership-english/",
+    "resources/5-principles-executive-english": "/en/resources/5-principles-executive-english/",
     "resources/10-common-mistakes-executive-english":
       "/en/resources/10-common-mistakes-executive-english/",
-    "resources/5-quick-wins-executive-english":
-      "/en/resources/5-quick-wins-executive-english/",
+    "resources/5-quick-wins-executive-english": "/en/resources/5-quick-wins-executive-english/",
     "resources/60-second-self-introduction-template":
       "/en/resources/60-second-self-introduction-template/",
     "resources/client-call-opening-closing-framework":
@@ -188,25 +196,17 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "resources/pushback-playbook": "/en/resources/pushback-playbook/",
     "resources/email-templates-difficult-situations":
       "/en/resources/email-templates-difficult-situations/",
-    "resources/executive-summary-formula":
-      "/en/resources/executive-summary-formula/",
+    "resources/executive-summary-formula": "/en/resources/executive-summary-formula/",
     "resources/feedback-framework": "/en/resources/feedback-framework/",
-    "resources/interview-answer-templates":
-      "/en/resources/interview-answer-templates/",
+    "resources/interview-answer-templates": "/en/resources/interview-answer-templates/",
     "resources/meeting-rescue-phrases": "/en/resources/meeting-rescue-phrases/",
     "resources/status-update-script": "/en/resources/status-update-script/",
-    "resources/questions-that-close-deals":
-      "/en/resources/questions-that-close-deals/",
-    "resources/technical-explanation-formula":
-      "/en/resources/technical-explanation-formula/",
-    "resources/difficult-conversation-checklist":
-      "/en/resources/difficult-conversation-checklist/",
-    "resources/professional-apology-framework":
-      "/en/resources/professional-apology-framework/",
-    "resources/phrases-aggressive-clients":
-      "/en/resources/phrases-aggressive-clients/",
-    "resources/salary-negotiation-script":
-      "/en/resources/salary-negotiation-script/",
+    "resources/questions-that-close-deals": "/en/resources/questions-that-close-deals/",
+    "resources/technical-explanation-formula": "/en/resources/technical-explanation-formula/",
+    "resources/difficult-conversation-checklist": "/en/resources/difficult-conversation-checklist/",
+    "resources/professional-apology-framework": "/en/resources/professional-apology-framework/",
+    "resources/phrases-aggressive-clients": "/en/resources/phrases-aggressive-clients/",
+    "resources/salary-negotiation-script": "/en/resources/salary-negotiation-script/",
     "legal/privacy-policy": "/en/legal/privacy-policy/",
     "legal/terms-of-service": "/en/legal/terms-of-service/",
     "legal/data-deletion": "/en/legal/data-deletion/",
@@ -228,8 +228,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "category/professional-english": "/en/category/professional-english/",
     "category/high-stakes-english": "/en/category/high-stakes-english/",
     "category/business-english": "/en/category/business-english/",
-    "category/high-impact-communication":
-      "/en/category/high-impact-communication/",
+    "category/high-impact-communication": "/en/category/high-impact-communication/",
     "category/career-leadership": "/en/category/career-leadership/",
     "category/english-coaching": "/en/category/english-coaching/",
     "category/executive-english": "/en/category/executive-english/",
@@ -312,15 +311,32 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/past-tenses/lesson-5": "/en/course/past-tenses/lesson-5/",
     "course/past-tenses/lesson-6": "/en/course/past-tenses/lesson-6/",
     "course/past-tenses/cheat-sheet": "/en/course/past-tenses/cheat-sheet/",
-    "course/past-tenses/practice-plan":
-      "/en/course/past-tenses/practice-plan/",
-    "course/past-tenses/top-10-confused-pairs":
-      "/en/course/past-tenses/top-10-confused-pairs/",
-    "course/past-tenses/knew-vs-found-out":
-      "/en/course/past-tenses/knew-vs-found-out/",
+    "course/past-tenses/practice-plan": "/en/course/past-tenses/practice-plan/",
+    "course/past-tenses/top-10-confused-pairs": "/en/course/past-tenses/top-10-confused-pairs/",
+    "course/past-tenses/knew-vs-found-out": "/en/course/past-tenses/knew-vs-found-out/",
     "course/past-tenses/story-openers": "/en/course/past-tenses/story-openers/",
     "course/past-tenses/there-was-vs-there-has-been":
       "/en/course/past-tenses/there-was-vs-there-has-been/",
+    "course/drive-the-decision": "/en/course/drive-the-decision/",
+    "course/drive-the-decision/series-a-cac-pushback":
+      "/en/course/drive-the-decision/series-a-cac-pushback/",
+    "course/drive-the-decision/board-meeting-burn-rate":
+      "/en/course/drive-the-decision/board-meeting-burn-rate/",
+    "course/drive-the-decision/all-hands-pivot": "/en/course/drive-the-decision/all-hands-pivot/",
+    "course/drive-the-decision/ceo-technical-debt":
+      "/en/course/drive-the-decision/ceo-technical-debt/",
+    "course/drive-the-decision/enterprise-outage":
+      "/en/course/drive-the-decision/enterprise-outage/",
+    "course/drive-the-decision/sales-product-conflict":
+      "/en/course/drive-the-decision/sales-product-conflict/",
+    "course/drive-the-decision/series-b-competitor":
+      "/en/course/drive-the-decision/series-b-competitor/",
+    "course/drive-the-decision/layoff-communication":
+      "/en/course/drive-the-decision/layoff-communication/",
+    "course/drive-the-decision/missed-quarter": "/en/course/drive-the-decision/missed-quarter/",
+    "course/drive-the-decision/declining-major-deal":
+      "/en/course/drive-the-decision/declining-major-deal/",
+    "course/drive-the-decision/reflex-drill": "/en/course/drive-the-decision/reflex-drill/",
     "corporate/for-hr": "/en/for-hr-managers/",
     "meme-portfolio": "/en/meme-portfolio/all/",
     "site-index": "/en/site-index/",
@@ -340,12 +356,9 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     faqs: "/es/faqs/",
     resources: "/es/recursos/",
     "resources/5-questions": "/es/recursos/5-preguntas/",
-    "resources/5-minute-negotiation-script":
-      "/es/recursos/guion-negociacion-5-minutos/",
-    "resources/7-sentences-leadership-english":
-      "/es/recursos/7-frases-liderazgo-ingles/",
-    "resources/5-principles-executive-english":
-      "/es/recursos/5-principios-ingles-ejecutivo/",
+    "resources/5-minute-negotiation-script": "/es/recursos/guion-negociacion-5-minutos/",
+    "resources/7-sentences-leadership-english": "/es/recursos/7-frases-liderazgo-ingles/",
+    "resources/5-principles-executive-english": "/es/recursos/5-principios-ingles-ejecutivo/",
     "resources/10-common-mistakes-executive-english":
       "/es/recursos/10-errores-comunes-ingles-ejecutivo/",
     "resources/5-quick-wins-executive-english":
@@ -357,27 +370,18 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "resources/pushback-playbook": "/es/recursos/guia-para-decir-no/",
     "resources/email-templates-difficult-situations":
       "/es/recursos/plantillas-email-situaciones-dificiles/",
-    "resources/executive-summary-formula":
-      "/es/recursos/formula-resumen-ejecutivo/",
+    "resources/executive-summary-formula": "/es/recursos/formula-resumen-ejecutivo/",
     "resources/feedback-framework": "/es/recursos/marco-retroalimentacion/",
-    "resources/interview-answer-templates":
-      "/es/recursos/plantillas-respuestas-entrevista/",
-    "resources/meeting-rescue-phrases":
-      "/es/recursos/frases-rescate-reuniones/",
-    "resources/status-update-script":
-      "/es/recursos/script-actualizacion-estado/",
-    "resources/questions-that-close-deals":
-      "/es/recursos/preguntas-que-cierran-ventas/",
-    "resources/technical-explanation-formula":
-      "/es/recursos/formula-explicacion-tecnica/",
+    "resources/interview-answer-templates": "/es/recursos/plantillas-respuestas-entrevista/",
+    "resources/meeting-rescue-phrases": "/es/recursos/frases-rescate-reuniones/",
+    "resources/status-update-script": "/es/recursos/script-actualizacion-estado/",
+    "resources/questions-that-close-deals": "/es/recursos/preguntas-que-cierran-ventas/",
+    "resources/technical-explanation-formula": "/es/recursos/formula-explicacion-tecnica/",
     "resources/difficult-conversation-checklist":
       "/es/recursos/checklist-conversaciones-dificiles/",
-    "resources/professional-apology-framework":
-      "/es/recursos/marco-disculpa-profesional/",
-    "resources/phrases-aggressive-clients":
-      "/es/recursos/frases-clientes-agresivos/",
-    "resources/salary-negotiation-script":
-      "/es/recursos/script-negociacion-salario/",
+    "resources/professional-apology-framework": "/es/recursos/marco-disculpa-profesional/",
+    "resources/phrases-aggressive-clients": "/es/recursos/frases-clientes-agresivos/",
+    "resources/salary-negotiation-script": "/es/recursos/script-negociacion-salario/",
     "legal/privacy-policy": "/es/legal/privacy-policy/",
     "legal/terms-of-service": "/es/legal/terms-of-service/",
     "legal/data-deletion": "/es/legal/data-deletion/",
@@ -388,22 +392,18 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "services/medical-english": "/es/servicios/ingles-para-medicos/",
     "services/professional-english": "/es/servicios/ingles-para-profesionales/",
     "services/public-speaking-english": "/es/servicios/hablar-en-publico/",
-    "services/startup-founders":
-      "/es/servicios/ingles-para-fundadores-de-startups/",
+    "services/startup-founders": "/es/servicios/ingles-para-fundadores-de-startups/",
     "services/tech-english": "/es/servicios/ingles-para-tecnologia/",
-    "services/technical-sales-english":
-      "/es/servicios/ingles-para-ventas-tecnicas/",
+    "services/technical-sales-english": "/es/servicios/ingles-para-ventas-tecnicas/",
     "services/corporate-package": "/es/servicios/paquete-corporativo/",
     "services/ongoing-coaching": "/es/servicios/coaching-continuo/",
-    "category/startup-founders":
-      "/es/categoria/ingles-para-fundadores-de-startups/",
+    "category/startup-founders": "/es/categoria/ingles-para-fundadores-de-startups/",
     "category/tech-english": "/es/categoria/ingles-para-tecnologia/",
     "category/logistics-english": "/es/categoria/ingles-para-logistica/",
     "category/professional-english": "/es/categoria/ingles-para-profesionales/",
     "category/high-stakes-english": "/es/categoria/ingles-para-presentaciones/",
     "category/business-english": "/es/categoria/ingles-para-negocios/",
-    "category/high-impact-communication":
-      "/es/categoria/comunicacion-de-alto-impacto/",
+    "category/high-impact-communication": "/es/categoria/comunicacion-de-alto-impacto/",
     "category/career-leadership": "/es/categoria/carrera-liderazgo/",
     "category/english-coaching": "/es/categoria/coaching-en-ingles/",
     "category/executive-english": "/es/categoria/ingles-ejecutivo/",
@@ -486,16 +486,33 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/past-tenses/lesson-5": "/es/curso/tiempos-del-pasado/leccion-5/",
     "course/past-tenses/lesson-6": "/es/curso/tiempos-del-pasado/leccion-6/",
     "course/past-tenses/cheat-sheet": "/es/curso/tiempos-del-pasado/guia-rapida/",
-    "course/past-tenses/practice-plan":
-      "/es/curso/tiempos-del-pasado/plan-de-practica/",
+    "course/past-tenses/practice-plan": "/es/curso/tiempos-del-pasado/plan-de-practica/",
     "course/past-tenses/top-10-confused-pairs":
       "/es/curso/tiempos-del-pasado/top-10-pares-confundidos/",
-    "course/past-tenses/knew-vs-found-out":
-      "/es/curso/tiempos-del-pasado/knew-vs-found-out/",
-    "course/past-tenses/story-openers":
-      "/es/curso/tiempos-del-pasado/frases-iniciales/",
+    "course/past-tenses/knew-vs-found-out": "/es/curso/tiempos-del-pasado/knew-vs-found-out/",
+    "course/past-tenses/story-openers": "/es/curso/tiempos-del-pasado/frases-iniciales/",
     "course/past-tenses/there-was-vs-there-has-been":
       "/es/curso/tiempos-del-pasado/there-was-vs-there-has-been/",
+    "course/drive-the-decision": "/es/curso/dirige-la-decision/",
+    "course/drive-the-decision/series-a-cac-pushback":
+      "/es/curso/dirige-la-decision/pushback-cac-serie-a/",
+    "course/drive-the-decision/board-meeting-burn-rate":
+      "/es/curso/dirige-la-decision/junta-directiva-burn-rate/",
+    "course/drive-the-decision/all-hands-pivot": "/es/curso/dirige-la-decision/all-hands-pivot/",
+    "course/drive-the-decision/ceo-technical-debt":
+      "/es/curso/dirige-la-decision/ceo-deuda-tecnica/",
+    "course/drive-the-decision/enterprise-outage":
+      "/es/curso/dirige-la-decision/outage-enterprise/",
+    "course/drive-the-decision/sales-product-conflict":
+      "/es/curso/dirige-la-decision/conflicto-ventas-producto/",
+    "course/drive-the-decision/series-b-competitor":
+      "/es/curso/dirige-la-decision/serie-b-competidor/",
+    "course/drive-the-decision/layoff-communication":
+      "/es/curso/dirige-la-decision/comunicacion-recorte/",
+    "course/drive-the-decision/missed-quarter": "/es/curso/dirige-la-decision/trimestre-perdido/",
+    "course/drive-the-decision/declining-major-deal":
+      "/es/curso/dirige-la-decision/rechazar-trato-importante/",
+    "course/drive-the-decision/reflex-drill": "/es/curso/dirige-la-decision/drill-reflejo/",
     "corporate/for-hr": "/es/para-rh/",
     "meme-portfolio": "/es/meme-portfolio/all/",
     "site-index": "/es/indice-del-sitio/",
@@ -595,6 +612,18 @@ export function getAllTKeys(): TKey[] {
     "course/past-tenses/knew-vs-found-out",
     "course/past-tenses/story-openers",
     "course/past-tenses/there-was-vs-there-has-been",
+    "course/drive-the-decision",
+    "course/drive-the-decision/series-a-cac-pushback",
+    "course/drive-the-decision/board-meeting-burn-rate",
+    "course/drive-the-decision/all-hands-pivot",
+    "course/drive-the-decision/ceo-technical-debt",
+    "course/drive-the-decision/enterprise-outage",
+    "course/drive-the-decision/sales-product-conflict",
+    "course/drive-the-decision/series-b-competitor",
+    "course/drive-the-decision/layoff-communication",
+    "course/drive-the-decision/missed-quarter",
+    "course/drive-the-decision/declining-major-deal",
+    "course/drive-the-decision/reflex-drill",
     "category/startup-founders",
     "category/tech-english",
     "category/logistics-english",
