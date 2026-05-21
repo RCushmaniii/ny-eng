@@ -1,8 +1,8 @@
 ---
-title: "6 Free English Courses Built for Spanish Speakers"
-excerpt: "Six interactive English courses — A1 beginner through C2 executive — with real American English audio on every phrase. No sign-up, no paywall. Real progress from lesson one."
+title: "7 Free English Courses Built for Spanish Speakers"
+excerpt: "Seven interactive English courses — A1 beginner through C2 executive — with real American English audio on every phrase. No sign-up, no paywall. Real progress from lesson one."
 publishDate: "2026-05-17"
-lastmod: "2026-05-17"
+lastmod: "2026-05-21"
 categories:
   - "Business English"
   - "English Coaching"
@@ -16,7 +16,7 @@ translations:
 publish: true
 seo:
   title: "Free English Courses for Spanish Speakers | NY English"
-  description: "Six free English courses with real American English audio on every phrase — beginner through executive. No sign-up, no paywall. Built for Spanish speakers."
+  description: "Seven free English courses with real American English audio on every phrase — beginner through executive. No sign-up, no paywall. Built for Spanish speakers."
 ---
 
 Most free English courses teach you grammar rules. You memorize them. You understand them. And then your manager asks you a question in a meeting — and you freeze anyway.
@@ -53,7 +53,7 @@ These courses don't. Beginner learners activate what's already there. More advan
 
 Each course targets the exact gap Spanish speakers face at that level — not generic English problems, but the specific ones you're actually running into.
 
-## The 6 Courses
+## The 7 Courses
 
 ### Level A1 — First Steps Into English
 *"You Already Speak English. You Just Don't Know It Yet."*
@@ -103,9 +103,17 @@ You know the past tense rules. You still freeze and default to <span class="spea
 
 ---
 
+### Master Class — Drive the Decision
+*"Stop explaining. Start deciding."*
+
+The applied capstone for senior leaders who already finished the Executive course. Ten worked boardroom scenarios — investor pushback on CAC, a missed quarter at the board meeting, announcing a pivot, declining a $2M deal, and six more — each with the weak default response, the model reply, and the decision psychology behind why it lands. The difference between "Well, our burn has been higher than expected and we're looking at different ways to extend runway…" and <span class="speak-en">Nine months is the floor, not the plan. We have three levers active right now.</span> Same situation, opposite room. A 12-item reflex drill installs the patterns over a 30-day cycle until they become your default under pressure.
+[Start the Drive the Decision master class →](/en/course/drive-the-decision/)
+
+---
+
 ## Which Course Should You Start?
 
-If English still feels completely new, start with **Beginner**. If you've covered the basics but can't yet talk about yesterday or make plans, go to **Elementary**. If you can already hold a conversation but you're still translating mentally, jump to **Intermediate**. If your English is fluent but you know it's not polished, go **Advanced**. If you're a senior leader who needs to command in English, go straight to **Executive**. And if past tenses are your specific freeze point regardless of your overall level, the **Past Tenses Master Class** runs alongside any of them — your progress is tracked separately per course.
+If English still feels completely new, start with **Beginner**. If you've covered the basics but can't yet talk about yesterday or make plans, go to **Elementary**. If you can already hold a conversation but you're still translating mentally, jump to **Intermediate**. If your English is fluent but you know it's not polished, go **Advanced**. If you're a senior leader who needs to command in English, go straight to **Executive** — and once you've worked through the frameworks, pair it with **Drive the Decision** to apply them to ten real boardroom scenarios. If past tenses are your specific freeze point regardless of your overall level, the **Past Tenses Master Class** runs alongside any of them — your progress is tracked separately per course.
 
 ## FAQ
 
@@ -113,7 +121,7 @@ If English still feels completely new, start with **Beginner**. If you've covere
 No. Open any course and start Unit 1 immediately. No registration, no email, no paywall.
 
 **How long does each course take?**
-Each course has 10 units. Most people complete a unit in 20–30 minutes, though the drills are designed to be repeated — the more you repeat, the more the audio patterns stick.
+Each leveled course has 10 units, the Past Tenses Master Class is 6 lessons + 6 bonuses, and Drive the Decision is 10 scenarios + a 12-item reflex drill. Most people complete a unit in 20–30 minutes, though the drills are designed to be repeated — the more you repeat, the more the audio patterns stick.
 
 **Are these courses really free — no hidden upgrade?**
 Entirely free. All 10 units, all audio, all exercises. No premium tier, no locked content.
@@ -122,10 +130,10 @@ Entirely free. All 10 units, all audio, all exercises. No premium tier, no locke
 It's Azure Neural TTS — the same AI voice technology used by Microsoft, Adobe, and LinkedIn. It's not a recording of a person, but it sounds like one. Natural rhythm, natural intonation, no robotic cadence. The executive course uses a different voice profile calibrated to a more formal register.
 
 **Can I take more than one course at the same time?**
-Yes. Progress is tracked independently per course, so you can work through the Past Tenses Master Class while continuing your main level track.
+Yes. Progress is tracked independently per course, so you can work through the Past Tenses Master Class or Drive the Decision while continuing your main level track.
 
 ---
 
-[Browse all 6 courses →](/en/courses/)
+[Browse all 7 courses →](/en/courses/)
 
 Or if you'd rather work on your English directly with a native New York English teacher: [book a session →](/en/book/)

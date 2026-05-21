@@ -1,8 +1,8 @@
 ---
-title: "6 Cursos de Inglés Gratis para Hispanohablantes"
-excerpt: "Seis cursos de inglés interactivos — de A1 principiante a C2 ejecutivo — con audio real de pronunciación americana en cada frase. Sin registro ni barreras. Progreso real desde la primera lección."
+title: "7 Cursos de Inglés Gratis para Hispanohablantes"
+excerpt: "Siete cursos de inglés interactivos — de A1 principiante a C2 ejecutivo — con audio real de pronunciación americana en cada frase. Sin registro ni barreras. Progreso real desde la primera lección."
 publishDate: "2026-05-17"
-lastmod: "2026-05-17"
+lastmod: "2026-05-21"
 categories:
   - "Business English"
   - "English Coaching"
@@ -16,7 +16,7 @@ translations:
 publish: true
 seo:
   title: "Cursos de Inglés Gratis para Hispanohablantes | NY English"
-  description: "Seis cursos de inglés gratuitos con audio de pronunciación americana en cada frase — de principiante a ejecutivo. Sin registro. Hechos para hispanohablantes."
+  description: "Siete cursos de inglés gratuitos con audio de pronunciación americana en cada frase — de principiante a ejecutivo. Sin registro. Hechos para hispanohablantes."
 ---
 
 La mayoría de los cursos de inglés gratuitos te enseñan reglas gramaticales. Las memorizas. Las entiendes. Y luego tu jefe te hace una pregunta en inglés en una junta — y te congelas de todas formas.
@@ -53,7 +53,7 @@ Estos cursos no. Los principiantes activan lo que ya está ahí. Los estudiantes
 
 Cada curso apunta exactamente a la brecha que los hispanohablantes enfrentan en ese nivel — no problemas genéricos de inglés, sino los que tú realmente estás viviendo.
 
-## Los 6 Cursos
+## Los 7 Cursos
 
 ### Nivel A1 — Primeros Pasos en Inglés
 *"Ya hablas inglés. Solo no lo sabes todavía."*
@@ -103,9 +103,17 @@ Sabes las reglas del pasado. Aun así te congelas y usas <span class="speak-en">
 
 ---
 
+### Clase Magistral — Dirige la Decisión
+*"Deja de explicar. Empieza a decidir."*
+
+La aplicación práctica para líderes senior que ya terminaron el curso Ejecutivo. Diez escenarios de junta directiva trabajados — pushback de un inversionista sobre el CAC, un trimestre perdido frente a la junta, anunciar un pivot, rechazar un trato de $2M y seis más — cada uno con la respuesta débil por defecto, la respuesta modelo y la psicología de decisión detrás de por qué aterriza. La diferencia entre "Well, our burn has been higher than expected and we're looking at different ways to extend runway…" y <span class="speak-en">Nine months is the floor, not the plan. We have three levers active right now.</span> Misma situación, sala opuesta. Un drill de reflejo de 12 items instala los patrones en un ciclo de 30 días hasta que se vuelven tu respuesta por defecto bajo presión.
+[Empezar la clase magistral Dirige la Decisión →](/es/curso/dirige-la-decision/)
+
+---
+
 ## ¿Con Cuál Deberías Empezar?
 
-Si el inglés todavía se siente completamente nuevo, empieza con **Principiante**. Si ya cubriste lo básico pero todavía no puedes hablar de ayer ni hacer planes, ve a **Elemental**. Si ya puedes sostener una conversación pero todavía estás traduciendo mentalmente, salta a **Intermedio**. Si tu inglés es fluido pero sabes que no está pulido, ve a **Avanzado**. Si eres un líder senior que necesita mandar en inglés, ve directo a **Ejecutivo**. Y si los tiempos del pasado son tu punto de congelamiento específico sin importar tu nivel general, la **Clase Magistral de Tiempos del Pasado** corre junto a cualquiera de ellos — tu progreso se registra de forma independiente por curso.
+Si el inglés todavía se siente completamente nuevo, empieza con **Principiante**. Si ya cubriste lo básico pero todavía no puedes hablar de ayer ni hacer planes, ve a **Elemental**. Si ya puedes sostener una conversación pero todavía estás traduciendo mentalmente, salta a **Intermedio**. Si tu inglés es fluido pero sabes que no está pulido, ve a **Avanzado**. Si eres un líder senior que necesita mandar en inglés, ve directo a **Ejecutivo** — y una vez que trabajes los marcos, combínalo con **Dirige la Decisión** para aplicarlos a diez escenarios reales de junta directiva. Si los tiempos del pasado son tu punto de congelamiento específico sin importar tu nivel general, la **Clase Magistral de Tiempos del Pasado** corre junto a cualquiera de ellos — tu progreso se registra de forma independiente por curso.
 
 ## Preguntas Frecuentes
 
@@ -113,7 +121,7 @@ Si el inglés todavía se siente completamente nuevo, empieza con **Principiante
 No. Abre cualquier curso y empieza la Unidad 1 de inmediato. Sin registro, sin correo electrónico, sin barreras.
 
 **¿Cuánto tiempo toma cada curso?**
-Cada curso tiene 10 unidades. La mayoría de las personas completa una unidad en 20 a 30 minutos, aunque los drills están diseñados para repetirse — cuanto más los repitas, más se fijan los patrones de audio en tu memoria.
+Cada curso por nivel tiene 10 unidades, la Clase Magistral de Tiempos del Pasado es 6 lecciones + 6 bonos, y Dirige la Decisión es 10 escenarios + un drill de reflejo de 12 items. La mayoría de las personas completa una unidad en 20 a 30 minutos, aunque los drills están diseñados para repetirse — cuanto más los repitas, más se fijan los patrones de audio en tu memoria.
 
 **¿Estos cursos son realmente gratis — no hay una mejora oculta de pago?**
 Completamente gratis. Las 10 unidades, todo el audio, todos los ejercicios. Sin nivel premium, sin contenido bloqueado.
@@ -122,10 +130,10 @@ Completamente gratis. Las 10 unidades, todo el audio, todos los ejercicios. Sin 
 Es Azure Neural TTS — la misma tecnología de voz con inteligencia artificial que usan Microsoft, Adobe y LinkedIn. No es una grabación de una persona, pero suena como tal. Ritmo natural, entonación natural, sin cadencia robótica. El curso ejecutivo usa un perfil de voz diferente calibrado a un registro más formal.
 
 **¿Puedo tomar más de un curso al mismo tiempo?**
-Sí. El progreso se registra de forma independiente por curso, así que puedes trabajar en la Clase Magistral de Tiempos del Pasado mientras continúas con tu nivel principal.
+Sí. El progreso se registra de forma independiente por curso, así que puedes trabajar en la Clase Magistral de Tiempos del Pasado o en Dirige la Decisión mientras continúas con tu nivel principal.
 
 ---
 
-[Ver los 6 cursos →](/es/cursos/)
+[Ver los 7 cursos →](/es/cursos/)
 
 O si prefieres trabajar tu inglés directamente con un maestro nativo de Nueva York: [reserva una sesión →](/es/contact/)
