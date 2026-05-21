@@ -1,0 +1,349 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import {
+  driveInfo,
+  scenarioMeta,
+  driveBonuses,
+} from "@data/drive-the-decision/scenarios";
+import {
+  ArrowRight,
+  Sparkles,
+  Mic,
+  TrendingUp,
+  Clock,
+  Compass,
+  Wrench,
+  AlertOctagon,
+  Split,
+  Shield,
+  Users,
+  BarChart3,
+  XCircle,
+  Zap,
+  Crown,
+  CheckCircle2,
+  Brain,
+  Target,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/drive-the-decision" as const;
+
+const iconMap: Record<string, any> = {
+  TrendingUp,
+  Clock,
+  Compass,
+  Wrench,
+  AlertOctagon,
+  Split,
+  Shield,
+  Users,
+  BarChart3,
+  XCircle,
+  Zap,
+};
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Drive the Decision — Boardroom Simulation | NY English"
+  description="Free master class: 10 boardroom scenarios with model replies that move the room. Built for senior leaders who already speak fluent English."
+>
+  <!-- Hero -->
+  <section class="relative w-full overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-amber-950 pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-amber-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-slate-400 rounded-full blur-3xl"></div>
+    </div>
+    <div class="site-container mx-auto px-4 relative z-10 text-white">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-300 text-sm font-semibold mb-6">
+          <Crown class="w-4 h-4" />
+          Master Class · C1 → C2 · Free
+        </div>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Drive the Decision.<br />
+          <span class="text-amber-400">Move the Room.</span>
+        </h1>
+        <p class="text-xl text-slate-200 mb-4 max-w-2xl leading-relaxed">
+          <strong class="text-white">Stop explaining. Start deciding.</strong>
+        </p>
+        <p class="text-lg text-slate-300 mb-8 max-w-2xl leading-relaxed">
+          Ten boardroom scenarios with worked model replies — investor pushback, missed quarters, layoffs, $2M deals you have to decline. Each scenario shows the weak default, the model response, and the decision psychology that makes it land. Built for senior leaders who already speak fluent English but freeze when the room turns to them.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <Button href={`${driveInfo.basePath.en}/${scenarioMeta[0].slug}/`} variant="primary" size="lg">
+            Start with Scenario 1
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+          <a
+            href="#scenarios"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            See all 10 scenarios
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thesis band -->
+  <section class="py-16 md:py-20 bg-white border-b border-slate-100">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-[11px] font-mono uppercase tracking-[0.3em] text-amber-600 mb-4">The Thesis</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Executives don't process information linearly.<br />
+          They process: <em>Conclusion → Logic → Implication.</em>
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          When you delay your conclusion, you create three problems at once — cognitive friction, lost attention, and the unintended signal of hesitation. The fluent speaker who buries the decision under five sentences of context loses the room before they reach their point. This master class drills the fix: lead with the outcome, support with structure, close with what you need.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Explain vs Decide contrast -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">The Shift That Changes Every Conversation</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Fluent English isn't the bar at this level. The bar is whether your language compresses cleanly into the moment the room needs a decision.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border-2 border-red-200 bg-red-50/50 p-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-red-100 text-red-600 mb-4">
+              <Brain class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">The Explainer Pattern</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> Buildup: "Well, what we're seeing is…"</li>
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> Hedge: "I think… maybe… potentially…"</li>
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> Conclusion arrives at sentence 6 — after the room moved on</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border-2 border-amber-300 bg-amber-50 p-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-amber-100 text-amber-700 mb-4">
+              <Target class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">The Decider Pattern</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-amber-600 shrink-0">✓</span> Outcome first: "The decision is…"</li>
+              <li class="flex gap-2"><span class="text-amber-600 shrink-0">✓</span> Numbered support: "Two reasons. First…"</li>
+              <li class="flex gap-2"><span class="text-amber-600 shrink-0">✓</span> Close with what you need: "Today we need alignment on X."</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who this is for -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Who This Is For</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          You already speak English at a high level. You've made it into rooms where decisions get made. But under pressure, you notice the pattern:
+        </p>
+        <ul class="space-y-3 text-lg text-slate-700 leading-relaxed mb-8">
+          <li class="flex gap-3"><span class="text-amber-600 shrink-0">→</span> You explain when you should decide.</li>
+          <li class="flex gap-3"><span class="text-amber-600 shrink-0">→</span> You build slides when you should build conclusions.</li>
+          <li class="flex gap-3"><span class="text-amber-600 shrink-0">→</span> You hedge when you should commit.</li>
+          <li class="flex gap-3"><span class="text-amber-600 shrink-0">→</span> You ramble when you should land.</li>
+        </ul>
+        <p class="text-slate-600 leading-relaxed">
+          This isn't a language problem. It's a <strong>delivery architecture</strong> problem — and it shows up most in the rooms where it costs you the most. The fix is reflex, not vocabulary. That's what this master class installs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scenarios grid -->
+  <section class="py-16 md:py-20 bg-slate-50" id="scenarios">
+    <div class="site-container mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style="font-family: 'Noto Sans KR', sans-serif;">
+          Ten Scenarios. Ten Decisions.
+        </h2>
+        <p class="text-slate-600 leading-relaxed">
+          Each scenario gives you the setup, the pushback, the weak default response, the model reply, and the decision psychology behind why it works. Then you build your own version.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        {scenarioMeta.map((scenario) => {
+          const Icon = iconMap[scenario.icon];
+          const isAvailable = scenario.available;
+          return (
+            <a
+              href={isAvailable ? `${driveInfo.basePath.en}/${scenario.slug}/` : undefined}
+              class:list={[
+                "group flex items-start gap-4 p-5 rounded-xl border transition-all duration-200",
+                isAvailable
+                  ? "bg-amber-50 border-amber-300 hover:shadow-md hover:border-amber-400 cursor-pointer"
+                  : "bg-white border-slate-200 opacity-75",
+              ]}
+            >
+              <div
+                class:list={[
+                  "flex items-center justify-center w-12 h-12 rounded-xl shrink-0",
+                  isAvailable ? "bg-amber-500 text-white" : "bg-slate-100 text-slate-400",
+                ]}
+              >
+                {Icon && <Icon class="w-6 h-6" />}
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2">
+                  <span
+                    class:list={[
+                      "text-xs font-bold uppercase tracking-wider",
+                      isAvailable ? "text-amber-700" : "text-slate-400",
+                    ]}
+                  >
+                    Scenario {scenario.id}
+                  </span>
+                </div>
+                <h3
+                  class:list={[
+                    "text-lg font-bold mt-0.5",
+                    isAvailable ? "text-slate-900" : "text-slate-600",
+                  ]}
+                >
+                  {scenario.title}
+                </h3>
+                <p class="text-sm text-slate-600 mt-1">{scenario.subtitle}</p>
+                <p class="text-xs text-amber-700 mt-1.5 italic">{scenario.setting}</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Reflex Drill bonus -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-100 text-amber-800 text-sm font-semibold mb-4">
+            <Sparkles class="w-4 h-4" />
+            Bonus Resource
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">The 30-Day Reflex Drill</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Twelve high-pressure prompts. Three rounds of execution. Thirty days. After this, the patterns are no longer conscious — they become your default.
+          </p>
+        </div>
+
+        {driveBonuses.map((bonus) => {
+          const Icon = iconMap[bonus.icon] ?? Zap;
+          return (
+            <a
+              href={`${driveInfo.basePath.en}/${bonus.slug}/`}
+              class="block bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900 rounded-2xl p-8 text-white hover:shadow-xl transition-shadow duration-200"
+            >
+              <div class="flex items-start gap-5">
+                <div class="flex items-center justify-center w-14 h-14 rounded-xl bg-amber-500 text-white shrink-0">
+                  <Icon class="w-7 h-7" />
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-2">{bonus.title}</h3>
+                  <p class="text-slate-300 leading-relaxed mb-4">{bonus.description}</p>
+                  <span class="inline-flex items-center gap-1 text-amber-300 font-semibold text-sm group-hover:gap-2 transition-all">
+                    Open the drill
+                    <ArrowRight class="w-4 h-4" />
+                  </span>
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why this works -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">Why Worked Scenarios Beat Theory</h2>
+        <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+          <p>
+            Reading frameworks doesn't install them. Speaking model replies under pressure does. This master class skips the framework-explanation layer and goes straight to the artifacts — the exact words that work in the exact rooms where everything is on the line.
+          </p>
+          <p>
+            Each scenario uses the structural mechanics from the <a href="/en/course/executive/" class="text-amber-700 hover:text-amber-800 underline underline-offset-2 font-medium">Executive course</a> — outcome-first delivery, numbered support, reframes, decisive closes. Here you see them applied to investor pushback, board questions, customer escalations, and the moments where leaders quietly lose the room.
+          </p>
+          <p>
+            For Mexican executives specifically, this master class addresses a hidden translation tax. Spanish-to-English instinct produces hedges (<em>"Considero que…"</em> → <em>"I consider that…"</em>) and softeners (<em>"Podríamos…"</em> → <em>"We could…"</em>) that read as uncertainty in English boardrooms. The model replies show the cleaner pattern — and the reflex drill installs it.
+        </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-link -->
+  <section class="py-16 md:py-20 bg-white border-t border-slate-100">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Where Does This Fit?</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          This is a <strong>focused master class</strong> — applied scenarios for senior leaders who already have the frameworks. For the full executive system (word choice, hedging elimination, three-tier reframes, named frameworks), see <strong>Communicate Like a Leader</strong>. For 1-on-1 coaching, the booking link is below.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/en/course/executive/"
+            class="text-amber-700 hover:text-amber-800 font-medium underline underline-offset-2"
+          >
+            Executive course (Communicate Like a Leader)
+          </a>
+          <span class="text-slate-300">|</span>
+          <a
+            href="/en/courses/"
+            class="text-amber-700 hover:text-amber-800 font-medium underline underline-offset-2"
+          >
+            See all courses
+          </a>
+          <span class="text-slate-300">|</span>
+          <a
+            href="/en/book/"
+            class="text-amber-700 hover:text-amber-800 font-medium underline underline-offset-2"
+          >
+            Work 1-on-1 with Robert
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Drive the Decision — Executive Boardroom Simulation",
+    "description": "Free master class with 10 worked boardroom scenarios and a 12-item reflex drill. Built for C1-C2 senior leaders who already speak fluent English but need to lead under pressure.",
+    "provider": { "@type": "Organization", "name": "New York English Teacher", "url": "https://www.nyenglishteacher.com/" },
+    "educationalLevel": "Executive (C1-C2)",
+    "inLanguage": "en",
+    "url": "https://www.nyenglishteacher.com/en/course/drive-the-decision/",
+    "isAccessibleForFree": true,
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "inLanguage": "en"
+    }
+  })} />
+</Base>

@@ -1,0 +1,357 @@
+---
+// Shared scenario template for "Drive the Decision" master class.
+// Renders the full scenario page (hero, setup, weak vs model, why it works,
+// your turn) given a scenarioId and language. Each /en/.../[slug].astro
+// and /es/.../[slug].astro file is a thin wrapper around this.
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import AudioButton from "@components/course/AudioButton";
+import {
+  scenarios,
+  driveInfo,
+} from "@data/drive-the-decision/scenarios";
+import {
+  ArrowRight,
+  ArrowLeft,
+  MessageCircleQuestion,
+  XCircle,
+  CheckCircle2,
+  Sparkles,
+  Mic,
+  Lightbulb,
+  TrendingUp,
+  Clock,
+  Compass,
+  Wrench,
+  AlertOctagon,
+  Split,
+  Shield,
+  Users,
+  BarChart3,
+  Volume2,
+} from "lucide-astro";
+import type { TKey } from "../../lib/i18n";
+
+interface Props {
+  scenarioId: number;
+  lang: "en" | "es";
+  tkey: TKey;
+}
+
+const { scenarioId, lang, tkey } = Astro.props as Props;
+
+const scenario = scenarios.find((s) => s.id === scenarioId);
+if (!scenario) {
+  throw new Error(`Scenario ${scenarioId} not found`);
+}
+
+const total = scenarios.length;
+const prev = scenarios.find((s) => s.id === scenarioId - 1);
+const next = scenarios.find((s) => s.id === scenarioId + 1);
+
+const isEn = lang === "en";
+const basePath = isEn ? driveInfo.basePath.en : driveInfo.basePath.es;
+const drillSlug = isEn ? driveInfo.drillSlug.en : driveInfo.drillSlug.es;
+
+const prevSlug = prev ? (isEn ? prev.slug : prev.slugEs) : null;
+const nextSlug = next ? (isEn ? next.slug : next.slugEs) : null;
+
+// Strings
+const t = {
+  scenarioLabel: isEn ? "Scenario" : "Escenario",
+  ofTotal: isEn ? `of ${total}` : `de ${total}`,
+  theSetup: isEn ? "The Setup" : "El Escenario",
+  theChallenge: isEn ? "The Challenge" : "El Desafío",
+  weakDefault: isEn ? "The Weak Default" : "La Respuesta Débil por Defecto",
+  weakHint: isEn
+    ? "What most leaders say when caught off guard. No audio — don't drill the wrong pattern."
+    : "Lo que dicen la mayoría de los líderes cuando los toman desprevenidos. Sin audio — no practiques el patrón equivocado.",
+  theModelReply: isEn ? "The Model Reply" : "La Respuesta Modelo",
+  modelHint: isEn
+    ? "Outcome-first. Structured. Decisive. Tap the speaker to hear the cadence."
+    : "Outcome-first. Estructurada. Decisiva. Toca el ícono para escuchar el ritmo.",
+  whyItWorks: isEn ? "Why It Works" : "Por Qué Funciona",
+  yourTurn: isEn ? "Your Turn" : "Tu Turno",
+  yourTurnSub: isEn
+    ? "Build the response in your head, then say it out loud. Three rounds: slow, natural, decisive."
+    : "Construye la respuesta en tu cabeza, luego dila en voz alta. Tres rondas: lenta, natural, decisiva.",
+  starterLabel: isEn ? "Starter phrase" : "Frase de arranque",
+  prevScenario: isEn ? "Previous scenario" : "Escenario anterior",
+  nextScenario: isEn ? "Next scenario" : "Siguiente escenario",
+  backToOverview: isEn
+    ? "← Back to course overview"
+    : "← Volver al curso",
+  reflexDrillCta: isEn
+    ? "After all 10 scenarios, install the reflex"
+    : "Después de los 10 escenarios, instala el reflejo",
+  reflexDrillButton: isEn ? "Open the 12-item drill" : "Abrir el drill de 12 items",
+  challengerLabel: isEn ? scenario.challenger : scenario.challengerEs,
+  title: isEn ? scenario.title : scenario.titleEs,
+  subtitle: isEn ? scenario.subtitle : scenario.subtitleEs,
+  setting: isEn ? scenario.setting : scenario.settingEs,
+  setup: isEn ? scenario.setup : scenario.setupEs,
+  challenge: isEn ? scenario.challenge : scenario.challengeEs,
+  weakResponse: isEn ? scenario.weakResponse : scenario.weakResponseEs,
+  modelResponse: isEn ? scenario.modelResponse : scenario.modelResponseEs,
+  yourTurnPrompt: isEn ? scenario.yourTurnPrompt : scenario.yourTurnPromptEs,
+  yourTurnStarter: isEn ? scenario.yourTurnStarter : scenario.yourTurnStarterEs,
+};
+
+// Audio always plays the English model — Mexican learners are training their English delivery
+const modelAudioText = scenario.modelResponse;
+
+// SEO titles kept under 60 chars (CLAUDE.md memory) by dropping the "Drive the
+// Decision · " brand prefix — the brand stays in the H1, OG image, and breadcrumbs.
+const seoTitle = isEn
+  ? `${scenario.title} — NY English`
+  : `${scenario.titleEs} — NY English`;
+
+const seoDescription = isEn
+  ? `${scenario.subtitle} Worked model reply with decision-psychology breakdown. Free master class for senior leaders.`
+  : `${scenario.subtitleEs} Respuesta modelo con análisis de psicología. Master class gratuita para líderes.`;
+
+const iconMap: Record<string, any> = {
+  TrendingUp,
+  Clock,
+  Compass,
+  Wrench,
+  AlertOctagon,
+  Split,
+  Shield,
+  Users,
+  BarChart3,
+  XCircle,
+};
+const ScenarioIcon = iconMap[scenario.icon];
+
+const whyItWorksList = scenario.whyItWorks.map((b) => (isEn ? b.en : b.es));
+---
+
+<Base lang={lang} tkey={tkey} title={seoTitle} description={seoDescription}>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-950 to-amber-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
+          {ScenarioIcon && <ScenarioIcon class="w-4 h-4" />}
+          {t.scenarioLabel} {scenarioId} {t.ofTotal}
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          {t.title}
+        </h1>
+        <p class="text-xl text-amber-200 italic font-light mb-4">{t.subtitle}</p>
+        <p class="text-base text-slate-300 leading-relaxed">{t.setting}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Setup -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{t.theSetup}</h2>
+        </div>
+        <p class="text-lg text-slate-700 leading-relaxed ml-11">{t.setup}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenge -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{t.theChallenge}</h2>
+        </div>
+        <div class="bg-white rounded-xl border-l-4 border-amber-500 shadow-sm p-6 md:p-8 ml-11">
+          <div class="flex items-start gap-3 mb-3">
+            <MessageCircleQuestion class="w-6 h-6 text-amber-600 shrink-0 mt-1" />
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-700">{t.challengerLabel}</p>
+          </div>
+          <p class="text-xl md:text-2xl text-slate-900 italic leading-relaxed">
+            "{t.challenge}"
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weak default -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{t.weakDefault}</h2>
+        </div>
+        <p class="text-sm text-slate-500 mb-6 ml-11">{t.weakHint}</p>
+        <div class="bg-red-50 border border-red-200 rounded-xl p-6 md:p-7 ml-11">
+          <div class="flex items-start gap-3">
+            <XCircle class="w-6 h-6 text-red-500 shrink-0 mt-1" />
+            <p class="text-lg text-slate-800 leading-relaxed italic">"{t.weakResponse}"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Model reply -->
+  <section class="py-14 md:py-16 bg-gradient-to-b from-amber-50 to-amber-50/30">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-600 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{t.theModelReply}</h2>
+        </div>
+        <p class="text-sm text-slate-600 mb-6 ml-11 flex items-center gap-2">
+          <Volume2 class="w-4 h-4 text-amber-600" />
+          {t.modelHint}
+        </p>
+        <div class="bg-white border-2 border-amber-400 rounded-xl shadow-md p-6 md:p-8 ml-11">
+          <div class="flex items-start gap-4">
+            <CheckCircle2 class="w-7 h-7 text-emerald-600 shrink-0 mt-1" />
+            <div class="flex-1">
+              <p class="text-lg md:text-xl text-slate-900 leading-relaxed mb-4">"{t.modelResponse}"</p>
+              <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                <AudioButton client:visible text={modelAudioText} lang="en-US" size="md" />
+                <span class="text-sm text-slate-600">{isEn ? "Listen to the model delivery" : "Escucha la entrega modelo"}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why it works -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{t.whyItWorks}</h2>
+        </div>
+        <div class="ml-11 space-y-3">
+          {whyItWorksList.map((point) => (
+            <div class="flex items-start gap-3 bg-white rounded-lg border border-slate-200 p-4">
+              <Lightbulb class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+              <p class="text-slate-700 leading-relaxed" set:html={point} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Your turn -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">6</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{t.yourTurn}</h2>
+        </div>
+        <p class="text-slate-500 mb-6 ml-11">{t.yourTurnSub}</p>
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-xl p-6 md:p-8 ml-11">
+          <div class="flex items-start gap-3 mb-4">
+            <Mic class="w-6 h-6 text-amber-400 shrink-0 mt-1" />
+            <p class="text-lg leading-relaxed">{t.yourTurnPrompt}</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/10">
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">{t.starterLabel}</p>
+            <p class="text-slate-200 italic">{t.yourTurnStarter}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reflex Drill nudge -->
+  <section class="py-12 md:py-14 bg-amber-50 border-t border-amber-100">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
+        <div class="flex items-start gap-3">
+          <Sparkles class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+          <p class="text-slate-700">{t.reflexDrillCta}</p>
+        </div>
+        <Button href={`${basePath}/${drillSlug}/`} variant="secondary" size="md">
+          {t.reflexDrillButton}
+          <ArrowRight class="w-4 h-4 ml-1" />
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="py-12 md:py-14 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {prevSlug ? (
+            <a
+              href={`${basePath}/${prevSlug}/`}
+              class="group flex items-center gap-3 bg-white rounded-xl border border-slate-200 hover:border-amber-300 hover:shadow-md transition-all p-5"
+            >
+              <ArrowLeft class="w-5 h-5 text-slate-400 group-hover:text-amber-600 transition-colors shrink-0" />
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-0.5">{t.prevScenario}</p>
+                <p class="text-slate-900 font-medium">{isEn ? prev?.title : prev?.titleEs}</p>
+              </div>
+            </a>
+          ) : (
+            <a
+              href={basePath + "/"}
+              class="group flex items-center gap-3 bg-white rounded-xl border border-slate-200 hover:border-amber-300 hover:shadow-md transition-all p-5"
+            >
+              <ArrowLeft class="w-5 h-5 text-slate-400 group-hover:text-amber-600 transition-colors shrink-0" />
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-0.5">{isEn ? "Overview" : "Resumen"}</p>
+                <p class="text-slate-900 font-medium">{isEn ? "Drive the Decision" : "Dirige la Decisión"}</p>
+              </div>
+            </a>
+          )}
+
+          {nextSlug ? (
+            <a
+              href={`${basePath}/${nextSlug}/`}
+              class="group flex items-center justify-between gap-3 bg-amber-500 hover:bg-amber-600 text-white rounded-xl transition-all p-5"
+            >
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-amber-100 mb-0.5">{t.nextScenario}</p>
+                <p class="font-medium">{isEn ? next?.title : next?.titleEs}</p>
+              </div>
+              <ArrowRight class="w-5 h-5 shrink-0" />
+            </a>
+          ) : (
+            <a
+              href={`${basePath}/${drillSlug}/`}
+              class="group flex items-center justify-between gap-3 bg-amber-500 hover:bg-amber-600 text-white rounded-xl transition-all p-5"
+            >
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-amber-100 mb-0.5">{isEn ? "Finish with the drill" : "Termina con el drill"}</p>
+                <p class="font-medium">{isEn ? "The 12-Item Reflex Drill" : "El Drill de Reflejo de 12 Items"}</p>
+              </div>
+              <ArrowRight class="w-5 h-5 shrink-0" />
+            </a>
+          )}
+        </div>
+
+        <div class="mt-8 text-center">
+          <a
+            href={basePath + "/"}
+            class="text-sm text-slate-600 hover:text-amber-700 underline underline-offset-2"
+          >
+            {t.backToOverview}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
