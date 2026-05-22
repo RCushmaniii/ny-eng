@@ -8,8 +8,8 @@ categories:
   - "High-Impact Communication"
 readingTime: "9 min read"
 audience: "Senior professionals, founders, and executives deciding whether a communication coach is worth the investment"
-featuredImage: "./images/executive-english-coaching.jpg"
-imageAlt: "Senior executive in a private coaching session reviewing a presentation with a communication mentor"
+featuredImage: "./images/elite-executives-hire-communication-coaches.webp"
+imageAlt: "Executive communication coach mentoring a senior leader during a private one-on-one coaching session in a modern office overlooking the city"
 translations:
   es: "/es/blog/por-que-ejecutivos-elite-contratan-coaches/"
 publish: true
