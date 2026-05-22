@@ -3,7 +3,7 @@ export const prerender = true;
 
 import Base from "@layouts/Base.astro";
 import AudioButton from "@components/course/AudioButton";
-import { diagnoseInfo } from "@data/diagnose-before-defend/lessons";
+import { pushbackInfo } from "@data/executive-pushback/lessons";
 import {
   ArrowLeft,
   ArrowRight,
@@ -14,15 +14,15 @@ import {
   Eye,
 } from "lucide-astro";
 
-const lang = "es";
-const tkey = "course/diagnose-before-defend/pressure-recovery-script" as const;
+const lang = "en";
+const tkey = "course/executive-pushback/pressure-recovery-script" as const;
 ---
 
 <Base
   lang={lang}
   tkey={tkey}
-  title="El Guion de Recuperación bajo Presión — Diagnostica Antes de Defender"
-  description="Cuando ya perdiste la compostura a mitad de la conversación, tres oraciones que te compran espacio, reinician la sala y recuperan autoridad sin disculpa."
+  title="The Pressure Recovery Script | NY English"
+  description="When you've already lost composure mid-conversation, three sentences that buy you space, restart the room, and recover authority without an apology."
 >
   <!-- Hero -->
   <section class="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
@@ -30,46 +30,46 @@ const tkey = "course/diagnose-before-defend/pressure-recovery-script" as const;
       <div class="max-w-3xl">
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/20 text-indigo-300 text-sm font-semibold mb-6">
           <Sparkles class="w-4 h-4" />
-          Bonus · El Reset
+          Bonus · The Reset
         </div>
         <h1
           class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
           style="font-family: 'Noto Sans KR', sans-serif;"
         >
-          El Guion de Recuperación bajo Presión
+          The Pressure Recovery Script
         </h1>
         <p class="text-xl text-indigo-200 italic font-light mb-4">
-          Cuando ya perdiste la compostura a mitad de la conversación.
+          When you've already lost composure mid-conversation.
         </p>
         <p class="text-lg text-slate-300 leading-relaxed">
-          A veces pierdes la sala. Alzas la voz, cedes muy rápido, defiendes muy fuerte o te congelas. La pausa no pasó. El diagnóstico no se activó. Este es el reset de tres oraciones que regresa la sala — sin una disculpa y sin re-explicación.
+          Sometimes you lose the room. You raise your voice, you concede too fast, you defend too hard, you freeze. The pause didn't happen. The diagnostic didn't fire. This is the three-sentence reset that brings the room back — without an apology and without a re-explanation.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Premise -->
+  <!-- The premise -->
   <section class="py-14 md:py-16 bg-white">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-2">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">1</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">La Recuperación es un Movimiento, No una Disculpa</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Recovery Is a Move, Not an Apology</h2>
         </div>
         <div class="ml-11 space-y-5 text-lg text-slate-700 leading-relaxed">
           <p>
-            El instinto cuando perdiste la compostura es <strong>disculparte y reiniciar</strong>. "Sorry, let me back up." "I'm getting ahead of myself." "I think I came in too hot." Todas se sienten honestas. Todas te dañan más.
+            The instinct when you've lost composure is to <strong>apologize and restart</strong>. "Sorry, let me back up." "I'm getting ahead of myself." "I think I came in too hot." These all feel honest. They all damage you further.
           </p>
           <p>
-            Disculparte dentro de un momento de presión señala que perdiste la sala, lo cual la sala puede no haber registrado todavía. Estás transmitiendo tu fracaso antes de que ellos lo notaran. El guion de recuperación hace lo opuesto: reinicia la conversación como si el resbalón fuera un tiempo deliberado, no una fuga.
+            Apologizing inside a pressure moment signals that you've lost the room, which the room may not have fully registered yet. You're broadcasting your failure before they noticed. The recovery script does the opposite: it resets the conversation as if the slip was a deliberate beat, not a leak.
           </p>
           <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-6 my-6">
             <div class="flex items-center gap-3 mb-3">
               <Eye class="w-6 h-6 text-indigo-700" />
-              <h3 class="text-lg font-bold text-slate-900">El Principio</h3>
+              <h3 class="text-lg font-bold text-slate-900">The Principle</h3>
             </div>
             <p class="text-slate-800">
-              La recuperación es estructural, no emocional. Tres oraciones. Sin disculpa. Sin re-explicación. No estás deshaciendo el resbalón — estás caminando frente a él.
+              Recovery is structural, not emotional. Three sentences. No apology. No re-explanation. You're not undoing the slip — you're walking past it.
             </p>
           </div>
         </div>
@@ -83,35 +83,35 @@ const tkey = "course/diagnose-before-defend/pressure-recovery-script" as const;
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-6">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">2</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">El Reset de Tres Oraciones</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Three-Sentence Reset</h2>
         </div>
 
         <div class="ml-11 space-y-4">
           <div class="bg-white rounded-xl border border-indigo-300 p-6">
-            <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-2">Oración 1 — Detente</p>
+            <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-2">Sentence 1 — Stop yourself</p>
             <div class="flex items-center gap-3">
               <p class="text-xl text-slate-900 italic flex-1">"Let me take that one carefully."</p>
               <AudioButton client:visible text="Let me take that one carefully." lang="en-US" size="md" />
             </div>
-            <p class="text-sm text-slate-600 mt-3">Cinco palabras. Te detiene, detiene a la sala, te da 3-5 segundos de permiso estructural para pensar. Casi imposible de interrumpir.</p>
+            <p class="text-sm text-slate-600 mt-3">Five words. Slows you, slows the room, gives you 3-5 seconds of structural permission to think. Nearly impossible to interrupt.</p>
           </div>
 
           <div class="bg-white rounded-xl border border-indigo-300 p-6">
-            <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-2">Oración 2 — Reformula la pregunta, no tu respuesta</p>
+            <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-2">Sentence 2 — Restate the question, not your answer</p>
             <div class="flex items-center gap-3">
               <p class="text-xl text-slate-900 italic flex-1">"The real question you're asking is whether [X] or [Y]."</p>
               <AudioButton client:visible text="The real question you're asking is whether X or Y." lang="en-US" size="md" />
             </div>
-            <p class="text-sm text-slate-600 mt-3">Reencuadra todo el intercambio. Te obliga a diagnosticar el impulsor en lugar de defender. Los obliga a confirmar o refinar la pregunta — lo cual te compra otro tiempo.</p>
+            <p class="text-sm text-slate-600 mt-3">Reframes the entire exchange. Forces you to diagnose the driver instead of defending. Forces them to confirm or refine the question — which buys you another beat.</p>
           </div>
 
           <div class="bg-white rounded-xl border border-indigo-300 p-6">
-            <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-2">Oración 3 — Entrega una posición limpia</p>
+            <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-2">Sentence 3 — Deliver one clean position</p>
             <div class="flex items-center gap-3">
               <p class="text-xl text-slate-900 italic flex-1">"Here's the call I'd make, and here's why."</p>
               <AudioButton client:visible text="Here's the call I'd make, and here's why." lang="en-US" size="md" />
             </div>
-            <p class="text-sm text-slate-600 mt-3">Recupera autoridad. Pasa el resbalón. La sala ahora está escuchando la posición, no analizando la fuga. Mantén lo que sigue en menos de dos oraciones.</p>
+            <p class="text-sm text-slate-600 mt-3">Reclaims authority. Past the slip. The room is now listening to the position, not analyzing the leak. Keep what follows under two sentences.</p>
           </div>
         </div>
       </div>
@@ -124,13 +124,13 @@ const tkey = "course/diagnose-before-defend/pressure-recovery-script" as const;
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-6">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">3</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">El Guion en la Práctica</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Script in Practice</h2>
         </div>
-        <p class="text-slate-600 mb-6 ml-11">Un intercambio realista. Ya defendiste demasiado fuerte por dos oraciones. Aquí está la recuperación, completa.</p>
+        <p class="text-slate-600 mb-6 ml-11">A realistic exchange. You've already defended too hard for two sentences. Here's the recovery, in full.</p>
 
         <div class="ml-11 bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
           <div class="bg-slate-900 text-white px-5 py-3">
-            <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Junta directiva · El CFO cuestiona tu forecast</p>
+            <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Board meeting · CFO challenges your forecast</p>
           </div>
           <div class="p-6 space-y-4">
             <div class="bg-slate-100 rounded-lg p-4">
@@ -139,19 +139,19 @@ const tkey = "course/diagnose-before-defend/pressure-recovery-script" as const;
             </div>
 
             <div class="bg-red-50 border border-red-200 rounded-lg p-4">
-              <p class="text-xs font-bold uppercase tracking-wider text-red-700 mb-1">Tú — recalentándose</p>
+              <p class="text-xs font-bold uppercase tracking-wider text-red-700 mb-1">You — overheating</p>
               <p class="text-slate-800 italic">"It's absolutely grounded. We spent three weeks on the pipeline review, the team is confident in the close rates, and the conversion data from Q1 supports the model. I'd push back on the suggestion that we're being aggressive — this is calibrated…"</p>
             </div>
 
             <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
-              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">Tú — guion de recuperación (tres oraciones)</p>
+              <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">You — recovery script (three sentences)</p>
               <div class="flex items-start gap-3">
                 <p class="text-slate-900 font-medium flex-1 leading-relaxed">"Let me take that one carefully. The real question you're asking is whether the forecast survives a 40-day cycle extension or breaks. Here's the call I'd make: stress-test the model against that assumption tonight and bring you the answer tomorrow morning before the board reconvenes."</p>
                 <AudioButton client:visible text="Let me take that one carefully. The real question you're asking is whether the forecast survives a 40-day cycle extension or breaks. Here's the call I'd make: stress-test the model against that assumption tonight and bring you the answer tomorrow morning before the board reconvenes." lang="en-US" size="sm" />
               </div>
             </div>
 
-            <p class="text-sm text-slate-500"><strong>Qué cambió:</strong> Sin "but" ni "actually". La defensividad se fue. La pregunta se reencuadra limpiamente. Terminaste en acción, no en justificación.</p>
+            <p class="text-sm text-slate-500"><strong>What changed:</strong> No "but" or "actually." The defensiveness is gone. The question is reframed cleanly. You ended on action, not justification.</p>
           </div>
         </div>
       </div>
@@ -164,24 +164,24 @@ const tkey = "course/diagnose-before-defend/pressure-recovery-script" as const;
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-6">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">4</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Reglas para Adaptar el Guion</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Rules for Adapting the Script</h2>
         </div>
         <div class="ml-11 space-y-3">
           <div class="bg-white rounded-lg border border-slate-200 p-4 flex items-start gap-3">
             <AlertCircle class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
-            <p class="text-slate-700"><strong>Memoriza el fraseo exacto.</strong> Cuando estás recalentándote, la memoria de trabajo se reduce. No podrás componer una oración de recuperación personalizada. Necesitas el guion listo.</p>
+            <p class="text-slate-700"><strong>Memorize the exact phrasing.</strong> When you're overheating, working memory shrinks. You won't be able to compose a custom recovery sentence. You need the script ready.</p>
           </div>
           <div class="bg-white rounded-lg border border-slate-200 p-4 flex items-start gap-3">
             <AlertCircle class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
-            <p class="text-slate-700"><strong>Baja el volumen en la Oración 1.</strong> Una voz más baja señala una desaceleración deliberada, no retroceso. La mayoría de la gente instintivamente sube el volumen al reafirmarse — resiste.</p>
+            <p class="text-slate-700"><strong>Drop the volume in Sentence 1.</strong> A quieter voice signals deliberate slowing, not retreat. Most people instinctively raise volume when reasserting — resist.</p>
           </div>
           <div class="bg-white rounded-lg border border-slate-200 p-4 flex items-start gap-3">
             <AlertCircle class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
-            <p class="text-slate-700"><strong>Nunca te disculpes entre las oraciones.</strong> Incluso pequeños rellenos ("sorry, just…") cancelan el reset. Tres oraciones limpias, sin calificadores.</p>
+            <p class="text-slate-700"><strong>Never apologize between the sentences.</strong> Even small filler ("sorry, just…") cancels the reset. Three clean sentences, no qualifiers.</p>
           </div>
           <div class="bg-white rounded-lg border border-slate-200 p-4 flex items-start gap-3">
             <AlertCircle class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
-            <p class="text-slate-700"><strong>Úsalo una vez por conversación, máximo.</strong> Usar el guion dos veces en un intercambio señala que no estás recuperándote — solo estás administrando fuga tras fuga.</p>
+            <p class="text-slate-700"><strong>Use it once per conversation, maximum.</strong> Using the script twice in one exchange signals you're not actually recovering — you're just managing leak after leak.</p>
           </div>
         </div>
       </div>
@@ -192,34 +192,34 @@ const tkey = "course/diagnose-before-defend/pressure-recovery-script" as const;
   <section class="py-14 md:py-16 bg-white border-t border-slate-200">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">El Resumen</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Recap</h2>
         <div class="bg-slate-50 rounded-2xl border border-slate-200 p-7 mb-10">
           <ul class="space-y-3 text-slate-700">
-            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>La recuperación es <strong>estructural, no emocional</strong>. Sin disculpa, sin re-explicación.</span></li>
-            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Tres oraciones, memorizadas exactamente: <strong>"Let me take that one carefully" → "The real question is X or Y" → "Here's the call I'd make."</strong></span></li>
-            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Una vez por conversación</strong>. El guion es un reset, no una muleta.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Recovery is <strong>structural, not emotional</strong>. No apology, no re-explanation.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Three sentences, memorized exactly: <strong>"Let me take that one carefully" → "The real question is X or Y" → "Here's the call I'd make."</strong></span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Once per conversation</strong>. The script is a reset, not a crutch.</span></li>
           </ul>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <a
-            href={`${diagnoseInfo.basePath.es}/malas-noticias-voz-firme/`}
+            href={`${pushbackInfo.basePath.en}/bad-news-steady-voice/`}
             class="group flex items-center gap-3 bg-slate-50 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all p-5"
           >
             <ArrowLeft class="w-5 h-5 text-slate-400 group-hover:text-indigo-600 transition-colors shrink-0" />
             <div>
-              <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-0.5">Última lección</p>
-              <p class="text-slate-900 font-medium">Malas Noticias, Voz Firme</p>
+              <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-0.5">Last lesson</p>
+              <p class="text-slate-900 font-medium">Bad News, Steady Voice</p>
             </div>
           </a>
 
           <a
-            href={`${diagnoseInfo.basePath.es}/`}
+            href={`${pushbackInfo.basePath.en}/`}
             class="group flex items-center justify-between gap-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl transition-all p-5"
           >
             <div>
-              <p class="text-xs font-bold uppercase tracking-wider text-indigo-100 mb-0.5">Resumen del curso</p>
-              <p class="font-medium">Diagnostica Antes de Defender</p>
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-100 mb-0.5">Course overview</p>
+              <p class="font-medium">Executive Pushback & Objection Handling</p>
             </div>
             <ArrowRight class="w-5 h-5 shrink-0" />
           </a>
