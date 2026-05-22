@@ -1,0 +1,258 @@
+---
+export const prerender = true;
+
+import DiagnoseLessonLayout from "@components/course/DiagnoseLessonLayout.astro";
+import AudioButton from "@components/course/AudioButton";
+import { Compass, CheckCircle2, XCircle, Eye, ArrowRightLeft } from "lucide-astro";
+---
+
+<DiagnoseLessonLayout lessonId={4} lang="es" tkey="course/diagnose-before-defend/acknowledge-clarify-redirect">
+  <!-- Section 1: Core Idea -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Un Marco, Tres Tiempos</h2>
+        </div>
+        <div class="ml-11 space-y-5 text-lg text-slate-700 leading-relaxed">
+          <p>
+            Ya diagnosticaste el impulsor. Ya hiciste pausa. Estás en calma. ¿Ahora qué sale de tu boca? La mayoría de los profesionales se congela aquí — tienen la lectura pero les falta un patrón estructural para entregar la respuesta. Caen en acuerdo plano (que rinde autoridad) o desacuerdo plano (que escala la sala).
+          </p>
+          <p>
+            <strong>Reconoce → Clarifica → Redirige</strong> es el único marco que vale la pena instalar como memoria muscular. Son tres tiempos, de seis a diez segundos en total, y funciona en todo el rango de contextos de pushback — ventas, operativo, ejecutivo, par-a-par, hacia arriba.
+          </p>
+          <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-6 my-6">
+            <div class="flex items-center gap-3 mb-3">
+              <Compass class="w-6 h-6 text-indigo-700" />
+              <h3 class="text-lg font-bold text-slate-900">El Marco</h3>
+            </div>
+            <div class="space-y-3">
+              <p><strong class="text-indigo-700">Reconoce.</strong> Valida la preocupación sin rendir tu autoridad.</p>
+              <p><strong class="text-indigo-700">Clarifica.</strong> Identifica la realidad operativa o el tradeoff debajo.</p>
+              <p><strong class="text-indigo-700">Redirige.</strong> Mueve la conversación hacia la decisión estratégica real.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Each Beat -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Cada Tiempo, En Detalle</h2>
+        </div>
+
+        <div class="ml-11 space-y-5">
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 font-bold">1</div>
+              <h3 class="text-lg font-bold text-slate-900">Reconoce</h3>
+            </div>
+            <p class="text-slate-700 mb-3">Muestra que los escuchaste. Muestra que la preocupación es legítima. No te disculpes, no capitules y no pretendas estar de acuerdo.</p>
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+              <p class="text-sm font-bold text-emerald-700 mb-2">Frases de reconocimiento que funcionan:</p>
+              <ul class="space-y-1 text-slate-800 text-sm">
+                <li>"I understand the concern about the timeline."</li>
+                <li>"That's a fair read."</li>
+                <li>"You're right that there's a tradeoff here."</li>
+                <li>"That risk is real — let's name it."</li>
+              </ul>
+            </div>
+            <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-3">
+              <p class="text-sm font-bold text-red-700 mb-2">Errores de reconocimiento — qué NO decir:</p>
+              <ul class="space-y-1 text-slate-800 text-sm">
+                <li>"I'm sorry you feel that way." (suena despectivo)</li>
+                <li>"Yeah, you might be right." (capitulación total)</li>
+                <li>"I hear what you're saying, but…" (el "but" despectivo)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 font-bold">2</div>
+              <h3 class="text-lg font-bold text-slate-900">Clarifica</h3>
+            </div>
+            <p class="text-slate-700 mb-3">Nombra la realidad operativa debajo. Aquí es donde reencuadras la conversación de presión emocional a pensamiento estratégico de tradeoffs.</p>
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+              <p class="text-sm font-bold text-emerald-700 mb-2">Frases de clarificación que funcionan:</p>
+              <ul class="space-y-1 text-slate-800 text-sm">
+                <li>"If we accelerate the timeline, quality control risk increases significantly."</li>
+                <li>"The real tradeoff here is speed versus long-term reliability."</li>
+                <li>"What we're balancing is short-term wins against the operational debt that comes with them."</li>
+                <li>"The two variables in play are X and Y — and we can't optimize both."</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 font-bold">3</div>
+              <h3 class="text-lg font-bold text-slate-900">Redirige</h3>
+            </div>
+            <p class="text-slate-700 mb-3">Pasa de defender a decidir. Reencuadra la pregunta en la decisión estratégica que la sala realmente necesita tomar.</p>
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+              <p class="text-sm font-bold text-emerald-700 mb-2">Frases de redirección que funcionan:</p>
+              <ul class="space-y-1 text-slate-800 text-sm">
+                <li>"So the question becomes whether speed or stability is the higher priority for this quarter."</li>
+                <li>"The decision in front of us is which risk we'd rather carry."</li>
+                <li>"What I'd want to align on is the principle, not the implementation detail."</li>
+                <li>"That's the call I'm asking the room to make."</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: RCR in Practice -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">RCR en la Práctica</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">Tres pushbacks, tres respuestas RCR completas. Escucha el ritmo de tres tiempos — corto, deliberado, estructuralmente completo.</p>
+
+        <div class="ml-11 space-y-5">
+          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Operaciones · Pushback de Personal</p>
+            </div>
+            <div class="p-6 space-y-3">
+              <p class="text-lg text-slate-900 italic">"We need to cut headcount in fulfillment by 20% to hit the cost target."</p>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-900 font-medium flex-1">"I understand the cost pressure on this team. <strong>If we reduce staffing further, fulfillment speed may improve temporarily, but error rates and turnover risk will likely increase</strong> — and turnover replacement costs typically exceed the savings within two quarters. The question becomes whether we're solving for this quarter's cost target or for the next four quarters of operational stability."</p>
+                  <AudioButton client:visible text="I understand the cost pressure on this team. If we reduce staffing further, fulfillment speed may improve temporarily, but error rates and turnover risk will likely increase — and turnover replacement costs typically exceed the savings within two quarters. The question becomes whether we're solving for this quarter's cost target or for the next four quarters of operational stability." lang="en-US" size="sm" />
+                </div>
+              </div>
+              <p class="text-sm text-slate-500"><strong>R</strong>: "I understand the cost pressure." <strong>C</strong>: "Error rates and turnover risk will increase." <strong>R</strong>: "¿Estamos resolviendo este trimestre o los próximos cuatro?"</p>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Técnico · Pushback de Roadmap</p>
+            </div>
+            <div class="p-6 space-y-3">
+              <p class="text-lg text-slate-900 italic">"Sales says we're losing deals because we don't have the integration. Why isn't it in Q3?"</p>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-900 font-medium flex-1">"That deal pressure is real and I hear it. <strong>The integration as scoped takes ten engineering weeks and pulls the team off the platform stability work that's already behind</strong>. So the real call is whether the deals we'd close in Q3 are worth the platform debt we'd absorb through Q4. I have a view, but I want the decision visible at this level."</p>
+                  <AudioButton client:visible text="That deal pressure is real and I hear it. The integration as scoped takes ten engineering weeks and pulls the team off the platform stability work that's already behind. So the real call is whether the deals we'd close in Q3 are worth the platform debt we'd absorb through Q4. I have a view, but I want the decision visible at this level." lang="en-US" size="sm" />
+                </div>
+              </div>
+              <p class="text-sm text-slate-500"><strong>R</strong>: "That deal pressure is real." <strong>C</strong>: "Diez semanas de ingeniería, la estabilidad de plataforma se atrasa." <strong>R</strong>: "Ingresos de Q3 vs. deuda de Q4 — que el liderazgo decida."</p>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Par · Pushback de Alcance</p>
+            </div>
+            <div class="p-6 space-y-3">
+              <p class="text-lg text-slate-900 italic">"Honestly, your team is taking on too much of the customer success scope. That should be sitting with us."</p>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-900 font-medium flex-1">"That's a fair observation. <strong>The reason we picked it up was that the work was falling between teams and accounts were churning — but I agree it doesn't belong with us long-term.</strong> What I'd want to align on is a clean handoff in Q4 once your team has the bandwidth, not redrawing the lines mid-quarter while accounts are still in flux."</p>
+                  <AudioButton client:visible text="That's a fair observation. The reason we picked it up was that the work was falling between teams and accounts were churning — but I agree it doesn't belong with us long-term. What I'd want to align on is a clean handoff in Q4 once your team has the bandwidth, not redrawing the lines mid-quarter while accounts are still in flux." lang="en-US" size="sm" />
+                </div>
+              </div>
+              <p class="text-sm text-slate-500"><strong>R</strong>: "That's a fair observation." <strong>C</strong>: "Lo tomamos porque el trabajo caía entre equipos." <strong>R</strong>: "Handoff limpio en Q4, no a mitad de trimestre."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Tradeoff thinking -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">El Tiempo de Clarificar Trata de Tradeoffs, No de Defensas</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">El fallo más común del patrón RCR es usar el tiempo de Clarificar para defender en vez de reencuadrar. El tiempo de Clarificar no es <em>"aquí está por qué te equivocas."</em> Es <em>"aquí están las dos variables reales, y no podemos optimizar ambas."</em></p>
+
+        <div class="ml-11 grid sm:grid-cols-2 gap-3">
+          <div class="bg-white rounded-lg border border-slate-200 p-4">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">El lente del tradeoff</p>
+            <p class="text-slate-700">Velocidad vs. calidad</p>
+          </div>
+          <div class="bg-white rounded-lg border border-slate-200 p-4">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">El lente del tradeoff</p>
+            <p class="text-slate-700">Crecimiento vs. sostenibilidad</p>
+          </div>
+          <div class="bg-white rounded-lg border border-slate-200 p-4">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">El lente del tradeoff</p>
+            <p class="text-slate-700">Costo vs. confiabilidad</p>
+          </div>
+          <div class="bg-white rounded-lg border border-slate-200 p-4">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">El lente del tradeoff</p>
+            <p class="text-slate-700">Ganancias de corto plazo vs. estabilidad de largo plazo</p>
+          </div>
+          <div class="bg-white rounded-lg border border-slate-200 p-4">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">El lente del tradeoff</p>
+            <p class="text-slate-700">Control centralizado vs. flexibilidad local</p>
+          </div>
+          <div class="bg-white rounded-lg border border-slate-200 p-4">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">El lente del tradeoff</p>
+            <p class="text-slate-700">El número de este trimestre vs. la base de este año</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Three Traps -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Tres Trampas del RCR</h2>
+        </div>
+        <div class="ml-11 space-y-4">
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trampa 1 — "Reconozco … PERO"</p>
+            <p class="text-slate-700 text-sm">"I hear you, BUT…" cancela el reconocimiento en la mente del oyente. Usa "and" o pasa directamente al tiempo de clarificar sin ninguna palabra de transición.</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trampa 2 — Saltarse el tiempo de Clarificar</p>
+            <p class="text-slate-700 text-sm">Ir Reconoce → Redirige sin la clarificación operativa en medio se lee como evasión. El oyente siente el cambio de tema.</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trampa 3 — Redirigir a una pregunta que no hicieron</p>
+            <p class="text-slate-700 text-sm">El tiempo de Redirigir tiene que aterrizar en una decisión que la sala realmente pueda tomar. Redirigir a una abstracción vaga ("la pregunta real es nuestra cultura") se lee como esquivar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap -->
+  <section class="py-14 md:py-16 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">El Resumen</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-7">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Reconoce → Clarifica → Redirige</strong> — tres tiempos, de seis a diez segundos, funciona en todo contexto de pushback.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>El <strong>tiempo de Clarificar es un marco de tradeoff, no una defensa</strong>. Dos variables, una decisión.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>El <strong>tiempo de Redirigir tiene que aterrizar en una decisión real</strong> — no en una abstracción vaga.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</DiagnoseLessonLayout>

@@ -1,0 +1,213 @@
+---
+export const prerender = true;
+
+import DiagnoseLessonLayout from "@components/course/DiagnoseLessonLayout.astro";
+import AudioButton from "@components/course/AudioButton";
+import { DollarSign, CheckCircle2, XCircle, Eye, Target } from "lucide-astro";
+---
+
+<DiagnoseLessonLayout lessonId={5} lang="es" tkey="course/diagnose-before-defend/commercial-pushback">
+  <!-- Section 1: Core Idea -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">El Precio Se Vuelve el Tema Cuando el Valor y la Confianza Son Débiles</h2>
+        </div>
+        <div class="ml-11 space-y-5 text-lg text-slate-700 leading-relaxed">
+          <p>
+            Cuando un comprador pelea contigo sobre el precio, la conversación ya se torció. Las conversaciones comerciales sanas no se quedan en el precio — negocian alcance, términos o tiempo mientras el precio se mantiene anclado. Cuando el precio se vuelve el tema dominante, una de dos cosas pasó: el comprador no ha internalizado el valor, o no confía en la relación lo suficiente para pagarlo.
+          </p>
+          <p>
+            Defender el precio directamente es casi siempre el movimiento equivocado. Señala que <strong>tú</strong> crees que el precio es el tema vivo — lo cual valida el encuadre del comprador. El movimiento ejecutivo es diagnosticar <em>por qué</em> el precio se volvió la conversación y abordar la capa de abajo.
+          </p>
+          <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-6 my-6">
+            <div class="flex items-center gap-3 mb-3">
+              <DollarSign class="w-6 h-6 text-indigo-700" />
+              <h3 class="text-lg font-bold text-slate-900">El Principio</h3>
+            </div>
+            <p class="text-slate-800">
+              Diagnostica la duda <em>antes</em> de defender la oferta. Si estás explicando el precio, ya cediste terreno. Si estás reencuadrando el valor, todavía estás en la sala.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Four Commercial Drivers -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Qué Está Impulsando el Pushback Comercial</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">Cuatro impulsores ocultos explican casi todas las objeciones comerciales. Cada uno tiene una respuesta correcta distinta — defender el precio nunca funciona para ninguno.</p>
+
+        <div class="ml-11 space-y-4">
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">1</div>
+              <h3 class="text-lg font-bold text-slate-900">Desconexión de Valor</h3>
+            </div>
+            <p class="text-slate-700 mb-2">El comprador no ve completamente lo que está recibiendo. El precio se siente alto porque el valor se siente poco claro o no verificado.</p>
+            <p class="text-sm text-slate-500 italic">Pista: lenguaje de comparación ("el competidor X cuesta la mitad"), preguntas sobre features ("¿qué incluye exactamente?").</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">2</div>
+              <h3 class="text-lg font-bold text-slate-900">Teatro de Procurement</h3>
+            </div>
+            <p class="text-slate-700 mb-2">A un gerente de compras le dijeron que negocie. El pushback no es sobre tu precio — es sobre su evaluación de desempeño. Necesita una concesión con la cual salir.</p>
+            <p class="text-sm text-slate-500 italic">Pista: porcentajes arbitrarios pedidos ("necesitamos 15% menos"), referencias a ciclos de presupuesto, frases con guion.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">3</div>
+              <h3 class="text-lg font-bold text-slate-900">Riesgo de Aprobación Interna</h3>
+            </div>
+            <p class="text-slate-700 mb-2">El comprador quiere comprar pero no está seguro de poder defender el gasto internamente. La objeción de precio es él ensayando la defensa que tendrá que dar a su jefe.</p>
+            <p class="text-sm text-slate-500 italic">Pista: "necesito llevárselo a…", referencias a aprobación ejecutiva, solicitudes de documentación de ROI.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">4</div>
+              <h3 class="text-lg font-bold text-slate-900">Brecha de Confianza</h3>
+            </div>
+            <p class="text-slate-700 mb-2">Todavía no tienen evidencia de que vas a entregar. El precio no es el tema — el riesgo percibido de pagarlo sí lo es.</p>
+            <p class="text-sm text-slate-500 italic">Pista: solicitudes de referencias, propuestas de piloto, encuadre "empecemos en pequeño", lenguaje de avance lento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Commercial RCR -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">RCR Comercial — Cada Impulsor, Cada Respuesta</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">La misma línea del comprador, cuatro impulsores posibles, cuatro respuestas distintas. El diagnóstico decide cuál usas.</p>
+
+        <div class="ml-11 space-y-5">
+          <div class="bg-slate-900 text-white rounded-xl overflow-hidden">
+            <div class="px-5 py-3 border-b border-white/10">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-300">Línea del comprador</p>
+              <p class="text-lg italic mt-1">"Your price is about 30% over what we had in budget."</p>
+            </div>
+            <div class="p-5 space-y-4">
+              <div class="bg-white/5 rounded-lg p-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">Si el impulsor es Desconexión de Valor</p>
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-100 flex-1 italic">"That gap usually means we haven't shown enough of the value yet. Can I walk you through the two outcomes we'd actually produce in the first 90 days? If those aren't worth the gap, we shouldn't be working together."</p>
+                  <AudioButton client:visible text="That gap usually means we haven't shown enough of the value yet. Can I walk you through the two outcomes we'd actually produce in the first 90 days? If those aren't worth the gap, we shouldn't be working together." lang="en-US" size="sm" />
+                </div>
+              </div>
+
+              <div class="bg-white/5 rounded-lg p-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">Si el impulsor es Teatro de Procurement</p>
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-100 flex-1 italic">"I hear you. We're not going to move on rate — but I can move on terms. Annual prepay at a reduced quarterly commitment, or extended payment terms — those are the two levers I have. Which one helps you more?"</p>
+                  <AudioButton client:visible text="I hear you. We're not going to move on rate — but I can move on terms. Annual prepay at a reduced quarterly commitment, or extended payment terms — those are the two levers I have. Which one helps you more?" lang="en-US" size="sm" />
+                </div>
+              </div>
+
+              <div class="bg-white/5 rounded-lg p-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">Si el impulsor es Riesgo de Aprobación Interna</p>
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-100 flex-1 italic">"That's a real gap to defend. Let me give you the three numbers that usually carry the internal conversation — and if those don't fit your CFO's framing, tell me what does and I'll reshape it."</p>
+                  <AudioButton client:visible text="That's a real gap to defend. Let me give you the three numbers that usually carry the internal conversation — and if those don't fit your CFO's framing, tell me what does and I'll reshape it." lang="en-US" size="sm" />
+                </div>
+              </div>
+
+              <div class="bg-white/5 rounded-lg p-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">Si el impulsor es Brecha de Confianza</p>
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-100 flex-1 italic">"That gap feels bigger when you don't yet have evidence we'll deliver. Here's what I'd propose: a structured 60-day milestone with a defined success threshold. If we don't hit it, you exit clean. That removes the risk of paying full price for an unproven outcome."</p>
+                  <AudioButton client:visible text="That gap feels bigger when you don't yet have evidence we'll deliver. Here's what I'd propose: a structured 60-day milestone with a defined success threshold. If we don't hit it, you exit clean. That removes the risk of paying full price for an unproven outcome." lang="en-US" size="sm" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Discount Trap -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">La Trampa del Descuento</h2>
+        </div>
+        <div class="ml-11 space-y-5 text-lg text-slate-700 leading-relaxed">
+          <p>
+            El error comercial más grande bajo presión es ceder en el precio demasiado rápido. El patrón está bien documentado: el comprador pide un descuento, el vendedor cede, el comprador siente que debió haber pedido más, y todo el acuerdo se estructura alrededor del precio en vez del valor. Los entrenaste para negociar cada renovación de la misma manera.
+          </p>
+          <p>
+            La respuesta correcta a "¿puedes hacer algo mejor en el precio?" casi nunca es un descuento. Es un <strong>intercambio</strong> — te mueves en precio solo si ellos se mueven en algo más. Duración del término. Tiempos de pago. Volumen de compromiso. Derechos de referencia. Cualquier cosa.
+          </p>
+          <div class="bg-white border border-slate-200 rounded-xl p-5 my-4">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">La respuesta de intercambio</p>
+            <div class="flex items-center gap-3">
+              <p class="text-lg text-slate-900 italic flex-1">"I can look at price if you can look at term. A two-year commitment changes my math — a one-year doesn't."</p>
+              <AudioButton client:visible text="I can look at price if you can look at term. A two-year commitment changes my math — a one-year doesn't." lang="en-US" size="sm" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Three Commercial Traps -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Tres Trampas Comerciales</h2>
+        </div>
+        <div class="ml-11 space-y-4">
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trampa 1 — Sonar ansioso</p>
+            <p class="text-slate-700 text-sm">La ansiedad es la señal más cara en una conversación comercial. "We'd love to work with you" temprano en una discusión de precio te cuesta entre 5 y 10% en margen. El desapego calibrado ("if we're the right fit for you") preserva el apalancamiento.</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trampa 2 — Defender las líneas de partida</p>
+            <p class="text-slate-700 text-sm">Cuando empiezas a defender por qué cada línea cuesta lo que cuesta, movieron la conversación del valor a la contabilidad de costos. Siempre vas a perder ese encuadre. Quédate en resultados, no en insumos.</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trampa 3 — Ceder sin intercambio</p>
+            <p class="text-slate-700 text-sm">Si das un descuento sin recibir algo a cambio, le enseñaste al comprador que tu precio era falso. Cada concesión necesita una contraprestación, aunque sea pequeña.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap -->
+  <section class="py-14 md:py-16 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">El Resumen</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-7">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>El precio se vuelve el tema cuando el valor y la confianza son débiles.</strong> Diagnostica cuál.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Cuatro impulsores: <strong>Desconexión de Valor, Teatro de Procurement, Riesgo de Aprobación Interna, Brecha de Confianza</strong>. Cada uno tiene una respuesta correcta distinta.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Nunca cedas en el precio sin un <strong>intercambio</strong>. Cada descuento necesita una contraprestación.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</DiagnoseLessonLayout>

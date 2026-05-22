@@ -1,0 +1,217 @@
+---
+export const prerender = true;
+
+import DiagnoseLessonLayout from "@components/course/DiagnoseLessonLayout.astro";
+import AudioButton from "@components/course/AudioButton";
+import { Shield, Volume2, Mic, CheckCircle2, XCircle, Eye } from "lucide-astro";
+---
+
+<DiagnoseLessonLayout lessonId={3} lang="es" tkey="course/diagnose-before-defend/executive-calm-is-power">
+  <!-- Section 1: The Core Idea -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">La Gente Cuestiona la Confianza Antes de Cuestionar la Lógica</h2>
+        </div>
+        <div class="ml-11 space-y-5 text-lg text-slate-700 leading-relaxed">
+          <p>
+            En cualquier sala donde se toman decisiones bajo presión, lo primero que la gente senior lee no es tu argumento. Es tu <strong>compostura</strong>. Escanean en busca de las señales pequeñas — la oración apresurada, el tono que sube, el medio paso hacia atrás de la mesa — y una vez que detectan aunque sea una, tu lógica ya fue descontada antes de que la escucharan.
+          </p>
+          <p>
+            Esto no es un problema de justicia. Es una heurística de calibración. Los líderes senior tienen que hacer juicios rápidos sobre en quién confiar bajo presión, y la señal más barata disponible es la <strong>regulación emocional</strong>. La calma se lee como competencia. La energía defensiva se lee como algo que hay que administrar.
+          </p>
+          <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-6 my-6">
+            <div class="flex items-center gap-3 mb-3">
+              <Eye class="w-6 h-6 text-indigo-700" />
+              <h3 class="text-lg font-bold text-slate-900">El Principio</h3>
+            </div>
+            <p class="text-slate-800">
+              La presencia ejecutiva es el control emocional hecho visible. La compostura no es una actuación — es una postura que adoptas antes de entrar, sostenida a través de los momentos en que la adrenalina te dice que la dejes escapar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Three Layers of Calm -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Las Tres Capas de la Calma</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">La compostura tiene tres capas. La gente que pierde la sala usualmente deja escapar al menos una. La gente que domina la sala está controlando las tres deliberadamente.</p>
+
+        <div class="ml-11 space-y-4">
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700">
+                <Shield class="w-5 h-5" />
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Capa 1 — Cuerpo</h3>
+            </div>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>La postura se mantiene anclada</strong>. Hombros abajo, peso centrado. Los cuerpos defensivos se inclinan hacia atrás, se asoman hacia adelante o se encogen.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>Las manos se mantienen abiertas</strong>. Brazos cruzados, fidgets y puños apretados telegrafían presión emocional. Las palmas abiertas se leen como confianza.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>El contacto visual se mantiene firme</strong>. No agresivo — firme. Romper el contacto visual a mitad del pushback es la señal más ruidosa de todas.</li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700">
+                <Volume2 class="w-5 h-5" />
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Capa 2 — Voz</h3>
+            </div>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>El ritmo se mantiene lento</strong>. El reflejo natural bajo presión es acelerar. El movimiento deliberado es bajar el ritmo un 20%.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>El tono se mantiene bajo</strong>. El tono ascendente es la señal más confiable de defensividad en inglés. Baja, no subas.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>El volumen se mantiene parejo</strong>. Igualar su volumen — más alto o más bajo — es concesión. Sostén el tuyo.</li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700">
+                <Mic class="w-5 h-5" />
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Capa 3 — Palabras</h3>
+            </div>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>Las oraciones se mantienen cortas</strong>. Las oraciones largas bajo presión se desmoronan. Las oraciones cortas aterrizan.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>Sin calificadores, sin disculpa</strong>. "Just", "really", "honestly", "I mean…" — todo es relleno defensivo. Córtalo.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>Afirmaciones, no preguntas</strong>. La inflexión ascendente convierte una posición en una solicitud de permiso. Aterriza cada oración.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Defensive Tells -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Señales Defensivas — Las Fugas Silenciosas</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">Estas son las pequeñas señales que te cuestan la sala antes de que termines tu oración. La mayoría de la gente no puede articular por qué desconfía de alguien — pero si te grabas y eliminas estas, la confianza regresa de inmediato.</p>
+
+        <div class="ml-11 grid sm:grid-cols-2 gap-3">
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">"Well, actually…"</p>
+            <p class="text-xs text-slate-600">Corrección preventiva — se lee como defensa del ego.</p>
+          </div>
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">"I mean… what I'm trying to say is…"</p>
+            <p class="text-xs text-slate-600">Lenguaje de reparación — señala que el primer intento falló.</p>
+          </div>
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">Risa nerviosa después de un pushback</p>
+            <p class="text-xs text-slate-600">Libera tu presión visiblemente — se lee como alivio, no como autoridad.</p>
+          </div>
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">"Sorry, just one more thing…"</p>
+            <p class="text-xs text-slate-600">Disculparse por tomar espacio es ceder la sala.</p>
+          </div>
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">Tono ascendente al final de la oración</p>
+            <p class="text-xs text-slate-600">Convierte cada afirmación en "¿está bien?". Aterriza cada cierre.</p>
+          </div>
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">Mano a la garganta / cuello / cara</p>
+            <p class="text-xs text-slate-600">Los gestos de auto-consuelo son visibles para todos en la sala.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Calm Phrases -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Frases de Calma Bajo Presión Real</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">Tres líneas que puedes tener listas. Funcionan porque bajan el ritmo de la sala sin ceder terreno. Toca el ícono para escuchar el ritmo deliberado y bajo.</p>
+
+        <div class="ml-11 space-y-4">
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Usar cuando te cuestionan fuerte</p>
+            <div class="flex items-center gap-3">
+              <p class="text-lg text-slate-900 italic flex-1">"Let me take that one carefully."</p>
+              <AudioButton client:visible text="Let me take that one carefully." lang="en-US" size="sm" />
+            </div>
+            <p class="text-sm text-slate-600 mt-3">Cuatro palabras. Te compran 3-5 segundos y señalan que respetas el desafío lo suficiente para pensar en él. Casi imposible de interrumpir.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Usar cuando te presionan para comprometerte rápido</p>
+            <div class="flex items-center gap-3">
+              <p class="text-lg text-slate-900 italic flex-1">"That's worth slowing down on. Here's what I'd want to look at first."</p>
+              <AudioButton client:visible text="That's worth slowing down on. Here's what I'd want to look at first." lang="en-US" size="sm" />
+            </div>
+            <p class="text-sm text-slate-600 mt-3">Rechaza la velocidad de la demanda sin rechazar la demanda. Reencuadra el ritmo en tu control.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Usar cuando alguien sube la voz</p>
+            <div class="flex items-center gap-3">
+              <p class="text-lg text-slate-900 italic flex-1">"I hear you. Let's separate the concern from the conclusion for a moment."</p>
+              <AudioButton client:visible text="I hear you. Let's separate the concern from the conclusion for a moment." lang="en-US" size="sm" />
+            </div>
+            <p class="text-sm text-slate-600 mt-3">Reconocimiento primero, luego un reencuadre estructural. Casi siempre baja la temperatura de la sala en un solo tiempo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Identity Reframe -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">El Reencuadre de Identidad</h2>
+        </div>
+        <div class="ml-11 space-y-5 text-lg text-slate-700 leading-relaxed">
+          <p>
+            La técnica solo te lleva hasta cierto punto. El movimiento más profundo es identidad. El profesional que entra a un pushback pensando <em>"tengo que defender esto"</em> ya va atrás. El ejecutivo que entra pensando <em>"mi trabajo es leer esta conversación y decidir qué necesita"</em> tiene una postura fundamentalmente diferente antes de abrir la boca.
+          </p>
+          <p>
+            El reencuadre es pequeño pero lo cambia todo: <strong>no estás bajo ataque. Estás diagnosticando una sala.</strong> El pushback es datos, no una amenaza personal. La gente senior en la sala lo trata así, y tú puedes adoptar esa postura antes de entrar.
+          </p>
+          <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-5 my-4">
+            <p class="text-slate-800 italic">"No estoy aquí para defender mi posición. Estoy aquí para entender qué está pidiendo esta sala, y para decidir qué voy a ceder, qué voy a sostener y qué voy a remoldear."</p>
+            <p class="text-sm text-slate-600 mt-2">— ensaya esto antes de cualquier conversación de alta presión</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap -->
+  <section class="py-14 md:py-16 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">El Resumen</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-7">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>La gente <strong>cuestiona la confianza antes de cuestionar la lógica</strong>. La compostura es tu primer mensaje.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Tres capas que administrar: <strong>cuerpo, voz, palabras</strong>. Deja escapar una y las otras dejan de sostenerte.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>El reencuadre de identidad — <strong>estás diagnosticando una sala, no defendiendo una posición</strong> — es lo que hace que la técnica sea sostenible.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</DiagnoseLessonLayout>

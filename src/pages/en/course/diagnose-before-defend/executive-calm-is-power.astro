@@ -1,0 +1,217 @@
+---
+export const prerender = true;
+
+import DiagnoseLessonLayout from "@components/course/DiagnoseLessonLayout.astro";
+import AudioButton from "@components/course/AudioButton";
+import { Shield, Volume2, Mic, CheckCircle2, XCircle, Eye } from "lucide-astro";
+---
+
+<DiagnoseLessonLayout lessonId={3} lang="en" tkey="course/diagnose-before-defend/executive-calm-is-power">
+  <!-- Section 1: The Core Idea -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">People Challenge Confidence Before They Challenge Logic</h2>
+        </div>
+        <div class="ml-11 space-y-5 text-lg text-slate-700 leading-relaxed">
+          <p>
+            In any room where decisions are made under pressure, the first thing senior people read is not your argument. It's your <strong>composure</strong>. They scan for the small signals — the rushed sentence, the rising pitch, the half-step back from the table — and once they detect even one, your logic has already been discounted before they listened to it.
+          </p>
+          <p>
+            This is not a fairness problem. It's a calibration heuristic. Senior leaders have to make fast judgment calls about who to trust under pressure, and the cheapest signal available is <strong>emotional regulation</strong>. Calm reads as competence. Defensive energy reads as something to be managed around.
+          </p>
+          <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-6 my-6">
+            <div class="flex items-center gap-3 mb-3">
+              <Eye class="w-6 h-6 text-indigo-700" />
+              <h3 class="text-lg font-bold text-slate-900">The Principle</h3>
+            </div>
+            <p class="text-slate-800">
+              Executive presence is emotional control made visible. The composure isn't a performance — it's a posture you adopt before you walk in, sustained through the moments where adrenaline tells you to leak.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: The Three Layers of Calm -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Three Layers of Calm</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">Composure has three layers. People who lose the room usually leak on at least one. People who own the room are deliberately controlling all three.</p>
+
+        <div class="ml-11 space-y-4">
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700">
+                <Shield class="w-5 h-5" />
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Layer 1 — Body</h3>
+            </div>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>Posture stays anchored</strong>. Shoulders down, weight centered. Defensive bodies lean back, perch forward, or shrink.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>Hands stay open</strong>. Crossed arms, fidgets, and clenched fists all telegraph emotional pressure. Open palms read as confident.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>Eye contact stays steady</strong>. Not aggressive — steady. Breaking eye contact in the middle of a pushback is the loudest tell of all.</li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700">
+                <Volume2 class="w-5 h-5" />
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Layer 2 — Voice</h3>
+            </div>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>Pace stays slow</strong>. The natural reflex under pressure is to speed up. The deliberate move is to slow down by 20%.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>Pitch stays low</strong>. Rising pitch is the most reliable defensiveness signal in English. Drop, don't lift.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>Volume stays even</strong>. Matching their volume — louder or softer — is concession. Hold yours.</li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700">
+                <Mic class="w-5 h-5" />
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Layer 3 — Words</h3>
+            </div>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>Sentences stay short</strong>. Long sentences under pressure unravel. Short sentences land.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>No qualifiers, no apology</strong>. "Just," "really," "honestly," "I mean…" — all defensive padding. Cut them.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">→</span> <strong>Statements, not questions</strong>. Upward inflection turns a position into a request for permission. Land each sentence.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: The Defensive Tells -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Defensive Tells — The Quiet Leaks</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">These are the small signals that cost you the room before you finish your sentence. Most people can't articulate why they distrust someone — but if you record yourself and remove these, the trust returns immediately.</p>
+
+        <div class="ml-11 grid sm:grid-cols-2 gap-3">
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">"Well, actually…"</p>
+            <p class="text-xs text-slate-600">Pre-emptive correction — reads as ego defense.</p>
+          </div>
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">"I mean… what I'm trying to say is…"</p>
+            <p class="text-xs text-slate-600">Repair language — signals the first attempt failed.</p>
+          </div>
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">Nervous laugh after a pushback</p>
+            <p class="text-xs text-slate-600">Releases your pressure visibly — reads as relief, not authority.</p>
+          </div>
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">"Sorry, just one more thing…"</p>
+            <p class="text-xs text-slate-600">Apologizing for taking space is conceding the room.</p>
+          </div>
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">Rising pitch at sentence-end</p>
+            <p class="text-xs text-slate-600">Turns every statement into "is that okay?" Land each ending.</p>
+          </div>
+          <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">Hand to throat / neck / face</p>
+            <p class="text-xs text-slate-600">Self-soothing gestures are visible to everyone in the room.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Calm Phrases Under Real Pressure -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Calm Phrases Under Real Pressure</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">Three lines you can have ready. They work because they slow the room without conceding ground. Tap the speaker to hear the deliberate, low cadence.</p>
+
+        <div class="ml-11 space-y-4">
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Use when challenged hard</p>
+            <div class="flex items-center gap-3">
+              <p class="text-lg text-slate-900 italic flex-1">"Let me take that one carefully."</p>
+              <AudioButton client:visible text="Let me take that one carefully." lang="en-US" size="sm" />
+            </div>
+            <p class="text-sm text-slate-600 mt-3">Four words. They buy you 3-5 seconds and signal that you respect the challenge enough to think about it. Almost impossible to interrupt.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Use when pressured to commit fast</p>
+            <div class="flex items-center gap-3">
+              <p class="text-lg text-slate-900 italic flex-1">"That's worth slowing down on. Here's what I'd want to look at first."</p>
+              <AudioButton client:visible text="That's worth slowing down on. Here's what I'd want to look at first." lang="en-US" size="sm" />
+            </div>
+            <p class="text-sm text-slate-600 mt-3">Refuses the speed of the demand without refusing the demand. Reframes the pace into your control.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Use when someone raises their voice</p>
+            <div class="flex items-center gap-3">
+              <p class="text-lg text-slate-900 italic flex-1">"I hear you. Let's separate the concern from the conclusion for a moment."</p>
+              <AudioButton client:visible text="I hear you. Let's separate the concern from the conclusion for a moment." lang="en-US" size="sm" />
+            </div>
+            <p class="text-sm text-slate-600 mt-3">Acknowledgment first, then a structural reframe. Almost always lowers the temperature in the room within one beat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: The Identity Reframe -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Identity Reframe</h2>
+        </div>
+        <div class="ml-11 space-y-5 text-lg text-slate-700 leading-relaxed">
+          <p>
+            Technique only carries you so far. The deeper move is identity. The professional who walks into a pushback thinking <em>"I have to defend this"</em> is already behind. The executive who walks in thinking <em>"my job is to read this conversation and decide what it needs"</em> has a fundamentally different posture before they open their mouth.
+          </p>
+          <p>
+            The reframe is small but it changes everything: <strong>you are not under attack. You are diagnosing a room.</strong> Pushback is data, not a personal threat. The senior people in the room treat it that way, and you can adopt that posture before you walk in.
+          </p>
+          <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-5 my-4">
+            <p class="text-slate-800 italic">"I am not here to defend my position. I am here to understand what this room is asking for, and to decide what I'll concede, what I'll hold, and what I'll reshape."</p>
+            <p class="text-sm text-slate-600 mt-2">— rehearse this before any high-pressure conversation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap -->
+  <section class="py-14 md:py-16 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Recap</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-7">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>People challenge <strong>confidence before they challenge logic</strong>. Composure is your first message.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Three layers to manage: <strong>body, voice, words</strong>. Leak on any one and the others stop carrying you.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>The identity reframe — <strong>you are diagnosing a room, not defending a position</strong> — is what makes the technique sustainable.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</DiagnoseLessonLayout>

@@ -1,0 +1,213 @@
+---
+export const prerender = true;
+
+import DiagnoseLessonLayout from "@components/course/DiagnoseLessonLayout.astro";
+import AudioButton from "@components/course/AudioButton";
+import { DollarSign, CheckCircle2, XCircle, Eye, Target } from "lucide-astro";
+---
+
+<DiagnoseLessonLayout lessonId={5} lang="en" tkey="course/diagnose-before-defend/commercial-pushback">
+  <!-- Section 1: The Core Idea -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Price Becomes the Focus When Value and Trust Are Weak</h2>
+        </div>
+        <div class="ml-11 space-y-5 text-lg text-slate-700 leading-relaxed">
+          <p>
+            When a buyer fights you on price, the conversation has already gone sideways. Healthy commercial conversations don't dwell on price — they negotiate scope, terms, or timing while price stays roughly anchored. When price becomes the dominant topic, one of two things has happened: the buyer hasn't internalized the value, or they don't trust the relationship enough to pay for it.
+          </p>
+          <p>
+            Defending the price directly is almost always the wrong move. It signals that <strong>you</strong> believe price is the live issue — which validates the buyer's framing. The executive move is to diagnose <em>why</em> price became the conversation and address the layer underneath.
+          </p>
+          <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-6 my-6">
+            <div class="flex items-center gap-3 mb-3">
+              <DollarSign class="w-6 h-6 text-indigo-700" />
+              <h3 class="text-lg font-bold text-slate-900">The Principle</h3>
+            </div>
+            <p class="text-slate-800">
+              Diagnose the hesitation <em>before</em> defending the offer. If you're explaining the price, you've already lost ground. If you're reframing the value, you're still in the room.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: The Four Commercial Drivers -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">What's Actually Driving Commercial Pushback</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">Four hidden drivers account for almost all commercial objections. Each one has a different correct response — defending the price never works for any of them.</p>
+
+        <div class="ml-11 space-y-4">
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">1</div>
+              <h3 class="text-lg font-bold text-slate-900">Value Disconnect</h3>
+            </div>
+            <p class="text-slate-700 mb-2">The buyer doesn't fully see what they're getting. The price feels high because the value feels unclear or unverified.</p>
+            <p class="text-sm text-slate-500 italic">Tell: comparison language ("competitor X is half the price"), feature questions ("what exactly is included?").</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">2</div>
+              <h3 class="text-lg font-bold text-slate-900">Procurement Theater</h3>
+            </div>
+            <p class="text-slate-700 mb-2">A procurement manager has been told to negotiate. The pushback is not about your price — it's about their performance review. They need a concession to walk out with.</p>
+            <p class="text-sm text-slate-500 italic">Tell: arbitrary percentages requested ("we need 15% off"), references to budget cycles, scripted phrases.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">3</div>
+              <h3 class="text-lg font-bold text-slate-900">Internal Approval Risk</h3>
+            </div>
+            <p class="text-slate-700 mb-2">The buyer wants to buy but isn't sure they can defend the spend internally. The price objection is them rehearsing the defense they'll have to give to their boss.</p>
+            <p class="text-sm text-slate-500 italic">Tell: "I'll need to take this back to…", references to executive approval, requests for ROI documentation.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">4</div>
+              <h3 class="text-lg font-bold text-slate-900">Trust Gap</h3>
+            </div>
+            <p class="text-slate-700 mb-2">They don't have evidence yet that you'll deliver. The price isn't the issue — the perceived risk of paying it is.</p>
+            <p class="text-sm text-slate-500 italic">Tell: requests for references, pilot proposals, "let's start small" framing, slow-walking language.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Commercial ACR -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Commercial ACR — Each Driver, Each Response</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">Same buyer line, four possible drivers, four different responses. The diagnosis decides which one you use.</p>
+
+        <div class="ml-11 space-y-5">
+          <div class="bg-slate-900 text-white rounded-xl overflow-hidden">
+            <div class="px-5 py-3 border-b border-white/10">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-300">Buyer line</p>
+              <p class="text-lg italic mt-1">"Your price is about 30% over what we had in budget."</p>
+            </div>
+            <div class="p-5 space-y-4">
+              <div class="bg-white/5 rounded-lg p-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">If the driver is Value Disconnect</p>
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-100 flex-1 italic">"That gap usually means we haven't shown enough of the value yet. Can I walk you through the two outcomes we'd actually produce in the first 90 days? If those aren't worth the gap, we shouldn't be working together."</p>
+                  <AudioButton client:visible text="That gap usually means we haven't shown enough of the value yet. Can I walk you through the two outcomes we'd actually produce in the first 90 days? If those aren't worth the gap, we shouldn't be working together." lang="en-US" size="sm" />
+                </div>
+              </div>
+
+              <div class="bg-white/5 rounded-lg p-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">If the driver is Procurement Theater</p>
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-100 flex-1 italic">"I hear you. We're not going to move on rate — but I can move on terms. Annual prepay at a reduced quarterly commitment, or extended payment terms — those are the two levers I have. Which one helps you more?"</p>
+                  <AudioButton client:visible text="I hear you. We're not going to move on rate — but I can move on terms. Annual prepay at a reduced quarterly commitment, or extended payment terms — those are the two levers I have. Which one helps you more?" lang="en-US" size="sm" />
+                </div>
+              </div>
+
+              <div class="bg-white/5 rounded-lg p-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">If the driver is Internal Approval Risk</p>
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-100 flex-1 italic">"That's a real gap to defend. Let me give you the three numbers that usually carry the internal conversation — and if those don't fit your CFO's framing, tell me what does and I'll reshape it."</p>
+                  <AudioButton client:visible text="That's a real gap to defend. Let me give you the three numbers that usually carry the internal conversation — and if those don't fit your CFO's framing, tell me what does and I'll reshape it." lang="en-US" size="sm" />
+                </div>
+              </div>
+
+              <div class="bg-white/5 rounded-lg p-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">If the driver is Trust Gap</p>
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-100 flex-1 italic">"That gap feels bigger when you don't yet have evidence we'll deliver. Here's what I'd propose: a structured 60-day milestone with a defined success threshold. If we don't hit it, you exit clean. That removes the risk of paying full price for an unproven outcome."</p>
+                  <AudioButton client:visible text="That gap feels bigger when you don't yet have evidence we'll deliver. Here's what I'd propose: a structured 60-day milestone with a defined success threshold. If we don't hit it, you exit clean. That removes the risk of paying full price for an unproven outcome." lang="en-US" size="sm" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: The Discount Trap -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Discount Trap</h2>
+        </div>
+        <div class="ml-11 space-y-5 text-lg text-slate-700 leading-relaxed">
+          <p>
+            The biggest commercial mistake under pressure is conceding on price too quickly. The pattern is well-documented: buyer asks for a discount, seller concedes, buyer feels they should have asked for more, and the entire deal becomes structured around price rather than value. You've trained them to negotiate every renewal the same way.
+          </p>
+          <p>
+            The correct response to "can you do better on price" is almost never a discount. It's a <strong>trade</strong> — you move on price only if they move on something else. Term length. Payment timing. Commitment volume. Reference rights. Anything.
+          </p>
+          <div class="bg-white border border-slate-200 rounded-xl p-5 my-4">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">The trade response</p>
+            <div class="flex items-center gap-3">
+              <p class="text-lg text-slate-900 italic flex-1">"I can look at price if you can look at term. A two-year commitment changes my math — a one-year doesn't."</p>
+              <AudioButton client:visible text="I can look at price if you can look at term. A two-year commitment changes my math — a one-year doesn't." lang="en-US" size="sm" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Three Commercial Traps -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Three Commercial Traps</h2>
+        </div>
+        <div class="ml-11 space-y-4">
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trap 1 — Sounding eager</p>
+            <p class="text-slate-700 text-sm">Eagerness is the most expensive signal in a commercial conversation. "We'd love to work with you" early in a price discussion costs you 5-10% in margin. Calibrated detachment ("if we're the right fit for you") preserves leverage.</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trap 2 — Defending the line items</p>
+            <p class="text-slate-700 text-sm">When you start defending why each line item costs what it costs, you've moved the conversation from value to cost accounting. You'll always lose that frame. Stay on outcomes, not inputs.</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trap 3 — Conceding for no trade</p>
+            <p class="text-slate-700 text-sm">If you discount without getting something in return, you've taught the buyer that your price was fake. Every concession needs a corresponding ask, even a small one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap -->
+  <section class="py-14 md:py-16 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Recap</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-7">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span><strong>Price becomes the focus when value and trust are weak.</strong> Diagnose which.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Four drivers: <strong>Value Disconnect, Procurement Theater, Internal Approval Risk, Trust Gap</strong>. Each has a different correct response.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Never concede on price without a <strong>trade</strong>. Every discount needs a corresponding ask.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</DiagnoseLessonLayout>

@@ -1,0 +1,197 @@
+---
+// Shared lesson chrome for the "Diagnose Before You Defend" master class.
+// Renders the hero, previous/next nav, and bonus nudge. The lesson page
+// supplies its unique body via the default <slot/>. Twelve lesson files
+// (6 EN + 6 ES) wrap this component instead of duplicating ~150 lines
+// of layout each.
+
+import Base from "@layouts/Base.astro";
+import {
+  diagnoseLessons,
+  diagnoseInfo,
+} from "@data/diagnose-before-defend/lessons";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Sparkles,
+  Search,
+  Pause,
+  Shield,
+  Compass,
+  DollarSign,
+  AlertTriangle,
+  RefreshCw,
+} from "lucide-astro";
+import type { TKey } from "../../lib/i18n";
+
+interface Props {
+  lessonId: number;
+  lang: "en" | "es";
+  tkey: TKey;
+}
+
+const { lessonId, lang, tkey } = Astro.props as Props;
+
+const lesson = diagnoseLessons.find((l) => l.id === lessonId);
+if (!lesson) throw new Error(`Diagnose lesson ${lessonId} not found`);
+
+const total = diagnoseLessons.length;
+const prev = diagnoseLessons.find((l) => l.id === lessonId - 1);
+const next = diagnoseLessons.find((l) => l.id === lessonId + 1);
+
+const isEn = lang === "en";
+const basePath = isEn ? diagnoseInfo.basePath.en : diagnoseInfo.basePath.es;
+const bonusSlug = isEn ? diagnoseInfo.bonusSlug.en : diagnoseInfo.bonusSlug.es;
+const prevSlug = prev ? (isEn ? prev.slug : prev.slugEs) : null;
+const nextSlug = next ? (isEn ? next.slug : next.slugEs) : null;
+
+const t = {
+  lessonLabel: isEn ? "Lesson" : "Lección",
+  ofTotal: isEn ? `of ${total}` : `de ${total}`,
+  prev: isEn ? "Previous lesson" : "Lección anterior",
+  next: isEn ? "Next lesson" : "Siguiente lección",
+  overview: isEn ? "Course overview" : "Resumen del curso",
+  overviewTitle: isEn ? "Diagnose Before You Defend" : "Diagnostica Antes de Defender",
+  bonusNudge: isEn
+    ? "Already lost composure in a real conversation? The recovery script is your reset."
+    : "¿Ya perdiste la compostura en una conversación real? El guion de recuperación es tu reset.",
+  bonusButton: isEn
+    ? "Open the Pressure Recovery Script"
+    : "Abrir el Guion de Recuperación",
+  finishBonus: isEn ? "Finish with the bonus" : "Termina con el bonus",
+  bonusTitle: isEn
+    ? "The Pressure Recovery Script"
+    : "El Guion de Recuperación",
+  backToOverview: isEn ? "← Back to course overview" : "← Volver al curso",
+  title: isEn ? lesson.title : lesson.titleEs,
+  subtitle: isEn ? lesson.subtitle : lesson.subtitleEs,
+};
+
+const iconMap: Record<string, any> = {
+  Search,
+  Pause,
+  Shield,
+  Compass,
+  DollarSign,
+  AlertTriangle,
+  RefreshCw,
+};
+const LessonIcon = iconMap[lesson.icon];
+
+const seoTitle = isEn
+  ? `${lesson.title} — Diagnose Before You Defend`
+  : `${lesson.titleEs} — Diagnostica Antes de Defender`;
+
+const seoDescription = isEn
+  ? `${lesson.subtitle} Free master class on executive pushback for directors and mid-managers under pressure.`
+  : `${lesson.subtitleEs} Master class gratuita para directores y mandos medios bajo presión ejecutiva.`;
+---
+
+<Base lang={lang} tkey={tkey} title={seoTitle} description={seoDescription}>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-950 to-indigo-950 pt-28 pb-14 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          {LessonIcon && <LessonIcon class="w-4 h-4" />}
+          {t.lessonLabel} {lessonId} {t.ofTotal}
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          {t.title}
+        </h1>
+        <p class="text-xl text-indigo-200 italic font-light leading-relaxed">{t.subtitle}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Unique lesson content -->
+  <slot />
+
+  <!-- Bonus nudge -->
+  <section class="py-12 md:py-14 bg-indigo-50 border-t border-indigo-100">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
+        <div class="flex items-start gap-3">
+          <Sparkles class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+          <p class="text-slate-700">{t.bonusNudge}</p>
+        </div>
+        <a
+          href={`${basePath}/${bonusSlug}/`}
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white border border-indigo-300 text-indigo-700 font-semibold text-sm hover:border-indigo-400 hover:shadow-md transition-all shrink-0"
+        >
+          {t.bonusButton}
+          <ArrowRight class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prev / Next nav -->
+  <section class="py-12 md:py-14 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {prevSlug ? (
+            <a
+              href={`${basePath}/${prevSlug}/`}
+              class="group flex items-center gap-3 bg-white rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all p-5"
+            >
+              <ArrowLeft class="w-5 h-5 text-slate-400 group-hover:text-indigo-600 transition-colors shrink-0" />
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-0.5">{t.prev}</p>
+                <p class="text-slate-900 font-medium">{isEn ? prev?.title : prev?.titleEs}</p>
+              </div>
+            </a>
+          ) : (
+            <a
+              href={basePath + "/"}
+              class="group flex items-center gap-3 bg-white rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all p-5"
+            >
+              <ArrowLeft class="w-5 h-5 text-slate-400 group-hover:text-indigo-600 transition-colors shrink-0" />
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-0.5">{t.overview}</p>
+                <p class="text-slate-900 font-medium">{t.overviewTitle}</p>
+              </div>
+            </a>
+          )}
+
+          {nextSlug ? (
+            <a
+              href={`${basePath}/${nextSlug}/`}
+              class="group flex items-center justify-between gap-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl transition-all p-5"
+            >
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-indigo-100 mb-0.5">{t.next}</p>
+                <p class="font-medium">{isEn ? next?.title : next?.titleEs}</p>
+              </div>
+              <ArrowRight class="w-5 h-5 shrink-0" />
+            </a>
+          ) : (
+            <a
+              href={`${basePath}/${bonusSlug}/`}
+              class="group flex items-center justify-between gap-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl transition-all p-5"
+            >
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-indigo-100 mb-0.5">{t.finishBonus}</p>
+                <p class="font-medium">{t.bonusTitle}</p>
+              </div>
+              <ArrowRight class="w-5 h-5 shrink-0" />
+            </a>
+          )}
+        </div>
+
+        <div class="mt-8 text-center">
+          <a
+            href={basePath + "/"}
+            class="text-sm text-slate-600 hover:text-indigo-700 underline underline-offset-2"
+          >
+            {t.backToOverview}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

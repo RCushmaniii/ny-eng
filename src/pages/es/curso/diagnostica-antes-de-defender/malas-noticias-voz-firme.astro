@@ -1,0 +1,214 @@
+---
+export const prerender = true;
+
+import DiagnoseLessonLayout from "@components/course/DiagnoseLessonLayout.astro";
+import AudioButton from "@components/course/AudioButton";
+import { AlertTriangle, CheckCircle2, XCircle, Eye, ShieldAlert } from "lucide-astro";
+---
+
+<DiagnoseLessonLayout lessonId={6} lang="es" tkey="course/diagnose-before-defend/bad-news-steady-voice">
+  <!-- Section 1: Core Idea -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Los Líderes Transfieren Estabilidad — O Transfieren Pánico</h2>
+        </div>
+        <div class="ml-11 space-y-5 text-lg text-slate-700 leading-relaxed">
+          <p>
+            Cuando das malas noticias — un trimestre perdido, un recorte, un outage de producción, una alianza que se desmorona — la organización te observa por una sola señal: <strong>¿estás regulado o eres contagioso?</strong> Lo que dices apenas importa en los primeros treinta segundos. Qué tan firme suena tu voz determina si la sala se calma contigo o escala alrededor de ti.
+          </p>
+          <p>
+            Esta es la habilidad más asimétrica de todo el curso. La mayoría de los profesionales nunca la entrenan. Improvisan a través de los momentos de malas noticias esperando que la adrenalina los lleve. Los líderes que realmente mueven organizaciones a través de momentos difíciles hacen algo distinto: tratan la entrega de malas noticias como un <strong>oficio practicado</strong>, no un evento emocional.
+          </p>
+          <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-6 my-6">
+            <div class="flex items-center gap-3 mb-3">
+              <ShieldAlert class="w-6 h-6 text-indigo-700" />
+              <h3 class="text-lg font-bold text-slate-900">El Principio</h3>
+            </div>
+            <p class="text-slate-800">
+              Bajo presión, los líderes transfieren estabilidad emocional a la organización. La voz que dice "tenemos un problema" es la misma voz que tiene que decir "y así es como lo sostenemos". Contención, no contagio.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Bad News Structure -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">La Estructura de Malas Noticias</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">Cuatro tiempos. En este orden. Saltarse cualquiera crea un tipo distinto de daño.</p>
+
+        <div class="ml-11 space-y-4">
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 font-bold">1</div>
+              <h3 class="text-lg font-bold text-slate-900">La Declaración Directa</h3>
+            </div>
+            <p class="text-slate-700 mb-2">Di la mala noticia claramente, en una oración, sin preámbulo. "Perdimos el trimestre por 22%". "Vamos a reducir personal en 15%". "La plataforma estuvo caída seis horas".</p>
+            <p class="text-sm text-slate-500 italic">Enterrar el titular ("So I want to talk through some context first…") señala que le tienes miedo a la noticia. La sala lo lee como inestabilidad.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 font-bold">2</div>
+              <h3 class="text-lg font-bold text-slate-900">La Causa Específica</h3>
+            </div>
+            <p class="text-slate-700 mb-2">Nombra la causa en términos operativos concretos. No "condiciones de mercado desafiantes" — el mecanismo real. "El ciclo de ventas en mid-market fue 40 días más largo que el modelo". "Un failover de base de datos no se activó como estaba especificado".</p>
+            <p class="text-sm text-slate-500 italic">Las causas vagas telegrafían que no entiendes lo que pasó o lo estás escondiendo. Ambas destruyen la confianza.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 font-bold">3</div>
+              <h3 class="text-lg font-bold text-slate-900">La Acción Ya Tomada</h3>
+            </div>
+            <p class="text-slate-700 mb-2">Tiempo pasado, no tiempo futuro. "Ya movimos dos AEs a enterprise esta semana". "Ya desplegamos el fix y reconstruimos el runbook". Las acciones en movimiento antes de que la sala supiera del problema son las que construyen confianza.</p>
+            <p class="text-sm text-slate-500 italic">Promesas en tiempo futuro ("vamos a…") en un momento de malas noticias se leen como improvisación. Acciones en tiempo pasado se leen como competencia.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 font-bold">4</div>
+              <h3 class="text-lg font-bold text-slate-900">El Encuadre Hacia Adelante</h3>
+            </div>
+            <p class="text-slate-700 mb-2">Cierra con qué sigue y a qué te estás haciendo responsable frente a la sala. "Tendremos visibilidad total del nuevo modelo para el próximo viernes". "Las métricas de fin de trimestre estarán en vivo en el dashboard".</p>
+            <p class="text-sm text-slate-500 italic">Sin encuadre hacia adelante, la sala queda con la ansiedad. Un siguiente paso claro transfiere el trabajo del oyente de vuelta al sistema.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Real Bad-News Examples -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Entregas Reales de Malas Noticias</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">Tres contextos. Misma estructura. Escucha el ritmo controlado en cada uno — esa es la señal ejecutiva que la sala está leyendo.</p>
+
+        <div class="ml-11 space-y-5">
+          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Contexto · Trimestre perdido a tu equipo</p>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3">
+                <p class="text-slate-900 font-medium flex-1">"We missed the quarter by 22%. The miss came from one segment — mid-market — where our sales cycle assumption was wrong by 40 days. We've already moved two AEs to enterprise this week and corrected the pipeline model. Next steps: the new forecast goes to the board on the 14th, and we'll have weekly leading indicators visible to the team starting Monday."</p>
+                <AudioButton client:visible text="We missed the quarter by 22%. The miss came from one segment — mid-market — where our sales cycle assumption was wrong by 40 days. We've already moved two AEs to enterprise this week and corrected the pipeline model. Next steps: the new forecast goes to the board on the 14th, and we'll have weekly leading indicators visible to the team starting Monday." lang="en-US" size="sm" />
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Contexto · Anuncio de recorte al equipo de liderazgo</p>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3">
+                <p class="text-slate-900 font-medium flex-1">"We're reducing headcount by 15%, effective the 28th. The decision is driven by the revised growth model, not by performance. Severance packages are already structured and reviewed by legal. Your job in the next 48 hours is to deliver this individually before the all-hands. I'll send you the full guide tonight and we're meeting again tomorrow morning to walk through anything that's hard."</p>
+                <AudioButton client:visible text="We're reducing headcount by 15%, effective the 28th. The decision is driven by the revised growth model, not by performance. Severance packages are already structured and reviewed by legal. Your job in the next 48 hours is to deliver this individually before the all-hands. I'll send you the full guide tonight and we're meeting again tomorrow morning to walk through anything that's hard." lang="en-US" size="sm" />
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Contexto · Update de outage a cliente enterprise</p>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3">
+                <p class="text-slate-900 font-medium flex-1">"The platform was down for six hours starting at 02:14 UTC. Root cause was a database failover that did not trigger the way our runbook specified. The fix is already deployed, the runbook is rebuilt, and we've added a synthetic check that would have caught this 90 seconds in. You'll see a service credit for the full quarter in your next invoice. Our SRE lead is on this call to take any technical questions."</p>
+                <AudioButton client:visible text="The platform was down for six hours starting at 02:14 UTC. Root cause was a database failover that did not trigger the way our runbook specified. The fix is already deployed, the runbook is rebuilt, and we've added a synthetic check that would have caught this 90 seconds in. You'll see a service credit for the full quarter in your next invoice. Our SRE lead is on this call to take any technical questions." lang="en-US" size="sm" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Vocal Mechanics -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">La Mecánica Vocal de una Voz Firme</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">La estructura solo te sostiene si la voz sostiene la estructura. Cuatro mecánicas que ensayar antes de cualquier entrega de malas noticias.</p>
+
+        <div class="ml-11 grid sm:grid-cols-2 gap-3">
+          <div class="bg-white rounded-lg border border-slate-200 p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">Baja el ritmo 20%</p>
+            <p class="text-xs text-slate-600">La entrega de malas noticias debe sentirse más lenta de lo que crees que necesita ser. La velocidad se lee como pánico.</p>
+          </div>
+          <div class="bg-white rounded-lg border border-slate-200 p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">Baja el tono</p>
+            <p class="text-xs text-slate-600">Más bajo que tu rango conversacional. El tono es la señal emocional más fuerte — mantenlo bajo control.</p>
+          </div>
+          <div class="bg-white rounded-lg border border-slate-200 p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">Aterriza cada oración</p>
+            <p class="text-xs text-slate-600">Cierres ascendentes convierten afirmaciones en preguntas. Malas noticias entregadas como pregunta se leen como incertidumbre.</p>
+          </div>
+          <div class="bg-white rounded-lg border border-slate-200 p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">Respira entre tiempos</p>
+            <p class="text-xs text-slate-600">Medio segundo de respiración entre los cuatro tiempos deja que la sala absorba cada uno antes del siguiente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Three Traps -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Tres Trampas de Malas Noticias</h2>
+        </div>
+        <div class="ml-11 space-y-4">
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trampa 1 — Tranquilizar prematuramente</p>
+            <p class="text-slate-700 text-sm">"Todo va a estar bien" antes de que la sala haya absorbido la noticia es condescendiente — y peor, se lee como actuación. Reconoce el peso antes de ofrecer tranquilidad.</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trampa 2 — La disculpa falsa</p>
+            <p class="text-slate-700 text-sm">"Quiero pedir disculpas por…" antes de que la mala noticia siquiera haya aterrizado es una señal de que estás más preocupado por cómo te ves que por lo que pasó. Guarda la disculpa — si se debe — para después de entregar la estructura.</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trampa 3 — Sobreexplicar la causa</p>
+            <p class="text-slate-700 text-sm">Una oración sobre la causa es suficiente. Cuanto más tiempo pases en lo que salió mal, más la sala lo lee como tú defendiéndote en vez de informándoles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap -->
+  <section class="py-14 md:py-16 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">El Resumen</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-7">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Bajo presión, los líderes <strong>transfieren estabilidad o transfieren pánico</strong>. La voz es el portador.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Cuatro tiempos: <strong>declaración directa → causa específica → acción ya tomada → encuadre hacia adelante</strong>.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>La mecánica vocal importa tanto como la estructura — <strong>lenta, baja, aterrizada, con respiraciones</strong>.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</DiagnoseLessonLayout>

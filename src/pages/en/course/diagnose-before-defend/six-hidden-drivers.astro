@@ -1,0 +1,250 @@
+---
+export const prerender = true;
+
+import DiagnoseLessonLayout from "@components/course/DiagnoseLessonLayout.astro";
+import AudioButton from "@components/course/AudioButton";
+import { Search, AlertCircle, CheckCircle2, XCircle, Eye } from "lucide-astro";
+---
+
+<DiagnoseLessonLayout lessonId={1} lang="en" tkey="course/diagnose-before-defend/six-hidden-drivers">
+  <!-- Section 1: The Core Idea -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Stated Reason Is Almost Never the Real One</h2>
+        </div>
+        <div class="ml-11 space-y-5 text-lg text-slate-700 leading-relaxed">
+          <p>
+            When a procurement manager says <em>"your price is too high,"</em> they are almost never just talking about price. When a peer says <em>"I don't think the timeline works,"</em> they're usually not worried about the date itself. When your VP says <em>"are we sure this is the right approach?"</em> they're rarely asking a sincere question.
+          </p>
+          <p>
+            Stated objections are the surface. <strong>Hidden drivers are the substrate.</strong> Six of them account for almost every pushback you'll encounter as a senior professional. Diagnosing which one is firing — before you respond — is the single highest-leverage executive skill you can install.
+          </p>
+          <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-6 my-6">
+            <div class="flex items-center gap-3 mb-3">
+              <Eye class="w-6 h-6 text-indigo-700" />
+              <h3 class="text-lg font-bold text-slate-900">The Principle</h3>
+            </div>
+            <p class="text-slate-800">
+              Diagnose the real concern <em>before</em> responding. The wrong diagnosis produces a confident answer to the wrong question — which is worse than no answer at all.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: The Six Drivers -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Six Drivers</h2>
+        </div>
+        <div class="ml-11 space-y-4">
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">1</div>
+              <h3 class="text-lg font-bold text-slate-900">Risk Perception</h3>
+            </div>
+            <p class="text-slate-700 mb-2">The person is worried something will go wrong, and they're testing whether you've thought about it. Common in operational, technical, and compliance contexts.</p>
+            <p class="text-sm text-slate-500 italic">Tell: vague hedges ("are we sure"), hypotheticals ("what if"), worst-case framings.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">2</div>
+              <h3 class="text-lg font-bold text-slate-900">Ego Protection</h3>
+            </div>
+            <p class="text-slate-700 mb-2">The person feels their judgment, expertise, or recent decision is being implicitly challenged by your proposal. Often invisible in the room — visible only in tone.</p>
+            <p class="text-sm text-slate-500 italic">Tell: sharper voice, history-citing ("when I ran X"), credential reminders.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">3</div>
+              <h3 class="text-lg font-bold text-slate-900">Status Concerns</h3>
+            </div>
+            <p class="text-slate-700 mb-2">The person is testing whether you'll defer to their seniority. The objection is a probe of authority dynamics, not the topic itself.</p>
+            <p class="text-sm text-slate-500 italic">Tell: questions phrased as conclusions, peers cited as agreeing, public-facing framing.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">4</div>
+              <h3 class="text-lg font-bold text-slate-900">Trust Gap</h3>
+            </div>
+            <p class="text-slate-700 mb-2">The person hasn't been burned by you yet, but they don't have evidence to trust you either. The objection buys time to evaluate you.</p>
+            <p class="text-sm text-slate-500 italic">Tell: requests for more data, calls for additional stakeholders, slow-walk language.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">5</div>
+              <h3 class="text-lg font-bold text-slate-900">Workload Pressure</h3>
+            </div>
+            <p class="text-slate-700 mb-2">The person is already underwater. Your proposal — regardless of its merit — represents incremental work they can't absorb. The objection is a quiet "no" disguised as a question.</p>
+            <p class="text-sm text-slate-500 italic">Tell: timeline pushback, scope shrinkage, "let's revisit later" framing.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">6</div>
+              <h3 class="text-lg font-bold text-slate-900">Accountability Avoidance</h3>
+            </div>
+            <p class="text-slate-700 mb-2">The person is afraid that if this fails, they will be blamed. The objection is risk-shifting language — they want their fingerprints off the decision.</p>
+            <p class="text-sm text-slate-500 italic">Tell: requests for written approval, escalation suggestions, "this is above my level" deflections.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Diagnostic Examples -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Reading the Real Driver</h2>
+        </div>
+        <p class="text-slate-600 mb-8 ml-11">Three real pushback lines and the diagnostic underneath them. Tap the speaker to hear the response that reads the driver correctly.</p>
+
+        <div class="ml-11 space-y-5">
+          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Pushback line</p>
+            </div>
+            <div class="p-6 space-y-4">
+              <p class="text-lg text-slate-900 italic">"I'm not sure we have the bandwidth to take this on right now."</p>
+              <p class="text-sm text-slate-600"><strong>Stated reason:</strong> Capacity. <strong>Real driver:</strong> Workload pressure (5) — they're already underwater and your project lands on top of work they can't absorb.</p>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-900 italic flex-1">"What if we sequenced it so the first phase doesn't touch your team for six weeks? That gives you room to close out the Q2 commitments first."</p>
+                  <AudioButton client:visible text="What if we sequenced it so the first phase doesn't touch your team for six weeks? That gives you room to close out the Q2 commitments first." lang="en-US" size="sm" />
+                </div>
+              </div>
+              <p class="text-sm text-slate-500">Responding to capacity (the stated reason) would mean reducing scope. Responding to workload (the real driver) means resequencing — which costs you almost nothing and unlocks the yes.</p>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Pushback line</p>
+            </div>
+            <div class="p-6 space-y-4">
+              <p class="text-lg text-slate-900 italic">"When I ran the platform team, we tried something similar and it didn't scale."</p>
+              <p class="text-sm text-slate-600"><strong>Stated reason:</strong> Historical precedent. <strong>Real driver:</strong> Ego protection (2) — they're signaling expertise and quietly anchoring you to defer.</p>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-900 italic flex-1">"That's exactly the failure mode I want to avoid. What was the specific constraint that broke it for you? I'd rather design around your scar tissue than rediscover it."</p>
+                  <AudioButton client:visible text="That's exactly the failure mode I want to avoid. What was the specific constraint that broke it for you? I'd rather design around your scar tissue than rediscover it." lang="en-US" size="sm" />
+                </div>
+              </div>
+              <p class="text-sm text-slate-500">Defending why your version is different would escalate the ego dynamic. Asking them to teach you converts the challenge into mentorship and makes them an ally.</p>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Pushback line</p>
+            </div>
+            <div class="p-6 space-y-4">
+              <p class="text-lg text-slate-900 italic">"Has anyone else above us signed off on this approach?"</p>
+              <p class="text-sm text-slate-600"><strong>Stated reason:</strong> Authority check. <strong>Real driver:</strong> Accountability avoidance (6) — they don't want their fingerprints on the decision if it fails.</p>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-900 italic flex-1">"I own this call. If it doesn't work, that's on me — and I'll say so in the post-mortem. What I need from you is the operational input on whether the design holds up."</p>
+                  <AudioButton client:visible text="I own this call. If it doesn't work, that's on me — and I'll say so in the post-mortem. What I need from you is the operational input on whether the design holds up." lang="en-US" size="sm" />
+                </div>
+              </div>
+              <p class="text-sm text-slate-500">Escalating upward would validate the risk-shift. Taking the accountability hit explicitly removes the threat and reframes their contribution as input, not blame share.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: The Three Diagnostic Questions -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Three Diagnostic Questions</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">Run these three silently — in the 2-3 second pause before you respond. They become automatic with practice.</p>
+
+        <div class="ml-11 space-y-3">
+          <div class="bg-white rounded-lg border border-slate-200 p-5 flex items-start gap-4">
+            <AlertCircle class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+            <div>
+              <p class="font-bold text-slate-900">What concern is this person actually trying to solve?</p>
+              <p class="text-sm text-slate-600 mt-1">Map their objection to one of the six drivers above. The match doesn't have to be perfect — even a 60% read is better than a confident response to the surface question.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg border border-slate-200 p-5 flex items-start gap-4">
+            <AlertCircle class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+            <div>
+              <p class="font-bold text-slate-900">What risk are they trying to avoid?</p>
+              <p class="text-sm text-slate-600 mt-1">If you can name the worst case they're protecting against, your response can address it without them having to say it out loud — which is how senior trust gets built.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg border border-slate-200 p-5 flex items-start gap-4">
+            <AlertCircle class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+            <div>
+              <p class="font-bold text-slate-900">What emotional pressure exists underneath the objection?</p>
+              <p class="text-sm text-slate-600 mt-1">Status, ego, and accountability all show up emotionally first. If you can feel it in the room, address it indirectly — never name it explicitly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Common Traps -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Three Diagnostic Traps</h2>
+        </div>
+        <div class="ml-11 space-y-4">
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trap 1 — Naming the driver out loud</p>
+            <p class="text-slate-700 text-sm">Never say <em>"I think this is really about your workload"</em> or <em>"Is this about who gets credit?"</em> Naming the hidden driver is unmasking — it forces the other person to defend their ego, not engage with your response. The diagnosis is internal. The response is external.</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trap 2 — Overweighting one driver</p>
+            <p class="text-slate-700 text-sm">Once you learn the six drivers, you'll start seeing your favorite everywhere. If you tend to diagnose ego, you'll over-attribute ego. Build the habit of considering at least two drivers per objection before responding.</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trap 3 — Diagnosing without listening</p>
+            <p class="text-slate-700 text-sm">The diagnostic pause is also a listening cue. If you're already running the six drivers in your head while they're still speaking, you'll miss the tone shift that confirms which one is firing. Listen first. Diagnose second.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap -->
+  <section class="py-14 md:py-16 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Recap</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-7">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Stated objections are the surface. <strong>The six hidden drivers</strong> — risk, ego, status, trust, workload, accountability — are the substrate underneath.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Run the <strong>three diagnostic questions</strong> silently in the 2-3 second pause before responding.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>The diagnosis is <strong>internal</strong>. Never name the hidden driver out loud — address it indirectly through the response.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</DiagnoseLessonLayout>
