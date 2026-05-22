@@ -1,15 +1,15 @@
 ---
-// Shared lesson chrome for the "Diagnose Before You Defend" master class.
-// Renders the hero, previous/next nav, and bonus nudge. The lesson page
-// supplies its unique body via the default <slot/>. Twelve lesson files
-// (6 EN + 6 ES) wrap this component instead of duplicating ~150 lines
-// of layout each.
+// Shared lesson chrome for the "Executive Pushback & Objection Handling"
+// master class. Renders the hero, previous/next nav, and bonus nudge.
+// The lesson page supplies its unique body via the default <slot/>.
+// Twelve lesson files (6 EN + 6 ES) wrap this component instead of
+// duplicating ~150 lines of layout each.
 
 import Base from "@layouts/Base.astro";
 import {
-  diagnoseLessons,
-  diagnoseInfo,
-} from "@data/diagnose-before-defend/lessons";
+  pushbackLessons,
+  pushbackInfo,
+} from "@data/executive-pushback/lessons";
 import {
   ArrowLeft,
   ArrowRight,
@@ -32,16 +32,16 @@ interface Props {
 
 const { lessonId, lang, tkey } = Astro.props as Props;
 
-const lesson = diagnoseLessons.find((l) => l.id === lessonId);
-if (!lesson) throw new Error(`Diagnose lesson ${lessonId} not found`);
+const lesson = pushbackLessons.find((l) => l.id === lessonId);
+if (!lesson) throw new Error(`Pushback lesson ${lessonId} not found`);
 
-const total = diagnoseLessons.length;
-const prev = diagnoseLessons.find((l) => l.id === lessonId - 1);
-const next = diagnoseLessons.find((l) => l.id === lessonId + 1);
+const total = pushbackLessons.length;
+const prev = pushbackLessons.find((l) => l.id === lessonId - 1);
+const next = pushbackLessons.find((l) => l.id === lessonId + 1);
 
 const isEn = lang === "en";
-const basePath = isEn ? diagnoseInfo.basePath.en : diagnoseInfo.basePath.es;
-const bonusSlug = isEn ? diagnoseInfo.bonusSlug.en : diagnoseInfo.bonusSlug.es;
+const basePath = isEn ? pushbackInfo.basePath.en : pushbackInfo.basePath.es;
+const bonusSlug = isEn ? pushbackInfo.bonusSlug.en : pushbackInfo.bonusSlug.es;
 const prevSlug = prev ? (isEn ? prev.slug : prev.slugEs) : null;
 const nextSlug = next ? (isEn ? next.slug : next.slugEs) : null;
 
@@ -51,7 +51,9 @@ const t = {
   prev: isEn ? "Previous lesson" : "Lección anterior",
   next: isEn ? "Next lesson" : "Siguiente lección",
   overview: isEn ? "Course overview" : "Resumen del curso",
-  overviewTitle: isEn ? "Diagnose Before You Defend" : "Diagnostica Antes de Defender",
+  overviewTitle: isEn
+    ? "Executive Pushback & Objection Handling"
+    : "Manejo de Pushback y Objeciones Ejecutivas",
   bonusNudge: isEn
     ? "Already lost composure in a real conversation? The recovery script is your reset."
     : "¿Ya perdiste la compostura en una conversación real? El guion de recuperación es tu reset.",
@@ -78,13 +80,15 @@ const iconMap: Record<string, any> = {
 };
 const LessonIcon = iconMap[lesson.icon];
 
+// SEO title kept under 60 chars. Lesson title alone is the discoverable
+// piece; the course name appears in OG and JSON-LD via the index page.
 const seoTitle = isEn
-  ? `${lesson.title} — Diagnose Before You Defend`
-  : `${lesson.titleEs} — Diagnostica Antes de Defender`;
+  ? `${lesson.title} — Handling Pushback`
+  : `${lesson.titleEs} — Manejo de Pushback`;
 
 const seoDescription = isEn
-  ? `${lesson.subtitle} Free master class on executive pushback for directors and mid-managers under pressure.`
-  : `${lesson.subtitleEs} Master class gratuita para directores y mandos medios bajo presión ejecutiva.`;
+  ? `${lesson.subtitle} Free master class on handling executive pushback and objections under pressure.`
+  : `${lesson.subtitleEs} Master class gratuita sobre el manejo de pushback y objeciones ejecutivas bajo presión.`;
 ---
 
 <Base lang={lang} tkey={tkey} title={seoTitle} description={seoDescription}>

@@ -1,34 +1,34 @@
 ---
 export const prerender = true;
 
-import DiagnoseLessonLayout from "@components/course/DiagnoseLessonLayout.astro";
+import PushbackLessonLayout from "@components/course/PushbackLessonLayout.astro";
 import AudioButton from "@components/course/AudioButton";
 import { Pause, Clock, Volume2, CheckCircle2, XCircle, Eye } from "lucide-astro";
 ---
 
-<DiagnoseLessonLayout lessonId={2} lang="en" tkey="course/diagnose-before-defend/diagnostic-pause">
+<PushbackLessonLayout lessonId={2} lang="es" tkey="course/executive-pushback/diagnostic-pause">
   <!-- Section 1: The Core Idea -->
   <section class="py-14 md:py-16 bg-white">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-2">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">1</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Silence Is Your Most Underused Tool</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">El Silencio Es Tu Herramienta Más Subutilizada</h2>
         </div>
         <div class="ml-11 space-y-5 text-lg text-slate-700 leading-relaxed">
           <p>
-            When someone pushes back on you in a room, the default professional reflex is to <strong>respond fast</strong>. Speed feels like competence. Hesitation feels like weakness. So you fill the space — usually with the first response that came to mind, which is almost always the wrong one.
+            Cuando alguien te da pushback en una sala, el reflejo profesional por defecto es <strong>responder rápido</strong>. La velocidad se siente como competencia. La vacilación se siente como debilidad. Entonces llenas el espacio — usualmente con la primera respuesta que se te vino a la cabeza, que casi siempre es la equivocada.
           </p>
           <p>
-            Senior leaders do the opposite. They <strong>pause</strong>. Two seconds, sometimes three. They look at the person. They consider. Then they respond — slower, lower, more measured than the challenger expected. The pause is not a sign of uncertainty. It's a sign of control.
+            Los líderes senior hacen lo opuesto. <strong>Pausan</strong>. Dos segundos, a veces tres. Miran a la persona. Consideran. Después responden — más lento, más bajo, más medido de lo que el retador esperaba. La pausa no es una señal de incertidumbre. Es una señal de control.
           </p>
           <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-6 my-6">
             <div class="flex items-center gap-3 mb-3">
               <Eye class="w-6 h-6 text-indigo-700" />
-              <h3 class="text-lg font-bold text-slate-900">The Principle</h3>
+              <h3 class="text-lg font-bold text-slate-900">El Principio</h3>
             </div>
             <p class="text-slate-800">
-              The 2-3 second pause is the single highest-leverage executive move you can install. It buys you diagnosis, breath, and the room's recalibrated attention — at the cost of feeling slightly uncomfortable.
+              La pausa de 2-3 segundos es el movimiento ejecutivo de mayor apalancamiento que puedes instalar. Te compra diagnóstico, respiración y la atención recalibrada de la sala — a costa de sentirte ligeramente incómodo.
             </p>
           </div>
         </div>
@@ -36,88 +36,88 @@ import { Pause, Clock, Volume2, CheckCircle2, XCircle, Eye } from "lucide-astro"
     </div>
   </section>
 
-  <!-- Section 2: What the Pause Buys You -->
+  <!-- Section 2: What the Pause Buys -->
   <section class="py-14 md:py-16 bg-slate-50">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-6">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">2</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">What the Pause Buys You</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Qué Te Compra la Pausa</h2>
         </div>
         <div class="ml-11 grid sm:grid-cols-2 gap-4">
           <div class="bg-white rounded-xl border border-slate-200 p-5">
             <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 mb-3">
               <Pause class="w-5 h-5" />
             </div>
-            <h3 class="font-bold text-slate-900 mb-1">Diagnostic time</h3>
-            <p class="text-sm text-slate-600">Two seconds is enough to map their objection to one of the six hidden drivers and decide which one to address.</p>
+            <h3 class="font-bold text-slate-900 mb-1">Tiempo diagnóstico</h3>
+            <p class="text-sm text-slate-600">Dos segundos son suficientes para mapear su objeción a uno de los seis impulsores ocultos y decidir cuál abordar.</p>
           </div>
           <div class="bg-white rounded-xl border border-slate-200 p-5">
             <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 mb-3">
               <Clock class="w-5 h-5" />
             </div>
-            <h3 class="font-bold text-slate-900 mb-1">Pace reset</h3>
-            <p class="text-sm text-slate-600">It interrupts the challenger's emotional tempo and forces the conversation into your rhythm rather than theirs.</p>
+            <h3 class="font-bold text-slate-900 mb-1">Reset del ritmo</h3>
+            <p class="text-sm text-slate-600">Interrumpe el tempo emocional del retador y obliga a la conversación a entrar en tu ritmo en lugar del de ellos.</p>
           </div>
           <div class="bg-white rounded-xl border border-slate-200 p-5">
             <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 mb-3">
               <Volume2 class="w-5 h-5" />
             </div>
-            <h3 class="font-bold text-slate-900 mb-1">Authority signal</h3>
-            <p class="text-sm text-slate-600">A measured pause reads as deliberation. Speed reads as defensiveness. Same words, opposite signal.</p>
+            <h3 class="font-bold text-slate-900 mb-1">Señal de autoridad</h3>
+            <p class="text-sm text-slate-600">Una pausa medida se lee como deliberación. La velocidad se lee como defensividad. Las mismas palabras, la señal opuesta.</p>
           </div>
           <div class="bg-white rounded-xl border border-slate-200 p-5">
             <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 mb-3">
               <Eye class="w-5 h-5" />
             </div>
-            <h3 class="font-bold text-slate-900 mb-1">Listening proof</h3>
-            <p class="text-sm text-slate-600">It tells the challenger you actually heard them — which often defuses 30% of the pressure before you speak.</p>
+            <h3 class="font-bold text-slate-900 mb-1">Prueba de escucha</h3>
+            <p class="text-sm text-slate-600">Le dice al retador que realmente lo escuchaste — lo cual frecuentemente desactiva el 30% de la presión antes de que hables.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 3: The Three Questions to Run Silently -->
+  <!-- Section 3: Three Silent Questions -->
   <section class="py-14 md:py-16 bg-white">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-6">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">3</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">What to Run Silently in Those Two Seconds</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Qué Ejecutar Silenciosamente en Esos Dos Segundos</h2>
         </div>
-        <p class="text-slate-600 mb-6 ml-11">Three questions, run in this order. Practice the sequence enough that it becomes automatic — then the pause becomes effortless rather than awkward.</p>
+        <p class="text-slate-600 mb-6 ml-11">Tres preguntas, ejecutadas en este orden. Practica la secuencia lo suficiente para que se vuelva automática — entonces la pausa se vuelve natural en lugar de incómoda.</p>
 
         <div class="ml-11 space-y-4">
           <div class="bg-slate-900 text-white rounded-xl p-6">
-            <p class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Question 1 — Driver</p>
-            <p class="text-lg italic mb-2">"Which of the six drivers is firing here?"</p>
-            <p class="text-sm text-slate-300">Even a rough match (risk vs. ego, status vs. workload) shapes a better response than answering the literal words.</p>
+            <p class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Pregunta 1 — Impulsor</p>
+            <p class="text-lg italic mb-2">"¿Cuál de los seis impulsores se está activando aquí?"</p>
+            <p class="text-sm text-slate-300">Incluso una coincidencia aproximada (riesgo vs. ego, estatus vs. carga de trabajo) modela una mejor respuesta que contestar las palabras literales.</p>
           </div>
           <div class="bg-slate-900 text-white rounded-xl p-6">
-            <p class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Question 2 — Outcome</p>
-            <p class="text-lg italic mb-2">"What outcome do they actually want from this exchange?"</p>
-            <p class="text-sm text-slate-300">Sometimes they want you to back down. Sometimes they want reassurance. Sometimes they want the credit to be visible. Name the outcome internally before you respond to the words.</p>
+            <p class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Pregunta 2 — Resultado</p>
+            <p class="text-lg italic mb-2">"¿Qué resultado quieren realmente de este intercambio?"</p>
+            <p class="text-sm text-slate-300">A veces quieren que cedas. A veces quieren tranquilidad. A veces quieren que el crédito sea visible. Nombra el resultado internamente antes de responder a las palabras.</p>
           </div>
           <div class="bg-slate-900 text-white rounded-xl p-6">
-            <p class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Question 3 — Safety</p>
-            <p class="text-lg italic mb-2">"What's the safest response to the real concern that doesn't surrender my position?"</p>
-            <p class="text-sm text-slate-300">Safe doesn't mean weak. Safe means it doesn't escalate ego, doesn't trigger workload defense, and doesn't shift accountability to you when it shouldn't be yours.</p>
+            <p class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Pregunta 3 — Seguridad</p>
+            <p class="text-lg italic mb-2">"¿Cuál es la respuesta más segura a la preocupación real que no rinde mi posición?"</p>
+            <p class="text-sm text-slate-300">Seguro no significa débil. Seguro significa que no escala el ego, no dispara la defensa de carga de trabajo y no transfiere responsabilidad a ti cuando no debería ser tuya.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 4: The Pause in Practice -->
+  <!-- Section 4: Pause in Practice -->
   <section class="py-14 md:py-16 bg-slate-50">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-6">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">4</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Pause in Practice</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">La Pausa en la Práctica</h2>
         </div>
-        <p class="text-slate-600 mb-6 ml-11">Same pushback, two responses. The difference is the two seconds in front of the words. Tap the speaker to hear the cadence of the paused response.</p>
+        <p class="text-slate-600 mb-6 ml-11">Mismo pushback, dos respuestas. La diferencia son los dos segundos antes de las palabras. Toca el ícono para escuchar el ritmo de la respuesta pausada.</p>
 
         <div class="ml-11 space-y-5">
           <div class="bg-white rounded-xl border border-slate-200 p-6">
@@ -128,7 +128,7 @@ import { Pause, Clock, Volume2, CheckCircle2, XCircle, Eye } from "lucide-astro"
               <div class="flex items-start gap-3">
                 <XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
                 <div class="flex-1">
-                  <p class="text-xs font-bold uppercase tracking-wider text-red-700 mb-1">Reactive (no pause)</p>
+                  <p class="text-xs font-bold uppercase tracking-wider text-red-700 mb-1">Reactivo (sin pausa)</p>
                   <p class="text-slate-800 italic text-sm">"Yeah, I know it's more aggressive but we modeled it carefully and we think the upside justifies it, and we have a few different scenarios that we can walk through if you'd like to see them…"</p>
                 </div>
               </div>
@@ -138,11 +138,11 @@ import { Pause, Clock, Volume2, CheckCircle2, XCircle, Eye } from "lucide-astro"
               <div class="flex items-start gap-3">
                 <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div class="flex-1">
-                  <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">Paused (2 seconds, then)</p>
+                  <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">Con pausa (2 segundos, luego)</p>
                   <p class="text-slate-900 font-medium mb-3">"That's a fair read. It is more aggressive — and that's deliberate. The market conditions that made the conservative model work last cycle don't apply this cycle."</p>
                   <div class="flex items-center gap-2 pt-3 border-t border-emerald-200/60">
                     <AudioButton client:visible text="That's a fair read. It is more aggressive — and that's deliberate. The market conditions that made the conservative model work last cycle don't apply this cycle." lang="en-US" size="sm" />
-                    <span class="text-xs text-slate-600">Listen to the cadence</span>
+                    <span class="text-xs text-slate-600">Escucha el ritmo</span>
                   </div>
                 </div>
               </div>
@@ -157,7 +157,7 @@ import { Pause, Clock, Volume2, CheckCircle2, XCircle, Eye } from "lucide-astro"
               <div class="flex items-start gap-3">
                 <XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
                 <div class="flex-1">
-                  <p class="text-xs font-bold uppercase tracking-wider text-red-700 mb-1">Reactive (no pause)</p>
+                  <p class="text-xs font-bold uppercase tracking-wider text-red-700 mb-1">Reactivo (sin pausa)</p>
                   <p class="text-slate-800 italic text-sm">"Sorry, I know I should have, I just thought I'd wait until I had more details before bringing it to you and then it kind of ran ahead of where I planned…"</p>
                 </div>
               </div>
@@ -167,11 +167,11 @@ import { Pause, Clock, Volume2, CheckCircle2, XCircle, Eye } from "lucide-astro"
               <div class="flex items-start gap-3">
                 <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div class="flex-1">
-                  <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">Paused (2 seconds, then)</p>
+                  <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">Con pausa (2 segundos, luego)</p>
                   <p class="text-slate-900 font-medium mb-3">"You should have been in the room earlier. The reason you weren't is that I wanted a clean recommendation rather than a partial one — but that was the wrong call. Here's where we are now."</p>
                   <div class="flex items-center gap-2 pt-3 border-t border-emerald-200/60">
                     <AudioButton client:visible text="You should have been in the room earlier. The reason you weren't is that I wanted a clean recommendation rather than a partial one — but that was the wrong call. Here's where we are now." lang="en-US" size="sm" />
-                    <span class="text-xs text-slate-600">Listen to the cadence</span>
+                    <span class="text-xs text-slate-600">Escucha el ritmo</span>
                   </div>
                 </div>
               </div>
@@ -182,28 +182,28 @@ import { Pause, Clock, Volume2, CheckCircle2, XCircle, Eye } from "lucide-astro"
     </div>
   </section>
 
-  <!-- Section 5: How to Practice the Pause -->
+  <!-- Section 5: How to Install the Pause -->
   <section class="py-14 md:py-16 bg-white">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-3 mb-6">
           <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">5</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">How to Install the Pause</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Cómo Instalar la Pausa</h2>
         </div>
-        <p class="text-slate-600 mb-6 ml-11">The pause feels deeply unnatural at first. Two seconds of silence feels like ten when you're the one inside it. Three practice patterns close the gap.</p>
+        <p class="text-slate-600 mb-6 ml-11">La pausa se siente profundamente antinatural al principio. Dos segundos de silencio se sienten como diez cuando eres el que está dentro de ellos. Tres patrones de práctica cierran la brecha.</p>
 
         <div class="ml-11 space-y-4">
           <div class="bg-slate-50 rounded-xl border border-slate-200 p-5">
-            <p class="font-bold text-slate-900 mb-1">Low-stakes installation: the meeting reaction</p>
-            <p class="text-sm text-slate-600">For one week, every time someone asks you a question in a meeting where the stakes are low, count "one Mississippi, two Mississippi" before responding. Boring questions, boring pauses. You're rewiring the reflex when nothing is on the line.</p>
+            <p class="font-bold text-slate-900 mb-1">Instalación de baja presión: la reacción en juntas</p>
+            <p class="text-sm text-slate-600">Por una semana, cada vez que alguien te haga una pregunta en una junta donde los stakes son bajos, cuenta "uno Mississippi, dos Mississippi" antes de responder. Preguntas aburridas, pausas aburridas. Estás reescribiendo el reflejo cuando nada está en juego.</p>
           </div>
           <div class="bg-slate-50 rounded-xl border border-slate-200 p-5">
-            <p class="font-bold text-slate-900 mb-1">Medium-stakes installation: written pause</p>
-            <p class="text-sm text-slate-600">In Slack / email, when you get a pushback message, draft your reply, then sit on it for 90 seconds before sending. The written pause builds the same diagnostic habit without the live-room discomfort.</p>
+            <p class="font-bold text-slate-900 mb-1">Instalación de presión media: pausa escrita</p>
+            <p class="text-sm text-slate-600">En Slack / email, cuando recibas un mensaje de pushback, redacta tu respuesta y siéntate sobre ella 90 segundos antes de enviarla. La pausa escrita construye el mismo hábito diagnóstico sin la incomodidad de la sala en vivo.</p>
           </div>
           <div class="bg-slate-50 rounded-xl border border-slate-200 p-5">
-            <p class="font-bold text-slate-900 mb-1">High-stakes installation: the breath</p>
-            <p class="text-sm text-slate-600">When you feel the heat of a real pushback, take one slow breath in through your nose before you respond. The breath is your two seconds. It's visible to no one else and it gives your diagnostic time to fire.</p>
+            <p class="font-bold text-slate-900 mb-1">Instalación de alta presión: la respiración</p>
+            <p class="text-sm text-slate-600">Cuando sientas el calor de un pushback real, toma una respiración lenta por la nariz antes de responder. La respiración es tus dos segundos. No es visible para nadie más y le da tiempo a tu diagnóstico para activarse.</p>
           </div>
         </div>
       </div>
@@ -214,15 +214,15 @@ import { Pause, Clock, Volume2, CheckCircle2, XCircle, Eye } from "lucide-astro"
   <section class="py-14 md:py-16 bg-slate-50 border-t border-slate-200">
     <div class="site-container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Recap</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">El Resumen</h2>
         <div class="bg-white rounded-2xl border border-slate-200 p-7">
           <ul class="space-y-3 text-slate-700">
-            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>The <strong>2-3 second pause</strong> is the single highest-leverage executive move under pressure.</span></li>
-            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Run three silent questions: <strong>which driver, what outcome they want, safest response that holds your position</strong>.</span></li>
-            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Practice low-stakes first. The pause becomes effortless only after roughly 30 reps in non-pressure contexts.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>La <strong>pausa de 2-3 segundos</strong> es el movimiento ejecutivo de mayor apalancamiento bajo presión.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Ejecuta tres preguntas silenciosas: <strong>qué impulsor, qué resultado quieren, respuesta más segura que sostiene tu posición</strong>.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Practica primero a baja presión. La pausa se vuelve natural solo después de aproximadamente 30 repeticiones en contextos sin presión.</span></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
-</DiagnoseLessonLayout>
+</PushbackLessonLayout>

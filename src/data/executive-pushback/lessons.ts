@@ -1,4 +1,5 @@
-// Diagnose Before You Defend — Master Class on Executive Pushback Handling
+// Executive Pushback & Objection Handling — Strategic Communication for
+// High-Pressure Conversations.
 //
 // Audience: directors, ops leaders, sales professionals, procurement,
 // technical managers, and mid-managers who push back on others and get
@@ -7,7 +8,7 @@
 // this course is about the diagnostic and posture work that happens
 // BEFORE the model reply. Six lessons + one recovery-script bonus.
 
-export interface DiagnoseLesson {
+export interface PushbackLesson {
   id: number;
   slug: string;
   slugEs: string;
@@ -22,7 +23,7 @@ export interface DiagnoseLesson {
   available: boolean;
 }
 
-export interface DiagnoseBonus {
+export interface PushbackBonus {
   id: number;
   slug: string;
   slugEs: string;
@@ -34,20 +35,20 @@ export interface DiagnoseBonus {
   available: boolean;
 }
 
-export const diagnoseInfo = {
-  title: "Diagnose Before You Defend",
-  titleEs: "Diagnostica Antes de Defender",
-  tagline: "Read the pressure. Hold your ground. Influence the outcome.",
-  taglineEs: "Lee la presión. Mantén tu posición. Influye el resultado.",
-  shortTagline: "The diagnostic before the defense.",
-  shortTaglineEs: "El diagnóstico antes de la defensa.",
+export const pushbackInfo = {
+  title: "Executive Pushback & Objection Handling",
+  titleEs: "Manejo de Pushback y Objeciones Ejecutivas",
+  tagline: "Strategic Communication for High-Pressure Conversations",
+  taglineEs: "Comunicación estratégica para conversaciones de alta presión",
+  shortTagline: "Handle pushback like an executive.",
+  shortTaglineEs: "Maneja el pushback como un ejecutivo.",
   description:
-    "A focused master class on handling pushback like an executive — without becoming defensive, without overexplaining, and without sounding emotional under pressure. Built for directors, ops leaders, sales professionals, procurement managers, and mid-managers who push back on others and get pushed back on themselves. Where Drive the Decision teaches what to say in the moment, this course teaches what to read, what to feel, and how to hold yourself BEFORE you open your mouth.",
+    "A focused master class on handling pushback and objections like an executive — without becoming defensive, without overexplaining, and without sounding emotional under pressure. Built for directors, ops leaders, sales professionals, procurement managers, and mid-managers who push back on others and get pushed back on themselves. Where Drive the Decision teaches what to say in the moment, this course teaches how to read the real driver under the objection and respond with structure instead of defensiveness.",
   descriptionEs:
-    "Una master class enfocada en manejar el pushback como un ejecutivo — sin ponerte a la defensiva, sin sobreexplicar y sin sonar emocional bajo presión. Hecha para directores, líderes de operaciones, profesionales de ventas, gerentes de compras y mandos medios que dan pushback a otros y reciben pushback a su vez. Donde Dirige la Decisión enseña qué decir en el momento, este curso enseña qué leer, qué sentir y cómo sostenerte ANTES de abrir la boca.",
+    "Una master class enfocada en manejar el pushback y las objeciones como un ejecutivo — sin ponerte a la defensiva, sin sobreexplicar y sin sonar emocional bajo presión. Hecha para directores, líderes de operaciones, profesionales de ventas, gerentes de compras y mandos medios que dan pushback a otros y reciben pushback a su vez. Donde Dirige la Decisión enseña qué decir en el momento, este curso enseña cómo leer el impulsor real debajo de la objeción y responder con estructura en lugar de defensividad.",
   basePath: {
-    en: "/en/course/diagnose-before-defend",
-    es: "/es/curso/diagnostica-antes-de-defender",
+    en: "/en/course/executive-pushback",
+    es: "/es/curso/pushback-ejecutivo",
   },
   bonusSlug: {
     en: "pressure-recovery-script",
@@ -55,7 +56,7 @@ export const diagnoseInfo = {
   },
 };
 
-export const diagnoseLessons: DiagnoseLesson[] = [
+export const pushbackLessons: PushbackLesson[] = [
   {
     id: 1,
     slug: "six-hidden-drivers",
@@ -148,7 +149,7 @@ export const diagnoseLessons: DiagnoseLesson[] = [
   },
 ];
 
-export const diagnoseBonuses: DiagnoseBonus[] = [
+export const pushbackBonuses: PushbackBonus[] = [
   {
     id: 1,
     slug: "pressure-recovery-script",

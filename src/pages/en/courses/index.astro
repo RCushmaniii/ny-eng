@@ -9,7 +9,7 @@ import { intermediateInfo, intermediateUnits } from "@data/intermediate/units";
 import { advancedInfo, advancedUnits } from "@data/advanced/units";
 import { executiveInfo, executiveUnits } from "@data/executive/units";
 import { driveInfo, scenarioMeta } from "@data/drive-the-decision/scenarios";
-import { diagnoseInfo, diagnoseLessons } from "@data/diagnose-before-defend/lessons";
+import { pushbackInfo, pushbackLessons } from "@data/executive-pushback/lessons";
 import {
   Sparkles,
   BookOpen,
@@ -33,7 +33,7 @@ const intermediateAvailable = intermediateUnits.length;
 const advancedAvailable = advancedUnits.length;
 const executiveAvailable = executiveUnits.filter((u) => u.published).length;
 const driveScenariosAvailable = scenarioMeta.filter((s) => s.available).length;
-const diagnoseLessonsAvailable = diagnoseLessons.filter((l) => l.available).length;
+const pushbackLessonsAvailable = pushbackLessons.filter((l) => l.available).length;
 ---
 
 <Base
@@ -60,8 +60,9 @@ const diagnoseLessonsAvailable = diagnoseLessons.filter((l) => l.available).leng
           Eight free, interactive courses built for Spanish speakers — five
           leveled tracks from A1 beginner through C2 executive, plus three
           focused master classes: past tenses, executive decision
-          communication, and pushback diagnostics. No sign-up. No paywall.
-          No textbook drudgery. Just real progress from the first lesson.
+          communication, and executive pushback handling. No sign-up. No
+          paywall. No textbook drudgery. Just real progress from the first
+          lesson.
         </p>
       </div>
     </div>
@@ -416,26 +417,26 @@ const diagnoseLessonsAvailable = diagnoseLessons.filter((l) => l.available).leng
           </div>
         </a>
 
-        <!-- Master Class — Diagnose Before You Defend -->
+        <!-- Master Class — Executive Pushback & Objection Handling -->
         <a
-          href="/en/course/diagnose-before-defend/"
+          href="/en/course/executive-pushback/"
           class="group block bg-white rounded-2xl border-2 border-indigo-400/40 overflow-hidden hover:shadow-xl hover:border-indigo-400 transition-all duration-200"
         >
           <div class="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-900 p-6 text-white min-h-[180px] flex flex-col justify-end">
             <div class="flex items-center gap-2 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-2">
               <Search class="w-3.5 h-3.5" />
-              Master Class — C1 to C2 Pushback
+              Master Class — C1 to C2 Executive
             </div>
             <h2 class="text-2xl md:text-3xl font-bold mb-2" style="font-family: 'Noto Sans KR', sans-serif;">
-              {diagnoseInfo.title}
+              {pushbackInfo.title}
             </h2>
             <p class="text-indigo-100 text-sm leading-relaxed">
-              {diagnoseInfo.shortTagline}
+              {pushbackInfo.shortTagline}
             </p>
           </div>
           <div class="p-6">
             <p class="text-slate-600 text-sm leading-relaxed mb-4">
-              The diagnostic master class for directors, sales pros, and mid-managers handling pushback under pressure. Read the real driver under the stated objection, hold composure while you do it, and respond with structure instead of defensiveness.
+              The pushback-handling master class for directors, sales pros, and mid-managers under executive pressure. Read the real driver under the stated objection, hold composure while you do it, and respond with structure instead of defensiveness.
             </p>
             <ul class="space-y-2 mb-6">
               <li class="flex items-start gap-2 text-sm text-slate-700">
@@ -453,7 +454,7 @@ const diagnoseLessonsAvailable = diagnoseLessons.filter((l) => l.available).leng
             </ul>
             <div class="flex items-center justify-between">
               <span class="text-xs font-semibold text-indigo-700 uppercase tracking-wider">
-                {diagnoseLessonsAvailable} lessons + bonus
+                {pushbackLessonsAvailable} lessons + bonus
               </span>
               <span class="inline-flex items-center gap-1 text-indigo-700 font-semibold text-sm group-hover:gap-2 transition-all">
                 Start master class
@@ -468,7 +469,7 @@ const diagnoseLessonsAvailable = diagnoseLessons.filter((l) => l.available).leng
       <div class="max-w-3xl mx-auto mt-16 text-center">
         <h3 class="text-2xl font-bold text-slate-900 mb-3">Not sure which one to start?</h3>
         <p class="text-slate-600 mb-6">
-          If English still feels brand new, start with the <strong>beginner</strong> course. If you've finished the basics but can't yet talk about yesterday or make plans, take <strong>elementary</strong>. If you can already hold a conversation, jump to <strong>intermediate</strong>. If your English is fluent but not polished, go to <strong>advanced</strong>. If you're a senior leader who wants to <em>lead</em> in English, go straight to <strong>executive</strong> — and pair it with <strong>Drive the Decision</strong> for applied boardroom scenarios. If you're a director or sales pro who freezes under pushback, the <strong>Diagnose Before You Defend</strong> master class is the diagnostic layer the others assume. If past tenses are your specific freeze point, the <strong>past tenses master class</strong> fits beside any of them. Your progress is saved separately for each course.
+          If English still feels brand new, start with the <strong>beginner</strong> course. If you've finished the basics but can't yet talk about yesterday or make plans, take <strong>elementary</strong>. If you can already hold a conversation, jump to <strong>intermediate</strong>. If your English is fluent but not polished, go to <strong>advanced</strong>. If you're a senior leader who wants to <em>lead</em> in English, go straight to <strong>executive</strong> — and pair it with <strong>Drive the Decision</strong> for applied boardroom scenarios. If you're a director or sales pro who freezes under pushback, the <strong>Executive Pushback & Objection Handling</strong> master class is the diagnostic layer the others assume. If past tenses are your specific freeze point, the <strong>past tenses master class</strong> fits beside any of them. Your progress is saved separately for each course.
         </p>
         <Button href="/en/services/" variant="secondary" size="md">
           Or work 1-on-1 with Robert
@@ -553,8 +554,8 @@ const diagnoseLessonsAvailable = diagnoseLessons.filter((l) => l.available).leng
       "position": 8,
       "item": {
         "@type": "Course",
-        "name": "Diagnose Before You Defend — Pushback Master Class (Free)",
-        "url": "https://www.nyenglishteacher.com/en/course/diagnose-before-defend/"
+        "name": "Executive Pushback & Objection Handling (Free Master Class)",
+        "url": "https://www.nyenglishteacher.com/en/course/executive-pushback/"
       }
     }
   ]
