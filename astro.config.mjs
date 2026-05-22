@@ -65,6 +65,8 @@ const blogTranslations = {
   "english-register-for-spanish-speakers": "/es/blog/registro-en-ingles-para-hispanohablantes/",
   "mexico-us-workplace-communication-guide":
     "/es/blog/guia-comunicacion-laboral-mexico-estados-unidos/",
+  "elite-executives-hire-communication-coaches":
+    "/es/blog/por-que-ejecutivos-elite-contratan-coaches/",
 };
 
 // Reverse map (ES slug -> EN path)
