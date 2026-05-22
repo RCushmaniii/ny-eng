@@ -163,6 +163,14 @@ export type TKey =
   | "course/drive-the-decision/missed-quarter"
   | "course/drive-the-decision/declining-major-deal"
   | "course/drive-the-decision/reflex-drill"
+  | "course/diagnose-before-defend"
+  | "course/diagnose-before-defend/six-hidden-drivers"
+  | "course/diagnose-before-defend/diagnostic-pause"
+  | "course/diagnose-before-defend/executive-calm-is-power"
+  | "course/diagnose-before-defend/acknowledge-clarify-redirect"
+  | "course/diagnose-before-defend/commercial-pushback"
+  | "course/diagnose-before-defend/bad-news-steady-voice"
+  | "course/diagnose-before-defend/pressure-recovery-script"
   | "corporate/for-hr"
   | "meme-portfolio"
   | "site-index";
@@ -337,6 +345,21 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/drive-the-decision/declining-major-deal":
       "/en/course/drive-the-decision/declining-major-deal/",
     "course/drive-the-decision/reflex-drill": "/en/course/drive-the-decision/reflex-drill/",
+    "course/diagnose-before-defend": "/en/course/diagnose-before-defend/",
+    "course/diagnose-before-defend/six-hidden-drivers":
+      "/en/course/diagnose-before-defend/six-hidden-drivers/",
+    "course/diagnose-before-defend/diagnostic-pause":
+      "/en/course/diagnose-before-defend/diagnostic-pause/",
+    "course/diagnose-before-defend/executive-calm-is-power":
+      "/en/course/diagnose-before-defend/executive-calm-is-power/",
+    "course/diagnose-before-defend/acknowledge-clarify-redirect":
+      "/en/course/diagnose-before-defend/acknowledge-clarify-redirect/",
+    "course/diagnose-before-defend/commercial-pushback":
+      "/en/course/diagnose-before-defend/commercial-pushback/",
+    "course/diagnose-before-defend/bad-news-steady-voice":
+      "/en/course/diagnose-before-defend/bad-news-steady-voice/",
+    "course/diagnose-before-defend/pressure-recovery-script":
+      "/en/course/diagnose-before-defend/pressure-recovery-script/",
     "corporate/for-hr": "/en/for-hr-managers/",
     "meme-portfolio": "/en/meme-portfolio/all/",
     "site-index": "/en/site-index/",
@@ -513,6 +536,21 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/drive-the-decision/declining-major-deal":
       "/es/curso/dirige-la-decision/rechazar-trato-importante/",
     "course/drive-the-decision/reflex-drill": "/es/curso/dirige-la-decision/drill-reflejo/",
+    "course/diagnose-before-defend": "/es/curso/diagnostica-antes-de-defender/",
+    "course/diagnose-before-defend/six-hidden-drivers":
+      "/es/curso/diagnostica-antes-de-defender/seis-impulsores-ocultos/",
+    "course/diagnose-before-defend/diagnostic-pause":
+      "/es/curso/diagnostica-antes-de-defender/pausa-diagnostica/",
+    "course/diagnose-before-defend/executive-calm-is-power":
+      "/es/curso/diagnostica-antes-de-defender/calma-ejecutiva-es-poder/",
+    "course/diagnose-before-defend/acknowledge-clarify-redirect":
+      "/es/curso/diagnostica-antes-de-defender/reconoce-clarifica-redirige/",
+    "course/diagnose-before-defend/commercial-pushback":
+      "/es/curso/diagnostica-antes-de-defender/pushback-comercial/",
+    "course/diagnose-before-defend/bad-news-steady-voice":
+      "/es/curso/diagnostica-antes-de-defender/malas-noticias-voz-firme/",
+    "course/diagnose-before-defend/pressure-recovery-script":
+      "/es/curso/diagnostica-antes-de-defender/guion-de-recuperacion/",
     "corporate/for-hr": "/es/para-rh/",
     "meme-portfolio": "/es/meme-portfolio/all/",
     "site-index": "/es/indice-del-sitio/",
@@ -624,6 +662,14 @@ export function getAllTKeys(): TKey[] {
     "course/drive-the-decision/missed-quarter",
     "course/drive-the-decision/declining-major-deal",
     "course/drive-the-decision/reflex-drill",
+    "course/diagnose-before-defend",
+    "course/diagnose-before-defend/six-hidden-drivers",
+    "course/diagnose-before-defend/diagnostic-pause",
+    "course/diagnose-before-defend/executive-calm-is-power",
+    "course/diagnose-before-defend/acknowledge-clarify-redirect",
+    "course/diagnose-before-defend/commercial-pushback",
+    "course/diagnose-before-defend/bad-news-steady-voice",
+    "course/diagnose-before-defend/pressure-recovery-script",
     "category/startup-founders",
     "category/tech-english",
     "category/logistics-english",

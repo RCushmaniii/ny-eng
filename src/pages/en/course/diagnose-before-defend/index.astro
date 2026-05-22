@@ -1,0 +1,311 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import {
+  diagnoseInfo,
+  diagnoseLessons,
+  diagnoseBonuses,
+} from "@data/diagnose-before-defend/lessons";
+import {
+  ArrowRight,
+  Sparkles,
+  Search,
+  Pause,
+  Shield,
+  Compass,
+  DollarSign,
+  AlertTriangle,
+  RefreshCw,
+  Brain,
+  Target,
+  Crown,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/diagnose-before-defend" as const;
+
+const iconMap: Record<string, any> = {
+  Search,
+  Pause,
+  Shield,
+  Compass,
+  DollarSign,
+  AlertTriangle,
+  RefreshCw,
+};
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Diagnose Before You Defend — Pushback Master Class"
+  description="Free master class on handling executive pushback. Six lessons + one recovery script. Built for directors, sales pros, and mid-managers under pressure."
+>
+  <!-- Hero -->
+  <section class="relative w-full overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-indigo-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-slate-400 rounded-full blur-3xl"></div>
+    </div>
+    <div class="site-container mx-auto px-4 relative z-10 text-white">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/20 text-indigo-300 text-sm font-semibold mb-6">
+          <Crown class="w-4 h-4" />
+          Master Class · C1 → C2 · Free
+        </div>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Diagnose Before<br />
+          <span class="text-indigo-400">You Defend.</span>
+        </h1>
+        <p class="text-xl text-slate-200 mb-4 max-w-2xl leading-relaxed">
+          <strong class="text-white">Read the pressure. Hold your ground. Influence the outcome.</strong>
+        </p>
+        <p class="text-lg text-slate-300 mb-8 max-w-2xl leading-relaxed">
+          Most pushback isn't about what people say it's about. The procurement manager naming a discount isn't really arguing about price. The peer challenging your timeline isn't really worried about the date. Six lessons that train the diagnostic — and the posture — that separates executive communicators from defensive ones.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <Button href={`${diagnoseInfo.basePath.en}/${diagnoseLessons[0].slug}/`} variant="primary" size="lg">
+            Start with Lesson 1
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+          <a
+            href="#lessons"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            See all 6 lessons
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thesis band -->
+  <section class="py-16 md:py-20 bg-white border-b border-slate-100">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-[11px] font-mono uppercase tracking-[0.3em] text-indigo-600 mb-4">The Thesis</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          People challenge confidence before they challenge logic.
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          When someone pushes back on your decision, your timeline, your price, or your plan, they are almost never doing it for the reason they name. They're testing composure. Probing trust. Protecting ego. Surfacing a workload concern they can't say out loud. The communicator who reads the real driver before responding wins the room. The one who defends the stated reason loses it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reactive vs Strategic contrast -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">The Two Defaults</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Under pressure, every professional defaults to one of these two patterns. The difference between them is mostly invisible — until the room shifts.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border-2 border-red-200 bg-red-50/50 p-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-red-100 text-red-600 mb-4">
+              <Brain class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">The Reactive Pattern</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> Defends the stated reason</li>
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> Overexplains under pressure</li>
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> Matches emotional pace of the challenger</li>
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> Sounds uncertain, even when correct</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-100 text-indigo-700 mb-4">
+              <Target class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">The Strategic Pattern</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">✓</span> Reads the real driver under the question</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">✓</span> Pauses before responding</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">✓</span> Slows the conversation down</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">✓</span> Lands the response with measured certainty</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who this is for -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Who This Is For</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          This master class is for the professionals who give pushback and get pushed back on, daily — directors, ops leaders, sales professionals, procurement managers, technical managers, customer success leads, and mid-level managers communicating upward into senior leadership.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          If your business English is already fluent but you notice the pattern under pressure — the half-second too fast, the half-step too defensive, the extra sentence that costs you the room — this course addresses the exact gap. It pairs naturally with the Executive course (frameworks) and Drive the Decision (boardroom scenarios). Where those teach what to say, this one teaches what to read and how to hold yourself before you say it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lessons grid -->
+  <section class="py-16 md:py-20 bg-slate-50" id="lessons">
+    <div class="site-container mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style="font-family: 'Noto Sans KR', sans-serif;">
+          Six Lessons. One Habit.
+        </h2>
+        <p class="text-slate-600 leading-relaxed">
+          Diagnostic, then posture, then framework, then application. Each lesson runs about 20-30 minutes and builds the same instinct from a different angle.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        {diagnoseLessons.map((lesson) => {
+          const Icon = iconMap[lesson.icon];
+          const isAvailable = lesson.available;
+          return (
+            <a
+              href={isAvailable ? `${diagnoseInfo.basePath.en}/${lesson.slug}/` : undefined}
+              class:list={[
+                "group flex items-start gap-4 p-5 rounded-xl border transition-all duration-200",
+                isAvailable
+                  ? "bg-indigo-50 border-indigo-300 hover:shadow-md hover:border-indigo-400 cursor-pointer"
+                  : "bg-white border-slate-200 opacity-75",
+              ]}
+            >
+              <div
+                class:list={[
+                  "flex items-center justify-center w-12 h-12 rounded-xl shrink-0",
+                  isAvailable ? "bg-indigo-600 text-white" : "bg-slate-100 text-slate-400",
+                ]}
+              >
+                {Icon && <Icon class="w-6 h-6" />}
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold uppercase tracking-wider text-indigo-700">
+                    Lesson {lesson.id}
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold mt-0.5 text-slate-900">
+                  {lesson.title}
+                </h3>
+                <p class="text-sm text-slate-600 mt-1">{lesson.subtitle}</p>
+                <p class="text-xs text-indigo-700 mt-1.5 italic">{lesson.angle}</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bonus -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-100 text-indigo-800 text-sm font-semibold mb-4">
+            <Sparkles class="w-4 h-4" />
+            Bonus Resource
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">When You've Already Lost Composure</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Pushback wins sometimes. You raise your voice, defend too hard, or freeze. This bonus is the three-sentence reset that recovers the room without an apology.
+          </p>
+        </div>
+
+        {diagnoseBonuses.map((bonus) => {
+          const Icon = iconMap[bonus.icon] ?? RefreshCw;
+          return (
+            <a
+              href={`${diagnoseInfo.basePath.en}/${bonus.slug}/`}
+              class="block bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 rounded-2xl p-8 text-white hover:shadow-xl transition-shadow duration-200"
+            >
+              <div class="flex items-start gap-5">
+                <div class="flex items-center justify-center w-14 h-14 rounded-xl bg-indigo-500 text-white shrink-0">
+                  <Icon class="w-7 h-7" />
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold mb-2">{bonus.title}</h3>
+                  <p class="text-slate-300 leading-relaxed mb-4">{bonus.description}</p>
+                  <span class="inline-flex items-center gap-1 text-indigo-300 font-semibold text-sm group-hover:gap-2 transition-all">
+                    Open the recovery script
+                    <ArrowRight class="w-4 h-4" />
+                  </span>
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-link -->
+  <section class="py-16 md:py-20 bg-slate-50 border-t border-slate-100">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Where Does This Fit?</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          This is the <strong>diagnostic master class</strong> — what you read before you respond. For the full executive system (frameworks, hedging elimination, structured responses, named patterns), see <strong>Communicate Like a Leader</strong>. For boardroom-level applied scenarios — investor pushback, missed quarters, $2M deals you have to decline — see <strong>Drive the Decision</strong>. For 1-on-1 coaching, the booking link is below.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/en/course/executive/"
+            class="text-indigo-700 hover:text-indigo-800 font-medium underline underline-offset-2"
+          >
+            Executive course
+          </a>
+          <span class="text-slate-300">|</span>
+          <a
+            href="/en/course/drive-the-decision/"
+            class="text-indigo-700 hover:text-indigo-800 font-medium underline underline-offset-2"
+          >
+            Drive the Decision
+          </a>
+          <span class="text-slate-300">|</span>
+          <a
+            href="/en/courses/"
+            class="text-indigo-700 hover:text-indigo-800 font-medium underline underline-offset-2"
+          >
+            See all courses
+          </a>
+          <span class="text-slate-300">|</span>
+          <a
+            href="/en/book/"
+            class="text-indigo-700 hover:text-indigo-800 font-medium underline underline-offset-2"
+          >
+            Work 1-on-1 with Robert
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Diagnose Before You Defend — Pushback Master Class",
+    "description": "Free master class on handling executive pushback. Six lessons + one pressure-recovery script. Built for directors, sales professionals, procurement managers, and mid-level leaders communicating upward.",
+    "provider": { "@type": "Organization", "name": "New York English Teacher", "url": "https://www.nyenglishteacher.com/" },
+    "educationalLevel": "Executive (C1-C2)",
+    "inLanguage": "en",
+    "url": "https://www.nyenglishteacher.com/en/course/diagnose-before-defend/",
+    "isAccessibleForFree": true,
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "inLanguage": "en"
+    }
+  })} />
+</Base>

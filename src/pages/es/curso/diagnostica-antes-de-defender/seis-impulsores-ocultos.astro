@@ -1,0 +1,250 @@
+---
+export const prerender = true;
+
+import DiagnoseLessonLayout from "@components/course/DiagnoseLessonLayout.astro";
+import AudioButton from "@components/course/AudioButton";
+import { Search, AlertCircle, CheckCircle2, XCircle, Eye } from "lucide-astro";
+---
+
+<DiagnoseLessonLayout lessonId={1} lang="es" tkey="course/diagnose-before-defend/six-hidden-drivers">
+  <!-- Section 1: La Idea Central -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">La Razón Declarada Casi Nunca Es la Real</h2>
+        </div>
+        <div class="ml-11 space-y-5 text-lg text-slate-700 leading-relaxed">
+          <p>
+            Cuando un gerente de compras dice <em>"tu precio está muy alto,"</em> casi nunca está hablando solo de precio. Cuando un par dice <em>"no creo que el timeline funcione,"</em> usualmente no está preocupado por la fecha en sí. Cuando tu VP dice <em>"¿estamos seguros de que este es el enfoque correcto?"</em> rara vez está haciendo una pregunta sincera.
+          </p>
+          <p>
+            Las objeciones declaradas son la superficie. <strong>Los impulsores ocultos son el sustrato.</strong> Seis de ellos explican casi todo el pushback que encontrarás como profesional senior. Diagnosticar cuál está activándose — antes de responder — es la habilidad ejecutiva de mayor apalancamiento que puedes instalar.
+          </p>
+          <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-6 my-6">
+            <div class="flex items-center gap-3 mb-3">
+              <Eye class="w-6 h-6 text-indigo-700" />
+              <h3 class="text-lg font-bold text-slate-900">El Principio</h3>
+            </div>
+            <p class="text-slate-800">
+              Diagnostica la preocupación real <em>antes</em> de responder. El diagnóstico equivocado produce una respuesta confiada a la pregunta equivocada — lo cual es peor que ninguna respuesta.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Los Seis Impulsores -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Los Seis Impulsores</h2>
+        </div>
+        <div class="ml-11 space-y-4">
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">1</div>
+              <h3 class="text-lg font-bold text-slate-900">Percepción de Riesgo</h3>
+            </div>
+            <p class="text-slate-700 mb-2">La persona está preocupada de que algo salga mal y está probando si tú lo has considerado. Común en contextos operativos, técnicos y de cumplimiento.</p>
+            <p class="text-sm text-slate-500 italic">Pista: atenuaciones vagas ("¿estamos seguros?"), hipotéticos ("¿qué pasa si?"), encuadres del peor caso.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">2</div>
+              <h3 class="text-lg font-bold text-slate-900">Protección del Ego</h3>
+            </div>
+            <p class="text-slate-700 mb-2">La persona siente que su juicio, experiencia o decisión reciente está siendo implícitamente cuestionada por tu propuesta. A menudo invisible en la sala — visible solo en el tono.</p>
+            <p class="text-sm text-slate-500 italic">Pista: voz más cortante, referencia a historia ("cuando yo dirigí X"), recordatorios de credenciales.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">3</div>
+              <h3 class="text-lg font-bold text-slate-900">Preocupaciones de Estatus</h3>
+            </div>
+            <p class="text-slate-700 mb-2">La persona está probando si vas a ceder a su jerarquía. La objeción es un sondeo de la dinámica de autoridad, no del tema en sí.</p>
+            <p class="text-sm text-slate-500 italic">Pista: preguntas formuladas como conclusiones, pares citados como aliados, encuadre dirigido al público.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">4</div>
+              <h3 class="text-lg font-bold text-slate-900">Brecha de Confianza</h3>
+            </div>
+            <p class="text-slate-700 mb-2">La persona aún no ha sido decepcionada por ti, pero tampoco tiene evidencia para confiar en ti. La objeción gana tiempo para evaluarte.</p>
+            <p class="text-sm text-slate-500 italic">Pista: solicitudes de más datos, llamados a involucrar a más stakeholders, lenguaje de avance lento.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">5</div>
+              <h3 class="text-lg font-bold text-slate-900">Presión de Carga de Trabajo</h3>
+            </div>
+            <p class="text-slate-700 mb-2">La persona ya está rebasada. Tu propuesta — sin importar su mérito — representa trabajo incremental que no puede absorber. La objeción es un "no" silencioso disfrazado de pregunta.</p>
+            <p class="text-sm text-slate-500 italic">Pista: pushback al timeline, reducción de alcance, encuadre tipo "lo revisamos después".</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-sm">6</div>
+              <h3 class="text-lg font-bold text-slate-900">Evasión de Responsabilidad</h3>
+            </div>
+            <p class="text-slate-700 mb-2">La persona teme que si esto fracasa, la van a culpar a ella. La objeción es lenguaje para transferir el riesgo — quiere sus huellas fuera de la decisión.</p>
+            <p class="text-sm text-slate-500 italic">Pista: solicitudes de aprobación por escrito, sugerencias de escalación, deflexiones tipo "esto está por encima de mi nivel".</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Reading Real Driver -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Leyendo el Impulsor Real</h2>
+        </div>
+        <p class="text-slate-600 mb-8 ml-11">Tres líneas reales de pushback y el diagnóstico debajo. Toca el ícono para escuchar la respuesta que lee el impulsor correctamente.</p>
+
+        <div class="ml-11 space-y-5">
+          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Línea de pushback</p>
+            </div>
+            <div class="p-6 space-y-4">
+              <p class="text-lg text-slate-900 italic">"I'm not sure we have the bandwidth to take this on right now."</p>
+              <p class="text-sm text-slate-600"><strong>Razón declarada:</strong> Capacidad. <strong>Impulsor real:</strong> Presión de carga de trabajo (5) — ya están rebasados y tu proyecto cae encima de trabajo que no pueden absorber.</p>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-900 italic flex-1">"What if we sequenced it so the first phase doesn't touch your team for six weeks? That gives you room to close out the Q2 commitments first."</p>
+                  <AudioButton client:visible text="What if we sequenced it so the first phase doesn't touch your team for six weeks? That gives you room to close out the Q2 commitments first." lang="en-US" size="sm" />
+                </div>
+              </div>
+              <p class="text-sm text-slate-500">Responder a la capacidad (la razón declarada) significaría reducir el alcance. Responder a la carga de trabajo (el impulsor real) significa resecuenciar — lo cual te cuesta casi nada y desbloquea el sí.</p>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Línea de pushback</p>
+            </div>
+            <div class="p-6 space-y-4">
+              <p class="text-lg text-slate-900 italic">"When I ran the platform team, we tried something similar and it didn't scale."</p>
+              <p class="text-sm text-slate-600"><strong>Razón declarada:</strong> Precedente histórico. <strong>Impulsor real:</strong> Protección del ego (2) — está señalando experiencia y anclándote silenciosamente a que cedas.</p>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-900 italic flex-1">"That's exactly the failure mode I want to avoid. What was the specific constraint that broke it for you? I'd rather design around your scar tissue than rediscover it."</p>
+                  <AudioButton client:visible text="That's exactly the failure mode I want to avoid. What was the specific constraint that broke it for you? I'd rather design around your scar tissue than rediscover it." lang="en-US" size="sm" />
+                </div>
+              </div>
+              <p class="text-sm text-slate-500">Defender por qué tu versión es diferente escalaría la dinámica de ego. Pedirles que te enseñen convierte el desafío en mentoría y los vuelve aliados.</p>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Línea de pushback</p>
+            </div>
+            <div class="p-6 space-y-4">
+              <p class="text-lg text-slate-900 italic">"Has anyone else above us signed off on this approach?"</p>
+              <p class="text-sm text-slate-600"><strong>Razón declarada:</strong> Verificación de autoridad. <strong>Impulsor real:</strong> Evasión de responsabilidad (6) — no quieren sus huellas en la decisión si fracasa.</p>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                <div class="flex items-center gap-3">
+                  <p class="text-slate-900 italic flex-1">"I own this call. If it doesn't work, that's on me — and I'll say so in the post-mortem. What I need from you is the operational input on whether the design holds up."</p>
+                  <AudioButton client:visible text="I own this call. If it doesn't work, that's on me — and I'll say so in the post-mortem. What I need from you is the operational input on whether the design holds up." lang="en-US" size="sm" />
+                </div>
+              </div>
+              <p class="text-sm text-slate-500">Escalar hacia arriba validaría la transferencia de riesgo. Tomar el golpe de responsabilidad explícitamente elimina la amenaza y reencuadra su contribución como input, no como culpa compartida.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Three Diagnostic Questions -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Las Tres Preguntas Diagnósticas</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">Ejecuta estas tres silenciosamente — en la pausa de 2-3 segundos antes de responder. Se vuelven automáticas con la práctica.</p>
+
+        <div class="ml-11 space-y-3">
+          <div class="bg-white rounded-lg border border-slate-200 p-5 flex items-start gap-4">
+            <AlertCircle class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+            <div>
+              <p class="font-bold text-slate-900">¿Qué preocupación está tratando de resolver esta persona realmente?</p>
+              <p class="text-sm text-slate-600 mt-1">Mapea su objeción a uno de los seis impulsores. La coincidencia no tiene que ser perfecta — incluso una lectura del 60% es mejor que una respuesta confiada a la pregunta de superficie.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg border border-slate-200 p-5 flex items-start gap-4">
+            <AlertCircle class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+            <div>
+              <p class="font-bold text-slate-900">¿Qué riesgo está tratando de evitar?</p>
+              <p class="text-sm text-slate-600 mt-1">Si puedes nombrar el peor caso del que se protege, tu respuesta puede abordarlo sin que tengan que decirlo en voz alta — y así se construye la confianza senior.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg border border-slate-200 p-5 flex items-start gap-4">
+            <AlertCircle class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+            <div>
+              <p class="font-bold text-slate-900">¿Qué presión emocional existe debajo de la objeción?</p>
+              <p class="text-sm text-slate-600 mt-1">El estatus, el ego y la responsabilidad aparecen primero emocionalmente. Si puedes sentirlo en la sala, abórdalo de manera indirecta — nunca lo nombres explícitamente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Common Traps -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Tres Trampas Diagnósticas</h2>
+        </div>
+        <div class="ml-11 space-y-4">
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trampa 1 — Nombrar el impulsor en voz alta</p>
+            <p class="text-slate-700 text-sm">Nunca digas <em>"creo que esto se trata de tu carga de trabajo"</em> o <em>"¿esto es sobre quién se lleva el crédito?"</em>. Nombrar el impulsor oculto es desenmascarar — fuerza a la otra persona a defender su ego, no a interactuar con tu respuesta. El diagnóstico es interno. La respuesta es externa.</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trampa 2 — Sobreponderar un impulsor</p>
+            <p class="text-slate-700 text-sm">Una vez que aprendas los seis impulsores, empezarás a ver tu favorito en todas partes. Si tiendes a diagnosticar ego, vas a sobreatribuir ego. Construye el hábito de considerar al menos dos impulsores por objeción antes de responder.</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trampa 3 — Diagnosticar sin escuchar</p>
+            <p class="text-slate-700 text-sm">La pausa diagnóstica también es una señal de escucha. Si ya estás ejecutando los seis impulsores en tu cabeza mientras siguen hablando, te perderás el cambio de tono que confirma cuál se está activando. Escucha primero. Diagnostica después.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap -->
+  <section class="py-14 md:py-16 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">El Resumen</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-7">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Las objeciones declaradas son la superficie. <strong>Los seis impulsores ocultos</strong> — riesgo, ego, estatus, confianza, carga de trabajo, responsabilidad — son el sustrato debajo.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Ejecuta las <strong>tres preguntas diagnósticas</strong> silenciosamente en la pausa de 2-3 segundos antes de responder.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>El diagnóstico es <strong>interno</strong>. Nunca nombres el impulsor oculto en voz alta — abórdalo indirectamente a través de la respuesta.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</DiagnoseLessonLayout>

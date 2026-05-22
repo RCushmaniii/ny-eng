@@ -1,0 +1,214 @@
+---
+export const prerender = true;
+
+import DiagnoseLessonLayout from "@components/course/DiagnoseLessonLayout.astro";
+import AudioButton from "@components/course/AudioButton";
+import { AlertTriangle, CheckCircle2, XCircle, Eye, ShieldAlert } from "lucide-astro";
+---
+
+<DiagnoseLessonLayout lessonId={6} lang="en" tkey="course/diagnose-before-defend/bad-news-steady-voice">
+  <!-- Section 1: The Core Idea -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Leaders Transfer Stability — Or They Transfer Panic</h2>
+        </div>
+        <div class="ml-11 space-y-5 text-lg text-slate-700 leading-relaxed">
+          <p>
+            When you deliver bad news — a missed quarter, a layoff, a production outage, a partnership unraveling — the organization watches you for a single signal: <strong>are you regulated, or are you contagious?</strong> What you say barely matters in the first thirty seconds. How steady your voice is determines whether the room calms with you or escalates around you.
+          </p>
+          <p>
+            This is the most asymmetric skill in the entire course. Most professionals never train it. They wing it through bad-news moments and hope adrenaline carries them. The leaders who actually move organizations through hard moments do something different: they treat bad-news delivery as a <strong>practiced craft</strong>, not an emotional event.
+          </p>
+          <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-6 my-6">
+            <div class="flex items-center gap-3 mb-3">
+              <ShieldAlert class="w-6 h-6 text-indigo-700" />
+              <h3 class="text-lg font-bold text-slate-900">The Principle</h3>
+            </div>
+            <p class="text-slate-800">
+              During pressure, leaders transfer emotional stability to the organization. The voice that says "we have a problem" is the same voice that has to say "here's how we hold it." Containment, not contagion.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: The Bad-News Structure -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Bad-News Structure</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">Four beats. In this order. Skipping any of them creates a different kind of damage.</p>
+
+        <div class="ml-11 space-y-4">
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 font-bold">1</div>
+              <h3 class="text-lg font-bold text-slate-900">The Direct Statement</h3>
+            </div>
+            <p class="text-slate-700 mb-2">Say the bad news clearly, in one sentence, with no preamble. "We missed the quarter by 22%." "We're reducing headcount by 15%." "The platform was down for six hours."</p>
+            <p class="text-sm text-slate-500 italic">Burying the headline ("So I want to talk through some context first…") signals you're afraid of the news. The room reads that as instability.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 font-bold">2</div>
+              <h3 class="text-lg font-bold text-slate-900">The Specific Cause</h3>
+            </div>
+            <p class="text-slate-700 mb-2">Name the cause in concrete operational terms. Not "challenging market conditions" — the actual mechanism. "Sales cycle in mid-market was 40 days longer than modeled." "A database failover did not trigger as specified."</p>
+            <p class="text-sm text-slate-500 italic">Vague causes telegraph that you either don't understand what happened or you're hiding it. Both destroy trust.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 font-bold">3</div>
+              <h3 class="text-lg font-bold text-slate-900">The Action Already Taken</h3>
+            </div>
+            <p class="text-slate-700 mb-2">Past-tense, not future-tense. "We've moved two AEs to enterprise this week." "We've deployed the fix and rebuilt the runbook." The actions in motion before the room knew about the problem are what build confidence.</p>
+            <p class="text-sm text-slate-500 italic">Future-tense promises ("we will…") in a bad-news moment read as scrambling. Past-tense actions read as competence.</p>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 font-bold">4</div>
+              <h3 class="text-lg font-bold text-slate-900">The Forward Frame</h3>
+            </div>
+            <p class="text-slate-700 mb-2">Close with what's next and what you're holding the room accountable to. "We'll have full visibility into the new model by next Friday." "Quarter-end metrics will be on the dashboard live."</p>
+            <p class="text-sm text-slate-500 italic">No forward frame and the room is left holding the anxiety. A clear next step transfers the work from the listener back to the system.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Real Bad-News Examples -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Real Bad-News Deliveries</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">Three contexts. Same structure. Listen for the controlled cadence in each — that's the executive signal the room is reading.</p>
+
+        <div class="ml-11 space-y-5">
+          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Context · Missed quarter to your team</p>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3">
+                <p class="text-slate-900 font-medium flex-1">"We missed the quarter by 22%. The miss came from one segment — mid-market — where our sales cycle assumption was wrong by 40 days. We've already moved two AEs to enterprise this week and corrected the pipeline model. Next steps: the new forecast goes to the board on the 14th, and we'll have weekly leading indicators visible to the team starting Monday."</p>
+                <AudioButton client:visible text="We missed the quarter by 22%. The miss came from one segment — mid-market — where our sales cycle assumption was wrong by 40 days. We've already moved two AEs to enterprise this week and corrected the pipeline model. Next steps: the new forecast goes to the board on the 14th, and we'll have weekly leading indicators visible to the team starting Monday." lang="en-US" size="sm" />
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Context · Layoff announcement to leadership team</p>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3">
+                <p class="text-slate-900 font-medium flex-1">"We're reducing headcount by 15%, effective the 28th. The decision is driven by the revised growth model, not by performance. Severance packages are already structured and reviewed by legal. Your job in the next 48 hours is to deliver this individually before the all-hands. I'll send you the full guide tonight and we're meeting again tomorrow morning to walk through anything that's hard."</p>
+                <AudioButton client:visible text="We're reducing headcount by 15%, effective the 28th. The decision is driven by the revised growth model, not by performance. Severance packages are already structured and reviewed by legal. Your job in the next 48 hours is to deliver this individually before the all-hands. I'll send you the full guide tonight and we're meeting again tomorrow morning to walk through anything that's hard." lang="en-US" size="sm" />
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+            <div class="bg-slate-900 text-white px-5 py-3">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-400">Context · Outage update to enterprise customer</p>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3">
+                <p class="text-slate-900 font-medium flex-1">"The platform was down for six hours starting at 02:14 UTC. Root cause was a database failover that did not trigger the way our runbook specified. The fix is already deployed, the runbook is rebuilt, and we've added a synthetic check that would have caught this 90 seconds in. You'll see a service credit for the full quarter in your next invoice. Our SRE lead is on this call to take any technical questions."</p>
+                <AudioButton client:visible text="The platform was down for six hours starting at 02:14 UTC. Root cause was a database failover that did not trigger the way our runbook specified. The fix is already deployed, the runbook is rebuilt, and we've added a synthetic check that would have caught this 90 seconds in. You'll see a service credit for the full quarter in your next invoice. Our SRE lead is on this call to take any technical questions." lang="en-US" size="sm" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Vocal Mechanics -->
+  <section class="py-14 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Vocal Mechanics of a Steady Voice</h2>
+        </div>
+        <p class="text-slate-600 mb-6 ml-11">The structure carries you only if the voice carries the structure. Four mechanics to rehearse before any bad-news delivery.</p>
+
+        <div class="ml-11 grid sm:grid-cols-2 gap-3">
+          <div class="bg-white rounded-lg border border-slate-200 p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">Slow by 20%</p>
+            <p class="text-xs text-slate-600">Bad-news delivery should feel slower than you think it needs to. Speed reads as panic.</p>
+          </div>
+          <div class="bg-white rounded-lg border border-slate-200 p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">Drop the pitch</p>
+            <p class="text-xs text-slate-600">Lower than your conversational range. Pitch is the loudest emotional signal — keep it under control.</p>
+          </div>
+          <div class="bg-white rounded-lg border border-slate-200 p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">Land each sentence</p>
+            <p class="text-xs text-slate-600">Rising endings turn statements into questions. Bad news delivered as a question reads as uncertainty.</p>
+          </div>
+          <div class="bg-white rounded-lg border border-slate-200 p-4">
+            <p class="font-bold text-slate-900 text-sm mb-1">Breathe between beats</p>
+            <p class="text-xs text-slate-600">A half-second breath between the four beats lets the room absorb each one before the next.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Three Traps -->
+  <section class="py-14 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Three Bad-News Traps</h2>
+        </div>
+        <div class="ml-11 space-y-4">
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trap 1 — Premature reassurance</p>
+            <p class="text-slate-700 text-sm">"Everything's going to be fine" before the room has absorbed the news is patronizing — and worse, it reads as performance. Acknowledge weight before offering reassurance.</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trap 2 — The fake apology</p>
+            <p class="text-slate-700 text-sm">"I want to apologize for…" before the bad news has even landed is a signal you're more concerned with how you look than with what happened. Save the apology — if it's owed — for after the structure is delivered.</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p class="font-bold text-slate-900 mb-1">Trap 3 — Overexplaining the cause</p>
+            <p class="text-slate-700 text-sm">One sentence on the cause is enough. The longer you spend on what went wrong, the more the room reads it as you defending yourself rather than informing them.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap -->
+  <section class="py-14 md:py-16 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Recap</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-7">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Under pressure, leaders <strong>transfer stability or transfer panic</strong>. Voice is the carrier.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Four beats: <strong>direct statement → specific cause → action already taken → forward frame</strong>.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" /><span>Vocal mechanics matter as much as structure — <strong>slow, low, landed, breathed</strong>.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</DiagnoseLessonLayout>
