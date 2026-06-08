@@ -1,20 +1,20 @@
 ---
 title: "Política de Privacidad"
-lastUpdated: "2026-04-10"
+lastUpdated: "2026-06-07"
 translations:
   en: "/en/legal/privacy-policy/"
 seo:
   title: "Política de Privacidad - Cómo Protegemos Tu Información"
-  description: "Comprende cómo recopilamos, usamos y protegemos tu información personal en el sitio web de New York English Teacher y el asistente de Facebook Messenger."
+  description: "Conoce cómo New York English recopila, usa y protege tu información en nuestro sitio web, el asistente de Facebook Messenger y los recordatorios por WhatsApp."
 ---
 
 ## Política de Privacidad
 
-**Última Actualización: 10 de abril de 2026**
+**Última Actualización: 7 de junio de 2026**
 
 ## Introducción
 
-Bienvenido a nuestra Política de Privacidad. New York English es un servicio de coaching ejecutivo de inglés operado por **Robert Cushman**, con sede en Guadalajara, México. Esta política explica cómo recopilamos, usamos y protegemos tu información personal cuando utilizas nuestro sitio web (nyenglishteacher.com) y nuestro Asistente de Facebook Messenger.
+Bienvenido a nuestra Política de Privacidad. New York English es un servicio de coaching ejecutivo de inglés operado por **Robert Cushman**, con sede en Guadalajara, México. Esta política explica cómo recopilamos, usamos y protegemos tu información personal cuando utilizas nuestro sitio web (nyenglishteacher.com), nuestro Asistente de Facebook Messenger y nuestro servicio de recordatorios y confirmaciones por WhatsApp.
 
 Si tienes preguntas, contáctanos en **privacy@newyorkenglish.com**.
 
@@ -42,6 +42,18 @@ Cuando envías un mensaje a la página de Facebook de New York English e interac
 
 **No** recopilamos tu correo electrónico, número de teléfono, lista de amigos de Facebook ni ningún otro dato de perfil más allá de lo indicado anteriormente.
 
+### Recordatorios y Confirmaciones por WhatsApp
+
+Si aceptas recibir recordatorios de clase y confirmaciones de pago de New York English por WhatsApp, recopilamos y procesamos:
+
+- Tu **número de WhatsApp**
+- Tu **nombre**, tal como lo proporcionas al inscribirte
+- Tu **preferencia de idioma** (inglés o español)
+- El **contenido y las marcas de tiempo** de los mensajes que intercambias con nosotros por WhatsApp
+- Tus **registros de inscripción, confirmaciones de asistencia y pagos** con los que se relacionan los recordatorios y recibos
+
+Te enviamos mensajes por WhatsApp **solo después de que hayas dado tu consentimiento**. Puedes **darte de baja en cualquier momento** respondiendo **STOP** o **BAJA** a cualquiera de nuestros mensajes de WhatsApp; dejaremos de enviarte mensajes. Responde **ALTA** para volver a suscribirte. Usamos WhatsApp únicamente para mensajes de servicio (recordatorios, confirmaciones, recibos), **no** para publicidad ni reventa.
+
 ## Cómo Recopilamos Información
 
 La información se recopila a través de:
@@ -50,6 +62,7 @@ La información se recopila a través de:
 - Cookies y tecnologías de seguimiento
 - Herramientas de análisis (por ejemplo, Google Analytics)
 - La Plataforma de Facebook Messenger (para interacciones con el Asistente de Messenger)
+- La Plataforma de WhatsApp Business (para los recordatorios y confirmaciones que aceptas recibir)
 
 ## Cómo Usamos Tu Información
 
@@ -57,6 +70,8 @@ Usamos tus datos para:
 
 - Proveer y mejorar nuestros servicios de coaching
 - Responder a tus consultas a través del sitio web o el Asistente de Messenger
+- Enviar los recordatorios de clase, confirmaciones de asistencia y recibos de pago que aceptaste recibir por WhatsApp
+- Procesar las solicitudes de alta y baja para los mensajes de WhatsApp
 - Mantener el contexto breve de la conversación en el Asistente de Messenger
 - Detectar y responder en tu idioma preferido (inglés o español)
 - Analizar el uso y rendimiento del sitio
@@ -77,6 +92,8 @@ Usamos tus datos para:
 
 No mantenemos almacenamiento a largo plazo de conversaciones de Messenger.
 
+**Datos de WhatsApp:** Tu número de teléfono, nombre, registros de inscripción, asistencia, pagos e historial de mensajes se almacenan en nuestra base de datos (Cloudflare D1) durante el tiempo en que seas estudiante activo y según sea necesario para nuestros registros y obligaciones legales. Si te das de baja, dejamos de enviarte mensajes; podemos conservar los registros previos para fines contables y legales. Meta elimina el contenido de los mensajes y los identificadores de usuario de sus propios sistemas en un plazo de 30 días.
+
 ## Terceros
 
 **No vendemos ni rentamos** tu información personal. Tus datos pueden ser compartidos solo cuando sea necesario:
@@ -90,6 +107,13 @@ Específicamente para el Asistente de Messenger, tus mensajes son transmitidos a
 - **Anthropic, PBC** — proporciona el modelo de IA Claude que genera las respuestas. [Política de Privacidad](https://www.anthropic.com/legal/privacy)
 - **Cloudflare, Inc.** — aloja el Worker y proporciona almacenamiento KV y enrutamiento de AI Gateway. [Política de Privacidad](https://www.cloudflare.com/privacypolicy/)
 - **Functional Software, Inc. (Sentry)** — recibe informes de errores para monitoreo. [Política de Privacidad](https://sentry.io/privacy/)
+
+Para los **recordatorios y confirmaciones por WhatsApp**, tus datos son procesados por:
+
+- **Meta Platforms, Inc.** — entrega los mensajes a través de la Plataforma de WhatsApp Business. [Política de Privacidad](https://www.whatsapp.com/legal/privacy-policy)
+- **Cloudflare, Inc.** — aloja el servicio y almacena tus registros (Workers + base de datos D1). [Política de Privacidad](https://www.cloudflare.com/privacypolicy/)
+
+El servicio de recordatorios por WhatsApp **no** utiliza ningún modelo de IA; los mensajes se envían a partir de plantillas fijas previamente aprobadas.
 
 ## Tus Derechos
 

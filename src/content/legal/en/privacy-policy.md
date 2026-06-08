@@ -1,20 +1,20 @@
 ---
 title: "Privacy Policy"
-lastUpdated: "2026-04-10"
+lastUpdated: "2026-06-07"
 translations:
   es: "/es/legal/privacy-policy/"
 seo:
   title: "Privacy Policy - How We Protect Your Information"
-  description: "Understand how we collect, use, and safeguard your personal information on the New York English Teacher website and Facebook Messenger assistant."
+  description: "Understand how New York English collects, uses, and safeguards your information across our website, Facebook Messenger assistant, and WhatsApp reminders."
 ---
 
 ## Privacy Policy
 
-**Last Updated: April 10, 2026**
+**Last Updated: June 7, 2026**
 
 ## Introduction
 
-Welcome to our Privacy Policy. New York English is an executive English coaching service operated by **Robert Cushman**, based in Guadalajara, Mexico. This policy explains how we collect, use, and protect your personal information when you use our website (nyenglishteacher.com) and our Facebook Messenger Assistant.
+Welcome to our Privacy Policy. New York English is an executive English coaching service operated by **Robert Cushman**, based in Guadalajara, Mexico. This policy explains how we collect, use, and protect your personal information when you use our website (nyenglishteacher.com), our Facebook Messenger Assistant, and our WhatsApp reminder and confirmation service.
 
 If you have questions, contact us at **privacy@newyorkenglish.com**.
 
@@ -42,6 +42,18 @@ When you message the New York English Facebook Page and interact with our AI-pow
 
 We do **not** collect your email address, phone number, Facebook friends list, or any other profile data beyond what is listed above.
 
+### WhatsApp Reminders & Confirmations
+
+If you opt in to receive class reminders and payment confirmations from New York English on WhatsApp, we collect and process:
+
+- Your **WhatsApp phone number**
+- Your **name**, as provided when you enroll
+- Your **language preference** (English or Spanish)
+- The **content and timestamps** of messages you exchange with us on WhatsApp
+- Your **class enrollment, attendance confirmations, and payment records** that the reminders and receipts relate to
+
+We send you WhatsApp messages **only after you have opted in**. You can **opt out at any time** by replying **STOP** or **BAJA** to any of our WhatsApp messages — we will stop sending you messages. Reply **ALTA** to opt back in. We use WhatsApp only for service messages (reminders, confirmations, receipts), **not** for advertising or resale.
+
 ## How We Collect Information
 
 Information is collected through:
@@ -50,6 +62,7 @@ Information is collected through:
 - Cookies and tracking technologies
 - Analytics tools (e.g., Google Analytics)
 - The Facebook Messenger Platform (for Messenger Assistant interactions)
+- The WhatsApp Business Platform (for reminders and confirmations you opt in to)
 
 ## How We Use Your Information
 
@@ -57,6 +70,8 @@ We use your data to:
 
 - Provide and improve our coaching services
 - Respond to your inquiries via the website or Messenger Assistant
+- Send the class reminders, attendance confirmations, and payment receipts you opted in to receive on WhatsApp
+- Process opt-in and opt-out requests for WhatsApp messaging
 - Maintain short-term conversation context in the Messenger Assistant
 - Detect and respond in your preferred language (English or Spanish)
 - Analyze site usage and performance
@@ -77,6 +92,8 @@ We use your data to:
 
 We do not maintain long-term storage of Messenger conversations.
 
+**WhatsApp data:** Your phone number, name, enrollment, attendance, payment records, and message log are stored in our database (Cloudflare D1) for as long as you are an active student and as needed for our records and legal obligations. If you opt out, we stop messaging you; we may retain prior records for accounting and legal purposes. Meta deletes message content and user identifiers from its own systems within 30 days.
+
 ## Third Parties
 
 We do **not** sell or rent your personal data. Your data may be shared only when necessary:
@@ -90,6 +107,13 @@ For the Messenger Assistant specifically, your messages are transmitted to the f
 - **Anthropic, PBC** — provides the Claude AI model that generates responses. [Privacy Policy](https://www.anthropic.com/legal/privacy)
 - **Cloudflare, Inc.** — hosts the Worker, provides KV storage and AI Gateway routing. [Privacy Policy](https://www.cloudflare.com/privacypolicy/)
 - **Functional Software, Inc. (Sentry)** — receives error reports for monitoring purposes. [Privacy Policy](https://sentry.io/privacy/)
+
+For **WhatsApp reminders and confirmations**, your data is processed by:
+
+- **Meta Platforms, Inc.** — delivers messages via the WhatsApp Business Platform. [Privacy Policy](https://www.whatsapp.com/legal/privacy-policy)
+- **Cloudflare, Inc.** — hosts the service and stores your records (Workers + D1 database). [Privacy Policy](https://www.cloudflare.com/privacypolicy/)
+
+The WhatsApp reminder service does **not** use any AI model; messages are sent from fixed, pre-approved templates.
 
 ## Your Rights
 
