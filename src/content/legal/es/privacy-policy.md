@@ -14,7 +14,7 @@ seo:
 
 ## Introducción
 
-Bienvenido a nuestra Política de Privacidad. New York English es un servicio de coaching ejecutivo de inglés operado por **Robert Cushman**, con sede en Guadalajara, México. Esta política explica cómo recopilamos, usamos y protegemos tu información personal cuando utilizas nuestro sitio web (nyenglishteacher.com), nuestro Asistente de Facebook Messenger y nuestro servicio de recordatorios y confirmaciones por WhatsApp.
+Te damos la bienvenida a nuestra Política de Privacidad. New York English es un servicio de coaching ejecutivo de inglés operado por **Robert Cushman**, con sede en Guadalajara, México. Esta política explica cómo recopilamos, usamos y protegemos tu información personal cuando utilizas nuestro sitio web (nyenglishteacher.com), nuestro Asistente de Facebook Messenger y nuestro servicio de recordatorios y confirmaciones por WhatsApp.
 
 Si tienes preguntas, contáctanos en **privacy@newyorkenglish.com**.
 
