@@ -50,6 +50,7 @@ const blogTranslations = {
   "daily-standup-english": "/es/blog/ingles-para-daily-standup-frases/",
   "customs-freight-english": "/es/blog/ingles-aduanas-comercio-exterior/",
   "us-interview-prep": "/es/blog/entrevista-trabajo-empresa-americana/",
+  "business-english-interview-phrases": "/es/blog/frases-ingles-entrevista-trabajo/",
   "slack-english-write-like-a-pro": "/es/blog/ingles-para-slack-profesional/",
   "executive-reframing-drills": "/es/blog/ejercicios-reformulacion-ejecutiva/",
   "why-you-struggle-speaking-english-in-meetings":
