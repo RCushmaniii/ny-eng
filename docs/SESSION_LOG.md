@@ -4,6 +4,31 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-06-13 (neon.ts runtime env fix)
+
+### Accomplished
+
+- PR #193: fixed `src/lib/neon.ts` reading `POSTGRES_URL` via `import.meta.env`, which Vite inlines at build time — a connection string added/rotated after the build would bake in as `undefined` and every query would silently fail. Now reads `process.env` at runtime (import.meta.env as dev fallback), typed via `globalThis` to compile under the `astro/client`-only tsconfig without `@types/node`.
+- Found by a cross-repo `import.meta.env` sweep originating in expat-driver-license-prep (same bug class fixed there in PRs #43/#44).
+
+### Decisions Made
+
+- Fixed despite `neon.ts`/`db.ts` being unwired dead code (Supabase→Neon migration leftover, no importers): preemptive — removes the trap before the quiz-submission DB feature is built on top of it. Zero risk to live paths.
+
+### Immediate Next Steps
+
+- [ ] When wiring up the DB-backed quiz-submission feature, confirm `POSTGRES_URL` is set in the host env and reaches `neon.ts` at runtime.
+
+### Technical Debt
+
+- None (this fix reduced it).
+
+### Open Questions / Blockers
+
+- None.
+
+---
+
 ## Session: 2026-05-17 (Blog UX + Lightbox)
 
 ### Accomplished
