@@ -15,13 +15,10 @@ interface Props {
   connectors: Connector[];
   bossSentence: { english: string; spanish: string };
   lang: "en" | "es";
+  unitNumber: number;
 }
 
-export default function ConnectorChallenge({
-  connectors,
-  bossSentence,
-  lang,
-}: Props) {
+export default function ConnectorChallenge({ connectors, bossSentence, lang, unitNumber }: Props) {
   const [activeConnector, setActiveConnector] = useState<number | null>(null);
   const [bossRevealed, setBossRevealed] = useState(false);
 
@@ -32,9 +29,7 @@ export default function ConnectorChallenge({
         {connectors.map((c, i) => (
           <button
             key={c.word}
-            onClick={() =>
-              setActiveConnector(activeConnector === i ? null : i)
-            }
+            onClick={() => setActiveConnector(activeConnector === i ? null : i)}
             className={`group relative px-5 py-2.5 rounded-xl font-semibold text-lg transition-all duration-200 ${
               activeConnector === i
                 ? "bg-amber-500 text-white shadow-lg scale-105"
@@ -60,10 +55,7 @@ export default function ConnectorChallenge({
       {activeConnector !== null && (
         <div className="bg-white rounded-2xl border-2 border-amber-200 p-6 space-y-3 shadow-md shadow-amber-50">
           <div className="flex items-start gap-3">
-            <AudioButton
-              text={connectors[activeConnector].example.english}
-              size="md"
-            />
+            <AudioButton text={connectors[activeConnector].example.english} size="md" />
             <div className="flex-1">
               <p className="text-lg text-slate-900 leading-relaxed">
                 {connectors[activeConnector].example.english
@@ -94,8 +86,8 @@ export default function ConnectorChallenge({
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-semibold uppercase tracking-wider">
             <Sparkles size={14} />
             {lang === "es"
-              ? "La oración maestra de la Unidad 1"
-              : "Unit 1 Boss Sentence"}
+              ? `La oración maestra de la Unidad ${unitNumber}`
+              : `Unit ${unitNumber} Boss Sentence`}
           </div>
 
           {!bossRevealed ? (
@@ -103,18 +95,14 @@ export default function ConnectorChallenge({
               onClick={() => setBossRevealed(true)}
               className="block mx-auto px-8 py-4 rounded-xl bg-amber-500 text-white font-bold text-lg hover:bg-amber-400 transition-colors shadow-lg"
             >
-              {lang === "es"
-                ? "¿Puedes decir esta oración?"
-                : "Can you say this sentence?"}
+              {lang === "es" ? "¿Puedes decir esta oración?" : "Can you say this sentence?"}
             </button>
           ) : (
             <div className="space-y-4">
               <p className="text-white text-2xl md:text-3xl font-bold leading-snug">
                 {bossSentence.english}
               </p>
-              <p className="!text-slate-200 text-lg">
-                {bossSentence.spanish}
-              </p>
+              <p className="!text-slate-200 text-lg">{bossSentence.spanish}</p>
               <div className="flex items-center justify-center gap-3 pt-2">
                 <AudioButton
                   text={bossSentence.english}
