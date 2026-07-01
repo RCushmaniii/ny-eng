@@ -49,9 +49,9 @@ export const faqLists: Record<string, FaqList> = {
           "Sesiones privadas de 60 minutos en línea por Google Meet; calentamiento, práctica dirigida, retroalimentación inmediata y conversación casual; notas PDF personalizadas después de cada clase.",
       },
       {
-        question: "¿Cuál es tu política de cancelación?",
+        question: "¿Cuál es tu política de cancelación e inasistencias?",
         answer:
-          "Las cancelaciones o reprogramaciones requieren al menos 24 horas de aviso (un día hábil). Si cancelas o reprogramas con menos de 24 horas de aviso, se aplica el cobro completo de la sesión — igual que si la sesión se hubiera realizado. El pago es antes de cada sesión (individuos) o mediante facturación mensual para empresas.",
+          "Las cancelaciones y reprogramaciones requieren al menos un día hábil (24 horas) de aviso. Si cancelas o reprogramas con menos de 24 horas de aviso, se aplica el cobro completo de la sesión — igual que si hubieras asistido. Las inasistencias se tratan igual: Robert espera hasta 15 minutos, después de lo cual se considera una sesión perdida y se aplica el cobro completo.",
       },
       {
         question: "¿Qué tan rápido veré resultados?",
@@ -67,11 +67,6 @@ export const faqLists: Record<string, FaqList> = {
         question: "¿Ofreces capacitación para líderes senior?",
         answer:
           "Sí, diseño talleres personalizados y sesiones privadas para altos directivos. Contáctame para una propuesta y precios.",
-      },
-      {
-        question: "¿Qué pasa si llego tarde a mi clase?",
-        answer:
-          "Espero hasta 15 minutos después de la hora de inicio; después de eso, se considera inasistencia y aplica el cobro completo.",
       },
     ],
   },
@@ -104,9 +99,9 @@ export const faqLists: Record<string, FaqList> = {
           "Sesiones privadas de 60 minutos en línea por Google Meet; calentamiento, práctica dirigida, retroalimentación inmediata y conversación casual; notas PDF personalizadas después de cada clase.",
       },
       {
-        question: "¿Cuál es tu política de cancelación?",
+        question: "¿Cuál es tu política de cancelación e inasistencias?",
         answer:
-          "Las cancelaciones o reprogramaciones requieren al menos 24 horas de aviso (un día hábil). Si cancelas o reprogramas con menos de 24 horas de aviso, se aplica el cobro completo de la sesión — igual que si la sesión se hubiera realizado. El pago es antes de cada sesión (individuos) o mediante facturación mensual para empresas.",
+          "Las cancelaciones y reprogramaciones requieren al menos un día hábil (24 horas) de aviso. Si cancelas o reprogramas con menos de 24 horas de aviso, se aplica el cobro completo de la sesión — igual que si hubieras asistido. Las inasistencias se tratan igual: Robert espera hasta 15 minutos, después de lo cual se considera una sesión perdida y se aplica el cobro completo.",
       },
     ],
   },
@@ -139,9 +134,9 @@ export const faqLists: Record<string, FaqList> = {
           "Private 60-minute sessions online via Google Meet; warm-up, targeted practice, on-the-spot feedback, and small talk; customized PDF notes delivered after each class.",
       },
       {
-        question: "What is your cancellation policy?",
+        question: "What is your cancellation and no-show policy?",
         answer:
-          "Cancellations or rescheduling require at least 24 hours' notice (one business day). If you cancel or reschedule with less than 24 hours' notice, the full session fee applies — the same as if the session had taken place. Payment is due before each session (individuals) or via monthly invoicing for companies.",
+          "Cancellations and reschedules require at least one business day (24 hours') notice. If you cancel or reschedule with less than 24 hours' notice, the full session fee applies — the same as if you attended. No-shows are treated the same: Robert waits up to 15 minutes, after which it counts as a missed session and the full fee applies.",
       },
       {
         question: "How fast will I improve?",
@@ -157,11 +152,6 @@ export const faqLists: Record<string, FaqList> = {
         question: "Do you offer training for senior leadership?",
         answer:
           "Yes—I design custom workshops and private coaching sessions for senior leaders. Contact me for a proposal and pricing.",
-      },
-      {
-        question: "What happens if I'm late to my lesson?",
-        answer:
-          "I wait up to 15 minutes after the start time; after that the lesson is considered a no-show and the full fee applies.",
       },
     ],
   },
@@ -194,9 +184,9 @@ export const faqLists: Record<string, FaqList> = {
           "Private 60-minute sessions online via Google Meet; warm-up, targeted practice, on-the-spot feedback, and small talk; customized PDF notes delivered after each class.",
       },
       {
-        question: "What is your cancellation policy?",
+        question: "What is your cancellation and no-show policy?",
         answer:
-          "Cancellations or rescheduling require at least 24 hours' notice (one business day). If you cancel or reschedule with less than 24 hours' notice, the full session fee applies — the same as if the session had taken place. Payment is due before each session (individuals) or via monthly invoicing for companies.",
+          "Cancellations and reschedules require at least one business day (24 hours') notice. If you cancel or reschedule with less than 24 hours' notice, the full session fee applies — the same as if you attended. No-shows are treated the same: Robert waits up to 15 minutes, after which it counts as a missed session and the full fee applies.",
       },
     ],
   },
@@ -297,9 +287,9 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
               "Yes—I provide professional invoices (facturas) for corporate clients. Companies are billed monthly at the end of each month for all sessions completed.",
           },
           {
-            question: "What is your cancellation or rescheduling policy?",
+            question: "What is your cancellation and no-show policy?",
             answer:
-              "Cancellations or rescheduling require at least 24 hours' notice (one business day). If you cancel or reschedule with less than 24 hours' notice, the full session fee applies — the same as if the session had taken place. For no-shows, I wait up to 15 minutes after the start time; after that, the session counts as a missed session and the full fee applies. Payment is due before each session (individuals) or via monthly invoicing for companies. See our full Cancellation Policy for details.",
+              "Cancellations and reschedules require at least one business day (24 hours') notice. If you cancel or reschedule with less than 24 hours' notice, the full session fee applies — the same as if you attended. No-shows are treated the same: Robert waits up to 15 minutes, after which it counts as a missed session and the full fee applies.",
           },
           {
             question: "How many sessions per week do you recommend for optimal results?",
@@ -433,9 +423,9 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
               "Sí—proporciono facturas profesionales para clientes corporativos. Las empresas se facturan mensualmente al final de cada mes por todas las sesiones completadas.",
           },
           {
-            question: "¿Cuál es tu política de cancelación o reprogramación?",
+            question: "¿Cuál es tu política de cancelación e inasistencias?",
             answer:
-              "Las cancelaciones o reprogramaciones requieren al menos 24 horas de aviso (un día hábil). Si cancelas o reprogramas con menos de 24 horas de aviso, se aplica el cobro completo de la sesión — igual que si la sesión se hubiera realizado. En caso de inasistencia, espero hasta 15 minutos después de la hora de inicio; después de eso, la sesión se considera perdida y aplica el cobro completo. El pago es antes de cada sesión (individuos) o mediante facturación mensual para empresas. Consulta nuestra Política de Cancelación completa para más detalles.",
+              "Las cancelaciones y reprogramaciones requieren al menos un día hábil (24 horas) de aviso. Si cancelas o reprogramas con menos de 24 horas de aviso, se aplica el cobro completo de la sesión — igual que si hubieras asistido. Las inasistencias se tratan igual: Robert espera hasta 15 minutos, después de lo cual se considera una sesión perdida y se aplica el cobro completo.",
           },
           {
             question: "¿Cuántas sesiones por semana recomiendas para obtener resultados óptimos?",

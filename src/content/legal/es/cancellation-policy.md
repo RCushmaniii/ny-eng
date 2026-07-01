@@ -14,11 +14,9 @@ seo:
 
 Manejo una agenda limitada y personalizada, y cada sesión se reserva exclusivamente para ti. Esta política existe para que tu tiempo — y el mío — se respeten, y para que las condiciones queden claras antes de reservar.
 
-## Resumen
+## Política de Cancelación e Inasistencias
 
-- **Cancela o reprograma sin costo** con **al menos 24 horas (un día hábil) de aviso**.
-- Si **cancelas o reprogramas con menos de 24 horas de aviso**, se aplica el **cobro completo de la sesión** — el mismo cargo que si la sesión se hubiera realizado.
-- **¿Inasistencia?** Espero hasta **15 minutos** después de la hora de inicio. Pasado ese tiempo, la sesión se considera perdida y se aplica el **cobro completo**.
+Las cancelaciones y reprogramaciones requieren al menos un día hábil (24 horas) de aviso. Si cancelas o reprogramas con menos de 24 horas de aviso, se aplica el cobro completo de la sesión — igual que si hubieras asistido. Las inasistencias se tratan igual: Robert espera hasta 15 minutos, después de lo cual se considera una sesión perdida y se aplica el cobro completo.
 
 ## Plazo de Aviso
 

@@ -14,11 +14,9 @@ seo:
 
 I keep a limited, personally-coached schedule, and every session is reserved specifically for you. This policy exists so that your time — and mine — is respected, and so the terms are clear before you book.
 
-## The Short Version
+## Cancellation & No-Show Policy
 
-- **Free to cancel or reschedule** with **at least 24 hours' (one business day's) notice**.
-- **Cancel or reschedule with less than 24 hours' notice**, and the **full session fee applies** — the same charge as if the session had taken place.
-- **No-show?** I wait up to **15 minutes** after the start time. After that, the session counts as a missed session and the **full fee applies**.
+Cancellations and reschedules require at least one business day (24 hours') notice. If you cancel or reschedule with less than 24 hours' notice, the full session fee applies — the same as if you attended. No-shows are treated the same: Robert waits up to 15 minutes, after which it counts as a missed session and the full fee applies.
 
 ## Notice Window
 
