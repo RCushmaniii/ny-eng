@@ -14,6 +14,7 @@ export const staticPageMap: TranslationMap = {
   "/en/thank-you/": "/es/thank-you/",
   "/en/legal/privacy-policy/": "/es/legal/privacy-policy/",
   "/en/legal/terms-of-service/": "/es/legal/terms-of-service/",
+  "/en/legal/cancellation-policy/": "/es/legal/cancellation-policy/",
   "/en/testimonials/": "/es/testimonios/",
   "/en/services/": "/es/servicios/",
   "/en/blog/": "/es/blog/",
@@ -47,13 +48,11 @@ export const reverseServiceMap: TranslationMap = Object.fromEntries(
 export const blogTranslationMap: TranslationMap = {
   "4-secrets-executives-use": "4-secretos-que-usan-los-ejecutivos",
   "boost-eng-confidence": "aumentar-confianza",
-  "5-practical-ways-to-boost-business-english":
-    "5-formas-practicas-mejorar-ingles-negocios",
+  "5-practical-ways-to-boost-business-english": "5-formas-practicas-mejorar-ingles-negocios",
   "executive-english-coaching": "coaching-ejecutivo",
   "master-business-english": "dominar-negocios",
   "small-talk-to-smart-talk": "charla-pequena-habla-inteligente",
-  "managers-lose-millions":
-    "por-que-los-gerentes-de-ti-en-mexico-pierden-clientes",
+  "managers-lose-millions": "por-que-los-gerentes-de-ti-en-mexico-pierden-clientes",
   //'why-tech-managers-lose-millions': 'por-que-los-gerentes-de-ti-en-mexico-pierden-clientes',
 };
 
@@ -97,9 +96,7 @@ export function getAlternateLanguageUrl(
 
   switch (type) {
     case "static":
-      return (
-        staticPageMap[cleanPath] || reverseStaticPageMap[cleanPath] || null
-      );
+      return staticPageMap[cleanPath] || reverseStaticPageMap[cleanPath] || null;
 
     case "service": {
       const serviceSlug = cleanPath.split("/").filter(Boolean).pop();
@@ -147,9 +144,7 @@ export function getAlternateLanguageUrl(
  * @param url - The URL to analyze
  * @returns The page type
  */
-export function getPageType(
-  url: string,
-): "static" | "service" | "blog" | "category" | "other" {
+export function getPageType(url: string): "static" | "service" | "blog" | "category" | "other" {
   if (url.includes("/services/") || url.includes("/servicios/")) {
     return "service";
   }

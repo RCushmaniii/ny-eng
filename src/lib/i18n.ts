@@ -52,6 +52,7 @@ export type TKey =
   | "resources/salary-negotiation-script"
   | "legal/privacy-policy"
   | "legal/terms-of-service"
+  | "legal/cancellation-policy"
   | "legal/data-deletion"
   | "thank-you"
   | "services/executive-english"
@@ -217,6 +218,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "resources/salary-negotiation-script": "/en/resources/salary-negotiation-script/",
     "legal/privacy-policy": "/en/legal/privacy-policy/",
     "legal/terms-of-service": "/en/legal/terms-of-service/",
+    "legal/cancellation-policy": "/en/legal/cancellation-policy/",
     "legal/data-deletion": "/en/legal/data-deletion/",
     "services/executive-english": "/en/services/executive-english/",
     "services/high-stakes-english": "/en/services/high-stakes-english/",
@@ -406,6 +408,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "resources/salary-negotiation-script": "/es/recursos/script-negociacion-salario/",
     "legal/privacy-policy": "/es/legal/privacy-policy/",
     "legal/terms-of-service": "/es/legal/terms-of-service/",
+    "legal/cancellation-policy": "/es/legal/cancellation-policy/",
     "legal/data-deletion": "/es/legal/data-deletion/",
     "services/executive-english": "/es/servicios/ingles-para-ejecutivos/",
     "services/high-stakes-english": "/es/servicios/ingles-para-presentaciones/",
@@ -617,6 +620,7 @@ export function getAllTKeys(): TKey[] {
     "resources/salary-negotiation-script",
     "legal/privacy-policy",
     "legal/terms-of-service",
+    "legal/cancellation-policy",
     "legal/data-deletion",
     "services/executive-english",
     "services/high-stakes-english",

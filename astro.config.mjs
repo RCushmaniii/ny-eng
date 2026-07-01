@@ -20,6 +20,9 @@ const ensureSlashPath = (p = "/") => ("/" + (p || "/")).replace(/\/+/g, "/").rep
 // Blog post translations map (EN slug -> ES path)
 // Used by sitemap to generate correct hreflang for blog posts
 const blogTranslations = {
+  "english-classes-chapalita": "/es/blog/clases-ingles-chapalita/",
+  "english-classes-zapopan": "/es/blog/clases-ingles-zapopan/",
+  "english-classes-guadalajara": "/es/blog/clases-ingles-guadalajara/",
   "free-english-courses-spanish-speakers": "/es/blog/cursos-ingles-gratis-hispanohablantes/",
   "4-secrets-executives-use": "/es/blog/4-secretos-que-usan-los-ejecutivos/",
   "5-practical-ways-to-boost-business-english":
