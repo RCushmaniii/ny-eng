@@ -24,6 +24,29 @@ import {
 const lang = "es";
 const tkey = "course/past-tenses" as const;
 
+const faqs = [
+  {
+    "q": "¿Cuál es la diferencia entre I did y I have done?",
+    "a": "I did señala un momento terminado en el pasado, por ejemplo I finished the report yesterday. I have done conecta el pasado con el ahora, por ejemplo I have finished the report, o sea, ya está listo. Esta clase magistral entrena la elección por instinto mediante visualización, para que dejes de calcular la regla a media oración."
+  },
+  {
+    "q": "¿Por qué me congelo con los tiempos del pasado en inglés aunque sé las reglas?",
+    "a": "Porque saber una regla y elegirla en tiempo real son habilidades distintas. Bajo presión recurres al pasado simple cuando el momento pide el presente perfecto. El curso recablea la elección con un método de cuatro tiempos para que el tiempo correcto salga automático."
+  },
+  {
+    "q": "¿Cómo dejo de traducir los tiempos del pasado desde el español?",
+    "a": "El español y el inglés no alinean sus tiempos del pasado uno a uno, así que traducir produce los errores clásicos. Este curso te enseña a sentir la historia, la línea de tiempo del evento, en lugar de convertir desde el español, que es lo que hace automático el tiempo correcto."
+  },
+  {
+    "q": "¿Para quién es esta clase magistral de tiempos del pasado?",
+    "a": "Hablantes de nivel intermedio a avanzado, B1 a C1, sobre todo profesionales mexicanos que usan el inglés en el trabajo y quieren que sus tiempos del pasado suenen naturales en juntas y por escrito. Está construida alrededor de los errores que de verdad cometen los hispanohablantes."
+  },
+  {
+    "q": "¿De verdad es gratuito este curso de tiempos del pasado?",
+    "a": "Sí. Seis lecciones más seis bonos, incluidos una guía rápida y un plan de 30 días, son gratuitos, sin registro ni barreras."
+  }
+];
+
 const iconMap: Record<string, any> = {
   Clock,
   Film,
@@ -318,6 +341,36 @@ const iconMap: Record<string, any> = {
       </div>
     </div>
   </section>
+
+  {/* FAQ — targets high-intent professional queries */}
+  <section class="py-16 bg-slate-50 border-t border-slate-100">
+    <div class="site-container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 text-center">
+        Preguntas frecuentes
+      </h2>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="group bg-white rounded-xl border border-slate-200 p-5">
+            <summary class="flex items-center justify-between gap-3 cursor-pointer font-semibold text-slate-900 list-none">
+              <span>{f.q}</span>
+              <span class="shrink-0 w-2.5 h-2.5 border-r-2 border-b-2 border-amber-500 rotate-45 transition-transform group-open:rotate-[225deg]"></span>
+            </summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",

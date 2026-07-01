@@ -32,6 +32,29 @@ import {
 const lang = "en";
 const tkey = "course/drive-the-decision" as const;
 
+const faqs = [
+  {
+    "q": "What is executive communication training in English?",
+    "a": "It's practice in the precise, deliberate language leaders use to move a room to a decision, not more vocabulary, but better positioning, anchoring, and framing. This master class delivers it through ten worked boardroom scenarios with model replies and the decision psychology behind each."
+  },
+  {
+    "q": "How do I respond to investor pushback in English?",
+    "a": "The course walks real scenarios, a missed quarter, a skeptical board, a demand for cuts, and gives you model replies that acknowledge the pressure without conceding control. You practice the exact phrasing that keeps you credible under scrutiny."
+  },
+  {
+    "q": "How do I say no to a deal or request diplomatically in English?",
+    "a": "One of the ten scenarios is declining a two-million-dollar deal you have to turn down. You get language that closes the door on the ask while keeping the relationship open, a diplomatic no that senior leaders respect."
+  },
+  {
+    "q": "Who is Drive the Decision for?",
+    "a": "Senior leaders, founders, and executives who already speak fluent English but need to command high-stakes moments, board meetings, investor calls, negotiations, where the words have to carry weight."
+  },
+  {
+    "q": "Is Drive the Decision free?",
+    "a": "Yes. All ten boardroom scenarios, the model replies with audio, and the twelve-item reflex drill are free, with no sign-up. It's the applied capstone of Robert's executive coaching."
+  }
+];
+
 const iconMap: Record<string, any> = {
   TrendingUp,
   Clock,
@@ -329,6 +352,36 @@ const iconMap: Record<string, any> = {
       </div>
     </div>
   </section>
+
+  {/* FAQ — targets high-intent professional queries */}
+  <section class="py-16 bg-slate-50 border-t border-slate-100">
+    <div class="site-container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 text-center">
+        Frequently asked questions
+      </h2>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="group bg-white rounded-xl border border-slate-200 p-5">
+            <summary class="flex items-center justify-between gap-3 cursor-pointer font-semibold text-slate-900 list-none">
+              <span>{f.q}</span>
+              <span class="shrink-0 w-2.5 h-2.5 border-r-2 border-b-2 border-amber-500 rotate-45 transition-transform group-open:rotate-[225deg]"></span>
+            </summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
