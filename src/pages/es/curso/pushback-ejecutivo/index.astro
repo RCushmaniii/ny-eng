@@ -26,6 +26,29 @@ import {
 const lang = "es";
 const tkey = "course/executive-pushback" as const;
 
+const faqs = [
+  {
+    "q": "¿Cómo manejo el pushback en inglés sin ponerme a la defensiva?",
+    "a": "Bajo presión, el instinto es defenderse o dar demasiadas explicaciones, y eso se lee como inseguridad. Esta clase magistral entrena el marco Reconoce, Clarifica, Redirige: reconoces la preocupación, haces una pregunta para revelar el impulsor real y rediriges hacia la decisión. Te mantiene con la compostura y el control de la conversación."
+  },
+  {
+    "q": "¿Cómo respondo a objeciones en una junta en inglés?",
+    "a": "La mayoría de las objeciones no se tratan de la razón que se dice en voz alta. El curso mapea seis impulsores ocultos detrás del pushback ejecutivo y te da tres preguntas diagnósticas para identificar cuál enfrentas, así respondes a la objeción real y no a la de la superficie."
+  },
+  {
+    "q": "¿Qué digo cuando me toman por sorpresa y me congelo?",
+    "a": "Usas el guion de recuperación de tres oraciones que el curso entrena como bonus: una forma controlada de ganar un momento, reformular la pregunta y responder con estructura en lugar de improvisar. Funciona incluso cuando todavía no tienes la respuesta perfecta."
+  },
+  {
+    "q": "¿Para quién es esta clase magistral?",
+    "a": "Directores, profesionales de ventas y cuentas, gerentes de compras y mandos medios que se comunican hacia arriba, cualquiera que deba mantener la compostura y responder con estructura cuando un interlocutor senior lo cuestiona en inglés."
+  },
+  {
+    "q": "¿De verdad es gratuita esta clase magistral?",
+    "a": "Sí. Las seis lecciones más el bonus del guion de recuperación son gratuitas, sin registro y sin barreras. Es la capa diagnóstica con la que suele abrir el coaching ejecutivo uno a uno de Robert."
+  }
+];
+
 const iconMap: Record<string, any> = {
   Search,
   Pause,
@@ -291,6 +314,36 @@ const iconMap: Record<string, any> = {
       </div>
     </div>
   </section>
+
+  {/* FAQ — targets high-intent professional queries */}
+  <section class="py-16 bg-slate-50 border-t border-slate-100">
+    <div class="site-container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 text-center">
+        Preguntas frecuentes
+      </h2>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="group bg-white rounded-xl border border-slate-200 p-5">
+            <summary class="flex items-center justify-between gap-3 cursor-pointer font-semibold text-slate-900 list-none">
+              <span>{f.q}</span>
+              <span class="shrink-0 w-2.5 h-2.5 border-r-2 border-b-2 border-amber-500 rotate-45 transition-transform group-open:rotate-[225deg]"></span>
+            </summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",

@@ -26,6 +26,29 @@ import {
 const lang = "en";
 const tkey = "course/executive-pushback" as const;
 
+const faqs = [
+  {
+    "q": "How do I handle pushback in English without getting defensive?",
+    "a": "The instinct under pressure is to defend or over-explain, which reads as insecurity. This master class trains the Acknowledge, Clarify, Redirect framework: you acknowledge the concern, ask one clarifying question to surface the real driver, then redirect to the decision. It keeps you composed and in control of the conversation."
+  },
+  {
+    "q": "How do I respond to objections in a meeting in English?",
+    "a": "Most objections aren't really about the reason stated out loud. The course maps six hidden drivers behind executive pushback and gives you three diagnostic questions to find which one you're facing, so you answer the real objection instead of the surface one."
+  },
+  {
+    "q": "What do I say when I'm caught off guard and freeze?",
+    "a": "You use the three-sentence recovery script the course drills as a bonus: a controlled way to buy a moment, restate the question, and respond with structure instead of scrambling. It works even when you don't have the perfect answer yet."
+  },
+  {
+    "q": "Who is this executive pushback master class for?",
+    "a": "Directors, sales and account professionals, procurement managers, and mid-level leaders who communicate upward, anyone who has to hold composure and respond with structure when a senior stakeholder challenges them in English."
+  },
+  {
+    "q": "Is this master class really free?",
+    "a": "Yes. All six lessons plus the recovery-script bonus are free, with no sign-up and no paywall. It's the diagnostic layer that Robert's paid one-on-one executive coaching normally opens with."
+  }
+];
+
 const iconMap: Record<string, any> = {
   Search,
   Pause,
@@ -291,6 +314,36 @@ const iconMap: Record<string, any> = {
       </div>
     </div>
   </section>
+
+  {/* FAQ — targets high-intent professional queries */}
+  <section class="py-16 bg-slate-50 border-t border-slate-100">
+    <div class="site-container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 text-center">
+        Frequently asked questions
+      </h2>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="group bg-white rounded-xl border border-slate-200 p-5">
+            <summary class="flex items-center justify-between gap-3 cursor-pointer font-semibold text-slate-900 list-none">
+              <span>{f.q}</span>
+              <span class="shrink-0 w-2.5 h-2.5 border-r-2 border-b-2 border-amber-500 rotate-45 transition-transform group-open:rotate-[225deg]"></span>
+            </summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
