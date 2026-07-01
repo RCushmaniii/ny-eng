@@ -10,6 +10,8 @@ import { advancedInfo, advancedUnits } from "@data/advanced/units";
 import { executiveInfo, executiveUnits } from "@data/executive/units";
 import { driveInfo, scenarioMeta } from "@data/drive-the-decision/scenarios";
 import { pushbackInfo, pushbackLessons } from "@data/executive-pushback/lessons";
+import TestimonialCard from "@components/ui/TestimonialCard.astro";
+import { testimonials } from "@data/testimonials/en";
 import {
   Sparkles,
   BookOpen,
@@ -34,6 +36,161 @@ const advancedAvailable = advancedUnits.length;
 const executiveAvailable = executiveUnits.filter((u) => u.published).length;
 const driveScenariosAvailable = scenarioMeta.filter((s) => s.available).length;
 const pushbackLessonsAvailable = pushbackLessons.filter((l) => l.available).length;
+
+// Hero quick-start level selector — fast path into each leveled track
+const levelSelector = [
+  { label: "A1 · Beginner", sub: "English still feels brand new", href: "/en/course/beginners/" },
+  { label: "A2 · Elementary", sub: "Talk about yesterday and your plans", href: "/en/course/elementary/" },
+  { label: "B1–B2 · Intermediate", sub: "Stop translating in your head", href: "/en/course/intermediate/" },
+  { label: "B2–C1 · Advanced", sub: "Fluent — now get polished", href: "/en/course/advanced/" },
+  { label: "C1–C2 · Executive", sub: "Lead the room in English", href: "/en/course/executive/" },
+];
+
+// Real client proof, pulled from the coaching testimonials (no invented numbers)
+const featuredAuthors = ["Julio Aldana", "Hugo Blum", "Andres Guzman Rubio"];
+const featuredTestimonials = featuredAuthors
+  .map((name) => testimonials.find((t) => t.author === name))
+  .filter((t): t is (typeof testimonials)[number] => Boolean(t));
+
+// FAQ — targets high-volume beginner / free-course search queries
+const faqs = [
+  {
+    q: "Are these English courses really free?",
+    a: "Yes. Every course — from A1 beginner to C2 executive — is completely free. No sign-up, no credit card, no paywall, and no trial that expires. You can start any lesson right now.",
+  },
+  {
+    q: "How can a Spanish speaker learn English from scratch?",
+    a: "Start with the beginner (A1) course. Instead of memorizing lists, it begins with the 1,500+ English words already hiding in your Spanish (cognates), then builds real sentences from the first lesson. By Unit 10 you can hold a basic conversation.",
+  },
+  {
+    q: "Which free English course should a beginner start with?",
+    a: "If English feels brand new, start with the A1 Beginner course. If you know the basics but can't yet talk about the past or make plans, take A2 Elementary. If you can already hold a conversation, jump to B1–B2 Intermediate.",
+  },
+  {
+    q: "Can I really learn English online for free with no app to install?",
+    a: "Yes. Everything runs in your browser — nothing to download. Each lesson is interactive, with audio for every word and phrase and a self-test to lock it in. Your progress is saved automatically on your device.",
+  },
+  {
+    q: "How long does it take to learn English with these courses?",
+    a: "It depends on how often you practice, but each leveled track is 10 short units plus a final exam. Practicing a few times a week, most learners move through a level in a couple of months — and you feel real progress from the first lesson.",
+  },
+  {
+    q: "Who makes these courses?",
+    a: "They're built by Robert Cushman, a New York English teacher who coaches executives and professionals one-on-one. The same methods behind his private coaching shape every free course here.",
+  },
+];
+
+// Provider + free offer reused across every Course entry
+const courseProvider = {
+  "@type": "Organization",
+  "@id": "https://www.nyenglishteacher.com/#org",
+  name: "New York English Teacher",
+  url: "https://www.nyenglishteacher.com/",
+};
+const freeOffer = {
+  "@type": "Offer",
+  category: "Free",
+  price: "0",
+  priceCurrency: "USD",
+  availability: "https://schema.org/InStock",
+};
+
+const courseList = [
+  {
+    name: "Free English Course (Beginner, A1)",
+    url: "https://www.nyenglishteacher.com/en/course/beginners/",
+    description:
+      "A free interactive A1 course for Spanish speakers. Start from the 1,500+ English words hiding in your Spanish and reach a real conversation by Unit 10.",
+    workload: "PT10H",
+  },
+  {
+    name: "Free Elementary English Course (A2)",
+    url: "https://www.nyenglishteacher.com/en/course/elementary/",
+    description:
+      "The free A2 bridge from beginner to intermediate: past tense, future plans, comparatives, and the questions that turn yes/no answers into real conversation.",
+    workload: "PT10H",
+  },
+  {
+    name: "Free Intermediate English Course (B1–B2)",
+    url: "https://www.nyenglishteacher.com/en/course/intermediate/",
+    description:
+      "A free B1–B2 course that rewires the translate-in-your-head habit. Phrasal verbs, conditionals, and the natural patterns natives actually use.",
+    workload: "PT12H",
+  },
+  {
+    name: "Free Advanced English Course (B2–C1)",
+    url: "https://www.nyenglishteacher.com/en/course/advanced/",
+    description:
+      "A free B2–C1 course of targeted drills that fix the exact errors haunting advanced Spanish speakers — articles, word traps, and pronunciation tells.",
+    workload: "PT12H",
+  },
+  {
+    name: "Executive English Course (C1–C2)",
+    url: "https://www.nyenglishteacher.com/en/course/executive/",
+    description:
+      "The free, productized version of Robert's 1-on-1 executive coaching: speaking-first drills, named frameworks, and precision language that signals command.",
+    workload: "PT15H",
+  },
+  {
+    name: "Master English Past Tenses (Free Master Class)",
+    url: "https://www.nyenglishteacher.com/en/course/past-tenses/",
+    description:
+      "A free targeted master class that rewires past-tense choice through visualization, not memorization. Six lessons plus a cheat sheet and 30-day plan.",
+    workload: "PT4H",
+  },
+  {
+    name: "Drive the Decision — Executive Boardroom Simulation (Free Master Class)",
+    url: "https://www.nyenglishteacher.com/en/course/drive-the-decision/",
+    description:
+      "A free executive master class: ten worked boardroom scenarios with model replies and the decision psychology behind them, plus a 12-item reflex drill.",
+    workload: "PT5H",
+  },
+  {
+    name: "Executive Pushback & Objection Handling (Free Master Class)",
+    url: "https://www.nyenglishteacher.com/en/course/executive-pushback/",
+    description:
+      "A free master class in reading the real driver under an objection and responding with structure instead of defensiveness: Acknowledge, Clarify, Redirect.",
+    workload: "PT4H",
+  },
+];
+
+const courseItemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Free English Courses for Spanish Speakers",
+  description:
+    "Free, interactive English courses for Spanish speakers — A1 beginner through C2 executive. No sign-up, no paywall.",
+  url: "https://www.nyenglishteacher.com/en/courses/",
+  itemListElement: courseList.map((c, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "Course",
+      name: c.name,
+      description: c.description,
+      url: c.url,
+      inLanguage: "en",
+      isAccessibleForFree: true,
+      provider: courseProvider,
+      offers: freeOffer,
+      hasCourseInstance: {
+        "@type": "CourseInstance",
+        courseMode: "online",
+        courseWorkload: c.workload,
+      },
+    },
+  })),
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 ---
 
 <Base
@@ -45,7 +202,8 @@ const pushbackLessonsAvailable = pushbackLessons.filter((l) => l.available).leng
   <!-- Hero -->
   <section class="bg-gradient-to-b from-slate-900 to-slate-800 pt-24 pb-20 md:pt-32 md:pb-24">
     <div class="site-container mx-auto px-4 text-white">
-      <div class="max-w-3xl">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+       <div class="max-w-2xl">
         <div class="flex items-center gap-2 text-amber-400 text-sm font-semibold mb-3">
           <GraduationCap class="w-4 h-4" />
           Free Courses
@@ -64,6 +222,27 @@ const pushbackLessonsAvailable = pushbackLessons.filter((l) => l.available).leng
           paywall. No textbook drudgery. Just real progress from the first
           lesson.
         </p>
+       </div>
+       <div class="w-full">
+         <div class="rounded-2xl bg-white/5 border border-white/10 p-5 sm:p-6 backdrop-blur-sm">
+           <p class="text-amber-300 text-sm font-semibold mb-1">Start where you are</p>
+           <p class="text-slate-400 text-sm mb-4">Pick your level and jump straight in — no sign-up.</p>
+           <div class="flex flex-col gap-2">
+             {levelSelector.map((lvl) => (
+               <a
+                 href={lvl.href}
+                 class="group/lvl flex items-center justify-between gap-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-amber-300/50 px-4 py-3 transition-all"
+               >
+                 <span class="min-w-0">
+                   <span class="block text-white font-semibold text-sm">{lvl.label}</span>
+                   <span class="block text-slate-400 text-xs">{lvl.sub}</span>
+                 </span>
+                 <ArrowRight class="w-4 h-4 text-amber-300 shrink-0 transition-transform group-hover/lvl:translate-x-0.5" />
+               </a>
+             ))}
+           </div>
+         </div>
+       </div>
       </div>
     </div>
   </section>
@@ -479,85 +658,46 @@ const pushbackLessonsAvailable = pushbackLessons.filter((l) => l.available).leng
     </div>
   </section>
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Free English Courses for Spanish Speakers",
-  "description": "Free, interactive English courses for Spanish speakers — beginner to upper-intermediate. No sign-up, no paywall.",
-  "url": "https://www.nyenglishteacher.com/en/courses/",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
-        "@type": "Course",
-        "name": "Free English Course (Beginner)",
-        "url": "https://www.nyenglishteacher.com/en/course/beginners/"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@type": "Course",
-        "name": "Free Elementary English Course (A2)",
-        "url": "https://www.nyenglishteacher.com/en/course/elementary/"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "item": {
-        "@type": "Course",
-        "name": "Free Intermediate English Course (B1-B2)",
-        "url": "https://www.nyenglishteacher.com/en/course/intermediate/"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "item": {
-        "@type": "Course",
-        "name": "Free Advanced English Course (B2-C1)",
-        "url": "https://www.nyenglishteacher.com/en/course/advanced/"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "item": {
-        "@type": "Course",
-        "name": "Executive English Course (C1-C2)",
-        "url": "https://www.nyenglishteacher.com/en/course/executive/"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 6,
-      "item": {
-        "@type": "Course",
-        "name": "Master English Past Tenses (Free Master Class)",
-        "url": "https://www.nyenglishteacher.com/en/course/past-tenses/"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 7,
-      "item": {
-        "@type": "Course",
-        "name": "Drive the Decision — Executive Boardroom Simulation (Free Master Class)",
-        "url": "https://www.nyenglishteacher.com/en/course/drive-the-decision/"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 8,
-      "item": {
-        "@type": "Course",
-        "name": "Executive Pushback & Objection Handling (Free Master Class)",
-        "url": "https://www.nyenglishteacher.com/en/course/executive-pushback/"
-      }
-    }
-  ]
-})} />
+  <!-- Real client proof — the coaching behind the courses -->
+  <section class="py-16 bg-white border-t border-slate-100">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+          The coaching behind the courses
+        </h2>
+        <p class="text-slate-600">
+          These free courses come from the same methods Robert uses to coach
+          executives and founders one-on-one. Here's what a few of them say.
+        </p>
+      </div>
+      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+        {featuredTestimonials.map((t) => (
+          <TestimonialCard testimonial={t} showReadMore={false} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-slate-50 border-t border-slate-100">
+    <div class="site-container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 text-center">
+        Frequently asked questions
+      </h2>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="group bg-white rounded-xl border border-slate-200 p-5">
+            <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 list-none">
+              <span>{f.q}</span>
+              <ArrowRight class="w-4 h-4 text-amber-500 shrink-0 ml-3 transition-transform group-open:rotate-90" />
+            </summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(courseItemList)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Base>
