@@ -2,7 +2,7 @@
 title: "30 Frases en Inglés para Entrevistas de Trabajo — y Cómo Decirlas Exactamente"
 excerpt: "Las frases exactas en inglés que te hacen sonar seguro en una entrevista de trabajo — organizadas por etapa, cada una con un tip de pronunciación para que las palabras salgan como las pensaste."
 publishDate: "2026-06-09"
-lastmod: "2026-06-09"
+lastmod: "2026-07-01"
 categories:
   - "Inglés para Negocios"
   - "Carrera & Liderazgo"
@@ -269,6 +269,30 @@ Si notaste un tema en los tips, ya aprendiste la lección más valiosa:
 4. **Quita las terminaciones del español.** Nada de "-cia," nada de "-to," nada de "-ge." Las palabras en inglés terminan más duro y más corto de lo que se ven.
 
 Estas cuatro reglas corrigen la mayoría de los tropiezos de pronunciación en una entrevista. Para una práctica más a fondo, nuestra guía de las [50 palabras en inglés que los profesionales mexicanos pronuncian mal](/es/blog/palabras-en-ingles-que-profesionales-mexicanos-pronuncian-mal/) desglosa los patrones de interferencia palabra por palabra.
+
+---
+
+## Preguntas Frecuentes
+
+### ¿Qué preguntas hacen en una entrevista de trabajo en inglés?
+
+La mayoría de las entrevistas en inglés siguen un arco predecible: una apertura ("Tell me about yourself"), preguntas de comportamiento ("Tell me about a time you…"), preguntas técnicas del puesto, tus preguntas para ellos, y la conversación del salario. Las frases de arriba están organizadas por esa misma secuencia, para que prepares una respuesta limpia para cada etapa.
+
+### ¿Cómo me presento en una entrevista en inglés?
+
+Empieza con una propuesta de valor de una línea, no con un resumen de tu CV: "I'm a [puesto] with [X] years in [especialidad]." Luego da dos o tres oraciones sobre los resultados por los que te conocen. Las aperturas completas y las trampas de pronunciación que debes evitar están en la Etapa 1.
+
+### ¿Cómo respondo "tell me about yourself" en inglés?
+
+Usa la estructura presente-pasado-futuro: dónde estás ahora, la experiencia que te trajo aquí, y por qué este puesto es el siguiente paso. Mantenlo en menos de 90 segundos y cierra con el puesto para el que te entrevistan. Ensáyalo en voz alta hasta que salga limpio.
+
+### ¿Qué digo cuando no entiendo una pregunta en una entrevista en inglés?
+
+Nunca adivines y respondas lo que no es. Gana un momento y aclara: "Just to make sure I answer the right thing — do you mean [X] or [Y]?" Se lee como algo reflexivo, no como debilidad, y te evita divagar fuera de tema.
+
+### ¿Cómo puedo sonar más seguro en una entrevista de trabajo en inglés?
+
+La seguridad en inglés es sobre todo entrega, no vocabulario. Quita las muletillas ("kind of", "I think maybe"), baja la velocidad, y ensaya tus frases clave en voz alta hasta que tu boca las conozca. Si quieres que un coach escuche exactamente dónde se te resbala la entrega, [agenda una sesión de estrategia gratuita](/es/reservar/).
 
 ---
 

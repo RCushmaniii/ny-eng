@@ -2,7 +2,7 @@
 title: "30 Business English Interview Phrases — and Exactly How to Say Them"
 excerpt: "The exact English phrases that make you sound confident in a job interview — organized by interview stage, each with a pronunciation tip so the words land the way you mean them."
 publishDate: "2026-06-09"
-lastmod: "2026-06-09"
+lastmod: "2026-07-01"
 categories:
   - "Business English"
   - "Career & Leadership"
@@ -268,6 +268,30 @@ If you noticed a theme in the tips, you've already learned the most valuable les
 4. **Drop the Spanish word endings.** No "-cia," no "-to," no "-ge." English words end harder and shorter than they look.
 
 These four rules fix the majority of interview pronunciation slips. For a deeper drill, our guide to the [50 English words Mexican professionals mispronounce](/en/blog/english-words-mexican-professionals-mispronounce/) breaks down the exact interference patterns word by word.
+
+---
+
+## Frequently Asked Questions
+
+### What questions are asked in a business English interview?
+
+Most business English interviews follow a predictable arc: an opener ("Tell me about yourself"), behavioral questions ("Tell me about a time you…"), role-specific and technical questions, your questions for them, and the salary conversation. The phrases above are organized by that exact sequence, so you can prepare a clean answer for each stage.
+
+### How do I introduce myself in a business English interview?
+
+Lead with a one-line value proposition, not a resume recap: "I'm a [role] with [X] years in [specialty]." Then give two or three sentences on the results you're known for. Full openers and the pronunciation traps to avoid are in Stage 1 above.
+
+### How do I answer "tell me about yourself" in English?
+
+Use the present-past-future structure: where you are now, the experience that got you here, and why this role is the next step. Keep it under 90 seconds and end on the job you're interviewing for. Rehearse it out loud until it comes out clean.
+
+### What do I say when I don't understand a question in an English interview?
+
+Never guess and answer the wrong thing. Buy a moment and clarify: "Just to make sure I answer the right thing — do you mean [X] or [Y]?" It reads as thoughtful, not weak, and it keeps you from rambling off-target.
+
+### How can I sound more confident in an English job interview?
+
+Confidence in English is mostly delivery, not vocabulary. Cut the hedging ("kind of," "I think maybe"), slow down, and rehearse your key phrases out loud until your mouth knows them. If you want a coach to hear exactly where your delivery slips, [book a free strategy session](/en/book/).
 
 ---
 
