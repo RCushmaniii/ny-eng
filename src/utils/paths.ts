@@ -16,6 +16,7 @@ export interface LocaleRoutes {
   legal: {
     privacy: string;
     terms: string;
+    cancellation: string;
   };
   category: (slug: string) => string;
   blogPage: (n: number) => string;
@@ -39,6 +40,7 @@ export const routes: RoutesByLocale = {
     legal: {
       privacy: "/en/legal/privacy-policy/",
       terms: "/en/legal/terms-of-service/",
+      cancellation: "/en/legal/cancellation-policy/",
     },
     category: (slug: string) => `/en/category/${slug}/`,
     blogPage: (n: number) => (n === 1 ? "/en/blog/" : `/en/blog/${n}/`),
@@ -55,6 +57,7 @@ export const routes: RoutesByLocale = {
     legal: {
       privacy: "/es/legal/privacy-policy/",
       terms: "/es/legal/terms-of-service/",
+      cancellation: "/es/legal/cancellation-policy/",
     },
     category: (slug: string) => `/es/categoria/${slug}/`,
     blogPage: (n: number) => (n === 1 ? "/es/blog/" : `/es/blog/${n}/`),
@@ -67,8 +70,6 @@ export default routes;
 
 // Optional ergonomic helpers (use anywhere)
 export const getRoutes = (lang: Locale) => routes[lang];
-export const hrefCategory = (lang: Locale, slug: string) =>
-  routes[lang].category(slug);
+export const hrefCategory = (lang: Locale, slug: string) => routes[lang].category(slug);
 export const hrefPost = (lang: Locale, slug: string) => routes[lang].post(slug);
-export const hrefBlogPage = (lang: Locale, n: number) =>
-  routes[lang].blogPage(n);
+export const hrefBlogPage = (lang: Locale, n: number) => routes[lang].blogPage(n);

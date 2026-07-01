@@ -5,8 +5,7 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
   const currentYear = new Date().getFullYear();
   return {
     logoLink: routes.es.home,
-    tagline:
-      "Coaching privado de inglés para líderes que no se conforman con ser fluidos.",
+    tagline: "Coaching privado de inglés para líderes que no se conforman con ser fluidos.",
     sections: {
       about: {
         title: "Sobre Mí",
@@ -53,6 +52,7 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
     legalMenu: [
       { name: "Política de Privacidad", href: routes.es.legal.privacy },
       { name: "Términos de Servicio", href: routes.es.legal.terms },
+      { name: "Política de Cancelación", href: routes.es.legal.cancellation },
     ],
     copyrightText: `© ${currentYear} ${siteConfig.companyName}. Todos los derechos reservados.`,
     defaultFooterCta: {

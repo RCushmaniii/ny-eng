@@ -5,8 +5,7 @@ export const footerContentEn = (siteConfig: { companyName: string }) => {
   const currentYear = new Date().getFullYear();
   return {
     logoLink: routes.en.home,
-    tagline:
-      "Private English coaching for leaders who won't settle for fluent.",
+    tagline: "Private English coaching for leaders who won't settle for fluent.",
     sections: {
       about: {
         title: "About",
@@ -50,6 +49,7 @@ export const footerContentEn = (siteConfig: { companyName: string }) => {
     legalMenu: [
       { name: "Privacy Policy", href: routes.en.legal.privacy },
       { name: "Terms of Service", href: routes.en.legal.terms },
+      { name: "Cancellation Policy", href: routes.en.legal.cancellation },
     ],
     copyrightText: `© ${currentYear} ${siteConfig.companyName}. All rights reserved.`,
     // Default Footer CTA in English (can be overridden by page props passed to Layout)

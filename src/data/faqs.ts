@@ -49,9 +49,9 @@ export const faqLists: Record<string, FaqList> = {
           "Sesiones privadas de 60 minutos en línea por Google Meet; calentamiento, práctica dirigida, retroalimentación inmediata y conversación casual; notas PDF personalizadas después de cada clase.",
       },
       {
-        question: "¿Cuál es tu política de cancelación?",
+        question: "¿Cuál es tu política de cancelación e inasistencias?",
         answer:
-          "Las cancelaciones o reprogramaciones requieren al menos un día hábil de aviso. El pago es antes de cada sesión (individuos) o facturación mensual para empresas.",
+          "Las cancelaciones y reprogramaciones requieren al menos un día hábil (24 horas) de aviso. Si cancelas o reprogramas con menos de 24 horas de aviso, se aplica el cobro completo de la sesión — igual que si hubieras asistido. Las inasistencias se tratan igual: Robert espera hasta 15 minutos, después de lo cual se considera una sesión perdida y se aplica el cobro completo.",
       },
       {
         question: "¿Qué tan rápido veré resultados?",
@@ -67,11 +67,6 @@ export const faqLists: Record<string, FaqList> = {
         question: "¿Ofreces capacitación para líderes senior?",
         answer:
           "Sí, diseño talleres personalizados y sesiones privadas para altos directivos. Contáctame para una propuesta y precios.",
-      },
-      {
-        question: "¿Qué pasa si llego tarde a mi clase?",
-        answer:
-          "Espero hasta 15 minutos después de la hora de inicio; después de eso, se considera inasistencia y aplica el cobro completo.",
       },
     ],
   },
@@ -104,9 +99,9 @@ export const faqLists: Record<string, FaqList> = {
           "Sesiones privadas de 60 minutos en línea por Google Meet; calentamiento, práctica dirigida, retroalimentación inmediata y conversación casual; notas PDF personalizadas después de cada clase.",
       },
       {
-        question: "¿Cuál es tu política de cancelación?",
+        question: "¿Cuál es tu política de cancelación e inasistencias?",
         answer:
-          "Las cancelaciones o reprogramaciones requieren al menos un día hábil de aviso. El pago es antes de cada sesión (individuos) o facturación mensual para empresas.",
+          "Las cancelaciones y reprogramaciones requieren al menos un día hábil (24 horas) de aviso. Si cancelas o reprogramas con menos de 24 horas de aviso, se aplica el cobro completo de la sesión — igual que si hubieras asistido. Las inasistencias se tratan igual: Robert espera hasta 15 minutos, después de lo cual se considera una sesión perdida y se aplica el cobro completo.",
       },
     ],
   },
@@ -139,9 +134,9 @@ export const faqLists: Record<string, FaqList> = {
           "Private 60-minute sessions online via Google Meet; warm-up, targeted practice, on-the-spot feedback, and small talk; customized PDF notes delivered after each class.",
       },
       {
-        question: "What is your cancellation policy?",
+        question: "What is your cancellation and no-show policy?",
         answer:
-          "Cancellations or rescheduling require at least one business day's notice. Payment is due before each session (individuals) or monthly invoicing for companies.",
+          "Cancellations and reschedules require at least one business day (24 hours') notice. If you cancel or reschedule with less than 24 hours' notice, the full session fee applies — the same as if you attended. No-shows are treated the same: Robert waits up to 15 minutes, after which it counts as a missed session and the full fee applies.",
       },
       {
         question: "How fast will I improve?",
@@ -157,11 +152,6 @@ export const faqLists: Record<string, FaqList> = {
         question: "Do you offer training for senior leadership?",
         answer:
           "Yes—I design custom workshops and private coaching sessions for senior leaders. Contact me for a proposal and pricing.",
-      },
-      {
-        question: "What happens if I'm late to my lesson?",
-        answer:
-          "I wait up to 15 minutes after the start time; after that the lesson is considered a no-show and the full fee applies.",
       },
     ],
   },
@@ -194,9 +184,9 @@ export const faqLists: Record<string, FaqList> = {
           "Private 60-minute sessions online via Google Meet; warm-up, targeted practice, on-the-spot feedback, and small talk; customized PDF notes delivered after each class.",
       },
       {
-        question: "What is your cancellation policy?",
+        question: "What is your cancellation and no-show policy?",
         answer:
-          "Cancellations or rescheduling require at least one business day's notice. Payment is due before each session (individuals) or monthly invoicing for companies.",
+          "Cancellations and reschedules require at least one business day (24 hours') notice. If you cancel or reschedule with less than 24 hours' notice, the full session fee applies — the same as if you attended. No-shows are treated the same: Robert waits up to 15 minutes, after which it counts as a missed session and the full fee applies.",
       },
     ],
   },
@@ -209,8 +199,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
     sections: [
       {
         title: "Mexico & Latin America",
-        description:
-          "Questions specific to professionals working from Mexico and Latin America.",
+        description: "Questions specific to professionals working from Mexico and Latin America.",
         faqs: [
           {
             question:
@@ -238,8 +227,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
       },
       {
         title: "Getting Started",
-        description:
-          "Everything you need to know about beginning your coaching journey.",
+        description: "Everything you need to know about beginning your coaching journey.",
         faqs: [
           {
             question: "How do I get started with coaching?",
@@ -252,8 +240,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
               "The first session is a diagnostic. I identify your specific communication gaps, understand your professional context, and create a prioritized roadmap. You'll leave with 2-3 immediate action items you can start using that same week.",
           },
           {
-            question:
-              "Do I need to commit to a long-term package, or can I try a single session?",
+            question: "Do I need to commit to a long-term package, or can I try a single session?",
             answer:
               "You can absolutely start with a single session at 500 MXN / $30 USD. Many clients try one session and then choose to continue because they see immediate value. There's no pressure to commit — results speak for themselves.",
           },
@@ -266,8 +253,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
       },
       {
         title: "Investment & Value",
-        description:
-          "What it costs and why this is different from standard English classes.",
+        description: "What it costs and why this is different from standard English classes.",
         faqs: [
           {
             question: "What is the cost of your coaching?",
@@ -280,14 +266,12 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
               "Traditional ESL courses focus on grammar rules and vocabulary lists. I focus on real-time performance under pressure—handling Q&A, negotiating in English, and projecting authority in high-stakes meetings. You won't be memorizing verb tenses; you'll be practicing the exact scenarios you face at work.",
           },
           {
-            question:
-              "What kind of results can a C-level executive expect in 90 days?",
+            question: "What kind of results can a C-level executive expect in 90 days?",
             answer:
               "Most executives see measurable improvement in 5–8 sessions: faster response times in meetings, more confident negotiation, and the ability to 'own the room' without translating in their head. By 90 days, you should be leading high-stakes conversations with the same authority you have in your native language.",
           },
           {
-            question:
-              "Will this help with my accent, or is it just vocabulary?",
+            question: "Will this help with my accent, or is it just vocabulary?",
             answer:
               "Both, but the focus is strategic. I help you identify which pronunciation patterns are actually hurting your credibility (most aren't), and I focus on clarity and confidence, not erasing your accent. The goal is to be understood and respected, not to sound like a native speaker.",
           },
@@ -298,19 +282,17 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
         description: "How sessions work, scheduling, and policies.",
         faqs: [
           {
-            question:
-              "Do you provide invoices for corporate reimbursement or company expense?",
+            question: "Do you provide invoices for corporate reimbursement or company expense?",
             answer:
               "Yes—I provide professional invoices (facturas) for corporate clients. Companies are billed monthly at the end of each month for all sessions completed.",
           },
           {
-            question: "What is your cancellation or rescheduling policy?",
+            question: "What is your cancellation and no-show policy?",
             answer:
-              "Cancellations or rescheduling require at least one business day's notice. Payment is due before each session (individuals) or monthly invoicing for companies. I wait up to 15 minutes after the start time; after that, the session is considered a no-show and the full fee applies.",
+              "Cancellations and reschedules require at least one business day (24 hours') notice. If you cancel or reschedule with less than 24 hours' notice, the full session fee applies — the same as if you attended. No-shows are treated the same: Robert waits up to 15 minutes, after which it counts as a missed session and the full fee applies.",
           },
           {
-            question:
-              "How many sessions per week do you recommend for optimal results?",
+            question: "How many sessions per week do you recommend for optimal results?",
             answer:
               "For rapid improvement, I recommend 2–3 sessions per week. For maintenance or lighter goals, 1 session per week works. The key is consistency and practice between sessions.",
           },
@@ -321,14 +303,12 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
         description: "How the coaching works and what makes it effective.",
         faqs: [
           {
-            question:
-              "I know the grammar, but I freeze under pressure. How do you fix that?",
+            question: "I know the grammar, but I freeze under pressure. How do you fix that?",
             answer:
               "This is a performance issue, not a knowledge issue. I use high-pressure simulation drills—rapid-fire Q&A, objection handling, and real-time pivoting—to rewire your brain to think directly in English under stress. It's like athletic training for your communication.",
           },
           {
-            question:
-              "What specific skills do you cover (e.g., Negotiation, Q&A, Presentation)?",
+            question: "What specific skills do you cover (e.g., Negotiation, Q&A, Presentation)?",
             answer:
               "I cover the exact scenarios you face: boardroom presentations, investor pitches, client negotiations, rapid-fire Q&A, and high-pressure troubleshooting. Each session is customized to your industry and role.",
           },
@@ -339,8 +319,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
               "I specialize in IT, professional services (law, medicine, consulting), logistics, and executive leadership. I understand the jargon and high-stakes dynamics of these fields, so you're not wasting time explaining your world to me.",
           },
           {
-            question:
-              "What materials or resources are included in the coaching?",
+            question: "What materials or resources are included in the coaching?",
             answer:
               "After each session, you receive customized PDF notes with key phrases, pronunciation tips, and practice scenarios tailored to your goals. You also get access to my recommended resources for self-study between sessions.",
           },
@@ -363,7 +342,8 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
               "Sí — esta es mi especialidad. Trabajo principalmente con profesionales mexicanos y latinoamericanos. Entiendo los falsos cognados (actualmente ≠ actually), las diferencias de comunicación cultural (franqueza vs. formalidad), y los patrones de pronunciación específicos que afectan la credibilidad con clientes norteamericanos.",
           },
           {
-            question: "¿Puedes ayudarme a prepararme para reuniones con oficinas centrales en EE.UU.?",
+            question:
+              "¿Puedes ayudarme a prepararme para reuniones con oficinas centrales en EE.UU.?",
             answer:
               "Por supuesto. Muchos de mis clientes reportan a liderazgo basado en EE.UU. o trabajan con clientes norteamericanos. Practicamos los escenarios específicos de reuniones que enfrentas — actualizaciones de estatus, llamadas de escalación, revisiones trimestrales — usando el estilo de comunicación que los ejecutivos de EE.UU. esperan.",
           },
@@ -382,8 +362,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
       },
       {
         title: "Cómo Empezar",
-        description:
-          "Todo lo que necesitas saber para comenzar tu camino de coaching.",
+        description: "Todo lo que necesitas saber para comenzar tu camino de coaching.",
         faqs: [
           {
             question: "¿Cómo empiezo con el coaching?",
@@ -410,8 +389,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
       },
       {
         title: "Inversión y Valor",
-        description:
-          "Cuánto cuesta y por qué esto es diferente de las clases de inglés estándar.",
+        description: "Cuánto cuesta y por qué esto es diferente de las clases de inglés estándar.",
         faqs: [
           {
             question: "¿Cuál es el costo de tu coaching?",
@@ -419,14 +397,12 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
               "Tarifa Actual: 500 MXN ($30 USD) por sesión. Paquete de 12 Sesiones: 6,000 MXN / $360 USD. Por qué esto es diferente de las clases de inglés estándar: La mayoría de las clases de inglés se enfocan en gramática genérica y escenarios de libros de texto. Yo opero como tu socio estratégico de comunicación. Trabajamos directamente en tus desafíos del mundo real: tu próxima presentación ante la junta, tu negociación salarial o tus correos con clientes. Cada sesión está completamente personalizada para tu industria y tus KPIs específicos. No solo estás aprendiendo inglés; estás adquiriendo la presencia ejecutiva necesaria para cerrar tratos y avanzar en tu carrera. Debido al alto nivel de personalización y preparación requerido para este nivel de coaching, no ofrezco descuentos por volumen.",
           },
           {
-            question:
-              "¿En qué se diferencia esto de un curso de ESL tradicional?",
+            question: "¿En qué se diferencia esto de un curso de ESL tradicional?",
             answer:
               "Los cursos de ESL tradicionales se enfocan en reglas gramaticales y listas de vocabulario. Yo me enfoco en el desempeño en tiempo real bajo presión—manejar preguntas y respuestas, negociar en inglés y proyectar autoridad en reuniones de alto riesgo. No memorizarás tiempos verbales; practicarás los escenarios exactos que enfrentas en el trabajo.",
           },
           {
-            question:
-              "¿Qué tipo de resultados puede esperar un ejecutivo de nivel C en 90 días?",
+            question: "¿Qué tipo de resultados puede esperar un ejecutivo de nivel C en 90 días?",
             answer:
               "La mayoría de los ejecutivos ven mejoras medibles en 5–8 sesiones: tiempos de respuesta más rápidos en reuniones, negociación más confiada y la capacidad de 'dominar la sala' sin traducir en su cabeza. A los 90 días, deberías estar liderando conversaciones de alto riesgo con la misma autoridad que tienes en tu idioma nativo.",
           },
@@ -442,19 +418,17 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
         description: "Cómo funcionan las sesiones, programación y políticas.",
         faqs: [
           {
-            question:
-              "¿Proporcionas facturas para reembolso corporativo o gastos de la empresa?",
+            question: "¿Proporcionas facturas para reembolso corporativo o gastos de la empresa?",
             answer:
               "Sí—proporciono facturas profesionales para clientes corporativos. Las empresas se facturan mensualmente al final de cada mes por todas las sesiones completadas.",
           },
           {
-            question: "¿Cuál es tu política de cancelación o reprogramación?",
+            question: "¿Cuál es tu política de cancelación e inasistencias?",
             answer:
-              "Las cancelaciones o reprogramaciones requieren al menos un día hábil de aviso. El pago es antes de cada sesión (individuos) o facturación mensual para empresas. Espero hasta 15 minutos después de la hora de inicio; después de eso, se considera inasistencia y aplica el cobro completo.",
+              "Las cancelaciones y reprogramaciones requieren al menos un día hábil (24 horas) de aviso. Si cancelas o reprogramas con menos de 24 horas de aviso, se aplica el cobro completo de la sesión — igual que si hubieras asistido. Las inasistencias se tratan igual: Robert espera hasta 15 minutos, después de lo cual se considera una sesión perdida y se aplica el cobro completo.",
           },
           {
-            question:
-              "¿Cuántas sesiones por semana recomiendas para obtener resultados óptimos?",
+            question: "¿Cuántas sesiones por semana recomiendas para obtener resultados óptimos?",
             answer:
               "Para una mejora rápida, recomiendo 2–3 sesiones por semana. Para mantenimiento u objetivos más ligeros, 1 sesión por semana funciona. La clave es la consistencia y la práctica fuera de nuestras sesiones.",
           },
@@ -465,8 +439,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
         description: "Cómo funciona el coaching y qué lo hace efectivo.",
         faqs: [
           {
-            question:
-              "Conozco la gramática, pero me congelo bajo presión. ¿Cómo arreglas eso?",
+            question: "Conozco la gramática, pero me congelo bajo presión. ¿Cómo arreglas eso?",
             answer:
               "Este es un problema de desempeño, no de conocimiento. Usamos simulaciones de alta presión—preguntas y respuestas rápidas, manejo de objeciones y adaptación en tiempo real—para reprogramar tu cerebro y que pienses directamente en inglés bajo estrés. Es como entrenamiento atlético para tu comunicación.",
           },
