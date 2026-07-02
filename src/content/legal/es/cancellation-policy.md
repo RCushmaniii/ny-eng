@@ -41,8 +41,7 @@ Si te conectas tarde pero dentro de esos 15 minutos, aprovechamos el tiempo que 
 Solo avísame lo antes posible. Las formas más rápidas de contactarme:
 
 - **WhatsApp:** +52 33 1559 0572
-- **Correo:** privacy@newyorkenglish.com
-- **O llámame directamente**
+- **Correo:** robert@nyenglishteacher.com
 
 Por favor envía tu solicitud de cancelación o reprogramación con al menos un día hábil de anticipación para poder encontrar un nuevo horario que te funcione.
 
@@ -60,5 +59,5 @@ Entiendo que surgen imprevistos. Si una emergencia real te impide asistir, cont�
 Si algo no queda claro, pregúntame antes de reservar:
 
 - **WhatsApp:** +52 33 1559 0572
-- **Correo:** privacy@newyorkenglish.com
+- **Correo:** robert@nyenglishteacher.com
 - **Operador:** Robert Cushman, New York English, Guadalajara, México

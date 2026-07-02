@@ -61,7 +61,7 @@ export const faqLists: Record<string, FaqList> = {
       {
         question: "¿Cómo agendo o reprogramo una clase?",
         answer:
-          "Solo mándame un mensaje por WhatsApp, escríbeme un correo o llama directamente. Por favor avisa con al menos un día hábil de anticipación.",
+          "Solo mándame un mensaje por WhatsApp o escríbeme un correo. Por favor avisa con al menos un día hábil de anticipación.",
       },
       {
         question: "¿Ofreces capacitación para líderes senior?",
@@ -146,7 +146,7 @@ export const faqLists: Record<string, FaqList> = {
       {
         question: "How do I schedule or reschedule a lesson?",
         answer:
-          "Simply send me a message on WhatsApp, email me, or call directly. Please give at least one business day's notice.",
+          "Simply send me a message on WhatsApp or email me. Please give at least one business day's notice.",
       },
       {
         question: "Do you offer training for senior leadership?",

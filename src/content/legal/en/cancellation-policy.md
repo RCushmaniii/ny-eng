@@ -41,8 +41,7 @@ If you join late but within those 15 minutes, we'll use whatever time remains â€
 Just let me know as early as you can. The fastest ways to reach me:
 
 - **WhatsApp:** +52 33 1559 0572
-- **Email:** privacy@newyorkenglish.com
-- **Or call directly**
+- **Email:** robert@nyenglishteacher.com
 
 Please send your cancellation or reschedule request at least one business day ahead so we can find a new time that works.
 
@@ -60,5 +59,5 @@ Life happens. If a genuine emergency prevents you from attending, reach out as s
 If anything here is unclear, please ask before you book:
 
 - **WhatsApp:** +52 33 1559 0572
-- **Email:** privacy@newyorkenglish.com
+- **Email:** robert@nyenglishteacher.com
 - **Operator:** Robert Cushman, New York English, Guadalajara, Mexico
