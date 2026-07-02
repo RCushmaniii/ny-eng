@@ -4,6 +4,41 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-07-01 (SEO schema hardening + demand-backed content + local-authority kickoff)
+
+### Accomplished
+
+- PR #207: added `offers` block (`price:0 USD`, InStock) to the full Course schema on all 14 course/master-class landing pages (7 EN + 7 ES) that had `isAccessibleForFree` but no offers. Sub-lesson/capstone/unit pages correctly left alone (primary entity is `LearningResource`, Course is only a reference stub).
+- PR #208: FAQPage schema on the 6 posts with visible FAQ sections (interview-phrases, free-courses, real-cost — EN+ES) via new `faq` frontmatter field + existing `FAQSchema`; real-cost answers linearized to clean plain text. Local `Service` schema w/ city-level `areaServed` on the 3 geo posts (EN+ES) via new `serviceArea` field + new `LocalServiceSchema.astro`. Fixed a real sitewide ordinal bug in `Date.astro` (forced "th" past day 20 → 21th/22th/31th; now correct).
+- PR #209: expanded the thin `/es/blog/dominar-negocios/` into a ~1,700-word ES pillar for "coaching de inglés de negocios" (site's biggest commercial demand: 212 impr/180d, was position 37). EN twin brought to parity + de-crufted. Both gained FAQPage schema. Driven by GSC striking-distance analysis.
+- PR #210: fixed NAP consistency — replaced fake `+1-888-888-8888` with real `+52-33-1559-0572` and added GBP address/geo/`sameAs` to Org + ProfessionalService schema. Added `docs/LOCAL-SEO-PLAN.md`.
+- PR #211: `Blog`/`ItemList` schema on `/en/blog/` + `/es/blog/` (page-1 only) via `PaginatedBlogLayout`.
+- SEO automation after each merge: GSC sitemap + IndexNow, all HTTP 200. All builds clean; JSON-LD verified in `dist`; ES Iberian-marker grep clean.
+- Scheduled a Google Calendar reminder (2026-08-05, Guadalajara time) to re-pull the striking-distance report and check if `dominar-negocios` climbs from position 37.
+
+### Decisions Made
+
+- Pillar strategy over new pages: expand the post Google already ranks for a query rather than write a competitor (anti-cannibalization). First test = dominar-negocios.
+- Strategic finding: on-page SEO is strong; the real bottleneck is domain authority. Local Guadalajara SEO (GBP + citations + backlinks) is the lever — captured in `docs/LOCAL-SEO-PLAN.md`.
+- Declined Review/AggregateRating schema (Google restricts self-serving on-site review markup) and a bulk new-article push (site already has 39 EN / 40 ES posts; volume isn't the gap).
+- Kept physical GBP address in site schema despite "online only" content framing — NAP consistency with GBP is the stronger local signal (flagged for Robert to override).
+
+### Immediate Next Steps
+
+- [ ] ~2026-08-05: re-pull striking-distance report; if dominar-negocios climbed, repeat pillar pattern on next high-intent query; if stalled, execute off-page plan.
+- [ ] Robert (GBP dashboard): reply to all 15 reviews, set up review solicitation (+2–3/mo), weekly GBP posts — per `docs/LOCAL-SEO-PLAN.md` P2.
+- [ ] On request, Claude to draft P5 assets: review-request templates + owner-response drafts for the 15 reviews + outreach emails.
+
+### Technical Debt
+
+- FAQPage rich-result *display* is discretionary (Google curtailed it for low-authority sites) — markup is correct but rendering isn't guaranteed. Low risk, no action.
+
+### Open Questions / Blockers
+
+- Whether the single pillar expansion is enough to move dominar-negocios off page 4 given low domain authority — resolved by the Aug 5 re-check.
+
+---
+
 ## Session: 2026-07-01 (cancellation policy — FAQs + dedicated page)
 
 ### Accomplished
