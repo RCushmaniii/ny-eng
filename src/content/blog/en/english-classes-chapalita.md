@@ -8,6 +8,8 @@ categories:
   - "Business English"
 readingTime: "5 min read"
 audience: "Professionals in Chapalita, Guadalajara who want to improve their business or executive English online"
+featuredImage: "./images/chapalita.webp"
+imageAlt: "Stone fountain and white kiosk among palm trees at the Glorieta Chapalita park in Guadalajara"
 translations:
   es: "/es/blog/clases-ingles-chapalita/"
 publish: true

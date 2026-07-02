@@ -8,6 +8,8 @@ categories:
   - "Business English"
 readingTime: "6 min read"
 audience: "Professionals across Guadalajara who work with US clients or remote teams and want to improve their business or executive English online"
+featuredImage: "./images/guadalajara.webp"
+imageAlt: "The neoclassical facade of the Teatro Degollado in downtown Guadalajara at dusk"
 translations:
   es: "/es/blog/clases-ingles-guadalajara/"
 publish: true

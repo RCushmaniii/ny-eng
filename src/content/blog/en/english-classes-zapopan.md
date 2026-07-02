@@ -8,6 +8,8 @@ categories:
   - "Business English"
 readingTime: "5 min read"
 audience: "Corporate and tech professionals in Zapopan who want to improve their business or executive English online"
+featuredImage: "./images/zapopan.webp"
+imageAlt: "The Basilica of Zapopan and its plaza at sunset, with the Guadalajara metropolitan skyline behind"
 translations:
   es: "/es/blog/clases-ingles-zapopan/"
 publish: true

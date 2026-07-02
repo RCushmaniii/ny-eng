@@ -8,6 +8,8 @@ categories:
   - "Coaching de Inglés"
 readingTime: "5 min read"
 audience: "Profesionales en Chapalita, Guadalajara que quieren mejorar su inglés de negocios o ejecutivo en línea"
+featuredImage: "./images/chapalita.webp"
+imageAlt: "Fuente de piedra y kiosco blanco entre palmeras en el parque de la Glorieta Chapalita, Guadalajara"
 translations:
   en: "/en/blog/english-classes-chapalita/"
 publish: true
