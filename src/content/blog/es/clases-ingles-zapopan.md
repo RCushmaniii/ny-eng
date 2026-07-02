@@ -8,6 +8,8 @@ categories:
   - "Coaching de Inglés"
 readingTime: "5 min read"
 audience: "Profesionales corporativos y de tecnología en Zapopan que quieren mejorar su inglés de negocios o ejecutivo en línea"
+featuredImage: "./images/zapopan.webp"
+imageAlt: "La Basílica de Zapopan y su plaza al atardecer, con el horizonte de la zona metropolitana de Guadalajara al fondo"
 translations:
   en: "/en/blog/english-classes-zapopan/"
 publish: true
