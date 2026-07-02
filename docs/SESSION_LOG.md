@@ -4,6 +4,36 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-07-01 (cancellation policy — FAQs + dedicated page)
+
+### Accomplished
+
+- PR #202: shipped cancellation & no-show policy. Root cause of the chatbot's non-answer was that the FAQ stated the notice window but never the fee. New dedicated page at `/en/legal/cancellation-policy/` + `/es/legal/cancellation-policy/` (Mexican Professional Spanish), wired through i18n (`TKey`, `routeFor` EN/ES, `getAllTKeys`), `paths.ts`, `translationMaps.ts`, footer legal menu (both langs), and a notice/link on the booking pages. Added FAQPage JSON-LD schema to `/en/faqs/` + `/es/faqs/` (was missing entirely).
+- PR #202 (follow-up commit): consolidated cancellation + no-show + reschedule into ONE verbatim block per Robert (RAG-chunk reasoning — any retrieved chunk carries the whole policy). Removed the standalone "What happens if I'm late?" FAQ entries; folded no-show into the combined block. Reschedule treated same as cancellation.
+- PR #203: removed the "call directly" contact option (Robert doesn't take direct phone calls) from the policy page + scheduling FAQ (EN+ES); changed policy-page contact email from `privacy@newyorkenglish.com` to `robert@nyenglishteacher.com`.
+- SEO automation run after each merge: Google sitemap resubmitted, Bing + IndexNow submitted for the 2 new URLs, IndexNow re-pinged for the 4 changed URLs. All HTTP 200.
+
+### Decisions Made
+
+- Late reschedule charged same as late cancellation: existing copy already lumped "cancellations or rescheduling" under one notice rule; consistent and non-abusable. Confirmed by Robert.
+- Appended to single-file `docs/SESSION_LOG.md` (more recently maintained, Jun 13) rather than the older `docs/session-logs/` dir (last touched May 18) — matches global CLAUDE.md standard.
+- Kept the verbatim block third-person ("Robert waits…") as Robert specified, even though surrounding page copy is first-person.
+
+### Immediate Next Steps
+
+- [ ] Check `ny-ai-chatbot` repo's knowledge-base source — does it pull from the live site (benefits automatically) or a hand-maintained KB (needs manual update)? The site now answers cancellation; the bot only does if its KB sees it.
+- [ ] Decide whether to disable Cloudflare Email Address Obfuscation on the legal route so scrapers/the bot see the plaintext `robert@nyenglishteacher.com` (currently `[email protected]` + `data-cfemail` in raw HTML; humans see it fine in-browser).
+
+### Technical Debt
+
+- Cancellation page mixes voices: verbatim lead block is third-person ("Robert waits"), detailed sections are first-person ("I wait"). Intentional per Robert; align later if it reads oddly.
+
+### Open Questions / Blockers
+
+- None blocking. Two follow-ups above are Robert's call.
+
+---
+
 ## Session: 2026-06-13 (neon.ts runtime env fix)
 
 ### Accomplished
