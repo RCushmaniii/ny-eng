@@ -12,6 +12,10 @@ featuredImage: "./images/guadalajara.webp"
 imageAlt: "The neoclassical facade of the Teatro Degollado in downtown Guadalajara at dusk"
 translations:
   es: "/es/blog/clases-ingles-guadalajara/"
+serviceArea:
+  - "Guadalajara"
+  - "Zapopan"
+  - "Jalisco"
 publish: true
 seo:
   title: "English Coaching in Guadalajara | NY English"

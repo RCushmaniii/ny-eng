@@ -12,6 +12,11 @@ featuredImage: "./images/chapalita.webp"
 imageAlt: "Fuente de piedra y kiosco blanco entre palmeras en el parque de la Glorieta Chapalita, Guadalajara"
 translations:
   en: "/en/blog/english-classes-chapalita/"
+serviceArea:
+  - "Chapalita"
+  - "Guadalajara"
+  - "Zapopan"
+  - "Jalisco"
 publish: true
 seo:
   title: "Clases de inglés en Chapalita, GDL | NY English"

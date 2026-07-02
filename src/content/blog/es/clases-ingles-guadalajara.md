@@ -12,6 +12,10 @@ featuredImage: "./images/guadalajara.webp"
 imageAlt: "La fachada neoclásica del Teatro Degollado en el centro de Guadalajara al anochecer"
 translations:
   en: "/en/blog/english-classes-guadalajara/"
+serviceArea:
+  - "Guadalajara"
+  - "Zapopan"
+  - "Jalisco"
 publish: true
 seo:
   title: "Clases de Inglés en Guadalajara | NY English"

@@ -47,7 +47,13 @@ if (lang === 'es') {
         day: 'numeric'
     }).replace(/(\d+)(?=(,))/, (match: string) => {
         const day = parseInt(match);
-        const suffix = ['th', 'st', 'nd', 'rd'][(day % 10 > 3 || day > 20) ? 0 : day % 10];
+        // Correct English ordinal: 11th/12th/13th are exceptions; otherwise use the last digit.
+        const lastTwo = day % 100;
+        const lastOne = day % 10;
+        const suffix =
+            lastTwo >= 11 && lastTwo <= 13
+                ? 'th'
+                : (['th', 'st', 'nd', 'rd'][lastOne] ?? 'th');
         return day + suffix;
     });
 }

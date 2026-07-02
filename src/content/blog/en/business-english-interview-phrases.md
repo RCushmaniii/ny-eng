@@ -12,6 +12,27 @@ featuredImage: "./images/us-interview-prep.webp"
 imageAlt: "Mexican professional speaking confidently in an English-language job interview"
 translations:
   es: "/es/blog/frases-ingles-entrevista-trabajo/"
+faq:
+  - question: >-
+      What questions are asked in a business English interview?
+    answer: >-
+      Most business English interviews follow a predictable arc: an opener ("Tell me about yourself"), behavioral questions ("Tell me about a time you…"), role-specific and technical questions, your questions for them, and the salary conversation. The phrases above are organized by that exact sequence, so you can prepare a clean answer for each stage.
+  - question: >-
+      How do I introduce myself in a business English interview?
+    answer: >-
+      Lead with a one-line value proposition, not a resume recap: "I'm a [role] with [X] years in [specialty]." Then give two or three sentences on the results you're known for. Full openers and the pronunciation traps to avoid are in Stage 1 above.
+  - question: >-
+      How do I answer "tell me about yourself" in English?
+    answer: >-
+      Use the present-past-future structure: where you are now, the experience that got you here, and why this role is the next step. Keep it under 90 seconds and end on the job you're interviewing for. Rehearse it out loud until it comes out clean.
+  - question: >-
+      What do I say when I don't understand a question in an English interview?
+    answer: >-
+      Never guess and answer the wrong thing. Buy a moment and clarify: "Just to make sure I answer the right thing — do you mean [X] or [Y]?" It reads as thoughtful, not weak, and it keeps you from rambling off-target.
+  - question: >-
+      How can I sound more confident in an English job interview?
+    answer: >-
+      Confidence in English is mostly delivery, not vocabulary. Cut the hedging ("kind of," "I think maybe"), slow down, and rehearse your key phrases out loud until your mouth knows them. If you want a coach to hear exactly where your delivery slips, book a free strategy session.
 publish: true
 seo:
   title: "30 Business English Interview Phrases (+ Pronunciation)"

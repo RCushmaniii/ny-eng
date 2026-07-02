@@ -1,0 +1,58 @@
+---
+import { siteConfig } from "@data/config.ts";
+
+// Page-scoped Service schema for local/geo landing posts.
+// Emits a Service node tied to the specific post URL with city-level areaServed,
+// strengthening relevance for "English coaching in [place]" queries.
+interface Props {
+  name: string;
+  description: string;
+  url: string; // absolute URL of the post
+  areaServed: string[]; // e.g. ["Guadalajara", "Zapopan", "Jalisco"]
+  lang?: "en" | "es";
+}
+
+const { name, description, url, areaServed, lang = "en" } = Astro.props;
+
+const siteUrl = (siteConfig.siteUrl || "https://www.nyenglishteacher.com").replace(/\/$/, "");
+
+const service = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": lang === "es" ? "Coaching de inglés de negocios" : "Business English Coaching",
+  "name": name,
+  "description": description,
+  "url": url,
+  "inLanguage": lang === "es" ? "es-MX" : "en-US",
+  "provider": {
+    "@type": "ProfessionalService",
+    "@id": `${siteUrl}/#professional-service`,
+    "name": siteConfig.companyName,
+    "url": siteUrl,
+  },
+  "areaServed": areaServed.map((area) => ({
+    "@type": "AdministrativeArea",
+    "name": area,
+  })),
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": `${siteUrl}/${lang}/${lang === "es" ? "reservar" : "book"}/`,
+    "availableLanguage": ["en-US", "es-MX"],
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description":
+      lang === "es"
+        ? "Sesión inicial gratuita de coaching de inglés en línea"
+        : "Free initial online English coaching session",
+  },
+};
+---
+
+{
+  areaServed && areaServed.length > 0 && (
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(service)} />
+  )
+}

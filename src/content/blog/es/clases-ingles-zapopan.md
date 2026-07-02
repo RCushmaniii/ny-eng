@@ -12,6 +12,10 @@ featuredImage: "./images/zapopan.webp"
 imageAlt: "La Basílica de Zapopan y su plaza al atardecer, con el horizonte de la zona metropolitana de Guadalajara al fondo"
 translations:
   en: "/en/blog/english-classes-zapopan/"
+serviceArea:
+  - "Zapopan"
+  - "Guadalajara"
+  - "Jalisco"
 publish: true
 seo:
   title: "Inglés de Negocios en Zapopan | NY English"
