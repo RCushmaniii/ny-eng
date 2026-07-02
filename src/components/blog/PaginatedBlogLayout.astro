@@ -77,6 +77,34 @@ const nextPage = shouldShowPagination && currentPage < lastPage ? pagePath(curre
 const seoTitle = title;
 const seoDescription = description || subtitle || "";
 
+// Blog + ItemList structured data for the listing page (page 1 only, to avoid
+// emitting duplicate/competing schema across paginated pages). Built from the
+// posts this layout already receives; helps search engines model the archive.
+const SITE = "https://www.nyenglishteacher.com";
+const postUrl = (p: BlogPost) => `${SITE}${base}/${(p.id.split("/").pop() || "").replace(/\.mdx?$/, "")}/`;
+const blogListingSchema =
+  currentPage === 1 && posts.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "@id": `${SITE}${canonicalUrl}#blog`,
+        url: `${SITE}${canonicalUrl}`,
+        name: seoTitle,
+        description: seoDescription,
+        inLanguage: detectedLang === "es" ? "es-MX" : "en-US",
+        blogPost: posts.map((p) => ({
+          "@type": "BlogPosting",
+          headline: p.data.title,
+          url: postUrl(p),
+          datePublished: (p.data.publishDate instanceof Date
+            ? p.data.publishDate
+            : new Date(p.data.publishDate)
+          ).toISOString(),
+          ...(p.data.excerpt ? { description: p.data.excerpt } : {}),
+        })),
+      }
+    : null;
+
 // Convert hreflang format to lang format for Base layout
 const convertedHreflangs = languageAlternates?.map(alt => ({
   lang: alt.hreflang,
@@ -92,6 +120,9 @@ const convertedHreflangs = languageAlternates?.map(alt => ({
     customHreflangs={convertedHreflangs}
     customCanonical={canonicalUrl}
 >
+    {blogListingSchema && (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(blogListingSchema)} />
+    )}
     <main>
     <InnerHero content={{
       title: heroTitle || title,
