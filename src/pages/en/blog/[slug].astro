@@ -3,6 +3,8 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Base from '@layouts/Base.astro';
 import BlogPostSchema from '@components/seo/BlogPostSchema.astro';
 import BreadcrumbSchema from '@components/seo/BreadcrumbSchema.astro';
+import FAQSchema from '@components/seo/FAQSchema.astro';
+import LocalServiceSchema from '@components/seo/LocalServiceSchema.astro';
 import Breadcrumbs from '@components/ui/Breadcrumbs.astro';
 import CategoryPill from '@components/ui/CategoryPill.astro';
 // FIX: Rename the imported component to avoid conflict with the native Date object
@@ -181,6 +183,18 @@ const customHreflangs = [
     { name: "Blog", url: "https://www.nyenglishteacher.com/en/blog/" },
     { name: post.data.title, url: `https://www.nyenglishteacher.com${postUrl}` }
   ]} />
+  {post.data.faq && post.data.faq.length > 0 && (
+    <FAQSchema faqs={post.data.faq} />
+  )}
+  {post.data.serviceArea && post.data.serviceArea.length > 0 && (
+    <LocalServiceSchema
+      name={post.data.title}
+      description={post.data.excerpt}
+      url={`https://www.nyenglishteacher.com${postUrl}`}
+      areaServed={post.data.serviceArea}
+      lang="en"
+    />
+  )}
 
   <section class="relative w-full">
     <div class="w-full h-screen fixed top-0 left-0 -z-10 overflow-hidden">

@@ -12,6 +12,11 @@ featuredImage: "./images/chapalita.webp"
 imageAlt: "Stone fountain and white kiosk among palm trees at the Glorieta Chapalita park in Guadalajara"
 translations:
   es: "/es/blog/clases-ingles-chapalita/"
+serviceArea:
+  - "Chapalita"
+  - "Guadalajara"
+  - "Zapopan"
+  - "Jalisco"
 publish: true
 seo:
   title: "English Coaching in Chapalita, GDL | NY English"

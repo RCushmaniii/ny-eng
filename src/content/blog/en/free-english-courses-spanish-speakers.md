@@ -13,6 +13,27 @@ featuredImage: "./images/free-english-courses-spanish-speakers.webp"
 imageAlt: "Mexican professional woman at a modern desk with a laptop, studying English online with textbooks and a whiteboard in the background"
 translations:
   es: "cursos-ingles-gratis-hispanohablantes"
+faq:
+  - question: >-
+      Do I need to sign up or create an account?
+    answer: >-
+      No. Open any course and start Unit 1 immediately. No registration, no email, no paywall.
+  - question: >-
+      How long does each course take?
+    answer: >-
+      Each leveled course has 10 units, the Past Tenses Master Class is 6 lessons + 6 bonuses, and Drive the Decision is 10 scenarios + a 12-item reflex drill. Most people complete a unit in 20–30 minutes, though the drills are designed to be repeated — the more you repeat, the more the audio patterns stick.
+  - question: >-
+      Are these courses really free — no hidden upgrade?
+    answer: >-
+      Entirely free. All 10 units, all audio, all exercises. No premium tier, no locked content.
+  - question: >-
+      What kind of voice is used for the audio — is it a real person?
+    answer: >-
+      It's Azure Neural TTS — the same AI voice technology used by Microsoft, Adobe, and LinkedIn. It's not a recording of a person, but it sounds like one. Natural rhythm, natural intonation, no robotic cadence. The executive course uses a different voice profile calibrated to a more formal register.
+  - question: >-
+      Can I take more than one course at the same time?
+    answer: >-
+      Yes. Progress is tracked independently per course, so you can work through the Past Tenses Master Class or Drive the Decision while continuing your main level track.
 publish: true
 seo:
   title: "Free English Courses for Spanish Speakers | NY English"

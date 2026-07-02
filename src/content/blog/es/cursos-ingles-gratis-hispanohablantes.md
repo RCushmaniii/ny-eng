@@ -13,6 +13,27 @@ featuredImage: "./images/cursos-ingles-gratis-hispanohablantes.webp"
 imageAlt: "Profesional mexicana en un escritorio moderno con laptop, estudiando inglés en línea con libros de texto y una pizarra de fondo"
 translations:
   en: "free-english-courses-spanish-speakers"
+faq:
+  - question: >-
+      ¿Necesito registrarme o crear una cuenta?
+    answer: >-
+      No. Abre cualquier curso y empieza la Unidad 1 de inmediato. Sin registro, sin correo electrónico, sin barreras.
+  - question: >-
+      ¿Cuánto tiempo toma cada curso?
+    answer: >-
+      Cada curso por nivel tiene 10 unidades, la Clase Magistral de Tiempos del Pasado es 6 lecciones + 6 bonos, y Dirige la Decisión es 10 escenarios + un drill de reflejo de 12 items. La mayoría de las personas completa una unidad en 20 a 30 minutos, aunque los drills están diseñados para repetirse — cuanto más los repitas, más se fijan los patrones de audio en tu memoria.
+  - question: >-
+      ¿Estos cursos son realmente gratis — no hay una mejora oculta de pago?
+    answer: >-
+      Completamente gratis. Las 10 unidades, todo el audio, todos los ejercicios. Sin nivel premium, sin contenido bloqueado.
+  - question: >-
+      ¿Qué tipo de voz se usa para el audio — es una persona real?
+    answer: >-
+      Es Azure Neural TTS — la misma tecnología de voz con inteligencia artificial que usan Microsoft, Adobe y LinkedIn. No es una grabación de una persona, pero suena como tal. Ritmo natural, entonación natural, sin cadencia robótica. El curso ejecutivo usa un perfil de voz diferente calibrado a un registro más formal.
+  - question: >-
+      ¿Puedo tomar más de un curso al mismo tiempo?
+    answer: >-
+      Sí. El progreso se registra de forma independiente por curso, así que puedes trabajar en la Clase Magistral de Tiempos del Pasado o en Dirige la Decisión mientras continúas con tu nivel principal.
 publish: true
 seo:
   title: "Cursos de Inglés Gratis para Hispanohablantes | NY English"

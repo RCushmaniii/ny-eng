@@ -28,6 +28,19 @@ const blogCollection = defineCollection({
         })
         .optional(),
       ttsVoice: z.string().optional(),
+      // Optional FAQ pairs — when present, the post emits FAQPage structured data.
+      // Mirror the article's on-page Q&A here so the visible copy and the schema stay in sync.
+      faq: z
+        .array(
+          z.object({
+            question: z.string(),
+            answer: z.string(),
+          }),
+        )
+        .optional(),
+      // Optional list of geographic areas served — when present, the post emits
+      // Service structured data with areaServed (used by local/geo landing posts).
+      serviceArea: z.array(z.string()).optional(),
       translations: z
         .object({
           en: z.string().optional(),

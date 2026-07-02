@@ -13,6 +13,27 @@ imageAlt: "Profesional mexicano hablando con seguridad en una entrevista de trab
 translations:
   en: "/en/blog/business-english-interview-phrases/"
   es: "/es/blog/frases-ingles-entrevista-trabajo/"
+faq:
+  - question: >-
+      ¿Qué preguntas hacen en una entrevista de trabajo en inglés?
+    answer: >-
+      La mayoría de las entrevistas en inglés siguen un arco predecible: una apertura ("Tell me about yourself"), preguntas de comportamiento ("Tell me about a time you…"), preguntas técnicas del puesto, tus preguntas para ellos, y la conversación del salario. Las frases de arriba están organizadas por esa misma secuencia, para que prepares una respuesta limpia para cada etapa.
+  - question: >-
+      ¿Cómo me presento en una entrevista en inglés?
+    answer: >-
+      Empieza con una propuesta de valor de una línea, no con un resumen de tu CV: "I'm a [puesto] with [X] years in [especialidad]." Luego da dos o tres oraciones sobre los resultados por los que te conocen. Las aperturas completas y las trampas de pronunciación que debes evitar están en la Etapa 1.
+  - question: >-
+      ¿Cómo respondo "tell me about yourself" en inglés?
+    answer: >-
+      Usa la estructura presente-pasado-futuro: dónde estás ahora, la experiencia que te trajo aquí, y por qué este puesto es el siguiente paso. Mantenlo en menos de 90 segundos y cierra con el puesto para el que te entrevistan. Ensáyalo en voz alta hasta que salga limpio.
+  - question: >-
+      ¿Qué digo cuando no entiendo una pregunta en una entrevista en inglés?
+    answer: >-
+      Nunca adivines y respondas lo que no es. Gana un momento y aclara: "Just to make sure I answer the right thing — do you mean [X] or [Y]?" Se lee como algo reflexivo, no como debilidad, y te evita divagar fuera de tema.
+  - question: >-
+      ¿Cómo puedo sonar más seguro en una entrevista de trabajo en inglés?
+    answer: >-
+      La seguridad en inglés es sobre todo entrega, no vocabulario. Quita las muletillas ("kind of", "I think maybe"), baja la velocidad, y ensaya tus frases clave en voz alta hasta que tu boca las conozca. Si quieres que un coach escuche exactamente dónde se te resbala la entrega, agenda una sesión de estrategia gratuita.
 publish: true
 seo:
   title: "30 Frases en Inglés para Entrevistas (+ Pronunciación)"
