@@ -28,6 +28,12 @@ The professionals I coach in Zapopan tend to have the same story. Their written 
 
 This is a different need from what a residential neighborhood like [Chapalita](/en/blog/english-classes-chapalita/) or the wider [Guadalajara](/en/blog/english-classes-guadalajara/) metro might emphasize. Zapopan's demand is corporate: business and executive English, sharpened for people whose income and advancement depend on it.
 
+## I've Been Inside the Corporate Tech World
+
+There's a reason the corporate side of this comes naturally to me: I didn't arrive at coaching from outside your world. I spent my career in technology — as a software developer and an IT manager — including inside the kind of enterprise environment that fills Zapopan's corporate towers. I've sat in the quarterly review, owned the delivery, and reported up to leadership when the pressure was on.
+
+So when we train your English, I know what you're actually walking into. What a status update needs to sound like when a US client is deciding whether to trust your timeline. How an IT or engineering lead is expected to explain a problem without losing the room. The difference between a professional who can do the work and one who can *represent* it to the enterprise. That's the layer most English coaches can't teach — and in Zapopan's multinational firms, it's often the one that gets people promoted. If you're on the engineering side specifically, [why senior developers need advanced English](/en/blog/why-senior-developers-need-advanced-english/) goes deeper.
+
 ## Why Online Coaching Fits a Corporate Schedule
 
 Here's the honest truth about in-person classes for busy corporate professionals: the commute kills them. You leave a meeting that ran long, fight Zapopan traffic to get across the metro, sit in a class for an hour, then drive home in the dark. Two weeks of that and you start canceling. I've watched it happen to talented people.
