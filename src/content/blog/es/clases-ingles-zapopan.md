@@ -28,6 +28,12 @@ Los profesionales a los que doy coaching en Zapopan suelen tener la misma histor
 
 Es una necesidad distinta a la que podría tener una colonia residencial como [Chapalita](/es/blog/clases-ingles-chapalita/) —un barrio tranquilo dentro de la misma zona de Zapopan y Guadalajara— o la [zona metropolitana de Guadalajara](/es/blog/clases-ingles-guadalajara/) en su conjunto. La demanda de Zapopan es corporativa: inglés de negocios y ejecutivo, afinado para quienes dependen de él para sus ingresos y su crecimiento.
 
+## He estado dentro del mundo corporativo tech
+
+Hay una razón por la que la parte corporativa de esto me sale natural: no llegué al coaching desde afuera de tu mundo. Pasé mi carrera en tecnología —como desarrollador de software y gerente de TI—, incluso dentro del tipo de entorno empresarial que llena las torres corporativas de Zapopan. Me he sentado en la revisión trimestral, he sido responsable de la entrega y he reportado a la dirección cuando la presión estaba encima.
+
+Así que cuando entrenamos tu inglés, sé a qué te enfrentas de verdad. Cómo debe sonar un reporte de estatus cuando un cliente de Estados Unidos está decidiendo si confía en tus tiempos de entrega. Cómo se espera que un líder de TI o de ingeniería explique un problema sin perder a la sala. La diferencia entre un profesional que hace el trabajo y uno que sabe representarlo ante la empresa. Esa es la capa que la mayoría de los coaches de inglés no pueden enseñar, y en las multinacionales de Zapopan suele ser la que hace que asciendan a alguien. Si estás específicamente del lado de ingeniería, [por qué los desarrolladores senior necesitan inglés avanzado](/es/blog/por-que-desarrolladores-senior-necesitan-ingles-avanzado/) va más a fondo.
+
 ## Por qué el coaching en línea se adapta a una agenda corporativa
 
 La verdad sobre las clases presenciales para profesionales corporativos ocupados es simple: los traslados acaban con ellas. Sales de una junta que se alargó, batallas con el tráfico de Zapopan para cruzar la ciudad, te sientas una hora en una clase y luego manejas de regreso a casa ya de noche. Dos semanas de eso y empiezas a cancelar. Lo he visto pasar con gente muy capaz.
