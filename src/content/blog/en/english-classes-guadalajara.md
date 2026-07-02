@@ -1,6 +1,6 @@
 ---
 title: "English Coaching in Guadalajara: Business English for Mexico's Tech Capital"
-excerpt: "Online English coaching for Guadalajara professionals who work with US clients and remote teams. Build the business and executive English your career runs on."
+excerpt: "Online English coaching for Guadalajara's tech professionals — from a New York teacher who also worked as a software developer and IT manager. Devs, PMs, IT leads."
 publishDate: "2026-07-01"
 lastmod: "2026-07-01"
 categories:
@@ -15,10 +15,10 @@ translations:
 publish: true
 seo:
   title: "English Coaching in Guadalajara | NY English"
-  description: "Online business English coaching for Guadalajara professionals working with US clients and remote teams. Executive fluency, meetings, interviews."
+  description: "Online business English coaching for Guadalajara tech professionals — from a coach who worked as a developer and IT manager. For devs, PMs and IT leads."
 ---
 
-If you work in Guadalajara's tech and business scene, your English isn't a nice-to-have — it's the difference between leading the call and just attending it. I'm a New York English teacher, and I coach professionals across the Guadalajara metro online: engineers, managers, founders, and specialists who collaborate every day with US clients and remote teams. The city knows you can do the work. This is about making sure the language never gets in the way of showing it. Coaching is one-on-one, fully online, and built around the way you actually use English at work.
+If you work in Guadalajara's tech and business scene, your English isn't a nice-to-have — it's the difference between leading the call and just attending it. I'm a New York English teacher, and I coach professionals across the Guadalajara metro online: engineers, managers, founders, and specialists who collaborate every day with US clients and remote teams. The city knows you can do the work. This is about making sure the language never gets in the way of showing it. And I understand that work from the inside — before I taught English, I spent my career in tech as a software developer and IT manager. Coaching is one-on-one, fully online, and built around the way you actually use English at work.
 
 ## Guadalajara: Mexico's Tech Capital, and Why English Multiplies Your Career
 
@@ -27,6 +27,16 @@ Guadalajara is the capital of Jalisco and one of Mexico's largest cities — and
 Here's the part that decides careers: in that environment, English stops being a line on your résumé and becomes a multiplier on everything else you already know. Two engineers with identical skills are not equal if one can lead the client sync in confident English and the other goes quiet the moment the conversation speeds up. The promotions, the visible projects, the roles that put you in front of the customer — they flow to the person who can communicate. In Guadalajara specifically, where so much of the work is US-facing, strong business English is one of the highest-leverage investments a professional can make.
 
 And it isn't only engineers. Project managers running standups, salespeople pitching across time zones, operations leads coordinating handoffs, finance and HR staff sitting in on cross-border meetings — the whole ecosystem runs on clear English. If your work touches a US client or a remote team, this is your competitive edge.
+
+## A Coach Who's Actually Worked in Tech
+
+Here's what makes this different for Guadalajara's tech professionals: before I taught English, I spent my career in technology — as a software developer and an IT manager. I know the software development lifecycle from the inside. Sprints, standups, code reviews, retros, backlog grooming, the gap between what the ticket says and what the client actually wants — that's not vocabulary I memorized to teach you. It's the world I worked in.
+
+That matters because most English coaches can fix your grammar but go blank the moment you mention a pull request or a production incident. I can coach you through explaining a technical tradeoff to a non-technical stakeholder, running a sprint demo for a US client, pushing back on scope creep without sounding difficult, or walking a nervous customer through an outage — in the exact language your role actually uses.
+
+I also know what enterprise and US clients expect from the person on the other end of the call. What a senior developer should sound like in a design review. How a project manager is expected to give a status update that builds confidence instead of raising questions. What an IT manager needs to project when the client is worried and the system is down. We don't just make your English correct — we make it land the way your role demands, whether you're a developer, a PM, an IT lead, or moving toward all three.
+
+If your work is specifically in software or IT, these go deeper: [why senior developers need advanced English](/en/blog/why-senior-developers-need-advanced-english/) and [the English skills nearshore developers actually need](/en/blog/english-nearshore-developers-skills/).
 
 ## Why Online Coaching Fits Guadalajara's Remote-First Professionals
 

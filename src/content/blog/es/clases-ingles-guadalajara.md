@@ -1,6 +1,6 @@
 ---
 title: "Coaching de Inglés en Guadalajara: Inglés de Negocios para la Capital Tech de México"
-excerpt: "Coaching de inglés en línea para profesionales de Guadalajara que trabajan con clientes de EE.UU. y equipos remotos. Domina el inglés de negocios y ejecutivo."
+excerpt: "Coaching de inglés en línea para profesionales tech de Guadalajara, de un maestro que también fue desarrollador de software y gerente de TI. Devs, PMs y líderes de TI."
 publishDate: "2026-07-01"
 lastmod: "2026-07-01"
 categories:
@@ -15,10 +15,10 @@ translations:
 publish: true
 seo:
   title: "Clases de Inglés en Guadalajara | NY English"
-  description: "Coaching de inglés en línea para profesionales de Guadalajara que trabajan con clientes de EE.UU. y equipos remotos. Fluidez ejecutiva y reuniones."
+  description: "Coaching de inglés en línea para profesionales tech de Guadalajara, de un coach que trabajó como desarrollador y gerente de TI. Para devs, PMs y líderes de TI."
 ---
 
-Si trabajas en el mundo tech y de negocios de Guadalajara, tu inglés no es un extra: es la diferencia entre dirigir la llamada y solo asistir a ella. Soy maestro de inglés de Nueva York y doy coaching en línea a profesionales de toda la zona metropolitana de Guadalajara: ingenieros, gerentes, fundadores y especialistas que colaboran todos los días con clientes de Estados Unidos y equipos remotos. La ciudad ya sabe que haces bien tu trabajo. Esto se trata de que el idioma nunca te impida demostrarlo. El coaching es uno a uno, totalmente en línea y diseñado según la forma en que realmente usas el inglés en tu trabajo.
+Si trabajas en el mundo tech y de negocios de Guadalajara, tu inglés no es un extra: es la diferencia entre dirigir la llamada y solo asistir a ella. Soy maestro de inglés de Nueva York y doy coaching en línea a profesionales de toda la zona metropolitana de Guadalajara: ingenieros, gerentes, fundadores y especialistas que colaboran todos los días con clientes de Estados Unidos y equipos remotos. La ciudad ya sabe que haces bien tu trabajo. Esto se trata de que el idioma nunca te impida demostrarlo. Y ese trabajo lo entiendo desde adentro: antes de enseñar inglés, pasé mi carrera en tecnología como desarrollador de software y gerente de TI. El coaching es uno a uno, totalmente en línea y diseñado según la forma en que realmente usas el inglés en tu trabajo.
 
 ## Guadalajara: la capital tech de México y por qué el inglés multiplica tu carrera
 
@@ -27,6 +27,16 @@ Guadalajara es la capital de Jalisco y una de las ciudades más grandes de Méxi
 Y aquí está la parte que decide carreras: en ese entorno, el inglés deja de ser una línea en tu currículum y se vuelve un multiplicador de todo lo demás que ya sabes hacer. Dos ingenieros con habilidades idénticas no son iguales si uno puede dirigir la junta con el cliente en inglés con seguridad y el otro se queda callado en cuanto la conversación acelera. Los ascensos, los proyectos visibles, los puestos que te ponen frente al cliente: todos van hacia quien sabe comunicarse. En Guadalajara en particular, donde tanto del trabajo mira hacia Estados Unidos, un inglés de negocios sólido es una de las inversiones de mayor impacto que un profesional puede hacer.
 
 Y no es solo cosa de ingenieros. Los project managers que dirigen los standups, los vendedores que presentan entre zonas horarias, los líderes de operaciones que coordinan entregas, el personal de finanzas y de recursos humanos que participa en juntas internacionales: todo el ecosistema funciona con un inglés claro. Si tu trabajo toca a un cliente de EE.UU. o a un equipo remoto, esta es tu ventaja competitiva.
+
+## Un coach que sí ha trabajado en tecnología
+
+Esto es lo que lo hace diferente para los profesionales tech de Guadalajara: antes de enseñar inglés, pasé mi carrera en tecnología, como desarrollador de software y gerente de TI. Conozco el ciclo de vida del desarrollo de software desde adentro. Sprints, standups, code reviews, retros, la limpieza del backlog, la diferencia entre lo que dice el ticket y lo que el cliente en realidad quiere: eso no es vocabulario que memoricé para enseñarte. Es el mundo en el que trabajé.
+
+Eso importa porque la mayoría de los coaches de inglés pueden corregir tu gramática, pero se quedan en blanco en cuanto mencionas un pull request o un incidente en producción. Yo te puedo entrenar para explicar un tradeoff técnico a alguien sin perfil técnico, presentar el demo del sprint a un cliente de EE.UU., frenar el scope creep sin sonar difícil, o guiar a un cliente nervioso durante una caída del sistema, en el lenguaje exacto que tu rol de verdad usa.
+
+También sé lo que las empresas y los clientes de EE.UU. esperan de la persona del otro lado de la llamada. Cómo debe sonar un desarrollador senior en un design review. Cómo se espera que un project manager dé un reporte de estatus que genere confianza en lugar de dudas. Lo que un gerente de TI necesita proyectar cuando el cliente está preocupado y el sistema está caído. No solo hacemos que tu inglés sea correcto: hacemos que caiga como tu rol lo exige, ya seas desarrollador, PM, líder de TI, o vayas rumbo a los tres.
+
+Si tu trabajo es específicamente en software o TI, estos van más a fondo: [por qué los desarrolladores senior necesitan inglés avanzado](/es/blog/por-que-desarrolladores-senior-necesitan-ingles-avanzado/) y [las habilidades de inglés que los desarrolladores nearshore de verdad necesitan](/es/blog/ingles-desarrolladores-nearshore-habilidades/).
 
 ## Por qué el coaching en línea encaja con los profesionales remote-first de Guadalajara
 
