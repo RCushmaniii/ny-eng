@@ -152,6 +152,23 @@ export type TKey =
   | "course/past-tenses/knew-vs-found-out"
   | "course/past-tenses/story-openers"
   | "course/past-tenses/there-was-vs-there-has-been"
+  | "course/verb-patterns"
+  | "course/verb-patterns/direct-vs-to"
+  | "course/verb-patterns/remind-ask-tell"
+  | "course/verb-patterns/give-send-explain"
+  | "course/verb-patterns/foundations-exam"
+  | "course/verb-patterns/verb-preposition"
+  | "course/verb-patterns/to-do-vs-doing"
+  | "course/verb-patterns/someone-to-do"
+  | "course/verb-patterns/someone-preposition"
+  | "course/verb-patterns/patterns-exam"
+  | "course/verb-patterns/meaning-changers"
+  | "course/verb-patterns/reporting-verbs"
+  | "course/verb-patterns/sounding-natural"
+  | "course/verb-patterns/mastery-exam"
+  | "course/verb-patterns/diagnosis-table"
+  | "course/verb-patterns/gerund-or-infinitive"
+  | "course/verb-patterns/top-traps"
   | "course/drive-the-decision"
   | "course/drive-the-decision/series-a-cac-pushback"
   | "course/drive-the-decision/board-meeting-burn-rate"
@@ -327,6 +344,23 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/past-tenses/story-openers": "/en/course/past-tenses/story-openers/",
     "course/past-tenses/there-was-vs-there-has-been":
       "/en/course/past-tenses/there-was-vs-there-has-been/",
+    "course/verb-patterns": "/en/course/verb-patterns/",
+    "course/verb-patterns/direct-vs-to": "/en/course/verb-patterns/direct-vs-to/",
+    "course/verb-patterns/remind-ask-tell": "/en/course/verb-patterns/remind-ask-tell/",
+    "course/verb-patterns/give-send-explain": "/en/course/verb-patterns/give-send-explain/",
+    "course/verb-patterns/foundations-exam": "/en/course/verb-patterns/foundations-exam/",
+    "course/verb-patterns/verb-preposition": "/en/course/verb-patterns/verb-preposition/",
+    "course/verb-patterns/to-do-vs-doing": "/en/course/verb-patterns/to-do-vs-doing/",
+    "course/verb-patterns/someone-to-do": "/en/course/verb-patterns/someone-to-do/",
+    "course/verb-patterns/someone-preposition": "/en/course/verb-patterns/someone-preposition/",
+    "course/verb-patterns/patterns-exam": "/en/course/verb-patterns/patterns-exam/",
+    "course/verb-patterns/meaning-changers": "/en/course/verb-patterns/meaning-changers/",
+    "course/verb-patterns/reporting-verbs": "/en/course/verb-patterns/reporting-verbs/",
+    "course/verb-patterns/sounding-natural": "/en/course/verb-patterns/sounding-natural/",
+    "course/verb-patterns/mastery-exam": "/en/course/verb-patterns/mastery-exam/",
+    "course/verb-patterns/diagnosis-table": "/en/course/verb-patterns/diagnosis-table/",
+    "course/verb-patterns/gerund-or-infinitive": "/en/course/verb-patterns/gerund-or-infinitive/",
+    "course/verb-patterns/top-traps": "/en/course/verb-patterns/top-traps/",
     "course/drive-the-decision": "/en/course/drive-the-decision/",
     "course/drive-the-decision/series-a-cac-pushback":
       "/en/course/drive-the-decision/series-a-cac-pushback/",
@@ -518,6 +552,24 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/past-tenses/story-openers": "/es/curso/tiempos-del-pasado/frases-iniciales/",
     "course/past-tenses/there-was-vs-there-has-been":
       "/es/curso/tiempos-del-pasado/there-was-vs-there-has-been/",
+    "course/verb-patterns": "/es/curso/patrones-verbales/",
+    "course/verb-patterns/direct-vs-to": "/es/curso/patrones-verbales/objeto-directo-vs-to/",
+    "course/verb-patterns/remind-ask-tell": "/es/curso/patrones-verbales/remind-ask-tell/",
+    "course/verb-patterns/give-send-explain": "/es/curso/patrones-verbales/give-send-explain/",
+    "course/verb-patterns/foundations-exam": "/es/curso/patrones-verbales/examen-fundamentos/",
+    "course/verb-patterns/verb-preposition": "/es/curso/patrones-verbales/verbo-preposicion/",
+    "course/verb-patterns/to-do-vs-doing": "/es/curso/patrones-verbales/to-do-vs-doing/",
+    "course/verb-patterns/someone-to-do": "/es/curso/patrones-verbales/alguien-to-do/",
+    "course/verb-patterns/someone-preposition": "/es/curso/patrones-verbales/alguien-preposicion/",
+    "course/verb-patterns/patterns-exam": "/es/curso/patrones-verbales/examen-patrones/",
+    "course/verb-patterns/meaning-changers": "/es/curso/patrones-verbales/cambios-de-significado/",
+    "course/verb-patterns/reporting-verbs": "/es/curso/patrones-verbales/verbos-de-reporte/",
+    "course/verb-patterns/sounding-natural": "/es/curso/patrones-verbales/sonar-natural/",
+    "course/verb-patterns/mastery-exam": "/es/curso/patrones-verbales/examen-maestria/",
+    "course/verb-patterns/diagnosis-table": "/es/curso/patrones-verbales/tabla-de-diagnostico/",
+    "course/verb-patterns/gerund-or-infinitive":
+      "/es/curso/patrones-verbales/gerundio-o-infinitivo/",
+    "course/verb-patterns/top-traps": "/es/curso/patrones-verbales/errores-mas-comunes/",
     "course/drive-the-decision": "/es/curso/dirige-la-decision/",
     "course/drive-the-decision/series-a-cac-pushback":
       "/es/curso/dirige-la-decision/pushback-cac-serie-a/",
@@ -652,6 +704,23 @@ export function getAllTKeys(): TKey[] {
     "course/past-tenses/knew-vs-found-out",
     "course/past-tenses/story-openers",
     "course/past-tenses/there-was-vs-there-has-been",
+    "course/verb-patterns",
+    "course/verb-patterns/direct-vs-to",
+    "course/verb-patterns/remind-ask-tell",
+    "course/verb-patterns/give-send-explain",
+    "course/verb-patterns/foundations-exam",
+    "course/verb-patterns/verb-preposition",
+    "course/verb-patterns/to-do-vs-doing",
+    "course/verb-patterns/someone-to-do",
+    "course/verb-patterns/someone-preposition",
+    "course/verb-patterns/patterns-exam",
+    "course/verb-patterns/meaning-changers",
+    "course/verb-patterns/reporting-verbs",
+    "course/verb-patterns/sounding-natural",
+    "course/verb-patterns/mastery-exam",
+    "course/verb-patterns/diagnosis-table",
+    "course/verb-patterns/gerund-or-infinitive",
+    "course/verb-patterns/top-traps",
     "course/drive-the-decision",
     "course/drive-the-decision/series-a-cac-pushback",
     "course/drive-the-decision/board-meeting-burn-rate",

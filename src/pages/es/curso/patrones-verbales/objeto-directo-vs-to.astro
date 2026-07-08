@@ -1,0 +1,298 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import AudioButton from "@components/course/AudioButton";
+import PatternDrill from "@components/course/PatternDrill";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import { l1Drill, l1Corrections } from "@data/verb-patterns/lesson-1";
+import {
+  ArrowRight,
+  Split,
+  Puzzle,
+  CheckCircle2,
+  XCircle,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/verb-patterns/direct-vs-to" as const;
+
+const directVerbs = ["call", "contact", "help", "email", "text", "phone", "message", "visit", "meet", "answer", "support", "trust"];
+const toVerbs = ["speak to", "talk to", "listen to", "reply to", "respond to", "apologize to"];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="El verbo decide: call someone vs speak to someone | Patrones Verbales"
+  description="Lección 1: por qué en inglés se dice 'I called my boss' pero 'I spoke to my boss'. Verbos con objeto directo vs verbos que necesitan 'to' antes de la persona."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <Split class="w-4 h-4" />
+          Nivel 1 · Fundamentos — Lección 1
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          El verbo decide
+        </h1>
+        <p class="text-2xl text-indigo-300 italic font-light mb-4">call someone — pero speak <em>to</em> someone.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Los dos son sobre comunicación. Los dos tienen una persona. Pero uno lleva la persona directamente y el otro
+          necesita <em class="text-white not-italic">to</em>. No puedes elegir por el significado — tienes que conocer el verbo.
+          Aquí empiezan los patrones verbales.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 1 -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">El verbo controla el patrón</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">No el significado. El verbo.</p>
+
+        <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+          <p>
+            En español marcas a la persona con <strong>a</strong>: <em>llamé <strong>a</strong> mi jefe</em>,
+            <em>hablé <strong>con</strong> mi jefe</em>. Por eso se siente natural usar <em>to</em> también en inglés.
+            Pero el inglés no funciona así. El verbo — no el significado — decide si la persona va directa
+            o necesita una preposición.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4 my-8">
+            <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-6">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-2">Directo</p>
+              <div class="flex items-center gap-2">
+                <p class="text-xl text-slate-900 font-medium">I called my boss.</p>
+                <AudioButton client:visible text="I called my boss." lang="en-US" size="sm" />
+              </div>
+              <p class="text-sm text-slate-600 mt-2 font-mono">call <span class="text-indigo-700">someone</span></p>
+            </div>
+            <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-6">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-2">Con “to”</p>
+              <div class="flex items-center gap-2">
+                <p class="text-xl text-slate-900 font-medium">I spoke to my boss.</p>
+                <AudioButton client:visible text="I spoke to my boss." lang="en-US" size="sm" />
+              </div>
+              <p class="text-sm text-slate-600 mt-2 font-mono">speak <span class="text-indigo-700">to someone</span></p>
+            </div>
+          </div>
+
+          <p>
+            La misma idea — acercarte a otra persona. Distinto patrón. La única forma de acertar siempre es guardar
+            el verbo <strong>junto con</strong> su patrón: <em>call someone</em>, <em>speak to someone</em>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 2 -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Grupo Uno — Verb + Someone</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Estos verbos llevan la persona directamente. Sin “to”.</p>
+
+        <div class="flex flex-wrap gap-2 mb-8">
+          {directVerbs.map((v) => (
+            <span class="px-3 py-1.5 rounded-lg bg-white border border-indigo-200 text-slate-700 font-medium text-sm font-mono">{v} someone</span>
+          ))}
+        </div>
+
+        <div class="space-y-3">
+          {[
+            "I contacted the supplier.",
+            "I emailed my manager yesterday.",
+            "We helped the customer.",
+            "She answered the client immediately.",
+          ].map((s) => (
+            <div class="bg-white rounded-xl border border-slate-200 p-4 flex items-center gap-3">
+              <CheckCircle2 class="w-5 h-5 text-indigo-500 shrink-0" />
+              <p class="text-slate-800 flex-1">{s}</p>
+              <AudioButton client:visible text={s} lang="en-US" size="sm" />
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+          <strong>Nunca:</strong> <span class="line-through">I contacted to the supplier · I helped to the customer · I answered to the client</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 3 -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Grupo Dos — Verb + To + Someone</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Estos verbos necesitan “to” antes de la persona. Siempre.</p>
+
+        <div class="flex flex-wrap gap-2 mb-8">
+          {toVerbs.map((v) => (
+            <span class="px-3 py-1.5 rounded-lg bg-white border border-indigo-200 text-slate-700 font-medium text-sm font-mono">{v} someone</span>
+          ))}
+        </div>
+
+        <div class="space-y-3">
+          {[
+            "I spoke to my manager about the problem.",
+            "I talked to the client about the delay.",
+            "She listened to the customer carefully.",
+            "I replied to the email this morning.",
+          ].map((s) => (
+            <div class="bg-white rounded-xl border border-slate-200 p-4 flex items-center gap-3">
+              <CheckCircle2 class="w-5 h-5 text-indigo-500 shrink-0" />
+              <p class="text-slate-800 flex-1">{s}</p>
+              <AudioButton client:visible text={s} lang="en-US" size="sm" />
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+          <strong>Nunca:</strong> <span class="line-through">I spoke my manager · I listened my teacher · I replied the email</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 4 -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Mismo significado, distinto patrón</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Esta es la prueba de que no puedes elegir por el significado.</p>
+
+        <div class="space-y-4">
+          {[
+            ["call someone", "speak to someone", "I called my wife.", "I spoke to my wife."],
+            ["contact someone", "talk to someone", "I contacted the supplier.", "I talked to the supplier."],
+            ["answer someone", "reply to someone", "I answered the client.", "I replied to the client."],
+          ].map(([p1, p2, s1, s2]) => (
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div class="bg-white rounded-xl border border-slate-200 p-4">
+                <p class="text-xs font-mono text-indigo-700 mb-1">{p1}</p>
+                <div class="flex items-center gap-2">
+                  <p class="text-slate-800 flex-1">{s1}</p>
+                  <AudioButton client:visible text={s1} lang="en-US" size="sm" />
+                </div>
+              </div>
+              <div class="bg-white rounded-xl border border-slate-200 p-4">
+                <p class="text-xs font-mono text-indigo-700 mb-1">{p2}</p>
+                <div class="flex items-center gap-2">
+                  <p class="text-slate-800 flex-1">{s2}</p>
+                  <AudioButton client:visible text={s2} lang="en-US" size="sm" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p class="text-slate-600 mt-6">
+          Cada par significa lo mismo. Cada par usa una estructura distinta. El significado no te da ninguna pista —
+          simplemente hay que conocer el verbo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 5 -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">De dónde viene el error</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">No es descuido — es tu primer idioma ayudando de más.</p>
+
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl border border-slate-200 p-6">
+            <p class="text-slate-700 mb-3">El español marca a la persona con <strong>a</strong>. El inglés casi nunca.</p>
+            <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>Llamé <strong>a</strong> mi jefe</em> → "I called <strong>to</strong> my boss."</span></p>
+            <div class="flex items-start gap-2 mt-1">
+              <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+              <span class="text-slate-800 flex-1"><em>"I called my boss."</em></span>
+              <AudioButton client:visible text="I called my boss." lang="en-US" size="sm" />
+            </div>
+          </div>
+          <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 text-slate-700">
+            <p class="flex gap-2"><Puzzle class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span>La solución: no traduzcas la preposición. Guarda el verbo en inglés como bloque — <strong>call&nbsp;someone</strong>, <strong>speak&nbsp;to&nbsp;someone</strong> — y la preposición se acomoda sola.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 6: PatternDrill -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">6</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Ejercicio: ¿directo o “to”?</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Elige el patrón. Lee la explicación. Construye el instinto.</p>
+        <PatternDrill client:visible data={l1Drill} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 7: ErrorCorrection -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">7</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Encuentra el error</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Seis errores reales de interferencia del español. Toca la parte incorrecta de cada oración.</p>
+        <ErrorCorrection client:visible data={l1Corrections} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap + siguiente -->
+  <section class="py-16 md:py-20 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">El resumen</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-8 mb-10">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>El verbo decide el patrón</strong> — no el significado.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>Directo:</strong> call, contact, help, email, phone, text, visit, meet, answer, support, trust <em>someone</em>.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>Con “to”:</strong> speak, talk, listen, reply, respond, apologize <em>to someone</em>.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>No traduzcas la “a” del español.</strong> Guarda el verbo como bloque.</span></li>
+          </ul>
+        </div>
+
+        <div class="text-center">
+          <p class="text-slate-600 mb-6">A continuación: <strong class="text-slate-900">Remind, Ask &amp; Tell</strong> — los verbos que cambian de significado según los sigas con <em>about</em>, <em>for</em> o <em>to&nbsp;do</em>.</p>
+          <Button href="/es/curso/patrones-verbales/" variant="primary" size="lg">
+            Volver al resumen del curso
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+          <p class="text-sm text-slate-500 mt-4">La Lección 2 estará disponible pronto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

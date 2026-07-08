@@ -1,0 +1,435 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import { verbLevels, verbLessons, verbBonuses, verbPatternsInfo } from "@data/verb-patterns/levels";
+import {
+  ArrowRight,
+  Sparkles,
+  Split,
+  MessageSquare,
+  Send,
+  Link as LinkIcon,
+  GitFork,
+  Users,
+  Handshake,
+  Shuffle,
+  Quote,
+  Table,
+  AlertTriangle,
+  GraduationCap,
+  Brain,
+  Puzzle,
+  CheckCircle2,
+  XCircle,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/verb-patterns" as const;
+
+const iconMap: Record<string, any> = {
+  Split,
+  MessageSquare,
+  Send,
+  Link: LinkIcon,
+  GitFork,
+  Users,
+  Handshake,
+  Shuffle,
+  Quote,
+  Sparkles,
+  Table,
+  AlertTriangle,
+};
+
+const base = verbPatternsInfo.basePath.es;
+
+const faqs = [
+  {
+    q: "¿Por qué digo “I called to my boss” si está mal?",
+    a: "Porque estás traduciendo del español — llamé a mi jefe. En inglés el verbo “call” lleva la persona directamente: I called my boss. La solución no es más vocabulario; es aprender cada verbo junto con su patrón. Eso es justo lo que entrena este curso.",
+  },
+  {
+    q: "¿Qué es un patrón verbal?",
+    a: "Un patrón verbal es la estructura que un verbo exige después de él: call someone, speak to someone, depend on something, decide to do something, enjoy doing something. Los verbos en inglés no siguen todos la misma regla — no puedes elegir por el significado, tienes que conocer el verbo.",
+  },
+  {
+    q: "¿Se dice “depend of” o “depend on”?",
+    a: "“Depend on.” El español depender de hace que muchos digan “depend of,” pero el inglés fija la preposición al verbo: depend on, focus on, rely on. El Nivel 2 del curso practica las seis familias de preposiciones.",
+  },
+  {
+    q: "¿Para quién es este curso?",
+    a: "Para hablantes de nivel intermedio a avanzado — B1 a C1 — sobre todo profesionales mexicanos que usan inglés en el trabajo. Si conoces las palabras pero tu gramática todavía te marca como no nativo, este es el hueco que cierra.",
+  },
+  {
+    q: "¿El curso de patrones verbales es gratis?",
+    a: "Sí. Tres niveles de lecciones, ejercicios interactivos y guías de referencia — gratis, sin registro y sin muro de pago.",
+  },
+];
+
+const firstLesson = verbLessons.find((l) => l.available);
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Dominio de Patrones Verbales | Curso Gratis de Verbos en Inglés"
+  description="Clase magistral gratis de patrones verbales en inglés para hispanohablantes. Deja de decir 'I called to my boss' o 'I depend of my team.'"
+>
+  <!-- Hero -->
+  <section class="relative w-full overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-indigo-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-20 w-96 h-96 bg-violet-500 rounded-full blur-3xl"></div>
+    </div>
+    <div class="site-container mx-auto px-4 relative z-10 text-white">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/20 text-indigo-300 text-sm font-semibold mb-6">
+          <Sparkles class="w-4 h-4" />
+          Clase Magistral Gratis — Patrones Verbales en Inglés
+        </div>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Dominio de Patrones Verbales.<br />
+          <span class="text-indigo-400">Conoce el verbo — no solo el significado.</span>
+        </h1>
+        <p class="text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed">
+          Conoces las palabras. Pero aún dices
+          <em class="text-white not-italic">"I called to my boss,"</em>
+          <em class="text-white not-italic">"I depend of my team,"</em>
+          <em class="text-white not-italic">"I explained him the problem."</em>
+          El problema no es el vocabulario — es el <strong class="text-white">patrón</strong>.
+          Este curso te entrena para aprender cada verbo junto con la estructura que exige.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          {firstLesson && (
+            <Button href={`${base}/${firstLesson.slugEs}/`} variant="primary" size="lg">
+              Empezar la Lección 1 — Gratis
+              <ArrowRight class="w-5 h-5 ml-1" />
+            </Button>
+          )}
+          <a
+            href="/es/curso/intermedio/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            ¿Buscas el curso completo B1–B2?
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- El cambio -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">El Hábito Que Lo Arregla</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Los nativos no guardan los verbos como palabras sueltas. Los guardan como bloques —
+            <em>depend&nbsp;on</em>, <em>remind&nbsp;someone&nbsp;to</em>, <em>apologize&nbsp;to&nbsp;someone&nbsp;for</em>.
+            Aprende el bloque y los errores desaparecen.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border-2 border-red-200 bg-red-50/50 p-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-red-100 text-red-600 mb-4">
+              <Brain class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">La forma vieja: estudiar el verbo solo</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> Aprender <em>call, speak, remind, explain</em> como palabras.</li>
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> Adivinar la estructura — casi siempre desde el español.</li>
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> <em>"I explained him the problem."</em></li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 mb-4">
+              <Puzzle class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">La forma nueva: guardar el patrón completo</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">✓</span> Aprender <em>explain something to someone</em> como un bloque.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">✓</span> La estructura viene pegada — sin adivinar.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">✓</span> <em>"I explained the problem to him."</em></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Te suena? -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">¿Te Suena?</h2>
+        <p class="text-center text-slate-600 mb-10">Cada uno de estos es un error de patrón — no de vocabulario.</p>
+        <div class="grid md:grid-cols-2 gap-4">
+          {[
+            ['I called to my boss.', 'I called my boss.'],
+            ['I depend of my team.', 'I depend on my team.'],
+            ['I explained him the problem.', 'I explained the problem to him.'],
+            ['I enjoy to learn English.', 'I enjoy learning English.'],
+            ['The delay prevented us to finish.', 'The delay prevented us from finishing.'],
+            ['I need my assistant send the file.', 'I need my assistant to send the file.'],
+          ].map(([wrong, right]) => (
+            <div class="bg-white rounded-xl p-5 border border-slate-200">
+              <p class="flex items-start gap-2 text-slate-500 line-through"><XCircle class="w-4 h-4 text-red-400 shrink-0 mt-1" /><span>{wrong}</span></p>
+              <p class="flex items-start gap-2 text-slate-800 font-medium mt-1"><CheckCircle2 class="w-4 h-4 text-indigo-500 shrink-0 mt-1" /><span>{right}</span></p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ruta de tres niveles -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Tres Niveles. Una Habilidad.</h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          De los errores más frecuentes a los patrones sutiles que separan el B2 del C1.
+          Cada lección termina con un ejercicio interactivo.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-14">
+        {verbLevels.map((level) => {
+          const lessons = verbLessons.filter((l) => l.level === level.id);
+          return (
+            <div>
+              <div class="flex items-center gap-3 mb-6">
+                <span class="inline-flex items-center justify-center px-2.5 py-1 rounded-lg bg-indigo-600 text-white text-xs font-bold tracking-wide">
+                  {level.cefr}
+                </span>
+                <div>
+                  <h3 class="text-2xl font-bold text-slate-900">Nivel {level.id} — {level.titleEs}</h3>
+                  <p class="text-sm text-slate-500">{level.taglineEs}</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {lessons.map((lesson) => {
+                  const Icon = iconMap[lesson.icon];
+                  const href = lesson.available ? `${base}/${lesson.slugEs}/` : undefined;
+                  return (
+                    <a
+                      href={href}
+                      class:list={[
+                        "group flex items-start gap-4 p-5 rounded-xl border transition-all duration-200",
+                        lesson.available
+                          ? "bg-indigo-50 border-indigo-300 hover:shadow-md hover:border-indigo-400 cursor-pointer"
+                          : "bg-white border-slate-200 opacity-75",
+                      ]}
+                    >
+                      <div
+                        class:list={[
+                          "flex items-center justify-center w-12 h-12 rounded-xl shrink-0",
+                          lesson.available ? "bg-indigo-500 text-white" : "bg-slate-100 text-slate-400",
+                        ]}
+                      >
+                        {Icon && <Icon class="w-6 h-6" />}
+                      </div>
+                      <div class="flex-1">
+                        <div class="flex items-center gap-2">
+                          <span
+                            class:list={[
+                              "text-xs font-bold uppercase tracking-wider",
+                              lesson.available ? "text-indigo-700" : "text-slate-400",
+                            ]}
+                          >
+                            Lección {lesson.id}
+                          </span>
+                          {!lesson.available && (
+                            <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">Próximamente</span>
+                          )}
+                        </div>
+                        <h4
+                          class:list={[
+                            "text-lg font-bold mt-0.5",
+                            lesson.available ? "text-slate-900" : "text-slate-600",
+                          ]}
+                        >
+                          {lesson.titleEs}
+                        </h4>
+                        <p class="text-sm font-medium text-slate-700 mt-1 font-mono">{lesson.patternEs}</p>
+                        <p class="text-xs text-slate-500 mt-1">{lesson.subtitleEs}</p>
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+
+              <div class="mt-4">
+                <span class="inline-flex items-center gap-2 text-sm text-slate-400">
+                  <GraduationCap class="w-4 h-4" />
+                  Termina con el {level.examTitleEs} <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">Próximamente</span>
+                </span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Guías de referencia -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold mb-4">
+            <Sparkles class="w-4 h-4" />
+            Guías de Referencia
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Guías Para Guardar Para Siempre</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Los patrones, condensados. Guárdalas y revísalas antes de escribir ese correo.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {verbBonuses.map((bonus) => {
+            const Icon = iconMap[bonus.icon];
+            const href = bonus.available ? `${base}/${bonus.slugEs}/` : undefined;
+            const Tag = bonus.available ? "a" : "div";
+            return (
+              <Tag
+                href={href}
+                class:list={[
+                  "bg-white rounded-xl p-5 border flex flex-col gap-3",
+                  bonus.available
+                    ? "border-indigo-300 hover:shadow-md hover:border-indigo-400 transition-all duration-200 cursor-pointer"
+                    : "border-slate-200",
+                ]}
+              >
+                <div class:list={["flex items-center justify-center w-10 h-10 rounded-lg", bonus.available ? "bg-indigo-500 text-white" : "bg-slate-100 text-slate-500"]}>
+                  {Icon && <Icon class="w-5 h-5" />}
+                </div>
+                <div>
+                  {!bonus.available && (
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">Próximamente</span>
+                  )}
+                  <h3 class="text-base font-bold text-slate-900 mt-1">{bonus.titleEs}</h3>
+                  <p class="text-sm text-slate-600 mt-1">{bonus.descriptionEs}</p>
+                </div>
+              </Tag>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué funciona -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">Por Qué Funciona el Chunking</h2>
+        <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+          <p>
+            El español y el inglés no mapean sus estructuras verbales una a una.
+            <em>Llamé a mi jefe</em> lleva preposición antes de la persona; <em>I called my boss</em> no lleva ninguna.
+            <em>Depender de</em> se vuelve <em>depend on</em>. <em>Disfruto aprender</em> se vuelve <em>enjoy learning</em>.
+            Si traduces palabra por palabra, produces los errores clásicos.
+          </p>
+          <p>
+            La solución no es memorizar una regla para cada verbo — son demasiados, y las reglas tienen excepciones.
+            La solución es guardar cada verbo <strong>con su patrón ya pegado</strong>, como una sola unidad,
+            y practicar la elección hasta que sea automática.
+          </p>
+          <p>
+            Eso hace este curso: enseña los patrones en orden de impacto, los practica de forma interactiva
+            y apunta a las estructuras exactas que los profesionales mexicanos fallan en juntas y correos reales.
+          </p>
+        </div>
+        {firstLesson && (
+          <div class="mt-10 text-center">
+            <Button href={`${base}/${firstLesson.slugEs}/`} variant="primary" size="lg">
+              Empezar la Lección 1 — Gratis
+              <ArrowRight class="w-5 h-5 ml-1" />
+            </Button>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- Enlace cruzado -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">¿Dónde Encaja Esto?</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          Esta es una <strong>clase magistral enfocada</strong> — una habilidad, a fondo.
+          Para un curso de nivel completo, mira la serie de cuatro niveles
+          <strong>Elemental → Intermedio → Avanzado → Ejecutivo</strong>.
+          Para coaching corporativo 1 a 1, mira el programa de Inglés de Negocios.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a href="/es/cursos/" class="text-indigo-700 hover:text-indigo-800 font-medium underline underline-offset-2">Ver todos los cursos</a>
+          <span class="text-slate-300">|</span>
+          <a href="/es/services/corporate-package/" class="text-indigo-700 hover:text-indigo-800 font-medium underline underline-offset-2">Programa de coaching corporativo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-slate-50 border-t border-slate-100">
+    <div class="site-container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 text-center">Preguntas frecuentes</h2>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="group bg-white rounded-xl border border-slate-200 p-5">
+            <summary class="flex items-center justify-between gap-3 cursor-pointer font-semibold text-slate-900 list-none">
+              <span>{f.q}</span>
+              <span class="shrink-0 w-2.5 h-2.5 border-r-2 border-b-2 border-indigo-500 rotate-45 transition-transform group-open:rotate-[225deg]"></span>
+            </summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Dominio de Patrones Verbales — Clase Magistral Gratis",
+    "description": "Una clase magistral enfocada sobre patrones verbales en inglés para hispanohablantes: patrones de objeto, verbo + preposición, gerundio vs infinitivo, causativos y verbos de reporte. Aprende cada verbo junto con su estructura.",
+    "provider": { "@type": "Organization", "name": "New York English Teacher", "url": "https://www.nyenglishteacher.com/" },
+    "educationalLevel": "Intermedio a Avanzado (B1–C1)",
+    "inLanguage": "es",
+    "url": "https://www.nyenglishteacher.com/es/curso/patrones-verbales/",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "inLanguage": "es"
+    }
+  })} />
+</Base>

@@ -1,0 +1,435 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import { verbLevels, verbLessons, verbBonuses, verbPatternsInfo } from "@data/verb-patterns/levels";
+import {
+  ArrowRight,
+  Sparkles,
+  Split,
+  MessageSquare,
+  Send,
+  Link as LinkIcon,
+  GitFork,
+  Users,
+  Handshake,
+  Shuffle,
+  Quote,
+  Table,
+  AlertTriangle,
+  GraduationCap,
+  Brain,
+  Puzzle,
+  CheckCircle2,
+  XCircle,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/verb-patterns" as const;
+
+const iconMap: Record<string, any> = {
+  Split,
+  MessageSquare,
+  Send,
+  Link: LinkIcon,
+  GitFork,
+  Users,
+  Handshake,
+  Shuffle,
+  Quote,
+  Sparkles,
+  Table,
+  AlertTriangle,
+};
+
+const base = verbPatternsInfo.basePath.en;
+
+const faqs = [
+  {
+    q: "Why do I say “I called to my boss” when it’s wrong?",
+    a: "Because you’re translating from Spanish — llamé a mi jefe. In English the verb “call” takes the person directly: I called my boss. The fix isn’t more vocabulary; it’s learning each verb together with its pattern. That’s exactly what this course drills.",
+  },
+  {
+    q: "What is a verb pattern?",
+    a: "A verb pattern is the structure a verb requires after it: call someone, speak to someone, depend on something, decide to do something, enjoy doing something. English verbs don’t all follow the same rule — you can’t choose by meaning, you have to know the verb.",
+  },
+  {
+    q: "Is “depend of” or “depend on” correct?",
+    a: "“Depend on.” Spanish depender de leads many speakers to say “depend of,” but English fixes the preposition to the verb: depend on, focus on, rely on. Level 2 of this course drills all six preposition families.",
+  },
+  {
+    q: "Who is this course for?",
+    a: "Intermediate to advanced speakers — B1 to C1 — especially Mexican professionals who use English at work. If you know the words but your grammar still marks you as a non-native speaker, this is the exact gap it closes.",
+  },
+  {
+    q: "Is the verb patterns course free?",
+    a: "Yes. Three levels of lessons, interactive drills, and reference guides — free, no sign-up, no paywall.",
+  },
+];
+
+const firstLesson = verbLessons.find((l) => l.available);
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Verb Pattern Mastery | Free English Verb Patterns Course for Spanish Speakers"
+  description="Free master class on English verb patterns for Spanish speakers. Stop saying 'I called to my boss' or 'I depend of my team' — learn the verb with its pattern."
+>
+  <!-- Hero -->
+  <section class="relative w-full overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-indigo-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-20 w-96 h-96 bg-violet-500 rounded-full blur-3xl"></div>
+    </div>
+    <div class="site-container mx-auto px-4 relative z-10 text-white">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/20 text-indigo-300 text-sm font-semibold mb-6">
+          <Sparkles class="w-4 h-4" />
+          Free Master Class — English Verb Patterns
+        </div>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Verb Pattern Mastery.<br />
+          <span class="text-indigo-400">Know the verb — not just the meaning.</span>
+        </h1>
+        <p class="text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed">
+          You know the words. But you still say
+          <em class="text-white not-italic">"I called to my boss,"</em>
+          <em class="text-white not-italic">"I depend of my team,"</em>
+          <em class="text-white not-italic">"I explained him the problem."</em>
+          The problem isn't vocabulary — it's the <strong class="text-white">pattern</strong>.
+          This course trains you to learn every verb together with the structure it demands.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          {firstLesson && (
+            <Button href={`${base}/${firstLesson.slug}/`} variant="primary" size="lg">
+              Start Lesson 1 — Free
+              <ArrowRight class="w-5 h-5 ml-1" />
+            </Button>
+          )}
+          <a
+            href="/en/course/intermediate/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            Looking for the full B1–B2 course?
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The shift: word vs chunk -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">The One Habit That Fixes It</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Native speakers don't store verbs as single words. They store them as chunks —
+            <em>depend&nbsp;on</em>, <em>remind&nbsp;someone&nbsp;to</em>, <em>apologize&nbsp;to&nbsp;someone&nbsp;for</em>.
+            Learn the chunk, and the mistakes disappear.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border-2 border-red-200 bg-red-50/50 p-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-red-100 text-red-600 mb-4">
+              <Brain class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">The Old Way: Study the Verb Alone</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> Learn <em>call, speak, remind, explain</em> as words.</li>
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> Guess the structure — usually from Spanish.</li>
+              <li class="flex gap-2"><span class="text-red-500 shrink-0">✗</span> <em>"I explained him the problem."</em></li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50 p-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 mb-4">
+              <Puzzle class="w-6 h-6" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">The New Way: Store the Whole Pattern</h3>
+            <ul class="space-y-2 text-slate-700">
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">✓</span> Learn <em>explain something to someone</em> as one chunk.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">✓</span> The structure comes attached — no guessing.</li>
+              <li class="flex gap-2"><span class="text-indigo-600 shrink-0">✓</span> <em>"I explained the problem to him."</em></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain points -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">Sound Familiar?</h2>
+        <p class="text-center text-slate-600 mb-10">Every one of these is a pattern error — not a vocabulary error.</p>
+        <div class="grid md:grid-cols-2 gap-4">
+          {[
+            ['I called to my boss.', 'I called my boss.'],
+            ['I depend of my team.', 'I depend on my team.'],
+            ['I explained him the problem.', 'I explained the problem to him.'],
+            ['I enjoy to learn English.', 'I enjoy learning English.'],
+            ['The delay prevented us to finish.', 'The delay prevented us from finishing.'],
+            ['I need my assistant send the file.', 'I need my assistant to send the file.'],
+          ].map(([wrong, right]) => (
+            <div class="bg-white rounded-xl p-5 border border-slate-200">
+              <p class="flex items-start gap-2 text-slate-500 line-through"><XCircle class="w-4 h-4 text-red-400 shrink-0 mt-1" /><span>{wrong}</span></p>
+              <p class="flex items-start gap-2 text-slate-800 font-medium mt-1"><CheckCircle2 class="w-4 h-4 text-indigo-500 shrink-0 mt-1" /><span>{right}</span></p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three-level roadmap -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Three Levels. One Skill.</h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          From the highest-frequency errors to the subtle patterns that separate B2 from C1.
+          Each lesson ends with an interactive drill.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-14">
+        {verbLevels.map((level) => {
+          const lessons = verbLessons.filter((l) => l.level === level.id);
+          return (
+            <div>
+              <div class="flex items-center gap-3 mb-6">
+                <span class="inline-flex items-center justify-center px-2.5 py-1 rounded-lg bg-indigo-600 text-white text-xs font-bold tracking-wide">
+                  {level.cefr}
+                </span>
+                <div>
+                  <h3 class="text-2xl font-bold text-slate-900">Level {level.id} — {level.title}</h3>
+                  <p class="text-sm text-slate-500">{level.tagline}</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {lessons.map((lesson) => {
+                  const Icon = iconMap[lesson.icon];
+                  const href = lesson.available ? `${base}/${lesson.slug}/` : undefined;
+                  return (
+                    <a
+                      href={href}
+                      class:list={[
+                        "group flex items-start gap-4 p-5 rounded-xl border transition-all duration-200",
+                        lesson.available
+                          ? "bg-indigo-50 border-indigo-300 hover:shadow-md hover:border-indigo-400 cursor-pointer"
+                          : "bg-white border-slate-200 opacity-75",
+                      ]}
+                    >
+                      <div
+                        class:list={[
+                          "flex items-center justify-center w-12 h-12 rounded-xl shrink-0",
+                          lesson.available ? "bg-indigo-500 text-white" : "bg-slate-100 text-slate-400",
+                        ]}
+                      >
+                        {Icon && <Icon class="w-6 h-6" />}
+                      </div>
+                      <div class="flex-1">
+                        <div class="flex items-center gap-2">
+                          <span
+                            class:list={[
+                              "text-xs font-bold uppercase tracking-wider",
+                              lesson.available ? "text-indigo-700" : "text-slate-400",
+                            ]}
+                          >
+                            Lesson {lesson.id}
+                          </span>
+                          {!lesson.available && (
+                            <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">Coming soon</span>
+                          )}
+                        </div>
+                        <h4
+                          class:list={[
+                            "text-lg font-bold mt-0.5",
+                            lesson.available ? "text-slate-900" : "text-slate-600",
+                          ]}
+                        >
+                          {lesson.title}
+                        </h4>
+                        <p class="text-sm font-medium text-slate-700 mt-1 font-mono">{lesson.pattern}</p>
+                        <p class="text-xs text-slate-500 mt-1">{lesson.subtitle}</p>
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+
+              <div class="mt-4">
+                <span class="inline-flex items-center gap-2 text-sm text-slate-400">
+                  <GraduationCap class="w-4 h-4" />
+                  Ends with the {level.examTitle} <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">Coming soon</span>
+                </span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bonus reference -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold mb-4">
+            <Sparkles class="w-4 h-4" />
+            Reference Guides
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Keep-Forever Cheat Sheets</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            The patterns, condensed. Bookmark them and check before you write that email.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {verbBonuses.map((bonus) => {
+            const Icon = iconMap[bonus.icon];
+            const href = bonus.available ? `${base}/${bonus.slug}/` : undefined;
+            const Tag = bonus.available ? "a" : "div";
+            return (
+              <Tag
+                href={href}
+                class:list={[
+                  "bg-white rounded-xl p-5 border flex flex-col gap-3",
+                  bonus.available
+                    ? "border-indigo-300 hover:shadow-md hover:border-indigo-400 transition-all duration-200 cursor-pointer"
+                    : "border-slate-200",
+                ]}
+              >
+                <div class:list={["flex items-center justify-center w-10 h-10 rounded-lg", bonus.available ? "bg-indigo-500 text-white" : "bg-slate-100 text-slate-500"]}>
+                  {Icon && <Icon class="w-5 h-5" />}
+                </div>
+                <div>
+                  {!bonus.available && (
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">Coming soon</span>
+                  )}
+                  <h3 class="text-base font-bold text-slate-900 mt-1">{bonus.title}</h3>
+                  <p class="text-sm text-slate-600 mt-1">{bonus.description}</p>
+                </div>
+              </Tag>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why this works -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 text-center">Why Chunking Works</h2>
+        <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+          <p>
+            Spanish and English don't map their verb structures one-to-one.
+            <em>Llamé a mi jefe</em> has a preposition before the person; <em>I called my boss</em> has none.
+            <em>Depender de</em> becomes <em>depend on</em>. <em>Disfruto aprender</em> becomes <em>enjoy learning</em>.
+            Translate word-by-word and you produce the classic errors.
+          </p>
+          <p>
+            The fix is not to memorize a rule for every verb — there are too many, and the rules have exceptions.
+            The fix is to store each verb <strong>with its pattern already attached</strong>, as a single unit,
+            and to drill the choice until it's automatic.
+          </p>
+          <p>
+            That's what this course does: it teaches the patterns in order of impact, drills them interactively,
+            and targets the exact structures Mexican professionals get wrong in real meetings and emails.
+          </p>
+        </div>
+        {firstLesson && (
+          <div class="mt-10 text-center">
+            <Button href={`${base}/${firstLesson.slug}/`} variant="primary" size="lg">
+              Start Lesson 1 — Free
+              <ArrowRight class="w-5 h-5 ml-1" />
+            </Button>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-link -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Where Does This Fit?</h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          This is a <strong>focused master class</strong> — one skill, done thoroughly.
+          For a full level course, see the four-tier series
+          <strong>Elemental → Intermediate → Advanced → Executive</strong>.
+          For 1-on-1 corporate coaching, see the Business English program.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a href="/en/courses/" class="text-indigo-700 hover:text-indigo-800 font-medium underline underline-offset-2">See all courses</a>
+          <span class="text-slate-300">|</span>
+          <a href="/en/services/corporate-package/" class="text-indigo-700 hover:text-indigo-800 font-medium underline underline-offset-2">Corporate coaching program</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-slate-50 border-t border-slate-100">
+    <div class="site-container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 text-center">Frequently asked questions</h2>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="group bg-white rounded-xl border border-slate-200 p-5">
+            <summary class="flex items-center justify-between gap-3 cursor-pointer font-semibold text-slate-900 list-none">
+              <span>{f.q}</span>
+              <span class="shrink-0 w-2.5 h-2.5 border-r-2 border-b-2 border-indigo-500 rotate-45 transition-transform group-open:rotate-[225deg]"></span>
+            </summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Verb Pattern Mastery — Free Master Class",
+    "description": "A focused master class on English verb patterns for Spanish speakers: object patterns, verb + preposition, gerund vs infinitive, causatives, and reporting verbs. Learn every verb together with its structure.",
+    "provider": { "@type": "Organization", "name": "New York English Teacher", "url": "https://www.nyenglishteacher.com/" },
+    "educationalLevel": "Intermediate to Advanced (B1–C1)",
+    "inLanguage": "en",
+    "url": "https://www.nyenglishteacher.com/en/course/verb-patterns/",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "inLanguage": "en"
+    }
+  })} />
+</Base>
