@@ -122,6 +122,42 @@ export const l4Drill: PatternDrillSet = {
       diagnosis: "borrow FROM someone. Same FROM family: hear from, learn from, recover from.",
       diagnosisEs: "borrow FROM someone. Misma familia FROM: hear from, learn from, recover from.",
     },
+    {
+      prompt: "I love to ___ music while I work.",
+      options: [
+        { label: "listen to", correct: true },
+        { label: "listen", correct: false },
+        { label: "listen at", correct: false },
+      ],
+      answer: "I love to listen to music while I work.",
+      diagnosis: "listen TO something — Spanish “escuchar” is direct, but English needs “to”.",
+      diagnosisEs:
+        "listen TO something — “escuchar” es directo en español, pero el inglés necesita “to”.",
+    },
+    {
+      prompt: "Everyone, please ___ the screen.",
+      options: [
+        { label: "look at", correct: true },
+        { label: "look", correct: false },
+        { label: "look to", correct: false },
+      ],
+      answer: "Everyone, please look at the screen.",
+      diagnosis:
+        "look AT something you view — “mirar” is direct in Spanish, but English needs “at”. (look FOR = search.)",
+      diagnosisEs:
+        "look AT algo que ves — “mirar” es directo en español, pero el inglés necesita “at”. (look FOR = buscar.)",
+    },
+    {
+      prompt: "We need to ___ the future, not the past.",
+      options: [
+        { label: "think about", correct: true },
+        { label: "think in", correct: false },
+        { label: "think", correct: false },
+      ],
+      answer: "We need to think about the future, not the past.",
+      diagnosis: "think ABOUT something — never “think in” (that copies “pensar en”).",
+      diagnosisEs: "think ABOUT something — nunca “think in” (eso copia “pensar en”).",
+    },
   ],
 };
 
@@ -183,6 +219,38 @@ export const l4Corrections: ErrorCorrectionSet = {
       correctHighlight: "with",
       explanation: "deal WITH a problem — handle it. Never “deal about”.",
       explanationEs: "deal WITH un problema — manejarlo. Nunca “deal about”.",
+      errorType: "preposition",
+    },
+    {
+      incorrect: "I like to listen music in the car.",
+      correct: "I like to listen to music in the car.",
+      incorrectHighlight: "listen music",
+      correctHighlight: "listen to music",
+      explanation:
+        "listen TO something. Spanish “escuchar” takes a direct object; English needs “to”.",
+      explanationEs:
+        "listen TO something. “Escuchar” lleva objeto directo; el inglés necesita “to”.",
+      errorType: "literal-translation",
+    },
+    {
+      incorrect: "Please look the screen for a moment.",
+      correct: "Please look at the screen for a moment.",
+      incorrectHighlight: "look the",
+      correctHighlight: "look at the",
+      explanation:
+        "look AT something you’re viewing. “Mirar” is direct in Spanish; English needs “at”.",
+      explanationEs:
+        "look AT algo que estás viendo. “Mirar” es directo en español; el inglés necesita “at”.",
+      errorType: "literal-translation",
+    },
+    {
+      incorrect: "Let’s think in the long-term strategy.",
+      correct: "Let’s think about the long-term strategy.",
+      incorrectHighlight: "think in",
+      correctHighlight: "think about",
+      explanation: "think ABOUT something. “In” copies “pensar en”; English fixes it to “about”.",
+      explanationEs:
+        "think ABOUT something. El “in” copia “pensar en”; el inglés lo fija en “about”.",
       errorType: "preposition",
     },
   ],
