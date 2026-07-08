@@ -1,0 +1,216 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import { ArrowLeft, GitFork } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/verb-patterns/gerund-or-infinitive" as const;
+
+const infinitiveVerbs = [
+  "decide", "plan", "hope", "promise", "refuse", "manage", "fail", "learn",
+  "agree", "offer", "expect", "want", "need", "would like", "choose",
+  "arrange", "prepare", "pretend", "seem", "afford", "threaten",
+];
+
+const gerundVerbs = [
+  "enjoy", "avoid", "finish", "keep", "consider", "suggest", "recommend",
+  "practice", "mind", "miss", "admit", "deny", "imagine", "involve", "risk",
+  "delay", "postpone", "quit", "give up", "feel like",
+];
+
+const prepositionExamples = [
+  "good at solving problems",
+  "interested in learning",
+  "before leaving",
+  "after finishing",
+  "instead of waiting",
+  "without asking",
+];
+
+const meaningChangers = [
+  {
+    verb: "stop",
+    toDo: "stopped to rest",
+    toNote: "paused",
+    ing: "stopped smoking",
+    ingNote: "quit",
+  },
+  {
+    verb: "remember",
+    toDo: "remember to call",
+    toNote: "future task",
+    ing: "remember calling",
+    ingNote: "past memory",
+  },
+  {
+    verb: "forget",
+    toDo: "forgot to lock it",
+    toNote: "failed to",
+    ing: "never forget meeting her",
+    ingNote: "memory",
+  },
+  {
+    verb: "try",
+    toDo: "tried to open it",
+    toNote: "attempted",
+    ing: "try restarting it",
+    ingNote: "experiment",
+  },
+  {
+    verb: "regret",
+    toDo: "regret to inform you",
+    toNote: "formal news",
+    ing: "regret saying it",
+    ingNote: "sorry about past",
+  },
+  {
+    verb: "go on",
+    toDo: "went on to discuss X",
+    toNote: "new topic",
+    ing: "went on talking",
+    ingNote: "continued",
+  },
+];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Gerund or Infinitive? Quick Reference | Verb Pattern Mastery"
+  description="Which verbs take to-do, which take -ing, and which change meaning — the quick-reference list for the gerund/infinitive split that trips up Spanish speakers."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <GitFork class="w-4 h-4" />
+          Reference
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Gerund or Infinitive?
+        </h1>
+        <p class="text-2xl text-indigo-300 italic font-light mb-4">Which verbs take which form.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          The verb decides whether you use <em class="text-white not-italic">to&nbsp;+&nbsp;base</em> or
+          <em class="text-white not-italic">-ing</em>. Learn these lists and the guesswork disappears.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: two lists -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The two core lists</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">The verb in front decides the form that follows it.</p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Card A -->
+          <div class="rounded-2xl border border-slate-200 bg-white overflow-hidden">
+            <div class="bg-indigo-600 px-6 py-4">
+              <h3 class="text-lg font-bold text-white">Take to + base (infinitive)</h3>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-5">
+                {infinitiveVerbs.map((v) => (
+                  <span class="inline-block rounded-full bg-indigo-50 border border-indigo-100 px-3 py-1 text-sm font-medium text-indigo-800">{v}</span>
+                ))}
+              </div>
+              <p class="text-slate-700 border-l-4 border-indigo-500 pl-4 italic">"I decided <strong class="not-italic">to call</strong> the client."</p>
+            </div>
+          </div>
+          <!-- Card B -->
+          <div class="rounded-2xl border border-slate-200 bg-white overflow-hidden">
+            <div class="bg-slate-800 px-6 py-4">
+              <h3 class="text-lg font-bold text-white">Take -ing (gerund)</h3>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-5">
+                {gerundVerbs.map((v) => (
+                  <span class="inline-block rounded-full bg-slate-100 border border-slate-200 px-3 py-1 text-sm font-medium text-slate-800">{v}</span>
+                ))}
+              </div>
+              <p class="text-slate-700 border-l-4 border-slate-800 pl-4 italic">"I enjoy <strong class="not-italic">working</strong> with clients."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: prepositions -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">After a preposition → always -ing</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Once a preposition (at, in, before, after, of, without…) comes first, the verb that follows is always in the <strong>-ing</strong> form. No exceptions.</p>
+        <div class="ml-0 md:ml-11 flex flex-wrap gap-3">
+          {prepositionExamples.map((ex) => (
+            <span class="inline-block rounded-lg bg-white border border-slate-200 px-4 py-2 text-slate-800 font-medium shadow-sm">{ex}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: meaning changers table -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The verbs that change meaning</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">With these, both forms are correct English — but they mean different things.</p>
+        <div class="overflow-x-auto rounded-2xl border border-slate-200">
+          <table class="w-full text-left border-collapse min-w-[560px]">
+            <thead>
+              <tr class="bg-indigo-600 text-white">
+                <th class="px-5 py-3 text-sm font-bold uppercase tracking-wider">Verb</th>
+                <th class="px-5 py-3 text-sm font-bold uppercase tracking-wider">to + base</th>
+                <th class="px-5 py-3 text-sm font-bold uppercase tracking-wider">-ing</th>
+              </tr>
+            </thead>
+            <tbody>
+              {meaningChangers.map((row, i) => (
+                <tr class={i % 2 === 0 ? "bg-white" : "bg-slate-50"}>
+                  <td class="px-5 py-4 font-mono font-semibold text-indigo-700 align-top">{row.verb}</td>
+                  <td class="px-5 py-4 text-slate-800 align-top">
+                    {row.toDo} <span class="text-slate-400">({row.toNote})</span>
+                  </td>
+                  <td class="px-5 py-4 text-slate-800 align-top">
+                    {row.ing} <span class="text-slate-400">({row.ingNote})</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-sm text-slate-500 mt-4">
+          See <a href="/en/course/verb-patterns/meaning-changers/" class="text-indigo-700 hover:text-indigo-800 underline underline-offset-2 font-medium">Lesson 8</a> for these in depth.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer nav -->
+  <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <a href="/en/course/verb-patterns/" class="inline-flex items-center gap-2 text-indigo-700 hover:text-indigo-800 font-medium">
+          <ArrowLeft class="w-4 h-4" />
+          Back to Course Overview
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

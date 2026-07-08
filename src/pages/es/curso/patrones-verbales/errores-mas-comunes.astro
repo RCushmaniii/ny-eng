@@ -1,0 +1,193 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import { ArrowLeft, AlertTriangle, XCircle, CheckCircle2 } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/verb-patterns/top-traps" as const;
+
+const traps = [
+  {
+    wrong: "I called",
+    wrongPre: "",
+    wrongPost: " to my boss.",
+    right: "I called my boss.",
+    why: "call es un verbo de objeto directo — sin \"to\" antes de la persona.",
+  },
+  {
+    wrong: "of",
+    wrongPre: "I depend ",
+    wrongPost: " my team.",
+    right: "I depend on my team.",
+    why: "depend ON, nunca \"of\" (eso copia \"depender de\").",
+  },
+  {
+    wrong: "in",
+    wrongPre: "We focus ",
+    wrongPost: " the problem.",
+    right: "We focus on the problem.",
+    why: "focus ON, no \"in\".",
+  },
+  {
+    wrong: "Explain me",
+    wrongPre: "",
+    wrongPost: " the plan.",
+    right: "Explain the plan to me.",
+    why: "explain SOMETHING TO SOMEONE — nunca \"explain me\".",
+  },
+  {
+    wrong: "said me",
+    wrongPre: "He ",
+    wrongPost: " that it was ready.",
+    right: "He told me that it was ready.",
+    why: "cuando mencionas a quién escucha, usa TELL, no SAY.",
+  },
+  {
+    wrong: "to work",
+    wrongPre: "I enjoy ",
+    wrongPost: " with clients.",
+    right: "I enjoy working with clients.",
+    why: "enjoy lleva -ing, nunca \"to\".",
+  },
+  {
+    wrong: "him to wait",
+    wrongPre: "I suggested ",
+    wrongPost: ".",
+    right: "I suggested that he wait.",
+    why: "nunca \"suggest someone to do\"; usa suggest that sb do (o suggest doing).",
+  },
+  {
+    wrong: "to repeat",
+    wrongPre: "She made me ",
+    wrongPost: " it.",
+    right: "She made me repeat it.",
+    why: "make y let llevan el verbo base sin \"to\".",
+  },
+  {
+    wrong: "waited",
+    wrongPre: "I ",
+    wrongPost: " the client.",
+    right: "I waited for the client.",
+    why: "wait FOR — la preposición no se puede omitir.",
+  },
+  {
+    wrong: "apologized",
+    wrongPre: "I ",
+    wrongPost: " the client.",
+    right: "I apologized to the client.",
+    why: "apologize TO a person.",
+  },
+  {
+    wrong: "to finish",
+    wrongPre: "It prevented us ",
+    wrongPost: ".",
+    right: "It prevented us from finishing.",
+    why: "prevent someone FROM doing — \"from + -ing\".",
+  },
+  {
+    wrong: "for",
+    wrongPre: "I worried ",
+    wrongPost: " the deadline.",
+    right: "I worried about the deadline.",
+    why: "worry ABOUT something.",
+  },
+  {
+    wrong: "to",
+    wrongPre: "He applied ",
+    wrongPost: " a job.",
+    right: "He applied for a job.",
+    why: "apply FOR a job (apply TO a company).",
+  },
+  {
+    wrong: "with",
+    wrongPre: "I introduced him ",
+    wrongPost: " her.",
+    right: "I introduced him to her.",
+    why: "introduce someone TO someone, nunca \"with\".",
+  },
+  {
+    wrong: "sending",
+    wrongPre: "Remember ",
+    wrongPost: " it tomorrow.",
+    right: "Remember to send it tomorrow.",
+    why: "una tarea futura lleva remember TO DO, no -ing.",
+  },
+];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Errores Más Comunes del Hispanohablante | Patrones Verbales"
+  description="Los errores de patrones verbales más fosilizados del hispanohablante — depend of, explain me, enjoy to — cada uno con la corrección exacta y su porqué."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <AlertTriangle class="w-4 h-4" />
+          Referencia
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Errores Más Comunes del Hispanohablante
+        </h1>
+        <p class="text-2xl text-indigo-300 italic font-light mb-4">Los quince errores que hay que desaprender.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Estos son los errores fosilizados que vienen directo del español — los que sobreviven años
+          hablando inglés porque se sienten correctos. Cada tarjeta muestra la
+          <strong class="text-white">versión incorrecta</strong>, la
+          <strong class="text-white">corrección</strong> y el
+          <strong class="text-white">porqué</strong> sucede.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The 15 traps -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <ol class="space-y-4">
+          {traps.map((t, i) => (
+            <li class="rounded-2xl border border-slate-200 overflow-hidden">
+              <div class="flex items-center gap-3 bg-slate-50 px-5 py-2 border-b border-slate-200">
+                <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-indigo-500 text-white text-sm font-bold">{i + 1}</span>
+              </div>
+              <div class="p-5 space-y-3">
+                <div class="flex items-start gap-2.5">
+                  <XCircle class="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
+                  <p class="text-slate-700">
+                    {t.wrongPre}<span class="line-through decoration-rose-400 decoration-2 text-rose-600 font-medium">{t.wrong}</span>{t.wrongPost}
+                  </p>
+                </div>
+                <div class="flex items-start gap-2.5">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                  <p class="text-slate-900 font-medium">{t.right}</p>
+                </div>
+                <div class="flex items-start gap-2.5 pt-1 border-t border-slate-100">
+                  <AlertTriangle class="w-4 h-4 text-amber-500 shrink-0 mt-1" />
+                  <p class="text-sm text-slate-600 leading-relaxed">{t.why}</p>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer nav -->
+  <section class="py-12 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <a href="/es/curso/patrones-verbales/" class="inline-flex items-center gap-2 text-sm text-indigo-700 hover:text-indigo-800 underline underline-offset-2">
+          <ArrowLeft class="w-4 h-4" />
+          Volver al resumen del curso
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
