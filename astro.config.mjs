@@ -33,6 +33,7 @@ const blogTranslations = {
   "why-corporate-english-training-fails-mexico":
     "/es/blog/por-que-fracasa-la-capacitacion-de-ingles-corporativo-en-mexico/",
   "executive-english-coaching": "/es/blog/coaching-ejecutivo/",
+  "executive-communication-playbook": "/es/blog/manual-comunicacion-ejecutiva/",
   "executive-video-call": "/es/blog/presencia-ejecutiva-en-videollamadas/",
   "managers-lose-millions": "/es/blog/por-que-los-gerentes-de-ti-en-mexico-pierden-clientes/",
   "master-business-english": "/es/blog/dominar-negocios/",

@@ -3,6 +3,7 @@ export const prerender = true;
 
 import Base from "@layouts/Base.astro";
 import Button from "@components/ui/Button.astro";
+import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
 import { verbLevels, verbLessons, verbBonuses, verbPatternsInfo } from "@data/verb-patterns/levels";
 import {
   ArrowRight,
@@ -440,4 +441,10 @@ const firstLesson = verbLessons.find((l) => l.available);
       "inLanguage": "en"
     }
   })} />
+
+  <BreadcrumbSchema items={[
+    { name: "Home", url: "https://www.nyenglishteacher.com/en/" },
+    { name: "Courses", url: "https://www.nyenglishteacher.com/en/courses/" },
+    { name: "Verb Pattern Mastery", url: "https://www.nyenglishteacher.com/en/course/verb-patterns/" },
+  ]} />
 </Base>

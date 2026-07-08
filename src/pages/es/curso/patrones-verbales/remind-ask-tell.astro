@@ -7,6 +7,7 @@ import AudioButton from "@components/course/AudioButton";
 import PatternDrill from "@components/course/PatternDrill";
 import ErrorCorrection from "@components/course/ErrorCorrection";
 import { l2Drill, l2Corrections } from "@data/verb-patterns/lesson-2";
+import CourseLessonSchema from "@components/seo/CourseLessonSchema.astro";
 import { ArrowRight, MessageSquare, CheckCircle2 } from "lucide-astro";
 
 const lang = "es";
@@ -199,4 +200,5 @@ const tellPatterns = [
       </div>
     </div>
   </section>
+  <CourseLessonSchema {lang} {tkey} />
 </Base>
