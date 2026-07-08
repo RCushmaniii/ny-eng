@@ -4,6 +4,41 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-07-08 (Verb Pattern Mastery — full free course shipped end-to-end)
+
+### Accomplished
+
+- Shipped the complete **Verb Pattern Mastery** course (indigo theme, bilingual EN + es-MX): hub + 3 levels + 10 lessons + 3 exams + 3 reference pages. Targets the #1 fossilized-error class for Spanish speakers (verb complementation: `depend of`, `explain me`, `enjoy to`, `made me to`).
+- PR #212 (Level 2 — Patterns): lessons 4–7 (verb+preposition, to-do vs doing, someone+to-do/make/let, someone+preposition) + Patterns exam (20 Q). New data files `lesson-4..7.ts`, `exam-patterns.ts`.
+- PR #213 (Level 3 — Mastery, extends beyond source PDFs): lessons 8–10 (meaning-changers stop/remember/try/regret, reporting verbs say-vs-tell + suggest-trap, sounding-natural 3-question diagnosis capstone) + Mastery exam (20 Q). Data `lesson-8..10.ts`, `exam-mastery.ts`.
+- PR #214 (bonus refs): The Pattern Diagnosis Table, Gerund or Infinitive?, Top Traps for Spanish Speakers. `verbBonuses` flipped available → hub bonus section live.
+- Authored all pedagogical data by hand (correctness-critical); parallelized the templated EN+ES page assembly across subagents (10 lesson pages + 6 bonus/exam pages), each grep-audited for Iberian markers.
+- Final build clean: **470 pages**, meta-description gate (120–160) pass, sitemap validation pass.
+- SEO: GSC sitemap resubmitted; IndexNow accepted 444 URLs (Bing/Yandex/DuckDuckGo/Seznam/Naver) with Bing IndexNow HTTP 200. Social kit added at `content-marketing/verb-patterns-course-social.md` (X + FB/LinkedIn, EN+ES).
+
+### Decisions Made
+
+- One hub / 3 progressive levels (not 3 separate CEFR courses); Level 3 written as new B2–C1 material beyond the two source PDFs — per Robert's AskUserQuestion choices.
+- Reused `ErrorCorrection` / `SentenceTransformer` / `CourseExam`; built one new component (`PatternDrill`). Parameterized `CourseExam` copy (backward-compatible) so per-course intro/completion strings work.
+- Skipped direct Bing Webmaster API submission: IndexNow already delivered to Bing (HTTP 200) and the direct API has only 100 URLs/day quota worth preserving; the 444-URL sitemap exceeded it anyway.
+- Realigned local `main` to `origin/main` after each squash-merge (GitHub's fast-forward guard tripped on the pre-existing merge commit); verified `docs/BLOG-SYSTEM-PLAYBOOK.md` survived into origin before any reset.
+
+### Immediate Next Steps
+
+- [ ] Robert: post the social kit (`content-marketing/verb-patterns-course-social.md`) to X + LinkedIn/FB.
+- [ ] After ~2 weeks, check GSC impressions/position for the new `verb-patterns` URLs; fold any striking-distance queries back into lesson copy.
+- [ ] Consider linking the new course from related blog posts (business-english, register-for-spanish-speakers) for internal-link equity.
+
+### Technical Debt
+
+- None. (`CourseExam` parameterization keeps legacy beginner/intermediate exams on their original hardcoded fallbacks — intentional, no debt.)
+
+### Open Questions / Blockers
+
+- None.
+
+---
+
 ## Session: 2026-07-01 (SEO schema hardening + demand-backed content + local-authority kickoff)
 
 ### Accomplished
