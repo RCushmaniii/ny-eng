@@ -1,0 +1,92 @@
+---
+/**
+ * CourseLessonSchema — emits BreadcrumbList + LearningResource JSON-LD for a
+ * Verb Pattern Mastery sub-page (lesson, exam, or bonus reference).
+ *
+ * Fully data-driven: pass only `lang` and `tkey`. Name, resource type, and the
+ * per-language URL are resolved from the course data (levels.ts) and the i18n
+ * route map, so wiring every page is the identical one-liner:
+ *   <CourseLessonSchema {lang} {tkey} />
+ */
+import { routeFor, type TKey } from "../../lib/i18n";
+import {
+  verbLessons,
+  verbLevels,
+  verbBonuses,
+  verbPatternsInfo,
+} from "../../data/verb-patterns/levels";
+
+interface Props {
+  lang: "en" | "es";
+  tkey: TKey;
+}
+const { lang, tkey } = Astro.props;
+
+const SITE = (Astro.site?.href ?? "https://www.nyenglishteacher.com/").replace(/\/+$/, "");
+const abs = (path: string) => SITE + (path.startsWith("/") ? path : "/" + path);
+
+// Resolve the leaf slug from the tkey (e.g. "course/verb-patterns/verb-preposition" → "verb-preposition")
+const slug = tkey.split("/").pop() ?? "";
+
+// Match the page against the course data to get its display name + resource type
+const lesson = verbLessons.find((l) => l.slug === slug);
+const examLevel = verbLevels.find((lvl) => lvl.examSlug === slug);
+const bonus = verbBonuses.find((b) => b.slug === slug);
+
+let name = "";
+let resourceType = "LearningResource";
+if (lesson) {
+  name = lang === "es" ? lesson.titleEs : lesson.title;
+  resourceType = "Lesson";
+} else if (examLevel) {
+  name = lang === "es" ? examLevel.examTitleEs : examLevel.examTitle;
+  resourceType = "Quiz";
+} else if (bonus) {
+  name = lang === "es" ? bonus.titleEs : bonus.title;
+  resourceType = "Reference guide";
+}
+
+const courseName = lang === "es" ? verbPatternsInfo.titleEs : verbPatternsInfo.title;
+
+const homeUrl = abs(lang === "es" ? "/es/" : "/en/");
+const coursesUrl = abs(routeFor[lang]["courses"]);
+const courseUrl = abs(routeFor[lang]["course/verb-patterns"]);
+const pageUrl = abs(routeFor[lang][tkey]);
+
+const homeName = lang === "es" ? "Inicio" : "Home";
+const coursesName = lang === "es" ? "Cursos" : "Courses";
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: homeName, item: homeUrl },
+    { "@type": "ListItem", position: 2, name: coursesName, item: coursesUrl },
+    { "@type": "ListItem", position: 3, name: courseName, item: courseUrl },
+    { "@type": "ListItem", position: 4, name, item: pageUrl },
+  ],
+};
+
+const learningResource = {
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  name,
+  url: pageUrl,
+  inLanguage: lang === "es" ? "es-MX" : "en",
+  learningResourceType: resourceType,
+  educationalLevel: "Intermediate to Advanced (B1–C1)",
+  isAccessibleForFree: true,
+  provider: {
+    "@type": "Organization",
+    name: "New York English Teacher",
+    url: SITE + "/",
+  },
+  isPartOf: {
+    "@type": "Course",
+    name: courseName,
+    url: courseUrl,
+  },
+};
+---
+<script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumb)} />
+<script type="application/ld+json" is:inline set:html={JSON.stringify(learningResource)} />

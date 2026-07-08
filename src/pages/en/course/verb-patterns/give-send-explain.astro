@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import CourseLessonSchema from "@components/seo/CourseLessonSchema.astro";
 import Button from "@components/ui/Button.astro";
 import AudioButton from "@components/course/AudioButton";
 import SentenceTransformer from "@components/course/SentenceTransformer";
@@ -160,4 +161,5 @@ const flexibleVerbs = ["give", "send", "show", "offer", "lend", "sell", "bring"]
       </div>
     </div>
   </section>
+  <CourseLessonSchema {lang} {tkey} />
 </Base>

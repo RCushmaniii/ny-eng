@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import CourseLessonSchema from "@components/seo/CourseLessonSchema.astro";
 import Button from "@components/ui/Button.astro";
 import { ArrowLeft, GitFork } from "lucide-astro";
 
@@ -213,4 +214,5 @@ const meaningChangers = [
       </div>
     </div>
   </section>
+  <CourseLessonSchema {lang} {tkey} />
 </Base>

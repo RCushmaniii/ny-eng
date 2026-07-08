@@ -7,6 +7,7 @@ import AudioButton from "@components/course/AudioButton";
 import PatternDrill from "@components/course/PatternDrill";
 import ErrorCorrection from "@components/course/ErrorCorrection";
 import { l6Drill, l6Corrections } from "@data/verb-patterns/lesson-6";
+import CourseLessonSchema from "@components/seo/CourseLessonSchema.astro";
 import { ArrowRight, Users, CheckCircle2, XCircle, AlertTriangle } from "lucide-astro";
 
 const lang = "es";
@@ -210,4 +211,5 @@ const toDoVerbs = [
       </div>
     </div>
   </section>
+  <CourseLessonSchema {lang} {tkey} />
 </Base>

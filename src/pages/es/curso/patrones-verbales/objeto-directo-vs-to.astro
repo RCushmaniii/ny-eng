@@ -7,6 +7,7 @@ import AudioButton from "@components/course/AudioButton";
 import PatternDrill from "@components/course/PatternDrill";
 import ErrorCorrection from "@components/course/ErrorCorrection";
 import { l1Drill, l1Corrections } from "@data/verb-patterns/lesson-1";
+import CourseLessonSchema from "@components/seo/CourseLessonSchema.astro";
 import {
   ArrowRight,
   Split,
@@ -295,4 +296,5 @@ const toVerbs = ["speak to", "talk to", "listen to", "reply to", "respond to", "
       </div>
     </div>
   </section>
+  <CourseLessonSchema {lang} {tkey} />
 </Base>

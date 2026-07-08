@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import CourseLessonSchema from "@components/seo/CourseLessonSchema.astro";
 import CourseExam from "@components/course/CourseExam";
 import {
   foundationsExamQuestions,
@@ -61,4 +62,5 @@ const tkey = "course/verb-patterns/foundations-exam" as const;
       </a>
     </div>
   </section>
+  <CourseLessonSchema {lang} {tkey} />
 </Base>

@@ -7,6 +7,7 @@ import AudioButton from "@components/course/AudioButton";
 import PatternDrill from "@components/course/PatternDrill";
 import ErrorCorrection from "@components/course/ErrorCorrection";
 import { l7Drill, l7Corrections } from "@data/verb-patterns/lesson-7";
+import CourseLessonSchema from "@components/seo/CourseLessonSchema.astro";
 import { ArrowRight, Handshake, CheckCircle2, XCircle } from "lucide-astro";
 
 const lang = "es";
@@ -200,4 +201,5 @@ const tkey = "course/verb-patterns/someone-preposition" as const;
       </div>
     </div>
   </section>
+  <CourseLessonSchema {lang} {tkey} />
 </Base>

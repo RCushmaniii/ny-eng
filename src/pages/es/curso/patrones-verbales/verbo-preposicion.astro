@@ -7,6 +7,7 @@ import AudioButton from "@components/course/AudioButton";
 import PatternDrill from "@components/course/PatternDrill";
 import ErrorCorrection from "@components/course/ErrorCorrection";
 import { l4Drill, l4Corrections } from "@data/verb-patterns/lesson-4";
+import CourseLessonSchema from "@components/seo/CourseLessonSchema.astro";
 import { ArrowRight, Link as LinkIcon, CheckCircle2, XCircle } from "lucide-astro";
 
 const lang = "es";
@@ -164,4 +165,5 @@ const traps = [
       </div>
     </div>
   </section>
+  <CourseLessonSchema {lang} {tkey} />
 </Base>
