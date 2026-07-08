@@ -1,0 +1,239 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import AudioButton from "@components/course/AudioButton";
+import PatternDrill from "@components/course/PatternDrill";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import { l9Drill, l9Corrections } from "@data/verb-patterns/lesson-9";
+import { ArrowRight, Quote, CheckCircle2, XCircle } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/verb-patterns/reporting-verbs" as const;
+
+const toDoReporters = [
+  ["promise + to do", "The client promised to pay within thirty days.", "no person needed"],
+  ["agree + to do", "We agreed to meet on Friday.", "no person needed"],
+  ["offer + to do", "She offered to help me.", "no person needed"],
+  ["refuse + to do", "He refused to sign the contract.", "no person needed"],
+  ["remind someone + to do", "They reminded us to arrive early.", "person required"],
+  ["warn someone + to do", "She warned me to double-check the numbers.", "person required"],
+  ["advise someone + to do", "The lawyer advised him to wait.", "person required"],
+];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Reporting Verbs: say vs tell and the suggest trap | Verb Patterns Lesson 9"
+  description="Lesson 9 of Verb Pattern Mastery. say vs tell, and why 'suggest me to do' is wrong. Report what people said without the classic Spanish-speaker mistakes."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <Quote class="w-4 h-4" />
+          Level 3 · Mastery — Lesson 9
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Reporting Verbs
+        </h1>
+        <p class="text-2xl text-indigo-300 italic font-light mb-4">One Spanish verb, two English patterns.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Reporting what other people said trips up Spanish speakers because
+          <em class="text-white not-italic">decir</em> maps to both <em class="text-white not-italic">say</em> and
+          <em class="text-white not-italic">tell</em> — and English keeps them apart. Add the
+          <em class="text-white not-italic">suggest</em>/<em class="text-white not-italic">recommend</em> trap,
+          and one careless sentence gives you away. Let's fix all of it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Say vs Tell -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Say vs Tell</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">One Spanish verb, two English rules.</p>
+        <div class="space-y-4 text-lg text-slate-700 leading-relaxed">
+          <p>
+            <strong>TELL</strong> takes a person: <em>tell someone</em>. <strong>SAY</strong> does not —
+            <em>say that…</em>, or <em>say something to someone</em>. The listener is the whole difference:
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4 my-4">
+            <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">tell + person</p>
+              <div class="flex items-center gap-2">
+                <p class="text-slate-900 flex-1">She told me that she was busy.</p>
+                <AudioButton client:visible text="She told me that she was busy." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">say + that (no person)</p>
+              <div class="flex items-center gap-2">
+                <p class="text-slate-900 flex-1">She said that she was busy.</p>
+                <AudioButton client:visible text="She said that she was busy." lang="en-US" size="sm" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+          <strong>Watch:</strong> never <span class="line-through">said me</span>, never <span class="line-through">told that…</span> without a person. Name the listener → <em>tell</em>. No listener → <em>say</em>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: The suggest / recommend trap -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The suggest / recommend trap</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">The single most common mistake in this lesson.</p>
+        <div class="space-y-4 text-lg text-slate-700 leading-relaxed">
+          <p>
+            <strong>suggest</strong> and <strong>recommend</strong> take <em>DOING</em>, or a
+            <em>that</em>-clause — <strong>never</strong> a person + <em>to do</em>. Spanish
+            <em>me sugirió hacer</em> pushes you toward the wrong English:
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4 my-4">
+            <div class="rounded-xl border-2 border-amber-200 bg-amber-50 p-5">
+              <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-1">suggest + doing</p>
+              <div class="flex items-center gap-2">
+                <p class="text-slate-900 flex-1">I suggested waiting until Friday.</p>
+                <AudioButton client:visible text="I suggested waiting until Friday." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="rounded-xl border-2 border-amber-200 bg-amber-50 p-5">
+              <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-1">suggest + that sb do</p>
+              <div class="flex items-center gap-2">
+                <p class="text-slate-900 flex-1">I suggested that he wait.</p>
+                <AudioButton client:visible text="I suggested that he wait." lang="en-US" size="sm" />
+              </div>
+            </div>
+          </div>
+          <div class="rounded-xl border-2 border-red-200 bg-red-50 p-5">
+            <div class="flex items-center gap-2 mb-1">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0" />
+              <p class="text-xs font-bold uppercase tracking-wider text-red-700">never say this</p>
+            </div>
+            <p class="text-slate-900 text-lg line-through decoration-red-400">I suggested him to wait.</p>
+            <p class="text-sm text-red-700 mt-1">There is no "suggest sb to do" in English. Same rule for <em>recommend</em>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: The to-do reporters -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The to-do reporters</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">These verbs report an action with <em>to do</em> — some need a person, some don't.</p>
+        <div class="space-y-4 text-lg text-slate-700 leading-relaxed mb-8">
+          <p>
+            <strong>promise, agree, offer, refuse</strong> take <em>to do</em> with no person needed.
+            <strong>remind, warn, advise</strong> need a person first: <em>someone + to do</em>.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4 my-4">
+            <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">verb + to do</p>
+              <div class="flex items-center gap-2">
+                <p class="text-slate-900 flex-1">She offered to help.</p>
+                <AudioButton client:visible text="She offered to help." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">verb + person + to do</p>
+              <div class="flex items-center gap-2">
+                <p class="text-slate-900 flex-1">They reminded us to arrive early.</p>
+                <AudioButton client:visible text="They reminded us to arrive early." lang="en-US" size="sm" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-3">
+          {toDoReporters.map(([p, s, note]) => (
+            <div class="bg-white rounded-xl border border-slate-200 p-4">
+              <div class="flex items-center justify-between gap-3">
+                <p class="text-xs font-mono text-indigo-700">{p}</p>
+                <span class="text-xs text-slate-400">{note}</span>
+              </div>
+              <div class="flex items-center gap-2 mt-1">
+                <p class="text-slate-800 flex-1">{s}</p>
+                <AudioButton client:visible text={s} lang="en-US" size="sm" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: PatternDrill -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Drill: report it right</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">say or tell, doing or to do? Choose and check.</p>
+        <PatternDrill client:visible data={l9Drill} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: ErrorCorrection -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Spot the error</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Tap the wrong part of each sentence.</p>
+        <ErrorCorrection client:visible data={l9Corrections} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap + next -->
+  <section class="py-16 md:py-20 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">The Recap</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-8 mb-10">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>tell</strong> a person; <strong>say</strong> without one — never <em>said me</em>, never <em>told that…</em>.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>suggest</strong> / <strong>recommend</strong> take <em>doing</em> or <em>that sb do</em> — never <em>suggest sb to do</em>.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>promise/agree/offer/refuse</strong> + <em>to do</em>; <strong>remind/warn/advise</strong> + <em>someone</em> + <em>to do</em>.</span></li>
+          </ul>
+        </div>
+        <div class="text-center">
+          <p class="text-slate-600 mb-6">Next up: <strong class="text-slate-900">Sounding Natural</strong> — the final polish that separates correct English from native-sounding English.</p>
+          <Button href="/en/course/verb-patterns/sounding-natural/" variant="primary" size="lg">
+            Lesson 10: Sounding Natural
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+          <div class="mt-6">
+            <a href="/en/course/verb-patterns/" class="text-sm text-indigo-700 hover:text-indigo-800 underline underline-offset-2">← Back to course overview</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -59,7 +59,7 @@ export const verbLevels: VerbLevel[] = [
     examSlugEs: "examen-maestria",
     examTitle: "Mastery Exam",
     examTitleEs: "Examen de Maestría",
-    examAvailable: false,
+    examAvailable: true,
   },
 ];
 
@@ -177,7 +177,7 @@ export const verbLessons: VerbLesson[] = [
     subtitle: "The verbs where to-do and doing mean two different things",
     subtitleEs: "Los verbos donde to-do y doing significan dos cosas distintas",
     icon: "Shuffle",
-    available: false,
+    available: true,
   },
   {
     id: 9,
@@ -191,7 +191,7 @@ export const verbLessons: VerbLesson[] = [
     subtitle: "Reporting what people said — and the suggest / recommend trap",
     subtitleEs: "Reportar lo que dijeron — y la trampa de suggest / recommend",
     icon: "Quote",
-    available: false,
+    available: true,
   },
   {
     id: 10,
@@ -205,7 +205,7 @@ export const verbLessons: VerbLesson[] = [
     subtitle: "De-fossilize the Spanish-interference errors in real business talk",
     subtitleEs: "Elimina los errores de interferencia del español en conversaciones reales",
     icon: "Sparkles",
-    available: false,
+    available: true,
   },
 ];
 

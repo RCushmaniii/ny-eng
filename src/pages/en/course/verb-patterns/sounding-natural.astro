@@ -1,0 +1,207 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import AudioButton from "@components/course/AudioButton";
+import PatternDrill from "@components/course/PatternDrill";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import { l10Drill, l10Corrections } from "@data/verb-patterns/lesson-10";
+import { ArrowRight, Sparkles, CheckCircle2, XCircle, GraduationCap } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/verb-patterns/sounding-natural" as const;
+
+const fossilized = [
+  ["call to my boss", "call my boss"],
+  ["depend of", "depend on"],
+  ["explain me the plan", "explain the plan to me"],
+  ["enjoy to work", "enjoy working"],
+  ["made me to redo", "made me redo"],
+];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Sounding Natural Under Pressure: the diagnosis method | Verb Patterns Lesson 10"
+  description="Lesson 10 of Verb Pattern Mastery. A 3-question method to catch every verb pattern live — the capstone that de-fossilizes your most common English mistakes."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <Sparkles class="w-4 h-4" />
+          Level 3 · Mastery — Lesson 10
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Sounding Natural Under Pressure
+        </h1>
+        <p class="text-2xl text-indigo-300 italic font-light mb-4">You know the patterns. Now run them in real time.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          By now the challenge isn't <em class="text-white not-italic">knowing</em> the rules — it's applying them
+          live, mid-sentence, while you're also thinking about what to say. Under pressure, old habits slip back in.
+          The fix isn't more grammar; it's a fast, repeatable check you can run in a fraction of a second.
+          Here's a 3-question diagnosis that catches every verb pattern in this course.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: the 3-question diagnosis -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The 3-question diagnosis</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Three questions, in order. The verb tells you the answer.</p>
+
+        <div class="rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-6 md:p-8 space-y-5">
+          <div class="flex gap-4">
+            <span class="flex items-center justify-center w-9 h-9 shrink-0 rounded-full bg-indigo-600 text-white text-base font-bold">1</span>
+            <div>
+              <p class="text-lg font-semibold text-slate-900">Does the verb need a preposition?</p>
+              <p class="text-slate-700 mt-1">
+                Many verbs carry a fixed preposition — <em>depend <strong class="text-indigo-700">on</strong></em>,
+                <em>focus <strong class="text-indigo-700">on</strong></em>, <em>wait <strong class="text-indigo-700">for</strong></em>,
+                <em>worry <strong class="text-indigo-700">about</strong></em>. It's rarely the one Spanish would pick.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <span class="flex items-center justify-center w-9 h-9 shrink-0 rounded-full bg-indigo-600 text-white text-base font-bold">2</span>
+            <div>
+              <p class="text-lg font-semibold text-slate-900">Direct object, or “to” before the person?</p>
+              <p class="text-slate-700 mt-1">
+                Some verbs take the person directly — <em>call <strong class="text-indigo-700">someone</strong></em>. Others
+                need <em>to</em> — <em>speak <strong class="text-indigo-700">to</strong> someone</em>,
+                <em>explain something <strong class="text-indigo-700">to</strong> someone</em>.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <span class="flex items-center justify-center w-9 h-9 shrink-0 rounded-full bg-indigo-600 text-white text-base font-bold">3</span>
+            <div>
+              <p class="text-lg font-semibold text-slate-900">to-do or -ing?</p>
+              <p class="text-slate-700 mt-1">
+                Check what the verb wants next — <em>decide <strong class="text-indigo-700">to do</strong></em>,
+                <em>enjoy <strong class="text-indigo-700">doing</strong></em>. And watch the causatives
+                <em>make</em> / <em>let</em>: they take a bare verb, <strong>no “to”</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Worked example -->
+        <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:p-8">
+          <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-4">Worked example</p>
+          <p class="text-slate-700 mb-5">Run the three questions on one sentence: <em>“I want to explain the plan to my team.”</em></p>
+          <ul class="space-y-4 text-slate-700">
+            <li class="flex gap-3">
+              <span class="flex items-center justify-center w-6 h-6 shrink-0 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold mt-0.5">1</span>
+              <span><strong>Preposition?</strong> <em>explain</em> doesn't carry one before its object — but it does need <em>to</em> before the <em>person</em>. Hold that thought for Q2.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex items-center justify-center w-6 h-6 shrink-0 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold mt-0.5">2</span>
+              <span><strong>Direct, or “to” + person?</strong> <em>explain</em> is a “to” verb: the thing comes first, then <em>to</em> + the person → <em>explain the plan <strong class="text-indigo-700">to</strong> my team</em>. Never <span class="line-through">explain my team the plan</span>.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex items-center justify-center w-6 h-6 shrink-0 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold mt-0.5">3</span>
+              <span><strong>to-do or -ing?</strong> <em>want</em> takes <em>to&nbsp;do</em> → <em>want <strong class="text-indigo-700">to explain</strong></em>. Clean.</span>
+            </li>
+          </ul>
+          <div class="mt-6 flex items-center gap-3 rounded-xl border-2 border-indigo-200 bg-white p-4">
+            <CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0" />
+            <p class="text-slate-900 flex-1 font-medium">I want to explain the plan to my team.</p>
+            <AudioButton client:visible text="I want to explain the plan to my team." lang="en-US" size="sm" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Watch these five -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Watch these five</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">The most fossilized mistakes for Spanish speakers. Learn to hear them.</p>
+        <div class="space-y-3">
+          {fossilized.map(([wrong, right]) => (
+            <div class="bg-white rounded-xl border border-amber-200 p-4">
+              <div class="flex items-center gap-2 text-slate-500 mb-2">
+                <XCircle class="w-5 h-5 text-red-500 shrink-0" />
+                <p class="line-through">{wrong}</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0" />
+                <p class="text-slate-900 flex-1 font-medium">{right}</p>
+                <AudioButton client:visible text={right} lang="en-US" size="sm" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: PatternDrill -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Drill: diagnose it live</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Every pattern mixed together. Run the diagnosis, then choose.</p>
+        <PatternDrill client:visible data={l10Drill} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: ErrorCorrection -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">De-fossilize it</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Tap the one thing that's wrong in each sentence.</p>
+        <ErrorCorrection client:visible data={l10Corrections} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap + exam CTA -->
+  <section class="py-16 md:py-20 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">The Recap</h2>
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-8 mb-10">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>Run three questions, in order:</strong> preposition? · direct or “to” + person? · to-do or -ing?</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>The verb decides</strong> — not the Spanish translation. Trust the pattern, not the instinct.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>De-fossilizing is repetition:</strong> catch the same five errors enough times and the correct form becomes automatic.</span></li>
+          </ul>
+        </div>
+        <div class="text-center">
+          <p class="text-slate-600 mb-6">You've finished all ten lessons. One thing left: <strong class="text-slate-900">prove it</strong>. The Mastery Exam mixes every pattern from the course.</p>
+          <Button href="/en/course/verb-patterns/mastery-exam/" variant="primary" size="lg">
+            <GraduationCap class="w-5 h-5 mr-1" />
+            Take the Mastery Exam
+          </Button>
+          <div class="mt-6">
+            <a href="/en/course/verb-patterns/" class="text-sm text-indigo-700 hover:text-indigo-800 underline underline-offset-2">← Back to course overview</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
