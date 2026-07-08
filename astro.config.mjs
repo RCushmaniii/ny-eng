@@ -37,6 +37,7 @@ const blogTranslations = {
   "executive-video-call": "/es/blog/presencia-ejecutiva-en-videollamadas/",
   "managers-lose-millions": "/es/blog/por-que-los-gerentes-de-ti-en-mexico-pierden-clientes/",
   "master-business-english": "/es/blog/dominar-negocios/",
+  "master-english-verb-patterns": "/es/blog/dominar-patrones-verbales-ingles/",
   "real-cost-weak-english-mexican-companies":
     "/es/blog/costo-real-ingles-debil-empresas-mexicanas/",
   "small-talk-to-smart-talk": "/es/blog/charla-pequena-habla-inteligente/",
