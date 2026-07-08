@@ -221,7 +221,7 @@ export const verbBonuses: VerbBonus[] = [
     descriptionEs:
       "Cada verbo, cada patrón correcto, una oración modelo — todo el curso en una página imprimible.",
     icon: "Table",
-    available: false,
+    available: true,
   },
   {
     id: 2,
@@ -234,7 +234,7 @@ export const verbBonuses: VerbBonus[] = [
     descriptionEs:
       "La lista de referencia rápida de qué verbos toman to-do, cuáles toman doing y cuáles cambian de significado.",
     icon: "GitFork",
-    available: false,
+    available: true,
   },
   {
     id: 3,
@@ -247,7 +247,7 @@ export const verbBonuses: VerbBonus[] = [
     descriptionEs:
       "depend of, focus in, explain me, enjoy to — los errores fosilizados y la corrección exacta de cada uno.",
     icon: "AlertTriangle",
-    available: false,
+    available: true,
   },
 ];
 

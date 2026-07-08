@@ -1,0 +1,176 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import { ArrowLeft, Table } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/verb-patterns/diagnosis-table" as const;
+
+const groups = [
+  {
+    heading: "Direct object — no preposition, no to",
+    rows: [
+      { verb: "call", pattern: "call someone", sentence: "I called my client." },
+      { verb: "tell", pattern: "tell someone (something)", sentence: "I told my boss the news." },
+      { verb: "ask", pattern: "ask someone", sentence: "I asked the manager." },
+      { verb: "help", pattern: "help someone (do)", sentence: "She helped me finish." },
+      { verb: "make", pattern: "make someone do", sentence: "He made me rewrite it." },
+      { verb: "let", pattern: "let someone do", sentence: "They let us leave early." },
+    ],
+  },
+  {
+    heading: "Verb + to before the person",
+    rows: [
+      { verb: "speak", pattern: "speak to someone", sentence: "I spoke to my manager." },
+      { verb: "talk", pattern: "talk to someone", sentence: "I talked to the client." },
+      { verb: "explain", pattern: "explain something to someone", sentence: "I explained the plan to her." },
+      { verb: "describe", pattern: "describe something to someone", sentence: "He described the issue to us." },
+      { verb: "apologize", pattern: "apologize to someone", sentence: "I apologized to the client." },
+      { verb: "introduce", pattern: "introduce someone to someone", sentence: "She introduced me to the team." },
+    ],
+  },
+  {
+    heading: "Verb + preposition",
+    rows: [
+      { verb: "depend", pattern: "depend on", sentence: "It depends on the budget." },
+      { verb: "focus", pattern: "focus on", sentence: "Focus on the goal." },
+      { verb: "wait", pattern: "wait for", sentence: "I waited for the report." },
+      { verb: "apply", pattern: "apply for", sentence: "She applied for the job." },
+      { verb: "worry", pattern: "worry about", sentence: "Don't worry about it." },
+      { verb: "agree", pattern: "agree with", sentence: "I agree with you." },
+      { verb: "believe", pattern: "believe in", sentence: "I believe in the plan." },
+      { verb: "learn", pattern: "learn from", sentence: "We learned from it." },
+      { verb: "prevent", pattern: "prevent (someone) from", sentence: "It prevented us from finishing." },
+      { verb: "provide", pattern: "provide (someone) with", sentence: "They provided us with training." },
+    ],
+  },
+  {
+    heading: "Verb + to-do (infinitive)",
+    rows: [
+      { verb: "decide", pattern: "decide to do", sentence: "I decided to call." },
+      { verb: "plan", pattern: "plan to do", sentence: "We plan to launch." },
+      { verb: "hope", pattern: "hope to do", sentence: "I hope to improve." },
+      { verb: "manage", pattern: "manage to do", sentence: "We managed to solve it." },
+      { verb: "offer", pattern: "offer to do", sentence: "She offered to help." },
+      { verb: "refuse", pattern: "refuse to do", sentence: "He refused to sign." },
+      { verb: "promise", pattern: "promise to do", sentence: "They promised to pay." },
+    ],
+  },
+  {
+    heading: "Verb + doing (gerund)",
+    rows: [
+      { verb: "enjoy", pattern: "enjoy doing", sentence: "I enjoy working here." },
+      { verb: "avoid", pattern: "avoid doing", sentence: "Avoid making that error." },
+      { verb: "finish", pattern: "finish doing", sentence: "I finished writing it." },
+      { verb: "consider", pattern: "consider doing", sentence: "We considered moving." },
+      { verb: "suggest", pattern: "suggest doing", sentence: "I suggest waiting." },
+      { verb: "recommend", pattern: "recommend doing", sentence: "I recommend reviewing it." },
+      { verb: "keep", pattern: "keep doing", sentence: "Keep practicing." },
+    ],
+  },
+  {
+    heading: "Verb + someone + to-do",
+    rows: [
+      { verb: "want", pattern: "want someone to do", sentence: "I want you to send it." },
+      { verb: "need", pattern: "need someone to do", sentence: "I need her to confirm." },
+      { verb: "expect", pattern: "expect someone to do", sentence: "We expect them to deliver." },
+      { verb: "allow", pattern: "allow someone to do", sentence: "They allow us to work remotely." },
+      { verb: "tell", pattern: "tell someone to do", sentence: "I told him to wait." },
+      { verb: "remind", pattern: "remind someone to do", sentence: "Remind me to call." },
+      { verb: "advise", pattern: "advise someone to do", sentence: "She advised me to wait." },
+    ],
+  },
+  {
+    heading: "Reporting verbs",
+    rows: [
+      { verb: "say", pattern: "say (that)", sentence: "She said that she agreed." },
+      { verb: "tell", pattern: "tell someone (that)", sentence: "He told me that it was ready." },
+      { verb: "suggest", pattern: "suggest (that) someone do", sentence: "I suggested that he wait." },
+    ],
+  },
+  {
+    heading: "Meaning-changers — form changes the meaning",
+    rows: [
+      { verb: "stop", pattern: "stop to do / stop doing", sentence: "I stopped to rest. / I stopped smoking." },
+      { verb: "remember", pattern: "remember to do / remember doing", sentence: "Remember to call. / I remember calling." },
+      { verb: "try", pattern: "try to do / try doing", sentence: "I tried to open it. / Try restarting it." },
+      { verb: "regret", pattern: "regret to do / regret doing", sentence: "We regret to inform you. / I regret saying it." },
+    ],
+  },
+];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="The Pattern Diagnosis Table | Verb Pattern Mastery"
+  description="Every verb pattern in one place — direct vs to, prepositions, gerund vs infinitive, causatives, reporting, and meaning-changers, each with a model sentence."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <Table class="w-4 h-4" />
+          Reference
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          The Pattern Diagnosis Table
+        </h1>
+        <p class="text-2xl text-indigo-300 italic font-light mb-4">The whole course on one page.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Every verb grouped by its correct pattern, each with a
+          <strong class="text-white">model sentence you can copy</strong>. Bookmark it or print
+          it, and check any verb the moment you're unsure which pattern it takes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tables -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto space-y-12">
+        {groups.map((group) => (
+          <div>
+            <h2 class="text-xl md:text-2xl font-bold text-indigo-700 mb-4">{group.heading}</h2>
+            <div class="overflow-x-auto rounded-2xl border border-slate-200">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-slate-900 text-white">
+                    <th class="px-4 py-3 text-sm font-semibold">Verb</th>
+                    <th class="px-4 py-3 text-sm font-semibold">Pattern</th>
+                    <th class="px-4 py-3 text-sm font-semibold">Model sentence</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {group.rows.map((row) => (
+                    <tr class="even:bg-slate-50 border-t border-slate-200 align-top">
+                      <td class="px-4 py-3 text-slate-900 font-semibold whitespace-nowrap">{row.verb}</td>
+                      <td class="px-4 py-3 font-mono text-sm text-indigo-700 whitespace-nowrap">{row.pattern}</td>
+                      <td class="px-4 py-3 text-slate-700">{row.sentence}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer nav -->
+  <section class="py-12 md:py-16 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <a href="/en/course/verb-patterns/" class="inline-flex items-center gap-2 text-indigo-700 hover:text-indigo-800 font-semibold underline underline-offset-2">
+          <ArrowLeft class="w-4 h-4" />
+          Back to Course Overview
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
