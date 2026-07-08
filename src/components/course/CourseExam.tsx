@@ -26,20 +26,32 @@ interface Props {
   courseBasePath: string;
   /** Tier definitions in any order; the component picks the highest matching one. */
   tiers: readonly ScoreTierDefinition[];
+  /** Optional per-course copy. Falls back to the original beginner-course text so
+   *  existing callers (beginner, intermediate) render exactly as before. */
+  introSummary?: string;
+  introSummaryEs?: string;
+  completionMessage?: string;
+  completionMessageEs?: string;
+  /** Word for the per-question grouping. Defaults to "Unit" / "Unidad". */
+  unitLabel?: string;
+  unitLabelEs?: string;
 }
 
-function computeResult(
-  questions: ExamQuestion[],
-  answers: Record<number, number>,
-): ExamResult {
+const CATEGORY_LABELS: Record<string, { en: string; es: string }> = {
+  vocabulary: { en: "Vocabulary", es: "Vocabulario" },
+  grammar: { en: "Grammar", es: "Gramática" },
+  translation: { en: "Translation", es: "Traducción" },
+  pattern: { en: "Pattern", es: "Patrón" },
+};
+
+function computeResult(questions: ExamQuestion[], answers: Record<number, number>): ExamResult {
   const unitScores: Record<number, { correct: number; total: number }> = {};
   const categoryScores: Record<string, { correct: number; total: number }> = {};
   let totalCorrect = 0;
 
   for (const q of questions) {
     if (!unitScores[q.unit]) unitScores[q.unit] = { correct: 0, total: 0 };
-    if (!categoryScores[q.category])
-      categoryScores[q.category] = { correct: 0, total: 0 };
+    if (!categoryScores[q.category]) categoryScores[q.category] = { correct: 0, total: 0 };
 
     unitScores[q.unit].total++;
     categoryScores[q.category].total++;
@@ -61,10 +73,7 @@ function computeResult(
   };
 }
 
-function pickTier(
-  percentage: number,
-  tiers: readonly ScoreTierDefinition[],
-): ScoreTier {
+function pickTier(percentage: number, tiers: readonly ScoreTierDefinition[]): ScoreTier {
   // Sort descending by minPercent and pick the first one the user qualifies for.
   const sorted = [...tiers].sort((a, b) => b.minPercent - a.minPercent);
   const match = sorted.find((t) => percentage >= t.minPercent) ?? sorted[sorted.length - 1];
@@ -72,7 +81,21 @@ function pickTier(
   return rest;
 }
 
-export default function CourseExam({ questions, lang, passingScore, courseBasePath, tiers }: Props) {
+export default function CourseExam({
+  questions,
+  lang,
+  passingScore,
+  courseBasePath,
+  tiers,
+  introSummary,
+  introSummaryEs,
+  completionMessage,
+  completionMessageEs,
+  unitLabel,
+  unitLabelEs,
+}: Props) {
+  const unitWord = unitLabel ?? "Unit";
+  const unitWordEs = unitLabelEs ?? "Unidad";
   const [phase, setPhase] = useState<"intro" | "exam" | "results">("intro");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
@@ -90,10 +113,12 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
 
   const current = shuffledQuestions[currentIndex];
   const totalQuestions = shuffledQuestions.length;
-  const progress = ((currentIndex) / totalQuestions) * 100;
+  const progress = (currentIndex / totalQuestions) * 100;
 
   // Shuffle options after hydration — re-shuffle when question changes
-  const [shuffledOptions, setShuffledOptions] = useState<Array<{ text: string; correct: boolean; originalIndex: number }>>([]);
+  const [shuffledOptions, setShuffledOptions] = useState<
+    Array<{ text: string; correct: boolean; originalIndex: number }>
+  >([]);
   useEffect(() => {
     if (!current) return;
     const indexed = current.options.map((opt, i) => ({ ...opt, originalIndex: i }));
@@ -111,7 +136,7 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
       }));
       setShowFeedback(true);
     },
-    [showFeedback, shuffledOptions, current]
+    [showFeedback, shuffledOptions, current],
   );
 
   const handleNext = useCallback(() => {
@@ -137,12 +162,27 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
 
   // ─── Intro Screen ──────────────────────────────────────────────────
   if (phase === "intro") {
+    const distinctCats = Array.from(new Set(questions.map((q) => q.category)));
+    const catList = distinctCats
+      .map((c) => (en ? (CATEGORY_LABELS[c]?.en ?? c) : (CATEGORY_LABELS[c]?.es ?? c)))
+      .join(", ");
     return (
       <div className="max-w-2xl mx-auto text-center space-y-6 py-8">
         <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-100 text-amber-600">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-8 h-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
             </svg>
           </div>
           <h2 className="text-2xl font-bold text-slate-900">
@@ -151,19 +191,18 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
           <div className="text-left space-y-3 text-slate-600">
             <p>
               {en
-                ? "This exam tests everything you learned across all 10 units:"
-                : "Este examen evalúa todo lo que aprendiste en las 10 unidades:"}
+                ? (introSummary ?? "This exam tests everything you learned across all 10 units:")
+                : (introSummaryEs ??
+                  "Este examen evalúa todo lo que aprendiste en las 10 unidades:")}
             </p>
             <ul className="space-y-1.5 text-sm">
               <li className="flex items-start gap-2">
-                <span className="text-amber-500 font-bold mt-0.5">20</span>
+                <span className="text-amber-500 font-bold mt-0.5">{questions.length}</span>
                 {en ? "multiple-choice questions" : "preguntas de opción múltiple"}
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-amber-500 font-bold mt-0.5">3</span>
-                {en
-                  ? "categories: vocabulary, grammar, translation"
-                  : "categorías: vocabulario, gramática, traducción"}
+                <span className="text-amber-500 font-bold mt-0.5">{distinctCats.length}</span>
+                {en ? `categories: ${catList}` : `categorías: ${catList}`}
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-amber-500 font-bold mt-0.5">{passingScore}%</span>
@@ -210,21 +249,16 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
               tier.color === "emerald"
                 ? "bg-emerald-500"
                 : tier.color === "amber"
-                ? "bg-amber-500"
-                : "bg-rose-500"
+                  ? "bg-amber-500"
+                  : "bg-rose-500"
             }`}
           >
             {result.percentage}%
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">
-            {en ? tier.tier : tier.tierEs}
-          </h2>
-          <p className="text-slate-600 max-w-md mx-auto">
-            {en ? tier.message : tier.messageEs}
-          </p>
+          <h2 className="text-2xl font-bold text-slate-900">{en ? tier.tier : tier.tierEs}</h2>
+          <p className="text-slate-600 max-w-md mx-auto">{en ? tier.message : tier.messageEs}</p>
           <p className="text-sm text-slate-500">
-            {result.totalCorrect} / {result.totalQuestions}{" "}
-            {en ? "correct" : "correctas"}
+            {result.totalCorrect} / {result.totalQuestions} {en ? "correct" : "correctas"}
           </p>
         </div>
 
@@ -238,10 +272,16 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
               const pct = Math.round((score.correct / score.total) * 100);
               const catLabel =
                 cat === "vocabulary"
-                  ? en ? "Vocabulary" : "Vocabulario"
+                  ? en
+                    ? "Vocabulary"
+                    : "Vocabulario"
                   : cat === "grammar"
-                  ? en ? "Grammar" : "Gramática"
-                  : en ? "Translation" : "Traducción";
+                    ? en
+                      ? "Grammar"
+                      : "Gramática"
+                    : en
+                      ? "Translation"
+                      : "Traducción";
               return (
                 <div key={cat}>
                   <div className="flex justify-between text-sm mb-1">
@@ -267,7 +307,7 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
         {/* Unit Breakdown */}
         <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-4">
           <h3 className="text-lg font-bold text-slate-900">
-            {en ? "Score by Unit" : "Puntuación por Unidad"}
+            {en ? `Score by ${unitWord}` : `Puntuación por ${unitWordEs}`}
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
             {unitNumbers.map((unit) => {
@@ -280,12 +320,12 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
                     pct === 100
                       ? "bg-emerald-50 border-emerald-200"
                       : pct >= 50
-                      ? "bg-amber-50 border-amber-200"
-                      : "bg-rose-50 border-rose-200"
+                        ? "bg-amber-50 border-amber-200"
+                        : "bg-rose-50 border-rose-200"
                   }`}
                 >
                   <div className="text-xs text-slate-500 mb-1">
-                    {en ? "Unit" : "Unidad"} {unit}
+                    {en ? unitWord : unitWordEs} {unit}
                   </div>
                   <div className="text-lg font-bold text-slate-900">
                     {s.correct}/{s.total}
@@ -300,17 +340,28 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
         {passed && (
           <div className="bg-gradient-to-b from-amber-500 to-amber-600 rounded-2xl p-8 text-center text-white space-y-4">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-8 h-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold">
-              {en ? "Course Complete!" : "¡Curso Completado!"}
-            </h3>
+            <h3 className="text-2xl font-bold">{en ? "Course Complete!" : "¡Curso Completado!"}</h3>
             <p className="text-amber-100">
               {en
-                ? "You passed the First Steps Into English final exam. You have a solid foundation in English — 1,500+ words, 11 modal structures, and all three time frames."
-                : "Aprobaste el examen final de Primeros Pasos en Inglés. Tienes una base sólida en inglés — más de 1,500 palabras, 11 estructuras modales y los tres marcos temporales."}
+                ? (completionMessage ??
+                  "You passed the First Steps Into English final exam. You have a solid foundation in English — 1,500+ words, 11 modal structures, and all three time frames.")
+                : (completionMessageEs ??
+                  "Aprobaste el examen final de Primeros Pasos en Inglés. Tienes una base sólida en inglés — más de 1,500 palabras, 11 estructuras modales y los tres marcos temporales.")}
             </p>
           </div>
         )}
@@ -343,9 +394,7 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
   // ─── Exam Screen (Question by Question) ────────────────────────────
   if (!current) return null;
 
-  const correctDisplayIndex = showFeedback
-    ? shuffledOptions.findIndex((o) => o.correct)
-    : -1;
+  const correctDisplayIndex = showFeedback ? shuffledOptions.findIndex((o) => o.correct) : -1;
 
   return (
     <div className="max-w-2xl mx-auto space-y-6 py-4">
@@ -375,15 +424,21 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
             current.category === "vocabulary"
               ? "bg-blue-100 text-blue-700"
               : current.category === "grammar"
-              ? "bg-purple-100 text-purple-700"
-              : "bg-green-100 text-green-700"
+                ? "bg-purple-100 text-purple-700"
+                : "bg-green-100 text-green-700"
           }`}
         >
           {current.category === "vocabulary"
-            ? en ? "Vocabulary" : "Vocabulario"
+            ? en
+              ? "Vocabulary"
+              : "Vocabulario"
             : current.category === "grammar"
-            ? en ? "Grammar" : "Gramática"
-            : en ? "Translation" : "Traducción"}
+              ? en
+                ? "Grammar"
+                : "Gramática"
+              : en
+                ? "Translation"
+                : "Traducción"}
         </span>
 
         {/* Question text */}
@@ -427,15 +482,15 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
                     showFeedback && i === correctDisplayIndex
                       ? "bg-emerald-500 text-white"
                       : showFeedback && i === selectedOption && !option.correct
-                      ? "bg-rose-500 text-white"
-                      : "bg-slate-100 text-slate-600"
+                        ? "bg-rose-500 text-white"
+                        : "bg-slate-100 text-slate-600"
                   }`}
                 >
                   {showFeedback && i === correctDisplayIndex
                     ? "\u2713"
                     : showFeedback && i === selectedOption && !option.correct
-                    ? "\u2717"
-                    : letter}
+                      ? "\u2717"
+                      : letter}
                 </span>
                 <span className="text-slate-700 leading-relaxed">{option.text}</span>
               </button>
@@ -454,8 +509,12 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
           >
             <p className="text-sm font-medium mb-1">
               {shuffledOptions[selectedOption!]?.correct
-                ? en ? "Correct!" : "¡Correcto!"
-                : en ? "Not quite." : "No exactamente."}
+                ? en
+                  ? "Correct!"
+                  : "¡Correcto!"
+                : en
+                  ? "Not quite."
+                  : "No exactamente."}
             </p>
             <p className="text-sm text-slate-600">
               {en ? current.explanation : current.explanationEs}
@@ -470,19 +529,25 @@ export default function CourseExam({ questions, lang, passingScore, courseBasePa
             className="w-full px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-400 transition-colors"
           >
             {currentIndex < totalQuestions - 1
-              ? en ? "Next Question" : "Siguiente Pregunta"
-              : en ? "See Results" : "Ver Resultados"}
+              ? en
+                ? "Next Question"
+                : "Siguiente Pregunta"
+              : en
+                ? "See Results"
+                : "Ver Resultados"}
           </button>
         )}
       </div>
 
       {/* Running score */}
       <div className="text-center text-sm text-slate-400">
-        {Object.values(answers).filter((_, idx) => {
-          const qId = Object.keys(answers).map(Number)[idx];
-          const q = shuffledQuestions.find((sq) => sq.id === qId);
-          return q && q.options[answers[qId]]?.correct;
-        }).length}{" "}
+        {
+          Object.values(answers).filter((_, idx) => {
+            const qId = Object.keys(answers).map(Number)[idx];
+            const q = shuffledQuestions.find((sq) => sq.id === qId);
+            return q && q.options[answers[qId]]?.correct;
+          }).length
+        }{" "}
         / {Object.keys(answers).length} {en ? "correct so far" : "correctas hasta ahora"}
       </div>
     </div>

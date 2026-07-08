@@ -31,6 +31,7 @@ export const verbLevels: VerbLevel[] = [
     examSlugEs: "examen-fundamentos",
     examTitle: "Foundations Exam",
     examTitleEs: "Examen de Fundamentos",
+    examAvailable: true,
   },
   {
     id: 2,
@@ -44,6 +45,7 @@ export const verbLevels: VerbLevel[] = [
     examSlugEs: "examen-patrones",
     examTitle: "Patterns Exam",
     examTitleEs: "Examen de Patrones",
+    examAvailable: false,
   },
   {
     id: 3,
@@ -57,6 +59,7 @@ export const verbLevels: VerbLevel[] = [
     examSlugEs: "examen-maestria",
     examTitle: "Mastery Exam",
     examTitleEs: "Examen de Maestría",
+    examAvailable: false,
   },
 ];
 
@@ -88,7 +91,7 @@ export const verbLessons: VerbLesson[] = [
     subtitle: "Choosing about vs to-do — topic vs action",
     subtitleEs: "Elegir about vs to-do — tema vs acción",
     icon: "MessageSquare",
-    available: false,
+    available: true,
   },
   {
     id: 3,
@@ -102,7 +105,7 @@ export const verbLessons: VerbLesson[] = [
     subtitle: "Two correct patterns — and the one verb that breaks the rule",
     subtitleEs: "Dos patrones correctos — y el verbo que rompe la regla",
     icon: "Send",
-    available: false,
+    available: true,
   },
   // ─── Level 2 — Patterns ───────────────────────────────────────────────
   {

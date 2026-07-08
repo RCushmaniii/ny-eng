@@ -32,6 +32,7 @@ export interface VerbLevel {
   examSlugEs: string;
   examTitle: string;
   examTitleEs: string;
+  examAvailable: boolean;
 }
 
 export interface VerbBonus {

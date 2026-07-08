@@ -268,10 +268,18 @@ const firstLesson = verbLessons.find((l) => l.available);
               </div>
 
               <div class="mt-4">
-                <span class="inline-flex items-center gap-2 text-sm text-slate-400">
-                  <GraduationCap class="w-4 h-4" />
-                  Termina con el {level.examTitleEs} <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">Próximamente</span>
-                </span>
+                {level.examAvailable ? (
+                  <a href={`${base}/${level.examSlugEs}/`} class="inline-flex items-center gap-2 text-sm text-indigo-700 hover:text-indigo-800 font-medium">
+                    <GraduationCap class="w-4 h-4" />
+                    Hacer el {level.examTitleEs}
+                    <ArrowRight class="w-3.5 h-3.5" />
+                  </a>
+                ) : (
+                  <span class="inline-flex items-center gap-2 text-sm text-slate-400">
+                    <GraduationCap class="w-4 h-4" />
+                    Termina con el {level.examTitleEs} <span class="text-xs px-1.5 py-0.5 rounded bg-slate-100 text-slate-400">Próximamente</span>
+                  </span>
+                )}
               </div>
             </div>
           );

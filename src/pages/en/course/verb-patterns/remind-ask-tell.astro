@@ -1,0 +1,202 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import AudioButton from "@components/course/AudioButton";
+import PatternDrill from "@components/course/PatternDrill";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import { l2Drill, l2Corrections } from "@data/verb-patterns/lesson-2";
+import { ArrowRight, MessageSquare, CheckCircle2, XCircle } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/verb-patterns/remind-ask-tell" as const;
+
+const askPatterns = [
+  ["ask someone something", "I asked my boss a question.", "a direct question"],
+  ["ask someone for something", "I asked my boss for help.", "you want to receive it"],
+  ["ask someone about something", "I asked my boss about the project.", "you want information"],
+  ["ask someone to do something", "I asked my boss to review it.", "you want an action"],
+];
+const tellPatterns = [
+  ["tell someone something", "I told my team the decision.", "direct information"],
+  ["tell someone about something", "I told my team about the decision.", "discuss a topic"],
+  ["tell someone to do something", "I told my team to arrive early.", "an instruction"],
+];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Remind, Ask & Tell: about vs for vs to do | Verb Patterns Lesson 2"
+  description="Lesson 2 of Verb Pattern Mastery: remind, ask and tell. Choose about vs for vs to-do — the follower that matches your meaning. Free for Spanish speakers."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <MessageSquare class="w-4 h-4" />
+          Level 1 · Foundations — Lesson 2
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Remind, Ask &amp; Tell
+        </h1>
+        <p class="text-2xl text-indigo-300 italic font-light mb-4">about a topic, or to do an action?</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          These three verbs all take the person directly — no “to”. But then the word you add
+          (<em class="text-white not-italic">about</em>, <em class="text-white not-italic">for</em>,
+          <em class="text-white not-italic">to&nbsp;do</em>) changes the meaning. Here, meaning <em>is</em> your guide —
+          once you know which followers each verb allows.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: the idea -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">One verb, several meanings</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">The follower does the work.</p>
+        <div class="space-y-4 text-lg text-slate-700 leading-relaxed">
+          <p>
+            All three verbs put the person first, directly: <em>remind my team</em>, <em>ask my boss</em>,
+            <em>tell the client</em>. Never <em>remind to</em>, <em>ask to</em>, or <em>tell to</em> the person.
+            What comes <strong>after</strong> the person is where the meaning lives:
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4 my-4">
+            <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">about + topic</p>
+              <div class="flex items-center gap-2">
+                <p class="text-slate-900 flex-1">I reminded my team about the deadline.</p>
+                <AudioButton client:visible text="I reminded my team about the deadline." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">to + action</p>
+              <div class="flex items-center gap-2">
+                <p class="text-slate-900 flex-1">I reminded my team to send the report.</p>
+                <AudioButton client:visible text="I reminded my team to send the report." lang="en-US" size="sm" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Ask -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Ask — four patterns</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Same verb. The follower decides what you mean.</p>
+        <div class="space-y-3">
+          {askPatterns.map(([p, s, note]) => (
+            <div class="bg-white rounded-xl border border-slate-200 p-4">
+              <div class="flex items-center justify-between gap-3">
+                <p class="text-xs font-mono text-indigo-700">{p}</p>
+                <span class="text-xs text-slate-400">{note}</span>
+              </div>
+              <div class="flex items-center gap-2 mt-1">
+                <p class="text-slate-800 flex-1">{s}</p>
+                <AudioButton client:visible text={s} lang="en-US" size="sm" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Tell -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Tell — three patterns</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Direct information, a topic, or an instruction.</p>
+        <div class="space-y-3">
+          {tellPatterns.map(([p, s, note]) => (
+            <div class="bg-white rounded-xl border border-slate-200 p-4">
+              <div class="flex items-center justify-between gap-3">
+                <p class="text-xs font-mono text-indigo-700">{p}</p>
+                <span class="text-xs text-slate-400">{note}</span>
+              </div>
+              <div class="flex items-center gap-2 mt-1">
+                <p class="text-slate-800 flex-1">{s}</p>
+                <AudioButton client:visible text={s} lang="en-US" size="sm" />
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+          <strong>Watch:</strong> use <em>tell</em> with a person (tell me), and <em>say</em> without one (say that). <span class="line-through">say me the truth</span> → tell me the truth.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: PatternDrill -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Drill: pick the follower</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Topic, action, receiving, or direct? Choose and check.</p>
+        <PatternDrill client:visible data={l2Drill} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: ErrorCorrection -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Spot the error</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Tap the wrong part of each sentence.</p>
+        <ErrorCorrection client:visible data={l2Corrections} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap + next -->
+  <section class="py-16 md:py-20 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">The Recap</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-8 mb-10">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>The person is always direct</strong> — never remind/ask/tell <em>to</em> a person.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>about</strong> = a topic · <strong>to&nbsp;do</strong> = an action · <strong>for</strong> = you want to receive it.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>tell</strong> a person; <strong>say</strong> without one.</span></li>
+          </ul>
+        </div>
+        <div class="text-center">
+          <p class="text-slate-600 mb-6">Next up: <strong class="text-slate-900">Give, Send &amp; the Explain Trap</strong> — two correct word orders, and the one verb that breaks the rule.</p>
+          <Button href="/en/course/verb-patterns/give-send-explain/" variant="primary" size="lg">
+            Lesson 3: Give, Send &amp; Explain
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+          <div class="mt-6">
+            <a href="/en/course/verb-patterns/" class="text-sm text-indigo-700 hover:text-indigo-800 underline underline-offset-2">← Back to course overview</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
