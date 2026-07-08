@@ -1,0 +1,213 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import AudioButton from "@components/course/AudioButton";
+import PatternDrill from "@components/course/PatternDrill";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import { l6Drill, l6Corrections } from "@data/verb-patterns/lesson-6";
+import { ArrowRight, Users, CheckCircle2, XCircle, AlertTriangle } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/verb-patterns/someone-to-do" as const;
+
+const toDoVerbs = [
+  "want", "need", "expect", "ask", "tell", "allow", "advise",
+  "invite", "encourage", "warn", "persuade", "require", "teach", "remind",
+];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Want Someone To Do · Make, Let y Help | Patrones Verbales Lección 6"
+  description="Lección 6 de Patrones Verbales. want/need/allow someone to do — pero make y let toman el verbo base sin 'to'. Deja de decir 'made me to repeat'."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <Users class="w-4 h-4" />
+          Nivel 2 · Patrones — Lección 6
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Someone To Do · Make, Let &amp; Help
+        </h1>
+        <p class="text-2xl text-indigo-300 italic font-light mb-4">La mayoría necesita “to”. Make y let no.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Cuando quieres que otra persona haga algo, casi todos los verbos siguen la misma forma:
+          <em class="text-white not-italic">verb + someone + to&nbsp;do</em>. Pero dos verbos cotidianos —
+          <em class="text-white not-italic">make</em> y <em class="text-white not-italic">let</em> — quitan el
+          “to” por completo. Domina este par y vas a dejar de decir <span class="line-through">made me to repeat</span>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 1: lo normal -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Lo normal: someone + to do</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">La mayoría conserva el “to”.</p>
+        <div class="space-y-4 text-lg text-slate-700 leading-relaxed">
+          <p>
+            El patrón seguro y por defecto es <em>verb + someone + to&nbsp;do something</em>. Casi todos los verbos
+            de querer, pedir o permitir lo siguen:
+          </p>
+          <div class="flex flex-wrap gap-2 my-4">
+            {toDoVerbs.map((v) => (
+              <span class="inline-flex items-center rounded-full bg-indigo-50 border border-indigo-200 px-3 py-1 text-sm font-mono text-indigo-700">{v}</span>
+            ))}
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4 my-4">
+            <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">need + someone + to do</p>
+              <div class="flex items-center gap-2">
+                <p class="text-slate-900 flex-1">I need you to send the file.</p>
+                <AudioButton client:visible text="I need you to send the file." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+              <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">persuade + someone + to do</p>
+              <div class="flex items-center gap-2">
+                <p class="text-slate-900 flex-1">They persuaded us to accept the offer.</p>
+                <AudioButton client:visible text="They persuaded us to accept the offer." lang="en-US" size="sm" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 2: las excepciones make y let -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Las excepciones: make y let (sin “to”)</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Dos verbos toman el verbo base — nunca “to”.</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-xl border-2 border-amber-200 bg-amber-50 p-5">
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-1">make + someone + verbo base</p>
+            <div class="flex items-center gap-2">
+              <p class="text-slate-900 flex-1">My boss made me rewrite the email.</p>
+              <AudioButton client:visible text="My boss made me rewrite the email." lang="en-US" size="sm" />
+            </div>
+          </div>
+          <div class="rounded-xl border-2 border-amber-200 bg-amber-50 p-5">
+            <p class="text-xs font-bold uppercase tracking-wider text-amber-700 mb-1">let + someone + verbo base</p>
+            <div class="flex items-center gap-2">
+              <p class="text-slate-900 flex-1">She let her son use the car.</p>
+              <AudioButton client:visible text="She let her son use the car." lang="en-US" size="sm" />
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+          <strong>Significado:</strong> <em>make</em> = forzar / obligar · <em>let</em> = dar permiso.
+          Nunca <span class="line-through">made me to</span> ni <span class="line-through">let him to</span>.
+        </div>
+        <div class="mt-4 bg-white border border-slate-200 rounded-xl p-4 text-sm text-slate-700">
+          <strong>Un verbo flexible:</strong> con <em>help</em>, ambas sirven —
+          “This app helps me save time” o “helps me to save time.” El verbo base es la opción más natural.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 3: I need to vs I need you to -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">I need to vs I need you to</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Agregar la persona mueve la responsabilidad.</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-xl border border-slate-200 bg-white p-5">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">sin persona → yo debo</p>
+            <div class="flex items-center gap-2">
+              <p class="text-slate-900 flex-1">I need to send the report.</p>
+              <AudioButton client:visible text="I need to send the report." lang="en-US" size="sm" />
+            </div>
+            <p class="text-sm text-slate-500 mt-2">La responsabilidad es mía.</p>
+          </div>
+          <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+            <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">+ persona → tú debes</p>
+            <div class="flex items-center gap-2">
+              <p class="text-slate-900 flex-1">I need you to send the report.</p>
+              <AudioButton client:visible text="I need you to send the report." lang="en-US" size="sm" />
+            </div>
+            <p class="text-sm text-slate-500 mt-2">Ahora la responsabilidad es tuya.</p>
+          </div>
+        </div>
+        <div class="mt-4 text-lg text-slate-700 leading-relaxed">
+          <p>Agregar la persona después del verbo cambia la responsabilidad de ti hacia ella — un cambio pequeño con una gran diferencia de significado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 4: PatternDrill -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Ejercicio: ¿to do o verbo base?</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Después de la persona: ¿“to do”, o el verbo base sin “to”?</p>
+        <PatternDrill client:visible data={l6Drill} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 5: ErrorCorrection -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">5</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Encuentra el error</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Toca la parte incorrecta de cada oración.</p>
+        <ErrorCorrection client:visible data={l6Corrections} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap + siguiente -->
+  <section class="py-16 md:py-20 bg-slate-50 border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">El resumen</h2>
+        <div class="bg-white rounded-2xl border border-slate-200 p-8 mb-10">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>Lo normal es “to”</strong> — want, need, ask, allow, persuade + someone + <em>to&nbsp;do</em>.</span></li>
+            <li class="flex gap-3"><AlertTriangle class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" /><span><strong>make y let toman el verbo base</strong> — sin “to”. Nunca <span class="line-through">made me to</span> / <span class="line-through">let him to</span>.</span></li>
+            <li class="flex gap-3"><XCircle class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>Agregar la persona cambia la responsabilidad</strong> — <em>I need to</em> (yo) vs <em>I need you to</em> (tú).</span></li>
+          </ul>
+        </div>
+        <div class="text-center">
+          <p class="text-slate-600 mb-6">A continuación: <strong class="text-slate-900">Someone + Preposición</strong> — los verbos que necesitan una preposición antes de la persona, y los que no.</p>
+          <Button href="/es/curso/patrones-verbales/alguien-preposicion/" variant="primary" size="lg">
+            Lección 7: Someone + Preposición
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+          <div class="mt-6">
+            <a href="/es/curso/patrones-verbales/" class="text-sm text-indigo-700 hover:text-indigo-800 underline underline-offset-2">← Volver al resumen del curso</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,163 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import AudioButton from "@components/course/AudioButton";
+import SentenceTransformer from "@components/course/SentenceTransformer";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import { l3Transforms, l3Corrections } from "@data/verb-patterns/lesson-3";
+import { ArrowRight, Send, CheckCircle2, XCircle, AlertTriangle } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/verb-patterns/give-send-explain" as const;
+
+const flexibleVerbs = ["give", "send", "show", "offer", "lend", "sell", "bring"];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Give, Send & the Explain Trap | Verb Patterns Lesson 3"
+  description="Lesson 3 of Verb Pattern Mastery. give/send/show allow two word orders — but explain never does. Stop saying 'explain me this.'"
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <Send class="w-4 h-4" />
+          Level 1 · Foundations — Lesson 3
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Give, Send &amp; the Explain Trap
+        </h1>
+        <p class="text-2xl text-indigo-300 italic font-light mb-4">two correct orders — and one verb that breaks the rule.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Verbs like <em class="text-white not-italic">give</em> and <em class="text-white not-italic">send</em> let you
+          say it two ways. But <em class="text-white not-italic">explain</em> only allows one — and copying the flexible
+          pattern is the single most common Spanish-speaker mistake: <em class="text-white not-italic">"explain me this."</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: two orders -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Give, send, show — two correct orders</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Both are right. Pick whichever sounds better.</p>
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+          <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+            <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">person first (no “to”)</p>
+            <div class="flex items-center gap-2">
+              <p class="text-slate-900 flex-1">I sent my manager an email.</p>
+              <AudioButton client:visible text="I sent my manager an email." lang="en-US" size="sm" />
+            </div>
+            <p class="text-xs font-mono text-slate-500 mt-2">send someone something</p>
+          </div>
+          <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+            <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">thing first (+ “to”)</p>
+            <div class="flex items-center gap-2">
+              <p class="text-slate-900 flex-1">I sent an email to my manager.</p>
+              <AudioButton client:visible text="I sent an email to my manager." lang="en-US" size="sm" />
+            </div>
+            <p class="text-xs font-mono text-slate-500 mt-2">send something to someone</p>
+          </div>
+        </div>
+
+        <p class="text-slate-600 mb-3">These verbs are flexible — they take either order:</p>
+        <div class="flex flex-wrap gap-2">
+          {flexibleVerbs.map((v) => (
+            <span class="px-3 py-1.5 rounded-lg bg-white border border-indigo-200 text-slate-700 font-medium text-sm font-mono">{v}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: SentenceTransformer -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Flip it the other way</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">See each sentence rewritten in its other correct order.</p>
+        <SentenceTransformer client:visible transforms={l3Transforms} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: the explain trap -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The Explain Trap</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Some verbs allow only <em>one</em> order: thing + to + person.</p>
+
+        <div class="bg-white rounded-xl border border-slate-200 p-6 mb-4">
+          <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"Can you explain me this rule?"</em> (explícame)</span></p>
+          <div class="flex items-start gap-2 mt-1">
+            <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+            <span class="text-slate-800 flex-1"><em>"Can you explain this rule to me?"</em></span>
+            <AudioButton client:visible text="Can you explain this rule to me?" lang="en-US" size="sm" />
+          </div>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 text-slate-700">
+          <p class="flex gap-2"><AlertTriangle class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" /><span><strong>explain, describe, suggest, mention</strong> never put the person first. It's always <strong>explain something to someone</strong> — never <span class="line-through">explain someone something</span>.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: ErrorCorrection -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Spot the error</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Tap the wrong part of each sentence.</p>
+        <ErrorCorrection client:visible data={l3Corrections} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap + exam -->
+  <section class="py-16 md:py-20 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">The Recap</h2>
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-8 mb-10">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>give, send, show, offer, lend</strong> — two orders. Person first (no “to”) or thing first (+ “to”).</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>explain, describe, suggest</strong> — one order only: <em>thing to person</em>.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>Never “explain me.”</strong> It's <em>explain it to me</em>.</span></li>
+          </ul>
+        </div>
+        <div class="text-center">
+          <p class="text-slate-600 mb-6">That's all of Level 1. Time to prove it — 15 questions across the three foundation lessons.</p>
+          <Button href="/en/course/verb-patterns/foundations-exam/" variant="primary" size="lg">
+            Take the Foundations Exam
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+          <div class="mt-6">
+            <a href="/en/course/verb-patterns/" class="text-sm text-indigo-700 hover:text-indigo-800 underline underline-offset-2">← Back to course overview</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

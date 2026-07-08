@@ -1,0 +1,186 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import AudioButton from "@components/course/AudioButton";
+import PatternDrill from "@components/course/PatternDrill";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import { l5Drill, l5Corrections } from "@data/verb-patterns/lesson-5";
+import { ArrowRight, GitFork, CheckCircle2, XCircle } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/verb-patterns/to-do-vs-doing" as const;
+
+const toBaseVerbs = ["decide", "plan", "hope", "promise", "refuse", "manage", "fail", "learn", "agree", "offer", "expect"];
+const ingVerbs = ["enjoy", "avoid", "finish", "keep", "consider", "suggest", "recommend", "practice", "mind", "miss"];
+
+const comparePairs = [
+  ["I decided to call.", "I enjoy calling."],
+  ["She plans to study.", "She avoids studying."],
+  ["We agreed to wait.", "We suggested waiting."],
+];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="To Do vs Doing: gerundio o infinitivo | Patrones Verbales Lección 5"
+  description="Lección 5 de Patrones Verbales. decide to do pero enjoy doing — qué verbos toman infinitivo y cuáles -ing. Deja de decir 'I enjoy to learn'."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <GitFork class="w-4 h-4" />
+          Nivel 2 · Patrones — Lección 5
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          To Do vs Doing
+        </h1>
+        <p class="text-2xl text-indigo-300 italic font-light mb-4">El verbo decide la forma.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Algunos verbos toman <em class="text-white not-italic">to&nbsp;+&nbsp;base</em> (<em>decide to call</em>)
+          y otros toman <em class="text-white not-italic">-ing</em> (<em>enjoy calling</em>). En español no puedes
+          escuchar la diferencia — las dos formas se sienten como la misma idea — así que aquí no hay atajo.
+          Te aprendes la lista.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 1: Dos grupos -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Dos grupos</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">El verbo de adelante te dice qué forma sigue.</p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Columna A: to + base -->
+          <div class="rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">Grupo A</p>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">to + base</h3>
+            <div class="flex flex-wrap gap-2 mb-5">
+              {toBaseVerbs.map((v) => (
+                <span class="text-sm font-mono bg-white text-indigo-700 border border-indigo-200 rounded-lg px-2.5 py-1">{v}</span>
+              ))}
+            </div>
+            <div class="flex items-center gap-2 bg-white rounded-xl border border-indigo-200 p-4">
+              <p class="text-slate-900 flex-1">I decided to call the client.</p>
+              <AudioButton client:visible text="I decided to call the client." lang="en-US" size="sm" />
+            </div>
+          </div>
+          <!-- Columna B: -ing -->
+          <div class="rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">Grupo B</p>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">-ing</h3>
+            <div class="flex flex-wrap gap-2 mb-5">
+              {ingVerbs.map((v) => (
+                <span class="text-sm font-mono bg-white text-indigo-700 border border-indigo-200 rounded-lg px-2.5 py-1">{v}</span>
+              ))}
+            </div>
+            <div class="flex items-center gap-2 bg-white rounded-xl border border-indigo-200 p-4">
+              <p class="text-slate-900 flex-1">I enjoy working with clients.</p>
+              <AudioButton client:visible text="I enjoy working with clients." lang="en-US" size="sm" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 2: Misma idea, distinta forma -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Misma idea, distinta forma</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">El significado se siente casi igual — pero el verbo dicta la forma.</p>
+        <div class="grid md:grid-cols-3 gap-4">
+          {comparePairs.map(([a, b]) => (
+            <div class="bg-white rounded-xl border border-slate-200 p-4 space-y-3">
+              <div class="rounded-lg border border-indigo-200 bg-indigo-50 p-3">
+                <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">to + base</p>
+                <div class="flex items-center gap-2">
+                  <p class="text-slate-900 flex-1">{a}</p>
+                  <AudioButton client:visible text={a} lang="en-US" size="sm" />
+                </div>
+              </div>
+              <div class="rounded-lg border border-indigo-200 bg-indigo-50 p-3">
+                <p class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1">-ing</p>
+                <div class="flex items-center gap-2">
+                  <p class="text-slate-900 flex-1">{b}</p>
+                  <AudioButton client:visible text={b} lang="en-US" size="sm" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+          <strong>La trampa:</strong> <span class="line-through">I enjoy to learn</span> → I enjoy learning.
+          El verbo <em>enjoy</em> — no el significado — obliga a usar <em>-ing</em>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 3: PatternDrill -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Ejercicio: ¿to do o doing?</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Lee el verbo y luego elige la forma que toma.</p>
+        <PatternDrill client:visible data={l5Drill} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 4: ErrorCorrection -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Encuentra el error</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Toca la forma incorrecta en cada oración.</p>
+        <ErrorCorrection client:visible data={l5Corrections} lang="es" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Resumen + siguiente -->
+  <section class="py-16 md:py-20 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">El resumen</h2>
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-8 mb-10">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>El verbo decide la forma</strong> — no el significado, no el español.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>to&nbsp;+&nbsp;base:</strong> decide, plan, hope, promise, refuse, manage, agree, expect.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>-ing:</strong> enjoy, avoid, finish, keep, consider, suggest, recommend, practice.</span></li>
+          </ul>
+        </div>
+        <div class="text-center">
+          <p class="text-slate-600 mb-6">A continuación: <strong class="text-slate-900">Someone To Do, Make y Let</strong> — quién hace la acción, y los dos verbos que quitan el <em>to</em>.</p>
+          <Button href="/es/curso/patrones-verbales/alguien-to-do/" variant="primary" size="lg">
+            Lección 6: Someone To Do, Make y Let
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+          <div class="mt-6">
+            <a href="/es/curso/patrones-verbales/" class="text-sm text-indigo-700 hover:text-indigo-800 underline underline-offset-2">← Volver al resumen del curso</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

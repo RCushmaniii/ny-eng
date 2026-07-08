@@ -1,0 +1,203 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import AudioButton from "@components/course/AudioButton";
+import PatternDrill from "@components/course/PatternDrill";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import { l7Drill, l7Corrections } from "@data/verb-patterns/lesson-7";
+import { ArrowRight, Handshake, CheckCircle2, XCircle } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/verb-patterns/someone-preposition" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Thank For, Apologize To, Prevent From | Verb Patterns Lesson 7"
+  description="Lesson 7 of Verb Pattern Mastery. Person + preposition — thank for, apologize to, introduce to, provide with, prevent from. Stop saying 'apologize the client'."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <Handshake class="w-4 h-4" />
+          Level 2 · Patterns — Lesson 7
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Someone + Preposition + Something
+        </h1>
+        <p class="text-2xl text-indigo-300 italic font-light mb-4">Person first, then a fixed preposition.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          You <em class="text-white not-italic">thank</em> a coworker, <em class="text-white not-italic">apologize to</em> a client,
+          <em class="text-white not-italic">introduce</em> someone <em class="text-white not-italic">to</em> the team. These
+          person + preposition patterns are everywhere in business English — and each one locks to a fixed preposition you
+          can't swap out.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: the patterns -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The patterns</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Person first, then the preposition the verb demands.</p>
+
+        <div class="space-y-4">
+          <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+            <p class="text-xs font-mono font-bold text-indigo-700 mb-2">thank someone FOR something</p>
+            <div class="flex items-center gap-2">
+              <p class="text-slate-900 flex-1">I thanked my coworker for her help.</p>
+              <AudioButton client:visible text="I thanked my coworker for her help." lang="en-US" size="sm" />
+            </div>
+          </div>
+
+          <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+            <p class="text-xs font-mono font-bold text-indigo-700 mb-2">blame someone FOR something</p>
+            <div class="flex items-center gap-2">
+              <p class="text-slate-900 flex-1">The customer blamed us for the delay.</p>
+              <AudioButton client:visible text="The customer blamed us for the delay." lang="en-US" size="sm" />
+            </div>
+          </div>
+
+          <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+            <p class="text-xs font-mono font-bold text-indigo-700 mb-2">apologize TO someone FOR something</p>
+            <div class="flex items-center gap-2">
+              <p class="text-slate-900 flex-1">I apologized to the client for the delay.</p>
+              <AudioButton client:visible text="I apologized to the client for the delay." lang="en-US" size="sm" />
+            </div>
+          </div>
+
+          <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+            <p class="text-xs font-mono font-bold text-indigo-700 mb-2">introduce someone TO someone</p>
+            <div class="flex items-center gap-2">
+              <p class="text-slate-900 flex-1">I introduced the new employee to the team.</p>
+              <AudioButton client:visible text="I introduced the new employee to the team." lang="en-US" size="sm" />
+            </div>
+          </div>
+
+          <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+            <p class="text-xs font-mono font-bold text-indigo-700 mb-2">provide someone WITH something</p>
+            <div class="flex items-center gap-2">
+              <p class="text-slate-900 flex-1">The company provided employees with training.</p>
+              <AudioButton client:visible text="The company provided employees with training." lang="en-US" size="sm" />
+            </div>
+            <p class="text-xs text-slate-500 mt-2">Also: <span class="font-mono">provide something TO someone</span>.</p>
+          </div>
+
+          <div class="rounded-xl border-2 border-indigo-200 bg-indigo-50 p-5">
+            <p class="text-xs font-mono font-bold text-indigo-700 mb-2">prevent someone FROM doing something</p>
+            <div class="flex items-center gap-2">
+              <p class="text-slate-900 flex-1">The delay prevented us from finishing.</p>
+              <AudioButton client:visible text="The delay prevented us from finishing." lang="en-US" size="sm" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: the traps -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The traps</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Three patterns Spanish speakers translate literally — and break.</p>
+
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl border border-amber-200 p-6">
+            <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"apologize the client"</em></span></p>
+            <div class="flex items-start gap-2 mt-1">
+              <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+              <span class="text-slate-800 flex-1"><em>"I apologized to the client."</em></span>
+              <AudioButton client:visible text="I apologized to the client." lang="en-US" size="sm" />
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl border border-amber-200 p-6">
+            <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"introduce me with her boss"</em></span></p>
+            <div class="flex items-start gap-2 mt-1">
+              <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+              <span class="text-slate-800 flex-1"><em>"She introduced me to her boss."</em></span>
+              <AudioButton client:visible text="She introduced me to her boss." lang="en-US" size="sm" />
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl border border-amber-200 p-6">
+            <p class="flex items-start gap-2"><XCircle class="w-5 h-5 text-red-500 shrink-0 mt-0.5" /><span class="text-slate-800"><em>"prevented us to travel"</em></span></p>
+            <div class="flex items-start gap-2 mt-1">
+              <CheckCircle2 class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+              <span class="text-slate-800 flex-1"><em>"The rain prevented us from traveling."</em></span>
+              <AudioButton client:visible text="The rain prevented us from traveling." lang="en-US" size="sm" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: PatternDrill -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Drill: which preposition?</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Person first — now pick the preposition that follows.</p>
+        <PatternDrill client:visible data={l7Drill} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: ErrorCorrection -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Spot the error</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Tap the wrong part of each sentence.</p>
+        <ErrorCorrection client:visible data={l7Corrections} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap + exam -->
+  <section class="py-16 md:py-20 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">The Recap</h2>
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-8 mb-10">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>thank / blame someone FOR something</strong> — person direct, then <em>for</em>. No “to” before the person.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>apologize TO someone, introduce someone TO someone, provide someone WITH something</strong> — each locks its own preposition.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>prevent someone FROM doing</strong> — always <em>from + -ing</em>, never “to travel”.</span></li>
+          </ul>
+        </div>
+        <div class="text-center">
+          <p class="text-slate-600 mb-6">That's all of Level 2. Time to prove it — the Patterns exam pulls from every lesson in this level.</p>
+          <Button href="/en/course/verb-patterns/patterns-exam/" variant="primary" size="lg">
+            Take the Patterns Exam
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+          <div class="mt-6">
+            <a href="/en/course/verb-patterns/" class="text-sm text-indigo-700 hover:text-indigo-800 underline underline-offset-2">← Back to course overview</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
