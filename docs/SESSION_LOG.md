@@ -15,6 +15,8 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 - Authored all pedagogical data by hand (correctness-critical); parallelized the templated EN+ES page assembly across subagents (10 lesson pages + 6 bonus/exam pages), each grep-audited for Iberian markers.
 - Final build clean: **470 pages**, meta-description gate (120–160) pass, sitemap validation pass.
 - SEO: GSC sitemap resubmitted; IndexNow accepted 444 URLs (Bing/Yandex/DuckDuckGo/Seznam/Naver) with Bing IndexNow HTTP 200. Social kit added at `content-marketing/verb-patterns-course-social.md` (X + FB/LinkedIn, EN+ES).
+- PR #215 (masterful-SEO hardening): new `CourseLessonSchema.astro` (data-driven BreadcrumbList + LearningResource) wired into all 32 sub-pages EN+ES; BreadcrumbList on both hubs; added Verb Pattern Mastery as the 9th course on `/en/courses/` + `/es/cursos/` (card + ItemList schema + hero/which-one copy, ES warm Mexican Spanish); fixed a pre-existing sitemap hreflang warning (executive-communication-playbook ↔ manual-comunicacion-ejecutiva in blogTranslations + ES post frontmatter). Sitemap now validates with **0 warnings** (444 URLs). Verified all JSON-LD parses + resolves in built HTML (correct localized names, URLs, resource types, es-MX inLanguage).
+- Search-engine coverage completed: Google (sitemap), Bing (IndexNow HTTP 200 + direct Webmaster SubmitUrlBatch of 36 course URLs, HTTP 200), Yandex (IndexNow), DuckDuckGo/Seznam/Naver (IndexNow). Confirmed robots.txt references sitemap, 0 noindex on course pages, self-canonical + en-US/es-MX/x-default hreflang.
 
 ### Decisions Made
 
