@@ -45,7 +45,7 @@ export const verbLevels: VerbLevel[] = [
     examSlugEs: "examen-patrones",
     examTitle: "Patterns Exam",
     examTitleEs: "Examen de Patrones",
-    examAvailable: false,
+    examAvailable: true,
   },
   {
     id: 3,
@@ -120,7 +120,7 @@ export const verbLessons: VerbLesson[] = [
     subtitle: "The six preposition families — learn them as chunks",
     subtitleEs: "Las seis familias de preposiciones — apréndelas como bloques",
     icon: "Link",
-    available: false,
+    available: true,
   },
   {
     id: 5,
@@ -134,7 +134,7 @@ export const verbLessons: VerbLesson[] = [
     subtitle: "The gerund / infinitive split that trips up every learner",
     subtitleEs: "La división gerundio / infinitivo que confunde a todos",
     icon: "GitFork",
-    available: false,
+    available: true,
   },
   {
     id: 6,
@@ -148,7 +148,7 @@ export const verbLessons: VerbLesson[] = [
     subtitle: "Adding a person before the action — and the causatives with no “to”",
     subtitleEs: "Agregar una persona antes de la acción — y los causativos sin “to”",
     icon: "Users",
-    available: false,
+    available: true,
   },
   {
     id: 7,
@@ -162,7 +162,7 @@ export const verbLessons: VerbLesson[] = [
     subtitle: "Person + preposition + thing — the high-frequency business patterns",
     subtitleEs: "Persona + preposición + cosa — los patrones de negocios más frecuentes",
     icon: "Handshake",
-    available: false,
+    available: true,
   },
   // ─── Level 3 — Mastery ────────────────────────────────────────────────
   {

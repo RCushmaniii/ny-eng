@@ -1,0 +1,167 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import Button from "@components/ui/Button.astro";
+import AudioButton from "@components/course/AudioButton";
+import PatternDrill from "@components/course/PatternDrill";
+import ErrorCorrection from "@components/course/ErrorCorrection";
+import { l4Drill, l4Corrections } from "@data/verb-patterns/lesson-4";
+import { ArrowRight, Link as LinkIcon, CheckCircle2, XCircle } from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/verb-patterns/verb-preposition" as const;
+
+const families = [
+  ["ON", "depend on · rely on · focus on · work on · insist on", "I depend on my team."],
+  ["FOR", "wait for · look for · apply for · pay for · prepare for", "We prepared for the meeting."],
+  ["ABOUT", "think about · worry about · complain about · hear about", "She worried about the deadline."],
+  ["WITH", "agree with · deal with · meet with · work with", "He dealt with the problem."],
+  ["IN", "believe in · participate in · succeed in · invest in", "They invested in new technology."],
+  ["FROM", "hear from · borrow from · learn from · recover from", "We learned from our mistakes."],
+];
+
+const traps = [
+  ["depend of", "I depend on my team."],
+  ["focus in", "We focus on the problem."],
+  ["apply to a job", "He applied for a new job."],
+];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Verb + Preposition: depend on, wait for, worry about | Verb Patterns Lesson 4"
+  description="Lesson 4 of Verb Pattern Mastery. The six preposition families — depend on, wait for, worry about, agree with. Stop saying 'depend of' and 'focus in'."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <LinkIcon class="w-4 h-4" />
+          Level 2 · Patterns — Lesson 4
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Verb + Preposition
+        </h1>
+        <p class="text-2xl text-indigo-300 italic font-light mb-4">Some verbs are glued to a preposition.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Many English verbs carry a fixed preposition — you learn <em class="text-white not-italic">depend on</em>,
+          <em class="text-white not-italic">wait for</em>, <em class="text-white not-italic">worry about</em> as one
+          chunk, not as two separate words. Spanish translates its own prepositions across, which is why
+          <span class="line-through">depend of</span> and <span class="line-through">focus in</span> feel right but are
+          wrong. Memorize the pair, not the verb alone.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: the six families -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">1</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">The six families</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Group verbs by the preposition they take, and the pattern sticks.</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {families.map(([prep, verbs, example]) => (
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+              <span class="inline-block px-2.5 py-0.5 rounded-md bg-indigo-600 text-white text-xs font-bold tracking-wider mb-3">{prep}</span>
+              <p class="text-sm text-slate-600 mb-3 leading-relaxed">{verbs}</p>
+              <div class="flex items-center gap-2 border-t border-slate-200 pt-3">
+                <p class="text-slate-900 flex-1 font-medium">{example}</p>
+                <AudioButton client:visible text={example} lang="en-US" size="sm" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: where the mistakes come from -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">2</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Where the mistakes come from</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Almost every error is Spanish lending you the wrong preposition.</p>
+        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6 space-y-4">
+          {traps.map(([wrong, right]) => (
+            <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+              <div class="flex items-center gap-2 sm:w-1/3">
+                <XCircle class="w-5 h-5 text-red-500 shrink-0" />
+                <span class="text-red-700 line-through">{wrong}</span>
+              </div>
+              <ArrowRight class="w-5 h-5 text-amber-500 shrink-0 hidden sm:block" />
+              <div class="flex items-center gap-2 flex-1">
+                <CheckCircle2 class="w-5 h-5 text-green-600 shrink-0" />
+                <span class="text-slate-900 font-medium flex-1">{right}</span>
+                <AudioButton client:visible text={right} lang="en-US" size="sm" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: PatternDrill -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">3</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Drill: which preposition?</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Each verb is glued to one preposition. Pick it and check.</p>
+        <PatternDrill client:visible data={l4Drill} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: ErrorCorrection -->
+  <section class="py-16 md:py-20 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500 text-white text-sm font-bold">4</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Spot the error</h2>
+        </div>
+        <p class="text-slate-500 mb-8 ml-11">Tap the wrong preposition in each sentence.</p>
+        <ErrorCorrection client:visible data={l4Corrections} lang="en" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Recap + next -->
+  <section class="py-16 md:py-20 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6 text-center">The Recap</h2>
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-8 mb-10">
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>Learn the verb and its preposition as one chunk</strong> — <em>depend on</em>, not <em>depend</em> + a guess.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>Six families:</strong> ON · FOR · ABOUT · WITH · IN · FROM. Group new verbs into them.</span></li>
+            <li class="flex gap-3"><CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" /><span><strong>Most errors are Spanish leaking through</strong> — <span class="line-through">depend of</span>, <span class="line-through">focus in</span>.</span></li>
+          </ul>
+        </div>
+        <div class="text-center">
+          <p class="text-slate-600 mb-6">Next up: <strong class="text-slate-900">To Do vs Doing</strong> — when a verb is followed by the infinitive, and when it needs the -ing form.</p>
+          <Button href="/en/course/verb-patterns/to-do-vs-doing/" variant="primary" size="lg">
+            Lesson 5: To Do vs Doing
+            <ArrowRight class="w-5 h-5 ml-1" />
+          </Button>
+          <div class="mt-6">
+            <a href="/en/course/verb-patterns/" class="text-sm text-indigo-700 hover:text-indigo-800 underline underline-offset-2">← Back to course overview</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

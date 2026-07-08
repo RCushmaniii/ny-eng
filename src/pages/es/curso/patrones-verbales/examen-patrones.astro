@@ -1,0 +1,64 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import CourseExam from "@components/course/CourseExam";
+import {
+  patternsExamQuestions,
+  patternsExamTiers,
+  patternsExamMeta,
+} from "@data/verb-patterns/exam-patterns";
+import { ArrowLeft, GraduationCap } from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/verb-patterns/patterns-exam" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Examen de Patrones — Patrones Verbales | NY English Teacher"
+  description="Examen del Nivel 2 de Patrones Verbales: 20 preguntas sobre preposiciones, gerundio vs infinitivo y causativos. Gratis para hispanohablantes."
+>
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <GraduationCap class="w-4 h-4" />
+          Nivel 2 · Patrones — Examen
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight" style="font-family: 'Noto Sans KR', sans-serif;">
+          Examen de Patrones
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          Cuatro lecciones completadas: familias de preposiciones, to-do vs doing, los causativos y los
+          patrones con persona primero. 20 preguntas para fijarlos — con retroalimentación instantánea en cada respuesta.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <CourseExam
+        client:load
+        questions={patternsExamQuestions}
+        lang="es"
+        passingScore={patternsExamMeta.passingScore}
+        courseBasePath="/es/curso/patrones-verbales"
+        tiers={patternsExamTiers}
+        introSummaryEs={patternsExamMeta.introSummaryEs}
+        completionMessageEs={patternsExamMeta.completionMessageEs}
+        unitLabelEs="Lección"
+      />
+    </div>
+  </section>
+
+  <section class="py-8 bg-white border-t border-slate-200">
+    <div class="site-container mx-auto px-4 text-center">
+      <a href="/es/curso/patrones-verbales/" class="inline-flex items-center gap-2 text-slate-500 hover:text-indigo-600 transition-colors text-sm">
+        <ArrowLeft class="w-4 h-4" /> Volver al resumen del curso
+      </a>
+    </div>
+  </section>
+</Base>
