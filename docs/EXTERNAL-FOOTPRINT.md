@@ -36,7 +36,7 @@ Checked live 2026-07-25 with a browser user-agent.
 | Profile | URL | HTTP | Verdict |
 |---|---|---|---|
 | Facebook Page | https://www.facebook.com/nyenglishteacher | ✅ 200 | **Confirmed owned by Robert.** The only social account he confirms controlling. |
-| Instagram | https://www.instagram.com/nyenglishteacher | ⚠️ 200 | Page resolves, but **ownership unconfirmed.** Instagram serves 200 behind a login wall, so HTTP status is not proof. Do not treat as ours until Robert confirms. |
+| Instagram | https://www.instagram.com/nyenglishteacher | ❌ **Not ours** | Page resolves, but **Robert confirmed 2026-07-25 that this account is not his.** Someone else holds the handle. Never add to `sameAs` — claiming it would point our brand entity at a third party. |
 | LinkedIn company | https://www.linkedin.com/company/new-york-english-teacher | ❌ **404** | **Dead.** Does not exist. |
 | X / Twitter | https://x.com/nyenglishteach | ❌ **404** | **Dead.** Does not exist. |
 
@@ -71,7 +71,12 @@ ownership confirmation.
 
 ## 6. Known gaps / open items
 
-- [ ] **Instagram ownership unconfirmed** — confirm or abandon; do not re-add to `sameAs` until confirmed.
+- [x] ~~Instagram ownership~~ — **RESOLVED 2026-07-25: not ours.** Handle is held by a third
+      party. Permanently excluded from `sameAs`. If the handle is ever acquired, verify and
+      update this file first.
+- [ ] **Only one confirmed social channel exists** (Facebook). The LinkedIn and X handles the
+      code claimed were never registered. If those channels matter for the B2B corporate
+      audience, they need to be created — the site was asserting profiles that did not exist.
 - [ ] **Facebook content-generation repo not located.** Robert reports one exists. A sweep of
       `~/Projects` for `graph.facebook.com` found Messenger/WhatsApp repos
       (`cushlabs-messenger`, `cushlabs-messenger-bot`, `cushlabs-connect`) but no page-posting

@@ -24,7 +24,7 @@ export const siteConfig: SiteConfig = {
     Facebook: "https://www.facebook.com/nyenglishteacher", // verified 2026-07-25
     xSocial: "", // was https://x.com/nyenglishteach — 404, does not exist (2026-07-25)
     Github: "",
-    Instagram: "", // profile resolves but ownership unconfirmed — do not claim until verified
+    Instagram: "", // handle held by a third party, NOT ours — confirmed 2026-07-25. Never claim.
     LinkedIn: "", // was .../company/new-york-english-teacher — 404, does not exist (2026-07-25)
     Email: "info@nyenglishteacher.com",
     Phone: "",
