@@ -59,7 +59,7 @@ ownership confirmation.
 | `ny-eng` | This site | Primary |
 | `ny-ai-chatbot` | RAG chatbot widget on `chat.nyenglishteacher.com` | Live dependency |
 | `cushlabs-ai-voice-agent` | Vapi voice agents at `voice.cushlabs.ai` — includes **James**, an appointment-booking agent already configured for *Executive Coaching* at `/nyc-coaching` | Relevant to the proposed voice assessment |
-| `cushlabs-messenger-bot` | Meta app `848827908228231`. Handles Messenger **DMs and comment auto-replies** on the Facebook Page | See the correction below — it does **not** publish Page posts |
+| `cushlabs-messenger-bot` | **The Facebook Page control plane.** Meta app `848827908228231`. Bot engine (Messenger DMs + comment auto-replies), the `fb` admin CLI, and the demo-page factory | See §6 — this is how NY English's Page is operated |
 | `ny-english-coach` | Next.js 16 app | Relationship to production unclear — **needs a decision** |
 | `CEFR-English-Exam`, `cefr-question-generator` | CEFR assessment tooling | Possible feed for the assessment funnel |
 | `ny-eng-old` | Contains only `titan-core` — **not** the legacy site content | Legacy content is NOT recoverable from here |
@@ -78,35 +78,54 @@ ownership confirmation.
 - [ ] **Only one confirmed social channel exists** (Facebook). The LinkedIn and X handles the
       code claimed were never registered. If those channels matter for the B2B corporate
       audience, they need to be created — the site was asserting profiles that did not exist.
-- [ ] **NO automated path exists to publish Facebook Page posts.** Verified 2026-07-25.
-      `cushlabs-messenger-bot` was expected to cover this, but it does not:
-
-      - Every Graph API call in `src/` targets `/me/messages` — the Messenger **Send** API
-        (replying to DMs). There is no `POST /{page-id}/feed` anywhere.
-      - `grep` for `/feed`, `/photos`, `publish_time`, `createPost`, `publishPost` across
-        `cushlabs-messenger-bot/src` and `cushlabs-messenger` returns **zero** hits.
-      - The live `SCOPES` array in `src/lib/oauth.ts` does **not** request
-        `pages_manage_posts` — the permission needed to publish. (The 31 `pages_manage_posts`
-        matches in that repo are all in planning/app-review markdown, not code.)
-
-      **What the bot actually does:** Messenger DM replies and comment auto-replies
-      (`pages_messaging`, `pages_read_user_content`, `pages_manage_engagement`).
-
-      Publishing Page posts would require adding `pages_manage_posts` **and** writing the
-      feed-publish code. ⚠️ Adding a scope to that app is a blast-radius change — an
-      unapproved scope killed the entire OAuth dialog once already (see the comments in
-      `oauth.ts`). Verify the permission is `live` via `GET /{app-id}/permissions` **before**
-      touching `SCOPES`.
-
-- [ ] **`content-marketing/` holds 13 hand-written social kits** that were never confirmed as
-      posted — consistent with the finding above: there is no automation to post them, so
-      distribution is manual or has not happened. No tracking exists for what shipped and when.
+- [ ] **`content-marketing/` holds 13 hand-written social kits** with no record of whether they
+      were posted. The tooling to publish them exists (see §6 below) — what's missing is the
+      habit and a shipped/not-shipped ledger. Wire the blog-publish flow into `pnpm fb`.
 - [ ] **Legacy content is gone.** The pre-2025 `/eng-lesson/` and `/toefl/` pages are not in
       `ny-eng-old`. Redirects (PR #218) recover link equity, not the content itself. If those
       topics are worth republishing, they must be rewritten.
 - [ ] **`ny-english-coach`** — determine whether it is live, deprecated, or planned.
 
 ---
+
+## 6. Facebook Page operations — where the tooling lives
+
+Verified in code 2026-07-25. The Facebook Page is operated from
+`cushlabs-messenger-bot`, **not** from this repo. Three-repo split:
+
+| Concern | Repo |
+|---|---|
+| FB Page + bot engine + provisioning + publishing | `cushlabs-messenger-bot` |
+| Gated client-facing web pages (`cushlabs.ai/demo/<company>/`) | `cushlabs` |
+| Client survey / voice questionnaire flow | `cushlabs-messenger` |
+
+**The `fb` admin CLI** — `scripts/fb-page/fb-admin.ts`, run as `pnpm fb <command>`.
+It **defaults to the New York English page**; other pages need `--page <alias>`
+placed *after* any positional arguments.
+
+```
+pnpm fb whoami               Verify token, scopes, and which page it targets
+pnpm fb page:info            Dump About / contact / hours / category
+pnpm fb page:posts           List recent posts
+pnpm fb posts:scheduled      Scheduled posts + unpublished drafts
+pnpm fb page:about-current   Current About text
+pnpm fb posts:delete <id> --commit
+pnpm fb token:longlived      Mint a non-expiring page admin token
+```
+
+Reads `PAGE_ADMIN_TOKEN` from `.dev.vars` via `--env-file`. Never prints the value.
+
+**Publishing** — `scripts/demo-factory/publish-posts.mjs` does a real
+`POST /{page-id}/feed`, driven by config, publishing in array order (oldest first so
+the newest lands on top) and pinning any post flagged `"pinned": true`.
+Companions: `dress-page.mjs` (cover/profile art), `gen-cover.mjs`, `gen-cards.mjs`.
+
+> **Correction, recorded so it isn't repeated:** an earlier pass concluded this
+> capability did not exist. That was wrong — the search was scoped to `src/` and
+> `docs/`, and the publishing layer lives in `scripts/demo-factory/`,
+> `scripts/fb-page/`, and `fb-content/`. **`src/` is the bot runtime only; the Page
+> operations tooling is in `scripts/`.** Search the whole repo before concluding a
+> capability is absent.
 
 ## Maintenance rule
 
