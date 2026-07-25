@@ -8,8 +8,8 @@ categories:
   - "English Coaching"
 readingTime: "7 min read"
 audience: "Spanish speakers who use English at work and want to report conversations accurately"
-featuredImage: "./images/say-vs-tell.jpg"
-imageAlt: "A professional presenting to seated colleagues in a modern conference room, reporting results from a chart on screen"
+featuredImage: "./images/say-vs-tell.webp"
+imageAlt: "A businesswoman speaking to seated colleagues in a bright meeting room, with two speech-bubble icons above her — one linked by a tangled red path marked with an X, the other by a clean teal path marked with a checkmark — illustrating the difference between say and tell"
 ttsVoice: "en-US-AndrewNeural"
 translations:
   es: "/es/blog/say-vs-tell-cuando-usar-cada-uno/"
