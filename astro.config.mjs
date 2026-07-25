@@ -38,6 +38,7 @@ const blogTranslations = {
   "managers-lose-millions": "/es/blog/por-que-los-gerentes-de-ti-en-mexico-pierden-clientes/",
   "master-business-english": "/es/blog/dominar-negocios/",
   "master-english-verb-patterns": "/es/blog/dominar-patrones-verbales-ingles/",
+  "say-vs-tell": "/es/blog/say-vs-tell-cuando-usar-cada-uno/",
   "real-cost-weak-english-mexican-companies":
     "/es/blog/costo-real-ingles-debil-empresas-mexicanas/",
   "small-talk-to-smart-talk": "/es/blog/charla-pequena-habla-inteligente/",
