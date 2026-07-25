@@ -29,6 +29,15 @@ const {
 const siteUrl = siteConfig.siteUrl || 'https://www.nyenglishteacher.com';
 const cleanSiteUrl = siteUrl.replace(/https?:\/\/www\.www\./i, 'https://www.').replace(/\/$/, '');
 
+// Robert's personal profiles only — the Facebook business page belongs on the Organization,
+// not on the Person. Currently empty: see docs/EXTERNAL-FOOTPRINT.md. Spread conditionally so
+// an empty list omits `sameAs` entirely rather than emitting `"sameAs": []`.
+const personSameAs = [
+  siteConfig.Socials.LinkedIn,
+  siteConfig.Socials.Instagram,
+  siteConfig.Socials.xSocial
+].filter(Boolean);
+
 // Ensure absolute URL for image
 const imageUrl = image ? (image.startsWith('http') ? image : `${cleanSiteUrl}${image.startsWith('/') ? '' : '/'}${image}`) : undefined;
 
@@ -58,11 +67,7 @@ const article = {
       "name": siteConfig.companyName,
       "url": cleanSiteUrl
     },
-    "sameAs": [
-      siteConfig.Socials.LinkedIn,
-      siteConfig.Socials.Instagram,
-      siteConfig.Socials.xSocial
-    ].filter(Boolean),
+    ...(personSameAs.length > 0 && { "sameAs": personSameAs }),
     "knowsAbout": [
       "Business English",
       "Executive Communication",

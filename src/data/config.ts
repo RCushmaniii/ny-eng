@@ -2,6 +2,7 @@ export interface SiteConfig {
   companyName: string;
   siteUrl: string;
   Socials: {
+    Facebook: string;
     xSocial: string;
     Github: string;
     Instagram: string;
@@ -15,11 +16,16 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   companyName: "New York English Teacher",
   siteUrl: "https://www.nyenglishteacher.com",
+  // Socials feed schema.org `sameAs` (BlogPostSchema, ProfessionalServiceSchema), which is an
+  // explicit claim that these profiles are ours. A dead or unowned URL here weakens entity
+  // trust — empty string is always safer than a guess. Verify live before adding; see
+  // docs/EXTERNAL-FOOTPRINT.md for verification status and dates.
   Socials: {
-    xSocial: "https://x.com/nyenglishteach",
+    Facebook: "https://www.facebook.com/nyenglishteacher", // verified 2026-07-25
+    xSocial: "", // was https://x.com/nyenglishteach — 404, does not exist (2026-07-25)
     Github: "",
-    Instagram: "https://www.instagram.com/nyenglishteacher",
-    LinkedIn: "https://www.linkedin.com/company/new-york-english-teacher",
+    Instagram: "", // profile resolves but ownership unconfirmed — do not claim until verified
+    LinkedIn: "", // was .../company/new-york-english-teacher — 404, does not exist (2026-07-25)
     Email: "info@nyenglishteacher.com",
     Phone: "",
     Location: "New York, NY",
@@ -39,8 +45,7 @@ export const SEO = {
 export const blogSetting = {
   postsPerPage: 6,
   categoryHeroImage: "/images/logos/new-york-english-og.jpg",
-  categoryHeroImageAlt:
-    "New York English Teacher Blog - Business English Resources",
+  categoryHeroImageAlt: "New York English Teacher Blog - Business English Resources",
   siteUrl: "https://www.nyenglishteacher.com",
 } as const;
 

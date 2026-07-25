@@ -35,11 +35,15 @@ export function generateJsonLd(lang: string = "en") {
         image: {
           "@id": `${cleanDomain}/#logo`,
         },
+        // Organization-level sameAs — business profiles only, never Robert's personal ones.
+        // filter(Boolean) is required: unverified/dead entries are held as "" in config.ts
+        // and must not be emitted as empty strings.
         sameAs: [
+          siteConfig.Socials.Facebook,
           siteConfig.Socials.LinkedIn,
           siteConfig.Socials.xSocial,
           siteConfig.Socials.Instagram,
-        ],
+        ].filter(Boolean),
         address: {
           "@type": "PostalAddress",
           addressLocality: "New York",
@@ -141,10 +145,7 @@ export function generateBlogPostJsonLd({
       name: siteConfig.companyName,
       logo: {
         "@type": "ImageObject",
-        url: new URL(
-          "/images/logos/new-york-english-og.jpg",
-          cleanDomain,
-        ).toString(),
+        url: new URL("/images/logos/new-york-english-og.jpg", cleanDomain).toString(),
       },
     },
     inLanguage: inLanguage,

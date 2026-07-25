@@ -3,6 +3,14 @@ import { siteConfig } from "@data/config.ts";
 
 const siteUrl = (siteConfig.siteUrl || 'https://www.nyenglishteacher.com').replace(/\/$/, '');
 
+// Robert's personal profiles only — the Facebook business page belongs on the ProfessionalService
+// entity above, not on the founder Person. Currently empty: see docs/EXTERNAL-FOOTPRINT.md.
+const founderSameAs = [
+  siteConfig.Socials.LinkedIn,
+  siteConfig.Socials.Instagram,
+  siteConfig.Socials.xSocial
+].filter(Boolean);
+
 const professionalService = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -28,19 +36,16 @@ const professionalService = {
   },
   "hasMap": "https://www.google.com/maps/place/New+York+English+Teacher/@20.6686216,-103.3979611,17z/",
   "sameAs": [
-    "https://www.google.com/maps/place/New+York+English+Teacher/@20.6686216,-103.3979611,17z/"
-  ],
+    "https://www.google.com/maps/place/New+York+English+Teacher/@20.6686216,-103.3979611,17z/",
+    siteConfig.Socials.Facebook
+  ].filter(Boolean),
   "founder": {
     "@type": "Person",
     "@id": `${siteUrl}/#robert-cushman`,
     "name": "Robert Cushman",
     "jobTitle": "Business English Coach",
     "url": `${siteUrl}/en/about/`,
-    "sameAs": [
-      siteConfig.Socials.LinkedIn,
-      siteConfig.Socials.Instagram,
-      siteConfig.Socials.xSocial
-    ].filter(Boolean),
+    ...(founderSameAs.length > 0 && { "sameAs": founderSameAs }),
     "knowsAbout": [
       "Business English",
       "Executive Communication",
