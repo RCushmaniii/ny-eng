@@ -140,6 +140,17 @@
     },
 
     {
+      "source": "/en/blog/free-english-courses-spanish-speakers",
+      "destination": "/en/courses/",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/cursos-ingles-gratis-hispanohablantes",
+      "destination": "/es/cursos/",
+      "permanent": true
+    },
+
+    {
       "source": "/en/course/diagnose-before-defend",
       "destination": "/en/course/executive-pushback/",
       "permanent": true
