@@ -22,6 +22,123 @@
       "destination": "/en/",
       "permanent": false
     },
+
+    {
+      "source": "/eng-lesson/when-to-use-say-or-tell",
+      "destination": "/en/blog/say-vs-tell/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/common-greetings",
+      "destination": "/en/course/beginners/unit-1/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/introducing-yourself-and-others",
+      "destination": "/en/course/beginners/unit-1/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/days-of-the-week",
+      "destination": "/en/course/beginners/unit-1/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/ordinals-1st-31st",
+      "destination": "/en/course/beginners/unit-1/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/what-are-contractions",
+      "destination": "/en/course/beginners/unit-1/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/practice-ed-verbs-p1",
+      "destination": "/en/course/elementary/unit-1/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/did-questions",
+      "destination": "/en/course/elementary/unit-7/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/th-words",
+      "destination": "/en/blog/english-words-mexican-professionals-mispronounce/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/10-difficult-words-to-pronounce",
+      "destination": "/en/blog/english-words-mexican-professionals-mispronounce/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/pond-words",
+      "destination": "/en/blog/english-words-mexican-professionals-mispronounce/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/express-annoyance-in-english",
+      "destination": "/en/blog/english-register-for-spanish-speakers/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/learn-lend-and-borrow-in-english",
+      "destination": "/en/course/verb-patterns/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/phrases-for-delivering-presentations",
+      "destination": "/en/blog/lead-meeting-english-phrases/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/:slug",
+      "destination": "/en/courses/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson",
+      "destination": "/en/courses/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mastering-presentation-transitions-closings-ultimate-guide",
+      "destination": "/en/blog/lead-meeting-english-phrases/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10-modern-business-concepts-every-executive-must-know",
+      "destination": "/en/blog/master-business-english/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/key-factors-for-success-in-corporate-america",
+      "destination": "/en/blog/mexico-us-workplace-communication-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/en/blog/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/toefl/:slug",
+      "destination": "/en/courses/",
+      "permanent": true
+    },
+    {
+      "source": "/toefl",
+      "destination": "/en/courses/",
+      "permanent": true
+    },
+    {
+      "source": "/fast-english-assessment",
+      "destination": "/en/assessments/",
+      "permanent": true
+    },
+
     {
       "source": "/en/course/diagnose-before-defend",
       "destination": "/en/course/executive-pushback/",
