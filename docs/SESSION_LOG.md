@@ -4,6 +4,45 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-07-25 (Organic-traffic diagnosis — legacy 404 recovery, cannibalization fix, voice-agent spend cap)
+
+### Accomplished
+
+- **Diagnosed why organic traffic "isn't working."** Pulled GSC + Bing rather than guessing: 19 clicks / 1,562 impressions in 90 days on Google. Bing history showed the cause — impressions fell from ~290/day (Mar–May 2025) to ~15/day by Jul 2025 and never recovered. The Astro rebuild changed URLs to `/en/` `/es/` and shipped **zero redirects** for the old `/eng-lesson/`, `/toefl/`, and `/blog/` paths. Verified live: they still 404'd 13 months later while accumulating 805 impressions across 23 dead URLs.
+- **PR #218** — 23 legacy redirects, each mapped to the closest genuinely-equivalent live page (not a homepage dump, which reads as a soft 404). Verified all 11 tested redirects fire 308 → land 200 in production.
+- **PR #218** — new post "Say or Tell" (EN + `es-MX`), replacing the second-largest orphan (`/eng-lesson/when-to-use-say-or-tell`, 240 impr, position ~8). Framed on the real cause: Spanish's single `decir` covers two English verbs, and the Spanish structure matches `tell`. Funnels into Verb Pattern Mastery lessons 2 and 9. Robert supplied a language-agnostic hero; optimized 1396 KB PNG → **41 KB** webp.
+- **PR #219** — removed dead social profiles from schema.org `sameAs`. `linkedin.com/company/new-york-english-teacher` and `x.com/nyenglishteach` were both **404s being asserted to Google as verified profiles** on every blog post. Facebook — the only owned account — wasn't listed anywhere. Caught a latent bug: `json-ld.ts` had no `.filter(Boolean)` and would have emitted `["", "", ""]`.
+- **PR #220** — consolidated the free-courses cannibalization. `/en/blog/free-english-courses-spanish-speakers/` (413 impr, pos 38.6) and `/en/courses/` (69 impr, pos 61.6) competed for ~31% of all site impressions and Google ranked neither. Post was an orphan (zero internal links). Ported its two unique FAQs into both hubs, retired both posts + orphaned images, 301'd each to its hub.
+- **`docs/EXTERNAL-FOOTPRINT.md`** — new source of truth for every external property, with verification dates and a maintenance rule.
+- **cushlabs-ai-voice-agent PR #41 (merged + deployed)** — `/api/outbound-call` places billed Twilio PSTN calls guarded only by an in-memory `Map` at 1-per-30s **per IP**, trivially bypassed by IP rotation and reset every deploy. Added a **global 50/day ceiling** that rotation cannot bypass, Redis-backed with in-process fallback. 5 new tests, suite 37/37. Deployed to the VPS and verified healthy on the Redis path.
+
+### Decisions Made
+
+- **Consolidate, don't differentiate**, on the courses cluster: on a domain whose bottleneck is authority, two weak pages beat one strong page never. Chose the hub over the higher-impression post because the post was an orphan and the hub is the permanent commercial asset.
+- **Redirect legacy URLs to genuinely equivalent pages**, one by one, rather than a blanket homepage redirect — an approximate target gets treated as a soft 404 and recovers nothing.
+- **Voice assessment agent: deferred, traffic first.** The text assessment at `/en/assessments/` already gets 63 impressions and zero clicks. A voice version of an unfound product is still unfound. Materially cheaper than first assumed — `cushlabs-ai-voice-agent` already exists with an Executive Coaching agent — but the bottleneck is discovery, not conversion.
+- **Rate-limit budget degrades rather than fails closed.** Fail-closed is textbook for a spending gate, but it would 503 a client-facing demo on any Upstash blip. The in-process fallback still bounds spend and is strictly stronger than the per-IP map it replaced.
+
+### Immediate Next Steps
+
+- [ ] Check Vapi **Settings → Billing → Payment method**: if auto-recharge is OFF, the credit balance is the spend ceiling and nothing more is needed; if ON, set a Spending Limit with a 50% alert.
+- [ ] Calendar reminder for **2026-10-21** — Meta page data access expires for all three managed pages; one `pnpm fb token:longlived` re-grant refreshes them together.
+- [ ] Re-check GSC in ~3–4 weeks: the measurable signal is the course hubs' average position moving from 61.6/57.4 toward 38.6, and impressions consolidating onto one URL.
+- [ ] Decide on Instagram — no capability exists today; needs a Business account linked to the CushLabs page, two scopes, and a separate `scripts/ig/` publish flow (two-step container + public image URL).
+- [ ] Rewrite `cushlabs-messenger-bot/docs/META_GRAPH_API.md` — still says "Status: Not started" for scripts that shipped months ago.
+
+### Technical Debt
+
+- `/en/blog/business-english-interview-phrases/` sits at position 19.6 with 163+ impressions — bottom of page 2. Upgrading the existing post is higher ROI than any new article.
+- The pre-2025 `/eng-lesson/` and `/toefl/` content is **gone** — not in `ny-eng-old` (which holds only `titan-core`). Redirects recover link equity, not content. Republishing those topics means rewriting them.
+- `content-marketing/` holds 13 social kits with no shipped/not-shipped ledger, despite full publishing tooling existing.
+
+### Open Questions / Blockers
+
+- **Two stale-docs incidents cost real time this session.** `render.yaml` + `docs/DEPLOYMENT.md` in the voice repo described a Render deploy abandoned in March 2026, which produced a false "Redis is misconfigured in production" conclusion — corrected only by SSHing the box and testing a live Upstash round-trip. Separately, scoping a capability search to `src/` produced a false "the bot can't publish to Facebook" conclusion; the publishing layer lives in `scripts/` and `fb-content/`. **Lesson recorded in both repos: verify against the running system, and search the whole repo before concluding a capability is absent.**
+
+---
+
 ## Session: 2026-07-08 (Verb Pattern Mastery — full free course shipped end-to-end)
 
 ### Accomplished
