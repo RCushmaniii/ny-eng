@@ -59,6 +59,7 @@ ownership confirmation.
 | `ny-eng` | This site | Primary |
 | `ny-ai-chatbot` | RAG chatbot widget on `chat.nyenglishteacher.com` | Live dependency |
 | `cushlabs-ai-voice-agent` | Vapi voice agents at `voice.cushlabs.ai` — includes **James**, an appointment-booking agent already configured for *Executive Coaching* at `/nyc-coaching` | Relevant to the proposed voice assessment |
+| `cushlabs-prod-server` | **The actual production host.** Hetzner CPX21 (`178.156.192.117`), 6 Dockerized services behind Caddy. Migrated off Render in March 2026 | Runs voice, marketsignal, vitals, webscraper, unwatermark, resume-tailor |
 | `cushlabs-messenger-bot` | **The Facebook Page control plane.** Meta app `848827908228231`. Bot engine (Messenger DMs + comment auto-replies), the `fb` admin CLI, and the demo-page factory | See §6 — this is how NY English's Page is operated |
 | `ny-english-coach` | Next.js 16 app | Relationship to production unclear — **needs a decision** |
 | `CEFR-English-Exam`, `cefr-question-generator` | CEFR assessment tooling | Possible feed for the assessment funnel |
@@ -100,25 +101,104 @@ Verified in code 2026-07-25. The Facebook Page is operated from
 | Client survey / voice questionnaire flow | `cushlabs-messenger` |
 
 **The `fb` admin CLI** — `scripts/fb-page/fb-admin.ts`, run as `pnpm fb <command>`.
-It **defaults to the New York English page**; other pages need `--page <alias>`
+Raw `fetch()` against **Graph API v21.0** — no SDK, no dashboard clicking. It
+**defaults to the New York English page**; other pages need `--page <alias>`
 placed *after* any positional arguments.
 
-```
-pnpm fb whoami               Verify token, scopes, and which page it targets
-pnpm fb page:info            Dump About / contact / hours / category
-pnpm fb page:posts           List recent posts
-pnpm fb posts:scheduled      Scheduled posts + unpublished drafts
-pnpm fb page:about-current   Current About text
-pnpm fb posts:delete <id> --commit
-pnpm fb token:longlived      Mint a non-expiring page admin token
-```
+### Managed pages (all three verified live 2026-07-25)
 
-Reads `PAGE_ADMIN_TOKEN` from `.dev.vars` via `--env-file`. Never prints the value.
+| Page | ID | CLI target |
+|---|---|---|
+| **New York English** | `106311940988012` | default (`--page ny`) |
+| CushLabs | `1110871555439963` | `--page cushlabs` |
+| Boutique Azúcar Azul — Demo | `1240057929189198` | `--page azucardemo` |
 
-**Publishing** — `scripts/demo-factory/publish-posts.mjs` does a real
-`POST /{page-id}/feed`, driven by config, publishing in array order (oldest first so
+`lumiere-demo` is registered in the config-driven registry with
+`pageId: FILL_ME_AFTER_GRANT` — it activates as soon as the page exists and the
+grant is done. New demo pages cost one JSON file plus one grant checkbox, zero
+code edits.
+
+### Credentials
+
+Non-expiring **Page** access tokens, one per page, stored in `.dev.vars` under a
+distinct key each, minted by `pnpm fb token:longlived` (short-lived user token →
+long-lived user token → `/me/accounts` → page tokens written straight to the
+file, never printed).
+
+These come from a **separate least-privilege Meta app — CushLabs Page Assistant
+(`1478493230499109`)** — deliberately *not* the bot's messaging app
+(`848827908228231`).
+
+All three carry the same 9 scopes: `pages_manage_posts`,
+`pages_manage_engagement`, `pages_read_user_content`, `pages_read_engagement`,
+`pages_manage_metadata`, `pages_show_list`, `business_management`,
+`read_insights`, `public_profile`.
+
+> ⏰ **Data access expires 2026-10-21** for all three. One re-grant refreshes them
+> together. Put a reminder in ~mid-October.
+
+### What it can do
+
+- **Publish** — text, single photo, native multi-photo carousels (1–10,
+  `posts:create-photos`), **bilingual in one post** via `multi_language_data`
+  (Facebook routes each viewer to their language), scheduled posts, unpublished
+  drafts that land in Business Suite → Drafts, and `posts:publish` to flip a
+  reviewed draft live.
+- **Manage** — comment as the Page (`comments:add`, the link-in-first-comment
+  pattern), delete single posts or all posts, read feed / scheduled queue / drafts.
+- **Page identity** — profile photo, cover photo, About/description, hours,
+  location, username, specialties.
+
+Safety rails: every write is **dry-run by default** and needs `--commit`
+(`--confirm` for delete-all); token values are never echoed; risky writes
+(location) are best-effort so they cannot abort a preceding good write.
+Every publish is also logged as a Google Calendar event on **Social-Media-Posting**.
+
+**Publishing internals** — `scripts/demo-factory/publish-posts.mjs` does a real
+`POST /{page-id}/feed`, config-driven, publishing in array order (oldest first so
 the newest lands on top) and pinning any post flagged `"pinned": true`.
 Companions: `dress-page.mjs` (cover/profile art), `gen-cover.mjs`, `gen-cards.mjs`.
+
+### Known gaps (Facebook)
+
+- No insights/metrics command, despite holding `read_insights`.
+- No video publishing.
+- Meta rejects location writes on non-local page categories.
+- `multi_language_data` is not readable back from the API, so bilingual status is
+  verified from the `.en.md` source, not the API.
+- `docs/META_GRAPH_API.md` still says *"Status: Not started"* and lists scripts
+  that shipped months ago — stale enough to mislead a cold-start session.
+
+### Instagram — not connected
+
+Zero capability today: no `instagram_*` scope on any token, no code path. Probing
+both real pages returned no `instagram_business_account` field, consistent with
+"no IG Business account linked" (not conclusive — reading it needs
+`instagram_basic`, which we also lack).
+
+Four steps, in order:
+
+1. **Dashboard (Robert):** the CushLabs IG must be a Business or Creator account
+   and linked to the **CushLabs** Facebook Page (`1110871555439963`).
+2. **Grant:** add `instagram_basic` + `instagram_content_publish` (plus
+   `instagram_manage_insights` for metrics) to the Page Assistant app, re-run the
+   mint flow.
+3. **No App Review needed for our own IG.** All `instagram_*` permissions are
+   Tech-Provider gated, but the check passes when the calling user holds an app
+   role — Robert is admin on both. A *client's* Instagram would need Tech Provider
+   verification.
+4. **Code:** IG publishing is a genuinely different flow, not a page-id swap —
+   two-step (create media container → publish), and images must sit at a public
+   HTTPS URL (no multipart upload like FB's `/photos`). Needs a `scripts/ig/`
+   sibling plus image hosting (R2 or `cushlabs.ai` static). No native scheduling
+   either — `scheduled_publish_time` has no IG equivalent, so scheduled IG posts
+   need our own cron.
+
+Estimate once the grant exists: ~30–45 min for publish + carousel + image
+hosting. The open questions are the hosting decision and whether Meta's newer
+`instagram_business_content_publish` scope family has replaced
+`instagram_content_publish` for a freshly-configured app — confirm against the
+live app's permission list before committing to either.
 
 > **Correction, recorded so it isn't repeated:** an earlier pass concluded this
 > capability did not exist. That was wrong — the search was scoped to `src/` and
