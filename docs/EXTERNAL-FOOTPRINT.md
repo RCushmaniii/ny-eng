@@ -59,6 +59,7 @@ ownership confirmation.
 | `ny-eng` | This site | Primary |
 | `ny-ai-chatbot` | RAG chatbot widget on `chat.nyenglishteacher.com` | Live dependency |
 | `cushlabs-ai-voice-agent` | Vapi voice agents at `voice.cushlabs.ai` — includes **James**, an appointment-booking agent already configured for *Executive Coaching* at `/nyc-coaching` | Relevant to the proposed voice assessment |
+| `cushlabs-messenger-bot` | Meta app `848827908228231`. Handles Messenger **DMs and comment auto-replies** on the Facebook Page | See the correction below — it does **not** publish Page posts |
 | `ny-english-coach` | Next.js 16 app | Relationship to production unclear — **needs a decision** |
 | `CEFR-English-Exam`, `cefr-question-generator` | CEFR assessment tooling | Possible feed for the assessment funnel |
 | `ny-eng-old` | Contains only `titan-core` — **not** the legacy site content | Legacy content is NOT recoverable from here |
@@ -77,12 +78,29 @@ ownership confirmation.
 - [ ] **Only one confirmed social channel exists** (Facebook). The LinkedIn and X handles the
       code claimed were never registered. If those channels matter for the B2B corporate
       audience, they need to be created — the site was asserting profiles that did not exist.
-- [ ] **Facebook content-generation repo not located.** Robert reports one exists. A sweep of
-      `~/Projects` for `graph.facebook.com` found Messenger/WhatsApp repos
-      (`cushlabs-messenger`, `cushlabs-messenger-bot`, `cushlabs-connect`) but no page-posting
-      tool. Identify it and record it here.
+- [ ] **NO automated path exists to publish Facebook Page posts.** Verified 2026-07-25.
+      `cushlabs-messenger-bot` was expected to cover this, but it does not:
+
+      - Every Graph API call in `src/` targets `/me/messages` — the Messenger **Send** API
+        (replying to DMs). There is no `POST /{page-id}/feed` anywhere.
+      - `grep` for `/feed`, `/photos`, `publish_time`, `createPost`, `publishPost` across
+        `cushlabs-messenger-bot/src` and `cushlabs-messenger` returns **zero** hits.
+      - The live `SCOPES` array in `src/lib/oauth.ts` does **not** request
+        `pages_manage_posts` — the permission needed to publish. (The 31 `pages_manage_posts`
+        matches in that repo are all in planning/app-review markdown, not code.)
+
+      **What the bot actually does:** Messenger DM replies and comment auto-replies
+      (`pages_messaging`, `pages_read_user_content`, `pages_manage_engagement`).
+
+      Publishing Page posts would require adding `pages_manage_posts` **and** writing the
+      feed-publish code. ⚠️ Adding a scope to that app is a blast-radius change — an
+      unapproved scope killed the entire OAuth dialog once already (see the comments in
+      `oauth.ts`). Verify the permission is `live` via `GET /{app-id}/permissions` **before**
+      touching `SCOPES`.
+
 - [ ] **`content-marketing/` holds 13 hand-written social kits** that were never confirmed as
-      posted. No tracking exists for what shipped to Facebook and when.
+      posted — consistent with the finding above: there is no automation to post them, so
+      distribution is manual or has not happened. No tracking exists for what shipped and when.
 - [ ] **Legacy content is gone.** The pre-2025 `/eng-lesson/` and `/toefl/` pages are not in
       `ny-eng-old`. Redirects (PR #218) recover link equity, not the content itself. If those
       topics are worth republishing, they must be rewritten.
