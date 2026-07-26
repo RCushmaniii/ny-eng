@@ -140,6 +140,47 @@
     },
 
     {
+      "source": "/en/quiz/results",
+      "destination": "/en/quiz/it-services/results/",
+      "permanent": false
+    },
+    {
+      "source": "/es/quiz/results",
+      "destination": "/es/quiz/it-services/results/",
+      "permanent": false
+    },
+    {
+      "source": "/es/services/:slug",
+      "destination": "/es/servicios/",
+      "permanent": true
+    },
+    {
+      "source": "/en/category/corporate-english-training",
+      "destination": "/en/category/business-english/",
+      "permanent": true
+    },
+    {
+      "source": "/es/categoria/coaching-de-ingles",
+      "destination": "/es/categoria/coaching-en-ingles/",
+      "permanent": true
+    },
+    {
+      "source": "/es/categoria/carrera-y-liderazgo",
+      "destination": "/es/categoria/carrera-liderazgo/",
+      "permanent": true
+    },
+    {
+      "source": "/es/categoria/capacitacion-de-ingles-corporativo",
+      "destination": "/es/categoria/ingles-para-negocios/",
+      "permanent": true
+    },
+    {
+      "source": "/es/categoria/capacitacion-corporativa-en-ingles",
+      "destination": "/es/categoria/ingles-para-negocios/",
+      "permanent": true
+    },
+
+    {
       "source": "/en/blog/free-english-courses-spanish-speakers",
       "destination": "/en/courses/",
       "permanent": true
