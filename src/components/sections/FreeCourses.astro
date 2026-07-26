@@ -1,0 +1,536 @@
+---
+/**
+ * Homepage showcase for the free course library.
+ *
+ * Deliberately two-tier. The leveled A1–C2 ladder is a commodity offer — every
+ * large ESL site has one — so it sits in a compact strip. The four master
+ * classes are the genuinely differentiated material (scenario-based executive
+ * work, verb complementation drilled for Spanish-speaker interference), so they
+ * get the visual weight. Unit counts are read from the course data rather than
+ * hardcoded, so this section cannot drift out of sync with the catalog.
+ */
+import { units } from "@data/course/units";
+import { elementaryUnits } from "@data/elementary/units";
+import { intermediateUnits } from "@data/intermediate/units";
+import { advancedUnits } from "@data/advanced/units";
+import { executiveUnits } from "@data/executive/units";
+import { verbLessons } from "@data/verb-patterns/levels";
+import { scenarioMeta } from "@data/drive-the-decision/scenarios";
+import { pushbackLessons } from "@data/executive-pushback/lessons";
+import {
+  ArrowRight,
+  Headphones,
+  BadgeCheck,
+  Languages,
+  Puzzle,
+  Crown,
+  Target,
+  Clock3,
+} from "lucide-astro";
+
+interface Props {
+  lang?: "en" | "es";
+}
+
+const { lang = "en" } = Astro.props;
+
+const verbCount = verbLessons.length;
+const driveCount = scenarioMeta.filter((s) => s.available).length;
+const pushbackCount = pushbackLessons.filter((l) => l.available).length;
+
+const content = {
+  en: {
+    eyebrow: "Free Course Library",
+    title: "Nine Complete English Courses. Free, Forever.",
+    description:
+      "Not a trial, not a lead magnet with a paywall behind it. Every lesson is open right now — with real American English audio on every phrase, and written specifically for the mistakes Spanish speakers actually make.",
+    trust: [
+      { icon: BadgeCheck, label: "No sign-up, no credit card" },
+      { icon: Headphones, label: "Audio on every phrase" },
+      { icon: Languages, label: "Built for Spanish speakers" },
+    ],
+    featuredEyebrow: "Master classes — you won't find these elsewhere",
+    featured: [
+      {
+        icon: Puzzle,
+        name: "Verb Pattern Mastery",
+        level: "B1–C1",
+        meta: `${verbCount} lessons · 3 exams`,
+        blurb:
+          "Why “depend of,” “explain me,” and “enjoy to” keep slipping out — and how to make the right pattern automatic.",
+        href: "/en/course/verb-patterns/",
+      },
+      {
+        icon: Crown,
+        name: "Executive Pushback",
+        level: "C1–C2",
+        meta: `${pushbackCount} lessons`,
+        blurb:
+          "Handle objections, hold your position, and disagree with a senior stakeholder without losing the room.",
+        href: "/en/course/executive-pushback/",
+      },
+      {
+        icon: Target,
+        name: "Drive the Decision",
+        level: "C1–C2",
+        meta: `${driveCount} scenarios`,
+        blurb:
+          "Board meetings, missed quarters, layoffs, outages. Real C-suite situations, rehearsed before you live them.",
+        href: "/en/course/drive-the-decision/",
+      },
+      {
+        icon: Clock3,
+        name: "Master English Past Tenses",
+        level: "A2–B2",
+        meta: "10 lessons · cheat sheet",
+        blurb:
+          "The tense that Spanish speakers get wrong most often, fixed properly — with a printable reference you'll keep.",
+        href: "/en/course/past-tenses/",
+      },
+    ],
+    ladderEyebrow: "Or start from your level",
+    ladder: [
+      { level: "A1", name: "Beginner", count: units.length, href: "/en/course/beginners/" },
+      { level: "A2", name: "Elementary", count: elementaryUnits.length, href: "/en/course/elementary/" },
+      { level: "B1–B2", name: "Intermediate", count: intermediateUnits.length, href: "/en/course/intermediate/" },
+      { level: "B2–C1", name: "Advanced", count: advancedUnits.length, href: "/en/course/advanced/" },
+      { level: "C1–C2", name: "Executive", count: executiveUnits.length, href: "/en/course/executive/" },
+    ],
+    unitsLabel: "units",
+    cta: "Browse all nine courses",
+    ctaHref: "/en/courses/",
+  },
+  es: {
+    eyebrow: "Biblioteca de Cursos Gratis",
+    title: "Nueve cursos completos de inglés. Gratis, para siempre.",
+    description:
+      "No es una prueba ni un gancho con muro de pago atrás. Cada lección está abierta ahora mismo — con audio real en inglés americano en cada frase, y escrita específicamente para los errores que de verdad comete el hispanohablante.",
+    trust: [
+      { icon: BadgeCheck, label: "Sin registro, sin tarjeta" },
+      { icon: Headphones, label: "Audio en cada frase" },
+      { icon: Languages, label: "Hecho para hispanohablantes" },
+    ],
+    featuredEyebrow: "Clases magistrales — esto no lo encuentras en otro lado",
+    featured: [
+      {
+        icon: Puzzle,
+        name: "Patrones Verbales",
+        level: "B1–C1",
+        meta: `${verbCount} lecciones · 3 exámenes`,
+        blurb:
+          "Por qué se te siguen escapando “depend of”, “explain me” y “enjoy to” — y cómo hacer que salga solo el patrón correcto.",
+        href: "/es/curso/patrones-verbales/",
+      },
+      {
+        icon: Crown,
+        name: "Pushback Ejecutivo",
+        level: "C1–C2",
+        meta: `${pushbackCount} lecciones`,
+        blurb:
+          "Maneja objeciones, sostén tu posición y difiere de un directivo sin perder a la sala.",
+        href: "/es/curso/pushback-ejecutivo/",
+      },
+      {
+        icon: Target,
+        name: "Dirige la Decisión",
+        level: "C1–C2",
+        meta: `${driveCount} escenarios`,
+        blurb:
+          "Juntas de consejo, trimestres fallidos, recortes, caídas de sistema. Situaciones reales de dirección, ensayadas antes de vivirlas.",
+        href: "/es/curso/dirige-la-decision/",
+      },
+      {
+        icon: Clock3,
+        name: "Tiempos del Pasado",
+        level: "A2–B2",
+        meta: "10 lecciones · guía rápida",
+        blurb:
+          "El tiempo verbal que más se le complica al hispanohablante, resuelto bien — con una guía imprimible que te vas a quedar.",
+        href: "/es/curso/tiempos-del-pasado/",
+      },
+    ],
+    ladderEyebrow: "O empieza desde tu nivel",
+    ladder: [
+      { level: "A1", name: "Principiante", count: units.length, href: "/es/curso/principiantes/" },
+      { level: "A2", name: "Elemental", count: elementaryUnits.length, href: "/es/curso/elemental/" },
+      { level: "B1–B2", name: "Intermedio", count: intermediateUnits.length, href: "/es/curso/intermedio/" },
+      { level: "B2–C1", name: "Avanzado", count: advancedUnits.length, href: "/es/curso/avanzado/" },
+      { level: "C1–C2", name: "Ejecutivo", count: executiveUnits.length, href: "/es/curso/ejecutivo/" },
+    ],
+    unitsLabel: "unidades",
+    cta: "Ver los nueve cursos",
+    ctaHref: "/es/cursos/",
+  },
+};
+
+const t = content[lang];
+---
+
+<section class="free-courses" aria-labelledby="free-courses-heading">
+  <div class="site-container mx-auto px-4 max-w-6xl">
+    <!-- Header -->
+    <div class="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
+      <p class="fc-eyebrow">{t.eyebrow}</p>
+      <h2 id="free-courses-heading" class="fc-title">{t.title}</h2>
+      <p class="fc-description">{t.description}</p>
+
+      <ul class="fc-trust" role="list">
+        {
+          t.trust.map((item) => (
+            <li class="fc-trust-item">
+              <item.icon size={18} aria-hidden="true" />
+              <span>{item.label}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Master classes -->
+    <p class="fc-section-label">{t.featuredEyebrow}</p>
+    <ul class="fc-grid" role="list">
+      {
+        t.featured.map((course) => (
+          <li>
+            <a href={course.href} class="fc-card">
+              <span class="fc-card-icon" aria-hidden="true">
+                <course.icon size={22} />
+              </span>
+              <span class="fc-card-level">{course.level}</span>
+              <h3 class="fc-card-name">{course.name}</h3>
+              <p class="fc-card-blurb">{course.blurb}</p>
+              <span class="fc-card-footer">
+                <span class="fc-card-meta">{course.meta}</span>
+                <ArrowRight size={16} class="fc-card-arrow" aria-hidden="true" />
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- Level ladder -->
+    <p class="fc-section-label fc-section-label--ladder">{t.ladderEyebrow}</p>
+    <ul class="fc-ladder" role="list">
+      {
+        t.ladder.map((step) => (
+          <li>
+            <a href={step.href} class="fc-step">
+              <span class="fc-step-level">{step.level}</span>
+              <span class="fc-step-name">{step.name}</span>
+              <span class="fc-step-count">
+                {step.count} {t.unitsLabel}
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- CTA -->
+    <div class="text-center mt-10 sm:mt-12">
+      <a href={t.ctaHref} class="fc-cta">
+        {t.cta}
+        <ArrowRight size={18} aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .free-courses {
+    /* Sits between two light sections — a deep field makes the free library read
+       as a distinct offer rather than more page furniture. */
+    background:
+      radial-gradient(
+        ellipse 80% 60% at 50% 0%,
+        rgba(255, 193, 7, 0.09),
+        transparent 70%
+      ),
+      #0a0f1a;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 4rem 0;
+    color: #fff;
+  }
+
+  @media (min-width: 640px) {
+    .free-courses {
+      padding: 5.5rem 0;
+    }
+  }
+
+  .fc-eyebrow {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #ffc107;
+    margin-bottom: 0.875rem;
+  }
+
+  .fc-title {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    line-height: 1.15;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-wrap: balance;
+  }
+
+  .fc-description {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.72);
+    text-wrap: pretty;
+  }
+
+  .fc-trust {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.625rem 1.5rem;
+    margin-top: 1.75rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .fc-trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .fc-trust-item :global(svg) {
+    color: #ffc107;
+    flex-shrink: 0;
+  }
+
+  .fc-section-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1rem;
+  }
+
+  .fc-section-label--ladder {
+    margin-top: 3rem;
+  }
+
+  /* --- Master class cards --- */
+  .fc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  @media (min-width: 640px) {
+    .fc-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .fc-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .fc-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.5rem;
+    border-radius: 0.875rem;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  .fc-card:hover,
+  .fc-card:focus-visible {
+    transform: translateY(-3px);
+    border-color: rgba(255, 193, 7, 0.55);
+    background: rgba(255, 255, 255, 0.075);
+  }
+
+  .fc-card:focus-visible {
+    outline: 2px solid #ffc107;
+    outline-offset: 3px;
+  }
+
+  .fc-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.625rem;
+    background: rgba(255, 193, 7, 0.14);
+    color: #ffc107;
+    margin-bottom: 1rem;
+  }
+
+  .fc-card-level {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #ffc107;
+    margin-bottom: 0.375rem;
+  }
+
+  .fc-card-name {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+
+  .fc-card-blurb {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.68);
+    margin-bottom: 1.25rem;
+    text-wrap: pretty;
+  }
+
+  .fc-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 0.875rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+  }
+
+  .fc-card-meta {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  .fc-card :global(.fc-card-arrow) {
+    color: #ffc107;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .fc-card:hover :global(.fc-card-arrow) {
+    transform: translateX(3px);
+  }
+
+  /* --- Level ladder --- */
+  .fc-ladder {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  @media (min-width: 640px) {
+    .fc-ladder {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  .fc-step {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    height: 100%;
+    padding: 0.875rem 1rem;
+    border-radius: 0.625rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    text-decoration: none;
+    transition:
+      border-color 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  .fc-step:hover,
+  .fc-step:focus-visible {
+    border-color: rgba(255, 193, 7, 0.5);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .fc-step:focus-visible {
+    outline: 2px solid #ffc107;
+    outline-offset: 3px;
+  }
+
+  .fc-step-level {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #ffc107;
+  }
+
+  .fc-step-name {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .fc-step-count {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* --- CTA --- */
+  .fc-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 0.5rem;
+    background: #ffc107;
+    color: #0a0f1a;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .fc-cta:hover {
+    background: #ffcd38;
+    transform: translateY(-2px);
+  }
+
+  .fc-cta:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fc-card,
+    .fc-step,
+    .fc-cta,
+    .fc-card :global(.fc-card-arrow) {
+      transition: none;
+    }
+
+    .fc-card:hover,
+    .fc-cta:hover {
+      transform: none;
+    }
+  }
+</style>
