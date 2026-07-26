@@ -52,3 +52,4 @@ Para evitar errores comunes que minan tu credibilidad en estas conversaciones, r
 - [5 estrategias para ganar confianza al hablar inglés](/es/blog/aumentar-confianza/) — Construye la seguridad que necesitas para iniciar conversaciones con naturalidad.
 - [5 formas prácticas de mejorar tu inglés de negocios](/es/blog/5-formas-practicas-mejorar-ingles-negocios/) — Consejos concretos para mejorar tu comunicación profesional día a día.
 - [Manual de comunicación ejecutiva: 7 pilares clave](/es/blog/manual-comunicacion-ejecutiva/) — La guía completa para dominar la influencia y la persuasión en inglés.
+- [30 frases de inglés de negocios para entrevistas](/es/blog/frases-ingles-entrevista-trabajo/) — La charla ligera abre la entrevista; estas frases sostienen el resto.

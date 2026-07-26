@@ -2,11 +2,11 @@
 title: "30 Frases en Inglés para Entrevistas de Trabajo — y Cómo Decirlas Exactamente"
 excerpt: "Las frases exactas en inglés que te hacen sonar seguro en una entrevista de trabajo — organizadas por etapa, cada una con un tip de pronunciación para que las palabras salgan como las pensaste."
 publishDate: "2026-06-09"
-lastmod: "2026-07-01"
+lastmod: "2026-07-25"
 categories:
   - "Inglés para Negocios"
   - "Carrera & Liderazgo"
-readingTime: "9 min de lectura"
+readingTime: "12 min de lectura"
 audience: "Profesionales mexicanos que se preparan para una entrevista en inglés"
 featuredImage: "./images/us-interview-prep.webp"
 imageAlt: "Profesional mexicano hablando con seguridad en una entrevista de trabajo en inglés"
@@ -277,6 +277,46 @@ En Estados Unidos, un seguimiento el mismo día se espera. Estas frases le dan a
 **Cuándo:** Tu línea de cierre — mira hacia adelante y con seguridad.
 
 **Tip de pronunciación:** <span class="speak-en" data-say="for-werd">Forward</span> — "FOR-werd," dos sílabas, énfasis adelante. No lo pronuncies como "four-ward" con un segundo golpe pesado.
+
+---
+
+## Todo Junto: 5 Respuestas Completas
+
+Las frases son los ladrillos. Lo que sigue es cómo se ve la pared terminada — cinco de las preguntas más comunes en una entrevista de negocios en inglés, respondidas de principio a fin con las frases de arriba. Las que están en **negritas** son las que acabas de aprender.
+
+Lee cada una en voz alta dos veces. La segunda vez, cámbiale tus propios datos.
+
+### "Tell me about yourself."
+
+> **I'm a logistics coordinator with eight years of experience in cross-border freight.** **My specialty is** getting shipments through customs without delays — that's the part most people find painful, and it's the part I'm good at. **What I'm most proud of is** cutting our average clearance time from six days to two over the last year. **I'm excited about this role because** you're expanding into Mexico, and that's exactly the corridor I know best.
+
+Cuatro oraciones: puesto, especialidad, prueba y conexión con *ellos*. Fíjate que nunca se va a la historia personal — el entrevistador hace esta pregunta para escuchar tu titular profesional, no tu biografía.
+
+### "Tell me about a time you handled a difficult situation."
+
+> **A good example of that was when** we had a shipment held at the border for three days. **To give you some context,** it was our largest client's quarterly stock, and the paperwork had been filed with the wrong classification code. **My responsibility was to** get it released without the client losing their launch date. **So what I did was** rebuild the documentation overnight, drive to the customs office myself, and walk it through in person. **As a result,** it cleared in eleven hours and the client hit their date. **The biggest challenge was** staying calm enough to keep the client informed hourly instead of going silent.
+
+Eso es STAR — Situation, Task, Action, Result — y funciona porque cierra con un número y un aprendizaje, no con el drama.
+
+### "What are your salary expectations?"
+
+> Before I give a number, **could you share the range you have budgeted for this role?** I'd rather make sure we're in the same neighborhood than guess.
+>
+> *(Si insisten:)* **Based on my research and my experience level, I'm looking for somewhere in the range of X to Y.** **I'm open to discussing the complete package** — I care about the whole picture, not just the base.
+
+El hábito más útil aquí: pregunta primero. Quien dice el primer número pone el techo, y normalmente no eres tú.
+
+### "Do you have any questions for us?"
+
+> Yes, a few. **What does success look like in this role after the first ninety days?** And **how would you describe the team's working style?** I want to know what I'd be walking into. Last one — **what's the biggest challenge facing the team right now?**
+
+Nunca digas "no, creo que ya cubrieron todo". Siempre se lee como falta de interés. Con tres preguntas es suficiente.
+
+### "Why are you leaving your current job?"
+
+> I've learned a lot where I am, and **I'm confident that** I've taken the role as far as it goes. **In my experience, the most effective approach is** to move when you've stopped growing rather than when you're unhappy. **I'm excited about this role because** it's a step up in scope, not a step sideways.
+
+Nunca critiques a tu empleador actual. El entrevistador no está escuchando datos sobre tu jefe anterior — está escuchando cómo vas a hablar de *ellos* algún día.
 
 ---
 

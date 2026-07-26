@@ -2,11 +2,11 @@
 title: "30 Business English Interview Phrases — and Exactly How to Say Them"
 excerpt: "The exact English phrases that make you sound confident in a job interview — organized by interview stage, each with a pronunciation tip so the words land the way you mean them."
 publishDate: "2026-06-09"
-lastmod: "2026-07-01"
+lastmod: "2026-07-25"
 categories:
   - "Business English"
   - "Career & Leadership"
-readingTime: "9 min read"
+readingTime: "12 min read"
 audience: "Mexican professionals preparing for an interview conducted in English"
 featuredImage: "./images/us-interview-prep.webp"
 imageAlt: "Mexican professional speaking confidently in an English-language job interview"
@@ -276,6 +276,46 @@ In the US, a same-day follow-up is expected. These phrases give your email a pro
 **When:** Your closing line — forward-looking and confident.
 
 **Pronunciation tip:** <span class="speak-en" data-say="for-werd">Forward</span> — "FOR-werd," two syllables, stress in front. Don't pronounce it like "four-ward" with a heavy second beat.
+
+---
+
+## Putting It Together: 5 Complete Answers
+
+Phrases are building blocks. What follows is what the finished wall looks like — five of the most common business English interview questions, answered end to end using the phrases above. The phrases in **bold** are the ones you just learned.
+
+Read each one out loud twice. The second time, swap in your own details.
+
+### "Tell me about yourself."
+
+> **I'm a logistics coordinator with eight years of experience in cross-border freight.** **My specialty is** getting shipments through customs without delays — that's the part most people find painful, and it's the part I'm good at. **What I'm most proud of is** cutting our average clearance time from six days to two over the last year. **I'm excited about this role because** you're expanding into Mexico, and that's exactly the corridor I know best.
+
+Four sentences. Role, specialty, proof, connection to *them*. Notice it never wanders into personal history — interviewers ask this to hear your professional headline, not your biography.
+
+### "Tell me about a time you handled a difficult situation."
+
+> **A good example of that was when** we had a shipment held at the border for three days. **To give you some context,** it was our largest client's quarterly stock, and the paperwork had been filed with the wrong classification code. **My responsibility was to** get it released without the client losing their launch date. **So what I did was** rebuild the documentation overnight, drive to the customs office myself, and walk it through in person. **As a result,** it cleared in eleven hours and the client hit their date. **The biggest challenge was** staying calm enough to keep the client informed hourly instead of going silent.
+
+That's STAR — Situation, Task, Action, Result — and it works because it ends on a number and a lesson, not on the drama.
+
+### "What are your salary expectations?"
+
+> Before I give a number, **could you share the range you have budgeted for this role?** I'd rather make sure we're in the same neighborhood than guess.
+>
+> *(If they push back:)* **Based on my research and my experience level, I'm looking for somewhere in the range of X to Y.** **I'm open to discussing the complete package** — I care about the whole picture, not just the base.
+
+The single most useful habit here: ask first. The first person to name a number sets the ceiling, and it usually isn't you.
+
+### "Do you have any questions for us?"
+
+> Yes, a few. **What does success look like in this role after the first ninety days?** And **how would you describe the team's working style?** I want to know what I'd be walking into. Last one — **what's the biggest challenge facing the team right now?**
+
+Never say "no, I think you covered everything." It reads as low interest, every time. Three questions is plenty.
+
+### "Why are you leaving your current job?"
+
+> I've learned a lot where I am, and **I'm confident that** I've taken the role as far as it goes. **In my experience, the most effective approach is** to move when you've stopped growing rather than when you're unhappy. **I'm excited about this role because** it's a step up in scope, not a step sideways.
+
+Never criticize a current employer. The interviewer isn't hearing facts about your old boss — they're hearing how you'll talk about *them* one day.
 
 ---
 

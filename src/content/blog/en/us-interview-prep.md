@@ -296,6 +296,7 @@ Before any US company interview, run through this list:
 
 ## Keep Reading
 
+- [30 Business English Interview Phrases — and Exactly How to Say Them](/en/blog/business-english-interview-phrases/) — The exact wording for every stage of the interview, with a pronunciation tip for each and five complete sample answers.
 - [10 Business English Mistakes Mexican Professionals Make](/en/blog/business-english-mistakes-mexican-professionals/) — The language interference patterns that undermine your credibility in professional settings.
 - [How to Negotiate in English: A Proven 5-Step Framework](/en/blog/how-to-negotiate-in-english-framework/) — When the salary conversation turns into a negotiation, these phrases keep you in control.
 - [Executive Presence on Video Calls: 7 Trust-Building Habits](/en/blog/executive-video-call/) — Project authority and clarity in every virtual interview.

@@ -296,6 +296,7 @@ Antes de cualquier entrevista con una empresa de EE.UU., revisa esta lista:
 
 ## Sigue Leyendo
 
+- [30 frases de inglés de negocios para entrevistas — y cómo decirlas](/es/blog/frases-ingles-entrevista-trabajo/) — Las palabras exactas para cada etapa de la entrevista, con un tip de pronunciación en cada una y cinco respuestas completas de ejemplo.
 - [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/) — Los patrones de interferencia del español que minan tu credibilidad en entornos profesionales.
 - [Cómo negociar en inglés: Marco probado de 5 pasos](/es/blog/como-negociar-en-ingles-marco/) — Cuando la conversación de salario se convierte en negociación, estas frases te mantienen en control.
 - [Presencia ejecutiva en videollamadas: 7 hábitos](/es/blog/presencia-ejecutiva-en-videollamadas/) — Proyecta autoridad y claridad en cada entrevista virtual.
