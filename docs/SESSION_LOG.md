@@ -20,12 +20,19 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 - **Created the Meta re-grant calendar event** (Wed 2026-10-21, 08:00–08:30 America/Mexico_City, email reminder 24h prior + popup 30 min). It did **not** exist before — it had only been listed as a step. Includes the exact commands and all three page IDs.
 - **cushlabs-ai-voice-agent PR #41 (merged + deployed)** — `/api/outbound-call` places billed Twilio PSTN calls guarded only by an in-memory `Map` at 1-per-30s **per IP**, trivially bypassed by IP rotation and reset every deploy. Added a **global 50/day ceiling** that rotation cannot bypass, Redis-backed with in-process fallback. 5 new tests, suite 37/37. Deployed to the VPS and verified healthy on the Redis path.
 
+- **PR #223** — repointed the three EN quiz CTAs off the legacy unscoped flow. Turned out not to be a design decision: the ES page already used the correct `/es/quiz/it-services/question/1` pattern, so ES set the convention and EN was simply stale. Full funnel now walks 200 end-to-end in both languages.
+- **PR #224** — homepage free-course showcase, both languages. Two-tier by design: the A1–C2 ladder is a compact strip (commodity offer; those hubs sit at position 56–83), while the four master classes get the visual weight. Unit counts read from course data so the section cannot drift from the catalog. Verified in a real browser at 1440×900 and 390×844 — 20/20 links resolve, no horizontal overflow, a11y semantics + reduced-motion handled.
+- **Wrote `docs/HANDOFF.md`** — a full pickup document for a cold-start session: verified facts, the three false conclusions reached this session and why, the strategy the data supports, prioritized next actions, and the reusable href-audit command.
+
 ### Decisions Made
 
 - **Consolidate, don't differentiate**, on the courses cluster: on a domain whose bottleneck is authority, two weak pages beat one strong page never. Chose the hub over the higher-impression post because the post was an orphan and the hub is the permanent commercial asset.
 - **Redirect legacy URLs to genuinely equivalent pages**, one by one, rather than a blanket homepage redirect — an approximate target gets treated as a soft 404 and recovers nothing.
 - **Voice assessment agent: deferred, traffic first.** The text assessment at `/en/assessments/` already gets 63 impressions and zero clicks. A voice version of an unfound product is still unfound. Materially cheaper than first assumed — `cushlabs-ai-voice-agent` already exists with an Executive Coaching agent — but the bottleneck is discovery, not conversion.
 - **Rate-limit budget degrades rather than fails closed.** Fail-closed is textbook for a spending gate, but it would 503 a client-facing demo on any Upstash blip. The in-process fallback still bounds spend and is strictly stronger than the per-IP map it replaced.
+
+- **Stop writing neighborhood-level local posts.** The six existing ones rank at position 2.4–4.0 and produced 12 impressions in 90 days — a market-volume ceiling, not an SEO failure. One exception approved: a Spanish city-level post for Guadalajara pointing at the course hub.
+- **Lead with the master classes, not the levels.** The differentiator is the combination (free + interactive + audio + Spanish-speaker interference + scenario-based), not the topics themselves — verb patterns and interview phrases are well covered by large ESL sites.
 
 ### Immediate Next Steps
 
