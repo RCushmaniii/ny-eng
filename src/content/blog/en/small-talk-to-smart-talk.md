@@ -83,6 +83,7 @@ Track your wins—confidence builds fast. For more on building momentum through 
 - [5 Simple Strategies to Gain Confidence](/en/blog/boost-eng-confidence/) — Build the underlying confidence that makes small talk feel natural.
 - [5 Practical Ways to Boost Business English Confidence Today](/en/blog/5-practical-ways-to-boost-business-english/) — Power phrases, clarity tips, and more strategies for speaking with impact.
 - [How to Negotiate in English: A Proven 5-Step Framework](/en/blog/how-to-negotiate-in-english-framework/) — When small talk turns into a business conversation, be ready.
+- [30 Business English Interview Phrases — and Exactly How to Say Them](/en/blog/business-english-interview-phrases/) — Small talk opens an interview; these phrases carry the rest of it.
 
 ---
 
