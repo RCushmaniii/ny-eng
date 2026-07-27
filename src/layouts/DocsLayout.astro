@@ -20,6 +20,11 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
     <title>{title} | NY English Teacher Docs</title>
     <meta name="description" content={description} />
 
+    <!-- Internal engineering documentation — noindex. See MarkdownLayout.astro
+         for why this is a meta tag rather than a robots.txt Disallow. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+
     <!-- Project Tailwind CSS -->
     <link rel="stylesheet" href="/src/styles/global.css" />
 
