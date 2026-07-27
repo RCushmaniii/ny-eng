@@ -1,0 +1,362 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import { drillItems } from "@data/drive-the-decision/scenarios";
+import {
+  ArrowLeft,
+  ArrowRight,
+  FileText,
+  Printer,
+  Zap,
+  Target,
+  CheckCircle2,
+  XCircle,
+  AlertTriangle,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/drive-the-decision/cheat-sheet" as const;
+
+// Los cuatro movimientos que hace toda respuesta modelo del curso. Las frases
+// se quedan en inglés a propósito: es el idioma que se está practicando.
+const moves = [
+  {
+    n: 1,
+    name: "Responde primero, contexto después",
+    what: "La primera cláusula carga la decisión. El razonamiento va después, nunca antes.",
+    weak: "Well, I think overall we are aligned but there are some areas where…",
+    strong: "We are not fully aligned — there are inconsistencies across regions.",
+  },
+  {
+    n: 2,
+    name: "Nombra el trade-off, no listes opciones",
+    what: "Dos variables en tensión. No un menú. Un menú hace que la sala haga tu trabajo.",
+    weak: "There are several areas we could potentially start with…",
+    strong: "We start with role clarity and decision rights. Without that, the model won't function.",
+  },
+  {
+    n: 3,
+    name: "Asigna responsabilidad en voz alta",
+    what: "Di quién decide y quién ejecuta. Las decisiones sin dueño se vuelven a discutir el siguiente trimestre.",
+    weak: "So ownership will depend on different levels…",
+    strong: "Global owns strategy, regions own execution, local owns business partnership.",
+  },
+  {
+    n: 4,
+    name: "Cierra con la petición",
+    what: "Termina en lo que necesitas de la sala hoy — no en una invitación a reaccionar.",
+    weak: "We'd like to get your thoughts and feedback…",
+    strong: "We need alignment on the model direction. That lets us move into detailed design.",
+  },
+];
+
+// Rodeos que convierten una decisión en una discusión.
+const hedges = [
+  { kill: "Well, …", why: "Es pista de despegue antes de la respuesta. Elimínalo por completo.", use: 'Abre con el verbo: "We are…", "The issue is…"' },
+  { kill: "I think / I feel like", why: "Degrada un juicio profesional a una opinión.", use: "Dilo y ya. Que es tuyo se sobreentiende." },
+  { kill: "potentially / possibly", why: "Señala que todavía no decides.", use: "Comprométete, o nombra la condición explícitamente." },
+  { kill: "It depends on…", why: "Cierto, e inútil como apertura.", use: '"It depends on X. My read is X holds, so…"' },
+  { kill: "There are several things…", why: "Anuncia una lista que nadie pidió.", use: "Da la que importa y detente." },
+  { kill: "Does that make sense?", why: "Le entrega tu autoridad a quien escucha.", use: "Silencio. Deja que aterrice." },
+];
+
+const faqs = [
+  {
+    q: "¿Cómo sonar decidido en inglés en una junta directiva?",
+    a: 'Pon la decisión en la primera cláusula y el razonamiento después. La mayoría de los ejecutivos no nativos tienen suficiente fluidez, pero abren con pista de despegue — "Well, I think overall…" — y eso se lee como titubeo antes de haber dicho un solo dato. Compara "Well, I think overall we are aligned but there are some areas where…" con "We are not fully aligned — there are inconsistencies across regions." La misma información, autoridad opuesta.',
+  },
+  {
+    q: "¿Qué palabras te hacen sonar inseguro en inglés ejecutivo?",
+    a: 'Seis hacen casi todo el daño: abrir con "Well", decir "I think" o "I feel like", usar "potentially" y "possibly", contestar "it depends", arrancar con "there are several things" y cerrar con "does that make sense?". Cada una convierte una decisión en una discusión. Quitarlas cambia cómo te escuchan más que cualquier mejora de vocabulario.',
+  },
+  {
+    q: "¿Qué digo cuando de verdad todavía no sé?",
+    a: 'Nombra la condición en lugar de suavizar toda la frase. "It depends on whether Q3 volume holds. My read is it does, so I\'d move now and revisit in October." Eso sigue siendo un compromiso — solo que declara su propio límite. Titubear dice que no has decidido; condicionar dice que ya decidiste y sabes qué te haría cambiar.',
+  },
+  {
+    q: "¿Cuál es la diferencia con el curso de Inglés Ejecutivo?",
+    a: "El curso Ejecutivo enseña los marcos; Dirige la Decisión los aplica a diez escenarios reales de junta directiva — pushback de inversionistas, un trimestre perdido, recortes, rechazar un trato importante. Esta guía comprime los reflejos que esos escenarios entrenan. Si te congelas específicamente cuando alguien te da pushback, la master class de Pushback Ejecutivo es la que te queda mejor.",
+  },
+];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Guía Rápida de Inglés Ejecutivo de Decisión"
+  description="Dirige la Decisión en una página imprimible: los cuatro movimientos de una respuesta decidida, los seis rodeos que borrar y doce reescrituras ejecutivas."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-cyan-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-cyan-300 text-sm font-semibold mb-3">
+          <FileText class="w-4 h-4" />
+          Bonus · Guía Rápida de la Master Class
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Deja de Explicar. Empieza a Decidir.
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          Cuatro movimientos, seis rodeos que borrar y doce reescrituras — toda
+          la master class comprimida en una página que puedes revisar antes de
+          entrar.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Imprimir esta página
+          </button>
+          <a
+            href="/es/curso/dirige-la-decision/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Volver a la master class
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Encabezado solo para impresión (h2, no h1 — un solo H1 por página) -->
+  <div class="hidden print:block py-4 border-b-2 border-slate-300">
+    <h2 class="text-2xl font-bold text-slate-900">Dirige la Decisión — Guía Rápida</h2>
+    <p class="text-sm text-slate-600">nyenglishteacher.com — gratis para profesionales</p>
+  </div>
+
+  <!-- 1. Los cuatro movimientos -->
+  <section class="py-12 md:py-16 bg-white print:py-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <Target class="w-6 h-6 text-cyan-600 print:hidden" />
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">
+            Los Cuatro Movimientos
+          </h2>
+        </div>
+        <p class="text-slate-600 mb-6 print:text-sm">
+          Toda respuesta modelo de esta master class hace los cuatro. Toda
+          respuesta débil falla en al menos uno.
+        </p>
+
+        <div class="space-y-4">
+          {moves.map((m) => (
+            <div class="rounded-2xl border border-slate-200 p-5 print:p-3 print:break-inside-avoid">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="flex items-center justify-center w-8 h-8 rounded-lg bg-cyan-600 text-white shrink-0 font-bold text-sm">
+                  {m.n}
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-slate-900">{m.name}</h3>
+                  <p class="text-sm text-slate-600">{m.what}</p>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-3 ml-11 print:ml-0">
+                <div class="rounded-lg bg-red-50 border border-red-200 p-3 print:bg-white">
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <XCircle class="w-3.5 h-3.5 text-red-600" />
+                    <span class="text-xs font-bold text-red-800 uppercase tracking-wide">Débil</span>
+                  </div>
+                  <p class="text-sm text-slate-700 italic">"{m.weak}"</p>
+                </div>
+                <div class="rounded-lg bg-emerald-50 border border-emerald-200 p-3 print:bg-white">
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600" />
+                    <span class="text-xs font-bold text-emerald-800 uppercase tracking-wide">Decidido</span>
+                  </div>
+                  <p class="text-sm text-slate-800 font-medium">"{m.strong}"</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Rodeos que borrar -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <AlertTriangle class="w-6 h-6 text-amber-600 print:hidden" />
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">
+            Seis Rodeos que Debes Borrar
+          </h2>
+        </div>
+        <p class="text-slate-600 mb-6 print:text-sm">
+          No son errores de gramática. Tu inglés ya es suficientemente bueno —
+          estas seis frases son las que aun así lo hacen sonar dubitativo.
+        </p>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="bg-slate-100 print:bg-white">
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">Borra esto</th>
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">Por qué te cuesta</th>
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">Usa esto</th>
+              </tr>
+            </thead>
+            <tbody>
+              {hedges.map((h) => (
+                <tr class="align-top">
+                  <td class="p-3 border border-slate-200 font-semibold text-red-700 whitespace-nowrap">{h.kill}</td>
+                  <td class="p-3 border border-slate-200 text-slate-600">{h.why}</td>
+                  <td class="p-3 border border-slate-200 text-emerald-800 font-medium">{h.use}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Las doce reescrituras -->
+  <section class="py-12 md:py-16 bg-white print:py-3">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <Zap class="w-6 h-6 text-cyan-600 print:hidden" />
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">
+            Doce Reescrituras, Doce Preguntas
+          </h2>
+        </div>
+        <p class="text-slate-600 mb-6 print:text-sm">
+          Las doce preguntas que más le hacen a un líder senior. Lee la columna
+          "Decidido" en voz alta hasta que la cadencia te salga automática.
+        </p>
+
+        <div class="space-y-3">
+          {drillItems.map((d) => (
+            <div class="rounded-xl border border-slate-200 overflow-hidden print:break-inside-avoid">
+              <div class="bg-slate-100 px-4 py-2 print:bg-white print:border-b print:border-slate-300">
+                <span class="text-xs font-bold uppercase tracking-wider text-cyan-700">{d.categoryEs}</span>
+                <p class="font-semibold text-slate-900 text-sm">"{d.prompt}"</p>
+              </div>
+              <div class="grid md:grid-cols-2">
+                <div class="p-4 border-r border-slate-200">
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <XCircle class="w-3.5 h-3.5 text-red-600" />
+                    <span class="text-xs font-bold text-red-800 uppercase tracking-wide">Débil</span>
+                  </div>
+                  <p class="text-sm text-slate-600 italic">"{d.weakResponse}"</p>
+                </div>
+                <div class="p-4 bg-emerald-50/40 print:bg-white">
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600" />
+                    <span class="text-xs font-bold text-emerald-800 uppercase tracking-wide">Decidido</span>
+                  </div>
+                  <p class="text-sm text-slate-800 font-medium">"{d.modelResponse}"</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3">
+    <div class="site-container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 print:text-xl">
+        Preguntas frecuentes
+      </h2>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="group bg-white rounded-xl border border-slate-200 p-5" open>
+            <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 list-none">
+              <span>{f.q}</span>
+              <ArrowRight class="w-4 h-4 text-cyan-500 shrink-0 ml-3 transition-transform group-open:rotate-90 print:hidden" />
+            </summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-cyan-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">
+          Diez escenarios, trabajados de principio a fin
+        </h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+          Esta página es la versión comprimida. La master class recorre diez
+          situaciones reales de junta directiva — pushback de inversionistas, un
+          trimestre perdido, recortes, rechazar un trato importante — con la
+          respuesta modelo y el razonamiento detrás de cada frase.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/es/curso/dirige-la-decision/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+          >
+            Toma la master class gratis
+            <ArrowRight class="w-4 h-4" />
+          </a>
+          <a
+            href="/es/curso/pushback-ejecutivo/guia-rapida/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors font-medium"
+          >
+            Guía rápida de Pushback Ejecutivo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      @page { margin: 1cm; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #164e63 !important; }
+      details { border: none !important; padding: 0.25rem 0 !important; }
+      summary { font-size: 0.9rem; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    name: "Dirige la Decisión — Guía Rápida de Una Página",
+    description:
+      "Referencia compacta e imprimible de comunicación ejecutiva de decisión en inglés: los cuatro movimientos de una respuesta decidida, los seis rodeos que restan autoridad y doce reescrituras de junta directiva.",
+    learningResourceType: "Guía rápida",
+    educationalLevel: "Avanzado",
+    inLanguage: "es",
+    isAccessibleForFree: true,
+    url: "https://www.nyenglishteacher.com/es/curso/dirige-la-decision/guia-rapida/",
+    isPartOf: {
+      "@type": "Course",
+      name: "Dirige la Decisión — Simulación Ejecutiva de Junta Directiva (Master Class Gratis)",
+      url: "https://www.nyenglishteacher.com/es/curso/dirige-la-decision/",
+    },
+    author: {
+      "@type": "Person",
+      name: "Robert Cushman",
+      url: "https://www.nyenglishteacher.com/es/about/",
+    },
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
+</Base>

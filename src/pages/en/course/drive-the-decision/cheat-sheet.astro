@@ -1,0 +1,361 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import { drillItems } from "@data/drive-the-decision/scenarios";
+import {
+  ArrowLeft,
+  ArrowRight,
+  FileText,
+  Printer,
+  Zap,
+  Target,
+  CheckCircle2,
+  XCircle,
+  AlertTriangle,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/drive-the-decision/cheat-sheet" as const;
+
+// The four moves every model reply in this course makes. Derived from the
+// twelve reflex-drill pairs — each weak answer fails at least one of these.
+const moves = [
+  {
+    n: 1,
+    name: "Answer first, context second",
+    what: "The first clause carries the decision. Reasoning follows it, never precedes it.",
+    weak: "Well, I think overall we are aligned but there are some areas where…",
+    strong: "We are not fully aligned — there are inconsistencies across regions.",
+  },
+  {
+    n: 2,
+    name: "Name the tradeoff, don't list options",
+    what: "Two variables in tension. Not a menu. A menu makes the room do your work.",
+    weak: "There are several areas we could potentially start with…",
+    strong: "We start with role clarity and decision rights. Without that, the model won't function.",
+  },
+  {
+    n: 3,
+    name: "Assign ownership out loud",
+    what: "Say who decides and who executes. Unowned decisions get relitigated next quarter.",
+    weak: "So ownership will depend on different levels…",
+    strong: "Global owns strategy, regions own execution, local owns business partnership.",
+  },
+  {
+    n: 4,
+    name: "Close with the ask",
+    what: "End on what you need from the room today — not on an invitation to react.",
+    weak: "We'd like to get your thoughts and feedback…",
+    strong: "We need alignment on the model direction. That lets us move into detailed design.",
+  },
+];
+
+// Hedges that convert a decision into a discussion.
+const hedges = [
+  { kill: "Well, …", why: "A runway before the answer. Delete it entirely.", use: "Open on the verb: \"We are…\", \"The issue is…\"" },
+  { kill: "I think / I feel like", why: "Downgrades a judgment to an opinion.", use: "State it. Your name on it is implied." },
+  { kill: "potentially / possibly / kind of", why: "Signals you have not decided.", use: "Commit, or name the condition explicitly." },
+  { kill: "It depends on…", why: "True, and useless as an opening.", use: "\"It depends on X. My read is X holds, so…\"" },
+  { kill: "There are several things…", why: "Announces a list nobody asked for.", use: "Give the one that matters, then stop." },
+  { kill: "Does that make sense?", why: "Hands your authority to the listener.", use: "Silence. Let it land." },
+];
+
+const faqs = [
+  {
+    q: "How do you sound decisive in English in a board meeting?",
+    a: "Put the decision in the first clause and the reasoning after it. Most non-native executives are fluent enough but open with a runway — \"Well, I think overall…\" — which reads as hedging before a single fact has been stated. Compare \"Well, I think overall we are aligned but there are some areas where…\" with \"We are not fully aligned — there are inconsistencies across regions.\" Same information, opposite authority.",
+  },
+  {
+    q: "What words make you sound unsure in executive English?",
+    a: "Six do most of the damage: an opening \"Well\", \"I think\" or \"I feel like\", \"potentially\" and \"possibly\", \"it depends\", \"there are several things\", and closing with \"does that make sense?\". Each converts a decision into a discussion. Removing them changes how you are heard more than any vocabulary upgrade.",
+  },
+  {
+    q: "How do I answer when I genuinely do not know yet?",
+    a: "Name the condition rather than hedging the whole sentence. \"It depends on whether Q3 volume holds. My read is it does, so I'd move now and revisit in October.\" That is still a commitment — it just states its own boundary. Hedging says you have not decided; conditioning says you have decided and know what would change it.",
+  },
+  {
+    q: "What is the difference between this and the Executive English course?",
+    a: "The Executive course teaches the frameworks; Drive the Decision applies them to ten real boardroom scenarios — investor pushback, a missed quarter, layoffs, declining a major deal. This cheat sheet compresses the reflexes those scenarios drill. If you freeze specifically when someone pushes back on you, the Executive Pushback master class is the closer fit.",
+  },
+];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Executive Decision English Cheat Sheet (One Page)"
+  description="Drive the Decision on one printable page: the four moves of a decisive reply, the six hedges to delete, and twelve weak-to-strong boardroom rewrites."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-cyan-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-cyan-300 text-sm font-semibold mb-3">
+          <FileText class="w-4 h-4" />
+          Bonus · Master Class Cheat Sheet
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          Stop Explaining. Start Deciding.
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          Four moves, six hedges to delete, and twelve rewrites — the whole
+          master class compressed onto one page you can scan before you walk in.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Print this page
+          </button>
+          <a
+            href="/en/course/drive-the-decision/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Back to the master class
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Print-only header (h2, not h1 — one H1 per page) -->
+  <div class="hidden print:block py-4 border-b-2 border-slate-300">
+    <h2 class="text-2xl font-bold text-slate-900">Drive the Decision — Cheat Sheet</h2>
+    <p class="text-sm text-slate-600">nyenglishteacher.com — free for professionals</p>
+  </div>
+
+  <!-- 1. The four moves -->
+  <section class="py-12 md:py-16 bg-white print:py-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <Target class="w-6 h-6 text-cyan-600 print:hidden" />
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">
+            The Four Moves
+          </h2>
+        </div>
+        <p class="text-slate-600 mb-6 print:text-sm">
+          Every model reply in this master class makes all four. Every weak reply
+          fails at least one.
+        </p>
+
+        <div class="space-y-4">
+          {moves.map((m) => (
+            <div class="rounded-2xl border border-slate-200 p-5 print:p-3 print:break-inside-avoid">
+              <div class="flex items-start gap-3 mb-3">
+                <div class="flex items-center justify-center w-8 h-8 rounded-lg bg-cyan-600 text-white shrink-0 font-bold text-sm">
+                  {m.n}
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-slate-900">{m.name}</h3>
+                  <p class="text-sm text-slate-600">{m.what}</p>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-3 ml-11 print:ml-0">
+                <div class="rounded-lg bg-red-50 border border-red-200 p-3 print:bg-white">
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <XCircle class="w-3.5 h-3.5 text-red-600" />
+                    <span class="text-xs font-bold text-red-800 uppercase tracking-wide">Weak</span>
+                  </div>
+                  <p class="text-sm text-slate-700 italic">"{m.weak}"</p>
+                </div>
+                <div class="rounded-lg bg-emerald-50 border border-emerald-200 p-3 print:bg-white">
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600" />
+                    <span class="text-xs font-bold text-emerald-800 uppercase tracking-wide">Decisive</span>
+                  </div>
+                  <p class="text-sm text-slate-800 font-medium">"{m.strong}"</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Hedges to delete -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <AlertTriangle class="w-6 h-6 text-amber-600 print:hidden" />
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">
+            Six Hedges to Delete
+          </h2>
+        </div>
+        <p class="text-slate-600 mb-6 print:text-sm">
+          These are not grammar errors. Your English is already good enough —
+          these six phrases are what make it sound tentative anyway.
+        </p>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="bg-slate-100 print:bg-white">
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">Delete this</th>
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">Why it costs you</th>
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">Use instead</th>
+              </tr>
+            </thead>
+            <tbody>
+              {hedges.map((h) => (
+                <tr class="align-top">
+                  <td class="p-3 border border-slate-200 font-semibold text-red-700 whitespace-nowrap">{h.kill}</td>
+                  <td class="p-3 border border-slate-200 text-slate-600">{h.why}</td>
+                  <td class="p-3 border border-slate-200 text-emerald-800 font-medium">{h.use}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. The twelve rewrites -->
+  <section class="py-12 md:py-16 bg-white print:py-3">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <Zap class="w-6 h-6 text-cyan-600 print:hidden" />
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">
+            Twelve Rewrites, Twelve Questions
+          </h2>
+        </div>
+        <p class="text-slate-600 mb-6 print:text-sm">
+          The twelve questions senior leaders get asked most. Read the decisive
+          column out loud until the cadence is automatic.
+        </p>
+
+        <div class="space-y-3">
+          {drillItems.map((d) => (
+            <div class="rounded-xl border border-slate-200 overflow-hidden print:break-inside-avoid">
+              <div class="bg-slate-100 px-4 py-2 print:bg-white print:border-b print:border-slate-300">
+                <span class="text-xs font-bold uppercase tracking-wider text-cyan-700">{d.category}</span>
+                <p class="font-semibold text-slate-900 text-sm">"{d.prompt}"</p>
+              </div>
+              <div class="grid md:grid-cols-2">
+                <div class="p-4 border-r border-slate-200">
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <XCircle class="w-3.5 h-3.5 text-red-600" />
+                    <span class="text-xs font-bold text-red-800 uppercase tracking-wide">Weak</span>
+                  </div>
+                  <p class="text-sm text-slate-600 italic">"{d.weakResponse}"</p>
+                </div>
+                <div class="p-4 bg-emerald-50/40 print:bg-white">
+                  <div class="flex items-center gap-1.5 mb-1">
+                    <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600" />
+                    <span class="text-xs font-bold text-emerald-800 uppercase tracking-wide">Decisive</span>
+                  </div>
+                  <p class="text-sm text-slate-800 font-medium">"{d.modelResponse}"</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3">
+    <div class="site-container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 print:text-xl">
+        Frequently asked questions
+      </h2>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="group bg-white rounded-xl border border-slate-200 p-5" open>
+            <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 list-none">
+              <span>{f.q}</span>
+              <ArrowRight class="w-4 h-4 text-cyan-500 shrink-0 ml-3 transition-transform group-open:rotate-90 print:hidden" />
+            </summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-cyan-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">
+          Ten scenarios, worked end to end
+        </h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+          This page is the compressed version. The master class runs ten real
+          boardroom situations — investor pushback, a missed quarter, layoffs,
+          declining a major deal — with the model reply and the reasoning behind
+          every sentence.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/en/course/drive-the-decision/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+          >
+            Take the free master class
+            <ArrowRight class="w-4 h-4" />
+          </a>
+          <a
+            href="/en/course/executive-pushback/cheat-sheet/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors font-medium"
+          >
+            Executive Pushback cheat sheet
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      @page { margin: 1cm; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #164e63 !important; }
+      details { border: none !important; padding: 0.25rem 0 !important; }
+      summary { font-size: 0.9rem; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    name: "Drive the Decision — One-Page Cheat Sheet",
+    description:
+      "Compact, printable reference for executive decision communication in English: the four moves of a decisive reply, the six hedges that undercut authority, and twelve weak-to-strong boardroom rewrites.",
+    learningResourceType: "Cheat sheet",
+    educationalLevel: "Advanced",
+    inLanguage: "en",
+    isAccessibleForFree: true,
+    url: "https://www.nyenglishteacher.com/en/course/drive-the-decision/cheat-sheet/",
+    isPartOf: {
+      "@type": "Course",
+      name: "Drive the Decision — Executive Boardroom Simulation (Free Master Class)",
+      url: "https://www.nyenglishteacher.com/en/course/drive-the-decision/",
+    },
+    author: {
+      "@type": "Person",
+      name: "Robert Cushman",
+      url: "https://www.nyenglishteacher.com/en/about/",
+    },
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
+</Base>

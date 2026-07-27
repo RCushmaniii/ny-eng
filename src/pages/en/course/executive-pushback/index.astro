@@ -21,6 +21,7 @@ import {
   Brain,
   Target,
   Crown,
+  FileText,
 } from "lucide-astro";
 
 const lang = "en";
@@ -270,6 +271,30 @@ const iconMap: Record<string, any> = {
             </a>
           );
         })}
+
+        <a
+          href="/en/course/executive-pushback/cheat-sheet/"
+          class="mt-5 block rounded-2xl border-2 border-indigo-200 bg-indigo-50 p-6 hover:border-indigo-400 hover:shadow-lg transition-all duration-200"
+        >
+          <div class="flex items-start gap-5">
+            <div class="flex items-center justify-center w-14 h-14 rounded-xl bg-white text-indigo-600 shrink-0 border border-indigo-200">
+              <FileText class="w-7 h-7" />
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-slate-900 mb-2">The One-Page Cheat Sheet</h3>
+              <p class="text-slate-700 leading-relaxed mb-4">
+                All six drivers, the diagnostic pause, the full
+                Acknowledge&nbsp;&rarr;&nbsp;Clarify&nbsp;&rarr;&nbsp;Redirect
+                phrase bank, and the defensive tells — on one printable page to
+                scan before a hard conversation.
+              </p>
+              <span class="inline-flex items-center gap-1 text-indigo-700 font-semibold text-sm">
+                Open the cheat sheet
+                <ArrowRight class="w-4 h-4" />
+              </span>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   </section>

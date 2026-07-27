@@ -1,0 +1,494 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import {
+  ArrowLeft,
+  ArrowRight,
+  FileText,
+  Printer,
+  Search,
+  Pause,
+  Compass,
+  Shield,
+  CheckCircle2,
+  XCircle,
+  AlertTriangle,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/executive-pushback/cheat-sheet" as const;
+
+// Sección 1 — la capa de diagnóstico. Fuente: lección 1, seis-impulsores-ocultos.
+const drivers = [
+  {
+    n: 1,
+    name: "Percepción de Riesgo",
+    real: "Cree que algo va a fallar y está probando si ya lo pensaste.",
+    tell: 'Rodeos vagos ("¿estamos seguros?"), hipotéticos ("¿y si...?"), escenarios catastróficos.',
+    move: "Nombra el riesgo en voz alta antes de que él tenga que hacerlo. Luego da la mitigación.",
+  },
+  {
+    n: 2,
+    name: "Protección del Ego",
+    real: "Siente que su criterio o una decisión suya reciente está siendo cuestionada.",
+    tell: 'Voz más filosa, citar historia ("cuando yo dirigía X"), recordatorios de credenciales.',
+    move: "Reconoce su decisión previa explícitamente y sepárala de la decisión actual.",
+  },
+  {
+    n: 3,
+    name: "Preocupación por Estatus",
+    real: "Está probando si vas a ceder ante su jerarquía. El tema no es el punto.",
+    tell: "Preguntas formuladas como conclusiones, citar colegas que coinciden, encuadre público.",
+    move: "Mantén la posición, baja el volumen. Deferencia en el tono, firmeza en el contenido.",
+  },
+  {
+    n: 4,
+    name: "Brecha de Confianza",
+    real: "Todavía no tiene evidencia para confiar en ti. La objeción le compra tiempo para evaluarte.",
+    tell: "Pedir más datos, convocar más involucrados, lenguaje que alarga los tiempos.",
+    move: "Ofrece un compromiso pequeño y verificable en lugar de un argumento grande.",
+  },
+  {
+    n: 5,
+    name: "Presión de Carga de Trabajo",
+    real: "Está hasta el tope. Tu propuesta es trabajo que no puede absorber — un no disfrazado.",
+    tell: 'Pushback de tiempos, recorte de alcance, "mejor lo retomamos después".',
+    move: "Quítale algo de encima, o nombra quién absorbe ese trabajo en su lugar.",
+  },
+  {
+    n: 6,
+    name: "Evasión de Responsabilidad",
+    real: "Teme que lo culpen si falla. La objeción es transferencia de riesgo.",
+    tell: 'Pedir aprobación por escrito, sugerir escalar, "eso está por encima de mi nivel".',
+    move: "Nombra al dueño de la decisión explícitamente. Toma tú la superficie de culpa.",
+  },
+];
+
+// Sección 3 — el marco. Fuente: lección 4, reconoce-clarifica-redirige.
+const acr = [
+  {
+    beat: "Reconoce",
+    goal: "Demuestra que lo escuchaste y que la preocupación es legítima. No te disculpes. No cedas.",
+    works: [
+      "Entiendo la preocupación por los tiempos.",
+      "Es una lectura justa.",
+      "Tienes razón en que aquí hay un trade-off.",
+      "Ese riesgo es real — vamos a nombrarlo.",
+    ],
+    avoid: [
+      "Lamento que te sientas así.",
+      "Sí, puede que tengas razón.",
+      "Entiendo lo que dices, pero…",
+    ],
+  },
+  {
+    beat: "Clarifica",
+    goal: "Nombra la realidad operativa de fondo. Convierte la presión emocional en un trade-off.",
+    works: [
+      "Si aceleramos los tiempos, el riesgo de control de calidad sube de forma importante.",
+      "El trade-off real aquí es velocidad contra confiabilidad de largo plazo.",
+      "Lo que estamos balanceando son ganancias de corto plazo contra la deuda operativa que traen.",
+      "Las dos variables en juego son X y Y — y no podemos optimizar las dos.",
+    ],
+    avoid: [
+      "Te explico por qué estás equivocado.",
+      "Saltarte este paso por completo — se lee como evasión.",
+    ],
+  },
+  {
+    beat: "Redirige",
+    goal: "Pasa de defender a decidir. Aterriza en una decisión que la sala sí pueda tomar.",
+    works: [
+      "Entonces la pregunta es si velocidad o estabilidad es la prioridad de este trimestre.",
+      "La decisión frente a nosotros es cuál riesgo preferimos cargar.",
+      "En lo que quisiera que nos alineemos es en el principio, no en el detalle de implementación.",
+      "Esa es la decisión que le estoy pidiendo a la sala.",
+    ],
+    avoid: [
+      'Redirigir a una abstracción vaga ("la verdadera pregunta es nuestra cultura").',
+      "Redirigir a una pregunta que nadie en la sala puede decidir.",
+    ],
+  },
+];
+
+// Sección 4 — compostura. Fuente: lección 3, calma-ejecutiva-es-poder.
+const tells = [
+  { leak: "Hablar más rápido tras un cuestionamiento", reads: "Defensividad", instead: "Baja tu ritmo por debajo del suyo." },
+  { leak: "Risa nerviosa después del pushback", reads: "Alivio, no autoridad", instead: "Dos segundos de silencio." },
+  { leak: "Subir el tono al final de la frase", reads: '"¿Está bien?"', instead: "Aterriza cada final en tono plano." },
+  { leak: "Mano al cuello, la garganta o la cara", reads: "Autoconsuelo, visible para todos", instead: "Manos quietas, sobre la mesa." },
+  { leak: "Disculparte por ocupar espacio", reads: "Ceder la sala", instead: "Di el punto y detente." },
+  { leak: 'Lenguaje de reparación ("lo que quise decir")', reads: "El primer intento falló", instead: "Deja que la primera frase se sostenga." },
+];
+
+const faqs = [
+  {
+    q: "¿Cuál es la mejor forma de responder al pushback en una junta?",
+    a: "Haz una pausa de dos segundos, diagnostica cuál de los seis impulsores ocultos se está activando y luego corre Reconoce → Clarifica → Redirige. Reconoce que la preocupación es legítima sin disculparte, nombra el trade-off operativo de fondo y redirige a la decisión que la sala realmente necesita tomar. La pausa importa tanto como las palabras: una pausa medida se lee como deliberación, mientras que la prisa se lee como defensividad.",
+  },
+  {
+    q: "¿Cómo manejo objeciones sin sonar a la defensiva?",
+    a: 'La defensividad está más en la entrega que en el contenido. Las señales confiables son hablar más rápido tras un cuestionamiento, la risa nerviosa, subir el tono al final de las frases y el lenguaje de reparación tipo "lo que quise decir". Baja tu ritmo por debajo del de quien cuestiona, aterriza los finales en tono plano y deja que tu primera frase se sostenga sin corregirla.',
+  },
+  {
+    q: '¿Por qué "entiendo, pero…" es un error?',
+    a: 'La palabra "pero" cancela el reconocimiento en la mente de quien escucha — solo retiene lo que viene después. Usa "y", o entra directo al paso de clarificar sin ninguna palabra de transición. El reconocimiento tiene que sobrevivir intacto o todo el marco se colapsa en un desacuerdo disfrazado.',
+  },
+  {
+    q: "¿Qué digo si ya perdí la compostura?",
+    a: "Detente a media frase en lugar de seguir de largo. Nombra el reinicio de forma simple — \"Déjame retomar eso\" — y vuelve a plantear el punto en una sola frase corta. No te disculpes por el desliz; disculparte gasta más autoridad que el desliz mismo. La lección del Guion de Recuperación cubre la versión completa de tres frases.",
+  },
+];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Guía Rápida de Pushback Ejecutivo (Una Página)"
+  description="Pushback Ejecutivo en una página imprimible: los seis impulsores ocultos, la pausa diagnóstica y el banco de frases Reconoce-Clarifica-Redirige."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <FileText class="w-4 h-4" />
+          Bonus · Guía Rápida de la Master Class
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          La Guía Rápida de Pushback en Una Página
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          Seis impulsores. Tres pasos. Una página. Tenla abierta en otra pestaña
+          antes de una conversación difícil — o imprímela y ponla donde la veas.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Imprimir esta página
+          </button>
+          <a
+            href="/es/curso/pushback-ejecutivo/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Volver a la master class
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Encabezado solo para impresión (h2, no h1 — un solo H1 por página) -->
+  <div class="hidden print:block py-4 border-b-2 border-slate-300">
+    <h2 class="text-2xl font-bold text-slate-900">Pushback Ejecutivo — Guía Rápida</h2>
+    <p class="text-sm text-slate-600">nyenglishteacher.com — gratis para profesionales</p>
+  </div>
+
+  <!-- 1. Los seis impulsores -->
+  <section class="py-12 md:py-16 bg-white print:py-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <Search class="w-6 h-6 text-indigo-600 print:hidden" />
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">
+            Los Seis Impulsores Ocultos
+          </h2>
+        </div>
+        <p class="text-slate-600 mb-6 print:text-sm">
+          La objeción declarada es la superficie. Diagnostica cuál impulsor se
+          está activando <em>antes</em> de responder — una respuesta segura a la
+          pregunta equivocada es peor que no responder.
+        </p>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="bg-slate-100 print:bg-white">
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">Impulsor</th>
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">Qué es en realidad</th>
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">La señal</th>
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">Tu movimiento</th>
+              </tr>
+            </thead>
+            <tbody>
+              {drivers.map((d) => (
+                <tr class="align-top">
+                  <td class="p-3 border border-slate-200 font-semibold text-indigo-800">
+                    {d.n}. {d.name}
+                  </td>
+                  <td class="p-3 border border-slate-200 text-slate-700">{d.real}</td>
+                  <td class="p-3 border border-slate-200 text-slate-500 italic">{d.tell}</td>
+                  <td class="p-3 border border-slate-200 text-slate-700">{d.move}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. La pausa diagnóstica -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <Pause class="w-6 h-6 text-indigo-600 print:hidden" />
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">
+            La Pausa Diagnóstica de Dos Segundos
+          </h2>
+        </div>
+        <p class="text-slate-600 mb-6 print:text-sm">
+          Corre estas tres preguntas en silencio, en este orden, antes de abrir
+          la boca. Una pausa medida se lee como deliberación; la prisa se lee
+          como defensividad. Las mismas palabras, señal opuesta.
+        </p>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-3">
+            <div class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1">Pregunta 1</div>
+            <h3 class="font-bold text-slate-900 mb-1">Impulsor</h3>
+            <p class="text-sm text-slate-700">
+              ¿Cuál de los seis se está activando? Incluso una coincidencia
+              aproximada da mejor respuesta que contestar las palabras literales.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-3">
+            <div class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1">Pregunta 2</div>
+            <h3 class="font-bold text-slate-900 mb-1">Resultado</h3>
+            <p class="text-sm text-slate-700">
+              ¿Qué necesito realmente de este intercambio? Ganar el punto y
+              obtener la decisión rara vez son lo mismo.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-3">
+            <div class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1">Pregunta 3</div>
+            <h3 class="font-bold text-slate-900 mb-1">Seguridad</h3>
+            <p class="text-sm text-slate-700">
+              ¿Qué necesita esta persona para moverse sin quedar mal? Dáselo y la
+              objeción normalmente se disuelve.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Banco de frases RCR -->
+  <section class="py-12 md:py-16 bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <Compass class="w-6 h-6 text-indigo-600 print:hidden" />
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">
+            Reconoce → Clarifica → Redirige
+          </h2>
+        </div>
+        <p class="text-slate-600 mb-6 print:text-sm">
+          Tres pasos, en orden, siempre. Cortos, deliberados y estructuralmente
+          completos.
+        </p>
+
+        <div class="space-y-5">
+          {acr.map((step, i) => (
+            <div class="rounded-2xl border border-slate-200 overflow-hidden print:break-inside-avoid">
+              <div class="bg-indigo-700 text-white px-5 py-3 print:bg-white print:text-slate-900 print:border-b print:border-slate-300">
+                <h3 class="font-bold text-lg">
+                  {i + 1}. {step.beat}
+                </h3>
+                <p class="text-indigo-100 text-sm print:text-slate-600">{step.goal}</p>
+              </div>
+              <div class="grid md:grid-cols-2 gap-0">
+                <div class="p-5 border-r border-slate-200">
+                  <div class="flex items-center gap-2 mb-3">
+                    <CheckCircle2 class="w-4 h-4 text-emerald-600" />
+                    <span class="text-sm font-bold text-emerald-800">Di esto</span>
+                  </div>
+                  <ul class="space-y-2">
+                    {step.works.map((p) => (
+                      <li class="text-sm text-slate-800 leading-relaxed">"{p}"</li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="p-5 bg-slate-50 print:bg-white">
+                  <div class="flex items-center gap-2 mb-3">
+                    <XCircle class="w-4 h-4 text-red-600" />
+                    <span class="text-sm font-bold text-red-800">Esto no</span>
+                  </div>
+                  <ul class="space-y-2">
+                    {step.avoid.map((p) => (
+                      <li class="text-sm text-slate-600 leading-relaxed">{p}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-6 rounded-xl border-2 border-amber-300 bg-amber-50 p-5 print:break-inside-avoid">
+          <div class="flex items-center gap-2 mb-2">
+            <AlertTriangle class="w-5 h-5 text-amber-700" />
+            <h3 class="font-bold text-slate-900">Las tres trampas</h3>
+          </div>
+          <ul class="space-y-1.5 text-sm text-slate-800">
+            <li>
+              <strong>"Reconoce … PERO"</strong> — el "pero" cancela el
+              reconocimiento en la mente de quien escucha. Usa "y", o ninguna
+              palabra de transición.
+            </li>
+            <li>
+              <strong>Saltarte Clarifica</strong> — ir directo de Reconoce a
+              Redirige se lee como cambiazo.
+            </li>
+            <li>
+              <strong>Redirigir a una pregunta que nadie hizo</strong> — el paso
+              de Redirige tiene que aterrizar en una decisión que la sala sí
+              pueda tomar.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Señales defensivas -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <Shield class="w-6 h-6 text-indigo-600 print:hidden" />
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">
+            Señales Defensivas — Las Fugas Silenciosas
+          </h2>
+        </div>
+        <p class="text-slate-600 mb-6 print:text-sm">
+          La gente cuestiona la confianza antes que la lógica. Estas son las
+          fugas que te cuestan la sala antes de que siquiera escuchen tu
+          argumento.
+        </p>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="bg-slate-100 print:bg-white">
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">La fuga</th>
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">Cómo se lee</th>
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">Haz esto en su lugar</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tells.map((t) => (
+                <tr class="align-top">
+                  <td class="p-3 border border-slate-200 text-slate-800">{t.leak}</td>
+                  <td class="p-3 border border-slate-200 text-red-700 italic">{t.reads}</td>
+                  <td class="p-3 border border-slate-200 text-emerald-800 font-medium">{t.instead}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-12 md:py-16 bg-white print:py-3">
+    <div class="site-container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 print:text-xl">
+        Preguntas frecuentes
+      </h2>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="group bg-slate-50 rounded-xl border border-slate-200 p-5 print:bg-white" open>
+            <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 list-none">
+              <span>{f.q}</span>
+              <ArrowRight class="w-4 h-4 text-indigo-500 shrink-0 ml-3 transition-transform group-open:rotate-90 print:hidden" />
+            </summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-indigo-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">
+          El razonamiento detrás de cada línea
+        </h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+          Esta página es la versión comprimida. La master class recorre cada
+          impulsor con ejemplos trabajados, audio para la cadencia y el guion de
+          recuperación para cuando la compostura ya se perdió.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/es/curso/pushback-ejecutivo/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+          >
+            Toma la master class gratis
+            <ArrowRight class="w-4 h-4" />
+          </a>
+          <a
+            href="/es/curso/dirige-la-decision/guia-rapida/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors font-medium"
+          >
+            Guía rápida de Dirige la Decisión
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      @page { margin: 1cm; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #312e81 !important; }
+      details { border: none !important; padding: 0.25rem 0 !important; }
+      summary { font-size: 0.9rem; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    name: "Pushback Ejecutivo — Guía Rápida de Una Página",
+    description:
+      "Referencia compacta e imprimible para manejar pushback y objeciones: los seis impulsores ocultos con sus señales, la pausa diagnóstica de dos segundos, el banco de frases Reconoce-Clarifica-Redirige y las señales defensivas que te cuestan la sala.",
+    learningResourceType: "Guía rápida",
+    educationalLevel: "Avanzado",
+    inLanguage: "es",
+    isAccessibleForFree: true,
+    url: "https://www.nyenglishteacher.com/es/curso/pushback-ejecutivo/guia-rapida/",
+    isPartOf: {
+      "@type": "Course",
+      name: "Manejo de Pushback y Objeciones Ejecutivas — Master Class Gratis",
+      url: "https://www.nyenglishteacher.com/es/curso/pushback-ejecutivo/",
+    },
+    author: {
+      "@type": "Person",
+      name: "Robert Cushman",
+      url: "https://www.nyenglishteacher.com/es/about/",
+    },
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
+</Base>
