@@ -117,7 +117,14 @@ Pulled from GSC/Bing this session. Use it; don't re-derive it.
    revive this without new volume data.**
 2. **Granular course entry points** — cheat sheets and "X vs Y" pages for the
    *differentiated* courses, replicating what `/en/course/past-tenses/cheat-sheet/`
-   is already doing at position 10.5 unpromoted. **This is now the top item.**
+   is already doing at position 10.5 unpromoted.
+   **Cheat-sheet layer DONE 2026-07-26 (PR #228)** — Executive Pushback and
+   Drive the Decision each got one, EN + ES, linked from their hubs. Verb
+   Patterns was skipped on purpose: `diagnosis-table` and `top-traps` already
+   are that asset, and a third would cannibalize. **Still open here:** the
+   "X vs Y" comparison pages, which Past Tenses has four of
+   (`knew-vs-found-out`, `there-was-vs-there-has-been`, `top-10-confused-pairs`,
+   `story-openers`) and no other course has any of.
 3. **Re-check GSC around 2026-08-20** (3–4 weeks post-change). Watch for: course
    hubs moving off 61.6/57.4; the interview post moving off 19.6; first non-zero
    clicks on "business english interview"; legacy-redirect recovery in Bing.
@@ -256,3 +263,45 @@ accepted by IndexNow (Bing, Yandex, DuckDuckGo, Seznam, Naver).
 **Watch at the 2026-08-20 GSC re-check** (in addition to §5 item 3): whether the
 hubs move off position 38.5 / 57–61 on the `... for spanish speakers` cluster.
 That is the single largest pocket of demand on the domain.
+
+### Later the same day — PRs #227 and #228
+
+**#227 — internal `/dev/` docs were publicly indexable.** Eleven engineering
+pages (`/dev/dashboard/`, `/dev/docs/deployment-checklist/`, and nine more)
+served HTTP 200 on the production business site with no `noindex`, no canonical,
+and nothing in `robots.txt`. A client or technical reviewer could read the
+deployment checklist on the domain we sell coaching from. Caught before damage —
+the Inspection API reported them as *"unknown to Google, crawled: never."*
+
+Root cause was structural: `MarkdownLayout.astro` and `DocsLayout.astro` emit no
+robots meta at all, and `dev/dashboard.astro` builds its own `<head>`. All three
+now emit `noindex,nofollow`. **Not** a `robots.txt` Disallow — that would stop
+Google reading the noindex, which is the opposite of the goal.
+
+Also added three reusable audit scripts: `scripts/seo/index-coverage-audit.mjs`
+(built pages vs sitemap, plus noindex/canonical/hreflang coverage — this is what
+found the exposure), `internal-link-audit.mjs`, and `link-vs-demand.mjs`.
+
+**#228 — cheat sheets for the two master classes that lacked one.** Verified the
+premise first: `/en/course/past-tenses/cheat-sheet/` really is 17 impressions at
+position 10.5, and `/es/curso/tiempos-del-pasado/frases-iniciales/` is 27 at
+11.4. Note the per-query GSC call returns *"No queries"* for these — the queries
+sit below the privacy threshold. Use page-level data, not query-level, to
+evaluate these pages.
+
+Built EN + ES for Executive Pushback and Drive the Decision, linked from all
+four hubs. Drive the Decision's twelve rewrites render straight from `drillItems`
+so the page cannot drift from the drill. The ES Drive page keeps drill prompts
+and responses in English on purpose — English is what is being practiced.
+
+**Reviewed and left alone, with reasons:**
+- The root `/` 307 to `/en/` or `/es/` is conditional on `accept-language`. A
+  temporary redirect is correct for locale-adaptive routing because the
+  destination varies by user; a 308 would cache one language for everyone.
+- Three `H1 too long` warnings (`/en/services/logistics-english/`,
+  `/en/course/past-tenses/`, `/es/curso/tiempos-del-pasado/`) are two-sentence
+  editorial headlines. Trimming them is Robert's brand-voice call, not a
+  mechanical fix. Warnings do not block the gate.
+- Internal linking: 123 true orphans sounds bad, but cross-referencing against
+  GSC showed only 9 under-linked pages carrying real demand (123 impressions
+  total). Small. Not worth a dedicated pass yet.
