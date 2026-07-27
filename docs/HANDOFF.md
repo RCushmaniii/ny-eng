@@ -104,11 +104,20 @@ Pulled from GSC/Bing this session. Use it; don't re-derive it.
 
 ## 5. Next actions, in priority order
 
-1. **Spanish city-level post** — *"clases de inglés gratis en Guadalajara"* →
-   points at `/es/cursos/`. Approved, not started.
+> **Updated 2026-07-26 (later session).** Item 1 below was *cancelled* after
+> checking it against live GSC. See §9 for what replaced it.
+
+1. ~~**Spanish city-level post** — *"clases de inglés gratis en Guadalajara"*.~~
+   **CANCELLED.** The site is already **position 1.0** for
+   `clases de inglés guadalajara` and that produced **3 impressions / 1 click in
+   90 days**. The existing `clases-ingles-guadalajara.md` post returns **zero
+   queries** in GSC. Ranking #1 in that market yields roughly one click per
+   quarter, so a `gratis` + geo variant targets a fraction of a fraction. Robert
+   agreed to drop it and spend the time on the course hubs instead. **Do not
+   revive this without new volume data.**
 2. **Granular course entry points** — cheat sheets and "X vs Y" pages for the
    *differentiated* courses, replicating what `/en/course/past-tenses/cheat-sheet/`
-   is already doing at position 10.5 unpromoted.
+   is already doing at position 10.5 unpromoted. **This is now the top item.**
 3. **Re-check GSC around 2026-08-20** (3–4 weeks post-change). Watch for: course
    hubs moving off 61.6/57.4; the interview post moving off 19.6; first non-zero
    clicks on "business english interview"; legacy-redirect recovery in Bing.
@@ -194,3 +203,56 @@ node scripts/seo/indexnow-submit.mjs --url <url>
 - **Vapi billing** — Robert confirmed settings updated and payment method changed
   2026-07-25. Whether auto-recharge is on/off was not re-verified afterward; if
   off, the credit balance is a natural spend ceiling.
+
+---
+
+## 9. Session addendum — 2026-07-26 (later)
+
+Two PRs, both merged and live.
+
+| PR | What |
+|---|---|
+| #225 | Aligned both course hubs with the query cluster PR #220 redirected into them |
+| #226 | Greened the SEO validator — 20 over-length titles, 3 duplicate H1s |
+
+**#225 — the consolidation was only half-done.** PR #220 correctly 301'd the
+415-impression free-courses cluster into `/en/courses/` and `/es/cursos/`, but
+those hubs were written entirely around the word *"courses"* while the cluster
+actually searches for **"classes"** and **"lessons"**, delivered **"online"**:
+
+```
+online english classes for spanish speakers        35 impr  pos 38.8
+free online english courses for spanish speakers   13 impr  pos 28.2
+learn english online for spanish speakers          12 impr  pos 38.4
+free english lessons for spanish speakers           8 impr  pos 32.3
+```
+
+On the EN hub `"online"` appeared **twice** and `"classes"` **once**. Titles,
+H1s, meta descriptions, hero copy, first FAQ, and `ItemList` schema were reworked
+on both hubs; EN term coverage went `online` 2→25, `classes` 1→12. The ES hub
+targets its own separate cluster (`clases de ingles` pos 72.3,
+`cursos de inglés para hispanohablantes` pos 67), not a translation of the EN one.
+
+**Lesson:** after a consolidation redirect, verify the *destination* page
+actually contains the head term of the cluster it inherited. A 301 moves
+authority; it does not move relevance.
+
+**#226 — the pre-deploy gate was not gating.** `npm run validate:seo` had been
+red, so `validate:all` passed nothing. 20 titles were over 60 chars (the
+` | NY English Teacher` suffix costs 20; `&quot;` entities cost 6 each and pushed
+two pages to 82–83), and three ES past-tenses pages had a second `<h1>` in their
+print-only header where the EN counterparts correctly use `<h2>`. Now
+**204/204 passing, 0 errors.**
+
+**Still open (deliberately):** three `H1 too long` *warnings* on
+`/en/services/logistics-english/`, `/en/course/past-tenses/`, and
+`/es/curso/tiempos-del-pasado/`. These are two-sentence editorial headlines
+("Feel the story. Don't think about the rules."). Trimming them is a brand-voice
+decision for Robert, not a mechanical fix. Warnings do not block the gate.
+
+**Post-deploy submissions done for #225:** GSC sitemap resubmitted; both hub URLs
+accepted by IndexNow (Bing, Yandex, DuckDuckGo, Seznam, Naver).
+
+**Watch at the 2026-08-20 GSC re-check** (in addition to §5 item 3): whether the
+hubs move off position 38.5 / 57–61 on the `... for spanish speakers` cluster.
+That is the single largest pocket of demand on the domain.
