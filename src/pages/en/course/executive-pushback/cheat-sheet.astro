@@ -1,0 +1,492 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import {
+  ArrowLeft,
+  ArrowRight,
+  FileText,
+  Printer,
+  Search,
+  Pause,
+  Compass,
+  Shield,
+  CheckCircle2,
+  XCircle,
+  AlertTriangle,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/executive-pushback/cheat-sheet" as const;
+
+// Section 1 — the diagnostic layer. Source: lesson 1, six-hidden-drivers.
+const drivers = [
+  {
+    n: 1,
+    name: "Risk Perception",
+    real: "They think something will break, and they're testing whether you've thought about it.",
+    tell: 'Vague hedges ("are we sure"), hypotheticals ("what if"), worst-case framings.',
+    move: "Name the risk out loud before they have to. Then give the mitigation.",
+  },
+  {
+    n: 2,
+    name: "Ego Protection",
+    real: "They feel their judgment or a recent decision of theirs is being challenged.",
+    tell: 'Sharper voice, history-citing ("when I ran X"), credential reminders.',
+    move: "Credit their prior call explicitly, then separate it from the current decision.",
+  },
+  {
+    n: 3,
+    name: "Status Concerns",
+    real: "They're testing whether you'll defer to seniority. The topic is not the point.",
+    tell: "Questions phrased as conclusions, peers cited as agreeing, public framing.",
+    move: "Hold position, lower volume. Deference in tone, firmness in content.",
+  },
+  {
+    n: 4,
+    name: "Trust Gap",
+    real: "They have no evidence to trust you yet. The objection buys time to evaluate you.",
+    tell: "Requests for more data, calls for more stakeholders, slow-walk language.",
+    move: "Offer a small, checkable commitment instead of a big argument.",
+  },
+  {
+    n: 5,
+    name: "Workload Pressure",
+    real: "They're underwater. Your proposal is work they cannot absorb — a quiet no.",
+    tell: 'Timeline pushback, scope shrinkage, "let\'s revisit later" framing.',
+    move: "Take something off their plate, or name who absorbs the work instead.",
+  },
+  {
+    n: 6,
+    name: "Accountability Avoidance",
+    real: "They fear being blamed if it fails. The objection is risk-shifting.",
+    tell: 'Requests for written approval, escalation suggestions, "above my level".',
+    move: "Name the decision owner explicitly. Take the blame surface yourself.",
+  },
+];
+
+// Section 3 — the framework. Source: lesson 4, acknowledge-clarify-redirect.
+const acr = [
+  {
+    beat: "Acknowledge",
+    goal: "Show you heard them and the concern is legitimate. Do not apologize. Do not capitulate.",
+    works: [
+      "I understand the concern about the timeline.",
+      "That's a fair read.",
+      "You're right that there's a tradeoff here.",
+      "That risk is real — let's name it.",
+    ],
+    avoid: [
+      "I'm sorry you feel that way.",
+      "Yeah, you might be right.",
+      "I hear what you're saying, but…",
+    ],
+  },
+  {
+    beat: "Clarify",
+    goal: "Name the operational reality underneath. Convert emotional pressure into a tradeoff.",
+    works: [
+      "If we accelerate the timeline, quality control risk increases significantly.",
+      "The real tradeoff here is speed versus long-term reliability.",
+      "What we're balancing is short-term wins against the operational debt that comes with them.",
+      "The two variables in play are X and Y — and we can't optimize both.",
+    ],
+    avoid: [
+      "Here's why you're wrong.",
+      "Skipping this beat entirely — it reads as deflection.",
+    ],
+  },
+  {
+    beat: "Redirect",
+    goal: "Move from defending to deciding. Land on a decision the room can actually make.",
+    works: [
+      "So the question becomes whether speed or stability is the higher priority this quarter.",
+      "The decision in front of us is which risk we'd rather carry.",
+      "What I'd want to align on is the principle, not the implementation detail.",
+      "That's the call I'm asking the room to make.",
+    ],
+    avoid: [
+      "Redirecting to a vague abstraction (\"the real question is our culture\").",
+      "Redirecting to a question nobody in the room can decide.",
+    ],
+  },
+];
+
+// Section 4 — composure. Source: lesson 3, executive-calm-is-power.
+const tells = [
+  { leak: "Talking faster after a challenge", reads: "Defensiveness", instead: "Drop your pace below theirs." },
+  { leak: "Nervous laugh after pushback", reads: "Relief, not authority", instead: "Two seconds of silence." },
+  { leak: "Rising pitch at sentence-end", reads: '"Is that okay?"', instead: "Land every ending flat." },
+  { leak: "Hand to throat, neck, or face", reads: "Self-soothing, visible to all", instead: "Hands still, on the table." },
+  { leak: "Apologizing for taking space", reads: "Conceding the room", instead: "State the point, then stop." },
+  { leak: 'Repair language ("what I meant was")', reads: "The first attempt failed", instead: "Let the first sentence stand." },
+];
+
+const faqs = [
+  {
+    q: "What is the best way to respond to pushback in a meeting?",
+    a: "Pause for two seconds, diagnose which of the six hidden drivers is actually firing, then run Acknowledge → Clarify → Redirect. Acknowledge that the concern is legitimate without apologizing, name the operational tradeoff underneath it, and redirect to the decision the room actually needs to make. The pause matters as much as the words: a measured pause reads as deliberation, while speed reads as defensiveness.",
+  },
+  {
+    q: "How do you handle objections without sounding defensive?",
+    a: 'Defensiveness is mostly delivery, not content. The reliable tells are talking faster after a challenge, a nervous laugh, rising pitch at the end of sentences, and repair language like "what I meant was." Slow your pace below the challenger\'s, land your sentence endings flat, and let your first sentence stand without correcting it.',
+  },
+  {
+    q: 'Why is "I hear you, but…" a mistake?',
+    a: 'The word "but" cancels the acknowledgment in the listener\'s mind — they only retain what follows it. Use "and", or move straight into the clarify beat with no transition word at all. The acknowledgment has to survive intact or the whole framework collapses into a disguised disagreement.',
+  },
+  {
+    q: "What do you say when you have already lost your composure?",
+    a: "Stop mid-sentence rather than pushing through. Name the reset plainly — \"Let me take that again\" — then restate the point in one short sentence. Do not apologize for the slip; apologizing spends more authority than the slip itself did. The Pressure Recovery Script lesson covers the full three-sentence version.",
+  },
+];
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Executive Pushback Cheat Sheet (One Page)"
+  description="The Executive Pushback master class on one printable page: the six hidden drivers, the diagnostic pause, and the Acknowledge-Clarify-Redirect phrase bank."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <FileText class="w-4 h-4" />
+          Bonus · Master Class Cheat Sheet
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          The One-Page Pushback Cheat Sheet
+        </h1>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          Six drivers. Three beats. One page. Keep it open in another tab before
+          a hard conversation — or print it and put it where you can see it.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Print this page
+          </button>
+          <a
+            href="/en/course/executive-pushback/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Back to the master class
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Print-only header (h2, not h1 — one H1 per page) -->
+  <div class="hidden print:block py-4 border-b-2 border-slate-300">
+    <h2 class="text-2xl font-bold text-slate-900">Executive Pushback — Cheat Sheet</h2>
+    <p class="text-sm text-slate-600">nyenglishteacher.com — free for professionals</p>
+  </div>
+
+  <!-- 1. The six drivers -->
+  <section class="py-12 md:py-16 bg-white print:py-2">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <Search class="w-6 h-6 text-indigo-600 print:hidden" />
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">
+            The Six Hidden Drivers
+          </h2>
+        </div>
+        <p class="text-slate-600 mb-6 print:text-sm">
+          The stated objection is the surface. Diagnose which driver is firing
+          <em>before</em> you respond — a confident answer to the wrong question
+          is worse than no answer.
+        </p>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="bg-slate-100 print:bg-white">
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">Driver</th>
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">What it really is</th>
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">The tell</th>
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">Your move</th>
+              </tr>
+            </thead>
+            <tbody>
+              {drivers.map((d) => (
+                <tr class="align-top">
+                  <td class="p-3 border border-slate-200 font-semibold text-indigo-800 whitespace-nowrap">
+                    {d.n}. {d.name}
+                  </td>
+                  <td class="p-3 border border-slate-200 text-slate-700">{d.real}</td>
+                  <td class="p-3 border border-slate-200 text-slate-500 italic">{d.tell}</td>
+                  <td class="p-3 border border-slate-200 text-slate-700">{d.move}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. The diagnostic pause -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <Pause class="w-6 h-6 text-indigo-600 print:hidden" />
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">
+            The Two-Second Diagnostic Pause
+          </h2>
+        </div>
+        <p class="text-slate-600 mb-6 print:text-sm">
+          Run these three questions silently, in this order, before you open your
+          mouth. A measured pause reads as deliberation; speed reads as
+          defensiveness. Same words, opposite signal.
+        </p>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-3">
+            <div class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1">Question 1</div>
+            <h3 class="font-bold text-slate-900 mb-1">Driver</h3>
+            <p class="text-sm text-slate-700">
+              Which of the six is actually firing? Even a rough match shapes a
+              better response than answering the literal words.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-3">
+            <div class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1">Question 2</div>
+            <h3 class="font-bold text-slate-900 mb-1">Outcome</h3>
+            <p class="text-sm text-slate-700">
+              What do I actually need out of this exchange? Winning the point and
+              getting the decision are rarely the same thing.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-5 print:p-3">
+            <div class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1">Question 3</div>
+            <h3 class="font-bold text-slate-900 mb-1">Safety</h3>
+            <p class="text-sm text-slate-700">
+              What does this person need in order to move without losing face?
+              Give them that, and the objection usually dissolves.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ACR phrase bank -->
+  <section class="py-12 md:py-16 bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <Compass class="w-6 h-6 text-indigo-600 print:hidden" />
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">
+            Acknowledge → Clarify → Redirect
+          </h2>
+        </div>
+        <p class="text-slate-600 mb-6 print:text-sm">
+          Three beats, in order, every time. Short, deliberate, structurally
+          complete.
+        </p>
+
+        <div class="space-y-5">
+          {acr.map((step, i) => (
+            <div class="rounded-2xl border border-slate-200 overflow-hidden print:break-inside-avoid">
+              <div class="bg-indigo-700 text-white px-5 py-3 print:bg-white print:text-slate-900 print:border-b print:border-slate-300">
+                <h3 class="font-bold text-lg">
+                  {i + 1}. {step.beat}
+                </h3>
+                <p class="text-indigo-100 text-sm print:text-slate-600">{step.goal}</p>
+              </div>
+              <div class="grid md:grid-cols-2 gap-0">
+                <div class="p-5 border-r border-slate-200">
+                  <div class="flex items-center gap-2 mb-3">
+                    <CheckCircle2 class="w-4 h-4 text-emerald-600" />
+                    <span class="text-sm font-bold text-emerald-800">Say this</span>
+                  </div>
+                  <ul class="space-y-2">
+                    {step.works.map((p) => (
+                      <li class="text-sm text-slate-800 leading-relaxed">"{p}"</li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="p-5 bg-slate-50 print:bg-white">
+                  <div class="flex items-center gap-2 mb-3">
+                    <XCircle class="w-4 h-4 text-red-600" />
+                    <span class="text-sm font-bold text-red-800">Not this</span>
+                  </div>
+                  <ul class="space-y-2">
+                    {step.avoid.map((p) => (
+                      <li class="text-sm text-slate-600 leading-relaxed">{p}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-6 rounded-xl border-2 border-amber-300 bg-amber-50 p-5 print:break-inside-avoid">
+          <div class="flex items-center gap-2 mb-2">
+            <AlertTriangle class="w-5 h-5 text-amber-700" />
+            <h3 class="font-bold text-slate-900">The three traps</h3>
+          </div>
+          <ul class="space-y-1.5 text-sm text-slate-800">
+            <li>
+              <strong>"Acknowledge … BUT"</strong> — "but" cancels the
+              acknowledgment in the listener's mind. Use "and", or no transition
+              word at all.
+            </li>
+            <li>
+              <strong>Skipping Clarify</strong> — going straight from
+              Acknowledge to Redirect reads as a bait-and-switch.
+            </li>
+            <li>
+              <strong>Redirecting to a question they didn't ask</strong> — the
+              Redirect has to land on a decision the room can actually make.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Defensive tells -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center gap-3 mb-2">
+          <Shield class="w-6 h-6 text-indigo-600 print:hidden" />
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 print:text-xl">
+            Defensive Tells — The Quiet Leaks
+          </h2>
+        </div>
+        <p class="text-slate-600 mb-6 print:text-sm">
+          People challenge confidence before they challenge logic. These are the
+          leaks that cost you the room before your argument is even heard.
+        </p>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="bg-slate-100 print:bg-white">
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">The leak</th>
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">How it reads</th>
+                <th class="p-3 font-bold text-slate-900 border border-slate-200">Do this instead</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tells.map((t) => (
+                <tr class="align-top">
+                  <td class="p-3 border border-slate-200 text-slate-800">{t.leak}</td>
+                  <td class="p-3 border border-slate-200 text-red-700 italic">{t.reads}</td>
+                  <td class="p-3 border border-slate-200 text-emerald-800 font-medium">{t.instead}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-12 md:py-16 bg-white print:py-3">
+    <div class="site-container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 print:text-xl">
+        Frequently asked questions
+      </h2>
+      <div class="space-y-3">
+        {faqs.map((f) => (
+          <details class="group bg-slate-50 rounded-xl border border-slate-200 p-5 print:bg-white" open>
+            <summary class="flex items-center justify-between cursor-pointer font-semibold text-slate-900 list-none">
+              <span>{f.q}</span>
+              <ArrowRight class="w-4 h-4 text-indigo-500 shrink-0 ml-3 transition-transform group-open:rotate-90 print:hidden" />
+            </summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-indigo-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">
+          The reasoning behind every line
+        </h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+          This page is the compressed version. The master class walks through
+          each driver with worked examples, audio for the cadence, and the
+          recovery script for when composure is already gone.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/en/course/executive-pushback/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+          >
+            Take the free master class
+            <ArrowRight class="w-4 h-4" />
+          </a>
+          <a
+            href="/en/course/drive-the-decision/cheat-sheet/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors font-medium"
+          >
+            Drive the Decision cheat sheet
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      @page { margin: 1cm; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #312e81 !important; }
+      details { border: none !important; padding: 0.25rem 0 !important; }
+      summary { font-size: 0.9rem; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    name: "Executive Pushback — One-Page Cheat Sheet",
+    description:
+      "Compact, printable reference for handling pushback and objections: the six hidden drivers with their tells, the two-second diagnostic pause, the Acknowledge-Clarify-Redirect phrase bank, and the defensive tells that cost you the room.",
+    learningResourceType: "Cheat sheet",
+    educationalLevel: "Advanced",
+    inLanguage: "en",
+    isAccessibleForFree: true,
+    url: "https://www.nyenglishteacher.com/en/course/executive-pushback/cheat-sheet/",
+    isPartOf: {
+      "@type": "Course",
+      name: "Executive Pushback & Objection Handling — Free Master Class",
+      url: "https://www.nyenglishteacher.com/en/course/executive-pushback/",
+    },
+    author: {
+      "@type": "Person",
+      name: "Robert Cushman",
+      url: "https://www.nyenglishteacher.com/en/about/",
+    },
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
+</Base>
