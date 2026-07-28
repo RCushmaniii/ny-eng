@@ -4,6 +4,41 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-07-26 (Hub/query alignment, validator greened, /dev/ exposure closed, master-class cheat sheets)
+
+### Accomplished
+
+- **PR #225 — finished the #220 consolidation.** #220 correctly 301'd the 415-impression free-courses cluster into `/en/courses/` and `/es/cursos/`, but the hubs were written around "courses" while the demand is `online english classes/lessons for spanish speakers` (35 impr at pos 38.8 on the head term alone). EN hub had `online` ×2 and `classes` ×1. Reworked title, H1, description, hero, first FAQ, and `ItemList` schema on both hubs; coverage went `online` 2→25, `classes` 1→12. ES hub targets its own separate cluster (`clases de ingles` pos 72.3), not a translation of EN's.
+- **PR #226 — greened the SEO validator**, which had been red, meaning `validate:all` was gating nothing. 20 titles over 60 chars (the ` | NY English Teacher` suffix costs 20; `&quot;` entities pushed two pages to 82–83) plus 3 ES past-tenses pages carrying a second `<h1>` in their print-only header where EN correctly uses `<h2>`. Now **204/204, 0 errors**.
+- **PR #227 — closed a live exposure.** Eleven internal `/dev/` engineering pages (`deployment-checklist`, `dashboard`, and nine more) served HTTP 200 on the production business site with no `noindex`, no canonical, and nothing in `robots.txt`. Root cause was structural: `MarkdownLayout.astro` and `DocsLayout.astro` emit no robots meta at all. Caught before damage — Inspection API reported them "unknown to Google, crawled: never". Added 3 reusable audit scripts (`index-coverage-audit.mjs` found it, plus `internal-link-audit.mjs` and `link-vs-demand.mjs`).
+- **PR #228 — cheat sheets for the two master classes that lacked one.** Verified the premise first: `/en/course/past-tenses/cheat-sheet/` is 17 impr at **position 10.5** unpromoted; `/es/.../frases-iniciales/` is 27 at 11.4. Built EN + ES for Executive Pushback and Drive the Decision, linked from all four hubs. Drive's twelve rewrites render from `drillItems` so the page can't drift from the drill.
+- **Submitted live:** GSC sitemap resubmitted; **26 URLs accepted by IndexNow** across Bing/Yandex/DuckDuckGo/Seznam/Naver (2 hubs + 20 lesson pages + 4 cheat sheets).
+
+### Decisions Made
+
+- **Cancelled the approved Guadalajara "gratis" post.** The site is already **position 1.0** for `clases de inglés guadalajara` and it yields 3 impressions / 1 click per 90 days; the existing GDL post returns zero queries. Struck from the handoff and marked do-not-revive without new volume data.
+- **Skipped a Verb Patterns cheat sheet.** `diagnosis-table` and `top-traps` already are that asset; a third would recreate the exact cannibalization #220 cleaned up.
+- **Left the root `/` 307 alone.** It's conditional on `accept-language`; a temporary redirect is correct for locale-adaptive routing because the destination varies per user. A 308 would cache one language for everyone.
+- **Left three `H1 too long` warnings alone** — they're two-sentence editorial headlines ("Feel the story. Don't think about the rules."), a brand-voice call, and warnings don't block the gate.
+
+### Immediate Next Steps
+
+- [ ] **2026-08-20 — GSC re-check** (calendared 06:30–07:00). Watch the hubs moving off pos 38.5 / 57–61 on the `for spanish speakers` cluster, the interview post off 19.6, and whether the four new cheat sheets enter around pos 10 like Past Tenses did.
+- [ ] Build "X vs Y" comparison pages for the master classes — the remaining half of handoff item 2. Past Tenses has four; no other course has any.
+- [ ] Add `ignoreErrors`/`beforeSend` to the Sentry config in `astro.config.mjs` — currently zero noise filtering.
+
+### Technical Debt
+
+- **Sentry has no noise filtering** (`astro.config.mjs` sentry block: no `ignoreErrors`, `beforeSend`, or `denyUrls`). Lower risk than the reference case since `replaysOnErrorSampleRate` isn't set to 1.0, but third-party browser noise still creates alert fatigue.
+- Silent `catch {}` in two build/validate scripts (`scripts/report-structure.mjs:149`, `scripts/validate-canonical-urls.mjs:273`) — violates the no-silent-catch rule for pipeline scripts.
+- 123 true orphan pages, but only 9 carry real demand (123 impressions total) — small, not yet worth a dedicated pass.
+
+### Open Questions / Blockers
+
+- **GSC returns "No queries" for the cheat-sheet pages** because those queries sit below the privacy threshold. Page-level data is the correct lens for them; query-level reads as zero and will look like failure to a cold-start session.
+
+---
+
 ## Session: 2026-07-25 (Organic-traffic diagnosis — legacy 404 recovery, cannibalization fix, voice-agent spend cap)
 
 ### Accomplished
