@@ -43,39 +43,22 @@
 
 /* ------------------------ Rate Limiting ------------------------ */
 
-// In-memory rate limit store (persists within worker isolate)
-const rateLimitStore = new Map();
+// D1-backed and shared across isolates. The Map that used to live here counted
+// per-isolate, so "5 bookings per hour" was really 5 per isolate with the count
+// resetting on every cold start. See lib/rate-limit-d1.js.
+import {
+  checkRateLimit,
+  checkRateLimitEnforcement,
+  clientKey,
+} from "./lib/rate-limit-d1.js";
 
-// Clean up old entries periodically
-function cleanupRateLimitStore(windowMs) {
-  const now = Date.now();
-  for (const [key, data] of rateLimitStore.entries()) {
-    if (now - data.windowStart > windowMs * 2) {
-      rateLimitStore.delete(key);
-    }
-  }
-}
-
-function checkRateLimit(identifier, maxRequests, windowMs) {
-  const now = Date.now();
-  const key = `rate:${identifier}`;
-
-  let data = rateLimitStore.get(key);
-
-  if (!data || now - data.windowStart > windowMs) {
-    // Start new window
-    data = { count: 1, windowStart: now };
-    rateLimitStore.set(key, data);
-    return { allowed: true, remaining: maxRequests - 1 };
-  }
-
-  if (data.count >= maxRequests) {
-    const resetIn = Math.ceil((data.windowStart + windowMs - now) / 1000);
-    return { allowed: false, remaining: 0, resetIn };
-  }
-
-  data.count++;
-  return { allowed: true, remaining: maxRequests - data.count };
+// Client address, best header first. Kept here because three surfaces need it.
+function clientIpOf(request) {
+  return (
+    request.headers.get("CF-Connecting-IP") ||
+    request.headers.get("X-Forwarded-For")?.split(",")[0]?.trim() ||
+    "unknown"
+  );
 }
 
 /* ------------------------ Token Cache ------------------------ */
@@ -124,18 +107,25 @@ export default {
 
     try {
       // Health check
-      if (request.method === "GET" && path === "/")
+      if (request.method === "GET" && path === "/") {
+        // Reports whether the limiter is ENFORCING, not merely reachable. The
+        // limiter this replaced failed silently — a counter that counts nothing
+        // looks identical from outside to one that works — so this returns 503
+        // when enforcement cannot be proven.
+        const rateLimit = await checkRateLimitEnforcement(env.DB);
         return json(
           {
-            ok: true,
+            ok: rateLimit.ok,
             service: "NY English Teacher API v3",
             endpoints: ["/slots/:date", "/book", "/contact", "/debug"],
             features: ["split-hours", "saturday-support"],
+            rateLimit,
           },
-          200,
+          rateLimit.ok ? 200 : 503,
           request,
           env,
         );
+      }
 
       // Debug endpoint - verify environment variables
       // SECURED: Requires DEBUG_ENABLED=true and optional DEBUG_KEY for authentication
@@ -204,6 +194,30 @@ export default {
           }
         }
 
+        // Only a cache MISS reaches Google, so only a miss is limited. A cached
+        // response costs nothing and must not consume budget, or a student
+        // clicking through dates on the booking widget would be punished for
+        // ordinary use. This is also what stops ?nocache=1 being a free
+        // passthrough to the Calendar API.
+        const slotsCheck = await checkRateLimit(
+          env.DB,
+          `slots:${clientKey(clientIpOf(request))}`,
+          parseInt(env.SLOTS_RATE_LIMIT_MAX || "60"),
+          3600000,
+        );
+        if (!slotsCheck.allowed) {
+          return json(
+            {
+              ok: false,
+              error: t(lang, "rate_limited"),
+              retryAfter: slotsCheck.resetIn,
+            },
+            429,
+            request,
+            env,
+          );
+        }
+
         // Fetch fresh data
         const result = await getAvailableSlots(dateStr, env, tz);
 
@@ -223,17 +237,12 @@ export default {
         const maxRequests = parseInt(env.RATE_LIMIT_MAX || "5");
         const windowMs = parseInt(env.RATE_LIMIT_WINDOW_MS || "3600000"); // 1 hour
 
-        // Get client identifier (IP address or forwarded IP)
-        const clientIP =
-          request.headers.get("CF-Connecting-IP") ||
-          request.headers.get("X-Forwarded-For")?.split(",")[0]?.trim() ||
-          "unknown";
-
-        // Clean up old rate limit entries periodically
-        cleanupRateLimitStore(windowMs);
-
-        // Check rate limit
-        const rateCheck = checkRateLimit(clientIP, maxRequests, windowMs);
+        const rateCheck = await checkRateLimit(
+          env.DB,
+          `book:${clientKey(clientIpOf(request))}`,
+          maxRequests,
+          windowMs,
+        );
         if (!rateCheck.allowed) {
           return json(
             {
@@ -259,6 +268,29 @@ export default {
 
       // Contact: POST /contact
       if (request.method === "POST" && path === "/contact") {
+        // This sends an email and had no limit at all — an open relay for
+        // anyone who found the URL. Tighter than booking on purpose: a real
+        // person sends one message, not five, and the cost of abuse here is
+        // Robert's inbox plus whatever the mail provider does about it.
+        const contactCheck = await checkRateLimit(
+          env.DB,
+          `contact:${clientKey(clientIpOf(request))}`,
+          parseInt(env.CONTACT_RATE_LIMIT_MAX || "3"),
+          3600000,
+        );
+        if (!contactCheck.allowed) {
+          return json(
+            {
+              ok: false,
+              error: t(lang, "rate_limited"),
+              retryAfter: contactCheck.resetIn,
+            },
+            429,
+            request,
+            env,
+          );
+        }
+
         const payload = await safeJson(request);
         await handleContact(payload, env, lang);
         return json(
