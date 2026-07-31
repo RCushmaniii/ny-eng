@@ -1,0 +1,51 @@
+# Template for wrangler.toml, which is gitignored because the real file carries
+# Google client and calendar IDs (see .gitignore).
+#
+# Copy to wrangler.toml and fill in the REPLACE_ME values before deploying.
+#
+# WHY THIS FILE EXISTS: the [[d1_databases]] block below is not optional. The
+# rate limiter reads env.DB, and when that binding is missing it FAILS OPEN —
+# /contact, /book, and /slots all serve unmetered. Because wrangler.toml is not
+# in the repo, a deploy from a fresh clone would silently drop the limiter with
+# nothing in the diff to show for it. GET / returns 503 with
+# "D1 binding absent — requests are NOT limited" if that ever happens, so check
+# it after any deploy from a machine that has not run this Worker before.
+
+name = "plain-mode-42c4"
+main = "cloudflare-worker.js"
+compatibility_date = "2025-10-11"
+
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+
+# Backs the rate limiter. POST /contact sends email, POST /book creates a real
+# calendar event, and GET /slots burns Google Calendar quota — none of them
+# authenticate first, so the counter has to be shared across isolates. An
+# in-memory Map counts per-isolate and enforces almost nothing.
+# See lib/rate-limit-d1.js.
+[[d1_databases]]
+binding = "DB"
+database_name = "ny-eng-booking"
+database_id = "REPLACE_ME_RUN_wrangler_d1_list"
+
+[vars]
+ALLOWED_ORIGINS = "https://www.nyenglishteacher.com,https://nyenglishteacher.com,http://localhost:4321,http://localhost:4322"
+GOOGLE_CALENDAR_ID = "REPLACE_ME_WORK_CALENDAR_ID"
+GOOGLE_CLIENT_ID = "REPLACE_ME_OAUTH_CLIENT_ID"
+PERSONAL_CALENDAR_ID = "REPLACE_ME_PERSONAL_CALENDAR_ID"
+SATURDAY_HOURS = "09:00-13:00"
+TIMEZONE = "America/Mexico_City"
+WEEKDAY_AFTERNOON_HOURS = "16:00-20:00"
+WEEKDAY_MORNING_HOURS = "09:00-14:00"
+
+# Optional limiter overrides. Defaults are in cloudflare-worker.js.
+# CONTACT_RATE_LIMIT_MAX = "3"    # per hour, per client /64
+# RATE_LIMIT_MAX         = "5"    # bookings per hour, per client /64
+# SLOTS_RATE_LIMIT_MAX   = "60"   # cache misses per hour, per client /64
+
+# Secrets are NOT here. Set with `wrangler secret put`:
+#   GOOGLE_CLIENT_SECRET
+#   GOOGLE_REFRESH_TOKEN
