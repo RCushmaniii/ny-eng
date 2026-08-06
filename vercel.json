@@ -18,13 +18,12 @@
       "permanent": false
     },
     {
-      "source": "/",
-      "destination": "/en/",
-      "permanent": false
-    },
-
-    {
       "source": "/eng-lesson/when-to-use-say-or-tell",
+      "destination": "/en/blog/say-vs-tell/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/when-to-use-say-or-tell/",
       "destination": "/en/blog/say-vs-tell/",
       "permanent": true
     },
@@ -34,7 +33,17 @@
       "permanent": true
     },
     {
+      "source": "/eng-lesson/common-greetings/",
+      "destination": "/en/course/beginners/unit-1/",
+      "permanent": true
+    },
+    {
       "source": "/eng-lesson/introducing-yourself-and-others",
+      "destination": "/en/course/beginners/unit-1/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/introducing-yourself-and-others/",
       "destination": "/en/course/beginners/unit-1/",
       "permanent": true
     },
@@ -44,7 +53,17 @@
       "permanent": true
     },
     {
+      "source": "/eng-lesson/days-of-the-week/",
+      "destination": "/en/course/beginners/unit-1/",
+      "permanent": true
+    },
+    {
       "source": "/eng-lesson/ordinals-1st-31st",
+      "destination": "/en/course/beginners/unit-1/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/ordinals-1st-31st/",
       "destination": "/en/course/beginners/unit-1/",
       "permanent": true
     },
@@ -54,7 +73,17 @@
       "permanent": true
     },
     {
+      "source": "/eng-lesson/what-are-contractions/",
+      "destination": "/en/course/beginners/unit-1/",
+      "permanent": true
+    },
+    {
       "source": "/eng-lesson/practice-ed-verbs-p1",
+      "destination": "/en/course/elementary/unit-1/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/practice-ed-verbs-p1/",
       "destination": "/en/course/elementary/unit-1/",
       "permanent": true
     },
@@ -64,7 +93,17 @@
       "permanent": true
     },
     {
+      "source": "/eng-lesson/did-questions/",
+      "destination": "/en/course/elementary/unit-7/",
+      "permanent": true
+    },
+    {
       "source": "/eng-lesson/th-words",
+      "destination": "/en/blog/english-words-mexican-professionals-mispronounce/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/th-words/",
       "destination": "/en/blog/english-words-mexican-professionals-mispronounce/",
       "permanent": true
     },
@@ -74,7 +113,17 @@
       "permanent": true
     },
     {
+      "source": "/eng-lesson/10-difficult-words-to-pronounce/",
+      "destination": "/en/blog/english-words-mexican-professionals-mispronounce/",
+      "permanent": true
+    },
+    {
       "source": "/eng-lesson/pond-words",
+      "destination": "/en/blog/english-words-mexican-professionals-mispronounce/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/pond-words/",
       "destination": "/en/blog/english-words-mexican-professionals-mispronounce/",
       "permanent": true
     },
@@ -84,7 +133,17 @@
       "permanent": true
     },
     {
+      "source": "/eng-lesson/express-annoyance-in-english/",
+      "destination": "/en/blog/english-register-for-spanish-speakers/",
+      "permanent": true
+    },
+    {
       "source": "/eng-lesson/learn-lend-and-borrow-in-english",
+      "destination": "/en/course/verb-patterns/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/learn-lend-and-borrow-in-english/",
       "destination": "/en/course/verb-patterns/",
       "permanent": true
     },
@@ -94,7 +153,17 @@
       "permanent": true
     },
     {
+      "source": "/eng-lesson/phrases-for-delivering-presentations/",
+      "destination": "/en/blog/lead-meeting-english-phrases/",
+      "permanent": true
+    },
+    {
       "source": "/eng-lesson/:slug",
+      "destination": "/en/courses/",
+      "permanent": true
+    },
+    {
+      "source": "/eng-lesson/:slug/",
       "destination": "/en/courses/",
       "permanent": true
     },
@@ -104,7 +173,17 @@
       "permanent": true
     },
     {
+      "source": "/eng-lesson/",
+      "destination": "/en/courses/",
+      "permanent": true
+    },
+    {
       "source": "/blog/mastering-presentation-transitions-closings-ultimate-guide",
+      "destination": "/en/blog/lead-meeting-english-phrases/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mastering-presentation-transitions-closings-ultimate-guide/",
       "destination": "/en/blog/lead-meeting-english-phrases/",
       "permanent": true
     },
@@ -114,7 +193,17 @@
       "permanent": true
     },
     {
+      "source": "/blog/10-modern-business-concepts-every-executive-must-know/",
+      "destination": "/en/blog/master-business-english/",
+      "permanent": true
+    },
+    {
       "source": "/blog/key-factors-for-success-in-corporate-america",
+      "destination": "/en/blog/mexico-us-workplace-communication-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/key-factors-for-success-in-corporate-america/",
       "destination": "/en/blog/mexico-us-workplace-communication-guide/",
       "permanent": true
     },
@@ -124,7 +213,17 @@
       "permanent": true
     },
     {
+      "source": "/blog/:slug/",
+      "destination": "/en/blog/:slug/",
+      "permanent": true
+    },
+    {
       "source": "/toefl/:slug",
+      "destination": "/en/courses/",
+      "permanent": true
+    },
+    {
+      "source": "/toefl/:slug/",
       "destination": "/en/courses/",
       "permanent": true
     },
@@ -134,13 +233,27 @@
       "permanent": true
     },
     {
+      "source": "/toefl/",
+      "destination": "/en/courses/",
+      "permanent": true
+    },
+    {
       "source": "/fast-english-assessment",
       "destination": "/en/assessments/",
       "permanent": true
     },
-
+    {
+      "source": "/fast-english-assessment/",
+      "destination": "/en/assessments/",
+      "permanent": true
+    },
     {
       "source": "/en/quiz/results",
+      "destination": "/en/quiz/it-services/results/",
+      "permanent": false
+    },
+    {
+      "source": "/en/quiz/results/",
       "destination": "/en/quiz/it-services/results/",
       "permanent": false
     },
@@ -150,7 +263,17 @@
       "permanent": false
     },
     {
+      "source": "/es/quiz/results/",
+      "destination": "/es/quiz/it-services/results/",
+      "permanent": false
+    },
+    {
       "source": "/es/services/:slug",
+      "destination": "/es/servicios/",
+      "permanent": true
+    },
+    {
+      "source": "/es/services/:slug/",
       "destination": "/es/servicios/",
       "permanent": true
     },
@@ -160,7 +283,17 @@
       "permanent": true
     },
     {
+      "source": "/en/category/corporate-english-training/",
+      "destination": "/en/category/business-english/",
+      "permanent": true
+    },
+    {
       "source": "/es/categoria/coaching-de-ingles",
+      "destination": "/es/categoria/coaching-en-ingles/",
+      "permanent": true
+    },
+    {
+      "source": "/es/categoria/coaching-de-ingles/",
       "destination": "/es/categoria/coaching-en-ingles/",
       "permanent": true
     },
@@ -170,7 +303,17 @@
       "permanent": true
     },
     {
+      "source": "/es/categoria/carrera-y-liderazgo/",
+      "destination": "/es/categoria/carrera-liderazgo/",
+      "permanent": true
+    },
+    {
       "source": "/es/categoria/capacitacion-de-ingles-corporativo",
+      "destination": "/es/categoria/ingles-para-negocios/",
+      "permanent": true
+    },
+    {
+      "source": "/es/categoria/capacitacion-de-ingles-corporativo/",
       "destination": "/es/categoria/ingles-para-negocios/",
       "permanent": true
     },
@@ -179,9 +322,18 @@
       "destination": "/es/categoria/ingles-para-negocios/",
       "permanent": true
     },
-
+    {
+      "source": "/es/categoria/capacitacion-corporativa-en-ingles/",
+      "destination": "/es/categoria/ingles-para-negocios/",
+      "permanent": true
+    },
     {
       "source": "/en/blog/free-english-courses-spanish-speakers",
+      "destination": "/en/courses/",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/free-english-courses-spanish-speakers/",
       "destination": "/en/courses/",
       "permanent": true
     },
@@ -190,9 +342,18 @@
       "destination": "/es/cursos/",
       "permanent": true
     },
-
+    {
+      "source": "/es/blog/cursos-ingles-gratis-hispanohablantes/",
+      "destination": "/es/cursos/",
+      "permanent": true
+    },
     {
       "source": "/en/course/diagnose-before-defend",
+      "destination": "/en/course/executive-pushback/",
+      "permanent": true
+    },
+    {
+      "source": "/en/course/diagnose-before-defend/",
       "destination": "/en/course/executive-pushback/",
       "permanent": true
     },
@@ -202,7 +363,17 @@
       "permanent": true
     },
     {
+      "source": "/en/course/diagnose-before-defend/:slug/",
+      "destination": "/en/course/executive-pushback/:slug",
+      "permanent": true
+    },
+    {
       "source": "/es/curso/diagnostica-antes-de-defender",
+      "destination": "/es/curso/pushback-ejecutivo/",
+      "permanent": true
+    },
+    {
+      "source": "/es/curso/diagnostica-antes-de-defender/",
       "destination": "/es/curso/pushback-ejecutivo/",
       "permanent": true
     },
@@ -212,7 +383,17 @@
       "permanent": true
     },
     {
+      "source": "/es/curso/diagnostica-antes-de-defender/:slug/",
+      "destination": "/es/curso/pushback-ejecutivo/:slug",
+      "permanent": true
+    },
+    {
       "source": "/en/category/english-for-executives",
+      "destination": "/en/category/executive-english/",
+      "permanent": true
+    },
+    {
+      "source": "/en/category/english-for-executives/",
       "destination": "/en/category/executive-english/",
       "permanent": true
     },
@@ -222,7 +403,17 @@
       "permanent": true
     },
     {
+      "source": "/en/category/business-english-coaching/",
+      "destination": "/en/category/business-english/",
+      "permanent": true
+    },
+    {
       "source": "/en/category/high-impact-communication-english",
+      "destination": "/en/category/high-impact-communication/",
+      "permanent": true
+    },
+    {
+      "source": "/en/category/high-impact-communication-english/",
       "destination": "/en/category/high-impact-communication/",
       "permanent": true
     },
@@ -232,7 +423,17 @@
       "permanent": true
     },
     {
+      "source": "/en/blog/executive-presence-on-video-calls/",
+      "destination": "/en/blog/executive-video-call/",
+      "permanent": true
+    },
+    {
       "source": "/es/blog/como-negociar-en-ingles-framework",
+      "destination": "/es/blog/como-negociar-en-ingles-marco/",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/como-negociar-en-ingles-framework/",
       "destination": "/es/blog/como-negociar-en-ingles-marco/",
       "permanent": true
     },
@@ -242,7 +443,17 @@
       "permanent": true
     },
     {
+      "source": "/es/blog/presencia-ejecutiva-videollamadas/",
+      "destination": "/es/blog/presencia-ejecutiva-en-videollamadas/",
+      "permanent": true
+    },
+    {
       "source": "/es/servicios/ingles-alto-impacto",
+      "destination": "/es/servicios/ingles-para-presentaciones/",
+      "permanent": true
+    },
+    {
+      "source": "/es/servicios/ingles-alto-impacto/",
       "destination": "/es/servicios/ingles-para-presentaciones/",
       "permanent": true
     },
@@ -252,7 +463,17 @@
       "permanent": true
     },
     {
+      "source": "/es/servicios/tech-english/",
+      "destination": "/es/servicios/ingles-para-tecnologia/",
+      "permanent": true
+    },
+    {
       "source": "/es/servicios/ingles-ejecutivo",
+      "destination": "/es/servicios/ingles-para-ejecutivos/",
+      "permanent": true
+    },
+    {
+      "source": "/es/servicios/ingles-ejecutivo/",
       "destination": "/es/servicios/ingles-para-ejecutivos/",
       "permanent": true
     },
@@ -262,7 +483,17 @@
       "permanent": true
     },
     {
+      "source": "/en/quiz/speaking-confidence/",
+      "destination": "/en/quiz/it-services/",
+      "permanent": true
+    },
+    {
       "source": "/es/quiz/speaking-confidence",
+      "destination": "/es/quiz/it-services/",
+      "permanent": true
+    },
+    {
+      "source": "/es/quiz/speaking-confidence/",
       "destination": "/es/quiz/it-services/",
       "permanent": true
     },
@@ -272,7 +503,17 @@
       "permanent": true
     },
     {
+      "source": "/blog/",
+      "destination": "/en/blog/",
+      "permanent": true
+    },
+    {
       "source": "/services",
+      "destination": "/en/services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/",
       "destination": "/en/services/",
       "permanent": true
     },
@@ -282,7 +523,17 @@
       "permanent": true
     },
     {
+      "source": "/contact/",
+      "destination": "/en/contact/",
+      "permanent": true
+    },
+    {
       "source": "/about",
+      "destination": "/en/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
       "destination": "/en/about/",
       "permanent": true
     },
@@ -292,7 +543,17 @@
       "permanent": true
     },
     {
+      "source": "/testimonials/",
+      "destination": "/en/testimonials/",
+      "permanent": true
+    },
+    {
       "source": "/book",
+      "destination": "/en/book/",
+      "permanent": true
+    },
+    {
+      "source": "/book/",
       "destination": "/en/book/",
       "permanent": true
     },
@@ -302,7 +563,17 @@
       "permanent": true
     },
     {
+      "source": "/quiz/",
+      "destination": "/en/quiz/it-services/",
+      "permanent": true
+    },
+    {
       "source": "/en/quiz",
+      "destination": "/en/quiz/it-services/",
+      "permanent": true
+    },
+    {
+      "source": "/en/quiz/",
       "destination": "/en/quiz/it-services/",
       "permanent": true
     },
@@ -312,7 +583,17 @@
       "permanent": true
     },
     {
+      "source": "/es/quiz/",
+      "destination": "/es/quiz/it-services/",
+      "permanent": true
+    },
+    {
       "source": "/es/testimonials",
+      "destination": "/es/testimonios/",
+      "permanent": true
+    },
+    {
+      "source": "/es/testimonials/",
       "destination": "/es/testimonios/",
       "permanent": true
     },
@@ -342,7 +623,17 @@
       "permanent": true
     },
     {
+      "source": "/es/services/",
+      "destination": "/es/servicios/",
+      "permanent": true
+    },
+    {
       "source": "/es/book",
+      "destination": "/es/reservar/",
+      "permanent": true
+    },
+    {
+      "source": "/es/book/",
       "destination": "/es/reservar/",
       "permanent": true
     },
@@ -352,7 +643,17 @@
       "permanent": true
     },
     {
+      "source": "/es/category/business-english/",
+      "destination": "/es/categoria/ingles-para-negocios/",
+      "permanent": true
+    },
+    {
       "source": "/es/category/career-leadership",
+      "destination": "/es/categoria/carrera-liderazgo/",
+      "permanent": true
+    },
+    {
+      "source": "/es/category/career-leadership/",
       "destination": "/es/categoria/carrera-liderazgo/",
       "permanent": true
     },
@@ -362,7 +663,17 @@
       "permanent": true
     },
     {
+      "source": "/es/category/carrera-y-liderazgo/",
+      "destination": "/es/categoria/carrera-liderazgo/",
+      "permanent": true
+    },
+    {
       "source": "/es/category/carrera-liderazgo",
+      "destination": "/es/categoria/carrera-liderazgo/",
+      "permanent": true
+    },
+    {
+      "source": "/es/category/carrera-liderazgo/",
       "destination": "/es/categoria/carrera-liderazgo/",
       "permanent": true
     },
@@ -372,7 +683,17 @@
       "permanent": true
     },
     {
+      "source": "/es/category/coaching-en-ingles/",
+      "destination": "/es/categoria/coaching-en-ingles/",
+      "permanent": true
+    },
+    {
       "source": "/es/category/comunicacion-de-alto-impacto",
+      "destination": "/es/categoria/comunicacion-de-alto-impacto/",
+      "permanent": true
+    },
+    {
+      "source": "/es/category/comunicacion-de-alto-impacto/",
       "destination": "/es/categoria/comunicacion-de-alto-impacto/",
       "permanent": true
     },
@@ -382,7 +703,17 @@
       "permanent": true
     },
     {
+      "source": "/es/category/english-coaching/",
+      "destination": "/es/categoria/coaching-en-ingles/",
+      "permanent": true
+    },
+    {
       "source": "/es/category/executive-english",
+      "destination": "/es/categoria/ingles-ejecutivo/",
+      "permanent": true
+    },
+    {
+      "source": "/es/category/executive-english/",
       "destination": "/es/categoria/ingles-ejecutivo/",
       "permanent": true
     },
@@ -392,7 +723,17 @@
       "permanent": true
     },
     {
+      "source": "/es/category/high-impact-communication/",
+      "destination": "/es/categoria/comunicacion-de-alto-impacto/",
+      "permanent": true
+    },
+    {
       "source": "/es/category/high-stakes-english",
+      "destination": "/es/categoria/ingles-ejecutivo/",
+      "permanent": true
+    },
+    {
+      "source": "/es/category/high-stakes-english/",
       "destination": "/es/categoria/ingles-ejecutivo/",
       "permanent": true
     },
@@ -402,7 +743,17 @@
       "permanent": true
     },
     {
+      "source": "/es/category/ingles-ejecutivo/",
+      "destination": "/es/categoria/ingles-ejecutivo/",
+      "permanent": true
+    },
+    {
       "source": "/es/category/ingles-para-fundadores-de-startups",
+      "destination": "/es/categoria/ingles-para-fundadores-de-startups/",
+      "permanent": true
+    },
+    {
+      "source": "/es/category/ingles-para-fundadores-de-startups/",
       "destination": "/es/categoria/ingles-para-fundadores-de-startups/",
       "permanent": true
     },
@@ -412,7 +763,17 @@
       "permanent": true
     },
     {
+      "source": "/es/category/ingles-para-logistica/",
+      "destination": "/es/categoria/ingles-para-logistica/",
+      "permanent": true
+    },
+    {
       "source": "/es/category/ingles-de-negocios",
+      "destination": "/es/categoria/ingles-para-negocios/",
+      "permanent": true
+    },
+    {
+      "source": "/es/category/ingles-de-negocios/",
       "destination": "/es/categoria/ingles-para-negocios/",
       "permanent": true
     },
@@ -432,7 +793,17 @@
       "permanent": true
     },
     {
+      "source": "/es/category/ingles-para-negocios/",
+      "destination": "/es/categoria/ingles-para-negocios/",
+      "permanent": true
+    },
+    {
       "source": "/es/category/ingles-para-presentaciones",
+      "destination": "/es/categoria/ingles-para-presentaciones/",
+      "permanent": true
+    },
+    {
+      "source": "/es/category/ingles-para-presentaciones/",
       "destination": "/es/categoria/ingles-para-presentaciones/",
       "permanent": true
     },
@@ -442,7 +813,17 @@
       "permanent": true
     },
     {
+      "source": "/es/category/ingles-para-profesionales/",
+      "destination": "/es/categoria/ingles-para-profesionales/",
+      "permanent": true
+    },
+    {
       "source": "/es/category/ingles-para-tecnologia",
+      "destination": "/es/categoria/ingles-para-tecnologia/",
+      "permanent": true
+    },
+    {
+      "source": "/es/category/ingles-para-tecnologia/",
       "destination": "/es/categoria/ingles-para-tecnologia/",
       "permanent": true
     },
@@ -452,7 +833,17 @@
       "permanent": true
     },
     {
+      "source": "/es/category/logistics-english/",
+      "destination": "/es/categoria/ingles-para-logistica/",
+      "permanent": true
+    },
+    {
       "source": "/es/category/professional-english",
+      "destination": "/es/categoria/ingles-para-profesionales/",
+      "permanent": true
+    },
+    {
+      "source": "/es/category/professional-english/",
       "destination": "/es/categoria/ingles-para-profesionales/",
       "permanent": true
     },
@@ -462,7 +853,17 @@
       "permanent": true
     },
     {
+      "source": "/es/category/startup-founders/",
+      "destination": "/es/categoria/ingles-para-fundadores-de-startups/",
+      "permanent": true
+    },
+    {
       "source": "/es/category/tech-english",
+      "destination": "/es/categoria/ingles-para-tecnologia/",
+      "permanent": true
+    },
+    {
+      "source": "/es/category/tech-english/",
       "destination": "/es/categoria/ingles-para-tecnologia/",
       "permanent": true
     }
