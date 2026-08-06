@@ -14,6 +14,11 @@ docs/
 └── sessions/       # Development session notes
 ```
 
+## 🧭 Start Here
+
+- **[PROJECT-CONTEXT.md](./PROJECT-CONTEXT.md)** - Standing context for ny-eng and related repos: traffic diagnosis history, cross-repo facts that must be verified against live systems rather than inferred, search strategy, settled decisions, reusable audit commands, environment gotchas
+- **[SESSION_LOG.md](./SESSION_LOG.md)** - Newest-first session history, with the standing **Open Items** register pinned at the top
+
 ## 🚀 Deployment & Operations
 
 - **[DEPLOYMENT-CHECKLIST.md](./deployment/DEPLOYMENT-CHECKLIST.md)** - Complete pre-deployment verification checklist including SEO, performance, and functionality tests

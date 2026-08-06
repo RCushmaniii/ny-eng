@@ -1,6 +1,101 @@
 # Session Log — ny-eng
 
 Entries are newest-first. Each entry documents one Claude Code working session.
+Standing context that never gets checked off — diagnosis history, cross-repo
+facts, strategy, settled decisions, reusable commands — lives in
+`docs/PROJECT-CONTEXT.md`.
+
+---
+
+## Open Items
+
+Standing register. Pinned above the dated entries, carried forward every session.
+
+**An item leaves this list only when it has been verified end to end.** "Tests
+pass" and "the config looks right" are not verification — PR #218's redirects
+were verified and still dead for 11 days, and `validate:all` sat green over a
+permanently-red sub-validator twice. Each item below names what closing it
+actually requires.
+
+Last swept 2026-08-06, when `docs/HANDOFF.md` was folded in and each of its open
+items re-checked against current code.
+
+---
+
+- [ ] **"X vs Y" comparison pages for Executive Pushback and Drive the Decision.**
+  *Blocks:* these two are the differentiated offer we lead with, and neither has a
+  granular search entry point. Past Tenses does — four of them
+  (`knew-vs-found-out`, `there-was-vs-there-has-been`, `top-10-confused-pairs`,
+  `story-openers`) — and its sibling `cheat-sheet` page sits at **position 10.5
+  unpromoted**, the best organic position on any course asset. Without these, both
+  courses are reachable only through a hub, and hubs do not rank (56–83).
+  *Verified still open 2026-08-06:* `src/pages/en/course/executive-pushback/` and
+  `.../drive-the-decision/` contain hub + lessons + cheat sheet only. Verb Patterns
+  has three comparison-shaped pages already, but they are curriculum lessons in
+  `src/data/verb-patterns/levels.ts`, not standalone entry points.
+  *Closes when:* pages exist EN + ES, are linked from their hubs, and have been
+  submitted to GSC/IndexNow.
+
+- [ ] **GSC re-check — two windows, one report.**
+  *Blocks:* every content decision after this. Two rounds of SEO work are in
+  flight and neither has been measured, so any further content work is guessing.
+  *Watch at ~2026-08-20* (post PR #225/#228): the course hubs moving off position
+  38.5 / 57–61 on the `... for spanish speakers` cluster — the single largest
+  pocket of demand on the domain — the interview post off 19.6, and whether the
+  four new cheat sheets enter around position 10 the way Past Tenses did.
+  *Watch at ~2026-09-02* (post PR #231/#232, the redirect fix): legacy-URL
+  impressions **transferring** to `/en/courses/` rather than evaporating, and Bing
+  impressions moving off the ~15/day floor held since Jul 2025.
+  *Closes when:* both windows have been pulled and the result written into a dated
+  entry — including if the answer is "nothing moved," which is itself the finding.
+
+- [ ] **`cushlabs-messenger-bot/docs/META_GRAPH_API.md` still says "Status: Not
+  started."**
+  *Blocks:* a cold-start session in that repo will conclude the Facebook
+  publishing capability does not exist and rebuild it. That exact false conclusion
+  has already cost time once — recorded in the 2026-07-25 entry below and in
+  `docs/PROJECT-CONTEXT.md` §2.
+  *Verified still open 2026-08-06:* the file was last touched 2026-04-07 and still
+  lists `scripts/fb-post.ts` under "Planned Scripts (TBD)", while
+  `scripts/fb-page/fb-admin.ts`, `scripts/ig/ig-admin.ts`, and
+  `scripts/demo-factory/` all ship today. Its Status line also points readers at
+  that repo's own `HANDOFF.md`.
+  *Closes when:* the doc describes the shipped CLI surface. Cross-repo — do it
+  next time that repo is open, not from here.
+
+- [ ] **Unexplained email to `camila-demo-test@example.com`.**
+  *Blocks:* nothing if it is demo seed data. If it is a live path with a fallback
+  recipient, real leads are being mailed to a reserved placeholder domain and
+  silently lost — which is why it cannot be dropped on inference.
+  *Narrowed 2026-08-06:* the address appears in **no repo**. No production send
+  path in `ny-eng`, `cushlabs-messenger-bot`, or `cushlabs-ai-voice-agent`
+  hardcodes an `@example.com` recipient — the only hit is a test fixture at
+  `cushlabs-ai-voice-agent/test/server.test.js:313`. "Camila" is the fictitious
+  concierge persona for the Lumière Medspa demo tenant
+  (`scripts/demo-factory/tenants/lumiere-demo.config.json`), which points at demo
+  seed data. Not provable from code either way.
+  *Closes when:* Resend delivery logs are checked for that recipient. The Resend
+  MCP key available to Claude is send-only and returns 401 on read, so this needs
+  the Resend dashboard — one lookup, then it either closes or becomes a real bug.
+
+- [ ] **Decide whether outbound PSTN calling should exist at all.** Robert flagged
+  he may not want it; PR #41 only capped it.
+  *Blocks:* real money, on a route that is client-facing.
+  *Verified 2026-08-06:* `cushlabs-ai-voice-agent/server.js:257` reads
+  `Number(process.env.OUTBOUND_CALLS_PER_DAY) || 50`, and that variable is absent
+  from the env file on the box (`docs/COST-CONTROLS.md:131`), so the **default 50
+  billed calls/day is live** on `voice.cushlabs.ai/realestate` (the "David" agent).
+  *Closes when:* Robert decides. To disable, set `OUTBOUND_CALLS_PER_DAY=0` in the
+  env file on the VPS and re-up the container, or gate the route behind a flag —
+  Claude can do both over SSH.
+
+- [ ] **Vapi auto-recharge state has never been re-verified.**
+  *Blocks:* the spend ceiling. Robert changed the payment method on 2026-07-25 and
+  auto-recharge was not checked afterward. If it is OFF, the credit balance is a
+  natural ceiling and nothing more is needed. If it is ON with no Spending Limit,
+  there is no ceiling at all — and the outbound route above can bill against it.
+  *Closes when:* Vapi → Settings → Billing is read. Dashboard-only; no API access
+  configured from here.
 
 ---
 
@@ -24,7 +119,7 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 - [ ] **Re-check GSC ~2026-09-02** (4 weeks). The measurable signal is legacy-URL impressions transferring to `/en/courses/` rather than evaporating, and Bing impressions moving off the ~15/day floor they have held since Jul 2025.
 - [ ] Cut a GitHub release. Version is drifted three ways: highest tag `v3.0.1`, GitHub "Latest" `v2.1.0` (2026-04-17), `package.json` `2.2.0` — with ~20 PRs merged since.
-- [ ] "X vs Y" comparison pages for the master classes — still the open half of handoff item 2.
+- [ ] "X vs Y" comparison pages for the master classes — still the open half of the cheat-sheet/entry-point work. *(Now tracked in **Open Items** at the top of this file.)*
 
 ### Accomplished (continued — maintenance sweep)
 
@@ -61,7 +156,7 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ### Decisions Made
 
-- **Cancelled the approved Guadalajara "gratis" post.** The site is already **position 1.0** for `clases de inglés guadalajara` and it yields 3 impressions / 1 click per 90 days; the existing GDL post returns zero queries. Struck from the handoff and marked do-not-revive without new volume data.
+- **Cancelled the approved Guadalajara "gratis" post.** The site is already **position 1.0** for `clases de inglés guadalajara` and it yields 3 impressions / 1 click per 90 days; the existing GDL post returns zero queries. Marked do-not-revive without new volume data — recorded in `docs/PROJECT-CONTEXT.md` §4.
 - **Skipped a Verb Patterns cheat sheet.** `diagnosis-table` and `top-traps` already are that asset; a third would recreate the exact cannibalization #220 cleaned up.
 - **Left the root `/` 307 alone.** It's conditional on `accept-language`; a temporary redirect is correct for locale-adaptive routing because the destination varies per user. A 308 would cache one language for everyone.
 - **Left three `H1 too long` warnings alone** — they're two-sentence editorial headlines ("Feel the story. Don't think about the rules."), a brand-voice call, and warnings don't block the gate.
@@ -69,7 +164,7 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 ### Immediate Next Steps
 
 - [ ] **2026-08-20 — GSC re-check** (calendared 06:30–07:00). Watch the hubs moving off pos 38.5 / 57–61 on the `for spanish speakers` cluster, the interview post off 19.6, and whether the four new cheat sheets enter around pos 10 like Past Tenses did.
-- [ ] Build "X vs Y" comparison pages for the master classes — the remaining half of handoff item 2. Past Tenses has four; no other course has any.
+- [ ] Build "X vs Y" comparison pages for the master classes — the remaining half of the granular-entry-point work. Past Tenses has four; Executive Pushback and Drive the Decision have none. *(Now tracked in **Open Items** at the top of this file.)*
 - [ ] Add `ignoreErrors`/`beforeSend` to the Sentry config in `astro.config.mjs` — currently zero noise filtering.
 
 ### Technical Debt
@@ -102,7 +197,7 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 - **PR #223** — repointed the three EN quiz CTAs off the legacy unscoped flow. Turned out not to be a design decision: the ES page already used the correct `/es/quiz/it-services/question/1` pattern, so ES set the convention and EN was simply stale. Full funnel now walks 200 end-to-end in both languages.
 - **PR #224** — homepage free-course showcase, both languages. Two-tier by design: the A1–C2 ladder is a compact strip (commodity offer; those hubs sit at position 56–83), while the four master classes get the visual weight. Unit counts read from course data so the section cannot drift from the catalog. Verified in a real browser at 1440×900 and 390×844 — 20/20 links resolve, no horizontal overflow, a11y semantics + reduced-motion handled.
-- **Wrote `docs/HANDOFF.md`** — a full pickup document for a cold-start session: verified facts, the three false conclusions reached this session and why, the strategy the data supports, prioritized next actions, and the reusable href-audit command.
+- **Wrote `docs/HANDOFF.md`** — a full pickup document for a cold-start session: verified facts, the three false conclusions reached this session and why, the strategy the data supports, prioritized next actions, and the reusable href-audit command. *(Retired 2026-08-06: open work moved to **Open Items** at the top of this file, standing context to `docs/PROJECT-CONTEXT.md`.)*
 
 ### Decisions Made
 
