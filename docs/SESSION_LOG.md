@@ -18,7 +18,9 @@ permanently-red sub-validator twice. Each item below names what closing it
 actually requires.
 
 Last swept 2026-08-06, when `docs/HANDOFF.md` was folded in and each of its open
-items re-checked against current code.
+items re-checked against current code. Two closed on that sweep — Instagram
+publishing and the `camila-demo-test@example.com` bounce — both written up in
+`docs/PROJECT-CONTEXT.md` §8 so the reasoning survives the checkbox.
 
 ---
 
@@ -62,21 +64,6 @@ items re-checked against current code.
   that repo's own `HANDOFF.md`.
   *Closes when:* the doc describes the shipped CLI surface. Cross-repo — do it
   next time that repo is open, not from here.
-
-- [ ] **Unexplained email to `camila-demo-test@example.com`.**
-  *Blocks:* nothing if it is demo seed data. If it is a live path with a fallback
-  recipient, real leads are being mailed to a reserved placeholder domain and
-  silently lost — which is why it cannot be dropped on inference.
-  *Narrowed 2026-08-06:* the address appears in **no repo**. No production send
-  path in `ny-eng`, `cushlabs-messenger-bot`, or `cushlabs-ai-voice-agent`
-  hardcodes an `@example.com` recipient — the only hit is a test fixture at
-  `cushlabs-ai-voice-agent/test/server.test.js:313`. "Camila" is the fictitious
-  concierge persona for the Lumière Medspa demo tenant
-  (`scripts/demo-factory/tenants/lumiere-demo.config.json`), which points at demo
-  seed data. Not provable from code either way.
-  *Closes when:* Resend delivery logs are checked for that recipient. The Resend
-  MCP key available to Claude is send-only and returns 401 on read, so this needs
-  the Resend dashboard — one lookup, then it either closes or becomes a real bug.
 
 - [ ] **Decide whether outbound PSTN calling should exist at all.** Robert flagged
   he may not want it; PR #41 only capped it.

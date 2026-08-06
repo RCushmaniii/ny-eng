@@ -253,3 +253,30 @@ Recorded so the reasoning is not lost when someone reads an older note.
   and #195 on 2026-08-02 — `scripts/ig/ig-admin.ts`, Reels, Stories, a scheduler,
   and the carousel generator, with multi-account targeting and the business
   account as default.
+
+- **The `camila-demo-test@example.com` bounce was a stale manual test booking, not
+  a bug.** It was never an email-provider problem, which is why both a repo-wide
+  code search and the Resend dashboard came back empty — **the sender was Google
+  Calendar, not Resend.**
+
+  `cushlabs/workers/booking-worker.js:409` creates the consultation event with
+  `sendUpdates=all` and `attendees: [{ email }]` — the visitor-supplied address —
+  plus two email reminder overrides at 24 h and 1 h (`:429`). So Calendar mails the
+  invite and both reminders to whatever address was submitted, and every failure
+  bounces back to the organizer.
+
+  The record matches exactly. Event `m231a9ge9qqqecrli6mr94t6p8`, *"AI Strategy
+  Consultation - CushLabs: DEMO TEST"*, created 2026-07-26 04:14 UTC on Robert's
+  primary calendar, description *"Name: DEMO TEST … Notes: please delete this
+  event"* — a deliberate test of the CushLabs booking flow. Bounces landed
+  2026-07-26 04:14, then 2026-07-27 00:50 and 00:51 after the event was edited,
+  then the 24 h and 1 h reminders fired on 07-29 and 07-30.
+
+  **No live path is mailing real leads to a placeholder domain.** The address was
+  the input, not a fallback. Nothing in `ny-eng` was ever involved. The booking
+  worker's rate limiting is D1-backed at 5/hour (`RATE_LIMIT_MAX`), so this is not
+  an open abuse surface either.
+
+  *Residual:* the event still exists on the primary calendar with
+  `status: confirmed`, despite its own note asking for deletion. Harmless — it is
+  in the past — but it is the reason reminders kept firing after the test.
