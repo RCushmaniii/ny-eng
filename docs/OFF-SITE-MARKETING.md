@@ -248,6 +248,59 @@ listings is a pattern search engines discount.
 
 ---
 
+## Tier A+ — direct outreach to HR managers (Robert's idea, 2026-08-06)
+
+**Not booked yet — it needs Robert's go-ahead first, and he raised it while closing the
+session. Recorded here so it is not lost.** It is the strongest remaining option on this
+page by a wide margin.
+
+### Why it survives the brand conflict when nothing else does
+
+Every other authority channel fails because it makes a **public, indexed, permanent**
+claim about who Robert is. Direct outreach makes no public claim at all. It is a private
+message to one buyer, invisible to search engines and to CushLabs prospects.
+
+That is not a minor advantage — it is the entire reason this works and HARO does not.
+
+### The one rule that decides whether it stays safe
+
+**Email, not LinkedIn DM.**
+
+A LinkedIn message routes through Robert's personal profile. The HR manager receiving a
+business-English pitch clicks through and sees an AI consultant — confusing at best, and
+it drags the coaching identity back onto the profile he is protecting. Not permanent
+like a published byline, but it defeats the point.
+
+Cold email from an `@nyenglishteacher.com` address touches his public identity **zero
+times**. Use LinkedIn only for *research* — finding who the HR or L&D lead is — never
+for the send.
+
+### Why the economics beat everything else here
+
+One corporate account is worth more than every organic-traffic item on this page
+combined. The reference point is real: the April 2026 corporate prospect was 4–6 middle
+managers. At 500 MXN/hr that is a standing engagement, against a domain whose best
+organic month produced 4 clicks.
+
+It also sells into the exact gap the ICP already documents — companies expanding into
+the US market, and directors whose promotion suddenly requires English.
+
+### If Robert green-lights it
+
+- The `cold-email` skill in the writing system exists for precisely this and must be
+  used — never free-write outreach.
+- Target list first: Guadalajara companies with US/nearshore exposure — logistics, med
+  device, IT services, manufacturing. The existing client names (Driscoll's, CEVA
+  Logistics, Teramar Brands) are the pattern to match, and are usable as proof.
+- Sequence, not a one-shot send.
+- Book it the same way as everything else: 30 minutes, 06:00–09:00.
+
+**Open question for Robert:** does an `@nyenglishteacher.com` sending address exist and
+is it warmed? Cold email from a cold domain lands in spam. This needs checking before
+the first send, not after.
+
+---
+
 ## Tier C — research before committing
 
 ### 6. AmCham Guadalajara
