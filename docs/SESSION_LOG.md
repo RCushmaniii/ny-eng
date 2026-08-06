@@ -83,7 +83,10 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   exists. Cold email from a cold domain lands in spam — check before the first send.
   *Closes when:* green-lit, domain verified, and a `cold-email`-skill sequence booked.
 
-- [ ] **`icp-nyet.json` carries a banned claim that keeps re-seeding into copy.**
+- [ ] **The NY English ICP file carries a banned claim that keeps re-seeding into copy.**
+  *Why this is an ny-eng item despite the file living elsewhere:* `icp-nyet.json` is this
+  brand's own ICP, and it nearly put the banned claim into `content-marketing/` in this
+  repo on 2026-08-06. The fix is one line in another repo; the damage lands here.
   *Blocks:* every future piece of NY English marketing copy, silently.
   `objections_and_rebuttals.past_failures` says *"a native English speaker with 20 years
   in Fortune 500 boardrooms."* Aggregate career-year counts were purged from all 11
@@ -107,45 +110,14 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Blocks:* judging whether the review push works — there is no current baseline.
   *Closes when:* Robert supplies current review count, rating and interactions.
 
-> **Restored 2026-08-06.** The four items below disappeared from this register between
-> two reads during the 2026-08-06 session. Nothing in that session verified any of them,
-> so they were put back rather than left silently clear — a register that reads clean
-> because nobody checked is the exact failure it exists to prevent. If any were closed
-> deliberately, delete them and say what verified it.
-
-- [ ] **`cushlabs-messenger-bot/docs/META_GRAPH_API.md` still says "Status: Not started."**
-  *Blocks:* a cold-start session in that repo will conclude the Facebook publishing
-  capability does not exist and rebuild it. That exact false conclusion has already cost
-  time once.
-  *Verified still open 2026-08-06:* last touched 2026-04-07, still lists
-  `scripts/fb-post.ts` under "Planned Scripts (TBD)" while `scripts/fb-page/fb-admin.ts`,
-  `scripts/ig/ig-admin.ts` and `scripts/demo-factory/` all ship today.
-  *Closes when:* the doc describes the shipped CLI surface. Cross-repo.
-
-- [ ] **Unexplained email to `camila-demo-test@example.com`.**
-  *Blocks:* nothing if it is demo seed data. If it is a live path with a fallback
-  recipient, real leads are being mailed to a reserved placeholder domain and silently
-  lost — which is why it cannot be dropped on inference.
-  *Narrowed 2026-08-06:* appears in no repo. Only hit is a test fixture at
-  `cushlabs-ai-voice-agent/test/server.test.js:313`; "Camila" is the fictitious concierge
-  persona for the Lumière Medspa demo tenant. Points at seed data, not provable either way.
-  *Closes when:* Resend delivery logs are checked for that recipient. The Resend MCP key
-  is send-only and returns 401 on read, so this needs the dashboard.
-
-- [ ] **Decide whether outbound PSTN calling should exist at all.**
-  *Blocks:* real money, on a client-facing route.
-  *Verified 2026-08-06:* `cushlabs-ai-voice-agent/server.js:257` reads
-  `Number(process.env.OUTBOUND_CALLS_PER_DAY) || 50`, and that variable is absent from the
-  env file on the box, so the **default 50 billed calls/day is live** on
-  `voice.cushlabs.ai/realestate`.
-  *Closes when:* Robert decides. To disable, set `OUTBOUND_CALLS_PER_DAY=0` on the VPS and
-  re-up the container, or gate the route behind a flag — Claude can do both over SSH.
-
-- [ ] **Vapi auto-recharge state has never been re-verified.**
-  *Blocks:* the spend ceiling. Robert changed the payment method 2026-07-25 and
-  auto-recharge was not checked afterward. If ON with no Spending Limit there is no
-  ceiling at all — and the outbound route above can bill against it.
-  *Closes when:* Vapi → Settings → Billing is read. Dashboard-only.
+> **Scope rule, added 2026-08-06.** This register holds **ny-eng items only.** Work
+> belonging to another repo goes in that repo's own log — `cushlabs-ai-voice-agent` and
+> `cushlabs-messenger-bot` both have a `SESSION_LOG.md`, and the latter also has
+> `docs/OPEN-QUESTIONS.md`. Four cross-repo items (Vapi auto-recharge, outbound PSTN
+> calling, `META_GRAPH_API.md`, the `camila-demo-test@example.com` email) were briefly
+> re-added here on 2026-08-06 and removed again the same day — they are real and still
+> open, they are simply not this repo's business. Their full text is in this file's git
+> history at commit `f81fef9` if they need to be moved rather than rewritten.
 
 ---
 
