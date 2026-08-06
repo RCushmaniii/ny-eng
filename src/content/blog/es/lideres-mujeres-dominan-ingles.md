@@ -7,7 +7,7 @@ categories:
   - "executive-english"
 readingTime: "6 min de lectura"
 audience: "Para mujeres profesionales y ejecutivas bilingües en México"
-featuredImage: "../en/images/women-leaders-command-rooms-english.png"
+featuredImage: "../en/images/women-leaders-command-rooms-english.webp"
 imageAlt: "Una ejecutiva latina segura de sí misma de pie a la cabeza de una mesa de conferencias, dominando la sala"
 translations:
   en: "/en/blog/women-leaders-command-rooms-english/"

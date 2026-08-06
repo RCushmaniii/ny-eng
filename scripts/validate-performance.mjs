@@ -9,7 +9,7 @@
  * 3. Build-time performance bottlenecks
  */
 
-import { readFileSync, readdirSync, statSync } from "fs";
+import { readFileSync, readdirSync, statSync, existsSync } from "fs";
 import { join, extname } from "path";
 
 /**
@@ -18,11 +18,34 @@ import { join, extname } from "path";
 function checkImageSizes() {
   console.log("🖼️  Checking image file sizes...");
 
-  const imageDir = "./src/assets/images";
-  const maxImageSize = 50 * 1024; // 50KB
-  const warningSize = 100 * 1024; // 100KB
+  // Measure what SHIPS, not what is committed. Astro re-encodes and resizes
+  // everything it processes, so a 2 MB source PNG can leave as an 89 KB webp —
+  // and a source-byte check reports a disaster that does not exist while missing
+  // the assets that pass through untouched. This validator scanned
+  // ./src/assets/images and was permanently red, which made `validate:all` red,
+  // which meant the whole gate was gating nothing (same failure PR #226 fixed
+  // for the SEO validator).
+  const builtDir = "./dist/_astro";
+  const sourceDir = "./src/assets/images";
+
+  const usingBuilt = existsSync(builtDir);
+  const imageDir = usingBuilt ? builtDir : sourceDir;
+
+  if (!usingBuilt) {
+    console.log(
+      "  ⚠️  dist/_astro not found — falling back to source bytes, which are NOT what ships.\n" +
+        "     Run `npm run build` first for a meaningful result.",
+    );
+  }
+
+  // Thresholds apply to a single SHIPPED asset. >200 KB for one image on a
+  // content site is a real Core Web Vitals problem; 100-200 KB is worth a look.
+  const maxImageSize = 100 * 1024;
+  const warningSize = 200 * 1024;
 
   let issues = 0;
+  let warnings = 0;
+  let checked = 0;
 
   function checkDirectory(dir) {
     try {
@@ -34,29 +57,23 @@ function checkImageSizes() {
 
         if (stat.isDirectory()) {
           checkDirectory(fullPath);
-        } else if (
-          [".jpg", ".jpeg", ".png", ".webp"].includes(
-            extname(item).toLowerCase(),
-          )
-        ) {
+        } else if ([".jpg", ".jpeg", ".png", ".webp"].includes(extname(item).toLowerCase())) {
           const sizeKB = Math.round(stat.size / 1024);
 
-          if (stat.size > maxImageSize) {
-            if (stat.size > warningSize) {
-              console.log(
-                `  ❌ CRITICAL: ${fullPath.replace(/\\/g, "/")} (${sizeKB}KB) - Should be <50KB`,
-              );
-              issues++;
-            } else {
-              console.log(
-                `  ⚠️  WARNING: ${fullPath.replace(/\\/g, "/")} (${sizeKB}KB) - Consider optimizing`,
-              );
-            }
-          } else {
+          checked++;
+          if (stat.size > warningSize) {
             console.log(
-              `  ✅ ${fullPath.replace(/\\/g, "/")} (${sizeKB}KB) - Optimized`,
+              `  ❌ CRITICAL: ${fullPath.replace(/\\/g, "/")} (${sizeKB}KB) - a single shipped asset over ${Math.round(warningSize / 1024)}KB`,
             );
+            issues++;
+          } else if (stat.size > maxImageSize) {
+            console.log(
+              `  ⚠️  WARNING: ${fullPath.replace(/\\/g, "/")} (${sizeKB}KB) - over ${Math.round(maxImageSize / 1024)}KB, worth a look`,
+            );
+            warnings++;
           }
+          // Passing assets are not listed. 204 lines of "✅ Optimized" is how a
+          // real failure gets scrolled past.
         }
       }
     } catch (error) {
@@ -66,6 +83,9 @@ function checkImageSizes() {
   }
 
   checkDirectory(imageDir);
+  console.log(
+    `  ${checked} ${usingBuilt ? "shipped" : "source"} images checked — ${issues} critical, ${warnings} warning, ${checked - issues - warnings} fine`,
+  );
   return issues;
 }
 
@@ -83,16 +103,9 @@ function checkTemplatePerformance() {
       const content = readFileSync(filePath, "utf-8");
 
       // Check for complex filtering logic (old patterns)
-      if (
-        content.includes("filter(post => {") &&
-        content.includes("categories.find(")
-      ) {
-        console.log(
-          `  ⚠️  WARNING: Complex category filtering in ${filePath.replace(/\\/g, "/")}`,
-        );
-        console.log(
-          `     Consider optimizing nested loops and category matching`,
-        );
+      if (content.includes("filter(post => {") && content.includes("categories.find(")) {
+        console.log(`  ⚠️  WARNING: Complex category filtering in ${filePath.replace(/\\/g, "/")}`);
+        console.log(`     Consider optimizing nested loops and category matching`);
       }
 
       // Check for multiple getCollection calls
@@ -114,9 +127,7 @@ function checkTemplatePerformance() {
         console.log(
           `  ⚠️  WARNING: Heavy string operations in filtering logic in ${filePath.replace(/\\/g, "/")}`,
         );
-        console.log(
-          `     Consider pre-processing or caching normalized values`,
-        );
+        console.log(`     Consider pre-processing or caching normalized values`);
       }
 
       // Check for optimized filtering patterns (should be good)
@@ -175,9 +186,7 @@ function checkBuildConfig() {
       !astroConfig.includes("astro:assets") &&
       !astroConfig.includes("astro/assets/services/sharp")
     ) {
-      console.log(
-        `  ⚠️  WARNING: No image optimization detected in astro.config.mjs`,
-      );
+      console.log(`  ⚠️  WARNING: No image optimization detected in astro.config.mjs`);
       console.log(`     Consider enabling Astro's built-in image optimization`);
     } else if (astroConfig.includes("astro/assets/services/sharp")) {
       console.log(`  ✅ Sharp image optimization enabled`);
@@ -186,9 +195,7 @@ function checkBuildConfig() {
     // Check for compression
     if (!astroConfig.includes("compress") && !astroConfig.includes("vite")) {
       console.log(`  ⚠️  WARNING: No compression configuration detected`);
-      console.log(
-        `     Consider enabling Vite compression for better performance`,
-      );
+      console.log(`     Consider enabling Vite compression for better performance`);
     }
 
     console.log(`  ✅ Build configuration checked`);

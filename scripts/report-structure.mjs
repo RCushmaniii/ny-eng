@@ -18,8 +18,7 @@ async function walk(dir, fileList = []) {
   for (const file of files) {
     const fullPath = path.join(dir, file.name);
     if (file.isDirectory()) {
-      if (["node_modules", "dist", ".astro", ".git"].includes(file.name))
-        continue;
+      if (["node_modules", "dist", ".astro", ".git"].includes(file.name)) continue;
       await walk(fullPath, fileList);
     } else {
       fileList.push(fullPath.replace(ROOT, ""));
@@ -49,9 +48,7 @@ function classifyWarnings(files) {
   }
 
   // YELLOW: Backup/old/disabled
-  const backups = files.filter((f) =>
-    f.match(/(\.bak|\.old|backup|\.disabled)/i),
-  );
+  const backups = files.filter((f) => f.match(/(\.bak|\.old|backup|\.disabled)/i));
   if (backups.length > 0) {
     issues.push({
       severity: "yellow",
@@ -87,9 +84,7 @@ function classifyWarnings(files) {
   }
 
   // ORANGE: Root-level logs/CSVs
-  const rootReports = files.filter(
-    (f) => f.match(/\.(log|csv)$/i) && isRootLevel(f),
-  );
+  const rootReports = files.filter((f) => f.match(/\.(log|csv)$/i) && isRootLevel(f));
   if (rootReports.length > 0) {
     issues.push({
       severity: "orange",
@@ -101,9 +96,7 @@ function classifyWarnings(files) {
   }
 
   // ORANGE: Root-level scripts
-  const rootScripts = files.filter(
-    (f) => f.match(/\.(ps1|mjs|js|patch)$/i) && isRootLevel(f),
-  );
+  const rootScripts = files.filter((f) => f.match(/\.(ps1|mjs|js|patch)$/i) && isRootLevel(f));
   if (rootScripts.length > 0) {
     issues.push({
       severity: "orange",
@@ -146,7 +139,19 @@ async function writeDashboard(issues) {
   let history = [];
   try {
     history = JSON.parse(await fs.readFile(HISTORY_FILE, "utf8"));
-  } catch {}
+  } catch (err) {
+    // A missing file is the normal first run. A CORRUPT file is not, and
+    // swallowing it silently discards every prior run without saying so.
+    if (err.code === "ENOENT") {
+      history = [];
+    } else {
+      console.error(
+        `⚠️  ${HISTORY_FILE} exists but could not be parsed: ${err.message}\n` +
+          `   Starting a fresh history — PRIOR RUN HISTORY IS BEING DISCARDED.`,
+      );
+      history = [];
+    }
+  }
   history.push({
     date: new Date().toISOString(),
     counts: {

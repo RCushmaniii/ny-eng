@@ -30,10 +30,7 @@ const MAX_HTML_BYTES = 100_000; // 100KB is plenty to see <link rel="canonical">
 /* --------------------------------- startup ---------------------------------- */
 
 console.log("🔧 Canonical validator starting…");
-console.log(
-  "   SITE_URL =",
-  process.env.SITE_URL || `(default) ${DEFAULT_SITE_URL}`,
-);
+console.log("   SITE_URL =", process.env.SITE_URL || `(default) ${DEFAULT_SITE_URL}`);
 console.log("   VERBOSE  =", VERBOSE ? "1" : "0");
 
 /* ------------------------- helpers: normalization --------------------------- */
@@ -61,8 +58,7 @@ function normalizeForCompare(u) {
       url.port = "";
     }
     // add trailing slash for “directory” paths
-    if (!url.pathname.includes(".") && !url.pathname.endsWith("/"))
-      url.pathname += "/";
+    if (!url.pathname.includes(".") && !url.pathname.endsWith("/")) url.pathname += "/";
     return url.toString();
   } catch {
     return u;
@@ -120,9 +116,7 @@ function fetchOnce(targetUrl) {
 
         const finish = (buf) => {
           const html = buf.toString("utf8");
-          const m = html.match(
-            /<link[^>]+rel=["']canonical["'][^>]*href=["']([^"']+)["']/i,
-          );
+          const m = html.match(/<link[^>]+rel=["']canonical["'][^>]*href=["']([^"']+)["']/i);
           const canonical = m ? m[1] : null;
           resolve({
             status: res.statusCode,
@@ -135,12 +129,9 @@ function fetchOnce(targetUrl) {
 
         res.on("end", () => {
           const raw = Buffer.concat(chunks);
-          if (enc === "gzip")
-            return zlib.gunzip(raw, (_, out) => finish(out || raw));
-          if (enc === "br")
-            return zlib.brotliDecompress(raw, (_, out) => finish(out || raw));
-          if (enc === "deflate")
-            return zlib.inflate(raw, (_, out) => finish(out || raw));
+          if (enc === "gzip") return zlib.gunzip(raw, (_, out) => finish(out || raw));
+          if (enc === "br") return zlib.brotliDecompress(raw, (_, out) => finish(out || raw));
+          if (enc === "deflate") return zlib.inflate(raw, (_, out) => finish(out || raw));
           finish(raw);
         });
       },
@@ -205,9 +196,7 @@ function extractSampleUrls() {
   // Try to parse from hreflang.ts; otherwise use a sensible default set.
   try {
     const content = readFileSync("./src/utils/hreflang.ts", "utf-8");
-    const blockMatch = content.match(
-      /export const hreflangMappings[^{]*{([\s\S]*?)}\s*;/,
-    );
+    const blockMatch = content.match(/export const hreflangMappings[^{]*{([\s\S]*?)}\s*;/);
     if (!blockMatch) throw new Error("No hreflangMappings export");
     const block = blockMatch[0];
     const entryRegex = /['"]([^'"]+)['"]\s*:\s*{[^}]+}/g;
@@ -270,7 +259,17 @@ async function checkPage(url) {
   if (canonical) {
     try {
       canonical = new URL(canonical, result.finalUrl).toString();
-    } catch {}
+    } catch (err) {
+      // Swallowing this left the raw, unresolvable value in `canonical` and the
+      // page then validated as if it had a good canonical tag. A canonical URL
+      // that will not parse is a reportable defect, not a no-op.
+      return {
+        url,
+        ...result,
+        canonical: null,
+        issue: `Canonical tag is not a resolvable URL: "${result.canonicalRaw}" (${err.message})`,
+      };
+    }
   }
 
   if (!canonical) {
@@ -377,9 +376,7 @@ async function main() {
     console.log(`\n🔗 Testing: ${r.url}`);
     if (r.ok) {
       if (VERBOSE) console.log(`  ⓘ canonical: ${r.canonical}`);
-      console.log(
-        "  ✅ Canonical path matches (host ignored for local testing)",
-      );
+      console.log("  ✅ Canonical path matches (host ignored for local testing)");
       continue;
     }
     if (r.issue) {
@@ -402,24 +399,18 @@ async function main() {
   console.log("=".repeat(60));
   if (errors === 0 && warnings === 0) {
     console.log("✅ All canonical URLs are properly configured!");
-    console.log(
-      "🎉 No redirect chains, path, or trailing-slash mismatches found!",
-    );
+    console.log("🎉 No redirect chains, path, or trailing-slash mismatches found!");
     process.exit(0);
   } else {
     console.log(`❌ Found ${errors} errors and ${warnings} warnings`);
     if (errors > 0) {
       console.log("\n🔧 RECOMMENDED ACTIONS:");
-      console.log(
-        '1) Ensure each page renders a <link rel="canonical" ...> tag',
-      );
+      console.log('1) Ensure each page renders a <link rel="canonical" ...> tag');
       console.log(
         "2) Canonical path should equal the serving path (with same trailing slash rule)",
       );
       console.log("3) Avoid malformed hosts (e.g., double www)");
-      console.log(
-        "4) Make pages return 200 (avoid canonical pointing to a redirect target)",
-      );
+      console.log("4) Make pages return 200 (avoid canonical pointing to a redirect target)");
     }
     process.exit(1);
   }

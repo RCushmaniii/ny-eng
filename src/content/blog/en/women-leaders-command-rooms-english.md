@@ -7,7 +7,7 @@ categories:
   - "executive-english"
 readingTime: "6 min read"
 audience: "For bilingual women professionals and executives in Mexico"
-featuredImage: "./images/women-leaders-command-rooms-english.png"
+featuredImage: "./images/women-leaders-command-rooms-english.webp"
 imageAlt: "A confident Latina executive standing at the head of a conference table, commanding the room"
 translations:
   en: "/en/blog/women-leaders-command-rooms-english/"
