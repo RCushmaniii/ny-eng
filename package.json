@@ -20,6 +20,8 @@
     "validate:performance": "node scripts/validate-performance.mjs",
     "validate:urls": "node scripts/validate-url-structure.mjs",
     "validate:seo": "node scripts/pre-deploy/audits/seo-validator.js",
+    "validate:redirects": "node scripts/seo/redirect-audit.mjs",
+    "verify:deploy": "node scripts/seo/redirect-audit.mjs",
     "validate:all": "npm run validate:404 && npm run validate:canonical && npm run validate:links && npm run validate:performance && npm run validate:urls && npm run validate:seo",
     "generate:pdfs": "python scripts/generate-all-pdfs.py",
     "pdf:metadata": "node scripts/apply-pdf-metadata.mjs",

@@ -359,12 +359,12 @@
     },
     {
       "source": "/en/course/diagnose-before-defend/:slug",
-      "destination": "/en/course/executive-pushback/:slug",
+      "destination": "/en/course/executive-pushback/:slug/",
       "permanent": true
     },
     {
       "source": "/en/course/diagnose-before-defend/:slug/",
-      "destination": "/en/course/executive-pushback/:slug",
+      "destination": "/en/course/executive-pushback/:slug/",
       "permanent": true
     },
     {
@@ -379,12 +379,12 @@
     },
     {
       "source": "/es/curso/diagnostica-antes-de-defender/:slug",
-      "destination": "/es/curso/pushback-ejecutivo/:slug",
+      "destination": "/es/curso/pushback-ejecutivo/:slug/",
       "permanent": true
     },
     {
       "source": "/es/curso/diagnostica-antes-de-defender/:slug/",
-      "destination": "/es/curso/pushback-ejecutivo/:slug",
+      "destination": "/es/curso/pushback-ejecutivo/:slug/",
       "permanent": true
     },
     {

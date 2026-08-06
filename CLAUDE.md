@@ -212,6 +212,35 @@ Claude MUST execute these steps automatically. Never ask Robert to run scripts o
    - Output these in a markdown file at `content-marketing/<slug>-social.md` for Robert to review and post (until social media APIs are integrated)
 7. **Update internal links**: Check if the new post should be linked from existing related posts or pages
 
+### Redirects — verify BOTH slash forms, always (CRITICAL)
+
+**Vercel matches a redirect `source` literally.** A rule written as `/foo` fires on
+`/foo` and returns a **hard 404** on `/foo/`. This site is trailing-slash canonical
+(`build.format: "directory"`, and every `<link rel="canonical">` carries the slash),
+and Google indexed the **slashed** form for 19 of the top 25 legacy URLs.
+
+**Every new redirect must be declared in both forms** — `/foo` and `/foo/` — including
+`:slug` catch-alls. Destinations point at the **canonical (slashed)** form.
+
+**After any change to `vercel.json` redirects, and after the deploy goes live:**
+
+```
+npm run validate:redirects
+```
+
+It fetches every declared rule in both forms, follows each chain, and fails on
+anything that does not land 200. It also refuses to run against a Vercel
+build-in-progress placeholder, which answers **200 to every path** and will
+otherwise report a false green.
+
+_Why this is a CRITICAL rule: PRs #218 and #220 shipped 23 legacy redirects and a
+consolidation 301, both "verified in production" — on the unslashed form only. 85 of
+90 rules were dead for 11 days. `/en/blog/free-english-courses-spanish-speakers/`, the
+single highest-impression URL on the site (~21% of all impressions), served a hard 404
+the entire time. The verification step shared the code's wrong assumption, so it
+confirmed the bug instead of catching it. Fixed in PR #231; the audit script exists so
+a human is never the check again._
+
 ### CSP Maintenance
 
 When adding ANY new external service or API endpoint that the browser calls via fetch/XHR:
