@@ -11,16 +11,24 @@ facts, strategy, settled decisions, reusable commands — lives in
 
 Standing register. Pinned above the dated entries, carried forward every session.
 
+**Scope: ny-eng only.** Every repo keeps its own register in its own
+`docs/SESSION_LOG.md`. Work belonging to another repo does not get tracked here,
+however related it feels — that is how the old `HANDOFF.md` ended up carrying
+voice-agent and messenger-bot items inside the website repo, where nobody looking
+for them would find them.
+
 **An item leaves this list only when it has been verified end to end.** "Tests
 pass" and "the config looks right" are not verification — PR #218's redirects
 were verified and still dead for 11 days, and `validate:all` sat green over a
 permanently-red sub-validator twice. Each item below names what closing it
 actually requires.
 
-Last swept 2026-08-06, when `docs/HANDOFF.md` was folded in and each of its open
-items re-checked against current code. Two closed on that sweep — Instagram
-publishing and the `camila-demo-test@example.com` bounce — both written up in
-`docs/PROJECT-CONTEXT.md` §8 so the reasoning survives the checkbox.
+Last swept 2026-08-06, when `docs/HANDOFF.md` was folded in and every item it
+carried was re-checked. Two closed on verification — Instagram publishing and the
+`camila-demo-test@example.com` bounce — and are written up in
+`docs/PROJECT-CONTEXT.md` §8. Three were not ny-eng work and moved to the repos
+that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agent`,
+`META_GRAPH_API.md` staleness to `cushlabs-messenger-bot`.
 
 ---
 
@@ -51,38 +59,130 @@ publishing and the `camila-demo-test@example.com` bounce — both written up in
   *Closes when:* both windows have been pulled and the result written into a dated
   entry — including if the answer is "nothing moved," which is itself the finding.
 
-- [ ] **`cushlabs-messenger-bot/docs/META_GRAPH_API.md` still says "Status: Not
-  started."**
-  *Blocks:* a cold-start session in that repo will conclude the Facebook
-  publishing capability does not exist and rebuild it. That exact false conclusion
-  has already cost time once — recorded in the 2026-07-25 entry below and in
-  `docs/PROJECT-CONTEXT.md` §2.
-  *Verified still open 2026-08-06:* the file was last touched 2026-04-07 and still
-  lists `scripts/fb-post.ts` under "Planned Scripts (TBD)", while
-  `scripts/fb-page/fb-admin.ts`, `scripts/ig/ig-admin.ts`, and
-  `scripts/demo-factory/` all ship today. Its Status line also points readers at
-  that repo's own `HANDOFF.md`.
-  *Closes when:* the doc describes the shipped CLI surface. Cross-repo — do it
-  next time that repo is open, not from here.
+- [ ] **Decide whether to spend Robert's personal name on NY English at all.**
+  *Blocks:* the entire off-site authority plan, and whether NY English organic traffic
+  has any path above its current floor.
+  *Established 2026-08-06:* founder authority is by definition personal, and Robert's
+  person is committed to CushLabs AI consulting (first paying client 2026-08-04). The
+  two identities do not coexist in this market and the damage runs one direction. So
+  NY English's off-site ceiling is **business-entity channels only** — precisely the
+  channels already shown not to move anything (local pack won at position 1.0–1.5,
+  which yields ~1 click/quarter).
+  *Two sub-decisions, both calendared:* HARO — permanent indexed byline, no admin-only
+  version, recommendation is to repoint the kit at CushLabs (Wed 2026-08-12 is a
+  **decision** slot, not a task). LinkedIn Page — admin-only or skip (Fri 2026-08-07).
+  *Closes when:* Robert answers and `docs/OFF-SITE-MARKETING.md` records it.
 
-- [ ] **Decide whether outbound PSTN calling should exist at all.** Robert flagged
-  he may not want it; PR #41 only capped it.
-  *Blocks:* real money, on a route that is client-facing.
+- [ ] **Cold outreach to Guadalajara HR/L&D leads — approved in principle, unbooked.**
+  *Blocks:* the highest-value revenue path available here. One corporate account (the
+  April 2026 prospect was 4–6 middle managers) outweighs every organic item combined.
+  *Why it survives where HARO does not:* it makes no public, indexed claim about who
+  Robert is. **Email from `@nyenglishteacher.com`, never LinkedIn DM** — a DM routes
+  the recipient to the personal profile being protected. LinkedIn for research only.
+  *Unverified prerequisite:* whether a warmed `@nyenglishteacher.com` sending domain
+  exists. Cold email from a cold domain lands in spam — check before the first send.
+  *Closes when:* green-lit, domain verified, and a `cold-email`-skill sequence booked.
+
+- [ ] **`icp-nyet.json` carries a banned claim that keeps re-seeding into copy.**
+  *Blocks:* every future piece of NY English marketing copy, silently.
+  `objections_and_rebuttals.past_failures` says *"a native English speaker with 20 years
+  in Fortune 500 boardrooms."* Aggregate career-year counts were purged from all 11
+  resume variants on 2026-08-03 as an age signal, then reappeared in marketing. Written
+  around by hand on 2026-08-06, which is not a control.
+  *Closes when:* fixed in `operating-system/nyet/icp-nyet.json`. Cross-repo.
+
+- [ ] **On-site behaviour is currently unmeasurable.**
+  *Blocks:* any conversion question. GSC shows what happens before the click; nothing
+  shows what happens after.
+  *Verified 2026-08-05:* Vercel Web Analytics returns `404 Web Analytics not found` via
+  API for **both** `ny-eng` and `cushlabs-os-dashboard`, while
+  `/_vercel/insights/script.js` serves 200 in production. Whether this is a Hobby-plan
+  API limitation or a disabled toggle was not guessed either way.
+  *Explicitly not GA4:* at 4 clicks/28 days it measures nothing and adds a consent
+  banner to a site just made 31% lighter. Robert agreed 2026-08-05.
+  *Closes when:* the Vercel dashboard is checked and the answer recorded here.
+
+- [ ] **`GMB-LOG.md` stale since 2026-03-30**, and it is the only record of the
+  best-performing channel (337 customer interactions vs 4 organic clicks/28 days).
+  *Blocks:* judging whether the review push works — there is no current baseline.
+  *Closes when:* Robert supplies current review count, rating and interactions.
+
+> **Restored 2026-08-06.** The four items below disappeared from this register between
+> two reads during the 2026-08-06 session. Nothing in that session verified any of them,
+> so they were put back rather than left silently clear — a register that reads clean
+> because nobody checked is the exact failure it exists to prevent. If any were closed
+> deliberately, delete them and say what verified it.
+
+- [ ] **`cushlabs-messenger-bot/docs/META_GRAPH_API.md` still says "Status: Not started."**
+  *Blocks:* a cold-start session in that repo will conclude the Facebook publishing
+  capability does not exist and rebuild it. That exact false conclusion has already cost
+  time once.
+  *Verified still open 2026-08-06:* last touched 2026-04-07, still lists
+  `scripts/fb-post.ts` under "Planned Scripts (TBD)" while `scripts/fb-page/fb-admin.ts`,
+  `scripts/ig/ig-admin.ts` and `scripts/demo-factory/` all ship today.
+  *Closes when:* the doc describes the shipped CLI surface. Cross-repo.
+
+- [ ] **Unexplained email to `camila-demo-test@example.com`.**
+  *Blocks:* nothing if it is demo seed data. If it is a live path with a fallback
+  recipient, real leads are being mailed to a reserved placeholder domain and silently
+  lost — which is why it cannot be dropped on inference.
+  *Narrowed 2026-08-06:* appears in no repo. Only hit is a test fixture at
+  `cushlabs-ai-voice-agent/test/server.test.js:313`; "Camila" is the fictitious concierge
+  persona for the Lumière Medspa demo tenant. Points at seed data, not provable either way.
+  *Closes when:* Resend delivery logs are checked for that recipient. The Resend MCP key
+  is send-only and returns 401 on read, so this needs the dashboard.
+
+- [ ] **Decide whether outbound PSTN calling should exist at all.**
+  *Blocks:* real money, on a client-facing route.
   *Verified 2026-08-06:* `cushlabs-ai-voice-agent/server.js:257` reads
-  `Number(process.env.OUTBOUND_CALLS_PER_DAY) || 50`, and that variable is absent
-  from the env file on the box (`docs/COST-CONTROLS.md:131`), so the **default 50
-  billed calls/day is live** on `voice.cushlabs.ai/realestate` (the "David" agent).
-  *Closes when:* Robert decides. To disable, set `OUTBOUND_CALLS_PER_DAY=0` in the
-  env file on the VPS and re-up the container, or gate the route behind a flag —
-  Claude can do both over SSH.
+  `Number(process.env.OUTBOUND_CALLS_PER_DAY) || 50`, and that variable is absent from the
+  env file on the box, so the **default 50 billed calls/day is live** on
+  `voice.cushlabs.ai/realestate`.
+  *Closes when:* Robert decides. To disable, set `OUTBOUND_CALLS_PER_DAY=0` on the VPS and
+  re-up the container, or gate the route behind a flag — Claude can do both over SSH.
 
 - [ ] **Vapi auto-recharge state has never been re-verified.**
-  *Blocks:* the spend ceiling. Robert changed the payment method on 2026-07-25 and
-  auto-recharge was not checked afterward. If it is OFF, the credit balance is a
-  natural ceiling and nothing more is needed. If it is ON with no Spending Limit,
-  there is no ceiling at all — and the outbound route above can bill against it.
-  *Closes when:* Vapi → Settings → Billing is read. Dashboard-only; no API access
-  configured from here.
+  *Blocks:* the spend ceiling. Robert changed the payment method 2026-07-25 and
+  auto-recharge was not checked afterward. If ON with no Spending Limit there is no
+  ceiling at all — and the outbound route above can bill against it.
+  *Closes when:* Vapi → Settings → Billing is read. Dashboard-only.
+
+---
+
+## Session: 2026-08-06 (Off-site marketing gets an operating doc — and hits a brand wall)
+
+Continuation of the 2026-08-05 session across midnight. That entry covers the technical work.
+
+### Accomplished
+
+- **Cut `v3.1.0`**, first release since April, notes from PRs #211–234. Version had drifted three ways — highest tag `v3.0.1`, "Latest" badge on `v2.1.0` (2026-04-17), `package.json` at `2.2.0`. Now aligned. https://github.com/RCushmaniii/ny-eng/releases/tag/v3.1.0
+- **`docs/OFF-SITE-MARKETING.md`** — new operating document for everything outside the site. Every item carries an owner, effort, a **closes-when** line, and a booked calendar slot. Includes an explicit "Explicitly not doing" table so rejected tactics stop being re-proposed.
+- **Eight calendar events booked** on Robert's primary, all 30 min at 06:30 `America/Mexico_City`, each body carrying the full click-path and exact NAP so the event stands alone. Weekly Friday habit + monthly first-Wednesday review with Claude.
+- **`content-marketing/2026-08-gbp-reviews-push.md`** — two es-MX GBP posts (per `google-business-post` skill; QA clean, 0 Iberian markers) and three review-request variants.
+- **`content-marketing/haro-featured-pitch-kit.md`** — credential block, four angles, answer template. Verified via Gmail that the Featured account exists (2026-03-23) and has received **zero digests in 12 months**; free tier is 3 answers/month, browse-not-push.
+- **Rule added to `CLAUDE.md` (6 lines):** off-site recommendations require a doc entry **and** a booked 06:00–09:00 calendar slot in the same turn. Chat prose is an incomplete deliverable.
+
+### Decisions Made
+
+- **The founder-authority tier is unavailable to NY English, structurally.** Robert has one personal identity and it is committed to CushLabs AI consulting (first paying client 2026-08-04). "English teacher" and "AI consultant" do not coexist in one public identity in this market, and the damage runs one direction — coaching gains nothing from the AI association; AI consulting is harmed by the coaching one. Since founder authority is by definition personal, NY English's off-site ceiling is **business-entity channels only**.
+- **HARO blocked, not scheduled.** A placement is a permanent indexed byline under his real name. Unlike a LinkedIn Page there is no admin-only version. Recommendation on record: repoint the pitch kit at **CushLabs**, same free channel, better brand. Robert declined to do that work from this repo — correct call, it belongs in `cushlabs`.
+- **LinkedIn Company Page downgraded A→B, admin-only.** Verified 2026-08-06 that Page admins are **not** publicly visible and cannot be listed by outsiders, so ownership without association is mechanically possible — but reach comes from employee amplification, and the only available employee is the one person who cannot be associated. Leaves a `sameAs` target, not a cornerstone.
+- **Citations will not move the numbers, and this is now written down.** Local pack already won (positions 1.5 / 1.0 / 3.3); ranking #1 there yielded 3 impressions and 1 click in 90 days. GBP posts are not a ranking factor and Robert has run them with no effect. Corrects the "next push is reviews, GBP and off-page authority" line in the 2026-08-05 entry — reviews still compound, the rest largely does not.
+
+### Immediate Next Steps
+
+- [ ] **Robert decides on HARO** (Wed 2026-08-12 slot is a decision, not a task) and on whether the LinkedIn Page is worth 30 minutes at all.
+- [ ] **Cold outreach to Guadalajara HR/L&D leads** — Robert's idea, recorded in `OFF-SITE-MARKETING.md` Tier A+, deliberately **unbooked** pending his go-ahead. It is the strongest remaining channel because it makes no public indexed claim about who he is. Email from `@nyenglishteacher.com`, never LinkedIn DM.
+- [ ] Verify a warmed `@nyenglishteacher.com` sending domain exists **before** any first send.
+
+### Technical Debt
+
+- `icp-nyet.json` `objections_and_rebuttals.past_failures` contains **"20 years in Fortune 500 boardrooms"** — a banned aggregate career-year claim the claims policy purged 2026-08-03. It will keep re-seeding into copy until the source file is fixed. Cross-repo (`operating-system`).
+- `GMB-LOG.md` still stale since 2026-03-30; blocked on Robert supplying current review count and interactions.
+
+### Open Questions / Blockers
+
+- **Does NY English deserve any 06:30 slots at all?** Coaching bills 500 MXN/hr against CushLabs consulting engagements. Robert is explicitly transitioning out of teaching, and considers the weak organic ceiling "not necessarily a bad thing." Unresolved by design — it is his call, and the doc records it as open.
 
 ---
 
