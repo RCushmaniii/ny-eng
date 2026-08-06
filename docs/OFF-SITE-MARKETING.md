@@ -49,6 +49,56 @@ worth doing once and never thinking about again.
 
 ---
 
+## The brand conflict — read this before doing any Tier A item
+
+Raised by Robert 2026-08-06, and it invalidates part of the first draft of this file.
+
+**Robert has one personal identity, and it is already spent on CushLabs.** His LinkedIn
+profile markets AI consulting to Mexican businesses. CushLabs landed its first paying
+client on 2026-08-04. AI consulting is the higher-revenue bet, deliberately.
+
+**In this market, "English teacher" and "AI consultant" do not coexist in one person's
+public identity.** A prospect evaluating an AI consultant who finds a business-English
+coach does not think "impressive range." They downgrade the AI credential. The
+positioning damage runs one direction only — coaching does not benefit from the AI
+association, but AI consulting is actively harmed by the coaching one.
+
+So any off-site tactic that routes through **Robert's personal name** is off the table
+for NY English, regardless of its SEO value.
+
+### What this rules in and out
+
+| Channel | Routes through | Verdict |
+|---|---|---|
+| Google Business Profile, Apple Maps, Bing Places, citations | The **business entity** | **Safe.** No personal association. |
+| LinkedIn Company Page, admin-only | The business entity | **Safe but low value** — see item 1. |
+| LinkedIn Company Page, with Robert listed in Experience | Robert personally | **Rejected.** This is the exact conflict. |
+| HARO / Featured quotes under his byline | Robert personally | **Rejected — see item 4.** |
+| Podcast guesting, speaking as a coach | Robert personally | **Rejected.** |
+
+**Verified 2026-08-06:** LinkedIn Page **admins are not publicly visible**, and there is
+no way for an outsider to list them. Only members who add the company to their own
+Experience section appear in the public employee list. So owning the Page without
+associating is mechanically possible — the conflict is opt-in.
+
+### The consequence nobody flagged in the first draft
+
+The founder-authority tier — the thing that actually builds domain authority for a
+low-DA site — **is entirely unavailable to this business**, because founder authority is
+by definition personal and Robert's person is committed elsewhere.
+
+That is not a small edit to the plan. It means NY English's off-site ceiling is
+**business-entity channels only**, which are the Tier A/B items here and essentially
+nothing beyond them. There is no version of this where NY English earns editorial
+authority without spending Robert's name on it.
+
+**Which makes the honest strategic question:** given a coaching hour bills 500 MXN and
+CushLabs bills consulting engagements, is any 06:30 slot better spent on NY English
+off-site work at all? That is Robert's call, and it belongs in this file when he makes
+it.
+
+---
+
 ## Status
 
 All slots are 30 minutes, 06:30 America/Mexico_City, booked on Robert's primary
@@ -58,10 +108,10 @@ entry is self-sufficient and this file does not need to be open to act on it.
 
 | # | Item | Tier | Effort | When | Event | Status |
 |---|------|------|--------|------|-------|--------|
-| 1 | LinkedIn Company Page | A | 30 min | Fri 2026-08-07 | https://www.google.com/calendar/event?eid=ODNrczVrb3N1YnNqZ3Z1ZWE1anJubG9kYjQgcmN1c2htYW5paWlAbQ | Not started |
+| 1 | LinkedIn Company Page — **admin-only** | B | 30 min | Fri 2026-08-07 | https://www.google.com/calendar/event?eid=ODNrczVrb3N1YnNqZ3Z1ZWE1anJubG9kYjQgcmN1c2htYW5paWlAbQ | Downgraded 08-06 |
 | 2 | Apple Business Connect | A | 30 min | Mon 2026-08-10 | https://www.google.com/calendar/event?eid=ZjdzamU5cmJtaTd1bm5wZm80bm5pc2tuMjAgcmN1c2htYW5paWlAbQ | Not started |
 | 3 | Bing Places for Business | A | 30 min | Mon 2026-08-10 | https://www.google.com/calendar/event?eid=cGlsa3RhOGE2aWJvdmoyYnBnOWFrNWxxdTAgcmN1c2htYW5paWlAbQ | Not started |
-| 4 | Featured / HARO — first answer | A | 30 min | Wed 2026-08-12 | https://www.google.com/calendar/event?eid=MXQ5Z29xb3M4NDJvOG5lZnRpcXFxMm1ocGMgcmN1c2htYW5paWlAbQ | Account exists, unused |
+| 4 | Featured / HARO — first answer | A | 30 min | Wed 2026-08-12 | https://www.google.com/calendar/event?eid=MXQ5Z29xb3M4NDJvOG5lZnRpcXFxMm1ocGMgcmN1c2htYW5paWlAbQ | **BLOCKED — brand conflict** |
 | 5 | Mexican citation hygiene pass | B | 30 min | Fri 2026-08-14 | https://www.google.com/calendar/event?eid=Z2thbDB2YXRlcnM4Z2R0ZGNhNDIyNnE1a2cgcmN1c2htYW5paWlAbQ | Not started |
 | 6 | AmCham Guadalajara — research only | C | 30 min | Wed 2026-08-19 | https://www.google.com/calendar/event?eid=N2dxdTl0NnFrcDMzZjNmZjUwdWs4MThvdmcgcmN1c2htYW5paWlAbQ | Not researched |
 | — | **Weekly:** HARO scan + review requests | A | 30 min | Fridays, from 08-21 | https://www.google.com/calendar/event?eid=a3R0bHJuaTY5YW80aGJ0YWlhM25obHUyOXNfMjAyNjA4MjFUMTIzMDAwWiByY3VzaG1hbmlpaUBt | Copy ready |
@@ -74,10 +124,20 @@ The monthly slot is the one that keeps this file honest. Its first occurrence
 
 ## Tier A — worth real effort
 
-### 1. LinkedIn Company Page
+### 1. LinkedIn Company Page — DOWNGRADED 2026-08-06, admin-only or not at all
 
-**This is the largest off-site gap.** The audience is corporate directors and HR
-buyers; LinkedIn is where they are, and the business has no presence there at all.
+> **Revised after the brand conflict above.** The first draft called this "the largest
+> off-site gap" and told Robert to publish a post from it. That was wrong: reach on a
+> Company Page comes almost entirely from employee amplification, and the only employee
+> available is the one person who cannot be associated with it. Stripped of that, this
+> is a `sameAs` target and a brand-search result — worth 30 minutes once, not a
+> cornerstone.
+>
+> **If built: admin-only. Robert must NOT add it to his personal Experience section.**
+> Do not post from it expecting reach. Do not cross-post from his profile.
+
+The audience is corporate directors and HR buyers; LinkedIn is where they are, and the
+business has no presence there at all.
 
 `linkedin.com/company/new-york-english-teacher` returned **404** when checked
 2026-07-25. The site had been asserting it to Google as a verified profile in
@@ -120,7 +180,29 @@ surfaces built on Bing's index.
   import, so this is genuinely a few minutes), verify NAP matches.
 - **Closes when:** listing is live and NAP matches the GBP exactly.
 
-### 4. Featured / HARO — first answer
+### 4. Featured / HARO — ON HOLD 2026-08-06, same conflict, not previously flagged
+
+> **This item carries the brand conflict more severely than the LinkedIn page did, and
+> the first draft missed it entirely.**
+>
+> A HARO placement is a **byline under Robert's real name**, in a publication, indexed
+> permanently, describing him as an executive English coach. The four angles written
+> into `content-marketing/haro-featured-pitch-kit.md` all position him that way — that
+> is what makes them good pitches, and it is exactly the problem.
+>
+> Unlike the LinkedIn page, there is no admin-only version. Anonymous authority does
+> not exist. The whole mechanism is *"this named human is the expert."*
+>
+> A single published placement would put "Robert Cushman III, executive English coach"
+> into the search results a CushLabs prospect sees. It is not reversible.
+>
+> **Blocked pending Robert's decision.** If NY English authority is worth spending his
+> name on, this is the best free channel available. If CushLabs positioning wins — which
+> the revenue math suggests — this item should move to the "Explicitly not doing" table
+> and the pitch kit should be rewritten for **CushLabs** instead, where the same free
+> channel builds the brand he actually wants to build.
+
+
 
 Account exists (welcome email 2026-03-23) and has received **zero digests in twelve
 months**. Free tier is **3 answers per month**, and it is browse-the-platform, not
