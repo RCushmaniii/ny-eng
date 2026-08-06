@@ -220,6 +220,15 @@ both forms** (including `:slug` catch-alls), with destinations pointing at the s
 form. After any redirect change reaches production, run `npm run validate:redirects` —
 never verify by hand. Background: `docs/REDIRECT-INCIDENT-2026-08-05.md`.
 
+### Off-site marketing — document it and book it, never list it in chat
+
+Anything outside this website (citations, directories, LinkedIn, HARO/Featured, chambers,
+outreach) belongs in `docs/OFF-SITE-MARKETING.md` with an owner, an effort estimate and a
+**closes when** line — **and** a 30-minute Google Calendar event between 06:00 and 09:00
+`America/Mexico_City` on the day it should happen, created in the same turn. Put the full
+click-path in the event body so it stands alone. A recommendation delivered only as chat
+prose is incomplete and will be overlooked.
+
 ### CSP Maintenance
 
 When adding ANY new external service or API endpoint that the browser calls via fetch/XHR:
