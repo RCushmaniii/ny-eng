@@ -4,6 +4,35 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 
 ---
 
+## Session: 2026-08-05 (Redirects were matching only the unslashed form — 85 of 90 were dead)
+
+### Accomplished
+
+- **PR #231 — found and closed the reason the SEO recovery work had not moved the numbers.** Vercel matches a redirect `source` literally. 85 of the 90 rules in `vercel.json` were written without a trailing slash, so they fired on `/path` and returned a **hard 404** on `/path/`. Measured against GSC over a 480-day window, **19 of the top 25 legacy URLs are indexed with the slash**, as are both retired free-courses posts. Emitted both forms for every rule including the six `:slug` catch-alls; 90 → 171 rules. Verified 15/15 land 200 on the preview build, then 15/15 again in production.
+- **The single highest-impression page on the site was a 404.** `/en/blog/free-english-courses-spanish-speakers/` — 493 impressions lifetime, 167 in the last 28 days, ~21% of all site impressions — has been serving a hard 404 since PR #220 retired it on 2026-07-25. The intended 301 never matched.
+- **PR #218's legacy recovery had been largely inert since 2026-07-25.** Its 23 rules were verified in production at the time, but on the unslashed form while the indexed form is slashed. `/eng-lesson/practice-ed-verbs-p3/` (217 impr) and `/eng-lesson/pronounce-ed-verbs/` (205) were still dead 11 days later.
+- **Submitted live:** 16 URLs to IndexNow (16/16 accepted), GSC sitemap resubmitted, 0 errors.
+- **Retrofitted `a-140`–`a-145` into `operating-system/strategy/accomplished.json`** — the whole 2026-07-25 → 07-31 ny-eng run (PRs #218–229) had never been logged. Archive rebuilt, 145 total.
+- **Repo hygiene:** GitHub topics advertised `supabase` on a public repo that uses Neon. Replaced with `neon-database` + `cloudflare-workers`.
+
+### Decisions Made
+
+- **Emit both slash forms rather than guess at path-to-regexp.** An optional-trailing-slash pattern (`{/}?`, `/?`) would be terser, but I could not confirm Vercel's supported syntax without a deploy to test it, and a wrong pattern fails silently the same way this bug did. 171 explicit rules is well under Vercel's 1,024 limit and has no matching semantics to get wrong.
+- **Verified on a real build, not the placeholder.** The first preview check passed against Vercel's build-in-progress page, which answers 200 to every path — including redirect sources. Re-ran the gate on "an unknown path must 404" before trusting any result.
+
+### Immediate Next Steps
+
+- [ ] **Re-check GSC ~2026-09-02** (4 weeks). The measurable signal is legacy-URL impressions transferring to `/en/courses/` rather than evaporating, and Bing impressions moving off the ~15/day floor they have held since Jul 2025.
+- [ ] Cut a GitHub release. Version is drifted three ways: highest tag `v3.0.1`, GitHub "Latest" `v2.1.0` (2026-04-17), `package.json` `2.2.0` — with ~20 PRs merged since.
+- [ ] "X vs Y" comparison pages for the master classes — still the open half of handoff item 2.
+
+### Technical Debt
+
+- **No automated check that a redirect rule actually redirects.** The href audit walks built pages; it has never fetched a `vercel.json` source. This bug survived two sessions of SEO work and its own verification step because the verification used the same wrong assumption as the code.
+- Vercel Web Analytics returns `404 Web Analytics not found` via API for both `ny-eng` and `cushlabs-os-dashboard`, so on-site behaviour is currently unmeasurable from here. The `/_vercel/insights/script.js` tag does serve 200 in production. Unresolved whether this is a plan limitation or a disabled toggle.
+
+---
+
 ## Session: 2026-07-26 (Hub/query alignment, validator greened, /dev/ exposure closed, master-class cheat sheets)
 
 ### Accomplished
