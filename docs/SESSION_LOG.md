@@ -26,9 +26,25 @@ Entries are newest-first. Each entry documents one Claude Code working session.
 - [ ] Cut a GitHub release. Version is drifted three ways: highest tag `v3.0.1`, GitHub "Latest" `v2.1.0` (2026-04-17), `package.json` `2.2.0` — with ~20 PRs merged since.
 - [ ] "X vs Y" comparison pages for the master classes — still the open half of handoff item 2.
 
+### Accomplished (continued — maintenance sweep)
+
+- **PR #232 — the guardrail, built before anything else.** `scripts/seo/redirect-audit.mjs` fetches every declared rule in both slash forms, follows each chain to its landing page, and fails on anything not 200. Also warns on multi-hop chains and on a source returning 200 directly (a live page shadowing a retirement rule), and lists any rule it could not expand so a pattern cannot go silently untested. **Production: 170/170 clean.** Wired as `npm run validate:redirects`.
+- **Caught a second trap the same day:** a Vercel deployment in `BUILDING` state answers **200 to every path**, including redirect sources. The first preview verification passed against that placeholder and meant nothing. The audit now proves the origin 404s an unknown path before trusting any result.
+- **PR #233 — `validate:performance` had been permanently red, so `validate:all` was red, so the whole pre-deploy gate was gating nothing.** Same failure as PR #226, in the script next to it. It was red for the wrong reason (measured *source* bytes, which Astro re-encodes) *and* hiding a real problem it never looked at: **12.42 MB across 204 shipped assets**, 23 over 100 KB, topped by a **2.19 MB PNG on a live blog post**. Built `scripts/optimize-images.mjs`; 89 images re-encoded in place. Shipped weight **12.42 → 8.58 MB**, assets over 200 KB now **zero**. The PNG → webp at 89 KB (**−96%**). Validator now measures `dist/_astro`. **`validate:all` exits 0.**
+- **Closed both silent catches** flagged as debt. `report-structure.mjs` swallowed a corrupt history file and discarded every prior run silently; `validate-canonical-urls.mjs` swallowed an unparseable canonical, leaving the raw value so the page validated as if fine.
+- **PR #234 — Sentry noise filtering** (`ignoreErrors`, `denyUrls`); the config had none.
+- **Trimmed the CLAUDE.md redirect rule 25 lines → 6**, moving the narrative to `docs/REDIRECT-INCIDENT-2026-08-05.md`. CLAUDE.md is loaded every interaction in this repo; a war story does not need to be.
+- **Repo hygiene:** GitHub topics advertised `supabase` on a public repo that uses Neon → `neon-database` + `cloudflare-workers`.
+
+### The strategic finding
+
+**GBP: 337 customer interactions. Organic search: 4 clicks / 28 days.** The Google Business Profile out-earns the entire website by roughly two orders of magnitude, and it sits at 15 reviews. Local queries rank 1.0–3.3 (`clases de ingles cerca de mi` 1.5, `escuela de ingles` 3.3) while course/content pages sit at 30–80. Discovery is working locally and failing editorially — which means the next push is reviews, GBP, and off-page authority, not more posts.
+
 ### Technical Debt
 
-- **No automated check that a redirect rule actually redirects.** The href audit walks built pages; it has never fetched a `vercel.json` source. This bug survived two sessions of SEO work and its own verification step because the verification used the same wrong assumption as the code.
+- **No automated check that a redirect rule actually redirects.** ~~The href audit walks built pages; it has never fetched a `vercel.json` source.~~ **CLOSED by PR #232.** This bug survived two sessions of SEO work and its own verification step because the verification used the same wrong assumption as the code.
+- `GMB-LOG.md` last updated 2026-03-30 — four months stale, and it holds the only record of the highest-performing channel.
+- Version drift, three ways: highest tag `v3.0.1`, GitHub "Latest" `v2.1.0` (2026-04-17), `package.json` `2.2.0`, with ~20 PRs merged since. Public repo.
 - Vercel Web Analytics returns `404 Web Analytics not found` via API for both `ny-eng` and `cushlabs-os-dashboard`, so on-site behaviour is currently unmeasurable from here. The `/_vercel/insights/script.js` tag does serve 200 in production. Unresolved whether this is a plan limitation or a disabled toggle.
 
 ---
