@@ -266,3 +266,10 @@ See **[SEO-MARKETING-PLAN.md](./SEO-MARKETING-PLAN.md)** for the full content ro
 ## Session Logs
 
 Every working session creates / updates a log at `docs/session-logs/YYYY-MM-DD-NNN.md` (NNN = zero-padded sequence number for that day). See the global CLAUDE.md "Session Logs" section for the required format. Logs are committed to the repo. The log captures: accomplishments (with PR numbers), technical debt accumulated, work remaining, future ideas, files touched, and lessons/surprises. Updated as work happens, not just at session end.
+
+## Starting a Session — read these two first
+
+- **`docs/SESSION_LOG.md`** — the `## Open Items` register is pinned at the top, above the dated entries. That is the live list of what is actually open. An item leaves it only when verified end to end; "tests pass" and "the config looks right" do not count.
+- **`docs/PROJECT-CONTEXT.md`** — standing context that never gets checked off: why organic traffic collapsed and how it was fixed, cross-repo infrastructure facts that have already produced three false conclusions, what the search data says, settled decisions not to re-litigate, reusable audit commands, and the environment gotchas that have cost real time.
+
+Replaces the former `docs/HANDOFF.md` (retired 2026-08-06).
