@@ -270,7 +270,7 @@ Continuation of the 2026-08-05 session across midnight. That entry covers the te
 
 ### Immediate Next Steps
 
-- [ ] Check Vapi **Settings → Billing → Payment method**: if auto-recharge is OFF, the credit balance is the spend ceiling and nothing more is needed; if ON, set a Spending Limit with a 50% alert.
+- [x] **DONE 2026-08-07 — and the instruction was wrong.** Auto reload was ON ($10 at a $5 threshold); Robert turned it off, so the credit balance is now the ceiling. **There is no "Spending Limit" to fall back on — Vapi does not offer one**, nor a monthly budget, nor any way to lower concurrency below 10 (verified against https://docs.vapi.ai/billing/manage-billing-and-credits). The "if ON, set a Spending Limit with a 50% alert" half of this item described a control that has never existed, which made leaving auto reload ON look survivable. The credit balance is the only aggregate spend ceiling on the platform. Full account and the decision rule: `cushlabs-ai-voice-agent/docs/COST-CONTROLS.md` §1 and §4.
 - [ ] Calendar reminder for **2026-10-21** — Meta page data access expires for all three managed pages; one `pnpm fb token:longlived` re-grant refreshes them together.
 - [ ] Re-check GSC in ~3–4 weeks: the measurable signal is the course hubs' average position moving from 61.6/57.4 toward 38.6, and impressions consolidating onto one URL.
 - [ ] Decide on Instagram — no capability exists today; needs a Business account linked to the CushLabs page, two scopes, and a separate `scripts/ig/` publish flow (two-step container + public image URL).
