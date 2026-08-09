@@ -121,6 +121,55 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 
 ---
 
+## Session: 2026-08-09 (02:20 MX) — the Sentry MCP was repointed org-wide, and it can write
+
+Robert repointed the Sentry MCP server and asked whether that fixed the access problem. It did — both
+halves of it. This closes the Technical Debt item raised in the entry below, which was written two
+hours earlier and said no credential in the Projects tree could archive an issue.
+
+### Accomplished
+
+- **Confirmed the project pin is gone.** `~/.claude.json` now reads
+  `https://mcp.sentry.dev/mcp/cushlabsai`; the old URL ended `/cushlabs-marketsignal` and refused
+  every other project with "Issue is outside the active project constraint."
+  `find_projects` returns all **24** projects.
+- **Confirmed cross-project READ.** Fetched `NY-ENGLISH-MESSENGER-BOT-2` — the exact issue the pin
+  refused two hours earlier — full tags, `psid`, `meta_code=551`, `archived_forever`.
+- **Confirmed issue WRITE, which no auth token in any repo has.** Resolved
+  `CUSHLABS-INVESTMENT-MODEL-1` and `-2` (both self-labeled "Safe to resolve/delete" smoke tests
+  from the Sentry install) with an activity-feed comment on each. Real cleanup, not a synthetic
+  probe. **Archiving no longer requires Robert in the UI.**
+- **`ny-eng` is clean** — zero unresolved issues in the last 30 days, confirming last night's
+  archive of `NY-ENG-8` / `NY-ENG-9` held.
+- Updated the `reference-sentry-access` memory: MCP first, env tokens demoted to a documented dead
+  fallback, plus the OAuth scopes and the per-session auth behaviour.
+
+### Decisions Made
+
+- **The MCP is now the default path to Sentry; the REST-API-with-env-token route is the fallback.**
+  It was only ever a workaround for the project pin, and it never had `event:write`.
+- **The auth grant is per-session, not persistent.** When only `authenticate` /
+  `complete_authentication` are exposed, the server is unauthenticated — call `authenticate` and
+  hand Robert the URL. Don't conclude the pin is back.
+
+### Immediate Next Steps
+
+- [ ] None in this repo. Register below is unchanged.
+
+### Technical Debt
+
+- **Closed:** "No Sentry token in the Projects tree can write an issue" (entry below). Still true of
+  the tokens; no longer a blocker, because the MCP has `event:write`.
+- **Not this repo, flagged not fixed:** `CUSHLABS-AI-UNWATERMARK-8` (`ValueError: no embedded
+  image`, 4 events, first seen ~9h ago) is the only genuinely new unresolved issue org-wide. Belongs
+  to `cushlabs-ai-unwatermark`.
+
+### Open Questions / Blockers
+
+- None.
+
+---
+
 ## Session: 2026-08-08 evening → 2026-08-09 (Sentry triage: two issues, neither ours — and half the filter was never running)
 
 Robert brought two unresolved Sentry issues on `/en/resources/client-call-opening-closing-framework/`.
