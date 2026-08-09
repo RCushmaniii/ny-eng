@@ -160,9 +160,6 @@ hours earlier and said no credential in the Projects tree could archive an issue
 
 - **Closed:** "No Sentry token in the Projects tree can write an issue" (entry below). Still true of
   the tokens; no longer a blocker, because the MCP has `event:write`.
-- **Not this repo, flagged not fixed:** `CUSHLABS-AI-UNWATERMARK-8` (`ValueError: no embedded
-  image`, 4 events, first seen ~9h ago) is the only genuinely new unresolved issue org-wide. Belongs
-  to `cushlabs-ai-unwatermark`.
 
 ### Open Questions / Blockers
 
