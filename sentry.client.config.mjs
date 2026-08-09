@@ -25,6 +25,27 @@ Sentry.init({
     /Failed to fetch$/,
     /NetworkError when attempting to fetch resource/,
     /Load failed$/,
+
+    // A navigation or tab close mid-request. Not a site fault.
+    /AbortError/,
+    /The operation was aborted/,
+    /Network request failed/,
+    // Opaque cross-origin error with no actionable stack.
+    /^Script error\.?$/,
+    // Injected page translators and extension globals.
+    /top\.GLOBALS/,
+    /originalCreateNotification/,
+    /canvas\.contentDocument/,
+    /Can't find variable: gmo/,
+    /__gCrWeb/,
+
+    // `Array.prototype.at` landed in Chrome 92 / Safari 15.4 / Firefox 90
+    // (mid-2021). A browser that throws this predates all three, and the
+    // throw is always inside a vendored `web-vitals` copy — Cloudflare's RUM
+    // beacon and Sentry's own tracing both call `entries.at(-1)`. Our `src/`
+    // contains zero `.at(` calls, so this can never be our bug.
+    // Seen 2026-08-07 as NY-ENG-8 (`t.entries.at`) and NY-ENG-9 (`this.i.at`).
+    /\.at is not a function/,
   ],
 
   denyUrls: [
@@ -34,6 +55,14 @@ Sentry.init({
     /^safari-web-extension:\/\//i,
     /^chrome:\/\//i,
     /^webkit-masked-url:/i,
+
+    // Third-party scripts we do not control and cannot fix. The Cloudflare
+    // RUM beacon is injected by Cloudflare's proxy, not by our code — it is
+    // not in any template, and we cannot patch it.
+    /static\.cloudflareinsights\.com/i,
+    /googletagmanager\.com/i,
+    /google-analytics\.com/i,
+    /translate\.google/i,
   ],
 
   beforeSend(event, hint) {

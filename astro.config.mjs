@@ -212,45 +212,16 @@ export default defineConfig({
           sentry({
             dsn: process.env.SENTRY_DSN,
 
-            // Noise filtering. Without this, a public marketing site reports
-            // mostly other people's problems — browser extensions, injected
-            // translation widgets, dead mobile sockets — and real errors get
-            // lost in the volume until nobody reads the alerts at all.
-            ignoreErrors: [
-              // Fires on layout thrash in a way no user ever perceives. Chrome
-              // reports it; the spec says it is benign.
-              "ResizeObserver loop limit exceeded",
-              "ResizeObserver loop completed with undelivered notifications",
-              // A navigation or tab close mid-request. Not a site fault.
-              "AbortError",
-              "The operation was aborted",
-              "Non-Error promise rejection captured",
-              // Safari/iOS network drops, and the generic opaque script error
-              // that carries no actionable stack.
-              "Network request failed",
-              "NetworkError when attempting to fetch resource",
-              "Load failed",
-              "Script error.",
-              // Browser extensions and injected page translators.
-              "top.GLOBALS",
-              "originalCreateNotification",
-              "canvas.contentDocument",
-              "Can't find variable: gmo",
-              "__gCrWeb",
-            ],
-
-            denyUrls: [
-              /extensions\//i,
-              /^chrome:\/\//i,
-              /^chrome-extension:\/\//i,
-              /^moz-extension:\/\//i,
-              /^safari-(web-)?extension:\/\//i,
-              // Third-party scripts we do not control and cannot fix.
-              /googletagmanager\.com/i,
-              /google-analytics\.com/i,
-              /translate\.google/i,
-            ],
-
+            // DO NOT add runtime SDK options (ignoreErrors, denyUrls,
+            // beforeSend, sample rates) here — they are silently discarded.
+            // `@sentry/astro` injects `sentry.client.config.mjs` INSTEAD of
+            // these options whenever that file exists, and it does
+            // (integration/index.js: `if (pathToClientInit) … else
+            // buildClientSnippet(options)`). A duplicate noise-filter list
+            // lived here until 2026-08-08 and never reached a browser.
+            //
+            // Runtime client config → sentry.client.config.mjs
+            // Build-time options (source maps, org/project) → here.
             sourceMapsUploadOptions: {
               project: "ny-eng",
               org: "cushlabsai",
