@@ -121,6 +121,53 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 
 ---
 
+## Session: 2026-08-08 evening → 2026-08-09 (Sentry triage: two issues, neither ours — and half the filter was never running)
+
+Robert brought two unresolved Sentry issues on `/en/resources/client-call-opening-closing-framework/`.
+The messenger-bot half of this session is logged in that repo.
+
+### Accomplished
+
+- **Triaged `NY-ENG-8` (`t.entries.at is not a function`) and `NY-ENG-9` (`this.i.at`) to third-party
+  noise.** Single stack frame is `static.cloudflareinsights.com/beacon.min.js` — Cloudflare's RUM
+  beacon, injected by the proxy, not shipped by us. The throw is in its vendored `web-vitals` calling
+  `entries.at(-1)`; `Array.prototype.at` shipped Chrome 92 / Safari 15.4 / Firefox 90, so only a
+  pre-mid-2021 browser can hit it. `src/` has zero `.at(` calls. 4 + 2 events, 0 real users.
+- **Found that half the Sentry noise filtering had never run.** `@sentry/astro` injects
+  `sentry.client.config.mjs` **instead of** the options passed to the `sentry()` integration when
+  that file exists (`integration/index.js:154`). The `ignoreErrors`/`denyUrls` block added to
+  `astro.config.mjs` in PR #234 was dead from the day it landed.
+- **PR #239** — beacon added to `denyUrls` plus a narrow `/\.at is not a function/`; the entries that
+  existed only in the dead list folded into the live config; dead block deleted with a comment naming
+  the precedence rule so it does not come back.
+- **Verified against production, not the local build** (local skips Sentry — no `SENTRY_DSN` in
+  shell): pre-deploy chunk carried `removeHighlight`, a string unique to the client config, proving
+  which file ships; post-deploy chunk `page.C5QVN6zM.js` contains the beacon rule.
+- Robert archived both forever; verified `archived_forever` via the Sentry API.
+
+### Decisions Made
+
+- **`ignoreErrors` as well as `denyUrls`.** `denyUrls` matches the frame URL and would miss `NY-ENG-9`
+  if it resolves to our own bundle — Sentry's own tracing also calls `entries.at(-1)`.
+- **Runtime SDK options live in `sentry.client.config.mjs` only.** Build-time options (source maps,
+  org/project) stay in `astro.config.mjs`. Splitting them is what created the dead list.
+
+### Immediate Next Steps
+
+- [ ] None. Register below is unchanged by this session.
+
+### Technical Debt
+
+- **No Sentry token in the Projects tree can write an issue** — all four return 403 on status update
+  and on `GET /org-auth-tokens/`, so every archive needs Robert in the UI. One org token with
+  `event:write` would end this. Cross-repo; recorded in the `reference-sentry-access` memory.
+
+### Open Questions / Blockers
+
+- None.
+
+---
+
 ## Session: 2026-08-06 (Off-site marketing gets an operating doc — and hits a brand wall)
 
 Continuation of the 2026-08-05 session across midnight. That entry covers the technical work.
