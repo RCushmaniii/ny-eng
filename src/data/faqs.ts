@@ -4,7 +4,9 @@ export interface FaqItem {
 }
 
 export interface FaqSection {
+  id: string;
   title: string;
+  shortTitle: string;
   description?: string;
   faqs: FaqItem[];
 }
@@ -198,130 +200,200 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
     id: "premium",
     sections: [
       {
-        title: "Mexico & Latin America",
-        description: "Questions specific to professionals working from Mexico and Latin America.",
+        id: "most-asked",
+        title: "The Questions I Get Most",
+        shortTitle: "Quick Answers",
+        description: "The short version — full detail is in the sections below.",
         faqs: [
           {
+            question: "How much does coaching cost?",
+            answer:
+              "Single session: 500 MXN ($30 USD). 12-session executive roadmap: 6,000 MXN ($360 USD). Every session is custom-built around your industry, your upcoming presentations, and your actual calendar — not a curriculum you follow. More on invoicing and packages below.",
+          },
+          {
+            question: "How do I get started?",
+            answer:
+              "Book a free discovery call. In 15-20 minutes I'll ask about your goals, get a read on your current level, and tell you honestly whether coaching is the right fit — no pressure either way.",
+          },
+          {
+            question: "I know the grammar, but I freeze under pressure. Can you fix that?",
+            answer:
+              "Yes — this is a performance issue, not a knowledge issue, and it's the most common thing I coach. I use high-pressure simulation drills — rapid-fire Q&A, objection handling, real-time pivoting — to rewire how you think in English under stress. Think of it as athletic training for your communication.",
+          },
+          {
             question:
-              "Do you understand the specific challenges Mexican professionals face with English?",
+              "Do you understand what Mexican professionals are actually up against with English?",
             answer:
-              "Yes — this is my specialty. I work primarily with Mexican and Latin American professionals. I understand the false cognates (actualmente ≠ actually), the cultural communication differences (directness vs. formality), and the specific pronunciation patterns that affect credibility with North American clients.",
-          },
-          {
-            question: "Can you help me prepare for meetings with US headquarters?",
-            answer:
-              "Absolutely. Many of my clients report to US-based leadership or work with North American clients. I practice the specific meeting scenarios you face — status updates, escalation calls, quarterly reviews — using the communication style that US executives expect.",
-          },
-          {
-            question:
-              "I work for a Mexican company expanding into the US market. Can you help our team?",
-            answer:
-              "Yes. I offer corporate packages for teams making the leap into US markets. I focus on the communication skills that determine success — client-facing English, partnership negotiations, and the cultural fluency that builds trust with American business partners.",
-          },
-          {
-            question: "Do you accept payment in Mexican pesos?",
-            answer:
-              "Yes. Pricing is available in both MXN and USD. Single sessions are 500 MXN ($30 USD), and 12-session packages are 6,000 MXN ($360 USD). I can also issue Mexican corporate invoices (facturas) for company billing.",
+              "Yes — this is my specialty. I live in Guadalajara and work primarily with Mexican and Latin American professionals. I know the false cognates that trip people up (actualmente ≠ actually), the cultural gap between directness and formality, and exactly which pronunciation patterns quietly damage credibility with US counterparts.",
           },
         ],
       },
       {
+        id: "confidence",
+        title: "If You're Nervous About Speaking English With Me",
+        shortTitle: "Feeling Embarrassed?",
+        description: "The reassurance questions most people are too embarrassed to ask.",
+        faqs: [
+          {
+            question: "I feel embarrassed speaking English in front of you. Is that normal?",
+            answer:
+              "Completely normal, and you're in good company — my clients are COOs, CEOs, founders, and directors at companies like Driscoll's, CEVA Logistics, and Teramar Brands. Needing coaching at your level isn't remedial, it's strategic. Elite athletes have coaches. So do elite communicators.",
+          },
+          {
+            question: "Will you correct every mistake I make?",
+            answer:
+              'No — and this is one of the things clients tell me they value most. I sort every error into a "small crime" or a "big crime." Small crimes are minor and don\'t hurt how you\'re perceived, so I let most of them go. Big crimes — like mispronouncing past-tense -ed endings — quietly make native speakers question your competence even when the rest of your English is excellent. Those, I flag every time.',
+          },
+          {
+            question: "Can I switch to Spanish when I get stuck?",
+            answer:
+              "Yes, especially early on — I'd rather you finish a real thought in Spanish than freeze chasing a word in English. The goal is functional, confident English for the moments that matter, not a Spanish-free rule that makes you self-conscious.",
+          },
+          {
+            question: "What if my level turns out to be lower than I expected?",
+            answer:
+              "We'll find out honestly on the discovery call, not guess. I work with intermediate and advanced learners — I don't teach absolute beginners — so if your level isn't the right fit yet, I'll tell you directly and point you somewhere more useful instead of taking your money for the wrong program.",
+          },
+        ],
+      },
+      {
+        id: "getting-started",
         title: "Getting Started",
+        shortTitle: "Getting Started",
         description: "Everything you need to know about beginning your coaching journey.",
         faqs: [
           {
-            question: "How do I get started with coaching?",
+            question: "What happens on the discovery call?",
             answer:
-              "Book a free discovery call through the website. In 15-20 minutes, I'll discuss your goals, assess your current level, and determine if coaching is the right fit. There's no obligation — it's simply a conversation about where you want to go.",
+              "It's a real conversation, not a sales pitch. We talk through your goals, I assess your current level, and we decide together whether coaching makes sense. No obligation.",
           },
           {
-            question: "What happens in the first coaching session?",
+            question: "What happens in the first paid session?",
             answer:
-              "The first session is a diagnostic. I identify your specific communication gaps, understand your professional context, and create a prioritized roadmap. You'll leave with 2-3 immediate action items you can start using that same week.",
+              "The first session is a diagnostic. I identify your specific communication gaps, understand your professional context, and build a prioritized roadmap. You'll leave with 2-3 things you can start using that same week.",
           },
           {
-            question: "Do I need to commit to a long-term package, or can I try a single session?",
+            question: "Do I have to commit to a package, or can I try one session first?",
             answer:
-              "You can absolutely start with a single session at 500 MXN / $30 USD. Many clients try one session and then choose to continue because they see immediate value. There's no pressure to commit — results speak for themselves.",
+              "Start with a single session at 500 MXN / $30 USD — no pressure to commit further. Most clients continue because they feel the value immediately, not because they signed up for a package upfront.",
           },
           {
             question: "What technology do I need for online sessions?",
             answer:
-              "Just a computer or phone with a camera, microphone, and stable internet connection. Sessions are conducted via Google Meet — no special software needed. A quiet space where you can speak freely is ideal.",
+              "A computer or phone with a camera, microphone, and stable internet. Sessions run on Google Meet, no special software. A quiet space where you can speak freely helps more than any tech.",
           },
         ],
       },
       {
-        title: "Investment & Value",
-        description: "What it costs and why this is different from standard English classes.",
+        id: "investment",
+        title: "Investment, Payment & Invoicing",
+        shortTitle: "Investment & Billing",
+        description: "What it costs, why, and how billing works.",
         faqs: [
           {
-            question: "What is the cost of your coaching?",
+            question: "What does coaching cost, and why?",
             answer:
-              "Current Rate: 500 MXN ($30 USD) per session. 12-Session Executive Roadmap: 6,000 MXN / $360 USD. Every session is custom-built around your specific industry, upcoming presentations, and professional goals. I work directly on your real-world challenges: your upcoming board presentation, your salary negotiation, or your client emails. This isn't a curriculum you follow — it's a strategy built around your calendar.",
+              "Single session: 500 MXN ($30 USD). 12-session executive roadmap: 6,000 MXN ($360 USD). Every session is built around your real challenges — your upcoming board presentation, your salary negotiation, your client emails — not a generic syllabus. Because of that level of personalization, I don't offer volume discounts, even for corporate teams: the price reflects the depth of preparation each hour gets, not the headcount.",
           },
           {
             question: "How is this different from a traditional ESL course?",
             answer:
-              "Traditional ESL courses focus on grammar rules and vocabulary lists. I focus on real-time performance under pressure—handling Q&A, negotiating in English, and projecting authority in high-stakes meetings. You won't be memorizing verb tenses; you'll be practicing the exact scenarios you face at work.",
+              "Traditional ESL courses teach grammar rules and vocabulary lists. I coach real-time performance under pressure — handling Q&A, negotiating in English, holding authority in high-stakes meetings. You won't memorize verb tenses; you'll rehearse the exact scenarios you're walking into at work.",
           },
           {
-            question: "What kind of results can a C-level executive expect in 90 days?",
+            question: "How fast will I see results?",
             answer:
-              "Most executives see measurable improvement in 5–8 sessions: faster response times in meetings, more confident negotiation, and the ability to 'own the room' without translating in their head. By 90 days, you should be leading high-stakes conversations with the same authority you have in your native language.",
+              "Most clients feel a shift in confidence after the first session. For measurable change in fluency and executive presence, most see clear progress within 5-8 sessions — it depends on practice between sessions, frequency, and your specific goals.",
           },
           {
-            question: "Will this help with my accent, or is it just vocabulary?",
+            question: "Will this help my accent, or is it just vocabulary?",
             answer:
-              "Both, but the focus is strategic. I help you identify which pronunciation patterns are actually hurting your credibility (most aren't), and I focus on clarity and confidence, not erasing your accent. The goal is to be understood and respected, not to sound like a native speaker.",
+              "Both, but strategically. I help you identify which pronunciation patterns are actually hurting your credibility — most aren't — and we work on clarity and confidence, not erasing your accent. The goal is to be understood and respected, not to sound like someone you're not.",
+          },
+          {
+            question: "Do you provide invoices for my company?",
+            answer:
+              "Yes — I provide professional invoices (facturas) for corporate clients. Companies are billed monthly at the end of each month for all sessions completed.",
           },
         ],
       },
       {
-        title: "Logistics & Scheduling",
-        description: "How sessions work, scheduling, and policies.",
+        id: "logistics",
+        title: "Scheduling & Policies",
+        shortTitle: "Scheduling",
+        description: "How sessions are booked, changed, and cancelled.",
         faqs: [
           {
-            question: "Do you provide invoices for corporate reimbursement or company expense?",
+            question: "How many sessions per week do you recommend?",
             answer:
-              "Yes—I provide professional invoices (facturas) for corporate clients. Companies are billed monthly at the end of each month for all sessions completed.",
+              "For fast improvement, 2-3 sessions a week. For maintenance or lighter goals, 1 session a week works well. Consistency and practice between sessions matter more than any single number.",
           },
           {
-            question: "What is your cancellation and no-show policy?",
+            question: "How do I schedule or reschedule a session?",
             answer:
-              "Cancellations and reschedules require at least one business day (24 hours') notice. If you cancel or reschedule with less than 24 hours' notice, the full session fee applies — the same as if you attended. No-shows are treated the same: Robert waits up to 15 minutes, after which it counts as a missed session and the full fee applies.",
+              "Message me on WhatsApp or by email. Please give at least one business day's notice for reschedules.",
           },
           {
-            question: "How many sessions per week do you recommend for optimal results?",
+            question: "What's your cancellation and no-show policy?",
             answer:
-              "For rapid improvement, I recommend 2–3 sessions per week. For maintenance or lighter goals, 1 session per week works. The key is consistency and practice between sessions.",
+              "I keep a limited, personalized calendar, and every session is held exclusively for you — that's why the notice window exists. Cancellations and reschedules need at least one business day (24 hours') notice; inside that window, the full session fee applies, the same as if you'd attended. No-shows work the same way: I wait 15 minutes, after which it counts as a missed session at full fee. Real emergencies are reviewed case by case, in good faith.",
           },
         ],
       },
       {
-        title: "Methodology & Approach",
-        description: "How the coaching works and what makes it effective.",
+        id: "methodology",
+        title: "How the Coaching Works",
+        shortTitle: "How I Coach",
+        description: "What happens in a session and what makes it effective.",
         faqs: [
           {
-            question: "I know the grammar, but I freeze under pressure. How do you fix that?",
+            question: "What specific skills do you cover?",
             answer:
-              "This is a performance issue, not a knowledge issue. I use high-pressure simulation drills—rapid-fire Q&A, objection handling, and real-time pivoting—to rewire your brain to think directly in English under stress. It's like athletic training for your communication.",
+              "The exact scenarios you face: boardroom presentations, investor pitches, client negotiations, rapid-fire Q&A, and troubleshooting under pressure. Every session is customized to your industry and role.",
           },
           {
-            question: "What specific skills do you cover (e.g., Negotiation, Q&A, Presentation)?",
+            question: "Do you work with my industry?",
             answer:
-              "I cover the exact scenarios you face: boardroom presentations, investor pitches, client negotiations, rapid-fire Q&A, and high-pressure troubleshooting. Each session is customized to your industry and role.",
+              "I specialize in IT, professional services (law, medicine, consulting), logistics, and executive leadership. I already understand the jargon and the stakes in these fields, so you're not spending session time explaining your world to me.",
           },
+          {
+            question: "What materials or resources do I get?",
+            answer:
+              "Customized PDF notes after every session — key phrases, pronunciation notes, and practice scenarios built around your goals — plus access to my recommended resources for self-study between sessions.",
+          },
+          {
+            question: "Are sessions with you personally?",
+            answer:
+              "Always. Every session, every correction, every roadmap — that's me, not a rotating pool of teachers. It's how the \"big crime / small crime\" feedback stays consistent from session one.",
+          },
+        ],
+      },
+      {
+        id: "teams",
+        title: "For Teams & Companies",
+        shortTitle: "For Teams & Companies",
+        description: "Corporate coaching, billing, and how the evaluation process works.",
+        faqs: [
           {
             question:
-              "Do you work with a specific industry (e.g., Finance, Technology, Consulting)?",
+              "I work for a Mexican company expanding into the US market. Can you help our team?",
             answer:
-              "I specialize in IT, professional services (law, medicine, consulting), logistics, and executive leadership. I understand the jargon and high-stakes dynamics of these fields, so you're not wasting time explaining your world to me.",
+              "Yes. I offer corporate coaching for teams making that leap — client-facing English, partnership negotiations, and the cultural fluency that builds trust with US business partners.",
           },
           {
-            question: "What materials or resources are included in the coaching?",
+            question: "Can you help my team prepare for meetings with US headquarters or clients?",
             answer:
-              "After each session, you receive customized PDF notes with key phrases, pronunciation tips, and practice scenarios tailored to your goals. You also get access to my recommended resources for self-study between sessions.",
+              "Yes. Many clients report to US-based leadership or work directly with US clients. We practice the specific meeting types you face — status updates, escalation calls, quarterly reviews — using the communication style US counterparts actually expect.",
+          },
+          {
+            question: "We want to bring you in for several team members — can we get a discount?",
+            answer:
+              "No volume discounts, and here's why: each session stays fully personalized to that person's role and upcoming pressure moments, which is what makes it work. Most corporate accounts start the same way — a director sits in on a demo class to evaluate, then extends coaching to the rest of the team once they see it firsthand.",
+          },
+          {
+            question: "Do you accept payment in Mexican pesos?",
+            answer:
+              "Yes. Pricing is available in both MXN and USD — a single session is 500 MXN ($30 USD), the 12-session executive roadmap is 6,000 MXN ($360 USD).",
           },
         ],
       },
@@ -331,134 +403,202 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
     id: "premium_es",
     sections: [
       {
-        title: "México y Latinoamérica",
-        description:
-          "Preguntas específicas para profesionales que trabajan desde México y Latinoamérica.",
+        id: "most-asked",
+        title: "Lo que más me preguntan",
+        shortTitle: "Respuestas rápidas",
+        description: "La versión corta — el detalle completo está en las secciones de abajo.",
         faqs: [
           {
-            question:
-              "¿Entiendes los desafíos específicos que enfrentan los profesionales mexicanos con el inglés?",
+            question: "¿Cuánto cuesta el coaching?",
             answer:
-              "Sí — esta es mi especialidad. Trabajo principalmente con profesionales mexicanos y latinoamericanos. Entiendo los falsos cognados (actualmente ≠ actually), las diferencias de comunicación cultural (franqueza vs. formalidad), y los patrones de pronunciación específicos que afectan la credibilidad con clientes norteamericanos.",
+              "Sesión individual: 500 MXN ($30 USD). Plan ejecutivo de 12 sesiones: 6,000 MXN ($360 USD). Cada sesión se diseña alrededor de tu industria, tus próximas presentaciones y tu agenda real — no es un curso que sigues paso a paso. Más abajo explico cómo funciona la facturación y los paquetes.",
+          },
+          {
+            question: "¿Cómo empiezo?",
+            answer:
+              "Agenda una llamada de descubrimiento gratuita. En 15-20 minutos platicamos tus objetivos, evalúo tu nivel actual y te digo con honestidad si el coaching es lo que necesitas — sin presión de ningún lado.",
+          },
+          {
+            question: "Conozco la gramática, pero me congelo bajo presión. ¿Puedes arreglar eso?",
+            answer:
+              "Sí — es un problema de desempeño, no de conocimiento, y es de lo más común que trabajo. Uso simulaciones de alta presión — preguntas y respuestas rápidas, manejo de objeciones, adaptación en tiempo real — para reprogramar cómo piensas en inglés bajo estrés. Es como entrenamiento atlético, pero para tu comunicación.",
           },
           {
             question:
-              "¿Puedes ayudarme a prepararme para reuniones con oficinas centrales en EE.UU.?",
+              "¿Entiendes lo que realmente enfrentan los profesionales mexicanos con el inglés?",
             answer:
-              "Por supuesto. Muchos de mis clientes reportan a liderazgo basado en EE.UU. o trabajan con clientes norteamericanos. Practicamos los escenarios específicos de reuniones que enfrentas — actualizaciones de estatus, llamadas de escalación, revisiones trimestrales — usando el estilo de comunicación que los ejecutivos de EE.UU. esperan.",
-          },
-          {
-            question:
-              "Trabajo para una empresa mexicana que se expande al mercado de EE.UU. ¿Pueden ayudar a nuestro equipo?",
-            answer:
-              "Sí. Ofrecemos paquetes corporativos para equipos que dan el salto a mercados de EE.UU. Nos enfocamos en las habilidades de comunicación que determinan el éxito — inglés para interacción con clientes, negociaciones de partnerships, y la fluidez cultural que construye confianza con socios de negocios americanos.",
-          },
-          {
-            question: "¿Aceptan pago en pesos mexicanos?",
-            answer:
-              "Sí. Los precios están disponibles tanto en MXN como en USD. Las sesiones individuales son de 500 MXN ($30 USD), y los paquetes de 12 sesiones son de 6,000 MXN ($360 USD). También podemos emitir facturas corporativas mexicanas para facturación empresarial.",
+              "Sí — es mi especialidad. Vivo en Guadalajara y trabajo principalmente con profesionales mexicanos y latinoamericanos. Conozco los falsos cognados que traicionan (actualmente ≠ actually), la diferencia cultural entre franqueza y formalidad, y exactamente qué patrones de pronunciación dañan la credibilidad frente a contrapartes estadounidenses.",
           },
         ],
       },
       {
-        title: "Cómo Empezar",
+        id: "confidence",
+        title: "Si te da pena hablar inglés conmigo",
+        shortTitle: "¿Te da pena?",
+        description: "Las preguntas de tranquilidad que a la mayoría le da pena hacer.",
+        faqs: [
+          {
+            question: "Me da pena hablar inglés frente a ti. ¿Es normal?",
+            answer:
+              "Totalmente normal, y estás en buena compañía — mis clientes son COOs, CEOs, fundadores y directores en empresas como Driscoll's, CEVA Logistics y Teramar Brands. Necesitar coaching en tu nivel no es remedial, es estratégico. Los atletas de élite tienen entrenador. Los comunicadores de élite también.",
+          },
+          {
+            question: "¿Vas a corregir cada error que cometa?",
+            answer:
+              'No — y esto es de lo que más valoran mis clientes. Clasifico cada error como "crimen menor" o "crimen mayor". Los crímenes menores son pequeños y no afectan cómo te perciben, así que dejo pasar la mayoría. Los crímenes mayores — como pronunciar mal las terminaciones -ed del pasado — hacen que los hablantes nativos duden de tu competencia sin darse cuenta, aunque el resto de tu inglés sea excelente. Esos los marco siempre.',
+          },
+          {
+            question: "¿Puedo cambiar al español cuando me atoro?",
+            answer:
+              'Sí, sobre todo al principio — prefiero que termines una idea real en español a que te quedes congelado buscando una palabra en inglés. El objetivo es un inglés funcional y con confianza para los momentos que importan, no una regla de "nada de español" que te haga sentir peor.',
+          },
+          {
+            question: "¿Qué pasa si mi nivel resulta más bajo de lo que pensaba?",
+            answer:
+              "Lo averiguamos con honestidad en la llamada de descubrimiento, no lo adivinamos. Trabajo con estudiantes de nivel intermedio y avanzado — no enseño a principiantes absolutos — así que si tu nivel no encaja todavía, te lo digo directamente y te oriento hacia algo más útil en lugar de cobrarte por un programa que no es para ti.",
+          },
+        ],
+      },
+      {
+        id: "getting-started",
+        title: "Cómo empezar",
+        shortTitle: "Cómo empezar",
         description: "Todo lo que necesitas saber para comenzar tu camino de coaching.",
         faqs: [
           {
-            question: "¿Cómo empiezo con el coaching?",
+            question: "¿Qué pasa en la llamada de descubrimiento?",
             answer:
-              "Agenda una llamada de descubrimiento gratuita a través de nuestro sitio web. En 15-20 minutos, discutiremos tus objetivos, evaluaremos tu nivel actual y determinaremos si el coaching es lo adecuado para ti. No hay obligación — es simplemente una conversación sobre a dónde quieres llegar.",
+              "Es una conversación real, no un discurso de ventas. Hablamos de tus objetivos, evalúo tu nivel actual y decidimos juntos si el coaching tiene sentido para ti. Sin ninguna obligación.",
           },
           {
-            question: "¿Qué pasa en la primera sesión de coaching?",
+            question: "¿Qué pasa en la primera sesión pagada?",
             answer:
-              "La primera sesión es un diagnóstico. Identificamos tus brechas específicas de comunicación, entendemos tu contexto profesional y creamos una hoja de ruta priorizada. Te irás con 2-3 acciones inmediatas que puedes empezar a usar esa misma semana.",
+              "La primera sesión es un diagnóstico. Identifico tus brechas específicas de comunicación, entiendo tu contexto profesional y armamos una hoja de ruta priorizada. Sales con 2-3 acciones que puedes empezar a usar esa misma semana.",
           },
           {
             question:
-              "¿Necesito comprometerme con un paquete a largo plazo, o puedo probar una sola sesión?",
+              "¿Necesito comprometerme con un paquete, o puedo probar una sola sesión primero?",
             answer:
-              "Puedes comenzar con una sola sesión a 500 MXN / $30 USD. Muchos clientes prueban una sesión y luego eligen continuar porque ven valor inmediato. No hay presión para comprometerte — los resultados hablan por sí mismos.",
+              "Empieza con una sola sesión a 500 MXN / $30 USD — sin presión de comprometerte a más. La mayoría de mis clientes continúan porque sienten el valor de inmediato, no porque se inscribieron a un paquete desde el principio.",
           },
           {
             question: "¿Qué tecnología necesito para las sesiones en línea?",
             answer:
-              "Solo una computadora o teléfono con cámara, micrófono y conexión a internet estable. Las sesiones se realizan por Google Meet — no se necesita software especial. Un espacio tranquilo donde puedas hablar libremente es ideal.",
+              "Una computadora o celular con cámara, micrófono y una conexión estable a internet. Las sesiones son por Google Meet, sin software especial. Un espacio tranquilo donde puedas hablar libremente ayuda más que cualquier tecnología.",
           },
         ],
       },
       {
-        title: "Inversión y Valor",
-        description: "Cuánto cuesta y por qué esto es diferente de las clases de inglés estándar.",
+        id: "investment",
+        title: "Inversión, pago y facturación",
+        shortTitle: "Inversión y facturación",
+        description: "Cuánto cuesta, por qué, y cómo funciona la facturación.",
         faqs: [
           {
-            question: "¿Cuál es el costo de tu coaching?",
+            question: "¿Cuánto cuesta el coaching, y por qué?",
             answer:
-              "Tarifa Actual: 500 MXN ($30 USD) por sesión. Paquete de 12 Sesiones: 6,000 MXN / $360 USD. Por qué esto es diferente de las clases de inglés estándar: La mayoría de las clases de inglés se enfocan en gramática genérica y escenarios de libros de texto. Yo opero como tu socio estratégico de comunicación. Trabajamos directamente en tus desafíos del mundo real: tu próxima presentación ante la junta, tu negociación salarial o tus correos con clientes. Cada sesión está completamente personalizada para tu industria y tus KPIs específicos. No solo estás aprendiendo inglés; estás adquiriendo la presencia ejecutiva necesaria para cerrar tratos y avanzar en tu carrera. Debido al alto nivel de personalización y preparación requerido para este nivel de coaching, no ofrezco descuentos por volumen.",
+              "Sesión individual: 500 MXN ($30 USD). Plan ejecutivo de 12 sesiones: 6,000 MXN / $360 USD. Cada sesión se construye alrededor de tus retos reales — tu próxima presentación ante la junta, tu negociación salarial, tus correos con clientes — no de un temario genérico. Por ese nivel de personalización no ofrezco descuentos por volumen, ni siquiera para equipos corporativos: el precio refleja la profundidad de preparación de cada hora, no el número de personas.",
           },
           {
             question: "¿En qué se diferencia esto de un curso de ESL tradicional?",
             answer:
-              "Los cursos de ESL tradicionales se enfocan en reglas gramaticales y listas de vocabulario. Yo me enfoco en el desempeño en tiempo real bajo presión—manejar preguntas y respuestas, negociar en inglés y proyectar autoridad en reuniones de alto riesgo. No memorizarás tiempos verbales; practicarás los escenarios exactos que enfrentas en el trabajo.",
+              "Los cursos de ESL tradicionales enseñan reglas gramaticales y listas de vocabulario. Yo trabajo el desempeño en tiempo real bajo presión — manejar preguntas y respuestas, negociar en inglés, sostener autoridad en reuniones de alto riesgo. No vas a memorizar tiempos verbales; vas a ensayar los escenarios exactos que enfrentas en el trabajo.",
           },
           {
-            question: "¿Qué tipo de resultados puede esperar un ejecutivo de nivel C en 90 días?",
+            question: "¿Qué tan rápido veré resultados?",
             answer:
-              "La mayoría de los ejecutivos ven mejoras medibles en 5–8 sesiones: tiempos de respuesta más rápidos en reuniones, negociación más confiada y la capacidad de 'dominar la sala' sin traducir en su cabeza. A los 90 días, deberías estar liderando conversaciones de alto riesgo con la misma autoridad que tienes en tu idioma nativo.",
+              "La mayoría de mis clientes siente un cambio en su confianza desde la primera sesión. Para un cambio medible en fluidez y presencia ejecutiva, la mayoría ve progreso claro en 5-8 sesiones — depende de la práctica entre sesiones, la frecuencia y tus objetivos específicos.",
           },
           {
-            question: "¿Esto ayudará con mi acento, o es solo vocabulario?",
+            question: "¿Esto va a ayudar con mi acento, o es solo vocabulario?",
             answer:
-              "Ambos, pero el enfoque es estratégico. Te ayudo a identificar qué patrones de pronunciación realmente están dañando tu credibilidad (la mayoría no lo hacen), y trabajamos en claridad y confianza, no en borrar tu acento. El objetivo es ser entendido y respetado, no sonar como un hablante nativo.",
+              "Ambos, pero de forma estratégica. Te ayudo a identificar qué patrones de pronunciación realmente dañan tu credibilidad — la mayoría no lo hace — y trabajamos en claridad y confianza, no en borrar tu acento. El objetivo es que te entiendan y te respeten, no que suenes como alguien que no eres.",
+          },
+          {
+            question: "¿Proporcionas facturas para mi empresa?",
+            answer:
+              "Sí — proporciono facturas profesionales para clientes corporativos. Las empresas se facturan mensualmente al final de cada mes por todas las sesiones completadas.",
           },
         ],
       },
       {
-        title: "Logística y Programación",
-        description: "Cómo funcionan las sesiones, programación y políticas.",
+        id: "logistics",
+        title: "Programación y políticas",
+        shortTitle: "Programación",
+        description: "Cómo se agendan, cambian y cancelan las sesiones.",
         faqs: [
           {
-            question: "¿Proporcionas facturas para reembolso corporativo o gastos de la empresa?",
+            question: "¿Cuántas sesiones por semana recomiendas?",
             answer:
-              "Sí—proporciono facturas profesionales para clientes corporativos. Las empresas se facturan mensualmente al final de cada mes por todas las sesiones completadas.",
+              "Para una mejora rápida, 2-3 sesiones por semana. Para mantenimiento u objetivos más ligeros, 1 sesión por semana funciona bien. La consistencia y la práctica entre sesiones importan más que cualquier número exacto.",
+          },
+          {
+            question: "¿Cómo agendo o reprogramo una sesión?",
+            answer:
+              "Escríbeme por WhatsApp o correo. Por favor avisa con al menos un día hábil de anticipación si necesitas reprogramar.",
           },
           {
             question: "¿Cuál es tu política de cancelación e inasistencias?",
             answer:
-              "Las cancelaciones y reprogramaciones requieren al menos un día hábil (24 horas) de aviso. Si cancelas o reprogramas con menos de 24 horas de aviso, se aplica el cobro completo de la sesión — igual que si hubieras asistido. Las inasistencias se tratan igual: Robert espera hasta 15 minutos, después de lo cual se considera una sesión perdida y se aplica el cobro completo.",
-          },
-          {
-            question: "¿Cuántas sesiones por semana recomiendas para obtener resultados óptimos?",
-            answer:
-              "Para una mejora rápida, recomiendo 2–3 sesiones por semana. Para mantenimiento u objetivos más ligeros, 1 sesión por semana funciona. La clave es la consistencia y la práctica fuera de nuestras sesiones.",
+              "Manejo una agenda limitada y personalizada, y cada sesión se reserva exclusivamente para ti — por eso existe el plazo de aviso. Las cancelaciones y reprogramaciones requieren al menos un día hábil (24 horas) de aviso; dentro de ese plazo, se aplica el cobro completo, igual que si hubieras asistido. Las inasistencias funcionan igual: espero 15 minutos, después de lo cual se considera una sesión perdida con cobro completo. Las emergencias reales las reviso caso por caso, de buena fe.",
           },
         ],
       },
       {
-        title: "Metodología y Enfoque",
-        description: "Cómo funciona el coaching y qué lo hace efectivo.",
+        id: "methodology",
+        title: "Cómo funciona el coaching",
+        shortTitle: "Cómo trabajo",
+        description: "Qué pasa en una sesión y qué lo hace efectivo.",
         faqs: [
           {
-            question: "Conozco la gramática, pero me congelo bajo presión. ¿Cómo arreglas eso?",
+            question: "¿Qué habilidades específicas cubres?",
             answer:
-              "Este es un problema de desempeño, no de conocimiento. Usamos simulaciones de alta presión—preguntas y respuestas rápidas, manejo de objeciones y adaptación en tiempo real—para reprogramar tu cerebro y que pienses directamente en inglés bajo estrés. Es como entrenamiento atlético para tu comunicación.",
+              "Los escenarios exactos que enfrentas: presentaciones ante la junta directiva, pitches a inversionistas, negociaciones con clientes, preguntas y respuestas rápidas, y resolución de problemas bajo presión. Cada sesión se adapta a tu industria y tu rol.",
+          },
+          {
+            question: "¿Trabajas con mi industria?",
+            answer:
+              "Me especializo en TI, servicios profesionales (derecho, medicina, consultoría), logística y liderazgo ejecutivo. Ya entiendo la jerga y lo que está en juego en estos campos, así que no gastas tiempo de sesión explicándome tu mundo.",
+          },
+          {
+            question: "¿Qué materiales o recursos recibo?",
+            answer:
+              "Notas en PDF personalizadas después de cada sesión — frases clave, notas de pronunciación y escenarios de práctica hechos para tus objetivos — más acceso a mis recursos recomendados para estudiar por tu cuenta entre sesiones.",
+          },
+          {
+            question: "¿Las sesiones son contigo directamente?",
+            answer:
+              'Siempre. Cada sesión, cada corrección, cada hoja de ruta — soy yo, no un grupo rotativo de maestros. Así la retroalimentación de "crimen menor / crimen mayor" se mantiene consistente desde la primera sesión.',
+          },
+        ],
+      },
+      {
+        id: "teams",
+        title: "Para equipos y empresas",
+        shortTitle: "Para equipos y empresas",
+        description: "Coaching corporativo, facturación y cómo funciona la evaluación.",
+        faqs: [
+          {
+            question:
+              "Trabajo para una empresa mexicana que se expande al mercado de EE. UU. ¿Pueden ayudar a nuestro equipo?",
+            answer:
+              "Sí. Ofrezco coaching corporativo para equipos que dan ese salto — inglés para interacción con clientes, negociación de alianzas comerciales y la fluidez cultural que construye confianza con socios de negocio estadounidenses.",
           },
           {
             question:
-              "¿Qué habilidades específicas cubres (por ejemplo, Negociación, Q&A, Presentación)?",
+              "¿Pueden ayudar a mi equipo a prepararse para reuniones con oficinas centrales o clientes en EE. UU.?",
             answer:
-              "Cubrimos los escenarios exactos que enfrentas: presentaciones en sala de juntas, pitches a inversionistas, negociaciones con clientes, preguntas y respuestas rápidas y resolución de problemas de alta presión. Cada sesión se personaliza según tu industria y rol.",
+              "Sí. Muchos de mis clientes reportan a liderazgo con sede en EE. UU. o trabajan directamente con clientes estadounidenses. Practicamos los tipos de reunión exactos que enfrentas — actualizaciones de estatus, llamadas de escalación, revisiones trimestrales — con el estilo de comunicación que tus contrapartes en EE. UU. realmente esperan.",
           },
           {
-            question:
-              "¿Trabajas con una industria específica (por ejemplo, Finanzas, Tecnología, Consultoría)?",
+            question: "Queremos contratarte para varios miembros del equipo. ¿Hay descuento?",
             answer:
-              "Me especializo en TI, servicios profesionales (derecho, medicina, consultoría), logística y liderazgo ejecutivo. Entiendo la jerga y la dinámica de alto riesgo de estos campos, así que no pierdes tiempo explicándome tu mundo.",
+              "No ofrezco descuentos por volumen, y te explico por qué: cada sesión se mantiene completamente personalizada al rol y a los momentos de presión de esa persona, y eso es justo lo que hace que funcione. La mayoría de las cuentas corporativas empiezan igual — un director toma una clase demo para evaluar, y después extiende el coaching al resto del equipo cuando lo ve funcionar de primera mano.",
           },
           {
-            question: "¿Qué materiales o recursos se incluyen en el coaching?",
+            question: "¿Aceptan pago en pesos mexicanos?",
             answer:
-              "Después de cada sesión, recibes notas PDF personalizadas con frases clave, consejos de pronunciación y escenarios de práctica adaptados a tus objetivos. También obtienes acceso a mis recursos recomendados para el autoestudio entre sesiones.",
+              "Sí. Los precios están disponibles en MXN y USD — la sesión individual es de 500 MXN ($30 USD), el plan ejecutivo de 12 sesiones es de 6,000 MXN ($360 USD).",
           },
         ],
       },
