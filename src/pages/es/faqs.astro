@@ -4,6 +4,7 @@ export const prerender = true;
 import Base from "@layouts/Base.astro";
 import FaqsSegmented from "@components/sections/FaqsSegmented.astro";
 import FAQSchema from "@components/seo/FAQSchema.astro";
+import Button from "@components/ui/Button.astro";
 import { segmentedFaqLists } from "@data/faqs";
 import faqHeroImage from "@assets/images/faq/faq-hero.jpg";
 
@@ -36,11 +37,11 @@ const allFaqs = faqData.sections.flatMap((section) => section.faqs);
     />
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">// DEPURA TU COMUNICACIÓN</p>
-      <h1 class="hero-title">Obtén Respuestas a Tus Preguntas</h1>
+      <p class="hero-eyebrow">Preguntas frecuentes</p>
+      <h1 class="hero-title">Tus preguntas, mis respuestas</h1>
       <p class="hero-subtitle">
-        Todo lo que necesitas saber sobre optimizar tu inglés para momentos de
-        carrera de alto riesgo.
+        Todo lo que necesitas saber antes de empezar, explicado directamente
+        por mí — sin letra pequeña.
       </p>
     </div>
   </section>
@@ -53,6 +54,35 @@ const allFaqs = faqData.sections.flatMap((section) => section.faqs);
     ctaButtonText="Agenda Tu Llamada de Descubrimiento Gratis"
     ctaButtonLink="/es/reservar/"
   />
+
+  <!-- Still have a question -->
+  <section class="bg-white py-16 border-t border-slate-200">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+        ¿No encontraste tu pregunta?
+      </h2>
+      <p class="text-lg text-slate-600 mb-8">
+        Escríbeme directamente y te contesto yo mismo.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <Button
+          href="https://wa.me/523315590572"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="whatsapp"
+          size="lg"
+        >
+          Escríbeme por WhatsApp
+        </Button>
+        <a
+          href="mailto:robert@nyenglishteacher.com"
+          class="font-semibold text-blue-700 hover:text-blue-800"
+        >
+          O envíame un correo
+        </a>
+      </div>
+    </div>
+  </section>
 </Base>
 
 <style>
