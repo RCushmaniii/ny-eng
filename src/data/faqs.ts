@@ -206,9 +206,15 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
         description: "The short version — full detail is in the sections below.",
         faqs: [
           {
-            question: "How much does coaching cost?",
+            question:
+              "I feel like a different, less confident version of myself in English. Can you help with that?",
             answer:
-              "Single session: 500 MXN ($30 USD). 12-session executive roadmap: 6,000 MXN ($360 USD). Every session is custom-built around your industry, your upcoming presentations, and your actual calendar — not a curriculum you follow. More on invoicing and packages below.",
+              "That's exactly what I work on, and it's the most common thing people tell me on the first call. You're not starting from zero — you already think clearly, make good decisions, and know how to hold a conversation in your own language. What we're closing is the gap between that and how you come across in English. Wherever you're starting from, that's the work.",
+          },
+          {
+            question: "I know the grammar, but I freeze under pressure. Can you fix that?",
+            answer:
+              "Yes — and it's the most common thing I work on. This isn't about knowing more grammar, it's about performing under pressure. We practice the real moments that make you freeze — fast questions, pushback, having to think on your feet — until responding in English starts to feel automatic instead of terrifying. Think of it like training for a sport: you build the reflex by practicing it for real, not by reading about it.",
           },
           {
             question: "How do I get started?",
@@ -216,15 +222,9 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
               "Book a free discovery call. In 15-20 minutes I'll ask about your goals, get a read on your current level, and tell you honestly whether coaching is the right fit — no pressure either way.",
           },
           {
-            question: "I know the grammar, but I freeze under pressure. Can you fix that?",
+            question: "How much does coaching cost?",
             answer:
-              "Yes — this is a performance issue, not a knowledge issue, and it's the most common thing I coach. I use high-pressure simulation drills — rapid-fire Q&A, objection handling, real-time pivoting — to rewire how you think in English under stress. Think of it as athletic training for your communication.",
-          },
-          {
-            question:
-              "Do you understand what Mexican professionals are actually up against with English?",
-            answer:
-              "Yes — this is my specialty. I live in Guadalajara and work primarily with Mexican and Latin American professionals. I know the false cognates that trip people up (actualmente ≠ actually), the cultural gap between directness and formality, and exactly which pronunciation patterns quietly damage credibility with US counterparts.",
+              "Straight answer, no hidden fees: a single session is 500 MXN ($30 USD). If you want to commit further, the 12-session executive roadmap is 6,000 MXN ($360 USD). Every session is built around your industry, your upcoming moments, and your actual calendar — not a one-size-fits-all course. More on invoicing and packages below.",
           },
         ],
       },
@@ -237,7 +237,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "I feel embarrassed speaking English in front of you. Is that normal?",
             answer:
-              "Completely normal, and you're in good company — my clients are COOs, CEOs, founders, and directors at companies like Driscoll's, CEVA Logistics, and Teramar Brands. Needing coaching at your level isn't remedial, it's strategic. Elite athletes have coaches. So do elite communicators.",
+              "Completely normal — almost everyone feels it in the first few sessions. You're used to sounding sharp and in control in your own language, and English can make you feel like you're starting over. You're not. My clients range from people just starting to use English at work to CEOs, and every one of them has felt exactly what you're feeling right now. Needing support here isn't a weakness — even elite athletes have coaches.",
           },
           {
             question: "Will you correct every mistake I make?",
@@ -253,6 +253,12 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
             question: "What if my level turns out to be lower than I expected?",
             answer:
               "We'll find out honestly on the discovery call, not guess. I work with intermediate and advanced learners — I don't teach absolute beginners — so if your level isn't the right fit yet, I'll tell you directly and point you somewhere more useful instead of taking your money for the wrong program.",
+          },
+          {
+            question:
+              "Do you understand what Mexican professionals are actually up against with English?",
+            answer:
+              "Yes — this is my specialty. I live in Guadalajara and work primarily with Mexican and Latin American professionals. I know the false cognates that trip people up (actualmente ≠ actually), the cultural gap between directness and formality, and exactly which pronunciation patterns quietly damage credibility with US counterparts.",
           },
         ],
       },
@@ -270,7 +276,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "What happens in the first paid session?",
             answer:
-              "The first session is a diagnostic. I identify your specific communication gaps, understand your professional context, and build a prioritized roadmap. You'll leave with 2-3 things you can start using that same week.",
+              "The first session is where we figure out exactly what's going on — your specific gaps, your context, what's actually holding you back — and build a plan from there. You'll leave with 2-3 things you can start using that same week.",
           },
           {
             question: "Do I have to commit to a package, or can I try one session first?",
@@ -293,12 +299,12 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "What does coaching cost, and why?",
             answer:
-              "Single session: 500 MXN ($30 USD). 12-session executive roadmap: 6,000 MXN ($360 USD). Every session is built around your real challenges — your upcoming board presentation, your salary negotiation, your client emails — not a generic syllabus. Because of that level of personalization, I don't offer volume discounts, even for corporate teams: the price reflects the depth of preparation each hour gets, not the headcount.",
+              "Single session: 500 MXN ($30 USD). 12-session executive roadmap: 6,000 MXN ($360 USD). Every session is built around your real challenges — a big presentation coming up, a negotiation you're dreading, even just the emails that take you three times longer in English — not a generic syllabus. Because of that level of personalization, I don't offer volume discounts, even for teams: the price reflects the depth of preparation each hour gets, not the headcount.",
           },
           {
             question: "How is this different from a traditional ESL course?",
             answer:
-              "Traditional ESL courses teach grammar rules and vocabulary lists. I coach real-time performance under pressure — handling Q&A, negotiating in English, holding authority in high-stakes meetings. You won't memorize verb tenses; you'll rehearse the exact scenarios you're walking into at work.",
+              "Traditional ESL courses teach grammar rules and vocabulary lists. I coach real-time performance under pressure — handling tough questions, negotiating, staying clear and confident when the pressure is on. You won't memorize verb tenses; you'll rehearse the exact scenarios you're walking into at work.",
           },
           {
             question: "How fast will I see results?",
@@ -349,7 +355,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "What specific skills do you cover?",
             answer:
-              "The exact scenarios you face: boardroom presentations, investor pitches, client negotiations, rapid-fire Q&A, and troubleshooting under pressure. Every session is customized to your industry and role.",
+              "The exact situations you're facing: important meetings, presentations, client calls, negotiations, and thinking on your feet when someone asks a tough question. Every session is built around your role, whatever that looks like.",
           },
           {
             question: "Do you work with my industry?",
@@ -409,9 +415,14 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
         description: "La versión corta — el detalle completo está en las secciones de abajo.",
         faqs: [
           {
-            question: "¿Cuánto cuesta el coaching?",
+            question: "Cuando hablo inglés, siento que no soy yo. ¿Me puedes ayudar con eso?",
             answer:
-              "Sesión individual: 500 MXN ($30 USD). Plan ejecutivo de 12 sesiones: 6,000 MXN ($360 USD). Cada sesión se diseña alrededor de tu industria, tus próximas presentaciones y tu agenda real — no es un curso que sigues paso a paso. Más abajo explico cómo funciona la facturación y los paquetes.",
+              "Es justo en lo que trabajo, y es lo que más me dicen en la primera llamada. No estás empezando de cero — ya piensas con claridad, tomas buenas decisiones y sabes cómo llevar una conversación en tu idioma. Lo que cerramos es la brecha entre eso y cómo te perciben en inglés. No importa en qué punto estés, ese es el trabajo.",
+          },
+          {
+            question: "Conozco la gramática, pero me congelo bajo presión. ¿Puedes arreglar eso?",
+            answer:
+              "Sí — y es de lo más común que trabajo. Esto no se trata de saber más gramática, se trata de rendir bien bajo presión. Practicamos los momentos reales que te hacen congelarte — preguntas rápidas, objeciones, tener que pensar rápido — hasta que responder en inglés empieza a sentirse automático en lugar de aterrador. Es como entrenar para un deporte: construyes el reflejo practicándolo de verdad, no leyendo sobre él.",
           },
           {
             question: "¿Cómo empiezo?",
@@ -419,15 +430,9 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
               "Agenda una llamada de descubrimiento gratuita. En 15-20 minutos platicamos tus objetivos, evalúo tu nivel actual y te digo con honestidad si el coaching es lo que necesitas — sin presión de ningún lado.",
           },
           {
-            question: "Conozco la gramática, pero me congelo bajo presión. ¿Puedes arreglar eso?",
+            question: "¿Cuánto cuesta el coaching?",
             answer:
-              "Sí — es un problema de desempeño, no de conocimiento, y es de lo más común que trabajo. Uso simulaciones de alta presión — preguntas y respuestas rápidas, manejo de objeciones, adaptación en tiempo real — para reprogramar cómo piensas en inglés bajo estrés. Es como entrenamiento atlético, pero para tu comunicación.",
-          },
-          {
-            question:
-              "¿Entiendes lo que realmente enfrentan los profesionales mexicanos con el inglés?",
-            answer:
-              "Sí — es mi especialidad. Vivo en Guadalajara y trabajo principalmente con profesionales mexicanos y latinoamericanos. Conozco los falsos cognados que traicionan (actualmente ≠ actually), la diferencia cultural entre franqueza y formalidad, y exactamente qué patrones de pronunciación dañan la credibilidad frente a contrapartes estadounidenses.",
+              "Respuesta directa, sin letra chica: una sesión individual son 500 MXN ($30 USD). Si quieres comprometerte a más, el plan ejecutivo de 12 sesiones son 6,000 MXN ($360 USD). Cada sesión se construye alrededor de tu industria, tus próximos retos y tu agenda real — no es un curso genérico para todos. Más abajo explico cómo funciona la facturación y los paquetes.",
           },
         ],
       },
@@ -440,7 +445,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "Me da pena hablar inglés frente a ti. ¿Es normal?",
             answer:
-              "Totalmente normal, y estás en buena compañía — mis clientes son COOs, CEOs, fundadores y directores en empresas como Driscoll's, CEVA Logistics y Teramar Brands. Necesitar coaching en tu nivel no es remedial, es estratégico. Los atletas de élite tienen entrenador. Los comunicadores de élite también.",
+              "Totalmente normal — casi todos sienten esto en las primeras sesiones. Estás acostumbrado a sonar seguro y en control en tu idioma, y el inglés te puede hacer sentir que estás empezando de cero. No es así. Mis clientes van desde personas que apenas están usando el inglés en el trabajo hasta CEOs, y todos han sentido exactamente lo que tú sientes ahora. Pedir apoyo aquí no es una debilidad — hasta los atletas de élite tienen entrenador.",
           },
           {
             question: "¿Vas a corregir cada error que cometa?",
@@ -456,6 +461,12 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
             question: "¿Qué pasa si mi nivel resulta más bajo de lo que pensaba?",
             answer:
               "Lo averiguamos con honestidad en la llamada de descubrimiento, no lo adivinamos. Trabajo con estudiantes de nivel intermedio y avanzado — no enseño a principiantes absolutos — así que si tu nivel no encaja todavía, te lo digo directamente y te oriento hacia algo más útil en lugar de cobrarte por un programa que no es para ti.",
+          },
+          {
+            question:
+              "¿Entiendes lo que realmente enfrentan los profesionales mexicanos con el inglés?",
+            answer:
+              "Sí — es mi especialidad. Vivo en Guadalajara y trabajo principalmente con profesionales mexicanos y latinoamericanos. Conozco los falsos cognados que traicionan (actualmente ≠ actually), la diferencia cultural entre franqueza y formalidad, y exactamente qué patrones de pronunciación dañan la credibilidad frente a contrapartes estadounidenses.",
           },
         ],
       },
@@ -473,7 +484,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "¿Qué pasa en la primera sesión pagada?",
             answer:
-              "La primera sesión es un diagnóstico. Identifico tus brechas específicas de comunicación, entiendo tu contexto profesional y armamos una hoja de ruta priorizada. Sales con 2-3 acciones que puedes empezar a usar esa misma semana.",
+              "La primera sesión es donde averiguamos exactamente qué está pasando — tus brechas específicas, tu contexto, qué te está deteniendo realmente — y armamos un plan a partir de eso. Sales con 2-3 acciones que puedes empezar a usar esa misma semana.",
           },
           {
             question:
@@ -497,12 +508,12 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "¿Cuánto cuesta el coaching, y por qué?",
             answer:
-              "Sesión individual: 500 MXN ($30 USD). Plan ejecutivo de 12 sesiones: 6,000 MXN / $360 USD. Cada sesión se construye alrededor de tus retos reales — tu próxima presentación ante la junta, tu negociación salarial, tus correos con clientes — no de un temario genérico. Por ese nivel de personalización no ofrezco descuentos por volumen, ni siquiera para equipos corporativos: el precio refleja la profundidad de preparación de cada hora, no el número de personas.",
+              "Sesión individual: 500 MXN ($30 USD). Plan ejecutivo de 12 sesiones: 6,000 MXN / $360 USD. Cada sesión se construye alrededor de tus retos reales — una presentación importante que se acerca, una negociación que te preocupa, o hasta esos correos que te toman el triple de tiempo en inglés — no de un temario genérico. Por ese nivel de personalización no ofrezco descuentos por volumen, ni siquiera para equipos: el precio refleja la profundidad de preparación de cada hora, no el número de personas.",
           },
           {
             question: "¿En qué se diferencia esto de un curso de ESL tradicional?",
             answer:
-              "Los cursos de ESL tradicionales enseñan reglas gramaticales y listas de vocabulario. Yo trabajo el desempeño en tiempo real bajo presión — manejar preguntas y respuestas, negociar en inglés, sostener autoridad en reuniones de alto riesgo. No vas a memorizar tiempos verbales; vas a ensayar los escenarios exactos que enfrentas en el trabajo.",
+              "Los cursos de ESL tradicionales enseñan reglas gramaticales y listas de vocabulario. Yo trabajo el desempeño en tiempo real bajo presión — manejar preguntas difíciles, negociar, mantenerte claro y con confianza cuando la presión aprieta. No vas a memorizar tiempos verbales; vas a ensayar los escenarios exactos que enfrentas en el trabajo.",
           },
           {
             question: "¿Qué tan rápido veré resultados?",
@@ -553,7 +564,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "¿Qué habilidades específicas cubres?",
             answer:
-              "Los escenarios exactos que enfrentas: presentaciones ante la junta directiva, pitches a inversionistas, negociaciones con clientes, preguntas y respuestas rápidas, y resolución de problemas bajo presión. Cada sesión se adapta a tu industria y tu rol.",
+              "Las situaciones exactas que enfrentas: reuniones importantes, presentaciones, llamadas con clientes, negociaciones y pensar rápido cuando alguien te hace una pregunta difícil. Cada sesión se construye alrededor de tu rol, sea cual sea.",
           },
           {
             question: "¿Trabajas con mi industria?",
