@@ -206,9 +206,10 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
         description: "The short version — full detail is in the sections below.",
         faqs: [
           {
-            question: "Is this coaching only for C-suite executives?",
+            question:
+              "I feel like a different, less confident version of myself in English. Can you help with that?",
             answer:
-              "Not at all. Yes, I coach COOs and CEOs, but most of my clients are managers, team leads, and career-driven professionals a few steps before that — people who just got a promotion that suddenly demands more English, or who are pushing for the next one. Wherever you are in your career, if English is the thing standing between you and how you want to be seen, that's what I work on.",
+              "That's exactly what I work on, and it's the most common thing people tell me on the first call. You're not starting from zero — you already think clearly, make good decisions, and know how to hold a conversation in your own language. What we're closing is the gap between that and how you come across in English. Wherever you're starting from, that's the work.",
           },
           {
             question: "I know the grammar, but I freeze under pressure. Can you fix that?",
@@ -414,9 +415,9 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
         description: "La versión corta — el detalle completo está en las secciones de abajo.",
         faqs: [
           {
-            question: "¿Este coaching es solo para directores generales?",
+            question: "Cuando hablo inglés, siento que no soy yo. ¿Me puedes ayudar con eso?",
             answer:
-              "Para nada. Sí, coacheo a COOs y CEOs, pero la mayoría de mis clientes son gerentes, líderes de equipo y profesionales que están un par de pasos antes de eso — gente que acaba de recibir un ascenso que de repente exige más inglés, o que está empujando para conseguir el siguiente. No importa en qué punto de tu carrera estés: si el inglés es lo único que se interpone entre tú y cómo quieres que te vean, de eso me encargo.",
+              "Es justo en lo que trabajo, y es lo que más me dicen en la primera llamada. No estás empezando de cero — ya piensas con claridad, tomas buenas decisiones y sabes cómo llevar una conversación en tu idioma. Lo que cerramos es la brecha entre eso y cómo te perciben en inglés. No importa en qué punto estés, ese es el trabajo.",
           },
           {
             question: "Conozco la gramática, pero me congelo bajo presión. ¿Puedes arreglar eso?",
