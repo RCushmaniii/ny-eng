@@ -1,0 +1,291 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import AudioButton from "@components/course/AudioButton";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Lightbulb,
+  CheckCircle2,
+  XCircle,
+  HelpCircle,
+  Anchor,
+  Printer,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/drive-the-decision/does-that-make-sense" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title='"Does That Make Sense?" — Say This Instead'
+  description="Why 'does that make sense?' hands your authority to the listener at the exact moment you need it most — and the closings executives use to let a point land."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-cyan-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-cyan-300 text-sm font-semibold mb-3">
+          <Lightbulb class="w-4 h-4" />
+          Bonus · The Closing Trap
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          "Does That Make Sense?" vs Letting It Land
+        </h1>
+        <p class="text-2xl text-cyan-300 italic font-light mb-4">The last five words of your point decide how it's remembered.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          You built the argument, delivered the recommendation — and then, in the final second,
+          asked the room for permission to have made it. This page is about the ending.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Print this page
+          </button>
+          <a
+            href="/en/course/drive-the-decision/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Back to the master class
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The split -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">The Closing Split</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Same point, two endings. One asks the room to grade you. One lets the point stand.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border-2 border-rose-300 bg-rose-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-rose-500 text-white">
+                <HelpCircle class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">"Does that make sense?"</h3>
+            </div>
+            <p class="text-sm font-mono text-rose-700 mb-3">the permission slip</p>
+            <p class="text-slate-700 mb-3">
+              It feels collaborative. What it actually does is <strong>hand your authority to the
+              listener</strong> and invite them to rule on your clarity — right after you finished
+              being clear. Worse, it can read as doubting <em>their</em> comprehension.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-rose-200 text-sm space-y-1.5">
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"…so we consolidate the vendors in Q4. <strong>Does that make sense?</strong>"</p>
+                <AudioButton client:load text="…so we consolidate the vendors in Q4. Does that make sense?" lang="en-US" size="sm" />
+              </div>
+              <p class="text-slate-500 pt-1">What the room hears: <em>"Please approve my explanation."</em> The recommendation now ends on a question mark — literally.</p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border-2 border-cyan-300 bg-cyan-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-cyan-600 text-white">
+                <Anchor class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">Letting it land</h3>
+            </div>
+            <p class="text-sm font-mono text-cyan-700 mb-3">the anchored close</p>
+            <p class="text-slate-700 mb-3">
+              End on the ask, the flat final syllable — then <strong>silence</strong>. Two seconds of
+              quiet after a recommendation reads as confidence. If you want engagement, ask a question
+              that assumes the point landed and moves the room forward.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-cyan-200 text-sm space-y-1.5">
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"…so we consolidate the vendors in Q4. <strong>That's the call I'm asking for today.</strong>"</p>
+                <AudioButton client:load text="…so we consolidate the vendors in Q4. That's the call I'm asking for today." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"…in Q4. <strong>What questions do you have?</strong>"</p>
+                <AudioButton client:load text="…in Q4. What questions do you have?" lang="en-US" size="sm" />
+              </div>
+              <p class="text-slate-500 pt-1">"What questions do you have?" assumes engagement. "Does that make sense?" begs for it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why it slips out -->
+  <section class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">Why It Slips Out</h2>
+        <div class="bg-white rounded-2xl border-2 border-slate-200 p-7">
+          <p class="text-slate-700 leading-relaxed mb-4">
+            "Does that make sense?" isn't a knowledge gap — it's a <strong>nerve gap</strong>. It slips
+            out for one of three reasons, and each has its own fix:
+          </p>
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-600 text-white text-sm font-bold shrink-0">1</span>
+              <span><strong class="text-slate-900">You're filling the silence.</strong> The two seconds after a strong point feel eternal — to you. To the room they read as weight. Train the pause; it's doing your work.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-600 text-white text-sm font-bold shrink-0">2</span>
+              <span><strong class="text-slate-900">You genuinely want a comprehension check.</strong> Legitimate — but aim it at yourself, not them: "Let me check my own explanation — where was I least clear?" You keep ownership of the clarity.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-600 text-white text-sm font-bold shrink-0">3</span>
+              <span><strong class="text-slate-900">Second-language doubt.</strong> You're really asking "did my English work?" — and the room can hear that. The fix isn't the closing phrase; it's trusting that a landed point needs no receipt.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 30-second drill -->
+  <section class="py-12 md:py-16 bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">The 30-Second Drill</h2>
+          <p class="text-slate-600">Replace the closer. Cover the right side. Land the ending flat.</p>
+        </div>
+
+        <div class="bg-cyan-50 rounded-2xl border-2 border-cyan-300 p-6 md:p-8 print:p-3 print:rounded-md">
+          <div class="space-y-4 print:space-y-2">
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-cyan-200">
+              <p class="text-slate-700">After a recommendation to the board: "…<strong>does that make sense?</strong>"</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-cyan-600" /> "That's the decision I'm asking the room to make." <span class="text-slate-400">Then silence.</span></div>
+                <AudioButton client:load text="That's the decision I'm asking the room to make." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-cyan-200">
+              <p class="text-slate-700">After explaining a technical plan to a client: "…<strong>does that make sense?</strong>"</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-cyan-600" /> "What questions do you have on the rollout?"</div>
+                <AudioButton client:load text="What questions do you have on the rollout?" lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-cyan-200">
+              <p class="text-slate-700">After walking your team through a complex change: "…<strong>make sense?</strong>"</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-cyan-600" /> "Where should I go deeper before we start?"</div>
+                <AudioButton client:load text="Where should I go deeper before we start?" lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center">
+              <p class="text-slate-700">After a genuinely dense explanation, when you doubt your own clarity:</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-cyan-600" /> "That was a lot — let me give you the one-sentence version: we consolidate, we save 12%, we start in October."</div>
+                <AudioButton client:load text="That was a lot — let me give you the one-sentence version: we consolidate, we save 12%, we start in October." lang="en-US" size="sm" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traps -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Traps</h2>
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span>Swapping in "right?" or "you know?" at the end of every point.</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">Same permission slip, smaller font. A rising "right?" at sentence-end does exactly what rising pitch does — converts your statement into a request for approval.</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span>"Any questions?" delivered while already advancing the slide.</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">The words invite; the behavior revokes. If you ask for questions, stop moving and count two full seconds. An invitation with no pause is heard as a formality.</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-cyan-300 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <CheckCircle2 class="w-5 h-5 text-cyan-600 shrink-0 mt-0.5" />
+              <span><strong>Native ear test:</strong> if your closing question could be answered with a polite "yes" and nothing else, it wasn't a question — it was a request for reassurance. "What questions do you have?" can't be answered with "yes." That's the test.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-cyan-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">Keep Going</h2>
+        <p class="text-cyan-100 mb-6">
+          The closing is move four of four. Answer first, name the tradeoff, assign ownership,
+          close with the ask — the full master class drills all four against real boardroom scenarios.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/en/course/drive-the-decision/cheat-sheet/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+          >
+            The One-Page Cheat Sheet
+            <ArrowRight class="w-5 h-5" />
+          </a>
+        </div>
+        <p class="text-cyan-100 text-sm mt-8 max-w-2xl mx-auto">
+          Related split:
+          <a href="/en/course/drive-the-decision/i-think-vs-my-read-is/" class="text-amber-300 hover:text-amber-200 underline underline-offset-2 font-semibold">"I think" vs "my read is"</a>
+          — the same authority leak, at the start of the sentence instead of the end.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      header, footer, nav { display: none !important; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #164e63 !important; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Does That Make Sense — What to Say Instead",
+    "description": "Focused reference on why 'does that make sense?' hands authority to the listener, the three reasons it slips out, and the anchored closings executives use instead — including the silence that lets a point land.",
+    "learningResourceType": "Reference",
+    "educationalLevel": "Intermediate to Advanced",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "url": "https://www.nyenglishteacher.com/en/course/drive-the-decision/does-that-make-sense/",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Drive the Decision — Free Master Class",
+      "url": "https://www.nyenglishteacher.com/en/course/drive-the-decision/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/en/about/"
+    }
+  })} />
+</Base>
