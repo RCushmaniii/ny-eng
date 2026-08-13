@@ -32,19 +32,15 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 
 ---
 
-- [ ] **"X vs Y" comparison pages for Executive Pushback and Drive the Decision.**
-  *Blocks:* these two are the differentiated offer we lead with, and neither has a
-  granular search entry point. Past Tenses does — four of them
-  (`knew-vs-found-out`, `there-was-vs-there-has-been`, `top-10-confused-pairs`,
-  `story-openers`) — and its sibling `cheat-sheet` page sits at **position 10.5
-  unpromoted**, the best organic position on any course asset. Without these, both
-  courses are reachable only through a hub, and hubs do not rank (56–83).
-  *Verified still open 2026-08-06:* `src/pages/en/course/executive-pushback/` and
-  `.../drive-the-decision/` contain hub + lessons + cheat sheet only. Verb Patterns
-  has three comparison-shaped pages already, but they are curriculum lessons in
-  `src/data/verb-patterns/levels.ts`, not standalone entry points.
-  *Closes when:* pages exist EN + ES, are linked from their hubs, and have been
-  submitted to GSC/IndexNow.
+- [x] **"X vs Y" comparison pages for Executive Pushback and Drive the Decision — CLOSED 2026-08-13.**
+  Four pages shipped in PR #244: `i-hear-you-but-vs-and` and
+  `i-disagree-vs-i-see-it-differently` (Executive Pushback), `i-think-vs-my-read-is`
+  and `does-that-make-sense` (Drive the Decision). Verified end to end: all 8 URLs
+  (EN + ES) return 200 in production, reciprocal hreflang confirmed in built HTML,
+  linked from all four course hubs, sitemap resubmitted to GSC, each URL submitted
+  to Bing API and IndexNow with success responses. Watch them in the ~2026-09-02
+  GSC window alongside the redirect-fix check — Past Tenses comparisons entered
+  around position 10.
 
 - [ ] **GSC re-check — two windows, one report.**
   *Blocks:* every content decision after this. Two rounds of SEO work are in
