@@ -8,6 +8,8 @@ categories:
   - "Carrera y Liderazgo"
 readingTime: "9 min de lectura"
 audience: "Profesionales senior hispanohablantes cuyo inglés es gramaticalmente sólido pero sienten que sus ideas no aterrizan con el peso que tienen en español"
+featuredImage: "./images/ingles-correcto-pero-desconectado.webp"
+imageAlt: "Imagen dividida del mismo ejecutivo presentando dos veces — a la izquierda, tarjetas de ideas desconectadas flotan a la deriva ante una audiencia confundida; a la derecha, las mismas ideas forman una cadena conectada y luminosa ante una audiencia atenta"
 translations:
   en: "/en/blog/why-correct-english-sounds-disconnected/"
 publish: true
