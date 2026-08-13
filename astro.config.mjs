@@ -73,6 +73,7 @@ const blogTranslations = {
     "/es/blog/guia-comunicacion-laboral-mexico-estados-unidos/",
   "elite-executives-hire-communication-coaches":
     "/es/blog/por-que-ejecutivos-elite-contratan-coaches/",
+  "why-correct-english-sounds-disconnected": "/es/blog/ingles-correcto-pero-desconectado/",
 };
 
 // Reverse map (ES slug -> EN path)
