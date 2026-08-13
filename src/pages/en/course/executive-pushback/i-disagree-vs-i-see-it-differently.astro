@@ -1,0 +1,296 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import AudioButton from "@components/course/AudioButton";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Lightbulb,
+  CheckCircle2,
+  XCircle,
+  Gavel,
+  Glasses,
+  Printer,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/executive-pushback/i-disagree-vs-i-see-it-differently" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title='"I Disagree" vs "I See It Differently"'
+  description="Both are professional English. One delivers a verdict, one opens a second reading. When each wins in a meeting — and the soft middle that loses the room."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <Lightbulb class="w-4 h-4" />
+          Bonus · The Disagreement Split
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          "I Disagree" vs "I See It Differently"
+        </h1>
+        <p class="text-2xl text-indigo-300 italic font-light mb-4">Neither one is rude. They do different jobs.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          Most professionals were taught that disagreeing in English needs softening. The truth is
+          more useful: there are two professional tools, each with a moment it's built for — and a
+          third option, the soft middle, that costs you the room.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Print this page
+          </button>
+          <a
+            href="/en/course/executive-pushback/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Back to the master class
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The split -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Two Tools, Not One Rule</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            The difference isn't politeness. It's what each phrase does to the conversation that follows.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border-2 border-slate-400 bg-slate-50 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-slate-700 text-white">
+                <Gavel class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">I disagree</h3>
+            </div>
+            <p class="text-sm font-mono text-slate-600 mb-3">the verdict</p>
+            <p class="text-slate-700 mb-3">
+              A ruling on their position. Clean, direct, high-authority. It closes the exploratory phase
+              and forces a decision point. Use it when the stakes demand an unmissable no.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-slate-300 text-sm space-y-1.5">
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I disagree — shipping without the security review is a risk we can't price."</p>
+                <AudioButton client:load text="I disagree — shipping without the security review is a risk we can't price." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I disagree with the premise. Churn isn't a pricing problem."</p>
+                <AudioButton client:load text="I disagree with the premise. Churn isn't a pricing problem." lang="en-US" size="sm" />
+              </div>
+              <p class="text-slate-500 pt-1">Best when: you own the domain, the stakes are high, or a clear line must be drawn.</p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-500 text-white">
+                <Glasses class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">I see it differently</h3>
+            </div>
+            <p class="text-sm font-mono text-indigo-700 mb-3">the second reading</p>
+            <p class="text-slate-700 mb-3">
+              Not softer — <strong>smarter positioning</strong>. It says: same data, different read.
+              Their judgment isn't on trial; the interpretation is. The conversation stays open while
+              you replace their conclusion with yours.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-indigo-200 text-sm space-y-1.5">
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I see it differently. The same churn data reads to me as an onboarding gap."</p>
+                <AudioButton client:load text="I see it differently. The same churn data reads to me as an onboarding gap." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I read that differently — the delay bought us the enterprise deal."</p>
+                <AudioButton client:load text="I read that differently — the delay bought us the enterprise deal." lang="en-US" size="sm" />
+              </div>
+              <p class="text-slate-500 pt-1">Best when: pushing upward, crossing functions, or when ego and status are in the room.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The real enemy -->
+  <section class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Real Enemy: the Soft Middle</h2>
+        <div class="bg-white rounded-2xl border-2 border-slate-200 p-7">
+          <p class="text-slate-700 leading-relaxed mb-4">
+            The damage is rarely done by choosing the wrong phrase of the two. It's done by choosing
+            <strong>neither</strong> — the hedge that disagrees without admitting it:
+          </p>
+          <div class="bg-rose-50 border border-rose-200 rounded-lg p-4 mb-4">
+            <div class="flex items-center gap-2">
+              <p class="flex-1 text-slate-700 italic">"I'm not sure… maybe we could also consider… I mean, it could work…"</p>
+              <AudioButton client:load text="I'm not sure… maybe we could also consider… I mean, it could work…" lang="en-US" size="sm" />
+            </div>
+          </div>
+          <p class="text-slate-700 leading-relaxed mb-4">
+            To the room, that isn't diplomacy. It's <strong>the absence of a position</strong>. Senior
+            listeners hear it and conclude one of two things: you haven't decided, or you have decided
+            and won't say it. Both cost more authority than any direct disagreement ever will.
+          </p>
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-rose-500 text-white text-sm font-bold shrink-0">1</span>
+              <span><strong class="text-slate-900">Avoidance:</strong> "Maybe, I'm not sure…" — no position. The room moves on without you.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-600 text-white text-sm font-bold shrink-0">2</span>
+              <span><strong class="text-slate-900">Verdict:</strong> "I disagree." — a position, delivered as a ruling. Clear, and sometimes exactly right.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500 text-white text-sm font-bold shrink-0">3</span>
+              <span><strong class="text-slate-900">Second reading:</strong> "I see it differently, and here's the read." — a position that invites the room to compare interpretations instead of defending egos.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 30-second drill -->
+  <section class="py-12 md:py-16 bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">The 30-Second Drill</h2>
+          <p class="text-slate-600">Pick the tool for each moment. Cover the right side. Commit out loud.</p>
+        </div>
+
+        <div class="bg-indigo-50 rounded-2xl border-2 border-indigo-300 p-6 md:p-8 print:p-3 print:rounded-md">
+          <div class="space-y-4 print:space-y-2">
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-indigo-200">
+              <p class="text-slate-700">The CFO reads your forecast as too optimistic — in front of the board.</p>
+              <div class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-indigo-600" /> <strong>Second reading.</strong> "I see it differently — the pipeline coverage supports it. Let me show the math." Status is in the room; don't put their judgment on trial.</div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-indigo-200">
+              <p class="text-slate-700">A vendor proposes skipping the compliance step to hit the date.</p>
+              <div class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-indigo-600" /> <strong>Verdict.</strong> "I disagree — that step isn't optional. Let's find the time somewhere else." A clear line, drawn once.</div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-indigo-200">
+              <p class="text-slate-700">A peer attributes the churn spike to pricing; your data says onboarding.</p>
+              <div class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-indigo-600" /> <strong>Second reading.</strong> "Same numbers, different read — the cohorts that churned never finished onboarding." Cross-functional peace, position intact.</div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center">
+              <p class="text-slate-700">Your team wants to demo an unfinished feature to the biggest client.</p>
+              <div class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-indigo-600" /> <strong>Verdict.</strong> "I disagree. We demo what's stable — nothing else in front of that client." You own the domain; rule on it.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traps -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Traps</h2>
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span>"With all due respect…"</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">In native ears this announces an attack, not respect. Whatever follows it is received as hostile. Delete the phrase entirely — it has no safe use.</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span>Disagreeing with the <em>person</em> instead of the <em>read</em>.</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">"You're wrong" makes it personal and triggers ego protection — the hardest driver to recover from. Both professional tools aim at the position or the interpretation, never the human.</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-indigo-300 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+              <span><strong>Native ear test:</strong> either phrase must be followed by your actual read within one breath. A disagreement without a reason is heard as a mood. "I see it differently" + silence is worse than saying nothing.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-indigo-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">Keep Going</h2>
+        <p class="text-indigo-100 mb-6">
+          Knowing which tool to reach for starts with diagnosing why they're pushing back at all.
+          The Six Hidden Drivers lesson is the diagnostic layer this page sits on.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/en/course/executive-pushback/six-hidden-drivers/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+          >
+            The Six Hidden Drivers Lesson
+            <ArrowRight class="w-5 h-5" />
+          </a>
+        </div>
+        <p class="text-indigo-100 text-sm mt-8 max-w-2xl mx-auto">
+          Related split:
+          <a href="/en/course/executive-pushback/i-hear-you-but-vs-and/" class="text-amber-300 hover:text-amber-200 underline underline-offset-2 font-semibold">"I hear you, but" vs "I hear you, and"</a>
+          — and the
+          <a href="/en/course/executive-pushback/cheat-sheet/" class="text-amber-300 hover:text-amber-200 underline underline-offset-2 font-semibold">one-page cheat sheet</a>
+          compresses the whole master class into something you can scan before the meeting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      header, footer, nav { display: none !important; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #312e81 !important; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "I Disagree vs I See It Differently",
+    "description": "Focused reference on the two professional ways to disagree in English — the verdict and the second reading — when each wins, the soft middle that loses the room, and the traps ('with all due respect') to delete.",
+    "learningResourceType": "Reference",
+    "educationalLevel": "Intermediate to Advanced",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "url": "https://www.nyenglishteacher.com/en/course/executive-pushback/i-disagree-vs-i-see-it-differently/",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Executive Pushback — Free Master Class",
+      "url": "https://www.nyenglishteacher.com/en/course/executive-pushback/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/en/about/"
+    }
+  })} />
+</Base>

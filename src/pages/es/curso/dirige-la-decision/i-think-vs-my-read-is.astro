@@ -1,0 +1,298 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import AudioButton from "@components/course/AudioButton";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Lightbulb,
+  CheckCircle2,
+  XCircle,
+  MessageCircle,
+  Crosshair,
+  Printer,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/drive-the-decision/i-think-vs-my-read-is" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title='"I Think" vs "My Read Is" en Juntas'
+  description="'I think' degrada tu juicio a opinión. 'My read is' entrega una conclusión que reclama su análisis. El cambio que transforma cómo aterriza tu decisión."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-cyan-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-cyan-300 text-sm font-semibold mb-3">
+          <Lightbulb class="w-4 h-4" />
+          Bono · El Cambio de Marco
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          "I Think" vs "My Read Is"
+        </h1>
+        <p class="text-2xl text-cyan-300 italic font-light mb-4">Uno enmarca una opinión. El otro enmarca un juicio.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          Analizaste los datos, sopesaste los tradeoffs y llegaste a una conclusión. Luego abriste
+          la boca y dijiste "I think…" — y la sala recibió tu análisis como un sentimiento.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Imprimir esta página
+          </button>
+          <a
+            href="/es/curso/dirige-la-decision/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Volver a la clase magistral
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The split -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">La División del Marco</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Ambas son gramaticalmente correctas. La diferencia es el peso que la sala le asigna a lo que sigue.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border-2 border-rose-300 bg-rose-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-rose-500 text-white">
+                <MessageCircle class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">I think</h3>
+            </div>
+            <p class="text-sm font-mono text-rose-700 mb-3">el marco de opinión</p>
+            <p class="text-slate-700 mb-3">
+              "I think" archiva tu conclusión como <strong>opinión personal</strong> — una voz entre
+              muchas, abierta a votación. Añádele "maybe" o "probably" y el análisis que hiciste se
+              vuelve invisible.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-rose-200 text-sm space-y-1.5">
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I think we should probably delay the launch."</p>
+                <AudioButton client:load text="I think we should probably delay the launch." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I feel like the pricing is maybe too aggressive."</p>
+                <AudioButton client:load text="I feel like the pricing is maybe too aggressive." lang="en-US" size="sm" />
+              </div>
+              <p class="text-slate-500 pt-1">Lo que la sala escucha: <em>"Tiene un presentimiento. Discutamos."</em></p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border-2 border-cyan-300 bg-cyan-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-cyan-600 text-white">
+                <Crosshair class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">My read is</h3>
+            </div>
+            <p class="text-sm font-mono text-cyan-700 mb-3">el marco de juicio</p>
+            <p class="text-slate-700 mb-3">
+              "My read is" dice: <strong>revisé la evidencia y esta es mi interpretación
+              profesional.</strong> Reclama el análisis, te nombra como el analista, y aun así deja
+              espacio para que otros ofrezcan una lectura distinta.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-cyan-200 text-sm space-y-1.5">
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"My read is we delay two weeks — the QA data doesn't support Friday."</p>
+                <AudioButton client:load text="My read is we delay two weeks — the QA data doesn't support Friday." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"My read on the pricing is that it prices us out of the mid-market."</p>
+                <AudioButton client:load text="My read on the pricing is that it prices us out of the mid-market." lang="en-US" size="sm" />
+              </div>
+              <p class="text-slate-500 pt-1">Lo que la sala escucha: <em>"Ya hizo el análisis. Hay que responderle al análisis."</em></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The mental picture -->
+  <section class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">La Imagen Mental</h2>
+        <div class="bg-white rounded-2xl border-2 border-slate-200 p-7">
+          <p class="text-slate-700 leading-relaxed mb-4">
+            Imagina que la sala lleva un registro invisible de cada declaración, ordenado en dos
+            columnas: <strong>opiniones para votar</strong> y <strong>juicios para examinar</strong>.
+          </p>
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-rose-500 text-white shrink-0"><MessageCircle class="w-4 h-4" /></span>
+              <span><strong class="text-slate-900">"I think" cae en la columna de opiniones.</strong> Las opiniones se cuentan. Suele ganar la voz más fuerte o la más senior.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-cyan-600 text-white shrink-0"><Crosshair class="w-4 h-4" /></span>
+              <span><strong class="text-slate-900">"My read is" cae en la columna de juicios.</strong> Los juicios se examinan. Para descartar uno, alguien tiene que producir una lectura mejor — no solo una voz más fuerte.</span>
+            </li>
+          </ul>
+          <p class="text-slate-700 leading-relaxed mt-4">
+            Las alternativas funcionan igual: <em>"My assessment is…" · "The way I read this…" ·
+            "The data reads to me as…" · "My call would be…"</em> Cada una ancla tu conclusión a tu
+            análisis en lugar de a tu estado de ánimo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 30-second drill -->
+  <section class="py-12 md:py-16 bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">El Drill de 30 Segundos</h2>
+          <p class="text-slate-600">Mejora el marco. Cubre el lado derecho. Dilo en voz alta.</p>
+        </div>
+
+        <div class="bg-cyan-50 rounded-2xl border-2 border-cyan-300 p-6 md:p-8 print:p-3 print:rounded-md">
+          <div class="space-y-4 print:space-y-2">
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-cyan-200">
+              <p class="text-slate-700">"I think we should maybe hire two more engineers."</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-cyan-600" /> "My read is we need two more engineers — the roadmap doesn't close without them."</div>
+                <AudioButton client:load text="My read is we need two more engineers — the roadmap doesn't close without them." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-cyan-200">
+              <p class="text-slate-700">"I feel like the client isn't happy."</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-cyan-600" /> "My read on the client is they're one missed deadline from escalating — the signals are in the last three calls."</div>
+                <AudioButton client:load text="My read on the client is they're one missed deadline from escalating — the signals are in the last three calls." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-cyan-200">
+              <p class="text-slate-700">"I think probably Q3 is more realistic."</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-cyan-600" /> "My read is Q3. Q2 assumes zero slippage on three dependencies we don't control."</div>
+                <AudioButton client:load text="My read is Q3. Q2 assumes zero slippage on three dependencies we don't control." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center">
+              <p class="text-slate-700">"I think it depends on a lot of factors."</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-cyan-600" /> "It depends on whether Q3 volume holds. My read is it does — so I'd move now and revisit in October."</div>
+                <AudioButton client:load text="It depends on whether Q3 volume holds. My read is it does — so I'd move now and revisit in October." lang="en-US" size="sm" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traps -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">Las Trampas</h2>
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span>Cambiar la frase pero conservar los atenuantes: "My read is we should <strong>maybe possibly</strong> delay."</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">El marco no puede ganarle a los atenuantes que lleva dentro. "My read is maybe" sigue siendo un maybe. Comprométete, o nombra la condición explícitamente.</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span>Usar el marco de juicio sin análisis detrás.</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">"My read is" firma un cheque que la siguiente oración tiene que pagar. Si de verdad no lo has analizado, dilo con fecha: "I haven't formed a read yet — I'll have one by Thursday." Eso también es una declaración de juicio.</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-cyan-300 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <CheckCircle2 class="w-5 h-5 text-cyan-600 shrink-0 mt-0.5" />
+              <span><strong>Prueba del oído nativo:</strong> "I think" sobrevive en un solo lugar — la especulación espontánea genuina ("I think Marta's back Tuesday?"). Si hiciste análisis, la frase lo está malvendiendo. Empareja el marco con el trabajo que realmente hiciste.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-cyan-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">Sigue Avanzando</h2>
+        <p class="text-cyan-100 mb-6">
+          "I think" es uno de seis atenuantes que convierten decisiones en discusiones. La clase
+          magistral completa los ejercita todos contra diez escenarios reales de sala de consejo.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/es/curso/dirige-la-decision/drill-reflejo/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+          >
+            El Drill de Reflejos — 12 Reescrituras
+            <ArrowRight class="w-5 h-5" />
+          </a>
+        </div>
+        <p class="text-cyan-100 text-sm mt-8 max-w-2xl mx-auto">
+          División relacionada:
+          <a href="/es/curso/dirige-la-decision/does-that-make-sense/" class="text-amber-300 hover:text-amber-200 underline underline-offset-2 font-semibold">"Does that make sense?" — qué decir en su lugar</a>
+          — y la
+          <a href="/es/curso/dirige-la-decision/guia-rapida/" class="text-amber-300 hover:text-amber-200 underline underline-offset-2 font-semibold">guía rápida de una página</a>
+          comprime los cuatro movimientos y los seis atenuantes en una sola página.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      header, footer, nav { display: none !important; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #164e63 !important; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "I Think vs My Read Is",
+    "description": "Referencia enfocada sobre reemplazar 'I think' con marcos de juicio como 'my read is' en inglés ejecutivo — por qué el marco de opinión se vota mientras el marco de juicio se examina, con drill de reescritura y trampas.",
+    "learningResourceType": "Reference",
+    "educationalLevel": "Intermediate to Advanced",
+    "inLanguage": "es",
+    "isAccessibleForFree": true,
+    "url": "https://www.nyenglishteacher.com/es/curso/dirige-la-decision/i-think-vs-my-read-is/",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Dirige la Decisión — Clase Magistral Gratuita",
+      "url": "https://www.nyenglishteacher.com/es/curso/dirige-la-decision/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/es/about/"
+    }
+  })} />
+</Base>

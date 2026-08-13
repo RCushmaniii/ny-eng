@@ -1,0 +1,296 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import AudioButton from "@components/course/AudioButton";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Lightbulb,
+  CheckCircle2,
+  XCircle,
+  Eraser,
+  Link2,
+  Printer,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/executive-pushback/i-hear-you-but-vs-and" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title='"I Hear You, But" vs "I Hear You, And"'
+  description="Why 'but' erases your acknowledgment in English meetings — the listener keeps only what follows it. The one-word swap that changes how your pushback lands."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <Lightbulb class="w-4 h-4" />
+          Bonus · The Acknowledgment Trap
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          "I Hear You, But" vs "I Hear You, And"
+        </h1>
+        <p class="text-2xl text-indigo-300 italic font-light mb-4">One word decides whether they feel heard — or handled.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          You acknowledged their concern. You used the right phrase. And the room still turned
+          defensive. The problem is almost always the next word out of your mouth.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Print this page
+          </button>
+          <a
+            href="/en/course/executive-pushback/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Back to the master class
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The split -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">The One-Word Split</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Both sentences start identically. What the listener <em>remembers</em> depends entirely on the connector.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border-2 border-rose-300 bg-rose-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-rose-500 text-white">
+                <Eraser class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">…but</h3>
+            </div>
+            <p class="text-sm font-mono text-rose-700 mb-3">the eraser</p>
+            <p class="text-slate-700 mb-3">
+              "But" tells the listener the first half of your sentence was ceremony. They discard the
+              acknowledgment and brace for what follows. Your empathy is <strong>deleted in real time</strong>.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-rose-200 text-sm space-y-1.5">
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I hear you, <strong>but</strong> the timeline can't move."</p>
+                <AudioButton client:load text="I hear you, but the timeline can't move." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"That's a fair point, <strong>but</strong> we've already decided."</p>
+                <AudioButton client:load text="That's a fair point, but we've already decided." lang="en-US" size="sm" />
+              </div>
+              <p class="text-slate-500 pt-1">What they hear: <em>"You're wrong, politely."</em></p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-500 text-white">
+                <Link2 class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">…and</h3>
+            </div>
+            <p class="text-sm font-mono text-indigo-700 mb-3">the bridge</p>
+            <p class="text-slate-700 mb-3">
+              "And" lets both things stay true at once: their concern is real, <strong>and</strong> the
+              constraint is real. Nobody has to lose for the sentence to work.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-indigo-200 text-sm space-y-1.5">
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I hear you, <strong>and</strong> the timeline is the constraint we have to solve inside."</p>
+                <AudioButton client:load text="I hear you, and the timeline is the constraint we have to solve inside." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"That's a fair point, <strong>and</strong> it's exactly why we scoped it this way."</p>
+                <AudioButton client:load text="That's a fair point, and it's exactly why we scoped it this way." lang="en-US" size="sm" />
+              </div>
+              <p class="text-slate-500 pt-1">What they hear: <em>"My concern made it into the decision."</em></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The mental picture -->
+  <section class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Mental Picture</h2>
+        <div class="bg-white rounded-2xl border-2 border-slate-200 p-7">
+          <p class="text-slate-700 leading-relaxed mb-4">
+            In the listener's memory, <strong>"but" works backward</strong>. It reaches into the first half of
+            your sentence and erases it. Whatever you acknowledged is gone; only the objection survives.
+          </p>
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-rose-500 text-white shrink-0"><Eraser class="w-4 h-4" /></span>
+              <span><strong class="text-slate-900">"But" is an eraser.</strong> "Great work, but…" — nobody remembers the "great work."</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500 text-white shrink-0"><Link2 class="w-4 h-4" /></span>
+              <span><strong class="text-slate-900">"And" is a bridge.</strong> Both halves stand. The concern and the constraint get to coexist — which is what a real tradeoff sounds like.</span>
+            </li>
+          </ul>
+          <p class="text-slate-700 leading-relaxed mt-4">
+            There's a third option senior communicators use constantly: <strong>no connector at all</strong>.
+            Acknowledge, full stop. New sentence. "That risk is real — let's name it. The timeline pressure
+            comes from the contract date." The acknowledgment survives because nothing was attached to it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 30-second drill -->
+  <section class="py-12 md:py-16 bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">The 30-Second Drill</h2>
+          <p class="text-slate-600">Rewrite the "but" out. Cover the right side. Say it out loud.</p>
+        </div>
+
+        <div class="bg-indigo-50 rounded-2xl border-2 border-indigo-300 p-6 md:p-8 print:p-3 print:rounded-md">
+          <div class="space-y-4 print:space-y-2">
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-indigo-200">
+              <p class="text-slate-700">"I understand the concern, <strong>but</strong> we're moving forward."</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-indigo-600" /> "I understand the concern, <strong>and</strong> it's factored into the rollout plan — here's how."</div>
+                <AudioButton client:load text="I understand the concern, and it's factored into the rollout plan — here's how." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-indigo-200">
+              <p class="text-slate-700">"You're right about the cost, <strong>but</strong> quality matters more."</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-indigo-600" /> "You're right about the cost. The tradeoff is cost against failure rate — <strong>and</strong> failure is the more expensive risk."</div>
+                <AudioButton client:load text="You're right about the cost. The tradeoff is cost against failure rate — and failure is the more expensive risk." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-indigo-200">
+              <p class="text-slate-700">"That's fair, <strong>but</strong> we don't have the budget."</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-indigo-600" /> "That's fair — <strong>and</strong> the budget is the boundary. Within it, here's what we can protect."</div>
+                <AudioButton client:load text="That's fair — and the budget is the boundary. Within it, here's what we can protect." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center">
+              <p class="text-slate-700">"I hear what you're saying, <strong>but</strong> the client expects it Friday."</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-indigo-600" /> "I hear you. The client expects it Friday — so the question is what we cut to get there safely." <span class="text-slate-400">(no connector at all)</span></div>
+                <AudioButton client:load text="I hear you. The client expects it Friday — so the question is what we cut to get there safely." lang="en-US" size="sm" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- When "but" is right -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Trap — and the Exception</h2>
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span><strong>The Spanish reflex:</strong> "Sí, pero…" translates directly to "Yes, but…" — and the habit crosses into English intact.</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">In a high-stakes English meeting, "yes, but" is heard as a disguised no. If you catch yourself opening every response with it, the room has already labeled you defensive — whatever your grammar level.</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span>"I hear what you're saying, <strong>but</strong>…" used as a formula.</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">Repeated verbatim, it becomes a tell. Listeners learn that your acknowledgment phrase is the sound the objection makes before it arrives.</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-indigo-300 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+              <span><strong>The exception:</strong> when you need the contrast to be unmissable — a hard no, a line that won't move — "but" is the honest word. "I respect the ask, but I won't commit my team to that date." Save it for the moments that deserve it, and it regains its force.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-indigo-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">Keep Going</h2>
+        <p class="text-indigo-100 mb-6">
+          The acknowledgment is beat one of a three-beat framework. The full
+          Acknowledge → Clarify → Redirect lesson teaches what comes after the "and."
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/en/course/executive-pushback/acknowledge-clarify-redirect/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+          >
+            The Acknowledge → Clarify → Redirect Lesson
+            <ArrowRight class="w-5 h-5" />
+          </a>
+        </div>
+        <p class="text-indigo-100 text-sm mt-8 max-w-2xl mx-auto">
+          Related split:
+          <a href="/en/course/executive-pushback/i-disagree-vs-i-see-it-differently/" class="text-amber-300 hover:text-amber-200 underline underline-offset-2 font-semibold">"I disagree" vs "I see it differently"</a>
+          — and the
+          <a href="/en/course/executive-pushback/cheat-sheet/" class="text-amber-300 hover:text-amber-200 underline underline-offset-2 font-semibold">one-page cheat sheet</a>
+          puts the whole framework where you can scan it before a hard conversation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      header, footer, nav { display: none !important; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #312e81 !important; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "I Hear You But vs I Hear You And",
+    "description": "Focused reference on why 'but' erases an acknowledgment in professional English and 'and' preserves it. Includes rewrite drill, the Spanish 'sí, pero' trap, and the one exception where 'but' is the right word.",
+    "learningResourceType": "Reference",
+    "educationalLevel": "Intermediate to Advanced",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "url": "https://www.nyenglishteacher.com/en/course/executive-pushback/i-hear-you-but-vs-and/",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Executive Pushback — Free Master Class",
+      "url": "https://www.nyenglishteacher.com/en/course/executive-pushback/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/en/about/"
+    }
+  })} />
+</Base>

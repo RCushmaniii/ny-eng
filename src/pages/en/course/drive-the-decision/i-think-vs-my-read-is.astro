@@ -1,0 +1,298 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import AudioButton from "@components/course/AudioButton";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Lightbulb,
+  CheckCircle2,
+  XCircle,
+  MessageCircle,
+  Crosshair,
+  Printer,
+} from "lucide-astro";
+
+const lang = "en";
+const tkey = "course/drive-the-decision/i-think-vs-my-read-is" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title='"I Think" vs "My Read Is" in Meetings'
+  description="'I think' downgrades your judgment to an opinion. 'My read is' states a conclusion that owns its analysis. The swap that changes how decisions land in English."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-cyan-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-cyan-300 text-sm font-semibold mb-3">
+          <Lightbulb class="w-4 h-4" />
+          Bonus · The Hedge Swap
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          "I Think" vs "My Read Is"
+        </h1>
+        <p class="text-2xl text-cyan-300 italic font-light mb-4">One frames an opinion. The other frames a judgment.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          You analyzed the data, weighed the tradeoffs, and reached a conclusion. Then you opened
+          your mouth and said "I think…" — and the room received your analysis as a feeling.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Print this page
+          </button>
+          <a
+            href="/en/course/drive-the-decision/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Back to the master class
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The split -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">The Framing Split</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Both are grammatically fine. The difference is the weight the room assigns to what follows.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border-2 border-rose-300 bg-rose-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-rose-500 text-white">
+                <MessageCircle class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">I think</h3>
+            </div>
+            <p class="text-sm font-mono text-rose-700 mb-3">the opinion frame</p>
+            <p class="text-slate-700 mb-3">
+              "I think" files your conclusion under <strong>personal opinion</strong> — one voice among
+              many, open to a vote. Stack it with "maybe" or "probably" and the analysis you did
+              becomes invisible.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-rose-200 text-sm space-y-1.5">
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I think we should probably delay the launch."</p>
+                <AudioButton client:load text="I think we should probably delay the launch." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I feel like the pricing is maybe too aggressive."</p>
+                <AudioButton client:load text="I feel like the pricing is maybe too aggressive." lang="en-US" size="sm" />
+              </div>
+              <p class="text-slate-500 pt-1">What the room hears: <em>"He has a feeling. Let's discuss."</em></p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border-2 border-cyan-300 bg-cyan-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-cyan-600 text-white">
+                <Crosshair class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">My read is</h3>
+            </div>
+            <p class="text-sm font-mono text-cyan-700 mb-3">the judgment frame</p>
+            <p class="text-slate-700 mb-3">
+              "My read is" says: <strong>I looked at the evidence and this is my professional
+              interpretation.</strong> It claims the analysis, names you as the analyst, and still
+              leaves room for others to offer a different read.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-cyan-200 text-sm space-y-1.5">
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"My read is we delay two weeks — the QA data doesn't support Friday."</p>
+                <AudioButton client:load text="My read is we delay two weeks — the QA data doesn't support Friday." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"My read on the pricing is that it prices us out of the mid-market."</p>
+                <AudioButton client:load text="My read on the pricing is that it prices us out of the mid-market." lang="en-US" size="sm" />
+              </div>
+              <p class="text-slate-500 pt-1">What the room hears: <em>"She's done the analysis. Engage with it."</em></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The mental picture -->
+  <section class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Mental Picture</h2>
+        <div class="bg-white rounded-2xl border-2 border-slate-200 p-7">
+          <p class="text-slate-700 leading-relaxed mb-4">
+            Imagine the room keeps an invisible ledger of every statement, sorted into two columns:
+            <strong>opinions to vote on</strong> and <strong>judgments to engage with</strong>.
+          </p>
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-rose-500 text-white shrink-0"><MessageCircle class="w-4 h-4" /></span>
+              <span><strong class="text-slate-900">"I think" lands in the opinion column.</strong> Opinions get counted. Loudest or most senior usually wins.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-cyan-600 text-white shrink-0"><Crosshair class="w-4 h-4" /></span>
+              <span><strong class="text-slate-900">"My read is" lands in the judgment column.</strong> Judgments get examined. To dismiss one, someone has to produce a better read — not just a louder voice.</span>
+            </li>
+          </ul>
+          <p class="text-slate-700 leading-relaxed mt-4">
+            The alternatives all work the same way: <em>"My assessment is…" · "The way I read this…" ·
+            "The data reads to me as…" · "My call would be…"</em> Each one attaches your conclusion to
+            your analysis instead of your mood.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 30-second drill -->
+  <section class="py-12 md:py-16 bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">The 30-Second Drill</h2>
+          <p class="text-slate-600">Upgrade the frame. Cover the right side. Say it out loud.</p>
+        </div>
+
+        <div class="bg-cyan-50 rounded-2xl border-2 border-cyan-300 p-6 md:p-8 print:p-3 print:rounded-md">
+          <div class="space-y-4 print:space-y-2">
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-cyan-200">
+              <p class="text-slate-700">"I think we should maybe hire two more engineers."</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-cyan-600" /> "My read is we need two more engineers — the roadmap doesn't close without them."</div>
+                <AudioButton client:load text="My read is we need two more engineers — the roadmap doesn't close without them." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-cyan-200">
+              <p class="text-slate-700">"I feel like the client isn't happy."</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-cyan-600" /> "My read on the client is they're one missed deadline from escalating — the signals are in the last three calls."</div>
+                <AudioButton client:load text="My read on the client is they're one missed deadline from escalating — the signals are in the last three calls." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-cyan-200">
+              <p class="text-slate-700">"I think probably Q3 is more realistic."</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-cyan-600" /> "My read is Q3. Q2 assumes zero slippage on three dependencies we don't control."</div>
+                <AudioButton client:load text="My read is Q3. Q2 assumes zero slippage on three dependencies we don't control." lang="en-US" size="sm" />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center">
+              <p class="text-slate-700">"I think it depends on a lot of factors."</p>
+              <div class="flex items-start gap-2 text-sm">
+                <div class="flex-1"><CheckCircle2 class="inline w-4 h-4 text-cyan-600" /> "It depends on whether Q3 volume holds. My read is it does — so I'd move now and revisit in October."</div>
+                <AudioButton client:load text="It depends on whether Q3 volume holds. My read is it does — so I'd move now and revisit in October." lang="en-US" size="sm" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traps -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">The Traps</h2>
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span>Swapping the phrase but keeping the hedges: "My read is we should <strong>maybe possibly</strong> delay."</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">The frame can't outrun the hedges inside it. "My read is maybe" is still a maybe. Commit, or name the condition explicitly.</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span>Using the judgment frame with no analysis behind it.</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">"My read is" writes a check the next sentence has to cash. If you genuinely haven't analyzed it yet, say that with a timeline: "I haven't formed a read yet — I'll have one by Thursday." That's also a judgment statement.</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-cyan-300 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <CheckCircle2 class="w-5 h-5 text-cyan-600 shrink-0 mt-0.5" />
+              <span><strong>Native ear test:</strong> "I think" survives in one place — genuine spontaneous speculation ("I think Marta's back Tuesday?"). If you did analysis, the phrase is underselling it. Match the frame to the work you actually did.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-cyan-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">Keep Going</h2>
+        <p class="text-cyan-100 mb-6">
+          "I think" is one of six hedges that convert decisions into discussions. The full master class
+          drills all of them against ten real boardroom scenarios.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/en/course/drive-the-decision/reflex-drill/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+          >
+            The Reflex Drill — 12 Weak-to-Strong Rewrites
+            <ArrowRight class="w-5 h-5" />
+          </a>
+        </div>
+        <p class="text-cyan-100 text-sm mt-8 max-w-2xl mx-auto">
+          Related split:
+          <a href="/en/course/drive-the-decision/does-that-make-sense/" class="text-amber-300 hover:text-amber-200 underline underline-offset-2 font-semibold">"Does that make sense?" — what to say instead</a>
+          — and the
+          <a href="/en/course/drive-the-decision/cheat-sheet/" class="text-amber-300 hover:text-amber-200 underline underline-offset-2 font-semibold">one-page cheat sheet</a>
+          compresses the four moves and all six hedges onto a single page.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      header, footer, nav { display: none !important; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #164e63 !important; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "I Think vs My Read Is",
+    "description": "Focused reference on replacing 'I think' with judgment frames like 'my read is' in executive English — why the opinion frame gets voted on while the judgment frame gets engaged with, plus a rewrite drill and traps.",
+    "learningResourceType": "Reference",
+    "educationalLevel": "Intermediate to Advanced",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "url": "https://www.nyenglishteacher.com/en/course/drive-the-decision/i-think-vs-my-read-is/",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Drive the Decision — Free Master Class",
+      "url": "https://www.nyenglishteacher.com/en/course/drive-the-decision/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/en/about/"
+    }
+  })} />
+</Base>

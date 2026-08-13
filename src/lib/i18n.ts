@@ -182,6 +182,8 @@ export type TKey =
   | "course/drive-the-decision/declining-major-deal"
   | "course/drive-the-decision/reflex-drill"
   | "course/drive-the-decision/cheat-sheet"
+  | "course/drive-the-decision/i-think-vs-my-read-is"
+  | "course/drive-the-decision/does-that-make-sense"
   | "course/executive-pushback"
   | "course/executive-pushback/six-hidden-drivers"
   | "course/executive-pushback/diagnostic-pause"
@@ -191,6 +193,8 @@ export type TKey =
   | "course/executive-pushback/bad-news-steady-voice"
   | "course/executive-pushback/pressure-recovery-script"
   | "course/executive-pushback/cheat-sheet"
+  | "course/executive-pushback/i-hear-you-but-vs-and"
+  | "course/executive-pushback/i-disagree-vs-i-see-it-differently"
   | "corporate/for-hr"
   | "meme-portfolio"
   | "site-index";
@@ -384,6 +388,10 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
       "/en/course/drive-the-decision/declining-major-deal/",
     "course/drive-the-decision/reflex-drill": "/en/course/drive-the-decision/reflex-drill/",
     "course/drive-the-decision/cheat-sheet": "/en/course/drive-the-decision/cheat-sheet/",
+    "course/drive-the-decision/i-think-vs-my-read-is":
+      "/en/course/drive-the-decision/i-think-vs-my-read-is/",
+    "course/drive-the-decision/does-that-make-sense":
+      "/en/course/drive-the-decision/does-that-make-sense/",
     "course/executive-pushback": "/en/course/executive-pushback/",
     "course/executive-pushback/six-hidden-drivers":
       "/en/course/executive-pushback/six-hidden-drivers/",
@@ -399,6 +407,10 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/executive-pushback/pressure-recovery-script":
       "/en/course/executive-pushback/pressure-recovery-script/",
     "course/executive-pushback/cheat-sheet": "/en/course/executive-pushback/cheat-sheet/",
+    "course/executive-pushback/i-hear-you-but-vs-and":
+      "/en/course/executive-pushback/i-hear-you-but-vs-and/",
+    "course/executive-pushback/i-disagree-vs-i-see-it-differently":
+      "/en/course/executive-pushback/i-disagree-vs-i-see-it-differently/",
     "corporate/for-hr": "/en/for-hr-managers/",
     "meme-portfolio": "/en/meme-portfolio/all/",
     "site-index": "/en/site-index/",
@@ -595,6 +607,10 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
       "/es/curso/dirige-la-decision/rechazar-trato-importante/",
     "course/drive-the-decision/reflex-drill": "/es/curso/dirige-la-decision/drill-reflejo/",
     "course/drive-the-decision/cheat-sheet": "/es/curso/dirige-la-decision/guia-rapida/",
+    "course/drive-the-decision/i-think-vs-my-read-is":
+      "/es/curso/dirige-la-decision/i-think-vs-my-read-is/",
+    "course/drive-the-decision/does-that-make-sense":
+      "/es/curso/dirige-la-decision/does-that-make-sense/",
     "course/executive-pushback": "/es/curso/pushback-ejecutivo/",
     "course/executive-pushback/six-hidden-drivers":
       "/es/curso/pushback-ejecutivo/seis-impulsores-ocultos/",
@@ -610,6 +626,10 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/executive-pushback/pressure-recovery-script":
       "/es/curso/pushback-ejecutivo/guion-de-recuperacion/",
     "course/executive-pushback/cheat-sheet": "/es/curso/pushback-ejecutivo/guia-rapida/",
+    "course/executive-pushback/i-hear-you-but-vs-and":
+      "/es/curso/pushback-ejecutivo/i-hear-you-but-vs-and/",
+    "course/executive-pushback/i-disagree-vs-i-see-it-differently":
+      "/es/curso/pushback-ejecutivo/i-disagree-vs-i-see-it-differently/",
     "corporate/for-hr": "/es/para-rh/",
     "meme-portfolio": "/es/meme-portfolio/all/",
     "site-index": "/es/indice-del-sitio/",
@@ -740,6 +760,8 @@ export function getAllTKeys(): TKey[] {
     "course/drive-the-decision/declining-major-deal",
     "course/drive-the-decision/reflex-drill",
     "course/drive-the-decision/cheat-sheet",
+    "course/drive-the-decision/i-think-vs-my-read-is",
+    "course/drive-the-decision/does-that-make-sense",
     "course/executive-pushback",
     "course/executive-pushback/six-hidden-drivers",
     "course/executive-pushback/diagnostic-pause",
@@ -749,6 +771,8 @@ export function getAllTKeys(): TKey[] {
     "course/executive-pushback/bad-news-steady-voice",
     "course/executive-pushback/pressure-recovery-script",
     "course/executive-pushback/cheat-sheet",
+    "course/executive-pushback/i-hear-you-but-vs-and",
+    "course/executive-pushback/i-disagree-vs-i-see-it-differently",
     "category/startup-founders",
     "category/tech-english",
     "category/logistics-english",

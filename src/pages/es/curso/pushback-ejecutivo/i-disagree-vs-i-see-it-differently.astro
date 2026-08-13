@@ -1,0 +1,297 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import AudioButton from "@components/course/AudioButton";
+import {
+  ArrowRight,
+  ArrowLeft,
+  Lightbulb,
+  CheckCircle2,
+  XCircle,
+  Gavel,
+  Glasses,
+  Printer,
+} from "lucide-astro";
+
+const lang = "es";
+const tkey = "course/executive-pushback/i-disagree-vs-i-see-it-differently" as const;
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title='"I Disagree" vs "I See It Differently"'
+  description="Ambas son inglés profesional. Una entrega un veredicto; la otra, una segunda lectura. Cuándo gana cada una — y el punto medio suave que pierde la sala."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-12 md:pt-32 md:pb-16 print:hidden">
+    <div class="site-container mx-auto px-4 text-white">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+          <Lightbulb class="w-4 h-4" />
+          Bono · La División del Desacuerdo
+        </div>
+        <h1
+          class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+          style="font-family: 'Noto Sans KR', sans-serif;"
+        >
+          "I Disagree" vs "I See It Differently"
+        </h1>
+        <p class="text-2xl text-indigo-300 italic font-light mb-4">Ninguna es grosera. Hacen trabajos distintos.</p>
+        <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
+          A la mayoría de los profesionales les enseñaron que estar en desacuerdo en inglés requiere
+          suavizar. La verdad es más útil: hay dos herramientas profesionales, cada una construida
+          para un momento — y una tercera opción, el punto medio suave, que te cuesta la sala.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold text-sm transition-colors"
+          >
+            <Printer class="w-4 h-4" />
+            Imprimir esta página
+          </button>
+          <a
+            href="/es/curso/pushback-ejecutivo/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors text-sm font-medium"
+          >
+            <ArrowLeft class="w-4 h-4" />
+            Volver a la clase magistral
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The split -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Dos Herramientas, No Una Regla</h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            La diferencia no es cortesía. Es lo que cada frase le hace a la conversación que sigue.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border-2 border-slate-400 bg-slate-50 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-slate-700 text-white">
+                <Gavel class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">I disagree</h3>
+            </div>
+            <p class="text-sm font-mono text-slate-600 mb-3">el veredicto</p>
+            <p class="text-slate-700 mb-3">
+              Un fallo sobre su posición. Limpio, directo, de alta autoridad. Cierra la fase
+              exploratoria y fuerza un punto de decisión. Úsalo cuando lo que está en juego exige un
+              no imposible de malinterpretar.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-slate-300 text-sm space-y-1.5">
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I disagree — shipping without the security review is a risk we can't price."</p>
+                <AudioButton client:load text="I disagree — shipping without the security review is a risk we can't price." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I disagree with the premise. Churn isn't a pricing problem."</p>
+                <AudioButton client:load text="I disagree with the premise. Churn isn't a pricing problem." lang="en-US" size="sm" />
+              </div>
+              <p class="text-slate-500 pt-1">Funciona mejor cuando: el dominio es tuyo, hay mucho en juego, o hay que trazar una línea clara.</p>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border-2 border-indigo-300 bg-indigo-50/60 p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-500 text-white">
+                <Glasses class="w-5 h-5" />
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900">I see it differently</h3>
+            </div>
+            <p class="text-sm font-mono text-indigo-700 mb-3">la segunda lectura</p>
+            <p class="text-slate-700 mb-3">
+              No es más suave — es <strong>mejor posicionamiento</strong>. Dice: mismos datos, lectura
+              distinta. Su juicio no está en el banquillo; la interpretación sí. La conversación sigue
+              abierta mientras reemplazas su conclusión con la tuya.
+            </p>
+            <div class="bg-white rounded-lg p-3 border border-indigo-200 text-sm space-y-1.5">
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I see it differently. The same churn data reads to me as an onboarding gap."</p>
+                <AudioButton client:load text="I see it differently. The same churn data reads to me as an onboarding gap." lang="en-US" size="sm" />
+              </div>
+              <div class="flex items-center gap-2">
+                <p class="flex-1">"I read that differently — the delay bought us the enterprise deal."</p>
+                <AudioButton client:load text="I read that differently — the delay bought us the enterprise deal." lang="en-US" size="sm" />
+              </div>
+              <p class="text-slate-500 pt-1">Funciona mejor cuando: empujas hacia arriba, cruzas funciones, o el ego y el estatus están en la sala.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The real enemy -->
+  <section class="py-12 md:py-16 bg-slate-50">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">El Verdadero Enemigo: el Punto Medio Suave</h2>
+        <div class="bg-white rounded-2xl border-2 border-slate-200 p-7">
+          <p class="text-slate-700 leading-relaxed mb-4">
+            El daño rara vez viene de elegir la frase equivocada entre las dos. Viene de no elegir
+            <strong>ninguna</strong> — el rodeo que está en desacuerdo sin admitirlo:
+          </p>
+          <div class="bg-rose-50 border border-rose-200 rounded-lg p-4 mb-4">
+            <div class="flex items-center gap-2">
+              <p class="flex-1 text-slate-700 italic">"I'm not sure… maybe we could also consider… I mean, it could work…"</p>
+              <AudioButton client:load text="I'm not sure… maybe we could also consider… I mean, it could work…" lang="en-US" size="sm" />
+            </div>
+          </div>
+          <p class="text-slate-700 leading-relaxed mb-4">
+            Para la sala, eso no es diplomacia. Es <strong>la ausencia de una posición</strong>. Los
+            oyentes senior lo escuchan y concluyen una de dos cosas: no has decidido, o ya decidiste
+            y no lo quieres decir. Ambas cuestan más autoridad que cualquier desacuerdo directo.
+          </p>
+          <ul class="space-y-3 text-slate-700">
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-rose-500 text-white text-sm font-bold shrink-0">1</span>
+              <span><strong class="text-slate-900">Evasión:</strong> "Maybe, I'm not sure…" — sin posición. La sala avanza sin ti.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-600 text-white text-sm font-bold shrink-0">2</span>
+              <span><strong class="text-slate-900">Veredicto:</strong> "I disagree." — una posición, entregada como fallo. Clara, y a veces exactamente correcta.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-indigo-500 text-white text-sm font-bold shrink-0">3</span>
+              <span><strong class="text-slate-900">Segunda lectura:</strong> "I see it differently, and here's the read." — una posición que invita a la sala a comparar interpretaciones en lugar de defender egos.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 30-second drill -->
+  <section class="py-12 md:py-16 bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">El Drill de 30 Segundos</h2>
+          <p class="text-slate-600">Elige la herramienta para cada momento. Cubre el lado derecho. Comprométete en voz alta.</p>
+        </div>
+
+        <div class="bg-indigo-50 rounded-2xl border-2 border-indigo-300 p-6 md:p-8 print:p-3 print:rounded-md">
+          <div class="space-y-4 print:space-y-2">
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-indigo-200">
+              <p class="text-slate-700">El CFO lee tu pronóstico como demasiado optimista — frente al consejo.</p>
+              <div class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-indigo-600" /> <strong>Segunda lectura.</strong> "I see it differently — the pipeline coverage supports it. Let me show the math." El estatus está en la sala; no pongas su juicio en el banquillo.</div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-indigo-200">
+              <p class="text-slate-700">Un proveedor propone saltarse el paso de compliance para llegar a la fecha.</p>
+              <div class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-indigo-600" /> <strong>Veredicto.</strong> "I disagree — that step isn't optional. Let's find the time somewhere else." Una línea clara, trazada una vez.</div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center pb-3 border-b border-indigo-200">
+              <p class="text-slate-700">Un colega atribuye el pico de churn al precio; tus datos dicen onboarding.</p>
+              <div class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-indigo-600" /> <strong>Segunda lectura.</strong> "Same numbers, different read — the cohorts that churned never finished onboarding." Paz entre funciones, posición intacta.</div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-3 items-center">
+              <p class="text-slate-700">Tu equipo quiere hacer demo de una función sin terminar al cliente más grande.</p>
+              <div class="text-sm"><CheckCircle2 class="inline w-4 h-4 text-indigo-600" /> <strong>Veredicto.</strong> "I disagree. We demo what's stable — nothing else in front of that client." El dominio es tuyo; falla sobre él.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traps -->
+  <section class="py-12 md:py-16 bg-slate-50 print:bg-white print:py-3 print:break-inside-avoid">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">Las Trampas</h2>
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span>"With all due respect…"</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">Para el oído nativo, esto anuncia un ataque, no respeto. Lo que sigue se recibe como hostil. Elimina la frase por completo — no tiene ningún uso seguro.</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-red-200 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <XCircle class="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+              <span>Estar en desacuerdo con la <em>persona</em> en lugar de la <em>lectura</em>.</span>
+            </p>
+            <p class="text-sm text-slate-500 mt-2 ml-7">"You're wrong" lo vuelve personal y activa la protección del ego — el impulsor más difícil de revertir. Las dos herramientas profesionales apuntan a la posición o a la interpretación, nunca al humano.</p>
+          </div>
+          <div class="bg-white rounded-xl border-2 border-indigo-300 p-5">
+            <p class="flex items-start gap-2 text-slate-700">
+              <CheckCircle2 class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+              <span><strong>Prueba del oído nativo:</strong> cualquiera de las dos frases debe ir seguida de tu lectura real en el mismo aliento. Un desacuerdo sin razón se escucha como un humor. "I see it differently" + silencio es peor que no decir nada.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 md:py-16 bg-indigo-950 text-white print:hidden">
+    <div class="site-container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3" style="font-family: 'Noto Sans KR', sans-serif;">Sigue Avanzando</h2>
+        <p class="text-indigo-100 mb-6">
+          Saber qué herramienta usar empieza por diagnosticar por qué están empujando en primer
+          lugar. La lección de los Seis Impulsores Ocultos es la capa de diagnóstico debajo de esta página.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="/es/curso/pushback-ejecutivo/seis-impulsores-ocultos/"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold transition-colors"
+          >
+            La Lección de los Seis Impulsores Ocultos
+            <ArrowRight class="w-5 h-5" />
+          </a>
+        </div>
+        <p class="text-indigo-100 text-sm mt-8 max-w-2xl mx-auto">
+          División relacionada:
+          <a href="/es/curso/pushback-ejecutivo/i-hear-you-but-vs-and/" class="text-amber-300 hover:text-amber-200 underline underline-offset-2 font-semibold">"I hear you, but" vs "I hear you, and"</a>
+          — y la
+          <a href="/es/curso/pushback-ejecutivo/guia-rapida/" class="text-amber-300 hover:text-amber-200 underline underline-offset-2 font-semibold">guía rápida de una página</a>
+          comprime toda la clase magistral en algo que puedes revisar antes de la junta.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <style is:global>
+    @media print {
+      header, footer, nav { display: none !important; }
+      body { background: white !important; color: black !important; }
+      a { text-decoration: none !important; color: #312e81 !important; }
+    }
+  </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "I Disagree vs I See It Differently",
+    "description": "Referencia enfocada sobre las dos formas profesionales de estar en desacuerdo en inglés — el veredicto y la segunda lectura — cuándo gana cada una, el punto medio suave que pierde la sala, y las trampas ('with all due respect') que hay que eliminar.",
+    "learningResourceType": "Reference",
+    "educationalLevel": "Intermediate to Advanced",
+    "inLanguage": "es",
+    "isAccessibleForFree": true,
+    "url": "https://www.nyenglishteacher.com/es/curso/pushback-ejecutivo/i-disagree-vs-i-see-it-differently/",
+    "isPartOf": {
+      "@type": "Course",
+      "name": "Pushback Ejecutivo — Clase Magistral Gratuita",
+      "url": "https://www.nyenglishteacher.com/es/curso/pushback-ejecutivo/"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Robert Cushman",
+      "url": "https://www.nyenglishteacher.com/es/about/"
+    }
+  })} />
+</Base>
