@@ -8,6 +8,8 @@ categories:
   - "Career & Leadership"
 readingTime: "9 min read"
 audience: "Senior Spanish-speaking professionals whose English is grammatically strong but who sense their ideas don't land with the weight they carry in Spanish"
+featuredImage: "./images/why-correct-english-sounds-disconnected.webp"
+imageAlt: "Split image of the same executive presenting twice — on the left, disconnected idea cards drift apart before a confused audience; on the right, the same ideas form a glowing connected chain and the audience is engaged"
 translations:
   es: "/es/blog/ingles-correcto-pero-desconectado/"
 publish: true
