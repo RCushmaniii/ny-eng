@@ -476,7 +476,10 @@ async function createBooking(data, env, timeZone, lang) {
   const endTime = `${String(endH).padStart(2, "0")}:${String(endM).padStart(2, "0")}`;
   const endDateTime = `${date}T${endTime}:00`;
 
-  const summary = lang === "es" ? `Consulta CushLabs.ai: ${name}` : `CushLabs.ai Consultation: ${name}`;
+  // This worker backs nyenglishteacher.com bookings only. The invitee sees this
+  // title in their own invite email, so it must read NY English, never CushLabs.
+  const summary =
+    lang === "es" ? `Consulta NY English: ${name}` : `NY English Consultation: ${name}`;
   const notesLine = notes
     ? lang === "es"
       ? `\nNotas: ${notes}`
