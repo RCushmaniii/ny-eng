@@ -9,12 +9,13 @@ own webfonts (public/fonts) so the artwork matches nyenglishteacher.com.
 Palette is read from context-writing-system/docs/BRAND-KIT.md (NY English Teacher:
 gold #C9A24B on navy #161B3D). Never type these from memory.
 
-Two-step, because Chromium only screenshots png/jpeg:
+Two-step, because Chromium only screenshots png/jpeg. PNGs land in
+%TEMP%/ny-eng-cornerstone-images; only the .webp files are committed.
 
-  1. python scripts/one-off/gen-cornerstone-images.py          # both languages -> ./png
+  1. python scripts/one-off/gen-cornerstone-images.py          # both languages
      python scripts/one-off/gen-cornerstone-images.py en       # one language
 
-  2. node -e "const s=require('sharp');s('png/<name>-en.png').webp({quality:86})
+  2. node -e "const s=require('sharp');s('<temp>/<name>-en.png').webp({quality:86})
      .toFile('src/content/blog/en/images/<name>.webp')"
 
 Destination names (EN -> src/content/blog/en/images/, ES -> .../es/images/):
@@ -46,7 +47,26 @@ OUT.mkdir(exist_ok=True)
 
 FONT_DIR = (REPO / "public" / "fonts").as_uri()
 
-W, H = 1600, 900
+# Inline body images render at their natural aspect ratio inside `prose`, so they
+# can use the whole frame. The HERO cannot, and the reason is worth writing down.
+#
+# src/pages/{en,es}/blog/[slug].astro renders the hero twice-cropped:
+#   1. the Astro <Image> hardcodes width={1200} height={675}, so ANY source is
+#      re-encoded to 16:9 before it reaches the browser — a 4:3 hero loses its top
+#      and bottom here, which is why authoring taller does not help;
+#   2. the browser then applies `object-cover` into a fixed box: 904x675 desktop
+#      (container-small 1000px minus 48px padding), 704x450 at md, ~327x300 mobile.
+#
+# No box is ever taller in ratio than 16:9, so step 2 only ever crops HORIZONTALLY:
+#   desktop 12.3% off each side · md 6.0% · mobile 19.3%
+#
+# So: author the hero at 16:9 and keep every element inside a centred column narrow
+# enough to survive the worst case. Mobile leaves a 980px centre band of the 1600px
+# canvas; HERO_COL is set under that with room to spare.
+SIZE_WIDE = (1600, 900)
+HERO_COL = 920  # px — the crop-safe centre column for hero content
+
+W, H = SIZE_WIDE
 
 BG = "#161B3D"
 PANEL = "#1E2452"
@@ -84,7 +104,6 @@ BASE_CSS = f"""
   font-weight: 400; font-display: block;
 }}
 * {{ margin:0; padding:0; box-sizing:border-box; }}
-html, body {{ width:{W}px; height:{H}px; }}
 body {{
   font-family: 'NotoSans', sans-serif;
   background: {BG};
@@ -125,32 +144,46 @@ body {{
 """
 
 
-def page_html(body: str, extra_css: str = "") -> str:
+def page_html(body: str, extra_css: str = "", size=SIZE_WIDE) -> str:
+    w, h = size
+    size_css = f"html, body {{ width:{w}px; height:{h}px; }}"
     return f"""<!doctype html><html><head><meta charset="utf-8">
-<style>{BASE_CSS}{extra_css}</style></head>
+<style>{BASE_CSS}{size_css}{extra_css}</style></head>
 <body><div class="glow"></div>{body}</body></html>"""
 
 
 # --------------------------------------------------------------------------
 # 1. HERO — input stack vs. the one thing that makes English automatic
 # --------------------------------------------------------------------------
-HERO_CSS = """
-.hero { display:flex; gap:64px; height:100%; align-items:center; }
-.hero-left { width:600px; flex:none; }
-.hero-left h1 { font-size:82px; line-height:1.02; font-weight:900; letter-spacing:-2px; }
-.hero-left .lede { font-size:25px; line-height:1.5; color:#AEB4E0; margin-top:26px; }
-.hero-right { flex:1; display:flex; flex-direction:column; align-items:center; gap:16px; }
-.chips { display:grid; grid-template-columns:1fr 1fr; gap:14px; width:100%; }
-.chip {
-  background:#1A2047; border:2px solid #2E3670; border-radius:14px;
-  padding:18px 22px; font-size:24px; color:#AEB4E0; font-weight:600;
-}
-.arrow { color:#C9A24B; font-size:40px; line-height:1; }
-.speak { width:100%; padding:26px 28px 30px; }
-.speak .label { display:flex; justify-content:space-between; align-items:center; }
-.speak .label b { font-size:30px; font-weight:700; color:#FFFFFF; letter-spacing:0.5px; }
-.wave { display:flex; align-items:flex-end; gap:8px; height:74px; margin-top:22px; }
-.wave i { flex:1; background:#C9A24B; border-radius:5px; display:block; }
+HERO_CSS = f"""
+/* Everything lives in a {HERO_COL}px centred column. The navy outside it is
+   deliberate bleed — that is the band the template's object-cover throws away
+   (19.3% per side at the worst breakpoint). Nothing meaningful goes there. */
+.hero-frame {{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center;
+}}
+.hero-col {{ width:{HERO_COL}px; display:flex; flex-direction:column; align-items:center; }}
+.hero-col h1 {{ font-size:86px; line-height:1.0; font-weight:900; letter-spacing:-2.5px;
+                margin-top:22px; }}
+.hero-col .lede {{ font-size:26px; line-height:1.5; color:#AEB4E0; margin-top:22px; }}
+.stackwrap {{ width:100%; margin-top:52px; display:flex; flex-direction:column;
+              align-items:center; gap:14px; }}
+.chips {{ display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; width:100%; }}
+.chip {{
+  background:#1A2047; border:2px solid #2E3670; border-radius:13px;
+  padding:15px 8px; font-size:21px; color:#AEB4E0; font-weight:600; text-align:center;
+}}
+.arrow {{ color:#C9A24B; font-size:32px; line-height:1; }}
+.speak {{ width:100%; padding:22px 28px 26px; }}
+.speak .label {{ display:flex; justify-content:space-between; align-items:center; }}
+.speak .label b {{ font-size:28px; font-weight:700; color:#FFFFFF; letter-spacing:0.5px; }}
+.wave {{ display:flex; align-items:flex-end; gap:7px; height:64px; margin-top:18px; }}
+.wave i {{ flex:1; background:#C9A24B; border-radius:4px; display:block; }}
+.hero-foot {{ width:100%; margin-top:34px;
+              display:flex; justify-content:space-between; align-items:center;
+              font-size:19px; color:#8891C7; letter-spacing:1px; }}
 """
 
 WAVE = [22, 44, 66, 38, 74, 52, 30, 62, 46, 70, 34, 56, 26, 48, 68, 40, 24, 58, 36, 20]
@@ -160,7 +193,7 @@ def hero(lang):
     t = {
         "en": dict(
             eyebrow="How to improve your English",
-            h1="You have to<br>use it.",
+            h1="You have to use it.",
             lede="Input builds knowledge.<br>Output is what turns it into fluency.",
             input_label="Input",
             chips=["Reading", "Listening", "Watching", "Apps"],
@@ -170,7 +203,7 @@ def hero(lang):
         ),
         "es": dict(
             eyebrow="Cómo mejorar tu inglés",
-            h1="Tienes que<br>usarlo.",
+            h1="Tienes que usarlo.",
             lede="Leer y escuchar te dan conocimiento.<br>Hablar es lo que da fluidez.",
             input_label="Lo que recibes",
             chips=["Leer", "Escuchar", "Ver videos", "Apps"],
@@ -182,15 +215,14 @@ def hero(lang):
     bars = "".join(f'<i style="height:{h}%"></i>' for h in WAVE)
     chips = "".join(f'<div class="chip">{c}</div>' for c in t["chips"])
     body = f"""
-<div class="frame">
-  <div class="hero">
-    <div class="hero-left">
-      <div class="eyebrow">{t['eyebrow']}</div>
-      <h1 style="margin-top:22px">{t['h1']}</h1>
-      <div class="rule" style="margin-top:28px"></div>
-      <p class="lede">{t['lede']}</p>
-    </div>
-    <div class="hero-right">
+<div class="hero-frame">
+  <div class="hero-col">
+    <div class="eyebrow">{t['eyebrow']}</div>
+    <h1>{t['h1']}</h1>
+    <div class="rule" style="margin-top:28px"></div>
+    <p class="lede">{t['lede']}</p>
+
+    <div class="stackwrap">
       <div class="tag sub" style="align-self:flex-start">{t['input_label']}</div>
       <div class="chips">{chips}</div>
       <div class="arrow">&#8595;</div>
@@ -199,10 +231,10 @@ def hero(lang):
         <div class="wave">{bars}</div>
       </div>
     </div>
+    <div class="hero-foot"><span>{t['foot_left']}</span><span>nyenglishteacher.com</span></div>
   </div>
-  <div class="foot"><span>{t['foot_left']}</span><span>nyenglishteacher.com</span></div>
 </div>"""
-    return page_html(body, HERO_CSS)
+    return page_html(body, HERO_CSS, SIZE_WIDE)
 
 
 # --------------------------------------------------------------------------
@@ -445,11 +477,12 @@ def weekly_formula(lang):
     return page_html(body, FORMULA_CSS)
 
 
+# name -> (builder, canvas size). The hero is 4:3; everything else is 16:9.
 CARDS = {
-    "improve-your-english-use-it": hero,
-    "collect-patterns-not-words": words_vs_patterns,
-    "translating-to-automatic-english": translate_vs_retrieve,
-    "weekly-english-practice-formula": weekly_formula,
+    "improve-your-english-use-it": (hero, SIZE_WIDE),
+    "collect-patterns-not-words": (words_vs_patterns, SIZE_WIDE),
+    "translating-to-automatic-english": (translate_vs_retrieve, SIZE_WIDE),
+    "weekly-english-practice-formula": (weekly_formula, SIZE_WIDE),
 }
 
 
@@ -457,16 +490,19 @@ def main():
     langs = sys.argv[1:] or ["en", "es"]
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        page = browser.new_page(viewport={"width": W, "height": H}, device_scale_factor=1)
         for lang in langs:
-            for name, fn in CARDS.items():
+            for name, (fn, (w, h)) in CARDS.items():
+                page = browser.new_page(
+                    viewport={"width": w, "height": h}, device_scale_factor=1
+                )
                 html_path = OUT / f"{name}-{lang}.html"
                 html_path.write_text(fn(lang), encoding="utf-8")
                 page.goto(html_path.as_uri())
                 page.wait_for_timeout(350)
                 png = OUT / f"{name}-{lang}.png"
                 page.screenshot(path=str(png))
-                print("rendered", png.name)
+                page.close()
+                print(f"rendered {png.name}  ({w}x{h})")
         browser.close()
 
 
