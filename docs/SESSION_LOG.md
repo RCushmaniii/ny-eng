@@ -32,17 +32,22 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 
 ---
 
-- [x] **"X vs Y" comparison pages for Executive Pushback and Drive the Decision — CLOSED 2026-08-13.**
-  Four pages shipped in PR #244: `i-hear-you-but-vs-and` and
-  `i-disagree-vs-i-see-it-differently` (Executive Pushback), `i-think-vs-my-read-is`
-  and `does-that-make-sense` (Drive the Decision). Verified end to end: all 8 URLs
-  (EN + ES) return 200 in production, reciprocal hreflang confirmed in built HTML,
-  linked from all four course hubs, sitemap resubmitted to GSC, each URL submitted
-  to Bing API and IndexNow with success responses. Watch them in the ~2026-09-02
-  GSC window alongside the redirect-fix check — Past Tenses comparisons entered
-  around position 10.
+- [ ] **Connected-English asset rollout — two pieces still open.**
+  *Blocks:* the capture layer of the new blog post (it converts traffic to email only
+  once the guide exists) and the distribution of everything shipped 2026-08-13.
+  (1) Robert posts the Facebook + GBP drafts from
+  `content-marketing/why-correct-english-sounds-disconnected-social.md` — LinkedIn
+  section is HOLD pending the LinkedIn Page decision below. (2) Asset 2, the 6–8 page
+  executive guide PDF on the two frameworks, reusing the Corporate Audit lead-magnet
+  pipeline (`LeadMagnetForm.astro` + `api/corporate-guide/download.ts` pattern),
+  embedded in the blog post as its content upgrade.
+  *Closes when:* the social posts are live and the guide is downloadable behind the
+  form with a delivery email verified end to end.
 
 - [ ] **GSC re-check — two windows, one report.**
+  *Added 2026-08-13:* the ~2026-09-02 window now also watches the four comparison
+  pages shipped in PR #244 (Past Tenses comparisons entered around position 10) and
+  the connected-English blog pair from PR #242.
   *Blocks:* every content decision after this. Two rounds of SEO work are in
   flight and neither has been measured, so any further content work is guessing.
   *Watch at ~2026-08-20* (post PR #225/#228): the course hubs moving off position
@@ -114,6 +119,44 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 > re-added here on 2026-08-06 and removed again the same day — they are real and still
 > open, they are simply not this repo's business. Their full text is in this file's git
 > history at commit `f81fef9` if they need to be moved rather than rewritten.
+
+---
+
+## Session: 2026-08-13 — connected-English content sprint: blog pair, hero, four comparison pages
+
+### Accomplished
+
+- PR #242 — blog pair "Why Grammatically Correct English Can Still Sound Disconnected"
+  (`why-correct-english-sounds-disconnected` / `ingles-correcto-pero-desconectado`), repositioning
+  Robert's 30-page academic-writing lesson as executive frameworks (Claim→Evidence→Explanation→Link,
+  Look Back→Connect→Move Forward). Live, GSC/Bing/IndexNow submitted, structured data verified.
+- PR #243 — hero image (1600×900 webp, 88 KB) on both language versions.
+- PR #244 — four X-vs-Y comparison pages EN+ES (8 URLs): `i-hear-you-but-vs-and`,
+  `i-disagree-vs-i-see-it-differently` (Executive Pushback); `i-think-vs-my-read-is`,
+  `does-that-make-sense` (Drive the Decision). i18n registered, hub-linked, all 200 in production,
+  all submitted. **Closed the register's top item, verified end to end.**
+- Social drafts at `content-marketing/why-correct-english-sounds-disconnected-social.md`.
+
+### Decisions Made
+
+- Comparison topics pulled from each course's own cheat-sheet material, not keyword tools —
+  matches the Past Tenses model that entered around position 10.
+- LinkedIn social variant marked HOLD — off-site remains business-entity channels only per 2026-08-06.
+- No custom images for comparison pages: the template is icon-based; Robert's image offer declined.
+
+### Immediate Next Steps
+
+- [ ] Robert posts the Facebook + GBP drafts (register item).
+- [ ] Asset 2: executive guide PDF on the lead-magnet pipeline (register item).
+
+### Technical Debt
+
+- The two identical blog hero webp files dedupe to one hashed asset carrying the ES filename on
+  both pages' og:image — cosmetic only.
+
+### Open Questions / Blockers
+
+- LinkedIn Page decision (admin-only vs skip) still unanswered; blocks the LinkedIn variant.
 
 ---
 
