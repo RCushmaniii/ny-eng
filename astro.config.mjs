@@ -74,6 +74,7 @@ const blogTranslations = {
   "elite-executives-hire-communication-coaches":
     "/es/blog/por-que-ejecutivos-elite-contratan-coaches/",
   "why-correct-english-sounds-disconnected": "/es/blog/ingles-correcto-pero-desconectado/",
+  "how-to-improve-your-english": "/es/blog/como-mejorar-tu-ingles/",
 };
 
 // Reverse map (ES slug -> EN path)
