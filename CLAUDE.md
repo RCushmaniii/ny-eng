@@ -232,7 +232,7 @@ prose is incomplete and will be overlooked.
 ### CSP Maintenance
 
 When adding ANY new external service or API endpoint that the browser calls via fetch/XHR:
-- Add the domain to `connect-src` in BOTH `vercel.json` AND `public/.htaccess`
+- Add the domain to `connect-src` in `vercel.json` (the single source of security headers)
 - Current allowed domains: `formspree.io`, `plain-mode-42c4.rcushmaniii.workers.dev`, `ny-ai-chatbot.vercel.app`, `ny-eng-api.netlify.app`, `ny-eng.vercel.app`, `www.google-analytics.com`
 
 ### SEO Scripts Reference
