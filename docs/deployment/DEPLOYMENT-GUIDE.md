@@ -1,3 +1,7 @@
+> **HISTORICAL — SUPERSEDED.** This describes FTP deploys to Hostinger plus Netlify
+> functions. Neither is used. Deployment is now: push to `main` -> Vercel builds and
+> deploys automatically. Kept for history only.
+
 # 🚀 Deployment Guide: Hostinger + Netlify Hybrid Setup
 
 ## **Architecture Overview**

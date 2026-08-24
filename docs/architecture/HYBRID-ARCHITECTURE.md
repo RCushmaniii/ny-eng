@@ -1,3 +1,8 @@
+> **HISTORICAL — SUPERSEDED.** The Hostinger (Apache) + Netlify hybrid described
+> here is dead. The site runs entirely on **Vercel** (static + serverless functions)
+> behind Cloudflare, with the booking API on a Cloudflare Worker. Hostinger is no
+> longer used for NY English Teacher in any capacity. Kept for history only.
+
 # 🏗️ Hybrid Architecture: Static Site + Serverless Functions
 
 ## **Executive Summary**
