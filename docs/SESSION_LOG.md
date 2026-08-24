@@ -122,6 +122,49 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 
 ---
 
+## Session: 2026-08-24 — Hostinger decommissioned, leaked DB password redacted
+
+### Accomplished
+
+- PR #247 — redacted live Hostinger MySQL connection values (host, database, user,
+  password) from `docs/features/DATABASE_MIGRATION.md`. They were committed in plaintext
+  on 2025-12-21 and sat in this **public** repo for ~8 months. Added a HISTORICAL banner.
+- PR #248 — HISTORICAL banners on `docs/architecture/HYBRID-ARCHITECTURE.md`,
+  `docs/deployment/DEPLOYMENT-GUIDE.md`, `docs/SESSION-SUMMARY-2025-11-27.md`;
+  `docs/BUSINESS-CASE.md` hosting line corrected Hostinger → Vercel.
+- PR #249 — deleted `public/.htaccess`. It was served publicly at
+  `https://www.nyenglishteacher.com/.htaccess` (HTTP 200), exposing the CSP and
+  security-header config. Removed the "update BOTH `vercel.json` AND `public/.htaccess`"
+  instruction from `CLAUDE.md`, `docs/AZURE-TTS.md`, `docs/BLOG-SYSTEM-PLAYBOOK.md`.
+- Robert deleted the Hostinger database, files, and plan. **Verified after:** `/.htaccess`
+  → 404, homepage → 200, all six security headers live, 3 Cloudflare MX records intact,
+  `api/quiz/submit` → 200. NY English Teacher is fully off Hostinger.
+
+### Decisions Made
+
+- Skipped exporting the MySQL database before deletion: Robert's call, the rows were his
+  own test submissions from the Dec 2025–Feb 2026 window.
+- No git-history rewrite for the leaked password. Deleting the database it opened is the
+  real remediation; force-pushing a public repo's history buys nothing once the target is gone.
+- Kept `src/lib/db.ts` / `src/lib/neon.ts` despite having zero importers — `api/quiz/submit.ts`
+  uses its own inline `neon()` client. Not deleted this session; noted below.
+
+### Immediate Next Steps
+
+- [ ] Change that password anywhere else it is reused — the only remaining exposure.
+
+### Technical Debt
+
+- `src/lib/db.ts` and `src/lib/neon.ts` are unimported duplicates of the DB logic that
+  `api/quiz/submit.ts` implements inline. Two copies of the quiz schema can drift silently.
+  Carried since the 2026-02-09 Neon migration; first flagged 2026-06-13.
+
+### Open Questions / Blockers
+
+- None.
+
+---
+
 ## Session: 2026-08-13 — connected-English content sprint: blog pair, hero, four comparison pages
 
 ### Accomplished
