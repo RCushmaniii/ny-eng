@@ -1,3 +1,9 @@
+> **HISTORICAL — SUPERSEDED.** This describes the Dec 2025 Supabase -> MySQL move.
+> That MySQL database is no longer used. The site now runs on **Neon serverless
+> PostgreSQL** (`src/lib/neon.ts`, `src/lib/db.ts`, env var `POSTGRES_URL`).
+> Connection values below are redacted; they were exposed in this public repo
+> from 2025-12-21 and must be treated as burned.
+
 # Database Migration: Supabase → MySQL
 
 **Date:** December 2, 2025  
@@ -37,10 +43,10 @@ Migrated quiz database from Supabase (PostgreSQL) to MySQL on Hostinger to free 
 ### Required in `.env` and Netlify:
 
 ```env
-MYSQL_HOST=srv872.hstgr.io
-MYSQL_DATABASE=u215104155_ny_english_qui
-MYSQL_USER=u215104155_ny_english_ust
-MYSQL_PASSWORD=Olverinen17!
+MYSQL_HOST=__REDACTED__
+MYSQL_DATABASE=__REDACTED__
+MYSQL_USER=__REDACTED__
+MYSQL_PASSWORD=__REDACTED__
 MYSQL_PORT=3306
 ```
 
