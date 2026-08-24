@@ -286,7 +286,7 @@ remove voices by editing `ALLOWED_VOICES` + `DEFAULT_VOICES`.
 
 The browser never contacts Azure directly (only your own `/api/tts/synthesize`), so you
 do **not** need `*.tts.speech.microsoft.com` in `connect-src`. Only add the API origin to
-`connect-src` (in `vercel.json` + `.htaccess`) if it's called cross-origin.
+`connect-src` (in `vercel.json`) if it's called cross-origin.
 
 ### Setup / reference
 

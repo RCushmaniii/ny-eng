@@ -721,7 +721,7 @@ of this automatically — never handing the human a task list.
 17. Add internal links from related existing posts.
 
 **CSP maintenance:** if the post calls any new external endpoint via fetch/XHR, add the
-domain to `connect-src` in **both** `vercel.json` and `public/.htaccess`.
+domain to `connect-src` in `vercel.json`.
 
 ---
 
