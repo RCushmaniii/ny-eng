@@ -1,3 +1,7 @@
+> **HISTORICAL.** Dated session summary from the Hostinger + Netlify era. The stack
+> described here is no longer accurate; the site runs on Vercel with a Neon
+> PostgreSQL database. Kept for history only.
+
 # 📋 Development Session Summary - November 27, 2025
 
 ## **Session Overview**

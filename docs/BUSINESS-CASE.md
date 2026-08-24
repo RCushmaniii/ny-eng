@@ -72,7 +72,7 @@ Solo professional service providers (coaches, consultants, trainers, advisors) f
 
 | Component | Technology | Cost |
 |---|---|---|
-| Static site | Astro 5.5 + Tailwind CSS | Free (Hostinger hosting) |
+| Static site | Astro 5.5 + Tailwind CSS | Free (Vercel hosting) |
 | Interactive components | React 19 | Free |
 | Booking API | Cloudflare Workers + Google Calendar OAuth | Free tier |
 | Lead database | Neon PostgreSQL (serverless) | Free tier |
