@@ -80,6 +80,20 @@ export function getClientIp(req: VercelRequest): string {
 }
 
 /**
+ * Storage key for one window of one rule.
+ *
+ * The window length is part of the key ON PURPOSE. Each window keeps its own
+ * counter rows, because every window both READS and WRITES this table — if two
+ * windows of the same rule shared a key they would count each other's inserts,
+ * and an N-window rule would consume its budget N times faster than configured.
+ * Verified the hard way on 2026-08-26: the 5/min and 20/hr windows shared a key
+ * and the endpoint started refusing at the 4th request instead of the 6th.
+ */
+function windowKey(bucket: string, window: RateLimitWindow): string {
+  return `${bucket}:${window.windowSeconds}`;
+}
+
+/**
  * Count recent hits and record this one, per window.
  *
  * The count and the insert happen in a single statement so they see one
@@ -93,16 +107,18 @@ async function consume(
   identifier: string,
   window: RateLimitWindow,
 ): Promise<{ allowed: boolean }> {
+  const key = windowKey(bucket, window);
+
   const rows = await sql`
     WITH recent AS (
       SELECT count(*)::int AS hits
       FROM rate_limit_hits
-      WHERE bucket = ${bucket}
+      WHERE bucket = ${key}
         AND identifier = ${identifier}
         AND created_at > NOW() - (${window.windowSeconds} * INTERVAL '1 second')
     ), inserted AS (
       INSERT INTO rate_limit_hits (bucket, identifier)
-      SELECT ${bucket}, ${identifier}
+      SELECT ${key}, ${identifier}
       FROM recent
       WHERE recent.hits < ${window.max}
       RETURNING 1
