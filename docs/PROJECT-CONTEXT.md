@@ -215,6 +215,24 @@ node scripts/seo/indexnow-submit.mjs --url REPLACE_ME
   (PR #233). If the gate has never blocked anything, suspect it is broken rather
   than assuming the code is clean.
 - Robert's terminal is **PowerShell**. Never hand him bash.
+- **There is no shareable quiz-report URL, and there never was.**
+  `/{lang}/quiz/{quizType}/report/` renders `QuizReport.tsx` as `client:only`,
+  reading `quizAnswers` / `leadData` / `aiAssessment` from **`sessionStorage`**.
+  The report existed only in the lead's own browser; opening the URL yourself
+  shows the empty state and redirects to `/en/assessments/`. To see what a lead
+  saw, seed those three keys in the console on the same origin, then navigate.
+  The lead's answers come from the `answers` JSON column, **not** `quiz_answers`.
+- **`quiz_answers` is dead schema — it is never written.** `api/quiz/submit.ts`
+  stores per-question data in `quiz_submissions.answers` (JSON) instead, while
+  `src/lib/db.ts`'s `getSubmission()` still joins the empty table. A query against
+  `quiz_answers` returns zero rows for every submission, which looks like data
+  loss and is not.
+- **`api/` is not covered by the root `tsconfig.json`** — its `include` is
+  `src/**/*` only, so `npx tsc --noEmit` passes no matter what is broken under
+  `api/`. Typecheck those files explicitly, and under **both** `nodenext` and
+  `bundler` resolution: the project is `"type": "module"`, so relative imports in
+  `api/` need the `.js` extension form or the build can fail at deploy time and
+  500 every function.
 
 ---
 
