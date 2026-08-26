@@ -20,12 +20,11 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { handleUpload, type HandleUploadBody } from "@vercel/blob/client";
 import { Resend } from "resend";
+import { enforceRateLimit, RATE_LIMITS } from "../_lib/rate-limit.js";
 
 const SITE = "https://www.nyenglishteacher.com";
 
-const resend = process.env.RESEND_API_KEY
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null;
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 const ALLOWED_ORIGINS = [
   "https://www.nyenglishteacher.com",
@@ -138,6 +137,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
+  // Rate limit before minting an upload token — this endpoint hands out write
+  // access to Vercel Blob storage, so abuse costs storage, not just compute.
+  if (await enforceRateLimit(req, res, RATE_LIMITS.capstoneUpload)) return;
+
   if (!process.env.BLOB_READ_WRITE_TOKEN) {
     console.error("BLOB_READ_WRITE_TOKEN is not configured");
     return res.status(500).json({ error: "File upload is not configured" });
@@ -158,13 +161,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
         return {
           allowedContentTypes: [
-            "audio/mpeg",       // .mp3
-            "audio/mp4",        // .m4a (some browsers)
-            "audio/x-m4a",      // .m4a
-            "audio/wav",        // .wav
-            "audio/ogg",        // .ogg
-            "audio/webm",       // browser MediaRecorder output
-            "audio/aac",        // .aac
+            "audio/mpeg", // .mp3
+            "audio/mp4", // .m4a (some browsers)
+            "audio/x-m4a", // .m4a
+            "audio/wav", // .wav
+            "audio/ogg", // .ogg
+            "audio/webm", // browser MediaRecorder output
+            "audio/aac", // .aac
           ],
           maximumSizeInBytes: 50 * 1024 * 1024, // 50 MB — covers Zoom audio exports
           tokenPayload: JSON.stringify(payload),

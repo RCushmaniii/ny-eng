@@ -12,6 +12,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { neon } from "@neondatabase/serverless";
 import { Resend } from "resend";
 import Anthropic from "@anthropic-ai/sdk";
+import { enforceRateLimit, RATE_LIMITS } from "../_lib/rate-limit.js";
 
 // Initialize Neon SQL client
 const sql = neon(process.env.POSTGRES_URL || "");
@@ -317,6 +318,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     res.status(405).json({ error: "Method not allowed" });
     return;
   }
+
+  // Rate limit before any paid work. Every request past this point can spend
+  // money: one Anthropic generation and two Resend emails.
+  if (await enforceRateLimit(req, res, RATE_LIMITS.quizSubmit)) return;
 
   try {
     const body = req.body;

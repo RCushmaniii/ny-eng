@@ -16,6 +16,7 @@
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { enforceRateLimit, RATE_LIMITS } from "../_lib/rate-limit.js";
 
 const allowedOrigins = [
   "https://www.nyenglishteacher.com",
@@ -65,6 +66,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
+  // Rate limit before touching Azure TTS — every call past here is billable.
+  if (await enforceRateLimit(req, res, RATE_LIMITS.ttsSynthesize)) return;
+
   const apiKey = process.env.AZURE_TTS_KEY;
   const region = process.env.AZURE_TTS_REGION || "eastus";
 
@@ -96,9 +100,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   // Determine voice
   const language = lang === "es" ? "es" : "en";
-  const selectedVoice = voice && ALLOWED_VOICES.has(voice)
-    ? voice
-    : DEFAULT_VOICES[language];
+  const selectedVoice = voice && ALLOWED_VOICES.has(voice) ? voice : DEFAULT_VOICES[language];
 
   // Extract language tag from voice name (e.g., "en-US" from "en-US-AndrewNeural")
   const voiceLang = selectedVoice.split("-").slice(0, 2).join("-");

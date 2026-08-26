@@ -10,12 +10,11 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { neon } from "@neondatabase/serverless";
 import { Resend } from "resend";
+import { enforceRateLimit, RATE_LIMITS } from "../_lib/rate-limit.js";
 
 const sql = neon(process.env.POSTGRES_URL || "");
 
-const resend = process.env.RESEND_API_KEY
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null;
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 const allowedOrigins = [
   "https://www.nyenglishteacher.com",
@@ -91,18 +90,12 @@ function buildAdminEmailHtml(body: {
 </html>`;
 }
 
-function buildDeliveryEmailHtml(body: {
-  name: string;
-  company: string;
-  language: string;
-}): string {
+function buildDeliveryEmailHtml(body: { name: string; company: string; language: string }): string {
   const firstName = body.name.split(" ")[0];
   const isSpanish = body.language === "es";
   const pdfUrl = `${SITE_URL}${PDF_PATH[body.language] || PDF_PATH.en}`;
   const videoUrl = VIDEO_URL[body.language] || VIDEO_URL.en;
-  const bookingUrl = isSpanish
-    ? `${SITE_URL}/es/reservar/`
-    : `${SITE_URL}/en/book/`;
+  const bookingUrl = isSpanish ? `${SITE_URL}/es/reservar/` : `${SITE_URL}/en/book/`;
 
   const copy = isSpanish
     ? {
@@ -237,10 +230,7 @@ function escapeHtml(text: string): string {
 // MAIN HANDLER
 // ============================================================================
 
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse,
-): Promise<void> {
+export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   const origin = req.headers.origin as string;
   const allowedOrigin = allowedOrigins.includes(origin)
     ? origin
@@ -260,6 +250,9 @@ export default async function handler(
     return;
   }
 
+  // Rate limit before any paid work — this endpoint sends Resend email.
+  if (await enforceRateLimit(req, res, RATE_LIMITS.corporateGuideDownload)) return;
+
   try {
     const body = req.body || {};
 
@@ -270,7 +263,9 @@ export default async function handler(
     }
 
     const name = String(body.name || "").trim();
-    const email = String(body.email || "").trim().toLowerCase();
+    const email = String(body.email || "")
+      .trim()
+      .toLowerCase();
     const company = String(body.company || "").trim();
     const language = body.language === "es" ? "es" : "en";
 
@@ -315,8 +310,7 @@ export default async function handler(
     // calls. Fire-and-forget here results in delivered_at staying null forever.
     if (resend) {
       const fromAddress =
-        process.env.RESEND_FROM_EMAIL ||
-        "NY English Teacher <onboarding@resend.dev>";
+        process.env.RESEND_FROM_EMAIL || "NY English Teacher <onboarding@resend.dev>";
       const emailPromises: Promise<unknown>[] = [];
 
       if (process.env.NOTIFICATION_EMAIL) {
@@ -334,9 +328,7 @@ export default async function handler(
                 sourcePage: sourcePage || undefined,
               }),
             })
-            .catch((err: Error) =>
-              console.error("Admin email error:", err.message),
-            ),
+            .catch((err: Error) => console.error("Admin email error:", err.message)),
         );
       }
 
@@ -358,9 +350,7 @@ export default async function handler(
               console.error("Delivery timestamp update failed:", e);
             }
           })
-          .catch((err: Error) =>
-            console.error("Delivery email error:", err.message),
-          ),
+          .catch((err: Error) => console.error("Delivery email error:", err.message)),
       );
 
       await Promise.all(emailPromises);
