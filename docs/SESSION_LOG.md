@@ -122,6 +122,88 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 
 ---
 
+## Session: 2026-08-25/26 — Duplicate quiz submissions fixed, every paid API surface rate limited
+
+Started as consultation prep for a live lead and turned into two production fixes.
+
+### Accomplished
+
+- **Lead prep for Luis E. Garcia** (10:00 consult, executives quiz, 35/100 "Credibility
+  Gap"). Reconstructed his exact answers from Neon. The diagnostic that mattered: he
+  self-scored **confidence 60 but clarity 15**, picking the rock-bottom option on Q1 —
+  "people leave with different interpretations of the same message." Confident and
+  unclear, not nervous. There is **no shareable results URL** — `QuizReport.tsx` is
+  `client:only` and renders from `sessionStorage`, so the report only ever existed in the
+  lead's browser. Reproduced it via a console snippet that seeds the three keys.
+- **PR #251 — duplicate quiz submissions.** One lead produced 3 DB rows, 3 admin emails,
+  3 emails to the lead, and 3 billed Haiku generations. Two compounding causes: the
+  submit handler had no in-flight lock or button disable, and the API generated the AI
+  assessment (up to 8s) **before** the INSERT — so the button looked dead long enough to
+  invite re-clicks, and a re-click arriving mid-flight found no row to collide with.
+  INSERT now runs first with the assessment written back by UPDATE; a same-email +
+  same-quiz submission inside 10 minutes short-circuits. Fixed in both `en` and `es`.
+- **PR #252 — rate limiting on every paid API surface.** All four `api/` endpoints were
+  public, unauthenticated, and spent money per call. Added `api/_lib/rate-limit.ts`,
+  a Postgres-backed sliding window, plus `rate_limit_hits` (migration applied to Neon).
+  `quiz/submit` and `corporate-guide/download` 5/min + 20/hr, `capstone/blob-upload`
+  3/min + 15/hr, `tts/synthesize` 30/min + 300/hr.
+- **PR #253 — rate-limit window keys.** Caught by verifying against production rather
+  than trusting the build. Every window both reads and writes the counter table and all
+  windows of a rule shared one key, so each counted the others' inserts and the rule
+  burned its budget N times faster. Window length is now part of the key.
+- **Deleted Luis's 2 duplicate rows**, kept `f5aa76e1` (earliest). Verified first: zero
+  `quiz_answers` rows referenced them and all three were identical (`status: new`, no
+  admin notes, CTA never clicked).
+
+### Decisions Made
+
+- **Postgres instead of the Upstash Redis default for rate limiting.** Provisioning
+  Upstash needs an interactive dashboard flow, and the property that actually matters is
+  a durable store _shared across serverless instances_ — an in-memory `Map` is worthless
+  on Vercel. These endpoints see a handful of requests a day, so Redis latency buys
+  nothing. `consume()` swaps to `@upstash/ratelimit` without touching call sites.
+- **The limiter fails open.** These are lead-capture endpoints: losing a real lead to a
+  limiter hiccup is worse than briefly letting abuse through, and every caller needs the
+  same database one line later anyway.
+- **`api/capstone/listen.ts` deliberately not limited** — GET playback proxy with strict
+  blob-hostname validation; throttling it would break a learner replaying their own
+  recording.
+- **Imports use the `.js` extension form.** The project is `"type": "module"` and a
+  build-time resolution failure in the shared lib would 500 all four endpoints.
+
+### Verified in Production
+
+- Duplicate guard: two identical submissions 3.3s apart (the real incident's interval)
+  → 1 row, same `submission_id`, second flagged `duplicate: true`. Test row deleted.
+- Rate limiter after #253: `400, 400, 400, 400, 400, 429, 429` — exactly 5 through, 429
+  with `Retry-After: 60` on the 6th, and each window key holding its own 5 rows.
+  Limiter rows deleted.
+
+### Technical Debt
+
+- `quiz_answers` table is **never written**. `api/quiz/submit.ts` stores per-question data
+  in the `answers` JSON column instead, and `src/lib/db.ts`'s `getSubmission()` still joins
+  the empty table. Dead schema plus a second copy of the query path.
+- The limiter's count-then-insert is one statement but not a true transaction — two
+  genuinely simultaneous requests can both pass. Accepted: this stops budget floods, not
+  exact quotas.
+- Carried from 2026-08-24: `src/lib/db.ts` / `src/lib/neon.ts` remain unimported duplicates
+  of the logic `api/quiz/submit.ts` implements inline.
+
+### Immediate Next Steps
+
+- [ ] Delete the two `TEST DELETE ME - dupe guard` emails in the inbox — artifacts of the
+      duplicate-guard verification, not leads.
+- [ ] Reply to Luis Garcia. He viewed his report but never clicked its CTA — he booked by
+      some other path, worth asking how.
+
+### Open Questions / Blockers
+
+- Three different AI assessments were generated for Luis (one per duplicate). Which one his
+  browser rendered is unknowable — they are stored per row and only one reached him.
+
+---
+
 ## Session: 2026-08-24 — Hostinger decommissioned, leaked DB password redacted
 
 ### Accomplished
