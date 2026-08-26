@@ -541,13 +541,47 @@ const customHreflangs = [
     // Handle form submission
     const form = document.getElementById("email-form");
 
+    // Bloqueo de envío. La API puede tardar varios segundos (genera una
+    // evaluación con IA), así que sin esto el botón parece muerto y se
+    // vuelve a hacer clic — así fue como un lead generó tres envíos, tres
+    // correos de notificación y tres generaciones de IA el 2026-08-25.
+    let isSubmitting = false;
+
+    const submitButton = form?.querySelector(
+      ".submit-button",
+    ) as HTMLButtonElement | null;
+    const submitButtonLabel = submitButton?.innerHTML ?? "";
+
+    function lockSubmit() {
+      isSubmitting = true;
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.setAttribute("aria-busy", "true");
+        submitButton.innerHTML = "Calculando tus resultados…";
+      }
+    }
+
+    function unlockSubmit() {
+      isSubmitting = false;
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.removeAttribute("aria-busy");
+        submitButton.innerHTML = submitButtonLabel;
+      }
+    }
+
     if (form) {
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
+        // Ignorar clics repetidos mientras hay un envío en curso.
+        if (isSubmitting) return;
+
         const formData = new FormData(form as HTMLFormElement);
         const name = (formData.get("name") as string) || "";
         const email = (formData.get("email") as string) || "";
+
+        lockSubmit();
 
         try {
           const validated = validateSubmission({
@@ -632,6 +666,7 @@ const customHreflangs = [
             window.location.href = `/es/quiz/${quizType}/report/`;
           } else {
             // Show error
+            unlockSubmit();
             document.getElementById("lead-capture")!.style.display = "none";
             document.getElementById("submission-error")!.style.display =
               "block";
@@ -639,6 +674,7 @@ const customHreflangs = [
               result.error || "Ocurrió un error desconocido";
           }
         } catch (error) {
+          unlockSubmit();
           const message =
             error instanceof Error && error.message !== "Failed to fetch"
               ? error.message

@@ -17,9 +17,7 @@ import Anthropic from "@anthropic-ai/sdk";
 const sql = neon(process.env.POSTGRES_URL || "");
 
 // Initialize Resend for email notifications
-const resend = process.env.RESEND_API_KEY
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null;
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 // Initialize Anthropic for AI assessment
 const anthropic = process.env.ANTHROPIC_API_KEY
@@ -44,20 +42,19 @@ const QUIZ_TYPE_LABELS: Record<string, string> = {
 };
 
 // Tier color mapping
-const TIER_COLORS: Record<string, { bg: string; text: string; badge: string }> =
-  {
-    "Executive Presence": {
-      bg: "#ecfdf5",
-      text: "#065f46",
-      badge: "#10b981",
-    },
-    "Passive Proficiency": {
-      bg: "#fffbeb",
-      text: "#92400e",
-      badge: "#f59e0b",
-    },
-    "Credibility Gap": { bg: "#fef2f2", text: "#991b1b", badge: "#ef4444" },
-  };
+const TIER_COLORS: Record<string, { bg: string; text: string; badge: string }> = {
+  "Executive Presence": {
+    bg: "#ecfdf5",
+    text: "#065f46",
+    badge: "#10b981",
+  },
+  "Passive Proficiency": {
+    bg: "#fffbeb",
+    text: "#92400e",
+    badge: "#f59e0b",
+  },
+  "Credibility Gap": { bg: "#fef2f2", text: "#991b1b", badge: "#ef4444" },
+};
 
 // ============================================================================
 // EMAIL TEMPLATES
@@ -139,10 +136,14 @@ function buildAdminEmailHtml(body: Record<string, unknown>): string {
         </tr>
       </table>
     </div>
-    ${categoryRows ? `<div style="padding: 0 32px 24px;">
+    ${
+      categoryRows
+        ? `<div style="padding: 0 32px 24px;">
       <h3 style="font-size: 14px; color: #64748b; margin: 0 0 8px; text-transform: uppercase; letter-spacing: 0.5px;">Category Breakdown</h3>
       <table style="width: 100%; border-collapse: collapse;">${categoryRows}</table>
-    </div>` : ""}
+    </div>`
+        : ""
+    }
     <div style="padding: 16px 32px; background: #f8fafc; text-align: center;">
       <p style="margin: 0; color: #94a3b8; font-size: 12px;">NY English Teacher &mdash; Quiz Lead Notification</p>
     </div>
@@ -170,26 +171,31 @@ function buildQuizTakerEmailHtml(body: Record<string, unknown>): string {
   const copy = isSpanish
     ? {
         greeting: `Hola ${name},`,
-        intro: "Gracias por completar tu evaluaci\u00F3n de comunicaci\u00F3n. Aqu\u00ED tienes un resumen r\u00E1pido de tus resultados:",
+        intro:
+          "Gracias por completar tu evaluaci\u00F3n de comunicaci\u00F3n. Aqu\u00ED tienes un resumen r\u00E1pido de tus resultados:",
         scoreLabel: "Tu Puntaje",
         outOf: "de 100",
         areasTitle: "Tus 2 \u00C1reas Principales de Mejora",
         priority: "Prioridad",
         ctaTitle: "\u00BFListo para Mejorar?",
-        ctaText: "Una conversaci\u00F3n de 15 minutos puede revelar exactamente qu\u00E9 est\u00E1 frenando tu comunicaci\u00F3n y cu\u00E1l es el camino m\u00E1s r\u00E1pido para mejorar.",
+        ctaText:
+          "Una conversaci\u00F3n de 15 minutos puede revelar exactamente qu\u00E9 est\u00E1 frenando tu comunicaci\u00F3n y cu\u00E1l es el camino m\u00E1s r\u00E1pido para mejorar.",
         ctaButton: "Agendar una Llamada Gratuita",
-        footer: "Recibes este correo porque completaste una evaluaci\u00F3n en nyenglishteacher.com",
+        footer:
+          "Recibes este correo porque completaste una evaluaci\u00F3n en nyenglishteacher.com",
         unsubscribe: "Si no deseas recibir m\u00E1s correos, responde a este mensaje.",
       }
     : {
         greeting: `Hi ${name},`,
-        intro: "Thanks for completing your communication assessment. Here's a quick summary of your results:",
+        intro:
+          "Thanks for completing your communication assessment. Here's a quick summary of your results:",
         scoreLabel: "Your Score",
         outOf: "out of 100",
         areasTitle: "Your Top 2 Improvement Areas",
         priority: "Priority",
         ctaTitle: "Ready to Improve?",
-        ctaText: "A 15-minute conversation can reveal exactly what's holding your communication back\u2014and the fastest path to improvement.",
+        ctaText:
+          "A 15-minute conversation can reveal exactly what's holding your communication back\u2014and the fastest path to improvement.",
         ctaButton: "Book a Free Strategy Call",
         footer: "You're receiving this because you completed an assessment on nyenglishteacher.com",
         unsubscribe: "If you'd prefer not to receive future emails, simply reply to let us know.",
@@ -213,19 +219,27 @@ function buildQuizTakerEmailHtml(body: Record<string, unknown>): string {
         <div style="font-size: 16px; font-weight: 600; color: ${colors.text}; margin-top: 8px;">${scoreTier}</div>
       </div>
     </div>
-    ${primaryGapName ? `<div style="padding: 24px 32px;">
+    ${
+      primaryGapName
+        ? `<div style="padding: 24px 32px;">
       <h2 style="font-size: 18px; color: #0f172a; margin: 0 0 16px;">${copy.areasTitle}</h2>
       <div style="background: #f8fafc; border-left: 4px solid ${colors.badge}; padding: 16px; margin-bottom: 12px; border-radius: 0 8px 8px 0;">
         <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: ${colors.text}; font-weight: 600; margin-bottom: 4px;">${copy.priority} #1</div>
         <div style="font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 6px;">${primaryGapName}</div>
         <div style="font-size: 14px; color: #475569; line-height: 1.5;">${primaryGapImpact || ""}</div>
       </div>
-      ${secondaryGapName ? `<div style="background: #f8fafc; border-left: 4px solid #94a3b8; padding: 16px; border-radius: 0 8px 8px 0;">
+      ${
+        secondaryGapName
+          ? `<div style="background: #f8fafc; border-left: 4px solid #94a3b8; padding: 16px; border-radius: 0 8px 8px 0;">
         <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; font-weight: 600; margin-bottom: 4px;">${copy.priority} #2</div>
         <div style="font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 6px;">${secondaryGapName}</div>
         <div style="font-size: 14px; color: #475569; line-height: 1.5;">${secondaryGapImpact || ""}</div>
-      </div>` : ""}
-    </div>` : ""}
+      </div>`
+          : ""
+      }
+    </div>`
+        : ""
+    }
     <div style="padding: 24px 32px; text-align: center; background: #f8fafc;">
       <h2 style="font-size: 20px; color: #0f172a; margin: 0 0 8px;">${copy.ctaTitle}</h2>
       <p style="color: #475569; font-size: 14px; line-height: 1.5; margin: 0 0 20px;">${copy.ctaText}</p>
@@ -244,14 +258,11 @@ function buildQuizTakerEmailHtml(body: Record<string, unknown>): string {
 // AI ASSESSMENT
 // ============================================================================
 
-async function generateAiAssessment(
-  body: Record<string, unknown>,
-): Promise<string | null> {
+async function generateAiAssessment(body: Record<string, unknown>): Promise<string | null> {
   if (!anthropic) return null;
 
   const model = process.env.ANTHROPIC_MODEL || "claude-haiku-4-5-20251001";
-  const quizLabel =
-    QUIZ_TYPE_LABELS[body.quizType as string] || (body.quizType as string);
+  const quizLabel = QUIZ_TYPE_LABELS[body.quizType as string] || (body.quizType as string);
 
   const prompt = `You are Robert Cushman, an expert English communication coach for executive professionals in Latin America. Write a 2-3 paragraph personalized coaching assessment based on these quiz results. Be warm but direct. Use "you" language. Do not repeat the score numbers. Focus on what the results reveal about their communication patterns and what they should focus on first.
 
@@ -283,10 +294,7 @@ Write in ${body.language === "es" ? "Spanish" : "English"}. Keep it under 200 wo
 // MAIN HANDLER
 // ============================================================================
 
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse,
-): Promise<void> {
+export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   // Determine allowed origin
   const origin = req.headers.origin as string;
   const allowedOrigin = allowedOrigins.includes(origin)
@@ -314,26 +322,17 @@ export default async function handler(
     const body = req.body;
 
     // Validate required fields
-    if (
-      !body.name ||
-      !body.email ||
-      !body.answers ||
-      !body.language ||
-      !body.quizType
-    ) {
+    if (!body.name || !body.email || !body.answers || !body.language || !body.quizType) {
       res.status(400).json({
         success: false,
-        error:
-          "Missing required fields: name, email, answers, language, quizType",
+        error: "Missing required fields: name, email, answers, language, quizType",
       });
       return;
     }
 
     // Use client-provided scores (the client scoring engine is the source of truth)
     // Backwards-compatible: accept totalScore OR score from older client builds
-    const totalScore = Number(
-      body.totalScore ?? body.score ?? NaN,
-    );
+    const totalScore = Number(body.totalScore ?? body.score ?? NaN);
     if (isNaN(totalScore)) {
       res.status(400).json({
         success: false,
@@ -355,14 +354,75 @@ export default async function handler(
     const secondaryGap = String(body.secondaryGap || "");
 
     // Build answers array for storage
-    const answersArray = Object.entries(body.answers).map(
-      ([qId, answerIndex]) => ({
-        question_number: parseInt(qId.replace("q", "")),
-        answer_index: answerIndex,
-      }),
-    );
+    const answersArray = Object.entries(body.answers).map(([qId, answerIndex]) => ({
+      question_number: parseInt(qId.replace("q", "")),
+      answer_index: answerIndex,
+    }));
 
-    // Generate AI assessment (with timeout so it doesn't block too long)
+    // ------------------------------------------------------------------
+    // Idempotency guard — DO NOT reorder the INSERT and the AI call below.
+    //
+    // 2026-08-25: one lead submitted the executives quiz three times in
+    // ~3.3s intervals. The submit button had no in-flight lock, and this
+    // handler used to generate the AI assessment (up to 8s) BEFORE the
+    // INSERT — so the button looked dead long enough to invite re-clicks,
+    // and each re-click arrived while the first request was still inside
+    // the Claude call with no row written yet. Result: 3 DB rows,
+    // 3 admin emails, 3 emails to the lead, 3 billed Haiku generations.
+    //
+    // The fix is two-part and both parts matter:
+    //   1. The client now locks the submit button (results.astro, en + es).
+    //   2. The INSERT happens FIRST, so a re-click ~100ms later sees the
+    //      row and short-circuits here. The AI assessment is generated
+    //      afterwards and written back with an UPDATE.
+    // Moving AI generation back above the INSERT reopens the whole window.
+    const existing = await sql`
+      SELECT id, ai_assessment
+      FROM quiz_submissions
+      WHERE email = ${body.email}
+        AND quiz_type = ${body.quizType}
+        AND created_at > NOW() - INTERVAL '10 minutes'
+      ORDER BY created_at ASC
+      LIMIT 1
+    `;
+
+    if (existing.length > 0) {
+      // Return the original submission. No second row, no second pair of
+      // emails, no second AI generation.
+      res.status(200).json({
+        success: true,
+        submission_id: existing[0].id,
+        score: totalScore,
+        score_tier: scoreTier,
+        ai_assessment: existing[0].ai_assessment,
+        duplicate: true,
+      });
+      return;
+    }
+
+    // Insert into Neon PostgreSQL (ai_assessment filled in below)
+    const rows = await sql`
+      INSERT INTO quiz_submissions (
+        name, email, company, phone,
+        quiz_type, quiz_version, language,
+        raw_score, total_score, score_tier,
+        category_scores, primary_gap, secondary_gap,
+        answers, completion_time_ms, device_type, browser, referrer,
+        utm_source, utm_medium, utm_campaign, utm_content, utm_term
+      ) VALUES (
+        ${body.name}, ${body.email}, ${body.company || null}, ${body.phone || null},
+        ${body.quizType}, ${"v1.0"}, ${body.language},
+        ${rawScore}, ${totalScore}, ${scoreTier},
+        ${JSON.stringify(categoryScores)}, ${primaryGap}, ${secondaryGap},
+        ${JSON.stringify(answersArray)}, ${body.completionTime || null}, ${body.deviceType || null}, ${body.browser || null}, ${body.referrer || null},
+        ${body.utmSource || null}, ${body.utmMedium || null}, ${body.utmCampaign || null}, ${body.utmContent || null}, ${body.utmTerm || null}
+      ) RETURNING id
+    `;
+
+    const submissionId = rows[0].id;
+
+    // Generate AI assessment (with timeout so it doesn't block too long),
+    // then write it back to the row we just created.
     let aiAssessment: string | null = null;
     try {
       aiAssessment = await Promise.race([
@@ -373,28 +433,19 @@ export default async function handler(
       console.error("AI assessment timed out or failed");
     }
 
-    // Insert into Neon PostgreSQL
-    const rows = await sql`
-      INSERT INTO quiz_submissions (
-        name, email, company, phone,
-        quiz_type, quiz_version, language,
-        raw_score, total_score, score_tier,
-        category_scores, primary_gap, secondary_gap,
-        ai_assessment,
-        answers, completion_time_ms, device_type, browser, referrer,
-        utm_source, utm_medium, utm_campaign, utm_content, utm_term
-      ) VALUES (
-        ${body.name}, ${body.email}, ${body.company || null}, ${body.phone || null},
-        ${body.quizType}, ${"v1.0"}, ${body.language},
-        ${rawScore}, ${totalScore}, ${scoreTier},
-        ${JSON.stringify(categoryScores)}, ${primaryGap}, ${secondaryGap},
-        ${aiAssessment},
-        ${JSON.stringify(answersArray)}, ${body.completionTime || null}, ${body.deviceType || null}, ${body.browser || null}, ${body.referrer || null},
-        ${body.utmSource || null}, ${body.utmMedium || null}, ${body.utmCampaign || null}, ${body.utmContent || null}, ${body.utmTerm || null}
-      ) RETURNING id
-    `;
-
-    const submissionId = rows[0].id;
+    if (aiAssessment) {
+      try {
+        await sql`
+          UPDATE quiz_submissions
+          SET ai_assessment = ${aiAssessment}
+          WHERE id = ${submissionId}
+        `;
+      } catch (err) {
+        // A missing assessment must never fail the submission — the lead
+        // is already captured and the report renders without it.
+        console.error("AI assessment write-back error:", err);
+      }
+    }
 
     // Send emails (don't block the response)
     if (resend) {
@@ -405,16 +456,12 @@ export default async function handler(
         emailPromises.push(
           resend.emails
             .send({
-              from:
-                process.env.RESEND_FROM_EMAIL ||
-                "NY English Quiz <onboarding@resend.dev>",
+              from: process.env.RESEND_FROM_EMAIL || "NY English Quiz <onboarding@resend.dev>",
               to: process.env.NOTIFICATION_EMAIL,
               subject: `New Quiz Lead: ${body.name} \u2014 ${totalScore}/100 ${scoreTier}`,
               html: buildAdminEmailHtml(body),
             })
-            .catch((err: Error) =>
-              console.error("Admin email error:", err),
-            ),
+            .catch((err: Error) => console.error("Admin email error:", err)),
         );
       }
 
@@ -424,18 +471,14 @@ export default async function handler(
         emailPromises.push(
           resend.emails
             .send({
-              from:
-                process.env.RESEND_FROM_EMAIL ||
-                "NY English Teacher <onboarding@resend.dev>",
+              from: process.env.RESEND_FROM_EMAIL || "NY English Teacher <onboarding@resend.dev>",
               to: body.email,
               subject: isSpanish
                 ? `${body.name}, tu Puntaje de Comunicaci\u00F3n: ${totalScore}/100`
                 : `${body.name}, Your Communication Score: ${totalScore}/100`,
               html: buildQuizTakerEmailHtml(body),
             })
-            .catch((err: Error) =>
-              console.error("Quiz taker email error:", err),
-            ),
+            .catch((err: Error) => console.error("Quiz taker email error:", err)),
         );
       }
 
