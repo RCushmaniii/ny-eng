@@ -238,11 +238,26 @@ export const RATE_LIMITS = {
       { windowSeconds: 3600, max: 15 },
     ],
   },
-  /** Paid TTS provider. Legitimately called several times per lesson page. */
+  /**
+   * Paid TTS provider. Legitimately called several times per lesson page.
+   *
+   * The per-minute window is a BURST allowance, not the cost control — the
+   * hourly cap is what bounds spend, and it is unchanged. A pronunciation
+   * drill page (see the "English words Spanish speakers should practice"
+   * post, ~170 distinct speakable items) is clicked far faster than a lesson
+   * page: one word every two seconds is normal practice behaviour and used to
+   * trip the old 30/min ceiling, silently dropping the reader to the robotic
+   * browser SpeechSynthesis fallback halfway down the page.
+   *
+   * Raising 30 -> 60 does not raise worst-case cost: max spend per identifier
+   * per hour is min(hourly cap, 60 * per-minute cap), and the 300/hour cap
+   * dominates in both cases. Do not raise the hourly cap without doing the
+   * Azure character math — that one is real money.
+   */
   ttsSynthesize: {
     bucket: "tts-synthesize",
     windows: [
-      { windowSeconds: 60, max: 30 },
+      { windowSeconds: 60, max: 60 },
       { windowSeconds: 3600, max: 300 },
     ],
   },
