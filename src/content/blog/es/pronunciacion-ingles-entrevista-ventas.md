@@ -7,6 +7,8 @@ categories:
   - "Carrera y Liderazgo"
 readingTime: "12 min de lectura"
 audience: "Hispanohablantes que se preparan para una entrevista de ventas en inglés"
+featuredImage: "./images/pronunciacion-ingles-entrevista-ventas.webp"
+imageAlt: "Tarjeta de inglés para entrevistas de ventas con las palabras strengths, revenue, exceeded y closed"
 ttsVoice: "en-US-AvaNeural"
 translations:
   en: "/en/blog/sales-interview-english-pronunciation/"

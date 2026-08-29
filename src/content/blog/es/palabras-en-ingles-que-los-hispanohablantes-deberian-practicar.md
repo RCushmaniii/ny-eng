@@ -7,6 +7,8 @@ categories:
   - "Inglés Profesional"
 readingTime: "9 min de lectura"
 audience: "Hispanohablantes que trabajan en inglés y quieren que los entiendan a la primera"
+featuredImage: "./images/palabras-en-ingles-que-los-hispanohablantes-deberian-practicar.webp"
+imageAlt: "Tarjeta de práctica de pronunciación con el sonido TH, la R inglesa, las terminaciones -ED y el contraste thirteen-thirty"
 ttsVoice: "en-US-AvaNeural"
 translations:
   en: "/en/blog/english-words-spanish-speakers-should-practice/"

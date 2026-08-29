@@ -7,6 +7,8 @@ categories:
   - "Professional English"
 readingTime: "9 min read"
 audience: "Spanish speakers who work in English and want to be understood the first time"
+featuredImage: "./images/english-words-spanish-speakers-should-practice.webp"
+imageAlt: "Pronunciation practice card listing the TH sound, the English R, -ED endings, and the thirteen-thirty contrast"
 ttsVoice: "en-US-AvaNeural"
 translations:
   en: "/en/blog/english-words-spanish-speakers-should-practice/"
