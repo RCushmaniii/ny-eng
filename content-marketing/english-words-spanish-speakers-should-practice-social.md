@@ -5,7 +5,7 @@ Post URLs (live after merge to main):
 - ES (primary for social — the audience is Spanish-speaking): https://www.nyenglishteacher.com/es/blog/palabras-en-ingles-que-los-hispanohablantes-deberian-practicar/
 - EN: https://www.nyenglishteacher.com/en/blog/english-words-spanish-speakers-should-practice/
 
-Verified facts used in this copy: 171 clickable English words and sentences on the page; free; no signup. Nothing else is claimed.
+Verified facts used in this copy: the page renders 171 clickable English items, of which 110 are distinct words and sentences; free; no signup. The copy below claims "more than 100 distinct" so the number holds however a reader counts it.
 
 Brand: NY English Teacher. Register: `usted`. Facebook and Instagram render no bold, so there are no asterisks in the blocks below.
 
@@ -22,7 +22,7 @@ No es por su nivel de inglés. Es por un sonido que el español no tiene.
 
 Acabamos de publicar una página de práctica con las palabras que usted de verdad usa en el trabajo: los dos sonidos TH, la R inglesa, las terminaciones -ED, y la diferencia entre thirteen y thirty que puede cambiar un precio o la hora de una junta.
 
-Puede hacer clic en cualquier palabra en inglés para escucharla. Son más de 170.
+Puede hacer clic en cualquier palabra en inglés para escucharla. Son más de 100 palabras y frases distintas.
 
 Gratis y sin registro.
 
@@ -40,7 +40,7 @@ If you speak Spanish, the difference is not the sound. It is the stress — and 
 
 We just published a pronunciation drill page for Spanish speakers: both TH sounds, the English R, the -ED endings, and the words you already use at work.
 
-Click any English word to hear it. There are more than 170 of them.
+Click any English word to hear it — more than 100 distinct words and sentences.
 
 Free, no signup.
 
@@ -104,7 +104,7 @@ Tweet 5
 ```
 Armamos una página de práctica con todo esto: los dos sonidos TH, la R inglesa, las terminaciones -ED y las trampas de ortografía.
 
-Más de 170 palabras y frases. Haga clic en cualquiera para escucharla.
+Más de 100 palabras y frases distintas. Haga clic en cualquiera para escucharla.
 
 Gratis y sin registro:
 
@@ -124,7 +124,7 @@ La causa casi nunca es el nivel de inglés. Es que el español no tiene los soni
 
 Publicamos una página de práctica para hispanohablantes que trabajan en inglés: los dos sonidos TH, la R inglesa, las terminaciones -ED y el contraste thirteen/thirty.
 
-Más de 170 palabras y frases, cada una con audio. Gratis y sin registro.
+Más de 100 palabras y frases distintas, cada una con audio. Gratis y sin registro.
 
 El objetivo no es eliminar el acento. Es que lo entiendan rápida, fácil y correctamente.
 
@@ -137,4 +137,4 @@ https://www.nyenglishteacher.com/es/blog/palabras-en-ingles-que-los-hispanohabla
 
 - The Spanish blocks use `usted` throughout, per the NY English Teacher register standard.
 - No urgency language ("últimos lugares", "solo hoy") — nothing about this offer is scarce, so inventing scarcity would be false.
-- The only numeric claim is "más de 170", which is the verified count of clickable items on the page (171).
+- The only numeric claim is "más de 100", which is the verified count of DISTINCT speakable strings on the page (110). The page renders 171 clickable buttons because common words repeat across sections; the lower, distinct number is the one that is true under either reading.

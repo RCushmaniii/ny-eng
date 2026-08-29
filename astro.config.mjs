@@ -47,6 +47,7 @@ const blogTranslations = {
   "how-to-negotiate-in-english-framework": "/es/blog/como-negociar-en-ingles-marco/",
   "business-english-mistakes-mexican-professionals":
     "/es/blog/errores-ingles-negocios-profesionales-mexicanos/",
+  "sales-interview-english-pronunciation": "/es/blog/pronunciacion-ingles-entrevista-ventas/",
   "english-words-spanish-speakers-should-practice":
     "/es/blog/palabras-en-ingles-que-los-hispanohablantes-deberian-practicar/",
   "english-words-mexican-professionals-mispronounce":
