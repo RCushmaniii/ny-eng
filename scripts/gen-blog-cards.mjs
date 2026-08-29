@@ -1,54 +1,60 @@
 /**
  * Blog hero card generator — NY English Teacher.
  *
- * Renders 1200×900 WebP cards from SVG via sharp. No image API, zero cost,
- * deterministic, and the copy stays under our control because SVG <text>
- * does not wrap.
+ * Renders 1200×675 WebP cards from SVG via sharp. No image API, zero cost,
+ * deterministic, and the copy stays under our control because SVG <text> does
+ * not wrap.
  *
- * READ THIS BEFORE CHANGING THE CANVAS SIZE.
+ * ---------------------------------------------------------------------------
+ * READ THIS BEFORE CHANGING THE CANVAS OR THE LAYOUT.
  *
- * There is no single "correct" aspect ratio for a blog image on this site, and
- * assuming there was is what produced a hero with its headline sliced off both
- * edges on 2026-08-28. The article hero in src/pages/{en,es}/blog/[slug].astro
- * is:
+ * A blog image on this site is cropped TWICE before a visitor sees it, and
+ * ignoring the first stage is what shipped two broken heroes on 2026-08-28.
  *
- *   class="w-full object-cover h-[300px] md:h-[450px] lg:h-[675px]"
+ * STAGE 1 — Astro re-encodes it. The hero in src/pages/{en,es}/blog/[slug].astro
+ * passes explicit dimensions:
  *
- * Fixed HEIGHT, fluid WIDTH, object-cover. So the box the image is cropped into
- * changes at every breakpoint — roughly 1.14:1 on mobile, 1.56:1 at md, and
- * 1.34:1 at lg (a ~904px container against a 675px height). The SAME file is
- * then cropped to 16:9 by the list card in BlogPost.astro, and to about 1.91:1
- * when a social platform renders it as the OG image.
+ *     <Image src={featuredObj} width={1200} height={675} ... />
  *
- * The only thing that survives all of those is a SAFE ZONE. The canvas is 4:3
- * so it fills the lg hero almost exactly, and every piece of text lives inside
- * a centred 1000×628 region. The navy above and below that region is deliberate
- * bleed for the crop to eat — it is not wasted space, and "tightening" it is
- * how this breaks again.
+ * so Astro emits a 1200×675 asset REGARDLESS of the source size, centre-cropping
+ * to get there. A 1200×900 source silently loses 112px off the top and bottom
+ * here. That is why this canvas is 1200×675: it makes stage 1 a no-op.
  *
- *   SAFE_X  130 .. 1070   (clears the ~1.14:1 mobile hero crop with margin)
- *   SAFE_Y  136 ..  764   (survives the 16:9 card crop and the 1.91:1 OG crop)
+ * Note the page references TWO derivatives of the same file — the full-size one
+ * in the og:image tag and the 1200×675 hero in the body. Measuring the first
+ * match in the HTML gets you the og:image and tells you nothing about the hero.
  *
- * Verify against the component, never against the dimensions of whatever images
- * happen to already be in the images/ dir — those are inconsistent (1200×675,
- * 1000×750, 1600×900, 1536×1024) and copying one is how the wrong size gets
- * chosen with false confidence.
+ * STAGE 2 — CSS crops the width. The same element carries:
  *
- * Palette is NOT typed from memory. It is the navy/gold NY English Teacher
- * theme recorded in context-writing-system/docs/BRAND-KIT.md and implemented
- * as the `nye` theme in cushlabs-messenger-bot/fb-content/2026-07/gen-cards.mjs.
- * That generator renders 1080×1350 portrait cards for the Facebook feed, which
- * is the wrong aspect ratio for a blog hero — this is the same theme at 16:9,
- * not a second palette. If the brand kit and this file ever disagree, the
- * brand kit wins and this file is the bug.
+ *     class="w-full object-cover h-[300px] md:h-[450px] lg:h-[675px]"
  *
- * Never borrow the CushLabs orange here. Navy and gold is a different brand.
+ * Fixed HEIGHT, fluid WIDTH. So the box is never 16:9 and object-cover always
+ * eats the sides. Against a 1200×675 asset:
+ *
+ *     lg      ~904×675 box  ->  ~907px of width visible   (x 146 .. 1053)
+ *     md      ~700×450 box  -> ~1050px of width visible   (x  75 .. 1125)
+ *     mobile  ~320×300 box  ->  ~720px of width visible   (x 240 ..  960)
+ *
+ * Mobile is the binding constraint: barely 60% of the width survives.
+ *
+ * THE CONSEQUENCE: the layout is CENTRED, not left-aligned. Both crops are
+ * symmetric about the middle, so centred content is the only arrangement that
+ * cannot be beheaded — and every element is kept inside a 640px column so it
+ * clears even the mobile band with margin.
+ *
+ *     CONTENT_W  640, centred on x=600  ->  x 280 .. 920
+ *     SAFE_Y      23 .. 652   (the 1.91:1 og:image crop is the only vertical one)
+ *
+ * Verify against the component and against the RENDERED derivative. Never
+ * against the dimensions of images already in the images/ dir — they are
+ * inconsistent (1200×675, 1000×750, 1600×900, 1536×1024) and copying one is how
+ * a wrong size gets picked with false confidence.
+ * ---------------------------------------------------------------------------
  *
  * Run from the repo root:
  *   node scripts/gen-blog-cards.mjs
  *
- * Regenerating is idempotent — it overwrites the same paths with the same
- * bytes unless a CARDS entry changed.
+ * Regenerating is idempotent — same bytes unless a CARDS entry changed.
  */
 
 import sharp from "sharp";
@@ -60,11 +66,11 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = resolve(HERE, "..");
 
 const W = 1200;
-const H = 900;
+const H = 675;
+const CX = W / 2;
 
-// Safe zone — see the header. Nothing readable may fall outside this.
-const SAFE_TOP = 136;
-const SAFE_BOTTOM = 764;
+/** The column every readable element must stay inside. See the header. */
+const CONTENT_W = 640;
 
 /** NY English Teacher — navy and gold. Source: BRAND-KIT.md "NY English Teacher". */
 const THEME = {
@@ -75,26 +81,19 @@ const THEME = {
   foot: "#8891C7",
 };
 
-// Matches the reference generator's stack. sharp renders SVG through resvg,
-// which resolves these against system fonts; Arial is present on Windows and
-// the Vercel build never runs this script (the .webp files are committed).
+// sharp renders SVG through resvg, which resolves this against system fonts.
+// The Vercel build never runs this script — the .webp files are committed.
 const FONT = "Arial, Helvetica, sans-serif";
 
-// 130, not 100. The mobile hero crop removes 86px from each side, so PAD must
-// clear that AND still leave a comfortable margin — at PAD 100 the headline sat
-// 14px off the left edge on a phone. Usable text width is therefore 940px.
-const PAD = 130;
-const HEAD_SIZE = 60;
-const HEAD_LH = 74;
-
-// Chip row geometry. Chips carry real visual weight so the lower half of the
-// card does not read as dead space — the first pass centred nothing and left a
-// ~250px gap between the word row and the footer.
-const CHIP_H = 50;
-const CHIP_FS = 27;
-const CHIP_PAD_X = 22;
-const CHIP_GAP = 14;
-const ICON_W = 46;
+const HEAD_SIZE = 48;
+const HEAD_LH = 60;
+const EYEBROW_FS = 22;
+const CHIP_H = 42;
+const CHIP_FS = 22;
+const CHIP_PAD_X = 18;
+const CHIP_GAP = 12;
+const ICON_W = 36;
+const FOOTER_FS = 21;
 
 const esc = (s) =>
   String(s)
@@ -104,12 +103,14 @@ const esc = (s) =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&apos;");
 
+/** Approximate rendered width. Arial averages ~0.52em per character. */
+const textWidth = (s, fontSize) => s.length * fontSize * 0.52;
+
 /**
- * Greedy wrap by character budget. Bold Arial at 56px averages ~0.55em per
- * character, so the 940px safe width fits about 30 characters. 28 keeps a
- * margin for wide glyphs without leaving the line looking short.
+ * Greedy wrap by character budget. Bold Arial at 48px averages ~0.52em per
+ * character, so the 640px column fits about 25 characters.
  */
-function wrap(text, budget = 28) {
+function wrap(text, budget = 25) {
   const words = text.split(/\s+/);
   const lines = [];
   let line = "";
@@ -126,65 +127,72 @@ function wrap(text, budget = 28) {
   return lines;
 }
 
-/** The speaker glyph from SpeakEnglish.astro, so the card signals "this page has audio". */
+/** The speaker glyph from SpeakEnglish.astro, so the card signals the page has audio. */
 const SPEAKER_PATH =
   "M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z";
-
-/** Approximate rendered width of a string. Arial averages ~0.52em per character. */
-const textWidth = (s, fontSize) => s.length * fontSize * 0.52;
 
 function svg({ eyebrow, headline, chips, footer }) {
   const lines = wrap(headline);
   const n = lines.length;
 
-  // Centre the whole group inside the SAFE ZONE, not inside the canvas. The
-  // canvas has deliberate bleed top and bottom for the crop to eat, so
-  // centring on the canvas would push the footer out of the 16:9 card crop.
-  // The footer is part of this group for the same reason — pinned to the
-  // bottom edge it would be the first thing a crop removes.
-  const FOOTER_GAP = 56;
-  const FOOTER_FS = 24;
-  const extent =
-    90 + (n - 1) * HEAD_LH + 46 + 34 + CHIP_H + FOOTER_GAP + FOOTER_FS + 26;
-  const eyebrowY = (SAFE_TOP + SAFE_BOTTOM) / 2 - extent / 2 + 26;
+  const EYEBROW_GAP = 78;
+  const RULE_GAP = 40;
+  const CHIP_GAP_Y = 34;
+  const FOOTER_GAP = 44;
 
-  const headTop = eyebrowY + 90;
-  const ruleY = headTop + (n - 1) * HEAD_LH + 46;
-  const chipTop = ruleY + 34;
+  // Height of the stacked group, then centre it on the canvas. Vertical
+  // cropping is limited to the og:image, so canvas-centring is safe here.
+  const extent =
+    EYEBROW_FS +
+    EYEBROW_GAP +
+    (n - 1) * HEAD_LH +
+    RULE_GAP +
+    5 +
+    CHIP_GAP_Y +
+    CHIP_H +
+    FOOTER_GAP +
+    FOOTER_FS;
+  const top = (H - extent) / 2;
+
+  const eyebrowY = top + EYEBROW_FS;
+  const headTop = eyebrowY + EYEBROW_GAP;
+  const ruleY = headTop + (n - 1) * HEAD_LH + RULE_GAP;
+  const chipTop = ruleY + CHIP_GAP_Y;
   const footerY = chipTop + CHIP_H + FOOTER_GAP;
 
   const headText = lines
     .map(
       (l, i) =>
-        `<text x="${PAD}" y="${headTop + i * HEAD_LH}" font-family="${FONT}" font-size="${HEAD_SIZE}" font-weight="700" fill="${THEME.head}">${esc(l)}</text>`,
+        `<text x="${CX}" y="${(headTop + i * HEAD_LH).toFixed(0)}" text-anchor="middle" font-family="${FONT}" font-size="${HEAD_SIZE}" font-weight="700" fill="${THEME.head}">${esc(l)}</text>`,
     )
     .join("\n  ");
 
-  // Lay the chips out left to right, starting after the speaker icon.
-  let cx = PAD + ICON_W;
+  // Centre the icon and chip row as one unit.
+  const chipWidths = chips.map((c) => textWidth(c, CHIP_FS) + CHIP_PAD_X * 2);
+  const rowW = ICON_W + chipWidths.reduce((a, w) => a + w, 0) + CHIP_GAP * chips.length;
+  const iconX = CX - rowW / 2;
+  let cx = iconX + ICON_W + CHIP_GAP;
+
   const chipEls = chips
-    .map((c) => {
-      const w = textWidth(c, CHIP_FS) + CHIP_PAD_X * 2;
-      const el = `<rect x="${cx}" y="${chipTop}" width="${w.toFixed(0)}" height="${CHIP_H}" rx="${CHIP_H / 2}" fill="none" stroke="${THEME.accent}" stroke-width="2" stroke-opacity="0.55"/>
-  <text x="${(cx + w / 2).toFixed(0)}" y="${chipTop + CHIP_H / 2 + CHIP_FS / 3}" text-anchor="middle" font-family="${FONT}" font-size="${CHIP_FS}" fill="${THEME.sub}">${esc(c)}</text>`;
+    .map((c, i) => {
+      const w = chipWidths[i];
+      const el = `<rect x="${cx.toFixed(0)}" y="${chipTop.toFixed(0)}" width="${w.toFixed(0)}" height="${CHIP_H}" rx="${CHIP_H / 2}" fill="none" stroke="${THEME.accent}" stroke-width="2" stroke-opacity="0.55"/>
+  <text x="${(cx + w / 2).toFixed(0)}" y="${(chipTop + CHIP_H / 2 + CHIP_FS / 3).toFixed(0)}" text-anchor="middle" font-family="${FONT}" font-size="${CHIP_FS}" fill="${THEME.sub}">${esc(c)}</text>`;
       cx += w + CHIP_GAP;
       return el;
     })
     .join("\n  ");
 
-  const iconY = chipTop + CHIP_H / 2 - 16;
-
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <rect width="${W}" height="${H}" fill="${THEME.bg}"/>
-  <rect x="0" y="0" width="${W}" height="10" fill="${THEME.accent}"/>
-  <text x="${PAD}" y="${eyebrowY}" font-family="${FONT}" font-size="26" letter-spacing="4" fill="${THEME.accent}">${esc(eyebrow)}</text>
+  <text x="${CX}" y="${eyebrowY.toFixed(0)}" text-anchor="middle" font-family="${FONT}" font-size="${EYEBROW_FS}" letter-spacing="4" fill="${THEME.accent}">${esc(eyebrow)}</text>
   ${headText}
-  <rect x="${PAD}" y="${ruleY}" width="132" height="5" fill="${THEME.accent}"/>
-  <g transform="translate(${PAD}, ${iconY.toFixed(0)}) scale(1.35)" fill="${THEME.accent}">
+  <rect x="${CX - 60}" y="${ruleY.toFixed(0)}" width="120" height="5" fill="${THEME.accent}"/>
+  <g transform="translate(${iconX.toFixed(0)}, ${(chipTop + CHIP_H / 2 - 14).toFixed(0)}) scale(1.15)" fill="${THEME.accent}">
     <path d="${SPEAKER_PATH}"/>
   </g>
   ${chipEls}
-  <text x="${PAD}" y="${footerY.toFixed(0)}" font-family="${FONT}" font-size="${FOOTER_FS}" fill="${THEME.foot}">${esc(footer)}</text>
+  <text x="${CX}" y="${footerY.toFixed(0)}" text-anchor="middle" font-family="${FONT}" font-size="${FOOTER_FS}" fill="${THEME.foot}">${esc(footer)}</text>
 </svg>`;
 }
 
@@ -193,39 +201,53 @@ const CARDS = [
     out: "src/content/blog/en/images/english-words-spanish-speakers-should-practice.webp",
     eyebrow: "PRONUNCIATION PRACTICE",
     headline: "English Words Spanish Speakers Should Practice",
-    chips: ["TH", "the English R", "-ED", "thirteen / thirty"],
+    chips: ["TH", "the English R", "-ED"],
     footer: "nyenglishteacher.com  ·  Click any word to hear it",
   },
   {
     out: "src/content/blog/es/images/palabras-en-ingles-que-los-hispanohablantes-deberian-practicar.webp",
     eyebrow: "PRÁCTICA DE PRONUNCIACIÓN",
     headline: "Palabras en Inglés que Deberían Practicar",
-    chips: ["TH", "la R inglesa", "-ED", "thirteen / thirty"],
+    chips: ["TH", "la R inglesa", "-ED"],
     footer: "nyenglishteacher.com  ·  Escuche cada palabra",
   },
   {
     out: "src/content/blog/en/images/sales-interview-english-pronunciation.webp",
     eyebrow: "SALES INTERVIEW ENGLISH",
     headline: "English Pronunciation for a Sales Job Interview",
-    chips: ["strengths", "revenue", "exceeded", "closed"],
+    chips: ["strengths", "revenue", "exceeded"],
     footer: "nyenglishteacher.com  ·  Click any word to hear it",
   },
   {
     out: "src/content/blog/es/images/pronunciacion-ingles-entrevista-ventas.webp",
     eyebrow: "INGLÉS PARA ENTREVISTAS",
     headline: "Pronunciación en Inglés para una Entrevista de Ventas",
-    chips: ["strengths", "revenue", "exceeded", "closed"],
+    chips: ["strengths", "revenue", "exceeded"],
     footer: "nyenglishteacher.com  ·  Escuche cada palabra",
   },
 ];
 
 for (const card of CARDS) {
+  // Fail loudly rather than let anything drift outside the safe column.
   const rowW =
-    ICON_W +
-    card.chips.reduce((a, c) => a + textWidth(c, CHIP_FS) + CHIP_PAD_X * 2 + CHIP_GAP, 0);
-  if (PAD + rowW > W - PAD) {
+    ICON_W + card.chips.reduce((a, c) => a + textWidth(c, CHIP_FS) + CHIP_PAD_X * 2 + CHIP_GAP, 0);
+  if (rowW > CONTENT_W) {
     throw new Error(
-      `Chip row overflows the card for ${card.out}: needs ${(PAD + rowW).toFixed(0)}px of the ${W - PAD}px safe width. Shorten a chip.`,
+      `Chip row is ${rowW.toFixed(0)}px, over the ${CONTENT_W}px safe column, for ${card.out}. Drop or shorten a chip.`,
+    );
+  }
+  for (const line of wrap(card.headline)) {
+    const lw = textWidth(line, HEAD_SIZE);
+    if (lw > CONTENT_W) {
+      throw new Error(
+        `Headline line "${line}" is ${lw.toFixed(0)}px, over the ${CONTENT_W}px safe column, for ${card.out}.`,
+      );
+    }
+  }
+  const fw = textWidth(card.footer, FOOTER_FS);
+  if (fw > CONTENT_W) {
+    throw new Error(
+      `Footer is ${fw.toFixed(0)}px, over the ${CONTENT_W}px safe column, for ${card.out}.`,
     );
   }
 
