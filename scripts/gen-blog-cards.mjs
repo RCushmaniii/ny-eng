@@ -1,9 +1,38 @@
 /**
  * Blog hero card generator — NY English Teacher.
  *
- * Renders 1200×675 (16:9, the size the newer blog heroes and OG images use)
- * WebP cards from SVG via sharp. No image API, zero cost, fully deterministic,
- * and the copy stays under our control because SVG <text> does not wrap.
+ * Renders 1200×900 WebP cards from SVG via sharp. No image API, zero cost,
+ * deterministic, and the copy stays under our control because SVG <text>
+ * does not wrap.
+ *
+ * READ THIS BEFORE CHANGING THE CANVAS SIZE.
+ *
+ * There is no single "correct" aspect ratio for a blog image on this site, and
+ * assuming there was is what produced a hero with its headline sliced off both
+ * edges on 2026-08-28. The article hero in src/pages/{en,es}/blog/[slug].astro
+ * is:
+ *
+ *   class="w-full object-cover h-[300px] md:h-[450px] lg:h-[675px]"
+ *
+ * Fixed HEIGHT, fluid WIDTH, object-cover. So the box the image is cropped into
+ * changes at every breakpoint — roughly 1.14:1 on mobile, 1.56:1 at md, and
+ * 1.34:1 at lg (a ~904px container against a 675px height). The SAME file is
+ * then cropped to 16:9 by the list card in BlogPost.astro, and to about 1.91:1
+ * when a social platform renders it as the OG image.
+ *
+ * The only thing that survives all of those is a SAFE ZONE. The canvas is 4:3
+ * so it fills the lg hero almost exactly, and every piece of text lives inside
+ * a centred 1000×628 region. The navy above and below that region is deliberate
+ * bleed for the crop to eat — it is not wasted space, and "tightening" it is
+ * how this breaks again.
+ *
+ *   SAFE_X  130 .. 1070   (clears the ~1.14:1 mobile hero crop with margin)
+ *   SAFE_Y  136 ..  764   (survives the 16:9 card crop and the 1.91:1 OG crop)
+ *
+ * Verify against the component, never against the dimensions of whatever images
+ * happen to already be in the images/ dir — those are inconsistent (1200×675,
+ * 1000×750, 1600×900, 1536×1024) and copying one is how the wrong size gets
+ * chosen with false confidence.
  *
  * Palette is NOT typed from memory. It is the navy/gold NY English Teacher
  * theme recorded in context-writing-system/docs/BRAND-KIT.md and implemented
@@ -31,7 +60,11 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = resolve(HERE, "..");
 
 const W = 1200;
-const H = 675;
+const H = 900;
+
+// Safe zone — see the header. Nothing readable may fall outside this.
+const SAFE_TOP = 136;
+const SAFE_BOTTOM = 764;
 
 /** NY English Teacher — navy and gold. Source: BRAND-KIT.md "NY English Teacher". */
 const THEME = {
@@ -47,7 +80,10 @@ const THEME = {
 // the Vercel build never runs this script (the .webp files are committed).
 const FONT = "Arial, Helvetica, sans-serif";
 
-const PAD = 70;
+// 130, not 100. The mobile hero crop removes 86px from each side, so PAD must
+// clear that AND still leave a comfortable margin — at PAD 100 the headline sat
+// 14px off the left edge on a phone. Usable text width is therefore 940px.
+const PAD = 130;
 const HEAD_SIZE = 60;
 const HEAD_LH = 74;
 
@@ -70,10 +106,10 @@ const esc = (s) =>
 
 /**
  * Greedy wrap by character budget. Bold Arial at 56px averages ~0.55em per
- * character, so ~1060px of usable width fits about 34 characters. 32 keeps a
- * safety margin for wide glyphs without leaving the line looking short.
+ * character, so the 940px safe width fits about 30 characters. 28 keeps a
+ * margin for wide glyphs without leaving the line looking short.
  */
-function wrap(text, budget = 32) {
+function wrap(text, budget = 28) {
   const words = text.split(/\s+/);
   const lines = [];
   let line = "";
@@ -101,18 +137,21 @@ function svg({ eyebrow, headline, chips, footer }) {
   const lines = wrap(headline);
   const n = lines.length;
 
-  // Centre the eyebrow/headline/rule/chips group in the band between the top
-  // rule and the footer, instead of pinning it to a fixed top. Headlines wrap
-  // to one, two or three lines depending on language, and a fixed top makes
-  // every length look like a mistake except the one it was tuned for.
-  const BAND_TOP = 10;
-  const BAND_BOTTOM = H - 96;
-  const extent = 90 + (n - 1) * HEAD_LH + 46 + 34 + CHIP_H + 26;
-  const eyebrowY = (BAND_TOP + BAND_BOTTOM) / 2 - extent / 2 + 26;
+  // Centre the whole group inside the SAFE ZONE, not inside the canvas. The
+  // canvas has deliberate bleed top and bottom for the crop to eat, so
+  // centring on the canvas would push the footer out of the 16:9 card crop.
+  // The footer is part of this group for the same reason — pinned to the
+  // bottom edge it would be the first thing a crop removes.
+  const FOOTER_GAP = 56;
+  const FOOTER_FS = 24;
+  const extent =
+    90 + (n - 1) * HEAD_LH + 46 + 34 + CHIP_H + FOOTER_GAP + FOOTER_FS + 26;
+  const eyebrowY = (SAFE_TOP + SAFE_BOTTOM) / 2 - extent / 2 + 26;
 
   const headTop = eyebrowY + 90;
   const ruleY = headTop + (n - 1) * HEAD_LH + 46;
   const chipTop = ruleY + 34;
+  const footerY = chipTop + CHIP_H + FOOTER_GAP;
 
   const headText = lines
     .map(
@@ -145,7 +184,7 @@ function svg({ eyebrow, headline, chips, footer }) {
     <path d="${SPEAKER_PATH}"/>
   </g>
   ${chipEls}
-  <text x="${PAD}" y="${H - 52}" font-family="${FONT}" font-size="24" fill="${THEME.foot}">${esc(footer)}</text>
+  <text x="${PAD}" y="${footerY.toFixed(0)}" font-family="${FONT}" font-size="${FOOTER_FS}" fill="${THEME.foot}">${esc(footer)}</text>
 </svg>`;
 }
 
@@ -186,7 +225,7 @@ for (const card of CARDS) {
     card.chips.reduce((a, c) => a + textWidth(c, CHIP_FS) + CHIP_PAD_X * 2 + CHIP_GAP, 0);
   if (PAD + rowW > W - PAD) {
     throw new Error(
-      `Chip row overflows the card for ${card.out}: needs ${(PAD + rowW).toFixed(0)}px of ${W - PAD}px. Shorten a chip.`,
+      `Chip row overflows the card for ${card.out}: needs ${(PAD + rowW).toFixed(0)}px of the ${W - PAD}px safe width. Shorten a chip.`,
     );
   }
 
