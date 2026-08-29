@@ -250,15 +250,35 @@ export const RATE_LIMITS = {
    * browser SpeechSynthesis fallback halfway down the page.
    *
    * Raising 30 -> 60 does not raise worst-case cost: max spend per identifier
-   * per hour is min(hourly cap, 60 * per-minute cap), and the 300/hour cap
-   * dominates in both cases. Do not raise the hourly cap without doing the
-   * Azure character math — that one is real money.
+   * per hour is min(hourly cap, 60 * per-minute cap), and the hourly cap
+   * dominates in both cases.
+   *
+   * The hourly cap moved 300 -> 500 when the second drill page shipped. Count
+   * DISTINCT strings, not buttons: the client cache is an in-memory Map keyed
+   * by text, so the repeated words across sections cost one fetch each. The
+   * sales-interview post renders 216 buttons but only 142 distinct strings;
+   * the first drill post renders 171 buttons and 110 distinct. So one page
+   * load costs at most 142 calls and both posts together cost 252 — under the
+   * old 300. What broke it is a reload, since the cache does not survive one:
+   * both posts plus a single reload lands near 400.
+   *
+   * The math, so the next person does not have to redo it. Azure Neural TTS is
+   * ~$16 per 1M characters. Items here average ~15 characters across single
+   * words and full practice sentences, so 500 calls is ~7,500 characters, or
+   * about $0.12 per hour for a single identifier running the cap flat out.
+   * Redo this arithmetic before moving it again.
+   *
+   * The real fix is not a higher cap: it is making this endpoint a GET with the
+   * text in the query string so Vercel's edge caches one audio file per word
+   * across ALL readers instead of per reader. That touches SpeakEnglish.astro,
+   * AudioButton.tsx and every course component, so it is deliberately not
+   * bundled with a content change.
    */
   ttsSynthesize: {
     bucket: "tts-synthesize",
     windows: [
       { windowSeconds: 60, max: 60 },
-      { windowSeconds: 3600, max: 300 },
+      { windowSeconds: 3600, max: 500 },
     ],
   },
 } as const satisfies Record<string, RateLimitRule>;
