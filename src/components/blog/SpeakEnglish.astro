@@ -126,6 +126,17 @@ const showSwitcher = options.length > 1;
   .tts-voice-switch__hint {
     color: #64748b;
   }
+  /* Repeats are reminders, so they sit quieter than the one at the top. */
+  .tts-voice-switch--repeat {
+    margin-top: 2.5rem;
+    padding: 0.5rem 0.875rem;
+    background: transparent;
+    border-style: dashed;
+  }
+  .tts-voice-switch--repeat .tts-voice-switch__label {
+    font-weight: 500;
+    color: #475569;
+  }
   @media (max-width: 480px) {
     .tts-voice-switch__hint {
       flex-basis: 100%;
@@ -251,33 +262,66 @@ const showSwitcher = options.length > 1;
     const cacheKey = (text: string) => `${activeVoice}|${rateOverride ?? ''}|${text}`;
 
     // Wire the switcher, if the post rendered one.
-    const switcher = document.querySelector('.tts-voice-switch');
-    if (switcher) {
-      const btns = Array.from(
-        switcher.querySelectorAll<HTMLButtonElement>('.tts-voice-switch__btn'),
-      );
+    //
+    // The control is page-wide, but a reader who scrolls straight past the top
+    // of the article meets speaker icons with no visible way to change voice.
+    // So the original is cloned down the page — before a heading, but only once
+    // a few more speakable items have gone by, so a repeat always lands where it
+    // is actually useful instead of on a fixed interval.
+    const primarySwitch = document.querySelector<HTMLElement>('.tts-voice-switch');
+    if (primarySwitch) {
+      const REPEAT_AFTER_SPEAKABLES = 3;
+
+      // Every button on the page reflects one setting, so paint them all.
       const paint = () =>
-        btns.forEach(b =>
-          b.setAttribute('aria-pressed', b.dataset.voice === activeVoice ? 'true' : 'false'),
-        );
-      paint();
-      btns.forEach(b => {
-        b.addEventListener('click', () => {
-          if (b.dataset.voice === activeVoice) return;
-          activeVoice = b.dataset.voice || activeVoice;
-          writePref(b.dataset.label || '');
-          paint();
-          // Stop whatever is mid-sentence in the old voice.
-          if (currentAudio) {
-            currentAudio.pause();
-            currentAudio.currentTime = 0;
-            currentBtn?.classList.remove('speaking');
-            currentAudio = null;
-            currentBtn = null;
-          }
-          if ('speechSynthesis' in window) speechSynthesis.cancel();
-        });
+        document
+          .querySelectorAll<HTMLButtonElement>('.tts-voice-switch__btn')
+          .forEach(b =>
+            b.setAttribute('aria-pressed', b.dataset.voice === activeVoice ? 'true' : 'false'),
+          );
+
+      const article = primarySwitch.closest('article') || document.body;
+      const speakList = Array.from(speakables);
+      const precede = (node: Element) =>
+        speakList.filter(
+          sp => node.compareDocumentPosition(sp) & Node.DOCUMENT_POSITION_PRECEDING,
+        ).length;
+
+      let sinceLast = precede(primarySwitch);
+      // h2 alone is too coarse on this post: its first section runs 30 speakable
+      // phrases with no heading, which is precisely the dead zone the repeats
+      // exist to close. Including h3 spaces them roughly every ten phrases.
+      article.querySelectorAll('h2, h3').forEach(h => {
+        const seen = precede(h);
+        if (seen - sinceLast < REPEAT_AFTER_SPEAKABLES) return;
+        const clone = primarySwitch.cloneNode(true) as HTMLElement;
+        clone.classList.add('tts-voice-switch--repeat');
+        // The explanatory hint belongs to the first one only; a repeat is a
+        // reminder, not an introduction.
+        clone.querySelector('.tts-voice-switch__hint')?.remove();
+        h.parentNode?.insertBefore(clone, h);
+        sinceLast = seen;
       });
+
+      // Delegated, so it covers the clones without rebinding each one.
+      document.addEventListener('click', e => {
+        const btn = (e.target as HTMLElement)?.closest<HTMLButtonElement>('.tts-voice-switch__btn');
+        if (!btn || !btn.dataset.voice || btn.dataset.voice === activeVoice) return;
+        activeVoice = btn.dataset.voice;
+        writePref(btn.dataset.label || '');
+        paint();
+        // Stop whatever is mid-sentence in the old voice.
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+          currentBtn?.classList.remove('speaking');
+          currentAudio = null;
+          currentBtn = null;
+        }
+        if ('speechSynthesis' in window) speechSynthesis.cancel();
+      });
+
+      paint();
     }
 
     const API_BASE = '/api/tts/synthesize';
