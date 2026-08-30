@@ -154,6 +154,45 @@ nothing.
 
 ---
 
+## Names Azure says wrong
+
+Azure infers a name's pronunciation from its spelling, so invented words — brand names
+especially — come out wrong with no warning. There are two ways to fix it, and only one is
+durable.
+
+**Respelling is the tempting one and the wrong one.** Writing `KUSH.Labs` in the copy so it
+happens to sound right leaves a misspelled brand in the page, and the pronunciation still rests
+on Azure guessing from letters, which can change when Microsoft updates a voice.
+
+**IPA states the sounds outright**, so the page keeps spelling the name correctly and the audio
+cannot drift. Pick the transcription by ear:
+
+```
+node --env-file=.env.local scripts/azure-pronounce-lab.mjs --name CushLabs --spellings "Cush Labs,KushLabs" --ipa "ˈkʊʃlæbz,ˈkʌʃlæbz"
+```
+
+That writes a local page of clips grouped spelling-vs-IPA, alone and in a carrier sentence. The
+output directory is covered by `tmpclaude-*` in `.gitignore`, so nothing lands in the repo.
+
+Add the winner to `PRONUNCIATIONS` in `api/tts/synthesize.ts`. It applies to **every** request,
+so a name is spoken correctly everywhere with no markup on any page and nothing to remember when
+writing the next post:
+
+```ts
+const PRONUNCIATIONS: Record<string, string> = {
+  CushLabs: "ˈkʊʃlæbz",
+};
+```
+
+Three things about that entry are deliberate. It is written with `\u` escapes because an encoding
+pass already silently corrupted one character class in this codebase once. It is matched
+case-sensitively on word boundaries, so `MyCushLabsThing` is left alone. And the list must stay
+short and restricted to distinctive names — a common word here would change how it is spoken on
+every page of the site.
+
+A per-request `phoneme` field still exists and wraps the whole text; an explicit `phoneme`
+skips the lexicon, because nesting `<phoneme>` inside `<phoneme>` is invalid SSML.
+
 ## Cost
 
 Accent voices bill **identically** to `en-US-AvaNeural` — same standard-neural rate, same
@@ -205,5 +244,6 @@ whether one was found. Run them via `node --env-file=.env.local`, never by pasti
 | --------------------------------- | -------------------------------------------------------------- |
 | `scripts/azure-list-voices.mjs`   | Live voice catalog for your region; filter by locale prefix     |
 | `scripts/azure-voice-samples.mjs` | Synthesize one sentence across many voices for side-by-side listening |
+| `scripts/azure-pronounce-lab.mjs` | Compare spellings vs IPA for one name, as a local page you listen to |
 
 Both take `--env-file=.env.local` and are safe to run repeatedly.

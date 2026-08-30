@@ -46,6 +46,27 @@ const DEFAULT_RATE = 0.9;
 const RATE_MIN = 0.5;
 const RATE_MAX = 1.5;
 
+/**
+ * Brand pronunciations, applied to every request.
+ *
+ * Azure guesses a name's pronunciation from its spelling, and for "CushLabs"
+ * it guesses wrong. IPA states the sounds outright, so the page can keep
+ * spelling the company correctly while the audio says it correctly. Chosen by
+ * listening, not by reading a chart: the vowel is the one in "cushion"
+ * (U+028A), not the one in "hush".
+ *
+ * Keys are matched case-sensitively on word boundaries. Keep this list very
+ * short and restricted to distinctive names — a common word here would change
+ * how it is spoken everywhere on the site.
+ */
+const PRONUNCIATIONS: Record<string, string> = {
+  // The vowel in "cushion" (U+028A), not the one in "hush". Chosen by ear from
+  // generated samples, not from a chart. Written as \u escapes so that a future
+  // encoding pass cannot silently alter it — the same failure that once turned
+  // the quote-strip class in SpeakEnglish.astro into the wrong characters.
+  CushLabs: "\u02C8k\u028A\u0283l\u00E6bz",
+};
+
 // Allowed voices (whitelist to prevent abuse)
 const ALLOWED_VOICES = new Set([
   // English US
@@ -144,8 +165,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const ipaRegex = /^[\u0020-\u007E\u00C0-\u024F\u0250-\u02AF\u0300-\u036F\u2000-\u206F.ˈˌːˑ]+$/;
   const textContent =
     phoneme && typeof phoneme === "string" && phoneme.length <= 100 && ipaRegex.test(phoneme)
-      ? `<phoneme alphabet="ipa" ph="${escapeXml(phoneme)}">${escapedText}</phoneme>`
-      : escapedText;
+      ? // An explicit per-request phoneme covers the whole text, so the lexicon
+        // is skipped here: nesting <phoneme> inside <phoneme> is invalid SSML.
+        `<phoneme alphabet="ipa" ph="${escapeXml(phoneme)}">${escapedText}</phoneme>`
+      : applyPronunciations(escapedText);
 
   // Rate is interpolated into SSML, so it is never passed through as a string.
   // Parse to a number, clamp, and re-serialize — the result can only ever be
@@ -194,6 +217,42 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 }
 
 /** Escape special XML characters to prevent SSML injection */
+/**
+ * Wrap known brand names in <phoneme> so they are always spoken correctly.
+ *
+ * Runs on ALREADY-ESCAPED text and inserts markup, so it must come last. Keys
+ * are compile-time constants rather than request input, but the pattern is
+ * still built from an escaped literal so a future key containing a regex
+ * metacharacter cannot change the match.
+ */
+function applyPronunciations(escaped: string): string {
+  const isWordChar = (c: string) => c !== "" && /[A-Za-z0-9]/.test(c);
+  let out = escaped;
+
+  for (const [word, ipa] of Object.entries(PRONUNCIATIONS)) {
+    const tag = `<phoneme alphabet="ipa" ph="${escapeXml(ipa)}">${escapeXml(word)}</phoneme>`;
+    const parts = out.split(word);
+    if (parts.length === 1) continue;
+
+    // Deliberately a literal split rather than a RegExp: the boundary check is
+    // done by hand so this function contains no escape sequences at all. An
+    // earlier attempt used `new RegExp(...)` with a template literal, where the
+    // intended word boundary silently became a backspace character and the
+    // lexicon matched nothing. Type checking did not catch it; only running it did.
+    let rebuilt = parts[0];
+    for (let i = 1; i < parts.length; i++) {
+      const before = parts[i - 1].slice(-1);
+      const after = parts[i].slice(0, 1);
+      const standsAlone = !isWordChar(before) && !isWordChar(after);
+      rebuilt += (standsAlone ? tag : word) + parts[i];
+    }
+    out = rebuilt;
+  }
+
+  return out;
+}
+
+
 function escapeXml(str: string): string {
   return str
     .replace(/&/g, "&amp;")
