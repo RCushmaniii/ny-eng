@@ -262,8 +262,14 @@ const customHreflangs = [
         </BlogImageLightbox>
       )}
       
+      <SpeakEnglish
+        voice={post.data.ttsVoice}
+        voiceOptions={post.data.ttsVoiceOptions}
+        rate={post.data.ttsRate}
+        lang="es"
+      />
       <Content />
-      <SpeakEnglish voice={post.data.ttsVoice} />
+      
 
       {postUrl && postTitle && (
         <>

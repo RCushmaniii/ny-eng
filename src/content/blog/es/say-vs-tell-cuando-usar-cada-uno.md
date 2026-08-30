@@ -10,7 +10,12 @@ readingTime: "7 min de lectura"
 audience: "Hispanohablantes que usan inglés en el trabajo y necesitan reportar conversaciones con precisión"
 featuredImage: "./images/say-vs-tell.webp"
 imageAlt: "Una ejecutiva hablando ante colegas sentados en una sala de juntas iluminada, con dos íconos de globo de diálogo arriba de ella — uno unido por una línea roja enredada marcada con una X, el otro por una línea verde azulada limpia marcada con una palomita — que ilustran la diferencia entre say y tell"
-ttsVoice: "en-US-AndrewNeural"
+ttsVoiceOptions:
+  - label: "Masculina"
+    voice: "en-US-Andrew:DragonHDLatestNeural"
+  - label: "Femenina"
+    voice: "en-US-Ava:DragonHDLatestNeural"
+ttsRate: 1.0
 translations:
   en: "/en/blog/say-vs-tell/"
 faq:

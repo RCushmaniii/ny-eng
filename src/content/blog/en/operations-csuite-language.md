@@ -7,7 +7,12 @@ readingTime: "7 min read"
 audience: "Operations directors, VPs of Operations, supply chain leaders, and logistics managers who report to the C-suite"
 featuredImage: "./images/operations-csuite-language.webp"
 imageAlt: "Operations executive presenting confidently in a boardroom with throughput metrics, KPI dashboard, and logistics flow charts on screens behind him"
-ttsVoice: "en-US-AndrewNeural"
+ttsVoiceOptions:
+  - label: "Male"
+    voice: "en-US-Andrew:DragonHDLatestNeural"
+  - label: "Female"
+    voice: "en-US-Ava:DragonHDLatestNeural"
+ttsRate: 1.0
 seo:
   title: "Operations Executive Language for C-Suite Leaders"
   description: "18 before-and-after drills for operations leaders. Replace reactive problem language with executive control language that signals stability and oversight."

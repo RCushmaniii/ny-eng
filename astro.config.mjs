@@ -20,6 +20,8 @@ const ensureSlashPath = (p = "/") => ("/" + (p || "/")).replace(/\/+/g, "/").rep
 // Blog post translations map (EN slug -> ES path)
 // Used by sitemap to generate correct hreflang for blog posts
 const blogTranslations = {
+  "british-english-pronunciation-practice":
+    "/es/blog/practica-pronunciacion-ingles-britanico/",
   "english-classes-chapalita": "/es/blog/clases-ingles-chapalita/",
   "english-classes-zapopan": "/es/blog/clases-ingles-zapopan/",
   "english-classes-guadalajara": "/es/blog/clases-ingles-guadalajara/",

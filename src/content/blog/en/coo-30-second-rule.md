@@ -7,7 +7,12 @@ readingTime: "9 min read"
 audience: "COOs, VPs of Operations, operations directors, and supply chain leaders who present under pressure in English"
 featuredImage: "./images/coo-30-second-rule.webp"
 imageAlt: "Confident executive in a boardroom with a countdown timer on the table and the New York City skyline behind him"
-ttsVoice: "en-US-AndrewNeural"
+ttsVoiceOptions:
+  - label: "Male"
+    voice: "en-US-Andrew:DragonHDLatestNeural"
+  - label: "Female"
+    voice: "en-US-Ava:DragonHDLatestNeural"
+ttsRate: 1.0
 seo:
   title: "COO 30-Second Rule: Respond Under Pressure"
   description: "9 real pressure scenarios with 30-second executive response frameworks. Stop reacting — start commanding the room like a COO."

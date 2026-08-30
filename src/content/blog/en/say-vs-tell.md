@@ -10,7 +10,12 @@ readingTime: "7 min read"
 audience: "Spanish speakers who use English at work and want to report conversations accurately"
 featuredImage: "./images/say-vs-tell.webp"
 imageAlt: "A businesswoman speaking to seated colleagues in a bright meeting room, with two speech-bubble icons above her — one linked by a tangled red path marked with an X, the other by a clean teal path marked with a checkmark — illustrating the difference between say and tell"
-ttsVoice: "en-US-AndrewNeural"
+ttsVoiceOptions:
+  - label: "Male"
+    voice: "en-US-Andrew:DragonHDLatestNeural"
+  - label: "Female"
+    voice: "en-US-Ava:DragonHDLatestNeural"
+ttsRate: 1.0
 translations:
   es: "/es/blog/say-vs-tell-cuando-usar-cada-uno/"
 faq:

@@ -7,6 +7,10 @@ that needs high-quality pronunciation audio.
 **Live reference implementation:** https://www.nyenglishteacher.com (course pages &
 blog "speak" buttons).
 
+**Which voices and accents exist, how to choose one, and the traps:**
+[AZURE-TTS-VOICES.md](./AZURE-TTS-VOICES.md). Read it before hard-coding any voice name —
+the whitelist below fails silently, and Azure's catalog moves.
+
 ---
 
 ## Architecture (3 layers)
@@ -261,7 +265,20 @@ voice override via a `voice` prop; same audio cache + browser fallback; verbose
 | Language | Whitelisted voices | Default |
 |----------|--------------------|---------|
 | English (en-US) | Andrew, Ava, Brian, Emma, Jenny, Guy (`en-US-*Neural`) | `en-US-AvaNeural` |
+| English (en-GB) | Ryan, Thomas, Oliver, Alfie, Elliot, Ethan, Noah (male); Sonia, Libby, Abbi, Bella (female) | none — set per post via `ttsVoice` |
 | Spanish (es-MX) | Jorge, Dalia (`es-MX-*Neural`) | `es-MX-DaliaNeural` |
+
+`voiceLang` is derived from the voice name, so `en-GB-ThomasNeural` automatically emits
+`xml:lang="en-GB"` — no extra wiring is needed to add an accent locale beyond the whitelist entry.
+
+Full accent catalog, voice-family guidance, sample generation and the gotchas that cost time:
+**[AZURE-TTS-VOICES.md](./AZURE-TTS-VOICES.md)**. List the live catalog with
+`node --env-file=.env.local scripts/azure-list-voices.mjs en-GB`.
+
+Azure ships **14 English locales**: en-AU, en-CA, en-GB, en-HK, en-IE, en-IN, en-KE, en-NG,
+en-NZ, en-PH, en-SG, en-TZ, en-US, en-ZA. **There is no `en-CN`** — Azure has no
+Chinese-accented English voice. The nearest available approximations are `en-HK`
+(Cantonese-influenced) and `en-SG`. Verified against the live `voices/list` endpoint 2026-08-29.
 
 ES default is **`es-MX-DaliaNeural`** (Mexican Spanish) — consistent with the CushLabs
 Mexican-Professional-Spanish standard. **Do not** use `es-ES-*` (Iberian) voices. Add or
