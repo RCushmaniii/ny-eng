@@ -12,7 +12,14 @@
  *
  * Per-post voice override:
  *   Add ttsVoice in blog frontmatter (e.g., ttsVoice: "en-US-AndrewNeural")
- *   Available: AndrewNeural, BrianNeural, GuyNeural (male), AvaNeural, EmmaNeural, JennyNeural (female)
+ *   US male: en-US-AndrewNeural, BrianNeural, GuyNeural
+ *   US female: en-US-AvaNeural, EmmaNeural, JennyNeural
+ *   UK male: en-GB-RyanNeural, ThomasNeural, OliverNeural, AlfieNeural, ElliotNeural,
+ *            EthanNeural, NoahNeural
+ *   UK female: en-GB-SoniaNeural, LibbyNeural, AbbiNeural, BellaNeural
+ *
+ *   The voice must also be listed in ALLOWED_VOICES in api/tts/synthesize.ts.
+ *   An unlisted voice does not error — it silently falls back to en-US-AvaNeural.
  */
 interface Props {
   voice?: string;

@@ -219,6 +219,20 @@ const CARDS = [
     footer: "nyenglishteacher.com  ·  Click any word to hear it",
   },
   {
+    out: "src/content/blog/en/images/british-english-pronunciation-practice.webp",
+    eyebrow: "BRITISH ENGLISH PRACTICE",
+    headline: "British English Pronunciation Practice",
+    chips: ["missing R", "long A", "dropped T"],
+    footer: "nyenglishteacher.com  ·  Click any word to hear it",
+  },
+  {
+    out: "src/content/blog/es/images/practica-pronunciacion-ingles-britanico.webp",
+    eyebrow: "PRÁCTICA DE INGLÉS BRITÁNICO",
+    headline: "Pronunciación del Inglés Británico",
+    chips: ["la R que cae", "la A larga", "la T muda"],
+    footer: "nyenglishteacher.com  ·  Escuche cada palabra",
+  },
+  {
     out: "src/content/blog/es/images/pronunciacion-ingles-entrevista-ventas.webp",
     eyebrow: "INGLÉS PARA ENTREVISTAS",
     headline: "Pronunciación en Inglés para una Entrevista de Ventas",

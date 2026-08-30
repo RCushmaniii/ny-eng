@@ -41,6 +41,20 @@ const ALLOWED_VOICES = new Set([
   "en-US-EmmaNeural",
   "en-US-JennyNeural",
   "en-US-GuyNeural",
+  // English GB — British accent practice pages.
+  // Male: Thomas / Oliver / Alfie / Elliot / Ethan / Noah read younger than Ryan,
+  // which is the flagship and the only male en-GB voice with prosody styles.
+  "en-GB-RyanNeural",
+  "en-GB-ThomasNeural",
+  "en-GB-OliverNeural",
+  "en-GB-AlfieNeural",
+  "en-GB-ElliotNeural",
+  "en-GB-EthanNeural",
+  "en-GB-NoahNeural",
+  "en-GB-SoniaNeural",
+  "en-GB-LibbyNeural",
+  "en-GB-AbbiNeural",
+  "en-GB-BellaNeural",
   // Spanish MX
   "es-MX-JorgeNeural",
   "es-MX-DaliaNeural",
