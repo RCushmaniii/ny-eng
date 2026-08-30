@@ -27,7 +27,16 @@ const blogCollection = defineCollection({
           image: z.string().optional(),
         })
         .optional(),
+      // Text-to-speech. Use ttsVoice for a single fixed voice, or
+      // ttsVoiceOptions to let the reader choose — the first entry is the
+      // default and the switcher renders above the post. ttsRate omitted means
+      // the API's long-standing 0.9; set 1.0 on a high-fidelity voice, which
+      // sounds mechanical when time-stretched.
       ttsVoice: z.string().optional(),
+      ttsVoiceOptions: z
+        .array(z.object({ label: z.string(), voice: z.string() }))
+        .optional(),
+      ttsRate: z.number().min(0.5).max(1.5).optional(),
       // Optional FAQ pairs — when present, the post emits FAQPage structured data.
       // Mirror the article's on-page Q&A here so the visible copy and the schema stay in sync.
       faq: z

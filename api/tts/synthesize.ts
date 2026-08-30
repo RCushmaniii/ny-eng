@@ -6,13 +6,20 @@
  * API key stays server-side — never exposed to the browser.
  *
  * POST /api/tts/synthesize
- * Body: { text: string, voice?: string, lang?: "en" | "es", phoneme?: string }
+ * Body: { text: string, voice?: string, lang?: "en" | "es", phoneme?: string, rate?: number }
  * Response: audio/mpeg binary
  *
  * The optional `phoneme` field accepts an IPA string that overrides how
  * Azure pronounces the text. Example: { text: "uncomfortable", phoneme: "ʌnˈkʌmf.tɚ.bəl" }
  * This wraps the text in an SSML <phoneme> tag server-side so the client
  * never needs to craft raw SSML.
+ *
+ * The optional `rate` field sets the SSML speaking rate. It defaults to
+ * DEFAULT_RATE (0.9) — a deliberate slowdown for pronunciation practice, which
+ * every page relied on before the field existed. Only pass a rate when a page
+ * specifically wants a different pace; a higher-fidelity voice generally sounds
+ * more natural at 1.0, because time-stretching a neural voice is what makes it
+ * sound synthetic.
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node";
@@ -31,6 +38,13 @@ const DEFAULT_VOICES: Record<string, string> = {
   en: "en-US-AvaNeural",
   es: "es-MX-DaliaNeural",
 };
+
+// Speaking rate. 0.9 is the long-standing default every speakable page was
+// authored against — do not change it to suit one post; set `rate` on that post
+// instead. The bounds keep a bad request from producing unusable audio.
+const DEFAULT_RATE = 0.9;
+const RATE_MIN = 0.5;
+const RATE_MAX = 1.5;
 
 // Allowed voices (whitelist to prevent abuse)
 const ALLOWED_VOICES = new Set([
@@ -51,6 +65,12 @@ const ALLOWED_VOICES = new Set([
   "en-GB-ElliotNeural",
   "en-GB-EthanNeural",
   "en-GB-NoahNeural",
+  // DragonHD tier — noticeably more natural than the standard neural voices.
+  // The ":" means Microsoft versions this identifier and can move it, so if
+  // audio on a page using it ever breaks, re-verify the name against
+  // scripts/azure-list-voices.mjs before assuming the key or region is at fault.
+  "en-GB-Ollie:DragonHDLatestNeural",
+  "en-GB-Ada:DragonHDLatestNeural",
   "en-GB-SoniaNeural",
   "en-GB-LibbyNeural",
   "en-GB-AbbiNeural",
@@ -91,7 +111,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: "TTS service not configured" });
   }
 
-  const { text, voice, lang, phoneme } = req.body || {};
+  const { text, voice, lang, phoneme, rate } = req.body || {};
 
   if (!text || typeof text !== "string") {
     return res.status(400).json({ error: "Missing or invalid 'text' field" });
@@ -127,9 +147,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       ? `<phoneme alphabet="ipa" ph="${escapeXml(phoneme)}">${escapedText}</phoneme>`
       : escapedText;
 
+  // Rate is interpolated into SSML, so it is never passed through as a string.
+  // Parse to a number, clamp, and re-serialize — the result can only ever be
+  // digits and a decimal point.
+  const parsedRate = typeof rate === "number" && Number.isFinite(rate) ? rate : DEFAULT_RATE;
+  const selectedRate = Math.min(RATE_MAX, Math.max(RATE_MIN, parsedRate)).toFixed(2);
+
   const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="${voiceLang}">
   <voice name="${selectedVoice}">
-    <prosody rate="0.9">${textContent}</prosody>
+    <prosody rate="${selectedRate}">${textContent}</prosody>
   </voice>
 </speak>`;
 

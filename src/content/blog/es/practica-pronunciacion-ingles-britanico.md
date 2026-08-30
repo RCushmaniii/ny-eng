@@ -9,7 +9,12 @@ readingTime: "8 min de lectura"
 audience: "Profesionales que trabajan con colegas o clientes del Reino Unido, o con una matriz europea"
 featuredImage: "./images/practica-pronunciacion-ingles-britanico.webp"
 imageAlt: "Tarjeta de práctica de inglés británico con la R que desaparece, la A larga y la T que se cae"
-ttsVoice: "en-GB-ThomasNeural"
+ttsVoiceOptions:
+  - label: "Masculina"
+    voice: "en-GB-Ollie:DragonHDLatestNeural"
+  - label: "Femenina"
+    voice: "en-GB-Ada:DragonHDLatestNeural"
+ttsRate: 1.0
 publish: true
 translations:
   en: "/en/blog/british-english-pronunciation-practice/"

@@ -11,25 +11,125 @@
  *   <span class="speak-en">The shipment is pending customs clearance.</span>
  *
  * Per-post voice override:
- *   Add ttsVoice in blog frontmatter (e.g., ttsVoice: "en-US-AndrewNeural")
- *   US male: en-US-AndrewNeural, BrianNeural, GuyNeural
- *   US female: en-US-AvaNeural, EmmaNeural, JennyNeural
- *   UK male: en-GB-RyanNeural, ThomasNeural, OliverNeural, AlfieNeural, ElliotNeural,
- *            EthanNeural, NoahNeural
- *   UK female: en-GB-SoniaNeural, LibbyNeural, AbbiNeural, BellaNeural
+ *   Add ttsVoice in blog frontmatter (e.g., ttsVoice: "en-US-AndrewNeural").
+ *   Run `node --env-file=.env.local scripts/azure-list-voices.mjs en-GB` for the
+ *   live catalog — never write a voice name from memory.
  *
  *   The voice must also be listed in ALLOWED_VOICES in api/tts/synthesize.ts.
  *   An unlisted voice does not error — it silently falls back to en-US-AvaNeural.
+ *
+ * Reader-chosen voice:
+ *   Add ttsVoiceOptions instead of ttsVoice to render a switcher above the post:
+ *
+ *     ttsVoiceOptions:
+ *       - label: "Male"
+ *         voice: "en-GB-Ollie:DragonHDLatestNeural"
+ *       - label: "Female"
+ *         voice: "en-GB-Ada:DragonHDLatestNeural"
+ *
+ *   The first entry is the default. Labels are free text, so the same mechanism
+ *   works for a British/American pair as well as male/female. The chosen LABEL
+ *   (not the voice name) is remembered in localStorage, so a reader who picks
+ *   "Female" on one post keeps it on any other post offering that label.
+ *
+ * Speaking rate:
+ *   ttsRate sets the SSML rate. Omit it and the API applies its long-standing
+ *   0.9 default. Higher-fidelity voices sound markedly less synthetic at 1.0 —
+ *   stretching a neural voice is what makes it sound mechanical.
  */
+interface VoiceOption {
+  label: string;
+  voice: string;
+}
 interface Props {
   voice?: string;
+  voiceOptions?: VoiceOption[];
+  rate?: number;
+  lang?: "en" | "es";
 }
-const { voice } = Astro.props;
+const { voice, voiceOptions, rate, lang = "en" } = Astro.props;
+
+// Switcher chrome is the only visible copy this component owns, and it renders
+// on the Spanish posts too. es-MX, usted register.
+const SWITCH_COPY = {
+  en: { label: "Choose a voice", hint: "Tap any speaker icon to hear it." },
+  es: { label: "Elija una voz", hint: "Toque cualquier ícono de audio para escucharla." },
+} as const;
+const copy = SWITCH_COPY[lang];
+
+// A single ttsVoice is just a one-entry list with no switcher rendered.
+const options: VoiceOption[] =
+  voiceOptions && voiceOptions.length
+    ? voiceOptions
+    : voice
+      ? [{ label: "Default", voice }]
+      : [];
+const showSwitcher = options.length > 1;
 ---
 
 <style is:global>
   .speak-en {
     position: relative;
+  }
+
+  /* Reader-facing voice switcher, rendered above the post body when a post
+     declares more than one ttsVoiceOptions entry. */
+  .tts-voice-switch {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto 2rem;
+    max-width: 48rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    background: #f8fafc;
+    font-size: 0.9375rem;
+    line-height: 1.4;
+  }
+  .tts-voice-switch__label {
+    font-weight: 600;
+    color: #0f172a;
+  }
+  .tts-voice-switch__options {
+    display: inline-flex;
+    padding: 0.1875rem;
+    border-radius: 9999px;
+    background: #e2e8f0;
+  }
+  .tts-voice-switch__btn {
+    padding: 0.3125rem 0.9375rem;
+    border: 0;
+    border-radius: 9999px;
+    background: transparent;
+    color: #475569;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease;
+  }
+  .tts-voice-switch__btn:hover {
+    color: #0f172a;
+  }
+  .tts-voice-switch__btn[aria-pressed="true"] {
+    background: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 1px 2px rgb(15 23 42 / 0.12);
+  }
+  .tts-voice-switch__btn:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+  }
+  .tts-voice-switch__hint {
+    color: #64748b;
+  }
+  @media (max-width: 480px) {
+    .tts-voice-switch__hint {
+      flex-basis: 100%;
+    }
   }
   .speak-btn {
     display: inline-flex;
@@ -69,21 +169,116 @@ const { voice } = Astro.props;
   }
 </style>
 
-<div id="speak-en-root" data-voice={voice || ""}></div>
+<div
+  id="speak-en-root"
+  data-voices={JSON.stringify(options)}
+  data-rate={rate != null ? String(rate) : ""}
+>
+</div>
+
+{
+  showSwitcher && (
+    <div class="tts-voice-switch" role="group" aria-label={copy.label}>
+      <span class="tts-voice-switch__label">{copy.label}</span>
+      <div class="tts-voice-switch__options">
+        {options.map((opt, i) => (
+          <button
+            type="button"
+            class="tts-voice-switch__btn"
+            data-voice={opt.voice}
+            data-label={opt.label}
+            aria-pressed={i === 0 ? "true" : "false"}
+          >
+            {opt.label}
+          </button>
+        ))}
+      </div>
+      <span class="tts-voice-switch__hint">{copy.hint}</span>
+    </div>
+  )
+}
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const speakables = document.querySelectorAll('.speak-en');
-    if (!speakables.length) return;
+    if (!speakables.length) {
+      // A post can declare voice options and have no speakable spans yet.
+      // A switcher that controls nothing is worse than no switcher.
+      document.querySelector('.tts-voice-switch')?.remove();
+      return;
+    }
 
-    // Read per-post voice override from data attribute
+    // Read per-post voice list and rate from data attributes
     const root = document.getElementById('speak-en-root');
-    const voiceOverride = root?.dataset.voice || '';
 
-    // Audio cache to avoid re-fetching the same text
-    const audioCache = new Map<string, string>();
+    interface VoiceOption { label: string; voice: string }
+    let options: VoiceOption[] = [];
+    try {
+      options = JSON.parse(root?.dataset.voices || '[]');
+    } catch {
+      options = [];
+    }
+    const rateAttr = root?.dataset.rate || '';
+    const rateOverride = rateAttr ? Number(rateAttr) : null;
+
+    // The reader's choice is stored by LABEL, so "Female" carries across posts
+    // that pair different voices. Storage can throw in private mode.
+    const VOICE_PREF_KEY = 'nyet:tts-voice-label';
+    const readPref = () => {
+      try {
+        return localStorage.getItem(VOICE_PREF_KEY);
+      } catch {
+        return null;
+      }
+    };
+    const writePref = (label: string) => {
+      try {
+        localStorage.setItem(VOICE_PREF_KEY, label);
+      } catch {
+        /* preference is a convenience, never a requirement */
+      }
+    };
+
+    const preferred = options.find(o => o.label === readPref());
+    let activeVoice = (preferred || options[0])?.voice || '';
+
     let currentAudio: HTMLAudioElement | null = null;
     let currentBtn: HTMLButtonElement | null = null;
+
+    // Audio cache to avoid re-fetching the same text. Keyed by voice AND rate —
+    // keying on text alone would replay the previous voice after a switch.
+    const audioCache = new Map<string, string>();
+    const cacheKey = (text: string) => `${activeVoice}|${rateOverride ?? ''}|${text}`;
+
+    // Wire the switcher, if the post rendered one.
+    const switcher = document.querySelector('.tts-voice-switch');
+    if (switcher) {
+      const btns = Array.from(
+        switcher.querySelectorAll<HTMLButtonElement>('.tts-voice-switch__btn'),
+      );
+      const paint = () =>
+        btns.forEach(b =>
+          b.setAttribute('aria-pressed', b.dataset.voice === activeVoice ? 'true' : 'false'),
+        );
+      paint();
+      btns.forEach(b => {
+        b.addEventListener('click', () => {
+          if (b.dataset.voice === activeVoice) return;
+          activeVoice = b.dataset.voice || activeVoice;
+          writePref(b.dataset.label || '');
+          paint();
+          // Stop whatever is mid-sentence in the old voice.
+          if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+            currentBtn?.classList.remove('speaking');
+            currentAudio = null;
+            currentBtn = null;
+          }
+          if ('speechSynthesis' in window) speechSynthesis.cancel();
+        });
+      });
+    }
 
     const API_BASE = '/api/tts/synthesize';
 
@@ -121,7 +316,8 @@ const { voice } = Astro.props;
 
         try {
           // Check cache first
-          let audioUrl = audioCache.get(text);
+          const key = cacheKey(text);
+          let audioUrl = audioCache.get(key);
 
           if (!audioUrl) {
             console.log('[TTS] Fetching Azure Neural TTS for:', text.substring(0, 50) + '...');
@@ -129,7 +325,12 @@ const { voice } = Astro.props;
             const response = await fetch(API_BASE, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ text, lang: 'en', ...(voiceOverride && { voice: voiceOverride }) }),
+              body: JSON.stringify({
+                text,
+                lang: 'en',
+                ...(activeVoice && { voice: activeVoice }),
+                ...(rateOverride != null && { rate: rateOverride }),
+              }),
             });
 
             console.log('[TTS] Response status:', response.status, 'Content-Type:', response.headers.get('content-type'));
@@ -153,7 +354,7 @@ const { voice } = Astro.props;
             }
 
             audioUrl = URL.createObjectURL(blob);
-            audioCache.set(text, audioUrl);
+            audioCache.set(key, audioUrl);
           } else {
             console.log('[TTS] Using cached audio for:', text.substring(0, 50) + '...');
           }
@@ -198,12 +399,17 @@ const { voice } = Astro.props;
 
       speechSynthesis.cancel();
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'en-US';
-      utterance.rate = 0.85;
+      // Follow the locale of the chosen voice — a British post falling back to
+      // an American browser voice is exactly the mismatch the post is teaching.
+      const localeTag = activeVoice.split('-').slice(0, 2).join('-') || 'en-US';
+      utterance.lang = localeTag;
+      utterance.rate = rateOverride != null ? rateOverride : 0.85;
 
       const voices = speechSynthesis.getVoices();
-      const usVoice = voices.find(v => v.lang === 'en-US') || voices.find(v => v.lang.startsWith('en'));
-      if (usVoice) utterance.voice = usVoice;
+      const match =
+        voices.find(v => v.lang.replace('_', '-') === localeTag) ||
+        voices.find(v => v.lang.startsWith('en'));
+      if (match) utterance.voice = match;
 
       utterance.onend = () => btn.classList.remove('speaking');
       utterance.onerror = () => btn.classList.remove('speaking');

@@ -9,7 +9,12 @@ readingTime: "8 min read"
 audience: "Professionals who work with UK colleagues, UK clients, or a European head office"
 featuredImage: "./images/british-english-pronunciation-practice.webp"
 imageAlt: "British English practice card listing the disappearing R, the long A, and the T that drops"
-ttsVoice: "en-GB-ThomasNeural"
+ttsVoiceOptions:
+  - label: "Male"
+    voice: "en-GB-Ollie:DragonHDLatestNeural"
+  - label: "Female"
+    voice: "en-GB-Ada:DragonHDLatestNeural"
+ttsRate: 1.0
 publish: true
 translations:
   en: "/en/blog/british-english-pronunciation-practice/"
