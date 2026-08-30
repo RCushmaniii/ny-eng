@@ -1,5 +1,34 @@
 # NY English Teacher
 
+> A senior executive in Mexico can already speak English. What they want is to stop
+> losing the room when they switch into it.
+
+## The problem it solves
+
+The people this serves are directors, VPs and general managers — fluent enough to work in
+English and still not landing the way they do in Spanish.
+
+- They are not looking for lessons. They are looking to command a meeting, push back on a number, and be taken as seriously in English as they already are in Spanish.
+- Generic English courses aim at grammar and beginners, which is insulting to someone running a business unit.
+- They compare coaches at 11pm, on a phone, and pick the one whose site made the difference obvious.
+
+## What it does for the business
+
+- Explains the coaching in terms of the outcome — presence and precision under pressure — rather than lesson counts.
+- Reaches readers in English and Mexican Spanish, in the register a senior professional expects.
+- Converts a browsing executive into a booked consultation.
+
+## Who it's for
+
+- **Senior professionals in Mexico** working across borders in English.
+- **The coaching business**, which is the larger and steadier of the two revenue lines.
+
+---
+
+# Technical reference
+
+Everything below is implementation detail. The business case is above.
+
 **Executive English coaching platform for professionals who need to command the room.**
 
 [![Astro](https://img.shields.io/badge/Astro-5.5-BC52EE?logo=astro&logoColor=white)](https://astro.build)
