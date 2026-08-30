@@ -76,6 +76,11 @@ const ALLOWED_VOICES = new Set([
   "en-US-EmmaNeural",
   "en-US-JennyNeural",
   "en-US-GuyNeural",
+  // DragonHD US pair. Every speakable post offers these two as a reader-facing
+  // Male/Female choice, so they are deliberately the same tier: switching to
+  // the female voice must not sound like a downgrade from the male one.
+  "en-US-Andrew:DragonHDLatestNeural",
+  "en-US-Ava:DragonHDLatestNeural",
   // English GB — British accent practice pages.
   // Male: Thomas / Oliver / Alfie / Elliot / Ethan / Noah read younger than Ryan,
   // which is the flagship and the only male en-GB voice with prosody styles.

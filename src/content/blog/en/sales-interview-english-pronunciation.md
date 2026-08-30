@@ -9,7 +9,12 @@ readingTime: "12 min read"
 audience: "Spanish speakers preparing for a sales job interview conducted in English"
 featuredImage: "./images/sales-interview-english-pronunciation.webp"
 imageAlt: "Sales interview English card showing the words strengths, revenue, exceeded, and closed"
-ttsVoice: "en-US-AvaNeural"
+ttsVoiceOptions:
+  - label: "Male"
+    voice: "en-US-Andrew:DragonHDLatestNeural"
+  - label: "Female"
+    voice: "en-US-Ava:DragonHDLatestNeural"
+ttsRate: 1.0
 translations:
   en: "/en/blog/sales-interview-english-pronunciation/"
   es: "/es/blog/pronunciacion-ingles-entrevista-ventas/"

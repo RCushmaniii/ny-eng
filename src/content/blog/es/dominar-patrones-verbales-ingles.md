@@ -11,7 +11,12 @@ readingTime: "8 min de lectura"
 audience: "Hispanohablantes intermedios y avanzados que ya usan inglés en el trabajo"
 featuredImage: "./images/verb-pattern-mastery.webp"
 imageAlt: "Una profesional latina hablando inglés con soltura y gesticulando durante una junta de negocios en una oficina moderna con paredes de vidrio, con dos colegas escuchando"
-ttsVoice: "en-US-AndrewNeural"
+ttsVoiceOptions:
+  - label: "Masculina"
+    voice: "en-US-Andrew:DragonHDLatestNeural"
+  - label: "Femenina"
+    voice: "en-US-Ava:DragonHDLatestNeural"
+ttsRate: 1.0
 translations:
   en: "/en/blog/master-english-verb-patterns/"
 faq:

@@ -9,7 +9,12 @@ readingTime: "9 min read"
 audience: "Spanish speakers who work in English and want to be understood the first time"
 featuredImage: "./images/english-words-spanish-speakers-should-practice.webp"
 imageAlt: "Pronunciation practice card listing the TH sound, the English R, -ED endings, and the thirteen-thirty contrast"
-ttsVoice: "en-US-AvaNeural"
+ttsVoiceOptions:
+  - label: "Male"
+    voice: "en-US-Andrew:DragonHDLatestNeural"
+  - label: "Female"
+    voice: "en-US-Ava:DragonHDLatestNeural"
+ttsRate: 1.0
 translations:
   en: "/en/blog/english-words-spanish-speakers-should-practice/"
   es: "/es/blog/palabras-en-ingles-que-los-hispanohablantes-deberian-practicar/"

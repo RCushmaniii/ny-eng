@@ -11,7 +11,12 @@ readingTime: "8 min read"
 audience: "Intermediate and advanced Spanish speakers who already use English at work"
 featuredImage: "./images/verb-pattern-mastery.webp"
 imageAlt: "A confident Latina professional speaking English with ease and expressive hands during a business meeting in a bright, glass-walled modern office, with two colleagues listening"
-ttsVoice: "en-US-AndrewNeural"
+ttsVoiceOptions:
+  - label: "Male"
+    voice: "en-US-Andrew:DragonHDLatestNeural"
+  - label: "Female"
+    voice: "en-US-Ava:DragonHDLatestNeural"
+ttsRate: 1.0
 translations:
   es: "/es/blog/dominar-patrones-verbales-ingles/"
 faq:
