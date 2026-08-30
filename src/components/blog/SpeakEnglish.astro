@@ -330,7 +330,20 @@ const showSwitcher = options.length > 1;
 
     speakables.forEach(el => {
       // Use data-say override if present, otherwise fall back to visible text
-      const originalText = ((el as HTMLElement).dataset.say || el.textContent || '').replace(/[""'']/g, '').trim();
+      // Strip DOUBLE quotes only — they are decorative delimiters around a
+      // quoted phrase and add nothing to speech. Apostrophes are left alone in
+      // every form.
+      //
+      // This used to strip U+0027 as well, and contractions survived only
+      // because smartypants had already rewritten "That's" (U+0027) to "That’s" (U+2019)
+      // during the build. Turning smartypants off would have silently started
+      // sending "Thats" to Azure on every speakable page. Nothing is escaped
+      // here on purpose: the API escapes both quote characters server-side
+      // (escapeXml in api/tts/synthesize.ts), so the client has no reason to
+      // remove them for safety.
+      const originalText = ((el as HTMLElement).dataset.say || el.textContent || '')
+        .replace(/[\u0022\u201C\u201D]/g, '')
+        .trim();
 
       const btn = document.createElement('button');
       btn.className = 'speak-btn';

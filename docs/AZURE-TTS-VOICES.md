@@ -110,7 +110,16 @@ Three steps, and only the first is easy to forget.
 1. **Whitelist the voice** in `api/tts/synthesize.ts` → `ALLOWED_VOICES`. Without this the
    request silently falls back to `en-US-AvaNeural`.
 2. **Set `ttsVoice` in the post's frontmatter** — e.g. `ttsVoice: "en-GB-ThomasNeural"`. It
-   flows frontmatter → `[slug].astro` → `SpeakEnglish.astro` → `data-voice` → API body.
+   flows frontmatter → `[slug].astro` → `SpeakEnglish.astro` → `data-voices` → API body.
+
+   To let the reader choose instead, use `ttsVoiceOptions` — a list of `{label, voice}` pairs,
+   first entry the default. A switcher renders above the post and repeats down it, every
+   instance driving one page-wide setting. Labels are free text, so a British/American pair
+   works the same way as male/female. The chosen label persists in `localStorage`.
+
+   `ttsRate` sets the SSML rate. Omit it and the API applies its long-standing 0.9. **Set 1.0 on
+   a DragonHD voice** — time-stretching a neural voice is what makes it sound mechanical, and a
+   global 0.9 was the real cause of the first "this voice sounds robotic" report, not the voice.
 3. **Nothing else.** `voiceLang` is derived from the voice name
    (`selectedVoice.split("-").slice(0, 2).join("-")`), so `en-IN-PrabhatNeural` emits
    `xml:lang="en-IN"` on its own. No new locale plumbing, no new env var.
@@ -166,12 +175,24 @@ say "wrong region." If auth fails, check the region before you touch the key.
 **The `User-Agent` header is required.** Azure can reject a synthesis request that omits it.
 Both scripts and the proxy set one.
 
-**Apostrophes.** `SpeakEnglish.astro` strips `"` and `'` (straight quotes, U+0022 and
-U+0027) from the text before sending it. Markdown's smartypants converts `'` to `’`
-(U+2019) during the build, which is **not** in the strip set — so `That's quite good.`
-survives as `That’s quite good.` and speaks correctly. This works by accident of the build
-pipeline. If smartypants is ever disabled, every contraction on every speakable page starts
-sending `Thats` to Azure. Check the rendered HTML, not the markdown source.
+**Apostrophes — fixed, and worth knowing why.** `SpeakEnglish.astro` used to strip straight
+quotes (U+0022 and U+0027) from the text before sending it. Contractions survived only because
+markdown's smartypants had already converted `'` to `’` (U+2019) during the build, which was not
+in the strip set. Disabling smartypants for any unrelated reason would have started sending
+`Thats` to Azure on every speakable page, with no error anywhere.
+
+It now strips **double quotes only** — the class is `["\u201C\u201D]` — so apostrophes survive in
+either form and the build pipeline no longer decides whether contractions work. The strip was
+never needed for safety in the first place: `escapeXml` in `api/tts/synthesize.ts` escapes both
+quote characters server-side.
+
+That class is written with `\u` escapes deliberately. The original bug was almost certainly an
+encoding pass flattening literal curly quotes to straight ones, silently turning the class into
+`[""'']`. ASCII escapes cannot be flattened.
+
+Verified on the built HTML: of the 57 speakable phrases on the British post, 9 contain an
+apostrophe. Under the old class all 9 lost it when smartypants was simulated off. Under the new
+one, none do, and today's output is byte-identical.
 
 **Never print the key.** Both scripts read `process.env.AZURE_TTS_KEY` and report only
 whether one was found. Run them via `node --env-file=.env.local`, never by pasting a value.
