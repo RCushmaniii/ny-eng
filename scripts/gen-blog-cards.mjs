@@ -198,6 +198,20 @@ function svg({ eyebrow, headline, chips, footer }) {
 
 const CARDS = [
   {
+    out: "src/content/blog/en/images/logistics-job-interview-english.webp",
+    eyebrow: "LOGISTICS INTERVIEW ENGLISH",
+    headline: "Logistics Job Interview in English",
+    chips: ["OTIF", "dwell time", "own the number"],
+    footer: "nyenglishteacher.com  ·  Click any answer to hear it",
+  },
+  {
+    out: "src/content/blog/es/images/entrevista-trabajo-logistica-ingles.webp",
+    eyebrow: "INGLÉS PARA ENTREVISTAS",
+    headline: "Entrevista de Logística en Inglés",
+    chips: ["OTIF", "dwell time", "tu número"],
+    footer: "nyenglishteacher.com  ·  Escucha cada respuesta",
+  },
+  {
     out: "src/content/blog/en/images/english-words-spanish-speakers-should-practice.webp",
     eyebrow: "PRONUNCIATION PRACTICE",
     headline: "English Words Spanish Speakers Should Practice",

@@ -22,6 +22,7 @@ const ensureSlashPath = (p = "/") => ("/" + (p || "/")).replace(/\/+/g, "/").rep
 const blogTranslations = {
   "british-english-pronunciation-practice":
     "/es/blog/practica-pronunciacion-ingles-britanico/",
+  "logistics-job-interview-english": "/es/blog/entrevista-trabajo-logistica-ingles/",
   "english-classes-chapalita": "/es/blog/clases-ingles-chapalita/",
   "english-classes-zapopan": "/es/blog/clases-ingles-zapopan/",
   "english-classes-guadalajara": "/es/blog/clases-ingles-guadalajara/",
