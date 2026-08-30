@@ -29,6 +29,17 @@ Professional English coaching and training platform for Robert Cushman's "NY Eng
 - `Vd.` abbreviation → Mexico writes `Ud.` if abbreviating; spelling out `usted` is more common in formal copy
 - `leísmo` (using `le` for direct objects of people) — Mexican standard is `lo/la` as direct object, `le` only as indirect object
 
+**Register: `tú`, not `usted` — confirmed 2026-08-30.** All Spanish content on this site
+addresses the reader as `tú`, in warm Mexican Spanish. This is a deliberate choice by Robert,
+not drift: at the time it was confirmed, all ~40 published Spanish posts used `tú` and none
+used `usted`.
+
+The writing system's `copywriting` router states that NY English Teacher is `usted` — **that
+file is wrong about this repo.** Do not "correct" a post to `usted` on its authority. Warmth is
+the point; these are accomplished professionals being spoken to as peers, not addressed
+formally from a distance. (Some older Spanish hero cards still say `Escuche` in the footer —
+those are the inconsistency, not the posts.)
+
 **Mexican-preferred phrasings:**
 - "Right now": `ahora mismo` (formal), `ahorita` (slightly more colloquial / common in MX speech)
 - "Approximately": `aproximadamente`, `como` — Spain often uses `unos/unas`

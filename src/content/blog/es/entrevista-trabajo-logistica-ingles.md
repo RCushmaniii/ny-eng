@@ -199,6 +199,22 @@ Tú ya manejaste el carril. El inglés nada más tiene que decirlo.
 
 ---
 
+## Una directora de logística que hizo justo esto
+
+Trabajé con Andrea Oliveira, Directora de Desarrollo de Negocios en CEVA Logistics, en exactamente este problema: entrevistas, presentaciones y reuniones transfronterizas en inglés.
+
+<div style="background: #fdf9f0; border-left: 4px solid #C9A24B; padding: 1.5rem; margin: 2rem 0;">
+
+> **"El coaching de Robert me ayudó a elevar mi forma de comunicarme con ejecutivos senior en toda América del Norte. Soy más estratégica y persuasiva en entrevistas, presentaciones y reuniones transfronterizas, especialmente en situaciones de alto riesgo. Su enfoque es práctico, enfocado e increíblemente efectivo."**
+>
+> — _Andrea Oliveira, Directora de Desarrollo de Negocios en CEVA Logistics_
+
+</div>
+
+Ella ya conocía la operación. Trabajamos en que el inglés lo dijera.
+
+---
+
 ## ¿Listo para la entrevista que ya está en tu calendario?
 
 Estos ejercicios son una muestra de lo que construimos en [preparación para entrevistas](/es/servicios/preparacion-para-entrevistas/) e [inglés para logística y cadena de suministro](/es/servicios/ingles-para-logistica/). Las sesiones se arman desde tu situación real: el puesto que estás buscando, la operación que de verdad dirigiste y las preguntas que esa empresa específica te va a hacer.

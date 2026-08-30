@@ -199,6 +199,22 @@ You already ran the lane. The English just has to say so.
 
 ---
 
+## A logistics director who did exactly this
+
+I coached Andrea Oliveira, Director of Business Development at CEVA Logistics, on this precise problem — interviews, presentations, and cross-border meetings in English.
+
+<div style="background: #fdf9f0; border-left: 4px solid #C9A24B; padding: 1.5rem; margin: 2rem 0;">
+
+> **"Robert's coaching helped me elevate how I communicate with senior executives across North America. I'm more strategic and persuasive in interviews, presentations, and cross-border meetings—especially in high-stakes situations. His approach is practical, focused, and incredibly effective."**
+>
+> — _Andrea Oliveira, Director of Business Development at CEVA Logistics_
+
+</div>
+
+She already knew the operation. We worked on making the English say so.
+
+---
+
 ## Ready for the interview that's actually on your calendar?
 
 These drills are a sample of what we build in [interview preparation](/en/services/interview-prep/) and [English for logistics and supply chain](/en/services/logistics-english/). Sessions are built from your real situation — the role you're interviewing for, the operation you actually ran, and the questions that specific company is going to ask.
