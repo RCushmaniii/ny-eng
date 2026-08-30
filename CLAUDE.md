@@ -1,5 +1,12 @@
 # NY English Teacher - Claude Code Guidelines
 
+## Why this matters before you change anything
+
+newyorkenglish.com -- where students find the coaching and book it.
+
+**If this breaks:** The booking path for the larger revenue line breaks, in public, for an audience of senior professionals who judge on polish.
+
+Its risk class and revenue proximity are recorded in `operating-system/portfolio/repo-metadata.json`, and are read from there rather than restated here -- the same rule that governs prices, client facts and platform approvals.
 ## Project Overview
 
 Professional English coaching and training platform for Robert Cushman's "NY English Teacher" business. A lead generation and conversion platform targeting executive professionals, tech workers, startup founders, and corporate clients.
