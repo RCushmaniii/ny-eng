@@ -223,7 +223,7 @@ const CARDS = [
     eyebrow: "PRÁCTICA DE PRONUNCIACIÓN",
     headline: "Palabras en Inglés que Deberían Practicar",
     chips: ["TH", "la R inglesa", "-ED"],
-    footer: "nyenglishteacher.com  ·  Escuche cada palabra",
+    footer: "nyenglishteacher.com  ·  Escucha cada palabra",
   },
   {
     out: "src/content/blog/en/images/sales-interview-english-pronunciation.webp",
@@ -244,14 +244,14 @@ const CARDS = [
     eyebrow: "PRÁCTICA DE INGLÉS BRITÁNICO",
     headline: "Pronunciación del Inglés Británico",
     chips: ["la R que cae", "la A larga", "la T muda"],
-    footer: "nyenglishteacher.com  ·  Escuche cada palabra",
+    footer: "nyenglishteacher.com  ·  Escucha cada palabra",
   },
   {
     out: "src/content/blog/es/images/pronunciacion-ingles-entrevista-ventas.webp",
     eyebrow: "INGLÉS PARA ENTREVISTAS",
     headline: "Pronunciación en Inglés para una Entrevista de Ventas",
     chips: ["strengths", "revenue", "exceeded"],
-    footer: "nyenglishteacher.com  ·  Escuche cada palabra",
+    footer: "nyenglishteacher.com  ·  Escucha cada palabra",
   },
 ];
 

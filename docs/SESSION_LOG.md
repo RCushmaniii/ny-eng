@@ -50,10 +50,24 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   the connected-English blog pair from PR #242.
   *Blocks:* every content decision after this. Two rounds of SEO work are in
   flight and neither has been measured, so any further content work is guessing.
-  *Watch at ~2026-08-20* (post PR #225/#228): the course hubs moving off position
-  38.5 / 57–61 on the `... for spanish speakers` cluster — the single largest
-  pocket of demand on the domain — the interview post off 19.6, and whether the
-  four new cheat sheets enter around position 10 the way Past Tenses did.
+  *~2026-08-20 window: PULLED 2026-08-30, ten days late.* Result, 28 days to 2026-08-30:
+  **the `... for spanish speakers` cluster did move, and substantially.** The course
+  hubs were at 38.5 / 57–61; the cluster now sits mostly between position 13 and 28,
+  with two queries on page one — `free english classes online for spanish speakers` at
+  **1.0** and `free online english classes for spanish speakers` at **6.0**, the latter
+  carrying the only cluster click. So the ranking work worked and the traffic did not
+  follow: 104 impressions across the cluster for 1 click, ~1% CTR. The bottleneck moved
+  from position to **title and description**, which is a different and cheaper problem.
+  **The interview post did NOT hold.** It was at 19.6; the `interview` query filter now
+  returns *no data at all* for the period. That is a regression, not noise, and it is
+  the one result here worth acting on.
+  *Read the two dimensions separately.* By page: 18 clicks / 701 impressions. By query:
+  2 clicks / 65 impressions. The gap is Google withholding anonymised queries, not an
+  error — never quote the query-dimension total as site traffic.
+  *Unplanned finding:* customs and foreign-trade queries are already landing —
+  `comercio exterior y aduanas en ingles` at position **7.0**, `agente aduanero en ingles`
+  at 12.0. Real logistics demand the site was not writing for. The 2026-08-30 logistics
+  interview post is the first content aimed at it; re-check that cluster next window.
   *Watch at ~2026-09-02* (post PR #231/#232, the redirect fix): legacy-URL
   impressions **transferring** to `/en/courses/` rather than evaporating, and Bing
   impressions moving off the ~15/day floor held since Jul 2025.
@@ -80,20 +94,18 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Why it survives where HARO does not:* it makes no public, indexed claim about who
   Robert is. **Email from `@nyenglishteacher.com`, never LinkedIn DM** — a DM routes
   the recipient to the personal profile being protected. LinkedIn for research only.
-  *Unverified prerequisite:* whether a warmed `@nyenglishteacher.com` sending domain
-  exists. Cold email from a cold domain lands in spam — check before the first send.
-  *Closes when:* green-lit, domain verified, and a `cold-email`-skill sequence booked.
-
-- [ ] **The NY English ICP file carries a banned claim that keeps re-seeding into copy.**
-  *Why this is an ny-eng item despite the file living elsewhere:* `icp-nyet.json` is this
-  brand's own ICP, and it nearly put the banned claim into `content-marketing/` in this
-  repo on 2026-08-06. The fix is one line in another repo; the damage lands here.
-  *Blocks:* every future piece of NY English marketing copy, silently.
-  `objections_and_rebuttals.past_failures` says *"a native English speaker with 20 years
-  in Fortune 500 boardrooms."* Aggregate career-year counts were purged from all 11
-  resume variants on 2026-08-03 as an age signal, then reappeared in marketing. Written
-  around by hand on 2026-08-06, which is not a control.
-  *Closes when:* fixed in `operating-system/nyet/icp-nyet.json`. Cross-repo.
+  *Prerequisite RESOLVED 2026-08-30 — the sending domain exists and is configured.*
+  Verified over DNS-over-HTTPS rather than the Resend API, whose key here is
+  send-only: `resend._domainkey.nyenglishteacher.com` carries a DKIM public key,
+  `send.nyenglishteacher.com` has `v=spf1 include:amazonses.com ~all` and an MX to
+  `feedback-smtp.us-east-1.amazonses.com` for bounce handling. DMARC exists with a
+  merged `rua`. **Two caveats before the first send.** (1) The ROOT domain's SPF is
+  Brevo, not Resend — Resend authenticates as the `send.` subdomain, so the From
+  address decides which path is authenticated and cannot be picked casually.
+  (2) DMARC is `p=none`, monitoring only. Configured is not the same as *warmed*;
+  DNS cannot show reputation, though the domain does carry genuine transactional
+  history from quiz results and guide delivery.
+  *Closes when:* green-lit and a `cold-email`-skill sequence booked.
 
 - [ ] **On-site behaviour is currently unmeasurable.**
   *Blocks:* any conversion question. GSC shows what happens before the click; nothing
@@ -104,7 +116,15 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   API limitation or a disabled toggle was not guessed either way.
   *Explicitly not GA4:* at 4 clicks/28 days it measures nothing and adds a consent
   banner to a site just made 31% lighter. Robert agreed 2026-08-05.
-  *Closes when:* the Vercel dashboard is checked and the answer recorded here.
+  *Re-confirmed 2026-08-30, unchanged.* `get_web_analytics` on `prj_XIYUkuizTmBlDCLPWjif0UkIeI79`
+  still returns `404 Web Analytics not found`, while `/_vercel/insights/script.js`
+  serves **HTTP 200, 2,495 bytes** in production and the tag is present in the rendered
+  page. So the client side is healthy and the failure is on the account side — a plan
+  limitation or an unflipped toggle. Nothing further is checkable from here.
+  *Closes when:* Robert opens
+  https://vercel.com/rcushmaniii-projects/ny-eng/analytics
+  and reports whether the page shows data, an "Enable" button, or an upgrade prompt.
+  Those three answers mean three different things and no other check distinguishes them.
 
 - [ ] **`GMB-LOG.md` stale since 2026-03-30**, and it is the only record of the
   best-performing channel (337 customer interactions vs 4 organic clicks/28 days).
@@ -119,6 +139,95 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 > re-added here on 2026-08-06 and removed again the same day — they are real and still
 > open, they are simply not this repo's business. Their full text is in this file's git
 > history at commit `f81fef9` if they need to be moved rather than rewritten.
+
+---
+
+## Session: 2026-08-30 — Reader-chosen TTS voices, a brand pronunciation lexicon, the logistics post, and a register sweep
+
+Started as "this British voice sounds mechanical" and ended up rebuilding how audio works
+across the whole site.
+
+### Accomplished
+
+- **PR #261 — the voice layer.** The mechanical sound was never the voice: every speakable
+  page ran through a hardcoded `prosody rate="0.9"`, and time-stretching a neural voice is
+  what makes it sound synthetic. Rate is now per-post (`ttsRate`), defaulting to the same
+  0.9 every existing page was authored against. Added `ttsVoiceOptions`, a reader-facing
+  Male/Female switcher rendered above the post and repeated down it, every instance driving
+  one page-wide setting through a single delegated listener. The British posts pair
+  `en-GB-Ollie:DragonHDLatestNeural` with `en-GB-Ada:DragonHDLatestNeural`; all 12 other
+  speakable posts pair `en-US-Andrew:DragonHDLatestNeural` with `en-US-Ava:DragonHDLatestNeural`,
+  male first. Both members of each pair are the same DragonHD tier on purpose — an HD male
+  against a standard female makes choosing the female voice feel like a downgrade.
+- **The apostrophe dependency, removed.** `SpeakEnglish.astro` stripped U+0022 and U+0027.
+  Contractions survived *only* because smartypants had already rewritten the apostrophe to
+  U+2019 during the build. Turning smartypants off for any unrelated reason would have
+  silently started sending "Thats" to Azure on every speakable page, with nothing visibly
+  wrong in review. Now strips double quotes only. Measured: of 57 speakable phrases on the
+  British post, 9 contain an apostrophe; with smartypants simulated off the old class dropped
+  all 9, the new one drops none.
+- **A brand pronunciation lexicon.** Azure said "CushLabs" wrong. Robert picked
+  `ˈkʊʃlæbz` by ear from generated samples — the vowel in *cushion*, not *hush*. Implemented
+  as `PRONUNCIATIONS` in `api/tts/synthesize.ts`, applied to every request, rather than a
+  `data-phoneme` attribute per mention: a per-mention tag has to be remembered forever and
+  the one that gets forgotten is the one that mispronounces the company. The page still
+  spells CushLabs correctly. Works mid-sentence, case-sensitive, word-bounded.
+- **PR #262 — logistics job interview post, EN + ES.** Written against the NYET voice and
+  ICP. Ten before/after answers on real operational vocabulary, 22 speakable phrases per
+  language, FAQPage schema. Links to the `interview-prep` and `logistics-english` service
+  pages, which had no blog content feeding them. Carries Andrea Oliveira's testimonial
+  (Director of Business Development, CEVA Logistics) — already published on the site and
+  cleared by Robert; she was coached on interviews specifically, which is exactly what the
+  post teaches.
+- **Register sweep.** GSC pulled (see the open item), the ICP banned-claim item closed on
+  verification, the cold-email sending domain verified over DNS, the Vercel Analytics 404
+  reproduced and narrowed to a single dashboard question.
+- **Social files** written for both the British and logistics posts in `content-marketing/`,
+  which the CLAUDE.md publishing checklist requires and which had been skipped for both.
+- **Spanish register recorded.** All ~40 published ES posts use `tú`; none use `usted`. The
+  writing system's `copywriting` router asserts NYET is `usted` and is wrong about this repo.
+  Robert confirmed `tú`. Written into this repo's CLAUDE.md so it stops being re-litigated,
+  and the three remaining `Escuche` card footers were regenerated as `Escucha`.
+
+### Decisions Made
+
+- **Did not change the global 0.9 rate**, even though 1.0 fixed the reported problem. Twelve
+  other posts were authored against 0.9 and several are pronunciation drills where slow is
+  the pedagogical point. Rate became per-post instead. Robert later confirmed 1.0 site-wide
+  reads fine.
+- **Lexicon over per-span attribute** for the brand name, per above.
+- **`tú` over `usted`** for Spanish, matching forty published posts rather than a skill file.
+- **Kept the English answer lines in English inside the Spanish post.** The reader is going
+  to say those sentences in an interview; translating them would destroy the deliverable.
+
+### Lessons and Surprises
+
+- **A green type-check is not evidence the code works.** The first lexicon implementation
+  passed `astro check` with zero errors and was completely broken: a word boundary written
+  inside a template literal became a backspace character, so it would have matched nothing
+  and shipped a mispronounced company name looking perfectly healthy. Only executing it
+  caught that. The function was rewritten to contain no escape sequences at all, and the
+  real source is now exercised directly rather than trusted because it compiles.
+- **The tool chain silently ate backslashes** in heredocs three separate times, which is what
+  produced that bug. Anything containing escape sequences now goes through the Write tool.
+- **Three deploy-wait cycles were lost to bad detectors**, roughly 25 minutes, each time
+  waiting on a deployment that had already succeeded — Astro inlines the component script, so
+  looking for it in external JS found nothing; esbuild rewrites `\u` escapes to literal
+  characters, so searching for the escaped form found nothing. Check what the build actually
+  emits before writing a detector against it.
+- **The repo's own SEO gate earns its keep.** It caught both new meta descriptions over 160
+  characters before they could ship.
+- **Guessed URLs are worth checking.** Two Spanish service paths in the new post were wrong
+  on the first pass (`preparacion-entrevistas`, `ingles-logistica`) and were caught by
+  resolving all 13 internal links against `dist/` rather than trusting them.
+
+### Files Touched
+
+`api/tts/synthesize.ts`, `src/components/blog/SpeakEnglish.astro`, `src/content.config.ts`,
+`src/pages/{en,es}/blog/[slug].astro`, all 14 speakable blog posts, `astro.config.mjs`,
+`scripts/gen-blog-cards.mjs`, `scripts/gen-blog-photo-cards.mjs` (new),
+`scripts/azure-list-voices.mjs` + `azure-voice-samples.mjs` + `azure-pronounce-lab.mjs`,
+`docs/AZURE-TTS-VOICES.md`, `CLAUDE.md`, `content-marketing/` (2 new files).
 
 ---
 
