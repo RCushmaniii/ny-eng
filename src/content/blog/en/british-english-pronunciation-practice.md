@@ -8,7 +8,7 @@ categories:
 readingTime: "8 min read"
 audience: "Professionals who work with UK colleagues, UK clients, or a European head office"
 featuredImage: "./images/british-english-pronunciation-practice.webp"
-imageAlt: "British English practice card listing the disappearing R, the long A, and the T that drops"
+imageAlt: "Professional wearing headphones on a video call with a colleague, Big Ben and Westminster visible through the window behind him"
 ttsVoiceOptions:
   - label: "Male"
     voice: "en-GB-Ollie:DragonHDLatestNeural"
