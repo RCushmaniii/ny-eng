@@ -66,8 +66,12 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   error — never quote the query-dimension total as site traffic.
   *Unplanned finding:* customs and foreign-trade queries are already landing —
   `comercio exterior y aduanas en ingles` at position **7.0**, `agente aduanero en ingles`
-  at 12.0. Real logistics demand the site was not writing for. The 2026-08-30 logistics
-  interview post is the first content aimed at it; re-check that cluster next window.
+  at 12.0. **Correction, same day:** this was first written up as demand "the site was not
+  writing for," which was wrong — `customs-freight-english` has existed since 2026-03-04
+  and is one of the two best-read blog pages on the site (15 visitors/30d). The finding is
+  therefore stronger, not weaker: the cluster already ranks *and* already has content, and
+  the two logistics posts simply had **zero links between them** until 2026-08-31. Cross-
+  linked in both languages. Re-check the cluster next window.
   *Watch at ~2026-09-02* (post PR #231/#232, the redirect fix): legacy-URL
   impressions **transferring** to `/en/courses/` rather than evaporating, and Bing
   impressions moving off the ~15/day floor held since Jul 2025.
@@ -107,24 +111,23 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   history from quiz results and guide delivery.
   *Closes when:* green-lit and a `cold-email`-skill sequence booked.
 
-- [ ] **On-site behaviour is currently unmeasurable.**
-  *Blocks:* any conversion question. GSC shows what happens before the click; nothing
-  shows what happens after.
-  *Verified 2026-08-05:* Vercel Web Analytics returns `404 Web Analytics not found` via
-  API for **both** `ny-eng` and `cushlabs-os-dashboard`, while
-  `/_vercel/insights/script.js` serves 200 in production. Whether this is a Hobby-plan
-  API limitation or a disabled toggle was not guessed either way.
-  *Explicitly not GA4:* at 4 clicks/28 days it measures nothing and adds a consent
-  banner to a site just made 31% lighter. Robert agreed 2026-08-05.
-  *Re-confirmed 2026-08-30, unchanged.* `get_web_analytics` on `prj_XIYUkuizTmBlDCLPWjif0UkIeI79`
-  still returns `404 Web Analytics not found`, while `/_vercel/insights/script.js`
-  serves **HTTP 200, 2,495 bytes** in production and the tag is present in the rendered
-  page. So the client side is healthy and the failure is on the account side — a plan
-  limitation or an unflipped toggle. Nothing further is checkable from here.
-  *Closes when:* Robert opens
-  https://vercel.com/rcushmaniii-projects/ny-eng/analytics
-  and reports whether the page shows data, an "Enable" button, or an upgrade prompt.
-  Those three answers mean three different things and no other check distinguishes them.
+- [ ] **On-site numbers exist but are dominated by non-human traffic.**
+  *Superseded the "unmeasurable" item on 2026-08-31, when Robert opened the dashboard.*
+  **Vercel Web Analytics works.** 30 days to 2026-08-31: 829 visitors, 1,057 page views,
+  91% bounce. The API 404 is a plan-level limitation, not a disabled toggle — it still
+  returns `404 Web Analytics not found` for the correct project and team IDs while the
+  dashboard renders data, so the API is simply not available on this plan. Pull these
+  numbers by hand; do not script them.
+  *The new problem, and it is the important one:* **the traffic is mostly not people.**
+  Singapore 68% of visitors, desktop 94%, GNU/Linux 15%, bounce 91%, and only ~66 of 829
+  visitors carry a search referrer. Singapore is a major datacenter region, consumer desktop
+  Linux runs 2–4%, and a Mexico-facing audience would skew mobile. Mexico is **4%** — about
+  33 visitors. That is consistent with GSC's 18 clicks/28 days.
+  *Consequence:* the headline visitor count and its ±% are not a readership signal and must
+  not be read as one. A "-12%" month is noise in a number that was never measuring readers.
+  **Use GSC clicks and the per-page table as the real signal.**
+  *Closes when:* a bot-filtered view exists, or the register records a decision to judge
+  readership by GSC only and ignore the Vercel headline number.
 
 - [ ] **`GMB-LOG.md` stale since 2026-03-30**, and it is the only record of the
   best-performing channel (337 customer interactions vs 4 organic clicks/28 days).
