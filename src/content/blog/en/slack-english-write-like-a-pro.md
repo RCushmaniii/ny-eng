@@ -14,8 +14,8 @@ translations:
   es: "/es/blog/ingles-para-slack-profesional/"
 publish: true
 seo:
-  title: "Professional Slack Messages in English for Tech Teams"
-  description: "Real Slack message templates used by senior engineers and managers at US companies. Stop sounding robotic and start writing like a native professional."
+  title: "Slack English: Why Your Messages Sound Too Formal"
+  description: "Your English is correct and your Slack messages still read as stiff. The phrases senior engineers actually use at US companies, and why yours sound off."
 ---
 
 ## Your Slack Messages Are Giving You Away
