@@ -8,7 +8,7 @@ categories:
 readingTime: "8 min de lectura"
 audience: "Profesionales que trabajan con colegas o clientes del Reino Unido, o con una matriz europea"
 featuredImage: "./images/practica-pronunciacion-ingles-britanico.webp"
-imageAlt: "Tarjeta de práctica de inglés británico con la R que desaparece, la A larga y la T que se cae"
+imageAlt: "Profesional con audífonos en una videollamada con un colega, con el Big Ben y Westminster al fondo por la ventana"
 ttsVoiceOptions:
   - label: "Masculina"
     voice: "en-GB-Ollie:DragonHDLatestNeural"

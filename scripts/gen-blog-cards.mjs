@@ -196,6 +196,10 @@ function svg({ eyebrow, headline, chips, footer }) {
 </svg>`;
 }
 
+// NOTE: the two British-English cards used to live here and now live in
+// gen-blog-photo-cards.mjs, which lays text over a photograph. Two generators
+// must never write the same output path — whichever ran last would silently win,
+// and a re-run of this script would quietly replace a photo hero with a flat one.
 const CARDS = [
   {
     out: "src/content/blog/en/images/logistics-job-interview-english.webp",
@@ -231,20 +235,6 @@ const CARDS = [
     headline: "English Pronunciation for a Sales Job Interview",
     chips: ["strengths", "revenue", "exceeded"],
     footer: "nyenglishteacher.com  ·  Click any word to hear it",
-  },
-  {
-    out: "src/content/blog/en/images/british-english-pronunciation-practice.webp",
-    eyebrow: "BRITISH ENGLISH PRACTICE",
-    headline: "British English Pronunciation Practice",
-    chips: ["missing R", "long A", "dropped T"],
-    footer: "nyenglishteacher.com  ·  Click any word to hear it",
-  },
-  {
-    out: "src/content/blog/es/images/practica-pronunciacion-ingles-britanico.webp",
-    eyebrow: "PRÁCTICA DE INGLÉS BRITÁNICO",
-    headline: "Pronunciación del Inglés Británico",
-    chips: ["la R que cae", "la A larga", "la T muda"],
-    footer: "nyenglishteacher.com  ·  Escucha cada palabra",
   },
   {
     out: "src/content/blog/es/images/pronunciacion-ingles-entrevista-ventas.webp",

@@ -103,6 +103,18 @@ const CARDS = [
     headline: "Entrevista de Logística en Inglés",
     footer: "nyenglishteacher.com  ·  Escucha cada respuesta",
   },
+  {
+    src: "src/assets/blog-sources/british-english-listening.webp",
+    out: "src/content/blog/en/images/british-english-pronunciation-practice.webp",
+    headline: "British English Pronunciation Practice",
+    footer: "nyenglishteacher.com  ·  Click any word to hear it",
+  },
+  {
+    src: "src/assets/blog-sources/british-english-listening.webp",
+    out: "src/content/blog/es/images/practica-pronunciacion-ingles-britanico.webp",
+    headline: "Pronunciación Británica",
+    footer: "nyenglishteacher.com  ·  Escucha cada palabra",
+  },
 ];
 
 for (const card of CARDS) {
