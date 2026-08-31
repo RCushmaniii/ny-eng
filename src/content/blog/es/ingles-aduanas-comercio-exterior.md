@@ -322,6 +322,7 @@ La carga sabe cómo cruzar la frontera. La pregunta es si tu inglés puede segui
 
 ## Sigue Leyendo
 
+- [Entrevista de trabajo en logística en inglés](/es/blog/entrevista-trabajo-logistica-ingles/) — Diez respuestas de antes y después para la entrevista, con lenguaje de OTIF, dwell time y carriles, y audio en cada una.
 - [El costo real del inglés débil en empresas mexicanas](/es/blog/costo-real-ingles-debil-empresas-mexicanas/) — El caso de negocio para invertir en inglés, con números reales de empresas mexicanas en comercio internacional.
 - [10 errores de Business English de profesionales mexicanos](/es/blog/errores-ingles-negocios-profesionales-mexicanos/) — Patrones comunes de interferencia español-inglés que minan tu credibilidad con contrapartes de EE.UU.
 - [Frases de email que te hacen sonar junior](/es/blog/frases-email-que-te-hacen-sonar-junior/) — Corrige los hábitos de email que hacen que brokers y clientes de EE.UU. te tomen menos en serio.

@@ -223,6 +223,7 @@ Estos ejercicios son una muestra de lo que construimos en [preparación para ent
 
 ### Sigue leyendo
 
+- [Inglés para aduanas y comercio exterior](/es/blog/ingles-aduanas-comercio-exterior/) — 50 términos para brokers, cumplimiento del T-MEC y liberar carga en la frontera
 - [Entrevista de trabajo en una empresa americana](/es/blog/entrevista-trabajo-empresa-americana/) — Qué cambia cuando el reclutador es estadounidense
 - [Líderes de operaciones: deja de reportar problemas](/es/blog/lenguaje-ejecutivo-operaciones/) — El lenguaje de reporte que se lee como mando
 - [Pronunciación en inglés para entrevistas de ventas](/es/blog/pronunciacion-ingles-entrevista-ventas/) — Los sonidos que te cuestan credibilidad
