@@ -196,6 +196,7 @@ export type TKey =
   | "course/executive-pushback/i-hear-you-but-vs-and"
   | "course/executive-pushback/i-disagree-vs-i-see-it-differently"
   | "corporate/for-hr"
+  | "corporate/english-for-companies"
   | "meme-portfolio"
   | "site-index";
 
@@ -412,6 +413,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/executive-pushback/i-disagree-vs-i-see-it-differently":
       "/en/course/executive-pushback/i-disagree-vs-i-see-it-differently/",
     "corporate/for-hr": "/en/for-hr-managers/",
+    "corporate/english-for-companies": "/en/corporate-english-training-guadalajara/",
     "meme-portfolio": "/en/meme-portfolio/all/",
     "site-index": "/en/site-index/",
   },
@@ -631,6 +633,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/executive-pushback/i-disagree-vs-i-see-it-differently":
       "/es/curso/pushback-ejecutivo/i-disagree-vs-i-see-it-differently/",
     "corporate/for-hr": "/es/para-rh/",
+    "corporate/english-for-companies": "/es/ingles-para-empresas-guadalajara/",
     "meme-portfolio": "/es/meme-portfolio/all/",
     "site-index": "/es/indice-del-sitio/",
   },
@@ -793,6 +796,7 @@ export function getAllTKeys(): TKey[] {
     "quiz/professional-services",
     "quiz/high-stakes",
     "corporate/for-hr",
+    "corporate/english-for-companies",
     "meme-portfolio",
     "site-index",
   ];

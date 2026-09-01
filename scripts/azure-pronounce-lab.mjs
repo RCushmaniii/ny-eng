@@ -127,7 +127,7 @@ const rows = (g) =>
     .filter((m) => m.group === g)
     .map(
       (m) => `      <div class="row">
-        <button class="play" data-src="${m.file}" aria-label="Play ${h(m.label)}">&#9654;</button>
+        <button class="play" data-src="${m.file}" aria-label="Play ${h(m.label)}">▶</button>
         <div class="meta"><div class="label">${h(m.label)}</div>
         <div class="note">${h(m.note)}</div><code>${h(m.inner)}</code></div>
       </div>`,

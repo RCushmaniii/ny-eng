@@ -1,0 +1,259 @@
+---
+export const prerender = true;
+
+/**
+ * Category page — "inglés para empresas Guadalajara".
+ *
+ * This page exists to own the CATEGORY. It is deliberately broad, and it is
+ * deliberately the only corporate page that targets the unmodified category
+ * term: /es/servicios/paquete-corporativo/ targets the 12-week PROGRAM and
+ * /es/para-rh/ targets the HR evaluator. Three pages chasing one keyword is
+ * cannibalisation, so if this page's title changes, check the other two.
+ *
+ * Funnel: search lands here -> pick a way of working -> program or flexible
+ * coaching -> HR decision support if someone else has to approve it.
+ */
+
+import Base from "@layouts/Base.astro";
+import CtaSection from "@components/sections/CtaSection.astro";
+import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
+import { testimonials as esTestimonials } from "@data/testimonials/es";
+
+const title = "Inglés para Empresas en Guadalajara | Capacitación";
+const seoDescription =
+  "Capacitación de inglés para empresas en Guadalajara y Zapopan. Para gerentes, directores y equipos que trabajan con clientes y colegas en Estados Unidos.";
+
+/**
+ * Filtered against published testimonials, never hardcoded — a company only
+ * appears here while it still has a live named testimonial on the site.
+ */
+const FEATURED_CLIENTS = [
+  "Driscoll's",
+  "Continental",
+  "Sanmina Corporation",
+  "CEVA Logistics",
+  "Terramar Brands",
+  "Grupo Kopar",
+  "Smarttie",
+  "100 Ladrillos",
+];
+const publishedCompanies = new Set(esTestimonials.map((t) => t.company).filter(Boolean));
+const corporateClients = FEATURED_CLIENTS.filter((c) => publishedCompanies.has(c));
+
+const ctaContent = {
+  eyebrow: "Programas Corporativos",
+  title: "¿Quieres que tu equipo trabaje en inglés con soltura?",
+  description:
+    "Empezamos con una llamada corta para entender el tamaño del grupo, los horarios y qué necesita realmente cada persona en su puesto. Respondo en menos de 24 horas.",
+  buttonSubtext: "La llamada toma unos 20 minutos.",
+  buttonText: "Agenda una llamada",
+  buttonLink: "/es/reservar/",
+  secondaryButtonText: "Escríbeme por WhatsApp",
+  secondaryButtonLink: "https://wa.me/523315590572",
+  whatToExpectTitle: "En la llamada vamos a:",
+  whatToExpectList: [
+    "Ubicar el nivel real de comunicación en inglés de tu equipo",
+    "Definir el formato según el tamaño del grupo, los horarios y tu industria",
+    "Acordar cómo se va a medir el avance",
+  ],
+};
+---
+
+<Base
+  title={title}
+  description={seoDescription}
+  lang="es"
+  tkey="corporate/english-for-companies"
+  hideCta={true}
+>
+  <BreadcrumbSchema
+    items={[
+      { name: "Inicio", url: "/es/" },
+      { name: "Inglés para empresas en Guadalajara", url: "/es/ingles-para-empresas-guadalajara/" },
+    ]}
+  />
+
+  <!-- Hero -->
+  <section class="bg-secondary text-white py-20 px-8">
+    <div class="site-container--small mx-auto max-w-3xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-wide mb-4 opacity-80">
+        Capacitación de inglés empresarial
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Clases de Inglés para Empresas en Guadalajara
+      </h1>
+      <p class="text-lg opacity-90">
+        Capacitación personalizada para gerentes, directores y equipos que necesitan trabajar en
+        inglés con clientes, proveedores y líderes internacionales. En línea o en tus oficinas, en
+        Guadalajara y Zapopan.
+      </p>
+    </div>
+  </section>
+
+  <!-- Roster -->
+  {corporateClients.length > 0 && (
+    <section class="bg-white pt-12 pb-6 px-8">
+      <div class="site-container--small mx-auto">
+        <p class="text-center text-sm text-gray-500 mb-6">
+          Líderes de estas empresas han trabajado conmigo uno a uno
+        </p>
+        <ul class="flex flex-wrap justify-center gap-x-8 gap-y-3">
+          {corporateClients.map((name) => (
+            <li class="text-gray-700 font-semibold tracking-tight">{name}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <!-- Para quién es -->
+  <section class="bg-light py-16 px-8">
+    <div class="site-container--small mx-auto max-w-3xl">
+      <h2 class="text-3xl font-bold mb-4 text-center">Para quién es</h2>
+      <p class="text-center text-gray-600 mb-10">
+        No es un curso de inglés general. Es capacitación para gente que ya tiene el puesto y
+        necesita sonar igual de capaz en inglés que en español.
+      </p>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="bg-white rounded-xl p-6 border border-gray-100">
+          <h3 class="font-bold mb-2">Equipos de dirección</h3>
+          <p class="text-gray-600 text-sm">
+            Gerentes y directores que presentan resultados, negocian y reportan a una matriz o a un
+            corporativo en Estados Unidos.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-100">
+          <h3 class="font-bold mb-2">Áreas con contacto internacional</h3>
+          <p class="text-gray-600 text-sm">
+            Ventas, compras, logística, ingeniería y operaciones: las áreas donde una junta en
+            inglés se convierte en dinero o en un retraso.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-100">
+          <h3 class="font-bold mb-2">Empresas en expansión</h3>
+          <p class="text-gray-600 text-sm">
+            Compañías mexicanas que acaban de abrir mercado en Estados Unidos y de pronto necesitan
+            que el inglés deje de ser el cuello de botella.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dos formas de trabajar -->
+  <section class="bg-white py-16 px-8 border-t border-gray-100">
+    <div class="site-container--small mx-auto max-w-4xl">
+      <h2 class="text-3xl font-bold mb-4 text-center">Dos formas de trabajar</h2>
+      <p class="text-center text-gray-600 mb-10">
+        Una con estructura y reportes formales para RH. La otra sin calendario fijo, para equipos
+        que sólo quieren avanzar.
+      </p>
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="border border-gray-200 rounded-xl p-8">
+          <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">
+            Programa estructurado
+          </p>
+          <h3 class="text-xl font-bold mb-3">Programa de 12 semanas para equipos de dirección</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Evaluación inicial, preparación individual, una presentación en grupo frente a sus
+            propios colegas y una evaluación final contra la línea base. Incluye perfil inicial,
+            evaluaciones mensuales, ruta individual por participante y un reporte consolidado para
+            la empresa.
+          </p>
+          <a
+            href="/es/servicios/paquete-corporativo/"
+            class="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline"
+          >
+            Ver el programa completo <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="border border-gray-200 rounded-xl p-8">
+          <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">
+            Coaching continuo
+          </p>
+          <h3 class="text-xl font-bold mb-3">Capacitación flexible, sin estructura formal</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Para equipos que no necesitan la capa de reportes. Sesiones continuas enfocadas en
+            juntas, presentaciones, negociación y comunicación diaria, sin calendario fijo y sin
+            documentación para RH.
+          </p>
+          <a
+            href="/es/servicios/coaching-continuo/"
+            class="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline"
+          >
+            Ver coaching continuo <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo lo evalúan -->
+  <section class="bg-light py-16 px-8">
+    <div class="site-container--small mx-auto max-w-3xl">
+      <h2 class="text-3xl font-bold mb-8 text-center">Cómo lo evalúan las empresas</h2>
+      <div class="space-y-5">
+        <div class="border-l-4 border-primary pl-6">
+          <h3 class="font-bold mb-1">Una clase demo, y tú la observas</h3>
+          <p class="text-gray-600 text-sm">
+            Antes de cualquier compromiso, alguien de tu equipo toma una sesión real y tú la
+            observas. No es una llamada de ventas: es una sesión sobre el trabajo real de esa
+            persona.
+          </p>
+        </div>
+        <div class="border-l-4 border-primary pl-6">
+          <h3 class="font-bold mb-1">Facturación que finanzas puede procesar</h3>
+          <p class="text-gray-600 text-sm">
+            Facturo con RFC mexicano y emito facturas mensuales por las sesiones impartidas. También
+            hay facturación en dólares para empresas que facturan fuera de México.
+          </p>
+        </div>
+        <div class="border-l-4 border-primary pl-6">
+          <h3 class="font-bold mb-1">El precio no baja por volumen</h3>
+          <p class="text-gray-600 text-sm">
+            Cada sesión se construye para el puesto de una persona, así que cinco participantes son
+            cinco preparaciones distintas y no una clase repetida cinco veces.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local -->
+  <section class="bg-white py-16 px-8 border-t border-gray-100">
+    <div class="site-container--small mx-auto max-w-3xl">
+      <h2 class="text-3xl font-bold mb-4 text-center">Guadalajara, Zapopan y en línea</h2>
+      <p class="text-gray-600 text-center">
+        Vivo en Guadalajara. Las sesiones se dan en línea, que es lo que la mayoría de los equipos
+        prefiere porque elimina traslados y se acomoda entre juntas, y también puedo ir a tus
+        oficinas en la zona metropolitana. Para empresas fuera de Jalisco o fuera de México,
+        trabajamos en línea con facturación en pesos o en dólares.
+      </p>
+    </div>
+  </section>
+
+  <!-- RH -->
+  <section class="bg-white py-12 px-8 border-t border-gray-100">
+    <div class="site-container--small mx-auto max-w-3xl">
+      <div class="border-l-4 border-blue-400 pl-8">
+        <p class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-2">
+          Para Recursos Humanos
+        </p>
+        <h2 class="text-xl font-bold mb-3">¿Estás evaluando proveedores para tu empresa?</h2>
+        <p class="text-gray-600 mb-4 text-sm">
+          Hay una página aparte para quien tiene que justificar la inversión internamente: qué
+          entregables recibe RH, cómo se mide el avance y qué preguntar antes de firmar con
+          cualquier proveedor de inglés corporativo.
+        </p>
+        <a
+          href="/es/para-rh/"
+          class="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:underline"
+        >
+          Ver la página para RH <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection content={ctaContent} />
+</Base>
