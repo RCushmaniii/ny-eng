@@ -18,6 +18,27 @@ const corporateTestimonial = esTestimonials.find(
   (t) => t.slug === "jose-antonio-lopez-terramar-brands",
 );
 
+/**
+ * Nombres de empresas del listado de clientes.
+ *
+ * Filtrados contra los testimonios publicados, no escritos a mano: cada nombre
+ * sólo aparece si esa empresa sigue teniendo un testimonio con nombre y cargo
+ * publicado en el sitio. Si se retira un testimonio, el nombre desaparece solo
+ * — que es justo el error que una lista fija dejaría pasar en silencio.
+ */
+const FEATURED_CLIENTS = [
+  "Driscoll's",
+  "Continental",
+  "Sanmina Corporation",
+  "CEVA Logistics",
+  "Terramar Brands",
+  "Grupo Kopar",
+  "Smarttie",
+  "100 Ladrillos",
+];
+const publishedCompanies = new Set(esTestimonials.map((t) => t.company).filter(Boolean));
+const corporateClients = FEATURED_CLIENTS.filter((c) => publishedCompanies.has(c));
+
 const title = "Coaching de Inglés de Negocios | NY English Teacher";
 const seoDescription =
   "Coaching de inglés de negocios 1-a-1 en línea para equipos directivos en México. Programa de 12 semanas con coach nativo de Nueva York.";
@@ -78,6 +99,22 @@ const faqs = serviceFaqs["corporate-package"]?.es || [];
 >
   <!-- Hero -->
   <InnerHero content={heroContent} />
+
+  <!-- Listado de clientes — lo primero que busca quien evalúa por referencia -->
+  {corporateClients.length > 0 && (
+    <section class="bg-white pt-12 pb-4 px-8">
+      <div class="site-container--small mx-auto">
+        <p class="text-center text-sm text-gray-500 mb-6">
+          Líderes de estas empresas han trabajado conmigo uno a uno
+        </p>
+        <ul class="flex flex-wrap justify-center gap-x-8 gap-y-3">
+          {corporateClients.map((name) => (
+            <li class="text-gray-700 font-semibold tracking-tight">{name}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
 
   <!-- Challenge -->
   <Challenge content={challengeContent} background="white" padding="lg" />
@@ -166,6 +203,49 @@ const faqs = serviceFaqs["corporate-package"]?.es || [];
 
       <div class="max-w-2xl mx-auto mt-6 bg-amber-50 border border-amber-200 rounded-xl p-6 text-sm text-amber-900">
         <strong>Los resultados dependen del compromiso individual.</strong> El programa está diseñado para crear avances — pero los avances requieren preparación entre sesiones, participación honesta con la retroalimentación y disposición a actuar bajo presión. Los participantes que se preparan seriamente típicamente ven ganancias de desempeño significativas. Los que asisten pero no se preparan verán resultados limitados.
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo lo evalúan las empresas — las preguntas reales de quien llega por referencia -->
+  <section class="bg-white py-16 px-8 border-t border-gray-100">
+    <div class="site-container--small mx-auto max-w-3xl">
+      <h2 class="text-3xl font-bold mb-2 text-center">Cómo lo evalúan las empresas</h2>
+      <p class="text-center text-gray-600 mb-10">
+        La mayoría de las empresas con las que trabajo llegaron por recomendación de alguien que ya
+        estaba en sesiones. Así se ve la evaluación desde tu lado.
+      </p>
+
+      <div class="space-y-6">
+        <div class="border-l-4 border-primary pl-6">
+          <h3 class="font-bold text-lg mb-2">1. Una clase demo, y tú la observas</h3>
+          <p class="text-gray-600 text-sm">
+            Antes de cualquier compromiso, alguien de tu equipo toma una sesión real y tú la
+            observas. No es una llamada de ventas ni una clase de muestra armada para el demo: es
+            una sesión sobre el trabajo real de esa persona. Vas a ver el coaching, el estilo de
+            corrección y cómo responde tu colega, y decides desde ahí.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-primary pl-6">
+          <h3 class="font-bold text-lg mb-2">2. Facturación que tu área de finanzas puede procesar</h3>
+          <p class="text-gray-600 text-sm">
+            Facturo con RFC mexicano y emito facturas mensuales por las sesiones efectivamente
+            impartidas. También hay facturación en dólares para empresas que facturan fuera de
+            México. Si compras o proveeduría necesita los datos fiscales para dar de alta al
+            proveedor, pídelos y te los mando.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-primary pl-6">
+          <h3 class="font-bold text-lg mb-2">3. El precio no baja por volumen</h3>
+          <p class="text-gray-600 text-sm">
+            No hay descuento por volumen, y prefiero decirlo desde el principio en lugar de que
+            aparezca al final. Cada sesión se construye para el puesto de una persona y su próximo
+            momento de presión real, así que cinco participantes son cinco preparaciones distintas,
+            no una clase repetida cinco veces. La tarifa refleja eso.
+          </p>
+        </div>
       </div>
     </div>
   </section>
