@@ -19,8 +19,8 @@ serviceArea:
   - "Jalisco"
 publish: true
 seo:
-  title: "English Coaching in Chapalita, GDL | NY English"
-  description: "Business and executive English coaching for Chapalita professionals — online, from home, no commute. Book a free session with a New York English teacher."
+  title: "Executive English in Chapalita — Online, No Commute"
+  description: "Executive English coaching for Chapalita professionals, online from home. No drive across Guadalajara. Book a free session with a New York coach."
 ---
 
 If you live in Chapalita, you already know why people fight to stay in this colonia: the shade of the old trees, the calm streets, the Sunday art market spilling around the Glorieta. It's a neighborhood built for people who've arrived — established professionals and families who value quiet and quality. So here's a fair question: why would improving your English mean crossing half of Guadalajara in traffic to sit in a classroom? It shouldn't. I coach business and executive English **online**, which means you build real fluency from your own home in Chapalita — no commute, no parking, no lost evenings. Just focused, high-quality coaching with a New York English teacher.
