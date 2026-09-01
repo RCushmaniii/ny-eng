@@ -112,22 +112,23 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Closes when:* green-lit and a `cold-email`-skill sequence booked.
 
 - [ ] **On-site numbers exist but are dominated by non-human traffic.**
-  *Superseded the "unmeasurable" item on 2026-08-31, when Robert opened the dashboard.*
-  **Vercel Web Analytics works.** 30 days to 2026-08-31: 829 visitors, 1,057 page views,
-  91% bounce. The API 404 is a plan-level limitation, not a disabled toggle — it still
-  returns `404 Web Analytics not found` for the correct project and team IDs while the
-  dashboard renders data, so the API is simply not available on this plan. Pull these
-  numbers by hand; do not script them.
-  *The new problem, and it is the important one:* **the traffic is mostly not people.**
-  Singapore 68% of visitors, desktop 94%, GNU/Linux 15%, bounce 91%, and only ~66 of 829
-  visitors carry a search referrer. Singapore is a major datacenter region, consumer desktop
-  Linux runs 2–4%, and a Mexico-facing audience would skew mobile. Mexico is **4%** — about
-  33 visitors. That is consistent with GSC's 18 clicks/28 days.
-  *Consequence:* the headline visitor count and its ±% are not a readership signal and must
-  not be read as one. A "-12%" month is noise in a number that was never measuring readers.
-  **Use GSC clicks and the per-page table as the real signal.**
-  *Closes when:* a bot-filtered view exists, or the register records a decision to judge
-  readership by GSC only and ignore the Vercel headline number.
+  **Vercel Web Analytics works** (confirmed 2026-08-31 from the dashboard): 829 visitors,
+  1,057 page views, 91% bounce over 30 days. The API 404 is a plan limitation, not a
+  disabled toggle - it still 404s with the correct project AND team IDs while the dashboard
+  renders. Pull these by hand; do not script them.
+  *The traffic is mostly not people.* Singapore 68%, desktop 94%, GNU/Linux 15%, and only
+  ~66 of 829 visitors carry a search referrer. Mexico is 4%, about 33 visitors, consistent
+  with GSC's 18 clicks/28 days. **The headline visitor count and its +/-% are not a
+  readership signal and must not be read as one.**
+  *Corporate conversions are now measured separately and are bot-proof*, added 2026-09-01.
+  A corporate lead requires a form submission, which a crawler does not do, so
+  `corporate_guide_leads.source_page` is a clean signal where pageviews are not. Read it
+  with `node --env-file=.env.local scripts/seo/corporate-leads.mjs`.
+  **Baseline at the time of writing: 5 leads in 365 days, all in April 2026, none since** -
+  3 from `/en/for-hr-managers/`, 1 from `/es/para-rh/`, 1 from `/diagnostic`. The corporate
+  funnel is dormant rather than dead, and that is now a number rather than an impression.
+  *Closes when:* readership is judged by GSC clicks and corporate by this report, with the
+  Vercel headline number explicitly ignored - or a bot-filtered view exists.
 
 - [ ] **`GMB-LOG.md` stale since 2026-03-30**, and it is the only record of the
   best-performing channel (337 customer interactions vs 4 organic clicks/28 days).
@@ -142,6 +143,77 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 > re-added here on 2026-08-06 and removed again the same day — they are real and still
 > open, they are simply not this repo's business. Their full text is in this file's git
 > history at commit `f81fef9` if they need to be moved rather than rewritten.
+
+---
+
+## Session: 2026-09-01 — A second opinion overturned yesterday's corporate conclusion, and the corporate search foundation got built
+
+### Accomplished
+
+- **Took a critique seriously and it was right on three counts.** Yesterday's conclusion —
+  "organic is not a corporate channel, and it isn't a keyword problem" — did not survive
+  checking. (1) The diagnosis counted `capacitación ×7, corporativo ×17` and called that a
+  keyword check; the Spanish corporate page's **title and H1 contained none of `para
+  empresas`, `capacitación` or `Guadalajara`**, so the page had never attempted the category.
+  (2) Berlitz, EF and Harmon Hall were named as the competitive wall **without the SERP ever
+  being looked at**; searching returns none of them, and three of six results target
+  Guadalajara **Spain**, two advertising `cursos bonificados`, a Spanish FUNDAE term with no
+  Mexican meaning. (3) The `tú` cleanup had not reached the corporate pages.
+- **PR #269 — the corporate search foundation.** New category page
+  `/es/ingles-para-empresas-guadalajara/` plus its English twin, both leading with the
+  category term in title and H1. The three corporate pages now target three different
+  intents instead of one keyword: category page → broad term, `paquete-corporativo` →
+  the 12-week program, `para-rh` → the HR evaluator.
+- **Fixed the orphan problem I created.** The new pages were linked from nothing but
+  `i18n.ts`. Now linked from both services indexes and both program pages. An unlinked page
+  does not rank, so shipping them as-is would have wasted the whole exercise.
+- **Corporate conversions are now measurable, and nothing new had to be built.** Every
+  corporate-guide download already wrote `source_page` to Neon; the category pages simply
+  were not wired to that form, and nothing read the column back. Added
+  `scripts/seo/corporate-leads.mjs`. **Baseline: 5 leads in 365 days, all April 2026, none
+  since.** Crucially this signal is bot-proof — a crawler does not submit a form — which
+  makes it trustworthy where the Vercel pageview number is not.
+- **11 `usted` strings converted to `tú`** across `LeadMagnetCallout` and `LeadMagnetForm`,
+  including success and error states.
+- **`para-rh` title cut from 79 to 42 characters.** Google truncates around 60, so half of
+  it had never been visible.
+- **PR #267 homepage titles reworked** to carry category, city and differentiator together
+  rather than differentiation alone.
+
+### Decisions Made
+
+- **Category page owns the broad term; program and HR pages do not.** A comment on each new
+  page records the rule, because the predictable future error is someone "improving" a title
+  straight back into cannibalisation.
+- **Client rosters are filtered against published testimonials, never hardcoded.** A company
+  name renders only while it still has a live named testimonial, so pulling a testimonial
+  retires the claim automatically.
+- **Kept the differentiator in the homepage title** rather than accepting the proposed
+  pure-category replacement. Both fit inside 60 characters, so the trade-off was false.
+
+### Lessons and Surprises
+
+- **Counting word occurrences is not a keyword check.** This was the sharpest correction of
+  the session. Title, H1 and intent alignment decide targeting; frequency in body copy does
+  not, and reporting frequency as evidence produced a confidently wrong conclusion.
+- **Naming competitors without looking at the SERP is the same failure as any other
+  unverified assertion** — and it was used to argue *against* doing work, which is the
+  expensive direction to be wrong in.
+- **An audit's scope is part of its result.** The `tú` audit covered
+  `src/content/blog/es/` and reported the register item settled. Two shared components on
+  the corporate conversion surfaces still said `usted`. The finding should have been stated
+  as "all blog posts use tú," not "the site uses tú."
+- **A helper that prepends will duplicate a block if the anchor is also inside the
+  replacement.** Did exactly that on the services index, caught it by grepping the count
+  rather than by reading the diff.
+
+### Files Touched
+
+`src/pages/{es/ingles-para-empresas-guadalajara,en/corporate-english-training-guadalajara}/index.astro`
+(new), `src/lib/i18n.ts`, `src/pages/{en,es}` services indexes and corporate/HR pages,
+`src/components/sections/LeadMagnet{Callout,Form}.astro`,
+`scripts/seo/corporate-leads.mjs` (new), `scripts/azure-pronounce-lab.mjs`,
+`docs/SESSION_LOG.md`.
 
 ---
 

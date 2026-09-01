@@ -39,9 +39,9 @@ const FEATURED_CLIENTS = [
 const publishedCompanies = new Set(esTestimonials.map((t) => t.company).filter(Boolean));
 const corporateClients = FEATURED_CLIENTS.filter((c) => publishedCompanies.has(c));
 
-const title = "Coaching de Inglés de Negocios | NY English Teacher";
+const title = "Programa de Inglés Corporativo de 12 Semanas";
 const seoDescription =
-  "Coaching de inglés de negocios 1-a-1 en línea para equipos directivos en México. Programa de 12 semanas con coach nativo de Nueva York.";
+  "Programa de 12 semanas de inglés corporativo para equipos directivos en México. Evaluación inicial, seguimiento mensual y reporte consolidado para la empresa.";
 
 const heroContent = {
   title: "Tu equipo de gestión está listo. Su inglés no les está siguiendo el ritmo.",
@@ -289,6 +289,23 @@ const faqs = serviceFaqs["corporate-package"]?.es || [];
       </div>
     </section>
   )}
+
+  <!-- Enlace cruzado — Página de categoría (hub) -->
+  <section class="bg-white py-12 px-8 border-t border-gray-100">
+    <div class="site-container--small mx-auto max-w-3xl">
+      <div class="border-l-4 border-gray-300 pl-8">
+        <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Inglés para empresas</p>
+        <h2 class="text-xl font-bold mb-3">¿Este programa no es lo que buscas?</h2>
+        <p class="text-gray-600 mb-4 text-sm">
+          Este es el programa estructurado de 12 semanas. Si todavía estás viendo opciones de
+          capacitación de inglés para tu empresa en Guadalajara, hay una página que las compara.
+        </p>
+        <a href="/es/ingles-para-empresas-guadalajara/" class="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline">
+          Ver todas las opciones para empresas <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- Enlace cruzado — Página para RH -->
   <section class="bg-white py-12 px-8 border-t border-gray-100">
