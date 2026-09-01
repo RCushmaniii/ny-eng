@@ -16,6 +16,7 @@ export const prerender = true;
 
 import Base from "@layouts/Base.astro";
 import CtaSection from "@components/sections/CtaSection.astro";
+import LeadMagnetForm from "@components/sections/LeadMagnetForm.astro";
 import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
 import { testimonials as enTestimonials } from "@data/testimonials/en";
 
@@ -253,6 +254,8 @@ const ctaContent = {
       </div>
     </div>
   </section>
+
+  <LeadMagnetForm lang="en" sourcePage="/en/corporate-english-training-guadalajara/" />
 
   <CtaSection content={ctaContent} />
 </Base>
