@@ -14,8 +14,8 @@ translations:
   es: "/es/blog/ingles-aduanas-comercio-exterior/"
 publish: true
 seo:
-  title: "English for Customs & Cross-Border Freight"
-  description: "50 essential English terms for customs and freight shipping. Phrases for calling US brokers, emailing about delays, and clearing cargo at the border."
+  title: "50 English Terms for Customs and Cross-Border Freight"
+  description: "The 50 English terms customs and freight work actually runs on. What to say calling a US broker, emailing about a delay, and clearing cargo at the border."
 ---
 
 ## The Nearshoring Boom Created a Language Problem
