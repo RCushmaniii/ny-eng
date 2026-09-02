@@ -124,9 +124,11 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   A corporate lead requires a form submission, which a crawler does not do, so
   `corporate_guide_leads.source_page` is a clean signal where pageviews are not. Read it
   with `node --env-file=.env.local scripts/seo/corporate-leads.mjs`.
-  **Baseline at the time of writing: 5 leads in 365 days, all in April 2026, none since** -
-  3 from `/en/for-hr-managers/`, 1 from `/es/para-rh/`, 1 from `/diagnostic`. The corporate
-  funnel is dormant rather than dead, and that is now a number rather than an impression.
+  **Baseline at the time of writing: ZERO real inbound corporate leads, ever.** The five rows
+  in the table are dated 2026-04-28, the day after the lead magnet shipped, with companies
+  like "III the third" and "IIII" - Robert's launch-day tests. The 2026-09-01 entry first
+  read this as "dormant, not dead"; corrected the same day on checking the company column.
+  The corporate funnel has never produced an inbound lead, and that is the honest baseline.
   *Closes when:* readership is judged by GSC clicks and corporate by this report, with the
   Vercel headline number explicitly ignored - or a bot-filtered view exists.
 

@@ -4,6 +4,9 @@
 > Status: Active
 > Owner: Claude (execution) + Robert (approval & creative direction)
 
+> **Corporate acquisition has its own plan:** `docs/CORPORATE-ACQUISITION-STRATEGY.md`
+> (2026-09-01). The buyer-intent content cluster it calls for is tracked there, not here.
+
 ## Content Roadmap — Long-Tail Blog Posts
 
 Target: Bilingual (EN + ES) posts targeting low-competition, high-intent keywords.

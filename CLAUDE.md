@@ -297,6 +297,10 @@ Every working session creates / updates a log at `docs/session-logs/YYYY-MM-DD-N
 ## Starting a Session — read these two first
 
 - **`docs/SESSION_LOG.md`** — the `## Open Items` register is pinned at the top, above the dated entries. That is the live list of what is actually open. An item leaves it only when verified end to end; "tests pass" and "the config looks right" do not count.
+- **`docs/CORPORATE-ACQUISITION-STRATEGY.md`** — the single owner of "how does NY English get
+  corporate accounts." Channels ranked by revenue proximity against the operating vision, the
+  90-day plan, the decisions only Robert can make, and a dated tracker. Read it before proposing
+  any corporate or growth work; do not re-derive the ranking from scratch.
 - **`docs/PROJECT-CONTEXT.md`** — standing context that never gets checked off: why organic traffic collapsed and how it was fixed, cross-repo infrastructure facts that have already produced three false conclusions, what the search data says, settled decisions not to re-litigate, reusable audit commands, and the environment gotchas that have cost real time.
 
 Replaces the former `docs/HANDOFF.md` (retired 2026-08-06).
