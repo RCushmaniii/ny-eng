@@ -199,10 +199,14 @@ These block specific items above and nothing in a repo can answer them.
 4. **The From address** for outreach (item 3). `send.nyenglishteacher.com` authenticates
    through Resend today; the root domain authenticates through Brevo. One of them has to be
    the sender and it is not a casual choice.
-5. **Capacity ceiling.** At 24 classes a week, how many more sessions can land before teaching
-   eats CushLabs hours? One corporate account of five is roughly +5 sessions a week. The honest
-   answer might be "one account, and let two low-rate individuals go" — and that would be a
-   *good* outcome under the operating vision, not a compromise.
+5. ~~**Capacity ceiling.**~~ **Answered 2026-09-02.** Robert's calendar is already full. The
+   target is **one more corporate account, ideally 2–3 students** — not the +5-seat account
+   the plan modeled, and not a push for more than that. He is "not worried about it" either
+   way, which reads as: this is upside to capture opportunistically, not a number to chase.
+   **Consequence for the plan:** items 1–3 stay exactly as sequenced (referral asks, GBP
+   refresh, outreach) — the target account size just shrinks the bar for "done." One
+   qualifying close on any of those three channels satisfies this cycle. Do not scale outreach
+   volume up to fill a bigger number than the one Robert actually wants.
 
 ---
 
@@ -244,3 +248,5 @@ whole plan exists to move.
 | Date | Item | Action | Outcome |
 |---|---|---|---|
 | 2026-09-01 | — | Strategy written. Category page, retitles, lead capture, `corporate-leads.mjs` shipped. | Baseline: 0 real inbound corporate leads, 3 invoiced accounts, ~19% corporate share. |
+| 2026-09-02 | Decision 5 (capacity ceiling) | Robert answered directly: calendar is full, target is **one more corporate account, 2–3 students**, not urgent. | Target size revised down from the +5-seat model. Items 1–3 unchanged in sequence; "done" bar lowered to one qualifying close. |
+| 2026-09-02 | Ahrefs health score (99) | Reproduced findings locally, fixed 4 causes — see PRs #270, #271. | Health score fix shipped; schema validator now 0 errors / 0 warnings in production. |
