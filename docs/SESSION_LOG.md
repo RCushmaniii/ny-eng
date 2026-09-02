@@ -95,6 +95,10 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 - [ ] **Cold outreach to Guadalajara HR/L&D leads — approved in principle, unbooked.**
   *Blocks:* the highest-value revenue path available here. One corporate account (the
   April 2026 prospect was 4–6 middle managers) outweighs every organic item combined.
+  *Target size revised 2026-09-02:* Robert's calendar is already full. He does not want a
+  volume push — the actual target is **one more corporate account, ideally 2–3 students**,
+  and he is "not worried about it" either way. Do not scale outreach cadence to chase a
+  bigger number than that. Full framing: `docs/CORPORATE-ACQUISITION-STRATEGY.md`.
   *Why it survives where HARO does not:* it makes no public, indexed claim about who
   Robert is. **Email from `@nyenglishteacher.com`, never LinkedIn DM** — a DM routes
   the recipient to the personal profile being protected. LinkedIn for research only.
@@ -137,6 +141,16 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Blocks:* judging whether the review push works — there is no current baseline.
   *Closes when:* Robert supplies current review count, rating and interactions.
 
+- [ ] **Ahrefs health score — confirm the next crawl reads 100.** Added 2026-09-02, PRs
+  #270/#271. Dropped to 99 on the 2026-09-01 crawl; four root causes fixed and verified
+  locally + against production (schema validator 0/0, `validate:redirects` 166/166 clean,
+  0 orphans/dead-category-links in a local `dist/` audit). Stated at 85% confidence because
+  Ahrefs' own "orphan page" finding names no URL — fixed the most likely candidate and
+  verified zero orphans locally, but cannot confirm it matches Ahrefs' specific finding
+  without their next crawl.
+  *Closes when:* the next Ahrefs crawl email shows health score 100, or names a residual
+  orphan URL to chase.
+
 > **Scope rule, added 2026-08-06.** This register holds **ny-eng items only.** Work
 > belonging to another repo goes in that repo's own log — `cushlabs-ai-voice-agent` and
 > `cushlabs-messenger-bot` both have a `SESSION_LOG.md`, and the latter also has
@@ -145,6 +159,48 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 > re-added here on 2026-08-06 and removed again the same day — they are real and still
 > open, they are simply not this repo's business. Their full text is in this file's git
 > history at commit `f81fef9` if they need to be moved rather than rewritten.
+
+---
+
+## Session: 2026-09-02 — Ahrefs health score fixed to 0/0, and Robert set the real corporate target
+
+### Accomplished
+
+- **Fixed the four Ahrefs findings that were genuinely this site's fault** (PRs #270, #271 —
+  full detail already logged under 2026-09-01's entry, since the fix work started there and
+  finished after midnight): `serviceType` removed from `ProfessionalService` schema, 12 dead
+  category links closed at the source, ~200 links to a trailing-slash redirect fixed, and a
+  stale `vercel.json` rule that was shadowing the new corporate hub behind a 308 removed.
+  Verified against production: `validator.schema.org` 0 errors/0 warnings,
+  `npm run validate:redirects` 166/166 clean, full sitemap resubmitted to IndexNow (476 URLs).
+- **Robert answered the capacity-ceiling question** in `docs/CORPORATE-ACQUISITION-STRATEGY.md`
+  directly: his teaching calendar is full, and the real corporate target is **one more
+  account, ideally 2–3 students** — not the ~5-seat account the plan modeled, and not urgent.
+  Strategy doc and Open Items updated same-session so outreach volume doesn't get scaled to a
+  bigger number than the one he actually wants.
+- Ran closeout: memory swept for unwritten decisions (found and fixed one — the capacity
+  answer — before it could be lost), session log reconciled, accomplishment logged.
+
+### Decisions Made
+
+- **Corporate outreach target is small, not a growth campaign.** Robert's own words: "not
+  worried about it." Reframes items 1–3 in the strategy doc as opportunistic, not urgent.
+
+### Immediate Next Steps
+
+- [ ] Confirm the next Ahrefs crawl reads 100 (see Open Items — 85% confidence, named
+      uncertainty is the unnamed "orphan page" finding).
+- [ ] Book the referral asks and GBP refresh (strategy doc Tier 1) — cheapest, closest to
+      money, and now has a concrete small target to hit.
+
+### Technical Debt
+
+- None new this session.
+
+### Open Questions / Blockers
+
+- None new — see Open Items register for standing items (cold outreach, GMB log, GSC
+  re-check windows, the personal-name decision).
 
 ---
 
