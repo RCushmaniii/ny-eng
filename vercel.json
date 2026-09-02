@@ -278,16 +278,6 @@
       "permanent": true
     },
     {
-      "source": "/en/category/corporate-english-training",
-      "destination": "/en/category/business-english/",
-      "permanent": true
-    },
-    {
-      "source": "/en/category/corporate-english-training/",
-      "destination": "/en/category/business-english/",
-      "permanent": true
-    },
-    {
       "source": "/es/categoria/coaching-de-ingles",
       "destination": "/es/categoria/coaching-en-ingles/",
       "permanent": true
@@ -305,16 +295,6 @@
     {
       "source": "/es/categoria/carrera-y-liderazgo/",
       "destination": "/es/categoria/carrera-liderazgo/",
-      "permanent": true
-    },
-    {
-      "source": "/es/categoria/capacitacion-de-ingles-corporativo",
-      "destination": "/es/categoria/ingles-para-negocios/",
-      "permanent": true
-    },
-    {
-      "source": "/es/categoria/capacitacion-de-ingles-corporativo/",
-      "destination": "/es/categoria/ingles-para-negocios/",
       "permanent": true
     },
     {
