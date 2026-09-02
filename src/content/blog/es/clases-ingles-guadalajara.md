@@ -5,7 +5,7 @@ publishDate: "2026-07-01"
 lastmod: "2026-07-01"
 categories:
   - "Inglés para Negocios"
-  - "Coaching de Inglés"
+  - "Coaching en Inglés"
 readingTime: "6 min de lectura"
 audience: "Profesionales de todo Guadalajara que trabajan con clientes de EE.UU. o equipos remotos y quieren mejorar su inglés de negocios o ejecutivo en línea"
 featuredImage: "./images/guadalajara.webp"

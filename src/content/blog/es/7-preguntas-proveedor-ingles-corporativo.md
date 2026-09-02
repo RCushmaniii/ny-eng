@@ -3,7 +3,7 @@ title: "7 Preguntas Que Debe Hacer Todo Gerente de RH Antes de Firmar un Contrat
 excerpt: "Tienes tres propuestas de capacitación de inglés corporativo sobre el escritorio y todas se ven razonables. Estas 7 preguntas atraviesan el barniz y revelan lo que cada proveedor realmente entregará."
 publishDate: "2026-04-29"
 categories:
-  - "Inglés de Negocios"
+  - "Inglés para Negocios"
   - "Capacitación de Inglés Corporativo"
   - "Comunicación de Alto Impacto"
 readingTime: "8 min de lectura"

@@ -3,7 +3,7 @@ title: "Cómo Medir el ROI de la Capacitación de Inglés Corporativo (y Defende
 excerpt: "A tu CFO no le importan los niveles CEFR. Este es el marco financiero para medir el ROI de la capacitación de inglés corporativo — y demostrar que el gasto se paga solo."
 publishDate: "2026-04-29"
 categories:
-  - "Inglés de Negocios"
+  - "Inglés para Negocios"
   - "Capacitación de Inglés Corporativo"
   - "Comunicación de Alto Impacto"
 readingTime: "9 min de lectura"

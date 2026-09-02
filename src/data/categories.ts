@@ -110,6 +110,26 @@ export const categories: Category[] = [
     description_es:
       "Domina la presencia ejecutiva y comunicación estratégica para líderes de nivel C. Destaca en presentaciones y reuniones importantes.",
   },
+  {
+    name: "Pronunciation",
+    name_es: "Pronunciación",
+    slug: "pronunciation",
+    esSlug: "pronunciacion",
+    description:
+      "The English sounds Spanish speakers miss, with audio on every phrase: past-tense endings, the disappearing R, and the words that quietly cost credibility.",
+    description_es:
+      "Los sonidos del inglés que los hispanohablantes pasan por alto, con audio en cada frase: el pasado, la R que desaparece y las palabras que cuestan credibilidad.",
+  },
+  {
+    name: "Corporate English Training",
+    name_es: "Capacitación de Inglés Corporativo",
+    slug: "corporate-english-training",
+    esSlug: "capacitacion-de-ingles-corporativo",
+    description:
+      "For the person who pays for someone else's English: how to evaluate a provider, what HR receives, and what corporate training really costs in Mexico.",
+    description_es:
+      "Para quien paga el inglés de alguien más: cómo evaluar a un proveedor, qué recibe RH y cuánto cuesta realmente la capacitación corporativa en México.",
+  },
 ];
 
 // Helper function to get category by slug

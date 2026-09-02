@@ -4,7 +4,7 @@ excerpt: "Las palabras en inglés que de verdad va a necesitar en una entrevista
 publishDate: "2026-08-28"
 categories:
   - "Pronunciación"
-  - "Carrera y Liderazgo"
+  - "Carrera & Liderazgo"
 readingTime: "12 min de lectura"
 audience: "Hispanohablantes que se preparan para una entrevista de ventas en inglés"
 featuredImage: "./images/pronunciacion-ingles-entrevista-ventas.webp"
