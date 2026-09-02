@@ -181,6 +181,21 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   it had never been visible.
 - **PR #267 homepage titles reworked** to carry category, city and differentiator together
   rather than differentiation alone.
+- **PRs #270 and #271 — the Ahrefs health score, back from 99.** Reproduced the crawl's
+  findings locally against `dist/` instead of trusting it. (1) The 201-page structured-data
+  error was `serviceType` on `ProfessionalService`, which `validator.schema.org` names as an
+  unknown field — it belongs to `Service`. Removed; production now validates 0 errors /
+  0 warnings. (2) Twelve dead category targets: `CategoryPill` slugified any free-text post
+  category into a `/category/` URL whether or not a hub existed. It now renders unmatched
+  categories as text, and Pronunciation and Corporate English Training became real hubs
+  (five posts each) with i18n and translation-map entries. (3) Every quiz entry link lacked
+  the trailing slash the site is canonical on — 32 source files plus two site-index template
+  strings. `/es/book/` was hitting a 301 from three sources. (4) Four `vercel.json` rules
+  written to rescue the old corporate-category slug were now **hiding the new hub behind a
+  308**; removed, and `validate:redirects` confirms 166/166 rules land 200. Not touched:
+  the AI-bot block (robots.txt disallows nothing, so it is a Cloudflare edge setting — Robert's
+  call), the hreflang-crawl notice (Ahrefs analysed 205 of ~500 URLs; that is its crawl
+  budget), and the quiz-results flow redirect (intentional, on a lead surface).
 
 ### Decisions Made
 
