@@ -67,6 +67,8 @@ export const categoryMap: TranslationMap = {
   "career-leadership": "carrera-liderazgo",
   "english-coaching": "coaching-en-ingles",
   "executive-english": "ingles-ejecutivo",
+  pronunciation: "pronunciacion",
+  "corporate-english-training": "capacitacion-de-ingles-corporativo",
   tech: "tecnologia",
   "startup-founders": "ingles-para-fundadores-de-startups",
   // Additional categories that might be needed

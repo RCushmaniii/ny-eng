@@ -4,7 +4,7 @@ excerpt: "El inglés pulido no es opcional en el nivel senior — es un acelerad
 publishDate: "2026-04-30"
 categories:
   - "Inglés Ejecutivo"
-  - "Carrera y Liderazgo"
+  - "Carrera & Liderazgo"
   - "Comunicación de Alto Impacto"
 readingTime: "8 min de lectura"
 audience: "Profesionales senior, directores y gerentes de alto desempeño que están decidiendo si invertir en elevar su inglés ejecutivo"

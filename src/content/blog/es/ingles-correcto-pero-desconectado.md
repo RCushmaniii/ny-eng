@@ -5,7 +5,7 @@ publishDate: "2026-08-13"
 categories:
   - "Inglés Ejecutivo"
   - "Comunicación de Alto Impacto"
-  - "Carrera y Liderazgo"
+  - "Carrera & Liderazgo"
 readingTime: "9 min de lectura"
 audience: "Profesionales senior hispanohablantes cuyo inglés es gramaticalmente sólido pero sienten que sus ideas no aterrizan con el peso que tienen en español"
 featuredImage: "./images/ingles-correcto-pero-desconectado.webp"

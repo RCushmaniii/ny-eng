@@ -6,7 +6,7 @@ lastmod: "2026-08-14"
 categories:
   - "Coaching en Inglés"
   - "Inglés para Negocios"
-  - "Carrera y Liderazgo"
+  - "Carrera & Liderazgo"
 readingTime: "10 min de lectura"
 audience: "Profesionales hispanohablantes que ya se comunican en inglés y quieren que les salga automático en lugar de armado"
 featuredImage: "./images/como-mejorar-tu-ingles.webp"

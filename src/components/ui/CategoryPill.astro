@@ -113,6 +113,21 @@ if (lang === 'es') {
 }
 ---
 
-<a href={normalizePath(categoryUrl)} class="px-2 py-1 text-sm rounded-sm bg-blue-100 text-primary border-blue-200 border flex items-center justify-center leading-none font-medium hover:bg-blue-200 transition-colors duration-300 mr-2 no-underline">
-  {displayName}
-</a>
+{
+  /*
+   * Only a category that has a real hub page gets a link. The old fallback
+   * slugified any free-text category into /category/<name>/ and shipped a
+   * 404 link on every post whose category was not in @data/categories -
+   * twelve distinct dead targets at the time of this change. A pill that
+   * links nowhere is worse than a pill that links nothing.
+   */
+  categoryData ? (
+    <a href={normalizePath(categoryUrl)} class="px-2 py-1 text-sm rounded-sm bg-blue-100 text-primary border-blue-200 border flex items-center justify-center leading-none font-medium hover:bg-blue-200 transition-colors duration-300 mr-2 no-underline">
+      {displayName}
+    </a>
+  ) : (
+    <span class="px-2 py-1 text-sm rounded-sm bg-gray-100 text-gray-600 border-gray-200 border flex items-center justify-center leading-none font-medium mr-2">
+      {displayName}
+    </span>
+  )
+}

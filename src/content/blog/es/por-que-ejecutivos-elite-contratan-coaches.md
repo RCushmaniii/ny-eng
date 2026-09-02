@@ -4,7 +4,7 @@ excerpt: "Los líderes más fuertes del mundo no dominan el inglés ejecutivo so
 publishDate: "2026-05-22"
 categories:
   - "Inglés Ejecutivo"
-  - "Carrera y Liderazgo"
+  - "Carrera & Liderazgo"
   - "Comunicación de Alto Impacto"
 readingTime: "9 min de lectura"
 audience: "Profesionales senior, fundadores y ejecutivos que están decidiendo si vale la pena invertir en un coach de comunicación"
@@ -169,7 +169,7 @@ Si quieres ver en dónde está tu inglés ejecutivo en este momento, [haz el Qui
 
 Si quieres los marcos antes de decidir sobre coaching, empieza con [El Manual de Comunicación Ejecutiva](/es/blog/manual-comunicacion-ejecutiva/) o [Por qué el Inglés Ejecutivo Acelera tu Carrera](/es/blog/por-que-ingles-ejecutivo-acelera-tu-carrera/).
 
-Si ya estás listo para dejar de intentar descifrar esto solo, [agenda una llamada estratégica gratuita](/es/book/). Vamos a ver en dónde está la brecha, cómo se ve un camino acelerado, y si el coaching es la siguiente jugada correcta para ti. Sin presión. Sin pitch. Solo una lectura clara de si esta es la palanca que mueve tu carrera.
+Si ya estás listo para dejar de intentar descifrar esto solo, [agenda una llamada estratégica gratuita](/es/reservar/). Vamos a ver en dónde está la brecha, cómo se ve un camino acelerado, y si el coaching es la siguiente jugada correcta para ti. Sin presión. Sin pitch. Solo una lectura clara de si esta es la palanca que mueve tu carrera.
 
 Los profesionales que llegan al nivel senior rara vez lo hacen por accidente. Llegan ahí porque, en algún punto, dejaron de insistir en hacerlo solos.
 

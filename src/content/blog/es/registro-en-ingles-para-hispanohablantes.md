@@ -5,7 +5,7 @@ publishDate: "2026-05-01"
 categories:
   - "Inglés Ejecutivo"
   - "Comunicación de Alto Impacto"
-  - "Carrera y Liderazgo"
+  - "Carrera & Liderazgo"
 readingTime: "8 min de lectura"
 audience: "Profesionales senior hispanohablantes que dominan el registro sin esfuerzo en español pero sienten que su inglés se aplana en situaciones de alto impacto"
 featuredImage: "./images/registro-en-ingles-para-hispanohablantes.webp"
