@@ -5,10 +5,7 @@ import Base from "@layouts/Base.astro";
 import Hero from "@components/sections/Hero.astro";
 import SplitPanel from "@components/sections/SplitPanel.astro";
 import Features from "@components/sections/Features.astro";
-import RecentPosts from "@components/sections/RecentPosts.astro";
 import Testimonials from "@components/sections/Testimonials-titan.astro";
-import QuizPromotion from "@components/sections/QuizPromotion.astro";
-import FreeCourses from "@components/sections/FreeCourses.astro";
 import HomepageFAQ from "@components/HomepageFAQ";
 import FAQSchema from "@components/seo/FAQSchema.astro";
 import { homepageFAQs } from "@data/homepage-faqs";
@@ -17,8 +14,6 @@ import { homepageFAQs } from "@data/homepage-faqs";
 const lang = "es";
 const tkey = "home";
 
-import { statsLists } from "@data/stats-es";
-import { logoLists } from "@data/logos";
 import { testimonials } from "@data/testimonials-es";
 
 import heroSkyline from "@assets/images/home/new-york-city-skyline.webp";
@@ -28,14 +23,13 @@ import { GraduationCap, Briefcase, Presentation, Users } from "lucide-astro";
 const testimonialsBlock = {
   eyebrow: "Resultados Reales",
   title: "Coaching de Inglés para Profesionales | Robert Cushman",
-  description:
-    "Comentarios reales de clientes reales.",
+  description: "Comentarios reales de clientes reales.",
   testimonials,
   cta: {
     heading: "Para profesionales que lideran en todos los idiomas menos uno.",
     description:
-      "Comienza con una sesión estratégica de cortesía para identificar tus brechas de comunicación y trazar tus objetivos.",
-    text: "Reservar Mi Sesión Estratégica",
+      "En 15 minutos identificaremos la situación profesional que más te importa y si este enfoque es adecuado para ti.",
+    text: "Reservar Diagnóstico de 15 Minutos",
     link: "/es/reservar/",
     rel: "noopener noreferrer",
   },
@@ -46,15 +40,17 @@ const seoDescription =
   "Diriges con autoridad en español. Coaching privado de inglés construido desde tus juntas reales y tu próximo momento de presión, no desde un libro.";
 
 const heroContent = {
-  eyebrow: "Coaching Privado de Inglés para Profesionales Senior",
-  title: "Eres líder en español. Suena como uno en inglés.",
+  eyebrow: "Coaching Privado de Inglés para Líderes en México",
+  title: "Eres líder en español. Que tu inglés refleje la misma experiencia.",
   description:
-    "Lidera reuniones globales con autoridad tranquila. Coaching privado que hace que tu inglés esté a la altura de tu experiencia.",
-  trustLine: "Confiado por líderes en empresas Fortune 500 y startups globales",
+    "Prepara tus juntas, presentaciones, entrevistas y negociaciones reales con un coach estadounidense. Cada sesión se construye alrededor de tu próximo momento profesional importante — no de un libro de texto.",
+  microcopy: "Coaching privado: 500 MXN por sesión de 60 minutos · Diagnóstico inicial sin costo",
+  trustLine:
+    "Resultados con líderes de Driscoll’s México, CEVA Logistics, Smarttie y 100 Ladrillos",
   trustLineLink: "/es/testimonios/",
   buttons: [
     {
-      text: "Reserva una Consulta Privada",
+      text: "Reservar Diagnóstico de 15 Minutos",
       link: "/es/reservar/",
       variant: "primary" as const,
     },
@@ -107,18 +103,6 @@ const featuresSection = {
   ],
 } as const;
 
-const FooterCta = {
-  eyebrow: "",
-  title: "Ya lideras. Ahora suena así — en inglés.",
-  description:
-    "Reserva una sesión estratégica privada. En 30 minutos, identificaré las brechas específicas entre tu inglés actual y la presencia ejecutiva que tu rol exige.",
-  hideCta: false,
-  button: {
-    text: "Reservar Mi Sesión Estratégica",
-    link: "/es/reservar/",
-  },
-} as const;
-
 const styleGuideSection = {
   eyebrow: "Mi Metodología",
   headline: "Cada clase se construye a partir de tu próxima reunión, no de un libro de texto.",
@@ -126,7 +110,7 @@ const styleGuideSection = {
     "Diseño cada sesión en torno a tu rol real, tu industria y tus plazos. Si tienes una presentación ante la junta el jueves, para eso te preparo el miércoles. Nada genérico. Nada teórico.",
   descriptionPoints: [
     "Tu plan de estudios, no un catálogo de cursos — sesiones construidas a partir de tus escenarios reales, el vocabulario de tu industria, tus próximos momentos de presión.",
-    "Tu voz, afinada — retroalimentación táctica sobre tono, pronunciación y las señales sutiles que separan \"fluido\" de \"contundente.\"",
+    'Tu voz, afinada — retroalimentación táctica sobre tono, pronunciación y las señales sutiles que separan "fluido" de "contundente."',
     "Tu espacio de ensayo — simula el pitch, la negociación o la llamada con el cliente antes de que cuente. Comete errores aquí, no allá.",
   ],
   image: {
@@ -135,49 +119,16 @@ const styleGuideSection = {
   },
   buttons: [
     {
-      text: "Explorar El Marco",
-      link: "/es/about",
+      text: "Reservar Diagnóstico de 15 Minutos",
+      link: "/es/reservar/",
       variant: "primary" as const,
     },
   ],
 };
-
-const sideBySideStats = {
-  eyebrow: "ESTADÍSTICAS",
-  title: "Habla y Escribe Inglés con Claridad, Confianza y Facilidad",
-  description:
-    "Ayudo a profesionales a hablar y escribir inglés con claridad, propósito y confianza. Ya sea que te prepares para entrevistas, presentaciones o conversaciones de negocios diarias, te brindaré el apoyo que necesitas.",
-  variant: "side-by-side" as const,
-  stats: statsLists.withContent.stats,
-  content: {
-    title: "Habla y Escribe Inglés con Claridad, Confianza y Facilidad",
-    description:
-      "Ayudo a profesionales a hablar y escribir inglés con claridad, propósito y confianza. Ya sea que te prepares para entrevistas, presentaciones o conversaciones de negocios diarias, te brindaré el apoyo que necesitas.",
-    button: {
-      text: "Trabajemos Juntos",
-      link: "/es/contact",
-    },
-  },
-} as const;
-
-const logosSection = {
-  eyebrow: "Nuestros Clientes",
-  logos: logoLists.main.logos,
-} as const;
-
-const recentPostsSection = {
-  eyebrow: "ÚLTIMOS ARTÍCULOS",
-  title: "Inglés práctico para los momentos que importan.",
-  description: "",
-  button: {
-    text: "Leer el Blog",
-    link: "/es/blog",
-  },
-} as const;
 ---
 
 <Base
-  lang="es"
+  lang={lang}
   tkey={tkey}
   title={seoTitle}
   description={seoDescription}
@@ -192,41 +143,26 @@ const recentPostsSection = {
     {/* ARCS — CALL OUT: "¿Te identificas?" — espejo de identidad */}
     <section class="bg-gray-950 py-16 sm:py-20 border-t border-gray-800">
       <div class="site-container mx-auto px-4 max-w-3xl text-center">
-        <p class="text-sm font-bold uppercase tracking-wider mb-6" style="color: #FFC107; letter-spacing: 0.1em;">
+        <p
+          class="text-sm font-bold uppercase tracking-wider mb-6"
+          style="color: #FFC107; letter-spacing: 0.1em;"
+        >
           ¿Te identificas?
         </p>
         <p class="text-xl sm:text-2xl leading-relaxed text-white font-normal">
-          Si diriges juntas, cierras acuerdos y gestionas equipos en tu idioma nativo — pero te sientes menos preciso, menos contundente, <em class="font-semibold not-italic" style="color: #FFC107;">menos tú mismo</em> cuando cambias al inglés — esto fue creado para ti.
+          Si diriges juntas, cierras acuerdos y gestionas equipos en tu idioma nativo — pero te
+          sientes menos preciso, menos contundente, <em
+            class="font-semibold not-italic"
+            style="color: #FFC107;">menos tú mismo</em
+          > cuando cambias al inglés — esto fue creado para ti.
         </p>
       </div>
     </section>
 
-    <Features content={featuresSection} padding="small" background="light" />
-
-    {/* Biblioteca de cursos gratis — el mayor activo orgánico del sitio, y la
-        señal de confianza más fuerte antes de pedir la evaluación. */}
-    <FreeCourses lang="es" />
-
-    <QuizPromotion lang="es" />
-    <div class="mb-15 pb-0">
-      <Testimonials
-        content={testimonialsBlock}
-        background="base"
-        padding="small"
-      />
-    </div>
-
-    <div
-      class="pt-10 border-t border-gray-200 dark:border-gray-700"
-      style="padding-bottom: var(--spacing-small);"
-    >
-      <RecentPosts
-        content={recentPostsSection}
-        background="base"
-        postsToShow={3}
-      />
-    </div>
-
+    {
+      /* El mecanismo aparece antes de los recursos gratuitos: esta página vende
+        coaching privado antes de ofrecer rutas de autoestudio. */
+    }
     <SplitPanel
       content={styleGuideSection}
       imagePosition="right"
@@ -235,11 +171,67 @@ const recentPostsSection = {
       lang="es"
     />
 
+    <div class="mb-15 pb-0">
+      <Testimonials content={testimonialsBlock} background="base" padding="small" />
+    </div>
+
+    <section class="bg-gray-950 py-16 sm:py-20 text-white">
+      <div class="site-container mx-auto px-4 max-w-5xl">
+        <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-wider mb-4 text-amber-400">
+              Un plan construido alrededor de tu trabajo
+            </p>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              No compras una hora de conversación. Preparas el momento que sigue.
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+              Trabajamos con tus presentaciones, juntas, entrevistas, negociaciones y mensajes
+              reales. Practicas antes de que cuente y recibes retroalimentación enfocada en
+              claridad, pronunciación, tono y presencia profesional.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-gray-700 bg-gray-900 p-7 sm:p-8 shadow-xl">
+            <p class="text-sm font-semibold uppercase tracking-wider text-amber-400 mb-2">
+              Inversión clara
+            </p>
+            <p class="text-4xl font-bold mb-2">500 MXN</p>
+            <p class="text-gray-300 mb-6">por sesión privada de 60 minutos</p>
+            <p class="text-xl font-semibold mb-2">Plan ejecutivo: 6,000 MXN</p>
+            <p class="text-gray-400 mb-7">
+              12 sesiones enfocadas en tu rol, industria y próximos retos profesionales.
+            </p>
+            <a
+              href="/es/reservar/"
+              class="inline-flex w-full items-center justify-center rounded-lg bg-amber-500 px-5 py-3 font-bold text-gray-950 transition hover:bg-amber-400"
+            >
+              Reservar Diagnóstico de 15 Minutos
+            </a>
+            <p class="mt-4 text-center text-sm text-gray-400">Sin costo y sin compromiso.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Features content={featuresSection} padding="small" background="light" />
+
     <!-- Homepage FAQ Section -->
     <FAQSchema faqs={homepageFAQs.es.faqs} />
     <HomepageFAQ client:load lang="es" />
 
-    <!-- Stats temporarily removed -->
-    <!-- <Stats content={sideBySideStats} background="dark" padding="base" /> -->
+    <section class="border-t border-gray-200 bg-white py-12">
+      <div class="site-container mx-auto px-4 text-center">
+        <p class="text-gray-600 mb-4">¿Todavía no estás listo para una conversación privada?</p>
+        <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 font-semibold">
+          <a class="text-primary hover:underline" href="/es/assessments/"
+            >Realizar la evaluación de 90 segundos</a
+          >
+          <a class="text-primary hover:underline" href="/es/cursos/"
+            >Explorar los cursos gratuitos</a
+          >
+          <a class="text-primary hover:underline" href="/es/blog/">Leer recursos prácticos</a>
+        </div>
+      </div>
+    </section>
   </div>
 </Base>

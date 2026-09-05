@@ -68,7 +68,7 @@ export const homepageFAQs: HomepageFAQData = {
       {
         question: "¿Cuál es la inversión para el coaching?",
         answer:
-          "La tarifa actual es de 500 MXN ($30 USD) por sesión o 6,000 MXN ($360 USD) por un plan ejecutivo de 12 sesiones. Cada sesión está diseñada a medida en torno a tu industria específica, tus próximas presentaciones y tus objetivos profesionales. Esto no es un plan de estudios que sigues — es una estrategia construida en torno a tu calendario.",
+          "La tarifa actual es de 500 MXN por sesión privada de 60 minutos o 6,000 MXN por un plan ejecutivo de 12 sesiones. Trabajamos con tus juntas, presentaciones, entrevistas, negociaciones y mensajes reales. No sigues un temario genérico: cada sesión se construye alrededor de tu rol, tu industria y tu próximo reto profesional.",
       },
       {
         question: "¿Cuánto tiempo toma ver resultados?",
@@ -81,15 +81,14 @@ export const homepageFAQs: HomepageFAQData = {
           "Ambos. Proporciono Coaching Ejecutivo 1-a-1 para líderes de C-Suite y Directores que necesitan confidencialidad y precisión. También dirijo Capacitación Corporativa para equipos de TI e Ingeniería que necesitan cerrar la brecha entre código técnico y comunicación de negocios.",
       },
       {
-        question:
-          "¿En qué se diferencia esto de las clases de inglés tradicionales?",
+        question: "¿En qué se diferencia esto de las clases de inglés tradicionales?",
         answer:
           "Las clases tradicionales se enfocan en libros de texto y reglas gramaticales. Yo me enfoco en tu realidad — tus correos reales, tus presentaciones y tus agendas de reuniones próximas se convierten en los materiales de aprendizaje. Simulo tus escenarios de alta presión para que puedas rendir cuando cuenta.",
       },
       {
-        question: "¿Qué incluye la sesión estratégica de cortesía?",
+        question: "¿Qué incluye el diagnóstico de 15 minutos?",
         answer:
-          "Esta es una llamada de diagnóstico, no un discurso de ventas. Evaluaré tus brechas de comunicación actuales, identificaré tus objetivos de lenguaje de mayor impacto y delinearé un plan de 30 días para abordarlos. Saldrás con un plan claro, decidas trabajar conmigo o no.",
+          "Revisaremos la situación profesional en la que más necesitas comunicarte mejor, identificaremos la brecha de mayor impacto y veremos si mi enfoque es adecuado para ti. Es una conversación directa, sin costo y sin compromiso.",
       },
     ],
     ctaText: "¿Aún tienes preguntas?",

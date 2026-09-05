@@ -15,6 +15,7 @@ interface HeroContent {
   eyebrow?: string;
   title: string;
   description: string;
+  microcopy?: string;
   trustLine?: string;
   trustLineLink?: string;
   buttons?: {
@@ -29,14 +30,13 @@ interface HeroContent {
   fullHeight?: boolean;
 }
 
-const { content } = Astro.props;
+const { content } = Astro.props as { content: HeroContent };
 const opacity = content.overlayOpacity ?? 1;
 
 // Helper function to get image type from src
 const getImageType = (imageSrc: string) => {
   if (imageSrc.includes(".webp")) return "image/webp";
-  if (imageSrc.includes(".jpg") || imageSrc.includes(".jpeg"))
-    return "image/jpeg";
+  if (imageSrc.includes(".jpg") || imageSrc.includes(".jpeg")) return "image/jpeg";
   if (imageSrc.includes(".png")) return "image/png";
   return "image/jpeg"; // default fallback
 };
@@ -74,9 +74,7 @@ const backgroundImageMobileType = content.backgroundImageMobile?.src
           type={backgroundImageType}
         />
         <img
-          src={
-            content.backgroundImageMobile?.src ?? content.backgroundImage.src
-          }
+          src={content.backgroundImageMobile?.src ?? content.backgroundImage.src}
           alt="Background image"
           width={content.backgroundImageMobile ? 800 : 1920}
           height={content.backgroundImageMobile ? 1000 : 1080}
@@ -90,11 +88,7 @@ const backgroundImageMobileType = content.backgroundImageMobile?.src
     )
   }
 
-  <div
-    class="hero-background absolute inset-0 w-full h-full"
-    style={`opacity:${opacity};`}
-  >
-  </div>
+  <div class="hero-background absolute inset-0 w-full h-full" style={`opacity:${opacity};`}></div>
 
   <!-- Parallax Buildings Overlay -->
   {
@@ -150,7 +144,7 @@ const backgroundImageMobileType = content.backgroundImageMobile?.src
       {
         content.buttons?.length && (
           <div
-            class="flex flex-wrap justify-center gap-4 mb-12 fade-in-up delay-2"
+            class="flex flex-wrap justify-center gap-4 mb-5 fade-in-up delay-2"
             style="margin-top: 50px;"
           >
             {content.buttons.map((b: HeroButton) => (
@@ -168,11 +162,22 @@ const backgroundImageMobileType = content.backgroundImageMobile?.src
       }
 
       {
+        content.microcopy && (
+          <p
+            class="text-sm sm:text-base font-semibold fade-in-up delay-2"
+            style="color: #ffffff !important;"
+          >
+            {content.microcopy}
+          </p>
+        )
+      }
+
+      {
         content.trustLine && (
           <a
             href={content.trustLineLink || "#"}
             class="text-base sm:text-lg font-semibold fade-in-up delay-3 inline-block transition-all duration-200 hover:opacity-80"
-            style="color: #FFC107 !important; margin-top: 40px; text-decoration: none; border-bottom: 1px solid rgba(255, 193, 7, 0.3);"
+            style="color: #FFC107 !important; margin-top: 28px; text-decoration: none; border-bottom: 1px solid rgba(255, 193, 7, 0.3);"
           >
             {content.trustLine}
           </a>
