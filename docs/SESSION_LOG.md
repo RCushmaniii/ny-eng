@@ -162,6 +162,54 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 
 ---
 
+## Session: 2026-09-05 — Spanish homepage rebuilt around qualified coaching calls
+
+### Accomplished
+
+- Reordered `/es/` around the paid-coaching decision: real-work methodology and named
+  testimonials now precede the offer; the nine-course library, assessment and blog were
+  reduced to secondary links after the conversion content instead of competing with it.
+- Rewrote the hero to name the audience, mechanism, investment and client proof above the
+  fold. Added a dedicated offer block for the 500 MXN private session and 6,000 MXN
+  12-session plan.
+- Standardized the primary action as a free 15-minute professional-English diagnostic,
+  removing the homepage's contradictory 30-minute promise and aligning `/es/reservar/`,
+  the FAQ and booking widget.
+- Added booking qualification for role/company, the real professional situation to prepare,
+  and readiness for the 500 MXN investment. Answers are appended to the existing booking
+  `notes` payload, so the Cloudflare booking API required no change.
+- Formatted all five implementation files. Changed-file ESLint passed; `git diff --check`
+  passed; both local routes returned 200 and contained the new conversion and qualification
+  content. Blog SEO validation and all 21 JSON resource audits passed during prebuild.
+
+### Decisions Made
+
+- Price is shown before booking because the objective is qualified calls, not maximum call
+  volume. A prospect who cannot invest 500 MXN should self-select before taking a calendar
+  slot.
+- Free learning content remains discoverable, but no longer interrupts the paid homepage
+  narrative.
+- Qualification data stays inside the established notes field until lead volume justifies a
+  schema or API expansion.
+
+### Immediate Next Steps
+
+- [ ] After deployment, verify the desktop and mobile homepage, submit one test booking, and
+      confirm the role/company and investment-readiness lines arrive in the calendar event.
+- [ ] Compare qualified bookings over the next 30 days against the pre-change baseline.
+
+### Technical Debt
+
+- Full Astro build could not start Vite inside the restricted Windows sandbox (`spawn EPERM`).
+  Prebuild validations and changed-file lint are green; production/CI build remains the final
+  verification gate.
+
+### Open Questions / Blockers
+
+- None in the implementation. Production verification remains open until deployment.
+
+---
+
 ## Session: 2026-09-02 — Ahrefs health score fixed to 0/0, and Robert set the real corporate target
 
 ### Accomplished
