@@ -278,7 +278,7 @@ export default function QuizReport() {
               <div className="header-logo">
                 <img
                   src="/images/logos/new-york-english-sq-og.jpg"
-                  alt="NY English"
+                  alt="NY English Teacher"
                 />
               </div>
               {/* Print to PDF Button */}

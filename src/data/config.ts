@@ -14,7 +14,7 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  companyName: "New York English Teacher",
+  companyName: "NY English Teacher",
   siteUrl: "https://www.nyenglishteacher.com",
   // Socials feed schema.org `sameAs` (BlogPostSchema, ProfessionalServiceSchema), which is an
   // explicit claim that these profiles are ours. A dead or unowned URL here weakens entity
@@ -34,7 +34,7 @@ export const siteConfig: SiteConfig = {
 
 export const SEO = {
   Separator: "|",
-  SiteName: "New York English Teacher – Your Career Performance Accelerator",
+  SiteName: "NY English Teacher",
   defaultDescription:
     "Professional Business English coaching for career advancement and effective communication",
   defaultLang: "en",
@@ -45,7 +45,7 @@ export const SEO = {
 export const blogSetting = {
   postsPerPage: 6,
   categoryHeroImage: "/images/logos/new-york-english-og.jpg",
-  categoryHeroImageAlt: "New York English Teacher Blog - Business English Resources",
+  categoryHeroImageAlt: "NY English Teacher Blog - Business English Resources",
   siteUrl: "https://www.nyenglishteacher.com",
 } as const;
 

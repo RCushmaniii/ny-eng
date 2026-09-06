@@ -33,7 +33,7 @@ const {
 } = Astro.props;
 
 /** Site constants */
-const SITE_NAME = 'New York English Teacher';
+const SITE_NAME = 'NY English Teacher';
 
 // Clean a trailing ellipsis if present
 const clean = (s: string) => s.replace(/\s*[.…]+$/u, ''); // removes "..." or "…"
@@ -41,7 +41,12 @@ const clean = (s: string) => s.replace(/\s*[.…]+$/u, ''); // removes "..." or 
 /** Compose final title for the <title> tag — do NOT truncate here */
 const baseTitle = clean(title || '');
 const pageTitle = baseTitle ? `${baseTitle} | ${SITE_NAME}` : SITE_NAME;
-const enhancedTitle = `${pageTitle} – Your Career Performance Accelerator`;
+// The brand string must TERMINATE the title. Appending a tagline here put
+// "– Your Career Performance Accelerator" after the brand name on every page,
+// which breaks the exact-match test Meta runs when reviewing a WhatsApp display
+// name against a business website (declined 2026-09-06). It also pushed every
+// title past the 60-char warning below. The tagline lives in the description.
+const enhancedTitle = pageTitle;
 
 // Validate
 warnIf(

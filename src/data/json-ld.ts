@@ -7,7 +7,7 @@ import { siteConfig } from "./config";
 export function generateJsonLd(lang: string = "en") {
   const domain = siteConfig.siteUrl || "https://www.nyenglishteacher.com";
   const cleanDomain = domain.endsWith("/") ? domain.slice(0, -1) : domain;
-  const companyName = siteConfig.companyName || "New York English";
+  const companyName = siteConfig.companyName || "NY English Teacher";
 
   // Determine language-specific properties
   const inLanguage = lang === "es" ? "es-ES" : "en-US";
@@ -22,6 +22,13 @@ export function generateJsonLd(lang: string = "en") {
         "@type": "Organization",
         "@id": `${cleanDomain}/#organization`,
         name: companyName,
+        // Machine-readable proof that the longer legal-entity forms used in the
+        // Terms of Service and Privacy Policy are the SAME entity as the brand
+        // name. Meta's WhatsApp display-name review tests the submitted name for
+        // an exact match against the business website; the site previously served
+        // four different strings and the name was declined 2026-09-06. Keep this
+        // list in sync with any name used in the legal documents.
+        alternateName: ["New York English Teacher", "New York English"],
         url: cleanDomain,
         logo: {
           "@type": "ImageObject",
@@ -92,7 +99,7 @@ export function generateBlogPostJsonLd({
   image,
   publishDate,
   lang = "en",
-  authorName = "New York English",
+  authorName = "NY English Teacher",
   url,
 }: {
   title: string;
