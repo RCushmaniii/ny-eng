@@ -141,6 +141,16 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Blocks:* judging whether the review push works — there is no current baseline.
   *Closes when:* Robert supplies current review count, rating and interactions.
 
+- [ ] **Quiz pages claim a client that does not exist in the testimonial data.**
+  *Added 2026-09-06.* Three pages carry "Trusted by IT leaders at Smarttie, Kopar and
+  Sourceability" — `src/pages/en/quiz/index.astro:88`, `src/pages/es/quiz/index.astro:106`,
+  and the two `_index.astro.disabled` variants. **Sourceability appears nowhere in
+  `src/data/testimonials/`**, so there is no client behind the name.
+  *Blocks:* nothing today; it is an unbacked public claim on a page senior buyers reach
+  from the homepage, which is the kind of thing that costs credibility when noticed.
+  *Closes when:* the line names companies with testimonials behind them — Smarttie and
+  Grupo Kopar are both real clients, so this is a one-name fix, not a rewrite.
+
 - [ ] **Ahrefs health score — confirm the next crawl reads 100.** Added 2026-09-02, PRs
   #270/#271. Dropped to 99 on the 2026-09-01 crawl; four root causes fixed and verified
   locally + against production (schema validator 0/0, `validate:redirects` 166/166 clean,
@@ -159,6 +169,100 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 > re-added here on 2026-08-06 and removed again the same day — they are real and still
 > open, they are simply not this repo's business. Their full text is in this file's git
 > history at commit `f81fef9` if they need to be moved rather than rewritten.
+
+---
+
+## Session: 2026-09-06 — Homepage social proof made honest, and the bare domain stopped bouncing through JavaScript
+
+Four PRs, #273 through #276, across two calendar days. All merged, all verified in
+production.
+
+### Accomplished
+
+- **PR #273** — replaced the mid-page CTA band on both homepages. It was
+  `bg-gradient-to-r from-primary to-secondary` (blue → gold) with a second blurred
+  gradient stacked on top; Robert called it a rainbow smear. Now a solid brand-navy panel
+  with corporate-scale padding. Same PR brought the English homepage level with the
+  Spanish one after #272: matching trust line, 500 MXN hero microcopy, 15-minute
+  diagnostic framing on both CTAs, and the offer/pricing panel after the testimonials.
+- **PR #274** — fixed the CTA body copy, which shipped invisible. See Decisions.
+- **PR #275** — the homepage now names four companies in the hero and shows those same
+  four in the cards below. It had been naming one set and showing another, including
+  Smarttie after Smarttie was removed from the trust line.
+- **PR #276** — the bare domain now 307s at the edge for every visitor. Spanish already
+  did; everyone else got a 200 and a 28.7 KB page whose only job was
+  `window.location.replace("/en/")` in client JS. `src/pages/index.astro` deleted.
+
+### Decisions Made
+
+- **Homepage companies: Driscoll's México, Continental, Sanmina Corporation, CEVA
+  Logistics.** Chosen on recognition with Guadalajara senior professionals, researched
+  rather than assumed. Continental runs ~2,700 people in Tlajomulco since 2001; Sanmina is
+  named with Flex, Jabil and Foxconn as an anchor of the GDL electronics cluster
+  (+60,000 direct jobs 2020–2024).
+- **Terramar Brands stays off the homepage.** It is a *multinivel* direct-sales cosmetics
+  company out of Aguascalientes — its own LinkedIn says so. Alberto Escobar (COO) and
+  José Antonio López (HR Director) are real clients and stay on the testimonials page, but
+  the brand signals a different market than the C-suite and IT audience the homepage
+  addresses. **100 Ladrillos** also dropped from the four: a genuine CNBV-regulated fintech
+  and the only founder voice, but narrower recognition. One-line swap if Robert disagrees.
+- **Trust-line company names deliberately left unlinked.** The hero has one job and #272
+  cut it to a single CTA; four links there create four exits from the
+  highest-converting block. The whole line remains one low-prominence link to the
+  testimonials page. An anchor jump to `#testimonials` would be worse — it throws a cold
+  visitor past the problem and the offer straight to proof they have no context for.
+- **English stays the default fallback at `/`.** Browsers set to Spanish already get
+  `/es/` from the `^es.*` rule; the fallback only catches visitors who chose an English
+  browser, and English is the right guess for them. The mechanism was the bug, not the
+  default.
+- **Both `/` rules are 307, not 301, on purpose.** The response varies by
+  `Accept-Language`; a permanent redirect gets cached by the browser and pins a visitor to
+  one language for good.
+
+### Debugging conclusions worth keeping
+
+- **`src/styles/global.css:83` beats every Tailwind text-colour utility.**
+  `.site-container h2, h3, p, li { color: inherit }` has specificity (0,1,1); `text-gray-300`
+  has (0,1,0). So a `<p>` inside `.site-container` inherits the section colour and ignores
+  its class — which is why the CTA description shipped invisible on the navy panel. The
+  headline survived only because `global.css:50` declares `.text-white` with `!important`.
+  Working dark sections on this site get around it with `text-white` on the container plus
+  an inline `style="color:…"`. **The root fix — rewriting the rule as
+  `:where(.site-container) p` — was deliberately not taken: it changes text colour on
+  500+ pages.**
+- **`vercel.json` rejects unknown keys.** A `"comment"` property inside a redirect object
+  fails schema validation and breaks the deploy. Caught before pushing; the rule-order
+  note went into `CLAUDE.md` instead.
+- **Verify visual changes by rendering them.** PR #273 shipped unreadable text because
+  class presence in the built CSS was treated as proof of contrast. Headless Chrome is
+  already on the machine — no Playwright needed — and
+  `--run-all-compositor-stages-before-draw` is required or the screenshot comes back blank.
+  Full recipe in the `feedback_render_before_shipping_visual_change` memory.
+
+### Immediate Next Steps
+
+- [ ] Fix the Sourceability claim on the quiz pages (new Open Item). Revenue-proximate by
+      the operating ladder — it is an unbacked public claim on a buyer-facing page, and
+      "don't break what pays" outranks everything else on the list.
+- [ ] Decide whether to strip Free Courses, Quiz Promotion and Recent Posts off the English
+      homepage so it matches the Spanish funnel exactly. Left undone on purpose: those are
+      the largest internal-linking surface on the site, so it is an SEO decision, not a
+      design one.
+- [ ] Watch the GSC window for `/` — it was `noindex` and crawled 2026-09-03; it is now a
+      307. Nothing should change, since it was never indexed.
+
+### Technical Debt
+
+- `global.css` overriding Tailwind text utilities is unfixed and will bite again. Every new
+  dark panel needs `text-white` on the container or an inline colour.
+- Card quotes for Continental and Sanmina are hand-trimmed excerpts living in
+  `src/data/testimonials.ts` / `testimonials-es.ts`, separate from the full versions in
+  `src/data/testimonials/`. A comment now ties the card set to the hero trust line, but
+  nothing enforces it.
+
+### Open Questions / Blockers
+
+- None. Everything opened this session is either merged or in the register above.
 
 ---
 
