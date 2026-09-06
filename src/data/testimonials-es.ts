@@ -8,29 +8,15 @@ export interface Testimonial {
   avatar: ImageMetadata;
 }
 
-import julioTestimonial from "../assets/images/testimonials/julio-testimonial.jpg";
-import hugobTestimonial from "../assets/images/testimonials/hugob-testimonial.jpg";
 import andresTestimonial from "../assets/images/testimonials/andres-testimonial.jpg";
+import hugolTestimonial from "../assets/images/testimonials/hugo-l-testimonial.jpg";
+import karlaTestimonial from "../assets/images/testimonials/karla-testimonial.jpg";
 import andreaTestimonial from "../assets/images/testimonials/andrea-testimonial.jpg";
 
+// Estas cuatro tarjetas deben coincidir, en orden, con las empresas nombradas en
+// la línea de confianza del hero en src/pages/es/index.astro. Si cambias una,
+// cambia la otra: nombrar una empresa que no aparece abajo destruye la prueba.
 export const testimonials: Testimonial[] = [
-  {
-    content:
-      "El coaching de Robert no solo mejoró mi inglés, sino que aumentó mi confianza al presentar a clientes e inversionistas. Nuestras conversaciones sobre negocios, tecnología y temas globales <strong>expandieron mi vocabulario del mundo real y mejoraron mi forma de comunicarme.</strong> ¡Un verdadero cambio de juego!",
-    author: "Julio Aldana",
-    position: "COO",
-    company: "Smarttie",
-    avatar: julioTestimonial,
-  },
-
-  {
-    content:
-      "Ser fundador significa estar constantemente presentando, persuadiendo y liderando. El coaching de Robert me dio <strong>las herramientas lingüísticas —y la confianza— para hacerlo todo en inglés.</strong> Ha marcado una verdadera diferencia en la presentación de acuerdos y la conexión con mi equipo",
-    author: "Hugo Blum",
-    position: "CEO",
-    company: "100 Ladrillos",
-    avatar: hugobTestimonial,
-  },
   {
     content:
       "El coaching con Robert me ayudó a sentirme mucho más seguro y natural al hablar inglés, especialmente con clientes estadounidenses. Ahora me siento <strong>más cómodo en las conversaciones y mejor preparado para reuniones transfronterizas.</strong>",
@@ -38,6 +24,22 @@ export const testimonials: Testimonial[] = [
     position: "COO – México",
     company: "Driscoll's",
     avatar: andresTestimonial,
+  },
+  {
+    content:
+      "Pasé de sentirme inseguro en conversaciones de alto nivel a <strong>hablar con seguridad en reuniones de alta dirección</strong> y presentar actualizaciones complejas con claridad y persuasión. Gracias a su coaching, mi fluidez, pronunciación y presencia general han mejorado notablemente, y ahora enfrento <strong>conversaciones críticas con verdadera confianza.</strong>",
+    author: "Hugo Lopez",
+    position: "Gerente de Testing y EPM",
+    company: "Continental",
+    avatar: hugolTestimonial,
+  },
+  {
+    content:
+      "Necesitaba asistir a reuniones con ejecutivos de alto nivel de clientes para presentar propuestas, soluciones o explicar información relacionada con la logística. El coaching de Robert no solo me ha permitido superar estos desafíos, sino que también <strong>me ha dado la confianza para presentarme de manera más profesional.</strong>",
+    author: "Karla Bernal",
+    position: "Gerente Sr. de Logística",
+    company: "Sanmina Corporation",
+    avatar: karlaTestimonial,
   },
   {
     content:
