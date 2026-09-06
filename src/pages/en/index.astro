@@ -38,9 +38,10 @@ const testimonialsBlock = {
   cta: {
     heading: "For professionals who lead in every language but one.",
     description:
-      "Start with a complimentary strategy session to identify your communication gaps and map your goals.",
-    text: "Book My Strategy Session",
+      "In 15 minutes we’ll identify the professional situation that matters most to you — and whether this approach is right for you.",
+    text: "Book a 15-Minute Diagnostic",
     link: "/en/book/",
+    rel: "noopener noreferrer",
   },
 };
 
@@ -58,12 +59,14 @@ const heroContent = {
   description:
     "Lead global meetings with calm authority. Private coaching that makes your English match your expertise.",
 
-  trustLine: "Trusted by leaders at Fortune 500 companies and global startups.",
+  microcopy: "Private coaching: 500 MXN per 60-minute session · First diagnostic at no cost",
+  trustLine:
+    "Results with leaders at Driscoll’s Mexico, CEVA Logistics, Sanmina Corporation, and 100 Ladrillos",
   trustLineLink: "/en/testimonials/",
 
   buttons: [
     {
-      text: "Start My Strategy Session",
+      text: "Book a 15-Minute Diagnostic",
       link: "/en/book/",
       // DESIGN NOTE:
       // To get the Gold/Orange button that pops against the blue,
@@ -255,6 +258,47 @@ const recentPostsSection = {
         padding="small"
       />
     </div>
+
+    {/* Offer + pricing — mirrors the Spanish homepage so both languages
+        state the investment before the ask. */}
+    <section class="bg-gray-950 py-16 sm:py-20 text-white">
+      <div class="site-container mx-auto px-4 max-w-5xl">
+        <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-wider mb-4 text-amber-400">
+              A plan built around your work
+            </p>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-5">
+              You don’t buy an hour of conversation. You prepare for what comes next.
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-300">
+              We work from your real presentations, meetings, interviews, negotiations and
+              messages. You practice before it counts and get feedback focused on clarity,
+              pronunciation, tone and professional presence.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-gray-700 bg-gray-900 p-7 sm:p-8 shadow-xl">
+            <p class="text-sm font-semibold uppercase tracking-wider text-amber-400 mb-2">
+              Clear investment
+            </p>
+            <p class="text-4xl font-bold mb-2">500 MXN</p>
+            <p class="text-gray-300 mb-6">per 60-minute private session</p>
+            <p class="text-xl font-semibold mb-2">Executive plan: 6,000 MXN</p>
+            <p class="text-gray-400 mb-7">
+              12 sessions focused on your role, your industry and the professional challenges
+              ahead of you.
+            </p>
+            <a
+              href="/en/book/"
+              class="inline-flex w-full items-center justify-center rounded-lg bg-amber-500 px-5 py-3 font-bold text-gray-950 transition hover:bg-amber-400"
+            >
+              Book a 15-Minute Diagnostic
+            </a>
+            <p class="mt-4 text-center text-sm text-gray-400">Free of charge, no obligation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div
       class="pt-10 border-t border-gray-200 dark:border-gray-700"
