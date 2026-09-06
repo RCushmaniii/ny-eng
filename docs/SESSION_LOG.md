@@ -141,6 +141,17 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Blocks:* judging whether the review push works — there is no current baseline.
   *Closes when:* Robert supplies current review count, rating and interactions.
 
+- [ ] **`feat/verb-patterns-course` has been sitting unmerged since 2026-07-08.**
+  *Added 2026-09-06 by the closeout gate*, which is the first time anything checked.
+  Three commits ahead of `main` — Verb Patterns Level 1 lessons 2–3 plus the Foundations
+  exam, bilingual. It is pushed to `origin`, so the work is not at risk, but it breaks the
+  one-branch-at-a-time rule and every branch opened since started from a `main` that does
+  not contain it.
+  *Blocks:* nothing shipping; it is decision debt — two months of not deciding whether
+  that course level goes live.
+  *Closes when:* the branch is rebased on current `main` and merged, or deleted with the
+  reason recorded here.
+
 - [ ] **Quiz pages claim a client that does not exist in the testimonial data.**
   *Added 2026-09-06.* Three pages carry "Trusted by IT leaders at Smarttie, Kopar and
   Sourceability" — `src/pages/en/quiz/index.astro:88`, `src/pages/es/quiz/index.astro:106`,
