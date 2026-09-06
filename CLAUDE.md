@@ -238,6 +238,16 @@ both forms** (including `:slug` catch-alls), with destinations pointing at the s
 form. After any redirect change reaches production, run `npm run validate:redirects` —
 never verify by hand. Background: `docs/REDIRECT-INCIDENT-2026-08-05.md`.
 
+**The bare domain is language-negotiated, and rule order is load-bearing.** The
+first two entries in `vercel.json` `redirects` both have `"source": "/"`. The
+first matches `accept-language: ^es.*` and 307s to `/es/`; the second is the
+fallback and 307s to `/en/`. Vercel takes the FIRST match, so swapping them
+sends every Spanish-speaking visitor to the English homepage. Both are
+deliberately temporary (`"permanent": false`) because the response varies by
+header -- a 301 gets cached by the browser and pins a visitor to one language
+permanently. `vercel.json` rejects unknown keys, so this note cannot live as a
+`"comment"` in the file itself.
+
 ### Off-site marketing — document it and book it, never list it in chat
 
 Anything outside this website (citations, directories, LinkedIn, HARO/Featured, chambers,
