@@ -14,7 +14,7 @@ interface Props {
 
 const { variant = "header", transparentMode = false } = Astro.props;
 
-const altText = "NY English Logo";
+const altText = "NY English Teacher";
 ---
 
 {
@@ -32,7 +32,7 @@ const altText = "NY English Logo";
         alt={altText}
         class="h-10 w-auto logo-dark hidden absolute top-0 left-0"
       />
-      <span class="sr-only">NY English</span>
+      <span class="sr-only">NY English Teacher</span>
     </div>
   ) : (
     <Image src={logoForWhiteBg} alt={altText} class="h-10 w-auto" />

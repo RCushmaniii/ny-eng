@@ -43,7 +43,7 @@ faq:
     answer: >-
       La primera sesión es gratuita y sin compromiso: platicamos qué exige tu trabajo y te muestro exactamente cómo lo abordaría el coaching. A partir de ahí, el programa se arma según tus objetivos y tu disponibilidad, ya sea coaching individual continuo o un paquete para tu equipo. La mejor forma de conocer el enfoque es reservar esa sesión inicial gratuita.
 seo:
-  title: "Coaching de Inglés de Negocios en Línea | NY English"
+  title: "Coaching de Inglés de Negocios en Línea"
   description: "Coaching de inglés de negocios uno a uno para profesionales en México. Entrena juntas, presentaciones y negociación con un coach de Nueva York. Sesión gratis."
 ---
 

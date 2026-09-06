@@ -38,7 +38,7 @@ faq:
     answer: >-
       The first session is free and no-obligation: we talk through what your work demands and I show you exactly how the coaching would target it. From there, the program is built around your goals and availability, whether that's ongoing one-on-one coaching or a package for your team. The best way to see the approach is to book that free initial session.
 seo:
-  title: "Business English Coaching Online | NY English"
+  title: "Business English Coaching Online"
   description: "One-on-one business English coaching for professionals in Mexico. Train meetings, presentations, and negotiation with a New York coach. Free first session."
 ---
 

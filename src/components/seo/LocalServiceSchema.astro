@@ -27,6 +27,12 @@ const service = {
     "@type": "ProfessionalService",
     "@id": `${siteUrl}/#professional-service`,
     "name": siteConfig.companyName,
+    // Machine-readable proof that the longer forms used in the Terms of Service,
+    // Privacy Policy and blog prose name the SAME entity as the brand. Meta's
+    // WhatsApp display-name review tests the submitted name for an exact match
+    // against the business website; the site served five different strings and the
+    // name was declined 2026-09-06. Keep in sync with the legal documents.
+    "alternateName": ["New York English Teacher", "New York English"],
     "url": siteUrl,
   },
   "areaServed": areaServed.map((area) => ({
