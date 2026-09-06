@@ -18,6 +18,11 @@
       "permanent": false
     },
     {
+      "source": "/",
+      "destination": "/en/",
+      "permanent": false
+    },
+    {
       "source": "/eng-lesson/when-to-use-say-or-tell",
       "destination": "/en/blog/say-vs-tell/",
       "permanent": true
