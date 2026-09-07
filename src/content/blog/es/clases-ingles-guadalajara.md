@@ -18,7 +18,7 @@ serviceArea:
   - "Jalisco"
 publish: true
 seo:
-  title: "Clases de Inglés en Guadalajara | NY English"
+  title: "Clases de Inglés en Guadalajara"
   description: "Coaching de inglés en línea para profesionales tech de Guadalajara, de un coach que trabajó como desarrollador y gerente de TI. Para devs, PMs y líderes de TI."
 ---
 

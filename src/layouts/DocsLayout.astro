@@ -9,7 +9,7 @@ export interface Props {
   description?: string;
 }
 
-const { title, description = "NY English Teacher Documentation" } = Astro.props;
+const { title, description = "New York English Teacher Documentation" } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,7 +17,7 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} | NY English Teacher Docs</title>
+    <title>{title} | New York English Teacher Docs</title>
     <meta name="description" content={description} />
 
     <!-- Internal engineering documentation — noindex. See MarkdownLayout.astro
@@ -397,12 +397,12 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
           <div class="flex items-center gap-4">
             <img
               src="/images/logos/new-york-english-sq-og.jpg"
-              alt="NY English Teacher Logo"
+              alt="New York English Teacher Logo"
               class="w-12 h-12 rounded-lg shadow-lg"
             />
             <div>
               <h1 class="text-2xl font-bold text-white tracking-tight">
-                NY English Teacher Documentation
+                New York English Teacher Documentation
               </h1>
               <p class="text-slate-300 text-sm mt-0.5">Development Preview</p>
             </div>
@@ -468,7 +468,7 @@ const { title, description = "NY English Teacher Documentation" } = Astro.props;
       <!-- Footer -->
       <footer class="mt-12 pt-8 border-t border-gray-200">
         <div class="flex justify-between items-center text-sm text-gray-500">
-          <p>NY English Teacher Documentation</p>
+          <p>New York English Teacher Documentation</p>
           <p>Last updated: {new Date().toLocaleDateString()}</p>
         </div>
       </footer>

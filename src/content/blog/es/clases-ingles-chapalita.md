@@ -19,7 +19,7 @@ serviceArea:
   - "Jalisco"
 publish: true
 seo:
-  title: "Clases de inglés en Chapalita, GDL | NY English"
+  title: "Clases de inglés en Chapalita, GDL"
   description: "Coaching de inglés de negocios y ejecutivo para profesionales de Chapalita: en línea, desde casa, sin traslados. Reserva una sesión gratis con un maestro de NY."
 ---
 

@@ -27,8 +27,8 @@ const filteredMemes: Meme[] = memesByRole[currentRole as MemeRole] || [];
 const roleLabel = roleLabels[currentRole as MemeRole];
 const title =
   currentRole === "all"
-    ? "Portafolio de Memes | NY English Teacher"
-    : `Memes para ${roleLabel} | NY English Teacher`;
+    ? "Portafolio de Memes"
+    : `Memes para ${roleLabel}`;
 const description =
   roleSeoDescriptions[currentRole as MemeRole] ||
   "Memes divertidos de inglés en el trabajo para profesionales en negocios globales.";

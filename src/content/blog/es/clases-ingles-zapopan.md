@@ -18,7 +18,7 @@ serviceArea:
   - "Jalisco"
 publish: true
 seo:
-  title: "Inglés de Negocios en Zapopan | NY English"
+  title: "Inglés de Negocios en Zapopan"
   description: "Coaching de inglés de negocios y ejecutivo en línea para profesionales corporativos en Zapopan. Para juntas, clientes de EE. UU. y agendas exigentes."
 ---
 

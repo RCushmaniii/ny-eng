@@ -4,8 +4,8 @@ lastUpdated: "2026-04-10"
 translations:
   en: "/en/legal/data-deletion/"
 seo:
-  title: "Eliminar Tus Datos | NY English Teacher"
-  description: "Solicita la eliminación de tus datos personales del Asistente de Messenger de NY English Teacher. Proceso sencillo con respuesta garantizada en 30 días."
+  title: "Eliminar Tus Datos | New York English Teacher"
+  description: "Solicita la eliminación de tus datos personales del Asistente de Messenger de New York English Teacher. Proceso sencillo con respuesta garantizada en 30 días."
 ---
 
 ## Instrucciones de Eliminación de Datos

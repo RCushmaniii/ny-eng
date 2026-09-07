@@ -18,7 +18,7 @@ serviceArea:
   - "Jalisco"
 publish: true
 seo:
-  title: "English Coaching in Guadalajara | NY English"
+  title: "English Coaching in Guadalajara"
   description: "Online business English coaching for Guadalajara tech professionals — from a coach who worked as a developer and IT manager. For devs, PMs and IT leads."
 ---
 

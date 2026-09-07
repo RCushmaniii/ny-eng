@@ -18,7 +18,7 @@ serviceArea:
   - "Jalisco"
 publish: true
 seo:
-  title: "Business English Coaching in Zapopan | NY English"
+  title: "Business English Coaching in Zapopan"
   description: "Online business and executive English coaching for corporate professionals in Zapopan. Built for meetings, US clients, and a demanding work schedule."
 ---
 

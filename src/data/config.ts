@@ -28,13 +28,13 @@ export const siteConfig: SiteConfig = {
     LinkedIn: "", // was .../company/new-york-english-teacher — 404, does not exist (2026-07-25)
     Email: "info@nyenglishteacher.com",
     Phone: "",
-    Location: "New York, NY",
+    Location: "Guadalajara, Jalisco, Mexico",
   } as const,
 };
 
 export const SEO = {
   Separator: "|",
-  SiteName: "New York English Teacher – Your Career Performance Accelerator",
+  SiteName: "New York English Teacher",
   defaultDescription:
     "Professional Business English coaching for career advancement and effective communication",
   defaultLang: "en",
