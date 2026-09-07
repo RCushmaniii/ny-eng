@@ -501,7 +501,7 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
     es: [
       {
         question: "¿En qué se diferencia esto de enviar empleados a un curso de inglés regular?",
-        answer: "Un curso de inglés estándar enseña gramática y vocabulario con un temario genérico. Este programa está construido alrededor del rol real de cada participante, sus presentaciones reales y sus brechas de comunicación específicas — y luego usa la presión de pares en la sesión grupal para sacar a la luz la brecha entre la preparación privada y el desempeño público. Es un problema diferente y requiere una solución diferente."
+        answer: "Un curso de inglés estándar enseña gramática y vocabulario con un temario genérico. Este programa está construido alrededor del rol real de cada participante, sus presentaciones reales y sus brechas de comunicación específicas — y luego pone a cada quien a presentar frente a sus pares para sacar a la luz la brecha entre la preparación privada y el desempeño público. Es un problema diferente y requiere una solución diferente."
       },
       {
         question: "¿Qué nivel de inglés necesitan tener los participantes para unirse a este programa?",
@@ -521,7 +521,7 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
       },
       {
         question: "¿Cómo funciona realmente la estructura de sesiones — individuales, grupales o ambas?",
-        answer: "Principalmente individuales, con una sesión grupal de alta presión en el momento crucial. Las Fases 1 y 3 son casi completamente 1:1 — cada participante trabaja en privado con Robert en su preparación y su debrief personal. La Fase 2 es la sesión grupal, donde cada participante entrega su presentación preparada frente a todo el equipo. La mayoría no ha hecho esto antes. La combinación es deliberada: las sesiones individuales construyen la preparación, la sesión grupal expone la brecha entre la preparación privada y el desempeño público bajo presión de pares. Esa brecha es el objetivo real."
+        answer: "Principalmente individuales, con una sesión grupal de alta presión en el momento crucial. Las Fases 1 y 3 son casi completamente 1:1 — cada participante trabaja en privado con Robert en su preparación y su debrief personal. La Fase 2 es la sesión grupal, donde cada participante entrega su presentación preparada frente a todo el equipo. La mayoría no ha hecho esto antes. La combinación es deliberada: las sesiones individuales construyen la preparación, la sesión grupal expone la brecha entre la preparación privada y el desempeño público frente a sus propios pares. Esa brecha es el objetivo real."
       },
       {
         question: "¿Qué incluyen exactamente las revisiones formales?",

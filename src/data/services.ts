@@ -186,7 +186,7 @@ export const paqueteCorporativo: Service = {
   title: "Valentía al Liderar en Inglés",
   icon: "🏢",
   description:
-    "Un programa de 12 semanas para equipos de liderazgo senior. Preparación individual, presentación grupal bajo presión de pares y evaluación final — diseñado para cerrar la brecha entre la fluidez privada y el desempeño público.",
+    "Un programa de 12 semanas para equipos de liderazgo senior. Preparación individual, presentación frente al grupo de liderazgo y evaluación final — diseñado para cerrar la brecha entre la fluidez privada y el desempeño público.",
   link: "/es/servicios/paquete-corporativo/",
   backgroundImage: executiveEnglishImage,
   squareImage: executiveEnglishSquareImage,

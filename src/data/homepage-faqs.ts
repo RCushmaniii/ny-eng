@@ -45,7 +45,7 @@ export const homepageFAQs: HomepageFAQData = {
       {
         question: "Do you work with teams or individuals?",
         answer:
-          "Both. I provide 1-on-1 Executive Coaching for C-Suite leaders and Directors who need confidentiality and precision. I also lead Corporate Training for IT and Engineering teams who need to bridge the gap between technical code and business communication.",
+          "Both. Private 1-on-1 coaching is for leaders who need confidentiality and precision — 500 MXN per session, built around your own meetings and presentations. For teams there is a structured 12-week corporate program: individual preparation, a presentation delivered in English in front of the leadership group, an initial and final assessment, written monthly assessments and a consolidated report for HR — 600 MXN per session per participant, invoiced with a Mexican factura. You will find it under Corporate in the menu.",
       },
       {
         question: "How is this different from traditional English classes?",
@@ -78,7 +78,7 @@ export const homepageFAQs: HomepageFAQData = {
       {
         question: "¿Trabajas con equipos o individuos?",
         answer:
-          "Ambos. Proporciono Coaching Ejecutivo 1-a-1 para líderes de C-Suite y Directores que necesitan confidencialidad y precisión. También dirijo Capacitación Corporativa para equipos de TI e Ingeniería que necesitan cerrar la brecha entre código técnico y comunicación de negocios.",
+          "Ambos. El coaching privado 1-a-1 es para líderes que necesitan confidencialidad y precisión — 500 MXN por sesión, construido alrededor de tus propias juntas y presentaciones. Para equipos hay un programa corporativo estructurado de 12 semanas: preparación individual, una presentación en inglés frente al grupo de liderazgo, evaluación inicial y final, evaluaciones mensuales por escrito y un reporte consolidado para RH — 600 MXN por sesión por participante, con factura mexicana. Lo encuentras en el menú, bajo Corporativo.",
       },
       {
         question: "¿En qué se diferencia esto de las clases de inglés tradicionales?",

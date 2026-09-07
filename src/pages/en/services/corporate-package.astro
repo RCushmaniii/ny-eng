@@ -106,7 +106,8 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
     <section class="bg-white pt-12 pb-4 px-8">
       <div class="site-container--small mx-auto">
         <p class="text-center text-sm text-gray-500 mb-6">
-          Leaders at these companies have worked with me one to one
+          This program was delivered to the management team at Terramar Brands. Leaders at these
+          companies have worked with me one to one.
         </p>
         <ul class="flex flex-wrap justify-center gap-x-8 gap-y-3">
           {corporateClients.map((name) => (
@@ -266,11 +267,32 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
         <p class="text-xs text-gray-400 mt-4">Total varies because schedules vary — not every participant attends every possible session. USD pricing available for international companies.</p>
       </div>
 
+      <div class="max-w-2xl mx-auto mt-6 bg-gray-50 border border-gray-200 rounded-xl p-6 text-sm text-gray-600">
+        <strong class="text-gray-900">What the corporate rate covers that individual coaching does not.</strong>
+        My private 1-on-1 coaching is 500 MXN per session and that is exactly what it is: the
+        session. The 600 MXN corporate rate adds the group presentation session in front of the
+        leadership team, the initial assessment and the final one measured against that baseline,
+        written monthly assessments, each participant's individual roadmap, and the consolidated
+        report for HR and executive review. If what your team needs is sessions without that
+        measurement and reporting layer, individual coaching is the right call and it costs less.
+      </div>
+
       <div class="max-w-2xl mx-auto mt-6 bg-amber-50 border border-amber-200 rounded-xl p-6 text-sm text-amber-900">
         <strong>Results depend on individual commitment.</strong> The program is designed to create breakthroughs — but breakthroughs require preparation between sessions, honest engagement with feedback, and the willingness to perform under pressure. Participants who prepare seriously typically see significant performance gains. Those who attend but don't prepare will see limited results.
       </div>
     </div>
   </section>
+
+  <!-- Client Testimonial -->
+  {corporateTestimonial && (
+    <section class="bg-white py-16 px-8 border-t border-gray-100">
+      <div class="site-container--small mx-auto max-w-2xl">
+        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2 text-center">From a Recent Client</p>
+        <h2 class="text-3xl font-bold mb-10 text-center">What HR Leadership Says</h2>
+        <TestimonialCard testimonial={corporateTestimonial} showHeadline={true} showReadMore={false} />
+      </div>
+    </section>
+  )}
 
   <!-- How companies evaluate this — the referred buyer's real questions -->
   <section class="bg-white py-16 px-8 border-t border-gray-100">
@@ -344,16 +366,14 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
     </div>
   </section>
 
-  <!-- Client Testimonial -->
-  {corporateTestimonial && (
-    <section class="bg-white py-16 px-8 border-t border-gray-100">
-      <div class="site-container--small mx-auto max-w-2xl">
-        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2 text-center">From a Recent Client</p>
-        <h2 class="text-3xl font-bold mb-10 text-center">What HR Leadership Says</h2>
-        <TestimonialCard testimonial={corporateTestimonial} showHeadline={true} showReadMore={false} />
-      </div>
-    </section>
-  )}
+  <!-- Lead Magnet Form (conversion surface before final CTA) -->
+  <LeadMagnetForm lang="en" sourcePage="/en/services/corporate-package/" />
+
+  <!-- CTA -->
+  <CtaSection content={ctaContent} />
+
+  <!-- FAQ -->
+  <ServiceFAQ faqs={faqs} lang="en" />
 
   <!-- Cross-link — Category hub -->
   <section class="bg-white py-12 px-8 border-t border-gray-100">
@@ -379,7 +399,7 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
         <p class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-2">For HR Managers</p>
         <h2 class="text-xl font-bold mb-3">Are you evaluating this program for your team?</h2>
         <p class="text-gray-600 mb-4 text-sm">
-          This page is written for participants. There's a separate page written for whoever is evaluating the program — covering the business case, the formal deliverables HR receives, what you report to leadership, and common questions before moving it forward internally.
+          Need the business case, the full detail on the formal deliverables HR receives, and what you take to leadership? There's a page built for the internal evaluation, covering the questions that usually come up before this moves forward.
         </p>
         <a href="/en/for-hr-managers/" class="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:underline">
           See the HR manager page <span aria-hidden="true">→</span>
@@ -403,15 +423,6 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
       </div>
     </div>
   </section>
-
-  <!-- Lead Magnet Form (conversion surface before final CTA) -->
-  <LeadMagnetForm lang="en" sourcePage="/en/services/corporate-package/" />
-
-  <!-- CTA -->
-  <CtaSection content={ctaContent} />
-
-  <!-- FAQ -->
-  <ServiceFAQ faqs={faqs} lang="en" />
 
   <BreadcrumbSchema items={[
     { name: "Home", url: "https://www.nyenglishteacher.com/en/" },
