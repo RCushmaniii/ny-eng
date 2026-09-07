@@ -930,7 +930,7 @@ export default function GenericFreeAsset({
           <div className="flex items-center justify-between mb-12">
             <img
               src="/images/logos/new-york-english-sq-og.jpg"
-              alt="NY English Teacher"
+              alt="New York English Teacher"
               className="w-16 h-16 md:w-20 md:h-20 rounded-lg shadow-sm"
             />
             <a

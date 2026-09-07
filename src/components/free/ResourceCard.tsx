@@ -1,7 +1,7 @@
 /**
  * ResourceCard.tsx
  * Individual resource card component for Free Resources Hub
- * Corporate, modern design aligned with NY English brand
+ * Corporate, modern design aligned with New York English Teacher brand
  */
 
 import {

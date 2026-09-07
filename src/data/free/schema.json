@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://nyenglishteacher.com/schemas/free-asset.json",
   "title": "Free Asset Schema",
-  "description": "Strict schema for free educational resources on NY English Teacher",
+  "description": "Strict schema for free educational resources on New York English Teacher",
   "type": "object",
   "required": [
     "metadata",

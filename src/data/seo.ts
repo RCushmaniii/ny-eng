@@ -1,8 +1,8 @@
 export const defaultSEO = {
-  title: "NY English Teacher",
+  title: "New York English Teacher",
   description: "Professional Business English Coaching and Corporate Training",
   image: "/images/logos/new-york-english-og.jpg",
-  imageAlt: "NY English Teacher logo",
+  imageAlt: "New York English Teacher logo",
   siteUrl: import.meta.env.SITE || "https://www.nyenglishteacher.com",
   twitterHandle: "@nyenglishteacher",
   locale: "en_US",

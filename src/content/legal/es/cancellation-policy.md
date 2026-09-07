@@ -4,8 +4,8 @@ lastUpdated: "2026-07-01"
 translations:
   en: "/en/legal/cancellation-policy/"
 seo:
-  title: "Política de Cancelación y Reprogramación - NY English Teacher"
-  description: "Cómo funcionan las cancelaciones, reprogramaciones e inasistencias en el coaching de NY English Teacher: aviso de 24 horas y cobro por cancelación tardía."
+  title: "Política de Cancelación y Reprogramación - New York English Teacher"
+  description: "Cómo funcionan las cancelaciones, reprogramaciones e inasistencias en el coaching de New York English Teacher: aviso de 24 horas y cobro por cancelación tardía."
 ---
 
 ## Política de Cancelación y Reprogramación
