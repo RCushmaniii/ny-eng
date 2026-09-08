@@ -87,8 +87,7 @@ const hasShortContent = !!testimonial.shortContent;
         {testimonial.author}
       </p>
       <p class="text-sm text-gray-600 dark:text-gray-400">
-        {testimonial.position}
-        {testimonial.company && `, ${testimonial.company}`}
+        {testimonial.position}{testimonial.company && `, ${testimonial.company}`}
       </p>
     </div>
   </div>

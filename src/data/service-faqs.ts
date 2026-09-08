@@ -486,7 +486,7 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
         answer: "The program is priced at 600 MXN per session per participant. Total investment per participant typically ranges from 7,200 to 10,200 MXN across all three phases, depending on session frequency and schedule. Mexican facturas are issued monthly and a consolidated invoice is available for the company."
       },
       {
-        question: "Can we run this program in Spanish?",
+        question: "Are the sessions 100% in English?",
         answer: "The program is conducted in English — that's the point. Robert understands Spanish and can provide context or clarification in Spanish when needed, but the coaching sessions and group presentation are in English. The pressure of speaking English in front of peers is the core mechanism of the program."
       },
       {
@@ -495,7 +495,7 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
       },
       {
         question: "What exactly do the formal reviews include?",
-        answer: "Three written deliverables per participant: (1) An Initial Student Profile after the first session — current level, job role, English goals, and priority focus areas, which becomes the program baseline. (2) Monthly Assessments throughout the program covering ongoing gaps, level of effort outside sessions, enthusiasm, in-session performance, and updated priorities. Sessions are never AI-recorded — all assessment content comes from Robert's direct observation. (3) A Written Individual Roadmap at program close — progress against the baseline, remaining gaps, and a specific development plan for what comes next. The company also receives a Consolidated Progress Report for HR and executive review."
+        answer: "Three written deliverables per participant — an initial profile, monthly assessments, and a final individual roadmap — plus a consolidated progress report for the company. Each one is broken down in full above, under 'What the Formal Reviews Include'."
       }
     ],
     es: [
@@ -516,7 +516,7 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
         answer: "El programa tiene un precio de 600 MXN por sesión por participante. La inversión total por participante típicamente oscila entre 7,200 y 10,200 MXN a lo largo de las tres fases, según la frecuencia de sesiones y la agenda. Las facturas mexicanas se emiten mensualmente y hay una factura consolidada disponible para la empresa."
       },
       {
-        question: "¿Podemos hacer este programa en español?",
+        question: "¿Las sesiones son 100% en inglés?",
         answer: "El programa se realiza en inglés — ese es el punto. Robert entiende español y puede proporcionar contexto o aclaraciones en español cuando sea necesario, pero las sesiones de coaching y la presentación grupal son en inglés. La presión de hablar inglés frente a los pares es el mecanismo central del programa."
       },
       {
@@ -525,7 +525,7 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
       },
       {
         question: "¿Qué incluyen exactamente las revisiones formales?",
-        answer: "Tres entregables escritos por participante: (1) Un Perfil Inicial del Estudiante después de la primera sesión — nivel actual, puesto, objetivos en inglés y áreas de enfoque prioritarias, que se convierte en la línea base del programa. (2) Evaluaciones Mensuales durante todo el programa que cubren brechas actuales, nivel de esfuerzo fuera de sesiones, entusiasmo, desempeño en sesión y prioridades actualizadas. Las sesiones nunca se graban con IA — todo el contenido de evaluación proviene de la observación directa de Robert. (3) Una Hoja de Ruta Individual Escrita al cierre del programa — progreso contra la línea base, brechas restantes y un plan específico para lo que sigue. La empresa también recibe un Reporte Consolidado de Progreso para revisión de RH y liderazgo ejecutivo."
+        answer: "Tres entregables escritos por participante — perfil inicial, evaluaciones mensuales y hoja de ruta individual al cierre — más un reporte consolidado de progreso para la empresa. Cada uno viene desglosado arriba, en la sección «Qué Incluyen las Revisiones Formales»."
       }
     ]
   }

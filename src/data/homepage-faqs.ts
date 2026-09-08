@@ -86,7 +86,7 @@ export const homepageFAQs: HomepageFAQData = {
           "Las clases tradicionales se enfocan en libros de texto y reglas gramaticales. Yo me enfoco en tu realidad — tus correos reales, tus presentaciones y tus agendas de reuniones próximas se convierten en los materiales de aprendizaje. Simulo tus escenarios de alta presión para que puedas rendir cuando cuenta.",
       },
       {
-        question: "¿Qué incluye el diagnóstico de 15 minutos?",
+        question: "¿Qué incluye el diagnóstico de 30 minutos?",
         answer:
           "Revisaremos la situación profesional en la que más necesitas comunicarte mejor, identificaremos la brecha de mayor impacto y veremos si mi enfoque es adecuado para ti. Es una conversación directa, sin costo y sin compromiso.",
       },

@@ -199,7 +199,7 @@ export const SCORE_TIER_INFO = {
     businessImpact:
       "At this level, you avoid certain opportunities, take longer to advance, or stay in execution roles because communication gaps hold you back. The good news? This is fixable with focused practice.",
     nextStep:
-      "Schedule a 15-minute assessment call to identify your fastest path to improvement.",
+      "Schedule a 30-minute assessment call to identify your fastest path to improvement.",
     urgency: "high" as const,
   },
   "Credibility Gap": {

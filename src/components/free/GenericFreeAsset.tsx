@@ -908,13 +908,13 @@ export default function GenericFreeAsset({
       downloadPdf: "Download PDF",
       downloadSubtext: "Bilingual version • Print-friendly",
       bookCall: "Book a Free Strategy Call",
-      bookSubtext: "15 minutes • No obligation",
+      bookSubtext: "30 minutes • No obligation",
     },
     es: {
       downloadPdf: "Descargar PDF",
       downloadSubtext: "Versión bilingüe • Para imprimir",
       bookCall: "Reserva una Llamada Gratis",
-      bookSubtext: "15 minutos • Sin compromiso",
+      bookSubtext: "30 minutos • Sin compromiso",
     },
   };
 
