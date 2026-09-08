@@ -471,7 +471,7 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
     en: [
       {
         question: "How is this different from sending employees to a regular English course?",
-        answer: "A standard English course teaches grammar and vocabulary to a generic syllabus. This program builds around each participant's actual role, their real presentations, and their specific communication gaps — then uses peer pressure in the group session to surface the gap between private preparation and public performance. That's a different problem and a different solution."
+        answer: "A standard English course teaches grammar and vocabulary to a generic syllabus. This program builds around each participant's actual role, their real presentations, and their specific communication gaps — then puts each person in front of their own leadership team to surface the gap between knowing English and performing in it under pressure. That's a different problem and a different solution."
       },
       {
         question: "What level of English do participants need to join this program?",
@@ -491,7 +491,7 @@ export const serviceFaqs: Record<string, ServiceFaqSet> = {
       },
       {
         question: "How does the session structure actually work — individual sessions, group sessions, or both?",
-        answer: "Mostly individual, with one high-pressure group session at the pivotal moment. Phases 1 and 3 are almost entirely 1:1 — each participant works privately with Robert on their preparation and their personal debrief. Phase 2 is the group session, where every participant delivers their prepared presentation to the full team. Most people have never done this before. The combination is deliberate: individual sessions build the preparation, the group session exposes the gap between private preparation and public performance under peer pressure. That gap is the real target."
+        answer: "Mostly individual, with one high-pressure group session at the pivotal moment. Phases 1 and 3 are almost entirely 1:1 — each participant works privately with Robert on their preparation and their personal debrief. Phase 2 is the group session, where every participant delivers their prepared presentation to the full team. Most people have never done this before. The combination is deliberate: individual sessions build the preparation, the group session exposes the gap between knowing English and performing in it when the professional stakes are real. That gap is the real target."
       },
       {
         question: "What exactly do the formal reviews include?",

@@ -40,25 +40,25 @@ const FEATURED_CLIENTS = [
 const publishedCompanies = new Set(enTestimonials.map((t) => t.company).filter(Boolean));
 const corporateClients = FEATURED_CLIENTS.filter((c) => publishedCompanies.has(c));
 
-const title = "12-Week Corporate English Program for Teams";
+const title = "12-Week Corporate English for Leadership Teams";
 const seoDescription =
-  "A 12-week corporate English program for leadership teams in Mexico. Baseline assessment, monthly evaluations, and a consolidated report for the company.";
+  "Your managers already speak English. A 12-week program so they present, answer and defend their ideas in English under real professional pressure.";
 
 const heroContent = {
-  title: "Your management team is ready. Their English isn't keeping up.",
+  title: "Your managers already speak English. The challenge starts when the meeting matters.",
   description:
-    "Business English coaching 1-on-1 with a native New Yorker. A 12-week program using peer pressure to close the gap between preparation and performance.",
+    "A 12-week program so your leadership team can present, field unexpected questions and defend a recommendation in English — in front of North American clients, colleagues and international leadership — with the same authority they already carry in Spanish.",
   backgroundImage: serviceData.backgroundImage,
   overlayOpacity: 0.75,
-  imageAlt: "Management team in a business English coaching session",
+  imageAlt: "Leadership team in a business English coaching session",
 };
 
 const challengeContent = {
-  headline: "The Problem Most Corporate English Programs Miss",
+  headline: "The problem isn't English knowledge. It's English performance under professional pressure.",
   painPoints: [
-    "Your managers communicate well in private English sessions — but freeze, rush, or switch to Spanish the moment their peers are watching.",
-    "Generic English courses produce certificates, not performance. Your team sits through a curriculum built for someone else.",
-    "The gap between 'functional English' and 'executive English' shows up in the boardroom, not in a grammar test.",
+    "Your team's English works in email and on the routine call. It changes when a question arrives that nobody anticipated, when a position has to be held, or when the conversation speeds up: the answer simplifies, the idea loses its nuance, and the person sounds less experienced than they actually are.",
+    "In front of a client in the United States or Canada the cost is direct. The same manager who projects judgment and authority in Spanish can sound less decisive, less senior and less informed — not for lack of capability, but because the language costs them response speed at the exact moment they need it.",
+    "An English course trains the knowledge, not the moment. You can pass any exam and still not be able to defend a recommendation in English with five people waiting on the answer.",
   ],
   icon: "💡",
   image: serviceData.squareImage,
@@ -82,7 +82,7 @@ const ctaContent = {
   secondaryButtonLink: "https://wa.me/523315590572",
   whatToExpectTitle: "In Your Discovery Call, We Will:",
   whatToExpectList: [
-    "Assess your team's current English communication baseline",
+    "Identify the specific situations where your team's English loses authority",
     "Scope the program for your group size, schedule, and industry context",
     "Define what a successful outcome looks like for your team",
   ],
@@ -128,14 +128,14 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
   <section class="bg-light py-16 px-8">
     <div class="site-container--small mx-auto">
       <h2 class="text-3xl font-bold mb-2 text-center">How the Program Works</h2>
-      <p class="text-center text-gray-600 mb-12">Business English coaching in 3 phases. 12 weeks. One goal: your team leads in English.</p>
+      <p class="text-center text-gray-600 mb-12">12 weeks across 3 phases. 1-on-1 sessions with a New York coach, built on the meetings, calls and presentations your team already has on the calendar — and a real performance test at the end.</p>
 
       <div class="grid gap-8 md:grid-cols-3">
         <!-- Phase 1 -->
         <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
           <div class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Weeks 1–8</div>
           <h3 class="text-xl font-bold mb-3">Phase 1 — Individual Assessment & Preparation</h3>
-          <p class="text-gray-600 mb-4">Each participant works privately with Robert. Weeks 1–2 establish an honest baseline. Weeks 3–8 are targeted preparation built around their real presentation content and role.</p>
+          <p class="text-gray-600 mb-4">Each participant works privately with Robert. Weeks 1–2 establish an honest baseline of how their English changes as the pressure rises. Weeks 3–8 are targeted rehearsal on their real situations: their meetings, their calls with North American clients, the presentation already on their calendar, and the uncomfortable questions any of those can produce.</p>
           <div class="text-sm text-gray-500">
             <strong>8–12 sessions per participant</strong><br />
             4,800 – 7,200 MXN
@@ -145,8 +145,8 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
         <!-- Phase 2 -->
         <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
           <div class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Weeks 9–10</div>
-          <h3 class="text-xl font-bold mb-3">Phase 2 — Group Presentation</h3>
-          <p class="text-gray-600 mb-4">Every participant delivers their prepared presentation in English to the full leadership group — often for the first time. The pressure is real, deliberate, and productive. Breakthroughs happen here.</p>
+          <h3 class="text-xl font-bold mb-3">Phase 2 — Performance in Front of the Leadership Team</h3>
+          <p class="text-gray-600 mb-4">Each participant presents in English to the full leadership group and fields questions live — often for the first time. There is no option to switch back to Spanish, the same as in the real meeting. The pressure is deliberate, and it is the point: it is the only way to train the moment a course never touches.</p>
           <div class="text-sm text-gray-500">
             <strong>1–2 group sessions</strong><br />
             600 – 1,200 MXN per participant
@@ -157,7 +157,7 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
         <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
           <div class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Weeks 11–12</div>
           <h3 class="text-xl font-bold mb-3">Phase 3 — Lessons Learned & Final Assessment</h3>
-          <p class="text-gray-600 mb-4">Individual debrief sessions with direct, honest feedback. A final assessment measures progress against the Week 1–2 baseline. Each participant receives a written roadmap. The company receives a consolidated progress report.</p>
+          <p class="text-gray-600 mb-4">Individual debrief sessions with direct, honest feedback on what held under pressure and what did not. A final assessment measures progress against the Week 1–2 baseline. Each participant receives a written roadmap. The company receives a consolidated progress report.</p>
           <div class="text-sm text-gray-500">
             <strong>2–3 sessions per participant</strong><br />
             1,200 – 1,800 MXN
@@ -344,19 +344,22 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
       <div class="grid gap-6 md:grid-cols-2">
         <div>
           <h3 class="font-bold text-lg mb-4">For Each Participant</h3>
+          <p class="text-sm text-gray-500 mb-4">The goal is not "more confidence" in the abstract. It is observable performance: by the end of the program, each participant can do these things in English.</p>
           <ul class="space-y-3 text-gray-600">
-            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Measurable improvement in English fluency under peer pressure — not just in isolated practice</li>
-            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Delivered a real prepared presentation in English to a peer-level audience</li>
-            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> A precise map of their own communication gaps — not a vague feeling, a specific target</li>
-            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Greater confidence in meetings with US leadership, global clients, and English-speaking stakeholders</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Present an idea with structure and get to the point, without padding</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Field a question they did not anticipate without losing the thread or dropping the register</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Explain and defend a recommendation to someone who disagrees</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Hold a direct conversation with a client in the United States or Canada, with no intermediary</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Deliver a problem or bad news without softening it into ambiguity</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Respond in real time, without translating every sentence in their head</li>
             <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> A written roadmap for continued development after the program</li>
           </ul>
         </div>
         <div>
           <h3 class="font-bold text-lg mb-4">For the Company</h3>
           <ul class="space-y-3 text-gray-600">
-            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> A management team that can represent the company in English without bottlenecks</li>
-            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> A training investment with observable performance outcomes — not just certificates</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> A leadership team that can represent the company in English without anyone having to translate, sit in, or rescue the conversation</li>
+            <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> Less dependence on the one person on the team who "speaks good English" for every meeting that matters</li>
             <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> A consolidated progress report for HR and executive review</li>
             <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> The beginning of a culture shift — from avoiding English to preparing for it</li>
             <li class="flex gap-3"><span class="text-green-500 font-bold mt-0.5">✓</span> An unexpected side effect: peers see each other differently, which changes dynamics in real meetings</li>
@@ -434,8 +437,8 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Business English Coaching for Leadership Teams",
-    "alternateName": ["Corporate English Training for Leadership Teams", "Executive English Coaching", "Courage While Leading in English"],
-    "description": "Business English coaching 1-on-1 online for leadership teams in Mexico. A 12-week structured program that combines individual preparation, peer-pressure group presentations, and a final assessment — designed to close the gap between private fluency and public performance.",
+    "alternateName": ["Corporate English Training for Leadership Teams", "Executive English Coaching", "English Performance Under Professional Pressure"],
+    "description": "Business English coaching 1-on-1 online for leadership teams in Mexico. A 12-week structured program that trains English performance under professional pressure — meetings, presentations, unexpected questions and conversations with North American clients — closing with a final assessment against the initial baseline.",
     "provider": {
       "@type": "Organization",
       "name": "New York English Teacher",
