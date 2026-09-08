@@ -219,7 +219,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "How do I get started?",
             answer:
-              "Book a free discovery call. In 15-20 minutes I'll ask about your goals, get a read on your current level, and tell you honestly whether coaching is the right fit — no pressure either way.",
+              "Book a free discovery call. In about 30 minutes I'll ask about your goals, get a read on your current level, and tell you honestly whether coaching is the right fit — no pressure either way.",
           },
           {
             question: "How much does coaching cost?",
@@ -427,7 +427,7 @@ export const segmentedFaqLists: Record<string, SegmentedFaqList> = {
           {
             question: "¿Cómo empiezo?",
             answer:
-              "Agenda una llamada de descubrimiento gratuita. En 15-20 minutos platicamos tus objetivos, evalúo tu nivel actual y te digo con honestidad si el coaching es lo que necesitas — sin presión de ningún lado.",
+              "Agenda una llamada de descubrimiento gratuita. En unos 30 minutos platicamos tus objetivos, evalúo tu nivel actual y te digo con honestidad si el coaching es lo que necesitas — sin presión de ningún lado.",
           },
           {
             question: "¿Cuánto cuesta el coaching?",

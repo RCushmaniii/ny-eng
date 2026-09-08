@@ -191,7 +191,7 @@ export default function QuizReport() {
     let currentCtaInfo: CtaInfo = {
       title: "Let's See If This Applies to Your Team",
       subtext:
-        "This assessment reveals patterns. A 15-minute conversation reveals solutions.",
+        "This assessment reveals patterns. A 30-minute conversation reveals solutions.",
       buttonText: "Book Your Free Discovery Call",
       footerText:
         "No pitch. No pressure. Just a conversation about what's possible for your team.",
