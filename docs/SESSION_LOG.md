@@ -141,6 +141,36 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Blocks:* judging whether the review push works — there is no current baseline.
   *Closes when:* Robert supplies current review count, rating and interactions.
 
+- [ ] **The corporate audit's seven questions are trapped in a raster PDF.**
+  *Added 2026-09-08.* `public/downloads/Corporate_English_Audit_ES.pdf` is 13 image-only
+  pages — all 13 extract **zero characters**. Its seven buying-criteria questions are the
+  strongest corporate marketing asset we have and they are invisible to Google, to screen
+  readers, and to copy-paste, sitting behind an email gate.
+  *Blocks:* organic discovery by HR managers researching how to evaluate a vendor — the
+  exact query where criteria-setting content wins.
+  *Next:* build `/es/guia/auditoria-ingles-corporativo/` (+ EN twin) as ungated HTML, one H2
+  per question with its *Punto de Control* as the answer, FAQPage schema, PDF offered at the
+  bottom as the forward-to-your-director artifact. Est. 30–45 min of agent time.
+
+- [ ] **The corporate audit PDF has four defects and cannot be edited.**
+  *Added 2026-09-08.* It is a NotebookLM export, so fixing anything means regenerating it.
+  (1) Slide 13 sends Spanish readers to `nyenglishteacher.com/en/book` — should be
+  `/es/reservar/`. (2) A NotebookLM watermark sits on all 13 pages. (3) The cover subtitle
+  has mangled accents: *lideres*, *evalŭan*, *capacitaciōn*. (4) Slide 6 reads
+  *"¿Pregunta 3: Cuánto tiempo…?"* — the ¿ is misplaced. Register also mixes usted and tú.
+  *Blocks:* nothing today; it is credibility on an asset that reaches HR directors at
+  Continental and Sanmina.
+  *Next:* Robert regenerates the deck, or says the word and it gets rebuilt as HTML slides
+  he owns — which also removes the watermark permanently.
+
+- [ ] **The corporate page's proof is text, not evidence.**
+  *Added 2026-09-08.* The client roster renders as plain company names and the problem
+  section uses a cartoon illustration. Both undercut the premium tone the copy now carries.
+  Neither is fixable in code.
+  *Blocks:* perceived seniority on the page that carries the larger revenue line.
+  *Next:* Robert asks Terramar (and one of Driscoll's / Continental / Sanmina / CEVA) for
+  logo-use permission, and supplies one real photo of himself coaching.
+
 - [ ] **`feat/verb-patterns-course` has been sitting unmerged since 2026-07-08.**
   *Added 2026-09-06 by the closeout gate*, which is the first time anything checked.
   Three commits ahead of `main` — Verb Patterns Level 1 lessons 2–3 plus the Foundations
@@ -162,15 +192,17 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Closes when:* the line names companies with testimonials behind them — Smarttie and
   Grupo Kopar are both real clients, so this is a one-name fix, not a rewrite.
 
-- [ ] **Ahrefs health score — confirm the next crawl reads 100.** Added 2026-09-02, PRs
-  #270/#271. Dropped to 99 on the 2026-09-01 crawl; four root causes fixed and verified
-  locally + against production (schema validator 0/0, `validate:redirects` 166/166 clean,
-  0 orphans/dead-category-links in a local `dist/` audit). Stated at 85% confidence because
-  Ahrefs' own "orphan page" finding names no URL — fixed the most likely candidate and
-  verified zero orphans locally, but cannot confirm it matches Ahrefs' specific finding
-  without their next crawl.
-  *Closes when:* the next Ahrefs crawl email shows health score 100, or names a residual
-  orphan URL to chase.
+- [ ] **Ahrefs health score still 99 — two unnamed errors.** Added 2026-09-02 (PRs
+  #270/#271), updated 2026-09-08. The awaited crawl arrived on 2026-09-08 and reads
+  **99 with 2 errors**, so the four fixes from #270/#271 did not move it and the summary
+  email still names no URL. Everything else in that crawl is explained: "changed pages not
+  submitted to IndexNow" (+89) was our own shared-component edits and is cleared — all 476
+  URLs were bulk-submitted; "title tag changed" (+84) is this session's work; "title too
+  short" is course unit sub-pages and is not worth padding.
+  *Blocks:* nothing shipping. It is an unresolved unknown on the only third-party health
+  signal we watch.
+  *Next:* open the crawl in the Ahrefs Site Audit UI and read the 2 errors by URL — the
+  emailed summary does not carry them, so this cannot be closed from the inbox.
 
 > **Scope rule, added 2026-08-06.** This register holds **ny-eng items only.** Work
 > belonging to another repo goes in that repo's own log — `cushlabs-ai-voice-agent` and
@@ -180,6 +212,58 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 > re-added here on 2026-08-06 and removed again the same day — they are real and still
 > open, they are simply not this repo's business. Their full text is in this file's git
 > history at commit `f81fef9` if they need to be moved rather than rewritten.
+
+---
+
+## Session: 2026-09-08 — The corporate pages stopped selling English lessons and started selling performance
+
+### Accomplished
+
+- **#280 / #281 — repositioned both corporate pages** on a sentence Robert set and wants protected:
+  *El problema no es el conocimiento del inglés. Es el desempeño en inglés bajo presión profesional.*
+  It is now the problem-section H2 in both languages. New ES hero: *"Tus gerentes ya hablan inglés.
+  El reto empieza cuando la junta importa."* Seven observable outcomes replaced five abstractions;
+  Phase 2 renamed to *Desempeño frente al Equipo Directivo*; `equipo de gestión` and
+  `presión de pares` / "peer pressure" are gone from the codebase outside blog content.
+- **#278 — closed four contradictions between the home page and the corporate page**: the 600 vs
+  500 MXN premium is now explained rather than repriced, the "formal reviews" deliverables section
+  was ported EN→ES (its absence was why the ES meta promised *seguimiento mensual* with nothing
+  behind it), the ES page stopped linking the EN quiz, and the home pages finally link the program.
+- **#279 — the site now says 30 minutes**, which `cloudflare-worker.js` has always booked
+  (`:389` 30-min slots, `:406` 30-min window, `:473` event = start + 30). Copy said 15 or 20 in
+  29 files. Also fixed a stray space before the comma in `TestimonialCard` /
+  `ExpandableTestimonialCard` — shared, so it was on every testimonial site-wide.
+- **Answered the GSC "Not found (404)" alert** with a new `scripts/seo/gsc-404-audit.mjs`:
+  **215 ranking pages, zero 404s**; 476/476 sitemap URLs return 200; five intentional 308s.
+- **Reviewed the corporate audit PDF** and bulk-submitted all 476 URLs to IndexNow, clearing
+  Ahrefs' "changed pages not submitted" (+89, caused by our own shared-component edits).
+
+### Decisions Made
+
+- **30 minutes is the discovery-call standard** — Robert's call, from experience (sometimes 20,
+  usually 30 once questions start). It also matches what the calendar invite always said.
+- **Did not reprice the corporate rate.** 600 MXN was consistent across page, HR page and schema,
+  so it was deliberate; the missing thing was the sentence saying what the extra 100 buys.
+- **Held the EN port back one cycle** while the Spanish positioning was still being shaped, then
+  shipped it — divergent hreflang twins were the larger risk once Spanish settled.
+
+### Immediate Next Steps
+
+- [ ] Open the 2026-09-08 Ahrefs crawl in the Site Audit UI and read the 2 errors by URL.
+- [ ] Build the ungated `/es/guia/auditoria-ingles-corporativo/` page (+ EN twin).
+- [ ] Robert: regenerate the audit PDF, or approve rebuilding it as HTML slides.
+
+### Technical Debt
+
+- `scripts/seo/gsc-performance.mjs` **truncates the page column when it prints**, so piping its
+  stdout yields chopped URLs. It cost a wrong result this session (80 "broken" pages that were
+  measurement artifacts). Use `gsc-404-audit.mjs` or the API directly for anything programmatic.
+- Four pre-existing `TKey` type errors in `src/lib/i18n.ts` (`category/pronunciation`,
+  `category/corporate-english-training`) fail `build:check` but not `build`. Untouched.
+
+### Open Questions / Blockers
+
+- None blocking. Five production deployments used today.
 
 ---
 
