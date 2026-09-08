@@ -105,7 +105,7 @@ export const corporatePackage: Service = {
   title: "Courage While Leading in English",
   icon: "🏢",
   description:
-    "A 12-week program for senior leadership teams. Individual preparation, group presentation under peer pressure, and a final assessment — designed to close the gap between private fluency and public performance.",
+    "A 12-week program for senior leadership teams. Individual preparation, a performance in front of the full leadership team, and a final assessment — designed to close the gap between knowing English and performing in it under professional pressure.",
   link: "/en/services/corporate-package/",
   backgroundImage: executiveEnglishImage,
   squareImage: executiveEnglishSquareImage,
