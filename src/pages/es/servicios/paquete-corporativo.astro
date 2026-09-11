@@ -12,6 +12,7 @@ import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
 import TestimonialCard from "@components/ui/TestimonialCard.astro";
 import { serviceFaqs } from "@data/service-faqs";
 import { paqueteCorporativo as serviceData } from "@data/services";
+import pressureImage from "@assets/images/services/corporate-meeting-pressure.jpg";
 import { testimonials as esTestimonials } from "@data/testimonials/es";
 
 const corporateTestimonial = esTestimonials.find(
@@ -92,8 +93,10 @@ const challengeContent = {
     "Un curso de inglés entrena el conocimiento, no el momento. Se puede aprobar cualquier examen y seguir sin poder defender una recomendación en inglés cuando hay cinco personas esperando la respuesta.",
   ],
   icon: "💡",
-  image: serviceData.squareImage,
-  imageAlt: "Profesional ejecutivo practicando presentaciones en inglés bajo presión",
+  image: pressureImage,
+  imageAspect: "landscape",
+  imageAlt:
+    "Junta de trabajo en una sala de consejo: un gerente escucha en tensión mientras una colega expone y el equipo debate",
   quizCta: {
     text: "Realiza la Evaluación de Comunicación Ejecutiva — 60 segundos.",
     link: "/es/quiz/executives/question/1/",
