@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import Button from '@components/ui/Button.astro';
 
 interface HeroContent {
     title: string;
@@ -7,6 +8,8 @@ interface HeroContent {
     backgroundImage?: any;
     overlayOpacity?: number;
     imageAlt?: string;
+    /** Optional single primary action. Pages that set it get one dominant next step above the fold. */
+    cta?: { text: string; link: string };
 }
 
 interface Props {
@@ -40,6 +43,11 @@ const opacity = content.overlayOpacity ?? 1;
         <div>
             <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style="font-family: 'Noto Sans KR', sans-serif; font-size: 2.25rem;" data-aos="fade-up">{content.title}</h1>
             {content.description && <p class="subtitle text-white text-xl md:text-2xl max-w-2xl" style="font-family: 'Noto Sans KR', sans-serif;" data-aos="fade-up" data-aos-delay="100">{content.description}</p>}
+            {content.cta && (
+                <div class="mt-8" data-aos="fade-up" data-aos-delay="200">
+                    <Button href={content.cta.link} variant="primary" size="lg">{content.cta.text}</Button>
+                </div>
+            )}
         </div>
     </div>
 </section>

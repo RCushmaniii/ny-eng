@@ -6,9 +6,11 @@
 
 export interface Props {
   lang?: "en" | "es";
+  /** "button" (default) competes visually with the page's primary CTA; "link" keeps the offer but demotes it to a text link. */
+  variant?: "button" | "link";
 }
 
-const { lang = "en" } = Astro.props;
+const { lang = "en", variant = "button" } = Astro.props;
 
 const copy =
   lang === "es"
@@ -43,7 +45,12 @@ const copy =
       </div>
       <a
         href={copy.anchor}
-        class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm py-2.5 px-5 rounded-lg transition shadow-sm whitespace-nowrap shrink-0"
+        class:list={[
+          "inline-flex items-center gap-2 font-semibold text-sm whitespace-nowrap shrink-0",
+          variant === "link"
+            ? "text-blue-700 hover:underline"
+            : "bg-blue-600 hover:bg-blue-700 text-white py-2.5 px-5 rounded-lg transition shadow-sm",
+        ]}
       >
         {copy.cta} <span aria-hidden="true">↓</span>
       </a>

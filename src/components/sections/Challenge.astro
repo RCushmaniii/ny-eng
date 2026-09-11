@@ -13,6 +13,8 @@ interface Props {
       text: string;
       link: string;
       linkLabel: string;
+      /** "button" (default) is the boxed blue button; "link" is a quiet text link for pages whose primary CTA lives elsewhere. */
+      style?: "button" | "link";
     };
   };
   padding?: "sm" | "md" | "lg";
@@ -64,7 +66,15 @@ const backgroundClasses = {
         </ul>
         
         <!-- Quiz CTA -->
-        {content.quizCta && (
+        {content.quizCta && content.quizCta.style === "link" && (
+          <p class="mt-8 text-gray-600">
+            {content.quizCta.text}{" "}
+            <a href={content.quizCta.link} class="font-semibold text-blue-700 hover:underline whitespace-nowrap">
+              {content.quizCta.linkLabel}
+            </a>
+          </p>
+        )}
+        {content.quizCta && content.quizCta.style !== "link" && (
           <div class="mt-8 p-6 bg-blue-50 rounded-lg border-l-4 border-blue-600">
             <p class="text-blue-900 font-bold mb-4">
               {content.quizCta.text}
