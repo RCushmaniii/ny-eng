@@ -40,6 +40,37 @@ const FEATURED_CLIENTS = [
 const publishedCompanies = new Set(enTestimonials.map((t) => t.company).filter(Boolean));
 const corporateClients = FEATURED_CLIENTS.filter((c) => publishedCompanies.has(c));
 
+/**
+ * Short pull-quotes under the client roster.
+ *
+ * Each excerpt must be a verbatim substring of the published testimonial: if the testimonial is retired or drafted, the quote drops out on its own; if the excerpt stops matching the published text, the build fails rather than shipping a quote that is no longer verbatim.
+ */
+const PROOF_QUOTES = [
+  {
+    slug: "andres-driscolls",
+    excerpt:
+      "Coaching with Robert helped me become much more confident and natural when speaking English—especially with U.S. clients.",
+  },
+  {
+    slug: "hugo-lopez-continental",
+    excerpt:
+      "Under his guidance, I moved from feeling hesitant in senior-level discussions to speaking with assurance in top-management meetings and presenting complex updates with clarity and persuasion.",
+  },
+  {
+    slug: "alberto-escobar-terramar-brands",
+    excerpt:
+      "I lead meetings more confidently, communicate more clearly with international partners, and get better results across the board.",
+  },
+];
+const proofQuotes = PROOF_QUOTES.flatMap(({ slug, excerpt }) => {
+  const t = enTestimonials.find((x) => x.slug === slug && x.status !== "draft");
+  if (!t) return [];
+  if (!t.content.includes(excerpt)) {
+    throw new Error(`corporate page: excerpt for "${slug}" is no longer a verbatim substring of the published testimonial`);
+  }
+  return [{ excerpt, author: t.author, position: t.position, company: t.company }];
+});
+
 const title = "12-Week Corporate English for Leadership Teams";
 const seoDescription =
   "Your managers already speak English. A 12-week program so they present, answer and defend their ideas in English under real professional pressure.";
@@ -51,6 +82,7 @@ const heroContent = {
   backgroundImage: serviceData.backgroundImage,
   overlayOpacity: 0.75,
   imageAlt: "Leadership team in a business English coaching session",
+  cta: { text: "Schedule a discovery call", link: "/en/book/" },
 };
 
 const challengeContent = {
@@ -67,6 +99,7 @@ const challengeContent = {
     text: "Take the Executive Communication Assessment — 60 seconds.",
     link: "/en/quiz/executives/question/1/",
     linkLabel: "Start the Quiz →",
+    style: "link",
   },
 };
 
@@ -103,7 +136,7 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
 
   <!-- Client roster — the first thing a referred evaluator looks for -->
   {corporateClients.length > 0 && (
-    <section class="bg-white pt-12 pb-4 px-8">
+    <section class="bg-white pt-12 pb-12 px-8">
       <div class="site-container--small mx-auto">
         <p class="text-center text-sm text-gray-500 mb-6">
           This program was delivered to the management team at Terramar Brands. Leaders at these
@@ -114,6 +147,20 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
             <li class="text-gray-700 font-semibold tracking-tight">{name}</li>
           ))}
         </ul>
+        {proofQuotes.length > 0 && (
+          <div class="grid gap-4 md:grid-cols-3 mt-10">
+            {proofQuotes.map((q) => (
+              <figure class="bg-light rounded-xl p-6 border border-gray-100">
+                <blockquote class="text-sm text-gray-700 leading-relaxed">“{q.excerpt}”</blockquote>
+                <figcaption class="mt-4 text-xs text-gray-500">
+                  <span class="font-semibold text-gray-800">{q.author}</span>
+                  <br />
+                  {q.position}, {q.company}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   )}
@@ -122,7 +169,7 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
   <Challenge content={challengeContent} background="white" padding="lg" />
 
   <!-- Lead Magnet Callout (subtle early touchpoint) -->
-  <LeadMagnetCallout lang="en" />
+  <LeadMagnetCallout lang="en" variant="link" />
 
   <!-- Program Structure -->
   <section class="bg-light py-16 px-8">
@@ -232,38 +279,40 @@ const faqs = serviceFaqs["corporate-package"]?.en || [];
   </section>
 
   <!-- Investment -->
-  <section class="bg-white py-16 px-8">
+  <section class="bg-white py-16 px-4 sm:px-8">
     <div class="site-container--small mx-auto">
       <h2 class="text-3xl font-bold mb-2 text-center">Investment</h2>
       <p class="text-center text-gray-600 mb-10">600 MXN per session per participant. Mexican facturas issued monthly.</p>
 
-      <div class="max-w-2xl mx-auto bg-gray-50 rounded-xl p-8 border border-gray-200">
-        <table class="w-full text-sm">
+      <div class="max-w-2xl mx-auto bg-gray-50 rounded-xl p-4 sm:p-8 border border-gray-200">
+        <div class="overflow-x-auto">
+        <table class="w-full text-xs sm:text-sm">
           <thead>
             <tr class="border-b border-gray-200">
               <th class="text-left pb-3 font-semibold">Scenario</th>
-              <th class="text-right pb-3 font-semibold">Per Participant</th>
-              <th class="text-right pb-3 font-semibold">5-Person Team</th>
+              <th class="text-right pb-3 font-semibold">Per participant (MXN)</th>
+              <th class="text-right pb-3 font-semibold">Team of 5 (MXN)</th>
             </tr>
           </thead>
           <tbody class="text-gray-600">
             <tr class="border-b border-gray-100">
               <td class="py-3">Conservative (12 sessions)</td>
-              <td class="text-right py-3">7,200 MXN</td>
-              <td class="text-right py-3">≈ 36,000 MXN</td>
+              <td class="text-right py-3 whitespace-nowrap">7,200</td>
+              <td class="text-right py-3 whitespace-nowrap">≈ 36,000</td>
             </tr>
             <tr class="border-b border-gray-100">
               <td class="py-3">Moderate (14–15 sessions)</td>
-              <td class="text-right py-3">8,400 – 9,000 MXN</td>
-              <td class="text-right py-3">≈ 42,000–45,000 MXN</td>
+              <td class="text-right py-3 whitespace-nowrap">8,400–9,000</td>
+              <td class="text-right py-3 whitespace-nowrap">≈ 42,000–45,000</td>
             </tr>
             <tr>
               <td class="py-3">Intensive (17 sessions)</td>
-              <td class="text-right py-3">10,200 MXN</td>
-              <td class="text-right py-3">≈ 51,000 MXN</td>
+              <td class="text-right py-3 whitespace-nowrap">10,200</td>
+              <td class="text-right py-3 whitespace-nowrap">≈ 51,000</td>
             </tr>
           </tbody>
         </table>
+        </div>
         <p class="text-xs text-gray-400 mt-4">Total varies because schedules vary — not every participant attends every possible session. USD pricing available for international companies.</p>
       </div>
 
