@@ -9,6 +9,12 @@ interface Props {
     icon?: string;
     image?: any;
     imageAlt?: string;
+    /**
+     * How the image is framed. "square" (default) is the 320px square crop the
+     * other service pages use. "landscape" keeps a 4:3 photo intact — a square
+     * crop of a wide photo cuts the subject at the edges out of frame.
+     */
+    imageAspect?: "square" | "landscape";
     quizCta?: {
       text: string;
       link: string;
@@ -91,7 +97,20 @@ const backgroundClasses = {
       
       <!-- Visual Element -->
       <div class="challenge-visual flex justify-center lg:justify-end">
-        {content.image ? (
+        {content.image && content.imageAspect === "landscape" ? (
+          <!-- Landscape photo, kept at its own 4:3 framing -->
+          <div class="relative w-full max-w-xl">
+            <Image 
+              src={content.image}
+              alt={content.imageAlt ?? "Challenge illustration"}
+              class="w-full aspect-[4/3] object-cover rounded-lg shadow-lg"
+              width={1024}
+              quality={80}
+              format="webp"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-10 rounded-lg"></div>
+          </div>
+        ) : content.image ? (
           <!-- Square Image -->
           <div class="relative">
             <Image 

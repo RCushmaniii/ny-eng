@@ -12,6 +12,7 @@ import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
 import TestimonialCard from "@components/ui/TestimonialCard.astro";
 import { serviceFaqs } from "@data/service-faqs";
 import { corporatePackage as serviceData } from "@data/services";
+import pressureImage from "@assets/images/services/corporate-meeting-pressure.jpg";
 import { testimonials as enTestimonials } from "@data/testimonials/en";
 
 const corporateTestimonial = enTestimonials.find(
@@ -93,8 +94,10 @@ const challengeContent = {
     "An English course trains the knowledge, not the moment. You can pass any exam and still not be able to defend a recommendation in English with five people waiting on the answer.",
   ],
   icon: "💡",
-  image: serviceData.squareImage,
-  imageAlt: "Executive professional preparing for a high-stakes English presentation",
+  image: pressureImage,
+  imageAspect: "landscape",
+  imageAlt:
+    "Boardroom meeting: one manager listens under visible strain while a colleague presents and the team debates",
   quizCta: {
     text: "Take the Executive Communication Assessment — 60 seconds.",
     link: "/en/quiz/executives/question/1/",
