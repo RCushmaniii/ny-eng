@@ -215,6 +215,133 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 
 ---
 
+## Session: 2026-09-11 — An outside review of the corporate page, acted on: a laptop-width header bug, one primary CTA, real proof, and a photo that shows the pressure
+
+An external reviewer looked at the Spanish corporate program page against its English
+twin and returned two rounds of findings — first copy and structure, then look and feel.
+This session verified each claim by rendering both pages rather than reasoning about them,
+fixed everything that was code, and said plainly which items need assets or a client's
+permission and therefore are not code at all.
+
+### Accomplished
+
+- **PR #283 — the header wrap, which turned out to be worse than reported.** The reviewer
+  saw two Spanish nav labels wrapping at 1280–1366px. Measured on the live site, Spanish
+  wrapped `Sobre mí` and `Casos de Éxito` at **every width from 1024 to 1349** and crushed
+  the logo to between 0 and 138px; **English hid the logo entirely at 1024–1100** and nobody
+  had noticed. The desktop nav now appears from `xl` (1280) instead of `lg` (1024), nav
+  labels are `whitespace-nowrap`, the logo link is `shrink-0`, and gaps tighten between 1280
+  and 1535. Verified at 1024/1180/1263/1280/1349/1366/1536/1920 in both languages.
+- **PR #283 — one dominant CTA on the corporate pages.** The hero gained a single "Agendar
+  llamada de descubrimiento" / "Schedule a discovery call" button. The quiz CTA and the
+  lead-magnet callout were demoted to text links via new opt-in props (`quizCta.style`,
+  `LeadMagnetCallout variant`), both defaulting to the old button so the other 17 quiz pages
+  and the two HR pages are untouched.
+- **PR #283 — three verbatim pull-quotes** under the client roster (Driscoll's COO,
+  Continental, Terramar COO), each asserted at build time to be a substring of the published
+  testimonial. A retired testimonial drops its quote; a drifted excerpt fails the build
+  rather than shipping a quote that is no longer verbatim.
+- **PR #283 — the phone pricing table.** At 390px the team totals wrapped over three lines
+  with the `≈` orphaned on its own row. MXN moved into the column headers, numeric cells are
+  `whitespace-nowrap`, type is compact below 640px. Fits with no horizontal scroll at
+  360/390/414 in both languages.
+- **PR #284 — the product is finally visible.** The page spends four cards describing formal
+  written deliverables and had never shown one. A styled sample of the Initial Student
+  Profile now sits beside the card describing it, built only from the four section headings
+  the page already claims plus neutral placeholder bars, labelled "Ejemplo del formato" /
+  "Sample format". No fabricated participant data. Phase cards became flex columns with the
+  price line pinned to the bottom, so Phases 2 and 3 stop floating. The client roster is set
+  uppercase and letter-spaced so it reads as deliberate wordmarks rather than an unfinished
+  placeholder.
+- **PR #285 — the problem-section image.** Robert supplied a boardroom photo showing a
+  manager under visible strain while a colleague presents. It replaced a stylised
+  illustration that was shared with the executive-English page and did not match the
+  flat-card aesthetic. Source PNG 1.79MB to an optimised JPG at 133KB, served as a 1024px
+  webp.
+
+### Decisions Made
+
+- **`Challenge.astro` gained `imageAspect`, it did not get its crop changed.** The component
+  hard-crops to `w-80 h-80 object-cover` — a 320px square — and ~18 service pages depend on
+  that. The new prop defaults to `"square"`, and only the two corporate pages pass
+  `"landscape"`. Verified after the change that both executive-English pages still serve the
+  old 320x320 asset.
+- **Client logo marks were not generated, and should not be.** The reviewer's top-priority
+  item was replacing the text roster with real logos. No logo files exist in the repo, and
+  putting Driscoll's, Sanmina or CEVA trademarks on a commercial sales page needs each
+  client's permission. Generating lookalikes would be worse than the text. Escalated to
+  Robert as a request to make, not a task to do.
+- **The FAQ stayed at seven questions.** The reviewer suggested trimming to 3–4 and moving
+  the rest to the HR page to stop duplicating effort. Checked: only one question overlaps
+  between the two pages, so there is no duplication to consolidate. Declined with the reason.
+- **The long copy was not cut.** The reviewer's own read was that length is not the problem
+  and thin proof is. Proof was added instead.
+
+### Debugging conclusions worth keeping
+
+- **A scripted string-replace can silently no-op and everything still goes green.** The edit
+  script for the image swap was reformatted by a PostToolUse formatter between being written
+  and being run, so its EN replacement matched zero times. `npm run build` passed, the
+  type-check passed, and the English page quietly kept the old image — caught only because
+  both pages were rendered and their `img.currentSrc` compared. Every scripted edit in this
+  session that asserted its match count behaved correctly; the one that used a bare
+  `String.replace` on a formatted heredoc did not. **Assert match counts, then verify the
+  rendered artefact, not the source.**
+- **The header bug was a language-width bug, not a breakpoint-choice bug.** The nav was set
+  to appear at `lg` (1024) and the English labels happened to fit there. Spanish labels are
+  ~36px wider in total and never did. A layout budget that only works in the shorter language
+  is not a working layout.
+
+### Immediate Next Steps
+
+Ordered by the operating ladder. **Revenue proximity puts the logo permissions on top** —
+the corporate page carries the larger revenue line, and the reviewer's assessment and this
+session's own reading agree that proof, not copy, is its weakest element.
+
+1. **Ask three or four clients for permission to show their logo**, then add the marks to
+   the roster. Driscoll's, Continental, Sanmina and CEVA are the strongest names and all
+   four already have named published testimonials, which makes the ask easy. Cheapest
+   credibility gain available on the page; blocked only on the ask.
+2. **Resolve the Hugo López title mismatch.** English says "Testing & EPM Manager", Spanish
+   says "Gerente Senior de Programas", and the pull-quote now surfaces it on the corporate
+   page in both languages. One is wrong. Fix the `position` field in whichever of
+   `src/data/testimonials/{en,es}.ts` is stale.
+3. **Optional: three more deliverable mockups** matching the Initial Student Profile sample,
+   so all four deliverable cards carry a visual. Pure code, no assets. Held back because four
+   document mockups in one section may read as repetitive rather than as proof.
+
+### Technical Debt
+
+- **`src/components/sections/Logos.astro` is used by no page**, and
+  `src/assets/images/logos/logoipsum-*.svg` are eight unremoved template placeholder logos.
+  If real client logos arrive, that component is where they should render — it already does
+  grayscale-to-colour on hover. If they never arrive, both the component and the eight SVGs
+  should be deleted. Do not delete before the roster decision above is settled.
+- **`<Image>` in the square branch of `Challenge.astro` still has no `width`**, so ~18 pages
+  ship a 400px-wide asset into a 320px box. Minor, pre-existing, and left alone deliberately
+  to keep this session's blast radius to the corporate pages.
+
+### Open Questions / Blockers
+
+- **Will the clients say yes to logo use?** Unknown until asked, and the answer decides
+  whether `Logos.astro` gets revived or deleted.
+- **The hero background photo and a second brand accent colour were both raised by the
+  reviewer and both deliberately left alone.** The hero needs a real asset; the accent colour
+  is a brand decision that would reach every page on the site through the CSS custom
+  properties behind `tailwind.config.mjs`.
+
+### Files Touched
+
+- `src/components/Header.astro` — nav breakpoint `lg` to `xl`, nowrap labels, `shrink-0` logo,
+  lang-switcher JS and CSS hooks moved from breakpoint class names to `data-switcher` attributes
+- `src/components/sections/InnerHero.astro` — optional single `cta`
+- `src/components/sections/Challenge.astro` — `quizCta.style`, `imageAspect`
+- `src/components/sections/LeadMagnetCallout.astro` — `variant`
+- `src/pages/es/servicios/paquete-corporativo.astro`
+- `src/pages/en/services/corporate-package.astro`
+- `src/assets/images/services/corporate-meeting-pressure.jpg` (new)
+
+---
 ## Session: 2026-09-08 — The corporate pages stopped selling English lessons and started selling performance
 
 ### Accomplished
