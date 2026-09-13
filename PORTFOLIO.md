@@ -3,10 +3,11 @@
 portfolio_enabled: true
 portfolio_priority: 6
 portfolio_featured: true
+portfolio_last_reviewed: "2026-09-13"
 
 # === CARD DISPLAY ===
 title: "NY English Teacher"
-tagline: "Lead generation website for an English coaching business — replaced 4 roles, runs for $0/month"
+tagline: "Lead generation website for an English coaching business — carries four agency functions on $0/month"
 slug: "ny-english-teacher"
 category: "Client Work"
 tech_stack:
