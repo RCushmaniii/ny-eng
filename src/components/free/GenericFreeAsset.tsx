@@ -891,12 +891,12 @@ export default function GenericFreeAsset({
   // About content (reusable across all assets)
   const aboutContent = {
     en: {
-      text: "I spent 20 years in IT—17 at a Fortune 500, developer to Senior Manager. Now I coach international professionals to sound like the leaders they already are—in English.",
+      text: "I built my career in Fortune 500 IT—developer to Senior Manager, leading global teams across 42 countries. Now I coach international professionals to sound like the leaders they already are—in English.",
       subtext:
         "After coaching 200+ professionals from companies like Smarttie, Driscoll's, CEVA Logistics, and Continental, I know what separates good from great in high-pressure meetings isn't vocabulary—it's leadership communication.",
     },
     es: {
-      text: "Pasé 20 años en TI—17 en una Fortune 500, de desarrollador a Senior Manager. Ahora entreno a profesionales internacionales para que suenen como los líderes que ya son—en inglés.",
+      text: "Hice mi carrera en TI dentro de una Fortune 500—de desarrollador a Senior Manager, liderando equipos globales en 42 países. Ahora entreno a profesionales internacionales para que suenen como los líderes que ya son—en inglés.",
       subtext:
         "Después de entrenar a más de 200 profesionales de empresas como Smarttie, Driscoll's, CEVA Logistics y Continental, sé que lo que separa a los buenos de los excelentes en reuniones de alta presión no es el vocabulario—es la comunicación de liderazgo.",
     },
