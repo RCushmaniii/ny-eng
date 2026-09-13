@@ -192,6 +192,21 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Closes when:* the line names companies with testimonials behind them — Smarttie and
   Grupo Kopar are both real clients, so this is a one-name fix, not a rewrite.
 
+- [ ] **Two unbacked claims left standing in the author bio.**
+  *Added 2026-09-12*, when the career-year violation in the same paragraph was fixed
+  (PR #286). Both need Robert, not code. (1) **`200+ professionals`** — if that is an
+  estimate rather than a count, `claims-policy.json` `metrics_policy.no_invented_numbers`
+  says it should be a range. (2) **`Smarttie, Driscoll's, CEVA Logistics, and Continental`**
+  named in Robert's own first-person bio. All four have testimonials on the site, but the
+  policy's testimonial rule covers quoting an employee — naming the company as your own
+  client is a stronger claim and wants written permission.
+  *Same underlying question as the quiz-page item above, and it shares the permission ask
+  with the corporate-page proof item* — one conversation with Terramar/Driscoll's settles
+  all three.
+  *Blocks:* nothing shipping. It is unbacked public claim surface on 42 resource pages.
+  *Next:* Robert says whether `200+` is counted, and whether the four names stay. If they
+  go, the replacement is industry framing — one edit to `GenericFreeAsset.tsx`.
+
 - [ ] **Ahrefs health score still 99 — two unnamed errors.** Added 2026-09-02 (PRs
   #270/#271), updated 2026-09-08. The awaited crawl arrived on 2026-09-08 and reads
   **99 with 2 errors**, so the four fixes from #270/#271 did not move it and the summary
@@ -212,6 +227,62 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 > re-added here on 2026-08-06 and removed again the same day — they are real and still
 > open, they are simply not this repo's business. Their full text is in this file's git
 > history at commit `f81fef9` if they need to be moved rather than rewritten.
+
+---
+
+## Session: 2026-09-12
+
+### Accomplished
+
+- **Removed every aggregate career-year count from the site** (PR #286, merged). The author
+  bio opened "I spent 20 years in IT—17 at a Fortune 500," which `claims-policy.json`
+  `biographical_facts.no_total_career_year_counts` and `voice-dna-nyet.json`
+  `voice_boundaries.never_do` ban **by those exact two numbers**. Robert spotted it on a
+  resource page.
+- **Blast radius was 42 pages, not one.** The bio lives in one shared component,
+  `src/components/free/GenericFreeAsset.tsx:894/899`, rendered by
+  `src/pages/{en/resources,es/recursos}/[slug].astro` across all 21 EN + 21 ES free
+  resources. Plus both About pages — body copy *and* `seoDescription`.
+- Replaced with altitude and reach per the policy's own prescribed substitution: developer
+  to Senior Manager, global teams across 42 countries. No duration anywhere.
+- **Also fixed `5-minute-negotiation-script.json`** — its byline carried
+  `15+ years experience | Based in New York`: a second year total, plus a location that is
+  simply wrong (Guadalajara).
+- **Verified all 21 resource PDFs are clean** — they do not carry the author bio, so future
+  bio changes need only the component.
+
+### Decisions Made
+
+- **Fixed the year counts, left the company names.** The year count is a named hard rule
+  with zero ambiguity; `200+ professionals` and the four client companies in the same
+  paragraph are judgement calls that belong to Robert. Logged as an Open Item rather than
+  silently rewritten.
+- **`Fortune 500` stays.** It is an approved credibility anchor in the claims ladder — only
+  the *duration* attached to it was banned.
+
+### Immediate Next Steps
+
+- [ ] Robert: confirm whether `200+ professionals` is counted or estimated, and whether the
+      four client companies stay in the first-person bio. One reply clears both.
+
+### Technical Debt
+
+- None added.
+
+### Open Questions / Blockers
+
+- See the new Open Items entry — both are Robert-decisions, neither blocks a deploy.
+
+### Lessons / Surprises
+
+- **A naive PDF text scan can return a confident zero and prove nothing.** The first pass
+  inflated raw `stream`/`endstream` blocks with zlib and reported 0 hits across 21 PDFs —
+  but a positive control showed it extracted **0 characters** from a file that has text.
+  `pypdf` then pulled 184,495 characters cleanly. *Any* extractor result is worthless
+  without a positive control confirming it can see text that is definitely there.
+- **One shared component is why a copy rule breaks at scale.** A single `aboutContent`
+  object put a policy violation on 42 live pages. When auditing copy for a rule, grep the
+  components before the pages.
 
 ---
 
