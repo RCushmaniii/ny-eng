@@ -20,7 +20,7 @@ status: "Production"
 
 # === DETAIL PAGE ===
 problem: "Solo professional service providers burn 10-15 hours per week on manual qualification, scheduling ping-pong, and follow-ups. Their websites look identical to commodity competitors, making it impossible to justify premium pricing while the Spanish-speaking professional market remains underserved."
-solution: "A fully automated lead generation platform that functions as four digital employees — SDR, marketing department, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase."
+solution: "A lead generation platform that carries the work of four agency functions — SDR, marketing, executive assistant, and brand manager — on free-tier infrastructure. Every conversation steers toward booking, every page justifies premium pricing, and the full EN/ES bilingual system doubles the addressable market from a single codebase."
 key_features:
   - "Complete 4-course A1→C2 English curriculum — Beginner, Intermediate, Advanced, Executive — entirely free, bilingual EN/ES"
   - "Executive course alone: 10 units × 3 sections, 8 original React drill components, ~130+ drills, Azure Neural TTS, capstone recorded presentation with direct browser-to-CDN audio upload (Vercel Blob) and 48-hour personal feedback loop"
@@ -136,9 +136,9 @@ health_status:
 
 ## The Architecture of Authority
 
-NY English Teacher is a production lead generation and client conversion platform built for a solo-operated premium coaching business in Guadalajara, Mexico. The platform replaces four roles that a traditional agency would staff with humans — an SDR, a marketing department, an executive assistant, and a brand manager — using automated systems that run on free-tier infrastructure.
+NY English Teacher is a production lead generation and client conversion platform built for a solo-operated premium coaching business in Guadalajara, Mexico. The platform carries work a traditional agency would staff across four roles — an SDR, a marketing department, an executive assistant, and a brand manager — using automated systems that run on free-tier infrastructure.
 
-The business serves Latin American professionals (executives, engineers, startup founders, logistics managers) who hit a career ceiling not because they lack skill, but because they can't communicate with authority in English. The platform automates the entire journey from discovery through qualification to booking, so a single operator competes with staffed agencies while maintaining 100% gross margin.
+The business serves Latin American professionals (executives, engineers, startup founders, logistics managers) who hit a career ceiling not because they lack skill, but because they can't communicate with authority in English. The platform automates the path from discovery through qualification to booking, so a single operator competes with staffed agencies while maintaining 100% gross margin.
 
 ## The Challenge
 
