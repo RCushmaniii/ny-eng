@@ -53,8 +53,9 @@ WEEKDAY_MORNING_HOURS = "09:00-14:00"
 # Secrets are NOT here. Set with `wrangler secret put`:
 #   GOOGLE_CLIENT_SECRET
 #   GOOGLE_REFRESH_TOKEN
-# Attendance confirmation emails (lib/booking-confirm.js). Also needs the
-# RESEND_API_KEY secret: wrangler secret put RESEND_API_KEY
+# Attendance confirmation emails (lib/booking-confirm.js), sent through Brevo —
+# nyenglishteacher.com is authenticated there. Needs the BREVO_API_KEY secret
+# (a v3 API key, xkeysib-): wrangler secret put BREVO_API_KEY
 CONFIRM_BRAND = "NY English Teacher"
 CONFIRM_FROM_EMAIL = "Robert Cushman | NY English Teacher <robert@nyenglishteacher.com>"
 PUBLIC_WORKER_URL = "https://plain-mode-42c4.rcushmaniii.workers.dev"
