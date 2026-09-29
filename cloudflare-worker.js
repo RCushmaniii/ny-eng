@@ -52,6 +52,14 @@ import {
   clientKey,
 } from "./lib/rate-limit-d1.js";
 
+// Day-before "please confirm" email plus the /confirm and /cancel pages it
+// links to. Shared verbatim with cushlabs/workers/lib/booking-confirm.js.
+import {
+  handleConfirmationRoutes,
+  recordBooking,
+  sendDueConfirmations,
+} from "./lib/booking-confirm.js";
+
 // Client address, best header first. Kept here because three surfaces need it.
 function clientIpOf(request) {
   return (
@@ -96,6 +104,15 @@ function setCachedSlots(dateStr, data) {
 }
 
 export default {
+  // Cron trigger (every 30 min): send the day-before confirmation emails.
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(
+      sendDueConfirmations(env).then((r) =>
+        console.log(`confirmation emails: ${JSON.stringify(r)}`),
+      ),
+    );
+  },
+
   async fetch(request, env) {
     const url = new URL(request.url);
     const path = url.pathname.replace(/\/+$/, "") || "/";
@@ -106,6 +123,18 @@ export default {
     if (request.method === "OPTIONS") return corsPreflight(request, env);
 
     try {
+      const confirmation = await handleConfirmationRoutes(
+        request,
+        env,
+        url,
+        path,
+        {
+          getAccessToken,
+          calendarId: env.GOOGLE_CALENDAR_ID || env.CALENDAR_ID,
+        },
+      );
+      if (confirmation) return confirmation;
+
       // Health check
       if (request.method === "GET" && path === "/") {
         // Reports whether the limiter is ENFORCING, not merely reachable. The
@@ -257,7 +286,20 @@ export default {
         }
 
         const payload = await safeJson(request);
-        const result = await createBooking(payload, env, tz, lang);
+        const { startsAt, ...result } = await createBooking(
+          payload,
+          env,
+          tz,
+          lang,
+        );
+        await recordBooking(env, {
+          eventId: result.eventId,
+          startsAt,
+          name: sanitizeInput(payload.name),
+          email: sanitizeInput(payload.email).toLowerCase(),
+          lang,
+          meetLink: result.meetLink,
+        });
         return json(
           { ok: true, ...result, message: t(lang, "book_success") },
           200,
@@ -527,7 +569,7 @@ async function createBooking(data, env, timeZone, lang) {
     resp?.conferenceData?.entryPoints?.find((p) => p?.uri)?.uri ||
     null;
 
-  return { eventId: resp.id, meetLink };
+  return { eventId: resp.id, meetLink, startsAt: resp.start?.dateTime };
 }
 
 async function handleContact(data, env, lang) {

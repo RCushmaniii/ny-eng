@@ -15,6 +15,10 @@ name = "plain-mode-42c4"
 main = "cloudflare-worker.js"
 compatibility_date = "2025-10-11"
 
+# Every 30 min: day-before "please confirm" emails (lib/booking-confirm.js).
+[triggers]
+crons = ["*/30 * * * *"]
+
 [observability]
 enabled = true
 
@@ -49,3 +53,10 @@ WEEKDAY_MORNING_HOURS = "09:00-14:00"
 # Secrets are NOT here. Set with `wrangler secret put`:
 #   GOOGLE_CLIENT_SECRET
 #   GOOGLE_REFRESH_TOKEN
+# Attendance confirmation emails (lib/booking-confirm.js). Also needs the
+# RESEND_API_KEY secret: wrangler secret put RESEND_API_KEY
+CONFIRM_BRAND = "NY English Teacher"
+CONFIRM_FROM_EMAIL = "Robert Cushman | NY English Teacher <robert@nyenglishteacher.com>"
+PUBLIC_WORKER_URL = "https://plain-mode-42c4.rcushmaniii.workers.dev"
+REBOOK_URL = "https://www.nyenglishteacher.com/en/book"
+REBOOK_URL_ES = "https://www.nyenglishteacher.com/es/reservar"

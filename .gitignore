@@ -59,3 +59,4 @@ public/video/Auditoria_de_Ingles_Corporativo.mp4
 
 # Generated audit/validator reports — regenerated on every run, no value in source control
 project-reports/
+.wrangler/
