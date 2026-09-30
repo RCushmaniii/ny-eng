@@ -61,3 +61,7 @@ CONFIRM_FROM_EMAIL = "Robert Cushman | NY English Teacher <robert@nyenglishteach
 PUBLIC_WORKER_URL = "https://plain-mode-42c4.rcushmaniii.workers.dev"
 REBOOK_URL = "https://www.nyenglishteacher.com/en/book"
 REBOOK_URL_ES = "https://www.nyenglishteacher.com/es/reservar"
+# WhatsApp reminders (opt-in) + Robert's 08:00 summary, via cushlabs-whatsapp.
+# Secrets: WA_GATEWAY_SECRET (= its TEST_SEND_SECRET), OPERATOR_WA (Robert's number).
+WA_GATEWAY_URL = "https://cushlabs-whatsapp.rcushmaniii.workers.dev"
+WA_SENDER = "nye"

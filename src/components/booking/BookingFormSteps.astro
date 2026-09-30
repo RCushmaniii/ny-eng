@@ -19,6 +19,7 @@ const translations = {
     email: "Email",
     phoneNumber: "Phone number",
     phoneOptional: "We will use it to remind you of this appointment.",
+    whatsappOptIn: "Send me a reminder on WhatsApp the day before.",
     confirmAppointment: "Confirm Appointment",
     next: "Next",
     back: "Back",
@@ -34,6 +35,7 @@ const translations = {
     email: "Correo electrónico",
     phoneNumber: "Número de teléfono",
     phoneOptional: "Lo usaremos para recordarte esta cita.",
+    whatsappOptIn: "Envíame un recordatorio por WhatsApp un día antes.",
     confirmAppointment: "Confirmar Cita",
     next: "Siguiente",
     back: "Atrás",
@@ -276,6 +278,10 @@ const t = translations[lang];
               </svg>
               {t.phoneOptional}
             </p>
+            <label class="mt-3 flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300 cursor-pointer">
+              <input type="checkbox" id="whatsapp-optin" name="whatsappOptIn" class="mt-0.5 h-4 w-4" />
+              <span>{t.whatsappOptIn}</span>
+            </label>
           </div>
 
           <div>
@@ -842,6 +848,7 @@ const t = translations[lang];
         email: emailInput.value,
         roleCompany: roleCompanyInput.value,
         phone: phoneInput.value || "",
+        whatsappOptIn: !!document.getElementById("whatsapp-optin")?.checked,
         notes: notesInput.value || "",
         investmentReadiness: investmentReadinessInput.value,
       };
@@ -855,6 +862,10 @@ const t = translations[lang];
           date: dateStr,
           time: selectedTime,
           lang: lang,
+          // Collected on this form from the start but never sent until
+          // 2026-09-29, so no booking reached the calendar with a phone.
+          phone: formData.phone,
+          whatsappOptIn: !!formData.phone && formData.whatsappOptIn,
           notes: [
             `${lang === "es" ? "Puesto y empresa" : "Role and company"}: ${formData.roleCompany}`,
             `${lang === "es" ? "Disposición de inversión" : "Investment readiness"}: ${

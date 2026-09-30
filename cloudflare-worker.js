@@ -57,6 +57,7 @@ import {
 import {
   handleConfirmationRoutes,
   recordBooking,
+  sendDailySummary,
   sendDueConfirmations,
 } from "./lib/booking-confirm.js";
 
@@ -107,9 +108,14 @@ export default {
   // Cron trigger (every 30 min): send the day-before confirmation emails.
   async scheduled(event, env, ctx) {
     ctx.waitUntil(
-      sendDueConfirmations(env).then((r) =>
-        console.log(`confirmation emails: ${JSON.stringify(r)}`),
-      ),
+      Promise.all([
+        sendDueConfirmations(env).then((r) =>
+          console.log(`confirmations: ${JSON.stringify(r)}`),
+        ),
+        sendDailySummary(env).then((r) =>
+          console.log(`daily summary: ${JSON.stringify(r)}`),
+        ),
+      ]),
     );
   },
 
@@ -299,6 +305,8 @@ export default {
           email: sanitizeInput(payload.email).toLowerCase(),
           lang,
           meetLink: result.meetLink,
+          phone: sanitizeInput(payload.phone || ""),
+          whatsappOptIn: payload.whatsappOptIn === true,
         });
         return json(
           { ok: true, ...result, message: t(lang, "book_success") },
