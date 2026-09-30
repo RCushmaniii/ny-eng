@@ -71,3 +71,6 @@ REBOOK_URL_ES = "https://www.nyenglishteacher.com/es/reservar"
 # Secrets: WA_GATEWAY_SECRET (= its TEST_SEND_SECRET), OPERATOR_WA (Robert's number).
 WA_GATEWAY_URL = "https://cushlabs-whatsapp.rcushmaniii.workers.dev"
 WA_SENDER = "nye"
+# The combined 08:00 summary is sent by cushlabs-booking, which reads this
+# Worker's list from /internal/todays-bookings (secret: SUMMARY_SECRET).
+DAILY_SUMMARY = "off"

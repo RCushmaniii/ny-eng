@@ -314,3 +314,9 @@ Every working session creates / updates a log at `docs/session-logs/YYYY-MM-DD-N
 - **`docs/PROJECT-CONTEXT.md`** — standing context that never gets checked off: why organic traffic collapsed and how it was fixed, cross-repo infrastructure facts that have already produced three false conclusions, what the search data says, settled decisions not to re-litigate, reusable audit commands, and the environment gotchas that have cost real time.
 
 Replaces the former `docs/HANDOFF.md` (retired 2026-08-06).
+
+## Booking confirmations
+
+Consultation bookings get a day-before confirm email, an opt-in WhatsApp reminder, and feed Robert's
+08:00 summary. Read [`docs/BOOKING-CONFIRMATIONS.md`](docs/BOOKING-CONFIRMATIONS.md) before touching
+`cloudflare-worker.js`, `lib/booking-confirm.js` or the booking form.
