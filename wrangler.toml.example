@@ -19,6 +19,12 @@ compatibility_date = "2025-10-11"
 [triggers]
 crons = ["*/30 * * * *"]
 
+# Direct binding to cushlabs-whatsapp. Required: Cloudflare blocks one Worker
+# fetching another *.workers.dev URL on the same account (error 1042).
+[[services]]
+binding = "WA_GATEWAY"
+service = "cushlabs-whatsapp"
+
 [observability]
 enabled = true
 
