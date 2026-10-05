@@ -32,6 +32,7 @@
     "validate:build": "npm run validate:all && npm run build",
     "fix:links": "node scripts/fix-links.mjs",
     "fix:links:dry-run": "node scripts/fix-links.mjs --dry-run",
+    "test": "node --test \"tests/**/*.test.mjs\"",
     "test:env": "node scripts/test-env.mjs",
     "test:env:raw": "node scripts/test-env.mjs --raw",
     "test:calendar": "node scripts/test-calendar-api.mjs",
