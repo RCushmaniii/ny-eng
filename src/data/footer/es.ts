@@ -1,5 +1,6 @@
 import type { ConnectItem } from "@components/Footer.astro";
 import { routes } from "@utils/paths";
+import { whatsappBookingHref } from "../whatsappBooking";
 
 export const footerContentEs = (siteConfig: { companyName: string }) => {
   const currentYear = new Date().getFullYear();
@@ -60,9 +61,12 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
       description:
         "Reserva una sesión estratégica privada. En 30 minutos, identificaré las brechas específicas entre tu inglés actual y la presencia ejecutiva que tu rol exige.",
       hideCta: false,
+      // Spanish visitors book on WhatsApp (Robert, 2026-10-06): the Flow is
+      // faster on a phone than the web calendar. English keeps /en/book/.
       button: {
-        text: "Reservar Mi Sesión Estratégica",
-        link: "/es/reservar/",
+        text: "Agendar por WhatsApp",
+        link: whatsappBookingHref("es"),
+        target: "_blank",
       },
     },
   };
