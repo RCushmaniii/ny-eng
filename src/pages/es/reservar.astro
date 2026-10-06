@@ -4,6 +4,7 @@ export const prerender = true;
 import Base from "@layouts/Base.astro";
 import InnerHero from "@components/sections/InnerHero.astro";
 import BookingFormSteps from "@components/booking/BookingFormSteps.astro";
+import WhatsAppBookingCta from "@components/booking/WhatsAppBookingCta.astro";
 import bookingHero from "@assets/images/contact/book-hero.jpg";
 
 const metadata = {
@@ -34,6 +35,7 @@ const heroContent = {
     <section class="py-16 md:py-24 bg-background-light">
       <div class="site-container px-4">
         <!-- Booking Form with Steps -->
+        <WhatsAppBookingCta lang="es" />
         <BookingFormSteps lang="es" />
 
         <p class="mt-8 text-center text-sm text-gray-500">
