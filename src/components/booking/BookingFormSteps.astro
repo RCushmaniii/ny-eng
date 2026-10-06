@@ -23,6 +23,7 @@ const translations = {
     confirmAppointment: "Confirm Appointment",
     next: "Next",
     back: "Back",
+    changeTime: "Change",
   },
   es: {
     step1: "Fecha y hora",
@@ -39,89 +40,14 @@ const translations = {
     confirmAppointment: "Confirmar Cita",
     next: "Siguiente",
     back: "Atrás",
+    changeTime: "Cambiar",
   },
 };
 
 const t = translations[lang];
 ---
 
-<div class="booking-steps-container max-w-4xl mx-auto">
-  <!-- Appointment Info -->
-  <div
-    class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mb-8"
-  >
-    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
-      {
-        lang === "en"
-          ? "30-Minute Professional English Diagnostic"
-          : "Diagnóstico de Inglés Profesional"
-      }
-    </h3>
-    <div class="space-y-3">
-      <div class="flex items-start gap-3">
-        <svg
-          class="w-6 h-6 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-        </svg>
-        <p class="text-gray-700 dark:text-gray-300">
-          {lang === "en" ? "30 min analysis" : "Análisis de 30 minutos"}
-        </p>
-      </div>
-      <div class="flex items-start gap-3">
-        <svg
-          class="w-6 h-6 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-          ></path>
-        </svg>
-        <p class="text-gray-700 dark:text-gray-300">
-          {
-            lang === "en"
-              ? "Google Meet video conference info added after booking"
-              : "Información de videoconferencia de Google Meet agregada después de la reserva"
-          }
-        </p>
-      </div>
-      <div class="flex items-start gap-3">
-        <svg
-          class="w-6 h-6 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          ></path>
-        </svg>
-        <p id="timezone-info-text" class="text-gray-700 dark:text-gray-300">
-          {
-            lang === "en"
-              ? "Time slots are (GMT-06:00) Central Standard Time - Mexico City"
-              : "Los horarios son (GMT-06:00) Hora Central - Ciudad de México"
-          }
-        </p>
-      </div>
-    </div>
-  </div>
-
+<div class="booking-steps-container w-full">
   <!-- Progress Steps -->
   <div class="flex items-center justify-center mb-12 gap-2">
     <div class="step-indicator active" data-step="1">
@@ -147,18 +73,6 @@ const t = translations[lang];
         {t.selectDateTime}
       </h2>
 
-      <!-- Selected Date Display - Prominent at top -->
-      <div
-        class="bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-4 mb-6"
-      >
-        <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">
-          {lang === "en" ? "Selected Date" : "Fecha Seleccionada"}
-        </p>
-        <p class="text-2xl font-bold text-gray-900 dark:text-white" id="selected-date-display-top">
-          {lang === "en" ? "Select a date below" : "Selecciona una fecha abajo"}
-        </p>
-      </div>
-
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Date Picker -->
         <div>
@@ -167,9 +81,18 @@ const t = translations[lang];
 
         <!-- Time Slots -->
         <div>
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+          {/* Shows the chosen day ("Wednesday, October 7") once the script runs. */}
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white" id="selected-date-display-top">
             {t.selectTime}
           </h3>
+          {/* Filled by the script with the visitor's own zone. */}
+          <p id="timezone-info-text" class="text-sm text-gray-600 dark:text-gray-400 mt-1 mb-4">
+            {
+              lang === "en"
+                ? "Times are in Mexico City time"
+                : "Horarios en hora de Ciudad de México"
+            }
+          </p>
           <div id="time-slots-container" class="grid grid-cols-2 sm:grid-cols-3 gap-2">
             <!-- Time slots populated by JS -->
           </div>
@@ -181,9 +104,26 @@ const t = translations[lang];
   <!-- Step 2: Your Details -->
   <div class="step-content" data-step="2">
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
         {t.addDetails}
       </h2>
+
+      {/* The slot they picked, so it doesn't vanish on this step. */}
+      <div
+        class="mb-6 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg border border-primary/30 bg-primary/5 dark:bg-primary/10 px-4 py-3 max-w-md mx-auto"
+      >
+        <svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+        <p class="font-semibold text-gray-900 dark:text-white" id="step2-when"></p>
+        <button
+          type="button"
+          id="step2-change"
+          class="text-sm font-semibold text-primary dark:text-primary-light underline underline-offset-2 hover:opacity-80"
+        >
+          {t.changeTime}
+        </button>
+      </div>
 
       <!-- Error Message -->
       <div
@@ -278,7 +218,10 @@ const t = translations[lang];
               </svg>
               {t.phoneOptional}
             </p>
-            <label class="mt-3 flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300 cursor-pointer">
+            <label
+              id="whatsapp-optin-row"
+              class="hidden mt-3 items-start gap-2 text-sm text-gray-700 dark:text-gray-300 cursor-pointer"
+            >
               <input type="checkbox" id="whatsapp-optin" name="whatsappOptIn" class="mt-0.5 h-4 w-4" />
               <span>{t.whatsappOptIn}</span>
             </label>
@@ -538,6 +481,24 @@ const t = translations[lang];
     let formData = {};
     let isBooking = false; // Prevent double-booking
 
+    // The day the visitor clicked, as YYYY-MM-DD. The picker builds local-midnight
+    // Dates, so toISOString() (UTC) rolled the date back a day for anyone east of
+    // UTC: a visitor in Madrid who clicked Oct 12 was shown, and booked, Oct 11.
+    function calendarDate(d) {
+      return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+    }
+
+    // A Mexico City "HH:MM" slot as the reader expects it: "7:00 PM" in English,
+    // "19:00" in Spanish (24-hour is the norm in Mexico).
+    function clock(hhmm) {
+      if (lang === "es") return hhmm;
+      const [h, m] = hhmm.split(":").map(Number);
+      return new Date(2000, 0, 1, h, m).toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "2-digit",
+      });
+    }
+
     // --- Timezone utilities ---
     function getVisitorTimezone() {
       try {
@@ -621,6 +582,8 @@ const t = translations[lang];
       selectedDate = new Date(now);
       selectedDate.setHours(0, 0, 0, 0);
     }
+    // Sundays are closed; never open on one.
+    if (selectedDate.getDay() === 0) selectedDate.setDate(selectedDate.getDate() + 1);
 
     // Step navigation
     function showStep(step) {
@@ -648,7 +611,6 @@ const t = translations[lang];
       if (displayTop && date) {
         const options = {
           weekday: "long",
-          year: "numeric",
           month: "long",
           day: "numeric",
         };
@@ -675,7 +637,7 @@ const t = translations[lang];
       container.innerHTML = '<p class="col-span-full text-center text-gray-500">Loading...</p>';
 
       try {
-        const dateStr = date.toISOString().split("T")[0];
+        const dateStr = calendarDate(date);
         const url = `${API_BASE}/slots/${dateStr}?lang=${lang}`;
         console.log("🔍 API_BASE:", API_BASE);
         console.log("🔍 Full URL:", url);
@@ -710,7 +672,7 @@ const t = translations[lang];
       const container = document.getElementById("time-slots-container");
       if (!container) return;
 
-      const dateStr = selectedDate.toISOString().split("T")[0];
+      const dateStr = calendarDate(selectedDate);
 
       container.innerHTML = slots
         .map((time) => {
@@ -724,7 +686,7 @@ const t = translations[lang];
                 data-local-time="${localTime}"
               >
                 <span class="block text-base">${localTime}</span>
-                <span class="block text-xs opacity-60">${time} CDMX</span>
+                <span class="block text-xs opacity-60">${clock(time)} CDMX</span>
               </button>
             `;
           }
@@ -734,7 +696,7 @@ const t = translations[lang];
               class="time-slot-btn px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg hover:border-primary transition-all font-medium text-gray-700 dark:text-gray-300"
               data-time="${time}"
             >
-              ${time}
+              ${clock(time)}
             </button>
           `;
         })
@@ -745,6 +707,7 @@ const t = translations[lang];
         btn.addEventListener("click", (e) => {
           const target = e.currentTarget;
           selectedTime = target.dataset.time;
+          setStep2When();
 
           // Update UI
           container.querySelectorAll(".time-slot-btn").forEach((b) => {
@@ -783,8 +746,35 @@ const t = translations[lang];
     // This handler is now replaced by the confirm-booking handler below
     // (keeping comment for reference)
 
+    // The chosen slot, in the visitor's own clock, shown at the top of step 2.
+    function setStep2When() {
+      const el = document.getElementById("step2-when");
+      if (!el || !selectedDate || !selectedTime) return;
+      const day = selectedDate.toLocaleDateString(lang === "es" ? "es-MX" : "en-US", {
+        weekday: "short",
+        month: "short",
+        day: "numeric",
+      });
+      const time =
+        showDualTime && visitorTz
+          ? `${convertMexicoCityToLocal(calendarDate(selectedDate), selectedTime, visitorTz)} (${getShortTzName(visitorTz)})`
+          : clock(selectedTime);
+      el.textContent = `${day} · ${time}`;
+    }
+
     // Back buttons
     document.getElementById("back-to-step1")?.addEventListener("click", () => showStep(1));
+    document.getElementById("step2-change")?.addEventListener("click", () => showStep(1));
+
+    // WhatsApp reminder opt-in appears once a phone number is typed.
+    const phoneField = document.getElementById("phone");
+    const optInRow = document.getElementById("whatsapp-optin-row");
+    phoneField?.addEventListener("input", () => {
+      // Class, not the hidden attribute: Tailwind 3's .flex would override [hidden].
+      const empty = phoneField.value.trim() === "";
+      optInRow?.classList.toggle("hidden", empty);
+      optInRow?.classList.toggle("flex", !empty);
+    });
 
     // Confirm booking (from Step 2)
     document.getElementById("confirm-booking")?.addEventListener("click", async (e) => {
@@ -854,7 +844,7 @@ const t = translations[lang];
       };
 
       try {
-        const dateStr = selectedDate.toISOString().split("T")[0];
+        const dateStr = calendarDate(selectedDate);
 
         const bookingPayload = {
           name: formData.name,
@@ -917,12 +907,12 @@ const t = translations[lang];
             if (tzNote) {
               tzNote.textContent =
                 lang === "es"
-                  ? `${selectedTime} hora de Ciudad de México`
-                  : `${selectedTime} Mexico City time`;
+                  ? `${clock(selectedTime)} hora de Ciudad de México`
+                  : `${clock(selectedTime)} Mexico City time`;
             }
           } else {
             document.getElementById("summary-datetime").textContent =
-              `${dateStrFormatted} - ${selectedTime}`;
+              `${dateStrFormatted} - ${clock(selectedTime)}`;
           }
           document.getElementById("summary-name").textContent = formData.name;
           document.getElementById("summary-email").textContent = formData.email;
@@ -982,9 +972,37 @@ const t = translations[lang];
       }
     }
 
+    // Open on the first day that actually has a free time, instead of a
+    // "No available times" day the visitor has to click past.
+    async function openFirstAvailableDay() {
+      const start = new Date(selectedDate);
+      for (let i = 0; i < 14; i++) {
+        const d = new Date(start);
+        d.setDate(start.getDate() + i);
+        if (d.getDay() === 0) continue; // closed Sundays
+        try {
+          const r = await fetch(`${API_BASE}/slots/${calendarDate(d)}?lang=${lang}`);
+          const data = r.ok ? await r.json() : null;
+          if (!data?.ok) break;
+          if (data.slots?.length) {
+            if (i === 0) break;
+            if (window.nyeDatePicker) {
+              window.nyeDatePicker.selectDate(d, true);
+              return;
+            }
+            break;
+          }
+        } catch {
+          break;
+        }
+      }
+      updateDateDisplay(selectedDate);
+      fetchAvailableSlots(selectedDate);
+    }
+
     // Initialize
     updateDateDisplay(selectedDate);
-    fetchAvailableSlots(selectedDate);
+    openFirstAvailableDay();
   });
 </script>
 

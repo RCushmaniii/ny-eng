@@ -68,7 +68,10 @@ const t = translations[lang];
         this.selectedDate = new Date(now);
         this.selectedDate.setHours(0, 0, 0, 0);
       }
-      
+      // Sundays are closed; never open on one.
+      if (this.selectedDate.getDay() === 0) this.selectedDate.setDate(this.selectedDate.getDate() + 1);
+      this.currentDate = new Date(this.selectedDate.getFullYear(), this.selectedDate.getMonth(), 1);
+
       this.months = months;
       this.init();
     }
@@ -122,6 +125,9 @@ const t = translations[lang];
       for (let day = 1; day <= daysInMonth; day++) {
         const dayDate = new Date(year, month, day);
         const isPast = dayDate < today && dayDate.toDateString() !== today.toDateString();
+        // Closed days look closed instead of answering "No available times" on click.
+        const isClosed = dayDate.getDay() === 0;
+        const isOff = isPast || isClosed;
         const isToday = dayDate.toDateString() === today.toDateString();
         const isSelected = this.selectedDate && dayDate.toDateString() === this.selectedDate.toDateString();
         
@@ -130,12 +136,12 @@ const t = translations[lang];
         dayCell.textContent = day;
         dayCell.className = `
           p-2 text-center rounded-lg transition-all
-          ${isPast ? 'text-gray-300 dark:text-gray-600 cursor-not-allowed' : 'hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer'}
+          ${isOff ? 'text-gray-300 dark:text-gray-600 cursor-not-allowed' : 'hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer'}
           ${isToday ? 'font-bold ring-2 ring-primary ring-opacity-50' : ''}
-          ${isSelected ? 'bg-primary text-white hover:bg-primary-dark' : 'text-gray-700 dark:text-gray-300'}
+          ${isSelected ? 'bg-primary text-white hover:bg-primary-dark' : isOff ? '' : 'text-gray-700 dark:text-gray-300'}
         `;
         
-        if (!isPast) {
+        if (!isOff) {
           dayCell.addEventListener('click', () => {
             this.selectDate(dayDate);
           });
@@ -147,13 +153,15 @@ const t = translations[lang];
       }
     }
 
-    selectDate(date) {
+    // `auto` = the page chose this day (first open day), not the visitor.
+    selectDate(date, auto = false) {
       this.selectedDate = date;
+      this.currentDate = new Date(date.getFullYear(), date.getMonth(), 1);
       this.render();
-      
+
       // Dispatch custom event
-      const event = new CustomEvent('dateSelected', { 
-        detail: { date },
+      const event = new CustomEvent('dateSelected', {
+        detail: { date, auto },
         bubbles: true 
       });
       document.querySelector('.date-picker-container')?.dispatchEvent(event);
@@ -163,10 +171,10 @@ const t = translations[lang];
   // Initialize on page load
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-      new DatePicker();
+      window.nyeDatePicker = new DatePicker();
     });
   } else {
-    new DatePicker();
+    window.nyeDatePicker = new DatePicker();
   }
 </script>
 

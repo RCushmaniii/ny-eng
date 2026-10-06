@@ -1,0 +1,109 @@
+---
+/**
+ * Booking page body, shared by /en/book/ and /es/reservar/ so both stay
+ * structurally identical (2026-10-06, modelled on cushlabs.ai/consultation).
+ *
+ * Calendar first: who and what on the left, the calendar on the right. On
+ * phones: the short intro, then the calendar, then WhatsApp and the details.
+ * The page used to open on a full-width hero image before any calendar.
+ *
+ * The default slot renders under the form (the cancellation-policy line).
+ */
+import { Image } from "astro:assets";
+import BookingFormSteps from "./BookingFormSteps.astro";
+import WhatsAppBookingCta from "./WhatsAppBookingCta.astro";
+import robertPhoto from "@assets/images/about/me-blue-shirt.jpg";
+
+interface Props {
+  lang: "en" | "es";
+  title: string;
+  description: string;
+}
+
+const { lang, title, description } = Astro.props;
+
+const S = {
+  en: {
+    sub: "New York English",
+    length: "30 min",
+    format: "Google Meet video call",
+    coverTitle: "What we'll talk about",
+    coverBody:
+      "Your role, the professional situation that matters most to you right now — a meeting, presentation, interview or negotiation — and where your English is getting in the way.",
+    afterTitle: "After the call",
+    afterBody:
+      "You'll know whether private coaching is the right fit. If it is, we agree on where to start. If it isn't, I'll tell you. No cost and no obligation.",
+  },
+  es: {
+    sub: "New York English",
+    length: "30 min",
+    format: "Videollamada por Google Meet",
+    coverTitle: "De qué vamos a hablar",
+    coverBody:
+      "Tu puesto, la situación profesional que más te importa ahora — una junta, presentación, entrevista o negociación — y en qué parte tu inglés te está frenando.",
+    afterTitle: "Después de la llamada",
+    afterBody:
+      "Sabrás si el coaching privado es adecuado para ti. Si lo es, acordamos por dónde empezar. Si no lo es, te lo digo. Sin costo y sin compromiso.",
+  },
+}[lang];
+---
+
+<main>
+  <div class="bg-background-light dark:bg-gray-900">
+    <div class="mx-auto max-w-6xl px-4 pt-28 pb-20 md:pt-32 md:pb-24">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,320px)_minmax(0,1fr)] lg:gap-12">
+        <div class="lg:col-start-1 lg:row-start-1">
+          <div class="flex items-center gap-3">
+            <Image
+              src={robertPhoto}
+              alt="Robert Cushman"
+              width={112}
+              height={112}
+              loading="eager"
+              class="h-14 w-14 rounded-full border border-gray-200 object-cover object-top dark:border-gray-700"
+            />
+            <div>
+              <p class="font-semibold text-gray-900 dark:text-white">Robert Cushman</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">{S.sub}</p>
+            </div>
+          </div>
+          <h1 class="mt-6 font-heading text-2xl font-bold leading-tight text-headline md:text-3xl dark:text-white">
+            {title}
+          </h1>
+          <p class="mt-3 text-gray-700 dark:text-gray-300">{description}</p>
+          <ul class="mt-5 space-y-2 text-sm font-semibold text-gray-900 dark:text-white">
+            <li class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              {S.length}
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+              {S.format}
+            </li>
+          </ul>
+          {/* Spanish: WhatsApp booking sits in the intro so phones see it BEFORE the
+              calendar — Spanish phone visitors are the people who'd rather book in
+              WhatsApp (Robert, 2026-10-06). English keeps the calendar first. */}
+          {lang === "es" && <div class="mt-6"><WhatsAppBookingCta lang={lang} /></div>}
+        </div>
+
+        <div id="schedule" class="lg:col-start-2 lg:row-start-1 lg:row-span-2">
+          <BookingFormSteps lang={lang} />
+          <slot />
+        </div>
+
+        <div class="space-y-4 lg:col-start-1 lg:row-start-2">
+          {lang === "en" && <WhatsAppBookingCta lang={lang} />}
+          <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-800">
+            <h2 class="text-base font-bold text-gray-900 dark:text-white">{S.coverTitle}</h2>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{S.coverBody}</p>
+          </div>
+          <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-800">
+            <h2 class="text-base font-bold text-gray-900 dark:text-white">{S.afterTitle}</h2>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{S.afterBody}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
