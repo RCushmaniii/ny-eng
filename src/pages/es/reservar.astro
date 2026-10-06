@@ -2,10 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
-import InnerHero from "@components/sections/InnerHero.astro";
-import BookingFormSteps from "@components/booking/BookingFormSteps.astro";
-import WhatsAppBookingCta from "@components/booking/WhatsAppBookingCta.astro";
-import bookingHero from "@assets/images/contact/book-hero.jpg";
+import BookingPageLayout from "@components/booking/BookingPageLayout.astro";
 
 const metadata = {
   title: "Diagnóstico de Inglés Profesional",
@@ -17,8 +14,6 @@ const heroContent = {
   title: "Reserva Tu Diagnóstico de 30 Minutos",
   description:
     "Una conversación directa sobre tu próximo reto profesional en inglés, el resultado que necesitas y si este enfoque es adecuado para ti.",
-  backgroundImage: bookingHero,
-  overlayOpacity: 0.6,
 };
 ---
 
@@ -29,23 +24,13 @@ const heroContent = {
   description={metadata.description}
   ogImage={{ src: "/images/logos/new-york-english-sq-og.jpg" }}
 >
-  <main>
-    <InnerHero content={heroContent} />
-
-    <section class="py-16 md:py-24 bg-background-light">
-      <div class="site-container px-4">
-        <!-- Booking Form with Steps -->
-        <WhatsAppBookingCta lang="es" />
-        <BookingFormSteps lang="es" />
-
-        <p class="mt-8 text-center text-sm text-gray-500">
-          ¿Necesitas cancelar o reprogramar? Por favor avisa con al menos 24 horas de anticipación.
-          Consulta nuestra <a
-            href="/es/legal/cancellation-policy/"
-            class="underline hover:text-gray-700">Política de Cancelación</a
-          >.
-        </p>
-      </div>
-    </section>
-  </main>
+  <BookingPageLayout lang="es" title={heroContent.title} description={heroContent.description}>
+    <p class="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
+      ¿Necesitas cancelar o reprogramar? Por favor avisa con al menos 24 horas de anticipación.
+      Consulta nuestra <a
+        href="/es/legal/cancellation-policy/"
+        class="underline hover:text-gray-700 dark:hover:text-gray-200">Política de Cancelación</a
+      >.
+    </p>
+  </BookingPageLayout>
 </Base>

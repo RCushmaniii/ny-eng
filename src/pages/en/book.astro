@@ -2,10 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
-import InnerHero from "@components/sections/InnerHero.astro";
-import BookingFormSteps from "@components/booking/BookingFormSteps.astro";
-import WhatsAppBookingCta from "@components/booking/WhatsAppBookingCta.astro";
-import bookingHero from "@assets/images/contact/book-hero.jpg";
+import BookingPageLayout from "@components/booking/BookingPageLayout.astro";
 
 const metadata = {
   title: "Book Your Free Strategy Session",
@@ -17,8 +14,6 @@ const heroContent = {
   title: "Book Your Free Strategy Session",
   description:
     "In 30 minutes, I'll pinpoint exactly where your English is costing you opportunities — and map a clear path to fix it. No sales scripts. No obligation.",
-  backgroundImage: bookingHero,
-  overlayOpacity: 0.6,
 };
 ---
 
@@ -29,23 +24,13 @@ const heroContent = {
   description={metadata.description}
   ogImage={{ src: "/images/logos/new-york-english-sq-og.jpg" }}
 >
-  <main>
-    <InnerHero content={heroContent} />
-
-    <section class="py-16 md:py-24 bg-background-light">
-      <div class="site-container px-4">
-        <!-- Booking Form with Steps -->
-        <WhatsAppBookingCta lang="en" />
-        <BookingFormSteps lang="en" />
-
-        <p class="mt-8 text-center text-sm text-gray-500">
-          Need to cancel or reschedule? Please give at least 24 hours' notice.
-          See our <a
-            href="/en/legal/cancellation-policy/"
-            class="underline hover:text-gray-700">Cancellation Policy</a
-          >.
-        </p>
-      </div>
-    </section>
-  </main>
+  <BookingPageLayout lang="en" title={heroContent.title} description={heroContent.description}>
+    <p class="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
+      Need to cancel or reschedule? Please give at least 24 hours' notice.
+      See our <a
+        href="/en/legal/cancellation-policy/"
+        class="underline hover:text-gray-700 dark:hover:text-gray-200">Cancellation Policy</a
+      >.
+    </p>
+  </BookingPageLayout>
 </Base>
