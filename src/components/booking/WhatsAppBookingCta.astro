@@ -5,39 +5,32 @@
  * time → details), served by cushlabs-whatsapp; see that repo's
  * docs/BOOKING-FLOW.md. Added 2026-10-06.
  *
- * Number: +1 585 565 6180 is the NY English WhatsApp Business number, where the
- * Flow lives. It is NOT Robert's personal number (+52 33 1559 0572) that the
- * site's other WhatsApp links use — a booking message sent there reaches no Flow.
- *
- * The pre-typed text must keep matching bookingIntent() in cushlabs-whatsapp
- * src/flows/booking.ts ("agendar … consulta" / "book … consultation"), or the
- * message falls through to the inbox instead of opening the Flow.
+ * Number and pre-typed text: src/data/whatsappBooking.ts (shared with the
+ * Spanish footer CTA).
  */
 interface Props {
   lang: "en" | "es";
 }
-const { lang } = Astro.props;
+import { whatsappBookingHref } from "../../data/whatsappBooking";
 
-const NYE_BUSINESS_WA = "15855656180";
+const { lang } = Astro.props;
 
 const S = {
   es: {
     title: "Agenda por WhatsApp",
     body: "Elige día y hora sin salir de WhatsApp. Toma menos de un minuto y recibes el enlace de la videollamada ahí mismo.",
     button: "Agendar por WhatsApp",
-    message: "Quiero agendar una consulta",
     or: "¿Estás en la computadora? Elige tu horario aquí abajo.",
   },
   en: {
     title: "Book on WhatsApp",
     body: "Pick a day and time without leaving WhatsApp. It takes under a minute and the video call link arrives right in the chat.",
     button: "Book on WhatsApp",
-    message: "I'd like to book a consultation",
     or: "On a computer? Pick your time below.",
   },
 }[lang];
 
-const href = `https://wa.me/${NYE_BUSINESS_WA}?text=${encodeURIComponent(S.message)}`;
+const href = whatsappBookingHref(lang);
 ---
 
 <div class="mx-auto mb-10 max-w-2xl rounded-2xl border border-green-200 bg-white p-6 text-center shadow-sm md:p-8">
