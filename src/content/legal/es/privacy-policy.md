@@ -5,7 +5,7 @@ translations:
   en: "/en/legal/privacy-policy/"
 seo:
   title: "Política de Privacidad - Cómo Protegemos Tu Información"
-  description: "Conoce cómo New York English recopila, usa y protege tu información en nuestro sitio web, el asistente de chat del sitio, el asistente de Facebook Messenger y los recordatorios por WhatsApp."
+  description: "Conoce cómo New York English recopila, usa y protege tu información en nuestro sitio web, asistente de chat, Messenger y recordatorios por WhatsApp."
 ---
 
 ## Política de Privacidad
