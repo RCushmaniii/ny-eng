@@ -2,16 +2,33 @@
 
 > **Profile**: New York English Teacher
 > **Category**: English language school in Guadalajara
-> **Rating**: 4.7 (15 Google reviews as of 2026-03-30)
+> **Rating**: 4.8 (20 Google reviews as of 2026-10-12; was 4.7 / 15 on 2026-03-30)
 > **Address**: C. Cuautitlan 576, Jardines de Los Arcos, 44500 Guadalajara, Jal.
 > **Phone**: 33 1559 0572
 > **Google Maps**: [View Profile](https://www.google.com/maps/place/New+York+English+Teacher/@20.6686216,-103.3979611,17z/)
 > **Profile Strength**: Complete info
-> **Customer Interactions**: 337 (as of 2026-03-30)
+> **Customer Interactions**: 263 (as of 2026-10-12, from the "Your business on Google" panel; date range not shown there, so not comparable with the 337 of 2026-03-30 until the Performance view confirms its window)
 
 ---
 
 ## Activity Log
+
+### 2026-10-12 — Numbers refreshed; one 1-star review still live
+
+Rating 4.8 from 20 reviews. Arithmetic: 19 five-star reviews plus one 1-star gives exactly 4.8,
+so a single 1-star review is all that keeps the profile off 5.0. Robert believes it is the
+same spam/competitor review as the 2026-03-30 Israel Barajas entry below, whose escalation
+outcome was never recorded.
+
+Also: the profile description stated "8+ years coaching executives and 10+ years in global
+business consulting" and "Bilingual business English coaching". All three break
+`operating-system/cushlabs/claims-policy.json` `rules.biographical_facts` (career-year totals,
+the unverified consulting duration, "bilingual" describing Robert). Replacement written
+2026-10-12 (744 chars, no year counts, no emoji).
+
+**Next on the review:** Reviews Management Tool (https://support.google.com/business/workflow/9945796)
+→ "Check the status of a review I reported previously and appeal options". If it shows
+"Report reviewed - no policy violation", file the one-time appeal from the same screen.
 
 ### 2026-03-29 — Spam Review Removal (SUCCESS)
 
