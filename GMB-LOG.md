@@ -16,9 +16,12 @@
 ### 2026-10-12 — Numbers refreshed; one 1-star review still live
 
 Rating 4.8 from 20 reviews. Arithmetic: 19 five-star reviews plus one 1-star gives exactly 4.8,
-so a single 1-star review is all that keeps the profile off 5.0. Robert believes it is the
-same spam/competitor review as the 2026-03-30 Israel Barajas entry below, whose escalation
-outcome was never recorded.
+so a single 1-star review is all that keeps the profile off 5.0. It is **not** the Barajas
+review below: the Reviews Management Tool shows reviewer **"Desarrollo Sustentable"**, no
+text, 1 star, reported 2026-09-05, status **"Escalated - Check email for updates"** as of
+2026-10-12. The one-time appeal is therefore already used; Google's final decision arrives
+by email. Nothing further can be filed. (The Barajas review is no longer in the tool's
+table, which lists only unremoved reviews, so it was evidently removed.)
 
 Also: the profile description stated "8+ years coaching executives and 10+ years in global
 business consulting" and "Bilingual business English coaching". All three break
@@ -26,9 +29,7 @@ business consulting" and "Bilingual business English coaching". All three break
 the unverified consulting duration, "bilingual" describing Robert). Replacement written
 2026-10-12 (744 chars, no year counts, no emoji).
 
-**Next on the review:** Reviews Management Tool (https://support.google.com/business/workflow/9945796)
-→ "Check the status of a review I reported previously and appeal options". If it shows
-"Report reviewed - no policy violation", file the one-time appeal from the same screen.
+**Description:** replacement submitted by Robert 2026-10-12, showing "Your edit is pending".
 
 ### 2026-03-29 — Spam Review Removal (SUCCESS)
 
