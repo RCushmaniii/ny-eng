@@ -86,11 +86,6 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Closes when:* readership is judged by GSC clicks and corporate by this report, with the
   Vercel headline number explicitly ignored - or a bot-filtered view exists.
 
-- [ ] **`GMB-LOG.md` stale since 2026-03-30**, and it is the only record of the
-  best-performing channel (337 customer interactions vs 4 organic clicks/28 days).
-  *Blocks:* judging whether the review push works — there is no current baseline.
-  *Closes when:* Robert supplies current review count, rating and interactions.
-
 - [ ] **The corporate page still has no real photo of Robert coaching.**
   *Logos shipped 2026-10-12 (PR #297)* — Driscoll's, Continental, Sanmina, CEVA and
   Terramar now render as logos on both corporate pages. What remains is the cartoon
@@ -99,17 +94,13 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Next:* Robert supplies one real photo of himself coaching (a session on screen or in an
   office), and it replaces the illustration.
 
-- [ ] **Ahrefs health score still 99 — two unnamed errors.** Added 2026-09-02 (PRs
-  #270/#271), updated 2026-09-08. The awaited crawl arrived on 2026-09-08 and reads
-  **99 with 2 errors**, so the four fixes from #270/#271 did not move it and the summary
-  email still names no URL. Everything else in that crawl is explained: "changed pages not
-  submitted to IndexNow" (+89) was our own shared-component edits and is cleared — all 476
-  URLs were bulk-submitted; "title tag changed" (+84) is this session's work; "title too
-  short" is course unit sub-pages and is not worth padding.
-  *Blocks:* nothing shipping. It is an unresolved unknown on the only third-party health
-  signal we watch.
-  *Next:* open the crawl in the Ahrefs Site Audit UI and read the 2 errors by URL — the
-  emailed summary does not carry them, so this cannot be closed from the inbox.
+- [x] **`GMB-LOG.md` refreshed 2026-10-12.** 4.8 / 20 reviews / 263 interactions. The only
+  1-star review (Desarrollo Sustentable, reported 2026-09-05) is escalated with Google;
+  the decision comes by email to Robert.
+
+- [x] **Ahrefs 99 / two unnamed errors: closed as not worth Robert's time, 2026-10-12.**
+  Robert's dashboard: health 99, 210 pages crawled, 0 broken, 6 redirects. Two errors on
+  210 pages block nothing. Re-open only if the score drops below 95.
 
 - [x] **Personal name on NY English: parked 2026-10-12.** Robert: no LinkedIn Page exists
   and none is ready. HARO as NY English founder is **not** approved. Off-site work stays
