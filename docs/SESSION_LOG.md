@@ -44,76 +44,26 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Closes when:* the social posts are live and the guide is downloadable behind the
   form with a delivery email verified end to end.
 
-- [ ] **GSC re-check — two windows, one report.**
-  *Added 2026-08-13:* the ~2026-09-02 window now also watches the four comparison
-  pages shipped in PR #244 (Past Tenses comparisons entered around position 10) and
-  the connected-English blog pair from PR #242.
-  *Blocks:* every content decision after this. Two rounds of SEO work are in
-  flight and neither has been measured, so any further content work is guessing.
-  *~2026-08-20 window: PULLED 2026-08-30, ten days late.* Result, 28 days to 2026-08-30:
-  **the `... for spanish speakers` cluster did move, and substantially.** The course
-  hubs were at 38.5 / 57–61; the cluster now sits mostly between position 13 and 28,
-  with two queries on page one — `free english classes online for spanish speakers` at
-  **1.0** and `free online english classes for spanish speakers` at **6.0**, the latter
-  carrying the only cluster click. So the ranking work worked and the traffic did not
-  follow: 104 impressions across the cluster for 1 click, ~1% CTR. The bottleneck moved
-  from position to **title and description**, which is a different and cheaper problem.
-  **The interview post did NOT hold.** It was at 19.6; the `interview` query filter now
-  returns *no data at all* for the period. That is a regression, not noise, and it is
-  the one result here worth acting on.
-  *Read the two dimensions separately.* By page: 18 clicks / 701 impressions. By query:
-  2 clicks / 65 impressions. The gap is Google withholding anonymised queries, not an
-  error — never quote the query-dimension total as site traffic.
-  *Unplanned finding:* customs and foreign-trade queries are already landing —
-  `comercio exterior y aduanas en ingles` at position **7.0**, `agente aduanero en ingles`
-  at 12.0. **Correction, same day:** this was first written up as demand "the site was not
-  writing for," which was wrong — `customs-freight-english` has existed since 2026-03-04
-  and is one of the two best-read blog pages on the site (15 visitors/30d). The finding is
-  therefore stronger, not weaker: the cluster already ranks *and* already has content, and
-  the two logistics posts simply had **zero links between them** until 2026-08-31. Cross-
-  linked in both languages. Re-check the cluster next window.
-  *Watch at ~2026-09-02* (post PR #231/#232, the redirect fix): legacy-URL
-  impressions **transferring** to `/en/courses/` rather than evaporating, and Bing
-  impressions moving off the ~15/day floor held since Jul 2025.
-  *Closes when:* both windows have been pulled and the result written into a dated
-  entry — including if the answer is "nothing moved," which is itself the finding.
+- [ ] **`/en/courses/` slipped off page one after 2026-09-26.**
+  *Added 2026-10-12.* The page carries most of the site's search clicks (39 of 73 in the
+  28 days to 2026-10-12). Average position went from **6.4** (Sep 13–26) to **11.4**
+  (Sep 27–Oct 10) and weekly clicks from 35 to 4. It is indexed (crawled 2026-10-10), no
+  site change shipped in that window, and the `free-english-courses-spanish-speakers`
+  blog post going to zero impressions is its planned July redirect finishing, not a loss.
+  *Blocks:* the one channel that was producing search clicks.
+  *Next:* re-pull on 2026-10-26 with
+  `node scripts/seo/gsc-performance.mjs --by page --top 40`. If still past position 10,
+  rewrite the page's title and description against the `for spanish speakers` queries.
+  *Closes when:* that re-check is written into a dated entry.
 
-- [ ] **Decide whether to spend Robert's personal name on NY English at all.**
-  *Blocks:* the entire off-site authority plan, and whether NY English organic traffic
-  has any path above its current floor.
-  *Established 2026-08-06:* founder authority is by definition personal, and Robert's
-  person is committed to CushLabs AI consulting (first paying client 2026-08-04). The
-  two identities do not coexist in this market and the damage runs one direction. So
-  NY English's off-site ceiling is **business-entity channels only** — precisely the
-  channels already shown not to move anything (local pack won at position 1.0–1.5,
-  which yields ~1 click/quarter).
-  *Two sub-decisions, both calendared:* HARO — permanent indexed byline, no admin-only
-  version, recommendation is to repoint the kit at CushLabs (Wed 2026-08-12 is a
-  **decision** slot, not a task). LinkedIn Page — admin-only or skip (Fri 2026-08-07).
-  *Closes when:* Robert answers and `docs/OFF-SITE-MARKETING.md` records it.
-
-- [ ] **Cold outreach to Guadalajara HR/L&D leads — approved in principle, unbooked.**
-  *Blocks:* the highest-value revenue path available here. One corporate account (the
-  April 2026 prospect was 4–6 middle managers) outweighs every organic item combined.
-  *Target size revised 2026-09-02:* Robert's calendar is already full. He does not want a
-  volume push — the actual target is **one more corporate account, ideally 2–3 students**,
-  and he is "not worried about it" either way. Do not scale outreach cadence to chase a
-  bigger number than that. Full framing: `docs/CORPORATE-ACQUISITION-STRATEGY.md`.
-  *Why it survives where HARO does not:* it makes no public, indexed claim about who
-  Robert is. **Email from `@nyenglishteacher.com`, never LinkedIn DM** — a DM routes
-  the recipient to the personal profile being protected. LinkedIn for research only.
-  *Prerequisite RESOLVED 2026-08-30 — the sending domain exists and is configured.*
-  Verified over DNS-over-HTTPS rather than the Resend API, whose key here is
-  send-only: `resend._domainkey.nyenglishteacher.com` carries a DKIM public key,
-  `send.nyenglishteacher.com` has `v=spf1 include:amazonses.com ~all` and an MX to
-  `feedback-smtp.us-east-1.amazonses.com` for bounce handling. DMARC exists with a
-  merged `rua`. **Two caveats before the first send.** (1) The ROOT domain's SPF is
-  Brevo, not Resend — Resend authenticates as the `send.` subdomain, so the From
-  address decides which path is authenticated and cannot be picked casually.
-  (2) DMARC is `p=none`, monitoring only. Configured is not the same as *warmed*;
-  DNS cannot show reputation, though the domain does carry genuine transactional
-  history from quiz results and guide delivery.
-  *Closes when:* green-lit and a `cold-email`-skill sequence booked.
+- [ ] **Quiz page carries two quotes that cannot be real.**
+  *Added 2026-10-12.* `src/pages/en/quiz/index.astro:262` and its ES twin
+  (`src/pages/es/quiz/index.astro:271`) quote "I scored 58…" (Founder, Mexico City) and
+  "Six weeks after taking this quiz, we closed our first $180K contract" (VP Engineering,
+  Buenos Aires). `quiz_submissions` holds **6 rows in total** (5 unique emails,
+  2026-02-10 to 2026-09-25), so no quiz taker produced these.
+  *Blocks:* nothing shipping; it is an invented testimonial on a page senior buyers reach.
+  *Next:* Robert confirms they are invented, then the two cards come out (one edit per page).
 
 - [ ] **On-site numbers exist but are dominated by non-human traffic.**
   **Vercel Web Analytics works** (confirmed 2026-08-31 from the dashboard): 829 visitors,
@@ -141,71 +91,13 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Blocks:* judging whether the review push works — there is no current baseline.
   *Closes when:* Robert supplies current review count, rating and interactions.
 
-- [ ] **The corporate audit's seven questions are trapped in a raster PDF.**
-  *Added 2026-09-08.* `public/downloads/Corporate_English_Audit_ES.pdf` is 13 image-only
-  pages — all 13 extract **zero characters**. Its seven buying-criteria questions are the
-  strongest corporate marketing asset we have and they are invisible to Google, to screen
-  readers, and to copy-paste, sitting behind an email gate.
-  *Blocks:* organic discovery by HR managers researching how to evaluate a vendor — the
-  exact query where criteria-setting content wins.
-  *Next:* build `/es/guia/auditoria-ingles-corporativo/` (+ EN twin) as ungated HTML, one H2
-  per question with its *Punto de Control* as the answer, FAQPage schema, PDF offered at the
-  bottom as the forward-to-your-director artifact. Est. 30–45 min of agent time.
-
-- [ ] **The corporate audit PDF has four defects and cannot be edited.**
-  *Added 2026-09-08.* It is a NotebookLM export, so fixing anything means regenerating it.
-  (1) Slide 13 sends Spanish readers to `nyenglishteacher.com/en/book` — should be
-  `/es/reservar/`. (2) A NotebookLM watermark sits on all 13 pages. (3) The cover subtitle
-  has mangled accents: *lideres*, *evalŭan*, *capacitaciōn*. (4) Slide 6 reads
-  *"¿Pregunta 3: Cuánto tiempo…?"* — the ¿ is misplaced. Register also mixes usted and tú.
-  *Blocks:* nothing today; it is credibility on an asset that reaches HR directors at
-  Continental and Sanmina.
-  *Next:* Robert regenerates the deck, or says the word and it gets rebuilt as HTML slides
-  he owns — which also removes the watermark permanently.
-
-- [ ] **The corporate page's proof is text, not evidence.**
-  *Added 2026-09-08.* The client roster renders as plain company names and the problem
-  section uses a cartoon illustration. Both undercut the premium tone the copy now carries.
-  Neither is fixable in code.
+- [ ] **The corporate page still has no real photo of Robert coaching.**
+  *Logos shipped 2026-10-12 (PR #297)* — Driscoll's, Continental, Sanmina, CEVA and
+  Terramar now render as logos on both corporate pages. What remains is the cartoon
+  illustration in the problem section.
   *Blocks:* perceived seniority on the page that carries the larger revenue line.
-  *Next:* Robert asks Terramar (and one of Driscoll's / Continental / Sanmina / CEVA) for
-  logo-use permission, and supplies one real photo of himself coaching.
-
-- [ ] **`feat/verb-patterns-course` has been sitting unmerged since 2026-07-08.**
-  *Added 2026-09-06 by the closeout gate*, which is the first time anything checked.
-  Three commits ahead of `main` — Verb Patterns Level 1 lessons 2–3 plus the Foundations
-  exam, bilingual. It is pushed to `origin`, so the work is not at risk, but it breaks the
-  one-branch-at-a-time rule and every branch opened since started from a `main` that does
-  not contain it.
-  *Blocks:* nothing shipping; it is decision debt — two months of not deciding whether
-  that course level goes live.
-  *Closes when:* the branch is rebased on current `main` and merged, or deleted with the
-  reason recorded here.
-
-- [ ] **Quiz pages claim a client that does not exist in the testimonial data.**
-  *Added 2026-09-06.* Three pages carry "Trusted by IT leaders at Smarttie, Kopar and
-  Sourceability" — `src/pages/en/quiz/index.astro:88`, `src/pages/es/quiz/index.astro:106`,
-  and the two `_index.astro.disabled` variants. **Sourceability appears nowhere in
-  `src/data/testimonials/`**, so there is no client behind the name.
-  *Blocks:* nothing today; it is an unbacked public claim on a page senior buyers reach
-  from the homepage, which is the kind of thing that costs credibility when noticed.
-  *Closes when:* the line names companies with testimonials behind them — Smarttie and
-  Grupo Kopar are both real clients, so this is a one-name fix, not a rewrite.
-
-- [ ] **Two unbacked claims left standing in the author bio.**
-  *Added 2026-09-12*, when the career-year violation in the same paragraph was fixed
-  (PR #286). Both need Robert, not code. (1) **`200+ professionals`** — if that is an
-  estimate rather than a count, `claims-policy.json` `metrics_policy.no_invented_numbers`
-  says it should be a range. (2) **`Smarttie, Driscoll's, CEVA Logistics, and Continental`**
-  named in Robert's own first-person bio. All four have testimonials on the site, but the
-  policy's testimonial rule covers quoting an employee — naming the company as your own
-  client is a stronger claim and wants written permission.
-  *Same underlying question as the quiz-page item above, and it shares the permission ask
-  with the corporate-page proof item* — one conversation with Terramar/Driscoll's settles
-  all three.
-  *Blocks:* nothing shipping. It is unbacked public claim surface on 42 resource pages.
-  *Next:* Robert says whether `200+` is counted, and whether the four names stay. If they
-  go, the replacement is industry framing — one edit to `GenericFreeAsset.tsx`.
+  *Next:* Robert supplies one real photo of himself coaching (a session on screen or in an
+  office), and it replaces the illustration.
 
 - [ ] **Ahrefs health score still 99 — two unnamed errors.** Added 2026-09-02 (PRs
   #270/#271), updated 2026-09-08. The awaited crawl arrived on 2026-09-08 and reads
@@ -219,6 +111,14 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Next:* open the crawl in the Ahrefs Site Audit UI and read the 2 errors by URL — the
   emailed summary does not carry them, so this cannot be closed from the inbox.
 
+- [x] **Personal name on NY English: parked 2026-10-12.** Robert: no LinkedIn Page exists
+  and none is ready. HARO as NY English founder is **not** approved. Off-site work stays
+  business-entity only. Re-open only if Robert raises it.
+
+- [x] **Cold outreach to Guadalajara HR/L&D: "not now," 2026-10-12.** Calendar is full; the
+  target remains one account if it ever reopens. Sending-domain notes stay in git history
+  of this file (commit before `chore/session-log-2026-10-12`).
+
 > **Scope rule, added 2026-08-06.** This register holds **ny-eng items only.** Work
 > belonging to another repo goes in that repo's own log — `cushlabs-ai-voice-agent` and
 > `cushlabs-messenger-bot` both have a `SESSION_LOG.md`, and the latter also has
@@ -227,6 +127,47 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 > re-added here on 2026-08-06 and removed again the same day — they are real and still
 > open, they are simply not this repo's business. Their full text is in this file's git
 > history at commit `f81fef9` if they need to be moved rather than rewritten.
+
+---
+
+
+## Session: 2026-10-12
+
+### Accomplished
+
+- **GSC re-check pulled** (the ~2026-09-02 window, six weeks late). 73 clicks / 2,856
+  impressions by page over 28 days, up from 18 clicks at the 2026-08-30 pull. Legacy-URL
+  impressions did transfer: `/courses/` shows 1 impression, `/en/courses/` 402. The
+  comparison pages and verb-pattern pages are indexed and sit at positions 4–16 with
+  single-digit impressions. The connected-English pair shows no impressions at all. The
+  real finding is the `/en/courses/` slip from 6.4 to 11.4 — new Open Item.
+- **PR #297 merged and verified live.** Ungated audit guide at
+  https://www.nyenglishteacher.com/en/guide/corporate-english-training-audit/ and
+  https://www.nyenglishteacher.com/es/guia/auditoria-ingles-corporativo/ (FAQPage schema,
+  hreflang pair, linked from both HR pages). The NotebookLM PDFs are replaced by PDFs
+  generated from `src/data/corporate-audit.ts` via `scripts/build-audit-pdf.mjs` — real
+  text, no watermark, correct accents, ES links `/es/reservar/`. Client logos on both
+  corporate pages. Sitemap resubmitted to GSC; both URLs to Bing + IndexNow.
+- **Unbacked numbers removed.** `200+` → `150+` (Robert's count) in the bio and quiz copy;
+  every "200+ assessed" claim removed because the quiz has 6 submissions; Sourceability
+  removed from the quiz pages.
+- **`feat/verb-patterns-course` deleted.** All 19 files it added were already on `main`
+  (squash-merged as PRs #212–#217); the course is live. Tip `ddf107d` if ever needed.
+
+### Decisions (Robert, 2026-10-12)
+
+- Bio number is **150+**. Logo use approved for the five companies above.
+- Personal name: no LinkedIn Page, HARO not approved — parked.
+- Cold outreach: not now.
+
+### Lessons
+
+- **Another Claude session committed to this working tree mid-session** (`ny-ai-chatbot`,
+  PR #296 at 14:10), so `git checkout -b` branched from its commit, not `main`. Caught
+  before commit via `git reflog`; rebranched from `main`. That session now uses a worktree.
+- `@lib/*` is **not** a path alias here — import `src/lib` relatively.
+- `astro check` has 6 pre-existing errors on `main` (category TKeys, corporate-package
+  prop types). The deploy build does not run it.
 
 ---
 
