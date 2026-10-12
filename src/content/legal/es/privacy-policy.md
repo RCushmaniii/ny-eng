@@ -1,20 +1,20 @@
 ---
 title: "Política de Privacidad"
-lastUpdated: "2026-06-07"
+lastUpdated: "2026-10-12"
 translations:
   en: "/en/legal/privacy-policy/"
 seo:
   title: "Política de Privacidad - Cómo Protegemos Tu Información"
-  description: "Conoce cómo New York English recopila, usa y protege tu información en nuestro sitio web, el asistente de Facebook Messenger y los recordatorios por WhatsApp."
+  description: "Conoce cómo New York English recopila, usa y protege tu información en nuestro sitio web, el asistente de chat del sitio, el asistente de Facebook Messenger y los recordatorios por WhatsApp."
 ---
 
 ## Política de Privacidad
 
-**Última Actualización: 7 de junio de 2026**
+**Última Actualización: 12 de octubre de 2026**
 
 ## Introducción
 
-Te damos la bienvenida a nuestra Política de Privacidad. New York English es un servicio de coaching ejecutivo de inglés operado por **Robert Cushman**, con sede en Guadalajara, México. Esta política explica cómo recopilamos, usamos y protegemos tu información personal cuando utilizas nuestro sitio web (nyenglishteacher.com), nuestro Asistente de Facebook Messenger y nuestro servicio de recordatorios y confirmaciones por WhatsApp.
+Te damos la bienvenida a nuestra Política de Privacidad. New York English es un servicio de coaching ejecutivo de inglés operado por **Robert Cushman**, con sede en Guadalajara, México. Esta política explica cómo recopilamos, usamos y protegemos tu información personal cuando utilizas nuestro sitio web (nyenglishteacher.com), el asistente de chat de nuestro sitio, nuestro Asistente de Facebook Messenger y nuestro servicio de recordatorios y confirmaciones por WhatsApp.
 
 Si tienes preguntas, contáctanos en **privacy@newyorkenglish.com**.
 
@@ -29,6 +29,16 @@ Cuando utilizas nyenglishteacher.com, podemos recopilar:
 - **Información de Uso**: Páginas visitadas, tiempo empleado en el sitio e interacciones con el contenido
 
 > _Nota: **No** recopilamos ni almacenamos directamente información de tarjetas de crédito o pagos._
+
+### Asistente de Chat del Sitio Web
+
+Cuando usas el asistente de chat con IA de nyenglishteacher.com, recibimos y procesamos:
+
+- El **contenido de tus mensajes** y las respuestas del asistente
+- La **dirección y el título de la página** desde la que abriste el chat
+- Un **identificador anónimo de visitante**: un código aleatorio guardado en tu navegador para que el asistente reconozca una conversación cuando regresas. No contiene tu nombre ni tus datos de contacto
+- Tu **dirección IP**, que usamos para prevenir abusos limitando cuántos mensajes se pueden enviar en poco tiempo
+- Si pides que una persona te contacte: el **correo electrónico** que nos proporciones y un extracto de la conversación
 
 ### Asistente de Facebook Messenger
 
@@ -61,6 +71,7 @@ La información se recopila a través de:
 - Formularios en línea que completas voluntariamente
 - Cookies y tecnologías de seguimiento
 - Herramientas de análisis (por ejemplo, Google Analytics)
+- El asistente de chat de nuestro sitio web (para los mensajes que le envías)
 - La Plataforma de Facebook Messenger (para interacciones con el Asistente de Messenger)
 - La Plataforma de WhatsApp Business (para los recordatorios y confirmaciones que aceptas recibir)
 
@@ -69,7 +80,8 @@ La información se recopila a través de:
 Usamos tus datos para:
 
 - Proveer y mejorar nuestros servicios de coaching
-- Responder a tus consultas a través del sitio web o el Asistente de Messenger
+- Responder a tus consultas a través del sitio web, el asistente de chat del sitio o el Asistente de Messenger
+- Encontrar qué páginas de nuestro sitio responden tu pregunta e identificar las preguntas que nuestro sitio todavía no responde
 - Enviar los recordatorios de clase, confirmaciones de asistencia y recibos de pago que aceptaste recibir por WhatsApp
 - Procesar las solicitudes de alta y baja para los mensajes de WhatsApp
 - Mantener el contexto breve de la conversación en el Asistente de Messenger
@@ -83,6 +95,14 @@ Usamos tus datos para:
 ## Retención de Datos
 
 **Datos del sitio web:** Se conservan durante el tiempo necesario para proporcionar los servicios solicitados, o según lo exija la ley.
+
+**Datos del asistente de chat del sitio web:**
+
+- Conversaciones, la página donde iniciaron y el identificador anónimo de visitante: **hasta 90 días**; después se eliminan automáticamente
+- Preguntas usadas para buscar en nuestro sitio: después de **90 días** se elimina el identificador de visitante o la dirección IP; el texto de la pregunta se conserva sin ningún identificador para mejorar nuestro contenido
+- Conversaciones en las que pides que te contactemos: se conservan hasta que atendemos tu solicitud y las eliminamos, o hasta que nos pidas eliminarlas
+- Contadores del límite de mensajes vinculados a tu dirección IP: se eliminan automáticamente en un plazo aproximado de **2 horas**
+- Para responder más rápido las primeras preguntas frecuentes, guardamos una copia de la respuesta del asistente durante **12 horas**. Se almacena bajo una versión codificada de la pregunta y no está vinculada a ti
 
 **Datos del Asistente de Messenger:** Se almacenan temporalmente en Cloudflare Workers KV y se eliminan automáticamente:
 
@@ -106,6 +126,16 @@ Específicamente para el Asistente de Messenger, tus mensajes son transmitidos a
 - **Meta Platforms, Inc.** — entrega mensajes a través de la Plataforma Messenger. [Política de Privacidad](https://www.facebook.com/privacy/policy)
 - **Anthropic, PBC** — proporciona el modelo de IA Claude que genera las respuestas. [Política de Privacidad](https://www.anthropic.com/legal/privacy)
 - **Cloudflare, Inc.** — aloja el Worker y proporciona almacenamiento KV y enrutamiento de AI Gateway. [Política de Privacidad](https://www.cloudflare.com/privacypolicy/)
+- **Functional Software, Inc. (Sentry)** — recibe informes de errores para monitoreo. [Política de Privacidad](https://sentry.io/privacy/)
+
+Para el **asistente de chat del sitio web**, tus mensajes son procesados por:
+
+- **Anthropic, PBC** — proporciona el modelo de IA Claude que genera las respuestas. [Política de Privacidad](https://www.anthropic.com/legal/privacy)
+- **OpenAI OpCo, LLC** — convierte tu pregunta en un formato de búsqueda para encontrar las páginas relevantes de nuestro sitio y funciona como modelo de respuesta de respaldo. [Política de Privacidad](https://openai.com/policies/privacy-policy/)
+- **Vercel Inc.** — aloja el asistente de chat. [Política de Privacidad](https://vercel.com/legal/privacy-policy)
+- **Neon** — aloja la base de datos donde se guardan las conversaciones. [Política de Privacidad](https://neon.com/privacy-policy)
+- **Upstash, Inc.** — almacena los contadores del límite de mensajes y las respuestas guardadas. [Política de Privacidad](https://upstash.com/trust/privacy.pdf)
+- **Resend** — nos envía un correo cuando pides que te contactemos. [Política de Privacidad](https://resend.com/legal/privacy-policy)
 - **Functional Software, Inc. (Sentry)** — recibe informes de errores para monitoreo. [Política de Privacidad](https://sentry.io/privacy/)
 
 Para los **recordatorios y confirmaciones por WhatsApp**, tus datos son procesados por:
@@ -139,7 +169,7 @@ Utilizamos medidas de seguridad técnicas y organizativas apropiadas para proteg
 
 ## Cookies y Tecnologías de Seguimiento
 
-Nuestro sitio web utiliza cookies para mejorar tu experiencia de navegación. Puedes gestionar las preferencias de cookies en la configuración de tu navegador. El Asistente de Messenger en sí no utiliza cookies.
+Nuestro sitio web utiliza cookies para mejorar tu experiencia de navegación. Puedes gestionar las preferencias de cookies en la configuración de tu navegador. El Asistente de Messenger en sí no utiliza cookies. El asistente de chat del sitio web no utiliza cookies; guarda el identificador anónimo de visitante en el almacenamiento local de tu navegador, que puedes borrar en cualquier momento desde la configuración de tu navegador.
 
 ## Privacidad de los Menores
 
