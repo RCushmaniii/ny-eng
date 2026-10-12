@@ -119,7 +119,7 @@ export default function FreeResourcesHub({
   const labels = {
     en: {
       availableNow: "Available Now",
-      usedBy: "Used by 200+ professionals",
+      usedBy: "Built from real coaching sessions",
       noResources: "No resources match your filters.",
       comingSoon: "Try adjusting your search or filters.",
       search: "Search resources...",
@@ -141,7 +141,7 @@ export default function FreeResourcesHub({
     },
     es: {
       availableNow: "Disponible Ahora",
-      usedBy: "Usado por más de 200 profesionales",
+      usedBy: "Creado a partir de sesiones reales de coaching",
       noResources: "No hay recursos que coincidan con tus filtros.",
       comingSoon: "Intenta ajustar tu búsqueda o filtros.",
       search: "Buscar recursos...",

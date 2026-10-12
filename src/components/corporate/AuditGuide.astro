@@ -1,0 +1,168 @@
+---
+/**
+ * The Corporate English Training Audit as an ungated HTML guide.
+ *
+ * Content lives in src/data/corporate-audit.ts, shared with the print layout
+ * that generates the PDF. This exists because the seven questions used to sit
+ * only inside an image-only PDF behind an email gate, invisible to Google, to
+ * screen readers and to copy-paste. The PDF stays gated through
+ * LeadMagnetForm: the HTML is the free read, the PDF is the forwardable copy,
+ * and the form is the only corporate lead capture on the site.
+ */
+import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
+import FAQSchema from "@components/seo/FAQSchema.astro";
+import LeadMagnetForm from "@components/sections/LeadMagnetForm.astro";
+import { corporateAudit, type AuditLang } from "@data/corporate-audit";
+import { routeFor } from "../../lib/i18n";
+
+export interface Props {
+  lang: AuditLang;
+}
+
+const { lang } = Astro.props;
+const c = corporateAudit[lang];
+const path = routeFor[lang]["corporate/audit-guide"];
+const parent = routeFor[lang]["corporate/for-hr"];
+const parentName = lang === "es" ? "Para Recursos Humanos" : "For HR managers";
+
+const faqs = c.questions.map((q) => ({
+  question: q.question,
+  answer: `${q.lede} ${q.checkpoint}`,
+}));
+---
+
+<BreadcrumbSchema
+  items={[
+    { name: lang === "es" ? "Inicio" : "Home", url: `/${lang}/` },
+    { name: parentName, url: parent },
+    { name: c.title, url: path },
+  ]}
+/>
+<FAQSchema faqs={faqs} />
+
+<section class="bg-secondary text-white py-20 px-8">
+  <div class="site-container--small mx-auto max-w-3xl text-center">
+    <p class="text-sm font-semibold uppercase tracking-wide mb-4 opacity-80">{c.subtitle}</p>
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">{c.title}</h1>
+    <p class="text-lg opacity-90">{c.audience}</p>
+    <p class="text-sm mt-6 opacity-70">{c.author}</p>
+  </div>
+</section>
+
+<article class="bg-white px-8 py-16">
+  <div class="site-container--small mx-auto max-w-3xl">
+    <nav aria-labelledby="audit-toc" class="bg-light rounded-xl p-6 mb-14">
+      <h2 id="audit-toc" class="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-3">
+        {c.tocLabel}
+      </h2>
+      <ol class="list-decimal pl-5 space-y-1">
+        {
+          c.questions.map((q) => (
+            <li>
+              <a href={`#${q.id}`} class="text-primary hover:underline">
+                {q.question}
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
+
+    <h2 class="text-3xl font-bold mb-4">{c.introHeading}</h2>
+    {c.intro.map((p) => <p class="text-gray-700 mb-4 leading-relaxed">{p}</p>)}
+    <blockquote class="border-l-4 border-primary pl-6 my-8 text-xl font-semibold text-gray-900">
+      {c.pullQuote}
+    </blockquote>
+
+    <h2 class="text-3xl font-bold mb-4 mt-14">{c.stakesHeading}</h2>
+    {c.stakes.map((p) => <p class="text-gray-700 mb-4 leading-relaxed">{p}</p>)}
+
+    {
+      c.questions.map((q, i) => (
+        <section id={q.id} class="mt-16 scroll-mt-24">
+          <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">
+            {lang === "es" ? `Pregunta ${i + 1}` : `Question ${i + 1}`}
+          </p>
+          <h2 class="text-2xl md:text-3xl font-bold mb-3">{q.question}</h2>
+          <p class="text-lg text-gray-600 mb-5">{q.lede}</p>
+          {q.body.map((p) => (
+            <p class="text-gray-700 mb-4 leading-relaxed">{p}</p>
+          ))}
+          {q.points && (
+            <dl class="grid gap-4 my-6 md:grid-cols-2">
+              {q.points.map((pt) => (
+                <div class="border border-gray-200 rounded-xl p-5">
+                  <dt class="font-bold mb-1">{pt.label}</dt>
+                  <dd class="text-gray-600 text-sm">{pt.text}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
+          <div class="bg-light border-l-4 border-primary rounded-r-xl p-6 mt-6">
+            <p class="text-sm font-semibold uppercase tracking-wide text-primary mb-2">
+              {c.checkpointLabel}
+            </p>
+            <p class="text-gray-800">{q.checkpoint}</p>
+          </div>
+        </section>
+      ))
+    }
+
+    <h2 class="text-3xl font-bold mb-4 mt-16">{c.progressHeading}</h2>
+    {c.progress.map((p) => <p class="text-gray-700 mb-4 leading-relaxed">{p}</p>)}
+    <dl class="grid gap-4 my-6 md:grid-cols-2">
+      <div class="border border-gray-200 rounded-xl p-5">
+        <dt class="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-1">
+          {c.beforeLabel}
+        </dt>
+        <dd class="italic text-gray-700" lang="en">{c.progressBefore}</dd>
+      </div>
+      <div class="border border-primary rounded-xl p-5">
+        <dt class="text-sm font-semibold uppercase tracking-wide text-primary mb-1">
+          {c.afterLabel}
+        </dt>
+        <dd class="italic text-gray-900 font-semibold" lang="en">{c.progressAfter}</dd>
+      </div>
+    </dl>
+
+    <h2 class="text-3xl font-bold mb-6 mt-16">{c.flagsHeading}</h2>
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="border-2 border-red-200 rounded-xl p-6">
+        <h3 class="font-bold text-red-800 mb-3">{c.redFlagsLabel}</h3>
+        <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+          {c.redFlags.map((f) => <li>{f}</li>)}
+        </ul>
+      </div>
+      <div class="border-2 border-primary rounded-xl p-6">
+        <h3 class="font-bold text-primary mb-3">{c.greenFlagsLabel}</h3>
+        <ul class="list-disc pl-5 space-y-2 text-gray-700 text-sm">
+          {c.greenFlags.map((f) => <li>{f}</li>)}
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+<section class="bg-secondary text-white py-16 px-8">
+  <div class="site-container--small mx-auto max-w-3xl text-center">
+    <h2 class="text-3xl font-bold mb-4">{c.closingHeading}</h2>
+    <p class="text-lg opacity-90 mb-8">{c.closing}</p>
+    <ul class="grid gap-3 md:grid-cols-3 mb-10 text-sm">
+      {c.callPoints.map((p) => <li class="border border-white/30 rounded-xl p-4">{p}</li>)}
+    </ul>
+    <a
+      href={new URL(c.bookUrl).pathname}
+      class="inline-block bg-white text-secondary font-bold px-8 py-4 rounded-xl hover:bg-gray-100"
+    >
+      {c.bookLabel}
+    </a>
+  </div>
+</section>
+
+<section class="bg-white pt-16 px-8">
+  <div class="site-container--small mx-auto max-w-3xl text-center">
+    <h2 class="text-2xl font-bold mb-2">{c.pdfHeading}</h2>
+    <p class="text-gray-600">{c.pdfBody}</p>
+  </div>
+</section>
+<LeadMagnetForm lang={lang} sourcePage={path} />
