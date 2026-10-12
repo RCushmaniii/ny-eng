@@ -1,0 +1,23 @@
+---
+export const prerender = true;
+
+/**
+ * Ungated HTML edition of the Corporate English Training Audit. Spanish twin:
+ * /es/guia/auditoria-ingles-corporativo/. Content: src/data/corporate-audit.ts.
+ */
+import Base from "@layouts/Base.astro";
+import AuditGuide from "@components/corporate/AuditGuide.astro";
+import { corporateAudit } from "@data/corporate-audit";
+
+const c = corporateAudit.en;
+---
+
+<Base
+  title={c.seoTitle}
+  description={c.seoDescription}
+  lang="en"
+  tkey="corporate/audit-guide"
+  hideCta={true}
+>
+  <AuditGuide lang="en" />
+</Base>

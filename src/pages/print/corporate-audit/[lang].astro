@@ -1,0 +1,159 @@
+---
+export const prerender = true;
+
+/**
+ * Print layout for the Corporate English Training Audit PDF. Not a page for
+ * visitors: noindex, excluded from the sitemap (astro.config.mjs filter), and
+ * deliberately free of the site header and footer.
+ *
+ * Regenerate the PDFs after editing src/data/corporate-audit.ts:
+ *   npm run build ; node scripts/build-audit-pdf.mjs
+ */
+import { corporateAudit, type AuditLang } from "@data/corporate-audit";
+
+export function getStaticPaths() {
+  return [{ params: { lang: "en" } }, { params: { lang: "es" } }];
+}
+
+const lang = Astro.params.lang as AuditLang;
+const c = corporateAudit[lang];
+const bookText = c.bookUrl.replace(/^https:\/\//, "");
+---
+
+<!doctype html>
+<html lang={lang === "es" ? "es-MX" : "en-US"}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{c.title}</title>
+    <style is:inline>
+      @page { size: Letter; margin: 0.75in 0.8in; }
+      :root { --navy: #1e3a5f; --accent: #0e7490; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb; --soft: #f3f6f9; --red: #b91c1c; }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: "Segoe UI", Helvetica, Arial, sans-serif; color: var(--ink); font-size: 10.5pt; line-height: 1.5; background: #fff; }
+      h1, h2, h3 { color: var(--navy); line-height: 1.2; margin: 0; }
+      p { margin: 0 0 8pt; }
+      .cover { height: 9.4in; display: flex; flex-direction: column; justify-content: center; page-break-after: always; border-left: 8pt solid var(--accent); padding-left: 28pt; }
+      .cover .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 11pt; margin-bottom: 12pt; }
+      .cover h1 { font-size: 34pt; margin-bottom: 14pt; }
+      .cover .audience { font-size: 13pt; color: var(--muted); max-width: 5.2in; }
+      .cover .author { margin-top: 40pt; font-size: 11pt; font-weight: 600; }
+      .cover ol { margin: 28pt 0 0; padding-left: 18pt; font-size: 11pt; color: var(--ink); }
+      .cover ol li { margin-bottom: 3pt; }
+      section { margin-bottom: 18pt; }
+      .opening h2 { font-size: 18pt; margin-bottom: 8pt; }
+      .pull { border-left: 4pt solid var(--accent); padding: 4pt 0 4pt 14pt; margin: 12pt 0 16pt; font-size: 13pt; font-weight: 700; color: var(--navy); }
+      .q { border-top: 1pt solid var(--line); padding-top: 14pt; }
+      .q h2, .q .num, .q .lede, .block h2 { break-after: avoid; page-break-after: avoid; }
+      .points, .check, .point, .ba, .flags { break-inside: avoid; page-break-inside: avoid; }
+      .q .num { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 9pt; margin-bottom: 4pt; }
+      .q h2 { font-size: 16pt; margin-bottom: 4pt; }
+      .q .lede { color: var(--muted); font-size: 11.5pt; margin-bottom: 8pt; }
+      .points { display: grid; grid-template-columns: repeat(auto-fit, minmax(2in, 1fr)); gap: 8pt; margin: 8pt 0 10pt; }
+      .point { border: 1pt solid var(--line); border-radius: 6pt; padding: 8pt 10pt; font-size: 9.5pt; }
+      .point strong { display: block; color: var(--navy); margin-bottom: 2pt; font-size: 10pt; }
+      .check { background: var(--soft); border-left: 4pt solid var(--accent); padding: 9pt 12pt; border-radius: 0 6pt 6pt 0; }
+      .check .label { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 8.5pt; margin-bottom: 3pt; }
+      .check p { margin: 0; }
+      .block { page-break-inside: avoid; break-inside: avoid; border-top: 1pt solid var(--line); padding-top: 14pt; }
+      .block h2 { font-size: 16pt; margin-bottom: 8pt; }
+      .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; margin-top: 8pt; }
+      .ba div { border: 1pt solid var(--line); border-radius: 6pt; padding: 8pt 10pt; font-style: italic; }
+      .ba div.after { border-color: var(--accent); font-weight: 700; color: var(--navy); }
+      .ba small { display: block; font-style: normal; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 8pt; color: var(--muted); margin-bottom: 2pt; }
+      .flags { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; }
+      .flags div { border: 1.5pt solid var(--accent); border-radius: 6pt; padding: 10pt 12pt; }
+      .flags div.red { border-color: #fca5a5; }
+      .flags h3 { font-size: 11pt; margin-bottom: 6pt; color: var(--accent); }
+      .flags div.red h3 { color: var(--red); }
+      .flags ul { margin: 0; padding-left: 14pt; font-size: 9.5pt; }
+      .flags li { margin-bottom: 4pt; }
+      .closing { page-break-before: always; text-align: center; padding-top: 1.6in; }
+      .closing h2 { font-size: 24pt; margin-bottom: 12pt; }
+      .closing p.lead { font-size: 13pt; max-width: 5.4in; margin: 0 auto 22pt; }
+      .closing ul { list-style: none; padding: 0; margin: 0 auto 28pt; max-width: 4.6in; text-align: left; }
+      .closing li { border: 1pt solid var(--line); border-radius: 6pt; padding: 8pt 12pt; margin-bottom: 6pt; }
+      .cta { display: inline-block; background: var(--navy); color: #fff; border-radius: 8pt; padding: 14pt 26pt; text-decoration: none; }
+      .cta span { display: block; font-size: 11pt; opacity: 0.85; }
+      .cta strong { display: block; font-size: 15pt; margin-top: 2pt; }
+      .sign { margin-top: 36pt; color: var(--muted); font-size: 10pt; }
+    </style>
+  </head>
+  <body>
+    <div class="cover">
+      <p class="eyebrow">{c.subtitle}</p>
+      <h1>{c.title}</h1>
+      <p class="audience">{c.audience}</p>
+      <ol>{c.questions.map((q) => <li>{q.question}</li>)}</ol>
+      <p class="author">{c.author}</p>
+    </div>
+
+    <section class="opening">
+      <h2>{c.introHeading}</h2>
+      {c.intro.map((p) => <p>{p}</p>)}
+      <p class="pull">{c.pullQuote}</p>
+      <h2>{c.stakesHeading}</h2>
+      {c.stakes.map((p) => <p>{p}</p>)}
+    </section>
+
+    {
+      c.questions.map((q, i) => (
+        <section class="q">
+          <p class="num">{lang === "es" ? `Pregunta ${i + 1}` : `Question ${i + 1}`}</p>
+          <h2>{q.question}</h2>
+          <p class="lede">{q.lede}</p>
+          {q.body.map((p) => <p>{p}</p>)}
+          {q.points && (
+            <div class="points">
+              {q.points.map((pt) => (
+                <div class="point">
+                  <strong>{pt.label}</strong>
+                  {pt.text}
+                </div>
+              ))}
+            </div>
+          )}
+          <div class="check">
+            <p class="label">{c.checkpointLabel}</p>
+            <p>{q.checkpoint}</p>
+          </div>
+        </section>
+      ))
+    }
+
+    <section class="block">
+      <h2>{c.progressHeading}</h2>
+      {c.progress.map((p) => <p>{p}</p>)}
+      <div class="ba">
+        <div lang="en"><small>{c.beforeLabel}</small>{c.progressBefore}</div>
+        <div class="after" lang="en"><small>{c.afterLabel}</small>{c.progressAfter}</div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>{c.flagsHeading}</h2>
+      <div class="flags">
+        <div class="red">
+          <h3>{c.redFlagsLabel}</h3>
+          <ul>{c.redFlags.map((f) => <li>{f}</li>)}</ul>
+        </div>
+        <div>
+          <h3>{c.greenFlagsLabel}</h3>
+          <ul>{c.greenFlags.map((f) => <li>{f}</li>)}</ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <h2>{c.closingHeading}</h2>
+      <p class="lead">{c.closing}</p>
+      <ul>{c.callPoints.map((p) => <li>{p}</li>)}</ul>
+      <a class="cta" href={c.bookUrl}>
+        <span>{c.bookLabel}</span>
+        <strong>{bookText}</strong>
+      </a>
+      <p class="sign">{c.author}</p>
+    </section>
+  </body>
+</html>

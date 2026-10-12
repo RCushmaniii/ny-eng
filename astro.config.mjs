@@ -273,6 +273,7 @@ export default defineConfig({
           !p.includes("/dev/") && // Exclude dev documentation from production
           !p.includes("/admin/") && // CRITICAL: Exclude admin pages from sitemap
           !p.includes("/thank-you") && // Exclude thank-you pages (thin content, no SEO value)
+          !p.includes("/print/") && // Print layouts that generate PDFs (noindex)
           !p.includes("/chat") && // Exclude chat and chat-test pages (internal tools)
           !p.match(/\/quiz\/[^\/]+\/question\/\d+/) && // Exclude quiz question pages (e.g., /quiz/it-services/question/1/)
           !p.match(/\/quiz\/question\/\d+/) && // Exclude OLD quiz question pages (e.g., /quiz/question/1/)

@@ -18,6 +18,7 @@ import Base from "@layouts/Base.astro";
 import CtaSection from "@components/sections/CtaSection.astro";
 import LeadMagnetForm from "@components/sections/LeadMagnetForm.astro";
 import BreadcrumbSchema from "@components/seo/BreadcrumbSchema.astro";
+import ClientRoster from "@components/corporate/ClientRoster.astro";
 import { testimonials as esTestimonials } from "@data/testimonials/es";
 
 const title = "Inglés para Empresas en Guadalajara | Capacitación";
@@ -92,20 +93,7 @@ const ctaContent = {
   </section>
 
   <!-- Roster -->
-  {corporateClients.length > 0 && (
-    <section class="bg-white pt-12 pb-6 px-8">
-      <div class="site-container--small mx-auto">
-        <p class="text-center text-sm text-gray-500 mb-6">
-          Líderes de estas empresas han trabajado conmigo uno a uno
-        </p>
-        <ul class="flex flex-wrap justify-center gap-x-8 gap-y-3">
-          {corporateClients.map((name) => (
-            <li class="text-gray-700 font-semibold tracking-tight">{name}</li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  )}
+  <ClientRoster clients={corporateClients} caption="Líderes de estas empresas han trabajado conmigo uno a uno" />
 
   <!-- Para quién es -->
   <section class="bg-light py-16 px-8">

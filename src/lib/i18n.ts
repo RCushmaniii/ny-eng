@@ -197,6 +197,7 @@ export type TKey =
   | "course/executive-pushback/i-disagree-vs-i-see-it-differently"
   | "corporate/for-hr"
   | "corporate/english-for-companies"
+  | "corporate/audit-guide"
   | "meme-portfolio"
   | "site-index";
 
@@ -416,6 +417,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
       "/en/course/executive-pushback/i-disagree-vs-i-see-it-differently/",
     "corporate/for-hr": "/en/for-hr-managers/",
     "corporate/english-for-companies": "/en/corporate-english-training-guadalajara/",
+    "corporate/audit-guide": "/en/guide/corporate-english-training-audit/",
     "meme-portfolio": "/en/meme-portfolio/all/",
     "site-index": "/en/site-index/",
   },
@@ -638,6 +640,7 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
       "/es/curso/pushback-ejecutivo/i-disagree-vs-i-see-it-differently/",
     "corporate/for-hr": "/es/para-rh/",
     "corporate/english-for-companies": "/es/ingles-para-empresas-guadalajara/",
+    "corporate/audit-guide": "/es/guia/auditoria-ingles-corporativo/",
     "meme-portfolio": "/es/meme-portfolio/all/",
     "site-index": "/es/indice-del-sitio/",
   },
@@ -803,6 +806,7 @@ export function getAllTKeys(): TKey[] {
     "quiz/high-stakes",
     "corporate/for-hr",
     "corporate/english-for-companies",
+    "corporate/audit-guide",
     "meme-portfolio",
     "site-index",
   ];

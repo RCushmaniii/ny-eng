@@ -1,0 +1,24 @@
+---
+export const prerender = true;
+
+/**
+ * Edición HTML abierta de la Auditoría de Capacitación en Inglés Corporativo.
+ * English twin: /en/guide/corporate-english-training-audit/.
+ * Content: src/data/corporate-audit.ts.
+ */
+import Base from "@layouts/Base.astro";
+import AuditGuide from "@components/corporate/AuditGuide.astro";
+import { corporateAudit } from "@data/corporate-audit";
+
+const c = corporateAudit.es;
+---
+
+<Base
+  title={c.seoTitle}
+  description={c.seoDescription}
+  lang="es"
+  tkey="corporate/audit-guide"
+  hideCta={true}
+>
+  <AuditGuide lang="es" />
+</Base>

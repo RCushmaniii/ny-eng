@@ -113,13 +113,13 @@ const description = config.subtitle;
                 <span>Instant results</span>
               </div>
               <div class="trust-signal">
-                <span>200+ tech leaders assessed</span>
+                <span>Instant, private results</span>
               </div>
             </div>
           </div>
 
           <p class="trust-badge">
-            Trusted by IT leaders at Smarttie, Kopar, and Sourceability
+            Trusted by IT leaders at Smarttie and Grupo Kopar
           </p>
         </div>
 

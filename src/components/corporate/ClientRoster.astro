@@ -1,0 +1,67 @@
+---
+/**
+ * Client roster for the corporate pages (EN + ES).
+ *
+ * Logos are shown only for companies Robert approved for logo use on
+ * 2026-10-12: Driscoll's, Continental, Sanmina, CEVA Logistics, Terramar
+ * Brands. Every other client stays a plain-text name. Sources for each file
+ * are recorded in docs/CLIENT-LOGOS.md.
+ *
+ * The caller still filters `clients` against published testimonials, so a
+ * company disappears here the moment its named testimonial is removed.
+ */
+export interface Props {
+  clients: string[];
+  caption: string;
+}
+
+const { clients, caption } = Astro.props;
+
+/** Height is fixed per logo so wide wordmarks and compact marks read at a similar weight. */
+const LOGOS: Record<string, { src: string; height: number; filter?: string }> = {
+  "Driscoll's": { src: "/images/clients/driscolls.png", height: 44 },
+  Continental: { src: "/images/clients/continental.svg", height: 28 },
+  "Sanmina Corporation": { src: "/images/clients/sanmina.svg", height: 44 },
+  "CEVA Logistics": { src: "/images/clients/ceva-logistics.svg", height: 34 },
+  // Pale gold wordmark: darkened so it holds contrast on white.
+  "Terramar Brands": {
+    src: "/images/clients/terramar-brands.png",
+    height: 44,
+    filter: "brightness(0.62) saturate(1.4)",
+  },
+};
+
+const withLogo = clients.filter((c) => LOGOS[c]);
+const textOnly = clients.filter((c) => !LOGOS[c]);
+---
+
+{
+  clients.length > 0 && (
+    <section class="bg-white pt-12 pb-6 px-8">
+      <div class="site-container--small mx-auto">
+        <p class="text-center text-sm text-gray-500 mb-8">{caption}</p>
+        <ul class="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+          {withLogo.map((name) => (
+            <li>
+              <img
+                src={LOGOS[name].src}
+                alt={name}
+                style={`height:${LOGOS[name].height}px${LOGOS[name].filter ? `;filter:${LOGOS[name].filter}` : ""}`}
+                class="w-auto max-w-[180px] object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+          ))}
+        </ul>
+        {textOnly.length > 0 && (
+          <ul class="flex flex-wrap justify-center gap-x-8 gap-y-3 mt-8">
+            {textOnly.map((name) => (
+              <li class="text-gray-700 font-semibold tracking-tight">{name}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </section>
+  )
+}
