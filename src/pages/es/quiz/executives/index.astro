@@ -8,6 +8,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import { getQuizTestimonials } from "@data/quiz/real-testimonials";
 import Button from "@components/ui/Button.astro";
 import QuizSchema from "@components/seo/QuizSchema.astro";
 import {
@@ -61,30 +62,7 @@ const faqs = [
   },
 ];
 
-// Datos de testimonios
-const testimonials = [
-  {
-    quote:
-      "El coaching de Robert me ayudó a conseguir mi primer asiento en una junta directiva. El framework del 'so what' cambió completamente cómo presento estrategia a inversionistas.",
-    name: "María C.",
-    title: "VP Estrategia, Startup Tech",
-    location: "Ciudad de México",
-  },
-  {
-    quote:
-      "Cerré una alianza de $12M usando las técnicas de negociación de este programa. El retorno fue inmediato.",
-    name: "Carlos R.",
-    title: "Director de Desarrollo de Negocios, SaaS",
-    location: "Guadalajara",
-  },
-  {
-    quote:
-      "Después de 15 años en tecnología, por fin siento que mi inglés está a la altura de mi experiencia. El entrenamiento de presencia ejecutiva lo cambió todo.",
-    name: "Ana L.",
-    title: "CTO, Fintech",
-    location: "São Paulo",
-  },
-];
+const testimonials = getQuizTestimonials("es", "executives");
 ---
 
 <Base

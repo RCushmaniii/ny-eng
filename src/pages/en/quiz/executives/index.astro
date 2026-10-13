@@ -8,6 +8,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import { getQuizTestimonials } from "@data/quiz/real-testimonials";
 import Button from "@components/ui/Button.astro";
 import QuizSchema from "@components/seo/QuizSchema.astro";
 import {
@@ -61,30 +62,7 @@ const faqs = [
   },
 ];
 
-// Testimonials data
-const testimonials = [
-  {
-    quote:
-      "Robert's coaching helped me land my first board seat. The 'so what' framework transformed how I present strategy to investors.",
-    name: "Maria C.",
-    title: "VP Strategy, Tech Startup",
-    location: "Mexico City",
-  },
-  {
-    quote:
-      "I closed a $12M partnership using the negotiation techniques from this program. The ROI was immediate.",
-    name: "Carlos R.",
-    title: "Business Development Director, SaaS",
-    location: "Guadalajara",
-  },
-  {
-    quote:
-      "After 15 years in tech, I finally feel like my English matches my expertise. The executive presence training changed everything.",
-    name: "Ana L.",
-    title: "CTO, Fintech",
-    location: "São Paulo",
-  },
-];
+const testimonials = getQuizTestimonials("en", "executives");
 ---
 
 <Base

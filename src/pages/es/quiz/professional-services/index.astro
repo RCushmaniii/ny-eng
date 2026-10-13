@@ -7,6 +7,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import { getQuizTestimonials } from "@data/quiz/real-testimonials";
 import Button from "@components/ui/Button.astro";
 import QuizSchema from "@components/seo/QuizSchema.astro";
 import {
@@ -61,30 +62,7 @@ const faqs = [
   },
 ];
 
-// Testimonials data
-const testimonials = [
-  {
-    quote:
-      "Mis puntajes de satisfacción del paciente subieron 40% en 3 meses. El framework de 'explícalo a un padre preocupado' cambió cómo comunico diagnósticos.",
-    name: "Dra. Patricia M.",
-    title: "Cardióloga Pediátrica",
-    location: "Ciudad de México → Houston",
-  },
-  {
-    quote:
-      "Perdía clientes ante abogados nacidos en EE.UU. a pesar de mejores resultados. Ahora soy a quien refieren los casos complejos de inmigración.",
-    name: "Carlos V.",
-    title: "Abogado de Inmigración",
-    location: "Guadalajara → San Diego",
-  },
-  {
-    quote:
-      "Pasé de 'técnicamente excelente pero frío' en reseñas de pacientes a 'el doctor que realmente escucha.' El módulo de calibración cultural fue revelador.",
-    name: "Dr. Ana S.",
-    title: "Psiquiatra, Práctica Privada",
-    location: "São Paulo → Miami",
-  },
-];
+const testimonials = getQuizTestimonials("es", "professional-services");
 ---
 
 <Base
@@ -482,7 +460,7 @@ const testimonials = [
   <!-- SECTION 5: Testimonials -->
   <section class="testimonials-section">
     <div class="container">
-      <h2>Profesionales de Salud y Derecho Que Ya Dieron el Paso</h2>
+      <h2>Profesionales Que Ya Dieron el Paso</h2>
 
       <div class="testimonials-grid">
         {

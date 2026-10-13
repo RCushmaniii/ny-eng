@@ -7,6 +7,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import { getQuizTestimonials } from "@data/quiz/real-testimonials";
 import Button from "@components/ui/Button.astro";
 import QuizSchema from "@components/seo/QuizSchema.astro";
 import {
@@ -61,30 +62,7 @@ const faqs = [
   },
 ];
 
-// Testimonials data
-const testimonials = [
-  {
-    quote:
-      "Pasé de ser 'el senior callado' a liderar discusiones de arquitectura en 3 meses. Los ejercicios de velocidad de procesamiento cambiaron todo.",
-    name: "Miguel S.",
-    title: "Staff Engineer, Fintech Startup",
-    location: "CDMX → Remoto (EE.UU.)",
-  },
-  {
-    quote:
-      "Fallé 3 entrevistas de FAANG antes de esto. Por fin entendí por qué—mis explicaciones eran técnicamente correctas pero 2x más largas de lo necesario. Entré a Google en el siguiente intento.",
-    name: "Ana R.",
-    title: "Software Engineer, Google",
-    location: "São Paulo → Bay Area",
-  },
-  {
-    quote:
-      "Mis PRs se quedaban enterrados. Ahora soy yo quien los aprueba. El módulo de calibración cultural fue un game-changer para la comunicación async.",
-    name: "Carlos M.",
-    title: "Tech Lead, SaaS Serie B",
-    location: "Guadalajara",
-  },
-];
+const testimonials = getQuizTestimonials("es", "it-services");
 ---
 
 <Base
@@ -472,7 +450,7 @@ const testimonials = [
   <!-- SECTION 5: Testimonials -->
   <section class="testimonials-section">
     <div class="container">
-      <h2>Senior Engineers Que Ya Dieron el Paso</h2>
+      <h2>Líderes de Tecnología Que Ya Dieron el Paso</h2>
 
       <div class="testimonials-grid">
         {
@@ -535,8 +513,8 @@ const testimonials = [
         </Button>
       </div>
       <p class="trust-final">
-        90 segundos. Resultados instantáneos. Cero riesgo. Ingenieros de Google,
-        Meta, Amazon, y más de 50 startups confían en nosotros.
+        90 segundos. Resultados instantáneos. Cero riesgo. Basada en el coaching
+        de más de 150 profesionales.
       </p>
     </div>
   </section>
