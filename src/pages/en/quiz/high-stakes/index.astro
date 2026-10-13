@@ -7,6 +7,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import { getQuizTestimonials } from "@data/quiz/real-testimonials";
 import Button from "@components/ui/Button.astro";
 import QuizSchema from "@components/seo/QuizSchema.astro";
 import {
@@ -61,30 +62,7 @@ const faqs = [
   },
 ];
 
-// Testimonials data
-const testimonials = [
-  {
-    quote:
-      "Failed 2 final-round interviews at Amazon before this. The processing speed exercises changed everything—landed the offer on my third attempt.",
-    name: "Ricardo M.",
-    title: "Senior Product Manager, Amazon",
-    location: "Mexico City → Seattle",
-  },
-  {
-    quote:
-      "I used to black out during investor pitches. Now I actually enjoy them. Raised $4M in our Series A—the presence training was worth 100x the investment.",
-    name: "Sofia L.",
-    title: "CEO, Fintech Startup",
-    location: "Bogotá",
-  },
-  {
-    quote:
-      "Keynoted a 2,000-person conference in English. Six months ago, I would have said no. The 'freeze to flow' framework made it possible.",
-    name: "Dr. Marco V.",
-    title: "AI Research Director",
-    location: "São Paulo → Austin",
-  },
-];
+const testimonials = getQuizTestimonials("en", "high-stakes");
 ---
 
 <Base

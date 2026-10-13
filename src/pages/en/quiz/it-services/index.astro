@@ -7,6 +7,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import { getQuizTestimonials } from "@data/quiz/real-testimonials";
 import Button from "@components/ui/Button.astro";
 import QuizSchema from "@components/seo/QuizSchema.astro";
 import {
@@ -61,30 +62,7 @@ const faqs = [
   },
 ];
 
-// Testimonials data
-const testimonials = [
-  {
-    quote:
-      "I went from 'that quiet senior dev' to leading architecture discussions in 3 months. The processing speed exercises changed everything.",
-    name: "Miguel S.",
-    title: "Staff Engineer, Fintech Startup",
-    location: "Mexico City → Remote (US)",
-  },
-  {
-    quote:
-      "Failed 3 FAANG interviews before this. Finally understood why—my explanations were technically correct but 2x too long. Landed at Google on my next attempt.",
-    name: "Ana R.",
-    title: "Software Engineer, Google",
-    location: "São Paulo → Bay Area",
-  },
-  {
-    quote:
-      "My PRs used to get buried. Now I'm the one approving them. The cultural calibration module was a game-changer for async communication.",
-    name: "Carlos M.",
-    title: "Tech Lead, Series B SaaS",
-    location: "Guadalajara",
-  },
-];
+const testimonials = getQuizTestimonials("en", "it-services");
 ---
 
 <Base
@@ -450,7 +428,7 @@ const testimonials = [
   <!-- SECTION 5: Testimonials -->
   <section class="testimonials-section">
     <div class="container">
-      <h2>Trusted by Senior Engineers</h2>
+      <h2>Trusted by Technology Leaders</h2>
 
       <div class="testimonials-grid">
         {
@@ -511,8 +489,8 @@ const testimonials = [
         </Button>
       </div>
       <p class="trust-final">
-        90 seconds. Instant results. Zero risk. Trusted by engineers at Google,
-        Meta, Amazon, and 50+ startups.
+        90 seconds. Instant results. Zero risk. Built from coaching 150+
+        professionals.
       </p>
     </div>
   </section>
