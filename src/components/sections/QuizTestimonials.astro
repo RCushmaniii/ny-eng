@@ -1,0 +1,160 @@
+---
+/**
+ * QuizTestimonials — real client quotes for the quiz landing pages.
+ *
+ * Replaced invented quotes ("I scored 58…", "$180K contract") on 2026-10-12.
+ * The quiz has only a handful of submissions, so no quote may claim to come
+ * from a quiz taker. Every excerpt here must be a verbatim slice of a
+ * published testimonial in src/data/testimonials/{en,es}.ts; the build fails
+ * if one drifts, so the quiz page can never show words a client did not write.
+ */
+import { publishedTestimonials as enTestimonials } from "../../data/testimonials/en";
+import { publishedTestimonials as esTestimonials } from "../../data/testimonials/es";
+
+export interface Props {
+  lang: "en" | "es";
+}
+
+const { lang } = Astro.props;
+
+const picks: Record<"en" | "es", Array<{ slug: string; excerpt: string }>> = {
+  en: [
+    {
+      slug: "luis-manuel-becerra-lucatero-skysense",
+      excerpt:
+        "I’ve learned to structure presentations for impact, handle impromptu speaking under pressure, and lead conversations with clarity and confidence.",
+    },
+    {
+      slug: "hugo-lopez-continental",
+      excerpt:
+        "Under his guidance, I moved from feeling hesitant in senior-level discussions to speaking with assurance in top-management meetings and presenting complex updates with clarity and persuasion.",
+    },
+    {
+      slug: "jonathan-emmaus-infosys",
+      excerpt:
+        "Now I feel much more fluent and confident. I've been able to mobilize multinational teams and align them around strategies that make sense for everyone.",
+    },
+    {
+      slug: "javier-ramirez-sophia",
+      excerpt:
+        "He uses a situational approach that results in practical knowledge that can be applied on a day to day basis.",
+    },
+  ],
+  es: [
+    {
+      slug: "luis-manuel-becerra-lucatero-skysense",
+      excerpt:
+        "Aprendí a estructurar presentaciones con impacto, manejar situaciones de presentación improvisada bajo presión y liderar conversaciones con claridad y confianza.",
+    },
+    {
+      slug: "hugo-lopez-continental",
+      excerpt:
+        "Bajo su guía, pasé de sentirme inseguro en conversaciones de alto nivel a hablar con seguridad en reuniones de alta dirección y presentar actualizaciones complejas con claridad y persuasión.",
+    },
+    {
+      slug: "jonathan-emmaus-infosys",
+      excerpt:
+        "Ahora me siento mucho más fluido y seguro. He podido movilizar equipos multinacionales y alinearlos en torno a estrategias que tienen sentido para todos.",
+    },
+    {
+      slug: "javier-ramirez-sophia",
+      excerpt:
+        "Utiliza un enfoque situacional que resulta en conocimiento práctico que se puede aplicar en el día a día.",
+    },
+  ],
+};
+
+const source = lang === "es" ? esTestimonials : enTestimonials;
+
+const cards = picks[lang].map(({ slug, excerpt }) => {
+  const t = source.find((x) => x.slug === slug);
+  if (!t) {
+    throw new Error(`QuizTestimonials: no published ${lang} testimonial with slug "${slug}"`);
+  }
+  if (!t.content.includes(excerpt)) {
+    throw new Error(
+      `QuizTestimonials: excerpt for "${slug}" (${lang}) is not verbatim in its testimonial`,
+    );
+  }
+  return {
+    excerpt,
+    author: t.author,
+    role: t.company ? `${t.position}, ${t.company}` : t.position,
+  };
+});
+---
+
+<div class="testimonial-cards">
+  {
+    cards.map((c) => (
+      <div class="testimonial-card">
+        <p class="testimonial-text">"{c.excerpt}"</p>
+        <cite>
+          — {c.author}, {c.role}
+        </cite>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .testimonial-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-cards {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .testimonial-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-card {
+      padding: 2rem;
+    }
+  }
+
+  .testimonial-text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #2d3748;
+    margin-bottom: 0.875rem;
+    font-style: italic;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-text {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .testimonial-card cite {
+    font-size: 0.8125rem;
+    color: #718096;
+    font-style: normal;
+    display: block;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-card cite {
+      font-size: 0.875rem;
+    }
+  }
+
+</style>

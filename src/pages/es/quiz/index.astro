@@ -5,6 +5,7 @@ import Base from "@layouts/Base.astro";
 import Button from "@components/ui/Button.astro";
 import QuizSchema from "@components/seo/QuizSchema.astro";
 import ReportCarousel from "@components/ReportCarousel.astro";
+import QuizTestimonials from "@components/sections/QuizTestimonials.astro";
 import {
   Target,
   BarChart3,
@@ -263,53 +264,9 @@ const description =
   <!-- SOCIAL PROOF -->
   <section class="social-proof">
     <div class="container-narrow">
-      <h2>Líderes Tech Que Confían en Esta Evaluación</h2>
+      <h2>Lo Que Dicen Ingenieros y Líderes de Tecnología</h2>
 
-      <div class="testimonial-cards">
-        <div class="testimonial-card">
-          <p class="testimonial-text">
-            "Obtuve 58 puntos y pensé, 'No está mal'. Luego leí el reporte y me
-            di cuenta de que estábamos dejando más de $100K sobre la mesa cada
-            trimestre porque nuestros PMs no podían comandar las llamadas con
-            clientes."
-          </p>
-          <cite
-            >— Fundador, empresa de desarrollo de 35 personas, Ciudad de México</cite
-          >
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-text">
-            "El quiz me obligó a admitir lo que ya sabía: yo era el cuello de
-            botella. Cada llamada importante tenía que pasar por mí porque mi
-            equipo no tenía suficiente confianza. Ahora ellos lideran las
-            llamadas de descubrimiento."
-          </p>
-          <cite>— CTO, consultoría SaaS, Bogotá</cite>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-text">
-            "Pensábamos que nuestro inglés era 'suficientemente bueno'. Esta
-            evaluación nos mostró los momentos específicos donde estábamos
-            perdiendo credibilidad. Seis semanas después, cerramos nuestro
-            primer contrato de $180K."
-          </p>
-          <cite>— VP de Ingeniería, startup fintech, Buenos Aires</cite>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-text">
-            "El quiz reveló brechas que no sabía que existían. La hoja de ruta
-            personalizada me ayudó a enfocarme en lo que realmente importa para
-            las llamadas con clientes. En un mes, estaba liderando
-            presentaciones técnicas con confianza."
-          </p>
-          <cite
-            >— Arquitecto de Soluciones, consultoría de software, Monterrey</cite
-          >
-        </div>
-      </div>
+      <QuizTestimonials lang="es" />
     </div>
   </section>
 
@@ -1316,64 +1273,6 @@ const description =
     }
   }
 
-  .testimonial-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    width: 100%;
-  }
-
-  @media (min-width: 768px) {
-    .testimonial-cards {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-  }
-
-  .testimonial-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 100%;
-  }
-
-  @media (min-width: 768px) {
-    .testimonial-card {
-      padding: 2rem;
-    }
-  }
-
-  .testimonial-text {
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: #2d3748;
-    margin-bottom: 0.875rem;
-    font-style: italic;
-    max-width: 100%;
-  }
-
-  @media (min-width: 768px) {
-    .testimonial-text {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-  }
-
-  .testimonial-card cite {
-    font-size: 0.8125rem;
-    color: #718096;
-    font-style: normal;
-    display: block;
-    max-width: 100%;
-  }
-
-  @media (min-width: 768px) {
-    .testimonial-card cite {
-      font-size: 0.875rem;
-    }
-  }
 
   /* ============================================
    FINAL CTA SECTION
