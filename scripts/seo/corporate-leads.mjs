@@ -17,6 +17,10 @@
  *   node --env-file=.env.local scripts/seo/corporate-leads.mjs
  *   node --env-file=.env.local scripts/seo/corporate-leads.mjs --days 90
  *
+ * Counts only guide = 'corporate-audit'. The same table also stores downloads
+ * of the blog guide "From Correct to Connected"; those are individual readers,
+ * not corporate pipeline, and are reported on one separate line at the end.
+ *
  * Reads POSTGRES_URL. Prints no secret, and prints no lead email addresses -
  * only counts, companies and source pages. Use the Neon console if an
  * individual lead's contact details are needed.
@@ -49,9 +53,25 @@ const rows = await sql`
     MAX(created_at) AS most_recent
   FROM corporate_guide_leads
   WHERE created_at > NOW() - (${days} || ' days')::interval
+    AND guide = 'corporate-audit'
   GROUP BY source_page, language
   ORDER BY leads DESC
 `;
+
+const otherGuides = await sql`
+  SELECT guide, COUNT(*)::int AS n
+  FROM corporate_guide_leads
+  WHERE created_at > NOW() - (${days} || ' days')::interval
+    AND guide <> 'corporate-audit'
+  GROUP BY guide
+  ORDER BY guide
+`;
+const printOtherGuides = () => {
+  if (!otherGuides.length) return;
+  console.log("\nnot corporate (blog guide downloads, individual readers):");
+  for (const g of otherGuides) console.log(`  ${String(g.n).padStart(5)}  ${g.guide}`);
+};
+process.on("exit", (code) => code === 0 && printOtherGuides());
 
 console.log(`corporate guide leads, last ${days} days\n`);
 

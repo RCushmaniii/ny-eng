@@ -13,6 +13,7 @@ imageAlt: "Imagen dividida del mismo ejecutivo presentando dos veces — a la iz
 translations:
   en: "/en/blog/why-correct-english-sounds-disconnected/"
 publish: true
+leadMagnet: "connected-english"
 seo:
   title: "Inglés Correcto pero Desconectado: Por Qué Pasa"
   description: "Oraciones gramaticalmente perfectas pueden perder la sala. Dos marcos ejecutivos que convierten un inglés correcto en comunicación conectada y persuasiva."
@@ -149,5 +150,7 @@ Y un ejercicio para hacerlas tuyas. Toma el último correo o actualización impo
 Porque los profesionales que suenan más articulados en inglés casi nunca son los que tienen el vocabulario más grande. Son aquellos cuyos oyentes nunca tienen que descifrar cómo la idea dos se relaciona con la idea uno.
 
 ---
+
+**¿Quieres los ejemplos resueltos?** [De Correcto a Conectado](#descargar-la-guia) es la guía gratuita de los dos marcos: nueve reescrituras de antes y después de llamadas con clientes, solicitudes de presupuesto y correos de estatus, las palabras de relación que sí conectan ideas y un plan de práctica de cinco días.
 
 **Si tus oraciones ya son correctas y este es el hueco que reconoces**, esta es exactamente la capa que yo entreno. El [curso gratuito de Inglés Ejecutivo](/es/curso/ejecutivo/) ejercita marcos estructurados como estos bajo presión de tiempo, con ejemplos de nivel ejecutivo en cada unidad. Lecturas relacionadas: [registro en inglés para hispanohablantes](/es/blog/registro-en-ingles-para-hispanohablantes/) y [ejercicios de reformulación ejecutiva](/es/blog/ejercicios-reformulacion-ejecutiva/). O [reserva una sesión de estrategia privada](/es/reservar/) y trae una actualización real que tengas próxima — la reconstruimos juntos como cadena.

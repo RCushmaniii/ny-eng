@@ -1,8 +1,14 @@
 /**
- * Vercel Serverless Function: Corporate Guide Download
+ * Vercel Serverless Function: Guide Download (lead magnets)
  *
- * Lead magnet: "The Corporate English Training Audit" PDF
- * - Stores lead in Neon PostgreSQL (corporate_guide_leads)
+ * Serves two lead magnets, picked by `guide` in the request body:
+ * - "corporate-audit" (default): The Corporate English Training Audit PDF
+ * - "connected-english": From Correct to Connected, the content upgrade on
+ *   /en/blog/why-correct-english-sounds-disconnected/ and its ES twin
+ *
+ * - Stores lead in Neon PostgreSQL (corporate_guide_leads, `guide` column).
+ *   scripts/seo/corporate-leads.mjs counts only guide = 'corporate-audit', so
+ *   individual blog readers never inflate the corporate pipeline numbers.
  * - Sends admin notification email
  * - Sends branded delivery email with PDF link + next-step CTA
  */
@@ -26,14 +32,31 @@ const allowedOrigins = [
 
 const SITE_URL = "https://www.nyenglishteacher.com";
 
-const PDF_PATH: Record<string, string> = {
-  en: "/downloads/Corporate_English_Audit_EN.pdf",
-  es: "/downloads/Corporate_English_Audit_ES.pdf",
+type Guide = "corporate-audit" | "connected-english";
+type Lang = "en" | "es";
+
+const PDF_PATH: Record<Guide, Record<Lang, string>> = {
+  "corporate-audit": {
+    en: "/downloads/Corporate_English_Audit_EN.pdf",
+    es: "/downloads/Corporate_English_Audit_ES.pdf",
+  },
+  "connected-english": {
+    en: "/downloads/From_Correct_to_Connected_EN.pdf",
+    es: "/downloads/From_Correct_to_Connected_ES.pdf",
+  },
 };
 
-const VIDEO_URL: Record<string, string> = {
-  en: "https://3flyodgshmcrfbub.public.blob.vercel-storage.com/corporate-guide/The_Corporate_English_Audit.mp4",
-  es: "https://3flyodgshmcrfbub.public.blob.vercel-storage.com/corporate-guide/Auditoria_de_Ingles_Corporativo.mp4",
+/** Only the corporate audit has a video edition. */
+const VIDEO_URL: Partial<Record<Guide, Record<Lang, string>>> = {
+  "corporate-audit": {
+    en: "https://3flyodgshmcrfbub.public.blob.vercel-storage.com/corporate-guide/The_Corporate_English_Audit.mp4",
+    es: "https://3flyodgshmcrfbub.public.blob.vercel-storage.com/corporate-guide/Auditoria_de_Ingles_Corporativo.mp4",
+  },
+};
+
+const GUIDE_NAME: Record<Guide, string> = {
+  "corporate-audit": "Corporate English Training Audit",
+  "connected-english": "From Correct to Connected",
 };
 
 // ============================================================================
@@ -45,16 +68,18 @@ function buildAdminEmailHtml(body: {
   email: string;
   company: string;
   language: string;
+  guide: Guide;
   sourcePage?: string;
 }): string {
   const langLabel = body.language === "es" ? "Spanish" : "English";
+  const guideName = GUIDE_NAME[body.guide];
   return `<!DOCTYPE html>
 <html>
 <body style="margin: 0; padding: 0; background: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
   <div style="max-width: 600px; margin: 0 auto; background: #ffffff;">
     <div style="background: #1e40af; padding: 24px 32px;">
-      <h1 style="margin: 0; color: #ffffff; font-size: 20px; font-weight: 600;">New Corporate Guide Lead</h1>
-      <p style="margin: 4px 0 0; color: #bfdbfe; font-size: 14px;">NY English Teacher &mdash; Corporate Audit PDF download</p>
+      <h1 style="margin: 0; color: #ffffff; font-size: 20px; font-weight: 600;">New Guide Lead</h1>
+      <p style="margin: 4px 0 0; color: #bfdbfe; font-size: 14px;">NY English Teacher &mdash; ${guideName} PDF download</p>
     </div>
     <div style="padding: 24px 32px;">
       <table style="width: 100%; border-collapse: collapse;">
@@ -70,7 +95,7 @@ function buildAdminEmailHtml(body: {
         </tr>
         <tr>
           <td style="padding: 10px 12px; border-bottom: 1px solid #e2e8f0; color: #64748b; font-size: 13px;">Company</td>
-          <td style="padding: 10px 12px; border-bottom: 1px solid #e2e8f0; font-weight: 600; color: #0f172a;">${escapeHtml(body.company)}</td>
+          <td style="padding: 10px 12px; border-bottom: 1px solid #e2e8f0; font-weight: 600; color: #0f172a;">${body.company ? escapeHtml(body.company) : "&mdash;"}</td>
         </tr>
         <tr>
           <td style="padding: 10px 12px; border-bottom: 1px solid #e2e8f0; color: #64748b; font-size: 13px;">Language</td>
@@ -83,22 +108,99 @@ function buildAdminEmailHtml(body: {
       </table>
     </div>
     <div style="padding: 16px 32px; background: #f8fafc; text-align: center;">
-      <p style="margin: 0; color: #94a3b8; font-size: 12px;">This lead downloaded the Corporate English Training Audit PDF.</p>
+      <p style="margin: 0; color: #94a3b8; font-size: 12px;">This lead downloaded the ${guideName} PDF.</p>
     </div>
   </div>
 </body>
 </html>`;
 }
 
-function buildDeliveryEmailHtml(body: { name: string; company: string; language: string }): string {
-  const firstName = body.name.split(" ")[0];
-  const isSpanish = body.language === "es";
-  const pdfUrl = `${SITE_URL}${PDF_PATH[body.language] || PDF_PATH.en}`;
-  const videoUrl = VIDEO_URL[body.language] || VIDEO_URL.en;
-  const bookingUrl = isSpanish ? `${SITE_URL}/es/reservar/` : `${SITE_URL}/en/book/`;
+interface DeliveryCopy {
+  subject: (firstName: string) => string;
+  greeting: string;
+  intro: string;
+  pdfLabel: string;
+  pdfCaption: string;
+  videoLabel?: string;
+  videoCaption?: string;
+  orLabel?: string;
+  afterDownloadTitle: string;
+  bullets: string[];
+  nextStepTitle: string;
+  nextStepBody: string;
+  ctaButton: string;
+  signoff: string;
+  signature: string;
+  title: string;
+  footer: string;
+  unsubscribe: string;
+}
 
-  const copy = isSpanish
+/** Delivery copy for "From Correct to Connected". ES is tú, per the repo register rule. */
+function connectedEnglishCopy(firstName: string, isSpanish: boolean): DeliveryCopy {
+  return isSpanish
     ? {
+        subject: (n) => `${n}, tu guía: De Correcto a Conectado`,
+        greeting: `Hola ${escapeHtml(firstName)},`,
+        intro:
+          "Aquí está tu copia de De Correcto a Conectado, la guía de los dos marcos del artículo.",
+        pdfLabel: "Descargar el PDF",
+        pdfCaption:
+          "Ejemplos resueltos, un plan de práctica de cinco días y una hoja de referencia de una página.",
+        afterDownloadTitle: "Por Dónde Empezar",
+        bullets: [
+          "Empieza por las tres reescrituras completas. Ahí ves los dos marcos trabajando juntos.",
+          "Después haz el Día 1 del plan de práctica con un correo que hayas enviado esta semana.",
+          "Ten a la mano la hoja de referencia antes de tu próxima junta en inglés.",
+        ],
+        nextStepTitle: "El Siguiente Paso",
+        nextStepBody:
+          "Si tienes una actualización, presentación o negociación importante en inglés en las próximas semanas, tráela a una sesión de estrategia. La reconstruimos juntos hasta que las conexiones te salgan bajo presión.",
+        ctaButton: "Reservar una Sesión de Estrategia",
+        signoff: "Saludos,",
+        signature: "Robert Cushman",
+        title: "NY English Teacher",
+        footer:
+          "Recibes este correo porque descargaste De Correcto a Conectado en nyenglishteacher.com",
+        unsubscribe: "Si no quieres recibir más correos, responde a este mensaje.",
+      }
+    : {
+        subject: (n) => `${n}, your guide: From Correct to Connected`,
+        greeting: `Hi ${escapeHtml(firstName)},`,
+        intro:
+          "Here's your copy of From Correct to Connected, the guide to the two frameworks from the article.",
+        pdfLabel: "Download the PDF",
+        pdfCaption: "Worked examples, a five-day practice plan and a one-page reference sheet.",
+        afterDownloadTitle: "Where to Start",
+        bullets: [
+          "Start with the three full rewrites. They show both frameworks working together.",
+          "Then try Day 1 of the practice plan on an email you sent this week.",
+          "Keep the reference sheet open before your next meeting in English.",
+        ],
+        nextStepTitle: "The Next Step",
+        nextStepBody:
+          "If you have an important update, presentation or negotiation coming up in English, bring it to a strategy session. We'll rebuild it together until the connections come out under pressure.",
+        ctaButton: "Book a Strategy Session",
+        signoff: "Best regards,",
+        signature: "Robert Cushman",
+        title: "NY English Teacher",
+        footer:
+          "You are receiving this because you downloaded From Correct to Connected on nyenglishteacher.com",
+        unsubscribe:
+          "If you would prefer not to receive future emails, simply reply to let me know.",
+      };
+}
+
+function deliveryCopy(guide: Guide, firstName: string, isSpanish: boolean): DeliveryCopy {
+  return guide === "connected-english"
+    ? connectedEnglishCopy(firstName, isSpanish)
+    : corporateAuditCopy(firstName, isSpanish);
+}
+
+function corporateAuditCopy(firstName: string, isSpanish: boolean): DeliveryCopy {
+  return isSpanish
+    ? {
+        subject: (n) => `${n}, tu Guía de Evaluación Corporativa`,
         greeting: `Hola ${escapeHtml(firstName)},`,
         intro:
           "Gracias por descargar La Guía de Evaluación para Capacitación de Inglés Corporativo. Puede revisarla en el formato que prefiera:",
@@ -125,6 +227,7 @@ function buildDeliveryEmailHtml(body: { name: string; company: string; language:
         unsubscribe: "Si no deseas recibir más correos, responde a este mensaje.",
       }
     : {
+        subject: (n) => `${n}, your Corporate English Training Audit`,
         greeting: `Hi ${escapeHtml(firstName)},`,
         intro:
           "Thanks for downloading The Corporate English Training Audit. You can review it in whichever format you prefer:",
@@ -151,6 +254,36 @@ function buildDeliveryEmailHtml(body: { name: string; company: string; language:
         unsubscribe:
           "If you would prefer not to receive future emails, simply reply to let me know.",
       };
+}
+
+function buildDeliveryEmailHtml(body: { name: string; language: Lang; guide: Guide }): string {
+  const firstName = body.name.split(" ")[0];
+  const isSpanish = body.language === "es";
+  const pdfUrl = `${SITE_URL}${PDF_PATH[body.guide][body.language]}`;
+  const videoUrl = VIDEO_URL[body.guide]?.[body.language];
+  const bookingUrl = isSpanish ? `${SITE_URL}/es/reservar/` : `${SITE_URL}/en/book/`;
+  const copy = deliveryCopy(body.guide, firstName, isSpanish);
+
+  const pdfBlock = `<div style="background: #eff6ff; border: 1px solid #dbeafe; border-radius: 12px; padding: 20px; text-align: center;">
+              <a href="${pdfUrl}" style="display: inline-block; background: #2563eb; color: #ffffff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; margin-bottom: 10px;">${copy.pdfLabel}</a>
+              <p style="margin: 8px 0 0; color: #475569; font-size: 12px; line-height: 1.4;">${copy.pdfCaption}</p>
+            </div>`;
+
+  const formatsHtml = videoUrl
+    ? `<table style="width: 100%; border-collapse: collapse; margin: 24px 0 32px;">
+        <tr>
+          <td style="width: 50%; padding: 0 8px 0 0; vertical-align: top;">
+            ${pdfBlock}
+          </td>
+          <td style="width: 50%; padding: 0 0 0 8px; vertical-align: top;">
+            <div style="background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: center;">
+              <a href="${videoUrl}" style="display: inline-block; background: #0f172a; color: #ffffff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; margin-bottom: 10px;">${copy.videoLabel}</a>
+              <p style="margin: 8px 0 0; color: #475569; font-size: 12px; line-height: 1.4;">${copy.videoCaption}</p>
+            </div>
+          </td>
+        </tr>
+      </table>`
+    : `<div style="margin: 24px 0 32px;">${pdfBlock}</div>`;
 
   const bulletsHtml = copy.bullets
     .map(
@@ -173,22 +306,7 @@ function buildDeliveryEmailHtml(body: { name: string; company: string; language:
       <p style="margin: 0 0 12px; color: #0f172a; font-size: 16px;">${copy.greeting}</p>
       <p style="margin: 0 0 24px; color: #475569; font-size: 15px; line-height: 1.6;">${copy.intro}</p>
 
-      <table style="width: 100%; border-collapse: collapse; margin: 24px 0 32px;">
-        <tr>
-          <td style="width: 50%; padding: 0 8px 0 0; vertical-align: top;">
-            <div style="background: #eff6ff; border: 1px solid #dbeafe; border-radius: 12px; padding: 20px; text-align: center;">
-              <a href="${pdfUrl}" style="display: inline-block; background: #2563eb; color: #ffffff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; margin-bottom: 10px;">${copy.pdfLabel}</a>
-              <p style="margin: 8px 0 0; color: #475569; font-size: 12px; line-height: 1.4;">${copy.pdfCaption}</p>
-            </div>
-          </td>
-          <td style="width: 50%; padding: 0 0 0 8px; vertical-align: top;">
-            <div style="background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: center;">
-              <a href="${videoUrl}" style="display: inline-block; background: #0f172a; color: #ffffff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; margin-bottom: 10px;">${copy.videoLabel}</a>
-              <p style="margin: 8px 0 0; color: #475569; font-size: 12px; line-height: 1.4;">${copy.videoCaption}</p>
-            </div>
-          </td>
-        </tr>
-      </table>
+      ${formatsHtml}
 
       <h2 style="font-size: 16px; color: #0f172a; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.5px;">${copy.afterDownloadTitle}</h2>
       <ul style="list-style: none; padding: 0; margin: 0 0 32px;">
@@ -267,7 +385,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       .trim()
       .toLowerCase();
     const company = String(body.company || "").trim();
-    const language = body.language === "es" ? "es" : "en";
+    const language: Lang = body.language === "es" ? "es" : "en";
+    // Unknown values fall back to the corporate audit, the original behaviour.
+    const guide: Guide = body.guide === "connected-english" ? "connected-english" : "corporate-audit";
 
     if (!name || name.length < 2) {
       res.status(400).json({ success: false, error: "Invalid name" });
@@ -281,7 +401,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       return;
     }
 
-    if (!company || company.length < 2) {
+    // Company is required for the corporate audit (it is the account signal) and
+    // optional for the blog guide, whose readers are individuals. The column is
+    // NOT NULL, so an omitted company is stored as an empty string.
+    const companyRequired = guide === "corporate-audit";
+    if ((companyRequired || company) && company.length < 2) {
       res.status(400).json({ success: false, error: "Invalid company" });
       return;
     }
@@ -293,11 +417,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     // Insert into Neon
     const rows = await sql`
       INSERT INTO corporate_guide_leads (
-        name, email, company, language, source_page,
+        name, email, company, language, guide, source_page,
         utm_source, utm_medium, utm_campaign, utm_content, utm_term,
         referrer, user_agent
       ) VALUES (
-        ${name}, ${email}, ${company}, ${language}, ${sourcePage},
+        ${name}, ${email}, ${company}, ${language}, ${guide}, ${sourcePage},
         ${body.utmSource || null}, ${body.utmMedium || null}, ${body.utmCampaign || null}, ${body.utmContent || null}, ${body.utmTerm || null},
         ${referrer}, ${userAgent}
       ) RETURNING id
@@ -319,12 +443,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
             .send({
               from: fromAddress,
               to: process.env.NOTIFICATION_EMAIL,
-              subject: `New Corporate Guide Lead: ${name} — ${company}`,
+              subject: `New ${GUIDE_NAME[guide]} lead: ${name}${company ? ` — ${company}` : ""}`,
               html: buildAdminEmailHtml({
                 name,
                 email,
                 company,
                 language,
+                guide,
                 sourcePage: sourcePage || undefined,
               }),
             })
@@ -337,11 +462,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
           .send({
             from: fromAddress,
             to: email,
-            subject:
-              language === "es"
-                ? `${name.split(" ")[0]}, tu Guía de Evaluación Corporativa`
-                : `${name.split(" ")[0]}, your Corporate English Training Audit`,
-            html: buildDeliveryEmailHtml({ name, company, language }),
+            subject: deliveryCopy(guide, name.split(" ")[0], language === "es").subject(
+              name.split(" ")[0],
+            ),
+            html: buildDeliveryEmailHtml({ name, language, guide }),
           })
           .then(async () => {
             try {
@@ -359,10 +483,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     res.status(200).json({
       success: true,
       lead_id: leadId,
-      pdf_url: PDF_PATH[language] || PDF_PATH.en,
+      pdf_url: PDF_PATH[guide][language],
     });
   } catch (error) {
-    console.error("Corporate guide download error:", error);
+    console.error("Guide download error:", error);
     res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : "Internal server error",
