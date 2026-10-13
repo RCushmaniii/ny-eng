@@ -1,0 +1,79 @@
+---
+/**
+ * QuizRoleLinks — links from one quiz landing to the other three.
+ *
+ * The hub that used to carry these links (/en/quiz/, /es/quiz/) is never served:
+ * vercel.json 308s it to the IT-services landing. Without this row three of the
+ * four landings had a single internal link each (Ahrefs, 2026-10-12). Sits inside
+ * each landing's dark final-CTA section; styles match the hub's role-quizzes row.
+ */
+export interface Props {
+  lang: "en" | "es";
+  current: "it-services" | "executives" | "professional-services" | "high-stakes";
+}
+
+const { lang, current } = Astro.props;
+
+const labels = {
+  en: {
+    intro: "Or pick a quiz built for your role:",
+    executives: "For Executives & Directors",
+    "high-stakes": "For High-Stakes Speakers",
+    "professional-services": "For Professional Services",
+    "it-services": "For IT & Tech Teams",
+  },
+  es: {
+    intro: "O elige el quiz hecho para tu rol:",
+    executives: "Para Ejecutivos y Directores",
+    "high-stakes": "Para Momentos de Alto Impacto",
+    "professional-services": "Para Servicios Profesionales",
+    "it-services": "Para Equipos de TI y Tecnología",
+  },
+}[lang];
+
+const order = ["executives", "high-stakes", "professional-services", "it-services"] as const;
+const links = order
+  .filter((key) => key !== current)
+  .map((key) => ({ href: `/${lang}/quiz/${key}/`, label: labels[key] }));
+---
+
+<nav class="role-quizzes" aria-label={labels.intro.replace(/:$/, "")}>
+  <p class="role-quizzes-label">{labels.intro}</p>
+  <div class="role-quiz-links">
+    {links.map((l) => <a href={l.href}>{l.label}</a>)}
+  </div>
+</nav>
+
+<style>
+  .role-quizzes {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+  }
+
+  .role-quizzes-label {
+    color: #94a3b8;
+    font-size: 0.875rem;
+    margin: 0 0 0.75rem;
+  }
+
+  .role-quiz-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.25rem;
+  }
+
+  .role-quiz-links a {
+    color: #93c5fd;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .role-quiz-links a:hover {
+    color: #dbeafe;
+    text-decoration: underline;
+  }
+</style>

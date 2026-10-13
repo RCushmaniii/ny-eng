@@ -266,6 +266,7 @@ const iconMap: Record<string, any> = {
   <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Course",
+  "@id": "https://www.nyenglishteacher.com/es/curso/ejecutivo/#course",
   "name": "Curso Ejecutivo de Ingles (C1-C2)",
   "description": "Curso gratuito de ingles ejecutivo C1-C2. Diez unidades basadas en drills que reemplazan el lenguaje vago con precision, estructura y autoridad.",
   "provider": { "@type": "Organization", "name": "New York English Teacher", "url": "https://www.nyenglishteacher.com/" },
@@ -275,6 +276,7 @@ const iconMap: Record<string, any> = {
   "isAccessibleForFree": true,
   "offers": {
     "@type": "Offer",
+    "category": "Free",
     "price": "0",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock"
@@ -282,6 +284,7 @@ const iconMap: Record<string, any> = {
   "hasCourseInstance": {
     "@type": "CourseInstance",
     "courseMode": "online",
+    "courseWorkload": "PT15H",
     "inLanguage": "es"
   }
 })} />

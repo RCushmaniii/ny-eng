@@ -7,6 +7,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import QuizRoleLinks from "@components/sections/QuizRoleLinks.astro";
 import { getQuizTestimonials } from "@data/quiz/real-testimonials";
 import Button from "@components/ui/Button.astro";
 import QuizSchema from "@components/seo/QuizSchema.astro";
@@ -527,6 +528,7 @@ const testimonials = getQuizTestimonials("es", "professional-services");
         mejores hospitales de EE.UU. y abogados de firmas líderes confían en
         nosotros.
       </p>
+      <QuizRoleLinks lang="es" current="professional-services" />
     </div>
   </section>
 

@@ -101,6 +101,7 @@ const blogListingSchema =
             : new Date(p.data.publishDate)
           ).toISOString(),
           ...(p.data.excerpt ? { description: p.data.excerpt } : {}),
+          author: { "@type": "Person", "@id": `${SITE}/#robert-cushman`, name: "Robert Cushman" },
         })),
       }
     : null;

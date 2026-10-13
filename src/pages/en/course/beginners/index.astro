@@ -264,6 +264,7 @@ const iconMap: Record<string, any> = {
   <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Course",
+  "@id": "https://www.nyenglishteacher.com/en/course/beginners/#course",
   "name": "Free English Course for Spanish Speakers (Beginner)",
   "description": "A free 10-unit English course for Spanish speakers. Start from words you already know. Interactive lessons with audio. No textbooks — just real sentences.",
   "provider": { "@type": "Organization", "name": "New York English Teacher", "url": "https://www.nyenglishteacher.com/" },
@@ -273,6 +274,7 @@ const iconMap: Record<string, any> = {
   "isAccessibleForFree": true,
   "offers": {
     "@type": "Offer",
+    "category": "Free",
     "price": "0",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock"
@@ -280,6 +282,7 @@ const iconMap: Record<string, any> = {
   "hasCourseInstance": {
     "@type": "CourseInstance",
     "courseMode": "online",
+    "courseWorkload": "PT10H",
     "inLanguage": "en"
   }
 })} />

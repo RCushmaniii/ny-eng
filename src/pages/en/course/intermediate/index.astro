@@ -306,6 +306,7 @@ const iconMap: Record<string, any> = {
   <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Course",
+  "@id": "https://www.nyenglishteacher.com/en/course/intermediate/#course",
   "name": "Free Intermediate English Course (B1-B2)",
   "description": "A free 10-unit intermediate English course for B1-B2 Spanish speakers. Master phrasal verbs, complex tenses, and natural speech through real-world dialogues.",
   "provider": { "@type": "Organization", "name": "New York English Teacher", "url": "https://www.nyenglishteacher.com/" },
@@ -315,6 +316,7 @@ const iconMap: Record<string, any> = {
   "isAccessibleForFree": true,
   "offers": {
     "@type": "Offer",
+    "category": "Free",
     "price": "0",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock"
@@ -322,6 +324,7 @@ const iconMap: Record<string, any> = {
   "hasCourseInstance": {
     "@type": "CourseInstance",
     "courseMode": "online",
+    "courseWorkload": "PT12H",
     "inLanguage": "en"
   }
 })} />

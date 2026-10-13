@@ -81,11 +81,7 @@ const learningResource = {
     name: "New York English Teacher",
     url: SITE + "/",
   },
-  isPartOf: {
-    "@type": "Course",
-    name: courseName,
-    url: courseUrl,
-  },
+  isPartOf: { "@id": `${courseUrl}#course` },
 };
 ---
 <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumb)} />

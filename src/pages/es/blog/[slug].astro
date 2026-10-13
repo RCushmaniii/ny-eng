@@ -86,6 +86,10 @@ if (typeof featuredObj === 'object' && featuredObj?.src) {
 } else if (post.data.seo?.image) {
   featuredUrl = post.data.seo.image;
 }
+// Video-hero posts have no featured image; their poster stands in for og:image and Article.image.
+if (!featuredUrl && post.data.heroVideoPoster) {
+  featuredUrl = post.data.heroVideoPoster;
+}
 
 // --- Previous/Next Post Navigation ---
 const allPosts = (await getCollection('blog'))

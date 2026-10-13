@@ -262,6 +262,7 @@ const iconMap: Record<string, any> = {
   <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Course",
+  "@id": "https://www.nyenglishteacher.com/es/curso/avanzado/#course",
   "name": "Curso Avanzado de Ingles Gratis (B2-C1)",
   "description": "Curso avanzado gratis de 10 unidades para hispanohablantes B2-C1. Corrige frases debiles, trampas de palabras, articulos y pronunciacion. Solo precision.",
   "provider": { "@type": "Organization", "name": "New York English Teacher", "url": "https://www.nyenglishteacher.com/" },
@@ -271,6 +272,7 @@ const iconMap: Record<string, any> = {
   "isAccessibleForFree": true,
   "offers": {
     "@type": "Offer",
+    "category": "Free",
     "price": "0",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock"
@@ -278,6 +280,7 @@ const iconMap: Record<string, any> = {
   "hasCourseInstance": {
     "@type": "CourseInstance",
     "courseMode": "online",
+    "courseWorkload": "PT12H",
     "inLanguage": "es"
   }
 })} />
