@@ -32,17 +32,23 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 
 ---
 
-- [ ] **Connected-English asset rollout — two pieces still open.**
-  *Blocks:* the capture layer of the new blog post (it converts traffic to email only
-  once the guide exists) and the distribution of everything shipped 2026-08-13.
-  (1) Robert posts the Facebook + GBP drafts from
-  `content-marketing/why-correct-english-sounds-disconnected-social.md` — LinkedIn
-  section is HOLD pending the LinkedIn Page decision below. (2) Asset 2, the 6–8 page
-  executive guide PDF on the two frameworks, reusing the Corporate Audit lead-magnet
-  pipeline (`LeadMagnetForm.astro` + `api/corporate-guide/download.ts` pattern),
-  embedded in the blog post as its content upgrade.
-  *Closes when:* the social posts are live and the guide is downloadable behind the
-  form with a delivery email verified end to end.
+- [ ] **Connected-English rollout — only the social posts remain.**
+  *Guide shipped 2026-10-12 (PR #302):* "From Correct to Connected" (EN 8 pages, ES 9)
+  sits behind the form at the end of both posts; delivery verified end to end in
+  production (both emails arrived, `delivered_at` set, test rows deleted).
+  *Next:* Robert posts the Facebook + GBP drafts from
+  `content-marketing/why-correct-english-sounds-disconnected-social.md` (LinkedIn stays
+  on HOLD: no LinkedIn Page).
+  *Closes when:* those posts are live.
+
+- [ ] **First real inbound corporate lead: "Tony", UST, 2026-10-10.**
+  *Found 2026-10-12.* Downloaded the corporate audit from
+  `/en/services/corporate-package/` (EN); the guide was delivered. The 2026-09-07 row is
+  Robert's own test ("cush labs"). This overturns the "zero real leads, ever" baseline in
+  the on-site-numbers item below. Contact details are in the Neon console, table
+  `corporate_guide_leads` (not printed here).
+  *Next:* Robert decides whether to send a personal follow-up.
+  *Closes when:* followed up or consciously skipped.
 
 - [ ] **`/en/courses/` slipped off page one after 2026-09-26.**
   *Added 2026-10-12.* The page carries most of the site's search clicks (39 of 73 in the
@@ -56,14 +62,13 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   rewrite the page's title and description against the `for spanish speakers` queries.
   *Closes when:* that re-check is written into a dated entry.
 
-- [ ] **Quiz page carries two quotes that cannot be real.**
-  *Added 2026-10-12.* `src/pages/en/quiz/index.astro:262` and its ES twin
-  (`src/pages/es/quiz/index.astro:271`) quote "I scored 58…" (Founder, Mexico City) and
-  "Six weeks after taking this quiz, we closed our first $180K contract" (VP Engineering,
-  Buenos Aires). `quiz_submissions` holds **6 rows in total** (5 unique emails,
-  2026-02-10 to 2026-09-25), so no quiz taker produced these.
-  *Blocks:* nothing shipping; it is an invented testimonial on a page senior buyers reach.
-  *Next:* Robert confirms they are invented, then the two cards come out (one edit per page).
+- [x] **Invented quiz testimonials removed 2026-10-12 (PRs #301, #303).** The hub and all
+  four quiz landings (EN+ES, 26 invented quotes plus a "Google, Meta, Amazon" trust line)
+  now show verbatim excerpts from published client testimonials via
+  `src/data/quiz/real-testimonials.ts`, which fails the build if an excerpt drifts.
+  *Still unbacked on those landings:* statistics with no source ("67% of executives",
+  "over-explain by 40%", "10-20% of your package", "80%"). Next: find a source for each or
+  cut it; ask Robert before rewriting.
 
 - [ ] **On-site numbers exist but are dominated by non-human traffic.**
   **Vercel Web Analytics works** (confirmed 2026-08-31 from the dashboard): 829 visitors,
