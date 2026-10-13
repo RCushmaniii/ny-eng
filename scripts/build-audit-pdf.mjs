@@ -1,16 +1,21 @@
 #!/usr/bin/env node
 /**
- * Generate the Corporate English Training Audit PDFs from the print layout.
+ * Generate the lead-magnet PDFs from their print layouts.
  *
- * Source of truth is src/data/corporate-audit.ts, rendered by
- * src/pages/print/corporate-audit/[lang].astro. The print page uses inline CSS
- * only, so headless Chrome can print it straight from dist/ with no server.
+ *   Corporate English Training Audit  src/data/corporate-audit.ts
+ *     -> src/pages/print/corporate-audit/[lang].astro
+ *   From Correct to Connected         src/data/connected-english-guide.ts
+ *     -> src/pages/print/connected-english/[lang].astro
+ *
+ * The print pages use inline CSS only, so headless Chrome can print them
+ * straight from dist/ with no server.
  *
  * Usage (PowerShell or bash), after `npm run build`:
  *   node scripts/build-audit-pdf.mjs
  *
- * Writes public/downloads/Corporate_English_Audit_{EN,ES}.pdf — the filenames
- * api/corporate-guide/download.ts already links, so delivery emails keep working.
+ * Writes the filenames api/corporate-guide/download.ts links (PDF_PATH), so
+ * delivery emails keep working. Pass a print route to build only that guide:
+ *   node scripts/build-audit-pdf.mjs connected-english
  */
 import { execFileSync } from "node:child_process";
 import { existsSync, statSync } from "node:fs";
@@ -31,13 +36,24 @@ if (!chrome) {
   process.exit(1);
 }
 
-for (const lang of ["en", "es"]) {
-  const src = resolve(`dist/print/corporate-audit/${lang}/index.html`);
+const GUIDES = [
+  { route: "corporate-audit", file: "Corporate_English_Audit" },
+  { route: "connected-english", file: "From_Correct_to_Connected" },
+];
+const only = process.argv[2];
+const jobs = GUIDES.filter((g) => !only || g.route === only);
+if (!jobs.length) {
+  console.error(`Unknown guide "${only}". Known: ${GUIDES.map((g) => g.route).join(", ")}`);
+  process.exit(1);
+}
+
+for (const { route, file } of jobs) for (const lang of ["en", "es"]) {
+  const src = resolve(`dist/print/${route}/${lang}/index.html`);
   if (!existsSync(src)) {
     console.error(`Missing ${src}. Run \`npm run build\` first.`);
     process.exit(1);
   }
-  const out = resolve(`public/downloads/Corporate_English_Audit_${lang.toUpperCase()}.pdf`);
+  const out = resolve(`public/downloads/${file}_${lang.toUpperCase()}.pdf`);
   execFileSync(
     chrome,
     [
@@ -51,8 +67,8 @@ for (const lang of ["en", "es"]) {
   );
   const size = existsSync(out) ? statSync(out).size : 0;
   if (size < 10_000) {
-    console.error(`PDF for ${lang} looks wrong (${size} bytes): ${out}`);
+    console.error(`PDF for ${route}/${lang} looks wrong (${size} bytes): ${out}`);
     process.exit(1);
   }
-  console.log(`${lang}: ${out} (${Math.round(size / 1024)} KB)`);
+  console.log(`${route}/${lang}: ${out} (${Math.round(size / 1024)} KB)`);
 }

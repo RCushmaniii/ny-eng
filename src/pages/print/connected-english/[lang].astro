@@ -1,0 +1,261 @@
+---
+export const prerender = true;
+
+/**
+ * Print layout for the "From Correct to Connected" PDF. Not a page for
+ * visitors: noindex, excluded from the sitemap (astro.config.mjs filters
+ * /print/), and deliberately free of the site header and footer.
+ *
+ * Regenerate the PDFs after editing src/data/connected-english-guide.ts:
+ *   npm run build ; node scripts/build-audit-pdf.mjs
+ */
+import { connectedEnglishGuide, type GuideLang } from "../../../data/connected-english-guide";
+
+export function getStaticPaths() {
+  return [{ params: { lang: "en" } }, { params: { lang: "es" } }];
+}
+
+const lang = Astro.params.lang as GuideLang;
+const c = connectedEnglishGuide[lang];
+const bookText = c.bookUrl.replace(/^https:\/\//, "");
+const courseText = c.courseUrl.replace(/^https:\/\//, "");
+---
+
+<!doctype html>
+<html lang={lang === "es" ? "es-MX" : "en-US"}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{c.title}</title>
+    <style is:inline>
+      @page { size: Letter; margin: 0.75in 0.8in; }
+      :root { --navy: #1e3a5f; --accent: #0e7490; --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb; --soft: #f3f6f9; --warn: #9ca3af; }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: "Segoe UI", Helvetica, Arial, sans-serif; color: var(--ink); font-size: 10.5pt; line-height: 1.5; background: #fff; }
+      h1, h2, h3 { color: var(--navy); line-height: 1.2; margin: 0; }
+      p { margin: 0 0 8pt; }
+      .cover { height: 9.4in; display: flex; flex-direction: column; justify-content: center; page-break-after: always; border-left: 8pt solid var(--accent); padding-left: 28pt; }
+      .cover .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 11pt; margin-bottom: 12pt; }
+      .cover h1 { font-size: 38pt; margin-bottom: 14pt; }
+      .cover .audience { font-size: 13pt; color: var(--muted); max-width: 5.2in; }
+      .cover .inside { margin-top: 30pt; font-size: 9pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+      .cover ul { margin: 6pt 0 0; padding-left: 16pt; font-size: 11pt; }
+      .cover li { margin-bottom: 3pt; }
+      .cover .author { margin-top: 36pt; font-size: 11pt; font-weight: 600; }
+      section { margin-bottom: 16pt; }
+      .newpage { page-break-before: always; break-before: page; }
+      .eyebrow { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 9pt; margin-bottom: 4pt; }
+      h2 { font-size: 18pt; margin-bottom: 6pt; }
+      h3 { font-size: 11.5pt; margin-bottom: 4pt; }
+      .formula { font-size: 14pt; font-weight: 700; color: var(--accent); margin: 2pt 0 10pt; }
+      .pull { border-left: 4pt solid var(--accent); padding: 4pt 0 4pt 14pt; margin: 12pt 0 4pt; font-size: 13pt; font-weight: 700; color: var(--navy); }
+      .steps { display: grid; gap: 6pt; margin: 6pt 0 12pt; }
+      .steps.four { grid-template-columns: repeat(4, 1fr); }
+      .steps.three { grid-template-columns: repeat(3, 1fr); }
+      .step { border: 1pt solid var(--line); border-top: 3pt solid var(--accent); border-radius: 4pt; padding: 7pt 9pt; font-size: 9.5pt; }
+      .step strong { display: block; color: var(--navy); font-size: 10pt; margin-bottom: 2pt; }
+      .ex { break-inside: avoid; page-break-inside: avoid; border-top: 1pt solid var(--line); padding-top: 10pt; margin-top: 10pt; }
+      .ex h3, h2, .eyebrow, .formula { break-after: avoid; page-break-after: avoid; }
+      .pair { display: grid; grid-template-columns: 1fr 1.35fr; gap: 8pt; margin: 4pt 0 6pt; }
+      .pair > div { border: 1pt solid var(--line); border-radius: 6pt; padding: 8pt 10pt; font-size: 9.75pt; }
+      .pair .after { border-color: var(--accent); background: var(--soft); }
+      .pair small { display: block; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 7.5pt; color: var(--muted); margin-bottom: 3pt; }
+      .pair .after small { color: var(--accent); }
+      .pair .before p { color: #4b5563; font-style: italic; margin: 0; }
+      .pair ol { margin: 0; padding: 0; list-style: none; }
+      .pair li { margin-bottom: 3pt; color: var(--navy); }
+      .pair li em { font-style: normal; font-weight: 700; color: var(--accent); font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 4pt; }
+      .pair .after p { margin: 0; color: var(--navy); }
+      .note { font-size: 9.25pt; color: var(--muted); margin: 0; }
+      table { width: 100%; border-collapse: collapse; margin: 8pt 0 10pt; font-size: 9.5pt; break-inside: avoid; }
+      th { text-align: left; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); border-bottom: 1.5pt solid var(--navy); padding: 4pt 6pt; }
+      td { border-bottom: 1pt solid var(--line); padding: 6pt; vertical-align: top; }
+      td:first-child { font-weight: 700; color: var(--navy); width: 1.1in; }
+      td.weak { color: #6b7280; text-decoration: line-through; text-decoration-color: var(--warn); }
+      td.strong { color: var(--accent); font-weight: 600; }
+      .callout { background: var(--soft); border-left: 4pt solid var(--accent); padding: 9pt 12pt; border-radius: 0 6pt 6pt 0; break-inside: avoid; }
+      .callout p { margin: 0; }
+      .ladder { display: grid; gap: 6pt; margin: 6pt 0 10pt; break-inside: avoid; }
+      .ladder div { border: 1pt solid var(--line); border-radius: 6pt; padding: 7pt 10pt; font-size: 9.75pt; }
+      .ladder div:last-child { border-color: var(--accent); background: var(--soft); }
+      .ladder strong { color: var(--navy); margin-right: 6pt; }
+      .days { display: grid; gap: 6pt; margin-top: 8pt; }
+      .day { display: grid; grid-template-columns: 0.7in 1fr; gap: 8pt; border: 1pt solid var(--line); border-radius: 6pt; padding: 8pt 10pt; break-inside: avoid; }
+      .day strong { color: var(--accent); }
+      .sheet { border: 2pt solid var(--navy); border-radius: 10pt; padding: 20pt 22pt; }
+      .sheet h2 { text-align: center; margin-bottom: 14pt; }
+      .sheet .formulas { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; margin-bottom: 14pt; }
+      .sheet .formulas div { background: var(--soft); border-radius: 6pt; padding: 10pt 12pt; }
+      .sheet .formulas h3 { font-size: 9pt; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+      .sheet .formulas p { margin: 4pt 0 0; font-size: 12.5pt; font-weight: 700; color: var(--accent); }
+      .sheet ul { columns: 2; column-gap: 18pt; margin: 6pt 0 14pt; padding-left: 14pt; font-size: 10pt; }
+      .sheet li { margin-bottom: 4pt; break-inside: avoid; }
+      .sheet .test { text-align: center; font-size: 12pt; font-weight: 700; color: var(--navy); margin: 0; }
+      .sheet .test small { display: block; font-size: 8pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 3pt; }
+      .closing { text-align: center; padding-top: 0.45in; break-inside: avoid; }
+      .keep { break-inside: avoid; page-break-inside: avoid; }
+      section > h2:first-child { margin-top: 16pt; }
+      .closing h2 { font-size: 22pt; margin-bottom: 12pt; }
+      .closing p.lead { font-size: 12pt; max-width: 5.4in; margin: 0 auto 12pt; }
+      .cta { display: inline-block; background: var(--navy); color: #fff; border-radius: 8pt; padding: 14pt 26pt; text-decoration: none; margin-top: 10pt; }
+      .cta span { display: block; font-size: 11pt; opacity: 0.85; }
+      .cta strong { display: block; font-size: 15pt; margin-top: 2pt; }
+      .course { margin-top: 18pt; font-size: 10pt; color: var(--muted); }
+      .course a { color: var(--accent); }
+      .sign { margin-top: 18pt; color: var(--muted); font-size: 10pt; }
+    </style>
+  </head>
+  <body>
+    <div class="cover">
+      <p class="eyebrow">{c.subtitle}</p>
+      <h1>{c.title}</h1>
+      <p class="audience">{c.audience}</p>
+      <p class="inside">{c.contentsLabel}</p>
+      <ul>{c.contents.map((item) => <li>{item}</li>)}</ul>
+      <p class="author">{c.author}</p>
+    </div>
+
+    <section>
+      <h2>{c.introHeading}</h2>
+      {c.intro.map((p) => <p>{p}</p>)}
+      <p class="pull">{c.pull}</p>
+    </section>
+
+    <section>
+      <p class="eyebrow">{c.f1Eyebrow}</p>
+      <h2>{c.f1Heading}</h2>
+      <p class="formula" lang="en">{c.f1Lede}</p>
+      <div class="steps four">
+        {c.f1Steps.map((s) => <div class="step"><strong>{s.label}</strong>{s.text}</div>)}
+      </div>
+      {c.f1Body.map((p) => <p>{p}</p>)}
+      {
+        c.f1Examples.map((ex) => (
+          <div class="ex">
+            <h3>{ex.setting}</h3>
+            <div class="pair">
+              <div class="before" lang="en"><small>{c.beforeLabel}</small><p>"{ex.before}"</p></div>
+              <div class="after" lang="en">
+                <small>{c.afterLabel}</small>
+                <ol>
+                  {ex.after.map((line, i) => (
+                    <li><em>{["Claim", "Evidence", "Explanation", "Link"][i]}</em>{line}</li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+            <p class="note">{ex.note}</p>
+          </div>
+        ))
+      }
+    </section>
+
+    <section>
+      <h2>{c.relHeading}</h2>
+      <p>{c.relIntro}</p>
+      <table>
+        <thead><tr>{c.relColumns.map((h) => <th>{h}</th>)}</tr></thead>
+        <tbody>
+          {
+            c.relRows.map((r) => (
+              <tr>
+                <td>{r.relation}</td>
+                <td class="weak" lang="en">{r.weak}</td>
+                <td class="strong" lang="en">{r.strong}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+      <div class="callout"><p>{c.relTest}</p></div>
+    </section>
+
+    <section>
+      <p class="eyebrow">{c.f2Eyebrow}</p>
+      <h2>{c.f2Heading}</h2>
+      <p class="formula" lang="en">{c.f2Lede}</p>
+      <div class="steps three">
+        {c.f2Steps.map((s) => <div class="step"><strong>{s.label}</strong>{s.text}</div>)}
+      </div>
+      {c.f2Body.map((p) => <p>{p}</p>)}
+      <div class="keep">
+        <h3>{c.ladderHeading}</h3>
+        <div class="ladder">
+          {c.ladder.map((r) => <div><strong>{r.label}</strong>{r.text}</div>)}
+        </div>
+      </div>
+    </section>
+
+    <section>
+      {
+        c.f2Examples.map((ex) => (
+          <div class="ex">
+            <h3>{ex.setting}</h3>
+            <div class="pair">
+              <div class="before" lang="en"><small>{c.beforeLabel}</small><p>"{ex.before}"</p></div>
+              <div class="after" lang="en">
+                <small>{c.afterLabel}</small>
+                <ol>
+                  {ex.after.map((line, i) => (
+                    <li><em>{["Look back", "Connect", "Move forward"][i]}</em>{line}</li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+            <p class="note">{ex.note}</p>
+          </div>
+        ))
+      }
+    </section>
+
+    <section>
+      <h2 style="margin-top: 14pt;">{c.rewritesHeading}</h2>
+      <p>{c.rewritesIntro}</p>
+      {
+        c.rewrites.map((rw) => (
+          <div class="ex">
+            <h3>{rw.setting}</h3>
+            <div class="pair">
+              <div class="before" lang="en"><small>{c.beforeLabel}</small><p>"{rw.before}"</p></div>
+              <div class="after" lang="en"><small>{c.afterLabel}</small><p>"{rw.after}"</p></div>
+            </div>
+            <p class="note">{rw.note}</p>
+          </div>
+        ))
+      }
+    </section>
+
+    <section class="keep">
+      <h2>{c.practiceHeading}</h2>
+      <p>{c.practiceIntro}</p>
+      <div class="days">
+        {c.practice.map((d) => <div class="day"><strong>{d.label}</strong><span>{d.text}</span></div>)}
+      </div>
+    </section>
+
+    <section class="newpage">
+      <div class="sheet">
+        <h2>{c.sheetHeading}</h2>
+        <div class="formulas">
+          <div><h3>{c.sheetArgument}</h3><p lang="en">{c.sheetFormulaArgument}</p></div>
+          <div><h3>{c.sheetFlow}</h3><p lang="en">{c.sheetFormulaFlow}</p></div>
+        </div>
+        <h3>{c.sheetPhrasesLabel}</h3>
+        <ul lang="en">{c.sheetPhrases.map((p) => <li>{p}</li>)}</ul>
+        <p class="test"><small>{c.sheetTestLabel}</small>{c.sheetTest}</p>
+      </div>
+
+      <div class="closing">
+        <h2>{c.closingHeading}</h2>
+        {c.closing.map((p) => <p class="lead">{p}</p>)}
+        <a class="cta" href={c.bookUrl}>
+          <span>{c.bookLabel}</span>
+          <strong>{bookText}</strong>
+        </a>
+        <p class="course">{c.courseLine} <a href={c.courseUrl}>{courseText}</a></p>
+        <p class="sign">{c.author}</p>
+      </div>
+    </section>
+  </body>
+</html>

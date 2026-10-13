@@ -50,6 +50,9 @@ const blogCollection = defineCollection({
       // Optional list of geographic areas served — when present, the post emits
       // Service structured data with areaServed (used by local/geo landing posts).
       serviceArea: z.array(z.string()).optional(),
+      // Optional content upgrade — renders LeadMagnetForm for that guide after
+      // the post body. Each guide's copy lives in LeadMagnetForm.astro.
+      leadMagnet: z.enum(["connected-english"]).optional(),
       translations: z
         .object({
           en: z.string().optional(),

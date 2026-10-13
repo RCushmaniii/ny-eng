@@ -13,6 +13,7 @@ import { Image } from 'astro:assets';
 import VideoHero from '@components/blog/VideoHero.tsx';
 import BlogImageLightbox from '@components/blog/BlogImageLightbox.tsx';
 import SpeakEnglish from '@components/blog/SpeakEnglish.astro';
+import LeadMagnetForm from '@components/sections/LeadMagnetForm.astro';
 import { siteConfig } from '@data/config';
 import { normalizeBlogSlug, buildPostUrl, assertNoDoubleLang, stripLangPrefix } from '@utils/i18nRoutes';
 import { cleanBlogUrl } from '@utils/url-cleaner';
@@ -270,6 +271,11 @@ const customHreflangs = [
         lang="en"
       />
       <Content />
+      {post.data.leadMagnet && (
+        <div class="not-prose mt-12 -mx-4 sm:mx-0 rounded-2xl overflow-hidden">
+          <LeadMagnetForm lang="en" guide={post.data.leadMagnet} sourcePage={Astro.url.pathname} />
+        </div>
+      )}
       
 
       {postUrl && postTitle && (

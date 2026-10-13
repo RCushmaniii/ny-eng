@@ -13,6 +13,7 @@ imageAlt: "Split image of the same executive presenting twice — on the left, d
 translations:
   es: "/es/blog/ingles-correcto-pero-desconectado/"
 publish: true
+leadMagnet: "connected-english"
 seo:
   title: "Why Correct English Still Sounds Disconnected"
   description: "Grammatically perfect sentences can still lose the room. Two executive frameworks that turn correct English into connected, persuasive communication."
@@ -149,5 +150,7 @@ And one drill to make them yours. Take the last significant email or update you 
 Because the professionals who sound most articulate in English are almost never the ones with the biggest vocabulary. They're the ones whose listeners never have to work out how idea two relates to idea one.
 
 ---
+
+**Want the worked examples?** [From Correct to Connected](#get-the-guide) is the free guide to both frameworks: nine before-and-after rewrites from client calls, budget requests and status emails, the relationship words that actually connect ideas, and a five-day practice plan.
 
 **If your sentences are already correct and this is the gap you recognize**, this is exactly the layer I coach. The [free Executive English course](/en/course/executive/) drills structured frameworks like these under time pressure, with executive-grade examples in every unit. Related deep dives: [English register for Spanish speakers](/en/blog/english-register-for-spanish-speakers/) and [executive reframing drills](/en/blog/executive-reframing-drills/). Or [book a private strategy session](/en/book/) and bring a real upcoming update — we'll rebuild it as a chain together.

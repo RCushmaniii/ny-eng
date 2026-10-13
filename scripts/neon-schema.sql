@@ -131,6 +131,10 @@ CREATE TABLE IF NOT EXISTS corporate_guide_leads (
   -- Language version requested (en or es)
   language TEXT NOT NULL DEFAULT 'en',
 
+  -- Which lead magnet: 'corporate-audit' or 'connected-english' (blog guide).
+  -- Added 2026-10-12 by scripts/migrations/add-guide-column-to-leads.mjs.
+  guide TEXT NOT NULL DEFAULT 'corporate-audit',
+
   -- Source page that generated the lead
   source_page TEXT,
 
@@ -163,6 +167,7 @@ CREATE INDEX IF NOT EXISTS idx_corporate_guide_leads_email ON corporate_guide_le
 CREATE INDEX IF NOT EXISTS idx_corporate_guide_leads_created_at ON corporate_guide_leads(created_at DESC);
 CREATE INDEX IF NOT EXISTS idx_corporate_guide_leads_language ON corporate_guide_leads(language);
 CREATE INDEX IF NOT EXISTS idx_corporate_guide_leads_status ON corporate_guide_leads(status);
+CREATE INDEX IF NOT EXISTS idx_corporate_guide_leads_guide ON corporate_guide_leads(guide);
 
 CREATE TRIGGER update_corporate_guide_leads_updated_at
   BEFORE UPDATE ON corporate_guide_leads
