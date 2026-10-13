@@ -4,7 +4,7 @@ lastUpdated: "2026-07-01"
 translations:
   es: "/es/legal/cancellation-policy/"
 seo:
-  title: "Cancellation & Rescheduling Policy - New York English Teacher"
+  title: "Cancellation & Rescheduling Policy | NY English Teacher"
   description: "How cancellations, rescheduling and no-shows work for New York English Teacher coaching — including the 24-hour notice window and the late-cancellation fee."
 ---
 

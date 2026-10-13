@@ -75,7 +75,7 @@ const firstLesson = verbLessons.find((l) => l.available);
 <Base
   lang={lang}
   tkey={tkey}
-  title="Verb Pattern Mastery | Free English Verb Patterns Course for Spanish Speakers"
+  title="Free English Verb Patterns Course for Spanish Speakers"
   description="Free master class on English verb patterns for Spanish speakers. Stop saying 'I called to my boss' or 'I depend of my team' — learn the verb with its pattern."
 >
   <!-- Hero -->
@@ -422,6 +422,7 @@ const firstLesson = verbLessons.find((l) => l.available);
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Course",
+    "@id": "https://www.nyenglishteacher.com/en/course/verb-patterns/#course",
     "name": "Verb Pattern Mastery — Free Master Class",
     "description": "A focused master class on English verb patterns for Spanish speakers: object patterns, verb + preposition, gerund vs infinitive, causatives, and reporting verbs. Learn every verb together with its structure.",
     "provider": { "@type": "Organization", "name": "New York English Teacher", "url": "https://www.nyenglishteacher.com/" },
@@ -431,6 +432,7 @@ const firstLesson = verbLessons.find((l) => l.available);
     "isAccessibleForFree": true,
     "offers": {
       "@type": "Offer",
+      "category": "Free",
       "price": "0",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock"
@@ -438,6 +440,7 @@ const firstLesson = verbLessons.find((l) => l.available);
     "hasCourseInstance": {
       "@type": "CourseInstance",
       "courseMode": "online",
+      "courseWorkload": "PT6H",
       "inLanguage": "en"
     }
   })} />

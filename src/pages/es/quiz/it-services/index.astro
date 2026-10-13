@@ -7,6 +7,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import QuizRoleLinks from "@components/sections/QuizRoleLinks.astro";
 import { getQuizTestimonials } from "@data/quiz/real-testimonials";
 import Button from "@components/ui/Button.astro";
 import QuizSchema from "@components/seo/QuizSchema.astro";
@@ -516,6 +517,7 @@ const testimonials = getQuizTestimonials("es", "it-services");
         90 segundos. Resultados instantáneos. Cero riesgo. Basada en el coaching
         de más de 150 profesionales.
       </p>
+      <QuizRoleLinks lang="es" current="it-services" />
     </div>
   </section>
 

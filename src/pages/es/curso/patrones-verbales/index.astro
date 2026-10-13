@@ -75,7 +75,7 @@ const firstLesson = verbLessons.find((l) => l.available);
 <Base
   lang={lang}
   tkey={tkey}
-  title="Dominio de Patrones Verbales | Curso Gratis de Verbos en Inglés"
+  title="Curso Gratis de Patrones Verbales en Inglés"
   description="Clase magistral gratis de patrones verbales en inglés para hispanohablantes. Deja de decir 'I called to my boss' o 'I depend of my team.'"
 >
   <!-- Hero -->
@@ -422,6 +422,7 @@ const firstLesson = verbLessons.find((l) => l.available);
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Course",
+    "@id": "https://www.nyenglishteacher.com/es/curso/patrones-verbales/#course",
     "name": "Dominio de Patrones Verbales — Clase Magistral Gratis",
     "description": "Una clase magistral enfocada sobre patrones verbales en inglés para hispanohablantes: patrones de objeto, verbo + preposición, gerundio vs infinitivo, causativos y verbos de reporte. Aprende cada verbo junto con su estructura.",
     "provider": { "@type": "Organization", "name": "New York English Teacher", "url": "https://www.nyenglishteacher.com/" },
@@ -431,6 +432,7 @@ const firstLesson = verbLessons.find((l) => l.available);
     "isAccessibleForFree": true,
     "offers": {
       "@type": "Offer",
+      "category": "Free",
       "price": "0",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock"
@@ -438,6 +440,7 @@ const firstLesson = verbLessons.find((l) => l.available);
     "hasCourseInstance": {
       "@type": "CourseInstance",
       "courseMode": "online",
+      "courseWorkload": "PT6H",
       "inLanguage": "es"
     }
   })} />

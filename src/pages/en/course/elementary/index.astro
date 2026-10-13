@@ -284,6 +284,7 @@ const firstUnitLabel = firstAvailableUnit
   <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Course",
+  "@id": "https://www.nyenglishteacher.com/en/course/elementary/#course",
   "name": "Free Elementary English Course (A2)",
   "description": "A free 10-unit elementary English course for A2 Spanish speakers. Past simple, future plans, comparatives, and Wh-questions — tell your story.",
   "provider": { "@type": "Organization", "name": "New York English Teacher", "url": "https://www.nyenglishteacher.com/" },
@@ -292,9 +293,16 @@ const firstUnitLabel = firstAvailableUnit
   "url": "https://www.nyenglishteacher.com/en/course/elementary/",
   "offers": {
     "@type": "Offer",
+    "category": "Free",
     "price": "0",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT10H",
+    "inLanguage": "en"
   }
 })} />
 </Base>

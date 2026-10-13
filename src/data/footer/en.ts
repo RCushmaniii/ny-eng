@@ -26,7 +26,8 @@ export const footerContentEn = (siteConfig: { companyName: string }) => {
           { name: "Try my AI Practice Chat", href: "/en/chat/" },
           { name: "Blog", href: routes.en.blog },
           { name: "Benchmark Assessment", href: "/en/assessments/" },
-          { name: "Communication Quiz", href: "/en/quiz/" },
+          // Not /en/quiz/: vercel.json 308s the hub to the IT-services landing.
+          { name: "Communication Quiz", href: "/en/quiz/it-services/" },
           { name: "Executive Memes", href: "/en/meme-portfolio/all/" },
           { name: "Site Index", href: "/en/site-index/" },
         ],

@@ -8,6 +8,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import QuizRoleLinks from "@components/sections/QuizRoleLinks.astro";
 import { getQuizTestimonials } from "@data/quiz/real-testimonials";
 import Button from "@components/ui/Button.astro";
 import QuizSchema from "@components/seo/QuizSchema.astro";
@@ -489,6 +490,7 @@ const testimonials = getQuizTestimonials("en", "executives");
       <p class="trust-final">
         90 seconds. Instant results. Zero risk.
       </p>
+      <QuizRoleLinks lang="en" current="executives" />
     </div>
   </section>
 

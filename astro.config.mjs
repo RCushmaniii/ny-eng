@@ -8,9 +8,20 @@ import mdx from "@astrojs/mdx";
 import sentry from "@sentry/astro";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readFileSync } from "node:fs";
 
 // i18n helpers (your existing helpers)
 import { routeFor, getAllTKeys } from "./src/lib/i18n.ts";
+
+// Every literal (non-pattern, header-independent) redirect source in vercel.json,
+// in slash form. A sitemap must never list a URL that 3XXs: /en/quiz/ and
+// /es/quiz/ did, because their hub pages still build even though Vercel
+// redirects them (Ahrefs "3XX redirect in sitemap", 2026-10-12).
+const vercelRedirectPaths = new Set(
+  JSON.parse(readFileSync(new URL("./vercel.json", import.meta.url), "utf-8"))
+    .redirects.filter((r) => !r.has && !/[:(*]/.test(r.source))
+    .map((r) => (r.source.endsWith("/") ? r.source : r.source + "/")),
+);
 
 const SITE = "https://www.nyenglishteacher.com";
 
@@ -265,7 +276,9 @@ export default defineConfig({
         // Exclude URLs that redirect (non-canonical)
         const redirectPaths = ["/blog", "/services", "/contact", "/about", "/testimonials"];
 
-        const isRedirect = redirectPaths.some((prefix) => p === prefix || p.startsWith(prefix));
+        const isRedirect =
+          redirectPaths.some((prefix) => p === prefix || p.startsWith(prefix)) ||
+          vercelRedirectPaths.has(p.endsWith("/") ? p : p + "/");
 
         return (
           !p.includes("/api/") &&

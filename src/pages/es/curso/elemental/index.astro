@@ -284,6 +284,7 @@ const firstUnitLabel = firstAvailableUnit
   <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Course",
+  "@id": "https://www.nyenglishteacher.com/es/curso/elemental/#course",
   "name": "Curso Elemental de Ingles Gratis (A2)",
   "description": "Curso elemental de ingles gratuito de 10 unidades para hispanohablantes A2. Pasado simple, planes futuros, comparativos y preguntas Wh - cuenta tu historia.",
   "provider": { "@type": "Organization", "name": "New York English Teacher", "url": "https://www.nyenglishteacher.com/" },
@@ -292,9 +293,16 @@ const firstUnitLabel = firstAvailableUnit
   "url": "https://www.nyenglishteacher.com/es/curso/elemental/",
   "offers": {
     "@type": "Offer",
+    "category": "Free",
     "price": "0",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT10H",
+    "inLanguage": "en"
   }
 })} />
 </Base>
