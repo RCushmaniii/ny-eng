@@ -103,9 +103,14 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   1-star review (Desarrollo Sustentable, reported 2026-09-05) is escalated with Google;
   the decision comes by email to Robert.
 
-- [x] **Ahrefs 99 / two unnamed errors: closed as not worth Robert's time, 2026-10-12.**
-  Robert's dashboard: health 99, 210 pages crawled, 0 broken, 6 redirects. Two errors on
-  210 pages block nothing. Re-open only if the score drops below 95.
+- [x] **Ahrefs audit of 2026-10-12 fixed in PR #305, verified by a production re-crawl.**
+  The two errors were the footer's `/en/quiz/` and `/es/quiz/` links (vercel.json 308s
+  both to the IT-services landing, so every page linked a redirect and the sitemap listed
+  two 3XX URLs). Also fixed: Course rich-result fields (31), `Service.inLanguage` (3),
+  role-quiz near-orphans, 22 long titles. The sitemap now drops any literal vercel.json
+  redirect source automatically. Left on purpose: the apex/http redirect chain (Vercel
+  domain layer) and the hreflang-crawl notice (Ahrefs crawl budget).
+  *Next:* Robert's next Ahrefs crawl should show 0 errors. Re-open only if it does not.
 
 - [x] **Personal name on NY English: parked 2026-10-12.** Robert: no LinkedIn Page exists
   and none is ready. HARO as NY English founder is **not** approved. Off-site work stays
