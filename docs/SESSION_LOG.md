@@ -132,6 +132,29 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 ---
 
 
+## Session: 2026-10-14
+
+### Accomplished
+
+- **Deployment rules written into `CLAUDE.md`** ("Vercel Deployments — Hobby plan
+  limits"): one PR = one production deploy, preview guard stays (PR #307, `ignoreCommand`
+  214/256 chars), pre-2026-10-13 branches merge `main` before first push, docs-only paths
+  skip the build, no preview links, merge in one sitting.
+- **Booking time-zone bug fixed on `fix/booking-timezone-label` (not yet merged).** The
+  booking form compared the visitor's zone with Mexico City on *today's* date, so a US
+  visitor booking across a DST change saw an unconverted, hour-wrong time labelled
+  "Central Time (GMT-6)". It now compares on the booked date and the label reads
+  "Mexico City time (GMT-6)" / "Hora de Ciudad de México (GMT-6)". `main` (with #307)
+  merged into the branch. Robert is holding the merge for a Class 20 screenshot.
+
+### Lessons
+
+- `fix/privacy-website-chat-assistant` (local only, 2 commits, not on `main`) predates the
+  preview guard — merge `main` into it before any push.
+
+---
+
+
 ## Session: 2026-10-12
 
 ### Accomplished

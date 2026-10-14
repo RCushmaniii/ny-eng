@@ -284,6 +284,29 @@ When adding ANY new external service or API endpoint that the browser calls via 
 - **Bing API Key**: `756a56664bea4d73b3486fd0d44b5fc8`
 - **Hosting**: Vercel (NOT Hostinger — CLAUDE.md tech stack section is outdated on this)
 
+## Vercel Deployments — Hobby plan limits (CRITICAL)
+
+The Vercel account is on the Hobby plan: **100 deployments a day, 32 an hour**, and a
+**10 GB deployment-storage cap** (9.61 GB on 2026-10-13). Going over either has blocked
+production deploys before. Every project on the account shares these limits.
+
+1. **Production.** Every PR merged into `main` is one production deployment. Bundle
+   related fixes into one branch and one PR, and push once, when the work is done — not
+   after each commit.
+2. **Preview builds stay off.** `vercel.json` `ignoreCommand` starts with
+   `if [ "$VERCEL_ENV" = "preview" ]; then exit 0; fi;` (PR #307). Never remove it.
+   Vercel fails the deploy if `ignoreCommand` is over **256 characters**; it is 214 now,
+   so re-measure after any edit.
+3. **Branches cut before 2026-10-13 lack that guard** and still build a preview when
+   pushed. Merge `main` into them before their first push.
+4. **Docs-only commits skip the build.** The rest of `ignoreCommand` cancels the deploy
+   when the commit touches only `docs/`, `README.md`, `CLAUDE.md`, `LICENSE`,
+   `PORTFOLIO.md` or `.gitignore`. Anything else — including `content-marketing/` and
+   `scripts/` — deploys.
+5. **No preview links.** Verify locally (`npm run build`, `npm run preview`), merge, then
+   send Robert the production URL with its full path.
+6. **Merge ready PRs back to back in one sitting**, not spread across the day.
+
 ## Vercel Analytics
 
 Analytics is enabled on this project. The tracking script is injected via `src/layouts/Base.astro` (just before `</body>`):
