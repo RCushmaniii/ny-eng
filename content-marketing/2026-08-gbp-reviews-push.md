@@ -118,5 +118,5 @@ Si en tu caso una reseña pública no es viable por política interna, lo entien
 
 ## Tracking
 
-Record each post and each review batch in `GMB-LOG.md`. That file was last updated
+Record each post and each review batch in `docs/GMB-LOG.md`. That file was last updated
 2026-03-30 and holds the only record of the highest-performing channel.
