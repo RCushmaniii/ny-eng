@@ -322,7 +322,7 @@ The `@vercel/analytics` npm package is installed but we use the direct script ta
 
 ## Marketing Plan
 
-See **[SEO-MARKETING-PLAN.md](./SEO-MARKETING-PLAN.md)** for the full content roadmap, completed work log, and upcoming initiatives. Claude should consult this file at the start of every session and update it as work is completed.
+See **[docs/SEO-MARKETING-PLAN.md](./docs/SEO-MARKETING-PLAN.md)** for the full content roadmap, completed work log, and upcoming initiatives. Claude should consult this file at the start of every session and update it as work is completed.
 
 ## Starting a Session — read these two first
 
