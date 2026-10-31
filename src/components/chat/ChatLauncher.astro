@@ -6,12 +6,31 @@ interface Props {
 const { lang } = Astro.props;
 ---
 
-<!-- Chatbot widget from ny-ai-chatbot repo — lazy-loaded after page is interactive -->
+<!--
+  Chatbot widget from ny-ai-chatbot repo, loaded on the visitor's first interaction.
+  Not on window load: the widget mounts an iframe of chat.nyenglishteacher.com/embed,
+  and Bing's renderer credited that page's meta description to every page on this
+  site (Bing Webmaster "identical meta descriptions", 421 pages, 2026-10-31).
+  Crawlers never scroll, tap or type, so they never see the iframe; people get the
+  chat bubble the moment they do.
+-->
 <script is:inline define:vars={{ chatLang: lang }}>
-  window.addEventListener('load', function() {
-    var s = document.createElement('script');
-    s.src = 'https://chat.nyenglishteacher.com/api/embed?id=default';
-    s.dataset.language = chatLang;
-    document.body.appendChild(s);
-  });
+  (function () {
+    var events = ["scroll", "pointerdown", "pointermove", "touchstart", "keydown", "wheel"];
+    var loaded = false;
+    function loadChat() {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (e) {
+        window.removeEventListener(e, loadChat, { passive: true });
+      });
+      var s = document.createElement("script");
+      s.src = "https://chat.nyenglishteacher.com/api/embed?id=default";
+      s.dataset.language = chatLang;
+      document.body.appendChild(s);
+    }
+    events.forEach(function (e) {
+      window.addEventListener(e, loadChat, { passive: true });
+    });
+  })();
 </script>
