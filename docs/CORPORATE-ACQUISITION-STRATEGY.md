@@ -8,6 +8,11 @@
 > Read `operating-system/cushlabs/operating-vision.json` first. Every ranking below is that
 > file's precedence order applied to this business line: don't break what pays → revenue
 > proximity → leverage → expense → tidiness.
+>
+> **Status 2026-10-31 (Robert): corporate acquisition is not being pursued.** "We're not really
+> looking for corporate clients — we're just looking to build up our domain authority and get
+> some credibility." Off-site work is judged on referring domains and credibility until Robert
+> reopens this. See the 2026-10-31 entry in `docs/SESSION_LOG.md`.
 
 ---
 
