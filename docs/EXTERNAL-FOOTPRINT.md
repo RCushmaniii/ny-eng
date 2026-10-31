@@ -134,8 +134,14 @@ All three carry the same 9 scopes: `pages_manage_posts`,
 `pages_manage_metadata`, `pages_show_list`, `business_management`,
 `read_insights`, `public_profile`.
 
-> ⏰ **Data access expires 2026-10-21** for all three. One re-grant refreshes them
-> together. Put a reminder in ~mid-October.
+> ℹ️ `pnpm fb whoami` shows a **Data access expires** date (~90 days from the
+> user grant). It does **not** matter for this CLI: Meta's data-access
+> expiration exempts every working scope above (`pages_*`, `read_insights`,
+> `business_management`), so the tokens keep posting and reading after that
+> date passes. Verified against Meta's doc on 2026-10-26; no re-grant reminder
+> is needed. Separate rule that does apply: a permission the app has not used
+> for 90 days may expire, so post or read from each page every couple of months.
+> Reference: https://developers.facebook.com/docs/facebook-login/auth-vs-data/
 
 ### What it can do
 

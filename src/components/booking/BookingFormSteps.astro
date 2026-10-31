@@ -367,7 +367,7 @@ const t = translations[lang];
               <p class="text-lg font-semibold text-gray-900 dark:text-white" id="summary-datetime">
               </p>
               <p id="summary-timezone" class="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                {lang === "en" ? "Central Time (GMT-6)" : "Hora del Centro (GMT-6)"}
+                {lang === "en" ? "Mexico City time (GMT-6)" : "Hora de Ciudad de México (GMT-6)"}
               </p>
             </div>
           </div>
@@ -514,16 +514,29 @@ const t = translations[lang];
       return (new Date(utcStr) - new Date(tzStr)) / 60000;
     }
 
-    function isSameTimezone(visitorTz) {
+    // Compared on the booked day, never today: Mexico City has no DST but the US
+    // does, so a Chicago visitor in February matches Mexico City while a March
+    // slot does not. Comparing today's offsets showed that visitor an hour-wrong
+    // time with no conversion.
+    function slotInstant(dateStr) {
+      // Mexico City is permanently UTC-6 (no DST since 2022)
+      return new Date(`${dateStr}T12:00:00-06:00`);
+    }
+
+    function isSameTimezone(visitorTz, dateStr) {
       if (!visitorTz) return true;
       try {
-        const testDate = new Date();
-        const mxOffset = getTimezoneOffsetMinutes(testDate, "America/Mexico_City");
-        const visitorOffset = getTimezoneOffsetMinutes(testDate, visitorTz);
+        const at = slotInstant(dateStr);
+        const mxOffset = getTimezoneOffsetMinutes(at, "America/Mexico_City");
+        const visitorOffset = getTimezoneOffsetMinutes(at, visitorTz);
         return mxOffset === visitorOffset;
       } catch {
         return true;
       }
+    }
+
+    function showDualTime(dateStr) {
+      return !!visitorTz && !isSameTimezone(visitorTz, dateStr);
     }
 
     function convertMexicoCityToLocal(dateStr, timeHHMM, visitorTz) {
@@ -537,12 +550,12 @@ const t = translations[lang];
       });
     }
 
-    function getShortTzName(tz) {
+    function getShortTzName(tz, dateStr) {
       try {
         const parts = new Intl.DateTimeFormat("en-US", {
           timeZone: tz,
           timeZoneName: "short",
-        }).formatToParts(new Date());
+        }).formatToParts(slotInstant(dateStr));
         return parts.find((p) => p.type === "timeZoneName")?.value || tz;
       } catch {
         return tz;
@@ -550,14 +563,14 @@ const t = translations[lang];
     }
 
     const visitorTz = getVisitorTimezone();
-    const showDualTime = !isSameTimezone(visitorTz);
 
-    // Update timezone info text dynamically
-    const tzInfoEl = document.getElementById("timezone-info-text");
-    if (tzInfoEl) {
-      const mxTzShort = getShortTzName("America/Mexico_City");
-      if (showDualTime && visitorTz) {
-        const visitorTzShort = getShortTzName(visitorTz);
+    // The line above the slots, for the day being shown.
+    function updateTzInfo(dateStr) {
+      const tzInfoEl = document.getElementById("timezone-info-text");
+      if (!tzInfoEl) return;
+      const mxTzShort = getShortTzName("America/Mexico_City", dateStr);
+      if (showDualTime(dateStr)) {
+        const visitorTzShort = getShortTzName(visitorTz, dateStr);
         tzInfoEl.textContent =
           lang === "es"
             ? `Horarios en tu hora local (${visitorTzShort}) — originalmente hora de Ciudad de México (${mxTzShort})`
@@ -633,6 +646,7 @@ const t = translations[lang];
     async function fetchAvailableSlots(date) {
       const container = document.getElementById("time-slots-container");
       if (!container || !date) return;
+      updateTzInfo(calendarDate(date));
 
       container.innerHTML = '<p class="col-span-full text-center text-gray-500">Loading...</p>';
 
@@ -673,10 +687,11 @@ const t = translations[lang];
       if (!container) return;
 
       const dateStr = calendarDate(selectedDate);
+      const dual = showDualTime(dateStr);
 
       container.innerHTML = slots
         .map((time) => {
-          if (showDualTime && visitorTz) {
+          if (dual) {
             const localTime = convertMexicoCityToLocal(dateStr, time, visitorTz);
             return `
               <button
@@ -755,10 +770,10 @@ const t = translations[lang];
         month: "short",
         day: "numeric",
       });
-      const time =
-        showDualTime && visitorTz
-          ? `${convertMexicoCityToLocal(calendarDate(selectedDate), selectedTime, visitorTz)} (${getShortTzName(visitorTz)})`
-          : clock(selectedTime);
+      const dateStr = calendarDate(selectedDate);
+      const time = showDualTime(dateStr)
+        ? `${convertMexicoCityToLocal(dateStr, selectedTime, visitorTz)} (${getShortTzName(visitorTz, dateStr)})`
+        : clock(selectedTime);
       el.textContent = `${day} · ${time}`;
     }
 
@@ -898,9 +913,9 @@ const t = translations[lang];
             lang === "es" ? "es-MX" : "en-US",
             dateOptions,
           );
-          if (showDualTime && visitorTz) {
+          if (showDualTime(dateStr)) {
             const localTime = convertMexicoCityToLocal(dateStr, selectedTime, visitorTz);
-            const visitorTzShort = getShortTzName(visitorTz);
+            const visitorTzShort = getShortTzName(visitorTz, dateStr);
             document.getElementById("summary-datetime").textContent =
               `${dateStrFormatted} - ${localTime} (${visitorTzShort})`;
             const tzNote = document.getElementById("summary-timezone");

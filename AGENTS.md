@@ -1,0 +1,342 @@
+# NY English Teacher — agent instructions
+
+## Why this matters before you change anything
+
+newyorkenglish.com -- where students find the coaching and book it.
+
+**If this breaks:** The booking path for the larger revenue line breaks, in public, for an audience of senior professionals who judge on polish.
+
+Its risk class and revenue proximity are recorded in `operating-system/portfolio/repo-metadata.json`, and are read from there rather than restated here -- the same rule that governs prices, client facts and platform approvals.
+
+## Project Overview
+
+Professional English coaching and training platform for Robert Cushman's "NY English Teacher" business. A lead generation and conversion platform targeting executive professionals, tech workers, startup founders, and corporate clients.
+
+**Live Site**: https://www.nyenglishteacher.com
+
+## Spanish Content — Mexican Professional Spanish ONLY (CRITICAL)
+
+**All Spanish content on this site must be Mexican Professional Spanish** (`es-MX`). The audience is Mexico-based corporate professionals. Iberian/Spain Spanish reads as foreign and damages credibility — flagged by a native Mexican reviewer (Julio Aldana, 2026-05-03) on the "registro" blog post.
+
+**When translating EN → ES, the prompt must explicitly say "Mexican Professional Spanish"** — never just "Spanish" or "Latin American Spanish" (still ambiguous).
+
+**Forbidden Iberian markers — never appear in our ES content:**
+- `vosotros` / `vuestro` / vosotros conjugations (`habláis`, `tenéis`, `sois`, `vosotras`) — Mexico uses `ustedes` for ALL plural; possessive `su / sus`. Never include `vosotros` even as a contrastive example — Mexicans don't think of it as part of their language.
+- `vale` (as "okay") → use `está bien`, `de acuerdo`, `ok`
+- `coger` (to take/grab) — vulgar in Mexico → use `tomar`, `agarrar`, `recoger`
+- `móvil` → `celular` · `ordenador` → `computadora` · `coche` → `carro`/`auto` · `conducir` → `manejar` · `aparcar` → `estacionar`
+- `jersey` → `suéter` · `gafas` → `lentes` · `patata` → `papa` · `zumo` → `jugo` · `ascensor` → `elevador` · `piso` (apartment) → `departamento`
+- Spain slang: `tío/tía` (as friend), `guay`, `molar`, `flipar`, `chaval` — none of this in professional MX
+- `Vd.` abbreviation → Mexico writes `Ud.` if abbreviating; spelling out `usted` is more common in formal copy
+- `leísmo` (using `le` for direct objects of people) — Mexican standard is `lo/la` as direct object, `le` only as indirect object
+
+**Register: `tú`, not `usted` — confirmed 2026-08-30.** All Spanish content on this site
+addresses the reader as `tú`, in warm Mexican Spanish. This is a deliberate choice by Robert,
+not drift: at the time it was confirmed, all ~40 published Spanish posts used `tú` and none
+used `usted`.
+
+The writing system's `copywriting` router states that NY English Teacher is `usted` — **that
+file is wrong about this repo.** Do not "correct" a post to `usted` on its authority. Warmth is
+the point; these are accomplished professionals being spoken to as peers, not addressed
+formally from a distance. (Some older Spanish hero cards still say `Escuche` in the footer —
+those are the inconsistency, not the posts.)
+
+**Mexican-preferred phrasings:**
+- "Right now": `ahora mismo` (formal), `ahorita` (slightly more colloquial / common in MX speech)
+- "Approximately": `aproximadamente`, `como` — Spain often uses `unos/unas`
+- "Take a look": `revisar`, `echar un ojo`, `ver` — Spain's `echar un vistazo` is understood but less natural in MX professional copy
+- Diminutives (`ahorita`, `un momentito`) are warmer in MX professional speech — fine in casual register, avoid in C-suite copy unless tone calls for warmth
+
+**When auditing existing ES content for Iberian drift**, grep for: `vosotros`, `vosotras`, `vuestr`, `vale\.`, `coger`, `móvil`, `ordenador`, `coche`, `aparcar`, `habéis`, `sois`, `tenéis`, `gafas`, `jersey`, `patata`, `zumo`, `tío\b`. Any hit → fix on the spot.
+
+The site's hreflang is already `es-MX` (`src/lib/i18n.ts` `getHreflangCode`). The variant is committed at the technical layer; the content layer must match.
+
+## Tech Stack
+
+- **Framework**: Astro 5.5 with React 19 for interactive components
+- **Styling**: Tailwind CSS 3.4
+- **Language**: TypeScript 5.9 (strict)
+- **Database**: Neon PostgreSQL (via Vercel integration)
+- **APIs**: Google Calendar, Formspree, Resend
+- **Hosting**: Vercel (static + serverless functions) + Cloudflare Workers (booking API)
+- **Content**: Markdown via Astro Content Collections
+
+## Directory Structure
+
+```
+src/
+├── pages/              # File-based routing
+│   ├── en/             # English pages
+│   └── es/             # Spanish pages (mirror structure)
+├── components/
+│   ├── sections/       # Hero, Features, Testimonials, etc.
+│   ├── forms/          # Contact form (Formspree)
+│   ├── booking/        # 3-step booking wizard
+│   ├── chat/           # AI chatbot embed
+│   └── seo/            # Structured data components
+├── layouts/
+│   └── Base.astro      # Master layout with i18n, SEO, header/footer
+├── data/               # TypeScript data files
+│   ├── services.ts     # Service definitions
+│   ├── quiz/           # Quiz config, scoring, questions
+│   ├── header/         # Navigation (en.ts, es.ts)
+│   └── footer/         # Footer links
+├── content/            # Astro content collections
+│   ├── blog/en/        # English blog posts (markdown)
+│   ├── blog/es/        # Spanish blog posts
+│   └── legal/          # Privacy, terms
+├── lib/                # Utilities
+│   ├── i18n.ts         # Bilingual routing system
+│   ├── db.ts           # Quiz submission database
+│   └── neon.ts         # Neon PostgreSQL client
+├── types/              # TypeScript definitions
+└── styles/             # Global CSS
+```
+
+## Key Patterns
+
+### Internationalization (i18n)
+
+All pages must define `lang` and `tkey` for hreflang generation:
+
+```astro
+---
+const lang = "en";
+const tkey = "home"; // Must match TKey type in src/lib/i18n.ts
+---
+<Base {lang} {tkey} title="..." description="...">
+```
+
+The `routeFor` object in `src/lib/i18n.ts` maps each `TKey` to its EN/ES paths.
+
+### Page Structure
+
+Every page uses `Base.astro` layout which handles:
+- HTML head (meta, OG tags, hreflang)
+- Header and Footer components
+- JSON-LD structured data
+
+### Interactive Components
+
+React components use `client:load` or `client:visible` directives:
+- `HomepageFAQ.tsx` - FAQ accordion
+- `QuizReport.tsx` - Quiz results display
+- `FreeResourcesHub.tsx` - Filterable resource gallery
+
+### Data Files
+
+Structured data lives in `src/data/`:
+- Services, testimonials, FAQs as TypeScript arrays
+- Language-specific variants use separate files (en.ts, es.ts)
+
+### Content Collections
+
+Blog posts in `src/content/blog/{en,es}/` with frontmatter:
+```yaml
+---
+title: "Post Title"
+excerpt: "Brief description"
+publishDate: "2025-01-15"
+categories: ["business-english"]
+translations:
+  en: "/en/blog/post-slug/"
+  es: "/es/blog/post-slug-es/"
+---
+```
+
+## Development Commands
+
+```bash
+npm run dev           # Start dev server (port 4321)
+npm run build         # Production build
+npm run build:check   # Build with type checking
+npm run preview       # Preview production build
+npm run validate:all  # Run SEO validators
+```
+
+## Environment Variables
+
+Required in `.env`:
+```
+POSTGRES_URL=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+GOOGLE_REFRESH_TOKEN=
+GOOGLE_CALENDAR_ID=
+RESEND_API_KEY=
+RESEND_FROM_EMAIL=
+SITE_URL=
+```
+
+## Important Files
+
+| File | Purpose |
+|------|---------|
+| `src/lib/i18n.ts` | Bilingual routing, TKey definitions |
+| `src/layouts/Base.astro` | Master layout with SEO |
+| `src/data/quiz/` | Quiz configuration and scoring |
+| `cloudflare-worker.js` | Booking API (Google Calendar) |
+| `astro.config.mjs` | Astro configuration, sitemap |
+| `tailwind.config.mjs` | Tailwind theme customization |
+
+## Adding New Pages
+
+1. Create page in `src/pages/en/` and `src/pages/es/`
+2. Add TKey to `src/lib/i18n.ts` type definition
+3. Add routes to `routeFor.en` and `routeFor.es` objects
+4. Use `Base.astro` layout with proper `lang` and `tkey`
+
+## Quiz System
+
+Quiz flow: `/en/quiz/[quizType]/` → questions → report
+
+- Quiz types defined in `src/data/quiz/types.ts`
+- Scoring logic in `src/data/quiz/scoring.ts`
+- Results stored in Neon PostgreSQL via `src/lib/db.ts`
+
+## Booking System
+
+3-step wizard at `/en/book/`:
+1. Date selection (fetches slots from Cloudflare Worker)
+2. Time slot selection
+3. Contact info + confirmation
+
+Cloudflare Worker handles Google Calendar integration.
+
+## SEO Checklist
+
+- Every page needs unique title and description
+- Use `tkey` for automatic hreflang generation
+- Blog posts need `translations` in frontmatter
+- JSON-LD components in `src/components/seo/`
+
+## SEO & Marketing Automation (MANDATORY)
+
+Claude MUST execute these steps automatically. Never ask Robert to run scripts or do manual SEO work.
+
+### After Publishing Any New Content (Blog Post, Page, etc.)
+
+1. **Build & Deploy**: Build, commit, push — wait for Vercel deploy
+2. **Submit to Google**: Run `node scripts/seo/gsc-submit-urls.mjs --sitemap` to resubmit sitemap
+3. **Submit to Bing (API)**: Run `node scripts/seo/bing-submit.mjs --url <new-url>` for direct Bing submission
+4. **Submit to IndexNow**: Run `node scripts/seo/indexnow-submit.mjs --url <new-url>` for Bing/Yandex/DuckDuckGo
+4. **Update sitemap config**: If new blog post, add EN↔ES translation mapping to `astro.config.mjs` `blogTranslations` object
+5. **Verify structured data**: Confirm JSON-LD schemas are present (Article, BreadcrumbList, FAQ if applicable)
+
+### After Publishing a New Blog Post (Additional Steps)
+
+6. **Generate social media content** for the new post:
+   - **Twitter/X thread**: 3-5 tweets, hook + key points + CTA, use relevant hashtags
+   - **Facebook post**: Conversational tone, 1-2 paragraphs with link
+   - Output these in a markdown file at `content-marketing/<slug>-social.md` for Robert to review and post (until social media APIs are integrated)
+7. **Update internal links**: Check if the new post should be linked from existing related posts or pages
+
+### Redirects — declare BOTH slash forms (CRITICAL)
+
+Vercel matches a redirect `source` literally: `/foo` fires on `/foo` and hard-404s
+`/foo/`. This site is trailing-slash canonical, so **every rule must be declared in
+both forms** (including `:slug` catch-alls), with destinations pointing at the slashed
+form. After any redirect change reaches production, run `npm run validate:redirects` —
+never verify by hand. Background: `docs/REDIRECT-INCIDENT-2026-08-05.md`.
+
+**The bare domain is language-negotiated, and rule order is load-bearing.** The
+first two entries in `vercel.json` `redirects` both have `"source": "/"`. The
+first matches `accept-language: ^es.*` and 307s to `/es/`; the second is the
+fallback and 307s to `/en/`. Vercel takes the FIRST match, so swapping them
+sends every Spanish-speaking visitor to the English homepage. Both are
+deliberately temporary (`"permanent": false`) because the response varies by
+header -- a 301 gets cached by the browser and pins a visitor to one language
+permanently. `vercel.json` rejects unknown keys, so this note cannot live as a
+`"comment"` in the file itself.
+
+### Off-site marketing — document it and book it, never list it in chat
+
+Anything outside this website (citations, directories, LinkedIn, HARO/Featured, chambers,
+outreach) belongs in `docs/OFF-SITE-MARKETING.md` with an owner, an effort estimate and a
+**closes when** line — **and** a 30-minute Google Calendar event between 06:00 and 09:00
+`America/Mexico_City` on the day it should happen, created in the same turn. Put the full
+click-path in the event body so it stands alone. A recommendation delivered only as chat
+prose is incomplete and will be overlooked.
+
+### CSP Maintenance
+
+When adding ANY new external service or API endpoint that the browser calls via fetch/XHR:
+- Add the domain to `connect-src` in `vercel.json` (the single source of security headers)
+- Current allowed domains: `formspree.io`, `plain-mode-42c4.rcushmaniii.workers.dev`, `ny-ai-chatbot.vercel.app`, `ny-eng-api.netlify.app`, `ny-eng.vercel.app`, `www.google-analytics.com`
+
+### SEO Scripts Reference
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/seo/gsc-client.mjs` | Shared GSC auth client |
+| `scripts/seo/gsc-performance.mjs` | Pull search performance data (clicks, impressions, CTR, position) |
+| `scripts/seo/gsc-submit-urls.mjs` | Submit sitemap or individual URLs to Google |
+| `scripts/seo/gsc-index-status.mjs` | Check URL index status via Inspection API |
+| `scripts/seo/indexnow-submit.mjs` | Submit URLs to Bing/Yandex/DuckDuckGo via IndexNow |
+| `scripts/seo/bing-submit.mjs` | Submit URLs directly to Bing Webmaster Tools API |
+
+### SEO Credentials
+
+- **Google Cloud Project**: `seo-automation-489217` (project number: 645749861804)
+- **Service Account**: `seo-api-access@seo-automation-489217.iam.gserviceaccount.com`
+- **Credentials file**: `scripts/seo/gsc-credentials.json` (gitignored, NEVER commit)
+- **IndexNow key**: `68c9a0e54a33fa63d4e4384ebe910e71`
+- **GSC Property**: `sc-domain:nyenglishteacher.com`
+- **Bing API Key**: env var `BING_WEBMASTER_TOOLS_API_KEY` (never write the value in a tracked file — this repo is public)
+- **Hosting**: Vercel (NOT Hostinger — CLAUDE.md tech stack section is outdated on this)
+
+## Vercel Deployments — Hobby plan limits (CRITICAL)
+
+The Vercel account is on the Hobby plan: **100 deployments a day, 32 an hour**, and a
+**10 GB deployment-storage cap** (9.61 GB on 2026-10-13). Going over either has blocked
+production deploys before. Every project on the account shares these limits.
+
+1. **Production.** Every PR merged into `main` is one production deployment. Bundle
+   related fixes into one branch and one PR, and push once, when the work is done — not
+   after each commit.
+2. **Preview builds stay off.** `vercel.json` `ignoreCommand` starts with
+   `if [ "$VERCEL_ENV" = "preview" ]; then exit 0; fi;` (PR #307). Never remove it.
+   Vercel fails the deploy if `ignoreCommand` is over **256 characters**; it is 214 now,
+   so re-measure after any edit.
+3. **Branches cut before 2026-10-13 lack that guard** and still build a preview when
+   pushed. Merge `main` into them before their first push.
+4. **Docs-only commits skip the build.** The rest of `ignoreCommand` cancels the deploy
+   when the commit touches only `docs/`, `README.md`, `CLAUDE.md`, `LICENSE`,
+   `PORTFOLIO.md` or `.gitignore`. Anything else — including `content-marketing/` and
+   `scripts/` — deploys.
+5. **No preview links.** Verify locally (`npm run build`, `npm run preview`), merge, then
+   send Robert the production URL with its full path.
+6. **Merge ready PRs back to back in one sitting**, not spread across the day.
+
+## Vercel Analytics
+
+Analytics is enabled on this project. The tracking script is injected via `src/layouts/Base.astro` (just before `</body>`):
+
+```html
+<script defer src="/_vercel/insights/script.js"></script>
+```
+
+**Lesson learned:** Toggling Analytics "on" in the Vercel dashboard only tells Vercel to *serve* the script at that path. It does **not** inject the script into your pages. You must explicitly load it in your layout. Without this tag, zero data is collected even if the dashboard shows Analytics as "enabled."
+
+The `@vercel/analytics` npm package is installed but we use the direct script tag because the package's Astro component export has resolution issues with this version of Astro/Vite. The script tag approach is equivalent and more reliable.
+
+## Marketing Plan
+
+See **[SEO-MARKETING-PLAN.md](./SEO-MARKETING-PLAN.md)** for the full content roadmap, completed work log, and upcoming initiatives. Claude should consult this file at the start of every session and update it as work is completed.
+
+## Starting a Session — read these two first
+
+- **`docs/SESSION_LOG.md`** — the `## Open Items` register is pinned at the top, above the dated entries. That is the live list of what is actually open. An item leaves it only when verified end to end; "tests pass" and "the config looks right" do not count.
+- **`docs/CORPORATE-ACQUISITION-STRATEGY.md`** — the single owner of "how does NY English get
+  corporate accounts." Channels ranked by revenue proximity against the operating vision, the
+  90-day plan, the decisions only Robert can make, and a dated tracker. Read it before proposing
+  any corporate or growth work; do not re-derive the ranking from scratch.
+- **`docs/PROJECT-CONTEXT.md`** — standing context that never gets checked off: why organic traffic collapsed and how it was fixed, cross-repo infrastructure facts that have already produced three false conclusions, what the search data says, settled decisions not to re-litigate, reusable audit commands, and the environment gotchas that have cost real time.
+
+Replaces the former `docs/HANDOFF.md` (retired 2026-08-06).
+
+## Booking confirmations
+
+Consultation bookings get a day-before confirm email, an opt-in WhatsApp reminder, and feed Robert's
+08:00 summary. Read [`docs/BOOKING-CONFIRMATIONS.md`](docs/BOOKING-CONFIRMATIONS.md) before touching
+`cloudflare-worker.js`, `lib/booking-confirm.js` or the booking form.
