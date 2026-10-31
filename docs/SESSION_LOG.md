@@ -99,6 +99,13 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Next:* Robert supplies one real photo of himself coaching (a session on screen or in an
   office), and it replaces the illustration.
 
+- [ ] **Bing "identical meta descriptions" (421 pages) — fixed, awaiting Bing's re-crawl.**
+  *Opened 2026-10-31.* Cause: Bing credited the chat widget iframe's description to host pages.
+  Fixed in PR #309 (widget loads on first interaction) and in ny-ai-chatbot (chat host now
+  `X-Robots-Tag: noindex, nofollow`, no default description). Blog pages 2–8 got unique text.
+  *Next:* on 2026-11-14 Robert re-downloads the failing-URLs CSV from Bing Webmaster → SEO.
+  *Closes when:* the report shows near zero, or the remaining rows are traced.
+
 - [x] **`GMB-LOG.md` refreshed 2026-10-12.** 4.8 / 20 reviews / 263 interactions. The only
   1-star review (Desarrollo Sustentable, reported 2026-09-05) is escalated with Google;
   the decision comes by email to Robert.
@@ -131,6 +138,39 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 
 ---
 
+
+## Session: 2026-10-31
+
+### Accomplished
+
+- PR #308: booking form compares time zones on the booked day, not today (Chicago visitor, March slot now shows 11:00 AM CDT); label "Mexico City time (GMT-6)"; AGENTS.md migration (lossless split, `ignoreCommand` 228 chars, guard kept). Closes ny-eng in the fleet AGENTS.md rollout.
+- Bing Webmaster key: literal removed from the public repo and rotated; old key verified dead (HTTP 400), new key in `.env` only (HTTP 200).
+- PR #309: chat widget loads on first interaction (Bing was crediting the chat iframe's description to 421 pages); paginated blog descriptions made unique. ny-ai-chatbot shipped the matching host-side fix in its own session; verified here.
+- Bing: top 100 pages submitted via SubmitUrlBatch, all 476 via IndexNow (twice). Removed two dead 2023 WordPress sitemaps (`eng-lesson-sitemap.xml`, `page-sitemap.xml`, both 404) from Bing; resubmitted `sitemap-index.xml`. Google Search Console already clean.
+- PR #310: root cleanup (30 → 21 files). PR #311: `docs/seo/BING-AI-PERFORMANCE-2026-10-31.md`.
+
+### Decisions Made
+
+- **Off-site goal is domain authority and credibility, not corporate clients** (Robert, 2026-10-31). Judge backlink ideas on referring domains, not buyer reach.
+- Bing key literal replaced with its env var name rather than carried into AGENTS.md: repo is public.
+
+### Immediate Next Steps
+
+- [ ] (Don't break what pays) Re-pull `/en/courses/` position, overdue since 2026-10-26: `node scripts/seo/gsc-performance.mjs --by page --top 40`.
+- [ ] (Leverage) Build the ES email reference page ("Cómo escribir un correo en inglés…") + EN twin, per the Bing AI research doc.
+- [ ] (Leverage) Robert runs the stories-repo session: footer link to www + his own story.
+
+### Technical Debt
+
+- `scripts/seo/.submissions/bing-webmaster.jsonl` logs only `bing-submit.mjs`; the batch scheduler and IndexNow scripts write nothing, so "what was submitted" can't be answered from the repo.
+
+### Lessons
+
+- Bing `GetUrlInfo` throttles (`ThrottleHost`) after ~20 calls and does not recover at 1 call / 30 s; per-URL index status is not obtainable in bulk. Submit instead.
+- Bing `GetLinkCounts` reported **zero** inbound links on 2026-10-31.
+- `/embed` on the chat host is a 404; the widget's real iframe is `/embed/chat`. The 404 page carried the layout's default description.
+
+---
 
 ## Session: 2026-10-14
 
