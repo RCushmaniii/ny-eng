@@ -91,6 +91,11 @@ forums link to, and the kind of page an AI answer cites. Narrative blog posts ra
 4. **Subject-line guide** — "Email subject lines in English that get answered", short, tabular.
 5. Refresh `email-phrases-that-make-you-sound-junior` to link to (1)–(4) as a cluster hub.
 
+**Shipped 2026-10-31:** (1) and (2) as one EN+ES pair —
+`/en/blog/how-to-start-and-end-an-email-in-english/` and
+`/es/blog/como-empezar-y-terminar-un-correo-en-ingles/`. They also carry a short subject-line
+section, so (4) is a refresh of that section, not a new page.
+
 Format notes for AI citation: one clear question per H2, a direct answer in the first sentence
 under it, tables and lists that can be quoted whole, FAQPage schema, and a visible last-updated
 date.
