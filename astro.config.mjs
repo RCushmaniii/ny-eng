@@ -31,8 +31,7 @@ const ensureSlashPath = (p = "/") => ("/" + (p || "/")).replace(/\/+/g, "/").rep
 // Blog post translations map (EN slug -> ES path)
 // Used by sitemap to generate correct hreflang for blog posts
 const blogTranslations = {
-  "british-english-pronunciation-practice":
-    "/es/blog/practica-pronunciacion-ingles-britanico/",
+  "british-english-pronunciation-practice": "/es/blog/practica-pronunciacion-ingles-britanico/",
   "logistics-job-interview-english": "/es/blog/entrevista-trabajo-logistica-ingles/",
   "english-classes-chapalita": "/es/blog/clases-ingles-chapalita/",
   "english-classes-zapopan": "/es/blog/clases-ingles-zapopan/",
@@ -92,6 +91,8 @@ const blogTranslations = {
     "/es/blog/por-que-ejecutivos-elite-contratan-coaches/",
   "why-correct-english-sounds-disconnected": "/es/blog/ingles-correcto-pero-desconectado/",
   "how-to-improve-your-english": "/es/blog/como-mejorar-tu-ingles/",
+  "how-to-start-and-end-an-email-in-english":
+    "/es/blog/como-empezar-y-terminar-un-correo-en-ingles/",
 };
 
 // Reverse map (ES slug -> EN path)

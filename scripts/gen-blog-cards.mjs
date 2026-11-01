@@ -243,6 +243,20 @@ const CARDS = [
     chips: ["strengths", "revenue", "exceeded"],
     footer: "nyenglishteacher.com  ·  Escucha cada palabra",
   },
+  {
+    out: "src/content/blog/en/images/how-to-start-and-end-an-email-in-english.webp",
+    eyebrow: "BUSINESS EMAIL ENGLISH",
+    headline: "How to Start and End an Email in English",
+    chips: ["Hi Maria,", "Best regards,", "subject line"],
+    footer: "nyenglishteacher.com  ·  Click any phrase to hear it",
+  },
+  {
+    out: "src/content/blog/es/images/como-empezar-y-terminar-un-correo-en-ingles.webp",
+    eyebrow: "CORREOS EN INGLÉS",
+    headline: "Cómo Empezar y Terminar un Correo en Inglés",
+    chips: ["Hi Maria,", "Best regards,", "el asunto"],
+    footer: "nyenglishteacher.com  ·  Escucha cada frase",
+  },
 ];
 
 for (const card of CARDS) {
