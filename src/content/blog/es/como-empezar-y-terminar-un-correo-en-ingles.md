@@ -2,14 +2,14 @@
 title: "Cómo empezar y terminar un correo en inglés: saludos, primera línea, cierre y despedida"
 excerpt: "La primera y la última línea de un correo deciden qué tan senior suenas. Saludos, frases de apertura, cierres y despedidas en inglés listos para copiar — y los hábitos traducidos del español que te delatan."
 publishDate: "2026-10-31"
-lastmod: "2026-10-31"
+lastmod: "2026-11-03"
 categories:
   - "Inglés para Negocios"
   - "Inglés Ejecutivo"
 readingTime: "8 min de lectura"
 audience: "Profesionales hispanohablantes que escriben correos de trabajo en inglés y quieren que la primera y la última línea suenen naturales, no traducidas"
 featuredImage: "./images/como-empezar-y-terminar-un-correo-en-ingles.webp"
-imageAlt: "Tarjeta azul marino con el título Cómo empezar y terminar un correo en inglés, con etiquetas para Hi Maria, Best regards y el asunto"
+imageAlt: "Una profesional con saco azul marino sonríe mientras escribe un correo en su laptop, bajo el título Cómo empezar y terminar un correo en inglés"
 ttsVoiceOptions:
   - label: "Hombre"
     voice: "en-US-Andrew:DragonHDLatestNeural"
@@ -129,6 +129,8 @@ En dos partes: una **línea de cierre** que diga el siguiente paso, y después u
 | <span class="speak-en">Cheers,</span> | Casual y con sabor británico. Solo si esa es la relación. |
 
 Si dudas, usa **"Best regards,"** — en negocios nunca falla.
+
+![Qué sí hacer y qué evitar en un correo en inglés. Sí: saluda por su nombre de pila, "Hi Maria,"; di el motivo en la primera línea, "Attached is the Q3 report."; cierra con el siguiente paso, "Could you confirm by Thursday?" Evita: abrir como carta formal, "Dear Sir,"; empezar con relleno, "I hope this email finds you well."; despedirte con una traducción, "I remain attentive."](./images/correo-que-hacer-y-que-evitar.webp)
 
 ---
 

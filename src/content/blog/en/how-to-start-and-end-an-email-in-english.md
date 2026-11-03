@@ -2,14 +2,14 @@
 title: "How to Start and End an Email in English: Greetings, Openings, Closings and Sign-Offs"
 excerpt: "The first line and the last line of an email decide how senior you sound. Copy-ready greetings, opening lines, closing lines and sign-offs for professionals who write business email in a second language — plus the translated habits that give you away."
 publishDate: "2026-10-31"
-lastmod: "2026-10-31"
+lastmod: "2026-11-03"
 categories:
   - "Business English"
   - "Executive English"
 readingTime: "8 min read"
 audience: "Spanish-speaking professionals who write business email in English and want the first and last lines to sound natural, not translated"
 featuredImage: "./images/how-to-start-and-end-an-email-in-english.webp"
-imageAlt: "Navy title card reading How to Start and End an Email in English, with chips for Hi Maria, Best regards and the subject line"
+imageAlt: "A professional woman in a navy blazer smiles as she writes an email on her laptop, under the title How to Start and End an Email in English"
 ttsVoiceOptions:
   - label: "Male"
     voice: "en-US-Andrew:DragonHDLatestNeural"
@@ -129,6 +129,8 @@ End in two parts: a **closing line** that names the next step, then a **sign-off
 | <span class="speak-en">Cheers,</span> | Casual and British-flavored. Only if that's the relationship. |
 
 If you're unsure, use **"Best regards,"** — it's never wrong in business.
+
+![What to do and what to avoid in a business email. Do: greet them by first name, "Hi Maria,"; state the reason in line one, "Attached is the Q3 report."; close with the next step, "Could you confirm by Thursday?" Avoid: open like a formal letter, "Dear Sir,"; warm up with filler, "I hope this email finds you well."; sign off in translation, "I remain attentive."](./images/email-dos-and-donts.webp)
 
 ---
 
