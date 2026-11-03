@@ -196,25 +196,11 @@ function svg({ eyebrow, headline, chips, footer }) {
 </svg>`;
 }
 
-// NOTE: the two British-English cards used to live here and now live in
-// gen-blog-photo-cards.mjs, which lays text over a photograph. Two generators
+// NOTE: the British-English, logistics and email cards used to live here and now
+// live in gen-blog-photo-cards.mjs, which lays text over a photograph. Two generators
 // must never write the same output path — whichever ran last would silently win,
 // and a re-run of this script would quietly replace a photo hero with a flat one.
 const CARDS = [
-  {
-    out: "src/content/blog/en/images/logistics-job-interview-english.webp",
-    eyebrow: "LOGISTICS INTERVIEW ENGLISH",
-    headline: "Logistics Job Interview in English",
-    chips: ["OTIF", "dwell time", "own the number"],
-    footer: "nyenglishteacher.com  ·  Click any answer to hear it",
-  },
-  {
-    out: "src/content/blog/es/images/entrevista-trabajo-logistica-ingles.webp",
-    eyebrow: "INGLÉS PARA ENTREVISTAS",
-    headline: "Entrevista de Logística en Inglés",
-    chips: ["OTIF", "dwell time", "tu número"],
-    footer: "nyenglishteacher.com  ·  Escucha cada respuesta",
-  },
   {
     out: "src/content/blog/en/images/english-words-spanish-speakers-should-practice.webp",
     eyebrow: "PRONUNCIATION PRACTICE",
@@ -242,20 +228,6 @@ const CARDS = [
     headline: "Pronunciación en Inglés para una Entrevista de Ventas",
     chips: ["strengths", "revenue", "exceeded"],
     footer: "nyenglishteacher.com  ·  Escucha cada palabra",
-  },
-  {
-    out: "src/content/blog/en/images/how-to-start-and-end-an-email-in-english.webp",
-    eyebrow: "BUSINESS EMAIL ENGLISH",
-    headline: "How to Start and End an Email in English",
-    chips: ["Hi Maria,", "Best regards,", "subject line"],
-    footer: "nyenglishteacher.com  ·  Click any phrase to hear it",
-  },
-  {
-    out: "src/content/blog/es/images/como-empezar-y-terminar-un-correo-en-ingles.webp",
-    eyebrow: "CORREOS EN INGLÉS",
-    headline: "Cómo Empezar y Terminar un Correo en Inglés",
-    chips: ["Hi Maria,", "Best regards,", "el asunto"],
-    footer: "nyenglishteacher.com  ·  Escucha cada frase",
   },
 ];
 

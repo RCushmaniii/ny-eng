@@ -115,6 +115,18 @@ const CARDS = [
     headline: "Pronunciación Británica",
     footer: "nyenglishteacher.com  ·  Escucha cada palabra",
   },
+  {
+    src: "src/assets/blog-sources/business-email.webp",
+    out: "src/content/blog/en/images/how-to-start-and-end-an-email-in-english.webp",
+    headline: "How to Start and End an Email in English",
+    footer: "nyenglishteacher.com  ·  Click any phrase to hear it",
+  },
+  {
+    src: "src/assets/blog-sources/business-email.webp",
+    out: "src/content/blog/es/images/como-empezar-y-terminar-un-correo-en-ingles.webp",
+    headline: "Cómo Empezar y Terminar un Correo en Inglés",
+    footer: "nyenglishteacher.com  ·  Escucha cada frase",
+  },
 ];
 
 for (const card of CARDS) {
