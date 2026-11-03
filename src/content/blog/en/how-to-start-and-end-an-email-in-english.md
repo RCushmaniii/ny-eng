@@ -55,6 +55,8 @@ This is the reference I give my clients. Copy what you need.
 
 **Quick answer:** start with a greeting and the person's name, then put the reason for the email in the very first sentence. End with one line that names the next step, then a short sign-off. Everything below is the detail.
 
+![Start and end your email with confidence: choose a tone that fits your reader. To open, formal: “Dear Ms. López, I’m writing to confirm our meeting.” Professional and friendly: “Hi Ana, Thank you for your quick reply.” To close, formal: “Thank you for your time. Kind regards,” Professional and friendly: “Looking forward to hearing from you. Best,” Tip: match your greeting and sign-off to the relationship.](./images/email-openings-and-closings-by-tone.webp)
+
 ---
 
 ## How do you start an email in English?
