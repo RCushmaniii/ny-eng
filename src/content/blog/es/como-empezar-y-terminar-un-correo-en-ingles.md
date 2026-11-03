@@ -55,6 +55,8 @@ Esta es la referencia que les doy a mis clientes. Copia lo que necesites.
 
 **Respuesta rápida:** empieza con un saludo y el nombre de la persona, y pon el motivo del correo en la primerísima oración. Termina con una línea que diga el siguiente paso y una despedida corta. Todo lo demás es detalle.
 
+![Cómo empezar y cerrar un correo en inglés: elige un tono adecuado para quien te lee. Para empezar, formal: “Dear Ms. López, I’m writing to confirm our meeting.” Profesional y cercano: “Hi Ana, Thank you for your quick reply.” Para cerrar, formal: “Thank you for your time. Kind regards,” Profesional y cercano: “Looking forward to hearing from you. Best,” Consejo: adapta el saludo y la despedida a tu relación con el destinatario.](./images/saludos-y-despedidas-por-tono.webp)
+
 ---
 
 ## ¿Cómo se empieza un correo en inglés?
