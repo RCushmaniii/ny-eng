@@ -107,6 +107,8 @@ Cuando el control gramatical desaparece y el instinto no se redirige a las cuatr
 
 Ambos modos de falla se sienten seguros para el hablante. Para el oyente, ambos son señales de que el hablante no se ha comprometido del todo con la situación.
 
+En un correo, casi toda la señal de registro está en dos líneas: el saludo y la despedida. Aquí tienes [cómo empezar y terminar un correo en inglés](/es/blog/como-empezar-y-terminar-un-correo-en-ingles/) con el nivel de formalidad correcto.
+
 ---
 
 ## El diagnóstico que une todo
