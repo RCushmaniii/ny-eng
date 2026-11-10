@@ -107,6 +107,8 @@ When the grammatical control disappears and the instinct does not get redirected
 
 Both failure modes feel safe to the speaker. To the listener, both are signals that the speaker has not quite engaged with the situation.
 
+In email, most of the register signal sits in two lines: the greeting and the sign-off. Here is [how to start and end an email in English](/en/blog/how-to-start-and-end-an-email-in-english/) at the right level of formality.
+
 ---
 
 ## The diagnostic that pulls it all together

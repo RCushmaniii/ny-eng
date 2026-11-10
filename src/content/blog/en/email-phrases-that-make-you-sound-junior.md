@@ -174,6 +174,7 @@ Want more templates for difficult email situations? **[Download my 6 Email Templ
 
 ## Keep Reading
 
+- [How to Start and End an Email in English](/en/blog/how-to-start-and-end-an-email-in-english/) — Copy-ready greetings, opening lines, closing lines and sign-offs to pair with these fixes.
 - [Slack English: Write Like a Pro, Not a Bot](/en/blog/slack-english-write-like-a-pro/) — Apply these same directness principles to your daily Slack communication.
 - [10 Business English Mistakes Mexican Professionals Make](/en/blog/business-english-mistakes-mexican-professionals/) — Fix the spoken mistakes that often accompany these email habits.
 - [How to Negotiate in English: A Proven 5-Step Framework](/en/blog/how-to-negotiate-in-english-framework/) — Apply the same directness principles to live negotiations.

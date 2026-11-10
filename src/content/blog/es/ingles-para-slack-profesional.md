@@ -43,6 +43,8 @@ Antes de entrar a las frases, necesitas entender algo fundamental: **Slack no es
 
 Si tus mensajes en Slack se leen como emails, estás señalando que no entiendes la cultura de comunicación tech en EE.UU. Slack es informal, rápido y directo. La formalidad en Slack no te hace sonar profesional — te hace sonar desconectado.
 
+Y cuando sí necesites un correo, aquí tienes [cómo empezar y terminar un correo en inglés](/es/blog/como-empezar-y-terminar-un-correo-en-ingles/) sin sonar rígido.
+
 ---
 
 ## Las 8 Situaciones de Slack que Necesitas Dominar

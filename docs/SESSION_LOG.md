@@ -50,17 +50,9 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   *Next:* Robert decides whether to send a personal follow-up.
   *Closes when:* followed up or consciously skipped.
 
-- [ ] **`/en/courses/` slipped off page one after 2026-09-26.**
-  *Added 2026-10-12.* The page carries most of the site's search clicks (39 of 73 in the
-  28 days to 2026-10-12). Average position went from **6.4** (Sep 13–26) to **11.4**
-  (Sep 27–Oct 10) and weekly clicks from 35 to 4. It is indexed (crawled 2026-10-10), no
-  site change shipped in that window, and the `free-english-courses-spanish-speakers`
-  blog post going to zero impressions is its planned July redirect finishing, not a loss.
-  *Blocks:* the one channel that was producing search clicks.
-  *Next:* re-pull on 2026-10-26 with
-  `node scripts/seo/gsc-performance.mjs --by page --top 40`. If still past position 10,
-  rewrite the page's title and description against the `for spanish speakers` queries.
-  *Closes when:* that re-check is written into a dated entry.
+- [x] **`/en/courses/` slip re-checked 2026-11-10, no rewrite.** Average position 16.0 over 28 days, but
+  clicks recovered to ~8/week and the exact target query ranks 1.9; the loss is on non-"free" variants the
+  current title is not aimed at. Detail in the 2026-11-03 / 2026-11-10 entry.
 
 - [x] **Invented quiz testimonials removed 2026-10-12 (PRs #301, #303).** The hub and all
   four quiz landings (EN+ES, 26 invented quotes plus a "Google, Meta, Amazon" trust line)
@@ -139,6 +131,28 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 ---
 
 
+## Session: 2026-11-03 / 2026-11-10
+
+### Accomplished
+
+- PR #315: email post (EN+ES) got Robert's photo hero (plate at `src/assets/blog-sources/business-email.webp`, cards moved to `gen-blog-photo-cards.mjs`) and a mid-article Do / Don't graphic (`scripts/one-off/gen-email-do-dont.py`). Also removed the logistics cards from `gen-blog-cards.mjs`: both generators wrote that path, so running the flat script overwrote the live photo hero.
+- PR #316: Robert's "openings and closings by tone" graphics placed after the Quick answer, EN+ES, ~2 MB PNG → ~127 KB webp each.
+- 2026-11-10: the email post was **orphaned** — zero internal links, and GSC showed both URLs "Discovered – currently not indexed", never crawled, 10 days after publishing. Linked from `email-phrases-that-make-you-sound-junior`, `slack-english-write-like-a-pro` and `english-register-for-spanish-speakers`, EN+ES (six links).
+- `/en/courses/` re-check done (was due 2026-10-26), 28 days to 2026-11-10: 34 clicks / 411 impressions, average position **16.0** (14-day: 18.1). Clicks recovered (~8/week vs 4 at the low) even though average position fell. The exact target query "free online english classes for spanish speakers" sits at **1.9**; the slippage is on non-"free" variants ("online english classes for spanish speakers" 22.8, "english for spanish speakers" 67). The title already matches the winning query, so no rewrite.
+
+### Lessons
+
+- Astro double-escapes a straight `'` in markdown image alt text (`Don&amp;#x27;t` in the HTML, read aloud literally). Use a typographic `’` or reword.
+- The publish checklist's "update internal links" step is the one that gets skipped. A new post with no inbound links sits in "Discovered – not indexed" on this low-authority domain.
+- The site's highest-impression URL is the PDF `/assets/documents/10-common-mistakes-executive-english.pdf` (1,443 impressions, position 7.5, 0 clicks, 28 days). GSC withholds its queries (anonymized), so there is nothing to act on yet.
+
+### Immediate Next Steps
+
+- [ ] (Leverage) Around 2026-11-24, re-inspect both email-post URLs in GSC; if still "Discovered – not indexed", add a link from a high-traffic page (`/en/courses/` is not topical — pick a corporate or resources page).
+- [ ] (Leverage) Next cluster post: "How to introduce yourself in English at work", idea 3 in `docs/seo/BING-AI-PERFORMANCE-2026-10-31.md` — ship it with its internal links in the same PR.
+
+---
+
 ## Session: 2026-10-31
 
 ### Accomplished
@@ -156,8 +170,8 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 
 ### Immediate Next Steps
 
-- [ ] (Don't break what pays) Re-pull `/en/courses/` position, overdue since 2026-10-26: `node scripts/seo/gsc-performance.mjs --by page --top 40`.
-- [ ] (Leverage) Build the ES email reference page ("Cómo escribir un correo en inglés…") + EN twin, per the Bing AI research doc.
+- [x] (Don't break what pays) Re-pull `/en/courses/` position, overdue since 2026-10-26 — done 2026-11-10: `node scripts/seo/gsc-performance.mjs --by page --top 40`.
+- [x] (Leverage) Build the ES email reference page ("Cómo escribir un correo en inglés…") + EN twin, per the Bing AI research doc.
 - [ ] (Leverage) Robert runs the stories-repo session: footer link to www + his own story.
 
 ### Technical Debt

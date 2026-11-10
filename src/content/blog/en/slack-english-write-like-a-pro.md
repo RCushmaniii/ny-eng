@@ -43,6 +43,8 @@ Before we get into the phrases, you need to understand something fundamental: **
 
 If your Slack messages read like emails, you're signaling that you don't understand the culture of US tech communication. Slack is informal, fast, and direct. Formality in Slack doesn't make you sound professional — it makes you sound disconnected.
 
+And when you do need email, here is [how to start and end an email in English](/en/blog/how-to-start-and-end-an-email-in-english/) without sounding stiff.
+
 ---
 
 ## The 8 Slack Situations You Need to Master
