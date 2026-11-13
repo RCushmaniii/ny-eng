@@ -13,6 +13,7 @@ import { neon } from "@neondatabase/serverless";
 import { Resend } from "resend";
 import Anthropic from "@anthropic-ai/sdk";
 import { enforceRateLimit, RATE_LIMITS } from "../_lib/rate-limit.js";
+import { cleanText, normalizeEmail, toQuizEmailFields } from "../_lib/sanitize.js";
 
 // Initialize Neon SQL client
 const sql = neon(process.env.POSTGRES_URL || "");
@@ -335,6 +336,24 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       return;
     }
 
+    // The address decides who this site sends mail to, and the name goes into
+    // a subject line. Until 2026-11-12 neither was checked, so a request could
+    // name any recipient (or several) and carry its own markup into the email
+    // — see api/_lib/sanitize.ts. Normalise both before anything reads them.
+    const email = normalizeEmail(body.email);
+    const name = cleanText(body.name, 120);
+    if (!email || !name || typeof body.answers !== "object") {
+      res.status(400).json({
+        success: false,
+        error: "Please provide a valid name and email address.",
+      });
+      return;
+    }
+    body.email = email;
+    body.name = name;
+    body.language = body.language === "es" ? "es" : "en";
+    body.quizType = cleanText(body.quizType, 60);
+
     // Use client-provided scores (the client scoring engine is the source of truth)
     // Backwards-compatible: accept totalScore OR score from older client builds
     const totalScore = Number(body.totalScore ?? body.score ?? NaN);
@@ -455,6 +474,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     // Send emails (don't block the response)
     if (resend) {
       const emailPromises: Promise<unknown>[] = [];
+      // The templates render from this escaped copy and never from `body`.
+      // Subjects are plain text, so they use the cleaned (not escaped) name.
+      const emailFields = toQuizEmailFields(body, { email, totalScore, scoreTier });
 
       // Admin notification email
       if (process.env.NOTIFICATION_EMAIL) {
@@ -463,25 +485,25 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
             .send({
               from: process.env.RESEND_FROM_EMAIL || "NY English Quiz <onboarding@resend.dev>",
               to: process.env.NOTIFICATION_EMAIL,
-              subject: `New Quiz Lead: ${body.name} \u2014 ${totalScore}/100 ${scoreTier}`,
-              html: buildAdminEmailHtml(body),
+              subject: `New Quiz Lead: ${name} \u2014 ${totalScore}/100 ${cleanText(scoreTier, 60)}`,
+              html: buildAdminEmailHtml(emailFields),
             })
             .catch((err: Error) => console.error("Admin email error:", err)),
         );
       }
 
       // Quiz taker email
-      if (body.email) {
+      {
         const isSpanish = body.language === "es";
         emailPromises.push(
           resend.emails
             .send({
               from: process.env.RESEND_FROM_EMAIL || "NY English Teacher <onboarding@resend.dev>",
-              to: body.email,
+              to: email,
               subject: isSpanish
-                ? `${body.name}, tu Puntaje de Comunicaci\u00F3n: ${totalScore}/100`
-                : `${body.name}, Your Communication Score: ${totalScore}/100`,
-              html: buildQuizTakerEmailHtml(body),
+                ? `${name}, tu Puntaje de Comunicaci\u00F3n: ${totalScore}/100`
+                : `${name}, Your Communication Score: ${totalScore}/100`,
+              html: buildQuizTakerEmailHtml(emailFields),
             })
             .catch((err: Error) => console.error("Quiz taker email error:", err)),
         );
