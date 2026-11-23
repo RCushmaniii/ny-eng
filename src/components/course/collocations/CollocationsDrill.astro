@@ -1,0 +1,108 @@
+---
+/**
+ * The Right Words for the Job — type-the-preposition drill (EN + ES).
+ * Results are written to the shared progress store and surface on the reference page.
+ */
+import "./collocations.css";
+import { ArrowLeft, Target } from "lucide-astro";
+import {
+  collocationsRoutes,
+  collocationsUi,
+  type CollocationsLang,
+} from "@data/collocations/index";
+
+interface Props {
+  lang: CollocationsLang;
+}
+const { lang } = Astro.props;
+const t = collocationsUi[lang].drill;
+const routes = collocationsRoutes[lang];
+---
+
+<!-- Hero -->
+<section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-14 md:pt-36 md:pb-16">
+  <div class="site-container mx-auto px-4 text-white">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+        <Target class="w-4 h-4" />
+        {t.eyebrow}
+      </div>
+      <h1
+        class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+        style="font-family: 'Noto Sans KR', sans-serif;"
+      >
+        {t.h1}
+      </h1>
+      <a
+        href={routes.reference}
+        class="inline-flex items-center gap-2 text-sm text-indigo-300 hover:text-white underline underline-offset-2"
+      >
+        <ArrowLeft class="w-4 h-4" />
+        {t.back}
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="py-12 md:py-16 bg-slate-50">
+  <div class="site-container mx-auto px-4">
+    <div class="colx max-w-2xl mx-auto" id="colx-drill" data-lang={lang}>
+      <p class="intro" set:html={t.sub} />
+      <p class="intro small" set:html={t.sub2} />
+
+      <div id="colx-setup" class="card">
+        <div class="fields">
+          <div>
+            <label class="lbl" for="colx-scope">{t.scope}</label>
+            <select id="colx-scope"></select>
+          </div>
+          <div>
+            <label class="lbl" for="colx-len">{t.len}</label>
+            <select id="colx-len">
+              <option value="10" selected>10</option>
+              <option value="20">20</option>
+              <option value="0">{t.lenAll}</option>
+            </select>
+          </div>
+        </div>
+        <div class="btnrow">
+          <button type="button" class="btn primary" id="colx-start">{t.start}</button>
+        </div>
+      </div>
+
+      <div id="colx-quiz" class="card" hidden>
+        <div class="meta">
+          <span>{t.question} <b id="colx-qnum">1</b> {t.of} <b id="colx-qtot">10</b></span>
+          <span>{t.correct} <b id="colx-qok">0</b></span>
+          <span>{t.streak} <b id="colx-qstreak">0</b></span>
+        </div>
+        <div class="bar"><i id="colx-qfill"></i></div>
+        <p class="prompt" id="colx-prompt" lang="en"></p>
+        <p class="phint" id="colx-phint"></p>
+        <input
+          type="text"
+          id="colx-answer"
+          autocomplete="off"
+          autocapitalize="off"
+          autocorrect="off"
+          spellcheck="false"
+          placeholder={t.placeholder}
+          aria-label={t.answerLabel}
+        />
+        <p class="tip" set:html={t.tip} />
+        <div id="colx-verdict" aria-live="polite"></div>
+        <div class="btnrow" style="margin-top:16px">
+          <button type="button" class="btn primary" id="colx-check">{t.check}</button>
+          <button type="button" class="btn" id="colx-skip">{t.show}</button>
+          <button type="button" class="btn" id="colx-quit">{t.end}</button>
+        </div>
+      </div>
+
+      <div id="colx-result" class="card" hidden></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import "./drill.client";
+</script>

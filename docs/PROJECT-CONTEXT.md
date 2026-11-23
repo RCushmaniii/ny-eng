@@ -117,6 +117,12 @@ Pulled from GSC/Bing 2026-07-25 → 2026-08-05. Use it; don't re-derive it.
   geo variant targets a fraction of a fraction.
 - **No Verb Patterns cheat sheet.** `diagnosis-table` and `top-traps` already are
   that asset; a third would recreate the exact cannibalization PR #220 cleaned up.
+  **Exception, 2026-11-23:** Robert asked for his own "The Right Words for the Job"
+  artifact to be added. It lives under the course at
+  `/en/course/verb-patterns/collocations/` (+ `collocations-drill/`) and targets
+  "business English collocations" / adjective + preposition, not "verb patterns".
+  It is an interactive drill bank, not a fourth static table — keep its title and
+  meta on the collocations head term so it does not compete with `diagnosis-table`.
 - **The root `/` 307 stays a 307.** It is conditional on `accept-language`, and a
   temporary redirect is correct for locale-adaptive routing because the
   destination varies per user. A 308 would cache one language for everyone.

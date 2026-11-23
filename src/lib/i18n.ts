@@ -169,6 +169,8 @@ export type TKey =
   | "course/verb-patterns/diagnosis-table"
   | "course/verb-patterns/gerund-or-infinitive"
   | "course/verb-patterns/top-traps"
+  | "course/verb-patterns/collocations"
+  | "course/verb-patterns/collocations-drill"
   | "course/drive-the-decision"
   | "course/drive-the-decision/series-a-cac-pushback"
   | "course/drive-the-decision/board-meeting-burn-rate"
@@ -371,6 +373,8 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/verb-patterns/diagnosis-table": "/en/course/verb-patterns/diagnosis-table/",
     "course/verb-patterns/gerund-or-infinitive": "/en/course/verb-patterns/gerund-or-infinitive/",
     "course/verb-patterns/top-traps": "/en/course/verb-patterns/top-traps/",
+    "course/verb-patterns/collocations": "/en/course/verb-patterns/collocations/",
+    "course/verb-patterns/collocations-drill": "/en/course/verb-patterns/collocations-drill/",
     "course/drive-the-decision": "/en/course/drive-the-decision/",
     "course/drive-the-decision/series-a-cac-pushback":
       "/en/course/drive-the-decision/series-a-cac-pushback/",
@@ -594,6 +598,8 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/verb-patterns/gerund-or-infinitive":
       "/es/curso/patrones-verbales/gerundio-o-infinitivo/",
     "course/verb-patterns/top-traps": "/es/curso/patrones-verbales/errores-mas-comunes/",
+    "course/verb-patterns/collocations": "/es/curso/patrones-verbales/colocaciones/",
+    "course/verb-patterns/collocations-drill": "/es/curso/patrones-verbales/colocaciones-practica/",
     "course/drive-the-decision": "/es/curso/dirige-la-decision/",
     "course/drive-the-decision/series-a-cac-pushback":
       "/es/curso/dirige-la-decision/pushback-cac-serie-a/",
@@ -757,6 +763,8 @@ export function getAllTKeys(): TKey[] {
     "course/verb-patterns/diagnosis-table",
     "course/verb-patterns/gerund-or-infinitive",
     "course/verb-patterns/top-traps",
+    "course/verb-patterns/collocations",
+    "course/verb-patterns/collocations-drill",
     "course/drive-the-decision",
     "course/drive-the-decision/series-a-cac-pushback",
     "course/drive-the-decision/board-meeting-burn-rate",

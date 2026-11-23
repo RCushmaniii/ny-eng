@@ -1,0 +1,22 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import CourseLessonSchema from "@components/seo/CourseLessonSchema.astro";
+import CollocationsDrill from "@components/course/collocations/CollocationsDrill.astro";
+import { getGroups } from "@data/collocations/index";
+
+const lang = "en";
+const tkey = "course/verb-patterns/collocations-drill" as const;
+const total = getGroups(lang).reduce((n, g) => n + g.items.length, 0);
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title="Preposition Drill: Business English Collocations"
+  description={`Type the missing preposition in ${total} business English expressions. Instant feedback, and anything you miss comes back in your next round.`}
+>
+  <CollocationsDrill lang={lang} />
+  <CourseLessonSchema {lang} {tkey} />
+</Base>

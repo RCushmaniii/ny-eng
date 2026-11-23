@@ -249,6 +249,32 @@ export const verbBonuses: VerbBonus[] = [
     icon: "AlertTriangle",
     available: true,
   },
+  {
+    id: 4,
+    slug: "collocations",
+    slugEs: "colocaciones",
+    title: "The Right Words for the Job",
+    titleEs: "Las Palabras Correctas para el Trabajo",
+    description:
+      "Business English collocations grouped by meaning — which preposition each verb and adjective takes, and the ones that take none.",
+    descriptionEs:
+      "Colocaciones del inglés de negocios agrupadas por significado — qué preposición lleva cada verbo y adjetivo, y cuáles no llevan ninguna.",
+    icon: "BookOpen",
+    available: true,
+  },
+  {
+    id: 5,
+    slug: "collocations-drill",
+    slugEs: "colocaciones-practica",
+    title: "Fill in the Preposition",
+    titleEs: "Completa la Preposición",
+    description:
+      "Type the missing preposition. Anything you miss comes back in the next round until you get it right.",
+    descriptionEs:
+      "Escribe la preposición que falta. Lo que falles regresa en la siguiente ronda hasta que lo contestes bien.",
+    icon: "Target",
+    available: true,
+  },
 ];
 
 // Convenience: lessons grouped by level, for the hub roadmap.

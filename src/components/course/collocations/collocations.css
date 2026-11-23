@@ -1,0 +1,738 @@
+/* The Right Words for the Job — shared styles for the reference and drill pages.
+   Everything is scoped under .colx. Colors are set explicitly on every text element
+   because global.css sets `p` and `a` colors that would otherwise win. */
+
+.colx {
+  --cx-surface: #ffffff;
+  --cx-ink: #0f172a;
+  --cx-ink-soft: #475569;
+  --cx-ink-faint: #64748b;
+  --cx-line: #e2e8f0;
+  --cx-accent: #4338ca;
+  --cx-accent-soft: #eef2ff;
+  --cx-good: #047857;
+  --cx-good-soft: #ecfdf5;
+  --cx-warn: #b45309;
+  --cx-warn-soft: #fffbeb;
+  --cx-bad: #be123c;
+  --cx-bad-soft: #fff1f2;
+  --cx-radius: 14px;
+  --cx-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.05);
+  color: var(--cx-ink);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.colx *,
+.colx *::before,
+.colx *::after {
+  box-sizing: border-box;
+}
+
+.colx p {
+  color: inherit;
+}
+
+.colx .ok {
+  color: var(--cx-good);
+  font-weight: 700;
+}
+.colx .x {
+  color: var(--cx-bad);
+  font-weight: 700;
+}
+.colx .warn {
+  color: var(--cx-warn);
+  font-weight: 700;
+}
+
+/* ── Intro ─────────────────────────────────────────────── */
+.colx .howto {
+  margin: 0 0 22px;
+  padding: 14px 16px;
+  background: var(--cx-accent-soft);
+  border-radius: 12px;
+  color: var(--cx-ink-soft);
+  font-size: 14.5px;
+}
+.colx .howto p {
+  margin: 0;
+  color: var(--cx-ink-soft);
+}
+.colx .howto p + p {
+  margin-top: 10px;
+}
+.colx .howto b {
+  color: var(--cx-ink);
+}
+
+.colx .idxlabel {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cx-ink-faint);
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+.colx .index {
+  margin: 0 0 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 8px;
+}
+.colx .index a {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  text-decoration: none;
+  border: 1px solid var(--cx-line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: var(--cx-surface);
+  color: var(--cx-ink);
+  font-size: 14.5px;
+  line-height: 1.35;
+  transition: 0.15s;
+  min-height: 44px;
+}
+.colx .index a:hover {
+  border-color: var(--cx-accent);
+  color: var(--cx-accent);
+  background: var(--cx-accent-soft);
+}
+.colx .index a:focus-visible {
+  outline: 2px solid var(--cx-accent);
+  outline-offset: 2px;
+}
+.colx .index .n {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cx-accent);
+  letter-spacing: 0.06em;
+  flex: 0 0 auto;
+}
+.colx .index .t {
+  flex: 1 1 auto;
+}
+.colx .index .c {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--cx-ink-faint);
+  font-variant-numeric: tabular-nums;
+  flex: 0 0 auto;
+}
+
+/* ── Toolbar ───────────────────────────────────────────── */
+.colx .toolbar {
+  padding: 14px 0 12px;
+  margin-bottom: 6px;
+  border-top: 1px solid var(--cx-line);
+  border-bottom: 1px solid var(--cx-line);
+}
+.colx .bar {
+  height: 5px;
+  background: var(--cx-line);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.colx .bar > i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--cx-good);
+  border-radius: 99px;
+  transition: width 0.25s ease;
+}
+.colx .row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.colx .count {
+  font-size: 13px;
+  color: var(--cx-ink-faint);
+  margin-right: auto;
+  font-variant-numeric: tabular-nums;
+}
+.colx button.btn {
+  font-size: 13.5px;
+  line-height: 1.4;
+  padding: 7px 13px;
+  border-radius: 99px;
+  border: 1px solid var(--cx-line);
+  background: var(--cx-surface);
+  color: var(--cx-ink);
+  cursor: pointer;
+  transition: 0.15s;
+}
+.colx button.btn:hover {
+  border-color: var(--cx-accent);
+  color: var(--cx-accent);
+}
+.colx button.btn:focus-visible,
+.colx .chip:focus-visible {
+  outline: 2px solid var(--cx-accent);
+  outline-offset: 2px;
+}
+.colx button.btn[aria-pressed="true"] {
+  background: var(--cx-ink);
+  color: #ffffff;
+  border-color: var(--cx-ink);
+}
+.colx input[type="search"],
+.colx input[type="text"],
+.colx select {
+  font-size: 16px;
+  padding: 10px 13px;
+  border-radius: 10px;
+  border: 1px solid var(--cx-line);
+  background: var(--cx-surface);
+  color: var(--cx-ink);
+  width: 100%;
+}
+.colx input[type="search"] {
+  margin-top: 10px;
+}
+.colx input:focus,
+.colx select:focus {
+  outline: 2px solid var(--cx-accent);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+.colx .chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.colx .chip {
+  font-size: 12.5px;
+  line-height: 1.4;
+  padding: 5px 11px;
+  border-radius: 99px;
+  border: 1px solid var(--cx-line);
+  background: transparent;
+  color: var(--cx-ink-soft);
+  cursor: pointer;
+  transition: 0.15s;
+}
+.colx .chip:hover {
+  color: var(--cx-accent);
+  border-color: var(--cx-accent);
+}
+.colx .chip[aria-pressed="true"] {
+  background: var(--cx-ink);
+  color: #ffffff;
+  border-color: var(--cx-ink);
+}
+
+/* ── Cheat sheet ───────────────────────────────────────── */
+.colx .cheat {
+  margin: 22px 0 10px;
+  background: var(--cx-surface);
+  border: 1px solid var(--cx-line);
+  border-radius: var(--cx-radius);
+  padding: 18px 18px 8px;
+  box-shadow: var(--cx-shadow);
+}
+.colx .cheat h2 {
+  font-size: 18px;
+  line-height: 1.3;
+  margin: 0 0 4px;
+  font-weight: 700;
+  color: var(--cx-ink);
+}
+.colx .cheat p.lead {
+  margin: 0 0 14px;
+  font-size: 14px;
+  color: var(--cx-ink-faint);
+}
+.colx .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.colx .cell {
+  border: 1px solid var(--cx-line);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.colx .cell b {
+  display: block;
+  font-size: 14px;
+  color: var(--cx-accent);
+  margin-bottom: 2px;
+}
+.colx .cell span {
+  font-size: 13.5px;
+  color: var(--cx-ink-soft);
+  line-height: 1.45;
+  display: block;
+}
+
+/* ── Groups ────────────────────────────────────────────── */
+.colx .group {
+  margin-top: 34px;
+  scroll-margin-top: 96px;
+}
+.colx .sec-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.colx .sec-num {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--cx-accent);
+  text-transform: uppercase;
+}
+.colx h2.sec-title {
+  font-size: 22px;
+  line-height: 1.3;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--cx-ink);
+}
+.colx .rule {
+  margin: 8px 0 14px;
+  font-size: 14.5px;
+  color: var(--cx-ink-soft);
+  border-left: 3px solid var(--cx-accent);
+  padding: 8px 0 8px 12px;
+  background: linear-gradient(90deg, var(--cx-accent-soft), transparent 72%);
+  border-radius: 0 8px 8px 0;
+}
+.colx .rule b {
+  color: var(--cx-ink);
+}
+
+.colx .list {
+  background: var(--cx-surface);
+  border: 1px solid var(--cx-line);
+  border-radius: var(--cx-radius);
+  overflow: hidden;
+  box-shadow: var(--cx-shadow);
+}
+.colx .item {
+  border-bottom: 1px solid var(--cx-line);
+  scroll-margin-top: 96px;
+}
+.colx .item:last-child {
+  border-bottom: 0;
+}
+.colx .item[hidden],
+.colx .group[hidden] {
+  display: none;
+}
+.colx .head {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 14px 46px 14px 18px;
+  position: relative;
+  color: var(--cx-ink);
+  display: block;
+}
+.colx .head:hover {
+  background: var(--cx-accent-soft);
+}
+.colx .head:focus-visible {
+  outline: 2px solid var(--cx-accent);
+  outline-offset: -2px;
+}
+.colx .q {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  display: block;
+}
+.colx .q .blank {
+  color: var(--cx-ink-faint);
+  font-weight: 500;
+}
+.colx .q .hint {
+  font-weight: 400;
+  color: var(--cx-ink-soft);
+  font-size: 14.5px;
+}
+.colx .tap {
+  font-size: 12.5px;
+  color: var(--cx-ink-faint);
+  margin-top: 2px;
+  display: block;
+}
+.colx .item.open .tap {
+  display: none;
+}
+.colx .item .head::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 22px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: transparent;
+}
+.colx .item.solid .head::before {
+  background: var(--cx-good);
+}
+.colx .item.weak .head::before {
+  background: #d97706;
+}
+.colx .chev {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 11px;
+  height: 11px;
+  border-right: 2px solid var(--cx-ink-faint);
+  border-bottom: 2px solid var(--cx-ink-faint);
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+.colx .item.open .chev {
+  transform: rotate(-135deg);
+  border-color: var(--cx-good);
+}
+.colx .badge {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 99px;
+  margin-left: 7px;
+  vertical-align: 2px;
+  white-space: nowrap;
+}
+.colx .b-trap {
+  color: var(--cx-warn);
+  background: var(--cx-warn-soft);
+}
+.colx .b-multi {
+  color: var(--cx-accent);
+  background: var(--cx-accent-soft);
+}
+
+.colx .body {
+  display: none;
+  padding: 0 18px 16px;
+}
+.colx .item.open .body {
+  display: block;
+}
+.colx .ans {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--cx-good);
+  margin: 0 0 6px;
+}
+.colx .ex {
+  margin: 0;
+  font-size: 15px;
+  color: var(--cx-ink-soft);
+}
+.colx .ex em,
+.colx .var em,
+.colx .verdict em {
+  color: var(--cx-ink);
+  font-style: italic;
+}
+.colx .vars {
+  margin: 11px 0 0;
+  display: grid;
+  gap: 8px;
+}
+.colx .var {
+  font-size: 14.5px;
+  color: var(--cx-ink-soft);
+  border-left: 2px solid var(--cx-line);
+  padding: 1px 0 1px 11px;
+}
+.colx .var .p {
+  font-size: 15.5px;
+  color: var(--cx-ink);
+  font-weight: 700;
+  margin-right: 6px;
+}
+.colx .pill {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 99px;
+  margin-right: 7px;
+  vertical-align: 1px;
+}
+.colx .p-1 {
+  color: var(--cx-good);
+  background: var(--cx-good-soft);
+}
+.colx .p-2 {
+  color: var(--cx-accent);
+  background: var(--cx-accent-soft);
+}
+.colx .p-3 {
+  color: var(--cx-ink-faint);
+  background: #f1f5f9;
+}
+.colx .note,
+.colx .trap {
+  margin: 9px 0 0;
+  font-size: 14px;
+  color: var(--cx-ink-soft);
+  border-radius: 9px;
+  padding: 8px 11px;
+}
+.colx .note {
+  background: var(--cx-good-soft);
+}
+.colx .trap {
+  background: var(--cx-warn-soft);
+}
+.colx .trap b,
+.colx .note b {
+  color: var(--cx-ink);
+}
+.colx .empty {
+  margin: 28px 0 0;
+  padding: 18px;
+  text-align: center;
+  color: var(--cx-ink-faint);
+  border: 1px dashed var(--cx-line);
+  border-radius: var(--cx-radius);
+}
+
+/* ── Drill ─────────────────────────────────────────────── */
+.colx .intro {
+  margin: 0 0 12px;
+  color: var(--cx-ink-soft);
+  font-size: 15.5px;
+}
+.colx .intro.small {
+  font-size: 14.5px;
+  margin-bottom: 22px;
+}
+.colx .intro b {
+  color: var(--cx-ink);
+}
+.colx .intro b.warn {
+  color: var(--cx-warn);
+}
+.colx .card {
+  background: var(--cx-surface);
+  border: 1px solid var(--cx-line);
+  border-radius: var(--cx-radius);
+  box-shadow: var(--cx-shadow);
+  padding: 22px;
+  margin-bottom: 16px;
+}
+.colx .card[hidden] {
+  display: none;
+}
+.colx label.lbl {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cx-ink-faint);
+  font-weight: 600;
+  margin: 0 0 7px;
+}
+.colx .fields {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+@media (max-width: 560px) {
+  .colx .fields {
+    grid-template-columns: 1fr;
+  }
+}
+.colx .btnrow {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+.colx .card button.btn {
+  font-size: 14.5px;
+  padding: 10px 20px;
+}
+.colx button.btn.primary {
+  background: var(--cx-accent);
+  color: #ffffff;
+  border-color: var(--cx-accent);
+}
+.colx button.btn.primary:hover {
+  background: #3730a3;
+  border-color: #3730a3;
+  color: #ffffff;
+}
+.colx .meta {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--cx-ink-faint);
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.colx .meta b {
+  color: var(--cx-ink);
+  font-variant-numeric: tabular-nums;
+}
+.colx .card .bar {
+  margin-bottom: 18px;
+}
+.colx .card .bar > i {
+  background: var(--cx-accent);
+}
+.colx .prompt {
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+  color: var(--cx-ink);
+}
+.colx .prompt .blank {
+  color: var(--cx-accent);
+  border-bottom: 2px solid var(--cx-accent);
+  padding: 0 22px;
+}
+.colx .phint {
+  font-size: 15px;
+  color: var(--cx-ink-soft);
+  margin: 0 0 18px;
+}
+.colx .phint .grp {
+  color: var(--cx-ink-faint);
+}
+.colx .tip {
+  font-size: 13px;
+  color: var(--cx-ink-faint);
+  margin: 9px 0 0;
+}
+.colx .verdict {
+  margin-top: 16px;
+  border-radius: 11px;
+  padding: 13px 15px;
+  font-size: 14.5px;
+  color: var(--cx-ink-soft);
+}
+.colx .v-ok {
+  background: var(--cx-good-soft);
+}
+.colx .v-no {
+  background: var(--cx-bad-soft);
+}
+.colx .verdict .vt {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+.colx .v-ok .vt {
+  color: var(--cx-good);
+}
+.colx .v-no .vt {
+  color: var(--cx-bad);
+}
+.colx .verdict b {
+  color: var(--cx-ink);
+}
+.colx .verdict .gap {
+  margin-top: 8px;
+}
+.colx .also {
+  margin-top: 7px;
+  font-size: 13.5px;
+  color: var(--cx-ink-faint);
+}
+.colx .score {
+  font-size: 46px;
+  line-height: 1.1;
+  font-weight: 700;
+  margin: 0 0 4px;
+  letter-spacing: -0.02em;
+  color: var(--cx-ink);
+}
+.colx .scoresub {
+  color: var(--cx-ink-soft);
+  font-size: 15px;
+  margin: 0 0 20px;
+}
+.colx .missed {
+  border-top: 1px solid var(--cx-line);
+  padding-top: 14px;
+  margin-top: 20px;
+}
+.colx .missed h3 {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cx-ink-faint);
+  margin: 0 0 11px;
+  font-weight: 600;
+}
+.colx .mrow {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--cx-line);
+  font-size: 14.5px;
+}
+.colx .mrow:last-child {
+  border-bottom: 0;
+}
+.colx .mrow .mq {
+  font-weight: 600;
+  color: var(--cx-ink);
+}
+.colx .mrow .mq span {
+  font-weight: 400;
+  color: var(--cx-ink-soft);
+}
+.colx .mrow .ma {
+  color: var(--cx-good);
+  font-size: 15px;
+}
+.colx .mrow .mu {
+  color: var(--cx-bad);
+  font-size: 13px;
+}
+
+@media print {
+  .colx .toolbar,
+  .colx .idxlabel,
+  .colx .index,
+  .colx .howto {
+    display: none;
+  }
+  .colx .body {
+    display: block !important;
+  }
+  .colx .tap,
+  .colx .chev {
+    display: none;
+  }
+  .colx .list {
+    box-shadow: none;
+  }
+}
+
+#colx-drill {
+  scroll-margin-top: 96px;
+}

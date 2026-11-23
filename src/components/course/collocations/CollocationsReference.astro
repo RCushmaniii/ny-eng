@@ -1,0 +1,260 @@
+---
+/**
+ * The Right Words for the Job — reference page body (EN + ES).
+ *
+ * Every expression and answer is rendered to static HTML at build time, so the whole
+ * bank is crawlable and works as a read-only list without JavaScript. The script below
+ * only adds behavior: reveal/hide, search, filters, and the progress earned in the drill.
+ */
+import "./collocations.css";
+import { ArrowLeft, ArrowRight, BookOpen } from "lucide-astro";
+import {
+  getGroups,
+  getCheat,
+  collocationsRoutes,
+  collocationsUi,
+  fill,
+  type CollocationsLang,
+} from "@data/collocations/index";
+
+interface Props {
+  lang: CollocationsLang;
+}
+const { lang } = Astro.props;
+
+const groups = getGroups(lang);
+const cheat = getCheat(lang);
+const ui = collocationsUi[lang];
+const t = ui.ref;
+const routes = collocationsRoutes[lang];
+const total = groups.reduce((n, g) => n + g.items.length, 0);
+
+const rankClass = { 1: "p-1", 2: "p-2", 3: "p-3" } as const;
+const prepTags = ["on", "for", "with", "to", "in", "of", "about", "at", "from", "by"];
+const chips: [string, string][] = [
+  ["all", t.chips.all],
+  ["weak", t.chips.weak],
+  ["trap", t.chips.trap],
+  ["multi", t.chips.multi],
+  ["none", ui.noPrep],
+  ...prepTags.map((p): [string, string] => [p, p]),
+];
+
+const stripTags = (s: string) => s.replace(/<[^>]+>/g, " ");
+const searchText = (...parts: (string | undefined)[]) =>
+  stripTags(parts.filter(Boolean).join(" "))
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9 +()]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+const clientStrings = {
+  total,
+  countNone: t.countNone,
+  countSolid: t.countSolid,
+  countWeak: t.countWeak,
+  countOf: t.countOf,
+  resetConfirm: t.resetConfirm,
+};
+---
+
+<!-- Hero -->
+<section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
+  <div class="site-container mx-auto px-4 text-white">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+        <BookOpen class="w-4 h-4" />
+        {t.eyebrow}
+      </div>
+      <h1
+        class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+        style="font-family: 'Noto Sans KR', sans-serif;"
+      >
+        {t.h1}
+      </h1>
+      <p class="text-lg text-slate-300 max-w-2xl leading-relaxed mb-8">{t.sub}</p>
+      <a
+        href={routes.drill}
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white font-semibold transition-colors"
+      >
+        {t.startDrill}
+        <ArrowRight class="w-5 h-5" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="py-12 md:py-16 bg-slate-50">
+  <div class="site-container mx-auto px-4">
+    <div class="colx max-w-4xl mx-auto" id="colx-ref" data-strings={JSON.stringify(clientStrings)}>
+      <div class="howto">
+        <p set:html={t.howto} />
+        <p set:html={t.formulas} />
+      </div>
+
+      <p class="idxlabel">{t.jump}</p>
+      <nav class="index" id="colx-index" aria-label={t.jump}>
+        {
+          groups.map((g, gi) => (
+            <a href={`#g${gi}`}>
+              <span class="n">{gi + 1}</span>
+              <span class="t">{g.title}</span>
+              <span class="c">{g.items.length}</span>
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="toolbar">
+        <div class="bar"><i id="colx-fill"></i></div>
+        <div class="row">
+          <span class="count" id="colx-count" aria-live="polite"
+            >{fill(t.countNone, { total })}</span
+          >
+          <button
+            type="button"
+            class="btn"
+            id="colx-accordion"
+            aria-pressed="true"
+            title={t.accordionTitle}>{t.accordion}</button
+          >
+          <button type="button" class="btn" id="colx-reveal">{t.revealAll}</button>
+          <button type="button" class="btn" id="colx-hide">{t.hideAll}</button>
+          <button type="button" class="btn" id="colx-reset">{t.reset}</button>
+        </div>
+        <input
+          type="search"
+          id="colx-search"
+          placeholder={t.searchPlaceholder}
+          aria-label={t.searchLabel}
+        />
+        <div class="chips" id="colx-chips" role="group" aria-label={t.filterLabel}>
+          {
+            chips.map(([tag, label], i) => (
+              <button
+                type="button"
+                class="chip"
+                data-tag={tag}
+                aria-pressed={i === 0 ? "true" : "false"}
+              >
+                {label}
+              </button>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="cheat">
+        <h2>{t.cheatTitle}</h2>
+        <p class="lead">{t.cheatLead}</p>
+        <div class="grid">
+          {
+            cheat.map(([prep, text]) => (
+              <div class="cell">
+                <b>{prep === "NONE" ? ui.noPrepUpper : prep}</b>
+                <span set:html={text} />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div id="colx-sections">
+        {
+          groups.map((g, gi) => (
+            <section class="group" id={`g${gi}`}>
+              <div class="sec-head">
+                <span class="sec-num">
+                  {t.group} {gi + 1}
+                </span>
+                <h2 class="sec-title">{g.title}</h2>
+              </div>
+              <p class="rule" set:html={g.rule} />
+              <div class="list">
+                {g.items.map((it, ii) => {
+                  const [before, after = ""] = it.q.split("______");
+                  return (
+                    <div
+                      class="item"
+                      id={`i${it.id}`}
+                      data-id={it.id}
+                      data-tags={it.tags.join(" ")}
+                      data-text={searchText(it.q, it.hint, it.a)}
+                    >
+                      <button
+                        type="button"
+                        class="head"
+                        aria-expanded="false"
+                        aria-controls={`b${it.id}`}
+                      >
+                        <span class="q">
+                          {ii + 1}. {before}
+                          <span class="blank">______</span>
+                          {after} {it.hint && <span class="hint">{it.hint}</span>}
+                          {it.isTrap && <span class="badge b-trap">{t.badgeTrap}</span>}
+                          {it.isMulti && (
+                            <span class="badge b-multi">
+                              {fill(t.badgeMulti, { n: it.v!.length })}
+                            </span>
+                          )}
+                        </span>
+                        <span class="tap">{t.tap}</span>
+                        <span class="chev" aria-hidden="true" />
+                      </button>
+                      <div class="body" id={`b${it.id}`}>
+                        <p class="ans">{it.a}</p>
+                        <p class="ex" lang="en" set:html={it.ex} />
+                        {it.v && (
+                          <div class="vars">
+                            {it.v.map(([prep, rank, when]) => (
+                              <div class="var">
+                                <span class:list={["pill", rankClass[rank]]}>{ui.rank[rank]}</span>
+                                <span class="p">{prep === "(none)" ? `(${ui.noPrep})` : prep}</span>
+                                <Fragment set:html={when} />
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                        {it.note && <p class="note" set:html={it.note} />}
+                        {it.trap && <p class="trap" set:html={it.trap} />}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+          ))
+        }
+      </div>
+      <p class="empty" id="colx-empty" hidden>{t.empty}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer nav -->
+<section class="py-12 bg-white border-t border-slate-200">
+  <div class="site-container mx-auto px-4">
+    <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-6">
+      <a
+        href={routes.drill}
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors"
+      >
+        {t.startDrill}
+        <ArrowRight class="w-5 h-5" />
+      </a>
+      <a
+        href={routes.course}
+        class="inline-flex items-center gap-2 text-sm text-indigo-700 hover:text-indigo-800 underline underline-offset-2"
+      >
+        <ArrowLeft class="w-4 h-4" />
+        {t.back}
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  import "./reference.client";
+</script>
