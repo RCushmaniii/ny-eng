@@ -177,6 +177,9 @@ export type TKey =
   | "course/conversation/protestantism"
   | "course/conversation/american-suburbs"
   | "course/conversation/professional-networking"
+  | "course/conversation/workplace-conflict"
+  | "course/conversation/impromptu-speaking"
+  | "course/conversation/winning-people-over"
   | "course/verb-patterns/collocations/logistics"
   | "course/verb-patterns/collocations/finance"
   | "course/verb-patterns/collocations/it-managers"
@@ -427,6 +430,9 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/conversation/protestantism": "/en/course/conversation/protestantism/",
     "course/conversation/american-suburbs": "/en/course/conversation/american-suburbs/",
     "course/conversation/professional-networking": "/en/course/conversation/professional-networking/",
+    "course/conversation/workplace-conflict": "/en/course/conversation/workplace-conflict/",
+    "course/conversation/impromptu-speaking": "/en/course/conversation/impromptu-speaking/",
+    "course/conversation/winning-people-over": "/en/course/conversation/winning-people-over/",
     "course/verb-patterns/collocations/logistics": "/en/course/verb-patterns/collocations/logistics/",
     "course/verb-patterns/collocations/finance": "/en/course/verb-patterns/collocations/finance/",
     "course/verb-patterns/collocations/it-managers": "/en/course/verb-patterns/collocations/it-managers/",
@@ -698,6 +704,9 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/conversation/protestantism": "/es/curso/conversacion/protestantismo/",
     "course/conversation/american-suburbs": "/es/curso/conversacion/suburbios-de-estados-unidos/",
     "course/conversation/professional-networking": "/es/curso/conversacion/networking-profesional/",
+    "course/conversation/workplace-conflict": "/es/curso/conversacion/conflicto-en-el-trabajo/",
+    "course/conversation/impromptu-speaking": "/es/curso/conversacion/hablar-sin-preparacion/",
+    "course/conversation/winning-people-over": "/es/curso/conversacion/como-ganarte-a-la-gente/",
     "course/verb-patterns/collocations/logistics": "/es/curso/patrones-verbales/colocaciones/logistica/",
     "course/verb-patterns/collocations/finance": "/es/curso/patrones-verbales/colocaciones/finanzas/",
     "course/verb-patterns/collocations/it-managers": "/es/curso/patrones-verbales/colocaciones/gerencia-de-ti/",
@@ -909,6 +918,9 @@ export function getAllTKeys(): TKey[] {
     "course/conversation/protestantism",
     "course/conversation/american-suburbs",
     "course/conversation/professional-networking",
+    "course/conversation/workplace-conflict",
+    "course/conversation/impromptu-speaking",
+    "course/conversation/winning-people-over",
     "course/verb-patterns/collocations/logistics",
     "course/verb-patterns/collocations/finance",
     "course/verb-patterns/collocations/it-managers",

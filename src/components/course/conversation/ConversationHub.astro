@@ -9,6 +9,9 @@ import {
   BookOpen,
   Home,
   Handshake,
+  Scale,
+  Mic,
+  HeartHandshake,
 } from "lucide-astro";
 import {
   conversationRoutes,
@@ -28,7 +31,7 @@ const { lang } = Astro.props;
 const ui = conversationUi[lang];
 const t = ui.hub;
 const routes = conversationRoutes[lang];
-const icons = { Landmark, Church, BookOpen, Home, Handshake };
+const icons = { Landmark, Church, BookOpen, Home, Handshake, Scale, Mic, HeartHandshake };
 ---
 
 <section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
