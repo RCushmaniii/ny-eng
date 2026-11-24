@@ -123,6 +123,7 @@ Pulled from GSC/Bing 2026-07-25 → 2026-08-05. Use it; don't re-derive it.
   "business English collocations" / adjective + preposition, not "verb patterns".
   It is an interactive drill bank, not a fourth static table — keep its title and
   meta on the collocations head term so it does not compete with `diagnosis-table`.
+  **Extended the same day:** seven job-role versions live under `/en/course/verb-patterns/collocations/<role>/` (logistics, finance, IT managers, software developers, doctors, surgeons, salon owners), each targeting "English collocations for <role>". They share the one drill page through `?role=`. Add a role by adding a file in `src/data/collocations/roles/` and one entry in its `index.ts`, plus the tkey in `src/lib/i18n.ts`.
 - **The root `/` 307 stays a 307.** It is conditional on `accept-language`, and a
   temporary redirect is correct for locale-adaptive routing because the
   destination varies per user. A 308 would cache one language for everyone.

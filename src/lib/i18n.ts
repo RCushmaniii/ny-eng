@@ -171,6 +171,19 @@ export type TKey =
   | "course/verb-patterns/top-traps"
   | "course/verb-patterns/collocations"
   | "course/verb-patterns/collocations-drill"
+  | "course/conversation"
+  | "course/conversation/american-politics"
+  | "course/conversation/catholicism"
+  | "course/conversation/protestantism"
+  | "course/conversation/american-suburbs"
+  | "course/conversation/professional-networking"
+  | "course/verb-patterns/collocations/logistics"
+  | "course/verb-patterns/collocations/finance"
+  | "course/verb-patterns/collocations/it-managers"
+  | "course/verb-patterns/collocations/software-developers"
+  | "course/verb-patterns/collocations/doctors"
+  | "course/verb-patterns/collocations/surgeons"
+  | "course/verb-patterns/collocations/salon-owners"
   | "course/drive-the-decision"
   | "course/drive-the-decision/series-a-cac-pushback"
   | "course/drive-the-decision/board-meeting-burn-rate"
@@ -375,6 +388,19 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/verb-patterns/top-traps": "/en/course/verb-patterns/top-traps/",
     "course/verb-patterns/collocations": "/en/course/verb-patterns/collocations/",
     "course/verb-patterns/collocations-drill": "/en/course/verb-patterns/collocations-drill/",
+    "course/conversation": "/en/course/conversation/",
+    "course/conversation/american-politics": "/en/course/conversation/american-politics/",
+    "course/conversation/catholicism": "/en/course/conversation/catholicism/",
+    "course/conversation/protestantism": "/en/course/conversation/protestantism/",
+    "course/conversation/american-suburbs": "/en/course/conversation/american-suburbs/",
+    "course/conversation/professional-networking": "/en/course/conversation/professional-networking/",
+    "course/verb-patterns/collocations/logistics": "/en/course/verb-patterns/collocations/logistics/",
+    "course/verb-patterns/collocations/finance": "/en/course/verb-patterns/collocations/finance/",
+    "course/verb-patterns/collocations/it-managers": "/en/course/verb-patterns/collocations/it-managers/",
+    "course/verb-patterns/collocations/software-developers": "/en/course/verb-patterns/collocations/software-developers/",
+    "course/verb-patterns/collocations/doctors": "/en/course/verb-patterns/collocations/doctors/",
+    "course/verb-patterns/collocations/surgeons": "/en/course/verb-patterns/collocations/surgeons/",
+    "course/verb-patterns/collocations/salon-owners": "/en/course/verb-patterns/collocations/salon-owners/",
     "course/drive-the-decision": "/en/course/drive-the-decision/",
     "course/drive-the-decision/series-a-cac-pushback":
       "/en/course/drive-the-decision/series-a-cac-pushback/",
@@ -600,6 +626,19 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/verb-patterns/top-traps": "/es/curso/patrones-verbales/errores-mas-comunes/",
     "course/verb-patterns/collocations": "/es/curso/patrones-verbales/colocaciones/",
     "course/verb-patterns/collocations-drill": "/es/curso/patrones-verbales/colocaciones-practica/",
+    "course/conversation": "/es/curso/conversacion/",
+    "course/conversation/american-politics": "/es/curso/conversacion/politica-estadounidense/",
+    "course/conversation/catholicism": "/es/curso/conversacion/catolicismo/",
+    "course/conversation/protestantism": "/es/curso/conversacion/protestantismo/",
+    "course/conversation/american-suburbs": "/es/curso/conversacion/suburbios-de-estados-unidos/",
+    "course/conversation/professional-networking": "/es/curso/conversacion/networking-profesional/",
+    "course/verb-patterns/collocations/logistics": "/es/curso/patrones-verbales/colocaciones/logistica/",
+    "course/verb-patterns/collocations/finance": "/es/curso/patrones-verbales/colocaciones/finanzas/",
+    "course/verb-patterns/collocations/it-managers": "/es/curso/patrones-verbales/colocaciones/gerencia-de-ti/",
+    "course/verb-patterns/collocations/software-developers": "/es/curso/patrones-verbales/colocaciones/desarrollo-de-software/",
+    "course/verb-patterns/collocations/doctors": "/es/curso/patrones-verbales/colocaciones/medicina/",
+    "course/verb-patterns/collocations/surgeons": "/es/curso/patrones-verbales/colocaciones/cirugia/",
+    "course/verb-patterns/collocations/salon-owners": "/es/curso/patrones-verbales/colocaciones/salon-de-belleza/",
     "course/drive-the-decision": "/es/curso/dirige-la-decision/",
     "course/drive-the-decision/series-a-cac-pushback":
       "/es/curso/dirige-la-decision/pushback-cac-serie-a/",
@@ -765,6 +804,19 @@ export function getAllTKeys(): TKey[] {
     "course/verb-patterns/top-traps",
     "course/verb-patterns/collocations",
     "course/verb-patterns/collocations-drill",
+    "course/conversation",
+    "course/conversation/american-politics",
+    "course/conversation/catholicism",
+    "course/conversation/protestantism",
+    "course/conversation/american-suburbs",
+    "course/conversation/professional-networking",
+    "course/verb-patterns/collocations/logistics",
+    "course/verb-patterns/collocations/finance",
+    "course/verb-patterns/collocations/it-managers",
+    "course/verb-patterns/collocations/software-developers",
+    "course/verb-patterns/collocations/doctors",
+    "course/verb-patterns/collocations/surgeons",
+    "course/verb-patterns/collocations/salon-owners",
     "course/drive-the-decision",
     "course/drive-the-decision/series-a-cac-pushback",
     "course/drive-the-decision/board-meeting-burn-rate",

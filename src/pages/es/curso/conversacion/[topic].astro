@@ -1,0 +1,29 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import TopicReference from "@components/course/conversation/TopicReference.astro";
+import ConversationSchema from "@components/course/conversation/ConversationSchema.astro";
+import { fill, pick, topicTKey, topicTotal, topics, type Topic } from "@data/conversation/index";
+
+export function getStaticPaths() {
+  return topics.map((topic) => ({ params: { topic: topic.slug.es }, props: { topic } }));
+}
+
+interface Props {
+  topic: Topic;
+}
+const { topic } = Astro.props;
+const lang = "es";
+const tkey = topicTKey(topic);
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title={pick(topic.title, lang)}
+  description={fill(pick(topic.description, lang), { total: topicTotal(topic) })}
+>
+  <TopicReference lang={lang} topic={topic} />
+  <ConversationSchema lang={lang} topic={topic} />
+</Base>

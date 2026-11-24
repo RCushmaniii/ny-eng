@@ -70,7 +70,11 @@ export const Progress = {
     const store = load();
     return Object.keys(store).filter((id) => store[id].last === 0);
   },
-  reset() {
-    persist({});
+  /** Clears everything, or only the given item ids (one bank's worth). */
+  reset(ids?: string[]) {
+    if (!ids) return persist({});
+    const store = load();
+    ids.forEach((id) => delete store[id]);
+    persist(store);
   },
 };

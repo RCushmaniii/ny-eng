@@ -1,0 +1,41 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import CollocationsReference from "@components/course/collocations/CollocationsReference.astro";
+import RoleSchema from "@components/course/collocations/RoleSchema.astro";
+import {
+  collocationsUi,
+  fill,
+  getRoleGroups,
+  roleTKey,
+  roles,
+  type Role,
+} from "@data/collocations/index";
+
+export function getStaticPaths() {
+  return roles.map((role) => ({
+    params: { role: role.id },
+    props: { role },
+  }));
+}
+
+interface Props {
+  role: Role;
+}
+const { role } = Astro.props;
+const lang = "en";
+const li = 0;
+const tkey = roleTKey(role);
+const total = getRoleGroups(role, lang).reduce((n, g) => n + g.items.length, 0);
+const description = fill(collocationsUi[lang].role.description, {
+  total,
+  audience: role.audience[li],
+  examples: role.examples,
+});
+---
+
+<Base lang={lang} tkey={tkey} title={role.title[li]} description={description}>
+  <CollocationsReference lang={lang} role={role} />
+  <RoleSchema lang={lang} role={role} />
+</Base>

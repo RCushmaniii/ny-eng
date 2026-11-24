@@ -1,0 +1,123 @@
+---
+/** Conversation Briefings — series landing page body (EN + ES). */
+import {
+  ArrowLeft,
+  ArrowRight,
+  MessagesSquare,
+  Landmark,
+  Church,
+  BookOpen,
+  Home,
+  Handshake,
+} from "lucide-astro";
+import {
+  conversationRoutes,
+  conversationUi,
+  fill,
+  pick,
+  topicRoute,
+  topicTotal,
+  topics,
+  type ConversationLang,
+} from "@data/conversation/index";
+
+interface Props {
+  lang: ConversationLang;
+}
+const { lang } = Astro.props;
+const ui = conversationUi[lang];
+const t = ui.hub;
+const routes = conversationRoutes[lang];
+const icons = { Landmark, Church, BookOpen, Home, Handshake };
+---
+
+<section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-16 md:pt-36 md:pb-20">
+  <div class="site-container mx-auto px-4 text-white">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-2 text-indigo-300 text-sm font-semibold mb-3">
+        <MessagesSquare class="w-4 h-4" />
+        {t.eyebrow}
+      </div>
+      <h1
+        class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight"
+        style="font-family: 'Noto Sans KR', sans-serif;"
+      >
+        {t.h1}
+      </h1>
+      <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">{t.sub}</p>
+    </div>
+  </div>
+</section>
+
+<section class="py-14 md:py-20 bg-slate-50">
+  <div class="site-container mx-auto px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8">{t.pick}</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        {
+          topics.map((topic) => {
+            const Icon = icons[topic.icon];
+            return (
+              <a
+                href={topicRoute(topic, lang)}
+                class="group flex flex-col bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-xl hover:border-indigo-400 transition-all duration-200"
+              >
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-indigo-500 text-white shrink-0">
+                    <Icon class="w-5 h-5" />
+                  </span>
+                  <span class="text-xs font-semibold uppercase tracking-wider text-indigo-700">
+                    {fill(t.terms, { n: topicTotal(topic) })}
+                  </span>
+                </div>
+                <h3 class="text-xl font-bold mb-2" style="color:#0f172a">
+                  {pick(topic.h1, lang)}
+                </h3>
+                <p class="text-sm leading-relaxed mb-5" style="color:#475569">
+                  {pick(topic.card, lang)}
+                </p>
+                <span class="mt-auto inline-flex items-center gap-1 text-indigo-700 font-semibold text-sm group-hover:gap-2 transition-all">
+                  {t.open}
+                  <ArrowRight class="w-4 h-4" />
+                </span>
+              </a>
+            );
+          })
+        }
+      </div>
+
+      <div class="mt-14 bg-white rounded-2xl border border-slate-200 p-6 md:p-8">
+        <h2 class="text-xl font-bold text-slate-900 mb-4">{t.how}</h2>
+        <ul class="space-y-3">
+          {
+            t.howItems.map((item) => (
+              <li class="leading-relaxed" style="color:#334155" set:html={item} />
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="mt-10 rounded-2xl bg-slate-900 p-8 md:p-10">
+        <h2 class="text-2xl font-bold text-white mb-3">{ui.coach.title}</h2>
+        <p class="leading-relaxed mb-6 max-w-2xl" style="color:#cbd5e1">{ui.coach.text}</p>
+        <a
+          href={ui.coach.href}
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white font-semibold transition-colors"
+        >
+          {ui.coach.cta}
+          <ArrowRight class="w-5 h-5" />
+        </a>
+      </div>
+
+      <p class="mt-10 text-center">
+        <a
+          href={routes.courses}
+          class="inline-flex items-center gap-2 text-sm text-indigo-700 hover:text-indigo-800 underline underline-offset-2"
+        >
+          <ArrowLeft class="w-4 h-4" />
+          {t.back}
+        </a>
+      </p>
+    </div>
+  </div>
+</section>

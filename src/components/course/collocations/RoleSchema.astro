@@ -1,0 +1,55 @@
+---
+/** JSON-LD for a job-role collocations page: BreadcrumbList + LearningResource. */
+import { routeFor } from "../../../lib/i18n";
+import { verbPatternsInfo } from "../../../data/verb-patterns/levels";
+import {
+  collocationsRoutes,
+  collocationsUi,
+  fill,
+  roleRoute,
+  type CollocationsLang,
+  type Role,
+} from "@data/collocations/index";
+
+interface Props {
+  lang: CollocationsLang;
+  role: Role;
+}
+const { lang, role } = Astro.props;
+const li = lang === "es" ? 1 : 0;
+const ui = collocationsUi[lang];
+
+const SITE = (Astro.site?.href ?? "https://www.nyenglishteacher.com/").replace(/\/+$/, "");
+const abs = (path: string) => SITE + path;
+const courseUrl = abs(routeFor[lang]["course/verb-patterns"]);
+const pageUrl = abs(roleRoute(role, lang));
+const name = fill(ui.role.h1, { name: role.name[li] });
+
+const crumbs = [
+  { name: lang === "es" ? "Inicio" : "Home", item: abs(lang === "es" ? "/es/" : "/en/") },
+  { name: lang === "es" ? "Cursos" : "Courses", item: abs(routeFor[lang]["courses"]) },
+  { name: lang === "es" ? verbPatternsInfo.titleEs : verbPatternsInfo.title, item: courseUrl },
+  { name: ui.ref.h1, item: abs(collocationsRoutes[lang].reference) },
+  { name: role.name[li], item: pageUrl },
+];
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: crumbs.map((c, i) => ({ "@type": "ListItem", position: i + 1, ...c })),
+};
+const learningResource = {
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  name,
+  url: pageUrl,
+  inLanguage: lang === "es" ? "es-MX" : "en",
+  learningResourceType: "Reference guide",
+  educationalLevel: "Intermediate to Advanced (B1–C1)",
+  isAccessibleForFree: true,
+  provider: { "@type": "Organization", name: "New York English Teacher", url: SITE + "/" },
+  isPartOf: { "@id": `${courseUrl}#course` },
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumb)} />
+<script type="application/ld+json" is:inline set:html={JSON.stringify(learningResource)} />
