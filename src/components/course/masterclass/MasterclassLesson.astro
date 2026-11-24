@@ -1,0 +1,171 @@
+---
+/** One lesson of a data-driven master class (EN + ES). */
+import "./masterclass.css";
+import { ArrowLeft, ArrowRight, Clock } from "lucide-astro";
+import LessonBlocks from "./LessonBlocks.astro";
+import {
+  courseRoute,
+  fill,
+  lessonRoute,
+  masterclassUi,
+  pick,
+  type Course,
+  type MasterclassLang,
+} from "@data/masterclass/index";
+import type { Lesson } from "@data/masterclass/types";
+
+interface Props {
+  lang: MasterclassLang;
+  course: Course;
+  lesson: Lesson;
+}
+const { lang, course, lesson } = Astro.props;
+const ui = masterclassUi[lang];
+const p = (pair: [string, string]) => pick(pair, lang);
+const index = course.lessons.findIndex((l) => l.id === lesson.id);
+const prev = course.lessons[index - 1];
+const next = course.lessons[index + 1];
+const hub = courseRoute(course, lang);
+---
+
+<section class="bg-gradient-to-b from-slate-900 to-indigo-950 pt-28 pb-12 md:pt-36 md:pb-14">
+  <div class="site-container mx-auto px-4 text-white">
+    <div class="max-w-3xl mx-auto">
+      <a
+        href={hub}
+        class="inline-flex items-center gap-2 text-sm text-indigo-300 hover:text-white mb-4"
+      >
+        <ArrowLeft class="w-4 h-4" />
+        {p(course.name)}
+      </a>
+      <div
+        class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold mb-3"
+        style="color:#a5b4fc"
+      >
+        <span>{ui.lesson} {index + 1} {ui.of} {course.lessons.length}</span>
+        <span class="inline-flex items-center gap-1.5">
+          <Clock class="w-4 h-4" />
+          {fill(ui.minutes, { n: lesson.minutes })}
+        </span>
+      </div>
+      <h1
+        class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight"
+        style="font-family: 'Noto Sans KR', sans-serif;"
+      >
+        {p(lesson.title)}
+      </h1>
+      <p class="text-lg leading-relaxed" style="color:#cbd5e1">{p(lesson.summary)}</p>
+    </div>
+  </div>
+</section>
+
+<section class="py-12 md:py-16 bg-slate-50">
+  <div class="site-container mx-auto px-4">
+    <article class="mc max-w-3xl mx-auto">
+      <LessonBlocks lang={lang} blocks={lesson.blocks} />
+    </article>
+
+    <div class="max-w-3xl mx-auto mt-12">
+      <button
+        type="button"
+        class="mc-done"
+        data-mc-done
+        data-course={course.id}
+        data-lesson={lesson.id}
+        data-l-mark={ui.markDone}
+        data-l-done={ui.markedDone}
+        aria-pressed="false">{ui.markDone}</button
+      >
+
+      <nav class="grid sm:grid-cols-2 gap-3 mt-8" aria-label={ui.lessonsTitle}>
+        {
+          prev ? (
+            <a
+              href={lessonRoute(course, prev, lang)}
+              class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 hover:border-indigo-400 transition-colors"
+            >
+              <ArrowLeft class="w-5 h-5 text-indigo-500 shrink-0" />
+              <span class="min-w-0">
+                <span
+                  class="block text-xs font-semibold uppercase tracking-wider"
+                  style="color:#64748b"
+                >
+                  {ui.prev}
+                </span>
+                <span class="block font-semibold leading-snug" style="color:#0f172a">
+                  {p(prev.title)}
+                </span>
+              </span>
+            </a>
+          ) : (
+            <span />
+          )
+        }
+        <a
+          href={next ? lessonRoute(course, next, lang) : hub}
+          class="flex items-center justify-between gap-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 p-4 transition-colors"
+        >
+          <span class="min-w-0">
+            <span
+              class="block text-xs font-semibold uppercase tracking-wider"
+              style="color:#c7d2fe"
+            >
+              {next ? ui.next : p(course.name)}
+            </span>
+            <span class="block font-semibold leading-snug text-white">
+              {next ? p(next.title) : ui.finish}
+            </span>
+          </span>
+          <ArrowRight class="w-5 h-5 text-white shrink-0" />
+        </a>
+      </nav>
+
+      <div class="rounded-2xl bg-slate-900 p-8 mt-10">
+        <h2 class="text-xl font-bold text-white mb-2">{ui.coachTitle}</h2>
+        <p class="leading-relaxed mb-5" style="color:#cbd5e1">{ui.coachText}</p>
+        <a
+          href={ui.coachHref}
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white font-semibold transition-colors"
+        >
+          {ui.coachCta}
+          <ArrowRight class="w-5 h-5" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .mc-done {
+    font: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    min-height: 52px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 2px solid #4338ca;
+    background: #ffffff;
+    color: #4338ca;
+    cursor: pointer;
+    transition:
+      background-color 0.15s,
+      color 0.15s;
+  }
+  .mc-done:hover {
+    background: #eef2ff;
+  }
+  .mc-done[aria-pressed="true"] {
+    background: #047857;
+    border-color: #047857;
+    color: #ffffff;
+  }
+  .mc-done:focus-visible {
+    outline: 2px solid #4338ca;
+    outline-offset: 2px;
+  }
+</style>
+
+<script>
+  import "./masterclass.client";
+</script>

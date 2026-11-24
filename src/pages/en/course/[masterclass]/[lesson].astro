@@ -1,0 +1,34 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import MasterclassLesson from "@components/course/masterclass/MasterclassLesson.astro";
+import MasterclassSchema from "@components/course/masterclass/MasterclassSchema.astro";
+import { courses, lessonTKey, pick, type Course } from "@data/masterclass/index";
+import type { Lesson } from "@data/masterclass/types";
+
+export function getStaticPaths() {
+  return courses.flatMap((course) =>
+    course.lessons.map((lesson) => ({
+      params: { masterclass: course.id, lesson: lesson.id },
+      props: { course, lesson },
+    })),
+  );
+}
+
+interface Props {
+  course: Course;
+  lesson: Lesson;
+}
+const { course, lesson } = Astro.props;
+const lang = "en";
+const tkey = lessonTKey(course, lesson);
+// Keep the <title> within 60 characters: the lesson title alone when the pair would run long.
+const full = `${pick(lesson.title, lang)} | ${pick(course.name, lang)}`;
+const title = full.length <= 60 ? full : pick(lesson.title, lang);
+---
+
+<Base lang={lang} tkey={tkey} title={title} description={pick(lesson.description, lang)}>
+  <MasterclassLesson lang={lang} course={course} lesson={lesson} />
+  <MasterclassSchema lang={lang} course={course} lesson={lesson} />
+</Base>

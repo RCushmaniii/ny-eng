@@ -1,0 +1,85 @@
+---
+/** JSON-LD for a data-driven master class: Course on the overview, LearningResource on a lesson. */
+import { routeFor } from "../../../lib/i18n";
+import {
+  courseRoute,
+  lessonRoute,
+  pick,
+  type Course,
+  type MasterclassLang,
+} from "@data/masterclass/index";
+import type { Lesson } from "@data/masterclass/types";
+
+interface Props {
+  lang: MasterclassLang;
+  course: Course;
+  lesson?: Lesson;
+}
+const { lang, course, lesson } = Astro.props;
+const p = (pair: [string, string]) => pick(pair, lang);
+
+const SITE = (Astro.site?.href ?? "https://www.nyenglishteacher.com/").replace(/\/+$/, "");
+const abs = (path: string) => SITE + path;
+const courseUrl = abs(courseRoute(course, lang));
+const inLanguage = lang === "es" ? "es-MX" : "en";
+const provider = { "@type": "Organization", name: "New York English Teacher", url: SITE + "/" };
+
+const crumbs = [
+  { name: lang === "es" ? "Inicio" : "Home", item: abs(lang === "es" ? "/es/" : "/en/") },
+  { name: lang === "es" ? "Cursos" : "Courses", item: abs(routeFor[lang]["courses"]) },
+  { name: p(course.name), item: courseUrl },
+  ...(lesson ? [{ name: p(lesson.title), item: abs(lessonRoute(course, lesson, lang)) }] : []),
+];
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: crumbs.map((c, i) => ({ "@type": "ListItem", position: i + 1, ...c })),
+};
+
+const main = lesson
+  ? {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      name: p(lesson.title),
+      description: p(lesson.description),
+      url: abs(lessonRoute(course, lesson, lang)),
+      inLanguage,
+      learningResourceType: "Lesson",
+      educationalLevel: "Upper-intermediate to Advanced (B2–C1)",
+      timeRequired: `PT${lesson.minutes}M`,
+      isAccessibleForFree: true,
+      provider,
+      isPartOf: { "@id": `${courseUrl}#course` },
+    }
+  : {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "@id": `${courseUrl}#course`,
+      name: p(course.name),
+      description: p(course.description),
+      url: courseUrl,
+      inLanguage,
+      isAccessibleForFree: true,
+      provider,
+      offers: {
+        "@type": "Offer",
+        category: "Free",
+        price: "0",
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+      },
+      hasCourseInstance: {
+        "@type": "CourseInstance",
+        courseMode: "online",
+        courseWorkload: course.workload,
+      },
+      hasPart: course.lessons.map((l) => ({
+        "@type": "LearningResource",
+        name: p(l.title),
+        url: abs(lessonRoute(course, l, lang)),
+      })),
+    };
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumb)} />
+<script type="application/ld+json" is:inline set:html={JSON.stringify(main)} />

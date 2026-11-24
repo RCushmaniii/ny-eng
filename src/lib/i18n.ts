@@ -184,6 +184,39 @@ export type TKey =
   | "course/verb-patterns/collocations/doctors"
   | "course/verb-patterns/collocations/surgeons"
   | "course/verb-patterns/collocations/salon-owners"
+  | "course/persuasive-speaking"
+  | "course/persuasive-speaking/start-here"
+  | "course/persuasive-speaking/observe"
+  | "course/persuasive-speaking/infer"
+  | "course/persuasive-speaking/narrate"
+  | "course/persuasive-speaking/ethos"
+  | "course/persuasive-speaking/logos"
+  | "course/persuasive-speaking/pathos"
+  | "course/persuasive-speaking/delivery"
+  | "course/persuasive-speaking/the-three-minute-talk"
+  | "course/persuasive-speaking/practice-plan"
+  | "course/productive-conflict"
+  | "course/productive-conflict/conflict-is-information"
+  | "course/productive-conflict/lower-the-temperature"
+  | "course/productive-conflict/disagree-with-the-idea"
+  | "course/productive-conflict/listen-first"
+  | "course/productive-conflict/questions-not-accusations"
+  | "course/productive-conflict/find-the-shared-goal"
+  | "course/productive-conflict/debate-well"
+  | "course/productive-conflict/when-it-gets-heated"
+  | "course/productive-conflict/repair-and-follow-up"
+  | "course/productive-conflict/cheat-sheet"
+  | "course/business-writing"
+  | "course/business-writing/start-with-the-point"
+  | "course/business-writing/sentence-boundaries"
+  | "course/business-writing/grammar-that-costs-credibility"
+  | "course/business-writing/cut-the-clutter"
+  | "course/business-writing/strong-verbs-precise-words"
+  | "course/business-writing/paragraphs-that-flow"
+  | "course/business-writing/tone-and-register"
+  | "course/business-writing/rhythm-and-emphasis"
+  | "course/business-writing/emails-and-reports"
+  | "course/business-writing/the-revision-passes"
   | "course/drive-the-decision"
   | "course/drive-the-decision/series-a-cac-pushback"
   | "course/drive-the-decision/board-meeting-burn-rate"
@@ -401,6 +434,39 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/verb-patterns/collocations/doctors": "/en/course/verb-patterns/collocations/doctors/",
     "course/verb-patterns/collocations/surgeons": "/en/course/verb-patterns/collocations/surgeons/",
     "course/verb-patterns/collocations/salon-owners": "/en/course/verb-patterns/collocations/salon-owners/",
+    "course/persuasive-speaking": "/en/course/persuasive-speaking/",
+    "course/persuasive-speaking/start-here": "/en/course/persuasive-speaking/start-here/",
+    "course/persuasive-speaking/observe": "/en/course/persuasive-speaking/observe/",
+    "course/persuasive-speaking/infer": "/en/course/persuasive-speaking/infer/",
+    "course/persuasive-speaking/narrate": "/en/course/persuasive-speaking/narrate/",
+    "course/persuasive-speaking/ethos": "/en/course/persuasive-speaking/ethos/",
+    "course/persuasive-speaking/logos": "/en/course/persuasive-speaking/logos/",
+    "course/persuasive-speaking/pathos": "/en/course/persuasive-speaking/pathos/",
+    "course/persuasive-speaking/delivery": "/en/course/persuasive-speaking/delivery/",
+    "course/persuasive-speaking/the-three-minute-talk": "/en/course/persuasive-speaking/the-three-minute-talk/",
+    "course/persuasive-speaking/practice-plan": "/en/course/persuasive-speaking/practice-plan/",
+    "course/productive-conflict": "/en/course/productive-conflict/",
+    "course/productive-conflict/conflict-is-information": "/en/course/productive-conflict/conflict-is-information/",
+    "course/productive-conflict/lower-the-temperature": "/en/course/productive-conflict/lower-the-temperature/",
+    "course/productive-conflict/disagree-with-the-idea": "/en/course/productive-conflict/disagree-with-the-idea/",
+    "course/productive-conflict/listen-first": "/en/course/productive-conflict/listen-first/",
+    "course/productive-conflict/questions-not-accusations": "/en/course/productive-conflict/questions-not-accusations/",
+    "course/productive-conflict/find-the-shared-goal": "/en/course/productive-conflict/find-the-shared-goal/",
+    "course/productive-conflict/debate-well": "/en/course/productive-conflict/debate-well/",
+    "course/productive-conflict/when-it-gets-heated": "/en/course/productive-conflict/when-it-gets-heated/",
+    "course/productive-conflict/repair-and-follow-up": "/en/course/productive-conflict/repair-and-follow-up/",
+    "course/productive-conflict/cheat-sheet": "/en/course/productive-conflict/cheat-sheet/",
+    "course/business-writing": "/en/course/business-writing/",
+    "course/business-writing/start-with-the-point": "/en/course/business-writing/start-with-the-point/",
+    "course/business-writing/sentence-boundaries": "/en/course/business-writing/sentence-boundaries/",
+    "course/business-writing/grammar-that-costs-credibility": "/en/course/business-writing/grammar-that-costs-credibility/",
+    "course/business-writing/cut-the-clutter": "/en/course/business-writing/cut-the-clutter/",
+    "course/business-writing/strong-verbs-precise-words": "/en/course/business-writing/strong-verbs-precise-words/",
+    "course/business-writing/paragraphs-that-flow": "/en/course/business-writing/paragraphs-that-flow/",
+    "course/business-writing/tone-and-register": "/en/course/business-writing/tone-and-register/",
+    "course/business-writing/rhythm-and-emphasis": "/en/course/business-writing/rhythm-and-emphasis/",
+    "course/business-writing/emails-and-reports": "/en/course/business-writing/emails-and-reports/",
+    "course/business-writing/the-revision-passes": "/en/course/business-writing/the-revision-passes/",
     "course/drive-the-decision": "/en/course/drive-the-decision/",
     "course/drive-the-decision/series-a-cac-pushback":
       "/en/course/drive-the-decision/series-a-cac-pushback/",
@@ -639,6 +705,39 @@ export const routeFor: Record<Locale, Record<TKey, string>> = {
     "course/verb-patterns/collocations/doctors": "/es/curso/patrones-verbales/colocaciones/medicina/",
     "course/verb-patterns/collocations/surgeons": "/es/curso/patrones-verbales/colocaciones/cirugia/",
     "course/verb-patterns/collocations/salon-owners": "/es/curso/patrones-verbales/colocaciones/salon-de-belleza/",
+    "course/persuasive-speaking": "/es/curso/hablar-para-persuadir/",
+    "course/persuasive-speaking/start-here": "/es/curso/hablar-para-persuadir/empieza-aqui/",
+    "course/persuasive-speaking/observe": "/es/curso/hablar-para-persuadir/observar/",
+    "course/persuasive-speaking/infer": "/es/curso/hablar-para-persuadir/inferir/",
+    "course/persuasive-speaking/narrate": "/es/curso/hablar-para-persuadir/narrar/",
+    "course/persuasive-speaking/ethos": "/es/curso/hablar-para-persuadir/ethos-credibilidad/",
+    "course/persuasive-speaking/logos": "/es/curso/hablar-para-persuadir/logos-logica/",
+    "course/persuasive-speaking/pathos": "/es/curso/hablar-para-persuadir/pathos-emocion/",
+    "course/persuasive-speaking/delivery": "/es/curso/hablar-para-persuadir/voz-y-presencia/",
+    "course/persuasive-speaking/the-three-minute-talk": "/es/curso/hablar-para-persuadir/la-charla-de-tres-minutos/",
+    "course/persuasive-speaking/practice-plan": "/es/curso/hablar-para-persuadir/plan-de-practica/",
+    "course/productive-conflict": "/es/curso/conflicto-productivo/",
+    "course/productive-conflict/conflict-is-information": "/es/curso/conflicto-productivo/el-conflicto-es-informacion/",
+    "course/productive-conflict/lower-the-temperature": "/es/curso/conflicto-productivo/bajar-la-temperatura/",
+    "course/productive-conflict/disagree-with-the-idea": "/es/curso/conflicto-productivo/desacuerdo-con-la-idea/",
+    "course/productive-conflict/listen-first": "/es/curso/conflicto-productivo/escuchar-primero/",
+    "course/productive-conflict/questions-not-accusations": "/es/curso/conflicto-productivo/preguntas-no-acusaciones/",
+    "course/productive-conflict/find-the-shared-goal": "/es/curso/conflicto-productivo/encontrar-la-meta-comun/",
+    "course/productive-conflict/debate-well": "/es/curso/conflicto-productivo/debatir-bien/",
+    "course/productive-conflict/when-it-gets-heated": "/es/curso/conflicto-productivo/cuando-sube-de-tono/",
+    "course/productive-conflict/repair-and-follow-up": "/es/curso/conflicto-productivo/reparar-y-dar-seguimiento/",
+    "course/productive-conflict/cheat-sheet": "/es/curso/conflicto-productivo/guia-rapida/",
+    "course/business-writing": "/es/curso/escritura-profesional/",
+    "course/business-writing/start-with-the-point": "/es/curso/escritura-profesional/empieza-por-el-punto/",
+    "course/business-writing/sentence-boundaries": "/es/curso/escritura-profesional/limites-de-la-oracion/",
+    "course/business-writing/grammar-that-costs-credibility": "/es/curso/escritura-profesional/gramatica-que-cuesta-credibilidad/",
+    "course/business-writing/cut-the-clutter": "/es/curso/escritura-profesional/quitar-lo-que-sobra/",
+    "course/business-writing/strong-verbs-precise-words": "/es/curso/escritura-profesional/verbos-fuertes-palabras-precisas/",
+    "course/business-writing/paragraphs-that-flow": "/es/curso/escritura-profesional/parrafos-que-fluyen/",
+    "course/business-writing/tone-and-register": "/es/curso/escritura-profesional/tono-y-registro/",
+    "course/business-writing/rhythm-and-emphasis": "/es/curso/escritura-profesional/ritmo-y-enfasis/",
+    "course/business-writing/emails-and-reports": "/es/curso/escritura-profesional/correos-y-reportes/",
+    "course/business-writing/the-revision-passes": "/es/curso/escritura-profesional/las-pasadas-de-revision/",
     "course/drive-the-decision": "/es/curso/dirige-la-decision/",
     "course/drive-the-decision/series-a-cac-pushback":
       "/es/curso/dirige-la-decision/pushback-cac-serie-a/",
@@ -817,6 +916,39 @@ export function getAllTKeys(): TKey[] {
     "course/verb-patterns/collocations/doctors",
     "course/verb-patterns/collocations/surgeons",
     "course/verb-patterns/collocations/salon-owners",
+    "course/persuasive-speaking",
+    "course/persuasive-speaking/start-here",
+    "course/persuasive-speaking/observe",
+    "course/persuasive-speaking/infer",
+    "course/persuasive-speaking/narrate",
+    "course/persuasive-speaking/ethos",
+    "course/persuasive-speaking/logos",
+    "course/persuasive-speaking/pathos",
+    "course/persuasive-speaking/delivery",
+    "course/persuasive-speaking/the-three-minute-talk",
+    "course/persuasive-speaking/practice-plan",
+    "course/productive-conflict",
+    "course/productive-conflict/conflict-is-information",
+    "course/productive-conflict/lower-the-temperature",
+    "course/productive-conflict/disagree-with-the-idea",
+    "course/productive-conflict/listen-first",
+    "course/productive-conflict/questions-not-accusations",
+    "course/productive-conflict/find-the-shared-goal",
+    "course/productive-conflict/debate-well",
+    "course/productive-conflict/when-it-gets-heated",
+    "course/productive-conflict/repair-and-follow-up",
+    "course/productive-conflict/cheat-sheet",
+    "course/business-writing",
+    "course/business-writing/start-with-the-point",
+    "course/business-writing/sentence-boundaries",
+    "course/business-writing/grammar-that-costs-credibility",
+    "course/business-writing/cut-the-clutter",
+    "course/business-writing/strong-verbs-precise-words",
+    "course/business-writing/paragraphs-that-flow",
+    "course/business-writing/tone-and-register",
+    "course/business-writing/rhythm-and-emphasis",
+    "course/business-writing/emails-and-reports",
+    "course/business-writing/the-revision-passes",
     "course/drive-the-decision",
     "course/drive-the-decision/series-a-cac-pushback",
     "course/drive-the-decision/board-meeting-burn-rate",
