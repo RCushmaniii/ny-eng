@@ -34,7 +34,7 @@ export const footerContentEn = (siteConfig: { companyName: string }) => {
           // Not /en/quiz/: vercel.json 308s the hub to the IT-services landing.
           { name: "Communication Quiz", href: "/en/quiz/it-services/" },
           { name: "Executive Memes", href: "/en/meme-portfolio/all/" },
-          { name: "Site Index", href: "/en/site-index/" },
+          { name: "Site Map", href: "/en/site-index/" },
         ],
       },
       connect: {
@@ -53,6 +53,7 @@ export const footerContentEn = (siteConfig: { companyName: string }) => {
       },
     },
     legalMenu: [
+      { name: "Site Map", href: "/en/site-index/" },
       { name: "Privacy Policy", href: routes.en.legal.privacy },
       { name: "Terms of Service", href: routes.en.legal.terms },
       { name: "Cancellation Policy", href: routes.en.legal.cancellation },

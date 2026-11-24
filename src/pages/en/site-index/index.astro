@@ -10,10 +10,11 @@ import Base from "@layouts/Base.astro";
 import { services } from "@data/services";
 import type { FreeAsset } from "@/types/free-asset";
 import SiteIndexCourses from "@components/course/SiteIndexCourses.astro";
+import SiteMapExplorer from "@components/sitemap/SiteMapExplorer.astro";
 import { FileText, Download, Briefcase, ClipboardCheck, BookOpen, Scale } from "lucide-astro";
 
-const title = "Complete Site Index";
-const description = "Browse all pages, resources, and services from New York English Teacher. Find executive English coaching, negotiation scripts, and interview templates.";
+const title = "Site Map: Every Course, Guide and Service";
+const description = "An interactive map of New York English Teacher: every free course, guide, article and coaching service. Open a branch or search to find any page.";
 
 // Auto-discover all free resources from JSON files
 const allAssets = Object.values(
@@ -95,13 +96,13 @@ const assessments = [
   <section class="pt-28 pb-12 md:pt-32 md:pb-16 bg-gradient-to-b from-slate-50 to-white">
     <div class="site-container px-4 text-center">
       <span class="text-amber-600 font-bold tracking-wider text-sm uppercase mb-4 block">
-        Complete Directory
+        Interactive Site Map
       </span>
       <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-        Site Index
+        Site Map
       </h1>
       <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        Browse all pages, resources, and services. Find exactly what you need to advance your professional English communication.
+        Everything on this site, on one map. Open a branch, or type a word to find the page you need.
       </p>
     </div>
   </section>
@@ -109,6 +110,28 @@ const assessments = [
   <!-- Main Content -->
   <section class="py-12 md:py-16">
     <div class="site-container px-4">
+
+      <!-- Interactive site map -->
+      <SiteMapExplorer
+        lang="en"
+        services={[
+          ...services.map((s) => ({ label: s.title, href: s.link })),
+          ...additionalServices.map((s) => ({ label: s.title, href: `/en/services/${s.slug}/` })),
+        ]}
+        resources={resources.map((r) => ({
+          label: r.en.title,
+          href: `/en/resources/${r.slugEn || r.metadata.id}/`,
+        }))}
+        pdfs={pdfDocuments.map((p) => ({ label: p.title, href: `/assets/documents/${p.slug}.pdf` }))}
+        assessments={assessments.map((q) => ({
+          label: q.title,
+          href: `/en/quiz/${q.slug}/question/1/`,
+        }))}
+      />
+
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-10" id="full-list">
+        The full list
+      </h2>
 
       <!-- Services Section -->
       <div class="mb-16">

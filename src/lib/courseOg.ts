@@ -11,6 +11,11 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 
+// Bump when the images are regenerated. /images/* is served with a one-year immutable
+// cache, so a changed image at the same URL would never reach a browser or a social
+// scraper that has already fetched it (a 404 fetched mid-deploy is cached the same way).
+const VERSION = "2";
+
 export interface OgImage {
   src: string;
   alt: string;
@@ -25,5 +30,5 @@ export function courseOg(key: string, lang: "en" | "es", alt: string): OgImage {
       `[courseOg] Missing social image public${src}. Run: python -I scripts/og/course-og.py (with npm run preview running).`,
     );
   }
-  return { src, alt, width: 1200, height: 630 };
+  return { src: `${src}?v=${VERSION}`, alt, width: 1200, height: 630 };
 }

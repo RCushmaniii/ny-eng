@@ -10,10 +10,11 @@ import Base from "@layouts/Base.astro";
 import { serviciosEs } from "@data/services";
 import type { FreeAsset } from "@/types/free-asset";
 import SiteIndexCourses from "@components/course/SiteIndexCourses.astro";
+import SiteMapExplorer from "@components/sitemap/SiteMapExplorer.astro";
 import { FileText, Download, Briefcase, ClipboardCheck, BookOpen, Scale } from "lucide-astro";
 
-const title = "Índice Completo del Sitio";
-const description = "Explora las páginas, recursos y servicios de New York English Teacher. Coaching de inglés ejecutivo, guiones de negociación y plantillas.";
+const title = "Mapa del Sitio: Cursos, Guías y Servicios";
+const description = "Un mapa interactivo de New York English Teacher: cada curso gratuito, guía, artículo y servicio de coaching. Abre una rama o busca cualquier página.";
 
 // Auto-discover all free resources from JSON files
 const allAssets = Object.values(
@@ -95,13 +96,13 @@ const assessments = [
   <section class="pt-28 pb-12 md:pt-32 md:pb-16 bg-gradient-to-b from-slate-50 to-white">
     <div class="site-container px-4 text-center">
       <span class="text-amber-600 font-bold tracking-wider text-sm uppercase mb-4 block">
-        Directorio Completo
+        Mapa Interactivo del Sitio
       </span>
       <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-        Índice del Sitio
+        Mapa del Sitio
       </h1>
       <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        Explora todas las páginas, recursos y servicios. Encuentra exactamente lo que necesitas para avanzar tu comunicación profesional en inglés.
+        Todo lo que hay en este sitio, en un solo mapa. Abre una rama o escribe una palabra para encontrar la página que necesitas.
       </p>
     </div>
   </section>
@@ -109,6 +110,28 @@ const assessments = [
   <!-- Main Content -->
   <section class="py-12 md:py-16">
     <div class="site-container px-4">
+
+      <!-- Interactive site map -->
+      <SiteMapExplorer
+        lang="es"
+        services={[
+          ...serviciosEs.map((s) => ({ label: s.title, href: s.link })),
+          ...additionalServices.map((s) => ({ label: s.title, href: `/es/servicios/${s.slug}/` })),
+        ]}
+        resources={resources.map((r) => ({
+          label: r.es.title,
+          href: `/es/recursos/${r.slugEs || r.metadata.id}/`,
+        }))}
+        pdfs={pdfDocuments.map((p) => ({ label: p.title, href: `/assets/documents/${p.slug}.pdf` }))}
+        assessments={assessments.map((q) => ({
+          label: q.title,
+          href: `/es/quiz/${q.slug}/question/1/`,
+        }))}
+      />
+
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-10" id="full-list">
+        La lista completa
+      </h2>
 
       <!-- Services Section -->
       <div class="mb-16">

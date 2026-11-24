@@ -1,0 +1,68 @@
+---
+/** One node of the interactive site map. Renders itself recursively for child nodes. */
+import { ChevronRight } from "lucide-astro";
+
+export interface MapNode {
+  label: string;
+  href?: string;
+  children?: MapNode[];
+  /** Opens in a new tab (PDF downloads). */
+  external?: boolean;
+}
+
+interface Props {
+  node: MapNode;
+  /** Unique path of indexes, used for ids: "0", "0-2", "0-2-1". */
+  path: string;
+  depth: number;
+  /** Branch accent color, inherited from the top-level branch. */
+  color?: string;
+}
+
+const { node, path, depth, color } = Astro.props;
+const kids = node.children ?? [];
+const isBranch = kids.length > 0;
+const countLeaves = (n: MapNode): number =>
+  n.children?.length ? n.children.reduce((sum, c) => sum + countLeaves(c), 0) : 1;
+const total = isBranch ? countLeaves(node) : 0;
+const kidsId = `smap-kids-${path}`;
+---
+
+<li
+  class:list={["smap-node", `smap-d${depth}`, { "smap-is-branch": isBranch }]}
+  data-label={node.label.toLowerCase()}
+  style={color ? `--c:${color}` : undefined}
+>
+  {
+    isBranch ? (
+      <button
+        type="button"
+        class="smap-pill smap-branch"
+        aria-expanded="true"
+        aria-controls={kidsId}
+      >
+        <span class="smap-label">{node.label}</span>
+        <span class="smap-count">{total}</span>
+        <ChevronRight class="smap-chev" aria-hidden="true" />
+      </button>
+    ) : (
+      <a
+        class="smap-pill smap-leaf"
+        href={node.href}
+        target={node.external ? "_blank" : undefined}
+        rel={node.external ? "noopener" : undefined}
+      >
+        <span class="smap-label">{node.label}</span>
+      </a>
+    )
+  }
+  {
+    isBranch && (
+      <ul class="smap-kids" id={kidsId}>
+        {kids.map((child, i) => (
+          <Astro.self node={child} path={`${path}-${i}`} depth={depth + 1} color={color} />
+        ))}
+      </ul>
+    )
+  }
+</li>
