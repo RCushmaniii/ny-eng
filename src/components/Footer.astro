@@ -44,6 +44,7 @@ export interface FooterContent {
   tagline: string;
   sections: { // Using a Record for more flexible section keys if needed
     about: FooterSectionData;
+    courses: FooterSectionData;
     resources: FooterSectionData;
     connect: FooterSectionData;
     // You can add more sections here and they will be mapped
@@ -90,7 +91,7 @@ const { footerCta: cta } = content; // Use the cta from the localized content
       </div>
     )}
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-neutral-700 dark:border-neutral-800">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-8 border-b border-neutral-700 dark:border-neutral-800">
       <div class="col-span-1 md:col-span-2 lg:col-span-1">
         <a href={normalizePath(content.logoLink)} aria-label="Homepage" class="flex items-center">
           <Logo variant="footer" /> {/* This will use the dark logo */}

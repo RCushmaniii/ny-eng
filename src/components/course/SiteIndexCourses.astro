@@ -1,0 +1,71 @@
+---
+/** Site index — every free course, briefing and job-role page, in one section (EN + ES). */
+import { GraduationCap } from "lucide-astro";
+import {
+  briefingLinks,
+  collocationsHub,
+  conversationHub,
+  coursesHub,
+  levelCourseLinks,
+  masterclassLinks,
+  roleLinks,
+  type CourseLink,
+  type NavLang,
+} from "@data/courseLinks";
+
+interface Props {
+  lang: NavLang;
+}
+const { lang } = Astro.props;
+const es = lang === "es";
+
+const t = {
+  heading: es ? "Cursos Gratuitos" : "Free Courses",
+  lead: es
+    ? "Cursos interactivos y gratuitos, del nivel principiante al ejecutivo, más clases magistrales y guías de vocabulario para situaciones específicas."
+    : "Free interactive courses from beginner to executive, plus master classes and vocabulary briefings for specific situations.",
+  levels: es ? "Cursos por nivel" : "Courses by level",
+  master: es ? "Clases magistrales" : "Master classes",
+  briefings: es ? "Guías de Conversación" : "Conversation Briefings",
+  roles: es ? "Colocaciones por profesión" : "Collocations by job",
+};
+
+const groups: { title: string; links: CourseLink[] }[] = [
+  { title: t.levels, links: [coursesHub(lang), ...levelCourseLinks(lang)] },
+  { title: t.master, links: masterclassLinks(lang) },
+  { title: t.briefings, links: [conversationHub(lang), ...briefingLinks(lang)] },
+  { title: t.roles, links: [collocationsHub(lang), ...roleLinks(lang)] },
+];
+---
+
+<div class="mb-16" id="courses">
+  <div class="flex items-center gap-3 mb-8">
+    <div class="p-3 bg-indigo-100 rounded-xl">
+      <GraduationCap class="w-6 h-6 text-indigo-700" />
+    </div>
+    <h2 class="text-2xl md:text-3xl font-bold text-slate-900">{t.heading}</h2>
+  </div>
+  <p class="text-slate-600 mb-8 max-w-3xl">{t.lead}</p>
+  {
+    groups.map((group) => (
+      <div class="mb-10">
+        <h3 class="text-lg font-semibold text-slate-900 mb-4">{group.title}</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {group.links.map((link) => (
+            <a
+              href={link.href}
+              class="group p-6 bg-white rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all duration-300"
+            >
+              <h4 class="font-semibold text-slate-900 group-hover:text-indigo-700 mb-2">
+                {link.name}
+              </h4>
+              <p class="text-sm leading-relaxed" style="color:#475569">
+                {link.description}
+              </p>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</div>

@@ -1,5 +1,6 @@
 import type { ConnectItem } from "@components/Footer.astro";
 import { routes } from "@utils/paths";
+import { footerCourseLinks } from "@data/courseLinks";
 import { whatsappBookingHref } from "../whatsappBooking";
 
 export const footerContentEs = (siteConfig: { companyName: string }) => {
@@ -18,6 +19,10 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
             href: `${routes.es.about}#about-why`,
           },
         ],
+      },
+      courses: {
+        title: "Cursos Gratuitos",
+        links: footerCourseLinks("es"),
       },
       resources: {
         title: "Recursos",
