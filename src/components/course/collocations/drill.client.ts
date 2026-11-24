@@ -1,7 +1,8 @@
 // The type-the-preposition drill. Markup shell lives in CollocationsDrill.astro.
 
 import {
-  getGroups,
+  getBankGroups,
+  roles,
   collocationsUi,
   fill,
   type CollocationsLang,
@@ -14,14 +15,17 @@ if (root) {
   const lang: CollocationsLang = root.dataset.lang === "es" ? "es" : "en";
   const ui = collocationsUi[lang];
   const t = ui.drill;
-  const groups = getGroups(lang);
-
   type QueueItem = DrillItem & { group: string; gi: number };
-  const ALL: QueueItem[] = groups.flatMap((g, gi) =>
-    g.items.map((it) => ({ ...it, group: g.title, gi })),
-  );
+  let groups = getBankGroups("general", lang);
+  let ALL: QueueItem[] = [];
+  const loadBank = (bankId: string) => {
+    groups = getBankGroups(bankId, lang);
+    ALL = groups.flatMap((g, gi) => g.items.map((it) => ({ ...it, group: g.title, gi })));
+  };
 
   const el = <T extends HTMLElement>(id: string) => document.getElementById(`colx-${id}`) as T;
+  const bankSel = el<HTMLSelectElement>("bank");
+  const backLink = el<HTMLAnchorElement>("back");
   const scope = el<HTMLSelectElement>("scope");
   const lenSel = el<HTMLSelectElement>("len");
   const input = el<HTMLInputElement>("answer");
@@ -50,7 +54,36 @@ if (root) {
         )
         .join("");
   };
-  buildScopeOptions();
+
+  // The set to practice: the general bank, or one job role. A role page links here with ?role=.
+  const li = lang === "es" ? 1 : 0;
+  const refBase = backLink.getAttribute("href") || "";
+  const syncBank = () => {
+    const role = roles.find((r) => r.id === bankSel.value);
+    loadBank(role ? role.id : "general");
+    backLink.setAttribute(
+      "href",
+      role ? `${refBase}${lang === "es" ? role.slugEs : role.id}/` : refBase,
+    );
+    buildScopeOptions();
+  };
+  bankSel.innerHTML =
+    `<option value="general">${esc(t.bankGeneral)}</option>` +
+    roles.map((r) => `<option value="${r.id}">${esc(r.name[li])}</option>`).join("");
+  const wanted = new URLSearchParams(window.location.search).get("role");
+  if (wanted && roles.some((r) => r.id === wanted)) bankSel.value = wanted;
+  syncBank();
+  bankSel.addEventListener("change", () => {
+    syncBank();
+    try {
+      const url = new URL(window.location.href);
+      if (bankSel.value === "general") url.searchParams.delete("role");
+      else url.searchParams.set("role", bankSel.value);
+      history.replaceState(null, "", url);
+    } catch {
+      /* ignore */
+    }
+  });
 
   const NONE_WORDS = [
     "none",
@@ -70,6 +103,13 @@ if (root) {
     const n = normalize(raw);
     if (!n) return { ok: false, matched: null as string | null };
     if (NONE_WORDS.includes(n)) return { ok: key.includes("none"), matched: "none" };
+    // Two-word answers ("out of") are matched whole before falling back to single words.
+    const phrase = n
+      .replace(/[^a-z ]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    const whole = key.find((k) => k !== "none" && (phrase === k || phrase.endsWith(" " + k)));
+    if (whole) return { ok: true, matched: whole };
     const words = n
       .replace(/[^a-z ]/g, " ")
       .split(/\s+/)

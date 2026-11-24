@@ -3,6 +3,10 @@
 
 import { DATA, CHEAT, type CollocationGroup, type CollocationItem } from "./data";
 import { DATA_ES, CHEAT_ES } from "./es";
+import { roles, type Role } from "./roles/index";
+import type { RoleGroup } from "./roles/types";
+
+export { roles, roleById, type Role, type RoleId } from "./roles/index";
 
 export type CollocationsLang = "en" | "es";
 
@@ -131,6 +135,70 @@ export function getGroups(lang: CollocationsLang): DrillGroup[] {
   return DATA.map((g, gi) => localize(g, gi, lang));
 }
 
+/**
+ * A job-role bank in the same shape the general bank uses. Ids carry the role prefix so
+ * progress for one bank never collides with another: `${role}:${group}-${item}`.
+ */
+function localizeRole(
+  role: Role,
+  group: RoleGroup,
+  gi: number,
+  lang: CollocationsLang,
+): DrillGroup {
+  const i = lang === "es" ? 1 : 0;
+  const noPrep = lang === "es" ? "sin preposición" : "no preposition";
+  const or = lang === "es" ? " · o · " : " · or · ";
+  const lowerFirst = (s: string) => s.charAt(0).toLowerCase() + s.slice(1);
+  const items = group.items.map((it, ii): DrillItem => {
+    const where = `[collocations/${role.id}] "${it.q}"`;
+    if (it.q.split("______").length !== 2) throw new Error(`${where} needs exactly one blank`);
+    if (!it.k.length) throw new Error(`${where} has no answer`);
+    const key = it.k.map((k) => k.toLowerCase().trim());
+    const a = key
+      .map((k) =>
+        k === "none"
+          ? `${lowerFirst(it.q.replace(/\s*______\s*/, " ").trim())} — ${noPrep}`
+          : lowerFirst(it.q.replace("______", k)),
+      )
+      .join(or);
+    const tags = key.map((k) => k.replace(/\s+/g, "-"));
+    if (it.trap) tags.push("trap");
+    if (key.length > 1) tags.push("multi");
+    return {
+      q: it.q,
+      hint: it.hint?.[i],
+      a,
+      ex: it.ex,
+      note: it.note?.[i],
+      trap: it.trap?.[i],
+      tags,
+      id: `${role.id}:${gi}-${ii}`,
+      key,
+      isTrap: Boolean(it.trap),
+      isMulti: key.length > 1,
+    };
+  });
+  return { title: group.title[i], rule: group.rule[i], items };
+}
+
+export function getRoleGroups(role: Role, lang: CollocationsLang): DrillGroup[] {
+  return role.groups.map((g, gi) => localizeRole(role, g, gi, lang));
+}
+
+/** "general" is the original bank; any other id is a job role. */
+export function getBankGroups(bankId: string, lang: CollocationsLang): DrillGroup[] {
+  const role = roles.find((r) => r.id === bankId);
+  return role ? getRoleGroups(role, lang) : getGroups(lang);
+}
+
+export const roleRoute = (role: Role, lang: CollocationsLang) =>
+  `${collocationsRoutes[lang].reference}${lang === "es" ? role.slugEs : role.id}/`;
+
+export const roleDrillRoute = (role: Role, lang: CollocationsLang) =>
+  `${collocationsRoutes[lang].drill}?role=${role.id}`;
+
+export const roleTKey = (role: Role) => `course/verb-patterns/collocations/${role.id}` as const;
+
 export function getCheat(lang: CollocationsLang): [string, string][] {
   return lang === "es" ? CHEAT_ES : CHEAT;
 }
@@ -186,7 +254,23 @@ export const collocationsUi = {
       empty: "Nothing matches that search. Clear it, or pick another filter.",
       back: "Back to Course Overview",
     },
+    role: {
+      eyebrow: "Business English · Collocations by Job",
+      h1: "The Right Words for the Job: {name}",
+      sub: "The verb + preposition combinations {audience} use every week — {scenes} — with the no-preposition traps Spanish speakers fall into. Every example comes from the job.",
+      description:
+        "{total} English collocations for {audience}: {examples} and more. Tap to check each one, then drill them.",
+      startDrill: "Drill these {total}",
+      sectionTitle: "The right words for your job",
+      sectionLead:
+        "The same idea, with every example taken from one profession's working day. Pick yours.",
+      count: "{n} expressions",
+      backGeneral: "Back to the full collocations reference",
+      others: "Other jobs",
+    },
     drill: {
+      bank: "Which set",
+      bankGeneral: "General business English",
       back: "Back to the reference",
       eyebrow: "Business English · Drill",
       h1: "Fill in the Preposition",
@@ -271,7 +355,23 @@ export const collocationsUi = {
       empty: "Nada coincide con esa búsqueda. Bórrala o elige otro filtro.",
       back: "Volver al resumen del curso",
     },
+    role: {
+      eyebrow: "Inglés de negocios · Colocaciones por profesión",
+      h1: "Las Palabras Correctas para el Trabajo: {name}",
+      sub: "Las combinaciones de verbo + preposición que usan cada semana {audience} — {scenes} — con las trampas de los verbos que no llevan preposición. Todos los ejemplos salen del trabajo real.",
+      description:
+        "{total} colocaciones en inglés para {audience}: {examples} y más. Toca para revisar y practica.",
+      startDrill: "Practicar estas {total}",
+      sectionTitle: "Las palabras correctas para tu trabajo",
+      sectionLead:
+        "La misma idea, con todos los ejemplos tomados del día a día de una profesión. Elige la tuya.",
+      count: "{n} expresiones",
+      backGeneral: "Volver a la referencia completa de colocaciones",
+      others: "Otras profesiones",
+    },
     drill: {
+      bank: "Qué grupo",
+      bankGeneral: "Inglés de negocios general",
       back: "Volver a la referencia",
       eyebrow: "Inglés de negocios · Práctica",
       h1: "Completa la Preposición",

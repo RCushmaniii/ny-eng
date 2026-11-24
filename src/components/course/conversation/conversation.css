@@ -1,0 +1,84 @@
+/* Conversation Briefings — additions to the shared .colx styles in collocations.css. */
+
+.colx .item.plain .head::before {
+  content: none;
+}
+.colx .q .term {
+  color: var(--cx-ink);
+}
+.colx .b-ff {
+  color: var(--cx-accent);
+  background: var(--cx-accent-soft);
+}
+.colx .ans em,
+.colx .note em,
+.colx .trap em,
+.colx .rule em,
+.colx .cell em {
+  color: var(--cx-ink);
+}
+
+.colx .quiz {
+  margin-top: 48px;
+}
+.colx .quiz .card {
+  margin-top: 12px;
+}
+.colx .quiz .qdef {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--cx-ink);
+  margin: 6px 0 18px;
+}
+.colx .quiz .qlabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cx-ink-faint);
+  margin: 18px 0 0;
+}
+.colx .quiz .opts {
+  display: grid;
+  gap: 8px;
+}
+.colx .quiz button.opt {
+  font: inherit;
+  font-size: 16px;
+  text-align: left;
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--cx-line);
+  background: var(--cx-surface);
+  color: var(--cx-ink);
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    background-color 0.15s;
+}
+.colx .quiz button.opt:hover:not(:disabled) {
+  border-color: var(--cx-accent);
+  background: var(--cx-accent-soft);
+}
+.colx .quiz button.opt:focus-visible {
+  outline: 2px solid var(--cx-accent);
+  outline-offset: 2px;
+}
+.colx .quiz button.opt:disabled {
+  cursor: default;
+  color: var(--cx-ink-soft);
+}
+.colx .quiz button.opt.right {
+  border-color: var(--cx-good);
+  background: var(--cx-good-soft);
+  color: var(--cx-ink);
+  font-weight: 600;
+}
+.colx .quiz button.opt.wrong {
+  border-color: var(--cx-bad);
+  background: var(--cx-bad-soft);
+  color: var(--cx-ink);
+}

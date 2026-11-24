@@ -10,6 +10,7 @@ import { advancedInfo, advancedUnits } from "@data/advanced/units";
 import { executiveInfo, executiveUnits } from "@data/executive/units";
 import { driveInfo, scenarioMeta } from "@data/drive-the-decision/scenarios";
 import { pushbackInfo, pushbackLessons } from "@data/executive-pushback/lessons";
+import { conversationUi, topics as conversationTopics } from "@data/conversation/index";
 import TestimonialCard from "@components/ui/TestimonialCard.astro";
 import { testimonials } from "@data/testimonials/es";
 import {
@@ -23,6 +24,7 @@ import {
   Target,
   Zap,
   Search,
+  MessagesSquare,
 } from "lucide-astro";
 
 const lang = "es";
@@ -170,6 +172,13 @@ const courseList = [
       "Clase magistral gratuita sobre los patrones verbales del inglés para hispanohablantes — patrones de objeto, verbo + preposición, gerundio vs infinitivo, causativos y verbos de reporte. Aprende cada verbo junto con su estructura.",
     workload: "PT6H",
   },
+  {
+    name: "Guías de Conversación (Clase Magistral Gratis)",
+    url: "https://www.nyenglishteacher.com/es/curso/conversacion/",
+    description:
+      "Guías de vocabulario gratuitas para las conversaciones fuera de la junta: política de Estados Unidos, religión, la vida en los suburbios y networking profesional, con los falsos amigos señalados.",
+    workload: "PT4H",
+  },
 ];
 
 const courseItemList = {
@@ -232,11 +241,12 @@ const faqSchema = {
           Clases de Inglés en Línea que Funcionan para Hispanohablantes
         </h1>
         <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Nueve cursos de inglés gratuitos e interactivos que tomas totalmente
+          Diez cursos de inglés gratuitos e interactivos que tomas totalmente
           en línea — cinco rutas por nivel, de A1 principiante a C2 ejecutivo,
-          más cuatro clases magistrales enfocadas: patrones verbales, tiempos
-          del pasado, comunicación ejecutiva de decisión y manejo de pushback
-          ejecutivo. Cada lección funciona en tu navegador, con audio en cada
+          más cinco clases magistrales enfocadas: patrones verbales, tiempos
+          del pasado, comunicación ejecutiva de decisión, manejo de pushback
+          ejecutivo y el vocabulario de la conversación cotidiana en Estados
+          Unidos. Cada lección funciona en tu navegador, con audio en cada
           frase. Sin registro. Sin barreras. Solo progreso real desde la
           primera lección.
         </p>
@@ -709,12 +719,58 @@ const faqSchema = {
             </div>
           </div>
         </a>
+        <!-- Master Class — Conversation Briefings -->
+        <a
+          href="/es/curso/conversacion/"
+          class="group block bg-white rounded-2xl border-2 border-indigo-500/40 overflow-hidden hover:shadow-xl hover:border-indigo-500 transition-all duration-200"
+        >
+          <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 p-6 text-white min-h-[180px] flex flex-col justify-end">
+            <div class="flex items-center gap-2 text-indigo-300 text-xs font-bold uppercase tracking-wider mb-2">
+              <MessagesSquare class="w-3.5 h-3.5" />
+              Clase Magistral — B2 a C1
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold mb-2" style="font-family: 'Noto Sans KR', sans-serif;">
+              {conversationUi.es.hub.h1}
+            </h2>
+            <p class="text-indigo-100 text-sm leading-relaxed">
+              El vocabulario para las conversaciones fuera de la junta.
+            </p>
+          </div>
+          <div class="p-6">
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Tu inglés aguanta la junta. Luego la plática se va a las elecciones, a la iglesia de un colega, al distrito escolar o a quién deberías conocer. Cada guía te da los términos, los falsos amigos y las frases para una de esas conversaciones.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-indigo-500 shrink-0 mt-0.5" />
+                <span>Política estadounidense, catolicismo, iglesias protestantes</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-indigo-500 shrink-0 mt-0.5" />
+                <span>La vida en los suburbios y el networking profesional</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm text-slate-700">
+                <CheckCircle2 class="w-4 h-4 text-indigo-500 shrink-0 mt-0.5" />
+                <span>Falsos amigos señalados y una prueba de diez preguntas</span>
+              </li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold text-indigo-700 uppercase tracking-wider">
+                {conversationTopics.length} guías
+              </span>
+              <span class="inline-flex items-center gap-1 text-indigo-700 font-semibold text-sm group-hover:gap-2 transition-all">
+                Abrir las guías
+                <ArrowRight class="w-4 h-4" />
+              </span>
+            </div>
+          </div>
+        </a>
       </div>
 
       <div class="max-w-3xl mx-auto mt-16 text-center">
         <h3 class="text-2xl font-bold text-slate-900 mb-3">¿No sabes con cuál empezar?</h3>
         <p class="text-slate-600 mb-6">
-          Si el inglés todavía se siente totalmente nuevo, empieza con el curso <strong>principiante</strong>. Si terminaste lo básico pero todavía no puedes hablar de ayer ni hacer planes, toma <strong>elemental</strong>. Si ya puedes sostener una conversación, salta a <strong>intermedio</strong>. Si tu inglés es fluido pero no pulido, pasa a <strong>avanzado</strong>. Si eres un líder senior que quiere <em>liderar</em> en inglés, ve directo al curso <strong>ejecutivo</strong> — y combínalo con <strong>Dirige la Decisión</strong> para escenarios aplicados de junta directiva. Si eres director o vendedor que se congela bajo pushback, la clase magistral <strong>Manejo de Pushback y Objeciones Ejecutivas</strong> es la capa diagnóstica que las otras asumen. Si la preposición o la forma verbal equivocada te sigue delatando — <em>depend on, explain to, enjoy doing</em> — la clase magistral <strong>Dominio de Patrones Verbales</strong> practica justo eso. Si te congelas específicamente con los tiempos del pasado, la <strong>clase magistral de tiempos del pasado</strong> encaja al lado de cualquiera. Tu progreso se guarda por separado para cada curso.
+          Si el inglés todavía se siente totalmente nuevo, empieza con el curso <strong>principiante</strong>. Si terminaste lo básico pero todavía no puedes hablar de ayer ni hacer planes, toma <strong>elemental</strong>. Si ya puedes sostener una conversación, salta a <strong>intermedio</strong>. Si tu inglés es fluido pero no pulido, pasa a <strong>avanzado</strong>. Si eres un líder senior que quiere <em>liderar</em> en inglés, ve directo al curso <strong>ejecutivo</strong> — y combínalo con <strong>Dirige la Decisión</strong> para escenarios aplicados de junta directiva. Si eres director o vendedor que se congela bajo pushback, la clase magistral <strong>Manejo de Pushback y Objeciones Ejecutivas</strong> es la capa diagnóstica que las otras asumen. Si la preposición o la forma verbal equivocada te sigue delatando — <em>depend on, explain to, enjoy doing</em> — la clase magistral <strong>Dominio de Patrones Verbales</strong> practica justo eso. Si la plática antes de la junta te cuesta más que la junta, las <strong>Guías de Conversación</strong> te dan el vocabulario. Si te congelas específicamente con los tiempos del pasado, la <strong>clase magistral de tiempos del pasado</strong> encaja al lado de cualquiera. Tu progreso se guarda por separado para cada curso.
         </p>
         <Button href="/es/servicios/" variant="secondary" size="md">
           O trabaja 1-a-1 con Robert

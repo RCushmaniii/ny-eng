@@ -46,8 +46,15 @@ if (root) {
   };
 
   const showProgress = () => {
-    const st = Progress.stats();
+    // Count only this page's expressions: the store also holds the other banks' results.
     const statuses = Progress.statuses();
+    const st = { solid: 0, weak: 0, attempts: 0 };
+    items.forEach((el) => {
+      const s = statuses[el.dataset.id || ""];
+      if (s === "solid") st.solid++;
+      else if (s === "weak") st.weak++;
+      if (s) st.attempts++;
+    });
     const count = byId("colx-count");
     const bar = byId("colx-fill");
     if (!st.attempts) {
@@ -138,9 +145,11 @@ if (root) {
   });
   byId("colx-hide").addEventListener("click", () => items.forEach((el) => setOpen(el, false)));
   byId("colx-reset").addEventListener("click", () => {
-    if (!Progress.stats().attempts) return;
+    const statuses = Progress.statuses();
+    const ids = items.map((el) => el.dataset.id || "").filter((id) => statuses[id]);
+    if (!ids.length) return;
     if (!window.confirm(S.resetConfirm)) return;
-    Progress.reset();
+    Progress.reset(ids);
     showProgress();
     applyFilter();
   });
