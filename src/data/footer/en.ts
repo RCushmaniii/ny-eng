@@ -1,5 +1,6 @@
 import type { ConnectItem } from "@components/Footer.astro";
 import { routes } from "@utils/paths";
+import { footerCourseLinks } from "@data/courseLinks";
 
 export const footerContentEn = (siteConfig: { companyName: string }) => {
   const currentYear = new Date().getFullYear();
@@ -14,6 +15,10 @@ export const footerContentEn = (siteConfig: { companyName: string }) => {
           { name: "My Values", href: `${routes.en.about}#about-values` },
           { name: "Why Work With Me", href: `${routes.en.about}#about-why` },
         ],
+      },
+      courses: {
+        title: "Free Courses",
+        links: footerCourseLinks("en"),
       },
       resources: {
         title: "Resources",
