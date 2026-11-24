@@ -32,6 +32,19 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 
 ---
 
+- [ ] **Human review of the 2026-11-23 course content — none has happened.**
+  92 new pages went live in one day (PRs #319, #320, #321): the collocations reference and
+  seven job-role versions, five Conversation Briefings, and three ten-lesson master classes.
+  All of it was drafted by AI against written briefs and checked by scripts and by reading
+  samples, not read end to end by a person. Highest risk first: the two religion briefings
+  (`/en/course/conversation/catholicism/`, `/en/course/conversation/protestantism/`), then
+  every Spanish half, then the medical role banks (doctors, surgeons).
+  *Known deliberate oddity:* the last Writing Better lesson leaves small errors in its
+  intermediate "after" texts on purpose (proofreading is the final pass) — a reader who skips
+  the explanation could take them as correct.
+  *Closes when:* Robert or a native es-MX reviewer has read the religion briefings and at
+  least one full course in Spanish, and corrections (if any) are merged.
+
 - [ ] **Connected-English rollout — only the social posts remain.**
   *Guide shipped 2026-10-12 (PR #302):* "From Correct to Connected" (EN 8 pages, ES 9)
   sits behind the form at the end of both posts; delivery verified end to end in
@@ -130,6 +143,45 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 
 ---
 
+
+## Session: 2026-11-23 — Robert's artifacts became site courses: collocations by job, Conversation Briefings, three master classes
+
+### Accomplished
+
+- PR #319: "The Right Words for the Job" artifact ported as a collocations reference + type-the-preposition drill under Verb Patterns (EN+ES, 155 expressions).
+- PR #320: seven job-role collocation banks (logistics, finance, IT managers, software developers, doctors, surgeons, salon owners; 35 expressions each) with their own pages, sharing the one drill via `?role=`. Plus **Conversation Briefings** at `/en/course/conversation/`: American politics (Robert's artifact, 156 terms), Catholicism, Protestant Christianity, American suburbs, professional networking, each with search, filters and a ten-question check.
+- PR #321: three master classes on a new shared lesson engine, ten lessons each, EN+ES — Speak to Persuade (`/en/course/persuasive-speaking/`, from Robert's "Observe, Infer, Narrate" deck and its six pictures), Disagree Without Damage (`/en/course/productive-conflict/`), Writing Better (`/en/course/business-writing/`, his writing artifact reworked from academic to business).
+- All 92 new URLs returned 200 in production, are in the sitemap with hreflang, and were submitted to Google (sitemap), Bing and IndexNow. Three production deploys.
+
+### Decisions Made
+
+- "IT developer" and "full stack developer" were merged into one Software Developers bank; Robert listed them separately.
+- The job-role pages extend the documented exception to "No Verb Patterns cheat sheet" (`docs/PROJECT-CONTEXT.md`); each targets "English collocations for <role>", not "verb patterns".
+- Role pages got reference pages only; one shared drill page avoids 14 more near-duplicate URLs.
+- The five topic pages were grouped as one series ("Conversation Briefings") with one card on the courses hub instead of five separate courses.
+- New courses are data, not pages: `src/data/masterclass/types.ts` defines the lesson blocks and one component renders them. Adding a lesson needs a data file, a registry line and a tkey.
+- Disagree Without Damage is scoped to peer conflict and debate so it does not re-teach the Executive Pushback frameworks.
+- Spanish slugs for role pages use the field (`medicina`, `cirugia`) rather than a gendered job title.
+
+### Lessons
+
+- Six content writers launched at once exhausted the usage allowance mid-run and two died with work half done. Launch at most two at a time, and have each write one file completely before starting the next so a failure loses one lesson, not five.
+- `global.css` beat Tailwind text colors again inside cards and dark boxes (`text-slate-300` rendered dark on a dark panel). New components set text color with an inline style or a scoped class. Caught only by looking at the screenshot.
+- Astro collapses the whitespace between adjacent `{expr}` in markup ("Think60s"). Build the string in one template literal.
+- A static `course/<name>/` directory and a dynamic `course/[masterclass]/` directory coexist without conflict; static routes win.
+
+### Immediate Next Steps
+
+- [ ] (Don't break what pays — public credibility with senior readers) Read the two religion briefings and one full course in Spanish; see the Open Items entry for the order.
+- [ ] (Leverage) In about two weeks, check GSC for whether the new course pages are indexed or sitting in "Discovered – not indexed"; this domain needs internal links for new pages to get crawled, and the new courses are linked only from the courses hub.
+- [ ] (Leverage) Add audio to the three master classes if they get traffic; the older courses have Azure TTS on every phrase and the new ones have none.
+
+### Technical Debt
+
+- `astro check` still reports 6 pre-existing errors in `src/lib/i18n.ts` (`category/pronunciation`, `category/corporate-english-training` missing from `TKey`). Not introduced this session, not fixed.
+- The courses hub hero now lists eight master classes in one sentence; it wants a redesign rather than another clause.
+
+---
 
 ## Session: 2026-11-03 / 2026-11-10
 
