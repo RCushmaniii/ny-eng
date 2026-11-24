@@ -1,0 +1,29 @@
+---
+export const prerender = true;
+
+import Base from "@layouts/Base.astro";
+import MasterclassHub from "@components/course/masterclass/MasterclassHub.astro";
+import MasterclassSchema from "@components/course/masterclass/MasterclassSchema.astro";
+import { courseTKey, courses, pick, type Course } from "@data/masterclass/index";
+
+export function getStaticPaths() {
+  return courses.map((course) => ({ params: { masterclass: course.id }, props: { course } }));
+}
+
+interface Props {
+  course: Course;
+}
+const { course } = Astro.props;
+const lang = "en";
+const tkey = courseTKey(course);
+---
+
+<Base
+  lang={lang}
+  tkey={tkey}
+  title={pick(course.metaTitle, lang)}
+  description={pick(course.description, lang)}
+>
+  <MasterclassHub lang={lang} course={course} />
+  <MasterclassSchema lang={lang} course={course} />
+</Base>

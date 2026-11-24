@@ -1,0 +1,284 @@
+---
+/**
+ * Renders the blocks of one master-class lesson (EN + ES).
+ * Everything is static HTML; masterclass.client.ts adds the choice feedback and the timers.
+ * Reveals use <details>, so models and strong versions are reachable without JavaScript.
+ */
+import { masterclassUi, pick, type MasterclassLang } from "@data/masterclass/index";
+import type { Block } from "@data/masterclass/types";
+
+interface Props {
+  lang: MasterclassLang;
+  blocks: Block[];
+}
+const { lang, blocks } = Astro.props;
+const ui = masterclassUi[lang];
+const p = (pair: [string, string]) => pick(pair, lang);
+---
+
+{
+  blocks.map((b, bi) => {
+    if (b.t === "p") return <p class="mc-p" set:html={p(b.html)} />;
+    if (b.t === "h") return <h2 class="mc-h">{p(b.text)}</h2>;
+
+    if (b.t === "idea")
+      return (
+        <aside class="mc-idea">
+          <p class="mc-kicker">{ui.idea}</p>
+          <h2 class="mc-box-title">{p(b.title)}</h2>
+          <p set:html={p(b.html)} />
+        </aside>
+      );
+
+    if (b.t === "trap")
+      return (
+        <aside class="mc-trap">
+          <p class="mc-kicker">{b.title ? p(b.title) : ui.trap}</p>
+          <p set:html={p(b.html)} />
+        </aside>
+      );
+
+    if (b.t === "framework")
+      return (
+        <section class="mc-block">
+          <h2 class="mc-h">{p(b.title)}</h2>
+          {b.lead && <p class="mc-p" set:html={p(b.lead)} />}
+          <ol class="mc-steps">
+            {b.steps.map((s, si) => (
+              <li>
+                <span class="mc-step-n">{si + 1}</span>
+                <div>
+                  <p class="mc-step-label">{p(s.label)}</p>
+                  <p set:html={p(s.html)} />
+                  {s.say && (
+                    <p class="mc-say" lang="en">
+                      <span class="mc-say-tag">{ui.say}</span>
+                      <Fragment set:html={s.say} />
+                    </p>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      );
+
+    if (b.t === "compare") {
+      const weakLabel = b.labels ? p(b.labels[0]) : ui.weak;
+      const strongLabel = b.labels ? p(b.labels[1]) : ui.strong;
+      return (
+        <section class="mc-block">
+          <h2 class="mc-h">{p(b.title)}</h2>
+          <div class="mc-compare">
+            {b.rows.map((r) => (
+              <div class="mc-pair">
+                <div class="mc-weak" lang="en">
+                  <span class="mc-lab">{weakLabel}</span>
+                  <Fragment set:html={r.weak} />
+                </div>
+                <div class="mc-strong" lang="en">
+                  <span class="mc-lab">{strongLabel}</span>
+                  <Fragment set:html={r.strong} />
+                </div>
+                <p class="mc-why" set:html={p(r.why)} />
+              </div>
+            ))}
+          </div>
+        </section>
+      );
+    }
+
+    if (b.t === "phrases")
+      return (
+        <section class="mc-block">
+          <h2 class="mc-h">{p(b.title)}</h2>
+          <ul class="mc-phrases">
+            {b.items.map((it) => (
+              <li>
+                <span class="mc-phrase" lang="en" set:html={it.en} />
+                <span class="mc-use" set:html={p(it.use)} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      );
+
+    if (b.t === "model")
+      return (
+        <section class="mc-block">
+          <h2 class="mc-h">{p(b.title)}</h2>
+          {b.context && <p class="mc-p mc-context" set:html={p(b.context)} />}
+          <div class="mc-model">
+            {b.lines.map((l) => (
+              <div class="mc-line">
+                <div class="mc-line-en" lang="en">
+                  {l.who && <span class="mc-who">{l.who}</span>}
+                  <Fragment set:html={l.en} />
+                </div>
+                {l.note && <p class="mc-line-note" set:html={p(l.note)} />}
+              </div>
+            ))}
+          </div>
+        </section>
+      );
+
+    if (b.t === "choice")
+      return (
+        <section class="mc-block">
+          <h2 class="mc-h">{p(b.title)}</h2>
+          {b.items.map((it, ii) => (
+            <div class="mc-choice" data-mc-choice>
+              <p class="mc-kicker">
+                {ii + 1} / {b.items.length} · {ui.choose}
+              </p>
+              <p class="mc-prompt" set:html={p(it.prompt)} />
+              <div class="mc-opts">
+                {it.options.map((o) => (
+                  <div class="mc-opt" data-ok={o.ok ? "1" : "0"}>
+                    <button type="button" class="mc-opt-btn" lang="en" aria-expanded="false">
+                      <Fragment set:html={o.en} />
+                    </button>
+                    <div class="mc-opt-why" hidden>
+                      <span class="mc-verdict">{o.ok ? ui.correct : ui.notBest}</span>
+                      <Fragment set:html={p(o.why)} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+      );
+
+    if (b.t === "rewrite")
+      return (
+        <section class="mc-block">
+          <h2 class="mc-h">{p(b.title)}</h2>
+          {b.items.map((it, ii) => (
+            <div class="mc-rewrite">
+              <p class="mc-kicker">
+                {ii + 1} / {b.items.length}
+              </p>
+              <p class="mc-prompt" set:html={p(it.task)} />
+              <div class="mc-weak" lang="en">
+                <span class="mc-lab">{ui.before}</span>
+                <Fragment set:html={it.before} />
+              </div>
+              <label class="mc-lab mc-ta-label" for={`mc-rw-${bi}-${ii}`}>
+                {ui.yourVersion}
+              </label>
+              <textarea
+                id={`mc-rw-${bi}-${ii}`}
+                class="mc-ta"
+                rows="3"
+                lang="en"
+                spellcheck="true"
+                placeholder={ui.yourVersionPlaceholder}
+              />
+              <details class="mc-reveal">
+                <summary>{ui.showStrong}</summary>
+                <div class="mc-strong" lang="en">
+                  <span class="mc-lab">{ui.strongVersion}</span>
+                  <Fragment set:html={it.after} />
+                </div>
+                <p class="mc-why">
+                  <b>{`${ui.whatChanged}: `}</b>
+                  <Fragment set:html={p(it.why)} />
+                </p>
+              </details>
+            </div>
+          ))}
+        </section>
+      );
+
+    if (b.t === "speak")
+      return (
+        <section class="mc-block mc-speak" data-mc-speak data-think={b.think} data-speak={b.speak}>
+          <h2 class="mc-h">{p(b.title)}</h2>
+          {b.image && (
+            <img
+              class="mc-img"
+              src={b.image.src}
+              alt={p(b.image.alt)}
+              width="1672"
+              height="941"
+              loading="lazy"
+              decoding="async"
+            />
+          )}
+          <p class="mc-prompt" set:html={p(b.prompt)} />
+          {b.frame && (
+            <p class="mc-say" lang="en">
+              <span class="mc-say-tag">{ui.frame}</span>
+              <Fragment set:html={b.frame} />
+            </p>
+          )}
+          <div class="mc-timer">
+            <div class="mc-times">
+              <span class="mc-time">{`${ui.think} ${b.think} ${ui.seconds}`}</span>
+              <span class="mc-time">{`${ui.speak} ${b.speak} ${ui.seconds}`}</span>
+            </div>
+            <div class="mc-clock" aria-live="polite">
+              <span class="mc-phase" data-mc-phase />
+              <span class="mc-count" data-mc-count />
+            </div>
+            <div class="mc-track">
+              <i data-mc-bar />
+            </div>
+            <button
+              type="button"
+              class="mc-btn"
+              data-mc-start
+              data-l-start={ui.startTimer}
+              data-l-restart={ui.restart}
+              data-l-think={ui.thinking}
+              data-l-speak={ui.speaking}
+              data-l-up={ui.timeUp}
+            >
+              {ui.startTimer}
+            </button>
+          </div>
+          <p class="mc-lab">{ui.checklist}</p>
+          <ul class="mc-check">
+            {b.checklist.map((c, ci) => (
+              <li>
+                <input type="checkbox" id={`mc-ck-${bi}-${ci}`} />
+                <label for={`mc-ck-${bi}-${ci}`} set:html={p(c)} />
+              </li>
+            ))}
+          </ul>
+          {b.model && (
+            <details class="mc-reveal">
+              <summary>{ui.showModel}</summary>
+              <div class="mc-strong" lang="en" set:html={b.model} />
+            </details>
+          )}
+        </section>
+      );
+
+    if (b.t === "list") {
+      const Tag = b.ordered ? "ol" : "ul";
+      return (
+        <Tag class="mc-list">
+          {b.items.map((it) => (
+            <li set:html={p(it)} />
+          ))}
+        </Tag>
+      );
+    }
+
+    if (b.t === "takeaways")
+      return (
+        <aside class="mc-takeaways">
+          <h2 class="mc-box-title">{ui.takeaways}</h2>
+          <ul>
+            {b.items.map((it) => (
+              <li set:html={p(it)} />
+            ))}
+          </ul>
+        </aside>
+      );
+
+    return null;
+  })
+}

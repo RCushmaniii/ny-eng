@@ -167,6 +167,16 @@ Feed these into NotebookLM to generate unique data insights:
 - **Phase 2 planned**: Stripe paywall, recommended bundle: course + strategy session at $299
 - Full plan: `docs/EXECUTIVE-COURSE-PLAN.md`
 
+### Shipped 2026-11-23 — collocations by job, Conversation Briefings, and three data-driven master classes
+- **"The Right Words for the Job"** (Robert's artifact): general collocations reference + drill under Verb Patterns (PR #319), then seven job-role versions — logistics, finance, IT managers, software developers, doctors, surgeons, salon owners — at `/en/course/verb-patterns/collocations/<role>/` (PR #320). Role content lives in `src/data/collocations/roles/`.
+- **Conversation Briefings** (`/en/course/conversation/`, `/es/curso/conversacion/`, PR #320): five vocabulary pages — American politics (Robert's artifact), Catholicism, Protestant Christianity, American suburbs, professional networking. Content in `src/data/conversation/`.
+- **Three master classes on one shared lesson engine**, ten lessons each, EN + ES:
+  - Speak to Persuade (`/en/course/persuasive-speaking/`) — Aristotle's triangle, built from Robert's "Observe, Infer, Narrate" class deck and its six pictures.
+  - Disagree Without Damage (`/en/course/productive-conflict/`) — peer conflict, de-escalation, debate. Deliberately does not re-teach the Executive Pushback frameworks.
+  - Writing Better (`/en/course/business-writing/`) — Robert's writing artifact, rewritten from academic to business examples.
+- **How to add a course or lesson:** a lesson is one file in `src/data/masterclass/<course>/` in the block format defined in `src/data/masterclass/types.ts`; register it in `src/data/masterclass/index.ts` and add its tkey to `src/lib/i18n.ts`. One component renders every block, so no page code is needed.
+- **Not yet done:** none of the new Spanish, and neither religion briefing, has had a human read. No audio on the new courses (the older courses have Azure TTS on every phrase).
+
 ## Future Initiatives
 
 - [ ] Social media API integration (LinkedIn, Twitter/X, Facebook)
