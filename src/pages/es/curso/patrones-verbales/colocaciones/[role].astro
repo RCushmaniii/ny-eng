@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import { courseOg } from "@/lib/courseOg";
 import CollocationsReference from "@components/course/collocations/CollocationsReference.astro";
 import RoleSchema from "@components/course/collocations/RoleSchema.astro";
 import {
@@ -35,7 +36,13 @@ const description = fill(collocationsUi[lang].role.description, {
 });
 ---
 
-<Base lang={lang} tkey={tkey} title={role.title[li]} description={description}>
+<Base
+  lang={lang}
+  tkey={tkey}
+  ogImage={courseOg(`collocations-${role.id}`, lang, role.title[li])}
+  title={role.title[li]}
+  description={description}
+>
   <CollocationsReference lang={lang} role={role} />
   <RoleSchema lang={lang} role={role} />
 </Base>

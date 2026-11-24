@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import { courseOg } from "@/lib/courseOg";
 import MasterclassLesson from "@components/course/masterclass/MasterclassLesson.astro";
 import MasterclassSchema from "@components/course/masterclass/MasterclassSchema.astro";
 import { courses, lessonTKey, pick, type Course } from "@data/masterclass/index";
@@ -28,7 +29,13 @@ const full = `${pick(lesson.title, lang)} | ${pick(course.name, lang)}`;
 const title = full.length <= 60 ? full : pick(lesson.title, lang);
 ---
 
-<Base lang={lang} tkey={tkey} title={title} description={pick(lesson.description, lang)}>
+<Base
+  lang={lang}
+  tkey={tkey}
+  ogImage={courseOg(course.id, lang, pick(course.name, lang))}
+  title={title}
+  description={pick(lesson.description, lang)}
+>
   <MasterclassLesson lang={lang} course={course} lesson={lesson} />
   <MasterclassSchema lang={lang} course={course} lesson={lesson} />
 </Base>

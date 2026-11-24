@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import { courseOg } from "@/lib/courseOg";
 import CourseLessonSchema from "@components/seo/CourseLessonSchema.astro";
 import CollocationsReference from "@components/course/collocations/CollocationsReference.astro";
 import { getGroups } from "@data/collocations/index";
@@ -14,6 +15,7 @@ const total = getGroups(lang).reduce((n, g) => n + g.items.length, 0);
 <Base
   lang={lang}
   tkey={tkey}
+  ogImage={courseOg("collocations", lang, "The Right Words for the Job")}
   title="Business English Collocations: The Right Words for the Job"
   description={`${total} business English collocations grouped by meaning: verb + preposition, adjective + preposition and the no-preposition traps. Tap to check.`}
 >

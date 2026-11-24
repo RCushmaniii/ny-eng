@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import { courseOg } from "@/lib/courseOg";
 import MasterclassHub from "@components/course/masterclass/MasterclassHub.astro";
 import MasterclassSchema from "@components/course/masterclass/MasterclassSchema.astro";
 import { courseTKey, courses, pick, type Course } from "@data/masterclass/index";
@@ -21,6 +22,7 @@ const tkey = courseTKey(course);
 <Base
   lang={lang}
   tkey={tkey}
+  ogImage={courseOg(course.id, lang, pick(course.name, lang))}
   title={pick(course.metaTitle, lang)}
   description={pick(course.description, lang)}
 >

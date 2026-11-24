@@ -5,7 +5,7 @@ export const lesson: Lesson = {
   slugEs: "empieza-aqui",
   title: [
     "Why Speaking Feels Hard, and the Three Jobs That Fix It",
-    "Por Qué Cuesta Hablar en Público y los Tres Pasos que lo Resuelven",
+    "Por Qué Cuesta Hablar en Público y Cómo Resolverlo en 3 Pasos",
   ],
   summary: [
     "Speaking in English feels hard because you are doing several jobs at once; split them into observe, infer and narrate, and think before each one.",

@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Base from "@layouts/Base.astro";
+import { courseOg } from "@/lib/courseOg";
 import ConversationHub from "@components/course/conversation/ConversationHub.astro";
 import ConversationSchema from "@components/course/conversation/ConversationSchema.astro";
 import { conversationUi } from "@data/conversation/index";
@@ -11,7 +12,13 @@ const tkey = "course/conversation" as const;
 const t = conversationUi[lang].hub;
 ---
 
-<Base lang={lang} tkey={tkey} title={t.title} description={t.description}>
+<Base
+  lang={lang}
+  tkey={tkey}
+  ogImage={courseOg("conversation", lang, t.h1)}
+  title={t.title}
+  description={t.description}
+>
   <ConversationHub lang={lang} />
   <ConversationSchema lang={lang} />
 </Base>
