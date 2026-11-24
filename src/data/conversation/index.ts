@@ -7,6 +7,9 @@ import { bank as catholicism } from "./catholicism";
 import { bank as protestantism } from "./protestantism";
 import { bank as americanSuburbs } from "./american-suburbs";
 import { bank as professionalNetworking } from "./professional-networking";
+import { bank as workplaceConflict } from "./workplace-conflict";
+import { bank as impromptuSpeaking } from "./impromptu-speaking";
+import { bank as winningPeopleOver } from "./winning-people-over";
 
 export type ConversationLang = "en" | "es";
 
@@ -15,9 +18,20 @@ export type TopicId =
   | "catholicism"
   | "protestantism"
   | "american-suburbs"
-  | "professional-networking";
+  | "professional-networking"
+  | "workplace-conflict"
+  | "impromptu-speaking"
+  | "winning-people-over";
 
-type Icon = "Landmark" | "Church" | "BookOpen" | "Home" | "Handshake";
+type Icon =
+  | "Landmark"
+  | "Church"
+  | "BookOpen"
+  | "Home"
+  | "Handshake"
+  | "Scale"
+  | "Mic"
+  | "HeartHandshake";
 
 export interface Topic {
   id: TopicId;
@@ -208,6 +222,111 @@ export const topics: Topic[] = [
     searchExamples: "follow up, introduction, reach out",
     bank: professionalNetworking,
   },
+  {
+    id: "workplace-conflict",
+    slug: { en: "workplace-conflict", es: "conflicto-en-el-trabajo" },
+    icon: "Scale",
+    eyebrow: [
+      "Conversation Briefings · Professional Life",
+      "Guías de conversación · Vida profesional",
+    ],
+    h1: [
+      "Handling Conflict and Friction at Work in English",
+      "Cómo Manejar el Conflicto en el Trabajo en Inglés",
+    ],
+    title: [
+      "Workplace Conflict in English: Phrases That Keep Control",
+      "Conflicto en el Trabajo en Inglés: Frases Clave",
+    ],
+    description: [
+      "{total} terms and ready-to-say phrases for conflict at work in English: stay calm, disagree without heat, steer toward the outcome you want and repair it.",
+      "{total} términos y frases en inglés para el conflicto en el trabajo: mantén la calma, difiere sin fricción, lleva la plática al resultado que buscas y repara.",
+    ],
+    sub: [
+      "Friction at work is harder in a second language: you either go quiet or come out more blunt than you meant. These are the words and ready-to-say phrases for staying in control of yourself, disagreeing without heat, steering the conversation toward the outcome you came for, and repairing things afterward.",
+      "La fricción en el trabajo es más difícil en un segundo idioma: o te quedas callado o suenas más brusco de lo que querías. Estas son las palabras y las frases listas para usar con las que mantienes el control de ti mismo, difieres sin subir el tono, llevas la conversación al resultado que buscas y reparas la relación después.",
+    ],
+    card: [
+      "Stay calm, disagree without heat, steer toward the outcome you want — and repair it afterward.",
+      "Mantén la calma, difiere sin subir el tono, llega al resultado que buscas — y repara después.",
+    ],
+    frame: [
+      "<b>How to use this.</b> Read the phrase, say it out loud, then tap to see what it does and when it backfires. Control here means control of yourself and of the direction of the conversation — never of the other person. For the full method, lesson by lesson, take the free course <a href='/en/course/productive-conflict/'>Disagree Without Damage</a>.",
+      "<b>Cómo usarla.</b> Lee la frase, dila en voz alta y después toca para ver qué logra y cuándo resulta contraproducente. Aquí, control quiere decir control de ti mismo y del rumbo de la conversación — nunca de la otra persona. Para el método completo, lección por lección, toma el curso gratuito <a href='/es/curso/conflicto-productivo/'>Disagree Without Damage</a>.",
+    ],
+    cheatTitle: ["If you remember nothing else", "Si solo te quedas con esto"],
+    searchExamples: "pushback, compromise, escalate",
+    bank: workplaceConflict,
+  },
+  {
+    id: "impromptu-speaking",
+    slug: { en: "impromptu-speaking", es: "hablar-sin-preparacion" },
+    icon: "Mic",
+    eyebrow: ["Conversation Briefings · Speaking", "Guías de conversación · Hablar en público"],
+    h1: [
+      "Impromptu Speaking in English: Think on Your Feet",
+      "Cómo Hablar sin Preparación en Inglés",
+    ],
+    title: [
+      "Impromptu Speaking in English: Think on Your Feet",
+      "Hablar sin Preparación en Inglés: Frases y Estructuras",
+    ],
+    description: [
+      "{total} terms, phrases and instant structures for speaking English without notice: buy time, organize your answer in seconds, sound dynamic and close well.",
+      "{total} términos, frases y estructuras para hablar inglés sin aviso: gana tiempo, ordena tu respuesta en segundos, suena con energía y cierra con fuerza.",
+    ],
+    sub: [
+      "Someone turns to you in the meeting and says, “What do you think?” You know the answer — and your English leaves the room. This briefing gives you the phrases that buy three seconds, the structures that organize an answer on the spot, the vocabulary of dynamic delivery, and the lines that get you back on track when you lose your thread.",
+      "Alguien voltea contigo en la junta y dice: “What do you think?”. Sabes la respuesta — y tu inglés se va de la sala. Esta guía te da las frases que te compran tres segundos, las estructuras que ordenan una respuesta en el momento, el vocabulario para hablar con energía y las líneas con las que retomas el hilo cuando lo pierdes.",
+    ],
+    card: [
+      "Buy time, organize an answer in seconds, sound dynamic — when you are put on the spot.",
+      "Gana tiempo, ordena tu respuesta en segundos y suena con energía cuando te toca hablar sin aviso.",
+    ],
+    frame: [
+      "<b>How to use this.</b> Good impromptu speakers are not improvising from nothing; they carry a few structures and a few opening lines, and reach for them under pressure. Say each phrase out loud until it is yours. To build the full skill, take the free course <a href='/en/course/persuasive-speaking/'>Speak to Persuade</a>.",
+      "<b>Cómo usarla.</b> Quien habla bien sin preparación no improvisa de la nada: trae consigo unas cuantas estructuras y unas cuantas frases de arranque, y recurre a ellas bajo presión. Di cada frase en voz alta hasta que sea tuya. Para desarrollar la habilidad completa, toma el curso gratuito <a href='/es/curso/hablar-para-persuadir/'>Speak to Persuade</a>.",
+    ],
+    cheatTitle: ["If you remember nothing else", "Si solo te quedas con esto"],
+    searchExamples: "off the cuff, PREP, ramble",
+    bank: impromptuSpeaking,
+  },
+  {
+    id: "winning-people-over",
+    slug: { en: "winning-people-over", es: "como-ganarte-a-la-gente" },
+    icon: "HeartHandshake",
+    eyebrow: [
+      "Conversation Briefings · Professional Life",
+      "Guías de conversación · Vida profesional",
+    ],
+    h1: [
+      "Winning People Over in English: Rapport and Influence",
+      "Cómo Ganarte a la Gente en Inglés",
+    ],
+    title: [
+      "Win People Over in English: Rapport and Influence",
+      "Cómo Ganarte a la Gente en Inglés: Rapport e Influencia",
+    ],
+    description: [
+      "{total} terms and phrases for winning friends and influencing people in English: show real interest, listen, give credit, let people save face, get to yes.",
+      "{total} términos y frases en inglés para ganarte a la gente e influir: muestra interés genuino, escucha, da crédito, cuida la imagen del otro y llega al sí.",
+    ],
+    sub: [
+      "Being right is not what gets a yes. People say yes to someone they like and trust. This is the English for winning friends and influencing people the honest way: showing real interest, listening so the other person feels heard, giving credit, disagreeing in a way that lets people save face, and asking without pushing.",
+      "Tener la razón no es lo que consigue un sí. La gente le dice que sí a quien le cae bien y a quien le tiene confianza. Este es el inglés para ganarte a la gente e influir de manera honesta: mostrar interés genuino, escuchar de modo que la otra persona se sienta escuchada, dar crédito, diferir sin exhibir a nadie y pedir sin presionar.",
+    ],
+    card: [
+      "Show real interest, listen, give credit, let people save face — the English of being someone people say yes to.",
+      "Muestra interés genuino, escucha, da crédito y cuida la imagen del otro — el inglés de alguien a quien le dicen que sí.",
+    ],
+    frame: [
+      "<b>What this is and isn't.</b> None of this is a technique for getting around people. Every phrase here works only when the interest behind it is real — and people can tell when it is not. Read the phrase, say it out loud, then tap to see when it lands and when it sounds hollow.",
+      "<b>Qué es y qué no es.</b> Nada de esto es una técnica para manipular a nadie. Cada frase funciona solo cuando el interés que hay detrás es real — y la gente nota cuando no lo es. Lee la frase, dila en voz alta y después toca para ver cuándo funciona y cuándo suena hueca.",
+    ],
+    cheatTitle: ["If you remember nothing else", "Si solo te quedas con esto"],
+    searchExamples: "rapport, buy-in, save face",
+    bank: winningPeopleOver,
+  },
 ];
 
 export const conversationRoutes = {
@@ -281,8 +400,8 @@ export const conversationUi = {
       h1: "Conversation Briefings",
       title: "Conversation Briefings: English for Real Small Talk",
       description:
-        "Free vocabulary briefings for the conversations outside the meeting: US politics, religion, suburban life and professional networking. Tap to check each term.",
-      sub: "Your English holds up in the meeting. Then the meeting ends, and the talk turns to the election, a colleague's church, the school district or who you should meet — and the vocabulary is suddenly unfamiliar. Each briefing gives you the terms, the false friends and the phrases for one of those conversations.",
+        "Free vocabulary briefings for the conversations no course covers: US politics, religion, networking, workplace conflict, impromptu speaking and influence.",
+      sub: "Your English holds up in the meeting. Then the talk turns to the election, a colleague's church, the school district or who you should meet — or someone pushes back, or asks what you think with no warning — and the vocabulary is suddenly unfamiliar. Each briefing gives you the terms, the false friends and the phrases for one of those conversations.",
       pick: "Pick a briefing",
       terms: "{n} terms",
       open: "Open briefing",
@@ -358,8 +477,8 @@ export const conversationUi = {
       h1: "Guías de Conversación",
       title: "Guías de Conversación: Inglés para la Plática Real",
       description:
-        "Guías de vocabulario gratuitas para las conversaciones fuera de la junta: política de EE. UU., religión, la vida en los suburbios y networking profesional.",
-      sub: "Tu inglés aguanta la junta. Luego la junta termina y la plática se va a las elecciones, a la iglesia de un colega, al distrito escolar o a quién deberías conocer — y de pronto el vocabulario ya no te suena. Cada guía te da los términos, los falsos amigos y las frases para una de esas conversaciones.",
+        "Guías de vocabulario gratuitas para las conversaciones que ningún curso cubre: política de EE. UU., religión, networking, conflicto, improvisar e influir.",
+      sub: "Tu inglés aguanta la junta. Luego la plática se va a las elecciones, a la iglesia de un colega, al distrito escolar o a quién deberías conocer — o alguien te lleva la contraria, o te preguntan qué opinas sin aviso — y de pronto el vocabulario ya no te suena. Cada guía te da los términos, los falsos amigos y las frases para una de esas conversaciones.",
       pick: "Elige una guía",
       terms: "{n} términos",
       open: "Abrir guía",
