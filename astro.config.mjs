@@ -73,6 +73,8 @@ const blogTranslations = {
   "us-interview-prep": "/es/blog/entrevista-trabajo-empresa-americana/",
   "business-english-interview-phrases": "/es/blog/frases-ingles-entrevista-trabajo/",
   "slack-english-write-like-a-pro": "/es/blog/ingles-para-slack-profesional/",
+  "free-advanced-english-courses-for-professionals":
+    "/es/blog/cursos-gratis-de-ingles-avanzado-para-profesionales/",
   "executive-reframing-drills": "/es/blog/ejercicios-reformulacion-ejecutiva/",
   "why-you-struggle-speaking-english-in-meetings":
     "/es/blog/por-que-te-cuesta-hablar-ingles-en-reuniones/",
