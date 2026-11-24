@@ -1,0 +1,279 @@
+---
+/**
+ * Interactive site map (EN + ES): a mind-map style tree of the whole site.
+ * Branches expand and collapse, every leaf is a real link, and a search box filters the tree.
+ *
+ * Without JavaScript the whole tree renders expanded, so every link stays reachable and
+ * crawlable. The script only adds the collapsed starting state and the controls.
+ */
+import { getCollection } from "astro:content";
+import { Search } from "lucide-astro";
+import SiteMapNode, { type MapNode } from "./SiteMapNode.astro";
+import "./sitemap.css";
+import {
+  briefingLinks,
+  collocationsHub,
+  conversationHub,
+  coursesHub,
+  levelCourseLinks,
+  masterclassLinks,
+  roleLinks,
+  type CourseLink,
+  type NavLang,
+} from "@data/courseLinks";
+import { normalizeBlogSlug, buildPostUrl } from "@utils/i18nRoutes";
+
+interface Item {
+  label: string;
+  href: string;
+}
+interface Props {
+  lang: NavLang;
+  /** Lists the page already computes; passed in so they stay in one place. */
+  services: Item[];
+  resources: Item[];
+  pdfs: Item[];
+  assessments: Item[];
+}
+
+const { lang, services, resources, pdfs, assessments } = Astro.props;
+const es = lang === "es";
+const leaf = (l: CourseLink | Item): MapNode =>
+  "name" in l ? { label: l.name, href: l.href } : { label: l.label, href: l.href };
+
+const posts = (await getCollection("blog"))
+  .filter((p) => p.id.startsWith(`${lang}/`) && p.data.publish !== false)
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
+  .map((p) => ({
+    label: p.data.title,
+    href: buildPostUrl(lang, normalizeBlogSlug(p.id).segments[0] ?? ""),
+  }));
+
+const t = es
+  ? {
+      root: "New York English",
+      heading: "Explora el sitio",
+      lead: "Toca una rama para abrirla. Cada punto final es una página: tócalo para ir directo.",
+      search: "Busca una página… (p. ej. negociación, pasado, entrevista)",
+      searchLabel: "Buscar en el mapa del sitio",
+      expand: "Abrir todo",
+      collapse: "Cerrar todo",
+      pages: "{n} páginas",
+      found: "{n} de {total} páginas",
+      empty: "Ninguna página coincide. Prueba con otra palabra.",
+      courses: "Cursos gratuitos",
+      levels: "Cursos por nivel",
+      master: "Clases magistrales",
+      briefings: "Guías de Conversación",
+      roles: "Colocaciones por profesión",
+      coaching: "Coaching",
+      allServices: "Todos los servicios",
+      corporate: "Paquete corporativo",
+      book: "Agenda una sesión",
+      free: "Recursos gratuitos",
+      guides: "Guías y marcos",
+      pdfs: "PDFs descargables",
+      library: "Biblioteca de recursos",
+      blog: "Blog",
+      blogHome: "Todos los artículos",
+      tools: "Evaluaciones y práctica",
+      benchmark: "Evaluación de referencia",
+      chat: "Chat de práctica con IA",
+      quizzes: "Quizzes de comunicación",
+      about: "Acerca de",
+      home: "Inicio",
+      aboutMe: "Sobre mí",
+      testimonials: "Casos de éxito",
+      faqs: "Preguntas frecuentes",
+      contact: "Contacto",
+      privacy: "Política de privacidad",
+      terms: "Términos de servicio",
+      cancellation: "Política de cancelación",
+    }
+  : {
+      root: "New York English",
+      heading: "Explore the site",
+      lead: "Tap a branch to open it. Every end point is a page: tap it to go straight there.",
+      search: "Find a page… (e.g. negotiation, past tense, interview)",
+      searchLabel: "Search the site map",
+      expand: "Expand all",
+      collapse: "Collapse all",
+      pages: "{n} pages",
+      found: "{n} of {total} pages",
+      empty: "No page matches that. Try a different word.",
+      courses: "Free courses",
+      levels: "Courses by level",
+      master: "Master classes",
+      briefings: "Conversation Briefings",
+      roles: "Collocations by job",
+      coaching: "Coaching",
+      allServices: "All services",
+      corporate: "Corporate package",
+      book: "Book a session",
+      free: "Free resources",
+      guides: "Guides and frameworks",
+      pdfs: "Downloadable PDFs",
+      library: "Resource library",
+      blog: "Blog",
+      blogHome: "All articles",
+      tools: "Assessments and practice",
+      benchmark: "Benchmark assessment",
+      chat: "AI practice chat",
+      quizzes: "Communication quizzes",
+      about: "About",
+      home: "Home",
+      aboutMe: "About Robert",
+      testimonials: "Testimonials",
+      faqs: "FAQs",
+      contact: "Contact",
+      privacy: "Privacy policy",
+      terms: "Terms of service",
+      cancellation: "Cancellation policy",
+    };
+
+const r = es
+  ? {
+      home: "/es/",
+      services: "/es/servicios/",
+      corporate: "/es/servicios/paquete-corporativo/",
+      book: "/es/reservar/",
+      library: "/es/recursos/",
+      blog: "/es/blog/",
+      benchmark: "/es/assessments/",
+      chat: "/es/chat/",
+      about: "/es/about/",
+      testimonials: "/es/testimonios/",
+      faqs: "/es/faqs/",
+      contact: "/es/contact/",
+      privacy: "/es/legal/privacy-policy/",
+      terms: "/es/legal/terms-of-service/",
+      cancellation: "/es/legal/cancellation-policy/",
+    }
+  : {
+      home: "/en/",
+      services: "/en/services/",
+      corporate: "/en/services/corporate-package/",
+      book: "/en/book/",
+      library: "/en/resources/",
+      blog: "/en/blog/",
+      benchmark: "/en/assessments/",
+      chat: "/en/chat/",
+      about: "/en/about/",
+      testimonials: "/en/testimonials/",
+      faqs: "/en/faqs/",
+      contact: "/en/contact/",
+      privacy: "/en/legal/privacy-policy/",
+      terms: "/en/legal/terms-of-service/",
+      cancellation: "/en/legal/cancellation-policy/",
+    };
+
+const branches: MapNode[] = [
+  {
+    label: t.courses,
+    children: [
+      leaf(coursesHub(lang)),
+      { label: t.levels, children: levelCourseLinks(lang).map(leaf) },
+      { label: t.master, children: masterclassLinks(lang).map(leaf) },
+      { label: t.briefings, children: [conversationHub(lang), ...briefingLinks(lang)].map(leaf) },
+      { label: t.roles, children: [collocationsHub(lang), ...roleLinks(lang)].map(leaf) },
+    ],
+  },
+  {
+    label: t.coaching,
+    children: [
+      { label: t.allServices, href: r.services },
+      ...services.map(leaf),
+      { label: t.corporate, href: r.corporate },
+      { label: t.book, href: r.book },
+    ],
+  },
+  {
+    label: t.free,
+    children: [
+      { label: t.library, href: r.library },
+      { label: t.guides, children: resources.map(leaf) },
+      { label: t.pdfs, children: pdfs.map((p) => ({ ...leaf(p), external: true })) },
+    ],
+  },
+  { label: t.blog, children: [{ label: t.blogHome, href: r.blog }, ...posts.map(leaf)] },
+  {
+    label: t.tools,
+    children: [
+      { label: t.benchmark, href: r.benchmark },
+      { label: t.chat, href: r.chat },
+      { label: t.quizzes, children: assessments.map(leaf) },
+    ],
+  },
+  {
+    label: t.about,
+    children: [
+      { label: t.home, href: r.home },
+      { label: t.aboutMe, href: r.about },
+      { label: t.testimonials, href: r.testimonials },
+      { label: t.faqs, href: r.faqs },
+      { label: t.contact, href: r.contact },
+      { label: t.privacy, href: r.privacy },
+      { label: t.terms, href: r.terms },
+      { label: t.cancellation, href: r.cancellation },
+    ],
+  },
+];
+
+// One accent per top-level branch, from the site palette.
+const colors = ["#4f46e5", "#0f766e", "#b45309", "#be185d", "#6d28d9", "#334155"];
+const countLeaves = (n: MapNode): number =>
+  n.children?.length ? n.children.reduce((sum, c) => sum + countLeaves(c), 0) : 1;
+const total = branches.reduce((sum, b) => sum + countLeaves(b), 0);
+---
+
+<section
+  class="smap"
+  id="site-map"
+  data-total={total}
+  data-pages={t.pages}
+  data-found={t.found}
+  aria-labelledby="smap-heading"
+>
+  <div class="smap-head">
+    <div>
+      <h2 id="smap-heading" class="smap-h2">{t.heading}</h2>
+      <p class="smap-lead">{t.lead}</p>
+    </div>
+    <div class="smap-tools" hidden>
+      <label class="smap-search">
+        <Search class="smap-search-icon" aria-hidden="true" />
+        <span class="sr-only">{t.searchLabel}</span>
+        <input type="search" id="smap-search" placeholder={t.search} autocomplete="off" />
+      </label>
+      <div class="smap-buttons">
+        <button type="button" id="smap-expand" class="smap-tool">{t.expand}</button>
+        <button type="button" id="smap-collapse" class="smap-tool">{t.collapse}</button>
+        <span id="smap-status" class="smap-status" aria-live="polite"
+          >{t.pages.replace("{n}", String(total))}</span
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="smap-canvas">
+    <ul class="smap-tree">
+      <li class="smap-node smap-d0 smap-is-branch">
+        <a class="smap-pill smap-root" href={r.home}>
+          <span class="smap-label">{t.root}</span>
+        </a>
+        <ul class="smap-kids">
+          {
+            branches.map((b, i) => (
+              <SiteMapNode node={b} path={String(i)} depth={1} color={colors[i % colors.length]} />
+            ))
+          }
+        </ul>
+      </li>
+    </ul>
+    <p id="smap-empty" class="smap-empty" hidden>{t.empty}</p>
+  </div>
+</section>
+
+<script>
+  import "./sitemap.client.ts";
+</script>

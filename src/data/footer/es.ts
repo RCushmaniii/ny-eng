@@ -38,7 +38,7 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
           // Not /es/quiz/: vercel.json 308s the hub to the IT-services landing.
           { name: "Quiz de Comunicación", href: "/es/quiz/it-services/" },
           { name: "Memes Ejecutivos", href: "/es/meme-portfolio/all/" },
-          { name: "Índice del Sitio", href: "/es/indice-del-sitio/" },
+          { name: "Mapa del Sitio", href: "/es/indice-del-sitio/" },
         ],
       },
       connect: {
@@ -57,6 +57,7 @@ export const footerContentEs = (siteConfig: { companyName: string }) => {
       },
     },
     legalMenu: [
+      { name: "Mapa del Sitio", href: "/es/indice-del-sitio/" },
       { name: "Política de Privacidad", href: routes.es.legal.privacy },
       { name: "Términos de Servicio", href: routes.es.legal.terms },
       { name: "Política de Cancelación", href: routes.es.legal.cancellation },

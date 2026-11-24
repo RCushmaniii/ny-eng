@@ -1,0 +1,329 @@
+/* Interactive site map — a mind-map style tree.
+   Desktop: a horizontal tree that grows to the right, joined by connector lines.
+   Phone: the same tree stacked vertically with an indent rail.
+   Colors are set here (not with Tailwind text utilities) because global.css overrides those. */
+
+.smap {
+  --line: #cbd5e1;
+  --ink: #0f172a;
+  --muted: #475569;
+  --c: #12284c;
+  margin-bottom: 4rem;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at 1px 1px, #e2e8f0 1px, transparent 0) 0 0 / 22px 22px,
+    #f8fafc;
+}
+
+.smap-head {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.smap .smap-h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 0.25rem;
+}
+.smap .smap-lead {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+.smap-tools[hidden],
+.smap-kids[hidden],
+.smap-node[hidden],
+.smap-empty[hidden] {
+  display: none;
+}
+.smap-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.smap-search {
+  position: relative;
+  display: block;
+  max-width: 34rem;
+}
+.smap-search-icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  width: 1.1rem;
+  height: 1.1rem;
+  transform: translateY(-50%);
+  color: #64748b;
+  pointer-events: none;
+}
+.smap-search input {
+  width: 100%;
+  padding: 0.7rem 0.9rem 0.7rem 2.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  background: #fff;
+  color: var(--ink);
+  font-size: 1rem;
+}
+.smap-search input:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+.smap-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.smap .smap-tool {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.smap .smap-tool:hover {
+  border-color: #4f46e5;
+  color: #4338ca;
+}
+.smap .smap-status {
+  margin-left: 0.25rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.smap .smap-empty {
+  color: var(--muted);
+  padding: 1rem 0;
+}
+
+.smap-canvas {
+  overflow-x: auto;
+  padding: 0.5rem 0.25rem 0.75rem;
+}
+.smap-tree,
+.smap-kids {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- pills ---- */
+.smap .smap-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 100%;
+  padding: 0.5rem 0.9rem;
+  border-radius: 1.35rem;
+  border: 1.5px solid var(--c);
+  font-size: 0.92rem;
+  line-height: 1.25;
+  font-weight: 600;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+.smap .smap-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgb(15 23 42 / 0.12);
+}
+.smap .smap-pill:focus-visible {
+  outline: 2px solid var(--c);
+  outline-offset: 3px;
+}
+.smap .smap-root {
+  padding: 0.8rem 1.25rem;
+  border-color: #12284c;
+  background: #12284c;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.smap .smap-root .smap-label {
+  color: #fff;
+}
+.smap .smap-branch {
+  background: var(--c);
+  color: #fff;
+}
+.smap .smap-branch .smap-label {
+  color: #fff;
+}
+/* Second-level groups: tinted, so depth reads at a glance. */
+.smap .smap-d2 > .smap-branch,
+.smap .smap-d3 > .smap-branch {
+  background: color-mix(in srgb, var(--c) 12%, #fff);
+  color: var(--c);
+}
+.smap .smap-d2 > .smap-branch .smap-label,
+.smap .smap-d3 > .smap-branch .smap-label {
+  color: var(--c);
+}
+.smap .smap-leaf {
+  border-color: #cbd5e1;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 500;
+}
+.smap .smap-leaf .smap-label {
+  color: var(--ink);
+}
+.smap .smap-leaf:hover {
+  border-color: var(--c);
+}
+.smap .smap-leaf:hover .smap-label {
+  color: var(--c);
+}
+.smap-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.22);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.smap-d2 > .smap-branch .smap-count,
+.smap-d3 > .smap-branch .smap-count {
+  background: color-mix(in srgb, var(--c) 16%, #fff);
+}
+.smap-chev {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+  transition: transform 0.2s ease;
+}
+.smap-branch[aria-expanded="true"] .smap-chev {
+  transform: rotate(90deg);
+}
+
+@keyframes smap-in {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.smap-js .smap-kids:not([hidden]) > .smap-node {
+  animation: smap-in 0.22s ease both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .smap-js .smap-kids:not([hidden]) > .smap-node {
+    animation: none;
+  }
+  .smap .smap-pill,
+  .smap-chev {
+    transition: none;
+  }
+}
+
+/* ---- phone and tablet: vertical tree with an indent rail ---- */
+.smap-node {
+  position: relative;
+  margin: 0.4rem 0;
+}
+.smap-kids {
+  margin-left: 0.9rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--line);
+}
+.smap-kids > .smap-node::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 1.15rem;
+  width: 0.8rem;
+  border-top: 2px solid var(--line);
+}
+
+/* ---- desktop: horizontal mind map ---- */
+@media (min-width: 1024px) {
+  .smap {
+    padding: 2rem;
+  }
+  .smap-head {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .smap-tools {
+    align-items: flex-end;
+    min-width: 26rem;
+  }
+  .smap-search {
+    width: 100%;
+  }
+  .smap-node {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0.28rem 0;
+  }
+  .smap-node > .smap-pill {
+    flex: none;
+    max-width: 21rem;
+  }
+  .smap-kids {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    padding-left: 0;
+    border-left: 0;
+  }
+  /* stub from the parent pill to the children's spine */
+  .smap-kids::before {
+    content: "";
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    width: 2rem;
+    border-top: 2px solid var(--line);
+  }
+  .smap-kids > .smap-node {
+    padding-left: 1.6rem;
+  }
+  /* branch from the spine to this node */
+  .smap-kids > .smap-node::before {
+    left: 0;
+    top: 50%;
+    width: 1.6rem;
+    border-top: 2px solid var(--line);
+  }
+  /* the spine itself, drawn per child so it stops at the first and last node */
+  .smap-kids > .smap-node::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-left: 2px solid var(--line);
+  }
+  .smap-kids > .smap-node:first-child::after {
+    top: 50%;
+  }
+  .smap-kids > .smap-node:last-child::after {
+    bottom: 50%;
+  }
+  .smap-kids > .smap-node:only-child::after {
+    display: none;
+  }
+}
