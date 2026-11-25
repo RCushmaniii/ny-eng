@@ -39,6 +39,9 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
   samples, not read end to end by a person. Highest risk first: the two religion briefings
   (`/en/course/conversation/catholicism/`, `/en/course/conversation/protestantism/`), then
   every Spanish half, then the medical role banks (doctors, surgeons).
+  *Added 2026-11-24/25, same status:* three more briefings (workplace conflict, impromptu
+  speaking, winning people over, PR #323) and the construction superintendents role bank
+  (PR #329), whose first real reader is Robert's superintendent student.
   *Known deliberate oddity:* the last Writing Better lesson leaves small errors in its
   intermediate "after" texts on purpose (proofreading is the final pass) — a reader who skips
   the explanation could take them as correct.
@@ -143,6 +146,45 @@ that own them: outbound PSTN calling and Vapi billing to `cushlabs-ai-voice-agen
 
 ---
 
+
+## Session: 2026-11-24/25 — The new courses became findable: footer and site map links, share images, a launch article, a reciprocal backlink, and a set for a superintendent student
+
+### Accomplished
+
+- PR #323: three more Conversation Briefings, EN+ES: workplace conflict (86 terms), impromptu speaking (85), winning people over (85). The series now has eight.
+- PR #324: a "Free Courses" footer column on every page and a Free Courses section on the site index. Both read one list (`src/data/courseLinks.ts`) built from the registries. Also fixed a 21px horizontal overflow.
+- PR #325: 40 dedicated 1200x630 social-share images for the 102 data-driven course pages, which used to show the generic logo. `scripts/og/course-og.py` generates them, and `src/lib/courseOg.ts` fails the build when one is missing.
+- PR #326: the site index is now an interactive mind-map site map (six branches, 149 pages, search that ignores accents). It renders fully expanded without JS, so every link stays crawlable.
+- PR #327: launch article "Your English Is Fluent. These Five Situations Are Where It Still Breaks." (EN + es-MX, tú). About 30 internal links per language. Social copy is in `content-marketing/` and has not been posted.
+- PR #328: reciprocal backlink with Tom Otto's Speak Tech English. Our link to speaktechenglish.com is in the Keep Reading list of the senior-developers post. His side points to /en/services/tech-english/ and to the homepage (Launch Llama Tools link). Robert emailed Tom saying our link is live.
+- PR #329: a Construction Superintendents collocations set (35 items, 5 groups, EN+ES), built for Robert's Colorado superintendent student. In the launch article, the job list is now bullets and every "Where to start" item links to the exact lesson.
+- Every new URL is verified live in production and was submitted to Google (sitemap), Bing and IndexNow. Seven production deploys across the two days.
+
+### Decisions Made
+
+- The backlink to Speak Tech English lives in a blog post, not the footer or services pages. It sells self-study to the same audience.
+- Tom's Speak Tech English link targets /en/services/tech-english/, not the homepage, because it carries topical relevance for a tech-English site.
+- Robert's student is a young advanced learner who wants to improve his writing. Recommended Writing Better plus the Advanced course.
+
+### Lessons
+
+- Adding a role bank needs its OG images before the build passes, because `courseOg()` throws. The generator re-renders all 42 images, so revert the unchanged ones with `git checkout -- public/images/og/course/` and keep only the new files.
+- Running `npm run preview` and the generator in one background command never reached Python. Run them as two separate commands.
+- The collocations drill builds its bank selector on the client, so a new role is absent from the drill page's HTML by design. To confirm it's there, check the JS bundle.
+
+### Immediate Next Steps
+
+- [ ] (Don't break what pays: credibility with senior readers) Have the course content reviewed by a person, per the Open Items entry. The superintendent set gets a real reader first, through Robert's student.
+- [ ] (Leverage, domain authority) When Tom Otto replies with his two URLs, check each one: our link is present, it points to the right target, and it has no `rel="nofollow"`.
+- [ ] (Leverage) Robert posts the launch-article social copy from `content-marketing/` (X thread, Facebook EN and ES).
+- [ ] (Leverage) Around 2026-12-08, check GSC for whether the new course pages are indexed or stuck in "Discovered – not indexed".
+
+### Technical Debt
+
+- `astro check` still reports the 6 pre-existing `TKey` errors in `src/lib/i18n.ts`. Not touched.
+- Prettier reformatted parts of `src/lib/i18n.ts` in PR #329. The change is formatting only, but it adds noise to that file's blame.
+
+---
 
 ## Session: 2026-11-23 — Robert's artifacts became site courses: collocations by job, Conversation Briefings, three master classes
 
