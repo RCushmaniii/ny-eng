@@ -9,6 +9,7 @@ import { groups as softwareDevelopers } from "./software-developers";
 import { groups as doctors } from "./doctors";
 import { groups as surgeons } from "./surgeons";
 import { groups as salonOwners } from "./salon-owners";
+import { groups as constructionSuperintendents } from "./construction-superintendents";
 
 export type RoleId =
   | "logistics"
@@ -17,7 +18,8 @@ export type RoleId =
   | "software-developers"
   | "doctors"
   | "surgeons"
-  | "salon-owners";
+  | "salon-owners"
+  | "construction-superintendents";
 
 export type RoleIcon =
   | "Truck"
@@ -26,7 +28,8 @@ export type RoleIcon =
   | "Code"
   | "Stethoscope"
   | "Activity"
-  | "Scissors";
+  | "Scissors"
+  | "HardHat";
 
 export interface Role {
   /** Also the English URL leaf and the prefix of the progress ids. */
@@ -168,6 +171,26 @@ export const roles: Role[] = [
       "clientes y citas, servicios, personal, productos y la operación del negocio",
     ],
     groups: salonOwners,
+  },
+  {
+    id: "construction-superintendents",
+    slugEs: "superintendencia-de-obra",
+    icon: "HardHat",
+    name: ["Construction Superintendents", "Superintendencia de Obra"],
+    title: [
+      "English Collocations for Construction Superintendents",
+      "Colocaciones en Inglés para Superintendentes de Obra",
+    ],
+    audience: [
+      "construction superintendents and site managers",
+      "superintendentes y residentes de obra",
+    ],
+    examples: "report to, sign off on, hand over",
+    scenes: [
+      "the schedule, subcontractors, inspections, updates to leadership and the final walkthrough with the homeowner",
+      "el programa de obra, subcontratistas, inspecciones, reportes a la dirección y el recorrido final con el cliente",
+    ],
+    groups: constructionSuperintendents,
   },
 ];
 

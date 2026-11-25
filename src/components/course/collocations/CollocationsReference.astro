@@ -18,6 +18,7 @@ import {
   Stethoscope,
   Activity,
   Scissors,
+  HardHat,
 } from "lucide-astro";
 import {
   getGroups,
@@ -48,7 +49,7 @@ const t = ui.ref;
 const tr = ui.role;
 const routes = collocationsRoutes[lang];
 const total = groups.reduce((n, g) => n + g.items.length, 0);
-const roleIcons = { Truck, Landmark, Server, Code, Stethoscope, Activity, Scissors };
+const roleIcons = { Truck, Landmark, Server, Code, Stethoscope, Activity, Scissors, HardHat };
 
 const drillHref = role ? roleDrillRoute(role, lang) : routes.drill;
 const drillLabel = role ? fill(tr.startDrill, { total }) : t.startDrill;
