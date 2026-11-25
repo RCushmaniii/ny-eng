@@ -79,17 +79,26 @@ Dices *depend of*. Dices *explain me*. Dices bien *make a decision* y luego *mak
 
 A esas parejas de palabras se les llama colocaciones, y son lo último que corrige alguien con inglés fluido, porque nadie se las corrige. [The Right Words for the Job](/es/curso/patrones-verbales/colocaciones/) es una guía de consulta con un ejercicio de escritura para las combinaciones sobre las que corre el inglés de negocios.
 
-Y luego se vuelve específico. Hay un conjunto aparte para [logística](/es/curso/patrones-verbales/colocaciones/logistica/), [finanzas](/es/curso/patrones-verbales/colocaciones/finanzas/), [gerencia de TI](/es/curso/patrones-verbales/colocaciones/gerencia-de-ti/), [desarrollo de software](/es/curso/patrones-verbales/colocaciones/desarrollo-de-software/), [medicina](/es/curso/patrones-verbales/colocaciones/medicina/), [cirugía](/es/curso/patrones-verbales/colocaciones/cirugia/) y [salones de belleza](/es/curso/patrones-verbales/colocaciones/salon-de-belleza/), porque las frases que necesita un contralor no son las que necesita un desarrollador.
+Y luego se vuelve específico, porque las frases que necesita un contralor no son las que necesita un desarrollador. Hay un conjunto aparte para cada uno de estos puestos:
+
+- [Logística y cadena de suministro](/es/curso/patrones-verbales/colocaciones/logistica/)
+- [Finanzas y contabilidad](/es/curso/patrones-verbales/colocaciones/finanzas/)
+- [Gerencia de TI](/es/curso/patrones-verbales/colocaciones/gerencia-de-ti/)
+- [Desarrollo de software](/es/curso/patrones-verbales/colocaciones/desarrollo-de-software/)
+- [Superintendencia de obra](/es/curso/patrones-verbales/colocaciones/superintendencia-de-obra/)
+- [Medicina](/es/curso/patrones-verbales/colocaciones/medicina/)
+- [Cirugía](/es/curso/patrones-verbales/colocaciones/cirugia/)
+- [Salones de belleza](/es/curso/patrones-verbales/colocaciones/salon-de-belleza/)
 
 ## Por dónde empezar
 
 No empieces por el primero y sigas en orden. Empieza por la situación que tienes en tu calendario.
 
-- **¿Presentas este mes?** Speak to Persuade, lecciones uno a tres.
-- **¿Viene una conversación difícil?** Disagree Without Damage, y después la guía de conflicto como hoja de frases.
-- **¿Vas a la oficina de Estados Unidos?** Las guías de suburbios y de networking, en el avión.
-- **¿Te responden los correos con preguntas que ya habías contestado?** Writing Better, la lección sobre empezar por la idea principal.
-- **¿Veinte minutos y ninguna presión en particular?** El ejercicio de colocaciones de tu puesto.
+- **¿Presentas este mes?** Speak to Persuade, lecciones [uno](/es/curso/hablar-para-persuadir/empieza-aqui/), [dos](/es/curso/hablar-para-persuadir/observar/) y [tres](/es/curso/hablar-para-persuadir/inferir/).
+- **¿Viene una conversación difícil?** Disagree Without Damage, empezando por [El conflicto es información](/es/curso/conflicto-productivo/el-conflicto-es-informacion/), y después la [guía de conflicto en el trabajo](/es/curso/conversacion/conflicto-en-el-trabajo/) como hoja de frases.
+- **¿Vas a la oficina de Estados Unidos?** Las guías de [suburbios de Estados Unidos](/es/curso/conversacion/suburbios-de-estados-unidos/) y de [networking profesional](/es/curso/conversacion/networking-profesional/), en el avión.
+- **¿Te responden los correos con preguntas que ya habías contestado?** Writing Better, la lección sobre [empezar por la idea principal](/es/curso/escritura-profesional/empieza-por-el-punto/).
+- **¿Veinte minutos y ninguna presión en particular?** El [ejercicio de colocaciones](/es/curso/patrones-verbales/colocaciones-practica/), con el conjunto de tu puesto.
 
 Un límite que hay que decir: un curso te puede dar la frase. No te puede decir cómo suenas cuando la dices, ni qué haces cuando la otra persona no sigue el guion. Para eso hace falta otra persona en la sala.
 

@@ -79,17 +79,26 @@ You say *depend of*. You say *explain me*. You say *make a decision* correctly a
 
 These word partnerships are called collocations, and they are the last thing a fluent speaker fixes because nobody corrects them. [The Right Words for the Job](/en/course/verb-patterns/collocations/) is a reference and a typing drill for the combinations that business English runs on.
 
-Then it gets specific. There is a separate set for [logistics](/en/course/verb-patterns/collocations/logistics/), [finance](/en/course/verb-patterns/collocations/finance/), [IT managers](/en/course/verb-patterns/collocations/it-managers/), [software developers](/en/course/verb-patterns/collocations/software-developers/), [doctors](/en/course/verb-patterns/collocations/doctors/), [surgeons](/en/course/verb-patterns/collocations/surgeons/) and [salon owners](/en/course/verb-patterns/collocations/salon-owners/), because the phrases a controller needs are not the phrases a developer needs.
+Then it gets specific, because the phrases a controller needs are not the phrases a developer needs. There is a separate set for each of these jobs:
+
+- [Logistics and supply chain](/en/course/verb-patterns/collocations/logistics/)
+- [Finance and accounting](/en/course/verb-patterns/collocations/finance/)
+- [IT managers](/en/course/verb-patterns/collocations/it-managers/)
+- [Software developers](/en/course/verb-patterns/collocations/software-developers/)
+- [Construction superintendents](/en/course/verb-patterns/collocations/construction-superintendents/)
+- [Doctors](/en/course/verb-patterns/collocations/doctors/)
+- [Surgeons](/en/course/verb-patterns/collocations/surgeons/)
+- [Salon owners](/en/course/verb-patterns/collocations/salon-owners/)
 
 ## Where to start
 
 Do not start at the top and work down. Start with the situation on your calendar.
 
-- **Presenting this month?** Speak to Persuade, lessons one to three.
-- **A hard conversation coming?** Disagree Without Damage, then the conflict briefing as a phrase sheet.
-- **Visiting the US office?** The suburbs and networking briefings, on the plane.
-- **Emails coming back with questions you already answered?** Writing Better, the lesson on starting with the point.
-- **Twenty minutes and no specific pressure?** The collocations drill for your job.
+- **Presenting this month?** Speak to Persuade, lessons [one](/en/course/persuasive-speaking/start-here/), [two](/en/course/persuasive-speaking/observe/) and [three](/en/course/persuasive-speaking/infer/).
+- **A hard conversation coming?** Disagree Without Damage, starting with [Conflict Is Information](/en/course/productive-conflict/conflict-is-information/), then the [workplace conflict briefing](/en/course/conversation/workplace-conflict/) as a phrase sheet.
+- **Visiting the US office?** The [American suburbs](/en/course/conversation/american-suburbs/) and [professional networking](/en/course/conversation/professional-networking/) briefings, on the plane.
+- **Emails coming back with questions you already answered?** Writing Better, the lesson on [starting with the point](/en/course/business-writing/start-with-the-point/).
+- **Twenty minutes and no specific pressure?** The [collocations drill](/en/course/verb-patterns/collocations-drill/), set to your job.
 
 One honest limit: a course can give you the phrase. It cannot tell you how you sound when you say it, or what you do when the other person does not follow the script. That takes another person in the room.
 
