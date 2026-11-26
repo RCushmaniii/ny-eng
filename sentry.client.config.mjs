@@ -63,6 +63,15 @@ Sentry.init({
     /googletagmanager\.com/i,
     /google-analytics\.com/i,
     /translate\.google/i,
+
+    // Facebook's Android in-app browser injects its own scripts under the
+    // `iabjs://` scheme (e.g. `navigation_performance_logger_android`). On
+    // page unload they call the native bridge after the WebView has torn it
+    // down and throw "Error invoking postMessage: Java object is gone". Our
+    // `src/` has no postMessage calls; the `/_astro/` frame under it is only
+    // Sentry's own addEventListener wrapper. Seen 2026-11-26 on
+    // /en/resources/professional-apology-framework/ (Facebook 581, Android 14).
+    /^iabjs:\/\//i,
   ],
 
   beforeSend(event, hint) {
